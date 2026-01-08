@@ -1,0 +1,28 @@
+# INPUT: Git 忽略规则。
+# OUTPUT: 声明忽略文件列表。
+# POS: 版本控制忽略配置。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

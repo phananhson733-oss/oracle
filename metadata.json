@@ -1,0 +1,8 @@
+{
+  "_comment_input": "应用元信息字段。",
+  "_comment_output": "提供 AI Studio 元数据。",
+  "_comment_pos": "应用发布元数据。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。",
+  "name": "AstroMind AI",
+  "description": "A modern psychology astrology web app that translates celestial facts into actionable insights using DeepSeek AI.",
+  "requestFramePermissions": []
+}

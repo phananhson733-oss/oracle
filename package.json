@@ -1,0 +1,28 @@
+{
+  "_comment_input": "npm 依赖与脚本配置。",
+  "_comment_output": "提供包依赖与脚本定义。",
+  "_comment_pos": "项目包清单。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。",
+  "name": "astromind-ai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "latest",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.11.0",
+    "recharts": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

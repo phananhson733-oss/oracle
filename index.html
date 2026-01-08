@@ -1,0 +1,219 @@
+<!-- INPUT: Tailwind CDN、字体与主题色变量（含神谕呼吸灯与旋转动画）。 -->
+<!-- OUTPUT: 提供 HTML 宿主、主题色变量与 root 容器（含问答加载动画支持）。 -->
+<!-- POS: 主应用页面壳。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+<!-- 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AstroMind AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Frosted Black Base (deeper)
+              space: {
+                950: 'rgb(var(--space-950) / <alpha-value>)', // Main Background
+                900: 'rgb(var(--space-900) / <alpha-value>)', // Secondary Background
+                800: 'rgb(var(--space-800) / <alpha-value>)', // Card Background
+                700: 'rgb(var(--space-700) / <alpha-value>)', // Secondary Surface
+                600: 'rgb(var(--space-600) / <alpha-value>)', // Border
+              },
+              // Light Mode Grays (Minimal)
+              paper: {
+                50: '#FFFFFF',
+                100: '#F6F4F0',
+                200: '#EFEAE2',
+                300: '#D8D1C5',
+                400: '#7A746B',
+                900: '#0A0B0D',
+              },
+              // Text Colors (Warm Neutral)
+              star: {
+                50: 'rgb(var(--star-50) / <alpha-value>)', // Primary text
+                200: 'rgb(var(--star-200) / <alpha-value>)', // Secondary text
+                400: 'rgb(var(--star-400) / <alpha-value>)', // Muted text
+              },
+              // Dark Gold Accent (refined scale)
+              accent: {
+                100: '#F4E8CF',
+                200: '#E7D2AA',
+                300: '#D5B97D',
+                400: '#C6A062',
+                500: '#B58A52',
+                600: '#9F7645',
+                700: '#7F5E36',
+                DEFAULT: '#C6A062',
+                hover: '#D4B47A',
+                light: '#F2E4C6',
+                glow: 'rgba(198, 160, 98, 0.28)',
+              },
+              // Gold Alias for App.tsx compatibility
+              gold: {
+                100: '#F4E8CF',
+                200: '#E7D2AA',
+                300: '#D5B97D',
+                400: '#C6A062',
+                500: '#B58A52',
+                600: '#9F7645',
+                700: '#7F5E36',
+                800: '#5E442B',
+              },
+              // Semantic Colors (kept within the gold/rust family)
+              success: '#C6A062',
+              warning: '#C6A062',
+              danger: '#B57A5A',
+              info: '#C6A062',
+            },
+            fontFamily: {
+              sans: ['"Readex Pro"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+              serif: ['"Cormorant Garamond"', 'serif'],
+              mono: ['"IBM Plex Mono"', 'monospace'],
+            },
+            backgroundImage: {
+              'gradient-primary': 'linear-gradient(135deg, #C6A062 0%, #D4B47A 100%)',
+              'gradient-dark': 'linear-gradient(180deg, rgba(5,5,6,0) 0%, #050506 100%)',
+              'gradient-glass': 'radial-gradient(circle at 50% 0%, rgba(198,160,98,0.06), transparent 62%)',
+            },
+            boxShadow: {
+              'glow': '0 0 22px -6px rgba(198, 160, 98, 0.28)',
+              'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.2)',
+              'card': '0 12px 30px -18px rgba(0, 0, 0, 0.7)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.4s ease-out forwards',
+              'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'spin-slow': 'spinSlow 26s linear infinite',
+              'spin-reverse': 'spinReverse 16s linear infinite',
+              'breathe': 'breathe 2.8s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(16px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              spinSlow: {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+              spinReverse: {
+                '0%': { transform: 'rotate(360deg)' },
+                '100%': { transform: 'rotate(0deg)' },
+              },
+              breathe: {
+                '0%': { opacity: '0.4', boxShadow: '0 0 0 0 rgba(198,160,98,0.35)' },
+                '50%': { opacity: '1', boxShadow: '0 0 0 6px rgba(198,160,98,0.2)' },
+                '100%': { opacity: '0.4', boxShadow: '0 0 0 0 rgba(198,160,98,0.35)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      /* Theme color variables (dark default, light overrides) */
+      :root {
+        --space-950: 5 5 6;
+        --space-900: 10 11 13;
+        --space-800: 16 21 27;
+        --space-700: 24 31 42;
+        --space-600: 38 47 63;
+        --star-50: 242 239 231;
+        --star-200: 203 194 179;
+        --star-400: 154 147 134;
+      }
+
+      body.light {
+        --space-950: 244 241 236;
+        --space-900: 238 232 223;
+        --space-800: 227 220 208;
+        --space-700: 214 206 191;
+        --space-600: 199 190 173;
+        --star-50: 24 25 27;
+        --star-200: 63 57 50;
+        --star-400: 106 99 89;
+      }
+
+      /* Global Reset & Base */
+      body {
+        font-family: 'Readex Pro', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Noise Texture - Adds depth to flat dark backgrounds */
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.02;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Linear Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2A3448;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #D4B47A;
+      }
+
+      /* Typography Defaults - Linear Style */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Cormorant Garamond', serif;
+        letter-spacing: -0.02em;
+      }
+      
+      .text-balance {
+        text-wrap: balance;
+      }
+      
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "@google/genai": "https://esm.sh/@google/genai",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950">
+    <div class="bg-noise"></div>
+    <div id="root" class="relative z-10"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
