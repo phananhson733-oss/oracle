@@ -18,8 +18,10 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.11.3",
     "stripe": "^20.1.0",
-    "swisseph": "^0.5.17",
     "uuid": "^13.0.0"
+  },
+  "optionalDependencies": {
+    "swisseph": "^0.5.17"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

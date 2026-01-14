@@ -1,5 +1,5 @@
-<!-- INPUT: 后端服务目录结构与职责说明（snake_case 输出，含百科内容与合盘核心互动/时间线/亮点结构）。 -->
-<!-- OUTPUT: 后端服务目录文档（含百科端点、温度/超时/输出长度策略与 JSON 修复说明）。 -->
+<!-- INPUT: 后端服务目录结构与职责说明（snake_case 输出，含 GM 积分购买与 swisseph 可选依赖）。 -->
+<!-- OUTPUT: 后端服务目录文档（含 GM 积分购买与 swisseph 可选依赖说明）。 -->
 <!-- POS: 后端服务目录说明；若更新此文件，务必更新本头注释。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -50,7 +50,8 @@ backend/
 │   │   └── geocoding.ts # 城市搜索（Open-Meteo，含超时回退）
 │   ├── data/          # 数据源定义
 │   │   ├── sources.ts # 数据源接口与常量
-│   │   └── wiki.ts    # 百科静态内容与趋势标签
+│   │   ├── wiki.ts    # 百科静态内容与趋势标签
+│   │   └── wiki-classics.ts # 经典书籍静态数据
 │   ├── prompts/       # Prompt 管理
 │   │   └── manager.ts # Prompt 注册与版本管理（snake_case）
 │   ├── cache/         # 缓存层
@@ -97,6 +98,8 @@ npm run dev
 | `/api/wiki/home` | GET | 获取百科首页聚合内容 |
 | `/api/wiki/items` | GET | 获取百科条目列表 |
 | `/api/wiki/items/:id` | GET | 获取百科条目详情 |
+| `/api/wiki/classics` | GET | 获取经典书籍列表 |
+| `/api/wiki/classics/:id` | GET | 获取经典书籍详情 |
 | `/api/wiki/search` | GET | 百科关键词搜索 |
 | `/api/ask` | POST | 问答 |
 | `/api/synastry` | GET | 获取合盘分析（支持 tab 分段生成） |
@@ -110,6 +113,12 @@ npm run dev
 | `/health` | GET | 健康检查 |
 
 ## 近期更新
+- swisseph 依赖改为 optionalDependencies，避免服务端构建阻塞。
+- 权益 V2 补充详情解锁与 GM 积分购买处理。
+- GM 开发会话在无数据库时启用内存权益回退。
+- 新增 GM 开发会话端点用于本地测试登录。
+- 新增 Wiki 经典书籍静态数据与列表/详情端点。
+- 百科深度解读生成覆盖已填充全量内容，并扩展字段 Prompt。
 - 本命盘概览输出拆分为 sun/moon/rising，并更新 prompt 版本与 mock 数据。
 - 星历输出新增南交点、莉莉丝、福点、宿命点与东方点等衍生点位。
 - 人生课题与行动 prompt 输出结构改为 summary + key_points，并同步类型与 mock。
