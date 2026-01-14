@@ -1,11 +1,14 @@
 {
-  "_comment_input": "npm 依赖与脚本配置。",
-  "_comment_output": "提供包依赖与脚本定义。",
+  "_comment_input": "npm 依赖与脚本配置（含 Node 版本约束）。",
+  "_comment_output": "提供包依赖、脚本定义与 Node 版本提示。",
   "_comment_pos": "项目包清单。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。",
   "name": "astromind-ai",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

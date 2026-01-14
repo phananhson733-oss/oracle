@@ -1,5 +1,5 @@
-<!-- INPUT: 后端服务目录结构与职责说明（snake_case 输出，含 GM 积分购买与 swisseph 可选依赖）。 -->
-<!-- OUTPUT: 后端服务目录文档（含 GM 积分购买与 swisseph 可选依赖说明）。 -->
+<!-- INPUT: 后端服务目录结构与职责说明（snake_case 输出，含 GM 积分购买与 swisseph 编译配置）。 -->
+<!-- OUTPUT: 后端服务目录文档（含 GM 积分购买与 swisseph 编译配置说明）。 -->
 <!-- POS: 后端服务目录说明；若更新此文件，务必更新本头注释。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -113,7 +113,7 @@ npm run dev
 | `/health` | GET | 健康检查 |
 
 ## 近期更新
-- swisseph 依赖改为 optionalDependencies，避免服务端构建阻塞。
+- 后端 Node 版本固定为 20.x 并升级 node-gyp 以兼容 swisseph 编译。
 - 权益 V2 补充详情解锁与 GM 积分购买处理。
 - GM 开发会话在无数据库时启用内存权益回退。
 - 新增 GM 开发会话端点用于本地测试登录。
