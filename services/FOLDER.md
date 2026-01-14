@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含百科入口与每日星象缓存）。 -->
-<!-- OUTPUT: services 架构摘要与文件索引（含百科 API 与缓存说明）。 -->
+<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含详情解锁、GM 积分购买与 API 地址默认值）。 -->
+<!-- OUTPUT: services 架构摘要与文件索引（含详情解锁、GM 积分购买与 API 地址默认值更新）。 -->
 <!-- POS: 主应用服务目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -14,6 +14,7 @@
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录服务目录架构与文件清单。
 - apiClient.ts｜地位：API 客户端｜功能：调用后端 API 获取数据（含问答类别、Markdown 报告、AI 来源元数据与 CBT 错误透传）。
+- paymentClient.ts｜地位：支付与权益客户端｜功能：订阅/购买/权益查询与 GM 测试指令调用。
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
 
@@ -21,6 +22,12 @@
 - cbt/｜地位：CBT 服务子目录｜功能：CBT 功能的后端服务。
 
 近期更新
+- API 客户端默认在生产环境使用同源 `/api`，避免指向 localhost。
+- entitlementClient V2 在积分购买时同步日次解锁本地缓存。
+- entitlementClient V2 接入详情解锁与 GM 积分购买 API。
+- paymentClient 新增 GM 开发会话与测试指令 API 调用。
+- apiClient 新增 Wiki 经典书籍列表/详情 API 调用与本地缓存。
+- apiClient 修复 Wiki 详情重复定义并补齐缓存版本常量。
 - apiClient 增加 Wiki 首页的本地日缓存，避免重复刷新。
 - astroService 新增宫主星与飞入宫位计算。
 - astroService 补充宫主星飞入星座信息，用于宫主星表格展示。

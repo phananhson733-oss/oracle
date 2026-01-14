@@ -1,10 +1,11 @@
 // INPUT: 后端支付 API 客户端。
-// OUTPUT: 导出支付相关 API 调用函数。
-// POS: 前端支付 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// OUTPUT: 导出支付与 GM 测试 API 调用函数（含开发会话）。
+// POS: 前端支付 API 客户端（含 GM 测试指令与开发会话）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import { authFetch } from './authClient';
+import { authFetch, setStoredUser, setTokens } from './authClient';
+import type { AuthTokens, AuthUser } from './authClient';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001/api' : '/api');
 
 export interface Subscription {
   id: string;
@@ -187,6 +188,62 @@ export async function getFreeUsage(deviceId: string): Promise<{ usage: { askQues
     throw new Error('Failed to get free usage');
   }
   return res.json();
+}
+
+type GMResponse = { success: boolean; message?: string };
+
+async function gmRequest(path: string, errorMessage: string, body?: Record<string, unknown>): Promise<GMResponse> {
+  const res = await authFetch(`${API_BASE}/gm/${path}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+
+  if (!res.ok) {
+    let message = errorMessage;
+    const data = await res.json().catch(() => ({} as { error?: string }));
+    message = data.error || message;
+    throw new Error(message);
+  }
+
+  return res.json();
+}
+
+export async function gmUnlockSubscription(): Promise<GMResponse> {
+  return gmRequest('unlock-subscription', 'Failed to unlock subscription');
+}
+
+export async function gmCancelSubscription(): Promise<GMResponse> {
+  return gmRequest('cancel-subscription', 'Failed to cancel subscription');
+}
+
+export async function gmAddTokens(amount = 9999): Promise<GMResponse> {
+  return gmRequest('add-tokens', 'Failed to add tokens', { amount });
+}
+
+export async function gmClearTokens(): Promise<GMResponse> {
+  return gmRequest('clear-tokens', 'Failed to clear tokens');
+}
+
+type GMDevSessionResponse = { success: boolean; tokens: AuthTokens; user: AuthUser };
+
+export async function gmCreateDevSession(): Promise<GMDevSessionResponse> {
+  const res = await authFetch(`${API_BASE}/gm/dev-session`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({} as { error?: string }));
+    throw new Error(data.error || 'Failed to create GM session');
+  }
+
+  const data = await res.json();
+  setTokens(data.tokens);
+  if (data.user) {
+    setStoredUser(data.user);
+  }
+  return data;
 }
 
 // === Helpers ===

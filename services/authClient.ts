@@ -2,7 +2,7 @@
 // OUTPUT: 导出认证相关 API 调用函数。
 // POS: 前端认证 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001/api' : '/api');
 
 export interface AuthUser {
   id: string;

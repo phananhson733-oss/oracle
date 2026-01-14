@@ -1,5 +1,5 @@
-<!-- INPUT: 项目说明、运行方式与环境变量约定。 -->
-<!-- OUTPUT: 根目录主说明文档。 -->
+<!-- INPUT: 项目说明、运行方式与环境变量约定（含生产默认 API 地址）。 -->
+<!-- OUTPUT: 根目录主说明文档（含生产默认 API 地址说明）。 -->
 <!-- POS: 项目对外说明入口；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
@@ -48,7 +48,7 @@ npm run dev
 
 ### 前端 (.env.local)
 
-- `VITE_API_BASE_URL`：后端 API 地址（默认 `http://localhost:3001/api`）
+- `VITE_API_BASE_URL`：后端 API 地址（可选；开发默认 `http://localhost:3001/api`，生产默认 `/api`）
 
 ### 后端 (backend/.env)
 
