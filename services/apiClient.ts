@@ -1,5 +1,5 @@
-// INPUT: 后端 API 客户端与查询参数构建（含百科入口与每日星象本地缓存）。
-// OUTPUT: 导出 API 调用函数（含百科内容、问答类别、合盘分区与报告缓存）。
+// INPUT: 后端 API 客户端与查询参数构建（含百科与经典书籍入口及缓存版本化）。
+// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别与报告缓存）。
 // POS: 前端 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import type {
@@ -24,6 +24,8 @@ import type {
   WikiItemResponse,
   WikiSearchResponse,
   WikiItemType,
+  WikiClassicsResponse,
+  WikiClassicResponse,
   DetailType,
   DetailContext,
   SectionDetailContent,
@@ -34,6 +36,7 @@ const REQUEST_TIMEOUT_MS = 15000;
 const LONG_REQUEST_TIMEOUT_MS = 45000;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
 const LOCAL_CACHE_PREFIX = 'astro_cache_v1';
+const WIKI_CACHE_VERSION = 'v1';
 
 type ApiErrorPayload = { error?: string; reason?: string };
 type ApiError = Error & { status?: number; reason?: string; payload?: unknown };
@@ -104,6 +107,14 @@ const resolveUtcDate = () => new Date().toISOString().split('T')[0];
 
 const buildWikiHomeCacheKey = (lang: 'zh' | 'en', date: string) =>
   `${LOCAL_CACHE_PREFIX}:wiki_home:${encodeCachePart(lang)}:${encodeCachePart(date)}`;
+const buildWikiItemsCacheKey = (lang: 'zh' | 'en') =>
+  `${LOCAL_CACHE_PREFIX}:wiki_items:${WIKI_CACHE_VERSION}:${lang}`;
+const buildWikiItemCacheKey = (id: string, lang: 'zh' | 'en') =>
+  `${LOCAL_CACHE_PREFIX}:wiki_item:${WIKI_CACHE_VERSION}:${id}:${lang}`;
+const buildWikiClassicsCacheKey = (lang: 'zh' | 'en') =>
+  `${LOCAL_CACHE_PREFIX}:wiki_classics:${WIKI_CACHE_VERSION}:${lang}`;
+const buildWikiClassicCacheKey = (id: string, lang: 'zh' | 'en') =>
+  `${LOCAL_CACHE_PREFIX}:wiki_classic:${WIKI_CACHE_VERSION}:${id}:${lang}`;
 
 const readLocalCache = <T,>(key: string): T | null => {
   if (typeof window === 'undefined') return null;
@@ -627,11 +638,11 @@ export async function fetchWikiItems(
   lang: 'zh' | 'en' = 'zh',
   options: { type?: WikiItemType; q?: string } = {}
 ): Promise<WikiItemsResponse> {
-  const WIKI_CACHE_VERSION = 'v1';
-  const buildWikiItemsCacheKey = (lang: 'zh' | 'en') =>
-    `${LOCAL_CACHE_PREFIX}:wiki_items:${WIKI_CACHE_VERSION}:${lang}`;
-  const cached = readLocalCache<WikiItemsResponse>(buildWikiItemsCacheKey(lang));
-  if (cached) return cached;
+  const shouldUseCache = !options.type && !options.q;
+  if (shouldUseCache) {
+    const cached = readLocalCache<WikiItemsResponse>(buildWikiItemsCacheKey(lang));
+    if (cached) return cached;
+  }
 
   const params = new URLSearchParams({
     lang,
@@ -641,14 +652,13 @@ export async function fetchWikiItems(
   const res = await fetch(`${API_BASE}/wiki/items?${params}`);
   if (!res.ok) throw new Error('Failed to fetch wiki items');
   const data = await res.json();
-  writeLocalCache(buildWikiItemsCacheKey(lang), data);
+  if (shouldUseCache) {
+    writeLocalCache(buildWikiItemsCacheKey(lang), data);
+  }
   return data;
 }
 
 export async function fetchWikiItem(id: string, lang: 'zh' | 'en' = 'zh'): Promise<WikiItemResponse> {
-  const WIKI_CACHE_VERSION = 'v1';
-  const buildWikiItemCacheKey = (id: string, lang: 'zh' | 'en') =>
-    `${LOCAL_CACHE_PREFIX}:wiki_item:${WIKI_CACHE_VERSION}:${id}:${lang}`;
   const cached = readLocalCache<WikiItemResponse>(buildWikiItemCacheKey(id, lang));
   if (cached) return cached;
 
@@ -660,9 +670,32 @@ export async function fetchWikiItem(id: string, lang: 'zh' | 'en' = 'zh'): Promi
   return data;
 }
 
+export async function fetchWikiClassics(lang: 'zh' | 'en' = 'zh'): Promise<WikiClassicsResponse> {
+  const cached = readLocalCache<WikiClassicsResponse>(buildWikiClassicsCacheKey(lang));
+  if (cached) return cached;
+
+  const params = new URLSearchParams({ lang });
+  const res = await fetch(`${API_BASE}/wiki/classics?${params}`);
+  if (!res.ok) throw new Error('Failed to fetch wiki classics');
+  const data = await res.json();
+  writeLocalCache(buildWikiClassicsCacheKey(lang), data);
+  return data;
+}
+
+export async function fetchWikiClassic(id: string, lang: 'zh' | 'en' = 'zh'): Promise<WikiClassicResponse> {
+  const cached = readLocalCache<WikiClassicResponse>(buildWikiClassicCacheKey(id, lang));
+  if (cached) return cached;
+
+  const params = new URLSearchParams({ lang });
+  const res = await fetch(`${API_BASE}/wiki/classics/${encodeURIComponent(id)}?${params}`);
+  if (!res.ok) throw new Error('Failed to fetch wiki classic');
+  const data = await res.json();
+  writeLocalCache(buildWikiClassicCacheKey(id, lang), data);
+  return data;
+}
+
 export async function clearWikiCache(): Promise<void> {
-  const WIKI_CACHE_VERSION = 'v1';
-  const cachePattern = new RegExp(`^${LOCAL_CACHE_PREFIX}:wiki_(items|item):${WIKI_CACHE_VERSION}:`);
+  const cachePattern = new RegExp(`^${LOCAL_CACHE_PREFIX}:wiki_(items|item|classics|classic):${WIKI_CACHE_VERSION}:`);
   const keys: string[] = [];
   if (typeof window !== 'undefined') {
     for (let i = 0; i < localStorage.length; i++) {
@@ -676,13 +709,6 @@ export async function clearWikiCache(): Promise<void> {
     localStorage.removeItem(key);
   }
   console.log(`Cleared ${keys.length} Wiki cache entries`);
-}
-
-export async function fetchWikiItem(id: string, lang: 'zh' | 'en' = 'zh'): Promise<WikiItemResponse> {
-  const params = new URLSearchParams({ lang });
-  const res = await fetch(`${API_BASE}/wiki/items/${encodeURIComponent(id)}?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch wiki item');
-  return res.json();
 }
 
 export async function fetchWikiSearch(query: string, lang: 'zh' | 'en' = 'zh'): Promise<WikiSearchResponse> {

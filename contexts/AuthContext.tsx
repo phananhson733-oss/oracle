@@ -1,5 +1,5 @@
-// INPUT: React 认证上下文与 Provider。
-// OUTPUT: 导出 AuthContext 和 AuthProvider。
+// INPUT: React 认证上下文与 Provider（含权益状态拉取）。
+// OUTPUT: 导出 AuthContext 和 AuthProvider（含用户与权益刷新）。
 // POS: 前端认证上下文；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
@@ -16,11 +16,10 @@ import {
   migrateLocalData,
   getAccessToken,
 } from '../services/authClient';
-import {
-  Entitlements,
-  getEntitlements,
-  getDeviceId,
-} from '../services/paymentClient';
+import type { EntitlementsV2 } from '../services/entitlementClientV2';
+import { cacheEntitlements, clearEntitlementsCache, getCachedEntitlements, getEntitlementsV2 } from '../services/entitlementClientV2';
+
+type AuthEntitlements = EntitlementsV2 & { discount?: number };
 
 interface AuthContextType {
   // User state
@@ -28,8 +27,11 @@ interface AuthContextType {
   isAuthenticated: boolean;
   isLoading: boolean;
 
+  // User refresh
+  refreshUser: () => Promise<void>;
+
   // Entitlements
-  entitlements: Entitlements | null;
+  entitlements: AuthEntitlements | null;
   refreshEntitlements: () => Promise<void>;
 
   // Auth actions
@@ -56,8 +58,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<AuthUser | null>(() => getStoredUser());
+  const [entitlements, setEntitlements] = useState<AuthEntitlements | null>(() => getCachedEntitlements());
   const [isLoading, setIsLoading] = useState(true);
-  const [entitlements, setEntitlements] = useState<Entitlements | null>(null);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [loginModalReason, setLoginModalReason] = useState<string>();
@@ -81,18 +83,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     initAuth();
   }, []);
 
+  // Refresh user
+  const refreshUser = useCallback(async () => {
+    const currentUser = await getCurrentUser();
+    setUser(currentUser);
+  }, []);
+
   // Refresh entitlements
   const refreshEntitlements = useCallback(async () => {
     try {
-      const deviceId = getDeviceId();
-      const ent = await getEntitlements(deviceId);
-      setEntitlements(ent);
+      const latest = await getEntitlementsV2();
+      setEntitlements(latest);
+      cacheEntitlements(latest);
     } catch {
-      // Ignore errors for now
+      // Ignore entitlement refresh errors to avoid blocking auth flows.
     }
   }, []);
 
-  // Load entitlements when auth state changes
   useEffect(() => {
     refreshEntitlements();
   }, [isAuthenticated, refreshEntitlements]);
@@ -102,34 +109,31 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const result = await loginWithGoogle(credential);
     setUser(result.user);
     setShowLoginModal(false);
-    await refreshEntitlements();
   };
 
   const handleLoginWithApple = async (identityToken: string, appleUser?: { email?: string; name?: { firstName?: string; lastName?: string } }) => {
     const result = await loginWithApple(identityToken, appleUser);
     setUser(result.user);
     setShowLoginModal(false);
-    await refreshEntitlements();
   };
 
   const handleLoginWithEmail = async (email: string, password: string) => {
     const result = await loginWithEmail(email, password);
     setUser(result.user);
     setShowLoginModal(false);
-    await refreshEntitlements();
   };
 
   const handleRegisterWithEmail = async (email: string, password: string, name?: string) => {
     const result = await registerWithEmail(email, password, name);
     setUser(result.user);
     setShowLoginModal(false);
-    await refreshEntitlements();
   };
 
   const handleLogout = async () => {
     await logoutApi();
     setUser(null);
     setEntitlements(null);
+    clearEntitlementsCache();
   };
 
   const handleUpdateProfile = async (updates: Parameters<typeof updateProfile>[0]) => {
@@ -180,6 +184,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         user,
         isAuthenticated,
         isLoading,
+        refreshUser,
         entitlements,
         refreshEntitlements,
         loginWithGoogle: handleLoginWithGoogle,
