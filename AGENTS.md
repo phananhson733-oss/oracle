@@ -1,6 +1,6 @@
-<!-- INPUT: 项目中的 OpenSpec 助手指引与语言规则。 -->
-<!-- OUTPUT: 根目录助手说明（含语言规则）。 -->
-<!-- POS: 助手入口文档（含语言规则）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+<!-- INPUT: 项目中的 OpenSpec 助手指引、语言规则与 UI 规范入口。 -->
+<!-- OUTPUT: 根目录助手说明（含语言规则与 UI 规范入口）。 -->
+<!-- POS: 助手入口文档（含语言规则与 UI 规范入口）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- OPENSPEC:START -->
 # OpenSpec 指令
 
@@ -23,3 +23,8 @@
 ## 最高规则
 
 - 总是使用 English 思考，总是中文回复。
+
+## UI 规范入口
+
+- 唯一 UI 规范来源：[COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md)。
+- UI 变更必须对照该规范，并在 PR 中填写「UI 规范符合说明」（模板：`PULL_REQUEST_TEMPLATE.md`）。

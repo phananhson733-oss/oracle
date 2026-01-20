@@ -1,5 +1,5 @@
-// INPUT: React、图表、类型与主题（含月份同步、情绪映射、配色统一、无记录占位与 AI 文本清理）。
-// OUTPUT: 导出分析视图组件（含月度过滤联动、无记录跳过 AI 解读、建议分行显示与 AI 文本净化）。
+// INPUT: React、图表、类型与主题（含月份同步、情绪映射、配色统一、无记录占位与纸感映射）。
+// OUTPUT: 导出分析视图组件（含月度过滤联动、无记录跳过 AI 解读、建议分行显示与对比度修正）。
 // POS: CBT 分析展示组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { useLanguage, useTheme } from '../UIComponents';
 import { UserProfile } from '../../types';
-import { useCBTAggregateAnalysis } from './utils/useCBTAggregateAnalysis';
+import { useCBTIndividualAnalysis } from './utils/useCBTAggregateAnalysis';
 
 interface ViewProps {
   records: CBTRecord[];
@@ -168,11 +168,11 @@ const DataRow = ({ title, children, className = "", onExpand }: any) => {
   const { theme } = useTheme();
   const { language } = useLanguage();
   const isLight = theme === 'light';
-  const panelTone = isLight ? 'bg-white/80 border-paper-200' : 'bg-space-800/40 border-gold-500/10';
+  const panelTone = isLight ? 'bg-paper-100/85 border-paper-300' : 'bg-space-800/40 border-gold-500/10';
   const labelTone = isLight ? 'text-star-300' : 'text-star-400';
   const buttonTone = isLight
     ? 'bg-paper-100 hover:bg-paper-200 text-star-300 border border-paper-200'
-    : 'bg-white/5 hover:bg-white/10 text-star-400 hover:text-gold-400 border border-white/5';
+    : 'bg-space-900/60 hover:bg-space-900/80 text-star-400 hover:text-gold-400 border border-gold-500/15';
   const headingFont = language === 'en' ? 'font-sans' : '';
 
   return (
@@ -280,7 +280,7 @@ const parseAdviceList = (text: string) => {
 const ActionRow = ({ title, text, icon: Icon = Sparkles }: any) => {
   const { theme } = useTheme();
   const isLight = theme === 'light';
-  const cardTone = isLight ? 'bg-white border-paper-200 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
+  const cardTone = isLight ? 'bg-paper-100/85 border-paper-300 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
   const accentTone = isLight ? 'text-gold-700' : 'text-accent';
   const textTone = isLight ? 'text-star-700' : 'text-star-200';
   const numberTone = isLight ? 'text-paper-400' : 'text-space-600';
@@ -350,7 +350,7 @@ const FullDataModal = ({ title, sections, onClose }: any) => {
   const { theme } = useTheme();
   const { language } = useLanguage();
   const isLight = theme === 'light';
-  const overlayTone = isLight ? 'bg-paper-200/80' : 'bg-black/80';
+  const overlayTone = isLight ? 'bg-paper-200/80' : 'bg-space-950/80';
   const containerTone = isLight ? 'bg-paper-100 border-paper-300' : 'bg-space-900 border-gold-500/20';
   const dividerTone = isLight ? 'border-paper-300' : 'border-gold-500/10';
   const labelTone = isLight ? 'text-gold-700' : 'text-gold-400';
@@ -365,12 +365,12 @@ const FullDataModal = ({ title, sections, onClose }: any) => {
             <List size={20} className={labelTone} />
             {title} <span className={`text-sm font-sans font-normal ml-2 ${mutedText}`}>完整统计</span>
           </h3>
-          <button onClick={onClose} className={`p-2 rounded-full transition-colors ${isLight ? 'hover:bg-paper-200 text-star-200' : 'hover:bg-white/10 text-star-400'}`}><X size={20}/></button>
+          <button onClick={onClose} className={`p-2 rounded-full transition-colors ${isLight ? 'hover:bg-paper-200 text-star-200' : 'hover:bg-space-900/60 text-star-400'}`}><X size={20}/></button>
         </div>
         <div className="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
           {sections.map((section: any, idx: number) => (
             <div key={idx}>
-              <h4 className={`text-xs font-black uppercase tracking-widest mb-4 border-l-2 pl-3 ${labelTone} ${headingFont} ${isLight ? 'border-gold-600' : 'border-gold-500'}`}>{section.title}</h4>
+              <h4 className={`text-xs font-black uppercase tracking-widest mb-4 border-l pl-3 ${labelTone} ${headingFont} ${isLight ? 'border-gold-600' : 'border-gold-500'}`}>{section.title}</h4>
               <div className="space-y-3">
                 {section.data.map(([name, count]: any, i: number) => {
                    const maxVal = section.data[0][1];
@@ -482,18 +482,19 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
     return { allMoods, allSymptoms, topMoods, topSymptoms, insight, advice };
   }, [records, filterYear, filterMonth, t]);
 
-  const { analysis, loading } = useCBTAggregateAnalysis(
+  const { analysis, loading } = useCBTIndividualAnalysis(
     userProfile!,
     filterYear,
     filterMonth,
-    { somatic_stats: stats },
+    'somatic',
+    stats,
     language as 'zh' | 'en',
     { enabled: hasMonthlyRecords }
   );
 
-  const displayInsight = resolveAnalysisText(analysis?.somatic_analysis?.insight, stats.insight);
-  const displayAdvice = resolveAnalysisText(analysis?.somatic_analysis?.advice, stats.advice);
-  const displayAstro = resolveAnalysisText(analysis?.somatic_analysis?.astro_note, t.journal.somatic_astro_note);
+  const displayInsight = resolveAnalysisText(analysis?.insight, stats.insight);
+  const displayAdvice = resolveAnalysisText(analysis?.advice, stats.advice);
+  const displayAstro = resolveAnalysisText(analysis?.astro_note, t.journal.somatic_astro_note);
   const noRecordText = t.journal.no_record_text;
   const showLoading = hasMonthlyRecords && loading;
   const insightHighlight = showLoading || !hasMonthlyRecords ? '' : t.journal.somatic_cooccur;
@@ -722,22 +723,23 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
     return { allSources, allSupports, topSources, topSupports, mainSource, mainSupport, advice };
   }, [records, filterYear, filterMonth, t]);
 
-  const { analysis, loading } = useCBTAggregateAnalysis(
+  const { analysis, loading } = useCBTIndividualAnalysis(
     userProfile!,
     filterYear,
     filterMonth,
-    { root_stats: stats },
+    'root',
+    stats,
     language as 'zh' | 'en',
     { enabled: hasMonthlyRecords }
   );
 
   const displayInsight = resolveAnalysisText(
-    analysis?.root_analysis?.insight,
+    analysis?.insight,
     `${t.journal.main_stress_source}${stats.mainSource}${t.journal.main_support_is}${stats.mainSupport}${t.journal.use_combo_consciously}`
   );
-  const displayAdvice = resolveAnalysisText(analysis?.root_analysis?.advice, stats.advice);
+  const displayAdvice = resolveAnalysisText(analysis?.advice, stats.advice);
   const displayAstro = resolveAnalysisText(
-    analysis?.root_analysis?.astro_note,
+    analysis?.astro_note,
     `${t.journal.roots_astro_note_prefix}${stats.mainSource}${t.journal.roots_astro_note_suffix}`
   );
   const noRecordText = t.journal.no_record_text;
@@ -884,21 +886,22 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
     return { pieData, allNeg, topNeg, topCompName, advice };
   }, [records, filterYear, filterMonth, t]);
 
-  const { analysis, loading } = useCBTAggregateAnalysis(
+  const { analysis, loading } = useCBTIndividualAnalysis(
     userProfile!,
     filterYear,
     filterMonth,
-    { mood_stats: stats },
+    'mood',
+    stats,
     language as 'zh' | 'en',
     { enabled: hasMonthlyRecords }
   );
 
   const displayInsight = resolveAnalysisText(
-    analysis?.mood_analysis?.insight,
+    analysis?.insight,
     stats.topCompName ? `${t.journal.low_point_dominated_by}${stats.topCompName}${t.journal.recognize_first_step}` : t.journal.mood_very_stable
   );
-  const displayAdvice = resolveAnalysisText(analysis?.mood_analysis?.advice, stats.advice);
-  const displayAstro = resolveAnalysisText(analysis?.mood_analysis?.astro_note, t.journal.mood_astro_note);
+  const displayAdvice = resolveAnalysisText(analysis?.advice, stats.advice);
+  const displayAstro = resolveAnalysisText(analysis?.astro_note, t.journal.mood_astro_note);
   const noRecordText = t.journal.no_record_text;
   const showLoading = hasMonthlyRecords && loading;
   const insightHighlight = showLoading || !hasMonthlyRecords ? '' : t.journal.mood_component;
@@ -930,7 +933,15 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
                 <Pie data={stats.pieData} innerRadius={35} outerRadius={50} paddingAngle={5} dataKey="value">
                   {stats.pieData.map((entry, index) => <Cell key={index} fill={entry.color} stroke="none" />)}
                 </Pie>
-                <Tooltip contentStyle={{background:'#000', border:'none', borderRadius:'8px', fontSize:'10px'}} itemStyle={{color:'#fff'}}/>
+                <Tooltip
+                  contentStyle={{
+                    background: 'rgb(var(--space-950) / 0.92)',
+                    border: '1px solid rgb(var(--space-700) / 0.6)',
+                    borderRadius: '8px',
+                    fontSize: '10px',
+                  }}
+                  itemStyle={{ color: 'rgb(var(--star-50) / 1)' }}
+                />
               </PieChart>
             </ResponsiveContainer>
             <div className="absolute inset-0 flex items-center justify-center text-xs text-star-400 font-bold pointer-events-none">{t.journal.distribution}</div>
@@ -1030,18 +1041,19 @@ export const CBTCompetenceView: React.FC<ViewProps> = ({ records, onClose, initi
     return { rate, avg, belief, advice, insight };
   }, [records, filterYear, filterMonth, t]);
 
-  const { analysis, loading } = useCBTAggregateAnalysis(
+  const { analysis, loading } = useCBTIndividualAnalysis(
     userProfile!,
     filterYear,
     filterMonth,
-    { competence_stats: stats },
+    'competence',
+    stats,
     language as 'zh' | 'en',
     { enabled: hasMonthlyRecords }
   );
 
-  const displayInsight = resolveAnalysisText(analysis?.competence_analysis?.insight, stats.insight);
-  const displayAdvice = resolveAnalysisText(analysis?.competence_analysis?.advice, stats.advice);
-  const displayAstro = resolveAnalysisText(analysis?.competence_analysis?.astro_note, t.journal.cbt_astro_note);
+  const displayInsight = resolveAnalysisText(analysis?.insight, stats.insight);
+  const displayAdvice = resolveAnalysisText(analysis?.advice, stats.advice);
+  const displayAstro = resolveAnalysisText(analysis?.astro_note, t.journal.cbt_astro_note);
   const noRecordText = t.journal.no_record_text;
   const showLoading = hasMonthlyRecords && loading;
   const insightHighlight = showLoading || !hasMonthlyRecords ? '' : t.journal.competence_assessment;

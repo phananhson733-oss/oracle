@@ -1,6 +1,6 @@
-// INPUT: React、认证上下文与 UI 组件依赖。
+// INPUT: React、认证上下文与 UI 组件依赖（含纸感映射）。
 // OUTPUT: 导出 Paywall 组件（用于限制付费功能访问）。
-// POS: Paywall 组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: Paywall 组件（含纸感映射与对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
@@ -153,7 +153,7 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
       {/* Paywall overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className={`w-full max-w-sm mx-4 p-6 rounded-xl shadow-2xl text-center ${
-          isDark ? 'bg-space-900 border border-space-600' : 'bg-white border border-paper-300'
+          isDark ? 'bg-space-900 border border-space-600' : 'bg-paper-100/85 border border-paper-300'
         }`}>
           {/* Icon */}
           <div className={`w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center ${

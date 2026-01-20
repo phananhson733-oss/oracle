@@ -1,5 +1,5 @@
-// INPUT: React、认证上下文、支付客户端与 UI 组件依赖（含订阅管理入口）。
-// OUTPUT: 导出升级订阅弹窗组件（ChatGPT 风格，含订阅管理跳转）。
+// INPUT: React、认证上下文、支付客户端与 UI 组件依赖（含订阅管理入口与纸感对比度修正）。
+// OUTPUT: 导出升级订阅弹窗组件（ChatGPT 风格，含订阅管理跳转与主题化按钮状态）。
 // POS: 升级订阅弹窗组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
@@ -171,7 +171,7 @@ const UpgradeModal: React.FC = () => {
         {/* Header with gradient */}
         <div className="text-center -mx-6 -mt-6 px-6 pt-8 pb-6 bg-gradient-to-b from-gold-500/10 to-transparent">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 mb-4">
-            <Crown className="w-8 h-8 text-white" />
+            <Crown className="w-8 h-8 text-space-950" />
           </div>
           <h2 className={`text-2xl font-serif font-bold mb-2 ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
             {tr.title}
@@ -189,7 +189,7 @@ const UpgradeModal: React.FC = () => {
         {/* Already subscriber */}
         {isAlreadySubscriber ? (
           <div className="text-center py-4">
-            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-success/20 text-success' : 'bg-green-100 text-green-700'}`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 text-success">
               <Check className="w-4 h-4" />
               <span className="font-medium">{tr.alreadyPro}</span>
             </div>
@@ -211,8 +211,8 @@ const UpgradeModal: React.FC = () => {
                     selectedPlan === 'monthly'
                       ? isDark
                         ? 'bg-space-700 shadow-lg'
-                        : 'bg-white shadow-md'
-                      : 'hover:bg-white/5'
+                        : 'bg-paper-100/90 shadow-md'
+                      : (isDark ? 'hover:bg-space-900/60' : 'hover:bg-paper-200/60')
                   }`}
                 >
                   <div className={`text-sm font-medium ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
@@ -233,13 +233,13 @@ const UpgradeModal: React.FC = () => {
                     selectedPlan === 'yearly'
                       ? isDark
                         ? 'bg-space-700 shadow-lg ring-2 ring-gold-500'
-                        : 'bg-white shadow-md ring-2 ring-gold-500'
-                      : 'hover:bg-white/5'
+                        : 'bg-paper-100/90 shadow-md ring-2 ring-gold-500'
+                      : (isDark ? 'hover:bg-space-900/60' : 'hover:bg-paper-200/60')
                   }`}
                 >
                   {/* Popular badge */}
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2">
-                    <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-white rounded-full">
+                    <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-space-950 rounded-full">
                       {tr.popular}
                     </span>
                   </div>
@@ -262,7 +262,7 @@ const UpgradeModal: React.FC = () => {
             {/* Features comparison */}
             <div className="grid md:grid-cols-2 gap-4">
               {/* Free tier */}
-              <div className={`p-4 rounded-xl border ${isDark ? 'border-white/10 bg-space-800/50' : 'border-paper-300 bg-paper-100'}`}>
+              <div className={`p-4 rounded-xl border ${isDark ? 'border-gold-500/15 bg-space-800/50' : 'border-paper-300 bg-paper-100'}`}>
                 <div className={`text-xs font-bold uppercase tracking-wider mb-3 ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
                   {tr.free.title}
                 </div>
@@ -309,7 +309,7 @@ const UpgradeModal: React.FC = () => {
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">
-                  <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span className={`w-4 h-4 border-2 rounded-full animate-spin ${isDark ? 'border-star-200/40 border-t-star-50' : 'border-paper-300/60 border-t-paper-900'}`} />
                 </span>
               ) : isAuthenticated ? (
                 <span className="flex items-center justify-center gap-2">

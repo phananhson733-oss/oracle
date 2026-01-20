@@ -1,4 +1,4 @@
-// INPUT: React、星盘数据与星体配色配置（含 1280px 画布对齐、宫头标注沿星座环排布并拉开度分间距、北交点跨盘相位补全）。
+// INPUT: React、星盘数据与星体配色配置（含 1280px 画布对齐、宫头标注沿星座环排布并拉开度分间距、北交点跨盘相位补全、主题化色值映射）。
 // OUTPUT: 导出星盘可视化组件（含分层相位渲染、配置驱动显示与主题支持，双人盘补齐北交点相位线）。
 // POS: 主应用星盘绘制组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -577,34 +577,57 @@ export const AstroChart: React.FC<AstroChartProps> = ({
   // -- Visual Theme Config --
   const isDark = theme === 'dark';
 
+  const token = (name: string, alpha = 1) => `rgb(var(--${name}) / ${alpha})`;
+
   // Celestial color palette
-  const colors = useMemo(() => ({
-    // Background & Structure
-    bgGradientStart: isDark ? '#0a0e1a' : '#f8f9fc',
-    bgGradientMid: isDark ? '#070a12' : '#f0f2f7',
-    bgGradientEnd: isDark ? '#030407' : '#e8eaf0',
+  const colors = useMemo(() => {
+    const space950 = token('space-950', 1);
+    const space900 = token('space-900', 1);
+    const space800 = token('space-800', 1);
+    const star50 = token('star-50', 1);
+    const star200 = token('star-200', 1);
+    const star400 = token('star-400', 1);
+    const accentStrong = isDark ? 'rgb(198 160 98 / 1)' : 'rgb(159 118 69 / 1)';
+    const accentSoft = isDark ? 'rgb(198 160 98 / 0.6)' : 'rgb(159 118 69 / 0.5)';
+    const textShadow = isDark
+      ? '0 0 3px rgb(var(--space-950) / 0.9)'
+      : '0 0 2px rgb(var(--space-900) / 0.35)';
+    const textShadowStrong = isDark
+      ? '0 0 4px rgb(var(--space-950) / 0.9)'
+      : '0 0 3px rgb(var(--space-900) / 0.35)';
 
-    // Lines & Borders
-    strokePrimary: isDark ? 'rgba(99, 130, 190, 0.4)' : 'rgba(100, 116, 150, 0.3)',
-    strokeSecondary: isDark ? 'rgba(99, 130, 190, 0.2)' : 'rgba(100, 116, 150, 0.15)',
-    strokeAccent: isDark ? 'rgba(212, 175, 55, 0.6)' : 'rgba(180, 140, 40, 0.5)',
+    return {
+      // Background & Structure
+      bgGradientStart: space950,
+      bgGradientMid: space900,
+      bgGradientEnd: space800,
 
-    // House elements
-    houseLineColor: isDark ? 'rgba(140, 160, 200, 0.15)' : 'rgba(80, 90, 120, 0.12)',
-    houseBandColor: isDark ? 'rgba(100, 130, 180, 0.04)' : 'rgba(80, 100, 140, 0.03)',
-    houseNumColor: isDark ? '#d4af37' : '#b8860b',
+      // Lines & Borders
+      strokePrimary: token('space-600', isDark ? 0.4 : 0.3),
+      strokeSecondary: token('space-600', isDark ? 0.2 : 0.15),
+      strokeAccent: accentSoft,
 
-    // Planet backgrounds
-    planetBg: isDark ? '#0a0e1a' : '#ffffff',
-    planetBgOuter: isDark ? '#0d1220' : '#f5f6f8',
+      // House elements
+      houseLineColor: token('space-600', isDark ? 0.16 : 0.12),
+      houseBandColor: token('space-900', isDark ? 0.06 : 0.04),
+      houseNumColor: accentStrong,
 
-    // Angle labels
-    angleColor: isDark ? '#c9d1e0' : '#4a5568',
-    angleShadow: isDark ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.9)',
+      // Planet backgrounds
+      planetBg: space950,
+      planetBgOuter: space900,
 
-    // Cosmic accents
-    starDust: isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.01)',
-  }), [isDark]);
+      // Label tones
+      angleColor: star200,
+      labelPrimary: star50,
+      labelSecondary: star200,
+      labelMuted: star400,
+      textShadow,
+      textShadowStrong,
+
+      // Cosmic accents
+      starDust: isDark ? token('star-50', 0.03) : token('space-950', 0.02),
+    };
+  }, [isDark]);
 
   const isBiWheel = type === 'synastry' || type === 'transit';
 
@@ -729,7 +752,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
     const aspectRadius = R_ASPECT_LINE_MAX;
     const c1 = getCoords(toRenderAngle(p1.absAngle), aspectRadius);
     const c2 = getCoords(toRenderAngle(p2.absAngle), aspectRadius);
-    const color = ASPECT_COLORS[aspect.type] || '#fff';
+    const color = ASPECT_COLORS[aspect.type] || colors.labelPrimary;
     const style = VISUAL_LAYER_STYLES[aspect.layer];
 
     return (
@@ -782,7 +805,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
           <svg
             viewBox="0 0 400 400"
             className="w-full max-w-[1280px] aspect-square"
-            style={{ filter: isDark ? 'drop-shadow(0 4px 24px rgba(0,0,0,0.5))' : 'drop-shadow(0 4px 20px rgba(0,0,0,0.08))' }}
+            style={{ filter: isDark ? 'drop-shadow(0 4px 24px rgb(var(--space-950) / 0.5))' : 'drop-shadow(0 4px 20px rgb(var(--space-900) / 0.12))' }}
           >
             <defs>
               {/* Cosmic Background Gradient */}
@@ -885,9 +908,9 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                     dominantBaseline="middle"
                     fontSize="9"
                     fontWeight="600"
-                    fill={isDark ? '#e2e8f0' : '#334155'}
+                    fill={colors.labelPrimary}
                     fontFamily="system-ui, sans-serif"
-                    style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.8)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                    style={{ textShadow: colors.textShadow }}
                   >
                     {degreeInSign}
                   </text>
@@ -901,7 +924,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                     fontWeight="700"
                     fill={signMeta?.color || colors.angleColor}
                     fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
-                    style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.8)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                    style={{ textShadow: colors.textShadow }}
                   >
                     {signMeta?.glyph || ''}
                   </text>
@@ -913,9 +936,9 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                     dominantBaseline="middle"
                     fontSize="7"
                     fontWeight="400"
-                    fill={isDark ? '#94a3b8' : '#64748b'}
+                    fill={colors.labelMuted}
                     fontFamily="system-ui, sans-serif"
-                    style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.8)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                    style={{ textShadow: colors.textShadow }}
                   >
                     {String(minute).padStart(2, '0')}
                   </text>
@@ -997,7 +1020,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                   fontWeight="600"
                   fontFamily="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
                   style={{
-                    textShadow: isDark ? '0 0 4px rgba(0,0,0,0.9)' : '0 0 3px rgba(255,255,255,0.9)',
+                    textShadow: colors.textShadowStrong,
                     letterSpacing: '0.02em'
                   }}
                 >
@@ -1026,7 +1049,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
             {!isBiWheel && (
               <g transform={`rotate(${ascendantOffset}, 200, 200)`}>
                 {chartData.innerDisplay.map((p, i) => {
-                  const meta = PLANET_META[p.name] || { glyph: p.name[0], color: '#888' };
+                  const meta = PLANET_META[p.name] || { glyph: p.name[0], color: colors.labelMuted };
                   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
                   const svgPath = PLANET_SVG_PATHS[p.name];
 
@@ -1087,7 +1110,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           fontSize="14"
                           fill={meta.color}
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
-                          style={{ textShadow: isDark ? '0 0 4px rgba(0,0,0,0.9)' : '0 0 3px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadowStrong }}
                         >
                           {meta.glyph}
                         </text>
@@ -1099,10 +1122,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                         dominantBaseline="middle"
                         fontSize="11"
                         fontWeight="600"
-                        fill={isDark ? '#e2e8f0' : '#1e293b'}
+                        fill={colors.labelPrimary}
                         fontFamily="system-ui, sans-serif"
                         transform={`rotate(${-ascendantOffset}, ${pos2.x}, ${pos2.y})`}
-                        style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                        style={{ textShadow: colors.textShadow }}
                       >
                         {deg}°
                       </text>
@@ -1113,9 +1136,9 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="12"
-                          fill={signMeta?.color || '#888'}
+                          fill={signMeta?.color || colors.labelMuted}
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
-                          style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadow }}
                         >
                           {signMeta?.glyph || ''}
                         </text>
@@ -1126,10 +1149,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                         textAnchor="middle"
                         dominantBaseline="middle"
                         fontSize="9"
-                        fill={isDark ? '#94a3b8' : '#64748b'}
+                        fill={colors.labelMuted}
                         fontFamily="system-ui, sans-serif"
                         transform={`rotate(${-ascendantOffset}, ${pos4.x}, ${pos4.y})`}
-                        style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                        style={{ textShadow: colors.textShadow }}
                       >
                         {min}'
                       </text>
@@ -1140,11 +1163,12 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="8"
-                          fill="#ef4444"
+                          fill="currentColor"
+                          className="text-danger"
                           fontWeight="600"
                           fontFamily="system-ui, sans-serif"
                           transform={`rotate(${-ascendantOffset}, ${pos5.x}, ${pos5.y})`}
-                          style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadow }}
                         >
                           {retrograde}
                         </text>
@@ -1163,7 +1187,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                 {/* 外环行星位置信息（行运/对比盘的外环） */}
                 {chartData.outer.map((p, i) => {
                   const baseName = stripOuterPrefix(p.name);
-                  const meta = PLANET_META[baseName] || { glyph: baseName[0], color: '#10B981' };
+                  const meta = PLANET_META[baseName] || { glyph: baseName[0], color: colors.labelSecondary };
                   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
 
                   const deg = Math.floor(p.degree);
@@ -1224,7 +1248,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           fontSize="11"
                           fill={meta.color}
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
-                          style={{ textShadow: isDark ? '0 0 4px rgba(0,0,0,0.9)' : '0 0 3px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadowStrong }}
                         >
                           {meta.glyph}
                         </text>
@@ -1236,10 +1260,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                         dominantBaseline="middle"
                         fontSize="8"
                         fontWeight="600"
-                        fill={isDark ? '#e2e8f0' : '#1e293b'}
+                        fill={colors.labelPrimary}
                         fontFamily="system-ui, sans-serif"
                         transform={`rotate(${-ascendantOffset}, ${pos2.x}, ${pos2.y})`}
-                        style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                        style={{ textShadow: colors.textShadow }}
                       >
                         {deg}°
                       </text>
@@ -1250,9 +1274,9 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="9"
-                          fill={signMeta?.color || '#888'}
+                          fill={signMeta?.color || colors.labelMuted}
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
-                          style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadow }}
                         >
                           {signMeta?.glyph || ''}
                         </text>
@@ -1263,10 +1287,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                         textAnchor="middle"
                         dominantBaseline="middle"
                         fontSize="6"
-                        fill={isDark ? '#94a3b8' : '#64748b'}
+                        fill={colors.labelMuted}
                         fontFamily="system-ui, sans-serif"
                         transform={`rotate(${-ascendantOffset}, ${pos4.x}, ${pos4.y})`}
-                        style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                        style={{ textShadow: colors.textShadow }}
                       >
                         {min}'
                       </text>
@@ -1277,11 +1301,12 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="5"
-                          fill="#ef4444"
+                          fill="currentColor"
+                          className="text-danger"
                           fontWeight="600"
                           fontFamily="system-ui, sans-serif"
                           transform={`rotate(${-ascendantOffset}, ${pos5.x}, ${pos5.y})`}
-                          style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadow }}
                         >
                           {retrograde}
                         </text>
@@ -1292,7 +1317,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
 
                 {/* 内环行星位置信息（本命盘） */}
                 {chartData.innerDisplay.map((p, i) => {
-                  const meta = PLANET_META[p.name] || { glyph: p.name[0], color: '#888' };
+                  const meta = PLANET_META[p.name] || { glyph: p.name[0], color: colors.labelMuted };
                   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
                   const svgPath = PLANET_SVG_PATHS[p.name];
 
@@ -1354,7 +1379,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           fontSize="11"
                           fill={meta.color}
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
-                          style={{ textShadow: isDark ? '0 0 4px rgba(0,0,0,0.9)' : '0 0 3px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadowStrong }}
                         >
                           {meta.glyph}
                         </text>
@@ -1366,10 +1391,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                         dominantBaseline="middle"
                         fontSize="8"
                         fontWeight="600"
-                        fill={isDark ? '#e2e8f0' : '#1e293b'}
+                        fill={colors.labelPrimary}
                         fontFamily="system-ui, sans-serif"
                         transform={`rotate(${-ascendantOffset}, ${pos2.x}, ${pos2.y})`}
-                        style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                        style={{ textShadow: colors.textShadow }}
                       >
                         {deg}°
                       </text>
@@ -1380,9 +1405,9 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="9"
-                          fill={signMeta?.color || '#888'}
+                          fill={signMeta?.color || colors.labelMuted}
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
-                          style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadow }}
                         >
                           {signMeta?.glyph || ''}
                         </text>
@@ -1393,10 +1418,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                         textAnchor="middle"
                         dominantBaseline="middle"
                         fontSize="6"
-                        fill={isDark ? '#94a3b8' : '#64748b'}
+                        fill={colors.labelMuted}
                         fontFamily="system-ui, sans-serif"
                         transform={`rotate(${-ascendantOffset}, ${pos4.x}, ${pos4.y})`}
-                        style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                        style={{ textShadow: colors.textShadow }}
                       >
                         {min}'
                       </text>
@@ -1407,11 +1432,12 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="5"
-                          fill="#ef4444"
+                          fill="currentColor"
+                          className="text-danger"
                           fontWeight="600"
                           fontFamily="system-ui, sans-serif"
                           transform={`rotate(${-ascendantOffset}, ${pos5.x}, ${pos5.y})`}
-                          style={{ textShadow: isDark ? '0 0 3px rgba(0,0,0,0.9)' : '0 0 2px rgba(255,255,255,0.9)' }}
+                          style={{ textShadow: colors.textShadow }}
                         >
                           {retrograde}
                         </text>

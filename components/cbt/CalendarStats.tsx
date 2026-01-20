@@ -1,4 +1,4 @@
-// INPUT: React、统计数据与主题（含单屏月视图布局、月份联动与统计入口卡片精简展示）。
+// INPUT: React、统计数据与主题（含单屏月视图布局、月份联动与统计入口卡片精简展示、纸感映射）。
 // OUTPUT: 导出日历统计组件（单屏 31 天、紧凑布局并以 icon+短标题呈现统计入口）。
 // POS: CBT 统计视图组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -28,7 +28,7 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
   const calendarShellTone = isLight ? 'bg-paper-100/80 border-paper-300' : 'bg-space-800/20 border-gold-500/10';
   const weekdayTone = isLight ? 'text-paper-600' : 'text-star-400';
   const statCardTone = isLight
-    ? 'bg-white/90 border-paper-300 text-paper-900 shadow-sm'
+    ? 'bg-paper-100/85 border-paper-300 text-paper-900 shadow-sm'
     : 'bg-space-900/60 border-gold-500/10 text-star-50 shadow-[0_20px_40px_-25px_rgba(0,0,0,0.6)]';
   const statCardHoverTone = isLight
     ? 'hover:border-gold-500/50 hover:bg-paper-50 hover:shadow-glow'
@@ -245,7 +245,7 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
             className="relative group overflow-hidden px-8 py-4 rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-gold-500/20"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 animate-gradient-x"></div>
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            <div className="absolute inset-0 bg-space-950/10 group-hover:bg-transparent transition-colors"></div>
             <div className="relative flex items-center gap-3">
               <span className="text-space-950 font-black text-xs uppercase tracking-[0.4em]">{t.journal.start_deep_record}</span>
               <Sparkles size={18} className="text-space-900 animate-pulse" />
@@ -329,7 +329,7 @@ const MonthPickerModal: React.FC<{
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-6 animate-in fade-in duration-300">
-      <div className={`absolute inset-0 backdrop-blur-xl ${isLight ? 'bg-paper-200/80' : 'bg-black/85'}`} onClick={onClose}></div>
+      <div className={`absolute inset-0 backdrop-blur-xl ${isLight ? 'bg-paper-200/80' : 'bg-space-950/85'}`} onClick={onClose}></div>
       <div className={`relative w-full max-w-[240px] border rounded-[2.5rem] shadow-[0_40px_100px_-15px_rgba(0,0,0,0.8)] overflow-hidden animate-in zoom-in-95 duration-300 ${pickerShellTone}`}>
         <div className="p-6 pb-2">
           <h3 className="text-lg font-black text-star-200 mb-6 text-center tracking-tighter uppercase opacity-60">{t.journal.select_time}</h3>

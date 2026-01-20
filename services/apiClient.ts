@@ -1,5 +1,5 @@
-// INPUT: 后端 API 客户端与查询参数构建（含百科入口、经典书架缓存版本与 Ask/Synastry 权益校验与详情解读缓存提示）。
-// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、经典缓存版本策略与详情解读缓存策略）。
+// INPUT: 后端 API 客户端与查询参数构建（含百科入口、经典书架缓存版本与 Ask/Synastry 权益校验、地理搜索多语言参数）。
+// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略）。
 // POS: 前端 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 /// <reference types="vite/client" />
@@ -912,6 +912,7 @@ export async function fetchCBTRecords(userId: string) {
   return res.json();
 }
 
+/** @deprecated 使用独立的 fetchCBTSomaticAnalysis/RootAnalysis/MoodAnalysis/CompetenceAnalysis 替代 */
 export async function fetchCBTAggregateAnalysis(
   profile: UserProfile,
   period: string,
@@ -945,9 +946,114 @@ export async function fetchCBTAggregateAnalysis(
   return res.json();
 }
 
+// === CBT 独立统计分析 API ===
+
+export interface CBTAnalysisResult {
+  insight: string;
+  advice: string;
+  astro_note: string;
+}
+
+/** 身心信号统计分析 */
+export async function fetchCBTSomaticAnalysis(
+  profile: UserProfile,
+  period: string,
+  somatic_stats: unknown,
+  lang: 'zh' | 'en' = 'zh'
+): Promise<{ lang: string; content: CBTAnalysisResult }> {
+  const birth = profileToBirthInput(profile);
+  const res = await fetch(`${API_BASE}/cbt/somatic-analysis`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ birth, lang, period, somatic_stats }),
+  });
+  if (!res.ok) {
+    const { message, reason, payload } = await parseErrorPayload(res);
+    const error = new Error(message || 'Failed to fetch somatic analysis') as ApiError;
+    error.status = res.status;
+    error.reason = reason;
+    error.payload = payload;
+    throw error;
+  }
+  return res.json();
+}
+
+/** 根源与资源统计分析 */
+export async function fetchCBTRootAnalysis(
+  profile: UserProfile,
+  period: string,
+  root_stats: unknown,
+  lang: 'zh' | 'en' = 'zh'
+): Promise<{ lang: string; content: CBTAnalysisResult }> {
+  const birth = profileToBirthInput(profile);
+  const res = await fetch(`${API_BASE}/cbt/root-analysis`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ birth, lang, period, root_stats }),
+  });
+  if (!res.ok) {
+    const { message, reason, payload } = await parseErrorPayload(res);
+    const error = new Error(message || 'Failed to fetch root analysis') as ApiError;
+    error.status = res.status;
+    error.reason = reason;
+    error.payload = payload;
+    throw error;
+  }
+  return res.json();
+}
+
+/** 情绪配方统计分析 */
+export async function fetchCBTMoodAnalysis(
+  profile: UserProfile,
+  period: string,
+  mood_stats: unknown,
+  lang: 'zh' | 'en' = 'zh'
+): Promise<{ lang: string; content: CBTAnalysisResult }> {
+  const birth = profileToBirthInput(profile);
+  const res = await fetch(`${API_BASE}/cbt/mood-analysis`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ birth, lang, period, mood_stats }),
+  });
+  if (!res.ok) {
+    const { message, reason, payload } = await parseErrorPayload(res);
+    const error = new Error(message || 'Failed to fetch mood analysis') as ApiError;
+    error.status = res.status;
+    error.reason = reason;
+    error.payload = payload;
+    throw error;
+  }
+  return res.json();
+}
+
+/** CBT 能力统计分析 */
+export async function fetchCBTCompetenceAnalysis(
+  profile: UserProfile,
+  period: string,
+  competence_stats: unknown,
+  lang: 'zh' | 'en' = 'zh'
+): Promise<{ lang: string; content: CBTAnalysisResult }> {
+  const birth = profileToBirthInput(profile);
+  const res = await fetch(`${API_BASE}/cbt/competence-analysis`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ birth, lang, period, competence_stats }),
+  });
+  if (!res.ok) {
+    const { message, reason, payload } = await parseErrorPayload(res);
+    const error = new Error(message || 'Failed to fetch competence analysis') as ApiError;
+    error.status = res.status;
+    error.reason = reason;
+    error.payload = payload;
+    throw error;
+  }
+  return res.json();
+}
+
 // === Geo API ===
-export async function searchCities(query: string, limit = 5) {
+export async function searchCities(query: string, limit = 5, lang?: Language) {
   const params = new URLSearchParams({ q: query, limit: String(limit) });
+  if (lang) params.set('lang', lang);
   const res = await fetch(`${API_BASE}/geo/search?${params}`);
   if (!res.ok) throw new Error('Failed to search cities');
   return res.json();

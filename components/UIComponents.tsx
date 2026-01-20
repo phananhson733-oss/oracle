@@ -1,6 +1,6 @@
-// INPUT: React、类型与常量依赖（含卡片基础样式、迁移后云端资料回填与详情解读分区卡片）。
-// OUTPUT: 导出 UI 原语与上下文（含可调宽度的 Modal 与结构化详情解读分区）。
-// POS: 主应用基础组件库。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、类型与常量依赖（含卡片基础样式、纸感映射与详情解读编号规范）。
+// OUTPUT: 导出 UI 原语与上下文（含可调宽度的 Modal、Ask 报告对齐的详情解读布局与编号展示）。
+// POS: 主应用基础组件库（含 light theme 纸感映射与详情解读编号化）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { ReactNode, useState, createContext, useContext, useEffect } from 'react';
@@ -127,11 +127,11 @@ const getStyles = (theme: Theme) => ({
 
     // Cards (Frosted Surfaces)
     card: theme === 'dark'
-        ? "bg-space-900/60 border border-space-700/70 shadow-card backdrop-blur-lg"
+        ? "bg-space-900/60 border border-space-700/80 shadow-card backdrop-blur-lg"
         : "bg-paper-100/85 border border-paper-300/80 shadow-sm backdrop-blur",
     cardLeft: theme === 'dark'
-        ? "!border-l-space-700/70"
-        : "!border-l-paper-300/80",
+        ? "!border-l-space-700/40"
+        : "!border-l-paper-300/40",
     cardAccent: theme === 'dark'
         ? "before:bg-accent/60"
         : "before:bg-gold-500/50",
@@ -142,7 +142,7 @@ const getStyles = (theme: Theme) => ({
 
     // Typography
     heading: theme === 'dark' ? "text-star-50" : "text-paper-900",
-    body: theme === 'dark' ? "text-star-200" : "text-paper-400",
+    body: theme === 'dark' ? "text-star-200" : "text-paper-600",
     muted: theme === 'dark' ? "text-star-400" : "text-paper-400",
 
     // Borders - 使用温暖的金色调分割线
@@ -151,7 +151,7 @@ const getStyles = (theme: Theme) => ({
     // Inputs
     input: theme === 'dark'
         ? "bg-space-900/70 border-gold-500/20 text-star-50 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-star-400/60"
-        : "bg-white/90 border-paper-300 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-paper-400"
+        : "bg-paper-100/85 border-paper-300 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-paper-400"
 });
 
 // --- Layout & wrappers ---
@@ -201,10 +201,10 @@ export const Card: React.FC<{ children: ReactNode, onClick?: () => void, classNa
       <div
         onClick={onClick}
         className={`
-            rounded-xl transition-colors duration-150
+            rounded-2xl transition-all duration-300 ease-in-out
             ${s.card}
             ${onClick ? `cursor-pointer ${s.hover}` : ''}
-            ${noPadding ? '' : 'p-5'}
+            ${noPadding ? '' : 'p-6'}
             ${className}
         `}
       >
@@ -220,7 +220,7 @@ export const GlassInput: React.FC<React.InputHTMLAttributes<HTMLInputElement>> =
       <div className="relative group">
         <input 
           {...props}
-          className={`w-full h-10 px-3 py-2 rounded-lg outline-none transition-all duration-150 font-sans text-sm ${s.input} ${props.className}`}
+          className={`w-full min-h-[44px] px-5 py-4 rounded-xl outline-none transition-all duration-300 ease-in-out font-sans text-sm ${s.input} ${props.className}`}
         />
       </div>
     );
@@ -228,6 +228,7 @@ export const GlassInput: React.FC<React.InputHTMLAttributes<HTMLInputElement>> =
 
 export const ActionButton: React.FC<{ children: ReactNode, onClick?: () => void, variant?: 'primary' | 'secondary' | 'outline' | 'ghost', disabled?: boolean, className?: string, size?: 'sm' | 'md' | 'lg', ariaLabel?: string }> = ({ children, onClick, variant = 'primary', disabled, className="", size = 'md', ariaLabel }) => {
   const { theme } = useTheme();
+  const focusRingOffset = theme === 'dark' ? 'focus-visible:ring-offset-space-950' : 'focus-visible:ring-offset-paper-100';
 
   // 8pt Grid Heights - Mobile touch target minimum 44px
   const sizes = {
@@ -243,7 +244,7 @@ export const ActionButton: React.FC<{ children: ReactNode, onClick?: () => void,
     // Secondary: Border + Hover Gold Tint
     secondary: theme === 'dark'
         ? "bg-space-800/70 text-star-50 hover:bg-space-700/70 hover:border-accent/60 border border-gold-500/20"
-        : "bg-white text-paper-900 hover:bg-paper-100 hover:border-accent/50 border border-paper-300",
+        : "bg-paper-100/85 text-paper-900 hover:bg-paper-100 hover:border-accent/50 border border-paper-300",
 
     // Outline: Transparent + Border
     outline: theme === 'dark'
@@ -251,7 +252,9 @@ export const ActionButton: React.FC<{ children: ReactNode, onClick?: () => void,
         : "bg-transparent text-paper-900 border border-paper-300 hover:border-accent/50",
 
     // Ghost: Text Only + Hover Background
-    ghost: "bg-transparent hover:bg-space-700/50 text-accent hover:text-accent-hover border-none shadow-none"
+    ghost: theme === 'dark'
+        ? "bg-transparent hover:bg-space-700/50 text-accent hover:text-accent-hover border-none shadow-none"
+        : "bg-transparent hover:bg-paper-200/60 text-accent hover:text-accent-hover border-none shadow-none"
   };
 
   return (
@@ -260,10 +263,10 @@ export const ActionButton: React.FC<{ children: ReactNode, onClick?: () => void,
         disabled={disabled}
         aria-label={ariaLabel}
         className={`
-            rounded-lg font-medium tracking-wide transition-all duration-150
+            rounded-xl font-medium tracking-wide transition-all duration-300 ease-in-out
             flex items-center justify-center gap-2
             disabled:opacity-50 disabled:cursor-not-allowed
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-space-950
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${focusRingOffset}
             ${sizes[size]}
             ${variants[variant]}
             ${className}
@@ -331,7 +334,7 @@ export const Accordion: React.FC<{
   };
 
   return (
-    <div className={`rounded-lg overflow-hidden mb-3 border transition-colors ${isOpen ? 'border-accent/40' : s.divider} ${theme === 'dark' ? 'bg-space-900/40' : 'bg-white/60'}`}>
+    <div className={`rounded-xl overflow-hidden mb-3 border transition-all duration-300 ease-in-out ${isOpen ? 'border-accent/40' : s.divider} ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100/70'}`}>
       <button
         id={buttonId}
         onClick={handleToggle}
@@ -382,7 +385,7 @@ export const TimelineCard: React.FC<{
   return (
     <div
         onClick={onClick}
-        className={`group relative pl-6 border-l-2 ${theme === 'dark' ? 'border-gold-500/20 hover:border-accent' : 'border-paper-300 hover:border-accent'} transition-colors cursor-pointer py-3`}
+        className={`group relative pl-6 border-l ${theme === 'dark' ? 'border-gold-500/20 hover:border-accent' : 'border-paper-300 hover:border-accent'} transition-colors cursor-pointer py-3`}
     >
       <div className={`absolute left-[-5px] top-5 w-2 h-2 rounded-full ${intensityColor[intensity]}`} />
       
@@ -504,21 +507,21 @@ export const Modal: React.FC<{ isOpen: boolean, onClose: () => void, title?: str
       aria-label={ariaLabel || title}
     >
       <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-space-950/40 backdrop-blur-sm transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
       <div
         ref={modalRef}
         tabIndex={-1}
-        className={`relative w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-xl shadow-2xl z-10 animate-slide-up border ${s.divider} ${theme === 'dark' ? 'bg-space-900' : 'bg-white'} ${className} focus:outline-none`}
+        className={`relative w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-2xl shadow-2xl z-10 animate-slide-up border ${s.divider} ${theme === 'dark' ? 'bg-space-900' : 'bg-paper-100/85'} ${className} focus:outline-none`}
       >
-        <div className={`sticky top-0 z-20 flex justify-between items-center px-6 py-4 border-b ${s.divider} backdrop-blur-md ${theme === 'dark' ? 'bg-space-900/80' : 'bg-white/80'}`}>
+        <div className={`sticky top-0 z-20 flex justify-between items-center px-6 py-4 border-b ${s.divider} backdrop-blur-md ${theme === 'dark' ? 'bg-space-900/80' : 'bg-paper-100/80'}`}>
           {title && <h2 id="modal-title" className={`text-lg font-semibold ${s.heading}`}>{title}</h2>}
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className={`w-8 h-8 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 flex items-center justify-center rounded-lg transition-colors ${s.muted} hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
+            className={`w-8 h-8 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 flex items-center justify-center rounded-lg transition-all duration-300 ease-in-out ${s.muted} ${theme === 'dark' ? 'hover:bg-space-800/60' : 'hover:bg-paper-200/60'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
           >
             <span aria-hidden="true">✕</span>
           </button>
@@ -664,20 +667,14 @@ export const DetailModal: React.FC<DetailModalProps> = ({
   const { language, t } = useLanguage();
   const isLight = theme === 'light';
 
-  // 样式定义 (CBT风格)
+  // 样式定义（对齐 Ask 报告卡片节奏）
   const containerTone = isLight ? 'bg-paper-100' : 'bg-space-950';
-  const panelTone = isLight
-    ? 'bg-paper-100/90 shadow-[0_16px_26px_rgba(122,104,78,0.14)]'
-    : 'bg-space-900/60 shadow-[0_18px_30px_rgba(0,0,0,0.35)]';
+  const panelTone = isLight ? 'bg-paper-100/85' : 'bg-space-900/60';
   const panelFrame = isLight
-    ? 'border border-paper-300/80 border-l-2 border-l-gold-600/40'
-    : 'border border-space-700/70 border-l-2 border-l-gold-500/40';
-  const heroTone = isLight
-    ? 'bg-gradient-to-br from-paper-100 via-paper-50 to-paper-100'
-    : 'bg-gradient-to-br from-space-900 via-space-900 to-space-800';
-  const heroFrame = isLight
-    ? 'border border-paper-300/80 border-l-2 border-l-gold-600/50'
-    : 'border border-space-700/70 border-l-2 border-l-gold-500/40';
+    ? 'border border-paper-300/80 border-l border-l-gold-500/40 shadow-sm'
+    : 'border border-space-700/70 border-l border-l-gold-500/40 shadow-card';
+  const heroTone = panelTone;
+  const heroFrame = panelFrame;
   const mutedTextTone = isLight ? 'text-paper-500' : 'text-star-400';
   const bodyTextTone = isLight ? 'text-paper-700' : 'text-star-200';
   const goldIconTone = isLight ? 'bg-gold-500/15 text-gold-700' : 'bg-gold-500/10 text-gold-400';
@@ -709,7 +706,7 @@ export const DetailModal: React.FC<DetailModalProps> = ({
           onClick={onClose}
           className={`fixed top-6 left-6 z-[210] flex items-center gap-3 transition-all font-bold group text-star-400 hover:text-gold-400`}
         >
-          <div className="p-2 rounded-xl transition-all bg-white/5 group-hover:bg-gold-500/20">
+          <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-paper-100/85 border border-paper-300 group-hover:bg-paper-200' : 'bg-space-900/60 group-hover:bg-gold-500/20'}`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
             </svg>
@@ -729,25 +726,25 @@ export const DetailModal: React.FC<DetailModalProps> = ({
     ? new Set(['观点', '机制', '建议'])
     : new Set(['key', 'mechanism', 'action']);
   const blockSurface = isLight
-    ? 'bg-white/70 border border-paper-300/80 shadow-[0_12px_20px_rgba(122,104,78,0.08)]'
+    ? 'bg-paper-100/85 border border-paper-300/80 shadow-[0_12px_20px_rgba(122,104,78,0.08)]'
     : 'bg-space-950/40 border border-space-700/70 shadow-[0_14px_26px_rgba(0,0,0,0.35)]';
   const tones = {
     core: {
-      accent: isLight ? 'border-l-gold-600' : 'border-l-gold-400',
+      accent: isLight ? 'border-l-gold-600/40' : 'border-l-gold-400/40',
       badge: isLight ? 'border-gold-600/30 bg-gold-500/10 text-gold-700' : 'border-gold-500/30 bg-gold-500/10 text-gold-300',
       label: isLight ? 'text-gold-700' : 'text-gold-300',
       dot: isLight ? 'bg-gold-600' : 'bg-gold-400',
       surface: blockSurface,
     },
     mechanism: {
-      accent: isLight ? 'border-l-purple-500' : 'border-l-purple-400',
+      accent: isLight ? 'border-l-purple-500/40' : 'border-l-purple-400/40',
       badge: isLight ? 'border-purple-500/30 bg-purple-500/10 text-purple-700' : 'border-purple-400/30 bg-purple-400/10 text-purple-300',
       label: isLight ? 'text-purple-700' : 'text-purple-300',
       dot: isLight ? 'bg-purple-500' : 'bg-purple-400',
       surface: blockSurface,
     },
     action: {
-      accent: isLight ? 'border-l-emerald-500' : 'border-l-emerald-400',
+      accent: isLight ? 'border-l-emerald-500/40' : 'border-l-emerald-400/40',
       badge: isLight ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-700' : 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300',
       label: isLight ? 'text-emerald-700' : 'text-emerald-300',
       dot: isLight ? 'bg-emerald-500' : 'bg-emerald-400',
@@ -785,16 +782,16 @@ export const DetailModal: React.FC<DetailModalProps> = ({
       separator: text.includes('：') ? '：' : ':',
     };
   };
-  const renderDetailLine = (line: string, tone: typeof tones.core) => {
+  const getDetailPayload = (line: string) => {
     const parsed = parseDetailLabel(line);
-    if (!parsed) return <span>{line}</span>;
-    return (
-      <span className="flex flex-wrap gap-1">
-        <span className={`${tone.label} font-semibold`}>{parsed.label}{parsed.separator}</span>
-        <span>{parsed.content}</span>
-      </span>
-    );
+    if (!parsed) return { isLabeled: false, content: line };
+    return { isLabeled: true, content: parsed.content };
   };
+  const renderDetailIndex = (tone: typeof tones.core, index: number) => (
+    <span className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold ${tone.badge}`}>
+      {index + 1}
+    </span>
+  );
 
   return (
     <div className={`fixed inset-0 z-[200] flex flex-col overflow-hidden animate-fade-in ${containerTone}`}>
@@ -803,7 +800,7 @@ export const DetailModal: React.FC<DetailModalProps> = ({
         onClick={onClose}
         className={`fixed top-6 left-6 z-[210] flex items-center gap-3 transition-all font-bold group ${mutedTextTone} hover:text-gold-400`}
       >
-        <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-white/90 border border-paper-300 group-hover:bg-paper-200 shadow-lg' : 'bg-white/5 group-hover:bg-gold-500/20'}`}>
+        <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-paper-100/85 border border-paper-300 group-hover:bg-paper-200 shadow-lg' : 'bg-space-900/60 group-hover:bg-gold-500/20'}`}>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
           </svg>
@@ -907,35 +904,38 @@ export const DetailModal: React.FC<DetailModalProps> = ({
                     {interpretationBlocks.map((block, idx) => {
                       const toneKey = resolveToneKey(block.heading) as keyof typeof tones;
                       const tone = tones[toneKey] || tones.fallback;
+                      let lineIndex = 0;
+                      const renderLine = (line: string, key: string) => {
+                        const payload = getDetailPayload(line);
+                        const index = lineIndex;
+                        lineIndex += 1;
+                        return (
+                          <div key={key} className="flex items-start gap-3">
+                            {renderDetailIndex(tone, index)}
+                            <span className={`text-sm md:text-base leading-relaxed ${bodyTextTone}`}>
+                              {payload.content}
+                            </span>
+                          </div>
+                        );
+                      };
                       return (
-                        <div key={`${block.heading}-${idx}`} className="space-y-3">
+                        <div key={`${block.heading}-${idx}`} className={`rounded-2xl p-4 md:p-5 space-y-3 ${tone.surface} border-l ${tone.accent}`}>
                           <div className="flex items-center gap-3">
                             <span className={`flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold ${tone.badge}`}>
                               {idx + 1}
                             </span>
                             <span className={`text-base font-semibold ${tone.label}`}>{block.heading}</span>
                           </div>
-                          <div className="pl-10 space-y-3">
+                          <div className="space-y-3">
                             {block.nodes.map((node, nodeIdx) => {
                               if (node.type === 'list' && node.items) {
                                 return (
-                                  <div key={nodeIdx} className="space-y-2">
-                                    {node.items.map((item, itemIdx) => (
-                                      <div key={itemIdx} className="flex items-start gap-3">
-                                        <span className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 ${tone.dot}`}></span>
-                                        <span className={`text-sm md:text-base leading-relaxed ${bodyTextTone}`}>
-                                          {renderDetailLine(item, tone)}
-                                        </span>
-                                      </div>
-                                    ))}
+                                  <div key={`${nodeIdx}-list`} className="space-y-2">
+                                    {node.items.map((item, itemIdx) => renderLine(item, `${nodeIdx}-${itemIdx}`))}
                                   </div>
                                 );
                               }
-                              return (
-                                <p key={nodeIdx} className={`text-sm md:text-base leading-relaxed ${bodyTextTone}`}>
-                                  {renderDetailLine(node.content, tone)}
-                                </p>
-                              );
+                              return renderLine(node.content, `p-${nodeIdx}`);
                             })}
                           </div>
                         </div>

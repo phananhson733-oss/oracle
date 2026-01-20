@@ -1,6 +1,6 @@
-<!-- INPUT: Claude 工具的 OpenSpec 助手指引。 -->
-<!-- OUTPUT: Claude 助手入口说明。 -->
-<!-- POS: Claude 助手入口文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+<!-- INPUT: Claude 工具的 OpenSpec 助手指引与 UI 规范入口。 -->
+<!-- OUTPUT: Claude 助手入口说明（含 UI 规范入口）。 -->
+<!-- POS: Claude 助手入口文档（含 UI 规范入口）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- OPENSPEC:START -->
 # OpenSpec 指令
 
@@ -19,3 +19,8 @@
 保持此管理块，以便 `openspec update` 可刷新指令。
 
 <!-- OPENSPEC:END -->
+
+## UI 规范入口
+
+- 唯一 UI 规范来源：[COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md)。
+- UI 变更必须对照该规范，并在 PR 中填写「UI 规范符合说明」（模板：`PULL_REQUEST_TEMPLATE.md`）。

@@ -1,5 +1,5 @@
-// INPUT: React、报告客户端与 UI 组件依赖（含报告卡片左侧强调样式调整）。
-// OUTPUT: 导出报告列表页面组件（含统一左侧色带的卡片布局）。
+// INPUT: React、报告客户端与 UI 组件依赖（含报告卡片左侧强调样式与按钮加载态修正）。
+// OUTPUT: 导出报告列表页面组件（含统一左侧色带与主题化加载态）。
 // POS: 报告列表页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
@@ -184,7 +184,7 @@ const ReportsPage: React.FC = () => {
                 <Card
                   key={report.id}
                   onClick={() => handleView(report.id)}
-                  className="cursor-pointer hover:scale-[1.02] transition-transform border-l-2 border-l-gold-500/50"
+                  className="cursor-pointer hover:scale-[1.02] transition-transform border-l border-l-gold-500/40"
                 >
                   <div className="flex items-start gap-4">
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${display.color} flex items-center justify-center text-2xl`}>
@@ -220,7 +220,7 @@ const ReportsPage: React.FC = () => {
             const isPurchasing = purchasingType === report.type;
 
             return (
-              <Card key={report.type} className="overflow-hidden border-l-2 border-l-gold-500/50">
+              <Card key={report.type} className="overflow-hidden border-l border-l-gold-500/40">
                 {/* Header with gradient */}
                 <div className={`-m-6 mb-4 p-6 bg-gradient-to-br ${display.color} bg-opacity-10`}>
                   <div className="flex items-start justify-between">
@@ -288,7 +288,7 @@ const ReportsPage: React.FC = () => {
                     >
                       {isPurchasing ? (
                         <span className="flex items-center justify-center gap-2">
-                          <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <span className={`w-4 h-4 border-2 rounded-full animate-spin ${theme === 'dark' ? 'border-star-200/40 border-t-star-50' : 'border-paper-300/60 border-t-paper-900'}`} />
                         </span>
                       ) : (
                         <span className="flex items-center justify-center gap-2">
@@ -316,7 +316,7 @@ const ReportsPage: React.FC = () => {
 
       {/* Upgrade prompt for non-subscribers */}
       {!isSubscriber && isAuthenticated && (
-        <Card className="mt-12 text-center border-l-2 border-l-gold-500/50">
+        <Card className="mt-12 text-center border-l border-l-gold-500/40">
           <div className="py-4">
             <Crown className="w-12 h-12 mx-auto mb-4 text-gold-500" />
             <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-star-100' : 'text-paper-800'}`}>

@@ -1,5 +1,5 @@
-// INPUT: Synthetica selection flow, entitlements, and report generation.
-// OUTPUT: Renders the Synthetica tool page with gated generation and quota display.
+// INPUT: Synthetica selection flow, entitlements, and report generation (paper warm theme alignment).
+// OUTPUT: Renders the Synthetica tool page with gated generation and quota display (contrast-safe steps).
 // POS: Synthetica tool page; if updated, update this header and components/wiki/FOLDER.md.
 
 import React, { useState } from 'react';
@@ -268,11 +268,11 @@ const WikiSyntheticaPage: React.FC = () => {
                 ${isCompleted
                   ? (theme === 'dark'
                     ? 'bg-gradient-to-br from-gold-500 to-gold-600 text-space-950 shadow-[0_0_12px_rgba(212,175,55,0.5)]'
-                    : 'bg-gradient-to-br from-gold-500 to-gold-600 text-white shadow-md')
+                    : 'bg-gradient-to-br from-gold-500 to-gold-600 text-space-950 shadow-md')
                   : isCurrent
                     ? (theme === 'dark'
                       ? 'bg-space-800 border-2 border-gold-400 text-gold-400 shadow-[0_0_15px_rgba(212,175,55,0.4)]'
-                      : 'bg-white border-2 border-gold-500 text-gold-600 shadow-lg')
+                      : 'bg-paper-100/85 border-2 border-gold-500 text-gold-700 shadow-lg')
                     : (theme === 'dark'
                       ? 'bg-space-800 border border-space-600 text-star-500'
                       : 'bg-paper-100 border border-paper-300 text-paper-400')
@@ -405,7 +405,7 @@ const WikiSyntheticaPage: React.FC = () => {
                 cursor-pointer
                 ${theme === 'dark'
                   ? 'bg-gradient-to-r from-gold-500 via-gold-400 to-mystic-500 text-space-950 shadow-[0_4px_20px_rgba(212,175,55,0.4)]'
-                  : 'bg-gradient-to-r from-gold-500 to-gold-600 text-white shadow-lg'
+                  : 'bg-gradient-to-r from-gold-500 to-gold-600 text-space-950 shadow-lg'
                 }
               `}
             >

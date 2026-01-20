@@ -1,4 +1,4 @@
-// INPUT: Wiki 首页数据与搜索状态（含每日星象日级缓存与支柱图标文本变体）。
+// INPUT: Wiki 首页数据与搜索状态（含每日星象日级缓存、支柱图标文本变体与纸感映射）。
 // OUTPUT: 导出 Wiki 首页组件（含当日星象稳定展示与 Unicode 文本图标）。
 // POS: Wiki 首页模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -50,6 +50,18 @@ const WikiHomePage: React.FC = () => {
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
   const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
+  const radarGrid = theme === 'dark'
+    ? 'rgb(var(--space-700) / 0.6)'
+    : 'rgb(var(--space-700) / 0.35)';
+  const radarAxis = theme === 'dark'
+    ? 'rgb(var(--star-200) / 0.9)'
+    : 'rgb(var(--star-400) / 0.9)';
+  const radarStroke = theme === 'dark'
+    ? 'rgb(198 160 98 / 1)'
+    : 'rgb(159 118 69 / 1)';
+  const radarFill = theme === 'dark'
+    ? 'rgb(198 160 98 / 0.35)'
+    : 'rgb(159 118 69 / 0.25)';
 
   useEffect(() => {
     let mounted = true;
@@ -236,7 +248,7 @@ const WikiHomePage: React.FC = () => {
                     <p className={`text-sm leading-relaxed ${mutedText} line-clamp-3`}>{home?.daily_transit?.summary}</p>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {guidanceItems.map((item) => (
-                        <div key={item.title} className={`p-4 rounded-xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-white/80'}`}>
+                        <div key={item.title} className={`p-4 rounded-xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100/85'}`}>
                           <div className="text-xs uppercase tracking-[0.2em] text-gold-500 mb-2">{item.title}</div>
                           <div className={`text-sm ${mutedText} line-clamp-2`}>{item.text}</div>
                         </div>
@@ -256,16 +268,16 @@ const WikiHomePage: React.FC = () => {
               </div>
 
               <div className="relative h-[220px] md:h-[260px]">
-                <div className={`absolute inset-0 rounded-2xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-white/80'}`} />
+                <div className={`absolute inset-0 rounded-2xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100/85'}`} />
                 <div className="relative h-full p-4">
                   <ResponsiveContainer width="100%" height="100%">
                     <RadarChart data={radarData} outerRadius="80%">
-                      <PolarGrid stroke={theme === 'dark' ? '#2b3446' : '#e5dcd0'} />
-                      <PolarAngleAxis dataKey="subject" tick={{ fill: theme === 'dark' ? '#b7c0d3' : '#6b6258', fontSize: 11 }} />
+                      <PolarGrid stroke={radarGrid} />
+                      <PolarAngleAxis dataKey="subject" tick={{ fill: radarAxis, fontSize: 11 }} />
                       <Radar
                         dataKey="value"
-                        stroke={theme === 'dark' ? '#d4af37' : '#b08226'}
-                        fill={theme === 'dark' ? 'rgba(212,175,55,0.35)' : 'rgba(176,130,38,0.25)'}
+                        stroke={radarStroke}
+                        fill={radarFill}
                         fillOpacity={0.6}
                       />
                     </RadarChart>
@@ -360,7 +372,7 @@ const WikiHomePage: React.FC = () => {
             <p className={`text-sm leading-relaxed ${mutedText}`}>{home.daily_transit.summary}</p>
             <div className="grid gap-4">
               {home.daily_transit.guidance.map((item) => (
-                <div key={item.title} className={`p-4 rounded-xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-white/80'}`}>
+                <div key={item.title} className={`p-4 rounded-xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100/85'}`}>
                   <div className="text-xs uppercase tracking-[0.2em] text-gold-500 mb-2">{item.title}</div>
                   <div className={`text-sm ${mutedText}`}>{item.text}</div>
                 </div>
@@ -387,7 +399,7 @@ const WikiHomePage: React.FC = () => {
       </Modal>
 
       {error && (
-        <Card className="border-l-2 border-l-danger/60 flex items-center justify-between gap-4">
+        <Card className="border-l border-l-danger/40 flex items-center justify-between gap-4">
           <div className="text-sm text-danger">{error}</div>
           <ActionButton variant="outline" onClick={() => setRefreshKey((prev) => prev + 1)}>
             {t.common.retry}

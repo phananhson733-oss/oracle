@@ -1,237 +1,382 @@
+<!-- INPUT: 色彩系统规范与应用示例（含 paper 温暖色系、unicode 图标对比度与文本色规范）。 -->
+<!-- OUTPUT: 全项目 UI 色彩规范与迁移指南（含对比度与图标底板要求）。 -->
+<!-- POS: UI 规范唯一基准；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 # 色彩系统应用指南
 
 ## 概述
 
 本指南展示如何在现有组件中应用新的色彩系统，建立清晰的视觉层次和功能识别。
 
+---
+
 ## 项目级 UI 执行规范（最高优先级）
 
 本节为全项目 UI 规范的唯一基准。若与其他文档或示例冲突，以本节为准。
 
-### 角色定位
+### 核心美学
 
-你是一个专家级的 UI/UX 设计师和前端开发者。
+**简洁 · 极简 · 现代** — 这是我们的设计哲学。
 
-### 审美优先级
+### 空白空间
 
-总是优先考虑“简洁”、“极简”和“现代”美学。
+空白是设计的呼吸。
 
-### 设计原则
+| 场景 | 推荐值 | 说明 |
+|------|--------|------|
+| 卡片内边距 | `p-6` / `p-8` | 内容需要充足的呼吸空间 |
+| 元素间隙 | `gap-4` / `gap-6` | 避免拥挤，保持节奏感 |
+| 区块间距 | `space-y-8` / `mb-12` | 区分内容层次 |
 
-- 空白空间至关重要：始终使用充足的内边距（`p-6`、`p-8`）和间隙（`gap-4`、`gap-6`）。避免密集布局，内容应当“呼吸”。
-- 配色方案：
-  - 永远不要使用黑色（`#000`）。深色文本使用 `Zinc/Slate-950`。
-  - 次要文本使用 `Zinc/Slate-500`。
-  - 背景为淡白色或非常浅的灰色（`bg-zinc-50/10`），以营造深度。
-- 视觉层次感：
-  - 标题（H1、H2）应当粗体且行间距紧密（例如 `font-bold` + `leading-tight`）。
-  - 使用圆角的边框，边框色为 `border-zinc-200`。
-- 微交互：
-  - 按钮和卡片应有细腻的悬停状态。
-- 组件与动效：
-  - 统一使用 `transition-all duration-300 ease-in-out` 以实现平滑过渡。
-  - 使用 ShadowXL / Radius UI 组件。
-  - 使用深色或圆角的卡片样式以增加现代感。
-  - 永远不要使用多层卡片的嵌套排版逻辑。
-  - 边框应该稀有若无，若使用仅限 `border-zinc-200`（极浅的灰）。
+```tsx
+// ✅ 好的做法 - 充足的空白
+<div className="p-8 space-y-6">
+  <h2 className="text-2xl font-bold">标题</h2>
+  <div className="grid gap-6">
+    {/* 内容 */}
+  </div>
+</div>
 
-## 核心原则
+// ❌ 避免 - 过于密集
+<div className="p-2 space-y-1">
+  <h2>标题</h2>
+  <div className="grid gap-1">
+    {/* 内容 */}
+  </div>
+</div>
+```
+
+### 配色规范
+
+| 用途 | Dark 模式 | Light 模式 | 禁止 |
+|------|-----------|------------|------|
+| 主要文本 | `text-star-50` | `text-paper-900` | `#000` |
+| 次要文本 | `text-star-200` | `text-paper-600` | `#333` |
+| 弱化文本 | `text-star-400` | `text-paper-400` | — |
+| 背景 | `bg-space-950` | `bg-paper-100` | `#fff` |
+| 卡片背景 | `bg-space-900/60` | `bg-paper-100/85` | — |
+
+**关键规则**：
+- **永远不用纯黑 `#000`** — 使用 `space-950` 或 `paper-900`
+- **永远不用纯白 `#fff`** — 使用 `paper-100` 或带透明度的白色（如 `bg-white/80`）
+- **浅色主题保留温暖纸感** — 使用 `paper-*` 并确保对比度达标（文字与图标同等要求）
+- **次要文本使用中灰** — `star-200` (dark) / `paper-600` (light)
+
+### 视觉层次
+
+```tsx
+// 标题样式 - 粗体 + 紧凑行距
+<h1 className="text-4xl font-bold leading-tight tracking-tight">
+  主标题
+</h1>
+<h2 className="text-2xl font-bold leading-tight">
+  副标题
+</h2>
+
+// 边框使用 - 稀有且极浅
+<div className="rounded-2xl border border-paper-300/60 dark:border-gold-500/15">
+  {/* 内容 */}
+</div>
+```
+
+### 微交互与动效
+
+**统一过渡**：所有可交互元素使用相同的过渡配置。
+
+```tsx
+// 标准过渡类
+const TRANSITION = "transition-all duration-300 ease-in-out";
+
+// 按钮悬停
+<button className={`
+  ${TRANSITION}
+  hover:scale-[1.02] hover:shadow-lg
+  active:scale-[0.98]
+`}>
+  按钮
+</button>
+
+// 卡片悬停
+<div className={`
+  ${TRANSITION}
+  hover:shadow-xl hover:border-accent/30
+`}>
+  卡片内容
+</div>
+```
+
+### 布局禁忌
+
+```tsx
+// ❌ 禁止 - 多层卡片嵌套
+<div className="rounded-xl border p-4">
+  <div className="rounded-lg border p-3">
+    <div className="rounded-md border p-2">
+      内容
+    </div>
+  </div>
+</div>
+
+// ✅ 推荐 - 扁平化布局
+<div className="rounded-xl p-6 space-y-4">
+  <div className="flex items-center gap-4">
+    {/* 内容平铺 */}
+  </div>
+  <div className="grid gap-4">
+    {/* 使用间隙而非嵌套边框 */}
+  </div>
+</div>
+```
+
+---
+
+## 色彩系统核心原则
 
 ### 1. 色彩层次（60/30/10 规则）
 
 ```
-主导色 (60%) → 背景和大面积
-次要色 (30%) → 卡片、容器、分组
-强调色 (10%) → 按钮、链接、重要元素
+┌─────────────────────────────────────────┐
+│  主导色 (60%)                            │
+│  → 背景、大面积区域                        │
+│  → space-950 / paper-100                │
+├─────────────────────────────────────────┤
+│  次要色 (30%)                            │
+│  → 卡片、容器、分组                        │
+│  → space-900/60 / paper-50              │
+├─────────────────────────────────────────┤
+│  强调色 (10%)                            │
+│  → 按钮、链接、重要元素                     │
+│  → accent / mystic / psycho             │
+└─────────────────────────────────────────┘
 ```
 
-### 2. 功能域色彩
+### 2. 功能域色彩映射
 
-- **占星功能** → 紫色 (`mystic`) - 神秘、灵性
-- **心理学/CBT** → 蓝色 (`psycho`) - 专业、信任
-- **报告/洞察** → 金色 (`accent`) - 高价值、品牌
+| 功能域 | 主色 | 色值 | 情感 | 使用场景 |
+|--------|------|------|------|----------|
+| 占星 | 紫色 | `mystic-500` | 神秘、灵性 | 星盘、运势、Wiki |
+| 心理学 | 蓝色 | `psycho-500` | 专业、信任 | CBT、情绪追踪 |
+| 洞察 | 金色 | `accent` | 高价值、品牌 | 报告、付费功能 |
 
-### 3. 对比度要求
+### 3. 语义色彩
 
-- 文本：≥ 4.5:1 (WCAG AA)
-- UI 组件：≥ 3:1
-- 在 light 和 dark 模式下都要测试
+| 状态 | 颜色 | Token | 使用场景 |
+|------|------|-------|----------|
+| 成功 | 绿色 | `success` | 完成、正向反馈 |
+| 警告 | 琥珀 | `warning` | 提醒、需要注意 |
+| 错误 | 红色 | `danger` | 失败、危险操作 |
+| 信息 | 蓝色 | `info` | 提示、帮助信息 |
+
+### 4. 对比度要求（WCAG AA）
+
+| 元素类型 | 最低对比度 | 检测方法 |
+|----------|------------|----------|
+| 正文文本 | 4.5:1 | Chrome DevTools |
+| 大标题 (18px+) | 3:1 | WebAIM Checker |
+| UI 组件 | 3:1 | Stark 插件 |
+
+### Unicode 图标与底板对比度
+
+- 星座/行星等 unicode 图标视为文本，图标与底板对比度需满足 WCAG AA
+- 底板与页面背景也需有足够区分度，避免只调整图标颜色
+
+```tsx
+// ✅ 图标与底板都满足对比度
+<div className="w-10 h-10 rounded-2xl bg-space-900/60 text-star-50 flex items-center justify-center">
+  ♄
+</div>
+
+// ✅ Light 模式保持纸感但保证对比
+<div className="w-10 h-10 rounded-2xl bg-paper-100/85 text-paper-900 flex items-center justify-center">
+  ♍
+</div>
+```
+
+---
 
 ## 实际应用示例
 
-### 示例 1：状态反馈卡片
-
-**场景**：显示操作结果（成功/警告/错误/信息）
+### 示例 1：状态反馈
 
 ```tsx
 import { SEMANTIC_COLORS } from './components/design-tokens';
 
-// ✅ 好的做法 - 使用语义色彩
-<div className={`p-4 rounded-lg border ${SEMANTIC_COLORS.success.bgLight} ${SEMANTIC_COLORS.success.borderLight}`}>
-  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${SEMANTIC_COLORS.success.bgMedium}`}>
-    <span className={`w-2 h-2 rounded-full ${SEMANTIC_COLORS.success.bg}`}></span>
-    <span className={`text-sm font-medium ${SEMANTIC_COLORS.success.text}`}>成功</span>
+// 成功状态 - 充足的内边距，圆角边框
+<div className={`
+  p-6 rounded-2xl
+  ${SEMANTIC_COLORS.success.bgLight}
+  border border-success/20
+  transition-all duration-300 ease-in-out
+`}>
+  <div className="flex items-center gap-3">
+    <span className={`
+      w-8 h-8 rounded-full flex items-center justify-center
+      ${SEMANTIC_COLORS.success.bg}
+      text-star-50
+    `}>
+      ✓
+    </span>
+    <div className="space-y-1">
+      <p className={`font-semibold ${SEMANTIC_COLORS.success.text}`}>
+        操作成功
+      </p>
+      <p className="text-sm text-star-200">
+        您的报告已生成完成
+      </p>
+    </div>
   </div>
-  <p className="text-sm text-star-200 mt-2">报告生成成功！</p>
-</div>
-
-// ❌ 避免 - 硬编码颜色
-<div className="p-4 rounded-lg border bg-green-500/10 border-green-500/30">
-  <span className="text-green-500">成功</span>
 </div>
 ```
 
 ### 示例 2：功能域按钮
 
-**场景**：不同功能模块的主要操作按钮
-
 ```tsx
-import { FEATURE_COLORS, INTERACTIVE_STATES } from './components/design-tokens';
+import { INTERACTIVE_STATES } from './components/design-tokens';
 
-// 占星功能按钮
+// 统一的按钮基础样式
+const buttonBase = `
+  py-3 px-8 rounded-xl
+  font-medium
+  transition-all duration-300 ease-in-out
+  hover:scale-[1.02] hover:shadow-lg
+  active:scale-[0.98]
+`;
+
+// 占星功能按钮 - 紫色
 <button className={`
-  py-2 px-6 rounded-lg
+  ${buttonBase}
   ${INTERACTIVE_STATES.button.astrology.default}
   ${INTERACTIVE_STATES.button.astrology.hover}
-  ${INTERACTIVE_STATES.button.astrology.active}
-  transition-all
 `}>
   查看星盘
 </button>
 
-// 心理学功能按钮
+// 心理学功能按钮 - 蓝色
 <button className={`
-  py-2 px-6 rounded-lg
+  ${buttonBase}
   ${INTERACTIVE_STATES.button.psychology.default}
   ${INTERACTIVE_STATES.button.psychology.hover}
-  ${INTERACTIVE_STATES.button.psychology.active}
-  transition-all
 `}>
   记录情绪
 </button>
 
-// 报告生成按钮（保持金色品牌）
+// 主要操作按钮 - 金色
 <button className={`
-  py-2 px-6 rounded-lg
+  ${buttonBase}
   ${INTERACTIVE_STATES.button.primary.default}
   ${INTERACTIVE_STATES.button.primary.hover}
-  ${INTERACTIVE_STATES.button.primary.active}
-  ${FEATURE_COLORS.insights.glow}
-  transition-all
+  shadow-glow
 `}>
   生成报告
 </button>
 ```
 
-### 示例 3：功能卡片
-
-**场景**：展示不同功能模块的入口卡片
+### 示例 3：功能入口卡片（避免嵌套）
 
 ```tsx
 import { FEATURE_COLORS } from './components/design-tokens';
 
-// 占星功能卡片
+// ✅ 好的做法 - 扁平化布局，充足空白
 <div className={`
-  p-6 rounded-xl border
+  p-8 rounded-2xl
   ${FEATURE_COLORS.astrology.light}
-  ${FEATURE_COLORS.astrology.border}
-  ${FEATURE_COLORS.astrology.hover}
-  transition-all cursor-pointer
+  transition-all duration-300 ease-in-out
+  hover:shadow-xl hover:scale-[1.01]
+  cursor-pointer
 `}>
-  <div className="flex items-center gap-3 mb-4">
-    <div className={`w-10 h-10 rounded-lg ${FEATURE_COLORS.astrology.primaryBg} flex items-center justify-center`}>
-      <span className="text-white text-xl">✨</span>
+  <div className="flex items-start gap-6">
+    {/* 图标 - 不使用额外卡片包裹 */}
+    <div className={`
+      w-14 h-14 rounded-2xl
+      ${FEATURE_COLORS.astrology.primaryBg}
+      flex items-center justify-center
+      text-star-50 text-2xl
+    `}>
+      ✨
     </div>
-    <h3 className={`text-lg font-semibold ${FEATURE_COLORS.astrology.primary}`}>
-      本命盘分析
-    </h3>
-  </div>
-  <p className="text-sm text-star-200">
-    深入了解你的星盘配置和人生主题
-  </p>
-</div>
 
-// CBT 功能卡片
-<div className={`
-  p-6 rounded-xl border
-  ${FEATURE_COLORS.psychology.light}
-  ${FEATURE_COLORS.psychology.border}
-  ${FEATURE_COLORS.psychology.hover}
-  transition-all cursor-pointer
-`}>
-  <div className="flex items-center gap-3 mb-4">
-    <div className={`w-10 h-10 rounded-lg ${FEATURE_COLORS.psychology.primaryBg} flex items-center justify-center`}>
-      <span className="text-white text-xl">🧠</span>
+    {/* 文本区域 */}
+    <div className="flex-1 space-y-2">
+      <h3 className={`
+        text-xl font-bold leading-tight
+        ${FEATURE_COLORS.astrology.primary}
+      `}>
+        本命盘分析
+      </h3>
+      <p className="text-star-200 leading-relaxed">
+        深入了解你的星盘配置和人生主题，发现内在潜能与成长方向。
+      </p>
     </div>
-    <h3 className={`text-lg font-semibold ${FEATURE_COLORS.psychology.primary}`}>
-      情绪日记
-    </h3>
   </div>
-  <p className="text-sm text-star-200">
-    记录和追踪你的情绪变化
-  </p>
 </div>
 ```
 
-### 示例 4：输入框状态
-
-**场景**：表单输入框的不同状态
+### 示例 4：表单输入
 
 ```tsx
 import { INTERACTIVE_STATES } from './components/design-tokens';
 
+const inputBase = `
+  w-full px-5 py-4 rounded-xl
+  bg-space-900/40 text-star-50
+  border border-space-700/30
+  placeholder:text-star-400/60
+  transition-all duration-300 ease-in-out
+  focus:outline-none focus:ring-2 focus:ring-accent/30
+`;
+
 // 默认状态
-<input className={`
-  w-full px-4 py-2 rounded-lg
-  bg-space-900/70 text-star-50
-  ${INTERACTIVE_STATES.input.default}
-  transition-colors
-`} />
+<input
+  className={`${inputBase} ${INTERACTIVE_STATES.input.default}`}
+  placeholder="请输入..."
+/>
 
-// 错误状态
-<input className={`
-  w-full px-4 py-2 rounded-lg
-  bg-space-900/70 text-star-50
-  ${INTERACTIVE_STATES.input.error}
-  transition-colors
-`} />
+// 错误状态 - 红色边框
+<input
+  className={`${inputBase} ${INTERACTIVE_STATES.input.error}`}
+  placeholder="请输入..."
+/>
+<p className="mt-2 text-sm text-danger">请填写此字段</p>
 
-// 成功状态
-<input className={`
-  w-full px-4 py-2 rounded-lg
-  bg-space-900/70 text-star-50
-  ${INTERACTIVE_STATES.input.success}
-  transition-colors
-`} />
+// 成功状态 - 绿色边框
+<input
+  className={`${inputBase} ${INTERACTIVE_STATES.input.success}`}
+  placeholder="请输入..."
+/>
 ```
 
-### 示例 5：数据可视化
-
-**场景**：CBT 情绪追踪
+### 示例 5：数据可视化 - 情绪追踪
 
 ```tsx
 import { DATA_VIZ_COLORS } from './components/design-tokens';
 
-const moodData = [
-  { date: '2024-01-01', mood: 'positive', score: 4 },
-  { date: '2024-01-02', mood: 'neutral', score: 3 },
-  { date: '2024-01-03', mood: 'veryPositive', score: 5 },
-];
-
-<div className="space-y-2">
+// 情绪色谱条 - 使用充足间隙
+<div className="space-y-4">
   {moodData.map(item => (
-    <div key={item.date} className="flex items-center gap-3">
-      <span className="text-sm text-star-400 w-24">{item.date}</span>
+    <div key={item.date} className="flex items-center gap-6">
+      {/* 日期 */}
+      <span className="text-sm text-star-400 w-28 font-medium">
+        {item.date}
+      </span>
+
+      {/* 情绪标签 */}
       <div className={`
-        px-3 py-1 rounded-full
+        px-4 py-2 rounded-full
         ${DATA_VIZ_COLORS.mood[item.mood]}
         text-sm font-medium
+        transition-all duration-300 ease-in-out
+        hover:scale-105
       `}>
-        {item.mood}
+        {item.label}
       </div>
-      <div className="flex-1 h-2 bg-space-800 rounded-full overflow-hidden">
+
+      {/* 进度条 */}
+      <div className="flex-1 h-3 bg-space-800/50 rounded-full overflow-hidden">
         <div
-          className={DATA_VIZ_COLORS.mood[item.mood]}
+          className={`
+            h-full rounded-full
+            ${DATA_VIZ_COLORS.mood[item.mood]}
+            transition-all duration-500 ease-out
+          `}
           style={{ width: `${item.score * 20}%` }}
         />
       </div>
@@ -240,142 +385,101 @@ const moodData = [
 </div>
 ```
 
-## 迁移现有组件
+---
 
-### 步骤 1：识别组件类型
+## 组件迁移清单
 
-确定组件属于哪个功能域：
-- 占星相关 → 使用 `FEATURE_COLORS.astrology`
-- 心理学/CBT → 使用 `FEATURE_COLORS.psychology`
-- 报告/洞察 → 使用 `FEATURE_COLORS.insights`
-- 通用/中性 → 使用 `accent` (金色)
+### 迁移前检查
 
-### 步骤 2：替换硬编码颜色
+- [ ] 是否使用了纯黑 `#000` 或纯白 `#fff`？
+- [ ] 是否存在多层卡片嵌套？
+- [ ] 内边距是否足够（至少 `p-6`）？
+- [ ] 是否缺少悬停/交互状态？
+- [ ] 过渡动画是否统一？
+- [ ] unicode 图标与底板对比度是否达标？
 
-```tsx
-// ❌ 之前
-<button className="bg-purple-500 hover:bg-purple-600">
-  查看星盘
-</button>
-
-// ✅ 之后
-import { INTERACTIVE_STATES } from './components/design-tokens';
-
-<button className={`
-  ${INTERACTIVE_STATES.button.astrology.default}
-  ${INTERACTIVE_STATES.button.astrology.hover}
-  ${INTERACTIVE_STATES.button.astrology.active}
-`}>
-  查看星盘
-</button>
-```
-
-### 步骤 3：添加状态反馈
+### 迁移步骤
 
 ```tsx
-// ❌ 之前 - 没有明确的状态指示
-<div className="p-4 bg-space-900 border border-space-700">
-  操作成功
-</div>
+// 步骤 1：识别功能域
+// 占星 → astrology | 心理学 → psychology | 洞察 → insights
 
-// ✅ 之后 - 清晰的状态色彩
-import { SEMANTIC_COLORS } from './components/design-tokens';
+// 步骤 2：替换硬编码颜色
+// ❌ bg-purple-500 → ✅ FEATURE_COLORS.astrology.primaryBg
+// ❌ text-blue-600 → ✅ FEATURE_COLORS.psychology.primary
 
-<div className={`
-  p-4 rounded-lg border
-  ${SEMANTIC_COLORS.success.bgLight}
-  ${SEMANTIC_COLORS.success.borderLight}
-`}>
-  <span className={SEMANTIC_COLORS.success.text}>✓</span> 操作成功
-</div>
+// 步骤 3：增加空白空间
+// ❌ p-4 → ✅ p-6 或 p-8
+// ❌ gap-2 → ✅ gap-4 或 gap-6
+
+// 步骤 4：添加统一过渡
+// ❌ 无过渡 → ✅ transition-all duration-300 ease-in-out
+
+// 步骤 5：扁平化嵌套
+// ❌ 卡片套卡片 → ✅ 使用间隙和背景色区分
 ```
 
-### 步骤 4：增强交互反馈
+---
+
+## 快速参考
+
+### Token 导入
 
 ```tsx
-// ❌ 之前 - 缺少交互反馈
-<div className="p-6 bg-space-900 border border-space-700 cursor-pointer">
-  点击查看详情
-</div>
-
-// ✅ 之后 - 丰富的交互状态
-import { INTERACTIVE_STATES } from './components/design-tokens';
-
-<div className={`
-  p-6 rounded-xl border
-  bg-space-900/60
-  ${INTERACTIVE_STATES.card.default}
-  ${INTERACTIVE_STATES.card.hover}
-  transition-all cursor-pointer
-`}>
-  点击查看详情
-</div>
+import {
+  SEMANTIC_COLORS,    // 状态色彩
+  FEATURE_COLORS,     // 功能域色彩
+  INTERACTIVE_STATES, // 交互状态
+  DATA_VIZ_COLORS,    // 数据可视化
+  COLOR_HIERARCHY,    // 色彩层次
+} from './components/design-tokens';
 ```
 
-## 常见问题
-
-### Q1: 什么时候使用紫色 vs 蓝色 vs 金色？
-
-**A:** 根据功能域选择：
-- **紫色 (mystic)**: 占星、星盘、运势等神秘学内容
-- **蓝色 (psycho)**: CBT、情绪追踪、心理分析等专业内容
-- **金色 (accent)**: 报告生成、付费功能、品牌相关
-
-### Q2: 如何确保对比度符合要求？
-
-**A:** 使用浏览器开发工具或在线工具检查：
-- 文本对比度：≥ 4.5:1
-- UI 组件对比度：≥ 3:1
-- 在 light 和 dark 模式下都要测试
-
-推荐工具：
-- Chrome DevTools (Lighthouse)
-- WebAIM Contrast Checker
-- Stark (Figma 插件)
-
-### Q3: 可以混合使用多种强调色吗？
-
-**A:** 可以，但要遵循 60/30/10 规则：
-- 一个页面最多使用 2-3 种强调色
-- 确保每种颜色有明确的语义
-- 避免颜色过多导致视觉混乱
-
-### Q4: 如何处理 light 模式？
-
-**A:** 所有 token 都支持 light 模式：
-```tsx
-// 自动适配主题
-<div className={`
-  ${FEATURE_COLORS.astrology.light}
-  ${FEATURE_COLORS.astrology.border}
-`}>
-  内容会根据当前主题自动调整
-</div>
-```
-
-## 查看演示
-
-运行应用并访问 `/color-demo` 路由查看完整的色彩系统演示：
+### 常用组合
 
 ```tsx
-// 在 App.tsx 中添加路由
-import { ColorSystemDemo } from './components/ColorSystemDemo';
+// 标准卡片
+const card = `
+  p-6 rounded-2xl
+  bg-space-900/60 backdrop-blur-lg
+  transition-all duration-300 ease-in-out
+  hover:shadow-xl
+`;
 
-<Route path="/color-demo" element={<ColorSystemDemo />} />
+// 标准按钮
+const button = `
+  py-3 px-6 rounded-xl
+  font-medium
+  transition-all duration-300 ease-in-out
+  hover:scale-[1.02]
+  active:scale-[0.98]
+`;
+
+// 标准输入
+const input = `
+  w-full px-5 py-4 rounded-xl
+  bg-space-900/40 border border-space-700/30
+  transition-all duration-300 ease-in-out
+  focus:ring-2 focus:ring-accent/30
+`;
 ```
+
+---
 
 ## 参考资源
 
-- **设计 Token**: `/components/design-tokens.ts`
-- **演示组件**: `/components/ColorSystemDemo.tsx`
-- **Tailwind 配置**: `/index.html` (内联配置)
+| 资源 | 路径 | 说明 |
+|------|------|------|
+| 设计 Token | `/components/design-tokens.ts` | 所有色彩变量定义 |
+| 演示组件 | `/components/ColorSystemDemo.tsx` | 实时效果演示 |
+| Tailwind 配置 | `/index.html` | 主题色和动画定义 |
 
-## 下一步
+### 查看演示
 
-1. 逐步迁移现有组件使用新的色彩 token
-2. 在新功能中优先使用功能域色彩
-3. 定期检查对比度和可访问性
-4. 收集用户反馈并持续优化
+```bash
+npm run dev
+# 访问 http://localhost:5173/#/color-demo
+```
 
 ---
 

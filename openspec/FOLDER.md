@@ -1,5 +1,5 @@
-<!-- INPUT: OpenSpec 规范与项目信息（含 AI 加载优化归档与规范更新）。 -->
-<!-- OUTPUT: openspec 架构摘要与文件索引（含 AI 加载优化归档记录）。 -->
+<!-- INPUT: OpenSpec 规范与项目信息（含 SEO/GEO 基础提案、UI 规范门槛与 AI 加载优化归档与规范更新）。 -->
+<!-- OUTPUT: openspec 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 规范门槛与 AI 加载优化归档记录）。 -->
 <!-- POS: OpenSpec 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -20,6 +20,8 @@
 - specs｜地位：规范目录｜功能：存放能力规范。
 
 近期更新
+- 更新 project.md，补充 UI 规范唯一入口与评审门槛。
+- 新增 add-seo-geo-foundation 变更提案。
 - 新增 add-wiki-classics 变更提案。
 - 新增 integrate-astro-wiki 变更提案。
 - 归档 optimize-ai-loading 变更提案并更新相关规范。

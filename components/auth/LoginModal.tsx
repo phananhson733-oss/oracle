@@ -1,6 +1,6 @@
-// INPUT: React、认证上下文与 UI 组件依赖。
+// INPUT: React、认证上下文与 UI 组件依赖（含纸感映射与对比度修正）。
 // OUTPUT: 导出登录/注册弹窗组件。
-// POS: 登录弹窗组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: 登录弹窗组件（含纸感映射与按钮对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
@@ -180,7 +180,7 @@ const LoginModal: React.FC = () => {
             className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
               isDark
                 ? 'bg-space-800 border-gold-500/20 hover:bg-space-700 text-star-100'
-                : 'bg-white border-paper-300 hover:bg-paper-100 text-paper-900'
+                : 'bg-paper-100/85 border-paper-300 hover:bg-paper-100 text-paper-900'
             }`}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
@@ -197,8 +197,8 @@ const LoginModal: React.FC = () => {
             disabled={loading}
             className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
               isDark
-                ? 'bg-white text-black hover:bg-gray-100'
-                : 'bg-black text-white hover:bg-gray-900'
+                ? 'bg-paper-100/90 text-paper-900 hover:bg-paper-200/70'
+                : 'bg-space-950 text-star-50 hover:bg-space-900'
             }`}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

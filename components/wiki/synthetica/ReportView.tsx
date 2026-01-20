@@ -71,9 +71,9 @@ export const ReportView: React.FC<ReportViewProps> = ({ result, selection, onRes
       </div>
 
       {/* 综合分析卡片 */}
-      <div className={`rounded-2xl border border-l-4 border-l-gold-500 p-6 ${isLight ? 'bg-white border-paper-200' : 'bg-space-900/60 border-gold-500/10'}`}>
+      <div className={`rounded-2xl border border-l border-l-gold-500/40 p-6 ${isLight ? 'bg-paper-100/85 border-paper-300' : 'bg-space-900/60 border-gold-500/10'}`}>
         <div className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
-          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? 'border-gold-600/30 bg-white text-gold-600' : 'border-gold-500/30 bg-space-950 text-gold-500'}`}>
+          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? 'border-gold-600/30 bg-paper-100/85 text-gold-600' : 'border-gold-500/30 bg-space-950 text-gold-500'}`}>
             <TrendingUp size={18} />
           </div>
           <h3 className={`text-base font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>
@@ -93,17 +93,17 @@ export const ReportView: React.FC<ReportViewProps> = ({ result, selection, onRes
       {/* 模块列表 */}
       {result.modules?.map((module: any, idx: number) => {
         const cardStyles = [
-          { accent: 'border-l-accent', iconTone: isLight ? 'border-accent/30 bg-white text-accent' : 'border-accent/30 bg-space-950 text-accent' },
-          { accent: 'border-l-success', iconTone: isLight ? 'border-success/30 bg-white text-success' : 'border-success/30 bg-space-950 text-success' },
-          { accent: 'border-l-gold-400', iconTone: isLight ? 'border-gold-600/30 bg-white text-gold-600' : 'border-gold-400/30 bg-space-950 text-gold-400' },
-          { accent: 'border-l-star-200', iconTone: isLight ? 'border-star-200/30 bg-white text-star-200' : 'border-star-200/30 bg-space-950 text-star-200' },
+          { accent: 'border-l-accent/40', iconTone: isLight ? 'border-accent/30 bg-paper-100/85 text-accent' : 'border-accent/30 bg-space-950 text-accent' },
+          { accent: 'border-l-success/40', iconTone: isLight ? 'border-success/30 bg-paper-100/85 text-success' : 'border-success/30 bg-space-950 text-success' },
+          { accent: 'border-l-gold-400/40', iconTone: isLight ? 'border-gold-600/30 bg-paper-100/85 text-gold-600' : 'border-gold-400/30 bg-space-950 text-gold-400' },
+          { accent: 'border-l-star-200/40', iconTone: isLight ? 'border-star-200/30 bg-paper-100/85 text-star-200' : 'border-star-200/30 bg-space-950 text-star-200' },
         ];
         const style = cardStyles[idx % cardStyles.length];
 
         return (
           <div
             key={idx}
-            className={`rounded-2xl border border-l-4 ${style.accent} p-6 ${isLight ? 'bg-white border-paper-200' : 'bg-space-900/60 border-gold-500/10'}`}
+            className={`rounded-2xl border border-l ${style.accent} p-6 ${isLight ? 'bg-paper-100/85 border-paper-300' : 'bg-space-900/60 border-gold-500/10'}`}
           >
             {/* 模块头部 */}
             <div className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
@@ -193,7 +193,7 @@ export const ReportView: React.FC<ReportViewProps> = ({ result, selection, onRes
       <div className="pt-6">
         <button
           onClick={onReset}
-          className={`w-full py-3 rounded-xl border transition-all ${isLight ? 'bg-white border-paper-300 hover:border-gold-500/50 text-paper-700' : 'bg-space-900 border-gold-500/20 hover:border-gold-500/40 text-star-200'}`}
+          className={`w-full py-3 rounded-xl border transition-all ${isLight ? 'bg-paper-100/85 border-paper-300 hover:border-gold-500/50 text-paper-700' : 'bg-space-900 border-gold-500/20 hover:border-gold-500/40 text-star-200'}`}
         >
           {t.synthetica.actions.reset}
         </button>
