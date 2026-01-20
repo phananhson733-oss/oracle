@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /cbt/
+Disallow: /profile/
+Disallow: /api/
+
+Sitemap: https://www.astrologywiki.com/sitemap.xml

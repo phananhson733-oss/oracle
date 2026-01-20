@@ -1,6 +1,6 @@
-// INPUT: 付费墙组件 - 锁定内容和积分解锁弹窗（含详情解锁、购买状态与错误提示）。
-// OUTPUT: 导出 LockedContent、LockedAccordion 和 PaywallModal 组件（含详情解锁与积分解锁兜底）。
-// POS: 前端付费墙组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: 付费墙组件 - 锁定内容和积分解锁弹窗（含纸感映射、购买状态与错误提示）。
+// OUTPUT: 导出 LockedContent、LockedAccordion 和 PaywallModal 组件（含详情解锁与积分解锁兜底及 Accordion 视觉对齐）。
+// POS: 前端付费墙组件（含纸感映射与解锁条目一致性修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
 import { Lock, Sparkles, X } from 'lucide-react';
@@ -34,7 +34,7 @@ const useThemeStyles = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   return {
-    card: isDark ? 'bg-space-900' : 'bg-white',
+    card: isDark ? 'bg-space-900' : 'bg-paper-100/85',
     border: isDark ? 'border-space-600' : 'border-paper-300',
     heading: isDark ? 'text-star-50' : 'text-paper-900',
     muted: isDark ? 'text-star-400' : 'text-paper-500',
@@ -71,6 +71,10 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [hasOpened, setHasOpened] = useState(defaultOpen);
   const s = useThemeStyles();
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+  const accordionSurface = isDark ? 'bg-space-900/40' : 'bg-paper-100/70';
+  const dividerTone = isDark ? 'border-gold-500/15' : 'border-paper-300';
 
   useEffect(() => {
     if (isOpen) setHasOpened(true);
@@ -79,22 +83,23 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
   // 如果已解锁，显示普通的 Accordion 行为
   if (canAccess) {
     return (
-      <div className={`rounded-xl overflow-hidden mb-4 border transition-colors duration-200 ${isOpen ? 'border-gold-500/50 ring-1 ring-gold-500/30 bg-gold-500/5' : s.border} ${s.card}`}>
+      <div className={`rounded-xl overflow-hidden mb-3 border transition-all duration-300 ease-in-out ${isOpen ? 'border-accent/40' : dividerTone} ${accordionSurface}`}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex justify-between items-center p-5 text-left group"
+          className="w-full flex justify-between items-center px-4 py-3 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
+          aria-expanded={isOpen}
         >
           <div>
-            <h3 className={`text-base font-medium ${s.heading} group-hover:text-gold-500 transition-colors`}>{title}</h3>
-            {subtitle && <p className={`text-xs mt-1 ${s.muted}`}>{subtitle}</p>}
+            <h3 className={`text-sm font-medium ${s.heading} group-hover:text-accent transition-colors`}>{title}</h3>
+            {subtitle && <p className={`text-xs mt-0.5 ${s.muted}`}>{subtitle}</p>}
           </div>
-          <span className={`text-gold-500 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
+          <span className={`text-accent/60 text-xs transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
         </button>
 
         <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
           <div className="overflow-hidden">
-            <div className="p-5 pt-0 border-t border-dashed border-current/20">
-              <div className="pt-4">{hasOpened && children}</div>
+            <div className={`px-4 pb-4 border-t ${dividerTone}`}>
+              <div className="pt-3">{hasOpened && children}</div>
             </div>
           </div>
         </div>
@@ -104,15 +109,15 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
 
   // 未解锁状态：显示解锁按钮
   return (
-    <div className={`rounded-xl overflow-hidden mb-4 border ${s.border} ${s.card}`}>
-      <div className="w-full flex justify-between items-center p-5">
+    <div className={`rounded-xl overflow-hidden mb-3 border ${dividerTone} ${accordionSurface}`}>
+      <div className="w-full flex justify-between items-center px-4 py-3">
         <div>
-          <h3 className={`text-base font-medium ${s.heading}`}>{title}</h3>
-          {subtitle && <p className={`text-xs mt-1 ${s.muted}`}>{subtitle}</p>}
+          <h3 className={`text-sm font-medium ${s.heading}`}>{title}</h3>
+          {subtitle && <p className={`text-xs mt-0.5 ${s.muted}`}>{subtitle}</p>}
         </div>
         <button
           onClick={() => requestAccess()}
-          className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest border border-gold-500/50 text-gold-500 rounded hover:bg-gold-500/10 transition-colors"
+          className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${isDark ? 'border-gold-500/30 text-gold-400 hover:text-gold-300 hover:border-gold-500/50' : 'border-gold-500/40 text-gold-600 hover:text-gold-700 hover:border-gold-600/60'} hover:bg-gold-500/10`}
         >
           解锁
         </button>
@@ -202,6 +207,8 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
   const { isAuthenticated, openLoginModal } = useAuth();
   const { startSubscription, purchaseFeature, isSubscriber, isTrialing, trialDaysLeft, entitlements } = useEntitlement();
   const { language } = useLanguage();
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   const [isProcessing, setIsProcessing] = useState<'purchase' | 'subscribe' | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
 
@@ -271,16 +278,16 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* 背景遮罩 */}
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-space-950/50 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* 弹窗内容 */}
-      <div className="relative bg-gray-900 rounded-2xl max-w-md w-full p-6 shadow-2xl border border-white/5">
+      <div className={`relative rounded-2xl max-w-md w-full p-6 shadow-2xl border ${isDark ? 'bg-space-900 border-gold-500/15 text-star-50' : 'bg-paper-100/90 border-paper-300 text-paper-900'}`}>
         {/* 关闭按钮 */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+          className={`absolute top-4 right-4 transition-colors ${isDark ? 'text-star-400 hover:text-star-50' : 'text-paper-500 hover:text-paper-900'}`}
         >
           <X className="w-5 h-5" />
         </button>
@@ -288,19 +295,19 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
         {/* 标题 */}
         <div className="text-center mb-6">
           <Lock className="w-12 h-12 text-amber-400 mx-auto mb-3" />
-          <h2 className="text-xl font-bold text-white">解锁 {displayName}</h2>
+          <h2 className={`text-xl font-bold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>解锁 {displayName}</h2>
         </div>
 
         {/* 选项 1：积分解锁 */}
-        <div className="border border-white/10 rounded-xl p-4 mb-4 hover:border-white/20 transition-colors">
+        <div className={`border rounded-xl p-4 mb-4 transition-colors ${isDark ? 'border-gold-500/10 hover:border-gold-500/30' : 'border-paper-300 hover:border-paper-400'}`}>
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="font-medium text-white">使用积分解锁</h3>
-              <p className="text-sm text-gray-400">{priceInfo.description} · 余额 {formatPoints(creditsBalance)}</p>
+              <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>使用积分解锁</h3>
+              <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'}`}>{priceInfo.description} · 余额 {formatPoints(creditsBalance)}</p>
             </div>
             <button
               onClick={handlePurchase}
-              className={`px-4 py-2 bg-white hover:bg-gray-100 text-black rounded-full font-medium transition-colors ${(!canSpend || isProcessing) ? 'opacity-60 cursor-not-allowed' : ''}`}
+              className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-paper-100/90 hover:bg-paper-200/70 text-paper-900' : 'bg-space-950 hover:bg-space-900 text-star-50'} ${(!canSpend || isProcessing) ? 'opacity-60 cursor-not-allowed' : ''}`}
               disabled={isProcessing !== null || !canSpend}
             >
               消耗 {formatPoints(pointsCost)}
@@ -309,15 +316,15 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
         </div>
 
         {/* 选项 2：购买积分 */}
-        <div className="border border-white/10 rounded-xl p-4 mb-4 hover:border-white/20 transition-colors">
+        <div className={`border rounded-xl p-4 mb-4 transition-colors ${isDark ? 'border-gold-500/10 hover:border-gold-500/30' : 'border-paper-300 hover:border-paper-400'}`}>
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="font-medium text-white">购买积分</h3>
-              <p className="text-sm text-gray-400">充值积分后可解锁内容</p>
+              <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>购买积分</h3>
+              <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'}`}>充值积分后可解锁内容</p>
             </div>
             <button
               onClick={handleTopUp}
-              className={`px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full font-medium transition-colors ${isProcessing ? 'opacity-60 cursor-not-allowed' : ''}`}
+              className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-space-800/60 hover:bg-space-800/80 text-star-50' : 'bg-paper-100/80 hover:bg-paper-200/70 text-paper-900'} ${isProcessing ? 'opacity-60 cursor-not-allowed' : ''}`}
               disabled={isProcessing !== null}
             >
               即将上线
@@ -328,20 +335,20 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
         {/* 选项 3：订阅（推荐） */}
         {!isSubscriber && (
           <div className="border-2 border-amber-500 rounded-xl p-4 relative">
-            <span className="absolute -top-3 left-4 bg-amber-500 text-black text-xs px-2 py-1 rounded-full font-medium">
+            <span className="absolute -top-3 left-4 bg-amber-500 text-space-950 text-xs px-2 py-1 rounded-full font-medium">
               推荐
             </span>
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="font-medium text-white flex items-center gap-2">
+                <h3 className={`font-medium flex items-center gap-2 ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
                   <Sparkles className="w-4 h-4 text-amber-400" />
                   开启订阅
                 </h3>
-                <p className="text-sm text-gray-400">解锁所有内容 + 更多权益</p>
+                <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'}`}>解锁所有内容 + 更多权益</p>
               </div>
               <button
                 onClick={handleSubscribe}
-                className={`px-4 py-2 bg-amber-500 hover:bg-amber-400 text-black rounded-full font-medium transition-colors ${isProcessing ? 'opacity-60 cursor-not-allowed' : ''}`}
+                className={`px-4 py-2 bg-amber-500 hover:bg-amber-400 text-space-950 rounded-full font-medium transition-colors ${isProcessing ? 'opacity-60 cursor-not-allowed' : ''}`}
                 disabled={isProcessing !== null}
               >
                 $6.99/月
@@ -349,8 +356,8 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
             </div>
 
             {/* 订阅权益列表 */}
-            <div className="mt-4 pt-4 border-t border-white/10">
-              <ul className="text-sm text-gray-400 space-y-1">
+            <div className={`mt-4 pt-4 border-t ${isDark ? 'border-gold-500/10' : 'border-paper-300'}`}>
+              <ul className={`text-sm space-y-1 ${isDark ? 'text-star-400' : 'text-paper-600'}`}>
                 <li className="flex items-center gap-2">
                   <span className="text-amber-400">✓</span>
                   所有查看详情免费
@@ -435,6 +442,8 @@ interface QuotaDisplayProps {
 
 export const QuotaDisplay: React.FC<QuotaDisplayProps> = ({ type, className = '' }) => {
   const { entitlements, isSubscriber } = useEntitlement();
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
   if (!entitlements) return null;
 
@@ -444,8 +453,8 @@ export const QuotaDisplay: React.FC<QuotaDisplayProps> = ({ type, className = ''
   const total = maxFree + maxSubscription;
 
   return (
-    <div className={`text-sm text-gray-400 ${className}`}>
-      <span className="font-medium text-white">{quota.totalLeft}</span>
+    <div className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'} ${className}`}>
+      <span className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{quota.totalLeft}</span>
       <span> / {total}</span>
       <span className="ml-1">
         {type === 'ask' ? '次/周' : (isSubscriber ? '次/周' : '次（永久）')}

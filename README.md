@@ -1,6 +1,6 @@
-<!-- INPUT: 项目说明、运行方式与环境变量约定（含生产默认 API 地址）。 -->
-<!-- OUTPUT: 根目录主说明文档（含生产默认 API 地址说明）。 -->
-<!-- POS: 项目对外说明入口；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+<!-- INPUT: 项目说明、运行方式与环境变量约定（含生产默认 API 地址与 UI 规范门槛）。 -->
+<!-- OUTPUT: 根目录主说明文档（含生产默认 API 地址说明与 UI 规范门槛）。 -->
+<!-- POS: 项目对外说明入口（含 UI 规范门槛）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
@@ -12,6 +12,13 @@
 本仓库包含本地运行应用所需的全部内容。
 
 在 AI Studio 查看应用：https://ai.studio/apps/drive/1qofnbmAyKU93vEEwcxFojkef9_yWZKqJ
+
+## UI 规范（唯一基准）
+
+- 唯一 UI 规范来源：[COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md)。
+- PR 清单项：UI 变更必须对照 [COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md) 验证，并勾选模板中的对应项。
+- 评审门槛：UI 变更必须填写「UI 规范符合说明」，缺失则标记为未通过评审门槛。
+- PR 模板：[PULL_REQUEST_TEMPLATE.md](./PULL_REQUEST_TEMPLATE.md)。
 
 ## 架构概览
 

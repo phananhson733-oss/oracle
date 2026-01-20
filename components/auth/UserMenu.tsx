@@ -1,5 +1,5 @@
-// INPUT: React、认证上下文与 UI 组件依赖（含订阅管理跳转与设置入口）。
-// OUTPUT: 导出用户菜单组件（含登录/升级按钮与订阅管理入口）。
+// INPUT: React、认证上下文与 UI 组件依赖（含订阅管理跳转与纸感映射）。
+// OUTPUT: 导出用户菜单组件（含登录/升级按钮、订阅管理入口与主题化下拉面板）。
 // POS: 用户菜单组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useRef, useEffect } from 'react';
@@ -144,11 +144,11 @@ const UserMenu: React.FC = () => {
       {isOpen && (
         <div className={`absolute right-0 top-full mt-2 w-56 rounded-xl shadow-xl overflow-hidden z-50 border ${
           isDark
-            ? 'bg-space-800 border-white/10'
-            : 'bg-white border-paper-200'
+            ? 'bg-space-800 border-gold-500/15'
+            : 'bg-paper-100/90 border-paper-300'
         }`}>
           {/* User info header */}
-          <div className={`px-4 py-3 border-b ${isDark ? 'border-white/10' : 'border-paper-200'}`}>
+          <div className={`px-4 py-3 border-b ${isDark ? 'border-gold-500/15' : 'border-paper-300'}`}>
             <div className={`text-sm font-medium truncate ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
               {user?.email}
             </div>
@@ -210,7 +210,7 @@ const UserMenu: React.FC = () => {
           </div>
 
           {/* Logout */}
-          <div className={`py-1 border-t ${isDark ? 'border-white/10' : 'border-paper-200'}`}>
+          <div className={`py-1 border-t ${isDark ? 'border-gold-500/15' : 'border-paper-300'}`}>
             <button
               onClick={() => {
                 setIsOpen(false);

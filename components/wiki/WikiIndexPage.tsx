@@ -1,10 +1,11 @@
-// INPUT: Wiki 条目列表与筛选状态（含 Unicode 文本图标与 i18n 分离）。
-// OUTPUT: 导出 Wiki 百科页组件（含三列概念网格与符号文本化）。
+// INPUT: Wiki 条目列表与筛选状态（含 SEO 元信息、ItemList 结构化数据与 Unicode 文本图标）。
+// OUTPUT: 导出 Wiki 百科页组件（含三列概念网格、SEO 输出与 ItemList 结构化数据修正）。
 // POS: Wiki 百科模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Card, GlassInput, Section, useLanguage, useTheme } from '../UIComponents';
+import { SEO } from '../SEO';
 import { ArrowUpRight, Search } from 'lucide-react';
 import { fetchWikiItems } from '../../services/apiClient';
 import type { WikiItemSummary, WikiItemType } from '../../types';
@@ -86,12 +87,56 @@ const WikiIndexPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
-  const borderColor = theme === 'dark' ? 'border-white/10' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
   const hoverTone = theme === 'dark'
     ? 'hover:border-accent/40 hover:bg-space-900/70'
     : 'hover:border-accent/40 hover:bg-paper-100/80';
   const overlayTone = theme === 'dark' ? 'bg-space-950/70' : 'bg-paper-50/80';
   const symbolTone = theme === 'dark' ? 'text-star-100' : 'text-paper-700';
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
+  const lang = language === 'en' ? 'en' : 'zh';
+  const canonicalUrl = `${siteUrl}/${lang}/wiki`;
+  const alternateLanguages = [
+    { hrefLang: 'zh', href: `${siteUrl}/zh/wiki` },
+    { hrefLang: 'en', href: `${siteUrl}/en/wiki` },
+    { hrefLang: 'x-default', href: `${siteUrl}/en/wiki` },
+  ];
+
+  const itemListSchema = useMemo(() => {
+    if (!items.length) return null;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Thing',
+          name: item.title,
+          url: `${siteUrl}/${lang}/wiki/${item.id}`,
+        },
+      })),
+    };
+  }, [items, lang, siteUrl]);
+
+  const breadcrumbSchema = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: t.wiki.tab_home,
+        item: `${siteUrl}/${lang}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t.wiki.tab_library,
+        item: canonicalUrl,
+      },
+    ],
+  }), [canonicalUrl, lang, siteUrl, t.wiki.tab_home, t.wiki.tab_library]);
 
   const formatText = (value: string) => (language === 'zh' ? stripLatin(value) : value);
   const getPanelDescription = (value: string) => pickLastSentence(formatText(value));
@@ -171,7 +216,7 @@ const WikiIndexPage: React.FC = () => {
     return renderCardShell(
       item,
       <div className="p-5 flex items-start gap-4">
-        <div className={`w-12 h-12 rounded-2xl border ${borderColor} flex items-center justify-center text-2xl ${theme === 'dark' ? 'bg-space-900/70' : 'bg-white/80'}`}>
+        <div className={`w-12 h-12 rounded-2xl border ${borderColor} flex items-center justify-center text-2xl ${theme === 'dark' ? 'bg-space-900/70' : 'bg-paper-100/85'}`}>
           {displaySymbol}
         </div>
         <div className="flex-1 min-w-0 space-y-2">
@@ -254,6 +299,14 @@ const WikiIndexPage: React.FC = () => {
 
   return (
     <div className="space-y-16">
+      <SEO
+        title={t.wiki.library_title}
+        description={t.wiki.library_subtitle}
+        url={canonicalUrl}
+        alternateLanguages={alternateLanguages}
+        type="website"
+        schema={itemListSchema ? [itemListSchema, breadcrumbSchema] : breadcrumbSchema}
+      />
       <section className="text-center space-y-6 pt-6">
         <div className={`text-xs uppercase tracking-[0.35em] ${theme === 'dark' ? 'text-gold-400' : 'text-gold-600'}`}>
           {t.wiki.kicker}
@@ -275,7 +328,7 @@ const WikiIndexPage: React.FC = () => {
         <Card className="text-sm animate-pulse">{t.common.loading}</Card>
       )}
       {error && (
-        <Card className="border-l-2 border-l-danger/60 text-sm text-danger">{error}</Card>
+        <Card className="border-l border-l-danger/40 text-sm text-danger">{error}</Card>
       )}
 
       {!loading && !error && searchTerm.trim() && (

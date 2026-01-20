@@ -1,10 +1,11 @@
-// INPUT: Wiki 条目详情与关联条目数据（含 1280 容器约束与符号文本变体）。
-// OUTPUT: 导出 Wiki 详情页组件（含阅读宽度限制与 Unicode 图标显示）。
+// INPUT: Wiki 条目详情与关联条目数据（含 SEO 元信息、hreflang 校验与符号文本变体）。
+// OUTPUT: 导出 Wiki 详情页组件（含阅读宽度限制、SEO 输出与多语言链接校验）。
 // POS: Wiki 详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Accordion, Card, Container, Section, useLanguage, useTheme } from '../UIComponents';
+import { SEO } from '../SEO';
 import { ArrowLeft, Brain, GitMerge, Ghost, ScrollText, Sparkles, Wand2 } from 'lucide-react';
 import { fetchWikiItem, fetchWikiItems } from '../../services/apiClient';
 import type { WikiItem, WikiItemSummary } from '../../types';
@@ -105,6 +106,22 @@ const forceTextSymbol = (value: string) => {
   return `${stripped}\uFE0E`;
 };
 
+type AlternateLink = { hrefLang: string; href: string };
+type LanguageAvailability = { zh: boolean; en: boolean };
+
+const buildAlternateLanguages = (siteUrl: string, pathSuffix: string, availability: LanguageAvailability): AlternateLink[] => {
+  const zhUrl = `${siteUrl}/zh${pathSuffix}`;
+  const enUrl = `${siteUrl}/en${pathSuffix}`;
+  const links: AlternateLink[] = [];
+  if (availability.zh) links.push({ hrefLang: 'zh', href: zhUrl });
+  if (availability.en) links.push({ hrefLang: 'en', href: enUrl });
+  const defaultLang = availability.en ? 'en' : availability.zh ? 'zh' : null;
+  if (defaultLang) {
+    links.push({ hrefLang: 'x-default', href: defaultLang === 'en' ? enUrl : zhUrl });
+  }
+  return links;
+};
+
 const WikiDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
@@ -115,8 +132,44 @@ const WikiDetailPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
-  const borderColor = theme === 'dark' ? 'border-white/10' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
   const highlightClass = theme === 'dark' ? 'text-gold-400' : 'text-gold-600';
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
+  const lang = language === 'en' ? 'en' : 'zh';
+  const detailPath = id ? `/wiki/${id}` : '/wiki';
+  const canonicalUrl = `${siteUrl}/${lang}${detailPath}`;
+  const [alternateAvailability, setAlternateAvailability] = useState<LanguageAvailability>(() => ({
+    zh: lang === 'zh',
+    en: lang === 'en',
+  }));
+  const alternateLanguages = useMemo(
+    () => buildAlternateLanguages(siteUrl, detailPath, alternateAvailability),
+    [alternateAvailability, detailPath, siteUrl]
+  );
+
+  useEffect(() => {
+    let active = true;
+    if (!id) {
+      setAlternateAvailability({ zh: true, en: true });
+      return () => {
+        active = false;
+      };
+    }
+    const otherLang: 'zh' | 'en' = lang === 'en' ? 'zh' : 'en';
+    setAlternateAvailability({ zh: lang === 'zh', en: lang === 'en' });
+    fetchWikiItem(id, otherLang)
+      .then(() => {
+        if (!active) return;
+        setAlternateAvailability((prev) => ({ ...prev, [otherLang]: true }));
+      })
+      .catch(() => {
+        if (!active) return;
+        setAlternateAvailability((prev) => ({ ...prev, [otherLang]: false }));
+      });
+    return () => {
+      active = false;
+    };
+  }, [id, lang]);
 
   useEffect(() => {
     let mounted = true;
@@ -172,7 +225,7 @@ const WikiDetailPage: React.FC = () => {
     return (
       <Container>
         <div className="space-y-6">
-          <Card className="border-l-2 border-l-danger/60 text-sm text-danger">{error || t.app.error}</Card>
+          <Card className="border-l border-l-danger/40 text-sm text-danger">{error || t.app.error}</Card>
           <Link to="/wiki?tab=library" className={`inline-flex items-center gap-2 text-sm ${mutedText}`}>
             <ArrowLeft size={16} /> {t.wiki.detail_back}
           </Link>
@@ -183,6 +236,40 @@ const WikiDetailPage: React.FC = () => {
 
   return (
     <Container>
+      <SEO
+        title={item.title}
+        description={item.description || t.wiki.subtitle}
+        keywords={item.keywords}
+        url={canonicalUrl}
+        alternateLanguages={alternateLanguages}
+        type="article"
+        schema={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'DefinedTerm',
+            name: item.title,
+            description: item.description,
+            inDefinedTermSet: {
+              '@type': 'DefinedTermSet',
+              name: 'AstrologyWiki',
+              url: `${siteUrl}/${lang}/wiki`,
+            },
+            url: canonicalUrl,
+            inLanguage: lang,
+            alternateName: item.subtitle || undefined,
+            keywords: item.keywords,
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: t.wiki.tab_home, item: `${siteUrl}/${lang}/` },
+              { '@type': 'ListItem', position: 2, name: t.wiki.tab_library, item: `${siteUrl}/${lang}/wiki` },
+              { '@type': 'ListItem', position: 3, name: item.title, item: canonicalUrl },
+            ],
+          },
+        ]}
+      />
       <div className="space-y-12">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link to="/wiki?tab=library" className={`inline-flex items-center gap-2 text-sm ${mutedText} hover:text-gold-500 transition-colors`}>
@@ -218,11 +305,11 @@ const WikiDetailPage: React.FC = () => {
 
         <Section title={t.wiki.detail_tldr}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-paper-100/85 border-paper-300'}`}>
               <div className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 ${highlightClass}`}>{t.wiki.detail_archetype}</div>
               <div className="text-xl font-serif font-semibold text-star-50">{item.prototype}</div>
             </div>
-            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-paper-100/85 border-paper-300'}`}>
               <div className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 ${highlightClass}`}>{t.wiki.detail_analogy}</div>
               <div className={`text-base italic ${mutedText}`}>"{item.analogy}"</div>
             </div>
@@ -231,7 +318,7 @@ const WikiDetailPage: React.FC = () => {
 
         <Section title={t.wiki.detail_core}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-paper-100/85 border-paper-300'}`}>
               <div className={`flex items-center gap-3 mb-4`}>
                 <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-amber-500/10 text-amber-400' : 'bg-amber-500/10 text-amber-600'}`}>
                   <ScrollText size={16} />
@@ -240,7 +327,7 @@ const WikiDetailPage: React.FC = () => {
               </div>
               {renderContent(item.astronomy_myth || t.wiki.detail_placeholder, highlightClass, mutedText)}
             </div>
-            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-paper-100/85 border-paper-300'}`}>
               <div className={`flex items-center gap-3 mb-4`}>
                 <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-blue-500/10 text-blue-400' : 'bg-blue-500/10 text-blue-600'}`}>
                   <Brain size={16} />
@@ -249,7 +336,7 @@ const WikiDetailPage: React.FC = () => {
               </div>
               {renderContent(item.psychology || t.wiki.detail_placeholder, highlightClass, mutedText)}
             </div>
-            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-paper-100/85 border-paper-300'}`}>
               <div className={`flex items-center gap-3 mb-4`}>
                 <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-purple-500/10 text-purple-400' : 'bg-purple-500/10 text-purple-600'}`}>
                   <Ghost size={16} />
@@ -258,7 +345,7 @@ const WikiDetailPage: React.FC = () => {
               </div>
               {renderContent(item.shadow || t.wiki.detail_placeholder, highlightClass, mutedText)}
             </div>
-            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-paper-100/85 border-paper-300'}`}>
               <div className={`flex items-center gap-3 mb-4`}>
                 <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-emerald-500/10 text-emerald-600'}`}>
                   <GitMerge size={16} />

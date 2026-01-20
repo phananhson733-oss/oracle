@@ -1,10 +1,11 @@
-// INPUT: Wiki 入口页签与路由状态（含独立页签与 1280 容器约束）。
-// OUTPUT: 导出 Wiki 聚合页面组件（包含首页/百科/经典页签）。
+// INPUT: Wiki 入口页签与路由状态（含独立页签、SEO 元信息与 1280 容器约束）。
+// OUTPUT: 导出 Wiki 聚合页面组件（包含首页/百科/经典页签与基础 SEO 输出）。
 // POS: Wiki 路由入口；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ActionButton, Container, useLanguage } from '../UIComponents';
+import { SEO } from '../SEO';
 import WikiHomePage from './WikiHomePage';
 import WikiIndexPage from './WikiIndexPage';
 import WikiClassicsPage from './WikiClassicsPage';
@@ -23,11 +24,22 @@ const resolveTab = (search: string): WikiTab => {
 };
 
 const WikiHubPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
 
   const activeTab = useMemo(() => resolveTab(location.search), [location.search]);
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
+  const lang = language === 'en' ? 'en' : 'zh';
+  const canonicalUrl = `${siteUrl}/${lang}/wiki`;
+  const alternateLanguages = [
+    { hrefLang: 'zh', href: `${siteUrl}/zh/wiki` },
+    { hrefLang: 'en', href: `${siteUrl}/en/wiki` },
+    { hrefLang: 'x-default', href: `${siteUrl}/en/wiki` },
+  ];
+
+  const hubTitle = t.wiki.title || t.wiki.hero_title;
+  const hubDescription = t.wiki.subtitle || t.wiki.hero_subtitle;
 
   const handleTabChange = (tab: WikiTab) => {
     const params = new URLSearchParams(location.search);
@@ -39,6 +51,13 @@ const WikiHubPage: React.FC = () => {
 
   return (
     <Container>
+      <SEO
+        title={hubTitle}
+        description={hubDescription}
+        url={canonicalUrl}
+        alternateLanguages={alternateLanguages}
+        type="website"
+      />
       <div className="space-y-10">
         <div className="flex items-center justify-end gap-3">
           {TAB_VALUES.map((tab) => (

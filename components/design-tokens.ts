@@ -1,6 +1,6 @@
-// INPUT: 设计系统 Token 定义
+// INPUT: 设计系统 Token 定义（含 paper 温暖色系与对比度修正）
 // OUTPUT: 导出所有设计 token 常量（颜色、间距、圆角、动画等）
-// POS: 设计系统核心配置文件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: 设计系统核心配置文件（含 light 纸感映射与遮罩基准）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 /**
  * 占星智慧设计系统 Token
@@ -157,9 +157,9 @@ export const THEME_CLASSES = {
     container: 'bg-paper-100 text-paper-900',
     card: 'bg-paper-100/85 border border-paper-300/80 shadow-sm backdrop-blur',
     cardHover: 'hover:border-accent/40 hover:bg-paper-100/70',
-    input: 'bg-white/90 border-paper-300 text-paper-900 placeholder-paper-400',
+    input: 'bg-paper-100/85 border-paper-300 text-paper-900 placeholder-paper-400',
     heading: 'text-paper-900',
-    body: 'text-paper-400',
+    body: 'text-paper-600',
     muted: 'text-paper-400',
     divider: 'border-paper-300',
     accent: 'text-accent',
@@ -199,7 +199,7 @@ export const UTILITY = {
   center: 'flex items-center justify-center',
 
   // 覆盖层
-  overlay: 'fixed inset-0 bg-black/40 backdrop-blur-sm',
+  overlay: 'fixed inset-0 bg-space-950/40 backdrop-blur-sm',
 
   // 玻璃效果
   glass: 'backdrop-blur-lg',
@@ -231,7 +231,7 @@ export const BUTTON_VARIANTS = {
   },
   secondary: {
     dark: 'bg-space-800/70 text-star-50 border border-gold-500/20',
-    light: 'bg-white text-paper-900 border border-paper-300',
+    light: 'bg-paper-100/85 text-paper-900 border border-paper-300',
     hover: {
       dark: 'hover:bg-space-700/70 hover:border-accent/60',
       light: 'hover:bg-paper-100 hover:border-accent/50',
@@ -361,7 +361,7 @@ export const COLOR_HIERARCHY = {
   // 次要色 (30%) - 卡片、容器、分组
   secondary: {
     dark: 'bg-space-900/60 text-star-200',
-    light: 'bg-paper-50 text-paper-600',
+    light: 'bg-paper-100/85 text-paper-600',
   },
 
   // 强调色 (10%) - 按钮、链接、重要元素
@@ -392,13 +392,13 @@ export const INTERACTIVE_STATES = {
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
     },
     astrology: {
-      default: 'bg-mystic-500 text-white',
+      default: 'bg-mystic-500 text-star-50',
       hover: 'hover:bg-mystic-600 hover:shadow-[0_0_20px_-6px_rgba(168,85,247,0.4)]',
       active: 'active:bg-mystic-700 active:scale-[0.98]',
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
     },
     psychology: {
-      default: 'bg-psycho-500 text-white',
+      default: 'bg-psycho-500 text-star-50',
       hover: 'hover:bg-psycho-600 hover:shadow-[0_0_20px_-6px_rgba(59,130,246,0.4)]',
       active: 'active:bg-psycho-700 active:scale-[0.98]',
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
@@ -428,11 +428,11 @@ export const INTERACTIVE_STATES = {
 export const DATA_VIZ_COLORS = {
   // 情绪色谱（用于CBT情绪追踪）
   mood: {
-    veryPositive: 'bg-emerald-500 text-white',
-    positive: 'bg-green-500 text-white',
-    neutral: 'bg-amber-500 text-white',
-    negative: 'bg-orange-500 text-white',
-    veryNegative: 'bg-red-500 text-white',
+    veryPositive: 'bg-emerald-500 text-star-50',
+    positive: 'bg-green-500 text-star-50',
+    neutral: 'bg-amber-500 text-star-50',
+    negative: 'bg-orange-500 text-star-50',
+    veryNegative: 'bg-red-500 text-star-50',
   },
 
   // 行星色彩（用于占星图表）

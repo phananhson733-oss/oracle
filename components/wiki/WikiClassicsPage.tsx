@@ -1,10 +1,11 @@
-// INPUT: Wiki 经典书籍列表与书架视觉体系（含分类分组、封面降级与计数 i18n）。
-// OUTPUT: 导出经典书籍书架页组件（含分类书架与阅读展示布局）。
+// INPUT: Wiki 经典书籍列表与书架视觉体系（含 SEO 元信息、ItemList 结构化数据与封面降级）。
+// OUTPUT: 导出经典书籍书架页组件（含分类书架、SEO 输出与 ItemList 结构化数据修正）。
 // POS: Wiki 经典书籍模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Section, useLanguage, useTheme } from '../UIComponents';
+import { SEO } from '../SEO';
 import { BookOpen, Star, Sparkles } from 'lucide-react';
 import { fetchWikiClassics } from '../../services/apiClient';
 import type { WikiClassicSummary } from '../../types';
@@ -66,6 +67,14 @@ const WikiClassicsPage: React.FC = () => {
   const [items, setItems] = useState<WikiClassicSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
+  const lang = language === 'en' ? 'en' : 'zh';
+  const canonicalUrl = `${siteUrl}/${lang}/wiki/classics`;
+  const alternateLanguages = [
+    { hrefLang: 'zh', href: `${siteUrl}/zh/wiki/classics` },
+    { hrefLang: 'en', href: `${siteUrl}/en/wiki/classics` },
+    { hrefLang: 'x-default', href: `${siteUrl}/en/wiki/classics` },
+  ];
 
   // 主题色 - 优化 light 模式对比度
   const isDark = theme === 'dark';
@@ -74,11 +83,35 @@ const WikiClassicsPage: React.FC = () => {
   const borderColor = isDark ? 'border-space-700/50' : 'border-paper-300'; // 增强边框 200→300
   const frameBorder = isDark ? 'border-space-700/70' : 'border-paper-300'; // 增强边框
   const highlightText = isDark ? 'text-gold-400' : 'text-gold-600';
-  const panelSurface = isDark ? 'bg-space-900/60' : 'bg-white/95'; // 提升不透明度 80→95
-  const cardSurface = isDark ? 'bg-space-900/80' : 'bg-white/95'; // 提升不透明度 90→95
+  const panelSurface = isDark ? 'bg-space-900/60' : 'bg-paper-100/90'; // 提升不透明度 80→90
+  const cardSurface = isDark ? 'bg-space-900/80' : 'bg-paper-100/90'; // 提升不透明度 90→90
   const accentBg = isDark ? 'bg-gold-500/10' : 'bg-gold-500/8';
   const shelfStyle = useMemo(() => buildShelfStyle(theme), [theme]);
   const featuredItems = useMemo(() => items.slice(0, 3), [items]);
+  const itemListSchema = useMemo(() => {
+    if (!items.length) return null;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Thing',
+          name: item.title,
+          url: `${siteUrl}/${lang}/wiki/classics/${item.id}`,
+        },
+      })),
+    };
+  }, [items, lang, siteUrl]);
+  const breadcrumbSchema = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t.wiki.tab_home, item: `${siteUrl}/${lang}/` },
+      { '@type': 'ListItem', position: 2, name: t.wiki.tab_classics, item: canonicalUrl },
+    ],
+  }), [canonicalUrl, lang, siteUrl, t.wiki.tab_classics, t.wiki.tab_home]);
   const categoryLabels = t.wiki.classics_categories as Record<string, string> | undefined;
   const groupedItems = useMemo(() => {
     const groups = new Map<string, WikiClassicSummary[]>();
@@ -293,7 +326,7 @@ const WikiClassicsPage: React.FC = () => {
           {/* 书脊效果 */}
           <div className="absolute left-0 top-0 h-full w-2.5 z-20">
             <div className={`h-full w-full ${isDark ? 'bg-gradient-to-r from-black/40 via-black/20 to-transparent' : 'bg-gradient-to-r from-black/20 via-black/10 to-transparent'}`} />
-            <div className="absolute left-1.5 top-0 h-full w-px bg-white/20" />
+            <div className={`absolute left-1.5 top-0 h-full w-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300/70'}`} />
           </div>
 
           {/* 顶部光泽 */}
@@ -314,7 +347,7 @@ const WikiClassicsPage: React.FC = () => {
           </div>
 
           {/* 边框 */}
-          <div className={`absolute inset-0 rounded-lg border ${isDark ? 'border-white/10' : 'border-paper-300/50'} group-hover:border-gold-500/30 transition-colors z-20 pointer-events-none`} />
+          <div className={`absolute inset-0 rounded-lg border ${isDark ? 'border-gold-500/15' : 'border-paper-300/50'} group-hover:border-gold-500/30 transition-colors z-20 pointer-events-none`} />
 
           {/* 封面内容 */}
           <div className="relative h-full w-full">
@@ -336,6 +369,14 @@ const WikiClassicsPage: React.FC = () => {
 
   return (
     <div className="space-y-12 max-w-6xl mx-auto">
+      <SEO
+        title={t.wiki.classics_title}
+        description={t.wiki.classics_subtitle}
+        url={canonicalUrl}
+        alternateLanguages={alternateLanguages}
+        type="website"
+        schema={itemListSchema ? [itemListSchema, breadcrumbSchema] : breadcrumbSchema}
+      />
       {/* ===== 头部区域 ===== */}
       <header className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
         {/* 左侧：标题和描述 */}
@@ -463,7 +504,7 @@ const WikiClassicsPage: React.FC = () => {
                     </div>
 
                     {groupIndex < groupedItems.length - 1 && (
-                      <div className={`h-px w-full ${isDark ? 'bg-white/5' : 'bg-paper-200/60'}`} />
+                      <div className={`h-px w-full ${isDark ? 'bg-space-900/60' : 'bg-paper-200/60'}`} />
                     )}
                   </div>
                 ))}

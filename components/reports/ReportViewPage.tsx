@@ -1,6 +1,6 @@
-// INPUT: React、报告客户端与 UI 组件依赖（含报告卡片左侧强调样式调整）。
-// OUTPUT: 导出报告详情页面组件（含统一左侧色带的卡片布局）。
-// POS: 报告详情页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、报告客户端与 UI 组件依赖（含纸感映射、报告卡片左侧强调样式与对比度修正）。
+// OUTPUT: 导出报告详情页面组件（含统一左侧色带、分段展开与主题化分隔线）。
+// POS: 报告详情页面组件（含纸感映射与分隔线对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -143,7 +143,7 @@ const ReportViewPage: React.FC = () => {
         </button>
 
         {/* Report header card */}
-        <Card className="overflow-hidden border-l-2 border-l-gold-500/60">
+        <Card className="overflow-hidden border-l border-l-gold-500/40">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-4">
               <span className="text-4xl">{display.icon}</span>
@@ -181,8 +181,8 @@ const ReportViewPage: React.FC = () => {
 
       {/* Generating overlay */}
       {generating && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <Card className="max-w-sm mx-4 text-center border-l-2 border-l-gold-500/50">
+        <div className="fixed inset-0 bg-space-950/50 flex items-center justify-center z-50">
+          <Card className="max-w-sm mx-4 text-center border-l border-l-gold-500/40">
             <div className="w-12 h-12 border-3 border-gold-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
             <p className={isDark ? 'text-star-200' : 'text-paper-700'}>{tr.generating}</p>
           </Card>
@@ -240,7 +240,7 @@ const ReportSectionCard: React.FC<{
   tr: Record<string, string>;
 }> = ({ section, index, isExpanded, onToggle, isDark, lang, tr }) => {
   return (
-    <Card className="overflow-hidden border-l-2 border-l-gold-500/40">
+    <Card className="overflow-hidden border-l border-l-gold-500/40">
       {/* Section header */}
       <button
         onClick={onToggle}
@@ -265,7 +265,7 @@ const ReportSectionCard: React.FC<{
 
       {/* Section content */}
           {isExpanded && (
-            <div className={`mt-4 pt-4 border-t ${isDark ? 'border-white/10' : 'border-paper-300'}`}>
+            <div className={`mt-4 pt-4 border-t ${isDark ? 'border-gold-500/15' : 'border-paper-300'}`}>
               {/* Rating if available */}
           {section.rating !== undefined && (
             <div className="flex items-center gap-2 mb-4">

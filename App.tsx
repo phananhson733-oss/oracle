@@ -1,6 +1,6 @@
-// INPUT: React、Router、组件与后端数据服务依赖（含积分使用情况页、迁移提示与付费墙入口）。
-// OUTPUT: 导出主应用组件（含积分入口、试用提醒、认证与迁移提示）。
-// POS: 主应用路由与页面编排中心。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、Router、组件与后端数据服务依赖（含积分使用情况页、迁移提示、SEO head 输出与付费墙入口）。
+// OUTPUT: 导出主应用组件（含 Ask 问答分区切换、SEO/noindex head 输出与 Unicode 图标底板对比度修正）。
+// POS: 主应用路由与页面编排中心（含 Ask 问答分隔线、细线色条与图标底板对比度对齐）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
@@ -18,6 +18,7 @@ import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, g
 import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } from './contexts/EntitlementContext';
+import { SEO } from './components/SEO';
 import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage } from './components/auth';
 import { GlobalPaywall, LockedContent, LockedAccordion } from './components/Paywall';
 
@@ -90,6 +91,40 @@ const formatTimezoneOffset = (timeZone?: string) => {
   } catch {
     return timeZone;
   }
+};
+
+type GeoSuggestion = {
+  city: string;
+  country: string;
+  lat: number;
+  lon: number;
+  timezone: string;
+  admin1?: string;
+};
+
+const CJK_REGEX = /[\u4e00-\u9fff]/;
+const containsCjk = (value: string) => CJK_REGEX.test(value);
+const getLocationQueryMinLength = (value: string) => (containsCjk(value) ? 1 : 2);
+const uniqueLocationParts = (parts: Array<string | undefined>) => {
+  const seen = new Set<string>();
+  return parts.filter((part) => {
+    if (!part) return false;
+    const key = part.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }) as string[];
+};
+const formatLocationLabel = (city: string, admin1: string | undefined, country: string | undefined, language: T.Language) => {
+  const parts = uniqueLocationParts([city, admin1, country]);
+  const separator = language === 'zh' ? '，' : ', ';
+  return parts.join(separator);
+};
+const formatLocationDetail = (admin1: string | undefined, country: string | undefined, language: T.Language) => {
+  const parts = uniqueLocationParts([admin1, country]);
+  if (parts.length === 0) return '';
+  const separator = language === 'zh' ? '，' : ', ';
+  return parts.join(separator);
 };
 
 const buildBirthCacheKey = (profile: Pick<T.UserProfile, 'birthDate' | 'birthTime' | 'birthCity' | 'lat' | 'lon' | 'timezone' | 'accuracyLevel'>) => [
@@ -193,16 +228,16 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
   const { theme } = useTheme();
 
   const big3Cards = [
-    { key: 'sun', label: t.me.sun || '☉ Sun', subtitle: t.me.sun_sub || 'Core Identity', data: data?.sun, accent: 'border-l-red-500' },
-    { key: 'moon', label: t.me.moon || '☽ Moon', subtitle: t.me.moon_sub || 'Inner World', data: data?.moon, accent: 'border-l-blue-500' },
-    { key: 'rising', label: t.me.rising || '↑ Rising', subtitle: t.me.rising_sub || 'Outer Mask', data: data?.rising, accent: 'border-l-gold-500' },
+    { key: 'sun', label: t.me.sun || '☉ Sun', subtitle: t.me.sun_sub || 'Core Identity', data: data?.sun, accent: 'border-l-red-500/40' },
+    { key: 'moon', label: t.me.moon || '☽ Moon', subtitle: t.me.moon_sub || 'Inner World', data: data?.moon, accent: 'border-l-blue-500/40' },
+    { key: 'rising', label: t.me.rising || '↑ Rising', subtitle: t.me.rising_sub || 'Outer Mask', data: data?.rising, accent: 'border-l-gold-500/40' },
   ];
 
   const moduleCards = [
-    { title: t.me.melody, content: (<div className="space-y-2">{(data?.core_melody?.keywords || []).slice(0, 2).map((k, i) => (<div key={i} className="text-sm leading-relaxed"><span className="font-bold text-green-600 dark:text-green-500 uppercase text-xs tracking-wider block mb-0.5">{k}</span><span className="opacity-90">{data?.core_melody?.explanations?.[i]}</span></div>))}</div>), accent: 'border-l-green-500' },
-    { title: t.me.talent, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_talent?.title}</h4><p className="text-sm opacity-90 leading-relaxed line-clamp-2">{data?.top_talent?.example}</p></>), accent: 'border-l-orange-500' },
-    { title: t.me.pitfall, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_pitfall?.title}</h4><p className="text-sm opacity-90 leading-relaxed">{(data?.top_pitfall?.triggers || []).slice(0, 2).join(' · ')}</p></>), accent: 'border-l-red-500' },
-    { title: t.me.trigger, content: (<div className="text-sm leading-relaxed space-y-1"><div className="opacity-90">{data?.trigger_card?.inner_need}</div><div className="text-xs text-purple-600 dark:text-purple-500 font-medium">{data?.trigger_card?.buffer_action}</div></div>), accent: 'border-l-purple-500' }
+    { title: t.me.melody, content: (<div className="space-y-2">{(data?.core_melody?.keywords || []).slice(0, 2).map((k, i) => (<div key={i} className="text-sm leading-relaxed"><span className="font-bold text-green-600 dark:text-green-500 uppercase text-xs tracking-wider block mb-0.5">{k}</span><span className="opacity-90">{data?.core_melody?.explanations?.[i]}</span></div>))}</div>), accent: 'border-l-green-500/40' },
+    { title: t.me.talent, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_talent?.title}</h4><p className="text-sm opacity-90 leading-relaxed line-clamp-2">{data?.top_talent?.example}</p></>), accent: 'border-l-orange-500/40' },
+    { title: t.me.pitfall, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_pitfall?.title}</h4><p className="text-sm opacity-90 leading-relaxed">{(data?.top_pitfall?.triggers || []).slice(0, 2).join(' · ')}</p></>), accent: 'border-l-red-500/40' },
+    { title: t.me.trigger, content: (<div className="text-sm leading-relaxed space-y-1"><div className="opacity-90">{data?.trigger_card?.inner_need}</div><div className="text-xs text-purple-600 dark:text-purple-500 font-medium">{data?.trigger_card?.buffer_action}</div></div>), accent: 'border-l-purple-500/40' }
   ];
 
   return (
@@ -210,7 +245,7 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
       {/* Big3 - Three prominent cards */}
       <div className="grid md:grid-cols-3 gap-4">
         {big3Cards.map((card) => (
-          <Card key={card.key} className={`border-l-2 ${card.accent} p-5`}>
+          <Card key={card.key} className={`border-l ${card.accent} p-5`}>
             <div className="flex items-baseline justify-between mb-3">
               <span className="text-lg font-serif font-medium">{card.label}</span>
               <span className="text-xs uppercase tracking-widest opacity-60">{card.subtitle}</span>
@@ -229,7 +264,7 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
       {/* Four modules - 2×2 grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {moduleCards.map((c, i) => (
-          <Card key={i} className={`border-l-2 ${c.accent} p-4`}>
+          <Card key={i} className={`border-l ${c.accent} p-4`}>
             <div className="text-xs uppercase font-bold opacity-60 mb-2 tracking-widest">{c.title}</div>
             {c.content}
           </Card>
@@ -297,7 +332,7 @@ const DimensionContent: React.FC<{ dim: string, label: string, profile: T.UserPr
           </div>
 
           {/* Practice path */}
-          <div className="pl-4 border-l-2 border-purple-500/50">
+          <div className="pl-4 border-l border-purple-500/50">
              <div className="text-sm font-semibold uppercase mb-3 tracking-widest text-purple-600 dark:text-purple-500">{t.me.practice_path}</div>
              <ol className="list-decimal pl-4 text-sm space-y-2 opacity-90">{(data?.practice?.steps || []).map((s,i) => <li key={i} className="leading-relaxed">{s}</li>)}</ol>
           </div>
@@ -342,7 +377,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
       tone: {
         accent: 'text-gold-600 dark:text-gold-500',
         border: 'border-gold-500/30',
-        accentBorder: 'border-l-gold-500/60',
+        accentBorder: 'border-l-gold-500/40',
         dot: 'bg-gold-500',
       },
       data: themes.drive,
@@ -353,7 +388,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
       tone: {
         accent: 'text-red-700 dark:text-danger',
         border: 'border-danger/30',
-        accentBorder: 'border-l-danger/60',
+        accentBorder: 'border-l-danger/40',
         dot: 'bg-danger',
       },
       data: themes.fear,
@@ -364,7 +399,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
       tone: {
         accent: 'text-green-700 dark:text-success',
         border: 'border-success/30',
-        accentBorder: 'border-l-success/60',
+        accentBorder: 'border-l-success/40',
         dot: 'bg-success',
       },
       data: themes.growth,
@@ -605,29 +640,59 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 // --- PAGES ---
 
 const LandingPage: React.FC = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const navigate = useNavigate();
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
+    const lang = language === 'en' ? 'en' : 'zh';
+    const canonicalUrl = `${siteUrl}/${lang}/`;
+    const alternateLanguages = [
+        { hrefLang: 'zh', href: `${siteUrl}/zh/` },
+        { hrefLang: 'en', href: `${siteUrl}/en/` },
+        { hrefLang: 'x-default', href: `${siteUrl}/en/` },
+    ];
+
+    const webSiteSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'AstrologyWiki',
+        url: canonicalUrl,
+        inLanguage: lang,
+        potentialAction: {
+            '@type': 'SearchAction',
+            target: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
+            'query-input': 'required name=search_term_string',
+        },
+    };
 
     const handleStart = async () => {
         navigate('/onboarding');
     };
 
     return (
-        <Container className="flex items-center justify-center !pt-0 text-center relative overflow-hidden">
-            <div className="max-w-md relative z-10 animate-fade-in">
-                <div className="text-6xl md:text-8xl mb-8 mx-auto w-24 h-24 flex items-center justify-center rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-500 font-serif">☾</div>
-                <h1 className="text-5xl md:text-6xl font-serif font-medium mb-6 leading-tight tracking-tight">{t.app.name}</h1>
-                <p className="text-lg opacity-80 mb-10 leading-relaxed font-light px-4">{t.app.tagline}</p>
-                
-                <ActionButton onClick={handleStart} size="lg" className="mx-auto max-w-xs shadow-glow">
-                    {t.app.landing_btn}
-                </ActionButton>
-                
-                <p className="mt-8 text-xs opacity-70 font-mono tracking-widest uppercase">
-                    Psychology × Astrology
-                </p>
-            </div>
-        </Container>
+        <>
+            <SEO
+                description={t.app.sub_tagline}
+                url={canonicalUrl}
+                alternateLanguages={alternateLanguages}
+                schema={webSiteSchema}
+                type="website"
+            />
+            <Container className="flex items-center justify-center !pt-0 text-center relative overflow-hidden">
+                <div className="max-w-md relative z-10 animate-fade-in">
+                    <div className="text-6xl md:text-8xl mb-8 mx-auto w-24 h-24 flex items-center justify-center rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-500 font-serif">☾</div>
+                    <h1 className="text-5xl md:text-6xl font-serif font-medium mb-6 leading-tight tracking-tight">{t.app.name}</h1>
+                    <p className="text-lg opacity-80 mb-10 leading-relaxed font-light px-4">{t.app.tagline}</p>
+
+                    <ActionButton onClick={handleStart} size="lg" className="mx-auto max-w-xs shadow-glow">
+                        {t.app.landing_btn}
+                    </ActionButton>
+
+                    <p className="mt-8 text-xs opacity-70 font-mono tracking-widest uppercase">
+                        Psychology × Astrology
+                    </p>
+                </div>
+            </Container>
+        </>
     );
 };
 
@@ -637,19 +702,21 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
   const [step, setStep] = useState(1);
   const [data, setData] = useState<Partial<T.UserProfile>>({ accuracyLevel: 'exact', focusTags: [], timezone: '' });
   const [cityQuery, setCityQuery] = useState('');
-  const [citySuggestions, setCitySuggestions] = useState<Array<{ city: string; country: string; lat: number; lon: number; timezone: string; admin1?: string }>>([]);
+  const [citySuggestions, setCitySuggestions] = useState<GeoSuggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   useEffect(() => {
-    if (cityQuery.length < 2) { setCitySuggestions([]); return; }
+    const trimmedQuery = cityQuery.trim();
+    const minLength = getLocationQueryMinLength(trimmedQuery);
+    if (trimmedQuery.length < minLength) { setCitySuggestions([]); return; }
     const timer = setTimeout(async () => {
       try {
-        const res = await searchCities(cityQuery, 5);
+        const res = await searchCities(trimmedQuery, 5, language);
         setCitySuggestions(res.cities || []);
       } catch { setCitySuggestions([]); }
     }, 300);
     return () => clearTimeout(timer);
-  }, [cityQuery]);
+  }, [cityQuery, language]);
   
   const headingClass = theme === 'dark' ? "text-star-50" : "text-paper-900";
   const labelClass = "text-xs font-bold uppercase tracking-widest opacity-80 mb-2 block";
@@ -658,7 +725,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
     <Container className="flex items-center justify-center !pt-0">
       <div className="w-full max-w-md">
         <div className="mb-8 flex gap-2 justify-center">
-            {[1,2,3].map(i => <div key={i} className={`h-1 w-8 rounded-full transition-colors ${i <= step ? 'bg-gold-500' : (theme === 'dark' ? 'bg-white/10' : 'bg-paper-300')}`} />)}
+            {[1,2,3].map(i => <div key={i} className={`h-1 w-8 rounded-full transition-colors ${i <= step ? 'bg-gold-500' : (theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-300')}`} />)}
         </div>
 
         {step === 1 && (
@@ -705,20 +772,22 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                 />
                 {showSuggestions && citySuggestions.length > 0 && (
-                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-white border-gray-200'} shadow-lg max-h-48 overflow-auto`}>
+                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-paper-300'} shadow-lg max-h-48 overflow-auto`}>
                       {citySuggestions.map((city, i) => (
                         <div
                           key={i}
-                          className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-gray-100'}`}
+                          className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
                           onMouseDown={() => {
-                            const label = city.country ? `${city.city}, ${city.country}` : city.city;
+                            const label = formatLocationLabel(city.city, city.admin1, city.country, language);
                             setCityQuery(label);
-                            setData({ ...data, birthCity: label, lat: city.lat, lon: city.lon, timezone: city.timezone });
+                            setData((prev) => ({ ...prev, birthCity: label, lat: city.lat, lon: city.lon, timezone: city.timezone }));
                             setShowSuggestions(false);
                           }}
                         >
                           <div className="font-medium">{city.city}</div>
-                          <div className="text-xs opacity-70">{city.country}</div>
+                          {formatLocationDetail(city.admin1, city.country, language) && (
+                            <div className="text-xs opacity-70">{formatLocationDetail(city.admin1, city.country, language)}</div>
+                          )}
                         </div>
                       ))}
                   </div>
@@ -887,7 +956,7 @@ const DetailedScoreRow: React.FC<{ label: string, data: T.DailyEnergy, tone: { b
                         <span className="text-xs font-mono opacity-80">{data.score}%</span>
                     </div>
 
-                    <div className={`h-1 w-full rounded-full overflow-hidden mb-3 ${theme === 'dark' ? 'bg-white/10' : 'bg-paper-200'}`}>
+                    <div className={`h-1 w-full rounded-full overflow-hidden mb-3 ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-200'}`}>
                         <div className={`h-full ${tone.bg} opacity-90`} style={{ width: `${data.score}%` }} />
                     </div>
                 </div>
@@ -1148,18 +1217,18 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const getDimensionConfig = () => {
       if (publicData?.four_dimensions) {
         return [
-          { key: 'energy', label: t.today.energy, data: publicData.four_dimensions.energy, tone: { bg: 'bg-green-500', border: 'border-l-green-500', text: 'text-green-500' } },
-          { key: 'tension', label: t.today.tension, data: publicData.four_dimensions.tension, tone: { bg: 'bg-red-500', border: 'border-l-red-500', text: 'text-red-500' } },
-          { key: 'frictions', label: t.today.frictions, data: publicData.four_dimensions.frictions, tone: { bg: 'bg-orange-500', border: 'border-l-orange-500', text: 'text-orange-500' } },
-          { key: 'pleasures', label: t.today.pleasures, data: publicData.four_dimensions.pleasures, tone: { bg: 'bg-gold-500', border: 'border-l-gold-500', text: 'text-gold-500' } },
+          { key: 'energy', label: t.today.energy, data: publicData.four_dimensions.energy, tone: { bg: 'bg-green-500', border: 'border-l-green-500/40', text: 'text-green-500' } },
+          { key: 'tension', label: t.today.tension, data: publicData.four_dimensions.tension, tone: { bg: 'bg-red-500', border: 'border-l-red-500/40', text: 'text-red-500' } },
+          { key: 'frictions', label: t.today.frictions, data: publicData.four_dimensions.frictions, tone: { bg: 'bg-orange-500', border: 'border-l-orange-500/40', text: 'text-orange-500' } },
+          { key: 'pleasures', label: t.today.pleasures, data: publicData.four_dimensions.pleasures, tone: { bg: 'bg-gold-500', border: 'border-l-gold-500/40', text: 'text-gold-500' } },
         ];
       }
       // 兼容旧版
       return [
-        { key: 'drive', label: t.today.drive, data: publicData?.energy_profile?.drive, tone: { bg: 'bg-green-500', border: 'border-l-green-500', text: 'text-green-500' } },
-        { key: 'pressure', label: t.today.pressure, data: publicData?.energy_profile?.pressure, tone: { bg: 'bg-red-500', border: 'border-l-red-500', text: 'text-red-500' } },
-        { key: 'heat', label: t.today.heat, data: publicData?.energy_profile?.heat, tone: { bg: 'bg-orange-500', border: 'border-l-orange-500', text: 'text-orange-500' } },
-        { key: 'nourishment', label: t.today.nourishment, data: publicData?.energy_profile?.nourishment, tone: { bg: 'bg-gold-500', border: 'border-l-gold-500', text: 'text-gold-500' } },
+        { key: 'drive', label: t.today.drive, data: publicData?.energy_profile?.drive, tone: { bg: 'bg-green-500', border: 'border-l-green-500/40', text: 'text-green-500' } },
+        { key: 'pressure', label: t.today.pressure, data: publicData?.energy_profile?.pressure, tone: { bg: 'bg-red-500', border: 'border-l-red-500/40', text: 'text-red-500' } },
+        { key: 'heat', label: t.today.heat, data: publicData?.energy_profile?.heat, tone: { bg: 'bg-orange-500', border: 'border-l-orange-500/40', text: 'text-orange-500' } },
+        { key: 'nourishment', label: t.today.nourishment, data: publicData?.energy_profile?.nourishment, tone: { bg: 'bg-gold-500', border: 'border-l-gold-500/40', text: 'text-gold-500' } },
       ];
     };
 
@@ -1207,7 +1276,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                           const isSelected = period === currentPeriod;
                           const toneClass = isSelected
                             ? 'bg-gold-500/10 border border-gold-500 shadow-[0_0_15px_rgba(234,179,8,0.3)]'
-                            : (theme === 'dark' ? 'opacity-80 grayscale border border-white/5 bg-space-800/30' : 'opacity-60 grayscale border border-paper-300 bg-paper-200/50');
+                            : (theme === 'dark' ? 'opacity-80 grayscale border border-gold-500/15 bg-space-800/30' : 'opacity-60 grayscale border border-paper-300 bg-paper-200/50');
                           
                           let label = t.today[period as keyof typeof t.today];
                           if (period === 'evening') {
@@ -1232,7 +1301,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   {/* Daily Focus (v3.0 三件套) or Strategy (兼容旧版) */}
                   {/* Daily Focus */}
                   <div className="grid md:grid-cols-2 gap-6">
-                      <Card className="border-l-2 border-l-emerald-500" noPadding>
+                      <Card className="border-l border-l-emerald-500/40" noPadding>
                           <div className="p-5">
                               <div className="text-sm font-bold text-emerald-400 uppercase mb-2 tracking-widest flex items-center gap-2">
                                   <span>◎</span> {language === 'zh' ? '宜' : (focusData ? t.today.move_forward : t.today.best_use)}
@@ -1240,7 +1309,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                               <p className="text-base leading-relaxed">{focusData?.move_forward || strategyData?.best_use}</p>
                           </div>
                       </Card>
-                      <Card className="border-l-2 border-l-red-500" noPadding>
+                      <Card className="border-l border-l-red-500/40" noPadding>
                           <div className="p-5">
                               <div className="text-sm font-bold text-red-400 uppercase mb-2 tracking-widest flex items-center gap-2">
                                   <span>✕</span> {language === 'zh' ? '忌' : (focusData ? t.today.communication_trap : t.today.avoid)}
@@ -1282,7 +1351,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                     <div className="space-y-8">
                     {/* Personalization Section (v3.0) */}
                     {detailData?.personalization && (
-                      <Card className="border-l-2 border-l-gold-500">
+                      <Card className="border-l border-l-gold-500/40">
                         <h4 className="text-sm font-bold uppercase tracking-widest text-gold-500 mb-4">{t.today.personalization}</h4>
                         <div className="space-y-4">
                           <div>
@@ -1294,7 +1363,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                             <p className="text-base leading-relaxed">{detailData.personalization.pattern_activated}</p>
                           </div>
                           {detailData.personalization.why_today && (
-                            <div className="p-6 rounded-2xl border border-gold-500/30 border-l-[3px] border-l-gold-500/60 bg-gold-500/5">
+                            <div className="p-6 rounded-2xl border border-gold-500/30 border-l border-l-gold-500/40 bg-gold-500/5">
                               <p className="text-base leading-loose text-gold-500 font-medium">{detailData.personalization.why_today}</p>
                             </div>
                           )}
@@ -1304,10 +1373,10 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
                     <div className="grid md:grid-cols-3 gap-6">
                         {['emotions', 'relationships', 'work'].map((k) => {
-                            const colors = { emotions: 'border-l-blue-400', relationships: 'border-l-pink-400', work: 'border-l-orange-400' };
+                            const colors = { emotions: 'border-l-blue-400/40', relationships: 'border-l-pink-400/40', work: 'border-l-orange-400/40' };
                             const textColors = { emotions: 'text-blue-400', relationships: 'text-pink-400', work: 'text-orange-400' };
                             return (
-                            <Card key={k} className={`hover:border-gold-500/30 transition-colors border-l-2 ${colors[k as keyof typeof colors]}`}>
+                            <Card key={k} className={`hover:border-gold-500/30 transition-colors border-l ${colors[k as keyof typeof colors]}`}>
                                 <span className={`block text-sm font-bold uppercase mb-3 tracking-widest ${textColors[k as keyof typeof textColors]}`}>{t.today[k as keyof typeof t.today]}</span>
                                 <p className="text-base opacity-90 leading-relaxed">{detailData?.how_it_shows_up?.[k as keyof typeof detailData.how_it_shows_up]}</p>
                             </Card>
@@ -1315,13 +1384,13 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <Card className="border-l-2 border-l-red-500" noPadding>
+                        <Card className="border-l border-l-red-500/40" noPadding>
                           <div className="p-8">
                             <h4 className="text-red-400 font-bold text-sm uppercase tracking-widest mb-1">{t.today.pitfall}: {detailData?.one_challenge?.pattern_name}</h4>
                             <p className="text-base opacity-90 leading-relaxed">{detailData?.one_challenge?.description}</p>
                           </div>
                         </Card>
-                        <Card className="border-l-2 border-l-emerald-500" noPadding>
+                        <Card className="border-l border-l-emerald-500/40" noPadding>
                           <div className="p-8">
                             <h4 className="text-emerald-400 font-bold text-sm uppercase tracking-widest mb-1">{t.today.practice}: {detailData?.one_practice?.title}</h4>
                             <p
@@ -1337,7 +1406,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                         </Card>
                     </div>
 
-                    <Card className="border-l-2 border-l-gold-500/60 text-center" noPadding>
+                    <Card className="border-l border-l-gold-500/40 text-center" noPadding>
                         <div className="p-10">
                           <div className="font-serif text-lg italic opacity-80 text-gold-500">"{detailData?.one_question}"</div>
                         </div>
@@ -1590,11 +1659,11 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
 
         <Section title={elementTitle} className="mb-8">
           <div className="space-y-4">
-            <Card className={`border-l-2 ${colorClass}`}>
+            <Card className={`border-l ${colorClass}`}>
               <div className={`${DETAIL_LABEL_CLASS} mb-2`}>{t.us.script_portrait}</div>
               <p className="text-sm leading-relaxed opacity-90">{script.temperament.portrait}</p>
             </Card>
-            <Card className="border-l-2 border-l-success/60">
+            <Card className="border-l border-l-success/40">
               <div className={`${DETAIL_LABEL_CLASS} text-success mb-2`}>{t.us.script_safety_source}</div>
               <p className="text-sm opacity-90">{script.temperament.safety_source}</p>
             </Card>
@@ -1603,19 +1672,19 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
 
         <Section title={coreTitle} className="mb-8">
           <div className="space-y-4">
-            <Card className="border-l-2 border-l-gold-500/60">
+            <Card className="border-l border-l-gold-500/40">
               <div className="text-xs font-bold uppercase text-gold-500 mb-2">{t.us.script_sun_self}</div>
               <p className="text-sm leading-snug opacity-85">{script.core_triangle?.sun}</p>
             </Card>
-            <Card className="border-l-2 border-l-star-200/70">
+            <Card className="border-l border-l-star-200/40">
               <div className="text-xs font-bold uppercase text-star-200 mb-2">{t.us.script_moon_needs}</div>
               <p className="text-sm leading-snug opacity-85">{script.core_triangle?.moon}</p>
             </Card>
-            <Card className="border-l-2 border-l-star-400/70">
+            <Card className="border-l border-l-star-400/40">
               <div className="text-xs font-bold uppercase text-star-400 mb-2">{t.us.script_rising_mask}</div>
               <p className="text-sm leading-snug opacity-85">{script.core_triangle?.rising}</p>
             </Card>
-            <Card className="border-l-2 border-l-gold-500/70">
+            <Card className="border-l border-l-gold-500/40">
               <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-2`}>{t.us.script_core_summary}</div>
               <p className="text-sm leading-relaxed opacity-90">"{script.core_triangle?.summary}"</p>
             </Card>
@@ -1624,7 +1693,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
 
         <Section title={relationshipConfigTitle} className="mb-8">
           <div className="space-y-4">
-            <Card className="border-l-2 border-l-star-200/70">
+            <Card className="border-l border-l-star-200/40">
               <div className="text-xs font-bold uppercase text-star-200 mb-3">{t.us.script_planets_love_action}</div>
               <div className="space-y-3 text-sm">
                 <div>
@@ -1641,7 +1710,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
                 </div>
               </div>
             </Card>
-            <Card className="border-l-2 border-l-accent/70">
+            <Card className="border-l border-l-accent/40">
               <div className="text-xs font-bold uppercase text-accent mb-3">{t.us.script_houses_arenas}</div>
               <div className="space-y-3 text-sm">
                 <div>
@@ -1658,7 +1727,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
                 </div>
               </div>
             </Card>
-            <Card className="border-l-2 border-l-danger/60">
+            <Card className="border-l border-l-danger/40">
               <div className={`${DETAIL_LABEL_CLASS} text-danger mb-2`}>{t.us.script_karmic_challenges}</div>
               <p className="text-sm opacity-90">{script.configurations?.challenges}</p>
             </Card>
@@ -1666,7 +1735,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
         </Section>
 
         <Section title={relationshipScriptTitle} className="mb-0">
-          <Card className="border-l-2 border-l-gold-500/70">
+          <Card className="border-l border-l-gold-500/40">
             <div className="space-y-4 text-sm">
               <div>
                 <span className={`${DETAIL_LABEL_CLASS} block mb-1`}>{t.us.script_habitual_style}</span>
@@ -1725,7 +1794,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
 
       {/* Section 1: The Vibe Check */}
       <Section title={t.us.vibe_check_title} className="mb-8">
-        <Card className="border-l-2 border-l-gold-500/60">
+        <Card className="border-l border-l-gold-500/40">
           <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-3`}>{t.us.vibe_energy_profile}</div>
           <p className="text-sm leading-relaxed opacity-90">{vibe_check?.energy_profile}</p>
         </Card>
@@ -1735,26 +1804,26 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
       <Section title={t.us.inner_architecture_title} className="mb-8">
         <div className="space-y-4">
           <div className="grid md:grid-cols-3 gap-4">
-            <Card className="border-l-2 border-l-gold-500/70">
+            <Card className="border-l border-l-gold-500/40">
               <div className="text-xs font-bold uppercase text-gold-500 mb-2">{t.us.inner_sun}</div>
               <p className="text-sm leading-relaxed opacity-85">{inner_architecture?.sun}</p>
             </Card>
-            <Card className="border-l-2 border-l-star-200/70">
+            <Card className="border-l border-l-star-200/40">
               <div className="text-xs font-bold uppercase text-star-200 mb-2">{t.us.inner_moon}</div>
               <p className="text-sm leading-relaxed opacity-85">{inner_architecture?.moon}</p>
             </Card>
-            <Card className="border-l-2 border-l-accent/70">
+            <Card className="border-l border-l-accent/40">
               <div className="text-xs font-bold uppercase text-accent mb-2">{t.us.inner_rising}</div>
               <p className="text-sm leading-relaxed opacity-85">{inner_architecture?.rising}</p>
             </Card>
           </div>
           {inner_architecture?.attachment_style && (
-            <Card className="border-l-2 border-l-star-400/60">
+            <Card className="border-l border-l-star-400/40">
               <div className="text-xs font-bold uppercase text-star-400 mb-2">{t.us.inner_attachment}</div>
               <p className="text-sm leading-relaxed opacity-90">{inner_architecture.attachment_style}</p>
             </Card>
           )}
-          <Card className="border-l-2 border-l-gold-500/50">
+          <Card className="border-l border-l-gold-500/40">
             <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-2`}>{t.us.inner_summary}</div>
             <p className="text-sm leading-relaxed opacity-90 font-serif italic">"{inner_architecture?.summary}"</p>
           </Card>
@@ -1764,7 +1833,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
       {/* Section 3: The Love Toolkit */}
       <Section title={t.us.love_toolkit_title} className="mb-8">
         <div className="space-y-4">
-          <Card className="border-l-2 border-l-pink-500">
+          <Card className="border-l border-l-pink-500/40">
             <div className="space-y-4 text-sm">
               <div>
                 <span className="font-bold text-xs uppercase tracking-wide text-pink-500 block mb-1">{t.us.love_venus}</span>
@@ -1781,7 +1850,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
             </div>
           </Card>
           {love_toolkit?.love_language_primary && (
-            <Card className="border-l-2 border-l-pink-500">
+            <Card className="border-l border-l-pink-500/40">
               <div className="text-xs font-bold uppercase text-pink-500 mb-2">{t.us.love_language}</div>
               <p className="text-sm leading-relaxed opacity-90">{love_toolkit.love_language_primary}</p>
             </Card>
@@ -1792,22 +1861,22 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
       {/* Section 4: The Deep Script */}
       <Section title={t.us.deep_script_title} className="mb-8">
         <div className="space-y-4">
-          <Card className="border-l-2 border-l-purple-500">
+          <Card className="border-l border-l-purple-500/40">
             <div className="text-xs font-bold uppercase text-purple-500 mb-2">{t.us.deep_seventh_house}</div>
             <p className="text-sm leading-relaxed opacity-85">{deep_script?.seventh_house}</p>
           </Card>
           <div className="grid md:grid-cols-2 gap-4">
-            <Card className="border-l-2 border-l-purple-500">
+            <Card className="border-l border-l-purple-500/40">
               <div className="text-xs font-bold uppercase text-purple-500 mb-2">{t.us.deep_saturn}</div>
               <p className="text-sm leading-relaxed opacity-85">{deep_script?.saturn}</p>
             </Card>
-            <Card className="border-l-2 border-l-red-500">
+            <Card className="border-l border-l-red-500/40">
               <div className="text-xs font-bold uppercase text-red-500 mb-2">{t.us.deep_chiron}</div>
               <p className="text-sm leading-relaxed opacity-85">{deep_script?.chiron}</p>
             </Card>
           </div>
           {deep_script?.shadow_pattern && (
-            <Card className="border-l-2 border-l-red-500">
+            <Card className="border-l border-l-red-500/40">
               <div className="text-xs font-bold uppercase text-red-500 mb-2">{t.us.deep_shadow}</div>
               <p className="text-sm leading-relaxed opacity-90">{deep_script.shadow_pattern}</p>
             </Card>
@@ -1818,7 +1887,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
       {/* Section 5: Profile Summary */}
       <Section title={t.us.user_profile_title} className="mb-0">
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="border-l-2 border-l-green-500">
+          <Card className="border-l border-l-green-500/40">
             <h4 className="text-xs font-bold uppercase text-green-500 mb-4 tracking-widest">{t.us.user_profile_strengths}</h4>
             <ul className="space-y-2">
               {(user_profile?.strengths || []).map((s, i) => (
@@ -1829,7 +1898,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
               ))}
             </ul>
           </Card>
-          <Card className="border-l-2 border-l-purple-500">
+          <Card className="border-l border-l-purple-500/40">
             <h4 className="text-xs font-bold uppercase text-purple-500 mb-4 tracking-widest">{t.us.user_profile_growth}</h4>
             <ul className="space-y-2">
               {(user_profile?.growth_edges || []).map((g, i) => (
@@ -1842,7 +1911,7 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
           </Card>
         </div>
         {user_profile?.ideal_complement && (
-          <Card className="mt-4 border-l-2 border-l-blue-500">
+          <Card className="mt-4 border-l border-l-blue-500/40">
             <div className="text-xs font-bold uppercase text-blue-500 mb-2">{t.us.user_profile_ideal}</div>
             <p className="text-sm leading-relaxed opacity-90 font-serif">{user_profile.ideal_complement}</p>
           </Card>
@@ -1887,7 +1956,7 @@ const PerspectiveCard: React.FC<{
         icon: string;
         borderColor: string;
     }> = ({ item, title, subtitle, icon, borderColor }) => (
-        <Card className={`border-l-2 ${borderColor} relative overflow-hidden`}>
+        <Card className={`border-l ${borderColor} relative overflow-hidden`}>
             <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">
                     <span className="text-2xl">{icon}</span>
@@ -1924,7 +1993,7 @@ const PerspectiveCard: React.FC<{
     }> = ({ zone, title, houseLabel, borderClass, iconClass, icon }) => (
         <Card className={`${borderClass} relative overflow-hidden`}>
             <div className="flex items-center gap-3 mb-3">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xl ${iconClass}`}>{icon}</div>
+                <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center text-xl ${iconClass}`}>{icon}</div>
                 <div>
                     <div className="font-semibold">{title}</div>
                     <div className="text-xs uppercase tracking-widest opacity-70">{houseLabel}</div>
@@ -1952,7 +2021,7 @@ const PerspectiveCard: React.FC<{
         const bubbleBorder = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
 
         const SensCard = ({ icon, label, p }: { icon: string, label: string, p: T.SensitivityPoint }) => (
-            <Card className="border-l-2 border-l-gold-500/40">
+            <Card className="border-l border-l-gold-500/40">
                 <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl">{icon}</span>
                     <div className="text-sm font-bold uppercase tracking-wider text-gold-500">{label}</div>
@@ -1977,7 +2046,7 @@ const PerspectiveCard: React.FC<{
         return (
             <div className="space-y-8">
                 <Section title={t.us.keywords} className="mb-8">
-                    <Card className="border-l-2 border-l-gold-500/50">
+                    <Card className="border-l border-l-gold-500/40">
                         <div className="flex flex-wrap gap-2 mb-4">
                             {(data.keywords || []).map((k,i) => <Chip key={i} label={k} />)}
                         </div>
@@ -1998,7 +2067,7 @@ const PerspectiveCard: React.FC<{
                 <Section title={t.us.interaction_points} className="mb-8">
                     <div className="space-y-4">
                         {(data.main_items || []).map((item, i) => (
-                            <Card key={i} className="border-l-2 border-l-gold-500/50">
+                            <Card key={i} className="border-l border-l-gold-500/40">
                                 <div className="mb-4">
                                     <div className={`${DETAIL_LABEL_CLASS} flex flex-wrap gap-2 mb-2`}>
                                         <span className="border border-current px-2 py-0.5 rounded-full">{item.evidence}</span>
@@ -2007,15 +2076,15 @@ const PerspectiveCard: React.FC<{
                                     <h5 className="text-lg font-semibold">{item.subjective}</h5>
                                 </div>
                                 <div className="space-y-3 text-sm">
-                                    <div className={`p-3 rounded-lg border border-danger/30 border-l-2 border-l-danger/60 ${theme === 'dark' ? 'bg-danger/10' : 'bg-danger/5'}`}>
+                                    <div className={`p-3 rounded-lg border border-danger/30 border-l border-l-danger/40 ${theme === 'dark' ? 'bg-danger/10' : 'bg-danger/5'}`}>
                                         <span className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}>{t.us.perspective_reaction}</span>
                                         <p className="opacity-90">{item.reaction}</p>
                                     </div>
-                                    <div className={`p-3 rounded-lg border border-accent/30 border-l-2 border-l-accent/60 ${theme === 'dark' ? 'bg-accent/10' : 'bg-accent/5'}`}>
+                                    <div className={`p-3 rounded-lg border border-accent/30 border-l border-l-accent/40 ${theme === 'dark' ? 'bg-accent/10' : 'bg-accent/5'}`}>
                                         <span className={`${DETAIL_LABEL_CLASS} text-accent block mb-1`}>{t.us.perspective_hidden_need}</span>
                                         <p className="opacity-90">{item.need}</p>
                                     </div>
-                                    <div className={`p-3 rounded-lg border border-gold-500/30 border-l-2 border-l-gold-500/60 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100'}`}>
+                                    <div className={`p-3 rounded-lg border border-gold-500/30 border-l border-l-gold-500/40 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100'}`}>
                                         <span className={`${DETAIL_LABEL_CLASS} text-gold-500 block mb-1`}>{t.us.perspective_advice}</span>
                                         <p className="opacity-90">{item.advice}</p>
                                         <div className="flex flex-wrap items-center justify-between gap-3 mt-2 text-xs opacity-70">
@@ -2032,7 +2101,7 @@ const PerspectiveCard: React.FC<{
                 <Section title={t.us.house_overlays} className="mb-8">
                     <div className="space-y-4">
                         {(data.overlays || []).map((o, i) => (
-                            <Card key={i} className="border-l-2 border-l-accent/40">
+                            <Card key={i} className="border-l border-l-accent/40">
                                 <div className={`${DETAIL_LABEL_CLASS} text-accent mb-2`}>{o.title}</div>
                                 <p className="text-sm mb-3 opacity-90">{o.feeling}</p>
                                 <div className="text-sm opacity-70">
@@ -2050,7 +2119,7 @@ const PerspectiveCard: React.FC<{
                                 <h4 className={`${DETAIL_LABEL_CLASS} text-success mb-4`}>{t.us.nourish_points}</h4>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {data.closing.nourishing.map((n, i) => (
-                                        <Card key={i} className="border-l-2 border-l-success/60">
+                                        <Card key={i} className="border-l border-l-success/40">
                                             <div className="text-sm font-semibold mb-1">{n.mechanism}</div>
                                             <div className="text-sm opacity-80 mb-2">{n.experience}</div>
                                             <div className="text-sm opacity-70">
@@ -2064,7 +2133,7 @@ const PerspectiveCard: React.FC<{
                                 <h4 className={`${DETAIL_LABEL_CLASS} text-danger mb-4`}>{t.us.trigger_points}</h4>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {data.closing.triggers.map((tr, i) => (
-                                        <Card key={i} className="border-l-2 border-l-danger/60">
+                                        <Card key={i} className="border-l border-l-danger/40">
                                             <div className="text-sm font-semibold mb-1">{tr.trigger}</div>
                                             <div className="text-sm opacity-80 mb-2">"{tr.scene}" → {tr.reaction}</div>
                                             <div className="text-sm opacity-70">
@@ -2075,7 +2144,7 @@ const PerspectiveCard: React.FC<{
                                 </div>
                             </div>
 
-                            <div className={`rounded-2xl border ${bubbleBorder} p-6 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-white'}`}>
+                            <div className={`rounded-2xl border ${bubbleBorder} p-6 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100/85'}`}>
                                 <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-4 text-center`}>{t.us.cycle_diagram}</div>
                                 <div className="space-y-3">
                                     <div className="flex justify-start">
@@ -2111,7 +2180,7 @@ const PerspectiveCard: React.FC<{
                                     </div>
                                     <div className="space-y-3">
                                         {data.closing.cycle.scripts.map((s, i) => (
-                                            <div key={i} className={`flex flex-wrap items-center justify-between gap-3 border-l-2 border-l-success/60 px-4 py-3 rounded-lg ${theme === 'dark' ? 'bg-space-900/50' : 'bg-paper-100'}`}>
+                                            <div key={i} className={`flex flex-wrap items-center justify-between gap-3 border-l border-l-success/40 px-4 py-3 rounded-lg ${theme === 'dark' ? 'bg-space-900/50' : 'bg-paper-100'}`}>
                                                 <p className="text-sm opacity-90">"{s}"</p>
                                                 <CopyButton text={s} />
                                             </div>
@@ -2132,14 +2201,14 @@ const PerspectiveCard: React.FC<{
     return (
         <div className="space-y-10">
             {/* Hero: Relationship Avatar Card */}
-        <Card className="relative overflow-hidden border-l-2 border-l-blue-500">
+        <Card className="relative overflow-hidden border-l border-l-blue-500/40">
             <div className="relative z-10">
                 <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                     <div className="flex-1">
                         <div className="text-sm font-semibold uppercase tracking-widest opacity-70 mb-2">
                             {selfName} × {otherName}
                         </div>
-                        <div className="p-4 rounded-xl border border-l-2 border-l-blue-500/60">
+                        <div className="p-4 rounded-xl border border-l border-l-blue-500/40">
                             <div className="text-xs uppercase tracking-widest opacity-70 mb-2">{t.us.avatar_title}</div>
                             <div className="font-serif text-2xl text-blue-500">{relationship_avatar?.title || t.us.avatar_title}</div>
                         </div>
@@ -2160,7 +2229,7 @@ const PerspectiveCard: React.FC<{
             <Section title={t.us.vibe_alchemy_title} className="mb-8">
                 <div className="space-y-4">
                     {/* Elemental Mix Hero */}
-                    <Card className="border-l-2 border-l-green-500">
+                    <Card className="border-l border-l-green-500/40">
                         <div className="flex items-center gap-4 mb-4">
                             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl ${theme === 'dark' ? 'bg-green-500/20' : 'bg-green-500/10'}`}>
                                 🔥
@@ -2173,7 +2242,7 @@ const PerspectiveCard: React.FC<{
                         <p className="text-sm leading-relaxed opacity-90">{vibe_alchemy?.elemental_desc}</p>
                     </Card>
                     {/* Core Theme */}
-                    <Card className="border-l-2 border-l-blue-500">
+                    <Card className="border-l border-l-blue-500/40">
                         <div className={`${DETAIL_LABEL_CLASS} text-blue-500 mb-2`}>{t.us.vibe_core_theme}</div>
                         <p className="text-sm leading-relaxed opacity-90">{vibe_alchemy?.core_theme}</p>
                     </Card>
@@ -2189,7 +2258,7 @@ const PerspectiveCard: React.FC<{
                                 zone={landscape.comfort_zone}
                                 title={t.us.landscape_comfort}
                                 houseLabel={t.us.landscape_comfort_houses}
-                                borderClass="border-l-2 border-l-gold-500"
+                                borderClass="border-l border-l-gold-500/40"
                                 iconClass={theme === 'dark' ? 'bg-gold-500/20 text-gold-500' : 'bg-gold-500/15 text-gold-500'}
                                 icon="🏠"
                             />
@@ -2199,7 +2268,7 @@ const PerspectiveCard: React.FC<{
                                 zone={landscape.romance_zone}
                                 title={t.us.landscape_romance}
                                 houseLabel={t.us.landscape_romance_houses}
-                                borderClass="border-l-2 border-l-pink-500"
+                                borderClass="border-l border-l-pink-500/40"
                                 iconClass={theme === 'dark' ? 'bg-pink-500/20 text-pink-500' : 'bg-pink-500/15 text-pink-500'}
                                 icon="💕"
                             />
@@ -2209,7 +2278,7 @@ const PerspectiveCard: React.FC<{
                                 zone={landscape.growth_zone}
                                 title={t.us.landscape_growth}
                                 houseLabel={t.us.landscape_growth_houses}
-                                borderClass="border-l-2 border-l-purple-500"
+                                borderClass="border-l border-l-purple-500/40"
                                 iconClass={theme === 'dark' ? 'bg-purple-500/20 text-purple-500' : 'bg-purple-500/15 text-purple-500'}
                                 icon="🌱"
                             />
@@ -2227,7 +2296,7 @@ const PerspectiveCard: React.FC<{
                             title={t.us.dynamics_spark}
                             subtitle={t.us.dynamics_spark_desc}
                             icon="🔥"
-                            borderColor="border-l-danger/60"
+                            borderColor="border-l-danger/40"
                         />
                     )}
                     {dynamics?.safety_net && (
@@ -2236,7 +2305,7 @@ const PerspectiveCard: React.FC<{
                             title={t.us.dynamics_safety}
                             subtitle={t.us.dynamics_safety_desc}
                             icon="🌙"
-                            borderColor="border-l-star-200/60"
+                            borderColor="border-l-star-200/40"
                         />
                     )}
                     {dynamics?.mind_meld && (
@@ -2245,7 +2314,7 @@ const PerspectiveCard: React.FC<{
                             title={t.us.dynamics_mind}
                             subtitle={t.us.dynamics_mind_desc}
                             icon="🧠"
-                            borderColor="border-l-accent/60"
+                            borderColor="border-l-accent/40"
                         />
                     )}
                     {dynamics?.glue && (
@@ -2254,7 +2323,7 @@ const PerspectiveCard: React.FC<{
                             title={t.us.dynamics_glue}
                             subtitle={t.us.dynamics_glue_desc}
                             icon="🔗"
-                            borderColor="border-l-star-400/60"
+                            borderColor="border-l-star-400/40"
                         />
                     )}
                 </div>
@@ -2265,7 +2334,7 @@ const PerspectiveCard: React.FC<{
                 <Section title={t.us.chem_deep_dive_title} className="mb-8">
                     <div className="space-y-4">
                         {deep_dive.pluto && (
-                            <Card className="border-l-2 border-l-space-400/60">
+                            <Card className="border-l border-l-space-400/40">
                                 <div className="flex items-start justify-between gap-4 mb-4">
                                     <div className="flex items-center gap-3">
                                         <span className="text-2xl">♇</span>
@@ -2278,7 +2347,7 @@ const PerspectiveCard: React.FC<{
                                 </div>
                                 <p className="text-sm leading-relaxed opacity-90 mb-4">{deep_dive.pluto.description}</p>
                                 {deep_dive.pluto.warning && (
-                                    <div className="p-3 rounded-lg border border-l-2 border-l-danger/60 border-danger/30">
+                                    <div className="p-3 rounded-lg border border-l border-l-danger/40 border-danger/30">
                                         <span className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}>{t.us.chem_pluto_warning}</span>
                                         <p className="text-sm opacity-90">{deep_dive.pluto.warning}</p>
                                     </div>
@@ -2286,7 +2355,7 @@ const PerspectiveCard: React.FC<{
                             </Card>
                         )}
                         {deep_dive.chiron && (
-                            <Card className="border-l-2 border-l-accent/60">
+                            <Card className="border-l border-l-accent/40">
                                 <div className="flex items-center gap-3 mb-4">
                                     <span className="text-2xl">⚷</span>
                                     <div>
@@ -2295,7 +2364,7 @@ const PerspectiveCard: React.FC<{
                                     </div>
                                 </div>
                                 <p className="text-sm leading-relaxed opacity-90 mb-4">{deep_dive.chiron.description}</p>
-                                <div className="p-3 rounded-lg border border-l-2 border-l-success/60 border-success/30">
+                                <div className="p-3 rounded-lg border border-l border-l-success/40 border-success/30">
                                     <span className={`${DETAIL_LABEL_CLASS} text-success block mb-1`}>{t.us.chem_chiron_path}</span>
                                     <p className="text-sm opacity-90">{deep_dive.chiron.healing_path}</p>
                                 </div>
@@ -2441,8 +2510,11 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       currentLocation: '',
     });
     const [cityQuery, setCityQuery] = useState('');
-    const [citySuggestions, setCitySuggestions] = useState<Array<{ city: string; country: string; lat: number; lon: number; timezone: string; admin1?: string }>>([]);
+    const [citySuggestions, setCitySuggestions] = useState<GeoSuggestion[]>([]);
     const [showCitySuggestions, setShowCitySuggestions] = useState(false);
+    const [currentLocationQuery, setCurrentLocationQuery] = useState('');
+    const [currentLocationSuggestions, setCurrentLocationSuggestions] = useState<GeoSuggestion[]>([]);
+    const [showCurrentLocationSuggestions, setShowCurrentLocationSuggestions] = useState(false);
 
     // 合盘详情解读弹窗状态
     const [synastryDetailModal, setSynastryDetailModal] = useState<{
@@ -2526,17 +2598,35 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
     useEffect(() => {
       if (!modalOpen) return;
-      if (cityQuery.length < 2) { setCitySuggestions([]); return; }
+      const trimmedQuery = cityQuery.trim();
+      const minLength = getLocationQueryMinLength(trimmedQuery);
+      if (trimmedQuery.length < minLength) { setCitySuggestions([]); return; }
       const timer = setTimeout(async () => {
         try {
-          const res = await searchCities(cityQuery, 5);
+          const res = await searchCities(trimmedQuery, 5, language);
           setCitySuggestions(res.cities || []);
         } catch {
           setCitySuggestions([]);
         }
       }, 300);
       return () => clearTimeout(timer);
-    }, [cityQuery, modalOpen]);
+    }, [cityQuery, modalOpen, language]);
+
+    useEffect(() => {
+      if (!modalOpen) return;
+      const trimmedQuery = currentLocationQuery.trim();
+      const minLength = getLocationQueryMinLength(trimmedQuery);
+      if (trimmedQuery.length < minLength) { setCurrentLocationSuggestions([]); return; }
+      const timer = setTimeout(async () => {
+        try {
+          const res = await searchCities(trimmedQuery, 5, language);
+          setCurrentLocationSuggestions(res.cities || []);
+        } catch {
+          setCurrentLocationSuggestions([]);
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }, [currentLocationQuery, modalOpen, language]);
 
     const createProfileId = () => {
       if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
@@ -2560,6 +2650,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       });
       setCityQuery('');
       setShowCitySuggestions(false);
+      setCurrentLocationQuery('');
+      setShowCurrentLocationSuggestions(false);
       setModalOpen(true);
     };
 
@@ -2568,6 +2660,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       setFormData({ ...p });
       setCityQuery(p.birthCity || '');
       setShowCitySuggestions(false);
+      setCurrentLocationQuery(p.currentLocation || '');
+      setShowCurrentLocationSuggestions(false);
       setModalOpen(true);
     };
 
@@ -2817,40 +2911,40 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const getRadarTone = (dim: string) => {
       const key = dim.toLowerCase();
       if (key.includes('safety') || key.includes('安全')) {
-        return { bar: 'bg-blue-500', text: 'text-blue-500', border: 'border-l-blue-500', soft: '' };
+        return { bar: 'bg-blue-500', text: 'text-blue-500', border: 'border-l-blue-500/40', soft: '' };
       }
       if (key.includes('communication') || key.includes('沟通')) {
-        return { bar: 'bg-accent', text: 'text-accent', border: 'border-l-accent', soft: '' };
+        return { bar: 'bg-accent', text: 'text-accent', border: 'border-l-accent/40', soft: '' };
       }
       if (key.includes('intimacy') || key.includes('亲密')) {
-        return { bar: 'bg-pink-500', text: 'text-pink-500', border: 'border-l-pink-500', soft: '' };
+        return { bar: 'bg-pink-500', text: 'text-pink-500', border: 'border-l-pink-500/40', soft: '' };
       }
       if (key.includes('values') || key.includes('价值')) {
-        return { bar: 'bg-gold-500', text: 'text-gold-500', border: 'border-l-gold-500', soft: '' };
+        return { bar: 'bg-gold-500', text: 'text-gold-500', border: 'border-l-gold-500/40', soft: '' };
       }
       if (key.includes('rhythm') || key.includes('节奏')) {
-        return { bar: 'bg-purple-500', text: 'text-purple-500', border: 'border-l-purple-500', soft: '' };
+        return { bar: 'bg-purple-500', text: 'text-purple-500', border: 'border-l-purple-500/40', soft: '' };
       }
-      return { bar: 'bg-star-200', text: 'text-star-200', border: 'border-l-star-200', soft: '' };
+      return { bar: 'bg-star-200', text: 'text-star-200', border: 'border-l-star-200/40', soft: '' };
     };
     const getCoreDynamicsTone = (key: string) => {
       const normalized = key.toLowerCase();
       if (normalized.includes('emotional')) {
-        return { border: 'border-l-blue-500', text: 'text-blue-500', bg: '' };
+        return { border: 'border-l-blue-500/40', text: 'text-blue-500', bg: '' };
       }
       if (normalized.includes('communication')) {
-        return { border: 'border-l-accent', text: 'text-accent', bg: '' };
+        return { border: 'border-l-accent/40', text: 'text-accent', bg: '' };
       }
       if (normalized.includes('intimacy')) {
-        return { border: 'border-l-pink-500', text: 'text-pink-500', bg: '' };
+        return { border: 'border-l-pink-500/40', text: 'text-pink-500', bg: '' };
       }
       if (normalized.includes('values')) {
-        return { border: 'border-l-gold-500', text: 'text-gold-500', bg: '' };
+        return { border: 'border-l-gold-500/40', text: 'text-gold-500', bg: '' };
       }
       if (normalized.includes('rhythm')) {
-        return { border: 'border-l-purple-500', text: 'text-purple-500', bg: '' };
+        return { border: 'border-l-purple-500/40', text: 'text-purple-500', bg: '' };
       }
-      return { border: 'border-l-star-200', text: 'text-star-200', bg: '' };
+      return { border: 'border-l-star-200/40', text: 'text-star-200', bg: '' };
     };
     const formatNeedsLabel = (name: string) => {
       if (language === 'zh') return `${name}${t.us.needs_label}`;
@@ -3417,7 +3511,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2">{t.us.relationship_label}</div>
                 <div className="flex items-center gap-3">
                   <select
-                    className={`w-full h-10 px-4 pr-8 rounded-lg outline-none transition-all font-sans text-sm appearance-none bg-no-repeat ${theme === 'dark' ? 'bg-space-900 border border-gold-500/15 text-star-50' : 'bg-white border-paper-300 text-paper-900'}`}
+                    className={`w-full h-10 px-4 pr-8 rounded-lg outline-none transition-all font-sans text-sm appearance-none bg-no-repeat ${theme === 'dark' ? 'bg-space-900 border border-gold-500/15 text-star-50' : 'bg-paper-100/85 border-paper-300 text-paper-900'}`}
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`, backgroundPosition: 'right 12px center', backgroundSize: '16px' }}
                     value={relationshipType}
                     onChange={(e) => {
@@ -3522,31 +3616,61 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
                 />
                 {showCitySuggestions && citySuggestions.length > 0 && (
-                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-white border-gray-200'} shadow-lg max-h-48 overflow-auto`}>
+                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-paper-300'} shadow-lg max-h-48 overflow-auto`}>
                     {citySuggestions.map((city, i) => (
                       <div
                         key={i}
-                        className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-gray-100'}`}
+                        className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
                         onMouseDown={() => {
-                          const label = city.country ? `${city.city}, ${city.country}` : city.city;
+                          const label = formatLocationLabel(city.city, city.admin1, city.country, language);
                           setCityQuery(label);
                           setFormData((prev) => ({ ...prev, birthCity: label, lat: city.lat, lon: city.lon, timezone: city.timezone }));
                           setShowCitySuggestions(false);
                         }}
                       >
                         <div className="font-medium">{city.city}</div>
-                        <div className="text-xs opacity-60">{city.country}</div>
+                        {formatLocationDetail(city.admin1, city.country, language) && (
+                          <div className="text-xs opacity-60">{formatLocationDetail(city.admin1, city.country, language)}</div>
+                        )}
                       </div>
                     ))}
                   </div>
                 )}
               </div>
-              <div>
+              <div className="relative">
                 <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.us.label_current_location}</label>
                 <GlassInput
-                  value={formData.currentLocation || ''}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, currentLocation: e.target.value }))}
+                  value={currentLocationQuery}
+                  onChange={(e) => {
+                    const nextValue = e.target.value;
+                    setCurrentLocationQuery(nextValue);
+                    setShowCurrentLocationSuggestions(true);
+                    setFormData((prev) => ({ ...prev, currentLocation: nextValue }));
+                  }}
+                  onFocus={() => setShowCurrentLocationSuggestions(true)}
+                  onBlur={() => setTimeout(() => setShowCurrentLocationSuggestions(false), 200)}
                 />
+                {showCurrentLocationSuggestions && currentLocationSuggestions.length > 0 && (
+                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-paper-300'} shadow-lg max-h-48 overflow-auto`}>
+                    {currentLocationSuggestions.map((city, i) => (
+                      <div
+                        key={i}
+                        className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
+                        onMouseDown={() => {
+                          const label = formatLocationLabel(city.city, city.admin1, city.country, language);
+                          setCurrentLocationQuery(label);
+                          setFormData((prev) => ({ ...prev, currentLocation: label }));
+                          setShowCurrentLocationSuggestions(false);
+                        }}
+                      >
+                        <div className="font-medium">{city.city}</div>
+                        {formatLocationDetail(city.admin1, city.country, language) && (
+                          <div className="text-xs opacity-60">{formatLocationDetail(city.admin1, city.country, language)}</div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <ActionButton
                 className="w-full"
@@ -3712,12 +3836,12 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  const value = clampScore(Number.isFinite(rawScore) ? rawScore : 0);
                                  const tone = getRadarTone(score.dim);
                                  return (
-                                   <Card key={`${score.dim}-${i}`} className={`border-l-2 ${tone.border} ${tone.soft}`}>
+                                   <Card key={`${score.dim}-${i}`} className={`border-l ${tone.border} ${tone.soft}`}>
                                       <div className="flex items-baseline justify-between mb-2">
                                          <span className="text-xs uppercase tracking-widest opacity-70">{score.dim}</span>
                                          <span className={`text-sm font-mono ${tone.text}`}>{value}</span>
                                       </div>
-                                      <div className={`h-1.5 w-full rounded-full overflow-hidden ${theme === 'dark' ? 'bg-white/10' : 'bg-paper-200'}`}>
+                                      <div className={`h-1.5 w-full rounded-full overflow-hidden ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-200'}`}>
                                          <div className={`h-full ${tone.bar} transition-all duration-700`} style={{ width: `${value}%` }} />
                                       </div>
                                       <div className="text-xs opacity-70 mt-2">{score.desc}</div>
@@ -3747,7 +3871,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {(growthTaskLazy || sweetSpots.length > 0 || frictionPoints.length > 0) && (
                                <div className="space-y-6">
                                  {growthTaskLazy && (
-                                   <div className={`p-4 rounded-lg border-l-2 border-purple-500 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100'}`}>
+                                   <div className={`p-4 rounded-lg border-l border-purple-500 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100'}`}>
                                      <div className="font-serif text-lg mb-3">"{growthTaskLazy.growth_task.task}"</div>
                                      <div className={`${detailLabelClass} text-orange-500`}>{t.us.evidence}</div>
                                      <div className="text-xs opacity-80 mb-4">{growthTaskLazy.growth_task.evidence}</div>
@@ -3763,7 +3887,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    </div>
                                  )}
                                  {sweetSpots.length > 0 && (
-                                   <Card className="border-l-2 border-l-success">
+                                   <Card className="border-l border-l-success/40">
                                      <h3 className="text-xs font-bold uppercase text-success mb-4 tracking-widest">{t.us.sweet}</h3>
                                      {sweetSpots.map((s, i) => (
                                        <div key={i} className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
@@ -3787,7 +3911,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    </Card>
                                  )}
                                  {frictionPoints.length > 0 && (
-                                   <Card className="border-l-2 border-l-danger">
+                                   <Card className="border-l border-l-danger/40">
                                      <h3 className="text-xs font-bold uppercase text-danger mb-4 tracking-widest">{t.us.friction}</h3>
                                      {frictionPoints.map((f, i) => (
                                        <div key={i} className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
@@ -3839,7 +3963,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    const bNeeds = stripNeedsPrefix(item.b_needs, personBLabel);
                                    const tone = getCoreDynamicsTone(item.key);
                                    return (
-                                     <Card key={`${item.key}-${i}`} className={`border-l-2 ${tone.border} ${tone.bg}`}>
+                                     <Card key={`${item.key}-${i}`} className={`border-l ${tone.border} ${tone.bg}`}>
                                        <h4 className={`font-semibold text-sm mb-3 ${tone.text}`}>{item.title}</h4>
                                        <div className="space-y-4 text-sm leading-relaxed">
                                          <div>
@@ -3891,7 +4015,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {conflictLoop && (
                                <div className="space-y-6">
                                  {/* Conflict Loop Diagram */}
-                                 <Card className="border-l-2 border-l-danger">
+                                 <Card className="border-l border-l-danger/40">
                                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                                      <div className={`p-3 rounded-lg ${theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'}`}>
                                        <div className="text-xs uppercase tracking-widest text-orange-500 mb-2">{t.us.conflict_trigger}</div>
@@ -3918,7 +4042,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    <p className="text-xs opacity-70 mb-4">{t.us.repair_scripts_subtitle}</p>
                                    <div className="grid md:grid-cols-2 gap-4">
                                      {conflictLoop.repair_scripts.map((script, i) => (
-                                        <Card key={i} className="border-l-2 border-l-green-500">
+                                        <Card key={i} className="border-l border-l-green-500/40">
                                          <div className="text-xs uppercase tracking-widest opacity-70 mb-2">
                                            {script.for_person === 'a' ? personALabel : personBLabel} → {script.for_person === 'a' ? personBLabel : personALabel}
                                          </div>
@@ -3957,7 +4081,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              )}
                              {practiceTools && (
                                <div className="space-y-4">
-                                 <Card className="border-l-2 border-l-blue-500">
+                                 <Card className="border-l border-l-blue-500/40">
                                    <div className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">
                                      {personALabel}{t.us.practice_focus}
                                    </div>
@@ -3970,7 +4094,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                      ))}
                                    </ul>
                                  </Card>
-                                 <Card className="border-l-2 border-l-success">
+                                 <Card className="border-l border-l-success/40">
                                    <div className="text-xs font-bold uppercase tracking-widest text-success mb-3">
                                      {personBLabel}{t.us.practice_focus}
                                    </div>
@@ -3984,7 +4108,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    </ul>
                                  </Card>
                                  {practiceTools.joint?.length > 0 && (
-                                   <Card className="border-l-2 border-l-gold-500">
+                                   <Card className="border-l border-l-gold-500/40">
                                      <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-3">{t.us.joint_practice}</div>
                                      <ul className="space-y-3">
                                        {practiceTools.joint.map((pt, i) => (
@@ -4021,7 +4145,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {weatherForecast && (
                                <div className="space-y-6">
                                  {/* Weekly Pulse */}
-                                 <Card className="border-l-2 border-l-blue-500">
+                                 <Card className="border-l border-l-blue-500/40">
                                    <h4 className={`${detailLabelClass} text-blue-500 mb-1`}>{t.us.weekly_pulse_title}</h4>
                                    <p className="text-xs opacity-70 mb-4">{t.us.weekly_pulse_subtitle}</p>
 
@@ -4071,7 +4195,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  </Card>
 
                                  {/* Season Ahead */}
-                                 <Card className="border-l-2 border-l-gold-500">
+                                 <Card className="border-l border-l-gold-500/40">
                                    <h4 className={`${detailLabelClass} text-gold-500 mb-1`}>{t.us.season_ahead_title}</h4>
                                    <p className="text-xs opacity-70 mb-4">{t.us.season_ahead_subtitle}</p>
 
@@ -4083,7 +4207,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          ? { color: 'success', label: t.us.period_sweet, emoji: '🌿' }
                                          : { color: 'blue-500', label: t.us.period_deep, emoji: '🌊' };
                                        return (
-                                         <div key={i} className={`p-3 rounded-lg border-l-2 ${theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'}`} style={{ borderLeftColor: `var(--color-${periodStyle.color})` }}>
+                                         <div key={i} className={`p-3 rounded-lg border-l ${theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'}`} style={{ borderLeftColor: `var(--color-${periodStyle.color})` }}>
                                            <div className="flex items-center gap-2 mb-2">
                                              <span className="text-base" aria-hidden="true">{periodStyle.emoji}</span>
                                              <span className="text-xs font-bold uppercase">{periodStyle.label}</span>
@@ -4128,10 +4252,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                            </Accordion>
                         </div>
 
-                        <Card className="border-l-2 border-l-gold-500/60">
+                        <Card className="border-l border-l-gold-500/40">
                             <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-3">{t.us.conclusion}</div>
                             <p className="text-sm font-serif leading-relaxed opacity-90 mb-4">"{overview.conclusion.summary}"</p>
-                            <div className={`border-l-2 pl-3 text-xs ${theme === 'dark' ? 'border-gold-500/15 text-star-300' : 'border-paper-300 text-paper-500'}`}>
+                            <div className={`border-l pl-3 text-xs ${theme === 'dark' ? 'border-gold-500/15 text-star-300' : 'border-paper-300 text-paper-500'}`}>
                                 {overview.conclusion.disclaimer}
                             </div>
                         </Card>
@@ -4155,7 +4279,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {highlights && (
                                <>
                                  <div className="space-y-4">
-                                  <Card className="border-l-2 border-l-success">
+                                  <Card className="border-l border-l-success/40">
                                      <div className="text-xs font-bold uppercase tracking-widest text-success mb-4">{t.us.top_harmony}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.harmony.map((item, i) => (
@@ -4173,7 +4297,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          ))}
                                       </div>
                                    </Card>
-                                   <Card className="border-l-2 border-l-danger">
+                                   <Card className="border-l border-l-danger/40">
                                       <div className="text-xs font-bold uppercase tracking-widest text-danger mb-4">{t.us.top_challenges}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.challenges.map((item, i) => (
@@ -4191,7 +4315,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          ))}
                                       </div>
                                    </Card>
-                                  <Card className="border-l-2 border-l-accent">
+                                  <Card className="border-l border-l-accent/40">
                                       <div className="text-xs font-bold uppercase tracking-widest text-accent mb-4">{t.us.highlights_overlays}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.overlays.map((item, i) => (
@@ -4224,7 +4348,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                            </div>
                          )}
                          {scriptA ? (
-                           <NatalScriptCard title={`${personALabel}`} script={scriptA} colorClass="border-l-accent/70" />
+                           <NatalScriptCard title={`${personALabel}`} script={scriptA} colorClass="border-l-accent/40" />
                          ) : (
                            <MiniLoader label={t.common.analyzing} error={segmentLoading.natal_a ? null : (segmentErrors.natal_a || t.us.report_ai_failed)} />
                          )}
@@ -4242,7 +4366,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                            </div>
                          )}
                          {scriptB ? (
-                           <NatalScriptCard title={`${personBLabel}`} script={scriptB} colorClass="border-l-accent/70" />
+                           <NatalScriptCard title={`${personBLabel}`} script={scriptB} colorClass="border-l-accent/40" />
                          ) : (
                            <MiniLoader label={t.common.analyzing} error={segmentLoading.natal_b ? null : (segmentErrors.natal_b || t.us.report_ai_failed)} />
                          )}
@@ -4324,7 +4448,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                 <>
                                   {/* Section 1: The Vibe Check */}
                                   <Section title={t.us.entity_vibe_title} className="mb-8">
-                                    <Card className="border-l-2 border-l-green-500">
+                                    <Card className="border-l border-l-green-500/40">
                                       <div className="mb-4">
                                         <div className={`${DETAIL_LABEL_CLASS} text-green-500 mb-2`}>{t.us.entity_archetype}</div>
                                         <div className="text-xl font-serif font-medium">{vibe.archetype}</div>
@@ -4344,8 +4468,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   <Section title={t.us.entity_heart_title} className="mb-8">
                                     <div className="space-y-4">
                                       <div className="grid md:grid-cols-3 gap-4">
-                                        <Card className="flex gap-4 items-start border-l-2 border-l-red-500 h-full">
-                                          <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-red-500/15 text-red-500' : 'bg-red-500/10 text-red-500'}`}>☉</div>
+                                        <Card className="flex gap-4 items-start border-l border-l-red-500/40 h-full">
+                                          <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-red-500/15 text-red-500' : 'bg-red-500/10 text-red-500'}`}>☉</div>
                                           <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-1">
                                               <span className={`${DETAIL_LABEL_CLASS} text-red-500`}>{t.us.entity_heart_sun}</span>
@@ -4354,8 +4478,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             <p className="text-sm opacity-90">{heart.sun.meaning}</p>
                                           </div>
                                         </Card>
-                                        <Card className="flex gap-4 items-start border-l-2 border-l-blue-500 h-full">
-                                          <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-blue-500/15 text-blue-500' : 'bg-blue-500/10 text-blue-500'}`}>☽</div>
+                                        <Card className="flex gap-4 items-start border-l border-l-blue-500/40 h-full">
+                                          <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-blue-500/15 text-blue-500' : 'bg-blue-500/10 text-blue-500'}`}>☽</div>
                                           <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-1">
                                               <span className={`${DETAIL_LABEL_CLASS} text-blue-500`}>{t.us.entity_heart_moon}</span>
@@ -4364,8 +4488,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             <p className="text-sm opacity-90">{heart.moon.meaning}</p>
                                           </div>
                                         </Card>
-                                        <Card className="flex gap-4 items-start border-l-2 border-l-gold-500 h-full">
-                                          <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-gold-500/15 text-gold-500' : 'bg-gold-500/10 text-gold-500'}`}>↑</div>
+                                        <Card className="flex gap-4 items-start border-l border-l-gold-500/40 h-full">
+                                          <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-gold-500/15 text-gold-500' : 'bg-gold-500/10 text-gold-500'}`}>↑</div>
                                           <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-1">
                                               <span className={`${DETAIL_LABEL_CLASS} text-gold-500`}>{t.us.entity_heart_rising}</span>
@@ -4375,7 +4499,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                           </div>
                                         </Card>
                                       </div>
-                                      <Card className="border-l-2 border-l-blue-500">
+                                      <Card className="border-l border-l-blue-500/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-blue-500 mb-2`}>{t.us.entity_heart_summary}</div>
                                         <p className="text-sm leading-relaxed opacity-90">{heart.summary}</p>
                                       </Card>
@@ -4385,8 +4509,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   {/* Section 3: The Daily Rhythm */}
                                   <Section title={t.us.entity_daily_title} className="mb-8">
                                     <div className="grid md:grid-cols-3 gap-4 mb-6">
-                                      <Card className="flex gap-4 items-start border-l-2 border-l-blue-400 h-full">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-blue-400/15 text-blue-400' : 'bg-blue-400/10 text-blue-400'}`}>☿</div>
+                                      <Card className="flex gap-4 items-start border-l border-l-blue-400/40 h-full">
+                                        <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-blue-400/15 text-blue-400' : 'bg-blue-400/10 text-blue-400'}`}>☿</div>
                                         <div className="flex-1">
                                           <div className="flex items-center gap-2 mb-1">
                                             <span className={`${DETAIL_LABEL_CLASS} text-blue-400`}>{t.us.entity_daily_mercury}</span>
@@ -4395,8 +4519,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                           <p className="text-sm opacity-90">{daily.mercury.style}</p>
                                         </div>
                                       </Card>
-                                      <Card className="flex gap-4 items-start border-l-2 border-l-pink-500 h-full">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-pink-500/15 text-pink-500' : 'bg-pink-500/10 text-pink-500'}`}>♀</div>
+                                      <Card className="flex gap-4 items-start border-l border-l-pink-500/40 h-full">
+                                        <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-pink-500/15 text-pink-500' : 'bg-pink-500/10 text-pink-500'}`}>♀</div>
                                         <div className="flex-1">
                                           <div className="flex items-center gap-2 mb-1">
                                             <span className={`${DETAIL_LABEL_CLASS} text-pink-500`}>{t.us.entity_daily_venus}</span>
@@ -4405,8 +4529,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                           <p className="text-sm opacity-90">{daily.venus.style}</p>
                                         </div>
                                       </Card>
-                                      <Card className="flex gap-4 items-start border-l-2 border-l-orange-500 h-full">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-orange-500/15 text-orange-500' : 'bg-orange-500/10 text-orange-500'}`}>♂</div>
+                                      <Card className="flex gap-4 items-start border-l border-l-orange-500/40 h-full">
+                                        <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-orange-500/15 text-orange-500' : 'bg-orange-500/10 text-orange-500'}`}>♂</div>
                                         <div className="flex-1">
                                           <div className="flex items-center gap-2 mb-1">
                                             <span className={`${DETAIL_LABEL_CLASS} text-orange-500`}>{t.us.entity_daily_mars}</span>
@@ -4416,7 +4540,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                         </div>
                                       </Card>
                                     </div>
-                                    <Card className="border-l-2 border-l-green-500">
+                                    <Card className="border-l border-l-green-500/40">
                                       <h4 className={`${DETAIL_LABEL_CLASS} text-green-500 mb-3`}>{t.us.entity_daily_tips}</h4>
                                       <div className="space-y-2">
                                         {daily.maintenance_tips.map((tip, i) => (
@@ -4432,28 +4556,28 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   {/* Section 4: The Soul Contract */}
                                   <Section title={t.us.entity_soul_title} className="mb-8">
                                     <div className="grid md:grid-cols-2 gap-4 mb-6">
-                                      <Card className="border-l-2 border-l-purple-500">
+                                      <Card className="border-l border-l-purple-500/40">
                                         <div className="flex items-center gap-2 mb-2">
                                           <span className={`${DETAIL_LABEL_CLASS} text-purple-500`}>{t.us.entity_soul_saturn}</span>
                                           <Chip label={soul.saturn.sign_house} />
                                         </div>
                                         <p className="text-sm opacity-90">{soul.saturn.lesson}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-purple-500">
+                                      <Card className="border-l border-l-purple-500/40">
                                         <div className="flex items-center gap-2 mb-2">
                                           <span className={`${DETAIL_LABEL_CLASS} text-purple-500`}>{t.us.entity_soul_pluto}</span>
                                           <Chip label={soul.pluto.sign_house} />
                                         </div>
                                         <p className="text-sm opacity-90">{soul.pluto.lesson}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-red-500">
+                                      <Card className="border-l border-l-red-500/40">
                                         <div className="flex items-center gap-2 mb-2">
                                           <span className={`${DETAIL_LABEL_CLASS} text-red-500`}>{t.us.entity_soul_chiron}</span>
                                           <Chip label={soul.chiron.sign_house} />
                                         </div>
                                         <p className="text-sm opacity-90">{soul.chiron.lesson}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-gold-500">
+                                      <Card className="border-l border-l-gold-500/40">
                                         <div className="flex items-center gap-2 mb-2">
                                           <span className={`${DETAIL_LABEL_CLASS} text-gold-500`}>{t.us.entity_soul_north_node}</span>
                                           <Chip label={soul.north_node.sign_house} />
@@ -4462,17 +4586,17 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                       </Card>
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-4">
-                                      <Card className="border-l-2 border-l-red-500">
+                                      <Card className="border-l border-l-red-500/40">
                                         <span className={`${DETAIL_LABEL_CLASS} text-red-500 block mb-2`}>{t.us.entity_soul_stuck}</span>
                                         <p className="text-sm font-medium">{soul.stuck_point}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-green-500">
+                                      <Card className="border-l border-l-green-500/40">
                                         <span className={`${DETAIL_LABEL_CLASS} text-green-500 block mb-2`}>{t.us.entity_soul_breakthrough}</span>
                                         <p className="text-sm font-medium">{soul.breakthrough}</p>
                                       </Card>
                                     </div>
                                     {soul.summary && (
-                                      <Card className="mt-4 border-l-2 border-l-gold-500">
+                                      <Card className="mt-4 border-l border-l-gold-500/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-2`}>{t.us.entity_soul_summary}</div>
                                         <p className="text-sm leading-relaxed opacity-90">{soul.summary}</p>
                                       </Card>
@@ -4484,7 +4608,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                     <Section title={t.us.entity_me_title}>
                                       <div className="grid md:grid-cols-2 gap-4">
                                         {impactOnA && (
-                                          <Card className="border-l-2 border-l-blue-500">
+                                          <Card className="border-l border-l-blue-500/40">
                                             <div className="flex items-center gap-2 mb-3">
                                               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-500' : 'bg-blue-500/15 text-blue-500'}`}>A</div>
                                               <span className={`${DETAIL_LABEL_CLASS} text-blue-500`}>{personALabel}</span>
@@ -4494,7 +4618,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                           </Card>
                                         )}
                                         {impactOnB && (
-                                          <Card className="border-l-2 border-l-purple-500">
+                                          <Card className="border-l border-l-purple-500/40">
                                             <div className="flex items-center gap-2 mb-3">
                                               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${theme === 'dark' ? 'bg-purple-500/20 text-purple-500' : 'bg-purple-500/15 text-purple-500'}`}>B</div>
                                               <span className={`${DETAIL_LABEL_CLASS} text-purple-500`}>{personBLabel}</span>
@@ -4513,7 +4637,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   return (
                                 <>
                                   <Section title={compositeKeyTitle} className="mb-8">
-                                    <Card className="border-l-2 border-l-gold-500">
+                                    <Card className="border-l border-l-gold-500/40">
                                       <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-2`}>{t.us.comp_temperament}</div>
                                       <div className="flex flex-wrap items-center gap-2 mb-3">
                                         <Chip label={composite.temperament?.dominant || ''} />
@@ -4525,20 +4649,20 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
                                   <Section title={t.us.comp_personality} className="mb-8">
                                     <div className="space-y-4">
-                                      <Card className="border-l-2 border-l-accent/40">
+                                      <Card className="border-l border-l-accent/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-accent mb-2`}>{t.us.comp_sun}</div>
                                         <p className="text-sm">{composite.core?.sun || ''}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-accent/40">
+                                      <Card className="border-l border-l-accent/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-accent mb-2`}>{t.us.comp_moon}</div>
                                         <p className="text-sm">{composite.core?.moon || ''}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-accent/40">
+                                      <Card className="border-l border-l-accent/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-accent mb-2`}>{t.us.comp_rising}</div>
                                         <p className="text-sm">{composite.core?.rising || ''}</p>
                                       </Card>
                                       {composite.core?.summary && (
-                                        <Card className="border-l-2 border-l-gold-500">
+                                        <Card className="border-l border-l-gold-500/40">
                                           <div className="text-xs font-bold uppercase text-gold-500 mb-3 tracking-widest">{t.us.comp_summary_title}</div>
                                           <div className="space-y-3 text-sm">
                                             <div>
@@ -4561,22 +4685,22 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
                                   <Section title={t.us.comp_daily} className="mb-8">
                                     <div className="space-y-4 mb-6">
-                                      <Card className="flex gap-4 items-start border-l-2 border-l-accent/40">
-                                        <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/10 text-accent'}`}>☿</div>
+                                      <Card className="flex gap-4 items-start border-l border-l-accent/40">
+                                        <div className={`w-9 h-9 rounded-full border border-current/25 flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/10 text-accent'}`}>☿</div>
                                         <div>
                                           <div className={`${DETAIL_LABEL_CLASS} mb-1`}>{t.us.comp_communication}</div>
                                           <p className="text-sm">{composite.daily?.mercury || ''}</p>
                                         </div>
                                       </Card>
-                                      <Card className="flex gap-4 items-start border-l-2 border-l-accent/40">
-                                        <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/10 text-accent'}`}>♀</div>
+                                      <Card className="flex gap-4 items-start border-l border-l-accent/40">
+                                        <div className={`w-9 h-9 rounded-full border border-current/25 flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/10 text-accent'}`}>♀</div>
                                         <div>
                                           <div className={`${DETAIL_LABEL_CLASS} mb-1`}>{t.us.comp_joy}</div>
                                           <p className="text-sm">{composite.daily?.venus || ''}</p>
                                         </div>
                                       </Card>
-                                      <Card className="flex gap-4 items-start border-l-2 border-l-danger/60">
-                                        <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-danger/15 text-danger' : 'bg-danger/10 text-danger'}`}>♂</div>
+                                      <Card className="flex gap-4 items-start border-l border-l-danger/40">
+                                        <div className={`w-9 h-9 rounded-full border border-current/25 flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-danger/15 text-danger' : 'bg-danger/10 text-danger'}`}>♂</div>
                                         <div>
                                           <div className={`${DETAIL_LABEL_CLASS} mb-1`}>{t.us.comp_action}</div>
                                           <p className="text-sm">{composite.daily?.mars || ''}</p>
@@ -4584,7 +4708,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                       </Card>
                                     </div>
                                     {composite.daily?.maintenance_list && composite.daily.maintenance_list.length > 0 && (
-                                      <Card className="border-l-2 border-l-success/60">
+                                      <Card className="border-l border-l-success/40">
                                         <h4 className={`${DETAIL_LABEL_CLASS} text-success mb-3`}>{t.us.comp_maintenance}</h4>
                                         <div className="space-y-2">
                                           {composite.daily.maintenance_list.map((item, i) => (
@@ -4600,30 +4724,30 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
                                   <Section title={t.us.comp_karmic} className="mb-8">
                                     <div className="space-y-4">
-                                      <Card className="border-l-2 border-l-star-200/60">
+                                      <Card className="border-l border-l-star-200/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-star-200 mb-2`}>{t.us.comp_saturn}</div>
                                         <p className="text-sm opacity-90">{composite.karmic?.saturn || ''}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-danger/60">
+                                      <Card className="border-l border-l-danger/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-danger mb-2`}>{t.us.comp_pluto}</div>
                                         <p className="text-sm opacity-90">{composite.karmic?.pluto || ''}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-accent/60">
+                                      <Card className="border-l border-l-accent/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-accent mb-2`}>{t.us.comp_nodes}</div>
                                         <p className="text-sm opacity-90">{composite.karmic?.nodes || ''}</p>
                                       </Card>
-                                      <Card className="border-l-2 border-l-gold-500/60">
+                                      <Card className="border-l border-l-gold-500/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-2`}>{t.us.comp_chiron}</div>
                                         <p className="text-sm opacity-90">{composite.karmic?.chiron || ''}</p>
                                       </Card>
                                     </div>
                                     {composite.karmic?.conclusion && (
                                       <div className="space-y-4 mt-6">
-                                        <Card className="border-l-2 border-l-danger/60">
+                                        <Card className="border-l border-l-danger/40">
                                           <span className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}>{t.us.comp_stuck}</span>
                                           <p className="text-sm font-medium">{composite.karmic.conclusion.stuck_point}</p>
                                         </Card>
-                                        <Card className="border-l-2 border-l-success/60">
+                                        <Card className="border-l border-l-success/40">
                                           <span className={`${DETAIL_LABEL_CLASS} text-success block mb-1`}>{t.us.comp_growth}</span>
                                           <p className="text-sm font-medium">{composite.karmic.conclusion.growth_point}</p>
                                         </Card>
@@ -4633,7 +4757,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
                                   {composite.synthesis && (
                                     <Section title={t.us.comp_synthesis}>
-                                      <Card className="border-l-2 border-l-star-200/40">
+                                      <Card className="border-l border-l-star-200/40">
                                         <div className="space-y-4">
                                           <div>
                                             <span className={`${DETAIL_LABEL_CLASS} block mb-2`}>{t.us.comp_house}</span>
@@ -5351,7 +5475,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 <div className="animate-fade-in flex-1 max-w-7xl mx-auto w-full px-4 flex flex-col min-h-0 mt-[44px]">
 
                     {/* Category Tabs - Compact Centered Row */}
-                    <div className={`flex flex-wrap justify-center gap-2 mb-2 border-b pb-2 shrink-0 ${theme === 'dark' ? 'border-gold-500/15/30' : 'border-paper-300'}`}>
+                    <div className={`flex flex-wrap justify-center gap-2 mb-2 border-b pb-2 shrink-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                         {(Object.keys(t.ask.modules) as AskCategoryKey[]).map((key) => (
                             <button
                                 key={key}
@@ -5430,7 +5554,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             ? 'border-gold-500/80 bg-gold-500/5 shadow-glow'
                                             : theme === 'dark'
                                                 ? 'bg-space-900 border-gold-500/15 hover:border-gold-500/50 hover:bg-space-800'
-                                                : 'bg-white border-paper-300 hover:bg-paper-100 hover:border-gold-600/30'
+                                                : 'bg-paper-100/85 border-paper-300 hover:bg-paper-100 hover:border-gold-600/30'
                                         }
                                     `}
                                 >
@@ -5461,7 +5585,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                     relative flex items-center flex-1 p-1 rounded-none border transition-all duration-500
                                     ${theme === 'dark'
                                         ? 'bg-space-950/90 border-gold-500/15 focus-within:border-gold-500/50 shadow-2xl backdrop-blur-md'
-                                        : 'bg-white/90 border-paper-300 shadow-xl'
+                                        : 'bg-paper-100/90 border-paper-300 shadow-xl'
                                     }
                                 `}>
                                     <input
@@ -5491,7 +5615,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                         }
                                         ${theme === 'dark'
                                             ? 'bg-space-900 border-gold-500/15 text-gold-500'
-                                            : 'bg-white border-paper-300 text-gold-600'
+                                            : 'bg-paper-100/85 border-paper-300 text-gold-700'
                                         }
                                     `}
                                 >
@@ -5540,7 +5664,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                             onClick={() => { setAnswer(null); setAnswerMeta(null); setAnswerLang(null); setAnswerChart(null); setError(null); }}
                             className={`flex items-center gap-3 transition-all font-bold group ${labelTone}`}
                         >
-                            <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-paper-200 border border-paper-300 group-hover:bg-paper-300' : 'bg-white/5 group-hover:bg-gold-500/20 group-hover:text-gold-400'}`}>
+                            <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-paper-200 border border-paper-300 group-hover:bg-paper-300' : 'bg-space-900/60 group-hover:bg-gold-500/20 group-hover:text-gold-400'}`}>
                                 <ArrowLeft size={20} />
                             </div>
                             <span className="text-sm uppercase tracking-widest">{t.ask.back}</span>
@@ -5549,7 +5673,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                             className={`flex items-center gap-2 px-3 py-1 rounded-full border max-w-[70vw] ${isLight ? 'border-gold-500/30 bg-gold-500/10 text-gold-700' : 'border-gold-500/30 bg-gold-500/10 text-gold-400'}`}
                             title={headerSummary}
                         >
-                            <div className={`w-7 h-7 rounded-full border flex items-center justify-center ${isLight ? 'border-gold-500/40 bg-white text-gold-600' : 'border-gold-500/30 bg-space-950 text-gold-500'}`}>
+                            <div className={`w-7 h-7 rounded-full border flex items-center justify-center ${isLight ? 'border-gold-500/40 bg-paper-100/85 text-gold-700' : 'border-gold-500/30 bg-space-950 text-gold-500'}`}>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
                                     <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
@@ -5630,53 +5754,53 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             // Determine card style based on section index for visual variety
                                             const cardStyles = [
                                                 {
-                                                    accent: 'border-l-gold-500',
+                                                    accent: 'border-l-gold-500/40',
                                                     title: theme === 'dark' ? 'text-gold-200' : 'text-gold-700',
                                                     badge: theme === 'dark' ? 'border-gold-500/30 bg-gold-500/10 text-gold-400' : 'border-gold-600/40 bg-gold-500/15 text-gold-700',
                                                     highlight: theme === 'dark' ? 'text-gold-300' : 'text-gold-700',
                                                     dot: theme === 'dark' ? 'bg-gold-500/50' : 'bg-gold-600/60',
                                                     divider: theme === 'dark' ? 'border-gold-500/20' : 'border-gold-600/25',
-                                                    iconTone: theme === 'dark' ? 'border-gold-500/30 bg-space-950 text-gold-500' : 'border-gold-600/40 bg-white text-gold-600',
+                                                    iconTone: theme === 'dark' ? 'border-gold-500/30 bg-space-950 text-gold-500' : 'border-gold-600/40 bg-paper-100/85 text-gold-700',
                                                     icon: 'star'
                                                 },
                                                 {
-                                                    accent: 'border-l-accent',
+                                                    accent: 'border-l-accent/40',
                                                     title: 'text-accent',
                                                     badge: theme === 'dark' ? 'border-accent/30 bg-accent/10 text-accent' : 'border-accent/30 bg-accent/10 text-accent',
                                                     highlight: 'text-accent',
                                                     dot: theme === 'dark' ? 'bg-accent/50' : 'bg-accent/60',
                                                     divider: theme === 'dark' ? 'border-accent/20' : 'border-accent/30',
-                                                    iconTone: theme === 'dark' ? 'border-accent/30 bg-space-950 text-accent' : 'border-accent/30 bg-white text-accent',
+                                                    iconTone: theme === 'dark' ? 'border-accent/30 bg-space-950 text-accent' : 'border-accent/30 bg-paper-100/85 text-accent',
                                                     icon: 'eye'
                                                 },
                                                 {
-                                                    accent: 'border-l-star-200',
+                                                    accent: 'border-l-star-200/40',
                                                     title: theme === 'dark' ? 'text-star-200' : 'text-gold-700',
                                                     badge: theme === 'dark' ? 'border-star-200/30 bg-star-200/10 text-star-200' : 'border-gold-600/30 bg-gold-500/10 text-gold-700',
                                                     highlight: theme === 'dark' ? 'text-star-200' : 'text-gold-700',
                                                     dot: theme === 'dark' ? 'bg-star-200/50' : 'bg-gold-600/50',
                                                     divider: theme === 'dark' ? 'border-star-200/20' : 'border-gold-600/20',
-                                                    iconTone: theme === 'dark' ? 'border-star-200/30 bg-space-950 text-star-200' : 'border-gold-600/30 bg-white text-gold-600',
+                                                    iconTone: theme === 'dark' ? 'border-star-200/30 bg-space-950 text-star-200' : 'border-gold-600/30 bg-paper-100/85 text-gold-700',
                                                     icon: 'compass'
                                                 },
                                                 {
-                                                    accent: 'border-l-success',
+                                                    accent: 'border-l-success/40',
                                                     title: 'text-success',
                                                     badge: theme === 'dark' ? 'border-success/30 bg-success/10 text-success' : 'border-success/30 bg-success/10 text-success',
                                                     highlight: 'text-success',
                                                     dot: theme === 'dark' ? 'bg-success/50' : 'bg-success/60',
                                                     divider: theme === 'dark' ? 'border-success/20' : 'border-success/30',
-                                                    iconTone: theme === 'dark' ? 'border-success/30 bg-space-950 text-success' : 'border-success/30 bg-white text-success',
+                                                    iconTone: theme === 'dark' ? 'border-success/30 bg-space-950 text-success' : 'border-success/30 bg-paper-100/85 text-success',
                                                     icon: 'moon'
                                                 },
                                                 {
-                                                    accent: 'border-l-gold-400',
+                                                    accent: 'border-l-gold-400/40',
                                                     title: theme === 'dark' ? 'text-gold-200' : 'text-gold-700',
                                                     badge: theme === 'dark' ? 'border-gold-400/30 bg-gold-400/10 text-gold-300' : 'border-gold-600/30 bg-gold-500/10 text-gold-700',
                                                     highlight: theme === 'dark' ? 'text-gold-300' : 'text-gold-700',
                                                     dot: theme === 'dark' ? 'bg-gold-400/50' : 'bg-gold-600/50',
                                                     divider: theme === 'dark' ? 'border-gold-400/20' : 'border-gold-600/20',
-                                                    iconTone: theme === 'dark' ? 'border-gold-400/30 bg-space-950 text-gold-400' : 'border-gold-600/30 bg-white text-gold-600',
+                                                    iconTone: theme === 'dark' ? 'border-gold-400/30 bg-space-950 text-gold-400' : 'border-gold-600/30 bg-paper-100/85 text-gold-700',
                                                     icon: 'star'
                                                 },
                                             ];
@@ -5762,7 +5886,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                                 >
                                                     <Card className={`
                                                         relative overflow-hidden transition-all duration-300
-                                                        border border-l-2 ${style.accent}
+                                                        border border-l ${style.accent}
                                                         hover:shadow-lg
                                                         ${theme === 'dark' ? 'hover:shadow-gold-500/5' : 'hover:shadow-paper-400/20'}
                                                     `}>
@@ -5812,14 +5936,14 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                     /* Fallback for non-sectioned answers */
                                     <Card className={`
                                         relative overflow-hidden
-                                        border-l-2 border-l-gold-500
+                                        border-l border-l-gold-500/40
                                         ${theme === 'dark' ? 'border-space-700' : 'border-paper-300'}
                                     `}>
                                         <div className="flex items-start gap-4 mb-4">
                                             <div className={`shrink-0 w-10 h-10 rounded-lg border flex items-center justify-center ${
                                                 theme === 'dark'
                                                     ? 'border-gold-500/30 bg-space-950 text-gold-500'
-                                                    : 'border-gold-600/30 bg-white text-gold-600'
+                                                    : 'border-gold-600/30 bg-paper-100/85 text-gold-700'
                                             }`}>
                                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
                                                     <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" strokeLinecap="round" strokeLinejoin="round" />
@@ -5840,7 +5964,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                         <Card className={`text-center py-8 ${
                                             theme === 'dark'
                                                 ? 'bg-gradient-to-b from-space-900 to-space-950 border-gold-500/20'
-                                                : 'bg-gradient-to-b from-white to-paper-100 border-gold-600/20'
+                                                : 'bg-gradient-to-b from-paper-100 to-paper-100/80 border-gold-600/20'
                                         }`}>
                                             <div className="flex items-center justify-center gap-3 mb-4">
                                                 <div className={`w-12 h-px ${theme === 'dark' ? 'bg-gold-500/30' : 'bg-gold-600/30'}`} />
@@ -5977,7 +6101,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
             {isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
                 <Section title={t.settings.trial_title}>
-                    <Card className="mb-4 border-l-2 border-l-amber-500/60">
+                    <Card className="mb-4 border-l border-l-amber-500/40">
                         <div className="text-sm text-amber-600">
                             {t.settings.trial_desc.replace('{days}', String(trialDaysLeft))}
                         </div>
@@ -6023,19 +6147,19 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
             </Section>
 
             <Section title="Data">
-                <Card className="border-l-2 border-l-danger/60">
+                <Card className="border-l border-l-danger/40">
                     <div className="mb-4">
                         <div className="font-bold text-sm text-danger mb-1">{t.settings.reset}</div>
                         <div className="text-xs opacity-70">{t.settings.reset_desc}</div>
                     </div>
-                    <ActionButton onClick={onReset} size="sm" className="bg-danger border-danger text-white hover:bg-danger/80 w-full">
+                    <ActionButton onClick={onReset} size="sm" className="bg-danger border-danger text-star-50 hover:bg-danger/80 w-full">
                         {t.settings.reset_btn}
                     </ActionButton>
                 </Card>
             </Section>
 
             <Section title={language === 'zh' ? 'GM 命令' : 'GM Commands'}>
-                <Card className="mb-4 border-l-2 border-l-purple-500/60">
+                <Card className="mb-4 border-l border-l-purple-500/40">
                     <div className="mb-4">
                         <div className="font-bold text-sm text-purple-500 mb-1">{language === 'zh' ? 'GM 工具' : 'GM Tools'}</div>
                         <div className="text-xs opacity-70">{language === 'zh' ? '调试与测试工具' : 'Debug & Testing Tools'}</div>
@@ -6377,7 +6501,7 @@ const AuthPage: React.FC = () => {
             )}
 
             <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] items-start">
-                <Card className={`p-6 md:p-8 ${isDark ? 'bg-space-900 border-gold-500/20' : 'bg-white border-paper-300'}`}>
+                <Card className={`p-6 md:p-8 ${isDark ? 'bg-space-900 border-gold-500/20' : 'bg-paper-100/85 border-paper-300'}`}>
                     <div className="flex items-center gap-3 mb-6">
                         <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
                             isDark ? 'bg-gold-500/10 text-gold-400' : 'bg-gold-500/15 text-gold-600'
@@ -6411,7 +6535,7 @@ const AuthPage: React.FC = () => {
                     </div>
                 </Card>
 
-                <Card className={`p-6 md:p-8 ${isDark ? 'bg-space-900 border-gold-500/20' : 'bg-white border-paper-300'}`}>
+                <Card className={`p-6 md:p-8 ${isDark ? 'bg-space-900 border-gold-500/20' : 'bg-paper-100/85 border-paper-300'}`}>
                     <div className="mb-6">
                         <div className="text-sm uppercase tracking-[0.3em] text-gold-500/70 mb-2">
                             {mode === 'login' ? authT.login : authT.register}
@@ -6428,7 +6552,7 @@ const AuthPage: React.FC = () => {
                             className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
                                 isDark
                                     ? 'bg-space-800 border-gold-500/20 hover:bg-space-700 text-star-100'
-                                    : 'bg-white border-paper-300 hover:bg-paper-100 text-paper-900'
+                                    : 'bg-paper-100/85 border-paper-300 hover:bg-paper-100 text-paper-900'
                             } ${loading ? 'opacity-60 cursor-not-allowed' : ''}`}
                         >
                             <svg className="w-5 h-5" viewBox="0 0 24 24">
@@ -6445,8 +6569,8 @@ const AuthPage: React.FC = () => {
                             disabled={loading}
                             className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
                                 isDark
-                                    ? 'bg-white text-black hover:bg-gray-100'
-                                    : 'bg-black text-white hover:bg-gray-900'
+                                    ? 'bg-paper-100/90 text-paper-900 hover:bg-paper-200/70'
+                                    : 'bg-space-950 text-star-50 hover:bg-space-900'
                             } ${loading ? 'opacity-60 cursor-not-allowed' : ''}`}
                         >
                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -6562,6 +6686,8 @@ const AppContent: React.FC = () => {
     const { isAuthenticated, migrateLocalData, refreshUser, user: authUser } = useAuth();
     const { entitlements } = useEntitlement();
     const isWikiPath = location.pathname === '/wiki' || location.pathname.startsWith('/wiki/');
+    const isPublicRoute = location.pathname === '/' || isWikiPath;
+    const shouldNoIndex = !isPublicRoute;
     const authT = t.auth;
     const [showMigration, setShowMigration] = useState(false);
     const [migrationStatus, setMigrationStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -6635,8 +6761,9 @@ const AppContent: React.FC = () => {
 
     return (
         <>
+            {shouldNoIndex && <SEO robots="noindex,nofollow" />}
             {showNav && (
-                <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === 'dark' ? 'bg-space-950/90 border-gold-500/15' : 'bg-white/90 border-paper-300'}`}>
+                <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === 'dark' ? 'bg-space-950/90 border-gold-500/15' : 'bg-paper-100/90 border-paper-300'}`}>
                     <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0" onClick={() => navigate('/dashboard')}>
@@ -6697,7 +6824,7 @@ const AppContent: React.FC = () => {
             {/* Mobile Utility Toggle (Since main nav is now text links at top, we keep util buttons accessible) */}
             {showNav && (
                 <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
-                     <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === 'dark' ? 'bg-space-900/80 border-gold-500/15' : 'bg-white/80 border-paper-300'}`}>
+                     <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === 'dark' ? 'bg-space-900/80 border-gold-500/15' : 'bg-paper-100/80 border-paper-300'}`}>
                         {theme === 'dark' ? '☀' : '☾'}
                      </button>
                 </div>
@@ -6733,19 +6860,19 @@ const AppContent: React.FC = () => {
             {showMigration && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
                     <div
-                        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        className="absolute inset-0 bg-space-950/50 backdrop-blur-sm"
                         onClick={handleSkipMigration}
                     />
-                    <div className="relative max-w-md w-full rounded-2xl border border-white/10 bg-space-950 p-6 shadow-2xl">
+                    <div className={`relative max-w-md w-full rounded-2xl border p-6 shadow-2xl ${theme === 'dark' ? 'border-gold-500/15 bg-space-950' : 'border-paper-300 bg-paper-100/90'}`}>
                         <button
                             onClick={handleSkipMigration}
-                            className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+                            className={`absolute top-4 right-4 transition-colors ${theme === 'dark' ? 'text-star-400 hover:text-star-50' : 'text-paper-500 hover:text-paper-900'}`}
                         >
                             <X className="w-5 h-5" />
                         </button>
                         <div className="mb-4 text-center">
-                            <h2 className="text-xl font-bold text-white">{authT.migrate_title}</h2>
-                            <p className="text-sm text-gray-400 mt-2">{authT.migrate_desc}</p>
+                            <h2 className={`text-xl font-bold ${theme === 'dark' ? 'text-star-50' : 'text-paper-900'}`}>{authT.migrate_title}</h2>
+                            <p className={`text-sm mt-2 ${theme === 'dark' ? 'text-star-400' : 'text-paper-600'}`}>{authT.migrate_desc}</p>
                         </div>
                         {migrationMessage && (
                             <div className={`mb-4 rounded-lg border px-3 py-2 text-center text-sm ${

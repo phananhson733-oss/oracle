@@ -1,6 +1,6 @@
-<!-- INPUT: 项目背景、技术栈与约定信息（后端驱动，含统一 API Key 说明）。 -->
-<!-- OUTPUT: OpenSpec 项目上下文说明。 -->
-<!-- POS: OpenSpec 项目背景文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+<!-- INPUT: 项目背景、技术栈与约定信息（后端驱动，含 UI 规范门槛与统一 API Key 说明）。 -->
+<!-- OUTPUT: OpenSpec 项目上下文说明（含 UI 规范门槛）。 -->
+<!-- POS: OpenSpec 项目背景文档（含 UI 规范门槛）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 # 项目上下文
 
 ## 目的
@@ -26,6 +26,11 @@ AstrologyWiki 是一个将占星与心理学结合的单页应用，用于提供
 - 数据/内容逻辑放在 `services/*`，组件侧保持 UI 关注。
 - 优先使用 Tailwind 工具类，除必要情况避免全局 CSS。
 - 新增 UI 文案需补齐 `TRANSLATIONS` 的中英文。
+
+### UI 规范与评审门槛
+- 唯一 UI 规范来源：[COLOR_SYSTEM_GUIDE.md](../COLOR_SYSTEM_GUIDE.md)。
+- UI 变更必须对照该规范验证，并在 PR 描述中填写「UI 规范符合说明」；缺失则标记为未通过评审门槛。
+- PR 模板：[PULL_REQUEST_TEMPLATE.md](../PULL_REQUEST_TEMPLATE.md)。
 
 ### 架构模式
 - 单页应用入口为根目录 `index.html` -> `index.tsx`。

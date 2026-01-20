@@ -1,5 +1,18 @@
 {
   "version": 2,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "astrologywiki.com"
+        }
+      ],
+      "destination": "https://www.astrologywiki.com/$1",
+      "permanent": true
+    }
+  ],
   "builds": [
     {
       "src": "package.json",

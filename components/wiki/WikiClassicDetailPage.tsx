@@ -1,10 +1,11 @@
-// INPUT: Wiki 经典书籍详情数据与滚动阅读布局(含 Markdown 清洗、标题去重、编号层级与 A4 书页排版优化)。
-// OUTPUT: 导出经典书籍详情页组件(含单页 A4 居中滚动、章节留白与正文间距优化)。
+// INPUT: Wiki 经典书籍详情数据与滚动阅读布局(含 SEO 元信息、hreflang 校验与 Markdown 清洗)。
+// OUTPUT: 导出经典书籍详情页组件(含单页 A4 居中滚动、SEO 输出与多语言链接校验)。
 // POS: Wiki 经典书籍详情模块;若更新此文件,务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Card, Container, Section, useLanguage, useTheme } from '../UIComponents';
+import { SEO } from '../SEO';
 import { ArrowLeft, AlertTriangle, Loader2 } from 'lucide-react';
 import { fetchWikiClassic } from '../../services/apiClient';
 import type { WikiClassicDetail } from '../../types';
@@ -229,14 +230,65 @@ const extractHeadingParts = (text: string): { label?: string; title: string } =>
   return { title: cleaned };
 };
 
+type AlternateLink = { hrefLang: string; href: string };
+type LanguageAvailability = { zh: boolean; en: boolean };
+
+const buildAlternateLanguages = (siteUrl: string, pathSuffix: string, availability: LanguageAvailability): AlternateLink[] => {
+  const zhUrl = `${siteUrl}/zh${pathSuffix}`;
+  const enUrl = `${siteUrl}/en${pathSuffix}`;
+  const links: AlternateLink[] = [];
+  if (availability.zh) links.push({ hrefLang: 'zh', href: zhUrl });
+  if (availability.en) links.push({ hrefLang: 'en', href: enUrl });
+  const defaultLang = availability.en ? 'en' : availability.zh ? 'zh' : null;
+  if (defaultLang) {
+    links.push({ hrefLang: 'x-default', href: defaultLang === 'en' ? enUrl : zhUrl });
+  }
+  return links;
+};
+
 export const WikiClassicDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
-  const lang = language;
+  const lang = language === 'en' ? 'en' : 'zh';
   const { theme } = useTheme();
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
   const [item, setItem] = useState<WikiClassicDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const detailPath = id ? `/wiki/classics/${id}` : '/wiki/classics';
+  const canonicalUrl = `${siteUrl}/${lang}${detailPath}`;
+  const [alternateAvailability, setAlternateAvailability] = useState<LanguageAvailability>(() => ({
+    zh: lang === 'zh',
+    en: lang === 'en',
+  }));
+  const alternateLanguages = useMemo(
+    () => buildAlternateLanguages(siteUrl, detailPath, alternateAvailability),
+    [alternateAvailability, detailPath, siteUrl]
+  );
+
+  useEffect(() => {
+    let active = true;
+    if (!id) {
+      setAlternateAvailability({ zh: true, en: true });
+      return () => {
+        active = false;
+      };
+    }
+    const otherLang: 'zh' | 'en' = lang === 'en' ? 'zh' : 'en';
+    setAlternateAvailability({ zh: lang === 'zh', en: lang === 'en' });
+    fetchWikiClassic(id, otherLang)
+      .then(() => {
+        if (!active) return;
+        setAlternateAvailability((prev) => ({ ...prev, [otherLang]: true }));
+      })
+      .catch(() => {
+        if (!active) return;
+        setAlternateAvailability((prev) => ({ ...prev, [otherLang]: false }));
+      });
+    return () => {
+      active = false;
+    };
+  }, [id, lang]);
 
   useEffect(() => {
     if (!id) return;
@@ -274,6 +326,32 @@ export const WikiClassicDetailPage: React.FC = () => {
     () => blocks.findIndex(block => block.type === 'paragraph'),
     [blocks]
   );
+  const breadcrumbSchema = useMemo(() => {
+    if (!item || !id) return null;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: t.wiki.tab_home, item: `${siteUrl}/${lang}/` },
+        { '@type': 'ListItem', position: 2, name: t.wiki.tab_classics, item: `${siteUrl}/${lang}/wiki/classics` },
+        { '@type': 'ListItem', position: 3, name: item.title, item: canonicalUrl },
+      ],
+    };
+  }, [canonicalUrl, id, item, lang, siteUrl, t.wiki.tab_classics, t.wiki.tab_home]);
+  const bookSchema = useMemo(() => {
+    if (!item) return null;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Book',
+      name: item.title,
+      author: item.author ? { '@type': 'Person', name: item.author } : undefined,
+      description: item.summary || undefined,
+      url: canonicalUrl,
+      inLanguage: lang,
+      keywords: item.keywords || undefined,
+      image: item.cover_url || undefined,
+    };
+  }, [canonicalUrl, item, lang]);
 
   const palette = theme === 'dark'
     ? {
@@ -546,7 +624,7 @@ export const WikiClassicDetailPage: React.FC = () => {
       <Container>
         <Section>
           <Card className={`p-8 border ${cardBorder} ${cardSurface}`}>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className={palette.inkMuted}>
               {t.wiki.classics_not_found}
             </p>
           </Card>
@@ -557,6 +635,14 @@ export const WikiClassicDetailPage: React.FC = () => {
 
   return (
     <Container>
+      <SEO
+        title={item.title}
+        description={item.summary || t.wiki.classics_subtitle}
+        url={canonicalUrl}
+        alternateLanguages={alternateLanguages}
+        type="book"
+        schema={bookSchema && breadcrumbSchema ? [bookSchema, breadcrumbSchema] : undefined}
+      />
       <Section>
         {/* 返回按钮 */}
         <Link

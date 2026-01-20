@@ -1,4 +1,4 @@
-// INPUT: React、认证上下文与 UI 组件依赖（含订阅管理跳转与成功态刷新）。
+// INPUT: React、认证上下文与 UI 组件依赖（含订阅管理跳转与成功态对比度修正）。
 // OUTPUT: 导出支付成功页面组件（含订阅管理入口与统一左侧色带布局）。
 // POS: 支付成功页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -84,7 +84,7 @@ const PaymentSuccessPage: React.FC = () => {
             <div className="w-24 h-24 rounded-full bg-gold-500" />
           </div>
           <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center mx-auto shadow-lg">
-            <CheckCircle className="w-12 h-12 text-white" />
+            <CheckCircle className="w-12 h-12 text-space-950" />
           </div>
         </div>
 
@@ -106,7 +106,7 @@ const PaymentSuccessPage: React.FC = () => {
         </p>
 
         {/* Features card */}
-        <Card className="mb-8 text-left border-l-2 border-l-gold-500/50">
+        <Card className="mb-8 text-left border-l border-l-gold-500/40">
           <ul className="space-y-3">
             {tr.features.map((feature, i) => (
               <li key={i} className="flex items-center gap-3">

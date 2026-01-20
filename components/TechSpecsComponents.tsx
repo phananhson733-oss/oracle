@@ -1,6 +1,6 @@
-// INPUT: React 与技术数据（含元素矩阵视觉调整与行运交点支持）。
+// INPUT: React 与技术数据（含元素矩阵纸感映射与行运交点支持）。
 // OUTPUT: 导出技术表格组件（含本地化标签、Unicode 符号与跨盘相位矩阵）。
-// POS: 主应用技术规格 UI。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: 主应用技术规格 UI（含纸感映射与对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React from 'react';
 import { ExtendedNatalData, PlanetPosition, Language, Aspect } from '../types';
@@ -108,8 +108,8 @@ const ASPECT_CONFIG: Record<string, { symbol: string; color: string; zh: string 
 export const ElementalTable: React.FC<{ data: ExtendedNatalData['elements']; language?: Language }> = ({ data, language }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
-  const dividerClass = isDark ? 'divide-white/10 border-white/10' : 'divide-paper-300 border-paper-300';
+  const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
+  const dividerClass = isDark ? 'divide-gold-500/10 border-gold-500/15' : 'divide-paper-300 border-paper-300';
   const headerClass = "text-[10px] font-bold uppercase tracking-widest opacity-80 py-4 text-center";
 
   const modalities = ['Cardinal', 'Fixed', 'Mutable'];
@@ -124,7 +124,7 @@ export const ElementalTable: React.FC<{ data: ExtendedNatalData['elements']; lan
   return (
     <div className={`border ${borderClass} rounded-lg overflow-hidden`}>
       <div className={`grid grid-cols-4 divide-x ${dividerClass} border-b ${borderClass}`}>
-        <div className={`bg-black/10 ${headerClass}`}></div>
+        <div className={`${isDark ? 'bg-space-900/40' : 'bg-paper-100/70'} ${headerClass}`}></div>
         {modalities.map(m => <div key={m} className={headerClass}>{modalityLabels[m]}</div>)}
       </div>
 
@@ -132,7 +132,7 @@ export const ElementalTable: React.FC<{ data: ExtendedNatalData['elements']; lan
         {elements.map(elKey => (
           <div key={elKey} className={`grid grid-cols-4 divide-x ${dividerClass} min-h-[60px]`}>
             {/* Element Header */}
-            <div className={`flex flex-col items-center justify-center p-2 gap-1 bg-black/5 border-r ${borderClass}`}>
+            <div className={`flex flex-col items-center justify-center p-2 gap-1 ${isDark ? 'bg-space-900/30' : 'bg-paper-100/60'} border-r ${borderClass}`}>
                 <span className="text-[10px] font-bold uppercase tracking-widest opacity-90" style={{ color: ELEMENTS[elKey as keyof typeof ELEMENTS].color }}>
                     {elementLabels[elKey]}
                 </span>
@@ -203,9 +203,9 @@ export const AspectMatrix: React.FC<{
     });
 
   const cellSize = 'h-12 w-12 md:h-14 md:w-14';
-  const headerBg = isDark ? 'bg-space-800' : 'bg-gray-100';
-  const borderClass = isDark ? 'border-white/10' : 'border-gray-200';
-  const emptyBg = isDark ? 'bg-space-900/40' : 'bg-white';
+  const headerBg = isDark ? 'bg-space-800/60' : 'bg-paper-100/80';
+  const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
+  const emptyBg = isDark ? 'bg-space-900/40' : 'bg-paper-100/85';
 
   // 三角形矩阵（下三角，参考图格式）
   if (variant === 'triangle') {
@@ -313,7 +313,7 @@ export const AspectMatrix: React.FC<{
                   return (
                     <td
                       key={`${rowPlanet}-${colPlanet}`}
-                      className={`${cellSize} border ${borderClass} ${colIndex === rowIndex ? headerBg : (isDark ? 'bg-space-700/30' : 'bg-gray-50')}`}
+                      className={`${cellSize} border ${borderClass} ${colIndex === rowIndex ? headerBg : (isDark ? 'bg-space-700/30' : 'bg-paper-100/70')}`}
                     />
                   );
                 }
@@ -368,7 +368,7 @@ const TableRow: React.FC<{ p: PlanetPosition; language?: Language }> = ({ p, lan
   const isDark = theme === 'dark';
   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
   const signColor = signMeta?.color || '#F3E3AC';
-  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
+  const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
 
   return (
     <div
@@ -403,9 +403,9 @@ const TableRow: React.FC<{ p: PlanetPosition; language?: Language }> = ({ p, lan
 export const PlanetTable: React.FC<{ planets: PlanetPosition[]; language?: Language; labels?: PlanetTableLabels }> = ({ planets, language, labels }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
+  const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
   const headerText = isDark ? 'text-star-200' : 'text-paper-400';
-  const headerBg = isDark ? 'bg-black/20' : 'bg-black/5';
+  const headerBg = isDark ? 'bg-space-900/40' : 'bg-paper-100/70';
   const headerLabels: PlanetTableLabels = {
     body: labels?.body || (language === 'zh' ? '星体' : 'Body'),
     sign: labels?.sign || (language === 'zh' ? '星座' : 'Sign'),
@@ -442,9 +442,9 @@ export const HouseRulerTable: React.FC<{ rulers: ExtendedNatalData['houseRulers'
 }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
+  const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
   const headerText = isDark ? 'text-star-200' : 'text-paper-400';
-  const headerBg = isDark ? 'bg-black/20' : 'bg-black/5';
+  const headerBg = isDark ? 'bg-space-900/40' : 'bg-paper-100/70';
   const headerLabels: HouseRulerLabels = {
     house: labels?.house || (language === 'zh' ? '宫位' : 'House'),
     sign: labels?.sign || (language === 'zh' ? '星座' : 'Sign'),
@@ -534,9 +534,9 @@ export const CrossAspectMatrix: React.FC<{
   });
 
   const cellSize = 'h-12 w-12 md:h-14 md:w-14';
-  const headerBg = isDark ? 'bg-space-800' : 'bg-gray-100';
-  const borderClass = isDark ? 'border-white/10' : 'border-gray-200';
-  const emptyBg = isDark ? 'bg-space-900/40' : 'bg-white';
+  const headerBg = isDark ? 'bg-space-800/60' : 'bg-paper-100/80';
+  const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
+  const emptyBg = isDark ? 'bg-space-900/40' : 'bg-paper-100/85';
   const labelClass = isDark ? 'text-star-400 text-[10px]' : 'text-paper-400 text-[10px]';
 
   return (
@@ -653,9 +653,9 @@ export const SynastryAspectMatrix: React.FC<{
   });
 
   const cellSize = 'h-10 w-10 md:h-12 md:w-12';
-  const headerBg = isDark ? 'bg-space-800' : 'bg-gray-100';
-  const borderClass = isDark ? 'border-white/10' : 'border-gray-200';
-  const emptyBg = isDark ? 'bg-space-900/40' : 'bg-white';
+  const headerBg = isDark ? 'bg-space-800/60' : 'bg-paper-100/80';
+  const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
+  const emptyBg = isDark ? 'bg-space-900/40' : 'bg-paper-100/85';
   const labelClass = isDark ? 'text-star-400 text-[10px]' : 'text-paper-400 text-[10px]';
 
   return (

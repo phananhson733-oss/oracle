@@ -1,4 +1,4 @@
-// INPUT: React、流程状态、主题与后端分析服务（含失败提示与重试状态）。
+// INPUT: React、流程状态、主题与后端分析服务（含失败提示、重试状态与纸感映射）。
 // OUTPUT: 导出 CBT 记录向导组件（含对比度优化的填写输入与失败重试）。
 // POS: CBT 流程组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -35,7 +35,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
     ? 'bg-space-900/50 text-star-50 border-gold-500/30 focus:bg-space-900/70 placeholder-star-400/70'
     : 'bg-paper-50 text-paper-900 border-paper-300 focus:bg-paper-100 placeholder-paper-400';
   const journalPanelTone = theme === 'dark'
-    ? 'bg-white/5 border-white/10'
+    ? 'bg-space-900/60 border-gold-500/15'
     : 'bg-paper-100/80 border-paper-200';
   const goldBadgeTone = isLight
     ? 'bg-gold-500/15 border-gold-600/40 text-gold-700'
@@ -43,7 +43,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
   const panelBorderTone = isLight ? 'border-gold-600/35' : 'border-gold-500/10';
   const panelSurfaceTone = isLight ? 'bg-paper-100/90' : 'bg-space-800/30';
   const panelSurfaceMutedTone = isLight ? 'bg-paper-50/90' : 'bg-space-800/20';
-  const panelSurfaceSoftTone = isLight ? 'bg-paper-100/70' : 'bg-white/5';
+  const panelSurfaceSoftTone = isLight ? 'bg-paper-100/70' : 'bg-space-900/40';
   const goldTextTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const goldTextStrongTone = isLight ? 'text-gold-800' : 'text-gold-300';
   const accentLabelTone = isLight ? 'text-gold-700' : 'text-accent';
@@ -54,7 +54,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
     : 'bg-gold-500/20 border-gold-500 text-star-50 shadow-[0_0_15px_rgba(212,175,55,0.2)]';
   const symptomBaseTone = isLight
     ? 'bg-paper-50 border-paper-300 text-star-200 hover:bg-paper-100'
-    : 'bg-white/5 border-white/10 text-star-400 hover:bg-white/10';
+    : 'bg-space-900/50 border-gold-500/15 text-star-400 hover:bg-space-900/70';
   const symptomChipTone = isLight
     ? 'bg-gold-500/15 text-gold-800 border-gold-600/40'
     : 'bg-gold-500/20 text-gold-300 border-gold-500/30';
@@ -64,17 +64,17 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
   const thoughtBaseTone = isLight
     ? 'bg-paper-50 border-paper-300 hover:border-gold-600/30'
     : 'bg-space-800/10 border-gold-500/10 hover:border-gold-500/30';
-  const overlayTone = isLight ? 'bg-paper-200/80' : 'bg-black/85';
+  const overlayTone = isLight ? 'bg-paper-200/80' : 'bg-space-950/85';
   const shellTone = isLight ? 'bg-paper-100 border-gold-600/30' : 'bg-space-900 border-gold-500/20';
   const shellPanelTone = isLight ? 'bg-paper-100' : 'bg-space-900';
   const rightPanelTone = isLight
     ? 'bg-gradient-to-br from-paper-100 to-paper-200 border-paper-300'
     : 'bg-gradient-to-br from-space-800 to-space-900 border-gold-500/10';
-  const progressTrackTone = isLight ? 'bg-paper-200' : 'bg-white/10';
+  const progressTrackTone = isLight ? 'bg-paper-200' : 'bg-space-900/60';
   const closeButtonTone = isLight
     ? 'bg-paper-100/80 border-paper-300 text-star-200 hover:bg-paper-200'
-    : 'bg-white/5 border-gold-500/10 text-star-400 hover:bg-danger/20 hover:text-danger';
-  const guideCardTone = isLight ? 'bg-paper-100/80 border-paper-300' : 'bg-white/[0.02] border-gold-500/10';
+    : 'bg-space-900/60 border-gold-500/15 text-star-400 hover:bg-danger/20 hover:text-danger';
+  const guideCardTone = isLight ? 'bg-paper-100/80 border-paper-300' : 'bg-space-900/40 border-gold-500/10';
 
   // i18n: Translated mood options
   const emojiOptions = useMemo(() => [
@@ -580,7 +580,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
     return (
       <div className="fixed inset-0 z-[200] bg-space-950 overflow-y-auto animate-in fade-in duration-500">
         <div className={`sticky top-0 z-30 backdrop-blur-xl p-6 border-b flex justify-between items-center ${isLight ? 'bg-paper-100/90' : 'bg-space-950/90'} ${panelBorderTone}`}>
-            <button onClick={onClose} className={`flex items-center gap-3 font-bold transition-all px-4 py-2 rounded-xl ${isLight ? 'text-star-200 hover:bg-paper-200' : 'text-star-400 hover:text-star-50 hover:bg-white/5'}`}><ArrowLeft size={20} /> {t.journal.back_to_journal}</button>
+            <button onClick={onClose} className={`flex items-center gap-3 font-bold transition-all px-4 py-2 rounded-xl ${isLight ? 'text-star-200 hover:bg-paper-200' : 'text-star-400 hover:text-star-50 hover:bg-space-900/60'}`}><ArrowLeft size={20} /> {t.journal.back_to_journal}</button>
             <div className="flex items-center gap-2 text-accent font-bold uppercase tracking-widest text-sm"><CheckCircle2 size={20} /> {t.journal.analysis_saved}</div>
         </div>
         <ReportDashboard record={finalRecord} report={report} onUpdate={(updated) => onComplete(updated)} onClose={onClose} />
@@ -603,7 +603,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
           <div className="text-sm text-danger mb-4">{analysisError}</div>
           <div className="flex items-center justify-center gap-3">
             <button
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest border ${isLight ? 'border-paper-300 text-star-200' : 'border-white/10 text-star-50'} hover:border-gold-500/60`}
+              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest border ${isLight ? 'border-paper-300 text-star-200' : 'border-gold-500/15 text-star-50'} hover:border-gold-500/60`}
               onClick={() => setAnalysisError(null)}
             >
               {t.journal.back_to_journal}
@@ -637,7 +637,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
               {emojiOptions.map(opt => (
                 <button
                   key={opt.type} onClick={() => handleFinish(opt.type)}
-                  className={`group flex flex-col items-center gap-8 p-8 rounded-[3rem] border hover:scale-105 transition-all duration-700 shadow-2xl relative overflow-hidden ${panelSurfaceTone} ${panelBorderTone} ${isLight ? 'hover:bg-paper-200' : 'hover:bg-white/[0.08] hover:border-gold-500/50'}`}
+                  className={`group flex flex-col items-center gap-8 p-8 rounded-[3rem] border hover:scale-105 transition-all duration-700 shadow-2xl relative overflow-hidden ${panelSurfaceTone} ${panelBorderTone} ${isLight ? 'hover:bg-paper-200' : 'hover:bg-space-900/60 hover:border-gold-500/50'}`}
                 >
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity ${isLight ? 'bg-gradient-to-br from-gold-500/10 to-transparent' : 'bg-gradient-to-br from-white/5 to-transparent'}`}></div>
                   <div className="w-32 h-32 flex items-center justify-center transform scale-110 group-hover:scale-125 transition-transform duration-1000">
@@ -709,7 +709,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
                 {/* 导航按钮 */}
                 <div className="mt-6 pt-6">
                   <div className="flex gap-4">
-                    <button onClick={() => setCurrentStep(Math.max(0, currentStep - 1))} disabled={currentStep === 0} className={`flex-1 flex items-center justify-center gap-3 py-5 rounded-[2rem] text-xs font-black uppercase tracking-[0.2em] transition-all border shadow-xl ${currentStep === 0 ? 'opacity-0 invisible' : (isLight ? 'bg-paper-100 text-star-200 border-paper-300 hover:bg-paper-200' : 'bg-white/5 text-star-400 hover:text-star-50 hover:bg-white/10 border-gold-500/10')}`}><ArrowLeft size={16} /> {t.journal.prev_step}</button>
+                    <button onClick={() => setCurrentStep(Math.max(0, currentStep - 1))} disabled={currentStep === 0} className={`flex-1 flex items-center justify-center gap-3 py-5 rounded-[2rem] text-xs font-black uppercase tracking-[0.2em] transition-all border shadow-xl ${currentStep === 0 ? 'opacity-0 invisible' : (isLight ? 'bg-paper-100 text-star-200 border-paper-300 hover:bg-paper-200' : 'bg-space-900/60 text-star-400 hover:text-star-50 hover:bg-space-900/80 border-gold-500/10')}`}><ArrowLeft size={16} /> {t.journal.prev_step}</button>
                     <button onClick={() => setCurrentStep(currentStep + 1)} disabled={!isStepValid()} className={`flex-[2] flex items-center justify-center gap-4 py-5 rounded-[2rem] text-sm font-black uppercase tracking-[0.3em] transition-all shadow-2xl relative overflow-hidden group ${isStepValid() ? 'bg-gold-500 text-space-900 hover:scale-[1.02] active:scale-95' : 'bg-space-800 text-star-400 cursor-not-allowed opacity-50'}`}><span className="relative z-10">{currentStep === 8 ? t.journal.enter_finale : t.journal.next_step}</span><ArrowRight size={20} strokeWidth={3} className="relative z-10 group-hover:translate-x-2 transition-transform" /></button>
                   </div>
                 </div>
