@@ -1,5 +1,5 @@
 // INPUT: AI 内容生成服务（DeepSeek chat/reasoning，单语言输出与合盘综述/成长焦点分区 mock）。
-// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存、JSON 修复与错误日志）。
+// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存与 JSON 修复）。
 // POS: AI 生成服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -15,12 +15,95 @@ const AI_TIMEOUT_MS = (() => {
   const parsed = Number(process.env.AI_TIMEOUT_MS);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
 })();
-const AI_TEMPERATURE = (() => {
+const AI_TEMPERATURE_DEFAULT = (() => {
   const parsed = Number(process.env.AI_TEMPERATURE);
-  if (!Number.isFinite(parsed)) return 0.2;
+  if (!Number.isFinite(parsed)) return 0.5;
   return Math.min(Math.max(parsed, 0), 1);
 })();
 const DEFAULT_LANG: Language = 'zh';
+
+// ============================================================
+// 温度分层配置
+// ============================================================
+// T1 (0.1): 事实性数据 - 天文计算不走 AI，无需配置
+// T2 (0.3): 百科/详情解读 - 准确性优先，允许少量表达变化
+// T3 (0.5): 分析性内容 - 需要洞察力但保持一致性
+// T4 (0.6): 时效性/建议性 - 需要新鲜感和实用性
+// T5 (0.7): 创意性/深度洞察 - 需要共情和创意表达
+// ============================================================
+
+const TEMPERATURE_MAP: Record<string, number> = {
+  // T2 (0.3): 百科/详情解读
+  'wiki-home': 0.3,
+  'wiki-classics-master': 0.3,
+  // 详情 - 行星
+  'detail-planets-natal': 0.3,
+  'detail-planets-transit': 0.3,
+  'detail-planets-synastry': 0.3,
+  'detail-planets-composite': 0.3,
+  // 详情 - 相位
+  'detail-aspects-natal': 0.3,
+  'detail-aspects-transit': 0.3,
+  'detail-aspects-synastry': 0.3,
+  'detail-aspects-composite': 0.3,
+  // 详情 - 元素/宫位
+  'detail-elements-natal': 0.3,
+  'detail-elements-composite': 0.3,
+  // 详情 - 小行星
+  'detail-asteroids-natal': 0.3,
+  'detail-asteroids-transit': 0.3,
+  'detail-asteroids-synastry': 0.3,
+  'detail-asteroids-composite': 0.3,
+  // 详情 - 定位星
+  'detail-rulers-natal': 0.3,
+  'detail-rulers-transit': 0.3,
+  'detail-rulers-synastry': 0.3,
+  'detail-rulers-composite': 0.3,
+  // 详情 - 综合
+  'detail-synthesis-synastry': 0.3,
+
+  // T3 (0.5): 分析性内容
+  // 本命盘
+  'natal-overview': 0.5,
+  'natal-core-themes': 0.5,
+  'natal-dimension': 0.5,
+  'cycle-naming': 0.5,
+  // 合盘 - 综述/核心分析
+  'synastry-overview': 0.5,
+  'synastry-highlights': 0.5,
+  'synastry-core-dynamics': 0.5,
+  'synastry-growth-task': 0.5,
+  'synastry-conflict-loop': 0.5,
+  'synastry-dynamic': 0.5,
+  // 合盘 - 本命盘/对比盘/组合盘
+  'synastry-natal-a': 0.5,
+  'synastry-natal-b': 0.5,
+  'synastry-compare-ab': 0.5,
+  'synastry-compare-ba': 0.5,
+  'synastry-composite': 0.5,
+  // CBT 分析
+  'cbt-analysis': 0.5,
+  'cbt-aggregate-analysis': 0.5,
+  // 工具分析
+  'synthetica-analysis': 0.5,
+
+  // T4 (0.6): 时效性/建议性内容
+  'daily-forecast': 0.6,
+  'daily-detail': 0.6,
+  'synastry-practice-tools': 0.6,
+  'synastry-relationship-timing': 0.6,
+  'synastry-vibe-tags': 0.6,
+  'synastry-weather-forecast': 0.6,
+  'synastry-action-plan': 0.6,
+
+  // T5 (0.7): 创意性/深度洞察
+  'ask-answer': 0.7,
+  'oracle-answer': 0.7,
+};
+
+function getTemperatureForPrompt(promptId: string): number {
+  return TEMPERATURE_MAP[promptId] ?? AI_TEMPERATURE_DEFAULT;
+}
 
 // 使用 reasoning 模型的 promptId
 const REASONING_PROMPTS = ['ask-answer', 'oracle-answer'];
@@ -226,7 +309,7 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
           { role: 'system', content: systemMessage },
           { role: 'user', content: userMessage },
         ],
-        temperature: AI_TEMPERATURE,
+        temperature: getTemperatureForPrompt(options.promptId),
         max_tokens: maxTokens,
       }),
     }, timeoutMs);
@@ -384,34 +467,6 @@ function getMockResponse<T>(promptId: string, lang: Language): LocalizedContent<
         practice: { title: 'Return to the body', steps: ['Slow the breath', 'Feel your feet'] },
         prompt_question: 'What needs to be understood right now?',
         confidence: 'high'
-      },
-    },
-    'natal-technical': {
-      zh: {
-        pattern: { element_summary: '火象与水象并重，行动与感受并存。', modality_summary: '固定与开创混合，既能坚持也能启动。', house_focus: '第1/4/7宫重点。' },
-        big_3_deep: [
-          { planet: 'Sun', sign_meaning: '太阳强调自我表达。', house_meaning: '落在一宫强化行动力。', key_aspects: ['Sun trine Moon'], dimension_link: 'Talents' },
-          { planet: 'Moon', sign_meaning: '月亮强调情感安全。', house_meaning: '落在四宫强调家庭感。', key_aspects: ['Moon square Saturn'], dimension_link: 'Emotions' },
-          { planet: 'Ascendant', sign_meaning: '上升体现对外呈现的风格。', house_meaning: '建立关系时追求平衡。', key_aspects: [], dimension_link: 'Attachment' }
-        ],
-        layers: { personal: '内行星能量强，主观驱动明显。', social: '木星与土星帮助扩展与稳定。', transpersonal: '外行星带来长期成长主题。' },
-        key_aspects_list: [
-          { name: 'Sun trine Moon', tension_support: '支持', experience: '内在与外在目标一致。', advice: '信任自己的节奏。' },
-          { name: 'Moon square Saturn', tension_support: '张力', experience: '情绪容易被压抑。', advice: '练习自我安抚。' }
-        ]
-      },
-      en: {
-        pattern: { element_summary: 'Fire and water are both strong, blending action and feeling.', modality_summary: 'A mix of fixed and cardinal modes.', house_focus: 'Focus on houses 1/4/7.' },
-        big_3_deep: [
-          { planet: 'Sun', sign_meaning: 'The Sun highlights self-expression.', house_meaning: 'First house adds initiative.', key_aspects: ['Sun trine Moon'], dimension_link: 'Talents' },
-          { planet: 'Moon', sign_meaning: 'The Moon seeks emotional safety.', house_meaning: 'Fourth house emphasizes home.', key_aspects: ['Moon square Saturn'], dimension_link: 'Emotions' },
-          { planet: 'Ascendant', sign_meaning: 'Rising shows your outer style.', house_meaning: 'Balance in relationships matters.', key_aspects: [], dimension_link: 'Attachment' }
-        ],
-        layers: { personal: 'Inner planets are prominent.', social: 'Jupiter/Saturn balance growth and structure.', transpersonal: 'Outer planets shape long-term themes.' },
-        key_aspects_list: [
-          { name: 'Sun trine Moon', tension_support: 'Support', experience: 'Inner and outer goals align.', advice: 'Trust your pace.' },
-          { name: 'Moon square Saturn', tension_support: 'Tension', experience: 'Emotions can feel compressed.', advice: 'Practice self-soothing.' }
-        ]
       },
     },
     'daily-forecast': {

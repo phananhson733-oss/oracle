@@ -25,6 +25,126 @@ export interface Entitlements {
 
 export type Feature = 'ask' | 'detail' | 'synastry' | 'cbt_analysis' | 'daily_detail' | 'report';
 
+type DevEntitlementState = {
+  isSubscriber: boolean;
+  askTokens: number;
+  syntheticaTokens: number;
+  gmCredits: number;
+  freeAskUsed: number;
+  freeAskResetAt: string | null;
+  freeSynastryUsed: number;
+  syntheticaUsed: number;
+  syntheticaResetAt: string | null;
+  subscriptionAskUsed: number;
+  subscriptionSynastryUsed: number;
+  subscriptionWeekStart: string | null;
+  purchasedFeatures: {
+    dimensions: string[];
+    coreThemes: string[];
+    details: string[];
+    synastryHashes: string[];
+  };
+  monthlyUnlocks: {
+    cbtStatsMonths: string[];
+  };
+};
+
+const devEntitlementState = new Map<string, DevEntitlementState>();
+
+export const getOrCreateDevEntitlementState = (userId: string): DevEntitlementState => {
+  const existing = devEntitlementState.get(userId);
+  if (existing) {
+    return existing;
+  }
+  const created = {
+    isSubscriber: false,
+    askTokens: 0,
+    syntheticaTokens: 0,
+    gmCredits: 0,
+    freeAskUsed: 0,
+    freeAskResetAt: null,
+    freeSynastryUsed: 0,
+    syntheticaUsed: 0,
+    syntheticaResetAt: null,
+    subscriptionAskUsed: 0,
+    subscriptionSynastryUsed: 0,
+    subscriptionWeekStart: null,
+    purchasedFeatures: {
+      dimensions: [],
+      coreThemes: [],
+      details: [],
+      synastryHashes: [],
+    },
+    monthlyUnlocks: {
+      cbtStatsMonths: [],
+    },
+  };
+  devEntitlementState.set(userId, created);
+  return created;
+};
+
+export const getDevEntitlementState = (userId: string): DevEntitlementState | null => {
+  return devEntitlementState.get(userId) || null;
+};
+
+export const setDevSubscription = (userId: string, enabled: boolean): DevEntitlementState => {
+  const state = getOrCreateDevEntitlementState(userId);
+  state.isSubscriber = enabled;
+  return state;
+};
+
+export const addDevAskTokens = (userId: string, amount: number): DevEntitlementState => {
+  const state = getOrCreateDevEntitlementState(userId);
+  const nextAmount = state.askTokens + amount;
+  state.askTokens = nextAmount > 0 ? nextAmount : 0;
+  return state;
+};
+
+export const clearDevAskTokens = (userId: string): DevEntitlementState => {
+  const state = getOrCreateDevEntitlementState(userId);
+  state.askTokens = 0;
+  return state;
+};
+
+export const addDevGmCredits = (userId: string, amount: number): DevEntitlementState => {
+  const state = getOrCreateDevEntitlementState(userId);
+  const nextAmount = state.gmCredits + amount;
+  state.gmCredits = nextAmount > 0 ? nextAmount : 0;
+  return state;
+};
+
+export const clearDevGmCredits = (userId: string): DevEntitlementState => {
+  const state = getOrCreateDevEntitlementState(userId);
+  state.gmCredits = 0;
+  return state;
+};
+
+export const resetDevEntitlements = (userId: string): DevEntitlementState => {
+  const state = getOrCreateDevEntitlementState(userId);
+  state.isSubscriber = false;
+  state.askTokens = 0;
+  state.syntheticaTokens = 0;
+  state.gmCredits = 0;
+  state.freeAskUsed = 0;
+  state.freeAskResetAt = null;
+  state.freeSynastryUsed = 0;
+  state.syntheticaUsed = 0;
+  state.syntheticaResetAt = null;
+  state.subscriptionAskUsed = 0;
+  state.subscriptionSynastryUsed = 0;
+  state.subscriptionWeekStart = null;
+  state.purchasedFeatures = {
+    dimensions: [],
+    coreThemes: [],
+    details: [],
+    synastryHashes: [],
+  };
+  state.monthlyUnlocks = {
+    cbtStatsMonths: [],
+  };
+  return state;
+};
+
 class EntitlementService {
   // Get full entitlements for a user
   async getEntitlements(userId: string | null, deviceFingerprint?: string): Promise<Entitlements> {
@@ -42,6 +162,30 @@ class EntitlementService {
     };
 
     if (!isSupabaseConfigured()) {
+      if (userId) {
+        const devState = getDevEntitlementState(userId);
+        if (devState) {
+          const updatedEntitlements: Entitlements = {
+            ...entitlements,
+            isSubscriber: devState.isSubscriber,
+            purchasedAsk: Math.max(0, devState.askTokens),
+          };
+
+          if (devState.isSubscriber) {
+            updatedEntitlements.subscription = {
+              plan: 'monthly',
+              status: 'active',
+              expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+              synastryReadsLeft: 9999,
+              monthlyReportClaimed: false,
+            };
+            updatedEntitlements.freeAskLeft = Infinity;
+            updatedEntitlements.freeDetailLeft = Infinity;
+          }
+
+          return updatedEntitlements;
+        }
+      }
       return entitlements;
     }
 
@@ -185,7 +329,15 @@ class EntitlementService {
     feature: Feature,
     deviceFingerprint?: string
   ): Promise<boolean> {
-    if (!isSupabaseConfigured()) return true;
+    if (!isSupabaseConfigured()) {
+      if (userId) {
+        const devState = getDevEntitlementState(userId);
+        if (devState && feature === 'ask' && devState.askTokens > 0) {
+          devState.askTokens = Math.max(0, devState.askTokens - 1);
+        }
+      }
+      return true;
+    }
 
     // For logged-in users
     if (userId) {

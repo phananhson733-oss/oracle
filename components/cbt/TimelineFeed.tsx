@@ -122,7 +122,7 @@ const TimelineFeed: React.FC<TimelineFeedProps> = ({ records, onSelect }) => {
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className={`text-[11px] font-bold uppercase tracking-wider ${metaTone}`}>
+                      <span className={`text-xs font-bold uppercase tracking-wider ${metaTone}`}>
                         {dayOfWeek}, {dateStr}
                       </span>
                     </div>
@@ -130,7 +130,7 @@ const TimelineFeed: React.FC<TimelineFeedProps> = ({ records, onSelect }) => {
                       <h3 className="text-xl font-black tracking-tight" style={{ color: mood.color }}>
                         {mood.label}
                       </h3>
-                      <span className={`text-[11px] font-mono uppercase tracking-widest font-bold ${metaTone}`}>
+                      <span className={`text-xs font-mono uppercase tracking-widest font-bold ${metaTone}`}>
                         {timeStr}
                       </span>
                     </div>

@@ -20,7 +20,7 @@ declare global {
   }
 }
 
-// Auth middleware
+// Auth middleware (optional - continues without auth if no token)
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;
 
@@ -43,6 +43,9 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
 
   next();
 };
+
+// Optional auth middleware (alias for authMiddleware, more explicit naming)
+export const optionalAuthMiddleware = authMiddleware;
 
 // Require auth middleware
 export const requireAuth = (req: Request, res: Response, next: NextFunction) => {

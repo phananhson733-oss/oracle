@@ -1,5 +1,5 @@
-<!-- INPUT: OpenSpec 变更提案目录结构（含百科融合提案与近期批量归档进度）。 -->
-<!-- OUTPUT: changes 架构摘要与文件索引（含百科融合与订阅相关变更）。 -->
+<!-- INPUT: OpenSpec 变更提案目录结构（含 AI 加载优化归档进度）。 -->
+<!-- OUTPUT: changes 架构摘要与文件索引（含 AI 加载优化归档记录）。 -->
 <!-- POS: OpenSpec 变更目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -15,11 +15,22 @@
 
 目录
 - archive｜地位：归档目录｜功能：存放已完成变更。
+- add-gm-dev-session｜地位：进行中变更｜功能：GM 开发会话与登录替代入口。
+- add-wiki-classics｜地位：进行中变更｜功能：百科经典书籍书架与详情体验。
+- enhance-wiki-classics-content｜地位：进行中变更｜功能：经典书籍详情内容完善与分层展示。
+- enhance-wiki-deep-dive｜地位：进行中变更｜功能：百科深度解读内容完善。
 - implement-payment-subscription｜地位：进行中变更｜功能：支付与订阅能力落地。
 - integrate-astro-wiki｜地位：进行中变更｜功能：心理占星百科融合与数据接入。
+- populate-wiki-data｜地位：进行中变更｜功能：百科数据补齐与内容填充。
 
 近期更新
+- 新增 add-gm-dev-session 变更提案。
+- 新增 add-wiki-classics 变更提案。
+- 新增 enhance-wiki-classics-content 变更提案。
+- 新增 enhance-wiki-deep-dive 变更提案。
 - 新增 integrate-astro-wiki 变更提案。
+- 归档 optimize-ai-loading 变更提案。
+- 新增 populate-wiki-data 变更提案。
 - 归档 add-section-detail-modal、align-ai-data-pipeline、ask-report-optimization、improve-synastry-reading、optimize-chart-settings、stabilize-ai-output-flow。
 - 归档 optimize-daily-transit、optimize-cbt-ask-ui、enhance-cbt-journal 与 update-self-exploration-layout。
 - 归档 optimize-synastry-report、optimize-synastry-ux 与 update-synastry-experience。

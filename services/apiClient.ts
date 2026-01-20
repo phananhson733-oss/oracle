@@ -1,6 +1,8 @@
-// INPUT: 后端 API 客户端与查询参数构建（含百科与经典书籍入口及缓存版本化）。
-// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别与报告缓存）。
+// INPUT: 后端 API 客户端与查询参数构建（含百科入口、经典书架缓存版本与 Ask/Synastry 权益校验与详情解读缓存提示）。
+// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、经典缓存版本策略与详情解读缓存策略）。
 // POS: 前端 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+
+/// <reference types="vite/client" />
 
 import type {
   UserProfile,
@@ -19,6 +21,7 @@ import type {
   SynastryTechnicalData,
   SynastrySuggestion,
   AIContentMeta,
+  Language,
   WikiHomeResponse,
   WikiItemsResponse,
   WikiItemResponse,
@@ -29,17 +32,25 @@ import type {
   DetailType,
   DetailContext,
   SectionDetailContent,
+  SyntheticaSelectionState,
+  SyntheticaReportResponse
 } from '../types';
+import { authFetch } from './authClient';
+import { getDeviceId } from './paymentClient';
+import { consumeFeatureV2 } from './entitlementClientV2';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001/api' : '/api');
 const REQUEST_TIMEOUT_MS = 15000;
-const LONG_REQUEST_TIMEOUT_MS = 45000;
+const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
 const LOCAL_CACHE_PREFIX = 'astro_cache_v1';
-const WIKI_CACHE_VERSION = 'v1';
+const WIKI_CACHE_VERSION = 'v3';
+const AI_CACHE_VERSION = 'v3';
 
 type ApiErrorPayload = { error?: string; reason?: string };
 type ApiError = Error & { status?: number; reason?: string; payload?: unknown };
+
+const pendingRequests = new Map<string, Promise<unknown>>();
 
 const parseErrorPayload = async (res: Response): Promise<{ message?: string; reason?: string; payload?: unknown }> => {
   try {
@@ -79,7 +90,7 @@ const buildNatalCacheKey = (birth: BirthInput) =>
   `${LOCAL_CACHE_PREFIX}:natal:${buildBirthCachePart(birth)}`;
 
 const buildSynastryFactsCacheKey = (birthA: BirthInput, birthB: BirthInput, lang: 'zh' | 'en', relationType?: string) =>
-  `${LOCAL_CACHE_PREFIX}:synastry_facts:${encodeCachePart(lang)}:${encodeCachePart(relationType || 'none')}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
+  `${LOCAL_CACHE_PREFIX}:synastry_facts:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || 'none')}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
 
 const buildSynastryReportCacheKey = (
   birthA: BirthInput,
@@ -90,7 +101,7 @@ const buildSynastryReportCacheKey = (
   nameA?: string,
   nameB?: string
 ) =>
-  `${LOCAL_CACHE_PREFIX}:synastry_report:${encodeCachePart(lang)}:${encodeCachePart(relationType || 'none')}:${encodeCachePart(tab)}:${encodeCachePart(nameA || '')}:${encodeCachePart(nameB || '')}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
+  `${LOCAL_CACHE_PREFIX}:synastry_report:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || 'none')}:${encodeCachePart(tab)}:${encodeCachePart(nameA || '')}:${encodeCachePart(nameB || '')}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
 
 const buildSynastrySectionCacheKey = (
   birthA: BirthInput,
@@ -101,7 +112,7 @@ const buildSynastrySectionCacheKey = (
   nameA?: string,
   nameB?: string
 ) =>
-  `${LOCAL_CACHE_PREFIX}:synastry_section:${encodeCachePart(lang)}:${encodeCachePart(relationType || 'none')}:${encodeCachePart(section)}:${encodeCachePart(nameA || '')}:${encodeCachePart(nameB || '')}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
+  `${LOCAL_CACHE_PREFIX}:synastry_section:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || 'none')}:${encodeCachePart(section)}:${encodeCachePart(nameA || '')}:${encodeCachePart(nameB || '')}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
 
 const resolveUtcDate = () => new Date().toISOString().split('T')[0];
 
@@ -136,6 +147,39 @@ const writeLocalCache = <T,>(key: string, value: T) => {
   }
 };
 
+const hashInput = (input: unknown): string => {
+  const str = JSON.stringify(input);
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash |= 0;
+  }
+  return Math.abs(hash).toString(36);
+};
+
+const buildAiCacheKey = (scope: string, lang: 'zh' | 'en', input: unknown) =>
+  `${LOCAL_CACHE_PREFIX}:ai:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${scope}:${hashInput(input)}`;
+
+const fetchWithCache = async <T,>(key: string, fetcher: () => Promise<T>): Promise<T> => {
+  const cached = readLocalCache<T>(key);
+  if (cached) return cached;
+  const pending = pendingRequests.get(key);
+  if (pending) return pending as Promise<T>;
+
+  const promise = fetcher()
+    .then((result) => {
+      writeLocalCache(key, result);
+      return result;
+    })
+    .finally(() => {
+      pendingRequests.delete(key);
+    });
+
+  pendingRequests.set(key, promise);
+  return promise;
+};
+
 async function fetchWithTimeout(input: RequestInfo, init: RequestInit = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
     return fetch(input, init);
@@ -144,6 +188,19 @@ async function fetchWithTimeout(input: RequestInfo, init: RequestInit = {}, time
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
   try {
     return await fetch(input, { ...init, signal: controller.signal });
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+async function authFetchWithTimeout(input: RequestInfo, init: RequestInit = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
+  if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
+    return authFetch(input, init);
+  }
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await authFetch(input, { ...init, signal: controller.signal });
   } finally {
     clearTimeout(timeoutId);
   }
@@ -213,9 +270,12 @@ export async function fetchNatalOverview(profile: UserProfile, lang: 'zh' | 'en'
   });
   withCoords(params, birth);
 
-  const res = await fetch(`${API_BASE}/natal/overview?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch natal overview');
-  return res.json();
+  const cacheKey = buildAiCacheKey('natal_overview', lang, { birth, lang });
+  return fetchWithCache(cacheKey, async () => {
+    const res = await fetch(`${API_BASE}/natal/overview?${params}`);
+    if (!res.ok) throw new Error('Failed to fetch natal overview');
+    return res.json();
+  });
 }
 
 export async function fetchNatalCoreThemes(profile: UserProfile, lang: 'zh' | 'en' = 'zh') {
@@ -230,9 +290,12 @@ export async function fetchNatalCoreThemes(profile: UserProfile, lang: 'zh' | 'e
   });
   withCoords(params, birth);
 
-  const res = await fetch(`${API_BASE}/natal/core-themes?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch natal core themes');
-  return res.json();
+  const cacheKey = buildAiCacheKey('natal_core_themes', lang, { birth, lang });
+  return fetchWithCache(cacheKey, async () => {
+    const res = await fetch(`${API_BASE}/natal/core-themes?${params}`);
+    if (!res.ok) throw new Error('Failed to fetch natal core themes');
+    return res.json();
+  });
 }
 
 export async function fetchNatalDimension(profile: UserProfile, dimension: string, lang: 'zh' | 'en' = 'zh') {
@@ -248,26 +311,12 @@ export async function fetchNatalDimension(profile: UserProfile, dimension: strin
   });
   withCoords(params, birth);
 
-  const res = await fetch(`${API_BASE}/natal/dimension?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch natal dimension');
-  return res.json();
-}
-
-export async function fetchNatalTechnical(profile: UserProfile, lang: 'zh' | 'en' = 'zh') {
-  const birth = profileToBirthInput(profile);
-  const params = new URLSearchParams({
-    date: birth.date,
-    city: birth.city,
-    timezone: birth.timezone,
-    accuracy: birth.accuracy,
-    lang,
-    ...(birth.time && { time: birth.time }),
+  const cacheKey = buildAiCacheKey('natal_dimension', lang, { birth, dimension, lang });
+  return fetchWithCache(cacheKey, async () => {
+    const res = await fetch(`${API_BASE}/natal/dimension?${params}`);
+    if (!res.ok) throw new Error('Failed to fetch natal dimension');
+    return res.json();
   });
-  withCoords(params, birth);
-
-  const res = await fetch(`${API_BASE}/natal/technical?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch natal technical');
-  return res.json();
 }
 
 // === Daily API ===
@@ -284,9 +333,19 @@ export async function fetchDailyForecast(profile: UserProfile, date: string, lan
   });
   withCoords(params, birth);
 
-  const res = await fetch(`${API_BASE}/daily?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch daily forecast');
-  return res.json();
+  const cacheKey = buildAiCacheKey('daily_forecast', lang, { birth, date, lang });
+  return fetchWithCache(cacheKey, async () => {
+    const res = await fetch(`${API_BASE}/daily?${params}`);
+    if (!res.ok) {
+      const { message, reason, payload } = await parseErrorPayload(res);
+      const error = new Error(message || 'Failed to fetch daily forecast') as ApiError;
+      error.status = res.status;
+      error.reason = reason;
+      error.payload = payload;
+      throw error;
+    }
+    return res.json();
+  });
 }
 
 export async function fetchDailyDetail(profile: UserProfile, date: string, lang: 'zh' | 'en' = 'zh') {
@@ -302,9 +361,19 @@ export async function fetchDailyDetail(profile: UserProfile, date: string, lang:
   });
   withCoords(params, birth);
 
-  const res = await fetch(`${API_BASE}/daily/detail?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch daily detail');
-  return res.json();
+  const cacheKey = buildAiCacheKey('daily_detail', lang, { birth, date, lang });
+  return fetchWithCache(cacheKey, async () => {
+    const res = await fetch(`${API_BASE}/daily/detail?${params}`);
+    if (!res.ok) {
+      const { message, reason, payload } = await parseErrorPayload(res);
+      const error = new Error(message || 'Failed to fetch daily detail') as ApiError;
+      error.status = res.status;
+      error.reason = reason;
+      error.payload = payload;
+      throw error;
+    }
+    return res.json();
+  });
 }
 
 // === Ask API ===
@@ -323,12 +392,19 @@ export async function fetchAskAnswer(
   chartType: AskChartType;
 }> {
   const birth = profileToBirthInput(profile);
-  const res = await fetch(`${API_BASE}/ask`, {
+  const deviceId = getDeviceId();
+  const res = await authFetch(`${API_BASE}/ask`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'x-device-fingerprint': deviceId,
+    },
     body: JSON.stringify({ birth, question, context, lang, category }),
   });
-  if (!res.ok) throw new Error('Failed to fetch ask answer');
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({} as { error?: string }));
+    throw new Error(error.error || 'Failed to fetch ask answer');
+  }
   return res.json();
 }
 
@@ -379,6 +455,21 @@ export async function fetchSynastry(
       meta: cached.meta ? { ...cached.meta, cached: true } : cached.meta,
     };
   }
+  const pending = pendingRequests.get(cacheKey);
+  if (pending) return pending as Promise<{
+    tab: SynastryTab;
+    synastry: unknown;
+    lang: 'zh' | 'en';
+    content: SynastryTabContent;
+    meta?: AIContentMeta;
+    technical?: SynastryTechnicalData;
+    suggestions?: SynastrySuggestion[];
+    timing?: {
+      core_ms: number;
+      ai_ms: number;
+      total_ms: number;
+    };
+  }>;
   const params = new URLSearchParams({
     aDate: birthA.date,
     aCity: birthA.city,
@@ -401,11 +492,23 @@ export async function fetchSynastry(
   if (birthB.lat !== undefined) params.set('bLat', String(birthB.lat));
   if (birthB.lon !== undefined) params.set('bLon', String(birthB.lon));
 
-  const res = await fetchWithTimeout(`${API_BASE}/synastry?${params}`, {}, SYNASTRY_REQUEST_TIMEOUT_MS);
-  if (!res.ok) throw new Error('Failed to fetch synastry');
-  const data = await res.json();
-  writeLocalCache(cacheKey, data);
-  return data;
+  const promise = (async () => {
+    const deviceId = getDeviceId();
+    const res = await authFetchWithTimeout(
+      `${API_BASE}/synastry?${params}`,
+      { headers: { 'x-device-fingerprint': deviceId } },
+      SYNASTRY_REQUEST_TIMEOUT_MS
+    );
+    if (!res.ok) throw new Error('Failed to fetch synastry');
+    const data = await res.json();
+    writeLocalCache(cacheKey, data);
+    return data;
+  })().finally(() => {
+    pendingRequests.delete(cacheKey);
+  });
+
+  pendingRequests.set(cacheKey, promise);
+  return promise;
 }
 
 export async function fetchSynastryOverviewSection(
@@ -447,6 +550,18 @@ export async function fetchSynastryOverviewSection(
       meta: cached.meta ? { ...cached.meta, cached: true } : cached.meta,
     };
   }
+  const pending = pendingRequests.get(cacheKey);
+  if (pending) return pending as Promise<{
+    section: SynastryOverviewSection;
+    lang: 'zh' | 'en';
+    content: SynastryOverviewSectionContent;
+    meta?: AIContentMeta;
+    timing?: {
+      core_ms: number;
+      ai_ms: number;
+      total_ms: number;
+    };
+  }>;
   const params = new URLSearchParams({
     section,
     aDate: birthA.date,
@@ -469,42 +584,54 @@ export async function fetchSynastryOverviewSection(
   if (birthB.lat !== undefined) params.set('bLat', String(birthB.lat));
   if (birthB.lon !== undefined) params.set('bLon', String(birthB.lon));
 
-  const res = await fetchWithTimeout(`${API_BASE}/synastry/overview-section?${params}`, {}, SYNASTRY_REQUEST_TIMEOUT_MS);
-  if (!res.ok) {
-    const { message, reason, payload } = await parseErrorPayload(res);
-    const normalizedMessage = (message || '').toLowerCase();
-    const isInvalidSection = normalizedMessage.includes('invalid section');
-    if (section === 'highlights' && res.status === 400 && isInvalidSection) {
-      try {
-        const fallback = await fetchSynastry(profileA, profileB, lang, relationType, 'overview', nameA, nameB);
-        const fallbackContent = fallback.content as Record<string, unknown>;
-        const highlights =
-          (fallbackContent as { highlights?: SynastryHighlightsContent['highlights'] }).highlights
-          || (fallbackContent as { overview?: { highlights?: SynastryHighlightsContent['highlights'] } }).overview?.highlights;
-        if (highlights) {
-          const response = {
-            section,
-            lang: fallback.lang,
-            content: { highlights } as SynastryOverviewSectionContent,
-            meta: fallback.meta,
-            timing: fallback.timing,
-          };
-          writeLocalCache(cacheKey, response);
-          return response;
+  const promise = (async () => {
+    const deviceId = getDeviceId();
+    const res = await authFetchWithTimeout(
+      `${API_BASE}/synastry/overview-section?${params}`,
+      { headers: { 'x-device-fingerprint': deviceId } },
+      SYNASTRY_REQUEST_TIMEOUT_MS
+    );
+    if (!res.ok) {
+      const { message, reason, payload } = await parseErrorPayload(res);
+      const normalizedMessage = (message || '').toLowerCase();
+      const isInvalidSection = normalizedMessage.includes('invalid section');
+      if (section === 'highlights' && res.status === 400 && isInvalidSection) {
+        try {
+          const fallback = await fetchSynastry(profileA, profileB, lang, relationType, 'overview', nameA, nameB);
+          const fallbackContent = fallback.content as Record<string, unknown>;
+          const highlights =
+            (fallbackContent as { highlights?: SynastryHighlightsContent['highlights'] }).highlights
+            || (fallbackContent as { overview?: { highlights?: SynastryHighlightsContent['highlights'] } }).overview?.highlights;
+          if (highlights) {
+            const response = {
+              section,
+              lang: fallback.lang,
+              content: { highlights } as SynastryOverviewSectionContent,
+              meta: fallback.meta,
+              timing: fallback.timing,
+            };
+            writeLocalCache(cacheKey, response);
+            return response;
+          }
+        } catch {
+          // Fall through to error handling.
         }
-      } catch {
-        // Fall through to error handling.
       }
+      const error = new Error(message || 'Failed to fetch synastry overview section') as ApiError;
+      error.status = res.status;
+      error.reason = reason;
+      error.payload = payload;
+      throw error;
     }
-    const error = new Error(message || 'Failed to fetch synastry overview section') as ApiError;
-    error.status = res.status;
-    error.reason = reason;
-    error.payload = payload;
-    throw error;
-  }
-  const data = await res.json();
-  writeLocalCache(cacheKey, data);
-  return data;
+    const data = await res.json();
+    writeLocalCache(cacheKey, data);
+    return data;
+  })().finally(() => {
+    pendingRequests.delete(cacheKey);
+  });
+
+  pendingRequests.set(cacheKey, promise);
+  return promise;
 }
 
 export async function fetchSynastryTechnical(
@@ -518,6 +645,8 @@ export async function fetchSynastryTechnical(
   const cacheKey = buildSynastryFactsCacheKey(birthA, birthB, lang, relationType);
   const cached = readLocalCache<SynastryTechnicalData>(cacheKey);
   if (cached) return cached;
+  const pending = pendingRequests.get(cacheKey);
+  if (pending) return pending as Promise<SynastryTechnicalData>;
 
   const params = new URLSearchParams({
     aDate: birthA.date,
@@ -538,12 +667,24 @@ export async function fetchSynastryTechnical(
   if (birthB.lat !== undefined) params.set('bLat', String(birthB.lat));
   if (birthB.lon !== undefined) params.set('bLon', String(birthB.lon));
 
-  const res = await fetchWithTimeout(`${API_BASE}/synastry/technical?${params}`, {}, REQUEST_TIMEOUT_MS);
-  if (!res.ok) throw new Error('Failed to fetch synastry technical');
-  const data = await res.json();
-  const technical = (data.technical || data) as SynastryTechnicalData;
-  writeLocalCache(cacheKey, technical);
-  return technical;
+  const promise = (async () => {
+    const deviceId = getDeviceId();
+    const res = await authFetchWithTimeout(
+      `${API_BASE}/synastry/technical?${params}`,
+      { headers: { 'x-device-fingerprint': deviceId } },
+      REQUEST_TIMEOUT_MS
+    );
+    if (!res.ok) throw new Error('Failed to fetch synastry technical');
+    const data = await res.json();
+    const technical = (data.technical || data) as SynastryTechnicalData;
+    writeLocalCache(cacheKey, technical);
+    return technical;
+  })().finally(() => {
+    pendingRequests.delete(cacheKey);
+  });
+
+  pendingRequests.set(cacheKey, promise);
+  return promise;
 }
 
 export async function fetchSynastrySuggestions(
@@ -571,7 +712,12 @@ export async function fetchSynastrySuggestions(
   if (birthB.lat !== undefined) params.set('bLat', String(birthB.lat));
   if (birthB.lon !== undefined) params.set('bLon', String(birthB.lon));
 
-  const res = await fetchWithTimeout(`${API_BASE}/synastry/suggestions?${params}`, {}, REQUEST_TIMEOUT_MS);
+  const deviceId = getDeviceId();
+  const res = await authFetchWithTimeout(
+    `${API_BASE}/synastry/suggestions?${params}`,
+    { headers: { 'x-device-fingerprint': deviceId } },
+    REQUEST_TIMEOUT_MS
+  );
   if (!res.ok) throw new Error('Failed to fetch synastry suggestions');
   return res.json();
 }
@@ -816,6 +962,7 @@ export interface FetchSectionDetailParams {
   transitDate?: string;
   nameA?: string;
   nameB?: string;
+  cacheKey?: string;
 }
 
 export async function fetchSectionDetail(
@@ -826,26 +973,102 @@ export async function fetchSectionDetail(
   lang: 'zh' | 'en';
   content: SectionDetailContent;
 }> {
-  const { type, context, chartData, lang = 'zh', transitDate, nameA, nameB } = params;
+  const { type, context, chartData, lang = 'zh', transitDate, nameA, nameB, cacheKey } = params;
+  const scope = `detail_${type}_${context}`;
 
-  const res = await fetchWithTimeout(
-    `${API_BASE}/detail`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+  const resolvedCacheKey = cacheKey
+    ? `${LOCAL_CACHE_PREFIX}:ai:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${scope}:${encodeCachePart(cacheKey)}`
+    : buildAiCacheKey(scope, lang, {
         type,
         context,
-        lang,
         chartData,
         transitDate,
         nameA,
         nameB,
-      }),
-    },
-    LONG_REQUEST_TIMEOUT_MS
-  );
+        lang,
+      });
 
-  if (!res.ok) throw new Error('Failed to fetch section detail');
-  return res.json();
+  return fetchWithCache(resolvedCacheKey, async () => {
+    const res = await fetchWithTimeout(
+      `${API_BASE}/detail`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type,
+          context,
+          lang,
+          chartData,
+          transitDate,
+          nameA,
+          nameB,
+        }),
+      },
+      LONG_REQUEST_TIMEOUT_MS
+    );
+
+    if (!res.ok) throw new Error('Failed to fetch section detail');
+    return res.json();
+  });
+}
+
+// === Synthetica API ===
+const buildSyntheticaCacheKey = (selection: SyntheticaSelectionState, lang: Language) => {
+  const parts = [
+    lang,
+    selection.context,
+    selection.planet?.id || 'none',
+    selection.sign?.id || 'none',
+    selection.house?.id || 'none',
+    selection.aspects.map(a => `${a.planet.id}-${a.aspect.id}`).sort().join('|') || 'none'
+  ];
+  return `${LOCAL_CACHE_PREFIX}:synthetica:${AI_CACHE_VERSION}:${parts.map(encodeCachePart).join(':')}`;
+};
+
+export async function generateSyntheticaReport(selection: SyntheticaSelectionState, lang: Language) {
+  const cacheKey = buildSyntheticaCacheKey(selection, lang);
+  const deviceId = getDeviceId();
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    'x-device-fingerprint': deviceId,
+  };
+
+  // Check cache first
+  try {
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+      await consumeFeatureV2('synthetica');
+      const parsed = JSON.parse(cached) as SyntheticaReportResponse;
+      console.log('[Synthetica] Using cached report');
+      return {
+        ...parsed,
+        meta: parsed.meta ? { ...parsed.meta, cached: true } : parsed.meta,
+      };
+    }
+  } catch (e) {
+    console.warn('[Synthetica] Failed to read cache:', e);
+  }
+
+  // Fetch from API
+  const res = await authFetch(`${API_BASE}/synthetica/generate`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ ...selection, lang }),
+  });
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({} as { error?: string }));
+    throw new Error(error.error || 'Failed to generate report');
+  }
+
+  const result = await res.json() as SyntheticaReportResponse;
+
+  // Save to cache
+  try {
+    localStorage.setItem(cacheKey, JSON.stringify(result));
+    console.log('[Synthetica] Cached report');
+  } catch (e) {
+    console.warn('[Synthetica] Failed to cache report:', e);
+  }
+
+  return result;
 }

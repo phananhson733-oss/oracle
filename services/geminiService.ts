@@ -11,7 +11,6 @@ import {
   fetchNatalCoreThemes,
   fetchNatalDimension,
   fetchNatalOverview,
-  fetchNatalTechnical,
   fetchSynastry,
 } from './apiClient';
 
@@ -47,11 +46,6 @@ export const generateContent = async <T>(
         String(data.dimension || data.dimension_key),
         language
       );
-      return pickContent(result);
-    }
-
-    if (promptKey === 'NATAL_TECHNICAL' && data.profile) {
-      const result = await fetchNatalTechnical(data.profile as Parameters<typeof fetchNatalTechnical>[0], language);
       return pickContent(result);
     }
 
@@ -110,7 +104,7 @@ export const generateContent = async <T>(
       return pickContent(result);
     }
 
-    console.warn(`[AstroMind] Unhandled prompt key: ${promptKey}`);
+    console.warn(`[AstrologyWiki] Unhandled prompt key: ${promptKey}`);
     return null;
   } catch (error) {
     console.error('Error generating content', error);

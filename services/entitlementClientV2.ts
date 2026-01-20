@@ -1,5 +1,5 @@
-// INPUT: 后端权益 API V2 客户端（含详情解锁与 GM 积分购买、本地日次解锁缓存）。
-// OUTPUT: 导出权益相关 API 调用函数（新版，支持积分购买与日次解锁缓存同步）。
+// INPUT: 后端权益 API V2 客户端（含详情解锁、Synthetica 日额度与积分解锁、本地日次解锁缓存）。
+// OUTPUT: 导出权益相关 API 调用函数（新版，支持 Synthetica 日额度与积分解锁/日次解锁缓存同步）。
 // POS: 前端权益 API V2 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { authFetch } from './authClient';
@@ -20,7 +20,21 @@ export type FeatureType =
   | 'synastry_detail'   // 合盘内详情（按合盘绑定）
   | 'detail'
   | 'ask'               // Ask 问答（消耗型）
-  | 'cbt_stats';        // CBT 统计（每月）
+  | 'cbt_stats'         // CBT 统计（每月）
+  | 'synthetica';       // Synthetica 工具（消耗型）
+
+export const POINTS_PRICING: Record<FeatureType, number> = {
+  dimension: 10,
+  core_theme: 10,
+  daily_script: 10,
+  daily_transit: 10,
+  synastry: 30,
+  synastry_detail: 10,
+  detail: 10,
+  ask: 20,
+  cbt_stats: 20,
+  synthetica: 10,
+};
 
 export type PurchaseScope = 'permanent' | 'daily' | 'per_synastry' | 'per_month' | 'consumable';
 
@@ -29,7 +43,8 @@ export interface EntitlementsV2 {
   isSubscriber: boolean;
   isTrialing: boolean;
   trialEndsAt: string | null;
-  gmCredits: number;
+  credits: number;
+  discount: number;
 
   subscription?: {
     plan: 'monthly' | 'yearly';
@@ -54,6 +69,15 @@ export interface EntitlementsV2 {
     resetAt: string;            // 下次重置时间（仅影响订阅权益）
   };
 
+  // Synthetica 工具额度
+  synthetica: {
+    freeLeft: number;           // 当日免费剩余
+    subscriptionLeft: number;   // 当日订阅权益剩余
+    purchasedLeft: number;      // 购买的额外额度剩余
+    totalLeft: number;          // 合计可用
+    resetAt: string;            // 下次重置时间
+  };
+
   // 已购买的永久内容
   purchasedFeatures: {
     dimensions: string[];       // 已解锁的心理维度
@@ -72,7 +96,7 @@ export interface AccessCheckResult {
   canAccess: boolean;
   reason?: 'subscribed' | 'trial' | 'purchased' | 'free_quota';
   needPurchase?: boolean;
-  price?: number;          // 美分
+  price?: number;          // 积分
   scope?: PurchaseScope;
 }
 
@@ -101,6 +125,8 @@ export interface PurchaseRecord {
   featureId: string | null;
   scope: PurchaseScope;
   priceCents: number;
+  quantity?: number;
+  consumed?: number;
   validUntil: string | null;
   createdAt: string;
 }
@@ -366,8 +392,14 @@ export function getCachedEntitlements(): EntitlementsV2 | null {
       localStorage.removeItem(ENTITLEMENTS_CACHE_KEY);
       return null;
     }
-
-    return data;
+    const normalized = data as EntitlementsV2 & { gmCredits?: number };
+    if (normalized.credits === undefined && normalized.gmCredits !== undefined) {
+      normalized.credits = normalized.gmCredits;
+    }
+    if (normalized.discount === undefined) {
+      normalized.discount = 0;
+    }
+    return normalized;
   } catch {
     return null;
   }

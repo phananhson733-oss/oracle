@@ -131,7 +131,7 @@ const CardContainer = ({
             </div>
             <div>
               <h3 className={`text-2xl md:text-3xl ${language === 'en' ? 'font-sans' : 'font-serif'} font-medium text-star-50 tracking-tight leading-none`}>{title}</h3>
-              <p className={`text-[10px] md:text-[11px] uppercase tracking-[0.2em] mt-1.5 font-bold opacity-80 ${subtitleTone}`}>{subtitle}</p>
+              <p className={`text-xs uppercase tracking-[0.2em] mt-1.5 font-bold opacity-80 ${subtitleTone}`}>{subtitle}</p>
             </div>
           </div>
           {/* Center: Time navigation (absolutely positioned for true center) */}
@@ -176,10 +176,10 @@ const DataRow = ({ title, children, className = "", onExpand }: any) => {
   const headingFont = language === 'en' ? 'font-sans' : '';
 
   return (
-    <div className={`border rounded-[2rem] p-6 relative overflow-hidden ${panelTone} ${className}`}>
+    <div className={`border rounded-xl p-6 relative overflow-hidden ${panelTone} ${className}`}>
       {title && (
         <div className="flex justify-between items-center mb-5">
-          <h4 className={`text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 opacity-90 ${labelTone} ${headingFont}`}>
+          <h4 className={`text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-2 opacity-90 ${labelTone} ${headingFont}`}>
             {title}
           </h4>
           {onExpand && (
@@ -213,11 +213,11 @@ const InsightRow = ({ text, highlight, isLoading }: any) => {
   const iconBg = isLight ? 'bg-gold-500/10 text-gold-700' : 'bg-gold-500/10 text-gold-400';
 
   return (
-    <div className={`p-6 rounded-[1.75rem] border relative overflow-hidden flex items-start gap-5 transition-all hover:border-gold-500/30 ${cardTone}`}>
+    <div className={`p-6 rounded-xl border relative overflow-hidden flex items-start gap-5 transition-all hover:border-gold-500/30 ${cardTone}`}>
       <div className={`p-3 rounded-2xl shrink-0 mt-1 ${iconBg}`}><TrendingUp size={20}/></div>
       <div className="flex-1">
-        <h4 className={`text-[10px] uppercase tracking-[0.2em] font-bold mb-2 opacity-90 ${accentTone}`}>{t.journal.one_line_insight}</h4>
-        <p className={`text-sm md:text-[15px] leading-relaxed font-medium ${isLoading ? loadingTone : textTone}`}>
+        <h4 className={`text-xs uppercase tracking-[0.2em] font-bold mb-2 opacity-90 ${accentTone}`}>{t.journal.one_line_insight}</h4>
+        <p className={`text-sm leading-relaxed font-medium ${isLoading ? loadingTone : textTone}`}>
           {highlight && <span className={`font-bold mr-1 ${highlightTone}`}>{highlight}</span>}
           {text}
         </p>
@@ -288,12 +288,12 @@ const ActionRow = ({ title, text, icon: Icon = Sparkles }: any) => {
   const parsed = parseAdviceList(safeText);
 
   return (
-    <div className={`p-6 rounded-[1.75rem] border flex items-start gap-5 transition-all hover:bg-space-800/30 ${cardTone}`}>
+    <div className={`p-6 rounded-xl border flex items-start gap-5 transition-all hover:bg-space-800/30 ${cardTone}`}>
       <div className={`p-2.5 rounded-2xl shrink-0 mt-0.5 ${isLight ? 'bg-gold-500/10 text-gold-700' : 'bg-accent/10 text-accent'}`}>
         <Icon size={20} />
       </div>
       <div className="flex-1">
-        <span className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-3 block opacity-90 ${accentTone}`}>
+        <span className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 block opacity-90 ${accentTone}`}>
           {title || 'CBT 疗愈处方'}
         </span>
         {parsed.items.length > 0 ? (
@@ -329,12 +329,12 @@ const AstroRow = ({ text }: any) => {
   const iconBg = isLight ? 'bg-paper-200 text-gold-600' : 'bg-space-800 text-gold-500';
 
   return (
-    <div className={`p-6 rounded-[1.75rem] border flex items-start gap-5 transition-all hover:border-gold-500/20 ${cardTone}`}>
+    <div className={`p-6 rounded-xl border flex items-start gap-5 transition-all hover:border-gold-500/20 ${cardTone}`}>
       <div className={`p-2.5 rounded-2xl shrink-0 mt-0.5 ${iconBg}`}>
         <Moon size={20} />
       </div>
       <div className="flex-1">
-        <span className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block opacity-80 ${labelTone}`}>
+        <span className={`text-xs font-bold uppercase tracking-[0.2em] mb-2 block opacity-80 ${labelTone}`}>
           {t.journal.astro_awareness}
         </span>
         <p className={`text-sm leading-7 ${bodyTone}`}>
@@ -359,7 +359,7 @@ const FullDataModal = ({ title, sections, onClose }: any) => {
 
   return (
     <div className={`fixed inset-0 z-[200] backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300 ${overlayTone}`}>
-      <div className={`w-full max-w-2xl border rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[80vh] ${containerTone}`}>
+      <div className={`w-full max-w-2xl border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] ${containerTone}`}>
         <div className={`p-6 border-b flex justify-between items-center ${dividerTone} ${isLight ? 'bg-paper-100' : 'bg-space-900'}`}>
           <h3 className="text-xl font-sans text-star-50 flex items-center gap-3">
             <List size={20} className={labelTone} />
@@ -1069,15 +1069,15 @@ export const CBTCompetenceView: React.FC<ViewProps> = ({ records, onClose, initi
       <DataRow className="grid grid-cols-3 gap-2 text-center p-4">
         <div>
           <div className="text-2xl font-sans text-star-50">{stats.rate}%</div>
-          <div className="text-[11px] text-star-200 uppercase tracking-wider mt-1">{t.journal.coverage_rate}</div>
+          <div className="text-xs text-star-200 uppercase tracking-wider mt-1">{t.journal.coverage_rate}</div>
         </div>
         <div>
           <div className="text-2xl font-sans text-star-50">{stats.avg}</div>
-          <div className="text-[11px] text-star-200 uppercase tracking-wider mt-1">{t.journal.avg_count}</div>
+          <div className="text-xs text-star-200 uppercase tracking-wider mt-1">{t.journal.avg_count}</div>
         </div>
         <div>
           <div className="text-2xl font-sans text-star-50">{stats.belief}%</div>
-          <div className="text-[11px] text-star-200 uppercase tracking-wider mt-1">{t.journal.belief_score}</div>
+          <div className="text-xs text-star-200 uppercase tracking-wider mt-1">{t.journal.belief_score}</div>
         </div>
       </DataRow>
 

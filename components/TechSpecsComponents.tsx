@@ -108,9 +108,9 @@ const ASPECT_CONFIG: Record<string, { symbol: string; color: string; zh: string 
 export const ElementalTable: React.FC<{ data: ExtendedNatalData['elements']; language?: Language }> = ({ data, language }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const borderClass = isDark ? 'border-space-600' : 'border-paper-300';
-  const dividerClass = isDark ? 'divide-space-600 border-space-600' : 'divide-paper-300 border-paper-300';
-  const headerClass = "text-[12px] font-bold uppercase tracking-widest opacity-50 py-4 text-center";
+  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
+  const dividerClass = isDark ? 'divide-white/10 border-white/10' : 'divide-paper-300 border-paper-300';
+  const headerClass = "text-[10px] font-bold uppercase tracking-widest opacity-80 py-4 text-center";
 
   const modalities = ['Cardinal', 'Fixed', 'Mutable'];
   const modalityLabels: Record<string, string> = language === 'zh'
@@ -133,7 +133,7 @@ export const ElementalTable: React.FC<{ data: ExtendedNatalData['elements']; lan
           <div key={elKey} className={`grid grid-cols-4 divide-x ${dividerClass} min-h-[60px]`}>
             {/* Element Header */}
             <div className={`flex flex-col items-center justify-center p-2 gap-1 bg-black/5 border-r ${borderClass}`}>
-                <span className="text-[12px] font-bold uppercase tracking-widest opacity-90" style={{ color: ELEMENTS[elKey as keyof typeof ELEMENTS].color }}>
+                <span className="text-[10px] font-bold uppercase tracking-widest opacity-90" style={{ color: ELEMENTS[elKey as keyof typeof ELEMENTS].color }}>
                     {elementLabels[elKey]}
                 </span>
             </div>
@@ -153,7 +153,7 @@ export const ElementalTable: React.FC<{ data: ExtendedNatalData['elements']; lan
                                 <PlanetGlyph name={p} size={21} />
                             </div>
                         ))}
-                        {planets.length === 0 && <span className="opacity-10 text-xs">-</span>}
+                        {planets.length === 0 && <span className="opacity-30 text-[10px]">-</span>}
                     </div>
                 );
             })}
@@ -204,7 +204,7 @@ export const AspectMatrix: React.FC<{
 
   const cellSize = 'h-12 w-12 md:h-14 md:w-14';
   const headerBg = isDark ? 'bg-space-800' : 'bg-gray-100';
-  const borderClass = isDark ? 'border-space-600' : 'border-gray-200';
+  const borderClass = isDark ? 'border-white/10' : 'border-gray-200';
   const emptyBg = isDark ? 'bg-space-900/40' : 'bg-white';
 
   // 三角形矩阵（下三角，参考图格式）
@@ -268,7 +268,7 @@ export const AspectMatrix: React.FC<{
                         {/* 角度 + A/S */}
                         <span
                           style={{ color: config?.color }}
-                          className="text-[9px] font-mono"
+                          className="text-[10px] font-mono font-medium"
                         >
                           {formatDegreeMinute(aspect.orb)} {applyingSeparating}
                         </span>
@@ -333,7 +333,7 @@ export const AspectMatrix: React.FC<{
                   <td key={`${rowPlanet}-${colPlanet}`} className={`${cellSize} border ${borderClass} ${emptyBg}`}>
                     <div className="flex flex-col items-center justify-center h-full gap-0.5">
                       <span style={{ color: config?.color, fontSize: 16 }}>{config?.symbol}</span>
-                      <span style={{ color: config?.color }} className="text-[9px] font-mono">
+                      <span style={{ color: config?.color }} className="text-[10px] font-mono">
                         {formatDegreeMinute(aspect.orb)} {applyingSeparating}
                       </span>
                     </div>
@@ -358,7 +358,7 @@ type PlanetTableLabels = {
 };
 
 const Degree: React.FC<{ d: number, m?: number }> = ({ d, m }) => (
-  <span className="font-mono text-xs opacity-80">
+  <span className="font-mono text-[11px] opacity-90">
     {Math.floor(d)}°{m ? String(Math.floor(m)).padStart(2, '0') + "'" : "00'"}
   </span>
 );
@@ -368,7 +368,7 @@ const TableRow: React.FC<{ p: PlanetPosition; language?: Language }> = ({ p, lan
   const isDark = theme === 'dark';
   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
   const signColor = signMeta?.color || '#F3E3AC';
-  const borderClass = isDark ? 'border-space-600' : 'border-paper-300';
+  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
 
   return (
     <div
@@ -381,19 +381,19 @@ const TableRow: React.FC<{ p: PlanetPosition; language?: Language }> = ({ p, lan
 
       <div className="flex items-center gap-2">
         <ZodiacGlyph sign={p.sign} size={16} />
-        <span className="text-sm opacity-80" style={{ color: signColor }}>
+        <span className="text-sm opacity-90" style={{ color: signColor }}>
           {translateTerm(p.sign, language)}
         </span>
         <Degree d={p.degree} m={p.minute} />
       </div>
 
-      <div className="text-sm font-mono opacity-70">{formatHouse(p.house, language)}</div>
+      <div className="text-sm font-mono opacity-80">{formatHouse(p.house, language)}</div>
 
       <div className="text-right">
         {p.isRetrograde ? (
           <span className="text-[10px] bg-danger/20 text-danger px-1.5 rounded font-bold">R</span>
         ) : (
-          <span className="text-xs opacity-20">—</span>
+          <span className="text-[10px] opacity-30">—</span>
         )}
       </div>
     </div>
@@ -403,7 +403,7 @@ const TableRow: React.FC<{ p: PlanetPosition; language?: Language }> = ({ p, lan
 export const PlanetTable: React.FC<{ planets: PlanetPosition[]; language?: Language; labels?: PlanetTableLabels }> = ({ planets, language, labels }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const borderClass = isDark ? 'border-space-600' : 'border-paper-300';
+  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
   const headerText = isDark ? 'text-star-200' : 'text-paper-400';
   const headerBg = isDark ? 'bg-black/20' : 'bg-black/5';
   const headerLabels: PlanetTableLabels = {
@@ -415,7 +415,7 @@ export const PlanetTable: React.FC<{ planets: PlanetPosition[]; language?: Langu
 
   return (
     <div className={`border ${borderClass} rounded-lg overflow-hidden`}>
-      <div className={`grid grid-cols-[1.6fr_1.6fr_0.6fr_0.5fr] ${headerBg} px-4 py-2 text-[10px] font-bold uppercase tracking-widest opacity-50 ${headerText}`}>
+      <div className={`grid grid-cols-[1.6fr_1.6fr_0.6fr_0.5fr] ${headerBg} px-4 py-2 text-[10px] font-bold uppercase tracking-widest opacity-80 ${headerText}`}>
         <div>{headerLabels.body}</div>
         <div>{headerLabels.sign}</div>
         <div>{headerLabels.house}</div>
@@ -442,7 +442,7 @@ export const HouseRulerTable: React.FC<{ rulers: ExtendedNatalData['houseRulers'
 }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const borderClass = isDark ? 'border-space-600' : 'border-paper-300';
+  const borderClass = isDark ? 'border-white/10' : 'border-paper-300';
   const headerText = isDark ? 'text-star-200' : 'text-paper-400';
   const headerBg = isDark ? 'bg-black/20' : 'bg-black/5';
   const headerLabels: HouseRulerLabels = {
@@ -454,7 +454,7 @@ export const HouseRulerTable: React.FC<{ rulers: ExtendedNatalData['houseRulers'
 
   return (
     <div className={`border ${borderClass} rounded-lg overflow-hidden`}>
-      <div className={`grid grid-cols-[0.7fr_1.4fr_1.4fr_0.9fr] ${headerBg} px-4 py-2 text-[10px] font-bold uppercase tracking-widest opacity-50 ${headerText}`}>
+      <div className={`grid grid-cols-[0.7fr_1.4fr_1.4fr_0.9fr] ${headerBg} px-4 py-2 text-[10px] font-bold uppercase tracking-widest opacity-80 ${headerText}`}>
         <div>{headerLabels.house}</div>
         <div>{headerLabels.sign}</div>
         <div>{headerLabels.ruler}</div>
@@ -477,22 +477,22 @@ export const HouseRulerTable: React.FC<{ rulers: ExtendedNatalData['houseRulers'
 
             <div className="flex items-center gap-2">
               <ZodiacGlyph sign={r.sign} size={16} />
-              <span className="text-sm opacity-80" style={{ color: signColor }}>
+              <span className="text-sm opacity-90" style={{ color: signColor }}>
                 {translateTerm(r.sign, language)}
               </span>
             </div>
 
             <div className="flex items-center gap-2">
               <PlanetGlyph name={r.ruler} size={18} />
-              <span className="text-sm opacity-80">{translateTerm(r.ruler, language)}</span>
+              <span className="text-sm opacity-90">{translateTerm(r.ruler, language)}</span>
             </div>
 
             <div className="text-right flex items-center justify-end gap-2">
-              <span className="text-xs opacity-50">→</span>
+              <span className="text-[10px] opacity-70">→</span>
               <span className="flex items-center gap-1 text-[10px] font-bold bg-gold-500/10 text-gold-500 px-2 py-1 rounded border border-gold-500/20">
                 {fliesToSign && <ZodiacGlyph sign={fliesToSign} size={12} />}
                 <span style={{ color: fliesToSignColor }}>{fliesToSignLabel}</span>
-                <span className="opacity-70">{fliesToLabel}</span>
+                <span className="opacity-90">{fliesToLabel}</span>
               </span>
             </div>
           </div>
@@ -535,7 +535,7 @@ export const CrossAspectMatrix: React.FC<{
 
   const cellSize = 'h-12 w-12 md:h-14 md:w-14';
   const headerBg = isDark ? 'bg-space-800' : 'bg-gray-100';
-  const borderClass = isDark ? 'border-space-600' : 'border-gray-200';
+  const borderClass = isDark ? 'border-white/10' : 'border-gray-200';
   const emptyBg = isDark ? 'bg-space-900/40' : 'bg-white';
   const labelClass = isDark ? 'text-star-400 text-[10px]' : 'text-paper-400 text-[10px]';
 
@@ -546,11 +546,11 @@ export const CrossAspectMatrix: React.FC<{
           <tr>
             {/* 左上角：行运/本命标签 */}
             <th className={`${cellSize} ${headerBg} border ${borderClass}`}>
-              <div className="flex flex-col items-center justify-center text-[8px] leading-tight">
+            <div className="flex flex-col items-center justify-center text-[10px] leading-tight">
                 <span className={labelClass}>{transitLabel || (language === 'zh' ? '行运' : 'TR')}</span>
-                <span className="text-[6px] opacity-40">↓</span>
+                <span className="text-[9px] opacity-60">↓</span>
                 <span className={labelClass}>{natalLabel || (language === 'zh' ? '本命' : 'NT')}</span>
-                <span className="text-[6px] opacity-40">→</span>
+                <span className="text-[9px] opacity-60">→</span>
               </div>
             </th>
             {/* 本命行星列标题 */}
@@ -598,7 +598,7 @@ export const CrossAspectMatrix: React.FC<{
                       <span style={{ color: config?.color, fontSize: 14 }}>
                         {config?.symbol}
                       </span>
-                      <span style={{ color: config?.color }} className="text-[8px] font-mono">
+                       <span style={{ color: config?.color }} className="text-[10px] font-mono">
                         {formatDegreeMinute(aspect.orb)} {applyingSeparating}
                       </span>
                     </div>
@@ -654,9 +654,9 @@ export const SynastryAspectMatrix: React.FC<{
 
   const cellSize = 'h-10 w-10 md:h-12 md:w-12';
   const headerBg = isDark ? 'bg-space-800' : 'bg-gray-100';
-  const borderClass = isDark ? 'border-space-600' : 'border-gray-200';
+  const borderClass = isDark ? 'border-white/10' : 'border-gray-200';
   const emptyBg = isDark ? 'bg-space-900/40' : 'bg-white';
-  const labelClass = isDark ? 'text-star-400 text-[9px]' : 'text-paper-400 text-[9px]';
+  const labelClass = isDark ? 'text-star-400 text-[10px]' : 'text-paper-400 text-[10px]';
 
   return (
     <div className="overflow-x-auto">
@@ -665,11 +665,11 @@ export const SynastryAspectMatrix: React.FC<{
           <tr>
             {/* 左上角：A/B 标签 */}
             <th className={`${cellSize} ${headerBg} border ${borderClass}`}>
-              <div className="flex flex-col items-center justify-center text-[8px] leading-tight">
+              <div className="flex flex-col items-center justify-center text-[10px] leading-tight">
                 <span className={labelClass}>{personALabel || 'A'}</span>
-                <span className="text-[6px] opacity-40">↓</span>
+                <span className="text-[9px] opacity-60">↓</span>
                 <span className={labelClass}>{personBLabel || 'B'}</span>
-                <span className="text-[6px] opacity-40">→</span>
+                <span className="text-[9px] opacity-60">→</span>
               </div>
             </th>
             {/* B 的行星列标题 */}
@@ -717,7 +717,7 @@ export const SynastryAspectMatrix: React.FC<{
                       <span style={{ color: config?.color, fontSize: 12 }}>
                         {config?.symbol}
                       </span>
-                      <span style={{ color: config?.color }} className="text-[7px] font-mono">
+                      <span style={{ color: config?.color }} className="text-[10px] font-mono font-medium">
                         {formatDegreeMinute(aspect.orb)} {applyingSeparating}
                       </span>
                     </div>

@@ -8,7 +8,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AstroMind AI</title>
+    <title>AstrologyWiki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://accounts.google.com">
+    <link rel="preconnect" href="https://appleid.cdn-apple.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -31,6 +36,7 @@
                 200: '#EFEAE2',
                 300: '#D8D1C5',
                 400: '#7A746B',
+                600: '#4A4540',
                 900: '#0A0B0D',
               },
               // Text Colors (Warm Neutral)
@@ -38,6 +44,19 @@
                 50: 'rgb(var(--star-50) / <alpha-value>)', // Primary text
                 200: 'rgb(var(--star-200) / <alpha-value>)', // Secondary text
                 400: 'rgb(var(--star-400) / <alpha-value>)', // Muted text
+              },
+              // Mystical Purple (Astrology & Spirituality)
+              mystic: {
+                50: '#FAF5FF',
+                100: '#F3E8FF',
+                200: '#E9D5FF',
+                300: '#D8B4FE',
+                400: '#C084FC',
+                500: '#A855F7',
+                600: '#9333EA',
+                700: '#7E22CE',
+                800: '#6B21A8',
+                900: '#581C87',
               },
               // Dark Gold Accent (refined scale)
               accent: {
@@ -64,11 +83,24 @@
                 700: '#7F5E36',
                 800: '#5E442B',
               },
-              // Semantic Colors (kept within the gold/rust family)
-              success: '#C6A062',
-              warning: '#C6A062',
-              danger: '#B57A5A',
-              info: '#C6A062',
+              // Psychology Blue (Professional & Trust)
+              psycho: {
+                50: '#EFF6FF',
+                100: '#DBEAFE',
+                200: '#BFDBFE',
+                300: '#93C5FD',
+                400: '#60A5FA',
+                500: '#3B82F6',
+                600: '#2563EB',
+                700: '#1D4ED8',
+                800: '#1E40AF',
+                900: '#1E3A8A',
+              },
+              // Semantic Colors (improved for psychology + astrology)
+              success: '#10B981',  // Green - positive, growth
+              warning: '#F59E0B',  // Amber - attention, gold family
+              danger: '#EF4444',   // Red - alert, caution
+              info: '#3B82F6',     // Blue - professional, trust
             },
             fontFamily: {
               sans: ['"Readex Pro"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
@@ -110,16 +142,21 @@
                 '100%': { transform: 'rotate(0deg)' },
               },
               breathe: {
-                '0%': { opacity: '0.4', boxShadow: '0 0 0 0 rgba(198,160,98,0.35)' },
-                '50%': { opacity: '1', boxShadow: '0 0 0 6px rgba(198,160,98,0.2)' },
-                '100%': { opacity: '0.4', boxShadow: '0 0 0 0 rgba(198,160,98,0.35)' },
+                '0%': { opacity: '0.4', transform: 'scale(1)' },
+                '50%': { opacity: '1', transform: 'scale(1.15)' },
+                '100%': { opacity: '0.4', transform: 'scale(1)' },
               },
             }
           }
         }
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <!-- Google Sign-In SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Apple Sign-In SDK -->
+    <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js" async defer></script>
     <style>
       /* Theme color variables (dark default, light overrides) */
       :root {
@@ -130,7 +167,7 @@
         --space-600: 38 47 63;
         --star-50: 242 239 231;
         --star-200: 203 194 179;
-        --star-400: 154 147 134;
+        --star-400: 176 169 156; /* Improved from 154 147 134 for better contrast (4.5:1) */
       }
 
       body.light {
@@ -140,8 +177,8 @@
         --space-700: 214 206 191;
         --space-600: 199 190 173;
         --star-50: 24 25 27;
-        --star-200: 63 57 50;
-        --star-400: 106 99 89;
+        --star-200: 45 42 38;
+        --star-400: 74 69 62;
       }
 
       /* Global Reset & Base */
@@ -196,6 +233,18 @@
       .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
+      }
+
+      /* Reduced Motion Support - Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
       }
     </style>
   <script type="importmap">

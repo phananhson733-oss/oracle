@@ -1,5 +1,5 @@
-<!-- INPUT: CBT 日记能力需求与场景。 -->
-<!-- OUTPUT: OpenSpec CBT 日记规范。 -->
+<!-- INPUT: CBT 日记能力需求与场景（含统计缓存优化）。 -->
+<!-- OUTPUT: OpenSpec CBT 日记规范（含缓存策略）。 -->
 <!-- POS: 能力规范文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 # Capability: Support CBT Journal
 
@@ -62,3 +62,9 @@
 - **WHEN** CBT 记录超过 3 个月
 - **THEN** 后端删除该记录并不再返回
 
+### Requirement: Aggregate analysis cache invalidation
+系统 SHALL 在前端本地永久缓存 CBT 统计解读，并在统计数据变化时自动失效并重新生成。
+
+#### Scenario: Stats change triggers refresh
+- **WHEN** 用户修改或新增 CBT 记录导致统计数据发生变化
+- **THEN** 前端丢弃旧的统计解读缓存并在用户进入统计界面时重新请求生成

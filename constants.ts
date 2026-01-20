@@ -1,5 +1,5 @@
-// INPUT: 静态文案、提示词与配置数据（含百科首页雷达标签与每日星象指引文案）。
-// OUTPUT: 导出全局常量与文案（含百科 i18n 扩展与每日星象提示补充）。
+// INPUT: 静态文案、提示词与配置数据（含经典阅读页 i18n、试用提示与 Synthetica 文案）。
+// OUTPUT: 导出全局常量与文案（含经典阅读页 i18n、试用提醒与提示词/Mock 集合）。
 // POS: 主应用常量中心。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -537,7 +537,7 @@ export const TRANSLATIONS = {
       interpretation: "In-Depth Analysis",
     },
     app: {
-      name: "AstroMind",
+      name: "AstrologyWiki",
       tagline: "Your psychological blueprint, decoded by AI.",
       sub_tagline: "Scientific Astrology • Modern Psychology • Actionable Insights",
       loading: "Consulting the stars...",
@@ -574,6 +574,37 @@ export const TRANSLATIONS = {
       subtitle: "Psychological astrology knowledge base",
       tab_home: "Home",
       tab_library: "Library",
+      tab_classics: "Classics",
+      tab_tools: "Synthetica",
+      classics_kicker: "Astro Classics",
+      classics_title: "Classics Shelf",
+      classics_subtitle: "A curated library of modern psychological astrology.",
+      classics_section: "Classics Shelf",
+      classics_shelf_hint: "Open a volume to read",
+      classics_tag: "Classic",
+      classics_open: "Open",
+      classics_empty: "No classics yet.",
+      classics_back: "Back to Classics",
+      classics_author_label: "Author",
+      classics_reading: "Reading Mode",
+      classics_content: "Reading Notes",
+      classics_page_label: "Classic Page",
+      classics_loading: "Loading classic book...",
+      classics_load_error: "Failed to load classic book.",
+      classics_not_found: "Classic not found.",
+      classics_prev_page: "Previous page",
+      classics_next_page: "Next page",
+      classics_count_unit: "books",
+      classics_count_label: "classics",
+      classics_categories: {
+        Foundation: "Foundation",
+        Deepening: "Deepening",
+        Techniques: "Techniques",
+        "Classical & Hellenistic": "Classical & Hellenistic",
+        "Expert & Specialized": "Expert & Specialized",
+        Philosophy: "Philosophy"
+      },
+      keywords: "Keywords",
       hero_kicker: "Psychological Astrology",
       hero_title: "Navigate the Inner Cosmos",
       hero_subtitle: "A living wiki of archetypes, symbols, and inner dynamics.",
@@ -1261,6 +1292,8 @@ export const TRANSLATIONS = {
       theme_dark: "Dark",
       theme_light: "Light",
       profile: "Profile",
+      trial_title: "Trial Status",
+      trial_desc: "Your 7-day free trial ends in {days} days",
       reset: "Reset Data",
       reset_desc: "Clear all saved data and start over",
       reset_btn: "Clear Data",
@@ -1270,6 +1303,37 @@ export const TRANSLATIONS = {
       zodiac_tropical: "Tropical (Western Astrology)",
       house_system: "House System",
       fixed: "Fixed"
+    },
+    auth: {
+      title_login: "Sign In",
+      title_register: "Create Account",
+      subtitle: "Welcome back to AstrologyWiki",
+      email: "Email",
+      password: "Password",
+      name: "Name (optional)",
+      login: "Sign In",
+      register: "Sign Up",
+      switch_to_register: "Don't have an account? Sign up",
+      switch_to_login: "Already have an account? Sign in",
+      or_continue_with: "Or continue with",
+      continue_with_google: "Continue with Google",
+      continue_with_apple: "Continue with Apple",
+      password_hint: "At least 8 characters",
+      success_login: "Signed in. Redirecting...",
+      success_register: "Account created. Redirecting...",
+      error_fallback: "Authentication failed. Please try again.",
+      benefits_title: "Subscription & Credits",
+      benefit_unlimited: "Unlimited detail access",
+      benefit_ask: "5 Ask questions per week",
+      benefit_synastry: "5 synastry reads per week",
+      benefit_bonus: "500 credits per successful payment",
+      benefit_reports: "Reports at 20% off credits",
+      migrate_title: "Migrate Local Data",
+      migrate_desc: "We found local birth data and preferences. Move them to your cloud account?",
+      migrate_confirm: "Migrate now",
+      migrate_later: "Later",
+      migrate_success: "Migration complete. Local data cleared.",
+      migrate_error: "Migration failed. Please try again."
     },
     tags: {
       Emotions: "Emotions",
@@ -1599,6 +1663,159 @@ export const TRANSLATIONS = {
       cbt_analyzing_insight: "Analyzing insight...",
       cbt_generating_advice: "Generating advice...",
       cbt_consulting_astro: "Consulting stars..."
+    },
+    synthetica: {
+      title: "ASTROSYNTHETICA",
+      steps: {
+        target: "Goal",
+        planet: "Planet",
+        sign: "Sign",
+        house: "House",
+        aspect: "Aspect"
+      },
+      actions: {
+        back: "Back",
+        generate: "Reveal Insights",
+        generating: "Synthesizing...",
+        addAspect: "+ Add Aspect",
+        skipHouse: "Skip House",
+        reset: "✨ New Chart",
+        reset_short: "Reset"
+      },
+      quota: "Today {left}/{total}",
+      blueprint: {
+        title: "Your Inquiry Blueprint",
+        intro: "I want to explore ",
+        contexts: {
+          love: "my relationship patterns & red flags",
+          self: "my true identity & potential",
+          healing: "my inner child & healing",
+          career: "my soul mission & vocation",
+          timing: "navigating life chaos",
+          social: "my social circles & belonging"
+        },
+        when: ", when ",
+        clothed: " is clothed in ",
+        clothing: " energy",
+        stage_intro: ", standing on the stage of ",
+        stage_outro: "",
+        aspects_intro: "accompanied by ",
+        aspects_count: " aspect influences",
+        footer: "Based on Evolutionary Astrology"
+      },
+      prompts: {
+        context: {
+          title: "Why do you look up at the stars?",
+          desc: ""
+        },
+        planet: {
+          title: "Select 'Actor' (Planet)",
+          desc: "Which part of your psyche are we analyzing?"
+        },
+        sign: {
+          title: "Select 'Script' (Sign)",
+          desc: "What style or temperament does this actor use?"
+        },
+        house: {
+          title: "Select 'Stage' (House - Optional)",
+          desc: "In which area of life is this play most vivid?"
+        },
+        aspect_dashboard: {
+          title: "Aspect Dashboard (Optional)",
+          desc: "Add influences from other planets on {planet}",
+          empty: "No aspects. Adding aspects makes the reading more 3-dimensional.",
+          via: "via"
+        },
+        second_planet: {
+          title: "Select Interacting Planet",
+          desc: "Who is influencing {planet}?"
+        },
+        aspect_type: {
+          title: "Select Aspect Type",
+          desc: "Is it conflict or cooperation?"
+        }
+      },
+      loading: {
+        label: "Generating your analysis...",
+        phrases: [
+          "Parsing chart configuration...",
+          "Calculating aspect weights...",
+          "Integrating psychological lens...",
+          "Synthesizing deep insights...",
+          "Preparing your personal report..."
+        ]
+      },
+      house_symbol: {
+        prefix: "House",
+        suffix: ""
+      },
+      catalog: {
+        contexts: {
+          LOVE: { label: "Love & Intimacy", description: "Compatibility, red flags, attachment styles" },
+          SELF: { label: "Self & Identity", description: "Who am I? Authenticity and core archetypes" },
+          HEALING: { label: "Healing & Mental Health", description: "Inner child, shadow work, trauma transformation" },
+          CAREER: { label: "Purpose & Career", description: "Soul mission, vocation, anti-burnout direction" },
+          TIMING: { label: "Timing & Survival", description: "Retrogrades, Saturn return, life chaos" },
+          SOCIAL: { label: "Social & Friendship", description: "Tribe, real friends, energetic boundaries" }
+        },
+        planets: {
+          sun: { name: "Sun", archetype: "The Hero" },
+          moon: { name: "Moon", archetype: "Inner Child / Mother" },
+          mercury: { name: "Mercury", archetype: "The Messenger" },
+          venus: { name: "Venus", archetype: "The Lover" },
+          mars: { name: "Mars", archetype: "The Warrior" },
+          jupiter: { name: "Jupiter", archetype: "The Sage" },
+          saturn: { name: "Saturn", archetype: "The Builder" },
+          uranus: { name: "Uranus", archetype: "The Awakener" },
+          neptune: { name: "Neptune", archetype: "The Mystic" },
+          pluto: { name: "Pluto", archetype: "The Transformer" }
+        },
+        signs: {
+          aries: { name: "Aries", archetype: "The Pioneer" },
+          taurus: { name: "Taurus", archetype: "The Stabilizer" },
+          gemini: { name: "Gemini", archetype: "The Communicator" },
+          cancer: { name: "Cancer", archetype: "The Nurturer" },
+          leo: { name: "Leo", archetype: "The Creator" },
+          virgo: { name: "Virgo", archetype: "The Analyst" },
+          libra: { name: "Libra", archetype: "The Diplomat" },
+          scorpio: { name: "Scorpio", archetype: "The Alchemist" },
+          sagittarius: { name: "Sagittarius", archetype: "The Explorer" },
+          capricorn: { name: "Capricorn", archetype: "The Strategist" },
+          aquarius: { name: "Aquarius", archetype: "The Innovator" },
+          pisces: { name: "Pisces", archetype: "The Dreamer" }
+        },
+        houses: {
+          h1: { name: "1st House", archetype: "Identity & Appearance" },
+          h2: { name: "2nd House", archetype: "Values & Assets" },
+          h3: { name: "3rd House", archetype: "Communication & Learning" },
+          h4: { name: "4th House", archetype: "Home & Roots" },
+          h5: { name: "5th House", archetype: "Creativity & Joy" },
+          h6: { name: "6th House", archetype: "Routine & Health" },
+          h7: { name: "7th House", archetype: "Partnership & Others" },
+          h8: { name: "8th House", archetype: "Intimacy & Transformation" },
+          h9: { name: "9th House", archetype: "Philosophy & Travel" },
+          h10: { name: "10th House", archetype: "Career & Public Image" },
+          h11: { name: "11th House", archetype: "Community & Future" },
+          h12: { name: "12th House", archetype: "Spirituality & Unconscious" }
+        },
+        aspects: {
+          conjunction: { name: "Conjunction", description: "Fusion: two forces merge as one." },
+          sextile: { name: "Sextile", description: "Support: easy opportunities and collaboration." },
+          square: { name: "Square", description: "Friction: inner tension and action." },
+          trine: { name: "Trine", description: "Flow: gifts and comfort zone." },
+          opposition: { name: "Opposition", description: "Opposition: polarity and perspective." }
+        }
+      },
+      report: {
+        header_separator: "•",
+        synthesis_title: "Core Insights",
+        synthesis_highlight: "Holistic Overview",
+        analysis_title: "Deep Dive",
+        focus: "Focus",
+        shadow: "Shadow Side",
+        advice: "Actionable Advice",
+        error: "The stars are cloudy. Please check connection or try again."
+      }
     }
   },
   zh: {
@@ -1634,7 +1851,7 @@ export const TRANSLATIONS = {
       interpretation: "深度解读"
     },
     app: {
-      name: "AstroMind",
+      name: "AstrologyWiki",
       tagline: "你的心理蓝图，由 AI 解码。",
       sub_tagline: "科学占星 • 现代心理学 • 可行建议",
       loading: "正在咨询星辰...",
@@ -1671,6 +1888,36 @@ export const TRANSLATIONS = {
       subtitle: "心理占星知识库",
       tab_home: "首页",
       tab_library: "百科",
+      tab_classics: "经典",
+      tab_tools: "工具",
+      classics_kicker: "经典书架",
+      classics_title: "经典书架",
+      classics_subtitle: "现代心理占星的重要著作。",
+      classics_section: "经典书架",
+      classics_shelf_hint: "点击书封阅读",
+      classics_tag: "经典",
+      classics_open: "展开阅读",
+      classics_empty: "暂无经典书籍",
+      classics_back: "返回经典",
+      classics_author_label: "作者",
+      classics_reading: "阅读中",
+      classics_content: "经典解读",
+      classics_page_label: "经典书页",
+      classics_loading: "正在加载经典书籍...",
+      classics_load_error: "经典书籍加载失败。",
+      classics_not_found: "未找到该书籍。",
+      classics_prev_page: "上一页",
+      classics_next_page: "下一页",
+      classics_count_unit: "本",
+      classics_count_label: "本典籍",
+      classics_categories: {
+        Foundation: "奠基",
+        Deepening: "深化",
+        Techniques: "技法",
+        "Classical & Hellenistic": "古典与希腊化",
+        "Expert & Specialized": "专精",
+        Philosophy: "哲学"
+      },
       hero_kicker: "心理占星",
       hero_title: "导航你的内在宇宙",
       hero_subtitle: "用原型、符号与心理动力理解你自己。",
@@ -2359,6 +2606,8 @@ export const TRANSLATIONS = {
       theme_dark: "神秘黑",
       theme_light: "纸质白",
       profile: "个人资料",
+      trial_title: "试用提醒",
+      trial_desc: "你的 7 天免费试用还剩 {days} 天",
       reset: "重置数据",
       reset_desc: "清除所有保存的数据并重新开始",
       reset_btn: "清除数据",
@@ -2368,6 +2617,37 @@ export const TRANSLATIONS = {
       zodiac_tropical: "回归黄道（西洋占星）",
       house_system: "宫位系统",
       fixed: "固定"
+    },
+    auth: {
+      title_login: "登录账户",
+      title_register: "创建账户",
+      subtitle: "欢迎回到 AstrologyWiki",
+      email: "电子邮箱",
+      password: "密码",
+      name: "昵称（可选）",
+      login: "登录",
+      register: "注册",
+      switch_to_register: "没有账户？注册",
+      switch_to_login: "已有账户？登录",
+      or_continue_with: "或使用以下方式",
+      continue_with_google: "使用 Google 继续",
+      continue_with_apple: "使用 Apple 继续",
+      password_hint: "至少 8 个字符",
+      success_login: "登录成功，正在进入应用...",
+      success_register: "注册成功，正在进入应用...",
+      error_fallback: "认证失败，请稍后再试。",
+      benefits_title: "订阅与积分权益",
+      benefit_unlimited: "解锁所有查看详情内容",
+      benefit_ask: "每周 5 次 Ask 问答",
+      benefit_synastry: "每周 5 次合盘分析",
+      benefit_bonus: "订阅成功发放 500 积分",
+      benefit_reports: "报告积分价格 8 折",
+      migrate_title: "迁移本地数据",
+      migrate_desc: "检测到本地出生信息与偏好设置，是否迁移至云端账户？",
+      migrate_confirm: "立即迁移",
+      migrate_later: "稍后",
+      migrate_success: "迁移完成，已清除本地数据。",
+      migrate_error: "迁移失败，请稍后再试。"
     },
     tags: {
       Emotions: "情绪",
@@ -2698,6 +2978,159 @@ export const TRANSLATIONS = {
       cbt_analyzing_insight: "分析洞察中...",
       cbt_generating_advice: "生成建议中...",
       cbt_consulting_astro: "请示星辰中..."
+    },
+    synthetica: {
+      title: "ASTROSYNTHETICA",
+      steps: {
+        target: "目标",
+        planet: "行星",
+        sign: "星座",
+        house: "宫位",
+        aspect: "相位"
+      },
+      actions: {
+        back: "返回",
+        generate: "揭示洞察",
+        generating: "综合分析中...",
+        addAspect: "+ 添加相位",
+        skipHouse: "跳过宫位选择",
+        reset: "✨ 构建新的星图",
+        reset_short: "重置"
+      },
+      quota: "今日剩余 {left}/{total}",
+      blueprint: {
+        title: "您的查询蓝图",
+        intro: "我想探索",
+        contexts: {
+          love: "爱情 / 亲密关系",
+          self: "自我 / 身份认同",
+          healing: "疗愈 / 心理健康",
+          career: "使命 / 职业方向",
+          timing: "时机 / 生存指南",
+          social: "社交 / 友谊"
+        },
+        when: "，当",
+        clothed: " 披上了 ",
+        clothing: " 的外衣",
+        stage_intro: "，并站在 ",
+        stage_outro: " 的舞台上",
+        aspects_intro: "同时伴随着",
+        aspects_count: "个相位影响",
+        footer: "基于现代进化占星学"
+      },
+      prompts: {
+        context: {
+          title: "您为何仰望星空？",
+          desc: ""
+        },
+        planet: {
+          title: "选择“演员” (行星)",
+          desc: "我们要分析您心理的哪个面向？"
+        },
+        sign: {
+          title: "选择“剧本” (星座)",
+          desc: "这位演员使用什么样的风格或气质？"
+        },
+        house: {
+          title: "选择“舞台” (宫位 - 可选)",
+          desc: "这出戏在生活的哪个领域上演得最生动？"
+        },
+        aspect_dashboard: {
+          title: "相位仪表盘 (可选)",
+          desc: "添加其他行星对 {planet} 的影响",
+          empty: "暂无相位。添加相位可以让解读更加立体。",
+          via: "via"
+        },
+        second_planet: {
+          title: "选择互动行星",
+          desc: "谁在影响 {planet}？"
+        },
+        aspect_type: {
+          title: "选择相位类型",
+          desc: "它们之间是冲突还是协作？"
+        }
+      },
+      loading: {
+        label: "正在生成分析报告",
+        phrases: [
+          "解析星盘配置...",
+          "计算相位权重...",
+          "整合心理学视角...",
+          "生成深度洞察...",
+          "即将呈现您的专属报告..."
+        ]
+      },
+      house_symbol: {
+        prefix: "第",
+        suffix: "宫"
+      },
+      catalog: {
+        contexts: {
+          LOVE: { label: "爱情 / 亲密关系", description: "配对分析、红旗预警与依恋类型" },
+          SELF: { label: "自我 / 身份认同", description: "我是谁？探索真实性与人格原型" },
+          HEALING: { label: "疗愈 / 心理健康", description: "内在小孩、阴影工作与创伤转化" },
+          CAREER: { label: "使命 / 职业方向", description: "灵魂目标、天职与反卷指南" },
+          TIMING: { label: "时机 / 生存指南", description: "应对水逆、土星回归与生活混乱" },
+          SOCIAL: { label: "社交 / 友谊", description: "部落归属感、真朋友与能量场" }
+        },
+        planets: {
+          sun: { name: "太阳", archetype: "英雄" },
+          moon: { name: "月亮", archetype: "内在小孩 / 母亲" },
+          mercury: { name: "水星", archetype: "信使" },
+          venus: { name: "金星", archetype: "爱人" },
+          mars: { name: "火星", archetype: "战士" },
+          jupiter: { name: "木星", archetype: "智者" },
+          saturn: { name: "土星", archetype: "建设者" },
+          uranus: { name: "天王星", archetype: "觉醒者" },
+          neptune: { name: "海王星", archetype: "神秘主义者" },
+          pluto: { name: "冥王星", archetype: "转化者" }
+        },
+        signs: {
+          aries: { name: "白羊座", archetype: "先锋" },
+          taurus: { name: "金牛座", archetype: "稳固者" },
+          gemini: { name: "双子座", archetype: "沟通者" },
+          cancer: { name: "巨蟹座", archetype: "哺育者" },
+          leo: { name: "狮子座", archetype: "创造者" },
+          virgo: { name: "处女座", archetype: "分析师" },
+          libra: { name: "天秤座", archetype: "外交官" },
+          scorpio: { name: "天蝎座", archetype: "炼金术士" },
+          sagittarius: { name: "射手座", archetype: "探索者" },
+          capricorn: { name: "摩羯座", archetype: "战略家" },
+          aquarius: { name: "水瓶座", archetype: "革新者" },
+          pisces: { name: "双鱼座", archetype: "梦想家" }
+        },
+        houses: {
+          h1: { name: "第1宫", archetype: "身份与外表" },
+          h2: { name: "第2宫", archetype: "价值与资产" },
+          h3: { name: "第3宫", archetype: "沟通与学习" },
+          h4: { name: "第4宫", archetype: "家庭与根源" },
+          h5: { name: "第5宫", archetype: "创造与快乐" },
+          h6: { name: "第6宫", archetype: "日常与健康" },
+          h7: { name: "第7宫", archetype: "伴侣与他人" },
+          h8: { name: "第8宫", archetype: "亲密与转化" },
+          h9: { name: "第9宫", archetype: "哲学与旅行" },
+          h10: { name: "第10宫", archetype: "事业与公众形象" },
+          h11: { name: "第11宫", archetype: "社群与未来" },
+          h12: { name: "第12宫", archetype: "灵性与潜意识" }
+        },
+        aspects: {
+          conjunction: { name: "合相", description: "融合：你中有我，我中有你" },
+          sextile: { name: "六分相", description: "支持：轻松的机会与协作" },
+          square: { name: "四分相", description: "摩擦：内在张力与行动" },
+          trine: { name: "三分相", description: "流动：天赋与舒适区" },
+          opposition: { name: "对分相", description: "对立：拉扯与客观化" }
+        }
+      },
+      report: {
+        header_separator: "•",
+        synthesis_title: "核心洞察",
+        synthesis_highlight: "全息综述",
+        analysis_title: "深度解读",
+        focus: "Focus",
+        shadow: "阴暗面",
+        advice: "行动建议",
+        error: "星象混沌不清，请检查网络连接或重试。"
+      }
     }
   }
 };
@@ -2707,7 +3140,6 @@ export const PROMPTS = {
     NATAL_OVERVIEW: "Analyze the following natal chart highlights and provide a 'Quick Glance' overview. JSON Format required. \nInput: {{input_json}} \nLanguage: {{language}}",
     CORE_THEMES: "Based on the chart highlights, produce life tasks content with drive/fear/growth. JSON Format required. \nStructure: drive {title, summary, key_points[]}, fear {title, summary, key_points[]}, growth {title, summary, key_points[]}, confidence. \nInput: {{input_json}} \nLanguage: {{language}}",
     DIMENSION_REPORT: "Analyze the specific psychological dimension '{{dimension_title}}' based on these signals. JSON Format required. \nSignals: {{input_json}} \nLanguage: {{language}}",
-    NATAL_TECHNICAL: "Provide a technical breakdown of the natal chart. JSON Format required. \nInput: {{input_json}} \nLanguage: {{language}}",
     DAILY_PUBLIC: "Generate a daily forecast content card based on these transits. JSON Format required. \nDate: {{date}} \nTransits: {{input_json}} \nLanguage: {{language}}",
     DAILY_DETAIL: "Generate a detailed daily psychological script. JSON Format required. \nPublic Context: {{public_json}} \nPersonal Transits: {{personal_json}} \nLanguage: {{language}}",
     CYCLE_CARD_NAMING: "Name and tag this planetary cycle. JSON Format required. \nCycle Info: {{input_json}} \nLanguage: {{language}}",
@@ -2856,27 +3288,7 @@ export const MOCK_RESPONSES_ZH: any = {
       prompt_question: "当这种感觉来袭时，我在保护什么？",
       confidence: 'high'
   }),
-  NATAL_TECHNICAL: {
-      pattern: {
-          element_summary: "火元素与风元素的主导表明你拥有高能量和理念驱动的个性。",
-          modality_summary: "固定宫的主导显示了你坚定的决心，但也可能意味着固执。",
-          house_focus: "重点落在第1、第5和第9宫，强调了对身份认同、创造力和哲学的关注。"
-      },
-      big_3_deep: [
-          { planet: "Sun", sign_meaning: "狮子座太阳渴望表达与被看见。", house_meaning: "落入1宫意味着你是自己人生的主角。", key_aspects: ["太阳三分月亮"], dimension_link: "Talents" },
-          { planet: "Moon", sign_meaning: "天蝎座月亮寻求情感的极致深度。", house_meaning: "落入4宫意味着你需要极高的私密性。", key_aspects: ["月亮四分土星"], dimension_link: "Emotions" },
-          { planet: "Rising", sign_meaning: "天秤座上升投射出和谐与优雅的面具。", house_meaning: "确立了你与世界互动的基本方式。", key_aspects: [], dimension_link: "Attachment" }
-      ],
-      layers: {
-          personal: "你的内行星（日、月、水、金、火）整合良好，动力十足。",
-          social: "木星与土星为你提供了扩张与边界的平衡。",
-          transpersonal: "三王星（天王、海王、冥王）为你增添了变革的时代色彩。"
-      },
-      key_aspects_list: [
-          { name: "太阳三分月亮", tension_support: "支持", experience: "内在需求与外在追求的天然和谐。", advice: "利用这种内在的稳定性来支持他人。" },
-          { name: "月亮四分土星", tension_support: "张力", experience: "容易感到情感压抑或害怕被拒绝。", advice: "学会做自己内在的慈爱父母。" }
-      ]
-  },
+
   // ... Rest of Mock responses (DAILY_PUBLIC, etc.) assume existence
   DAILY_PUBLIC: {
       date: "2023-10-27",
@@ -3058,27 +3470,7 @@ export const MOCK_RESPONSES_EN: any = {
       prompt_question: "What am I protecting when I feel this way?",
       confidence: 'high'
   }),
-  NATAL_TECHNICAL: {
-      pattern: {
-          element_summary: "Fire and Air dominance suggests a high-energy, idea-driven personality.",
-          modality_summary: "Fixed dominance indicates strong determination and potential stubbornness.",
-          house_focus: "Emphasis on the 1st, 5th, and 9th houses highlights a focus on identity, creativity, and philosophy."
-      },
-      big_3_deep: [
-          { planet: "Sun", sign_meaning: "Leo Sun craves expression.", house_meaning: "1st House places focus on self.", key_aspects: ["Sun trine Moon"], dimension_link: "Talents" },
-          { planet: "Moon", sign_meaning: "Scorpio Moon seeks depth.", house_meaning: "4th House seeks privacy.", key_aspects: ["Moon square Saturn"], dimension_link: "Emotions" },
-          { planet: "Rising", sign_meaning: "Libra Rising projects harmony.", house_meaning: "1st House mask.", key_aspects: [], dimension_link: "Attachment" }
-      ],
-      layers: {
-          personal: "Sun, Moon, Mercury, Venus, Mars are well integrated.",
-          social: "Jupiter and Saturn provide a balance of expansion and structure.",
-          transpersonal: "Uranus, Neptune, Pluto add a generational flavor of transformation."
-      },
-      key_aspects_list: [
-          { name: "Sun trine Moon", tension_support: "Support", experience: "Inner harmony between wants and needs.", advice: "Use this stability to help others." },
-          { name: "Moon square Saturn", tension_support: "Tension", experience: "Emotional restriction or fear of rejection.", advice: "Validate your own feelings first." }
-      ]
-  },
+
   // ... Rest of mock responses (DAILY_PUBLIC, etc.) assume existence
   DAILY_PUBLIC: {
       date: "2023-10-27",

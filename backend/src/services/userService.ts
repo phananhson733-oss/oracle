@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
 import { supabase, DbUser, BirthProfile, UserPreferences, isSupabaseConfigured } from '../db/supabase.js';
-import { JWT_CONFIG } from '../config/auth.js';
+import { JWT_CONFIG, SUBSCRIPTION_BENEFITS } from '../config/auth.js';
 
 export interface CreateUserInput {
   email: string;
@@ -27,7 +27,7 @@ export interface AuthTokens {
 }
 
 class UserService {
-  // Create a new user
+  // Create a new user with 7-day trial
   async createUser(input: CreateUserInput): Promise<DbUser> {
     if (!isSupabaseConfigured()) {
       throw new Error('Database not configured');
@@ -36,6 +36,10 @@ class UserService {
     const passwordHash = input.password
       ? await bcrypt.hash(input.password, 12)
       : null;
+
+    // 计算试用期结束时间（7天后）
+    const trialEndsAt = new Date();
+    trialEndsAt.setDate(trialEndsAt.getDate() + SUBSCRIPTION_BENEFITS.TRIAL_DAYS);
 
     const { data, error } = await supabase
       .from('users')
@@ -47,6 +51,7 @@ class UserService {
         provider_id: input.providerId || null,
         password_hash: passwordHash,
         email_verified: input.provider !== 'email', // OAuth users are pre-verified
+        trial_ends_at: trialEndsAt.toISOString(),   // 首次注册赠送 7 天试用
       })
       .select()
       .single();

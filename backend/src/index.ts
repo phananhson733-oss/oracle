@@ -1,5 +1,5 @@
-// INPUT: Express 服务器配置（含环境变量加载与百科路由挂载）。
-// OUTPUT: 启动 HTTP 服务（含百科 API 路由）。
+// INPUT: Express 服务器配置（含环境变量加载与统一响应中间件）。
+// OUTPUT: 启动 HTTP 服务（含百科与支付等 API 路由）。
 // POS: 后端入口文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import path from 'path';
@@ -15,10 +15,15 @@ import { cbtRouter } from './api/cbt.js';
 import { geoRouter } from './api/geo.js';
 import { detailRouter } from './api/detail.js';
 import { wikiRouter } from './api/wiki.js';
+import { syntheticaRouter } from './api/synthetica.js';
 import authRouter from './api/auth.js';
 import paymentRouter from './api/payment.js';
+import paymentV2Router from './api/paymentV2.js';
 import entitlementsRouter from './api/entitlements.js';
+import entitlementsV2Router from './api/entitlementsV2.js';
 import reportsRouter from './api/reports.js';
+import gmRouter from './api/gm.js';
+import { apiResponseMiddleware } from './utils/apiResponse.js';
 
 const envPaths = [
   path.resolve(process.cwd(), '.env'),
@@ -38,8 +43,10 @@ app.use(cors());
 
 // Raw body parser for Stripe webhook (must be before express.json())
 app.use('/api/payment/webhook', express.raw({ type: 'application/json' }));
+app.use('/api/payment/v2/webhook', express.raw({ type: 'application/json' }));
 
 app.use(express.json());
+app.use(apiResponseMiddleware);
 
 // API Routes
 app.use('/api/natal', natalRouter);
@@ -51,12 +58,16 @@ app.use('/api/cbt', cbtRouter);
 app.use('/api/geo', geoRouter);
 app.use('/api/detail', detailRouter);
 app.use('/api/wiki', wikiRouter);
+app.use('/api/synthetica', syntheticaRouter);
 
 // Auth & Payment Routes
 app.use('/api/auth', authRouter);
 app.use('/api/payment', paymentRouter);
+app.use('/api/payment', paymentV2Router);  // V2 路由挂载在 /v2 子路径
 app.use('/api/entitlements', entitlementsRouter);
+app.use('/api/entitlements', entitlementsV2Router);  // V2 路由挂载在 /v2 子路径
 app.use('/api/reports', reportsRouter);
+app.use('/api/gm', gmRouter);  // GM 测试命令
 
 // Health check
 app.get('/health', (_, res) => res.json({ status: 'ok' }));

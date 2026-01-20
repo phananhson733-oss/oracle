@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含详情解锁、GM 积分购买与 API 地址默认值）。 -->
-<!-- OUTPUT: services 架构摘要与文件索引（含详情解锁、GM 积分购买与 API 地址默认值更新）。 -->
+<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含积分解锁权益校验、报告积分购买与 Wiki 经典缓存版本刷新）。 -->
+<!-- OUTPUT: services 架构摘要与文件索引（含积分解锁、报告积分购买与详情解读缓存策略更新）。 -->
 <!-- POS: 主应用服务目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -13,7 +13,7 @@
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录服务目录架构与文件清单。
-- apiClient.ts｜地位：API 客户端｜功能：调用后端 API 获取数据（含问答类别、Markdown 报告、AI 来源元数据与 CBT 错误透传）。
+- apiClient.ts｜地位：API 客户端｜功能：调用后端 API 获取数据（含问答类别、Markdown 报告、AI 来源元数据与详情缓存提示）。
 - paymentClient.ts｜地位：支付与权益客户端｜功能：订阅/购买/权益查询与 GM 测试指令调用。
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
@@ -22,6 +22,14 @@
 - cbt/｜地位：CBT 服务子目录｜功能：CBT 功能的后端服务。
 
 近期更新
+- reportClient 改为积分购买报告并返回积分扣减结果。
+- entitlementClient V2 改为积分定价并新增积分价格常量与记录字段。
+- apiClient 上调 Wiki 经典缓存版本以刷新 20 本书籍内容。
+- apiClient 支持详情解读缓存 key 提示，减少大对象哈希带来的卡顿。
+- apiClient 为 Synthetica 调用补充授权/设备指纹并在缓存命中时同步消耗额度。
+- apiClient 为 Ask/合盘请求补充授权与设备指纹头，配合后端权益校验。
+- entitlementClient V2 新增 Synthetica 日额度支持并接入单次购买入口。
+- apiClient 上调 Wiki 缓存版本以刷新经典内容缓存。
 - API 客户端默认在生产环境使用同源 `/api`，避免指向 localhost。
 - entitlementClient V2 在积分购买时同步日次解锁本地缓存。
 - entitlementClient V2 接入详情解锁与 GM 积分购买 API。
@@ -41,6 +49,7 @@
 - apiClient 新增合盘综述分区端点以支持按需加载。
 - apiClient 新增合盘报告/分区本地缓存以加速重复访问。
 - apiClient 为 Highlights 分区增加旧接口兼容回退。
+- apiClient 新增日运/详情 AI 本地缓存与请求去重，并关闭详情超时。
 - apiClient 补充 CBT 分析错误解析，便于前端提示与重试。
 - geminiService 改为直接读取单语言 content。
 - 问答请求改为返回 Markdown 报告并按分类透传。

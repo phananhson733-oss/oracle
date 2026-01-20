@@ -1,18 +1,18 @@
-// INPUT: React、认证上下文、支付客户端与 UI 组件依赖。
-// OUTPUT: 导出升级订阅弹窗组件（ChatGPT 风格）。
+// INPUT: React、认证上下文、支付客户端与 UI 组件依赖（含订阅管理入口）。
+// OUTPUT: 导出升级订阅弹窗组件（ChatGPT 风格，含订阅管理跳转）。
 // POS: 升级订阅弹窗组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
-import { getPricing, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
+import { getPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
 import { Check, Sparkles, Zap, Star, Crown } from 'lucide-react';
 
 type PlanType = 'monthly' | 'yearly';
 
 const UpgradeModal: React.FC = () => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const {
     showUpgradeModal,
     setShowUpgradeModal,
@@ -62,6 +62,26 @@ const UpgradeModal: React.FC = () => {
       window.location.href = url;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to start checkout');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleManageSubscription = async () => {
+    if (!isAuthenticated) {
+      handleClose();
+      openLoginModal('manage your subscription');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+
+    try {
+      const { url } = await createPortalSession(window.location.href);
+      window.location.href = url;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : (language === 'zh' ? '暂时无法打开订阅详情。' : 'Unable to open subscription details right now.'));
     } finally {
       setLoading(false);
     }
@@ -174,7 +194,7 @@ const UpgradeModal: React.FC = () => {
               <span className="font-medium">{tr.alreadyPro}</span>
             </div>
             <div className="mt-4">
-              <ActionButton variant="secondary" onClick={handleClose}>
+              <ActionButton variant="secondary" onClick={handleManageSubscription} disabled={loading}>
                 {tr.manageSubscription}
               </ActionButton>
             </div>
@@ -242,7 +262,7 @@ const UpgradeModal: React.FC = () => {
             {/* Features comparison */}
             <div className="grid md:grid-cols-2 gap-4">
               {/* Free tier */}
-              <div className={`p-4 rounded-xl border ${isDark ? 'border-space-600 bg-space-800/50' : 'border-paper-300 bg-paper-100'}`}>
+              <div className={`p-4 rounded-xl border ${isDark ? 'border-white/10 bg-space-800/50' : 'border-paper-300 bg-paper-100'}`}>
                 <div className={`text-xs font-bold uppercase tracking-wider mb-3 ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
                   {tr.free.title}
                 </div>

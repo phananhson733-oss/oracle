@@ -1,26 +1,41 @@
-// INPUT: React、Router、组件与后端数据服务依赖（含卡片左侧阴影移除与星盘间距收紧）。
-// OUTPUT: 导出主应用组件（含卡片左侧阴影清理与探索自我/今日运势/Ask 报告星盘间距优化）。
+// INPUT: React、Router、组件与后端数据服务依赖（含积分使用情况页、迁移提示与付费墙入口）。
+// OUTPUT: 导出主应用组件（含积分入口、试用提醒、认证与迁移提示）。
 // POS: 主应用路由与页面编排中心。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
 import { HashRouter, Routes, Route, useNavigate, useLocation, Link, Navigate } from 'react-router-dom';
 import { Container, Card, Section, ActionButton, GlassInput, Chip, ScoreBar, Accordion, TimelineCard, CopyButton, ThemeContext, Theme, useTheme, Modal, DetailModal, SectionHeader, LanguageContext, LanguageProvider, useLanguage, translateAstroTerm } from './components/UIComponents';
 import { ArrowLeft, X } from 'lucide-react';
-import CBTMainPage from './components/cbt/CBTMainPage';
-import WikiHubPage from './components/wiki/WikiHubPage';
-import WikiDetailPage from './components/wiki/WikiDetailPage';
-import { ElementalTable, AspectMatrix, PlanetTable, HouseRulerTable, CrossAspectMatrix, SynastryAspectMatrix } from './components/TechSpecsComponents';
 import * as T from './types';
 import { FOCUS_TAGS, PRESET_QUESTIONS, DIMENSIONS, RELATIONSHIP_TYPES, ASTRO_DICTIONARY, TRANSLATIONS, SYNASTRY_PROFILE_STORAGE_KEY, NATAL_CONFIG, SYNASTRY_CONFIG, COMPOSITE_CONFIG } from './constants';
 import { AstroChart } from './components/AstroChart';
 import { OracleLoading } from './components/OracleLoading';
 import * as Astro from './services/astroService';
 import { generateContent } from './services/geminiService';
-import { fetchAskAnswer, fetchSynastry, fetchSynastryOverviewSection, fetchSynastrySuggestions, fetchSynastryTechnical, searchCities, fetchSectionDetail } from './services/apiClient';
-import { AuthProvider } from './contexts/AuthContext';
+import { fetchAskAnswer, fetchDailyDetail, fetchDailyForecast, fetchSectionDetail, fetchSynastry, fetchSynastryOverviewSection, fetchSynastrySuggestions, fetchSynastryTechnical, searchCities } from './services/apiClient';
+import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription } from './services/paymentClient';
+import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } from './contexts/EntitlementContext';
 import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage } from './components/auth';
-import { ReportsPage, ReportViewPage } from './components/reports';
+import { GlobalPaywall, LockedContent, LockedAccordion } from './components/Paywall';
+
+// 懒加载大型组件
+const CBTMainPage = lazy(() => import('./components/cbt/CBTMainPage'));
+const WikiHubPage = lazy(() => import('./components/wiki/WikiHubPage'));
+const WikiDetailPage = lazy(() => import('./components/wiki/WikiDetailPage'));
+const WikiClassicDetailPage = lazy(() => import('./components/wiki/WikiClassicDetailPage').then(m => ({ default: m.WikiClassicDetailPage })));
+const WikiClassicsPage = lazy(() => import('./components/wiki/WikiClassicsPage'));
+const ElementalTable = lazy(() => import('./components/TechSpecsComponents').then(m => ({ default: m.ElementalTable })));
+const AspectMatrix = lazy(() => import('./components/TechSpecsComponents').then(m => ({ default: m.AspectMatrix })));
+const PlanetTable = lazy(() => import('./components/TechSpecsComponents').then(m => ({ default: m.PlanetTable })));
+const HouseRulerTable = lazy(() => import('./components/TechSpecsComponents').then(m => ({ default: m.HouseRulerTable })));
+const CrossAspectMatrix = lazy(() => import('./components/TechSpecsComponents').then(m => ({ default: m.CrossAspectMatrix })));
+const SynastryAspectMatrix = lazy(() => import('./components/TechSpecsComponents').then(m => ({ default: m.SynastryAspectMatrix })));
+const ReportsPage = lazy(() => import('./components/reports').then(m => ({ default: m.ReportsPage })));
+const ReportViewPage = lazy(() => import('./components/reports').then(m => ({ default: m.ReportViewPage })));
+const ColorSystemDemo = lazy(() => import('./components/ColorSystemDemo').then(m => ({ default: m.ColorSystemDemo })));
 
 const getDateInTimeZone = (timeZone?: string) => {
   const formatter = new Intl.DateTimeFormat('en-CA', {
@@ -31,6 +46,61 @@ const getDateInTimeZone = (timeZone?: string) => {
   });
   return formatter.format(new Date());
 };
+
+const getTimeZoneOffsetMinutes = (timeZone: string, date = new Date()) => {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  }).formatToParts(date);
+
+  const valueMap = parts.reduce<Record<string, string>>((acc, part) => {
+    if (part.type !== 'literal') acc[part.type] = part.value;
+    return acc;
+  }, {});
+
+  const utcTime = Date.UTC(
+    Number(valueMap.year),
+    Number(valueMap.month) - 1,
+    Number(valueMap.day),
+    Number(valueMap.hour),
+    Number(valueMap.minute),
+    Number(valueMap.second)
+  );
+
+  return Math.round((utcTime - date.getTime()) / 60000);
+};
+
+const formatTimezoneOffset = (timeZone?: string) => {
+  if (!timeZone || timeZone === 'UTC') return 'UTC';
+  try {
+    const offsetMinutes = getTimeZoneOffsetMinutes(timeZone);
+    const sign = offsetMinutes >= 0 ? '+' : '-';
+    const absMinutes = Math.abs(offsetMinutes);
+    const hours = Math.floor(absMinutes / 60);
+    const minutes = absMinutes % 60;
+    const minuteLabel = minutes ? `:${String(minutes).padStart(2, '0')}` : '';
+
+    return `${timeZone} UTC${sign}${hours}${minuteLabel}`;
+  } catch {
+    return timeZone;
+  }
+};
+
+const buildBirthCacheKey = (profile: Pick<T.UserProfile, 'birthDate' | 'birthTime' | 'birthCity' | 'lat' | 'lon' | 'timezone' | 'accuracyLevel'>) => [
+  profile.birthDate,
+  profile.birthTime || '',
+  profile.birthCity,
+  profile.lat ?? '',
+  profile.lon ?? '',
+  profile.timezone,
+  profile.accuracyLevel,
+].join('|');
 
 // --- CONTEXTS ---
 
@@ -45,10 +115,30 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const useUserProfile = () => {
+    const { user: authUser } = useAuth();
     const [user, setUser] = useState<T.UserProfile | null>(() => {
         const saved = localStorage.getItem('astro_user');
         return saved ? JSON.parse(saved) : null;
     });
+    useEffect(() => {
+      if (user || !authUser?.birthProfile) return;
+      if (localStorage.getItem('astro_profile_migrated') !== '1') return;
+      const birth = authUser.birthProfile;
+      if (!birth.birthDate || !birth.birthCity || !birth.timezone) return;
+      const profile: T.UserProfile = {
+        userId: authUser.id,
+        name: authUser.name,
+        birthDate: birth.birthDate,
+        birthTime: birth.birthTime,
+        birthCity: birth.birthCity,
+        lat: birth.lat,
+        lon: birth.lon,
+        timezone: birth.timezone,
+        accuracyLevel: birth.accuracyLevel || 'exact',
+        focusTags: authUser.preferences?.focusTags || [],
+      };
+      setUser(profile);
+    }, [user, authUser]);
     const saveUser = (u: T.UserProfile | null) => { 
       setUser(u); 
       if (u) localStorage.setItem('astro_user', JSON.stringify(u)); 
@@ -62,7 +152,7 @@ const useUserProfile = () => {
 const FrameworkDisclaimer: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-  const borderColor = theme === 'dark' ? 'border-space-600' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-400';
 
   return (
@@ -86,19 +176,10 @@ const MiniLoader: React.FC<{ label: string; error?: string | null }> = ({ label,
       </div>
     );
   }
-  return (
-    <div className="text-center py-12">
-      <div className="flex justify-center gap-1.5 mb-4">
-        <div className="w-2 h-2 rounded-full bg-gold-500 animate-bounce" style={{ animationDelay: '0ms', animationDuration: '1s' }} />
-        <div className="w-2 h-2 rounded-full bg-star-200 animate-bounce" style={{ animationDelay: '150ms', animationDuration: '1s' }} />
-        <div className="w-2 h-2 rounded-full bg-accent animate-bounce" style={{ animationDelay: '300ms', animationDuration: '1s' }} />
-      </div>
-      <div className="text-sm font-medium text-gold-500 animate-pulse">{label}</div>
-    </div>
-  );
+  return <OracleLoading variant="mini" thinkingLabel={label} />;
 };
 
-const DETAIL_LABEL_CLASS = "text-[10px] uppercase tracking-widest opacity-60";
+const DETAIL_LABEL_CLASS = "text-xs uppercase tracking-widest opacity-80";
 
 // Weather/Mood Emoji Icon Component - render emojis directly for 7-day forecast
 const WeatherMoodIcon: React.FC<{ emoji: string; className?: string }> = ({ emoji, className = "w-7 h-7 text-xl" }) => (
@@ -118,10 +199,10 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
   ];
 
   const moduleCards = [
-    { title: t.me.melody, content: (<div className="space-y-2">{(data?.core_melody?.keywords || []).slice(0, 2).map((k, i) => (<div key={i} className="text-sm leading-relaxed"><span className="font-bold text-green-500 uppercase text-[10px] tracking-wider block mb-0.5">{k}</span><span className="opacity-80">{data?.core_melody?.explanations?.[i]}</span></div>))}</div>), accent: 'border-l-green-500' },
-    { title: t.me.talent, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_talent?.title}</h4><p className="text-sm opacity-80 leading-relaxed line-clamp-2">{data?.top_talent?.example}</p></>), accent: 'border-l-orange-500' },
-    { title: t.me.pitfall, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_pitfall?.title}</h4><p className="text-sm opacity-80 leading-relaxed">{(data?.top_pitfall?.triggers || []).slice(0, 2).join(' · ')}</p></>), accent: 'border-l-red-500' },
-    { title: t.me.trigger, content: (<div className="text-sm leading-relaxed space-y-1"><div className="opacity-80">{data?.trigger_card?.inner_need}</div><div className="text-xs text-purple-500 font-medium">{data?.trigger_card?.buffer_action}</div></div>), accent: 'border-l-purple-500' }
+    { title: t.me.melody, content: (<div className="space-y-2">{(data?.core_melody?.keywords || []).slice(0, 2).map((k, i) => (<div key={i} className="text-sm leading-relaxed"><span className="font-bold text-green-600 dark:text-green-500 uppercase text-xs tracking-wider block mb-0.5">{k}</span><span className="opacity-90">{data?.core_melody?.explanations?.[i]}</span></div>))}</div>), accent: 'border-l-green-500' },
+    { title: t.me.talent, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_talent?.title}</h4><p className="text-sm opacity-90 leading-relaxed line-clamp-2">{data?.top_talent?.example}</p></>), accent: 'border-l-orange-500' },
+    { title: t.me.pitfall, content: (<><h4 className="font-serif font-medium mb-1">{data?.top_pitfall?.title}</h4><p className="text-sm opacity-90 leading-relaxed">{(data?.top_pitfall?.triggers || []).slice(0, 2).join(' · ')}</p></>), accent: 'border-l-red-500' },
+    { title: t.me.trigger, content: (<div className="text-sm leading-relaxed space-y-1"><div className="opacity-90">{data?.trigger_card?.inner_need}</div><div className="text-xs text-purple-600 dark:text-purple-500 font-medium">{data?.trigger_card?.buffer_action}</div></div>), accent: 'border-l-purple-500' }
   ];
 
   return (
@@ -132,15 +213,15 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
           <Card key={card.key} className={`border-l-2 ${card.accent} p-5`}>
             <div className="flex items-baseline justify-between mb-3">
               <span className="text-lg font-serif font-medium">{card.label}</span>
-              <span className="text-[10px] uppercase tracking-widest opacity-40">{card.subtitle}</span>
+              <span className="text-xs uppercase tracking-widest opacity-60">{card.subtitle}</span>
             </div>
-            <h3 className="text-xl font-serif font-medium text-gold-500 mb-2">{tl(card.data?.title || '')}</h3>
+            <h3 className="text-xl font-serif font-medium text-gold-600 dark:text-gold-500 mb-2">{tl(card.data?.title || '')}</h3>
             <div className="flex flex-wrap gap-1.5 mb-3">
               {(card.data?.keywords || []).map(k => (
-                <span key={k} className="text-[10px] uppercase border border-current/20 px-2 py-0.5 rounded tracking-wide opacity-60">{k}</span>
+                <span key={k} className="text-xs uppercase border border-current/30 px-2 py-0.5 rounded tracking-wide opacity-80">{k}</span>
               ))}
             </div>
-            <p className="text-sm opacity-70 leading-relaxed">{card.data?.description}</p>
+            <p className="text-sm opacity-80 leading-relaxed">{card.data?.description}</p>
           </Card>
         ))}
       </div>
@@ -149,7 +230,7 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {moduleCards.map((c, i) => (
           <Card key={i} className={`border-l-2 ${c.accent} p-4`}>
-            <div className="text-[10px] uppercase font-bold opacity-40 mb-2 tracking-widest">{c.title}</div>
+            <div className="text-xs uppercase font-bold opacity-60 mb-2 tracking-widest">{c.title}</div>
             {c.content}
           </Card>
         ))}
@@ -181,43 +262,43 @@ const DimensionContent: React.FC<{ dim: string, label: string, profile: T.UserPr
     return () => { mounted = false; };
   }, [dim, label, language, profile]);
 
-  if (loading) return <div className="p-4 opacity-50 animate-pulse text-xs uppercase tracking-widest">{t.common.loading} {label}...</div>;
+  if (loading) return <OracleLoading variant="mini" thinkingLabel={`${t.common.loading} ${label}...`} />;
   if (!data) return <div className="p-4 text-danger">{t.app.error}</div>;
 
   return (
       <div className="space-y-5">
           {/* Intro quote at top */}
           <div className="text-center pb-2">
-             <div className="italic text-gold-500 text-sm leading-relaxed">"{data?.prompt_question}"</div>
+             <div className="italic text-gold-600 dark:text-gold-500 text-sm leading-relaxed">"{data?.prompt_question}"</div>
           </div>
 
           {/* Main pattern narrative */}
           <div>
-             <div className="text-sm text-blue-500 uppercase font-semibold mb-2 tracking-widest">{t.me.pattern}</div>
+             <div className="text-sm text-blue-600 dark:text-blue-500 uppercase font-semibold mb-2 tracking-widest">{t.me.pattern}</div>
              <p className="text-sm leading-relaxed">{data?.pattern}</p>
           </div>
 
           {/* Root cause */}
           <div>
-             <div className="text-sm text-purple-400 uppercase font-semibold mb-2 tracking-widest">{t.me.root}</div>
-             <p className="text-sm leading-relaxed opacity-80">{data?.root}</p>
+             <div className="text-sm text-purple-600 dark:text-purple-400 uppercase font-semibold mb-2 tracking-widest">{t.me.root}</div>
+             <p className="text-sm leading-relaxed opacity-90">{data?.root}</p>
           </div>
 
           {/* Trigger & Support in simplified layout */}
           <div className="space-y-4">
              <div>
-                <div className="text-sm text-orange-500 uppercase font-semibold mb-2 tracking-widest">{t.me.when_triggered}</div>
+                <div className="text-sm text-orange-600 dark:text-orange-500 uppercase font-semibold mb-2 tracking-widest">{t.me.when_triggered}</div>
                 <p className="text-sm leading-relaxed opacity-90">{data?.when_triggered}</p>
              </div>
              <div>
-                <div className="text-sm text-green-500 uppercase font-semibold mb-2 tracking-widest">{t.me.what_helps}</div>
+                <div className="text-sm text-green-600 dark:text-green-500 uppercase font-semibold mb-2 tracking-widest">{t.me.what_helps}</div>
                 <div className="flex flex-wrap gap-2">{(data?.what_helps || []).map((h,i) => <span key={i} className="text-sm px-3 py-1.5 rounded border border-green-500/30 bg-green-500/5">{h}</span>)}</div>
              </div>
           </div>
 
           {/* Practice path */}
           <div className="pl-4 border-l-2 border-purple-500/50">
-             <div className="text-sm font-semibold uppercase mb-3 tracking-widest text-purple-500">{t.me.practice_path}</div>
+             <div className="text-sm font-semibold uppercase mb-3 tracking-widest text-purple-600 dark:text-purple-500">{t.me.practice_path}</div>
              <ol className="list-decimal pl-4 text-sm space-y-2 opacity-90">{(data?.practice?.steps || []).map((s,i) => <li key={i} className="leading-relaxed">{s}</li>)}</ol>
           </div>
       </div>
@@ -251,7 +332,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
     return () => { mounted = false; };
   }, [profile, language]);
 
-  if (loading) return <div className="text-center opacity-50 py-10">{t.common.loading}</div>;
+  if (loading) return <OracleLoading variant="mini" thinkingLabel={t.common.loading} />;
   if (error || !themes) return <div className="text-center text-danger py-10">{error || t.app.error}</div>;
 
   const coreThemeCards = [
@@ -259,7 +340,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
       key: 'drive',
       label: t.me.drive_card,
       tone: {
-        accent: 'text-gold-500',
+        accent: 'text-gold-600 dark:text-gold-500',
         border: 'border-gold-500/30',
         accentBorder: 'border-l-gold-500/60',
         dot: 'bg-gold-500',
@@ -270,7 +351,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
       key: 'fear',
       label: t.me.fear_card,
       tone: {
-        accent: 'text-danger',
+        accent: 'text-red-700 dark:text-danger',
         border: 'border-danger/30',
         accentBorder: 'border-l-danger/60',
         dot: 'bg-danger',
@@ -281,7 +362,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
       key: 'growth',
       label: t.me.growth_card,
       tone: {
-        accent: 'text-success',
+        accent: 'text-green-700 dark:text-success',
         border: 'border-success/30',
         accentBorder: 'border-l-success/60',
         dot: 'bg-success',
@@ -299,14 +380,14 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
               <span className={`w-2 h-2 rounded-full ${card.tone.dot} shrink-0`} />
             </div>
             <div>
-              <div className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${card.tone.accent}`}>
+              <div className={`text-xs font-bold uppercase tracking-widest mb-1 ${card.tone.accent}`}>
                 {card.label}
               </div>
               <h3 className="text-lg font-serif">{card.data.title}</h3>
             </div>
           </div>
-          <p className="text-sm leading-relaxed opacity-80">{card.data.summary || ''}</p>
-          <ul className="mt-4 space-y-2 text-sm opacity-80">
+          <p className="text-sm leading-relaxed opacity-90">{card.data.summary || ''}</p>
+          <ul className="mt-4 space-y-2 text-sm opacity-90">
             {(card.data.key_points || []).map((point, index) => (
               <li key={index} className="flex gap-2">
                 <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${card.tone.dot} shrink-0`} />
@@ -322,11 +403,32 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
 
 const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { language, t, tl } = useLanguage();
-    const { theme } = useTheme();
-    const [data, setData] = useState<T.TechnicalAnalysisContent | null>(null);
-    const [loading, setLoading] = useState(true);
-
+    const { checkAccess, openPaywall, entitlements, refreshEntitlements } = useEntitlement();
     const [extendedData, setExtendedData] = useState<T.ExtendedNatalData | null>(null);
+    const [loadingExtended, setLoadingExtended] = useState(true);
+    const pendingRequests = useRef(new Set<string>());
+
+    const requestDetailAccess = async (featureType: FeatureType, featureId: string) => {
+      const access = await checkAccess(featureType, featureId);
+      if (access.canAccess) {
+        return access;
+      }
+      if (access.needPurchase && access.price && (entitlements?.credits ?? 0) >= access.price) {
+        try {
+          const result = await purchaseWithCreditsV2(featureType, featureId);
+          if (result.success) {
+            await refreshEntitlements();
+            return { ...access, canAccess: true, needPurchase: false };
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      if (access.needPurchase) {
+        openPaywall(featureType, featureId, access.price);
+      }
+      return access;
+    };
 
     // Detail modal state
     const [detailModal, setDetailModal] = useState<{
@@ -339,17 +441,30 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     }>({ isOpen: false, type: 'elements', title: '', loading: false, error: null, content: null });
 
     const handleDetailClick = async (type: T.DetailType, title: string, chartData: Record<string, unknown>) => {
-      setDetailModal({ isOpen: true, type, title, loading: true, error: null, content: null });
+      const featureId = `natal_detail_${type}`;
+      
+      if (pendingRequests.current.has(featureId)) return;
+      pendingRequests.current.add(featureId);
+
       try {
+        const access = await requestDetailAccess('detail', featureId);
+        if (!access.canAccess) {
+          return;
+        }
+
+        setDetailModal({ isOpen: true, type, title, loading: true, error: null, content: null });
         const res = await fetchSectionDetail({
           type,
           context: 'natal',
           chartData,
           lang: language,
+          cacheKey: `natal:${buildBirthCacheKey(profile)}:${type}`,
         });
         setDetailModal(prev => ({ ...prev, loading: false, content: res.content }));
       } catch (err) {
         setDetailModal(prev => ({ ...prev, loading: false, error: t.detail.error_detail }));
+      } finally {
+        pendingRequests.current.delete(featureId);
       }
     };
 
@@ -361,43 +476,42 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         planets: { planets: extendedData.planets },
         asteroids: { asteroids: extendedData.asteroids },
         rulers: { rulers: extendedData.houseRulers },
+        synthesis: {},
       };
       handleDetailClick(detailModal.type, detailModal.title, chartDataMap[detailModal.type]);
     };
 
     useEffect(() => {
         let mounted = true;
+        let idleTimer: number | null = null;
         const loadExtended = async () => {
           try {
             const data = await Astro.calculateExtendedNatalData(profile);
-            if (mounted) setExtendedData(data);
+            if (mounted) {
+              setExtendedData(data);
+              setLoadingExtended(false);
+            }
           } catch {
-            if (mounted) setExtendedData(null);
+            if (mounted) {
+              setExtendedData(null);
+              setLoadingExtended(false);
+            }
           }
         };
-        loadExtended();
-        return () => { mounted = false; };
+        if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+          (window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => void })
+            .requestIdleCallback?.(() => loadExtended(), { timeout: 2000 });
+        } else {
+          idleTimer = window.setTimeout(loadExtended, 300);
+        }
+        return () => {
+          mounted = false;
+          if (idleTimer) clearTimeout(idleTimer);
+        };
     }, [profile]);
 
-    useEffect(() => {
-      let mounted = true;
-      const load = async () => {
-        try {
-          const res = await generateContent<T.TechnicalAnalysisContent>('NATAL_TECHNICAL', { profile }, language);
-          if (mounted) {
-            setData(res);
-            setLoading(false);
-          }
-        } catch (err) {
-          if (mounted) setLoading(false);
-        }
-      };
-      load();
-      return () => { mounted = false; };
-    }, [language, profile]);
-
-    if (loading) return <div className="p-4 opacity-50 animate-pulse">{t.common.loading}</div>;
-    if (!data || !extendedData) return <div className="p-4 text-danger">{t.app.error}</div>;
+    if (loadingExtended) return <OracleLoading variant="mini" thinkingLabel={t.common.loading} />;
+    if (!extendedData) return <div className="p-4 text-danger">{t.app.error}</div>;
 
     return (
         <div className="space-y-10">
@@ -503,13 +617,13 @@ const LandingPage: React.FC = () => {
             <div className="max-w-md relative z-10 animate-fade-in">
                 <div className="text-6xl md:text-8xl mb-8 mx-auto w-24 h-24 flex items-center justify-center rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-500 font-serif">☾</div>
                 <h1 className="text-5xl md:text-6xl font-serif font-medium mb-6 leading-tight tracking-tight">{t.app.name}</h1>
-                <p className="text-lg opacity-70 mb-10 leading-relaxed font-light px-4">{t.app.tagline}</p>
+                <p className="text-lg opacity-80 mb-10 leading-relaxed font-light px-4">{t.app.tagline}</p>
                 
                 <ActionButton onClick={handleStart} size="lg" className="mx-auto max-w-xs shadow-glow">
                     {t.app.landing_btn}
                 </ActionButton>
                 
-                <p className="mt-8 text-xs opacity-40 font-mono tracking-widest uppercase">
+                <p className="mt-8 text-xs opacity-70 font-mono tracking-widest uppercase">
                     Psychology × Astrology
                 </p>
             </div>
@@ -538,13 +652,13 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
   }, [cityQuery]);
   
   const headingClass = theme === 'dark' ? "text-star-50" : "text-paper-900";
-  const labelClass = "text-xs font-bold uppercase tracking-widest opacity-60 mb-2 block";
+  const labelClass = "text-xs font-bold uppercase tracking-widest opacity-80 mb-2 block";
 
   return (
     <Container className="flex items-center justify-center !pt-0">
       <div className="w-full max-w-md">
         <div className="mb-8 flex gap-2 justify-center">
-            {[1,2,3].map(i => <div key={i} className={`h-1 w-8 rounded-full transition-colors ${i <= step ? 'bg-gold-500' : 'bg-space-600'}`} />)}
+            {[1,2,3].map(i => <div key={i} className={`h-1 w-8 rounded-full transition-colors ${i <= step ? 'bg-gold-500' : (theme === 'dark' ? 'bg-white/10' : 'bg-paper-300')}`} />)}
         </div>
 
         {step === 1 && (
@@ -559,7 +673,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
                 <label className={labelClass}>{t.onboarding.label_time}</label>
                 <GlassInput type="time" onChange={e => setData({...data, birthTime: e.target.value})} />
               </div>
-              <div className="flex items-center gap-3 pt-2 opacity-80 hover:opacity-100 transition-opacity">
+              <div className="flex items-center gap-3 pt-2 opacity-90 hover:opacity-100 transition-opacity">
                 <input type="checkbox" className="accent-gold-500 w-4 h-4 rounded cursor-pointer" onChange={e => setData({...data, accuracyLevel: e.target.checked ? 'time_unknown' : 'exact'})}/>
                 <label className="text-sm cursor-pointer">{t.onboarding.label_unknown}</label>
               </div>
@@ -591,22 +705,22 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                 />
                 {showSuggestions && citySuggestions.length > 0 && (
-                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-space-600' : 'bg-white border-gray-200'} shadow-lg max-h-48 overflow-auto`}>
-                    {citySuggestions.map((city, i) => (
-                      <div
-                        key={i}
-                        className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-gray-100'}`}
-                        onMouseDown={() => {
-                          const label = city.country ? `${city.city}, ${city.country}` : city.city;
-                          setCityQuery(label);
-                          setData({ ...data, birthCity: label, lat: city.lat, lon: city.lon, timezone: city.timezone });
-                          setShowSuggestions(false);
-                        }}
-                      >
-                        <div className="font-medium">{city.city}</div>
-                        <div className="text-xs opacity-60">{city.country}</div>
-                      </div>
-                    ))}
+                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-white border-gray-200'} shadow-lg max-h-48 overflow-auto`}>
+                      {citySuggestions.map((city, i) => (
+                        <div
+                          key={i}
+                          className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-gray-100'}`}
+                          onMouseDown={() => {
+                            const label = city.country ? `${city.city}, ${city.country}` : city.city;
+                            setCityQuery(label);
+                            setData({ ...data, birthCity: label, lat: city.lat, lon: city.lon, timezone: city.timezone });
+                            setShowSuggestions(false);
+                          }}
+                        >
+                          <div className="font-medium">{city.city}</div>
+                          <div className="text-xs opacity-70">{city.country}</div>
+                        </div>
+                      ))}
                   </div>
                 )}
             </div>
@@ -618,7 +732,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
             <h2 className={`text-3xl font-serif font-medium mb-2 text-center ${headingClass}`}>
                 {language === 'zh' ? '该如何称呼你?' : 'What should we call you?'}
             </h2>
-            <p className="text-center opacity-60 mb-8 text-sm">
+            <p className="text-center opacity-80 mb-8 text-sm">
                 {language === 'zh' ? '我们将为你生成专属的星盘报告。' : 'We will generate a personalized chart report for you.'}
             </p>
             <div className="mb-8">
@@ -659,19 +773,21 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         return () => { mounted = false; };
     }, [profile, language]);
 
-    if (loading && !overview) return <Container className="flex justify-center items-center h-screen"><div className="text-gold-500 font-serif animate-pulse text-xl">{t.app.loading}</div></Container>;
+    if (loading && !overview) return <OracleLoading variant="fullscreen" thinkingLabel={t.app.loading} />;
     
     return (
         <Container>
-            <div className="flex justify-between items-end mb-12 border-b border-space-600 pb-6">
+            <div className={`flex justify-between items-end mb-12 border-b pb-6 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
               <div>
                   <h1 className="text-4xl font-serif font-medium mb-2">{t.me.hero_title}</h1>
-                  <p className="opacity-60 text-sm font-mono">{profile.birthDate} • {profile.birthCity}</p>
+                  <p className="text-sm font-mono">
+                  <span className="opacity-80">{profile.birthDate} • {profile.birthCity}</span>
                   {profile.lat !== undefined && profile.lon !== undefined && (
-                    <p className="opacity-40 text-xs font-mono mt-1">
-                      {profile.lon.toFixed(4)}°{profile.lon >= 0 ? 'E' : 'W'}, {profile.lat.toFixed(4)}°{profile.lat >= 0 ? 'N' : 'S'} • {profile.timezone || 'UTC'}
-                    </p>
+                    <span className="opacity-70 text-xs ml-2">
+                      {profile.lon.toFixed(4)}°{profile.lon >= 0 ? 'E' : 'W'}, {profile.lat.toFixed(4)}°{profile.lat >= 0 ? 'N' : 'S'} • {formatTimezoneOffset(profile.timezone)}
+                    </span>
                   )}
+                  </p>
               </div>
               <div className="hidden md:block text-xs font-bold uppercase tracking-widest text-gold-500 border border-gold-500 px-3 py-1 rounded-full">
                   {profile.name || (language === 'zh' ? '用户' : 'User')}
@@ -709,18 +825,41 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
               
               <Section title={t.me.deep_dive}>
                 <div className="grid gap-4">
-                  {DIMENSIONS.map(d => (
-                      <Accordion key={d.key} title={language === 'zh' ? d.label_zh : d.label_en} subtitle={language === 'zh' ? d.source_zh : d.source_en}>
-                      <DimensionContent dim={d.key} label={language === 'zh' ? d.label_zh : d.label_en} profile={profile} />
-                      </Accordion>
-                  ))}
+                  {DIMENSIONS.map((d, index) => {
+                    // 前 2 个维度（Emotions, Attachment）免费，其余需要付费
+                    const isFree = index < 2;
+                    const dimensionLabel = language === 'zh' ? d.label_zh : d.label_en;
+
+                    if (isFree) {
+                      return (
+                        <Accordion key={d.key} title={dimensionLabel} subtitle={language === 'zh' ? d.source_zh : d.source_en}>
+                          <DimensionContent dim={d.key} label={dimensionLabel} profile={profile} />
+                        </Accordion>
+                      );
+                    }
+
+                    // 付费维度使用 LockedAccordion - 左侧标题+右侧解锁按钮
+                    return (
+                      <LockedAccordion
+                        key={d.key}
+                        featureType="dimension"
+                        featureId={d.key}
+                        title={dimensionLabel}
+                        subtitle={language === 'zh' ? d.source_zh : d.source_en}
+                      >
+                        <DimensionContent dim={d.key} label={dimensionLabel} profile={profile} />
+                      </LockedAccordion>
+                    );
+                  })}
+                  <LockedAccordion
+                    featureType="core_theme"
+                    featureId="all"
+                    title={t.me.core_themes}
+                    subtitle={language === 'zh' ? '驱动力·恐惧·成长' : 'Drive · Fear · Growth'}
+                  >
+                    <CoreThemesContent profile={profile} />
+                  </LockedAccordion>
                 </div>
-              </Section>
-              
-              <Section>
-                <Accordion title={t.me.core_themes}>
-                  <CoreThemesContent profile={profile} />
-                </Accordion>
               </Section>
               
               <Section title={t.me.tech_specs}>
@@ -734,47 +873,48 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 };
 
 const DetailedScoreRow: React.FC<{ label: string, data: T.DailyEnergy, tone: { bg: string, border: string, text: string } }> = ({ label, data, tone }) => {
-    const [isOpen, setIsOpen] = useState(true);
     const { t, language } = useLanguage();
+    const { theme } = useTheme();
 
     if (!data) return null;
 
     return (
-        <div
-            onClick={() => setIsOpen(!isOpen)}
-            className="mb-4 last:mb-0 cursor-pointer group"
-        >
-            <div className="flex justify-between items-center mb-1">
-                <div className="flex items-center gap-2">
-                    <span className="text-sm font-bold uppercase tracking-widest text-current">{label}</span>
-                    <span className={`text-sm transition-transform duration-200 ${isOpen ? `rotate-180 ${tone.text}` : 'opacity-40'}`}>▼</span>
-                </div>
-                <span className="text-sm font-mono opacity-60">{data.score}%</span>
-            </div>
-
-            <div className="h-1.5 w-full bg-space-600/30 rounded-full overflow-hidden mb-2">
-                <div className={`h-full ${tone.bg} transition-all duration-1000 ease-out`} style={{ width: `${data.score}%` }} />
-            </div>
-
-            <div className={`
-                overflow-hidden transition-all duration-300 ease-in-out
-                ${isOpen ? 'max-h-48 opacity-100 mt-2' : 'max-h-0 opacity-0'}
-            `}>
-                <Card className={`${tone.border}`} noPadding>
-                    <div className="p-4 text-base">
-                        <div className="mb-2"><span className="font-bold opacity-60 uppercase mr-2 text-sm">{language === 'zh' ? '心理' : 'Psych'}</span> {data.feeling}</div>
-                        <div className="mb-2"><span className="font-bold opacity-60 uppercase mr-2 text-sm">{t.today.scene}</span> {data.scenario}</div>
-                        <div className={`font-medium ${tone.text}`}><span className="font-bold opacity-60 uppercase mr-2 text-sm text-current">{t.today.action}</span> {data.action}</div>
+        <Card className="mb-3 last:mb-0 before:hidden h-full flex flex-col justify-between" noPadding>
+            <div className="p-4 h-full flex flex-col">
+                <div>
+                    <div className="flex justify-between items-center mb-1.5">
+                        <span className="text-xs font-bold uppercase tracking-widest text-current opacity-80">{label}</span>
+                        <span className="text-xs font-mono opacity-80">{data.score}%</span>
                     </div>
-                </Card>
+
+                    <div className={`h-1 w-full rounded-full overflow-hidden mb-3 ${theme === 'dark' ? 'bg-white/10' : 'bg-paper-200'}`}>
+                        <div className={`h-full ${tone.bg} opacity-90`} style={{ width: `${data.score}%` }} />
+                    </div>
+                </div>
+
+                <div className="text-xs space-y-1.5 opacity-90 flex-1 flex flex-col justify-between">
+                    <div className="flex items-start gap-3">
+                        <span className="font-bold opacity-60 uppercase text-xs tracking-wider mt-0.5 shrink-0 w-11">{language === 'zh' ? '心理' : 'Psych'}</span> 
+                        <span className="leading-snug">{data.feeling}</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                        <span className="font-bold opacity-60 uppercase text-xs tracking-wider mt-0.5 shrink-0 w-11">{t.today.scene}</span> 
+                        <span className="leading-snug">{data.scenario}</span>
+                    </div>
+                    <div className={`${tone.text} font-medium flex items-start gap-3`}>
+                        <span className="font-bold opacity-60 uppercase text-xs tracking-wider mt-0.5 shrink-0 w-11 text-current">{t.today.action}</span> 
+                        <span className="leading-snug">{data.action}</span>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Card>
     );
 };
 
 const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language, tl } = useLanguage();
     const { theme } = useTheme();
+    const { checkAccess, openPaywall, entitlements, refreshEntitlements } = useEntitlement();
     
     // Calculate current period based on user timezone
     const currentPeriod = useMemo(() => {
@@ -798,11 +938,36 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
     const [publicData, setPublicData] = useState<T.DailyPublicContent | null>(null);
     const [detailData, setDetailData] = useState<T.DailyDetailContent | null>(null);
+    const [detailError, setDetailError] = useState<string | null>(null);
     const [viewDetail, setViewDetail] = useState(false);
     const [transitData, setTransitData] = useState<{ positions: T.PlanetPosition[]; aspects: T.Aspect[] } | null>(null);
     const [extendedNatal, setExtendedNatal] = useState<T.ExtendedNatalData | null>(null);
     const detailRetryTimer = React.useRef<number | null>(null);
     const detailFetching = React.useRef(false);
+    const detailRetryDelayMs = React.useRef(4000);
+    const pendingRequests = useRef(new Set<string>());
+
+    const requestDetailAccess = async (featureType: FeatureType, featureId: string) => {
+      const access = await checkAccess(featureType, featureId);
+      if (access.canAccess) {
+        return access;
+      }
+      if (access.needPurchase && access.price && (entitlements?.credits ?? 0) >= access.price) {
+        try {
+          const result = await purchaseWithCreditsV2(featureType, featureId);
+          if (result.success) {
+            await refreshEntitlements();
+            return { ...access, canAccess: true, needPurchase: false };
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      if (access.needPurchase) {
+        openPaywall(featureType, featureId, access.price);
+      }
+      return access;
+    };
 
     // Detail modal state for transit data
     const [transitDetailModal, setTransitDetailModal] = useState<{
@@ -816,18 +981,32 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
     const handleTransitDetailClick = async (type: T.DetailType, title: string, chartData: Record<string, unknown>) => {
       const date = getDateInTimeZone(profile.timezone);
-      setTransitDetailModal({ isOpen: true, type, title, loading: true, error: null, content: null });
+      const featureId = date;
+      const requestKey = `transit_detail_${type}_${date}`;
+
+      if (pendingRequests.current.has(requestKey)) return;
+      pendingRequests.current.add(requestKey);
+
       try {
+        const access = await requestDetailAccess('daily_transit', featureId);
+        if (!access.canAccess) {
+          return;
+        }
+
+        setTransitDetailModal({ isOpen: true, type, title, loading: true, error: null, content: null });
         const res = await fetchSectionDetail({
           type,
           context: 'transit',
           chartData,
           lang: language,
           transitDate: date,
+          cacheKey: `transit:${buildBirthCacheKey(profile)}:${date}:${type}`,
         });
         setTransitDetailModal(prev => ({ ...prev, loading: false, content: res.content }));
       } catch (err) {
         setTransitDetailModal(prev => ({ ...prev, loading: false, error: t.detail.error_detail }));
+      } finally {
+        pendingRequests.current.delete(requestKey);
       }
     };
 
@@ -842,29 +1021,16 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         planets: { planets },
         asteroids: { asteroids },
         rulers: { rulers: extendedNatal.houseRulers },
+        synthesis: {},
       };
       handleTransitDetailClick(transitDetailModal.type, transitDetailModal.title, chartDataMap[transitDetailModal.type]);
     };
 
-    // 加载行运数据
-    useEffect(() => {
-        let mounted = true;
-        const loadTransit = async () => {
-          try {
-            const date = getDateInTimeZone(profile.timezone);
-            const data = await Astro.calculateDailyTransits(date, profile);
-            if (mounted && data) setTransitData(data);
-          } catch {
-            if (mounted) setTransitData(null);
-          }
-        };
-        loadTransit();
-        return () => { mounted = false; };
-    }, [profile]);
-
     // 加载本命扩展数据（宫主星等）
     useEffect(() => {
+        if (!publicData) return;
         let mounted = true;
+        let idleTimer: number | null = null;
         const loadExtended = async () => {
           try {
             const data = await Astro.calculateExtendedNatalData(profile);
@@ -873,25 +1039,46 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             if (mounted) setExtendedNatal(null);
           }
         };
-        loadExtended();
-        return () => { mounted = false; };
-    }, [profile]);
+        if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+          (window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => void })
+            .requestIdleCallback?.(() => loadExtended(), { timeout: 2000 });
+        } else {
+          idleTimer = window.setTimeout(loadExtended, 300);
+        }
+        return () => {
+          mounted = false;
+          if (idleTimer) clearTimeout(idleTimer);
+        };
+    }, [profile, publicData]);
 
     useEffect(() => {
       let mounted = true;
       const load = async () => {
         try {
           const date = getDateInTimeZone(profile.timezone);
-          const pData = await generateContent<T.DailyPublicContent>('DAILY_PUBLIC', { profile, date }, language);
-          if (mounted) setPublicData(pData);
-        } catch (err) {}
+          const result = await fetchDailyForecast(profile, date, language);
+          if (mounted) {
+            setPublicData(result.content as T.DailyPublicContent);
+            if (result.transits) {
+              setTransitData({
+                positions: result.transits.positions || [],
+                aspects: result.transits.aspects || [],
+              });
+            }
+          }
+        } catch (err) {
+          if (mounted) {
+            setPublicData(null);
+            setTransitData(null);
+          }
+        }
       };
       load();
       return () => { mounted = false; };
     }, [language, profile]);
 
     useEffect(() => {
-      if (!viewDetail || detailData) return () => {};
+      if (!viewDetail || detailData || detailError) return () => {};
       let cancelled = false;
 
       const fetchDetail = async () => {
@@ -899,17 +1086,25 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         detailFetching.current = true;
         try {
           const date = getDateInTimeZone(profile.timezone);
-          const dData = await generateContent<T.DailyDetailContent>('DAILY_DETAIL', { profile, date }, language);
-          if (!cancelled && dData) {
-            setDetailData(dData);
+          const result = await fetchDailyDetail(profile, date, language);
+          if (!cancelled && result?.content) {
+            setDetailData(result.content as T.DailyDetailContent);
+            setDetailError(null);
+            detailRetryDelayMs.current = 4000;
             return;
           }
         } catch (err) {
+          if (!cancelled && err && typeof err === 'object' && 'status' in err) {
+            setDetailError(t.app.error);
+            return;
+          }
         } finally {
           detailFetching.current = false;
         }
         if (!cancelled) {
-          detailRetryTimer.current = window.setTimeout(fetchDetail, 4000);
+          const delay = detailRetryDelayMs.current;
+          detailRetryDelayMs.current = Math.min(detailRetryDelayMs.current * 2, 32000);
+          detailRetryTimer.current = window.setTimeout(fetchDetail, delay);
         }
       };
 
@@ -922,10 +1117,24 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           detailRetryTimer.current = null;
         }
       };
-    }, [viewDetail, detailData, profile, language]);
+    }, [viewDetail, detailData, detailError, profile, language, t.app.error]);
+
+    useEffect(() => {
+      setDetailData(null);
+      setDetailError(null);
+      detailRetryDelayMs.current = 4000;
+    }, [language, profile]);
 
     const loadDetail = () => {
+      setDetailError(null);
+      detailRetryDelayMs.current = 4000;
       setViewDetail(true);
+    };
+
+    const retryDetail = () => {
+      setDetailError(null);
+      detailRetryDelayMs.current = 4000;
+      setDetailData(null);
     };
 
     // 兼容新旧数据结构
@@ -933,7 +1142,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const focusData = publicData?.daily_focus;
     const strategyData = publicData?.strategy;
 
-    if (!publicData) return <Container className="flex justify-center items-center h-screen"><div className="text-gold-500 font-serif animate-pulse">{t.app.loading}</div></Container>;
+    if (!publicData) return <OracleLoading variant="fullscreen" thinkingLabel={t.app.loading} />;
 
     // 获取 4D 维度配置
     const getDimensionConfig = () => {
@@ -955,24 +1164,29 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     };
 
     const dimensionConfig = getDimensionConfig();
+    const hasTransitDetails = Boolean(
+      (transitData?.aspects && transitData.aspects.length > 0)
+      || (transitData?.positions && transitData.positions.length > 0)
+      || (extendedNatal?.houseRulers && extendedNatal.houseRulers.length > 0)
+    );
 
     return (
         <>
         <Container>
             <h1 className="text-4xl font-serif font-medium mb-2">{t.today.label}</h1>
-            <p className="opacity-60 mb-10 font-mono text-sm">{publicData?.date}</p>
+            <p className="opacity-80 mb-10 font-mono text-sm">{publicData?.date}</p>
 
             {/* Today's Theme Card - v3.0 新入口区 */}
-            <Card className="mb-12 border-l-2 border-l-gold-500 shadow-lg" noPadding>
-              <div className="p-8 text-center border-b border-space-600/30">
+            <Card className="mb-12 before:hidden border-0 shadow-none !border-l-0" noPadding>
+              <div className="p-8 text-center">
                 <div className="inline-block px-4 py-2 mb-4 rounded-lg border border-gold-500/30 bg-gold-500/5">
                   <h2 className="text-2xl font-serif font-medium text-gold-500">{publicData?.theme_title}</h2>
                 </div>
                 {publicData?.theme_explanation && (
-                  <p className="text-base opacity-80 leading-relaxed max-w-6xl mx-auto">{publicData.theme_explanation}</p>
+                  <p className="text-base opacity-90 leading-relaxed max-w-6xl mx-auto">{publicData.theme_explanation}</p>
                 )}
                 {publicData?.anchor_quote && !publicData?.theme_explanation && (
-                  <p className="text-lg font-serif italic opacity-80 mt-2 text-center">"{publicData.anchor_quote}"</p>
+                  <p className="text-lg font-serif italic opacity-90 mt-2 text-center">"{publicData.anchor_quote}"</p>
                 )}
               </div>
 
@@ -992,15 +1206,19 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                         {['morning', 'midday', 'evening'].map((period) => {
                           const isSelected = period === currentPeriod;
                           const toneClass = isSelected
-                            ? 'border-l-gold-500'
-                            : theme === 'dark'
-                              ? 'border-l-space-400/60'
-                              : 'border-l-gold-500/30';
+                            ? 'bg-gold-500/10 border border-gold-500 shadow-[0_0_15px_rgba(234,179,8,0.3)]'
+                            : (theme === 'dark' ? 'opacity-80 grayscale border border-white/5 bg-space-800/30' : 'opacity-60 grayscale border border-paper-300 bg-paper-200/50');
+                          
+                          let label = t.today[period as keyof typeof t.today];
+                          if (period === 'evening') {
+                              label = language === 'zh' ? '晚上' : 'Night';
+                          }
+
                           return (
-                            <Card key={period} className={`${toneClass}`} noPadding>
+                            <Card key={period} className={`${toneClass} transition-all duration-300 before:hidden`} noPadding>
                               <div className="p-4 text-center flex flex-col justify-center">
-                                <span className={`block text-sm font-bold uppercase mb-2 ${isSelected ? 'text-gold-500' : 'opacity-60'}`}>
-                                  {t.today[period as keyof typeof t.today]}
+                                <span className={`block text-sm font-bold uppercase mb-2 ${isSelected ? 'text-gold-500' : 'opacity-70'}`}>
+                                  {label}
                                   {isSelected && <span className="ml-1">●</span>}
                                 </span>
                                 <p className="text-base leading-snug">{publicData?.time_windows?.[period as keyof typeof publicData.time_windows]}</p>
@@ -1037,7 +1255,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
             {!viewDetail ? (
               <div className="text-center animate-fade-in">
-                  <p className="text-sm opacity-60 mb-6 max-w-3xl mx-auto">
+                  <p className="text-sm opacity-80 mb-6 max-w-3xl mx-auto">
                       {language === 'zh' ? '想要了解这一切背后的深层心理机制和具体练习？' : 'Want to understand the deep psychology and specific practices behind this?'}
                   </p>
                   <ActionButton onClick={loadDetail} variant="secondary" className="mx-auto min-w-[240px] shadow-lg border-gold-500/30">
@@ -1045,6 +1263,13 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   </ActionButton>
               </div>
             ) : (
+              <LockedAccordion
+                featureType="daily_script"
+                featureId={publicData?.date}
+                title={language === 'zh' ? '今日剧本详情' : 'Daily Script Details'}
+                subtitle={language === 'zh' ? '今日有效' : 'Valid today only'}
+                defaultOpen={true}
+              >
               <div className="animate-fade-in space-y-8 pb-12">
                 {detailData ? (
                   <>
@@ -1052,29 +1277,6 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                         <h3 className="text-2xl font-serif mb-6">{t.today.theme_expanded}</h3>
                         <p className="text-lg leading-loose opacity-90 text-justify md:text-center">{detailData?.theme_elaborated}</p>
                     </div>
-
-                    {/* Transit Chart - 行运星盘 */}
-                    <Section title={t.today.transit_chart} className="!mb-0">
-                      <div className="mt-4 flex justify-center">
-                        <div className="relative w-full">
-                          <AstroChart
-                            type="transit"
-                            profile={profile}
-                            scale={0.576}
-                            compactSpacing
-                            legendLabels={{
-                              conjunction: t.me.aspect_conjunction,
-                              opposition: t.me.aspect_opposition,
-                              square: t.me.aspect_square,
-                              trine: t.me.aspect_trine,
-                              sextile: t.me.aspect_sextile,
-                            }}
-                            loadingLabel={t.common.loading}
-                            errorLabel={t.app.error}
-                          />
-                        </div>
-                      </div>
-                    </Section>
 
                     {/* Shifted container for personalization and subsequent modules */}
                     <div className="space-y-8">
@@ -1092,8 +1294,8 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                             <p className="text-base leading-relaxed">{detailData.personalization.pattern_activated}</p>
                           </div>
                           {detailData.personalization.why_today && (
-                            <div className="p-3 rounded border border-l-2 border-l-gold-500/60">
-                              <p className="text-base italic text-gold-500">{detailData.personalization.why_today}</p>
+                            <div className="p-6 rounded-2xl border border-gold-500/30 border-l-[3px] border-l-gold-500/60 bg-gold-500/5">
+                              <p className="text-base leading-loose text-gold-500 font-medium">{detailData.personalization.why_today}</p>
                             </div>
                           )}
                         </div>
@@ -1140,83 +1342,114 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                           <div className="font-serif text-lg italic opacity-80 text-gold-500">"{detailData?.one_question}"</div>
                         </div>
                     </Card>
-
-                    <Accordion title={t.today.tech}>
-                        <div className="space-y-8">
-                            {/* Transit Cross Aspect Matrix (行运-本命交叉相位) */}
-                            {transitData?.aspects && transitData.aspects.length > 0 && (
-                              <div>
-                                <SectionHeader
-                                  title={t.today.aspects_matrix}
-                                  onDetailClick={() => handleTransitDetailClick('aspects', t.detail.modal_title_aspects, { aspects: transitData.aspects })}
-                                />
-                                <CrossAspectMatrix
-                                  aspects={transitData.aspects}
-                                  language={language}
-                                  transitLabel={language === 'zh' ? '行运' : 'Transit'}
-                                  natalLabel={language === 'zh' ? '本命' : 'Natal'}
-                                />
-                              </div>
-                            )}
-
-                            {/* Transit Planet Positions - Split into Planets and Asteroids */}
-                            {transitData?.positions && transitData.positions.length > 0 && (() => {
-                              const MAJOR_PLANETS = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'Ascendant', 'Descendant', 'Midheaven', 'IC'];
-                              const planets = transitData.positions.filter(p => MAJOR_PLANETS.includes(p.name));
-                              const asteroids = transitData.positions.filter(p => !MAJOR_PLANETS.includes(p.name));
-                              const tableLabels = { body: t.me.table_body, sign: t.me.table_sign, house: t.me.table_house, retro: t.me.table_retro };
-                              return (
-                                <div className="space-y-6">
-                                  {planets.length > 0 && (
-                                    <div>
-                                      <SectionHeader
-                                        title={language === 'zh' ? '行运行星' : 'Transit Planets'}
-                                        onDetailClick={() => handleTransitDetailClick('planets', t.detail.modal_title_planets, { planets })}
-                                      />
-                                      <PlanetTable planets={planets} language={language} labels={tableLabels} />
-                                    </div>
-                                  )}
-                                  {asteroids.length > 0 && (
-                                    <div>
-                                      <SectionHeader
-                                        title={language === 'zh' ? '行运小行星' : 'Transit Asteroids'}
-                                        onDetailClick={() => handleTransitDetailClick('asteroids', t.detail.modal_title_asteroids, { asteroids })}
-                                      />
-                                      <PlanetTable planets={asteroids} language={language} labels={tableLabels} />
-                                    </div>
-                                  )}
-                                </div>
-                              );
-                            })()}
-
-                            {/* House Rulers */}
-                            {extendedNatal?.houseRulers && extendedNatal.houseRulers.length > 0 && (
-                              <div>
-                                <SectionHeader
-                                  title={language === 'zh' ? '宫主星' : 'House Rulers'}
-                                  onDetailClick={() => handleTransitDetailClick('rulers', t.detail.modal_title_rulers, { rulers: extendedNatal.houseRulers })}
-                                />
-                                <HouseRulerTable
-                                  rulers={extendedNatal.houseRulers}
-                                  language={language}
-                                  labels={{
-                                    house: t.me.table_house,
-                                    sign: t.me.table_sign,
-                                    ruler: t.me.table_ruler,
-                                    flies_to: t.me.table_flies_to,
-                                  }}
-                                />
-                              </div>
-                            )}
-
-                        </div>
-                    </Accordion>
                   </div>
                   </>
+                ) : detailError ? (
+                  <div className="text-center opacity-70 py-12 space-y-4">
+                    <div>{detailError}</div>
+                    <ActionButton size="sm" variant="secondary" onClick={retryDetail}>
+                      {t.common.retry}
+                    </ActionButton>
+                  </div>
                 ) : (
-                  <div className="text-center opacity-50 py-12 animate-pulse">{t.common.analyzing}</div>
+                  <div className="text-center opacity-70 py-12 animate-pulse">{t.common.analyzing}</div>
                 )}
               </div>
+              </LockedAccordion>
+            )}
+
+            <Section title={t.today.transit_chart}>
+              <div className="mt-4 flex justify-center">
+                <div className="relative w-full">
+                  <AstroChart
+                    type="transit"
+                    profile={profile}
+                    scale={0.576}
+                    compactSpacing
+                    legendLabels={{
+                      conjunction: t.me.aspect_conjunction,
+                      opposition: t.me.aspect_opposition,
+                      square: t.me.aspect_square,
+                      trine: t.me.aspect_trine,
+                      sextile: t.me.aspect_sextile,
+                    }}
+                    loadingLabel={t.common.loading}
+                    errorLabel={t.app.error}
+                  />
+                </div>
+              </div>
+            </Section>
+
+            {hasTransitDetails && (
+              <Section title={t.today.astro_details}>
+                <div className="space-y-8">
+                  {/* Transit Cross Aspect Matrix (行运-本命交叉相位) */}
+                  {transitData?.aspects && transitData.aspects.length > 0 && (
+                    <div>
+                      <SectionHeader
+                        title={t.today.aspects_matrix}
+                        onDetailClick={() => handleTransitDetailClick('aspects', t.detail.modal_title_aspects, { aspects: transitData.aspects })}
+                      />
+                      <CrossAspectMatrix
+                        aspects={transitData.aspects}
+                        language={language}
+                        transitLabel={language === 'zh' ? '行运' : 'Transit'}
+                        natalLabel={language === 'zh' ? '本命' : 'Natal'}
+                      />
+                    </div>
+                  )}
+
+                  {/* Transit Planet Positions - Split into Planets and Asteroids */}
+                  {transitData?.positions && transitData.positions.length > 0 && (() => {
+                    const MAJOR_PLANETS = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'Ascendant', 'Descendant', 'Midheaven', 'IC'];
+                    const planets = transitData.positions.filter(p => MAJOR_PLANETS.includes(p.name));
+                    const asteroids = transitData.positions.filter(p => !MAJOR_PLANETS.includes(p.name));
+                    const tableLabels = { body: t.me.table_body, sign: t.me.table_sign, house: t.me.table_house, retro: t.me.table_retro };
+                    return (
+                      <div className="space-y-6">
+                        {planets.length > 0 && (
+                          <div>
+                            <SectionHeader
+                              title={language === 'zh' ? '行运行星' : 'Transit Planets'}
+                              onDetailClick={() => handleTransitDetailClick('planets', t.detail.modal_title_planets, { planets })}
+                            />
+                            <PlanetTable planets={planets} language={language} labels={tableLabels} />
+                          </div>
+                        )}
+                        {asteroids.length > 0 && (
+                          <div>
+                            <SectionHeader
+                              title={language === 'zh' ? '行运小行星' : 'Transit Asteroids'}
+                              onDetailClick={() => handleTransitDetailClick('asteroids', t.detail.modal_title_asteroids, { asteroids })}
+                            />
+                            <PlanetTable planets={asteroids} language={language} labels={tableLabels} />
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
+
+                  {/* House Rulers */}
+                  {extendedNatal?.houseRulers && extendedNatal.houseRulers.length > 0 && (
+                    <div>
+                      <SectionHeader
+                        title={language === 'zh' ? '宫主星' : 'House Rulers'}
+                        onDetailClick={() => handleTransitDetailClick('rulers', t.detail.modal_title_rulers, { rulers: extendedNatal.houseRulers })}
+                      />
+                      <HouseRulerTable
+                        rulers={extendedNatal.houseRulers}
+                        language={language}
+                        labels={{
+                          house: t.me.table_house,
+                          sign: t.me.table_sign,
+                          ruler: t.me.table_ruler,
+                          flies_to: t.me.table_flies_to,
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </Section>
             )}
         </Container>
 
@@ -1263,7 +1496,7 @@ const CyclesPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     return (
         <Container>
             <h1 className="text-4xl font-serif font-medium mb-2">{t.cycles.title}</h1>
-            <p className="opacity-60 mb-10">{t.cycles.subtitle}</p>
+            <p className="opacity-70 mb-10">{t.cycles.subtitle}</p>
             <div className="space-y-3">
               {cycles.map(c => { 
                 const named = namedCycles[c.id]; 
@@ -1330,8 +1563,8 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
 
   // Badge styling for elements/modalities
   const badgeClass = theme === 'dark'
-    ? 'inline-flex items-center justify-center text-[10px] uppercase font-bold tracking-wider px-4 py-2 rounded-full border border-space-600/50 bg-space-800/60 text-star-200 backdrop-blur-sm'
-    : 'inline-flex items-center justify-center text-[10px] uppercase font-bold tracking-wider px-4 py-2 rounded-full border border-paper-300/60 bg-paper-50/80 text-paper-700';
+    ? 'inline-flex items-center justify-center text-xs uppercase font-bold tracking-wider px-4 py-2 rounded-full border border-gold-500/15/50 bg-space-800/60 text-star-200 backdrop-blur-sm'
+    : 'inline-flex items-center justify-center text-xs uppercase font-bold tracking-wider px-4 py-2 rounded-full border border-paper-300/60 bg-paper-50/80 text-paper-700';
 
   // Check if using new v4 structure or legacy
   const isV4 = Boolean(script.vibe_check);
@@ -1395,15 +1628,15 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
               <div className="text-xs font-bold uppercase text-star-200 mb-3">{t.us.script_planets_love_action}</div>
               <div className="space-y-3 text-sm">
                 <div>
-                  <span className="font-bold opacity-60 block text-xs uppercase">{t.us.script_venus_love}</span>
+                  <span className="font-bold opacity-70 block text-xs uppercase">{t.us.script_venus_love}</span>
                   {script.configurations?.venus}
                 </div>
                 <div>
-                  <span className="font-bold opacity-60 block text-xs uppercase">{t.us.script_mars_drive}</span>
+                  <span className="font-bold opacity-70 block text-xs uppercase">{t.us.script_mars_drive}</span>
                   {script.configurations?.mars}
                 </div>
                 <div>
-                  <span className="font-bold opacity-60 block text-xs uppercase">{t.us.script_mercury_comm}</span>
+                  <span className="font-bold opacity-70 block text-xs uppercase">{t.us.script_mercury_comm}</span>
                   {script.configurations?.mercury}
                 </div>
               </div>
@@ -1412,15 +1645,15 @@ const NatalScriptCard: React.FC<{ title: string, script: T.NatalScript, colorCla
               <div className="text-xs font-bold uppercase text-accent mb-3">{t.us.script_houses_arenas}</div>
               <div className="space-y-3 text-sm">
                 <div>
-                  <span className="font-bold opacity-60 block text-xs uppercase">{t.us.script_h5_romance}</span>
+                  <span className="font-bold opacity-70 block text-xs uppercase">{t.us.script_h5_romance}</span>
                   {script.configurations?.houses?.h5}
                 </div>
                 <div>
-                  <span className="font-bold opacity-60 block text-xs uppercase">{t.us.script_h7_partner}</span>
+                  <span className="font-bold opacity-70 block text-xs uppercase">{t.us.script_h7_partner}</span>
                   {script.configurations?.houses?.h7}
                 </div>
                 <div>
-                  <span className="font-bold opacity-60 block text-xs uppercase">{t.us.script_h8_intimacy}</span>
+                  <span className="font-bold opacity-70 block text-xs uppercase">{t.us.script_h8_intimacy}</span>
                   {script.configurations?.houses?.h8}
                 </div>
               </div>
@@ -1639,7 +1872,7 @@ const PerspectiveCard: React.FC<{
             fusion: { color: 'text-gold-500', bg: 'bg-gold-500/15', border: 'border-gold-500/40', label: t.us.intensity_fusion, icon: '✦' },
         }[intensity] || { color: 'text-star-200', bg: 'bg-star-200/15', border: 'border-star-200/40', label: intensity, icon: '○' };
         return (
-            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${config.bg} ${config.border} ${config.color}`}>
+            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${config.bg} ${config.border} ${config.color}`}>
                 <span>{config.icon}</span>
                 {config.label}
             </span>
@@ -1660,7 +1893,7 @@ const PerspectiveCard: React.FC<{
                     <span className="text-2xl">{icon}</span>
                     <div>
                         <div className="font-semibold">{title}</div>
-                        <div className="text-[10px] uppercase tracking-widest opacity-60">{subtitle}</div>
+                        <div className="text-xs uppercase tracking-widest opacity-70">{subtitle}</div>
                     </div>
                 </div>
                 <IntensityBadge intensity={item.intensity} />
@@ -1671,8 +1904,8 @@ const PerspectiveCard: React.FC<{
                     <p className="text-sm leading-relaxed opacity-85">{item.description}</p>
                 </div>
                 {item.talk_script && (
-                    <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100'} border border-dashed ${theme === 'dark' ? 'border-space-600' : 'border-paper-300'}`}>
-                        <div className="text-[10px] uppercase tracking-widest text-gold-500 mb-2 font-bold">{t.us.dynamics_talk_to}</div>
+                    <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100'} border border-dashed ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
+                        <div className="text-xs uppercase tracking-widest text-gold-500 mb-2 font-bold">{t.us.dynamics_talk_to}</div>
                         <p className="text-sm font-serif italic opacity-90">"{item.talk_script}"</p>
                     </div>
                 )}
@@ -1694,11 +1927,11 @@ const PerspectiveCard: React.FC<{
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xl ${iconClass}`}>{icon}</div>
                 <div>
                     <div className="font-semibold">{title}</div>
-                    <div className="text-[10px] uppercase tracking-widest opacity-60">{houseLabel}</div>
+                    <div className="text-xs uppercase tracking-widest opacity-70">{houseLabel}</div>
                 </div>
             </div>
             <div className="space-y-2 text-sm">
-                <div className="text-[10px] uppercase tracking-widest opacity-50">{zone.houses}</div>
+                <div className="text-xs uppercase tracking-widest opacity-70">{zone.houses}</div>
                 <div>
                     <span className={`${DETAIL_LABEL_CLASS} block mb-1`}>{t.us.landscape_feeling}</span>
                     <p className="opacity-90">{zone.feeling}</p>
@@ -1716,7 +1949,7 @@ const PerspectiveCard: React.FC<{
         const bubbleBase = "max-w-[82%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm";
         const bubbleNeutral = theme === 'dark' ? 'bg-[#F6F0E6] text-space-900' : 'bg-[#FAF6EF] text-paper-900';
         const bubbleGreen = theme === 'dark' ? 'bg-[#7BD870] text-space-950' : 'bg-[#95EC69] text-space-950';
-        const bubbleBorder = theme === 'dark' ? 'border-space-600' : 'border-paper-300';
+        const bubbleBorder = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
 
         const SensCard = ({ icon, label, p }: { icon: string, label: string, p: T.SensitivityPoint }) => (
             <Card className="border-l-2 border-l-gold-500/40">
@@ -1847,30 +2080,30 @@ const PerspectiveCard: React.FC<{
                                 <div className="space-y-3">
                                     <div className="flex justify-start">
                                         <div className={`${bubbleBase} ${bubbleNeutral}`}>
-                                            <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{otherName} · {t.us.perspective_trigger}</div>
+                                            <div className="text-xs uppercase tracking-widest opacity-70 mb-1">{otherName} · {t.us.perspective_trigger}</div>
                                             {data.closing.cycle.trigger}
                                         </div>
                                     </div>
                                     <div className="flex justify-end">
                                         <div className={`${bubbleBase} ${bubbleGreen}`}>
-                                            <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{selfName} · {t.us.perspective_reaction}</div>
+                                            <div className="text-xs uppercase tracking-widest opacity-70 mb-1">{selfName} · {t.us.perspective_reaction}</div>
                                             {data.closing.cycle.reaction_self}
                                         </div>
                                     </div>
                                     <div className="flex justify-start">
                                         <div className={`${bubbleBase} ${bubbleNeutral}`}>
-                                            <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{otherName} · {t.us.perspective_reaction}</div>
+                                            <div className="text-xs uppercase tracking-widest opacity-70 mb-1">{otherName} · {t.us.perspective_reaction}</div>
                                             {data.closing.cycle.reaction_partner}
                                         </div>
                                     </div>
                                     <div className="flex justify-end">
                                         <div className={`${bubbleBase} ${bubbleGreen}`}>
-                                            <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{selfName} · {t.us.perspective_escalation}</div>
+                                            <div className="text-xs uppercase tracking-widest opacity-70 mb-1">{selfName} · {t.us.perspective_escalation}</div>
                                             {data.closing.cycle.escalation}
                                         </div>
                                     </div>
                                 </div>
-                                <div className={`mt-6 pt-4 border-t border-dashed ${theme === 'dark' ? 'border-space-600' : 'border-paper-300'}`}>
+                                <div className={`mt-6 pt-4 border-t border-dashed ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                     <div className="text-center mb-4">
                                         <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-success/20 text-success uppercase tracking-widest">
                                             {t.us.perspective_repair_window}: {data.closing.cycle.repair_window}
@@ -1907,12 +2140,12 @@ const PerspectiveCard: React.FC<{
                             {selfName} × {otherName}
                         </div>
                         <div className="p-4 rounded-xl border border-l-2 border-l-blue-500/60">
-                            <div className="text-[10px] uppercase tracking-widest opacity-60 mb-2">{t.us.avatar_title}</div>
+                            <div className="text-xs uppercase tracking-widest opacity-70 mb-2">{t.us.avatar_title}</div>
                             <div className="font-serif text-2xl text-blue-500">{relationship_avatar?.title || t.us.avatar_title}</div>
                         </div>
                     </div>
                     <div className="flex-1">
-                        <div className="text-[10px] uppercase tracking-widest opacity-60 mb-2">{t.us.avatar_subtitle}</div>
+                        <div className="text-xs uppercase tracking-widest opacity-70 mb-2">{t.us.avatar_subtitle}</div>
                         {relationship_avatar?.summary && (
                             <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-star-200/90' : 'text-paper-700'}`}>
                                 {relationship_avatar.summary}
@@ -1933,7 +2166,7 @@ const PerspectiveCard: React.FC<{
                                 🔥
                             </div>
                             <div>
-                                <div className="text-[10px] uppercase tracking-widest opacity-50 mb-1">{t.us.vibe_elemental_mix}</div>
+                                <div className="text-xs uppercase tracking-widest opacity-70 mb-1">{t.us.vibe_elemental_mix}</div>
                                 <div className="font-serif text-2xl font-medium">{vibe_alchemy?.elemental_mix}</div>
                             </div>
                         </div>
@@ -2038,7 +2271,7 @@ const PerspectiveCard: React.FC<{
                                         <span className="text-2xl">♇</span>
                                         <div>
                                             <div className="font-semibold">{deep_dive.pluto.headline || t.us.chem_pluto}</div>
-                                            <div className="text-[10px] uppercase tracking-widest opacity-60">Pluto</div>
+                                            <div className="text-xs uppercase tracking-widest opacity-70">Pluto</div>
                                         </div>
                                     </div>
                                     <IntensityBadge intensity={deep_dive.pluto.intensity} />
@@ -2058,7 +2291,7 @@ const PerspectiveCard: React.FC<{
                                     <span className="text-2xl">⚷</span>
                                     <div>
                                         <div className="font-semibold">{deep_dive.chiron.headline || t.us.chem_chiron}</div>
-                                        <div className="text-[10px] uppercase tracking-widest opacity-60">Chiron</div>
+                                        <div className="text-xs uppercase tracking-widest opacity-70">Chiron</div>
                                     </div>
                                 </div>
                                 <p className="text-sm leading-relaxed opacity-90 mb-4">{deep_dive.chiron.description}</p>
@@ -2088,10 +2321,14 @@ type SynastryTabContentMap = {
 const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language, tl } = useLanguage();
     const { theme } = useTheme();
+    const { checkAndRecord: checkSynastryQuota, totalLeft: synastryQuotaLeft } = useSynastryQuota();
+    const { checkAccess, openPaywall, entitlements, refreshEntitlements } = useEntitlement();
     const [view, setView] = useState<'select' | 'report'>('select');
     const [segments, setSegments] = useState<Partial<SynastryTabContentMap>>({});
     const [reportMeta, setReportMeta] = useState<T.AIContentMeta | null>(null);
     const [reportError, setReportError] = useState<string | null>(null);
+    const [generateError, setGenerateError] = useState<string | null>(null);
+    const [isGenerating, setIsGenerating] = useState(false);
     const [technical, setTechnical] = useState<T.SynastryTechnicalData | null>(null);
     const [technicalLoading, setTechnicalLoading] = useState(false);
     const [technicalError, setTechnicalError] = useState<string | null>(null);
@@ -2107,11 +2344,35 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const [overviewSectionErrors, setOverviewSectionErrors] = useState<Partial<Record<T.SynastryOverviewSection, string>>>({});
     const [overviewSectionLoading, setOverviewSectionLoading] = useState<Partial<Record<T.SynastryOverviewSection, boolean>>>({});
     const [overviewAccordionOpen, setOverviewAccordionOpen] = useState<Partial<Record<T.SynastryOverviewSection, boolean>>>({});
+    const [synastryHash, setSynastryHash] = useState<string | null>(null);
     const segmentsRef = useRef(segments);
     const segmentLoadingRef = useRef(segmentLoading);
     const overviewSectionsRef = useRef(overviewSections);
     const overviewSectionLoadingRef = useRef(overviewSectionLoading);
     const technicalLoadingRef = useRef(technicalLoading);
+    const pendingRequests = useRef(new Set<string>());
+
+    const requestDetailAccess = async (featureType: FeatureType, featureId: string) => {
+      const access = await checkAccess(featureType, featureId);
+      if (access.canAccess) {
+        return access;
+      }
+      if (access.needPurchase && access.price && (entitlements?.credits ?? 0) >= access.price) {
+        try {
+          const result = await purchaseWithCreditsV2(featureType, featureId);
+          if (result.success) {
+            await refreshEntitlements();
+            return { ...access, canAccess: true, needPurchase: false };
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      if (access.needPurchase) {
+        openPaywall(featureType, featureId, access.price);
+      }
+      return access;
+    };
 
     useEffect(() => {
       segmentsRef.current = segments;
@@ -2164,6 +2425,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const [selectedB, setSelectedB] = useState<T.SynastryProfile | null>(null);
     const [big3Map, setBig3Map] = useState<Record<string, { sun?: string; moon?: string; rising?: string }>>({});
 
+    useEffect(() => {
+      setSynastryHash(null);
+    }, [selectedA?.id, selectedB?.id, relationshipType]);
+
     const [modalOpen, setModalOpen] = useState(false);
     const [editingProfile, setEditingProfile] = useState<T.SynastryProfile | null>(null);
     const [formData, setFormData] = useState<Partial<T.SynastryProfile>>({
@@ -2200,6 +2465,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       setSelectedA((prev) => (prev?.id === 'me' ? meProfile : prev));
       setSelectedB((prev) => (prev?.id === 'me' ? meProfile : prev));
     }, [meProfile]);
+
+    useEffect(() => {
+      if (generateError) setGenerateError(null);
+    }, [selectedA?.id, selectedB?.id, relationshipType]);
 
     useEffect(() => {
       let mounted = true;
@@ -2430,22 +2699,61 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     }, [view, activeTab, segments.overview, selectedA?.id, selectedB?.id, relationshipType, language]);
 
     const handleGenerate = async () => {
-      if (!selectedA || !selectedB) return;
-      setView('report');
-      setSegments({});
-      setReportMeta(null);
-      setReportError(null);
-      setSegmentErrors({});
-      setSegmentLoading({});
-      setOverviewSections({});
-      setOverviewSectionErrors({});
-      setOverviewSectionLoading({});
-      setOverviewAccordionOpen({});
-      setTechnical(null);
-      setTechnicalLoading(false);
-      setTechnicalError(null);
-      setActiveTab('overview');
-      await fetchSynastryTab('overview');
+      if (!selectedA || !selectedB || isGenerating) return;
+      setGenerateError(null);
+      setIsGenerating(true);
+
+      try {
+        // 检查合盘配额
+        const personAInfo = {
+          name: selectedA.name,
+          birthDate: selectedA.birthDate,
+          birthTime: selectedA.birthTime,
+          birthCity: selectedA.birthCity,
+          lat: selectedA.lat ?? 0,
+          lon: selectedA.lon ?? 0,
+          timezone: selectedA.timezone || 'UTC',
+        };
+        const personBInfo = {
+          name: selectedB.name,
+          birthDate: selectedB.birthDate,
+          birthTime: selectedB.birthTime,
+          birthCity: selectedB.birthCity,
+          lat: selectedB.lat ?? 0,
+          lon: selectedB.lon ?? 0,
+          timezone: selectedB.timezone || 'UTC',
+        };
+
+        const quotaResult = await checkSynastryQuota(personAInfo, personBInfo, relationshipType);
+        if (quotaResult?.hash) {
+          setSynastryHash(quotaResult.hash);
+        }
+
+        // 如果需要购买，不继续（PaywallModal 会自动显示）
+        if (quotaResult.needPurchase) {
+          return;
+        }
+
+        setView('report');
+        setSegments({});
+        setReportMeta(null);
+        setReportError(null);
+        setSegmentErrors({});
+        setSegmentLoading({});
+        setOverviewSections({});
+        setOverviewSectionErrors({});
+        setOverviewSectionLoading({});
+        setOverviewAccordionOpen({});
+        setTechnical(null);
+        setTechnicalLoading(false);
+        setTechnicalError(null);
+        setActiveTab('overview');
+        await fetchSynastryTab('overview');
+      } catch {
+        setGenerateError(t.app.error);
+      } finally {
+        setIsGenerating(false);
+      }
     };
 
     useEffect(() => {
@@ -2462,15 +2770,30 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       });
 
       const runPrefetch = async () => {
-        await waitForIdle();
-        if (!cancelled) {
-          await fetchSynastryTechnicalData();
+        const tasks: Array<() => Promise<void>> = [
+          () => fetchSynastryTechnicalData(),
+          ...queue.map((tab) => () => fetchSynastryTab(tab)),
+        ];
+
+        const inFlight = new Set<Promise<void>>();
+        const limit = 2;
+
+        for (const task of tasks) {
+          if (cancelled) break;
+          const promise = (async () => {
+            await waitForIdle();
+            if (cancelled) return;
+            await task();
+          })();
+          inFlight.add(promise);
+          promise.finally(() => {
+            inFlight.delete(promise);
+          });
+          if (inFlight.size >= limit) {
+            await Promise.race(inFlight);
+          }
         }
-        for (const tab of queue) {
-          if (cancelled) return;
-          await waitForIdle();
-          await fetchSynastryTab(tab);
-        }
+        await Promise.all(inFlight);
       };
 
       runPrefetch();
@@ -2587,25 +2910,50 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const handleSynastryDetailClick = async (
       type: T.DetailType,
       context: T.DetailContext,
-      chartData: Record<string, unknown>
+      chartData: Record<string, unknown>,
+      customNames?: { nameA: string; nameB: string }
     ) => {
-      setSynastryDetailModal({
-        open: true,
-        loading: true,
-        error: null,
-        content: null,
-        type,
-        context,
-      });
+      const featureId = synastryHash;
+      const requestKey = `synastry_detail_${featureId || 'unknown'}_${type}_${context}`;
+
+      if (!featureId) {
+        setSynastryDetailModal({
+          open: true,
+          loading: false,
+          error: language === 'zh' ? '请先生成合盘报告' : 'Please generate the synastry report first.',
+          content: null,
+          type,
+          context,
+        });
+        return;
+      }
+
+      if (pendingRequests.current.has(requestKey)) return;
+      pendingRequests.current.add(requestKey);
 
       try {
+        const access = await requestDetailAccess('synastry_detail', featureId);
+        if (!access.canAccess) {
+          return;
+        }
+
+        setSynastryDetailModal({
+          open: true,
+          loading: true,
+          error: null,
+          content: null,
+          type,
+          context,
+        });
+
         const result = await fetchSectionDetail({
           type,
           context,
           chartData,
           lang: language,
-          nameA: selectedA?.name,
-          nameB: selectedB?.name,
+          nameA: customNames?.nameA || selectedA?.name,
+          nameB: customNames?.nameB || selectedB?.name,
+          cacheKey: `synastry:${featureId}:${context}:${type}`,
         });
         setSynastryDetailModal((prev) => ({
           ...prev,
@@ -2618,6 +2966,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           loading: false,
           error: err instanceof Error ? err.message : 'Failed to load detail',
         }));
+      } finally {
+        pendingRequests.current.delete(requestKey);
       }
     };
 
@@ -2752,39 +3102,57 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       </div>
     );
 
-    const renderComparisonAppendix = (comparison: T.SynastryComparisonTechnicalData, isAB: boolean) => (
+    const renderComparisonAppendix = (comparison: T.SynastryComparisonTechnicalData, isAB: boolean) => {
+      const subjectName = isAB ? personALabel : personBLabel;
+      const objectName = isAB ? personBLabel : personALabel;
+      
+      const subjectNatal = isAB ? technical?.natal_a : technical?.natal_b;
+      const objectNatal = isAB ? technical?.natal_b : technical?.natal_a;
+
+      return (
       <div className="space-y-10">
         <div>
           <SectionHeader
             title={t.me.tech_aspects}
             detailLabel={t.detail.view_detail}
-            onDetailClick={() => handleSynastryDetailClick('aspects', 'synastry', {
-              aspects: comparison.aspects,
-              houseOverlays: comparison.houseOverlays,
-            })}
+            onDetailClick={() => handleSynastryDetailClick(
+              'aspects',
+              'synastry',
+              { aspects: comparison.aspects, houseOverlays: comparison.houseOverlays },
+              { nameA: subjectName, nameB: objectName }
+            )}
             className={sectionTitle}
           />
           <SynastryAspectMatrix
             aspects={comparison.aspects}
             language={language}
-            personALabel={isAB ? personALabel : personBLabel}
-            personBLabel={isAB ? personBLabel : personALabel}
+            personALabel={subjectName}
+            personBLabel={objectName}
           />
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-6">
-            <div className="text-xs font-bold uppercase tracking-widest text-gold-500">{personALabel}</div>
-            <div>
-              <SectionHeader
-                title={t.me.tech_planets}
-                detailLabel={t.detail.view_detail}
-                onDetailClick={() => handleSynastryDetailClick('planets', 'synastry', {
-                  planets: isAB ? technical?.natal_a.planets : technical?.natal_b.planets,
-                })}
-                className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-2"
-              />
+
+        <div>
+          <SectionHeader
+            title={t.me.tech_planets}
+            detailLabel={t.detail.view_detail}
+            onDetailClick={() => handleSynastryDetailClick(
+              'planets',
+              'synastry',
+              {
+                planetsA: subjectNatal?.planets,
+                planetsB: objectNatal?.planets,
+                houseOverlays: comparison.houseOverlays,
+                aspects: comparison.aspects
+              },
+              { nameA: subjectName, nameB: objectName }
+            )}
+            className={sectionTitle}
+          />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-2">{subjectName}</div>
               <PlanetTable
-                planets={isAB ? (technical?.natal_a.planets || []) : (technical?.natal_b.planets || [])}
+                planets={subjectNatal?.planets || []}
                 language={language}
                 labels={{
                   body: t.me.table_body,
@@ -2794,17 +3162,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 }}
               />
             </div>
-            <div>
-              <SectionHeader
-                title={t.me.tech_asteroids}
-                detailLabel={t.detail.view_detail}
-                onDetailClick={() => handleSynastryDetailClick('asteroids', 'synastry', {
-                  asteroids: isAB ? technical?.natal_a.asteroids : technical?.natal_b.asteroids,
-                })}
-                className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-2"
-              />
+            <div className="space-y-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-2">{objectName}</div>
               <PlanetTable
-                planets={isAB ? (technical?.natal_a.asteroids || []) : (technical?.natal_b.asteroids || [])}
+                planets={objectNatal?.planets || []}
                 language={language}
                 labels={{
                   body: t.me.table_body,
@@ -2814,17 +3175,75 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 }}
               />
             </div>
-            <div>
-              <SectionHeader
-                title={t.me.tech_rulers}
-                detailLabel={t.detail.view_detail}
-                onDetailClick={() => handleSynastryDetailClick('rulers', 'synastry', {
-                  houseRulers: isAB ? technical?.natal_a.houseRulers : technical?.natal_b.houseRulers,
-                })}
-                className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-2"
+          </div>
+        </div>
+
+        <div>
+          <SectionHeader
+            title={t.me.tech_asteroids}
+            detailLabel={t.detail.view_detail}
+            onDetailClick={() => handleSynastryDetailClick(
+              'asteroids',
+              'synastry',
+              {
+                asteroidsA: subjectNatal?.asteroids,
+                asteroidsB: objectNatal?.asteroids,
+                aspects: comparison.aspects
+              },
+              { nameA: subjectName, nameB: objectName }
+            )}
+            className={sectionTitle}
+          />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-2">{subjectName}</div>
+              <PlanetTable
+                planets={subjectNatal?.asteroids || []}
+                language={language}
+                labels={{
+                  body: t.me.table_body,
+                  sign: t.me.table_sign,
+                  house: t.me.table_house,
+                  retro: t.me.table_retro,
+                }}
               />
+            </div>
+            <div className="space-y-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-2">{objectName}</div>
+              <PlanetTable
+                planets={objectNatal?.asteroids || []}
+                language={language}
+                labels={{
+                  body: t.me.table_body,
+                  sign: t.me.table_sign,
+                  house: t.me.table_house,
+                  retro: t.me.table_retro,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <SectionHeader
+            title={t.me.tech_rulers}
+            detailLabel={t.detail.view_detail}
+            onDetailClick={() => handleSynastryDetailClick(
+              'rulers',
+              'synastry',
+              {
+                rulersA: subjectNatal?.houseRulers,
+                rulersB: objectNatal?.houseRulers
+              },
+              { nameA: subjectName, nameB: objectName }
+            )}
+            className={sectionTitle}
+          />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-2">{subjectName}</div>
               <HouseRulerTable
-                rulers={isAB ? (technical?.natal_a.houseRulers || []) : (technical?.natal_b.houseRulers || [])}
+                rulers={subjectNatal?.houseRulers || []}
                 language={language}
                 labels={{
                   house: t.me.table_house,
@@ -2834,60 +3253,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 }}
               />
             </div>
-          </div>
-          <div className="space-y-6">
-            <div className="text-xs font-bold uppercase tracking-widest text-gold-500">{personBLabel}</div>
-            <div>
-              <SectionHeader
-                title={t.me.tech_planets}
-                detailLabel={t.detail.view_detail}
-                onDetailClick={() => handleSynastryDetailClick('planets', 'synastry', {
-                  planets: isAB ? technical?.natal_b.planets : technical?.natal_a.planets,
-                })}
-                className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-2"
-              />
-              <PlanetTable
-                planets={isAB ? (technical?.natal_b.planets || []) : (technical?.natal_a.planets || [])}
-                language={language}
-                labels={{
-                  body: t.me.table_body,
-                  sign: t.me.table_sign,
-                  house: t.me.table_house,
-                  retro: t.me.table_retro,
-                }}
-              />
-            </div>
-            <div>
-              <SectionHeader
-                title={t.me.tech_asteroids}
-                detailLabel={t.detail.view_detail}
-                onDetailClick={() => handleSynastryDetailClick('asteroids', 'synastry', {
-                  asteroids: isAB ? technical?.natal_b.asteroids : technical?.natal_a.asteroids,
-                })}
-                className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-2"
-              />
-              <PlanetTable
-                planets={isAB ? (technical?.natal_b.asteroids || []) : (technical?.natal_a.asteroids || [])}
-                language={language}
-                labels={{
-                  body: t.me.table_body,
-                  sign: t.me.table_sign,
-                  house: t.me.table_house,
-                  retro: t.me.table_retro,
-                }}
-              />
-            </div>
-            <div>
-              <SectionHeader
-                title={t.me.tech_rulers}
-                detailLabel={t.detail.view_detail}
-                onDetailClick={() => handleSynastryDetailClick('rulers', 'synastry', {
-                  houseRulers: isAB ? technical?.natal_b.houseRulers : technical?.natal_a.houseRulers,
-                })}
-                className="text-[10px] font-bold uppercase tracking-widest opacity-50 mb-2"
-              />
+            <div className="space-y-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-2">{objectName}</div>
               <HouseRulerTable
-                rulers={isAB ? (technical?.natal_b.houseRulers || []) : (technical?.natal_a.houseRulers || [])}
+                rulers={objectNatal?.houseRulers || []}
                 language={language}
                 labels={{
                   house: t.me.table_house,
@@ -2900,7 +3269,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           </div>
         </div>
       </div>
-    );
+      );
+    };
 
     const renderTechnicalSection = (content: React.ReactNode) => {
       if (technical) {
@@ -2943,19 +3313,19 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           <div className="flex items-center justify-between shrink-0 pt-8 pb-4">
             <div>
               <h1 className="text-3xl font-serif font-medium">{t.us.selection_title}</h1>
-              <p className="text-sm opacity-60">{t.us.selection_subtitle}</p>
+              <p className="text-sm opacity-70">{t.us.selection_subtitle}</p>
             </div>
             <ActionButton size="sm" onClick={openAddModal}>{t.us.btn_add_profile}</ActionButton>
           </div>
 
           <Card
             noPadding
-            className={`flex flex-col md:flex-row md:items-center md:justify-between gap-3 px-4 py-3 mb-4 border ${theme === 'dark' ? 'border-space-600/70' : 'border-paper-300'}`}
+            className={`flex flex-col md:flex-row md:items-center md:justify-between gap-3 px-4 py-3 mb-4 border ${theme === 'dark' ? 'border-gold-500/15/70' : 'border-paper-300'}`}
           >
             <div className="text-sm font-medium">
               {selectionSummary}
             </div>
-            <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest opacity-60">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest opacity-70">
               {selectedA && <span className="px-2 py-0.5 rounded-full border border-gold-500/50 text-gold-500">A</span>}
               {selectedB && <span className="px-2 py-0.5 rounded-full border border-gold-500/50 text-gold-500">B</span>}
             </div>
@@ -2963,12 +3333,12 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
           <div className="flex flex-col min-h-0">
             <div className="flex items-center justify-between mb-3 shrink-0">
-              <div className="text-xs font-bold uppercase tracking-widest opacity-60">{t.us.list_title}</div>
-              {suggestionsLoading && <div className="text-xs opacity-50">{t.us.relationship_loading}</div>}
+              <div className="text-xs font-bold uppercase tracking-widest opacity-70">{t.us.list_title}</div>
+              {suggestionsLoading && <div className="text-xs opacity-70">{t.us.relationship_loading}</div>}
             </div>
             <div className="max-h-[415px] overflow-y-auto space-y-3" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               {profiles.length === 0 && (
-                <div className="text-sm opacity-60">{t.us.empty_profiles}</div>
+                <div className="text-sm opacity-70">{t.us.empty_profiles}</div>
               )}
               {profiles.map((p) => {
                 const selectedInA = selectedA?.id === p.id;
@@ -2984,7 +3354,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   >
                     <button
                       type="button"
-                      className={`w-7 h-7 rounded-full border flex items-center justify-center text-[11px] font-bold uppercase transition-colors ${selected ? 'bg-gold-500 border-gold-500 text-space-950' : 'border-space-600 text-space-600 hover:border-gold-500/60'}`}
+                      className={`w-7 h-7 rounded-full border flex items-center justify-center text-xs font-bold uppercase transition-colors ${selected ? 'bg-gold-500 border-gold-500 text-space-950' : (theme === 'dark' ? 'border-gold-500/15 text-space-600 hover:border-gold-500/60' : 'border-paper-300 text-paper-400 hover:border-gold-500/60')}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleSelectProfile(p);
@@ -2996,27 +3366,27 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                       <div className="flex items-center gap-2 flex-wrap">
                         <div className="font-medium truncate">{p.name}</div>
                         {p.id === 'me' && (
-                          <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full border border-gold-500/40 text-gold-500">
+                          <span className="text-xs uppercase font-bold tracking-widest px-2 py-0.5 rounded-full border border-gold-500/40 text-gold-500">
                             {t.us.tag_me}
                           </span>
                         )}
                         {selectedSlot && (
-                          <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-gold-500 text-space-950">
+                          <span className="text-xs uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-gold-500 text-space-950">
                             {language === 'zh' ? `${selectedSlot}位` : `Person ${selectedSlot}`}
                           </span>
                         )}
                         {selected && (
-                          <span className="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-full border border-gold-500/60 text-gold-500">
+                          <span className="text-xs uppercase font-bold tracking-widest px-2 py-0.5 rounded-full border border-gold-500/60 text-gold-500">
                             {t.us.btn_selected}
                           </span>
                         )}
                       </div>
-                      <div className="text-xs opacity-60 mt-1">{renderBig3(p.id)}</div>
+                      <div className="text-xs opacity-70 mt-1">{renderBig3(p.id)}</div>
                     </div>
                     {p.id !== 'me' && (
                       <div className="flex items-center gap-2 shrink-0">
                         <button
-                          className="text-[10px] uppercase tracking-widest px-2 py-1 rounded border border-space-500/70 text-star-200 hover:text-star-50"
+                          className="text-xs uppercase tracking-widest px-2 py-1 rounded border border-space-500/70 text-star-200 hover:text-star-50"
                           onClick={(e) => {
                             e.stopPropagation();
                             openEditModal(p);
@@ -3025,7 +3395,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                           {t.us.btn_edit}
                         </button>
                         <button
-                          className="text-[10px] uppercase tracking-widest px-2 py-1 rounded border border-danger/50 text-danger/80 hover:text-danger"
+                          className="text-xs uppercase tracking-widest px-2 py-1 rounded border border-danger/50 text-danger/80 hover:text-danger"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleDeleteProfile(p.id);
@@ -3041,13 +3411,13 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             </div>
           </div>
 
-          <div className="pt-[20px] pb-6 border-t border-space-600 shrink-0">
+          <div className={`pt-[20px] pb-6 border-t shrink-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
             <div className="flex flex-col gap-4">
               <div className="w-full">
-                <div className="text-xs font-bold uppercase tracking-widest opacity-60 mb-2">{t.us.relationship_label}</div>
+                <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2">{t.us.relationship_label}</div>
                 <div className="flex items-center gap-3">
                   <select
-                    className={`w-full h-10 px-4 pr-8 rounded-lg outline-none transition-all font-sans text-sm appearance-none bg-no-repeat ${theme === 'dark' ? 'bg-space-900 border border-space-600 text-star-50' : 'bg-white border-paper-300 text-paper-900'}`}
+                    className={`w-full h-10 px-4 pr-8 rounded-lg outline-none transition-all font-sans text-sm appearance-none bg-no-repeat ${theme === 'dark' ? 'bg-space-900 border border-gold-500/15 text-star-50' : 'bg-white border-paper-300 text-paper-900'}`}
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`, backgroundPosition: 'right 12px center', backgroundSize: '16px' }}
                     value={relationshipType}
                     onChange={(e) => {
@@ -3063,7 +3433,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   </select>
                   {showTypeToggle && (
                     <button
-                      className="text-xs uppercase tracking-widest opacity-60 hover:opacity-100 whitespace-nowrap"
+                      className="text-xs uppercase tracking-widest opacity-70 hover:opacity-100 whitespace-nowrap"
                       onClick={() => setShowAllTypes((prev) => !prev)}
                     >
                       {showAllTypes ? t.us.relationship_less : t.us.relationship_more}
@@ -3071,16 +3441,32 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   )}
                 </div>
                 {suggestions.length > 0 && (
-                  <div className="text-[10px] uppercase tracking-widest opacity-50 mt-2">{t.us.relationship_hint}</div>
+                  <div className="text-xs uppercase tracking-widest opacity-70 mt-2">{t.us.relationship_hint}</div>
                 )}
+              </div>
+              {/* 合盘配额显示 */}
+              <div className="text-xs text-center mb-2 opacity-70">
+                {language === 'zh'
+                  ? `剩余合盘次数: ${synastryQuotaLeft}`
+                  : `Synastry readings left: ${synastryQuotaLeft}`}
               </div>
               <ActionButton
                 onClick={handleGenerate}
-                disabled={!selectedA || !selectedB}
+                disabled={!selectedA || !selectedB || isGenerating}
                 className="w-full h-10"
               >
                 {t.us.btn_calculate}
               </ActionButton>
+              {isGenerating && (
+                <div className="text-xs uppercase tracking-widest text-center opacity-70">
+                  {t.common.loading}
+                </div>
+              )}
+              {generateError && (
+                <div className="text-xs text-center text-danger/90">
+                  {generateError}
+                </div>
+              )}
             </div>
           </div>
 
@@ -3091,7 +3477,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           >
             <div className="space-y-4">
               <div>
-                <label className="text-xs font-bold uppercase tracking-widest opacity-50 mb-2 block">{t.us.label_name}</label>
+                <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.us.label_name}</label>
                 <GlassInput
                   value={formData.name || ''}
                   onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
@@ -3099,7 +3485,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-bold uppercase tracking-widest opacity-50 mb-2 block">{t.onboarding.label_date}</label>
+                  <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.onboarding.label_date}</label>
                   <GlassInput
                     type="date"
                     value={formData.birthDate || ''}
@@ -3107,7 +3493,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold uppercase tracking-widest opacity-50 mb-2 block">{t.onboarding.label_time}</label>
+                  <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.onboarding.label_time}</label>
                   <GlassInput
                     type="time"
                     value={formData.birthTime || ''}
@@ -3116,7 +3502,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 </div>
               </div>
               <div className="relative">
-                <label className="text-xs font-bold uppercase tracking-widest opacity-50 mb-2 block">{t.onboarding.label_city}</label>
+                <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.onboarding.label_city}</label>
                 <GlassInput
                   value={cityQuery}
                   placeholder={t.onboarding.placeholder_city}
@@ -3136,7 +3522,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
                 />
                 {showCitySuggestions && citySuggestions.length > 0 && (
-                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-space-600' : 'bg-white border-gray-200'} shadow-lg max-h-48 overflow-auto`}>
+                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-white border-gray-200'} shadow-lg max-h-48 overflow-auto`}>
                     {citySuggestions.map((city, i) => (
                       <div
                         key={i}
@@ -3156,7 +3542,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 )}
               </div>
               <div>
-                <label className="text-xs font-bold uppercase tracking-widest opacity-50 mb-2 block">{t.us.label_current_location}</label>
+                <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.us.label_current_location}</label>
                 <GlassInput
                   value={formData.currentLocation || ''}
                   onChange={(e) => setFormData((prev) => ({ ...prev, currentLocation: e.target.value }))}
@@ -3266,7 +3652,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
     return (
         <Container>
-            <div className="flex justify-between items-center mb-8 border-b border-space-600 pb-4">
+            <div className={`flex justify-between items-center mb-8 border-b pb-4 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                 <h1 className="text-3xl font-serif font-medium">{t.us.report_title}</h1>
                 <button onClick={() => setView('select')} className="text-xs text-gold-500 uppercase tracking-widest hover:underline">{t.us.new_analysis}</button>
             </div>
@@ -3285,7 +3671,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                           fetchSynastryTechnicalData();
                         }
                       }}
-                      className={`px-4 py-2 min-w-[5rem] text-center whitespace-nowrap rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${activeTab === tab.id ? 'bg-gold-500 text-space-950 border-gold-500' : 'bg-transparent text-star-400 border-space-600 hover:border-star-200'}`}
+                      className={`px-4 py-2 min-w-[5rem] text-center whitespace-nowrap rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${activeTab === tab.id ? 'bg-gold-500 text-space-950 border-gold-500' : (theme === 'dark' ? 'bg-transparent text-star-400 border-gold-500/15 hover:border-star-200' : 'bg-transparent text-paper-400 border-paper-300 hover:border-paper-900')}`}
                     >
                         {tab.label}
                     </button>
@@ -3328,10 +3714,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  return (
                                    <Card key={`${score.dim}-${i}`} className={`border-l-2 ${tone.border} ${tone.soft}`}>
                                       <div className="flex items-baseline justify-between mb-2">
-                                         <span className="text-xs uppercase tracking-widest opacity-60">{score.dim}</span>
+                                         <span className="text-xs uppercase tracking-widest opacity-70">{score.dim}</span>
                                          <span className={`text-sm font-mono ${tone.text}`}>{value}</span>
                                       </div>
-                                      <div className="h-1.5 w-full bg-space-600/30 rounded-full overflow-hidden">
+                                      <div className={`h-1.5 w-full rounded-full overflow-hidden ${theme === 'dark' ? 'bg-white/10' : 'bg-paper-200'}`}>
                                          <div className={`h-full ${tone.bar} transition-all duration-700`} style={{ width: `${value}%` }} />
                                       </div>
                                       <div className="text-xs opacity-70 mt-2">{score.desc}</div>
@@ -3380,7 +3766,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    <Card className="border-l-2 border-l-success">
                                      <h3 className="text-xs font-bold uppercase text-success mb-4 tracking-widest">{t.us.sweet}</h3>
                                      {sweetSpots.map((s, i) => (
-                                       <div key={i} className="pb-4 mb-4 border-b border-space-600 last:border-b-0 last:mb-0 last:pb-0">
+                                       <div key={i} className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                          <div className="font-bold text-sm mb-2">{s.title}</div>
                                          <div className="space-y-2 text-xs">
                                            <div>
@@ -3404,7 +3790,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    <Card className="border-l-2 border-l-danger">
                                      <h3 className="text-xs font-bold uppercase text-danger mb-4 tracking-widest">{t.us.friction}</h3>
                                      {frictionPoints.map((f, i) => (
-                                       <div key={i} className="pb-4 mb-4 border-b border-space-600 last:border-b-0 last:mb-0 last:pb-0">
+                                       <div key={i} className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                          <div className="font-bold text-sm mb-2">{f.title}</div>
                                          <div className="space-y-2 text-xs">
                                            <div>
@@ -3508,19 +3894,19 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  <Card className="border-l-2 border-l-danger">
                                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                                      <div className={`p-3 rounded-lg ${theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'}`}>
-                                       <div className="text-[10px] uppercase tracking-widest text-orange-500 mb-2">{t.us.conflict_trigger}</div>
+                                       <div className="text-xs uppercase tracking-widest text-orange-500 mb-2">{t.us.conflict_trigger}</div>
                                        <div className="text-sm">{conflictLoop.conflict_loop.trigger}</div>
                                      </div>
                                      <div className={`p-3 rounded-lg ${theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'}`}>
-                                       <div className="text-[10px] uppercase tracking-widest text-blue-500 mb-2">{personALabel} {t.us.conflict_reaction}</div>
+                                       <div className="text-xs uppercase tracking-widest text-blue-500 mb-2">{personALabel} {t.us.conflict_reaction}</div>
                                        <div className="text-sm">{conflictLoop.conflict_loop.reaction_a}</div>
                                      </div>
                                      <div className={`p-3 rounded-lg ${theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'}`}>
-                                       <div className="text-[10px] uppercase tracking-widest text-blue-500 mb-2">{personBLabel} {t.us.conflict_defense}</div>
+                                       <div className="text-xs uppercase tracking-widest text-blue-500 mb-2">{personBLabel} {t.us.conflict_defense}</div>
                                        <div className="text-sm">{conflictLoop.conflict_loop.defense_b}</div>
                                      </div>
                                      <div className={`p-3 rounded-lg ${theme === 'dark' ? 'bg-danger/10' : 'bg-danger/5'}`}>
-                                       <div className="text-[10px] uppercase tracking-widest text-red-500 mb-2">{t.us.conflict_result}</div>
+                                       <div className="text-xs uppercase tracking-widest text-red-500 mb-2">{t.us.conflict_result}</div>
                                        <div className="text-sm">{conflictLoop.conflict_loop.result}</div>
                                      </div>
                                    </div>
@@ -3529,11 +3915,11 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  {/* Repair Scripts */}
                                  <div>
                                    <div className={`${detailLabelClass} text-green-500`}>{t.us.repair_scripts_title}</div>
-                                   <p className="text-xs opacity-60 mb-4">{t.us.repair_scripts_subtitle}</p>
+                                   <p className="text-xs opacity-70 mb-4">{t.us.repair_scripts_subtitle}</p>
                                    <div className="grid md:grid-cols-2 gap-4">
                                      {conflictLoop.repair_scripts.map((script, i) => (
                                         <Card key={i} className="border-l-2 border-l-green-500">
-                                         <div className="text-[10px] uppercase tracking-widest opacity-60 mb-2">
+                                         <div className="text-xs uppercase tracking-widest opacity-70 mb-2">
                                            {script.for_person === 'a' ? personALabel : personBLabel} → {script.for_person === 'a' ? personBLabel : personALabel}
                                          </div>
                                          <div className="text-xs opacity-70 mb-2">{t.us.repair_situation}: {script.situation}</div>
@@ -3572,26 +3958,26 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {practiceTools && (
                                <div className="space-y-4">
                                  <Card className="border-l-2 border-l-blue-500">
-                                   <div className="text-[10px] font-bold uppercase tracking-widest text-blue-500 mb-3">
+                                   <div className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">
                                      {personALabel}{t.us.practice_focus}
                                    </div>
                                    <ul className="space-y-3">
                                      {practiceTools.person_a.map((pt, i) => (
                                        <li key={i} className="text-sm leading-relaxed">
-                                         <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{pt.title}</div>
+                                         <div className="text-xs uppercase tracking-widest opacity-60 mb-1">{pt.title}</div>
                                          <div className="opacity-90">{pt.content}</div>
                                        </li>
                                      ))}
                                    </ul>
                                  </Card>
                                  <Card className="border-l-2 border-l-success">
-                                   <div className="text-[10px] font-bold uppercase tracking-widest text-success mb-3">
+                                   <div className="text-xs font-bold uppercase tracking-widest text-success mb-3">
                                      {personBLabel}{t.us.practice_focus}
                                    </div>
                                    <ul className="space-y-3">
                                      {practiceTools.person_b.map((pt, i) => (
                                        <li key={i} className="text-sm leading-relaxed">
-                                         <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{pt.title}</div>
+                                         <div className="text-xs uppercase tracking-widest opacity-60 mb-1">{pt.title}</div>
                                          <div className="opacity-90">{pt.content}</div>
                                        </li>
                                      ))}
@@ -3599,11 +3985,11 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  </Card>
                                  {practiceTools.joint?.length > 0 && (
                                    <Card className="border-l-2 border-l-gold-500">
-                                     <div className="text-[10px] font-bold uppercase tracking-widest text-gold-500 mb-3">{t.us.joint_practice}</div>
+                                     <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-3">{t.us.joint_practice}</div>
                                      <ul className="space-y-3">
                                        {practiceTools.joint.map((pt, i) => (
                                          <li key={i} className="text-sm leading-relaxed">
-                                           <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{pt.title}</div>
+                                         <div className="text-xs uppercase tracking-widest opacity-70 mb-1">{pt.title}</div>
                                            <div className="opacity-90">{pt.content}</div>
                                          </li>
                                        ))}
@@ -3637,7 +4023,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  {/* Weekly Pulse */}
                                  <Card className="border-l-2 border-l-blue-500">
                                    <h4 className={`${detailLabelClass} text-blue-500 mb-1`}>{t.us.weekly_pulse_title}</h4>
-                                   <p className="text-xs opacity-60 mb-4">{t.us.weekly_pulse_subtitle}</p>
+                                   <p className="text-xs opacity-70 mb-4">{t.us.weekly_pulse_subtitle}</p>
 
                                    {/* Headline */}
                                    <div className={`p-3 rounded-lg mb-4 ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-500/5'}`}>
@@ -3665,7 +4051,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                              ? `ring-2 ring-blue-500 ${theme === 'dark' ? 'bg-blue-500/20' : 'bg-blue-500/10'}`
                                              : theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'
                                          }`}>
-                                           {isToday && <div className="text-[10px] font-bold text-blue-500 mb-1">{t.us.today_label}</div>}
+                                           {isToday && <div className="text-xs font-bold text-blue-500 mb-1">{t.us.today_label}</div>}
                                            <div className="text-xs font-medium opacity-70">{day.day_label}</div>
                                            <div className="my-1 flex justify-center"><WeatherMoodIcon emoji={day.emoji} /></div>
                                            <div className="flex justify-center gap-0.5 mb-1">
@@ -3677,7 +4063,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                                }`} />
                                              ))}
                                            </div>
-                                           <div className="text-[10px] opacity-80 line-clamp-2">{day.vibe}</div>
+                                           <div className="text-xs opacity-80 line-clamp-2">{day.vibe}</div>
                                          </div>
                                        );
                                      })}
@@ -3687,7 +4073,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                  {/* Season Ahead */}
                                  <Card className="border-l-2 border-l-gold-500">
                                    <h4 className={`${detailLabelClass} text-gold-500 mb-1`}>{t.us.season_ahead_title}</h4>
-                                   <p className="text-xs opacity-60 mb-4">{t.us.season_ahead_subtitle}</p>
+                                   <p className="text-xs opacity-70 mb-4">{t.us.season_ahead_subtitle}</p>
 
                                    <div className="space-y-3 mb-6">
                                      {weatherForecast.periods.map((period, i) => {
@@ -3701,7 +4087,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                            <div className="flex items-center gap-2 mb-2">
                                              <span className="text-base" aria-hidden="true">{periodStyle.emoji}</span>
                                              <span className="text-xs font-bold uppercase">{periodStyle.label}</span>
-                                             <span className="text-xs opacity-60">{period.start_date} → {period.end_date}</span>
+                                             <span className="text-xs opacity-70">{period.start_date} → {period.end_date}</span>
                                            </div>
                                            <p className="text-sm mb-2">{period.description}</p>
                                            <p className="text-xs opacity-80 italic">{period.advice}</p>
@@ -3743,9 +4129,9 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                         </div>
 
                         <Card className="border-l-2 border-l-gold-500/60">
-                            <div className="text-[10px] font-bold uppercase tracking-widest text-gold-500 mb-3">{t.us.conclusion}</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-3">{t.us.conclusion}</div>
                             <p className="text-sm font-serif leading-relaxed opacity-90 mb-4">"{overview.conclusion.summary}"</p>
-                            <div className="border-l-2 border-space-600 pl-3 text-xs text-star-300">
+                            <div className={`border-l-2 pl-3 text-xs ${theme === 'dark' ? 'border-gold-500/15 text-star-300' : 'border-paper-300 text-paper-500'}`}>
                                 {overview.conclusion.disclaimer}
                             </div>
                         </Card>
@@ -3773,7 +4159,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                      <div className="text-xs font-bold uppercase tracking-widest text-success mb-4">{t.us.top_harmony}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.harmony.map((item, i) => (
-                                            <div key={`${item.aspect}-${i}`} className="pb-3 border-b border-space-600 last:border-b-0 last:pb-0">
+                                            <div key={`${item.aspect}-${i}`} className={`pb-3 border-b last:border-b-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                                <div className="font-semibold text-xs mb-2">{item.aspect}</div>
                                                <div>
                                                   <div className={detailLabelClass}>{t.us.experience}</div>
@@ -3791,7 +4177,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                       <div className="text-xs font-bold uppercase tracking-widest text-danger mb-4">{t.us.top_challenges}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.challenges.map((item, i) => (
-                                            <div key={`${item.aspect}-${i}`} className="pb-3 border-b border-space-600 last:border-b-0 last:pb-0">
+                                            <div key={`${item.aspect}-${i}`} className={`pb-3 border-b last:border-b-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                                <div className="font-semibold text-xs mb-2">{item.aspect}</div>
                                                <div>
                                                   <div className={detailLabelClass}>{t.us.conflict_label}</div>
@@ -3809,7 +4195,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                       <div className="text-xs font-bold uppercase tracking-widest text-accent mb-4">{t.us.highlights_overlays}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.overlays.map((item, i) => (
-                                            <div key={`${item.overlay}-${i}`} className="pb-3 border-b border-space-600 last:border-b-0 last:pb-0">
+                                            <div key={`${item.overlay}-${i}`} className={`pb-3 border-b last:border-b-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                                <div className="font-semibold text-xs mb-2">{item.overlay}</div>
                                                <div className="opacity-85">{item.meaning}</div>
                                             </div>
@@ -3817,7 +4203,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                       </div>
                                    </Card>
                                  </div>
-                                 <div className="mt-6 p-4 rounded-lg border border-space-600/60 bg-space-900/60 text-xs text-star-300">
+                                 <div className={`mt-6 p-4 rounded-lg border text-xs ${theme === 'dark' ? 'border-gold-500/15/60 bg-space-900/60 text-star-300' : 'border-paper-300 bg-paper-100 text-paper-500'}`}>
                                     <span className="font-semibold mr-2">{t.us.accuracy_note}</span>
                                     {highlights.accuracy_note}
                                  </div>
@@ -3930,7 +4316,9 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                               const heart = composite.heart_of_us!;
                               const daily = composite.daily_rhythm!;
                               const soul = composite.soul_contract!;
-                              const me = composite.me_within_us!;
+                              const me = composite.me_within_us;
+                              const impactOnA = me?.impact_on_a;
+                              const impactOnB = me?.impact_on_b;
 
                               return (
                                 <>
@@ -3945,7 +4333,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                         <div className={`${DETAIL_LABEL_CLASS} mb-2`}>{t.us.entity_element_climate}</div>
                                         <p className="text-sm opacity-90">{vibe.element_climate}</p>
                                       </div>
-                                      <div className={`pt-4 border-t border-dashed ${theme === 'dark' ? 'border-space-600' : 'border-paper-300'}`}>
+                                      <div className={`pt-4 border-t border-dashed ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                         <div className={`${DETAIL_LABEL_CLASS} mb-2`}>{t.us.entity_one_liner}</div>
                                         <p className="font-serif text-base italic opacity-90">"{vibe.one_liner}"</p>
                                       </div>
@@ -4092,26 +4480,32 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   </Section>
 
                                   {/* Section 5: The "Me" within "Us" */}
-                                  <Section title={t.us.entity_me_title}>
-                                    <div className="grid md:grid-cols-2 gap-4">
-                                      <Card className="border-l-2 border-l-blue-500">
-                                        <div className="flex items-center gap-2 mb-3">
-                                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-500' : 'bg-blue-500/15 text-blue-500'}`}>A</div>
-                                          <span className={`${DETAIL_LABEL_CLASS} text-blue-500`}>{personALabel}</span>
-                                        </div>
-                                        <div className="font-serif text-base mb-2">{me.impact_on_a.headline}</div>
-                                        <p className="text-sm opacity-90">{me.impact_on_a.description}</p>
-                                      </Card>
-                                      <Card className="border-l-2 border-l-purple-500">
-                                        <div className="flex items-center gap-2 mb-3">
-                                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${theme === 'dark' ? 'bg-purple-500/20 text-purple-500' : 'bg-purple-500/15 text-purple-500'}`}>B</div>
-                                          <span className={`${DETAIL_LABEL_CLASS} text-purple-500`}>{personBLabel}</span>
-                                        </div>
-                                        <div className="font-serif text-base mb-2">{me.impact_on_b.headline}</div>
-                                        <p className="text-sm opacity-90">{me.impact_on_b.description}</p>
-                                      </Card>
-                                    </div>
-                                  </Section>
+                                  {(impactOnA || impactOnB) && (
+                                    <Section title={t.us.entity_me_title}>
+                                      <div className="grid md:grid-cols-2 gap-4">
+                                        {impactOnA && (
+                                          <Card className="border-l-2 border-l-blue-500">
+                                            <div className="flex items-center gap-2 mb-3">
+                                              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-500' : 'bg-blue-500/15 text-blue-500'}`}>A</div>
+                                              <span className={`${DETAIL_LABEL_CLASS} text-blue-500`}>{personALabel}</span>
+                                            </div>
+                                            <div className="font-serif text-base mb-2">{impactOnA.headline}</div>
+                                            <p className="text-sm opacity-90">{impactOnA.description}</p>
+                                          </Card>
+                                        )}
+                                        {impactOnB && (
+                                          <Card className="border-l-2 border-l-purple-500">
+                                            <div className="flex items-center gap-2 mb-3">
+                                              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${theme === 'dark' ? 'bg-purple-500/20 text-purple-500' : 'bg-purple-500/15 text-purple-500'}`}>B</div>
+                                              <span className={`${DETAIL_LABEL_CLASS} text-purple-500`}>{personBLabel}</span>
+                                            </div>
+                                            <div className="font-serif text-base mb-2">{impactOnB.headline}</div>
+                                            <p className="text-sm opacity-90">{impactOnB.description}</p>
+                                          </Card>
+                                        )}
+                                      </div>
+                                    </Section>
+                                  )}
                                 </>
                               );
                             } else {
@@ -4245,7 +4639,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             <span className={`${DETAIL_LABEL_CLASS} block mb-2`}>{t.us.comp_house}</span>
                                             <p className="text-sm leading-relaxed">{composite.synthesis.house_focus}</p>
                                           </div>
-                                          <div className={`pt-4 border-t border-dashed ${theme === 'dark' ? 'border-space-600' : 'border-paper-300'}`}>
+                                          <div className={`pt-4 border-t border-dashed ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                                             <div className="space-y-3 text-sm">
                                               <div>
                                                 <span className={`${DETAIL_LABEL_CLASS} text-star-200 block mb-1`}>{personALabel} {t.us.comp_impact_on}</span>
@@ -4620,7 +5014,7 @@ const extractAskReportTitleAndCleanSections = (
     sections: AskReportSection[],
     t: typeof TRANSLATIONS['en']
 ): { sections: AskReportSection[]; reportTitle: string } => {
-    const reportLabels = t.ask.report_labels || {};
+    const reportLabels: any = t.ask.report_labels || {};
     const essenceTitle = t.ask.report_sections?.essence || 'Essence';
     const insightLabel = reportLabels.insight;
     let reportTitle = '';
@@ -4720,6 +5114,8 @@ const splitAskReportByLabels = (
 const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language } = useLanguage();
     const { theme } = useTheme();
+    const { totalLeft: askQuotaLeft } = useAskQuota();
+    const { checkAccess, openPaywall, refreshEntitlements } = useEntitlement();
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState<T.AskAnswerContent | null>(null);
     const [answerMeta, setAnswerMeta] = useState<T.AIContentMeta | null>(null);
@@ -4731,6 +5127,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const [loading, setLoading] = useState(false);
     const [selectedQuestionId, setSelectedQuestionId] = useState<string | null>(null);
     const [loadingPhraseIndex, setLoadingPhraseIndex] = useState(0);
+    const lastAskKey = useRef<string | null>(null);
     
     // Initialize active category
     const [activeCategory, setActiveCategory] = useState<AskCategoryKey>('self_discovery');
@@ -4794,6 +5191,56 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const handleAsk = async (q: string) => {
         const trimmed = q.trim();
         if (!trimmed || loading) return;
+
+        const dedupeKey = `${trimmed}_${activeCategory}_${language}_${profile.birthDate || 'anon'}`;
+        const access = await checkAccess('ask');
+        if (!access.canAccess) {
+            if (access.needPurchase) {
+                openPaywall('ask', undefined, access.price);
+            }
+            return;
+        }
+
+        if (lastAskKey.current === dedupeKey) {
+            setLoading(true);
+            setError(null);
+            setQuestion(trimmed);
+            setAnswer(null);
+            setAnswerMeta(null);
+            setAnswerLang(null);
+            setAnswerChart(null);
+            setAnswerTransits(null);
+            setAnswerChartType('natal');
+            try {
+                const result = await fetchAskAnswer(profile, trimmed, undefined, language, activeCategory);
+                const content = result.content || null;
+                if (!content) {
+                    setError(t.app.error);
+                    return;
+                }
+                setAnswer(content);
+                setAnswerMeta(result.meta || null);
+                setAnswerLang(result.lang);
+                setAnswerChart(result.chart || null);
+                setAnswerTransits(result.transits || null);
+                setAnswerChartType(result.chartType || 'natal');
+                await refreshEntitlements();
+            } catch (e) {
+                const err = e as Error;
+                if (err?.name === 'AbortError') {
+                    setError(t.ask.timeout);
+                    return;
+                }
+                console.error(e);
+                setError(t.app.error);
+            } finally {
+                setLoading(false);
+            }
+            return;
+        }
+
+        lastAskKey.current = dedupeKey;
+
         setLoading(true);
         setError(null);
         setQuestion(trimmed);
@@ -4816,6 +5263,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             setAnswerChart(result.chart || null);
             setAnswerTransits(result.transits || null);
             setAnswerChartType(result.chartType || 'natal');
+            await refreshEntitlements();
         } catch (e) {
             const err = e as Error;
             if (err?.name === 'AbortError') {
@@ -4892,7 +5340,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                             </div>
                             <h1 className="text-3xl md:text-4xl font-serif tracking-[0.2em] text-gold-500 mb-2 uppercase">{t.ask.title}</h1>
                             <p className="text-sm font-serif italic text-star-400 opacity-80">"{t.ask.subtitle}"</p>
-                            <div className="flex items-center justify-center gap-2 mt-3 text-[10px] font-bold uppercase tracking-[0.2em] text-gold-600/70">
+                            <div className="flex items-center justify-center gap-2 mt-3 text-xs font-bold uppercase tracking-[0.2em] text-gold-600/70">
                                 <div className="w-2 h-2 rounded-full bg-accent animate-breathe"></div>
                                 {t.ask.online}
                             </div>
@@ -4903,16 +5351,16 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 <div className="animate-fade-in flex-1 max-w-7xl mx-auto w-full px-4 flex flex-col min-h-0 mt-[44px]">
 
                     {/* Category Tabs - Compact Centered Row */}
-                    <div className="flex flex-wrap justify-center gap-2 mb-2 border-b border-space-600/30 pb-2 shrink-0">
+                    <div className={`flex flex-wrap justify-center gap-2 mb-2 border-b pb-2 shrink-0 ${theme === 'dark' ? 'border-gold-500/15/30' : 'border-paper-300'}`}>
                         {(Object.keys(t.ask.modules) as AskCategoryKey[]).map((key) => (
                             <button
                                 key={key}
                                 onClick={() => setActiveCategory(key)}
                                 className={`
-                                    flex items-center gap-1.5 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-widest transition-all border rounded-md
+                                    flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest transition-all border rounded-md
                                     ${activeCategory === key
                                         ? 'border-gold-500 text-gold-500 bg-gold-500/5 shadow-glow'
-                                        : 'border-space-600 text-star-400 hover:border-gold-500/50 hover:text-star-200 bg-space-900/50'
+                                        : 'border-gold-500/15 text-star-400 hover:border-gold-500/50 hover:text-star-200 bg-space-900/50'
                                     }
                                 `}
                             >
@@ -4981,12 +5429,12 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                         ${selectedQuestionId === q.id
                                             ? 'border-gold-500/80 bg-gold-500/5 shadow-glow'
                                             : theme === 'dark'
-                                                ? 'bg-space-900 border-space-600 hover:border-gold-500/50 hover:bg-space-800'
+                                                ? 'bg-space-900 border-gold-500/15 hover:border-gold-500/50 hover:bg-space-800'
                                                 : 'bg-white border-paper-300 hover:bg-paper-100 hover:border-gold-600/30'
                                         }
                                     `}
                                 >
-                                    <span className={`font-mono text-sm transition-all flex items-center gap-3 w-full ${selectedQuestionId === q.id ? 'text-gold-500 opacity-100' : 'opacity-60 group-hover:text-gold-500 group-hover:opacity-100'}`}>
+                                    <span className={`font-mono text-sm transition-all flex items-center gap-3 w-full ${selectedQuestionId === q.id ? 'text-gold-500 opacity-100' : 'opacity-70 group-hover:text-gold-500 group-hover:opacity-100'}`}>
                                         <span className="opacity-30 shrink-0">&gt;</span>
                                         <span className="truncate">{q.text}</span>
                                     </span>
@@ -4999,7 +5447,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                     <div className="shrink-0 pt-3 pb-1.5">
                         <div className="max-w-6xl mx-auto relative group">
                             {loading ? (
-                              <div className="absolute -top-6 left-0 right-0 text-center opacity-50 animate-pulse font-mono text-xs uppercase tracking-widest text-gold-500">
+                              <div className="absolute -top-6 left-0 right-0 text-center opacity-70 animate-pulse font-mono text-xs uppercase tracking-widest text-gold-500">
                                 {t.ask.thinking}
                               </div>
                             ) : error ? (
@@ -5012,7 +5460,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                 <div className={`
                                     relative flex items-center flex-1 p-1 rounded-none border transition-all duration-500
                                     ${theme === 'dark'
-                                        ? 'bg-space-950/90 border-space-600 focus-within:border-gold-500/50 shadow-2xl backdrop-blur-md'
+                                        ? 'bg-space-950/90 border-gold-500/15 focus-within:border-gold-500/50 shadow-2xl backdrop-blur-md'
                                         : 'bg-white/90 border-paper-300 shadow-xl'
                                     }
                                 `}>
@@ -5038,26 +5486,32 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                     disabled={loading || !question.trim()}
                                     className={`shrink-0 flex flex-col items-center justify-center px-4 border transition-all duration-300 rounded-none
                                         ${loading || !question.trim()
-                                            ? 'opacity-40 cursor-not-allowed'
+                                            ? 'opacity-60 cursor-not-allowed'
                                             : 'hover:border-gold-500/60 hover:text-gold-400'
                                         }
                                         ${theme === 'dark'
-                                            ? 'bg-space-900 border-space-600 text-gold-500'
+                                            ? 'bg-space-900 border-gold-500/15 text-gold-500'
                                             : 'bg-white border-paper-300 text-gold-600'
                                         }
                                     `}
                                 >
-                                    <span className="text-[10px] font-mono uppercase tracking-widest opacity-80">{t.ask.rituals}</span>
+                                    <span className="text-xs font-mono uppercase tracking-widest opacity-80">{t.ask.rituals}</span>
                                     <span className="mt-1 flex items-center gap-2 text-gold-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 -rotate-45">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                                         </svg>
-                                        <span className="text-[9px] uppercase tracking-[0.3em]">{t.ask.send}</span>
+                                        <span className="text-xs uppercase tracking-[0.3em]">{t.ask.send}</span>
                                     </span>
                                 </button>
                             </div>
                             {/* Glow Effect behind input */}
                             <div className="absolute -inset-1 bg-gold-500/5 blur-xl -z-10 rounded-lg pointer-events-none"></div>
+                        </div>
+                        {/* 问答配额显示 */}
+                        <div className="text-xs text-center mt-3 opacity-70">
+                            {language === 'zh'
+                              ? `本周剩余问答次数: ${askQuotaLeft}`
+                              : `Questions left this week: ${askQuotaLeft}`}
                         </div>
                     </div>
 
@@ -5164,7 +5618,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                     )}
 
                     {loading ? (
-                         <div className="text-center opacity-50 animate-pulse font-mono text-xs uppercase tracking-widest text-gold-500 py-20">{t.ask.thinking}</div>
+                         <div className="text-center opacity-70 animate-pulse font-mono text-xs uppercase tracking-widest text-gold-500 py-20">{t.ask.thinking}</div>
                     ) : (
                         <div className="relative">
                             {/* Main answer container with modular sections */}
@@ -5319,7 +5773,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                                             </div>
                                                             <div className="flex-1 min-w-0">
                                                                 <div className="flex flex-wrap items-center gap-2">
-                                                                    <span className={`px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full border ${style.badge}`}>
+                                                                    <span className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${style.badge}`}>
                                                                         {layerLabel}
                                                                     </span>
                                                                     <h4 className={`text-base md:text-lg font-serif font-semibold ${style.title}`}>
@@ -5397,7 +5851,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                                 </svg>
                                                 <div className={`w-12 h-px ${theme === 'dark' ? 'bg-gold-500/30' : 'bg-gold-600/30'}`} />
                                             </div>
-                                            <div className={`text-[10px] uppercase tracking-[0.3em] mb-3 ${theme === 'dark' ? 'text-gold-500/50' : 'text-gold-600/50'}`}>
+                                            <div className={`text-xs uppercase tracking-[0.3em] mb-3 ${theme === 'dark' ? 'text-gold-500/50' : 'text-gold-600/50'}`}>
                                                 {t.ask.oracle_complete}
                                             </div>
                                             <p className={`text-sm font-serif italic max-w-3xl mx-auto ${theme === 'dark' ? 'text-star-300' : 'text-paper-600'}`}>
@@ -5423,6 +5877,68 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = ({ profile, onReset }) => {
     const { t, language, toggleLanguage } = useLanguage();
     const { theme, toggleTheme } = useTheme();
+    const { isAuthenticated, refreshEntitlements: refreshLegacyEntitlements, refreshUser } = useAuth();
+    const { refreshEntitlements: refreshV2Entitlements, isTrialing, trialDaysLeft } = useEntitlement();
+    const [gmBusy, setGmBusy] = useState(false);
+    const [gmMessage, setGmMessage] = useState<string | null>(null);
+    const [gmError, setGmError] = useState<string | null>(null);
+
+    const runGmAction = async (
+        action: () => Promise<{ success: boolean; message?: string }>,
+        fallbackMessage: string
+    ) => {
+        if (!isAuthenticated) {
+            setGmMessage(null);
+            setGmError(language === 'zh' ? '请先登录后再使用 GM 命令。' : 'Please log in to use GM commands.');
+            return;
+        }
+        setGmBusy(true);
+        setGmMessage(null);
+        setGmError(null);
+        try {
+            const result = await action();
+            setGmMessage(result.message || fallbackMessage);
+            await Promise.allSettled([refreshLegacyEntitlements(), refreshV2Entitlements()]);
+        } catch (error) {
+            setGmError(error instanceof Error ? error.message : fallbackMessage);
+        } finally {
+            setGmBusy(false);
+        }
+    };
+
+    const handleGmDevSession = async () => {
+        setGmBusy(true);
+        setGmMessage(null);
+        setGmError(null);
+        try {
+            await gmCreateDevSession();
+            await refreshUser();
+            await Promise.allSettled([refreshLegacyEntitlements(), refreshV2Entitlements()]);
+            setGmMessage(language === 'zh' ? 'GM 会话已创建' : 'GM session ready');
+        } catch (error) {
+            const fallbackMessage = language === 'zh' ? '创建 GM 会话失败' : 'Failed to create GM session';
+            setGmError(error instanceof Error ? error.message : fallbackMessage);
+        } finally {
+            setGmBusy(false);
+        }
+    };
+
+    const handleGmUnlockSubscription = () => runGmAction(
+        gmUnlockSubscription,
+        language === 'zh' ? '订阅已解锁' : 'Subscription unlocked'
+    );
+    const handleGmCancelSubscription = () => runGmAction(
+        gmCancelSubscription,
+        language === 'zh' ? '订阅已关闭' : 'Subscription cancelled'
+    );
+    const handleGmAddTokens = () => runGmAction(
+        () => gmAddTokens(9999),
+        language === 'zh' ? '已增加 9999 积分' : 'Added 9999 credits'
+    );
+    const handleGmClearTokens = () => runGmAction(
+        gmClearTokens,
+        language === 'zh' ? '积分已清零' : 'Credits cleared'
+    );
 
     return (
         <Container>
@@ -5432,38 +5948,48 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                 <Card className="mb-4">
                     <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
-                            <div className="text-xs font-bold uppercase tracking-widest opacity-50 mb-1">{language === 'zh' ? '姓名' : 'Name'}</div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">{language === 'zh' ? '姓名' : 'Name'}</div>
                             <div>{profile.name || '-'}</div>
                         </div>
                         <div>
-                            <div className="text-xs font-bold uppercase tracking-widest opacity-50 mb-1">{language === 'zh' ? '出生日期' : 'Birth Date'}</div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">{language === 'zh' ? '出生日期' : 'Birth Date'}</div>
                             <div>{profile.birthDate || '-'}</div>
                         </div>
                         <div>
-                            <div className="text-xs font-bold uppercase tracking-widest opacity-50 mb-1">{language === 'zh' ? '出生时间' : 'Birth Time'}</div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">{language === 'zh' ? '出生时间' : 'Birth Time'}</div>
                             <div>{profile.birthTime || (profile.accuracyLevel === 'time_unknown' ? (language === 'zh' ? '未知' : 'Unknown') : '-')}</div>
                         </div>
                         <div>
-                            <div className="text-xs font-bold uppercase tracking-widest opacity-50 mb-1">{language === 'zh' ? '出生地点' : 'Birth Place'}</div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">{language === 'zh' ? '出生地点' : 'Birth Place'}</div>
                             <div>{profile.birthCity || '-'}</div>
                         </div>
                         <div>
-                            <div className="text-xs font-bold uppercase tracking-widest opacity-50 mb-1">{language === 'zh' ? '时区' : 'Timezone'}</div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">{language === 'zh' ? '时区' : 'Timezone'}</div>
                             <div>{profile.timezone || '-'}</div>
                         </div>
                         <div>
-                            <div className="text-xs font-bold uppercase tracking-widest opacity-50 mb-1">{language === 'zh' ? '准确度' : 'Accuracy'}</div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">{language === 'zh' ? '准确度' : 'Accuracy'}</div>
                             <div>{profile.accuracyLevel === 'exact' ? (language === 'zh' ? '精确' : 'Exact') : (language === 'zh' ? '时间未知' : 'Time Unknown')}</div>
                         </div>
                     </div>
                 </Card>
             </Section>
 
+            {isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
+                <Section title={t.settings.trial_title}>
+                    <Card className="mb-4 border-l-2 border-l-amber-500/60">
+                        <div className="text-sm text-amber-600">
+                            {t.settings.trial_desc.replace('{days}', String(trialDaysLeft))}
+                        </div>
+                    </Card>
+                </Section>
+            )}
+
             <Section title="Preferences">
                 <Card className="mb-4 flex justify-between items-center">
                     <div>
                         <div className="font-bold text-sm mb-1">{t.settings.language}</div>
-                        <div className="text-xs opacity-60">{language === 'en' ? 'English' : '中文'}</div>
+                        <div className="text-xs opacity-70">{language === 'en' ? 'English' : '中文'}</div>
                     </div>
                     <ActionButton onClick={toggleLanguage} size="sm" variant="outline">
                         {language === 'en' ? 'Switch to 中文' : 'Switch to English'}
@@ -5472,7 +5998,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                  <Card className="mb-4 flex justify-between items-center">
                     <div>
                         <div className="font-bold text-sm mb-1">{t.settings.theme}</div>
-                        <div className="text-xs opacity-60">{theme === 'dark' ? t.settings.theme_dark : t.settings.theme_light}</div>
+                        <div className="text-xs opacity-70">{theme === 'dark' ? t.settings.theme_dark : t.settings.theme_light}</div>
                     </div>
                     <ActionButton onClick={toggleTheme} size="sm" variant="outline">
                         {theme === 'dark' ? '☀ Light' : '☾ Dark'}
@@ -5482,14 +6008,14 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                     <div className="flex justify-between items-center mb-3">
                         <div>
                             <div className="font-bold text-sm mb-1">{t.settings.zodiac_system}</div>
-                            <div className="text-xs opacity-60">{t.settings.zodiac_tropical}</div>
+                            <div className="text-xs opacity-70">{t.settings.zodiac_tropical}</div>
                         </div>
                         <span className="text-xs font-mono opacity-40 uppercase">{t.settings.fixed}</span>
                     </div>
                     <div className="flex justify-between items-center">
                         <div>
                             <div className="font-bold text-sm mb-1">{t.settings.house_system}</div>
-                            <div className="text-xs opacity-60">Placidus</div>
+                            <div className="text-xs opacity-70">Placidus</div>
                         </div>
                         <span className="text-xs font-mono opacity-40 uppercase">{t.settings.fixed}</span>
                     </div>
@@ -5500,13 +6026,529 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                 <Card className="border-l-2 border-l-danger/60">
                     <div className="mb-4">
                         <div className="font-bold text-sm text-danger mb-1">{t.settings.reset}</div>
-                        <div className="text-xs opacity-60">{t.settings.reset_desc}</div>
+                        <div className="text-xs opacity-70">{t.settings.reset_desc}</div>
                     </div>
                     <ActionButton onClick={onReset} size="sm" className="bg-danger border-danger text-white hover:bg-danger/80 w-full">
                         {t.settings.reset_btn}
                     </ActionButton>
                 </Card>
             </Section>
+
+            <Section title={language === 'zh' ? 'GM 命令' : 'GM Commands'}>
+                <Card className="mb-4 border-l-2 border-l-purple-500/60">
+                    <div className="mb-4">
+                        <div className="font-bold text-sm text-purple-500 mb-1">{language === 'zh' ? 'GM 工具' : 'GM Tools'}</div>
+                        <div className="text-xs opacity-70">{language === 'zh' ? '调试与测试工具' : 'Debug & Testing Tools'}</div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                        <ActionButton onClick={handleGmUnlockSubscription} disabled={gmBusy} size="sm" variant="outline">
+                            {language === 'zh' ? '解锁订阅' : 'Unlock Sub'}
+                        </ActionButton>
+                        <ActionButton onClick={handleGmCancelSubscription} disabled={gmBusy} size="sm" variant="outline">
+                            {language === 'zh' ? '取消订阅' : 'Cancel Sub'}
+                        </ActionButton>
+                        <ActionButton onClick={handleGmAddTokens} disabled={gmBusy} size="sm" variant="outline">
+                            {language === 'zh' ? '加积分' : 'Add Credits'}
+                        </ActionButton>
+                        <ActionButton onClick={handleGmClearTokens} disabled={gmBusy} size="sm" variant="outline">
+                            {language === 'zh' ? '清积分' : 'Clear Credits'}
+                        </ActionButton>
+                        <ActionButton onClick={handleGmDevSession} disabled={gmBusy} size="sm" variant="outline">
+                            {language === 'zh' ? 'GM 开发会话' : 'GM Dev Session'}
+                        </ActionButton>
+                    </div>
+                    {(gmBusy || gmMessage || gmError) && (
+                        <div className={`text-xs text-center py-2 rounded ${gmError ? 'text-danger bg-danger/5' : 'text-success bg-success/5'}`}>
+                            {gmBusy ? (language === 'zh' ? '处理中...' : 'Processing...') : (gmError || gmMessage)}
+                        </div>
+                    )}
+                </Card>
+            </Section>
+        </Container>
+    );
+};
+
+const CreditsUsagePage: React.FC = () => {
+    const { theme } = useTheme();
+    const { language } = useLanguage();
+    const { isAuthenticated, openLoginModal, openUpgradeModal } = useAuth();
+    const { entitlements } = useEntitlement();
+    const [records, setRecords] = useState<PurchaseRecord[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [loadError, setLoadError] = useState<string | null>(null);
+
+    const balance = entitlements?.credits ?? 0;
+    const isSubscriber = entitlements?.isSubscriber ?? false;
+
+    const translations = {
+        zh: {
+            title: '使用情况',
+            subtitle: '积分余额与消费记录',
+            plan: '当前方案',
+            plan_free: '免费',
+            plan_pro: '订阅',
+            upgrade: '升级',
+            balance: '积分余额',
+            bonus: '订阅赠送积分（每次）',
+            records: '积分记录',
+            detail: '详情',
+            date: '日期',
+            change: '积分变更',
+            empty: '暂无积分记录',
+            login: '登录后查看积分',
+            load_error: '加载记录失败',
+        },
+        en: {
+            title: 'Usage',
+            subtitle: 'Credits balance and history',
+            plan: 'Plan',
+            plan_free: 'Free',
+            plan_pro: 'Subscriber',
+            upgrade: 'Upgrade',
+            balance: 'Credits balance',
+            bonus: 'Subscription bonus (per payment)',
+            records: 'Credits history',
+            detail: 'Detail',
+            date: 'Date',
+            change: 'Change',
+            empty: 'No records yet',
+            login: 'Sign in to view credits',
+            load_error: 'Failed to load history',
+        },
+    };
+
+    const tr = language === 'zh' ? translations.zh : translations.en;
+
+    useEffect(() => {
+        if (!isAuthenticated) return;
+        setLoading(true);
+        setLoadError(null);
+        getPurchasesV2()
+            .then((res) => setRecords(res.purchases))
+            .catch((err) => setLoadError(err instanceof Error ? err.message : tr.load_error))
+            .finally(() => setLoading(false));
+    }, [isAuthenticated, tr.load_error]);
+
+    const formatLabel = (record: PurchaseRecord) => {
+        const map: Record<string, { zh: string; en: string }> = {
+            gm_credit: { zh: '积分充值/赠送', en: 'Credits top-up' },
+            dimension: { zh: '心理维度', en: 'Dimension' },
+            core_theme: { zh: '核心主题', en: 'Core theme' },
+            detail: { zh: '详情解锁', en: 'Detail unlock' },
+            daily_script: { zh: '今日剧本', en: 'Daily script' },
+            daily_transit: { zh: '星象详情', en: 'Transit detail' },
+            synastry: { zh: '合盘', en: 'Synastry' },
+            synastry_detail: { zh: '合盘详情', en: 'Synastry detail' },
+            ask: { zh: 'Ask 问答', en: 'Ask question' },
+            cbt_stats: { zh: 'CBT 统计', en: 'CBT stats' },
+            synthetica: { zh: 'Synthetica', en: 'Synthetica' },
+            report: { zh: '付费报告', en: 'Report' },
+        };
+        const label = map[record.featureType];
+        return label ? (language === 'zh' ? label.zh : label.en) : record.featureType;
+    };
+
+    const getPointsChange = (record: PurchaseRecord) => {
+        if (record.featureType === 'gm_credit') {
+            return record.quantity ?? 0;
+        }
+        return record.priceCents ? -record.priceCents : 0;
+    };
+
+    if (!isAuthenticated) {
+        return (
+            <Container>
+                <Card className="text-center py-12">
+                    <div className="text-sm opacity-70 mb-4">{tr.login}</div>
+                    <ActionButton onClick={() => openLoginModal(tr.login)}>{tr.login}</ActionButton>
+                </Card>
+            </Container>
+        );
+    }
+
+    return (
+        <Container>
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
+                <div>
+                    <h1 className="text-3xl font-serif font-medium">{tr.title}</h1>
+                    <p className="text-sm opacity-70">{tr.subtitle}</p>
+                </div>
+                {!isSubscriber && (
+                    <ActionButton variant="outline" onClick={() => openUpgradeModal()}>
+                        {tr.upgrade}
+                    </ActionButton>
+                )}
+            </div>
+
+            <Section title={tr.balance}>
+                <Card className="mb-4">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-60 mb-2">{tr.plan}</div>
+                            <div className="text-lg font-medium">{isSubscriber ? tr.plan_pro : tr.plan_free}</div>
+                        </div>
+                        <div className="text-right">
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-60 mb-2">{tr.balance}</div>
+                            <div className="text-2xl font-semibold text-gold-500">{balance}</div>
+                        </div>
+                    </div>
+                    <div className="mt-4 text-xs opacity-70">
+                        {tr.bonus}：500
+                    </div>
+                </Card>
+            </Section>
+
+            <Section title={tr.records}>
+                <Card>
+                    <div className="grid grid-cols-[1.4fr_0.9fr_0.6fr] text-xs uppercase tracking-widest opacity-60 pb-3 border-b border-current/10">
+                        <span>{tr.detail}</span>
+                        <span>{tr.date}</span>
+                        <span className="text-right">{tr.change}</span>
+                    </div>
+                    {loading && (
+                        <div className="py-6 text-sm opacity-70 text-center">{language === 'zh' ? '加载中...' : 'Loading...'}</div>
+                    )}
+                    {loadError && (
+                        <div className="py-6 text-sm text-center text-danger">{loadError}</div>
+                    )}
+                    {!loading && !loadError && records.length === 0 && (
+                        <div className="py-6 text-sm opacity-70 text-center">{tr.empty}</div>
+                    )}
+                    {!loading && !loadError && records.length > 0 && (
+                        <div className="divide-y divide-current/5">
+                            {records.map((record) => {
+                                const change = getPointsChange(record);
+                                if (!change) return null;
+                                const changeColor = change > 0 ? 'text-success' : 'text-danger';
+                                return (
+                                    <div key={record.id} className="grid grid-cols-[1.4fr_0.9fr_0.6fr] py-3 text-sm">
+                                        <div>
+                                            <div className="font-medium">{formatLabel(record)}</div>
+                                            {record.featureId && (
+                                                <div className="text-xs opacity-60">{record.featureId}</div>
+                                            )}
+                                        </div>
+                                        <div className="text-xs opacity-70">
+                                            {new Date(record.createdAt).toLocaleString()}
+                                        </div>
+                                        <div className={`text-right font-semibold ${changeColor}`}>
+                                            {change > 0 ? `+${change}` : `${change}`}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                </Card>
+            </Section>
+        </Container>
+    );
+};
+
+const AuthPage: React.FC = () => {
+    const { theme } = useTheme();
+    const { t } = useLanguage();
+    const navigate = useNavigate();
+    const {
+        isAuthenticated,
+        loginWithEmail,
+        registerWithEmail,
+        loginWithGoogle,
+        loginWithApple,
+    } = useAuth();
+    const [mode, setMode] = useState<'login' | 'register'>('login');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [toast, setToast] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+    const isDark = theme === 'dark';
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            navigate('/dashboard');
+        }
+    }, [isAuthenticated, navigate]);
+
+    useEffect(() => {
+        if (!toast) return;
+        const timer = window.setTimeout(() => setToast(null), 3000);
+        return () => window.clearTimeout(timer);
+    }, [toast]);
+
+    const authT = t.auth;
+
+    const showToast = (type: 'success' | 'error', message: string) => {
+        setToast({ type, message });
+    };
+
+    const handleAuthSuccess = (message: string) => {
+        setLoading(false);
+        showToast('success', message);
+        window.setTimeout(() => navigate('/dashboard'), 800);
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        try {
+            if (mode === 'register') {
+                await registerWithEmail(email, password, name || undefined);
+                handleAuthSuccess(authT.success_register);
+            } else {
+                await loginWithEmail(email, password);
+                handleAuthSuccess(authT.success_login);
+            }
+        } catch (err) {
+            showToast('error', err instanceof Error ? err.message : authT.error_fallback);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleGoogleLogin = async () => {
+        setLoading(true);
+        try {
+            if (typeof window.google === 'undefined') {
+                throw new Error('Google Sign-In SDK not loaded');
+            }
+
+            window.google.accounts.id.initialize({
+                client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '',
+                callback: async (response: any) => {
+                    try {
+                        await loginWithGoogle(response.credential);
+                        handleAuthSuccess(authT.success_login);
+                    } catch (err) {
+                        showToast('error', err instanceof Error ? err.message : authT.error_fallback);
+                        setLoading(false);
+                    }
+                },
+            });
+
+            window.google.accounts.id.prompt();
+        } catch (err) {
+            showToast('error', err instanceof Error ? err.message : authT.error_fallback);
+            setLoading(false);
+        }
+    };
+
+    const handleAppleLogin = async () => {
+        setLoading(true);
+        try {
+            if (typeof window.AppleID === 'undefined') {
+                throw new Error('Apple Sign-In SDK not loaded');
+            }
+
+            await window.AppleID.auth.init({
+                clientId: import.meta.env.VITE_APPLE_CLIENT_ID || '',
+                scope: 'name email',
+                redirectURI: window.location.origin,
+                usePopup: true,
+            });
+
+            const response = await window.AppleID.auth.signIn();
+            if (response.authorization?.id_token) {
+                await loginWithApple(response.authorization.id_token, response.user);
+                handleAuthSuccess(authT.success_login);
+            } else {
+                showToast('error', authT.error_fallback);
+            }
+        } catch (err) {
+            showToast('error', err instanceof Error ? err.message : authT.error_fallback);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <Container>
+            {toast && (
+                <div className="fixed top-6 right-6 z-50">
+                    <div className={`px-4 py-3 rounded-lg border text-sm shadow-lg ${
+                        toast.type === 'success'
+                            ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-400'
+                            : 'border-red-500/40 bg-red-500/10 text-red-400'
+                    }`}>
+                        {toast.message}
+                    </div>
+                </div>
+            )}
+
+            <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] items-start">
+                <Card className={`p-6 md:p-8 ${isDark ? 'bg-space-900 border-gold-500/20' : 'bg-white border-paper-300'}`}>
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
+                            isDark ? 'bg-gold-500/10 text-gold-400' : 'bg-gold-500/15 text-gold-600'
+                        }`}>
+                            ✦
+                        </div>
+                        <div>
+                            <div className="text-sm uppercase tracking-[0.35em] text-gold-500/70">
+                                {t.app.name}
+                            </div>
+                            <div className="text-2xl font-serif font-semibold">
+                                {authT.subtitle}
+                            </div>
+                        </div>
+                    </div>
+                    <p className={`text-sm mb-8 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
+                        {t.app.tagline}
+                    </p>
+                    <div className={`rounded-2xl border p-5 ${isDark ? 'border-gold-500/20 bg-space-950/60' : 'border-paper-300 bg-paper-50'}`}>
+                        <div className="text-xs uppercase tracking-[0.3em] text-gold-500/70 mb-4">
+                            {authT.benefits_title}
+                        </div>
+                        <div className="space-y-2 text-sm">
+                            {[authT.benefit_unlimited, authT.benefit_ask, authT.benefit_synastry, authT.benefit_bonus, authT.benefit_reports].map(item => (
+                                <div key={item} className="flex items-center gap-2">
+                                    <span className="text-gold-500">✶</span>
+                                    <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Card>
+
+                <Card className={`p-6 md:p-8 ${isDark ? 'bg-space-900 border-gold-500/20' : 'bg-white border-paper-300'}`}>
+                    <div className="mb-6">
+                        <div className="text-sm uppercase tracking-[0.3em] text-gold-500/70 mb-2">
+                            {mode === 'login' ? authT.login : authT.register}
+                        </div>
+                        <h2 className="text-2xl font-serif font-semibold">
+                            {mode === 'login' ? authT.title_login : authT.title_register}
+                        </h2>
+                    </div>
+
+                    <div className="space-y-3 mb-6">
+                        <button
+                            onClick={handleGoogleLogin}
+                            disabled={loading}
+                            className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
+                                isDark
+                                    ? 'bg-space-800 border-gold-500/20 hover:bg-space-700 text-star-100'
+                                    : 'bg-white border-paper-300 hover:bg-paper-100 text-paper-900'
+                            } ${loading ? 'opacity-60 cursor-not-allowed' : ''}`}
+                        >
+                            <svg className="w-5 h-5" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            <span className="font-medium">{authT.continue_with_google}</span>
+                        </button>
+
+                        <button
+                            onClick={handleAppleLogin}
+                            disabled={loading}
+                            className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
+                                isDark
+                                    ? 'bg-white text-black hover:bg-gray-100'
+                                    : 'bg-black text-white hover:bg-gray-900'
+                            } ${loading ? 'opacity-60 cursor-not-allowed' : ''}`}
+                        >
+                            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                            </svg>
+                            <span className="font-medium">{authT.continue_with_apple}</span>
+                        </button>
+                    </div>
+
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
+                        <span className={`text-xs uppercase tracking-wider ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
+                            {authT.or_continue_with}
+                        </span>
+                        <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        {mode === 'register' && (
+                            <div>
+                                <label
+                                    htmlFor="auth-name"
+                                    className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+                                >
+                                    {authT.name}
+                                </label>
+                                <GlassInput
+                                    id="auth-name"
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    placeholder="Your name"
+                                    disabled={loading}
+                                    autoComplete="name"
+                                />
+                            </div>
+                        )}
+
+                        <div>
+                                <label
+                                    htmlFor="auth-email"
+                                    className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+                                >
+                                    {authT.email}
+                                </label>
+                            <GlassInput
+                                id="auth-email"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="you@example.com"
+                                required
+                                disabled={loading}
+                                autoComplete="email"
+                                aria-required="true"
+                            />
+                        </div>
+
+                        <div>
+                                <label
+                                    htmlFor="auth-password"
+                                    className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+                                >
+                                    {authT.password}
+                                </label>
+                            <GlassInput
+                                id="auth-password"
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="********"
+                                required
+                                minLength={8}
+                                disabled={loading}
+                                autoComplete={mode === 'register' ? 'new-password' : 'current-password'}
+                                aria-required="true"
+                                aria-describedby={mode === 'register' ? 'auth-password-hint' : undefined}
+                            />
+                            {mode === 'register' && (
+                                <p id="auth-password-hint" className={`text-xs mt-1 ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
+                                    {authT.password_hint}
+                                </p>
+                            )}
+                        </div>
+
+                        <ActionButton
+                            variant="primary"
+                            disabled={loading}
+                            className="w-full"
+                        >
+                            {loading ? '...' : mode === 'login' ? authT.login : authT.register}
+                        </ActionButton>
+                    </form>
+
+                    <button
+                        onClick={() => setMode(mode === 'login' ? 'register' : 'login')}
+                        className={`w-full text-center text-sm mt-5 ${isDark ? 'text-star-300 hover:text-star-100' : 'text-paper-500 hover:text-paper-700'} transition-colors`}
+                    >
+                        {mode === 'login' ? authT.switch_to_register : authT.switch_to_login}
+                    </button>
+                </Card>
+            </div>
         </Container>
     );
 };
@@ -5517,21 +6559,84 @@ const AppContent: React.FC = () => {
     const location = useLocation();
     const { t, toggleLanguage, language } = useLanguage();
     const { toggleTheme, theme } = useTheme();
+    const { isAuthenticated, migrateLocalData, refreshUser, user: authUser } = useAuth();
+    const { entitlements } = useEntitlement();
     const isWikiPath = location.pathname === '/wiki' || location.pathname.startsWith('/wiki/');
+    const authT = t.auth;
+    const [showMigration, setShowMigration] = useState(false);
+    const [migrationStatus, setMigrationStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [migrationMessage, setMigrationMessage] = useState<string | null>(null);
+
+    const hasCloudProfile = !!authUser?.birthProfile && localStorage.getItem('astro_profile_migrated') === '1';
+    const cloudProfile = useMemo(() => {
+        if (!hasCloudProfile || !authUser?.birthProfile) return null;
+        const birth = authUser.birthProfile;
+        if (!birth.birthDate || !birth.birthCity || !birth.timezone) return null;
+        return {
+            userId: authUser.id,
+            name: authUser.name,
+            birthDate: birth.birthDate,
+            birthTime: birth.birthTime,
+            birthCity: birth.birthCity,
+            lat: birth.lat,
+            lon: birth.lon,
+            timezone: birth.timezone,
+            accuracyLevel: birth.accuracyLevel || 'exact',
+            focusTags: authUser.preferences?.focusTags || [],
+        } as T.UserProfile;
+    }, [authUser, hasCloudProfile]);
+    const activeProfile = user || cloudProfile;
 
     // Redirect to landing if no user data, except for landing and onboarding
     useEffect(() => {
-        if (!user && !['/', '/onboarding'].includes(location.pathname) && !isWikiPath) {
+        if (!user && !hasCloudProfile && !['/', '/onboarding', '/auth'].includes(location.pathname) && !isWikiPath) {
             navigate('/');
         }
-    }, [user, location.pathname, navigate, isWikiPath]);
+    }, [user, hasCloudProfile, location.pathname, navigate, isWikiPath]);
 
-    const showNav = (user || isWikiPath) && !['/', '/onboarding'].includes(location.pathname);
+    useEffect(() => {
+        if (!isAuthenticated) {
+            setShowMigration(false);
+            return;
+        }
+        const hasLocalProfile = !!localStorage.getItem('astro_user');
+        const dismissed = sessionStorage.getItem('astro_migrate_prompted') === '1';
+        if (hasLocalProfile && !dismissed) {
+            setMigrationStatus('idle');
+            setMigrationMessage(null);
+            setShowMigration(true);
+        }
+    }, [isAuthenticated]);
+
+    const handleMigrate = async () => {
+        setMigrationStatus('loading');
+        setMigrationMessage(null);
+        try {
+            await migrateLocalData();
+            localStorage.setItem('astro_profile_migrated', '1');
+            sessionStorage.setItem('astro_migrate_prompted', '1');
+            saveUser(null);
+            await refreshUser();
+            setMigrationStatus('success');
+            setMigrationMessage(t.auth.migrate_success);
+            window.setTimeout(() => setShowMigration(false), 800);
+        } catch (err) {
+            setMigrationStatus('error');
+            setMigrationMessage(t.auth.migrate_error);
+        }
+    };
+
+    const handleSkipMigration = () => {
+        sessionStorage.setItem('astro_migrate_prompted', '1');
+        setShowMigration(false);
+    };
+
+    const showNav = (activeProfile || isWikiPath) && !['/', '/onboarding', '/auth'].includes(location.pathname);
 
     return (
         <>
             {showNav && (
-                <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === 'dark' ? 'bg-space-950/90 border-space-600' : 'bg-white/90 border-paper-300'}`}>
+                <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === 'dark' ? 'bg-space-950/90 border-gold-500/15' : 'bg-white/90 border-paper-300'}`}>
                     <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0" onClick={() => navigate('/dashboard')}>
@@ -5555,17 +6660,31 @@ const AppContent: React.FC = () => {
                                     <Link
                                         key={link.path}
                                         to={link.path}
-                                        className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap ${isActive ? 'text-gold-500' : 'opacity-60'}`}
+                                        className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap ${isActive ? 'text-gold-500' : 'opacity-70'}`}
                                     >
                                         {link.label}
                                     </Link>
                                 );
                             })}
+
+                            {isAuthenticated && (
+                                <button
+                                    onClick={() => navigate('/usage')}
+                                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide transition-colors ${
+                                        theme === 'dark'
+                                            ? 'border-gold-500/30 text-gold-300 hover:border-gold-500/60 hover:text-gold-200'
+                                            : 'border-gold-500/40 text-gold-700 hover:border-gold-500/70'
+                                    }`}
+                                >
+                                    <span className="text-gold-500">✦</span>
+                                    <span>{entitlements?.credits ?? 0}</span>
+                                </button>
+                            )}
                             
                             {/* Settings / Theme Toggles */}
                             <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
-                            <Link to="/settings" className="hidden md:flex w-10 h-10 items-center justify-center text-3xl leading-none font-bold uppercase opacity-50 hover:opacity-100 shrink-0">⚙</Link>
-                            <button onClick={toggleTheme} className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-50 hover:opacity-100 shrink-0">{theme === 'dark' ? '☀' : '☾'}</button>
+                            <Link to="/settings" className="hidden md:flex w-10 h-10 items-center justify-center text-3xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">⚙</Link>
+                            <button onClick={toggleTheme} className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">{theme === 'dark' ? '☀' : '☾'}</button>
 
                             {/* User Menu */}
                             <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
@@ -5578,31 +6697,86 @@ const AppContent: React.FC = () => {
             {/* Mobile Utility Toggle (Since main nav is now text links at top, we keep util buttons accessible) */}
             {showNav && (
                 <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
-                     <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === 'dark' ? 'bg-space-900/80 border-space-600' : 'bg-white/80 border-paper-300'}`}>
+                     <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === 'dark' ? 'bg-space-900/80 border-gold-500/15' : 'bg-white/80 border-paper-300'}`}>
                         {theme === 'dark' ? '☀' : '☾'}
                      </button>
                 </div>
             )}
 
             <div className={showNav ? (location.pathname === '/journal' ? "pt-16 pb-12" : "pt-24 pb-12") : ""}>
-                <Routes>
-                    <Route path="/" element={<LandingPage />} />
-                    <Route path="/onboarding" element={<OnboardingPage onComplete={(u) => { saveUser(u); navigate('/dashboard'); }} />} />
-                    <Route path="/dashboard" element={user ? <MePage profile={user} /> : <Navigate to="/" />} />
-                    <Route path="/forecast" element={user ? <TodayPage profile={user} /> : <Navigate to="/" />} />
-                    <Route path="/cycles" element={user ? <CyclesPage profile={user} /> : <Navigate to="/" />} />
-                    <Route path="/us" element={user ? <UsPage profile={user} /> : <Navigate to="/" />} />
-                    <Route path="/oracle" element={user ? <AskOraclePage profile={user} /> : <Navigate to="/" />} />
-                    <Route path="/journal" element={user ? <CBTMainPage profile={user} /> : <Navigate to="/" />} />
-                    <Route path="/wiki" element={<WikiHubPage />} />
-                    <Route path="/wiki/:id" element={<WikiDetailPage />} />
-                    <Route path="/settings" element={user ? <SettingsPage profile={user} onReset={() => saveUser(null)} /> : <Navigate to="/" />} />
-                    <Route path="/reports" element={<ReportsPage />} />
-                    <Route path="/reports/:reportId" element={<ReportViewPage />} />
-                    <Route path="/payment/success" element={<PaymentSuccessPage />} />
-                    <Route path="*" element={<Navigate to="/" />} />
-                </Routes>
+                <Suspense fallback={<OracleLoading />}>
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/onboarding" element={<OnboardingPage onComplete={(u) => { saveUser(u); navigate('/dashboard'); }} />} />
+                        <Route path="/dashboard" element={activeProfile ? <MePage profile={activeProfile} /> : <Navigate to="/" />} />
+                        <Route path="/forecast" element={activeProfile ? <TodayPage profile={activeProfile} /> : <Navigate to="/" />} />
+                        <Route path="/cycles" element={activeProfile ? <CyclesPage profile={activeProfile} /> : <Navigate to="/" />} />
+                        <Route path="/us" element={activeProfile ? <UsPage profile={activeProfile} /> : <Navigate to="/" />} />
+                        <Route path="/oracle" element={activeProfile ? <AskOraclePage profile={activeProfile} /> : <Navigate to="/" />} />
+                        <Route path="/journal" element={activeProfile ? <CBTMainPage profile={activeProfile} /> : <Navigate to="/" />} />
+                        <Route path="/wiki" element={<WikiHubPage />} />
+                        <Route path="/wiki/classics" element={<WikiClassicsPage />} />
+                        <Route path="/wiki/classics/:id" element={<WikiClassicDetailPage />} />
+                        <Route path="/wiki/:id" element={<WikiDetailPage />} />
+                        <Route path="/settings" element={activeProfile ? <SettingsPage profile={activeProfile} onReset={() => { localStorage.removeItem('astro_profile_migrated'); saveUser(null); }} /> : <Navigate to="/" />} />
+                        <Route path="/usage" element={activeProfile ? <CreditsUsagePage /> : <Navigate to="/" />} />
+                        <Route path="/auth" element={<AuthPage />} />
+                        <Route path="/reports" element={<ReportsPage />} />
+                        <Route path="/reports/:reportId" element={<ReportViewPage />} />
+                        <Route path="/payment/success" element={<PaymentSuccessPage />} />
+                        <Route path="/color-demo" element={<ColorSystemDemo />} />
+                        <Route path="*" element={<Navigate to="/" />} />
+                    </Routes>
+                </Suspense>
             </div>
+
+            {showMigration && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    <div
+                        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        onClick={handleSkipMigration}
+                    />
+                    <div className="relative max-w-md w-full rounded-2xl border border-white/10 bg-space-950 p-6 shadow-2xl">
+                        <button
+                            onClick={handleSkipMigration}
+                            className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+                        <div className="mb-4 text-center">
+                            <h2 className="text-xl font-bold text-white">{authT.migrate_title}</h2>
+                            <p className="text-sm text-gray-400 mt-2">{authT.migrate_desc}</p>
+                        </div>
+                        {migrationMessage && (
+                            <div className={`mb-4 rounded-lg border px-3 py-2 text-center text-sm ${
+                                migrationStatus === 'error'
+                                    ? 'border-red-500/40 bg-red-500/10 text-red-400'
+                                    : 'border-emerald-500/40 bg-emerald-500/10 text-emerald-400'
+                            }`}>
+                                {migrationMessage}
+                            </div>
+                        )}
+                        <div className="flex flex-col gap-3 sm:flex-row">
+                            <ActionButton
+                                variant="outline"
+                                onClick={handleSkipMigration}
+                                disabled={migrationStatus === 'loading'}
+                                className="flex-1"
+                            >
+                                {authT.migrate_later}
+                            </ActionButton>
+                            <ActionButton
+                                variant="primary"
+                                onClick={handleMigrate}
+                                disabled={migrationStatus === 'loading'}
+                                className="flex-1"
+                            >
+                                {migrationStatus === 'loading' ? '...' : authT.migrate_confirm}
+                            </ActionButton>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Auth Modals */}
             <LoginModal />
@@ -5617,7 +6791,10 @@ const App: React.FC = () => {
       <ThemeProvider>
         <LanguageProvider>
           <AuthProvider>
-            <AppContent />
+            <EntitlementProvider>
+              <AppContent />
+              <GlobalPaywall />
+            </EntitlementProvider>
           </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>

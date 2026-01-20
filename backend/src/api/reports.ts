@@ -2,9 +2,9 @@
 import { Router, Request, Response } from 'express';
 import { authMiddleware, requireAuth } from './auth.js';
 import reportService, { ReportType } from '../services/reportService.js';
-import subscriptionService from '../services/subscriptionService.js';
 import userService from '../services/userService.js';
-import { PRODUCTS } from '../config/stripe.js';
+import entitlementServiceV2 from '../services/entitlementServiceV2.js';
+import { SUBSCRIPTION_BENEFITS } from '../config/auth.js';
 
 const router = Router();
 
@@ -73,6 +73,15 @@ router.get('/access/:reportType', authMiddleware, requireAuth, async (req: Reque
 
     const hasAccess = await reportService.hasReportAccess(req.userId!, reportType);
     const existingReport = await reportService.getReportByType(req.userId!, reportType);
+    const entitlements = await entitlementServiceV2.getEntitlements(req.userId!);
+    const basePrice = reportService.getReportPrice(reportType);
+    if (!basePrice) {
+      return res.status(400).json({ error: 'Report pricing unavailable' });
+    }
+    const discount = entitlements.isSubscriber
+      ? (entitlements.discount || SUBSCRIPTION_BENEFITS.REPORT_DISCOUNT)
+      : 0;
+    const price = discount > 0 ? Math.ceil(basePrice * (1 - discount)) : basePrice;
 
     res.json({
       hasAccess,
@@ -80,7 +89,7 @@ router.get('/access/:reportType', authMiddleware, requireAuth, async (req: Reque
         id: existingReport.id,
         generatedAt: existingReport.generated_at,
       } : null,
-      price: PRODUCTS.reports[reportType]?.amount || 0,
+      price,
     });
   } catch (error) {
     console.error('Check access error:', error);
@@ -146,15 +155,11 @@ router.post('/generate', authMiddleware, requireAuth, async (req: Request, res: 
 // Purchase and generate a report
 router.post('/purchase', authMiddleware, requireAuth, async (req: Request, res: Response) => {
   try {
-    const { reportType, successUrl, cancelUrl } = req.body;
+    const { reportType } = req.body;
     const validTypes = ['monthly', 'annual', 'career', 'wealth', 'love', 'saturn_return', 'synastry_deep'];
 
     if (!reportType || !validTypes.includes(reportType)) {
       return res.status(400).json({ error: 'Invalid report type' });
-    }
-
-    if (!successUrl || !cancelUrl) {
-      return res.status(400).json({ error: 'successUrl and cancelUrl required' });
     }
 
     // Check if already purchased
@@ -163,30 +168,35 @@ router.post('/purchase', authMiddleware, requireAuth, async (req: Request, res: 
       return res.status(400).json({ error: 'Report already purchased' });
     }
 
-    const user = await userService.findById(req.userId!);
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+    const entitlements = await entitlementServiceV2.getEntitlements(req.userId!);
+    const basePrice = reportService.getReportPrice(reportType);
+    const discount = entitlements.isSubscriber
+      ? (entitlements.discount || SUBSCRIPTION_BENEFITS.REPORT_DISCOUNT)
+      : 0;
+    const price = discount > 0 ? Math.ceil(basePrice * (1 - discount)) : basePrice;
+
+    if (entitlements.credits < price) {
+      return res.status(403).json({ error: 'Insufficient credits', price, balance: entitlements.credits });
     }
 
-    // Check if subscriber for discount
-    const subscription = await subscriptionService.getSubscription(req.userId!);
-    const isSubscriber = subscription?.status === 'active';
+    const record = await entitlementServiceV2.purchaseWithCredits(
+      req.userId!,
+      'report',
+      reportType,
+      'permanent',
+      price
+    );
 
-    // Create checkout session for report purchase
-    const checkoutUrl = await subscriptionService.createPurchaseCheckout({
-      userId: req.userId!,
-      email: user.email,
-      productType: 'report',
-      productId: reportType,
-      successUrl,
-      cancelUrl,
-      isSubscriber,
-    });
+    if (!record) {
+      return res.status(403).json({ error: 'Insufficient credits', price, balance: entitlements.credits });
+    }
 
-    res.json({ url: checkoutUrl });
+    const updated = await entitlementServiceV2.getEntitlements(req.userId!);
+
+    res.json({ success: true, entitlements: updated, price });
   } catch (error) {
     console.error('Purchase report error:', error);
-    res.status(500).json({ error: 'Failed to create checkout' });
+    res.status(500).json({ error: 'Failed to purchase report' });
   }
 });
 

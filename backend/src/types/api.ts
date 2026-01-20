@@ -1,5 +1,5 @@
-// INPUT: 后端 API 类型定义（含百科内容与宫主星飞入星座字段）。
-// OUTPUT: 导出 API 请求/响应类型（snake_case schema，含百科与宫主星飞入星座字段）。
+// INPUT: 后端 API 类型定义（含百科内容、经典分类字段与宫主星飞入星座字段）。
+// OUTPUT: 导出 API 请求/响应类型（snake_case schema，含 AI 响应与百科字段）。
 // POS: 后端 API 类型定义；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 // === 基础类型 ===
@@ -140,13 +140,6 @@ export interface CoreThemesAI {
   fear: { title: string; summary: string; key_points: string[] };
   growth: { title: string; summary: string; key_points: string[] };
   confidence: 'high' | 'med' | 'low';
-}
-
-export interface TechnicalAnalysisAI {
-  pattern: { element_summary: string; modality_summary: string; house_focus: string };
-  big_3_deep: Array<{ planet: string; sign_meaning: string; house_meaning: string; key_aspects: string[]; dimension_link: string }>;
-  layers: { personal: string; social: string; transpersonal: string };
-  key_aspects_list: Array<{ name: string; tension_support: string; experience: string; advice: string }>;
 }
 
 export interface DailyEnergyAI {
@@ -629,13 +622,6 @@ export interface NatalDimensionResponse {
   content: DimensionReportAI;
 }
 
-// GET /api/natal/technical
-export interface NatalTechnicalResponse {
-  chart: NatalChart;
-  lang: Language;
-  content: TechnicalAnalysisAI;
-}
-
 // GET /api/daily/detail
 export interface DailyDetailResponse {
   transits: TransitData;
@@ -709,6 +695,85 @@ export interface WikiItemSummary {
   keywords: string[];
   description: string;
   color_token?: string;
+}
+
+export interface WikiClassicSummary {
+  id: string;
+  title: string;
+  author: string;
+  summary?: string;
+  cover_url?: string | null;
+  keywords?: string[];
+  category?: string;
+}
+
+// Classic seed data for wiki classics (without lang/content)
+export interface ClassicSeed {
+  id: string;
+  title: string;
+  author: string;
+  summary: string;
+  cover_url: string | null;
+  keywords: string[];
+  stage: string;
+  category?: string;
+}
+
+// 结构化的书籍拆解内容
+export interface WikiClassicSections {
+  context: {
+    title: string;
+    position: string;
+    author_background: string;
+    contribution: string;
+  };
+  philosophy: {
+    title: string;
+    core_logic: string;
+    metaphor: string;
+  };
+  structure: {
+    title: string;
+    logic_flow: string;
+    modules: Array<{ name: string; content: string }>;
+    highlights: Array<{ topic: string; insight: string }>;
+  };
+  methodology: {
+    title: string;
+    steps: string[];
+  };
+  quotes: {
+    title: string;
+    items: Array<{ quote: string; interpretation: string }>;
+  };
+  criticism: {
+    title: string;
+    limitations: string;
+    misconceptions: string;
+    debates: string;
+  };
+  action: {
+    title: string;
+    phases: Array<{ phase: string; task: string }>;
+    immediate_action: string;
+  };
+}
+
+export interface WikiClassicDetail extends WikiClassicSummary {
+  content?: string;
+  enhanced?: boolean;
+  sections?: WikiClassicSections;
+  lang: Language;
+}
+
+export interface WikiClassicsResponse {
+  lang: Language;
+  items: WikiClassicSummary[];
+}
+
+export interface WikiClassicResponse {
+  lang: Language;
+  item: WikiClassicDetail;
 }
 
 export interface WikiPillar {

@@ -1,10 +1,11 @@
 // INPUT: CBT API 路由。
-// OUTPUT: 导出 cbt 路由（含 AI 分析与单语言输出）。
+// OUTPUT: 导出 cbt 路由（含 AI 分析、紧凑摘要与 Server-Timing）。
 // POS: CBT 端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { Router } from 'express';
+import { performance } from 'perf_hooks';
 import type { BirthInput, CBTAnalysisResponse, Language } from '../types/api.js';
-import { ephemerisService } from '../services/ephemeris.js';
+import { buildCompactChartSummary, buildCompactTransitSummary, ephemerisService } from '../services/ephemeris.js';
 import { AIUnavailableError, generateAIContent } from '../services/ai.js';
 import { cacheService } from '../cache/redis.js';
 import { resolveLocation } from '../services/geocoding.js';
@@ -29,17 +30,22 @@ interface CBTRecord {
 
 async function parseBirthInput(body: Record<string, unknown>): Promise<BirthInput> {
   const birth = body.birth as Record<string, unknown>;
-  const city = birth.city as string;
-  const geo = await resolveLocation(city);
+  const city = (birth.city as string) || '';
   const latParam = birth.lat;
   const lonParam = birth.lon;
+  const timezoneParam = birth.timezone as string | undefined;
+  const hasLat = latParam !== undefined && latParam !== '';
+  const hasLon = lonParam !== undefined && lonParam !== '';
+  const hasTimezone = typeof timezoneParam === 'string' && timezoneParam.trim() !== '';
+  const shouldResolve = !hasLat || !hasLon || !hasTimezone;
+  const geo = shouldResolve ? await resolveLocation(city) : null;
   return {
     date: birth.date as string,
     time: birth.time as string | undefined,
-    city: geo.city,
-    lat: latParam === undefined || latParam === '' ? geo.lat : Number(latParam),
-    lon: lonParam === undefined || lonParam === '' ? geo.lon : Number(lonParam),
-    timezone: birth.timezone as string || geo.timezone,
+    city: (geo?.city || city || 'Unknown'),
+    lat: hasLat ? Number(latParam) : geo?.lat,
+    lon: hasLon ? Number(lonParam) : geo?.lon,
+    timezone: hasTimezone ? (timezoneParam as string) : (geo?.timezone || 'UTC'),
     accuracy: (birth.accuracy as BirthInput['accuracy']) || 'exact',
   };
 }
@@ -47,22 +53,39 @@ async function parseBirthInput(body: Record<string, unknown>): Promise<BirthInpu
 // POST /api/cbt/analysis - CBT 分析
 cbtRouter.post('/analysis', async (req, res) => {
   try {
+    const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === 'en' ? 'en' : 'zh';
     const birth = await parseBirthInput(req.body);
     const { situation, moods, automaticThoughts, hotThought, evidenceFor, evidenceAgainst, balancedEntries } = req.body;
 
+    const coreStart = performance.now();
     const chart = await ephemerisService.calculateNatalChart(birth);
-
-    // 计算当日行运盘
     const now = new Date();
     const transits = await ephemerisService.calculateTransits(birth, now);
+    const coreMs = performance.now() - coreStart;
+    const chartSummary = buildCompactChartSummary(chart);
+    const transitSummary = buildCompactTransitSummary(transits);
 
+    const aiStart = performance.now();
     const result = await generateAIContent({
       promptId: 'cbt-analysis',
-      context: { chart, transits, situation, moods, automaticThoughts, hotThought, evidenceFor, evidenceAgainst, balancedEntries },
+      context: {
+        chart_summary: chartSummary,
+        transit_summary: transitSummary,
+        situation,
+        moods,
+        automaticThoughts,
+        hotThought,
+        evidenceFor,
+        evidenceAgainst,
+        balancedEntries,
+      },
       lang,
     });
+    const aiMs = performance.now() - aiStart;
+    const totalMs = performance.now() - requestStart;
+    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
 
     res.json({ lang: result.lang, content: result.content } as CBTAnalysisResponse);
   } catch (error) {
@@ -77,20 +100,26 @@ cbtRouter.post('/analysis', async (req, res) => {
 // POST /api/cbt/aggregate-analysis - CBT 聚合分析 (月度/阶段性)
 cbtRouter.post('/aggregate-analysis', async (req, res) => {
   try {
+    const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === 'en' ? 'en' : 'zh';
     const birth = await parseBirthInput(req.body);
     const { period, somatic_stats, root_stats, mood_stats, competence_stats } = req.body;
 
+    const coreStart = performance.now();
     const chart = await ephemerisService.calculateNatalChart(birth);
     const now = new Date();
     const transits = await ephemerisService.calculateTransits(birth, now);
+    const coreMs = performance.now() - coreStart;
+    const chartSummary = buildCompactChartSummary(chart);
+    const transitSummary = buildCompactTransitSummary(transits);
 
+    const aiStart = performance.now();
     const result = await generateAIContent({
       promptId: 'cbt-aggregate-analysis',
       context: { 
-        chart, 
-        transits, 
+        chart_summary: chartSummary,
+        transit_summary: transitSummary,
         period,
         somatic_stats,
         root_stats,
@@ -99,6 +128,9 @@ cbtRouter.post('/aggregate-analysis', async (req, res) => {
       },
       lang,
     });
+    const aiMs = performance.now() - aiStart;
+    const totalMs = performance.now() - requestStart;
+    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
 
     res.json({ lang: result.lang, content: result.content });
   } catch (error) {

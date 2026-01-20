@@ -1,5 +1,5 @@
-// INPUT: TypeScript 类型定义（含百科内容与宫主星飞入星座字段）。
-// OUTPUT: 导出共享类型（含百科内容与成长焦点结构）。
+// INPUT: TypeScript 类型定义（含百科内容与经典分类字段）。
+// OUTPUT: 导出共享类型（含百科内容与 AI 报告结构）。
 // POS: 主应用类型定义；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 // Data Models
@@ -11,6 +11,12 @@ export interface AIContentMeta {
   source: 'ai' | 'mock';
   cached?: boolean;
   reason?: 'missing_api_key' | 'prompt_missing' | 'timeout' | 'invalid_json' | 'error';
+}
+
+export interface LocalizedContent<T> {
+  lang: Language;
+  content: T;
+  meta?: AIContentMeta;
 }
 
 export interface UserProfile {
@@ -659,13 +665,6 @@ export interface CoreThemesContent {
   confidence: 'high' | 'med' | 'low';
 }
 
-export interface TechnicalAnalysisContent {
-  pattern: { element_summary: string; modality_summary: string; house_focus: string };
-  big_3_deep: Array<{ planet: string; sign_meaning: string; house_meaning: string; key_aspects: string[]; dimension_link: string }>;
-  layers: { personal: string; social: string; transpersonal: string };
-  key_aspects_list: Array<{ name: string; tension_support: string; experience: string; advice: string }>;
-}
-
 // --- Daily Forecast Types (Optimized v3.0) ---
 
 export interface DailyEnergy {
@@ -794,7 +793,7 @@ export interface CycleCardContent {
 export type AskAnswerContent = string;
 
 // --- Section Detail Interpretation (懒加载详情解读) ---
-export type DetailType = 'elements' | 'aspects' | 'planets' | 'asteroids' | 'rulers';
+export type DetailType = 'elements' | 'aspects' | 'planets' | 'asteroids' | 'rulers' | 'synthesis';
 export type DetailContext = 'natal' | 'transit' | 'synastry' | 'composite';
 
 export interface SectionDetailContent {
@@ -811,6 +810,11 @@ export type WikiItemType = 'planets' | 'signs' | 'houses' | 'aspects' | 'concept
 export interface WikiDeepDiveStep {
   step: number;
   title: string;
+  description: string;
+}
+
+export interface WikiLifeArea {
+  area: 'career' | 'love' | 'health' | 'finance' | 'family' | 'spiritual';
   description: string;
 }
 
@@ -833,6 +837,11 @@ export interface WikiItem {
   image_url?: string;
   deep_dive?: WikiDeepDiveStep[];
   related_ids?: string[];
+  life_areas?: WikiLifeArea[];
+  growth_path?: string;
+  practical_tips?: string[];
+  common_misconceptions?: string[];
+  affirmation?: string;
 }
 
 export interface WikiItemSummary {
@@ -844,6 +853,72 @@ export interface WikiItemSummary {
   keywords: string[];
   description: string;
   color_token?: string;
+}
+
+export interface WikiClassicSummary {
+  id: string;
+  title: string;
+  author: string;
+  summary?: string;
+  cover_url?: string | null;
+  keywords?: string[];
+  category?: string;
+}
+
+// 结构化的书籍拆解内容
+export interface WikiClassicSections {
+  context: {
+    title: string;
+    position: string;
+    author_background: string;
+    contribution: string;
+  };
+  philosophy: {
+    title: string;
+    core_logic: string;
+    metaphor: string;
+  };
+  structure: {
+    title: string;
+    logic_flow: string;
+    modules: Array<{ name: string; content: string }>;
+    highlights: Array<{ topic: string; insight: string }>;
+  };
+  methodology: {
+    title: string;
+    steps: string[];
+  };
+  quotes: {
+    title: string;
+    items: Array<{ quote: string; interpretation: string }>;
+  };
+  criticism: {
+    title: string;
+    limitations: string;
+    misconceptions: string;
+    debates: string;
+  };
+  action: {
+    title: string;
+    phases: Array<{ phase: string; task: string }>;
+    immediate_action: string;
+  };
+}
+
+export interface WikiClassicDetail extends WikiClassicSummary {
+  content: string;
+  sections?: WikiClassicSections;
+  lang: Language;
+}
+
+export interface WikiClassicsResponse {
+  lang: Language;
+  items: WikiClassicSummary[];
+}
+
+export interface WikiClassicResponse {
+  lang: Language;
+  item: WikiClassicDetail;
 }
 
 export interface WikiPillar {
@@ -912,3 +987,86 @@ export interface WikiSearchResponse {
   lang: Language;
   matches: WikiSearchMatch[];
 }
+
+// --- Synthetica Tool Types ---
+
+export enum SyntheticaContextFilter {
+  LOVE = 'LOVE',             // 爱情与亲密关系
+  SELF = 'SELF',             // 自我探索与身份认同
+  HEALING = 'HEALING',       // 心理健康与情绪疗愈
+  CAREER = 'CAREER',         // 职业方向与人生使命
+  TIMING = 'TIMING',         // 时机把握与生存指南
+  SOCIAL = 'SOCIAL'          // 社交与友谊动力学
+}
+
+export interface SyntheticaPlanet {
+  id: string;
+  name: string;
+  symbol: string;
+  keywords: string[];
+  archetype: string; // The "Who/What"
+  tier: 1 | 2 | 3 | 4; // 1=Lights, 2=Personal, 3=Social, 4=Outer
+}
+
+export interface SyntheticaSign {
+  id: string;
+  name: string;
+  symbol: string;
+  element: 'Fire' | 'Earth' | 'Air' | 'Water';
+  modality: 'Cardinal' | 'Fixed' | 'Mutable';
+  archetype: string; // The "How"
+}
+
+export interface SyntheticaHouse {
+  id: string;
+  name: string;
+  number: number;
+  archetype: string; // The "Where"
+  isAngular: boolean; // 1, 4, 7, 10
+}
+
+export enum SyntheticaAspectCategory {
+  FUSION = 'FUSION',     // 0度 - 合相
+  FRICTION = 'FRICTION', // 90/180度 - 硬相位
+  FLOW = 'FLOW'          // 60/120度 - 软相位
+}
+
+export interface SyntheticaAspect {
+  id: string;
+  name: string;
+  symbol: string;
+  angle: number;
+  category: SyntheticaAspectCategory;
+  description: string;
+}
+
+export interface SyntheticaAspectSelection {
+  planet: SyntheticaPlanet;
+  aspect: SyntheticaAspect;
+}
+
+export interface SyntheticaInterpretationModule {
+  id: string;
+  focus_planet: string;
+  keywords: string[];
+  headline: string;
+  analysis: string; // 150-200 words deep dive
+  shadow_side: string;
+  actionable_advice: string;
+}
+
+export interface SyntheticaAnalysisResult {
+  report_title: string;
+  modules: SyntheticaInterpretationModule[];
+  synthesis: string;
+}
+
+export type SyntheticaReportResponse = LocalizedContent<SyntheticaAnalysisResult>;
+
+export type SyntheticaSelectionState = {
+  planet: SyntheticaPlanet | null;
+  sign: SyntheticaSign | null;
+  house: SyntheticaHouse | null;
+  aspects: SyntheticaAspectSelection[]; // List of selected aspects
+  context: SyntheticaContextFilter;
+};

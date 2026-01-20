@@ -382,7 +382,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
                 const IconComponent = group.icon;
                 return (
                 <div key={group.category} className={`border rounded-[2rem] p-5 shadow-lg ${panelSurfaceTone} ${panelBorderTone}`}>
-                  <h4 className={`text-[11px] font-black uppercase mb-3 tracking-[0.25em] border-b pb-1.5 flex items-center gap-2 ${goldTextTone} ${panelBorderTone}`}>
+                  <h4 className={`text-xs font-black uppercase mb-3 tracking-[0.25em] border-b pb-1.5 flex items-center gap-2 ${goldTextTone} ${panelBorderTone}`}>
                     <IconComponent size={14}/> {group.category}
                   </h4>
                   <div className="flex flex-col gap-2">
@@ -401,7 +401,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
               })}
            </div>
            <div className={`w-full max-w-4xl p-4 rounded-2xl border flex flex-wrap gap-2 items-center ${panelSurfaceSoftTone} ${panelBorderTone}`}>
-              <span className={`text-[11px] font-black uppercase tracking-widest mr-2 ${goldTextTone}`}>{t.journal.perception_status}</span>
+              <span className={`text-xs font-black uppercase tracking-widest mr-2 ${goldTextTone}`}>{t.journal.perception_status}</span>
               {bodySymptoms.length === 0 ? <span className={`${mutedTextTone} text-sm font-medium`}>{t.journal.click_to_mark}</span> : bodySymptoms.map(s => (
                 <div key={s} className={`px-3 py-1 rounded-lg text-sm font-bold border flex items-center gap-2 ${symptomChipTone}`}>
                   {s} <X size={12} className="cursor-pointer" onClick={() => toggleSymptom(s)}/>
@@ -431,7 +431,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
               <div className={`p-4 rounded-[1.5rem] flex items-start gap-4 border ${isAgainst ? 'bg-danger/10 border-danger/20' : (isLight ? 'bg-gold-500/10 border-gold-600/35' : 'bg-gold-950/20 border-gold-500/20')}`}>
                 <div className={`p-2 rounded-xl mt-1 ${isAgainst ? 'bg-danger/20 text-danger' : (isLight ? 'bg-gold-500/20 text-gold-700' : 'bg-gold-500/20 text-gold-400')}`}><Zap size={16}/></div>
                 <div>
-                  <p className={`text-[11px] uppercase font-black tracking-widest mb-1 ${isAgainst ? 'text-danger' : goldTextTone}`}>{t.journal.analyzing_thought}</p>
+                  <p className={`text-xs uppercase font-black tracking-widest mb-1 ${isAgainst ? 'text-danger' : goldTextTone}`}>{t.journal.analyzing_thought}</p>
                   <p className="text-star-50 font-medium text-lg leading-relaxed">"{hotThought}"</p>
                 </div>
               </div>
@@ -603,7 +603,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
           <div className="text-sm text-danger mb-4">{analysisError}</div>
           <div className="flex items-center justify-center gap-3">
             <button
-              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest border ${isLight ? 'border-paper-300 text-star-200' : 'border-space-600 text-star-50'} hover:border-gold-500/60`}
+              className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest border ${isLight ? 'border-paper-300 text-star-200' : 'border-white/10 text-star-50'} hover:border-gold-500/60`}
               onClick={() => setAnalysisError(null)}
             >
               {t.journal.back_to_journal}
@@ -690,7 +690,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
                 <div className="flex-1 space-y-6 overflow-y-auto custom-scrollbar pr-2">
                    <div className={`border p-8 rounded-[2.5rem] backdrop-blur-xl shadow-inner relative group ${guideCardTone}`}>
                       <div className="absolute -top-4 -left-4 p-4 bg-accent/20 rounded-2xl text-accent shadow-xl border border-accent/30 group-hover:scale-110 transition-transform"><Sparkles size={20} /></div>
-                      <div className={`text-[11px] uppercase tracking-[0.4em] font-black mb-6 mt-2 ml-4 ${mutedTextTone}`}>{t.journal.current_step_guide}</div>
+                      <div className={`text-xs uppercase tracking-[0.4em] font-black mb-6 mt-2 ml-4 ${mutedTextTone}`}>{t.journal.current_step_guide}</div>
                       <div className="text-star-200 text-base leading-relaxed font-normal whitespace-pre-wrap">
                         {getStepHelp(currentStep)}
                       </div>
@@ -700,7 +700,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
                    <div className={`border p-6 rounded-[2.5rem] backdrop-blur-xl shadow-inner ${guideCardTone}`}>
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 bg-accent/10 rounded-xl text-accent shadow-inner"><Lightbulb size={20} /></div>
-                        <span className={`text-[11px] uppercase tracking-[0.3em] font-black ${mutedTextTone}`}>{t.journal.inspiration_guide}</span>
+                        <span className={`text-xs uppercase tracking-[0.3em] font-black ${mutedTextTone}`}>{t.journal.inspiration_guide}</span>
                       </div>
                       <div className={`text-sm leading-relaxed whitespace-pre-wrap ${mutedTextTone}`}>{stepExamples[currentStep]}</div>
                    </div>

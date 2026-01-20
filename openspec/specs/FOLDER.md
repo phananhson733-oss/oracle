@@ -1,5 +1,5 @@
-<!-- INPUT: OpenSpec 能力规范目录结构（含新增星盘展示配置规范）。 -->
-<!-- OUTPUT: specs 架构摘要与文件索引（含最新能力目录）。 -->
+<!-- INPUT: OpenSpec 能力规范目录结构（含 AI 加载优化规范更新）。 -->
+<!-- OUTPUT: specs 架构摘要与文件索引（含最新能力目录与缓存更新）。 -->
 <!-- POS: 规范目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -23,3 +23,9 @@
 - provide-cycle-forecast｜地位：能力规范目录｜功能：周期预测规范。
 - provide-daily-forecast｜地位：能力规范目录｜功能：日运预测规范。
 - support-cbt-journal｜地位：能力规范目录｜功能：CBT 日记规范。
+
+近期更新
+- 更新 generate-natal-insights 规范，补充本命盘 AI 缓存与失效策略。
+- 更新 provide-daily-forecast 规范，补充日运缓存与详情加载优化要求。
+- 更新 generate-synastry-report 规范，补充合盘报告缓存与请求去重要求。
+- 更新 support-cbt-journal 规范，补充 CBT 统计报告缓存失效策略。

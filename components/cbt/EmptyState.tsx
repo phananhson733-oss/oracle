@@ -78,7 +78,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ onCreateFirst }) => {
         </button>
 
         {/* Subtle hint */}
-        <p className="mt-8 text-[11px] text-star-400 uppercase tracking-[0.2em] opacity-50">
+        <p className="mt-8 text-xs text-star-400 uppercase tracking-[0.2em] opacity-50">
           {t.journal.cbt_insight}
         </p>
       </div>

@@ -9,26 +9,25 @@ import { useTheme, useLanguage, Container, Card, ActionButton } from '../UICompo
 import {
   getAvailableReports,
   getUserReports,
-  checkReportAccess,
   purchaseReport,
   ReportType,
   ReportInfo,
   Report,
   REPORT_DISPLAY,
 } from '../../services/reportClient';
-import { formatPrice } from '../../services/paymentClient';
 import { FileText, Lock, Check, ChevronRight, Crown, Sparkles } from 'lucide-react';
 
 const ReportsPage: React.FC = () => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
-  const { isAuthenticated, entitlements, openLoginModal, openUpgradeModal } = useAuth();
+  const { isAuthenticated, entitlements, openLoginModal, openUpgradeModal, refreshEntitlements } = useAuth();
 
   const [availableReports, setAvailableReports] = useState<ReportInfo[]>([]);
   const [userReports, setUserReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
   const [purchasingType, setPurchasingType] = useState<ReportType | null>(null);
+  const [purchaseError, setPurchaseError] = useState<string | null>(null);
 
   const isDark = theme === 'dark';
   const isSubscriber = entitlements?.isSubscriber;
@@ -47,6 +46,8 @@ const ReportsPage: React.FC = () => {
       subscriberDiscount: '订阅用户专享折扣',
       loginRequired: '登录后购买',
       purchased: '已购买',
+      purchaseFailed: '购买失败，请稍后重试',
+      insufficientCredits: '积分不足，请先充值',
     },
     en: {
       title: 'Astro Reports',
@@ -60,6 +61,8 @@ const ReportsPage: React.FC = () => {
       subscriberDiscount: 'Subscriber discount',
       loginRequired: 'Sign in to purchase',
       purchased: 'Purchased',
+      purchaseFailed: 'Purchase failed. Please try again.',
+      insufficientCredits: 'Not enough credits to purchase.',
     },
   };
 
@@ -93,13 +96,14 @@ const ReportsPage: React.FC = () => {
     }
 
     setPurchasingType(reportType);
+    setPurchaseError(null);
     try {
-      const currentUrl = window.location.href;
-      const successUrl = `${window.location.origin}/#/reports?purchased=${reportType}`;
-      const { url } = await purchaseReport(reportType, successUrl, currentUrl);
-      window.location.href = url;
+      await purchaseReport(reportType);
+      await refreshEntitlements();
+      await loadData();
     } catch (error) {
-      console.error('Purchase failed:', error);
+      const message = error instanceof Error ? error.message : tr.purchaseFailed;
+      setPurchaseError(message.includes('Insufficient credits') ? tr.insufficientCredits : tr.purchaseFailed);
     } finally {
       setPurchasingType(null);
     }
@@ -109,11 +113,13 @@ const ReportsPage: React.FC = () => {
     navigate(`/reports/${reportId}`);
   };
 
+  const formatPoints = (value: number) => (language === 'zh' ? `${value} 积分` : `${value} pts`);
+
   const getDisplayPrice = (price: number): { original: number; discounted: number | null } => {
     if (isSubscriber && discount > 0) {
       return {
         original: price,
-        discounted: Math.round(price * (1 - discount)),
+        discounted: Math.ceil(price * (1 - discount)),
       };
     }
     return { original: price, discounted: null };
@@ -154,6 +160,14 @@ const ReportsPage: React.FC = () => {
           <span className="text-gold-500 font-medium">
             {tr.subscriberDiscount}: {Math.round(discount * 100)}% off
           </span>
+        </div>
+      )}
+
+      {purchaseError && (
+        <div className={`mb-8 p-3 rounded-lg text-sm text-center ${
+          isDark ? 'bg-danger/20 text-danger' : 'bg-red-50 text-red-600'
+        }`}>
+          {purchaseError}
         </div>
       )}
 
@@ -237,15 +251,15 @@ const ReportsPage: React.FC = () => {
                     {discounted ? (
                       <>
                         <span className={`text-2xl font-bold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
-                          {formatPrice(discounted)}
+                          {formatPoints(discounted)}
                         </span>
                         <span className={`text-sm line-through ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
-                          {formatPrice(original)}
+                          {formatPoints(original)}
                         </span>
                       </>
                     ) : (
                       <span className={`text-2xl font-bold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
-                        {formatPrice(original)}
+                        {formatPoints(original)}
                       </span>
                     )}
                   </div>

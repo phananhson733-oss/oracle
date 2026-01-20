@@ -100,19 +100,17 @@ export async function generateReport(
 
 // Purchase a report
 export async function purchaseReport(
-  reportType: ReportType,
-  successUrl: string,
-  cancelUrl: string
-): Promise<{ url: string }> {
+  reportType: ReportType
+): Promise<{ success: boolean; price: number }> {
   const res = await authFetch(`${API_BASE}/reports/purchase`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ reportType, successUrl, cancelUrl }),
+    body: JSON.stringify({ reportType }),
   });
 
   if (!res.ok) {
     const error = await res.json();
-    throw new Error(error.error || 'Failed to create checkout');
+    throw new Error(error.error || 'Failed to purchase report');
   }
 
   return res.json();

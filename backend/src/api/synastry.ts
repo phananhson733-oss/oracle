@@ -1,5 +1,5 @@
-// INPUT: Synastry API 路由（含综述分区懒加载、宫主星飞入星座补齐与技术附录同步）。
-// OUTPUT: 导出 synastry 路由（含 overview 分区端点与宫主星飞入星座信息）。
+// INPUT: Synastry API 路由（含综述分区懒加载、权益校验与技术附录同步）。
+// OUTPUT: 导出 synastry 路由（含 overview 分区端点与权益校验逻辑）。
 // POS: Synastry 端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { Router } from 'express';
@@ -22,6 +22,10 @@ import type {
 import { ephemerisService } from '../services/ephemeris.js';
 import { AIUnavailableError, generateAIContentWithMeta } from '../services/ai.js';
 import { ASPECT_TYPES, PLANETS, SIGNS } from '../data/sources.js';
+import { authMiddleware } from './auth.js';
+import entitlementServiceV2 from '../services/entitlementServiceV2.js';
+import { PRICING } from '../config/auth.js';
+import { isSupabaseConfigured, type SynastryPersonInfo } from '../db/supabase.js';
 
 export const synastryRouter = Router();
 
@@ -163,6 +167,16 @@ const resolveOverviewSection = (value: unknown): SynastryOverviewSection | null 
       return null;
   }
 };
+
+const buildSynastryPersonInfo = (birth: BirthInput, name: string): SynastryPersonInfo => ({
+  name,
+  birthDate: birth.date,
+  birthTime: birth.time,
+  birthCity: birth.city,
+  lat: birth.lat ?? 0,
+  lon: birth.lon ?? 0,
+  timezone: birth.timezone,
+});
 
 const TAB_PROMPT_MAP: Record<SynastryTab, string> = {
   overview: 'synastry-overview',
@@ -723,7 +737,7 @@ synastryRouter.get('/technical', async (req, res) => {
 });
 
 // GET /api/synastry/overview-section - 合盘综述分区
-synastryRouter.get('/overview-section', async (req, res) => {
+synastryRouter.get('/overview-section', authMiddleware, async (req, res) => {
   try {
     const requestStart = performance.now();
     const lang = resolveLang(req.query.lang);
@@ -737,6 +751,43 @@ synastryRouter.get('/overview-section', async (req, res) => {
     const relationshipType = req.query.relationType as string | undefined;
     const nameA = (req.query.nameA as string) || 'A';
     const nameB = (req.query.nameB as string) || 'B';
+    const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const userId = req.userId!;
+    const normalizedRelationshipType = relationshipType || 'unknown';
+    const personA = buildSynastryPersonInfo(birthA, nameA);
+    const personB = buildSynastryPersonInfo(birthB, nameB);
+    let shouldRecord = false;
+    let shouldConsume = false;
+
+    if (!isSupabaseConfigured()) {
+      const access = await entitlementServiceV2.checkAccess(userId, 'synastry', undefined, deviceFingerprint);
+      if (!access.canAccess) {
+        return res.status(403).json({
+          error: 'Feature not available',
+          needPurchase: access.needPurchase,
+          price: access.price,
+        });
+      }
+      shouldConsume = true;
+    } else {
+      const record = await entitlementServiceV2.checkSynastryHash(
+        userId,
+        personA,
+        personB,
+        normalizedRelationshipType
+      );
+      if (!record.exists) {
+        const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint);
+        if (entitlements.synastry.totalLeft <= 0) {
+          return res.status(403).json({
+            error: 'Feature not available',
+            needPurchase: true,
+            price: PRICING.SYNASTRY_FULL,
+          });
+        }
+        shouldRecord = true;
+      }
+    }
 
     const coreStart = performance.now();
     const { chartA, chartB, synastry, synastryAspects, overlaysAB, overlaysBA } = await buildSynastryCore(birthA, birthB);
@@ -796,6 +847,33 @@ synastryRouter.get('/overview-section', async (req, res) => {
     };
     res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
 
+    if (shouldRecord) {
+      await entitlementServiceV2.recordSynastryUsage(
+        userId,
+        personA,
+        personB,
+        normalizedRelationshipType,
+        true
+      );
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      if (!consumed) {
+        return res.status(403).json({
+          error: 'Failed to consume feature',
+          needPurchase: true,
+          price: PRICING.SYNASTRY_FULL,
+        });
+      }
+    } else if (shouldConsume) {
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      if (!consumed) {
+        return res.status(403).json({
+          error: 'Failed to consume feature',
+          needPurchase: true,
+          price: PRICING.SYNASTRY_FULL,
+        });
+      }
+    }
+
     res.json({
       section,
       lang: content.lang,
@@ -813,7 +891,7 @@ synastryRouter.get('/overview-section', async (req, res) => {
 });
 
 // GET /api/synastry - 合盘分析
-synastryRouter.get('/', async (req, res) => {
+synastryRouter.get('/', authMiddleware, async (req, res) => {
   try {
     const requestStart = performance.now();
     const lang = resolveLang(req.query.lang);
@@ -823,6 +901,43 @@ synastryRouter.get('/', async (req, res) => {
     const relationshipType = req.query.relationType as string | undefined;
     const nameA = (req.query.nameA as string) || 'A';
     const nameB = (req.query.nameB as string) || 'B';
+    const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const userId = req.userId!;
+    const normalizedRelationshipType = relationshipType || 'unknown';
+    const personA = buildSynastryPersonInfo(birthA, nameA);
+    const personB = buildSynastryPersonInfo(birthB, nameB);
+    let shouldRecord = false;
+    let shouldConsume = false;
+
+    if (!isSupabaseConfigured()) {
+      const access = await entitlementServiceV2.checkAccess(userId, 'synastry', undefined, deviceFingerprint);
+      if (!access.canAccess) {
+        return res.status(403).json({
+          error: 'Feature not available',
+          needPurchase: access.needPurchase,
+          price: access.price,
+        });
+      }
+      shouldConsume = true;
+    } else {
+      const record = await entitlementServiceV2.checkSynastryHash(
+        userId,
+        personA,
+        personB,
+        normalizedRelationshipType
+      );
+      if (!record.exists) {
+        const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint);
+        if (entitlements.synastry.totalLeft <= 0) {
+          return res.status(403).json({
+            error: 'Feature not available',
+            needPurchase: true,
+            price: PRICING.SYNASTRY_FULL,
+          });
+        }
+        shouldRecord = true;
+      }
+    }
 
     const coreStart = performance.now();
     const { chartA, chartB, synastry, synastryAspects } = await buildSynastryCore(birthA, birthB);
@@ -864,6 +979,33 @@ synastryRouter.get('/', async (req, res) => {
       total_ms: Math.round(totalMs),
     };
     res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
+
+    if (shouldRecord) {
+      await entitlementServiceV2.recordSynastryUsage(
+        userId,
+        personA,
+        personB,
+        normalizedRelationshipType,
+        true
+      );
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      if (!consumed) {
+        return res.status(403).json({
+          error: 'Failed to consume feature',
+          needPurchase: true,
+          price: PRICING.SYNASTRY_FULL,
+        });
+      }
+    } else if (shouldConsume) {
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      if (!consumed) {
+        return res.status(403).json({
+          error: 'Failed to consume feature',
+          needPurchase: true,
+          price: PRICING.SYNASTRY_FULL,
+        });
+      }
+    }
 
     res.json({
       tab,

@@ -49,7 +49,7 @@ const WikiHomePage: React.FC = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
-  const borderColor = theme === 'dark' ? 'border-space-600' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
 
   useEffect(() => {
     let mounted = true;
@@ -188,7 +188,7 @@ const WikiHomePage: React.FC = () => {
                     >
                       <div className="flex items-center justify-between mb-1">
                         <div className="font-semibold">{result.concept}</div>
-                        <div className={`text-[10px] px-2 py-0.5 rounded-full border ${borderColor}`}>{result.type}</div>
+                        <div className={`text-xs px-2 py-0.5 rounded-full border ${borderColor}`}>{result.type}</div>
                       </div>
                       <div className={`text-xs ${mutedText}`}>{result.reason}</div>
                     </button>
@@ -222,7 +222,7 @@ const WikiHomePage: React.FC = () => {
             <div className="relative grid gap-6 md:grid-cols-[1.2fr,0.8fr] items-center">
               <div className="space-y-5">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-gold-500 bg-gold-500/10 px-2 py-1 rounded-full">
+                  <span className="text-xs uppercase tracking-[0.25em] text-gold-500 bg-gold-500/10 px-2 py-1 rounded-full">
                     {t.wiki.daily_transit_badge}
                   </span>
                   <span className={`text-xs ${mutedText} truncate max-w-[160px] inline-block`}>

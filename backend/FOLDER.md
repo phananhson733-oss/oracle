@@ -1,5 +1,5 @@
-<!-- INPUT: 后端服务目录结构与职责说明（snake_case 输出，含 GM 积分购买与 swisseph 编译配置）。 -->
-<!-- OUTPUT: 后端服务目录文档（含 GM 积分购买与 swisseph 编译配置说明）。 -->
+<!-- INPUT: 后端服务目录结构与职责说明（snake_case 输出，含经典拆解 Markdown 数据源、报告积分购买与 AI 加载优化配置）。 -->
+<!-- OUTPUT: 后端服务目录文档（含经典拆解数据源、报告积分购买与 AI 加载优化说明）。 -->
 <!-- POS: 后端服务目录说明；若更新此文件，务必更新本头注释。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -18,6 +18,7 @@
 - package.json｜地位：依赖清单｜功能：后端依赖与脚本定义。
 - package-lock.json｜地位：依赖锁定｜功能：锁定后端依赖版本。
 - tsconfig.json｜地位：编译配置｜功能：TypeScript 编译器选项。
+- data/｜地位：经典拆解数据源｜功能：经典书籍 Markdown 拆解内容（zh/en）。
 - src/｜地位：源码目录｜功能：后端路由、服务与类型定义。
 - dist/｜地位：构建产物｜功能：编译后的后端运行文件。
 
@@ -34,6 +35,7 @@
 
 ```
 backend/
+├── data/              # 经典书籍 Markdown 拆解内容
 ├── src/
 │   ├── api/           # API 路由
 │   │   ├── natal.ts   # 本命盘端点
@@ -92,7 +94,6 @@ npm run dev
 | `/api/natal/overview` | GET | 获取本命盘 + AI 解读 |
 | `/api/natal/core-themes` | GET | 获取本命盘核心主题 |
 | `/api/natal/dimension` | GET | 获取本命盘维度解读 |
-| `/api/natal/technical` | GET | 获取本命盘技术分析 |
 | `/api/daily` | GET | 获取每日运势 |
 | `/api/daily/detail` | GET | 获取详细日运 |
 | `/api/wiki/home` | GET | 获取百科首页聚合内容 |
@@ -113,6 +114,11 @@ npm run dev
 | `/health` | GET | 健康检查 |
 
 ## 近期更新
+- 报告购买流程改为积分扣减并应用订阅折扣定价。
+- Ask/合盘生成端点补充权益校验与消费处理。
+- 本命盘/日运/CBT 端点改用紧凑摘要上下文并新增 Server-Timing 指标。
+- 行运计算结果按出生信息 + 日期缓存 24 小时。
+- 移除本命盘技术分析 AI 端点，仅保留真实计算数据。
 - 后端 Node 版本固定为 20.x 并升级 node-gyp 以兼容 swisseph 编译。
 - 权益 V2 补充详情解锁与 GM 积分购买处理。
 - GM 开发会话在无数据库时启用内存权益回退。

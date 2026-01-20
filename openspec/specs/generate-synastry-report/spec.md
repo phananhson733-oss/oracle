@@ -1,5 +1,5 @@
-<!-- INPUT: 合盘报告能力需求与场景。 -->
-<!-- OUTPUT: OpenSpec 合盘报告规范。 -->
+<!-- INPUT: 合盘报告能力需求与场景（含缓存与加载优化）。 -->
+<!-- OUTPUT: OpenSpec 合盘报告规范（含缓存策略）。 -->
 <!-- POS: 能力规范文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 # Capability: Generate Synastry Report
 
@@ -123,3 +123,9 @@
 - **WHEN** 合盘 AI 生成失败
 - **THEN** 前端展示失败提示且不渲染 mock 报告
 
+### Requirement: Client-side cache for synastry AI content
+系统 SHALL 在前端本地永久缓存合盘 overview 与按需分区的 AI 内容，并以（双方出生信息 + 关系类型 + 语言 + 分区）为缓存键复用结果。
+
+#### Scenario: Cached overview reduces repeated generation
+- **WHEN** 用户在相同资料与关系类型下重复生成合盘综述
+- **THEN** 前端优先使用本地缓存的 overview 与分区内容并减少重复请求
