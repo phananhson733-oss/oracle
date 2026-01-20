@@ -4,34 +4,99 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Accordion, ActionButton, Card, Container, Modal, Section, useLanguage, useTheme } from '../UIComponents';
-import { ArrowLeft, Brain, Copy, Download, GitMerge, Ghost, Network, ScrollText, Sparkles, Wand2 } from 'lucide-react';
+import { Accordion, Card, Container, Section, useLanguage, useTheme } from '../UIComponents';
+import { ArrowLeft, Brain, GitMerge, Ghost, ScrollText, Sparkles, Wand2 } from 'lucide-react';
 import { fetchWikiItem, fetchWikiItems } from '../../services/apiClient';
 import type { WikiItem, WikiItemSummary } from '../../types';
 
-const renderContent = (content: string, highlightClass: string) => {
+const renderContent = (content: string, highlightClass: string, mutedClass: string = 'text-star-400') => {
   if (!content) return null;
-  return content.split('\n\n').map((paragraph, idx) => {
-    const trimmed = paragraph.trim();
-    if (!trimmed) return null;
-    if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
-      return (
-        <h4 key={idx} className={`text-base font-semibold mt-6 mb-2 ${highlightClass}`}>
-          {trimmed.replace(/\*\*/g, '')}
-        </h4>
-      );
-    }
-    const parts = trimmed.split(/(\*\*.*?\*\*)/g);
+
+  let textToRender = content;
+  const hasExplicitListMarkers = /(\n\s*[-*]|\n\s*\d+\.)/.test(content);
+
+  if (!hasExplicitListMarkers) {
+    const logicKeywords = [
+      '首先', '其次', '再次', '最后', '第一', '第二', '第三',
+      '其一', '其二', '其三', '例如', '比如', '值得注意的是',
+      'First', 'Second', 'Third', 'Finally', 'Next', 'Moreover', 'Furthermore'
+    ];
+    const logicPattern = new RegExp(`([。；;！!？?]|^)\\s*(${logicKeywords.join('|')})(?=[，,：:])`, 'g');
+    textToRender = content.replace(logicPattern, '$1\n$2');
+  }
+
+  const cleanText = (text: string) => text.replace(/\*\*/g, '').trim();
+
+  const isList = textToRender.includes('\n- ') || textToRender.includes('\n* ') || /^\d+\.\s/.test(textToRender);
+
+  if (isList) {
+    const lines = textToRender.split('\n').filter(line => line.trim());
     return (
-      <p key={idx} className="text-sm leading-relaxed mb-4">
-        {parts.map((part, i) => (
-          part.startsWith('**') && part.endsWith('**')
-            ? <strong key={i} className={`font-semibold ${highlightClass}`}>{part.replace(/\*\*/g, '')}</strong>
-            : <span key={i}>{part}</span>
-        ))}
-      </p>
+      <div className="space-y-1.5">
+        {lines.map((line, idx) => {
+          const parts = line.split(/(\*\*.*?\*\*)/g);
+          const hasBold = parts.some(p => p.startsWith('**') && p.endsWith('**'));
+          const cleanedLine = cleanText(line.replace(/^[-*]\s/, '').replace(/^\d+\.\s/, ''));
+
+          return (
+            <div key={idx} className="flex gap-3 items-start text-sm leading-relaxed">
+              <span className={`mt-2 w-1 h-1 rounded-full shrink-0 ${highlightClass.replace('text-', 'bg-')}`} />
+              <div className={`flex-1 ${mutedClass}`}>
+                {hasBold ? (
+                  parts.map((part, i) => (
+                    part.startsWith('**') && part.endsWith('**')
+                      ? <span key={i} className={`font-medium ${highlightClass}`}>{part.replace(/\*\*/g, '')}</span>
+                      : <span key={i}>{part}</span>
+                  ))
+                ) : (
+                  <span>{cleanedLine}</span>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     );
-  });
+  }
+
+  // 结构化段落渲染 - 用字色突出而非空行分隔
+  const paragraphs = textToRender.split('\n\n').filter(p => p.trim());
+  return (
+    <div className="space-y-0">
+      {paragraphs.map((paragraph, idx) => {
+        const trimmed = paragraph.trim();
+        if (!trimmed) return null;
+
+        // 标题行 - 用金色突出
+        if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
+          return (
+            <div key={idx} className={`${idx > 0 ? 'mt-4' : ''} mb-1.5`}>
+              <span className={`text-sm font-semibold ${highlightClass}`}>
+                {trimmed.replace(/\*\*/g, '')}
+              </span>
+            </div>
+          );
+        }
+
+        const parts = trimmed.split(/(\*\*.*?\*\*)/g);
+        return (
+          <p key={idx} className={`text-sm leading-relaxed ${mutedClass} ${idx > 0 ? 'mt-2' : ''}`}>
+            {parts.map((part, i) => {
+              if (part.startsWith('**') && part.endsWith('**')) {
+                return <span key={i} className={`font-medium ${highlightClass}`}>{part.replace(/\*\*/g, '')}</span>;
+              }
+              return part.split('\n').map((subPart, subIdx) => (
+                <React.Fragment key={`${i}-${subIdx}`}>
+                  {subIdx > 0 && ' '}
+                  <span>{subPart}</span>
+                </React.Fragment>
+              ));
+            })}
+          </p>
+        );
+      })}
+    </div>
+  );
 };
 
 const forceTextSymbol = (value: string) => {
@@ -48,11 +113,9 @@ const WikiDetailPage: React.FC = () => {
   const [relatedItems, setRelatedItems] = useState<WikiItemSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [mapOpen, setMapOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
-  const borderColor = theme === 'dark' ? 'border-space-600' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-white/10' : 'border-paper-300';
   const highlightClass = theme === 'dark' ? 'text-gold-400' : 'text-gold-600';
 
   useEffect(() => {
@@ -95,26 +158,6 @@ const WikiDetailPage: React.FC = () => {
     return t.wiki.type_labels[item.type] || item.type;
   }, [item, t.wiki.type_labels]);
 
-  const energyNodes = useMemo(() => {
-    if (!item) return [];
-    return [
-      { key: 'psychology', label: t.wiki.detail_map_psychology, icon: Brain, content: item.psychology },
-      { key: 'shadow', label: t.wiki.detail_map_shadow, icon: Ghost, content: item.shadow },
-      { key: 'myth', label: t.wiki.detail_map_myth, icon: ScrollText, content: item.astronomy_myth },
-      { key: 'integration', label: t.wiki.detail_map_integration, icon: GitMerge, content: item.integration || t.wiki.detail_placeholder },
-    ];
-  }, [item, t.wiki]);
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // Ignore clipboard errors.
-    }
-  };
-
   if (loading) {
     return (
       <Container>
@@ -145,21 +188,6 @@ const WikiDetailPage: React.FC = () => {
           <Link to="/wiki?tab=library" className={`inline-flex items-center gap-2 text-sm ${mutedText} hover:text-gold-500 transition-colors`}>
             <ArrowLeft size={16} /> {t.wiki.detail_back}
           </Link>
-          <div className="flex flex-wrap items-center gap-3">
-            <ActionButton variant="outline" size="sm" onClick={() => setMapOpen(true)}>
-              <Network size={16} /> {t.wiki.detail_map}
-            </ActionButton>
-            <ActionButton variant="outline" size="sm" onClick={handleCopy}>
-              <Copy size={16} /> {copied ? t.wiki.detail_copied : t.wiki.detail_copy}
-            </ActionButton>
-            <ActionButton
-              variant="outline"
-              size="sm"
-              onClick={() => alert(t.wiki.detail_export_hint)}
-            >
-              <Download size={16} /> {t.wiki.detail_export}
-            </ActionButton>
-          </div>
         </div>
 
         <Card className="relative overflow-hidden" noPadding>
@@ -190,51 +218,63 @@ const WikiDetailPage: React.FC = () => {
 
         <Section title={t.wiki.detail_tldr}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="space-y-3">
-              <div className={`text-xs uppercase tracking-[0.3em] ${highlightClass}`}>{t.wiki.detail_archetype}</div>
-              <div className="text-xl font-serif font-semibold">{item.prototype}</div>
-            </Card>
-            <Card className="space-y-3">
-              <div className={`text-xs uppercase tracking-[0.3em] ${highlightClass}`}>{t.wiki.detail_analogy}</div>
-              <div className={`text-base italic ${mutedText}`}>“{item.analogy}”</div>
-            </Card>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+              <div className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 ${highlightClass}`}>{t.wiki.detail_archetype}</div>
+              <div className="text-xl font-serif font-semibold text-star-50">{item.prototype}</div>
+            </div>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+              <div className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 ${highlightClass}`}>{t.wiki.detail_analogy}</div>
+              <div className={`text-base italic ${mutedText}`}>"{item.analogy}"</div>
+            </div>
           </div>
         </Section>
 
         <Section title={t.wiki.detail_core}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card>
-              <div className="flex items-center gap-2 mb-4 text-xs uppercase tracking-[0.3em] text-amber-500">
-                <ScrollText size={16} /> {t.wiki.detail_myth}
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-amber-500/10 text-amber-400' : 'bg-amber-500/10 text-amber-600'}`}>
+                  <ScrollText size={16} />
+                </div>
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-amber-400' : 'text-amber-600'}`}>{t.wiki.detail_myth}</span>
               </div>
-              <div className={`text-sm ${mutedText}`}>{renderContent(item.astronomy_myth || t.wiki.detail_placeholder, highlightClass)}</div>
-            </Card>
-            <Card>
-              <div className="flex items-center gap-2 mb-4 text-xs uppercase tracking-[0.3em] text-blue-400">
-                <Brain size={16} /> {t.wiki.detail_psychology}
+              {renderContent(item.astronomy_myth || t.wiki.detail_placeholder, highlightClass, mutedText)}
+            </div>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-blue-500/10 text-blue-400' : 'bg-blue-500/10 text-blue-600'}`}>
+                  <Brain size={16} />
+                </div>
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>{t.wiki.detail_psychology}</span>
               </div>
-              <div className={`text-sm ${mutedText}`}>{renderContent(item.psychology || t.wiki.detail_placeholder, highlightClass)}</div>
-            </Card>
-            <Card>
-              <div className="flex items-center gap-2 mb-4 text-xs uppercase tracking-[0.3em] text-purple-400">
-                <Ghost size={16} /> {t.wiki.detail_shadow}
+              {renderContent(item.psychology || t.wiki.detail_placeholder, highlightClass, mutedText)}
+            </div>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-purple-500/10 text-purple-400' : 'bg-purple-500/10 text-purple-600'}`}>
+                  <Ghost size={16} />
+                </div>
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`}>{t.wiki.detail_shadow}</span>
               </div>
-              <div className={`text-sm ${mutedText}`}>{renderContent(item.shadow || t.wiki.detail_placeholder, highlightClass)}</div>
-            </Card>
-            <Card>
-              <div className="flex items-center gap-2 mb-4 text-xs uppercase tracking-[0.3em] text-emerald-400">
-                <GitMerge size={16} /> {t.wiki.detail_integration}
+              {renderContent(item.shadow || t.wiki.detail_placeholder, highlightClass, mutedText)}
+            </div>
+            <div className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === 'dark' ? 'bg-space-800/40 border-gold-500/10' : 'bg-white/80 border-paper-200'}`}>
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div className={`p-2 rounded-xl ${theme === 'dark' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-emerald-500/10 text-emerald-600'}`}>
+                  <GitMerge size={16} />
+                </div>
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === 'dark' ? 'text-emerald-400' : 'text-emerald-600'}`}>{t.wiki.detail_integration}</span>
               </div>
-              <div className={`text-sm ${mutedText}`}>{renderContent(item.integration || t.wiki.detail_placeholder, highlightClass)}</div>
-            </Card>
+              {renderContent(item.integration || t.wiki.detail_placeholder, highlightClass, mutedText)}
+            </div>
           </div>
         </Section>
 
       {item.deep_dive && item.deep_dive.length > 0 && (
         <Section title={t.wiki.detail_deep_dive}>
           {item.deep_dive.map((step) => (
-            <Accordion key={`${item.id}-${step.step}`} title={`${t.wiki.detail_step} ${step.step}`} subtitle={step.title}>
-              <div className={`text-sm ${mutedText}`}>{renderContent(step.description, highlightClass)}</div>
+            <Accordion key={`${item.id}-${step.step}`} title={step.title}>
+              {renderContent(step.description, highlightClass, mutedText)}
             </Accordion>
           ))}
         </Section>
@@ -259,22 +299,6 @@ const WikiDetailPage: React.FC = () => {
         </Section>
       )}
 
-        <Modal isOpen={mapOpen} onClose={() => setMapOpen(false)} title={t.wiki.detail_map_title}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {energyNodes.map((node) => {
-              const Icon = node.icon;
-              return (
-                <Card key={node.key} className="space-y-3">
-                  <div className={`flex items-center gap-2 text-xs uppercase tracking-[0.3em] ${highlightClass}`}>
-                    <Icon size={16} />
-                    {node.label}
-                  </div>
-                  <div className={`text-sm ${mutedText}`}>{renderContent(node.content, highlightClass)}</div>
-                </Card>
-              );
-            })}
-          </div>
-        </Modal>
       </div>
     </Container>
   );

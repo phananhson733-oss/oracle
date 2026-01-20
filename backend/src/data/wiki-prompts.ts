@@ -1,5 +1,5 @@
-// INPUT: Wiki 深度解读 Prompt 模板定义。
-// OUTPUT: 导出各类别条目的专属 Prompt 模板。
+// INPUT: Wiki 深度解读 Prompt 模板定义（含新增生活领域字段）。
+// OUTPUT: 导出各类别条目的专属 Prompt 模板（含深度解读扩展字段）。
 // POS: Wiki Prompt 模板源；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 export interface WikiDeepDivePrompt {
@@ -44,10 +44,23 @@ ${vars.growth_lessons}
    - step: 步骤序号（1-8）
    - title: 步骤标题
    - description: 详细说明（100-200 字，支持 Markdown）
+6. life_areas：至少 2 条生活领域影响，数组元素包含：
+   - area: career | love | health | finance | family | spiritual
+   - description: 描述该领域的影响（50-80 字）
+7. growth_path：成长路径建议（100-150 字）
+8. practical_tips：3-5 条实用小贴士（字符串数组）
+9. common_misconceptions：2-3 条常见误解澄清（字符串数组）
+10. affirmation：1 条正向肯定语（30-60 字）
 
 **格式要求：**
-- 使用 JSON 格式输出，不要包含任何额外文字
-- deep_dive 数组必须包含恰好 8 个步骤
+- 使用标准 JSON 格式输出，不要包含任何额外文字
+- deep_dive 是对象数组（不是嵌套数组），结构如下：
+  \`\`\`json
+  "deep_dive": [{"step": 1, "title": "标题", "description": "描述"}, ...]
+  \`\`\`
+- deep_dive 数组必须包含恰好 8 个步骤对象
+- life_areas 至少 2 条且 area 必须为指定枚举
+- 不要在 JSON 中使用中文引号，只使用英文双引号 "
 - 描述中可以包含 **粗体** 强调重点
 - 每个步骤应循序渐进，从基础概念到实践整合`;
   }
@@ -84,10 +97,18 @@ Please generate the following content in JSON format:
    - step: Step number (1-8)
    - title: Step title
    - description: Detailed explanation (100-200 words, supports Markdown)
+6. life_areas: At least 2 life domains, each containing:
+   - area: career | love | health | finance | family | spiritual
+   - description: Impact description (40-60 words)
+7. growth_path: Growth path guidance (80-120 words)
+8. practical_tips: 3-5 practical tips (string array)
+9. common_misconceptions: 2-3 common misconceptions (string array)
+10. affirmation: 1 positive affirmation (15-30 words)
 
 **Format Requirements:**
 - Output in JSON format only, without any extra text
 - deep_dive array must contain exactly 8 steps
+- life_areas must include at least 2 entries with allowed area values
 - Descriptions can use **bold** for emphasis
 - Each step should be progressive, from basic concepts to practical integration`;
 }
@@ -129,10 +150,23 @@ ${vars.growth_lessons}
    - step: 步骤序号（1-8）
    - title: 步骤标题
    - description: 详细说明（100-200 字，支持 Markdown）
+6. life_areas：至少 2 条生活领域影响，数组元素包含：
+   - area: career | love | health | finance | family | spiritual
+   - description: 描述该领域的影响（50-80 字）
+7. growth_path：成长路径建议（100-150 字）
+8. practical_tips：3-5 条实用小贴士（字符串数组）
+9. common_misconceptions：2-3 条常见误解澄清（字符串数组）
+10. affirmation：1 条正向肯定语（30-60 字）
 
 **格式要求：**
-- 使用 JSON 格式输出，不要包含任何额外文字
-- deep_dive 数组必须包含恰好 8 个步骤
+- 使用标准 JSON 格式输出，不要包含任何额外文字
+- deep_dive 是对象数组（不是嵌套数组），结构如下：
+  \`\`\`json
+  "deep_dive": [{"step": 1, "title": "标题", "description": "描述"}, ...]
+  \`\`\`
+- deep_dive 数组必须包含恰好 8 个步骤对象
+- life_areas 至少 2 条且 area 必须为指定枚举
+- 不要在 JSON 中使用中文引号，只使用英文双引号 "
 - 描述中可以包含 **粗体** 强调重点
 - 每个步骤应循序渐进，从基础概念到实践整合`;
   }
@@ -171,10 +205,18 @@ Please generate the following content in JSON format:
    - step: Step number (1-8)
    - title: Step title
    - description: Detailed explanation (100-200 words, supports Markdown)
+6. life_areas: At least 2 life domains, each containing:
+   - area: career | love | health | finance | family | spiritual
+   - description: Impact description (40-60 words)
+7. growth_path: Growth path guidance (80-120 words)
+8. practical_tips: 3-5 practical tips (string array)
+9. common_misconceptions: 2-3 common misconceptions (string array)
+10. affirmation: 1 positive affirmation (15-30 words)
 
 **Format Requirements:**
 - Output in JSON format only, without any extra text
 - deep_dive array must contain exactly 8 steps
+- life_areas must include at least 2 entries with allowed area values
 - Descriptions can use **bold** for emphasis
 - Each step should be progressive, from basic concepts to practical integration`;
 }
@@ -214,10 +256,23 @@ ${vars.growth_lessons}
    - step: 步骤序号（1-8）
    - title: 步骤标题
    - description: 详细说明（100-200 字，支持 Markdown）
+6. life_areas：至少 2 条生活领域影响，数组元素包含：
+   - area: career | love | health | finance | family | spiritual
+   - description: 描述该领域的影响（50-80 字）
+7. growth_path：成长路径建议（100-150 字）
+8. practical_tips：3-5 条实用小贴士（字符串数组）
+9. common_misconceptions：2-3 条常见误解澄清（字符串数组）
+10. affirmation：1 条正向肯定语（30-60 字）
 
 **格式要求：**
-- 使用 JSON 格式输出，不要包含任何额外文字
-- deep_dive 数组必须包含恰好 8 个步骤
+- 使用标准 JSON 格式输出，不要包含任何额外文字
+- deep_dive 是对象数组（不是嵌套数组），结构如下：
+  \`\`\`json
+  "deep_dive": [{"step": 1, "title": "标题", "description": "描述"}, ...]
+  \`\`\`
+- deep_dive 数组必须包含恰好 8 个步骤对象
+- life_areas 至少 2 条且 area 必须为指定枚举
+- 不要在 JSON 中使用中文引号，只使用英文双引号 "
 - 描述中可以包含 **粗体** 强调重点
 - 每个步骤应循序渐进，从基础概念到实践整合`;
   }
@@ -254,10 +309,18 @@ Please generate the following content in JSON format:
    - step: Step number (1-8)
    - title: Step title
    - description: Detailed explanation (100-200 words, supports Markdown)
+6. life_areas: At least 2 life domains, each containing:
+   - area: career | love | health | finance | family | spiritual
+   - description: Impact description (40-60 words)
+7. growth_path: Growth path guidance (80-120 words)
+8. practical_tips: 3-5 practical tips (string array)
+9. common_misconceptions: 2-3 common misconceptions (string array)
+10. affirmation: 1 positive affirmation (15-30 words)
 
 **Format Requirements:**
 - Output in JSON format only, without any extra text
 - deep_dive array must contain exactly 8 steps
+- life_areas must include at least 2 entries with allowed area values
 - Descriptions can use **bold** for emphasis
 - Each step should be progressive, from basic concepts to practical integration`;
 }
@@ -297,10 +360,23 @@ ${vars.growth_lessons}
    - step: 步骤序号（1-8）
    - title: 步骤标题
    - description: 详细说明（100-200 字，支持 Markdown）
+6. life_areas：至少 2 条生活领域影响，数组元素包含：
+   - area: career | love | health | finance | family | spiritual
+   - description: 描述该领域的影响（50-80 字）
+7. growth_path：成长路径建议（100-150 字）
+8. practical_tips：3-5 条实用小贴士（字符串数组）
+9. common_misconceptions：2-3 条常见误解澄清（字符串数组）
+10. affirmation：1 条正向肯定语（30-60 字）
 
 **格式要求：**
-- 使用 JSON 格式输出，不要包含任何额外文字
-- deep_dive 数组必须包含恰好 8 个步骤
+- 使用标准 JSON 格式输出，不要包含任何额外文字
+- deep_dive 是对象数组（不是嵌套数组），结构如下：
+  \`\`\`json
+  "deep_dive": [{"step": 1, "title": "标题", "description": "描述"}, ...]
+  \`\`\`
+- deep_dive 数组必须包含恰好 8 个步骤对象
+- life_areas 至少 2 条且 area 必须为指定枚举
+- 不要在 JSON 中使用中文引号，只使用英文双引号 "
 - 描述中可以包含 **粗体** 强调重点
 - 每个步骤应循序渐进，从基础概念到实践整合`;
   }
@@ -337,10 +413,18 @@ Please generate the following content in JSON format:
    - step: Step number (1-8)
    - title: Step title
    - description: Detailed explanation (100-200 words, supports Markdown)
+6. life_areas: At least 2 life domains, each containing:
+   - area: career | love | health | finance | family | spiritual
+   - description: Impact description (40-60 words)
+7. growth_path: Growth path guidance (80-120 words)
+8. practical_tips: 3-5 practical tips (string array)
+9. common_misconceptions: 2-3 common misconceptions (string array)
+10. affirmation: 1 positive affirmation (15-30 words)
 
 **Format Requirements:**
 - Output in JSON format only, without any extra text
 - deep_dive array must contain exactly 8 steps
+- life_areas must include at least 2 entries with allowed area values
 - Descriptions can use **bold** for emphasis
 - Each step should be progressive, from basic concepts to practical integration`;
 }
@@ -378,10 +462,23 @@ ${vars.growth_lessons}
    - step: 步骤序号（1-8）
    - title: 步骤标题
    - description: 详细说明（100-200 字，支持 Markdown）
+6. life_areas：至少 2 条生活领域影响，数组元素包含：
+   - area: career | love | health | finance | family | spiritual
+   - description: 描述该领域的影响（50-80 字）
+7. growth_path：成长路径建议（100-150 字）
+8. practical_tips：3-5 条实用小贴士（字符串数组）
+9. common_misconceptions：2-3 条常见误解澄清（字符串数组）
+10. affirmation：1 条正向肯定语（30-60 字）
 
 **格式要求：**
-- 使用 JSON 格式输出，不要包含任何额外文字
-- deep_dive 数组必须包含恰好 8 个步骤
+- 使用标准 JSON 格式输出，不要包含任何额外文字
+- deep_dive 是对象数组（不是嵌套数组），结构如下：
+  \`\`\`json
+  "deep_dive": [{"step": 1, "title": "标题", "description": "描述"}, ...]
+  \`\`\`
+- deep_dive 数组必须包含恰好 8 个步骤对象
+- life_areas 至少 2 条且 area 必须为指定枚举
+- 不要在 JSON 中使用中文引号，只使用英文双引号 "
 - 描述中可以包含 **粗体** 强调重点
 - 每个步骤应循序渐进，从基础概念到实践整合`;
   }
@@ -416,10 +513,18 @@ Please generate the following content in JSON format:
    - step: Step number (1-8)
    - title: Step title
    - description: Detailed explanation (100-200 words, supports Markdown)
+6. life_areas: At least 2 life domains, each containing:
+   - area: career | love | health | finance | family | spiritual
+   - description: Impact description (40-60 words)
+7. growth_path: Growth path guidance (80-120 words)
+8. practical_tips: 3-5 practical tips (string array)
+9. common_misconceptions: 2-3 common misconceptions (string array)
+10. affirmation: 1 positive affirmation (15-30 words)
 
 **Format Requirements:**
 - Output in JSON format only, without any extra text
 - deep_dive array must contain exactly 8 steps
+- life_areas must include at least 2 entries with allowed area values
 - Descriptions can use **bold** for emphasis
 - Each step should be progressive, from basic concepts to practical integration`;
 }
@@ -457,10 +562,23 @@ ${vars.growth_lessons}
    - step: 步骤序号（1-8）
    - title: 步骤标题
    - description: 详细说明（100-200 字，支持 Markdown）
+6. life_areas：至少 2 条生活领域影响，数组元素包含：
+   - area: career | love | health | finance | family | spiritual
+   - description: 描述该领域的影响（50-80 字）
+7. growth_path：成长路径建议（100-150 字）
+8. practical_tips：3-5 条实用小贴士（字符串数组）
+9. common_misconceptions：2-3 条常见误解澄清（字符串数组）
+10. affirmation：1 条正向肯定语（30-60 字）
 
 **格式要求：**
-- 使用 JSON 格式输出，不要包含任何额外文字
-- deep_dive 数组必须包含恰好 8 个步骤
+- 使用标准 JSON 格式输出，不要包含任何额外文字
+- deep_dive 是对象数组（不是嵌套数组），结构如下：
+  \`\`\`json
+  "deep_dive": [{"step": 1, "title": "标题", "description": "描述"}, ...]
+  \`\`\`
+- deep_dive 数组必须包含恰好 8 个步骤对象
+- life_areas 至少 2 条且 area 必须为指定枚举
+- 不要在 JSON 中使用中文引号，只使用英文双引号 "
 - 描述中可以包含 **粗体** 强调重点
 - 每个步骤应循序渐进，从基础概念到实践整合`;
   }
@@ -495,10 +613,18 @@ Please generate the following content in JSON format:
    - step: Step number (1-8)
    - title: Step title
    - description: Detailed explanation (100-200 words, supports Markdown)
+6. life_areas: At least 2 life domains, each containing:
+   - area: career | love | health | finance | family | spiritual
+   - description: Impact description (40-60 words)
+7. growth_path: Growth path guidance (80-120 words)
+8. practical_tips: 3-5 practical tips (string array)
+9. common_misconceptions: 2-3 common misconceptions (string array)
+10. affirmation: 1 positive affirmation (15-30 words)
 
 **Format Requirements:**
 - Output in JSON format only, without any extra text
 - deep_dive array must contain exactly 8 steps
+- life_areas must include at least 2 entries with allowed area values
 - Descriptions can use **bold** for emphasis
 - Each step should be progressive, from basic concepts to practical integration`;
 }

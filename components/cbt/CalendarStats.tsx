@@ -22,11 +22,11 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
   const { theme } = useTheme();
   const isLight = theme === 'light';
   const navButtonTone = isLight
-    ? 'bg-paper-100 text-star-200 hover:bg-paper-200'
+    ? 'bg-paper-100 text-paper-600 hover:bg-paper-200'
     : 'bg-space-800/50 text-star-400 hover:bg-space-800 hover:text-star-50';
   const titleTone = isLight ? 'text-gold-700' : 'text-gold-400/70';
   const calendarShellTone = isLight ? 'bg-paper-100/80 border-paper-300' : 'bg-space-800/20 border-gold-500/10';
-  const weekdayTone = isLight ? 'text-star-200' : 'text-star-400';
+  const weekdayTone = isLight ? 'text-paper-600' : 'text-star-400';
   const statCardTone = isLight
     ? 'bg-white/90 border-paper-300 text-paper-900 shadow-sm'
     : 'bg-space-900/60 border-gold-500/10 text-star-50 shadow-[0_20px_40px_-25px_rgba(0,0,0,0.6)]';
@@ -38,7 +38,7 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
   const pickerShellTone = isLight ? 'bg-paper-100 border-paper-300' : 'bg-space-900 border-gold-500/20';
   const pickerInnerTone = isLight ? 'bg-paper-50 border-paper-300' : 'bg-space-950/40 border-gold-500/10';
   const pickerActiveTone = isLight ? 'text-gold-700' : 'text-gold-400';
-  const pickerMutedTone = isLight ? 'text-star-200' : 'text-star-400';
+  const pickerMutedTone = isLight ? 'text-paper-500' : 'text-star-400';
   const titleFont = language === 'en' ? 'font-sans' : 'font-serif';
   const statsTitles = useMemo(() => {
     if (language === 'zh') {
@@ -161,7 +161,7 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
       <div className={`flex-1 border rounded-[3.5rem] p-4 relative overflow-hidden backdrop-blur-sm shadow-inner max-w-[720px] mx-auto w-full mt-[2px] mb-[2px] ${calendarShellTone}`}>
         <div className="grid grid-cols-7 gap-2 md:gap-3 relative z-10">
           {WEEKDAY_SHORT.map(day => (
-            <div key={day} className={`text-center text-[11px] font-black uppercase tracking-[0.3em] pb-2 ${weekdayTone}`}>
+            <div key={day} className={`text-center text-xs font-black uppercase tracking-[0.3em] pb-2 ${weekdayTone}`}>
               {day}
             </div>
           ))}
@@ -194,7 +194,7 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
                 {mood ? (
                    <MoodIcon mood={mood} size={31.2} />
                 ) : (
-                  <span className={`text-[12px] font-black z-20 transition-all ${isToday ? 'text-star-50 underline decoration-gold-500 underline-offset-4' : (isLight ? 'text-star-200' : 'text-star-400')}`}>
+                  <span className={`text-xs font-black z-20 transition-all ${isToday ? 'text-star-50 underline decoration-gold-500 underline-offset-4' : (isLight ? 'text-paper-600' : 'text-star-400')}`}>
                     {day}
                   </span>
                 )}
@@ -247,7 +247,7 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
             <div className="absolute inset-0 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 animate-gradient-x"></div>
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
             <div className="relative flex items-center gap-3">
-              <span className="text-space-950 font-black text-[11px] uppercase tracking-[0.4em]">{t.journal.start_deep_record}</span>
+              <span className="text-space-950 font-black text-xs uppercase tracking-[0.4em]">{t.journal.start_deep_record}</span>
               <Sparkles size={18} className="text-space-900 animate-pulse" />
             </div>
           </button>
@@ -356,7 +356,7 @@ const MonthPickerModal: React.FC<{
           </div>
         </div>
         <div className={`flex border-t p-4 gap-3 ${isLight ? 'border-paper-300 bg-paper-100/70' : 'border-gold-500/10 bg-space-900/50'}`}>
-          <button onClick={onClose} className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all ${isLight ? 'text-star-200 hover:bg-paper-200' : 'text-star-400 hover:bg-space-800'}`}>{t.journal.btn_cancel}</button>
+          <button onClick={onClose} className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all ${isLight ? 'text-paper-500 hover:bg-paper-200' : 'text-star-400 hover:bg-space-800'}`}>{t.journal.btn_cancel}</button>
           <button onClick={() => onConfirm(selYear, selMonth)} className={`flex-1 py-3 border text-xs font-black rounded-xl transition-all active:scale-95 ${isLight ? 'bg-gold-500/20 text-gold-700 border-gold-600/40 hover:bg-gold-500/30' : 'bg-gold-600/20 text-gold-400 border-gold-500/30 hover:bg-gold-600/30'}`}>{t.journal.btn_confirm}</button>
         </div>
       </div>

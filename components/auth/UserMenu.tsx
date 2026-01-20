@@ -1,10 +1,12 @@
-// INPUT: React、认证上下文与 UI 组件依赖。
-// OUTPUT: 导出用户菜单组件（含登录/升级按钮）。
+// INPUT: React、认证上下文与 UI 组件依赖（含订阅管理跳转与设置入口）。
+// OUTPUT: 导出用户菜单组件（含登录/升级按钮与订阅管理入口）。
 // POS: 用户菜单组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage } from '../UIComponents';
+import { createPortalSession } from '../../services/paymentClient';
 import { User, LogOut, Settings, CreditCard, Crown, ChevronDown } from 'lucide-react';
 
 const UserMenu: React.FC = () => {
@@ -18,12 +20,24 @@ const UserMenu: React.FC = () => {
     openLoginModal,
     openUpgradeModal,
   } = useAuth();
+  const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const isDark = theme === 'dark';
   const isSubscriber = entitlements?.isSubscriber;
+
+  const handleManageSubscription = async () => {
+    setIsOpen(false);
+    try {
+      const { url } = await createPortalSession(window.location.href);
+      window.location.href = url;
+    } catch (err) {
+      console.error('Failed to open subscription portal:', err);
+      navigate('/settings');
+    }
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -130,11 +144,11 @@ const UserMenu: React.FC = () => {
       {isOpen && (
         <div className={`absolute right-0 top-full mt-2 w-56 rounded-xl shadow-xl overflow-hidden z-50 border ${
           isDark
-            ? 'bg-space-800 border-space-600'
+            ? 'bg-space-800 border-white/10'
             : 'bg-white border-paper-200'
         }`}>
           {/* User info header */}
-          <div className={`px-4 py-3 border-b ${isDark ? 'border-space-600' : 'border-paper-200'}`}>
+          <div className={`px-4 py-3 border-b ${isDark ? 'border-white/10' : 'border-paper-200'}`}>
             <div className={`text-sm font-medium truncate ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
               {user?.email}
             </div>
@@ -166,7 +180,10 @@ const UserMenu: React.FC = () => {
             )}
 
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                navigate('/settings');
+              }}
               className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                 isDark
                   ? 'text-star-200 hover:bg-space-700'
@@ -179,7 +196,7 @@ const UserMenu: React.FC = () => {
 
             {isSubscriber && (
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={handleManageSubscription}
                 className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                   isDark
                     ? 'text-star-200 hover:bg-space-700'
@@ -193,7 +210,7 @@ const UserMenu: React.FC = () => {
           </div>
 
           {/* Logout */}
-          <div className={`py-1 border-t ${isDark ? 'border-space-600' : 'border-paper-200'}`}>
+          <div className={`py-1 border-t ${isDark ? 'border-white/10' : 'border-paper-200'}`}>
             <button
               onClick={() => {
                 setIsOpen(false);

@@ -58,14 +58,66 @@ const LoginModal: React.FC = () => {
   };
 
   const handleGoogleLogin = async () => {
-    // Google Sign-In integration
-    // For now, show a placeholder message
-    setError('Google login requires configuration. Please use email login.');
+    setLoading(true);
+    setError('');
+
+    try {
+      // Initialize Google Sign-In
+      if (typeof window.google === 'undefined') {
+        throw new Error('Google Sign-In SDK not loaded');
+      }
+
+      // Use Google One Tap or redirect flow
+      window.google.accounts.id.initialize({
+        client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '',
+        callback: async (response: any) => {
+          try {
+            await loginWithGoogle(response.credential);
+            handleClose();
+          } catch (err) {
+            setError(err instanceof Error ? err.message : 'Google login failed');
+          } finally {
+            setLoading(false);
+          }
+        },
+      });
+
+      // Trigger the sign-in flow
+      window.google.accounts.id.prompt();
+    } catch (err) {
+      setError('Google login is not available. Please use email login.');
+      setLoading(false);
+    }
   };
 
   const handleAppleLogin = async () => {
-    // Apple Sign-In integration
-    setError('Apple login requires configuration. Please use email login.');
+    setLoading(true);
+    setError('');
+
+    try {
+      // Initialize Apple Sign-In
+      if (typeof window.AppleID === 'undefined') {
+        throw new Error('Apple Sign-In SDK not loaded');
+      }
+
+      await window.AppleID.auth.init({
+        clientId: import.meta.env.VITE_APPLE_CLIENT_ID || '',
+        scope: 'name email',
+        redirectURI: window.location.origin,
+        usePopup: true,
+      });
+
+      const response = await window.AppleID.auth.signIn();
+
+      if (response.authorization?.id_token) {
+        await loginWithApple(response.authorization.id_token, response.user);
+        handleClose();
+      }
+    } catch (err) {
+      setError('Apple login is not available. Please use email login.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const translations = {
@@ -127,7 +179,7 @@ const LoginModal: React.FC = () => {
             disabled={loading}
             className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
               isDark
-                ? 'bg-space-800 border-space-600 hover:bg-space-700 text-star-100'
+                ? 'bg-space-800 border-gold-500/20 hover:bg-space-700 text-star-100'
                 : 'bg-white border-paper-300 hover:bg-paper-100 text-paper-900'
             }`}
           >
@@ -158,49 +210,64 @@ const LoginModal: React.FC = () => {
 
         {/* Divider */}
         <div className="flex items-center gap-4">
-          <div className={`flex-1 h-px ${isDark ? 'bg-space-600' : 'bg-paper-300'}`} />
+          <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
           <span className={`text-xs uppercase tracking-wider ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
             {tr.orContinueWith}
           </span>
-          <div className={`flex-1 h-px ${isDark ? 'bg-space-600' : 'bg-paper-300'}`} />
+          <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
         </div>
 
         {/* Email form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {mode === 'register' && (
             <div>
-              <label className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
+              <label
+                htmlFor="login-name"
+                className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+              >
                 {tr.name}
               </label>
               <GlassInput
+                id="login-name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
                 disabled={loading}
+                autoComplete="name"
               />
             </div>
           )}
 
           <div>
-            <label className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
+            <label
+              htmlFor="login-email"
+              className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+            >
               {tr.email}
             </label>
             <GlassInput
+              id="login-email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               required
               disabled={loading}
+              autoComplete="email"
+              aria-required="true"
             />
           </div>
 
           <div>
-            <label className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
+            <label
+              htmlFor="login-password"
+              className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+            >
               {tr.password}
             </label>
             <GlassInput
+              id="login-password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -208,9 +275,12 @@ const LoginModal: React.FC = () => {
               required
               minLength={8}
               disabled={loading}
+              autoComplete={mode === 'register' ? 'new-password' : 'current-password'}
+              aria-required="true"
+              aria-describedby={mode === 'register' ? 'password-hint' : undefined}
             />
             {mode === 'register' && (
-              <p className={`text-xs mt-1 ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
+              <p id="password-hint" className={`text-xs mt-1 ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
                 {tr.passwordHint}
               </p>
             )}

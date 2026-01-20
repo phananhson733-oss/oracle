@@ -13,378 +13,446 @@
 
 | 内容类型 | Token 消耗 | API 成本 | 最低定价（80%毛利）|
 |---------|-----------|---------|-------------------|
-| 元素/行星详情 | 500-800 | $0.002 | $0.01 → $0.49 |
-| Ask 单次问答 | 1000-1500 | $0.004 | $0.02 → $0.99 |
-| 合盘单 Tab | 2000-3000 | $0.008 | $0.04 → $1.99 |
+| 元素/行星详情 | 500-800 | $0.002 | $0.01 → $0.99 |
+| Ask 单次问答 | 1000-1500 | $0.004 | $0.02 → $1.99 |
+| 合盘单 Tab | 2000-3000 | $0.008 | $0.04 → $2.99 |
 | 完整合盘报告 | 8000-12000 | $0.03 | $0.15 → $3.99 |
 | 月运报告 | 5000-8000 | $0.02 | $0.10 → $1.99 |
 | 年度运势报告 | 15000-25000 | $0.06 | $0.30 → $7.99 |
-| 专题报告 | 10000-20000 | $0.05 | $0.25 → $4.99 |
-| CBT 日记分析 | 1500-2500 | $0.006 | $0.03 → $0.99 |
+| CBT 日记分析 | 1500-2500 | $0.006 | $0.03 → $1.99 |
 
 ---
 
 ## 2. 权益设计
 
-### 2.1 免费权益（Free Tier）
+### 2.1 首次注册赠送
 
-| 功能 | 免费额度 | 说明 |
-|-----|---------|------|
-| 本命盘可视化 | ✓ 无限 | 核心钩子，永久免费 |
-| 技术数据表格 | ✓ 无限 | 行星/相位/宫位表格 |
-| 日运摘要 | ✓ 简版 | 一句话运势 |
-| Ask 问答 | 3 次 | 首次使用试用 |
-| 详情解读 | 3 次 | 元素/行星/相位点击解读 |
-| 合盘概览 | 1 次 | 仅总览 Tab |
-| CBT 日记记录 | ✓ 无限 | 记录免费，AI 分析付费 |
+**新用户首次注册**：
+- 赠送 **7 天免费订阅体验**
+- 体验期间享有完整订阅权益
+- 到期后权益自动消失，需付费订阅续期
 
-### 2.2 订阅权益（Subscriber）
+### 2.2 免费权益（Free Tier）
 
-**定价：$6.99/月 或 $49.99/年（约 $4.17/月，省 29%）**
+| 功能 | 免费额度 | 重置周期 | 说明 |
+|-----|---------|---------|------|
+| 本命盘可视化 | ✓ 无限 | - | 核心钩子，永久免费 |
+| 技术数据表格 | ✓ 无限 | - | 行星/相位/宫位表格 |
+| 日运摘要 | ✓ 简版 | - | 公开内容（4 维等） |
+| 探索自我 - 心理维度前 2 个 | ✓ 免费 | - | Emotions, Attachment |
+| Ask 问答 | 3 次 | 每周 | 周一 00:00 UTC 重置 |
+| 双人合盘 | 3 次 | 永久 | 永久免费 3 次 |
+| CBT 日记记录 | ✓ 无限 | - | 记录免费，分析付费 |
 
-| 权益 | 额度 |
-|-----|------|
-| Ask 问答 | ✓ 无限 |
-| 详情解读 | ✓ 无限 |
-| 日运完整版 | ✓ 无限 |
-| 合盘解读 | 5 次/月（所有 Tab） |
-| CBT 日记 AI 分析 | ✓ 无限 |
-| 月运报告 | 每月 1 份免费 |
-| 付费报告折扣 | 30% off |
-| 订阅专属内容 | 提前体验新功能 |
+### 2.3 订阅权益（Subscriber）
 
-### 2.3 单次购买定价
+**定价：$6.99/月**
 
-#### 激进定价（推荐，方案 A）
-
-| 商品 | 单价 | 说明 |
+| 权益 | 额度 | 说明 |
 |-----|------|------|
-| Ask 单次 | $0.99 | 单次问答 |
-| 详情解读包 | $2.99 | 10 次解读 |
-| 合盘完整解读 | $3.99 | 全部 Tab 一次性解锁 |
-| CBT 日记分析 | $0.99 | 单次分析 |
-| 月运报告 | $1.99 | 当月运势 |
-| 年度运势报告 | $7.99 | 完整年度预测 |
-| 事业报告 | $4.99 | 职业发展分析 |
-| 财富报告 | $4.99 | 财运分析 |
-| 爱情报告 | $4.99 | 感情运势 |
-| 土星回归报告 | $6.99 | 27-30岁专属 |
+| 所有"查看详情"按钮 | ✓ 无限 | 探索自我、今日运势、合盘等 |
+| Ask 问答 | +2 次/周 | 与免费 3 次叠加，共 5 次/周 |
+| 探索自我付费内容 | ✓ 全部解锁 | 心理维度后 4 个 + 核心主题 |
+| 双人合盘 | +2 次/周 | 与免费 3 次叠加，显示为 5/5 |
+| 今日运势详情 | ✓ 无限 | 今日剧本 + 星象详情 |
+| CBT 日记统计解读 | ✓ 自动解锁 | 进入页面即解锁当月所有内容 |
+| 订阅赠送积分 | +500 积分 | 每次成功支付后发放并展示在权益列表 |
+| 付费报告 | **8 折（积分价格）** | 报告仅支持积分购买 |
 
-#### 保守定价（备选，方案 B）
+**重置规则**：
+- Ask 问答：每周一 00:00 UTC 重置
+- 双人合盘：每周一 00:00 UTC 重置
+- 权益次数与免费次数分开计算后合并显示
+- 报告购买仅使用积分，订阅折扣应用到积分价格（向上取整）
 
-| 商品 | 单价 |
-|-----|------|
-| Ask 单次 | $1.49 |
-| 详情解读包 | $3.99 |
-| 合盘完整解读 | $5.99 |
-| CBT 日记分析 | $1.49 |
-| 月运报告 | $2.99 |
-| 年度运势报告 | $12.99 |
-| 专题报告 | $6.99-9.99 |
+### 2.4 积分消耗定价
 
-> 注：所有定价支持后台配置，可根据数据调整。
+**换算建议**：1 积分 = $0.10（与原单价对齐后取整）
+
+| 功能 | 积分 | 有效期 | 说明 |
+|-----|------|-------|------|
+| 探索自我 - 心理维度单个 | 10 | 永久 | 按维度单独解锁 |
+| 探索自我 - 核心主题单个 | 10 | 永久 | 按主题单独解锁 |
+| 今日运势 - 今日剧本 | 10 | 当日 | 每日重置 |
+| 今日运势 - 星象详情 | 10 | 当日 | 每日重置 |
+| 双人合盘 - 单次 | 30 | 永久 | 该配对永久有效 |
+| 合盘内 - 查看详情 | 10 | 永久 | 需唯一性校验 |
+| Ask 问答 - 单次 | 20 | 单次 | 消耗后失效 |
+| CBT 日记 - 月度统计解读 | 20 | 自然月 | 按自然月解锁 |
+
+### 2.5 积分系统
+
+- 积分通过充值套餐获得，余额可叠加并在前端展示。
+- 所有付费功能统一走积分解锁，不再直接单次购买。
+- 消费优先级：**免费额度 → 订阅权益 → 积分余额**。
+- GM 命令可在开发环境发放/清零积分用于测试。
 
 ---
 
-## 3. 用户账户体系
+## 3. 唯一性校验设计
 
-### 3.1 注册/登录方式
+### 3.1 合盘唯一性
 
-| 方式 | 优先级 | 说明 |
-|-----|-------|------|
-| Google Sign-In | P0 | 欧美最常用 |
-| Apple Sign-In | P0 | iOS App Store 必须 |
-| Email + Password | P1 | 传统备选 |
-| Magic Link | P2 | 无密码登录（可选） |
+**问题**：防止用户通过微小修改信息来免费刷合盘次数
 
-### 3.2 用户数据模型
+**解决方案**：基于双方完整信息生成唯一哈希
 
 ```typescript
-interface User {
-  id: string;                    // UUID
-  email: string;
-  name?: string;
-  avatar?: string;
-  provider: 'google' | 'apple' | 'email';
-  providerId?: string;
-
-  // 出生信息（从 localStorage 迁移）
-  birthProfile?: {
+interface SynastryIdentity {
+  personA: {
+    name: string;
+    birthDate: string;       // YYYY-MM-DD
+    birthTime?: string;      // HH:mm
+    birthCity: string;
+    lat: number;
+    lon: number;
+    timezone: string;
+  };
+  personB: {
+    name: string;
     birthDate: string;
     birthTime?: string;
     birthCity: string;
-    lat?: number;
-    lon?: number;
+    lat: number;
+    lon: number;
     timezone: string;
-    accuracyLevel: 'exact' | 'time_unknown' | 'approximate';
   };
+  relationshipType: string;
+}
 
-  // 偏好设置
-  preferences: {
-    theme: 'dark' | 'light';
-    language: 'zh' | 'en';
+// 生成哈希
+function generateSynastryHash(identity: SynastryIdentity): string {
+  const normalized = JSON.stringify({
+    a: normalizePersonInfo(identity.personA),
+    b: normalizePersonInfo(identity.personB),
+    rel: identity.relationshipType,
+  });
+  return sha256(normalized);
+}
+
+function normalizePersonInfo(person: PersonInfo) {
+  return {
+    name: person.name.trim().toLowerCase(),
+    birthDate: person.birthDate,
+    birthTime: person.birthTime || 'unknown',
+    lat: Math.round(person.lat * 100) / 100,  // 保留 2 位小数
+    lon: Math.round(person.lon * 100) / 100,
+    timezone: person.timezone,
   };
-
-  createdAt: Date;
-  updatedAt: Date;
 }
 ```
 
-### 3.3 数据迁移策略
+**规则**：
+- 任何字段（包括姓名）变化，哈希值改变，视为新的合盘
+- 哈希值存储在 `synastry_records` 表
+- 查询时先检查哈希是否存在
 
-1. 用户登录时检测 localStorage 是否有 `astro_user` 数据
-2. 弹窗提示："检测到本地数据，是否同步到云端？"
-3. 用户确认后迁移数据，清除 localStorage
-4. 后续访问优先使用云端数据
+### 3.2 查看详情唯一性
 
----
+**问题**：区分永久性解锁和一次性解锁
 
-## 4. 支付系统
-
-### 4.1 支付渠道
-
-| 渠道 | 阶段 | 用途 |
-|-----|------|-----|
-| Stripe | MVP | Web 订阅 + 单次购买 |
-| Apple IAP | Phase 2 | iOS App |
-| Google Play Billing | Phase 2 | Android App |
-
-### 4.2 Stripe 集成架构
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Frontend  │────▶│   Backend   │────▶│   Stripe    │
-│  (React)    │     │  (Express)  │     │    API      │
-└─────────────┘     └─────────────┘     └─────────────┘
-       │                   │                   │
-       │  1. 点击订阅      │                   │
-       │──────────────────▶│                   │
-       │                   │ 2. 创建 Checkout  │
-       │                   │──────────────────▶│
-       │                   │                   │
-       │  3. 返回 URL      │◀──────────────────│
-       │◀──────────────────│                   │
-       │                   │                   │
-       │  4. 跳转 Stripe   │                   │
-       │────────────────────────────────────▶│
-       │                   │                   │
-       │                   │ 5. Webhook 通知   │
-       │                   │◀──────────────────│
-       │                   │                   │
-       │  6. 更新权益      │                   │
-       │◀──────────────────│                   │
-```
-
-### 4.3 订阅状态管理
+**解决方案**：
 
 ```typescript
-interface Subscription {
-  id: string;
+// 购买记录类型
+type PurchaseScope =
+  | 'permanent'           // 永久解锁（探索自我）
+  | 'daily'               // 每日重置（今日运势）
+  | 'per_synastry'        // 按合盘配对（合盘内详情）
+  | 'per_month'           // 按自然月（CBT 统计）
+  | 'consumable';         // 消耗型（Ask）
+
+interface PurchaseRecord {
   userId: string;
-  stripeSubscriptionId: string;
-  stripeCustomerId: string;
-
-  plan: 'monthly' | 'yearly';
-  status: 'active' | 'canceled' | 'past_due' | 'expired';
-
-  currentPeriodStart: Date;
-  currentPeriodEnd: Date;
-  cancelAtPeriodEnd: boolean;
-
-  // 订阅内权益使用量
-  usage: {
-    synastryReads: number;      // 合盘使用次数
-    monthlyReportClaimed: boolean;
-  };
-
-  createdAt: Date;
-  updatedAt: Date;
+  featureType: string;        // 'dimension', 'daily_script', 'credit', etc.
+  featureId?: string;         // 具体 ID（如维度名、合盘哈希、充值套餐 ID）
+  scope: PurchaseScope;
+  validUntil?: Date;          // 有效期（daily/monthly）
+  quantity?: number;          // 购买的数量（含积分余额）
+  consumed?: number;          // 已消耗数量（consumable）
 }
 ```
 
-### 4.4 单次购买记录
+**校验逻辑**：
 
 ```typescript
-interface Purchase {
-  id: string;
-  userId: string;
-  stripePaymentIntentId: string;
+async function checkPurchase(
+  userId: string,
+  featureType: string,
+  featureId?: string
+): Promise<boolean> {
+  const record = await db.purchaseRecords.findFirst({
+    where: {
+      userId,
+      featureType,
+      featureId: featureId || null,
+    },
+  });
 
-  productType: 'ask' | 'detail_pack' | 'synastry' | 'cbt_analysis' | 'report';
-  productId?: string;           // 报告类型 ID
-  amount: number;               // 美分
-  currency: 'usd';
+  if (!record) return false;
 
-  status: 'pending' | 'completed' | 'failed' | 'refunded';
-
-  // 对于消耗品（如 Ask），记录剩余次数
-  quantity?: number;
-  consumed?: number;
-
-  createdAt: Date;
+  switch (record.scope) {
+    case 'permanent':
+      return true;
+    case 'daily':
+      return isSameDay(record.validUntil, new Date());
+    case 'per_month':
+      return isSameMonth(record.validUntil, new Date());
+    case 'per_synastry':
+      return true;  // featureId 是合盘哈希
+    case 'consumable':
+      return record.consumed < record.quantity;
+  }
 }
 ```
 
 ---
 
-## 5. 权益校验系统
+## 4. 缓存策略设计
 
-### 5.1 校验流程
+### 4.1 前端缓存架构
 
 ```
-用户请求 AI 内容
-       │
-       ▼
-┌──────────────────┐
-│ 检查是否登录      │
-└────────┬─────────┘
-         │
-    ┌────┴────┐
-    │ 已登录   │ 未登录 ──▶ 检查 localStorage 免费额度
-    └────┬────┘                    │
-         │                         ▼
-         ▼                   额度用完 ──▶ 显示登录/付费墙
-┌──────────────────┐
-│ 检查订阅状态      │
-└────────┬─────────┘
-         │
-    ┌────┴────┐
-    │ 订阅中   │ 非订阅 ──▶ 检查单次购买额度
-    └────┬────┘                    │
-         │                         ▼
-         ▼                   额度用完 ──▶ 显示付费墙
-┌──────────────────┐
-│ 检查订阅内额度    │
-│ （如合盘 5次/月） │
-└────────┬─────────┘
-         │
-    ┌────┴────┐
-    │ 有额度   │ 无额度 ──▶ 显示购买提示
-    └────┬────┘
-         │
-         ▼
-    执行请求，扣减额度
+┌─────────────────────────────────────────────────────────┐
+│                    React Context                         │
+├─────────────────────────────────────────────────────────┤
+│  EntitlementContext   │   DataCacheContext              │
+│  - 订阅状态           │   - 页面数据缓存                 │
+│  - 购买记录           │   - 请求去重                     │
+│  - 免费额度           │   - 失效策略                     │
+└─────────────────────────────────────────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────┐
+│                   localStorage                           │
+├─────────────────────────────────────────────────────────┤
+│  astro_entitlements   │   astro_cache_*                 │
+│  - 权益状态快照       │   - 页面数据缓存                 │
+│  - 更新时间戳         │   - 版本号                       │
+└─────────────────────────────────────────────────────────┘
 ```
 
-### 5.2 前端权益上下文
+### 4.2 缓存 Key 设计
 
 ```typescript
-interface Entitlements {
-  isLoggedIn: boolean;
-  isSubscriber: boolean;
-  subscription?: {
-    plan: 'monthly' | 'yearly';
-    expiresAt: Date;
-    synastryReadsLeft: number;
-    monthlyReportClaimed: boolean;
-  };
+const CACHE_KEYS = {
+  // 权益相关
+  ENTITLEMENTS: 'astro_entitlements',
+  PURCHASE_RECORDS: 'astro_purchases',
 
-  // 免费/购买额度
-  freeAskLeft: number;
-  freeDetailLeft: number;
-  purchasedAsk: number;
-  purchasedDetailPack: number;
+  // 页面数据
+  ME_PAGE: 'astro_cache_me',
+  TODAY_PAGE: (date: string) => `astro_cache_today_${date}`,
+  SYNASTRY: (hash: string) => `astro_cache_synastry_${hash}`,
+  ASK_HISTORY: 'astro_cache_ask_history',
+  CBT_STATS: (yearMonth: string) => `astro_cache_cbt_${yearMonth}`,
+};
+```
 
-  // 已购买的报告
-  purchasedReports: string[];
+### 4.3 缓存策略
+
+| 数据类型 | 缓存位置 | TTL | 失效条件 |
+|---------|---------|-----|---------|
+| 权益状态 | Memory + localStorage | 5 分钟 | 支付成功、订阅变更 |
+| 探索自我数据 | Memory + localStorage | 永久 | 出生信息修改 |
+| 今日运势数据 | Memory + localStorage | 当日 | 日期变更 |
+| 合盘数据 | Memory + localStorage | 永久 | 配对信息变更 |
+| Ask 历史 | Memory + localStorage | 永久 | - |
+| CBT 统计 | Memory + localStorage | 当月 | 月份变更 |
+
+### 4.4 缓存实现示例
+
+```typescript
+// 带缓存的数据获取 Hook
+function useCachedData<T>(
+  cacheKey: string,
+  fetcher: () => Promise<T>,
+  options: {
+    ttl?: number;           // 毫秒
+    invalidateOn?: string[];  // 依赖变化时失效
+  }
+) {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // 检查缓存
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) {
+      const { data, timestamp } = JSON.parse(cached);
+      const isValid = !options.ttl || Date.now() - timestamp < options.ttl;
+      if (isValid) {
+        setData(data);
+        return;
+      }
+    }
+
+    // 获取新数据
+    setLoading(true);
+    fetcher().then(result => {
+      setData(result);
+      localStorage.setItem(cacheKey, JSON.stringify({
+        data: result,
+        timestamp: Date.now(),
+      }));
+    }).finally(() => setLoading(false));
+  }, [cacheKey, ...options.invalidateOn || []]);
+
+  return { data, loading };
 }
 ```
 
-### 5.3 付费墙组件
+---
 
-```typescript
-interface PaywallProps {
-  feature: 'ask' | 'detail' | 'synastry' | 'cbt_analysis' | 'report';
-  reportType?: string;
-  onPurchase: () => void;
-  onSubscribe: () => void;
+## 5. 付费墙组件设计
+
+### 5.1 锁标识 UI
+
+```tsx
+// 锁定状态的内容展示
+interface LockedContentProps {
+  title: string;
+  description?: string;
+  price: string;
+  onUnlock: () => void;
+}
+
+function LockedContent({ title, description, price, onUnlock }: LockedContentProps) {
+  return (
+    <div className="relative">
+      {/* 遮罩层 */}
+      <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm flex flex-col items-center justify-center rounded-lg">
+        <LockIcon className="w-8 h-8 text-amber-400 mb-2" />
+        <span className="text-white font-medium">{title}</span>
+        {description && (
+          <span className="text-gray-400 text-sm mt-1">{description}</span>
+        )}
+        <button
+          onClick={onUnlock}
+          className="mt-4 px-4 py-2 bg-amber-500 text-black rounded-full font-medium"
+        >
+          解锁 {price}
+        </button>
+      </div>
+
+      {/* 模糊的预览内容 */}
+      <div className="blur-sm pointer-events-none">
+        {/* 占位内容 */}
+      </div>
+    </div>
+  );
+}
+```
+
+### 5.2 付费弹窗设计
+
+```tsx
+interface PaywallModalProps {
+  isOpen: boolean;
   onClose: () => void;
+  feature: string;
+  pointsCost: number;
+  pointsBalance: number;
+  onSpendPoints: () => void;
+  onTopUp: () => void;
+  onSubscribe: () => void;
 }
 
-// 显示逻辑：
-// 1. 显示功能价值说明
-// 2. 单次购买价格 + 按钮
-// 3. "或 订阅解锁全部" + 订阅价格
-// 4. 订阅对比表（单次 vs 订阅）
+function PaywallModal({
+  isOpen,
+  onClose,
+  feature,
+  pointsCost,
+  pointsBalance,
+  onSpendPoints,
+  onTopUp,
+  onSubscribe,
+}: PaywallModalProps) {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <div className="p-6">
+        <h2 className="text-xl font-bold mb-4">解锁 {feature}</h2>
+
+        {/* 选项 1：积分解锁 */}
+        <div className="border rounded-lg p-4 mb-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-medium">使用积分解锁</h3>
+              <p className="text-sm text-gray-400">当前余额 {pointsBalance} 积分</p>
+            </div>
+            <button
+              onClick={onSpendPoints}
+              className="px-4 py-2 bg-white text-black rounded-full"
+            >
+              消耗 {pointsCost} 积分
+            </button>
+          </div>
+        </div>
+
+        {/* 选项 2：购买积分 */}
+        <div className="border rounded-lg p-4 mb-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-medium">购买积分</h3>
+              <p className="text-sm text-gray-400">充值积分用于解锁内容</p>
+            </div>
+            <button
+              onClick={onTopUp}
+              className="px-4 py-2 bg-white text-black rounded-full"
+            >
+              选择套餐
+            </button>
+          </div>
+        </div>
+
+        {/* 选项 3：订阅（推荐） */}
+        <div className="border-2 border-amber-500 rounded-lg p-4 relative">
+          <span className="absolute -top-3 left-4 bg-amber-500 text-black text-xs px-2 py-1 rounded-full">
+            推荐
+          </span>
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-medium">开启订阅</h3>
+              <p className="text-sm text-gray-400">解锁所有内容 + 更多权益</p>
+            </div>
+            <button
+              onClick={onSubscribe}
+              className="px-4 py-2 bg-amber-500 text-black rounded-full"
+            >
+              $6.99/月
+            </button>
+          </div>
+        </div>
+
+        {/* 订阅权益列表 */}
+        <div className="mt-4 text-sm text-gray-400">
+          <p>订阅包含：</p>
+          <ul className="list-disc list-inside mt-2">
+            <li>所有查看详情免费</li>
+            <li>每周 5 次 Ask 问答</li>
+            <li>每周 5 次合盘</li>
+            <li>报告 8 折优惠</li>
+          </ul>
+        </div>
+      </div>
+    </Modal>
+  );
+}
 ```
+
+### 5.3 积分余额与使用情况展示
+
+- 顶部导航/侧边栏显示积分胶囊（星标图标 + 数值，参考 Image #2）。
+- 点击积分入口进入「使用情况」页面或抽屉，布局参考 Image #1。
+- 页面顶部显示当前方案（免费/订阅）与「升级」按钮。
+- 概览卡片包含：积分余额、订阅赠送积分（500，含下次扣费/发放时间）、本周免费额度（Ask/合盘/Synthetica）。
+- 使用记录列表：列展示「详情 / 日期 / 积分变更」，正负数高亮（+ 绿色，- 红色）。
+- 付费墙内显示「余额/本次消耗/差额」，不足时优先引导充值套餐。
 
 ---
 
-## 6. 付费报告设计
+## 6. 数据库设计
 
-### 6.1 报告开发优先级
-
-| 优先级 | 报告 | 单价 | 订阅包含 | 开发复杂度 |
-|-------|-----|------|---------|-----------|
-| P0 | 年度运势报告 | $7.99 | 30% 折扣 | 中 |
-| P0 | 月运报告 | $1.99 | 每月 1 份免费 | 低 |
-| P1 | 合盘深度报告 | $3.99 | 5次/月 | 低（已有基础） |
-| P1 | 事业/职业报告 | $4.99 | 30% 折扣 | 中 |
-| P2 | 财富/金钱报告 | $4.99 | 30% 折扣 | 中 |
-| P2 | 土星回归报告 | $6.99 | 30% 折扣 | 低 |
-| P3 | 3/6/12月行运预测 | $2.99-6.99 | 30% 折扣 | 中-高 |
-
-### 6.2 报告输出形式
-
-#### 形式 1：纯文字（Web 展示）
-- 优点：开发快，SEO 友好
-- 缺点：价值感低
-- 适用：月运、日运详情
-
-#### 形式 2：PDF 下载
-- 优点：价值感高，可分享/打印
-- 缺点：需要 PDF 生成库
-- 适用：年度报告、专题报告
-- 技术：puppeteer 或 @react-pdf/renderer
-
-#### 形式 3：交互式报告
-- 优点：最佳体验，可个性化
-- 缺点：开发成本高
-- 适用：合盘深度报告
-- 设计方向：分章节展开、时间轴、可视化图表
-
-**MVP 策略**：P0 报告使用 Web + PDF 双形式，交互式报告放 Phase 2。
-
-### 6.3 年度运势报告结构（示例）
-
-```markdown
-# 2026 年度运势报告 - {用户名}
-
-## 总览
-- 年度关键词（3 个）
-- 年度主题概述（200-300字）
-- 重要行运提示
-
-## 季度运势
-### Q1 (1-3月)
-- 整体运势
-- 重点事项
-- 建议行动
-
-### Q2 (4-6月)
-...
-
-## 专题运势
-### 事业发展
-### 感情关系
-### 财务状况
-### 健康提醒
-
-## 重要日期
-- 水逆期间
-- 日月食
-- 行星换座
-
-## 年度建议
-- 3 条核心建议
-- 需要避开的陷阱
-```
-
----
-
-## 7. 数据库设计
-
-### 7.1 表结构
+### 6.1 核心表结构
 
 ```sql
 -- 用户表
@@ -393,12 +461,15 @@ CREATE TABLE users (
   email VARCHAR(255) UNIQUE NOT NULL,
   name VARCHAR(255),
   avatar TEXT,
-  provider VARCHAR(20) NOT NULL, -- google, apple, email
+  provider VARCHAR(20) NOT NULL,
   provider_id VARCHAR(255),
-  password_hash VARCHAR(255),    -- 仅 email 注册
+  password_hash VARCHAR(255),
 
   birth_profile JSONB,
   preferences JSONB DEFAULT '{"theme": "dark", "language": "en"}',
+
+  -- 首次注册 7 天试用
+  trial_ends_at TIMESTAMPTZ,
 
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
@@ -411,335 +482,404 @@ CREATE TABLE subscriptions (
   stripe_subscription_id VARCHAR(255) UNIQUE,
   stripe_customer_id VARCHAR(255),
 
-  plan VARCHAR(20) NOT NULL,     -- monthly, yearly
-  status VARCHAR(20) NOT NULL,   -- active, canceled, past_due, expired
+  plan VARCHAR(20) NOT NULL,
+  status VARCHAR(20) NOT NULL,
 
   current_period_start TIMESTAMPTZ,
   current_period_end TIMESTAMPTZ,
   cancel_at_period_end BOOLEAN DEFAULT FALSE,
 
-  usage JSONB DEFAULT '{"synastryReads": 0, "monthlyReportClaimed": false}',
-
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 购买记录表
-CREATE TABLE purchases (
+-- 购买记录表（新增）
+CREATE TABLE purchase_records (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+
+  feature_type VARCHAR(100) NOT NULL,   -- 'dimension', 'daily_script', 'credit', etc.
+  feature_id VARCHAR(255),              -- 具体 ID（维度名、合盘哈希、充值套餐等）
+  scope VARCHAR(20) NOT NULL,           -- 'permanent', 'daily', 'per_synastry', 'per_month', 'consumable'
+
+  price_cents INTEGER NOT NULL,
   stripe_payment_intent_id VARCHAR(255),
 
-  product_type VARCHAR(50) NOT NULL,
-  product_id VARCHAR(100),
-  amount INTEGER NOT NULL,        -- 美分
-  currency VARCHAR(3) DEFAULT 'usd',
-
-  status VARCHAR(20) NOT NULL,
-  quantity INTEGER DEFAULT 1,
-  consumed INTEGER DEFAULT 0,
+  valid_until TIMESTAMPTZ,              -- 有效期
+  quantity INTEGER DEFAULT 1,           -- 消耗型数量（积分充值为积分数）
+  consumed INTEGER DEFAULT 0,           -- 已消耗
 
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 报告表
-CREATE TABLE reports (
+-- 合盘记录表（新增）
+CREATE TABLE synastry_records (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES users(id) ON DELETE CASCADE,
 
-  report_type VARCHAR(50) NOT NULL,
-  title VARCHAR(255),
-  content JSONB,
-  pdf_url TEXT,
+  synastry_hash VARCHAR(64) UNIQUE NOT NULL,  -- SHA256 哈希
+  person_a_info JSONB NOT NULL,
+  person_b_info JSONB NOT NULL,
+  relationship_type VARCHAR(50),
 
-  birth_profile JSONB,           -- 生成时的出生信息快照
+  is_free BOOLEAN DEFAULT FALSE,              -- 是否使用免费次数
 
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 免费额度表（未登录用户）
+-- 免费额度表
 CREATE TABLE free_usage (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  device_fingerprint VARCHAR(255) UNIQUE,
-  ip_address INET,
+  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+  device_fingerprint VARCHAR(255),
 
+  -- Ask 问答（每周重置）
   ask_used INTEGER DEFAULT 0,
-  detail_used INTEGER DEFAULT 0,
+  ask_reset_at TIMESTAMPTZ,
+
+  -- 合盘（永久）
   synastry_used INTEGER DEFAULT 0,
+
+  -- 其他...
 
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- 订阅权益使用表（每周重置）
+CREATE TABLE subscription_usage (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+
+  week_start DATE NOT NULL,           -- 周起始日期
+
+  ask_used INTEGER DEFAULT 0,         -- 本周 Ask 权益使用
+  synastry_used INTEGER DEFAULT 0,    -- 本周合盘权益使用
+
+  UNIQUE(user_id, week_start)
+);
 ```
 
-### 7.2 索引
+### 6.2 索引
 
 ```sql
-CREATE INDEX idx_subscriptions_user_id ON subscriptions(user_id);
-CREATE INDEX idx_subscriptions_status ON subscriptions(status);
-CREATE INDEX idx_purchases_user_id ON purchases(user_id);
-CREATE INDEX idx_reports_user_id ON reports(user_id);
-CREATE INDEX idx_free_usage_fingerprint ON free_usage(device_fingerprint);
+CREATE INDEX idx_purchase_records_user_feature ON purchase_records(user_id, feature_type, feature_id);
+CREATE INDEX idx_synastry_records_hash ON synastry_records(synastry_hash);
+CREATE INDEX idx_free_usage_user ON free_usage(user_id);
+CREATE INDEX idx_subscription_usage_user_week ON subscription_usage(user_id, week_start);
 ```
 
 ---
 
-## 8. API 设计
+## 7. API 设计
 
-### 8.1 认证 API
-
-```
-POST /api/auth/google      - Google 登录
-POST /api/auth/apple       - Apple 登录
-POST /api/auth/register    - Email 注册
-POST /api/auth/login       - Email 登录
-POST /api/auth/logout      - 登出
-GET  /api/auth/me          - 获取当前用户
-PUT  /api/auth/profile     - 更新用户信息
-POST /api/auth/migrate     - 迁移 localStorage 数据
-```
-
-### 8.2 支付 API
+### 7.1 权益 API
 
 ```
-POST /api/payment/create-checkout        - 创建 Stripe Checkout
-POST /api/payment/create-portal          - 创建 Stripe Customer Portal
-POST /api/payment/webhook                - Stripe Webhook
-GET  /api/payment/subscription           - 获取订阅状态
-GET  /api/payment/purchases              - 获取购买记录
-POST /api/payment/purchase               - 单次购买
-```
+GET  /api/entitlements
+返回用户完整权益状态：
+{
+  isSubscriber: boolean,
+  trialEndsAt: string | null,
+  subscription: {
+    plan: string,
+    status: string,
+    currentPeriodEnd: string,
+  } | null,
 
-### 8.3 权益 API
+  // 免费额度
+  freeUsage: {
+    askLeft: number,          // 本周剩余
+    askResetAt: string,
+    synastryLeft: number,     // 永久剩余
+  },
 
-```
-GET  /api/entitlements                   - 获取权益状态
-POST /api/entitlements/consume           - 消耗权益（Ask/详情等）
-GET  /api/entitlements/check/:feature    - 检查特定功能权限
-```
+  // 订阅权益额度（如有）
+  subscriptionUsage: {
+    askLeft: number,          // 本周订阅权益剩余
+    synastryLeft: number,
+  },
 
-### 8.4 报告 API
+  // 已购买的永久内容
+  purchasedFeatures: string[],
 
-```
-GET  /api/reports                        - 获取报告列表
-GET  /api/reports/:id                    - 获取报告详情
-POST /api/reports/generate               - 生成报告（付费）
-GET  /api/reports/:id/pdf                - 下载 PDF
-```
-
----
-
-## 9. 前端页面设计
-
-### 9.1 新增页面
-
-| 页面 | 路由 | 说明 |
-|-----|------|------|
-| 登录/注册 | /auth | 统一认证页 |
-| 订阅管理 | /subscription | 查看/管理订阅 |
-| 购买记录 | /purchases | 历史购买 |
-| 报告列表 | /reports | 已购报告 |
-| 报告详情 | /reports/:id | 查看报告 |
-| 报告商店 | /store | 购买报告 |
-
-### 9.2 付费墙触发点
-
-| 功能 | 触发条件 |
-|-----|---------|
-| Ask 问答 | 免费次数用完 |
-| 详情解读 | 免费次数用完 |
-| 合盘 Tab | 非订阅用户点击非总览 Tab |
-| CBT AI 分析 | 每次点击分析 |
-| 日运详情 | 非订阅用户 |
-| 报告 | 未购买该报告 |
-
-### 9.3 升级订阅按钮
-
-全局显示升级入口，参考 ChatGPT 的升级按钮设计：
-
-**按钮位置**：
-- 顶部导航栏右侧（用户头像旁）
-- 侧边栏底部（如有）
-- 付费墙弹窗内
-
-**按钮样式**：
-```tsx
-// 免费用户显示
-<button className="upgrade-btn">
-  <SparklesIcon />
-  Upgrade to Pro
-</button>
-
-// 订阅用户显示
-<button className="manage-btn">
-  <CrownIcon />
-  Pro Plan
-</button>
-```
-
-**按钮状态**：
-| 用户状态 | 按钮文案 | 点击行为 |
-|---------|---------|---------|
-| 未登录 | "Upgrade" | 打开登录弹窗 → 升级弹窗 |
-| 免费用户 | "Upgrade to Pro" | 打开升级弹窗 |
-| 订阅用户 | "Pro Plan" | 打开订阅管理弹窗 |
-| 订阅即将到期 | "Renew Pro" | 打开续费弹窗 |
-
-### 9.4 升级弹窗设计（Upgrade Modal）
-
-参考 ChatGPT Plus 升级弹窗，设计全屏 Modal：
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [×]                                                        │
-│                                                             │
-│              ✨ Upgrade to AstroMind Pro ✨                 │
-│                                                             │
-│         Unlock the full power of your cosmic insights       │
-│                                                             │
-│  ┌─────────────────────┐  ┌─────────────────────┐          │
-│  │      FREE           │  │    PRO ⭐ BEST      │          │
-│  │                     │  │                     │          │
-│  │  Basic natal chart  │  │  Everything in Free │          │
-│  │  3 Ask questions    │  │  ✓ Unlimited Ask    │          │
-│  │  3 Detail readings  │  │  ✓ Unlimited Detail │          │
-│  │  Daily summary      │  │  ✓ Full Daily       │          │
-│  │                     │  │  ✓ 5 Synastry/mo    │          │
-│  │                     │  │  ✓ Monthly Report   │          │
-│  │                     │  │  ✓ 30% off Reports  │          │
-│  │                     │  │                     │          │
-│  │      $0/mo          │  │    $6.99/mo         │          │
-│  │                     │  │    or $49.99/year   │          │
-│  │                     │  │    (Save 29%)       │          │
-│  │  ┌───────────────┐  │  │  ┌───────────────┐  │          │
-│  │  │ Current Plan  │  │  │  │ Upgrade Now   │  │          │
-│  │  └───────────────┘  │  │  └───────────────┘  │          │
-│  └─────────────────────┘  └─────────────────────┘          │
-│                                                             │
-│              💡 Cancel anytime. No commitment.              │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**弹窗组件接口**：
-
-```typescript
-interface UpgradeModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  source?: 'header' | 'paywall' | 'feature';  // 来源追踪
-  highlightFeature?: string;  // 高亮特定功能（从付费墙触发时）
+  // 积分余额
+  credits: {
+    balance: number,
+    subscriptionBonus: number,
+    nextGrantAt?: string,
+  },
 }
 
-// 使用示例
-<UpgradeModal
-  isOpen={showUpgrade}
-  onClose={() => setShowUpgrade(false)}
-  source="paywall"
-  highlightFeature="ask"
-/>
+POST /api/entitlements/check
+检查特定功能是否可用：
+Request:
+{
+  featureType: string,
+  featureId?: string,
+}
+Response:
+{
+  canAccess: boolean,
+  reason?: 'subscribed' | 'purchased' | 'free_quota' | 'trial',
+  needPurchase?: boolean,
+  price?: number, // 积分价格
+}
+
+POST /api/entitlements/consume
+消耗权益（Ask 等消耗型 / 积分）：
+Request:
+{
+  featureType: string,
+  source: 'free' | 'subscription' | 'credits',
+}
+Response:
+{
+  success: boolean,
+  remaining: number,
+}
 ```
 
-**弹窗内容区块**：
-
-1. **标题区**：品牌 Logo + "Upgrade to Pro" + 副标题
-2. **对比卡片**：Free vs Pro 双栏对比
-3. **价格选择**：月付 / 年付切换（年付高亮显示节省金额）
-4. **CTA 按钮**："Upgrade Now" 主按钮
-5. **信任标识**："Cancel anytime" + 安全支付图标
-6. **功能详情**：可展开的完整功能列表（可选）
-
-**响应式设计**：
-- Desktop：双栏对比卡片
-- Mobile：单栏堆叠，Pro 卡片在上
-
-### 9.5 订阅管理弹窗（Subscription Modal）
-
-订阅用户点击 "Pro Plan" 按钮时显示：
+### 7.2 积分充值/消费 API
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  [×]                        Pro Plan                        │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │  ⭐ You're on the Pro Monthly Plan                   │   │
-│  │                                                      │   │
-│  │  Next billing: Jan 15, 2026                         │   │
-│  │  Amount: $6.99                                      │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                                                             │
-│  This Month's Usage                                         │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │  Synastry Reads    ████████░░  3/5 used             │   │
-│  │  Monthly Report    ✓ Claimed                        │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                                                             │
-│  ┌─────────────────┐  ┌─────────────────┐                  │
-│  │ Manage Billing  │  │ Switch to Year  │                  │
-│  └─────────────────┘  └─────────────────┘                  │
-│                                                             │
-│               Cancel Subscription                           │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+POST /api/payment/credits/create-checkout
+创建积分充值会话：
+Request:
+{
+  packageId: string,
+  method: 'stripe' | 'paypal' | 'card',
+  successUrl: string,
+  cancelUrl: string,
+}
+Response:
+{
+  checkoutUrl: string,
+}
+
+POST /api/payment/credits/webhook
+Stripe Webhook 处理
+
+POST /api/payment/credits/spend
+使用积分解锁内容：
+Request:
+{
+  featureType: string,
+  featureId?: string,
+}
+Response:
+{
+  success: boolean,
+  creditsBalance: number,
+}
+
+GET /api/payment/credits/records
+获取积分充值/消费记录
 ```
 
-**管理功能**：
-- 查看当前计划和下次扣款日期
-- 查看本月权益使用情况
-- 切换到年付（显示节省金额）
-- 跳转 Stripe Customer Portal 管理支付方式
-- 取消订阅（显示挽留提示）
-
-### 9.6 取消挽留弹窗
-
-用户点击取消订阅时的挽留流程：
+### 7.3 合盘 API
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│                  😢 We're sad to see you go                 │
-│                                                             │
-│  Before you cancel, here's what you'll lose:                │
-│                                                             │
-│  ✗ Unlimited Ask questions                                  │
-│  ✗ Unlimited detail readings                                │
-│  ✗ 5 synastry readings per month                           │
-│  ✗ Free monthly report                                      │
-│  ✗ 30% discount on all reports                             │
-│                                                             │
-│  Your subscription will remain active until Jan 15, 2026    │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │  🎁 Stay and get 20% off your next 3 months!        │   │
-│  │     Use code: STAY20                                │   │
-│  │                                                      │   │
-│  │  ┌────────────────────────────────────────────┐     │   │
-│  │  │         Keep My Subscription               │     │   │
-│  │  └────────────────────────────────────────────┘     │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                                                             │
-│              No thanks, cancel anyway →                     │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+POST /api/synastry/check-hash
+检查合盘是否已存在：
+Request:
+{
+  personA: PersonInfo,
+  personB: PersonInfo,
+  relationshipType: string,
+}
+Response:
+{
+  exists: boolean,
+  hash: string,
+  canAccessFree: boolean,
+  freeLeft: number,
+}
+
+POST /api/synastry/record
+记录合盘使用：
+Request:
+{
+  hash: string,
+  isFree: boolean,
+}
+```
+
+### 7.4 支付方式支持
+
+- 支持 Stripe 与 PayPal 两条支付通道。
+- 信用卡支付默认通过 Stripe 处理。
+- 前端在充值/订阅时提供支付方式选择入口。
+
+---
+
+## 8. 前端页面集成
+
+### 8.1 探索自我 (MePage)
+
+```tsx
+function DimensionContent({ dimension, index }) {
+  const { canAccess, purchase } = useFeatureAccess(
+    'dimension',
+    dimension.id
+  );
+
+  // 前 2 个免费
+  if (index < 2 || canAccess) {
+    return <DimensionDetail dimension={dimension} />;
+  }
+
+  return (
+    <LockedContent
+      title={dimension.name}
+      price="10 积分"
+      onUnlock={() => purchase()}
+    />
+  );
+}
+```
+
+### 8.2 今日运势 (TodayPage)
+
+```tsx
+function TodayDetail() {
+  const today = format(new Date(), 'yyyy-MM-dd');
+  const { canAccess, purchase } = useFeatureAccess(
+    'daily_script',
+    today
+  );
+
+  if (!canAccess) {
+    return (
+      <LockedContent
+        title="今日剧本"
+        description="每日重置"
+        price="10 积分"
+        onUnlock={() => purchase()}
+      />
+    );
+  }
+
+  return <DailyScript />;
+}
+```
+
+### 8.3 双人合盘 (UsPage)
+
+```tsx
+function SynastryPage() {
+  const [personA, personB, relationshipType] = useSynastryInput();
+  const {
+    canAccessFree,
+    freeLeft,
+    subscriptionLeft,
+    hash
+  } = useSynastryAccess(personA, personB, relationshipType);
+
+  const handleGenerate = async () => {
+    if (canAccessFree) {
+      // 使用免费/订阅次数
+      await recordSynastryUsage(hash, true);
+    } else {
+      // 需要付费
+      await purchase('synastry', hash);
+    }
+  };
+
+  return (
+    <div>
+      {/* 显示剩余次数 */}
+      <div>
+        合盘次数: {freeLeft + subscriptionLeft} / {3 + (isSubscriber ? 2 : 0)}
+      </div>
+
+      <button onClick={handleGenerate}>
+        {canAccessFree ? '生成合盘' : `消耗 30 积分生成`}
+      </button>
+    </div>
+  );
+}
+```
+
+### 8.4 Ask 问答 (AskOraclePage)
+
+```tsx
+function AskPage() {
+  const { askLeft, subscriptionAskLeft, purchase } = useAskQuota();
+  const totalLeft = askLeft + subscriptionAskLeft;
+
+  const handleAsk = async (question: string) => {
+    if (totalLeft > 0) {
+      // 优先使用免费额度
+      const source = askLeft > 0 ? 'free' : 'subscription';
+      await consumeAsk(source);
+      await submitQuestion(question);
+    } else {
+      // 需要付费
+      await purchase('ask_single');
+    }
+  };
+
+  return (
+    <div>
+      <div>本周剩余: {totalLeft} 次</div>
+      <button onClick={() => handleAsk(question)}>
+        {totalLeft > 0 ? '提问' : '消耗 20 积分提问'}
+      </button>
+    </div>
+  );
+}
+```
+
+### 8.5 CBT 日记统计 (CalendarStats)
+
+```tsx
+function CBTStats() {
+  const yearMonth = format(new Date(), 'yyyy-MM');
+  const { isSubscriber, canAccess, purchase } = useFeatureAccess(
+    'cbt_stats',
+    yearMonth
+  );
+
+  // 订阅用户自动解锁
+  useEffect(() => {
+    if (isSubscriber && !canAccess) {
+      autoUnlock('cbt_stats', yearMonth);
+    }
+  }, [isSubscriber]);
+
+  if (!canAccess) {
+    return (
+      <LockedContent
+        title="本月统计解读"
+        price="20 积分/月"
+        onUnlock={() => purchase()}
+      />
+    );
+  }
+
+  return <StatsContent />;
+}
 ```
 
 ---
 
-## 10. 安全考虑
+## 9. 安全考虑
 
-### 10.1 防滥用
+### 9.1 防滥用
 
 - 设备指纹追踪免费额度
 - IP 限流
 - 注册需邮箱验证
+- 合盘唯一性哈希校验
 
-### 10.2 支付安全
+### 9.2 支付安全
 
 - Stripe Webhook 签名验证
 - 服务端验证订阅状态
 - 关键操作记录审计日志
 
-### 10.3 数据安全
+### 9.3 数据安全
 
 - 密码使用 bcrypt 加盐哈希
 - JWT Token 短期有效 + Refresh Token

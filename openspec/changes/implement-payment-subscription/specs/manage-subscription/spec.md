@@ -3,7 +3,7 @@
 ## ADDED Requirements
 
 ### Requirement: 订阅购买流程
-系统 SHALL 支持用户通过 Stripe 订阅月度或年度计划。
+系统 SHALL 支持用户通过 Stripe 订阅月度计划。
 
 #### Scenario: 购买月度订阅
 - Given 登录用户访问订阅页面
@@ -13,18 +13,26 @@
 - And 订阅状态更新为 active
 - And 权益立即生效
 
-#### Scenario: 购买年度订阅
-- Given 登录用户访问订阅页面
-- When 点击 "订阅 $49.99/年" 按钮
-- Then 跳转到 Stripe Checkout 页面
-- And 完成支付后订阅状态更新为 active
-- And 显示节省金额提示
-
 #### Scenario: 支付失败
 - Given 用户在 Stripe Checkout 支付
 - When 支付失败或取消
 - Then 返回应用并显示失败提示
 - And 订阅状态保持未订阅
+
+### Requirement: 支付方式选择
+系统 SHALL 支持 Stripe、PayPal 与信用卡支付方式。
+
+#### Scenario: 订阅支付方式选择
+- Given 登录用户准备开通订阅
+- When 选择支付方式（Stripe/PayPal/信用卡）
+- Then 引导至对应支付通道
+- And 信用卡支付通过 Stripe 处理
+
+#### Scenario: 积分充值支付方式选择
+- Given 登录用户准备购买积分
+- When 选择支付方式（Stripe/PayPal/信用卡）
+- Then 引导至对应支付通道
+- And 支付完成后返回应用
 
 ### Requirement: 订阅管理
 系统 SHALL 允许订阅用户管理、取消或续费订阅。
@@ -32,7 +40,7 @@
 #### Scenario: 查看订阅状态
 - Given 订阅用户访问订阅管理页面
 - When 页面加载
-- Then 显示当前计划（月度/年度）
+- Then 显示当前计划（月度）
 - And 显示到期日期
 - And 显示续费状态
 
@@ -58,7 +66,7 @@
 - When 点击导航栏 "Upgrade to Pro" 按钮
 - Then 打开升级弹窗（UpgradeModal）
 - And 显示 Free vs Pro 对比卡片
-- And 显示月付/年付价格选项
+- And 显示订阅价格选项
 
 #### Scenario: 从付费墙触发升级
 - Given 用户触发付费墙
@@ -81,22 +89,17 @@
 - And 提供挽留优惠
 - And 显示 "Keep" 和 "Cancel anyway" 选项
 
-### Requirement: 单次购买
-系统 SHALL 支持非订阅用户单次购买特定内容。
+### Requirement: 积分购买
+系统 SHALL 支持非订阅用户购买积分套餐。
 
-#### Scenario: 购买 Ask 单次
-- Given 用户 Ask 免费次数用完
-- When 点击付费墙中的 "购买 $0.99"
-- Then 跳转 Stripe Checkout
-- And 支付成功后获得 1 次 Ask 额度
+#### Scenario: 购买积分套餐
+- Given 登录用户在付费墙选择积分套餐
+- When 跳转 Stripe Checkout 并支付成功
+- Then 积分余额增加
+- And 权益状态立即刷新
 
-#### Scenario: 购买详情解读包
-- Given 用户详情解读免费次数用完
-- When 点击 "购买 10 次解读包 $2.99"
-- Then 支付成功后获得 10 次解读额度
-
-#### Scenario: 购买报告
-- Given 用户访问报告商店
-- When 购买年度运势报告 $7.99
-- Then 支付成功后可查看报告
-- And 报告加入已购列表
+#### Scenario: 积分购买失败
+- Given 用户在 Stripe Checkout 支付
+- When 支付失败或取消
+- Then 返回应用并显示失败提示
+- And 积分余额保持不变

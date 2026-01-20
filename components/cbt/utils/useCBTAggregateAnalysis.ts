@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { UserProfile } from '../../../types';
 import { fetchCBTAggregateAnalysis } from '../../../services/apiClient';
 
@@ -10,6 +10,18 @@ interface AggregateAnalysis {
 }
 
 const CACHE_KEY_PREFIX = 'cbt_aggregate_analysis_';
+const CACHE_VERSION = 'v2';
+
+const hashInput = (input: unknown): string => {
+  const str = JSON.stringify(input);
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash |= 0;
+  }
+  return Math.abs(hash).toString(36);
+};
 
 export function useCBTAggregateAnalysis(
   userProfile: UserProfile,
@@ -22,6 +34,7 @@ export function useCBTAggregateAnalysis(
   const [analysis, setAnalysis] = useState<AggregateAnalysis | null>(null);
   const [loading, setLoading] = useState(true); // Start with loading=true to prevent mock data flash
   const isEnabled = options?.enabled ?? true;
+  const statsHash = useMemo(() => hashInput(stats), [stats]);
 
   useEffect(() => {
     if (!userProfile || !isEnabled) {
@@ -31,7 +44,8 @@ export function useCBTAggregateAnalysis(
     }
 
     const periodKey = `${year}-${month + 1}`;
-    const cacheKey = `${CACHE_KEY_PREFIX}${userProfile.name}_${periodKey}_${language}`;
+    const userKey = userProfile.userId || userProfile.name || 'unknown';
+    const cacheKey = `${CACHE_KEY_PREFIX}${CACHE_VERSION}_${userKey}_${periodKey}_${language}_${statsHash}`;
     
     const loadAnalysis = async () => {
       // 1. Try local storage cache
@@ -71,7 +85,7 @@ export function useCBTAggregateAnalysis(
     const timer = setTimeout(loadAnalysis, 500);
     return () => clearTimeout(timer);
 
-  }, [userProfile, year, month, JSON.stringify(stats), language, isEnabled]); // Deep dependency on stats
+  }, [userProfile, year, month, statsHash, language, isEnabled]); // Deep dependency on stats
 
   return { analysis, loading };
 }

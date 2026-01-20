@@ -1,5 +1,5 @@
 // INPUT: Wiki 入口页签与路由状态（含独立页签与 1280 容器约束）。
-// OUTPUT: 导出 Wiki 聚合页面组件（仅保留首页/百科页签）。
+// OUTPUT: 导出 Wiki 聚合页面组件（包含首页/百科/经典页签）。
 // POS: Wiki 路由入口；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useMemo } from 'react';
@@ -7,14 +7,19 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ActionButton, Container, useLanguage } from '../UIComponents';
 import WikiHomePage from './WikiHomePage';
 import WikiIndexPage from './WikiIndexPage';
+import WikiClassicsPage from './WikiClassicsPage';
+import WikiSyntheticaPage from './WikiSyntheticaPage';
 
-const TAB_VALUES = ['home', 'library'] as const;
+const TAB_VALUES = ['home', 'library', 'classics', 'tools'] as const;
 type WikiTab = typeof TAB_VALUES[number];
 
 const resolveTab = (search: string): WikiTab => {
   const params = new URLSearchParams(search);
   const tab = params.get('tab');
-  return tab === 'library' ? 'library' : 'home';
+  if (tab === 'library') return 'library';
+  if (tab === 'classics') return 'classics';
+  if (tab === 'tools') return 'tools';
+  return 'home';
 };
 
 const WikiHubPage: React.FC = () => {
@@ -27,7 +32,7 @@ const WikiHubPage: React.FC = () => {
   const handleTabChange = (tab: WikiTab) => {
     const params = new URLSearchParams(location.search);
     params.set('tab', tab);
-    if (tab === 'home') params.delete('section');
+    if (tab !== 'library') params.delete('section');
     const next = params.toString();
     navigate(`/wiki${next ? `?${next}` : ''}`);
   };
@@ -44,12 +49,12 @@ const WikiHubPage: React.FC = () => {
               className="rounded-full px-5"
               onClick={() => handleTabChange(tab)}
             >
-              {tab === 'home' ? t.wiki.tab_home : t.wiki.tab_library}
+              {tab === 'home' ? t.wiki.tab_home : tab === 'library' ? t.wiki.tab_library : tab === 'classics' ? t.wiki.tab_classics : t.wiki.tab_tools}
             </ActionButton>
           ))}
         </div>
 
-        {activeTab === 'home' ? <WikiHomePage /> : <WikiIndexPage />}
+        {activeTab === 'home' ? <WikiHomePage /> : activeTab === 'library' ? <WikiIndexPage /> : activeTab === 'classics' ? <WikiClassicsPage /> : <WikiSyntheticaPage />}
       </div>
     </Container>
   );

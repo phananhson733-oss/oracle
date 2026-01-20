@@ -1,9 +1,11 @@
-// INPUT: Swiss Ephemeris 封装实现（含敏感点位派生、行运 ASC 相位与本命盘缓存）。
-// OUTPUT: 导出星历计算服务（支持真实坐标、派生点位、行运 ASC 相位与缓存本命盘）。
+// INPUT: Swiss Ephemeris 封装实现（含敏感点位派生、行运 ASC 相位与本命盘/行运缓存）。
+// OUTPUT: 导出星历计算服务（支持真实坐标、派生点位、行运缓存与 AI 摘要数据）。
 // POS: 星历计算服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import type { BirthInput, PlanetPosition, Aspect, NatalChart, TransitData } from '../types/api.js';
 import { PLANETS, SIGNS, ASTEROIDS, ASPECT_TYPES, type EphemerisService } from '../data/sources.js';
+import { cacheService } from '../cache/redis.js';
+import { CACHE_PREFIX, CACHE_TTL, hashInput } from '../cache/strategy.js';
 
 // Swiss Ephemeris 常量
 const SE_SUN = 0, SE_MOON = 1, SE_MERCURY = 2, SE_VENUS = 3, SE_MARS = 4;
@@ -137,6 +139,9 @@ const MOCK_ORBITAL_PERIODS = [
 const DEFAULT_LAT = 31.23;
 const DEFAULT_LON = 121.47;
 const NATAL_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+const SUMMARY_ASPECT_LIMIT = 8;
+const SUMMARY_PLANETS = ['Sun', 'Moon', 'Ascendant', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn'] as const;
+const SUMMARY_TRANSIT_PLANETS = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn'] as const;
 
 const buildNatalCacheKey = (birth: BirthInput) => {
   const lat = birth.lat ?? DEFAULT_LAT;
@@ -151,6 +156,73 @@ const buildNatalCacheKey = (birth: BirthInput) => {
     lon,
     birth.accuracy || 'exact',
   ].join('|');
+};
+
+const buildBirthHash = (birth: BirthInput) => hashInput({
+  date: birth.date,
+  time: birth.time || '',
+  city: birth.city,
+  lat: birth.lat ?? DEFAULT_LAT,
+  lon: birth.lon ?? DEFAULT_LON,
+  timezone: birth.timezone,
+  accuracy: birth.accuracy || 'exact',
+});
+
+const pickTopAspects = (aspects: Aspect[], limit = SUMMARY_ASPECT_LIMIT) => (
+  aspects
+    .slice()
+    .sort((a, b) => a.orb - b.orb)
+    .slice(0, limit)
+    .map((aspect) => ({
+      planet1: aspect.planet1,
+      planet2: aspect.planet2,
+      type: aspect.type,
+      orb: aspect.orb,
+    }))
+);
+
+const buildPlanetSummary = (pos?: PlanetPosition | null) => {
+  if (!pos) return null;
+  return {
+    name: pos.name,
+    sign: pos.sign,
+    house: pos.house ?? null,
+    retrograde: pos.isRetrograde,
+  };
+};
+
+export const buildCompactChartSummary = (chart: NatalChart) => {
+  const positionsByName = new Map(chart.positions.map((pos) => [pos.name, pos]));
+  const rising = positionsByName.get('Ascendant') || positionsByName.get('Rising');
+  const personalPlanets = SUMMARY_PLANETS
+    .filter((name) => !['Sun', 'Moon', 'Ascendant'].includes(name))
+    .map((name) => buildPlanetSummary(positionsByName.get(name)))
+    .filter(Boolean);
+
+  return {
+    big3: {
+      sun: buildPlanetSummary(positionsByName.get('Sun')),
+      moon: buildPlanetSummary(positionsByName.get('Moon')),
+      rising: buildPlanetSummary(rising),
+    },
+    personal_planets: personalPlanets,
+    dominance: chart.dominance,
+    top_aspects: pickTopAspects(chart.aspects),
+  };
+};
+
+export const buildCompactTransitSummary = (transits: TransitData) => {
+  const positionsByName = new Map(transits.positions.map((pos) => [pos.name, pos]));
+  const keyTransits = SUMMARY_TRANSIT_PLANETS
+    .map((name) => buildPlanetSummary(positionsByName.get(name)))
+    .filter(Boolean);
+
+  return {
+    date: transits.date,
+    moon_phase: transits.moonPhase,
+    key_transits: keyTransits,
+    top_aspects: pickTopAspects(transits.aspects),
+  };
 };
 
 function mockPlanetPosition(name: string, jd: number, index: number): { lon: number; speed: number } {
@@ -172,12 +244,16 @@ export class SwissEphemerisService implements EphemerisService {
   private useRealEphemeris = !!swisseph;
   private natalCache = new Map<string, { value: NatalChart; expiresAt: number }>();
   private natalPending = new Map<string, Promise<NatalChart>>();
+  private transitPending = new Map<string, Promise<TransitData>>();
 
   async getPlanetPositions(date: Date, lat: number, lon: number): Promise<{
     positions: PlanetPosition[];
     houseCusps: number[];
   }> {
     const jd = dateToJulian(date);
+    if (!Number.isFinite(jd)) {
+      throw new Error(`Invalid Julian Date calculated from ${date}`);
+    }
     const positions: PlanetPosition[] = [];
     const longitudes: Record<string, number> = {};
 
@@ -537,6 +613,14 @@ export class SwissEphemerisService implements EphemerisService {
   }
 
   async calculateTransits(birth: BirthInput, date: Date): Promise<TransitData> {
+    const dateKey = date.toISOString().split('T')[0];
+    const cacheKey = `${CACHE_PREFIX.TRANSIT}${buildBirthHash(birth)}:${dateKey}`;
+    const cached = await cacheService.get<TransitData>(cacheKey);
+    if (cached) return cached;
+    const pending = this.transitPending.get(cacheKey);
+    if (pending) return pending;
+
+    const promise = (async () => {
     const { positions } = await this.getPlanetPositions(date, birth.lat ?? 31.23, birth.lon ?? 121.47);
     const natalChart = await this.calculateNatalChart(birth);
     const aspectBodies = [...PLANETS, 'North Node', 'Ascendant'] as const;
@@ -585,12 +669,20 @@ export class SwissEphemerisService implements EphemerisService {
       else moonPhase = 'Waning Crescent';
     }
 
-    return {
-      date: date.toISOString().split('T')[0],
-      positions,
-      aspects: transitAspects,
-      moonPhase,
-    };
+      const transitData: TransitData = {
+        date: dateKey,
+        positions,
+        aspects: transitAspects,
+        moonPhase,
+      };
+      await cacheService.set(cacheKey, transitData, CACHE_TTL.TRANSIT);
+      return transitData;
+    })().finally(() => {
+      this.transitPending.delete(cacheKey);
+    });
+
+    this.transitPending.set(cacheKey, promise);
+    return promise;
   }
 
   // 计算周期（行星回归、相位周期等）

@@ -264,9 +264,9 @@ const ReportSectionCard: React.FC<{
       </button>
 
       {/* Section content */}
-      {isExpanded && (
-        <div className="mt-4 pt-4 border-t border-space-600/50">
-          {/* Rating if available */}
+          {isExpanded && (
+            <div className={`mt-4 pt-4 border-t ${isDark ? 'border-white/10' : 'border-paper-300'}`}>
+              {/* Rating if available */}
           {section.rating !== undefined && (
             <div className="flex items-center gap-2 mb-4">
               {[...Array(10)].map((_, i) => (
@@ -294,49 +294,49 @@ const ReportSectionCard: React.FC<{
             </p>
           </div>
 
-          {/* Highlights */}
+          {/* Highlights - 移除外框，直接显示内容 */}
           {section.highlights && section.highlights.length > 0 && (
             <div className="mt-4">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-3">
                 <Star className="w-4 h-4 text-gold-500" />
-                <span className={`text-sm font-medium ${isDark ? 'text-star-200' : 'text-paper-700'}`}>
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${isDark ? 'text-gold-400' : 'text-gold-700'}`}>
                   {tr.highlights}
                 </span>
               </div>
-              <ul className="space-y-1">
+              <div className="space-y-1.5">
                 {section.highlights.map((h, i) => (
-                  <li
+                  <div
                     key={i}
-                    className={`flex items-start gap-2 text-sm ${isDark ? 'text-star-300' : 'text-paper-600'}`}
+                    className="flex items-start gap-2 text-sm"
                   >
-                    <span className="text-gold-500 mt-0.5">•</span>
-                    {h}
-                  </li>
+                    <span className={`mt-2 w-1 h-1 rounded-full shrink-0 ${isDark ? 'bg-gold-400' : 'bg-gold-600'}`} />
+                    <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{h}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
 
-          {/* Advice */}
+          {/* Advice - 移除外框，使用字色突出 */}
           {section.advice && section.advice.length > 0 && (
-            <div className={`mt-4 p-3 rounded-lg ${isDark ? 'bg-space-700/50' : 'bg-paper-100'}`}>
-              <div className="flex items-center gap-2 mb-2">
+            <div className="mt-4">
+              <div className="flex items-center gap-2 mb-3">
                 <Lightbulb className="w-4 h-4 text-accent" />
-                <span className={`text-sm font-medium ${isDark ? 'text-star-200' : 'text-paper-700'}`}>
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${isDark ? 'text-accent' : 'text-gold-700'}`}>
                   {tr.advice}
                 </span>
               </div>
-              <ul className="space-y-1">
+              <div className="space-y-1.5">
                 {section.advice.map((a, i) => (
-                  <li
+                  <div
                     key={i}
-                    className={`flex items-start gap-2 text-sm ${isDark ? 'text-star-300' : 'text-paper-600'}`}
+                    className="flex items-start gap-2 text-sm"
                   >
-                    <span className="text-accent mt-0.5">→</span>
-                    {a}
-                  </li>
+                    <span className={`font-mono text-xs mt-0.5 ${isDark ? 'text-space-600' : 'text-paper-400'}`}>0{i + 1}</span>
+                    <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{a}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           )}
         </div>

@@ -1,4 +1,4 @@
--- AstroMind AI Payment & Subscription Schema
+-- AstrologyWiki Payment & Subscription Schema
 -- Run this in Supabase SQL Editor or local PostgreSQL
 
 -- Enable UUID extension
@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS users (
 
   -- Metadata
   email_verified BOOLEAN DEFAULT FALSE,
+  trial_ends_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
@@ -114,16 +115,76 @@ CREATE TABLE IF NOT EXISTS reports (
 -- ============================================
 CREATE TABLE IF NOT EXISTS free_usage (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  device_fingerprint VARCHAR(255) UNIQUE NOT NULL,
+  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+  device_fingerprint VARCHAR(255) UNIQUE,
   ip_address INET,
 
   -- Usage counts
   ask_used INTEGER DEFAULT 0,
+  ask_reset_at TIMESTAMPTZ,
+  synthetica_used INTEGER DEFAULT 0,
+  synthetica_reset_at TIMESTAMPTZ,
   detail_used INTEGER DEFAULT 0,
   synastry_used INTEGER DEFAULT 0,
+  synastry_total_used INTEGER DEFAULT 0,
 
   created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (user_id)
+);
+
+-- ============================================
+-- Purchase Records Table (feature-level purchases)
+-- ============================================
+CREATE TABLE IF NOT EXISTS purchase_records (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+
+  feature_type VARCHAR(50) NOT NULL, -- e.g. dimension_talents, daily_script, cbt_stats
+  feature_id VARCHAR(255),
+  scope VARCHAR(20) NOT NULL CHECK (scope IN ('permanent', 'daily', 'per_synastry', 'per_month', 'consumable')),
+  price_cents INTEGER NOT NULL DEFAULT 0,
+
+  -- Stripe info
+  stripe_payment_intent_id VARCHAR(255),
+  stripe_checkout_session_id VARCHAR(255),
+
+  valid_until TIMESTAMPTZ,
+  quantity INTEGER DEFAULT 1,
+  consumed INTEGER DEFAULT 0,
+
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- ============================================
+-- Synastry Records Table (hash tracking)
+-- ============================================
+CREATE TABLE IF NOT EXISTS synastry_records (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+
+  synastry_hash VARCHAR(128) NOT NULL,
+  person_a_info JSONB NOT NULL,
+  person_b_info JSONB NOT NULL,
+  relationship_type VARCHAR(50),
+  is_free BOOLEAN DEFAULT FALSE,
+
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (user_id, synastry_hash)
+);
+
+-- ============================================
+-- Subscription Usage Table (weekly counters)
+-- ============================================
+CREATE TABLE IF NOT EXISTS subscription_usage (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  week_start DATE NOT NULL,
+  ask_used INTEGER DEFAULT 0,
+  synastry_used INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (user_id, week_start)
 );
 
 -- ============================================
@@ -158,9 +219,14 @@ CREATE INDEX IF NOT EXISTS idx_subscriptions_status ON subscriptions(status);
 CREATE INDEX IF NOT EXISTS idx_subscriptions_stripe_id ON subscriptions(stripe_subscription_id);
 CREATE INDEX IF NOT EXISTS idx_purchases_user_id ON purchases(user_id);
 CREATE INDEX IF NOT EXISTS idx_purchases_status ON purchases(status);
+CREATE INDEX IF NOT EXISTS idx_purchase_records_user_id ON purchase_records(user_id);
+CREATE INDEX IF NOT EXISTS idx_purchase_records_feature ON purchase_records(feature_type, feature_id);
+CREATE INDEX IF NOT EXISTS idx_synastry_records_user_hash ON synastry_records(user_id, synastry_hash);
+CREATE INDEX IF NOT EXISTS idx_subscription_usage_user_week ON subscription_usage(user_id, week_start);
 CREATE INDEX IF NOT EXISTS idx_reports_user_id ON reports(user_id);
 CREATE INDEX IF NOT EXISTS idx_reports_type ON reports(report_type);
 CREATE INDEX IF NOT EXISTS idx_free_usage_fingerprint ON free_usage(device_fingerprint);
+CREATE INDEX IF NOT EXISTS idx_free_usage_user ON free_usage(user_id);
 
 -- ============================================
 -- Updated_at Trigger Function
@@ -192,6 +258,12 @@ CREATE TRIGGER update_free_usage_updated_at
     FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
 
+DROP TRIGGER IF EXISTS update_subscription_usage_updated_at ON subscription_usage;
+CREATE TRIGGER update_subscription_usage_updated_at
+    BEFORE UPDATE ON subscription_usage
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
 -- ============================================
 -- Row Level Security (RLS) for Supabase
 -- ============================================
@@ -199,8 +271,11 @@ CREATE TRIGGER update_free_usage_updated_at
 ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 ALTER TABLE subscriptions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE purchases ENABLE ROW LEVEL SECURITY;
+ALTER TABLE purchase_records ENABLE ROW LEVEL SECURITY;
+ALTER TABLE synastry_records ENABLE ROW LEVEL SECURITY;
 ALTER TABLE reports ENABLE ROW LEVEL SECURITY;
 ALTER TABLE free_usage ENABLE ROW LEVEL SECURITY;
+ALTER TABLE subscription_usage ENABLE ROW LEVEL SECURITY;
 
 -- Note: RLS policies will be configured based on your Supabase auth setup
 -- For now, allow service role full access (backend uses service_role key)

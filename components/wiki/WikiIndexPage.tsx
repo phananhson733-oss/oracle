@@ -86,7 +86,7 @@ const WikiIndexPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
-  const borderColor = theme === 'dark' ? 'border-space-600' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-white/10' : 'border-paper-300';
   const hoverTone = theme === 'dark'
     ? 'hover:border-accent/40 hover:bg-space-900/70'
     : 'hover:border-accent/40 hover:bg-paper-100/80';

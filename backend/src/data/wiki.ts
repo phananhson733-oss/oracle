@@ -1,8 +1,9 @@
-// INPUT: 心理占星百科的静态数据（含双语条目与 Unicode 图标规范）。
+// INPUT: 心理占星百科的静态数据（含双语条目与生成内容覆盖）。
 // OUTPUT: 导出百科静态内容与类型标签映射（含符号去 emoji 化）。
 // POS: Wiki 数据源。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import type { Language, WikiItem, WikiItemType, WikiPillar, WikiTrendTag } from '../types/api.js';
+import { WIKI_GENERATED_CONTENT } from './wiki-generated.js';
 
 export interface WikiStaticContent {
   items: WikiItem[];
@@ -11,10 +12,10 @@ export interface WikiStaticContent {
 }
 
 const buildZhPlaceholder = (title: string) => ({
-  astronomy_myth: `${title} 在天文学和神话中占有重要地位...（完整内容编撰中）`,
-  psychology: `在心理占星中，${title} 代表了特定的心理动力...（完整内容编撰中）`,
-  shadow: `当能量受阻时，可能表现为阴影特质...（完整内容编撰中）`,
-  integration: `如何更好地整合 ${title} 的能量...（完整内容编撰中）`,
+  astronomy_myth: `${title} 在天文学和西方神话中占有重要地位（完整内容生成中）`,
+  psychology: `在心理占星中，${title} 代表了特定的心理动力（完整内容生成中）`,
+  shadow: `当能量受阻时，可能表现为阴影特质（完整内容生成中）`,
+  integration: `如何更好地整合 ${title} 的能量（完整内容生成中）`,
 });
 
 const buildEnPlaceholder = (title: string) => ({
@@ -23,6 +24,14 @@ const buildEnPlaceholder = (title: string) => ({
   shadow: `When this energy is blocked, it may show up as shadow patterns... (full entry in progress)`,
   integration: `Ways to integrate the energy of ${title}... (full entry in progress)`,
 });
+
+const mergeGeneratedContent = (lang: Language, items: WikiItem[]) => {
+  const overrides = WIKI_GENERATED_CONTENT?.[lang] || {};
+  return items.map((item) => {
+    const override = overrides[item.id];
+    return override ? { ...item, ...override } : item;
+  });
+};
 
 export const WIKI_TYPE_LABELS: Record<Language, Record<WikiItemType, string>> = {
   zh: {
@@ -306,34 +315,96 @@ const WIKI_ITEMS_ZH: WikiItem[] = [
     keywords: ['火', '土', '风', '水', '荣格四功能', '气质'],
     prototype: '炼金术原料',
     analogy: '物质存在的四种物理状态（等离子、固态、气态、液态）。',
-    description: '占星学的字母表。你的星盘中哪种元素最多，决定了你感知世界的基本方式。',
+    description: '占星学的字母表。你的星盘中哪种元素最多，决定了你感知世界的基本方式。每个元素都有其独特的心理功能和表现形式。',
     color_token: 'from-blue-500 via-green-500 to-red-500',
     astronomy_myth: '自古希腊时期，哲学家就认为世界由四种基本元素构成。在心理占星中，这不仅仅是物质分类，而是能量类型。',
-    psychology: '荣格将四元素对应为四种心理功能：\n**火 (直觉 Intuition)：** 关注未来的可能性和潜能。\n**土 (感觉 Sensation)：** 关注当下的物理现实和五感。\n**风 (思考 Thinking)：** 关注逻辑、定义和客观真理。\n**水 (情感 Feeling)：** 关注价值判断、关系和情绪流动。',
-    shadow: '缺失某种元素会导致我们在该领域的“笨拙”或过度补偿。例如，缺土的人可能难以落实计划；缺水的人可能显得冷漠。',
+    psychology: '荣格将四元素对应为四种心理功能：\n**火 (直觉 Intuition)：** 关注未来的可能性和潜能。\n**土 (感觉 Sensation)：** 关注当下的物理现实和五感。\n**风 (思考 Thinking)：** 关注逻辑、定义和客观真理。\n**水 (情感 Feeling)：** 关注价值判断、关系和情绪流动。\n四元素的平衡**：理想的星盘各元素分布相对均衡，缺失或过度都会影响人格的完整性。',
+    shadow: '缺失某种元素会导致我们在该领域的"笨拙"或过度补偿。例如，缺土的人可能难以落实计划；缺水的人可能显得冷漠。元素的过度可能导致某方面的偏激或失衡。',
     integration: '平衡四元素是炼金术的目标。有意识地去发展你缺失的元素功能（例如：缺风的人去练习写作和逻辑辩论）。',
+    related_ids: ['fire-element', 'earth-element', 'air-element', 'water-element'],
     deep_dive: [
       {
         step: 1,
-        title: '火元素 (Fire)',
-        description: '**代表星座：** 白羊、狮子、射手。\n**核心驱动：** 精神、灵感、行动、信心。\n火元素是生命的火花，它燃烧并照亮周围。',
+        title: '四元素体系',
+        description: '四元素是占星学的核心框架。火、土、风、水代表了宇宙能量的四种基本形式。它们相互影响、相互制约，共同构成了完整的能量光谱。理解这一体系有助于你更全面地解读自己的星盘。',
       },
       {
         step: 2,
-        title: '土元素 (Earth)',
-        description: '**代表星座：** 金牛、处女、摩羯。\n**核心驱动：** 物质、结构、成果、安全。\n土元素提供了形式和容器，让火不至于烧尽。',
+        title: '元素与人格',
+        description: '你的星盘中哪种元素最多，很大程度上塑造了你的基本性格和世界观。火元素主导的人倾向主动；土元素主导的人务实；风元素主导的人理性；水元素主导的人敏感。',
       },
       {
         step: 3,
-        title: '风元素 (Air)',
-        description: '**代表星座：** 双子、天秤、水瓶。\n**核心驱动：** 交流、理念、关系、视角。\n风元素连接万物，它是信息的载体。',
+        title: '元素的平衡',
+        description: '理想的星盘各元素分布相对均衡。当某一元素过度时，可能表现为该元素的负面特质。例如，火元素过度可能冲动；土元素过度可能固执；风元素过度可能过度理性；水元素过度可能情绪化。',
       },
       {
         step: 4,
-        title: '水元素 (Water)',
-        description: '**代表星座：** 巨蟹、天蝎、双鱼。\n**核心驱动：** 情感、潜意识、融合、记忆。\n水元素滋养生命，它是灵魂的语言。',
+        title: '四元素与宫位',
+        description: '每个元素有三个自然的宫位。了解元素与宫位的对应关系（例如：火元素对应1、5、9宫；土元素对应2、6、10宫等），可以帮助你理解不同生活领域的能量特征。',
+      },
+      {
+        step: 5,
+        title: '四元素与相位',
+        description: '元素之间的和谐与冲突也是解读星盘的重要维度。例如，火与水相生克；土与风相互平衡。了解这些动态关系可以帮你理解自己的能量流动和阻力点。',
       },
     ],
+  },
+  {
+    id: 'fire-element',
+    type: 'concepts',
+    title: '火元素 Fire Element',
+    subtitle: '灵感与行动的火花',
+    symbol: '🜂',
+    keywords: ['热情', '直觉', '行动力', '创造', '信心'],
+    prototype: '火焰',
+    analogy: '燃烧的火焰，照亮黑暗，带来温暖，但也可能灼伤。',
+    description: '火元素代表生命的原始动力和热情。在荣格的体系中对应直觉功能——关注未来的可能性和潜能。',
+    color_token: 'from-orange-500 to-red-600',
+    ...buildZhPlaceholder('火元素'),
+    related_ids: ['elements', 'aries', 'leo', 'sagittarius'],
+  },
+  {
+    id: 'earth-element',
+    type: 'concepts',
+    title: '土元素 Earth Element',
+    subtitle: '稳定与实现的基石',
+    symbol: '🜃',
+    keywords: ['务实', '感觉', '稳定', '物质', '安全'],
+    prototype: '大地',
+    analogy: '坚实的大地，提供根基和支撑，让梦想得以落实。',
+    description: '土元素代表物质世界和具体成果。在荣格的体系中对应感觉功能——关注当下的物理现实和五感体验。',
+    color_token: 'from-amber-600 to-stone-700',
+    ...buildZhPlaceholder('土元素'),
+    related_ids: ['elements', 'taurus', 'virgo', 'capricorn'],
+  },
+  {
+    id: 'air-element',
+    type: 'concepts',
+    title: '风元素 Air Element',
+    subtitle: '思想与连接的桥梁',
+    symbol: '🜁',
+    keywords: ['理性', '思考', '沟通', '理念', '客观'],
+    prototype: '空气',
+    analogy: '流动的空气，传递信息，连接万物，带来清新视角。',
+    description: '风元素代表思想和社交领域。在荣格的体系中对应思考功能——关注逻辑、定义和客观真理。',
+    color_token: 'from-sky-400 to-indigo-500',
+    ...buildZhPlaceholder('风元素'),
+    related_ids: ['elements', 'gemini', 'libra', 'aquarius'],
+  },
+  {
+    id: 'water-element',
+    type: 'concepts',
+    title: '水元素 Water Element',
+    subtitle: '情感与直觉的深流',
+    symbol: '🜄',
+    keywords: ['情感', '共情', '潜意识', '融合', '记忆'],
+    prototype: '水流',
+    analogy: '流动的水，滋养生命，承载情感，连接过去与未来。',
+    description: '水元素代表情感和潜意识领域。在荣格的体系中对应情感功能——关注价值判断、关系和情绪流动。',
+    color_token: 'from-cyan-500 to-blue-700',
+    ...buildZhPlaceholder('水元素'),
+    related_ids: ['elements', 'cancer', 'scorpio', 'pisces'],
   },
   {
     id: 'modes',
@@ -363,9 +434,52 @@ const WIKI_ITEMS_ZH: WikiItem[] = [
       {
         step: 3,
         title: '变动星座 (Mutable)',
-        description: '**双子、处女、射手、双鱼**\n这是能量的**“编辑器”**。他们发生在季节转换之际，负责收尾和准备过渡。他们擅长从多个角度看问题。',
+        description: '**双子、处女、射手、双鱼**\n这是能量的**"编辑器"**。他们发生在季节转换之际，负责收尾和准备过渡。他们擅长从多个角度看问题。',
       },
     ],
+    related_ids: ['cardinal-mode', 'fixed-mode', 'mutable-mode'],
+  },
+  {
+    id: 'cardinal-mode',
+    type: 'concepts',
+    title: '基本模式 Cardinal Mode',
+    subtitle: '启动与开创的力量',
+    symbol: '⚡',
+    keywords: ['启动', '开创', '领导', '主动', '行动'],
+    prototype: '发动机',
+    analogy: '季节的开始，万物更新，能量涌动，推动变化发生。',
+    description: '基本模式是能量的启动器。白羊、巨蟹、天秤、摩羯四个星座都属于基本模式，它们分别在自我、情感、关系和社会领域引发事件。',
+    color_token: 'from-red-500 to-orange-500',
+    ...buildZhPlaceholder('基本模式'),
+    related_ids: ['modes', 'aries', 'cancer', 'libra', 'capricorn'],
+  },
+  {
+    id: 'fixed-mode',
+    type: 'concepts',
+    title: '固定模式 Fixed Mode',
+    subtitle: '稳定与深化的力量',
+    symbol: '⚓',
+    keywords: ['稳定', '坚持', '专注', '意志力', '深化'],
+    prototype: '蓄电池',
+    analogy: '季节的巅峰，能量稳定释放，建立持久的结构和价值。',
+    description: '固定模式是能量的稳定器。金牛、狮子、天蝎、水瓶四个星座都属于固定模式，它们负责巩固、深化和维持已经开始的事物。',
+    color_token: 'from-amber-500 to-yellow-600',
+    ...buildZhPlaceholder('固定模式'),
+    related_ids: ['modes', 'taurus', 'leo', 'scorpio', 'aquarius'],
+  },
+  {
+    id: 'mutable-mode',
+    type: 'concepts',
+    title: '变动模式 Mutable Mode',
+    subtitle: '适应与转化的力量',
+    symbol: '🔄',
+    keywords: ['适应', '灵活', '过渡', '整合', '变通'],
+    prototype: '编辑器',
+    analogy: '季节的尾声，能量准备转化，为下一个周期做铺垫。',
+    description: '变动模式是能量的转化器。双子、处女、射手、双鱼四个星座都属于变动模式，它们擅长适应、整合和过渡。',
+    color_token: 'from-purple-500 to-violet-600',
+    ...buildZhPlaceholder('变动模式'),
+    related_ids: ['modes', 'gemini', 'virgo', 'sagittarius', 'pisces'],
   },
   {
     id: 'natal-chart',
@@ -667,7 +781,7 @@ const WIKI_ITEMS_ZH: WikiItem[] = [
       {
         step: 2,
         title: '从伤口到礼物',
-        description: '当你停止试图“修好”自己，而是开始接纳这份脆弱时，凯龙星就变成了通往更高意识的桥梁（连接土星与天王星）。',
+        description: '当你停止试图"修好"自己，而是开始接纳这份脆弱时，凯龙星就变成了通往更高意识的桥梁（连接土星与天王星）。',
       },
     ],
   },
@@ -1195,6 +1309,62 @@ const WIKI_ITEMS_EN: WikiItem[] = [
     ],
   },
   {
+    id: 'fire-element',
+    type: 'concepts',
+    title: 'Fire Element',
+    subtitle: 'The spark of inspiration and action',
+    symbol: '🜂',
+    keywords: ['Passion', 'Intuition', 'Action', 'Creation', 'Confidence'],
+    prototype: 'Flame',
+    analogy: 'A burning flame that illuminates darkness, brings warmth, but can also scorch.',
+    description: 'Fire represents the primal drive and passion of life. In Jung\'s system, it corresponds to the intuition function—focusing on future possibilities and potential.',
+    color_token: 'from-orange-500 to-red-600',
+    ...buildEnPlaceholder('Fire Element'),
+    related_ids: ['elements', 'aries', 'leo', 'sagittarius'],
+  },
+  {
+    id: 'earth-element',
+    type: 'concepts',
+    title: 'Earth Element',
+    subtitle: 'The foundation of stability and manifestation',
+    symbol: '🜃',
+    keywords: ['Practical', 'Sensation', 'Stability', 'Material', 'Security'],
+    prototype: 'Soil',
+    analogy: 'Solid ground that provides roots and support, allowing dreams to materialize.',
+    description: 'Earth represents the material world and concrete results. In Jung\'s system, it corresponds to the sensation function—focusing on present physical reality and sensory experience.',
+    color_token: 'from-amber-600 to-stone-700',
+    ...buildEnPlaceholder('Earth Element'),
+    related_ids: ['elements', 'taurus', 'virgo', 'capricorn'],
+  },
+  {
+    id: 'air-element',
+    type: 'concepts',
+    title: 'Air Element',
+    subtitle: 'The bridge of thought and connection',
+    symbol: '🜁',
+    keywords: ['Rational', 'Thinking', 'Communication', 'Ideas', 'Objective'],
+    prototype: 'Wind',
+    analogy: 'Flowing air that carries information, connects everything, and brings fresh perspectives.',
+    description: 'Air represents the realm of thought and social connection. In Jung\'s system, it corresponds to the thinking function—focusing on logic, definitions, and objective truth.',
+    color_token: 'from-sky-400 to-indigo-500',
+    ...buildEnPlaceholder('Air Element'),
+    related_ids: ['elements', 'gemini', 'libra', 'aquarius'],
+  },
+  {
+    id: 'water-element',
+    type: 'concepts',
+    title: 'Water Element',
+    subtitle: 'The deep current of emotion and intuition',
+    symbol: '🜄',
+    keywords: ['Emotion', 'Empathy', 'Unconscious', 'Fusion', 'Memory'],
+    prototype: 'Stream',
+    analogy: 'Flowing water that nourishes life, carries emotions, and connects past to future.',
+    description: 'Water represents the realm of emotions and the unconscious. In Jung\'s system, it corresponds to the feeling function—focusing on value judgments, relationships, and emotional flow.',
+    color_token: 'from-cyan-500 to-blue-700',
+    ...buildEnPlaceholder('Water Element'),
+    related_ids: ['elements', 'cancer', 'scorpio', 'pisces'],
+  },
+  {
     id: 'modes',
     type: 'concepts',
     title: 'The Modes',
@@ -1222,9 +1392,52 @@ const WIKI_ITEMS_EN: WikiItem[] = [
       {
         step: 3,
         title: 'Mutable signs',
-        description: '**Gemini, Virgo, Sagittarius, Pisces**\nThe “editor.” They appear at seasonal transitions, adapt and reframe, and see from multiple angles.',
+        description: '**Gemini, Virgo, Sagittarius, Pisces**\nThe "editor." They appear at seasonal transitions, adapt and reframe, and see from multiple angles.',
       },
     ],
+    related_ids: ['cardinal-mode', 'fixed-mode', 'mutable-mode'],
+  },
+  {
+    id: 'cardinal-mode',
+    type: 'concepts',
+    title: 'Cardinal Mode',
+    subtitle: 'The force of initiation and pioneering',
+    symbol: '⚡',
+    keywords: ['Initiation', 'Pioneering', 'Leadership', 'Proactive', 'Action'],
+    prototype: 'Engine',
+    analogy: 'The start of a season, when everything renews and energy surges to drive change.',
+    description: 'Cardinal mode is the energy initiator. Aries, Cancer, Libra, and Capricorn all belong to cardinal mode, triggering events in the realms of self, emotions, relationships, and society respectively.',
+    color_token: 'from-red-500 to-orange-500',
+    ...buildEnPlaceholder('Cardinal Mode'),
+    related_ids: ['modes', 'aries', 'cancer', 'libra', 'capricorn'],
+  },
+  {
+    id: 'fixed-mode',
+    type: 'concepts',
+    title: 'Fixed Mode',
+    subtitle: 'The force of stability and deepening',
+    symbol: '⚓',
+    keywords: ['Stability', 'Persistence', 'Focus', 'Willpower', 'Deepening'],
+    prototype: 'Battery',
+    analogy: 'The peak of a season, when energy is steadily released to build lasting structures and values.',
+    description: 'Fixed mode is the energy stabilizer. Taurus, Leo, Scorpio, and Aquarius all belong to fixed mode, responsible for consolidating, deepening, and maintaining what has been initiated.',
+    color_token: 'from-amber-500 to-yellow-600',
+    ...buildEnPlaceholder('Fixed Mode'),
+    related_ids: ['modes', 'taurus', 'leo', 'scorpio', 'aquarius'],
+  },
+  {
+    id: 'mutable-mode',
+    type: 'concepts',
+    title: 'Mutable Mode',
+    subtitle: 'The force of adaptation and transformation',
+    symbol: '🔄',
+    keywords: ['Adaptation', 'Flexibility', 'Transition', 'Integration', 'Versatility'],
+    prototype: 'Editor',
+    analogy: 'The end of a season, when energy prepares to transform and pave the way for the next cycle.',
+    description: 'Mutable mode is the energy transformer. Gemini, Virgo, Sagittarius, and Pisces all belong to mutable mode, skilled at adaptation, integration, and transition.',
+    color_token: 'from-purple-500 to-violet-600',
+    ...buildEnPlaceholder('Mutable Mode'),
+    related_ids: ['modes', 'gemini', 'virgo', 'sagittarius', 'pisces'],
   },
   {
     id: 'natal-chart',
@@ -1826,12 +2039,12 @@ const WIKI_ITEMS_EN: WikiItem[] = [
 
 export const WIKI_CONTENT: Record<Language, WikiStaticContent> = {
   zh: {
-    items: WIKI_ITEMS_ZH,
+    items: mergeGeneratedContent('zh', WIKI_ITEMS_ZH),
     pillars: WIKI_PILLARS_ZH,
     trending_tags: WIKI_TRENDING_TAGS_ZH,
   },
   en: {
-    items: WIKI_ITEMS_EN,
+    items: mergeGeneratedContent('en', WIKI_ITEMS_EN),
     pillars: WIKI_PILLARS_EN,
     trending_tags: WIKI_TRENDING_TAGS_EN,
   },

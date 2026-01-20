@@ -1,6 +1,6 @@
 # 部署指南
 
-本文档说明如何将 AstroMind AI 部署到 Vercel。
+本文档说明如何将 AstrologyWiki 部署到 Vercel。
 
 ## 前置准备
 

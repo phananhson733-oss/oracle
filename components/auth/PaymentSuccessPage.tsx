@@ -1,19 +1,22 @@
-// INPUT: React、认证上下文与 UI 组件依赖（含卡片左侧强调样式调整）。
-// OUTPUT: 导出支付成功页面组件（含统一左侧色带的卡片布局）。
+// INPUT: React、认证上下文与 UI 组件依赖（含订阅管理跳转与成功态刷新）。
+// OUTPUT: 导出支付成功页面组件（含订阅管理入口与统一左侧色带布局）。
 // POS: 支付成功页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
+import { createPortalSession } from '../../services/paymentClient';
 import { CheckCircle, Crown, Sparkles } from 'lucide-react';
 
 const PaymentSuccessPage: React.FC = () => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { refreshEntitlements } = useAuth();
+  const [portalBusy, setPortalBusy] = useState(false);
+  const [portalError, setPortalError] = useState<string | null>(null);
 
   const isDark = theme === 'dark';
   const sessionId = searchParams.get('session_id');
@@ -22,6 +25,19 @@ const PaymentSuccessPage: React.FC = () => {
   useEffect(() => {
     refreshEntitlements();
   }, [refreshEntitlements]);
+
+  const handleViewSubscription = async () => {
+    setPortalError(null);
+    setPortalBusy(true);
+    try {
+      const { url } = await createPortalSession(window.location.href);
+      window.location.href = url;
+    } catch (err) {
+      setPortalError(err instanceof Error ? err.message : (language === 'zh' ? '暂时无法打开订阅详情。' : 'Unable to open subscription details right now.'));
+    } finally {
+      setPortalBusy(false);
+    }
+  };
 
   const translations = {
     zh: {
@@ -37,6 +53,7 @@ const PaymentSuccessPage: React.FC = () => {
       ],
       goToDashboard: '开始探索',
       viewSubscription: '查看订阅详情',
+      portalUnavailable: '暂时无法打开订阅详情。',
     },
     en: {
       title: 'Payment Successful!',
@@ -51,6 +68,7 @@ const PaymentSuccessPage: React.FC = () => {
       ],
       goToDashboard: 'Start Exploring',
       viewSubscription: 'View Subscription',
+      portalUnavailable: 'Unable to open subscription details right now.',
     },
   };
 
@@ -113,12 +131,19 @@ const PaymentSuccessPage: React.FC = () => {
 
           <ActionButton
             variant="secondary"
-            onClick={() => navigate('/settings')}
+            onClick={handleViewSubscription}
+            disabled={portalBusy}
             className="w-full"
           >
             {tr.viewSubscription}
           </ActionButton>
         </div>
+
+        {portalError && (
+          <p className={`mt-4 text-xs ${isDark ? 'text-red-300' : 'text-red-600'}`}>
+            {portalError || tr.portalUnavailable}
+          </p>
+        )}
 
         {/* Session ID for reference */}
         {sessionId && (

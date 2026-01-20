@@ -1,14 +1,15 @@
 // INPUT: 技术规格详情解读 API 路由。
-// OUTPUT: 导出 detail 路由（懒加载 AI 详情解读）。
+// OUTPUT: 导出 detail 路由（懒加载 AI 详情解读与 Server-Timing）。
 // POS: Detail 端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { Router } from 'express';
+import { performance } from 'perf_hooks';
 import type { Language } from '../types/api.js';
 import { AIUnavailableError, generateAIContent } from '../services/ai.js';
 
 export const detailRouter = Router();
 
-type DetailType = 'elements' | 'aspects' | 'planets' | 'asteroids' | 'rulers';
+type DetailType = 'elements' | 'aspects' | 'planets' | 'asteroids' | 'rulers' | 'synthesis';
 type DetailContext = 'natal' | 'transit' | 'synastry' | 'composite';
 
 interface DetailRequest {
@@ -32,6 +33,7 @@ function resolvePromptId(type: DetailType, context: DetailContext): string {
 // POST /api/detail - 按需生成技术规格详情解读
 detailRouter.post('/', async (req, res) => {
   try {
+    const requestStart = performance.now();
     const body = req.body as DetailRequest;
     const { type, context, chartData, transitDate, nameA, nameB } = body;
     const lang = resolveLang(body.lang);
@@ -41,7 +43,7 @@ detailRouter.post('/', async (req, res) => {
       return;
     }
 
-    const validTypes: DetailType[] = ['elements', 'aspects', 'planets', 'asteroids', 'rulers'];
+    const validTypes: DetailType[] = ['elements', 'aspects', 'planets', 'asteroids', 'rulers', 'synthesis'];
     const validContexts: DetailContext[] = ['natal', 'transit', 'synastry', 'composite'];
 
     if (!validTypes.includes(type)) {
@@ -64,11 +66,15 @@ detailRouter.post('/', async (req, res) => {
       nameB,
     };
 
+    const aiStart = performance.now();
     const result = await generateAIContent({
       promptId,
       context: promptContext,
       lang,
     });
+    const aiMs = performance.now() - aiStart;
+    const totalMs = performance.now() - requestStart;
+    res.setHeader('Server-Timing', `core;dur=0,ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
 
     res.json({
       type,

@@ -64,19 +64,28 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
   const canAccess = (): boolean => {
     if (!entitlements) return true; // Allow if entitlements not loaded yet
 
-    // Subscribers have unlimited access
-    if (entitlements.isSubscriber) return true;
+    // Subscribers have unlimited access (except for quota-based features)
+    if (entitlements.isSubscriber) {
+      // Ask and synastry still need quota check even for subscribers
+      if (feature === 'ask') {
+        return entitlements.ask.totalLeft > 0;
+      }
+      if (feature === 'synastry') {
+        return entitlements.synastry.totalLeft > 0;
+      }
+      return true;
+    }
 
     // Check feature-specific limits
     switch (feature) {
       case 'ask':
-        return (entitlements.limits.askQuestions.remaining ?? 0) > 0 || entitlements.credits.ask > 0;
+        return entitlements.ask.totalLeft > 0;
       case 'detail':
-        return (entitlements.limits.detailReadings.remaining ?? 0) > 0 || entitlements.credits.detail_pack > 0;
+        return entitlements.ask.totalLeft > 0; // Detail uses ask quota
       case 'synastry':
-        return (entitlements.limits.synastryDeepReads.remaining ?? 0) > 0 || entitlements.credits.synastry > 0;
+        return entitlements.synastry.totalLeft > 0;
       case 'cbt':
-        return (entitlements.limits.cbtAnalyses.remaining ?? 0) > 0 || entitlements.credits.cbt_analysis > 0;
+        return entitlements.monthlyUnlocked.cbtStats;
       case 'report':
         return false; // Reports always require purchase
       default:
@@ -87,29 +96,28 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
   // Get remaining count for display
   const getRemainingCount = (): string => {
     if (!entitlements) return '...';
-    if (entitlements.isSubscriber) return tr.unlimited;
+
+    // For subscribers, show unlimited for most features
+    if (entitlements.isSubscriber) {
+      // But still show quota for ask and synastry
+      if (feature === 'ask') {
+        return `${entitlements.ask.totalLeft}`;
+      }
+      if (feature === 'synastry') {
+        return `${entitlements.synastry.totalLeft}`;
+      }
+      return tr.unlimited;
+    }
 
     switch (feature) {
-      case 'ask': {
-        const free = entitlements.limits.askQuestions.remaining ?? 0;
-        const credits = entitlements.credits.ask;
-        return `${free + credits}`;
-      }
-      case 'detail': {
-        const free = entitlements.limits.detailReadings.remaining ?? 0;
-        const credits = entitlements.credits.detail_pack;
-        return `${free + credits}`;
-      }
-      case 'synastry': {
-        const free = entitlements.limits.synastryDeepReads.remaining ?? 0;
-        const credits = entitlements.credits.synastry;
-        return `${free + credits}`;
-      }
-      case 'cbt': {
-        const free = entitlements.limits.cbtAnalyses.remaining ?? 0;
-        const credits = entitlements.credits.cbt_analysis;
-        return `${free + credits}`;
-      }
+      case 'ask':
+        return `${entitlements.ask.totalLeft}`;
+      case 'detail':
+        return `${entitlements.ask.totalLeft}`; // Detail uses ask quota
+      case 'synastry':
+        return `${entitlements.synastry.totalLeft}`;
+      case 'cbt':
+        return entitlements.monthlyUnlocked.cbtStats ? '1' : '0';
       default:
         return '0';
     }

@@ -1,5 +1,5 @@
-// INPUT: React、CBT 组件、类型、用户资料与主题（含整体上移布局与月份同步）。
-// OUTPUT: 导出 CBT 主页面组件（对齐顶部留白与日历区域并同步统计月份）。
+// INPUT: React、CBT 组件、类型、用户资料与主题（含整体上移布局、月份同步与统计解读权益校验）。
+// OUTPUT: 导出 CBT 主页面组件（对齐顶部留白与日历区域并同步统计月份/解读访问）。
 // POS: CBT 主页面（集成到主应用 /journal 路由）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -18,14 +18,16 @@ import {
   CBTCompetenceView
 } from './AnalysisViews';
 import { fetchCBTRecords, saveCBTRecord } from '../../services/apiClient';
+import { useFeatureAccess } from '../../contexts/EntitlementContext';
 import { useLanguage, useTheme } from '../UIComponents';
+import { OracleLoading } from '../OracleLoading';
 
 const MOOD_IMAGES: MoodImages = {
-  very_happy: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=400&fit=crop',
-  happy: 'https://images.unsplash.com/photo-1464802686167-b939a67e06a1?w=400&h=400&fit=crop',
-  okay: 'https://images.unsplash.com/photo-1506318137071-a8e063b4bc02?w=400&h=400&fit=crop',
-  annoyed: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=400&h=400&fit=crop',
-  terrible: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&h=400&fit=crop',
+  very_happy: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=400&fit=crop&auto=format&q=75',
+  happy: 'https://images.unsplash.com/photo-1464802686167-b939a67e06a1?w=400&h=400&fit=crop&auto=format&q=75',
+  okay: 'https://images.unsplash.com/photo-1506318137071-a8e063b4bc02?w=400&h=400&fit=crop&auto=format&q=75',
+  annoyed: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=400&h=400&fit=crop&auto=format&q=75',
+  terrible: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&h=400&fit=crop&auto=format&q=75',
 };
 
 const STORAGE_KEY = 'astro_cbt_history_v1';
@@ -51,6 +53,8 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
     const now = new Date();
     return { year: now.getFullYear(), month: now.getMonth() };
   });
+  const statsFeatureId = `${analysisMonth.year}-${String(analysisMonth.month + 1).padStart(2, '0')}`;
+  const { requestAccess: requestStatsAccess } = useFeatureAccess('cbt_stats', statsFeatureId);
 
   // Generate user ID from profile
   const userId = `${profile?.name || 'user'}_${profile?.birthDate || 'unknown'}`;
@@ -136,6 +140,12 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
   const handleMonthChange = React.useCallback((year: number, month: number) => {
     setAnalysisMonth({ year, month });
   }, []);
+  const handleOpenAnalysis = React.useCallback(async (view: 'card1' | 'card2' | 'card3' | 'card4') => {
+    const access = await requestStatsAccess();
+    if (access.canAccess) {
+      setActiveAnalysisView(view);
+    }
+  }, [requestStatsAccess]);
 
   const startNewEntry = (date?: Date) => {
     const targetDateValue = date || new Date();
@@ -156,17 +166,13 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
 
   // Loading state
   if (isLoading) {
-    return (
-      <div className="min-h-screen w-full bg-space-950 text-star-50 flex items-center justify-center">
-        <div className={`${accentText} font-serif animate-pulse text-xl`}>{t.journal.loading}</div>
-      </div>
-    );
+    return <OracleLoading variant="fullscreen" thinkingLabel={t.journal.loading} />;
   }
 
   // Empty state for new users
   if (history.length === 0) {
     return (
-      <div className="min-h-screen w-full bg-space-950 text-star-50 flex items-start justify-center px-4 md:px-10 pt-[10px] pb-6 font-sans">
+      <div className="min-h-screen w-full bg-space-950 text-star-50 flex items-start justify-center px-4 md:px-10 pt-12 md:pt-12 pb-6 font-sans">
         <div className={`w-full max-w-7xl h-[90vh] backdrop-blur-3xl rounded-[3.5rem] border shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden relative ${shellTone}`}>
           <EmptyState onCreateFirst={() => startNewEntry()} />
         </div>
@@ -185,7 +191,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-space-950 text-star-50 flex items-start justify-center px-4 md:px-10 pt-[10px] pb-6 font-sans">
+    <div className="min-h-screen w-full bg-space-950 text-star-50 flex items-start justify-center px-4 md:px-10 pt-12 md:pt-12 pb-6 font-sans">
       <div className={`w-full max-w-7xl h-[90vh] backdrop-blur-3xl rounded-[3.5rem] border shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col md:flex-row relative ${shellTone}`}>
 
         <aside className={`w-full md:w-[400px] border-r flex flex-col relative z-0 ${sidebarTone}`}>
@@ -197,7 +203,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
               <div>
                 <h2 className="text-lg font-black text-star-50 tracking-tight">{displayName}</h2>
                 {profile?.zodiac && (
-                  <div className={`text-[11px] uppercase tracking-[0.2em] font-bold mt-0.5 ${accentText}`}>
+                  <div className={`text-xs uppercase tracking-[0.2em] font-bold mt-0.5 ${accentText}`}>
                     {profile.zodiac}
                   </div>
                 )}
@@ -217,7 +223,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
               records={history}
               onAddEntry={startNewEntry}
               onSelectRecord={handleSelectRecord}
-              onOpenAnalysis={setActiveAnalysisView}
+              onOpenAnalysis={handleOpenAnalysis}
               onMonthChange={handleMonthChange}
             />
           </div>

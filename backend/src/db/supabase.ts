@@ -49,6 +49,7 @@ export interface DbUser {
   birth_profile: BirthProfile | null;
   preferences: UserPreferences;
   email_verified: boolean;
+  trial_ends_at: string | null;  // 试用期结束时间
   created_at: string;
   updated_at: string;
 }
@@ -119,10 +120,68 @@ export interface DbReport {
 
 export interface DbFreeUsage {
   id: string;
-  device_fingerprint: string;
+  user_id: string | null;
+  device_fingerprint: string | null;
   ip_address: string | null;
   ask_used: number;
+  ask_reset_at: string | null;
   detail_used: number;
+  synastry_used: number;
+  synastry_total_used: number;  // 永久免费合盘次数（最多 3 次）
+  synthetica_used: number;
+  synthetica_reset_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+// 购买范围类型
+export type PurchaseScope = 'permanent' | 'daily' | 'per_synastry' | 'per_month' | 'consumable';
+
+// 购买记录表（新版）
+export interface DbPurchaseRecord {
+  id: string;
+  user_id: string;
+  feature_type: string;           // 'dimension_talents', 'daily_script', 'synastry', 'ask', 'cbt_stats' 等
+  feature_id: string | null;      // 具体 ID（维度名、合盘哈希、日期等）
+  scope: PurchaseScope;
+  price_cents: number;
+  stripe_payment_intent_id: string | null;
+  stripe_checkout_session_id: string | null;
+  valid_until: string | null;
+  quantity: number;
+  consumed: number;
+  created_at: string;
+}
+
+// 合盘记录表
+export interface DbSynastryRecord {
+  id: string;
+  user_id: string;
+  synastry_hash: string;
+  person_a_info: SynastryPersonInfo;
+  person_b_info: SynastryPersonInfo;
+  relationship_type: string | null;
+  is_free: boolean;
+  created_at: string;
+}
+
+// 合盘人员信息
+export interface SynastryPersonInfo {
+  name: string;
+  birthDate: string;
+  birthTime?: string;
+  birthCity: string;
+  lat: number;
+  lon: number;
+  timezone: string;
+}
+
+// 订阅权益使用表
+export interface DbSubscriptionUsage {
+  id: string;
+  user_id: string;
+  week_start: string;
+  ask_used: number;
   synastry_used: number;
   created_at: string;
   updated_at: string;

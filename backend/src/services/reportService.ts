@@ -157,6 +157,16 @@ class ReportService {
   async hasReportAccess(userId: string, reportType: ReportType): Promise<boolean> {
     if (!isSupabaseConfigured()) return false;
 
+    const { data: record } = await supabase
+      .from('purchase_records')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('feature_type', 'report')
+      .eq('feature_id', reportType)
+      .single();
+
+    if (record) return true;
+
     // Check for existing purchased report
     const { data: existingReport } = await supabase
       .from('reports')
@@ -355,6 +365,12 @@ class ReportService {
       .join(' ');
   }
 
+  getReportPrice(reportType: ReportType): number {
+    const product = PRODUCTS.reports[reportType];
+    if (!product) return 0;
+    return Math.ceil((product.amount || 0) / 10);
+  }
+
   // Get available report types with pricing
   getAvailableReports(): Array<{
     type: ReportType;
@@ -367,43 +383,43 @@ class ReportService {
         type: 'monthly',
         name: 'Monthly Forecast',
         description: 'Detailed month-ahead predictions with key dates and guidance',
-        price: PRODUCTS.reports.monthly.amount,
+        price: this.getReportPrice('monthly'),
       },
       {
         type: 'annual',
         name: 'Annual Forecast',
         description: 'Comprehensive year overview with quarterly breakdowns',
-        price: PRODUCTS.reports.annual.amount,
+        price: this.getReportPrice('annual'),
       },
       {
         type: 'career',
         name: 'Career & Profession',
         description: 'Deep dive into career potential and professional guidance',
-        price: PRODUCTS.reports.career.amount,
+        price: this.getReportPrice('career'),
       },
       {
         type: 'wealth',
         name: 'Wealth & Finance',
         description: 'Financial astrology insights and prosperity timing',
-        price: PRODUCTS.reports.wealth.amount,
+        price: this.getReportPrice('wealth'),
       },
       {
         type: 'love',
         name: 'Love & Relationships',
         description: 'Romantic patterns, ideal partner, and love timing',
-        price: PRODUCTS.reports.love.amount,
+        price: this.getReportPrice('love'),
       },
       {
         type: 'saturn_return',
         name: 'Saturn Return',
         description: 'Navigate this pivotal life transition with clarity',
-        price: PRODUCTS.reports.saturn_return.amount,
+        price: this.getReportPrice('saturn_return'),
       },
       {
         type: 'synastry_deep',
         name: 'Synastry Deep Report',
         description: 'Comprehensive compatibility analysis for two charts',
-        price: PRODUCTS.reports.synastry_deep.amount,
+        price: this.getReportPrice('synastry_deep'),
       },
     ];
   }

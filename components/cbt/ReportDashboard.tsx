@@ -1,12 +1,12 @@
 // INPUT: React、分析数据与主题（snake_case，单列纵向排版）。
-// OUTPUT: 导出报告仪表盘组件（纵向模块布局、可读性优化与安全文本处理，含编号换行、占星条目拆分与盘别分行）。
+// OUTPUT: 导出报告仪表盘组件（纵向模块布局、可读性优化与安全文本处理，含占星条目语义分行与解读分区排版）。
 // POS: CBT 报告组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { useMemo } from 'react';
 import { CBTRecord, AnalysisReport } from './types';
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
-import { Brain, Star, Moon, Target, CheckCircle2, Circle } from 'lucide-react';
+import { Brain, Star, Target, CheckCircle2, Circle } from 'lucide-react';
 import { useLanguage, useTheme } from '../UIComponents';
 
 interface ReportDashboardProps {
@@ -43,6 +43,11 @@ const cleanText = (value: unknown) => {
   if (!text) return '';
   return text.replace(/\*\*/g, '').replace(/__/g, '');
 };
+
+const ASTRO_SECTION_PATTERN =
+  '(本命盘|行运盘|当日行运盘|今日行运盘|月相|Natal|Transit|Transiting|Moon Phase)';
+const INTERPRETATION_SECTION_PATTERN =
+  '(星象觉察提醒|身体调节处方|星象觉察|身体调节|Astrological Awareness Reminder|Body Regulation Prescription|Body Regulation Rx|Astrological Awareness|Body Regulation)';
 
 const parseNumberedList = (text: string) => {
   const normalized = text.replace(/\r\n/g, '\n').trim();
@@ -93,28 +98,34 @@ const parseAspectItems = (text: string) => {
 
 const splitAstroContextLines = (text: string) => {
   const normalized = text.replace(/\r\n/g, '\n');
-  const withMarkers = normalized.replace(
-    /(本命盘[:：]?|行运盘[:：]?|当日行运盘[:：]?|今日行运盘[:：]?|Natal[:：]?|Transit[:：]?|Moon Phase[:：]?|月相[:：]?)/gi,
-    '\n$1'
-  );
+  const boundaryRegex = new RegExp(`(^|[\\n;；。.!?、，,])\\s*(?=${ASTRO_SECTION_PATTERN}\\s*[:：]?)`, 'gi');
+  const withMarkers = normalized.replace(boundaryRegex, '\n');
   return withMarkers.replace(/\n+/g, '\n').trim();
 };
 
-const ReportDashboard: React.FC<ReportDashboardProps> = ({ record, report, onUpdate, onClose }) => {
+const splitInterpretationSections = (text: string) => {
+  const normalized = text.replace(/\r\n/g, '\n').trim();
+  if (!normalized) return [] as Array<{ label?: string; text: string }>;
+  const withMarkers = normalized.replace(
+    new RegExp(`\\s*(${INTERPRETATION_SECTION_PATTERN})\\s*[:：]?\\s*`, 'gi'),
+    '\n$1: '
+  );
+  const lines = withMarkers.replace(/\n+/g, '\n').split('\n').map(line => line.trim()).filter(Boolean);
+  return lines.map((line) => {
+    const match = line.match(new RegExp(`^(${INTERPRETATION_SECTION_PATTERN})\\s*:\\s*(.*)$`, 'i'));
+    if (match) {
+      return { label: match[1], text: match[2] || '' };
+    }
+    return { text: line };
+  });
+};
+
+const stripTrailingPunct = (value: string) => value.replace(/\s*[。.!?;；]+$/g, '').trim();
+
+const ReportDashboard: React.FC<ReportDashboardProps> = ({ record, report, onUpdate }) => {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
   const isLight = theme === 'light';
-  const panelTone = isLight
-    ? 'bg-paper-100/90 border-paper-300 shadow-[0_18px_30px_rgba(122,104,78,0.18)]'
-    : 'bg-space-800/40 border-gold-500/10 shadow-xl';
-  const heroTone = isLight
-    ? 'bg-gradient-to-br from-paper-100 via-paper-50 to-paper-100 border-paper-300'
-    : 'bg-gradient-to-br from-space-900 via-space-900 to-space-800 border-gold-500/20';
-  const mutedTextTone = isLight ? 'text-star-200' : 'text-star-400';
-  const goldIconTone = isLight ? 'bg-gold-500/15 text-gold-700' : 'bg-gold-500/10 text-gold-400';
-  const goldChipTone = isLight ? 'bg-gold-500/15 text-gold-700 border-gold-600/30' : 'bg-gold-500/10 text-gold-300 border-gold-500/20';
-  const dividerTone = isLight ? 'border-paper-300' : 'border-gold-500/10';
-  const accentStrongTone = isLight ? 'text-gold-700' : 'text-accent';
   const chartGrid = isLight ? '#E4D7C6' : '#ffffff08';
   const chartAxis = isLight ? '#6D5C4C' : '#9ca3af';
   const chartTooltip = isLight
@@ -136,15 +147,35 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({ record, report, onUpd
     : [];
   const actions = Array.isArray(report.actions) ? report.actions : [];
   const aspectText = cleanText(report.astro_context?.aspect);
-  const aspectItems = aspectText ? parseAspectItems(splitAstroContextLines(aspectText)) : [];
+  const aspectItems = aspectText
+    ? parseAspectItems(splitAstroContextLines(aspectText)).map(stripTrailingPunct).filter(Boolean)
+    : [];
   const interpretationText = cleanText(report.astro_context?.interpretation);
+  const interpretationTextWithMarkers = useMemo(
+    () => interpretationText.replace(
+      new RegExp(`\\s*(${INTERPRETATION_SECTION_PATTERN})\\s*[:：]?\\s*`, 'gi'),
+      '\n$1: '
+    ).replace(/\n+/g, '\n').trim(),
+    [interpretationText]
+  );
+  const interpretationLabel = language === 'zh' ? '解读' : 'Interpretation';
   const interpretationList = useMemo(() => {
-    const parsed = parseNumberedList(interpretationText);
-    if (!parsed.intro && parsed.items.length === 0 && interpretationText) {
-      return { intro: interpretationText, items: [] as string[] };
+    const parsed = parseNumberedList(interpretationTextWithMarkers);
+    if (!parsed.intro && parsed.items.length === 0 && interpretationTextWithMarkers) {
+      return { intro: interpretationTextWithMarkers, items: [] as string[] };
     }
     return { intro: parsed.intro, items: parsed.items };
-  }, [interpretationText]);
+  }, [interpretationTextWithMarkers]);
+  const interpretationSections = useMemo(
+    () => splitInterpretationSections(interpretationList.intro),
+    [interpretationList.intro]
+  );
+  const normalizeInterpretationLabel = (label: string) => {
+    const lower = label.toLowerCase();
+    if (lower.includes('星象觉察') || lower.includes('astrological awareness')) return t.journal.astro_awareness;
+    if (lower.includes('身体调节') || lower.includes('body regulation')) return t.journal.body_regulation_rx;
+    return label;
+  };
 
   const toggleAction = (index: number) => {
     if (!onUpdate) return;
@@ -156,162 +187,145 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({ record, report, onUpd
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 md:p-6 lg:p-8 space-y-6 animate-fade-in pb-16 text-star-200">
+    <div className="w-full space-y-6 animate-fade-in">
 
-      <div className="text-center space-y-2">
-        <h1 className="text-4xl font-serif text-star-50 tracking-tight">{t.journal.report_main_title}</h1>
-        <p className={`font-mono text-[11px] uppercase tracking-[0.25em] opacity-70 ${mutedTextTone}`}>
-          {t.journal.observation_time}{new Date(record.timestamp).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+      {/* 简化的标题 */}
+      <div className="space-y-2">
+        <h1 className={`text-3xl font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>{t.journal.report_main_title}</h1>
+        <p className={`text-xs ${isLight ? 'text-paper-500' : 'text-star-400'}`}>
+          {new Date(record.timestamp).toLocaleDateString(language === 'zh' ? 'zh-CN' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
         </p>
       </div>
 
-      <div className={`border rounded-[2.5rem] p-5 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden ${heroTone}`}>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 blur-[100px] rounded-full -mr-20 -mt-20"></div>
-        <div className="mb-8 md:mb-0 relative z-10">
-          <h3 className="text-star-200 text-[11px] uppercase tracking-[0.4em] font-black mb-4 flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></div> {t.journal.core_mood_fluctuation}
-          </h3>
-          <div className="flex items-baseline gap-6">
-            <span className="text-5xl font-serif text-star-50">{primaryMood.name}</span>
-            <span className={`text-5xl font-bold ${accentStrongTone}`}>↓ {decrease}%</span>
-          </div>
-          <p className={`mt-4 text-sm font-medium ${mutedTextTone}`}>{t.journal.fluctuation_range}{primaryMood.initialIntensity}% → {primaryMood.finalIntensity}%</p>
+      {/* 情绪波动卡片 */}
+      <div className={`rounded-xl border border-l-4 border-l-gold-500 p-6 ${isLight ? 'bg-white border-paper-200' : 'bg-space-900/60 border-gold-500/10'}`}>
+        <div className="flex items-baseline gap-4 mb-4">
+          <span className={`text-3xl font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>{primaryMood.name}</span>
+          <span className={`text-2xl font-bold ${isLight ? 'text-gold-700' : 'text-gold-400'}`}>↓ {decrease}%</span>
         </div>
-        <div className="w-full md:w-1/2 h-40 relative z-10">
+        <p className={`text-sm mb-4 ${isLight ? 'text-paper-600' : 'text-star-400'}`}>
+          {primaryMood.initialIntensity}% → {primaryMood.finalIntensity}%
+        </p>
+        <div className="h-28">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" stroke={chartGrid} vertical={false} />
-              <XAxis
-                dataKey="name"
-                stroke={chartAxis}
-                fontSize={11}
-                tickLine={false}
-                axisLine={false}
-                interval={0}
-                tickMargin={8}
-                padding={{ left: 6, right: 6 }}
-                tick={{ fill: chartAxis }}
-              />
-              <Tooltip
-                contentStyle={chartTooltip}
-                itemStyle={{ color: chartAfter }}
-              />
-              <Line type="monotone" dataKey={t.journal.before_label} stroke={chartBefore} strokeWidth={4} dot={{ r: 6, fill: chartBefore, strokeWidth: 0 }} />
-              <Line type="monotone" dataKey={t.journal.after_label} stroke={chartAfter} strokeWidth={4} dot={{ r: 6, fill: chartAfter, strokeWidth: 0 }} />
+              <XAxis dataKey="name" stroke={chartAxis} fontSize={11} tickLine={false} axisLine={false} interval={0} tickMargin={8} tick={{ fill: chartAxis }} />
+              <Tooltip contentStyle={chartTooltip} itemStyle={{ color: chartAfter }} />
+              <Line type="monotone" dataKey={t.journal.before_label} stroke={chartBefore} strokeWidth={2} dot={{ r: 4, fill: chartBefore, strokeWidth: 0 }} />
+              <Line type="monotone" dataKey={t.journal.after_label} stroke={chartAfter} strokeWidth={2} dot={{ r: 4, fill: chartAfter, strokeWidth: 0 }} />
             </LineChart>
           </ResponsiveContainer>
         </div>
       </div>
 
-      <div className="flex flex-col gap-6">
-        {/* 1. 认知评估 */}
-        <div className={`backdrop-blur-xl rounded-[2.5rem] p-6 ${panelTone}`}>
-          <div className="flex items-center gap-4 mb-6">
-            <div className={`p-3 rounded-2xl ${goldIconTone}`}><Brain size={24} /></div>
-            <h3 className="text-xl font-serif text-star-50">{t.journal.cognitive_assessment}</h3>
+      {/* 1. 认知评估卡片 */}
+      <div className={`rounded-xl border border-l-4 border-l-accent p-6 ${isLight ? 'bg-white border-paper-200' : 'bg-space-900/60 border-gold-500/10'}`}>
+        <div className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
+          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? 'border-accent/30 bg-white text-accent' : 'border-accent/30 bg-space-950 text-accent'}`}>
+            <Brain size={18} />
           </div>
-          <div className="flex flex-wrap gap-2 mb-6">
+          <h3 className={`text-base font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>{t.journal.cognitive_assessment}</h3>
+        </div>
+        <div className="pl-12 space-y-4">
+          <div className="flex flex-wrap gap-2">
             {distortions.map((d, i) => (
-              <span key={i} className={`px-3 py-1 rounded-lg text-xs border font-black uppercase tracking-[0.2em] ${goldChipTone}`}>#{cleanText(d)}</span>
+              <span key={i} className={`px-2 py-1 rounded text-xs ${isLight ? 'bg-accent/10 text-accent' : 'bg-accent/10 text-accent'}`}>
+                {cleanText(d)}
+              </span>
             ))}
           </div>
-          <p className="text-star-200 leading-relaxed text-sm font-medium">{cleanText(report.cognitive_analysis.summary)}</p>
-        </div>
-
-        {/* 2. 平衡性见地 - 移至第二位，缩小框体高度至 0.8 倍 */}
-        <div className={`backdrop-blur-xl rounded-[2.5rem] p-5 ${panelTone}`}>
-          <div className="flex items-center gap-4 mb-5">
-            <div className={`p-2.5 rounded-2xl ${isLight ? 'bg-gold-500/15 text-gold-700' : 'bg-accent/10 text-accent'}`}><Target size={22} /></div>
-            <h3 className="text-lg font-serif text-star-50">{t.journal.balanced_insight}</h3>
-          </div>
-          <div className="grid grid-cols-1 gap-3">
-            {record.balancedEntries.map(entry => (
-              <div key={entry.id} className={`flex flex-col p-4 border rounded-2xl group transition-all ${isLight ? 'bg-paper-50 border-paper-300 hover:bg-paper-100' : 'bg-space-800/50 border-gold-500/10 hover:bg-space-800/70'}`}>
-                <p className="text-star-200 text-sm leading-relaxed mb-3 flex-1">{cleanText(entry.text)}</p>
-                <div className={`flex items-center justify-between pt-3 border-t ${dividerTone}`}>
-                  <span className={`text-[10px] font-black uppercase tracking-[0.25em] ${mutedTextTone}`}>{t.journal.belief_weight}</span>
-                  <span className={`font-mono font-bold text-lg ${accentStrongTone}`}>{entry.belief}%</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 3. 占星解读 - 改名，优化星座信息样式 */}
-        <div className={`backdrop-blur-xl rounded-[2.5rem] p-6 ${panelTone}`}>
-          <div className="flex items-center gap-4 mb-6">
-            <div className={`p-3 rounded-2xl ${goldIconTone}`}><Star size={24} /></div>
-            <h3 className="text-xl font-serif text-star-50">{t.journal.astro_reading}</h3>
-          </div>
-          <div className="mb-4 space-y-1">
-            {aspectItems.length > 0 ? aspectItems.map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <span className={`text-sm ${mutedTextTone}`}>•</span>
-                <span className={`text-sm font-medium ${accentStrongTone}`}>{item}</span>
-              </div>
-            )) : (
-              <div className={`text-sm ${mutedTextTone}`}>—</div>
-            )}
-          </div>
-          {interpretationList.items.length > 0 ? (
-            <div className={`space-y-2 border-l-2 pl-4 ${dividerTone}`}>
-              {interpretationList.intro && (
-                <p className={`leading-relaxed text-sm ${mutedTextTone}`}>{interpretationList.intro}</p>
-              )}
-              <ol className={`list-decimal pl-5 space-y-1 text-sm ${mutedTextTone}`}>
-                {interpretationList.items.map((item, i) => (
-                  <li key={i} className="leading-relaxed">{item}</li>
-                ))}
-              </ol>
-            </div>
-          ) : (
-            <p className={`leading-relaxed text-sm border-l-2 pl-4 ${mutedTextTone} ${dividerTone}`}>
-              {interpretationText || '—'}
-            </p>
-          )}
-        </div>
-
-        {/* 4. 执行建议 */}
-        <div className={`backdrop-blur-xl rounded-[2.5rem] p-6 ${panelTone}`}>
-          <div className={`flex items-center gap-4 mb-5 border-b pb-5 ${dividerTone}`}>
-            <CheckCircle2 size={24} className={isLight ? 'text-gold-700' : 'text-gold-400'} />
-            <h3 className="text-xl font-serif text-star-50">{t.journal.action_guide}</h3>
-          </div>
-          <div className="space-y-3">
-            {actions.map((action, i) => {
-              const isCompleted = record.completedActionIndices?.includes(i);
-              return (
-                <div
-                  key={i}
-                  onClick={() => toggleAction(i)}
-                  className={`flex items-start gap-4 py-4 px-5 rounded-2xl transition-all cursor-pointer group border ${isLight ? 'border-paper-300 hover:bg-paper-100 hover:border-gold-600/30' : 'border-gold-500/10 hover:bg-space-800/50 hover:border-gold-500/20'} ${isCompleted ? (isLight ? 'bg-gold-500/15 border-gold-600/40' : 'bg-accent/10 border-accent/20') : ''}`}
-                >
-                  <div className={`flex-shrink-0 mt-0.5 transition-all duration-300 ${isCompleted ? accentStrongTone + ' scale-110' : `${mutedTextTone} group-hover:text-gold-600`}`}>
-                    {isCompleted ? <CheckCircle2 size={22} /> : <Circle size={22} />}
-                  </div>
-                  <div className="flex-1">
-                    <p className={`text-base font-medium leading-relaxed transition-all ${isCompleted ? `${mutedTextTone} line-through` : 'text-star-200'}`}>
-                      {cleanText(action)}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <p className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>{cleanText(report.cognitive_analysis.summary)}</p>
         </div>
       </div>
 
-      <div className="flex justify-center pt-8">
-        <button
-          onClick={onClose}
-          className="group relative overflow-hidden px-24 py-5 rounded-[2rem] transition-all hover:scale-105 active:scale-95 shadow-2xl"
-        >
-          <div className={`absolute inset-0 group-hover:via-gold-800/50 transition-all duration-700 ${isLight ? 'bg-gradient-to-r from-paper-200 via-gold-500/30 to-paper-200' : 'bg-gradient-to-r from-space-800 via-gold-900/50 to-space-800'}`}></div>
-          <div className="relative flex items-center gap-4">
-            <span className="text-star-50 font-black text-xs uppercase tracking-[0.5em]">{t.journal.return_to_stars}</span>
-            <Moon size={20} className={isLight ? 'text-gold-700 animate-pulse' : 'text-gold-300 animate-pulse'} />
+      {/* 2. 平衡性见地卡片 */}
+      <div className={`rounded-xl border border-l-4 border-l-success p-6 ${isLight ? 'bg-white border-paper-200' : 'bg-space-900/60 border-gold-500/10'}`}>
+        <div className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
+          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? 'border-success/30 bg-white text-success' : 'border-success/30 bg-space-950 text-success'}`}>
+            <Target size={18} />
           </div>
-        </button>
+          <h3 className={`text-base font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>{t.journal.balanced_insight}</h3>
+        </div>
+        <div className="pl-12 space-y-4">
+          {record.balancedEntries.map(entry => (
+            <div key={entry.id} className={`pb-4 border-b last:border-0 last:pb-0 ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
+              <p className={`text-sm leading-relaxed mb-2 ${isLight ? 'text-paper-700' : 'text-star-200'}`}>{cleanText(entry.text)}</p>
+              <div className="flex items-center justify-between">
+                <span className={`text-xs ${isLight ? 'text-paper-500' : 'text-star-400'}`}>{t.journal.belief_weight}</span>
+                <span className={`text-base font-mono font-bold ${isLight ? 'text-success' : 'text-success'}`}>{entry.belief}%</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 3. 占星解读卡片 */}
+      <div className={`rounded-xl border border-l-4 border-l-gold-500 p-6 ${isLight ? 'bg-white border-paper-200' : 'bg-space-900/60 border-gold-500/10'}`}>
+        <div className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
+          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? 'border-gold-600/30 bg-white text-gold-600' : 'border-gold-500/30 bg-space-950 text-gold-500'}`}>
+            <Star size={18} />
+          </div>
+          <h3 className={`text-base font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>{t.journal.astro_reading}</h3>
+        </div>
+        <div className="pl-12 space-y-3">
+          {aspectItems.length > 0 ? aspectItems.map((item, i) => (
+            <div key={i} className="flex gap-3 items-start">
+              <div className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${isLight ? 'bg-gold-600/50' : 'bg-gold-500/50'}`} />
+              <span className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>{item}</span>
+            </div>
+          )) : (
+            <div className={`text-sm ${isLight ? 'text-paper-400' : 'text-star-400'}`}>—</div>
+          )}
+          {(interpretationList.intro || interpretationList.items.length > 0) && (
+            <div className={`mt-4 pt-4 border-t space-y-2 ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
+              {interpretationSections.length > 0 && interpretationSections.map((section, i) => {
+                const label = section.label ? normalizeInterpretationLabel(section.label) : (i === 0 ? interpretationLabel : '');
+                return (
+                  <p key={`${label || 'section'}-${i}`} className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>
+                    {label && <span className={`font-medium ${isLight ? 'text-gold-700' : 'text-gold-400'}`}>{label}: </span>}
+                    {section.text}
+                  </p>
+                );
+              })}
+              {interpretationList.items.length > 0 && interpretationList.items.map((item, i) => (
+                <div key={i} className="flex gap-3 items-start">
+                  <div className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${isLight ? 'bg-gold-600/50' : 'bg-gold-500/50'}`} />
+                  <span className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>{item}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* 4. 执行建议卡片 */}
+      <div className={`rounded-xl border border-l-4 border-l-star-200 p-6 ${isLight ? 'bg-white border-paper-200' : 'bg-space-900/60 border-gold-500/10'}`}>
+        <div className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? 'border-paper-200' : 'border-gold-500/10'}`}>
+          <div className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? 'border-star-200/30 bg-white text-star-200' : 'border-star-200/30 bg-space-950 text-star-200'}`}>
+            <CheckCircle2 size={18} />
+          </div>
+          <h3 className={`text-base font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>{t.journal.action_guide}</h3>
+        </div>
+        <div className="pl-12 space-y-2">
+          {actions.map((action, i) => {
+            const isCompleted = record.completedActionIndices?.includes(i);
+            return (
+              <div
+                key={i}
+                onClick={() => toggleAction(i)}
+                className={`flex items-start gap-3 py-2 cursor-pointer group transition-all ${isCompleted ? 'opacity-60' : ''}`}
+              >
+                <div className={`flex-shrink-0 mt-0.5 ${isCompleted ? (isLight ? 'text-success' : 'text-success') : (isLight ? 'text-paper-400' : 'text-star-400')}`}>
+                  {isCompleted ? <CheckCircle2 size={18} /> : <Circle size={18} />}
+                </div>
+                <p className={`text-sm leading-relaxed flex-1 ${isCompleted ? 'line-through' : ''} ${isLight ? 'text-paper-700' : 'text-star-200'}`}>
+                  {cleanText(action)}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

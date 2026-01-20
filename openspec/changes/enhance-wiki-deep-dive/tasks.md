@@ -25,25 +25,25 @@
 ## 阶段 2：类型扩展与脚本框架
 
 ### 2.1 扩展 WikiItem 类型
-- [ ] 在 `backend/src/types/api.ts` 中添加 `WikiLifeArea` 接口
-- [ ] 在 `WikiItem` 中添加 `life_areas` 字段
-- [ ] 在 `WikiItem` 中添加 `growth_path` 字段
-- [ ] 在 `WikiItem` 中添加 `practical_tips` 字段
-- [ ] 在 `WikiItem` 中添加 `common_misconceptions` 字段
-- [ ] 在 `WikiItem` 中添加 `affirmation` 字段
+- [x] 在 `backend/src/types/api.ts` 中添加 `WikiLifeArea` 接口
+- [x] 在 `WikiItem` 中添加 `life_areas` 字段
+- [x] 在 `WikiItem` 中添加 `growth_path` 字段
+- [x] 在 `WikiItem` 中添加 `practical_tips` 字段
+- [x] 在 `WikiItem` 中添加 `common_misconceptions` 字段
+- [x] 在 `WikiItem` 中添加 `affirmation` 字段
 
 **验证**：TypeScript 编译通过，类型定义正确
 
 ### 2.2 编写生成脚本基础框架
-- [ ] 创建 `backend/scripts/generate-wiki-content.ts`
-- [ ] 实现 DeepSeek API 调用封装
-- [ ] 实现 prompt 模板填充逻辑
-- [ ] 实现中英文双语生成逻辑
+- [x] 创建 `backend/scripts/generate-wiki-content.ts`
+- [x] 实现 DeepSeek API 调用封装
+- [x] 实现 prompt 模板填充逻辑
+- [x] 实现中英文双语生成逻辑
 
 ### 2.3 实现内容解析与存储
-- [ ] 解析大模型返回的 deep_dive 步骤结构
-- [ ] 将内容写入 `wiki.ts` 或独立文件
-- [ ] 实现增量生成（避免重复生成已有内容）
+- [x] 解析大模型返回的 deep_dive 步骤结构
+- [x] 将内容写入 `wiki.ts` 或独立文件
+- [x] 实现增量生成（避免重复生成已有内容）
 
 **验证**：运行脚本可成功生成 1 个测试条目的完整内容
 
@@ -52,74 +52,74 @@
 ## 阶段 3：批量内容生成
 
 ### 3.1 行星类内容生成（10 条目）
-- [ ] Sun（太阳）- 生成 deep_dive + 补全所有字段
-- [ ] Moon（月亮）
-- [ ] Mercury（水星）
-- [ ] Venus（金星）
-- [ ] Mars（火星）
-- [ ] Jupiter（木星）
-- [ ] Saturn（土星）- 优化现有 deep_dive 为 8 步骤
-- [ ] Uranus（天王星）
-- [ ] Neptune（海王星）
-- [ ] Pluto（冥王星）
+- [x] Sun（太阳）- 生成 deep_dive + 补全所有字段
+- [x] Moon（月亮）
+- [x] Mercury（水星）
+- [x] Venus（金星）
+- [x] Mars（火星）
+- [x] Jupiter（木星）
+- [x] Saturn（土星）- 优化现有 deep_dive 为 8 步骤
+- [x] Uranus（天王星）
+- [x] Neptune（海王星）
+- [x] Pluto（冥王星）
 
 **验证**：运行 `npm run dev`，访问 Wiki 页面确认内容显示正确
 
 ### 3.2 星座类内容生成（12 条目）
-- [ ] Aries（白羊座）
-- [ ] Taurus（金牛座）
-- [ ] Gemini（双子座）
-- [ ] Cancer（巨蟹座）
-- [ ] Leo（狮子座）
-- [ ] Virgo（处女座）
-- [ ] Libra（天秤座）
-- [ ] Scorpio（天蝎座）
-- [ ] Sagittarius（射手座）
-- [ ] Capricorn（摩羯座）
-- [ ] Aquarius（水瓶座）
-- [ ] Pisces（双鱼座）
+- [x] Aries（白羊座）
+- [x] Taurus（金牛座）
+- [x] Gemini（双子座）
+- [x] Cancer（巨蟹座）
+- [x] Leo（狮子座）
+- [x] Virgo（处女座）
+- [x] Libra（天秤座）
+- [x] Scorpio（天蝎座）
+- [x] Sagittarius（射手座）
+- [x] Capricorn（摩羯座）
+- [x] Aquarius（水瓶座）
+- [x] Pisces（双鱼座）
 
 **验证**：运行 `npm run dev`，访问 Wiki 页面确认内容显示正确
 
 ### 3.3 宫位类内容生成（12 条目）
-- [ ] House 1（第 1 宫）
-- [ ] House 2（第 2 宫）
-- [ ] House 3（第 3 宫）
-- [ ] House 4（第 4 宫）
-- [ ] House 5（第 5 宫）
-- [ ] House 6（第 6 宫）
-- [ ] House 7（第 7 宫）
-- [ ] House 8（第 8 宫）
-- [ ] House 9（第 9 宫）
-- [ ] House 10（第 10 宫）
-- [ ] House 11（第 11 宫）
-- [ ] House 12（第 12 宫）
+- [x] House 1（第 1 宫）
+- [x] House 2（第 2 宫）
+- [x] House 3（第 3 宫）
+- [x] House 4（第 4 宫）
+- [x] House 5（第 5 宫）
+- [x] House 6（第 6 宫）
+- [x] House 7（第 7 宫）
+- [x] House 8（第 8 宫）
+- [x] House 9（第 9 宫）
+- [x] House 10（第 10 宫）
+- [x] House 11（第 11 宫）
+- [x] House 12（第 12 宫）
 
 **验证**：运行 `npm run dev`，访问 Wiki 页面确认内容显示正确
 
 ### 3.4 相位类内容生成（5 条目）
-- [ ] Conjunction（合相）
-- [ ] Opposition（冲相）
-- [ ] Square（刑相）
-- [ ] Trine（拱相）
-- [ ] Sextile（六合）
+- [x] Conjunction（合相）
+- [x] Opposition（冲相）
+- [x] Square（刑相）
+- [x] Trine（拱相）
+- [x] Sextile（六合）
 
 **验证**：运行 `npm run dev`，访问 Wiki 页面确认内容显示正确
 
 ### 3.5 优化现有内容（四轴、虚点、小行星、星盘类型）
-- [ ] Ascendant（上升点）- 优化为 8 步骤
-- [ ] Descendant（下降点）- 优化为 8 步骤
-- [ ] Midheaven（中天）- 优化为 8 步骤
-- [ ] Imum Coeli（下中天）- 优化为 8 步骤
-- [ ] North Node（北交点）- 优化为 8 步骤
-- [ ] South Node（南交点）- 优化为 8 步骤
-- [ ] Chiron（凯龙星）- 优化为 8 步骤
-- [ ] Lilith（莉莉丝）- 优化为 8 步骤
-- [ ] Juno（婚神星）- 优化为 8 步骤
-- [ ] Natal Chart（本命盘）- 优化为 8 步骤
-- [ ] Synastry（比较盘）- 优化为 8 步骤
-- [ ] Composite（组合盘）- 优化为 8 步骤
-- [ ] Transits（行运盘）- 优化为 8 步骤
+- [x] Ascendant（上升点）- 优化为 8 步骤
+- [x] Descendant（下降点）- 优化为 8 步骤
+- [x] Midheaven（中天）- 优化为 8 步骤
+- [x] Imum Coeli（下中天）- 优化为 8 步骤
+- [x] North Node（北交点）- 优化为 8 步骤
+- [x] South Node（南交点）- 优化为 8 步骤
+- [x] Chiron（凯龙星）- 优化为 8 步骤
+- [x] Lilith（莉莉丝）- 优化为 8 步骤
+- [x] Juno（婚神星）- 优化为 8 步骤
+- [x] Natal Chart（本命盘）- 优化为 8 步骤
+- [x] Synastry（比较盘）- 优化为 8 步骤
+- [x] Composite（组合盘）- 优化为 8 步骤
+- [x] Transits（行运盘）- 优化为 8 步骤
 
 **验证**：运行 `npm run dev`，访问 Wiki 页面确认内容显示正确
 
@@ -128,19 +128,19 @@
 ## 阶段 4：新增细分条目
 
 ### 4.1 四元素细分条目
-- [ ] 新增 fire-element（火元素）条目
-- [ ] 新增 earth-element（土元素）条目
-- [ ] 新增 air-element（风元素）条目
-- [ ] 新增 water-element（水元素）条目
-- [ ] 更新 elements 总论条目的 related_ids
+- [x] 新增 fire-element（火元素）条目
+- [x] 新增 earth-element（土元素）条目
+- [x] 新增 air-element（风元素）条目
+- [x] 新增 water-element（水元素）条目
+- [x] 更新 elements 总论条目的 related_ids
 
 **验证**：新条目在 Wiki 列表页正常显示，可点击进入详情
 
 ### 4.2 三模式细分条目
-- [ ] 新增 cardinal-mode（基本模式）条目
-- [ ] 新增 fixed-mode（固定模式）条目
-- [ ] 新增 mutable-mode（变动模式）条目
-- [ ] 更新 modes 总论条目的 related_ids
+- [x] 新增 cardinal-mode（基本模式）条目
+- [x] 新增 fixed-mode（固定模式）条目
+- [x] 新增 mutable-mode（变动模式）条目
+- [x] 更新 modes 总论条目的 related_ids
 
 **验证**：新条目在 Wiki 列表页正常显示，可点击进入详情
 
@@ -149,32 +149,32 @@
 ## 阶段 5：前端缓存实现
 
 ### 5.1 缓存工具函数
-- [ ] 在 `services/apiClient.ts` 中定义 `WIKI_CACHE_VERSION` 常量
-- [ ] 实现 `buildWikiItemsCacheKey(lang)` 函数
-- [ ] 实现 `buildWikiItemCacheKey(id, lang)` 函数
-- [ ] 实现缓存读取辅助函数
-- [ ] 实现缓存写入辅助函数
+- [x] 在 `services/apiClient.ts` 中定义 `WIKI_CACHE_VERSION` 常量
+- [x] 实现 `buildWikiItemsCacheKey(lang)` 函数
+- [x] 实现 `buildWikiItemCacheKey(id, lang)` 函数
+- [x] 实现缓存读取辅助函数
+- [x] 实现缓存写入辅助函数
 
 **验证**：辅助函数单元测试通过（如有）
 
 ### 5.2 Wiki Items 列表缓存
-- [ ] 修改 `fetchWikiItems` 函数
-- [ ] 首先检查 localStorage 缓存
-- [ ] 缓存命中时直接返回
-- [ ] 缓存未命中时请求 API 并写入缓存
+- [x] 修改 `fetchWikiItems` 函数
+- [x] 首先检查 localStorage 缓存
+- [x] 缓存命中时直接返回
+- [x] 缓存未命中时请求 API 并写入缓存
 
 **验证**：首次加载后，刷新页面不再发起网络请求
 
 ### 5.3 Wiki Item 详情缓存
-- [ ] 修改 `fetchWikiItem` 函数
-- [ ] 首先检查 localStorage 缓存
-- [ ] 缓存命中时直接返回
-- [ ] 缓存未命中时请求 API 并写入缓存
+- [x] 修改 `fetchWikiItem` 函数
+- [x] 首先检查 localStorage 缓存
+- [x] 缓存命中时直接返回
+- [x] 缓存未命中时请求 API 并写入缓存
 
 **验证**：首次加载详情后，再次访问不再发起网络请求
 
 ### 5.4 缓存清理机制（可选）
-- [ ] 实现 `clearWikiCache()` 函数
+- [x] 实现 `clearWikiCache()` 函数
 - [ ] 在设置页面添加"清除 Wiki 缓存"按钮（可选）
 
 **验证**：点击清除按钮后，下次访问重新请求 API

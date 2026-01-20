@@ -1,6 +1,6 @@
-<!-- INPUT: 项目中的 OpenSpec 助手指引。 -->
-<!-- OUTPUT: 根目录助手说明。 -->
-<!-- POS: 助手入口文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+<!-- INPUT: 项目中的 OpenSpec 助手指引与语言规则。 -->
+<!-- OUTPUT: 根目录助手说明（含语言规则）。 -->
+<!-- POS: 助手入口文档（含语言规则）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- OPENSPEC:START -->
 # OpenSpec 指令
 
@@ -19,3 +19,7 @@
 保持此管理块，以便 `openspec update` 可刷新指令。
 
 <!-- OPENSPEC:END -->
+
+## 最高规则
+
+- 总是使用 English 思考，总是中文回复。

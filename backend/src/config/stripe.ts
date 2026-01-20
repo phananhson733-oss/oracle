@@ -32,58 +32,121 @@ export const isStripeConfigured = (): boolean => {
 export const STRIPE_PRICES = {
   // Subscription prices
   MONTHLY_SUBSCRIPTION: process.env.STRIPE_PRICE_MONTHLY || 'price_monthly_699',
-  YEARLY_SUBSCRIPTION: process.env.STRIPE_PRICE_YEARLY || 'price_yearly_4999',
+  YEARLY_SUBSCRIPTION: process.env.STRIPE_PRICE_YEARLY || 'price_yearly_4999', // @deprecated
 
-  // One-time purchase prices
-  ASK_SINGLE: process.env.STRIPE_PRICE_ASK || 'price_ask_99',
-  DETAIL_PACK_10: process.env.STRIPE_PRICE_DETAIL_PACK || 'price_detail_299',
-  SYNASTRY_FULL: process.env.STRIPE_PRICE_SYNASTRY || 'price_synastry_399',
-  CBT_ANALYSIS: process.env.STRIPE_PRICE_CBT || 'price_cbt_99',
+  // One-time purchase prices - 新定价
+  DIMENSION_UNLOCK: process.env.STRIPE_PRICE_DIMENSION || 'price_dimension_99',
+  CORE_THEME_UNLOCK: process.env.STRIPE_PRICE_CORE_THEME || 'price_core_theme_99',
+  DAILY_SCRIPT: process.env.STRIPE_PRICE_DAILY_SCRIPT || 'price_daily_script_99',
+  DAILY_TRANSIT: process.env.STRIPE_PRICE_DAILY_TRANSIT || 'price_daily_transit_99',
+  DETAIL_VIEW: process.env.STRIPE_PRICE_DETAIL_VIEW || 'price_detail_view_99',
+  SYNASTRY_FULL: process.env.STRIPE_PRICE_SYNASTRY || 'price_synastry_299',
+  SYNASTRY_DETAIL: process.env.STRIPE_PRICE_SYNASTRY_DETAIL || 'price_synastry_detail_99',
+  ASK_SINGLE: process.env.STRIPE_PRICE_ASK || 'price_ask_199',
+  CBT_STATS_MONTHLY: process.env.STRIPE_PRICE_CBT_STATS || 'price_cbt_stats_199',
+  SYNTHETICA_USE: process.env.STRIPE_PRICE_SYNTHETICA || 'price_synthetica_99',
+
+  // 向后兼容 - 旧版价格 ID
+  DETAIL_PACK_10: process.env.STRIPE_PRICE_DETAIL_PACK || 'price_detail_299', // @deprecated
+  CBT_ANALYSIS: process.env.STRIPE_PRICE_CBT || 'price_cbt_99', // @deprecated
 
   // Report prices
   REPORT_MONTHLY: process.env.STRIPE_PRICE_REPORT_MONTHLY || 'price_report_monthly_199',
   REPORT_ANNUAL: process.env.STRIPE_PRICE_REPORT_ANNUAL || 'price_report_annual_799',
-  REPORT_CAREER: process.env.STRIPE_PRICE_REPORT_CAREER || 'price_report_career_499',
-  REPORT_WEALTH: process.env.STRIPE_PRICE_REPORT_WEALTH || 'price_report_wealth_499',
-  REPORT_LOVE: process.env.STRIPE_PRICE_REPORT_LOVE || 'price_report_love_499',
-  REPORT_SATURN_RETURN: process.env.STRIPE_PRICE_REPORT_SATURN || 'price_report_saturn_699',
-  REPORT_SYNASTRY_DEEP: process.env.STRIPE_PRICE_REPORT_SYNASTRY_DEEP || 'price_report_synastry_599',
+  REPORT_CAREER: process.env.STRIPE_PRICE_REPORT_CAREER || 'price_report_career_499', // @deprecated
+  REPORT_WEALTH: process.env.STRIPE_PRICE_REPORT_WEALTH || 'price_report_wealth_499', // @deprecated
+  REPORT_LOVE: process.env.STRIPE_PRICE_REPORT_LOVE || 'price_report_love_499', // @deprecated
+  REPORT_SATURN_RETURN: process.env.STRIPE_PRICE_REPORT_SATURN || 'price_report_saturn_699', // @deprecated
+  REPORT_SYNASTRY_DEEP: process.env.STRIPE_PRICE_REPORT_SYNASTRY_DEEP || 'price_report_synastry_599', // @deprecated
 };
 
-// Product configuration with pricing info
+// Product configuration with pricing info - 新定价
 export const PRODUCTS = {
   subscription: {
     monthly: {
       priceId: STRIPE_PRICES.MONTHLY_SUBSCRIPTION,
-      amount: 699, // cents
-      name: 'AstroMind Pro Monthly',
+      amount: 699, // $6.99
+      name: 'AstrologyWiki Pro Monthly',
       interval: 'month' as const,
     },
+    // 向后兼容
     yearly: {
       priceId: STRIPE_PRICES.YEARLY_SUBSCRIPTION,
-      amount: 4999, // cents
-      name: 'AstroMind Pro Yearly',
+      amount: 4999, // @deprecated
+      name: 'AstrologyWiki Pro Yearly',
       interval: 'year' as const,
     },
   },
   oneTime: {
+    dimension: {
+      priceId: STRIPE_PRICES.DIMENSION_UNLOCK,
+      amount: 99,  // $0.99
+      name: 'Unlock Psychological Dimension',
+      scope: 'permanent' as const,
+    },
+    core_theme: {
+      priceId: STRIPE_PRICES.CORE_THEME_UNLOCK,
+      amount: 99,  // $0.99
+      name: 'Unlock Core Theme',
+      scope: 'permanent' as const,
+    },
+    daily_script: {
+      priceId: STRIPE_PRICES.DAILY_SCRIPT,
+      amount: 99,  // $0.99
+      name: 'Daily Script Access',
+      scope: 'daily' as const,
+    },
+    daily_transit: {
+      priceId: STRIPE_PRICES.DAILY_TRANSIT,
+      amount: 99,  // $0.99
+      name: 'Daily Transit Detail',
+      scope: 'daily' as const,
+    },
+    detail: {
+      priceId: STRIPE_PRICES.DETAIL_VIEW,
+      amount: 99,
+      name: 'Detail View',
+      scope: 'permanent' as const,
+    },
+    synastry: {
+      priceId: STRIPE_PRICES.SYNASTRY_FULL,
+      amount: 299, // $2.99
+      name: 'Synastry Reading',
+      scope: 'permanent' as const,
+      quantity: 1, // 向后兼容
+    },
+    synastry_detail: {
+      priceId: STRIPE_PRICES.SYNASTRY_DETAIL,
+      amount: 99,  // $0.99
+      name: 'Synastry Detail View',
+      scope: 'per_synastry' as const,
+    },
     ask: {
       priceId: STRIPE_PRICES.ASK_SINGLE,
-      amount: 99,
+      amount: 199, // $1.99
       name: 'Single Ask Question',
+      scope: 'consumable' as const,
+      quantity: 1, // 向后兼容
+    },
+    cbt_stats: {
+      priceId: STRIPE_PRICES.CBT_STATS_MONTHLY,
+      amount: 199, // $1.99
+      name: 'CBT Stats Monthly',
+      scope: 'per_month' as const,
+    },
+    synthetica: {
+      priceId: STRIPE_PRICES.SYNTHETICA_USE,
+      amount: 99, // $0.99
+      name: 'Synthetica Insight',
+      scope: 'consumable' as const,
       quantity: 1,
     },
+    // 向后兼容 - 旧版产品
     detail_pack: {
       priceId: STRIPE_PRICES.DETAIL_PACK_10,
       amount: 299,
       name: 'Detail Reading Pack (10)',
       quantity: 10,
-    },
-    synastry: {
-      priceId: STRIPE_PRICES.SYNASTRY_FULL,
-      amount: 399,
-      name: 'Full Synastry Reading',
-      quantity: 1,
     },
     cbt_analysis: {
       priceId: STRIPE_PRICES.CBT_ANALYSIS,
@@ -105,6 +168,7 @@ export const PRODUCTS = {
       name: 'Annual Forecast Report',
       type: 'annual',
     },
+    // 向后兼容 - 旧版报告类型
     career: {
       priceId: STRIPE_PRICES.REPORT_CAREER,
       amount: 499,
@@ -139,6 +203,6 @@ export const PRODUCTS = {
 };
 
 // Subscriber discount percentage
-export const SUBSCRIBER_DISCOUNT = 0.3; // 30% off
+export const SUBSCRIBER_DISCOUNT = 0.2; // 20% off (8折)
 
 export default stripe;
