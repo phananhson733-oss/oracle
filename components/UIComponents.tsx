@@ -213,18 +213,35 @@ export const Card: React.FC<{ children: ReactNode, onClick?: () => void, classNa
     );
 };
 
-export const GlassInput: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => {
+export const GlassInput: React.FC<React.InputHTMLAttributes<HTMLInputElement> & { error?: string }> = (props) => {
     const { theme } = useTheme();
     const s = getStyles(theme);
+    const { error, className, ...restProps } = props;
+
+    const inputClasses = `w-full min-h-[44px] px-5 py-4 rounded-xl outline-none transition-all duration-300 ease-in-out font-sans text-sm ${
+      error
+        ? theme === 'dark'
+          ? 'bg-red-900/20 border-red-500/50 focus:border-red-500'
+          : 'bg-red-50 border-red-300 focus:border-red-500'
+        : s.input
+    } ${className || ''}`;
+
     return (
       <div className="relative group">
-        <input 
-          {...props}
-          className={`w-full min-h-[44px] px-5 py-4 rounded-xl outline-none transition-all duration-300 ease-in-out font-sans text-sm ${s.input} ${props.className}`}
+        <input
+          {...restProps}
+          className={inputClasses}
         />
+        {error && (
+          <p className={`mt-1 text-xs ${
+            theme === 'dark' ? 'text-red-400' : 'text-red-600'
+          }`}>
+            {error}
+          </p>
+        )}
       </div>
     );
-};
+  };
 
 export const ActionButton: React.FC<{ children: ReactNode, onClick?: () => void, variant?: 'primary' | 'secondary' | 'outline' | 'ghost', disabled?: boolean, className?: string, size?: 'sm' | 'md' | 'lg', ariaLabel?: string }> = ({ children, onClick, variant = 'primary', disabled, className="", size = 'md', ariaLabel }) => {
   const { theme } = useTheme();
@@ -667,19 +684,95 @@ export const DetailModal: React.FC<DetailModalProps> = ({
   const { language, t } = useLanguage();
   const isLight = theme === 'light';
 
-  // 样式定义（对齐 Ask 报告卡片节奏）
+  // --- Styles & Icons (Aligned with Ask Oracle) ---
   const containerTone = isLight ? 'bg-paper-100' : 'bg-space-950';
-  const panelTone = isLight ? 'bg-paper-100/85' : 'bg-space-900/60';
-  const panelFrame = isLight
-    ? 'border border-paper-300/80 border-l border-l-gold-500/40 shadow-sm'
-    : 'border border-space-700/70 border-l border-l-gold-500/40 shadow-card';
-  const heroTone = panelTone;
-  const heroFrame = panelFrame;
-  const mutedTextTone = isLight ? 'text-paper-500' : 'text-star-400';
-  const bodyTextTone = isLight ? 'text-paper-700' : 'text-star-200';
-  const goldIconTone = isLight ? 'bg-gold-500/15 text-gold-700' : 'bg-gold-500/10 text-gold-400';
-  const dividerTone = isLight ? 'bg-paper-200/80' : 'bg-space-700/70';
   const headingTone = isLight ? 'text-paper-900' : 'text-star-50';
+  const mutedTextTone = isLight ? 'text-paper-500' : 'text-star-400';
+
+  const cardStyles = [
+    {
+        accent: 'border-l-gold-500/40',
+        title: theme === 'dark' ? 'text-gold-200' : 'text-gold-700',
+        badge: theme === 'dark' ? 'border-gold-500/30 bg-gold-500/10 text-gold-400' : 'border-gold-600/40 bg-gold-500/15 text-gold-700',
+        highlight: theme === 'dark' ? 'text-gold-300' : 'text-gold-700',
+        dot: theme === 'dark' ? 'bg-gold-500/50' : 'bg-gold-600/60',
+        divider: theme === 'dark' ? 'border-gold-500/20' : 'border-gold-600/25',
+        iconTone: theme === 'dark' ? 'border-gold-500/30 bg-space-950 text-gold-500' : 'border-gold-600/40 bg-paper-100/85 text-gold-700',
+        icon: 'star'
+    },
+    {
+        accent: 'border-l-accent/40',
+        title: 'text-accent',
+        badge: theme === 'dark' ? 'border-accent/30 bg-accent/10 text-accent' : 'border-accent/30 bg-accent/10 text-accent',
+        highlight: 'text-accent',
+        dot: theme === 'dark' ? 'bg-accent/50' : 'bg-accent/60',
+        divider: theme === 'dark' ? 'border-accent/20' : 'border-accent/30',
+        iconTone: theme === 'dark' ? 'border-accent/30 bg-space-950 text-accent' : 'border-accent/30 bg-paper-100/85 text-accent',
+        icon: 'eye'
+    },
+    {
+        accent: 'border-l-star-200/40',
+        title: theme === 'dark' ? 'text-star-200' : 'text-gold-700',
+        badge: theme === 'dark' ? 'border-star-200/30 bg-star-200/10 text-star-200' : 'border-gold-600/30 bg-gold-500/10 text-gold-700',
+        highlight: theme === 'dark' ? 'text-star-200' : 'text-gold-700',
+        dot: theme === 'dark' ? 'bg-star-200/50' : 'bg-gold-600/50',
+        divider: theme === 'dark' ? 'border-star-200/20' : 'border-gold-600/20',
+        iconTone: theme === 'dark' ? 'border-star-200/30 bg-space-950 text-star-200' : 'border-gold-600/30 bg-paper-100/85 text-gold-700',
+        icon: 'compass'
+    },
+    {
+        accent: 'border-l-success/40',
+        title: 'text-success',
+        badge: theme === 'dark' ? 'border-success/30 bg-success/10 text-success' : 'border-success/30 bg-success/10 text-success',
+        highlight: 'text-success',
+        dot: theme === 'dark' ? 'bg-success/50' : 'bg-success/60',
+        divider: theme === 'dark' ? 'border-success/20' : 'border-success/30',
+        iconTone: theme === 'dark' ? 'border-success/30 bg-space-950 text-success' : 'border-success/30 bg-paper-100/85 text-success',
+        icon: 'moon'
+    },
+    {
+        accent: 'border-l-gold-400/40',
+        title: theme === 'dark' ? 'text-gold-200' : 'text-gold-700',
+        badge: theme === 'dark' ? 'border-gold-400/30 bg-gold-400/10 text-gold-300' : 'border-gold-600/30 bg-gold-500/10 text-gold-700',
+        highlight: theme === 'dark' ? 'text-gold-300' : 'text-gold-700',
+        dot: theme === 'dark' ? 'bg-gold-400/50' : 'bg-gold-600/50',
+        divider: theme === 'dark' ? 'border-gold-400/20' : 'border-gold-600/20',
+        iconTone: theme === 'dark' ? 'border-gold-400/30 bg-space-950 text-gold-400' : 'border-gold-600/30 bg-paper-100/85 text-gold-700',
+        icon: 'star'
+    },
+  ];
+
+  const IconStar = () => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+          <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+  );
+  const IconEye = () => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+          <path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+  );
+  const IconCompass = () => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+  );
+  const IconMoon = () => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+          <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+  );
+
+  const renderIcon = (iconName: string) => {
+      switch(iconName) {
+          case 'eye': return <IconEye />;
+          case 'compass': return <IconCompass />;
+          case 'moon': return <IconMoon />;
+          default: return <IconStar />;
+      }
+  };
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden';
@@ -689,29 +782,30 @@ export const DetailModal: React.FC<DetailModalProps> = ({
 
   if (!open) return null;
 
-  // Loading State - 直接使用 OracleLoading 全屏显示，与 Ask Oracle 体验一致
+  // Loading State - Fullscreen with OracleLoading
   if (loading) {
     return (
-      <div className="fixed inset-0 z-[200]">
+      <div className={`fixed inset-0 z-[200] flex flex-col ${containerTone}`}>
         <OracleLoading
           phrases={[
-            t.detail.generating || '正在生成专业解读...',
+            t.detail.generating || 'Generating insights...',
             language === 'zh' ? '深度分析星盘数据...' : 'Analyzing chart data...',
             language === 'zh' ? '解读星象奥秘...' : 'Decoding celestial patterns...',
           ]}
-          thinkingLabel={t.common.analyzing || '分析中'}
+          thinkingLabel={t.common.analyzing || 'Analyzing'}
+          className="flex-1"
         />
-        {/* 返回按钮浮层 */}
+        {/* Back Button Overlay */}
         <button
           onClick={onClose}
-          className={`fixed top-6 left-6 z-[210] flex items-center gap-3 transition-all font-bold group text-star-400 hover:text-gold-400`}
+          className={`fixed top-6 left-6 z-[210] flex items-center gap-3 transition-all font-bold group ${mutedTextTone} hover:text-gold-400`}
         >
           <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-paper-100/85 border border-paper-300 group-hover:bg-paper-200' : 'bg-space-900/60 group-hover:bg-gold-500/20'}`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
             </svg>
           </div>
-          <span className="text-sm uppercase tracking-widest">{t.common.back || '返回'}</span>
+          <span className="text-sm uppercase tracking-widest">{t.common.back || 'BACK'}</span>
         </button>
       </div>
     );
@@ -722,246 +816,200 @@ export const DetailModal: React.FC<DetailModalProps> = ({
     interpretationSections,
     t.detail.interpretation || 'Interpretation'
   );
-  const labelTokens = language === 'zh'
-    ? new Set(['观点', '机制', '建议'])
-    : new Set(['key', 'mechanism', 'action']);
-  const blockSurface = isLight
-    ? 'bg-paper-100/85 border border-paper-300/80 shadow-[0_12px_20px_rgba(122,104,78,0.08)]'
-    : 'bg-space-950/40 border border-space-700/70 shadow-[0_14px_26px_rgba(0,0,0,0.35)]';
-  const tones = {
-    core: {
-      accent: isLight ? 'border-l-gold-600/40' : 'border-l-gold-400/40',
-      badge: isLight ? 'border-gold-600/30 bg-gold-500/10 text-gold-700' : 'border-gold-500/30 bg-gold-500/10 text-gold-300',
-      label: isLight ? 'text-gold-700' : 'text-gold-300',
-      dot: isLight ? 'bg-gold-600' : 'bg-gold-400',
-      surface: blockSurface,
-    },
-    mechanism: {
-      accent: isLight ? 'border-l-purple-500/40' : 'border-l-purple-400/40',
-      badge: isLight ? 'border-purple-500/30 bg-purple-500/10 text-purple-700' : 'border-purple-400/30 bg-purple-400/10 text-purple-300',
-      label: isLight ? 'text-purple-700' : 'text-purple-300',
-      dot: isLight ? 'bg-purple-500' : 'bg-purple-400',
-      surface: blockSurface,
-    },
-    action: {
-      accent: isLight ? 'border-l-emerald-500/40' : 'border-l-emerald-400/40',
-      badge: isLight ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-700' : 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300',
-      label: isLight ? 'text-emerald-700' : 'text-emerald-300',
-      dot: isLight ? 'bg-emerald-500' : 'bg-emerald-400',
-      surface: blockSurface,
-    },
-    fallback: {
-      accent: isLight ? 'border-l-gold-500/40' : 'border-l-gold-500/30',
-      badge: isLight ? 'border-gold-500/20 bg-gold-500/5 text-gold-700' : 'border-gold-500/20 bg-gold-500/5 text-gold-400',
-      label: isLight ? 'text-gold-700' : 'text-gold-400',
-      dot: isLight ? 'bg-gold-600/60' : 'bg-gold-400/60',
-      surface: blockSurface,
-    }
-  };
-  const resolveToneKey = (heading: string) => {
-    const normalized = heading.trim().toLowerCase();
-    if (language === 'zh') {
-      if (heading.includes('观点')) return 'core';
-      if (heading.includes('机制')) return 'mechanism';
-      if (heading.includes('建议') || heading.includes('行动')) return 'action';
-    }
-    if (normalized.includes('takeaway') || normalized.includes('key')) return 'core';
-    if (normalized.includes('mechanism') || normalized.includes('breakdown')) return 'mechanism';
-    if (normalized.includes('action') || normalized.includes('steps')) return 'action';
-    return 'fallback';
-  };
-  const parseDetailLabel = (text: string) => {
-    const match = text.match(/^([^：:]{1,12})[：:]\s*(.+)$/);
-    if (!match) return null;
-    const label = match[1].trim();
-    const normalizedLabel = language === 'zh' ? label : label.toLowerCase();
-    if (!labelTokens.has(normalizedLabel)) return null;
-    return {
-      label,
-      content: match[2].trim(),
-      separator: text.includes('：') ? '：' : ':',
-    };
-  };
-  const getDetailPayload = (line: string) => {
-    const parsed = parseDetailLabel(line);
-    if (!parsed) return { isLabeled: false, content: line };
-    return { isLabeled: true, content: parsed.content };
-  };
-  const renderDetailIndex = (tone: typeof tones.core, index: number) => (
-    <span className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold ${tone.badge}`}>
-      {index + 1}
-    </span>
-  );
+
+  // --- Render Logic ---
 
   return (
     <div className={`fixed inset-0 z-[200] flex flex-col overflow-hidden animate-fade-in ${containerTone}`}>
-      {/* 浮动返回按钮 */}
-      <button
-        onClick={onClose}
-        className={`fixed top-6 left-6 z-[210] flex items-center gap-3 transition-all font-bold group ${mutedTextTone} hover:text-gold-400`}
-      >
-        <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-paper-100/85 border border-paper-300 group-hover:bg-paper-200 shadow-lg' : 'bg-space-900/60 group-hover:bg-gold-500/20'}`}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
-          </svg>
-        </div>
-        <span className="text-sm uppercase tracking-widest">{t.common.back || '返回'}</span>
-      </button>
-
-      {/* 可滚动内容区域 */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar px-6 md:px-12 pb-12 pt-20">
-        <div className="w-full max-w-5xl mx-auto space-y-6 animate-fade-in pb-16">
-
-          {/* 标题区域 */}
-          <div className="text-center space-y-2 py-6">
-            <h1 className={`text-3xl md:text-4xl font-serif tracking-tight ${headingTone}`}>{title}</h1>
+      {/* Sticky Header */}
+      <div className={`sticky top-0 z-20 px-6 py-4 flex items-center gap-4 border-b ${isLight ? 'bg-paper-100/95 border-paper-300/50 backdrop-blur' : 'bg-space-950/95 border-gold-500/10 backdrop-blur'}`}>
+        <button
+          onClick={onClose}
+          className={`flex items-center gap-3 transition-all font-bold group ${mutedTextTone} hover:text-gold-400`}
+        >
+          <div className={`p-2 rounded-xl transition-all ${isLight ? 'bg-paper-200 border border-paper-300 group-hover:bg-paper-300' : 'bg-space-900/60 group-hover:bg-gold-500/20'}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+            </svg>
           </div>
+          <span className="text-sm uppercase tracking-widest">{t.common.back || 'BACK'}</span>
+        </button>
+        <div className={`flex items-center gap-2 px-3 py-1 rounded-full border max-w-[60vw] ${isLight ? 'border-gold-500/30 bg-gold-500/10 text-gold-700' : 'border-gold-500/30 bg-gold-500/10 text-gold-400'}`}>
+             <span className="text-xs font-semibold tracking-wide truncate">{title}</span>
+        </div>
+      </div>
 
-          {/* Error State */}
-          {!loading && error && (
-            <div className={`rounded-3xl p-10 md:p-12 flex flex-col items-center justify-center ${panelTone} ${panelFrame}`}>
-              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${isLight ? 'bg-danger/10' : 'bg-danger/20'}`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-danger">
-                  <circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>
-                </svg>
-              </div>
-              <p className={`text-lg font-medium mb-2 ${headingTone}`}>{t.common.error || '加载失败'}</p>
-              <p className={`text-sm mb-6 ${mutedTextTone}`}>{error}</p>
-              {onRetry && (
-                <button
-                  onClick={onRetry}
-                  className={`px-8 py-3 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all ${isLight ? 'bg-gold-500/20 text-gold-700 hover:bg-gold-500/30' : 'bg-gold-500/10 text-gold-400 hover:bg-gold-500/20'}`}
-                >
-                  {t.common.retry}
-                </button>
-              )}
-            </div>
-          )}
-
-          {/* Content State */}
-          {!loading && !error && content && (
-            <div className="space-y-6">
-              {/* Hero Card: Title & Summary */}
-              <div className={`rounded-3xl p-7 md:p-8 relative overflow-hidden shadow-2xl ${heroTone} ${heroFrame}`}>
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 blur-[100px] rounded-full -mr-20 -mt-20"></div>
-                <div className="relative z-10">
-                  {content.title && (
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className={`p-3 rounded-2xl ${goldIconTone}`}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                        </svg>
-                      </div>
-                      <h2 className={`text-xl md:text-2xl font-serif ${headingTone}`}>{cleanMarkdownText(content.title)}</h2>
-                    </div>
-                  )}
-                  {content.summary && (
-                    <p className={`text-base md:text-lg leading-relaxed ${bodyTextTone}`}>
-                      {cleanMarkdownText(content.summary)}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {/* Key Points Card - 移除内框，直接显示内容 */}
-              {content.highlights && content.highlights.length > 0 && (
-                <div className={`rounded-3xl p-6 md:p-7 ${panelTone} ${panelFrame}`}>
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className={`p-3 rounded-2xl ${goldIconTone}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
-                      </svg>
-                    </div>
-                    <h3 className={`text-lg md:text-xl font-serif ${headingTone}`}>{keyPointsLabel || t.detail.key_points}</h3>
-                  </div>
-                  <div className={`h-px w-full mb-5 ${dividerTone}`} />
-                  <div className="space-y-3">
-                    {content.highlights.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${isLight ? 'bg-gold-600' : 'bg-gold-400'}`}></span>
-                        <p className={`text-sm md:text-base leading-relaxed ${bodyTextTone}`}>
-                          {cleanMarkdownText(item)}
-                        </p>
-                      </div>
+      {/* Content Area */}
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 py-8 relative">
+            
+            {/* Background Silhouette */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <svg className="absolute inset-0 w-full h-full opacity-[0.015]" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+                    <circle cx="400" cy="400" r="350" fill="none" stroke="#D4AF37" strokeWidth="0.5" />
+                    <circle cx="400" cy="400" r="280" fill="none" stroke="#D4AF37" strokeWidth="0.3" />
+                    <circle cx="400" cy="400" r="200" fill="none" stroke="#D4AF37" strokeWidth="0.2" />
+                    {[...Array(12)].map((_, i) => (
+                        <line key={i} x1="400" y1="50" x2="400" y2="120" stroke="#D4AF37" strokeWidth="0.3" transform={`rotate(${i * 30} 400 400)`} />
                     ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Interpretation Card - 移除内层卡片，使用序号编号 */}
-              {content.interpretation && interpretationBlocks.length > 0 && (
-                <div className={`rounded-3xl p-6 md:p-7 ${panelTone} ${panelFrame}`}>
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className={`p-3 rounded-2xl ${goldIconTone}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                      </svg>
-                    </div>
-                    <h3 className={`text-lg md:text-xl font-serif ${headingTone}`}>{t.detail.interpretation || '深度解读'}</h3>
-                  </div>
-                  <div className={`h-px w-full mb-5 ${dividerTone}`} />
-                  <div className="space-y-6">
-                    {interpretationBlocks.map((block, idx) => {
-                      const toneKey = resolveToneKey(block.heading) as keyof typeof tones;
-                      const tone = tones[toneKey] || tones.fallback;
-                      let lineIndex = 0;
-                      const renderLine = (line: string, key: string) => {
-                        const payload = getDetailPayload(line);
-                        const index = lineIndex;
-                        lineIndex += 1;
-                        return (
-                          <div key={key} className="flex items-start gap-3">
-                            {renderDetailIndex(tone, index)}
-                            <span className={`text-sm md:text-base leading-relaxed ${bodyTextTone}`}>
-                              {payload.content}
-                            </span>
-                          </div>
-                        );
-                      };
-                      return (
-                        <div key={`${block.heading}-${idx}`} className={`rounded-2xl p-4 md:p-5 space-y-3 ${tone.surface} border-l ${tone.accent}`}>
-                          <div className="flex items-center gap-3">
-                            <span className={`flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold ${tone.badge}`}>
-                              {idx + 1}
-                            </span>
-                            <span className={`text-base font-semibold ${tone.label}`}>{block.heading}</span>
-                          </div>
-                          <div className="space-y-3">
-                            {block.nodes.map((node, nodeIdx) => {
-                              if (node.type === 'list' && node.items) {
-                                return (
-                                  <div key={`${nodeIdx}-list`} className="space-y-2">
-                                    {node.items.map((item, itemIdx) => renderLine(item, `${nodeIdx}-${itemIdx}`))}
-                                  </div>
-                                );
-                              }
-                              return renderLine(node.content, `p-${nodeIdx}`);
-                            })}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* 返回按钮 */}
-              <div className="flex justify-center pt-8">
-                <button
-                  onClick={onClose}
-                  className="group relative overflow-hidden px-16 py-4 rounded-[2rem] transition-all hover:scale-105 active:scale-95 shadow-2xl"
-                >
-                  <div className={`absolute inset-0 group-hover:via-gold-800/50 transition-all duration-700 ${isLight ? 'bg-gradient-to-r from-paper-200 via-gold-500/30 to-paper-200' : 'bg-gradient-to-r from-space-800 via-gold-900/50 to-space-800'}`}></div>
-                  <div className="relative flex items-center gap-4">
-                    <span className={`font-black text-xs uppercase tracking-[0.5em] ${headingTone}`}>{t.journal?.return_to_stars || '返回'}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`animate-pulse ${isLight ? 'text-gold-700' : 'text-gold-300'}`}>
-                      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-                    </svg>
-                  </div>
-                </button>
-              </div>
+                </svg>
             </div>
-          )}
+
+            {/* Error State */}
+            {!loading && error && (
+                <div className="relative z-10 flex flex-col items-center justify-center py-20 text-center">
+                    <div className="text-danger mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>
+                        </svg>
+                    </div>
+                    <p className={`text-lg font-medium mb-2 ${headingTone}`}>{t.common.error || 'Error'}</p>
+                    <p className={`text-sm mb-6 ${mutedTextTone}`}>{error}</p>
+                    {onRetry && (
+                        <button onClick={onRetry} className={`px-6 py-2 rounded-full border ${isLight ? 'border-gold-500/30 text-gold-700 hover:bg-gold-500/10' : 'border-gold-500/30 text-gold-400 hover:bg-gold-500/10'}`}>
+                            {t.common.retry}
+                        </button>
+                    )}
+                </div>
+            )}
+
+            {/* Content Display */}
+            {!loading && !error && content && (
+                <div className="relative z-10 space-y-5">
+                    
+                    {/* 1. Summary Card (Gold Style) */}
+                    {(content.title || content.summary) && (
+                        <Card className={`relative overflow-hidden transition-all duration-300 border border-l ${cardStyles[0].accent} ${theme === 'dark' ? 'hover:shadow-lg hover:shadow-gold-500/5' : 'hover:shadow-sm'}`}>
+                            <div className={`flex items-center gap-4 mb-4 pb-3 border-b ${cardStyles[0].divider}`}>
+                                <div className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${cardStyles[0].iconTone}`}>
+                                    {renderIcon('star')}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        <span className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${cardStyles[0].badge}`}>
+                                            {language === 'zh' ? '核心' : 'ESSENCE'}
+                                        </span>
+                                        {content.title && (
+                                            <h4 className={`text-base md:text-lg font-serif font-semibold ${cardStyles[0].title}`}>
+                                                {cleanMarkdownText(content.title)}
+                                            </h4>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pl-14">
+                                <p className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>
+                                    {cleanMarkdownText(content.summary || '')}
+                                </p>
+                            </div>
+                        </Card>
+                    )}
+
+                    {/* 2. Highlights Card (Accent/Eye Style) */}
+                    {content.highlights && content.highlights.length > 0 && (
+                        <Card className={`relative overflow-hidden transition-all duration-300 border border-l ${cardStyles[1].accent} ${theme === 'dark' ? 'hover:shadow-lg hover:shadow-accent/5' : 'hover:shadow-sm'}`}>
+                             <div className={`flex items-center gap-4 mb-4 pb-3 border-b ${cardStyles[1].divider}`}>
+                                <div className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${cardStyles[1].iconTone}`}>
+                                    {renderIcon('eye')}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        <span className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${cardStyles[1].badge}`}>
+                                            {keyPointsLabel || (language === 'zh' ? '重点' : 'KEY POINTS')}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pl-14 space-y-3">
+                                {content.highlights.map((item, idx) => (
+                                    <div key={idx} className="flex gap-3 items-start">
+                                        <div className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${cardStyles[1].dot}`} />
+                                        <p className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>
+                                            {cleanMarkdownText(item)}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </Card>
+                    )}
+
+                    {/* 3. Interpretation Blocks (Varied Styles) */}
+                    {interpretationBlocks.map((block, idx) => {
+                        // Use varied styles starting from index 2 (Compass) to cycle through
+                        const styleIdx = (idx % 3) + 2; // Styles 2, 3, 4
+                        const style = cardStyles[styleIdx < cardStyles.length ? styleIdx : 2];
+                        const iconName = styleIdx === 2 ? 'compass' : (styleIdx === 3 ? 'moon' : 'star');
+
+                        return (
+                            <div key={idx} className="animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
+                                <Card className={`relative overflow-hidden transition-all duration-300 border border-l ${style.accent} ${theme === 'dark' ? 'hover:shadow-lg' : 'hover:shadow-sm'}`}>
+                                    <div className={`flex items-center gap-4 mb-4 pb-3 border-b ${style.divider}`}>
+                                        <div className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${style.iconTone}`}>
+                                            {renderIcon(iconName)}
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex flex-wrap items-center gap-2">
+                                                <span className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${style.badge}`}>
+                                                    {language === 'zh' ? `层级 ${idx + 1}` : `LAYER ${idx + 1}`}
+                                                </span>
+                                                <h4 className={`text-base md:text-lg font-serif font-semibold ${style.title}`}>
+                                                    {block.heading}
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="pl-14 space-y-4">
+                                        {block.nodes.map((node, nodeIdx) => {
+                                             if (node.type === 'list' && node.items) {
+                                                return (
+                                                    <div key={nodeIdx} className="space-y-3">
+                                                        {node.items.map((item, itemIdx) => (
+                                                            <div key={itemIdx} className="flex gap-3 items-start">
+                                                                <div className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${style.dot}`} />
+                                                                <p className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>
+                                                                    {item}
+                                                                </p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                );
+                                             }
+                                             return (
+                                                <p key={nodeIdx} className={`text-sm leading-relaxed ${isLight ? 'text-paper-700' : 'text-star-200'}`}>
+                                                    {node.content}
+                                                </p>
+                                             );
+                                        })}
+                                    </div>
+                                </Card>
+                            </div>
+                        );
+                    })}
+
+                    {/* Footer / Conclusion */}
+                    {content && (
+                        <div className={`mt-8 pt-6 border-t ${isLight ? 'border-gold-600/10' : 'border-gold-500/10'}`}>
+                            <Card className={`text-center py-8 ${isLight ? 'bg-gradient-to-b from-paper-100 to-paper-100/80 border-gold-600/20' : 'bg-gradient-to-b from-space-900 to-space-950 border-gold-500/20'}`}>
+                                <div className="flex items-center justify-center gap-3 mb-4">
+                                    <div className={`w-12 h-px ${isLight ? 'bg-gold-600/30' : 'bg-gold-500/30'}`} />
+                                    {renderIcon('star')}
+                                    <div className={`w-12 h-px ${isLight ? 'bg-gold-600/30' : 'bg-gold-500/30'}`} />
+                                </div>
+                                <div className={`text-xs uppercase tracking-[0.3em] mb-3 ${isLight ? 'text-gold-600/50' : 'text-gold-500/50'}`}>
+                                    {t.ask.oracle_complete || 'COMPLETED'}
+                                </div>
+                                <button
+                                    onClick={onClose}
+                                    className={`px-8 py-2 rounded-full border transition-all ${isLight ? 'border-gold-500/30 text-gold-700 hover:bg-gold-500/10' : 'border-gold-500/30 text-gold-400 hover:bg-gold-500/10'}`}
+                                >
+                                    {t.journal?.return_to_stars || (language === 'zh' ? '返回' : 'Return')}
+                                </button>
+                            </Card>
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
       </div>
     </div>
