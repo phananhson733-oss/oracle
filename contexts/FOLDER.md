@@ -1,5 +1,5 @@
-<!-- INPUT: 认证/权益上下文实现与状态管理说明（含积分解锁与 Synthetica 日额度支持）。 -->
-<!-- OUTPUT: contexts 目录架构摘要与文件索引（含积分解锁与额度 Hook 记录）。 -->
+<!-- INPUT: 认证/权益上下文实现与状态管理说明（含积分解锁、合盘付费回调与 Synthetica 日额度支持）。 -->
+<!-- OUTPUT: contexts 目录架构摘要与文件索引（含合盘购买后续与额度 Hook 记录）。 -->
 <!-- POS: contexts 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -18,3 +18,4 @@
 - EntitlementContext 改为积分解锁流程，统一 Ask/Synthetica 余额判断与价格常量。
 - EntitlementContext 新增 Synthetica 日额度消耗 Hook。
 - AuthContext 接入权益刷新与缓存，供 GM 与支付流程复用。
+- EntitlementContext 支持合盘购买回调并补充已购合盘校验。

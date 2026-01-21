@@ -385,8 +385,6 @@ const WikiClassicsPage: React.FC = () => {
           <div className={`inline-flex items-center gap-3 px-4 py-2 rounded-full border ${frameBorder} ${panelSurface} backdrop-blur-sm shadow-lg`}>
             <Sparkles size={14} className={highlightText} />
             <span className={`text-xs uppercase tracking-[0.25em] font-medium ${highlightText}`}>{t.wiki.classics_kicker}</span>
-            <span className={`h-1 w-1 rounded-full ${isDark ? 'bg-gold-500/40' : 'bg-gold-600/40'}`} />
-            <span className={`text-[10px] uppercase tracking-[0.2em] ${mutedText}`}>{t.wiki.classics_shelf_hint}</span>
           </div>
 
           {/* 标题 */}
@@ -420,9 +418,6 @@ const WikiClassicsPage: React.FC = () => {
                   <Star size={12} className={highlightText} />
                   {t.wiki.classics_section}
                 </div>
-                <div className={`text-[10px] uppercase tracking-widest ${mutedText} opacity-80`}>
-                  {featuredItems.length} {t.wiki.classics_count_unit}
-                </div>
               </div>
 
               {/* 书籍堆叠 */}
@@ -435,12 +430,6 @@ const WikiClassicsPage: React.FC = () => {
       {/* ===== 书架区域 ===== */}
       <Section
         title={t.wiki.classics_section}
-        action={
-          <span className={`text-xs uppercase tracking-[0.2em] ${mutedText} flex items-center gap-2`}>
-            <BookOpen size={14} />
-            {items.length} {t.wiki.classics_count_label}
-          </span>
-        }
       >
         <Card className={`relative overflow-hidden shadow-2xl rounded-[2rem] border ${frameBorder}`} noPadding>
           {/* 书架背景 */}
@@ -494,9 +483,6 @@ const WikiClassicsPage: React.FC = () => {
                         </span>
                         <span className={`h-px w-12 ${isDark ? 'bg-gold-500/40' : 'bg-gold-600/40'}`} />
                       </div>
-                      <span className={`text-[10px] uppercase tracking-[0.2em] ${mutedText}`}>
-                        {group.items.length} {t.wiki.classics_count_unit}
-                      </span>
                     </div>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8">

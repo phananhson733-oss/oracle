@@ -393,7 +393,7 @@ const WikiSyntheticaPage: React.FC = () => {
         </p>
 
         {step === 4 && selection.planet && selection.sign && (
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3">
             <button
               onClick={generateReport}
               disabled={loading}

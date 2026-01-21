@@ -43,18 +43,20 @@ export const ReportView: React.FC<ReportViewProps> = ({ result, selection, onRes
   const planetCopy = t.synthetica.catalog.planets as Record<string, { name: string }>;
   const signCopy = t.synthetica.catalog.signs as Record<string, { name: string }>;
   const houseCopy = t.synthetica.catalog.houses as Record<string, { name: string }>;
+  const aspectCopy = t.synthetica.catalog.aspects as Record<string, { name: string }>;
   const getPlanetLabel = (id?: string) => id ? (planetCopy[id]?.name || id) : '';
   const getSignLabel = (id?: string) => id ? (signCopy[id]?.name || id) : '';
   const getHouseLabel = (id?: string) => id ? (houseCopy[id]?.name || id) : '';
+  const getAspectLabel = (id?: string) => id ? (aspectCopy[id]?.name || id) : '';
 
   const isLight = theme === 'light';
 
   return (
-    <div className="animate-fade-in w-full max-w-3xl mx-auto space-y-6 pb-16 px-4">
+    <div className="animate-fade-in w-full max-w-7xl mx-auto space-y-6 pb-16 px-4">
 
       {/* 标题区域 */}
       <div className="space-y-3 pt-8">
-        <div className={`flex items-center gap-2 text-xs ${isLight ? 'text-gold-600' : 'text-gold-400'}`}>
+        <div className={`flex flex-wrap items-center gap-2 text-xs ${isLight ? 'text-gold-600' : 'text-gold-400'}`}>
           <span>{selection.planet ? getPlanetLabel(selection.planet.id) : ''}</span>
           <span>·</span>
           <span>{selection.sign ? getSignLabel(selection.sign.id) : ''}</span>
@@ -64,6 +66,14 @@ export const ReportView: React.FC<ReportViewProps> = ({ result, selection, onRes
               <span>{getHouseLabel(selection.house.id)}</span>
             </>
           )}
+          {selection.aspects && selection.aspects.map((asp, idx) => (
+            <React.Fragment key={idx}>
+              <span>·</span>
+              <span>
+                {getAspectLabel(asp.aspect.id)} {getPlanetLabel(asp.planet.id)}
+              </span>
+            </React.Fragment>
+          ))}
         </div>
         <h2 className={`text-2xl font-serif ${isLight ? 'text-paper-900' : 'text-star-50'}`}>
           {result.report_title}

@@ -1,6 +1,6 @@
-// INPUT: React 与技术数据（含元素矩阵纸感映射与行运交点支持）。
+// INPUT: React 与技术数据（含元素矩阵纸感映射、行运交点支持与浅色 Unicode 颜色对比修正）。
 // OUTPUT: 导出技术表格组件（含本地化标签、Unicode 符号与跨盘相位矩阵）。
-// POS: 主应用技术规格 UI（含纸感映射与对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: 主应用技术规格 UI（含纸感映射与 Unicode 图标对比修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React from 'react';
 import { ExtendedNatalData, PlanetPosition, Language, Aspect } from '../types';
@@ -8,6 +8,20 @@ import { ASTRO_DICTIONARY, TECH_DATA, ASPECT_COLORS } from '../constants';
 import { useTheme } from './UIComponents';
 
 const { ELEMENTS } = TECH_DATA;
+
+const LIGHT_GLYPH_OVERRIDES: Record<string, string> = {
+  '#ffffff': '#4A4540',
+  '#f3e3ac': '#7F5E36',
+  '#ffeaa7': '#7F5E36',
+  '#fdcb6e': '#7F5E36',
+  '#dfe6e9': '#4A4540',
+};
+
+const resolveGlyphColor = (rawColor: string, isLight: boolean) => {
+  if (!isLight) return rawColor;
+  const normalized = rawColor.trim().toLowerCase();
+  return LIGHT_GLYPH_OVERRIDES[normalized] ?? rawColor;
+};
 
 // --- Unicode Symbol Components ---
 
@@ -18,17 +32,27 @@ const PlanetGlyph: React.FC<{ name: string; size?: number; className?: string; s
   className = '',
   showColor = true
 }) => {
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
   const meta = TECH_DATA.PLANETS[name as keyof typeof TECH_DATA.PLANETS];
   const glyph = meta?.glyph || name.slice(0, 2).toUpperCase();
-  const color = showColor ? (meta?.color || '#888') : 'currentColor';
+  const rawColor = showColor ? (meta?.color || '#888') : 'currentColor';
+  const color = showColor ? resolveGlyphColor(rawColor, isLight) : rawColor;
+  const paddingClass = size <= 14 ? 'px-1 py-0.5' : 'px-1.5 py-0.5';
+  const badgeClass = isLight
+    ? `rounded-full border border-paper-300/80 bg-paper-200/80 ${paddingClass}`
+    : '';
+  const textShadow = isLight ? '0 1px 2px rgb(var(--space-600) / 0.35)' : 'none';
 
   return (
     <span
-      className={`inline-flex items-center justify-center ${className}`}
+      className={`inline-flex items-center justify-center ${badgeClass} ${className}`}
       style={{
         fontSize: size,
         color,
         fontFamily: "'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif",
+        lineHeight: 1,
+        textShadow,
       }}
       aria-label={name}
     >
@@ -44,17 +68,27 @@ const ZodiacGlyph: React.FC<{ sign: string; size?: number; className?: string; s
   className = '',
   showColor = true
 }) => {
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
   const meta = TECH_DATA.SIGNS[sign as keyof typeof TECH_DATA.SIGNS];
   const glyph = meta?.glyph || sign.slice(0, 1);
-  const color = showColor ? (meta?.color || '#888') : 'currentColor';
+  const rawColor = showColor ? (meta?.color || '#888') : 'currentColor';
+  const color = showColor ? resolveGlyphColor(rawColor, isLight) : rawColor;
+  const paddingClass = size <= 14 ? 'px-1 py-0.5' : 'px-1.5 py-0.5';
+  const badgeClass = isLight
+    ? `rounded-full border border-paper-300/80 bg-paper-200/80 ${paddingClass}`
+    : '';
+  const textShadow = isLight ? '0 1px 2px rgb(var(--space-600) / 0.35)' : 'none';
 
   return (
     <span
-      className={`inline-flex items-center justify-center ${className}`}
+      className={`inline-flex items-center justify-center ${badgeClass} ${className}`}
       style={{
         fontSize: size,
         color,
         fontFamily: "'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif",
+        lineHeight: 1,
+        textShadow,
       }}
       aria-label={sign}
     >
@@ -366,8 +400,9 @@ const Degree: React.FC<{ d: number, m?: number }> = ({ d, m }) => (
 const TableRow: React.FC<{ p: PlanetPosition; language?: Language }> = ({ p, language }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+  const isLight = theme === 'light';
   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
-  const signColor = signMeta?.color || '#F3E3AC';
+  const signColor = resolveGlyphColor(signMeta?.color || '#F3E3AC', isLight);
   const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
 
   return (
@@ -442,6 +477,7 @@ export const HouseRulerTable: React.FC<{ rulers: ExtendedNatalData['houseRulers'
 }) => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+  const isLight = theme === 'light';
   const borderClass = isDark ? 'border-gold-500/15' : 'border-paper-300';
   const headerText = isDark ? 'text-star-200' : 'text-paper-400';
   const headerBg = isDark ? 'bg-space-900/40' : 'bg-paper-100/70';
@@ -462,10 +498,10 @@ export const HouseRulerTable: React.FC<{ rulers: ExtendedNatalData['houseRulers'
       </div>
       {rulers.map((r, i) => {
         const signMeta = TECH_DATA.SIGNS[r.sign as keyof typeof TECH_DATA.SIGNS];
-        const signColor = signMeta?.color || '#F3E3AC';
+        const signColor = resolveGlyphColor(signMeta?.color || '#F3E3AC', isLight);
         const fliesToSign = r.fliesToSign;
         const fliesToSignMeta = fliesToSign ? TECH_DATA.SIGNS[fliesToSign as keyof typeof TECH_DATA.SIGNS] : undefined;
-        const fliesToSignColor = fliesToSignMeta?.color || '#F3E3AC';
+        const fliesToSignColor = resolveGlyphColor(fliesToSignMeta?.color || '#F3E3AC', isLight);
         const fliesToLabel = formatHouse(r.fliesTo, language);
         const fliesToSignLabel = fliesToSign ? translateTerm(fliesToSign, language) : '--';
         return (

@@ -25,18 +25,18 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
     ? 'bg-paper-100 text-paper-600 hover:bg-paper-200'
     : 'bg-space-800/50 text-star-400 hover:bg-space-800 hover:text-star-50';
   const titleTone = isLight ? 'text-gold-700' : 'text-gold-400/70';
-  const calendarShellTone = isLight ? 'bg-paper-100/80 border-paper-300' : 'bg-space-800/20 border-gold-500/10';
+  const calendarShellTone = isLight ? 'bg-paper-100/80 border-gold-600/30' : 'bg-space-800/20 border-gold-500/10';
   const weekdayTone = isLight ? 'text-paper-600' : 'text-star-400';
   const statCardTone = isLight
-    ? 'bg-paper-100/85 border-paper-300 text-paper-900 shadow-sm'
+    ? 'bg-paper-100/85 border-gold-600/30 text-paper-900 shadow-sm'
     : 'bg-space-900/60 border-gold-500/10 text-star-50 shadow-[0_20px_40px_-25px_rgba(0,0,0,0.6)]';
   const statCardHoverTone = isLight
     ? 'hover:border-gold-500/50 hover:bg-paper-50 hover:shadow-glow'
     : 'hover:border-gold-500/40 hover:bg-space-800/70 hover:shadow-glow';
   const statCardTitleTone = isLight ? 'text-paper-900' : 'text-star-50';
   const statCardIconTone = isLight ? 'bg-paper-100 border-paper-200' : 'bg-space-950/60 border-gold-500/20';
-  const pickerShellTone = isLight ? 'bg-paper-100 border-paper-300' : 'bg-space-900 border-gold-500/20';
-  const pickerInnerTone = isLight ? 'bg-paper-50 border-paper-300' : 'bg-space-950/40 border-gold-500/10';
+  const pickerShellTone = isLight ? 'bg-paper-100 border-gold-600/30' : 'bg-space-900 border-gold-500/20';
+  const pickerInnerTone = isLight ? 'bg-paper-50 border-gold-600/20' : 'bg-space-950/40 border-gold-500/10';
   const pickerActiveTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const pickerMutedTone = isLight ? 'text-paper-500' : 'text-star-400';
   const titleFont = language === 'en' ? 'font-sans' : 'font-serif';
@@ -188,7 +188,7 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
                 disabled={isFutureDate && !hasEntry}
                 className={`group relative aspect-square rounded-2xl flex flex-col items-center justify-center transition-all duration-300 border
                   ${isFutureDate && !hasEntry ? 'opacity-30 cursor-not-allowed' : ''}
-                  ${hasEntry ? `border-transparent shadow-xl hover:scale-110` : (isLight ? 'border-paper-300 hover:bg-paper-100' : 'border-gold-500/5 hover:bg-gold-500/5')}
+                  ${hasEntry ? `border-transparent shadow-xl hover:scale-110` : (isLight ? 'border-gold-600/20 hover:bg-paper-100' : 'border-gold-500/5 hover:bg-gold-500/5')}
                 `}
               >
                 {mood ? (
@@ -355,7 +355,7 @@ const MonthPickerModal: React.FC<{
             </div>
           </div>
         </div>
-        <div className={`flex border-t p-4 gap-3 ${isLight ? 'border-paper-300 bg-paper-100/70' : 'border-gold-500/10 bg-space-900/50'}`}>
+        <div className={`flex border-t p-4 gap-3 ${isLight ? 'border-gold-600/30 bg-paper-100/70' : 'border-gold-500/10 bg-space-900/50'}`}>
           <button onClick={onClose} className={`flex-1 py-3 text-xs font-bold rounded-xl transition-all ${isLight ? 'text-paper-500 hover:bg-paper-200' : 'text-star-400 hover:bg-space-800'}`}>{t.journal.btn_cancel}</button>
           <button onClick={() => onConfirm(selYear, selMonth)} className={`flex-1 py-3 border text-xs font-black rounded-xl transition-all active:scale-95 ${isLight ? 'bg-gold-500/20 text-gold-700 border-gold-600/40 hover:bg-gold-500/30' : 'bg-gold-600/20 text-gold-400 border-gold-500/30 hover:bg-gold-600/30'}`}>{t.journal.btn_confirm}</button>
         </div>
