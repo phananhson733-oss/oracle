@@ -136,7 +136,7 @@ router.post('/add-tokens', authMiddleware, requireAuth, async (req: Request, res
         quantity: amount,
         consumed: 0,
         stripe_payment_intent_id: `gm_pi_${Date.now()}`,
-        stripe_session_id: `gm_sess_${Date.now()}`,
+        stripe_checkout_session_id: `gm_sess_${Date.now()}`,
       });
 
     if (error) {

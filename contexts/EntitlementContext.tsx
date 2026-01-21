@@ -1,6 +1,6 @@
-// INPUT: React 权益上下文 V2（含详情解锁、Synthetica 日额度与积分解锁逻辑）。
-// OUTPUT: 导出 EntitlementContext 和 EntitlementProvider（含 Synthetica 日额度 Hook 与积分解锁兜底）。
-// POS: 前端权益上下文 V2；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React 权益上下文 V2（含详情解锁、Synthetica 日额度与合盘付费回调）。
+// OUTPUT: 导出 EntitlementContext 和 EntitlementProvider（含合盘购买后续处理与积分解锁兜底）。
+// POS: 前端权益上下文 V2（含合盘付费回调与购买校验）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import {
@@ -58,8 +58,18 @@ interface EntitlementContextType {
 
   // 弹窗控制
   showPaywall: boolean;
-  paywallFeature: { type: FeatureType; id?: string; price?: number } | null;
-  openPaywall: (featureType: FeatureType, featureId?: string, price?: number) => void;
+  paywallFeature: {
+    type: FeatureType;
+    id?: string;
+    price?: number;
+    onPurchased?: () => void | Promise<void>;
+  } | null;
+  openPaywall: (
+    featureType: FeatureType,
+    featureId?: string,
+    price?: number,
+    onPurchased?: () => void | Promise<void>
+  ) => void;
   closePaywall: () => void;
 }
 
@@ -78,7 +88,12 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 付费墙状态
   const [showPaywall, setShowPaywall] = useState(false);
-  const [paywallFeature, setPaywallFeature] = useState<{ type: FeatureType; id?: string; price?: number } | null>(null);
+  const [paywallFeature, setPaywallFeature] = useState<{
+    type: FeatureType;
+    id?: string;
+    price?: number;
+    onPurchased?: () => void | Promise<void>;
+  } | null>(null);
 
   // 便捷属性
   const isSubscriber = entitlements?.isSubscriber ?? false;
@@ -133,6 +148,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
         return entitlements.ask.totalLeft > 0 || entitlements.credits >= POINTS_PRICING.ask;
       }
       if (featureType === 'synastry') {
+        if (featureId && entitlements.purchasedFeatures.synastryHashes.includes(featureId)) return true;
         return entitlements.synastry.totalLeft > 0;
       }
       if (featureType === 'synthetica') {
@@ -166,6 +182,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
       }
 
       case 'synastry': {
+        if (featureId && entitlements.purchasedFeatures.synastryHashes.includes(featureId)) return true;
         return entitlements.synastry.freeLeft > 0;
       }
 
@@ -253,8 +270,13 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
   }, []);
 
   // 付费墙控制
-  const openPaywall = useCallback((featureType: FeatureType, featureId?: string, price?: number) => {
-    setPaywallFeature({ type: featureType, id: featureId, price });
+  const openPaywall = useCallback((
+    featureType: FeatureType,
+    featureId?: string,
+    price?: number,
+    onPurchased?: () => void | Promise<void>
+  ) => {
+    setPaywallFeature({ type: featureType, id: featureId, price, onPurchased });
     setShowPaywall(true);
   }, []);
 
@@ -405,7 +427,7 @@ export function useSyntheticaQuota() {
 
 // 便捷 Hook：合盘额度
 export function useSynastryQuota() {
-  const { entitlements, checkSynastry, recordSynastry, openPaywall } = useEntitlement();
+  const { entitlements, checkSynastry, recordSynastry, openPaywall, checkAccess } = useEntitlement();
 
   const freeLeft = entitlements?.synastry.freeLeft ?? 0;
   const subscriptionLeft = entitlements?.synastry.subscriptionLeft ?? 0;
@@ -415,7 +437,8 @@ export function useSynastryQuota() {
   const checkAndRecord = useCallback(async (
     personA: SynastryPersonInfo,
     personB: SynastryPersonInfo,
-    relationshipType: string
+    relationshipType: string,
+    options?: { onPurchased?: () => void | Promise<void> }
   ) => {
     const result = await checkSynastry(personA, personB, relationshipType);
 
@@ -430,10 +453,25 @@ export function useSynastryQuota() {
       return { hash, isNew: true };
     }
 
+    let hasPurchased = entitlements?.purchasedFeatures.synastryHashes.includes(result.hash) ?? false;
+    if (!hasPurchased) {
+      try {
+        const access = await checkAccess('synastry', result.hash);
+        hasPurchased = access.canAccess && access.reason === 'purchased';
+      } catch {
+        hasPurchased = false;
+      }
+    }
+
+    if (hasPurchased) {
+      const hash = await recordSynastry(personA, personB, relationshipType, false);
+      return { hash, isNew: true, paid: true };
+    }
+
     // 需要付费
-    openPaywall('synastry', result.hash, POINTS_PRICING.synastry);
+    openPaywall('synastry', result.hash, POINTS_PRICING.synastry, options?.onPurchased);
     return { hash: result.hash, isNew: false, needPurchase: true };
-  }, [checkSynastry, recordSynastry, openPaywall]);
+  }, [checkSynastry, recordSynastry, openPaywall, checkAccess, entitlements?.purchasedFeatures.synastryHashes]);
 
   return {
     freeLeft,

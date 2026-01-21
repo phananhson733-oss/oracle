@@ -40,8 +40,8 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
   const { t } = useLanguage();
   const { theme } = useTheme();
   const isLight = theme === 'light';
-  const shellTone = isLight ? 'bg-paper-100/90 border-paper-300' : 'bg-space-900/40 border-gold-500/10';
-  const sidebarTone = isLight ? 'bg-paper-100/80 border-paper-300' : 'bg-space-900/20 border-gold-500/10';
+  const shellTone = isLight ? 'bg-paper-100/90 border-gold-600/30' : 'bg-space-900/40 border-gold-500/10';
+  const sidebarTone = isLight ? 'bg-paper-100/80 border-gold-600/30' : 'bg-space-900/20 border-gold-500/10';
   const accentText = isLight ? 'text-gold-700' : 'text-gold-500';
   const [history, setHistory] = useState<CBTRecord[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -195,7 +195,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
       <div className={`w-full max-w-7xl h-[90vh] backdrop-blur-3xl rounded-[3.5rem] border shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col md:flex-row relative ${shellTone}`}>
 
         <aside className={`w-full md:w-[400px] border-r flex flex-col relative z-0 ${sidebarTone}`}>
-          <div className={`p-8 border-b ${isLight ? 'border-paper-300' : 'border-gold-500/10'} flex items-center justify-between`}>
+          <div className={`p-8 border-b ${isLight ? 'border-gold-600/30' : 'border-gold-500/10'} flex items-center justify-between`}>
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-3xl bg-gradient-to-tr from-gold-600 to-gold-400 shadow-xl flex items-center justify-center p-0.5">
                 <div className="w-full h-full rounded-[1.2rem] bg-space-900 flex items-center justify-center font-serif font-black text-xl text-star-50">{initials}</div>

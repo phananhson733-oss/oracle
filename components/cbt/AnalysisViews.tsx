@@ -168,7 +168,7 @@ const DataRow = ({ title, children, className = "", onExpand }: any) => {
   const { theme } = useTheme();
   const { language } = useLanguage();
   const isLight = theme === 'light';
-  const panelTone = isLight ? 'bg-paper-100/85 border-paper-300' : 'bg-space-800/40 border-gold-500/10';
+  const panelTone = isLight ? 'bg-paper-100/85 border-gold-600/30' : 'bg-space-800/40 border-gold-500/10';
   const labelTone = isLight ? 'text-star-300' : 'text-star-400';
   const buttonTone = isLight
     ? 'bg-paper-100 hover:bg-paper-200 text-star-300 border border-paper-200'
@@ -204,7 +204,7 @@ const InsightRow = ({ text, highlight, isLoading }: any) => {
   const { language, t } = useLanguage();
   const isLight = theme === 'light';
   const cardTone = isLight
-    ? 'bg-gradient-to-r from-paper-100 to-paper-50 border-paper-300 shadow-sm'
+    ? 'bg-gradient-to-r from-paper-100 to-paper-50 border-gold-600/30 shadow-sm'
     : 'bg-gradient-to-r from-space-900/50 to-space-800/30 border-gold-500/10 shadow-lg shadow-black/20';
   const accentTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const highlightTone = isLight ? 'text-gold-800' : 'text-gold-200';
@@ -280,7 +280,7 @@ const parseAdviceList = (text: string) => {
 const ActionRow = ({ title, text, icon: Icon = Sparkles }: any) => {
   const { theme } = useTheme();
   const isLight = theme === 'light';
-  const cardTone = isLight ? 'bg-paper-100/85 border-paper-300 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
+  const cardTone = isLight ? 'bg-paper-100/85 border-gold-600/30 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
   const accentTone = isLight ? 'text-gold-700' : 'text-accent';
   const textTone = isLight ? 'text-star-700' : 'text-star-200';
   const numberTone = isLight ? 'text-paper-400' : 'text-space-600';
@@ -323,7 +323,7 @@ const AstroRow = ({ text }: any) => {
   const { theme } = useTheme();
   const { t } = useLanguage();
   const isLight = theme === 'light';
-  const cardTone = isLight ? 'bg-paper-50 border-paper-200 shadow-sm' : 'bg-space-950/30 border-gold-500/10';
+  const cardTone = isLight ? 'bg-paper-50 border-gold-600/20 shadow-sm' : 'bg-space-950/30 border-gold-500/10';
   const labelTone = isLight ? 'text-gold-600' : 'text-gold-400';
   const bodyTone = isLight ? 'text-star-600' : 'text-star-300';
   const iconBg = isLight ? 'bg-paper-200 text-gold-600' : 'bg-space-800 text-gold-500';
@@ -351,8 +351,8 @@ const FullDataModal = ({ title, sections, onClose }: any) => {
   const { language } = useLanguage();
   const isLight = theme === 'light';
   const overlayTone = isLight ? 'bg-paper-200/80' : 'bg-space-950/80';
-  const containerTone = isLight ? 'bg-paper-100 border-paper-300' : 'bg-space-900 border-gold-500/20';
-  const dividerTone = isLight ? 'border-paper-300' : 'border-gold-500/10';
+  const containerTone = isLight ? 'bg-paper-100 border-gold-600/30' : 'bg-space-900 border-gold-500/20';
+  const dividerTone = isLight ? 'border-gold-600/20' : 'border-gold-500/10';
   const labelTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const mutedText = isLight ? 'text-star-200' : 'text-star-400';
   const headingFont = language === 'en' ? 'font-sans' : '';

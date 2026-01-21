@@ -1,6 +1,6 @@
-// INPUT: React、Router、组件与后端数据服务依赖（含积分使用情况页、迁移提示、SEO head 输出与付费墙入口）。
-// OUTPUT: 导出主应用组件（含 Ask 问答分区切换、SEO/noindex head 输出与 Unicode 图标底板对比度修正）。
-// POS: 主应用路由与页面编排中心（含 Ask 问答分隔线、细线色条与图标底板对比度对齐）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、Router、组件与后端数据服务依赖（含积分使用情况页、迁移提示、SEO head 输出与付费墙回调）。
+// OUTPUT: 导出主应用组件（含合盘积分购买后自动触发生成、组合盘 Big3 风格卡片与综述/对比盘扁平化）。
+// POS: 主应用路由与页面编排中心（含合盘综述与对比盘排版修正、付费墙后续流程与细线色条对齐）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
@@ -187,7 +187,7 @@ const useUserProfile = () => {
 const FrameworkDisclaimer: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-gold-600/30';
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-400';
 
   return (
@@ -215,6 +215,53 @@ const MiniLoader: React.FC<{ label: string; error?: string | null }> = ({ label,
 };
 
 const DETAIL_LABEL_CLASS = "text-xs uppercase tracking-widest opacity-80";
+
+const PLANET_GLYPHS: Record<string, string> = {
+  sun: '☉',
+  moon: '☽',
+  rising: '↑',
+  mercury: '☿',
+  venus: '♀',
+  mars: '♂',
+  saturn: '♄',
+  pluto: '♇',
+  chiron: '⚷',
+  north_node: '☊',
+};
+
+const ZODIAC_GLYPHS: Array<[RegExp, string]> = [
+  [/Aries|白羊座/iu, '♈'],
+  [/Taurus|金牛座/iu, '♉'],
+  [/Gemini|双子座/iu, '♊'],
+  [/Cancer|巨蟹座/iu, '♋'],
+  [/Leo|狮子座/iu, '♌'],
+  [/Virgo|处女座/iu, '♍'],
+  [/Libra|天秤座/iu, '♎'],
+  [/Scorpio|天蝎座/iu, '♏'],
+  [/Sagittarius|射手座/iu, '♐'],
+  [/Capricorn|摩羯座/iu, '♑'],
+  [/Aquarius|水瓶座/iu, '♒'],
+  [/Pisces|双鱼座/iu, '♓'],
+];
+
+const splitLabelParts = (label: string) => {
+  const match = label.match(/^(.+?)\s*[（(](.+)[)）]\s*$/);
+  if (!match) return { main: label.trim(), sub: '' };
+  return { main: match[1].trim(), sub: match[2].trim() };
+};
+
+const getZodiacGlyph = (value: string) => {
+  for (const [pattern, glyph] of ZODIAC_GLYPHS) {
+    if (pattern.test(value)) return glyph;
+  }
+  return '';
+};
+
+const formatSignHouse = (value?: string) => {
+  if (!value) return '';
+  const glyph = getZodiacGlyph(value);
+  return glyph ? `${glyph} ${value}` : value;
+};
 
 // Weather/Mood Emoji Icon Component - render emojis directly for 7-day forecast
 const WeatherMoodIcon: React.FC<{ emoji: string; className?: string }> = ({ emoji, className = "w-7 h-7 text-xl" }) => (
@@ -271,6 +318,35 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
         ))}
       </div>
     </div>
+  );
+};
+
+const EntityPlanetCard: React.FC<{
+  label: string;
+  icon: string;
+  signHouse?: string;
+  description: string;
+  accent: string;
+  labelTone: string;
+}> = ({ label, icon, signHouse, description, accent, labelTone }) => {
+  const { theme } = useTheme();
+  const { main, sub } = splitLabelParts(label);
+  const signText = formatSignHouse(signHouse);
+  const headingTone = theme === 'dark' ? 'text-gold-500' : 'text-gold-600';
+  const bodyTone = theme === 'dark' ? 'text-star-200/90' : 'text-paper-700';
+  const subTone = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
+
+  return (
+    <Card className={`border-l ${accent} p-5`}>
+      <div className="flex items-baseline justify-between mb-3 gap-3">
+        <span className={`text-lg font-serif font-medium ${labelTone}`}>{icon} {main}</span>
+        {sub && <span className={`text-xs uppercase tracking-widest ${subTone}`}>{sub}</span>}
+      </div>
+      {signText && (
+        <h3 className={`text-xl font-serif font-medium ${headingTone} mb-2`}>{signText}</h3>
+      )}
+      <p className={`text-sm leading-relaxed ${bodyTone}`}>{description}</p>
+    </Card>
   );
 };
 
@@ -772,7 +848,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                 />
                 {showSuggestions && citySuggestions.length > 0 && (
-                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-paper-300'} shadow-lg max-h-48 overflow-auto`}>
+                  <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-gold-600/30'} shadow-lg max-h-48 overflow-auto`}>
                       {citySuggestions.map((city, i) => (
                         <div
                           key={i}
@@ -846,7 +922,7 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     
     return (
         <Container>
-            <div className={`flex justify-between items-end mb-12 border-b pb-6 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
+            <div className={`flex justify-between items-end mb-12 border-b pb-6 ${theme === 'dark' ? 'border-gold-500/15' : 'border-gold-600/30'}`}>
               <div>
                   <h1 className="text-4xl font-serif font-medium mb-2">{t.me.hero_title}</h1>
                   <p className="text-sm font-mono">
@@ -1973,7 +2049,7 @@ const PerspectiveCard: React.FC<{
                     <p className="text-sm leading-relaxed opacity-85">{item.description}</p>
                 </div>
                 {item.talk_script && (
-                    <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100'} border border-dashed ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
+                    <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100/80'}`}>
                         <div className="text-xs uppercase tracking-widest text-gold-500 mb-2 font-bold">{t.us.dynamics_talk_to}</div>
                         <p className="text-sm font-serif italic opacity-90">"{item.talk_script}"</p>
                     </div>
@@ -2076,15 +2152,15 @@ const PerspectiveCard: React.FC<{
                                     <h5 className="text-lg font-semibold">{item.subjective}</h5>
                                 </div>
                                 <div className="space-y-3 text-sm">
-                                    <div className={`p-3 rounded-lg border border-danger/30 border-l border-l-danger/40 ${theme === 'dark' ? 'bg-danger/10' : 'bg-danger/5'}`}>
+                                    <div className={`p-3 rounded-lg border-l border-l-danger/40 ${theme === 'dark' ? 'bg-danger/10' : 'bg-danger/5'}`}>
                                         <span className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}>{t.us.perspective_reaction}</span>
                                         <p className="opacity-90">{item.reaction}</p>
                                     </div>
-                                    <div className={`p-3 rounded-lg border border-accent/30 border-l border-l-accent/40 ${theme === 'dark' ? 'bg-accent/10' : 'bg-accent/5'}`}>
+                                    <div className={`p-3 rounded-lg border-l border-l-accent/40 ${theme === 'dark' ? 'bg-accent/10' : 'bg-accent/5'}`}>
                                         <span className={`${DETAIL_LABEL_CLASS} text-accent block mb-1`}>{t.us.perspective_hidden_need}</span>
                                         <p className="opacity-90">{item.need}</p>
                                     </div>
-                                    <div className={`p-3 rounded-lg border border-gold-500/30 border-l border-l-gold-500/40 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100'}`}>
+                                    <div className={`p-3 rounded-lg border-l border-l-gold-500/40 ${theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100'}`}>
                                         <span className={`${DETAIL_LABEL_CLASS} text-gold-500 block mb-1`}>{t.us.perspective_advice}</span>
                                         <p className="opacity-90">{item.advice}</p>
                                         <div className="flex flex-wrap items-center justify-between gap-3 mt-2 text-xs opacity-70">
@@ -2208,7 +2284,7 @@ const PerspectiveCard: React.FC<{
                         <div className="text-sm font-semibold uppercase tracking-widest opacity-70 mb-2">
                             {selfName} × {otherName}
                         </div>
-                        <div className="p-4 rounded-xl border border-l border-l-blue-500/40">
+                        <div className={`p-4 rounded-xl border-l border-l-blue-500/40 ${theme === 'dark' ? 'bg-space-900/50' : 'bg-paper-100/80'}`}>
                             <div className="text-xs uppercase tracking-widest opacity-70 mb-2">{t.us.avatar_title}</div>
                             <div className="font-serif text-2xl text-blue-500">{relationship_avatar?.title || t.us.avatar_title}</div>
                         </div>
@@ -2347,7 +2423,7 @@ const PerspectiveCard: React.FC<{
                                 </div>
                                 <p className="text-sm leading-relaxed opacity-90 mb-4">{deep_dive.pluto.description}</p>
                                 {deep_dive.pluto.warning && (
-                                    <div className="p-3 rounded-lg border border-l border-l-danger/40 border-danger/30">
+                                    <div className={`p-3 rounded-lg border-l border-l-danger/40 ${theme === 'dark' ? 'bg-danger/10' : 'bg-danger/5'}`}>
                                         <span className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}>{t.us.chem_pluto_warning}</span>
                                         <p className="text-sm opacity-90">{deep_dive.pluto.warning}</p>
                                     </div>
@@ -2364,7 +2440,7 @@ const PerspectiveCard: React.FC<{
                                     </div>
                                 </div>
                                 <p className="text-sm leading-relaxed opacity-90 mb-4">{deep_dive.chiron.description}</p>
-                                <div className="p-3 rounded-lg border border-l border-l-success/40 border-success/30">
+                                <div className={`p-3 rounded-lg border-l border-l-success/40 ${theme === 'dark' ? 'bg-success/10' : 'bg-success/5'}`}>
                                     <span className={`${DETAIL_LABEL_CLASS} text-success block mb-1`}>{t.us.chem_chiron_path}</span>
                                     <p className="text-sm opacity-90">{deep_dive.chiron.healing_path}</p>
                                 </div>
@@ -2391,7 +2467,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language, tl } = useLanguage();
     const { theme } = useTheme();
     const { checkAndRecord: checkSynastryQuota, totalLeft: synastryQuotaLeft } = useSynastryQuota();
-    const { checkAccess, openPaywall, entitlements, refreshEntitlements } = useEntitlement();
+    const { checkAccess, openPaywall, entitlements, refreshEntitlements, checkSynastry, recordSynastry } = useEntitlement();
     const [view, setView] = useState<'select' | 'report'>('select');
     const [segments, setSegments] = useState<Partial<SynastryTabContentMap>>({});
     const [reportMeta, setReportMeta] = useState<T.AIContentMeta | null>(null);
@@ -2792,6 +2868,73 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       fetchSynastryOverviewSectionData('vibe_tags');
     }, [view, activeTab, segments.overview, selectedA?.id, selectedB?.id, relationshipType, language]);
 
+    const buildSynastryPersonInfo = (person: T.SynastryProfile) => ({
+      name: person.name,
+      birthDate: person.birthDate,
+      birthTime: person.birthTime,
+      birthCity: person.birthCity,
+      lat: person.lat ?? 0,
+      lon: person.lon ?? 0,
+      timezone: person.timezone || 'UTC',
+    });
+
+    const ensureSynastryHash = async () => {
+      if (synastryHash || !selectedA || !selectedB) return synastryHash;
+      try {
+        const result = await checkSynastry(
+          buildSynastryPersonInfo(selectedA),
+          buildSynastryPersonInfo(selectedB),
+          relationshipType
+        );
+        if (result?.hash) {
+          setSynastryHash(result.hash);
+          return result.hash;
+        }
+      } catch {
+        // ignore and fallback to prompt
+      }
+      return null;
+    };
+
+    const startSynastryReport = async () => {
+      setView('report');
+      setSegments({});
+      setReportMeta(null);
+      setReportError(null);
+      setSegmentErrors({});
+      setSegmentLoading({});
+      setOverviewSections({});
+      setOverviewSectionErrors({});
+      setOverviewSectionLoading({});
+      setOverviewAccordionOpen({});
+      setTechnical(null);
+      setTechnicalLoading(false);
+      setTechnicalError(null);
+      setActiveTab('overview');
+      await fetchSynastryTab('overview');
+    };
+
+    const handlePaidSynastry = async (
+      personAInfo: ReturnType<typeof buildSynastryPersonInfo>,
+      personBInfo: ReturnType<typeof buildSynastryPersonInfo>,
+      relationType: string
+    ) => {
+      if (isGenerating) return;
+      setGenerateError(null);
+      setIsGenerating(true);
+      try {
+        const hash = await recordSynastry(personAInfo, personBInfo, relationType, false);
+        if (hash) {
+          setSynastryHash(hash);
+        }
+        await startSynastryReport();
+      } catch {
+        setGenerateError(t.app.error);
+      } finally {
+        setIsGenerating(false);
+      }
+    };
+
     const handleGenerate = async () => {
       if (!selectedA || !selectedB || isGenerating) return;
       setGenerateError(null);
@@ -2799,26 +2942,12 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
       try {
         // 检查合盘配额
-        const personAInfo = {
-          name: selectedA.name,
-          birthDate: selectedA.birthDate,
-          birthTime: selectedA.birthTime,
-          birthCity: selectedA.birthCity,
-          lat: selectedA.lat ?? 0,
-          lon: selectedA.lon ?? 0,
-          timezone: selectedA.timezone || 'UTC',
-        };
-        const personBInfo = {
-          name: selectedB.name,
-          birthDate: selectedB.birthDate,
-          birthTime: selectedB.birthTime,
-          birthCity: selectedB.birthCity,
-          lat: selectedB.lat ?? 0,
-          lon: selectedB.lon ?? 0,
-          timezone: selectedB.timezone || 'UTC',
-        };
+        const personAInfo = buildSynastryPersonInfo(selectedA);
+        const personBInfo = buildSynastryPersonInfo(selectedB);
 
-        const quotaResult = await checkSynastryQuota(personAInfo, personBInfo, relationshipType);
+        const quotaResult = await checkSynastryQuota(personAInfo, personBInfo, relationshipType, {
+          onPurchased: () => handlePaidSynastry(personAInfo, personBInfo, relationshipType),
+        });
         if (quotaResult?.hash) {
           setSynastryHash(quotaResult.hash);
         }
@@ -2828,21 +2957,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           return;
         }
 
-        setView('report');
-        setSegments({});
-        setReportMeta(null);
-        setReportError(null);
-        setSegmentErrors({});
-        setSegmentLoading({});
-        setOverviewSections({});
-        setOverviewSectionErrors({});
-        setOverviewSectionLoading({});
-        setOverviewAccordionOpen({});
-        setTechnical(null);
-        setTechnicalLoading(false);
-        setTechnicalError(null);
-        setActiveTab('overview');
-        await fetchSynastryTab('overview');
+        await startSynastryReport();
       } catch {
         setGenerateError(t.app.error);
       } finally {
@@ -2907,6 +3022,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
     const sectionTitle = "text-sm font-bold uppercase text-gold-500 mb-4 tracking-widest border-b border-gold-500/20 pb-2";
     const detailLabelClass = DETAIL_LABEL_CLASS;
+    const overviewPanelTone = theme === 'dark' ? 'bg-space-900/40' : 'bg-paper-100/80';
     const clampScore = (score: number) => Math.max(0, Math.min(100, Math.round(score)));
     const getRadarTone = (dim: string) => {
       const key = dim.toLowerCase();
@@ -3007,10 +3123,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       chartData: Record<string, unknown>,
       customNames?: { nameA: string; nameB: string }
     ) => {
-      const featureId = synastryHash;
-      const requestKey = `synastry_detail_${featureId || 'unknown'}_${type}_${context}`;
+      const resolvedHash = synastryHash || await ensureSynastryHash();
+      const requestKey = `synastry_detail_${resolvedHash || 'unknown'}_${type}_${context}`;
 
-      if (!featureId) {
+      if (!resolvedHash) {
         setSynastryDetailModal({
           open: true,
           loading: false,
@@ -3026,7 +3142,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       pendingRequests.current.add(requestKey);
 
       try {
-        const access = await requestDetailAccess('synastry_detail', featureId);
+        const access = await requestDetailAccess('synastry_detail', resolvedHash);
         if (!access.canAccess) {
           return;
         }
@@ -3047,7 +3163,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           lang: language,
           nameA: customNames?.nameA || selectedA?.name,
           nameB: customNames?.nameB || selectedB?.name,
-          cacheKey: `synastry:${featureId}:${context}:${type}`,
+          cacheKey: `synastry:${resolvedHash}:${context}:${type}`,
         });
         setSynastryDetailModal((prev) => ({
           ...prev,
@@ -3511,7 +3627,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2">{t.us.relationship_label}</div>
                 <div className="flex items-center gap-3">
                   <select
-                    className={`w-full h-10 px-4 pr-8 rounded-lg outline-none transition-all font-sans text-sm appearance-none bg-no-repeat ${theme === 'dark' ? 'bg-space-900 border border-gold-500/15 text-star-50' : 'bg-paper-100/85 border-paper-300 text-paper-900'}`}
+                    className={`w-full h-10 px-4 pr-8 rounded-lg outline-none transition-all font-sans text-sm appearance-none bg-no-repeat ${theme === 'dark' ? 'bg-space-900 border border-gold-500/15 text-star-50' : 'bg-paper-100/85 border border-gold-600/40 text-paper-900'}`}
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`, backgroundPosition: 'right 12px center', backgroundSize: '16px' }}
                     value={relationshipType}
                     onChange={(e) => {
@@ -3534,9 +3650,6 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                     </button>
                   )}
                 </div>
-                {suggestions.length > 0 && (
-                  <div className="text-xs uppercase tracking-widest opacity-70 mt-2">{t.us.relationship_hint}</div>
-                )}
               </div>
               {/* 合盘配额显示 */}
               <div className="text-xs text-center mb-2 opacity-70">
@@ -3887,7 +4000,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    </div>
                                  )}
                                  {sweetSpots.length > 0 && (
-                                   <Card className="border-l border-l-success/40">
+                                   <div className={`rounded-xl p-5 border-l border-l-success/40 ${overviewPanelTone}`}>
                                      <h3 className="text-xs font-bold uppercase text-success mb-4 tracking-widest">{t.us.sweet}</h3>
                                      {sweetSpots.map((s, i) => (
                                        <div key={i} className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
@@ -3908,10 +4021,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          </div>
                                        </div>
                                      ))}
-                                   </Card>
+                                   </div>
                                  )}
                                  {frictionPoints.length > 0 && (
-                                   <Card className="border-l border-l-danger/40">
+                                   <div className={`rounded-xl p-5 border-l border-l-danger/40 ${overviewPanelTone}`}>
                                      <h3 className="text-xs font-bold uppercase text-danger mb-4 tracking-widest">{t.us.friction}</h3>
                                      {frictionPoints.map((f, i) => (
                                        <div key={i} className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
@@ -3932,7 +4045,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          </div>
                                        </div>
                                      ))}
-                                   </Card>
+                                   </div>
                                  )}
                                </div>
                              )}
@@ -3963,7 +4076,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    const bNeeds = stripNeedsPrefix(item.b_needs, personBLabel);
                                    const tone = getCoreDynamicsTone(item.key);
                                    return (
-                                     <Card key={`${item.key}-${i}`} className={`border-l ${tone.border} ${tone.bg}`}>
+                                     <div key={`${item.key}-${i}`} className={`rounded-xl p-5 border-l ${tone.border} ${overviewPanelTone} ${tone.bg}`}>
                                        <h4 className={`font-semibold text-sm mb-3 ${tone.text}`}>{item.title}</h4>
                                        <div className="space-y-4 text-sm leading-relaxed">
                                          <div>
@@ -3987,7 +4100,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                            <div className="text-xs opacity-80 mt-2">{t.us.repair_action}: {item.repair.action}</div>
                                          </div>
                                        </div>
-                                     </Card>
+                                     </div>
                                    );
                                  })}
                                </div>
@@ -4015,7 +4128,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {conflictLoop && (
                                <div className="space-y-6">
                                  {/* Conflict Loop Diagram */}
-                                 <Card className="border-l border-l-danger/40">
+                                 <div className={`rounded-xl p-5 border-l border-l-danger/40 ${overviewPanelTone}`}>
                                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
                                      <div className={`p-3 rounded-lg ${theme === 'dark' ? 'bg-space-700' : 'bg-paper-100'}`}>
                                        <div className="text-xs uppercase tracking-widest text-orange-500 mb-2">{t.us.conflict_trigger}</div>
@@ -4034,7 +4147,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                        <div className="text-sm">{conflictLoop.conflict_loop.result}</div>
                                      </div>
                                    </div>
-                                 </Card>
+                                 </div>
 
                                  {/* Repair Scripts */}
                                  <div>
@@ -4042,7 +4155,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                    <p className="text-xs opacity-70 mb-4">{t.us.repair_scripts_subtitle}</p>
                                    <div className="grid md:grid-cols-2 gap-4">
                                      {conflictLoop.repair_scripts.map((script, i) => (
-                                        <Card key={i} className="border-l border-l-green-500/40">
+                                        <div key={i} className={`rounded-xl p-5 border-l border-l-green-500/40 ${overviewPanelTone}`}>
                                          <div className="text-xs uppercase tracking-widest opacity-70 mb-2">
                                            {script.for_person === 'a' ? personALabel : personBLabel} → {script.for_person === 'a' ? personBLabel : personALabel}
                                          </div>
@@ -4054,7 +4167,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          >
                                            {t.us.repair_copy}
                                          </button>
-                                       </Card>
+                                       </div>
                                      ))}
                                    </div>
                                  </div>
@@ -4081,7 +4194,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              )}
                              {practiceTools && (
                                <div className="space-y-4">
-                                 <Card className="border-l border-l-blue-500/40">
+                                 <div className={`rounded-xl p-5 border-l border-l-blue-500/40 ${overviewPanelTone}`}>
                                    <div className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">
                                      {personALabel}{t.us.practice_focus}
                                    </div>
@@ -4093,8 +4206,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                        </li>
                                      ))}
                                    </ul>
-                                 </Card>
-                                 <Card className="border-l border-l-success/40">
+                                 </div>
+                                 <div className={`rounded-xl p-5 border-l border-l-success/40 ${overviewPanelTone}`}>
                                    <div className="text-xs font-bold uppercase tracking-widest text-success mb-3">
                                      {personBLabel}{t.us.practice_focus}
                                    </div>
@@ -4106,9 +4219,9 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                        </li>
                                      ))}
                                    </ul>
-                                 </Card>
+                                 </div>
                                  {practiceTools.joint?.length > 0 && (
-                                   <Card className="border-l border-l-gold-500/40">
+                                   <div className={`rounded-xl p-5 border-l border-l-gold-500/40 ${overviewPanelTone}`}>
                                      <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-3">{t.us.joint_practice}</div>
                                      <ul className="space-y-3">
                                        {practiceTools.joint.map((pt, i) => (
@@ -4118,7 +4231,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          </li>
                                        ))}
                                      </ul>
-                                   </Card>
+                                   </div>
                                  )}
                                </div>
                              )}
@@ -4145,7 +4258,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {weatherForecast && (
                                <div className="space-y-6">
                                  {/* Weekly Pulse */}
-                                 <Card className="border-l border-l-blue-500/40">
+                                 <div className={`rounded-xl p-5 border-l border-l-blue-500/40 ${overviewPanelTone}`}>
                                    <h4 className={`${detailLabelClass} text-blue-500 mb-1`}>{t.us.weekly_pulse_title}</h4>
                                    <p className="text-xs opacity-70 mb-4">{t.us.weekly_pulse_subtitle}</p>
 
@@ -4192,10 +4305,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                        );
                                      })}
                                    </div>
-                                 </Card>
+                                 </div>
 
                                  {/* Season Ahead */}
-                                 <Card className="border-l border-l-gold-500/40">
+                                 <div className={`rounded-xl p-5 border-l border-l-gold-500/40 ${overviewPanelTone}`}>
                                    <h4 className={`${detailLabelClass} text-gold-500 mb-1`}>{t.us.season_ahead_title}</h4>
                                    <p className="text-xs opacity-70 mb-4">{t.us.season_ahead_subtitle}</p>
 
@@ -4246,7 +4359,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                        </div>
                                      ))}
                                    </div>
-                                 </Card>
+                                 </div>
                                </div>
                              )}
                            </Accordion>
@@ -4279,7 +4392,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                              {highlights && (
                                <>
                                  <div className="space-y-4">
-                                  <Card className="border-l border-l-success/40">
+                                  <div className={`rounded-xl p-5 border-l border-l-success/40 ${overviewPanelTone}`}>
                                      <div className="text-xs font-bold uppercase tracking-widest text-success mb-4">{t.us.top_harmony}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.harmony.map((item, i) => (
@@ -4296,8 +4409,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             </div>
                                          ))}
                                       </div>
-                                   </Card>
-                                   <Card className="border-l border-l-danger/40">
+                                   </div>
+                                   <div className={`rounded-xl p-5 border-l border-l-danger/40 ${overviewPanelTone}`}>
                                       <div className="text-xs font-bold uppercase tracking-widest text-danger mb-4">{t.us.top_challenges}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.challenges.map((item, i) => (
@@ -4314,8 +4427,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             </div>
                                          ))}
                                       </div>
-                                   </Card>
-                                  <Card className="border-l border-l-accent/40">
+                                   </div>
+                                  <div className={`rounded-xl p-5 border-l border-l-accent/40 ${overviewPanelTone}`}>
                                       <div className="text-xs font-bold uppercase tracking-widest text-accent mb-4">{t.us.highlights_overlays}</div>
                                       <div className="space-y-3 text-sm">
                                          {highlights.overlays.map((item, i) => (
@@ -4325,7 +4438,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                             </div>
                                          ))}
                                       </div>
-                                   </Card>
+                                   </div>
                                  </div>
                                  <div className={`mt-6 p-4 rounded-lg border text-xs ${theme === 'dark' ? 'border-gold-500/15/60 bg-space-900/60 text-star-300' : 'border-paper-300 bg-paper-100 text-paper-500'}`}>
                                     <span className="font-semibold mr-2">{t.us.accuracy_note}</span>
@@ -4468,36 +4581,30 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   <Section title={t.us.entity_heart_title} className="mb-8">
                                     <div className="space-y-4">
                                       <div className="grid md:grid-cols-3 gap-4">
-                                        <Card className="flex gap-4 items-start border-l border-l-red-500/40 h-full">
-                                          <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-red-500/15 text-red-500' : 'bg-red-500/10 text-red-500'}`}>☉</div>
-                                          <div className="flex-1">
-                                            <div className="flex items-center gap-2 mb-1">
-                                              <span className={`${DETAIL_LABEL_CLASS} text-red-500`}>{t.us.entity_heart_sun}</span>
-                                              <Chip label={heart.sun.sign_house} />
-                                            </div>
-                                            <p className="text-sm opacity-90">{heart.sun.meaning}</p>
-                                          </div>
-                                        </Card>
-                                        <Card className="flex gap-4 items-start border-l border-l-blue-500/40 h-full">
-                                          <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-blue-500/15 text-blue-500' : 'bg-blue-500/10 text-blue-500'}`}>☽</div>
-                                          <div className="flex-1">
-                                            <div className="flex items-center gap-2 mb-1">
-                                              <span className={`${DETAIL_LABEL_CLASS} text-blue-500`}>{t.us.entity_heart_moon}</span>
-                                              <Chip label={heart.moon.sign_house} />
-                                            </div>
-                                            <p className="text-sm opacity-90">{heart.moon.meaning}</p>
-                                          </div>
-                                        </Card>
-                                        <Card className="flex gap-4 items-start border-l border-l-gold-500/40 h-full">
-                                          <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-gold-500/15 text-gold-500' : 'bg-gold-500/10 text-gold-500'}`}>↑</div>
-                                          <div className="flex-1">
-                                            <div className="flex items-center gap-2 mb-1">
-                                              <span className={`${DETAIL_LABEL_CLASS} text-gold-500`}>{t.us.entity_heart_rising}</span>
-                                              <Chip label={heart.rising.sign_house} />
-                                            </div>
-                                            <p className="text-sm opacity-90">{heart.rising.meaning}</p>
-                                          </div>
-                                        </Card>
+                                        <EntityPlanetCard
+                                          label={t.us.entity_heart_sun}
+                                          icon={PLANET_GLYPHS.sun}
+                                          signHouse={heart.sun?.sign_house}
+                                          description={heart.sun?.meaning || ''}
+                                          accent="border-l-red-500/40"
+                                          labelTone="text-red-500"
+                                        />
+                                        <EntityPlanetCard
+                                          label={t.us.entity_heart_moon}
+                                          icon={PLANET_GLYPHS.moon}
+                                          signHouse={heart.moon?.sign_house}
+                                          description={heart.moon?.meaning || ''}
+                                          accent="border-l-blue-500/40"
+                                          labelTone="text-blue-500"
+                                        />
+                                        <EntityPlanetCard
+                                          label={t.us.entity_heart_rising}
+                                          icon={PLANET_GLYPHS.rising}
+                                          signHouse={heart.rising?.sign_house}
+                                          description={heart.rising?.meaning || ''}
+                                          accent="border-l-gold-500/40"
+                                          labelTone={theme === 'dark' ? 'text-gold-500' : 'text-gold-700'}
+                                        />
                                       </div>
                                       <Card className="border-l border-l-blue-500/40">
                                         <div className={`${DETAIL_LABEL_CLASS} text-blue-500 mb-2`}>{t.us.entity_heart_summary}</div>
@@ -4509,41 +4616,35 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   {/* Section 3: The Daily Rhythm */}
                                   <Section title={t.us.entity_daily_title} className="mb-8">
                                     <div className="grid md:grid-cols-3 gap-4 mb-6">
-                                      <Card className="flex gap-4 items-start border-l border-l-blue-400/40 h-full">
-                                        <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-blue-400/15 text-blue-400' : 'bg-blue-400/10 text-blue-400'}`}>☿</div>
-                                        <div className="flex-1">
-                                          <div className="flex items-center gap-2 mb-1">
-                                            <span className={`${DETAIL_LABEL_CLASS} text-blue-400`}>{t.us.entity_daily_mercury}</span>
-                                            <Chip label={daily.mercury.sign_house} />
-                                          </div>
-                                          <p className="text-sm opacity-90">{daily.mercury.style}</p>
-                                        </div>
-                                      </Card>
-                                      <Card className="flex gap-4 items-start border-l border-l-pink-500/40 h-full">
-                                        <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-pink-500/15 text-pink-500' : 'bg-pink-500/10 text-pink-500'}`}>♀</div>
-                                        <div className="flex-1">
-                                          <div className="flex items-center gap-2 mb-1">
-                                            <span className={`${DETAIL_LABEL_CLASS} text-pink-500`}>{t.us.entity_daily_venus}</span>
-                                            <Chip label={daily.venus.sign_house} />
-                                          </div>
-                                          <p className="text-sm opacity-90">{daily.venus.style}</p>
-                                        </div>
-                                      </Card>
-                                      <Card className="flex gap-4 items-start border-l border-l-orange-500/40 h-full">
-                                        <div className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center shrink-0 text-lg ${theme === 'dark' ? 'bg-orange-500/15 text-orange-500' : 'bg-orange-500/10 text-orange-500'}`}>♂</div>
-                                        <div className="flex-1">
-                                          <div className="flex items-center gap-2 mb-1">
-                                            <span className={`${DETAIL_LABEL_CLASS} text-orange-500`}>{t.us.entity_daily_mars}</span>
-                                            <Chip label={daily.mars.sign_house} />
-                                          </div>
-                                          <p className="text-sm opacity-90">{daily.mars.style}</p>
-                                        </div>
-                                      </Card>
+                                      <EntityPlanetCard
+                                        label={t.us.entity_daily_mercury}
+                                        icon={PLANET_GLYPHS.mercury}
+                                        signHouse={daily.mercury?.sign_house}
+                                        description={daily.mercury?.style || ''}
+                                        accent="border-l-blue-400/40"
+                                        labelTone="text-blue-400"
+                                      />
+                                      <EntityPlanetCard
+                                        label={t.us.entity_daily_venus}
+                                        icon={PLANET_GLYPHS.venus}
+                                        signHouse={daily.venus?.sign_house}
+                                        description={daily.venus?.style || ''}
+                                        accent="border-l-pink-500/40"
+                                        labelTone="text-pink-500"
+                                      />
+                                      <EntityPlanetCard
+                                        label={t.us.entity_daily_mars}
+                                        icon={PLANET_GLYPHS.mars}
+                                        signHouse={daily.mars?.sign_house}
+                                        description={daily.mars?.style || ''}
+                                        accent="border-l-orange-500/40"
+                                        labelTone={theme === 'dark' ? 'text-orange-500' : 'text-orange-600'}
+                                      />
                                     </div>
                                     <Card className="border-l border-l-green-500/40">
                                       <h4 className={`${DETAIL_LABEL_CLASS} text-green-500 mb-3`}>{t.us.entity_daily_tips}</h4>
                                       <div className="space-y-2">
-                                        {daily.maintenance_tips.map((tip, i) => (
+                                        {daily.maintenance_tips.slice(0, 3).map((tip, i) => (
                                           <div key={i} className="flex gap-2 items-start">
                                             <span className="text-green-500 shrink-0">✓</span>
                                             <span className="text-sm opacity-90">{tip}</span>
@@ -4556,34 +4657,38 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   {/* Section 4: The Soul Contract */}
                                   <Section title={t.us.entity_soul_title} className="mb-8">
                                     <div className="grid md:grid-cols-2 gap-4 mb-6">
-                                      <Card className="border-l border-l-purple-500/40">
-                                        <div className="flex items-center gap-2 mb-2">
-                                          <span className={`${DETAIL_LABEL_CLASS} text-purple-500`}>{t.us.entity_soul_saturn}</span>
-                                          <Chip label={soul.saturn.sign_house} />
-                                        </div>
-                                        <p className="text-sm opacity-90">{soul.saturn.lesson}</p>
-                                      </Card>
-                                      <Card className="border-l border-l-purple-500/40">
-                                        <div className="flex items-center gap-2 mb-2">
-                                          <span className={`${DETAIL_LABEL_CLASS} text-purple-500`}>{t.us.entity_soul_pluto}</span>
-                                          <Chip label={soul.pluto.sign_house} />
-                                        </div>
-                                        <p className="text-sm opacity-90">{soul.pluto.lesson}</p>
-                                      </Card>
-                                      <Card className="border-l border-l-red-500/40">
-                                        <div className="flex items-center gap-2 mb-2">
-                                          <span className={`${DETAIL_LABEL_CLASS} text-red-500`}>{t.us.entity_soul_chiron}</span>
-                                          <Chip label={soul.chiron.sign_house} />
-                                        </div>
-                                        <p className="text-sm opacity-90">{soul.chiron.lesson}</p>
-                                      </Card>
-                                      <Card className="border-l border-l-gold-500/40">
-                                        <div className="flex items-center gap-2 mb-2">
-                                          <span className={`${DETAIL_LABEL_CLASS} text-gold-500`}>{t.us.entity_soul_north_node}</span>
-                                          <Chip label={soul.north_node.sign_house} />
-                                        </div>
-                                        <p className="text-sm opacity-90">{soul.north_node.lesson}</p>
-                                      </Card>
+                                      <EntityPlanetCard
+                                        label={t.us.entity_soul_saturn}
+                                        icon={PLANET_GLYPHS.saturn}
+                                        signHouse={soul.saturn?.sign_house}
+                                        description={soul.saturn?.lesson || ''}
+                                        accent="border-l-purple-500/40"
+                                        labelTone="text-purple-500"
+                                      />
+                                      <EntityPlanetCard
+                                        label={t.us.entity_soul_pluto}
+                                        icon={PLANET_GLYPHS.pluto}
+                                        signHouse={soul.pluto?.sign_house}
+                                        description={soul.pluto?.lesson || ''}
+                                        accent="border-l-purple-500/40"
+                                        labelTone="text-purple-500"
+                                      />
+                                      <EntityPlanetCard
+                                        label={t.us.entity_soul_chiron}
+                                        icon={PLANET_GLYPHS.chiron}
+                                        signHouse={soul.chiron?.sign_house}
+                                        description={soul.chiron?.lesson || ''}
+                                        accent="border-l-red-500/40"
+                                        labelTone="text-red-500"
+                                      />
+                                      <EntityPlanetCard
+                                        label={t.us.entity_soul_north_node}
+                                        icon={PLANET_GLYPHS.north_node}
+                                        signHouse={soul.north_node?.sign_house}
+                                        description={soul.north_node?.lesson || ''}
+                                        accent="border-l-gold-500/40"
+                                        labelTone={theme === 'dark' ? 'text-gold-500' : 'text-gold-700'}
+                                      />
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-4">
                                       <Card className="border-l border-l-red-500/40">
@@ -4686,14 +4791,14 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                   <Section title={t.us.comp_daily} className="mb-8">
                                     <div className="space-y-4 mb-6">
                                       <Card className="flex gap-4 items-start border-l border-l-accent/40">
-                                        <div className={`w-9 h-9 rounded-full border border-current/25 flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/10 text-accent'}`}>☿</div>
+                                        <div className={`w-9 h-9 rounded-full border border-current/25 flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/15 text-accent-700'}`}>☿</div>
                                         <div>
                                           <div className={`${DETAIL_LABEL_CLASS} mb-1`}>{t.us.comp_communication}</div>
                                           <p className="text-sm">{composite.daily?.mercury || ''}</p>
                                         </div>
                                       </Card>
                                       <Card className="flex gap-4 items-start border-l border-l-accent/40">
-                                        <div className={`w-9 h-9 rounded-full border border-current/25 flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/10 text-accent'}`}>♀</div>
+                                        <div className={`w-9 h-9 rounded-full border border-current/25 flex items-center justify-center shrink-0 ${theme === 'dark' ? 'bg-accent/15 text-accent' : 'bg-accent/15 text-accent-700'}`}>♀</div>
                                         <div>
                                           <div className={`${DETAIL_LABEL_CLASS} mb-1`}>{t.us.comp_joy}</div>
                                           <p className="text-sm">{composite.daily?.venus || ''}</p>
@@ -5619,7 +5724,9 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                         }
                                     `}
                                 >
-                                    <span className="text-xs font-mono uppercase tracking-widest opacity-80">{t.ask.rituals}</span>
+                                    <span className="text-xs font-mono uppercase tracking-widest opacity-80">
+                                        {language === 'zh' ? `本周次数: ${askQuotaLeft}` : `Weekly: ${askQuotaLeft}`}
+                                    </span>
                                     <span className="mt-1 flex items-center gap-2 text-gold-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 -rotate-45">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
@@ -5630,12 +5737,6 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                             </div>
                             {/* Glow Effect behind input */}
                             <div className="absolute -inset-1 bg-gold-500/5 blur-xl -z-10 rounded-lg pointer-events-none"></div>
-                        </div>
-                        {/* 问答配额显示 */}
-                        <div className="text-xs text-center mt-3 opacity-70">
-                            {language === 'zh'
-                              ? `本周剩余问答次数: ${askQuotaLeft}`
-                              : `Questions left this week: ${askQuotaLeft}`}
                         </div>
                     </div>
 

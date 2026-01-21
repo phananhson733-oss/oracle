@@ -405,7 +405,7 @@ export const WikiClassicDetailPage: React.FC = () => {
     height: 'calc(min(794px, 92vw) * 1.414)',
   } as React.CSSProperties;
   const pagePadding = {
-    padding: 'clamp(40px, 6vw, 96px) clamp(36px, 7vw, 104px)',
+    padding: 'clamp(30px, 5vw, 60px) clamp(36px, 7vw, 104px)',
   } as React.CSSProperties;
 
   const getHeadingSpacing = (level: number, prevBlock?: MarkdownBlock): React.CSSProperties => {
@@ -578,8 +578,12 @@ export const WikiClassicDetailPage: React.FC = () => {
           </div>
           <div className={`mt-4 mb-7 h-px ${palette.divider}`} />
           <div
-            className="min-h-0 flex-1 overflow-y-auto pr-2 md:pr-3"
-            style={{ scrollbarGutter: 'stable' }}
+            className="min-h-0 flex-1 overflow-y-auto pr-2 md:pr-3 custom-scrollbar-muted"
+            style={{ 
+              scrollbarGutter: 'stable',
+              scrollbarColor: theme === 'dark' ? '#4A4540 transparent' : '#D8D1C5 transparent',
+              scrollbarWidth: 'thin'
+            }}
           >
             {blocks.map((block, index) =>
               renderBlock(block, index, index === leadParagraphIndex, blocks[index - 1])

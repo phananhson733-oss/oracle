@@ -1,6 +1,6 @@
-// INPUT: React、星盘数据与星体配色配置（含 1280px 画布对齐、宫头标注沿星座环排布并拉开度分间距、北交点跨盘相位补全、主题化色值映射）。
+// INPUT: React、星盘数据与星体配色配置（含 1280px 画布对齐、宫头标注沿星座环排布并拉开度分间距、北交点跨盘相位补全、浅色 Unicode 对比修正）。
 // OUTPUT: 导出星盘可视化组件（含分层相位渲染、配置驱动显示与主题支持，双人盘补齐北交点相位线）。
-// POS: 主应用星盘绘制组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: 主应用星盘绘制组件（含浅色 glyph 描边与色值对比修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { UserProfile, PartnerProfile, PlanetPosition, Aspect, ChartConfig, DualWheelConfig, AspectSettings } from '../types';
@@ -38,6 +38,13 @@ interface AstroChartProps {
 const PLANET_META: Record<string, { glyph: string; color: string }> = Object.fromEntries(
   Object.entries(TECH_DATA.PLANETS).map(([name, meta]) => [name, { glyph: meta.glyph, color: meta.color }])
 );
+
+const LIGHT_GLYPH_OVERRIDES: Record<string, string> = {
+  '#ffffff': '#4A4540',
+  '#ffeaa7': '#7F5E36',
+  '#fdcb6e': '#7F5E36',
+  '#dfe6e9': '#4A4540',
+};
 
 // --- GEOMETRY HELPERS ---
 const SIGN_NAMES = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
@@ -576,6 +583,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
 
   // -- Visual Theme Config --
   const isDark = theme === 'dark';
+  const resolveGlyphColor = (rawColor: string) => {
+    if (isDark) return rawColor;
+    const normalized = rawColor.trim().toLowerCase();
+    return LIGHT_GLYPH_OVERRIDES[normalized] ?? rawColor;
+  };
 
   const token = (name: string, alpha = 1) => `rgb(var(--${name}) / ${alpha})`;
 
@@ -589,6 +601,8 @@ export const AstroChart: React.FC<AstroChartProps> = ({
     const star400 = token('star-400', 1);
     const accentStrong = isDark ? 'rgb(198 160 98 / 1)' : 'rgb(159 118 69 / 1)';
     const accentSoft = isDark ? 'rgb(198 160 98 / 0.6)' : 'rgb(159 118 69 / 0.5)';
+    const glyphStroke = isDark ? 'none' : token('space-600', 0.65);
+    const glyphStrokeWidth = isDark ? 0 : 0.6;
     const textShadow = isDark
       ? '0 0 3px rgb(var(--space-950) / 0.9)'
       : '0 0 2px rgb(var(--space-900) / 0.35)';
@@ -621,6 +635,8 @@ export const AstroChart: React.FC<AstroChartProps> = ({
       labelPrimary: star50,
       labelSecondary: star200,
       labelMuted: star400,
+      glyphStroke,
+      glyphStrokeWidth,
       textShadow,
       textShadowStrong,
 
@@ -877,6 +893,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
 
               const signName = SIGN_NAMES[signIndex];
               const signMeta = TECH_DATA.SIGNS[signName as keyof typeof TECH_DATA.SIGNS];
+              const signColor = resolveGlyphColor(signMeta?.color || colors.angleColor);
               const angle = toChartAngle(cuspLongitude);
 
               // 星座icon位置 - 对齐宫位线
@@ -922,7 +939,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                     dominantBaseline="middle"
                     fontSize="13"
                     fontWeight="700"
-                    fill={signMeta?.color || colors.angleColor}
+                    fill={signColor}
+                    stroke={colors.glyphStroke}
+                    strokeWidth={colors.glyphStrokeWidth}
+                    paintOrder="stroke"
+                    strokeLinejoin="round"
                     fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
                     style={{ textShadow: colors.textShadow }}
                   >
@@ -1052,6 +1073,8 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                   const meta = PLANET_META[p.name] || { glyph: p.name[0], color: colors.labelMuted };
                   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
                   const svgPath = PLANET_SVG_PATHS[p.name];
+                  const planetColor = resolveGlyphColor(meta.color);
+                  const signColor = resolveGlyphColor(signMeta?.color || colors.labelMuted);
 
                   const deg = Math.floor(p.degree);
                   const min = p.minute ?? Math.round((p.degree - deg) * 60);
@@ -1095,7 +1118,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           y1={pos1.y}
                           x2={zodiacPos.x}
                           y2={zodiacPos.y}
-                          stroke={meta.color}
+                          stroke={planetColor}
                           strokeWidth="0.5"
                           opacity="0.3"
                           strokeDasharray="2,2"
@@ -1108,7 +1131,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="14"
-                          fill={meta.color}
+                          fill={planetColor}
+                          stroke={colors.glyphStroke}
+                          strokeWidth={colors.glyphStrokeWidth}
+                          paintOrder="stroke"
+                          strokeLinejoin="round"
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
                           style={{ textShadow: colors.textShadowStrong }}
                         >
@@ -1136,7 +1163,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="12"
-                          fill={signMeta?.color || colors.labelMuted}
+                          fill={signColor}
+                          stroke={colors.glyphStroke}
+                          strokeWidth={colors.glyphStrokeWidth}
+                          paintOrder="stroke"
+                          strokeLinejoin="round"
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
                           style={{ textShadow: colors.textShadow }}
                         >
@@ -1189,6 +1220,8 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                   const baseName = stripOuterPrefix(p.name);
                   const meta = PLANET_META[baseName] || { glyph: baseName[0], color: colors.labelSecondary };
                   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
+                  const planetColor = resolveGlyphColor(meta.color);
+                  const signColor = resolveGlyphColor(signMeta?.color || colors.labelMuted);
 
                   const deg = Math.floor(p.degree);
                   const min = p.minute ?? Math.round((p.degree - deg) * 60);
@@ -1233,7 +1266,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           y1={pos1.y}
                           x2={zodiacPos.x}
                           y2={zodiacPos.y}
-                          stroke={meta.color}
+                          stroke={planetColor}
                           strokeWidth="0.5"
                           opacity="0.4"
                           strokeDasharray="2,2"
@@ -1246,7 +1279,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="11"
-                          fill={meta.color}
+                          fill={planetColor}
+                          stroke={colors.glyphStroke}
+                          strokeWidth={colors.glyphStrokeWidth}
+                          paintOrder="stroke"
+                          strokeLinejoin="round"
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
                           style={{ textShadow: colors.textShadowStrong }}
                         >
@@ -1274,7 +1311,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="9"
-                          fill={signMeta?.color || colors.labelMuted}
+                          fill={signColor}
+                          stroke={colors.glyphStroke}
+                          strokeWidth={colors.glyphStrokeWidth}
+                          paintOrder="stroke"
+                          strokeLinejoin="round"
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
                           style={{ textShadow: colors.textShadow }}
                         >
@@ -1320,6 +1361,8 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                   const meta = PLANET_META[p.name] || { glyph: p.name[0], color: colors.labelMuted };
                   const signMeta = TECH_DATA.SIGNS[p.sign as keyof typeof TECH_DATA.SIGNS];
                   const svgPath = PLANET_SVG_PATHS[p.name];
+                  const planetColor = resolveGlyphColor(meta.color);
+                  const signColor = resolveGlyphColor(signMeta?.color || colors.labelMuted);
 
                   const deg = Math.floor(p.degree);
                   const min = p.minute ?? Math.round((p.degree - deg) * 60);
@@ -1364,7 +1407,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           y1={pos1.y}
                           x2={houseRingPos.x}
                           y2={houseRingPos.y}
-                          stroke={meta.color}
+                          stroke={planetColor}
                           strokeWidth="0.3"
                           opacity="0.25"
                           strokeDasharray="1.5,1.5"
@@ -1377,7 +1420,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="11"
-                          fill={meta.color}
+                          fill={planetColor}
+                          stroke={colors.glyphStroke}
+                          strokeWidth={colors.glyphStrokeWidth}
+                          paintOrder="stroke"
+                          strokeLinejoin="round"
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
                           style={{ textShadow: colors.textShadowStrong }}
                         >
@@ -1405,7 +1452,11 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                           textAnchor="middle"
                           dominantBaseline="middle"
                           fontSize="9"
-                          fill={signMeta?.color || colors.labelMuted}
+                          fill={signColor}
+                          stroke={colors.glyphStroke}
+                          strokeWidth={colors.glyphStrokeWidth}
+                          paintOrder="stroke"
+                          strokeLinejoin="round"
                           fontFamily="'Segoe UI Symbol', 'Apple Symbols', 'Noto Sans Symbols', sans-serif"
                           style={{ textShadow: colors.textShadow }}
                         >

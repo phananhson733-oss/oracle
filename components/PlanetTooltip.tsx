@@ -1,6 +1,6 @@
-// INPUT: React、行星数据、相位列表与主题配置（含宫主星飞入星座与双人盘外盘前缀解析）。
+// INPUT: React、行星数据、相位列表与主题配置（含宫主星飞入星座与浅色 Unicode 对比修正）。
 // OUTPUT: 导出行星悬停提示组件（支持本命盘/对比盘、中英双语、明暗主题）。
-// POS: 星盘行星悬停提示组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: 星盘行星悬停提示组件（含浅色 Unicode 图标对比处理）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useMemo } from 'react';
 import { createPortal } from 'react-dom';
@@ -15,6 +15,19 @@ const ASPECT_SYMBOLS: Record<string, string> = {
   square: '□',
   trine: '△',
   sextile: '⚹',
+};
+
+const LIGHT_GLYPH_OVERRIDES: Record<string, string> = {
+  '#ffffff': '#4A4540',
+  '#ffeaa7': '#7F5E36',
+  '#fdcb6e': '#7F5E36',
+  '#dfe6e9': '#4A4540',
+};
+
+const resolveGlyphColor = (rawColor: string, isLight: boolean) => {
+  if (!isLight) return rawColor;
+  const normalized = rawColor.trim().toLowerCase();
+  return LIGHT_GLYPH_OVERRIDES[normalized] ?? rawColor;
 };
 
 // 宫主星映射（传统占星）
@@ -66,6 +79,7 @@ export const PlanetTooltip: React.FC<PlanetTooltipProps> = ({
   const { theme } = useTheme();
   const { language, t, tl } = useLanguage();
   const isDark = theme === 'dark';
+  const isLight = theme === 'light';
 
   // 获取行星元数据
   const baseName = stripOuterPrefix(planet.name);
@@ -75,6 +89,8 @@ export const PlanetTooltip: React.FC<PlanetTooltipProps> = ({
     keywords: { zh: '', en: '' }
   };
   const signMeta = TECH_DATA.SIGNS[planet.sign as keyof typeof TECH_DATA.SIGNS];
+  const planetColor = resolveGlyphColor(planetMeta.color, isLight);
+  const signColor = resolveGlyphColor(signMeta?.color || '#888', isLight);
 
   // 计算面板宽度（中文 280px / 英文 340px）
   const panelWidth = language === 'zh' ? 280 : 340;
@@ -170,13 +186,14 @@ export const PlanetTooltip: React.FC<PlanetTooltipProps> = ({
     const otherBase = stripOuterPrefix(other);
     const otherMeta = TECH_DATA.PLANETS[otherBase as keyof typeof TECH_DATA.PLANETS];
     const isOtherOuter = isOuterPlanetName(other);
+    const otherColor = resolveGlyphColor(otherMeta?.color || '#888', isLight);
 
     return {
       name: other,
       baseName: otherBase,
       displayName: isOtherOuter ? `${t.chart.hover_outer}${tl(otherBase)}` : tl(otherBase),
       glyph: otherMeta?.glyph || otherBase[0],
-      color: otherMeta?.color || '#888',
+      color: otherColor,
       isOuter: isOtherOuter,
     };
   };
@@ -210,10 +227,15 @@ export const PlanetTooltip: React.FC<PlanetTooltipProps> = ({
     },
     glyph: {
       fontSize: 28,
-      color: planetMeta.color,
+      color: planetColor,
       lineHeight: 1,
       fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
       fontVariantEmoji: 'text' as const,
+      padding: isDark ? 0 : 4,
+      borderRadius: 12,
+      backgroundColor: isDark ? 'transparent' : 'rgb(var(--space-700) / 0.35)',
+      border: isDark ? 'none' : '1px solid rgb(var(--space-600) / 0.35)',
+      textShadow: isDark ? '0 0 2px rgb(var(--space-950) / 0.6)' : '0 1px 2px rgb(var(--space-600) / 0.35)',
     },
     nameRow: {
       flex: 1,
@@ -221,7 +243,7 @@ export const PlanetTooltip: React.FC<PlanetTooltipProps> = ({
     name: {
       fontSize: 16,
       fontWeight: 600,
-      color: planetMeta.color,
+      color: planetColor,
       display: 'flex',
       alignItems: 'center',
       gap: 8,
@@ -257,12 +279,13 @@ export const PlanetTooltip: React.FC<PlanetTooltipProps> = ({
       color: isDark ? '#e2e8f0' : '#1e293b',
     },
     signColor: {
-      color: signMeta?.color || '#888',
+      color: signColor,
       fontWeight: 500,
     },
     symbolText: {
       fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
       fontVariantEmoji: 'text' as const,
+      textShadow: isDark ? '0 0 2px rgb(var(--space-950) / 0.5)' : '0 1px 1px rgb(var(--space-600) / 0.3)',
     },
     aspectRow: {
       display: 'flex',
@@ -302,7 +325,7 @@ export const PlanetTooltip: React.FC<PlanetTooltipProps> = ({
         <div style={styles.row}>
           <span>{t.chart.hover_in}</span>
           <span style={styles.signColor}>{tl(planet.sign)}</span>
-          <span style={{ color: signMeta?.color, ...styles.symbolText }}>{signMeta?.glyph}</span>
+          <span style={{ color: signColor, ...styles.symbolText }}>{signMeta?.glyph}</span>
           <span>{formatDegree(planet.degree, planet.minute)}</span>
         </div>
       </div>

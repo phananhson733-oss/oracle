@@ -1,6 +1,6 @@
-// INPUT: 付费墙组件 - 锁定内容和积分解锁弹窗（含纸感映射、购买状态与错误提示）。
-// OUTPUT: 导出 LockedContent、LockedAccordion 和 PaywallModal 组件（含详情解锁与积分解锁兜底及 Accordion 视觉对齐）。
-// POS: 前端付费墙组件（含纸感映射与解锁条目一致性修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: 付费墙组件 - 锁定内容和积分解锁弹窗（含纸感映射、购买状态与解锁回调）。
+// OUTPUT: 导出 LockedContent、LockedAccordion 和 PaywallModal 组件（含积分解锁兜底与购买后续动作）。
+// POS: 前端付费墙组件（含纸感映射与购买回调处理）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
 import { Lock, Sparkles, X } from 'lucide-react';
@@ -194,6 +194,7 @@ interface PaywallModalProps {
   featureId?: string;
   featureName?: string;
   price?: number;
+  onPurchased?: () => void | Promise<void>;
 }
 
 export const PaywallModal: React.FC<PaywallModalProps> = ({
@@ -203,6 +204,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
   featureId,
   featureName,
   price,
+  onPurchased,
 }) => {
   const { isAuthenticated, openLoginModal } = useAuth();
   const { startSubscription, purchaseFeature, isSubscriber, isTrialing, trialDaysLeft, entitlements } = useEntitlement();
@@ -238,6 +240,13 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
     try {
       await purchaseFeature(featureType, featureId);
       onClose();
+      if (onPurchased) {
+        try {
+          await onPurchased();
+        } catch (err) {
+          console.error('Post-purchase action failed:', err);
+        }
+      }
     } catch (err) {
       const message = err instanceof Error ? err.message : '';
       setActionError(message || fallbackError);
@@ -427,6 +436,7 @@ export const GlobalPaywall: React.FC = () => {
       featureType={paywallFeature.type}
       featureId={paywallFeature.id}
       price={paywallFeature.price}
+      onPurchased={paywallFeature.onPurchased}
     />
   );
 };

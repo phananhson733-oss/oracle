@@ -49,7 +49,7 @@ const WikiHomePage: React.FC = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
-  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
+  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-gold-600/40';
   const radarGrid = theme === 'dark'
     ? 'rgb(var(--space-700) / 0.6)'
     : 'rgb(var(--space-700) / 0.35)';
@@ -183,7 +183,7 @@ const WikiHomePage: React.FC = () => {
           </div>
 
           {searchOpen && query.trim() && (
-            <Card className="absolute left-0 right-0 mt-4 text-left z-40" noPadding>
+            <Card className={`absolute left-0 right-0 mt-4 text-left z-40 border ${borderColor}`} noPadding>
               <div className="p-4 border-b border-dashed border-current/10 flex items-center justify-between">
                 <div className="text-xs uppercase tracking-[0.3em] text-gold-500">{t.wiki.search_results}</div>
                 {searchLoading && <div className={`text-xs ${mutedText}`}>{t.common.loading}</div>}

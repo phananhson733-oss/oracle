@@ -5,5 +5,5 @@
 3. [x] 原语升级：Card/Modal/Input/Button/Tooltip 统一 spacing/radius/transition，替换硬编码颜色。（依赖 2）
 4. [x] 功能域页面适配：App 主页面与 `components/wiki|reports|cbt|auth|Paywall` 按功能域色彩与 60/30/10 规则调整。（可并行）
 5. [x] 图表与数据可视化修正：`AstroChart`、`ReportDashboard` 等替换 hex/黑白色为 DATA_VIZ_COLORS。（可并行）
-6. [ ] 质量验证：`rg` 复检禁用色，深/浅主题对比度抽查（含 unicode 图标与底板），交互状态一致性确认。
-7. [ ] 手动冒烟：`npm run dev`，覆盖 Dashboard/Oracle/Wiki/CBT/Reports/Auth/Paywall 关键路径双主题。
+6. [ ] 质量验证：`rg` 复检禁用色已完成；深/浅主题对比度与交互状态仍需在可运行环境下抽查（含 unicode 图标与底板）。
+7. [ ] 手动冒烟：`npm run dev` 覆盖 Dashboard/Oracle/Wiki/CBT/Reports/Auth/Paywall 双主题（当前端口权限受限，dev server 无法启动）。
