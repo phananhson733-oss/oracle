@@ -208,7 +208,7 @@ const InsightRow = ({ text, highlight, isLoading }: any) => {
     : 'bg-space-800/20 border-gold-500/10';
   const accentTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const highlightTone = isLight ? 'text-gold-800' : 'text-gold-200';
-  const textTone = isLight ? 'text-star-800' : 'text-star-100';
+  const textTone = isLight ? 'text-star-700' : 'text-star-200';
   const loadingTone = isLight ? 'text-gold-600/80 animate-pulse' : 'text-gold-400/80 animate-pulse';
   const iconBg = isLight ? 'bg-gold-500/10 text-gold-700' : 'bg-gold-500/10 text-gold-400';
 
@@ -564,7 +564,7 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
 // ----------------------------------------------------------------------
 export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initialYear, initialMonth, userProfile }) => {
   const { t, language } = useLanguage();
-  const [showDetails, setShowDetails] = useState(false);
+  const [detailsType, setDetailsType] = useState<'source' | 'support' | null>(null);
   const now = new Date();
   const initialFilterYear = initialYear ?? now.getFullYear();
   const initialFilterMonth = initialMonth ?? now.getMonth();
@@ -766,7 +766,7 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
       onMonthChange={handleMonthChange}
     >
       <div className="grid grid-cols-2 gap-4">
-        <DataRow title={t.journal.bad_mood_source_top3} onExpand={() => setShowDetails(true)}>
+        <DataRow title={t.journal.bad_mood_source_top3} onExpand={() => setDetailsType('source')}>
           <div className="space-y-3">
             {stats.topSources.map(([name, count], i) => (
               <div key={name} className="relative">
@@ -781,7 +781,7 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
             ))}
           </div>
         </DataRow>
-        <DataRow title={t.journal.positive_support_top3} onExpand={() => setShowDetails(true)}>
+        <DataRow title={t.journal.positive_support_top3} onExpand={() => setDetailsType('support')}>
           <div className="space-y-3">
              {stats.topSupports.map(([name, count], i) => (
               <div key={name} className="relative">
@@ -802,14 +802,14 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
       <ActionRow title={t.journal.precise_healing_action} text={adviceText} icon={Shield} />
       <AstroRow text={astroText} />
 
-      {showDetails && (
+      {detailsType && (
         <FullDataModal
-          title={t.journal.roots_full_title}
-          onClose={() => setShowDetails(false)}
-          sections={[
-            { title: t.journal.all_bad_mood_sources, data: stats.allSources, colorClass: "bg-danger" },
-            { title: t.journal.all_support_sources, data: stats.allSupports, colorClass: "bg-accent" }
-          ]}
+          title={detailsType === 'source' ? t.journal.bad_mood_source_top3 : t.journal.positive_support_top3}
+          onClose={() => setDetailsType(null)}
+          sections={detailsType === 'source'
+            ? [{ title: t.journal.all_bad_mood_sources, data: stats.allSources, colorClass: "bg-danger" }]
+            : [{ title: t.journal.all_support_sources, data: stats.allSupports, colorClass: "bg-accent" }]
+          }
         />
       )}
     </CardContainer>
@@ -821,7 +821,7 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
 // ----------------------------------------------------------------------
 export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, initialYear, initialMonth, userProfile }) => {
   const { t, language } = useLanguage();
-  const [showDetails, setShowDetails] = useState(false);
+  const [detailsType, setDetailsType] = useState<'mood' | null>(null);
   const now = new Date();
   const initialFilterYear = initialYear ?? now.getFullYear();
   const initialFilterMonth = initialMonth ?? now.getMonth();
@@ -947,7 +947,7 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
             <div className="absolute inset-0 flex items-center justify-center text-xs text-star-400 font-bold pointer-events-none">{t.journal.distribution}</div>
           </div>
         </DataRow>
-        <DataRow title={t.journal.low_point_top3} onExpand={() => setShowDetails(true)}>
+        <DataRow title={t.journal.low_point_top3} onExpand={() => setDetailsType('mood')}>
           <div className="space-y-3">
             {stats.topNeg.length > 0 ? stats.topNeg.map(([name, count], i) => (
               <div key={name} className="relative">
@@ -968,10 +968,10 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
       <ActionRow title={t.journal.targeted_regulation} text={adviceText} icon={Zap} />
       <AstroRow text={astroText} />
 
-      {showDetails && (
+      {detailsType && (
         <FullDataModal
-          title={t.journal.mood_full_title}
-          onClose={() => setShowDetails(false)}
+          title={t.journal.low_point_top3}
+          onClose={() => setDetailsType(null)}
           sections={[
             { title: t.journal.all_negative_components, data: stats.allNeg, colorClass: "bg-danger" }
           ]}
