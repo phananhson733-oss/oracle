@@ -209,7 +209,7 @@ const InsightRow = ({ text, highlight, isLoading }: any) => {
   const accentTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const highlightTone = isLight ? 'text-gold-800' : 'text-gold-200';
   const textTone = isLight ? 'text-star-800' : 'text-star-100';
-  const loadingTone = isLight ? 'text-star-400' : 'text-star-400';
+  const loadingTone = isLight ? 'text-gold-600/80 animate-pulse' : 'text-gold-400/80 animate-pulse';
   const iconBg = isLight ? 'bg-gold-500/10 text-gold-700' : 'bg-gold-500/10 text-gold-400';
 
   return (

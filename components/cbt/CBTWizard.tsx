@@ -578,12 +578,14 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
 
   if (finalRecord && report) {
     return (
-      <div className="fixed inset-0 z-[200] bg-space-950 overflow-y-auto animate-in fade-in duration-500">
-        <div className={`sticky top-0 z-30 backdrop-blur-xl p-6 border-b flex justify-between items-center ${isLight ? 'bg-paper-100/90' : 'bg-space-950/90'} ${panelBorderTone}`}>
+      <div className="fixed inset-0 z-[200] bg-space-950 overflow-y-auto animate-in fade-in duration-500 flex flex-col items-center">
+        <div className={`sticky top-0 z-30 backdrop-blur-xl p-6 border-b flex justify-between items-center w-full ${isLight ? 'bg-paper-100/90' : 'bg-space-950/90'} ${panelBorderTone}`}>
             <button onClick={onClose} className={`flex items-center gap-3 font-bold transition-all px-4 py-2 rounded-xl ${isLight ? 'text-star-200 hover:bg-paper-200' : 'text-star-400 hover:text-star-50 hover:bg-space-900/60'}`}><ArrowLeft size={20} /> {t.journal.back_to_journal}</button>
             <div className="flex items-center gap-2 text-accent font-bold uppercase tracking-widest text-sm"><CheckCircle2 size={20} /> {t.journal.analysis_saved}</div>
         </div>
-        <ReportDashboard record={finalRecord} report={report} onUpdate={(updated) => onComplete(updated)} onClose={onClose} />
+        <div className="w-full max-w-[1280px] p-6">
+          <ReportDashboard record={finalRecord} report={report} onUpdate={(updated) => onComplete(updated)} onClose={onClose} />
+        </div>
       </div>
     );
   }
