@@ -1,6 +1,6 @@
-// INPUT: React、Router、组件与后端数据服务依赖（含积分使用情况页、迁移提示、SEO head 输出与付费墙回调）。
-// OUTPUT: 导出主应用组件（含合盘积分购买后自动触发生成、组合盘 Big3 风格卡片与综述/对比盘扁平化）。
-// POS: 主应用路由与页面编排中心（含合盘综述与对比盘排版修正、付费墙后续流程与细线色条对齐）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、Router、组件与后端数据服务依赖（含 SEO head 输出、付费墙回调与分析追踪）。
+// OUTPUT: 导出主应用组件（含合盘积分购买后自动触发生成、Analytics 路由追踪、同意横幅与核心功能事件）。
+// POS: 主应用路由与页面编排中心（含付费墙后续流程与分析事件接入）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
@@ -14,13 +14,73 @@ import { OracleLoading } from './components/OracleLoading';
 import * as Astro from './services/astroService';
 import { generateContent } from './services/geminiService';
 import { fetchAskAnswer, fetchDailyDetail, fetchDailyForecast, fetchSectionDetail, fetchSynastry, fetchSynastryOverviewSection, fetchSynastrySuggestions, fetchSynastryTechnical, searchCities } from './services/apiClient';
-import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription } from './services/paymentClient';
+import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription, createPortalSession } from './services/paymentClient';
 import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
+import { trackEvent, trackPageView } from './services/analytics';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } from './contexts/EntitlementContext';
 import { SEO } from './components/SEO';
 import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage } from './components/auth';
 import { GlobalPaywall, LockedContent, LockedAccordion } from './components/Paywall';
+import { ConsentBanner } from './components/ConsentBanner';
+import { useAnalyticsTracking } from './hooks/useAnalytics';
+
+// Global SEO schemas (Organization, WebSite)
+const GlobalSchema: React.FC = () => {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astromind.ai';
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Astromind',
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    sameAs: [
+      'https://twitter.com/astromind',
+      'https://www.instagram.com/astromind',
+      'https://www.youtube.com/@astromind',
+    ],
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Astromind',
+    url: siteUrl,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${siteUrl}/wiki?search={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  React.useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    // Organization schema
+    const orgScript = document.createElement('script');
+    orgScript.type = 'application/ld+json';
+    orgScript.textContent = JSON.stringify(organizationSchema);
+    orgScript.setAttribute('data-astro-global-schema', 'organization');
+    document.head.appendChild(orgScript);
+
+    // Website schema
+    const webScript = document.createElement('script');
+    webScript.type = 'application/ld+json';
+    webScript.textContent = JSON.stringify(websiteSchema);
+    webScript.setAttribute('data-astro-global-schema', 'website');
+    document.head.appendChild(webScript);
+
+    return () => {
+      document.querySelectorAll('[data-astro-global-schema]').forEach((el) => el.remove());
+    };
+  }, []);
+
+  return null;
+};
 
 // 懒加载大型组件
 const CBTMainPage = lazy(() => import('./components/cbt/CBTMainPage'));
@@ -518,6 +578,7 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const [extendedData, setExtendedData] = useState<T.ExtendedNatalData | null>(null);
     const [loadingExtended, setLoadingExtended] = useState(true);
     const pendingRequests = useRef(new Set<string>());
+    const trackedNatalRef = useRef(false);
 
     const requestDetailAccess = async (featureType: FeatureType, featureId: string) => {
       const access = await checkAccess(featureType, featureId);
@@ -601,6 +662,12 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             if (mounted) {
               setExtendedData(data);
               setLoadingExtended(false);
+              if (!trackedNatalRef.current) {
+                trackEvent('natal_chart_generated', {
+                  source: 'natal_tech_card',
+                });
+                trackedNatalRef.current = true;
+              }
             }
           } catch {
             if (mounted) {
@@ -741,6 +808,10 @@ const LandingPage: React.FC = () => {
     };
 
     const handleStart = async () => {
+        trackEvent('cta_clicked', {
+            cta_text: t.app.landing_btn,
+            location: 'landing_hero',
+        });
         navigate('/onboarding');
     };
 
@@ -2847,6 +2918,12 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           throw new Error('AI unavailable');
         }
         setSegments((prev) => ({ ...prev, [tab]: result.content as SynastryTabContentMap[SynastryTabId] }));
+        if (tab === 'overview') {
+          trackEvent('synastry_report_generated', {
+            relationship_type: relationshipType || 'unknown',
+            tab,
+          });
+        }
         if (tab === 'overview') {
           setReportMeta(result.meta || null);
         }
@@ -5430,6 +5507,11 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             return;
         }
 
+        trackEvent('oracle_question_asked', {
+            question_length: trimmed.length,
+            category: activeCategory,
+        });
+
         if (lastAskKey.current === dedupeKey) {
             setLoading(true);
             setError(null);
@@ -6102,11 +6184,29 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = ({ profile, onReset }) => {
     const { t, language, toggleLanguage } = useLanguage();
     const { theme, toggleTheme } = useTheme();
-    const { isAuthenticated, refreshEntitlements: refreshLegacyEntitlements, refreshUser } = useAuth();
-    const { refreshEntitlements: refreshV2Entitlements, isTrialing, trialDaysLeft } = useEntitlement();
+    const { isAuthenticated, refreshEntitlements: refreshLegacyEntitlements, refreshUser, user, logout, openUpgradeModal } = useAuth();
+    const { refreshEntitlements: refreshV2Entitlements, isTrialing, trialDaysLeft, entitlements } = useEntitlement();
     const [gmBusy, setGmBusy] = useState(false);
     const [gmMessage, setGmMessage] = useState<string | null>(null);
     const [gmError, setGmError] = useState<string | null>(null);
+    const navigate = useNavigate();
+
+    const handleManageSubscription = async () => {
+        try {
+          const { url } = await createPortalSession(window.location.href);
+          window.location.href = url;
+        } catch (err) {
+          console.error('Failed to open subscription portal:', err);
+          // 如果是503错误（Stripe未配置），显示友好提示
+          if (err instanceof Error && err.message.includes('Payment service unavailable')) {
+            setGmError(language === 'zh'
+              ? '支付服务未配置。开发环境请使用 GM 命令测试订阅功能。'
+              : 'Payment service not configured. Use GM commands for testing in development.');
+          } else {
+            setGmError(err instanceof Error ? err.message : (language === 'zh' ? '无法打开订阅管理页面' : 'Failed to open subscription portal'));
+          }
+        }
+    };
 
     const runGmAction = async (
         action: () => Promise<{ success: boolean; message?: string }>,
@@ -6168,6 +6268,50 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
     return (
         <Container>
             <h1 className="text-3xl font-serif font-medium mb-8">{t.settings.title}</h1>
+
+            <Section title={language === 'zh' ? '账号' : 'Account'}>
+                <Card className="mb-4">
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-4">
+                            {user?.avatar ? (
+                                <img src={user.avatar} alt="" className="w-14 h-14 rounded-full object-cover border-2 border-gold-500/20" />
+                            ) : (
+                                <div className={`w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold border-2 border-gold-500/20 ${theme === 'dark' ? 'bg-space-800 text-star-500' : 'bg-paper-200 text-paper-500'}`}>
+                                    {profile.name?.[0] || user?.email?.[0] || '?'}
+                                </div>
+                            )}
+                            <div>
+                                <div className="font-serif text-xl">{profile.name}</div>
+                                <div className="text-sm opacity-60 font-mono">{user?.email}</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            {entitlements?.isSubscriber ? (
+                                <div className="flex flex-col items-end gap-1">
+                                    <div className="flex items-center gap-2">
+                                        <span className="font-bold text-gold-500 flex items-center gap-1">
+                                            <span>✦</span> {language === 'zh' ? 'Pro 会员' : 'Pro Member'}
+                                        </span>
+                                        <span className="text-[10px] uppercase tracking-widest opacity-70 border border-current px-1.5 py-0.5 rounded-full">{language === 'zh' ? '活跃' : 'Active'}</span>
+                                    </div>
+                                    <button onClick={handleManageSubscription} className="text-xs underline opacity-60 hover:opacity-100 transition-opacity">
+                                        {language === 'zh' ? '管理订阅' : 'Manage Subscription'}
+                                    </button>
+                                </div>
+                            ) : (
+                                <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
+                                    {language === 'zh' ? '解锁无限解读' : 'Unlock Unlimited'}
+                                </ActionButton>
+                            )}
+                        </div>
+                    </div>
+
+                    <ActionButton onClick={() => { logout(); navigate('/'); }} size="sm" variant="secondary" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10 hover:border-red-500/50">
+                        {language === 'zh' ? '退出登录' : 'Log Out'}
+                    </ActionButton>
+                </Card>
+            </Section>
 
             <Section title={t.settings.profile}>
                 <Card className="mb-4">
@@ -6786,10 +6930,15 @@ const AppContent: React.FC = () => {
     const { toggleTheme, theme } = useTheme();
     const { isAuthenticated, migrateLocalData, refreshUser, user: authUser } = useAuth();
     const { entitlements } = useEntitlement();
+
+    // Enable analytics tracking (scroll depth, external links)
+    useAnalyticsTracking();
+
     const isWikiPath = location.pathname === '/wiki' || location.pathname.startsWith('/wiki/');
     const isPublicRoute = location.pathname === '/' || isWikiPath;
     const shouldNoIndex = !isPublicRoute;
     const authT = t.auth;
+    const lastTrackedPathRef = useRef<string | null>(null);
     const [showMigration, setShowMigration] = useState(false);
     const [migrationStatus, setMigrationStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [migrationMessage, setMigrationMessage] = useState<string | null>(null);
@@ -6820,6 +6969,17 @@ const AppContent: React.FC = () => {
             navigate('/');
         }
     }, [user, hasCloudProfile, location.pathname, navigate, isWikiPath]);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const resolvedPath = window.location.hash?.replace(/^#/, '') || location.pathname || '/';
+        if (lastTrackedPathRef.current === resolvedPath) return;
+        lastTrackedPathRef.current = resolvedPath;
+        const frame = window.requestAnimationFrame(() => {
+            trackPageView(resolvedPath || '/');
+        });
+        return () => window.cancelAnimationFrame(frame);
+    }, [location.pathname, location.search, location.hash]);
 
     useEffect(() => {
         if (!isAuthenticated) {
@@ -6895,6 +7055,12 @@ const AppContent: React.FC = () => {
                                 );
                             })}
 
+                            {/* Settings / Theme Toggles */}
+                            <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
+                            <button onClick={toggleTheme} className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">{theme === 'dark' ? '☀' : '☾'}</button>
+
+                            {/* User Menu */}
+                            <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
                             {isAuthenticated && (
                                 <button
                                     onClick={() => navigate('/usage')}
@@ -6908,14 +7074,6 @@ const AppContent: React.FC = () => {
                                     <span>{entitlements?.credits ?? 0}</span>
                                 </button>
                             )}
-                            
-                            {/* Settings / Theme Toggles */}
-                            <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
-                            <Link to="/settings" className="hidden md:flex w-10 h-10 items-center justify-center text-3xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">⚙</Link>
-                            <button onClick={toggleTheme} className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">{theme === 'dark' ? '☀' : '☾'}</button>
-
-                            {/* User Menu */}
-                            <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
                             <UserMenu />
                         </div>
                     </div>
@@ -7006,6 +7164,7 @@ const AppContent: React.FC = () => {
                 </div>
             )}
 
+            <ConsentBanner />
             {/* Auth Modals */}
             <LoginModal />
             <UpgradeModal />
@@ -7014,12 +7173,129 @@ const AppContent: React.FC = () => {
 }
 
 const App: React.FC = () => {
+  // 在开发环境中暴露 GM 命令到 window 对象
+  useEffect(() => {
+    if (import.meta.env.DEV) {
+      // @ts-ignore
+      window.gmUnlockSubscription = async () => {
+        try {
+          const result = await gmUnlockSubscription();
+          console.log('✅ 订阅已解锁 | Subscription unlocked:', result);
+          window.location.reload();
+        } catch (error) {
+          console.error('❌ 解锁订阅失败 | Failed to unlock subscription:', error);
+        }
+      };
+
+      // @ts-ignore
+      window.gmCancelSubscription = async () => {
+        try {
+          const result = await gmCancelSubscription();
+          console.log('✅ 订阅已取消 | Subscription cancelled:', result);
+          window.location.reload();
+        } catch (error) {
+          console.error('❌ 取消订阅失败 | Failed to cancel subscription:', error);
+        }
+      };
+
+      // @ts-ignore
+      window.gmAddTokens = async (amount = 9999) => {
+        try {
+          const result = await gmAddTokens(amount);
+          console.log(`✅ 已添加 ${amount} 积分 | Added ${amount} credits:`, result);
+          window.location.reload();
+        } catch (error) {
+          console.error('❌ 添加积分失败 | Failed to add credits:', error);
+        }
+      };
+
+      // @ts-ignore
+      window.gmClearTokens = async () => {
+        try {
+          const result = await gmClearTokens();
+          console.log('✅ 积分已清零 | Credits cleared:', result);
+          window.location.reload();
+        } catch (error) {
+          console.error('❌ 清零积分失败 | Failed to clear credits:', error);
+        }
+      };
+
+      // @ts-ignore
+      window.gmCreateDevSession = async () => {
+        try {
+          const result = await gmCreateDevSession();
+          console.log('✅ GM 开发会话已创建 | GM dev session created:', result);
+          window.location.reload();
+        } catch (error) {
+          console.error('❌ 创建 GM 会话失败 | Failed to create GM session:', error);
+        }
+      };
+
+      // @ts-ignore
+      window.gmHelp = () => {
+        console.log(`
+🎮 GM 命令帮助 | GM Commands Help
+================================
+
+可用命令 | Available Commands:
+---------------------------------
+1. gmUnlockSubscription()
+   解锁订阅功能（模拟 Pro 会员）
+   Unlock subscription (simulate Pro membership)
+
+2. gmCancelSubscription()
+   取消订阅
+   Cancel subscription
+
+3. gmAddTokens(amount?)
+   添加积分（默认 9999）
+   Add credits (default 9999)
+   示例 | Example: gmAddTokens(5000)
+
+4. gmClearTokens()
+   清零所有积分
+   Clear all credits
+
+5. gmCreateDevSession()
+   创建开发测试会话（自动登录测试账号）
+   Create dev session (auto login test account)
+
+6. gmHelp()
+   显示此帮助信息
+   Show this help message
+
+使用说明 | Usage:
+---------------------------------
+1. 打开浏览器控制台（F12）
+   Open browser console (F12)
+
+2. 输入命令并回车
+   Type command and press Enter
+
+3. 命令执行后会自动刷新页面
+   Page will reload after command execution
+
+注意 | Note:
+---------------------------------
+• 这些命令仅在开发环境可用
+  These commands are only available in development
+
+• 需要先登录才能使用（除了 gmCreateDevSession）
+  Login required (except gmCreateDevSession)
+        `);
+      };
+
+      console.log('🎮 GM 命令已加载 | GM commands loaded. 输入 gmHelp() 查看帮助 | Type gmHelp() for help');
+    }
+  }, []);
+
   return (
     <HashRouter>
       <ThemeProvider>
         <LanguageProvider>
           <AuthProvider>
             <EntitlementProvider>
+              <GlobalSchema />
               <AppContent />
               <GlobalPaywall />
             </EntitlementProvider>

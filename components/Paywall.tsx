@@ -3,27 +3,44 @@
 // POS: 前端付费墙组件（含纸感映射与购买回调处理）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
-import { Lock, Sparkles, X } from 'lucide-react';
+import { Lock, Sparkles, X, Check } from 'lucide-react';
 import { useEntitlement, useFeatureAccess } from '../contexts/EntitlementContext';
-import { FeatureType } from '../services/entitlementClientV2';
+import { FeatureType, getPricingV2, PricingV2 } from '../services/entitlementClientV2';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage, useTheme } from './UIComponents';
+import { formatPrice } from '../services/paymentClient';
+import { trackEvent } from '../services/analytics';
+import { PaywallSocialProof, RiskReversal, ValueComparison, PaywallFeatureList } from './PaywallConversion';
+import { usePaywallCTA, useTrialMessaging } from '../hooks/useABTest';
 
 // =====================================================
 // 价格显示
 // =====================================================
 
-const FEATURE_PRICES: Record<FeatureType, { points: number; description: string }> = {
-  dimension: { points: 10, description: '永久解锁' },
-  core_theme: { points: 10, description: '永久解锁' },
-  daily_script: { points: 10, description: '今日有效' },
-  daily_transit: { points: 10, description: '今日有效' },
-  synastry: { points: 30, description: '永久有效' },
-  synastry_detail: { points: 10, description: '永久有效' },
-  detail: { points: 10, description: '深度详情' },
-  ask: { points: 20, description: '单次提问' },
-  cbt_stats: { points: 20, description: '本月有效' },
-  synthetica: { points: 10, description: '单次使用' },
+const FEATURE_PRICES: Record<FeatureType, number> = {
+  dimension: 10,
+  core_theme: 10,
+  daily_script: 10,
+  daily_transit: 10,
+  synastry: 30,
+  synastry_detail: 10,
+  detail: 10,
+  ask: 20,
+  cbt_stats: 20,
+  synthetica: 10,
+};
+
+const FEATURE_SCOPES: Record<FeatureType, 'permanent' | 'daily' | 'per_month' | 'consumable'> = {
+  dimension: 'permanent',
+  core_theme: 'permanent',
+  daily_script: 'daily',
+  daily_transit: 'daily',
+  synastry: 'permanent',
+  synastry_detail: 'permanent',
+  detail: 'permanent',
+  ask: 'consumable',
+  cbt_stats: 'per_month',
+  synthetica: 'consumable',
 };
 
 // =====================================================
@@ -44,7 +61,7 @@ const useThemeStyles = () => {
   };
 };
 
-const formatPoints = (points: number) => `${points} 积分`;
+const formatPoints = (points: number, label: string) => `${points} ${label}`;
 
 // =====================================================
 // LockedAccordion 组件 - 类似 Accordion 样式的解锁按钮
@@ -72,6 +89,7 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
   const [hasOpened, setHasOpened] = useState(defaultOpen);
   const s = useThemeStyles();
   const { theme } = useTheme();
+  const { t } = useLanguage();
   const isDark = theme === 'dark';
   const accordionSurface = isDark ? 'bg-space-900/40' : 'bg-paper-100/70';
   const dividerTone = isDark ? 'border-gold-500/15' : 'border-paper-300';
@@ -119,7 +137,7 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
           onClick={() => requestAccess()}
           className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${isDark ? 'border-gold-500/30 text-gold-400 hover:text-gold-300 hover:border-gold-500/50' : 'border-gold-500/40 text-gold-600 hover:text-gold-700 hover:border-gold-600/60'} hover:bg-gold-500/10`}
         >
-          解锁
+          {t.paywall?.unlock_action || 'Unlock'}
         </button>
       </div>
     </div>
@@ -151,6 +169,7 @@ export const LockedContent: React.FC<LockedContentProps> = ({
 }) => {
   const { canAccess, requestAccess } = useFeatureAccess(featureType, featureId);
   const s = useThemeStyles();
+  const { t } = useLanguage();
 
   if (canAccess) {
     return <>{children}</>;
@@ -169,7 +188,7 @@ export const LockedContent: React.FC<LockedContentProps> = ({
           onClick={() => requestAccess()}
           className="mt-3 px-4 py-1.5 text-xs font-bold uppercase tracking-widest border border-gold-500/50 text-gold-500 rounded hover:bg-gold-500/10 transition-colors"
         >
-          解锁
+          {t.paywall?.unlock_action || 'Unlock'}
         </button>
       </div>
 
@@ -197,6 +216,8 @@ interface PaywallModalProps {
   onPurchased?: () => void | Promise<void>;
 }
 
+type SubscriptionPlan = 'monthly' | 'yearly';
+
 export const PaywallModal: React.FC<PaywallModalProps> = ({
   isOpen,
   onClose,
@@ -208,27 +229,39 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
 }) => {
   const { isAuthenticated, openLoginModal } = useAuth();
   const { startSubscription, purchaseFeature, isSubscriber, isTrialing, trialDaysLeft, entitlements } = useEntitlement();
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const { theme } = useTheme();
   const isDark = theme === 'dark';
-  const [isProcessing, setIsProcessing] = useState<'purchase' | 'subscribe' | null>(null);
+  const [isProcessing, setIsProcessing] = useState<'purchase' | 'monthly' | 'yearly' | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<SubscriptionPlan>('yearly');
+  const [pricing, setPricing] = useState<PricingV2 | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
 
-  const priceInfo = FEATURE_PRICES[featureType];
-  const pointsCost = price ?? priceInfo.points;
+  const pointsCost = price ?? FEATURE_PRICES[featureType];
   const creditsBalance = entitlements?.credits ?? 0;
   const canSpend = creditsBalance >= pointsCost;
   const displayName = featureName || getFeatureDisplayName(featureType);
-  const fallbackError = language === 'zh'
-    ? '积分解锁失败，请稍后再试。'
-    : 'Failed to unlock with credits. Please try again.';
-  const insufficientError = language === 'zh'
-    ? '积分不足，请先购买积分。'
-    : 'Insufficient credits. Please top up first.';
+  const scopeLabel = t.paywall?.scope_labels?.[FEATURE_SCOPES[featureType]] || '';
+  const fallbackError = t.paywall?.unlock_failed
+    || (language === 'zh' ? '积分解锁失败，请稍后再试。' : 'Failed to unlock with credits. Please try again.');
+  const insufficientError = t.paywall?.insufficient
+    || (language === 'zh' ? '积分不足，请先购买积分。' : 'Insufficient credits. Please top up first.');
+  const pointsLabel = t.paywall?.points_label || (language === 'zh' ? '积分' : 'pts');
+  const creditsBalanceLabel = formatPoints(creditsBalance, pointsLabel);
+  const pointsCostLabel = formatPoints(pointsCost, pointsLabel);
+  const monthlyPrice = pricing?.subscription?.monthly?.amount || 699;
+  const yearlyPrice = pricing?.subscription?.yearly?.amount || Math.round(monthlyPrice * 12 * 0.8);
+  const yearlySavings = pricing?.subscription?.yearly?.savings || 20;
+  const yearlyBadge = t.subscription?.save_badge?.replace('{percent}', String(yearlySavings)) || `${yearlySavings}%`;
+  const subscriptionT = t.subscription;
+
+  // A/B Testing hooks
+  const { ctaText } = usePaywallCTA();
+  const { message: trialMessage } = useTrialMessaging();
 
   const handlePurchase = async () => {
     if (!isAuthenticated) {
-      openLoginModal('请先登录以使用积分');
+      openLoginModal(t.paywall?.login_credits || 'Please sign in to use credits');
       return;
     }
     if (!canSpend) {
@@ -238,6 +271,10 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
     setActionError(null);
     setIsProcessing('purchase');
     try {
+      trackEvent('paywall_conversion', {
+        feature: featureType,
+        method: 'credits',
+      });
       await purchaseFeature(featureType, featureId);
       onClose();
       if (onPurchased) {
@@ -256,18 +293,24 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
   };
 
   const handleTopUp = () => {
-    setActionError(language === 'zh' ? '积分充值暂未开放，请稍后再试。' : 'Credits top-up is not available yet.');
+    setActionError(t.paywall?.topup_soon || (language === 'zh' ? '积分充值暂未开放，请稍后再试。' : 'Credits top-up is not available yet.'));
   };
 
-  const handleSubscribe = async () => {
+  const handleSubscribe = async (plan: SubscriptionPlan) => {
     if (!isAuthenticated) {
-      openLoginModal('请先登录以开通订阅');
+      openLoginModal(t.paywall?.login_subscribe || 'Please sign in to start subscription');
       return;
     }
     setActionError(null);
-    setIsProcessing('subscribe');
+    setSelectedPlan(plan);
+    setIsProcessing(plan);
     try {
-      await startSubscription();
+      trackEvent('paywall_conversion', {
+        feature: featureType,
+        method: 'subscription',
+        plan,
+      });
+      await startSubscription(plan);
     } catch (err) {
       const message = err instanceof Error ? err.message : '';
       setActionError(message || fallbackError);
@@ -277,11 +320,26 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
 
   useEffect(() => {
     if (!isOpen) return;
+    getPricingV2()
+      .then(setPricing)
+      .catch(() => null);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
     setIsProcessing(null);
     setActionError(null);
+    setSelectedPlan('yearly');
   }, [isOpen, featureType, featureId]);
 
   if (!isOpen) return null;
+
+  const isBusy = isProcessing !== null;
+  const unlockTitle = (t.paywall?.unlock_title || 'Unlock {feature}').replace('{feature}', displayName);
+  const creditsDescription = (t.paywall?.credits_desc || '{scope} · Balance {balance}')
+    .replace('{scope}', scopeLabel)
+    .replace('{balance}', creditsBalanceLabel);
+  const benefitItems = t.subscription?.benefits || [];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -292,7 +350,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
       />
 
       {/* 弹窗内容 */}
-      <div className={`relative rounded-2xl max-w-md w-full p-6 shadow-2xl border ${isDark ? 'bg-space-900 border-gold-500/15 text-star-50' : 'bg-paper-100/90 border-paper-300 text-paper-900'}`}>
+      <div className={`relative w-full max-w-6xl rounded-2xl p-6 md:p-8 shadow-2xl border ${isDark ? 'bg-space-900 border-gold-500/15 text-star-50' : 'bg-paper-100/90 border-paper-300 text-paper-900'}`}>
         {/* 关闭按钮 */}
         <button
           onClick={onClose}
@@ -301,120 +359,220 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        {/* 标题 */}
-        <div className="text-center mb-6">
-          <Lock className="w-12 h-12 text-amber-400 mx-auto mb-3" />
-          <h2 className={`text-xl font-bold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>解锁 {displayName}</h2>
-        </div>
-
-        {/* 选项 1：积分解锁 */}
-        <div className={`border rounded-xl p-4 mb-4 transition-colors ${isDark ? 'border-gold-500/10 hover:border-gold-500/30' : 'border-paper-300 hover:border-paper-400'}`}>
-          <div className="flex justify-between items-center">
-            <div>
-              <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>使用积分解锁</h3>
-              <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'}`}>{priceInfo.description} · 余额 {formatPoints(creditsBalance)}</p>
+        <div className="space-y-6">
+          {/* 标题 */}
+          <div className="flex items-center gap-4">
+            <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${isDark ? 'bg-gold-500/10 text-gold-400' : 'bg-gold-500/15 text-gold-600'}`}>
+              <Lock className="w-6 h-6" />
             </div>
-            <button
-              onClick={handlePurchase}
-              className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-paper-100/90 hover:bg-paper-200/70 text-paper-900' : 'bg-space-950 hover:bg-space-900 text-star-50'} ${(!canSpend || isProcessing) ? 'opacity-60 cursor-not-allowed' : ''}`}
-              disabled={isProcessing !== null || !canSpend}
-            >
-              消耗 {formatPoints(pointsCost)}
-            </button>
-          </div>
-        </div>
-
-        {/* 选项 2：购买积分 */}
-        <div className={`border rounded-xl p-4 mb-4 transition-colors ${isDark ? 'border-gold-500/10 hover:border-gold-500/30' : 'border-paper-300 hover:border-paper-400'}`}>
-          <div className="flex justify-between items-center">
             <div>
-              <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>购买积分</h3>
-              <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'}`}>充值积分后可解锁内容</p>
-            </div>
-            <button
-              onClick={handleTopUp}
-              className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-space-800/60 hover:bg-space-800/80 text-star-50' : 'bg-paper-100/80 hover:bg-paper-200/70 text-paper-900'} ${isProcessing ? 'opacity-60 cursor-not-allowed' : ''}`}
-              disabled={isProcessing !== null}
-            >
-              即将上线
-            </button>
-          </div>
-        </div>
-
-        {/* 选项 3：订阅（推荐） */}
-        {!isSubscriber && (
-          <div className="border-2 border-amber-500 rounded-xl p-4 relative">
-            <span className="absolute -top-3 left-4 bg-amber-500 text-space-950 text-xs px-2 py-1 rounded-full font-medium">
-              推荐
-            </span>
-            <div className="flex justify-between items-center">
-              <div>
-                <h3 className={`font-medium flex items-center gap-2 ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
-                  <Sparkles className="w-4 h-4 text-amber-400" />
-                  开启订阅
-                </h3>
-                <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'}`}>解锁所有内容 + 更多权益</p>
+              <div className={`text-xs uppercase tracking-[0.35em] ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+                {t.paywall?.subscribe_title}
               </div>
-              <button
-                onClick={handleSubscribe}
-                className={`px-4 py-2 bg-amber-500 hover:bg-amber-400 text-space-950 rounded-full font-medium transition-colors ${isProcessing ? 'opacity-60 cursor-not-allowed' : ''}`}
-                disabled={isProcessing !== null}
-              >
-                $6.99/月
-              </button>
-            </div>
-
-            {/* 订阅权益列表 */}
-            <div className={`mt-4 pt-4 border-t ${isDark ? 'border-gold-500/10' : 'border-paper-300'}`}>
-              <ul className={`text-sm space-y-1 ${isDark ? 'text-star-400' : 'text-paper-600'}`}>
-                <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span>
-                  所有查看详情免费
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span>
-                  每周 5 次 Ask 问答
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span>
-                  每周 5 次合盘分析
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span>
-                  CBT 统计解读自动解锁
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-amber-400">✓</span>
-                  报告 8 折优惠
-                </li>
-              </ul>
+              <h2 className={`text-2xl font-serif font-semibold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{unlockTitle}</h2>
+              <p className={`text-sm mt-1 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
+                {t.paywall?.subscribe_desc}
+              </p>
             </div>
           </div>
-        )}
 
-        {/* 试用提示 */}
-        {isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
-          <div className="mt-4 p-3 bg-amber-500/10 rounded-lg">
-            <p className="text-sm text-amber-400 text-center">
-              您的 7 天免费试用还剩 {trialDaysLeft} 天
-            </p>
+          {/* 社交证明与风险逆转 */}
+          <div className={`rounded-xl p-4 ${isDark ? 'bg-space-800/50' : 'bg-paper-100'}`}>
+            <PaywallSocialProof variant="compact" />
+            <div className="mt-4 pt-4 border-t border-dashed border-gold-500/20">
+              <RiskReversal />
+            </div>
           </div>
-        )}
 
-        {/* 已是订阅用户 */}
-        {isSubscriber && !isTrialing && (
-          <div className="mt-4 p-3 bg-green-500/10 rounded-lg">
-            <p className="text-sm text-green-400 text-center">
-              您已是订阅用户，享有大部分内容免费权益
-            </p>
-          </div>
-        )}
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+            {/* 订阅方案 */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className={`text-xs uppercase tracking-[0.3em] ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+                  {t.paywall?.subscribe_title}
+                </div>
+                <div className={`inline-flex items-center gap-1 p-1 rounded-full ${isDark ? 'bg-space-800' : 'bg-paper-200'}`}>
+                  <button
+                    onClick={() => setSelectedPlan('monthly')}
+                    className={`px-3 py-1.5 text-[11px] font-semibold rounded-full transition-all ${
+                      selectedPlan === 'monthly'
+                        ? isDark
+                          ? 'bg-space-700 text-star-50'
+                          : 'bg-paper-100 text-paper-900'
+                        : isDark
+                          ? 'text-star-400 hover:text-star-200'
+                          : 'text-paper-500 hover:text-paper-700'
+                    }`}
+                  >
+                    {subscriptionT?.monthly}
+                  </button>
+                  <button
+                    onClick={() => setSelectedPlan('yearly')}
+                    className={`px-3 py-1.5 text-[11px] font-semibold rounded-full transition-all ${
+                      selectedPlan === 'yearly'
+                        ? isDark
+                          ? 'bg-space-700 text-star-50'
+                          : 'bg-paper-100 text-paper-900'
+                        : isDark
+                          ? 'text-star-400 hover:text-star-200'
+                          : 'text-paper-500 hover:text-paper-700'
+                    }`}
+                  >
+                    {subscriptionT?.yearly} · {yearlyBadge}
+                  </button>
+                </div>
+              </div>
 
-        {actionError && (
-          <div className="mt-4 p-3 rounded-lg border border-red-500/30 bg-red-500/10 text-red-400 text-sm text-center">
-            {actionError}
+              <div className="grid gap-4 md:grid-cols-2">
+                {(['monthly', 'yearly'] as SubscriptionPlan[]).map((plan) => {
+                  const isSelected = selectedPlan === plan;
+                  const isYearly = plan === 'yearly';
+                  const price = isYearly ? yearlyPrice : monthlyPrice;
+                  const subtitle = isYearly ? subscriptionT?.yearly_desc : subscriptionT?.monthly_desc;
+                  const interval = isYearly ? subscriptionT?.per_year : subscriptionT?.per_month;
+                  return (
+                    <div
+                      key={plan}
+                      className={`relative rounded-2xl border p-4 transition-all ${
+                        isSelected
+                          ? isDark
+                            ? 'border-gold-500/60 bg-gold-500/10'
+                            : 'border-gold-500/60 bg-gold-50'
+                          : isDark
+                            ? 'border-gold-500/15 bg-space-900/40'
+                            : 'border-paper-300 bg-paper-100/90'
+                      }`}
+                    >
+                      {isYearly && (
+                        <span className="absolute -top-3 left-4 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-gold-500 text-space-950 rounded-full">
+                          {subscriptionT?.recommend || t.paywall?.subscribe_badge}
+                        </span>
+                      )}
+                      <div className="text-xs uppercase tracking-[0.35em] text-gold-500/70">
+                        {isYearly ? subscriptionT?.yearly : subscriptionT?.monthly}
+                      </div>
+                      <div className={`text-2xl font-bold mt-2 ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
+                        {formatPrice(price)}
+                        <span className={`text-sm font-normal ml-1 ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+                          {interval}
+                        </span>
+                      </div>
+                      <div className={`text-sm mt-2 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>{subtitle}</div>
+                      <button
+                        onClick={() => handleSubscribe(plan)}
+                        className={`mt-4 w-full px-4 py-2 rounded-full font-medium transition-colors ${
+                          isSelected
+                            ? 'bg-amber-500 hover:bg-amber-400 text-space-950'
+                            : isDark
+                              ? 'bg-space-800/70 hover:bg-space-800 text-star-50'
+                              : 'bg-paper-100/80 hover:bg-paper-200 text-paper-900'
+                        } ${isBusy ? 'opacity-60 cursor-not-allowed' : ''}`}
+                        disabled={isBusy}
+                      >
+                        {isProcessing === plan ? (
+                          <span className="flex items-center justify-center gap-2">
+                            <span className={`w-4 h-4 border-2 rounded-full animate-spin ${isDark ? 'border-star-200/40 border-t-star-50' : 'border-paper-300/60 border-t-paper-900'}`} />
+                          </span>
+                        ) : (
+                          ctaText
+                        )}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* 价值对比 */}
+              <ValueComparison
+                monthlyPrice={monthlyPrice}
+                yearlyPrice={yearlyPrice}
+                yearlySavings={yearlySavings}
+              />
+
+              <div className={`rounded-2xl border p-4 ${isDark ? 'border-gold-500/15 bg-space-900/30' : 'border-paper-300 bg-paper-100/80'}`}>
+                <div className={`text-xs uppercase tracking-[0.3em] mb-3 ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+                  {subscriptionT?.benefits_title}
+                </div>
+                <div className="grid gap-2 md:grid-cols-2">
+                  {benefitItems.map((item) => (
+                    <div key={item} className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" />
+                      <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* 积分与单次解锁 */}
+            <div className="space-y-4">
+              <div className={`rounded-2xl border p-4 ${isDark ? 'border-gold-500/10 bg-space-900/40' : 'border-paper-300 bg-paper-100/80'}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{t.paywall?.credits_title}</h3>
+                    <p className={`text-sm mt-1 ${isDark ? 'text-star-400' : 'text-paper-600'}`}>{creditsDescription}</p>
+                  </div>
+                  <button
+                    onClick={handlePurchase}
+                    className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-paper-100/90 hover:bg-paper-200/70 text-paper-900' : 'bg-space-950 hover:bg-space-900 text-star-50'} ${(!canSpend || isBusy) ? 'opacity-60 cursor-not-allowed' : ''}`}
+                    disabled={isBusy || !canSpend}
+                  >
+                    {(t.paywall?.credits_button || 'Spend {points}').replace('{points}', pointsCostLabel)}
+                  </button>
+                </div>
+              </div>
+
+              <div className={`rounded-2xl border p-4 ${isDark ? 'border-gold-500/10 bg-space-900/30' : 'border-paper-300 bg-paper-100/80'}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{t.paywall?.topup_title}</h3>
+                    <p className={`text-sm mt-1 ${isDark ? 'text-star-400' : 'text-paper-600'}`}>{t.paywall?.topup_desc}</p>
+                  </div>
+                  <button
+                    onClick={handleTopUp}
+                    className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-space-800/60 hover:bg-space-800/80 text-star-50' : 'bg-paper-100/80 hover:bg-paper-200/70 text-paper-900'} ${isBusy ? 'opacity-60 cursor-not-allowed' : ''}`}
+                    disabled={isBusy}
+                  >
+                    {t.paywall?.topup_soon || t.paywall?.topup_button}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-        )}
+
+          {/* 试用提示 */}
+          {isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
+            <div className="p-3 bg-amber-500/10 rounded-lg">
+              <p className="text-sm text-amber-400 text-center">
+                {trialMessage.headline} · {trialMessage.subhead}
+              </p>
+            </div>
+          )}
+
+          {/* 非试用用户看到的试用引导 */}
+          {!isTrialing && !isSubscriber && (
+            <div className="p-3 bg-amber-500/10 rounded-lg">
+              <p className="text-sm text-amber-400 text-center">
+                {trialMessage.headline} · {trialMessage.subhead}
+              </p>
+            </div>
+          )}
+
+          {/* 已是订阅用户 */}
+          {isSubscriber && !isTrialing && (
+            <div className="p-3 bg-green-500/10 rounded-lg">
+              <p className="text-sm text-green-400 text-center">
+                {t.paywall?.subscriber_tip}
+              </p>
+            </div>
+          )}
+
+          {actionError && (
+            <div className="p-3 rounded-lg border border-red-500/30 bg-red-500/10 text-red-400 text-sm text-center">
+              {actionError}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

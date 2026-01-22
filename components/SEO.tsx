@@ -11,25 +11,36 @@ interface SEOProps {
   author?: string;
   robots?: string;
   alternateLanguages?: Array<{ hrefLang: string; href: string }>;
+  // Article specific
+  publishedTime?: string;
+  modifiedTime?: string;
+  authorName?: string;
+  section?: string;
+  tags?: string[];
 }
 
 export const SEO: React.FC<SEOProps> = ({
   title,
-  description = 'AstrologyWiki - Your guide to modern astrology, psychology, and self-discovery.',
+  description = 'Astromind - Your guide to modern astrology, psychology, and self-discovery.',
   image = '/og-image.png',
   url,
   type = 'website',
   schema,
   keywords = [],
-  author = 'AstrologyWiki',
+  author = 'Astromind',
   robots,
   alternateLanguages = [],
+  publishedTime,
+  modifiedTime,
+  authorName,
+  section,
+  tags = [],
 }) => {
-  const siteTitle = 'AstrologyWiki';
+  const siteTitle = 'Astromind';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const fallbackUrl = typeof window !== 'undefined' ? window.location.href : 'https://www.astrologywiki.com';
+  const fallbackUrl = typeof window !== 'undefined' ? window.location.href : 'https://www.astromind.ai';
   const currentUrl = url || fallbackUrl;
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.astrologywiki.com';
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.astromind.ai';
   const resolveAbsoluteUrl = (value: string) => {
     if (!value) return value;
     if (/^https?:\/\//i.test(value)) return value;
@@ -42,6 +53,8 @@ export const SEO: React.FC<SEOProps> = ({
     'psychological astrology',
     'natal chart',
     'horoscope',
+    'psychology',
+    'self-discovery',
     ...keywords,
   ].join(', '), [keywords]);
   const ownerRef = useRef(`astro-seo-${Math.random().toString(36).slice(2)}`);
@@ -201,6 +214,15 @@ export const SEO: React.FC<SEOProps> = ({
     upsertMeta('name', 'twitter:title', fullTitle);
     upsertMeta('name', 'twitter:description', description);
     upsertMeta('name', 'twitter:image', resolvedImage);
+
+    // Article specific meta tags
+    if (type === 'article') {
+      if (publishedTime) upsertMeta('property', 'article:published_time', publishedTime);
+      if (modifiedTime) upsertMeta('property', 'article:modified_time', modifiedTime);
+      if (authorName) upsertMeta('property', 'article:author', authorName);
+      if (section) upsertMeta('property', 'article:section', section);
+      tags.forEach((tag) => upsertMeta('property', 'article:tag', tag));
+    }
 
     if (schema) {
       setJsonLd(schema);

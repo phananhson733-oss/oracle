@@ -1,4 +1,4 @@
-<!-- INPUT: Prompt 管理目录结构与输出规范索引（含详情解读分区标签、紧凑摘要上下文变更与 CBT 拆分）。 -->
+<!-- INPUT: Prompt 管理目录结构与输出规范索引（含详情解读分区标签、紧凑摘要上下文变更与 CBT 日常建议约束）。 -->
 <!-- OUTPUT: prompts 架构摘要与文件清单（含详情解读标签化结构、合盘成长焦点字段调整与 CBT 独立统计 Prompt）。 -->
 <!-- POS: Prompt 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -17,6 +17,7 @@
 - manager.ts｜地位：Prompt 管理器｜功能：注册 Prompt、构建缓存 key 与分类逻辑。
 
 近期更新
+- CBT 分析 Prompt 补充日常建议的情境绑定与数组格式约束，修正执行建议输出。
 - CBT 聚合分析 Prompt 拆分为 4 个独立 Prompt：cbt-somatic-analysis、cbt-root-analysis、cbt-mood-analysis、cbt-competence-analysis。
 - 新增 common.ts 共享模块，提取类型定义与共享工具函数。
 - 本命盘/日运/CBT Prompt 版本更新至 5.1，强化 humanizer-zh 原则。

@@ -18,14 +18,20 @@
 | `WikiClassicsPage.tsx` | Wiki 经典书籍页，呈现书架列表 |
 | `WikiClassicDetailPage.tsx` | Wiki 经典书籍详情页，展示长文解读 |
 | `WikiSyntheticaPage.tsx` | Wiki 工具页，提供 Synthetica 洞察生成与结果展示 |
+| `RelatedArticles.tsx` | 相关文章组件，基于星象关联展示相关内容 |
 
 ## 依赖
 
 - `services/apiClient.ts`：Wiki API 调用
 - `components/UIComponents.tsx`：主题/语言上下文与通用 UI 原语
+- `data/wiki-associations.ts`：星象关联矩阵数据
 
 ## 近期更新
 
+- 新增 RelatedArticles 组件，基于星象关联展示相关内容（守护、旺势、同元素等关系）。
+- 新增 wiki-associations.ts 数据文件，定义行星-星座守护关系、元素分组、宫位对应等关联数据。
+
+- Wiki 详情页补充 Article 与 FAQPage 结构化数据输出。
 - Wiki 详情页补充语言可用性校验，避免输出无效的 hreflang/alternate。
 - Wiki 百科与经典书架 ItemList 结构化数据改为 item 字段并补齐名称/链接。
 - Wiki 入口/百科/详情/经典页接入 SEO 元信息、hreflang 与 JSON-LD。

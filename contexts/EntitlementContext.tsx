@@ -1,5 +1,5 @@
-// INPUT: React 权益上下文 V2（含详情解锁、Synthetica 日额度与合盘付费回调）。
-// OUTPUT: 导出 EntitlementContext 和 EntitlementProvider（含合盘购买后续处理与积分解锁兜底）。
+// INPUT: React 权益上下文 V2（含订阅方案、详情解锁、Synthetica 日额度与合盘付费回调）。
+// OUTPUT: 导出 EntitlementContext 和 EntitlementProvider（含订阅方案透传、合盘购买后续处理与积分解锁兜底）。
 // POS: 前端权益上下文 V2（含合盘付费回调与购买校验）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
@@ -22,6 +22,7 @@ import {
   POINTS_PRICING,
 } from '../services/entitlementClientV2';
 import { useAuth } from './AuthContext';
+import { setUserProperties, trackEvent } from '../services/analytics';
 
 // =====================================================
 // 类型定义
@@ -53,7 +54,7 @@ interface EntitlementContextType {
   recordSynastry: (personA: SynastryPersonInfo, personB: SynastryPersonInfo, relationshipType: string, isFree: boolean) => Promise<string>;
 
   // 购买流程
-  startSubscription: () => Promise<void>;
+  startSubscription: (plan?: 'monthly' | 'yearly') => Promise<void>;
   purchaseFeature: (featureType: FeatureType, featureId?: string) => Promise<void>;
 
   // 弹窗控制
@@ -127,6 +128,12 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
   useEffect(() => {
     refreshEntitlements();
   }, [isAuthenticated, refreshEntitlements]);
+
+  useEffect(() => {
+    if (!entitlements) return;
+    const userType = entitlements.isSubscriber ? 'paid' : entitlements.isTrialing ? 'trial' : 'free';
+    setUserProperties({ user_type: userType });
+  }, [entitlements?.isSubscriber, entitlements?.isTrialing]);
 
   // 功能访问检查（异步，精确）
   const checkAccess = useCallback(async (featureType: FeatureType, featureId?: string): Promise<AccessCheckResult> => {
@@ -252,11 +259,14 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
   }, []);
 
   // 开始订阅
-  const startSubscription = useCallback(async () => {
+  const startSubscription = useCallback(async (plan: 'monthly' | 'yearly' = 'monthly') => {
     const successUrl = `${window.location.origin}/subscription/success`;
     const cancelUrl = `${window.location.origin}/subscription/cancel`;
 
-    const { url } = await createSubscribeCheckoutV2(successUrl, cancelUrl);
+    const { url } = await createSubscribeCheckoutV2(plan, successUrl, cancelUrl);
+    trackEvent('subscription_started', {
+      plan,
+    });
     window.location.href = url;
   }, []);
 
@@ -266,6 +276,10 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
     if (result.success) {
       setEntitlements(result.entitlements);
       cacheEntitlements(result.entitlements);
+      trackEvent('purchase', {
+        purchase_method: 'credits',
+        feature: featureType,
+      });
     }
   }, []);
 
@@ -278,6 +292,10 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
   ) => {
     setPaywallFeature({ type: featureType, id: featureId, price, onPurchased });
     setShowPaywall(true);
+    trackEvent('paywall_shown', {
+      feature: featureType,
+      price,
+    });
   }, []);
 
   const closePaywall = useCallback(() => {

@@ -26,9 +26,10 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://accounts.google.com">
-    <link rel="preconnect" href="https://appleid.cdn-apple.com">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/readexpro/v14/ijwXsSlRRtMfK7uR6yVZVX5eD9Z.woff2" crossOrigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/cormorantgaramond/v22/co3YmX5slCNuHLi8bWQdNOo8PM.woff2" crossOrigin="anonymous" />
+    <link rel="preconnect" href="https://images.unsplash.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -237,7 +238,34 @@
         font-family: 'Cormorant Garamond', serif;
         letter-spacing: -0.02em;
       }
-      
+
+      /* Font Display Optimization */
+      @font-face {
+        font-family: 'Readex Pro';
+        font-display: swap;
+        src: local('Readex Pro'),
+             url('https://fonts.gstatic.com/s/readexpro/v14/ijwXsSlRRtMfK7uR6yVZVX5eD9g.woff2') format('woff2'),
+             url('https://fonts.gstatic.com/s/readexpro/v14/ijwXsSlRRtMfK7uR6yVZVX5eD9g.woff') format('woff');
+      }
+
+      @font-face {
+        font-family: 'Cormorant Garamond';
+        font-display: swap;
+        src: local('Cormorant Garamond'),
+             url('https://fonts.gstatic.com/s/cormorantgaramond/v22/co3YmX5slCNuHLi8bWQdNOo8PM.woff2') format('woff2'),
+             url('https://fonts.gstatic.com/s/cormorantgaramond/v22/co3YmX5slCNuHLi8bWQdNOo8PM.woff') format('woff');
+      }
+
+      /* Font Loading State */
+      body.loading-fonts {
+        visibility: hidden;
+      }
+
+      body.fonts-loaded {
+        visibility: visible;
+      }
+
+      /* Critical CSS Inline */
       .text-balance {
         text-wrap: balance;
       }
@@ -273,9 +301,17 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
-</head>
-  <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950">
+  <script>
+    if ('fonts' in document) {
+      document.fonts.ready.then(() => {
+        document.body.classList.add('fonts-loaded');
+        document.body.classList.remove('loading-fonts');
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="/index.css">
+  </head>
+  <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950 loading-fonts">
     <div class="bg-noise"></div>
     <div id="root" class="relative z-10"></div>
   <script type="module" src="/index.tsx"></script>

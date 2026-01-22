@@ -531,14 +531,15 @@ export const Modal: React.FC<{ isOpen: boolean, onClose: () => void, title?: str
       <div
         ref={modalRef}
         tabIndex={-1}
-        className={`relative w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-2xl shadow-2xl z-10 animate-slide-up border ${s.divider} ${theme === 'dark' ? 'bg-space-900' : 'bg-paper-100/85'} ${className} focus:outline-none`}
+        className={`relative w-full max-w-lg max-h-[85vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] rounded-2xl shadow-2xl z-10 animate-slide-up border ${s.divider} ${theme === 'dark' ? 'bg-space-900' : 'bg-paper-100/85'} ${className} focus:outline-none`}
       >
-        <div className={`sticky top-0 z-20 flex justify-between items-center px-6 py-4 border-b ${s.divider} backdrop-blur-md ${theme === 'dark' ? 'bg-space-900/80' : 'bg-paper-100/80'}`}>
-          {title && <h2 id="modal-title" className={`text-lg font-semibold ${s.heading}`}>{title}</h2>}
+        <div className={`sticky top-0 z-20 grid grid-cols-[40px_1fr_40px] items-center px-6 py-4 border-b ${s.divider} backdrop-blur-md ${theme === 'dark' ? 'bg-space-900/80' : 'bg-paper-100/80'}`}>
+          <div></div>
+          {title && <h2 id="modal-title" className={`text-2xl font-semibold text-center ${s.heading}`}>{title}</h2>}
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className={`w-8 h-8 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 flex items-center justify-center rounded-lg transition-all duration-300 ease-in-out ${s.muted} ${theme === 'dark' ? 'hover:bg-space-800/60' : 'hover:bg-paper-200/60'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
+            className={`w-8 h-8 min-h-[44px] min-w-[44px] md:min-h-0 md:min-w-0 flex items-center justify-center justify-self-end rounded-lg transition-all duration-300 ease-in-out ${s.muted} ${theme === 'dark' ? 'hover:bg-space-800/60' : 'hover:bg-paper-200/60'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
           >
             <span aria-hidden="true">✕</span>
           </button>

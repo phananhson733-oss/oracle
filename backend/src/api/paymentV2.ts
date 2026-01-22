@@ -30,6 +30,8 @@ const POINTS_PRICING: Record<FeatureType, number> = {
 // GET /api/payment/v2/pricing
 // 获取定价信息
 router.get('/v2/pricing', async (_req: Request, res: Response) => {
+  const yearlyAmount = PRODUCTS.subscription.yearly.amount;
+  const yearlySavings = 20;
   res.json({
     subscription: {
       monthly: {
@@ -37,6 +39,13 @@ router.get('/v2/pricing', async (_req: Request, res: Response) => {
         currency: 'usd',
         interval: 'month',
         name: PRODUCTS.subscription.monthly.name,
+      },
+      yearly: {
+        amount: yearlyAmount,
+        currency: 'usd',
+        interval: 'year',
+        name: PRODUCTS.subscription.yearly.name,
+        savings: yearlySavings,
       },
     },
     oneTime: {
@@ -112,7 +121,7 @@ router.post('/v2/subscribe', authMiddleware, requireAuth, async (req: Request, r
       return res.status(503).json({ error: 'Payment service unavailable' });
     }
 
-    const { successUrl, cancelUrl } = req.body;
+    const { successUrl, cancelUrl, plan } = req.body;
 
     if (!successUrl || !cancelUrl) {
       return res.status(400).json({ error: 'successUrl and cancelUrl required' });
@@ -129,10 +138,11 @@ router.post('/v2/subscribe', authMiddleware, requireAuth, async (req: Request, r
       return res.status(400).json({ error: 'Already subscribed' });
     }
 
+    const resolvedPlan = plan === 'yearly' ? 'yearly' : 'monthly';
     const checkoutUrl = await subscriptionService.createSubscriptionCheckout({
       userId: req.userId!,
       email: user.email,
-      plan: 'monthly',
+      plan: resolvedPlan,
       successUrl,
       cancelUrl,
     });

@@ -6,6 +6,7 @@ import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, ActionButton } from '../UIComponents';
 import { Lock, Crown, Sparkles } from 'lucide-react';
+import { usePaywallCTA } from '../../hooks/useABTest';
 
 interface PaywallProps {
   feature: 'ask' | 'detail' | 'synastry' | 'cbt' | 'report';
@@ -21,6 +22,8 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
   const { t } = useLanguage();
   const { isAuthenticated, entitlements, openLoginModal, openUpgradeModal } = useAuth();
 
+  const { ctaText } = usePaywallCTA();
+
   const isDark = theme === 'dark';
 
   const translations = {
@@ -33,8 +36,8 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
         report: { name: '报告', limit: '此报告需要购买' },
       },
       login: '登录以继续',
-      upgrade: '升级 Pro 解锁无限次数',
-      buyOnce: '或单次购买',
+      upgrade: '解锁无限星盘解读',
+      buyOnce: '或单独购买此功能',
       remaining: '剩余',
       times: '次',
       unlimited: '无限',
@@ -48,8 +51,8 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
         report: { name: 'Report', limit: 'This report requires purchase' },
       },
       login: 'Sign in to continue',
-      upgrade: 'Upgrade to Pro for unlimited access',
-      buyOnce: 'Or buy once',
+      upgrade: 'Unlock unlimited readings',
+      buyOnce: 'Or purchase this feature',
       remaining: 'Remaining',
       times: '',
       unlimited: 'Unlimited',
@@ -192,7 +195,7 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
                 >
                   <span className="flex items-center justify-center gap-2">
                     <Crown className="w-4 h-4" />
-                    {tr.upgrade}
+                    {ctaText}
                   </span>
                 </ActionButton>
 

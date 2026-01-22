@@ -1,0 +1,9 @@
+Campaign Name,utm_source,utm_medium,utm_campaign,utm_term,utm_content,Start Date,End Date,Status,URL,Notes,Owner
+Q1 User Acquisition,facebook,social,new-user-signup-2026q1,,,2026-01-01,2026-03-31,Active,https://astromind.ai,Facebook 推广帖,marketing,
+Spring Subscription Sale,google,cpc,spring-subscription-sale,,cta_green,2026-03-01,2026-03-31,Planned,https://astromind.ai,Google Ads 春季促销,ads,
+Weekly Newsletter #1,newsletter,email,weekly-update-2026-01,,,2026-01-06,2026-01-13,Completed,https://astromind.ai?utm_source=newsletter&utm_medium=email&utm_campaign=weekly-update-2026-01,2026 年第 1 周周报,marketing,
+WeChat Article,wechat,social,wiki-content-promo,,,2026-01-15,2026-01-22,Active,https://astromind.ai?utm_source=wechat&utm_medium=social&utm_campaign=wiki-content-promo,微信公众号文章推广,marketing,
+Twitter Influencer,twitter,social,brand-awareness-q1,,,2026-01-10,2026-02-28,Active,https://astromind.ai?utm_source=twitter&utm_medium=social&utm_campaign=brand-awareness-q1,KOL 合作推广,partnerships,
+Instagram Story,instagram,social,app-feature-showcase,,swipe-up-link,2026-01-20,2026-01-27,Planned,https://astromind.ai?utm_source=instagram&utm_medium=social&utm_campaign=app-feature-showcase,Instagram Stories 功能展示,marketing,
+Email Retargeting,email,email,user-reengagement-30days,,,2026-01-15,Ongoing,Active,https://astromind.ai,30 天未活跃用户召回邮件,marketing,
+Xiaohongshu Campaign,xiaohongshu,social,wiki-article-traffic,,,2026-01-08,2026-02-08,Active,https://astromind.ai?utm_source=xiaohongshu&utm_medium=social&utm_campaign=wiki-article-traffic,小红书笔记引流,marketing,

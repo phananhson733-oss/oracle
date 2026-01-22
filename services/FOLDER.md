@@ -17,11 +17,15 @@
 - paymentClient.ts｜地位：支付与权益客户端｜功能：订阅/购买/权益查询与 GM 测试指令调用。
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
+- analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装。
+- consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
+- abTest.ts｜地位：实验工具｜功能：A/B 测试分组与曝光追踪。
 
 子目录
 - cbt/｜地位：CBT 服务子目录｜功能：CBT 功能的后端服务。
 
 近期更新
+- 新增 analytics/consent/abTest 服务，补齐追踪初始化、同意管理与实验分组。
 - apiClient 地理搜索支持多语言参数并透传到后端。
 - reportClient 改为积分购买报告并返回积分扣减结果。
 - entitlementClient V2 改为积分定价并新增积分价格常量与记录字段。

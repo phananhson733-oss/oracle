@@ -2,12 +2,15 @@
 // OUTPUT: 导出 Wiki 详情页组件（含阅读宽度限制、SEO 输出与多语言链接校验）。
 // POS: Wiki 详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Accordion, Card, Container, Section, useLanguage, useTheme } from '../UIComponents';
 import { SEO } from '../SEO';
+import { RelatedArticles } from './RelatedArticles';
+import { Breadcrumb } from '../Breadcrumb';
 import { ArrowLeft, Brain, GitMerge, Ghost, ScrollText, Sparkles, Wand2 } from 'lucide-react';
 import { fetchWikiItem, fetchWikiItems } from '../../services/apiClient';
+import { trackEvent } from '../../services/analytics';
 import type { WikiItem, WikiItemSummary } from '../../types';
 
 const renderContent = (content: string, highlightClass: string, mutedClass: string = 'text-star-400') => {
@@ -130,6 +133,7 @@ const WikiDetailPage: React.FC = () => {
   const [relatedItems, setRelatedItems] = useState<WikiItemSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const trackedViewRef = useRef<string | null>(null);
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
   const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';
@@ -206,10 +210,79 @@ const WikiDetailPage: React.FC = () => {
     };
   }, [id, language, t.app.error]);
 
+  useEffect(() => {
+    if (!item) return;
+    const viewKey = `${lang}:${item.id}`;
+    if (trackedViewRef.current === viewKey) return;
+    trackedViewRef.current = viewKey;
+    trackEvent('wiki_article_viewed', {
+      item_id: item.id,
+      item_title: item.title,
+      language: lang,
+    });
+  }, [item, lang]);
+
   const typeLabel = useMemo(() => {
     if (!item) return '';
     return t.wiki.type_labels[item.type] || item.type;
   }, [item, t.wiki.type_labels]);
+
+  const articleSchema = useMemo(() => {
+    if (!item) return null;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: item.title,
+      author: {
+        '@type': 'Organization',
+        name: 'AstrologyWiki',
+      },
+      datePublished: new Date().toISOString(),
+      dateModified: new Date().toISOString(),
+      image: item.image_url || `${siteUrl}/og-image.png`,
+      articleBody: [
+        item.description,
+        item.astronomy_myth,
+        item.psychology,
+        item.shadow,
+        item.integration,
+      ].filter(Boolean).join('\n\n'),
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+      },
+    };
+  }, [item, siteUrl, canonicalUrl]);
+
+  const faqSchema = useMemo(() => {
+    if (!item) return null;
+    const entries: Array<{ name: string; text: string }> = [];
+    if (item.common_misconceptions?.length) {
+      entries.push({
+        name: lang === 'zh' ? `关于${item.title}的常见误解是什么？` : `What are common misconceptions about ${item.title}?`,
+        text: item.common_misconceptions.join('\n'),
+      });
+    }
+    if (item.practical_tips?.length) {
+      entries.push({
+        name: lang === 'zh' ? `如何在生活中应用${item.title}？` : `How can you apply ${item.title} in daily life?`,
+        text: item.practical_tips.join('\n'),
+      });
+    }
+    if (entries.length === 0) return null;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: entries.map((entry) => ({
+        '@type': 'Question',
+        name: entry.name,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: entry.text,
+        },
+      })),
+    };
+  }, [item, lang]);
 
   if (loading) {
     return (
@@ -236,6 +309,7 @@ const WikiDetailPage: React.FC = () => {
 
   return (
     <Container>
+      <Breadcrumb items={breadcrumbItems} />
       <SEO
         title={item.title}
         description={item.description || t.wiki.subtitle}
@@ -268,6 +342,8 @@ const WikiDetailPage: React.FC = () => {
               { '@type': 'ListItem', position: 3, name: item.title, item: canonicalUrl },
             ],
           },
+          ...(articleSchema ? [articleSchema] : []),
+          ...(faqSchema ? [faqSchema] : []),
         ]}
       />
       <div className="space-y-12">
@@ -385,6 +461,12 @@ const WikiDetailPage: React.FC = () => {
           </div>
         </Section>
       )}
+
+      <RelatedArticles
+        itemId={item.id}
+        itemType={item.type}
+        title={t.wiki?.related_by_astrology || '星象关联'}
+      />
 
       </div>
     </Container>

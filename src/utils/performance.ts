@@ -1,22 +1,57 @@
-// INPUT: 性能监控工具函数
-// OUTPUT: 导出性能测量和 Core Web Vitals 监控函数
+// INPUT: 性能监控工具函数与 Web Vitals 上报。
+// OUTPUT: 导出性能测量和 Core Web Vitals 监控函数。
 // POS: 性能监控工具；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+
+import type { Metric } from 'web-vitals';
+import { trackEvent } from '../../services/analytics';
+import { hasAnalyticsConsent } from '../../services/consent';
+
+const pendingWebVitals: Metric[] = [];
+
+const pushWebVitals = (metric: Metric) => {
+  trackEvent('web_vitals', {
+    metric_name: metric.name,
+    metric_value: metric.value,
+    metric_delta: metric.delta,
+    metric_id: metric.id,
+    metric_rating: metric.rating,
+  });
+};
+
+export const flushQueuedWebVitals = () => {
+  if (!hasAnalyticsConsent()) return;
+  while (pendingWebVitals.length > 0) {
+    const metric = pendingWebVitals.shift();
+    if (metric) pushWebVitals(metric);
+  }
+};
 
 /**
  * 测量并报告 Core Web Vitals
  */
-export const reportWebVitals = (onPerfEntry?: (metric: any) => void) => {
+export const reportWebVitals = (onPerfEntry?: (metric: Metric) => void) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
+    import('web-vitals').then((webVitals) => {
+      const { onCLS, onFCP, onINP, onLCP, onTTFB } = webVitals;
+      onCLS(onPerfEntry);
+      onINP(onPerfEntry);
+      onFCP(onPerfEntry);
+      onLCP(onPerfEntry);
+      onTTFB(onPerfEntry);
     }).catch(() => {
       // web-vitals 未安装时静默失败
     });
   }
+};
+
+export const reportWebVitalsToAnalytics = () => {
+  reportWebVitals((metric) => {
+    if (!hasAnalyticsConsent()) {
+      pendingWebVitals.push(metric);
+      return;
+    }
+    pushWebVitals(metric);
+  });
 };
 
 /**

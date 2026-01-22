@@ -320,13 +320,13 @@ const ReportsPage: React.FC = () => {
           <div className="py-4">
             <Crown className="w-12 h-12 mx-auto mb-4 text-gold-500" />
             <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
-              {lang === 'zh' ? '升级 Pro 享受 30% 折扣' : 'Upgrade to Pro for 30% off all reports'}
+              {lang === 'zh' ? '订阅 Pro，报告享 7 折' : 'Pro: 30% Off All Reports'}
             </h3>
             <p className={`text-sm mb-4 ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
-              {lang === 'zh' ? '订阅用户购买所有报告均可享受七折优惠' : 'Pro subscribers get 30% off on all report purchases'}
+              {lang === 'zh' ? '解锁无限解读 + 报告折扣' : 'Unlock unlimited readings + exclusive discounts'}
             </p>
             <ActionButton variant="secondary" onClick={() => openUpgradeModal()}>
-              {lang === 'zh' ? '了解 Pro' : 'Learn about Pro'}
+              {lang === 'zh' ? '立即升级' : 'Upgrade Now'}
             </ActionButton>
           </div>
         </Card>

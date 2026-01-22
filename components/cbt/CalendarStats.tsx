@@ -1,4 +1,4 @@
-// INPUT: React、统计数据与主题（含单屏月视图布局、月份联动与统计入口卡片精简展示、纸感映射）。
+// INPUT: React、统计数据与主题（含单屏月视图布局、月份联动、统计入口卡片分色与初始月份同步）。
 // OUTPUT: 导出日历统计组件（单屏 31 天、紧凑布局并以 icon+短标题呈现统计入口）。
 // POS: CBT 统计视图组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -28,13 +28,29 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
   const calendarShellTone = isLight ? 'bg-paper-100/80 border-gold-600/30' : 'bg-space-800/20 border-gold-500/10';
   const weekdayTone = isLight ? 'text-paper-600' : 'text-star-400';
   const statCardTone = isLight
-    ? 'bg-paper-100/85 border-gold-600/30 text-paper-900 shadow-sm'
-    : 'bg-space-900/60 border-gold-500/10 text-star-50 shadow-[0_20px_40px_-25px_rgba(0,0,0,0.6)]';
+    ? 'bg-paper-100/85 border-paper-300/60 text-paper-900 shadow-sm'
+    : 'bg-space-900/60 border-gold-500/15 text-star-50 shadow-[0_20px_40px_-25px_rgba(0,0,0,0.6)]';
   const statCardHoverTone = isLight
-    ? 'hover:border-gold-500/50 hover:bg-paper-50 hover:shadow-glow'
-    : 'hover:border-gold-500/40 hover:bg-space-800/70 hover:shadow-glow';
-  const statCardTitleTone = isLight ? 'text-paper-900' : 'text-star-50';
-  const statCardIconTone = isLight ? 'bg-paper-100 border-paper-200' : 'bg-space-950/60 border-gold-500/20';
+    ? 'hover:border-psycho-500/40 hover:bg-psycho-500/5 hover:shadow-lg'
+    : 'hover:border-psycho-500/40 hover:bg-psycho-500/10 hover:shadow-glow';
+  const statCardStyles = useMemo(() => ({
+    card1: {
+      labelTone: isLight ? 'text-danger' : 'text-danger',
+      iconTone: isLight ? 'bg-danger/10 border-danger/30 text-danger' : 'bg-danger/15 border-danger/20 text-danger'
+    },
+    card2: {
+      labelTone: isLight ? 'text-gold-700' : 'text-gold-400',
+      iconTone: isLight ? 'bg-gold-500/10 border-gold-600/30 text-gold-700' : 'bg-gold-500/20 border-gold-500/20 text-gold-400'
+    },
+    card3: {
+      labelTone: isLight ? 'text-psycho-600' : 'text-psycho-400',
+      iconTone: isLight ? 'bg-psycho-500/10 border-psycho-500/30 text-psycho-600' : 'bg-psycho-500/15 border-psycho-500/20 text-psycho-400'
+    },
+    card4: {
+      labelTone: isLight ? 'text-success' : 'text-success',
+      iconTone: isLight ? 'bg-success/10 border-success/30 text-success' : 'bg-success/15 border-success/20 text-success'
+    }
+  }), [isLight]);
   const pickerShellTone = isLight ? 'bg-paper-100 border-gold-600/30' : 'bg-space-900 border-gold-500/20';
   const pickerInnerTone = isLight ? 'bg-paper-50 border-gold-600/20' : 'bg-space-950/40 border-gold-500/10';
   const pickerActiveTone = isLight ? 'text-gold-700' : 'text-gold-400';
@@ -57,13 +73,26 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
     };
   }, [language]);
   const statCards = useMemo(() => ([
-    { view: 'card1' as const, title: statsTitles.card1, label: t.journal.card_body_signals, icon: Thermometer, accent: 'text-danger' },
-    { view: 'card2' as const, title: statsTitles.card2, label: t.journal.card_roots, icon: Anchor, accent: 'text-gold-600' },
-    { view: 'card3' as const, title: statsTitles.card3, label: t.journal.card_emotion_recipe, icon: Layers, accent: 'text-accent' },
-    { view: 'card4' as const, title: statsTitles.card4, label: t.journal.card_thinking_exam, icon: Brain, accent: 'text-success' }
-  ]), [statsTitles, t]);
+    { view: 'card1' as const, title: statsTitles.card1, label: t.journal.card_body_signals, icon: Thermometer, style: statCardStyles.card1 },
+    { view: 'card2' as const, title: statsTitles.card2, label: t.journal.card_roots, icon: Anchor, style: statCardStyles.card2 },
+    { view: 'card3' as const, title: statsTitles.card3, label: t.journal.card_emotion_recipe, icon: Layers, style: statCardStyles.card3 },
+    { view: 'card4' as const, title: statsTitles.card4, label: t.journal.card_thinking_exam, icon: Brain, style: statCardStyles.card4 }
+  ]), [statsTitles, t, statCardStyles]);
   const [viewDate, setViewDate] = useState(new Date());
   const [isPickerOpen, setIsPickerOpen] = useState(false);
+  const hasSyncedRef = useRef(false);
+
+  useEffect(() => {
+    if (hasSyncedRef.current || records.length === 0) return;
+    const latestRecord = records.reduce((latest, record) => (
+      record.timestamp > latest.timestamp ? record : latest
+    ), records[0]);
+    const latestDate = new Date(latestRecord.timestamp);
+    const nextView = new Date(latestDate.getFullYear(), latestDate.getMonth(), 1);
+    hasSyncedRef.current = true;
+    setViewDate(nextView);
+    onMonthChange?.(nextView.getFullYear(), nextView.getMonth());
+  }, [records, onMonthChange]);
 
   const MONTH_NAMES = useMemo(() => [
     t.journal.month_jan, t.journal.month_feb, t.journal.month_mar, t.journal.month_apr,
@@ -225,12 +254,12 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
               >
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity ${isLight ? 'bg-gradient-to-br from-gold-500/10 via-transparent to-transparent' : 'bg-gradient-to-br from-gold-500/10 via-transparent to-transparent'}`}></div>
                 <div className="relative flex items-center gap-3">
-                  <div className={`h-10 w-10 rounded-xl border flex items-center justify-center shrink-0 ${statCardIconTone} ${card.accent}`}>
+                  <div className={`h-10 w-10 rounded-xl border flex items-center justify-center shrink-0 ${card.style.iconTone}`}>
                     <Icon size={18} className="transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <div className="min-w-0">
                     {card.title ? (
-                      <div className={`text-sm leading-tight font-semibold ${titleFont} ${statCardTitleTone}`}>{card.title}</div>
+                      <div className={`text-sm leading-tight font-semibold ${titleFont} ${card.style.labelTone}`}>{card.title}</div>
                     ) : null}
                   </div>
                 </div>

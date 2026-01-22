@@ -1,5 +1,5 @@
-// INPUT: 后端权益 API V2 客户端（含详情解锁、Synthetica 日额度与积分解锁、本地日次解锁缓存）。
-// OUTPUT: 导出权益相关 API 调用函数（新版，支持 Synthetica 日额度与积分解锁/日次解锁缓存同步）。
+// INPUT: 后端权益 API V2 客户端（含订阅定价、详情解锁、Synthetica 日额度与积分解锁、本地日次解锁缓存）。
+// OUTPUT: 导出权益相关 API 调用函数（新版，支持订阅定价与 Synthetica 日额度/日次解锁缓存同步）。
 // POS: 前端权益 API V2 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { authFetch } from './authClient';
@@ -285,6 +285,13 @@ export interface PricingV2 {
       interval: string;
       name: string;
     };
+    yearly: {
+      amount: number;
+      currency: string;
+      interval: string;
+      name: string;
+      savings: number;
+    };
   };
   oneTime: Record<string, {
     amount: number;
@@ -306,13 +313,14 @@ export async function getPricingV2(): Promise<PricingV2> {
 
 // 创建订阅 Checkout
 export async function createSubscribeCheckoutV2(
+  plan: 'monthly' | 'yearly',
   successUrl: string,
   cancelUrl: string
 ): Promise<{ url: string }> {
   const res = await authFetch(`${API_BASE}/payment/v2/subscribe`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ successUrl, cancelUrl }),
+    body: JSON.stringify({ plan, successUrl, cancelUrl }),
   });
 
   if (!res.ok) {

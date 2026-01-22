@@ -16,6 +16,7 @@ import {
   migrateLocalData,
   getAccessToken,
 } from '../services/authClient';
+import { setUserId, trackEvent } from '../services/analytics';
 import type { EntitlementsV2 } from '../services/entitlementClientV2';
 import { cacheEntitlements, clearEntitlementsCache, getCachedEntitlements, getEntitlementsV2 } from '../services/entitlementClientV2';
 
@@ -108,24 +109,32 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const handleLoginWithGoogle = async (credential: string) => {
     const result = await loginWithGoogle(credential);
     setUser(result.user);
+    setUserId(result.user.id);
+    trackEvent('login', { method: 'google' });
     setShowLoginModal(false);
   };
 
   const handleLoginWithApple = async (identityToken: string, appleUser?: { email?: string; name?: { firstName?: string; lastName?: string } }) => {
     const result = await loginWithApple(identityToken, appleUser);
     setUser(result.user);
+    setUserId(result.user.id);
+    trackEvent('login', { method: 'apple' });
     setShowLoginModal(false);
   };
 
   const handleLoginWithEmail = async (email: string, password: string) => {
     const result = await loginWithEmail(email, password);
     setUser(result.user);
+    setUserId(result.user.id);
+    trackEvent('login', { method: 'email' });
     setShowLoginModal(false);
   };
 
   const handleRegisterWithEmail = async (email: string, password: string, name?: string) => {
     const result = await registerWithEmail(email, password, name);
     setUser(result.user);
+    setUserId(result.user.id);
+    trackEvent('signup_completed', { method: 'email' });
     setShowLoginModal(false);
   };
 
@@ -134,6 +143,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(null);
     setEntitlements(null);
     clearEntitlementsCache();
+    trackEvent('logout');
   };
 
   const handleUpdateProfile = async (updates: Parameters<typeof updateProfile>[0]) => {
