@@ -16,6 +16,9 @@
 - AstroChart.tsx｜地位：可视化组件｜功能：绘制星盘 SVG（后端数据驱动）。
 - TechSpecsComponents.tsx｜地位：功能组件｜功能：技术参数表格与列表 UI。
 - UIComponents.tsx｜地位：基础组件库｜功能：主题/语言上下文与通用组件。
+- ConsentBanner.tsx｜地位：提示组件｜功能：展示分析追踪同意横幅并收集授权。
+- Breadcrumb.tsx｜地位：导航组件｜功能：面包屑导航与结构化数据输出。
+- ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式）。
 
 目录
 - auth｜地位：认证组件目录｜功能：登录/升级订阅、支付成功页与用户菜单。
@@ -23,6 +26,11 @@
 - wiki｜地位：Wiki 组件目录｜功能：心理占星百科页面与详情组件。
 
 近期更新
+- 新增竞品对比页面组件（ComparisonPage），支持 vs 与 alternatives 两种格式。
+- 新增面包屑导航组件（Breadcrumb），支持结构化数据输出与语义化标记。
+- 新增分析追踪同意横幅（ConsentBanner），用于收集合规授权。
+- 新增 Organization/WebSite 全局结构化数据。
+- SEO 组件扩展支持文章元数据（publishedTime, modifiedTime, author, tags）。
 - 星盘/技术附录/行星提示在 light 模式下加入 Unicode 色阶修正与描边，星座文本同步加深对比，提升 ASC/金黄色符号可读性。
 - SEO 组件回切本地 head 输出，并保留 OG/Twitter 绝对地址解析。
 - Wiki 组件接入 SEO 元信息与结构化数据输出。

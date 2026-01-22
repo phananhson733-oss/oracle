@@ -1,4 +1,4 @@
-// INPUT: React、图表、类型与主题（含月份同步、情绪映射、配色统一、无记录占位与纸感映射）。
+// INPUT: React、图表、类型与主题（含月份同步、情绪映射、洞察正文色与展开标题对齐）。
 // OUTPUT: 导出分析视图组件（含月度过滤联动、无记录跳过 AI 解读、建议分行显示与对比度修正）。
 // POS: CBT 分析展示组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -208,7 +208,7 @@ const InsightRow = ({ text, highlight, isLoading }: any) => {
     : 'bg-space-800/20 border-gold-500/10';
   const accentTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const highlightTone = isLight ? 'text-gold-800' : 'text-gold-200';
-  const textTone = isLight ? 'text-star-700' : 'text-star-200';
+  const textTone = isLight ? 'text-paper-600' : 'text-star-200';
   const loadingTone = isLight ? 'text-gold-600/80 animate-pulse' : 'text-gold-400/80 animate-pulse';
   const iconBg = isLight ? 'bg-gold-500/10 text-gold-700' : 'bg-gold-500/10 text-gold-400';
 
@@ -282,7 +282,7 @@ const ActionRow = ({ title, text, icon: Icon = Sparkles }: any) => {
   const isLight = theme === 'light';
   const cardTone = isLight ? 'bg-paper-100/85 border-gold-600/30 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
   const accentTone = isLight ? 'text-gold-700' : 'text-accent';
-  const textTone = isLight ? 'text-star-700' : 'text-star-200';
+  const textTone = isLight ? 'text-paper-600' : 'text-star-200';
   const numberTone = isLight ? 'text-paper-400' : 'text-space-600';
   const safeText = typeof text === 'string' ? text : '';
   const parsed = parseAdviceList(safeText);
@@ -547,7 +547,7 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
 
       {detailsType && (
         <FullDataModal
-          title={detailsType === 'mood' ? t.journal.somatic_full_title : t.journal.body_reaction_top3}
+          title={detailsType === 'mood' ? t.journal.low_mood_top3 : t.journal.body_reaction_top3}
           onClose={() => setDetailsType(null)}
           sections={detailsType === 'mood' 
             ? [{ title: t.journal.all_low_mood_records, data: stats.allMoods, colorClass: "bg-danger" }]

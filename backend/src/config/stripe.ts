@@ -32,7 +32,7 @@ export const isStripeConfigured = (): boolean => {
 export const STRIPE_PRICES = {
   // Subscription prices
   MONTHLY_SUBSCRIPTION: process.env.STRIPE_PRICE_MONTHLY || 'price_monthly_699',
-  YEARLY_SUBSCRIPTION: process.env.STRIPE_PRICE_YEARLY || 'price_yearly_4999', // @deprecated
+  YEARLY_SUBSCRIPTION: process.env.STRIPE_PRICE_YEARLY || 'price_yearly_4999',
 
   // One-time purchase prices - 新定价
   DIMENSION_UNLOCK: process.env.STRIPE_PRICE_DIMENSION || 'price_dimension_99',
@@ -61,18 +61,21 @@ export const STRIPE_PRICES = {
 };
 
 // Product configuration with pricing info - 新定价
+const SUBSCRIPTION_MONTHLY_AMOUNT = 699;
+const SUBSCRIPTION_YEARLY_DISCOUNT = 0.2;
+const SUBSCRIPTION_YEARLY_AMOUNT = Math.round(SUBSCRIPTION_MONTHLY_AMOUNT * 12 * (1 - SUBSCRIPTION_YEARLY_DISCOUNT));
+
 export const PRODUCTS = {
   subscription: {
     monthly: {
       priceId: STRIPE_PRICES.MONTHLY_SUBSCRIPTION,
-      amount: 699, // $6.99
+      amount: SUBSCRIPTION_MONTHLY_AMOUNT, // $6.99
       name: 'AstrologyWiki Pro Monthly',
       interval: 'month' as const,
     },
-    // 向后兼容
     yearly: {
       priceId: STRIPE_PRICES.YEARLY_SUBSCRIPTION,
-      amount: 4999, // @deprecated
+      amount: SUBSCRIPTION_YEARLY_AMOUNT, // 20% off annual billing
       name: 'AstrologyWiki Pro Yearly',
       interval: 'year' as const,
     },

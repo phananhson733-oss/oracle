@@ -8,6 +8,7 @@ import { ActionButton, Card, GlassInput, Modal, Section, useLanguage, useTheme }
 import { Compass, Heart, Search, Share2, Sparkles } from 'lucide-react';
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
 import { fetchWikiHome, fetchWikiSearch } from '../../services/apiClient';
+import { trackEvent } from '../../services/analytics';
 import type { WikiHomeContent, WikiSearchMatch } from '../../types';
 
 const WIKI_HOME_CACHE = new Map<string, WikiHomeContent>();
@@ -163,6 +164,9 @@ const WikiHomePage: React.FC = () => {
         <form
           onSubmit={(event) => {
             event.preventDefault();
+            trackEvent('form_submitted', {
+              form_name: 'wiki_search',
+            });
             setSearchOpen(true);
           }}
           className="relative max-w-2xl mx-auto"
@@ -171,7 +175,12 @@ const WikiHomePage: React.FC = () => {
             <GlassInput
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              onFocus={() => setSearchOpen(true)}
+              onFocus={() => {
+                trackEvent('form_started', {
+                  form_name: 'wiki_search',
+                });
+                setSearchOpen(true);
+              }}
               onBlur={() => setTimeout(() => setSearchOpen(false), 160)}
               placeholder={t.wiki.search_placeholder}
               className="pl-12 pr-28 py-4 text-base !h-12"

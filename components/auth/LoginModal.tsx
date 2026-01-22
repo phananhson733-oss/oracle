@@ -2,11 +2,32 @@
 // OUTPUT: 导出登录/注册弹窗组件。
 // POS: 登录弹窗组件（含纸感映射与按钮对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton, GlassInput } from '../UIComponents';
+import { trackEvent } from '../../services/analytics';
 
 type AuthMode = 'login' | 'register';
+
+// Extend window for Google Identity Services
+declare global {
+  interface Window {
+    google?: {
+      accounts: {
+        id: {
+          initialize: (config: any) => void;
+          renderButton: (element: HTMLElement, config: any) => void;
+          prompt: (callback?: (notification: any) => void) => void;
+          cancel: () => void;
+        };
+        oauth2: {
+          initCodeClient: (config: any) => { requestCode: () => void };
+          initTokenClient: (config: any) => { requestAccessToken: () => void };
+        };
+      };
+    };
+  }
+}
 
 const LoginModal: React.FC = () => {
   const { theme } = useTheme();
@@ -17,7 +38,6 @@ const LoginModal: React.FC = () => {
     loginWithEmail,
     registerWithEmail,
     loginWithGoogle,
-    loginWithApple,
     loginModalReason,
   } = useAuth();
 
@@ -27,6 +47,39 @@ const LoginModal: React.FC = () => {
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [googleReady, setGoogleReady] = useState(false);
+  const googleButtonRef = useRef<HTMLDivElement>(null);
+  const googleInitialized = useRef(false);
+
+  const validateEmail = (value: string) => {
+    if (!value) {
+      setEmailError('');
+      return true;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      setEmailError(t?.auth?.invalid_email || 'Please enter a valid email address');
+      return false;
+    }
+    setEmailError('');
+    return true;
+  };
+
+  const validatePassword = (value: string) => {
+    if (!value) {
+      setPasswordError('');
+      return true;
+    }
+    if (value.length < 8) {
+      setPasswordError(t?.auth?.password_too_short || 'Password must be at least 8 characters');
+      return false;
+    }
+    setPasswordError('');
+    return true;
+  };
 
   const isDark = theme === 'dark';
 
@@ -38,10 +91,90 @@ const LoginModal: React.FC = () => {
     setName('');
   };
 
+  // Google Sign-In callback
+  const handleGoogleCredentialResponse = useCallback(async (response: any) => {
+    setLoading(true);
+    setError('');
+    try {
+      await loginWithGoogle(response.credential);
+      handleClose();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Google login failed');
+    } finally {
+      setLoading(false);
+    }
+  }, [loginWithGoogle]);
+
+  // Initialize Google Sign-In when modal opens
+  useEffect(() => {
+    if (!showLoginModal) return;
+    if (googleInitialized.current) {
+      setGoogleReady(true);
+      return;
+    }
+
+    const initializeGoogle = () => {
+      if (typeof window.google === 'undefined') {
+        // SDK not loaded yet, retry
+        setTimeout(initializeGoogle, 100);
+        return;
+      }
+
+      const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+      if (!clientId) {
+        console.error('Google Client ID not configured');
+        return;
+      }
+
+      try {
+        window.google.accounts.id.initialize({
+          client_id: clientId,
+          callback: handleGoogleCredentialResponse,
+          auto_select: false,
+          cancel_on_tap_outside: true,
+        });
+
+        // Render the Google button in the hidden container
+        if (googleButtonRef.current) {
+          googleButtonRef.current.innerHTML = '';
+          // Get container width for responsive button
+          const containerWidth = googleButtonRef.current.offsetWidth || 400;
+          window.google.accounts.id.renderButton(googleButtonRef.current, {
+            type: 'standard',
+            theme: 'outline',
+            size: 'large',
+            width: Math.min(containerWidth, 400),
+            text: 'continue_with',
+          });
+        }
+
+        googleInitialized.current = true;
+        setGoogleReady(true);
+      } catch (err) {
+        console.error('Failed to initialize Google Sign-In:', err);
+      }
+    };
+
+    initializeGoogle();
+  }, [showLoginModal, handleGoogleCredentialResponse]);
+
+  useEffect(() => {
+    if (!showLoginModal) return;
+    trackEvent('form_started', {
+      form_name: 'auth',
+      mode,
+    });
+  }, [showLoginModal, mode]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
+
+    trackEvent('form_submitted', {
+      form_name: 'auth',
+      mode,
+    });
 
     try {
       if (mode === 'register') {
@@ -52,69 +185,6 @@ const LoginModal: React.FC = () => {
       handleClose();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Authentication failed');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleGoogleLogin = async () => {
-    setLoading(true);
-    setError('');
-
-    try {
-      // Initialize Google Sign-In
-      if (typeof window.google === 'undefined') {
-        throw new Error('Google Sign-In SDK not loaded');
-      }
-
-      // Use Google One Tap or redirect flow
-      window.google.accounts.id.initialize({
-        client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '',
-        callback: async (response: any) => {
-          try {
-            await loginWithGoogle(response.credential);
-            handleClose();
-          } catch (err) {
-            setError(err instanceof Error ? err.message : 'Google login failed');
-          } finally {
-            setLoading(false);
-          }
-        },
-      });
-
-      // Trigger the sign-in flow
-      window.google.accounts.id.prompt();
-    } catch (err) {
-      setError('Google login is not available. Please use email login.');
-      setLoading(false);
-    }
-  };
-
-  const handleAppleLogin = async () => {
-    setLoading(true);
-    setError('');
-
-    try {
-      // Initialize Apple Sign-In
-      if (typeof window.AppleID === 'undefined') {
-        throw new Error('Apple Sign-In SDK not loaded');
-      }
-
-      await window.AppleID.auth.init({
-        clientId: import.meta.env.VITE_APPLE_CLIENT_ID || '',
-        scope: 'name email',
-        redirectURI: window.location.origin,
-        usePopup: true,
-      });
-
-      const response = await window.AppleID.auth.signIn();
-
-      if (response.authorization?.id_token) {
-        await loginWithApple(response.authorization.id_token, response.user);
-        handleClose();
-      }
-    } catch (err) {
-      setError('Apple login is not available. Please use email login.');
     } finally {
       setLoading(false);
     }
@@ -174,38 +244,21 @@ const LoginModal: React.FC = () => {
 
         {/* OAuth buttons */}
         <div className="space-y-3">
-          <button
-            onClick={handleGoogleLogin}
-            disabled={loading}
-            className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
+          {/* Google Sign-In - use official button */}
+          <div
+            ref={googleButtonRef}
+            className="flex justify-center [&>div]:!w-full [&_iframe]:!w-full"
+            style={{ minHeight: '44px' }}
+          />
+          {!googleReady && (
+            <div className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border ${
               isDark
-                ? 'bg-space-800 border-gold-500/20 hover:bg-space-700 text-star-100'
-                : 'bg-paper-100/85 border-paper-300 hover:bg-paper-100 text-paper-900'
-            }`}
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-            </svg>
-            <span className="font-medium">{tr.continueWithGoogle}</span>
-          </button>
-
-          <button
-            onClick={handleAppleLogin}
-            disabled={loading}
-            className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border transition-colors ${
-              isDark
-                ? 'bg-paper-100/90 text-paper-900 hover:bg-paper-200/70'
-                : 'bg-space-950 text-star-50 hover:bg-space-900'
-            }`}
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-            <span className="font-medium">{tr.continueWithApple}</span>
-          </button>
+                ? 'bg-space-800 border-gold-500/20 text-star-400'
+                : 'bg-paper-100/85 border-paper-300 text-paper-400'
+            }`}>
+              <span className="text-sm">Loading Google Sign-In...</span>
+            </div>
+          )}
         </div>
 
         {/* Divider */}
@@ -250,12 +303,17 @@ const LoginModal: React.FC = () => {
               id="login-email"
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                validateEmail(e.target.value);
+              }}
+              onBlur={() => validateEmail(email)}
               placeholder="you@example.com"
               required
               disabled={loading}
               autoComplete="email"
               aria-required="true"
+              error={emailError}
             />
           </div>
 
@@ -266,21 +324,43 @@ const LoginModal: React.FC = () => {
             >
               {tr.password}
             </label>
-            <GlassInput
-              id="login-password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="********"
-              required
-              minLength={8}
-              disabled={loading}
-              autoComplete={mode === 'register' ? 'new-password' : 'current-password'}
-              aria-required="true"
-              aria-describedby={mode === 'register' ? 'password-hint' : undefined}
-            />
+            <div className="relative">
+              <GlassInput
+                id="login-password"
+                type={passwordVisible ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  validatePassword(e.target.value);
+                }}
+                onBlur={() => validatePassword(password)}
+                placeholder="********"
+                required
+                minLength={8}
+                disabled={loading}
+                autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+                error={passwordError}
+              />
+              <button
+                type="button"
+                onClick={() => setPasswordVisible(!passwordVisible)}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 ${isDark ? 'text-star-400' : 'text-paper-400'} hover:text-gold-500`}
+                tabIndex={-1}
+              >
+                {passwordVisible ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                )}
+              </button>
+            </div>
             {mode === 'register' && (
-              <p id="password-hint" className={`text-xs mt-1 ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
+              <p className={`mt-1.5 text-xs ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
                 {tr.passwordHint}
               </p>
             )}
@@ -294,7 +374,7 @@ const LoginModal: React.FC = () => {
 
           <ActionButton
             variant="primary"
-            disabled={loading}
+            disabled={loading || (!!email && !!emailError) || (!!password && !!passwordError)}
             className="w-full"
           >
             {loading ? '...' : mode === 'login' ? tr.login : tr.register}

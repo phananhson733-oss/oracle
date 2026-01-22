@@ -36,6 +36,7 @@ import type {
   SyntheticaReportResponse
 } from '../types';
 import { authFetch } from './authClient';
+import { trackEvent } from './analytics';
 import { getDeviceId } from './paymentClient';
 import { consumeFeatureV2 } from './entitlementClientV2';
 
@@ -903,7 +904,11 @@ export async function saveCBTRecord(userId: string, record: unknown) {
     body: JSON.stringify({ userId, record }),
   });
   if (!res.ok) throw new Error('Failed to save CBT record');
-  return res.json();
+  const data = await res.json();
+  trackEvent('cbt_entry_created', {
+    user_id: userId,
+  });
+  return data;
 }
 
 export async function fetchCBTRecords(userId: string) {

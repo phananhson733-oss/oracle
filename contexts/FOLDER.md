@@ -15,6 +15,7 @@
 - EntitlementContext.tsx｜地位：权益上下文｜功能：提供权益检查、消耗与购买流程状态。
 
 近期更新
+- AuthContext/EntitlementContext 接入分析事件与用户属性更新（登录、注册、购买、付费墙曝光）。
 - EntitlementContext 改为积分解锁流程，统一 Ask/Synthetica 余额判断与价格常量。
 - EntitlementContext 新增 Synthetica 日额度消耗 Hook。
 - AuthContext 接入权益刷新与缓存，供 GM 与支付流程复用。

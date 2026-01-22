@@ -1,10 +1,12 @@
-// INPUT: ReactDOM 与主应用组件。
-// OUTPUT: 挂载主应用到 DOM。
+// INPUT: ReactDOM 与主应用组件（含分析追踪初始化）。
+// OUTPUT: 挂载主应用到 DOM 并启动分析与性能监控。
 // POS: 主应用渲染入口。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { initAnalytics } from './services/analytics';
+import { reportWebVitalsToAnalytics } from './src/utils/performance';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -17,3 +19,6 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+initAnalytics();
+reportWebVitalsToAnalytics();
