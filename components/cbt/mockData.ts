@@ -118,22 +118,29 @@ const randomInt = (min: number, max: number) => Math.floor(Math.random() * (max 
 
 export const generateMockHistory = (): CBTRecord[] => {
   const history: CBTRecord[] = [];
-  const now = Date.now();
+  
+  // 目标日期范围：2026年1月1日 - 2026年1月16日
+  const startTimestamp = new Date('2026-01-01T00:00:00').getTime();
+  const endTimestamp = new Date('2026-01-16T23:59:59').getTime();
+  const totalDays = 16;
   const dayMs = 86400000;
 
   for (let i = 0; i < 15; i++) {
-    // 确保时间是“今日以前”
-    const daysAgo = i + 1; 
-    // 添加一些随机小时偏差，让时间看起来更自然
-    const randomHourOffset = randomInt(0, 12) * 3600000;
-    const timestamp = now - (daysAgo * dayMs) - randomHourOffset;
+    // 随机选择一天
+    const dayOffset = randomInt(0, totalDays - 1);
+    // 随机时间
+    const timeOffset = randomInt(0, dayMs - 1);
+    const timestamp = startTimestamp + (dayOffset * dayMs) + timeOffset;
+
+    // 确保不超出结束时间
+    const finalTimestamp = Math.min(timestamp, endTimestamp);
 
     const scenario = SCENARIOS[i % SCENARIOS.length];
     const emojiMood = EMOJIS[randomInt(2, 4)]; // 偏向负面情绪以生成CBT记录
 
     history.push({
       id: `mock-${i}`,
-      timestamp,
+      timestamp: finalTimestamp,
       emojiMood,
       situation: scenario.situation,
       moods: scenario.moods.map((m, idx) => {
