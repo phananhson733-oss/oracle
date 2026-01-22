@@ -204,8 +204,8 @@ const InsightRow = ({ text, highlight, isLoading }: any) => {
   const { language, t } = useLanguage();
   const isLight = theme === 'light';
   const cardTone = isLight
-    ? 'bg-gradient-to-r from-paper-100 to-paper-50 border-gold-600/30 shadow-sm'
-    : 'bg-gradient-to-r from-space-900/50 to-space-800/30 border-gold-500/10 shadow-lg shadow-black/20';
+    ? 'bg-paper-100/85 border-gold-600/30 shadow-sm'
+    : 'bg-space-800/20 border-gold-500/10';
   const accentTone = isLight ? 'text-gold-700' : 'text-gold-400';
   const highlightTone = isLight ? 'text-gold-800' : 'text-gold-200';
   const textTone = isLight ? 'text-star-800' : 'text-star-100';
@@ -304,7 +304,7 @@ const ActionRow = ({ title, text, icon: Icon = Sparkles }: any) => {
             <ol className="space-y-3">
               {parsed.items.map((item, idx) => (
                 <li key={`${item}-${idx}`} className={`flex gap-3 text-sm leading-7 ${textTone}`}>
-                  <span className={`text-xs font-mono font-bold mt-1 ${numberTone}`}>0{idx + 1}</span>
+                  <span className={`text-xs font-mono font-bold mt-1 ${numberTone}`}>{idx + 1}</span>
                   <span className="flex-1">{item}</span>
                 </li>
               ))}
@@ -323,7 +323,7 @@ const AstroRow = ({ text }: any) => {
   const { theme } = useTheme();
   const { t } = useLanguage();
   const isLight = theme === 'light';
-  const cardTone = isLight ? 'bg-paper-50 border-gold-600/20 shadow-sm' : 'bg-space-950/30 border-gold-500/10';
+  const cardTone = isLight ? 'bg-paper-100/85 border-gold-600/30 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
   const labelTone = isLight ? 'text-gold-600' : 'text-gold-400';
   const bodyTone = isLight ? 'text-star-600' : 'text-star-300';
   const iconBg = isLight ? 'bg-paper-200 text-gold-600' : 'bg-space-800 text-gold-500';
@@ -405,7 +405,7 @@ const FullDataModal = ({ title, sections, onClose }: any) => {
 // ----------------------------------------------------------------------
 export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, initialYear, initialMonth, userProfile }) => {
   const { t, language } = useLanguage();
-  const [showDetails, setShowDetails] = useState(false);
+  const [detailsType, setDetailsType] = useState<'mood' | 'symptom' | null>(null);
   const now = new Date();
   const initialFilterYear = initialYear ?? now.getFullYear();
   const initialFilterMonth = initialMonth ?? now.getMonth();
@@ -519,24 +519,24 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
       onMonthChange={handleMonthChange}
     >
       <div className="grid grid-cols-2 gap-4">
-        <DataRow title={t.journal.low_mood_top3} onExpand={() => setShowDetails(true)}>
+        <DataRow title={t.journal.low_mood_top3} onExpand={() => setDetailsType('mood')}>
            <div className="space-y-3">
              {stats.topMoods.length > 0 ? stats.topMoods.map(([name, count], i) => (
                <div key={name} className="flex justify-between items-center text-sm">
                  <span className={`${i===0?'text-danger font-bold':'text-star-400'}`}>{i+1}. {name}</span>
-                 <span className="text-star-400 font-mono">{count}{t.journal.times_suffix}</span>
+                 <span className="text-star-400 font-bold">{count}{t.journal.times_suffix}</span>
                </div>
-             )) : <div className="text-star-400 text-xs italic">{t.journal.no_low_records}</div>}
+             )) : <div className="text-star-400 text-xs">{t.journal.no_low_records}</div>}
            </div>
         </DataRow>
-        <DataRow title={t.journal.body_reaction_top3} onExpand={() => setShowDetails(true)}>
+        <DataRow title={t.journal.body_reaction_top3} onExpand={() => setDetailsType('symptom')}>
            <div className="space-y-3">
              {stats.topSymptoms.length > 0 ? stats.topSymptoms.map(([name, count], i) => (
                <div key={name} className="flex justify-between items-center text-sm">
                  <span className={`${i===0?'text-gold-400 font-bold':'text-star-400'}`}>{i+1}. {name}</span>
-                 <span className="text-star-400 font-mono">{count}{t.journal.times_suffix}</span>
+                 <span className="text-star-400 font-bold">{count}{t.journal.times_suffix}</span>
                </div>
-             )) : <div className="text-star-400 text-xs italic">{t.journal.body_status_good}</div>}
+             )) : <div className="text-star-400 text-xs">{t.journal.body_status_good}</div>}
            </div>
         </DataRow>
       </div>
@@ -545,14 +545,14 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
       <ActionRow title={t.journal.body_regulation_rx} text={adviceText} icon={Heart} />
       <AstroRow text={astroText} />
 
-      {showDetails && (
+      {detailsType && (
         <FullDataModal
-          title={t.journal.somatic_full_title}
-          onClose={() => setShowDetails(false)}
-          sections={[
-            { title: t.journal.all_low_mood_records, data: stats.allMoods, colorClass: "bg-danger" },
-            { title: t.journal.all_body_reaction_records, data: stats.allSymptoms, colorClass: "bg-gold-500" }
-          ]}
+          title={detailsType === 'mood' ? t.journal.somatic_full_title : t.journal.body_reaction_top3}
+          onClose={() => setDetailsType(null)}
+          sections={detailsType === 'mood' 
+            ? [{ title: t.journal.all_low_mood_records, data: stats.allMoods, colorClass: "bg-danger" }]
+            : [{ title: t.journal.all_body_reaction_records, data: stats.allSymptoms, colorClass: "bg-gold-500" }]
+          }
         />
       )}
     </CardContainer>
