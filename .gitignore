@@ -1,5 +1,5 @@
-# INPUT: Git 忽略规则。
-# OUTPUT: 声明忽略文件列表。
+# INPUT: Git 忽略规则（含 worktree 目录）。
+# OUTPUT: 声明忽略文件列表与隔离工作区目录。
 # POS: 版本控制忽略配置。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 # Logs
@@ -14,6 +14,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.worktrees
 *.local
 
 # Editor directories and files
