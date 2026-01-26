@@ -544,6 +544,13 @@ export interface DailyRequest {
 }
 export interface DailyResponse {
   transits: TransitData;
+  natal?: NatalChart;
+  technical?: {
+    transit_planets: PlanetPosition[];
+    transit_asteroids: PlanetPosition[];
+    house_rulers: ExtendedNatalData['houseRulers'];
+    cross_aspects: Aspect[];
+  };
   lang: Language;
   content: DailyForecastAI;
 }

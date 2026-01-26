@@ -26,24 +26,13 @@
 | 卡片内边距 | `p-6` / `p-8` | 内容需要充足的呼吸空间 |
 | 元素间隙 | `gap-4` / `gap-6` | 避免拥挤，保持节奏感 |
 | 区块间距 | `space-y-8` / `mb-12` | 区分内容层次 |
+|----------|------------|-----------|
 
-```tsx
-// ✅ 好的做法 - 充足的空白
-<div className="p-8 space-y-6">
-  <h2 className="text-2xl font-bold">标题</h2>
-  <div className="grid gap-6">
-    {/* 内容 */}
-  </div>
-</div>
+### 图标与符号规范
 
-// ❌ 避免 - 过于密集
-<div className="p-2 space-y-1">
-  <h2>标题</h2>
-  <div className="grid gap-1">
-    {/* 内容 */}
-  </div>
-</div>
-```
+- **❌ 禁止使用 Emoji**：严禁在 UI 中使用系统默认 Emoji（如 🎨, 🧭, ✨）。Emoji 会破坏品牌专业感且在不同设备上显示不一。
+- **✅ 推荐 Unicode 符号**：使用标准的 Unicode 占星/几何符号（如 ☉, ☽, ☿），并配合项目字体栈。
+- **✅ 视觉统一**：所有符号必须指定项目定义的语义色（如 `text-accent` 或 `text-paper-600`）。
 
 ### 配色规范
 
@@ -106,8 +95,9 @@ const TRANSITION = "transition-all duration-300 ease-in-out";
 
 ### 布局禁忌
 
+- **❌ 禁止 - 卡片左侧着色**：严禁在卡片左侧增加纵向颜色条或着色边框。这种设计过于“通用 AI 化 (Generic AI aesthetic)”，不符合我们的品牌调性。
+- **❌ 禁止 - 多层卡片嵌套**：
 ```tsx
-// ❌ 禁止 - 多层卡片嵌套
 <div className="rounded-xl border p-4">
   <div className="rounded-lg border p-3">
     <div className="rounded-md border p-2">
@@ -115,6 +105,7 @@ const TRANSITION = "transition-all duration-300 ease-in-out";
     </div>
   </div>
 </div>
+```
 
 // ✅ 推荐 - 扁平化布局
 <div className="rounded-xl p-6 space-y-4">

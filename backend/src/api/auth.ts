@@ -3,7 +3,8 @@ import { Router, Request, Response, NextFunction } from 'express';
 import { OAuth2Client } from 'google-auth-library';
 import { userService, AuthTokens } from '../services/userService.js';
 import { isSupabaseConfigured } from '../db/supabase.js';
-import { GOOGLE_CONFIG, isGoogleConfigured } from '../config/auth.js';
+import { GOOGLE_CONFIG, isGoogleConfigured, isWechatConfigured } from '../config/auth.js';
+import { wechatService } from '../services/wechatService.js';
 
 const router = Router();
 
@@ -126,6 +127,59 @@ router.post('/google', async (req: Request, res: Response) => {
     sendAuthResponse(res, tokens, user);
   } catch (error) {
     console.error('Google login error:', error);
+    res.status(500).json({ error: 'Login failed' });
+  }
+});
+
+// WeChat Mini Program login
+router.post('/wechat', async (req: Request, res: Response) => {
+  try {
+    if (!isSupabaseConfigured()) {
+      return res.status(503).json({ error: 'Authentication service unavailable' });
+    }
+
+    if (!isWechatConfigured()) {
+      return res.status(503).json({ error: 'WeChat login not configured' });
+    }
+
+    const { code, userInfo } = req.body;
+
+    if (!code) {
+      return res.status(400).json({ error: 'WeChat code required' });
+    }
+
+    // Exchange code for openid and session_key
+    const wechatData = await wechatService.code2Session(code);
+
+    // Find or create user
+    let user = await userService.findByProvider('wechat', wechatData.openid);
+
+    if (!user) {
+      // Create new user
+      user = await userService.createUser({
+        email: `${wechatData.openid}@wechat.miniprogram`,
+        name: userInfo?.nickName || undefined,
+        avatar: userInfo?.avatarUrl || undefined,
+        provider: 'wechat',
+        providerId: wechatData.openid,
+      });
+    } else if (userInfo) {
+      // Update user info if provided
+      const updates: Record<string, unknown> = {};
+      if (userInfo.nickName) updates.name = userInfo.nickName;
+      if (userInfo.avatarUrl) updates.avatar = userInfo.avatarUrl;
+
+      if (Object.keys(updates).length > 0) {
+        user = await userService.updateProfile(user.id, updates as any) || user;
+      }
+    }
+
+    // Generate tokens
+    const tokens = userService.generateTokens(user);
+
+    sendAuthResponse(res, tokens, user);
+  } catch (error) {
+    console.error('WeChat login error:', error);
     res.status(500).json({ error: 'Login failed' });
   }
 });
