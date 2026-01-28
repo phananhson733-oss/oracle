@@ -9,8 +9,6 @@ import {
   SyntheticaContextFilter,
   SyntheticaPlanet,
   SyntheticaAspect,
-  SyntheticaSign,
-  SyntheticaHouse,
   SyntheticaReportResponse
 } from '../../types';
 import { SelectionCard } from './synthetica/SelectionCard';
@@ -39,7 +37,7 @@ const WikiSyntheticaPage: React.FC = () => {
   // 6:Select Aspect Type
   // 7:Result
   const [step, setStep] = useState<number>(0); 
-  const [loading, setLoading] = useState<boolean>(false);
+  const [viewState, setViewState] = useState<'idle' | 'loading' | 'report' | 'error'>('idle');
   const [error, setError] = useState<string | null>(null);
   
   // Temporary state for adding a new aspect
@@ -111,7 +109,7 @@ const WikiSyntheticaPage: React.FC = () => {
   };
 
   const generateReport = async () => {
-    if (loading) return;
+    if (viewState === 'loading') return;
     setError(null);
     const access = await checkAccess('synthetica');
     if (!access.canAccess) {
@@ -120,12 +118,13 @@ const WikiSyntheticaPage: React.FC = () => {
       }
       return;
     }
-    setLoading(true);
+    setViewState('loading');
     try {
       const config = buildSyntheticaConfig(selection);
-      const data = await generateSyntheticaReport(config, selection.context, language);
+      const data = await generateSyntheticaReport(config, selection.context, language, selection);
       setResult(data);
       setStep(7);
+      setViewState('report');
       await refreshEntitlements();
     } catch (err) {
       try {
@@ -138,8 +137,7 @@ const WikiSyntheticaPage: React.FC = () => {
         // Fall through to the default error copy.
       }
       setError(t.synthetica.report.error);
-    } finally {
-      setLoading(false);
+      setViewState('error');
     }
   };
 
@@ -154,6 +152,8 @@ const WikiSyntheticaPage: React.FC = () => {
     }); 
     setTempSecondPlanet(null);
     setResult(null);
+    setError(null);
+    setViewState('idle');
   };
 
   const goBack = () => {
@@ -354,7 +354,7 @@ const WikiSyntheticaPage: React.FC = () => {
           <div className="mt-8 flex flex-col items-center justify-center gap-3">
             <button
               onClick={generateReport}
-              disabled={loading}
+              disabled={viewState === 'loading'}
               className={`
                 relative overflow-hidden px-10 py-4 rounded-2xl
                 font-bold text-lg tracking-wide
@@ -370,7 +370,7 @@ const WikiSyntheticaPage: React.FC = () => {
               {/* 光泽动画 */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
 
-              {loading ? (
+              {viewState === 'loading' ? (
                 <span className="relative z-10 flex items-center justify-center">
                   <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -398,7 +398,7 @@ const WikiSyntheticaPage: React.FC = () => {
 
   const renderContent = () => {
     // Show fullscreen loading when generating
-    if (loading) {
+    if (viewState === 'loading') {
       return (
         <OracleLoading
           variant="fullscreen"
@@ -408,8 +408,14 @@ const WikiSyntheticaPage: React.FC = () => {
       );
     }
 
-    if (step === 7 && result) {
-      return <ReportView result={result.content} selection={selection} onReset={reset} />;
+    if (viewState === 'report' && result) {
+      return (
+        <div className={`fixed inset-0 z-[60] ${theme === 'dark' ? 'bg-space-950' : 'bg-paper-100'}`}>
+          <div className="h-full overflow-y-auto overscroll-contain">
+            <ReportView result={result.content} selection={selection} onReset={reset} />
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -714,8 +720,7 @@ const WikiSyntheticaPage: React.FC = () => {
 
   return (
     <div className="pb-20">
-      
-      {error && (
+      {error && viewState !== 'report' && viewState !== 'loading' && (
         <div className="bg-red-900/20 border border-red-500/50 p-4 rounded-lg text-center text-red-200 mb-8 max-w-2xl mx-auto">
           {error}
         </div>
