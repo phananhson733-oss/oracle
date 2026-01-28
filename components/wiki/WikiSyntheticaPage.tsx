@@ -125,7 +125,11 @@ const WikiSyntheticaPage: React.FC = () => {
       setResult(data);
       setStep(7);
       setViewState('report');
-      await refreshEntitlements();
+      try {
+        await refreshEntitlements();
+      } catch {
+        // Ignore entitlement refresh failures after report generation.
+      }
     } catch (err) {
       try {
         const access = await checkAccess('synthetica');
