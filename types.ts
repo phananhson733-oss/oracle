@@ -1070,3 +1070,22 @@ export type SyntheticaSelectionState = {
   aspects: SyntheticaAspectSelection[]; // List of selected aspects
   context: SyntheticaContextFilter;
 };
+
+export type SyntheticaAspectConfig = {
+  targetPlanetId: string;
+  aspectType: string;
+  orb?: number;
+  isApplying?: boolean;
+  targetSignId?: string;
+  targetHouse?: number;
+};
+
+export type SyntheticaConfigUnit = {
+  planetId: string;
+  signId: string;
+  house?: number | null;
+  degree?: number;
+  minute?: number;
+  isRetrograde?: boolean;
+  aspects?: SyntheticaAspectConfig[];
+};

@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import { generateAIContentWithMeta } from '../services/ai.js';
 import type { Language } from '../types/api.js';
+import type { SyntheticaConfigUnit } from '../utils/syntheticaConfig.js';
+import { normalizeSyntheticaConfig } from '../utils/syntheticaConfig.js';
 import { optionalAuthMiddleware } from './auth.js';
 import entitlementServiceV2 from '../services/entitlementServiceV2.js';
 import { PRICING } from '../config/auth.js';
@@ -43,7 +45,9 @@ interface SelectionState {
   aspects: { planet: Planet; aspect: Aspect }[];
 }
 
-interface GeneratePayload extends SelectionState {
+interface GeneratePayload extends Partial<SelectionState> {
+  config?: SyntheticaConfigUnit;
+  context: ContextFilter;
   lang?: Language;
   language?: Language;
 }
@@ -161,8 +165,8 @@ const getContextInstruction = (context: ContextFilter, lang: Language): string =
 syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
   try {
     const payload = req.body as GeneratePayload;
-    const { planet, sign, house, context, aspects } = payload;
     const lang: Language = payload.lang === 'en' || payload.language === 'en' ? 'en' : 'zh';
+    const { context } = payload;
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
 
     const access = await entitlementServiceV2.checkAccess(
@@ -178,6 +182,36 @@ syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
         price: access.price,
       });
     }
+
+    let selection: SelectionState;
+    try {
+      if (payload.config) {
+        const normalized = normalizeSyntheticaConfig(payload.config, lang);
+        selection = {
+          ...normalized,
+          aspects: normalized.aspects.map((item) => ({
+            ...item,
+            aspect: {
+              ...item.aspect,
+              category: item.aspect.category as AspectCategory,
+            },
+          })),
+          context,
+        };
+      } else {
+        selection = {
+          planet: payload.planet || null,
+          sign: payload.sign || null,
+          house: payload.house || null,
+          aspects: payload.aspects || [],
+          context,
+        };
+      }
+    } catch {
+      return res.status(400).json({ error: lang === 'en' ? 'Invalid configuration.' : '配置无效' });
+    }
+
+    const { planet, sign, house, aspects } = selection;
 
     if (!planet || !sign) {
       return res.status(400).json({ error: lang === 'en' ? 'Selection is incomplete.' : '选择不完整' });
