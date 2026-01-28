@@ -37,3 +37,73 @@
 
 - 唯一 UI 规范来源：[COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md)。
 - UI 变更必须对照该规范，并在 PR 中填写「UI 规范符合说明」（模板：`PULL_REQUEST_TEMPLATE.md`）。
+
+## 微信小程序 Canvas 技术规范
+
+### 图标使用规范（强制）
+
+由于微信小程序的特殊性，**星座图标必须使用 PNG 图片**，行星及其他图标可使用 Unicode 符号：
+
+| 图标类型 | 使用方式 | 说明 |
+|----------|----------|------|
+| **星座图标** | PNG 图片（强制） | 微信小程序会将星座 Unicode 符号渲染为彩色 emoji |
+| 行星图标 | Unicode 符号或 PNG | 可根据场景选择 |
+| 其他图标 | Unicode 符号或 PNG | 可根据场景选择 |
+
+**星座 PNG 图标路径**：`miniprogram/images/astro-symbols/`
+
+| 星座 | 文件名 |
+|------|--------|
+| 白羊座 | `aries.png` |
+| 金牛座 | `taurus.png` |
+| 双子座 | `gemini.png` |
+| 巨蟹座 | `cancer.png` |
+| 狮子座 | `leo.png` |
+| 处女座 | `virgo.png` |
+| 天秤座 | `libra.png` |
+| 天蝎座 | `scorpio.png` |
+| 射手座 | `sagittarius.png` |
+| 摩羯座 | `capricorn.png` |
+| 水瓶座 | `aquarius.png` |
+| 双鱼座 | `pisces.png` |
+
+### 图标着色方案
+
+在微信小程序 Canvas 2D 中对 PNG 图标进行动态着色时，**必须使用 `source-atop` 混合模式**：
+
+```javascript
+// ✅ 正确做法
+ctx.drawImage(img, x, y, size, size);           // 先绘制图片
+ctx.globalCompositeOperation = 'source-atop';   // 使用 source-atop
+ctx.fillStyle = color;
+ctx.fillRect(x, y, size, size);                 // 在图片上叠加颜色
+ctx.globalCompositeOperation = 'source-over';   // 恢复默认
+
+// ❌ 错误做法：source-in 会导致图标消失
+ctx.globalCompositeOperation = 'source-in';     // 不要使用
+```
+
+### 避免 Unicode 占星符号
+
+**禁止**在 Canvas 中使用 Unicode 占星符号（如 ♈♉♊♋ 等）作为文本后备：
+- 微信小程序会将这些符号渲染为彩色 emoji（紫色方块背景）
+- 应始终使用 PNG 图片，PNG 加载失败时可尝试 SVG Path2D，但**不要**使用文本后备
+
+```javascript
+// ✅ 正确：仅使用图片渲染
+const imageDrawn = this.drawImageSymbol(ctx, key, x, y, size, color);
+if (!imageDrawn) {
+  const svgDrawn = this.drawSvgPath(ctx, pathData, x, y, size, color);
+  // 不再有文本后备
+}
+
+// ❌ 错误：使用 Unicode 符号作为后备
+ctx.fillText('♈', x, y);  // 会显示为 emoji
+```
+
+### 星盘图标尺寸参考
+
+| 位置 | 推荐尺寸 | 说明 |
+|------|----------|------|
+| 星座环符号 | 12px | 星座带内的 12 个星座符号 |
+| 行星符号 | 14px (单盘) / 11px (双盘) | 参见 `chart-config.js` 的 fontSize 配置 |

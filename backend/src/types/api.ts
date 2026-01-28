@@ -555,6 +555,34 @@ export interface DailyResponse {
   content: DailyForecastAI;
 }
 
+// GET /api/user/status
+export interface UserStatusResponse {
+  isNewUser: boolean;
+  registeredAt: string | null;
+  hasBirthChart: boolean;
+  hasUsedSynastry: boolean;
+  lastCBTEntry: string | null;
+  recentActions: string[];
+}
+
+export type AstroEventType = 'mercury_retrograde' | 'new_moon' | 'full_moon' | 'planet_ingress';
+export type AstroEventImportance = 'high' | 'medium' | 'low';
+
+export interface AstroEvent {
+  id: string;
+  type: AstroEventType;
+  title: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  importance: AstroEventImportance;
+}
+
+// GET /api/astro/events
+export interface AstroEventsResponse {
+  events: AstroEvent[];
+}
+
 // POST /api/ask
 export interface AskRequest {
   birth: BirthInput;

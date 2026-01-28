@@ -33,6 +33,8 @@ import type {
   DetailContext,
   SectionDetailContent,
   SyntheticaSelectionState,
+  SyntheticaConfigUnit,
+  SyntheticaContextFilter,
   SyntheticaReportResponse
 } from '../types';
 import { authFetch } from './authClient';
@@ -1124,20 +1126,29 @@ export async function fetchSectionDetail(
 }
 
 // === Synthetica API ===
-const buildSyntheticaCacheKey = (selection: SyntheticaSelectionState, lang: Language) => {
+const buildSyntheticaCacheKey = (
+  config: SyntheticaConfigUnit,
+  context: SyntheticaContextFilter,
+  lang: Language
+) => {
   const parts = [
     lang,
-    selection.context,
-    selection.planet?.id || 'none',
-    selection.sign?.id || 'none',
-    selection.house?.id || 'none',
-    selection.aspects.map(a => `${a.planet.id}-${a.aspect.id}`).sort().join('|') || 'none'
+    context,
+    config.planetId || 'none',
+    config.signId || 'none',
+    config.house != null ? String(config.house) : 'none',
+    (config.aspects || []).map(a => `${a.targetPlanetId}-${a.aspectType}`).sort().join('|') || 'none'
   ];
   return `${LOCAL_CACHE_PREFIX}:synthetica:${AI_CACHE_VERSION}:${parts.map(encodeCachePart).join(':')}`;
 };
 
-export async function generateSyntheticaReport(selection: SyntheticaSelectionState, lang: Language) {
-  const cacheKey = buildSyntheticaCacheKey(selection, lang);
+export async function generateSyntheticaReport(
+  config: SyntheticaConfigUnit,
+  context: SyntheticaContextFilter,
+  lang: Language,
+  legacySelection?: SyntheticaSelectionState
+) {
+  const cacheKey = buildSyntheticaCacheKey(config, context, lang);
   const deviceId = getDeviceId();
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
@@ -1161,10 +1172,12 @@ export async function generateSyntheticaReport(selection: SyntheticaSelectionSta
   }
 
   // Fetch from API
+  const payload = legacySelection ? { ...legacySelection, config, context, lang } : { config, context, lang };
+
   const res = await authFetch(`${API_BASE}/synthetica/generate`, {
     method: 'POST',
     headers,
-    body: JSON.stringify({ ...selection, lang }),
+    body: JSON.stringify(payload),
   });
   if (!res.ok) {
     const error = await res.json().catch(() => ({} as { error?: string }));

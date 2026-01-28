@@ -16,6 +16,8 @@ import { geoRouter } from './api/geo.js';
 import { detailRouter } from './api/detail.js';
 import { wikiRouter } from './api/wiki.js';
 import { syntheticaRouter } from './api/synthetica.js';
+import { astroRouter } from './api/astro.js';
+import { userRouter } from './api/user.js';
 import authRouter from './api/auth.js';
 import paymentRouter from './api/payment.js';
 import paymentV2Router from './api/paymentV2.js';
@@ -59,6 +61,8 @@ app.use('/api/geo', geoRouter);
 app.use('/api/detail', detailRouter);
 app.use('/api/wiki', wikiRouter);
 app.use('/api/synthetica', syntheticaRouter);
+app.use('/api/astro', astroRouter);
+app.use('/api/user', userRouter);
 
 // Auth & Payment Routes
 app.use('/api/auth', authRouter);

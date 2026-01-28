@@ -16,6 +16,7 @@ import {
 import { SelectionCard } from './synthetica/SelectionCard';
 import { ReportView } from './synthetica/ReportView';
 import { generateSyntheticaReport } from '../../services/apiClient';
+import { buildSyntheticaConfig } from './synthetica/buildConfig';
 import { useLanguage, useTheme } from '../UIComponents';
 import { OracleLoading } from '../OracleLoading';
 import { useEntitlement, useSyntheticaQuota } from '../../contexts/EntitlementContext';
@@ -82,50 +83,6 @@ const WikiSyntheticaPage: React.FC = () => {
   const getAspectLabel = (id?: string) => (id && aspectCopy[id]?.name) || id || '';
   const getAspectDescription = (id?: string) => (id && aspectCopy[id]?.description) || '';
 
-  const localizePlanet = (planet: SyntheticaPlanet | null): SyntheticaPlanet | null => {
-    if (!planet) return null;
-    return {
-      ...planet,
-      name: getPlanetLabel(planet.id) || planet.name,
-      archetype: getPlanetArchetype(planet.id) || planet.archetype,
-    };
-  };
-
-  const localizeSign = (sign: SyntheticaSign | null): SyntheticaSign | null => {
-    if (!sign) return null;
-    return {
-      ...sign,
-      name: getSignLabel(sign.id) || sign.name,
-      archetype: signCopy[sign.id]?.archetype || sign.archetype,
-    };
-  };
-
-  const localizeHouse = (house: SyntheticaHouse | null): SyntheticaHouse | null => {
-    if (!house) return null;
-    return {
-      ...house,
-      name: getHouseLabel(house.id) || house.name,
-      archetype: getHouseArchetype(house.id) || house.archetype,
-    };
-  };
-
-  const localizeAspect = (aspect: SyntheticaAspect): SyntheticaAspect => ({
-    ...aspect,
-    name: getAspectLabel(aspect.id) || aspect.name,
-    description: getAspectDescription(aspect.id) || aspect.description,
-  });
-
-  const localizeSelection = (raw: SyntheticaSelectionState): SyntheticaSelectionState => ({
-    ...raw,
-    planet: localizePlanet(raw.planet),
-    sign: localizeSign(raw.sign),
-    house: localizeHouse(raw.house),
-    aspects: raw.aspects.map((a) => ({
-      planet: localizePlanet(a.planet) || a.planet,
-      aspect: localizeAspect(a.aspect),
-    })),
-  });
-
   const handleSelection = (key: keyof SyntheticaSelectionState, value: any) => {
     setSelection((prev: SyntheticaSelectionState) => ({ ...prev, [key]: value }));
     // Auto advance
@@ -165,7 +122,8 @@ const WikiSyntheticaPage: React.FC = () => {
     }
     setLoading(true);
     try {
-      const data = await generateSyntheticaReport(localizeSelection(selection), language);
+      const config = buildSyntheticaConfig(selection);
+      const data = await generateSyntheticaReport(config, selection.context, language);
       setResult(data);
       setStep(7);
       await refreshEntitlements();
