@@ -1,5 +1,5 @@
-<!-- INPUT: OpenSpec 规范与项目信息（含 SEO/GEO 基础提案、UI 规范门槛与 AI 加载优化归档与规范更新）。 -->
-<!-- OUTPUT: openspec 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 规范门槛与 AI 加载优化归档记录）。 -->
+<!-- INPUT: OpenSpec 规范与项目信息（含 SEO/GEO 基础提案、UI 规范门槛与本我页面内容优化进度更新）。 -->
+<!-- OUTPUT: openspec 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 规范门槛与本我页面内容优化记录）。 -->
 <!-- POS: OpenSpec 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -32,3 +32,4 @@
 - 新增合盘阅读体验与性能优化提案。
 - 归档 optimize-synastry-report、optimize-synastry-ux 与 update-synastry-experience。
 - 更新 generate-natal-insights、provide-daily-forecast、generate-synastry-report、support-cbt-journal 规范以补充缓存与加载优化要求。
+- 更新 optimize-self-page-content 任务清单与变更目录索引。
