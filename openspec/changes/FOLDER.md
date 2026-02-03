@@ -1,5 +1,5 @@
-<!-- INPUT: OpenSpec 变更提案目录结构（含 SEO/GEO 基础提案、UI 整体优化与 AI 加载优化归档进度）。 -->
-<!-- OUTPUT: changes 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 整体优化与 AI 加载优化归档记录）。 -->
+<!-- INPUT: OpenSpec 变更提案目录结构（含 SEO/GEO 基础提案、UI 整体优化与本我页面内容优化进度）。 -->
+<!-- OUTPUT: changes 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 整体优化与本我页面内容优化记录）。 -->
 <!-- POS: OpenSpec 变更目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -39,3 +39,4 @@
 - 归档 optimize-daily-transit、optimize-cbt-ask-ui、enhance-cbt-journal 与 update-self-exploration-layout。
 - 归档 optimize-synastry-report、optimize-synastry-ux 与 update-synastry-experience。
 - 保留 implement-payment-subscription 作为进行中变更之一。
+- 更新 optimize-self-page-content 任务清单，补充模块顺序验证状态。

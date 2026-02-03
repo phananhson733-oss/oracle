@@ -38,6 +38,32 @@
 - 唯一 UI 规范来源：[COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md)。
 - UI 变更必须对照该规范，并在 PR 中填写「UI 规范符合说明」（模板：`PULL_REQUEST_TEMPLATE.md`）。
 
+## Prompt 架构规范
+
+后端 Prompt 系统采用三层架构，详见 `backend/src/prompts/FOLDER.md`：
+
+| 层级 | 目录 | 用途 |
+|------|------|------|
+| 核心层 | `core/` | 类型定义、注册表、构建器、缓存 |
+| 文化层 | `cultural/` | 角色设定、语气指南、比喻库、心理学映射 |
+| 模板层 | `templates/` | 按模块组织的 Prompt 模板（natal/daily/synastry/cbt/ask/wiki/kline/annual） |
+| 指令层 | `instructions/` | 输出格式规范、安全边界 |
+
+**使用方式**：
+```typescript
+import { buildPrompt, getPrompt } from '../prompts';
+
+// 构建 Prompt
+const result = buildPrompt('natal-overview', { chart_summary: data });
+// 使用 result.system 和 result.user 调用 AI
+```
+
+**新增 Prompt 规范**：
+1. 在对应模块的 `templates/` 子目录创建文件
+2. 实现 `PromptTemplate` 接口（含 meta、system、user）
+3. 在模块 `index.ts` 中导出并添加到数组
+4. 所有内容必须使用简体中文
+
 ## 微信小程序 Canvas 技术规范
 
 ### 图标使用规范（强制）
@@ -107,3 +133,85 @@ ctx.fillText('♈', x, y);  // 会显示为 emoji
 |------|----------|------|
 | 星座环符号 | 12px | 星座带内的 12 个星座符号 |
 | 行星符号 | 14px (单盘) / 11px (双盘) | 参见 `chart-config.js` 的 fontSize 配置 |
+
+### 导航栏规范（强制）
+
+**禁止自定义重复导航栏**：微信小程序原生导航栏已包含页面标题和返回按钮，**禁止**在页面内再添加带返回按钮的自定义导航栏。
+
+| 场景 | 是否允许 | 说明 |
+|------|----------|------|
+| 原生导航栏 + 自定义导航栏（带返回按钮） | ❌ 禁止 | 会出现双标题、双返回按钮 |
+| 原生导航栏 + 内容区标题（仅标题+副标题） | ✅ 允许 | 内容区标题不含返回按钮 |
+| 自定义导航栏（`navigationStyle: custom`） | ✅ 允许 | 需在 page.json 中声明 |
+
+```html
+<!-- ✅ 正确：内容区标题（无返回按钮） -->
+<view class="header">
+  <text class="title">页面标题</text>
+  <text class="subtitle">副标题描述</text>
+</view>
+
+<!-- ❌ 错误：重复导航栏（有返回按钮） -->
+<view class="nav-header">
+  <view class="back-btn" bindtap="onBack">返回</view>
+  <text class="nav-title">页面标题</text>
+</view>
+```
+
+### 原生组件层级规范（强制）
+
+微信小程序中 **Canvas、Map、Video、Camera** 等原生组件的层级**永远高于**普通 view 元素，无论设置多高的 `z-index` 都无法覆盖。
+
+**强制规则**：当页面存在弹窗（modal、overlay、sheet）时，必须通过 `wx:if` 隐藏所有 Canvas 组件。
+
+```html
+<!-- ✅ 正确做法：弹窗显示时隐藏 Canvas -->
+<canvas
+  wx:if="{{!showModal && !showOverlay && !showPayment}}"
+  type="2d"
+  id="myChart"
+></canvas>
+
+<!-- ❌ 错误做法：仅靠 z-index 无法覆盖 Canvas -->
+<view class="modal" style="z-index: 9999;">
+  <!-- 内容会被 Canvas 遮挡 -->
+</view>
+```
+
+**弹窗关闭后重绘 Canvas**：
+
+```javascript
+closeModal() {
+  this.setData({ showModal: false }, () => {
+    // 弹窗关闭后延迟重绘，确保 Canvas 节点已挂载
+    setTimeout(() => this.drawChart(), 50);
+  });
+}
+```
+
+**Canvas 绘制防御性检查**：
+
+```javascript
+drawChart(retryCount = 0) {
+  const query = wx.createSelectorQuery();
+  query.select('#myChart')
+    .fields({ node: true, size: true })
+    .exec((res) => {
+      // 节点未就绪或尺寸为 0 时重试
+      if (!res[0]?.node || res[0].width <= 0) {
+        if (retryCount < 3) {
+          setTimeout(() => this.drawChart(retryCount + 1), 100);
+        }
+        return;
+      }
+      // 正常绘制逻辑...
+    });
+}
+```
+
+| 场景 | 处理方式 |
+|------|----------|
+| 弹窗/浮层显示 | `wx:if` 隐藏所有 Canvas |
+| 弹窗/浮层关闭 | 回调中延迟重绘 Canvas |
+| 页面切换返回 | `onShow` 中重绘 Canvas |
+| Canvas 初始化 | 添加重试逻辑防止尺寸为 0 |
