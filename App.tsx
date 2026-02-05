@@ -21,6 +21,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } from './contexts/EntitlementContext';
 import { SEO } from './components/SEO';
 import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage } from './components/auth';
+import { CreditsModal } from './components/payment';
 import { GlobalPaywall, LockedContent, LockedAccordion } from './components/Paywall';
 import { ConsentBanner } from './components/ConsentBanner';
 import { useAnalyticsTracking } from './hooks/useAnalytics';
@@ -6184,7 +6185,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = ({ profile, onReset }) => {
     const { t, language, toggleLanguage } = useLanguage();
     const { theme, toggleTheme } = useTheme();
-    const { isAuthenticated, refreshEntitlements: refreshLegacyEntitlements, refreshUser, user, logout, openUpgradeModal } = useAuth();
+    const { isAuthenticated, refreshEntitlements: refreshLegacyEntitlements, refreshUser, user, logout, openUpgradeModal, openCreditsModal } = useAuth();
     const { refreshEntitlements: refreshV2Entitlements, isTrialing, trialDaysLeft, entitlements } = useEntitlement();
     const [gmBusy, setGmBusy] = useState(false);
     const [gmMessage, setGmMessage] = useState<string | null>(null);
@@ -6305,6 +6306,21 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                 </ActionButton>
                             )}
                         </div>
+                    </div>
+
+                    {/* Credits Section */}
+                    <div className={`flex items-center justify-between py-4 my-4 border-y ${theme === 'dark' ? 'border-space-700' : 'border-paper-200'}`}>
+                        <div>
+                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">
+                                {language === 'zh' ? '积分余额' : 'Credits Balance'}
+                            </div>
+                            <div className="text-2xl font-bold text-gold-500">
+                                {entitlements?.credits ?? 0}
+                            </div>
+                        </div>
+                        <ActionButton onClick={() => openCreditsModal()} size="sm" variant="outline">
+                            {language === 'zh' ? '充值积分' : 'Buy Credits'}
+                        </ActionButton>
                     </div>
 
                     <ActionButton onClick={() => { logout(); navigate('/'); }} size="sm" variant="secondary" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10 hover:border-red-500/50">
@@ -6922,6 +6938,18 @@ const AuthPage: React.FC = () => {
     );
 };
 
+// Credits Modal Wrapper - 连接 AuthContext 和 CreditsModal
+const CreditsModalWrapper: React.FC = () => {
+    const { showCreditsModal, setShowCreditsModal, refreshEntitlements } = useAuth();
+    return (
+        <CreditsModal
+            isOpen={showCreditsModal}
+            onClose={() => setShowCreditsModal(false)}
+            onSuccess={() => refreshEntitlements()}
+        />
+    );
+};
+
 const AppContent: React.FC = () => {
     const { user, saveUser } = useUserProfile();
     const navigate = useNavigate();
@@ -7168,6 +7196,7 @@ const AppContent: React.FC = () => {
             {/* Auth Modals */}
             <LoginModal />
             <UpgradeModal />
+            <CreditsModalWrapper />
         </>
     );
 }
