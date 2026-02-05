@@ -49,6 +49,9 @@ interface AuthContextType {
   setShowLoginModal: (show: boolean) => void;
   showUpgradeModal: boolean;
   setShowUpgradeModal: (show: boolean) => void;
+  showCreditsModal: boolean;
+  setShowCreditsModal: (show: boolean) => void;
+  openCreditsModal: () => void;
   loginModalReason?: string;
   openLoginModal: (reason?: string) => void;
   openUpgradeModal: (reason?: string) => void;
@@ -63,6 +66,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isLoading, setIsLoading] = useState(true);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [showCreditsModal, setShowCreditsModal] = useState(false);
   const [loginModalReason, setLoginModalReason] = useState<string>();
   const [upgradeModalReason, setUpgradeModalReason] = useState<string>();
 
@@ -188,6 +192,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setShowUpgradeModal(true);
   };
 
+  const openCreditsModal = () => {
+    setShowCreditsModal(true);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -208,6 +216,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setShowLoginModal,
         showUpgradeModal,
         setShowUpgradeModal,
+        showCreditsModal,
+        setShowCreditsModal,
+        openCreditsModal,
         loginModalReason,
         openLoginModal,
         openUpgradeModal,
