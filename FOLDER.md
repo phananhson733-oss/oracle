@@ -1,5 +1,5 @@
-<!-- INPUT: 项目根目录文件与子目录结构（含 worktree 目录、后端依赖安装脚本与 UI/语言规则更新）。 -->
-<!-- OUTPUT: 根目录架构摘要与文件索引（含 worktree 目录与规范门槛）。 -->
+<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件与 UI/语言规则更新）。 -->
+<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置与规范门槛）。 -->
 <!-- POS: 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -23,12 +23,15 @@
 - COLOR_SYSTEM_GUIDE.md｜地位：UI 规范文档｜功能：色彩系统与对比度规范（含 paper 温暖色系与 unicode 图标对比度要求）。
 - PULL_REQUEST_TEMPLATE.md｜地位：PR 模板｜功能：PR 清单与 UI 规范符合说明。
 - constants.ts｜地位：全局常量库｜功能：存放文案、提示词与问答问题库数据。
-- index.html｜地位：HTML 宿主文件｜功能：页面壳、Tailwind 配置与导入映射。
-- index.tsx｜地位：渲染入口｜功能：挂载 React 应用。
+- index.css｜地位：全局样式入口｜功能：注入 Tailwind 基础/组件/工具样式。
+- index.html｜地位：HTML 宿主文件｜功能：页面壳、字体加载与导入映射。
+- index.tsx｜地位：渲染入口｜功能：挂载 React 应用并引入全局样式。
 - metadata.json｜地位：应用元数据｜功能：AI Studio 元信息配置。
-- package.json｜地位：依赖清单｜功能：npm 脚本与依赖配置。
+- package.json｜地位：依赖清单｜功能：npm 脚本与依赖配置（含 Tailwind/PostCSS）。
 - package-lock.json｜地位：依赖锁定｜功能：锁定前端依赖版本。
+- postcss.config.cjs｜地位：样式配置｜功能：PostCSS 管线与 Tailwind 插件配置。
 - tsconfig.json｜地位：编译配置｜功能：TypeScript 编译器选项。
+- tailwind.config.cjs｜地位：样式配置｜功能：Tailwind 主题与扫描路径配置。
 - types.ts｜地位：类型定义｜功能：共享数据结构与问答报告类型。
 - vercel.json｜地位：部署配置｜功能：Vercel 构建与路由规则。
 - vite.config.ts｜地位：构建配置｜功能：Vite 开发与构建设置。
@@ -47,6 +50,8 @@
 - services｜地位：服务目录｜功能：主应用服务层。
 
 近期更新
+- 移除 Tailwind CDN，改为 Tailwind/PostCSS 本地构建并新增样式配置与入口文件。
+- 移除失效字体预加载与手写 @font-face，改为标准 Google Fonts 样式加载。
 - 根目录新增 postinstall 脚本，自动安装 backend 依赖以保障 Vercel Serverless 运行时可用。
 - 新增 .worktrees 作为隔离工作区目录并加入 .gitignore。
 - 新增 ANALYTICS_SETUP.md 并完善 GA4/GTM 追踪配置指南。
