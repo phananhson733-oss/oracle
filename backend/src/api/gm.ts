@@ -4,6 +4,7 @@ import { authMiddleware, requireAuth } from './auth.js';
 import { supabase, isSupabaseConfigured, DbUser } from '../db/supabase.js';
 import { userService } from '../services/userService.js';
 import { addDevGmCredits, clearDevGmCredits, resetDevEntitlements, setDevSubscription } from '../services/entitlementService.js';
+import Redis from 'ioredis';
 
 const router = Router();
 
@@ -327,6 +328,48 @@ router.get('/status', (_req: Request, res: Response) => {
     enabled: isGMEnabled(),
     environment: process.env.NODE_ENV || 'development',
   });
+});
+
+// =====================================================
+// GM: 清除 AI 缓存
+// =====================================================
+
+// POST /api/gm/clear-ai-cache
+router.post('/clear-ai-cache', async (req: Request, res: Response) => {
+  if (!isGMEnabled()) {
+    return res.status(403).json({ error: 'GM commands are disabled in production' });
+  }
+
+  try {
+    const { pattern } = req.body; // 可选：指定清除的模式，如 'ai:natal-overview:*'
+    const redisUrl = process.env.REDIS_URL;
+
+    if (!redisUrl) {
+      return res.status(500).json({ error: 'Redis not configured' });
+    }
+
+    const redis = new Redis(redisUrl);
+
+    // 默认清除所有 AI 输出缓存
+    const searchPattern = pattern || 'ai:*';
+    const keys = await redis.keys(searchPattern);
+
+    if (keys.length > 0) {
+      await redis.del(...keys);
+    }
+
+    await redis.quit();
+
+    res.json({
+      success: true,
+      message: `Cleared ${keys.length} cache entries`,
+      pattern: searchPattern,
+      clearedKeys: keys.slice(0, 20), // 只返回前20个，避免响应过大
+    });
+  } catch (error) {
+    console.error('GM clear AI cache error:', error);
+    res.status(500).json({ error: 'Failed to clear cache' });
+  }
 });
 
 // 辅助函数：获取本周开始日期
