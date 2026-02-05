@@ -597,7 +597,7 @@ function getWikiClassicDetail(id, lang) {
   return {
     ...book,
     lang,
-    content: book.content || `《${book.title》正在深度解读生成中，敬请期待。`
+    content: book.content || `《${book.title}》正在深度解读生成中，敬请期待。`
   };
 }
 
