@@ -109,7 +109,7 @@ function getTemperatureForPrompt(promptId: string): number {
 const REASONING_PROMPTS = ['ask-answer', 'oracle-answer'];
 const RAW_TEXT_PROMPTS = new Set<string>(['ask-answer']);
 const NO_CACHE_PROMPTS = new Set<string>();
-const SCHEMA_REPAIR_PROMPTS = new Set<string>(['natal-overview']);
+const SCHEMA_REPAIR_PROMPTS = new Set<string>(['natal-overview', 'daily-forecast']);
 
 export interface AIGenerateOptions {
   promptId: string;
@@ -247,6 +247,42 @@ const isNatalOverviewContent = (value: unknown): boolean => {
     && isString(value.trigger_card.inner_need)
     && isString(value.trigger_card.buffer_action)
     && isString(value.share_text)
+  );
+};
+
+const isDailyEnergy = (value: unknown): boolean => (
+  isRecord(value)
+  && typeof value.score === 'number'
+  && isString(value.feeling)
+  && isString(value.scenario)
+  && isString(value.action)
+);
+
+const isDailyForecastLegacy = (value: unknown): boolean => (
+  isRecord(value)
+  && isString(value.date)
+  && isString(value.theme_title)
+  && isRecord(value.energy_profile)
+  && isRecord(value.strategy)
+  && isRecord(value.time_windows)
+);
+
+const isDailyForecastContent = (value: unknown): boolean => {
+  if (!isRecord(value)) return false;
+  if (isDailyForecastLegacy(value)) return true;
+  return (
+    isString(value.date)
+    && isString(value.theme_title)
+    && isRecord(value.four_dimensions)
+    && isDailyEnergy(value.four_dimensions.energy)
+    && isDailyEnergy(value.four_dimensions.tension)
+    && isDailyEnergy(value.four_dimensions.frictions)
+    && isDailyEnergy(value.four_dimensions.pleasures)
+    && isRecord(value.time_windows)
+    && isRecord(value.daily_focus)
+    && isString(value.daily_focus.move_forward)
+    && isString(value.daily_focus.communication_trap)
+    && isString(value.daily_focus.best_window)
   );
 };
 
@@ -403,6 +439,51 @@ function convertLegacyNatalOverview(
   };
 }
 
+function convertLegacyDailyForecast(
+  legacy: Record<string, unknown>,
+  lang: Language,
+): LocalizedContent<unknown> {
+  const energy = isRecord(legacy.energy_profile) ? legacy.energy_profile : {};
+  const strategy = isRecord(legacy.strategy) ? legacy.strategy : {};
+  const timeWindows = isRecord(legacy.time_windows) ? legacy.time_windows : {};
+  const bestWindow = isString((strategy as Record<string, unknown>).best_window)
+    ? (strategy as Record<string, unknown>).best_window as string
+    : 'morning';
+
+  const fourDimensions = {
+    energy: (energy as Record<string, unknown>).drive,
+    tension: (energy as Record<string, unknown>).pressure,
+    frictions: (energy as Record<string, unknown>).heat,
+    pleasures: (energy as Record<string, unknown>).nourishment,
+  };
+
+  const dailyFocus = {
+    move_forward: isString((strategy as Record<string, unknown>).best_use)
+      ? (strategy as Record<string, unknown>).best_use as string
+      : (lang === 'zh' ? '优先推进一件关键任务。' : 'Advance one key task.'),
+    communication_trap: isString((strategy as Record<string, unknown>).avoid)
+      ? (strategy as Record<string, unknown>).avoid as string
+      : (lang === 'zh' ? '避免情绪化沟通。' : 'Avoid emotionally charged communication.'),
+    best_window: bestWindow,
+  };
+
+  return {
+    lang,
+    content: {
+      date: legacy.date,
+      theme_title: legacy.theme_title,
+      theme_explanation: isString(legacy.theme_explanation) ? legacy.theme_explanation : '',
+      anchor_quote: isString(legacy.anchor_quote) ? legacy.anchor_quote : '',
+      four_dimensions: fourDimensions,
+      time_windows: timeWindows,
+      daily_focus: dailyFocus,
+      share_text: isString(legacy.share_text) ? legacy.share_text : '',
+      energy_profile: legacy.energy_profile,
+      strategy: legacy.strategy,
+    },
+  };
+}
+
 async function reformatNatalOverviewContent(
   raw: LocalizedContent<unknown>,
   context: Record<string, unknown>,
@@ -449,6 +530,83 @@ async function reformatNatalOverviewContent(
               `lang: ${raw.lang}`,
               `input_json: ${JSON.stringify(raw.content)}`,
               `chart_summary: ${JSON.stringify(context.chart_summary || {})}`,
+              `target_schema: ${JSON.stringify(schema)}`,
+            ].join('\n'),
+          },
+        ],
+        temperature: 0.0,
+        max_tokens: 2048,
+      }),
+    }, timeoutMs);
+
+    if (!response.ok) return null;
+    const data = await response.json();
+    const text = data.choices?.[0]?.message?.content;
+    if (!text) return null;
+    const extracted = extractJsonObject(text) || text;
+    const parsed = JSON.parse(extracted) as unknown;
+    return normalizeLocalizedContent(parsed, raw.lang);
+  } catch {
+    return null;
+  }
+}
+
+async function reformatDailyForecastContent(
+  raw: LocalizedContent<unknown>,
+  context: Record<string, unknown>,
+  apiKey: string,
+  baseUrl: string,
+  timeoutMs: number,
+): Promise<LocalizedContent<unknown> | null> {
+  const schema = {
+    lang: '<lang>',
+    content: {
+      date: '',
+      theme_title: '',
+      theme_explanation: '',
+      four_dimensions: {
+        energy: { score: 0, feeling: '', scenario: '', action: '' },
+        tension: { score: 0, feeling: '', scenario: '', action: '' },
+        frictions: { score: 0, feeling: '', scenario: '', action: '' },
+        pleasures: { score: 0, feeling: '', scenario: '', action: '' },
+      },
+      time_windows: { morning: '', midday: '', evening: '' },
+      daily_focus: {
+        move_forward: '',
+        communication_trap: '',
+        best_window: 'morning',
+      },
+      share_text: '',
+    },
+  };
+
+  try {
+    const response = await fetchWithTimeout(`${baseUrl}/v1/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: 'deepseek-chat',
+        messages: [
+          {
+            role: 'system',
+            content: [
+              'You are a JSON schema transformer.',
+              'Convert the input into the target schema exactly.',
+              'Output ONLY valid JSON. No markdown, no explanations.',
+              'If information is missing, infer from the chart/transit summary or use concise defaults.',
+            ].join('\n'),
+          },
+          {
+            role: 'user',
+            content: [
+              `lang: ${raw.lang}`,
+              `input_json: ${JSON.stringify(raw.content)}`,
+              `chart_summary: ${JSON.stringify(context.chart_summary || {})}`,
+              `transit_summary: ${JSON.stringify(context.transit_summary || {})}`,
+              `date: ${String(context.date || '')}`,
               `target_schema: ${JSON.stringify(schema)}`,
             ].join('\n'),
           },
@@ -541,10 +699,19 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
   if (shouldUseCache) {
     const cached = await cacheService.get<LocalizedContent<T>>(cacheKey);
     if (cached) {
-      if (SCHEMA_REPAIR_PROMPTS.has(options.promptId) && !isNatalOverviewContent(cached.content)) {
+      if (options.promptId === 'natal-overview' && !isNatalOverviewContent(cached.content)) {
         if (isLegacyNatalOverviewContent(cached.content)) {
           const converted = convertLegacyNatalOverview(cached.content as Record<string, unknown>, context, lang);
           if (isNatalOverviewContent(converted.content)) {
+            await cacheService.set(cacheKey, converted, CACHE_TTL.AI_OUTPUT);
+            return buildAIResult(converted as LocalizedContent<T>, true);
+          }
+        }
+      }
+      if (options.promptId === 'daily-forecast' && !isDailyForecastContent(cached.content)) {
+        if (isDailyForecastLegacy(cached.content)) {
+          const converted = convertLegacyDailyForecast(cached.content as Record<string, unknown>, lang);
+          if (isDailyForecastContent(converted.content)) {
             await cacheService.set(cacheKey, converted, CACHE_TTL.AI_OUTPUT);
             return buildAIResult(converted as LocalizedContent<T>, true);
           }
@@ -627,7 +794,7 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
     const result = normalizeLocalizedContent<T>(parsed, lang);
     let normalized = result as LocalizedContent<T>;
 
-    if (SCHEMA_REPAIR_PROMPTS.has(options.promptId) && !isNatalOverviewContent(normalized.content)) {
+    if (options.promptId === 'natal-overview' && !isNatalOverviewContent(normalized.content)) {
       if (isLegacyNatalOverviewContent(normalized.content)) {
         const converted = convertLegacyNatalOverview(normalized.content as Record<string, unknown>, context, lang);
         if (isNatalOverviewContent(converted.content)) {
@@ -636,7 +803,16 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
       }
     }
 
-    if (SCHEMA_REPAIR_PROMPTS.has(options.promptId) && !isNatalOverviewContent(normalized.content)) {
+    if (options.promptId === 'daily-forecast' && !isDailyForecastContent(normalized.content)) {
+      if (isDailyForecastLegacy(normalized.content)) {
+        const converted = convertLegacyDailyForecast(normalized.content as Record<string, unknown>, lang);
+        if (isDailyForecastContent(converted.content)) {
+          normalized = converted as LocalizedContent<T>;
+        }
+      }
+    }
+
+    if (options.promptId === 'natal-overview' && !isNatalOverviewContent(normalized.content)) {
       const repaired = await reformatNatalOverviewContent(
         result as LocalizedContent<unknown>,
         context,
@@ -645,6 +821,20 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
         timeoutMs,
       );
       if (!repaired || !isNatalOverviewContent(repaired.content)) {
+        throw new Error('Invalid JSON response from DeepSeek');
+      }
+      normalized = repaired as LocalizedContent<T>;
+    }
+
+    if (options.promptId === 'daily-forecast' && !isDailyForecastContent(normalized.content)) {
+      const repaired = await reformatDailyForecastContent(
+        result as LocalizedContent<unknown>,
+        context,
+        apiKey,
+        baseUrl,
+        timeoutMs,
+      );
+      if (!repaired || !isDailyForecastContent(repaired.content)) {
         throw new Error('Invalid JSON response from DeepSeek');
       }
       normalized = repaired as LocalizedContent<T>;
