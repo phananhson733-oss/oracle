@@ -159,79 +159,9 @@ router.post('/v2/subscribe', authMiddleware, requireAuth, async (req: Request, r
 // =====================================================
 
 // POST /api/payment/v2/purchase
-// 创建单次购买 checkout session
-router.post('/v2/purchase', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  try {
-    return res.status(410).json({ error: 'Direct purchase disabled. Use credits instead.' });
-    if (!isStripeConfigured()) {
-      return res.status(503).json({ error: 'Payment service unavailable' });
-    }
-
-    const { featureType, featureId, successUrl, cancelUrl } = req.body;
-
-    if (!featureType || !successUrl || !cancelUrl) {
-      return res.status(400).json({ error: 'featureType, successUrl, and cancelUrl required' });
-    }
-
-    const validTypes: FeatureType[] = [
-      'dimension', 'core_theme', 'detail', 'daily_script', 'daily_transit',
-      'synastry', 'synastry_detail', 'ask', 'cbt_stats', 'synthetica'
-    ];
-
-    if (!validTypes.includes(featureType as FeatureType)) {
-      return res.status(400).json({ error: 'Invalid feature type' });
-    }
-
-    const user = await userService.findById(req.userId!);
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    // 获取产品信息
-    const product = PRODUCTS.oneTime[featureType as keyof typeof PRODUCTS.oneTime];
-    if (!product) {
-      return res.status(400).json({ error: 'Product not found' });
-    }
-
-    // 获取 scope（新版产品才有）
-    const scope = 'scope' in product ? product.scope : 'consumable';
-
-    // 创建 Checkout Session
-    const session = await stripe.checkout.sessions.create({
-      mode: 'payment',
-      customer_email: user.email,
-      line_items: [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: product.name,
-              metadata: {
-                featureType,
-                featureId: featureId || '',
-              },
-            },
-            unit_amount: product.amount,
-          },
-          quantity: 1,
-        },
-      ],
-      success_url: successUrl,
-      cancel_url: cancelUrl,
-      metadata: {
-        userId: req.userId!,
-        featureType,
-        featureId: featureId || '',
-        scope,
-        version: 'v2',
-      },
-    });
-
-    res.json({ url: session.url });
-  } catch (error) {
-    console.error('Create purchase checkout error:', error);
-    res.status(500).json({ error: 'Failed to create checkout session' });
-  }
+// 创建单次购买 checkout session - 已禁用，使用积分购买替代
+router.post('/v2/purchase', authMiddleware, requireAuth, async (_req: Request, res: Response) => {
+  return res.status(410).json({ error: 'Direct purchase disabled. Use credits instead.' });
 });
 
 router.post('/v2/purchase-with-credits', authMiddleware, requireAuth, async (req: Request, res: Response) => {
