@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "人生K线",
-  "usingComponents": {
-    "kline-chart": "/components/kline-chart/kline-chart"
-  }
-}
