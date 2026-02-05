@@ -6271,6 +6271,40 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
     const [gmError, setGmError] = useState<string | null>(null);
     const navigate = useNavigate();
 
+    // Trial countdown state
+    const [trialCountdown, setTrialCountdown] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
+
+    // Calculate and update trial countdown
+    useEffect(() => {
+        if (!isTrialing || !entitlements?.trialEndsAt) {
+            setTrialCountdown(null);
+            return;
+        }
+
+        const updateCountdown = () => {
+            const now = Date.now();
+            const trialEnd = new Date(entitlements.trialEndsAt!).getTime();
+            const diff = trialEnd - now;
+
+            if (diff <= 0) {
+                setTrialCountdown(null);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            setTrialCountdown({ days, hours, minutes, seconds });
+        };
+
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+
+        return () => clearInterval(timer);
+    }, [isTrialing, entitlements?.trialEndsAt]);
+
     const handleManageSubscription = async () => {
         try {
           const { url } = await createPortalSession(window.location.href);
@@ -6388,30 +6422,38 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                     </div>
 
                     {/* Credits Section */}
-                    <button
-                        onClick={() => navigate('/usage')}
-                        className={`w-full flex items-center justify-between py-4 my-4 border-y transition-colors ${
-                            theme === 'dark'
-                                ? 'border-space-700 hover:bg-space-800/50'
-                                : 'border-paper-200 hover:bg-paper-100'
-                        }`}
-                    >
-                        <div className="flex items-center gap-3">
-                            <span className="text-gold-500 text-xl">✦</span>
-                            <div className="text-left">
-                                <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">
-                                    {language === 'zh' ? '积分余额' : 'Credits Balance'}
-                                </div>
-                                <div className="text-2xl font-bold text-gold-500">
-                                    {entitlements?.credits ?? 0}
+                    <div className={`py-4 my-4 border-y ${theme === 'dark' ? 'border-space-700' : 'border-paper-200'}`}>
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <span className="text-gold-500 text-xl">✦</span>
+                                <div className="text-left">
+                                    <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">
+                                        {language === 'zh' ? '积分余额' : 'Credits Balance'}
+                                    </div>
+                                    <div className="text-2xl font-bold text-gold-500">
+                                        {entitlements?.credits ?? 0}
+                                    </div>
                                 </div>
                             </div>
+                            <div className="flex items-center gap-2">
+                                <ActionButton
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => openCreditsModal()}
+                                    className="border-gold-500/50 text-gold-500 hover:bg-gold-500/10"
+                                >
+                                    {language === 'zh' ? '增加积分' : 'Add Credits'}
+                                </ActionButton>
+                                <button
+                                    onClick={() => navigate('/usage')}
+                                    className={`flex items-center gap-1 text-sm transition-colors ${theme === 'dark' ? 'text-star-400 hover:text-star-200' : 'text-paper-500 hover:text-paper-700'}`}
+                                >
+                                    <span>{language === 'zh' ? '记录' : 'History'}</span>
+                                    <span>›</span>
+                                </button>
+                            </div>
                         </div>
-                        <div className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-star-400' : 'text-paper-500'}`}>
-                            <span>{language === 'zh' ? '查看记录' : 'View History'}</span>
-                            <span>›</span>
-                        </div>
-                    </button>
+                    </div>
 
                     <ActionButton onClick={() => { logout(); navigate('/'); }} size="sm" variant="secondary" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10 hover:border-red-500/50">
                         {language === 'zh' ? '退出登录' : 'Log Out'}
@@ -6452,9 +6494,48 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
             {isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
                 <Section title={t.settings.trial_title}>
-                    <Card className="mb-4 border-l border-l-amber-500/40">
-                        <div className="text-sm text-amber-600">
-                            {t.settings.trial_desc.replace('{days}', String(trialDaysLeft))}
+                    <Card className={`mb-4 border-l-4 border-l-amber-500 ${theme === 'dark' ? 'bg-amber-500/5' : 'bg-amber-50'}`}>
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <div>
+                                <div className="text-sm text-amber-600 mb-3">
+                                    {t.settings.trial_desc.replace('{days}', String(trialDaysLeft))}
+                                </div>
+                                {/* Countdown Timer */}
+                                {trialCountdown && (
+                                    <div className="flex items-center gap-2">
+                                        <span className={`text-xs uppercase tracking-widest ${theme === 'dark' ? 'text-star-400' : 'text-paper-500'}`}>
+                                            {language === 'zh' ? '剩余时间' : 'Time Left'}
+                                        </span>
+                                        <div className="flex items-center gap-1 font-mono">
+                                            <span className={`px-2 py-1 rounded ${theme === 'dark' ? 'bg-space-800 text-amber-400' : 'bg-amber-100 text-amber-700'} text-sm font-bold`}>
+                                                {String(trialCountdown.days).padStart(2, '0')}
+                                            </span>
+                                            <span className="text-amber-500">:</span>
+                                            <span className={`px-2 py-1 rounded ${theme === 'dark' ? 'bg-space-800 text-amber-400' : 'bg-amber-100 text-amber-700'} text-sm font-bold`}>
+                                                {String(trialCountdown.hours).padStart(2, '0')}
+                                            </span>
+                                            <span className="text-amber-500">:</span>
+                                            <span className={`px-2 py-1 rounded ${theme === 'dark' ? 'bg-space-800 text-amber-400' : 'bg-amber-100 text-amber-700'} text-sm font-bold`}>
+                                                {String(trialCountdown.minutes).padStart(2, '0')}
+                                            </span>
+                                            <span className="text-amber-500">:</span>
+                                            <span className={`px-2 py-1 rounded ${theme === 'dark' ? 'bg-space-800 text-amber-400' : 'bg-amber-100 text-amber-700'} text-sm font-bold`}>
+                                                {String(trialCountdown.seconds).padStart(2, '0')}
+                                            </span>
+                                        </div>
+                                        <span className={`text-[10px] ${theme === 'dark' ? 'text-star-500' : 'text-paper-400'}`}>
+                                            {language === 'zh' ? '天:时:分:秒' : 'D:H:M:S'}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                            <ActionButton
+                                onClick={() => openUpgradeModal()}
+                                size="sm"
+                                className="bg-amber-500 hover:bg-amber-400 text-space-950 border-amber-500 whitespace-nowrap"
+                            >
+                                {language === 'zh' ? '立即续期' : 'Renew Now'}
+                            </ActionButton>
                         </div>
                     </Card>
                 </Section>
