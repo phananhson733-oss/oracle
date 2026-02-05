@@ -350,7 +350,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
       />
 
       {/* 弹窗内容 */}
-      <div className={`relative w-full max-w-6xl rounded-2xl p-6 md:p-8 shadow-2xl border ${isDark ? 'bg-space-900 border-gold-500/15 text-star-50' : 'bg-paper-100/90 border-paper-300 text-paper-900'}`}>
+      <div className={`relative w-full max-w-[1728px] rounded-2xl p-6 md:p-8 shadow-2xl border ${isDark ? 'bg-space-900 border-gold-500/15 text-star-50' : 'bg-paper-100/90 border-paper-300 text-paper-900'}`}>
         {/* 关闭按钮 */}
         <button
           onClick={onClose}

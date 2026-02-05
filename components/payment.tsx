@@ -48,7 +48,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       isOpen={isOpen}
       onClose={onClose}
       title={topupTitle}
-      className="max-w-xl"
+      className="max-w-[864px]"
       bodyClassName="space-y-5"
     >
       <div className={`rounded-xl border p-4 ${isDark ? 'border-space-700 bg-space-900/40' : 'border-paper-300 bg-paper-100/80'}`}>

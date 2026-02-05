@@ -156,7 +156,7 @@ const UpgradeModal: React.FC = () => {
       isOpen={showUpgradeModal}
       onClose={handleClose}
       title={subscriptionT?.title || '订阅Pro'}
-      className="w-[95vw] max-w-[900px] overflow-hidden"
+      className="w-[95vw] max-w-[1350px] overflow-hidden"
       bodyClassName="p-0 overflow-hidden"
     >
       <div className="space-y-4 p-6 md:p-8 max-h-[80vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
