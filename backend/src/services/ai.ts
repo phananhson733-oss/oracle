@@ -1,5 +1,5 @@
 // INPUT: AI 内容生成服务（DeepSeek chat/reasoning，单语言输出与合盘综述/成长焦点分区 mock）。
-// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存、JSON 修复与 schema 校验）。
+// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存、JSON 修复、schema 校验与旧版日运/概览结构转换）。
 // POS: AI 生成服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -258,7 +258,7 @@ const isDailyEnergy = (value: unknown): boolean => (
   && isString(value.action)
 );
 
-const isDailyForecastLegacy = (value: unknown): boolean => (
+const isDailyForecastLegacyEnergy = (value: unknown): boolean => (
   isRecord(value)
   && isString(value.date)
   && isString(value.theme_title)
@@ -267,9 +267,23 @@ const isDailyForecastLegacy = (value: unknown): boolean => (
   && isRecord(value.time_windows)
 );
 
+const isLegacyThemeItem = (value: unknown): boolean => (
+  isRecord(value)
+  && (isString(value.theme) || isString(value.interpretation) || isString(value.scenario) || isString(value.daily_focus))
+);
+
+const isDailyForecastLegacyOverview = (value: unknown): boolean => (
+  isRecord(value)
+  && isString(value.date)
+  && (isString(value.overview) || Array.isArray(value.themes) || isStringArray(value.key_reminders))
+  && (!('theme_title' in value) || !isString(value.theme_title))
+);
+
+const isDailyForecastLegacy = (value: unknown): boolean =>
+  isDailyForecastLegacyEnergy(value) || isDailyForecastLegacyOverview(value);
+
 const isDailyForecastContent = (value: unknown): boolean => {
   if (!isRecord(value)) return false;
-  if (isDailyForecastLegacy(value)) return true;
   return (
     isString(value.date)
     && isString(value.theme_title)
@@ -442,46 +456,167 @@ function convertLegacyNatalOverview(
 function convertLegacyDailyForecast(
   legacy: Record<string, unknown>,
   lang: Language,
-): LocalizedContent<unknown> {
-  const energy = isRecord(legacy.energy_profile) ? legacy.energy_profile : {};
-  const strategy = isRecord(legacy.strategy) ? legacy.strategy : {};
-  const timeWindows = isRecord(legacy.time_windows) ? legacy.time_windows : {};
-  const bestWindow = isString((strategy as Record<string, unknown>).best_window)
-    ? (strategy as Record<string, unknown>).best_window as string
-    : 'morning';
+): LocalizedContent<unknown> | null {
+  const safeText = (value: unknown, fallback: string) =>
+    isString(value) && value.trim() ? value : fallback;
 
-  const fourDimensions = {
-    energy: (energy as Record<string, unknown>).drive,
-    tension: (energy as Record<string, unknown>).pressure,
-    frictions: (energy as Record<string, unknown>).heat,
-    pleasures: (energy as Record<string, unknown>).nourishment,
-  };
+  const ensureDailyEnergy = (
+    value: unknown,
+    fallback: { score: number; feeling: string; scenario: string; action: string },
+  ) => (
+    isRecord(value)
+    && typeof value.score === 'number'
+    && isString(value.feeling)
+    && isString(value.scenario)
+    && isString(value.action)
+      ? value
+      : fallback
+  );
 
-  const dailyFocus = {
-    move_forward: isString((strategy as Record<string, unknown>).best_use)
-      ? (strategy as Record<string, unknown>).best_use as string
-      : (lang === 'zh' ? '优先推进一件关键任务。' : 'Advance one key task.'),
-    communication_trap: isString((strategy as Record<string, unknown>).avoid)
-      ? (strategy as Record<string, unknown>).avoid as string
-      : (lang === 'zh' ? '避免情绪化沟通。' : 'Avoid emotionally charged communication.'),
-    best_window: bestWindow,
-  };
+  if (isDailyForecastLegacyEnergy(legacy)) {
+    const energy = isRecord(legacy.energy_profile) ? legacy.energy_profile : {};
+    const strategy = isRecord(legacy.strategy) ? legacy.strategy : {};
+    const rawWindows = isRecord(legacy.time_windows) ? legacy.time_windows : {};
+    const bestWindowRaw = isString((strategy as Record<string, unknown>).best_window)
+      ? (strategy as Record<string, unknown>).best_window as string
+      : 'morning';
+    const bestWindow = ['morning', 'midday', 'evening'].includes(bestWindowRaw) ? bestWindowRaw : 'morning';
 
-  return {
-    lang,
-    content: {
-      date: legacy.date,
-      theme_title: legacy.theme_title,
-      theme_explanation: isString(legacy.theme_explanation) ? legacy.theme_explanation : '',
-      anchor_quote: isString(legacy.anchor_quote) ? legacy.anchor_quote : '',
-      four_dimensions: fourDimensions,
-      time_windows: timeWindows,
-      daily_focus: dailyFocus,
-      share_text: isString(legacy.share_text) ? legacy.share_text : '',
-      energy_profile: legacy.energy_profile,
-      strategy: legacy.strategy,
-    },
-  };
+    const fallbackWindows = {
+      morning: lang === 'zh' ? '上午适合聚焦推进。' : 'Morning favors focused progress.',
+      midday: lang === 'zh' ? '午间注意沟通与协作。' : 'Midday calls for steady communication.',
+      evening: lang === 'zh' ? '晚上适合放松与收尾。' : 'Evening is good for winding down.',
+    };
+
+    const timeWindows = {
+      morning: safeText((rawWindows as Record<string, unknown>).morning, fallbackWindows.morning),
+      midday: safeText((rawWindows as Record<string, unknown>).midday, fallbackWindows.midday),
+      evening: safeText((rawWindows as Record<string, unknown>).evening, fallbackWindows.evening),
+    };
+
+    const fourDimensions = {
+      energy: ensureDailyEnergy(
+        (energy as Record<string, unknown>).drive,
+        { score: 60, feeling: lang === 'zh' ? '动力平稳' : 'Steady drive', scenario: timeWindows.morning, action: lang === 'zh' ? '先推进一件关键任务。' : 'Advance one key task.' },
+      ),
+      tension: ensureDailyEnergy(
+        (energy as Record<string, unknown>).pressure,
+        { score: 45, feeling: lang === 'zh' ? '压力可控' : 'Manageable tension', scenario: timeWindows.midday, action: lang === 'zh' ? '减少同时处理事项。' : 'Limit multitasking.' },
+      ),
+      frictions: ensureDailyEnergy(
+        (energy as Record<string, unknown>).heat,
+        { score: 40, feeling: lang === 'zh' ? '摩擦偏低' : 'Low frictions', scenario: timeWindows.midday, action: lang === 'zh' ? '沟通前先对齐细节。' : 'Align details before talking.' },
+      ),
+      pleasures: ensureDailyEnergy(
+        (energy as Record<string, unknown>).nourishment,
+        { score: 65, feeling: lang === 'zh' ? '滋养回升' : 'Growing nourishment', scenario: timeWindows.evening, action: lang === 'zh' ? '安排一段舒缓休息。' : 'Schedule a restorative break.' },
+      ),
+    };
+
+    const dailyFocus = {
+      move_forward: isString((strategy as Record<string, unknown>).best_use)
+        ? (strategy as Record<string, unknown>).best_use as string
+        : (lang === 'zh' ? '优先推进一件关键任务。' : 'Advance one key task.'),
+      communication_trap: isString((strategy as Record<string, unknown>).avoid)
+        ? (strategy as Record<string, unknown>).avoid as string
+        : (lang === 'zh' ? '避免情绪化沟通。' : 'Avoid emotionally charged communication.'),
+      best_window: bestWindow,
+    };
+
+    return {
+      lang,
+      content: {
+        date: legacy.date,
+        theme_title: safeText(legacy.theme_title, lang === 'zh' ? '今日主线' : 'Today\'s Focus'),
+        theme_explanation: isString(legacy.theme_explanation) ? legacy.theme_explanation : '',
+        anchor_quote: isString(legacy.anchor_quote) ? legacy.anchor_quote : '',
+        four_dimensions: fourDimensions,
+        time_windows: timeWindows,
+        daily_focus: dailyFocus,
+        share_text: isString(legacy.share_text) ? legacy.share_text : '',
+        energy_profile: legacy.energy_profile,
+        strategy: legacy.strategy,
+      },
+    };
+  }
+
+  if (isDailyForecastLegacyOverview(legacy)) {
+    const themes = Array.isArray(legacy.themes)
+      ? legacy.themes.filter(isLegacyThemeItem).map((item) => item as Record<string, unknown>)
+      : [];
+    const [firstTheme, secondTheme, thirdTheme] = themes;
+    const reminders = Array.isArray(legacy.key_reminders) ? legacy.key_reminders.filter(isString) : [];
+    const overviewText = safeText(legacy.overview, '');
+    const themeTitle = safeText(
+      legacy.theme_title,
+      safeText(firstTheme?.theme, lang === 'zh' ? '今日主线' : 'Today\'s Focus'),
+    );
+    const themeExplanation = safeText(
+      legacy.theme_explanation,
+      safeText(overviewText, safeText(firstTheme?.interpretation, '')),
+    );
+
+    const pickWindow = (
+      theme: Record<string, unknown> | undefined,
+      fallbackZh: string,
+      fallbackEn: string,
+    ) => safeText(
+      theme?.scenario || theme?.interpretation,
+      lang === 'zh' ? fallbackZh : fallbackEn,
+    );
+
+    const timeWindows = {
+      morning: pickWindow(firstTheme, '上午适合梳理重点并开始行动。', 'Morning is ideal for clarifying priorities.'),
+      midday: pickWindow(secondTheme, '午间留意沟通节奏与协作。', 'Midday favors steady communication.'),
+      evening: pickWindow(thirdTheme, '晚上适合整理情绪并收尾。', 'Evening is good for grounding and wrap-up.'),
+    };
+
+    const pickReminder = (index: number, fallbackZh: string, fallbackEn: string) =>
+      reminders[index] || (lang === 'zh' ? fallbackZh : fallbackEn);
+
+    const dailyFocus = {
+      move_forward: safeText(firstTheme?.daily_focus, pickReminder(0, '推进一件最重要的任务。', 'Advance the single most important task.')),
+      communication_trap: pickReminder(1, '避免情绪化表达。', 'Avoid emotionally charged communication.'),
+      best_window: 'morning',
+    };
+
+    const fourDimensions = {
+      energy: ensureDailyEnergy(
+        null,
+        { score: 62, feeling: lang === 'zh' ? '动力稳定' : 'Steady drive', scenario: timeWindows.morning, action: lang === 'zh' ? '先推进关键事项。' : 'Move the key task forward.' },
+      ),
+      tension: ensureDailyEnergy(
+        null,
+        { score: 48, feeling: lang === 'zh' ? '压力可控' : 'Manageable tension', scenario: timeWindows.midday, action: lang === 'zh' ? '减少同时处理事项。' : 'Reduce multitasking.' },
+      ),
+      frictions: ensureDailyEnergy(
+        null,
+        { score: 42, feeling: lang === 'zh' ? '摩擦偏低' : 'Low frictions', scenario: timeWindows.midday, action: lang === 'zh' ? '沟通前先对齐细节。' : 'Align details before talking.' },
+      ),
+      pleasures: ensureDailyEnergy(
+        null,
+        { score: 66, feeling: lang === 'zh' ? '滋养回升' : 'Growing nourishment', scenario: timeWindows.evening, action: lang === 'zh' ? '安排一段舒缓休息。' : 'Schedule a restorative break.' },
+      ),
+    };
+
+    return {
+      lang,
+      content: {
+        date: legacy.date,
+        theme_title: themeTitle,
+        theme_explanation: themeExplanation,
+        anchor_quote: safeText(legacy.anchor_quote, ''),
+        four_dimensions: fourDimensions,
+        time_windows: timeWindows,
+        daily_focus: dailyFocus,
+        share_text: safeText(legacy.share_text, themeExplanation || themeTitle),
+        energy_profile: legacy.energy_profile,
+        strategy: legacy.strategy,
+      },
+    };
+  }
+
+  return null;
 }
 
 async function reformatNatalOverviewContent(
@@ -699,7 +834,10 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
   if (shouldUseCache) {
     const cached = await cacheService.get<LocalizedContent<T>>(cacheKey);
     if (cached) {
-      if (options.promptId === 'natal-overview' && !isNatalOverviewContent(cached.content)) {
+      if (options.promptId === 'natal-overview') {
+        if (isNatalOverviewContent(cached.content)) {
+          return buildAIResult(cached, true);
+        }
         if (isLegacyNatalOverviewContent(cached.content)) {
           const converted = convertLegacyNatalOverview(cached.content as Record<string, unknown>, context, lang);
           if (isNatalOverviewContent(converted.content)) {
@@ -707,11 +845,13 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
             return buildAIResult(converted as LocalizedContent<T>, true);
           }
         }
-      }
-      if (options.promptId === 'daily-forecast' && !isDailyForecastContent(cached.content)) {
+      } else if (options.promptId === 'daily-forecast') {
+        if (isDailyForecastContent(cached.content)) {
+          return buildAIResult(cached, true);
+        }
         if (isDailyForecastLegacy(cached.content)) {
           const converted = convertLegacyDailyForecast(cached.content as Record<string, unknown>, lang);
-          if (isDailyForecastContent(converted.content)) {
+          if (converted && isDailyForecastContent(converted.content)) {
             await cacheService.set(cacheKey, converted, CACHE_TTL.AI_OUTPUT);
             return buildAIResult(converted as LocalizedContent<T>, true);
           }
@@ -806,7 +946,7 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
     if (options.promptId === 'daily-forecast' && !isDailyForecastContent(normalized.content)) {
       if (isDailyForecastLegacy(normalized.content)) {
         const converted = convertLegacyDailyForecast(normalized.content as Record<string, unknown>, lang);
-        if (isDailyForecastContent(converted.content)) {
+        if (converted && isDailyForecastContent(converted.content)) {
           normalized = converted as LocalizedContent<T>;
         }
       }
