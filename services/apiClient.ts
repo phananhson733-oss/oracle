@@ -1,5 +1,5 @@
 // INPUT: 后端 API 客户端与查询参数构建（含百科入口、经典书架缓存版本与 Ask/Synastry 权益校验、地理搜索多语言参数）。
-// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略，含 AI 缓存版本刷新与日运旧结构清理）。
+// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略，含 AI 缓存版本刷新、本地缓存清理与日运旧结构清理）。
 // POS: 前端 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 /// <reference types="vite/client" />
@@ -47,7 +47,7 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'ht
 const REQUEST_TIMEOUT_MS = 15000;
 const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
-const LOCAL_CACHE_PREFIX = 'astro_cache_v1';
+const LOCAL_CACHE_PREFIX = 'astro_cache_v2';
 const WIKI_CACHE_VERSION = 'v3';
 const AI_CACHE_VERSION = 'v5';
 
@@ -165,16 +165,21 @@ const hashInput = (input: unknown): string => {
 const buildAiCacheKey = (scope: string, lang: 'zh' | 'en', input: unknown) =>
   `${LOCAL_CACHE_PREFIX}:ai:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${scope}:${hashInput(input)}`;
 
-const fetchWithCache = async <T,>(key: string, fetcher: () => Promise<T>): Promise<T> => {
+const fetchWithCache = async <T,>(
+  key: string,
+  fetcher: () => Promise<T>,
+  normalize?: (value: T) => T
+): Promise<T> => {
   const cached = readLocalCache<T>(key);
-  if (cached) return cached;
+  if (cached) return normalize ? normalize(cached) : cached;
   const pending = pendingRequests.get(key);
   if (pending) return pending as Promise<T>;
 
   const promise = fetcher()
     .then((result) => {
-      writeLocalCache(key, result);
-      return result;
+      const normalized = normalize ? normalize(result) : result;
+      writeLocalCache(key, normalized);
+      return normalized;
     })
     .finally(() => {
       pendingRequests.delete(key);
@@ -297,15 +302,15 @@ const normalizeDailyForecastContent = (
   };
 };
 
-const normalizeDailyForecastResponse = (
-  payload: unknown,
+const normalizeDailyForecastResponse = <T,>(
+  payload: T,
   lang: 'zh' | 'en'
-) => {
+): T => {
   if (!isRecord(payload) || !('content' in payload)) return payload;
   const normalized = normalizeDailyForecastContent(payload.content, lang);
   if (!normalized) return payload;
   if (normalized === payload.content) return payload;
-  return { ...payload, content: normalized };
+  return { ...payload, content: normalized } as T;
 };
 
 async function fetchWithTimeout(input: RequestInfo, init: RequestInit = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
@@ -474,7 +479,7 @@ export async function fetchDailyForecast(profile: UserProfile, date: string, lan
     }
     const data = await res.json();
     return normalizeDailyForecastResponse(data, lang);
-  });
+  }, (cached) => normalizeDailyForecastResponse(cached, lang));
 }
 
 export async function fetchDailyDetail(profile: UserProfile, date: string, lang: 'zh' | 'en' = 'zh') {
