@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL 与付费墙购买回调）。 -->
-<!-- OUTPUT: components 架构摘要与文件索引（含付费墙回调与纸感映射记录）。 -->
+<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL、付费墙购买回调与积分充值弹窗）。 -->
+<!-- OUTPUT: components 架构摘要与文件索引（含付费墙回调、积分充值弹窗与纸感映射记录）。 -->
 <!-- POS: 主应用组件目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -16,6 +16,7 @@
 - AstroChart.tsx｜地位：可视化组件｜功能：绘制星盘 SVG（后端数据驱动）。
 - TechSpecsComponents.tsx｜地位：功能组件｜功能：技术参数表格与列表 UI。
 - UIComponents.tsx｜地位：基础组件库｜功能：主题/语言上下文与通用组件。
+- payment.tsx｜地位：功能弹窗｜功能：积分充值占位弹窗与订阅引导。
 - ConsentBanner.tsx｜地位：提示组件｜功能：展示分析追踪同意横幅并收集授权。
 - Breadcrumb.tsx｜地位：导航组件｜功能：面包屑导航与结构化数据输出。
 - ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式）。
@@ -26,6 +27,7 @@
 - wiki｜地位：Wiki 组件目录｜功能：心理占星百科页面与详情组件。
 
 近期更新
+- 新增积分充值弹窗组件（CreditsModal），展示积分余额并引导订阅，充值入口保持占位提示。
 - 新增竞品对比页面组件（ComparisonPage），支持 vs 与 alternatives 两种格式。
 - 新增面包屑导航组件（Breadcrumb），支持结构化数据输出与语义化标记。
 - 新增分析追踪同意横幅（ConsentBanner），用于收集合规授权。
