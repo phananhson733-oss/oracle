@@ -12,7 +12,8 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/generate-seo-pages.mjs && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "npm --prefix backend install"
   },
   "dependencies": {
     "@google/genai": "latest",
