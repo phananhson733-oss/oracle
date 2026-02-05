@@ -9,7 +9,7 @@
 - 提供占星计算与内容生成的服务层。
 - apiClient 调用后端 API 获取真实数据与 AI 内容（含合盘综述分区、技术附录拆分与 CBT 错误透传）。
 - astroService 封装后端星盘与周期数据获取，并构建前端需要的衍生数据。
-- geminiService 负责 prompt key 映射，统一从后端获取 AI 内容并返回单语言 content。
+- geminiService 负责 prompt key 映射，统一从后端获取 AI 内容并返回单语言 content（兼容旧版概览结构）。
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录服务目录架构与文件清单。
