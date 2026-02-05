@@ -1,5 +1,5 @@
 // INPUT: 后端 API 客户端与查询参数构建（含百科入口、经典书架缓存版本与 Ask/Synastry 权益校验、地理搜索多语言参数）。
-// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略）。
+// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略，含 AI 缓存版本刷新）。
 // POS: 前端 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 /// <reference types="vite/client" />
@@ -48,7 +48,7 @@ const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
 const LOCAL_CACHE_PREFIX = 'astro_cache_v1';
 const WIKI_CACHE_VERSION = 'v3';
-const AI_CACHE_VERSION = 'v3';
+const AI_CACHE_VERSION = 'v4';
 
 type ApiErrorPayload = { error?: string; reason?: string };
 type ApiError = Error & { status?: number; reason?: string; payload?: unknown };
