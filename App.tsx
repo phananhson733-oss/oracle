@@ -6430,28 +6430,28 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                     <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">
                                         {language === 'zh' ? '积分余额' : 'Credits Balance'}
                                     </div>
-                                    <div className="text-2xl font-bold text-gold-500">
-                                        {entitlements?.credits ?? 0}
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-2xl font-bold text-gold-500 min-w-[7ch] tabular-nums">
+                                            {(entitlements?.credits ?? 0).toLocaleString()}
+                                        </span>
+                                        <ActionButton
+                                            size="sm"
+                                            variant="outline"
+                                            onClick={() => openCreditsModal()}
+                                            className="border-gold-500/50 text-gold-500 hover:bg-gold-500/10"
+                                        >
+                                            {language === 'zh' ? '增加积分' : 'Add Credits'}
+                                        </ActionButton>
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <ActionButton
-                                    size="sm"
-                                    variant="outline"
-                                    onClick={() => openCreditsModal()}
-                                    className="border-gold-500/50 text-gold-500 hover:bg-gold-500/10"
-                                >
-                                    {language === 'zh' ? '增加积分' : 'Add Credits'}
-                                </ActionButton>
-                                <button
-                                    onClick={() => navigate('/usage')}
-                                    className={`flex items-center gap-1 text-sm transition-colors ${theme === 'dark' ? 'text-star-400 hover:text-star-200' : 'text-paper-500 hover:text-paper-700'}`}
-                                >
-                                    <span>{language === 'zh' ? '记录' : 'History'}</span>
-                                    <span>›</span>
-                                </button>
-                            </div>
+                            <button
+                                onClick={() => navigate('/usage')}
+                                className={`flex items-center gap-1 text-sm transition-colors ${theme === 'dark' ? 'text-star-400 hover:text-star-200' : 'text-paper-500 hover:text-paper-700'}`}
+                            >
+                                <span>{language === 'zh' ? '记录' : 'History'}</span>
+                                <span>›</span>
+                            </button>
                         </div>
                     </div>
 
