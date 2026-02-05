@@ -1,0 +1,7 @@
+/* INPUT: Tailwind 基础层/组件/工具层样式入口。 */
+/* OUTPUT: 注入 Tailwind 样式供全站使用。 */
+/* POS: 全局样式入口；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

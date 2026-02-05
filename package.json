@@ -1,6 +1,6 @@
 {
-  "_comment_input": "npm 依赖与脚本配置（含 SEO 静态页生成、SEO head 输出与 Node 版本约束）。",
-  "_comment_output": "提供包依赖、脚本定义与 Node 版本提示（含 SEO 生成与 head 输出链路）。",
+  "_comment_input": "npm 依赖与脚本配置（含 SEO 静态页生成、Tailwind/PostCSS 与 Node 版本约束）。",
+  "_comment_output": "提供包依赖、脚本定义与 Node 版本提示（含 SEO 生成与样式构建链路）。",
   "_comment_pos": "项目包清单。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。",
   "name": "astromind-ai",
   "private": true,
@@ -26,8 +26,11 @@
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
     "vite": "^6.2.0"
   }
 }

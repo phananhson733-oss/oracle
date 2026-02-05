@@ -1,5 +1,5 @@
-<!-- INPUT: Tailwind CDN、字体与主题色变量（含 SEO 元信息、图标与问答动画）。 -->
-<!-- OUTPUT: 提供 HTML 宿主、主题色变量与 root 容器（含 SEO 元信息与问答加载动画支持）。 -->
+<!-- INPUT: 字体加载、主题色变量与 SEO 元信息（含图标与问答动画）。 -->
+<!-- OUTPUT: 提供 HTML 宿主、主题色变量与 root 容器（含字体加载控制）。 -->
 <!-- POS: 主应用页面壳。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。 -->
 
@@ -26,147 +26,8 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/readexpro/v14/ijwXsSlRRtMfK7uR6yVZVX5eD9Z.woff2" crossOrigin="anonymous" />
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/cormorantgaramond/v22/co3YmX5slCNuHLi8bWQdNOo8PM.woff2" crossOrigin="anonymous" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://images.unsplash.com">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              // Frosted Black Base (deeper)
-              space: {
-                950: 'rgb(var(--space-950) / <alpha-value>)', // Main Background
-                900: 'rgb(var(--space-900) / <alpha-value>)', // Secondary Background
-                800: 'rgb(var(--space-800) / <alpha-value>)', // Card Background
-                700: 'rgb(var(--space-700) / <alpha-value>)', // Secondary Surface
-                600: 'rgb(var(--space-600) / <alpha-value>)', // Border
-              },
-              // Light Mode Grays (Minimal)
-              paper: {
-                50: '#FFFFFF',
-                100: '#F6F4F0',
-                200: '#EFEAE2',
-                300: '#D8D1C5',
-                400: '#7A746B',
-                600: '#4A4540',
-                900: '#0A0B0D',
-              },
-              // Text Colors (Warm Neutral)
-              star: {
-                50: 'rgb(var(--star-50) / <alpha-value>)', // Primary text
-                200: 'rgb(var(--star-200) / <alpha-value>)', // Secondary text
-                400: 'rgb(var(--star-400) / <alpha-value>)', // Muted text
-              },
-              // Mystical Purple (Astrology & Spirituality)
-              mystic: {
-                50: '#FAF5FF',
-                100: '#F3E8FF',
-                200: '#E9D5FF',
-                300: '#D8B4FE',
-                400: '#C084FC',
-                500: '#A855F7',
-                600: '#9333EA',
-                700: '#7E22CE',
-                800: '#6B21A8',
-                900: '#581C87',
-              },
-              // Dark Gold Accent (refined scale)
-              accent: {
-                100: '#F4E8CF',
-                200: '#E7D2AA',
-                300: '#D5B97D',
-                400: '#C6A062',
-                500: '#B58A52',
-                600: '#9F7645',
-                700: '#7F5E36',
-                DEFAULT: '#C6A062',
-                hover: '#D4B47A',
-                light: '#F2E4C6',
-                glow: 'rgba(198, 160, 98, 0.28)',
-              },
-              // Gold Alias for App.tsx compatibility
-              gold: {
-                100: '#F4E8CF',
-                200: '#E7D2AA',
-                300: '#D5B97D',
-                400: '#C6A062',
-                500: '#B58A52',
-                600: '#9F7645',
-                700: '#7F5E36',
-                800: '#5E442B',
-              },
-              // Psychology Blue (Professional & Trust)
-              psycho: {
-                50: '#EFF6FF',
-                100: '#DBEAFE',
-                200: '#BFDBFE',
-                300: '#93C5FD',
-                400: '#60A5FA',
-                500: '#3B82F6',
-                600: '#2563EB',
-                700: '#1D4ED8',
-                800: '#1E40AF',
-                900: '#1E3A8A',
-              },
-              // Semantic Colors (improved for psychology + astrology)
-              success: '#10B981',  // Green - positive, growth
-              warning: '#F59E0B',  // Amber - attention, gold family
-              danger: '#EF4444',   // Red - alert, caution
-              info: '#3B82F6',     // Blue - professional, trust
-            },
-            fontFamily: {
-              sans: ['"Readex Pro"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-              serif: ['"Cormorant Garamond"', 'serif'],
-              mono: ['"IBM Plex Mono"', 'monospace'],
-            },
-            backgroundImage: {
-              'gradient-primary': 'linear-gradient(135deg, #C6A062 0%, #D4B47A 100%)',
-              'gradient-dark': 'linear-gradient(180deg, rgba(5,5,6,0) 0%, #050506 100%)',
-              'gradient-glass': 'radial-gradient(circle at 50% 0%, rgba(198,160,98,0.06), transparent 62%)',
-            },
-            boxShadow: {
-              'glow': '0 0 22px -6px rgba(198, 160, 98, 0.28)',
-              'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.2)',
-              'card': '0 12px 30px -18px rgba(0, 0, 0, 0.7)',
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.4s ease-out forwards',
-              'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-              'spin-slow': 'spinSlow 26s linear infinite',
-              'spin-reverse': 'spinReverse 16s linear infinite',
-              'breathe': 'breathe 2.8s ease-in-out infinite',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(16px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              spinSlow: {
-                '0%': { transform: 'rotate(0deg)' },
-                '100%': { transform: 'rotate(360deg)' },
-              },
-              spinReverse: {
-                '0%': { transform: 'rotate(360deg)' },
-                '100%': { transform: 'rotate(0deg)' },
-              },
-              breathe: {
-                '0%': { opacity: '0.4', transform: 'scale(1)' },
-                '50%': { opacity: '1', transform: 'scale(1.15)' },
-                '100%': { opacity: '0.4', transform: 'scale(1)' },
-              },
-            }
-          }
-        }
-      }
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
     <!-- Google Sign-In SDK -->
@@ -239,23 +100,6 @@
         letter-spacing: -0.02em;
       }
 
-      /* Font Display Optimization */
-      @font-face {
-        font-family: 'Readex Pro';
-        font-display: swap;
-        src: local('Readex Pro'),
-             url('https://fonts.gstatic.com/s/readexpro/v14/ijwXsSlRRtMfK7uR6yVZVX5eD9g.woff2') format('woff2'),
-             url('https://fonts.gstatic.com/s/readexpro/v14/ijwXsSlRRtMfK7uR6yVZVX5eD9g.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Cormorant Garamond';
-        font-display: swap;
-        src: local('Cormorant Garamond'),
-             url('https://fonts.gstatic.com/s/cormorantgaramond/v22/co3YmX5slCNuHLi8bWQdNOo8PM.woff2') format('woff2'),
-             url('https://fonts.gstatic.com/s/cormorantgaramond/v22/co3YmX5slCNuHLi8bWQdNOo8PM.woff') format('woff');
-      }
-
       /* Font Loading State */
       body.loading-fonts {
         visibility: hidden;
@@ -309,7 +153,6 @@
       });
     }
   </script>
-  <link rel="stylesheet" href="/index.css">
   </head>
   <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950 loading-fonts">
     <div class="bg-noise"></div>
