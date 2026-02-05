@@ -1,5 +1,5 @@
 // INPUT: 后端 API 客户端与查询参数构建（含百科入口、经典书架缓存版本与 Ask/Synastry 权益校验、地理搜索多语言参数）。
-// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略，含 AI 缓存版本刷新）。
+// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略，含 AI 缓存版本刷新与日运旧结构清理）。
 // POS: 前端 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 /// <reference types="vite/client" />
@@ -13,6 +13,7 @@ import type {
   AskAnswerContent,
   AskChartType,
   TransitData,
+  DailyPublicContent,
   SynastryTab,
   SynastryTabContent,
   SynastryOverviewSection,
@@ -48,7 +49,7 @@ const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
 const LOCAL_CACHE_PREFIX = 'astro_cache_v1';
 const WIKI_CACHE_VERSION = 'v3';
-const AI_CACHE_VERSION = 'v4';
+const AI_CACHE_VERSION = 'v5';
 
 type ApiErrorPayload = { error?: string; reason?: string };
 type ApiError = Error & { status?: number; reason?: string; payload?: unknown };
@@ -181,6 +182,130 @@ const fetchWithCache = async <T,>(key: string, fetcher: () => Promise<T>): Promi
 
   pendingRequests.set(key, promise);
   return promise;
+};
+
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  !!value && typeof value === 'object' && !Array.isArray(value);
+
+const isString = (value: unknown): value is string => typeof value === 'string';
+
+const isStringArray = (value: unknown): value is string[] =>
+  Array.isArray(value) && value.every(isString);
+
+const isLegacyDailyTheme = (value: unknown): boolean => (
+  isRecord(value)
+  && (isString(value.theme) || isString(value.interpretation) || isString(value.scenario) || isString(value.daily_focus))
+);
+
+const isLegacyDailyOverview = (value: unknown): boolean => (
+  isRecord(value)
+  && isString(value.date)
+  && (isString(value.overview) || Array.isArray(value.themes) || isStringArray(value.key_reminders))
+  && (!('theme_title' in value) || !isString(value.theme_title))
+);
+
+const normalizeDailyForecastContent = (
+  content: unknown,
+  lang: 'zh' | 'en'
+): DailyPublicContent | null => {
+  if (!isRecord(content)) return null;
+  if (isRecord(content.four_dimensions) || isRecord(content.energy_profile)) {
+    return content as DailyPublicContent;
+  }
+  if (!isLegacyDailyOverview(content)) {
+    return content as DailyPublicContent;
+  }
+
+  const safeText = (value: unknown, fallback: string) =>
+    isString(value) && value.trim() ? value : fallback;
+
+  const themes = Array.isArray(content.themes)
+    ? content.themes.filter(isLegacyDailyTheme).map((item) => item as Record<string, unknown>)
+    : [];
+  const [firstTheme, secondTheme, thirdTheme] = themes;
+  const reminders = Array.isArray(content.key_reminders) ? content.key_reminders.filter(isString) : [];
+
+  const themeTitle = safeText(
+    content.theme_title,
+    safeText(firstTheme?.theme, lang === 'zh' ? '今日主线' : 'Today\'s Focus')
+  );
+  const themeExplanation = safeText(
+    content.overview,
+    safeText(firstTheme?.interpretation, '')
+  );
+
+  const pickWindow = (
+    theme: Record<string, unknown> | undefined,
+    fallbackZh: string,
+    fallbackEn: string
+  ) => safeText(
+    theme?.scenario || theme?.interpretation,
+    lang === 'zh' ? fallbackZh : fallbackEn
+  );
+
+  const time_windows = {
+    morning: pickWindow(firstTheme, '上午适合梳理重点并开始行动。', 'Morning is ideal for clarifying priorities.'),
+    midday: pickWindow(secondTheme, '午间留意沟通节奏与协作。', 'Midday favors steady communication.'),
+    evening: pickWindow(thirdTheme, '晚上适合整理情绪并收尾。', 'Evening is good for grounding and wrap-up.'),
+  };
+
+  const pickReminder = (index: number, fallbackZh: string, fallbackEn: string) =>
+    reminders[index] || (lang === 'zh' ? fallbackZh : fallbackEn);
+
+  const daily_focus = {
+    move_forward: safeText(firstTheme?.daily_focus, pickReminder(0, '推进一件最重要的任务。', 'Advance the single most important task.')),
+    communication_trap: pickReminder(1, '避免情绪化表达。', 'Avoid emotionally charged communication.'),
+    best_window: 'morning' as const,
+  };
+
+  const four_dimensions = {
+    energy: {
+      score: 62,
+      feeling: lang === 'zh' ? '动力稳定' : 'Steady drive',
+      scenario: time_windows.morning,
+      action: lang === 'zh' ? '先推进关键事项。' : 'Move the key task forward.',
+    },
+    tension: {
+      score: 48,
+      feeling: lang === 'zh' ? '压力可控' : 'Manageable tension',
+      scenario: time_windows.midday,
+      action: lang === 'zh' ? '减少同时处理事项。' : 'Reduce multitasking.',
+    },
+    frictions: {
+      score: 42,
+      feeling: lang === 'zh' ? '摩擦偏低' : 'Low frictions',
+      scenario: time_windows.midday,
+      action: lang === 'zh' ? '沟通前先对齐细节。' : 'Align details before talking.',
+    },
+    pleasures: {
+      score: 66,
+      feeling: lang === 'zh' ? '滋养回升' : 'Growing nourishment',
+      scenario: time_windows.evening,
+      action: lang === 'zh' ? '安排一段舒缓休息。' : 'Schedule a restorative break.',
+    },
+  };
+
+  return {
+    date: safeText(content.date, resolveUtcDate()),
+    theme_title: themeTitle,
+    theme_explanation: themeExplanation,
+    anchor_quote: safeText(content.anchor_quote, ''),
+    four_dimensions,
+    time_windows,
+    daily_focus,
+    share_text: safeText(content.share_text, themeExplanation || themeTitle),
+  };
+};
+
+const normalizeDailyForecastResponse = (
+  payload: unknown,
+  lang: 'zh' | 'en'
+) => {
+  if (!isRecord(payload) || !('content' in payload)) return payload;
+  const normalized = normalizeDailyForecastContent(payload.content, lang);
+  if (!normalized) return payload;
+  if (normalized === payload.content) return payload;
+  return { ...payload, content: normalized };
 };
 
 async function fetchWithTimeout(input: RequestInfo, init: RequestInit = {}, timeoutMs = REQUEST_TIMEOUT_MS) {
@@ -347,7 +472,8 @@ export async function fetchDailyForecast(profile: UserProfile, date: string, lan
       error.payload = payload;
       throw error;
     }
-    return res.json();
+    const data = await res.json();
+    return normalizeDailyForecastResponse(data, lang);
   });
 }
 
