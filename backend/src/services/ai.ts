@@ -1,5 +1,5 @@
 // INPUT: AI 内容生成服务（DeepSeek chat/reasoning，单语言输出与合盘综述/成长焦点分区 mock）。
-// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存与 JSON 修复）。
+// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存、JSON 修复与 schema 校验）。
 // POS: AI 生成服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -109,6 +109,7 @@ function getTemperatureForPrompt(promptId: string): number {
 const REASONING_PROMPTS = ['ask-answer', 'oracle-answer'];
 const RAW_TEXT_PROMPTS = new Set<string>(['ask-answer']);
 const NO_CACHE_PROMPTS = new Set<string>();
+const SCHEMA_REPAIR_PROMPTS = new Set<string>(['natal-overview']);
 
 export interface AIGenerateOptions {
   promptId: string;
@@ -209,6 +210,266 @@ function stripCodeFence(text: string): string {
   return (fenced ? fenced[1] : trimmed).trim();
 }
 
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  !!value && typeof value === 'object' && !Array.isArray(value);
+
+const isString = (value: unknown): value is string => typeof value === 'string';
+
+const isStringArray = (value: unknown): value is string[] =>
+  Array.isArray(value) && value.every(isString);
+
+const isBig3Module = (value: unknown): boolean => (
+  isRecord(value)
+  && isString(value.title)
+  && isString(value.description)
+  && isStringArray(value.keywords)
+);
+
+const isNatalOverviewContent = (value: unknown): boolean => {
+  if (!isRecord(value)) return false;
+  return (
+    isBig3Module(value.sun)
+    && isBig3Module(value.moon)
+    && isBig3Module(value.rising)
+    && isRecord(value.core_melody)
+    && isStringArray(value.core_melody.keywords)
+    && isStringArray(value.core_melody.explanations)
+    && isRecord(value.top_talent)
+    && isString(value.top_talent.title)
+    && isString(value.top_talent.example)
+    && isString(value.top_talent.advice)
+    && isRecord(value.top_pitfall)
+    && isString(value.top_pitfall.title)
+    && isStringArray(value.top_pitfall.triggers)
+    && isString(value.top_pitfall.protection)
+    && isRecord(value.trigger_card)
+    && isStringArray(value.trigger_card.auto_reactions)
+    && isString(value.trigger_card.inner_need)
+    && isString(value.trigger_card.buffer_action)
+    && isString(value.share_text)
+  );
+};
+
+const isLegacyBig3Entry = (value: unknown): boolean =>
+  isRecord(value) && isString(value.description);
+
+const isLegacyNatalOverviewContent = (value: unknown): boolean => {
+  if (!isRecord(value) || !isRecord(value.big3)) return false;
+  const big3 = value.big3 as Record<string, unknown>;
+  return (
+    isLegacyBig3Entry(big3.sun)
+    || isLegacyBig3Entry(big3.moon)
+    || isLegacyBig3Entry(big3.rising)
+  );
+};
+
+const ZODIAC_ZH: Record<string, string> = {
+  aries: '白羊',
+  taurus: '金牛',
+  gemini: '双子',
+  cancer: '巨蟹',
+  leo: '狮子',
+  virgo: '处女',
+  libra: '天秤',
+  scorpio: '天蝎',
+  sagittarius: '射手',
+  capricorn: '摩羯',
+  aquarius: '水瓶',
+  pisces: '双鱼',
+};
+
+const ELEMENT_LABELS: Record<string, { zh: string; en: string }> = {
+  fire: { zh: '火象', en: 'Fire' },
+  earth: { zh: '土象', en: 'Earth' },
+  air: { zh: '风象', en: 'Air' },
+  water: { zh: '水象', en: 'Water' },
+};
+
+const BIG3_KEYWORDS: Record<'sun' | 'moon' | 'rising', { zh: string[]; en: string[] }> = {
+  sun: { zh: ['意志', '目标', '自我'], en: ['identity', 'drive', 'purpose'] },
+  moon: { zh: ['情绪', '安全', '需求'], en: ['emotion', 'security', 'needs'] },
+  rising: { zh: ['第一印象', '气质', '外在'], en: ['impression', 'style', 'expression'] },
+};
+
+const BIG3_LABELS: Record<'sun' | 'moon' | 'rising', { zh: string; en: string }> = {
+  sun: { zh: '太阳', en: 'Sun' },
+  moon: { zh: '月亮', en: 'Moon' },
+  rising: { zh: '上升', en: 'Rising' },
+};
+
+const formatSignLabel = (sign: unknown, lang: Language): string | undefined => {
+  if (!isString(sign)) return undefined;
+  const trimmed = sign.trim();
+  if (!trimmed) return undefined;
+  if (lang === 'zh') {
+    const mapped = ZODIAC_ZH[trimmed.toLowerCase()];
+    return mapped || trimmed;
+  }
+  return trimmed;
+};
+
+const pickTopElements = (elements: Record<string, unknown>) => (
+  Object.entries(elements)
+    .filter(([, value]) => typeof value === 'number' && Number.isFinite(value as number))
+    .sort((a, b) => (b[1] as number) - (a[1] as number))
+    .slice(0, 2)
+    .map(([key]) => key)
+);
+
+const buildCoreMelody = (legacy: Record<string, unknown>, lang: Language) => {
+  const dominance = isRecord(legacy.dominance) ? legacy.dominance : null;
+  const elements = dominance && isRecord(dominance.elements) ? dominance.elements : null;
+  if (elements) {
+    const topElements = pickTopElements(elements as Record<string, unknown>);
+    if (topElements.length > 0) {
+      const keywords = topElements.map((key) => (ELEMENT_LABELS[key]?.[lang] || key));
+      const explanations = keywords.map((label, index) => (
+        lang === 'zh'
+          ? (index === 0 ? `${label}能量更突出` : `${label}为你带来补充节奏`)
+          : (index === 0 ? `${label} energy is most prominent` : `${label} energy adds balance`)
+      ));
+      return { keywords, explanations };
+    }
+  }
+  return lang === 'zh'
+    ? { keywords: ['动力', '敏感'], explanations: ['行动与情绪并重', '既追求推进也重视感受'] }
+    : { keywords: ['drive', 'sensitivity'], explanations: ['Balances action with feeling', 'Moves forward while staying attuned'] };
+};
+
+const resolveLegacyDescription = (value: unknown): string | undefined =>
+  isRecord(value) && isString(value.description) ? value.description : undefined;
+
+function convertLegacyNatalOverview(
+  legacy: Record<string, unknown>,
+  context: Record<string, unknown>,
+  lang: Language,
+): LocalizedContent<unknown> {
+  const chartSummary = isRecord(context.chart_summary) ? context.chart_summary : null;
+  const big3Summary = chartSummary && isRecord(chartSummary.big3) ? chartSummary.big3 : null;
+
+  const buildBig3 = (key: 'sun' | 'moon' | 'rising') => {
+    const legacyBig3 = isRecord(legacy.big3) ? legacy.big3 : {};
+    const legacyEntry = (legacyBig3 as Record<string, unknown>)[key];
+    const summaryEntry = big3Summary ? (big3Summary as Record<string, unknown>)[key] : null;
+    const sign = formatSignLabel(summaryEntry && isRecord(summaryEntry) ? summaryEntry.sign : undefined, lang);
+    const label = BIG3_LABELS[key][lang];
+    const title = sign
+      ? (lang === 'zh' ? `${label}${sign}` : `${label} in ${sign}`)
+      : label;
+    const description = resolveLegacyDescription(legacyEntry) || (lang === 'zh' ? '这是你本命盘中的关键能量入口。' : 'This is a core pillar of your natal chart.');
+    return {
+      title,
+      keywords: BIG3_KEYWORDS[key][lang],
+      description,
+    };
+  };
+
+  const personalPlanets = isRecord(legacy.personal_planets) ? legacy.personal_planets : {};
+  const mercuryText = resolveLegacyDescription(personalPlanets.mercury);
+  const venusText = resolveLegacyDescription(personalPlanets.venus);
+  const marsText = resolveLegacyDescription(personalPlanets.mars);
+  const interpretation = isRecord(legacy.interpretation) ? legacy.interpretation : null;
+  const overviewText = interpretation && isString(interpretation.overview) ? interpretation.overview : undefined;
+
+  const topTalentExample = mercuryText || overviewText || (lang === 'zh' ? '你的优势往往体现在思维与表达上。' : 'Your strengths often show up in how you think and express yourself.');
+  const topPitfallTriggers = venusText
+    ? [lang === 'zh' ? '情感投入过度' : 'Over-investing emotionally', lang === 'zh' ? '关系失衡' : 'Relational imbalance']
+    : [lang === 'zh' ? '节奏失衡' : 'Overload', lang === 'zh' ? '情绪起伏' : 'Emotional swings'];
+
+  return {
+    lang,
+    content: {
+      sun: buildBig3('sun'),
+      moon: buildBig3('moon'),
+      rising: buildBig3('rising'),
+      core_melody: buildCoreMelody(legacy, lang),
+      top_talent: {
+        title: lang === 'zh' ? '思维与表达' : 'Mind & Expression',
+        example: topTalentExample,
+        advice: lang === 'zh' ? '把优势转化为清晰可执行的目标。' : 'Channel it into clear, practical goals.',
+      },
+      top_pitfall: {
+        title: lang === 'zh' ? '压力反应' : 'Stress Pattern',
+        triggers: topPitfallTriggers,
+        protection: lang === 'zh' ? '放慢节奏，先稳定情绪再行动。' : 'Slow down, steady emotions before acting.',
+      },
+      trigger_card: {
+        auto_reactions: lang === 'zh' ? ['先防御', '先解释'] : ['defend quickly', 'over-explain'],
+        inner_need: lang === 'zh' ? '被理解与被接住' : 'to be understood and supported',
+        buffer_action: lang === 'zh' ? '先停三秒再回应。' : 'Pause for three seconds before responding.',
+      },
+      share_text: overviewText || (lang === 'zh' ? '我的星盘提示我正在学会平衡行动与感受。' : 'My chart reminds me to balance action with sensitivity.'),
+    },
+  };
+}
+
+async function reformatNatalOverviewContent(
+  raw: LocalizedContent<unknown>,
+  context: Record<string, unknown>,
+  apiKey: string,
+  baseUrl: string,
+  timeoutMs: number,
+): Promise<LocalizedContent<unknown> | null> {
+  const schema = {
+    lang: '<lang>',
+    content: {
+      sun: { title: '', keywords: [] as string[], description: '' },
+      moon: { title: '', keywords: [] as string[], description: '' },
+      rising: { title: '', keywords: [] as string[], description: '' },
+      core_melody: { keywords: [] as string[], explanations: [] as string[] },
+      top_talent: { title: '', example: '', advice: '' },
+      top_pitfall: { title: '', triggers: [] as string[], protection: '' },
+      trigger_card: { auto_reactions: [] as string[], inner_need: '', buffer_action: '' },
+      share_text: '',
+    },
+  };
+
+  try {
+    const response = await fetchWithTimeout(`${baseUrl}/v1/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: 'deepseek-chat',
+        messages: [
+          {
+            role: 'system',
+            content: [
+              'You are a JSON schema transformer.',
+              'Convert the input into the target schema exactly.',
+              'Output ONLY valid JSON. No markdown, no explanations.',
+              'If information is missing, infer from the input or use empty strings/arrays.',
+            ].join('\n'),
+          },
+          {
+            role: 'user',
+            content: [
+              `lang: ${raw.lang}`,
+              `input_json: ${JSON.stringify(raw.content)}`,
+              `chart_summary: ${JSON.stringify(context.chart_summary || {})}`,
+              `target_schema: ${JSON.stringify(schema)}`,
+            ].join('\n'),
+          },
+        ],
+        temperature: 0.0,
+        max_tokens: 2048,
+      }),
+    }, timeoutMs);
+
+    if (!response.ok) return null;
+    const data = await response.json();
+    const text = data.choices?.[0]?.message?.content;
+    if (!text) return null;
+    const extracted = extractJsonObject(text) || text;
+    const parsed = JSON.parse(extracted) as unknown;
+    return normalizeLocalizedContent(parsed, raw.lang);
+  } catch {
+    return null;
+  }
+}
+
 async function repairJsonWithAI(jsonText: string, apiKey: string, baseUrl: string, timeoutMs: number): Promise<string | null> {
   try {
     const response = await fetchWithTimeout(`${baseUrl}/v1/chat/completions`, {
@@ -279,7 +540,19 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
   // 检查缓存
   if (shouldUseCache) {
     const cached = await cacheService.get<LocalizedContent<T>>(cacheKey);
-    if (cached) return buildAIResult(cached, true);
+    if (cached) {
+      if (SCHEMA_REPAIR_PROMPTS.has(options.promptId) && !isNatalOverviewContent(cached.content)) {
+        if (isLegacyNatalOverviewContent(cached.content)) {
+          const converted = convertLegacyNatalOverview(cached.content as Record<string, unknown>, context, lang);
+          if (isNatalOverviewContent(converted.content)) {
+            await cacheService.set(cacheKey, converted, CACHE_TTL.AI_OUTPUT);
+            return buildAIResult(converted as LocalizedContent<T>, true);
+          }
+        }
+      } else {
+        return buildAIResult(cached, true);
+      }
+    }
   }
 
   const apiKey = getDeepSeekApiKey();
@@ -352,13 +625,37 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
       parsed = JSON.parse(repaired) as unknown;
     }
     const result = normalizeLocalizedContent<T>(parsed, lang);
+    let normalized = result as LocalizedContent<T>;
+
+    if (SCHEMA_REPAIR_PROMPTS.has(options.promptId) && !isNatalOverviewContent(normalized.content)) {
+      if (isLegacyNatalOverviewContent(normalized.content)) {
+        const converted = convertLegacyNatalOverview(normalized.content as Record<string, unknown>, context, lang);
+        if (isNatalOverviewContent(converted.content)) {
+          normalized = converted as LocalizedContent<T>;
+        }
+      }
+    }
+
+    if (SCHEMA_REPAIR_PROMPTS.has(options.promptId) && !isNatalOverviewContent(normalized.content)) {
+      const repaired = await reformatNatalOverviewContent(
+        result as LocalizedContent<unknown>,
+        context,
+        apiKey,
+        baseUrl,
+        timeoutMs,
+      );
+      if (!repaired || !isNatalOverviewContent(repaired.content)) {
+        throw new Error('Invalid JSON response from DeepSeek');
+      }
+      normalized = repaired as LocalizedContent<T>;
+    }
 
     // 写入缓存
     if (shouldUseCache) {
-      await cacheService.set(cacheKey, result, CACHE_TTL.AI_OUTPUT);
+      await cacheService.set(cacheKey, normalized, CACHE_TTL.AI_OUTPUT);
     }
 
-    return buildAIResult(result);
+    return buildAIResult(normalized);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     const reason = resolveMockReason(error);
