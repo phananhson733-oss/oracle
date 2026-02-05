@@ -1,7 +1,7 @@
 // Payment API routes
 import { Router, Request, Response } from 'express';
 import { authMiddleware, requireAuth } from './auth.js';
-import subscriptionService from '../services/subscriptionService.js';
+import subscriptionService, { FIRST_SUBSCRIPTION_DISCOUNT } from '../services/subscriptionService.js';
 import userService from '../services/userService.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 import { stripe, STRIPE_WEBHOOK_SECRET, isStripeConfigured, PRODUCTS, SUBSCRIBER_DISCOUNT } from '../config/stripe.js';
@@ -46,7 +46,7 @@ router.post('/create-checkout', authMiddleware, requireAuth, async (req: Request
       return res.status(503).json({ error: 'Payment service unavailable' });
     }
 
-    const { plan, successUrl, cancelUrl } = req.body;
+    const { plan, successUrl, cancelUrl, applyFirstDiscount } = req.body;
 
     if (!plan || !successUrl || !cancelUrl) {
       return res.status(400).json({ error: 'Plan, successUrl, and cancelUrl required' });
@@ -67,12 +67,20 @@ router.post('/create-checkout', authMiddleware, requireAuth, async (req: Request
       return res.status(400).json({ error: 'Already subscribed' });
     }
 
+    // 检查首次折扣资格
+    let useFirstDiscount = false;
+    if (applyFirstDiscount) {
+      const eligible = await subscriptionService.isEligibleForFirstDiscount(req.userId!);
+      useFirstDiscount = eligible;
+    }
+
     const checkoutUrl = await subscriptionService.createSubscriptionCheckout({
       userId: req.userId!,
       email: user.email,
       plan,
       successUrl,
       cancelUrl,
+      applyFirstDiscount: useFirstDiscount,
     });
 
     res.json({ url: checkoutUrl });
@@ -199,6 +207,16 @@ router.get('/pricing', async (_req: Request, res: Response) => {
         interval: 'year',
         savings: Math.round((PRODUCTS.subscription.monthly.amount * 12 - PRODUCTS.subscription.yearly.amount) / (PRODUCTS.subscription.monthly.amount * 12) * 100),
       },
+      // 首次折扣价格
+      firstDiscount: {
+        rate: FIRST_SUBSCRIPTION_DISCOUNT,
+        monthly: {
+          amount: Math.round(PRODUCTS.subscription.monthly.amount * (1 - FIRST_SUBSCRIPTION_DISCOUNT)),
+        },
+        yearly: {
+          amount: Math.round(PRODUCTS.subscription.yearly.amount * (1 - FIRST_SUBSCRIPTION_DISCOUNT)),
+        },
+      },
     },
     oneTime: {
       ask: { amount: PRODUCTS.oneTime.ask.amount, quantity: 1 },
@@ -213,6 +231,17 @@ router.get('/pricing', async (_req: Request, res: Response) => {
     })),
     subscriberDiscount: SUBSCRIBER_DISCOUNT,
   });
+});
+
+// GET /first-discount-eligibility - 检查首次折扣资格
+router.get('/first-discount-eligibility', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    const eligible = await subscriptionService.isEligibleForFirstDiscount(req.userId!);
+    res.json({ eligible });
+  } catch (error) {
+    console.error('Check first discount eligibility error:', error);
+    res.status(500).json({ error: 'Failed to check eligibility' });
+  }
 });
 
 // Stripe webhook handler
@@ -245,11 +274,17 @@ router.post('/webhook', async (req: Request, res: Response) => {
         if (session.mode === 'subscription') {
           // Subscription created
           const userId = session.metadata?.userId;
+          const applyFirstDiscount = session.metadata?.applyFirstDiscount === 'true';
           if (userId && session.subscription) {
             const stripeSubscription = await stripe.subscriptions.retrieve(
               session.subscription as string
             );
             await subscriptionService.upsertSubscription(userId, stripeSubscription as any);
+
+            // 如果使用了首次折扣，标记已使用
+            if (applyFirstDiscount) {
+              await subscriptionService.markFirstDiscountUsed(userId);
+            }
           }
         } else if (session.mode === 'payment') {
           // One-time purchase

@@ -296,6 +296,7 @@ router.post('/dev-session', async (_req: Request, res: Response) => {
         preferences: { theme: 'dark', language: 'zh' },
         email_verified: true,
         trial_ends_at: null,
+        used_first_discount: false,
         created_at: now,
         updated_at: now,
       };

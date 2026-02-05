@@ -39,6 +39,12 @@ export interface PricingInfo {
   subscription: {
     monthly: { amount: number; currency: string; interval: string };
     yearly: { amount: number; currency: string; interval: string; savings: number };
+    // 首次折扣价格
+    firstDiscount?: {
+      rate: number;
+      monthly: { amount: number };
+      yearly: { amount: number };
+    };
   };
   oneTime: {
     ask: { amount: number; quantity: number };
@@ -79,11 +85,41 @@ export async function getSubscription(): Promise<{ hasSubscription: boolean; sub
   return res.json();
 }
 
-export async function createSubscriptionCheckout(plan: 'monthly' | 'yearly', successUrl: string, cancelUrl: string): Promise<{ url: string }> {
+export interface SubscriptionCheckoutOptions {
+  applyFirstDiscount?: boolean;
+  provider?: 'stripe' | 'paypal';
+}
+
+export async function createSubscriptionCheckout(
+  plan: 'monthly' | 'yearly',
+  successUrl: string,
+  cancelUrl: string,
+  options?: SubscriptionCheckoutOptions
+): Promise<{ url: string }> {
+  const { applyFirstDiscount, provider = 'stripe' } = options || {};
+
+  if (provider === 'paypal') {
+    // 使用 PayPal 订阅
+    const res = await authFetch(`${API_BASE}/paypal/subscribe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan, successUrl, cancelUrl, useFirstDiscount: applyFirstDiscount }),
+    });
+
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error || 'Failed to create PayPal subscription');
+    }
+
+    const data = await res.json();
+    return { url: data.approveUrl };
+  }
+
+  // 默认使用 Stripe
   const res = await authFetch(`${API_BASE}/payment/create-checkout`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ plan, successUrl, cancelUrl }),
+    body: JSON.stringify({ plan, successUrl, cancelUrl, applyFirstDiscount }),
   });
 
   if (!res.ok) {
@@ -91,6 +127,16 @@ export async function createSubscriptionCheckout(plan: 'monthly' | 'yearly', suc
     throw new Error(error.error || 'Failed to create checkout');
   }
 
+  return res.json();
+}
+
+// 检查首次折扣资格
+export async function checkFirstDiscountEligibility(): Promise<{ eligible: boolean }> {
+  const res = await authFetch(`${API_BASE}/payment/first-discount-eligibility`);
+  if (!res.ok) {
+    // 如果请求失败，默认返回不符合资格
+    return { eligible: false };
+  }
   return res.json();
 }
 

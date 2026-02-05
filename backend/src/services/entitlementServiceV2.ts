@@ -25,6 +25,7 @@ export interface EntitlementsV2 {
   isSubscriber: boolean;
   isTrialing: boolean;
   trialEndsAt: string | null;
+  isFirstDiscountEligible: boolean;  // 是否有首次订阅折扣资格
 
   subscription?: {
     plan: 'monthly' | 'yearly';
@@ -268,6 +269,7 @@ class EntitlementServiceV2 {
         isSubscriber: false,
         isTrialing: false,
         trialEndsAt: null,
+        isFirstDiscountEligible: true,  // 默认有资格，后面会根据用户数据更新
         ask: {
           freeLeft: FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK,
           subscriptionLeft: 0,
@@ -435,6 +437,9 @@ class EntitlementServiceV2 {
       // 用户不存在（可能是旧 Token），按访客处理
       return entitlements;
     }
+
+    // 检查首次折扣资格
+    entitlements.isFirstDiscountEligible = !user.used_first_discount;
 
     if (user.trial_ends_at) {
       const trialEnd = new Date(user.trial_ends_at);
@@ -879,7 +884,7 @@ class EntitlementServiceV2 {
   private async getUser(userId: string) {
     const { data } = await supabase
       .from('users')
-      .select('trial_ends_at')
+      .select('trial_ends_at, used_first_discount')
       .eq('id', userId)
       .single();
     return data;
