@@ -6388,19 +6388,30 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                     </div>
 
                     {/* Credits Section */}
-                    <div className={`flex items-center justify-between py-4 my-4 border-y ${theme === 'dark' ? 'border-space-700' : 'border-paper-200'}`}>
-                        <div>
-                            <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">
-                                {language === 'zh' ? '积分余额' : 'Credits Balance'}
-                            </div>
-                            <div className="text-2xl font-bold text-gold-500">
-                                {entitlements?.credits ?? 0}
+                    <button
+                        onClick={() => navigate('/usage')}
+                        className={`w-full flex items-center justify-between py-4 my-4 border-y transition-colors ${
+                            theme === 'dark'
+                                ? 'border-space-700 hover:bg-space-800/50'
+                                : 'border-paper-200 hover:bg-paper-100'
+                        }`}
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-gold-500 text-xl">✦</span>
+                            <div className="text-left">
+                                <div className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">
+                                    {language === 'zh' ? '积分余额' : 'Credits Balance'}
+                                </div>
+                                <div className="text-2xl font-bold text-gold-500">
+                                    {entitlements?.credits ?? 0}
+                                </div>
                             </div>
                         </div>
-                        <ActionButton onClick={() => openCreditsModal()} size="sm" variant="outline">
-                            {language === 'zh' ? '充值积分' : 'Buy Credits'}
-                        </ActionButton>
-                    </div>
+                        <div className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-star-400' : 'text-paper-500'}`}>
+                            <span>{language === 'zh' ? '查看记录' : 'View History'}</span>
+                            <span>›</span>
+                        </div>
+                    </button>
 
                     <ActionButton onClick={() => { logout(); navigate('/'); }} size="sm" variant="secondary" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10 hover:border-red-500/50">
                         {language === 'zh' ? '退出登录' : 'Log Out'}
@@ -7168,19 +7179,6 @@ const AppContent: React.FC = () => {
 
                             {/* User Menu */}
                             <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
-                            {isAuthenticated && (
-                                <button
-                                    onClick={() => navigate('/usage')}
-                                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide transition-colors ${
-                                        theme === 'dark'
-                                            ? 'border-gold-500/30 text-gold-300 hover:border-gold-500/60 hover:text-gold-200'
-                                            : 'border-gold-500/40 text-gold-700 hover:border-gold-500/70'
-                                    }`}
-                                >
-                                    <span className="text-gold-500">✦</span>
-                                    <span>{entitlements?.credits ?? 0}</span>
-                                </button>
-                            )}
                             <UserMenu />
                         </div>
                     </div>
