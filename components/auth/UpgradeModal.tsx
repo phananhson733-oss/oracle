@@ -6,9 +6,10 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
 import { getPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
-import { Check, Zap, Clock } from 'lucide-react';
+import { Check, Zap, Clock, CreditCard } from 'lucide-react';
 
 type PlanType = 'monthly' | 'yearly';
+type PaymentProvider = 'stripe' | 'paypal';
 
 const UpgradeModal: React.FC = () => {
   const { theme } = useTheme();
@@ -27,6 +28,11 @@ const UpgradeModal: React.FC = () => {
   const [busyAction, setBusyAction] = useState<'monthly' | 'yearly' | 'manage' | null>(null);
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState('');
+  // 支付方式状态（默认 PayPal）
+  const [selectedProvider, setSelectedProvider] = useState<PaymentProvider>('paypal');
+
+  // 首次折扣资格直接从 entitlements 读取
+  const isFirstDiscountEligible = (entitlements as any)?.isFirstDiscountEligible ?? false;
 
   const isDark = theme === 'dark';
 
@@ -104,7 +110,10 @@ const UpgradeModal: React.FC = () => {
       const successUrl = `${window.location.origin}/#/payment/success`;
       const cancelUrl = currentUrl;
 
-      const { url } = await createSubscriptionCheckout(plan, successUrl, cancelUrl);
+      const { url } = await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
+        applyFirstDiscount: isFirstDiscountEligible,
+        provider: selectedProvider,
+      });
       window.location.href = url;
     } catch (err) {
       setError(err instanceof Error ? err.message : (t.subscription?.checkout_error || 'Failed to start checkout'));
@@ -130,11 +139,21 @@ const UpgradeModal: React.FC = () => {
       setBusyAction(null);
     }
   };
-  const subscriptionT = t.subscription;
+  const subscriptionT = t.subscription as any;
   const isAlreadySubscriber = entitlements?.isSubscriber;
+  const modalTitle = isAlreadySubscriber ? (subscriptionT?.renew_title || '续费 Pro') : (subscriptionT?.title || '订阅Pro');
   const monthlyPrice = pricing?.subscription?.monthly?.amount || 699;
   const yearlyPrice = pricing?.subscription?.yearly?.amount || Math.round(monthlyPrice * 12 * 0.8);
   const savings = pricing?.subscription?.yearly?.savings || 20;
+
+  // 首次折扣价格
+  const firstDiscountRate = pricing?.subscription?.firstDiscount?.rate || 0.5;
+  const monthlyFirstPrice = pricing?.subscription?.firstDiscount?.monthly?.amount || Math.round(monthlyPrice * (1 - firstDiscountRate));
+  const yearlyFirstPrice = pricing?.subscription?.firstDiscount?.yearly?.amount || Math.round(yearlyPrice * (1 - firstDiscountRate));
+
+  // 当前显示的价格（根据是否有首次折扣资格）
+  const displayMonthlyPrice = isFirstDiscountEligible ? monthlyFirstPrice : monthlyPrice;
+  const displayYearlyPrice = isFirstDiscountEligible ? yearlyFirstPrice : yearlyPrice;
 
   const isBusy = busyAction !== null;
   const benefitItems = subscriptionT?.benefits || [];
@@ -155,7 +174,7 @@ const UpgradeModal: React.FC = () => {
     <Modal
       isOpen={showUpgradeModal}
       onClose={handleClose}
-      title={subscriptionT?.title || '订阅Pro'}
+      title={modalTitle}
       className="w-[95vw] max-w-[1350px] overflow-hidden"
       bodyClassName="p-0 overflow-hidden"
     >
@@ -167,22 +186,17 @@ const UpgradeModal: React.FC = () => {
           </div>
         )}
 
-        {/* Already subscriber */}
-        {isAlreadySubscriber ? (
-          <div className="text-center py-4">
+        {/* Already subscriber hint */}
+        {isAlreadySubscriber && (
+          <div className="text-center mb-4">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-success/10 text-success text-base">
               <Check className="w-5 h-5" />
               <span className="font-medium">{subscriptionT?.already_pro}</span>
             </div>
-            <div className="mt-5">
-              <ActionButton variant="secondary" onClick={handleManageSubscription} disabled={isBusy} size="lg">
-                {subscriptionT?.manage}
-              </ActionButton>
-            </div>
           </div>
-        ) : (
-          <>
-            {/* Billing toggle */}
+        )}
+
+        {/* Billing toggle */}
             <div className="flex items-center justify-center mb-6">
               <div className={`inline-flex items-center gap-1.5 p-1.5 rounded-full ${isDark ? 'bg-space-800' : 'bg-paper-200'}`}>
                 <button
@@ -272,6 +286,12 @@ const UpgradeModal: React.FC = () => {
 
               {/* Pro Plan Card */}
               <div className={`relative flex flex-col rounded-2xl border p-7 ${isDark ? 'border-gold-500/60 bg-gold-500/10' : 'border-gold-500/60 bg-gold-50'}`}>
+                {/* 首次折扣横幅 */}
+                {isFirstDiscountEligible && (
+                  <span className="absolute -top-3 left-4 px-3 py-1 text-xs font-semibold bg-red-500 text-white rounded-full">
+                    {subscriptionT?.first_discount_badge || '首次 -50%'}
+                  </span>
+                )}
                 <span className="absolute -top-3 right-[10px] px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-gold-500 text-space-950 rounded-full">
                   {subscriptionT?.recommend || '推荐'}
                 </span>
@@ -280,15 +300,61 @@ const UpgradeModal: React.FC = () => {
                   {subscriptionT?.pro_plan || 'Pro 订阅'}
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
+                  {/* 如果有首次折扣，显示原价划线 */}
+                  {isFirstDiscountEligible && (
+                    <span className={`text-xl line-through ${isDark ? 'text-star-500' : 'text-paper-400'}`}>
+                      {formatPrice(selectedPlan === 'yearly' ? yearlyPrice : monthlyPrice)}
+                    </span>
+                  )}
                   <div className={`text-4xl font-bold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
-                    {formatPrice(selectedPlan === 'yearly' ? yearlyPrice : monthlyPrice)}
+                    {formatPrice(selectedPlan === 'yearly' ? displayYearlyPrice : displayMonthlyPrice)}
                   </div>
                   <span className={`text-base ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
                     {selectedPlan === 'yearly' ? (subscriptionT?.per_year || '/年') : (subscriptionT?.per_month || '/月')}
                   </span>
                 </div>
-                <div className={`text-base mb-6 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
-                  {selectedPlan === 'yearly' ? (subscriptionT?.yearly_desc || '年付优惠 20%') : (subscriptionT?.monthly_desc || '按月灵活订阅')}
+                <div className={`text-base mb-4 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
+                  {isFirstDiscountEligible
+                    ? (subscriptionT?.first_discount_desc || '限时首次订阅特惠！')
+                    : selectedPlan === 'yearly'
+                      ? (subscriptionT?.yearly_desc || '年付优惠 20%')
+                      : (subscriptionT?.monthly_desc || '按月灵活订阅')}
+                </div>
+
+                {/* 支付方式切换 */}
+                <div className={`flex items-center gap-2 mb-6 p-2 rounded-lg ${isDark ? 'bg-space-800/50' : 'bg-paper-200/50'}`}>
+                  <button
+                    onClick={() => setSelectedProvider('stripe')}
+                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
+                      selectedProvider === 'stripe'
+                        ? isDark
+                          ? 'bg-space-700 text-star-50'
+                          : 'bg-white text-paper-900 shadow-sm'
+                        : isDark
+                          ? 'text-star-400 hover:text-star-200'
+                          : 'text-paper-500 hover:text-paper-700'
+                    }`}
+                  >
+                    <CreditCard className="w-4 h-4" />
+                    {subscriptionT?.payment_card || '银行卡'}
+                  </button>
+                  <button
+                    onClick={() => setSelectedProvider('paypal')}
+                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
+                      selectedProvider === 'paypal'
+                        ? isDark
+                          ? 'bg-space-700 text-star-50'
+                          : 'bg-white text-paper-900 shadow-sm'
+                        : isDark
+                          ? 'text-star-400 hover:text-star-200'
+                          : 'text-paper-500 hover:text-paper-700'
+                    }`}
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.65h6.252c3.378 0 5.227 1.776 4.742 4.64-.543 3.21-3.245 5.17-6.342 5.17H8.148l-1.072 8.457zm4.762-10.747c1.697 0 2.91-.829 3.219-2.635.32-1.874-.61-2.81-2.608-2.81H9.994l-.878 5.445h2.722z"/>
+                    </svg>
+                    PayPal
+                  </button>
                 </div>
 
                 {/* Pro benefits */}
@@ -316,7 +382,7 @@ const UpgradeModal: React.FC = () => {
                     ) : isAuthenticated ? (
                       <span className="flex items-center justify-center gap-2">
                         <Zap className="w-5 h-5" />
-                        {subscriptionT?.upgrade || '立即订阅'}
+                        {isAlreadySubscriber ? (subscriptionT?.renew || '立即续费') : (subscriptionT?.upgrade || '立即订阅')}
                       </span>
                     ) : (
                       subscriptionT?.login || '登录以继续'
@@ -326,18 +392,29 @@ const UpgradeModal: React.FC = () => {
               </div>
             </div>
 
-            {/* Error message */}
-            {error && (
-              <div className="text-base text-red-500 bg-red-500/10 p-4 rounded-lg">
-                {error}
-              </div>
-            )}
+        {/* Error message */}
+        {error && (
+          <div className="text-base text-red-500 bg-red-500/10 p-4 rounded-lg">
+            {error}
+          </div>
+        )}
 
-            {/* Terms note */}
-            <p className={`text-center text-sm ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
-              {subscriptionT?.terms || '订阅后可随时取消'}
-            </p>
-          </>
+        {/* Terms note */}
+        <p className={`text-center text-sm ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
+          {subscriptionT?.terms || '订阅后可随时取消'}
+        </p>
+
+        {/* Manage subscription link for subscribers */}
+        {isAlreadySubscriber && (
+          <div className="text-center">
+            <button
+              onClick={handleManageSubscription}
+              disabled={isBusy}
+              className={`text-sm underline transition-opacity ${isDark ? 'text-star-400 hover:text-star-200' : 'text-paper-500 hover:text-paper-700'} ${isBusy ? 'opacity-50' : ''}`}
+            >
+              {busyAction === 'manage' ? '跳转中...' : subscriptionT?.manage}
+            </button>
+          </div>
         )}
       </div>
     </Modal>

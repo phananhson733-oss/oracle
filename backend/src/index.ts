@@ -21,6 +21,7 @@ import { userRouter } from './api/user.js';
 import authRouter from './api/auth.js';
 import paymentRouter from './api/payment.js';
 import paymentV2Router from './api/paymentV2.js';
+import paypalRouter from './api/paypal.js';
 import entitlementsRouter from './api/entitlements.js';
 import entitlementsV2Router from './api/entitlementsV2.js';
 import reportsRouter from './api/reports.js';
@@ -46,6 +47,8 @@ app.use(cors());
 // Raw body parser for Stripe webhook (must be before express.json())
 app.use('/api/payment/webhook', express.raw({ type: 'application/json' }));
 app.use('/api/payment/v2/webhook', express.raw({ type: 'application/json' }));
+// Raw body parser for PayPal webhook (must be before express.json())
+app.use('/api/paypal/webhook', express.raw({ type: 'application/json' }));
 
 app.use(express.json());
 app.use(apiResponseMiddleware);
@@ -68,6 +71,7 @@ app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/payment', paymentRouter);
 app.use('/api/payment', paymentV2Router);  // V2 路由挂载在 /v2 子路径
+app.use('/api/paypal', paypalRouter);  // PayPal 支付路由
 app.use('/api/entitlements', entitlementsRouter);
 app.use('/api/entitlements', entitlementsV2Router);  // V2 路由挂载在 /v2 子路径
 app.use('/api/reports', reportsRouter);

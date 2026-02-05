@@ -1348,8 +1348,10 @@ export const TRANSLATIONS = {
       save_badge: "Save {percent}%",
       recommend: "Recommended",
       upgrade: "Upgrade Now",
+      renew: "Renew Now",
       login: "Sign in to continue",
       already_pro: "You're already subscribed",
+      renew_title: "Renew Pro",
       manage: "Manage Subscription",
       terms: "Cancel anytime. Subscription renews automatically.",
       pricing_error: "Failed to load pricing",
@@ -1369,7 +1371,14 @@ export const TRANSLATIONS = {
       success_subtitle: "Welcome to Pro",
       success_desc: "Your subscription is active. Enjoy full access to premium features.",
       success_primary: "Start Exploring",
-      success_secondary: "View Subscription"
+      success_secondary: "View Subscription",
+      // 首次折扣相关
+      first_discount_badge: "First -50%",
+      first_discount_title: "First Subscription Discount",
+      first_discount_desc: "Limited time! 50% off your first subscription!",
+      // 支付方式
+      payment_card: "Card",
+      payment_paypal: "PayPal"
     },
     paywall: {
       unlock_title: "Unlock {feature}",
@@ -2739,8 +2748,10 @@ export const TRANSLATIONS = {
       save_badge: "省 {percent}%",
       recommend: "推荐",
       upgrade: "立即升级",
+      renew: "立即续费",
       login: "登录以继续",
       already_pro: "您已是订阅用户",
+      renew_title: "续费 Pro",
       manage: "管理订阅",
       terms: "随时可取消，自动续费",
       pricing_error: "加载价格失败",
@@ -2760,7 +2771,14 @@ export const TRANSLATIONS = {
       success_subtitle: "欢迎成为 Pro 会员",
       success_desc: "订阅已生效，现在即可使用高级权益。",
       success_primary: "开始探索",
-      success_secondary: "查看订阅详情"
+      success_secondary: "查看订阅详情",
+      // 首次折扣相关
+      first_discount_badge: "首次 -50%",
+      first_discount_title: "首次订阅特惠",
+      first_discount_desc: "限时首次订阅特惠！",
+      // 支付方式
+      payment_card: "银行卡",
+      payment_paypal: "PayPal"
     },
     paywall: {
       unlock_title: "解锁 {feature}",

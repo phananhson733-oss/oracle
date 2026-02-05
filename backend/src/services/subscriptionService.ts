@@ -2,6 +2,10 @@
 import { supabase, DbSubscription, DbPurchase, isSupabaseConfigured } from '../db/supabase.js';
 import { stripe, PRODUCTS, STRIPE_PRICES, isStripeConfigured, SUBSCRIBER_DISCOUNT } from '../config/stripe.js';
 import { SUBSCRIPTION_BENEFITS } from '../config/auth.js';
+import { FIRST_DISCOUNT_RATE } from '../config/paypal.js';
+
+// 重新导出供其他模块使用
+export const FIRST_SUBSCRIPTION_DISCOUNT = FIRST_DISCOUNT_RATE;
 
 export interface CreateCheckoutInput {
   userId: string;
@@ -9,6 +13,7 @@ export interface CreateCheckoutInput {
   plan: 'monthly' | 'yearly';
   successUrl: string;
   cancelUrl: string;
+  applyFirstDiscount?: boolean;
 }
 
 export interface CreatePurchaseCheckoutInput {
@@ -22,22 +27,67 @@ export interface CreatePurchaseCheckoutInput {
 }
 
 class SubscriptionService {
+  // 检查首次折扣资格
+  async isEligibleForFirstDiscount(userId: string): Promise<boolean> {
+    if (!isSupabaseConfigured()) return false;
+
+    const { data: user } = await supabase
+      .from('users')
+      .select('used_first_discount')
+      .eq('id', userId)
+      .single();
+
+    // 如果字段不存在或为 false，则有资格
+    return !user?.used_first_discount;
+  }
+
+  // 标记已使用首次折扣
+  async markFirstDiscountUsed(userId: string): Promise<void> {
+    if (!isSupabaseConfigured()) return;
+
+    await supabase
+      .from('users')
+      .update({ used_first_discount: true })
+      .eq('id', userId);
+  }
+
   // Create Stripe checkout session for subscription
   async createSubscriptionCheckout(input: CreateCheckoutInput): Promise<string> {
     if (!isStripeConfigured()) {
       throw new Error('Stripe not configured');
     }
 
-    const priceId = input.plan === 'monthly'
-      ? STRIPE_PRICES.MONTHLY_SUBSCRIPTION
-      : STRIPE_PRICES.YEARLY_SUBSCRIPTION;
+    const basePrice = input.plan === 'monthly'
+      ? PRODUCTS.subscription.monthly.amount
+      : PRODUCTS.subscription.yearly.amount;
 
+    const productName = input.plan === 'monthly'
+      ? PRODUCTS.subscription.monthly.name
+      : PRODUCTS.subscription.yearly.name;
+
+    // 计算实际价格（如果使用首次折扣）
+    const finalPrice = input.applyFirstDiscount
+      ? Math.round(basePrice * (1 - FIRST_SUBSCRIPTION_DISCOUNT))
+      : basePrice;
+
+    // 使用 price_data 动态定价（与报告折扣保持一致）
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       customer_email: input.email,
       line_items: [
         {
-          price: priceId,
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: input.applyFirstDiscount
+                ? `${productName}（首次特惠 50% OFF）`
+                : productName,
+            },
+            unit_amount: finalPrice,
+            recurring: {
+              interval: input.plan === 'monthly' ? 'month' : 'year',
+            },
+          },
           quantity: 1,
         },
       ],
@@ -46,10 +96,12 @@ class SubscriptionService {
       metadata: {
         userId: input.userId,
         plan: input.plan,
+        applyFirstDiscount: input.applyFirstDiscount ? 'true' : 'false',
       },
       subscription_data: {
         metadata: {
           userId: input.userId,
+          applyFirstDiscount: input.applyFirstDiscount ? 'true' : 'false',
         },
       },
     });
