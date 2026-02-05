@@ -61,3 +61,4 @@
 - apiClient 新增 Wiki 首页/条目/搜索 API 调用。
 - apiClient 上调 AI 缓存版本以刷新旧的概览内容结构。
 - apiClient 上调 AI 缓存版本并自动清理旧版日运概览结构。
+- apiClient 上调本地缓存前缀以强制刷新旧缓存。
