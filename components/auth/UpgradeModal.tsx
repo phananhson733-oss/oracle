@@ -181,10 +181,10 @@ const UpgradeModal: React.FC = () => {
       isOpen={showUpgradeModal}
       onClose={handleClose}
       title={modalTitle}
-      className="w-[95vw] !max-w-[1152px] overflow-hidden"
+      className="w-[76vw] !max-w-[738px] !min-h-[70vh] !max-h-[95vh] overflow-hidden"
       bodyClassName="p-0 overflow-hidden"
     >
-      <div className="space-y-4 p-6 md:p-8 max-h-[80vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <div className="space-y-4 p-6 md:p-8 max-h-[96vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {/* Upgrade reason hint */}
         {upgradeModalReason && (
           <div className={`text-center text-base ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
@@ -327,42 +327,6 @@ const UpgradeModal: React.FC = () => {
                       : (subscriptionT?.monthly_desc || '按月灵活订阅')}
                 </div>
 
-                {/* 支付方式切换 */}
-                <div className={`flex items-center gap-2 mb-6 p-2 rounded-lg ${isDark ? 'bg-space-800/50' : 'bg-paper-200/50'}`}>
-                  <button
-                    onClick={() => setSelectedProvider('stripe')}
-                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                      selectedProvider === 'stripe'
-                        ? isDark
-                          ? 'bg-space-700 text-star-50'
-                          : 'bg-white text-paper-900 shadow-sm'
-                        : isDark
-                          ? 'text-star-400 hover:text-star-200'
-                          : 'text-paper-500 hover:text-paper-700'
-                    }`}
-                  >
-                    <CreditCard className="w-4 h-4" />
-                    {subscriptionT?.payment_card || '银行卡'}
-                  </button>
-                  <button
-                    onClick={() => setSelectedProvider('paypal')}
-                    className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                      selectedProvider === 'paypal'
-                        ? isDark
-                          ? 'bg-space-700 text-star-50'
-                          : 'bg-white text-paper-900 shadow-sm'
-                        : isDark
-                          ? 'text-star-400 hover:text-star-200'
-                          : 'text-paper-500 hover:text-paper-700'
-                    }`}
-                  >
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.65h6.252c3.378 0 5.227 1.776 4.742 4.64-.543 3.21-3.245 5.17-6.342 5.17H8.148l-1.072 8.457zm4.762-10.747c1.697 0 2.91-.829 3.219-2.635.32-1.874-.61-2.81-2.608-2.81H9.994l-.878 5.445h2.722z"/>
-                    </svg>
-                    PayPal
-                  </button>
-                </div>
-
                 {/* Pro benefits */}
                 <div className="space-y-3 mb-6">
                   {benefitItems.map((item, idx) => (
@@ -374,6 +338,42 @@ const UpgradeModal: React.FC = () => {
                 </div>
 
                 <div className="mt-auto">
+                  {/* 支付方式切换 */}
+                  <div className={`flex items-center gap-2 mb-3 p-2 rounded-lg ${isDark ? 'bg-space-800/50' : 'bg-paper-200/50'}`}>
+                    <button
+                      onClick={() => setSelectedProvider('stripe')}
+                      className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
+                        selectedProvider === 'stripe'
+                          ? isDark
+                            ? 'bg-space-700 text-star-50'
+                            : 'bg-white text-paper-900 shadow-sm'
+                          : isDark
+                            ? 'text-star-400 hover:text-star-200'
+                            : 'text-paper-500 hover:text-paper-700'
+                      }`}
+                    >
+                      <CreditCard className="w-4 h-4" />
+                      {subscriptionT?.payment_card || '银行卡'}
+                    </button>
+                    <button
+                      onClick={() => setSelectedProvider('paypal')}
+                      className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
+                        selectedProvider === 'paypal'
+                          ? isDark
+                            ? 'bg-space-700 text-star-50'
+                            : 'bg-white text-paper-900 shadow-sm'
+                          : isDark
+                            ? 'text-star-400 hover:text-star-200'
+                            : 'text-paper-500 hover:text-paper-700'
+                      }`}
+                    >
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.65h6.252c3.378 0 5.227 1.776 4.742 4.64-.543 3.21-3.245 5.17-6.342 5.17H8.148l-1.072 8.457zm4.762-10.747c1.697 0 2.91-.829 3.219-2.635.32-1.874-.61-2.81-2.608-2.81H9.994l-.878 5.445h2.722z"/>
+                      </svg>
+                      PayPal
+                    </button>
+                  </div>
+
                   <ActionButton
                     variant="primary"
                     onClick={() => handleUpgrade(selectedPlan)}
