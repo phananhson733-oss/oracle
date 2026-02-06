@@ -96,7 +96,7 @@ export async function createSubscriptionCheckout(
   cancelUrl: string,
   options?: SubscriptionCheckoutOptions
 ): Promise<{ url: string }> {
-  const { applyFirstDiscount, provider = 'stripe' } = options || {};
+  const { applyFirstDiscount, provider = 'paypal' } = options || {};
 
   if (provider === 'paypal') {
     // 使用 PayPal 订阅

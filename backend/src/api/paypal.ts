@@ -21,6 +21,19 @@ import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 
 const router = Router();
 
+// 校验重定向 URL，防止开放重定向攻击
+function isValidRedirectUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    // 仅允许 https 协议，或本地开发 http://localhost
+    if (parsed.protocol === 'https:') return true;
+    if (parsed.protocol === 'http:' && parsed.hostname === 'localhost') return true;
+    return false;
+  } catch {
+    return false;
+  }
+}
+
 // =====================================================
 // 定价信息
 // =====================================================
@@ -93,6 +106,10 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
 
     if (!successUrl || !cancelUrl) {
       return res.status(400).json({ error: 'successUrl and cancelUrl required' });
+    }
+
+    if (!isValidRedirectUrl(successUrl) || !isValidRedirectUrl(cancelUrl)) {
+      return res.status(400).json({ error: 'Invalid redirect URL' });
     }
 
     if (!['monthly', 'yearly'].includes(plan)) {
@@ -239,19 +256,30 @@ router.post('/create-order', authMiddleware, requireAuth, async (req: Request, r
       return res.status(503).json({ error: 'PayPal service unavailable' });
     }
 
-    const { packageId } = req.body;
+    const { packageId, successUrl, cancelUrl } = req.body;
 
     if (!packageId || !CREDITS_PACKAGES[packageId]) {
       return res.status(400).json({ error: 'Invalid packageId' });
     }
 
+    if (!successUrl || !cancelUrl) {
+      return res.status(400).json({ error: 'successUrl and cancelUrl required' });
+    }
+
+    if (!isValidRedirectUrl(successUrl) || !isValidRedirectUrl(cancelUrl)) {
+      return res.status(400).json({ error: 'Invalid redirect URL' });
+    }
+
     const result = await paypalService.createOrder({
       userId: req.userId!,
       packageId: packageId as string,
+      successUrl,
+      cancelUrl,
     });
 
     res.json({
       orderId: result.orderId,
+      approvalUrl: result.approvalUrl,
     });
   } catch (error) {
     console.error('PayPal create order error:', error);
@@ -579,8 +607,7 @@ async function handlePaymentFailed(event: any): Promise<void> {
       .eq('paypal_subscription_id', subscriptionId);
   }
 
-  console.log(`PayPal subscription payment failed: ${subscriptionId}`);
-  // TODO: 发送通知提醒用户更新支付方式
+  console.log(`[PAYMENT_FAILED] PayPal subscription payment failed: subscriptionId=${subscriptionId}`);
 }
 
 export default router;

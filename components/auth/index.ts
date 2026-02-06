@@ -6,4 +6,5 @@ export { default as LoginModal } from './LoginModal';
 export { default as UpgradeModal } from './UpgradeModal';
 export { default as UserMenu } from './UserMenu';
 export { default as PaymentSuccessPage } from './PaymentSuccessPage';
+export { default as CreditsSuccessPage } from './CreditsSuccessPage';
 export { default as Paywall } from './Paywall';

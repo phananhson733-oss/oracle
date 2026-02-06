@@ -9,14 +9,12 @@ import { Check, Sparkles } from 'lucide-react';
 import { trackEvent } from '../services/analytics';
 import { getAccessToken } from '../services/authClient';
 
-// Credits packages configuration
+// Credits packages configuration — 与后端 CREDITS_PACKAGES 一一对应
 const CREDITS_PACKAGES = [
-  { id: 'pack_100', credits: 100, price: 0.99 },
-  { id: 'pack_200', credits: 200, price: 1.99 },
-  { id: 'pack_500', credits: 500, price: 4.99 },
-  { id: 'pack_1000', credits: 1000, price: 9.99 },
-  { id: 'pack_5000', credits: 5000, price: 49.99 },
-  { id: 'pack_10000', credits: 10000, price: 99.99 },
+  { id: 'credits_100', credits: 100, price: 9.99 },
+  { id: 'credits_300', credits: 300, price: 24.99 },
+  { id: 'credits_500', credits: 500, price: 39.99 },
+  { id: 'credits_1000', credits: 1000, price: 69.99 },
 ] as const;
 
 type CreditsPackage = typeof CREDITS_PACKAGES[number];
@@ -36,7 +34,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
   const isDark = theme === 'dark';
   const credits = entitlements?.credits ?? 0;
 
-  const [selectedPackage, setSelectedPackage] = useState<CreditsPackage>(CREDITS_PACKAGES[2]); // Default to 500 credits
+  const [selectedPackage, setSelectedPackage] = useState<CreditsPackage>(CREDITS_PACKAGES[1]); // Default to 300 credits
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -100,7 +98,10 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       }
 
       // Create PayPal order via backend API
-      const response = await fetch(`${API_BASE}/paypal/create-credits-order`, {
+      const successUrl = `${window.location.origin}/#/payment/credits-success`;
+      const cancelUrl = window.location.href;
+
+      const response = await fetch(`${API_BASE}/paypal/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -108,8 +109,8 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
         },
         body: JSON.stringify({
           packageId: selectedPackage.id,
-          credits: selectedPackage.credits,
-          amount: selectedPackage.price,
+          successUrl,
+          cancelUrl,
         }),
       });
 
@@ -148,8 +149,8 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
   }, [onClose, openUpgradeModal]);
 
   const getBadge = (pkg: CreditsPackage): string | null => {
-    if (pkg.credits === 5000) return tr.bestValue;
-    if (pkg.credits === 500) return tr.popular;
+    if (pkg.credits === 1000) return tr.bestValue;
+    if (pkg.credits === 300) return tr.popular;
     return null;
   };
 
@@ -180,7 +181,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
         <div className={`text-xs uppercase tracking-[0.3em] mb-3 ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
           {tr.selectPackage}
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 gap-3">
           {CREDITS_PACKAGES.map((pkg) => {
             const isSelected = selectedPackage.id === pkg.id;
             const badge = getBadge(pkg);

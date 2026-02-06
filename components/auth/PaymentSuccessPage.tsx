@@ -14,7 +14,7 @@ const PaymentSuccessPage: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { refreshEntitlements } = useAuth();
+  const { refreshEntitlements, entitlements } = useAuth();
   const [portalBusy, setPortalBusy] = useState(false);
   const [portalError, setPortalError] = useState<string | null>(null);
 
@@ -27,6 +27,14 @@ const PaymentSuccessPage: React.FC = () => {
   }, [refreshEntitlements]);
 
   const handleViewSubscription = async () => {
+    // PayPal 订阅跳转 PayPal 自动付款管理页
+    const provider = (entitlements as any)?.subscription?.provider;
+    if (provider === 'paypal') {
+      window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
+      return;
+    }
+
+    // Stripe 订阅使用 portal session
     setPortalError(null);
     setPortalBusy(true);
     try {

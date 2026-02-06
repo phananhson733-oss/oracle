@@ -20,7 +20,7 @@ import { trackEvent, trackPageView } from './services/analytics';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } from './contexts/EntitlementContext';
 import { SEO } from './components/SEO';
-import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage } from './components/auth';
+import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage, CreditsSuccessPage } from './components/auth';
 import { CreditsModal } from './components/payment';
 import { GlobalPaywall, LockedContent, LockedAccordion } from './components/Paywall';
 import { ConsentBanner } from './components/ConsentBanner';
@@ -7308,6 +7308,7 @@ const AppContent: React.FC = () => {
                         <Route path="/reports" element={<ReportsPage />} />
                         <Route path="/reports/:reportId" element={<ReportViewPage />} />
                         <Route path="/payment/success" element={<PaymentSuccessPage />} />
+                        <Route path="/payment/credits-success" element={<CreditsSuccessPage />} />
                         <Route path="/color-demo" element={<ColorSystemDemo />} />
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
