@@ -6306,12 +6306,16 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
     }, [isTrialing, entitlements?.trialEndsAt]);
 
     const handleManageSubscription = async () => {
+        const provider = (entitlements as any)?.subscription?.provider;
+        if (provider === 'paypal') {
+          window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
+          return;
+        }
         try {
           const { url } = await createPortalSession(window.location.href);
           window.location.href = url;
         } catch (err) {
           console.error('Failed to open subscription portal:', err);
-          // 如果是503错误（Stripe未配置），显示友好提示
           if (err instanceof Error && err.message.includes('Payment service unavailable')) {
             setGmError(language === 'zh'
               ? '支付服务未配置。开发环境请使用 GM 命令测试订阅功能。'
@@ -6407,7 +6411,6 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                         <span className="font-bold text-gold-500 flex items-center gap-1">
                                             <span>✦</span> {language === 'zh' ? 'Pro 会员' : 'Pro Member'}
                                         </span>
-                                        <span className="text-[10px] uppercase tracking-widest opacity-70 border border-current px-1.5 py-0.5 rounded-full">{language === 'zh' ? '活跃' : 'Active'}</span>
                                     </div>
                                     <button onClick={handleManageSubscription} className="text-xs underline opacity-60 hover:opacity-100 transition-opacity">
                                         {language === 'zh' ? '管理订阅' : 'Manage Subscription'}
@@ -6629,6 +6632,7 @@ const CreditsUsagePage: React.FC = () => {
     const { language } = useLanguage();
     const { isAuthenticated, openLoginModal, openUpgradeModal } = useAuth();
     const { entitlements } = useEntitlement();
+    const navigate = useNavigate();
     const [records, setRecords] = useState<PurchaseRecord[]>([]);
     const [loading, setLoading] = useState(false);
     const [loadError, setLoadError] = useState<string | null>(null);
@@ -6725,9 +6729,17 @@ const CreditsUsagePage: React.FC = () => {
     return (
         <Container>
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
-                <div>
-                    <h1 className="text-3xl font-serif font-medium">{tr.title}</h1>
-                    <p className="text-sm opacity-70">{tr.subtitle}</p>
+                <div className="flex items-center gap-3">
+                    <button
+                        onClick={() => navigate(-1)}
+                        className={`p-2 rounded-xl transition-all ${theme === 'dark' ? 'bg-space-900/60 hover:bg-gold-500/20 hover:text-gold-400' : 'bg-paper-200 border border-paper-300 hover:bg-paper-300'}`}
+                    >
+                        <ArrowLeft size={20} />
+                    </button>
+                    <div>
+                        <h1 className="text-3xl font-serif font-medium">{tr.title}</h1>
+                        <p className="text-sm opacity-70">{tr.subtitle}</p>
+                    </div>
                 </div>
                 {!isSubscriber && (
                     <ActionButton variant="outline" onClick={() => openUpgradeModal()}>

@@ -128,6 +128,12 @@ const UpgradeModal: React.FC = () => {
       return;
     }
 
+    const provider = entitlements?.subscription?.provider;
+    if (provider === 'paypal') {
+      window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
+      return;
+    }
+
     setBusyAction('manage');
     setError('');
 
@@ -175,7 +181,7 @@ const UpgradeModal: React.FC = () => {
       isOpen={showUpgradeModal}
       onClose={handleClose}
       title={modalTitle}
-      className="w-[95vw] !max-w-3xl overflow-hidden"
+      className="w-[95vw] !max-w-[1152px] overflow-hidden"
       bodyClassName="p-0 overflow-hidden"
     >
       <div className="space-y-4 p-6 md:p-8 max-h-[80vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">

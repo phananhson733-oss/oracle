@@ -50,6 +50,7 @@ export interface EntitlementsV2 {
     plan: 'monthly' | 'yearly';
     status: string;
     expiresAt: string;
+    provider?: 'stripe' | 'paypal';
   };
 
   // Ask 问答额度
