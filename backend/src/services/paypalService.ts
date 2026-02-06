@@ -34,6 +34,7 @@ interface PayPalSubscriptionResponse {
 interface PayPalOrderResponse {
   id: string;
   status: string;
+  links?: PayPalLink[];
   purchase_units?: Array<{
     reference_id?: string;
     custom_id?: string;
@@ -58,6 +59,8 @@ interface CreateSubscriptionInput {
 interface CreateOrderInput {
   userId: string;
   packageId: string;
+  successUrl: string;
+  cancelUrl: string;
 }
 
 interface WebhookVerifyInput {
@@ -247,7 +250,7 @@ class PayPalService {
   }
 
   // 创建积分购买订单
-  async createOrder(input: CreateOrderInput): Promise<{ orderId: string }> {
+  async createOrder(input: CreateOrderInput): Promise<{ orderId: string; approvalUrl: string }> {
     if (!isPayPalConfigured()) {
       throw new Error('PayPal not configured');
     }
@@ -283,6 +286,8 @@ class PayPalService {
           locale: 'zh-CN',
           shipping_preference: 'NO_SHIPPING',
           user_action: 'PAY_NOW',
+          return_url: input.successUrl,
+          cancel_url: input.cancelUrl,
         },
       }),
     });
@@ -295,8 +300,15 @@ class PayPalService {
 
     const order: PayPalOrderResponse = await response.json();
 
+    // 提取 approve 链接
+    const approveLink = order.links?.find((link) => link.rel === 'approve');
+    if (!approveLink) {
+      throw new Error('No approve link in PayPal order response');
+    }
+
     return {
       orderId: order.id,
+      approvalUrl: approveLink.href,
     };
   }
 

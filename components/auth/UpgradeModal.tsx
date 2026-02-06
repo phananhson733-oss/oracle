@@ -6,10 +6,9 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
 import { getPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
-import { Check, Zap, Clock, CreditCard } from 'lucide-react';
+import { Check, Zap, Clock } from 'lucide-react';
 
 type PlanType = 'monthly' | 'yearly';
-type PaymentProvider = 'stripe' | 'paypal';
 
 const UpgradeModal: React.FC = () => {
   const { theme } = useTheme();
@@ -28,8 +27,6 @@ const UpgradeModal: React.FC = () => {
   const [busyAction, setBusyAction] = useState<'monthly' | 'yearly' | 'manage' | null>(null);
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState('');
-  // 支付方式状态（默认 PayPal）
-  const [selectedProvider, setSelectedProvider] = useState<PaymentProvider>('paypal');
 
   // 首次折扣资格直接从 entitlements 读取
   const isFirstDiscountEligible = (entitlements as any)?.isFirstDiscountEligible ?? false;
@@ -112,7 +109,7 @@ const UpgradeModal: React.FC = () => {
 
       const { url } = await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
         applyFirstDiscount: isFirstDiscountEligible,
-        provider: selectedProvider,
+        provider: 'paypal',
       });
       window.location.href = url;
     } catch (err) {
@@ -338,42 +335,6 @@ const UpgradeModal: React.FC = () => {
                 </div>
 
                 <div className="mt-auto">
-                  {/* 支付方式切换 */}
-                  <div className={`flex items-center gap-2 mb-3 p-2 rounded-lg ${isDark ? 'bg-space-800/50' : 'bg-paper-200/50'}`}>
-                    <button
-                      onClick={() => setSelectedProvider('stripe')}
-                      className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                        selectedProvider === 'stripe'
-                          ? isDark
-                            ? 'bg-space-700 text-star-50'
-                            : 'bg-white text-paper-900 shadow-sm'
-                          : isDark
-                            ? 'text-star-400 hover:text-star-200'
-                            : 'text-paper-500 hover:text-paper-700'
-                      }`}
-                    >
-                      <CreditCard className="w-4 h-4" />
-                      {subscriptionT?.payment_card || '银行卡'}
-                    </button>
-                    <button
-                      onClick={() => setSelectedProvider('paypal')}
-                      className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-md text-sm font-medium transition-all ${
-                        selectedProvider === 'paypal'
-                          ? isDark
-                            ? 'bg-space-700 text-star-50'
-                            : 'bg-white text-paper-900 shadow-sm'
-                          : isDark
-                            ? 'text-star-400 hover:text-star-200'
-                            : 'text-paper-500 hover:text-paper-700'
-                      }`}
-                    >
-                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .757-.65h6.252c3.378 0 5.227 1.776 4.742 4.64-.543 3.21-3.245 5.17-6.342 5.17H8.148l-1.072 8.457zm4.762-10.747c1.697 0 2.91-.829 3.219-2.635.32-1.874-.61-2.81-2.608-2.81H9.994l-.878 5.445h2.722z"/>
-                      </svg>
-                      PayPal
-                    </button>
-                  </div>
-
                   <ActionButton
                     variant="primary"
                     onClick={() => handleUpgrade(selectedPlan)}

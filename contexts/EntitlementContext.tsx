@@ -260,8 +260,8 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 开始订阅
   const startSubscription = useCallback(async (plan: 'monthly' | 'yearly' = 'monthly') => {
-    const successUrl = `${window.location.origin}/subscription/success`;
-    const cancelUrl = `${window.location.origin}/subscription/cancel`;
+    const successUrl = `${window.location.origin}/#/payment/success`;
+    const cancelUrl = window.location.href;
 
     const { url } = await createSubscribeCheckoutV2(plan, successUrl, cancelUrl);
     trackEvent('subscription_started', {
