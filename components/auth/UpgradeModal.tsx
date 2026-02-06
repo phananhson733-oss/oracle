@@ -181,7 +181,7 @@ const UpgradeModal: React.FC = () => {
       isOpen={showUpgradeModal}
       onClose={handleClose}
       title={modalTitle}
-      className="w-[76vw] !max-w-[738px] !min-h-[70vh] !max-h-[95vh] overflow-hidden"
+      className="w-[91vw] !max-w-[886px] !min-h-[70vh] !max-h-[95vh] overflow-hidden"
       bodyClassName="p-0 overflow-hidden"
     >
       <div className="space-y-4 p-6 md:p-8 max-h-[96vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
