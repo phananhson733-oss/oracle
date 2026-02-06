@@ -31,6 +31,7 @@ export interface EntitlementsV2 {
     plan: 'monthly' | 'yearly';
     status: string;
     expiresAt: string;
+    provider: 'stripe' | 'paypal';
   };
 
   // Ask 问答额度
@@ -358,6 +359,7 @@ class EntitlementServiceV2 {
             plan: 'monthly',
             status: 'active',
             expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+            provider: 'stripe',
           };
           updatedEntitlements.ask.subscriptionLeft = Math.max(
             0,
@@ -461,6 +463,7 @@ class EntitlementServiceV2 {
             plan: subscription.plan,
             status: subscription.status,
             expiresAt: subscription.current_period_end || '',
+            provider: subscription.payment_provider || 'stripe',
           };
         }
       }
