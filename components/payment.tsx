@@ -98,7 +98,8 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       }
 
       // Create PayPal order via backend API
-      const successUrl = `${window.location.origin}/#/payment/credits-success`;
+      const returnTo = encodeURIComponent(window.location.hash.slice(1) || '/dashboard');
+      const successUrl = `${window.location.origin}/#/payment/credits-success?returnTo=${returnTo}`;
       const cancelUrl = window.location.href;
 
       const response = await fetch(`${API_BASE}/paypal/create-order`, {

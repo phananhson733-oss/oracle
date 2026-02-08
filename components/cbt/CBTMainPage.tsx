@@ -19,7 +19,8 @@ import {
   CBTCompetenceView
 } from './AnalysisViews';
 import { fetchCBTRecords, saveCBTRecord } from '../../services/apiClient';
-import { useFeatureAccess } from '../../contexts/EntitlementContext';
+import { useFeatureAccess, useEntitlement } from '../../contexts/EntitlementContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { useLanguage, useTheme } from '../UIComponents';
 import { OracleLoading } from '../OracleLoading';
 
@@ -72,7 +73,8 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
     return { year: now.getFullYear(), month: now.getMonth() };
   });
   const statsFeatureId = `${analysisMonth.year}-${String(analysisMonth.month + 1).padStart(2, '0')}`;
-  const { requestAccess: requestStatsAccess } = useFeatureAccess('cbt_stats', statsFeatureId);
+  const { checkAccess: checkStatsAccess } = useFeatureAccess('cbt_stats', statsFeatureId);
+  const { openUpgradeModal } = useAuth();
 
   // Generate user ID from profile
   const userId = `${profile?.name || 'user'}_${profile?.birthDate || 'unknown'}`;
@@ -183,11 +185,14 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
     setAnalysisMonth({ year, month });
   }, []);
   const handleOpenAnalysis = React.useCallback(async (view: 'card1' | 'card2' | 'card3' | 'card4') => {
-    const access = await requestStatsAccess();
+    const access = await checkStatsAccess();
     if (access.canAccess) {
       setActiveAnalysisView(view);
+    } else if (access.needPurchase) {
+      // 使用统一的订阅弹窗
+      openUpgradeModal('解锁 CBT 统计分析');
     }
-  }, [requestStatsAccess]);
+  }, [checkStatsAccess, openUpgradeModal]);
 
   const startNewEntry = (date?: Date) => {
     const targetDateValue = date || new Date();

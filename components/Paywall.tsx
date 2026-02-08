@@ -1,20 +1,17 @@
-// INPUT: 付费墙组件 - 锁定内容和积分解锁弹窗（含纸感映射、购买状态与解锁回调）。
-// OUTPUT: 导出 LockedContent、LockedAccordion 和 PaywallModal 组件（含积分解锁兜底与购买后续动作）。
-// POS: 前端付费墙组件（含纸感映射与购买回调处理）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: 付费墙组件 - 锁定内容和解锁按钮（含纸感映射、积分解锁选项）。
+// OUTPUT: 导出 LockedContent、LockedAccordion 组件（支持订阅和积分两种解锁方式）。
+// POS: 前端付费墙组件（含纸感映射与积分解锁）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
-import { Lock, Sparkles, X, Check } from 'lucide-react';
-import { useEntitlement, useFeatureAccess } from '../contexts/EntitlementContext';
-import { FeatureType, getPricingV2, PricingV2 } from '../services/entitlementClientV2';
+import { Lock, Sparkles, Crown } from 'lucide-react';
+import { useFeatureAccess, useEntitlement } from '../contexts/EntitlementContext';
+import { FeatureType, purchaseWithCreditsV2 } from '../services/entitlementClientV2';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage, useTheme } from './UIComponents';
-import { formatPrice } from '../services/paymentClient';
-import { trackEvent } from '../services/analytics';
-import { PaywallSocialProof, RiskReversal, ValueComparison, PaywallFeatureList } from './PaywallConversion';
-import { usePaywallCTA, useTrialMessaging } from '../hooks/useABTest';
+
 
 // =====================================================
-// 价格显示
+// 价格配置
 // =====================================================
 
 const FEATURE_PRICES: Record<FeatureType, number> = {
@@ -28,19 +25,6 @@ const FEATURE_PRICES: Record<FeatureType, number> = {
   ask: 20,
   cbt_stats: 20,
   synthetica: 10,
-};
-
-const FEATURE_SCOPES: Record<FeatureType, 'permanent' | 'daily' | 'per_month' | 'consumable'> = {
-  dimension: 'permanent',
-  core_theme: 'permanent',
-  daily_script: 'daily',
-  daily_transit: 'daily',
-  synastry: 'permanent',
-  synastry_detail: 'permanent',
-  detail: 'permanent',
-  ask: 'consumable',
-  cbt_stats: 'per_month',
-  synthetica: 'consumable',
 };
 
 // =====================================================
@@ -60,8 +44,6 @@ const useThemeStyles = () => {
     accentBg: isDark ? 'bg-gold-500/10' : 'bg-gold-500/5',
   };
 };
-
-const formatPoints = (points: number, label: string) => `${points} ${label}`;
 
 // =====================================================
 // LockedAccordion 组件 - 类似 Accordion 样式的解锁按钮
@@ -84,9 +66,13 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
   children,
   defaultOpen = false,
 }) => {
-  const { canAccess, requestAccess } = useFeatureAccess(featureType, featureId);
+  const { canAccess } = useFeatureAccess(featureType, featureId);
+  const { entitlements, refreshEntitlements } = useEntitlement();
+  const { openUpgradeModal, openCreditsModal, isAuthenticated, openLoginModal } = useAuth();
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [hasOpened, setHasOpened] = useState(defaultOpen);
+  const [isPurchasing, setIsPurchasing] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const s = useThemeStyles();
   const { theme } = useTheme();
   const { t } = useLanguage();
@@ -94,9 +80,47 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
   const accordionSurface = isDark ? 'bg-space-900/40' : 'bg-paper-100/70';
   const dividerTone = isDark ? 'border-gold-500/15' : 'border-paper-300';
 
+  const pointsCost = FEATURE_PRICES[featureType] || 10;
+  const creditsBalance = entitlements?.credits ?? 0;
+  const canAffordWithCredits = creditsBalance >= pointsCost;
+
   useEffect(() => {
     if (isOpen) setHasOpened(true);
   }, [isOpen]);
+
+  const handleSubscribe = () => {
+    if (!isAuthenticated) {
+      openLoginModal('请先登录');
+      return;
+    }
+    setShowOptions(false);
+    openUpgradeModal('解锁此功能');
+  };
+
+  const handleCreditsUnlock = async () => {
+    if (!isAuthenticated) {
+      openLoginModal('请先登录');
+      return;
+    }
+
+    if (!canAffordWithCredits) {
+      setShowOptions(false);
+      openCreditsModal();
+      return;
+    }
+
+    setIsPurchasing(true);
+    setShowOptions(false);
+    try {
+      await purchaseWithCreditsV2(featureType, featureId);
+      await refreshEntitlements();
+    } catch (err) {
+      console.error('Failed to purchase with credits:', err);
+      alert(t.paywall?.unlock_failed || '解锁失败，请重试');
+    } finally {
+      setIsPurchasing(false);
+    }
+  };
 
   // 如果已解锁，显示普通的 Accordion 行为
   if (canAccess) {
@@ -125,20 +149,48 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
     );
   }
 
-  // 未解锁状态：显示解锁按钮
+  // 未解锁状态：显示解锁选项
   return (
     <div className={`rounded-xl overflow-hidden mb-3 border ${dividerTone} ${accordionSurface}`}>
-      <div className="w-full flex justify-between items-center px-4 py-3">
-        <div>
-          <h3 className={`text-sm font-medium ${s.heading}`}>{title}</h3>
-          {subtitle && <p className={`text-xs mt-0.5 ${s.muted}`}>{subtitle}</p>}
+      <div className="w-full px-4 py-3">
+        <div className="flex justify-between items-center">
+          <div className="flex-1">
+            <h3 className={`text-sm font-medium ${s.heading}`}>{title}</h3>
+            {subtitle && <p className={`text-xs mt-0.5 ${s.muted}`}>{subtitle}</p>}
+          </div>
+          <button
+            onClick={() => setShowOptions(!showOptions)}
+            disabled={isPurchasing}
+            className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${isDark ? 'border-gold-500/30 text-gold-400 hover:text-gold-300 hover:border-gold-500/50' : 'border-gold-500/40 text-gold-600 hover:text-gold-700 hover:border-gold-600/60'} hover:bg-gold-500/10 ${isPurchasing ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            {isPurchasing ? (t.paywall?.unlocking || '解锁中...') : (t.paywall?.unlock_action || 'Unlock')}
+          </button>
         </div>
-        <button
-          onClick={() => requestAccess()}
-          className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${isDark ? 'border-gold-500/30 text-gold-400 hover:text-gold-300 hover:border-gold-500/50' : 'border-gold-500/40 text-gold-600 hover:text-gold-700 hover:border-gold-600/60'} hover:bg-gold-500/10`}
-        >
-          {t.paywall?.unlock_action || 'Unlock'}
-        </button>
+
+        {/* 解锁选项下拉 */}
+        {showOptions && !isPurchasing && (
+          <div className="mt-3 flex flex-col gap-2">
+            <button
+              onClick={handleSubscribe}
+              className={`w-full px-3 py-2 text-xs border rounded transition-colors ${s.accentBorder} text-gold-500 hover:bg-gold-500/10 flex items-center justify-center gap-2`}
+            >
+              <Crown className="w-3 h-3" />
+              <span>{t.paywall?.subscribe_unlock || '订阅解锁（无限）'}</span>
+            </button>
+            <button
+              onClick={handleCreditsUnlock}
+              className={`w-full px-3 py-2 text-xs border rounded transition-colors ${s.border} ${s.muted} hover:${s.heading} hover:border-gold-500/30 flex items-center justify-center gap-2`}
+            >
+              <Sparkles className="w-3 h-3" />
+              <span>
+                {canAffordWithCredits
+                  ? `${pointsCost} ${t.paywall?.credits || '积分'}`
+                  : `${pointsCost} ${t.paywall?.credits || '积分'}（${t.paywall?.topup || '充值'}）`
+                }
+              </span>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -167,29 +219,99 @@ export const LockedContent: React.FC<LockedContentProps> = ({
   className = '',
   blurContent,
 }) => {
-  const { canAccess, requestAccess } = useFeatureAccess(featureType, featureId);
+  const { canAccess } = useFeatureAccess(featureType, featureId);
+  const { entitlements, refreshEntitlements } = useEntitlement();
+  const { openUpgradeModal, openCreditsModal, isAuthenticated, openLoginModal } = useAuth();
   const s = useThemeStyles();
   const { t } = useLanguage();
+  const [isPurchasing, setIsPurchasing] = useState(false);
+
+  const pointsCost = FEATURE_PRICES[featureType] || 10;
+  const creditsBalance = entitlements?.credits ?? 0;
+  const canAffordWithCredits = creditsBalance >= pointsCost;
 
   if (canAccess) {
     return <>{children}</>;
   }
 
+  const handleSubscribe = () => {
+    if (!isAuthenticated) {
+      openLoginModal('请先登录');
+      return;
+    }
+    openUpgradeModal('解锁此功能');
+  };
+
+  const handleCreditsUnlock = async () => {
+    if (!isAuthenticated) {
+      openLoginModal('请先登录');
+      return;
+    }
+
+    if (!canAffordWithCredits) {
+      openCreditsModal();
+      return;
+    }
+
+    setIsPurchasing(true);
+    try {
+      await purchaseWithCreditsV2(featureType, featureId);
+      await refreshEntitlements();
+    } catch (err) {
+      console.error('Failed to purchase with credits:', err);
+      alert(t.paywall?.unlock_failed || '解锁失败，请重试');
+    } finally {
+      setIsPurchasing(false);
+    }
+  };
+
   return (
     <div className={`relative ${className}`}>
       {/* 遮罩层 - 使用主题适配的颜色 */}
-      <div className={`absolute inset-0 ${s.card} border ${s.border} rounded-lg flex flex-col items-center justify-center z-10`}>
+      <div className={`absolute inset-0 ${s.card} border ${s.border} rounded-lg flex flex-col items-center justify-center z-10 p-4`}>
         <Lock className="w-6 h-6 text-gold-500 mb-2" />
         <span className={`font-medium text-center px-4 text-sm ${s.heading}`}>{title}</span>
         {description && (
           <span className={`text-xs mt-1 text-center px-4 ${s.muted}`}>{description}</span>
         )}
-        <button
-          onClick={() => requestAccess()}
-          className="mt-3 px-4 py-1.5 text-xs font-bold uppercase tracking-widest border border-gold-500/50 text-gold-500 rounded hover:bg-gold-500/10 transition-colors"
-        >
-          {t.paywall?.unlock_action || 'Unlock'}
-        </button>
+
+        {/* 解锁选项 */}
+        <div className="mt-4 flex flex-col gap-2 w-full max-w-xs">
+          {/* 订阅解锁 */}
+          <button
+            onClick={handleSubscribe}
+            disabled={isPurchasing}
+            className={`px-4 py-2 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${s.accentBorder} text-gold-500 hover:bg-gold-500/10 ${isPurchasing ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            <div className="flex items-center justify-center gap-2">
+              <Crown className="w-4 h-4" />
+              <span>{t.paywall?.subscribe_unlock || '订阅解锁（无限使用）'}</span>
+            </div>
+          </button>
+
+          {/* 积分解锁 */}
+          <button
+            onClick={handleCreditsUnlock}
+            disabled={isPurchasing}
+            className={`px-4 py-2 text-xs font-medium border rounded transition-colors ${s.border} ${s.muted} hover:${s.heading} hover:border-gold-500/30 ${isPurchasing ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            <div className="flex items-center justify-center gap-2">
+              <Sparkles className="w-4 h-4" />
+              <span>
+                {canAffordWithCredits
+                  ? `${t.paywall?.use_credits || '使用'} ${pointsCost} ${t.paywall?.credits || '积分'}`
+                  : `${t.paywall?.need_credits || '需要'} ${pointsCost} ${t.paywall?.credits || '积分'}（${t.paywall?.topup || '充值'}）`
+                }
+              </span>
+            </div>
+          </button>
+
+          {isPurchasing && (
+            <div className={`text-xs text-center ${s.muted}`}>
+              {t.paywall?.unlocking || '解锁中...'}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* 占位内容 */}
@@ -203,452 +325,9 @@ export const LockedContent: React.FC<LockedContentProps> = ({
 };
 
 // =====================================================
-// PaywallModal 组件
+// 注意：PaywallModal 和 GlobalPaywall 已废弃
+// 现在统一使用 UpgradeModal（通过 AuthContext.openUpgradeModal 调用）
+// 积分购买功能已独立为 CreditsModal（components/payment.tsx）
 // =====================================================
-
-interface PaywallModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  featureType: FeatureType;
-  featureId?: string;
-  featureName?: string;
-  price?: number;
-  onPurchased?: () => void | Promise<void>;
-}
-
-type SubscriptionPlan = 'monthly' | 'yearly';
-
-export const PaywallModal: React.FC<PaywallModalProps> = ({
-  isOpen,
-  onClose,
-  featureType,
-  featureId,
-  featureName,
-  price,
-  onPurchased,
-}) => {
-  const { isAuthenticated, openLoginModal } = useAuth();
-  const { startSubscription, purchaseFeature, isSubscriber, isTrialing, trialDaysLeft, entitlements } = useEntitlement();
-  const { language, t } = useLanguage();
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
-  const [isProcessing, setIsProcessing] = useState<'purchase' | 'monthly' | 'yearly' | null>(null);
-  const [selectedPlan, setSelectedPlan] = useState<SubscriptionPlan>('yearly');
-  const [pricing, setPricing] = useState<PricingV2 | null>(null);
-  const [actionError, setActionError] = useState<string | null>(null);
-
-  const pointsCost = price ?? FEATURE_PRICES[featureType];
-  const creditsBalance = entitlements?.credits ?? 0;
-  const canSpend = creditsBalance >= pointsCost;
-  const displayName = featureName || getFeatureDisplayName(featureType);
-  const scopeLabel = t.paywall?.scope_labels?.[FEATURE_SCOPES[featureType]] || '';
-  const fallbackError = t.paywall?.unlock_failed
-    || (language === 'zh' ? '积分解锁失败，请稍后再试。' : 'Failed to unlock with credits. Please try again.');
-  const insufficientError = t.paywall?.insufficient
-    || (language === 'zh' ? '积分不足，请先购买积分。' : 'Insufficient credits. Please top up first.');
-  const pointsLabel = t.paywall?.points_label || (language === 'zh' ? '积分' : 'pts');
-  const creditsBalanceLabel = formatPoints(creditsBalance, pointsLabel);
-  const pointsCostLabel = formatPoints(pointsCost, pointsLabel);
-  const monthlyPrice = pricing?.subscription?.monthly?.amount || 699;
-  const yearlyPrice = pricing?.subscription?.yearly?.amount || Math.round(monthlyPrice * 12 * 0.8);
-  const yearlySavings = pricing?.subscription?.yearly?.savings || 20;
-  const yearlyBadge = t.subscription?.save_badge?.replace('{percent}', String(yearlySavings)) || `${yearlySavings}%`;
-  const subscriptionT = t.subscription;
-
-  // A/B Testing hooks
-  const { ctaText } = usePaywallCTA();
-  const { message: trialMessage } = useTrialMessaging();
-
-  const handlePurchase = async () => {
-    if (!isAuthenticated) {
-      openLoginModal(t.paywall?.login_credits || 'Please sign in to use credits');
-      return;
-    }
-    if (!canSpend) {
-      setActionError(insufficientError);
-      return;
-    }
-    setActionError(null);
-    setIsProcessing('purchase');
-    try {
-      trackEvent('paywall_conversion', {
-        feature: featureType,
-        method: 'credits',
-      });
-      await purchaseFeature(featureType, featureId);
-      onClose();
-      if (onPurchased) {
-        try {
-          await onPurchased();
-        } catch (err) {
-          console.error('Post-purchase action failed:', err);
-        }
-      }
-    } catch (err) {
-      const message = err instanceof Error ? err.message : '';
-      setActionError(message || fallbackError);
-    } finally {
-      setIsProcessing(null);
-    }
-  };
-
-  const handleTopUp = () => {
-    setActionError(t.paywall?.topup_soon || (language === 'zh' ? '积分充值暂未开放，请稍后再试。' : 'Credits top-up is not available yet.'));
-  };
-
-  const handleSubscribe = async (plan: SubscriptionPlan) => {
-    if (!isAuthenticated) {
-      openLoginModal(t.paywall?.login_subscribe || 'Please sign in to start subscription');
-      return;
-    }
-    setActionError(null);
-    setSelectedPlan(plan);
-    setIsProcessing(plan);
-    try {
-      trackEvent('paywall_conversion', {
-        feature: featureType,
-        method: 'subscription',
-        plan,
-      });
-      await startSubscription(plan);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : '';
-      setActionError(message || fallbackError);
-      setIsProcessing(null);
-    }
-  };
-
-  useEffect(() => {
-    if (!isOpen) return;
-    getPricingV2()
-      .then(setPricing)
-      .catch(() => null);
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    setIsProcessing(null);
-    setActionError(null);
-    setSelectedPlan('yearly');
-  }, [isOpen, featureType, featureId]);
-
-  if (!isOpen) return null;
-
-  const isBusy = isProcessing !== null;
-  const unlockTitle = (t.paywall?.unlock_title || 'Unlock {feature}').replace('{feature}', displayName);
-  const creditsDescription = (t.paywall?.credits_desc || '{scope} · Balance {balance}')
-    .replace('{scope}', scopeLabel)
-    .replace('{balance}', creditsBalanceLabel);
-  const benefitItems = t.subscription?.benefits || [];
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* 背景遮罩 */}
-      <div
-        className="absolute inset-0 bg-space-950/50 backdrop-blur-sm"
-        onClick={onClose}
-      />
-
-      {/* 弹窗内容 */}
-      <div className={`relative w-full max-w-[1728px] rounded-2xl p-6 md:p-8 shadow-2xl border ${isDark ? 'bg-space-900 border-gold-500/15 text-star-50' : 'bg-paper-100/90 border-paper-300 text-paper-900'}`}>
-        {/* 关闭按钮 */}
-        <button
-          onClick={onClose}
-          className={`absolute top-4 right-4 transition-colors ${isDark ? 'text-star-400 hover:text-star-50' : 'text-paper-500 hover:text-paper-900'}`}
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="space-y-6">
-          {/* 标题 */}
-          <div className="flex items-center gap-4">
-            <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${isDark ? 'bg-gold-500/10 text-gold-400' : 'bg-gold-500/15 text-gold-600'}`}>
-              <Lock className="w-6 h-6" />
-            </div>
-            <div>
-              <div className={`text-xs uppercase tracking-[0.35em] ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
-                {t.paywall?.subscribe_title}
-              </div>
-              <h2 className={`text-2xl font-serif font-semibold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{unlockTitle}</h2>
-              <p className={`text-sm mt-1 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
-                {t.paywall?.subscribe_desc}
-              </p>
-            </div>
-          </div>
-
-          {/* 社交证明与风险逆转 */}
-          <div className={`rounded-xl p-4 ${isDark ? 'bg-space-800/50' : 'bg-paper-100'}`}>
-            <PaywallSocialProof variant="compact" />
-            <div className="mt-4 pt-4 border-t border-dashed border-gold-500/20">
-              <RiskReversal />
-            </div>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            {/* 订阅方案 */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className={`text-xs uppercase tracking-[0.3em] ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
-                  {t.paywall?.subscribe_title}
-                </div>
-                <div className={`inline-flex items-center gap-1 p-1 rounded-full ${isDark ? 'bg-space-800' : 'bg-paper-200'}`}>
-                  <button
-                    onClick={() => setSelectedPlan('monthly')}
-                    className={`px-3 py-1.5 text-[11px] font-semibold rounded-full transition-all ${
-                      selectedPlan === 'monthly'
-                        ? isDark
-                          ? 'bg-space-700 text-star-50'
-                          : 'bg-paper-100 text-paper-900'
-                        : isDark
-                          ? 'text-star-400 hover:text-star-200'
-                          : 'text-paper-500 hover:text-paper-700'
-                    }`}
-                  >
-                    {subscriptionT?.monthly}
-                  </button>
-                  <button
-                    onClick={() => setSelectedPlan('yearly')}
-                    className={`px-3 py-1.5 text-[11px] font-semibold rounded-full transition-all ${
-                      selectedPlan === 'yearly'
-                        ? isDark
-                          ? 'bg-space-700 text-star-50'
-                          : 'bg-paper-100 text-paper-900'
-                        : isDark
-                          ? 'text-star-400 hover:text-star-200'
-                          : 'text-paper-500 hover:text-paper-700'
-                    }`}
-                  >
-                    {subscriptionT?.yearly} · {yearlyBadge}
-                  </button>
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                {(['monthly', 'yearly'] as SubscriptionPlan[]).map((plan) => {
-                  const isSelected = selectedPlan === plan;
-                  const isYearly = plan === 'yearly';
-                  const price = isYearly ? yearlyPrice : monthlyPrice;
-                  const subtitle = isYearly ? subscriptionT?.yearly_desc : subscriptionT?.monthly_desc;
-                  const interval = isYearly ? subscriptionT?.per_year : subscriptionT?.per_month;
-                  return (
-                    <div
-                      key={plan}
-                      className={`relative rounded-2xl border p-4 transition-all ${
-                        isSelected
-                          ? isDark
-                            ? 'border-gold-500/60 bg-gold-500/10'
-                            : 'border-gold-500/60 bg-gold-50'
-                          : isDark
-                            ? 'border-gold-500/15 bg-space-900/40'
-                            : 'border-paper-300 bg-paper-100/90'
-                      }`}
-                    >
-                      {isYearly && (
-                        <span className="absolute -top-3 left-4 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-gold-500 text-space-950 rounded-full">
-                          {subscriptionT?.recommend || t.paywall?.subscribe_badge}
-                        </span>
-                      )}
-                      <div className="text-xs uppercase tracking-[0.35em] text-gold-500/70">
-                        {isYearly ? subscriptionT?.yearly : subscriptionT?.monthly}
-                      </div>
-                      <div className={`text-2xl font-bold mt-2 ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
-                        {formatPrice(price)}
-                        <span className={`text-sm font-normal ml-1 ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
-                          {interval}
-                        </span>
-                      </div>
-                      <div className={`text-sm mt-2 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>{subtitle}</div>
-                      <button
-                        onClick={() => handleSubscribe(plan)}
-                        className={`mt-4 w-full px-4 py-2 rounded-full font-medium transition-colors ${
-                          isSelected
-                            ? 'bg-amber-500 hover:bg-amber-400 text-space-950'
-                            : isDark
-                              ? 'bg-space-800/70 hover:bg-space-800 text-star-50'
-                              : 'bg-paper-100/80 hover:bg-paper-200 text-paper-900'
-                        } ${isBusy ? 'opacity-60 cursor-not-allowed' : ''}`}
-                        disabled={isBusy}
-                      >
-                        {isProcessing === plan ? (
-                          <span className="flex items-center justify-center gap-2">
-                            <span className={`w-4 h-4 border-2 rounded-full animate-spin ${isDark ? 'border-star-200/40 border-t-star-50' : 'border-paper-300/60 border-t-paper-900'}`} />
-                          </span>
-                        ) : (
-                          ctaText
-                        )}
-                      </button>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* 价值对比 */}
-              <ValueComparison
-                monthlyPrice={monthlyPrice}
-                yearlyPrice={yearlyPrice}
-                yearlySavings={yearlySavings}
-              />
-
-              <div className={`rounded-2xl border p-4 ${isDark ? 'border-gold-500/15 bg-space-900/30' : 'border-paper-300 bg-paper-100/80'}`}>
-                <div className={`text-xs uppercase tracking-[0.3em] mb-3 ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
-                  {subscriptionT?.benefits_title}
-                </div>
-                <div className="grid gap-2 md:grid-cols-2">
-                  {benefitItems.map((item) => (
-                    <div key={item} className="flex items-start gap-2 text-sm">
-                      <Check className="w-4 h-4 text-gold-500 mt-0.5 flex-shrink-0" />
-                      <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* 积分与单次解锁 */}
-            <div className="space-y-4">
-              <div className={`rounded-2xl border p-4 ${isDark ? 'border-gold-500/10 bg-space-900/40' : 'border-paper-300 bg-paper-100/80'}`}>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{t.paywall?.credits_title}</h3>
-                    <p className={`text-sm mt-1 ${isDark ? 'text-star-400' : 'text-paper-600'}`}>{creditsDescription}</p>
-                  </div>
-                  <button
-                    onClick={handlePurchase}
-                    className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-paper-100/90 hover:bg-paper-200/70 text-paper-900' : 'bg-space-950 hover:bg-space-900 text-star-50'} ${(!canSpend || isBusy) ? 'opacity-60 cursor-not-allowed' : ''}`}
-                    disabled={isBusy || !canSpend}
-                  >
-                    {(t.paywall?.credits_button || 'Spend {points}').replace('{points}', pointsCostLabel)}
-                  </button>
-                </div>
-              </div>
-
-              <div className={`rounded-2xl border p-4 ${isDark ? 'border-gold-500/10 bg-space-900/30' : 'border-paper-300 bg-paper-100/80'}`}>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{t.paywall?.topup_title}</h3>
-                    <p className={`text-sm mt-1 ${isDark ? 'text-star-400' : 'text-paper-600'}`}>{t.paywall?.topup_desc}</p>
-                  </div>
-                  <button
-                    onClick={handleTopUp}
-                    className={`px-4 py-2 rounded-full font-medium transition-colors ${isDark ? 'bg-space-800/60 hover:bg-space-800/80 text-star-50' : 'bg-paper-100/80 hover:bg-paper-200/70 text-paper-900'} ${isBusy ? 'opacity-60 cursor-not-allowed' : ''}`}
-                    disabled={isBusy}
-                  >
-                    {t.paywall?.topup_soon || t.paywall?.topup_button}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 试用提示 */}
-          {isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
-            <div className="p-3 bg-amber-500/10 rounded-lg">
-              <p className="text-sm text-amber-400 text-center">
-                {trialMessage.headline} · {trialMessage.subhead}
-              </p>
-            </div>
-          )}
-
-          {/* 非试用用户看到的试用引导 */}
-          {!isTrialing && !isSubscriber && (
-            <div className="p-3 bg-amber-500/10 rounded-lg">
-              <p className="text-sm text-amber-400 text-center">
-                {trialMessage.headline} · {trialMessage.subhead}
-              </p>
-            </div>
-          )}
-
-          {/* 已是订阅用户 */}
-          {isSubscriber && !isTrialing && (
-            <div className="p-3 bg-green-500/10 rounded-lg">
-              <p className="text-sm text-green-400 text-center">
-                {t.paywall?.subscriber_tip}
-              </p>
-            </div>
-          )}
-
-          {actionError && (
-            <div className="p-3 rounded-lg border border-red-500/30 bg-red-500/10 text-red-400 text-sm text-center">
-              {actionError}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// =====================================================
-// 全局付费墙（配合 EntitlementContext 使用）
-// =====================================================
-
-export const GlobalPaywall: React.FC = () => {
-  const { showPaywall, paywallFeature, closePaywall } = useEntitlement();
-
-  if (!showPaywall || !paywallFeature) return null;
-
-  return (
-    <PaywallModal
-      isOpen={showPaywall}
-      onClose={closePaywall}
-      featureType={paywallFeature.type}
-      featureId={paywallFeature.id}
-      price={paywallFeature.price}
-      onPurchased={paywallFeature.onPurchased}
-    />
-  );
-};
-
-// =====================================================
-// 额度显示组件
-// =====================================================
-
-interface QuotaDisplayProps {
-  type: 'ask' | 'synastry';
-  className?: string;
-}
-
-export const QuotaDisplay: React.FC<QuotaDisplayProps> = ({ type, className = '' }) => {
-  const { entitlements, isSubscriber } = useEntitlement();
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
-
-  if (!entitlements) return null;
-
-  const quota = type === 'ask' ? entitlements.ask : entitlements.synastry;
-  const maxFree = type === 'ask' ? 3 : 3;
-  const maxSubscription = isSubscriber ? 2 : 0;
-  const total = maxFree + maxSubscription;
-
-  return (
-    <div className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-600'} ${className}`}>
-      <span className={`font-medium ${isDark ? 'text-star-50' : 'text-paper-900'}`}>{quota.totalLeft}</span>
-      <span> / {total}</span>
-      <span className="ml-1">
-        {type === 'ask' ? '次/周' : (isSubscriber ? '次/周' : '次（永久）')}
-      </span>
-    </div>
-  );
-};
-
-// =====================================================
-// 辅助函数
-// =====================================================
-
-function getFeatureDisplayName(featureType: FeatureType): string {
-  const names: Record<FeatureType, string> = {
-    dimension: '心理维度',
-    core_theme: '核心主题',
-    daily_script: '今日剧本',
-    daily_transit: '星象详情',
-    synastry: '合盘分析',
-    synastry_detail: '合盘详情',
-    detail: '深度详情',
-    ask: 'Ask 问答',
-    cbt_stats: 'CBT 统计解读',
-    synthetica: 'Synthetica 洞察',
-  };
-  return names[featureType] || featureType;
-}
 
 export default LockedContent;

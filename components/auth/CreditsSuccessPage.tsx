@@ -21,6 +21,8 @@ const translations = {
     currentBalance: '当前余额',
     errorTitle: '支付确认失败',
     goToDashboard: '开始使用',
+    returnNow: '立即返回',
+    returning: (seconds: number) => `${seconds} 秒后自动返回...`,
     buyMore: '继续购买',
     retry: '重试',
     noOrderId: '无效的支付回调，缺少订单信息。',
@@ -32,6 +34,8 @@ const translations = {
     currentBalance: 'Current balance',
     errorTitle: 'Payment Confirmation Failed',
     goToDashboard: 'Start Using',
+    returnNow: 'Return Now',
+    returning: (seconds: number) => `Returning in ${seconds} seconds...`,
     buyMore: 'Buy More',
     retry: 'Retry',
     noOrderId: 'Invalid payment callback, missing order information.',
@@ -47,11 +51,13 @@ const CreditsSuccessPage: React.FC = () => {
 
   const isDark = theme === 'dark';
   const orderId = searchParams.get('token');
+  const returnTo = searchParams.get('returnTo');
 
   const [state, setState] = useState<CaptureState>('loading');
   const [credits, setCredits] = useState(0);
   const [newBalance, setNewBalance] = useState(0);
   const [errorMsg, setErrorMsg] = useState('');
+  const [countdown, setCountdown] = useState(3);
   const capturedRef = useRef(false);
 
   const tr = language === 'zh' ? translations.zh : translations.en;
@@ -95,6 +101,24 @@ const CreditsSuccessPage: React.FC = () => {
     captureOrder();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Auto-redirect countdown if returnTo is present and payment is successful
+  useEffect(() => {
+    if (!returnTo || state !== 'success' || countdown <= 0) return;
+
+    const timer = setTimeout(() => {
+      setCountdown(countdown - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [returnTo, state, countdown]);
+
+  // Navigate when countdown reaches 0
+  useEffect(() => {
+    if (returnTo && state === 'success' && countdown === 0) {
+      navigate(decodeURIComponent(returnTo));
+    }
+  }, [returnTo, state, countdown, navigate]);
 
   const handleRetry = useCallback(() => {
     capturedRef.current = false;
@@ -153,20 +177,46 @@ const CreditsSuccessPage: React.FC = () => {
             </Card>
 
             <div className="space-y-3">
-              <ActionButton
-                variant="primary"
-                onClick={() => navigate('/dashboard')}
-                className="w-full"
-              >
-                {tr.goToDashboard}
-              </ActionButton>
-              <ActionButton
-                variant="secondary"
-                onClick={() => navigate('/usage')}
-                className="w-full"
-              >
-                {tr.buyMore}
-              </ActionButton>
+              {returnTo ? (
+                <>
+                  {/* Show countdown and return button if returnTo is present */}
+                  <ActionButton
+                    variant="primary"
+                    onClick={() => navigate(decodeURIComponent(returnTo))}
+                    className="w-full"
+                  >
+                    {tr.returnNow}
+                  </ActionButton>
+                  <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+                    {tr.returning(countdown)}
+                  </p>
+                  <ActionButton
+                    variant="secondary"
+                    onClick={() => navigate('/usage')}
+                    className="w-full"
+                  >
+                    {tr.buyMore}
+                  </ActionButton>
+                </>
+              ) : (
+                <>
+                  {/* Default actions if no returnTo */}
+                  <ActionButton
+                    variant="primary"
+                    onClick={() => navigate('/dashboard')}
+                    className="w-full"
+                  >
+                    {tr.goToDashboard}
+                  </ActionButton>
+                  <ActionButton
+                    variant="secondary"
+                    onClick={() => navigate('/usage')}
+                    className="w-full"
+                  >
+                    {tr.buyMore}
+                  </ActionButton>
+                </>
+              )}
             </div>
           </>
         )}

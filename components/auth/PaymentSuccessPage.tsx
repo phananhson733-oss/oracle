@@ -17,14 +17,34 @@ const PaymentSuccessPage: React.FC = () => {
   const { refreshEntitlements, entitlements } = useAuth();
   const [portalBusy, setPortalBusy] = useState(false);
   const [portalError, setPortalError] = useState<string | null>(null);
+  const [countdown, setCountdown] = useState(3);
 
   const isDark = theme === 'dark';
   const sessionId = searchParams.get('session_id');
+  const returnTo = searchParams.get('returnTo');
 
   // Refresh entitlements after successful payment
   useEffect(() => {
     refreshEntitlements();
   }, [refreshEntitlements]);
+
+  // Auto-redirect countdown if returnTo is present
+  useEffect(() => {
+    if (!returnTo || countdown <= 0) return;
+
+    const timer = setTimeout(() => {
+      setCountdown(countdown - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [returnTo, countdown]);
+
+  // Navigate when countdown reaches 0
+  useEffect(() => {
+    if (returnTo && countdown === 0) {
+      navigate(decodeURIComponent(returnTo));
+    }
+  }, [returnTo, countdown, navigate]);
 
   const handleViewSubscription = async () => {
     // PayPal 订阅跳转 PayPal 自动付款管理页
@@ -60,6 +80,8 @@ const PaymentSuccessPage: React.FC = () => {
         '所有单次购买 7 折优惠',
       ],
       goToDashboard: '开始探索',
+      returnNow: '立即返回',
+      returning: (seconds: number) => `${seconds} 秒后自动返回...`,
       viewSubscription: '查看订阅详情',
       portalUnavailable: '暂时无法打开订阅详情。',
     },
@@ -75,6 +97,8 @@ const PaymentSuccessPage: React.FC = () => {
         '30% off all one-time purchases',
       ],
       goToDashboard: 'Start Exploring',
+      returnNow: 'Return Now',
+      returning: (seconds: number) => `Returning in ${seconds} seconds...`,
       viewSubscription: 'View Subscription',
       portalUnavailable: 'Unable to open subscription details right now.',
     },
@@ -129,22 +153,48 @@ const PaymentSuccessPage: React.FC = () => {
 
         {/* Actions */}
         <div className="space-y-3">
-          <ActionButton
-            variant="primary"
-            onClick={() => navigate('/dashboard')}
-            className="w-full"
-          >
-            {tr.goToDashboard}
-          </ActionButton>
-
-          <ActionButton
-            variant="secondary"
-            onClick={handleViewSubscription}
-            disabled={portalBusy}
-            className="w-full"
-          >
-            {tr.viewSubscription}
-          </ActionButton>
+          {returnTo ? (
+            <>
+              {/* Show countdown and return button if returnTo is present */}
+              <ActionButton
+                variant="primary"
+                onClick={() => navigate(decodeURIComponent(returnTo))}
+                className="w-full"
+              >
+                {tr.returnNow}
+              </ActionButton>
+              <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+                {tr.returning(countdown)}
+              </p>
+              <ActionButton
+                variant="secondary"
+                onClick={handleViewSubscription}
+                disabled={portalBusy}
+                className="w-full"
+              >
+                {tr.viewSubscription}
+              </ActionButton>
+            </>
+          ) : (
+            <>
+              {/* Default actions if no returnTo */}
+              <ActionButton
+                variant="primary"
+                onClick={() => navigate('/dashboard')}
+                className="w-full"
+              >
+                {tr.goToDashboard}
+              </ActionButton>
+              <ActionButton
+                variant="secondary"
+                onClick={handleViewSubscription}
+                disabled={portalBusy}
+                className="w-full"
+              >
+                {tr.viewSubscription}
+              </ActionButton>
+            </>
+          )}
         </div>
 
         {portalError && (

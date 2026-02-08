@@ -18,11 +18,13 @@ import { buildSyntheticaConfig } from './synthetica/buildConfig';
 import { useLanguage, useTheme } from '../UIComponents';
 import { OracleLoading } from '../OracleLoading';
 import { useEntitlement, useSyntheticaQuota } from '../../contexts/EntitlementContext';
+import { useAuth } from '../../contexts/AuthContext';
 
 const WikiSyntheticaPage: React.FC = () => {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
-  const { isSubscriber, checkAccess, openPaywall, refreshEntitlements } = useEntitlement();
+  const { isSubscriber, checkAccess, refreshEntitlements } = useEntitlement();
+  const { openUpgradeModal } = useAuth();
   const { freeLeft: syntheticaFreeLeft, subscriptionLeft: syntheticaSubscriptionLeft } = useSyntheticaQuota();
   const contextCopy = t.synthetica.catalog.contexts as Record<SyntheticaContextFilter, { label: string; description: string }>;
   const planetCopy = t.synthetica.catalog.planets as Record<string, { name: string; archetype: string }>;
@@ -114,7 +116,8 @@ const WikiSyntheticaPage: React.FC = () => {
     const access = await checkAccess('synthetica');
     if (!access.canAccess) {
       if (access.needPurchase) {
-        openPaywall('synthetica', undefined, access.price);
+        // 使用统一的订阅弹窗
+        openUpgradeModal('解锁 Synthetica 洞察');
       }
       return;
     }
@@ -134,7 +137,8 @@ const WikiSyntheticaPage: React.FC = () => {
       try {
         const access = await checkAccess('synthetica');
         if (!access.canAccess && access.needPurchase) {
-          openPaywall('synthetica', undefined, access.price);
+          // 使用统一的订阅弹窗
+          openUpgradeModal('解锁 Synthetica 洞察');
           return;
         }
       } catch {

@@ -56,22 +56,6 @@ interface EntitlementContextType {
   // 购买流程
   startSubscription: (plan?: 'monthly' | 'yearly') => Promise<void>;
   purchaseFeature: (featureType: FeatureType, featureId?: string) => Promise<void>;
-
-  // 弹窗控制
-  showPaywall: boolean;
-  paywallFeature: {
-    type: FeatureType;
-    id?: string;
-    price?: number;
-    onPurchased?: () => void | Promise<void>;
-  } | null;
-  openPaywall: (
-    featureType: FeatureType,
-    featureId?: string,
-    price?: number,
-    onPurchased?: () => void | Promise<void>
-  ) => void;
-  closePaywall: () => void;
 }
 
 const EntitlementContext = createContext<EntitlementContextType | undefined>(undefined);
@@ -86,15 +70,6 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
   const [entitlements, setEntitlements] = useState<EntitlementsV2 | null>(() => getCachedEntitlements());
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // 付费墙状态
-  const [showPaywall, setShowPaywall] = useState(false);
-  const [paywallFeature, setPaywallFeature] = useState<{
-    type: FeatureType;
-    id?: string;
-    price?: number;
-    onPurchased?: () => void | Promise<void>;
-  } | null>(null);
 
   // 便捷属性
   const isSubscriber = entitlements?.isSubscriber ?? false;
@@ -260,7 +235,9 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 开始订阅
   const startSubscription = useCallback(async (plan: 'monthly' | 'yearly' = 'monthly') => {
-    const successUrl = `${window.location.origin}/#/payment/success`;
+    // 编码当前页面路径，以便支付成功后返回
+    const returnTo = encodeURIComponent(window.location.hash.slice(1) || '/dashboard');
+    const successUrl = `${window.location.origin}/#/payment/success?returnTo=${returnTo}`;
     const cancelUrl = window.location.href;
 
     const { url } = await createSubscribeCheckoutV2(plan, successUrl, cancelUrl);
@@ -283,26 +260,6 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
     }
   }, []);
 
-  // 付费墙控制
-  const openPaywall = useCallback((
-    featureType: FeatureType,
-    featureId?: string,
-    price?: number,
-    onPurchased?: () => void | Promise<void>
-  ) => {
-    setPaywallFeature({ type: featureType, id: featureId, price, onPurchased });
-    setShowPaywall(true);
-    trackEvent('paywall_shown', {
-      feature: featureType,
-      price,
-    });
-  }, []);
-
-  const closePaywall = useCallback(() => {
-    setShowPaywall(false);
-    setPaywallFeature(null);
-  }, []);
-
   return (
     <EntitlementContext.Provider
       value={{
@@ -320,10 +277,6 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
         recordSynastry,
         startSubscription,
         purchaseFeature,
-        showPaywall,
-        paywallFeature,
-        openPaywall,
-        closePaywall,
       }}
     >
       {children}
@@ -344,46 +297,24 @@ export function useEntitlement(): EntitlementContextType {
 }
 
 // 便捷 Hook：检查功能访问
+// 注意：此 Hook 只负责权限检查，不再处理弹窗逻辑
+// 弹窗逻辑应该在组件层面通过 useAuth().openUpgradeModal() 处理
 export function useFeatureAccess(featureType: FeatureType, featureId?: string) {
-  const { canAccessFeature, checkAccess, openPaywall, purchaseFeature, isSubscriber, entitlements, refreshEntitlements } = useEntitlement();
+  const { canAccessFeature, checkAccess, isSubscriber } = useEntitlement();
 
   const canAccess = canAccessFeature(featureType, featureId);
-
-  const requestAccess = useCallback(async () => {
-    const result = await checkAccess(featureType, featureId);
-    if (!result.canAccess && result.needPurchase) {
-      if (result.price && entitlements?.credits && entitlements.credits >= result.price) {
-        try {
-          const { success, entitlements: newEntitlements } = await purchaseWithCreditsV2(featureType, featureId);
-          if (success) {
-            cacheEntitlements(newEntitlements);
-            await refreshEntitlements();
-            return { ...result, canAccess: true, needPurchase: false };
-          }
-        } catch (e) {
-          console.error('Failed to purchase with credits:', e);
-        }
-      }
-      openPaywall(featureType, featureId, result.price);
-    }
-    return result;
-  }, [checkAccess, featureType, featureId, openPaywall, entitlements?.credits, refreshEntitlements]);
-
-  const purchase = useCallback(async () => {
-    await purchaseFeature(featureType, featureId);
-  }, [purchaseFeature, featureType, featureId]);
 
   return {
     canAccess,
     isSubscriber,
-    requestAccess,
-    purchase,
+    checkAccess: () => checkAccess(featureType, featureId),
   };
 }
 
 // 便捷 Hook：Ask 问答额度
 export function useAskQuota() {
-  const { entitlements, consumeFeature, openPaywall, checkAccess } = useEntitlement();
+  const { entitlements, consumeFeature, checkAccess } = useEntitlement();
+  const { openUpgradeModal } = useAuth();
 
   const freeLeft = entitlements?.ask.freeLeft ?? 0;
   const subscriptionLeft = entitlements?.ask.subscriptionLeft ?? 0;
@@ -396,11 +327,12 @@ export function useAskQuota() {
     if (!success) {
       const access = await checkAccess('ask');
       if (access.needPurchase) {
-        openPaywall('ask', undefined, access.price);
+        // 使用统一的订阅弹窗
+        openUpgradeModal('解锁 Ask 问答');
       }
     }
     return success;
-  }, [consumeFeature, checkAccess, openPaywall]);
+  }, [consumeFeature, checkAccess, openUpgradeModal]);
 
   return {
     freeLeft,
@@ -414,7 +346,8 @@ export function useAskQuota() {
 
 // 便捷 Hook：Synthetica 额度
 export function useSyntheticaQuota() {
-  const { entitlements, consumeFeature, openPaywall, checkAccess } = useEntitlement();
+  const { entitlements, consumeFeature, checkAccess } = useEntitlement();
+  const { openUpgradeModal } = useAuth();
 
   const freeLeft = entitlements?.synthetica.freeLeft ?? 0;
   const subscriptionLeft = entitlements?.synthetica.subscriptionLeft ?? 0;
@@ -427,11 +360,12 @@ export function useSyntheticaQuota() {
     if (!success) {
       const access = await checkAccess('synthetica');
       if (access.needPurchase) {
-        openPaywall('synthetica', undefined, access.price);
+        // 使用统一的订阅弹窗
+        openUpgradeModal('解锁 Synthetica 洞察');
       }
     }
     return success;
-  }, [consumeFeature, checkAccess, openPaywall]);
+  }, [consumeFeature, checkAccess, openUpgradeModal]);
 
   return {
     freeLeft,
@@ -445,7 +379,8 @@ export function useSyntheticaQuota() {
 
 // 便捷 Hook：合盘额度
 export function useSynastryQuota() {
-  const { entitlements, checkSynastry, recordSynastry, openPaywall, checkAccess } = useEntitlement();
+  const { entitlements, checkSynastry, recordSynastry, checkAccess } = useEntitlement();
+  const { openUpgradeModal } = useAuth();
 
   const freeLeft = entitlements?.synastry.freeLeft ?? 0;
   const subscriptionLeft = entitlements?.synastry.subscriptionLeft ?? 0;
@@ -455,8 +390,7 @@ export function useSynastryQuota() {
   const checkAndRecord = useCallback(async (
     personA: SynastryPersonInfo,
     personB: SynastryPersonInfo,
-    relationshipType: string,
-    options?: { onPurchased?: () => void | Promise<void> }
+    relationshipType: string
   ) => {
     const result = await checkSynastry(personA, personB, relationshipType);
 
@@ -486,10 +420,11 @@ export function useSynastryQuota() {
       return { hash, isNew: true, paid: true };
     }
 
-    // 需要付费
-    openPaywall('synastry', result.hash, POINTS_PRICING.synastry, options?.onPurchased);
+    // 需要付费 - 使用统一的订阅弹窗
+    openUpgradeModal('解锁合盘分析');
+    // 注意：UpgradeModal 不支持 onPurchased 回调，如需回调需要监听 entitlements 变化
     return { hash: result.hash, isNew: false, needPurchase: true };
-  }, [checkSynastry, recordSynastry, openPaywall, checkAccess, entitlements?.purchasedFeatures.synastryHashes]);
+  }, [checkSynastry, recordSynastry, openUpgradeModal, checkAccess, entitlements?.purchasedFeatures.synastryHashes]);
 
   return {
     freeLeft,
