@@ -22,7 +22,7 @@ import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } fr
 import { SEO } from './components/SEO';
 import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage, CreditsSuccessPage } from './components/auth';
 import { CreditsModal } from './components/payment';
-import { GlobalPaywall, LockedContent, LockedAccordion } from './components/Paywall';
+import { LockedContent, LockedAccordion } from './components/Paywall';
 import { ConsentBanner } from './components/ConsentBanner';
 import { useAnalyticsTracking } from './hooks/useAnalytics';
 
@@ -654,7 +654,8 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
 
 const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { language, t, tl } = useLanguage();
-    const { checkAccess, openPaywall, entitlements, refreshEntitlements } = useEntitlement();
+    const { checkAccess, entitlements, refreshEntitlements } = useEntitlement();
+    const { openUpgradeModal } = useAuth();
     const [extendedData, setExtendedData] = useState<T.ExtendedNatalData | null>(null);
     const [loadingExtended, setLoadingExtended] = useState(true);
     const pendingRequests = useRef(new Set<string>());
@@ -677,7 +678,8 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         }
       }
       if (access.needPurchase) {
-        openPaywall(featureType, featureId, access.price);
+        // 使用统一的订阅弹窗
+        openUpgradeModal('解锁此功能');
       }
       return access;
     };
@@ -1210,7 +1212,8 @@ const DetailedScoreRow: React.FC<{ label: string, data: T.DailyEnergy, tone: { b
 const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language, tl } = useLanguage();
     const { theme } = useTheme();
-    const { checkAccess, openPaywall, entitlements, refreshEntitlements } = useEntitlement();
+    const { checkAccess, entitlements, refreshEntitlements } = useEntitlement();
+    const { openUpgradeModal } = useAuth();
     
     // Calculate current period based on user timezone
     const currentPeriod = useMemo(() => {
@@ -1260,7 +1263,8 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         }
       }
       if (access.needPurchase) {
-        openPaywall(featureType, featureId, access.price);
+        // 使用统一的订阅弹窗
+        openUpgradeModal('解锁此功能');
       }
       return access;
     };
@@ -2618,7 +2622,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language, tl } = useLanguage();
     const { theme } = useTheme();
     const { checkAndRecord: checkSynastryQuota, totalLeft: synastryQuotaLeft } = useSynastryQuota();
-    const { checkAccess, openPaywall, entitlements, refreshEntitlements, checkSynastry, recordSynastry } = useEntitlement();
+    const { checkAccess, entitlements, refreshEntitlements, checkSynastry, recordSynastry } = useEntitlement();
+    const { openUpgradeModal } = useAuth();
     const [view, setView] = useState<'select' | 'report'>('select');
     const [segments, setSegments] = useState<Partial<SynastryTabContentMap>>({});
     const [reportMeta, setReportMeta] = useState<T.AIContentMeta | null>(null);
@@ -2665,7 +2670,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         }
       }
       if (access.needPurchase) {
-        openPaywall(featureType, featureId, access.price);
+        // 使用统一的订阅弹窗
+        openUpgradeModal('解锁此功能');
       }
       return access;
     };
@@ -5501,7 +5507,8 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language } = useLanguage();
     const { theme } = useTheme();
     const { totalLeft: askQuotaLeft } = useAskQuota();
-    const { checkAccess, openPaywall, refreshEntitlements } = useEntitlement();
+    const { checkAccess, refreshEntitlements } = useEntitlement();
+    const { openUpgradeModal } = useAuth();
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState<T.AskAnswerContent | null>(null);
     const [answerMeta, setAnswerMeta] = useState<T.AIContentMeta | null>(null);
@@ -5582,7 +5589,8 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         const access = await checkAccess('ask');
         if (!access.canAccess) {
             if (access.needPurchase) {
-                openPaywall('ask', undefined, access.price);
+                // 使用统一的订阅弹窗
+                openUpgradeModal('解锁 Ask 问答');
             }
             return;
         }
@@ -6630,7 +6638,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 const CreditsUsagePage: React.FC = () => {
     const { theme } = useTheme();
     const { language } = useLanguage();
-    const { isAuthenticated, openLoginModal, openUpgradeModal } = useAuth();
+    const { isAuthenticated, openLoginModal, openUpgradeModal, openCreditsModal } = useAuth();
     const { entitlements } = useEntitlement();
     const navigate = useNavigate();
     const [records, setRecords] = useState<PurchaseRecord[]>([]);
@@ -6648,6 +6656,7 @@ const CreditsUsagePage: React.FC = () => {
             plan_free: '免费',
             plan_pro: '订阅',
             upgrade: '升级',
+            topup: '充值积分',
             balance: '积分余额',
             bonus: '订阅赠送积分（每次）',
             records: '积分记录',
@@ -6665,6 +6674,7 @@ const CreditsUsagePage: React.FC = () => {
             plan_free: 'Free',
             plan_pro: 'Subscriber',
             upgrade: 'Upgrade',
+            topup: 'Add Credits',
             balance: 'Credits balance',
             bonus: 'Subscription bonus (per payment)',
             records: 'Credits history',
@@ -6762,6 +6772,26 @@ const CreditsUsagePage: React.FC = () => {
                     </div>
                     <div className="mt-4 text-xs opacity-70">
                         {tr.bonus}：500
+                    </div>
+                    {/* 充值和升级按钮 */}
+                    <div className="mt-4 flex gap-2">
+                        <ActionButton
+                            size="sm"
+                            onClick={() => openCreditsModal()}
+                            className="flex-1"
+                        >
+                            {tr.topup}
+                        </ActionButton>
+                        {!isSubscriber && (
+                            <ActionButton
+                                size="sm"
+                                variant="outline"
+                                onClick={() => openUpgradeModal()}
+                                className="flex-1"
+                            >
+                                {tr.upgrade}
+                            </ActionButton>
+                        )}
                     </div>
                 </Card>
             </Section>
@@ -7497,7 +7527,6 @@ const App: React.FC = () => {
             <EntitlementProvider>
               <GlobalSchema />
               <AppContent />
-              <GlobalPaywall />
             </EntitlementProvider>
           </AuthProvider>
         </LanguageProvider>
