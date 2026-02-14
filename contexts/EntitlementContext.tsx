@@ -23,6 +23,7 @@ import {
 } from '../services/entitlementClientV2';
 import { useAuth } from './AuthContext';
 import { setUserProperties, trackEvent } from '../services/analytics';
+import { FREE_MODE } from '../constants';
 
 // =====================================================
 // 类型定义
@@ -112,6 +113,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 功能访问检查（异步，精确）
   const checkAccess = useCallback(async (featureType: FeatureType, featureId?: string): Promise<AccessCheckResult> => {
+    if (FREE_MODE) return { canAccess: true };
     try {
       return await checkAccessV2(featureType, featureId);
     } catch {
@@ -121,6 +123,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 功能访问检查（同步，基于缓存）
   const canAccessFeature = useCallback((featureType: FeatureType, featureId?: string): boolean => {
+    if (FREE_MODE) return true;
     if (!entitlements) return false;
 
     // 订阅/试用用户：大部分功能都可访问
@@ -197,6 +200,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 消耗权益
   const consumeFeature = useCallback(async (featureType: FeatureType, featureId?: string): Promise<boolean> => {
+    if (FREE_MODE) return true;
     try {
       const result = await consumeFeatureV2(featureType, featureId);
       if (result.success) {
@@ -323,6 +327,7 @@ export function useAskQuota() {
   const resetAt = entitlements?.ask.resetAt ?? '';
 
   const consume = useCallback(async () => {
+    if (FREE_MODE) return true;
     const success = await consumeFeature('ask');
     if (!success) {
       const access = await checkAccess('ask');
@@ -356,6 +361,7 @@ export function useSyntheticaQuota() {
   const resetAt = entitlements?.synthetica.resetAt ?? '';
 
   const consume = useCallback(async () => {
+    if (FREE_MODE) return true;
     const success = await consumeFeature('synthetica');
     if (!success) {
       const access = await checkAccess('synthetica');
@@ -397,6 +403,12 @@ export function useSynastryQuota() {
     if (result.exists) {
       // 已存在的合盘，直接返回哈希
       return { hash: result.hash, isNew: false };
+    }
+
+    if (FREE_MODE) {
+      // FREE_MODE: 跳过付费检查，传 isFree=false 避免后端尝试扣减配额
+      const hash = await recordSynastry(personA, personB, relationshipType, false);
+      return { hash, isNew: true };
     }
 
     if (result.canAccessFree) {
