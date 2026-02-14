@@ -7141,7 +7141,7 @@ const AppContent: React.FC = () => {
     const { user, saveUser } = useUserProfile();
     const navigate = useNavigate();
     const location = useLocation();
-    const { t } = useLanguage();
+    const { t, language, toggleLanguage } = useLanguage();
     const { toggleTheme, theme } = useTheme();
     const { isAuthenticated, migrateLocalData, refreshUser, user: authUser } = useAuth();
     const { entitlements } = useEntitlement();
@@ -7307,6 +7307,7 @@ const AppContent: React.FC = () => {
                             {/* Settings / Theme Toggles */}
                             <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
                             <button onClick={toggleTheme} className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">{theme === 'dark' ? '☀' : '☾'}</button>
+                            <button onClick={toggleLanguage} className="hidden md:flex w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">{language === 'zh' ? 'EN' : '中'}</button>
 
                             {/* User Menu */}
                             <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
@@ -7321,6 +7322,9 @@ const AppContent: React.FC = () => {
                 <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
                      <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === 'dark' ? 'bg-space-900/80 border-gold-500/15' : 'bg-paper-100/80 border-paper-300'}`}>
                         {theme === 'dark' ? '☀' : '☾'}
+                     </button>
+                     <button onClick={toggleLanguage} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg text-xs font-bold ${theme === 'dark' ? 'bg-space-900/80 border-gold-500/15' : 'bg-paper-100/80 border-paper-300'}`}>
+                        {language === 'zh' ? 'EN' : '中'}
                      </button>
                 </div>
             )}
