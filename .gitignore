@@ -30,3 +30,4 @@ dist-ssr
 astromind/
 .vercel
 .env*.local
+backend/.env
