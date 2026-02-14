@@ -57,6 +57,8 @@ const loadGtm = () => {
   window.__astroAnalyticsLoaded = true;
 };
 
+const IS_DEV = typeof import.meta !== 'undefined' && import.meta.env?.DEV;
+
 const loadGa4 = () => {
   if (!GA4_MEASUREMENT_ID) return;
   if (window.gtag) return;
@@ -66,7 +68,10 @@ const loadGa4 = () => {
     dataLayer.push(args as unknown as DataLayerEvent);
   };
   window.gtag('js', new Date());
-  window.gtag('config', GA4_MEASUREMENT_ID, { send_page_view: false });
+  window.gtag('config', GA4_MEASUREMENT_ID, {
+    send_page_view: false,
+    ...(IS_DEV ? { debug_mode: true } : {}),
+  });
 };
 
 export const initAnalytics = (options: { userId?: string; userType?: AnalyticsUserType } = {}) => {
@@ -81,14 +86,30 @@ export const initAnalytics = (options: { userId?: string; userType?: AnalyticsUs
 
 export const trackEvent = (eventName: string, params: AnalyticsEventParams = {}) => {
   if (!canTrack()) return;
+  // Push to dataLayer for GTM compatibility
   const dataLayer = ensureDataLayer();
   dataLayer.push({
     event: eventName,
     ...params,
   });
+  // Also send directly via gtag for GA4
+  if (window.gtag && GA4_MEASUREMENT_ID) {
+    window.gtag('event', eventName, params);
+  }
 };
 
-export const trackPageView = (path?: string) => {
+const resolvePageCategory = (path: string): string => {
+  if (!path || path === '/') return 'home';
+  const segment = path.split('/').filter(Boolean)[0];
+  const categoryMap: Record<string, string> = {
+    me: 'natal', daily: 'daily', ask: 'ask', wiki: 'wiki',
+    synastry: 'synastry', cbt: 'cbt', profile: 'profile',
+    reports: 'reports', comparison: 'comparison', payment: 'payment',
+  };
+  return categoryMap[segment] || 'other';
+};
+
+export const trackPageView = (path?: string, extraParams?: AnalyticsEventParams) => {
   if (!canTrack()) return;
   const location = typeof window !== 'undefined' ? window.location : undefined;
   const resolvedPath = path ?? (location?.hash?.replace(/^#/, '') || location?.pathname || '/');
@@ -100,6 +121,8 @@ export const trackPageView = (path?: string) => {
     page_location: resolvedLocation,
     page_path: resolvedPath || '/',
     page_referrer: resolvedReferrer,
+    page_category: resolvePageCategory(resolvedPath),
+    ...extraParams,
   });
 };
 
@@ -143,5 +166,54 @@ export const trackExternalLink = (url: string, linkText: string) => {
   trackEvent('external_link_click', {
     link_url: url,
     link_text: linkText,
+  });
+};
+
+// Page engagement tracking (time on page)
+let engagementStartTime = 0;
+
+export const startPageEngagement = () => {
+  engagementStartTime = Date.now();
+};
+
+export const endPageEngagement = (pagePath?: string) => {
+  if (!engagementStartTime) return;
+  const duration = Math.round((Date.now() - engagementStartTime) / 1000);
+  if (duration < 1) return; // Ignore sub-second visits
+  trackEvent('page_engagement', {
+    engagement_time_sec: duration,
+    page_path: pagePath || (typeof window !== 'undefined' ? window.location.hash.replace(/^#/, '') || '/' : '/'),
+  });
+  engagementStartTime = 0;
+};
+
+// First visit tracking
+const FIRST_VISIT_KEY = 'astro_first_visit_tracked';
+
+export const trackFirstVisitIfNew = () => {
+  if (typeof window === 'undefined') return;
+  if (window.localStorage.getItem(FIRST_VISIT_KEY)) return;
+  window.localStorage.setItem(FIRST_VISIT_KEY, '1');
+  trackEvent('first_visit', {
+    landing_page: window.location.hash.replace(/^#/, '') || '/',
+    referrer: document.referrer || 'direct',
+  });
+};
+
+// Error tracking
+export const trackError = (errorMessage: string, errorSource: string) => {
+  if (!canTrack()) return;
+  trackEvent('error_occurred', {
+    error_message: errorMessage.slice(0, 200),
+    error_source: errorSource,
+  });
+};
+
+export const trackApiError = (endpoint: string, statusCode: number, errorMessage: string) => {
+  if (!canTrack()) return;
+  trackEvent('api_error', {
+    endpoint,
+    status_code: statusCode,
+    error_message: errorMessage.slice(0, 200),
   });
 };

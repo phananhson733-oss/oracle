@@ -8,6 +8,7 @@ import { useFeatureAccess, useEntitlement } from '../contexts/EntitlementContext
 import { FeatureType, purchaseWithCreditsV2 } from '../services/entitlementClientV2';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage, useTheme } from './UIComponents';
+import { trackEvent } from '../services/analytics';
 
 
 // =====================================================
@@ -93,6 +94,7 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
       openLoginModal(t.paywall?.login_generic || 'Please sign in');
       return;
     }
+    trackEvent('payment_method_selected', { method: 'subscription', feature_type: featureType });
     setShowOptions(false);
     openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
   };
@@ -109,13 +111,16 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
       return;
     }
 
+    trackEvent('payment_method_selected', { method: 'credits', feature_type: featureType });
     setIsPurchasing(true);
     setShowOptions(false);
     try {
       await purchaseWithCreditsV2(featureType, featureId);
       await refreshEntitlements();
+      trackEvent('purchase_completed', { payment_method: 'credits', product_type: featureType, amount: pointsCost });
     } catch (err) {
       console.error('Failed to purchase with credits:', err);
+      trackEvent('purchase_failed', { payment_method: 'credits', error_type: err instanceof Error ? err.message : 'unknown' });
       alert(t.paywall?.unlock_failed || '解锁失败，请重试');
     } finally {
       setIsPurchasing(false);
@@ -159,7 +164,15 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
             {subtitle && <p className={`text-xs mt-0.5 ${s.muted}`}>{subtitle}</p>}
           </div>
           <button
-            onClick={() => setShowOptions(!showOptions)}
+            onClick={() => {
+              const next = !showOptions;
+              setShowOptions(next);
+              if (next) {
+                trackEvent('paywall_displayed', { feature_type: featureType, trigger_context: 'accordion' });
+              } else {
+                trackEvent('paywall_dismissed', { feature_type: featureType });
+              }
+            }}
             disabled={isPurchasing}
             className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${isDark ? 'border-gold-500/30 text-gold-400 hover:text-gold-300 hover:border-gold-500/50' : 'border-gold-500/40 text-gold-600 hover:text-gold-700 hover:border-gold-600/60'} hover:bg-gold-500/10 ${isPurchasing ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
@@ -230,6 +243,13 @@ export const LockedContent: React.FC<LockedContentProps> = ({
   const creditsBalance = entitlements?.credits ?? 0;
   const canAffordWithCredits = creditsBalance >= pointsCost;
 
+  // Track paywall display
+  useEffect(() => {
+    if (!canAccess) {
+      trackEvent('paywall_displayed', { feature_type: featureType, trigger_context: 'locked_content' });
+    }
+  }, [canAccess, featureType]);
+
   if (canAccess) {
     return <>{children}</>;
   }
@@ -239,6 +259,7 @@ export const LockedContent: React.FC<LockedContentProps> = ({
       openLoginModal(t.paywall?.login_generic || 'Please sign in');
       return;
     }
+    trackEvent('payment_method_selected', { method: 'subscription', feature_type: featureType });
     openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
   };
 
@@ -253,12 +274,15 @@ export const LockedContent: React.FC<LockedContentProps> = ({
       return;
     }
 
+    trackEvent('payment_method_selected', { method: 'credits', feature_type: featureType });
     setIsPurchasing(true);
     try {
       await purchaseWithCreditsV2(featureType, featureId);
       await refreshEntitlements();
+      trackEvent('purchase_completed', { payment_method: 'credits', product_type: featureType, amount: pointsCost });
     } catch (err) {
       console.error('Failed to purchase with credits:', err);
+      trackEvent('purchase_failed', { payment_method: 'credits', error_type: err instanceof Error ? err.message : 'unknown' });
       alert(t.paywall?.unlock_failed || '解锁失败，请重试');
     } finally {
       setIsPurchasing(false);

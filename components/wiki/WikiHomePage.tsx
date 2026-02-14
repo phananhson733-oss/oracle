@@ -165,6 +165,10 @@ const WikiHomePage: React.FC = () => {
         <form
           onSubmit={(event) => {
             event.preventDefault();
+            trackEvent('wiki_search_performed', {
+              search_term: query.trim(),
+              results_count: searchResults.length,
+            });
             trackEvent('form_submitted', {
               form_name: 'wiki_search',
             });
@@ -353,7 +357,10 @@ const WikiHomePage: React.FC = () => {
           {(home?.pillars || []).map((pillar, index) => (
             <Card
               key={pillar.id}
-              onClick={() => navigate(`/wiki?tab=library&section=${pillar.id}`)}
+              onClick={() => {
+                trackEvent('wiki_category_clicked', { category_name: pillar.id });
+                navigate(`/wiki?tab=library&section=${pillar.id}`);
+              }}
               className="group text-center space-y-4 cursor-pointer"
             >
               <div

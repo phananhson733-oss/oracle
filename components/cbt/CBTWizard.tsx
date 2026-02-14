@@ -12,6 +12,7 @@ import ReportDashboard from './ReportDashboard';
 import { OracleLoading } from '../OracleLoading';
 import MoodIcon from './MoodIcon';
 import { useLanguage, useTheme } from '../UIComponents';
+import { trackEvent } from '../../services/analytics';
 
 interface CBTWizardProps {
   onClose: () => void;
@@ -224,6 +225,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
       setFinalRecord(completedRecord);
       setPendingRecord(null);
       onComplete(completedRecord);
+      trackEvent('cbt_module_completed', { mood_count: record.moods.length, thought_count: record.automaticThoughts.length });
     } catch (error) {
       console.error(error);
       setAnalysisError(buildAnalysisErrorMessage(error));

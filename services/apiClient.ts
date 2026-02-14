@@ -39,7 +39,7 @@ import type {
   SyntheticaReportResponse
 } from '../types';
 import { authFetch } from './authClient';
-import { trackEvent } from './analytics';
+import { trackEvent, trackApiError } from './analytics';
 import { getDeviceId } from './paymentClient';
 import { consumeFeatureV2 } from './entitlementClientV2';
 
@@ -77,6 +77,21 @@ const parseErrorPayload = async (res: Response): Promise<{ message?: string; rea
   } catch {
     return {};
   }
+};
+
+const trackAndThrow = (url: string, status: number, message: string): never => {
+  const endpoint = url.replace(API_BASE, '').split('?')[0];
+  trackApiError(endpoint, status, message);
+  const err = new Error(message) as ApiError;
+  err.status = status;
+  throw err;
+};
+
+/** Check response and track API errors if not ok */
+const assertOk = async (res: Response, fallbackMessage: string) => {
+  if (res.ok) return;
+  const parsed = await parseErrorPayload(res);
+  trackAndThrow(res.url, res.status, parsed.message || fallbackMessage);
 };
 
 const encodeCachePart = (value: unknown) => encodeURIComponent(String(value ?? ''));
@@ -384,7 +399,7 @@ export async function fetchNatalChart(profile: BirthProfile): Promise<NatalFacts
   withCoords(params, birth);
 
   const res = await fetch(`${API_BASE}/natal/chart?${params}`);
-  if (!res.ok) throw new Error('Failed to fetch natal chart');
+  await assertOk(res, 'Failed to fetch natal chart');
   const data = await res.json();
   const chart = data.chart as NatalFacts;
   writeLocalCache(cacheKey, chart);
@@ -406,7 +421,7 @@ export async function fetchNatalOverview(profile: UserProfile, lang: 'zh' | 'en'
   const cacheKey = buildAiCacheKey('natal_overview', lang, { birth, lang });
   return fetchWithCache(cacheKey, async () => {
     const res = await fetch(`${API_BASE}/natal/overview?${params}`);
-    if (!res.ok) throw new Error('Failed to fetch natal overview');
+    await assertOk(res, 'Failed to fetch natal overview');
     return res.json();
   });
 }

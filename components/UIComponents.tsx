@@ -8,6 +8,7 @@ import { Language, UserProfile, SectionDetailContent } from '../types';
 import { TRANSLATIONS, ASTRO_DICTIONARY } from '../constants';
 import { OracleLoading } from './OracleLoading';
 import { useAuth } from '../contexts/AuthContext';
+import { trackEvent, setUserProperties } from '../services/analytics';
 
 // --- Theme Context ---
 export type Theme = 'dark' | 'light';
@@ -26,7 +27,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     document.body.className = `${theme} ${theme === 'dark' ? 'bg-space-950 text-star-50' : 'bg-paper-100 text-paper-900'}`; 
     localStorage.setItem('astro_theme', theme); 
   }, [theme]);
-  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  const toggleTheme = () => setTheme(prev => {
+    const next = prev === 'dark' ? 'light' : 'dark';
+    trackEvent('theme_changed', { from_theme: prev, to_theme: next });
+    setUserProperties({ theme: next });
+    return next;
+  });
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };
 
@@ -70,10 +76,13 @@ export const LanguageContext = createContext<LanguageContextType>({
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => (localStorage.getItem('astro_lang') as Language) || 'en');
-  const toggleLanguage = () => { 
-    const newLang = language === 'zh' ? 'en' : 'zh'; 
-    setLanguage(newLang); 
-    localStorage.setItem('astro_lang', newLang); 
+  const toggleLanguage = () => {
+    const oldLang = language;
+    const newLang = language === 'zh' ? 'en' : 'zh';
+    setLanguage(newLang);
+    localStorage.setItem('astro_lang', newLang);
+    trackEvent('language_changed', { from_lang: oldLang, to_lang: newLang });
+    setUserProperties({ language: newLang });
   };
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t: TRANSLATIONS[language], tl: (s) => translateAstroTerm(s, language) }}>
@@ -444,13 +453,14 @@ export const ScoreBar: React.FC<{ label: string, value: number, color: string }>
   );
 };
 
-export const CopyButton: React.FC<{ text: string, label?: string }> = ({ text, label }) => {
+export const CopyButton: React.FC<{ text: string, label?: string, contentType?: string }> = ({ text, label, contentType }) => {
   const [copied, setCopied] = useState(false);
   const { theme } = useTheme();
-  
+
   const handleCopy = (e: React.MouseEvent) => {
     e.stopPropagation();
     navigator.clipboard.writeText(text);
+    trackEvent('share_button_clicked', { content_type: contentType || 'text', method: 'copy' });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

@@ -17,7 +17,7 @@ import { fetchAskAnswer, fetchDailyDetail, fetchDailyForecast, fetchSectionDetai
 import { searchCities as searchCitiesLocal, formatCityDisplay, getCityCoordinates, type City } from './utils/city-search';
 import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription, createPortalSession } from './services/paymentClient';
 import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
-import { trackEvent, trackPageView } from './services/analytics';
+import { trackEvent, trackPageView, startPageEngagement, endPageEngagement } from './services/analytics';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } from './contexts/EntitlementContext';
 import { SEO } from './components/SEO';
@@ -1278,6 +1278,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           const result = await fetchDailyForecast(profile, date, language);
           if (mounted) {
             setPublicData(result.content as T.DailyPublicContent);
+            trackEvent('daily_forecast_viewed', { date, language });
             if (result.transits) {
               setTransitData({
                 positions: result.transits.positions || [],
@@ -1697,7 +1698,10 @@ const CyclesPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       const loadCycles = async () => {
         try {
           const base = await Astro.calculateCycles(3, profile);
-          if (mounted) setCycles(base);
+          if (mounted) {
+            setCycles(base);
+            trackEvent('cycle_forecast_viewed', { cycles_count: base.length });
+          }
         } catch {}
       };
       loadCycles();
@@ -2239,7 +2243,7 @@ const PerspectiveCard: React.FC<{
                                         <p className="opacity-90">{item.advice}</p>
                                         <div className="flex flex-wrap items-center justify-between gap-3 mt-2 text-xs opacity-70">
                                             <span>{item.script}</span>
-                                            <CopyButton text={item.script} label={t.us.copy_script} />
+                                            <CopyButton text={item.script} label={t.us.copy_script} contentType="synastry_script" />
                                         </div>
                                     </div>
                                 </div>
@@ -2332,7 +2336,7 @@ const PerspectiveCard: React.FC<{
                                         {data.closing.cycle.scripts.map((s, i) => (
                                             <div key={i} className={`flex flex-wrap items-center justify-between gap-3 border-l border-l-success/40 px-4 py-3 rounded-lg ${theme === 'dark' ? 'bg-space-900/50' : 'bg-paper-100'}`}>
                                                 <p className="text-sm opacity-90">"{s}"</p>
-                                                <CopyButton text={s} />
+                                                <CopyButton text={s} contentType="cycle_script" />
                                             </div>
                                         ))}
                                     </div>
@@ -4031,6 +4035,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                       key={tab.id}
                       onClick={() => {
                         const nextTab = tab.id as SynastryTabId;
+                        trackEvent('synastry_tab_switched', { from_tab: activeTab, to_tab: nextTab });
                         setActiveTab(nextTab);
                         if (!segmentsRef.current[nextTab]) {
                           fetchSynastryTab(nextTab);
@@ -4293,7 +4298,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                          <div className="text-xs opacity-70 mb-2">{t.us.repair_situation}: {script.situation}</div>
                                          <div className="font-serif text-sm italic">"{script.script}"</div>
                                          <button
-                                           onClick={() => navigator.clipboard.writeText(script.script)}
+                                           onClick={() => {
+                                             navigator.clipboard.writeText(script.script);
+                                             trackEvent('share_button_clicked', { content_type: 'repair_script', method: 'copy' });
+                                           }}
                                            className="mt-2 text-xs text-accent hover:underline"
                                          >
                                            {t.us.repair_copy}
@@ -7133,7 +7141,7 @@ const AppContent: React.FC = () => {
     const { user, saveUser } = useUserProfile();
     const navigate = useNavigate();
     const location = useLocation();
-    const { t, toggleLanguage, language } = useLanguage();
+    const { t } = useLanguage();
     const { toggleTheme, theme } = useTheme();
     const { isAuthenticated, migrateLocalData, refreshUser, user: authUser } = useAuth();
     const { entitlements } = useEntitlement();
@@ -7197,12 +7205,30 @@ const AppContent: React.FC = () => {
         if (typeof window === 'undefined') return;
         const resolvedPath = window.location.hash?.replace(/^#/, '') || location.pathname || '/';
         if (lastTrackedPathRef.current === resolvedPath) return;
+        // End engagement for previous page
+        if (lastTrackedPathRef.current) {
+            endPageEngagement(lastTrackedPathRef.current);
+        }
         lastTrackedPathRef.current = resolvedPath;
+        startPageEngagement();
         const frame = window.requestAnimationFrame(() => {
             trackPageView(resolvedPath || '/');
         });
         return () => window.cancelAnimationFrame(frame);
     }, [location.pathname, location.search, location.hash]);
+
+    // Track page engagement on tab hide / page unload
+    useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'hidden' && lastTrackedPathRef.current) {
+                endPageEngagement(lastTrackedPathRef.current);
+            } else if (document.visibilityState === 'visible') {
+                startPageEngagement();
+            }
+        };
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    }, []);
 
     useEffect(() => {
         if (!isAuthenticated) {

@@ -23,6 +23,7 @@ import { useFeatureAccess, useEntitlement } from '../../contexts/EntitlementCont
 import { useAuth } from '../../contexts/AuthContext';
 import { useLanguage, useTheme } from '../UIComponents';
 import { OracleLoading } from '../OracleLoading';
+import { trackEvent } from '../../services/analytics';
 
 const MOOD_IMAGES: MoodImages = {
   very_happy: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=400&fit=crop&auto=format&q=75',
@@ -206,6 +207,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
     }
     setTargetDate(targetDateValue);
     setIsWizardOpen(true);
+    trackEvent('cbt_module_started', { entry_date: targetDateValue.toISOString().slice(0, 10) });
   };
 
   const displayName = profile?.name || 'User';

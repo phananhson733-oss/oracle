@@ -587,6 +587,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
                   key={related.slug}
                   to={`/wiki/${related.slug}`}
                   className="group"
+                  onClick={() => trackEvent('wiki_related_article_clicked', { article_id: related.slug, article_title: related.title, article_type: 'article' })}
                 >
                   <Card className="h-full transition-all duration-300 hover:border-gold-500/30">
                     <h3 className="font-semibold line-clamp-2 group-hover:text-gold-500 transition-colors">

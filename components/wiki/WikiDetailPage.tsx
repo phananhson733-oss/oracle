@@ -454,7 +454,7 @@ const WikiDetailPage: React.FC = () => {
         <Section title={t.wiki.detail_related}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {relatedItems.map((entry) => (
-              <Link key={entry.id} to={`/wiki/${entry.id}`} className="block group">
+              <Link key={entry.id} to={`/wiki/${entry.id}`} className="block group" onClick={() => trackEvent('wiki_related_article_clicked', { article_id: entry.id, article_title: entry.title, article_type: 'wiki_item' })}>
                 <Card className="flex items-center gap-4">
                   <div className="text-3xl">{forceTextSymbol(entry.symbol)}</div>
                   <div className="flex-1">

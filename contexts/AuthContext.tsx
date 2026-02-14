@@ -16,7 +16,7 @@ import {
   migrateLocalData,
   getAccessToken,
 } from '../services/authClient';
-import { setUserId, trackEvent } from '../services/analytics';
+import { setUserId, setUserProperties, trackEvent } from '../services/analytics';
 import { FREE_MODE } from '../constants';
 import type { EntitlementsV2 } from '../services/entitlementClientV2';
 import { cacheEntitlements, clearEntitlementsCache, getCachedEntitlements, getEntitlementsV2 } from '../services/entitlementClientV2';
@@ -101,6 +101,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const latest = await getEntitlementsV2();
       setEntitlements(latest);
       cacheEntitlements(latest);
+      // Set GA4 user properties for segmentation
+      if (latest) {
+        const tier = latest.isSubscriber ? (latest.subscription?.plan || 'subscriber') : (latest.isTrialing ? 'trial' : 'free');
+        setUserProperties({ user_type: tier, subscription_tier: tier });
+      }
     } catch {
       // Ignore entitlement refresh errors to avoid blocking auth flows.
     }
@@ -112,27 +117,42 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Auth actions
   const handleLoginWithGoogle = async (credential: string) => {
-    const result = await loginWithGoogle(credential);
-    setUser(result.user);
-    setUserId(result.user.id);
-    trackEvent('login', { method: 'google' });
-    setShowLoginModal(false);
+    try {
+      const result = await loginWithGoogle(credential);
+      setUser(result.user);
+      setUserId(result.user.id);
+      trackEvent('login', { method: 'google' });
+      setShowLoginModal(false);
+    } catch (err) {
+      trackEvent('login_failed', { method: 'google', error_type: err instanceof Error ? err.message : 'unknown' });
+      throw err;
+    }
   };
 
   const handleLoginWithApple = async (identityToken: string, appleUser?: { email?: string; name?: { firstName?: string; lastName?: string } }) => {
-    const result = await loginWithApple(identityToken, appleUser);
-    setUser(result.user);
-    setUserId(result.user.id);
-    trackEvent('login', { method: 'apple' });
-    setShowLoginModal(false);
+    try {
+      const result = await loginWithApple(identityToken, appleUser);
+      setUser(result.user);
+      setUserId(result.user.id);
+      trackEvent('login', { method: 'apple' });
+      setShowLoginModal(false);
+    } catch (err) {
+      trackEvent('login_failed', { method: 'apple', error_type: err instanceof Error ? err.message : 'unknown' });
+      throw err;
+    }
   };
 
   const handleLoginWithEmail = async (email: string, password: string) => {
-    const result = await loginWithEmail(email, password);
-    setUser(result.user);
-    setUserId(result.user.id);
-    trackEvent('login', { method: 'email' });
-    setShowLoginModal(false);
+    try {
+      const result = await loginWithEmail(email, password);
+      setUser(result.user);
+      setUserId(result.user.id);
+      trackEvent('login', { method: 'email' });
+      setShowLoginModal(false);
+    } catch (err) {
+      trackEvent('login_failed', { method: 'email', error_type: err instanceof Error ? err.message : 'unknown' });
+      throw err;
+    }
   };
 
   const handleRegisterWithEmail = async (email: string, password: string, name?: string) => {
@@ -154,6 +174,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const handleUpdateProfile = async (updates: Parameters<typeof updateProfile>[0]) => {
     const updatedUser = await updateProfile(updates);
     setUser(updatedUser);
+    trackEvent('profile_updated', {
+      updated_fields: Object.keys(updates).join(','),
+    });
   };
 
   const handleMigrateLocalData = async () => {
@@ -186,6 +209,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const openLoginModal = (reason?: string) => {
     setLoginModalReason(reason);
     setShowLoginModal(true);
+    trackEvent('login_modal_opened', { trigger_source: reason || 'manual' });
   };
 
   const openUpgradeModal = (reason?: string) => {

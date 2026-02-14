@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { initAnalytics } from './services/analytics';
+import { initAnalytics, trackFirstVisitIfNew, trackError } from './services/analytics';
 import { reportWebVitalsToAnalytics } from './src/utils/performance';
 
 const rootElement = document.getElementById('root');
@@ -23,3 +23,13 @@ root.render(
 
 initAnalytics();
 reportWebVitalsToAnalytics();
+trackFirstVisitIfNew();
+
+// Global error tracking
+window.addEventListener('error', (event) => {
+  trackError(event.message || 'Unknown error', event.filename || 'unknown');
+});
+window.addEventListener('unhandledrejection', (event) => {
+  const message = event.reason instanceof Error ? event.reason.message : String(event.reason);
+  trackError(message, 'unhandled_promise');
+});

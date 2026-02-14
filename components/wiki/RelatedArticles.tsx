@@ -6,6 +6,7 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage, useTheme, Card, ActionButton } from '../UIComponents';
 import { getRelatedItems, type RelatedItem, type RelationType } from '../../data/wiki-associations';
+import { trackEvent } from '../../services/analytics';
 import type { WikiItemType } from '../../types';
 
 interface RelatedArticlesProps {
@@ -95,6 +96,7 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
           <Link
             key={`${item.type}-${item.id}`}
             to={`/wiki/${item.id}`}
+            onClick={() => trackEvent('wiki_related_article_clicked', { article_id: item.id, article_title: getItemDisplayName(item.id, item.type), article_type: item.type, relation: item.relation })}
             className={`
               flex items-center gap-3 p-3 rounded-lg border ${borderColor} ${hoverBg}
               transition-all duration-200 hover:border-gold-500/40
