@@ -5,11 +5,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ActionButton, Card, GlassInput, Modal, Section, useLanguage, useTheme } from '../UIComponents';
-import { Compass, Heart, Search, Share2, Sparkles } from 'lucide-react';
+import { ArrowRight, Compass, Heart, Search, Share2, Sparkles } from 'lucide-react';
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
 import { fetchWikiHome, fetchWikiSearch } from '../../services/apiClient';
 import { trackEvent } from '../../services/analytics';
-import type { WikiHomeContent, WikiSearchMatch } from '../../types';
+import { getArticleHotwords, getArticleSummaries } from '../../data/articles';
+import type { WikiHomeContent, WikiSearchMatch, ArticleHotword, WikiArticleSummary } from '../../types';
 
 const WIKI_HOME_CACHE = new Map<string, WikiHomeContent>();
 const resolveUtcDate = () => new Date().toISOString().split('T')[0];
@@ -220,20 +221,14 @@ const WikiHomePage: React.FC = () => {
           )}
         </form>
 
-        {home?.trending_tags && home.trending_tags.length > 0 && (
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs">
-            <span className={`uppercase tracking-[0.3em] ${mutedText}`}>{t.wiki.trending_label}</span>
-            {home.trending_tags.map((tag) => (
-              <button
-                key={tag.label}
-                onClick={() => navigate(`/wiki/${tag.item_id}`)}
-                className={`px-3 py-1 rounded-full border ${borderColor} hover:text-gold-500 transition-colors`}
-              >
-                {tag.label}
-              </button>
-            ))}
-          </div>
-        )}
+        <HotwordsSection
+          trendingTags={home?.trending_tags || []}
+          language={language}
+          navigate={navigate}
+          mutedText={mutedText}
+          borderColor={borderColor}
+          trendingLabel={t.wiki.trending_label}
+        />
       </section>
 
       <Section title={t.wiki.daily_section}>
@@ -346,6 +341,13 @@ const WikiHomePage: React.FC = () => {
         </div>
       </Section>
 
+      <FeaturedArticlesSection
+        language={language}
+        navigate={navigate}
+        theme={theme}
+        t={t}
+      />
+
       <Section title={t.wiki.pillars_title} action={<div className={`text-xs uppercase tracking-[0.3em] ${mutedText}`}>{t.wiki.pillars_subtitle}</div>}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {(home?.pillars || []).map((pillar, index) => (
@@ -415,6 +417,145 @@ const WikiHomePage: React.FC = () => {
           </ActionButton>
         </Card>
       )}
+    </div>
+  );
+};
+
+// Featured articles section component
+interface FeaturedArticlesSectionProps {
+  language: 'zh' | 'en';
+  navigate: (path: string) => void;
+  theme: 'dark' | 'light';
+  t: ReturnType<typeof useLanguage>['t'];
+}
+
+const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
+  language,
+  navigate,
+  theme,
+  t,
+}) => {
+  const articles = useMemo(() => getArticleSummaries(language), [language]);
+
+  if (articles.length === 0) return null;
+
+  const isDark = theme === 'dark';
+  const mutedText = isDark ? 'text-star-400' : 'text-paper-500';
+  const borderColor = isDark ? 'border-gold-500/15' : 'border-gold-600/40';
+  const highlightText = isDark ? 'text-gold-400' : 'text-gold-600';
+
+  // Show max 4 articles
+  const displayArticles = articles.slice(0, 4);
+  const hasMore = articles.length > 4;
+
+  return (
+    <Section
+      title={t.wiki.featured_articles_title}
+      action={
+        <div className={`text-xs uppercase tracking-[0.3em] ${mutedText}`}>
+          {t.wiki.featured_articles_subtitle}
+        </div>
+      }
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {displayArticles.map((article: WikiArticleSummary) => (
+          <Card
+            key={article.slug}
+            onClick={() => navigate(`/wiki/${article.slug}`)}
+            className="group cursor-pointer space-y-3"
+          >
+            <h3 className="font-serif font-semibold line-clamp-2 group-hover:text-gold-500 transition-colors">
+              {article.title}
+            </h3>
+            <p className={`text-xs leading-relaxed ${mutedText} line-clamp-3`}>
+              {article.description}
+            </p>
+            <div className={`text-xs uppercase tracking-[0.2em] ${highlightText}`}>
+              {t.wiki.article_read_more} →
+            </div>
+          </Card>
+        ))}
+
+        {hasMore && (
+          <Card
+            onClick={() => navigate('/wiki?tab=articles')}
+            className="group cursor-pointer flex flex-col items-center justify-center text-center space-y-3"
+          >
+            <div className={`w-12 h-12 rounded-full border ${borderColor} flex items-center justify-center group-hover:border-gold-500/50 transition-colors`}>
+              <ArrowRight size={20} className={`${mutedText} group-hover:text-gold-500 transition-colors`} />
+            </div>
+            <div className={`text-sm font-semibold ${highlightText}`}>
+              {t.wiki.featured_articles_more}
+            </div>
+          </Card>
+        )}
+      </div>
+    </Section>
+  );
+};
+
+// Hotwords section component with article keywords integration
+interface HotwordsSectionProps {
+  trendingTags: Array<{ label: string; item_id: string }>;
+  language: 'zh' | 'en';
+  navigate: (path: string) => void;
+  mutedText: string;
+  borderColor: string;
+  trendingLabel: string;
+}
+
+const HotwordsSection: React.FC<HotwordsSectionProps> = ({
+  trendingTags,
+  language,
+  navigate,
+  mutedText,
+  borderColor,
+  trendingLabel,
+}) => {
+  // Get article hotwords and combine with trending tags
+  const articleHotwords = useMemo(() => getArticleHotwords(language, 3), [language]);
+
+  // Combine backend trending tags with article hotwords
+  const allHotwords = useMemo(() => {
+    const combined: Array<{ label: string; path: string; isArticle: boolean }> = [];
+
+    // Add backend trending tags
+    trendingTags.forEach((tag) => {
+      combined.push({
+        label: tag.label,
+        path: `/wiki/${tag.item_id}`,
+        isArticle: false,
+      });
+    });
+
+    // Add article hotwords (limit to avoid too many)
+    articleHotwords.forEach((hw: ArticleHotword) => {
+      combined.push({
+        label: hw.label,
+        path: `/wiki/${hw.article_slug}`,
+        isArticle: true,
+      });
+    });
+
+    return combined;
+  }, [trendingTags, articleHotwords]);
+
+  if (allHotwords.length === 0) return null;
+
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-3 text-xs">
+      <span className={`uppercase tracking-[0.3em] ${mutedText}`}>{trendingLabel}</span>
+      {allHotwords.map((hotword, index) => (
+        <button
+          key={`${hotword.label}-${index}`}
+          onClick={() => navigate(hotword.path)}
+          className={`px-3 py-1 rounded-full border ${borderColor} hover:text-gold-500 transition-colors ${
+            hotword.isArticle ? 'bg-gold-500/5' : ''
+          }`}
+        >
+          {hotword.label}
+        </button>
+      ))}
     </div>
   );
 };

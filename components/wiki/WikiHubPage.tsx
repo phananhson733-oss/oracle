@@ -10,9 +10,12 @@ import WikiHomePage from './WikiHomePage';
 import WikiIndexPage from './WikiIndexPage';
 import WikiClassicsPage from './WikiClassicsPage';
 import WikiSyntheticaPage from './WikiSyntheticaPage';
+import WikiArticlesPage from './WikiArticlesPage';
 
+// Visible tabs shown in the tab bar
 const TAB_VALUES = ['home', 'library', 'classics', 'tools'] as const;
-type WikiTab = typeof TAB_VALUES[number];
+// Full tab type includes hidden tabs reachable via direct URL (e.g. /wiki?tab=articles)
+type WikiTab = typeof TAB_VALUES[number] | 'articles';
 
 const resolveTab = (search: string): WikiTab => {
   const params = new URLSearchParams(search);
@@ -20,6 +23,7 @@ const resolveTab = (search: string): WikiTab => {
   if (tab === 'library') return 'library';
   if (tab === 'classics') return 'classics';
   if (tab === 'tools') return 'tools';
+  if (tab === 'articles') return 'articles';
   return 'home';
 };
 
@@ -59,21 +63,24 @@ const WikiHubPage: React.FC = () => {
         type="website"
       />
       <div className="space-y-10">
-        <div className="flex items-center justify-end gap-3">
-          {TAB_VALUES.map((tab) => (
-            <ActionButton
-              key={tab}
-              size="sm"
-              variant={activeTab === tab ? 'primary' : 'outline'}
-              className="rounded-full px-5"
-              onClick={() => handleTabChange(tab)}
-            >
-              {tab === 'home' ? t.wiki.tab_home : tab === 'library' ? t.wiki.tab_library : tab === 'classics' ? t.wiki.tab_classics : t.wiki.tab_tools}
-            </ActionButton>
-          ))}
-        </div>
+        {/* Only show visible tabs - articles tab is hidden but route still works */}
+        {activeTab !== 'articles' && (
+          <div className="flex items-center justify-end gap-3">
+            {TAB_VALUES.map((tab) => (
+              <ActionButton
+                key={tab}
+                size="sm"
+                variant={activeTab === tab ? 'primary' : 'outline'}
+                className="rounded-full px-5"
+                onClick={() => handleTabChange(tab)}
+              >
+                {tab === 'home' ? t.wiki.tab_home : tab === 'library' ? t.wiki.tab_library : tab === 'classics' ? t.wiki.tab_classics : t.wiki.tab_tools}
+              </ActionButton>
+            ))}
+          </div>
+        )}
 
-        {activeTab === 'home' ? <WikiHomePage /> : activeTab === 'library' ? <WikiIndexPage /> : activeTab === 'classics' ? <WikiClassicsPage /> : <WikiSyntheticaPage />}
+        {activeTab === 'home' ? <WikiHomePage /> : activeTab === 'library' ? <WikiIndexPage /> : activeTab === 'classics' ? <WikiClassicsPage /> : activeTab === 'tools' ? <WikiSyntheticaPage /> : <WikiArticlesPage />}
       </div>
     </Container>
   );

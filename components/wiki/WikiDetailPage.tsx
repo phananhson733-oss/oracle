@@ -11,6 +11,8 @@ import { Breadcrumb } from '../Breadcrumb';
 import { ArrowLeft, Brain, GitMerge, Ghost, ScrollText, Sparkles, Wand2 } from 'lucide-react';
 import { fetchWikiItem, fetchWikiItems } from '../../services/apiClient';
 import { trackEvent } from '../../services/analytics';
+import { isArticleSlug } from '../../data/articles';
+import WikiArticleDetailPage from './WikiArticleDetailPage';
 import type { WikiItem, WikiItemSummary } from '../../types';
 
 const renderContent = (content: string, highlightClass: string, mutedClass: string = 'text-star-400') => {
@@ -134,6 +136,11 @@ const WikiDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const trackedViewRef = useRef<string | null>(null);
+
+  // Check if this is an article slug - if so, render the article detail page instead
+  if (id && isArticleSlug(id)) {
+    return <WikiArticleDetailPage articleSlug={id} />;
+  }
 
   const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
   const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300';

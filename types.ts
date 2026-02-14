@@ -988,6 +988,38 @@ export interface WikiSearchResponse {
   matches: WikiSearchMatch[];
 }
 
+// --- Wiki Article Types ---
+
+export interface WikiArticle {
+  slug: string;
+  title: string;
+  description: string;
+  content: string;
+  author: string;
+  date: string;
+  image?: string;
+  image_alt?: string;
+  keywords: string[];
+  schema: 'Article' | 'HowTo' | 'FAQPage';
+  lang: Language;
+}
+
+export interface WikiArticleSummary {
+  slug: string;
+  title: string;
+  description: string;
+  author: string;
+  date: string;
+  image?: string;
+  image_alt?: string;
+  keywords: string[];
+}
+
+export interface ArticleHotword {
+  label: string;
+  article_slug: string;
+}
+
 // --- Synthetica Tool Types ---
 
 export enum SyntheticaContextFilter {
