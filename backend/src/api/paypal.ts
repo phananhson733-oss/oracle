@@ -204,6 +204,109 @@ router.get('/subscription', authMiddleware, requireAuth, async (req: Request, re
   }
 });
 
+// POST /api/paypal/confirm-subscription
+// 支付成功页兜底确认订阅（防止 webhook 未送达）
+router.post('/confirm-subscription', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    if (!isPayPalConfigured()) {
+      return res.status(503).json({ error: 'PayPal service unavailable' });
+    }
+
+    const { subscriptionId } = req.body as { subscriptionId?: string };
+    if (!subscriptionId) {
+      return res.status(400).json({ error: 'subscriptionId required' });
+    }
+
+    const details = await paypalService.getSubscriptionDetails(subscriptionId);
+    const customIdStr = details.custom_id;
+
+    let customData: { userId: string; useFirstDiscount?: boolean } | null = null;
+    if (customIdStr) {
+      try {
+        customData = JSON.parse(customIdStr);
+      } catch {
+        customData = { userId: customIdStr };
+      }
+    }
+
+    if (!customData?.userId || customData.userId !== req.userId) {
+      return res.status(403).json({ error: 'Subscription does not belong to current user' });
+    }
+
+    const plan = details.plan_id === PAYPAL_PLANS.yearly || details.plan_id === PAYPAL_PLANS.yearly_first
+      ? 'yearly'
+      : 'monthly';
+
+    const parseDate = (value?: string | null) => {
+      if (!value) return null;
+      const parsed = new Date(value);
+      return Number.isNaN(parsed.getTime()) ? null : parsed;
+    };
+
+    const startDate = parseDate(details.start_time) || new Date();
+    const nextBilling = parseDate(details.billing_info?.next_billing_time);
+    let endDate = nextBilling ? new Date(nextBilling) : new Date(startDate);
+
+    if (!nextBilling) {
+      if (plan === 'yearly') endDate.setFullYear(endDate.getFullYear() + 1);
+      else endDate.setMonth(endDate.getMonth() + 1);
+    }
+
+    if (isSupabaseConfigured()) {
+      const { data: existingByPayPal } = await supabase
+        .from('subscriptions')
+        .select('id')
+        .eq('paypal_subscription_id', subscriptionId)
+        .maybeSingle();
+
+      if (existingByPayPal) {
+        await supabase
+          .from('subscriptions')
+          .update({
+            user_id: req.userId,
+            payment_provider: 'paypal',
+            plan,
+            status: 'active',
+            current_period_start: startDate.toISOString(),
+            current_period_end: endDate.toISOString(),
+            cancel_at_period_end: false,
+            updated_at: new Date().toISOString(),
+          })
+          .eq('paypal_subscription_id', subscriptionId);
+      } else {
+        await supabase.from('subscriptions').insert({
+          user_id: req.userId,
+          paypal_subscription_id: subscriptionId,
+          payment_provider: 'paypal',
+          plan,
+          status: 'active',
+          current_period_start: startDate.toISOString(),
+          current_period_end: endDate.toISOString(),
+          cancel_at_period_end: false,
+          usage: { synastryReads: 0, monthlyReportClaimed: false },
+        });
+
+        await supabase.rpc('add_user_credits', {
+          p_user_id: req.userId,
+          p_amount: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+        });
+      }
+
+      if (customData.useFirstDiscount) {
+        await supabase
+          .from('users')
+          .update({ used_first_discount: true })
+          .eq('id', req.userId);
+      }
+    }
+
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Confirm PayPal subscription error:', error);
+    res.status(500).json({ error: 'Failed to confirm subscription' });
+  }
+});
+
 // POST /api/paypal/cancel-subscription
 // 取消订阅
 router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Request, res: Response) => {

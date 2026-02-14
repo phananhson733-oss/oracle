@@ -68,9 +68,13 @@ const matchesLocationPart = (candidate: string | undefined, target: string) => {
 };
 
 const resolveSearchLanguage = (query: string, parsed: ParsedLocationQuery, preferred?: 'zh' | 'en') => {
-  if (preferred) return preferred;
+  // Open-Meteo API returns significantly worse results with language=zh for non-CJK queries
+  // e.g. "New York" with zh returns UK's New York instead of US New York (pop 8.8M)
+  // Always use English for non-CJK search terms to get correct geocoding results
   const combined = [query, parsed.admin1, parsed.country, parsed.regionHint].filter(Boolean).join('');
-  return containsCjk(combined) ? 'zh' : 'en';
+  if (!containsCjk(combined)) return 'en';
+  if (preferred) return preferred;
+  return 'zh';
 };
 
 async function fetchWithTimeout(url: string, timeoutMs = GEOCODING_TIMEOUT_MS): Promise<Response> {

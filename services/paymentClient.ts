@@ -1,6 +1,6 @@
 // INPUT: 后端支付 API 客户端。
-// OUTPUT: 导出支付与 GM 测试 API 调用函数（含开发会话）。
-// POS: 前端支付 API 客户端（含 GM 测试指令与开发会话）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// OUTPUT: 导出支付与 GM 测试 API 调用函数（含开发会话与 PayPal 订阅确认）。
+// POS: 前端支付 API 客户端（含 GM 测试指令、开发会话与 PayPal 订阅确认）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { authFetch, setStoredUser, setTokens } from './authClient';
 import type { AuthTokens, AuthUser } from './authClient';
@@ -170,6 +170,21 @@ export async function createPortalSession(returnUrl: string): Promise<{ url: str
   if (!res.ok) {
     const error = await res.json();
     throw new Error(error.error || 'Failed to create portal');
+  }
+
+  return res.json();
+}
+
+export async function confirmPayPalSubscription(subscriptionId: string): Promise<{ success: boolean }> {
+  const res = await authFetch(`${API_BASE}/paypal/confirm-subscription`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ subscriptionId }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({}));
+    throw new Error(error.error || 'Failed to confirm subscription');
   }
 
   return res.json();

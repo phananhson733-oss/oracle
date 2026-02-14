@@ -61,15 +61,15 @@ export interface LanguageContextType {
   tl: (key: string) => string;
 }
 
-export const LanguageContext = createContext<LanguageContextType>({ 
-  language: 'zh', 
-  toggleLanguage: () => {}, 
-  t: TRANSLATIONS['zh'], 
-  tl: (s) => s 
+export const LanguageContext = createContext<LanguageContextType>({
+  language: 'en',
+  toggleLanguage: () => {},
+  t: TRANSLATIONS['en'],
+  tl: (s) => s
 });
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(() => (localStorage.getItem('astro_lang') as Language) || 'zh');
+  const [language, setLanguage] = useState<Language>(() => (localStorage.getItem('astro_lang') as Language) || 'en');
   const toggleLanguage = () => { 
     const newLang = language === 'zh' ? 'en' : 'zh'; 
     setLanguage(newLang); 

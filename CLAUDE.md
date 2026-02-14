@@ -4,15 +4,16 @@
 
 ## 产品定位（最高优先级）
 
-**AstroMind（星智）是一款面向中国大陆年轻人的中西方结合占星应用。**
+**AstroMind 是一款面向欧美用户的现代占星应用。**
 
 所有设计、开发、内容决策都必须以此为最高目标：
 
-1. **目标用户**：中国大陆 18-35 岁年轻人
-2. **语言规范**：界面文案、提示语、按钮文字等一律使用简体中文
-3. **文化融合**：将西方占星学与中国传统文化元素相结合，使内容更贴近本土用户
+1. **目标用户**：欧美地区 18-35 岁年轻人
+2. **语言规范**：主要语言为英文，支持中文作为辅助语言
+3. **文化背景**：基于西方占星学体系，符合欧美用户的文化认知
 4. **内容风格**：现代、年轻化、心理学导向，避免过度玄学化表述
-5. **交互体验**：符合国内用户习惯，参考主流国产 App 的交互模式
+5. **交互体验**：符合欧美用户习惯，参考主流国际化 App 的交互模式
+6. **支付方式**：优先支持 PayPal、信用卡等欧美主流支付方式
 
 <!-- OPENSPEC:START -->
 # OpenSpec 指令
@@ -32,6 +33,76 @@
 保持此管理块，以便 `openspec update` 可刷新指令。
 
 <!-- OPENSPEC:END -->
+
+## 国际化 (i18n) 规范
+
+### 产品语言策略
+
+根据产品定位（欧美 18-35 岁用户），语言优先级为：
+
+1. **主语言**：英文（默认）
+2. **辅助语言**：中文（语言切换选项）
+3. **微信小程序**：中文（中国市场独立版本，不在国际化优先级范围内）
+
+### 前端 Web i18n 实现
+
+**核心文件**：
+- `components/UIComponents.tsx` - LanguageContext 提供器（默认语言：`en`）
+- `constants.ts` - TRANSLATIONS 全局翻译词典
+
+**使用规范**：
+```typescript
+// ✅ 正确：使用 useLanguage hook
+import { useLanguage } from './components/UIComponents';
+const { t, language } = useLanguage();
+
+// 在 JSX 中使用翻译
+<button>{t.subscription?.upgrade || 'Upgrade Now'}</button>
+
+// ❌ 错误：硬编码中英文
+<button>{language === 'zh' ? '升级' : 'Upgrade'}</button>
+<button>升级</button>
+```
+
+**添加新翻译键**：
+1. 在 `constants.ts` 的 `TRANSLATIONS.en` 和 `TRANSLATIONS.zh` 中添加对应键值对
+2. 使用点符号访问嵌套对象（如 `t.paywall?.unlock_action`）
+3. 始终提供英文后备值（`|| 'English Fallback'`）
+
+**翻译键命名规范**：
+- 使用小写下划线命名：`unlock_action`, `subscribe_title`
+- 按功能模块分组：`paywall.*`, `subscription.*`, `gm.*`
+- 避免重复前缀：`paywall.unlock_action` 而非 `paywall.paywall_unlock_action`
+
+### 后端 API i18n（已完成 ✅）
+
+**语言参数支持**：
+所有 API 端点都支持 `lang` 参数（通过 `resolveLang()` 统一处理）：
+```typescript
+// API 请求示例
+GET /api/natal/overview?lang=en
+POST /api/ask { lang: 'zh', question: '...' }
+```
+
+**错误消息规范**：
+- ✅ 所有 API 错误响应都使用英文（符合产品定位）
+- 示例：`{ error: 'Authentication required' }`, `{ error: 'PayPal service unavailable' }`
+- 不需要翻译错误消息，因为目标用户是欧美用户
+
+**Prompts 系统（双语支持）**：
+- `SINGLE_LANGUAGE_INSTRUCTION` - 中文版 AI 指令
+- `SINGLE_LANGUAGE_INSTRUCTION_EN` - 英文版 AI 指令
+- `resolveSynastryLang()` - 合盘模块语言解析
+- `formatSynastryContextBlock()` - 根据语言动态生成上下文
+
+**支持语言参数的 API**：
+- ✅ Natal API (`natal.ts`)
+- ✅ Daily API (`daily.ts`)
+- ✅ Ask API (`ask.ts`)
+- ✅ Synastry API (`synastry.ts`)
+- ✅ Wiki API (`wiki.ts`)
+- ✅ CBT API (`cbt.ts`)
+- ✅ Cycle API (`cycle.ts`)
 
 ## UI 规范入口
 

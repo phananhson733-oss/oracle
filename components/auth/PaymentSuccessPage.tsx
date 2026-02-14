@@ -1,12 +1,13 @@
-// INPUT: React、认证上下文与 UI 组件依赖（含订阅管理跳转与成功态对比度修正）。
-// OUTPUT: 导出支付成功页面组件（含订阅管理入口与统一左侧色带布局）。
+// INPUT: React、认证/权益上下文与 UI 组件依赖（含订阅管理跳转与成功态对比度修正）。
+// OUTPUT: 导出支付成功页面组件（含订阅管理入口、统一左侧色带布局与 PayPal 订阅确认、支付后用户/权益同步与个人信息返回）。
 // POS: 支付成功页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { useEntitlement } from '../../contexts/EntitlementContext';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
-import { createPortalSession } from '../../services/paymentClient';
+import { confirmPayPalSubscription, createPortalSession } from '../../services/paymentClient';
 import { CheckCircle, Crown, Sparkles } from 'lucide-react';
 
 const PaymentSuccessPage: React.FC = () => {
@@ -14,41 +15,113 @@ const PaymentSuccessPage: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { refreshEntitlements, entitlements } = useAuth();
+  const { refreshEntitlements: refreshAuthEntitlements, entitlements: authEntitlements, refreshUser, isAuthenticated } = useAuth();
+  const { refreshEntitlements: refreshV2Entitlements, entitlements: v2Entitlements } = useEntitlement();
   const [portalBusy, setPortalBusy] = useState(false);
   const [portalError, setPortalError] = useState<string | null>(null);
   const [countdown, setCountdown] = useState(3);
+  const [syncState, setSyncState] = useState<'syncing' | 'ready' | 'timeout'>('syncing');
+  const [syncAttempts, setSyncAttempts] = useState(0);
+  const [confirmState, setConfirmState] = useState<'idle' | 'confirming' | 'confirmed' | 'failed'>('idle');
+  const [confirmError, setConfirmError] = useState<string | null>(null);
 
   const isDark = theme === 'dark';
   const sessionId = searchParams.get('session_id');
   const returnTo = searchParams.get('returnTo');
+  const subscriptionId = searchParams.get('subscription_id');
+  const entitlementsRef = useRef(v2Entitlements);
+  const authEntitlementsRef = useRef(authEntitlements);
+  const confirmOnceRef = useRef(false);
 
-  // Refresh entitlements after successful payment
   useEffect(() => {
-    refreshEntitlements();
-  }, [refreshEntitlements]);
+    entitlementsRef.current = v2Entitlements;
+  }, [v2Entitlements]);
+
+  useEffect(() => {
+    authEntitlementsRef.current = authEntitlements;
+  }, [authEntitlements]);
+
+  const resolveReturnTarget = (value: string | null) => {
+    if (!value) return '/settings';
+    try {
+      const decoded = decodeURIComponent(value);
+      if (!decoded || decoded === '/' || decoded.startsWith('/onboarding') || decoded.startsWith('/auth')) {
+        return '/settings';
+      }
+      return decoded;
+    } catch {
+      return '/settings';
+    }
+  };
+
+  const returnTarget = resolveReturnTarget(returnTo);
+  const shouldAutoReturn = syncState !== 'syncing';
+
+  // Refresh entitlements after successful payment (retry to wait for webhook propagation)
+  useEffect(() => {
+    let cancelled = false;
+    const runSync = async () => {
+      const maxAttempts = 6;
+      setSyncState('syncing');
+
+      if (subscriptionId && !confirmOnceRef.current) {
+        confirmOnceRef.current = true;
+        setConfirmState('confirming');
+        setConfirmError(null);
+        try {
+          await confirmPayPalSubscription(subscriptionId);
+          setConfirmState('confirmed');
+        } catch (err) {
+          setConfirmState('failed');
+          setConfirmError(err instanceof Error ? err.message : (language === 'zh' ? '订阅确认失败' : 'Subscription confirmation failed'));
+        }
+      }
+
+      for (let attempt = 1; attempt <= maxAttempts && !cancelled; attempt += 1) {
+        setSyncAttempts(attempt);
+        await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
+
+        await new Promise((resolve) => setTimeout(resolve, 300));
+        const latestEntitlements = entitlementsRef.current;
+        const latestAuthEntitlements = authEntitlementsRef.current;
+        const isSubscriberNow = Boolean(latestEntitlements?.isSubscriber || latestAuthEntitlements?.isSubscriber);
+
+        if (isSubscriberNow || attempt === maxAttempts) {
+          setSyncState(isSubscriberNow ? 'ready' : 'timeout');
+          return;
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 1200));
+      }
+    };
+
+    void runSync();
+    return () => {
+      cancelled = true;
+    };
+  }, [refreshUser, refreshAuthEntitlements, refreshV2Entitlements]);
 
   // Auto-redirect countdown if returnTo is present
   useEffect(() => {
-    if (!returnTo || countdown <= 0) return;
+    if (!shouldAutoReturn || countdown <= 0) return;
 
     const timer = setTimeout(() => {
       setCountdown(countdown - 1);
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [returnTo, countdown]);
+  }, [shouldAutoReturn, countdown]);
 
   // Navigate when countdown reaches 0
   useEffect(() => {
-    if (returnTo && countdown === 0) {
-      navigate(decodeURIComponent(returnTo));
+    if (shouldAutoReturn && countdown === 0) {
+      navigate(returnTarget);
     }
-  }, [returnTo, countdown, navigate]);
+  }, [shouldAutoReturn, countdown, navigate, returnTarget]);
 
   const handleViewSubscription = async () => {
     // PayPal 订阅跳转 PayPal 自动付款管理页
-    const provider = (entitlements as any)?.subscription?.provider;
+    const provider = (v2Entitlements as any)?.subscription?.provider || (authEntitlements as any)?.subscription?.provider;
     if (provider === 'paypal') {
       window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
       return;
@@ -67,6 +140,11 @@ const PaymentSuccessPage: React.FC = () => {
     }
   };
 
+  const handleGoToProfile = async () => {
+    await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
+    navigate(returnTarget);
+  };
+
   const translations = {
     zh: {
       title: '支付成功！',
@@ -79,11 +157,16 @@ const PaymentSuccessPage: React.FC = () => {
         '无限 CBT 日记分析',
         '所有单次购买 7 折优惠',
       ],
-      goToDashboard: '开始探索',
-      returnNow: '立即返回',
-      returning: (seconds: number) => `${seconds} 秒后自动返回...`,
+      goToProfile: '进入个人信息',
+      returning: (seconds: number) => `${seconds} 秒后自动进入个人信息...`,
       viewSubscription: '查看订阅详情',
       portalUnavailable: '暂时无法打开订阅详情。',
+      syncing: (attempt: number) => `正在同步登录与订阅状态（第 ${attempt} 次）...`,
+      syncReady: '登录与订阅状态已更新。',
+      syncTimeout: '订阅状态同步稍有延迟，已刷新数据，可稍后在个人信息页再次确认。',
+      loginMissing: '当前登录状态未确认，请先登录。',
+      confirming: '正在确认 PayPal 订阅...',
+      confirmFailed: 'PayPal 订阅确认失败，请稍后重试或刷新。',
     },
     en: {
       title: 'Payment Successful!',
@@ -96,11 +179,16 @@ const PaymentSuccessPage: React.FC = () => {
         'Unlimited CBT journal analysis',
         '30% off all one-time purchases',
       ],
-      goToDashboard: 'Start Exploring',
-      returnNow: 'Return Now',
-      returning: (seconds: number) => `Returning in ${seconds} seconds...`,
+      goToProfile: 'Go to Profile',
+      returning: (seconds: number) => `Redirecting to profile in ${seconds} seconds...`,
       viewSubscription: 'View Subscription',
       portalUnavailable: 'Unable to open subscription details right now.',
+      syncing: (attempt: number) => `Syncing login and subscription status (attempt ${attempt})...`,
+      syncReady: 'Login and subscription status updated.',
+      syncTimeout: 'Subscription sync is taking longer. Data refreshed; you can recheck in your profile.',
+      loginMissing: 'Login status not confirmed. Please sign in.',
+      confirming: 'Confirming PayPal subscription...',
+      confirmFailed: 'PayPal confirmation failed. Please refresh and try again.',
     },
   };
 
@@ -151,50 +239,62 @@ const PaymentSuccessPage: React.FC = () => {
           </ul>
         </Card>
 
+        {/* Sync status */}
+        <div className="mb-6">
+          {confirmState === 'confirming' && (
+            <p className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
+              {tr.confirming}
+            </p>
+          )}
+          {confirmState === 'failed' && (
+            <p className={`text-sm ${isDark ? 'text-amber-300' : 'text-amber-700'}`}>
+              {confirmError || tr.confirmFailed}
+            </p>
+          )}
+          {syncState === 'syncing' && (
+            <p className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
+              {tr.syncing(syncAttempts || 1)}
+            </p>
+          )}
+          {syncState === 'ready' && (
+            <p className={`text-sm ${isDark ? 'text-emerald-300' : 'text-emerald-700'}`}>
+              {tr.syncReady}
+            </p>
+          )}
+          {syncState === 'timeout' && (
+            <p className={`text-sm ${isDark ? 'text-amber-300' : 'text-amber-700'}`}>
+              {tr.syncTimeout}
+            </p>
+          )}
+          {!isAuthenticated && (
+            <p className={`text-xs mt-2 ${isDark ? 'text-red-300' : 'text-red-600'}`}>
+              {tr.loginMissing}
+            </p>
+          )}
+        </div>
+
         {/* Actions */}
         <div className="space-y-3">
-          {returnTo ? (
-            <>
-              {/* Show countdown and return button if returnTo is present */}
-              <ActionButton
-                variant="primary"
-                onClick={() => navigate(decodeURIComponent(returnTo))}
-                className="w-full"
-              >
-                {tr.returnNow}
-              </ActionButton>
-              <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
-                {tr.returning(countdown)}
-              </p>
-              <ActionButton
-                variant="secondary"
-                onClick={handleViewSubscription}
-                disabled={portalBusy}
-                className="w-full"
-              >
-                {tr.viewSubscription}
-              </ActionButton>
-            </>
-          ) : (
-            <>
-              {/* Default actions if no returnTo */}
-              <ActionButton
-                variant="primary"
-                onClick={() => navigate('/dashboard')}
-                className="w-full"
-              >
-                {tr.goToDashboard}
-              </ActionButton>
-              <ActionButton
-                variant="secondary"
-                onClick={handleViewSubscription}
-                disabled={portalBusy}
-                className="w-full"
-              >
-                {tr.viewSubscription}
-              </ActionButton>
-            </>
+          <ActionButton
+            variant="primary"
+            onClick={handleGoToProfile}
+            className="w-full"
+          >
+            {tr.goToProfile}
+          </ActionButton>
+          {shouldAutoReturn && (
+            <p className={`text-sm ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+              {tr.returning(countdown)}
+            </p>
           )}
+          <ActionButton
+            variant="secondary"
+            onClick={handleViewSubscription}
+            disabled={portalBusy}
+            className="w-full"
+          >
+            {tr.viewSubscription}
+          </ActionButton>
         </div>
 
         {portalError && (
