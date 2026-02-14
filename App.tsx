@@ -14,7 +14,7 @@ import { OracleLoading } from './components/OracleLoading';
 import * as Astro from './services/astroService';
 import { generateContent } from './services/geminiService';
 import { fetchAskAnswer, fetchDailyDetail, fetchDailyForecast, fetchSectionDetail, fetchSynastry, fetchSynastryOverviewSection, fetchSynastrySuggestions, fetchSynastryTechnical } from './services/apiClient';
-import { searchCities as searchCitiesLocal, formatCityDisplay, getCityCoordinates } from './utils/city-search';
+import { searchCities as searchCitiesLocal, formatCityDisplay, getCityCoordinates, type City } from './utils/city-search';
 import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription, createPortalSession } from './services/paymentClient';
 import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
 import { trackEvent, trackPageView } from './services/analytics';
@@ -155,115 +155,9 @@ const formatTimezoneOffset = (timeZone?: string) => {
   }
 };
 
-type GeoSuggestion = {
-  city: string;
-  country: string;
-  lat: number;
-  lon: number;
-  timezone: string;
-  admin1?: string;
-};
-
 const CJK_REGEX = /[\u4e00-\u9fff]/;
 const containsCjk = (value: string) => CJK_REGEX.test(value);
 const getLocationQueryMinLength = (value: string) => (containsCjk(value) ? 1 : 2);
-
-// Admin1 code to name mapping (for legacy data with numeric codes)
-const CN_ADMIN1_NAMES: Record<string, { en: string; zh: string }> = {
-  '01': { en: 'Anhui', zh: '安徽' },
-  '02': { en: 'Zhejiang', zh: '浙江' },
-  '03': { en: 'Jiangxi', zh: '江西' },
-  '04': { en: 'Jiangsu', zh: '江苏' },
-  '05': { en: 'Jilin', zh: '吉林' },
-  '06': { en: 'Qinghai', zh: '青海' },
-  '07': { en: 'Fujian', zh: '福建' },
-  '08': { en: 'Heilongjiang', zh: '黑龙江' },
-  '09': { en: 'Henan', zh: '河南' },
-  '10': { en: 'Hebei', zh: '河北' },
-  '11': { en: 'Hunan', zh: '湖南' },
-  '12': { en: 'Hubei', zh: '湖北' },
-  '13': { en: 'Xinjiang', zh: '新疆' },
-  '14': { en: 'Tibet', zh: '西藏' },
-  '15': { en: 'Gansu', zh: '甘肃' },
-  '16': { en: 'Guangxi', zh: '广西' },
-  '18': { en: 'Guizhou', zh: '贵州' },
-  '19': { en: 'Liaoning', zh: '辽宁' },
-  '20': { en: 'Inner Mongolia', zh: '内蒙古' },
-  '21': { en: 'Ningxia', zh: '宁夏' },
-  '22': { en: 'Beijing', zh: '北京' },
-  '23': { en: 'Shanghai', zh: '上海' },
-  '24': { en: 'Shanxi', zh: '山西' },
-  '25': { en: 'Shandong', zh: '山东' },
-  '26': { en: 'Shaanxi', zh: '陕西' },
-  '28': { en: 'Tianjin', zh: '天津' },
-  '29': { en: 'Yunnan', zh: '云南' },
-  '30': { en: 'Guangdong', zh: '广东' },
-  '31': { en: 'Hainan', zh: '海南' },
-  '32': { en: 'Sichuan', zh: '四川' },
-  '33': { en: 'Chongqing', zh: '重庆' },
-};
-
-const normalizeCountryValue = (country?: string) => (country || '').trim().toLowerCase();
-const isChinaCountry = (country?: string) => {
-  if (!country) return false;
-  const normalized = normalizeCountryValue(country);
-  if (normalized === 'china' || normalized === 'cn' || normalized === "people's republic of china" || normalized === 'prc') return true;
-  return country.trim() === '中国' || country.trim() === '中华人民共和国';
-};
-const isTaiwanCountry = (country?: string) => {
-  if (!country) return false;
-  const normalized = normalizeCountryValue(country);
-  if (normalized === 'taiwan' || normalized === 'taiwan, province of china' || normalized === 'republic of china' || normalized === 'roc') return true;
-  return country.trim() === '台湾' || country.trim() === '中国台湾' || country.trim() === '台湾地区';
-};
-const formatTaiwanRegionLabel = (language: T.Language) => (language === 'zh' ? '中国台湾' : 'Taiwan, China');
-
-// Resolve admin1 code to human-readable name
-const resolveAdmin1Label = (admin1: string | undefined, country: string | undefined, language: T.Language): string | undefined => {
-  if (!admin1) return undefined;
-  const trimmed = admin1.trim();
-  if (!trimmed) return undefined;
-  // Taiwan: hide admin1 (will be handled separately)
-  if (isTaiwanCountry(country)) return undefined;
-  // China: convert numeric code to province name
-  if (isChinaCountry(country) && /^\d+$/.test(trimmed)) {
-    const normalizedCode = trimmed.padStart(2, '0');
-    const mapped = CN_ADMIN1_NAMES[normalizedCode];
-    if (mapped) return language === 'zh' ? mapped.zh : mapped.en;
-    return undefined; // Unknown code, hide it
-  }
-  // For other countries, return as-is (Open-Meteo returns text names)
-  return trimmed;
-};
-
-const uniqueLocationParts = (parts: Array<string | undefined>) => {
-  const seen = new Set<string>();
-  return parts.filter((part) => {
-    if (!part) return false;
-    const key = part.toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  }) as string[];
-};
-const normalizeCountryName = (country: string | undefined, language: T.Language): string | undefined => {
-  if (!country) return undefined;
-  const trimmed = country.trim();
-
-  // Handle China
-  if (isChinaCountry(country)) {
-    return language === 'zh' ? '中国' : 'China';
-  }
-
-  // Handle Taiwan
-  if (isTaiwanCountry(country)) {
-    return undefined; // Will be handled by formatTaiwanRegionLabel
-  }
-
-  // For other countries, return as-is
-  return trimmed;
-};
-
 
 const buildBirthCacheKey = (profile: Pick<T.UserProfile, 'birthDate' | 'birthTime' | 'birthCity' | 'lat' | 'lon' | 'timezone' | 'accuracyLevel'>) => [
   profile.birthDate,
@@ -929,7 +823,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
   const [step, setStep] = useState(1);
   const [data, setData] = useState<Partial<T.UserProfile>>({ accuracyLevel: 'exact', focusTags: [], timezone: '' });
   const [cityQuery, setCityQuery] = useState('');
-  const [citySuggestions, setCitySuggestions] = useState<GeoSuggestion[]>([]);
+  const [citySuggestions, setCitySuggestions] = useState<City[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
@@ -2768,11 +2662,11 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       currentLocation: '',
     });
     const [cityQuery, setCityQuery] = useState('');
-    const [citySuggestions, setCitySuggestions] = useState<GeoSuggestion[]>([]);
+    const [citySuggestions, setCitySuggestions] = useState<City[]>([]);
     const [showCitySuggestions, setShowCitySuggestions] = useState(false);
     const [isSearchingCity, setIsSearchingCity] = useState(false);
     const [currentLocationQuery, setCurrentLocationQuery] = useState('');
-    const [currentLocationSuggestions, setCurrentLocationSuggestions] = useState<GeoSuggestion[]>([]);
+    const [currentLocationSuggestions, setCurrentLocationSuggestions] = useState<City[]>([]);
     const [showCurrentLocationSuggestions, setShowCurrentLocationSuggestions] = useState(false);
     const [isSearchingCurrentLocation, setIsSearchingCurrentLocation] = useState(false);
 

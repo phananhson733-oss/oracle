@@ -3,9 +3,13 @@
  * 支持中英文、拼音、拼音首字母搜索
  */
 
-import { cities, City } from '../data/cities';
+import { cities, type City } from '../data/cities';
+export type { City } from '../data/cities';
 
 type Language = 'zh' | 'en';
+
+// 英文显示时省略国家名的国家列表（目标用户已默认了解这些国家）
+const OMIT_COUNTRY_EN = new Set(['United States']);
 
 interface CityWithScore extends City {
   score: number;
@@ -157,7 +161,7 @@ export function formatCityDisplay(city: City, language: Language = 'en'): string
     if (city.province && city.province !== city.enName && city.province !== city.name) {
       parts.push(city.province);
     }
-    if (city.country && city.country !== 'United States') { // 美国城市省略国家名
+    if (city.country && !OMIT_COUNTRY_EN.has(city.country)) {
       parts.push(city.country);
     }
     return parts.join(', ');
@@ -171,17 +175,16 @@ export function formatCityDisplay(city: City, language: Language = 'en'): string
  */
 export function getCityCoordinates(city: City): { lat: number; lon: number; timezone: string } {
   if (!city) {
-    return { lat: 40.7128, lon: -74.0060, timezone: '-5' }; // 默认纽约
+    return { lat: 40.7128, lon: -74.0060, timezone: 'America/New_York' };
   }
 
-  // 简单时区计算：基于经度
-  // 东经每15度为1个时区
-  let timezone = Math.round(city.lon / 15);
+  // 优先使用 IANA timezone，回退到基于经度的粗略计算
+  const timezone = city.timezone || String(Math.round(city.lon / 15));
 
   return {
     lat: city.lat,
     lon: city.lon,
-    timezone: timezone.toString()
+    timezone,
   };
 }
 
