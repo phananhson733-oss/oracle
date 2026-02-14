@@ -11,6 +11,8 @@ import WikiIndexPage from './WikiIndexPage';
 import WikiClassicsPage from './WikiClassicsPage';
 import WikiSyntheticaPage from './WikiSyntheticaPage';
 import WikiArticlesPage from './WikiArticlesPage';
+import { useAuth } from '../../contexts/AuthContext';
+import { LOGIN_GATE_MODE } from '../../constants';
 
 // Visible tabs shown in the tab bar
 const TAB_VALUES = ['home', 'library', 'classics', 'tools'] as const;
@@ -31,6 +33,7 @@ const WikiHubPage: React.FC = () => {
   const { t, language } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
+  const { isAuthenticated, openLoginModal } = useAuth();
 
   const activeTab = useMemo(() => resolveTab(location.search), [location.search]);
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
@@ -46,6 +49,11 @@ const WikiHubPage: React.FC = () => {
   const hubDescription = t.wiki.subtitle || t.wiki.hero_subtitle;
 
   const handleTabChange = (tab: WikiTab) => {
+    // LOGIN_GATE_MODE: Tools tab 需要登录
+    if (LOGIN_GATE_MODE && tab === 'tools' && !isAuthenticated) {
+      openLoginModal(t.login_gate?.unlock_wiki_tools || 'Sign in to use astrology tools');
+      return;
+    }
     const params = new URLSearchParams(location.search);
     params.set('tab', tab);
     if (tab !== 'library') params.delete('section');
@@ -80,7 +88,7 @@ const WikiHubPage: React.FC = () => {
           </div>
         )}
 
-        {activeTab === 'home' ? <WikiHomePage /> : activeTab === 'library' ? <WikiIndexPage /> : activeTab === 'classics' ? <WikiClassicsPage /> : activeTab === 'tools' ? <WikiSyntheticaPage /> : <WikiArticlesPage />}
+        {activeTab === 'home' ? <WikiHomePage /> : activeTab === 'library' ? <WikiIndexPage /> : activeTab === 'classics' ? <WikiClassicsPage /> : activeTab === 'tools' ? (LOGIN_GATE_MODE && !isAuthenticated ? <WikiHomePage /> : <WikiSyntheticaPage />) : <WikiArticlesPage />}
       </div>
     </Container>
   );

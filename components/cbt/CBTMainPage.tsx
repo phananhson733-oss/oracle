@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { CBTRecord, MoodImages } from './types';
 import { UserProfile } from '../../types';
+import { LOGIN_GATE_MODE } from '../../constants';
 import TimelineFeed from './TimelineFeed';
 import CalendarStats from './CalendarStats';
 import CBTWizard from './CBTWizard';
@@ -75,7 +76,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
   });
   const statsFeatureId = `${analysisMonth.year}-${String(analysisMonth.month + 1).padStart(2, '0')}`;
   const { checkAccess: checkStatsAccess } = useFeatureAccess('cbt_stats', statsFeatureId);
-  const { openUpgradeModal } = useAuth();
+  const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
 
   // Generate user ID from profile
   const userId = `${profile?.name || 'user'}_${profile?.birthDate || 'unknown'}`;
@@ -186,14 +187,18 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
     setAnalysisMonth({ year, month });
   }, []);
   const handleOpenAnalysis = React.useCallback(async (view: 'card1' | 'card2' | 'card3' | 'card4') => {
+    // LOGIN_GATE_MODE: 未登录时弹出登录提醒
+    if (LOGIN_GATE_MODE && !isAuthenticated) {
+      openLoginModal(t.login_gate?.unlock_cbt_stats || 'Sign in to view your mood insights');
+      return;
+    }
     const access = await checkStatsAccess();
     if (access.canAccess) {
       setActiveAnalysisView(view);
     } else if (access.needPurchase) {
-      // 使用统一的订阅弹窗
       openUpgradeModal('解锁 CBT 统计分析');
     }
-  }, [checkStatsAccess, openUpgradeModal]);
+  }, [checkStatsAccess, openUpgradeModal, isAuthenticated, openLoginModal, t]);
 
   const startNewEntry = (date?: Date) => {
     const targetDateValue = date || new Date();

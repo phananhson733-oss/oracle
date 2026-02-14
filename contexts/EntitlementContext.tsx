@@ -23,7 +23,7 @@ import {
 } from '../services/entitlementClientV2';
 import { useAuth } from './AuthContext';
 import { setUserProperties, trackEvent } from '../services/analytics';
-import { FREE_MODE } from '../constants';
+import { FREE_MODE, LOGIN_GATE_MODE, LOGIN_REQUIRED_FEATURES } from '../constants';
 
 // =====================================================
 // 类型定义
@@ -113,16 +113,27 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 功能访问检查（异步，精确）
   const checkAccess = useCallback(async (featureType: FeatureType, featureId?: string): Promise<AccessCheckResult> => {
+    // LOGIN_GATE_MODE: 已登录用户全部放行，未登录根据配置限制
+    if (LOGIN_GATE_MODE) {
+      if (isAuthenticated) return { canAccess: true };
+      const isGated = LOGIN_REQUIRED_FEATURES[featureType];
+      return { canAccess: !isGated };
+    }
     if (FREE_MODE) return { canAccess: true };
     try {
       return await checkAccessV2(featureType, featureId);
     } catch {
       return { canAccess: false };
     }
-  }, []);
+  }, [isAuthenticated]);
 
   // 功能访问检查（同步，基于缓存）
   const canAccessFeature = useCallback((featureType: FeatureType, featureId?: string): boolean => {
+    // LOGIN_GATE_MODE: 已登录用户全部放行，未登录根据配置限制
+    if (LOGIN_GATE_MODE) {
+      if (isAuthenticated) return true;
+      return !LOGIN_REQUIRED_FEATURES[featureType];
+    }
     if (FREE_MODE) return true;
     if (!entitlements) return false;
 
@@ -200,6 +211,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 消耗权益
   const consumeFeature = useCallback(async (featureType: FeatureType, featureId?: string): Promise<boolean> => {
+    if (LOGIN_GATE_MODE) return true;
     if (FREE_MODE) return true;
     try {
       const result = await consumeFeatureV2(featureType, featureId);
@@ -327,12 +339,11 @@ export function useAskQuota() {
   const resetAt = entitlements?.ask.resetAt ?? '';
 
   const consume = useCallback(async () => {
-    if (FREE_MODE) return true;
+    if (LOGIN_GATE_MODE || FREE_MODE) return true;
     const success = await consumeFeature('ask');
     if (!success) {
       const access = await checkAccess('ask');
       if (access.needPurchase) {
-        // 使用统一的订阅弹窗
         openUpgradeModal('解锁 Ask 问答');
       }
     }
@@ -361,12 +372,11 @@ export function useSyntheticaQuota() {
   const resetAt = entitlements?.synthetica.resetAt ?? '';
 
   const consume = useCallback(async () => {
-    if (FREE_MODE) return true;
+    if (LOGIN_GATE_MODE || FREE_MODE) return true;
     const success = await consumeFeature('synthetica');
     if (!success) {
       const access = await checkAccess('synthetica');
       if (access.needPurchase) {
-        // 使用统一的订阅弹窗
         openUpgradeModal('解锁 Synthetica 洞察');
       }
     }
@@ -405,8 +415,8 @@ export function useSynastryQuota() {
       return { hash: result.hash, isNew: false };
     }
 
-    if (FREE_MODE) {
-      // FREE_MODE: 跳过付费检查，传 isFree=false 避免后端尝试扣减配额
+    if (LOGIN_GATE_MODE || FREE_MODE) {
+      // LOGIN_GATE_MODE/FREE_MODE: 跳过付费检查
       const hash = await recordSynastry(personA, personB, relationshipType, false);
       return { hash, isNew: true };
     }

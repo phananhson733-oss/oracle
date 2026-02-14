@@ -3,12 +3,13 @@
 // POS: 前端付费墙组件（含纸感映射与积分解锁）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
-import { Lock, Sparkles, Crown } from 'lucide-react';
+import { Lock, Sparkles, Crown, LogIn } from 'lucide-react';
 import { useFeatureAccess, useEntitlement } from '../contexts/EntitlementContext';
 import { FeatureType, purchaseWithCreditsV2 } from '../services/entitlementClientV2';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage, useTheme } from './UIComponents';
 import { trackEvent } from '../services/analytics';
+import { LOGIN_GATE_MODE } from '../constants';
 
 
 // =====================================================
@@ -154,7 +155,37 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
     );
   }
 
-  // 未解锁状态：显示解锁选项
+  // 未解锁状态
+  // LOGIN_GATE_MODE 下未登录：显示登录按钮
+  if (LOGIN_GATE_MODE && !isAuthenticated) {
+    const loginReason = t.login_gate?.unlock_generic || 'Sign in to unlock this feature';
+    return (
+      <div className={`rounded-xl overflow-hidden mb-3 border ${dividerTone} ${accordionSurface}`}>
+        <div className="w-full px-4 py-3">
+          <div className="flex justify-between items-center">
+            <div className="flex-1">
+              <h3 className={`text-sm font-medium ${s.heading}`}>{title}</h3>
+              {subtitle && <p className={`text-xs mt-0.5 ${s.muted}`}>{subtitle}</p>}
+            </div>
+            <button
+              onClick={() => {
+                trackEvent('login_gate_triggered', { feature_type: featureType, trigger_context: 'accordion' });
+                openLoginModal(loginReason);
+              }}
+              className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${isDark ? 'border-gold-500/30 text-gold-400 hover:text-gold-300 hover:border-gold-500/50' : 'border-gold-500/40 text-gold-600 hover:text-gold-700 hover:border-gold-600/60'} hover:bg-gold-500/10`}
+            >
+              <span className="flex items-center gap-1.5">
+                <LogIn className="w-3 h-3" />
+                {t.login_gate?.sign_in_button || 'Sign In'}
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // 原有付费模式：显示解锁选项
   return (
     <div className={`rounded-xl overflow-hidden mb-3 border ${dividerTone} ${accordionSurface}`}>
       <div className="w-full px-4 py-3">
@@ -254,6 +285,38 @@ export const LockedContent: React.FC<LockedContentProps> = ({
     return <>{children}</>;
   }
 
+  // LOGIN_GATE_MODE 下未登录：显示简洁的登录提示
+  if (LOGIN_GATE_MODE && !isAuthenticated) {
+    const loginReason = t.login_gate?.unlock_generic || 'Sign in to unlock this feature';
+    return (
+      <div className={`relative ${className}`}>
+        <div className={`absolute inset-0 ${s.card} border ${s.border} rounded-lg flex flex-col items-center justify-center z-10 p-4`}>
+          <LogIn className="w-6 h-6 text-gold-500 mb-2" />
+          <span className={`font-medium text-center px-4 text-sm ${s.heading}`}>{title}</span>
+          {description && (
+            <span className={`text-xs mt-1 text-center px-4 ${s.muted}`}>{description}</span>
+          )}
+          <button
+            onClick={() => {
+              trackEvent('login_gate_triggered', { feature_type: featureType, trigger_context: 'locked_content' });
+              openLoginModal(loginReason);
+            }}
+            className={`mt-4 px-4 py-2 text-xs font-bold uppercase tracking-widest border rounded transition-colors ${s.accentBorder} text-gold-500 hover:bg-gold-500/10`}
+          >
+            <div className="flex items-center justify-center gap-2">
+              <LogIn className="w-4 h-4" />
+              <span>{t.login_gate?.sign_in_button || 'Sign In'}</span>
+            </div>
+          </button>
+        </div>
+        <div className="opacity-0 pointer-events-none select-none">
+          {blurContent || children || <div className="h-32" />}
+        </div>
+      </div>
+    );
+  }
+
+  // 原有付费模式
   const handleSubscribe = () => {
     if (!isAuthenticated) {
       openLoginModal(t.paywall?.login_generic || 'Please sign in');
@@ -291,7 +354,6 @@ export const LockedContent: React.FC<LockedContentProps> = ({
 
   return (
     <div className={`relative ${className}`}>
-      {/* 遮罩层 - 使用主题适配的颜色 */}
       <div className={`absolute inset-0 ${s.card} border ${s.border} rounded-lg flex flex-col items-center justify-center z-10 p-4`}>
         <Lock className="w-6 h-6 text-gold-500 mb-2" />
         <span className={`font-medium text-center px-4 text-sm ${s.heading}`}>{title}</span>
@@ -299,9 +361,7 @@ export const LockedContent: React.FC<LockedContentProps> = ({
           <span className={`text-xs mt-1 text-center px-4 ${s.muted}`}>{description}</span>
         )}
 
-        {/* 解锁选项 */}
         <div className="mt-4 flex flex-col gap-2 w-full max-w-xs">
-          {/* 订阅解锁 */}
           <button
             onClick={handleSubscribe}
             disabled={isPurchasing}
@@ -313,7 +373,6 @@ export const LockedContent: React.FC<LockedContentProps> = ({
             </div>
           </button>
 
-          {/* 积分解锁 */}
           <button
             onClick={handleCreditsUnlock}
             disabled={isPurchasing}
@@ -338,11 +397,8 @@ export const LockedContent: React.FC<LockedContentProps> = ({
         </div>
       </div>
 
-      {/* 占位内容 */}
       <div className="opacity-0 pointer-events-none select-none">
-        {blurContent || children || (
-          <div className="h-32" />
-        )}
+        {blurContent || children || <div className="h-32" />}
       </div>
     </div>
   );

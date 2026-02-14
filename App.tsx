@@ -6,9 +6,9 @@
 import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
 import { HashRouter, Routes, Route, useNavigate, useLocation, Link, Navigate } from 'react-router-dom';
 import { Container, Card, Section, ActionButton, GlassInput, Chip, ScoreBar, Accordion, TimelineCard, CopyButton, useTheme, ThemeProvider, Modal, DetailModal, SectionHeader, LanguageProvider, useLanguage, translateAstroTerm } from './components/UIComponents';
-import { ArrowLeft, X } from 'lucide-react';
+import { ArrowLeft, X, Lock } from 'lucide-react';
 import * as T from './types';
-import { FOCUS_TAGS, PRESET_QUESTIONS, DIMENSIONS, RELATIONSHIP_TYPES, ASTRO_DICTIONARY, TRANSLATIONS, SYNASTRY_PROFILE_STORAGE_KEY, NATAL_CONFIG, SYNASTRY_CONFIG, COMPOSITE_CONFIG, FREE_MODE } from './constants';
+import { FOCUS_TAGS, PRESET_QUESTIONS, DIMENSIONS, RELATIONSHIP_TYPES, ASTRO_DICTIONARY, TRANSLATIONS, SYNASTRY_PROFILE_STORAGE_KEY, NATAL_CONFIG, SYNASTRY_CONFIG, COMPOSITE_CONFIG, FREE_MODE, LOGIN_GATE_MODE } from './constants';
 import { AstroChart } from './components/AstroChart';
 import { OracleLoading } from './components/OracleLoading';
 import * as Astro from './services/astroService';
@@ -537,7 +537,7 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({ profile }) =>
 const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { language, t, tl } = useLanguage();
     const { checkAccess, entitlements, refreshEntitlements } = useEntitlement();
-    const { openUpgradeModal } = useAuth();
+    const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
     const [extendedData, setExtendedData] = useState<T.ExtendedNatalData | null>(null);
     const [loadingExtended, setLoadingExtended] = useState(true);
     const pendingRequests = useRef(new Set<string>());
@@ -546,6 +546,11 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const requestDetailAccess = async (featureType: FeatureType, featureId: string) => {
       const access = await checkAccess(featureType, featureId);
       if (access.canAccess) {
+        return access;
+      }
+      // LOGIN_GATE_MODE: 未登录弹出登录提醒
+      if (LOGIN_GATE_MODE && !isAuthenticated) {
+        openLoginModal(t.login_gate?.unlock_generic || 'Sign in to unlock this feature');
         return access;
       }
       if (access.needPurchase && access.price && (entitlements?.credits ?? 0) >= access.price) {
@@ -560,7 +565,6 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         }
       }
       if (access.needPurchase) {
-        // 使用统一的订阅弹窗
         openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
       }
       return access;
@@ -1122,7 +1126,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language, tl } = useLanguage();
     const { theme } = useTheme();
     const { checkAccess, entitlements, refreshEntitlements } = useEntitlement();
-    const { openUpgradeModal } = useAuth();
+    const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
     
     // Calculate current period based on user timezone
     const currentPeriod = useMemo(() => {
@@ -1160,6 +1164,10 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       if (access.canAccess) {
         return access;
       }
+      if (LOGIN_GATE_MODE && !isAuthenticated) {
+        openLoginModal(t.login_gate?.unlock_daily_script || 'Sign in to read your daily script');
+        return access;
+      }
       if (access.needPurchase && access.price && (entitlements?.credits ?? 0) >= access.price) {
         try {
           const result = await purchaseWithCreditsV2(featureType, featureId);
@@ -1172,7 +1180,6 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         }
       }
       if (access.needPurchase) {
-        // 使用统一的订阅弹窗
         openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
       }
       return access;
@@ -2536,7 +2543,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { theme } = useTheme();
     const { checkAndRecord: checkSynastryQuota, totalLeft: synastryQuotaLeft } = useSynastryQuota();
     const { checkAccess, entitlements, refreshEntitlements, checkSynastry, recordSynastry } = useEntitlement();
-    const { openUpgradeModal } = useAuth();
+    const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
     const [view, setView] = useState<'select' | 'report'>('select');
     const [segments, setSegments] = useState<Partial<SynastryTabContentMap>>({});
     const [reportMeta, setReportMeta] = useState<T.AIContentMeta | null>(null);
@@ -2569,6 +2576,11 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const requestDetailAccess = async (featureType: FeatureType, featureId: string) => {
       const access = await checkAccess(featureType, featureId);
       if (access.canAccess) {
+        return access;
+      }
+      // LOGIN_GATE_MODE: 未登录时弹出登录提醒
+      if (LOGIN_GATE_MODE && !isAuthenticated) {
+        openLoginModal(t.login_gate?.unlock_synastry || 'Sign in to explore relationship compatibility');
         return access;
       }
       if (access.needPurchase && access.price && (entitlements?.credits ?? 0) >= access.price) {
@@ -3587,6 +3599,30 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       }
       return null;
     };
+
+    // LOGIN_GATE_MODE: 未登录用户显示登录提示
+    if (LOGIN_GATE_MODE && !isAuthenticated) {
+      return (
+        <Container>
+          <Section>
+            <Card className="text-center py-12">
+              <div className="flex flex-col items-center gap-4">
+                <Lock className="w-8 h-8 text-gold-500" />
+                <h2 className={`text-lg font-medium ${theme === 'dark' ? 'text-star-50' : 'text-paper-900'}`}>
+                  {t.login_gate?.unlock_synastry || 'Sign in to explore relationship compatibility'}
+                </h2>
+                <p className={`text-sm ${theme === 'dark' ? 'text-star-400' : 'text-paper-500'}`}>
+                  {t.login_gate?.reminder_desc || 'Sign in to unlock this feature'}
+                </p>
+                <ActionButton onClick={() => openLoginModal(t.login_gate?.unlock_synastry || 'Sign in to explore relationship compatibility')}>
+                  {t.login_gate?.sign_in_button || 'Sign In'}
+                </ActionButton>
+              </div>
+            </Card>
+          </Section>
+        </Container>
+      );
+    }
 
     if (view === 'select') {
       const topOptions = suggestions.length > 0
@@ -5474,7 +5510,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { theme } = useTheme();
     const { totalLeft: askQuotaLeft } = useAskQuota();
     const { checkAccess, refreshEntitlements } = useEntitlement();
-    const { openUpgradeModal } = useAuth();
+    const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState<T.AskAnswerContent | null>(null);
     const [answerMeta, setAnswerMeta] = useState<T.AIContentMeta | null>(null);
@@ -5554,8 +5590,9 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         const dedupeKey = `${trimmed}_${activeCategory}_${language}_${profile.birthDate || 'anon'}`;
         const access = await checkAccess('ask');
         if (!access.canAccess) {
-            if (access.needPurchase) {
-                // 使用统一的订阅弹窗
+            if (LOGIN_GATE_MODE && !isAuthenticated) {
+                openLoginModal(t.login_gate?.unlock_ask || 'Sign in to ask the Oracle');
+            } else if (access.needPurchase) {
                 openUpgradeModal(t.paywall?.unlock_ask || 'Unlock Ask Q&A');
             }
             return;
@@ -6388,7 +6425,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                         {t.subscription?.manage || 'Manage Subscription'}
                                     </button>
                                 </div>
-                            ) : !FREE_MODE ? (
+                            ) : (!FREE_MODE && !LOGIN_GATE_MODE) ? (
                                 <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
                                     {t.paywall?.unlock_unlimited_access || 'Unlock Unlimited'}
                                 </ActionButton>
@@ -6397,7 +6434,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                     </div>
 
                     {/* Credits Section */}
-                    {!FREE_MODE && <div className={`py-4 my-4 border-y ${theme === 'dark' ? 'border-space-700' : 'border-paper-200'}`}>
+                    {!FREE_MODE && !LOGIN_GATE_MODE && <div className={`py-4 my-4 border-y ${theme === 'dark' ? 'border-space-700' : 'border-paper-200'}`}>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <span className="text-gold-500 text-xl">✦</span>
@@ -6467,7 +6504,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                 </Card>
             </Section>
 
-            {!FREE_MODE && isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
+            {!FREE_MODE && !LOGIN_GATE_MODE && isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
                 <Section title={t.settings.trial_title}>
                     <Card className={`mb-4 border-l-4 border-l-amber-500 ${theme === 'dark' ? 'bg-amber-500/5' : 'bg-amber-50'}`}>
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -6715,7 +6752,7 @@ const CreditsUsagePage: React.FC = () => {
                         <p className="text-sm opacity-70">{tr.subtitle}</p>
                     </div>
                 </div>
-                {!FREE_MODE && !isSubscriber && (
+                {!FREE_MODE && !LOGIN_GATE_MODE && !isSubscriber && (
                     <ActionButton variant="outline" onClick={() => openUpgradeModal()}>
                         {tr.upgrade}
                     </ActionButton>
@@ -6738,7 +6775,7 @@ const CreditsUsagePage: React.FC = () => {
                         {tr.bonus}：500
                     </div>
                     {/* 充值和升级按钮 */}
-                    {!FREE_MODE && <div className="mt-4 flex gap-2">
+                    {!FREE_MODE && !LOGIN_GATE_MODE && <div className="mt-4 flex gap-2">
                         <ActionButton
                             size="sm"
                             onClick={() => openCreditsModal()}
@@ -7339,8 +7376,8 @@ const AppContent: React.FC = () => {
                         <Route path="/auth" element={<AuthPage />} />
                         <Route path="/reports" element={<ReportsPage />} />
                         <Route path="/reports/:reportId" element={<ReportViewPage />} />
-                        <Route path="/payment/success" element={<PaymentSuccessPage />} />
-                        <Route path="/payment/credits-success" element={<CreditsSuccessPage />} />
+                        <Route path="/payment/success" element={LOGIN_GATE_MODE ? <Navigate to="/" /> : <PaymentSuccessPage />} />
+                        <Route path="/payment/credits-success" element={LOGIN_GATE_MODE ? <Navigate to="/" /> : <CreditsSuccessPage />} />
                         <Route path="/color-demo" element={<ColorSystemDemo />} />
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
@@ -7398,8 +7435,8 @@ const AppContent: React.FC = () => {
             <ConsentBanner />
             {/* Auth Modals */}
             <LoginModal />
-            {!FREE_MODE && <UpgradeModal />}
-            {!FREE_MODE && <CreditsModalWrapper />}
+            {!FREE_MODE && !LOGIN_GATE_MODE && <UpgradeModal />}
+            {!FREE_MODE && !LOGIN_GATE_MODE && <CreditsModalWrapper />}
         </>
     );
 }

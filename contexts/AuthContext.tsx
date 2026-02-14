@@ -19,7 +19,7 @@ import {
   getAccessToken,
 } from '../services/authClient';
 import { setUserId, setUserProperties, trackEvent } from '../services/analytics';
-import { FREE_MODE } from '../constants';
+import { FREE_MODE, LOGIN_GATE_MODE } from '../constants';
 import type { EntitlementsV2 } from '../services/entitlementClientV2';
 import { cacheEntitlements, clearEntitlementsCache, getCachedEntitlements, getEntitlementsV2 } from '../services/entitlementClientV2';
 
@@ -230,13 +230,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const openUpgradeModal = (reason?: string) => {
-    if (FREE_MODE) return;
+    if (FREE_MODE || LOGIN_GATE_MODE) return;
     setUpgradeModalReason(reason);
     setShowUpgradeModal(true);
   };
 
   const openCreditsModal = () => {
-    if (FREE_MODE) return;
+    if (FREE_MODE || LOGIN_GATE_MODE) return;
     setShowCreditsModal(true);
   };
 

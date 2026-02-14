@@ -6,6 +6,23 @@
 // FREE_MODE: 临时屏蔽所有订阅/付费功能，改为 false 即可恢复
 export const FREE_MODE = true;
 
+// LOGIN_GATE_MODE: 登录门控模式。开启后，付费系统被替换为「未登录/已登录」两级访问控制。
+// 关闭后回退到 FREE_MODE 行为。
+export const LOGIN_GATE_MODE = true;
+
+// 需要登录才能访问的功能配置表
+export const LOGIN_REQUIRED_FEATURES: Record<string, boolean> = {
+  natal_dimension_paid: true,    // Natal 维度 index >= 2
+  natal_core_theme: true,        // 核心主题
+  daily_script: true,            // 每日剧本详情
+  daily_transit: true,           // 星象详情
+  ask: true,                     // Oracle 问答（整个模块）
+  synastry: true,                // 合盘（整个模块）
+  synastry_detail: true,         // 合盘详情
+  wiki_tools: true,              // Wiki 工具 (Synthetica)
+  cbt_stats: true,               // CBT 统计
+};
+
 export const FOCUS_TAGS = ['Emotions', 'Relationships', 'Work', 'Growth', 'Timing'];
 export const SYNASTRY_PROFILE_STORAGE_KEY = 'astro_synastry_profiles';
 
@@ -1446,6 +1463,20 @@ export const TRANSLATIONS = {
       unlock_ask: "Unlock Ask Q&A",
       login_generic: "Please sign in"
     },
+    login_gate: {
+      reminder_title: "Sign In Required",
+      reminder_desc: "Sign in to unlock this feature",
+      sign_in_button: "Sign In",
+      unlock_dimensions: "Sign in to unlock all personality dimensions",
+      unlock_core_themes: "Sign in to unlock core themes",
+      unlock_daily_script: "Sign in to read your daily script",
+      unlock_transit: "Sign in to view transit details",
+      unlock_ask: "Sign in to ask the Oracle",
+      unlock_synastry: "Sign in to explore relationship compatibility",
+      unlock_wiki_tools: "Sign in to use astrology tools",
+      unlock_cbt_stats: "Sign in to view your mood insights",
+      unlock_generic: "Sign in to unlock this feature",
+    },
     gm: {
       login_required: "Please log in to use GM commands.",
       subscription_unlocked: "Subscription unlocked",
@@ -2874,6 +2905,20 @@ export const TRANSLATIONS = {
       unlock_unlimited_access: "解锁无限解读",
       unlock_ask: "解锁 Ask 问答",
       login_generic: "请先登录"
+    },
+    login_gate: {
+      reminder_title: "需要登录",
+      reminder_desc: "登录后即可解锁此功能",
+      sign_in_button: "去登录",
+      unlock_dimensions: "登录后解锁全部性格维度",
+      unlock_core_themes: "登录后解锁核心主题",
+      unlock_daily_script: "登录后阅读今日剧本",
+      unlock_transit: "登录后查看星象详情",
+      unlock_ask: "登录后使用 Oracle 问答",
+      unlock_synastry: "登录后探索关系合盘",
+      unlock_wiki_tools: "登录后使用占星工具",
+      unlock_cbt_stats: "登录后查看情绪洞察",
+      unlock_generic: "登录后解锁此功能",
     },
     gm: {
       login_required: "请先登录后再使用 GM 命令。",
