@@ -80,19 +80,6 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
   ]), [statsTitles, t, statCardStyles]);
   const [viewDate, setViewDate] = useState(new Date());
   const [isPickerOpen, setIsPickerOpen] = useState(false);
-  const hasSyncedRef = useRef(false);
-
-  useEffect(() => {
-    if (hasSyncedRef.current || records.length === 0) return;
-    const latestRecord = records.reduce((latest, record) => (
-      record.timestamp > latest.timestamp ? record : latest
-    ), records[0]);
-    const latestDate = new Date(latestRecord.timestamp);
-    const nextView = new Date(latestDate.getFullYear(), latestDate.getMonth(), 1);
-    hasSyncedRef.current = true;
-    setViewDate(nextView);
-    onMonthChange?.(nextView.getFullYear(), nextView.getMonth());
-  }, [records, onMonthChange]);
 
   const MONTH_NAMES = useMemo(() => [
     t.journal.month_jan, t.journal.month_feb, t.journal.month_mar, t.journal.month_apr,
