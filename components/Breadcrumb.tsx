@@ -14,9 +14,10 @@ interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   className?: string;
+  homePath?: string;
 }
 
-export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
+export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '', homePath = '/' }) => {
   const { t, language } = useLanguage();
   const location = useLocation();
 
@@ -44,7 +45,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' })
         <ol className="flex items-center gap-2 text-sm">
           <li>
             <Link
-              to="/"
+              to={homePath}
               className="text-gold-500 hover:text-gold-400 transition-colors"
             >
               {t.wiki?.tab_home || 'Home'}

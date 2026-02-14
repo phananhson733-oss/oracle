@@ -87,7 +87,7 @@ const WikiArticlesPage: React.FC = () => {
         schema={[breadcrumbSchema, ...(itemListSchema ? [itemListSchema] : [])]}
       />
 
-      <Breadcrumb items={breadcrumbItems} />
+      <Breadcrumb items={breadcrumbItems} homePath="/wiki" />
 
       <section className="text-center space-y-4 pt-6">
         <div className={`text-xs uppercase tracking-[0.3em] ${highlightText}`}>

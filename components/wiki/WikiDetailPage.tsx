@@ -316,7 +316,7 @@ const WikiDetailPage: React.FC = () => {
 
   return (
     <Container>
-      <Breadcrumb items={breadcrumbItems} />
+      <Breadcrumb items={breadcrumbItems} homePath="/wiki" />
       <SEO
         title={item.title}
         description={item.description || t.wiki.subtitle}

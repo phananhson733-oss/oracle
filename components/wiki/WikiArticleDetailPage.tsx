@@ -510,7 +510,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
         schema={[articleSchema, breadcrumbSchema].filter(Boolean)}
       />
 
-      <Breadcrumb items={breadcrumbItems} />
+      <Breadcrumb items={breadcrumbItems} homePath="/wiki" />
 
       <div className="space-y-10 max-w-4xl mx-auto">
         {/* Article header */}
