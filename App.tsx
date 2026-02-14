@@ -863,11 +863,11 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
             <div className="space-y-6">
               <div>
                 <label className={labelClass}>{t.onboarding.label_date}</label>
-                <GlassInput type="date" lang={language} onChange={e => setData({...data, birthDate: e.target.value})} />
+                <GlassInput type="date" onChange={e => setData({...data, birthDate: e.target.value})} />
               </div>
               <div>
                 <label className={labelClass}>{t.onboarding.label_time}</label>
-                <GlassInput type="time" lang={language} onChange={e => setData({...data, birthTime: e.target.value})} />
+                <GlassInput type="time" onChange={e => setData({...data, birthTime: e.target.value})} />
               </div>
               <div className="flex items-center gap-3 pt-2 opacity-90 hover:opacity-100 transition-opacity">
                 <input type="checkbox" className="accent-gold-500 w-4 h-4 rounded cursor-pointer" onChange={e => setData({...data, accuracyLevel: e.target.checked ? 'time_unknown' : 'exact'})}/>
@@ -3789,7 +3789,6 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.onboarding.label_date}</label>
                   <GlassInput
                     type="date"
-                    lang={language}
                     value={formData.birthDate || ''}
                     onChange={(e) => setFormData((prev) => ({ ...prev, birthDate: e.target.value }))}
                   />
@@ -3798,7 +3797,6 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.onboarding.label_time}</label>
                   <GlassInput
                     type="time"
-                    lang={language}
                     value={formData.birthTime || ''}
                     onChange={(e) => setFormData((prev) => ({ ...prev, birthTime: e.target.value }))}
                   />

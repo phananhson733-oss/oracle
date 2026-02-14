@@ -226,11 +226,14 @@ export const GlassInput: React.FC<React.InputHTMLAttributes<HTMLInputElement> & 
         : s.input
     } ${className || ''}`;
 
+    const needsColorScheme = theme === 'dark' && (restProps.type === 'date' || restProps.type === 'time');
+
     return (
       <div className="relative group">
         <input
           {...restProps}
           className={inputClasses}
+          {...(needsColorScheme ? { style: { ...((restProps.style as React.CSSProperties) || {}), colorScheme: 'dark' } } : {})}
         />
         {error && (
           <p className={`mt-1 text-xs ${
