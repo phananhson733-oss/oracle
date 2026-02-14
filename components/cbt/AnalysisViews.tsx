@@ -53,6 +53,46 @@ const LOW_MOOD_KEYWORDS = [
   'irritated', 'upset', 'lonely', 'ashamed', 'guilty', 'overwhelmed', 'stressed',
 ];
 
+// i18n: bidirectional translation map for user-entered mood/emotion labels
+// NOTE: each English value must be unique to avoid reverse-mapping collisions
+const MOOD_ZH_TO_EN: Record<string, string> = {
+  '焦虑': 'Anxiety', '愤怒': 'Anger', '无力感': 'Helplessness', '羞愧': 'Shame',
+  '恐惧': 'Fear', '悲伤': 'Sadness', '沮丧': 'Dejected', '自我怀疑': 'Self-doubt',
+  '嫉妒': 'Jealousy', '失落': 'Dejection', '尴尬': 'Embarrassment', '社恐': 'Social anxiety',
+  '内疚': 'Guilt', '悔恨': 'Regret', '被抛弃感': 'Abandonment', '不安': 'Unease',
+  '挫败': 'Frustration', '羞耻': 'Humiliation', '多疑': 'Suspicion', '失望': 'Disappointment',
+  '烦躁': 'Irritability', '压力': 'Stress', '委屈': 'Grievance', '自卑': 'Inferiority',
+  '愧疚': 'Remorse', '担忧': 'Worry', '不甘': 'Resentment', '低落': 'Low mood',
+  '无助': 'Helpless', '空虚': 'Emptiness', '累': 'Tired', '烦': 'Annoyed',
+  '丧': 'Depressed', '难过': 'Sad', '绝望': 'Despair', '抑郁': 'Depression',
+  '痛苦': 'Pain', '疲惫': 'Exhaustion', '害怕': 'Afraid', '紧张': 'Nervous',
+  '生气': 'Angry', '压抑': 'Suppressed', '孤独': 'Lonely',
+};
+const MOOD_EN_TO_ZH: Record<string, string> = Object.fromEntries(
+  Object.entries(MOOD_ZH_TO_EN).map(([zh, en]) => [en.toLowerCase(), zh])
+);
+
+// i18n: bidirectional translation map for symptom labels (stored as translated text)
+const SYMPTOM_ZH_TO_EN: Record<string, string> = {
+  '头痛': 'Headache', '头晕': 'Dizziness', '胸闷': 'Chest tightness',
+  '心悸': 'Palpitations', '胃部不适': 'Stomach discomfort', '恶心': 'Nausea',
+  '肩膀僵硬': 'Shoulder stiffness', '身体发抖': 'Body trembling',
+  '入睡困难': 'Difficulty sleeping', '极度疲惫': 'Extreme fatigue', '无': 'None',
+};
+const SYMPTOM_EN_TO_ZH: Record<string, string> = Object.fromEntries(
+  Object.entries(SYMPTOM_ZH_TO_EN).map(([zh, en]) => [en.toLowerCase(), zh])
+);
+
+/** Translate a mood/symptom label to the target language */
+const translateLabel = (name: string, lang: 'zh' | 'en', type: 'mood' | 'symptom' = 'mood'): string => {
+  const zhToEn = type === 'mood' ? MOOD_ZH_TO_EN : SYMPTOM_ZH_TO_EN;
+  const enToZh = type === 'mood' ? MOOD_EN_TO_ZH : SYMPTOM_EN_TO_ZH;
+  if (lang === 'en') return zhToEn[name] || name;
+  return enToZh[name.toLowerCase()] || name;
+};
+
+const isNoneSymptom = (s: string) => s === '无' || s.toLowerCase() === 'none';
+
 const filterRecordsByMonth = (records: CBTRecord[], year: number, month: number) => {
   const start = new Date(year, month, 1).getTime();
   const end = new Date(year, month + 1, 1).getTime();
@@ -442,14 +482,20 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
         const name = m.name.toLowerCase();
         return LOW_MOOD_KEYWORDS.some(k => name.includes(k));
       });
-      lowMoods.forEach(m => moodCounts[m.name] = (moodCounts[m.name] || 0) + 1);
-
-      (r.bodySymptoms || []).filter(s => s !== '无').forEach(s => {
-        symptomCounts[s] = (symptomCounts[s] || 0) + 1;
+      lowMoods.forEach(m => {
+        const label = translateLabel(m.name, language as 'zh' | 'en', 'mood');
+        moodCounts[label] = (moodCounts[label] || 0) + 1;
       });
 
-      if (lowMoods.length > 0 && r.bodySymptoms && r.bodySymptoms.length > 0 && r.bodySymptoms[0] !== '无') {
-        const comboKey = `${lowMoods[0].name} + ${r.bodySymptoms[0]}`;
+      (r.bodySymptoms || []).filter(s => !isNoneSymptom(s)).forEach(s => {
+        const label = translateLabel(s, language as 'zh' | 'en', 'symptom');
+        symptomCounts[label] = (symptomCounts[label] || 0) + 1;
+      });
+
+      if (lowMoods.length > 0 && r.bodySymptoms && r.bodySymptoms.length > 0 && !isNoneSymptom(r.bodySymptoms[0])) {
+        const moodLabel = translateLabel(lowMoods[0].name, language as 'zh' | 'en', 'mood');
+        const symptomLabel = translateLabel(r.bodySymptoms[0], language as 'zh' | 'en', 'symptom');
+        const comboKey = `${moodLabel} + ${symptomLabel}`;
         comboCounts[comboKey] = (comboCounts[comboKey] || 0) + 1;
       }
     });
@@ -480,7 +526,7 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
     }
 
     return { allMoods, allSymptoms, topMoods, topSymptoms, insight, advice };
-  }, [records, filterYear, filterMonth, t]);
+  }, [records, filterYear, filterMonth, t, language]);
 
   const { analysis, loading } = useCBTIndividualAnalysis(
     userProfile!,
@@ -854,7 +900,10 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
     data.forEach(r => {
       if (r.emojiMood) dist[r.emojiMood]++;
       if (r.emojiMood === 'annoyed' || r.emojiMood === 'terrible') {
-        r.moods.forEach(m => negativeComp[m.name] = (negativeComp[m.name] || 0) + 1);
+        r.moods.forEach(m => {
+          const label = translateLabel(m.name, language as 'zh' | 'en', 'mood');
+          negativeComp[label] = (negativeComp[label] || 0) + 1;
+        });
       }
     });
 
@@ -884,7 +933,7 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
     else if (['空虚', '麻木', '无聊', '累', 'empty', 'numb', 'bored', 'tired'].some(k => topCompName.toLowerCase().includes(k))) advice = t.journal.emptiness_advice;
 
     return { pieData, allNeg, topNeg, topCompName, advice };
-  }, [records, filterYear, filterMonth, t]);
+  }, [records, filterYear, filterMonth, t, language]);
 
   const { analysis, loading } = useCBTIndividualAnalysis(
     userProfile!,
