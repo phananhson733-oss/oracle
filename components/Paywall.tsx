@@ -90,16 +90,16 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
 
   const handleSubscribe = () => {
     if (!isAuthenticated) {
-      openLoginModal('请先登录');
+      openLoginModal(t.paywall?.login_generic || 'Please sign in');
       return;
     }
     setShowOptions(false);
-    openUpgradeModal('解锁此功能');
+    openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
   };
 
   const handleCreditsUnlock = async () => {
     if (!isAuthenticated) {
-      openLoginModal('请先登录');
+      openLoginModal(t.paywall?.login_generic || 'Please sign in');
       return;
     }
 
@@ -236,15 +236,15 @@ export const LockedContent: React.FC<LockedContentProps> = ({
 
   const handleSubscribe = () => {
     if (!isAuthenticated) {
-      openLoginModal('请先登录');
+      openLoginModal(t.paywall?.login_generic || 'Please sign in');
       return;
     }
-    openUpgradeModal('解锁此功能');
+    openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
   };
 
   const handleCreditsUnlock = async () => {
     if (!isAuthenticated) {
-      openLoginModal('请先登录');
+      openLoginModal(t.paywall?.login_generic || 'Please sign in');
       return;
     }
 

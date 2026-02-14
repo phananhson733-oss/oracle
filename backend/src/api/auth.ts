@@ -44,8 +44,29 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
   next();
 };
 
-// Optional auth middleware (alias for authMiddleware, more explicit naming)
-export const optionalAuthMiddleware = authMiddleware;
+// Optional auth middleware (accepts anonymous, but rejects invalid tokens)
+export const optionalAuthMiddleware = async (req: Request, res: Response, next: NextFunction) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return next();
+  }
+
+  const token = authHeader.substring(7);
+  const payload = userService.verifyToken(token);
+
+  if (!payload || payload.type !== 'access') {
+    return res.status(401).json({ error: 'Invalid token' });
+  }
+
+  req.userId = payload.userId;
+  req.user = {
+    id: payload.userId,
+    email: payload.email,
+  };
+
+  next();
+};
 
 // Require auth middleware
 export const requireAuth = (req: Request, res: Response, next: NextFunction) => {

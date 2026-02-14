@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Search Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .results {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .result-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+        .result-title {
+            font-weight: bold;
+        }
+        .result-detail {
+            font-size: 12px;
+            color: #666;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 City Search Test (欧美优先)</h1>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search cities (e.g., New York, London, beijing, ny)">
+        <p style="font-size: 12px; color: #666;">
+            Try: "new york", "london", "beijing", "ny", "la", "paris", "上海"
+        </p>
+    </div>
+
+    <div class="results" id="results"></div>
+
+    <div class="stats">
+        <h3>📊 Database Stats</h3>
+        <p><strong>Total Cities:</strong> <span id="totalCities">-</span></p>
+        <p><strong>US Cities:</strong> <span id="usCities">-</span></p>
+        <p><strong>Europe Cities:</strong> <span id="europeCities">-</span></p>
+        <p><strong>China Cities:</strong> <span id="chinaCities">-</span></p>
+    </div>
+
+    <script type="module">
+        // Import cities data and search functions
+        import { cities } from './data/cities.ts';
+        import { searchCities, formatCityDisplay } from './utils/city-search.ts';
+
+        // Calculate stats
+        const totalCities = cities.length;
+        const usCities = cities.filter(c => c.country === 'United States').length;
+        const europeCities = cities.filter(c =>
+            ['United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Netherlands',
+             'Belgium', 'Austria', 'Switzerland', 'Sweden', 'Denmark', 'Norway',
+             'Finland', 'Russia', 'Czech Republic', 'Poland', 'Greece', 'Portugal',
+             'Ireland'].includes(c.country)
+        ).length;
+        const chinaCities = cities.filter(c => c.country === 'China').length;
+
+        document.getElementById('totalCities').textContent = totalCities;
+        document.getElementById('usCities').textContent = usCities;
+        document.getElementById('europeCities').textContent = europeCities;
+        document.getElementById('chinaCities').textContent = chinaCities;
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const resultsDiv = document.getElementById('results');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value;
+            if (query.length < 2) {
+                resultsDiv.innerHTML = '<div style="padding: 20px; text-align: center; color: #999;">Type at least 2 characters...</div>';
+                return;
+            }
+
+            const results = searchCities(query, 10, 'en');
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<div style="padding: 20px; text-align: center; color: #999;">No matching cities found</div>';
+                return;
+            }
+
+            resultsDiv.innerHTML = results.map(city => `
+                <div class="result-item">
+                    <div class="result-title">${city.enName || city.name}</div>
+                    <div class="result-detail">${city.province}, ${city.country}</div>
+                    <div class="result-detail" style="font-size: 10px; color: #999;">
+                        ${city.lat.toFixed(4)}°N, ${city.lon.toFixed(4)}°E | ${formatCityDisplay(city, 'en')}
+                    </div>
+                </div>
+            `).join('');
+        });
+
+        // Show initial message
+        resultsDiv.innerHTML = '<div style="padding: 20px; text-align: center; color: #999;">Start typing to search...</div>';
+    </script>
+</body>
+</html>

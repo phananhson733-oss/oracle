@@ -1,5 +1,5 @@
 // INPUT: 后端认证 API 客户端。
-// OUTPUT: 导出认证相关 API 调用函数。
+// OUTPUT: 导出认证相关 API 调用函数（含缺失 token 时的刷新兜底）。
 // POS: 前端认证 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001/api' : '/api');
@@ -213,13 +213,24 @@ export async function logout(): Promise<void> {
 }
 
 export async function getCurrentUser(): Promise<AuthUser | null> {
-  const token = getAccessToken();
-  if (!token) return getStoredUser();
+  let token = getAccessToken();
+  if (!token) {
+    const refreshed = getRefreshToken() ? await refreshAccessToken() : false;
+    token = getAccessToken();
+    if (!refreshed || !token) {
+      clearTokens();
+      return null;
+    }
+  }
 
   try {
     const res = await authFetch(`${API_BASE}/auth/me`);
 
     if (!res.ok) {
+      if (res.status === 401) {
+        clearTokens();
+        return null;
+      }
       return getStoredUser();
     }
 

@@ -136,5 +136,7 @@ export const formatCNYRef = (usdCents: number): string => {
 };
 
 if (!isPayPalConfigured()) {
-  console.warn('Warning: PayPal credentials not configured. PayPal payment features will be disabled.');
+  console.warn('⚠️  PayPal credentials not configured. PayPal payment features will be disabled.');
+} else {
+  console.log(`✅ PayPal configured (Mode: ${paypalMode})`);
 }
