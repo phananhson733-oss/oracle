@@ -1468,7 +1468,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   <p className="text-sm opacity-80 mb-6 max-w-3xl mx-auto">
                       {language === 'zh' ? '想要了解这一切背后的深层心理机制和具体练习？' : 'Want to understand the deep psychology and specific practices behind this?'}
                   </p>
-                  <ActionButton onClick={loadDetail} variant="secondary" className="mx-auto min-w-[240px] shadow-lg border-gold-500/30">
+                  <ActionButton onClick={loadDetail} variant="primary" className="mx-auto min-w-[240px]">
                       {t.today.detail_btn}
                   </ActionButton>
               </div>
