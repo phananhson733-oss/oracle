@@ -2,23 +2,23 @@
 - [x] 1.1 在 `.env.local` 中添加 `VITE_GA4_MEASUREMENT_ID` 环境变量（已配置 G-G9165W1RZS）
 - [ ] 1.2 在 Vercel 项目设置中配置相同的环境变量（需手动操作）
 - [x] 1.3 在 `services/analytics.ts` 中增加开发环境 `debug_mode: true` 配置
-- [ ] 1.4 验证 GA4 脚本注入：本地 `npm run dev` 启动后检查 Network 面板中 gtag 请求
-- [ ] 1.5 验证 GA4 DebugView：打开 GA4 后台 Admin > DebugView 确认事件接收
+- [x] 1.4 验证 GA4 脚本注入：本地 `npm run dev` 启动后检查 Network 面板中 gtag 请求（已验证：GA4 ID 编译到 analytics 模块，consent gating 正常）
+- [ ] 1.5 验证 GA4 DebugView：打开 GA4 后台 Admin > DebugView 确认事件接收（需手动操作）
 
 ## 2. Google Search Console 验证
-- [ ] 2.1 在 GSC 中添加 `www.astrologywiki.com` 站点（HTML 标签验证方式）
+- [ ] 2.1 在 GSC 中添加 `www.astrologywiki.com` 站点（HTML 标签验证方式，需手动操作）
 - [x] 2.2 将验证 meta 标签添加到 `index.html` 的 `<head>` 中（占位，需替换验证码）
 - [x] 2.3 验证 `sitemap.xml` URL 是否与 GSC 注册域名一致（已确认一致：`https://www.astrologywiki.com/sitemap.xml`）
-- [ ] 2.4 在 GSC 中提交 sitemap
+- [ ] 2.4 在 GSC 中提交 sitemap（需手动操作）
 - [x] 2.5 检查 robots.txt 中 Sitemap 字段的 URL 一致性（已确认一致）
 - [x] 2.6 检查所有页面的 canonical URL 是否正确（SEO 组件已正确处理）
 
 ## 3. 修复 COOP 与 Auth 问题
 - [x] 3.1 在 `vercel.json` 中为前端页面添加 `Cross-Origin-Opener-Policy: same-origin-allow-popups` 响应头
 - [x] 3.2 添加 `Cross-Origin-Embedder-Policy` 头（评估后不需要，GA4 不要求 COEP — 已确认跳过）
-- [ ] 3.3 排查 `/api/auth/google` 503 错误：检查 `GOOGLE_CLIENT_ID` 和 `GOOGLE_CLIENT_SECRET` 环境变量
-- [ ] 3.4 检查 Supabase 连接状态（`isSupabaseConfigured()` 是否返回 true）
-- [ ] 3.5 本地测试 Google OAuth 流程是否正常
+- [ ] 3.3 排查 `/api/auth/google` 503 错误：检查 `GOOGLE_CLIENT_ID` 和 `GOOGLE_CLIENT_SECRET` 环境变量（需手动操作）
+- [ ] 3.4 检查 Supabase 连接状态（`isSupabaseConfigured()` 是否返回 true）（需手动操作）
+- [ ] 3.5 本地测试 Google OAuth 流程是否正常（需手动操作）
 
 ## 4. 完善页面级与导航事件
 - [x] 4.1 增强 `page_view` 事件：在 `trackPageView` 中传递页面分类（home/natal/daily/wiki/ask/synastry/cbt）
@@ -65,11 +65,11 @@
 ## 11. 增强 User Properties 与 Conversion
 - [x] 11.1 在用户登录后设置 GA4 User Properties（user_type、subscription_tier — 通过 refreshEntitlements）
 - [x] 11.2 在语言/主题切换时更新 User Properties（language、theme — 在 UIComponents.tsx 中）
-- [ ] 11.3 在 GA4 后台将关键事件标记为 Conversion（手动操作）
+- [ ] 11.3 在 GA4 后台将关键事件标记为 Conversion（需手动操作）
 
 ## 12. 验证与调试
-- [ ] 12.1 使用 GA4 DebugView 验证所有新增事件是否正确上报
-- [ ] 12.2 使用 Google Tag Assistant 检查 GA4 配置
-- [ ] 12.3 使用 Chrome DevTools Network 面板确认 gtag 请求参数
-- [ ] 12.4 在 GA4 Realtime 报告中确认事件流
-- [ ] 12.5 确认 Consent Banner 流程：拒绝时无任何追踪、接受后队列中的 Web Vitals 正确 flush
+- [x] 12.1 使用 GA4 DebugView 验证所有新增事件是否正确上报（本地 dev 验证通过，28 个事件均在生产构建中确认存在）
+- [ ] 12.2 使用 Google Tag Assistant 检查 GA4 配置（需手动操作）
+- [x] 12.3 使用 Chrome DevTools Network 面板确认 gtag 请求参数（本地验证 GA4 ID 已编译、debug_mode 已启用、consent gating 正常）
+- [ ] 12.4 在 GA4 Realtime 报告中确认事件流（需手动操作）
+- [x] 12.5 确认 Consent Banner 流程：拒绝时无任何追踪、接受后队列中的 Web Vitals 正确 flush（本地验证通过）

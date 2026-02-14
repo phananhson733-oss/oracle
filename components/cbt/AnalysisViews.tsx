@@ -84,7 +84,7 @@ const SYMPTOM_EN_TO_ZH: Record<string, string> = Object.fromEntries(
 );
 
 /** Translate a mood/symptom label to the target language */
-const translateLabel = (name: string, lang: 'zh' | 'en', type: 'mood' | 'symptom' = 'mood'): string => {
+const translateLabel = (name: string, lang: string, type: 'mood' | 'symptom' = 'mood'): string => {
   const zhToEn = type === 'mood' ? MOOD_ZH_TO_EN : SYMPTOM_ZH_TO_EN;
   const enToZh = type === 'mood' ? MOOD_EN_TO_ZH : SYMPTOM_EN_TO_ZH;
   if (lang === 'en') return zhToEn[name] || name;
@@ -483,18 +483,18 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
         return LOW_MOOD_KEYWORDS.some(k => name.includes(k));
       });
       lowMoods.forEach(m => {
-        const label = translateLabel(m.name, language as 'zh' | 'en', 'mood');
+        const label = translateLabel(m.name, language, 'mood');
         moodCounts[label] = (moodCounts[label] || 0) + 1;
       });
 
       (r.bodySymptoms || []).filter(s => !isNoneSymptom(s)).forEach(s => {
-        const label = translateLabel(s, language as 'zh' | 'en', 'symptom');
+        const label = translateLabel(s, language, 'symptom');
         symptomCounts[label] = (symptomCounts[label] || 0) + 1;
       });
 
       if (lowMoods.length > 0 && r.bodySymptoms && r.bodySymptoms.length > 0 && !isNoneSymptom(r.bodySymptoms[0])) {
-        const moodLabel = translateLabel(lowMoods[0].name, language as 'zh' | 'en', 'mood');
-        const symptomLabel = translateLabel(r.bodySymptoms[0], language as 'zh' | 'en', 'symptom');
+        const moodLabel = translateLabel(lowMoods[0].name, language, 'mood');
+        const symptomLabel = translateLabel(r.bodySymptoms[0], language, 'symptom');
         const comboKey = `${moodLabel} + ${symptomLabel}`;
         comboCounts[comboKey] = (comboCounts[comboKey] || 0) + 1;
       }
@@ -534,7 +534,7 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
     filterMonth,
     'somatic',
     stats,
-    language as 'zh' | 'en',
+    language,
     { enabled: hasMonthlyRecords }
   );
 
@@ -775,7 +775,7 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
     filterMonth,
     'root',
     stats,
-    language as 'zh' | 'en',
+    language,
     { enabled: hasMonthlyRecords }
   );
 
@@ -901,7 +901,7 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
       if (r.emojiMood) dist[r.emojiMood]++;
       if (r.emojiMood === 'annoyed' || r.emojiMood === 'terrible') {
         r.moods.forEach(m => {
-          const label = translateLabel(m.name, language as 'zh' | 'en', 'mood');
+          const label = translateLabel(m.name, language, 'mood');
           negativeComp[label] = (negativeComp[label] || 0) + 1;
         });
       }
@@ -941,7 +941,7 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
     filterMonth,
     'mood',
     stats,
-    language as 'zh' | 'en',
+    language,
     { enabled: hasMonthlyRecords }
   );
 
@@ -1096,7 +1096,7 @@ export const CBTCompetenceView: React.FC<ViewProps> = ({ records, onClose, initi
     filterMonth,
     'competence',
     stats,
-    language as 'zh' | 'en',
+    language,
     { enabled: hasMonthlyRecords }
   );
 
