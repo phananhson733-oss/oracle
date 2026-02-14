@@ -1,6 +1,6 @@
 // INPUT: React、Router、组件与后端数据服务依赖（含 SEO head 输出、付费墙回调与分析追踪）。
 // OUTPUT: 导出主应用组件（含合盘积分购买后自动触发生成、Analytics 路由追踪、同意横幅与核心功能事件）。
-// POS: 主应用路由与页面编排中心（含付费墙后续流程与分析事件接入）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// POS: 主应用路由与页面编排中心（含付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
@@ -8,12 +8,13 @@ import { HashRouter, Routes, Route, useNavigate, useLocation, Link, Navigate } f
 import { Container, Card, Section, ActionButton, GlassInput, Chip, ScoreBar, Accordion, TimelineCard, CopyButton, ThemeContext, Theme, useTheme, Modal, DetailModal, SectionHeader, LanguageContext, LanguageProvider, useLanguage, translateAstroTerm } from './components/UIComponents';
 import { ArrowLeft, X } from 'lucide-react';
 import * as T from './types';
-import { FOCUS_TAGS, PRESET_QUESTIONS, DIMENSIONS, RELATIONSHIP_TYPES, ASTRO_DICTIONARY, TRANSLATIONS, SYNASTRY_PROFILE_STORAGE_KEY, NATAL_CONFIG, SYNASTRY_CONFIG, COMPOSITE_CONFIG } from './constants';
+import { FOCUS_TAGS, PRESET_QUESTIONS, DIMENSIONS, RELATIONSHIP_TYPES, ASTRO_DICTIONARY, TRANSLATIONS, SYNASTRY_PROFILE_STORAGE_KEY, NATAL_CONFIG, SYNASTRY_CONFIG, COMPOSITE_CONFIG, FREE_MODE } from './constants';
 import { AstroChart } from './components/AstroChart';
 import { OracleLoading } from './components/OracleLoading';
 import * as Astro from './services/astroService';
 import { generateContent } from './services/geminiService';
-import { fetchAskAnswer, fetchDailyDetail, fetchDailyForecast, fetchSectionDetail, fetchSynastry, fetchSynastryOverviewSection, fetchSynastrySuggestions, fetchSynastryTechnical, searchCities } from './services/apiClient';
+import { fetchAskAnswer, fetchDailyDetail, fetchDailyForecast, fetchSectionDetail, fetchSynastry, fetchSynastryOverviewSection, fetchSynastrySuggestions, fetchSynastryTechnical } from './services/apiClient';
+import { searchCities as searchCitiesLocal, formatCityDisplay, getCityCoordinates } from './utils/city-search';
 import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription, createPortalSession } from './services/paymentClient';
 import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
 import { trackEvent, trackPageView } from './services/analytics';
@@ -245,27 +246,24 @@ const uniqueLocationParts = (parts: Array<string | undefined>) => {
     return true;
   }) as string[];
 };
-const formatLocationLabel = (city: string, admin1: string | undefined, country: string | undefined, language: T.Language) => {
-  if (isTaiwanCountry(country)) {
-    const parts = uniqueLocationParts([city, formatTaiwanRegionLabel(language)]);
-    const separator = language === 'zh' ? '，' : ', ';
-    return parts.join(separator);
+const normalizeCountryName = (country: string | undefined, language: T.Language): string | undefined => {
+  if (!country) return undefined;
+  const trimmed = country.trim();
+
+  // Handle China
+  if (isChinaCountry(country)) {
+    return language === 'zh' ? '中国' : 'China';
   }
-  const resolvedAdmin1 = resolveAdmin1Label(admin1, country, language);
-  const parts = uniqueLocationParts([city, resolvedAdmin1, country]);
-  const separator = language === 'zh' ? '，' : ', ';
-  return parts.join(separator);
-};
-const formatLocationDetail = (admin1: string | undefined, country: string | undefined, language: T.Language) => {
+
+  // Handle Taiwan
   if (isTaiwanCountry(country)) {
-    return formatTaiwanRegionLabel(language);
+    return undefined; // Will be handled by formatTaiwanRegionLabel
   }
-  const resolvedAdmin1 = resolveAdmin1Label(admin1, country, language);
-  const parts = uniqueLocationParts([resolvedAdmin1, country]);
-  if (parts.length === 0) return '';
-  const separator = language === 'zh' ? '，' : ', ';
-  return parts.join(separator);
+
+  // For other countries, return as-is
+  return trimmed;
 };
+
 
 const buildBirthCacheKey = (profile: Pick<T.UserProfile, 'birthDate' | 'birthTime' | 'birthCity' | 'lat' | 'lon' | 'timezone' | 'accuracyLevel'>) => [
   profile.birthDate,
@@ -679,7 +677,7 @@ const NatalTechCard: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       }
       if (access.needPurchase) {
         // 使用统一的订阅弹窗
-        openUpgradeModal('解锁此功能');
+        openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
       }
       return access;
     };
@@ -933,18 +931,26 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
   const [cityQuery, setCityQuery] = useState('');
   const [citySuggestions, setCitySuggestions] = useState<GeoSuggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
     const trimmedQuery = cityQuery.trim();
     const minLength = getLocationQueryMinLength(trimmedQuery);
-    if (trimmedQuery.length < minLength) { setCitySuggestions([]); return; }
-    const timer = setTimeout(async () => {
-      try {
-        const res = await searchCities(trimmedQuery, 5, language);
-        setCitySuggestions(res.cities || []);
-      } catch { setCitySuggestions([]); }
+    if (trimmedQuery.length < minLength) {
+      setCitySuggestions([]);
+      setIsSearching(false);
+      return;
+    }
+    setIsSearching(true);
+    const timer = setTimeout(() => {
+      const results = searchCitiesLocal(trimmedQuery, 5, language);
+      setCitySuggestions(results);
+      setIsSearching(false);
     }, 300);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      setIsSearching(false);
+    };
   }, [cityQuery, language]);
   
   const headingClass = theme === 'dark' ? "text-star-50" : "text-paper-900";
@@ -963,11 +969,11 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
             <div className="space-y-6">
               <div>
                 <label className={labelClass}>{t.onboarding.label_date}</label>
-                <GlassInput type="date" onChange={e => setData({...data, birthDate: e.target.value})} />
+                <GlassInput type="date" lang={language} onChange={e => setData({...data, birthDate: e.target.value})} />
               </div>
               <div>
                 <label className={labelClass}>{t.onboarding.label_time}</label>
-                <GlassInput type="time" onChange={e => setData({...data, birthTime: e.target.value})} />
+                <GlassInput type="time" lang={language} onChange={e => setData({...data, birthTime: e.target.value})} />
               </div>
               <div className="flex items-center gap-3 pt-2 opacity-90 hover:opacity-100 transition-opacity">
                 <input type="checkbox" className="accent-gold-500 w-4 h-4 rounded cursor-pointer" onChange={e => setData({...data, accuracyLevel: e.target.checked ? 'time_unknown' : 'exact'})}/>
@@ -1000,25 +1006,44 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
                   onFocus={() => setShowSuggestions(true)}
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                 />
-                {showSuggestions && citySuggestions.length > 0 && (
+                {showSuggestions && cityQuery.trim() && (
                   <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-gold-600/30'} shadow-lg max-h-48 overflow-auto`}>
-                      {citySuggestions.map((city, i) => (
-                        <div
-                          key={i}
-                          className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
-                          onMouseDown={() => {
-                            const label = formatLocationLabel(city.city, city.admin1, city.country, language);
-                            setCityQuery(label);
-                            setData((prev) => ({ ...prev, birthCity: label, lat: city.lat, lon: city.lon, timezone: city.timezone }));
-                            setShowSuggestions(false);
-                          }}
-                        >
-                          <div className="font-medium">{city.city}</div>
-                          {formatLocationDetail(city.admin1, city.country, language) && (
-                            <div className="text-xs opacity-70">{formatLocationDetail(city.admin1, city.country, language)}</div>
-                          )}
-                        </div>
-                      ))}
+                    {isSearching ? (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh' ? '搜索中...' : 'Searching...'}
+                      </div>
+                    ) : citySuggestions.length > 0 ? (
+                      citySuggestions.map((city, i) => {
+                        const displayLabel = formatCityDisplay(city, language);
+                        const coords = getCityCoordinates(city);
+                        return (
+                          <div
+                            key={i}
+                            className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
+                            onMouseDown={() => {
+                              setCityQuery(displayLabel);
+                              setData((prev) => ({ ...prev, birthCity: displayLabel, lat: coords.lat, lon: coords.lon, timezone: coords.timezone }));
+                              setShowSuggestions(false);
+                            }}
+                          >
+                            <div className="font-medium">{language === 'en' ? (city.enName || city.name) : city.name}</div>
+                            {city.province && city.province !== city.name && (
+                              <div className="text-xs opacity-70">{city.province}{city.country ? `, ${city.country}` : ''}</div>
+                            )}
+                          </div>
+                        );
+                      })
+                    ) : cityQuery.trim().length >= getLocationQueryMinLength(cityQuery.trim()) ? (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh' ? '未找到匹配城市' : 'No matching cities found'}
+                      </div>
+                    ) : (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh'
+                          ? '请输入至少1个中文字符或2个英文字符'
+                          : 'Please enter at least 2 characters'}
+                      </div>
+                    )}
                   </div>
                 )}
             </div>
@@ -1264,7 +1289,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       }
       if (access.needPurchase) {
         // 使用统一的订阅弹窗
-        openUpgradeModal('解锁此功能');
+        openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
       }
       return access;
     };
@@ -2671,7 +2696,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       }
       if (access.needPurchase) {
         // 使用统一的订阅弹窗
-        openUpgradeModal('解锁此功能');
+        openUpgradeModal(t.paywall?.unlock_feature_generic || 'Unlock this feature');
       }
       return access;
     };
@@ -2745,9 +2770,11 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const [cityQuery, setCityQuery] = useState('');
     const [citySuggestions, setCitySuggestions] = useState<GeoSuggestion[]>([]);
     const [showCitySuggestions, setShowCitySuggestions] = useState(false);
+    const [isSearchingCity, setIsSearchingCity] = useState(false);
     const [currentLocationQuery, setCurrentLocationQuery] = useState('');
     const [currentLocationSuggestions, setCurrentLocationSuggestions] = useState<GeoSuggestion[]>([]);
     const [showCurrentLocationSuggestions, setShowCurrentLocationSuggestions] = useState(false);
+    const [isSearchingCurrentLocation, setIsSearchingCurrentLocation] = useState(false);
 
     // 合盘详情解读弹窗状态
     const [synastryDetailModal, setSynastryDetailModal] = useState<{
@@ -2833,32 +2860,42 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       if (!modalOpen) return;
       const trimmedQuery = cityQuery.trim();
       const minLength = getLocationQueryMinLength(trimmedQuery);
-      if (trimmedQuery.length < minLength) { setCitySuggestions([]); return; }
-      const timer = setTimeout(async () => {
-        try {
-          const res = await searchCities(trimmedQuery, 5, language);
-          setCitySuggestions(res.cities || []);
-        } catch {
-          setCitySuggestions([]);
-        }
+      if (trimmedQuery.length < minLength) {
+        setCitySuggestions([]);
+        setIsSearchingCity(false);
+        return;
+      }
+      setIsSearchingCity(true);
+      const timer = setTimeout(() => {
+        const results = searchCitiesLocal(trimmedQuery, 5, language);
+        setCitySuggestions(results);
+        setIsSearchingCity(false);
       }, 300);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        setIsSearchingCity(false);
+      };
     }, [cityQuery, modalOpen, language]);
 
     useEffect(() => {
       if (!modalOpen) return;
       const trimmedQuery = currentLocationQuery.trim();
       const minLength = getLocationQueryMinLength(trimmedQuery);
-      if (trimmedQuery.length < minLength) { setCurrentLocationSuggestions([]); return; }
-      const timer = setTimeout(async () => {
-        try {
-          const res = await searchCities(trimmedQuery, 5, language);
-          setCurrentLocationSuggestions(res.cities || []);
-        } catch {
-          setCurrentLocationSuggestions([]);
-        }
+      if (trimmedQuery.length < minLength) {
+        setCurrentLocationSuggestions([]);
+        setIsSearchingCurrentLocation(false);
+        return;
+      }
+      setIsSearchingCurrentLocation(true);
+      const timer = setTimeout(() => {
+        const results = searchCitiesLocal(trimmedQuery, 5, language);
+        setCurrentLocationSuggestions(results);
+        setIsSearchingCurrentLocation(false);
       }, 300);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        setIsSearchingCurrentLocation(false);
+      };
     }, [currentLocationQuery, modalOpen, language]);
 
     const createProfileId = () => {
@@ -3858,6 +3895,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.onboarding.label_date}</label>
                   <GlassInput
                     type="date"
+                    lang={language}
                     value={formData.birthDate || ''}
                     onChange={(e) => setFormData((prev) => ({ ...prev, birthDate: e.target.value }))}
                   />
@@ -3866,6 +3904,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">{t.onboarding.label_time}</label>
                   <GlassInput
                     type="time"
+                    lang={language}
                     value={formData.birthTime || ''}
                     onChange={(e) => setFormData((prev) => ({ ...prev, birthTime: e.target.value }))}
                   />
@@ -3891,25 +3930,44 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   onFocus={() => setShowCitySuggestions(true)}
                   onBlur={() => setTimeout(() => setShowCitySuggestions(false), 200)}
                 />
-                {showCitySuggestions && citySuggestions.length > 0 && (
+                {showCitySuggestions && cityQuery.trim() && (
                   <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-paper-300'} shadow-lg max-h-48 overflow-auto`}>
-                    {citySuggestions.map((city, i) => (
-                      <div
-                        key={i}
-                        className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
-                        onMouseDown={() => {
-                          const label = formatLocationLabel(city.city, city.admin1, city.country, language);
-                          setCityQuery(label);
-                          setFormData((prev) => ({ ...prev, birthCity: label, lat: city.lat, lon: city.lon, timezone: city.timezone }));
-                          setShowCitySuggestions(false);
-                        }}
-                      >
-                        <div className="font-medium">{city.city}</div>
-                        {formatLocationDetail(city.admin1, city.country, language) && (
-                          <div className="text-xs opacity-60">{formatLocationDetail(city.admin1, city.country, language)}</div>
-                        )}
+                    {isSearchingCity ? (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh' ? '搜索中...' : 'Searching...'}
                       </div>
-                    ))}
+                    ) : citySuggestions.length > 0 ? (
+                      citySuggestions.map((city, i) => {
+                        const displayLabel = formatCityDisplay(city, language);
+                        const coords = getCityCoordinates(city);
+                        return (
+                          <div
+                            key={i}
+                            className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
+                            onMouseDown={() => {
+                              setCityQuery(displayLabel);
+                              setFormData((prev) => ({ ...prev, birthCity: displayLabel, lat: coords.lat, lon: coords.lon, timezone: coords.timezone }));
+                              setShowCitySuggestions(false);
+                            }}
+                          >
+                            <div className="font-medium">{language === 'en' ? (city.enName || city.name) : city.name}</div>
+                            {city.province && city.province !== city.name && (
+                              <div className="text-xs opacity-60">{city.province}{city.country ? `, ${city.country}` : ''}</div>
+                            )}
+                          </div>
+                        );
+                      })
+                    ) : cityQuery.trim().length >= getLocationQueryMinLength(cityQuery.trim()) ? (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh' ? '未找到匹配城市' : 'No matching cities found'}
+                      </div>
+                    ) : (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh'
+                          ? '请输入至少1个中文字符或2个英文字符'
+                          : 'Please enter at least 2 characters'}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -3926,25 +3984,43 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   onFocus={() => setShowCurrentLocationSuggestions(true)}
                   onBlur={() => setTimeout(() => setShowCurrentLocationSuggestions(false), 200)}
                 />
-                {showCurrentLocationSuggestions && currentLocationSuggestions.length > 0 && (
+                {showCurrentLocationSuggestions && currentLocationQuery.trim() && (
                   <div className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === 'dark' ? 'bg-space-800 border-gold-500/15' : 'bg-paper-100/85 border-paper-300'} shadow-lg max-h-48 overflow-auto`}>
-                    {currentLocationSuggestions.map((city, i) => (
-                      <div
-                        key={i}
-                        className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
-                        onMouseDown={() => {
-                          const label = formatLocationLabel(city.city, city.admin1, city.country, language);
-                          setCurrentLocationQuery(label);
-                          setFormData((prev) => ({ ...prev, currentLocation: label }));
-                          setShowCurrentLocationSuggestions(false);
-                        }}
-                      >
-                        <div className="font-medium">{city.city}</div>
-                        {formatLocationDetail(city.admin1, city.country, language) && (
-                          <div className="text-xs opacity-60">{formatLocationDetail(city.admin1, city.country, language)}</div>
-                        )}
+                    {isSearchingCurrentLocation ? (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh' ? '搜索中...' : 'Searching...'}
                       </div>
-                    ))}
+                    ) : currentLocationSuggestions.length > 0 ? (
+                      currentLocationSuggestions.map((city, i) => {
+                        const displayLabel = formatCityDisplay(city, language);
+                        return (
+                          <div
+                            key={i}
+                            className={`px-4 py-2 cursor-pointer ${theme === 'dark' ? 'hover:bg-space-700' : 'hover:bg-paper-200/60'}`}
+                            onMouseDown={() => {
+                              setCurrentLocationQuery(displayLabel);
+                              setFormData((prev) => ({ ...prev, currentLocation: displayLabel }));
+                              setShowCurrentLocationSuggestions(false);
+                            }}
+                          >
+                            <div className="font-medium">{language === 'en' ? (city.enName || city.name) : city.name}</div>
+                            {city.province && city.province !== city.name && (
+                              <div className="text-xs opacity-60">{city.province}{city.country ? `, ${city.country}` : ''}</div>
+                            )}
+                          </div>
+                        );
+                      })
+                    ) : currentLocationQuery.trim().length >= getLocationQueryMinLength(currentLocationQuery.trim()) ? (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh' ? '未找到匹配城市' : 'No matching cities found'}
+                      </div>
+                    ) : (
+                      <div className="px-4 py-3 text-center text-sm opacity-70">
+                        {language === 'zh'
+                          ? '请输入至少1个中文字符或2个英文字符'
+                          : 'Please enter at least 2 characters'}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -5590,7 +5666,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         if (!access.canAccess) {
             if (access.needPurchase) {
                 // 使用统一的订阅弹窗
-                openUpgradeModal('解锁 Ask 问答');
+                openUpgradeModal(t.paywall?.unlock_ask || 'Unlock Ask Q&A');
             }
             return;
         }
@@ -5810,7 +5886,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                     </div>
 
                     {/* Question Matrix - 2 Column Grid with internal scroll */}
-                    <div className="grid grid-cols-1 gap-y-2 pt-4 pb-4 w-full md:w-1/2 mx-auto flex-1 min-h-0 overflow-hidden content-start auto-rows-min">
+                    <div className="grid grid-cols-1 gap-y-2 pt-4 pb-4 w-full md:w-1/2 mx-auto flex-1 min-h-0 overflow-y-auto content-start auto-rows-min">
                         {questions.length === 0 ? (
                             <div className="col-span-full flex flex-col items-center justify-center text-center text-sm opacity-70 py-10">
                                 <div className="font-semibold mb-2">{t.ask.empty_title}</div>
@@ -6325,11 +6401,9 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
         } catch (err) {
           console.error('Failed to open subscription portal:', err);
           if (err instanceof Error && err.message.includes('Payment service unavailable')) {
-            setGmError(language === 'zh'
-              ? '支付服务未配置。开发环境请使用 GM 命令测试订阅功能。'
-              : 'Payment service not configured. Use GM commands for testing in development.');
+            setGmError(t.subscription?.payment_unavailable || 'Payment service not configured. Use GM commands for testing in development.');
           } else {
-            setGmError(err instanceof Error ? err.message : (language === 'zh' ? '无法打开订阅管理页面' : 'Failed to open subscription portal'));
+            setGmError(err instanceof Error ? err.message : (t.subscription?.portal_failed || 'Failed to open subscription portal'));
           }
         }
     };
@@ -6340,7 +6414,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
     ) => {
         if (!isAuthenticated) {
             setGmMessage(null);
-            setGmError(language === 'zh' ? '请先登录后再使用 GM 命令。' : 'Please log in to use GM commands.');
+            setGmError(t.gm?.login_required || 'Please log in to use GM commands.');
             return;
         }
         setGmBusy(true);
@@ -6376,11 +6450,11 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
     const handleGmUnlockSubscription = () => runGmAction(
         gmUnlockSubscription,
-        language === 'zh' ? '订阅已解锁' : 'Subscription unlocked'
+        t.gm?.subscription_unlocked || 'Subscription unlocked'
     );
     const handleGmCancelSubscription = () => runGmAction(
         gmCancelSubscription,
-        language === 'zh' ? '订阅已关闭' : 'Subscription cancelled'
+        t.gm?.subscription_cancelled || 'Subscription cancelled'
     );
     const handleGmAddTokens = () => runGmAction(
         () => gmAddTokens(9999),
@@ -6421,19 +6495,19 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                         </span>
                                     </div>
                                     <button onClick={handleManageSubscription} className="text-xs underline opacity-60 hover:opacity-100 transition-opacity">
-                                        {language === 'zh' ? '管理订阅' : 'Manage Subscription'}
+                                        {t.subscription?.manage || 'Manage Subscription'}
                                     </button>
                                 </div>
-                            ) : (
+                            ) : !FREE_MODE ? (
                                 <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
-                                    {language === 'zh' ? '解锁无限解读' : 'Unlock Unlimited'}
+                                    {t.paywall?.unlock_unlimited_access || 'Unlock Unlimited'}
                                 </ActionButton>
-                            )}
+                            ) : null}
                         </div>
                     </div>
 
                     {/* Credits Section */}
-                    <div className={`py-4 my-4 border-y ${theme === 'dark' ? 'border-space-700' : 'border-paper-200'}`}>
+                    {!FREE_MODE && <div className={`py-4 my-4 border-y ${theme === 'dark' ? 'border-space-700' : 'border-paper-200'}`}>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
                                 <span className="text-gold-500 text-xl">✦</span>
@@ -6464,7 +6538,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                 <span>›</span>
                             </button>
                         </div>
-                    </div>
+                    </div>}
 
                     <ActionButton onClick={() => { logout(); navigate('/'); }} size="sm" variant="secondary" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10 hover:border-red-500/50">
                         {language === 'zh' ? '退出登录' : 'Log Out'}
@@ -6503,7 +6577,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                 </Card>
             </Section>
 
-            {isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
+            {!FREE_MODE && isTrialing && trialDaysLeft !== null && trialDaysLeft > 0 && (
                 <Section title={t.settings.trial_title}>
                     <Card className={`mb-4 border-l-4 border-l-amber-500 ${theme === 'dark' ? 'bg-amber-500/5' : 'bg-amber-50'}`}>
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -6609,10 +6683,10 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                     </div>
                     <div className="grid grid-cols-2 gap-3 mb-4">
                         <ActionButton onClick={handleGmUnlockSubscription} disabled={gmBusy} size="sm" variant="outline">
-                            {language === 'zh' ? '解锁订阅' : 'Unlock Sub'}
+                            {t.gm?.unlock_sub_button || 'Unlock Sub'}
                         </ActionButton>
                         <ActionButton onClick={handleGmCancelSubscription} disabled={gmBusy} size="sm" variant="outline">
-                            {language === 'zh' ? '取消订阅' : 'Cancel Sub'}
+                            {t.gm?.cancel_sub_button || 'Cancel Sub'}
                         </ActionButton>
                         <ActionButton onClick={handleGmAddTokens} disabled={gmBusy} size="sm" variant="outline">
                             {language === 'zh' ? '加积分' : 'Add Credits'}
@@ -6751,7 +6825,7 @@ const CreditsUsagePage: React.FC = () => {
                         <p className="text-sm opacity-70">{tr.subtitle}</p>
                     </div>
                 </div>
-                {!isSubscriber && (
+                {!FREE_MODE && !isSubscriber && (
                     <ActionButton variant="outline" onClick={() => openUpgradeModal()}>
                         {tr.upgrade}
                     </ActionButton>
@@ -6774,7 +6848,7 @@ const CreditsUsagePage: React.FC = () => {
                         {tr.bonus}：500
                     </div>
                     {/* 充值和升级按钮 */}
-                    <div className="mt-4 flex gap-2">
+                    {!FREE_MODE && <div className="mt-4 flex gap-2">
                         <ActionButton
                             size="sm"
                             onClick={() => openCreditsModal()}
@@ -6792,7 +6866,7 @@ const CreditsUsagePage: React.FC = () => {
                                 {tr.upgrade}
                             </ActionButton>
                         )}
-                    </div>
+                    </div>}
                 </Card>
             </Section>
 
@@ -7184,6 +7258,21 @@ const AppContent: React.FC = () => {
     const [migrationStatus, setMigrationStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [migrationMessage, setMigrationMessage] = useState<string | null>(null);
 
+    // PayPal sometimes strips hash; redirect query params into hash routes.
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        if (!window.location.search) return;
+        const params = new URLSearchParams(window.location.search);
+        const hasSubscription = params.has('subscription_id') || params.has('ba_token');
+        const hasOrder = params.has('token');
+        if (!hasSubscription && !hasOrder) return;
+        const currentHash = (window.location.hash || '').replace(/^#/, '');
+        if (currentHash && currentHash !== '/') return;
+        const targetPath = hasSubscription ? '/payment/success' : '/payment/credits-success';
+        const targetUrl = `${window.location.origin}/#${targetPath}${window.location.search}`;
+        window.location.replace(targetUrl);
+    }, []);
+
     const hasCloudProfile = !!authUser?.birthProfile && localStorage.getItem('astro_profile_migrated') === '1';
     const cloudProfile = useMemo(() => {
         if (!hasCloudProfile || !authUser?.birthProfile) return null;
@@ -7204,9 +7293,10 @@ const AppContent: React.FC = () => {
     }, [authUser, hasCloudProfile]);
     const activeProfile = user || cloudProfile;
 
-    // Redirect to landing if no user data, except for landing and onboarding
+    // Redirect to landing if no user data, except for landing/onboarding/payment/auth
     useEffect(() => {
-        if (!user && !hasCloudProfile && !['/', '/onboarding', '/auth'].includes(location.pathname) && !isWikiPath) {
+        const allowedPaths = ['/', '/onboarding', '/auth', '/payment/success', '/payment/credits-success'];
+        if (!user && !hasCloudProfile && !allowedPaths.includes(location.pathname) && !isWikiPath) {
             navigate('/');
         }
     }, [user, hasCloudProfile, location.pathname, navigate, isWikiPath]);
@@ -7396,8 +7486,8 @@ const AppContent: React.FC = () => {
             <ConsentBanner />
             {/* Auth Modals */}
             <LoginModal />
-            <UpgradeModal />
-            <CreditsModalWrapper />
+            {!FREE_MODE && <UpgradeModal />}
+            {!FREE_MODE && <CreditsModalWrapper />}
         </>
     );
 }

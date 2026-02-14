@@ -7,6 +7,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, ActionButton } from '../UIComponents';
 import { Lock, Crown, Sparkles } from 'lucide-react';
 import { usePaywallCTA } from '../../hooks/useABTest';
+import { FREE_MODE } from '../../constants';
 
 interface PaywallProps {
   feature: 'ask' | 'detail' | 'synastry' | 'cbt' | 'report';
@@ -65,6 +66,7 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
 
   // Check if user can access this feature
   const canAccess = (): boolean => {
+    if (FREE_MODE) return true;
     if (!entitlements) return true; // Allow if entitlements not loaded yet
 
     // Subscribers have unlimited access (except for quota-based features)

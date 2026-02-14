@@ -3,6 +3,9 @@
 // POS: 主应用常量中心。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
+// FREE_MODE: 临时屏蔽所有订阅/付费功能，改为 false 即可恢复
+export const FREE_MODE = true;
+
 export const FOCUS_TAGS = ['Emotions', 'Relationships', 'Work', 'Growth', 'Timing'];
 export const SYNASTRY_PROFILE_STORAGE_KEY = 'astro_synastry_profiles';
 
@@ -1378,7 +1381,10 @@ export const TRANSLATIONS = {
       first_discount_desc: "Limited time! 50% off your first subscription!",
       // 支付方式
       payment_card: "Card",
-      payment_paypal: "PayPal"
+      payment_paypal: "PayPal",
+      // 错误消息
+      payment_unavailable: "Payment service not configured. Use GM commands for testing in development.",
+      portal_failed: "Failed to open subscription portal"
     },
     paywall: {
       unlock_title: "Unlock {feature}",
@@ -1419,7 +1425,20 @@ export const TRANSLATIONS = {
         ask: "Ask question",
         cbt_stats: "CBT stats",
         synthetica: "Wiki Tools"
-      }
+      },
+      unlocking: "Unlocking...",
+      subscribe_unlock: "Subscribe to unlock (unlimited)",
+      unlock_feature_generic: "Unlock this feature",
+      unlock_unlimited_access: "Unlock Unlimited",
+      unlock_ask: "Unlock Ask Q&A",
+      login_generic: "Please sign in"
+    },
+    gm: {
+      login_required: "Please log in to use GM commands.",
+      subscription_unlocked: "Subscription unlocked",
+      subscription_cancelled: "Subscription cancelled",
+      unlock_sub_button: "Unlock Sub",
+      cancel_sub_button: "Cancel Sub"
     },
     tags: {
       Emotions: "Emotions",
@@ -2778,7 +2797,10 @@ export const TRANSLATIONS = {
       first_discount_desc: "限时首次订阅特惠！",
       // 支付方式
       payment_card: "银行卡",
-      payment_paypal: "PayPal"
+      payment_paypal: "PayPal",
+      // 错误消息
+      payment_unavailable: "支付服务未配置。开发环境请使用 GM 命令测试订阅功能。",
+      portal_failed: "无法打开订阅管理页面"
     },
     paywall: {
       unlock_title: "解锁 {feature}",
@@ -2819,7 +2841,20 @@ export const TRANSLATIONS = {
         ask: "Ask 问答",
         cbt_stats: "CBT 统计解读",
         synthetica: "百科-工具"
-      }
+      },
+      unlocking: "解锁中...",
+      subscribe_unlock: "订阅解锁（无限使用）",
+      unlock_feature_generic: "解锁此功能",
+      unlock_unlimited_access: "解锁无限解读",
+      unlock_ask: "解锁 Ask 问答",
+      login_generic: "请先登录"
+    },
+    gm: {
+      login_required: "请先登录后再使用 GM 命令。",
+      subscription_unlocked: "订阅已解锁",
+      subscription_cancelled: "订阅已取消",
+      unlock_sub_button: "解锁订阅",
+      cancel_sub_button: "取消订阅"
     },
     tags: {
       Emotions: "情绪",
