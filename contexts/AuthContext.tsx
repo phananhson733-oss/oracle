@@ -11,6 +11,8 @@ import {
   loginWithApple,
   loginWithEmail,
   registerWithEmail,
+  sendVerificationCode,
+  verifyCodeAndRegister,
   logout as logoutApi,
   updateProfile,
   migrateLocalData,
@@ -41,6 +43,8 @@ interface AuthContextType {
   loginWithApple: (identityToken: string, user?: { email?: string; name?: { firstName?: string; lastName?: string } }) => Promise<void>;
   loginWithEmail: (email: string, password: string) => Promise<void>;
   registerWithEmail: (email: string, password: string, name?: string) => Promise<void>;
+  sendVerificationCode: (email: string, password: string, name?: string) => Promise<void>;
+  verifyCodeAndRegister: (email: string, code: string, password: string, name?: string) => Promise<void>;
   logout: () => Promise<void>;
   updateProfile: (updates: Parameters<typeof updateProfile>[0]) => Promise<void>;
   migrateLocalData: () => Promise<void>;
@@ -163,6 +167,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setShowLoginModal(false);
   };
 
+  const handleSendVerificationCode = async (email: string, password: string, name?: string) => {
+    await sendVerificationCode(email, password, name);
+    trackEvent('verification_code_sent', { method: 'email' });
+  };
+
+  const handleVerifyCodeAndRegister = async (email: string, code: string, password: string, name?: string) => {
+    const result = await verifyCodeAndRegister(email, code, password, name);
+    setUser(result.user);
+    setUserId(result.user.id);
+    trackEvent('signup_completed', { method: 'email_verified' });
+    setShowLoginModal(false);
+  };
+
   const handleLogout = async () => {
     await logoutApi();
     setUser(null);
@@ -236,6 +253,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         loginWithApple: handleLoginWithApple,
         loginWithEmail: handleLoginWithEmail,
         registerWithEmail: handleRegisterWithEmail,
+        sendVerificationCode: handleSendVerificationCode,
+        verifyCodeAndRegister: handleVerifyCodeAndRegister,
         logout: handleLogout,
         updateProfile: handleUpdateProfile,
         migrateLocalData: handleMigrateLocalData,

@@ -1,9 +1,12 @@
 // Authentication API routes
 import { Router, Request, Response, NextFunction } from 'express';
+import { randomInt } from 'crypto';
 import { OAuth2Client } from 'google-auth-library';
 import { userService, AuthTokens } from '../services/userService.js';
-import { isSupabaseConfigured } from '../db/supabase.js';
-import { GOOGLE_CONFIG, isGoogleConfigured } from '../config/auth.js';
+import { supabase, isSupabaseConfigured } from '../db/supabase.js';
+import { GOOGLE_CONFIG, isGoogleConfigured, isResendConfigured } from '../config/auth.js';
+import { cacheService } from '../cache/redis.js';
+import { emailService } from '../services/emailService.js';
 
 const router = Router();
 
@@ -202,7 +205,180 @@ router.post('/apple', async (req: Request, res: Response) => {
   }
 });
 
-// Email registration
+// Send verification code for registration
+router.post('/send-code', async (req: Request, res: Response) => {
+  try {
+    if (!isSupabaseConfigured()) {
+      return res.status(503).json({ error: 'Authentication service unavailable' });
+    }
+
+    if (!isResendConfigured()) {
+      return res.status(503).json({ error: 'Email service not configured' });
+    }
+
+    const { email, password, name } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password required' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    if (password.length < 8) {
+      return res.status(400).json({ error: 'Password must be at least 8 characters' });
+    }
+
+    const normalizedEmail = email.toLowerCase();
+
+    // Rate limiting via cacheService (check before DB queries to save resources)
+    const cooldownKey = `reg-cooldown:${normalizedEmail}`;
+    const dailyKey = `reg-daily:${normalizedEmail}`;
+
+    const cooldownExists = await cacheService.exists(cooldownKey);
+    if (cooldownExists) {
+      return res.status(429).json({ error: 'Please wait before requesting another code' });
+    }
+
+    const dailyCount = await cacheService.get<number>(dailyKey) || 0;
+    if (dailyCount >= 10) {
+      return res.status(429).json({ error: 'Too many requests today. Please try again tomorrow' });
+    }
+
+    // Check if email already registered — return same success response to prevent enumeration
+    const existingUser = await userService.findByEmail(normalizedEmail);
+    if (existingUser) {
+      // Set cooldown so attacker can't rapidly probe emails
+      await cacheService.set(cooldownKey, true, 60);
+      await cacheService.set(dailyKey, dailyCount + 1, 86400);
+      return res.json({ success: true, message: 'Verification code sent' });
+    }
+
+    // Generate 6-digit code
+    const code = randomInt(100000, 999999).toString();
+
+    // Delete previous unverified codes for this email
+    await supabase
+      .from('registration_codes')
+      .delete()
+      .eq('email', normalizedEmail)
+      .is('verified_at', null);
+
+    // Insert new code (10 min expiry)
+    const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
+    await supabase.from('registration_codes').insert({
+      email: normalizedEmail,
+      code,
+      expires_at: expiresAt.toISOString(),
+    });
+
+    // Send email
+    await emailService.sendVerificationCode(normalizedEmail, code);
+
+    // Set rate limit keys
+    await cacheService.set(cooldownKey, true, 60); // 60s cooldown
+    await cacheService.set(dailyKey, dailyCount + 1, 86400); // 24h daily counter
+
+    res.json({ success: true, message: 'Verification code sent' });
+  } catch (error) {
+    console.error('Send verification code error:', error);
+    res.status(500).json({ error: 'Failed to send verification code' });
+  }
+});
+
+// Verify code and complete registration
+router.post('/verify-code', async (req: Request, res: Response) => {
+  try {
+    if (!isSupabaseConfigured()) {
+      return res.status(503).json({ error: 'Authentication service unavailable' });
+    }
+
+    const { email, code: rawCode, password, name } = req.body;
+
+    if (!email || !rawCode || !password) {
+      return res.status(400).json({ error: 'Email, code and password required' });
+    }
+
+    // Sanitize code: trim whitespace and ensure 6-digit numeric
+    const code = String(rawCode).trim();
+    if (!/^\d{6}$/.test(code)) {
+      return res.status(400).json({ error: 'Invalid verification code' });
+    }
+
+    if (password.length < 8) {
+      return res.status(400).json({ error: 'Password must be at least 8 characters' });
+    }
+
+    const normalizedEmail = email.toLowerCase();
+
+    // Find the latest unexpired, unverified code
+    const { data: codeRecord, error: queryError } = await supabase
+      .from('registration_codes')
+      .select('*')
+      .eq('email', normalizedEmail)
+      .is('verified_at', null)
+      .gt('expires_at', new Date().toISOString())
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .single();
+
+    if (queryError || !codeRecord) {
+      return res.status(400).json({ error: 'Code expired or not found. Please request a new one' });
+    }
+
+    // Check attempts
+    if (codeRecord.attempts >= 3) {
+      return res.status(400).json({ error: 'Too many attempts. Please request a new code' });
+    }
+
+    // Verify code
+    if (codeRecord.code !== code) {
+      // Increment attempts
+      await supabase
+        .from('registration_codes')
+        .update({ attempts: codeRecord.attempts + 1 })
+        .eq('id', codeRecord.id);
+
+      return res.status(400).json({ error: 'Invalid verification code' });
+    }
+
+    // Mark as verified
+    await supabase
+      .from('registration_codes')
+      .update({ verified_at: new Date().toISOString() })
+      .eq('id', codeRecord.id);
+
+    // Double-check email not taken (race condition guard)
+    const existingUser = await userService.findByEmail(normalizedEmail);
+    if (existingUser) {
+      return res.status(400).json({ error: 'Email already registered' });
+    }
+
+    // Create user with email_verified: true
+    const user = await userService.createUser({
+      email: normalizedEmail,
+      name: name || undefined,
+      password,
+      provider: 'email',
+    });
+
+    // Mark email as verified since code was validated
+    await userService.verifyEmail(user.id);
+
+    // Generate tokens
+    const tokens = userService.generateTokens(user);
+
+    sendAuthResponse(res, tokens, user);
+  } catch (error) {
+    console.error('Verify code error:', error);
+    res.status(500).json({ error: 'Verification failed' });
+  }
+});
+
+// Email registration (legacy - kept for backward compatibility)
+// @deprecated Use POST /send-code + POST /verify-code instead
 router.post('/register', async (req: Request, res: Response) => {
   try {
     if (!isSupabaseConfigured()) {

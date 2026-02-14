@@ -1349,7 +1349,7 @@ export const TRANSLATIONS = {
       migrate_confirm: "Migrate now",
       migrate_later: "Later",
       migrate_success: "Migration complete. Local data cleared.",
-      migrate_error: "Migration failed. Please try again."
+      migrate_error: "Migration failed. Please try again.",
     },
     subscription: {
       title: "Upgrade to Pro",
@@ -2778,7 +2778,7 @@ export const TRANSLATIONS = {
       migrate_confirm: "立即迁移",
       migrate_later: "稍后",
       migrate_success: "迁移完成，已清除本地数据。",
-      migrate_error: "迁移失败，请稍后再试。"
+      migrate_error: "迁移失败，请稍后再试。",
     },
     subscription: {
       title: "升级到 Pro",

@@ -8,6 +8,7 @@ import { useTheme, useLanguage, Modal, ActionButton, GlassInput } from '../UICom
 import { trackEvent } from '../../services/analytics';
 
 type AuthMode = 'login' | 'register';
+type RegisterStep = 'form' | 'code';
 
 // Extend window for Google Identity Services
 declare global {
@@ -36,23 +37,28 @@ const LoginModal: React.FC = () => {
     showLoginModal,
     setShowLoginModal,
     loginWithEmail,
-    registerWithEmail,
+    sendVerificationCode,
+    verifyCodeAndRegister,
     loginWithGoogle,
     loginModalReason,
   } = useAuth();
 
   const [mode, setMode] = useState<AuthMode>('login');
+  const [registerStep, setRegisterStep] = useState<RegisterStep>('form');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [verificationCode, setVerificationCode] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [googleReady, setGoogleReady] = useState(false);
+  const [resendCountdown, setResendCountdown] = useState(0);
   const googleButtonRef = useRef<HTMLDivElement>(null);
   const googleInitialized = useRef(false);
+  const countdownRef = useRef<ReturnType<typeof setInterval>>();
 
   const validateEmail = (value: string) => {
     if (!value) {
@@ -89,7 +95,33 @@ const LoginModal: React.FC = () => {
     setEmail('');
     setPassword('');
     setName('');
+    setVerificationCode('');
+    setRegisterStep('form');
+    if (countdownRef.current) clearInterval(countdownRef.current);
+    setResendCountdown(0);
   };
+
+  // Start 60s countdown for resend
+  const startResendCountdown = () => {
+    setResendCountdown(60);
+    if (countdownRef.current) clearInterval(countdownRef.current);
+    countdownRef.current = setInterval(() => {
+      setResendCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(countdownRef.current!);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  // Cleanup countdown on unmount
+  useEffect(() => {
+    return () => {
+      if (countdownRef.current) clearInterval(countdownRef.current);
+    };
+  }, []);
 
   // Google Sign-In callback
   const handleGoogleCredentialResponse = useCallback(async (response: any) => {
@@ -166,25 +198,72 @@ const LoginModal: React.FC = () => {
     });
   }, [showLoginModal, mode]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Handle login form submit
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    trackEvent('form_submitted', {
-      form_name: 'auth',
-      mode,
-    });
+    trackEvent('form_submitted', { form_name: 'auth', mode: 'login' });
 
     try {
-      if (mode === 'register') {
-        await registerWithEmail(email, password, name || undefined);
-      } else {
-        await loginWithEmail(email, password);
-      }
+      await loginWithEmail(email, password);
       handleClose();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Authentication failed');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Handle register step 1: send verification code
+  const handleSendCode = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    trackEvent('form_submitted', { form_name: 'auth', mode: 'register_send_code' });
+
+    try {
+      await sendVerificationCode(email, password, name || undefined);
+      setRegisterStep('code');
+      startResendCountdown();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send verification code');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Handle register step 2: verify code
+  const handleVerifyCode = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    trackEvent('form_submitted', { form_name: 'auth', mode: 'register_verify_code' });
+
+    try {
+      await verifyCodeAndRegister(email, verificationCode, password, name || undefined);
+      handleClose();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Verification failed');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Handle resend code
+  const handleResendCode = async () => {
+    if (resendCountdown > 0) return;
+    setError('');
+    setLoading(true);
+
+    try {
+      await sendVerificationCode(email, password, name || undefined);
+      startResendCountdown();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to resend code');
     } finally {
       setLoading(false);
     }
@@ -194,6 +273,7 @@ const LoginModal: React.FC = () => {
     zh: {
       loginTitle: '登录账户',
       registerTitle: '创建账户',
+      verifyTitle: '验证邮箱',
       email: '电子邮箱',
       password: '密码',
       name: '昵称（可选）',
@@ -206,10 +286,17 @@ const LoginModal: React.FC = () => {
       continueWithApple: '使用 Apple 继续',
       passwordHint: '至少 8 个字符',
       reasonPrefix: '请登录以',
+      sendCode: '发送验证码',
+      verifyCode: '验证',
+      enterCodeHint: '请输入发送至以下邮箱的6位验证码',
+      resendCode: '重新发送',
+      resendIn: (s: number) => `${s}秒后可重发`,
+      back: '返回',
     },
     en: {
       loginTitle: 'Sign In',
       registerTitle: 'Create Account',
+      verifyTitle: 'Verify Email',
       email: 'Email',
       password: 'Password',
       name: 'Name (optional)',
@@ -222,176 +309,279 @@ const LoginModal: React.FC = () => {
       continueWithApple: 'Continue with Apple',
       passwordHint: 'At least 8 characters',
       reasonPrefix: 'Please sign in to',
+      sendCode: 'Send Code',
+      verifyCode: 'Verify',
+      enterCodeHint: 'Enter the 6-digit code sent to',
+      resendCode: 'Resend code',
+      resendIn: (s: number) => `Resend in ${s}s`,
+      back: 'Back',
     },
   };
 
   const lang = t === translations.zh ? 'zh' : 'en';
   const tr = translations[lang] || translations.zh;
 
+  const getTitle = () => {
+    if (mode === 'login') return tr.loginTitle;
+    if (registerStep === 'code') return tr.verifyTitle;
+    return tr.registerTitle;
+  };
+
+  // Verification code input step
+  const renderCodeStep = () => (
+    <div className="space-y-6">
+      {/* Back button + email display */}
+      <div>
+        <button
+          type="button"
+          onClick={() => {
+            setRegisterStep('form');
+            setVerificationCode('');
+            setError('');
+          }}
+          className={`inline-flex items-center gap-1 text-sm mb-3 ${isDark ? 'text-star-300 hover:text-star-100' : 'text-paper-500 hover:text-paper-700'} transition-colors`}
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          {tr.back}
+        </button>
+        <p className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-500'}`}>
+          {tr.enterCodeHint}
+        </p>
+        <p className={`text-sm font-medium mt-1 ${isDark ? 'text-star-100' : 'text-paper-700'}`}>
+          {email}
+        </p>
+      </div>
+
+      {/* Verification code form */}
+      <form onSubmit={handleVerifyCode} className="space-y-4">
+        <div>
+          <GlassInput
+            id="verification-code"
+            type="text"
+            inputMode="numeric"
+            value={verificationCode}
+            onChange={(e) => {
+              const val = e.target.value.replace(/\D/g, '').slice(0, 6);
+              setVerificationCode(val);
+            }}
+            placeholder="000000"
+            required
+            disabled={loading}
+            autoComplete="one-time-code"
+            autoFocus
+            style={{ letterSpacing: '0.5em', textAlign: 'center', fontSize: '1.25rem' }}
+          />
+        </div>
+
+        {error && (
+          <div className="text-sm text-red-500 bg-red-500/10 p-3 rounded-lg">
+            {error}
+          </div>
+        )}
+
+        <ActionButton
+          variant="primary"
+          disabled={loading || verificationCode.length !== 6}
+          className="w-full"
+        >
+          {loading ? '...' : tr.verifyCode}
+        </ActionButton>
+      </form>
+
+      {/* Resend button */}
+      <div className="text-center">
+        <button
+          type="button"
+          onClick={handleResendCode}
+          disabled={resendCountdown > 0 || loading}
+          className={`text-sm transition-colors ${
+            resendCountdown > 0
+              ? isDark ? 'text-star-500' : 'text-paper-400'
+              : isDark ? 'text-gold-400 hover:text-gold-300' : 'text-gold-600 hover:text-gold-700'
+          }`}
+        >
+          {resendCountdown > 0 ? tr.resendIn(resendCountdown) : tr.resendCode}
+        </button>
+      </div>
+    </div>
+  );
+
+  // Login or register form step
+  const renderFormStep = () => (
+    <div className="space-y-6">
+      {/* Reason message */}
+      {loginModalReason && (
+        <div className={`text-sm p-3 rounded-lg ${isDark ? 'bg-space-800 text-star-300' : 'bg-paper-200 text-paper-600'}`}>
+          {tr.reasonPrefix} {loginModalReason}
+        </div>
+      )}
+
+      {/* OAuth buttons */}
+      <div className="space-y-3">
+        {/* Google Sign-In - use official button */}
+        <div
+          ref={googleButtonRef}
+          className="flex justify-center [&>div]:!w-full [&_iframe]:!w-full"
+          style={{ minHeight: '44px' }}
+        />
+        {!googleReady && (
+          <div className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border ${
+            isDark
+              ? 'bg-space-800 border-gold-500/20 text-star-400'
+              : 'bg-paper-100/85 border-paper-300 text-paper-400'
+          }`}>
+            <span className="text-sm">Loading Google Sign-In...</span>
+          </div>
+        )}
+      </div>
+
+      {/* Divider */}
+      <div className="flex items-center gap-4">
+        <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
+        <span className={`text-xs uppercase tracking-wider ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
+          {tr.orContinueWith}
+        </span>
+        <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
+      </div>
+
+      {/* Email form */}
+      <form onSubmit={mode === 'login' ? handleLoginSubmit : handleSendCode} className="space-y-4">
+        {mode === 'register' && (
+          <div>
+            <label
+              htmlFor="login-name"
+              className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+            >
+              {tr.name}
+            </label>
+            <GlassInput
+              id="login-name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+              disabled={loading}
+              autoComplete="name"
+            />
+          </div>
+        )}
+
+        <div>
+          <label
+            htmlFor="login-email"
+            className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+          >
+            {tr.email}
+          </label>
+          <GlassInput
+            id="login-email"
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              validateEmail(e.target.value);
+            }}
+            onBlur={() => validateEmail(email)}
+            placeholder="you@example.com"
+            required
+            disabled={loading}
+            autoComplete="email"
+            aria-required="true"
+            error={emailError}
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="login-password"
+            className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
+          >
+            {tr.password}
+          </label>
+          <div className="relative">
+            <GlassInput
+              id="login-password"
+              type={passwordVisible ? 'text' : 'password'}
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                validatePassword(e.target.value);
+              }}
+              onBlur={() => validatePassword(password)}
+              placeholder="********"
+              required
+              minLength={8}
+              disabled={loading}
+              autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+              error={passwordError}
+            />
+            <button
+              type="button"
+              onClick={() => setPasswordVisible(!passwordVisible)}
+              className={`absolute right-3 top-1/2 -translate-y-1/2 ${isDark ? 'text-star-400' : 'text-paper-400'} hover:text-gold-500`}
+              tabIndex={-1}
+            >
+              {passwordVisible ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              )}
+            </button>
+          </div>
+          {mode === 'register' && (
+            <p className={`mt-1.5 text-xs ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
+              {tr.passwordHint}
+            </p>
+          )}
+        </div>
+
+        {error && (
+          <div className="text-sm text-red-500 bg-red-500/10 p-3 rounded-lg">
+            {error}
+          </div>
+        )}
+
+        <ActionButton
+          variant="primary"
+          disabled={loading || (!!email && !!emailError) || (!!password && !!passwordError)}
+          className="w-full"
+        >
+          {loading ? '...' : mode === 'login' ? tr.login : tr.sendCode}
+        </ActionButton>
+      </form>
+
+      {/* Switch mode */}
+      <button
+        onClick={() => {
+          setMode(mode === 'login' ? 'register' : 'login');
+          setError('');
+          setRegisterStep('form');
+          setVerificationCode('');
+        }}
+        className={`w-full text-center text-sm ${isDark ? 'text-star-300 hover:text-star-100' : 'text-paper-500 hover:text-paper-700'} transition-colors`}
+      >
+        {mode === 'login' ? tr.switchToRegister : tr.switchToLogin}
+      </button>
+    </div>
+  );
+
   return (
     <Modal
       isOpen={showLoginModal}
       onClose={handleClose}
-      title={mode === 'login' ? tr.loginTitle : tr.registerTitle}
+      title={getTitle()}
     >
-      <div className="space-y-6">
-        {/* Reason message */}
-        {loginModalReason && (
-          <div className={`text-sm p-3 rounded-lg ${isDark ? 'bg-space-800 text-star-300' : 'bg-paper-200 text-paper-600'}`}>
-            {tr.reasonPrefix} {loginModalReason}
-          </div>
-        )}
-
-        {/* OAuth buttons */}
-        <div className="space-y-3">
-          {/* Google Sign-In - use official button */}
-          <div
-            ref={googleButtonRef}
-            className="flex justify-center [&>div]:!w-full [&_iframe]:!w-full"
-            style={{ minHeight: '44px' }}
-          />
-          {!googleReady && (
-            <div className={`w-full h-11 flex items-center justify-center gap-3 rounded-lg border ${
-              isDark
-                ? 'bg-space-800 border-gold-500/20 text-star-400'
-                : 'bg-paper-100/85 border-paper-300 text-paper-400'
-            }`}>
-              <span className="text-sm">Loading Google Sign-In...</span>
-            </div>
-          )}
-        </div>
-
-        {/* Divider */}
-        <div className="flex items-center gap-4">
-          <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
-          <span className={`text-xs uppercase tracking-wider ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
-            {tr.orContinueWith}
-          </span>
-          <div className={`flex-1 h-px ${isDark ? 'bg-gold-500/20' : 'bg-paper-300'}`} />
-        </div>
-
-        {/* Email form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {mode === 'register' && (
-            <div>
-              <label
-                htmlFor="login-name"
-                className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
-              >
-                {tr.name}
-              </label>
-              <GlassInput
-                id="login-name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
-                disabled={loading}
-                autoComplete="name"
-              />
-            </div>
-          )}
-
-          <div>
-            <label
-              htmlFor="login-email"
-              className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
-            >
-              {tr.email}
-            </label>
-            <GlassInput
-              id="login-email"
-              type="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                validateEmail(e.target.value);
-              }}
-              onBlur={() => validateEmail(email)}
-              placeholder="you@example.com"
-              required
-              disabled={loading}
-              autoComplete="email"
-              aria-required="true"
-              error={emailError}
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="login-password"
-              className={`block text-sm font-medium mb-1.5 ${isDark ? 'text-star-200' : 'text-paper-600'}`}
-            >
-              {tr.password}
-            </label>
-            <div className="relative">
-              <GlassInput
-                id="login-password"
-                type={passwordVisible ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  validatePassword(e.target.value);
-                }}
-                onBlur={() => validatePassword(password)}
-                placeholder="********"
-                required
-                minLength={8}
-                disabled={loading}
-                autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
-                error={passwordError}
-              />
-              <button
-                type="button"
-                onClick={() => setPasswordVisible(!passwordVisible)}
-                className={`absolute right-3 top-1/2 -translate-y-1/2 ${isDark ? 'text-star-400' : 'text-paper-400'} hover:text-gold-500`}
-                tabIndex={-1}
-              >
-                {passwordVisible ? (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                )}
-              </button>
-            </div>
-            {mode === 'register' && (
-              <p className={`mt-1.5 text-xs ${isDark ? 'text-star-400' : 'text-paper-400'}`}>
-                {tr.passwordHint}
-              </p>
-            )}
-          </div>
-
-          {error && (
-            <div className="text-sm text-red-500 bg-red-500/10 p-3 rounded-lg">
-              {error}
-            </div>
-          )}
-
-          <ActionButton
-            variant="primary"
-            disabled={loading || (!!email && !!emailError) || (!!password && !!passwordError)}
-            className="w-full"
-          >
-            {loading ? '...' : mode === 'login' ? tr.login : tr.register}
-          </ActionButton>
-        </form>
-
-        {/* Switch mode */}
-        <button
-          onClick={() => {
-            setMode(mode === 'login' ? 'register' : 'login');
-            setError('');
-          }}
-          className={`w-full text-center text-sm ${isDark ? 'text-star-300 hover:text-star-100' : 'text-paper-500 hover:text-paper-700'} transition-colors`}
-        >
-          {mode === 'login' ? tr.switchToRegister : tr.switchToLogin}
-        </button>
-      </div>
+      {mode === 'register' && registerStep === 'code'
+        ? renderCodeStep()
+        : renderFormStep()
+      }
     </Modal>
   );
 };

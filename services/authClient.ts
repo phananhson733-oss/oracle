@@ -135,6 +135,38 @@ export async function loginWithApple(identityToken: string, user?: { email?: str
   return data;
 }
 
+export async function sendVerificationCode(email: string, password: string, name?: string): Promise<void> {
+  const res = await fetch(`${API_BASE}/auth/send-code`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password, name }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.error || 'Failed to send verification code');
+  }
+}
+
+export async function verifyCodeAndRegister(email: string, code: string, password: string, name?: string): Promise<AuthResponse> {
+  const res = await fetch(`${API_BASE}/auth/verify-code`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, code, password, name }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.error || 'Verification failed');
+  }
+
+  const data = await res.json();
+  setTokens(data.tokens);
+  setStoredUser(data.user);
+  return data;
+}
+
+/** @deprecated Use sendVerificationCode + verifyCodeAndRegister instead */
 export async function registerWithEmail(email: string, password: string, name?: string): Promise<AuthResponse> {
   const res = await fetch(`${API_BASE}/auth/register`, {
     method: 'POST',

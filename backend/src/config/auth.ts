@@ -25,14 +25,10 @@ export const APPLE_CONFIG = {
   PRIVATE_KEY: process.env.APPLE_PRIVATE_KEY || '',
 };
 
-// Email Configuration (for verification emails)
-export const EMAIL_CONFIG = {
-  SMTP_HOST: process.env.SMTP_HOST || '',
-  SMTP_PORT: parseInt(process.env.SMTP_PORT || '587'),
-  SMTP_USER: process.env.SMTP_USER || '',
-  SMTP_PASS: process.env.SMTP_PASS || '',
-  FROM_EMAIL: process.env.FROM_EMAIL || 'noreply@astromind.ai',
-  FROM_NAME: process.env.FROM_NAME || 'AstrologyWiki',
+// Resend Email Service (for verification codes)
+export const RESEND_CONFIG = {
+  API_KEY: process.env.RESEND_API_KEY || '',
+  FROM_EMAIL: process.env.RESEND_FROM_EMAIL || 'AstroMind <noreply@astromind.ai>',
 };
 
 // Free tier limits
@@ -102,6 +98,6 @@ export const isAppleConfigured = (): boolean => {
   return !!(APPLE_CONFIG.CLIENT_ID && APPLE_CONFIG.TEAM_ID);
 };
 
-export const isEmailConfigured = (): boolean => {
-  return !!(EMAIL_CONFIG.SMTP_HOST && EMAIL_CONFIG.SMTP_USER);
+export const isResendConfigured = (): boolean => {
+  return !!RESEND_CONFIG.API_KEY;
 };
