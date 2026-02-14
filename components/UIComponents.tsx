@@ -27,12 +27,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     document.body.className = `${theme} ${theme === 'dark' ? 'bg-space-950 text-star-50' : 'bg-paper-100 text-paper-900'}`; 
     localStorage.setItem('astro_theme', theme); 
   }, [theme]);
-  const toggleTheme = () => setTheme(prev => {
-    const next = prev === 'dark' ? 'light' : 'dark';
-    trackEvent('theme_changed', { from_theme: prev, to_theme: next });
+  const toggleTheme = () => {
+    const next: Theme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    trackEvent('theme_changed', { from_theme: theme, to_theme: next });
     setUserProperties({ theme: next });
-    return next;
-  });
+  };
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };
 

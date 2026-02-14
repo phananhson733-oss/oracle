@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
 import { HashRouter, Routes, Route, useNavigate, useLocation, Link, Navigate } from 'react-router-dom';
-import { Container, Card, Section, ActionButton, GlassInput, Chip, ScoreBar, Accordion, TimelineCard, CopyButton, ThemeContext, Theme, useTheme, Modal, DetailModal, SectionHeader, LanguageContext, LanguageProvider, useLanguage, translateAstroTerm } from './components/UIComponents';
+import { Container, Card, Section, ActionButton, GlassInput, Chip, ScoreBar, Accordion, TimelineCard, CopyButton, useTheme, ThemeProvider, Modal, DetailModal, SectionHeader, LanguageProvider, useLanguage, translateAstroTerm } from './components/UIComponents';
 import { ArrowLeft, X } from 'lucide-react';
 import * as T from './types';
 import { FOCUS_TAGS, PRESET_QUESTIONS, DIMENSIONS, RELATIONSHIP_TYPES, ASTRO_DICTIONARY, TRANSLATIONS, SYNASTRY_PROFILE_STORAGE_KEY, NATAL_CONFIG, SYNASTRY_CONFIG, COMPOSITE_CONFIG, FREE_MODE } from './constants';
@@ -170,16 +170,6 @@ const buildBirthCacheKey = (profile: Pick<T.UserProfile, 'birthDate' | 'birthTim
 ].join('|');
 
 // --- CONTEXTS ---
-
-const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('astro_theme') as Theme) || 'dark');
-  useEffect(() => { 
-    document.body.className = `${theme} ${theme === 'dark' ? 'bg-space-950 text-star-50' : 'bg-paper-100 text-paper-900'}`; 
-    localStorage.setItem('astro_theme', theme); 
-  }, [theme]);
-  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
-};
 
 const useUserProfile = () => {
     const { user: authUser } = useAuth();
