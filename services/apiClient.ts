@@ -48,7 +48,7 @@ const REQUEST_TIMEOUT_MS = 15000;
 const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
 const LOCAL_CACHE_PREFIX = 'astro_cache_v2';
-const WIKI_CACHE_VERSION = 'v3';
+const WIKI_CACHE_VERSION = 'v4';
 const AI_CACHE_VERSION = 'v5';
 
 type ApiErrorPayload = { error?: string; reason?: string };
