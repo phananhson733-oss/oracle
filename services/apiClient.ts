@@ -542,13 +542,15 @@ export async function fetchAskAnswer(
 }> {
   const birth = profileToBirthInput(profile);
   const deviceId = getDeviceId();
+  const tz = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { return 'UTC'; } })();
   const res = await authFetch(`${API_BASE}/ask`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'x-device-fingerprint': deviceId,
+      'x-user-timezone': tz,
     },
-    body: JSON.stringify({ birth, question, context, lang, category }),
+    body: JSON.stringify({ birth, question, context, lang, category, tz }),
   });
   if (!res.ok) {
     const error = await res.json().catch(() => ({} as { error?: string }));
@@ -640,12 +642,14 @@ export async function fetchSynastry(
   if (birthA.lon !== undefined) params.set('aLon', String(birthA.lon));
   if (birthB.lat !== undefined) params.set('bLat', String(birthB.lat));
   if (birthB.lon !== undefined) params.set('bLon', String(birthB.lon));
+  const tzVal = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { return 'UTC'; } })();
+  params.set('tz', tzVal);
 
   const promise = (async () => {
     const deviceId = getDeviceId();
     const res = await authFetchWithTimeout(
       `${API_BASE}/synastry?${params}`,
-      { headers: { 'x-device-fingerprint': deviceId } },
+      { headers: { 'x-device-fingerprint': deviceId, 'x-user-timezone': tzVal } },
       SYNASTRY_REQUEST_TIMEOUT_MS
     );
     if (!res.ok) throw new Error('Failed to fetch synastry');
@@ -732,12 +736,14 @@ export async function fetchSynastryOverviewSection(
   if (birthA.lon !== undefined) params.set('aLon', String(birthA.lon));
   if (birthB.lat !== undefined) params.set('bLat', String(birthB.lat));
   if (birthB.lon !== undefined) params.set('bLon', String(birthB.lon));
+  const tzVal2 = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { return 'UTC'; } })();
+  params.set('tz', tzVal2);
 
   const promise = (async () => {
     const deviceId = getDeviceId();
     const res = await authFetchWithTimeout(
       `${API_BASE}/synastry/overview-section?${params}`,
-      { headers: { 'x-device-fingerprint': deviceId } },
+      { headers: { 'x-device-fingerprint': deviceId, 'x-user-timezone': tzVal2 } },
       SYNASTRY_REQUEST_TIMEOUT_MS
     );
     if (!res.ok) {
@@ -1296,9 +1302,11 @@ export async function generateSyntheticaReport(
 ) {
   const cacheKey = buildSyntheticaCacheKey(config, context, lang);
   const deviceId = getDeviceId();
+  const syntheticaTz = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch { return 'UTC'; } })();
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'x-device-fingerprint': deviceId,
+    'x-user-timezone': syntheticaTz,
   };
 
   // Check cache first
@@ -1318,7 +1326,7 @@ export async function generateSyntheticaReport(
   }
 
   // Fetch from API
-  const payload = legacySelection ? { ...legacySelection, config, context, lang } : { config, context, lang };
+  const payload = legacySelection ? { ...legacySelection, config, context, lang, tz: syntheticaTz } : { config, context, lang, tz: syntheticaTz };
 
   const res = await authFetch(`${API_BASE}/synthetica/generate`, {
     method: 'POST',

@@ -136,14 +136,25 @@ export interface PurchaseRecord {
 // API 调用
 // =====================================================
 
+// 获取用户时区
+function getUserTimezone(): string {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  } catch {
+    return 'UTC';
+  }
+}
+
 // 获取权益状态
 export async function getEntitlementsV2(): Promise<EntitlementsV2> {
   const deviceId = getDeviceId();
+  const tz = getUserTimezone();
   const headers: Record<string, string> = {
     'x-device-fingerprint': deviceId,
+    'x-user-timezone': tz,
   };
 
-  const res = await authFetch(`${API_BASE}/entitlements/v2`, { headers });
+  const res = await authFetch(`${API_BASE}/entitlements/v2?tz=${encodeURIComponent(tz)}`, { headers });
   if (!res.ok) {
     throw new Error('Failed to get entitlements');
   }
@@ -156,15 +167,17 @@ export async function checkAccessV2(
   featureId?: string
 ): Promise<AccessCheckResult> {
   const deviceId = getDeviceId();
+  const tz = getUserTimezone();
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'x-device-fingerprint': deviceId,
+    'x-user-timezone': tz,
   };
 
   const res = await authFetch(`${API_BASE}/entitlements/v2/check`, {
     method: 'POST',
     headers,
-    body: JSON.stringify({ featureType, featureId }),
+    body: JSON.stringify({ featureType, featureId, tz }),
   });
 
   if (!res.ok) {
@@ -179,15 +192,17 @@ export async function consumeFeatureV2(
   featureId?: string
 ): Promise<{ success: boolean; entitlements: EntitlementsV2 }> {
   const deviceId = getDeviceId();
+  const tz = getUserTimezone();
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'x-device-fingerprint': deviceId,
+    'x-user-timezone': tz,
   };
 
   const res = await authFetch(`${API_BASE}/entitlements/v2/consume`, {
     method: 'POST',
     headers,
-    body: JSON.stringify({ featureType, featureId }),
+    body: JSON.stringify({ featureType, featureId, tz }),
   });
 
   if (!res.ok) {
@@ -204,9 +219,11 @@ export async function checkSynastryHash(
   relationshipType: string
 ): Promise<SynastryCheckResult> {
   const deviceId = getDeviceId();
+  const tz = getUserTimezone();
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'x-device-fingerprint': deviceId,
+    'x-user-timezone': tz,
   };
 
   const res = await authFetch(`${API_BASE}/entitlements/v2/synastry/check-hash`, {
@@ -229,9 +246,11 @@ export async function recordSynastryUsage(
   isFree: boolean
 ): Promise<{ success: boolean; record: { id: string; hash: string }; entitlements: EntitlementsV2 }> {
   const deviceId = getDeviceId();
+  const tz = getUserTimezone();
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'x-device-fingerprint': deviceId,
+    'x-user-timezone': tz,
   };
 
   const res = await authFetch(`${API_BASE}/entitlements/v2/synastry/record`, {

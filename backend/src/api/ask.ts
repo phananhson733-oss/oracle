@@ -22,16 +22,18 @@ const getChartType = (category?: string): AskChartType => {
 // POST /api/ask - 问答
 askRouter.post('/', optionalAuthMiddleware, async (req, res) => {
   try {
-    const { birth, question, context, category, lang: langInput } = req.body as AskRequest;
+    const { birth, question, context, category, lang: langInput, tz } = req.body as AskRequest & { tz?: string };
     const lang: Language = langInput === 'en' ? 'en' : 'zh';
     const chartType = getChartType(category);
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
 
     const access = await entitlementServiceV2.checkAccess(
       req.userId || null,
       'ask',
       undefined,
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
     if (!access.canAccess) {
       return res.status(403).json({
@@ -59,7 +61,8 @@ askRouter.post('/', optionalAuthMiddleware, async (req, res) => {
     const consumed = await entitlementServiceV2.consumeFeature(
       req.userId || null,
       'ask',
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
     if (!consumed) {
       return res.status(403).json({

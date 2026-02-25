@@ -164,16 +164,18 @@ const getContextInstruction = (context: ContextFilter, lang: Language): string =
 
 syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
   try {
-    const payload = req.body as GeneratePayload;
+    const payload = req.body as GeneratePayload & { tz?: string };
     const lang: Language = payload.lang === 'en' || payload.language === 'en' ? 'en' : 'zh';
     const { context } = payload;
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (payload.tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
 
     const access = await entitlementServiceV2.checkAccess(
       req.userId || null,
       'synthetica',
       undefined,
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
     if (!access.canAccess) {
       return res.status(403).json({
@@ -254,7 +256,8 @@ syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
     const consumed = await entitlementServiceV2.consumeFeature(
       req.userId || null,
       'synthetica',
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
     if (!consumed) {
       return res.status(403).json({

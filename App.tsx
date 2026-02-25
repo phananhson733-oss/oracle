@@ -2541,7 +2541,7 @@ type SynastryTabContentMap = {
 const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language, tl } = useLanguage();
     const { theme } = useTheme();
-    const { checkAndRecord: checkSynastryQuota, totalLeft: synastryQuotaLeft } = useSynastryQuota();
+    const { checkAndRecord: checkSynastryQuota, totalLeft: synastryQuotaLeft, resetAt: synastryResetAt } = useSynastryQuota();
     const { checkAccess, entitlements, refreshEntitlements, checkSynastry, recordSynastry } = useEntitlement();
     const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
     const [view, setView] = useState<'select' | 'report'>('select');
@@ -3054,6 +3054,15 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
         // 如果需要购买，不继续（PaywallModal 会自动显示）
         if (quotaResult.needPurchase) {
+          return;
+        }
+
+        // LOGIN_GATE_MODE: 每日配额用尽
+        if (quotaResult.quotaExhausted) {
+          const countdown = getResetCountdown(synastryResetAt);
+          const msg = (t.login_gate?.quota_exhausted_desc || "You've used all your daily attempts. Resets in {time}.")
+            .replace('{time}', countdown);
+          setGenerateError(msg);
           return;
         }
 
@@ -3777,9 +3786,10 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
               </div>
               {/* 合盘配额显示 */}
               <div className="text-xs text-center mb-2 opacity-70">
-                {language === 'zh'
-                  ? `剩余合盘次数: ${synastryQuotaLeft}`
-                  : `Synastry readings left: ${synastryQuotaLeft}`}
+                {LOGIN_GATE_MODE
+                  ? (language === 'zh' ? `今日剩余: ${synastryQuotaLeft}/3` : `Today: ${synastryQuotaLeft}/3`)
+                  : (language === 'zh' ? `剩余合盘次数: ${synastryQuotaLeft}` : `Synastry readings left: ${synastryQuotaLeft}`)
+                }
               </div>
               <ActionButton
                 onClick={handleGenerate}
@@ -5505,10 +5515,22 @@ const splitAskReportByLabels = (
     return sections;
 };
 
+// 计算距离重置时间的倒计时文本
+function getResetCountdown(resetAt?: string): string {
+  if (!resetAt) return '';
+  const now = Date.now();
+  const reset = new Date(resetAt).getTime();
+  const diffMs = Math.max(0, reset - now);
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}
+
 const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const { t, language } = useLanguage();
     const { theme } = useTheme();
-    const { totalLeft: askQuotaLeft } = useAskQuota();
+    const { totalLeft: askQuotaLeft, resetAt: askResetAt } = useAskQuota();
     const { checkAccess, refreshEntitlements } = useEntitlement();
     const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
     const [question, setQuestion] = useState("");
@@ -5592,6 +5614,12 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         if (!access.canAccess) {
             if (LOGIN_GATE_MODE && !isAuthenticated) {
                 openLoginModal(t.login_gate?.unlock_ask || 'Sign in to ask the Oracle');
+            } else if (LOGIN_GATE_MODE && isAuthenticated) {
+                // 每日配额用尽，显示倒计时
+                const countdown = getResetCountdown(askResetAt);
+                const msg = (t.login_gate?.quota_exhausted_desc || "You've used all your daily attempts. Resets in {time}.")
+                  .replace('{time}', countdown);
+                setError(msg);
             } else if (access.needPurchase) {
                 openUpgradeModal(t.paywall?.unlock_ask || 'Unlock Ask Q&A');
             }
@@ -5898,7 +5926,10 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                     `}
                                 >
                                     <span className="text-xs font-mono uppercase tracking-widest opacity-80">
-                                        {language === 'zh' ? `本周次数: ${askQuotaLeft}` : `Weekly: ${askQuotaLeft}`}
+                                        {LOGIN_GATE_MODE
+                                          ? (language === 'zh' ? `今日: ${askQuotaLeft}/3` : `Today: ${askQuotaLeft}/3`)
+                                          : (language === 'zh' ? `本周次数: ${askQuotaLeft}` : `Weekly: ${askQuotaLeft}`)
+                                        }
                                     </span>
                                     <span className="mt-1 flex items-center gap-2 text-gold-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 -rotate-45">

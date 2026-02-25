@@ -19,13 +19,25 @@ import { useLanguage, useTheme } from '../UIComponents';
 import { OracleLoading } from '../OracleLoading';
 import { useEntitlement, useSyntheticaQuota } from '../../contexts/EntitlementContext';
 import { useAuth } from '../../contexts/AuthContext';
+import { LOGIN_GATE_MODE } from '../../constants';
+
+function getQuotaCountdown(resetAt?: string): string {
+  if (!resetAt) return '';
+  const now = Date.now();
+  const reset = new Date(resetAt).getTime();
+  const diffMs = Math.max(0, reset - now);
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}
 
 const WikiSyntheticaPage: React.FC = () => {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
   const { isSubscriber, checkAccess, refreshEntitlements } = useEntitlement();
   const { openUpgradeModal } = useAuth();
-  const { freeLeft: syntheticaFreeLeft, subscriptionLeft: syntheticaSubscriptionLeft } = useSyntheticaQuota();
+  const { freeLeft: syntheticaFreeLeft, subscriptionLeft: syntheticaSubscriptionLeft, resetAt: syntheticaResetAt } = useSyntheticaQuota();
   const contextCopy = t.synthetica.catalog.contexts as Record<SyntheticaContextFilter, { label: string; description: string }>;
   const planetCopy = t.synthetica.catalog.planets as Record<string, { name: string; archetype: string }>;
   const signCopy = t.synthetica.catalog.signs as Record<string, { name: string; archetype: string }>;
@@ -54,7 +66,7 @@ const WikiSyntheticaPage: React.FC = () => {
   });
 
   const [result, setResult] = useState<SyntheticaReportResponse | null>(null);
-  const syntheticaDailyLimit = 3 + (isSubscriber ? 7 : 0);
+  const syntheticaDailyLimit = LOGIN_GATE_MODE ? 5 : (3 + (isSubscriber ? 7 : 0));
   const syntheticaDailyLeft = Math.max(0, syntheticaFreeLeft + syntheticaSubscriptionLeft);
   const syntheticaQuotaText = (t.synthetica.quota || '')
     .replace('{left}', String(syntheticaDailyLeft))
@@ -115,8 +127,14 @@ const WikiSyntheticaPage: React.FC = () => {
     setError(null);
     const access = await checkAccess('synthetica');
     if (!access.canAccess) {
-      if (access.needPurchase) {
-        // 使用统一的订阅弹窗
+      if (LOGIN_GATE_MODE && !access.needPurchase) {
+        // LOGIN_GATE_MODE: 每日配额用尽，显示倒计时
+        const countdown = getQuotaCountdown(syntheticaResetAt);
+        const msg = (t.login_gate?.quota_exhausted_desc || "You've used all your daily attempts. Resets in {time}.")
+          .replace('{time}', countdown);
+        setError(msg);
+        setViewState('error');
+      } else if (access.needPurchase) {
         openUpgradeModal('解锁 Synthetica 洞察');
       }
       return;

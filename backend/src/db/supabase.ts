@@ -133,6 +133,11 @@ export interface DbFreeUsage {
   synastry_total_used: number;  // 永久免费合盘次数（最多 3 次）
   synthetica_used: number;
   synthetica_reset_at: string | null;
+  synastry_daily_used: number;
+  synastry_daily_reset_at: string | null;
+  ask_daily_used: number;
+  ask_daily_reset_at: string | null;
+  user_timezone: string | null;
   created_at: string;
   updated_at: string;
 }

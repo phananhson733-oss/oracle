@@ -17,6 +17,7 @@ const router = Router();
 // 获取用户完整权益状态
 router.get('/v2', optionalAuthMiddleware, async (req: Request, res: Response) => {
   const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+  const timezone = (req.query.tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
 
   try {
     console.log('[Entitlements V2] Request:', {
@@ -27,7 +28,8 @@ router.get('/v2', optionalAuthMiddleware, async (req: Request, res: Response) =>
 
     const entitlements = await entitlementServiceV2.getEntitlements(
       req.userId || null,
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
 
     console.log('[Entitlements V2] Success:', {
@@ -55,8 +57,9 @@ router.get('/v2', optionalAuthMiddleware, async (req: Request, res: Response) =>
 // 检查特定功能是否可访问
 router.post('/v2/check', optionalAuthMiddleware, async (req: Request, res: Response) => {
   try {
-    const { featureType, featureId } = req.body;
+    const { featureType, featureId, tz } = req.body;
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
 
     const validFeatures: FeatureType[] = [
       'dimension', 'core_theme', 'detail', 'daily_script', 'daily_transit',
@@ -71,7 +74,8 @@ router.post('/v2/check', optionalAuthMiddleware, async (req: Request, res: Respo
       req.userId || null,
       featureType as FeatureType,
       featureId,
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
 
     res.json(result);
@@ -85,8 +89,9 @@ router.post('/v2/check', optionalAuthMiddleware, async (req: Request, res: Respo
 // 消耗权益（Ask、合盘等消耗型）
 router.post('/v2/consume', optionalAuthMiddleware, async (req: Request, res: Response) => {
   try {
-    const { featureType, featureId } = req.body;
+    const { featureType, featureId, tz } = req.body;
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
 
     const validFeatures: FeatureType[] = ['ask', 'synastry', 'synthetica'];
     if (!validFeatures.includes(featureType as FeatureType)) {
@@ -98,7 +103,8 @@ router.post('/v2/consume', optionalAuthMiddleware, async (req: Request, res: Res
       req.userId || null,
       featureType as FeatureType,
       featureId,
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
 
     if (!canAccess.canAccess) {
@@ -113,7 +119,8 @@ router.post('/v2/consume', optionalAuthMiddleware, async (req: Request, res: Res
     const consumed = await entitlementServiceV2.consumeFeature(
       req.userId || null,
       featureType as FeatureType,
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
 
     if (!consumed) {
@@ -126,7 +133,8 @@ router.post('/v2/consume', optionalAuthMiddleware, async (req: Request, res: Res
     // 返回更新后的权益状态
     const entitlements = await entitlementServiceV2.getEntitlements(
       req.userId || null,
-      deviceFingerprint
+      deviceFingerprint,
+      timezone
     );
 
     res.json({
@@ -158,10 +166,11 @@ router.post('/v2/synastry/check-hash', authMiddleware, async (req: Request, res:
     }
 
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (req.headers['x-user-timezone'] as string) || undefined;
 
     if (!isSupabaseConfigured()) {
       const hash = generateSynastryHash(personA, personB, relationshipType);
-      const entitlements = await entitlementServiceV2.getEntitlements(req.userId || null, deviceFingerprint);
+      const entitlements = await entitlementServiceV2.getEntitlements(req.userId || null, deviceFingerprint, timezone);
 
       return res.json({
         exists: false,
@@ -181,7 +190,7 @@ router.post('/v2/synastry/check-hash', authMiddleware, async (req: Request, res:
     );
 
     // 获取当前合盘额度
-    const entitlements = await entitlementServiceV2.getEntitlements(req.userId!, deviceFingerprint);
+    const entitlements = await entitlementServiceV2.getEntitlements(req.userId!, deviceFingerprint, timezone);
 
     res.json({
       exists: result.exists,
@@ -213,10 +222,11 @@ router.post('/v2/synastry/record', authMiddleware, async (req: Request, res: Res
     }
 
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (req.headers['x-user-timezone'] as string) || undefined;
 
     if (!isSupabaseConfigured()) {
       const hash = generateSynastryHash(personA, personB, relationshipType);
-      const entitlements = await entitlementServiceV2.getEntitlements(req.userId || null, deviceFingerprint);
+      const entitlements = await entitlementServiceV2.getEntitlements(req.userId || null, deviceFingerprint, timezone);
       const synastry = { ...entitlements.synastry };
 
       if (isFree && synastry.totalLeft > 0) {
@@ -255,12 +265,13 @@ router.post('/v2/synastry/record', authMiddleware, async (req: Request, res: Res
       await entitlementServiceV2.consumeFeature(
         req.userId!,
         'synastry',
-        deviceFingerprint
+        deviceFingerprint,
+        timezone
       );
     }
 
     // 返回更新后的权益状态
-    const entitlements = await entitlementServiceV2.getEntitlements(req.userId!);
+    const entitlements = await entitlementServiceV2.getEntitlements(req.userId!, undefined, timezone);
 
     res.json({
       success: true,

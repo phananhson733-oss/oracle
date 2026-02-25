@@ -12,7 +12,7 @@ import {
   PurchaseScope,
   isSupabaseConfigured,
 } from '../db/supabase.js';
-import { FREE_TIER_LIMITS, SUBSCRIPTION_BENEFITS, PRICING } from '../config/auth.js';
+import { FREE_TIER_LIMITS, SUBSCRIPTION_BENEFITS, PRICING, LOGIN_GATE_MODE, LOGIN_GATE_DAILY_LIMITS } from '../config/auth.js';
 import subscriptionService from './subscriptionService.js';
 import { getOrCreateDevEntitlementState } from './entitlementService.js';
 
@@ -134,6 +134,40 @@ function getNextDayReset(): string {
   const nextDay = getDayStart();
   nextDay.setUTCDate(nextDay.getUTCDate() + 1);
   return nextDay.toISOString();
+}
+
+// 获取给定时区的当日 0 点（UTC 表示）
+function getDayStartForTimezone(timezone: string, date: Date = new Date()): Date {
+  try {
+    // 获取用户时区的当前日期字符串（YYYY-MM-DD）
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+      timeZone: timezone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
+    const dateStr = formatter.format(date); // e.g. "2026-02-15"
+    // 用该日期字符串构造该时区 0 点的 UTC 时间
+    // 创建一个临时 Date 来计算偏移量
+    const parts = dateStr.split('-');
+    const localMidnight = new Date(`${parts[0]}-${parts[1]}-${parts[2]}T00:00:00`);
+    // 获取该时区在 midnight 时的 UTC 偏移
+    const utcStr = new Date(localMidnight.toLocaleString('en-US', { timeZone: 'UTC' })).getTime();
+    const tzStr = new Date(localMidnight.toLocaleString('en-US', { timeZone: timezone })).getTime();
+    const offset = utcStr - tzStr;
+    return new Date(localMidnight.getTime() + offset);
+  } catch {
+    // 无效时区 fallback 到 UTC
+    return getDayStart(date);
+  }
+}
+
+// 获取给定时区的下次午夜（ISO 8601）
+function getNextMidnightForTimezone(timezone: string): string {
+  const now = new Date();
+  const dayStart = getDayStartForTimezone(timezone, now);
+  const nextMidnight = new Date(dayStart.getTime() + 24 * 60 * 60 * 1000);
+  return nextMidnight.toISOString();
 }
 
 // 检查是否同一月
@@ -258,7 +292,7 @@ export function generateSynastryHash(
 
 class EntitlementServiceV2 {
   // 获取用户完整权益状态
-  async getEntitlements(userId: string | null, deviceFingerprint?: string): Promise<EntitlementsV2> {
+  async getEntitlements(userId: string | null, deviceFingerprint?: string, timezone?: string): Promise<EntitlementsV2> {
     const now = new Date();
     const weekStart = getWeekStart(now);
     const nextReset = getNextWeekReset();
@@ -387,6 +421,69 @@ class EntitlementServiceV2 {
 
         return updatedEntitlements;
       }
+      return entitlements;
+    }
+
+    // LOGIN_GATE_MODE: 已登录用户使用每日限额，无订阅/积分概念
+    if (LOGIN_GATE_MODE && userId) {
+      const userTz = timezone || 'UTC';
+      const tzDayStart = getDayStartForTimezone(userTz);
+      const tzNextReset = getNextMidnightForTimezone(userTz);
+
+      const freeUsage = await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint);
+
+      // 缓存用户时区
+      if (freeUsage && timezone && freeUsage.user_timezone !== timezone) {
+        await supabase
+          .from('free_usage')
+          .update({ user_timezone: timezone })
+          .eq('id', freeUsage.id);
+      }
+
+      if (freeUsage) {
+        // Ask 每日重置
+        const askDailyResetAt = freeUsage.ask_daily_reset_at ? new Date(freeUsage.ask_daily_reset_at) : null;
+        if (!askDailyResetAt || askDailyResetAt < tzDayStart) {
+          await this.resetDailyAskUsage(freeUsage.id, tzDayStart);
+          entitlements.ask.freeLeft = LOGIN_GATE_DAILY_LIMITS.ASK_DAILY;
+        } else {
+          entitlements.ask.freeLeft = Math.max(0, LOGIN_GATE_DAILY_LIMITS.ASK_DAILY - (freeUsage.ask_daily_used || 0));
+        }
+
+        // Synastry 每日重置
+        const synastryDailyResetAt = freeUsage.synastry_daily_reset_at ? new Date(freeUsage.synastry_daily_reset_at) : null;
+        if (!synastryDailyResetAt || synastryDailyResetAt < tzDayStart) {
+          await this.resetDailySynastryUsage(freeUsage.id, tzDayStart);
+          entitlements.synastry.freeLeft = LOGIN_GATE_DAILY_LIMITS.SYNASTRY_DAILY;
+        } else {
+          entitlements.synastry.freeLeft = Math.max(0, LOGIN_GATE_DAILY_LIMITS.SYNASTRY_DAILY - (freeUsage.synastry_daily_used || 0));
+        }
+
+        // Synthetica 每日重置
+        const syntheticaResetAt = freeUsage.synthetica_reset_at ? new Date(freeUsage.synthetica_reset_at) : null;
+        if (!syntheticaResetAt || syntheticaResetAt < tzDayStart) {
+          await this.resetDailySyntheticaUsage(freeUsage.id);
+          entitlements.synthetica.freeLeft = LOGIN_GATE_DAILY_LIMITS.SYNTHETICA_DAILY;
+        } else {
+          entitlements.synthetica.freeLeft = Math.max(0, LOGIN_GATE_DAILY_LIMITS.SYNTHETICA_DAILY - (freeUsage.synthetica_used || 0));
+        }
+      }
+
+      // LOGIN_GATE_MODE 下无订阅/积分，直接使用 freeLeft
+      entitlements.ask.subscriptionLeft = 0;
+      entitlements.ask.purchasedLeft = 0;
+      entitlements.ask.totalLeft = entitlements.ask.freeLeft;
+      entitlements.ask.resetAt = tzNextReset;
+
+      entitlements.synastry.subscriptionLeft = 0;
+      entitlements.synastry.totalLeft = entitlements.synastry.freeLeft;
+      entitlements.synastry.resetAt = tzNextReset;
+
+      entitlements.synthetica.subscriptionLeft = 0;
+      entitlements.synthetica.purchasedLeft = 0;
+      entitlements.synthetica.totalLeft = entitlements.synthetica.freeLeft;
+      entitlements.synthetica.resetAt = tzNextReset;
+
       return entitlements;
     }
 
@@ -573,12 +670,46 @@ class EntitlementServiceV2 {
     userId: string | null,
     featureType: FeatureType,
     featureId?: string,
-    deviceFingerprint?: string
+    deviceFingerprint?: string,
+    timezone?: string
   ): Promise<AccessCheckResult> {
     try {
-      const entitlements = await this.getEntitlements(userId, deviceFingerprint);
+      const entitlements = await this.getEntitlements(userId, deviceFingerprint, timezone);
       const now = new Date();
       const today = now.toISOString().split('T')[0];
+
+      // LOGIN_GATE_MODE: 已登录用户对非限额功能免费访问
+      if (LOGIN_GATE_MODE && userId) {
+        const NON_QUOTA_FEATURES: FeatureType[] = [
+          'dimension', 'core_theme', 'detail', 'daily_script', 'daily_transit', 'synastry_detail', 'cbt_stats',
+        ];
+        if (NON_QUOTA_FEATURES.includes(featureType)) {
+          return { canAccess: true, reason: 'free_quota' };
+        }
+        // 限额功能：检查 totalLeft
+        if (featureType === 'ask') {
+          if (entitlements.ask.totalLeft > 0) {
+            return { canAccess: true, reason: 'free_quota' };
+          }
+          return { canAccess: false, needPurchase: false };
+        }
+        if (featureType === 'synastry') {
+          // 已有合盘记录不消耗
+          if (featureId && entitlements.purchasedFeatures.synastryHashes.includes(featureId)) {
+            return { canAccess: true, reason: 'purchased' };
+          }
+          if (entitlements.synastry.totalLeft > 0) {
+            return { canAccess: true, reason: 'free_quota' };
+          }
+          return { canAccess: false, needPurchase: false };
+        }
+        if (featureType === 'synthetica') {
+          if (entitlements.synthetica.totalLeft > 0) {
+            return { canAccess: true, reason: 'free_quota' };
+          }
+          return { canAccess: false, needPurchase: false };
+        }
+      }
 
       switch (featureType) {
         case 'dimension': {
@@ -753,7 +884,8 @@ class EntitlementServiceV2 {
   async consumeFeature(
     userId: string | null,
     featureType: FeatureType,
-    deviceFingerprint?: string
+    deviceFingerprint?: string,
+    timezone?: string
   ): Promise<boolean> {
     if (!isSupabaseConfigured()) {
       if (!userId) {
@@ -828,6 +960,39 @@ class EntitlementServiceV2 {
         return false;
       }
 
+      return true;
+    }
+
+    // LOGIN_GATE_MODE: 已登录用户消耗每日额度
+    if (LOGIN_GATE_MODE && userId) {
+      const freeUsage = await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint);
+      if (!freeUsage) return false;
+
+      if (featureType === 'ask') {
+        const { error } = await supabase
+          .from('free_usage')
+          .update({ ask_daily_used: (freeUsage.ask_daily_used || 0) + 1 })
+          .eq('id', freeUsage.id);
+        return !error;
+      }
+
+      if (featureType === 'synastry') {
+        const { error } = await supabase
+          .from('free_usage')
+          .update({ synastry_daily_used: (freeUsage.synastry_daily_used || 0) + 1 })
+          .eq('id', freeUsage.id);
+        return !error;
+      }
+
+      if (featureType === 'synthetica') {
+        const { error } = await supabase
+          .from('free_usage')
+          .update({ synthetica_used: (freeUsage.synthetica_used || 0) + 1 })
+          .eq('id', freeUsage.id);
+        return !error;
+      }
+
+      // 非限额功能不消耗
       return true;
     }
 
@@ -1042,6 +1207,26 @@ class EntitlementServiceV2 {
       .update({
         synthetica_used: 0,
         synthetica_reset_at: dayStart.toISOString(),
+      })
+      .eq('id', freeUsageId);
+  }
+
+  private async resetDailyAskUsage(freeUsageId: string, tzDayStart: Date): Promise<void> {
+    await supabase
+      .from('free_usage')
+      .update({
+        ask_daily_used: 0,
+        ask_daily_reset_at: tzDayStart.toISOString(),
+      })
+      .eq('id', freeUsageId);
+  }
+
+  private async resetDailySynastryUsage(freeUsageId: string, tzDayStart: Date): Promise<void> {
+    await supabase
+      .from('free_usage')
+      .update({
+        synastry_daily_used: 0,
+        synastry_daily_reset_at: tzDayStart.toISOString(),
       })
       .eq('id', freeUsageId);
   }

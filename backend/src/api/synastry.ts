@@ -752,6 +752,7 @@ synastryRouter.get('/overview-section', authMiddleware, async (req, res) => {
     const nameA = (req.query.nameA as string) || 'A';
     const nameB = (req.query.nameB as string) || 'B';
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (req.query.tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
     const userId = req.userId!;
     const normalizedRelationshipType = relationshipType || 'unknown';
     const personA = buildSynastryPersonInfo(birthA, nameA);
@@ -760,7 +761,7 @@ synastryRouter.get('/overview-section', authMiddleware, async (req, res) => {
     let shouldConsume = false;
 
     if (!isSupabaseConfigured()) {
-      const access = await entitlementServiceV2.checkAccess(userId, 'synastry', undefined, deviceFingerprint);
+      const access = await entitlementServiceV2.checkAccess(userId, 'synastry', undefined, deviceFingerprint, timezone);
       if (!access.canAccess) {
         return res.status(403).json({
           error: 'Feature not available',
@@ -777,7 +778,7 @@ synastryRouter.get('/overview-section', authMiddleware, async (req, res) => {
         normalizedRelationshipType
       );
       if (!record.exists) {
-        const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint);
+        const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint, timezone);
         if (entitlements.synastry.totalLeft <= 0) {
           return res.status(403).json({
             error: 'Feature not available',
@@ -855,7 +856,7 @@ synastryRouter.get('/overview-section', authMiddleware, async (req, res) => {
         normalizedRelationshipType,
         true
       );
-      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint, timezone);
       if (!consumed) {
         return res.status(403).json({
           error: 'Failed to consume feature',
@@ -864,7 +865,7 @@ synastryRouter.get('/overview-section', authMiddleware, async (req, res) => {
         });
       }
     } else if (shouldConsume) {
-      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint, timezone);
       if (!consumed) {
         return res.status(403).json({
           error: 'Failed to consume feature',
@@ -902,6 +903,7 @@ synastryRouter.get('/', authMiddleware, async (req, res) => {
     const nameA = (req.query.nameA as string) || 'A';
     const nameB = (req.query.nameB as string) || 'B';
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
+    const timezone = (req.query.tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
     const userId = req.userId!;
     const normalizedRelationshipType = relationshipType || 'unknown';
     const personA = buildSynastryPersonInfo(birthA, nameA);
@@ -910,7 +912,7 @@ synastryRouter.get('/', authMiddleware, async (req, res) => {
     let shouldConsume = false;
 
     if (!isSupabaseConfigured()) {
-      const access = await entitlementServiceV2.checkAccess(userId, 'synastry', undefined, deviceFingerprint);
+      const access = await entitlementServiceV2.checkAccess(userId, 'synastry', undefined, deviceFingerprint, timezone);
       if (!access.canAccess) {
         return res.status(403).json({
           error: 'Feature not available',
@@ -927,7 +929,7 @@ synastryRouter.get('/', authMiddleware, async (req, res) => {
         normalizedRelationshipType
       );
       if (!record.exists) {
-        const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint);
+        const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint, timezone);
         if (entitlements.synastry.totalLeft <= 0) {
           return res.status(403).json({
             error: 'Feature not available',
@@ -988,7 +990,7 @@ synastryRouter.get('/', authMiddleware, async (req, res) => {
         normalizedRelationshipType,
         true
       );
-      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint, timezone);
       if (!consumed) {
         return res.status(403).json({
           error: 'Failed to consume feature',
@@ -997,7 +999,7 @@ synastryRouter.get('/', authMiddleware, async (req, res) => {
         });
       }
     } else if (shouldConsume) {
-      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint);
+      const consumed = await entitlementServiceV2.consumeFeature(userId, 'synastry', deviceFingerprint, timezone);
       if (!consumed) {
         return res.status(403).json({
           error: 'Failed to consume feature',
