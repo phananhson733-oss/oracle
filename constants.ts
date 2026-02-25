@@ -4,11 +4,11 @@
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 // FREE_MODE: 临时屏蔽所有订阅/付费功能，改为 false 即可恢复
-export const FREE_MODE = true;
+export const FREE_MODE = false;
 
 // LOGIN_GATE_MODE: 登录门控模式。开启后，付费系统被替换为「未登录/已登录」两级访问控制。
 // 关闭后回退到 FREE_MODE 行为。
-export const LOGIN_GATE_MODE = true;
+export const LOGIN_GATE_MODE = false;
 
 // 需要登录才能访问的功能配置表
 export const LOGIN_REQUIRED_FEATURES: Record<string, boolean> = {
@@ -1476,6 +1476,10 @@ export const TRANSLATIONS = {
       unlock_wiki_tools: "Sign in to use astrology tools",
       unlock_cbt_stats: "Sign in to view your mood insights",
       unlock_generic: "Sign in to unlock this feature",
+      quota_exhausted_title: "Daily Limit Reached",
+      quota_exhausted_desc: "You've used all your daily attempts. Resets in {time}.",
+      quota_remaining: "{left}/{total}",
+      quota_reset_countdown: "Resets in {hours}h {minutes}m",
     },
     gm: {
       login_required: "Please log in to use GM commands.",
@@ -2919,6 +2923,10 @@ export const TRANSLATIONS = {
       unlock_wiki_tools: "登录后使用占星工具",
       unlock_cbt_stats: "登录后查看情绪洞察",
       unlock_generic: "登录后解锁此功能",
+      quota_exhausted_title: "今日次数已用完",
+      quota_exhausted_desc: "每日次数已用尽，将在 {time} 后重置。",
+      quota_remaining: "{left}/{total}",
+      quota_reset_countdown: "{hours}小时{minutes}分钟后重置",
     },
     gm: {
       login_required: "请先登录后再使用 GM 命令。",

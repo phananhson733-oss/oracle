@@ -89,6 +89,16 @@ export const PRICING = {
   SYNTHETICA_USE: 10,                // 10 积分 - Synthetica 单次使用
 };
 
+// LOGIN_GATE_MODE: 登录门控模式（后端侧标志，与前端 constants.ts 保持一致）
+export const LOGIN_GATE_MODE = false;
+
+// LOGIN_GATE_MODE 下的每日免费次数限制
+export const LOGIN_GATE_DAILY_LIMITS = {
+  ASK_DAILY: 3,
+  SYNASTRY_DAILY: 3,
+  SYNTHETICA_DAILY: 5,
+};
+
 // Check if auth providers are configured
 export const isGoogleConfigured = (): boolean => {
   return !!(GOOGLE_CONFIG.CLIENT_ID && GOOGLE_CONFIG.CLIENT_SECRET);
