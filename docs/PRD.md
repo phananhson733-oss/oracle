@@ -1,6 +1,6 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 1.3
+> **Version**: 1.8
 > **Last Updated**: 2026-02-26
 > **Status**: Living Document — synced with codebase
 
@@ -19,7 +19,7 @@ AstroMind 是一款面向欧美市场的现代占星应用，将西方占星学�
 | 维度 | 描述 |
 |------|------|
 | **年龄** | 18–35 岁 |
-| **地区** | 欧美市场为主，中国市场通过微信小程序覆盖 |
+| **地区** | 欧美市场 |
 | **兴趣** | 占星学、心理学、自我成长、正念冥想 |
 | **行为特征** | 移动优先、社交媒体活跃、愿意为个性化内容付费 |
 | **语言** | 英文（主语言）、中文（辅助） |
@@ -47,6 +47,8 @@ AstroMind 是一款面向欧美市场的现代占星应用，将西方占星学�
 | **Email 密码登录** | 已注册用户通过邮箱 + 密码登录（legacy） |
 | **JWT Token** | Access Token + Refresh Token 双令牌机制 |
 | **7 天试用期** | 新用户注册后自动获得 7 天免费试用 |
+| **账户删除 (GDPR/CCPA)** | 用户可永久删除账户及所有关联数据（邮箱用户需密码确认） |
+| **数据导出 (GDPR/CCPA)** | 用户可导出所有个人数据为 JSON 文件 |
 
 **认证流程**：
 ```
@@ -288,19 +290,26 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `/zh/**` — 中文 SEO 页面族
 - 输出至 `public/en/`、`public/zh/` 目录，由 Vercel 直接托管
 
-### 2.11 微信小程序 (WeChat Mini Program)
+### 2.11 法律合规页面 (Legal Pages)
 
-**App ID**: wxd6b9d50d4b1b6cb1
+公开法律合规页面，GDPR/CCPA 合规必需：
 
-独立的中国市场版本，使用原生微信小程序开发：
+| 路由 | 页面 | 说明 |
+|------|------|------|
+| `/privacy` | Privacy Policy | 隐私政策（GDPR + CCPA 合规） |
+| `/terms` | Terms of Service | 服务条款 |
+| `/cookies` | Cookie Policy | Cookie 政策 |
+| `/about` | About / Contact | 关于我们与联系方式 |
+| `/help` | Help / FAQ | 常见问题（含 FAQPage JSON-LD Schema） |
+| `*` (404) | Not Found | 自定义 404 页面（星座主题文案） |
 
-| 特性 | 说明 |
-|------|------|
-| **页面数量** | 25 个页面 |
-| **标签栏** | 5 个标签：首页、自我、每日、发现、我的 |
-| **星盘渲染** | Canvas 2D 实现 |
-| **图标方案** | 星座图标强制使用 PNG（避免 emoji 渲染） |
-| **Canvas 着色** | 使用 `source-atop` 混合模式（非 `source-in`） |
+**全局 Footer**: 所有已登录/Wiki 页面底部显示，包含法律页面链接、关于、帮助、联系方式。显示逻辑与顶部导航栏一致。
+
+**无障碍 (Accessibility)**:
+- Skip-to-content 链接（键盘可见）
+- `<main>` landmark + `aria-label` 导航标签
+- 全局 `focus-visible` 焦点环（gold-500）
+- Modal 组件已内置 `role="dialog"` + `aria-modal="true"` + 焦点捕获
 
 ---
 
@@ -407,7 +416,18 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `POST /api/airwallex/confirm-order` — 确认积分购买并写入 `gm_credit` 记录
 - `POST /api/airwallex/confirm-checkout` — 确认订阅并激活 + 发放 500 奖励积分
 - `POST /api/airwallex/confirm-renewal` — 确认续费并延长订阅 + 发放 500 奖励积分
-- `POST /api/airwallex/webhook` — Webhook 处理
+- `POST /api/airwallex/webhook` — Webhook 处理（含邮件通知触发）
+
+**Webhook 邮件通知**: Webhook 处理器在以下事件中自动发送邮件（best-effort，不阻塞 webhook 响应）：
+- `subscription.active` → 发送订阅支付收据邮件
+- `subscription.cancelled` → 发送退订确认邮件（含到期日期与重新订阅链接）
+- `subscription.unpaid` → 发送支付失败提醒邮件（Dunning，含更新支付方式链接）
+- `payment_intent.succeeded` → 发送积分购买收据邮件
+
+**邮件模板**: 所有交易邮件使用统一的 AstroMind 品牌模板（深色主题 + 金色品牌色），通过 `emailService` 集中管理：
+- `sendPaymentReceipt()` — 支付收据（金额、描述、交易 ID、日期）
+- `sendPaymentFailedNotice()` — 支付失败通知
+- `sendCancellationConfirmation()` — 退订确认（含到期日期）
 
 **积分写入规范**: 所有支付渠道（Airwallex、PayPal、Stripe）写入 `purchase_records` 时统一使用 `feature_type: 'gm_credit'`，不使用 RPC 调用。`entitlementServiceV2` 仅统计 `feature_type === 'gm_credit'` 的记录。
 
@@ -435,7 +455,6 @@ AI 生成的深度心理分析，每个维度独立解读：
 | **Email** | Resend | 6.9 |
 | **Payment** | Airwallex | — |
 | **Deployment** | Vercel | — |
-| **Mini Program** | WeChat Native | v3.14 |
 
 ### 4.2 项目结构 (Project Structure)
 
@@ -502,7 +521,6 @@ AI 生成的深度心理分析，每个维度独立解读：
 │   │   │   └── manager.ts      # 注册表 + 所有模板
 │   │   └── db/                 # 数据库 Schema
 │   └── migrations/             # 数据库迁移文件
-├── astromind/miniprogram/      # 微信小程序
 ├── public/                     # 静态资源
 ├── scripts/                    # SEO 构建脚本
 ├── docs/                       # 文档
@@ -565,6 +583,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 | PUT | `/api/auth/profile` | 更新档案 | Required |
 | POST | `/api/auth/migrate` | 迁移 localStorage 数据 | Required |
 | GET | `/api/auth/verify-email/:token` | 邮箱验证链接 | — |
+| DELETE | `/api/auth/account` | 删除账户 (GDPR/CCPA) | Required |
+| GET | `/api/auth/export-data` | 导出用户数据 (GDPR/CCPA) | Required |
 
 #### 支付 API (Airwallex — 当前激活)
 
@@ -923,7 +943,7 @@ JWT Token 结构:
 | 币种 | 用途 |
 |------|------|
 | **USD** | 主要定价货币（欧美市场） |
-| **CNY** | 中国市场定价（微信小程序 + 可选） |
+| **CNY** | 中国用户可选 |
 
 ### 6.3 翻译系统
 
