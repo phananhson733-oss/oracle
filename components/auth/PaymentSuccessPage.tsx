@@ -68,17 +68,15 @@ const PaymentSuccessPage: React.FC = () => {
       if (awRenewalId) {
         try {
           setSyncAttempts(1);
-          await confirmAirwallexRenewal(awRenewalId);
-          sessionStorage.removeItem('aw_renewal_id');
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
-          await new Promise((resolve) => setTimeout(resolve, 300));
-          const latest = entitlementsRef.current;
-          const latestAuth = authEntitlementsRef.current;
-          if (Boolean(latest?.isSubscriber || latestAuth?.isSubscriber)) {
+          const renewResult = await confirmAirwallexRenewal(awRenewalId);
+          if (renewResult.confirmed) {
+            sessionStorage.removeItem('aw_renewal_id');
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
             setSyncState('ready');
             return;
           }
+          // Not yet confirmed — fall through to polling
         } catch (e) {
           console.warn('Airwallex confirm-renewal failed, falling back to polling:', e);
         }

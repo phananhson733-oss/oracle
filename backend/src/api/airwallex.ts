@@ -248,6 +248,19 @@ router.post('/confirm-renewal', authMiddleware, requireAuth, async (req: Request
       return res.status(400).json({ error: 'renewalId required' });
     }
 
+    // Idempotency: check if this renewal was already processed
+    if (isSupabaseConfigured()) {
+      const { data: existing } = await supabase
+        .from('subscriptions')
+        .select('id')
+        .eq('user_id', req.userId)
+        .contains('usage', { last_renewal_id: renewalId })
+        .single();
+      if (existing) {
+        return res.json({ confirmed: true, alreadyProcessed: true });
+      }
+    }
+
     // Check PaymentIntent status
     const pi = await airwallexService.getPaymentIntent(renewalId);
     if (pi.status !== 'SUCCEEDED') {
@@ -259,13 +272,18 @@ router.post('/confirm-renewal', authMiddleware, requireAuth, async (req: Request
       return res.status(403).json({ error: 'Payment does not belong to this user' });
     }
 
-    const plan = metadata.plan as 'monthly' | 'yearly' || 'monthly';
+    // Validate this is actually a renewal payment
+    if (metadata.type !== 'renewal') {
+      return res.status(400).json({ error: 'Invalid payment type' });
+    }
+
+    const plan = (metadata.plan === 'yearly' ? 'yearly' : 'monthly') as 'monthly' | 'yearly';
 
     if (isSupabaseConfigured()) {
       // Get current subscription
       const { data: sub } = await supabase
         .from('subscriptions')
-        .select('id, current_period_end')
+        .select('id, current_period_end, usage')
         .eq('user_id', req.userId)
         .in('status', ['active', 'trialing', 'past_due'])
         .order('created_at', { ascending: false })
@@ -288,21 +306,28 @@ router.post('/confirm-renewal', authMiddleware, requireAuth, async (req: Request
         newEnd.setDate(newEnd.getDate() + 31);
       }
 
-      await supabase
+      // Update subscription and record renewal ID for idempotency
+      const { error: updateError } = await supabase
         .from('subscriptions')
         .update({
           current_period_end: newEnd.toISOString(),
           status: 'active',
+          usage: { ...(sub.usage || {}), last_renewal_id: renewalId },
           updated_at: new Date().toISOString(),
         })
         .eq('id', sub.id);
+
+      if (updateError) {
+        console.error('Failed to update subscription for renewal:', updateError);
+        return res.status(500).json({ error: 'Failed to update subscription' });
+      }
     }
 
     res.json({ confirmed: true });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     console.error('Airwallex confirm-renewal error:', message);
-    res.status(500).json({ error: `Failed to confirm renewal: ${message}` });
+    res.status(500).json({ error: 'Failed to confirm renewal' });
   }
 });
 
