@@ -114,6 +114,7 @@ class AirwallexService {
         customer_data: { email: input.email },
         line_items: [{ price_id: priceId, quantity: 1 }],
         mode: 'SUBSCRIPTION',
+        subscription_data: {},
         request_id: `sub_${input.userId}_${Date.now()}`,
         metadata: {
           userId: input.userId,
