@@ -12,6 +12,17 @@
   outline-offset: 2px;
 }
 
+/* content-visibility optimization for off-screen list items */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 80px;
+}
+
+.cv-auto-lg {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 200px;
+}
+
 /* Screen reader only utility (backup for Tailwind sr-only) */
 .sr-only {
   position: absolute;
