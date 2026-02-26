@@ -354,7 +354,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
               <div className="p-8">
                   {/* 4 Dimensions - Psychological Weather */}
                   <div className="mb-10">
-                    <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+                    <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
                         {dimensionConfig.map((dim) => (
                           dim.data && <DetailedScoreRow key={dim.key} label={dim.label} data={dim.data} tone={dim.tone} />
                         ))}
