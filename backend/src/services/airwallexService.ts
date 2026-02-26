@@ -233,7 +233,7 @@ class AirwallexService {
       body: JSON.stringify({
         request_id: `rl_${shortId}_${input.plan}_${Date.now()}`,
         amount: pricing.amount / 100,
-        currency: pricing.currency.toLowerCase(),
+        currency: pricing.currency.toUpperCase(),
         reusable: false,
         title: `AstroMind Pro ${planLabel} Renewal`,
         description: `Renew AstroMind Pro subscription (${planLabel})`,
@@ -333,7 +333,7 @@ class AirwallexService {
       body: JSON.stringify({
         request_id: `lk_${input.userId.replace(/-/g, '').slice(0, 12)}_${input.packageId.replace('credits_', '')}_${Date.now()}`,
         amount: pricing.amount / 100,
-        currency: pricing.currency.toLowerCase(),
+        currency: pricing.currency.toUpperCase(),
         reusable: false,
         title: packageInfo.name,
         description: packageInfo.description,
