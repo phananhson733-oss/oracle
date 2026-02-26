@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
           output: {
             manualChunks: {
               'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-              'ui-components': ['lucide-react', 'recharts'],
+              'charts': ['recharts'],
               'google-ai': ['@google/genai'],
             }
           }
@@ -32,7 +32,7 @@ export default defineConfig(({ mode }) => {
         sourcemap: mode === 'development',
       },
       optimizeDeps: {
-        include: ['react', 'react-dom', 'react-router-dom', 'lucide-react', 'recharts', '@google/genai'],
+        include: ['react', 'react-dom', 'react-router-dom', 'recharts', '@google/genai'],
       }
     };
 });
