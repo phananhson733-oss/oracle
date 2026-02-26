@@ -7,7 +7,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useEntitlement } from '../../contexts/EntitlementContext';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
-import { createPortalSession } from '../../services/paymentClient';
+import { createPortalSession, confirmAirwallexCheckout } from '../../services/paymentClient';
 import { CheckCircle, Crown, Sparkles } from 'lucide-react';
 
 const PaymentSuccessPage: React.FC = () => {
@@ -53,13 +53,39 @@ const PaymentSuccessPage: React.FC = () => {
   const returnTarget = resolveReturnTarget(returnTo);
   const shouldAutoReturn = syncState !== 'syncing';
 
-  // Refresh entitlements after successful payment (retry to wait for webhook propagation)
+  // Confirm Airwallex checkout and refresh entitlements
   useEffect(() => {
     let cancelled = false;
     const runSync = async () => {
       const maxAttempts = 6;
       setSyncState('syncing');
 
+      // Try to confirm Airwallex checkout first (doesn't rely on webhook)
+      const awCheckoutId = typeof sessionStorage !== 'undefined'
+        ? sessionStorage.getItem('aw_checkout_id')
+        : null;
+
+      if (awCheckoutId) {
+        try {
+          setSyncAttempts(1);
+          await confirmAirwallexCheckout(awCheckoutId);
+          sessionStorage.removeItem('aw_checkout_id');
+          // Give DB a moment to propagate
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
+          await new Promise((resolve) => setTimeout(resolve, 300));
+          const latest = entitlementsRef.current;
+          const latestAuth = authEntitlementsRef.current;
+          if (Boolean(latest?.isSubscriber || latestAuth?.isSubscriber)) {
+            setSyncState('ready');
+            return;
+          }
+        } catch (e) {
+          console.warn('Airwallex confirm-checkout failed, falling back to polling:', e);
+        }
+      }
+
+      // Fallback: poll entitlements (for webhook-based activation)
       for (let attempt = 1; attempt <= maxAttempts && !cancelled; attempt += 1) {
         setSyncAttempts(attempt);
         await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);

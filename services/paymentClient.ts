@@ -126,12 +126,29 @@ export function isPaypalEnabled(): boolean {
 
 // === Airwallex APIs ===
 
+export async function confirmAirwallexCheckout(
+  checkoutId: string
+): Promise<{ confirmed: boolean; alreadyActive?: boolean; status?: string }> {
+  const res = await authFetch(`${API_BASE}/airwallex/confirm-checkout`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ checkoutId }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({}));
+    throw new Error(error.error || 'Failed to confirm checkout');
+  }
+
+  return res.json();
+}
+
 export async function createAirwallexSubscription(
   plan: 'monthly' | 'yearly',
   successUrl: string,
   cancelUrl: string,
   options?: { useFirstDiscount?: boolean; lang?: string }
-): Promise<{ checkoutUrl: string; usedFirstDiscount: boolean }> {
+): Promise<{ checkoutUrl: string; checkoutId: string; usedFirstDiscount: boolean }> {
   const res = await authFetch(`${API_BASE}/airwallex/subscribe`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -213,6 +230,10 @@ export async function createSubscriptionCheckout(
       useFirstDiscount: applyFirstDiscount,
       lang,
     });
+    // Store checkoutId in sessionStorage for the success page to confirm
+    if (typeof sessionStorage !== 'undefined') {
+      sessionStorage.setItem('aw_checkout_id', result.checkoutId);
+    }
     return { url: result.checkoutUrl };
   }
 

@@ -103,12 +103,113 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
 
     res.json({
       checkoutUrl: result.checkoutUrl,
+      checkoutId: result.checkoutId,
       usedFirstDiscount: result.usedFirstDiscount,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     console.error('Airwallex create subscription error:', message, error);
     res.status(500).json({ error: `Failed to create subscription: ${message}` });
+  }
+});
+
+// POST /api/airwallex/confirm-checkout — verify billing checkout and activate subscription
+router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    if (!isAirwallexConfigured()) {
+      return res.status(503).json({ error: 'Airwallex service unavailable' });
+    }
+
+    const { checkoutId } = req.body;
+    if (!checkoutId) {
+      return res.status(400).json({ error: 'checkoutId required' });
+    }
+
+    // Query Airwallex for the billing checkout status
+    const checkout = await airwallexService.getBillingCheckout(checkoutId);
+
+    if (checkout.status !== 'COMPLETED') {
+      return res.json({ confirmed: false, status: checkout.status });
+    }
+
+    const metadata = checkout.metadata || {};
+    const userId = metadata.userId;
+
+    // Verify the checkout belongs to this user
+    if (userId !== req.userId) {
+      return res.status(403).json({ error: 'Checkout does not belong to this user' });
+    }
+
+    const subscriptionId = checkout.subscription_id;
+    if (!subscriptionId) {
+      return res.json({ confirmed: false, status: 'NO_SUBSCRIPTION' });
+    }
+
+    // Get subscription details from Airwallex
+    const subscription = await airwallexService.getSubscriptionDetails(subscriptionId);
+    const plan = metadata.plan || 'monthly';
+    const useFirstDiscount = metadata.useFirstDiscount === 'true';
+
+    const startDate = new Date((subscription as any).current_period_starts_at || (subscription as any).starts_at || new Date());
+    const endDate = new Date((subscription as any).current_period_ends_at || startDate);
+    if (!(subscription as any).current_period_ends_at) {
+      if (plan === 'yearly') endDate.setFullYear(endDate.getFullYear() + 1);
+      else endDate.setMonth(endDate.getMonth() + 1);
+    }
+
+    if (isSupabaseConfigured()) {
+      const { data: existing } = await supabase
+        .from('subscriptions')
+        .select('id, airwallex_subscription_id')
+        .eq('user_id', userId)
+        .single();
+
+      // Skip if already activated with this subscription
+      if (existing?.airwallex_subscription_id === subscriptionId) {
+        return res.json({ confirmed: true, alreadyActive: true });
+      }
+
+      const subData = {
+        user_id: userId,
+        airwallex_subscription_id: subscriptionId,
+        airwallex_customer_id: (checkout as any).billing_customer_id || null,
+        payment_provider: 'airwallex',
+        plan,
+        status: 'active' as const,
+        current_period_start: startDate.toISOString(),
+        current_period_end: endDate.toISOString(),
+        cancel_at_period_end: false,
+        updated_at: new Date().toISOString(),
+      };
+
+      if (existing) {
+        await supabase.from('subscriptions').update(subData).eq('user_id', userId);
+      } else {
+        await supabase.from('subscriptions').insert({
+          ...subData,
+          usage: { synastryReads: 0, monthlyReportClaimed: false },
+        });
+      }
+
+      // Mark first discount used
+      if (useFirstDiscount) {
+        await supabase.from('users').update({ used_first_discount: true }).eq('id', userId);
+      }
+
+      // Award bonus credits (ignore if RPC doesn't exist)
+      try {
+        await supabase.rpc('add_user_credits', {
+          p_user_id: userId,
+          p_amount: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+        });
+      } catch { /* RPC may not exist yet */ }
+    }
+
+    res.json({ confirmed: true });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('Airwallex confirm-checkout error:', message);
+    res.status(500).json({ error: 'Failed to confirm checkout' });
   }
 });
 

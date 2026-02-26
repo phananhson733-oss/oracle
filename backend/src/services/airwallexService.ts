@@ -71,7 +71,7 @@ class AirwallexService {
   }
 
   // Create subscription via Billing Checkout
-  async createSubscription(input: CreateSubscriptionInput): Promise<{ checkoutUrl: string; usedFirstDiscount: boolean }> {
+  async createSubscription(input: CreateSubscriptionInput): Promise<{ checkoutUrl: string; checkoutId: string; usedFirstDiscount: boolean }> {
     if (!isAirwallexConfigured()) {
       throw new Error('Airwallex not configured');
     }
@@ -137,8 +137,41 @@ class AirwallexService {
 
     return {
       checkoutUrl: data.url,
+      checkoutId: data.id,
       usedFirstDiscount,
     };
+  }
+
+  // Get billing checkout details (to confirm subscription after payment)
+  async getBillingCheckout(checkoutId: string): Promise<{
+    id: string;
+    status: string;
+    subscription_id?: string;
+    metadata?: Record<string, string>;
+  }> {
+    if (!isAirwallexConfigured()) {
+      throw new Error('Airwallex not configured');
+    }
+
+    const token = await this.getAccessToken();
+
+    const response = await fetch(
+      `${AIRWALLEX_API_BASE}/api/v1/billing_checkouts/${checkoutId}`,
+      {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Airwallex ${response.status}: ${errorBody}`);
+    }
+
+    return await response.json();
   }
 
   // Create PaymentIntent for credits purchase
