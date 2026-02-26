@@ -30,6 +30,10 @@ import { Footer } from './components/Footer';
 import { useAnalyticsTracking } from './hooks/useAnalytics';
 import { loadGoogleSDK, loadAppleSDK } from './utils/load-sdk';
 import { getDateInTimeZone, formatTimezoneOffset, containsCjk, getLocationQueryMinLength, buildBirthCacheKey } from './utils/astro-helpers';
+import { PLANET_GLYPHS, splitLabelParts, formatSignHouse, DETAIL_LABEL_CLASS } from './components/shared/astro-glyphs';
+import { MiniLoader } from './components/shared/MiniLoader';
+import { FrameworkDisclaimer } from './components/shared/FrameworkDisclaimer';
+import { WeatherMoodIcon } from './components/shared/WeatherMoodIcon';
 
 // Global SEO schemas (Organization, WebSite)
 const GlobalSchema: React.FC = () => {
@@ -167,92 +171,6 @@ const useUserProfile = () => {
 };
 
 // --- SUB-COMPONENTS ---
-
-const FrameworkDisclaimer: React.FC = () => {
-  const { t } = useLanguage();
-  const { theme } = useTheme();
-  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-gold-600/30';
-  const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-400';
-
-  return (
-    <div className={`mb-8 p-4 rounded-lg border border-dashed ${borderColor} text-xs ${mutedText}`}>
-      <div className="flex justify-between items-center mb-1">
-        <span className="font-bold uppercase tracking-widest">{t.common.methodology}</span>
-        <span className="opacity-70">{t.common.method_desc}</span>
-      </div>
-      <p className="opacity-90 leading-relaxed">{t.common.disclaimer}</p>
-    </div>
-  );
-};
-
-// MiniLoader - 用于合盘tab内容加载状态
-const MiniLoader: React.FC<{ label: string; error?: string | null }> = ({ label, error }) => {
-  const { theme } = useTheme();
-  if (error) {
-    return (
-      <div className={`text-center py-12 ${theme === 'dark' ? 'text-star-400' : 'text-paper-600'}`}>
-        <div className="text-sm opacity-80">{error}</div>
-      </div>
-    );
-  }
-  return <OracleLoading variant="mini" thinkingLabel={label} />;
-};
-
-const DETAIL_LABEL_CLASS = "text-xs uppercase tracking-widest opacity-80";
-
-const PLANET_GLYPHS: Record<string, string> = {
-  sun: '☉',
-  moon: '☽',
-  rising: '↑',
-  mercury: '☿',
-  venus: '♀',
-  mars: '♂',
-  saturn: '♄',
-  pluto: '♇',
-  chiron: '⚷',
-  north_node: '☊',
-};
-
-const ZODIAC_GLYPHS: Array<[RegExp, string]> = [
-  [/Aries|白羊座/iu, '♈'],
-  [/Taurus|金牛座/iu, '♉'],
-  [/Gemini|双子座/iu, '♊'],
-  [/Cancer|巨蟹座/iu, '♋'],
-  [/Leo|狮子座/iu, '♌'],
-  [/Virgo|处女座/iu, '♍'],
-  [/Libra|天秤座/iu, '♎'],
-  [/Scorpio|天蝎座/iu, '♏'],
-  [/Sagittarius|射手座/iu, '♐'],
-  [/Capricorn|摩羯座/iu, '♑'],
-  [/Aquarius|水瓶座/iu, '♒'],
-  [/Pisces|双鱼座/iu, '♓'],
-];
-
-const splitLabelParts = (label: string) => {
-  const match = label.match(/^(.+?)\s*[（(](.+)[)）]\s*$/);
-  if (!match) return { main: label.trim(), sub: '' };
-  return { main: match[1].trim(), sub: match[2].trim() };
-};
-
-const getZodiacGlyph = (value: string) => {
-  for (const [pattern, glyph] of ZODIAC_GLYPHS) {
-    if (pattern.test(value)) return glyph;
-  }
-  return '';
-};
-
-const formatSignHouse = (value?: string) => {
-  if (!value) return '';
-  const glyph = getZodiacGlyph(value);
-  return glyph ? `${glyph} ${value}` : value;
-};
-
-// Weather/Mood Emoji Icon Component - render emojis directly for 7-day forecast
-const WeatherMoodIcon: React.FC<{ emoji: string; className?: string }> = ({ emoji, className = "w-7 h-7 text-xl" }) => (
-  <span className={`inline-flex items-center justify-center ${className}`} aria-hidden="true">
-    {emoji}
-  </span>
-);
 
 const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
   const { t, tl } = useLanguage();
