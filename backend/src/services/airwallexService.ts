@@ -128,9 +128,9 @@ class AirwallexService {
     });
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error('Airwallex create subscription error:', error);
-      throw new Error(`Failed to create Airwallex subscription: ${response.statusText}`);
+      const errorBody = await response.text();
+      console.error('Airwallex create subscription error:', response.status, errorBody);
+      throw new Error(`Airwallex ${response.status}: ${errorBody}`);
     }
 
     const data = await response.json();
