@@ -5,6 +5,7 @@ module.exports = {
     './index.html',
     './index.tsx',
     './App.tsx',
+    './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './contexts/**/*.{ts,tsx}',
     './services/**/*.{ts,tsx}',
