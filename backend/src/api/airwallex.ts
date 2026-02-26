@@ -222,13 +222,27 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
         await supabase.from('users').update({ used_first_discount: true }).eq('id', userId);
       }
 
-      // Award bonus credits (ignore if RPC doesn't exist)
-      try {
-        await supabase.rpc('add_user_credits', {
-          p_user_id: userId,
-          p_amount: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+      // Award bonus credits via direct INSERT (idempotent by feature_id)
+      const bonusFeatureId = `sub_bonus:${subscriptionId}`;
+      const { data: bonusExists } = await supabase
+        .from('purchase_records')
+        .select('id')
+        .eq('user_id', userId)
+        .eq('feature_id', bonusFeatureId)
+        .limit(1)
+        .single();
+
+      if (!bonusExists) {
+        await supabase.from('purchase_records').insert({
+          user_id: userId,
+          feature_type: 'gm_credit',
+          feature_id: bonusFeatureId,
+          scope: 'consumable',
+          price_cents: 0,
+          quantity: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+          consumed: 0,
         });
-      } catch { /* RPC may not exist yet */ }
+      }
     }
 
     res.json({ confirmed: true });
@@ -323,6 +337,28 @@ router.post('/confirm-renewal', authMiddleware, requireAuth, async (req: Request
       if (updateError) {
         console.error('Failed to update subscription for renewal:', updateError);
         return res.status(500).json({ error: 'Failed to update subscription' });
+      }
+
+      // Award renewal bonus credits (idempotent by feature_id)
+      const bonusFeatureId = `renewal_bonus:${renewalId}`;
+      const { data: bonusExists } = await supabase
+        .from('purchase_records')
+        .select('id')
+        .eq('user_id', req.userId)
+        .eq('feature_id', bonusFeatureId)
+        .limit(1)
+        .single();
+
+      if (!bonusExists) {
+        await supabase.from('purchase_records').insert({
+          user_id: req.userId!,
+          feature_type: 'gm_credit',
+          feature_id: bonusFeatureId,
+          scope: 'consumable',
+          price_cents: 0,
+          quantity: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+          consumed: 0,
+        });
       }
     }
 
@@ -523,7 +559,7 @@ router.post('/confirm-order', authMiddleware, requireAuth, async (req: Request, 
       // Insert with race-condition guard (duplicate key = already processed by webhook)
       const { error: insertErr } = await supabase.from('purchase_records').insert({
         user_id: req.userId,
-        feature_type: 'credits',
+        feature_type: 'gm_credit',
         feature_id: idempotencyKey,
         scope: 'consumable',
         price_cents: priceCents,
@@ -538,12 +574,6 @@ router.post('/confirm-order', authMiddleware, requireAuth, async (req: Request, 
         }
         throw insertErr;
       }
-
-      // Add credits (only reaches here if insert succeeded)
-      await supabase.rpc('add_user_credits', {
-        p_user_id: req.userId,
-        p_amount: credits,
-      });
     }
 
     res.json({ confirmed: true, credits });
@@ -703,11 +733,27 @@ async function handleSubscriptionActive(event: any): Promise<void> {
         .eq('id', userId);
     }
 
-    // Award bonus credits
-    await supabase.rpc('add_user_credits', {
-      p_user_id: userId,
-      p_amount: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
-    });
+    // Award bonus credits via direct INSERT (idempotent by feature_id)
+    const bonusFeatureId = `sub_bonus:${subscriptionId}`;
+    const { data: bonusExists } = await supabase
+      .from('purchase_records')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('feature_id', bonusFeatureId)
+      .limit(1)
+      .single();
+
+    if (!bonusExists) {
+      await supabase.from('purchase_records').insert({
+        user_id: userId,
+        feature_type: 'gm_credit',
+        feature_id: bonusFeatureId,
+        scope: 'consumable',
+        price_cents: 0,
+        quantity: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+        consumed: 0,
+      });
+    }
   }
 
   console.log(`Airwallex subscription activated: ${subscriptionId} for user ${userId}`);
@@ -795,7 +841,7 @@ async function handlePaymentIntentSucceeded(event: any): Promise<void> {
     // Record purchase (race-condition guard: unique constraint on feature_id)
     const { error: insertErr } = await supabase.from('purchase_records').insert({
       user_id: userId,
-      feature_type: 'credits',
+      feature_type: 'gm_credit',
       feature_id: idempotencyKey,
       scope: 'consumable',
       price_cents: priceCents,
@@ -810,12 +856,6 @@ async function handlePaymentIntentSucceeded(event: any): Promise<void> {
       }
       throw insertErr;
     }
-
-    // Add credits only if insert succeeded (no duplicate)
-    await supabase.rpc('add_user_credits', {
-      p_user_id: userId,
-      p_amount: credits,
-    });
   }
 
   console.log(`Airwallex credits purchase: ${credits} credits for user ${userId}`);

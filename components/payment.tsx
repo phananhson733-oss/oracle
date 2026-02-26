@@ -1,24 +1,29 @@
 // INPUT: React、认证上下文与基础 UI 组件（积分余额与订阅入口）。
-// OUTPUT: 导出 CreditsModal 积分充值弹窗（PayPal 支付与套餐选择）。
+// OUTPUT: 导出 CreditsModal 积分充值弹窗（Airwallex 支付与套餐选择）。
 // POS: 积分充值弹窗组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Modal, ActionButton, useLanguage, useTheme } from './UIComponents';
 import { useAuth } from '../contexts/AuthContext';
 import { Check, Sparkles } from 'lucide-react';
 import { trackEvent } from '../services/analytics';
-import { createAirwallexOrder } from '../services/paymentClient';
+import { createAirwallexOrder, getAirwallexPricing, formatPrice } from '../services/paymentClient';
 import { redirectToAirwallexCheckout } from '../services/airwallexCheckout';
 
-// Credits packages configuration — 与后端 CREDITS_PACKAGES 一一对应
-const CREDITS_PACKAGES = [
-  { id: 'credits_100', credits: 100, price: 9.99 },
-  { id: 'credits_300', credits: 300, price: 24.99 },
-  { id: 'credits_500', credits: 500, price: 39.99 },
-  { id: 'credits_1000', credits: 1000, price: 69.99 },
-] as const;
+interface CreditsPkg {
+  id: string;
+  credits: number;
+  amount: number; // cents
+  currency: string;
+}
 
-type CreditsPackage = typeof CREDITS_PACKAGES[number];
+// Fallback packages (USD) when API is unavailable
+const FALLBACK_PACKAGES: CreditsPkg[] = [
+  { id: 'credits_100', credits: 100, amount: 999, currency: 'USD' },
+  { id: 'credits_300', credits: 300, amount: 2499, currency: 'USD' },
+  { id: 'credits_500', credits: 500, amount: 3999, currency: 'USD' },
+  { id: 'credits_1000', credits: 1000, amount: 6999, currency: 'USD' },
+];
 
 interface CreditsModalProps {
   isOpen: boolean;
@@ -33,9 +38,29 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
   const isDark = theme === 'dark';
   const credits = entitlements?.credits ?? 0;
 
-  const [selectedPackage, setSelectedPackage] = useState<CreditsPackage>(CREDITS_PACKAGES[1]); // Default to 300 credits
+  const [packages, setPackages] = useState<CreditsPkg[]>(FALLBACK_PACKAGES);
+  const [selectedId, setSelectedId] = useState('credits_300');
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Load pricing from backend
+  useEffect(() => {
+    if (!isOpen) return;
+    getAirwallexPricing(language)
+      .then((data) => {
+        if (data.credits?.length) {
+          setPackages(data.credits.map((c: { id: string; credits: number; amount: number; currency: string }) => ({
+            id: c.id,
+            credits: c.credits,
+            amount: c.amount,
+            currency: c.currency,
+          })));
+        }
+      })
+      .catch(() => { /* use fallback */ });
+  }, [isOpen, language]);
+
+  const selectedPackage = packages.find((p) => p.id === selectedId) || packages[1];
 
   const translations = {
     zh: {
@@ -45,6 +70,8 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       bestValue: '最划算',
       popular: '热门',
       credits: '积分',
+      perCredit: '/积分',
+      save: '省',
       pay: '立即支付',
       processing: '处理中...',
       loginRequired: '请先登录后购买积分',
@@ -59,6 +86,8 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       bestValue: 'Best Value',
       popular: 'Popular',
       credits: 'credits',
+      perCredit: '/credit',
+      save: 'Save',
       pay: 'Pay Now',
       processing: 'Processing...',
       loginRequired: 'Please sign in to purchase credits',
@@ -70,6 +99,15 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
 
   const tr = language === 'zh' ? translations.zh : translations.en;
   const balance = new Intl.NumberFormat(language === 'zh' ? 'zh-CN' : 'en-US').format(credits);
+
+  // Compute unit prices and savings
+  const baseUnitPrice = packages.length > 0 ? packages[0].amount / packages[0].credits : 0;
+
+  const getUnitPrice = (pkg: CreditsPkg) => pkg.amount / pkg.credits;
+  const getSavingsPercent = (pkg: CreditsPkg) => {
+    if (baseUnitPrice <= 0) return 0;
+    return Math.round((1 - getUnitPrice(pkg) / baseUnitPrice) * 100);
+  };
 
   const handlePurchase = useCallback(async () => {
     if (!isAuthenticated) {
@@ -86,7 +124,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       trackEvent('credits_purchase_started', {
         package_id: selectedPackage.id,
         credits: selectedPackage.credits,
-        price: selectedPackage.price,
+        price: selectedPackage.amount,
       });
 
       // Create Airwallex order via backend API
@@ -135,9 +173,9 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
     openUpgradeModal();
   }, [onClose, openUpgradeModal]);
 
-  const getBadge = (pkg: CreditsPackage): string | null => {
-    if (pkg.credits === 1000) return tr.bestValue;
-    if (pkg.credits === 300) return tr.popular;
+  const getBadge = (pkg: CreditsPkg): string | null => {
+    if (pkg.id === 'credits_1000') return tr.bestValue;
+    if (pkg.id === 'credits_300') return tr.popular;
     return null;
   };
 
@@ -169,13 +207,15 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
           {tr.selectPackage}
         </div>
         <div className="grid grid-cols-2 gap-3">
-          {CREDITS_PACKAGES.map((pkg) => {
+          {packages.map((pkg) => {
             const isSelected = selectedPackage.id === pkg.id;
             const badge = getBadge(pkg);
+            const savingsPercent = getSavingsPercent(pkg);
+            const unitPriceCents = getUnitPrice(pkg);
             return (
               <button
                 key={pkg.id}
-                onClick={() => setSelectedPackage(pkg)}
+                onClick={() => setSelectedId(pkg.id)}
                 disabled={isProcessing}
                 className={`relative p-4 rounded-xl border-2 transition-all text-left ${
                   isSelected
@@ -203,8 +243,18 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
                 <div className={`text-xs mt-1 ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
                   {tr.credits}
                 </div>
-                <div className="text-lg font-semibold mt-2 text-gold-500">
-                  ${pkg.price.toFixed(2)}
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-lg font-semibold text-gold-500">
+                    {formatPrice(pkg.amount, pkg.currency)}
+                  </span>
+                  {savingsPercent > 0 && (
+                    <span className="text-[10px] font-bold text-green-500 bg-green-500/10 px-1.5 py-0.5 rounded-full">
+                      {tr.save} {savingsPercent}%
+                    </span>
+                  )}
+                </div>
+                <div className={`text-[11px] mt-1 ${isDark ? 'text-star-500' : 'text-paper-400'}`}>
+                  {formatPrice(Math.round(unitPriceCents), pkg.currency)}{tr.perCredit}
                 </div>
               </button>
             );
@@ -233,7 +283,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
             </span>
           ) : (
             <>
-              {tr.pay} · ${selectedPackage.price.toFixed(2)}
+              {tr.pay} · {formatPrice(selectedPackage.amount, selectedPackage.currency)}
             </>
           )}
         </ActionButton>

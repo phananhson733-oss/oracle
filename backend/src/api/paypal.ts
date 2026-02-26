@@ -286,10 +286,27 @@ router.post('/confirm-subscription', authMiddleware, requireAuth, async (req: Re
           usage: { synastryReads: 0, monthlyReportClaimed: false },
         });
 
-        await supabase.rpc('add_user_credits', {
-          p_user_id: req.userId,
-          p_amount: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
-        });
+        // Award bonus credits via direct INSERT (idempotent by feature_id)
+        const bonusFeatureId = `sub_bonus:paypal:${subscriptionId}`;
+        const { data: bonusExists } = await supabase
+          .from('purchase_records')
+          .select('id')
+          .eq('user_id', req.userId)
+          .eq('feature_id', bonusFeatureId)
+          .limit(1)
+          .single();
+
+        if (!bonusExists) {
+          await supabase.from('purchase_records').insert({
+            user_id: req.userId,
+            feature_type: 'gm_credit',
+            feature_id: bonusFeatureId,
+            scope: 'consumable',
+            price_cents: 0,
+            quantity: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+            consumed: 0,
+          });
+        }
       }
 
       if (customData.useFirstDiscount) {
@@ -429,7 +446,7 @@ router.post('/capture-order', authMiddleware, requireAuth, async (req: Request, 
       // 记录购买
       await supabase.from('purchase_records').insert({
         user_id: req.userId,
-        feature_type: 'credits',
+        feature_type: 'gm_credit',
         feature_id: packageId,
         scope: 'consumable',
         price_cents: packageInfo.amount,
@@ -437,12 +454,6 @@ router.post('/capture-order', authMiddleware, requireAuth, async (req: Request, 
         payment_provider: 'paypal',
         quantity: packageInfo.credits,
         consumed: 0,
-      });
-
-      // 更新用户积分
-      await supabase.rpc('add_user_credits', {
-        p_user_id: req.userId,
-        p_amount: packageInfo.credits,
       });
     }
 
@@ -645,11 +656,27 @@ async function handleSubscriptionActivated(event: any): Promise<void> {
         .eq('id', userId);
     }
 
-    // 发放订阅奖励积分
-    await supabase.rpc('add_user_credits', {
-      p_user_id: userId,
-      p_amount: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
-    });
+    // Award bonus credits via direct INSERT (idempotent by feature_id)
+    const bonusFeatureId = `sub_bonus:paypal:${subscriptionId}`;
+    const { data: bonusExists } = await supabase
+      .from('purchase_records')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('feature_id', bonusFeatureId)
+      .limit(1)
+      .single();
+
+    if (!bonusExists) {
+      await supabase.from('purchase_records').insert({
+        user_id: userId,
+        feature_type: 'gm_credit',
+        feature_id: bonusFeatureId,
+        scope: 'consumable',
+        price_cents: 0,
+        quantity: SUBSCRIPTION_BENEFITS.SUBSCRIPTION_BONUS_CREDITS,
+        consumed: 0,
+      });
+    }
   }
 
   console.log(`PayPal subscription activated: ${subscriptionId} for user ${userId}, firstDiscount: ${useFirstDiscount}`);

@@ -362,12 +362,17 @@ const UpgradeModal: React.FC = () => {
 
                 {/* Pro benefits */}
                 <div className="space-y-3 mb-6">
-                  {benefitItems.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-base">
-                      <Check className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0" />
-                      <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{item}</span>
-                    </div>
-                  ))}
+                  {benefitItems.map((item: string, idx: number) => {
+                    const isBonusCredits = item.includes('500') && (item.includes('credit') || item.includes('积分'));
+                    return (
+                      <div key={idx} className={`flex items-start gap-3 text-base ${isBonusCredits ? `rounded-lg px-2 py-1.5 -mx-2 ${isDark ? 'bg-gold-500/10' : 'bg-gold-50'}` : ''}`}>
+                        <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${isBonusCredits ? 'text-gold-400' : 'text-gold-500'}`} />
+                        <span className={isBonusCredits ? 'font-semibold text-gold-500' : isDark ? 'text-star-200' : 'text-paper-700'}>
+                          {item}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="mt-auto">

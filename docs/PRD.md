@@ -1,6 +1,6 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 1.2
+> **Version**: 1.3
 > **Last Updated**: 2026-02-26
 > **Status**: Living Document — synced with codebase
 
@@ -399,12 +399,17 @@ AI 生成的深度心理分析，每个维度独立解读：
 **配置切换**: 通过 `PAYMENT_PROVIDER` 环境变量控制（airwallex / stripe / paypal / all）
 
 **Airwallex API**:
-- `GET /api/airwallex/pricing` — 获取定价
-- `POST /api/airwallex/subscribe` — 创建订阅
+- `GET /api/airwallex/pricing` — 获取定价（含订阅 + 积分包）
+- `POST /api/airwallex/subscribe` — 创建订阅（自动检测续费 → 走 renewal 流程）
 - `GET /api/airwallex/subscription` — 查询订阅状态
 - `POST /api/airwallex/cancel-subscription` — 取消订阅
 - `POST /api/airwallex/create-order` — 创建积分购买订单
+- `POST /api/airwallex/confirm-order` — 确认积分购买并写入 `gm_credit` 记录
+- `POST /api/airwallex/confirm-checkout` — 确认订阅并激活 + 发放 500 奖励积分
+- `POST /api/airwallex/confirm-renewal` — 确认续费并延长订阅 + 发放 500 奖励积分
 - `POST /api/airwallex/webhook` — Webhook 处理
+
+**积分写入规范**: 所有支付渠道（Airwallex、PayPal、Stripe）写入 `purchase_records` 时统一使用 `feature_type: 'gm_credit'`，不使用 RPC 调用。`entitlementServiceV2` 仅统计 `feature_type === 'gm_credit'` 的记录。
 
 ---
 
