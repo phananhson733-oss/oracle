@@ -196,10 +196,10 @@ class AirwallexService {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        request_id: `credits_${input.userId}_${input.packageId}_${Date.now()}`,
+        request_id: `cr_${input.userId.replace(/-/g, '').slice(0, 12)}_${input.packageId.replace('credits_', '')}_${Date.now()}`,
         amount: pricing.amount / 100, // Airwallex uses major units (dollars/yuan), not cents
         currency: pricing.currency.toLowerCase(),
-        merchant_order_id: `credits_${input.userId}_${Date.now()}`,
+        merchant_order_id: `cr_${input.userId.replace(/-/g, '').slice(0, 12)}_${Date.now()}`,
         metadata: {
           userId: input.userId,
           packageId: input.packageId,
@@ -225,7 +225,7 @@ class AirwallexService {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        request_id: `link_${input.userId}_${input.packageId}_${Date.now()}`,
+        request_id: `lk_${input.userId.replace(/-/g, '').slice(0, 12)}_${input.packageId.replace('credits_', '')}_${Date.now()}`,
         amount: pricing.amount / 100,
         currency: pricing.currency.toLowerCase(),
         title: packageInfo.name,

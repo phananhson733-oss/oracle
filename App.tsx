@@ -6311,6 +6311,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
     const [gmBusy, setGmBusy] = useState(false);
     const [gmMessage, setGmMessage] = useState<string | null>(null);
     const [gmError, setGmError] = useState<string | null>(null);
+    const [subManageMsg, setSubManageMsg] = useState<string | null>(null);
     const navigate = useNavigate();
 
     // Trial countdown state
@@ -6354,7 +6355,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
           return;
         }
         if (provider === 'airwallex') {
-          setGmMessage(t.subscription?.airwallex_manage || 'To manage your Airwallex subscription, please contact support.');
+          setSubManageMsg(language === 'zh' ? '如需管理订阅，请联系客服' : 'To manage your subscription, please contact support.');
           return;
         }
         try {
@@ -6459,6 +6460,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                     <button onClick={handleManageSubscription} className="text-xs underline opacity-60 hover:opacity-100 transition-opacity">
                                         {t.subscription?.manage || 'Manage Subscription'}
                                     </button>
+                                    {subManageMsg && <div className="text-xs opacity-70 mt-1">{subManageMsg}</div>}
                                 </div>
                             ) : (!FREE_MODE && !LOGIN_GATE_MODE) ? (
                                 <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
