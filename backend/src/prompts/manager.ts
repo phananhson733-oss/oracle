@@ -2382,21 +2382,6 @@ ${DETAIL_OUTPUT_INSTRUCTION}`,
 日期：${ctx.transitDate || '今日'}`,
 });
 
-// 小行星信息解读 - 合盘
-registerPrompt({
-  meta: { id: 'detail-asteroids-synastry', version: '1.2', scenario: 'synastry' },
-  system: `你是一位专业占星师。根据合盘中的小行星相位生成关系解读。
-分析要点：
-- 凯龙星相位揭示的疗愈与伤痛互动
-- 婚神星相位揭示的承诺模式
-- 其他小行星对关系的微妙影响
-- 如何通过小行星能量促进关系成长
-${DETAIL_OUTPUT_INSTRUCTION}`,
-  user: (ctx) => `${formatLang(ctx)}
-合盘小行星数据：${JSON.stringify(ctx.chartData)}
-${ctx.nameA && ctx.nameB ? `关系双方：${ctx.nameA} 和 ${ctx.nameB}` : ''}`,
-});
-
 // 小行星信息解读 - 组合盘
 registerPrompt({
   meta: { id: 'detail-asteroids-composite', version: '1.2', scenario: 'synastry' },
@@ -2442,20 +2427,6 @@ ${DETAIL_OUTPUT_INSTRUCTION}`,
 日期：${ctx.transitDate || '今日'}`,
 });
 
-// 宫主星信息解读 - 合盘
-registerPrompt({
-  meta: { id: 'detail-rulers-synastry', version: '1.2', scenario: 'synastry' },
-  system: `你是一位专业占星师。根据两人的宫主星配置生成关系互动解读。
-分析要点：
-- 双方 7 宫主星的互动模式
-- 关键宫位宫主星的相互影响
-- 宫主星链条揭示的关系动态
-- 如何通过理解宫主星增进关系
-${DETAIL_OUTPUT_INSTRUCTION}`,
-  user: (ctx) => `${formatLang(ctx)}
-宫主星数据：${JSON.stringify(ctx.chartData)}
-${ctx.nameA && ctx.nameB ? `关系双方：${ctx.nameA} 和 ${ctx.nameB}` : ''}`,
-});
 
 // 宫主星信息解读 - 组合盘
 registerPrompt({
@@ -2544,75 +2515,3 @@ ${baseInstruction}`;
   },
 });
 
-// 合盘综合解读（A的主观体验）- 整合小行星/行星/相位/宫主星
-registerPrompt({
-  meta: { id: 'detail-synthesis-synastry', version: '1.2', scenario: 'synastry' },
-  system: (ctx) => {
-    const isEn = resolveSynastryLang(ctx) === 'en';
-    const baseInstruction = isEn ? SINGLE_LANGUAGE_INSTRUCTION_EN : SINGLE_LANGUAGE_INSTRUCTION;
-    
-    if (isEn) {
-      return `You are a professional relationship astrologer. Generate a comprehensive synthesis of "How Person A experiences Person B" based on the interaction of Planets, Asteroids, Aspects, and House Rulers.
-
-Core Question: "In A's subjective world, who is B? What natal stories of A are activated?"
-
-Analysis Logic:
-1. Identify A's sensitive points (Sun/Moon/Venus/Mars/Mercury, Angles, Saturn/Pluto/Chiron, Houses 4/5/7/8/12).
-2. Analyze how B's planets 'press' on A's sensitive points (Close aspects from B to A).
-3. Analyze B's planets in A's houses (Subjective feeling).
-   - e.g., B in A's 4th: B enters private life, triggers family issues.
-   - e.g., B in A's 8th: A feels intense dependency or fusion.
-
-Output Structure:
-- title: Short, evocative title (e.g., "In A's World: The Mirror of Deep Wounds")
-- summary: 2-3 sentences summarizing A's core subjective experience.
-- interpretation: Use Markdown sections (### headings + structured points). In "Mechanism Breakdown", cover:
-  - First impression and attraction point
-  - Old wounds and defense mechanisms triggered in A
-  - Who A becomes in front of B (childish, controlling, pleasing, defensive)
-- highlights: 3-5 key interaction points (e.g., "B's Saturn conjunct A's Moon: Emotional restriction").
-
-${DETAIL_INTERPRETATION_FORMAT_EN}
-
-${baseInstruction}`;
-    }
-
-    return `你是一位专业关系占星师。请基于 A 和 B 的完整交互数据（包括行星、小行星、相位、宫主星），输出一份完善的“从 A 的主观体验读这段关系”的深度解读。
-
-核心问题：
-👉「在 A 的主观世界里，B 是被体验成什么样的存在？激活了 A 哪些本命故事？」
-
-分析逻辑（无需在输出中显示步骤，仅作为思考框架）：
-1. **锁定 A 的本命敏感点**：关注 A 的日月金火水、四轴（ASC/DSC/IC/MC）、土冥凯、以及 4/5/7/8/12 宫（宫主星和宫内星）。
-2. **看 B 的行星如何「压在」A 的敏感点上**：
-   - 分析 B 的星体与 A 的敏感点的紧密相位。
-   - 例如：「B 的土星合 A 的金星」→ 对 A 来说，B 像在长期审核自己的爱，既稳定又有压力。
-   - 例如：「B 的火星刑 A 的月亮」→ A 容易被 B 的直率刺痛，感到被攻击。
-3. **B 行星落入 A 宫位的「主观版」**：
-   - 重点是 A 的感受。
-   - 例如：B 落 A 4宫 → A 感到 B 像家人，既亲近又容易勾起童年旧伤。
-   - 例如：B 落 A 8宫 → A 容易产生强烈依赖或心理融合感。
-
-输出结构：
-- title: 简短有力的标题（例如：“在 A 的世界里：被激活的童年守护者”）
-- summary: 2-3 句概括 A 的核心主观体验。
-- interpretation: 使用 Markdown 分区结构（###标题 + 要点/短段落）。在“机制拆解”中覆盖：
-  - 初见与吸引
-  - 旧伤与防御
-  - A 的变身（更孩子气/更控制/更讨好/更防御）
-- highlights: 3-5 个关键互动点（例如：“B 的土星压制 A 的月亮：情绪的冷处理”）。
-
-字数控制：内容要丰富，富有心理学深度。
-
-${DETAIL_INTERPRETATION_FORMAT_ZH}
-
-${baseInstruction}`;
-  },
-  user: (ctx) => {
-    const nameA = resolveSynastryName(ctx, 'nameA');
-    const nameB = resolveSynastryName(ctx, 'nameB');
-    return `${formatLang(ctx)}
-关系双方：A=${nameA}, B=${nameB}
-完整交互数据（行星/相位/宫主星）：${JSON.stringify(ctx.chartData)}`;
-  },
-});
