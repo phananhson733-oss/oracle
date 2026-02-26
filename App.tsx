@@ -19,13 +19,16 @@ import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, g
 import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
 import { trackEvent, trackPageView, startPageEngagement, endPageEngagement } from './services/analytics';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { deleteAccount, exportData } from './services/authClient';
 import { EntitlementProvider, useSynastryQuota, useAskQuota, useEntitlement } from './contexts/EntitlementContext';
 import { SEO } from './components/SEO';
 import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage, CreditsSuccessPage } from './components/auth';
 import { CreditsModal } from './components/payment';
 import { LockedContent, LockedAccordion } from './components/Paywall';
 import { ConsentBanner } from './components/ConsentBanner';
+import { Footer } from './components/Footer';
 import { useAnalyticsTracking } from './hooks/useAnalytics';
+import { loadGoogleSDK, loadAppleSDK } from './utils/load-sdk';
 
 // Global SEO schemas (Organization, WebSite)
 const GlobalSchema: React.FC = () => {
@@ -99,6 +102,33 @@ const SynastryAspectMatrix = lazy(() => import('./components/TechSpecsComponents
 const ReportsPage = lazy(() => import('./components/reports').then(m => ({ default: m.ReportsPage })));
 const ReportViewPage = lazy(() => import('./components/reports').then(m => ({ default: m.ReportViewPage })));
 const ColorSystemDemo = lazy(() => import('./components/ColorSystemDemo').then(m => ({ default: m.ColorSystemDemo })));
+const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./components/legal/TermsOfService'));
+const CookiePolicy = lazy(() => import('./components/legal/CookiePolicy'));
+const AboutPage = lazy(() => import('./components/legal/AboutPage'));
+const HelpPage = lazy(() => import('./components/legal/HelpPage'));
+
+const NotFoundPage: React.FC = () => {
+  const { theme } = useTheme();
+  const { language } = useLanguage();
+  return (
+    <Container>
+      <SEO title="Page Not Found" robots="noindex" />
+      <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+        <div className="text-8xl font-serif font-bold mb-4 bg-gradient-to-r from-gold-500 to-gold-300 bg-clip-text text-transparent">404</div>
+        <h1 className={`text-2xl font-serif mb-3 ${theme === 'dark' ? 'text-star-50' : 'text-paper-900'}`}>
+          {language === 'zh' ? '星辰迷失了方向' : 'The Stars Lost Their Way'}
+        </h1>
+        <p className={`text-sm mb-8 max-w-md ${theme === 'dark' ? 'text-star-400' : 'text-paper-500'}`}>
+          {language === 'zh' ? '这个页面不存在。也许宇宙有其他安排。' : "This page doesn't exist. Perhaps the universe has other plans."}
+        </p>
+        <Link to="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-space-950 font-bold text-sm hover:from-gold-500 hover:to-gold-400 transition-all shadow-lg shadow-gold-500/20">
+          {language === 'zh' ? '返回首页' : 'Return Home'}
+        </Link>
+      </div>
+    </Container>
+  );
+};
 
 const getDateInTimeZone = (timeZone?: string) => {
   const formatter = new Intl.DateTimeFormat('en-CA', {
@@ -6313,6 +6343,126 @@ const SubscriptionExpiry: React.FC<{ expiresAt?: string; language: string }> = (
   return <div className="text-xs opacity-60 mt-0.5">{label}</div>;
 };
 
+const DangerZoneSection: React.FC<{ user: any; language: string; theme: string }> = ({ user, language, theme }) => {
+    const { t } = useLanguage();
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [deletePassword, setDeletePassword] = useState('');
+    const [deleteLoading, setDeleteLoading] = useState(false);
+    const [deleteError, setDeleteError] = useState<string | null>(null);
+    const [exportLoading, setExportLoading] = useState(false);
+
+    const s = t.settings as Record<string, any>;
+
+    const handleExport = async () => {
+        setExportLoading(true);
+        try {
+            const blob = await exportData();
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'astromind-data-export.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        } catch (err) {
+            console.error('Export failed:', err);
+        } finally {
+            setExportLoading(false);
+        }
+    };
+
+    const handleDelete = async () => {
+        setDeleteLoading(true);
+        setDeleteError(null);
+        try {
+            await deleteAccount(user?.provider === 'email' ? deletePassword : undefined);
+            logout();
+            navigate('/');
+        } catch (err: any) {
+            setDeleteError(err.message || 'Failed to delete account');
+        } finally {
+            setDeleteLoading(false);
+        }
+    };
+
+    return (
+        <Section title={s.danger_zone || 'Danger Zone'}>
+            <Card className={`mb-4 border-l-4 border-l-red-500 ${theme === 'dark' ? 'bg-red-500/5' : 'bg-red-50'}`}>
+                {/* Export Data */}
+                <div className="mb-6">
+                    <div className="font-bold text-sm mb-1">{s.export_data || 'Export My Data'}</div>
+                    <div className="text-xs opacity-70 mb-3">{s.export_data_desc || 'Download all your personal data as a JSON file'}</div>
+                    <ActionButton onClick={handleExport} disabled={exportLoading} size="sm" variant="outline" className="w-full">
+                        {exportLoading ? (s.export_loading || 'Preparing export...') : (s.export_data || 'Export My Data')}
+                    </ActionButton>
+                </div>
+
+                {/* Delete Account */}
+                <div className={`pt-4 border-t ${theme === 'dark' ? 'border-red-500/20' : 'border-red-200'}`}>
+                    <div className="font-bold text-sm text-red-500 mb-1">{s.delete_account || 'Delete Account'}</div>
+                    <div className="text-xs opacity-70 mb-3">{s.delete_account_desc || 'Permanently delete your account and all associated data.'}</div>
+                    <ActionButton
+                        onClick={() => setShowDeleteModal(true)}
+                        size="sm"
+                        className="bg-red-600 border-red-600 text-white hover:bg-red-500 w-full"
+                    >
+                        {s.delete_account || 'Delete Account'}
+                    </ActionButton>
+                </div>
+            </Card>
+
+            {/* Delete Confirmation Modal */}
+            <Modal isOpen={showDeleteModal} onClose={() => { setShowDeleteModal(false); setDeleteError(null); setDeletePassword(''); }} title={s.delete_confirm_title || 'Delete Account?'}>
+                <div className="space-y-4">
+                    <p className={`text-sm ${theme === 'dark' ? 'text-star-200' : 'text-paper-600'}`}>
+                        {s.delete_confirm_desc || 'This will permanently delete your account, subscription, and all data. This cannot be undone.'}
+                    </p>
+                    {user?.provider === 'email' && (
+                        <div>
+                            <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-1 block">
+                                {s.delete_confirm_password || 'Enter your password to confirm'}
+                            </label>
+                            <input
+                                type="password"
+                                value={deletePassword}
+                                onChange={(e) => setDeletePassword(e.target.value)}
+                                className={`w-full rounded-lg px-3 py-2 text-sm border ${theme === 'dark' ? 'bg-space-900 border-space-700 text-star-50' : 'bg-white border-paper-300 text-paper-900'}`}
+                                placeholder="••••••••"
+                            />
+                        </div>
+                    )}
+                    {deleteError && (
+                        <div className="text-sm text-red-500 bg-red-500/10 border border-red-500/30 rounded-lg px-3 py-2">
+                            {deleteError}
+                        </div>
+                    )}
+                    <div className="flex gap-3">
+                        <ActionButton
+                            onClick={() => { setShowDeleteModal(false); setDeleteError(null); setDeletePassword(''); }}
+                            variant="outline"
+                            size="sm"
+                            className="flex-1"
+                        >
+                            {s.delete_cancel_btn || 'Cancel'}
+                        </ActionButton>
+                        <ActionButton
+                            onClick={handleDelete}
+                            disabled={deleteLoading || (user?.provider === 'email' && !deletePassword)}
+                            size="sm"
+                            className="flex-1 bg-red-600 border-red-600 text-white hover:bg-red-500"
+                        >
+                            {deleteLoading ? (s.delete_loading || 'Deleting...') : (s.delete_confirm_btn || 'Yes, Delete')}
+                        </ActionButton>
+                    </div>
+                </div>
+            </Modal>
+        </Section>
+    );
+};
+
 const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = ({ profile, onReset }) => {
     const { t, language, toggleLanguage } = useLanguage();
     const { theme, toggleTheme } = useTheme();
@@ -6620,6 +6770,8 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                 </Card>
             </Section>
 
+            <DangerZoneSection user={user} language={language} theme={theme} />
+
             <Section title={language === 'zh' ? 'GM 命令' : 'GM Commands'}>
                 <Card className="mb-4 border-l border-l-purple-500/40">
                     <div className="mb-4">
@@ -6718,9 +6870,13 @@ const CreditsUsagePage: React.FC = () => {
             .finally(() => setLoading(false));
     }, [isAuthenticated, tr.load_error]);
 
+    const isCreditTopUp = (record: PurchaseRecord) =>
+        record.featureType === 'gm_credit' || record.featureType === 'credits';
+
     const formatLabel = (record: PurchaseRecord) => {
         const map: Record<string, { zh: string; en: string }> = {
             gm_credit: { zh: '积分充值/赠送', en: 'Credits top-up' },
+            credits: { zh: '积分充值/赠送', en: 'Credits top-up' },
             dimension: { zh: '心理维度', en: 'Dimension' },
             core_theme: { zh: '核心主题', en: 'Core theme' },
             detail: { zh: '详情解锁', en: 'Detail unlock' },
@@ -6738,7 +6894,7 @@ const CreditsUsagePage: React.FC = () => {
     };
 
     const getPointsChange = (record: PurchaseRecord) => {
-        if (record.featureType === 'gm_credit') {
+        if (isCreditTopUp(record)) {
             return record.quantity ?? 0;
         }
         return record.priceCents ? -record.priceCents : 0;
@@ -6841,9 +6997,6 @@ const CreditsUsagePage: React.FC = () => {
                                     <div key={record.id} className="grid grid-cols-[1.4fr_0.9fr_0.6fr] py-3 text-sm">
                                         <div>
                                             <div className="font-medium">{formatLabel(record)}</div>
-                                            {record.featureId && (
-                                                <div className="text-xs opacity-60">{record.featureId}</div>
-                                            )}
                                         </div>
                                         <div className="text-xs opacity-70">
                                             {new Date(record.createdAt).toLocaleString()}
@@ -6927,11 +7080,9 @@ const AuthPage: React.FC = () => {
     const handleGoogleLogin = async () => {
         setLoading(true);
         try {
-            if (typeof window.google === 'undefined') {
-                throw new Error('Google Sign-In SDK not loaded');
-            }
+            await loadGoogleSDK();
 
-            window.google.accounts.id.initialize({
+            window.google!.accounts.id.initialize({
                 client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || '',
                 callback: async (response: any) => {
                     try {
@@ -6944,7 +7095,7 @@ const AuthPage: React.FC = () => {
                 },
             });
 
-            window.google.accounts.id.prompt();
+            window.google!.accounts.id.prompt();
         } catch (err) {
             showToast('error', err instanceof Error ? err.message : authT.error_fallback);
             setLoading(false);
@@ -6954,9 +7105,7 @@ const AuthPage: React.FC = () => {
     const handleAppleLogin = async () => {
         setLoading(true);
         try {
-            if (typeof window.AppleID === 'undefined') {
-                throw new Error('Apple Sign-In SDK not loaded');
-            }
+            await loadAppleSDK();
 
             await window.AppleID.auth.init({
                 clientId: import.meta.env.VITE_APPLE_CLIENT_ID || '',
@@ -7318,7 +7467,7 @@ const AppContent: React.FC = () => {
         <>
             {shouldNoIndex && <SEO robots="noindex,nofollow" />}
             {showNav && (
-                <nav className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === 'dark' ? 'bg-space-950/90 border-gold-500/15' : 'bg-paper-100/90 border-paper-300'}`}>
+                <nav aria-label="Main navigation" className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === 'dark' ? 'bg-space-950/90 border-gold-500/15' : 'bg-paper-100/90 border-paper-300'}`}>
                     <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0" onClick={() => navigate('/dashboard')}>
@@ -7374,7 +7523,7 @@ const AppContent: React.FC = () => {
                 </div>
             )}
 
-            <div className={showNav ? (location.pathname === '/journal' ? "pt-16 pb-12" : "pt-24 pb-12") : ""}>
+            <main id="main-content" role="main" className={showNav ? (location.pathname === '/journal' ? "pt-16 pb-12" : "pt-24 pb-12") : ""}>
                 <Suspense fallback={<OracleLoading />}>
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
@@ -7397,10 +7546,15 @@ const AppContent: React.FC = () => {
                         <Route path="/payment/success" element={LOGIN_GATE_MODE ? <Navigate to="/" /> : <PaymentSuccessPage />} />
                         <Route path="/payment/credits-success" element={LOGIN_GATE_MODE ? <Navigate to="/" /> : <CreditsSuccessPage />} />
                         <Route path="/color-demo" element={<ColorSystemDemo />} />
-                        <Route path="*" element={<Navigate to="/" />} />
+                        <Route path="/privacy" element={<PrivacyPolicy />} />
+                        <Route path="/terms" element={<TermsOfService />} />
+                        <Route path="/cookies" element={<CookiePolicy />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/help" element={<HelpPage />} />
+                        <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                 </Suspense>
-            </div>
+            </main>
 
             {showMigration && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -7450,6 +7604,7 @@ const AppContent: React.FC = () => {
                 </div>
             )}
 
+            {showNav && <Footer />}
             <ConsentBanner />
             {/* Auth Modals */}
             <LoginModal />

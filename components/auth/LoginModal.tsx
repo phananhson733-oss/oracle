@@ -6,6 +6,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton, GlassInput } from '../UIComponents';
 import { trackEvent } from '../../services/analytics';
+import { loadGoogleSDK } from '../../utils/load-sdk';
 
 type AuthMode = 'login' | 'register';
 
@@ -113,49 +114,53 @@ const LoginModal: React.FC = () => {
       return;
     }
 
-    const initializeGoogle = () => {
-      if (typeof window.google === 'undefined') {
-        // SDK not loaded yet, retry
-        setTimeout(initializeGoogle, 100);
-        return;
-      }
+    let cancelled = false;
 
-      const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
-      if (!clientId) {
-        console.error('Google Client ID not configured');
-        return;
-      }
+    loadGoogleSDK()
+      .then(() => {
+        if (cancelled) return;
 
-      try {
-        window.google.accounts.id.initialize({
-          client_id: clientId,
-          callback: handleGoogleCredentialResponse,
-          auto_select: false,
-          cancel_on_tap_outside: true,
-        });
-
-        // Render the Google button in the hidden container
-        if (googleButtonRef.current) {
-          googleButtonRef.current.innerHTML = '';
-          // Get container width for responsive button
-          const containerWidth = googleButtonRef.current.offsetWidth || 400;
-          window.google.accounts.id.renderButton(googleButtonRef.current, {
-            type: 'standard',
-            theme: 'outline',
-            size: 'large',
-            width: Math.min(containerWidth, 400),
-            text: 'continue_with',
-          });
+        const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+        if (!clientId) {
+          console.error('Google Client ID not configured');
+          return;
         }
 
-        googleInitialized.current = true;
-        setGoogleReady(true);
-      } catch (err) {
-        console.error('Failed to initialize Google Sign-In:', err);
-      }
-    };
+        try {
+          window.google!.accounts.id.initialize({
+            client_id: clientId,
+            callback: handleGoogleCredentialResponse,
+            auto_select: false,
+            cancel_on_tap_outside: true,
+          });
 
-    initializeGoogle();
+          // Render the Google button in the hidden container
+          if (googleButtonRef.current) {
+            googleButtonRef.current.innerHTML = '';
+            // Get container width for responsive button
+            const containerWidth = googleButtonRef.current.offsetWidth || 400;
+            window.google!.accounts.id.renderButton(googleButtonRef.current, {
+              type: 'standard',
+              theme: 'outline',
+              size: 'large',
+              width: Math.min(containerWidth, 400),
+              text: 'continue_with',
+            });
+          }
+
+          googleInitialized.current = true;
+          setGoogleReady(true);
+        } catch (err) {
+          console.error('Failed to initialize Google Sign-In:', err);
+        }
+      })
+      .catch((err) => {
+        if (!cancelled) {
+          console.error('Failed to load Google SDK:', err);
+        }
+      });
+
+    return () => { cancelled = true; };
   }, [showLoginModal, handleGoogleCredentialResponse]);
 
   useEffect(() => {
