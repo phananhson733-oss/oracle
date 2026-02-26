@@ -6427,9 +6427,47 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
                         <div>
                             {entitlements?.isSubscriber ? (
-                                <span className="font-bold text-gold-500 flex items-center gap-1">
-                                    <span>✦</span> {language === 'zh' ? 'Pro 会员' : 'Pro Member'}
-                                </span>
+                                <div className="text-right">
+                                    <span className="font-bold text-gold-500 flex items-center gap-1">
+                                        <span>✦</span> {language === 'zh' ? 'Pro 会员' : 'Pro Member'}
+                                    </span>
+                                    {(entitlements as any)?.subscription?.expiresAt && (() => {
+                                        const expiresAt = new Date((entitlements as any).subscription.expiresAt);
+                                        if (isNaN(expiresAt.getTime())) return null;
+                                        const now = new Date();
+                                        const diffMs = expiresAt.getTime() - now.getTime();
+                                        if (diffMs <= 0) return null;
+
+                                        const oneDayMs = 24 * 60 * 60 * 1000;
+                                        let label: string;
+                                        if (diffMs < oneDayMs) {
+                                            label = language === 'zh' ? '1天后到期' : 'Expires in 1 day';
+                                        } else {
+                                            let years = expiresAt.getFullYear() - now.getFullYear();
+                                            let months = expiresAt.getMonth() - now.getMonth();
+                                            let days = expiresAt.getDate() - now.getDate();
+                                            if (days < 0) {
+                                                months--;
+                                                days += new Date(expiresAt.getFullYear(), expiresAt.getMonth(), 0).getDate();
+                                            }
+                                            if (months < 0) { years--; months += 12; }
+                                            if (language === 'zh') {
+                                                const parts: string[] = [];
+                                                if (years > 0) parts.push(`${years}年`);
+                                                if (months > 0) parts.push(`${months}月`);
+                                                if (days > 0) parts.push(`${days}天`);
+                                                label = parts.length > 0 ? `${parts.join('')}后到期` : '1天后到期';
+                                            } else {
+                                                const parts: string[] = [];
+                                                if (years > 0) parts.push(`${years}y`);
+                                                if (months > 0) parts.push(`${months}mo`);
+                                                if (days > 0) parts.push(`${days}d`);
+                                                label = parts.length > 0 ? `Expires in ${parts.join(' ')}` : 'Expires in 1 day';
+                                            }
+                                        }
+                                        return <div className="text-xs opacity-60 mt-0.5">{label}</div>;
+                                    })()}
+                                </div>
                             ) : (!FREE_MODE && !LOGIN_GATE_MODE) ? (
                                 <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
                                     {t.paywall?.unlock_unlimited_access || 'Unlock Unlimited'}
