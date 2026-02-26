@@ -12,12 +12,14 @@ envPaths.forEach((p) => dotenv.config({ path: p }));
 const airwallexClientId = process.env.AIRWALLEX_CLIENT_ID || '';
 const airwallexApiKey = process.env.AIRWALLEX_API_KEY || '';
 const airwallexWebhookSecret = process.env.AIRWALLEX_WEBHOOK_SECRET || '';
-const airwallexEnv = (process.env.AIRWALLEX_ENV || 'sandbox') as 'sandbox' | 'production';
+const airwallexEnv = (process.env.AIRWALLEX_ENVIRONMENT || process.env.AIRWALLEX_ENV || 'demo') as 'demo' | 'production';
 
 // Airwallex API Base URL
 export const AIRWALLEX_API_BASE = airwallexEnv === 'production'
   ? 'https://api.airwallex.com'
   : 'https://api-demo.airwallex.com';
+
+export const AIRWALLEX_ENV = airwallexEnv;
 
 // Check if Airwallex is configured
 export const isAirwallexConfigured = (): boolean => {

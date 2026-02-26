@@ -109,8 +109,8 @@ class AirwallexService {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        legal_entity_id: AIRWALLEX_CREDENTIALS.legalEntityId,
-        linked_payment_account_id: AIRWALLEX_CREDENTIALS.paymentAccountId,
+        ...(AIRWALLEX_CREDENTIALS.legalEntityId && { legal_entity_id: AIRWALLEX_CREDENTIALS.legalEntityId }),
+        ...(AIRWALLEX_CREDENTIALS.paymentAccountId && { linked_payment_account_id: AIRWALLEX_CREDENTIALS.paymentAccountId }),
         customer_data: { email: input.email },
         line_items: [{ price_id: priceId, quantity: 1 }],
         mode: 'SUBSCRIPTION',
