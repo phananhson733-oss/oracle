@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.astrologywiki.com/about</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.astrologywiki.com/cookies</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
     <loc>https://www.astrologywiki.com/en/</loc>
     <lastmod>2026-02-26</lastmod>
   </url>
@@ -374,6 +382,18 @@
   </url>
   <url>
     <loc>https://www.astrologywiki.com/en/wiki/water-element</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.astrologywiki.com/help</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.astrologywiki.com/privacy</loc>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.astrologywiki.com/terms</loc>
     <lastmod>2026-02-26</lastmod>
   </url>
   <url>

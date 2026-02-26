@@ -319,6 +319,12 @@ const generate = async () => {
 
   const sitemapUrls = [];
 
+  // Add public SPA routes (BrowserRouter, no lang prefix)
+  const publicRoutes = ['/privacy', '/terms', '/cookies', '/about', '/help'];
+  for (const route of publicRoutes) {
+    sitemapUrls.push(`${siteUrl}${route}`);
+  }
+
   for (const lang of ['zh', 'en']) {
     const config = LANG_CONFIG[lang];
     const langRoot = path.join(publicDir, lang);
