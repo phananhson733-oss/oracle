@@ -7,10 +7,12 @@ import entitlementServiceV2 from '../services/entitlementServiceV2.js';
 import {
   isAirwallexConfigured,
   AIRWALLEX_CREDITS_PACKAGES,
+  AIRWALLEX_SUBSCRIPTION_PRICING,
   resolveCurrency,
 } from '../config/airwallex.js';
 import { SUBSCRIPTION_BENEFITS } from '../config/auth.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
+import { emailService } from '../services/emailService.js';
 
 const router = Router();
 
@@ -668,6 +670,29 @@ router.post('/webhook', async (req: Request, res: Response) => {
 });
 
 // =====================================================
+// Webhook Helpers
+// =====================================================
+
+/** Fire-and-forget email sender — logs errors, never blocks webhook response. */
+function sendEmailBestEffort(fn: () => Promise<void>, label: string): void {
+  fn().catch((err) => console.error(`Failed to send ${label} email:`, err));
+}
+
+async function getUserEmail(userId: string): Promise<string | null> {
+  if (!isSupabaseConfigured()) return null;
+  const { data, error } = await supabase
+    .from('users')
+    .select('email')
+    .eq('id', userId)
+    .single();
+  if (error) {
+    console.error(`getUserEmail failed for user ${userId}:`, error.message);
+    return null;
+  }
+  return data?.email || null;
+}
+
+// =====================================================
 // Webhook Event Handlers
 // =====================================================
 
@@ -757,6 +782,24 @@ async function handleSubscriptionActive(event: any): Promise<void> {
   }
 
   console.log(`Airwallex subscription activated: ${subscriptionId} for user ${userId}`);
+
+  // Send payment receipt email (fire-and-forget, don't block webhook)
+  sendEmailBestEffort(async () => {
+    const email = await getUserEmail(userId);
+    if (email) {
+      await emailService.sendPaymentReceipt(email, {
+        amount: data.amount ? String(data.amount) : (() => {
+          const cur = (data.currency || 'USD').toUpperCase();
+          const tier = cur === 'CNY' ? AIRWALLEX_SUBSCRIPTION_PRICING.cny : AIRWALLEX_SUBSCRIPTION_PRICING.usd;
+          return (plan === 'yearly' ? tier.yearly.amount : tier.monthly.amount) / 100;
+        })().toFixed(2),
+        currency: data.currency || 'USD',
+        description: `AstroMind Pro — ${plan === 'yearly' ? 'Yearly' : 'Monthly'} Subscription`,
+        transactionId: subscriptionId,
+        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+      });
+    }
+  }, 'subscription receipt');
 }
 
 async function handleSubscriptionCancelled(event: any): Promise<void> {
@@ -765,7 +808,20 @@ async function handleSubscriptionCancelled(event: any): Promise<void> {
 
   if (!subscriptionId) return;
 
+  // Fetch subscription info before update (for email)
+  let subUserId: string | null = null;
+  let periodEnd: string | null = null;
+
   if (isSupabaseConfigured()) {
+    const { data: sub } = await supabase
+      .from('subscriptions')
+      .select('user_id, current_period_end')
+      .eq('airwallex_subscription_id', subscriptionId)
+      .single();
+
+    subUserId = sub?.user_id || null;
+    periodEnd = sub?.current_period_end || null;
+
     await supabase
       .from('subscriptions')
       .update({
@@ -777,6 +833,21 @@ async function handleSubscriptionCancelled(event: any): Promise<void> {
   }
 
   console.log(`Airwallex subscription cancelled: ${subscriptionId}`);
+
+  // Send cancellation confirmation email (fire-and-forget)
+  if (subUserId) {
+    const capturedUserId = subUserId;
+    const capturedPeriodEnd = periodEnd;
+    sendEmailBestEffort(async () => {
+      const email = await getUserEmail(capturedUserId);
+      if (email) {
+        const endDate = capturedPeriodEnd
+          ? new Date(capturedPeriodEnd).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+          : 'your current billing period end';
+        await emailService.sendCancellationConfirmation(email, { endDate });
+      }
+    }, 'cancellation confirmation');
+  }
 }
 
 async function handleSubscriptionUnpaid(event: any): Promise<void> {
@@ -785,7 +856,18 @@ async function handleSubscriptionUnpaid(event: any): Promise<void> {
 
   if (!subscriptionId) return;
 
+  // Fetch user_id before update (for email)
+  let subUserId: string | null = null;
+
   if (isSupabaseConfigured()) {
+    const { data: sub } = await supabase
+      .from('subscriptions')
+      .select('user_id')
+      .eq('airwallex_subscription_id', subscriptionId)
+      .single();
+
+    subUserId = sub?.user_id || null;
+
     await supabase
       .from('subscriptions')
       .update({
@@ -796,6 +878,20 @@ async function handleSubscriptionUnpaid(event: any): Promise<void> {
   }
 
   console.log(`Airwallex subscription unpaid: ${subscriptionId}`);
+
+  // Send payment failed notice email (fire-and-forget)
+  if (subUserId) {
+    const capturedUserId = subUserId;
+    sendEmailBestEffort(async () => {
+      const email = await getUserEmail(capturedUserId);
+      if (email) {
+        await emailService.sendPaymentFailedNotice(email, {
+          subscriptionId,
+          date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+        });
+      }
+    }, 'payment failed notice');
+  }
 }
 
 async function handlePaymentIntentSucceeded(event: any): Promise<void> {
@@ -859,6 +955,21 @@ async function handlePaymentIntentSucceeded(event: any): Promise<void> {
   }
 
   console.log(`Airwallex credits purchase: ${credits} credits for user ${userId}`);
+
+  // Send payment receipt email for credits purchase (fire-and-forget)
+  sendEmailBestEffort(async () => {
+    const email = await getUserEmail(userId);
+    if (email) {
+      const amountStr = (priceCents / 100).toFixed(2);
+      await emailService.sendPaymentReceipt(email, {
+        amount: amountStr,
+        currency: data.currency || 'USD',
+        description: `${credits} GM Credits`,
+        transactionId: piId || 'N/A',
+        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+      });
+    }
+  }, 'credits purchase receipt');
 }
 
 export default router;

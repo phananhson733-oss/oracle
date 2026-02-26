@@ -2,11 +2,21 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { randomInt } from 'crypto';
 import { OAuth2Client } from 'google-auth-library';
+import rateLimit from 'express-rate-limit';
 import { userService, AuthTokens } from '../services/userService.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 import { GOOGLE_CONFIG, isGoogleConfigured, isResendConfigured } from '../config/auth.js';
 import { cacheService } from '../cache/redis.js';
 import { emailService } from '../services/emailService.js';
+
+// Strict rate limit for destructive account operations
+const accountDeleteLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many attempts, please try again later.' },
+});
 
 const router = Router();
 
@@ -618,6 +628,58 @@ router.get('/verify-email/:token', async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Email verification error:', error);
     res.status(500).json({ error: 'Verification failed' });
+  }
+});
+
+// Delete account (GDPR/CCPA right to erasure)
+router.delete('/account', accountDeleteLimiter, authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    if (!isSupabaseConfigured()) {
+      return res.status(503).json({ error: 'Authentication service unavailable' });
+    }
+
+    const user = await userService.findById(req.userId!);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Email users must confirm with password
+    if (user.provider === 'email') {
+      const { password } = req.body || {};
+      if (!password) {
+        return res.status(400).json({ error: 'Password required to confirm account deletion' });
+      }
+
+      const validPassword = await userService.verifyPassword(user, password);
+      if (!validPassword) {
+        return res.status(401).json({ error: 'Invalid password' });
+      }
+    }
+
+    await userService.deleteUser(req.userId!);
+
+    res.json({ success: true, message: 'Account deleted successfully' });
+  } catch (error) {
+    console.error('Account deletion error:', error);
+    res.status(500).json({ error: 'Failed to delete account' });
+  }
+});
+
+// Export user data (GDPR/CCPA right to data portability)
+router.get('/export-data', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    if (!isSupabaseConfigured()) {
+      return res.status(503).json({ error: 'Authentication service unavailable' });
+    }
+
+    const data = await userService.exportUserData(req.userId!);
+
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Disposition', 'attachment; filename="astromind-data-export.json"');
+    res.json(data);
+  } catch (error) {
+    console.error('Data export error:', error);
+    res.status(500).json({ error: 'Failed to export data' });
   }
 });
 

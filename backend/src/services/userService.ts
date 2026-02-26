@@ -4,6 +4,8 @@ import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
 import { supabase, DbUser, BirthProfile, UserPreferences, isSupabaseConfigured } from '../db/supabase.js';
 import { JWT_CONFIG, SUBSCRIPTION_BENEFITS } from '../config/auth.js';
+import { airwallexService } from './airwallexService.js';
+import { cacheService } from '../cache/redis.js';
 
 export interface CreateUserInput {
   email: string;
@@ -282,6 +284,145 @@ class UserService {
     await this.verifyEmail(data.user_id);
 
     return data.user_id;
+  }
+
+  // Delete user account (GDPR/CCPA right to erasure)
+  async deleteUser(userId: string): Promise<boolean> {
+    if (!isSupabaseConfigured()) {
+      throw new Error('Database not configured');
+    }
+
+    // 1. Find the user first
+    const user = await this.findById(userId);
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    // 2. Cancel billable subscriptions (payment provider API + database)
+    // Cover all statuses that may produce future charges
+    const BILLABLE_STATUSES = ['active', 'trialing', 'past_due'];
+    try {
+      const { data: billableSubs } = await supabase
+        .from('subscriptions')
+        .select('id, airwallex_subscription_id, payment_provider, status')
+        .eq('user_id', userId)
+        .in('status', BILLABLE_STATUSES);
+
+      if (billableSubs && billableSubs.length > 0) {
+        const failedCancellations: string[] = [];
+
+        // Cancel at payment provider level (best-effort per subscription)
+        for (const sub of billableSubs) {
+          try {
+            if (sub.payment_provider === 'airwallex' && sub.airwallex_subscription_id) {
+              await airwallexService.cancelSubscription(sub.airwallex_subscription_id);
+            }
+            // PayPal/Stripe cancellation can be added here when needed
+          } catch (providerErr) {
+            failedCancellations.push(sub.airwallex_subscription_id || sub.id);
+            console.error(`Failed to cancel ${sub.payment_provider} subscription ${sub.airwallex_subscription_id}:`, providerErr);
+          }
+        }
+
+        if (failedCancellations.length > 0) {
+          console.warn(`Account deletion for ${userId}: ${failedCancellations.length} subscription(s) failed provider-side cancellation: ${failedCancellations.join(', ')}. Proceeding with local deletion.`);
+        }
+
+        // Mark all as canceled in database
+        await supabase
+          .from('subscriptions')
+          .update({ status: 'canceled', cancel_at_period_end: true })
+          .eq('user_id', userId)
+          .in('status', BILLABLE_STATUSES);
+      }
+    } catch (err) {
+      // Don't fail the deletion if subscription cancel fails
+      console.error('Failed to cancel subscriptions during account deletion:', err);
+    }
+
+    // 3. Clean up non-cascading tables
+    await supabase.from('refresh_tokens').delete().eq('user_id', userId);
+    await supabase.from('free_usage').delete().eq('user_id', userId);
+    await supabase.from('registration_codes').delete().eq('email', user.email);
+    await supabase.from('email_verification_tokens').delete().eq('user_id', userId);
+
+    // 4. Clear Redis cache for user
+    try {
+      await cacheService.del(`user:${userId}`);
+      await cacheService.del(`user:${userId}:subscription`);
+      await cacheService.del(`user:${userId}:usage`);
+      await cacheService.del(`user:${userId}:credits`);
+    } catch (err) {
+      // Don't fail the deletion if cache cleanup fails
+      console.error('Failed to clear cache during account deletion:', err);
+    }
+
+    // 5. Delete the user row (CASCADE handles subscriptions, purchase_records, reports, synastry_records, etc.)
+    const { error } = await supabase.from('users').delete().eq('id', userId);
+
+    if (error) {
+      throw new Error(`Failed to delete user: ${error.message}`);
+    }
+
+    return true;
+  }
+
+  // Export user data (GDPR/CCPA right to data portability)
+  async exportUserData(userId: string): Promise<Record<string, unknown>> {
+    if (!isSupabaseConfigured()) {
+      throw new Error('Database not configured');
+    }
+
+    // Fetch user profile
+    const { data: user } = await supabase
+      .from('users')
+      .select('id, email, name, avatar, provider, birth_profile, preferences, email_verified, trial_ends_at, created_at, updated_at')
+      .eq('id', userId)
+      .single();
+
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    // Fetch subscriptions
+    const { data: subscriptions } = await supabase
+      .from('subscriptions')
+      .select('id, plan, status, current_period_start, current_period_end, cancel_at_period_end, usage, payment_provider, created_at, updated_at')
+      .eq('user_id', userId);
+
+    // Fetch purchase records
+    const { data: purchaseRecords } = await supabase
+      .from('purchase_records')
+      .select('id, feature_type, feature_id, scope, price_cents, valid_until, quantity, consumed, created_at')
+      .eq('user_id', userId);
+
+    // Fetch reports
+    const { data: reports } = await supabase
+      .from('reports')
+      .select('id, report_type, title, content, birth_profile, partner_profile, generated_at, created_at')
+      .eq('user_id', userId);
+
+    // Fetch synastry records
+    const { data: synastryRecords } = await supabase
+      .from('synastry_records')
+      .select('id, synastry_hash, person_a_info, person_b_info, relationship_type, is_free, created_at')
+      .eq('user_id', userId);
+
+    // Fetch free usage
+    const { data: freeUsage } = await supabase
+      .from('free_usage')
+      .select('ask_used, ask_reset_at, detail_used, synastry_used, synastry_total_used, synthetica_used, synthetica_reset_at, synastry_daily_used, synastry_daily_reset_at, ask_daily_used, ask_daily_reset_at, created_at, updated_at')
+      .eq('user_id', userId);
+
+    return {
+      exportedAt: new Date().toISOString(),
+      user,
+      subscriptions: subscriptions || [],
+      purchaseRecords: purchaseRecords || [],
+      reports: reports || [],
+      synastryRecords: synastryRecords || [],
+      freeUsage: freeUsage || [],
+    };
   }
 }
 

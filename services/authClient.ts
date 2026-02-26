@@ -308,3 +308,29 @@ export async function migrateLocalData(birthProfile: AuthUser['birthProfile'], p
     throw new Error(error.error || 'Migration failed');
   }
 }
+
+export async function deleteAccount(password?: string): Promise<void> {
+  const res = await authFetch(`${API_BASE}/auth/account`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.error || 'Failed to delete account');
+  }
+
+  clearTokens();
+}
+
+export async function exportData(): Promise<Blob> {
+  const res = await authFetch(`${API_BASE}/auth/export-data`);
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.error || 'Failed to export data');
+  }
+
+  return res.blob();
+}

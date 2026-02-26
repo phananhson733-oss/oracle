@@ -644,7 +644,7 @@ class EntitlementServiceV2 {
           askPurchasedLeft += remaining;
         } else if (record.feature_type === 'synthetica') {
           syntheticaPurchasedLeft += remaining;
-        } else if (record.feature_type === 'gm_credit') {
+        } else if (record.feature_type === 'gm_credit' || record.feature_type === 'credits') {
           credits += remaining;
         }
       }
@@ -1393,11 +1393,13 @@ class EntitlementServiceV2 {
     featureType: string,
     quantity = 1
   ): Promise<boolean> {
+    // Also match legacy 'credits' feature_type for gm_credit records
+    const types = featureType === 'gm_credit' ? ['gm_credit', 'credits'] : [featureType];
     const { data } = await supabase
       .from('purchase_records')
       .select('id, quantity, consumed')
       .eq('user_id', userId)
-      .eq('feature_type', featureType)
+      .in('feature_type', types)
       .eq('scope', 'consumable')
       .order('created_at', { ascending: true });
 

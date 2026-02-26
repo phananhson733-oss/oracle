@@ -1335,7 +1335,20 @@ export const TRANSLATIONS = {
       zodiac_system: "Zodiac System",
       zodiac_tropical: "Tropical (Western Astrology)",
       house_system: "House System",
-      fixed: "Fixed"
+      fixed: "Fixed",
+      // Danger zone
+      danger_zone: "Danger Zone",
+      export_data: "Export My Data",
+      export_data_desc: "Download all your personal data as a JSON file",
+      export_loading: "Preparing export...",
+      delete_account: "Delete Account",
+      delete_account_desc: "Permanently delete your account and all associated data. This action cannot be undone.",
+      delete_confirm_title: "Delete Account?",
+      delete_confirm_desc: "This will permanently delete your account, subscription, and all data. This cannot be undone.",
+      delete_confirm_password: "Enter your password to confirm",
+      delete_confirm_btn: "Yes, Delete My Account",
+      delete_cancel_btn: "Cancel",
+      delete_loading: "Deleting account...",
     },
     auth: {
       title_login: "Sign In",
@@ -2782,7 +2795,20 @@ export const TRANSLATIONS = {
       zodiac_system: "黄道系统",
       zodiac_tropical: "回归黄道（西洋占星）",
       house_system: "宫位系统",
-      fixed: "固定"
+      fixed: "固定",
+      // Danger zone
+      danger_zone: "危险区域",
+      export_data: "导出我的数据",
+      export_data_desc: "将所有个人数据下载为 JSON 文件",
+      export_loading: "正在准备导出...",
+      delete_account: "删除账户",
+      delete_account_desc: "永久删除您的账户和所有关联数据。此操作不可撤销。",
+      delete_confirm_title: "确认删除账户？",
+      delete_confirm_desc: "这将永久删除您的账户、订阅和所有数据。此操作不可撤销。",
+      delete_confirm_password: "输入密码以确认",
+      delete_confirm_btn: "是的，删除我的账户",
+      delete_cancel_btn: "取消",
+      delete_loading: "正在删除账户...",
     },
     auth: {
       title_login: "登录账户",

@@ -5,6 +5,8 @@
 import path from 'path';
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import { natalRouter } from './api/natal.js';
 import { dailyRouter } from './api/daily.js';
@@ -48,7 +50,52 @@ const isProviderEnabled = (provider: string) =>
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+// Security headers (CSP off for SPA with external resources)
+app.use(helmet({
+  contentSecurityPolicy: false,
+  crossOriginEmbedderPolicy: false,
+}));
+
+// CORS whitelist
+const ALLOWED_ORIGINS: (string | RegExp)[] = [
+  'https://www.astrologywiki.com',
+  'https://astrologywiki.com',
+];
+if (process.env.NODE_ENV !== 'production') {
+  ALLOWED_ORIGINS.push(/^http:\/\/localhost(:\d+)?$/);
+}
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (server-to-server, curl, health checks)
+    if (!origin) return callback(null, true);
+    const allowed = ALLOWED_ORIGINS.some((o) =>
+      o instanceof RegExp ? o.test(origin) : o === origin
+    );
+    if (allowed) return callback(null, true);
+    callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
+}));
+
+// Rate limiting — auth endpoints (stricter)
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again later.' },
+});
+app.use('/api/auth', authLimiter);
+
+// Rate limiting — general API (broader)
+const apiLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again later.' },
+});
+app.use('/api', apiLimiter);
 
 // Raw body parsers for payment webhooks (must be before express.json())
 if (isProviderEnabled('stripe')) {

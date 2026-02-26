@@ -5,3 +5,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Accessibility: focus-visible ring for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--gold-500, #D4A853);
+  outline-offset: 2px;
+}
+
+/* Screen reader only utility (backup for Tailwind sr-only) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
