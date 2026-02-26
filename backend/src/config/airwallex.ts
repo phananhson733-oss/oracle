@@ -32,8 +32,8 @@ export const AIRWALLEX_CREDENTIALS = {
   apiKey: airwallexApiKey,
   webhookSecret: airwallexWebhookSecret,
   env: airwallexEnv,
-  legalEntityId: process.env.AIRWALLEX_LEGAL_ENTITY_ID || '',
-  paymentAccountId: process.env.AIRWALLEX_PAYMENT_ACCOUNT_ID || '',
+  legalEntityId: (process.env.AIRWALLEX_LEGAL_ENTITY_ID || '').trim(),
+  paymentAccountId: (process.env.AIRWALLEX_PAYMENT_ACCOUNT_ID || '').trim(),
 };
 
 // Subscription price IDs (created in Airwallex Dashboard)
