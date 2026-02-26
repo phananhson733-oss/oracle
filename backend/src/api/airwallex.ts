@@ -337,8 +337,9 @@ router.post('/create-order', authMiddleware, requireAuth, async (req: Request, r
       checkoutUrl: result.checkoutUrl,
     });
   } catch (error) {
-    console.error('Airwallex create order error:', error);
-    res.status(500).json({ error: 'Failed to create order' });
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('Airwallex create order error:', message, error);
+    res.status(500).json({ error: `Failed to create order: ${message}` });
   }
 });
 

@@ -6353,6 +6353,10 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
           window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
           return;
         }
+        if (provider === 'airwallex') {
+          setGmMessage(t.subscription?.airwallex_manage || 'To manage your Airwallex subscription, please contact support.');
+          return;
+        }
         try {
           const { url } = await createPortalSession(window.location.href);
           window.location.href = url;

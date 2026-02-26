@@ -210,9 +210,9 @@ class AirwallexService {
     });
 
     if (!piResponse.ok) {
-      const error = await piResponse.text();
-      console.error('Airwallex create payment intent error:', error);
-      throw new Error(`Failed to create Airwallex payment intent: ${piResponse.statusText}`);
+      const errorBody = await piResponse.text();
+      console.error('Airwallex create payment intent error:', errorBody);
+      throw new Error(`Airwallex payment intent ${piResponse.status}: ${errorBody}`);
     }
 
     const piData = await piResponse.json();
@@ -242,9 +242,9 @@ class AirwallexService {
     });
 
     if (!checkoutResponse.ok) {
-      const error = await checkoutResponse.text();
-      console.error('Airwallex create payment link error:', error);
-      throw new Error(`Failed to create Airwallex payment link: ${checkoutResponse.statusText}`);
+      const errorBody = await checkoutResponse.text();
+      console.error('Airwallex create payment link error:', errorBody);
+      throw new Error(`Airwallex payment link ${checkoutResponse.status}: ${errorBody}`);
     }
 
     const checkoutData = await checkoutResponse.json();
