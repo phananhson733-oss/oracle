@@ -15,7 +15,7 @@ import * as Astro from './services/astroService';
 import { generateContent } from './services/geminiService';
 import { fetchAskAnswer, fetchDailyDetail, fetchDailyForecast, fetchSectionDetail, fetchSynastry, fetchSynastryOverviewSection, fetchSynastrySuggestions, fetchSynastryTechnical } from './services/apiClient';
 import { searchCities as searchCitiesLocal, formatCityDisplay, getCityCoordinates, type City } from './utils/city-search';
-import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription, createPortalSession } from './services/paymentClient';
+import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription } from './services/paymentClient';
 import { getPurchasesV2, purchaseWithCreditsV2, type FeatureType, type PurchaseRecord } from './services/entitlementClientV2';
 import { trackEvent, trackPageView, startPageEngagement, endPageEngagement } from './services/analytics';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
@@ -6311,7 +6311,6 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
     const [gmBusy, setGmBusy] = useState(false);
     const [gmMessage, setGmMessage] = useState<string | null>(null);
     const [gmError, setGmError] = useState<string | null>(null);
-    const [subManageMsg, setSubManageMsg] = useState<string | null>(null);
     const navigate = useNavigate();
 
     // Trial countdown state
@@ -6347,29 +6346,6 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
         return () => clearInterval(timer);
     }, [isTrialing, entitlements?.trialEndsAt]);
-
-    const handleManageSubscription = async () => {
-        const provider = (entitlements as any)?.subscription?.provider;
-        if (provider === 'paypal') {
-          window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
-          return;
-        }
-        if (provider === 'airwallex') {
-          setSubManageMsg(language === 'zh' ? '如需管理订阅，请联系客服' : 'To manage your subscription, please contact support.');
-          return;
-        }
-        try {
-          const { url } = await createPortalSession(window.location.href);
-          window.location.href = url;
-        } catch (err) {
-          console.error('Failed to open subscription portal:', err);
-          if (err instanceof Error && err.message.includes('Payment service unavailable')) {
-            setGmError(t.subscription?.payment_unavailable || 'Payment service not configured. Use GM commands for testing in development.');
-          } else {
-            setGmError(err instanceof Error ? err.message : (t.subscription?.portal_failed || 'Failed to open subscription portal'));
-          }
-        }
-    };
 
     const runGmAction = async (
         action: () => Promise<{ success: boolean; message?: string }>,
@@ -6451,17 +6427,9 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
                         <div>
                             {entitlements?.isSubscriber ? (
-                                <div className="flex flex-col items-end gap-1">
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold text-gold-500 flex items-center gap-1">
-                                            <span>✦</span> {language === 'zh' ? 'Pro 会员' : 'Pro Member'}
-                                        </span>
-                                    </div>
-                                    <button onClick={handleManageSubscription} className="text-xs underline opacity-60 hover:opacity-100 transition-opacity">
-                                        {t.subscription?.manage || 'Manage Subscription'}
-                                    </button>
-                                    {subManageMsg && <div className="text-xs opacity-70 mt-1">{subManageMsg}</div>}
-                                </div>
+                                <span className="font-bold text-gold-500 flex items-center gap-1">
+                                    <span>✦</span> {language === 'zh' ? 'Pro 会员' : 'Pro Member'}
+                                </span>
                             ) : (!FREE_MODE && !LOGIN_GATE_MODE) ? (
                                 <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
                                     {t.paywall?.unlock_unlimited_access || 'Unlock Unlimited'}

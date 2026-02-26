@@ -7,7 +7,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useEntitlement } from '../../contexts/EntitlementContext';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
-import { createPortalSession, confirmAirwallexCheckout } from '../../services/paymentClient';
+import { createPortalSession, confirmAirwallexCheckout, confirmAirwallexRenewal } from '../../services/paymentClient';
 import { CheckCircle, Crown, Sparkles } from 'lucide-react';
 
 const PaymentSuccessPage: React.FC = () => {
@@ -60,7 +60,31 @@ const PaymentSuccessPage: React.FC = () => {
       const maxAttempts = 6;
       setSyncState('syncing');
 
-      // Try to confirm Airwallex checkout first (doesn't rely on webhook)
+      // Try to confirm Airwallex renewal first
+      const awRenewalId = typeof sessionStorage !== 'undefined'
+        ? sessionStorage.getItem('aw_renewal_id')
+        : null;
+
+      if (awRenewalId) {
+        try {
+          setSyncAttempts(1);
+          await confirmAirwallexRenewal(awRenewalId);
+          sessionStorage.removeItem('aw_renewal_id');
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
+          await new Promise((resolve) => setTimeout(resolve, 300));
+          const latest = entitlementsRef.current;
+          const latestAuth = authEntitlementsRef.current;
+          if (Boolean(latest?.isSubscriber || latestAuth?.isSubscriber)) {
+            setSyncState('ready');
+            return;
+          }
+        } catch (e) {
+          console.warn('Airwallex confirm-renewal failed, falling back to polling:', e);
+        }
+      }
+
+      // Try to confirm Airwallex checkout (new subscription)
       const awCheckoutId = typeof sessionStorage !== 'undefined'
         ? sessionStorage.getItem('aw_checkout_id')
         : null;
@@ -70,7 +94,6 @@ const PaymentSuccessPage: React.FC = () => {
           setSyncAttempts(1);
           await confirmAirwallexCheckout(awCheckoutId);
           sessionStorage.removeItem('aw_checkout_id');
-          // Give DB a moment to propagate
           await new Promise((resolve) => setTimeout(resolve, 500));
           await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
           await new Promise((resolve) => setTimeout(resolve, 300));

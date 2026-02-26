@@ -143,12 +143,29 @@ export async function confirmAirwallexCheckout(
   return res.json();
 }
 
+export async function confirmAirwallexRenewal(
+  renewalId: string
+): Promise<{ confirmed: boolean; status?: string }> {
+  const res = await authFetch(`${API_BASE}/airwallex/confirm-renewal`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ renewalId }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({}));
+    throw new Error(error.error || 'Failed to confirm renewal');
+  }
+
+  return res.json();
+}
+
 export async function createAirwallexSubscription(
   plan: 'monthly' | 'yearly',
   successUrl: string,
   cancelUrl: string,
   options?: { useFirstDiscount?: boolean; lang?: string }
-): Promise<{ checkoutUrl: string; checkoutId: string; usedFirstDiscount: boolean }> {
+): Promise<{ checkoutUrl: string; checkoutId?: string; renewalId?: string; isRenewal?: boolean; usedFirstDiscount?: boolean }> {
   const res = await authFetch(`${API_BASE}/airwallex/subscribe`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -230,9 +247,15 @@ export async function createSubscriptionCheckout(
       useFirstDiscount: applyFirstDiscount,
       lang,
     });
-    // Store checkoutId in sessionStorage for the success page to confirm
+    // Store checkout/renewal ID in sessionStorage for the success page to confirm
     if (typeof sessionStorage !== 'undefined') {
-      sessionStorage.setItem('aw_checkout_id', result.checkoutId);
+      if (result.isRenewal && result.renewalId) {
+        sessionStorage.setItem('aw_renewal_id', result.renewalId);
+        sessionStorage.removeItem('aw_checkout_id');
+      } else if (result.checkoutId) {
+        sessionStorage.setItem('aw_checkout_id', result.checkoutId);
+        sessionStorage.removeItem('aw_renewal_id');
+      }
     }
     return { url: result.checkoutUrl };
   }

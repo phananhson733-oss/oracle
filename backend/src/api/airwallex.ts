@@ -63,10 +63,33 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
       return res.status(400).json({ error: 'Invalid plan. Must be monthly or yearly' });
     }
 
-    // Check if already subscribed
+    // Check if already subscribed — route to renewal flow
     const entitlements = await entitlementServiceV2.getEntitlements(req.userId!);
     if (entitlements.isSubscriber && !entitlements.isTrialing) {
-      return res.status(400).json({ error: 'Already subscribed' });
+      // Renewal: create a one-time payment instead of new subscription
+      let email = '';
+      if (isSupabaseConfigured()) {
+        const { data: user } = await supabase
+          .from('users')
+          .select('email')
+          .eq('id', req.userId)
+          .single();
+        email = user?.email || '';
+      }
+      const currency = resolveCurrency(lang);
+      const result = await airwallexService.createRenewalPayment({
+        userId: req.userId!,
+        email,
+        plan: plan as 'monthly' | 'yearly',
+        currency,
+        successUrl,
+        cancelUrl,
+      });
+      return res.json({
+        checkoutUrl: result.checkoutUrl,
+        renewalId: result.paymentIntentId,
+        isRenewal: true,
+      });
     }
 
     // Check first discount eligibility
@@ -210,6 +233,76 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
     const message = error instanceof Error ? error.message : String(error);
     console.error('Airwallex confirm-checkout error:', message);
     res.status(500).json({ error: 'Failed to confirm checkout' });
+  }
+});
+
+// POST /api/airwallex/confirm-renewal — verify renewal payment and extend subscription
+router.post('/confirm-renewal', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    if (!isAirwallexConfigured()) {
+      return res.status(503).json({ error: 'Airwallex service unavailable' });
+    }
+
+    const { renewalId } = req.body;
+    if (!renewalId) {
+      return res.status(400).json({ error: 'renewalId required' });
+    }
+
+    // Check PaymentIntent status
+    const pi = await airwallexService.getPaymentIntent(renewalId);
+    if (pi.status !== 'SUCCEEDED') {
+      return res.json({ confirmed: false, status: pi.status });
+    }
+
+    const metadata = pi.metadata || {};
+    if (metadata.userId !== req.userId) {
+      return res.status(403).json({ error: 'Payment does not belong to this user' });
+    }
+
+    const plan = metadata.plan as 'monthly' | 'yearly' || 'monthly';
+
+    if (isSupabaseConfigured()) {
+      // Get current subscription
+      const { data: sub } = await supabase
+        .from('subscriptions')
+        .select('id, current_period_end')
+        .eq('user_id', req.userId)
+        .in('status', ['active', 'trialing', 'past_due'])
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (!sub) {
+        return res.status(400).json({ error: 'No active subscription to renew' });
+      }
+
+      // Extend from current period end (or now if expired)
+      const baseDate = new Date(sub.current_period_end || new Date());
+      const now = new Date();
+      const startFrom = baseDate > now ? baseDate : now;
+
+      const newEnd = new Date(startFrom);
+      if (plan === 'yearly') {
+        newEnd.setDate(newEnd.getDate() + 366);
+      } else {
+        newEnd.setDate(newEnd.getDate() + 31);
+      }
+
+      await supabase
+        .from('subscriptions')
+        .update({
+          current_period_end: newEnd.toISOString(),
+          status: 'active',
+          updated_at: new Date().toISOString(),
+        })
+        .eq('id', sub.id);
+    }
+
+    res.json({ confirmed: true });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('Airwallex confirm-renewal error:', message);
+    res.status(500).json({ error: `Failed to confirm renewal: ${message}` });
   }
 });
 
