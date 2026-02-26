@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
 import { getAirwallexPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
+import { redirectToAirwallexCheckout } from '../../services/airwallexCheckout';
 import { Check, Zap, Clock } from 'lucide-react';
 
 type PlanType = 'monthly' | 'yearly';
@@ -28,8 +29,10 @@ const UpgradeModal: React.FC = () => {
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState('');
 
-  // 首次折扣资格直接从 entitlements 读取
-  const isFirstDiscountEligible = (entitlements as any)?.isFirstDiscountEligible ?? false;
+  // 首次折扣资格直接从 entitlements 读取（已订阅用户续费时不享受首次折扣）
+  const isFirstDiscountEligible = entitlements?.isSubscriber
+    ? false
+    : ((entitlements as any)?.isFirstDiscountEligible ?? false);
 
   const isDark = theme === 'dark';
 
@@ -122,12 +125,23 @@ const UpgradeModal: React.FC = () => {
       const successUrl = `${window.location.origin}/#/payment/success`;
       const cancelUrl = currentUrl;
 
-      const { url } = await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
+      const result = await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
         applyFirstDiscount: isFirstDiscountEligible,
         provider: 'airwallex',
         lang: language,
       });
-      window.location.href = url;
+      // Renewal uses SDK redirect (HPP with successUrl); new subscription uses billing checkout URL
+      if (result.sdkRedirect) {
+        await redirectToAirwallexCheckout({
+          env: result.sdkRedirect.env as 'demo' | 'prod',
+          intentId: result.sdkRedirect.intentId,
+          clientSecret: result.sdkRedirect.clientSecret,
+          currency: result.sdkRedirect.currency,
+          successUrl: result.sdkRedirect.successUrl,
+        });
+      } else if (result.url) {
+        window.location.href = result.url;
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : (t.subscription?.checkout_error || 'Failed to start checkout'));
       setBusyAction(null);

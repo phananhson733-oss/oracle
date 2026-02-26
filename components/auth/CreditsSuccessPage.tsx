@@ -1,12 +1,13 @@
 // INPUT: React、认证上下文与 UI 组件依赖（积分购买成功回调页面）。
-// OUTPUT: 导出积分购买成功页面组件（支付成功回调后轮询权益状态）。
+// OUTPUT: 导出积分购买成功页面组件（支付成功回调后确认并添加积分）。
 // POS: 积分购买成功页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
-import { CheckCircle, Sparkles, Loader2 } from 'lucide-react';
+import { confirmAirwallexOrder } from '../../services/paymentClient';
+import { CheckCircle, Sparkles, Loader2, AlertCircle } from 'lucide-react';
 
 type CaptureState = 'loading' | 'success' | 'error';
 
@@ -20,6 +21,10 @@ const translations = {
     returnNow: '立即返回',
     returning: (seconds: number) => `${seconds} 秒后自动返回...`,
     buyMore: '继续购买',
+    errorTitle: '确认失败',
+    errorMessage: '积分可能稍后到账，请稍等片刻后刷新查看。',
+    retry: '重试',
+    goBack: '返回首页',
   },
   en: {
     capturing: 'Confirming payment...',
@@ -30,6 +35,10 @@ const translations = {
     returnNow: 'Return Now',
     returning: (seconds: number) => `Returning in ${seconds} seconds...`,
     buyMore: 'Buy More',
+    errorTitle: 'Confirmation Failed',
+    errorMessage: 'Your credits may arrive shortly. Please wait a moment and refresh.',
+    retry: 'Retry',
+    goBack: 'Go Home',
   },
 };
 
@@ -45,34 +54,56 @@ const CreditsSuccessPage: React.FC = () => {
 
   const [state, setState] = useState<CaptureState>('loading');
   const [countdown, setCountdown] = useState(3);
+  const [addedCredits, setAddedCredits] = useState(0);
   const syncRef = useRef(false);
   const initialCredits = useRef(entitlements?.credits ?? 0);
 
   const tr = language === 'zh' ? translations.zh : translations.en;
 
-  // Airwallex handles credits via webhook — poll entitlements to confirm
+  // Confirm credits order via backend, then refresh entitlements
   useEffect(() => {
     if (syncRef.current) return;
     syncRef.current = true;
 
     let cancelled = false;
-    const pollEntitlements = async () => {
-      const maxAttempts = 8;
-      for (let attempt = 1; attempt <= maxAttempts && !cancelled; attempt++) {
-        await refreshEntitlements();
-        await new Promise((r) => setTimeout(r, 1500));
-        if (cancelled) return;
-        // Credits increased — webhook has been processed
-        if (attempt >= 2) {
-          setState('success');
-          return;
+    const confirmAndSync = async () => {
+      const piId = typeof sessionStorage !== 'undefined'
+        ? sessionStorage.getItem('aw_order_pi_id')
+        : null;
+
+      // Try to confirm the order directly (adds credits server-side)
+      if (piId) {
+        const maxRetries = 6;
+        for (let i = 1; i <= maxRetries && !cancelled; i++) {
+          try {
+            const result = await confirmAirwallexOrder(piId);
+            if (result.confirmed) {
+              sessionStorage.removeItem('aw_order_pi_id');
+              if (result.credits) setAddedCredits(result.credits);
+              await refreshEntitlements();
+              if (!cancelled) setState('success');
+              return;
+            }
+            // Not yet succeeded — wait and retry
+          } catch (e) {
+            console.warn(`Confirm order attempt ${i} failed:`, e);
+          }
+          if (i < maxRetries) {
+            await new Promise((r) => setTimeout(r, 2000));
+          }
         }
       }
-      // Timeout — still show success (webhook may be delayed)
+
+      // Fallback: poll entitlements (for webhook-based activation)
+      for (let attempt = 1; attempt <= 4 && !cancelled; attempt++) {
+        await refreshEntitlements();
+        await new Promise((r) => setTimeout(r, 1500));
+      }
+      // Show success anyway (webhook may still be delayed)
       if (!cancelled) setState('success');
     };
 
-    pollEntitlements();
+    confirmAndSync();
     return () => { cancelled = true; };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -96,7 +127,7 @@ const CreditsSuccessPage: React.FC = () => {
   }, [returnTo, state, countdown, navigate]);
 
   const currentCredits = entitlements?.credits ?? 0;
-  const gainedCredits = Math.max(0, currentCredits - initialCredits.current);
+  const gainedCredits = addedCredits || Math.max(0, currentCredits - initialCredits.current);
 
   return (
     <Container>
@@ -110,6 +141,39 @@ const CreditsSuccessPage: React.FC = () => {
             <h1 className={`text-2xl font-serif font-bold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
               {tr.capturing}
             </h1>
+          </>
+        )}
+
+        {/* Error */}
+        {state === 'error' && (
+          <>
+            <div className="mb-8">
+              <div className="w-24 h-24 rounded-full bg-red-500/10 flex items-center justify-center mx-auto">
+                <AlertCircle className="w-12 h-12 text-red-400" />
+              </div>
+            </div>
+            <h1 className={`text-2xl font-serif font-bold mb-4 ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
+              {tr.errorTitle}
+            </h1>
+            <p className={`mb-8 ${isDark ? 'text-star-300' : 'text-paper-500'}`}>
+              {tr.errorMessage}
+            </p>
+            <div className="space-y-3">
+              <ActionButton
+                variant="primary"
+                onClick={() => window.location.reload()}
+                className="w-full"
+              >
+                {tr.retry}
+              </ActionButton>
+              <ActionButton
+                variant="secondary"
+                onClick={() => navigate('/dashboard')}
+                className="w-full"
+              >
+                {tr.goBack}
+              </ActionButton>
+            </div>
           </>
         )}
 

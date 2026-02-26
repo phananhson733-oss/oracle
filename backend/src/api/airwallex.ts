@@ -86,7 +86,10 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
         cancelUrl,
       });
       return res.json({
-        checkoutUrl: result.checkoutUrl,
+        paymentIntentId: result.paymentIntentId,
+        clientSecret: result.clientSecret,
+        currency: result.currency,
+        env: result.env,
         renewalId: result.paymentIntentId,
         isRenewal: true,
       });
@@ -452,12 +455,102 @@ router.post('/create-order', authMiddleware, requireAuth, async (req: Request, r
     });
 
     res.json({
-      checkoutUrl: result.checkoutUrl,
+      paymentIntentId: result.paymentIntentId,
+      clientSecret: result.clientSecret,
+      currency: result.currency,
+      env: result.env,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     console.error('Airwallex create order error:', message, error);
     res.status(500).json({ error: `Failed to create order: ${message}` });
+  }
+});
+
+// POST /api/airwallex/confirm-order — verify credits payment and add credits
+router.post('/confirm-order', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    if (!isAirwallexConfigured()) {
+      return res.status(503).json({ error: 'Airwallex service unavailable' });
+    }
+
+    const { paymentIntentId } = req.body;
+    if (!paymentIntentId) {
+      return res.status(400).json({ error: 'paymentIntentId required' });
+    }
+
+    // Check PaymentIntent status
+    const pi = await airwallexService.getPaymentIntent(paymentIntentId);
+    if (pi.status !== 'SUCCEEDED') {
+      return res.json({ confirmed: false, status: pi.status });
+    }
+
+    const metadata = pi.metadata || {};
+    if (metadata.userId !== req.userId) {
+      return res.status(403).json({ error: 'Payment does not belong to this user' });
+    }
+
+    const packageId = metadata.packageId;
+    if (!packageId) {
+      return res.status(400).json({ error: 'Missing packageId in payment metadata' });
+    }
+
+    const packageInfo = AIRWALLEX_CREDITS_PACKAGES[packageId];
+    if (!packageInfo) {
+      return res.status(400).json({ error: `Unknown package: ${packageId}` });
+    }
+
+    const credits = packageInfo.credits;
+
+    if (isSupabaseConfigured()) {
+      // Idempotency: use paymentIntentId as unique key (shared with webhook handler)
+      const idempotencyKey = `${packageId}:${paymentIntentId}`;
+      const { data: existing } = await supabase
+        .from('purchase_records')
+        .select('id')
+        .eq('user_id', req.userId)
+        .eq('feature_id', idempotencyKey)
+        .limit(1)
+        .single();
+
+      if (existing) {
+        return res.json({ confirmed: true, alreadyProcessed: true, credits });
+      }
+
+      // Use actual payment amount/currency from PaymentIntent
+      const priceCents = pi.amount ? Math.round(pi.amount * 100) : packageInfo.usd.amount;
+
+      // Insert with race-condition guard (duplicate key = already processed by webhook)
+      const { error: insertErr } = await supabase.from('purchase_records').insert({
+        user_id: req.userId,
+        feature_type: 'credits',
+        feature_id: idempotencyKey,
+        scope: 'consumable',
+        price_cents: priceCents,
+        quantity: credits,
+        consumed: 0,
+      });
+
+      if (insertErr) {
+        // Duplicate key means webhook already processed — safe to skip
+        if (insertErr.code === '23505') {
+          return res.json({ confirmed: true, alreadyProcessed: true, credits });
+        }
+        throw insertErr;
+      }
+
+      // Add credits (only reaches here if insert succeeded)
+      await supabase.rpc('add_user_credits', {
+        p_user_id: req.userId,
+        p_amount: credits,
+      });
+    }
+
+    res.json({ confirmed: true, credits });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('Airwallex confirm-order error:', message);
+    res.status(500).json({ error: 'Failed to confirm order' });
   }
 });
 
@@ -661,12 +754,14 @@ async function handleSubscriptionUnpaid(event: any): Promise<void> {
 
 async function handlePaymentIntentSucceeded(event: any): Promise<void> {
   const data = event.data || event;
+  const piId = data.id;
   const metadata = data.metadata || {};
   const userId = metadata.userId;
   const packageId = metadata.packageId;
 
   if (!userId || !packageId) {
-    console.error('Missing metadata in Airwallex payment_intent.succeeded event');
+    // May be a renewal or non-credits payment — skip silently
+    console.log('Airwallex payment_intent.succeeded: no packageId in metadata, skipping credits flow');
     return;
   }
 
@@ -678,20 +773,45 @@ async function handlePaymentIntentSucceeded(event: any): Promise<void> {
 
   // Use server-side package credits, not metadata (prevent spoofing)
   const credits = packageInfo.credits;
+  // Use actual payment amount from PI event when available
+  const priceCents = data.amount ? Math.round(data.amount * 100) : packageInfo.usd.amount;
 
   if (isSupabaseConfigured()) {
-    // Record purchase
-    await supabase.from('purchase_records').insert({
+    // Idempotency: use same key format as confirm-order to prevent double-credit
+    const idempotencyKey = `${packageId}:${piId}`;
+    const { data: existing } = await supabase
+      .from('purchase_records')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('feature_id', idempotencyKey)
+      .limit(1)
+      .single();
+
+    if (existing) {
+      console.log(`Airwallex credits already processed for PI ${piId}, skipping`);
+      return;
+    }
+
+    // Record purchase (race-condition guard: unique constraint on feature_id)
+    const { error: insertErr } = await supabase.from('purchase_records').insert({
       user_id: userId,
       feature_type: 'credits',
-      feature_id: packageId,
+      feature_id: idempotencyKey,
       scope: 'consumable',
-      price_cents: packageInfo.usd.amount, // Record in USD for consistency
+      price_cents: priceCents,
       quantity: credits,
       consumed: 0,
     });
 
-    // Add credits
+    if (insertErr) {
+      if (insertErr.code === '23505') {
+        console.log(`Airwallex webhook: duplicate insert for PI ${piId}, already processed`);
+        return;
+      }
+      throw insertErr;
+    }
+
+    // Add credits only if insert succeeded (no duplicate)
     await supabase.rpc('add_user_credits', {
       p_user_id: userId,
       p_amount: credits,

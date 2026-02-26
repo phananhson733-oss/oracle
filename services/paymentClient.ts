@@ -165,7 +165,11 @@ export async function createAirwallexSubscription(
   successUrl: string,
   cancelUrl: string,
   options?: { useFirstDiscount?: boolean; lang?: string }
-): Promise<{ checkoutUrl: string; checkoutId?: string; renewalId?: string; isRenewal?: boolean; usedFirstDiscount?: boolean }> {
+): Promise<{
+  checkoutUrl?: string; checkoutId?: string; usedFirstDiscount?: boolean;
+  renewalId?: string; isRenewal?: boolean;
+  paymentIntentId?: string; clientSecret?: string; currency?: string; env?: string;
+}> {
   const res = await authFetch(`${API_BASE}/airwallex/subscribe`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -191,7 +195,7 @@ export async function createAirwallexOrder(
   successUrl: string,
   cancelUrl: string,
   lang?: string
-): Promise<{ checkoutUrl: string }> {
+): Promise<{ paymentIntentId: string; clientSecret: string; currency: string; env: string }> {
   const res = await authFetch(`${API_BASE}/airwallex/create-order`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -201,6 +205,23 @@ export async function createAirwallexOrder(
   if (!res.ok) {
     const error = await res.json();
     throw new Error(error.error || 'Failed to create Airwallex order');
+  }
+
+  return res.json();
+}
+
+export async function confirmAirwallexOrder(
+  paymentIntentId: string
+): Promise<{ confirmed: boolean; credits?: number; alreadyProcessed?: boolean; status?: string }> {
+  const res = await authFetch(`${API_BASE}/airwallex/confirm-order`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ paymentIntentId }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({}));
+    throw new Error(error.error || 'Failed to confirm order');
   }
 
   return res.json();
@@ -239,7 +260,7 @@ export async function createSubscriptionCheckout(
   successUrl: string,
   cancelUrl: string,
   options?: SubscriptionCheckoutOptions
-): Promise<{ url: string }> {
+): Promise<{ url?: string; sdkRedirect?: { intentId: string; clientSecret: string; currency: string; env: string; successUrl: string } }> {
   const { applyFirstDiscount, provider = 'airwallex', lang } = options || {};
 
   if (provider === 'airwallex') {
@@ -256,6 +277,18 @@ export async function createSubscriptionCheckout(
         sessionStorage.setItem('aw_checkout_id', result.checkoutId);
         sessionStorage.removeItem('aw_renewal_id');
       }
+    }
+    // Renewal uses SDK redirect (HPP); new subscription uses billing checkout URL
+    if (result.isRenewal && result.paymentIntentId && result.clientSecret) {
+      return {
+        sdkRedirect: {
+          intentId: result.paymentIntentId,
+          clientSecret: result.clientSecret,
+          currency: result.currency || 'USD',
+          env: result.env || 'demo',
+          successUrl,
+        },
+      };
     }
     return { url: result.checkoutUrl };
   }

@@ -8,6 +8,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { Check, Sparkles } from 'lucide-react';
 import { trackEvent } from '../services/analytics';
 import { createAirwallexOrder } from '../services/paymentClient';
+import { redirectToAirwallexCheckout } from '../services/airwallexCheckout';
 
 // Credits packages configuration — 与后端 CREDITS_PACKAGES 一一对应
 const CREDITS_PACKAGES = [
@@ -93,17 +94,30 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       const successUrl = `${window.location.origin}/#/payment/credits-success?returnTo=${returnTo}`;
       const cancelUrl = window.location.href;
 
-      const { checkoutUrl } = await createAirwallexOrder(
+      const result = await createAirwallexOrder(
         selectedPackage.id,
         successUrl,
         cancelUrl,
         language,
       );
 
+      // Store paymentIntentId for the success page to confirm credits
+      if (result.paymentIntentId && typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem('aw_order_pi_id', result.paymentIntentId);
+      }
+
       trackEvent('credits_airwallex_redirect', {
         package_id: selectedPackage.id,
       });
-      window.location.href = checkoutUrl;
+
+      // Use Airwallex SDK to redirect to HPP (auto-redirects to successUrl after payment)
+      await redirectToAirwallexCheckout({
+        env: (result.env || 'demo') as 'demo' | 'prod',
+        intentId: result.paymentIntentId,
+        clientSecret: result.clientSecret,
+        currency: result.currency,
+        successUrl,
+      });
     } catch (err) {
       console.error('Credits payment error:', err);
       setError(tr.paymentError);

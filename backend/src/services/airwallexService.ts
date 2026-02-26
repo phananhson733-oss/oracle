@@ -2,6 +2,7 @@
 import {
   AIRWALLEX_API_BASE,
   AIRWALLEX_CREDENTIALS,
+  AIRWALLEX_ENV,
   AIRWALLEX_PRICES,
   AIRWALLEX_CREDITS_PACKAGES,
   AIRWALLEX_SUBSCRIPTION_PRICING,
@@ -182,7 +183,7 @@ class AirwallexService {
     currency: SupportedCurrency;
     successUrl: string;
     cancelUrl: string;
-  }): Promise<{ checkoutUrl: string; paymentIntentId: string }> {
+  }): Promise<{ paymentIntentId: string; clientSecret: string; currency: string; env: string }> {
     if (!isAirwallexConfigured()) {
       throw new Error('Airwallex not configured');
     }
@@ -192,7 +193,7 @@ class AirwallexService {
     const token = await this.getAccessToken();
     const shortId = input.userId.replace(/-/g, '').slice(0, 12);
 
-    // Create PaymentIntent (one-time)
+    // Create PaymentIntent (one-time) — return_url controls post-payment redirect
     const piResponse = await fetch(`${AIRWALLEX_API_BASE}/api/v1/pa/payment_intents/create`, {
       method: 'POST',
       headers: {
@@ -221,49 +222,17 @@ class AirwallexService {
     }
 
     const piData = await piResponse.json();
-    const planLabel = input.plan === 'yearly' ? 'Yearly' : 'Monthly';
-
-    // Create PaymentLink
-    const linkResponse = await fetch(`${AIRWALLEX_API_BASE}/api/v1/pa/payment_links/create`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        request_id: `rl_${shortId}_${input.plan}_${Date.now()}`,
-        amount: pricing.amount / 100,
-        currency: pricing.currency.toUpperCase(),
-        reusable: false,
-        title: `AstroMind Pro ${planLabel} Renewal`,
-        description: `Renew AstroMind Pro subscription (${planLabel})`,
-        reference: piData.id,
-        return_url: input.successUrl,
-        metadata: {
-          userId: input.userId,
-          plan: input.plan,
-          type: 'renewal',
-          paymentIntentId: piData.id,
-        },
-      }),
-    });
-
-    if (!linkResponse.ok) {
-      const errorBody = await linkResponse.text();
-      console.error('Airwallex renewal payment link error:', errorBody);
-      throw new Error(`Airwallex ${linkResponse.status}: ${errorBody}`);
-    }
-
-    const linkData = await linkResponse.json();
 
     return {
-      checkoutUrl: linkData.url,
       paymentIntentId: piData.id,
+      clientSecret: piData.client_secret,
+      currency: pricing.currency,
+      env: AIRWALLEX_ENV,
     };
   }
 
   // Get PaymentIntent status
-  async getPaymentIntent(paymentIntentId: string): Promise<{ id: string; status: string; metadata?: Record<string, string> }> {
+  async getPaymentIntent(paymentIntentId: string): Promise<{ id: string; status: string; amount?: number; currency?: string; metadata?: Record<string, string> }> {
     const token = await this.getAccessToken();
     const response = await fetch(`${AIRWALLEX_API_BASE}/api/v1/pa/payment_intents/${paymentIntentId}`, {
       method: 'GET',
@@ -280,7 +249,7 @@ class AirwallexService {
   }
 
   // Create PaymentIntent for credits purchase
-  async createOrder(input: CreateOrderInput): Promise<{ checkoutUrl: string }> {
+  async createOrder(input: CreateOrderInput): Promise<{ paymentIntentId: string; clientSecret: string; currency: string; env: string }> {
     if (!isAirwallexConfigured()) {
       throw new Error('Airwallex not configured');
     }
@@ -293,7 +262,7 @@ class AirwallexService {
     const pricing = input.currency === 'CNY' ? packageInfo.cny : packageInfo.usd;
     const token = await this.getAccessToken();
 
-    // Create PaymentIntent
+    // Create PaymentIntent — return_url controls post-payment redirect on HPP
     const piResponse = await fetch(`${AIRWALLEX_API_BASE}/api/v1/pa/payment_intents/create`, {
       method: 'POST',
       headers: {
@@ -323,41 +292,11 @@ class AirwallexService {
 
     const piData = await piResponse.json();
 
-    // Create hosted payment page (checkout session)
-    const checkoutResponse = await fetch(`${AIRWALLEX_API_BASE}/api/v1/pa/payment_links/create`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        request_id: `lk_${input.userId.replace(/-/g, '').slice(0, 12)}_${input.packageId.replace('credits_', '')}_${Date.now()}`,
-        amount: pricing.amount / 100,
-        currency: pricing.currency.toUpperCase(),
-        reusable: false,
-        title: packageInfo.name,
-        description: packageInfo.description,
-        reference: piData.id,
-        return_url: input.successUrl,
-        metadata: {
-          userId: input.userId,
-          packageId: input.packageId,
-          credits: String(packageInfo.credits),
-          paymentIntentId: piData.id,
-        },
-      }),
-    });
-
-    if (!checkoutResponse.ok) {
-      const errorBody = await checkoutResponse.text();
-      console.error('Airwallex create payment link error:', errorBody);
-      throw new Error(`Airwallex payment link ${checkoutResponse.status}: ${errorBody}`);
-    }
-
-    const checkoutData = await checkoutResponse.json();
-
     return {
-      checkoutUrl: checkoutData.url,
+      paymentIntentId: piData.id,
+      clientSecret: piData.client_secret,
+      currency: pricing.currency,
+      env: AIRWALLEX_ENV,
     };
   }
 

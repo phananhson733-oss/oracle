@@ -6303,6 +6303,16 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     );
 };
 
+const SubscriptionExpiry: React.FC<{ expiresAt?: string; language: string }> = ({ expiresAt, language }) => {
+  if (!expiresAt) return null;
+  const d = new Date(expiresAt);
+  if (isNaN(d.getTime())) return null;
+  const label = language === 'zh'
+    ? `有效期：${d.getFullYear()}年${String(d.getMonth() + 1).padStart(2, '0')}月${String(d.getDate()).padStart(2, '0')}日`
+    : `Valid until: ${d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`;
+  return <div className="text-xs opacity-60 mt-0.5">{label}</div>;
+};
+
 const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = ({ profile, onReset }) => {
     const { t, language, toggleLanguage } = useLanguage();
     const { theme, toggleTheme } = useTheme();
@@ -6431,15 +6441,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                     <span className="font-bold text-gold-500 flex items-center gap-1">
                                         <span>✦</span> {language === 'zh' ? 'Pro 会员' : 'Pro Member'}
                                     </span>
-                                    {(entitlements as any)?.subscription?.expiresAt && (() => {
-                                        const d = new Date((entitlements as any).subscription.expiresAt);
-                                        if (isNaN(d.getTime())) return null;
-                                        const pad = (n: number) => String(n).padStart(2, '0');
-                                        const label = language === 'zh'
-                                            ? `有效期：${d.getFullYear()}年/${pad(d.getMonth() + 1)}月/${pad(d.getDate())}日`
-                                            : `Valid until: ${d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`;
-                                        return <div className="text-xs opacity-60 mt-0.5">{label}</div>;
-                                    })()}
+                                    <SubscriptionExpiry expiresAt={entitlements?.subscription?.expiresAt} language={language} />
                                 </div>
                             ) : (!FREE_MODE && !LOGIN_GATE_MODE) ? (
                                 <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
