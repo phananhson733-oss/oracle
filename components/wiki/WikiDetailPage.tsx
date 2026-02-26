@@ -314,6 +314,11 @@ const WikiDetailPage: React.FC = () => {
     );
   }
 
+  const breadcrumbItems = [
+    { name: t.wiki.tab_library, path: '/wiki?tab=library' },
+    { name: item.title },
+  ];
+
   return (
     <Container>
       <Breadcrumb items={breadcrumbItems} homePath="/wiki" />
