@@ -82,8 +82,10 @@ export interface DbSubscription {
   current_period_end: string | null;
   cancel_at_period_end: boolean;
   usage: SubscriptionUsage;
-  payment_provider: 'stripe' | 'paypal';
+  payment_provider: 'stripe' | 'paypal' | 'airwallex';
   paypal_subscription_id: string | null;
+  airwallex_subscription_id: string | null;
+  airwallex_customer_id: string | null;
   created_at: string;
   updated_at: string;
 }

@@ -31,7 +31,7 @@ export interface EntitlementsV2 {
     plan: 'monthly' | 'yearly';
     status: string;
     expiresAt: string;
-    provider: 'stripe' | 'paypal';
+    provider: 'stripe' | 'paypal' | 'airwallex';
   };
 
   // Ask 问答额度

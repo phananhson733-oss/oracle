@@ -7,7 +7,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useEntitlement } from '../../contexts/EntitlementContext';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
-import { confirmPayPalSubscription, createPortalSession } from '../../services/paymentClient';
+import { createPortalSession } from '../../services/paymentClient';
 import { CheckCircle, Crown, Sparkles } from 'lucide-react';
 
 const PaymentSuccessPage: React.FC = () => {
@@ -22,16 +22,12 @@ const PaymentSuccessPage: React.FC = () => {
   const [countdown, setCountdown] = useState(3);
   const [syncState, setSyncState] = useState<'syncing' | 'ready' | 'timeout'>('syncing');
   const [syncAttempts, setSyncAttempts] = useState(0);
-  const [confirmState, setConfirmState] = useState<'idle' | 'confirming' | 'confirmed' | 'failed'>('idle');
-  const [confirmError, setConfirmError] = useState<string | null>(null);
 
   const isDark = theme === 'dark';
   const sessionId = searchParams.get('session_id');
   const returnTo = searchParams.get('returnTo');
-  const subscriptionId = searchParams.get('subscription_id');
   const entitlementsRef = useRef(v2Entitlements);
   const authEntitlementsRef = useRef(authEntitlements);
-  const confirmOnceRef = useRef(false);
 
   useEffect(() => {
     entitlementsRef.current = v2Entitlements;
@@ -63,19 +59,6 @@ const PaymentSuccessPage: React.FC = () => {
     const runSync = async () => {
       const maxAttempts = 6;
       setSyncState('syncing');
-
-      if (subscriptionId && !confirmOnceRef.current) {
-        confirmOnceRef.current = true;
-        setConfirmState('confirming');
-        setConfirmError(null);
-        try {
-          await confirmPayPalSubscription(subscriptionId);
-          setConfirmState('confirmed');
-        } catch (err) {
-          setConfirmState('failed');
-          setConfirmError(err instanceof Error ? err.message : (language === 'zh' ? '订阅确认失败' : 'Subscription confirmation failed'));
-        }
-      }
 
       for (let attempt = 1; attempt <= maxAttempts && !cancelled; attempt += 1) {
         setSyncAttempts(attempt);
@@ -120,8 +103,14 @@ const PaymentSuccessPage: React.FC = () => {
   }, [shouldAutoReturn, countdown, navigate, returnTarget]);
 
   const handleViewSubscription = async () => {
-    // PayPal 订阅跳转 PayPal 自动付款管理页
-    const provider = (v2Entitlements as any)?.subscription?.provider || (authEntitlements as any)?.subscription?.provider;
+    const provider = v2Entitlements?.subscription?.provider || (authEntitlements as any)?.subscription?.provider;
+
+    if (provider === 'airwallex') {
+      // Airwallex doesn't have a self-service portal; navigate to settings
+      navigate('/settings');
+      return;
+    }
+
     if (provider === 'paypal') {
       window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
       return;
@@ -165,8 +154,8 @@ const PaymentSuccessPage: React.FC = () => {
       syncReady: '登录与订阅状态已更新。',
       syncTimeout: '订阅状态同步稍有延迟，已刷新数据，可稍后在个人信息页再次确认。',
       loginMissing: '当前登录状态未确认，请先登录。',
-      confirming: '正在确认 PayPal 订阅...',
-      confirmFailed: 'PayPal 订阅确认失败，请稍后重试或刷新。',
+      confirming: '正在确认订阅...',
+      confirmFailed: '订阅确认失败，请稍后重试或刷新。',
     },
     en: {
       title: 'Payment Successful!',
@@ -187,8 +176,8 @@ const PaymentSuccessPage: React.FC = () => {
       syncReady: 'Login and subscription status updated.',
       syncTimeout: 'Subscription sync is taking longer. Data refreshed; you can recheck in your profile.',
       loginMissing: 'Login status not confirmed. Please sign in.',
-      confirming: 'Confirming PayPal subscription...',
-      confirmFailed: 'PayPal confirmation failed. Please refresh and try again.',
+      confirming: 'Confirming subscription...',
+      confirmFailed: 'Subscription confirmation failed. Please refresh and try again.',
     },
   };
 
@@ -241,16 +230,6 @@ const PaymentSuccessPage: React.FC = () => {
 
         {/* Sync status */}
         <div className="mb-6">
-          {confirmState === 'confirming' && (
-            <p className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
-              {tr.confirming}
-            </p>
-          )}
-          {confirmState === 'failed' && (
-            <p className={`text-sm ${isDark ? 'text-amber-300' : 'text-amber-700'}`}>
-              {confirmError || tr.confirmFailed}
-            </p>
-          )}
           {syncState === 'syncing' && (
             <p className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
               {tr.syncing(syncAttempts || 1)}

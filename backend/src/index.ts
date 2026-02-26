@@ -22,6 +22,7 @@ import authRouter from './api/auth.js';
 import paymentRouter from './api/payment.js';
 import paymentV2Router from './api/paymentV2.js';
 import paypalRouter from './api/paypal.js';
+import airwallexRouter from './api/airwallex.js';
 import entitlementsRouter from './api/entitlements.js';
 import entitlementsV2Router from './api/entitlementsV2.js';
 import reportsRouter from './api/reports.js';
@@ -39,16 +40,27 @@ envPaths.forEach((envPath) => {
   dotenv.config({ path: envPath });
 });
 
+// Payment provider switch (default: airwallex) — must be after dotenv.config
+const PAYMENT_PROVIDER = process.env.PAYMENT_PROVIDER || 'airwallex';
+const isProviderEnabled = (provider: string) =>
+  PAYMENT_PROVIDER === 'all' || PAYMENT_PROVIDER === provider;
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 
-// Raw body parser for Stripe webhook (must be before express.json())
-app.use('/api/payment/webhook', express.raw({ type: 'application/json' }));
-app.use('/api/payment/v2/webhook', express.raw({ type: 'application/json' }));
-// Raw body parser for PayPal webhook (must be before express.json())
-app.use('/api/paypal/webhook', express.raw({ type: 'application/json' }));
+// Raw body parsers for payment webhooks (must be before express.json())
+if (isProviderEnabled('stripe')) {
+  app.use('/api/payment/webhook', express.raw({ type: 'application/json' }));
+  app.use('/api/payment/v2/webhook', express.raw({ type: 'application/json' }));
+}
+if (isProviderEnabled('paypal')) {
+  app.use('/api/paypal/webhook', express.raw({ type: 'application/json' }));
+}
+if (isProviderEnabled('airwallex')) {
+  app.use('/api/airwallex/webhook', express.raw({ type: 'application/json' }));
+}
 
 app.use(express.json());
 app.use(apiResponseMiddleware);
@@ -67,11 +79,28 @@ app.use('/api/synthetica', syntheticaRouter);
 app.use('/api/astro', astroRouter);
 app.use('/api/user', userRouter);
 
-// Auth & Payment Routes
+// Auth Routes
 app.use('/api/auth', authRouter);
-app.use('/api/payment', paymentRouter);
-app.use('/api/payment', paymentV2Router);  // V2 路由挂载在 /v2 子路径
-app.use('/api/paypal', paypalRouter);  // PayPal 支付路由
+
+// Payment Routes (conditional based on PAYMENT_PROVIDER)
+if (isProviderEnabled('stripe')) {
+  app.use('/api/payment', paymentRouter);
+}
+if (isProviderEnabled('paypal')) {
+  app.use('/api/paypal', paypalRouter);
+}
+if (isProviderEnabled('airwallex')) {
+  app.use('/api/airwallex', airwallexRouter);
+}
+
+// V2 payment routes (credits system — always enabled, independent of payment provider)
+app.use('/api/payment', paymentV2Router);
+
+// Config endpoint - returns active payment provider
+app.get('/api/config', (_, res) => res.json({ paymentProvider: PAYMENT_PROVIDER }));
+
+console.log(`💳 Payment provider: ${PAYMENT_PROVIDER}`);
+
 app.use('/api/entitlements', entitlementsRouter);
 app.use('/api/entitlements', entitlementsV2Router);  // V2 路由挂载在 /v2 子路径
 app.use('/api/reports', reportsRouter);

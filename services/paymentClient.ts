@@ -87,7 +87,117 @@ export async function getSubscription(): Promise<{ hasSubscription: boolean; sub
 
 export interface SubscriptionCheckoutOptions {
   applyFirstDiscount?: boolean;
-  provider?: 'stripe' | 'paypal';
+  provider?: 'stripe' | 'paypal' | 'airwallex';
+  lang?: string;
+}
+
+// === Payment Provider Config ===
+
+let cachedPaymentProvider: string | null = null;
+
+export async function getPaymentConfig(): Promise<{ paymentProvider: string }> {
+  if (cachedPaymentProvider) {
+    return { paymentProvider: cachedPaymentProvider };
+  }
+  try {
+    const res = await fetch(`${API_BASE}/config`);
+    if (res.ok) {
+      const data = await res.json();
+      cachedPaymentProvider = data.paymentProvider || 'airwallex';
+      return data;
+    }
+  } catch {
+    // Fallback
+  }
+  return { paymentProvider: 'airwallex' };
+}
+
+export function isAirwallexEnabled(): boolean {
+  return cachedPaymentProvider === 'airwallex' || cachedPaymentProvider === 'all';
+}
+
+export function isStripeEnabled(): boolean {
+  return cachedPaymentProvider === 'stripe' || cachedPaymentProvider === 'all';
+}
+
+export function isPaypalEnabled(): boolean {
+  return cachedPaymentProvider === 'paypal' || cachedPaymentProvider === 'all';
+}
+
+// === Airwallex APIs ===
+
+export async function createAirwallexSubscription(
+  plan: 'monthly' | 'yearly',
+  successUrl: string,
+  cancelUrl: string,
+  options?: { useFirstDiscount?: boolean; lang?: string }
+): Promise<{ checkoutUrl: string; usedFirstDiscount: boolean }> {
+  const res = await authFetch(`${API_BASE}/airwallex/subscribe`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      plan,
+      successUrl,
+      cancelUrl,
+      useFirstDiscount: options?.useFirstDiscount,
+      lang: options?.lang,
+    }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.error || 'Failed to create Airwallex subscription');
+  }
+
+  return res.json();
+}
+
+export async function createAirwallexOrder(
+  packageId: string,
+  successUrl: string,
+  cancelUrl: string,
+  lang?: string
+): Promise<{ checkoutUrl: string }> {
+  const res = await authFetch(`${API_BASE}/airwallex/create-order`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ packageId, successUrl, cancelUrl, lang }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.error || 'Failed to create Airwallex order');
+  }
+
+  return res.json();
+}
+
+export async function getAirwallexPricing(lang?: string): Promise<{
+  currency: string;
+  subscription: {
+    monthly: { amount: number; currency: string };
+    yearly: { amount: number; currency: string };
+    firstDiscount: {
+      rate: number;
+      monthly: { amount: number; currency: string };
+      yearly: { amount: number; currency: string };
+    };
+  };
+  credits: Array<{
+    id: string;
+    credits: number;
+    amount: number;
+    currency: string;
+    name: string;
+    description: string;
+  }>;
+}> {
+  const params = lang ? `?lang=${lang}` : '';
+  const res = await fetch(`${API_BASE}/airwallex/pricing${params}`);
+  if (!res.ok) {
+    throw new Error('Failed to get Airwallex pricing');
+  }
+  return res.json();
 }
 
 export async function createSubscriptionCheckout(
@@ -96,10 +206,17 @@ export async function createSubscriptionCheckout(
   cancelUrl: string,
   options?: SubscriptionCheckoutOptions
 ): Promise<{ url: string }> {
-  const { applyFirstDiscount, provider = 'paypal' } = options || {};
+  const { applyFirstDiscount, provider = 'airwallex', lang } = options || {};
+
+  if (provider === 'airwallex') {
+    const result = await createAirwallexSubscription(plan, successUrl, cancelUrl, {
+      useFirstDiscount: applyFirstDiscount,
+      lang,
+    });
+    return { url: result.checkoutUrl };
+  }
 
   if (provider === 'paypal') {
-    // 使用 PayPal 订阅
     const res = await authFetch(`${API_BASE}/paypal/subscribe`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -115,7 +232,7 @@ export async function createSubscriptionCheckout(
     return { url: data.approveUrl };
   }
 
-  // 默认使用 Stripe
+  // Stripe fallback
   const res = await authFetch(`${API_BASE}/payment/create-checkout`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

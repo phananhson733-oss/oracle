@@ -12,7 +12,7 @@ type PlanType = 'monthly' | 'yearly';
 
 const UpgradeModal: React.FC = () => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const {
     showUpgradeModal,
     setShowUpgradeModal,
@@ -109,7 +109,8 @@ const UpgradeModal: React.FC = () => {
 
       const { url } = await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
         applyFirstDiscount: isFirstDiscountEligible,
-        provider: 'paypal',
+        provider: 'airwallex',
+        lang: language,
       });
       window.location.href = url;
     } catch (err) {
@@ -128,6 +129,12 @@ const UpgradeModal: React.FC = () => {
     const provider = entitlements?.subscription?.provider;
     if (provider === 'paypal') {
       window.open('https://www.paypal.com/myaccount/autopay/', '_blank');
+      return;
+    }
+    if (provider === 'airwallex') {
+      // Airwallex doesn't have a self-service portal; cancellation is via API
+      // For now, navigate to settings where cancel action is available
+      handleClose();
       return;
     }
 

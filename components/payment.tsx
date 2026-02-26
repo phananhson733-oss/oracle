@@ -7,7 +7,7 @@ import { Modal, ActionButton, useLanguage, useTheme } from './UIComponents';
 import { useAuth } from '../contexts/AuthContext';
 import { Check, Sparkles } from 'lucide-react';
 import { trackEvent } from '../services/analytics';
-import { getAccessToken } from '../services/authClient';
+import { createAirwallexOrder } from '../services/paymentClient';
 
 // Credits packages configuration — 与后端 CREDITS_PACKAGES 一一对应
 const CREDITS_PACKAGES = [
@@ -18,8 +18,6 @@ const CREDITS_PACKAGES = [
 ] as const;
 
 type CreditsPackage = typeof CREDITS_PACKAGES[number];
-
-const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001/api' : '/api');
 
 interface CreditsModalProps {
   isOpen: boolean;
@@ -46,7 +44,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       bestValue: '最划算',
       popular: '热门',
       credits: '积分',
-      payWithPayPal: 'PayPal 支付',
+      pay: '立即支付',
       processing: '处理中...',
       loginRequired: '请先登录后购买积分',
       paymentError: '支付失败，请重试',
@@ -60,7 +58,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       bestValue: 'Best Value',
       popular: 'Popular',
       credits: 'credits',
-      payWithPayPal: 'Pay with PayPal',
+      pay: 'Pay Now',
       processing: 'Processing...',
       loginRequired: 'Please sign in to purchase credits',
       paymentError: 'Payment failed. Please try again.',
@@ -72,7 +70,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
   const tr = language === 'zh' ? translations.zh : translations.en;
   const balance = new Intl.NumberFormat(language === 'zh' ? 'zh-CN' : 'en-US').format(credits);
 
-  const handlePayPalPurchase = useCallback(async () => {
+  const handlePurchase = useCallback(async () => {
     if (!isAuthenticated) {
       openLoginModal(tr.loginRequired);
       return;
@@ -90,50 +88,24 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
         price: selectedPackage.price,
       });
 
-      const token = getAccessToken();
-      if (!token) {
-        openLoginModal(tr.loginRequired);
-        setIsProcessing(false);
-        return;
-      }
-
-      // Create PayPal order via backend API
+      // Create Airwallex order via backend API
       const returnTo = encodeURIComponent(window.location.hash.slice(1) || '/dashboard');
       const successUrl = `${window.location.origin}/#/payment/credits-success?returnTo=${returnTo}`;
       const cancelUrl = window.location.href;
 
-      const response = await fetch(`${API_BASE}/paypal/create-order`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          packageId: selectedPackage.id,
-          successUrl,
-          cancelUrl,
-        }),
+      const { checkoutUrl } = await createAirwallexOrder(
+        selectedPackage.id,
+        successUrl,
+        cancelUrl,
+        language,
+      );
+
+      trackEvent('credits_airwallex_redirect', {
+        package_id: selectedPackage.id,
       });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.message || 'Failed to create order');
-      }
-
-      const data = await response.json();
-
-      if (data.approvalUrl) {
-        // Redirect to PayPal for payment
-        trackEvent('credits_paypal_redirect', {
-          package_id: selectedPackage.id,
-          order_id: data.orderId,
-        });
-        window.location.href = data.approvalUrl;
-      } else {
-        throw new Error('No approval URL received');
-      }
+      window.location.href = checkoutUrl;
     } catch (err) {
-      console.error('PayPal payment error:', err);
+      console.error('Credits payment error:', err);
       setError(tr.paymentError);
       trackEvent('credits_purchase_error', {
         package_id: selectedPackage.id,
@@ -142,7 +114,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
     } finally {
       setIsProcessing(false);
     }
-  }, [isAuthenticated, isProcessing, openLoginModal, selectedPackage, tr.loginRequired, tr.paymentError]);
+  }, [isAuthenticated, isProcessing, openLoginModal, selectedPackage, language, tr.loginRequired, tr.paymentError]);
 
   const handleSubscribe = useCallback(() => {
     onClose();
@@ -236,7 +208,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       {/* Actions */}
       <div className="space-y-3">
         <ActionButton
-          onClick={handlePayPalPurchase}
+          onClick={handlePurchase}
           disabled={isProcessing}
           className="w-full"
         >
@@ -247,7 +219,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
             </span>
           ) : (
             <>
-              {tr.payWithPayPal} · ${selectedPackage.price.toFixed(2)}
+              {tr.pay} · ${selectedPackage.price.toFixed(2)}
             </>
           )}
         </ActionButton>
