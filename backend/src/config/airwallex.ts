@@ -8,11 +8,14 @@ const envPaths = [
 ];
 envPaths.forEach((p) => dotenv.config({ path: p }));
 
+// Helper: read env var with trim (Vercel CLI may inject trailing newlines)
+const env = (key: string, fallback = ''): string => (process.env[key] || fallback).trim();
+
 // Airwallex API credentials
-const airwallexClientId = process.env.AIRWALLEX_CLIENT_ID || '';
-const airwallexApiKey = process.env.AIRWALLEX_API_KEY || '';
-const airwallexWebhookSecret = process.env.AIRWALLEX_WEBHOOK_SECRET || '';
-const airwallexEnv = (process.env.AIRWALLEX_ENVIRONMENT || process.env.AIRWALLEX_ENV || 'demo') as 'demo' | 'production';
+const airwallexClientId = env('AIRWALLEX_CLIENT_ID');
+const airwallexApiKey = env('AIRWALLEX_API_KEY');
+const airwallexWebhookSecret = env('AIRWALLEX_WEBHOOK_SECRET');
+const airwallexEnv = env('AIRWALLEX_ENVIRONMENT', env('AIRWALLEX_ENV', 'demo')) as 'demo' | 'production';
 
 // Airwallex API Base URL
 export const AIRWALLEX_API_BASE = airwallexEnv === 'production'
@@ -32,27 +35,27 @@ export const AIRWALLEX_CREDENTIALS = {
   apiKey: airwallexApiKey,
   webhookSecret: airwallexWebhookSecret,
   env: airwallexEnv,
-  legalEntityId: (process.env.AIRWALLEX_LEGAL_ENTITY_ID || '').trim(),
-  paymentAccountId: (process.env.AIRWALLEX_PAYMENT_ACCOUNT_ID || '').trim(),
+  legalEntityId: env('AIRWALLEX_LEGAL_ENTITY_ID'),
+  paymentAccountId: env('AIRWALLEX_PAYMENT_ACCOUNT_ID'),
 };
 
 // Subscription price IDs (created in Airwallex Dashboard)
 export const AIRWALLEX_PRICES = {
   // USD prices
-  monthly_usd: process.env.AIRWALLEX_PRICE_MONTHLY_USD || '',
-  yearly_usd: process.env.AIRWALLEX_PRICE_YEARLY_USD || '',
-  monthly_first_usd: process.env.AIRWALLEX_PRICE_MONTHLY_FIRST_USD || '',
-  yearly_first_usd: process.env.AIRWALLEX_PRICE_YEARLY_FIRST_USD || '',
+  monthly_usd: env('AIRWALLEX_PRICE_MONTHLY_USD'),
+  yearly_usd: env('AIRWALLEX_PRICE_YEARLY_USD'),
+  monthly_first_usd: env('AIRWALLEX_PRICE_MONTHLY_FIRST_USD'),
+  yearly_first_usd: env('AIRWALLEX_PRICE_YEARLY_FIRST_USD'),
   // CNY prices
-  monthly_cny: process.env.AIRWALLEX_PRICE_MONTHLY_CNY || '',
-  yearly_cny: process.env.AIRWALLEX_PRICE_YEARLY_CNY || '',
-  monthly_first_cny: process.env.AIRWALLEX_PRICE_MONTHLY_FIRST_CNY || '',
-  yearly_first_cny: process.env.AIRWALLEX_PRICE_YEARLY_FIRST_CNY || '',
+  monthly_cny: env('AIRWALLEX_PRICE_MONTHLY_CNY'),
+  yearly_cny: env('AIRWALLEX_PRICE_YEARLY_CNY'),
+  monthly_first_cny: env('AIRWALLEX_PRICE_MONTHLY_FIRST_CNY'),
+  yearly_first_cny: env('AIRWALLEX_PRICE_YEARLY_FIRST_CNY'),
 };
 
 // Product IDs
 export const AIRWALLEX_PRODUCTS = {
-  subscription: process.env.AIRWALLEX_PRODUCT_SUBSCRIPTION || '',
+  subscription: env('AIRWALLEX_PRODUCT_SUBSCRIPTION'),
 };
 
 // Subscription pricing (cents/分)
