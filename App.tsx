@@ -29,6 +29,7 @@ import { ConsentBanner } from './components/ConsentBanner';
 import { Footer } from './components/Footer';
 import { useAnalyticsTracking } from './hooks/useAnalytics';
 import { loadGoogleSDK, loadAppleSDK } from './utils/load-sdk';
+import { getDateInTimeZone, formatTimezoneOffset, containsCjk, getLocationQueryMinLength, buildBirthCacheKey } from './utils/astro-helpers';
 
 // Global SEO schemas (Organization, WebSite)
 const GlobalSchema: React.FC = () => {
@@ -129,75 +130,6 @@ const NotFoundPage: React.FC = () => {
     </Container>
   );
 };
-
-const getDateInTimeZone = (timeZone?: string) => {
-  const formatter = new Intl.DateTimeFormat('en-CA', {
-    timeZone: timeZone || 'UTC',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  });
-  return formatter.format(new Date());
-};
-
-const getTimeZoneOffsetMinutes = (timeZone: string, date = new Date()) => {
-  const parts = new Intl.DateTimeFormat('en-US', {
-    timeZone,
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  }).formatToParts(date);
-
-  const valueMap = parts.reduce<Record<string, string>>((acc, part) => {
-    if (part.type !== 'literal') acc[part.type] = part.value;
-    return acc;
-  }, {});
-
-  const utcTime = Date.UTC(
-    Number(valueMap.year),
-    Number(valueMap.month) - 1,
-    Number(valueMap.day),
-    Number(valueMap.hour),
-    Number(valueMap.minute),
-    Number(valueMap.second)
-  );
-
-  return Math.round((utcTime - date.getTime()) / 60000);
-};
-
-const formatTimezoneOffset = (timeZone?: string) => {
-  if (!timeZone || timeZone === 'UTC') return 'UTC';
-  try {
-    const offsetMinutes = getTimeZoneOffsetMinutes(timeZone);
-    const sign = offsetMinutes >= 0 ? '+' : '-';
-    const absMinutes = Math.abs(offsetMinutes);
-    const hours = Math.floor(absMinutes / 60);
-    const minutes = absMinutes % 60;
-    const minuteLabel = minutes ? `:${String(minutes).padStart(2, '0')}` : '';
-
-    return `${timeZone} UTC${sign}${hours}${minuteLabel}`;
-  } catch {
-    return timeZone;
-  }
-};
-
-const CJK_REGEX = /[\u4e00-\u9fff]/;
-const containsCjk = (value: string) => CJK_REGEX.test(value);
-const getLocationQueryMinLength = (value: string) => (containsCjk(value) ? 1 : 2);
-
-const buildBirthCacheKey = (profile: Pick<T.UserProfile, 'birthDate' | 'birthTime' | 'birthCity' | 'lat' | 'lon' | 'timezone' | 'accuracyLevel'>) => [
-  profile.birthDate,
-  profile.birthTime || '',
-  profile.birthCity,
-  profile.lat ?? '',
-  profile.lon ?? '',
-  profile.timezone,
-  profile.accuracyLevel,
-].join('|');
 
 // --- CONTEXTS ---
 
