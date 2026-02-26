@@ -38,9 +38,9 @@ export const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteTitle = 'Astromind';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const fallbackUrl = typeof window !== 'undefined' ? window.location.href : 'https://www.astromind.ai';
+  const fallbackUrl = typeof window !== 'undefined' ? window.location.href : 'https://www.astrologywiki.com';
   const currentUrl = url || fallbackUrl;
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.astromind.ai';
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.astrologywiki.com';
   const resolveAbsoluteUrl = (value: string) => {
     if (!value) return value;
     if (/^https?:\/\//i.test(value)) return value;

@@ -24,7 +24,7 @@ import { useAnalyticsTracking } from './hooks/useAnalytics';
 
 // Global SEO schemas (Organization, WebSite)
 const GlobalSchema: React.FC = () => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astromind.ai';
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
 
   const organizationSchema = {
     '@context': 'https://schema.org',

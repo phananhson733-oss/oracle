@@ -112,7 +112,7 @@ const resolvePageCategory = (path: string): string => {
 export const trackPageView = (path?: string, extraParams?: AnalyticsEventParams) => {
   if (!canTrack()) return;
   const location = typeof window !== 'undefined' ? window.location : undefined;
-  const resolvedPath = path ?? (location?.hash?.replace(/^#/, '') || location?.pathname || '/');
+  const resolvedPath = path ?? (location?.pathname || '/');
   const resolvedLocation = location?.href || '';
   const resolvedReferrer = typeof document !== 'undefined' ? document.referrer : '';
   const title = typeof document !== 'undefined' ? document.title : '';
@@ -182,7 +182,7 @@ export const endPageEngagement = (pagePath?: string) => {
   if (duration < 1) return; // Ignore sub-second visits
   trackEvent('page_engagement', {
     engagement_time_sec: duration,
-    page_path: pagePath || (typeof window !== 'undefined' ? window.location.hash.replace(/^#/, '') || '/' : '/'),
+    page_path: pagePath || (typeof window !== 'undefined' ? window.location.pathname || '/' : '/'),
   });
   engagementStartTime = 0;
 };
@@ -195,7 +195,7 @@ export const trackFirstVisitIfNew = () => {
   if (window.localStorage.getItem(FIRST_VISIT_KEY)) return;
   window.localStorage.setItem(FIRST_VISIT_KEY, '1');
   trackEvent('first_visit', {
-    landing_page: window.location.hash.replace(/^#/, '') || '/',
+    landing_page: window.location.pathname || '/',
     referrer: document.referrer || 'direct',
   });
 };

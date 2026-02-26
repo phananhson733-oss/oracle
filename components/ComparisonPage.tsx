@@ -263,7 +263,7 @@ function createAstromindData(): CompetitorInfo {
     tagline: 'Psychological Astrology Platform',
     description: 'Comprehensive astrology platform combining psychological insights with traditional astrology.',
     logo: '/logo.png',
-    website: 'https://astromind.ai',
+    website: 'https://www.astrologywiki.com',
     founded: '2024',
     headquarters: 'Global',
     pricing: {
