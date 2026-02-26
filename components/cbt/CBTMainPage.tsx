@@ -1,7 +1,6 @@
-// INPUT: React、CBT 组件、类型、用户资料与主题（含整体上移布局、月份同步、统计解读权益校验与固定区间 mock 回填）。
-// OUTPUT: 导出 CBT 主页面组件（对齐顶部留白与日历区域，补齐 2026-01-01~01-16 记录并同步统计月份/解读访问）。
+// INPUT: React、CBT 组件、类型、用户资料与主题（含整体上移布局、月份同步、统计解读权益校验）。
+// OUTPUT: 导出 CBT 主页面组件（对齐顶部留白与日历区域，同步统计月份/解读访问）。
 // POS: CBT 主页面（集成到主应用 /journal 路由）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
-// 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { useState, useEffect } from 'react';
 import { CBTRecord, MoodImages } from './types';
@@ -12,7 +11,6 @@ import CalendarStats from './CalendarStats';
 import CBTWizard from './CBTWizard';
 import RecordDetailModal from './RecordDetailModal';
 import EmptyState from './EmptyState';
-import { generateMockHistory } from './mockData';
 import {
   SomaticPatternView,
   SourceSupportView,
@@ -35,23 +33,6 @@ const MOOD_IMAGES: MoodImages = {
 };
 
 const STORAGE_KEY = 'astro_cbt_history_v1';
-const MOCK_RANGE_DAYS = 16;
-
-const buildDateKey = (timestamp: number) => {
-  const date = new Date(timestamp);
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-};
-
-const mergeMockHistory = (records: CBTRecord[]) => {
-  const mockHistory = generateMockHistory();
-  const existingKeys = new Set(records.map(r => buildDateKey(r.timestamp)));
-  const missing = mockHistory.filter(r => !existingKeys.has(buildDateKey(r.timestamp)));
-  if (missing.length === 0) return records;
-  return [...records, ...missing].sort((a, b) => b.timestamp - a.timestamp);
-};
 
 interface CBTMainPageProps {
   profile: UserProfile;
@@ -89,51 +70,41 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
         const response = await fetchCBTRecords(userId);
         const records = response?.records || [];
         if (records.length > 0) {
-          const merged = mergeMockHistory(records);
-          setHistory(merged);
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+          setHistory(records);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
         } else {
           // No backend data, try localStorage
           const savedData = localStorage.getItem(STORAGE_KEY);
-          let usedLocal = false;
           if (savedData) {
-            const parsed = JSON.parse(savedData);
-            if (Array.isArray(parsed) && parsed.length > 0) {
-              const merged = mergeMockHistory(parsed);
-              setHistory(merged);
-              localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-              usedLocal = true;
+            try {
+              const parsed = JSON.parse(savedData);
+              if (Array.isArray(parsed) && parsed.length > 0) {
+                // Filter out any legacy mock records
+                const realRecords = parsed.filter((r: CBTRecord) => !r.id?.startsWith('mock-'));
+                setHistory(realRecords);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(realRecords));
+              }
+            } catch (e) {
+              console.error('Failed to parse local history', e);
             }
           }
-          if (!usedLocal) {
-            const mockHistory = generateMockHistory();
-            setHistory(mockHistory);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(mockHistory));
-          }
-          // If no local data either, fallback to mock range
         }
       } catch {
         // Backend failed, fallback to localStorage
         console.warn('Failed to fetch from backend, using localStorage');
         const savedData = localStorage.getItem(STORAGE_KEY);
-        let usedLocal = false;
         if (savedData) {
           try {
             const parsed = JSON.parse(savedData);
             if (Array.isArray(parsed) && parsed.length > 0) {
-              const merged = mergeMockHistory(parsed);
-              setHistory(merged);
-              localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
-              usedLocal = true;
+              // Filter out any legacy mock records
+              const realRecords = parsed.filter((r: CBTRecord) => !r.id?.startsWith('mock-'));
+              setHistory(realRecords);
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(realRecords));
             }
           } catch (e) {
             console.error('Failed to parse local history', e);
           }
-        }
-        if (!usedLocal) {
-          const mockHistory = generateMockHistory();
-          setHistory(mockHistory);
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(mockHistory));
         }
       } finally {
         setIsLoading(false);
@@ -145,8 +116,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
   // Sync to localStorage whenever history changes
   useEffect(() => {
     if (history.length > 0) {
-      const merged = history.length >= MOCK_RANGE_DAYS ? history : mergeMockHistory(history);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
     }
   }, [history]);
 

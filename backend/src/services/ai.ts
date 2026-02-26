@@ -1490,20 +1490,6 @@ Micro-Habit: Submit a piece of work at 70% completeness and notice the world doe
 Summary: Your fear is as large as your ambition, which proves your potential. True authority isn’t perfection—it’s responsibility. Each brave step becomes the foundation of your crown. Move forward, even with trembling hands.
 Affirmation: I choose truth over perfection.`,
     },
-    'cbt-analysis': {
-      zh: {
-        cognitive_analysis: { distortions: ['过度概括'], summary: '你正在把单次事件扩大化。' },
-        astro_context: { aspect: '水星刑土星', interpretation: '沟通压力增大，需要慢一点。' },
-        jungian_insight: { archetype_active: '受难者', archetype_solution: '战士', insight: '从被动防御转向主动行动。' },
-        actions: ['写下事实与解释的区别', '向可信的人求证']
-      },
-      en: {
-        cognitive_analysis: { distortions: ['Overgeneralization'], summary: 'A single event is being generalized.' },
-        astro_context: { aspect: 'Mercury square Saturn', interpretation: 'Communication feels heavy; slow down.' },
-        jungian_insight: { archetype_active: 'Victim', archetype_solution: 'Warrior', insight: 'Move from defense to action.' },
-        actions: ['Separate facts from interpretations', 'Reality-check with someone you trust']
-      },
-    },
   };
 
   const entry = mocks[promptId] || mocks['natal-overview'];
