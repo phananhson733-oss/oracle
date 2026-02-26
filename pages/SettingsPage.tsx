@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 import { Container, Card, Section, ActionButton, Modal, useTheme, useLanguage } from '../components/UIComponents';
 import * as T from '../types';
 import { FREE_MODE, LOGIN_GATE_MODE } from '../constants';
@@ -248,6 +249,8 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
     );
 
     return (
+        <>
+        <SEO title="Settings" robots="noindex,nofollow" />
         <Container>
             <h1 className="text-3xl font-serif font-medium mb-8">{t.settings.title}</h1>
 
@@ -483,6 +486,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                 </Card>
             </Section>
         </Container>
+        </>
     );
 };
 

@@ -3,6 +3,7 @@
 // POS: Synastry page extracted from App.tsx; if updated, keep App.tsx lazy import in sync.
 
 import React, { useState, useEffect, useMemo, useRef, lazy } from 'react';
+import { SEO } from '../components/SEO';
 import { Container, Card, Section, ActionButton, GlassInput, Chip, Accordion, CopyButton, useTheme, Modal, DetailModal, SectionHeader, useLanguage } from '../components/UIComponents';
 import { Lock } from 'lucide-react';
 import * as T from '../types';
@@ -1936,6 +1937,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     // LOGIN_GATE_MODE: 未登录用户显示登录提示
     if (LOGIN_GATE_MODE && !isAuthenticated) {
       return (
+        <>
+        <SEO title="Relationships" description="Explore relationship compatibility with synastry and composite charts." robots="noindex,nofollow" />
         <Container>
           <Section>
             <Card className="text-center py-12">
@@ -1954,6 +1957,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             </Card>
           </Section>
         </Container>
+        </>
       );
     }
 
@@ -1976,6 +1980,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         : (language === 'zh' ? '请在下方选择两位档案' : 'Select two profiles below');
 
       return (
+        <>
+        <SEO title="Relationships" description="Explore relationship compatibility with synastry and composite charts." robots="noindex,nofollow" />
         <Container className="flex flex-col min-h-screen !py-0 pt-[60px] overflow-hidden">
           <div className="flex items-center justify-between shrink-0 pt-8 pb-4">
             <div>
@@ -2290,6 +2296,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             </div>
           </Modal>
         </Container>
+        </>
       );
     }
 
@@ -2383,6 +2390,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     const currentInfo = getTabInfo(activeTab);
 
     return (
+        <>
+        <SEO title="Relationships" description="Explore relationship compatibility with synastry and composite charts." robots="noindex,nofollow" />
         <Container>
             <div className={`flex justify-between items-center mb-8 border-b pb-4 ${theme === 'dark' ? 'border-gold-500/15' : 'border-paper-300'}`}>
                 <h1 className="text-3xl font-serif font-medium">{t.us.report_title}</h1>
@@ -3416,6 +3425,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
               onRetry={retrySynastryDetail}
             />
         </Container>
+        </>
     );
 };
 

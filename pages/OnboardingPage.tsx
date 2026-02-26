@@ -3,6 +3,7 @@
 // POS: Onboarding page component; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
+import { SEO } from '../components/SEO';
 import { Container, ActionButton, GlassInput, useTheme, useLanguage } from '../components/UIComponents';
 import * as T from '../types';
 import { searchCities as searchCitiesLocal, formatCityDisplay, getCityCoordinates, type City } from '../utils/city-search';
@@ -42,6 +43,8 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
   const labelClass = "text-xs font-bold uppercase tracking-widest opacity-80 mb-2 block";
 
   return (
+    <>
+    <SEO title="Get Started" robots="noindex,nofollow" />
     <Container className="flex items-center justify-center !pt-0">
       <div className="w-full max-w-md">
         <div className="mb-8 flex gap-2 justify-center">
@@ -155,6 +158,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({ 
         )}
       </div>
     </Container>
+    </>
   );
 };
 

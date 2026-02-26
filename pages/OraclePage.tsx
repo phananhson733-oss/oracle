@@ -3,6 +3,7 @@
 // POS: Oracle (Ask) page extracted from App.tsx; if updated, keep App.tsx lazy import in sync.
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { SEO } from '../components/SEO';
 import { Container, Card, ActionButton, Chip, CopyButton, useTheme, useLanguage, translateAstroTerm } from '../components/UIComponents';
 import { ArrowLeft } from 'lucide-react';
 import * as T from '../types';
@@ -660,6 +661,8 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         : "flex flex-col h-screen overflow-hidden pt-6 pb-1.5 -mt-[30px]";
 
     return (
+        <>
+        <SEO title="Ask Oracle" description="Ask AI-powered astrology questions and get personalized insights." robots="noindex,nofollow" />
         <Container className={containerClassName}>
             {showLoadingView ? (
                 <OracleLoading
@@ -1209,6 +1212,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             </>
             )}
         </Container>
+        </>
     );
 };
 

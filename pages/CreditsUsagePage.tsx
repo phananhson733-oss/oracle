@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 import { Container, Card, Section, ActionButton, useTheme, useLanguage } from '../components/UIComponents';
 import { ArrowLeft } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
@@ -107,16 +108,21 @@ const CreditsUsagePage: React.FC = () => {
 
     if (!isAuthenticated) {
         return (
+            <>
+            <SEO title="Credits & Usage" robots="noindex,nofollow" />
             <Container>
                 <Card className="text-center py-12">
                     <div className="text-sm opacity-70 mb-4">{tr.login}</div>
                     <ActionButton onClick={() => openLoginModal(tr.login)}>{tr.login}</ActionButton>
                 </Card>
             </Container>
+            </>
         );
     }
 
     return (
+        <>
+        <SEO title="Credits & Usage" robots="noindex,nofollow" />
         <Container>
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
                 <div className="flex items-center gap-3">
@@ -217,6 +223,7 @@ const CreditsUsagePage: React.FC = () => {
                 </Card>
             </Section>
         </Container>
+        </>
     );
 };
 

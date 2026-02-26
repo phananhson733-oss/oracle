@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 import { Container, Card, ActionButton, GlassInput, useTheme, useLanguage } from '../components/UIComponents';
 import { useAuth } from '../contexts/AuthContext';
 import { loadGoogleSDK, loadAppleSDK } from '../utils/load-sdk';
@@ -122,6 +123,8 @@ const AuthPage: React.FC = () => {
     };
 
     return (
+        <>
+        <SEO title="Sign In" robots="noindex,nofollow" />
         <Container>
             {toast && (
                 <div className="fixed top-6 right-6 z-50">
@@ -309,6 +312,7 @@ const AuthPage: React.FC = () => {
                 </Card>
             </div>
         </Container>
+        </>
     );
 };
 

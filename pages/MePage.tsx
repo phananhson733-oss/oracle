@@ -3,6 +3,7 @@
 // POS: Me/Dashboard page component; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect, useRef, lazy } from 'react';
+import { SEO } from '../components/SEO';
 import { Container, Card, Section, ActionButton, Accordion, SectionHeader, DetailModal, useTheme, useLanguage } from '../components/UIComponents';
 import * as T from '../types';
 import { DIMENSIONS, LOGIN_GATE_MODE } from '../constants';
@@ -483,6 +484,8 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     if (loading && !overview) return <OracleLoading variant="fullscreen" thinkingLabel={t.app.loading} />;
 
     return (
+        <>
+        <SEO title="My Natal Chart" description="Explore your natal chart, personality dimensions, and cosmic blueprint." robots="noindex,nofollow" />
         <Container>
             <div className={`flex justify-between items-end mb-12 border-b pb-6 ${theme === 'dark' ? 'border-gold-500/15' : 'border-gold-600/30'}`}>
               <div>
@@ -576,6 +579,7 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
               <FrameworkDisclaimer />
             </div>
         </Container>
+        </>
     );
 };
 
