@@ -33,6 +33,21 @@ const LandingPage: React.FC = () => {
         },
     };
 
+    const softwareAppSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'AstroMind',
+        applicationCategory: 'LifestyleApplication',
+        operatingSystem: 'Web',
+        description: 'AI-powered astrology app for natal charts, daily forecasts, and psychological self-discovery.',
+        url: siteUrl,
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+        },
+    };
+
     const handleStart = async () => {
         trackEvent('cta_clicked', {
             cta_text: t.app.landing_btn,
@@ -47,7 +62,7 @@ const LandingPage: React.FC = () => {
                 description={t.app.sub_tagline}
                 url={canonicalUrl}
                 alternateLanguages={alternateLanguages}
-                schema={webSiteSchema}
+                schema={[webSiteSchema, softwareAppSchema]}
                 type="website"
             />
             <Container className="flex items-center justify-center !pt-0 text-center relative overflow-hidden">
