@@ -16,13 +16,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="AstrologyWiki" />
     <meta property="og:description" content="AstrologyWiki - Your guide to modern astrology, psychology, and self-discovery." />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="https://www.astrologywiki.com/og-image.png" />
     <meta property="og:url" content="https://www.astrologywiki.com" />
     <meta property="og:site_name" content="AstrologyWiki" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AstrologyWiki" />
     <meta name="twitter:description" content="AstrologyWiki - Your guide to modern astrology, psychology, and self-discovery." />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="https://www.astrologywiki.com/og-image.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -136,17 +136,6 @@
         }
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-    "@google/genai": "https://esm.sh/@google/genai",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-  }
-}
-</script>
   <script>
     if ('fonts' in document) {
       document.fonts.ready.then(() => {
@@ -157,6 +146,7 @@
   </script>
   </head>
   <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950 loading-fonts">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-gold-500 focus:text-space-950 focus:font-bold focus:text-sm focus:outline-none">Skip to main content</a>
     <div class="bg-noise"></div>
     <div id="root" class="relative z-10"></div>
   <script type="module" src="/index.tsx"></script>
