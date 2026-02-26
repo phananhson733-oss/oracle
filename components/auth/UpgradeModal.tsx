@@ -393,18 +393,6 @@ const UpgradeModal: React.FC = () => {
           {subscriptionT?.terms || '订阅后可随时取消'}
         </p>
 
-        {/* Manage subscription link for subscribers */}
-        {isAlreadySubscriber && (
-          <div className="text-center">
-            <button
-              onClick={handleManageSubscription}
-              disabled={isBusy}
-              className={`text-sm underline transition-opacity ${isDark ? 'text-star-400 hover:text-star-200' : 'text-paper-500 hover:text-paper-700'} ${isBusy ? 'opacity-50' : ''}`}
-            >
-              {busyAction === 'manage' ? '跳转中...' : subscriptionT?.manage}
-            </button>
-          </div>
-        )}
       </div>
     </Modal>
   );

@@ -204,6 +204,7 @@ class AirwallexService {
         amount: pricing.amount / 100,
         currency: pricing.currency.toLowerCase(),
         merchant_order_id: `renew_${shortId}_${Date.now()}`,
+        reusable: false,
         metadata: {
           userId: input.userId,
           plan: input.plan,
@@ -233,6 +234,7 @@ class AirwallexService {
         request_id: `rl_${shortId}_${input.plan}_${Date.now()}`,
         amount: pricing.amount / 100,
         currency: pricing.currency.toLowerCase(),
+        reusable: false,
         title: `AstroMind Pro ${planLabel} Renewal`,
         description: `Renew AstroMind Pro subscription (${planLabel})`,
         reference: piData.id,
@@ -303,6 +305,7 @@ class AirwallexService {
         amount: pricing.amount / 100, // Airwallex uses major units (dollars/yuan), not cents
         currency: pricing.currency.toLowerCase(),
         merchant_order_id: `cr_${input.userId.replace(/-/g, '').slice(0, 12)}_${Date.now()}`,
+        reusable: false,
         metadata: {
           userId: input.userId,
           packageId: input.packageId,
@@ -331,6 +334,7 @@ class AirwallexService {
         request_id: `lk_${input.userId.replace(/-/g, '').slice(0, 12)}_${input.packageId.replace('credits_', '')}_${Date.now()}`,
         amount: pricing.amount / 100,
         currency: pricing.currency.toLowerCase(),
+        reusable: false,
         title: packageInfo.name,
         description: packageInfo.description,
         reference: piData.id,
