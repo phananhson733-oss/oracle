@@ -1050,11 +1050,21 @@ class EntitlementServiceV2 {
   // =====================================================
 
   private async getUser(userId: string) {
-    const { data } = await supabase
+    // First try with used_first_discount, fall back to without it if column doesn't exist
+    const { data, error } = await supabase
       .from('users')
       .select('trial_ends_at, used_first_discount')
       .eq('id', userId)
       .single();
+    if (error && !data) {
+      // Column might not exist yet, try without it
+      const { data: fallbackData } = await supabase
+        .from('users')
+        .select('trial_ends_at')
+        .eq('id', userId)
+        .single();
+      return fallbackData ? { ...fallbackData, used_first_discount: false } : null;
+    }
     return data;
   }
 
