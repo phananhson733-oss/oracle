@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
-import { getPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
+import { getAirwallexPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
 import { Check, Zap, Clock } from 'lucide-react';
 
 type PlanType = 'monthly' | 'yearly';
@@ -33,14 +33,29 @@ const UpgradeModal: React.FC = () => {
 
   const isDark = theme === 'dark';
 
-  // Load pricing on mount
+  // Load pricing on mount (from Airwallex)
   useEffect(() => {
     if (showUpgradeModal && !pricing) {
-      getPricing()
-        .then(setPricing)
+      getAirwallexPricing(language)
+        .then((data) => {
+          setPricing({
+            subscription: {
+              monthly: { amount: data.subscription.monthly.amount, currency: data.subscription.monthly.currency, interval: 'month' },
+              yearly: { amount: data.subscription.yearly.amount, currency: data.subscription.yearly.currency, interval: 'year', savings: 20 },
+              firstDiscount: data.subscription.firstDiscount ? {
+                rate: data.subscription.firstDiscount.rate,
+                monthly: { amount: data.subscription.firstDiscount.monthly.amount },
+                yearly: { amount: data.subscription.firstDiscount.yearly.amount },
+              } : undefined,
+            },
+            oneTime: { ask: { amount: 0, quantity: 0 }, detail_pack: { amount: 0, quantity: 0 }, synastry: { amount: 0, quantity: 0 }, cbt_analysis: { amount: 0, quantity: 0 } },
+            reports: [],
+            subscriberDiscount: 0.3,
+          });
+        })
         .catch(() => setError(t.subscription?.pricing_error || 'Failed to load pricing'));
     }
-  }, [showUpgradeModal, pricing, t.subscription]);
+  }, [showUpgradeModal, pricing, language, t.subscription]);
 
   // Countdown timer for 7-day trial
   useEffect(() => {
