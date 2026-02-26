@@ -31,7 +31,7 @@ const DetailedScoreRow: React.FC<{ label: string, data: T.DailyEnergy, tone: { b
     if (!data) return null;
 
     return (
-        <Card className="mb-3 last:mb-0 before:hidden h-full flex flex-col justify-between" noPadding>
+        <Card className="before:hidden h-full flex flex-col justify-between" noPadding>
             <div className="p-4 h-full flex flex-col">
                 <div>
                     <div className="flex justify-between items-center mb-1.5">
