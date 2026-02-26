@@ -47,8 +47,8 @@ export const FREE_TIER_LIMITS = {
 // Subscription benefits ($6.99/月)
 export const SUBSCRIPTION_BENEFITS = {
   // 新版配置 - 权益额度（每周）
-  ASK_EXTRA_PER_WEEK: 2,             // 订阅额外 +2 次/周 Ask
-  SYNASTRY_EXTRA_PER_WEEK: 2,        // 订阅额外 +2 次/周 合盘
+  ASK_EXTRA_PER_WEEK: 5,             // 订阅额外 +5 次/周 Ask
+  SYNASTRY_EXTRA_PER_WEEK: 1,        // 订阅额外 +1 次/周 合盘
   SYNTHETICA_EXTRA_PER_DAY: 7,       // 订阅额外 +7 次/日 Synthetica
 
   // 无限权益

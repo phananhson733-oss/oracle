@@ -60,7 +60,7 @@ router.get('/pricing', async (_req: Request, res: Response) => {
         cnyDisplay: formatCNYRef(SUBSCRIPTION_PRICING.yearly.amount),
         interval: 'year',
         name: SUBSCRIPTION_PRICING.yearly.name,
-        savings: 20, // 20% off
+        savings: 50, // 50% off
       },
       // 首次折扣价格
       first_discount: {

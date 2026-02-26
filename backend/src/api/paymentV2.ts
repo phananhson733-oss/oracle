@@ -31,7 +31,7 @@ const POINTS_PRICING: Record<FeatureType, number> = {
 // 获取定价信息
 router.get('/v2/pricing', async (_req: Request, res: Response) => {
   const yearlyAmount = PRODUCTS.subscription.yearly.amount;
-  const yearlySavings = 20;
+  const yearlySavings = 50;
   res.json({
     subscription: {
       monthly: {

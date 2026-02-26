@@ -707,7 +707,22 @@ export const TRANSLATIONS = {
       detail_deep_dive: "Deep Dive",
       detail_step: "Step",
       detail_related: "Related Entries",
-      detail_placeholder: "Content in progress."
+      detail_placeholder: "Content in progress.",
+      related_by_astrology: "Astrological Associations",
+      related_content: "Related Content",
+      relation_ruling: "Ruler",
+      relation_exalted: "Exaltation",
+      relation_detriment: "Detriment",
+      relation_fall: "Fall",
+      relation_opposite: "Opposition",
+      relation_square: "Square",
+      relation_trine: "Trine",
+      relation_sextile: "Sextile",
+      relation_conjunction: "Conjunction",
+      relation_same_element: "Same Element",
+      relation_same_modality: "Same Modality",
+      relation_ruling_planet: "Ruling Planet",
+      relation_correspondence: "Correspondence"
     },
     me: {
       blueprint_label: "Your Blueprint",
@@ -1370,8 +1385,8 @@ export const TRANSLATIONS = {
       error_fallback: "Authentication failed. Please try again.",
       benefits_title: "Subscription & Credits",
       benefit_unlimited: "Unlimited detail access",
-      benefit_ask: "5 Ask questions per week",
-      benefit_synastry: "5 synastry reads per week",
+      benefit_ask: "8 Ask questions per week",
+      benefit_synastry: "3 free synastry + 1 extra per week",
       benefit_bonus: "500 credits per successful payment",
       benefit_reports: "Reports at 20% off credits",
       migrate_title: "Migrate Local Data",
@@ -1387,7 +1402,7 @@ export const TRANSLATIONS = {
       monthly: "Monthly",
       yearly: "Yearly",
       monthly_desc: "Flexible monthly access",
-      yearly_desc: "Best value, save 20%",
+      yearly_desc: "Best value, save 50%",
       per_month: "/mo",
       per_year: "/yr",
       save: "Save",
@@ -1406,8 +1421,8 @@ export const TRANSLATIONS = {
       benefits_title: "Subscription includes",
       benefits: [
         "Unlimited detail access (Me / Today / Us)",
-        "5 Ask questions per week (3 free + 2 subscriber)",
-        "5 synastry reads per week (3 free + 2 subscriber)",
+        "8 Ask questions per week (3 free + 5 sub)",
+        "3 free synastry reads + 1 extra per week",
         "CBT stats insights unlocked each month",
         "Wiki Tools +7 daily uses (10 total)",
         "500 bonus credits per successful payment",
@@ -2166,7 +2181,22 @@ export const TRANSLATIONS = {
       detail_deep_dive: "深入解读",
       detail_step: "步骤",
       detail_related: "相关条目",
-      detail_placeholder: "资料编撰中..."
+      detail_placeholder: "资料编撰中...",
+      related_by_astrology: "星象关联",
+      related_content: "相关内容",
+      relation_ruling: "守护",
+      relation_exalted: "旺势",
+      relation_detriment: "失势",
+      relation_fall: "落陷",
+      relation_opposite: "对冲",
+      relation_square: "刑克",
+      relation_trine: "拱",
+      relation_sextile: "六分",
+      relation_conjunction: "合相",
+      relation_same_element: "同元素",
+      relation_same_modality: "同模式",
+      relation_ruling_planet: "守护星",
+      relation_correspondence: "关联"
     },
     me: {
       blueprint_label: "你的蓝图",
@@ -2830,8 +2860,8 @@ export const TRANSLATIONS = {
       error_fallback: "认证失败，请稍后再试。",
       benefits_title: "订阅与积分权益",
       benefit_unlimited: "解锁所有查看详情内容",
-      benefit_ask: "每周 5 次 Ask 问答",
-      benefit_synastry: "每周 5 次合盘分析",
+      benefit_ask: "每周 8 次 Ask 问答",
+      benefit_synastry: "免费 3 次合盘 + 每周额外 1 次",
       benefit_bonus: "订阅成功发放 500 积分",
       benefit_reports: "报告积分价格 8 折",
       migrate_title: "迁移本地数据",
@@ -2847,7 +2877,7 @@ export const TRANSLATIONS = {
       monthly: "月付",
       yearly: "年付",
       monthly_desc: "灵活按月订阅",
-      yearly_desc: "最省方案，立省 20%",
+      yearly_desc: "最省方案，立省 50%",
       per_month: "/月",
       per_year: "/年",
       save: "节省",
@@ -2866,8 +2896,8 @@ export const TRANSLATIONS = {
       benefits_title: "订阅包含",
       benefits: [
         "所有查看详情免费（探索自我/今日运势/合盘）",
-        "每周 5 次 Ask 问答（含免费 3 + 订阅 2）",
-        "每周 5 次合盘分析（含免费 3 + 订阅 2）",
+        "每周 8 次 Ask 问答（免费 3 + 订阅 5）",
+        "免费 3 次合盘 + 每周额外 1 次",
         "CBT 统计解读自动解锁",
         "百科-工具 每日 +7 次（合计 10 次）",
         "订阅成功发放 500 积分",
@@ -3572,8 +3602,7 @@ Guidelines:
     Output Strict JSON matching CBTAnalysisResult interface.`
 };
 
-// ... Rest of constants (CBT_GUIDES, MOCK_RESPONSES_ZH, MOCK_RESPONSES_EN) remain the same
-// but are not fully included here to save space, but assume they exist.
+// CBT step-by-step guides
 export const CBT_GUIDES = {
   1: { title: "客观还原", desc: "请像一个不带感情的摄像机一样描述刚刚发生的事。不要包含你的猜测或形容词。" },
   2: { title: "情绪坐标", desc: "给这种感觉命名。是愤怒？羞耻？还是无力？并诚实地打分。" },
@@ -3585,368 +3614,4 @@ export const CBT_GUIDES = {
   8: { title: "见地重构", desc: "综合正反双方的证据，你能得出一个更平衡、更接近真相的新结论吗？" },
   9: { title: "二次评估", desc: "当你相信这个新结论时，原本的情绪强度发生了什么变化？" },
   10: { title: "星空归位", desc: "为这次心灵炼金选择一个代表色，并将其归档到你的宇宙坐标中。" }
-};
-
-export const MOCK_RESPONSES_ZH: any = {
-  getDimensionReportMock: (title: string) => ({
-      dimension_key: "dim_mock",
-      title: title,
-      pattern: "这是关于" + title + "的模拟深度模式分析。你的星盘显示出强烈的情感张力。",
-      root: "根源通常追溯到童年时期对安全感的渴望。",
-      when_triggered: "当你的边界被侵犯或感到被忽视时。",
-      what_helps: ["深呼吸", "独处", "写日记"],
-      shadow: "在压力下，你可能会变得过度防御。",
-      practice: { title: "回归中心", steps: ["闭上眼睛", "感受脚底", "深呼吸三次"] },
-      prompt_question: "当这种感觉来袭时，我在保护什么？",
-      confidence: 'high'
-  }),
-
-  // ... Rest of Mock responses (DAILY_PUBLIC, etc.) assume existence
-  DAILY_PUBLIC: {
-      date: "2023-10-27",
-      theme_title: "突破限制的一天",
-      anchor_quote: "限制不是墙，而是台阶。",
-      energy_profile: {
-        drive: { score: 85, feeling: "充满动力", scenario: "想要推进项目", action: "大胆行动" },
-        pressure: { score: 40, feeling: "轻微压力", scenario: "时间紧迫", action: "专注当下" },
-        heat: { score: 60, feeling: "人际摩擦", scenario: "意见不合", action: "换位思考" },
-        nourishment: { score: 30, feeling: "稍显干涸", scenario: "渴望休息", action: "早点睡觉" }
-      },
-      time_windows: { morning: "高效时段", midday: "稍作调整", evening: "灵感迸发" },
-      strategy: { best_use: "攻克难关", avoid: "情绪化争论" },
-      share_text: "今日运势：突破限制。"
-  },
-  DAILY_DETAIL: {
-      theme_elaborated: "今天的星象强调了土星的结构与火星的动力，这是一个将想法落地的绝佳时机。",
-      how_it_shows_up: { emotions: "稳定而专注", relationships: "可能显得冷淡", work: "极其高效" },
-      one_challenge: { pattern_name: "过度严肃", description: "你可能会因为太在意结果而忘记了过程的乐趣。" },
-      one_practice: { title: "微小庆祝", action: "每完成一个小任务，就给自己一个积极的肯定。" },
-      one_question: "为了达到目标，我是不是对自己太苛刻了？",
-      under_the_hood: { moon_phase_sign: "处女座月亮", key_aspects: ["日土三合", "月木对冲"] },
-      confidence: 'high'
-  },
-  CYCLE_CARD_NAMING: {
-      cycle_id: "c1",
-      title: "木星回归",
-      one_liner: "每12年一次的扩张机遇",
-      tags: ["成长", "机遇"],
-      intensity: "high",
-      dates: { start: "2023-10-01", peak: "2023-11-15", end: "2023-12-30" },
-      actions: ["设定宏大目标", "学习新技能"],
-      prompt_question: "我想把生活拓展到什么新领域？"
-  },
-  SYNASTRY_OVERVIEW: {
-      overview: {
-        keywords: [{word: "宿命感", evidence: "北交点合相"}, {word: "激情", evidence: "金火四分"}],
-        sweet_spots: [{title: "情感共鸣", evidence: "月亮三分相", experience: "不用说话就能懂对方。", usage: "互相安慰"}],
-        friction_points: [{title: "沟通误区", evidence: "水星刑克", trigger: "说话太直", cost: "争吵"}],
-        growth_task: { task: "学会独立", evidence: "土星对冲" },
-        compatibility_scores: [
-          {dim: "情绪安全", score: 82, desc: "情感底盘稳定"},
-          {dim: "沟通", score: 68, desc: "需要磨合表达"},
-          {dim: "吸引力", score: 88, desc: "化学反应强"},
-          {dim: "价值观", score: 72, desc: "目标大体一致"},
-          {dim: "节奏", score: 60, desc: "步调需校准"},
-          {dim: "长期潜力", score: 75, desc: "可持续经营"}
-        ]
-      },
-      conclusion: { summary: "这是一段具有吸引力且能带来成长的关系。", disclaimer: "仅供参考" }
-  },
-  SYNASTRY_HIGHLIGHTS: {
-      highlights: {
-        harmony: [
-          { aspect: "月亮拱金星", experience: "情绪容易被照顾与理解。", advice: "多表达欣赏。" },
-          { aspect: "太阳六合木星", experience: "彼此鼓励与乐观。", advice: "一起设定小目标。" },
-          { aspect: "水星合月亮", experience: "感受与表达更同步。", advice: "用“我感受”开场。" },
-          { aspect: "金星拱火星", experience: "吸引力明显。", advice: "安排有仪式感的约会。" },
-          { aspect: "上升合上升", experience: "日常相处自然。", advice: "保持小默契。" }
-        ],
-        challenges: [
-          { aspect: "水星刑火星", conflict: "沟通容易被点燃。", mitigation: "先停一拍再回应。" },
-          { aspect: "月亮冲土星", conflict: "容易感到被忽视。", mitigation: "主动做情绪确认。" },
-          { aspect: "金星刑天王", conflict: "亲密忽冷忽热。", mitigation: "建立可预期仪式。" },
-          { aspect: "火星冲冥王", conflict: "冲突升级快。", mitigation: "设置暂停机制。" },
-          { aspect: "太阳刑海王", conflict: "容易投射或误解。", mitigation: "把事实说清楚。" }
-        ],
-        overlays: [
-          { overlay: "B 的月亮落入 A 的 4 宫", meaning: "带来家的感觉与安全感主题。" },
-          { overlay: "A 的金星落入 B 的 7 宫", meaning: "容易把对方当理想伴侣。" },
-          { overlay: "B 的火星落入 A 的 8 宫", meaning: "吸引力强且带来深层课题。" }
-        ],
-        accuracy_note: "若出生时间不确定，宫位相关解读需保留弹性。"
-      }
-  },
-  NATAL_OVERVIEW: {
-        sun: { 
-            title: "太阳：深邃的驱动力", 
-            keywords: ["野心", "目标感", "自控"], 
-            description: "你倾向于用清晰的目标与行动节奏来确认自我价值，擅长在复杂局面中抓住主线。" 
-        },
-        moon: { 
-            title: "月亮：内在的深海", 
-            keywords: ["敏感", "直觉", "情感"], 
-            description: "你的情感世界深邃而细腻，需要安全感与信任来稳定内在波动。" 
-        },
-        rising: { 
-            title: "上升：沉稳的外在", 
-            keywords: ["克制", "可靠", "坚实"], 
-            description: "你给人的第一印象是稳重、有边界，让人感觉可以依靠。" 
-        },
-        core_melody: { 
-            keywords: ["责任", "敏感"], 
-            explanations: [
-                "你有一种与生俱来的'必须做点什么'的紧迫感。这不仅仅是工作狂，而是一种通过世俗成就来确认自我存在的深层需求。",
-                "在坚硬的盔甲之下，你对周围环境的情绪变化有着雷达般的感知力。这种敏感既是你的天赋（让你能洞察人心），也是你的负担（容易吸收他人的焦虑）。"
-            ] 
-        },
-        top_talent: { 
-            title: "在混乱中建立秩序", 
-            example: "当身边的人陷入恐慌或失去方向时，你能迅速冷静下来，抽丝剥茧地找到问题的核心，并制定出可执行的计划。", 
-            advice: "相信你的直觉判断，即使它在逻辑上暂时讲不通。你的身体往往比你的头脑先知道答案。" 
-        },
-        top_pitfall: { 
-            title: "过度承担与情感隔离", 
-            triggers: ["失控感", "被批评", "不确定性"], 
-            protection: "当你感到受伤或不安时，你的自动防御机制是'切断感受'，变成一个冷酷的工作机器，或者退回到自己的洞穴中，拒绝任何人的靠近。" 
-        },
-        trigger_card: { 
-            auto_reactions: ["情感抽离", "过度分析", "自我封闭"], 
-            inner_need: "深度的安全感与被接纳", 
-            buffer_action: "在做决定前，先给自己留出15分钟的独处时间，不要在压力下立刻回应。" 
-        },
-        share_text: "我是深邃的战略家。"
-    },
-    CORE_THEMES: {
-        drive: {
-            title: "核心驱动",
-            summary: "你最深层的动力来自把个人意志落到现实中，渴望通过行动留下可见的成果。",
-            key_points: ["更愿意主动启动事情", "在混乱中寻找可执行路径", "对“无意义的忙碌”更敏感"]
-        },
-        fear: {
-            title: "核心恐惧",
-            summary: "你害怕失控与被否定，尤其在关系或节奏被打乱时更容易紧绷。",
-            key_points: ["对突发变化更警觉", "倾向用理性压住情绪", "需要被清晰地看见与肯定"]
-        },
-        growth: {
-            title: "成长路径",
-            summary: "你的成长来自把真实感受说出来，用更柔软的方式建立连接与影响力。",
-            key_points: ["练习说出当下的感受", "允许自己慢下来再回应", "把“控制”转化为“协作”"]
-        },
-        confidence: 'high'
-    },
-    ASK_ANSWER: `## 1. The Essence
-Headline: 沉重的皇冠：被看见的恐惧
-The Insight: 这种停滞感并非能力不足，而是你在保护自己不被评判。你按下的暂停键，是一种过度在乎而形成的心理防御。
-
-## 2. The Astrological Signature
-Saturn in 10th House (Pisces)
-Mars square Saturn
-Chiron in 6th House (Scorpio)
-
-## 3. Deep Dive Analysis
-The Mirror: 你像一脚踩油门、一脚踩刹车，明明机会近在眼前却总在关键时刻后撤。
-The Root: 10宫土星带来严苛的内在法官，让你把“被看见”与“被否定”绑定在一起。
-The Shadow: 你可能用策略性拖延来回避评价，避免触发“我不够好”的恐惧。
-The Light: 土星的礼物是稳定而真实的权威，允许你在不完美中依然行动。
-
-## 4. Soulwork
-Journal Prompt: 如果我注定会犯一个公开的错误，但我仍会被接纳，我现在最想迈出的一步是什么？
-Micro-Habit: 本周提交一个只做到 70% 的作品，观察世界并没有因此崩塌。
-
-## 5. The Cosmic Takeaway (Conclusion)
-Summary: 你的恐惧与野心同样巨大，正说明你的潜力。请记住，成熟的权威不是从不犯错，而是敢于承担。每一次行动，都是在为你的皇冠打磨底座。去行动吧，哪怕心仍在颤抖。
-Affirmation: 我不追求完美，我追求真实。`,
-    CBT_ANALYSIS: {
-        cognitiveDistortions: ["灾难化思维 (Catastrophizing)", "读心术 (Mind Reading)"],
-        astroAnalogy: "这就像是水星（思维）被海王星（迷雾）冲刷，让你分不清现实与恐惧的边界。",
-        jungianArchetype: "受难者 (The Victim) —— 感觉生活在针对你。",
-        actionPlan: [
-            "事实核查：直接询问对方意图，而不是猜测。",
-            "身体着陆：当恐惧来袭，用冷水洗脸打断神经回路。",
-            "设立界限：写下‘什么是我的责任，什么不是’。"
-        ],
-        insight: "恐惧不是事实，它只是你关心某事的阴影。"
-    }
-};
-
-export const MOCK_RESPONSES_EN: any = {
-  getDimensionReportMock: (title: string) => ({
-      dimension_key: "dim_mock",
-      title: title,
-      pattern: "This is a simulated analysis for " + title + ". Your chart shows strong emotional tension here.",
-      root: "The root often traces back to childhood needs for safety.",
-      when_triggered: "When your boundaries are crossed or you feel ignored.",
-      what_helps: ["Deep breathing", "Solitude", "Journaling"],
-      shadow: "You may become overly defensive under stress.",
-      practice: { title: "Centering", steps: ["Close eyes", "Feel feet", "Breathe 3 times"] },
-      prompt_question: "What am I protecting when I feel this way?",
-      confidence: 'high'
-  }),
-
-  // ... Rest of mock responses (DAILY_PUBLIC, etc.) assume existence
-  DAILY_PUBLIC: {
-      date: "2023-10-27",
-      theme_title: "A Day to Break Limits",
-      anchor_quote: "Limits are not walls, but steps.",
-      energy_profile: {
-        drive: { score: 85, feeling: "Motivated", scenario: "Pushing projects", action: "Act Boldly" },
-        pressure: { score: 40, feeling: "Slight Pressure", scenario: "Tight deadline", action: "Focus Now" },
-        heat: { score: 60, feeling: "Friction", scenario: "Disagreement", action: "Empathize" },
-        nourishment: { score: 30, feeling: "Dry", scenario: "Need rest", action: "Sleep Early" }
-      },
-      time_windows: { morning: "High Flow", midday: "Adjust", evening: "Inspiration" },
-      strategy: { best_use: "Tackle Hard Tasks", avoid: "Emotional Arguments" },
-      share_text: "Daily Forecast: Breaking Limits."
-  },
-  DAILY_DETAIL: {
-      theme_elaborated: "Saturn's structure meets Mars' drive today, perfect for grounding your ideas.",
-      how_it_shows_up: { emotions: "Stable and focused", relationships: "May seem cold", work: "Extremely efficient" },
-      one_challenge: { pattern_name: "Over-Seriousness", description: "You might focus so much on results you forget the joy of the process." },
-      one_practice: { title: "Micro-Celebration", action: "Give yourself a positive affirmation after every small task." },
-      one_question: "Am I being too hard on myself to achieve this?",
-      under_the_hood: { moon_phase_sign: "Virgo Moon", key_aspects: ["Sun trine Saturn", "Moon opp Jupiter"] },
-      confidence: 'high'
-  },
-  CYCLE_CARD_NAMING: {
-      cycle_id: "c1",
-      title: "Jupiter Return",
-      one_liner: "A 12-year opportunity for expansion",
-      tags: ["Growth", "Opportunity"],
-      intensity: "high",
-      dates: { start: "2023-10-01", peak: "2023-11-15", end: "2023-12-30" },
-      actions: ["Set big goals", "Learn new skills"],
-      prompt_question: "Where do I want to expand my life?"
-  },
-  SYNASTRY_OVERVIEW: {
-      overview: {
-        keywords: [{word: "Karmic", evidence: "North Node Conjunct"}, {word: "Passionate", evidence: "Venus Square Mars"}],
-        sweet_spots: [{title: "Emotional Resonance", evidence: "Moon Trine", experience: "Understanding without words.", usage: "Comfort each other"}],
-        friction_points: [{title: "Comm Clashes", evidence: "Mercury Square", trigger: "Blunt words", cost: "Arguments"}],
-        growth_task: { task: "Learn Independence", evidence: "Saturn Opposition" },
-        compatibility_scores: [
-          {dim: "Emotional Safety", score: 82, desc: "Steady emotional base"},
-          {dim: "Communication", score: 68, desc: "Needs calibration"},
-          {dim: "Attraction", score: 88, desc: "Strong chemistry"},
-          {dim: "Values", score: 72, desc: "Mostly aligned"},
-          {dim: "Pacing", score: 60, desc: "Rhythm needs syncing"},
-          {dim: "Long-term Potential", score: 75, desc: "Buildable over time"}
-        ]
-      },
-      conclusion: { summary: "A dynamic relationship with attraction and growth potential.", disclaimer: "Reference only" }
-  },
-  SYNASTRY_HIGHLIGHTS: {
-      highlights: {
-        harmony: [
-          { aspect: "Moon trine Venus", experience: "Warm emotional ease shows up.", advice: "Name appreciation often." },
-          { aspect: "Sun sextile Jupiter", experience: "Mutual support and optimism.", advice: "Plan small wins together." },
-          { aspect: "Mercury conjunct Moon", experience: "Feelings and words connect fast.", advice: "Lead with “I feel.”" },
-          { aspect: "Venus trine Mars", experience: "Strong attraction and chemistry.", advice: "Create intentional dates." },
-          { aspect: "Ascendant conjunction", experience: "Natural daily rhythm.", advice: "Keep small rituals." }
-        ],
-        challenges: [
-          { aspect: "Mercury square Mars", conflict: "Talks ignite quickly.", mitigation: "Pause before replying." },
-          { aspect: "Moon opposite Saturn", conflict: "Emotional distance can appear.", mitigation: "Offer explicit reassurance." },
-          { aspect: "Venus square Uranus", conflict: "On/off closeness shows up.", mitigation: "Build predictable rituals." },
-          { aspect: "Mars opposite Pluto", conflict: "Conflict escalates fast.", mitigation: "Use a pause protocol." },
-          { aspect: "Sun square Neptune", conflict: "Projection or confusion creeps in.", mitigation: "Clarify facts early." }
-        ],
-        overlays: [
-          { overlay: "B Moon in A 4th house", meaning: "Feels like home and activates safety themes." },
-          { overlay: "A Venus in B 7th house", meaning: "You naturally see each other as partners." },
-          { overlay: "B Mars in A 8th house", meaning: "Strong pull with deep themes." }
-        ],
-        accuracy_note: "If birth times are uncertain, house-based readings stay flexible."
-      }
-  },
-  NATAL_OVERVIEW: {
-        sun: { 
-            title: "Sun: Deep Drive", 
-            keywords: ["Ambitious", "Focused", "Self-control"], 
-            description: "You orient around clear goals and steady momentum, navigating complexity with purposeful action." 
-        },
-        moon: { 
-            title: "Moon: Inner Ocean", 
-            keywords: ["Sensitive", "Intuitive", "Emotional"], 
-            description: "Your inner world is rich and responsive, needing safety and trust to feel grounded." 
-        },
-        rising: { 
-            title: "Rising: Calm Presence", 
-            keywords: ["Composed", "Reliable", "Steady"], 
-            description: "You come across as grounded and dependable, offering a quiet sense of stability." 
-        },
-        core_melody: { 
-            keywords: ["Responsibility", "Sensitivity"], 
-            explanations: [
-                "You have an innate urgency to 'do something'. It's not just workaholism, but a deep need to validate your existence through worldly achievements.",
-                "Beneath your armor, you have a radar-like perception of emotional shifts around you. This sensitivity is both your gift (insight) and your burden (absorbing others' anxiety)."
-            ] 
-        },
-        top_talent: { 
-            title: "Order from Chaos", 
-            example: "When others panic or lose direction, you can quickly calm down, find the core of the problem, and create an actionable plan.", 
-            advice: "Trust your intuitive judgment, even if it doesn't make logical sense immediately. Your body often knows the answer before your brain." 
-        },
-        top_pitfall: { 
-            title: "Over-Responsibility & Isolation", 
-            triggers: ["Loss of Control", "Criticism", "Uncertainty"], 
-            protection: "When hurt or insecure, your auto-defense is to 'cut off feelings', becoming a cold machine or retreating into a cave." 
-        },
-        trigger_card: { 
-            auto_reactions: ["Emotional Withdrawal", "Over-analysis", "Self-closure"], 
-            inner_need: "Deep Security & Acceptance", 
-            buffer_action: "Take 15 minutes of solitude before making decisions under pressure." 
-        },
-        share_text: "I am The Visionary Strategist."
-    },
-    CORE_THEMES: {
-        drive: {
-            title: "Core Drive",
-            summary: "Your deepest drive is to turn intent into tangible outcomes, leaving a clear mark through action.",
-            key_points: ["Prefer to initiate and lead", "Seek practical paths in chaos", "Sensitive to meaningless busyness"]
-        },
-        fear: {
-            title: "Core Fear",
-            summary: "You fear losing control or being dismissed, especially when the pace becomes unpredictable.",
-            key_points: ["Alert to sudden shifts", "Use logic to contain emotion", "Need clear recognition and safety"]
-        },
-        growth: {
-            title: "Growth Path",
-            summary: "Growth comes from naming your feelings and influencing with openness rather than control.",
-            key_points: ["Practice naming what you feel", "Slow down before responding", "Turn control into collaboration"]
-        },
-        confidence: 'high'
-    },
-    ASK_ANSWER: `## 1. The Essence
-Headline: The Heavy Crown of Visibility
-The Insight: This stuckness isn’t about lack of ability; it’s a protective strategy against judgment. The pause button is your way of guarding what matters most to you.
-
-## 2. The Astrological Signature
-Saturn in 10th House (Pisces)
-Mars square Saturn
-Chiron in 6th House (Scorpio)
-
-## 3. Deep Dive Analysis
-The Mirror: It feels like one foot on the gas, one on the brake—opportunity is close, yet you retreat at the final moment.
-The Root: Saturn in the 10th places a severe inner judge on your public self, tying visibility to fear of failure.
-The Shadow: You may use strategic procrastination to avoid being evaluated, protecting a tender fear of “not enough.”
-The Light: Saturn’s gift is grounded authority—the power to act even when it isn’t perfect.
-
-## 4. Soulwork
-Journal Prompt: If I were guaranteed love even after a public mistake, what step would I take today?
-Micro-Habit: Submit a piece of work at 70% completeness and notice the world doesn’t collapse.
-
-## 5. The Cosmic Takeaway (Conclusion)
-Summary: Your fear is as large as your ambition, which proves your potential. True authority isn’t perfection—it’s responsibility. Each brave step becomes the foundation of your crown. Move forward, even with trembling hands.
-Affirmation: I choose truth over perfection.`,
-    CBT_ANALYSIS: {
-        cognitiveDistortions: ["Catastrophizing", "Mind Reading"],
-        astroAnalogy: "Like Mercury washed by Neptune, blurring reality and fear.",
-        jungianArchetype: "The Victim - Feeling targeted by life.",
-        actionPlan: [
-            "Fact Check: Ask directly instead of guessing.",
-            "Body Grounding: Splash cold water on face.",
-            "Boundaries: Write down 'what is my responsibility'."
-        ],
-        insight: "Fear is not fact, it is the shadow of what you care about."
-    }
 };

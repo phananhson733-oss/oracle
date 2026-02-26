@@ -62,8 +62,8 @@ export const STRIPE_PRICES = {
 
 // Product configuration with pricing info - 新定价
 const SUBSCRIPTION_MONTHLY_AMOUNT = 699;
-const SUBSCRIPTION_YEARLY_DISCOUNT = 0.2;
-const SUBSCRIPTION_YEARLY_AMOUNT = Math.round(SUBSCRIPTION_MONTHLY_AMOUNT * 12 * (1 - SUBSCRIPTION_YEARLY_DISCOUNT));
+const SUBSCRIPTION_YEARLY_DISCOUNT = 0.5;
+const SUBSCRIPTION_YEARLY_AMOUNT = 4199; // $41.99 (50% off yearly, consistent across all providers)
 
 export const PRODUCTS = {
   subscription: {
@@ -75,7 +75,7 @@ export const PRODUCTS = {
     },
     yearly: {
       priceId: STRIPE_PRICES.YEARLY_SUBSCRIPTION,
-      amount: SUBSCRIPTION_YEARLY_AMOUNT, // 20% off annual billing
+      amount: SUBSCRIPTION_YEARLY_AMOUNT, // 50% off annual billing
       name: 'AstrologyWiki Pro Yearly',
       interval: 'year' as const,
     },

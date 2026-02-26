@@ -543,8 +543,10 @@ export function getDeviceId(): string {
 // Format price for display
 export function formatPrice(cents: number, currency = 'usd'): string {
   const amount = cents / 100;
-  return new Intl.NumberFormat('en-US', {
+  const cur = currency.toUpperCase();
+  const locale = cur === 'CNY' ? 'zh-CN' : 'en-US';
+  return new Intl.NumberFormat(locale, {
     style: 'currency',
-    currency: currency.toUpperCase(),
+    currency: cur,
   }).format(amount);
 }

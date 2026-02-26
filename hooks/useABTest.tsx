@@ -141,7 +141,7 @@ export const usePricingDisplay = () => {
   const displayConfigs = {
     monthly_first: { primaryPlan: 'monthly' as const, emphasis: '灵活性' },
     yearly_first: { primaryPlan: 'yearly' as const, emphasis: '省钱' },
-    savings_focus: { primaryPlan: 'yearly' as const, emphasis: '节省20%' },
+    savings_focus: { primaryPlan: 'yearly' as const, emphasis: '节省50%' },
   };
 
   return {
@@ -166,7 +166,7 @@ export const useTrialMessaging = () => {
     },
     scarcity: {
       headline: '年付特惠仅剩 7 天',
-      subhead: '省下一年费用的 20%',
+      subhead: '省下一年费用的 50%',
       cta: '立即锁定优惠',
     },
   };

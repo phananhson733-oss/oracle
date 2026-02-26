@@ -62,11 +62,11 @@ export const AIRWALLEX_PRODUCTS = {
 export const AIRWALLEX_SUBSCRIPTION_PRICING = {
   usd: {
     monthly: { amount: 699, currency: 'USD' as const },  // $6.99
-    yearly: { amount: 5599, currency: 'USD' as const },   // $55.99
+    yearly: { amount: 4199, currency: 'USD' as const },   // $41.99 (save 50%)
   },
   cny: {
     monthly: { amount: 4900, currency: 'CNY' as const },  // ¥49
-    yearly: { amount: 39800, currency: 'CNY' as const },   // ¥398
+    yearly: { amount: 29400, currency: 'CNY' as const },   // ¥294 (save 50%)
   },
 };
 
@@ -85,32 +85,32 @@ export const AIRWALLEX_CREDITS_PACKAGES: Record<string, {
   credits_100: {
     id: 'credits_100',
     credits: 100,
-    usd: { amount: 999, currency: 'USD' },    // $9.99
-    cny: { amount: 6800, currency: 'CNY' },    // ¥68
+    usd: { amount: 499, currency: 'USD' },    // $4.99
+    cny: { amount: 3400, currency: 'CNY' },    // ¥34
     name: 'Starter Pack - 100 Credits',
     description: '100 credits for AstroMind features',
   },
   credits_300: {
     id: 'credits_300',
     credits: 300,
-    usd: { amount: 2499, currency: 'USD' },   // $24.99
-    cny: { amount: 16800, currency: 'CNY' },   // ¥168
+    usd: { amount: 1249, currency: 'USD' },   // $12.49
+    cny: { amount: 8400, currency: 'CNY' },   // ¥84
     name: 'Standard Pack - 300 Credits',
     description: '300 credits for AstroMind features (17% savings)',
   },
   credits_500: {
     id: 'credits_500',
     credits: 500,
-    usd: { amount: 3999, currency: 'USD' },   // $39.99
-    cny: { amount: 26800, currency: 'CNY' },   // ¥268
+    usd: { amount: 1999, currency: 'USD' },   // $19.99
+    cny: { amount: 13400, currency: 'CNY' },   // ¥134
     name: 'Value Pack - 500 Credits',
     description: '500 credits for AstroMind features (20% savings)',
   },
   credits_1000: {
     id: 'credits_1000',
     credits: 1000,
-    usd: { amount: 6999, currency: 'USD' },   // $69.99
-    cny: { amount: 46800, currency: 'CNY' },   // ¥468
+    usd: { amount: 3499, currency: 'USD' },   // $34.99
+    cny: { amount: 23400, currency: 'CNY' },   // ¥234
     name: 'Pro Pack - 1000 Credits',
     description: '1000 credits for AstroMind features (30% savings)',
   },

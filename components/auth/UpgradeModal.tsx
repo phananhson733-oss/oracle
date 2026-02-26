@@ -181,8 +181,11 @@ const UpgradeModal: React.FC = () => {
   const subscriptionT = t.subscription as any;
   const isAlreadySubscriber = entitlements?.isSubscriber;
   const modalTitle = isAlreadySubscriber ? (subscriptionT?.renew_title || '续费 Pro') : (subscriptionT?.title || '订阅Pro');
-  const monthlyPrice = pricing?.subscription?.monthly?.amount || 699;
-  const yearlyPrice = pricing?.subscription?.yearly?.amount || Math.round(monthlyPrice * 12 * 0.5);
+  // Fallback prices must match the currency context to avoid ¥6.99 bugs
+  const fallbackMonthly = language === 'zh' ? 4900 : 699;
+  const fallbackYearly = language === 'zh' ? 29400 : 4199;
+  const monthlyPrice = pricing?.subscription?.monthly?.amount || fallbackMonthly;
+  const yearlyPrice = pricing?.subscription?.yearly?.amount || fallbackYearly;
   const savings = pricing?.subscription?.yearly?.savings || 50;
 
   // 首次折扣价格
@@ -194,6 +197,7 @@ const UpgradeModal: React.FC = () => {
   const displayMonthlyPrice = isFirstDiscountEligible ? monthlyFirstPrice : monthlyPrice;
   const displayYearlyPrice = isFirstDiscountEligible ? yearlyFirstPrice : yearlyPrice;
 
+  const currency = pricing?.subscription?.monthly?.currency || (language === 'zh' ? 'CNY' : 'USD');
   const isBusy = busyAction !== null;
   const benefitItems = subscriptionT?.benefits || [];
   const yearlyBadge = subscriptionT?.save_badge?.replace('{percent}', String(savings)) || `${savings}%`;
@@ -342,11 +346,11 @@ const UpgradeModal: React.FC = () => {
                   {/* 如果有首次折扣，显示原价划线 */}
                   {isFirstDiscountEligible && (
                     <span className={`text-xl line-through ${isDark ? 'text-star-500' : 'text-paper-400'}`}>
-                      {formatPrice(selectedPlan === 'yearly' ? yearlyPrice : monthlyPrice)}
+                      {formatPrice(selectedPlan === 'yearly' ? yearlyPrice : monthlyPrice, currency)}
                     </span>
                   )}
                   <div className={`text-4xl font-bold ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
-                    {formatPrice(selectedPlan === 'yearly' ? displayYearlyPrice : displayMonthlyPrice)}
+                    {formatPrice(selectedPlan === 'yearly' ? displayYearlyPrice : displayMonthlyPrice, currency)}
                   </div>
                   <span className={`text-base ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
                     {selectedPlan === 'yearly' ? (subscriptionT?.per_year || '/年') : (subscriptionT?.per_month || '/月')}
@@ -356,7 +360,7 @@ const UpgradeModal: React.FC = () => {
                   {isFirstDiscountEligible
                     ? (subscriptionT?.first_discount_desc || '限时首次订阅特惠！')
                     : selectedPlan === 'yearly'
-                      ? (subscriptionT?.yearly_desc || '年付优惠 20%')
+                      ? (subscriptionT?.yearly_desc || '年付优惠 50%')
                       : (subscriptionT?.monthly_desc || '按月灵活订阅')}
                 </div>
 

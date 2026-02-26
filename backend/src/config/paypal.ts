@@ -59,28 +59,28 @@ export const CREDITS_PACKAGES: Record<string, {
   credits_100: {
     id: 'credits_100',
     credits: 100,
-    amount: 999, // $9.99
+    amount: 499, // $4.99
     name: '基础包 - 100 积分',
     description: '100 credits for AstroMind features',
   },
   credits_300: {
     id: 'credits_300',
     credits: 300,
-    amount: 2499, // $24.99 (~17% off)
+    amount: 1249, // $12.49 (~17% off)
     name: '标准包 - 300 积分',
     description: '300 credits for AstroMind features (17% savings)',
   },
   credits_500: {
     id: 'credits_500',
     credits: 500,
-    amount: 3999, // $39.99 (~20% off)
+    amount: 1999, // $19.99 (~20% off)
     name: '超值包 - 500 积分',
     description: '500 credits for AstroMind features (20% savings)',
   },
   credits_1000: {
     id: 'credits_1000',
     credits: 1000,
-    amount: 6999, // $69.99 (~30% off)
+    amount: 3499, // $34.99 (~30% off)
     name: '专业包 - 1000 积分',
     description: '1000 credits for AstroMind features (30% savings)',
   },
@@ -94,7 +94,7 @@ export const SUBSCRIPTION_PRICING = {
     name: 'AstroMind Pro 月度订阅',
   },
   yearly: {
-    amount: 5599, // $55.99 (20% off)
+    amount: 4199, // $41.99 (50% off)
     interval: 'YEAR' as const,
     name: 'AstroMind Pro 年度订阅',
   },
@@ -111,7 +111,7 @@ export const FIRST_DISCOUNT_PRICING = {
     name: 'AstroMind Pro 月度订阅（首次特惠）',
   },
   yearly: {
-    amount: Math.round(SUBSCRIPTION_PRICING.yearly.amount * (1 - FIRST_DISCOUNT_RATE)), // $28.00
+    amount: Math.round(SUBSCRIPTION_PRICING.yearly.amount * (1 - FIRST_DISCOUNT_RATE)), // $21.00
     interval: 'YEAR' as const,
     name: 'AstroMind Pro 年度订阅（首次特惠）',
   },

@@ -131,13 +131,13 @@ async function main() {
 
   const priceConfigs = [
     { key: 'monthly_usd', currency: 'USD', amount: 6.99, period: 1, unit: 'MONTH', name: 'Monthly USD' },
-    { key: 'yearly_usd', currency: 'USD', amount: 55.99, period: 1, unit: 'YEAR', name: 'Yearly USD' },
-    { key: 'monthly_first_usd', currency: 'USD', amount: 3.49, period: 1, unit: 'MONTH', name: 'Monthly USD (First-time 50% off)' },
-    { key: 'yearly_first_usd', currency: 'USD', amount: 27.99, period: 1, unit: 'YEAR', name: 'Yearly USD (First-time 50% off)' },
+    { key: 'yearly_usd', currency: 'USD', amount: 41.99, period: 1, unit: 'YEAR', name: 'Yearly USD' },
+    { key: 'monthly_first_usd', currency: 'USD', amount: 3.50, period: 1, unit: 'MONTH', name: 'Monthly USD (First-time 50% off)' },
+    { key: 'yearly_first_usd', currency: 'USD', amount: 21.00, period: 1, unit: 'YEAR', name: 'Yearly USD (First-time 50% off)' },
     { key: 'monthly_cny', currency: 'CNY', amount: 49, period: 1, unit: 'MONTH', name: 'Monthly CNY' },
-    { key: 'yearly_cny', currency: 'CNY', amount: 398, period: 1, unit: 'YEAR', name: 'Yearly CNY' },
+    { key: 'yearly_cny', currency: 'CNY', amount: 294, period: 1, unit: 'YEAR', name: 'Yearly CNY' },
     { key: 'monthly_first_cny', currency: 'CNY', amount: 24.5, period: 1, unit: 'MONTH', name: 'Monthly CNY (First-time 50% off)' },
-    { key: 'yearly_first_cny', currency: 'CNY', amount: 199, period: 1, unit: 'YEAR', name: 'Yearly CNY (First-time 50% off)' },
+    { key: 'yearly_first_cny', currency: 'CNY', amount: 147, period: 1, unit: 'YEAR', name: 'Yearly CNY (First-time 50% off)' },
   ];
 
   for (const cfg of priceConfigs) {
