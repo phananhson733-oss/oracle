@@ -32,7 +32,6 @@ const CookiePolicy: React.FC = () => {
       <SEO
         title="Cookie Policy"
         description={`${PRODUCT_NAME} Cookie Policy - Learn about how we use cookies and similar technologies.`}
-        robots="noindex"
       />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className={`text-3xl font-bold mb-2 ${strongClass}`}>Cookie Policy</h1>
@@ -357,11 +356,11 @@ const CookiePolicy: React.FC = () => {
         <div className={`border-t pt-6 mt-12 ${theme === 'dark' ? 'border-star-400/20' : 'border-paper-600/20'}`}>
           <p className={`text-sm ${textClass}`}>
             Related:{' '}
-            <a href="/#/privacy" className={linkClass}>
+            <a href="/privacy" className={linkClass}>
               Privacy Policy
             </a>
             {' | '}
-            <a href="/#/terms" className={linkClass}>
+            <a href="/terms" className={linkClass}>
               Terms of Service
             </a>
           </p>

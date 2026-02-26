@@ -24,7 +24,6 @@ const AboutPage: React.FC = () => {
       <SEO
         title="About"
         description="About AstroMind - Modern astrology meets psychology. Empowerment over fatalism."
-        robots="noindex"
       />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className={`text-3xl font-bold mb-2 ${strongClass}`}>About AstroMind</h1>

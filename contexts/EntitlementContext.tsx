@@ -290,8 +290,8 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
   // 开始订阅
   const startSubscription = useCallback(async (plan: 'monthly' | 'yearly' = 'monthly') => {
     // 编码当前页面路径，以便支付成功后返回
-    const returnTo = encodeURIComponent(window.location.hash.slice(1) || '/dashboard');
-    const successUrl = `${window.location.origin}/#/payment/success?returnTo=${returnTo}`;
+    const returnTo = encodeURIComponent(window.location.pathname || '/dashboard');
+    const successUrl = `${window.location.origin}/payment/success?returnTo=${returnTo}`;
     const cancelUrl = window.location.href;
 
     const { url } = await createSubscribeCheckoutV2(plan, successUrl, cancelUrl);

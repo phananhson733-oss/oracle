@@ -166,7 +166,8 @@ const AppContent: React.FC = () => {
     useAnalyticsTracking();
 
     const isWikiPath = location.pathname === '/wiki' || location.pathname.startsWith('/wiki/');
-    const isPublicRoute = location.pathname === '/' || isWikiPath;
+    const isLegalPath = ['/privacy', '/terms', '/cookies', '/about', '/help'].includes(location.pathname);
+    const isPublicRoute = location.pathname === '/' || isWikiPath || isLegalPath;
     const shouldNoIndex = !isPublicRoute;
     const authT = t.auth;
     const lastTrackedPathRef = useRef<string | null>(null);
@@ -191,9 +192,9 @@ const AppContent: React.FC = () => {
         const hasSubscription = params.has('subscription_id') || params.has('ba_token');
         const hasOrder = params.has('token');
         if (!hasSubscription && !hasOrder) return;
-        const currentHash = (window.location.hash || '').replace(/^#/, '');
-        if (currentHash && currentHash !== '/') return;
         const targetPath = hasSubscription ? '/payment/success' : '/payment/credits-success';
+        // Skip redirect if already on the correct payment path
+        if (location.pathname === targetPath) return;
         const targetUrl = `${window.location.origin}${targetPath}${window.location.search}`;
         window.location.replace(targetUrl);
     }, []);
@@ -220,7 +221,7 @@ const AppContent: React.FC = () => {
 
     // Redirect to landing if no user data, except for landing/onboarding/payment/auth
     useEffect(() => {
-        const allowedPaths = ['/', '/onboarding', '/auth', '/payment/success', '/payment/credits-success'];
+        const allowedPaths = ['/', '/onboarding', '/auth', '/payment/success', '/payment/credits-success', '/privacy', '/terms', '/cookies', '/about', '/help'];
         if (!user && !hasCloudProfile && !allowedPaths.includes(location.pathname) && !isWikiPath) {
             navigate('/');
         }

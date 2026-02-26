@@ -25,7 +25,6 @@ const TermsOfService: React.FC = () => {
       <SEO
         title="Terms of Service"
         description={`${PRODUCT_NAME} Terms of Service - Read our terms and conditions for using the service.`}
-        robots="noindex"
       />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className={`text-3xl font-bold mb-2 ${strongClass}`}>Terms of Service</h1>
@@ -59,11 +58,11 @@ const TermsOfService: React.FC = () => {
           <p className={textClass}>
             By creating an account, making a purchase, or otherwise using the Service, you acknowledge that you
             have read, understood, and agree to be bound by these Terms, as well as our{' '}
-            <a href="/#/privacy" className={linkClass}>
+            <a href="/privacy" className={linkClass}>
               Privacy Policy
             </a>{' '}
             and{' '}
-            <a href="/#/cookies" className={linkClass}>
+            <a href="/cookies" className={linkClass}>
               Cookie Policy
             </a>
             , which are incorporated herein by reference. We reserve the right to modify these Terms at any time,
@@ -304,7 +303,7 @@ const TermsOfService: React.FC = () => {
             </a>{' '}
             or through your account settings. Upon account termination, your personal data will be handled in
             accordance with our{' '}
-            <a href="/#/privacy" className={linkClass}>
+            <a href="/privacy" className={linkClass}>
               Privacy Policy
             </a>
             .
@@ -401,11 +400,11 @@ const TermsOfService: React.FC = () => {
         <div className={`border-t pt-6 mt-12 ${theme === 'dark' ? 'border-star-400/20' : 'border-paper-600/20'}`}>
           <p className={`text-sm ${textClass}`}>
             Related:{' '}
-            <a href="/#/privacy" className={linkClass}>
+            <a href="/privacy" className={linkClass}>
               Privacy Policy
             </a>
             {' | '}
-            <a href="/#/cookies" className={linkClass}>
+            <a href="/cookies" className={linkClass}>
               Cookie Policy
             </a>
           </p>

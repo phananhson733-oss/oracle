@@ -25,7 +25,6 @@ const PrivacyPolicy: React.FC = () => {
       <SEO
         title="Privacy Policy"
         description={`${PRODUCT_NAME} Privacy Policy - Learn how we collect, use, and protect your personal information.`}
-        robots="noindex"
       />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className={`text-3xl font-bold mb-2 ${strongClass}`}>Privacy Policy</h1>
@@ -96,7 +95,7 @@ const PrivacyPolicy: React.FC = () => {
             <li>
               <span className={strongClass}>Cookies and Similar Technologies:</span> We use cookies, pixels, and
               similar tracking technologies. See our{' '}
-              <a href="/#/cookies" className={linkClass}>
+              <a href="/cookies" className={linkClass}>
                 Cookie Policy
               </a>{' '}
               for details.
@@ -393,11 +392,11 @@ const PrivacyPolicy: React.FC = () => {
         <div className={`border-t pt-6 mt-12 ${theme === 'dark' ? 'border-star-400/20' : 'border-paper-600/20'}`}>
           <p className={`text-sm ${textClass}`}>
             Related:{' '}
-            <a href="/#/terms" className={linkClass}>
+            <a href="/terms" className={linkClass}>
               Terms of Service
             </a>
             {' | '}
-            <a href="/#/cookies" className={linkClass}>
+            <a href="/cookies" className={linkClass}>
               Cookie Policy
             </a>
           </p>

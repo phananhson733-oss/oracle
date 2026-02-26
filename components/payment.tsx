@@ -19,10 +19,10 @@ interface CreditsPkg {
 
 // Fallback packages (USD) when API is unavailable
 const FALLBACK_PACKAGES: CreditsPkg[] = [
-  { id: 'credits_100', credits: 100, amount: 999, currency: 'USD' },
-  { id: 'credits_300', credits: 300, amount: 2499, currency: 'USD' },
-  { id: 'credits_500', credits: 500, amount: 3999, currency: 'USD' },
-  { id: 'credits_1000', credits: 1000, amount: 6999, currency: 'USD' },
+  { id: 'credits_100', credits: 100, amount: 499, currency: 'USD' },
+  { id: 'credits_300', credits: 300, amount: 1249, currency: 'USD' },
+  { id: 'credits_500', credits: 500, amount: 1999, currency: 'USD' },
+  { id: 'credits_1000', credits: 1000, amount: 3499, currency: 'USD' },
 ];
 
 interface CreditsModalProps {
@@ -128,8 +128,8 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
       });
 
       // Create Airwallex order via backend API
-      const returnTo = encodeURIComponent(window.location.hash.slice(1) || '/dashboard');
-      const successUrl = `${window.location.origin}/#/payment/credits-success?returnTo=${returnTo}`;
+      const returnTo = encodeURIComponent(window.location.pathname || '/dashboard');
+      const successUrl = `${window.location.origin}/payment/credits-success?returnTo=${returnTo}`;
       const cancelUrl = window.location.href;
 
       const result = await createAirwallexOrder(

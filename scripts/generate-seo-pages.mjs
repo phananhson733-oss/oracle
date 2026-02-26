@@ -355,7 +355,7 @@ const generate = async () => {
       alternates: buildAlternateLinks('/'),
       schema: buildWebSiteSchema(lang, config),
       ctaText: config.homeCta,
-      spaPath: '/#/',
+      spaPath: '/',
     });
 
     await writeHtmlPage({
@@ -374,7 +374,7 @@ const generate = async () => {
         ]),
       ],
       ctaText: config.wikiCta,
-      spaPath: '/#/wiki',
+      spaPath: '/wiki',
     });
 
     await writeHtmlPage({
@@ -393,7 +393,7 @@ const generate = async () => {
         ]),
       ],
       ctaText: config.classicsCta,
-      spaPath: '/#/wiki/classics',
+      spaPath: '/wiki/classics',
     });
 
     for (const item of wikiItems) {
@@ -421,7 +421,7 @@ const generate = async () => {
           ]),
         ],
         ctaText: config.wikiCta,
-        spaPath: `/#/wiki/${item.id}`,
+        spaPath: `/wiki/${item.id}`,
       });
     }
 
@@ -451,7 +451,7 @@ const generate = async () => {
           ]),
         ],
         ctaText: config.classicsCta,
-        spaPath: `/#/wiki/classics/${classic.id}`,
+        spaPath: `/wiki/classics/${classic.id}`,
       });
     }
   }

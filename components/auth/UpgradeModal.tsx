@@ -44,7 +44,7 @@ const UpgradeModal: React.FC = () => {
           setPricing({
             subscription: {
               monthly: { amount: data.subscription.monthly.amount, currency: data.subscription.monthly.currency, interval: 'month' },
-              yearly: { amount: data.subscription.yearly.amount, currency: data.subscription.yearly.currency, interval: 'year', savings: 20 },
+              yearly: { amount: data.subscription.yearly.amount, currency: data.subscription.yearly.currency, interval: 'year', savings: 50 },
               firstDiscount: data.subscription.firstDiscount ? {
                 rate: data.subscription.firstDiscount.rate,
                 monthly: { amount: data.subscription.firstDiscount.monthly.amount },
@@ -122,7 +122,7 @@ const UpgradeModal: React.FC = () => {
 
     try {
       const currentUrl = window.location.href;
-      const successUrl = `${window.location.origin}/#/payment/success`;
+      const successUrl = `${window.location.origin}/payment/success`;
       const cancelUrl = currentUrl;
 
       const result = await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
@@ -182,8 +182,8 @@ const UpgradeModal: React.FC = () => {
   const isAlreadySubscriber = entitlements?.isSubscriber;
   const modalTitle = isAlreadySubscriber ? (subscriptionT?.renew_title || '续费 Pro') : (subscriptionT?.title || '订阅Pro');
   const monthlyPrice = pricing?.subscription?.monthly?.amount || 699;
-  const yearlyPrice = pricing?.subscription?.yearly?.amount || Math.round(monthlyPrice * 12 * 0.8);
-  const savings = pricing?.subscription?.yearly?.savings || 20;
+  const yearlyPrice = pricing?.subscription?.yearly?.amount || Math.round(monthlyPrice * 12 * 0.5);
+  const savings = pricing?.subscription?.yearly?.savings || 50;
 
   // 首次折扣价格
   const firstDiscountRate = pricing?.subscription?.firstDiscount?.rate || 0.5;

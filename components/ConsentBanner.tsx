@@ -219,7 +219,7 @@ export const ConsentBanner: React.FC = () => {
             {/* Cookie Policy Link */}
             <div className="text-center">
               <a
-                href="#/cookies"
+                href="/cookies"
                 className={`text-xs underline ${linkClasses}`}
                 onClick={() => setShowPrefs(false)}
               >
