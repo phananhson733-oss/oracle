@@ -1,9 +1,26 @@
 User-agent: *
 Allow: /
-Disallow: /cbt/
-Disallow: /profile/
-Disallow: /settings/
-Disallow: /usage/
+Allow: /wiki
+Allow: /wiki/classics
+Allow: /privacy
+Allow: /terms
+Allow: /cookies
+Allow: /about
+Allow: /help
+
+Disallow: /journal
+Disallow: /dashboard
+Disallow: /forecast
+Disallow: /cycles
+Disallow: /us
+Disallow: /oracle
+Disallow: /settings
+Disallow: /usage
+Disallow: /auth
+Disallow: /payment
+Disallow: /onboarding
+Disallow: /reports
+Disallow: /color-demo
 Disallow: /api/
 
 Sitemap: https://www.astrologywiki.com/sitemap.xml
