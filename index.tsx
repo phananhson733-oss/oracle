@@ -21,9 +21,17 @@ root.render(
   </React.StrictMode>
 );
 
-initAnalytics();
-reportWebVitalsToAnalytics();
-trackFirstVisitIfNew();
+const initNonCritical = () => {
+  initAnalytics();
+  reportWebVitalsToAnalytics();
+  trackFirstVisitIfNew();
+};
+
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(initNonCritical);
+} else {
+  setTimeout(initNonCritical, 2000);
+}
 
 // Global error tracking
 window.addEventListener('error', (event) => {
