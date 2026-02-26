@@ -88,3 +88,17 @@ export const buildBirthCacheKey = (
   profile.timezone,
   profile.accuracyLevel,
 ].join('|');
+
+// ── Reset countdown ─────────────────────────────────────────────────
+
+/** Compute a human-readable countdown string (e.g. "2h 15m") until `resetAt`. */
+export function getResetCountdown(resetAt?: string): string {
+  if (!resetAt) return '';
+  const now = Date.now();
+  const reset = new Date(resetAt).getTime();
+  const diffMs = Math.max(0, reset - now);
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}

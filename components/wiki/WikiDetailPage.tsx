@@ -477,7 +477,7 @@ const WikiDetailPage: React.FC = () => {
       <RelatedArticles
         itemId={item.id}
         itemType={item.type}
-        title={t.wiki?.related_by_astrology || '星象关联'}
+        title={t.wiki?.related_by_astrology || 'Astrological Associations'}
       />
 
       </div>

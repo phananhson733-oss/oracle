@@ -38,19 +38,19 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
 
   const getRelationLabel = (relation: RelationType): string => {
     const labels: Record<RelationType, string> = {
-      ruling: t.wiki?.relation_ruling || '守护',
-      exalted: t.wiki?.relation_exalted || '旺势',
-      detriment: t.wiki?.relation_detriment || '失势',
-      fall: t.wiki?.relation_fall || '落陷',
-      opposite: t.wiki?.relation_opposite || '对冲',
-      square: t.wiki?.relation_square || '刑克',
-      trine: t.wiki?.relation_trine || '拱',
-      sextile: t.wiki?.relation_sextile || '六分',
-      conjunction: t.wiki?.relation_conjunction || '合相',
-      'same-element': t.wiki?.relation_same_element || '同元素',
-      'same-modality': t.wiki?.relation_same_modality || '同模式',
-      'ruling-planet': t.wiki?.relation_ruling_planet || '守护星',
-      'natural-correspondence': t.wiki?.relation_correspondence || '关联',
+      ruling: t.wiki?.relation_ruling || 'Ruler',
+      exalted: t.wiki?.relation_exalted || 'Exaltation',
+      detriment: t.wiki?.relation_detriment || 'Detriment',
+      fall: t.wiki?.relation_fall || 'Fall',
+      opposite: t.wiki?.relation_opposite || 'Opposition',
+      square: t.wiki?.relation_square || 'Square',
+      trine: t.wiki?.relation_trine || 'Trine',
+      sextile: t.wiki?.relation_sextile || 'Sextile',
+      conjunction: t.wiki?.relation_conjunction || 'Conjunction',
+      'same-element': t.wiki?.relation_same_element || 'Same Element',
+      'same-modality': t.wiki?.relation_same_modality || 'Same Modality',
+      'ruling-planet': t.wiki?.relation_ruling_planet || 'Ruling Planet',
+      'natural-correspondence': t.wiki?.relation_correspondence || 'Correspondence',
     };
     return labels[relation] || relation;
   };
@@ -67,18 +67,29 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
     ).join(' ');
   };
 
-  const getTypeIcon = (type: WikiItemType): string => {
-    const icons: Partial<Record<WikiItemType, string>> = {
-      planets: '☉',
-      signs: '♈',
-      houses: '⌂',
-      aspects: '∠',
-      asteroids: '✶',
-      points: '●',
-      angles: '◐',
-      'chart-types': '◈',
-    };
-    return icons[type] || '✦';
+  const UNICODE_SYMBOLS: Record<string, string> = {
+    sun: '☉', moon: '☾', mercury: '☿', venus: '♀', mars: '♂',
+    jupiter: '♃', saturn: '♄', uranus: '♅', neptune: '♆', pluto: '♇',
+    aries: '♈', taurus: '♉', gemini: '♊', cancer: '♋', leo: '♌',
+    virgo: '♍', libra: '♎', scorpio: '♏', sagittarius: '♐',
+    capricorn: '♑', aquarius: '♒', pisces: '♓',
+    'north-node': '☊', 'south-node': '☋', chiron: '⚷', lilith: '⚸', juno: '⚵',
+  };
+
+  const TYPE_FALLBACK_ICONS: Partial<Record<WikiItemType, string>> = {
+    planets: '☉', signs: '♈', houses: '⌂', aspects: '∠',
+    asteroids: '✶', points: '●', angles: '◐', 'chart-types': '◈',
+  };
+
+  const forceTextSymbol = (value: string) => {
+    const sanitized = value.replace(/\uFE0F/g, '');
+    if (!sanitized) return sanitized;
+    if (/^[A-Za-z0-9]+$/.test(sanitized)) return sanitized;
+    return `${sanitized}\uFE0E`;
+  };
+
+  const getItemIcon = (id: string, type: WikiItemType): string => {
+    return forceTextSymbol(UNICODE_SYMBOLS[id] || TYPE_FALLBACK_ICONS[type] || '✦');
   };
 
   const borderColor = isDark ? 'border-gold-500/20' : 'border-paper-200';
@@ -88,7 +99,7 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
   return (
     <section className="related-articles">
       <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
-        {title || t.wiki?.related_content || '相关内容'}
+        {title || t.wiki?.related_content || 'Related Content'}
       </h3>
 
       <div className="grid gap-3 sm:grid-cols-2">
@@ -102,8 +113,8 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
               transition-all duration-200 hover:border-gold-500/40
             `}
           >
-            <span className={`text-xl ${mutedText}`}>
-              {getTypeIcon(item.type)}
+            <span className={`text-xl ${mutedText}`} style={{ fontFamily: 'serif' }}>
+              {getItemIcon(item.id, item.type)}
             </span>
             <div className="flex-1 min-w-0">
               <div className={`font-medium truncate ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
