@@ -106,8 +106,9 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
       usedFirstDiscount: result.usedFirstDiscount,
     });
   } catch (error) {
-    console.error('Airwallex create subscription error:', error);
-    res.status(500).json({ error: 'Failed to create subscription' });
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('Airwallex create subscription error:', message, error);
+    res.status(500).json({ error: `Failed to create subscription: ${message}` });
   }
 });
 
