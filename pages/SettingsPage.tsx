@@ -386,9 +386,6 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                                 {String(trialCountdown.seconds).padStart(2, '0')}
                                             </span>
                                         </div>
-                                        <span className={`text-[10px] ${theme === 'dark' ? 'text-star-500' : 'text-paper-400'}`}>
-                                            {language === 'zh' ? '天:时:分:秒' : 'D:H:M:S'}
-                                        </span>
                                     </div>
                                 )}
                             </div>
