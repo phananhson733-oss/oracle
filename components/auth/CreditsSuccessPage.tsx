@@ -5,6 +5,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { useEntitlement } from '../../contexts/EntitlementContext';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
 import { confirmAirwallexOrder } from '../../services/paymentClient';
 import { CheckCircle, Sparkles, Loader2, AlertCircle } from 'lucide-react';
@@ -47,7 +48,8 @@ const CreditsSuccessPage: React.FC = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { refreshEntitlements, entitlements } = useAuth();
+  const { refreshEntitlements: refreshAuthEntitlements, entitlements } = useAuth();
+  const { refreshEntitlements: refreshEntitlementCtx } = useEntitlement();
 
   const isDark = theme === 'dark';
   const returnTo = searchParams.get('returnTo');
@@ -80,7 +82,7 @@ const CreditsSuccessPage: React.FC = () => {
             if (result.confirmed) {
               sessionStorage.removeItem('aw_order_pi_id');
               if (result.credits) setAddedCredits(result.credits);
-              await refreshEntitlements();
+              await Promise.allSettled([refreshAuthEntitlements(), refreshEntitlementCtx()]);
               if (!cancelled) setState('success');
               return;
             }
@@ -96,7 +98,7 @@ const CreditsSuccessPage: React.FC = () => {
 
       // Fallback: poll entitlements (for webhook-based activation)
       for (let attempt = 1; attempt <= 4 && !cancelled; attempt++) {
-        await refreshEntitlements();
+        await Promise.allSettled([refreshAuthEntitlements(), refreshEntitlementCtx()]);
         await new Promise((r) => setTimeout(r, 1500));
       }
       // Show success anyway (webhook may still be delayed)
