@@ -17,12 +17,18 @@ interface CreditsPkg {
   currency: string;
 }
 
-// Fallback packages (USD) when API is unavailable
-const FALLBACK_PACKAGES: CreditsPkg[] = [
+// Fallback packages when API is unavailable (dual currency)
+const FALLBACK_PACKAGES_USD: CreditsPkg[] = [
   { id: 'credits_100', credits: 100, amount: 499, currency: 'USD' },
   { id: 'credits_300', credits: 300, amount: 1249, currency: 'USD' },
   { id: 'credits_500', credits: 500, amount: 1999, currency: 'USD' },
   { id: 'credits_1000', credits: 1000, amount: 3499, currency: 'USD' },
+];
+const FALLBACK_PACKAGES_CNY: CreditsPkg[] = [
+  { id: 'credits_100', credits: 100, amount: 3400, currency: 'CNY' },
+  { id: 'credits_300', credits: 300, amount: 8400, currency: 'CNY' },
+  { id: 'credits_500', credits: 500, amount: 13400, currency: 'CNY' },
+  { id: 'credits_1000', credits: 1000, amount: 23400, currency: 'CNY' },
 ];
 
 interface CreditsModalProps {
@@ -38,10 +44,16 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
   const isDark = theme === 'dark';
   const credits = entitlements?.credits ?? 0;
 
-  const [packages, setPackages] = useState<CreditsPkg[]>(FALLBACK_PACKAGES);
+  const fallbackPackages = language === 'zh' ? FALLBACK_PACKAGES_CNY : FALLBACK_PACKAGES_USD;
+  const [packages, setPackages] = useState<CreditsPkg[]>(fallbackPackages);
   const [selectedId, setSelectedId] = useState('credits_300');
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Reset to correct fallback when language changes
+  useEffect(() => {
+    setPackages(language === 'zh' ? FALLBACK_PACKAGES_CNY : FALLBACK_PACKAGES_USD);
+  }, [language]);
 
   // Load pricing from backend
   useEffect(() => {

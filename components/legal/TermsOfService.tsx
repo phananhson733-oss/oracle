@@ -3,7 +3,7 @@ import { Container, useTheme } from '../UIComponents';
 import { SEO } from '../SEO';
 
 const LAST_UPDATED = 'February 26, 2026';
-const COMPANY_NAME = 'AstrologyWiki';
+const COMPANY_NAME = 'AIGenesis Limited';
 const PRODUCT_NAME = 'AstroMind';
 const SITE_URL = 'https://www.astrologywiki.com';
 const CONTACT_EMAIL = 'support@astrologywiki.com';
@@ -319,10 +319,11 @@ const TermsOfService: React.FC = () => {
         <div className={sectionClass}>
           <h2 className={`text-2xl font-semibold mb-4 ${headingClass}`}>11. Governing Law</h2>
           <p className={textClass}>
-            These Terms shall be governed by and construed in accordance with the laws of the State of Delaware,
-            United States of America, without regard to its conflict of law provisions. Any disputes arising out of
-            or relating to these Terms or the Service shall be resolved exclusively in the state or federal courts
-            located in the State of Delaware, and you consent to the personal jurisdiction and venue of such courts.
+            These Terms and Conditions are governed by the laws of the Hong Kong Special Administrative Region
+            of the People's Republic of China. Your order will be processed in accordance with the laws of
+            Hong Kong. Any disputes arising out of or relating to these Terms or the Service shall be resolved
+            exclusively in the courts of the Hong Kong Special Administrative Region, and you consent to the
+            personal jurisdiction and venue of such courts.
           </p>
           <p className={`mt-3 ${textClass}`}>
             If you are a consumer in the European Union, you may also be entitled to bring proceedings in the
@@ -392,6 +393,10 @@ const TermsOfService: React.FC = () => {
             </li>
             <li>
               <span className={strongClass}>Company:</span> {COMPANY_NAME}
+            </li>
+            <li>
+              <span className={strongClass}>Address:</span> Rm A133 of Unit 1, 15/F, Block A, Wah Sang Building,
+              No. 14-18 Wong Chuk Yeung Street, Sha Tin, Hong Kong
             </li>
           </ul>
         </div>

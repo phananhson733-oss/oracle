@@ -4,6 +4,9 @@ import { SEO } from '../SEO';
 import { Link } from 'react-router-dom';
 
 const CONTACT_EMAIL = 'support@astrologywiki.com';
+const COMPANY_NAME = 'AIGenesis Limited';
+const COMPANY_REG_NO = '79723223';
+const COMPANY_ADDRESS = 'Rm A133 of Unit 1, 15/F, Block A, Wah Sang Building, No. 14-18 Wong Chuk Yeung Street, Sha Tin, Hong Kong';
 
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
@@ -67,6 +70,30 @@ const AboutPage: React.FC = () => {
                 <p className={`text-sm ${textClass}`}>{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Business Details */}
+        <div className={sectionClass}>
+          <h2 className={`text-2xl font-semibold mb-4 ${headingClass}`}>Business Details</h2>
+          <div className={cardClass}>
+            <ul className={`space-y-2 text-sm ${textClass}`}>
+              <li>
+                <span className={strongClass}>Company Name:</span> {COMPANY_NAME}
+              </li>
+              <li>
+                <span className={strongClass}>Registration Number:</span> {COMPANY_REG_NO}
+              </li>
+              <li>
+                <span className={strongClass}>Registered Address:</span> {COMPANY_ADDRESS}
+              </li>
+              <li>
+                <span className={strongClass}>Email:</span>{' '}
+                <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
+                  {CONTACT_EMAIL}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

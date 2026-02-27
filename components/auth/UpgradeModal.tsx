@@ -36,6 +36,11 @@ const UpgradeModal: React.FC = () => {
 
   const isDark = theme === 'dark';
 
+  // Reset pricing when language changes so currency stays in sync
+  useEffect(() => {
+    setPricing(null);
+  }, [language]);
+
   // Load pricing on mount (from Airwallex)
   useEffect(() => {
     if (showUpgradeModal && !pricing) {
