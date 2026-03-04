@@ -34,7 +34,7 @@ const UpgradeModal: React.FC = () => {
 
   // Cancel subscription flow
   const [showCancelFlow, setShowCancelFlow] = useState(false);
-  const [cancelStep, setCancelStep] = useState<'reason' | 'confirm'>('reason');
+  const [cancelStep, setCancelStep] = useState<'reason' | 'confirm' | 'success'>('reason');
   const [cancelReason, setCancelReason] = useState('');
   const [cancelLoading, setCancelLoading] = useState(false);
   const [cancelError, setCancelError] = useState<string | null>(null);
@@ -134,9 +134,7 @@ const UpgradeModal: React.FC = () => {
     try {
       await cancelSubscription(cancelReason);
       await refreshEntitlements();
-      setShowCancelFlow(false);
-      setCancelStep('reason');
-      setCancelReason('');
+      setCancelStep('success');
     } catch (err) {
       setCancelError(err instanceof Error ? err.message : 'Failed to cancel');
     } finally {
@@ -540,7 +538,7 @@ const UpgradeModal: React.FC = () => {
               </ActionButton>
             </div>
           </div>
-        ) : (
+        ) : cancelStep === 'confirm' ? (
           <div className="space-y-4">
             <div className={`p-4 rounded-lg ${isDark ? 'bg-amber-500/10 border border-amber-500/30' : 'bg-amber-50 border border-amber-200'}`}>
               <p className="text-sm font-medium text-amber-600 mb-2">
@@ -576,6 +574,29 @@ const UpgradeModal: React.FC = () => {
                   : (language === 'zh' ? '确认取消' : 'Confirm Cancel')}
               </ActionButton>
             </div>
+          </div>
+        ) : (
+          /* Success step */
+          <div className="space-y-4 text-center py-4">
+            <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full mx-auto ${isDark ? 'bg-green-500/10' : 'bg-green-50'}`}>
+              <Check className="w-7 h-7 text-green-500" />
+            </div>
+            <p className={`text-base font-medium ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
+              {language === 'zh' ? '订阅已取消' : 'Subscription Cancelled'}
+            </p>
+            <p className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-500'}`}>
+              {language === 'zh'
+                ? `您的 Pro 权益将保留至到期日，届时不再自动续费。`
+                : `Your Pro benefits will remain active until the end of your current period.`}
+            </p>
+            <ActionButton
+              variant="secondary"
+              onClick={() => { setShowCancelFlow(false); setCancelStep('reason'); setCancelReason(''); }}
+              className="w-full mt-2"
+              size="sm"
+            >
+              {language === 'zh' ? '我知道了' : 'Got it'}
+            </ActionButton>
           </div>
         )}
       </Modal>
