@@ -549,20 +549,19 @@ class EntitlementServiceV2 {
       }
     }
 
-    // 2. 检查订阅状态
-    if (!entitlements.isTrialing) {
-      const subscription = await subscriptionService.getSubscription(userId);
-      if (subscription && (subscription.status === 'active' || subscription.status === 'trialing')) {
-        const expiresAt = subscription.current_period_end ? new Date(subscription.current_period_end) : null;
-        if (!expiresAt || expiresAt > now) {
-          entitlements.isSubscriber = true;
-          entitlements.subscription = {
-            plan: subscription.plan,
-            status: subscription.status,
-            expiresAt: subscription.current_period_end || '',
-            provider: subscription.payment_provider || 'stripe',
-          };
-        }
+    // 2. 检查订阅状态（无论是否在试用期，付费订阅优先于试用）
+    const subscription = await subscriptionService.getSubscription(userId);
+    if (subscription && (subscription.status === 'active' || subscription.status === 'trialing')) {
+      const expiresAt = subscription.current_period_end ? new Date(subscription.current_period_end) : null;
+      if (!expiresAt || expiresAt > now) {
+        entitlements.isSubscriber = true;
+        entitlements.isTrialing = false; // 有付费订阅则不再视为试用
+        entitlements.subscription = {
+          plan: subscription.plan,
+          status: subscription.status,
+          expiresAt: subscription.current_period_end || '',
+          provider: subscription.payment_provider || 'stripe',
+        };
       }
     }
 

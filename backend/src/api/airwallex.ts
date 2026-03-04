@@ -185,6 +185,24 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
       else endDate.setMonth(endDate.getMonth() + 1);
     }
 
+    // 试用期用户付费：将剩余试用天数追加到订阅到期时间
+    if (isSupabaseConfigured()) {
+      const { data: userRow } = await supabase
+        .from('users')
+        .select('trial_ends_at')
+        .eq('id', userId)
+        .single();
+
+      if (userRow?.trial_ends_at) {
+        const trialEnd = new Date(userRow.trial_ends_at);
+        const now = new Date();
+        if (trialEnd > now) {
+          const remainingMs = trialEnd.getTime() - now.getTime();
+          endDate.setTime(endDate.getTime() + remainingMs);
+        }
+      }
+    }
+
     if (isSupabaseConfigured()) {
       const { data: existing } = await supabase
         .from('subscriptions')
@@ -718,6 +736,22 @@ async function handleSubscriptionActive(event: any): Promise<void> {
   }
 
   if (isSupabaseConfigured()) {
+    // 试用期用户付费：将剩余试用天数追加到订阅到期时间
+    const { data: userRow } = await supabase
+      .from('users')
+      .select('trial_ends_at')
+      .eq('id', userId)
+      .single();
+
+    if (userRow?.trial_ends_at) {
+      const trialEnd = new Date(userRow.trial_ends_at);
+      const now = new Date();
+      if (trialEnd > now) {
+        const remainingMs = trialEnd.getTime() - now.getTime();
+        endDate.setTime(endDate.getTime() + remainingMs);
+      }
+    }
+
     // Upsert subscription
     const { data: existing } = await supabase
       .from('subscriptions')
