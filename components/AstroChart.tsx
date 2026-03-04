@@ -1502,6 +1502,20 @@ export const AstroChart: React.FC<AstroChartProps> = ({
             {/* Center Hub Decoration */}
             <circle cx="200" cy="200" r="4" fill={colors.strokeAccent} opacity="0.6" />
             <circle cx="200" cy="200" r="2" fill={colors.houseNumColor} />
+
+            {/* Watermark for screenshot sharing */}
+            <text
+              x="388"
+              y="395"
+              textAnchor="end"
+              fontSize="9"
+              fill={isDark ? 'rgb(var(--star-200) / 0.35)' : 'rgb(var(--space-700) / 0.4)'}
+              fontFamily="system-ui, -apple-system, sans-serif"
+              fontWeight="400"
+              letterSpacing="0.3"
+            >
+              AstrologyWiki.com
+            </text>
           </svg>
         </div>
       </div>
