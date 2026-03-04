@@ -446,20 +446,32 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
 
     const { reason } = req.body || {};
 
-    const subscription = await subscriptionService.getSubscription(req.userId!);
+    // Query specifically for Airwallex subscription to avoid provider mismatch
+    let subscription: any = null;
+    if (isSupabaseConfigured()) {
+      const { data } = await supabase
+        .from('subscriptions')
+        .select('*')
+        .eq('user_id', req.userId!)
+        .eq('payment_provider', 'airwallex')
+        .in('status', ['active', 'trialing', 'past_due'])
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .single();
+      subscription = data;
+    }
 
     if (!subscription) {
-      return res.status(404).json({ error: 'No active subscription' });
+      return res.status(404).json({ error: 'No active Airwallex subscription' });
     }
 
-    if (subscription.payment_provider !== 'airwallex' || !subscription.airwallex_subscription_id) {
-      return res.status(400).json({ error: 'Not an Airwallex subscription' });
+    // Best-effort Airwallex API call — DB update is the source of truth
+    let airwallexResult: { airwallexSuccess: boolean; error?: string } = { airwallexSuccess: false, error: 'no subscription id' };
+    if (subscription.airwallex_subscription_id) {
+      airwallexResult = await airwallexService.cancelSubscription(subscription.airwallex_subscription_id);
     }
 
-    await airwallexService.cancelSubscription(subscription.airwallex_subscription_id);
-
-    // Keep status as 'active' until period ends; only mark cancel_at_period_end
-    // The webhook (subscription.cancelled) will set status to 'canceled' when Airwallex confirms
+    // Always update DB regardless of Airwallex API result
     if (isSupabaseConfigured()) {
       await supabase
         .from('subscriptions')
@@ -471,7 +483,8 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
     }
 
     if (reason) {
-      console.log(`[CancelSubscription] user=${req.userId} reason="${reason}"`);
+      const sanitizedReason = String(reason).replace(/[\n\r]/g, ' ').slice(0, 200);
+      console.log(`[CancelSubscription] user=${req.userId} reason="${sanitizedReason}" airwallex=${airwallexResult.airwallexSuccess}`);
     }
 
     res.json({ success: true });

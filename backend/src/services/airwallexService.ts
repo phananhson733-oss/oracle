@@ -334,34 +334,38 @@ class AirwallexService {
     return await response.json();
   }
 
-  // Cancel subscription at end of current period
-  async cancelSubscription(subscriptionId: string): Promise<void> {
+  // Cancel subscription at end of current period (best-effort — DB is source of truth)
+  async cancelSubscription(subscriptionId: string): Promise<{ airwallexSuccess: boolean; error?: string }> {
     if (!isAirwallexConfigured()) {
-      throw new Error('Airwallex not configured');
+      return { airwallexSuccess: false, error: 'Airwallex not configured' };
     }
 
-    const token = await this.getAccessToken();
+    try {
+      const token = await this.getAccessToken();
 
-    // Use Update API to set cancel_at_period_end (preferred over Cancel API which cancels immediately)
-    const response = await fetch(
-      `${AIRWALLEX_API_BASE}/api/v1/subscriptions/${subscriptionId}`,
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          cancel_at_period_end: true,
-        }),
+      // Try Update API first: set cancel_at_period_end
+      const response = await fetch(
+        `${AIRWALLEX_API_BASE}/api/v1/subscriptions/${subscriptionId}`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            cancel_at_period_end: true,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        return { airwallexSuccess: true };
       }
-    );
 
-    if (!response.ok) {
       const errorText = await response.text();
-      console.error('Airwallex cancel subscription error:', response.status, errorText);
+      console.warn('Airwallex update subscription error:', response.status, errorText);
 
-      // Fallback: try the cancel endpoint directly if update fails
+      // Fallback: try the cancel endpoint directly
       const cancelResponse = await fetch(
         `${AIRWALLEX_API_BASE}/api/v1/subscriptions/${subscriptionId}/cancel`,
         {
@@ -376,11 +380,17 @@ class AirwallexService {
         }
       );
 
-      if (!cancelResponse.ok) {
-        const cancelError = await cancelResponse.text();
-        console.error('Airwallex cancel (fallback) error:', cancelResponse.status, cancelError);
-        throw new Error(`Failed to cancel subscription: ${cancelResponse.status}`);
+      if (cancelResponse.ok) {
+        return { airwallexSuccess: true };
       }
+
+      const cancelError = await cancelResponse.text();
+      console.warn('Airwallex cancel (fallback) error:', cancelResponse.status, cancelError);
+      return { airwallexSuccess: false, error: `Update ${response.status}, Cancel ${cancelResponse.status}` };
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn('Airwallex cancel subscription network error:', msg);
+      return { airwallexSuccess: false, error: msg };
     }
   }
 

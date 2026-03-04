@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
-import { getAirwallexPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
+import { getAirwallexPricing, createPortalSession, createSubscriptionCheckout, formatPrice, cancelSubscription, PricingInfo } from '../../services/paymentClient';
 import { redirectToAirwallexCheckout } from '../../services/airwallexCheckout';
 import { Check, Zap, Clock, ShoppingCart } from 'lucide-react';
 import { PaywallSocialProof, RiskReversal } from '../PaywallConversion';
@@ -23,6 +23,7 @@ const UpgradeModal: React.FC = () => {
     openCreditsModal,
     entitlements,
     upgradeModalReason,
+    refreshEntitlements,
   } = useAuth();
 
   const [selectedPlan, setSelectedPlan] = useState<PlanType>('yearly');
@@ -30,6 +31,13 @@ const UpgradeModal: React.FC = () => {
   const [busyAction, setBusyAction] = useState<'monthly' | 'yearly' | 'manage' | null>(null);
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState('');
+
+  // Cancel subscription flow
+  const [showCancelFlow, setShowCancelFlow] = useState(false);
+  const [cancelStep, setCancelStep] = useState<'reason' | 'confirm'>('reason');
+  const [cancelReason, setCancelReason] = useState('');
+  const [cancelLoading, setCancelLoading] = useState(false);
+  const [cancelError, setCancelError] = useState<string | null>(null);
 
   // 首次折扣资格：试用期用户仍然是"首次付费"，应享受折扣
   const isFirstDiscountEligible = (entitlements?.isSubscriber && !entitlements?.isTrialing)
@@ -114,6 +122,26 @@ const UpgradeModal: React.FC = () => {
     setShowUpgradeModal(false);
     setError('');
     setBusyAction(null);
+    setShowCancelFlow(false);
+    setCancelStep('reason');
+    setCancelReason('');
+    setCancelError(null);
+  };
+
+  const handleCancelSubscription = async () => {
+    setCancelLoading(true);
+    setCancelError(null);
+    try {
+      await cancelSubscription(cancelReason);
+      await refreshEntitlements();
+      setShowCancelFlow(false);
+      setCancelStep('reason');
+      setCancelReason('');
+    } catch (err) {
+      setCancelError(err instanceof Error ? err.message : 'Failed to cancel');
+    } finally {
+      setCancelLoading(false);
+    }
   };
 
   const handleUpgrade = async (plan: PlanType) => {
@@ -445,7 +473,112 @@ const UpgradeModal: React.FC = () => {
           {subscriptionT?.terms || '订阅后可随时取消'}
         </p>
 
+        {/* Cancel subscription link — only for active Airwallex subscribers */}
+        {isAlreadySubscriber && entitlements?.subscription?.provider === 'airwallex' && (
+          <div className="text-center mt-2">
+            <button
+              onClick={() => { setShowCancelFlow(true); setCancelStep('reason'); setCancelError(null); }}
+              className={`text-xs underline opacity-40 hover:opacity-70 transition-opacity ${isDark ? 'text-star-400' : 'text-paper-400'}`}
+            >
+              {language === 'zh' ? '取消订阅' : 'Cancel subscription'}
+            </button>
+          </div>
+        )}
+
       </div>
+
+      {/* Cancel subscription multi-step modal */}
+      <Modal
+        isOpen={showCancelFlow}
+        onClose={() => { setShowCancelFlow(false); setCancelStep('reason'); setCancelReason(''); }}
+        title={language === 'zh' ? '取消订阅' : 'Cancel Subscription'}
+      >
+        {cancelStep === 'reason' ? (
+          <div className="space-y-4">
+            <p className={`text-sm ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
+              {language === 'zh'
+                ? '我们很遗憾听到您想要取消。能告诉我们原因吗？这将帮助我们改进服务。'
+                : "We're sorry to see you go. Could you tell us why? This helps us improve."}
+            </p>
+            <div className="space-y-2">
+              {(language === 'zh'
+                ? ['功能不符合预期', '价格太高', '使用频率不高', '找到了更好的替代', '其他原因']
+                : ["Doesn't meet my needs", 'Too expensive', "Don't use it enough", 'Found a better alternative', 'Other']
+              ).map((reason) => (
+                <button
+                  key={reason}
+                  onClick={() => setCancelReason(reason)}
+                  className={`w-full text-left px-4 py-3 rounded-lg text-sm border transition-all ${
+                    cancelReason === reason
+                      ? 'border-red-500/60 bg-red-500/10 text-red-500'
+                      : isDark
+                        ? 'border-space-700 hover:border-space-600 text-star-300'
+                        : 'border-paper-200 hover:border-paper-300 text-paper-600'
+                  }`}
+                >
+                  {reason}
+                </button>
+              ))}
+            </div>
+            <div className="flex gap-3 pt-2">
+              <ActionButton
+                variant="secondary"
+                onClick={() => { setShowCancelFlow(false); setCancelReason(''); }}
+                className="flex-1"
+                size="sm"
+              >
+                {language === 'zh' ? '我再想想' : 'Never mind'}
+              </ActionButton>
+              <ActionButton
+                variant="secondary"
+                onClick={() => setCancelStep('confirm')}
+                disabled={!cancelReason}
+                className="flex-1 border-red-500/30 text-red-500 hover:bg-red-500/10 disabled:opacity-30"
+                size="sm"
+              >
+                {language === 'zh' ? '继续取消' : 'Continue'}
+              </ActionButton>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div className={`p-4 rounded-lg ${isDark ? 'bg-amber-500/10 border border-amber-500/30' : 'bg-amber-50 border border-amber-200'}`}>
+              <p className="text-sm font-medium text-amber-600 mb-2">
+                {language === 'zh' ? '取消后您将失去：' : "You'll lose access to:"}
+              </p>
+              <ul className="text-xs text-amber-600/80 space-y-1">
+                <li>• {language === 'zh' ? '无限详情解读（自我 / 今日 / 合盘）' : 'Unlimited detail access (Me / Today / Us)'}</li>
+                <li>• {language === 'zh' ? '每周额外 7 次 Ask 提问' : '7 extra Ask questions per week'}</li>
+                <li>• {language === 'zh' ? '每次续费赠送 100 积分' : '100 bonus credits per payment'}</li>
+              </ul>
+            </div>
+            {cancelError && (
+              <p className="text-sm text-red-500">{cancelError}</p>
+            )}
+            <div className="flex gap-3">
+              <ActionButton
+                variant="primary"
+                onClick={() => { setShowCancelFlow(false); setCancelStep('reason'); setCancelReason(''); }}
+                className="flex-1"
+                size="sm"
+              >
+                {language === 'zh' ? '保留订阅' : 'Keep Subscription'}
+              </ActionButton>
+              <ActionButton
+                variant="secondary"
+                onClick={handleCancelSubscription}
+                disabled={cancelLoading}
+                className="flex-1 border-red-500/30 text-red-500 hover:bg-red-500/10"
+                size="sm"
+              >
+                {cancelLoading
+                  ? (language === 'zh' ? '处理中...' : 'Cancelling...')
+                  : (language === 'zh' ? '确认取消' : 'Confirm Cancel')}
+              </ActionButton>
+            </div>
+          </div>
+        )}
+      </Modal>
     </Modal>
   );
 };
