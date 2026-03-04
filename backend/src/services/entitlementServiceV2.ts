@@ -93,7 +93,7 @@ export type PurchaseFeatureType = FeatureType | 'report';
 
 export interface AccessCheckResult {
   canAccess: boolean;
-  reason?: 'subscribed' | 'trial' | 'purchased' | 'free_quota';
+  reason?: 'subscribed' | 'trial' | 'purchased' | 'free_quota' | 'credits';
   needPurchase?: boolean;
   price?: number;          // 积分
   scope?: PurchaseScope;
@@ -714,7 +714,7 @@ class EntitlementServiceV2 {
       switch (featureType) {
         case 'dimension': {
           // 前 2 个维度免费
-          const freeDimensions = ['Emotions', 'Attachment'];
+          const freeDimensions = ['Emotions', 'Attachment', 'Drive'];
           if (featureId && freeDimensions.includes(featureId)) {
             return { canAccess: true, reason: 'free_quota' };
           }
@@ -793,7 +793,7 @@ class EntitlementServiceV2 {
             } else if (entitlements.synastry.subscriptionLeft > 0 || entitlements.isSubscriber) {
               reason = entitlements.isTrialing ? 'trial' : 'subscribed';
             } else {
-              reason = 'purchased';
+              reason = 'credits';
             }
             return { canAccess: true, reason };
           }
@@ -829,7 +829,7 @@ class EntitlementServiceV2 {
             } else if (entitlements.ask.subscriptionLeft > 0 || entitlements.isSubscriber) {
               reason = entitlements.isTrialing ? 'trial' : 'subscribed';
             } else {
-              reason = 'purchased';
+              reason = 'credits';
             }
             return { canAccess: true, reason };
           }
@@ -849,7 +849,7 @@ class EntitlementServiceV2 {
             } else if (entitlements.synthetica.subscriptionLeft > 0 || entitlements.isSubscriber) {
               reason = entitlements.isTrialing ? 'trial' : 'subscribed';
             } else {
-              reason = 'purchased';
+              reason = 'credits';
             }
             return { canAccess: true, reason };
           }

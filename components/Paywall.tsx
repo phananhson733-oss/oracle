@@ -17,16 +17,16 @@ import { LOGIN_GATE_MODE } from '../constants';
 // =====================================================
 
 const FEATURE_PRICES: Record<FeatureType, number> = {
-  dimension: 10,
-  core_theme: 10,
-  daily_script: 10,
-  daily_transit: 10,
-  synastry: 30,
-  synastry_detail: 10,
-  detail: 10,
-  ask: 20,
-  cbt_stats: 20,
-  synthetica: 10,
+  dimension: 5,
+  core_theme: 5,
+  daily_script: 5,
+  daily_transit: 5,
+  synastry: 15,
+  synastry_detail: 5,
+  detail: 5,
+  ask: 10,
+  cbt_stats: 10,
+  synthetica: 5,
 };
 
 // =====================================================

@@ -779,7 +779,7 @@ synastryRouter.get('/overview-section', authMiddleware, async (req, res) => {
       );
       if (!record.exists) {
         const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint, timezone);
-        if (entitlements.synastry.totalLeft <= 0) {
+        if (entitlements.synastry.totalLeft <= 0 && entitlements.credits < PRICING.SYNASTRY_FULL) {
           return res.status(403).json({
             error: 'Feature not available',
             needPurchase: true,
@@ -930,7 +930,7 @@ synastryRouter.get('/', authMiddleware, async (req, res) => {
       );
       if (!record.exists) {
         const entitlements = await entitlementServiceV2.getEntitlements(userId, deviceFingerprint, timezone);
-        if (entitlements.synastry.totalLeft <= 0) {
+        if (entitlements.synastry.totalLeft <= 0 && entitlements.credits < PRICING.SYNASTRY_FULL) {
           return res.status(403).json({
             error: 'Feature not available',
             needPurchase: true,

@@ -1,6 +1,6 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 2.0
+> **Version**: 2.1
 > **Last Updated**: 2026-03-04
 > **Status**: Living Document — synced with codebase
 
@@ -327,15 +327,14 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | 权益 | 免费用户 | 订阅用户 |
 |------|----------|----------|
-| Ask Q&A | 3 次/周 | 8 次/周 |
+| Ask Q&A | 3 次/周 | 10 次/周 |
 | Synastry | 3 次（永久） | +1 次/周 |
 | Synthetica | 3 次/天 | 10 次/天 |
 | Detail 详情 | 2 次免费 | 无限制 |
-| 心理维度 | 前 2 个免费 | 全部解锁 |
+| 心理维度 | 前 3 个免费（Emotions, Attachment, Drive） | 全部解锁 |
 | Daily Script | 受限 | 无限制 |
 | CBT 月度统计 | 锁定 | 解锁 |
-| 报告折扣 | — | 20% off |
-| 订阅奖励 | — | 每次成功支付 +500 credits |
+| 订阅奖励 | — | 每次成功支付 +100 credits |
 
 ### 3.2 积分包 (Credits Packages)
 
@@ -352,21 +351,21 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | 功能 | Credits |
 |------|---------|
-| 单个心理维度解锁 | 10 |
-| 单个核心主题解锁 | 10 |
-| 合盘完整解读 | 30 |
-| 合盘详情视图 | 10 |
-| Detail 深度解读 | 10 |
+| 单个心理维度解锁 | 5 |
+| 单个核心主题解锁 | 5 |
+| 合盘完整解读 | 15 |
+| 合盘详情视图 | 5 |
+| Detail 深度解读 | 5 |
 
 **消耗品 (Consumable)**:
 
 | 功能 | Credits |
 |------|---------|
-| Ask 单次提问 | 20 |
-| Synthetica 单次使用 | 10 |
-| CBT 月度统计解锁 | 20 |
-| Daily Script | 10 |
-| Daily Transit Detail | 10 |
+| Ask 单次提问 | 10 |
+| Synthetica 单次使用 | 5 |
+| CBT 月度统计解锁 | 10 |
+| Daily Script | 5 |
+| Daily Transit Detail | 5 |
 
 ### 3.4 配额系统 (Quota System)
 
@@ -378,13 +377,13 @@ AI 生成的深度心理分析，每个维度独立解读：
 | Synastry 合盘 | 3 次（终身） | 不重置 |
 | Synthetica | 3 次/天 | 每日 00:00 UTC |
 | Detail 详情 | 2 次 | 不重置 |
-| 心理维度 | 前 2 个 | 不重置 |
+| 心理维度 | 前 3 个（Emotions, Attachment, Drive） | 不重置 |
 
 #### 订阅用户额外配额
 
 | 功能 | 额外限额 | 重置周期 |
 |------|----------|----------|
-| Ask 提问 | +5 次/周 | 每周一 00:00 UTC |
+| Ask 提问 | +7 次/周 | 每周一 00:00 UTC |
 | Synastry 合盘 | +1 次/周 | 每周一 00:00 UTC |
 | Synthetica | +7 次/天 | 每日 00:00 UTC |
 
@@ -403,9 +402,9 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | 功能 | 积分价格 | 说明 |
 |------|----------|------|
-| Ask 提问 | 20 credits | 免费/订阅配额用完后自动扣减 |
-| Synastry 合盘 | 30 credits | 免费/订阅配额用完后自动扣减 |
-| Synthetica | 10 credits | 免费/订阅配额用完后自动扣减 |
+| Ask 提问 | 10 credits | 免费/订阅配额用完后自动扣减 |
+| Synastry 合盘 | 15 credits | 免费/订阅配额用完后自动扣减 |
+| Synthetica | 5 credits | 免费/订阅配额用完后自动扣减 |
 
 ### 3.5 支付方式 (Payment Providers)
 

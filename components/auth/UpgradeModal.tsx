@@ -215,7 +215,7 @@ const UpgradeModal: React.FC = () => {
     subscriptionT?.free_benefit_1 || '每周 3 次 Ask 问答',
     subscriptionT?.free_benefit_2 || '永久免费 3 次合盘',
     subscriptionT?.free_benefit_3 || '每日 3 次百科工具',
-    subscriptionT?.free_benefit_4 || '基础心理维度解读',
+    subscriptionT?.free_benefit_4 || '3 个心理维度免费体验',
     subscriptionT?.free_benefit_5 || '今日运势永久免费',
     subscriptionT?.free_benefit_6 || '百科永久免费',
     subscriptionT?.free_benefit_7 || 'CBT 日记永久记录',
@@ -389,7 +389,7 @@ const UpgradeModal: React.FC = () => {
                 {/* Pro benefits */}
                 <div className="space-y-3 mb-6">
                   {benefitItems.map((item: string, idx: number) => {
-                    const isBonusCredits = item.includes('500') && (item.includes('credit') || item.includes('积分'));
+                    const isBonusCredits = item.includes('100') && (item.includes('credit') || item.includes('积分'));
                     return (
                       <div key={idx} className={`flex items-start gap-3 text-base ${isBonusCredits ? `rounded-lg px-2 py-1.5 -mx-2 ${isDark ? 'bg-gold-500/10' : 'bg-gold-50'}` : ''}`}>
                         <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${isBonusCredits ? 'text-gold-400' : 'text-gold-500'}`} />

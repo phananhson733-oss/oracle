@@ -182,7 +182,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
     switch (featureType) {
       case 'dimension': {
         // 前 2 个维度免费
-        const freeDimensions = ['Emotions', 'Attachment'];
+        const freeDimensions = ['Emotions', 'Attachment', 'Drive'];
         if (featureId && freeDimensions.includes(featureId)) return true;
         // 已购买
         if (featureId && entitlements.purchasedFeatures.dimensions.includes(featureId)) return true;
@@ -466,10 +466,12 @@ export function useSynastryQuota() {
     }
 
     let hasPurchased = entitlements?.purchasedFeatures.synastryHashes.includes(result.hash) ?? false;
+    let useCredits = false;
     if (!hasPurchased) {
       try {
         const access = await checkAccess('synastry', result.hash);
         hasPurchased = access.canAccess && access.reason === 'purchased';
+        useCredits = access.canAccess && access.reason === 'credits';
       } catch {
         hasPurchased = false;
       }
@@ -477,6 +479,12 @@ export function useSynastryQuota() {
 
     if (hasPurchased) {
       const hash = await recordSynastry(personA, personB, relationshipType, false);
+      return { hash, isNew: true, paid: true };
+    }
+
+    if (useCredits) {
+      // Credits fallback: pass isFree=true so backend consumeFeature deducts credits
+      const hash = await recordSynastry(personA, personB, relationshipType, true);
       return { hash, isNew: true, paid: true };
     }
 

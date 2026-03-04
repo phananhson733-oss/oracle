@@ -47,7 +47,7 @@ export const FREE_TIER_LIMITS = {
 // Subscription benefits ($6.99/月)
 export const SUBSCRIPTION_BENEFITS = {
   // 新版配置 - 权益额度（每周）
-  ASK_EXTRA_PER_WEEK: 5,             // 订阅额外 +5 次/周 Ask
+  ASK_EXTRA_PER_WEEK: 7,             // 订阅额外 +7 次/周 Ask（合计 10 次）
   SYNASTRY_EXTRA_PER_WEEK: 1,        // 订阅额外 +1 次/周 合盘
   SYNTHETICA_EXTRA_PER_DAY: 7,       // 订阅额外 +7 次/日 Synthetica
 
@@ -61,7 +61,7 @@ export const SUBSCRIPTION_BENEFITS = {
   REPORT_DISCOUNT: 0.2,              // 8 折 (20% off)
 
   // 订阅赠送积分
-  SUBSCRIPTION_BONUS_CREDITS: 500,   // 每次成功支付发放
+  SUBSCRIPTION_BONUS_CREDITS: 100,   // 每次成功支付发放
 
   // 试用期
   TRIAL_DAYS: 7,                     // 首次注册赠送 7 天试用
@@ -76,17 +76,17 @@ export const PRICING = {
   // 订阅（美元）
   SUBSCRIPTION_MONTHLY: 699,         // $6.99/月
 
-  // 积分定价（1 积分 = $0.10）
-  DIMENSION_UNLOCK: 10,              // 10 积分 - 心理维度单个解锁
-  CORE_THEME_UNLOCK: 10,             // 10 积分 - 核心主题单个解锁
-  DAILY_SCRIPT: 10,                  // 10 积分 - 今日剧本（每日）
-  DAILY_TRANSIT_DETAIL: 10,          // 10 积分 - 星象详情（每日）
-  DETAIL_VIEW: 10,                   // 10 积分 - 深度详情
-  SYNASTRY_FULL: 30,                 // 30 积分 - 合盘单次
-  SYNASTRY_DETAIL: 10,               // 10 积分 - 合盘内查看详情
-  ASK_SINGLE: 20,                    // 20 积分 - Ask 单次
-  CBT_STATS_MONTHLY: 20,             // 20 积分 - CBT 统计月度
-  SYNTHETICA_USE: 10,                // 10 积分 - Synthetica 单次使用
+  // 积分定价（1 积分 ≈ $0.05）— DeepSeek token 成本低，全线半价
+  DIMENSION_UNLOCK: 5,               // 5 积分 - 心理维度单个解锁
+  CORE_THEME_UNLOCK: 5,              // 5 积分 - 核心主题单个解锁
+  DAILY_SCRIPT: 5,                   // 5 积分 - 今日剧本（每日）
+  DAILY_TRANSIT_DETAIL: 5,           // 5 积分 - 星象详情（每日）
+  DETAIL_VIEW: 5,                    // 5 积分 - 深度详情
+  SYNASTRY_FULL: 15,                 // 15 积分 - 合盘单次
+  SYNASTRY_DETAIL: 5,                // 5 积分 - 合盘内查看详情
+  ASK_SINGLE: 10,                    // 10 积分 - Ask 单次
+  CBT_STATS_MONTHLY: 10,             // 10 积分 - CBT 统计月度
+  SYNTHETICA_USE: 5,                 // 5 积分 - Synthetica 单次使用
 };
 
 // LOGIN_GATE_MODE: 登录门控模式（后端侧标志，与前端 constants.ts 保持一致）

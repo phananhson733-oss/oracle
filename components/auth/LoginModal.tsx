@@ -247,6 +247,7 @@ const LoginModal: React.FC = () => {
   // Handle verification code submit
   const handleVerifySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (verificationCode.length !== 6) return;
     setError('');
     setLoading(true);
     const reqId = ++reqIdRef.current;
@@ -408,6 +409,7 @@ const LoginModal: React.FC = () => {
             <div className="flex items-center justify-between">
               <button
                 onClick={() => {
+                  reqIdRef.current += 1; // invalidate in-flight requests
                   setStep('form');
                   setVerificationCode('');
                   setError('');
@@ -574,6 +576,7 @@ const LoginModal: React.FC = () => {
             {/* Switch mode */}
             <button
               onClick={() => {
+                reqIdRef.current += 1; // invalidate in-flight requests
                 setMode(mode === 'login' ? 'register' : 'login');
                 setError('');
                 setStep('form');
