@@ -7,7 +7,8 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
 import { getAirwallexPricing, createPortalSession, createSubscriptionCheckout, formatPrice, PricingInfo } from '../../services/paymentClient';
 import { redirectToAirwallexCheckout } from '../../services/airwallexCheckout';
-import { Check, Zap, Clock } from 'lucide-react';
+import { Check, Zap, Clock, ShoppingCart } from 'lucide-react';
+import { PaywallSocialProof, RiskReversal } from '../PaywallConversion';
 
 type PlanType = 'monthly' | 'yearly';
 
@@ -19,6 +20,7 @@ const UpgradeModal: React.FC = () => {
     setShowUpgradeModal,
     isAuthenticated,
     openLoginModal,
+    openCreditsModal,
     entitlements,
     upgradeModalReason,
   } = useAuth();
@@ -29,8 +31,8 @@ const UpgradeModal: React.FC = () => {
   const [error, setError] = useState('');
   const [countdown, setCountdown] = useState('');
 
-  // 首次折扣资格直接从 entitlements 读取（已订阅用户续费时不享受首次折扣）
-  const isFirstDiscountEligible = entitlements?.isSubscriber
+  // 首次折扣资格：试用期用户仍然是"首次付费"，应享受折扣
+  const isFirstDiscountEligible = (entitlements?.isSubscriber && !entitlements?.isTrialing)
     ? false
     : ((entitlements as any)?.isFirstDiscountEligible ?? false);
 
@@ -96,7 +98,7 @@ const UpgradeModal: React.FC = () => {
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
       if (days > 0) {
-        setCountdown(`${days}天 ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+        setCountdown(`${days}${language === 'zh' ? '天' : 'd'} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
       } else {
         setCountdown(`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
       }
@@ -106,7 +108,7 @@ const UpgradeModal: React.FC = () => {
     const timer = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(timer);
-  }, [showUpgradeModal, entitlements]);
+  }, [showUpgradeModal, entitlements, language]);
 
   const handleClose = () => {
     setShowUpgradeModal(false);
@@ -184,7 +186,8 @@ const UpgradeModal: React.FC = () => {
     }
   };
   const subscriptionT = t.subscription as any;
-  const isAlreadySubscriber = entitlements?.isSubscriber;
+  // 试用期用户不算"已订阅"，应该看到订阅（而非续费）界面
+  const isAlreadySubscriber = entitlements?.isSubscriber && !entitlements?.isTrialing;
   const modalTitle = isAlreadySubscriber ? (subscriptionT?.renew_title || '续费 Pro') : (subscriptionT?.title || '订阅Pro');
   // Fallback prices must match the currency context to avoid ¥6.99 bugs
   const fallbackMonthly = language === 'zh' ? 4900 : 699;
@@ -319,7 +322,7 @@ const UpgradeModal: React.FC = () => {
                   </div>
                 )}
 
-                <div className="mt-auto">
+                <div className="mt-auto space-y-2">
                   <ActionButton
                     variant="secondary"
                     onClick={handleClose}
@@ -328,6 +331,20 @@ const UpgradeModal: React.FC = () => {
                     disabled
                   >
                     {subscriptionT?.current_plan || '当前方案'}
+                  </ActionButton>
+                  <ActionButton
+                    variant="secondary"
+                    onClick={() => {
+                      handleClose();
+                      openCreditsModal();
+                    }}
+                    className="w-full"
+                    size="lg"
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      <ShoppingCart className="w-4 h-4" />
+                      {subscriptionT?.buy_credits_cta || 'Buy Credits Instead'}
+                    </span>
                   </ActionButton>
                 </div>
               </div>
@@ -384,6 +401,9 @@ const UpgradeModal: React.FC = () => {
                   })}
                 </div>
 
+                {/* Social proof */}
+                <PaywallSocialProof variant="compact" />
+
                 <div className="mt-auto">
                   <ActionButton
                     variant="primary"
@@ -405,6 +425,10 @@ const UpgradeModal: React.FC = () => {
                       subscriptionT?.login || '登录以继续'
                     )}
                   </ActionButton>
+                  {/* Risk reversal */}
+                  <div className="mt-4">
+                    <RiskReversal />
+                  </div>
                 </div>
               </div>
             </div>

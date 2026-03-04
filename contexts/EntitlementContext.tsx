@@ -153,7 +153,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
       if (featureType === 'ask') return entitlements.ask.totalLeft > 0;
       if (featureType === 'synastry') {
         if (featureId && entitlements.purchasedFeatures.synastryHashes.includes(featureId)) return true;
-        return entitlements.synastry.totalLeft > 0;
+        return entitlements.synastry.totalLeft > 0 || entitlements.credits >= POINTS_PRICING.synastry;
       }
       if (featureType === 'synthetica') return entitlements.synthetica.totalLeft > 0;
       return true;
@@ -169,7 +169,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
       }
       if (featureType === 'synastry') {
         if (featureId && entitlements.purchasedFeatures.synastryHashes.includes(featureId)) return true;
-        return entitlements.synastry.totalLeft > 0;
+        return entitlements.synastry.totalLeft > 0 || entitlements.credits >= POINTS_PRICING.synastry;
       }
       if (featureType === 'synthetica') {
         return entitlements.synthetica.totalLeft > 0 || entitlements.credits >= POINTS_PRICING.synthetica;
@@ -203,7 +203,7 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
       case 'synastry': {
         if (featureId && entitlements.purchasedFeatures.synastryHashes.includes(featureId)) return true;
-        return entitlements.synastry.freeLeft > 0;
+        return entitlements.synastry.freeLeft > 0 || entitlements.credits >= POINTS_PRICING.synastry;
       }
 
       case 'synastry_detail': {

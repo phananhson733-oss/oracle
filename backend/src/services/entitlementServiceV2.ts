@@ -786,9 +786,15 @@ class EntitlementServiceV2 {
           if (featureId && entitlements.purchasedFeatures.synastryHashes.includes(featureId)) {
             return { canAccess: true, reason: 'purchased' };
           }
-          if (entitlements.synastry.totalLeft > 0) {
-            const reason = entitlements.synastry.freeLeft > 0 ? 'free_quota' :
-              (entitlements.isTrialing ? 'trial' : 'subscribed');
+          if (entitlements.synastry.totalLeft > 0 || entitlements.credits >= PRICING.SYNASTRY_FULL) {
+            let reason: AccessCheckResult['reason'] = 'free_quota';
+            if (entitlements.synastry.freeLeft > 0) {
+              reason = 'free_quota';
+            } else if (entitlements.synastry.subscriptionLeft > 0 || entitlements.isSubscriber) {
+              reason = entitlements.isTrialing ? 'trial' : 'subscribed';
+            } else {
+              reason = 'purchased';
+            }
             return { canAccess: true, reason };
           }
           return {
@@ -1020,6 +1026,9 @@ class EntitlementServiceV2 {
       }
       if (entitlements.synastry.freeLeft > 0) {
         return this.consumeFreeSynastry(userId, deviceFingerprint);
+      }
+      if (userId && entitlements.credits >= PRICING.SYNASTRY_FULL) {
+        return this.consumeConsumableRecord(userId, 'gm_credit', PRICING.SYNASTRY_FULL);
       }
       return false;
     }

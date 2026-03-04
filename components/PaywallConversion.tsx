@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Star, Clock, TrendingUp, Users, Check } from 'lucide-react';
-import { useTheme } from './UIComponents';
+import { useTheme, useLanguage } from './UIComponents';
 
 // =====================================================
 // 社交证明组件
@@ -23,6 +23,7 @@ export const PaywallSocialProof: React.FC<PaywallSocialProofProps> = ({
   showUrgency = true,
 }) => {
   const { theme } = useTheme();
+  const { language } = useLanguage();
   const isDark = theme === 'dark';
 
   const translations = {
@@ -48,7 +49,7 @@ export const PaywallSocialProof: React.FC<PaywallSocialProofProps> = ({
     },
   };
 
-  const lang = 'zh';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const t = translations[lang];
 
   if (variant === 'compact') {
@@ -130,6 +131,7 @@ export const PaywallSocialProof: React.FC<PaywallSocialProofProps> = ({
 
 export const RiskReversal: React.FC = () => {
   const { theme } = useTheme();
+  const { language } = useLanguage();
   const isDark = theme === 'dark';
 
   const translations = {
@@ -145,7 +147,7 @@ export const RiskReversal: React.FC = () => {
     },
   };
 
-  const lang = 'zh';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const t = translations[lang];
 
   return (
@@ -184,6 +186,7 @@ export const ValueComparison: React.FC<ValueComparisonProps> = ({
   yearlySavings,
 }) => {
   const { theme } = useTheme();
+  const { language } = useLanguage();
   const isDark = theme === 'dark';
 
   const translations = {
@@ -201,7 +204,7 @@ export const ValueComparison: React.FC<ValueComparisonProps> = ({
     },
   };
 
-  const lang = 'zh';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const t = translations[lang];
 
   const savingsAmount = monthlyPrice * 12 - yearlyPrice;

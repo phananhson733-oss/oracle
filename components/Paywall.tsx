@@ -221,6 +221,9 @@ export const LockedAccordion: React.FC<LockedAccordionProps> = ({
               <Crown className="w-3 h-3" />
               <span>{t.paywall?.subscribe_unlock || '订阅解锁（无限）'}</span>
             </button>
+            <p className={`text-[11px] text-center ${s.muted}`}>
+              {t.paywall?.subscribe_value_hint || 'Unlimited access from $6.99/mo'}
+            </p>
             <button
               onClick={handleCreditsUnlock}
               className={`w-full px-3 py-2 text-xs border rounded transition-colors ${s.border} ${s.muted} hover:${s.heading} hover:border-gold-500/30 flex items-center justify-center gap-2`}
@@ -372,6 +375,9 @@ export const LockedContent: React.FC<LockedContentProps> = ({
               <span>{t.paywall?.subscribe_unlock || '订阅解锁（无限使用）'}</span>
             </div>
           </button>
+          <p className={`text-[11px] text-center ${s.muted}`}>
+            {t.paywall?.subscribe_value_hint || 'Unlimited access from $6.99/mo'}
+          </p>
 
           <button
             onClick={handleCreditsUnlock}

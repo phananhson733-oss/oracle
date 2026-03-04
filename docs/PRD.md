@@ -1,7 +1,7 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 1.9
-> **Last Updated**: 2026-02-26
+> **Version**: 2.0
+> **Last Updated**: 2026-03-04
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -396,6 +396,16 @@ AI 生成的深度心理分析，每个维度独立解读：
 | Synastry 配额 | 每周 | 周一 00:00 UTC | 免费 3 次为永久额度 |
 | Synthetica | 每日 | 00:00 UTC | 常规模式按 UTC 日切；LOGIN_GATE_MODE 下按用户时区 |
 | CBT 统计 | 每月 | 月初 | 按月解锁 |
+
+#### 积分兜底 (Credits Fallback)
+
+当配额用完时，以下功能支持自动从积分余额扣减：
+
+| 功能 | 积分价格 | 说明 |
+|------|----------|------|
+| Ask 提问 | 20 credits | 免费/订阅配额用完后自动扣减 |
+| Synastry 合盘 | 30 credits | 免费/订阅配额用完后自动扣减 |
+| Synthetica | 10 credits | 免费/订阅配额用完后自动扣减 |
 
 ### 3.5 支付方式 (Payment Providers)
 

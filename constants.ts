@@ -1420,13 +1420,13 @@ export const TRANSLATIONS = {
       portal_error: "Unable to open subscription details right now.",
       benefits_title: "Subscription includes",
       benefits: [
-        "Unlimited detail access (Me / Today / Us)",
-        "8 Ask questions per week (3 free + 5 sub)",
-        "3 free synastry reads + 1 extra per week",
-        "CBT stats insights unlocked each month",
-        "Wiki Tools +7 daily uses (10 total)",
-        "500 bonus credits per successful payment",
-        "Reports at 20% off credits"
+        "Deep-dive into every reading — Me, Today & Us",
+        "Ask the stars up to 8× a week",
+        "Unlock relationship chemistry with extra synastry",
+        "Monthly CBT mood insights, auto-unlocked",
+        "10 daily Wiki & tool lookups",
+        "500 bonus credits with every payment",
+        "20% off all premium reports"
       ],
       success_title: "Payment Successful!",
       success_subtitle: "Welcome to Pro",
@@ -1442,7 +1442,15 @@ export const TRANSLATIONS = {
       payment_paypal: "PayPal",
       // 错误消息
       payment_unavailable: "Payment service not configured. Use GM commands for testing in development.",
-      portal_failed: "Failed to open subscription portal"
+      portal_failed: "Failed to open subscription portal",
+      free_benefit_1: "3 Ask questions per week",
+      free_benefit_2: "3 synastry readings (lifetime)",
+      free_benefit_3: "3 daily Wiki tool uses",
+      free_benefit_4: "Basic personality dimensions",
+      free_benefit_5: "Daily horoscope, always free",
+      free_benefit_6: "Astrology Wiki, always free",
+      free_benefit_7: "CBT journal, unlimited entries",
+      buy_credits_cta: "Buy Credits Instead"
     },
     paywall: {
       unlock_title: "Unlock {feature}",
@@ -1457,6 +1465,7 @@ export const TRANSLATIONS = {
       subscribe_title: "Start subscription",
       subscribe_desc: "Unlock everything + more benefits",
       subscribe_badge: "Recommended",
+      subscribe_value_hint: "Unlimited access from $6.99/mo",
       insufficient: "Insufficient credits. Please top up first.",
       unlock_failed: "Failed to unlock with credits. Please try again.",
       login_credits: "Please sign in to use credits",
@@ -2917,7 +2926,15 @@ export const TRANSLATIONS = {
       payment_paypal: "PayPal",
       // 错误消息
       payment_unavailable: "支付服务未配置。开发环境请使用 GM 命令测试订阅功能。",
-      portal_failed: "无法打开订阅管理页面"
+      portal_failed: "无法打开订阅管理页面",
+      free_benefit_1: "每周 3 次 Ask 问答",
+      free_benefit_2: "永久免费 3 次合盘",
+      free_benefit_3: "每日 3 次百科工具",
+      free_benefit_4: "基础心理维度解读",
+      free_benefit_5: "今日运势永久免费",
+      free_benefit_6: "百科永久免费",
+      free_benefit_7: "CBT 日记永久记录",
+      buy_credits_cta: "购买积分"
     },
     paywall: {
       unlock_title: "解锁 {feature}",
@@ -2932,6 +2949,7 @@ export const TRANSLATIONS = {
       subscribe_title: "开启订阅",
       subscribe_desc: "解锁所有内容 + 更多权益",
       subscribe_badge: "推荐",
+      subscribe_value_hint: "¥49/月起，无限畅享",
       insufficient: "积分不足，请先购买积分。",
       unlock_failed: "积分解锁失败，请稍后再试。",
       login_credits: "请先登录以使用积分",
