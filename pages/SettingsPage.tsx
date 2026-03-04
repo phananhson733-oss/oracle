@@ -11,7 +11,7 @@ import { FREE_MODE, LOGIN_GATE_MODE } from '../constants';
 import { useAuth } from '../contexts/AuthContext';
 import { useEntitlement } from '../contexts/EntitlementContext';
 import { deleteAccount, exportData } from '../services/authClient';
-import { cancelSubscription, gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription } from '../services/paymentClient';
+import { cancelSubscription } from '../services/paymentClient';
 
 // --- Helper sub-components (only used by SettingsPage) ---
 
@@ -150,11 +150,8 @@ const DangerZoneSection: React.FC<{ user: any; language: string; theme: string }
 const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = ({ profile, onReset }) => {
     const { t, language, toggleLanguage } = useLanguage();
     const { theme, toggleTheme } = useTheme();
-    const { isAuthenticated, refreshEntitlements: refreshLegacyEntitlements, refreshUser, user, logout, openUpgradeModal, openCreditsModal } = useAuth();
+    const { refreshEntitlements: refreshLegacyEntitlements, user, logout, openUpgradeModal, openCreditsModal } = useAuth();
     const { refreshEntitlements: refreshV2Entitlements, isTrialing, trialDaysLeft, entitlements } = useEntitlement();
-    const [gmBusy, setGmBusy] = useState(false);
-    const [gmMessage, setGmMessage] = useState<string | null>(null);
-    const [gmError, setGmError] = useState<string | null>(null);
     const navigate = useNavigate();
 
     // Cancel subscription flow
@@ -168,7 +165,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
         setCancelLoading(true);
         setCancelError(null);
         try {
-            await cancelSubscription();
+            await cancelSubscription(cancelReason);
             await Promise.allSettled([refreshLegacyEntitlements(), refreshV2Entitlements()]);
             setShowCancelFlow(false);
             setCancelStep('reason');
@@ -213,63 +210,6 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
         return () => clearInterval(timer);
     }, [isTrialing, entitlements?.trialEndsAt]);
-
-    const runGmAction = async (
-        action: () => Promise<{ success: boolean; message?: string }>,
-        fallbackMessage: string
-    ) => {
-        if (!isAuthenticated) {
-            setGmMessage(null);
-            setGmError(t.gm?.login_required || 'Please log in to use GM commands.');
-            return;
-        }
-        setGmBusy(true);
-        setGmMessage(null);
-        setGmError(null);
-        try {
-            const result = await action();
-            setGmMessage(result.message || fallbackMessage);
-            await Promise.allSettled([refreshLegacyEntitlements(), refreshV2Entitlements()]);
-        } catch (error) {
-            setGmError(error instanceof Error ? error.message : fallbackMessage);
-        } finally {
-            setGmBusy(false);
-        }
-    };
-
-    const handleGmDevSession = async () => {
-        setGmBusy(true);
-        setGmMessage(null);
-        setGmError(null);
-        try {
-            await gmCreateDevSession();
-            await refreshUser();
-            await Promise.allSettled([refreshLegacyEntitlements(), refreshV2Entitlements()]);
-            setGmMessage(language === 'zh' ? 'GM 会话已创建' : 'GM session ready');
-        } catch (error) {
-            const fallbackMessage = language === 'zh' ? '创建 GM 会话失败' : 'Failed to create GM session';
-            setGmError(error instanceof Error ? error.message : fallbackMessage);
-        } finally {
-            setGmBusy(false);
-        }
-    };
-
-    const handleGmUnlockSubscription = () => runGmAction(
-        gmUnlockSubscription,
-        t.gm?.subscription_unlocked || 'Subscription unlocked'
-    );
-    const handleGmCancelSubscription = () => runGmAction(
-        gmCancelSubscription,
-        t.gm?.subscription_cancelled || 'Subscription cancelled'
-    );
-    const handleGmAddTokens = () => runGmAction(
-        () => gmAddTokens(9999),
-        language === 'zh' ? '已增加 9999 积分' : 'Added 9999 credits'
-    );
-    const handleGmClearTokens = () => runGmAction(
-        gmClearTokens,
-        language === 'zh' ? '积分已清零' : 'Credits cleared'
-    );
 
     return (
         <>
@@ -551,8 +491,8 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                             </p>
                             <ul className="text-xs text-amber-600/80 space-y-1">
                                 <li>• {language === 'zh' ? '无限详情解读 (Me / Today / Us)' : 'Unlimited detail access (Me / Today / Us)'}</li>
-                                <li>• {language === 'zh' ? '每周额外 5 次 Ask 提问' : '5 extra Ask questions per week'}</li>
-                                <li>• {language === 'zh' ? '每次续费 500 赠送积分' : '500 bonus credits per payment'}</li>
+                                <li>• {language === 'zh' ? '每周额外 7 次 Ask 提问' : '7 extra Ask questions per week'}</li>
+                                <li>• {language === 'zh' ? '每次续费 100 赠送积分' : '100 bonus credits per payment'}</li>
                                 <li>• {language === 'zh' ? '报告 20% 折扣' : '20% off all reports'}</li>
                             </ul>
                         </div>
@@ -584,38 +524,6 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                 )}
             </Modal>
 
-            {import.meta.env.DEV && (
-            <Section title={language === 'zh' ? 'GM 命令' : 'GM Commands'}>
-                <Card className="mb-4 border-l border-l-purple-500/40">
-                    <div className="mb-4">
-                        <div className="font-bold text-sm text-purple-500 mb-1">{language === 'zh' ? 'GM 工具' : 'GM Tools'}</div>
-                        <div className="text-xs opacity-70">{language === 'zh' ? '调试与测试工具' : 'Debug & Testing Tools'}</div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                        <ActionButton onClick={handleGmUnlockSubscription} disabled={gmBusy} size="sm" variant="outline">
-                            {t.gm?.unlock_sub_button || 'Unlock Sub'}
-                        </ActionButton>
-                        <ActionButton onClick={handleGmCancelSubscription} disabled={gmBusy} size="sm" variant="outline">
-                            {t.gm?.cancel_sub_button || 'Cancel Sub'}
-                        </ActionButton>
-                        <ActionButton onClick={handleGmAddTokens} disabled={gmBusy} size="sm" variant="outline">
-                            {language === 'zh' ? '加积分' : 'Add Credits'}
-                        </ActionButton>
-                        <ActionButton onClick={handleGmClearTokens} disabled={gmBusy} size="sm" variant="outline">
-                            {language === 'zh' ? '清积分' : 'Clear Credits'}
-                        </ActionButton>
-                        <ActionButton onClick={handleGmDevSession} disabled={gmBusy} size="sm" variant="outline">
-                            {language === 'zh' ? 'GM 开发会话' : 'GM Dev Session'}
-                        </ActionButton>
-                    </div>
-                    {(gmBusy || gmMessage || gmError) && (
-                        <div className={`text-xs text-center py-2 rounded ${gmError ? 'text-danger bg-danger/5' : 'text-success bg-success/5'}`}>
-                            {gmBusy ? (language === 'zh' ? '处理中...' : 'Processing...') : (gmError || gmMessage)}
-                        </div>
-                    )}
-                </Card>
-            </Section>
-            )}
         </Container>
         </>
     );

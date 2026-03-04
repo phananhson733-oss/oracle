@@ -444,6 +444,8 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
       return res.status(503).json({ error: 'Airwallex service unavailable' });
     }
 
+    const { reason } = req.body || {};
+
     const subscription = await subscriptionService.getSubscription(req.userId!);
 
     if (!subscription) {
@@ -456,16 +458,20 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
 
     await airwallexService.cancelSubscription(subscription.airwallex_subscription_id);
 
-    // Update DB status
+    // Keep status as 'active' until period ends; only mark cancel_at_period_end
+    // The webhook (subscription.cancelled) will set status to 'canceled' when Airwallex confirms
     if (isSupabaseConfigured()) {
       await supabase
         .from('subscriptions')
         .update({
-          status: 'canceled',
           cancel_at_period_end: true,
           updated_at: new Date().toISOString(),
         })
         .eq('id', subscription.id);
+    }
+
+    if (reason) {
+      console.log(`[CancelSubscription] user=${req.userId} reason="${reason}"`);
     }
 
     res.json({ success: true });

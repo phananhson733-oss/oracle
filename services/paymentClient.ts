@@ -465,10 +465,11 @@ async function gmRequest(path: string, errorMessage: string, body?: Record<strin
 }
 
 // Cancel subscription (production — calls Airwallex cancel API)
-export async function cancelSubscription(): Promise<{ success: boolean }> {
+export async function cancelSubscription(reason?: string): Promise<{ success: boolean }> {
   const res = await authFetch(`${API_BASE}/airwallex/cancel-subscription`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ reason }),
   });
   if (!res.ok) {
     const data = await res.json().catch(() => ({}));
