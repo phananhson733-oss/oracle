@@ -493,7 +493,6 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                 <li>• {language === 'zh' ? '无限详情解读（自我 / 今日 / 合盘）' : 'Unlimited detail access (Me / Today / Us)'}</li>
                                 <li>• {language === 'zh' ? '每周额外 7 次 Ask 提问' : '7 extra Ask questions per week'}</li>
                                 <li>• {language === 'zh' ? '每次续费赠送 100 积分' : '100 bonus credits per payment'}</li>
-                                <li>• {language === 'zh' ? '报告享 8 折优惠' : '20% off all reports'}</li>
                             </ul>
                         </div>
                         {cancelError && (

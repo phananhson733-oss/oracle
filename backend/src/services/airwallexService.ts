@@ -334,7 +334,7 @@ class AirwallexService {
     return await response.json();
   }
 
-  // Cancel subscription
+  // Cancel subscription at end of current period
   async cancelSubscription(subscriptionId: string): Promise<void> {
     if (!isAirwallexConfigured()) {
       throw new Error('Airwallex not configured');
@@ -342,8 +342,9 @@ class AirwallexService {
 
     const token = await this.getAccessToken();
 
+    // Use Update API to set cancel_at_period_end (preferred over Cancel API which cancels immediately)
     const response = await fetch(
-      `${AIRWALLEX_API_BASE}/api/v1/subscriptions/${subscriptionId}/cancel`,
+      `${AIRWALLEX_API_BASE}/api/v1/subscriptions/${subscriptionId}`,
       {
         method: 'POST',
         headers: {
@@ -351,16 +352,35 @@ class AirwallexService {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          prorate: false,
           cancel_at_period_end: true,
         }),
       }
     );
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error('Airwallex cancel subscription error:', error);
-      throw new Error(`Failed to cancel Airwallex subscription: ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('Airwallex cancel subscription error:', response.status, errorText);
+
+      // Fallback: try the cancel endpoint directly if update fails
+      const cancelResponse = await fetch(
+        `${AIRWALLEX_API_BASE}/api/v1/subscriptions/${subscriptionId}/cancel`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            proration_behavior: 'NONE',
+          }),
+        }
+      );
+
+      if (!cancelResponse.ok) {
+        const cancelError = await cancelResponse.text();
+        console.error('Airwallex cancel (fallback) error:', cancelResponse.status, cancelError);
+        throw new Error(`Failed to cancel subscription: ${cancelResponse.status}`);
+      }
     }
   }
 
