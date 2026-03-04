@@ -159,8 +159,8 @@ const getStyles = (theme: Theme) => ({
 
     // Inputs
     input: theme === 'dark'
-        ? "bg-space-900/70 border-gold-500/20 text-star-50 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-star-400/60"
-        : "bg-paper-100/85 border-paper-300 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-paper-400"
+        ? "bg-space-900/70 border border-gold-500/40 text-star-50 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-star-400/60"
+        : "bg-paper-100/85 border border-paper-400 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-paper-400"
 });
 
 // --- Layout & wrappers ---
