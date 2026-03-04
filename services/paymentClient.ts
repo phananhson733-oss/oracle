@@ -464,6 +464,19 @@ async function gmRequest(path: string, errorMessage: string, body?: Record<strin
   return res.json();
 }
 
+// Cancel subscription (production — calls Airwallex cancel API)
+export async function cancelSubscription(): Promise<{ success: boolean }> {
+  const res = await authFetch(`${API_BASE}/airwallex/cancel-subscription`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.error || 'Failed to cancel subscription');
+  }
+  return res.json();
+}
+
 export async function gmUnlockSubscription(): Promise<GMResponse> {
   return gmRequest('unlock-subscription', 'Failed to unlock subscription');
 }
