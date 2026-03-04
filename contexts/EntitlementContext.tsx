@@ -181,8 +181,8 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
     // 非订阅用户
     switch (featureType) {
       case 'dimension': {
-        // 前 2 个维度免费
-        const freeDimensions = ['Emotions', 'Attachment', 'Drive'];
+        // 前 3 个维度免费（Emotions, Attachment, Sabotage）
+        const freeDimensions = ['Emotions', 'Attachment', 'Sabotage'];
         if (featureId && freeDimensions.includes(featureId)) return true;
         // 已购买
         if (featureId && entitlements.purchasedFeatures.dimensions.includes(featureId)) return true;

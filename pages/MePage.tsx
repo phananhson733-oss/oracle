@@ -535,9 +535,10 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
               <Section title={t.me.deep_dive}>
                 <div className="grid gap-4">
-                  {DIMENSIONS.map((d, index) => {
-                    // 前 2 个维度（Emotions, Attachment）免费，其余需要付费
-                    const isFree = index < 2;
+                  {DIMENSIONS.map((d) => {
+                    // 前 3 个维度（Emotions, Attachment, Sabotage）免费
+                    const FREE_DIMENSIONS = ['Emotions', 'Attachment', 'Sabotage'];
+                    const isFree = FREE_DIMENSIONS.includes(d.key);
                     const dimensionLabel = language === 'zh' ? d.label_zh : d.label_en;
 
                     if (isFree) {

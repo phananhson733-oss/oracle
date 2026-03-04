@@ -713,8 +713,8 @@ class EntitlementServiceV2 {
 
       switch (featureType) {
         case 'dimension': {
-          // 前 2 个维度免费
-          const freeDimensions = ['Emotions', 'Attachment', 'Drive'];
+          // 前 3 个维度免费（Emotions, Attachment, Sabotage）
+          const freeDimensions = ['Emotions', 'Attachment', 'Sabotage'];
           if (featureId && freeDimensions.includes(featureId)) {
             return { canAccess: true, reason: 'free_quota' };
           }

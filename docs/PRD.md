@@ -100,7 +100,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **API**: `GET /api/natal/dimension?dimension={id}`
 
-**免费策略**: 前 2 个维度免费，其余需解锁（10 credits/维度，订阅用户全部解锁）
+**免费策略**: 前 3 个维度免费（Emotions, Attachment, Sabotage），其余需解锁（5 credits/维度，订阅用户全部解锁）
 
 #### 2.2.4 核心主题 (Core Themes)
 
@@ -108,7 +108,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **API**: `GET /api/natal/core-themes`
 
-**解锁价格**: 10 credits/主题
+**解锁价格**: 5 credits/主题
 
 #### 2.2.5 星盘总览 (Overview)
 
@@ -148,7 +148,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **API**: `POST /api/ask` — 提交问题，AI 生成个性化回答
 
-**配额**: 免费 3 次/周，订阅额外 +5 次/周（合计 8 次/周），或消耗 20 credits/次
+**配额**: 免费 3 次/周，订阅额外 +7 次/周（合计 10 次/周），或消耗 10 credits/次
 
 ### 2.5 合盘分析 (Synastry / Us)
 
@@ -183,7 +183,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `GET /api/synastry/suggestions` — 关系类型建议
 - `GET /api/synastry/technical` — 技术数据附录
 
-**配额**: 免费 3 次（终身永久额度），订阅 +1 次/周，或 30 credits/次
+**配额**: 免费 3 次（终身永久额度），订阅 +1 次/周，或 15 credits/次
 
 ### 2.6 CBT 日记 (Cognitive Behavioral Therapy Journal)
 
@@ -229,7 +229,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `GET /api/wiki/search` — 搜索
 - `POST /api/synthetica/generate` — Synthetica 分析
 
-**Synthetica 配额**: 免费 3 次/天，订阅 10 次/天，或 10 credits/次
+**Synthetica 配额**: 免费 3 次/天，订阅 10 次/天，或 5 credits/次
 
 ### 2.8 生命周期 (Cycles)
 
@@ -331,7 +331,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | Synastry | 3 次（永久） | +1 次/周 |
 | Synthetica | 3 次/天 | 10 次/天 |
 | Detail 详情 | 2 次免费 | 无限制 |
-| 心理维度 | 前 3 个免费（Emotions, Attachment, Drive） | 全部解锁 |
+| 心理维度 | 前 3 个免费（Emotions, Attachment, Sabotage） | 全部解锁 |
 | Daily Script | 受限 | 无限制 |
 | CBT 月度统计 | 锁定 | 解锁 |
 | 订阅奖励 | — | 每次成功支付 +100 credits |
@@ -377,7 +377,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | Synastry 合盘 | 3 次（终身） | 不重置 |
 | Synthetica | 3 次/天 | 每日 00:00 UTC |
 | Detail 详情 | 2 次 | 不重置 |
-| 心理维度 | 前 3 个（Emotions, Attachment, Drive） | 不重置 |
+| 心理维度 | 前 3 个（Emotions, Attachment, Sabotage） | 不重置 |
 
 #### 订阅用户额外配额
 
@@ -423,8 +423,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `POST /api/airwallex/cancel-subscription` — 取消订阅
 - `POST /api/airwallex/create-order` — 创建积分购买订单
 - `POST /api/airwallex/confirm-order` — 确认积分购买并写入 `gm_credit` 记录
-- `POST /api/airwallex/confirm-checkout` — 确认订阅并激活 + 发放 500 奖励积分
-- `POST /api/airwallex/confirm-renewal` — 确认续费并延长订阅 + 发放 500 奖励积分
+- `POST /api/airwallex/confirm-checkout` — 确认订阅并激活 + 发放 100 奖励积分
+- `POST /api/airwallex/confirm-renewal` — 确认续费并延长订阅 + 发放 100 奖励积分
 - `POST /api/airwallex/webhook` — Webhook 处理（含邮件通知触发）
 
 **Webhook 邮件通知**: Webhook 处理器在以下事件中自动发送邮件（best-effort，不阻塞 webhook 响应）：
