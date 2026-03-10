@@ -295,6 +295,32 @@ const buildBookSchema = (lang, item, url) => ({
   image: item.cover_url || undefined,
 });
 
+// Chinese wiki pages whitelist — only these zh wiki items get static SEO pages.
+// All others are served by the SPA but don't need static pre-rendering.
+const ZH_WIKI_WHITELIST = new Set([
+  'composite-chart',
+  'elements',
+  'fixed-mode',
+  'house-2',
+  'house-10',
+  'libra',
+  'lilith',
+  'mutable-mode',
+  'opposition',
+  'sagittarius',
+  'saturn',
+  'transit-chart',
+  'water-element',
+]);
+
+// Featured article slugs (SPA-rendered, added to sitemap only)
+const ARTICLE_SLUGS = [
+  'track-mood-astrology',
+  'mercury-retrograde-vs-moon-anxiety',
+  'mars-anger-triggers',
+  'best-astrology-mental-health-apps',
+];
+
 const generate = async () => {
   const wikiModule = loadTsModule(path.join(rootDir, 'backend/src/data/wiki.ts'));
   const wikiContent = wikiModule.WIKI_CONTENT || {};
@@ -342,8 +368,11 @@ const generate = async () => {
     const classicsPath = `/${lang}/wiki/classics`;
 
     sitemapUrls.push(`${siteUrl}${homePath}`);
-    sitemapUrls.push(`${siteUrl}${wikiPath}`);
-    sitemapUrls.push(`${siteUrl}${classicsPath}`);
+    // Only add wiki hub for all langs; classics hub only for en
+    if (lang === 'en') {
+      sitemapUrls.push(`${siteUrl}${wikiPath}`);
+      sitemapUrls.push(`${siteUrl}${classicsPath}`);
+    }
 
     await writeHtmlPage({
       outputPath: path.join(langRoot, 'index.html'),
@@ -358,49 +387,57 @@ const generate = async () => {
       spaPath: '/',
     });
 
-    await writeHtmlPage({
-      outputPath: path.join(langRoot, 'wiki', 'index.html'),
-      lang,
-      title: config.wikiTitle,
-      description: config.wikiDescription,
-      url: `${siteUrl}${wikiPath}`,
-      ogType: 'website',
-      alternates: buildAlternateLinks('/wiki'),
-      schema: [
-        buildItemListSchema(lang, '/wiki', wikiItems),
-        buildBreadcrumb(lang, [
-          { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
-          { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
-        ]),
-      ],
-      ctaText: config.wikiCta,
-      spaPath: '/wiki',
-    });
+    // Only generate wiki hub and classics hub for en
+    if (lang === 'en') {
+      await writeHtmlPage({
+        outputPath: path.join(langRoot, 'wiki', 'index.html'),
+        lang,
+        title: config.wikiTitle,
+        description: config.wikiDescription,
+        url: `${siteUrl}${wikiPath}`,
+        ogType: 'website',
+        alternates: buildAlternateLinks('/wiki'),
+        schema: [
+          buildItemListSchema(lang, '/wiki', wikiItems),
+          buildBreadcrumb(lang, [
+            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
+          ]),
+        ],
+        ctaText: config.wikiCta,
+        spaPath: '/wiki',
+      });
 
-    await writeHtmlPage({
-      outputPath: path.join(langRoot, 'wiki', 'classics', 'index.html'),
-      lang,
-      title: config.classicsTitle,
-      description: config.classicsDescription,
-      url: `${siteUrl}${classicsPath}`,
-      ogType: 'website',
-      alternates: buildAlternateLinks('/wiki/classics'),
-      schema: [
-        buildItemListSchema(lang, '/wiki/classics', classics),
-        buildBreadcrumb(lang, [
-          { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
-          { name: config.breadcrumbClassics, url: `${siteUrl}${classicsPath}` },
-        ]),
-      ],
-      ctaText: config.classicsCta,
-      spaPath: '/wiki/classics',
-    });
+      await writeHtmlPage({
+        outputPath: path.join(langRoot, 'wiki', 'classics', 'index.html'),
+        lang,
+        title: config.classicsTitle,
+        description: config.classicsDescription,
+        url: `${siteUrl}${classicsPath}`,
+        ogType: 'website',
+        alternates: buildAlternateLinks('/wiki/classics'),
+        schema: [
+          buildItemListSchema(lang, '/wiki/classics', classics),
+          buildBreadcrumb(lang, [
+            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: config.breadcrumbClassics, url: `${siteUrl}${classicsPath}` },
+          ]),
+        ],
+        ctaText: config.classicsCta,
+        spaPath: '/wiki/classics',
+      });
+    }
 
-    for (const item of wikiItems) {
+    // For zh, only generate whitelisted wiki items; for en, generate all
+    const filteredWikiItems = lang === 'zh'
+      ? wikiItems.filter((item) => ZH_WIKI_WHITELIST.has(item.id))
+      : wikiItems;
+
+    for (const item of filteredWikiItems) {
       const itemPath = `/${lang}/wiki/${item.id}`;
       const itemUrl = `${siteUrl}${itemPath}`;
       const alternateAvailability = {
-        zh: wikiIds.zh.has(item.id),
+        zh: wikiIds.zh.has(item.id) && (lang === 'en' || ZH_WIKI_WHITELIST.has(item.id)),
         en: wikiIds.en.has(item.id),
       };
       sitemapUrls.push(itemUrl);
@@ -424,6 +461,9 @@ const generate = async () => {
         spaPath: `/wiki/${item.id}`,
       });
     }
+
+    // Skip classics generation for zh (no zh classics pages)
+    if (lang === 'zh') continue;
 
     for (const classic of classics) {
       const classicDetail = getWikiClassicDetail(classic.id, lang) || classic;
@@ -454,6 +494,12 @@ const generate = async () => {
         spaPath: `/wiki/classics/${classic.id}`,
       });
     }
+  }
+
+  // Add featured article URLs to sitemap (SPA-rendered, no static HTML needed)
+  for (const slug of ARTICLE_SLUGS) {
+    sitemapUrls.push(`${siteUrl}/en/wiki/${slug}`);
+    sitemapUrls.push(`${siteUrl}/zh/wiki/${slug}`);
   }
 
   const sitemapEntries = Array.from(new Set(sitemapUrls)).sort();
