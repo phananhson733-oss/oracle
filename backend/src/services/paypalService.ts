@@ -156,7 +156,7 @@ class PayPalService {
       body: JSON.stringify({
         plan_id: planId,
         application_context: {
-          brand_name: 'AstroMind',
+          brand_name: 'AstrologyWiki',
           locale: 'zh-CN',
           shipping_preference: 'NO_SHIPPING',
           user_action: 'SUBSCRIBE_NOW',
@@ -282,7 +282,7 @@ class PayPalService {
           },
         }],
         application_context: {
-          brand_name: 'AstroMind',
+          brand_name: 'AstrologyWiki',
           locale: 'zh-CN',
           shipping_preference: 'NO_SHIPPING',
           user_action: 'PAY_NOW',

@@ -28,7 +28,7 @@ export const APPLE_CONFIG = {
 // Resend Email Service (for verification codes)
 export const RESEND_CONFIG = {
   API_KEY: process.env.RESEND_API_KEY || '',
-  FROM_EMAIL: process.env.RESEND_FROM_EMAIL || 'AstroMind <noreply@astromind.ai>',
+  FROM_EMAIL: process.env.RESEND_FROM_EMAIL || 'AstrologyWiki <noreply@astrologywiki.com>',
 };
 
 // Free tier limits

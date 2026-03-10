@@ -88,7 +88,7 @@ export const AIRWALLEX_CREDITS_PACKAGES: Record<string, {
     usd: { amount: 499, currency: 'USD' },    // $4.99
     cny: { amount: 3400, currency: 'CNY' },    // ¥34
     name: 'Starter Pack - 100 Credits',
-    description: '100 credits for AstroMind features',
+    description: '100 credits for AstrologyWiki features',
   },
   credits_300: {
     id: 'credits_300',
@@ -96,7 +96,7 @@ export const AIRWALLEX_CREDITS_PACKAGES: Record<string, {
     usd: { amount: 1249, currency: 'USD' },   // $12.49
     cny: { amount: 8400, currency: 'CNY' },   // ¥84
     name: 'Standard Pack - 300 Credits',
-    description: '300 credits for AstroMind features (17% savings)',
+    description: '300 credits for AstrologyWiki features (17% savings)',
   },
   credits_500: {
     id: 'credits_500',
@@ -104,7 +104,7 @@ export const AIRWALLEX_CREDITS_PACKAGES: Record<string, {
     usd: { amount: 1999, currency: 'USD' },   // $19.99
     cny: { amount: 13400, currency: 'CNY' },   // ¥134
     name: 'Value Pack - 500 Credits',
-    description: '500 credits for AstroMind features (20% savings)',
+    description: '500 credits for AstrologyWiki features (20% savings)',
   },
   credits_1000: {
     id: 'credits_1000',
@@ -112,7 +112,7 @@ export const AIRWALLEX_CREDITS_PACKAGES: Record<string, {
     usd: { amount: 3499, currency: 'USD' },   // $34.99
     cny: { amount: 23400, currency: 'CNY' },   // ¥234
     name: 'Pro Pack - 1000 Credits',
-    description: '1000 credits for AstroMind features (30% savings)',
+    description: '1000 credits for AstrologyWiki features (30% savings)',
   },
 };
 

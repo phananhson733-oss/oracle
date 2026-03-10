@@ -61,28 +61,28 @@ export const CREDITS_PACKAGES: Record<string, {
     credits: 100,
     amount: 499, // $4.99
     name: '基础包 - 100 积分',
-    description: '100 credits for AstroMind features',
+    description: '100 credits for AstrologyWiki features',
   },
   credits_300: {
     id: 'credits_300',
     credits: 300,
     amount: 1249, // $12.49 (~17% off)
     name: '标准包 - 300 积分',
-    description: '300 credits for AstroMind features (17% savings)',
+    description: '300 credits for AstrologyWiki features (17% savings)',
   },
   credits_500: {
     id: 'credits_500',
     credits: 500,
     amount: 1999, // $19.99 (~20% off)
     name: '超值包 - 500 积分',
-    description: '500 credits for AstroMind features (20% savings)',
+    description: '500 credits for AstrologyWiki features (20% savings)',
   },
   credits_1000: {
     id: 'credits_1000',
     credits: 1000,
     amount: 3499, // $34.99 (~30% off)
     name: '专业包 - 1000 积分',
-    description: '1000 credits for AstroMind features (30% savings)',
+    description: '1000 credits for AstrologyWiki features (30% savings)',
   },
 };
 
@@ -91,12 +91,12 @@ export const SUBSCRIPTION_PRICING = {
   monthly: {
     amount: 699, // $6.99
     interval: 'MONTH' as const,
-    name: 'AstroMind Pro 月度订阅',
+    name: 'AstrologyWiki Pro 月度订阅',
   },
   yearly: {
     amount: 4199, // $41.99 (50% off)
     interval: 'YEAR' as const,
-    name: 'AstroMind Pro 年度订阅',
+    name: 'AstrologyWiki Pro 年度订阅',
   },
 };
 
@@ -108,12 +108,12 @@ export const FIRST_DISCOUNT_PRICING = {
   monthly: {
     amount: Math.round(SUBSCRIPTION_PRICING.monthly.amount * (1 - FIRST_DISCOUNT_RATE)), // $3.50
     interval: 'MONTH' as const,
-    name: 'AstroMind Pro 月度订阅（首次特惠）',
+    name: 'AstrologyWiki Pro 月度订阅（首次特惠）',
   },
   yearly: {
     amount: Math.round(SUBSCRIPTION_PRICING.yearly.amount * (1 - FIRST_DISCOUNT_RATE)), // $21.00
     interval: 'YEAR' as const,
-    name: 'AstroMind Pro 年度订阅（首次特惠）',
+    name: 'AstrologyWiki Pro 年度订阅（首次特惠）',
   },
 };
 

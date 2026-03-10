@@ -847,7 +847,7 @@ async function handleSubscriptionActive(event: any): Promise<void> {
           return (plan === 'yearly' ? tier.yearly.amount : tier.monthly.amount) / 100;
         })().toFixed(2),
         currency: data.currency || 'USD',
-        description: `AstroMind Pro — ${plan === 'yearly' ? 'Yearly' : 'Monthly'} Subscription`,
+        description: `AstrologyWiki Pro — ${plan === 'yearly' ? 'Yearly' : 'Monthly'} Subscription`,
         transactionId: subscriptionId,
         date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
       });
