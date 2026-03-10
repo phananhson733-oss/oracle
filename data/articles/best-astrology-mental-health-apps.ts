@@ -1,16 +1,25 @@
-// Article: The 5 Best Astrology Apps for Mental Health & Journaling (2025)
-import type { WikiArticle } from '../../types';
+// Article: The 5 Best Astrology Apps for Mental Health & Journaling (2026)
+import type { WikiArticle } from "../../types";
 
 export const bestAstrologyAppsEn: WikiArticle = {
-  slug: 'best-astrology-mental-health-apps',
-  title: 'The 5 Best Astrology Apps for Mental Health & Journaling (2025)',
-  description: 'We tested the top astrology apps (Co-Star, The Pattern, CHANI) to find which ones actually support mental health vs. causing anxiety. Here is the verdict.',
-  author: 'AstroMind Team',
-  date: '2025-07-01',
-  schema: 'Article',
-  lang: 'en',
-  keywords: ['astrology apps', 'mental health', 'journaling', 'co-star', 'the pattern', 'chani', 'mood tracking'],
-  content: `# The 5 Best Astrology Apps for Mental Health & Journaling (2025)
+  slug: "best-astrology-mental-health-apps",
+  title: "The 5 Best Astrology Apps for Mental Health & Journaling (2026)",
+  description:
+    "We tested the top astrology apps (Co-Star, The Pattern, CHANI) to find which ones actually support mental health vs. causing anxiety. Here is the verdict.",
+  author: "AstroMind Team",
+  date: "2025-07-01",
+  schema: "Article",
+  lang: "en",
+  keywords: [
+    "astrology apps",
+    "mental health",
+    "journaling",
+    "co-star",
+    "the pattern",
+    "chani",
+    "mood tracking",
+  ],
+  content: `# The 5 Best Astrology Apps for Mental Health & Journaling (2026)
 
 Astrology apps have evolved. They are no longer just about daily horoscopes; they are tools for self-reflection. But let's be honest: some apps are designed to be addictive (doom-scrolling), while others are designed to be healing.
 
@@ -121,19 +130,28 @@ Passive consumption of astrology can create dependency. Active journaling builds
 - If you want to know "what will happen," download The Pattern.
 - If you want to know "how to handle it," use AstroMind.
 
-Ready to start? Check out our guide on [How to Track Your Mood with Astrology](/wiki/track-mood-astrology) to begin your practice today.`
+Ready to start? Check out our guide on [How to Track Your Mood with Astrology](/wiki/track-mood-astrology) to begin your practice today.`,
 };
 
 export const bestAstrologyAppsZh: WikiArticle = {
-  slug: 'best-astrology-mental-health-apps',
-  title: '2025年5款最佳心理健康与日记占星应用',
-  description: '我们测试了顶级占星应用（Co-Star、The Pattern、CHANI），找出哪些真正支持心理健康，哪些会引发焦虑。这是我们的结论。',
-  author: 'AstroMind 团队',
-  date: '2025-07-01',
-  schema: 'Article',
-  lang: 'zh',
-  keywords: ['占星应用', '心理健康', '日记', 'co-star', 'the pattern', 'chani', '情绪追踪'],
-  content: `# 2025年5款最佳心理健康与日记占星应用
+  slug: "best-astrology-mental-health-apps",
+  title: "2026年5款最佳心理健康与日记占星应用",
+  description:
+    "我们测试了顶级占星应用（Co-Star、The Pattern、CHANI），找出哪些真正支持心理健康，哪些会引发焦虑。这是我们的结论。",
+  author: "AstroMind 团队",
+  date: "2025-07-01",
+  schema: "Article",
+  lang: "zh",
+  keywords: [
+    "占星应用",
+    "心理健康",
+    "日记",
+    "co-star",
+    "the pattern",
+    "chani",
+    "情绪追踪",
+  ],
+  content: `# 2026年5款最佳心理健康与日记占星应用
 
 占星应用已经进化了。它们不再只是关于每日星座运势；而是自我反思的工具。但说实话：有些应用被设计成让人上瘾（无限刷屏），而另一些则被设计成疗愈工具。
 
@@ -244,5 +262,5 @@ AstroMind采用不同的方法。它不是你下载来无限刷屏的"应用"；
 - 如果你想知道"会发生什么"，下载 The Pattern。
 - 如果你想知道"如何应对"，使用AstroMind。
 
-准备好开始了吗？查看我们的[如何用占星追踪情绪](/wiki/track-mood-astrology)指南，今天就开始你的练习。`
+准备好开始了吗？查看我们的[如何用占星追踪情绪](/wiki/track-mood-astrology)指南，今天就开始你的练习。`,
 };

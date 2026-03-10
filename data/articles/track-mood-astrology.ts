@@ -1,15 +1,23 @@
 // Article: How to Track Mood with Astrology
-import type { WikiArticle } from '../../types';
+import type { WikiArticle } from "../../types";
 
 export const trackMoodAstrologyEn: WikiArticle = {
-  slug: 'track-mood-astrology',
-  title: 'How to Track Mood with Astrology: The Beginner\'s Guide (2025)',
-  description: 'Learn how to track your mood with astrology by monitoring the Moon sign. A step-by-step guide to emotional transits and using your AstroMind Journal.',
-  author: 'AstroMind Team',
-  date: '2025-05-22',
-  schema: 'Article',
-  lang: 'en',
-  keywords: ['mood tracking', 'moon sign', 'emotional transits', 'astrology journal', 'lunar cycle', 'zodiac emotions'],
+  slug: "track-mood-astrology",
+  title: "How to Track Mood with Astrology: The Beginner's Guide (2026)",
+  description:
+    "Learn how to track your mood with astrology by monitoring the Moon sign. A step-by-step guide to emotional transits and using your AstroMind Journal.",
+  author: "AstroMind Team",
+  date: "2025-05-22",
+  schema: "Article",
+  lang: "en",
+  keywords: [
+    "mood tracking",
+    "moon sign",
+    "emotional transits",
+    "astrology journal",
+    "lunar cycle",
+    "zodiac emotions",
+  ],
   content: `# How to Track Your Mood with Astrology: A Beginner's Guide to Emotional Transits
 
 Do you ever feel emotionally overwhelmed or energized without a clear reason? It might not be you; it might be the stars. While we often look to external triggers for our mood swings, the planetary movements above—specifically the **Moon**—can act as a mirror for our internal landscape.
@@ -81,18 +89,26 @@ Once you have mastered the daily signs, keep an eye on these two major influence
 
 Astrology is not just about prediction; it is a profound tool for self-awareness. By tracking the Moon, you realize that your "bad days" are often just passing weather patterns. This practice allows you to stop swimming against the current and start flowing with the tides.
 
-**Your challenge:** Don't just read about it. **[Start your Mood Journal](/journal)** right now and log your first entry. The stars are ready to help you heal.`
+**Your challenge:** Don't just read about it. **[Start your Mood Journal](/journal)** right now and log your first entry. The stars are ready to help you heal.`,
 };
 
 export const trackMoodAstrologyZh: WikiArticle = {
-  slug: 'track-mood-astrology',
-  title: '如何用占星追踪情绪：入门指南（2024）',
-  description: '学习如何通过监测月亮星座来追踪你的情绪。情绪行运的逐步指南，以及如何使用占星日记。',
-  author: 'AstroMind 团队',
-  date: '2025-05-22',
-  schema: 'Article',
-  lang: 'zh',
-  keywords: ['情绪追踪', '月亮星座', '情绪行运', '占星日记', '月相周期', '星座情绪'],
+  slug: "track-mood-astrology",
+  title: "如何用占星追踪情绪：入门指南（2026）",
+  description:
+    "学习如何通过监测月亮星座来追踪你的情绪。情绪行运的逐步指南，以及如何使用占星日记。",
+  author: "AstroMind 团队",
+  date: "2025-05-22",
+  schema: "Article",
+  lang: "zh",
+  keywords: [
+    "情绪追踪",
+    "月亮星座",
+    "情绪行运",
+    "占星日记",
+    "月相周期",
+    "星座情绪",
+  ],
   content: `# 如何用占星追踪你的情绪：情绪行运入门指南
 
 你是否曾经在没有明确原因的情况下感到情绪低落或充满能量？这可能不是你的问题——而是星象的影响。虽然我们经常从外部触发因素寻找情绪波动的原因，但头顶的行星运动——特别是**月亮**——可以作为我们内心世界的镜子。
@@ -164,5 +180,5 @@ export const trackMoodAstrologyZh: WikiArticle = {
 
 占星不仅仅是关于预测；它是一个深刻的自我认知工具。通过追踪月亮，你会意识到你的"糟糕日子"往往只是过眼云烟的天气模式。这种练习让你停止逆流而上，开始顺应潮汐流动。
 
-**你的挑战：** 不要只是阅读。现在就**[开始你的情绪日记](/journal)**，记录你的第一条记录。星星已经准备好帮助你疗愈。`
+**你的挑战：** 不要只是阅读。现在就**[开始你的情绪日记](/journal)**，记录你的第一条记录。星星已经准备好帮助你疗愈。`,
 };
