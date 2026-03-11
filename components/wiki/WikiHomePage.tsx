@@ -2,28 +2,55 @@
 // OUTPUT: 导出 Wiki 首页组件（含当日星象稳定展示与 Unicode 文本图标）。
 // POS: Wiki 首页模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ActionButton, Card, GlassInput, Modal, Section, useLanguage, useTheme } from '../UIComponents';
-import { ArrowRight, Compass, Heart, Search, Share2, Sparkles } from 'lucide-react';
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
-import { fetchWikiHome, fetchWikiSearch } from '../../services/apiClient';
-import { trackEvent } from '../../services/analytics';
-import { getArticleHotwords, getArticleSummaries } from '../../data/articles';
-import type { WikiHomeContent, WikiSearchMatch, ArticleHotword, WikiArticleSummary } from '../../types';
+import React, { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  ActionButton,
+  Card,
+  GlassInput,
+  Modal,
+  Section,
+  useLanguage,
+  useTheme,
+} from "../UIComponents";
+import {
+  ArrowRight,
+  Compass,
+  Heart,
+  Search,
+  Share2,
+  Sparkles,
+} from "lucide-react";
+import {
+  PolarAngleAxis,
+  PolarGrid,
+  Radar,
+  RadarChart,
+  ResponsiveContainer,
+} from "recharts";
+import { fetchWikiHome, fetchWikiSearch } from "../../services/apiClient";
+import { trackEvent } from "../../services/analytics";
+import { getArticleHotwords, getArticleSummaries } from "../../data/articles";
+import type {
+  WikiHomeContent,
+  WikiSearchMatch,
+  ArticleHotword,
+  WikiArticleSummary,
+} from "../../types";
+import { useLangPath } from "../../hooks/useLangPath";
 
 const WIKI_HOME_CACHE = new Map<string, WikiHomeContent>();
-const resolveUtcDate = () => new Date().toISOString().split('T')[0];
+const resolveUtcDate = () => new Date().toISOString().split("T")[0];
 const buildHomeCacheKey = (lang: string, date: string) => `${lang}:${date}`;
 const PILLAR_ICON_MAP: Record<string, string> = {
-  planets: '☉',
-  signs: '\u2648',
-  houses: '⌂',
-  aspects: '∠',
+  planets: "☉",
+  signs: "\u2648",
+  houses: "⌂",
+  aspects: "∠",
 };
 const forceTextSymbol = (value: string) => {
   if (!value) return value;
-  const stripped = value.replace(/\uFE0F/g, '').replace(/\uFE0E/g, '');
+  const stripped = value.replace(/\uFE0F/g, "").replace(/\uFE0E/g, "");
   return `${stripped}\uFE0E`;
 };
 const resolvePillarIcon = (pillar: { id: string; icon: string }) =>
@@ -33,6 +60,7 @@ const WikiHomePage: React.FC = () => {
   const { language, t } = useLanguage();
   const { theme } = useTheme();
   const navigate = useNavigate();
+  const { langPath } = useLangPath();
   const [home, setHome] = useState<WikiHomeContent | null>(() => {
     const cacheKey = buildHomeCacheKey(language, resolveUtcDate());
     return WIKI_HOME_CACHE.get(cacheKey) || null;
@@ -43,27 +71,30 @@ const WikiHomePage: React.FC = () => {
   });
   const [error, setError] = useState<string | null>(null);
   const [refreshKey, setRefreshKey] = useState(0);
-  const [activeModal, setActiveModal] = useState<'transit' | 'wisdom' | null>(null);
+  const [activeModal, setActiveModal] = useState<"transit" | "wisdom" | null>(
+    null,
+  );
 
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState<WikiSearchMatch[]>([]);
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  const mutedText = theme === 'dark' ? 'text-star-400' : 'text-paper-500';
-  const borderColor = theme === 'dark' ? 'border-gold-500/15' : 'border-gold-600/40';
-  const radarGrid = theme === 'dark'
-    ? 'rgb(var(--space-700) / 0.6)'
-    : 'rgb(var(--space-700) / 0.35)';
-  const radarAxis = theme === 'dark'
-    ? 'rgb(var(--star-200) / 0.9)'
-    : 'rgb(var(--star-400) / 0.9)';
-  const radarStroke = theme === 'dark'
-    ? 'rgb(198 160 98 / 1)'
-    : 'rgb(159 118 69 / 1)';
-  const radarFill = theme === 'dark'
-    ? 'rgb(198 160 98 / 0.35)'
-    : 'rgb(159 118 69 / 0.25)';
+  const mutedText = theme === "dark" ? "text-star-400" : "text-paper-500";
+  const borderColor =
+    theme === "dark" ? "border-gold-500/15" : "border-gold-600/40";
+  const radarGrid =
+    theme === "dark"
+      ? "rgb(var(--space-700) / 0.6)"
+      : "rgb(var(--space-700) / 0.35)";
+  const radarAxis =
+    theme === "dark"
+      ? "rgb(var(--star-200) / 0.9)"
+      : "rgb(var(--star-400) / 0.9)";
+  const radarStroke =
+    theme === "dark" ? "rgb(198 160 98 / 1)" : "rgb(159 118 69 / 1)";
+  const radarFill =
+    theme === "dark" ? "rgb(198 160 98 / 0.35)" : "rgb(159 118 69 / 0.25)";
 
   useEffect(() => {
     let mounted = true;
@@ -131,12 +162,25 @@ const WikiHomePage: React.FC = () => {
   }, [query, language]);
 
   const hasDaily = home?.daily_transit && home?.daily_wisdom;
-  const guidancePreview = useMemo(() => home?.daily_transit?.guidance?.slice(0, 2) || [], [home]);
-  const fallbackGuidance = useMemo(() => ([
-    { title: t.wiki.daily_transit_guide_action, text: t.wiki.daily_transit_guide_action_text },
-    { title: t.wiki.daily_transit_guide_transform, text: t.wiki.daily_transit_guide_transform_text },
-  ]), [t]);
-  const guidanceItems = guidancePreview.length > 0 ? guidancePreview : fallbackGuidance;
+  const guidancePreview = useMemo(
+    () => home?.daily_transit?.guidance?.slice(0, 2) || [],
+    [home],
+  );
+  const fallbackGuidance = useMemo(
+    () => [
+      {
+        title: t.wiki.daily_transit_guide_action,
+        text: t.wiki.daily_transit_guide_action_text,
+      },
+      {
+        title: t.wiki.daily_transit_guide_transform,
+        text: t.wiki.daily_transit_guide_transform_text,
+      },
+    ],
+    [t],
+  );
+  const guidanceItems =
+    guidancePreview.length > 0 ? guidancePreview : fallbackGuidance;
 
   const radarLabels = t.wiki.radar_labels;
   const energyLevel = home?.daily_transit?.energy_level ?? 65;
@@ -153,24 +197,28 @@ const WikiHomePage: React.FC = () => {
     <div className="space-y-14">
       <section className="text-center space-y-8 pt-10">
         <div className="max-w-4xl mx-auto space-y-4">
-        <div className={`text-xs uppercase tracking-[0.3em] ${theme === 'dark' ? 'text-gold-400' : 'text-gold-600'}`}>
-          {t.wiki.hero_kicker}
-        </div>
+          <div
+            className={`text-xs uppercase tracking-[0.3em] ${theme === "dark" ? "text-gold-400" : "text-gold-600"}`}
+          >
+            {t.wiki.hero_kicker}
+          </div>
           <h1 className="text-4xl md:text-6xl font-serif font-semibold leading-tight">
             {t.wiki.hero_title}
-            <span className="block text-lg md:text-xl font-sans font-medium mt-3 text-gold-500">{t.wiki.hero_subtitle}</span>
+            <span className="block text-lg md:text-xl font-sans font-medium mt-3 text-gold-500">
+              {t.wiki.hero_subtitle}
+            </span>
           </h1>
         </div>
 
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            trackEvent('wiki_search_performed', {
+            trackEvent("wiki_search_performed", {
               search_term: query.trim(),
               results_count: searchResults.length,
             });
-            trackEvent('form_submitted', {
-              form_name: 'wiki_search',
+            trackEvent("form_submitted", {
+              form_name: "wiki_search",
             });
             setSearchOpen(true);
           }}
@@ -181,8 +229,8 @@ const WikiHomePage: React.FC = () => {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               onFocus={() => {
-                trackEvent('form_started', {
-                  form_name: 'wiki_search',
+                trackEvent("form_started", {
+                  form_name: "wiki_search",
                 });
                 setSearchOpen(true);
               }}
@@ -190,33 +238,58 @@ const WikiHomePage: React.FC = () => {
               placeholder={t.wiki.search_placeholder}
               className="pl-12 pr-28 py-4 text-base !h-12"
             />
-            <Search className={`absolute left-4 top-1/2 -translate-y-1/2 ${mutedText}`} size={20} />
-            <ActionButton size="sm" className="absolute right-2 top-1/2 -translate-y-1/2">
+            <Search
+              className={`absolute left-4 top-1/2 -translate-y-1/2 ${mutedText}`}
+              size={20}
+            />
+            <ActionButton
+              size="sm"
+              className="absolute right-2 top-1/2 -translate-y-1/2"
+            >
               {t.wiki.search_action}
             </ActionButton>
           </div>
 
           {searchOpen && query.trim() && (
-            <Card className={`absolute left-0 right-0 mt-4 text-left z-40 border ${borderColor}`} noPadding>
+            <Card
+              className={`absolute left-0 right-0 mt-4 text-left z-40 border ${borderColor}`}
+              noPadding
+            >
               <div className="p-4 border-b border-dashed border-current/10 flex items-center justify-between">
-                <div className="text-xs uppercase tracking-[0.3em] text-gold-500">{t.wiki.search_results}</div>
-                {searchLoading && <div className={`text-xs ${mutedText}`}>{t.common.loading}</div>}
+                <div className="text-xs uppercase tracking-[0.3em] text-gold-500">
+                  {t.wiki.search_results}
+                </div>
+                {searchLoading && (
+                  <div className={`text-xs ${mutedText}`}>
+                    {t.common.loading}
+                  </div>
+                )}
               </div>
               <div className="max-h-[360px] overflow-y-auto">
                 {searchResults.length === 0 && !searchLoading ? (
-                  <div className={`p-4 text-sm ${mutedText}`}>{t.wiki.search_empty}</div>
+                  <div className={`p-4 text-sm ${mutedText}`}>
+                    {t.wiki.search_empty}
+                  </div>
                 ) : (
                   searchResults.map((result) => (
                     <button
                       key={`${result.linked_id}-${result.type}`}
-                      onMouseDown={() => navigate(`/wiki/${result.linked_id}`)}
+                      onMouseDown={() =>
+                        navigate(langPath(`/wiki/${result.linked_id}`))
+                      }
                       className={`w-full text-left px-4 py-3 border-b border-dashed border-current/10 hover:bg-accent/5 transition-colors`}
                     >
                       <div className="flex items-center justify-between mb-1">
                         <div className="font-semibold">{result.concept}</div>
-                        <div className={`text-xs px-2 py-0.5 rounded-full border ${borderColor}`}>{result.type}</div>
+                        <div
+                          className={`text-xs px-2 py-0.5 rounded-full border ${borderColor}`}
+                        >
+                          {result.type}
+                        </div>
                       </div>
-                      <div className={`text-xs ${mutedText}`}>{result.reason}</div>
+                      <div className={`text-xs ${mutedText}`}>
+                        {result.reason}
+                      </div>
                     </button>
                   ))
                 )}
@@ -245,43 +318,71 @@ const WikiHomePage: React.FC = () => {
                   <span className="text-xs uppercase tracking-[0.25em] text-gold-500 bg-gold-500/10 px-2 py-1 rounded-full">
                     {t.wiki.daily_transit_badge}
                   </span>
-                  <span className={`text-xs ${mutedText} truncate max-w-[160px] inline-block`}>
+                  <span
+                    className={`text-xs ${mutedText} truncate max-w-[160px] inline-block`}
+                  >
                     {home?.daily_transit?.highlight}
                   </span>
                 </div>
 
                 {hasDaily ? (
                   <>
-                    <h3 className="text-2xl md:text-3xl font-serif font-semibold">{home?.daily_transit?.title}</h3>
-                    <p className={`text-sm leading-relaxed ${mutedText} line-clamp-3`}>{home?.daily_transit?.summary}</p>
+                    <h3 className="text-2xl md:text-3xl font-serif font-semibold">
+                      {home?.daily_transit?.title}
+                    </h3>
+                    <p
+                      className={`text-sm leading-relaxed ${mutedText} line-clamp-3`}
+                    >
+                      {home?.daily_transit?.summary}
+                    </p>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {guidanceItems.map((item) => (
-                        <div key={item.title} className={`p-4 rounded-xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100/85'}`}>
-                          <div className="text-xs uppercase tracking-[0.2em] text-gold-500 mb-2">{item.title}</div>
-                          <div className={`text-sm ${mutedText} line-clamp-2`}>{item.text}</div>
+                        <div
+                          key={item.title}
+                          className={`p-4 rounded-xl border ${borderColor} ${theme === "dark" ? "bg-space-900/60" : "bg-paper-100/85"}`}
+                        >
+                          <div className="text-xs uppercase tracking-[0.2em] text-gold-500 mb-2">
+                            {item.title}
+                          </div>
+                          <div className={`text-sm ${mutedText} line-clamp-2`}>
+                            {item.text}
+                          </div>
                         </div>
                       ))}
                     </div>
-                    <div className={`text-xs ${mutedText}`}>{t.wiki.daily_transit_hint}</div>
+                    <div className={`text-xs ${mutedText}`}>
+                      {t.wiki.daily_transit_hint}
+                    </div>
                   </>
                 ) : (
-                  <div className={`text-sm ${mutedText} ${loading ? 'animate-pulse' : ''}`}>
+                  <div
+                    className={`text-sm ${mutedText} ${loading ? "animate-pulse" : ""}`}
+                  >
                     {loading ? t.common.loading : t.app.error}
                   </div>
                 )}
 
-                <ActionButton onClick={() => setActiveModal('transit')} className="w-fit" size="sm">
+                <ActionButton
+                  onClick={() => setActiveModal("transit")}
+                  className="w-fit"
+                  size="sm"
+                >
                   {t.wiki.daily_transit_action}
                 </ActionButton>
               </div>
 
               <div className="relative h-[220px] md:h-[260px]">
-                <div className={`absolute inset-0 rounded-2xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100/85'}`} />
+                <div
+                  className={`absolute inset-0 rounded-2xl border ${borderColor} ${theme === "dark" ? "bg-space-900/60" : "bg-paper-100/85"}`}
+                />
                 <div className="relative h-full p-4">
                   <ResponsiveContainer width="100%" height="100%">
                     <RadarChart data={radarData} outerRadius="80%">
                       <PolarGrid stroke={radarGrid} />
-                      <PolarAngleAxis dataKey="subject" tick={{ fill: radarAxis, fontSize: 11 }} />
+                      <PolarAngleAxis
+                        dataKey="subject"
+                        tick={{ fill: radarAxis, fontSize: 11 }}
+                      />
                       <Radar
                         dataKey="value"
                         stroke={radarStroke}
@@ -291,7 +392,9 @@ const WikiHomePage: React.FC = () => {
                     </RadarChart>
                   </ResponsiveContainer>
                 </div>
-                <div className={`absolute right-4 bottom-3 text-xs ${mutedText}`}>
+                <div
+                  className={`absolute right-4 bottom-3 text-xs ${mutedText}`}
+                >
                   {t.wiki.energy_level} {energyLevel}%
                 </div>
               </div>
@@ -310,33 +413,39 @@ const WikiHomePage: React.FC = () => {
                   <blockquote className="text-lg md:text-xl font-serif italic leading-relaxed line-clamp-4">
                     “{home?.daily_wisdom?.quote}”
                   </blockquote>
-                  <div className={`text-xs ${mutedText}`}>— {home?.daily_wisdom?.author}</div>
+                  <div className={`text-xs ${mutedText}`}>
+                    — {home?.daily_wisdom?.author}
+                  </div>
                 </>
               ) : (
-                <div className={`text-sm ${mutedText} ${loading ? 'animate-pulse' : ''}`}>
+                <div
+                  className={`text-sm ${mutedText} ${loading ? "animate-pulse" : ""}`}
+                >
                   {loading ? t.common.loading : t.app.error}
                 </div>
               )}
             </div>
-            <div className={`relative mt-6 flex items-center justify-between pt-4 border-t ${borderColor}`}>
+            <div
+              className={`relative mt-6 flex items-center justify-between pt-4 border-t ${borderColor}`}
+            >
               <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  className={`w-9 h-9 rounded-full flex items-center justify-center border ${borderColor} ${theme === 'dark' ? 'text-star-300 hover:text-gold-400' : 'text-paper-500 hover:text-gold-600'}`}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center border ${borderColor} ${theme === "dark" ? "text-star-300 hover:text-gold-400" : "text-paper-500 hover:text-gold-600"}`}
                 >
                   <Heart size={16} />
                 </button>
                 <button
                   type="button"
-                  className={`w-9 h-9 rounded-full flex items-center justify-center border ${borderColor} ${theme === 'dark' ? 'text-star-300 hover:text-gold-400' : 'text-paper-500 hover:text-gold-600'}`}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center border ${borderColor} ${theme === "dark" ? "text-star-300 hover:text-gold-400" : "text-paper-500 hover:text-gold-600"}`}
                 >
                   <Share2 size={16} />
                 </button>
               </div>
               <button
                 type="button"
-                onClick={() => setActiveModal('wisdom')}
-                className={`text-xs uppercase tracking-[0.3em] ${theme === 'dark' ? 'text-gold-400' : 'text-gold-600'} hover:opacity-80`}
+                onClick={() => setActiveModal("wisdom")}
+                className={`text-xs uppercase tracking-[0.3em] ${theme === "dark" ? "text-gold-400" : "text-gold-600"} hover:opacity-80`}
               >
                 {t.wiki.daily_wisdom_action}
               </button>
@@ -352,14 +461,23 @@ const WikiHomePage: React.FC = () => {
         t={t}
       />
 
-      <Section title={t.wiki.pillars_title} action={<div className={`text-xs uppercase tracking-[0.3em] ${mutedText}`}>{t.wiki.pillars_subtitle}</div>}>
+      <Section
+        title={t.wiki.pillars_title}
+        action={
+          <div className={`text-xs uppercase tracking-[0.3em] ${mutedText}`}>
+            {t.wiki.pillars_subtitle}
+          </div>
+        }
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {(home?.pillars || []).map((pillar, index) => (
             <Card
               key={pillar.id}
               onClick={() => {
-                trackEvent('wiki_category_clicked', { category_name: pillar.id });
-                navigate(`/wiki?tab=library&section=${pillar.id}`);
+                trackEvent("wiki_category_clicked", {
+                  category_name: pillar.id,
+                });
+                navigate(langPath(`/wiki?tab=library&section=${pillar.id}`));
               }}
               className="group text-center space-y-4 cursor-pointer"
             >
@@ -369,9 +487,15 @@ const WikiHomePage: React.FC = () => {
               >
                 {resolvePillarIcon(pillar)}
               </div>
-              <div className="text-lg font-serif font-semibold">{pillar.label}</div>
-              <div className={`text-xs leading-relaxed ${mutedText}`}>{pillar.desc}</div>
-              <div className={`text-xs uppercase tracking-[0.3em] ${theme === 'dark' ? 'text-gold-400' : 'text-gold-600'}`}>
+              <div className="text-lg font-serif font-semibold">
+                {pillar.label}
+              </div>
+              <div className={`text-xs leading-relaxed ${mutedText}`}>
+                {pillar.desc}
+              </div>
+              <div
+                className={`text-xs uppercase tracking-[0.3em] ${theme === "dark" ? "text-gold-400" : "text-gold-600"}`}
+              >
                 {t.wiki.pillars_action}
               </div>
             </Card>
@@ -379,19 +503,36 @@ const WikiHomePage: React.FC = () => {
         </div>
       </Section>
 
-      <Modal isOpen={activeModal === 'transit'} onClose={() => setActiveModal(null)} title={t.wiki.daily_transit_modal}>
+      <Modal
+        isOpen={activeModal === "transit"}
+        onClose={() => setActiveModal(null)}
+        title={t.wiki.daily_transit_modal}
+      >
         {home?.daily_transit ? (
           <div className="space-y-6">
             <div className="flex items-center justify-between text-xs">
               <span className={mutedText}>{home.daily_transit.date}</span>
-              <span className={`px-2 py-0.5 rounded-full border ${borderColor}`}>{home.daily_transit.highlight}</span>
+              <span
+                className={`px-2 py-0.5 rounded-full border ${borderColor}`}
+              >
+                {home.daily_transit.highlight}
+              </span>
             </div>
-            <h3 className="text-xl font-serif font-semibold">{home.daily_transit.title}</h3>
-            <p className={`text-sm leading-relaxed ${mutedText}`}>{home.daily_transit.summary}</p>
+            <h3 className="text-xl font-serif font-semibold">
+              {home.daily_transit.title}
+            </h3>
+            <p className={`text-sm leading-relaxed ${mutedText}`}>
+              {home.daily_transit.summary}
+            </p>
             <div className="grid gap-4">
               {home.daily_transit.guidance.map((item) => (
-                <div key={item.title} className={`p-4 rounded-xl border ${borderColor} ${theme === 'dark' ? 'bg-space-900/60' : 'bg-paper-100/85'}`}>
-                  <div className="text-xs uppercase tracking-[0.2em] text-gold-500 mb-2">{item.title}</div>
+                <div
+                  key={item.title}
+                  className={`p-4 rounded-xl border ${borderColor} ${theme === "dark" ? "bg-space-900/60" : "bg-paper-100/85"}`}
+                >
+                  <div className="text-xs uppercase tracking-[0.2em] text-gold-500 mb-2">
+                    {item.title}
+                  </div>
                   <div className={`text-sm ${mutedText}`}>{item.text}</div>
                 </div>
               ))}
@@ -402,14 +543,22 @@ const WikiHomePage: React.FC = () => {
         )}
       </Modal>
 
-      <Modal isOpen={activeModal === 'wisdom'} onClose={() => setActiveModal(null)} title={t.wiki.daily_wisdom_modal}>
+      <Modal
+        isOpen={activeModal === "wisdom"}
+        onClose={() => setActiveModal(null)}
+        title={t.wiki.daily_wisdom_modal}
+      >
         {home?.daily_wisdom ? (
           <div className="space-y-6">
             <blockquote className="text-lg font-serif italic leading-relaxed text-center">
               “{home.daily_wisdom.quote}”
             </blockquote>
-            <div className={`text-xs text-center ${mutedText}`}>{home.daily_wisdom.author} · {home.daily_wisdom.source}</div>
-            <div className={`text-sm leading-relaxed ${mutedText}`}>{home.daily_wisdom.interpretation}</div>
+            <div className={`text-xs text-center ${mutedText}`}>
+              {home.daily_wisdom.author} · {home.daily_wisdom.source}
+            </div>
+            <div className={`text-sm leading-relaxed ${mutedText}`}>
+              {home.daily_wisdom.interpretation}
+            </div>
           </div>
         ) : (
           <div className={`text-sm ${mutedText}`}>{t.common.loading}</div>
@@ -419,7 +568,10 @@ const WikiHomePage: React.FC = () => {
       {error && (
         <Card className="border-l border-l-danger/40 flex items-center justify-between gap-4">
           <div className="text-sm text-danger">{error}</div>
-          <ActionButton variant="outline" onClick={() => setRefreshKey((prev) => prev + 1)}>
+          <ActionButton
+            variant="outline"
+            onClick={() => setRefreshKey((prev) => prev + 1)}
+          >
             {t.common.retry}
           </ActionButton>
         </Card>
@@ -430,10 +582,10 @@ const WikiHomePage: React.FC = () => {
 
 // Featured articles section component
 interface FeaturedArticlesSectionProps {
-  language: 'zh' | 'en';
+  language: "zh" | "en";
   navigate: (path: string) => void;
-  theme: 'dark' | 'light';
-  t: ReturnType<typeof useLanguage>['t'];
+  theme: "dark" | "light";
+  t: ReturnType<typeof useLanguage>["t"];
 }
 
 const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
@@ -442,14 +594,15 @@ const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
   theme,
   t,
 }) => {
+  const { langPath } = useLangPath();
   const articles = useMemo(() => getArticleSummaries(language), [language]);
 
   if (articles.length === 0) return null;
 
-  const isDark = theme === 'dark';
-  const mutedText = isDark ? 'text-star-400' : 'text-paper-500';
-  const borderColor = isDark ? 'border-gold-500/15' : 'border-gold-600/40';
-  const highlightText = isDark ? 'text-gold-400' : 'text-gold-600';
+  const isDark = theme === "dark";
+  const mutedText = isDark ? "text-star-400" : "text-paper-500";
+  const borderColor = isDark ? "border-gold-500/15" : "border-gold-600/40";
+  const highlightText = isDark ? "text-gold-400" : "text-gold-600";
 
   // Show max 4 articles
   const displayArticles = articles.slice(0, 4);
@@ -468,7 +621,7 @@ const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
         {displayArticles.map((article: WikiArticleSummary) => (
           <Card
             key={article.slug}
-            onClick={() => navigate(`/wiki/${article.slug}`)}
+            onClick={() => navigate(langPath(`/wiki/${article.slug}`))}
             className="group cursor-pointer space-y-3"
           >
             <h3 className="font-serif font-semibold line-clamp-2 group-hover:text-gold-500 transition-colors">
@@ -477,7 +630,9 @@ const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
             <p className={`text-xs leading-relaxed ${mutedText} line-clamp-3`}>
               {article.description}
             </p>
-            <div className={`text-xs uppercase tracking-[0.2em] ${highlightText}`}>
+            <div
+              className={`text-xs uppercase tracking-[0.2em] ${highlightText}`}
+            >
               {t.wiki.article_read_more} →
             </div>
           </Card>
@@ -485,11 +640,16 @@ const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
 
         {hasMore && (
           <Card
-            onClick={() => navigate('/wiki?tab=articles')}
+            onClick={() => navigate(langPath("/wiki?tab=articles"))}
             className="group cursor-pointer flex flex-col items-center justify-center text-center space-y-3"
           >
-            <div className={`w-12 h-12 rounded-full border ${borderColor} flex items-center justify-center group-hover:border-gold-500/50 transition-colors`}>
-              <ArrowRight size={20} className={`${mutedText} group-hover:text-gold-500 transition-colors`} />
+            <div
+              className={`w-12 h-12 rounded-full border ${borderColor} flex items-center justify-center group-hover:border-gold-500/50 transition-colors`}
+            >
+              <ArrowRight
+                size={20}
+                className={`${mutedText} group-hover:text-gold-500 transition-colors`}
+              />
             </div>
             <div className={`text-sm font-semibold ${highlightText}`}>
               {t.wiki.featured_articles_more}
@@ -504,7 +664,7 @@ const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
 // Hotwords section component with article keywords integration
 interface HotwordsSectionProps {
   trendingTags: Array<{ label: string; item_id: string }>;
-  language: 'zh' | 'en';
+  language: "zh" | "en";
   navigate: (path: string) => void;
   mutedText: string;
   borderColor: string;
@@ -519,18 +679,23 @@ const HotwordsSection: React.FC<HotwordsSectionProps> = ({
   borderColor,
   trendingLabel,
 }) => {
+  const { langPath } = useLangPath();
   // Get article hotwords and combine with trending tags
-  const articleHotwords = useMemo(() => getArticleHotwords(language, 3), [language]);
+  const articleHotwords = useMemo(
+    () => getArticleHotwords(language, 3),
+    [language],
+  );
 
   // Combine backend trending tags with article hotwords
   const allHotwords = useMemo(() => {
-    const combined: Array<{ label: string; path: string; isArticle: boolean }> = [];
+    const combined: Array<{ label: string; path: string; isArticle: boolean }> =
+      [];
 
     // Add backend trending tags
     trendingTags.forEach((tag) => {
       combined.push({
         label: tag.label,
-        path: `/wiki/${tag.item_id}`,
+        path: langPath(`/wiki/${tag.item_id}`),
         isArticle: false,
       });
     });
@@ -539,25 +704,27 @@ const HotwordsSection: React.FC<HotwordsSectionProps> = ({
     articleHotwords.forEach((hw: ArticleHotword) => {
       combined.push({
         label: hw.label,
-        path: `/wiki/${hw.article_slug}`,
+        path: langPath(`/wiki/${hw.article_slug}`),
         isArticle: true,
       });
     });
 
     return combined;
-  }, [trendingTags, articleHotwords]);
+  }, [trendingTags, articleHotwords, langPath]);
 
   if (allHotwords.length === 0) return null;
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-3 text-xs">
-      <span className={`uppercase tracking-[0.3em] ${mutedText}`}>{trendingLabel}</span>
+      <span className={`uppercase tracking-[0.3em] ${mutedText}`}>
+        {trendingLabel}
+      </span>
       {allHotwords.map((hotword, index) => (
         <button
           key={`${hotword.label}-${index}`}
           onClick={() => navigate(hotword.path)}
           className={`px-3 py-1 rounded-full border ${borderColor} hover:text-gold-500 transition-colors ${
-            hotword.isArticle ? 'bg-gold-500/5' : ''
+            hotword.isArticle ? "bg-gold-500/5" : ""
           }`}
         >
           {hotword.label}

@@ -2,35 +2,38 @@
 // OUTPUT: Exports Footer component with copyright, nav links, and contact info.
 // POS: Global footer component; update components/FOLDER.md when this file changes.
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useTheme, useLanguage } from './UIComponents';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useTheme, useLanguage } from "./UIComponents";
+import { useLangPath } from "../hooks/useLangPath";
 
 const FOOTER_LINKS = [
-  { to: '/privacy', en: 'Privacy Policy', zh: '隐私政策' },
-  { to: '/terms', en: 'Terms of Service', zh: '服务条款' },
-  { to: '/cookies', en: 'Cookies', zh: 'Cookie 政策' },
-  { to: '/about', en: 'About', zh: '关于我们' },
-  { to: '/help', en: 'Help', zh: '帮助' },
+  { to: "/privacy", en: "Privacy Policy", zh: "隐私政策" },
+  { to: "/terms", en: "Terms of Service", zh: "服务条款" },
+  { to: "/cookies", en: "Cookies", zh: "Cookie 政策" },
+  { to: "/about", en: "About", zh: "关于我们" },
+  { to: "/help", en: "Help", zh: "帮助" },
 ] as const;
 
-const CONTACT_EMAIL = 'support@astrologywiki.com';
+const CONTACT_EMAIL = "support@astrologywiki.com";
 
 export const Footer: React.FC = () => {
   const { theme } = useTheme();
   const { language } = useLanguage();
-  const isDark = theme === 'dark';
+  const { langPath } = useLangPath();
+  const isDark = theme === "dark";
 
-  const contactLabel = language === 'zh' ? '联系我们' : 'Contact';
+  const contactLabel = language === "zh" ? "联系我们" : "Contact";
 
   return (
     <footer
       role="contentinfo"
       className={`
         border-t backdrop-blur-sm mt-auto
-        ${isDark
-          ? 'bg-space-950/80 border-gold-500/20'
-          : 'bg-paper-100/80 border-paper-300'
+        ${
+          isDark
+            ? "bg-space-950/80 border-gold-500/20"
+            : "bg-paper-100/80 border-paper-300"
         }
       `}
     >
@@ -41,16 +44,17 @@ export const Footer: React.FC = () => {
             {FOOTER_LINKS.map((link) => (
               <li key={link.to}>
                 <Link
-                  to={link.to}
+                  to={langPath(link.to)}
                   className={`
                     text-sm transition-colors
-                    ${isDark
-                      ? 'text-star-300 hover:text-gold-400'
-                      : 'text-paper-500 hover:text-gold-700'
+                    ${
+                      isDark
+                        ? "text-star-300 hover:text-gold-400"
+                        : "text-paper-500 hover:text-gold-700"
                     }
                   `}
                 >
-                  {language === 'zh' ? link.zh : link.en}
+                  {language === "zh" ? link.zh : link.en}
                 </Link>
               </li>
             ))}
@@ -59,9 +63,10 @@ export const Footer: React.FC = () => {
                 href={`mailto:${CONTACT_EMAIL}`}
                 className={`
                   text-sm transition-colors
-                  ${isDark
-                    ? 'text-star-300 hover:text-gold-400'
-                    : 'text-paper-500 hover:text-gold-700'
+                  ${
+                    isDark
+                      ? "text-star-300 hover:text-gold-400"
+                      : "text-paper-500 hover:text-gold-700"
                   }
                 `}
               >
@@ -75,7 +80,7 @@ export const Footer: React.FC = () => {
         <div
           className={`
             w-16 h-px
-            ${isDark ? 'bg-gold-500/30' : 'bg-gold-700/20'}
+            ${isDark ? "bg-gold-500/30" : "bg-gold-700/20"}
           `}
           aria-hidden="true"
         />
@@ -84,7 +89,7 @@ export const Footer: React.FC = () => {
         <p
           className={`
             text-xs tracking-wide
-            ${isDark ? 'text-star-500' : 'text-paper-400'}
+            ${isDark ? "text-star-500" : "text-paper-400"}
           `}
         >
           &copy; 2026 AstrologyWiki. All rights reserved.

@@ -2,50 +2,53 @@
 // OUTPUT: 导出 Wiki 文章列表页组件（含 SEO 输出与 ItemList 结构化数据）。
 // POS: Wiki 文章列表模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useMemo } from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Section, useLanguage, useTheme } from '../UIComponents';
-import { SEO } from '../SEO';
-import { Breadcrumb } from '../Breadcrumb';
-import { Calendar, FileText, User } from 'lucide-react';
-import { getArticleSummaries } from '../../data/articles';
-import type { WikiArticleSummary } from '../../types';
+import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
+import { Card, Section, useLanguage, useTheme } from "../UIComponents";
+import { SEO } from "../SEO";
+import { Breadcrumb } from "../Breadcrumb";
+import { Calendar, FileText, User } from "lucide-react";
+import { getArticleSummaries } from "../../data/articles";
+import type { WikiArticleSummary } from "../../types";
+import { useLangPath } from "../../hooks/useLangPath";
 
 const WikiArticlesPage: React.FC = () => {
   const { language, t } = useLanguage();
   const { theme } = useTheme();
+  const { langPath } = useLangPath();
 
   const articles = useMemo(() => getArticleSummaries(language), [language]);
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
-  const lang = language === 'en' ? 'en' : 'zh';
+  const siteUrl =
+    import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
+  const lang = language === "en" ? "en" : "zh";
   const canonicalUrl = `${siteUrl}/${lang}/wiki?tab=articles`;
   const alternateLanguages = [
-    { hrefLang: 'zh', href: `${siteUrl}/zh/wiki?tab=articles` },
-    { hrefLang: 'en', href: `${siteUrl}/en/wiki?tab=articles` },
-    { hrefLang: 'x-default', href: `${siteUrl}/en/wiki?tab=articles` },
+    { hrefLang: "zh", href: `${siteUrl}/zh/wiki?tab=articles` },
+    { hrefLang: "en", href: `${siteUrl}/en/wiki?tab=articles` },
+    { hrefLang: "x-default", href: `${siteUrl}/en/wiki?tab=articles` },
   ];
 
-  const isDark = theme === 'dark';
-  const mutedText = isDark ? 'text-star-400' : 'text-paper-600';
-  const borderColor = isDark ? 'border-gold-500/15' : 'border-paper-300';
-  const highlightText = isDark ? 'text-gold-400' : 'text-gold-600';
+  const isDark = theme === "dark";
+  const mutedText = isDark ? "text-star-400" : "text-paper-600";
+  const borderColor = isDark ? "border-gold-500/15" : "border-paper-300";
+  const highlightText = isDark ? "text-gold-400" : "text-gold-600";
 
   const itemListSchema = useMemo(() => {
     if (!articles.length) return null;
     return {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
+      "@context": "https://schema.org",
+      "@type": "ItemList",
       itemListElement: articles.map((article, index) => ({
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: index + 1,
         item: {
-          '@type': 'Article',
+          "@type": "Article",
           name: article.title,
           description: article.description,
           url: `${siteUrl}/${lang}/wiki/${article.slug}`,
           author: {
-            '@type': 'Organization',
+            "@type": "Organization",
             name: article.author,
           },
           datePublished: article.date,
@@ -54,26 +57,44 @@ const WikiArticlesPage: React.FC = () => {
     };
   }, [articles, lang, siteUrl]);
 
-  const breadcrumbSchema = useMemo(() => ({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: t.wiki.tab_home, item: `${siteUrl}/${lang}/` },
-      { '@type': 'ListItem', position: 2, name: t.wiki.tab_articles, item: canonicalUrl },
-    ],
-  }), [canonicalUrl, lang, siteUrl, t.wiki.tab_articles, t.wiki.tab_home]);
+  const breadcrumbSchema = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: t.wiki.tab_home,
+          item: `${siteUrl}/${lang}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: t.wiki.tab_articles,
+          item: canonicalUrl,
+        },
+      ],
+    }),
+    [canonicalUrl, lang, siteUrl, t.wiki.tab_articles, t.wiki.tab_home],
+  );
 
   // Note: Breadcrumb component already renders "Home" as the first item,
   // so we only include items after "Home" here
-  const breadcrumbItems = useMemo(() => [
-    { name: t.wiki.tab_articles, path: '' },
-  ], [t.wiki.tab_articles]);
+  const breadcrumbItems = useMemo(
+    () => [{ name: t.wiki.tab_articles, path: "" }],
+    [t.wiki.tab_articles],
+  );
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return lang === 'zh'
+    return lang === "zh"
       ? `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
-      : date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      : date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
   };
 
   return (
@@ -87,7 +108,7 @@ const WikiArticlesPage: React.FC = () => {
         schema={[breadcrumbSchema, ...(itemListSchema ? [itemListSchema] : [])]}
       />
 
-      <Breadcrumb items={breadcrumbItems} homePath="/wiki" />
+      <Breadcrumb items={breadcrumbItems} homePath={langPath("/wiki")} />
 
       <section className="text-center space-y-4 pt-6">
         <div className={`text-xs uppercase tracking-[0.3em] ${highlightText}`}>
@@ -128,22 +149,25 @@ const WikiArticlesPage: React.FC = () => {
 interface ArticleCardProps {
   article: WikiArticleSummary;
   formatDate: (date: string) => string;
-  theme: 'dark' | 'light';
-  t: ReturnType<typeof useLanguage>['t'];
+  theme: "dark" | "light";
+  t: ReturnType<typeof useLanguage>["t"];
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article, formatDate, theme, t }) => {
-  const isDark = theme === 'dark';
-  const mutedText = isDark ? 'text-star-400' : 'text-paper-600';
-  const borderColor = isDark ? 'border-gold-500/15' : 'border-paper-300';
-  const highlightText = isDark ? 'text-gold-400' : 'text-gold-600';
-  const cardBg = isDark ? 'bg-space-900/60' : 'bg-paper-100/90';
+const ArticleCard: React.FC<ArticleCardProps> = ({
+  article,
+  formatDate,
+  theme,
+  t,
+}) => {
+  const { langPath } = useLangPath();
+  const isDark = theme === "dark";
+  const mutedText = isDark ? "text-star-400" : "text-paper-600";
+  const borderColor = isDark ? "border-gold-500/15" : "border-paper-300";
+  const highlightText = isDark ? "text-gold-400" : "text-gold-600";
+  const cardBg = isDark ? "bg-space-900/60" : "bg-paper-100/90";
 
   return (
-    <Link
-      to={`/wiki/${article.slug}`}
-      className="group block"
-    >
+    <Link to={langPath(`/wiki/${article.slug}`)} className="group block">
       <Card
         className={`h-full flex flex-col transition-all duration-300 hover:border-gold-500/30 ${cardBg}`}
         noPadding
@@ -156,7 +180,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, formatDate, theme, t
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-space-900/80' : 'from-paper-50/80'} to-transparent`} />
+            <div
+              className={`absolute inset-0 bg-gradient-to-t ${isDark ? "from-space-900/80" : "from-paper-50/80"} to-transparent`}
+            />
           </div>
         )}
 
@@ -193,7 +219,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, formatDate, theme, t
             </div>
           )}
 
-          <div className={`text-xs uppercase tracking-[0.2em] ${highlightText} pt-2`}>
+          <div
+            className={`text-xs uppercase tracking-[0.2em] ${highlightText} pt-2`}
+          >
             {t.wiki.article_read_more} →
           </div>
         </div>

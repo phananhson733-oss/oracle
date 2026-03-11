@@ -345,10 +345,11 @@ const generate = async () => {
 
   const sitemapUrls = [];
 
-  // Add public SPA routes (BrowserRouter, no lang prefix)
+  // Add public SPA routes with lang prefix for each language
   const publicRoutes = ['/privacy', '/terms', '/cookies', '/about', '/help'];
   for (const route of publicRoutes) {
-    sitemapUrls.push(`${siteUrl}${route}`);
+    sitemapUrls.push(`${siteUrl}/en${route}`);
+    sitemapUrls.push(`${siteUrl}/zh${route}`);
   }
 
   for (const lang of ['zh', 'en']) {
@@ -405,7 +406,7 @@ const generate = async () => {
           ]),
         ],
         ctaText: config.wikiCta,
-        spaPath: '/wiki',
+        spaPath: `/${lang}/wiki`,
       });
 
       await writeHtmlPage({
@@ -424,7 +425,7 @@ const generate = async () => {
           ]),
         ],
         ctaText: config.classicsCta,
-        spaPath: '/wiki/classics',
+        spaPath: `/${lang}/wiki/classics`,
       });
     }
 
@@ -458,7 +459,7 @@ const generate = async () => {
           ]),
         ],
         ctaText: config.wikiCta,
-        spaPath: `/wiki/${item.id}`,
+        spaPath: `/${lang}/wiki/${item.id}`,
       });
     }
 
@@ -491,7 +492,7 @@ const generate = async () => {
           ]),
         ],
         ctaText: config.classicsCta,
-        spaPath: `/wiki/classics/${classic.id}`,
+        spaPath: `/${lang}/wiki/classics/${classic.id}`,
       });
     }
   }

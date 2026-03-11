@@ -2,36 +2,39 @@
 // OUTPUT: 错误边界组件，捕获渲染错误并显示友好的错误界面
 // POS: 全局错误处理组件
 
-import React, { Component, ReactNode, ErrorInfo } from 'react';
-import { ActionButton } from './UIComponents';
+import React from "react";
+import { ActionButton } from "./UIComponents";
 
 interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
 }
 
 interface State {
   hasError: boolean;
   error: Error | null;
-  errorInfo: ErrorInfo | null;
+  errorInfo: React.ErrorInfo | null;
 }
 
-class ErrorBoundary extends Component<Props, State> {
-  public state: State = {
-    hasError: false,
-    error: null,
-    errorInfo: null
-  };
+class ErrorBoundary extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      hasError: false,
+      error: null,
+      errorInfo: null,
+    };
+  }
 
   static getDerivedStateFromError(_error: Error): Partial<State> {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error("ErrorBoundary caught an error:", error, errorInfo);
     this.setState({
       error,
-      errorInfo
+      errorInfo,
     });
   }
 
@@ -39,7 +42,7 @@ class ErrorBoundary extends Component<Props, State> {
     this.setState({
       hasError: false,
       error: null,
-      errorInfo: null
+      errorInfo: null,
     });
   };
 
@@ -52,13 +55,16 @@ class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="min-h-screen flex items-center justify-center p-4 bg-space-950">
           <div className="max-w-md w-full space-y-6 text-center">
-            <div className="text-6xl" role="img" aria-label="Warning">⚠️</div>
+            <div className="text-6xl" role="img" aria-label="Warning">
+              ⚠️
+            </div>
             <div className="space-y-2">
               <h1 className="text-2xl font-serif font-semibold text-star-50">
                 Something went wrong
               </h1>
               <p className="text-sm text-star-400">
-                We encountered an unexpected error. Please try refreshing the page.
+                We encountered an unexpected error. Please try refreshing the
+                page.
               </p>
             </div>
 

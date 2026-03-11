@@ -2,21 +2,26 @@
 // OUTPUT: 导出 Wiki 文章详情页组件（含 Article schema、面包屑与 Markdown 渲染）。
 // POS: Wiki 文章详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Card, Container, useLanguage, useTheme } from '../UIComponents';
-import { SEO } from '../SEO';
-import { Breadcrumb } from '../Breadcrumb';
-import { ArrowLeft, Calendar, User } from 'lucide-react';
-import { getArticleBySlug, getArticleSummaries, isArticleSlug } from '../../data/articles';
-import { trackEvent } from '../../services/analytics';
-import type { WikiArticleSummary } from '../../types';
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Card, Container, useLanguage, useTheme } from "../UIComponents";
+import { SEO } from "../SEO";
+import { Breadcrumb } from "../Breadcrumb";
+import { ArrowLeft, Calendar, User } from "lucide-react";
+import {
+  getArticleBySlug,
+  getArticleSummaries,
+  isArticleSlug,
+} from "../../data/articles";
+import { trackEvent } from "../../services/analytics";
+import type { WikiArticleSummary } from "../../types";
+import { useLangPath } from "../../hooks/useLangPath";
 
 // Safe Markdown renderer with error handling
 interface SafeMarkdownProps {
   content: string;
-  theme: 'dark' | 'light';
-  lang: 'zh' | 'en';
+  theme: "dark" | "light";
+  lang: "zh" | "en";
   skipFirstH1?: boolean;
   errorFallback: React.ReactNode;
 }
@@ -47,9 +52,9 @@ const SafeMarkdownRenderer: React.FC<SafeMarkdownProps> = ({
 };
 
 // Article loading skeleton
-const ArticleSkeleton: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
-  const isDark = theme === 'dark';
-  const skeletonBg = isDark ? 'bg-space-700/50' : 'bg-paper-200/50';
+const ArticleSkeleton: React.FC<{ theme: "dark" | "light" }> = ({ theme }) => {
+  const isDark = theme === "dark";
+  const skeletonBg = isDark ? "bg-space-700/50" : "bg-paper-200/50";
 
   return (
     <div className="space-y-10 max-w-4xl mx-auto animate-pulse">
@@ -83,23 +88,22 @@ const ArticleSkeleton: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   );
 };
 
-
 // Markdown rendering utilities
 const renderMarkdownContent = (
   content: string,
-  theme: 'dark' | 'light',
-  _lang: 'zh' | 'en', // Reserved for future language-specific rendering
-  skipFirstH1 = true
+  theme: "dark" | "light",
+  _lang: "zh" | "en", // Reserved for future language-specific rendering
+  skipFirstH1 = true,
 ): React.ReactNode => {
-  const isDark = theme === 'dark';
-  const mutedText = isDark ? 'text-star-400' : 'text-paper-600';
-  const highlightText = isDark ? 'text-gold-400' : 'text-gold-600';
-  const borderColor = isDark ? 'border-gold-500/20' : 'border-paper-300';
-  const tableBg = isDark ? 'bg-space-900/40' : 'bg-paper-100/60';
-  const tableHeaderBg = isDark ? 'bg-space-800/60' : 'bg-paper-200/60';
-  const blockquoteBg = isDark ? 'bg-space-800/40' : 'bg-paper-100/80';
+  const isDark = theme === "dark";
+  const mutedText = isDark ? "text-star-400" : "text-paper-600";
+  const highlightText = isDark ? "text-gold-400" : "text-gold-600";
+  const borderColor = isDark ? "border-gold-500/20" : "border-paper-300";
+  const tableBg = isDark ? "bg-space-900/40" : "bg-paper-100/60";
+  const tableHeaderBg = isDark ? "bg-space-800/60" : "bg-paper-200/60";
+  const blockquoteBg = isDark ? "bg-space-800/40" : "bg-paper-100/80";
 
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   const elements: React.ReactNode[] = [];
   let currentIndex = 0;
   let inTable = false;
@@ -123,25 +127,28 @@ const renderMarkdownContent = (
       if (match[1]) {
         // Bold text - recursively process inner content for nested links
         parts.push(
-          <strong key={`bold-${match.index}`} className={`font-semibold ${highlightText}`}>
+          <strong
+            key={`bold-${match.index}`}
+            className={`font-semibold ${highlightText}`}
+          >
             {processInlineContent(match[2])}
-          </strong>
+          </strong>,
         );
       } else if (match[3]) {
         // Link
         const linkTextContent = match[4];
         const href = match[5];
-        const isInternal = href.startsWith('/');
+        const isInternal = href.startsWith("/");
 
         if (isInternal) {
           parts.push(
             <Link
               key={`link-${match.index}`}
               to={href}
-              className={`underline underline-offset-2 ${isDark ? 'text-gold-400 hover:text-gold-300' : 'text-gold-600 hover:text-gold-700'} transition-colors`}
+              className={`underline underline-offset-2 ${isDark ? "text-gold-400 hover:text-gold-300" : "text-gold-600 hover:text-gold-700"} transition-colors`}
             >
               {linkTextContent}
-            </Link>
+            </Link>,
           );
         } else {
           parts.push(
@@ -150,10 +157,10 @@ const renderMarkdownContent = (
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`underline underline-offset-2 ${isDark ? 'text-gold-400 hover:text-gold-300' : 'text-gold-600 hover:text-gold-700'} transition-colors`}
+              className={`underline underline-offset-2 ${isDark ? "text-gold-400 hover:text-gold-300" : "text-gold-600 hover:text-gold-700"} transition-colors`}
             >
               {linkTextContent}
-            </a>
+            </a>,
           );
         }
       } else if (match[6]) {
@@ -161,10 +168,10 @@ const renderMarkdownContent = (
         parts.push(
           <code
             key={`code-${match.index}`}
-            className={`px-1.5 py-0.5 rounded text-sm ${isDark ? 'bg-space-700 text-star-200' : 'bg-paper-200 text-paper-700'}`}
+            className={`px-1.5 py-0.5 rounded text-sm ${isDark ? "bg-space-700 text-star-200" : "bg-paper-200 text-paper-700"}`}
           >
             {match[7]}
-          </code>
+          </code>,
         );
       }
 
@@ -186,14 +193,19 @@ const renderMarkdownContent = (
     const dataRows = tableRows.slice(2); // Skip separator row
 
     const parseRow = (row: string): string[] =>
-      row.split('|').map(cell => cell.trim()).filter(cell => cell);
+      row
+        .split("|")
+        .map((cell) => cell.trim())
+        .filter((cell) => cell);
 
     const headers = parseRow(headerRow);
     const rows = dataRows.map(parseRow);
 
     return (
       <div key={`table-${currentIndex}`} className="overflow-x-auto my-6">
-        <table className={`w-full border-collapse rounded-xl overflow-hidden ${tableBg}`}>
+        <table
+          className={`w-full border-collapse rounded-xl overflow-hidden ${tableBg}`}
+        >
           <thead>
             <tr className={tableHeaderBg}>
               {headers.map((header: string, i: number) => (
@@ -208,7 +220,16 @@ const renderMarkdownContent = (
           </thead>
           <tbody>
             {rows.map((row: string[], rowIndex: number) => (
-              <tr key={rowIndex} className={rowIndex % 2 === 0 ? '' : (isDark ? 'bg-space-800/20' : 'bg-paper-100/40')}>
+              <tr
+                key={rowIndex}
+                className={
+                  rowIndex % 2 === 0
+                    ? ""
+                    : isDark
+                      ? "bg-space-800/20"
+                      : "bg-paper-100/40"
+                }
+              >
                 {row.map((cell: string, cellIndex: number) => (
                   <td
                     key={cellIndex}
@@ -230,7 +251,7 @@ const renderMarkdownContent = (
     const trimmed = line.trim();
 
     // Handle table
-    if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
+    if (trimmed.startsWith("|") && trimmed.endsWith("|")) {
       if (!inTable) {
         inTable = true;
         tableRows = [];
@@ -253,7 +274,7 @@ const renderMarkdownContent = (
     }
 
     // Headers
-    if (trimmed.startsWith('# ')) {
+    if (trimmed.startsWith("# ")) {
       // Skip the first h1 as it's already displayed in the header
       if (skipFirstH1 && !skippedFirstH1) {
         skippedFirstH1 = true;
@@ -261,49 +282,64 @@ const renderMarkdownContent = (
         continue;
       }
       elements.push(
-        <h1 key={`h1-${i}`} className="text-3xl md:text-4xl font-serif font-semibold mt-8 mb-6">
+        <h1
+          key={`h1-${i}`}
+          className="text-3xl md:text-4xl font-serif font-semibold mt-8 mb-6"
+        >
           {processInlineContent(trimmed.slice(2))}
-        </h1>
+        </h1>,
       );
-    } else if (trimmed.startsWith('## ')) {
+    } else if (trimmed.startsWith("## ")) {
       elements.push(
-        <h2 key={`h2-${i}`} className="text-2xl font-serif font-semibold mt-10 mb-5">
+        <h2
+          key={`h2-${i}`}
+          className="text-2xl font-serif font-semibold mt-10 mb-5"
+        >
           {processInlineContent(trimmed.slice(3))}
-        </h2>
+        </h2>,
       );
-    } else if (trimmed.startsWith('### ')) {
+    } else if (trimmed.startsWith("### ")) {
       elements.push(
-        <h3 key={`h3-${i}`} className="text-xl font-serif font-semibold mt-8 mb-4">
+        <h3
+          key={`h3-${i}`}
+          className="text-xl font-serif font-semibold mt-8 mb-4"
+        >
           {processInlineContent(trimmed.slice(4))}
-        </h3>
+        </h3>,
       );
-    } else if (trimmed.startsWith('#### ')) {
+    } else if (trimmed.startsWith("#### ")) {
       elements.push(
-        <h4 key={`h4-${i}`} className={`text-lg font-semibold mt-6 mb-3 ${highlightText}`}>
+        <h4
+          key={`h4-${i}`}
+          className={`text-lg font-semibold mt-6 mb-3 ${highlightText}`}
+        >
           {processInlineContent(trimmed.slice(5))}
-        </h4>
+        </h4>,
       );
     }
     // Blockquote
-    else if (trimmed.startsWith('> ')) {
+    else if (trimmed.startsWith("> ")) {
       elements.push(
         <blockquote
           key={`quote-${i}`}
           className={`my-6 pl-5 py-4 pr-5 rounded-r-xl border-l-4 border-gold-500/50 ${blockquoteBg} ${mutedText} italic text-base leading-7`}
         >
           {processInlineContent(trimmed.slice(2))}
-        </blockquote>
+        </blockquote>,
       );
     }
     // Unordered list item
-    else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+    else if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
       elements.push(
-        <div key={`li-${i}`} className={`flex gap-3 items-start my-3 ${mutedText}`}>
+        <div
+          key={`li-${i}`}
+          className={`flex gap-3 items-start my-3 ${mutedText}`}
+        >
           <span className="mt-2.5 w-1.5 h-1.5 rounded-full shrink-0 bg-gold-500/60" />
           <span className="flex-1 text-base leading-7">
             {processInlineContent(trimmed.slice(2))}
           </span>
-        </div>
+        </div>,
       );
     }
     // Ordered list item
@@ -311,21 +347,26 @@ const renderMarkdownContent = (
       const listMatch = trimmed.match(/^(\d+)\.\s(.*)$/);
       if (listMatch) {
         elements.push(
-          <div key={`oli-${i}`} className={`flex gap-3 items-start my-3 ${mutedText}`}>
-            <span className={`text-base font-semibold ${highlightText} min-w-[1.5rem]`}>
+          <div
+            key={`oli-${i}`}
+            className={`flex gap-3 items-start my-3 ${mutedText}`}
+          >
+            <span
+              className={`text-base font-semibold ${highlightText} min-w-[1.5rem]`}
+            >
               {listMatch[1]}.
             </span>
             <span className="flex-1 text-base leading-7">
               {processInlineContent(listMatch[2])}
             </span>
-          </div>
+          </div>,
         );
       }
     }
     // Horizontal rule
-    else if (trimmed === '---' || trimmed === '***') {
+    else if (trimmed === "---" || trimmed === "***") {
       elements.push(
-        <hr key={`hr-${i}`} className={`my-8 border-t ${borderColor}`} />
+        <hr key={`hr-${i}`} className={`my-8 border-t ${borderColor}`} />,
       );
     }
     // Regular paragraph
@@ -333,7 +374,7 @@ const renderMarkdownContent = (
       elements.push(
         <p key={`p-${i}`} className={`my-5 text-base leading-7 ${mutedText}`}>
           {processInlineContent(trimmed)}
-        </p>
+        </p>,
       );
     }
 
@@ -355,86 +396,128 @@ interface WikiArticleDetailPageProps {
   articleSlug?: string; // If provided, use this slug instead of URL param
 }
 
-const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSlug }) => {
+const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
+  articleSlug,
+}) => {
   const { id } = useParams<{ id: string }>();
   const slug = articleSlug || id;
   const { language, t } = useLanguage();
   const { theme } = useTheme();
+  const { langPath } = useLangPath();
   const trackedViewRef = useRef<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const lang = language === 'en' ? 'en' : 'zh';
-  const article = useMemo(() => slug ? getArticleBySlug(slug, language) : null, [slug, language]);
+  const lang = language === "en" ? "en" : "zh";
+  const article = useMemo(
+    () => (slug ? getArticleBySlug(slug, language) : null),
+    [slug, language],
+  );
   const relatedArticles = useMemo(() => {
     if (!article) return [];
     const allArticles = getArticleSummaries(language);
     return allArticles
       .filter((a: WikiArticleSummary) => a.slug !== article.slug)
-      .filter((a: WikiArticleSummary) => a.keywords.some((k: string) => article.keywords.includes(k)))
+      .filter((a: WikiArticleSummary) =>
+        a.keywords.some((k: string) => article.keywords.includes(k)),
+      )
       .slice(0, 3);
   }, [article, language]);
 
-  const isDark = theme === 'dark';
-  const mutedText = isDark ? 'text-star-400' : 'text-paper-600';
-  const borderColor = isDark ? 'border-gold-500/15' : 'border-paper-300';
-  const highlightText = isDark ? 'text-gold-400' : 'text-gold-600';
+  const isDark = theme === "dark";
+  const mutedText = isDark ? "text-star-400" : "text-paper-600";
+  const borderColor = isDark ? "border-gold-500/15" : "border-paper-300";
+  const highlightText = isDark ? "text-gold-400" : "text-gold-600";
 
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
-  const canonicalUrl = article ? `${siteUrl}/${lang}/wiki/${article.slug}` : `${siteUrl}/${lang}/wiki`;
-  const alternateLanguages = article ? [
-    { hrefLang: 'zh', href: `${siteUrl}/zh/wiki/${article.slug}` },
-    { hrefLang: 'en', href: `${siteUrl}/en/wiki/${article.slug}` },
-    { hrefLang: 'x-default', href: `${siteUrl}/en/wiki/${article.slug}` },
-  ] : [];
+  const siteUrl =
+    import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
+  const canonicalUrl = article
+    ? `${siteUrl}/${lang}/wiki/${article.slug}`
+    : `${siteUrl}/${lang}/wiki`;
+  const alternateLanguages = article
+    ? [
+        { hrefLang: "zh", href: `${siteUrl}/zh/wiki/${article.slug}` },
+        { hrefLang: "en", href: `${siteUrl}/en/wiki/${article.slug}` },
+        { hrefLang: "x-default", href: `${siteUrl}/en/wiki/${article.slug}` },
+      ]
+    : [];
 
   const articleSchema = useMemo(() => {
     if (!article) return null;
     return {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
+      "@context": "https://schema.org",
+      "@type": "Article",
       headline: article.title,
       description: article.description,
       author: {
-        '@type': 'Organization',
+        "@type": "Organization",
         name: article.author,
       },
       datePublished: article.date,
       dateModified: article.date,
       image: article.image || `${siteUrl}/og-image.png`,
       mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': canonicalUrl,
+        "@type": "WebPage",
+        "@id": canonicalUrl,
       },
       publisher: {
-        '@type': 'Organization',
-        name: 'AstroMind',
+        "@type": "Organization",
+        name: "AstroMind",
         logo: {
-          '@type': 'ImageObject',
+          "@type": "ImageObject",
           url: `${siteUrl}/logo.png`,
         },
       },
     };
   }, [article, canonicalUrl, siteUrl]);
 
-  const breadcrumbSchema = useMemo(() => ({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: t.wiki.tab_home, item: `${siteUrl}/${lang}/` },
-      { '@type': 'ListItem', position: 2, name: t.wiki.tab_articles, item: `${siteUrl}/${lang}/wiki?tab=articles` },
-      ...(article ? [{ '@type': 'ListItem', position: 3, name: article.title, item: canonicalUrl }] : []),
+  const breadcrumbSchema = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: t.wiki.tab_home,
+          item: `${siteUrl}/${lang}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: t.wiki.tab_articles,
+          item: `${siteUrl}/${lang}/wiki?tab=articles`,
+        },
+        ...(article
+          ? [
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: article.title,
+                item: canonicalUrl,
+              },
+            ]
+          : []),
+      ],
+    }),
+    [
+      article,
+      canonicalUrl,
+      lang,
+      siteUrl,
+      t.wiki.tab_articles,
+      t.wiki.tab_home,
     ],
-  }), [article, canonicalUrl, lang, siteUrl, t.wiki.tab_articles, t.wiki.tab_home]);
+  );
 
   const breadcrumbItems = useMemo(() => {
     const items = [
-      { name: t.wiki.tab_articles, path: '/wiki?tab=articles' },
+      { name: t.wiki.tab_articles, path: langPath("/wiki?tab=articles") },
     ];
     if (article) {
-      items.push({ name: article.title, path: '' });
+      items.push({ name: article.title, path: "" });
     }
     return items;
-  }, [article, t.wiki.tab_articles]);
+  }, [article, t.wiki.tab_articles, langPath]);
 
   // Simulate loading for skeleton (remove in production with real async data)
   useEffect(() => {
@@ -449,7 +532,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
     const viewKey = `${lang}:${article.slug}`;
     if (trackedViewRef.current === viewKey) return;
     trackedViewRef.current = viewKey;
-    trackEvent('wiki_article_viewed', {
+    trackEvent("wiki_article_viewed", {
       article_slug: article.slug,
       article_title: article.title,
       language: lang,
@@ -465,9 +548,13 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
 
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
-    return lang === 'zh'
+    return lang === "zh"
       ? `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
-      : date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      : date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
   };
 
   // Show skeleton while loading
@@ -484,10 +571,10 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
       <Container>
         <div className="space-y-6">
           <Card className="border-l border-l-danger/40 text-sm text-danger">
-            {t.app?.error || 'Article not found'}
+            {t.app?.error || "Article not found"}
           </Card>
           <Link
-            to="/wiki?tab=articles"
+            to={langPath("/wiki?tab=articles")}
             className={`inline-flex items-center gap-2 text-sm ${mutedText} hover:text-gold-500 transition-colors`}
           >
             <ArrowLeft size={16} /> {t.wiki.articles_back}
@@ -510,7 +597,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
         schema={[articleSchema, breadcrumbSchema].filter(Boolean)}
       />
 
-      <Breadcrumb items={breadcrumbItems} homePath="/wiki" />
+      <Breadcrumb items={breadcrumbItems} homePath={langPath("/wiki")} />
 
       <div className="space-y-10 max-w-4xl mx-auto">
         {/* Article header */}
@@ -523,7 +610,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t ${isDark ? 'from-space-900/90' : 'from-paper-50/90'} to-transparent`} />
+              <div
+                className={`absolute inset-0 bg-gradient-to-t ${isDark ? "from-space-900/90" : "from-paper-50/90"} to-transparent`}
+              />
             </div>
           )}
 
@@ -536,7 +625,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
               {article.description}
             </p>
 
-            <div className={`flex flex-wrap items-center gap-x-6 gap-y-2 text-sm ${mutedText} border-b pb-6 ${borderColor}`}>
+            <div
+              className={`flex flex-wrap items-center gap-x-6 gap-y-2 text-sm ${mutedText} border-b pb-6 ${borderColor}`}
+            >
               <span className="flex items-center gap-2">
                 <User size={16} className={highlightText} />
                 {article.author}
@@ -571,7 +662,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
             skipFirstH1={true}
             errorFallback={
               <Card className="border-l border-l-danger/40 text-sm text-danger">
-                {lang === 'zh' ? '文章内容加载失败' : 'Failed to load article content'}
+                {lang === "zh"
+                  ? "文章内容加载失败"
+                  : "Failed to load article content"}
               </Card>
             }
           />
@@ -580,14 +673,22 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({ articleSl
         {/* Related articles */}
         {relatedArticles.length > 0 && (
           <section className="space-y-6 pt-8 border-t border-dashed border-current/10">
-            <h2 className="text-xl font-serif font-semibold">{t.wiki.article_related}</h2>
+            <h2 className="text-xl font-serif font-semibold">
+              {t.wiki.article_related}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {relatedArticles.map((related: WikiArticleSummary) => (
                 <Link
                   key={related.slug}
-                  to={`/wiki/${related.slug}`}
+                  to={langPath(`/wiki/${related.slug}`)}
                   className="group"
-                  onClick={() => trackEvent('wiki_related_article_clicked', { article_id: related.slug, article_title: related.title, article_type: 'article' })}
+                  onClick={() =>
+                    trackEvent("wiki_related_article_clicked", {
+                      article_id: related.slug,
+                      article_title: related.title,
+                      article_type: "article",
+                    })
+                  }
                 >
                   <Card className="h-full transition-all duration-300 hover:border-gold-500/30">
                     <h3 className="font-semibold line-clamp-2 group-hover:text-gold-500 transition-colors">

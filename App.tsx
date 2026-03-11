@@ -3,76 +3,122 @@
 // POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
-import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, useLocation, Link, Navigate } from 'react-router-dom';
-import { Container, ActionButton, useTheme, ThemeProvider, Modal, LanguageProvider, useLanguage } from './components/UIComponents';
-import { X } from 'lucide-react';
-import * as T from './types';
-import { FREE_MODE, LOGIN_GATE_MODE } from './constants';
-import { OracleLoading } from './components/OracleLoading';
-import { gmAddTokens, gmCancelSubscription, gmClearTokens, gmCreateDevSession, gmUnlockSubscription } from './services/paymentClient';
-import { trackPageView, startPageEngagement, endPageEngagement } from './services/analytics';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+  lazy,
+  Suspense,
+} from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+  useParams,
+  Link,
+  Navigate,
+} from "react-router-dom";
+import {
+  Container,
+  ActionButton,
+  useTheme,
+  ThemeProvider,
+  LanguageProvider,
+  useLanguage,
+} from "./components/UIComponents";
+import { useLangPath, extractLangFromPath } from "./hooks/useLangPath";
+import { X } from "lucide-react";
+import * as T from "./types";
+import { FREE_MODE, LOGIN_GATE_MODE } from "./constants";
+import { OracleLoading } from "./components/OracleLoading";
+import {
+  gmAddTokens,
+  gmCancelSubscription,
+  gmClearTokens,
+  gmCreateDevSession,
+  gmUnlockSubscription,
+} from "./services/paymentClient";
+import {
+  trackPageView,
+  startPageEngagement,
+  endPageEngagement,
+} from "./services/analytics";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
 // deleteAccount, exportData moved to pages/SettingsPage.tsx
-import { EntitlementProvider, useEntitlement } from './contexts/EntitlementContext';
-import { SEO } from './components/SEO';
-import { LoginModal, UpgradeModal, UserMenu, PaymentSuccessPage, CreditsSuccessPage } from './components/auth';
-import { CreditsModal } from './components/payment';
-import { ConsentBanner } from './components/ConsentBanner';
-import { Footer } from './components/Footer';
-import { useAnalyticsTracking } from './hooks/useAnalytics';
+import {
+  EntitlementProvider,
+  useEntitlement,
+} from "./contexts/EntitlementContext";
+import { SEO } from "./components/SEO";
+import {
+  LoginModal,
+  UpgradeModal,
+  UserMenu,
+  PaymentSuccessPage,
+  CreditsSuccessPage,
+} from "./components/auth";
+import { CreditsModal } from "./components/payment";
+import { ConsentBanner } from "./components/ConsentBanner";
+import { Footer } from "./components/Footer";
+import { useAnalyticsTracking } from "./hooks/useAnalytics";
 
 // Global SEO schemas (Organization, WebSite)
 const GlobalSchema: React.FC = () => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://www.astrologywiki.com';
+  const siteUrl =
+    import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
 
   const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Astromind',
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Astromind",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     sameAs: [
-      'https://twitter.com/astromind',
-      'https://www.instagram.com/astromind',
-      'https://www.youtube.com/@astromind',
+      "https://twitter.com/astromind",
+      "https://www.instagram.com/astromind",
+      "https://www.youtube.com/@astromind",
     ],
   };
 
   const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Astromind',
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Astromind",
     url: siteUrl,
     potentialAction: {
-      '@type': 'SearchAction',
+      "@type": "SearchAction",
       target: {
-        '@type': 'EntryPoint',
+        "@type": "EntryPoint",
         urlTemplate: `${siteUrl}/wiki?search={search_term_string}`,
       },
-      'query-input': 'required name=search_term_string',
+      "query-input": "required name=search_term_string",
     },
   };
 
   React.useEffect(() => {
-    if (typeof document === 'undefined') return;
+    if (typeof document === "undefined") return;
 
     // Organization schema
-    const orgScript = document.createElement('script');
-    orgScript.type = 'application/ld+json';
+    const orgScript = document.createElement("script");
+    orgScript.type = "application/ld+json";
     orgScript.textContent = JSON.stringify(organizationSchema);
-    orgScript.setAttribute('data-astro-global-schema', 'organization');
+    orgScript.setAttribute("data-astro-global-schema", "organization");
     document.head.appendChild(orgScript);
 
     // Website schema
-    const webScript = document.createElement('script');
-    webScript.type = 'application/ld+json';
+    const webScript = document.createElement("script");
+    webScript.type = "application/ld+json";
     webScript.textContent = JSON.stringify(websiteSchema);
-    webScript.setAttribute('data-astro-global-schema', 'website');
+    webScript.setAttribute("data-astro-global-schema", "website");
     document.head.appendChild(webScript);
 
     return () => {
-      document.querySelectorAll('[data-astro-global-schema]').forEach((el) => el.remove());
+      document
+        .querySelectorAll("[data-astro-global-schema]")
+        .forEach((el) => el.remove());
     };
   }, []);
 
@@ -80,19 +126,58 @@ const GlobalSchema: React.FC = () => {
 };
 
 // 懒加载大型组件
-const CBTMainPage = lazy(() => import('./components/cbt/CBTMainPage'));
-const WikiHubPage = lazy(() => import('./components/wiki/WikiHubPage'));
-const WikiDetailPage = lazy(() => import('./components/wiki/WikiDetailPage'));
-const WikiClassicDetailPage = lazy(() => import('./components/wiki/WikiClassicDetailPage').then(m => ({ default: m.WikiClassicDetailPage })));
-const WikiClassicsPage = lazy(() => import('./components/wiki/WikiClassicsPage'));
-const ReportsPage = lazy(() => import('./components/reports').then(m => ({ default: m.ReportsPage })));
-const ReportViewPage = lazy(() => import('./components/reports').then(m => ({ default: m.ReportViewPage })));
-const ColorSystemDemo = lazy(() => import('./components/ColorSystemDemo').then(m => ({ default: m.ColorSystemDemo })));
-const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./components/legal/TermsOfService'));
-const CookiePolicy = lazy(() => import('./components/legal/CookiePolicy'));
-const AboutPage = lazy(() => import('./components/legal/AboutPage'));
-const HelpPage = lazy(() => import('./components/legal/HelpPage'));
+const CBTMainPage = lazy(() => import("./components/cbt/CBTMainPage"));
+const WikiHubPage = lazy(() => import("./components/wiki/WikiHubPage"));
+const WikiDetailPage = lazy(() => import("./components/wiki/WikiDetailPage"));
+const WikiClassicDetailPage = lazy(() =>
+  import("./components/wiki/WikiClassicDetailPage").then((m) => ({
+    default: m.WikiClassicDetailPage,
+  })),
+);
+const WikiClassicsPage = lazy(
+  () => import("./components/wiki/WikiClassicsPage"),
+);
+const ReportsPage = lazy(() =>
+  import("./components/reports").then((m) => ({ default: m.ReportsPage })),
+);
+const ReportViewPage = lazy(() =>
+  import("./components/reports").then((m) => ({ default: m.ReportViewPage })),
+);
+const ColorSystemDemo = lazy(() =>
+  import("./components/ColorSystemDemo").then((m) => ({
+    default: m.ColorSystemDemo,
+  })),
+);
+const PrivacyPolicy = lazy(() => import("./components/legal/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./components/legal/TermsOfService"));
+const CookiePolicy = lazy(() => import("./components/legal/CookiePolicy"));
+const AboutPage = lazy(() => import("./components/legal/AboutPage"));
+const HelpPage = lazy(() => import("./components/legal/HelpPage"));
+
+// Redirect bare public routes (e.g. /wiki/sun) to language-prefixed version (e.g. /en/wiki/sun)
+const LangRedirect: React.FC = () => {
+  const { language } = useLanguage();
+  const location = useLocation();
+  return (
+    <Navigate
+      to={`/${language}${location.pathname}${location.search}${location.hash}`}
+      replace
+    />
+  );
+};
+
+// Validate :lang param — only allow 'en' and 'zh', otherwise redirect to /en/...
+const LangGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { lang } = useParams<{ lang: string }>();
+  const location = useLocation();
+  if (lang !== "en" && lang !== "zh") {
+    const rest = location.pathname.replace(/^\/[^/]+/, "");
+    return (
+      <Navigate to={`/en${rest}${location.search}${location.hash}`} replace />
+    );
+  }
+  return <>{children}</>;
+};
 
 const NotFoundPage: React.FC = () => {
   const { theme } = useTheme();
@@ -101,15 +186,26 @@ const NotFoundPage: React.FC = () => {
     <Container>
       <SEO title="Page Not Found" robots="noindex" />
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
-        <div className="text-8xl font-serif font-bold mb-4 bg-gradient-to-r from-gold-500 to-gold-300 bg-clip-text text-transparent">404</div>
-        <h1 className={`text-2xl font-serif mb-3 ${theme === 'dark' ? 'text-star-50' : 'text-paper-900'}`}>
-          {language === 'zh' ? '星辰迷失了方向' : 'The Stars Lost Their Way'}
+        <div className="text-8xl font-serif font-bold mb-4 bg-gradient-to-r from-gold-500 to-gold-300 bg-clip-text text-transparent">
+          404
+        </div>
+        <h1
+          className={`text-2xl font-serif mb-3 ${theme === "dark" ? "text-star-50" : "text-paper-900"}`}
+        >
+          {language === "zh" ? "星辰迷失了方向" : "The Stars Lost Their Way"}
         </h1>
-        <p className={`text-sm mb-8 max-w-md ${theme === 'dark' ? 'text-star-400' : 'text-paper-500'}`}>
-          {language === 'zh' ? '这个页面不存在。也许宇宙有其他安排。' : "This page doesn't exist. Perhaps the universe has other plans."}
+        <p
+          className={`text-sm mb-8 max-w-md ${theme === "dark" ? "text-star-400" : "text-paper-500"}`}
+        >
+          {language === "zh"
+            ? "这个页面不存在。也许宇宙有其他安排。"
+            : "This page doesn't exist. Perhaps the universe has other plans."}
         </p>
-        <Link to="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-space-950 font-bold text-sm hover:from-gold-500 hover:to-gold-400 transition-all shadow-lg shadow-gold-500/20">
-          {language === 'zh' ? '返回首页' : 'Return Home'}
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-space-950 font-bold text-sm hover:from-gold-500 hover:to-gold-400 transition-all shadow-lg shadow-gold-500/20"
+        >
+          {language === "zh" ? "返回首页" : "Return Home"}
         </Link>
       </div>
     </Container>
@@ -118,333 +214,586 @@ const NotFoundPage: React.FC = () => {
 
 // --- CONTEXTS ---
 
-import { useUserProfile } from './hooks/useUserProfile';
+import { useUserProfile } from "./hooks/useUserProfile";
 
 // --- PAGES ---
 
-const LandingPage = lazy(() => import('./pages/LandingPage'));
-const OnboardingPage = lazy(() => import('./pages/OnboardingPage'));
-const MePage = lazy(() => import('./pages/MePage'));
+const LandingPage = lazy(() => import("./pages/LandingPage"));
+const OnboardingPage = lazy(() => import("./pages/OnboardingPage"));
+const MePage = lazy(() => import("./pages/MePage"));
 
-const TodayPage = lazy(() => import('./pages/TodayPage'));
+const TodayPage = lazy(() => import("./pages/TodayPage"));
 
-const CyclesPage = lazy(() => import('./pages/CyclesPage'));
+const CyclesPage = lazy(() => import("./pages/CyclesPage"));
 
+const UsPage = lazy(() => import("./pages/SynastryPage"));
 
-const UsPage = lazy(() => import('./pages/SynastryPage'));
+const AskOraclePage = lazy(() => import("./pages/OraclePage"));
 
-const AskOraclePage = lazy(() => import('./pages/OraclePage'));
+const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 
-const SettingsPage = lazy(() => import('./pages/SettingsPage'));
+const CreditsUsagePage = lazy(() => import("./pages/CreditsUsagePage"));
 
-const CreditsUsagePage = lazy(() => import('./pages/CreditsUsagePage'));
-
-const AuthPage = lazy(() => import('./pages/AuthPage'));
+const AuthPage = lazy(() => import("./pages/AuthPage"));
 
 // Credits Modal Wrapper - 连接 AuthContext 和 CreditsModal
 const CreditsModalWrapper: React.FC = () => {
-    const { showCreditsModal, setShowCreditsModal, refreshEntitlements } = useAuth();
-    return (
-        <CreditsModal
-            isOpen={showCreditsModal}
-            onClose={() => setShowCreditsModal(false)}
-            onSuccess={() => refreshEntitlements()}
-        />
-    );
+  const { showCreditsModal, setShowCreditsModal, refreshEntitlements } =
+    useAuth();
+  return (
+    <CreditsModal
+      isOpen={showCreditsModal}
+      onClose={() => setShowCreditsModal(false)}
+      onSuccess={() => refreshEntitlements()}
+    />
+  );
 };
 
 const AppContent: React.FC = () => {
-    const { user, saveUser } = useUserProfile();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const { t, language, toggleLanguage } = useLanguage();
-    const { toggleTheme, theme } = useTheme();
-    const { isAuthenticated, migrateLocalData, refreshUser, user: authUser } = useAuth();
-    const { entitlements } = useEntitlement();
+  const { user, saveUser } = useUserProfile();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { t, language, toggleLanguage } = useLanguage();
+  const { toggleTheme, theme } = useTheme();
+  const {
+    isAuthenticated,
+    migrateLocalData,
+    refreshUser,
+    user: authUser,
+  } = useAuth();
+  const { entitlements } = useEntitlement();
 
-    // Enable analytics tracking (scroll depth, external links)
-    useAnalyticsTracking();
+  // Enable analytics tracking (scroll depth, external links)
+  useAnalyticsTracking();
 
-    const isWikiPath = location.pathname === '/wiki' || location.pathname.startsWith('/wiki/');
-    const isLegalPath = ['/privacy', '/terms', '/cookies', '/about', '/help'].includes(location.pathname);
-    const isPublicRoute = location.pathname === '/' || isWikiPath || isLegalPath;
-    const shouldNoIndex = !isPublicRoute;
-    const authT = t.auth;
-    const lastTrackedPathRef = useRef<string | null>(null);
-    const [showMigration, setShowMigration] = useState(false);
-    const [migrationStatus, setMigrationStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [migrationMessage, setMigrationMessage] = useState<string | null>(null);
+  const { langPath } = useLangPath();
+  const pathWithoutLang = extractLangFromPath(location.pathname)
+    ? location.pathname.replace(/^\/[a-z]{2}/, "")
+    : location.pathname;
+  const isWikiPath =
+    pathWithoutLang === "/wiki" || pathWithoutLang.startsWith("/wiki/");
+  const isLegalPath = [
+    "/privacy",
+    "/terms",
+    "/cookies",
+    "/about",
+    "/help",
+  ].includes(pathWithoutLang);
+  const isPublicRoute = location.pathname === "/" || isWikiPath || isLegalPath;
+  const shouldNoIndex = !isPublicRoute;
+  const authT = t.auth;
+  const lastTrackedPathRef = useRef<string | null>(null);
+  const [showMigration, setShowMigration] = useState(false);
+  const [migrationStatus, setMigrationStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [migrationMessage, setMigrationMessage] = useState<string | null>(null);
 
-    // Redirect old hash-based URLs to clean URLs
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-        if (window.location.hash.startsWith('#/')) {
-            const cleanPath = window.location.hash.slice(1); // Remove '#'
-            window.history.replaceState(null, '', cleanPath + window.location.search);
-        }
-    }, []);
+  // Redirect old hash-based URLs to clean URLs
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash.startsWith("#/")) {
+      const cleanPath = window.location.hash.slice(1); // Remove '#'
+      window.history.replaceState(null, "", cleanPath + window.location.search);
+    }
+  }, []);
 
-    // PayPal sometimes strips hash; redirect query params into hash routes.
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-        if (!window.location.search) return;
-        const params = new URLSearchParams(window.location.search);
-        const hasSubscription = params.has('subscription_id') || params.has('ba_token');
-        const hasOrder = params.has('token');
-        if (!hasSubscription && !hasOrder) return;
-        const targetPath = hasSubscription ? '/payment/success' : '/payment/credits-success';
-        // Skip redirect if already on the correct payment path
-        if (location.pathname === targetPath) return;
-        const targetUrl = `${window.location.origin}${targetPath}${window.location.search}`;
-        window.location.replace(targetUrl);
-    }, []);
+  // PayPal sometimes strips hash; redirect query params into hash routes.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!window.location.search) return;
+    const params = new URLSearchParams(window.location.search);
+    const hasSubscription =
+      params.has("subscription_id") || params.has("ba_token");
+    const hasOrder = params.has("token");
+    if (!hasSubscription && !hasOrder) return;
+    const targetPath = hasSubscription
+      ? "/payment/success"
+      : "/payment/credits-success";
+    // Skip redirect if already on the correct payment path
+    if (location.pathname === targetPath) return;
+    const targetUrl = `${window.location.origin}${targetPath}${window.location.search}`;
+    window.location.replace(targetUrl);
+  }, []);
 
-    const hasCloudProfile = !!authUser?.birthProfile && localStorage.getItem('astro_profile_migrated') === '1';
-    const cloudProfile = useMemo(() => {
-        if (!hasCloudProfile || !authUser?.birthProfile) return null;
-        const birth = authUser.birthProfile;
-        if (!birth.birthDate || !birth.birthCity || !birth.timezone) return null;
-        return {
-            userId: authUser.id,
-            name: authUser.name,
-            birthDate: birth.birthDate,
-            birthTime: birth.birthTime,
-            birthCity: birth.birthCity,
-            lat: birth.lat,
-            lon: birth.lon,
-            timezone: birth.timezone,
-            accuracyLevel: birth.accuracyLevel || 'exact',
-            focusTags: authUser.preferences?.focusTags || [],
-        } as T.UserProfile;
-    }, [authUser, hasCloudProfile]);
-    const activeProfile = user || cloudProfile;
+  const hasCloudProfile =
+    !!authUser?.birthProfile &&
+    localStorage.getItem("astro_profile_migrated") === "1";
+  const cloudProfile = useMemo(() => {
+    if (!hasCloudProfile || !authUser?.birthProfile) return null;
+    const birth = authUser.birthProfile;
+    if (!birth.birthDate || !birth.birthCity || !birth.timezone) return null;
+    return {
+      userId: authUser.id,
+      name: authUser.name,
+      birthDate: birth.birthDate,
+      birthTime: birth.birthTime,
+      birthCity: birth.birthCity,
+      lat: birth.lat,
+      lon: birth.lon,
+      timezone: birth.timezone,
+      accuracyLevel: birth.accuracyLevel || "exact",
+      focusTags: authUser.preferences?.focusTags || [],
+    } as T.UserProfile;
+  }, [authUser, hasCloudProfile]);
+  const activeProfile = user || cloudProfile;
 
-    // Redirect to landing if no user data, except for landing/onboarding/payment/auth
-    useEffect(() => {
-        const allowedPaths = ['/', '/onboarding', '/auth', '/payment/success', '/payment/credits-success', '/privacy', '/terms', '/cookies', '/about', '/help'];
-        if (!user && !hasCloudProfile && !allowedPaths.includes(location.pathname) && !isWikiPath) {
-            navigate('/');
-        }
-    }, [user, hasCloudProfile, location.pathname, navigate, isWikiPath]);
+  // Redirect to landing if no user data, except for landing/onboarding/payment/auth
+  useEffect(() => {
+    const allowedPaths = [
+      "/",
+      "/onboarding",
+      "/auth",
+      "/payment/success",
+      "/payment/credits-success",
+      "/privacy",
+      "/terms",
+      "/cookies",
+      "/about",
+      "/help",
+    ];
+    if (
+      !user &&
+      !hasCloudProfile &&
+      !allowedPaths.includes(pathWithoutLang) &&
+      !isWikiPath &&
+      !isLegalPath
+    ) {
+      navigate("/");
+    }
+  }, [user, hasCloudProfile, location.pathname, navigate, isWikiPath]);
 
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-        const resolvedPath = location.pathname || '/';
-        if (lastTrackedPathRef.current === resolvedPath) return;
-        // End engagement for previous page
-        if (lastTrackedPathRef.current) {
-            endPageEngagement(lastTrackedPathRef.current);
-        }
-        lastTrackedPathRef.current = resolvedPath;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const resolvedPath = location.pathname || "/";
+    if (lastTrackedPathRef.current === resolvedPath) return;
+    // End engagement for previous page
+    if (lastTrackedPathRef.current) {
+      endPageEngagement(lastTrackedPathRef.current);
+    }
+    lastTrackedPathRef.current = resolvedPath;
+    startPageEngagement();
+    const frame = window.requestAnimationFrame(() => {
+      trackPageView(resolvedPath || "/");
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.pathname, location.search, location.hash]);
+
+  // Track page engagement on tab hide / page unload
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden" && lastTrackedPathRef.current) {
+        endPageEngagement(lastTrackedPathRef.current);
+      } else if (document.visibilityState === "visible") {
         startPageEngagement();
-        const frame = window.requestAnimationFrame(() => {
-            trackPageView(resolvedPath || '/');
-        });
-        return () => window.cancelAnimationFrame(frame);
-    }, [location.pathname, location.search, location.hash]);
-
-    // Track page engagement on tab hide / page unload
-    useEffect(() => {
-        const handleVisibilityChange = () => {
-            if (document.visibilityState === 'hidden' && lastTrackedPathRef.current) {
-                endPageEngagement(lastTrackedPathRef.current);
-            } else if (document.visibilityState === 'visible') {
-                startPageEngagement();
-            }
-        };
-        document.addEventListener('visibilitychange', handleVisibilityChange);
-        return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
-    }, []);
-
-    useEffect(() => {
-        if (!isAuthenticated) {
-            setShowMigration(false);
-            return;
-        }
-        const hasLocalProfile = !!localStorage.getItem('astro_user');
-        const dismissed = sessionStorage.getItem('astro_migrate_prompted') === '1';
-        if (hasLocalProfile && !dismissed) {
-            setMigrationStatus('idle');
-            setMigrationMessage(null);
-            setShowMigration(true);
-        }
-    }, [isAuthenticated]);
-
-    const handleMigrate = async () => {
-        setMigrationStatus('loading');
-        setMigrationMessage(null);
-        try {
-            await migrateLocalData();
-            localStorage.setItem('astro_profile_migrated', '1');
-            sessionStorage.setItem('astro_migrate_prompted', '1');
-            saveUser(null);
-            await refreshUser();
-            setMigrationStatus('success');
-            setMigrationMessage(t.auth.migrate_success);
-            window.setTimeout(() => setShowMigration(false), 800);
-        } catch (err) {
-            setMigrationStatus('error');
-            setMigrationMessage(t.auth.migrate_error);
-        }
+      }
     };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
 
-    const handleSkipMigration = () => {
-        sessionStorage.setItem('astro_migrate_prompted', '1');
-        setShowMigration(false);
-    };
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setShowMigration(false);
+      return;
+    }
+    const hasLocalProfile = !!localStorage.getItem("astro_user");
+    const dismissed = sessionStorage.getItem("astro_migrate_prompted") === "1";
+    if (hasLocalProfile && !dismissed) {
+      setMigrationStatus("idle");
+      setMigrationMessage(null);
+      setShowMigration(true);
+    }
+  }, [isAuthenticated]);
 
-    const showNav = (activeProfile || isWikiPath) && !['/', '/onboarding', '/auth'].includes(location.pathname);
+  const handleMigrate = async () => {
+    setMigrationStatus("loading");
+    setMigrationMessage(null);
+    try {
+      await migrateLocalData();
+      localStorage.setItem("astro_profile_migrated", "1");
+      sessionStorage.setItem("astro_migrate_prompted", "1");
+      saveUser(null);
+      await refreshUser();
+      setMigrationStatus("success");
+      setMigrationMessage(t.auth.migrate_success);
+      window.setTimeout(() => setShowMigration(false), 800);
+    } catch (err) {
+      setMigrationStatus("error");
+      setMigrationMessage(t.auth.migrate_error);
+    }
+  };
 
-    return (
-        <>
-            {shouldNoIndex && <SEO robots="noindex,nofollow" />}
-            {showNav && (
-                <nav aria-label="Main navigation" className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === 'dark' ? 'bg-space-950/90 border-gold-500/15' : 'bg-paper-100/90 border-paper-300'}`}>
-                    <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-                        {/* Logo */}
-                        <div className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0" onClick={() => navigate('/dashboard')}>
-                            <span className="text-gold-500">☾</span> {t.app.name}
-                        </div>
+  const handleSkipMigration = () => {
+    sessionStorage.setItem("astro_migrate_prompted", "1");
+    setShowMigration(false);
+  };
 
-                        {/* Navigation Links - Permanently Top Right */}
-                        <div className="flex items-center gap-6 ml-auto overflow-x-auto no-scrollbar">
-                            {[
-                                { path: '/dashboard', label: t.nav.dashboard },
-                                { path: '/forecast', label: t.nav.forecast },
-                                { path: '/us', label: t.nav.us },
-                                { path: '/oracle', label: t.nav.oracle },
-                                { path: '/journal', label: t.nav.journal },
-                                { path: '/wiki', label: t.nav.wiki },
-                            ].map(link => {
-                                const isActive = link.path === '/wiki'
-                                  ? location.pathname.startsWith('/wiki')
-                                  : location.pathname === link.path;
-                                return (
-                                    <Link
-                                        key={link.path}
-                                        to={link.path}
-                                        className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap ${isActive ? 'text-gold-500' : 'opacity-70'}`}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                );
-                            })}
+  const showNav =
+    (activeProfile || isWikiPath || isLegalPath) &&
+    !["/", "/onboarding", "/auth"].includes(pathWithoutLang);
 
-                            {/* Settings / Theme Toggles */}
-                            <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
-                            <button onClick={toggleTheme} className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">{theme === 'dark' ? '☀' : '☾'}</button>
-                            <button onClick={toggleLanguage} className="hidden md:flex w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0">{language === 'zh' ? 'EN' : '中'}</button>
+  return (
+    <>
+      {shouldNoIndex && <SEO robots="noindex,nofollow" />}
+      {showNav && (
+        <nav
+          aria-label="Main navigation"
+          className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === "dark" ? "bg-space-950/90 border-gold-500/15" : "bg-paper-100/90 border-paper-300"}`}
+        >
+          <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+            {/* Logo */}
+            <div
+              className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0"
+              onClick={() => navigate("/dashboard")}
+            >
+              <span className="text-gold-500">☾</span> {t.app.name}
+            </div>
 
-                            {/* User Menu */}
-                            <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
-                            <UserMenu />
-                        </div>
-                    </div>
-                </nav>
+            {/* Navigation Links - Permanently Top Right */}
+            <div className="flex items-center gap-6 ml-auto overflow-x-auto no-scrollbar">
+              {[
+                { path: "/dashboard", label: t.nav.dashboard },
+                { path: "/forecast", label: t.nav.forecast },
+                { path: "/us", label: t.nav.us },
+                { path: "/oracle", label: t.nav.oracle },
+                { path: "/journal", label: t.nav.journal },
+                { path: langPath("/wiki"), label: t.nav.wiki },
+              ].map((link) => {
+                const isActive = isWikiPath
+                  ? link.path === langPath("/wiki")
+                  : location.pathname === link.path;
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap ${isActive ? "text-gold-500" : "opacity-70"}`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+
+              {/* Settings / Theme Toggles */}
+              <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
+              <button
+                onClick={toggleTheme}
+                className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0"
+              >
+                {theme === "dark" ? "☀" : "☾"}
+              </button>
+              <button
+                onClick={toggleLanguage}
+                className="hidden md:flex w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0"
+              >
+                {language === "zh" ? "EN" : "中"}
+              </button>
+
+              {/* User Menu */}
+              <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
+              <UserMenu />
+            </div>
+          </div>
+        </nav>
+      )}
+
+      {/* Mobile Utility Toggle (Since main nav is now text links at top, we keep util buttons accessible) */}
+      {showNav && (
+        <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
+          <button
+            onClick={toggleTheme}
+            className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
+          >
+            {theme === "dark" ? "☀" : "☾"}
+          </button>
+          <button
+            onClick={toggleLanguage}
+            className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg text-xs font-bold ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
+          >
+            {language === "zh" ? "EN" : "中"}
+          </button>
+        </div>
+      )}
+
+      <main
+        id="main-content"
+        role="main"
+        className={
+          showNav
+            ? location.pathname === "/journal"
+              ? "pt-16 pb-12"
+              : "pt-24 pb-12"
+            : ""
+        }
+      >
+        <Suspense fallback={<OracleLoading />}>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route
+              path="/onboarding"
+              element={
+                <OnboardingPage
+                  onComplete={(u) => {
+                    saveUser(u);
+                    navigate("/dashboard");
+                  }}
+                />
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                activeProfile ? (
+                  <MePage profile={activeProfile} />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="/forecast"
+              element={
+                activeProfile ? (
+                  <TodayPage profile={activeProfile} />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="/cycles"
+              element={
+                activeProfile ? (
+                  <CyclesPage profile={activeProfile} />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="/us"
+              element={
+                activeProfile ? (
+                  <UsPage profile={activeProfile} />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="/oracle"
+              element={
+                activeProfile ? (
+                  <AskOraclePage profile={activeProfile} />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="/journal"
+              element={
+                activeProfile ? (
+                  <CBTMainPage profile={activeProfile} />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            {/* Language-prefixed public routes */}
+            <Route
+              path="/:lang/wiki"
+              element={
+                <LangGuard>
+                  <WikiHubPage />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/wiki/classics"
+              element={
+                <LangGuard>
+                  <WikiClassicsPage />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/wiki/classics/:id"
+              element={
+                <LangGuard>
+                  <WikiClassicDetailPage />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/wiki/:id"
+              element={
+                <LangGuard>
+                  <WikiDetailPage />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/privacy"
+              element={
+                <LangGuard>
+                  <PrivacyPolicy />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/terms"
+              element={
+                <LangGuard>
+                  <TermsOfService />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/cookies"
+              element={
+                <LangGuard>
+                  <CookiePolicy />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/about"
+              element={
+                <LangGuard>
+                  <AboutPage />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/help"
+              element={
+                <LangGuard>
+                  <HelpPage />
+                </LangGuard>
+              }
+            />
+            {/* Bare public routes redirect to language-prefixed versions */}
+            <Route path="/wiki/*" element={<LangRedirect />} />
+            <Route path="/wiki" element={<LangRedirect />} />
+            <Route path="/privacy" element={<LangRedirect />} />
+            <Route path="/terms" element={<LangRedirect />} />
+            <Route path="/cookies" element={<LangRedirect />} />
+            <Route path="/about" element={<LangRedirect />} />
+            <Route path="/help" element={<LangRedirect />} />
+            <Route
+              path="/settings"
+              element={
+                activeProfile ? (
+                  <SettingsPage
+                    profile={activeProfile}
+                    onReset={() => {
+                      localStorage.removeItem("astro_profile_migrated");
+                      saveUser(null);
+                    }}
+                  />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="/usage"
+              element={
+                activeProfile ? <CreditsUsagePage /> : <Navigate to="/" />
+              }
+            />
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="/reports" element={<ReportsPage />} />
+            <Route path="/reports/:reportId" element={<ReportViewPage />} />
+            <Route
+              path="/payment/success"
+              element={
+                LOGIN_GATE_MODE ? <Navigate to="/" /> : <PaymentSuccessPage />
+              }
+            />
+            <Route
+              path="/payment/credits-success"
+              element={
+                LOGIN_GATE_MODE ? <Navigate to="/" /> : <CreditsSuccessPage />
+              }
+            />
+            <Route path="/color-demo" element={<ColorSystemDemo />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </main>
+
+      {showMigration && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-space-950/50 backdrop-blur-sm"
+            onClick={handleSkipMigration}
+          />
+          <div
+            className={`relative max-w-md w-full rounded-2xl border p-6 shadow-2xl ${theme === "dark" ? "border-gold-500/15 bg-space-950" : "border-paper-300 bg-paper-100/90"}`}
+          >
+            <button
+              onClick={handleSkipMigration}
+              className={`absolute top-4 right-4 transition-colors ${theme === "dark" ? "text-star-400 hover:text-star-50" : "text-paper-500 hover:text-paper-900"}`}
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="mb-4 text-center">
+              <h2
+                className={`text-xl font-bold ${theme === "dark" ? "text-star-50" : "text-paper-900"}`}
+              >
+                {authT.migrate_title}
+              </h2>
+              <p
+                className={`text-sm mt-2 ${theme === "dark" ? "text-star-400" : "text-paper-600"}`}
+              >
+                {authT.migrate_desc}
+              </p>
+            </div>
+            {migrationMessage && (
+              <div
+                className={`mb-4 rounded-lg border px-3 py-2 text-center text-sm ${
+                  migrationStatus === "error"
+                    ? "border-red-500/40 bg-red-500/10 text-red-400"
+                    : "border-emerald-500/40 bg-emerald-500/10 text-emerald-400"
+                }`}
+              >
+                {migrationMessage}
+              </div>
             )}
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <ActionButton
+                variant="outline"
+                onClick={handleSkipMigration}
+                disabled={migrationStatus === "loading"}
+                className="flex-1"
+              >
+                {authT.migrate_later}
+              </ActionButton>
+              <ActionButton
+                variant="primary"
+                onClick={handleMigrate}
+                disabled={migrationStatus === "loading"}
+                className="flex-1"
+              >
+                {migrationStatus === "loading" ? "..." : authT.migrate_confirm}
+              </ActionButton>
+            </div>
+          </div>
+        </div>
+      )}
 
-            {/* Mobile Utility Toggle (Since main nav is now text links at top, we keep util buttons accessible) */}
-            {showNav && (
-                <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
-                     <button onClick={toggleTheme} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === 'dark' ? 'bg-space-900/80 border-gold-500/15' : 'bg-paper-100/80 border-paper-300'}`}>
-                        {theme === 'dark' ? '☀' : '☾'}
-                     </button>
-                     <button onClick={toggleLanguage} className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg text-xs font-bold ${theme === 'dark' ? 'bg-space-900/80 border-gold-500/15' : 'bg-paper-100/80 border-paper-300'}`}>
-                        {language === 'zh' ? 'EN' : '中'}
-                     </button>
-                </div>
-            )}
-
-            <main id="main-content" role="main" className={showNav ? (location.pathname === '/journal' ? "pt-16 pb-12" : "pt-24 pb-12") : ""}>
-                <Suspense fallback={<OracleLoading />}>
-                    <Routes>
-                        <Route path="/" element={<LandingPage />} />
-                        <Route path="/onboarding" element={<OnboardingPage onComplete={(u) => { saveUser(u); navigate('/dashboard'); }} />} />
-                        <Route path="/dashboard" element={activeProfile ? <MePage profile={activeProfile} /> : <Navigate to="/" />} />
-                        <Route path="/forecast" element={activeProfile ? <TodayPage profile={activeProfile} /> : <Navigate to="/" />} />
-                        <Route path="/cycles" element={activeProfile ? <CyclesPage profile={activeProfile} /> : <Navigate to="/" />} />
-                        <Route path="/us" element={activeProfile ? <UsPage profile={activeProfile} /> : <Navigate to="/" />} />
-                        <Route path="/oracle" element={activeProfile ? <AskOraclePage profile={activeProfile} /> : <Navigate to="/" />} />
-                        <Route path="/journal" element={activeProfile ? <CBTMainPage profile={activeProfile} /> : <Navigate to="/" />} />
-                        <Route path="/wiki" element={<WikiHubPage />} />
-                        <Route path="/wiki/classics" element={<WikiClassicsPage />} />
-                        <Route path="/wiki/classics/:id" element={<WikiClassicDetailPage />} />
-                        <Route path="/wiki/:id" element={<WikiDetailPage />} />
-                        <Route path="/settings" element={activeProfile ? <SettingsPage profile={activeProfile} onReset={() => { localStorage.removeItem('astro_profile_migrated'); saveUser(null); }} /> : <Navigate to="/" />} />
-                        <Route path="/usage" element={activeProfile ? <CreditsUsagePage /> : <Navigate to="/" />} />
-                        <Route path="/auth" element={<AuthPage />} />
-                        <Route path="/reports" element={<ReportsPage />} />
-                        <Route path="/reports/:reportId" element={<ReportViewPage />} />
-                        <Route path="/payment/success" element={LOGIN_GATE_MODE ? <Navigate to="/" /> : <PaymentSuccessPage />} />
-                        <Route path="/payment/credits-success" element={LOGIN_GATE_MODE ? <Navigate to="/" /> : <CreditsSuccessPage />} />
-                        <Route path="/color-demo" element={<ColorSystemDemo />} />
-                        <Route path="/privacy" element={<PrivacyPolicy />} />
-                        <Route path="/terms" element={<TermsOfService />} />
-                        <Route path="/cookies" element={<CookiePolicy />} />
-                        <Route path="/about" element={<AboutPage />} />
-                        <Route path="/help" element={<HelpPage />} />
-                        <Route path="*" element={<NotFoundPage />} />
-                    </Routes>
-                </Suspense>
-            </main>
-
-            {showMigration && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                    <div
-                        className="absolute inset-0 bg-space-950/50 backdrop-blur-sm"
-                        onClick={handleSkipMigration}
-                    />
-                    <div className={`relative max-w-md w-full rounded-2xl border p-6 shadow-2xl ${theme === 'dark' ? 'border-gold-500/15 bg-space-950' : 'border-paper-300 bg-paper-100/90'}`}>
-                        <button
-                            onClick={handleSkipMigration}
-                            className={`absolute top-4 right-4 transition-colors ${theme === 'dark' ? 'text-star-400 hover:text-star-50' : 'text-paper-500 hover:text-paper-900'}`}
-                        >
-                            <X className="w-5 h-5" />
-                        </button>
-                        <div className="mb-4 text-center">
-                            <h2 className={`text-xl font-bold ${theme === 'dark' ? 'text-star-50' : 'text-paper-900'}`}>{authT.migrate_title}</h2>
-                            <p className={`text-sm mt-2 ${theme === 'dark' ? 'text-star-400' : 'text-paper-600'}`}>{authT.migrate_desc}</p>
-                        </div>
-                        {migrationMessage && (
-                            <div className={`mb-4 rounded-lg border px-3 py-2 text-center text-sm ${
-                                migrationStatus === 'error'
-                                    ? 'border-red-500/40 bg-red-500/10 text-red-400'
-                                    : 'border-emerald-500/40 bg-emerald-500/10 text-emerald-400'
-                            }`}>
-                                {migrationMessage}
-                            </div>
-                        )}
-                        <div className="flex flex-col gap-3 sm:flex-row">
-                            <ActionButton
-                                variant="outline"
-                                onClick={handleSkipMigration}
-                                disabled={migrationStatus === 'loading'}
-                                className="flex-1"
-                            >
-                                {authT.migrate_later}
-                            </ActionButton>
-                            <ActionButton
-                                variant="primary"
-                                onClick={handleMigrate}
-                                disabled={migrationStatus === 'loading'}
-                                className="flex-1"
-                            >
-                                {migrationStatus === 'loading' ? '...' : authT.migrate_confirm}
-                            </ActionButton>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            {showNav && <Footer />}
-            <ConsentBanner />
-            {/* Auth Modals */}
-            <LoginModal />
-            {!FREE_MODE && !LOGIN_GATE_MODE && <UpgradeModal />}
-            {!FREE_MODE && !LOGIN_GATE_MODE && <CreditsModalWrapper />}
-        </>
-    );
-}
+      {showNav && <Footer />}
+      <ConsentBanner />
+      {/* Auth Modals */}
+      <LoginModal />
+      {!FREE_MODE && !LOGIN_GATE_MODE && <UpgradeModal />}
+      {!FREE_MODE && !LOGIN_GATE_MODE && <CreditsModalWrapper />}
+    </>
+  );
+};
 
 const App: React.FC = () => {
   // 在开发环境中暴露 GM 命令到 window 对象
@@ -454,10 +803,13 @@ const App: React.FC = () => {
       window.gmUnlockSubscription = async () => {
         try {
           const result = await gmUnlockSubscription();
-          console.log('✅ 订阅已解锁 | Subscription unlocked:', result);
+          console.log("✅ 订阅已解锁 | Subscription unlocked:", result);
           window.location.reload();
         } catch (error) {
-          console.error('❌ 解锁订阅失败 | Failed to unlock subscription:', error);
+          console.error(
+            "❌ 解锁订阅失败 | Failed to unlock subscription:",
+            error,
+          );
         }
       };
 
@@ -465,10 +817,13 @@ const App: React.FC = () => {
       window.gmCancelSubscription = async () => {
         try {
           const result = await gmCancelSubscription();
-          console.log('✅ 订阅已取消 | Subscription cancelled:', result);
+          console.log("✅ 订阅已取消 | Subscription cancelled:", result);
           window.location.reload();
         } catch (error) {
-          console.error('❌ 取消订阅失败 | Failed to cancel subscription:', error);
+          console.error(
+            "❌ 取消订阅失败 | Failed to cancel subscription:",
+            error,
+          );
         }
       };
 
@@ -476,10 +831,13 @@ const App: React.FC = () => {
       window.gmAddTokens = async (amount = 9999) => {
         try {
           const result = await gmAddTokens(amount);
-          console.log(`✅ 已添加 ${amount} 积分 | Added ${amount} credits:`, result);
+          console.log(
+            `✅ 已添加 ${amount} 积分 | Added ${amount} credits:`,
+            result,
+          );
           window.location.reload();
         } catch (error) {
-          console.error('❌ 添加积分失败 | Failed to add credits:', error);
+          console.error("❌ 添加积分失败 | Failed to add credits:", error);
         }
       };
 
@@ -487,10 +845,10 @@ const App: React.FC = () => {
       window.gmClearTokens = async () => {
         try {
           const result = await gmClearTokens();
-          console.log('✅ 积分已清零 | Credits cleared:', result);
+          console.log("✅ 积分已清零 | Credits cleared:", result);
           window.location.reload();
         } catch (error) {
-          console.error('❌ 清零积分失败 | Failed to clear credits:', error);
+          console.error("❌ 清零积分失败 | Failed to clear credits:", error);
         }
       };
 
@@ -498,10 +856,13 @@ const App: React.FC = () => {
       window.gmCreateDevSession = async () => {
         try {
           const result = await gmCreateDevSession();
-          console.log('✅ GM 开发会话已创建 | GM dev session created:', result);
+          console.log("✅ GM 开发会话已创建 | GM dev session created:", result);
           window.location.reload();
         } catch (error) {
-          console.error('❌ 创建 GM 会话失败 | Failed to create GM session:', error);
+          console.error(
+            "❌ 创建 GM 会话失败 | Failed to create GM session:",
+            error,
+          );
         }
       };
 
@@ -559,7 +920,9 @@ const App: React.FC = () => {
         `);
       };
 
-      console.log('🎮 GM 命令已加载 | GM commands loaded. 输入 gmHelp() 查看帮助 | Type gmHelp() for help');
+      console.log(
+        "🎮 GM 命令已加载 | GM commands loaded. 输入 gmHelp() 查看帮助 | Type gmHelp() for help",
+      );
     }
   }, []);
 
