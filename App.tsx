@@ -704,7 +704,15 @@ const AppContent: React.FC = () => {
                 activeProfile ? <CreditsUsagePage /> : <Navigate to="/" />
               }
             />
-            <Route path="/auth" element={<AuthPage />} />
+            <Route
+              path="/:lang/auth"
+              element={
+                <LangGuard>
+                  <AuthPage />
+                </LangGuard>
+              }
+            />
+            <Route path="/auth" element={<LangRedirect />} />
             <Route path="/reports" element={<ReportsPage />} />
             <Route path="/reports/:reportId" element={<ReportViewPage />} />
             <Route
