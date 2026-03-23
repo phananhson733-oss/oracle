@@ -1,15 +1,17 @@
 /**
- * 城市搜索工具（纯前端）
+ * 城市搜索工具（本地优先 + 后端回退）
  * 支持中英文、拼音、拼音首字母搜索
+ * 本地找不到时自动回退到后端 Open-Meteo API
  */
 
-import { cities, type City } from '../data/cities';
-export type { City } from '../data/cities';
+import { cities, type City } from "../data/cities";
+import { searchCities as searchCitiesRemote } from "../services/apiClient";
+export type { City } from "../data/cities";
 
-type Language = 'zh' | 'en';
+type Language = "zh" | "en";
 
 // 英文显示时省略国家名的国家列表（目标用户已默认了解这些国家）
-const OMIT_COUNTRY_EN = new Set(['United States']);
+const OMIT_COUNTRY_EN = new Set(["United States"]);
 
 interface CityWithScore extends City {
   score: number;
@@ -22,8 +24,12 @@ interface CityWithScore extends City {
  * @param language 语言设置（影响显示优先级）
  * @returns 匹配的城市列表
  */
-export function searchCities(query: string, limit: number = 5, language: Language = 'en'): City[] {
-  if (!query || typeof query !== 'string') {
+export function searchCities(
+  query: string,
+  limit: number = 5,
+  language: Language = "en",
+): City[] {
+  if (!query || typeof query !== "string") {
     return [];
   }
 
@@ -55,7 +61,11 @@ export function searchCities(query: string, limit: number = 5, language: Languag
  * @param language 语言设置
  * @returns 匹配分数，0表示不匹配
  */
-function calculateScore(city: City, keyword: string, language: Language): number {
+function calculateScore(
+  city: City,
+  keyword: string,
+  language: Language,
+): number {
   let score = 0;
 
   // 英文名匹配（优先级最高，符合欧美用户使用习惯）
@@ -103,7 +113,7 @@ function calculateScore(city: City, keyword: string, language: Language): number
   }
 
   // 中文名匹配
-  if (language === 'zh') {
+  if (language === "zh") {
     // 城市名完全匹配 (100分)
     if (city.name === keyword) {
       return 100;
@@ -137,10 +147,13 @@ function calculateScore(city: City, keyword: string, language: Language): number
  * @param language 语言设置
  * @returns 格式化后的显示文本
  */
-export function formatCityDisplay(city: City, language: Language = 'en'): string {
-  if (!city) return '';
+export function formatCityDisplay(
+  city: City,
+  language: Language = "en",
+): string {
+  if (!city) return "";
 
-  if (language === 'zh') {
+  if (language === "zh") {
     // 中文：城市, 省份, 国家
     const parts = [city.name];
     if (city.province && city.province !== city.name) {
@@ -149,7 +162,7 @@ export function formatCityDisplay(city: City, language: Language = 'en'): string
     if (city.country) {
       parts.push(city.country);
     }
-    return parts.join(', ');
+    return parts.join(", ");
   } else {
     // 英文：EnName, Province, Country
     const parts = [];
@@ -158,13 +171,17 @@ export function formatCityDisplay(city: City, language: Language = 'en'): string
     } else {
       parts.push(city.name);
     }
-    if (city.province && city.province !== city.enName && city.province !== city.name) {
+    if (
+      city.province &&
+      city.province !== city.enName &&
+      city.province !== city.name
+    ) {
       parts.push(city.province);
     }
     if (city.country && !OMIT_COUNTRY_EN.has(city.country)) {
       parts.push(city.country);
     }
-    return parts.join(', ');
+    return parts.join(", ");
   }
 }
 
@@ -173,9 +190,13 @@ export function formatCityDisplay(city: City, language: Language = 'en'): string
  * @param city 城市对象
  * @returns { lat, lon, timezone }
  */
-export function getCityCoordinates(city: City): { lat: number; lon: number; timezone: string } {
+export function getCityCoordinates(city: City): {
+  lat: number;
+  lon: number;
+  timezone: string;
+} {
   if (!city) {
-    return { lat: 40.7128, lon: -74.0060, timezone: 'America/New_York' };
+    return { lat: 40.7128, lon: -74.006, timezone: "America/New_York" };
   }
 
   // 优先使用 IANA timezone，回退到基于经度的粗略计算
@@ -194,8 +215,8 @@ export function getCityCoordinates(city: City): { lat: number; lon: number; time
  * @returns 标准化后的字符串
  */
 export function normalizeCommas(str: string): string {
-  if (!str) return '';
-  return str.replace(/，/g, ',').replace(/\s*,\s*/g, ', ');
+  if (!str) return "";
+  return str.replace(/，/g, ",").replace(/\s*,\s*/g, ", ");
 }
 
 /**
@@ -204,15 +225,21 @@ export function normalizeCommas(str: string): string {
  * @param language 语言设置
  * @returns 匹配到的城市对象，或null
  */
-export function parseCityString(input: string, language: Language = 'en'): City | null {
-  if (!input || typeof input !== 'string') {
+export function parseCityString(
+  input: string,
+  language: Language = "en",
+): City | null {
+  if (!input || typeof input !== "string") {
     return null;
   }
 
   const normalized = normalizeCommas(input.trim());
 
   // 尝试按逗号分割
-  const parts = normalized.split(',').map(p => p.trim()).filter(Boolean);
+  const parts = normalized
+    .split(",")
+    .map((p) => p.trim())
+    .filter(Boolean);
 
   if (parts.length === 0) {
     return null;
@@ -222,21 +249,23 @@ export function parseCityString(input: string, language: Language = 'en'): City 
   const cityName = parts[0].toLowerCase();
 
   // 首先尝试精确匹配英文名
-  let match = cities.find(c => c.enName && c.enName.toLowerCase() === cityName);
+  let match = cities.find(
+    (c) => c.enName && c.enName.toLowerCase() === cityName,
+  );
   if (match) {
     return match;
   }
 
   // 尝试精确匹配中文名
-  if (language === 'zh') {
-    match = cities.find(c => c.name === parts[0]);
+  if (language === "zh") {
+    match = cities.find((c) => c.name === parts[0]);
     if (match) {
       return match;
     }
   }
 
   // 尝试匹配拼音
-  match = cities.find(c => c.pinyin === cityName);
+  match = cities.find((c) => c.pinyin === cityName);
   if (match) {
     return match;
   }
@@ -258,10 +287,10 @@ export function parseCityString(input: string, language: Language = 'en'): City 
  */
 export function autoMatchCity(
   input: string,
-  language: Language = 'en'
+  language: Language = "en",
 ): { city: City | null; displayText: string } {
-  if (!input || typeof input !== 'string' || !input.trim()) {
-    return { city: null, displayText: '' };
+  if (!input || typeof input !== "string" || !input.trim()) {
+    return { city: null, displayText: "" };
   }
 
   const city = parseCityString(input, language);
@@ -269,13 +298,57 @@ export function autoMatchCity(
   if (city) {
     return {
       city,
-      displayText: formatCityDisplay(city, language)
+      displayText: formatCityDisplay(city, language),
     };
   }
 
   // 无法匹配时返回原始输入（标准化逗号）
   return {
     city: null,
-    displayText: normalizeCommas(input.trim())
+    displayText: normalizeCommas(input.trim()),
   };
+}
+
+interface GeoLocationResponse {
+  city: string;
+  country?: string;
+  lat: number;
+  lon: number;
+  timezone?: string;
+  admin1?: string;
+}
+
+function geoToCity(geo: GeoLocationResponse): City {
+  return {
+    id: `remote-${geo.lat}-${geo.lon}`,
+    name: geo.city,
+    enName: geo.city,
+    province: geo.admin1 || "",
+    country: geo.country || "",
+    pinyin: "",
+    pinyinAbbr: "",
+    lat: geo.lat,
+    lon: geo.lon,
+    timezone: geo.timezone || "",
+  };
+}
+
+/**
+ * 带后端回退的城市搜索（异步）
+ * 本地有结果时立即返回，否则调用后端 Open-Meteo API
+ */
+export async function searchCitiesWithFallback(
+  query: string,
+  limit: number = 5,
+  language: Language = "en",
+): Promise<City[]> {
+  const localResults = searchCities(query, limit, language);
+  if (localResults.length > 0) return localResults;
+
+  try {
+    const response = await searchCitiesRemote(query, limit, language);
+    return (response.cities || []).map(geoToCity);
+  } catch {
+    return [];
+  }
 }
