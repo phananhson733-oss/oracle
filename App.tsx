@@ -179,22 +179,6 @@ const LangGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <>{children}</>;
 };
 
-// Catch-all for /:lang/* SPA routes: strip lang prefix and redirect to bare route
-// e.g. /en/settings → /settings, /zh/dashboard → /dashboard
-const LangStripRedirect: React.FC = () => {
-  const { lang, "*": rest } = useParams<{ lang: string; "*": string }>();
-  const location = useLocation();
-  if (lang === "en" || lang === "zh") {
-    return (
-      <Navigate
-        to={`/${rest || ""}${location.search}${location.hash}`}
-        replace
-      />
-    );
-  }
-  return <NotFoundPage />;
-};
-
 const NotFoundPage: React.FC = () => {
   const { theme } = useTheme();
   const { language } = useLanguage();
@@ -228,13 +212,61 @@ const NotFoundPage: React.FC = () => {
   );
 };
 
+// Redirect unauthenticated users to Wiki while showing login modal.
+// Authenticated users without a profile are sent to onboarding instead.
+// Waits for auth to resolve before deciding, preventing flash-redirect on page load.
+const ProtectedRedirect: React.FC = () => {
+  const { language } = useLanguage();
+  const { isAuthenticated, isLoading, openLoginModal } = useAuth();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isLoading) return;
+    if (!isAuthenticated) {
+      openLoginModal("protected_route");
+      navigate(`/${language}/wiki`, { replace: true });
+    }
+  }, [isLoading, isAuthenticated, openLoginModal, navigate, language]);
+  if (isLoading) return <OracleLoading />;
+  if (isAuthenticated) return <Navigate to="/onboarding" replace />;
+  return null;
+};
+
+// Catch-all for /:lang/* SPA routes: strip lang prefix and redirect to bare route
+// e.g. /en/settings → /settings, /zh/dashboard → /dashboard
+// Protected routes redirect directly to ProtectedRedirect to avoid double redirect.
+const PROTECTED_PATHS = new Set([
+  "dashboard",
+  "forecast",
+  "cycles",
+  "us",
+  "oracle",
+  "journal",
+  "settings",
+  "usage",
+]);
+
+const LangStripRedirect: React.FC = () => {
+  const { lang, "*": rest } = useParams<{ lang: string; "*": string }>();
+  const location = useLocation();
+  if (lang !== "en" && lang !== "zh") {
+    return <NotFoundPage />;
+  }
+  const firstSegment = (rest || "").split("/")[0];
+  if (PROTECTED_PATHS.has(firstSegment)) {
+    return <ProtectedRedirect />;
+  }
+  return (
+    <Navigate to={`/${rest || ""}${location.search}${location.hash}`} replace />
+  );
+};
+
 // --- CONTEXTS ---
 
 import { useUserProfile } from "./hooks/useUserProfile";
 
 // --- PAGES ---
 
-const LandingPage = lazy(() => import("./pages/LandingPage"));
+// LandingPage removed — homepage now redirects to /:lang/wiki
 const OnboardingPage = lazy(() => import("./pages/OnboardingPage"));
 const MePage = lazy(() => import("./pages/MePage"));
 
@@ -354,30 +386,7 @@ const AppContent: React.FC = () => {
   }, [authUser, hasCloudProfile]);
   const activeProfile = user || cloudProfile;
 
-  // Redirect to landing if no user data, except for landing/onboarding/payment/auth
-  useEffect(() => {
-    const allowedPaths = [
-      "/",
-      "/onboarding",
-      "/auth",
-      "/payment/success",
-      "/payment/credits-success",
-      "/privacy",
-      "/terms",
-      "/cookies",
-      "/about",
-      "/help",
-    ];
-    if (
-      !user &&
-      !hasCloudProfile &&
-      !allowedPaths.includes(pathWithoutLang) &&
-      !isWikiPath &&
-      !isLegalPath
-    ) {
-      navigate("/");
-    }
-  }, [user, hasCloudProfile, location.pathname, navigate, isWikiPath]);
+  // Guard removed — ProtectedRedirect handles unauthenticated access to protected routes
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -545,7 +554,10 @@ const AppContent: React.FC = () => {
       >
         <Suspense fallback={<OracleLoading />}>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route
+              path="/"
+              element={<Navigate to={`/${language}/wiki`} replace />}
+            />
             <Route
               path="/onboarding"
               element={
@@ -563,7 +575,7 @@ const AppContent: React.FC = () => {
                 activeProfile ? (
                   <MePage profile={activeProfile} />
                 ) : (
-                  <Navigate to="/" />
+                  <ProtectedRedirect />
                 )
               }
             />
@@ -573,7 +585,7 @@ const AppContent: React.FC = () => {
                 activeProfile ? (
                   <TodayPage profile={activeProfile} />
                 ) : (
-                  <Navigate to="/" />
+                  <ProtectedRedirect />
                 )
               }
             />
@@ -583,7 +595,7 @@ const AppContent: React.FC = () => {
                 activeProfile ? (
                   <CyclesPage profile={activeProfile} />
                 ) : (
-                  <Navigate to="/" />
+                  <ProtectedRedirect />
                 )
               }
             />
@@ -593,7 +605,7 @@ const AppContent: React.FC = () => {
                 activeProfile ? (
                   <UsPage profile={activeProfile} />
                 ) : (
-                  <Navigate to="/" />
+                  <ProtectedRedirect />
                 )
               }
             />
@@ -603,7 +615,7 @@ const AppContent: React.FC = () => {
                 activeProfile ? (
                   <AskOraclePage profile={activeProfile} />
                 ) : (
-                  <Navigate to="/" />
+                  <ProtectedRedirect />
                 )
               }
             />
@@ -613,7 +625,7 @@ const AppContent: React.FC = () => {
                 activeProfile ? (
                   <CBTMainPage profile={activeProfile} />
                 ) : (
-                  <Navigate to="/" />
+                  <ProtectedRedirect />
                 )
               }
             />
@@ -710,14 +722,14 @@ const AppContent: React.FC = () => {
                     }}
                   />
                 ) : (
-                  <Navigate to="/" />
+                  <ProtectedRedirect />
                 )
               }
             />
             <Route
               path="/usage"
               element={
-                activeProfile ? <CreditsUsagePage /> : <Navigate to="/" />
+                activeProfile ? <CreditsUsagePage /> : <ProtectedRedirect />
               }
             />
             <Route

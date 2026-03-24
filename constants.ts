@@ -12,201 +12,484 @@ export const LOGIN_GATE_MODE = false;
 
 // 需要登录才能访问的功能配置表
 export const LOGIN_REQUIRED_FEATURES: Record<string, boolean> = {
-  natal_dimension_paid: true,    // Natal 维度 index >= 2
-  natal_core_theme: true,        // 核心主题
-  daily_script: true,            // 每日剧本详情
-  daily_transit: true,           // 星象详情
-  ask: true,                     // Oracle 问答（整个模块）
-  synastry: true,                // 合盘（整个模块）
-  synastry_detail: true,         // 合盘详情
-  wiki_tools: true,              // Wiki 工具 (Synthetica)
-  cbt_stats: true,               // CBT 统计
+  natal_dimension_paid: true, // Natal 维度 index >= 2
+  natal_core_theme: true, // 核心主题
+  daily_script: true, // 每日剧本详情
+  daily_transit: true, // 星象详情
+  ask: true, // Oracle 问答（整个模块）
+  synastry: true, // 合盘（整个模块）
+  synastry_detail: true, // 合盘详情
+  wiki_tools: true, // Wiki 工具 (Synthetica)
+  cbt_stats: true, // CBT 统计
 };
 
-export const FOCUS_TAGS = ['Emotions', 'Relationships', 'Work', 'Growth', 'Timing'];
-export const SYNASTRY_PROFILE_STORAGE_KEY = 'astro_synastry_profiles';
+export const FOCUS_TAGS = [
+  "Emotions",
+  "Relationships",
+  "Work",
+  "Growth",
+  "Timing",
+];
+export const SYNASTRY_PROFILE_STORAGE_KEY = "astro_synastry_profiles";
 
 export const RELATIONSHIP_TYPES = [
-  { key: 'romantic', label_en: 'Romantic / Dating', label_zh: '浪漫 / 约会' },
-  { key: 'crush', label_en: 'Crush / Situationship', label_zh: '暗恋 / 暧昧' },
-  { key: 'friend', label_en: 'Friendship', label_zh: '朋友' },
-  { key: 'business', label_en: 'Business / Partnership', label_zh: '商业 / 合作伙伴' },
-  { key: 'family', label_en: 'Family', label_zh: '家人' }
+  { key: "romantic", label_en: "Romantic / Dating", label_zh: "浪漫 / 约会" },
+  { key: "crush", label_en: "Crush / Situationship", label_zh: "暗恋 / 暧昧" },
+  { key: "friend", label_en: "Friendship", label_zh: "朋友" },
+  {
+    key: "business",
+    label_en: "Business / Partnership",
+    label_zh: "商业 / 合作伙伴",
+  },
+  { key: "family", label_en: "Family", label_zh: "家人" },
 ];
 
 export const SYNASTRY_DIMENSIONS = [
-  { key: 'emotional_safety', label_en: 'Emotional Safety', label_zh: '情绪安全感' },
-  { key: 'communication', label_en: 'Communication & Repair', label_zh: '沟通与修复' },
-  { key: 'intimacy', label_en: 'Intimacy & Attraction', label_zh: '亲密与吸引力' },
-  { key: 'values', label_en: 'Values & Boundaries', label_zh: '价值观与边界' },
-  { key: 'rhythm', label_en: 'Rhythm & Future', label_zh: '节奏与未来' }
+  {
+    key: "emotional_safety",
+    label_en: "Emotional Safety",
+    label_zh: "情绪安全感",
+  },
+  {
+    key: "communication",
+    label_en: "Communication & Repair",
+    label_zh: "沟通与修复",
+  },
+  {
+    key: "intimacy",
+    label_en: "Intimacy & Attraction",
+    label_zh: "亲密与吸引力",
+  },
+  { key: "values", label_en: "Values & Boundaries", label_zh: "价值观与边界" },
+  { key: "rhythm", label_en: "Rhythm & Future", label_zh: "节奏与未来" },
 ];
 
 export const DIMENSIONS = [
-  { key: 'Emotions', label_en: 'Emotional Patterns', label_zh: '情绪模式', source_en: '(Moon / 4th House / IC)', source_zh: '(月亮 / 4宫 / 下中天)' },
-  { key: 'Attachment', label_en: 'Relationship & Boundaries', label_zh: '依恋与边界', source_en: '(Moon / Venus / 7th & 8th House)', source_zh: '(月亮 / 金星 / 7宫 & 8宫)' },
-  { key: 'Talents', label_en: 'Self-Worth & Value', label_zh: '自我价值与天赋', source_en: '(Sun / Venus / 2nd & 10th House)', source_zh: '(太阳 / 金星 / 2宫 & 10宫)' },
-  { key: 'Coping', label_en: 'Coping Under Pressure', label_zh: '抗压机制', source_en: '(Mars / Saturn / Hard Aspects)', source_zh: '(火星 / 土星 / 硬相位)' },
-  { key: 'Sabotage', label_en: 'Drive & Action Mode', label_zh: '驱动力与破坏模式', source_en: '(Sun / Mars / Modalities)', source_zh: '(太阳 / 火星 / 三方模式)' },
-  { key: 'Lessons', label_en: 'Shadow & Growth', label_zh: '阴影与成长', source_en: '(Pluto / Saturn / Chiron)', source_zh: '(冥王 / 土星 / 凯龙)' },
+  {
+    key: "Emotions",
+    label_en: "Emotional Patterns",
+    label_zh: "情绪模式",
+    source_en: "(Moon / 4th House / IC)",
+    source_zh: "(月亮 / 4宫 / 下中天)",
+  },
+  {
+    key: "Attachment",
+    label_en: "Relationship & Boundaries",
+    label_zh: "依恋与边界",
+    source_en: "(Moon / Venus / 7th & 8th House)",
+    source_zh: "(月亮 / 金星 / 7宫 & 8宫)",
+  },
+  {
+    key: "Talents",
+    label_en: "Self-Worth & Value",
+    label_zh: "自我价值与天赋",
+    source_en: "(Sun / Venus / 2nd & 10th House)",
+    source_zh: "(太阳 / 金星 / 2宫 & 10宫)",
+  },
+  {
+    key: "Coping",
+    label_en: "Coping Under Pressure",
+    label_zh: "抗压机制",
+    source_en: "(Mars / Saturn / Hard Aspects)",
+    source_zh: "(火星 / 土星 / 硬相位)",
+  },
+  {
+    key: "Sabotage",
+    label_en: "Drive & Action Mode",
+    label_zh: "驱动力与破坏模式",
+    source_en: "(Sun / Mars / Modalities)",
+    source_zh: "(太阳 / 火星 / 三方模式)",
+  },
+  {
+    key: "Lessons",
+    label_en: "Shadow & Growth",
+    label_zh: "阴影与成长",
+    source_en: "(Pluto / Saturn / Chiron)",
+    source_zh: "(冥王 / 土星 / 凯龙)",
+  },
 ];
 
 export const ASTRO_DICTIONARY: Record<string, { en: string; zh: string }> = {
-  'Sun': { en: 'Sun', zh: '太阳' },
-  'Moon': { en: 'Moon', zh: '月亮' },
-  'Mercury': { en: 'Mercury', zh: '水星' },
-  'Venus': { en: 'Venus', zh: '金星' },
-  'Mars': { en: 'Mars', zh: '火星' },
-  'Jupiter': { en: 'Jupiter', zh: '木星' },
-  'Saturn': { en: 'Saturn', zh: '土星' },
-  'Uranus': { en: 'Uranus', zh: '天王星' },
-  'Neptune': { en: 'Neptune', zh: '海王星' },
-  'Pluto': { en: 'Pluto', zh: '冥王星' },
-  'Rising': { en: 'Rising', zh: '上升' },
-  'Ascendant': { en: 'Ascendant', zh: '上升' },
-  'Descendant': { en: 'Descendant', zh: '下降' },
-  'Midheaven': { en: 'Midheaven', zh: '天顶' },
-  'IC': { en: 'IC', zh: '下中天' },
-  'Chiron': { en: 'Chiron', zh: '凯龙星' },
-  'North Node': { en: 'North Node', zh: '北交点' },
-  'South Node': { en: 'South Node', zh: '南交点' },
-  'Lilith': { en: 'Lilith', zh: '莉莉丝' },
-  'Juno': { en: 'Juno', zh: '婚神星' },
-  'Vesta': { en: 'Vesta', zh: '灶神星' },
-  'Ceres': { en: 'Ceres', zh: '谷神星' },
-  'Pallas': { en: 'Pallas', zh: '智神星' },
-  'Vertex': { en: 'Vertex', zh: '宿命点' },
-  'Fortune': { en: 'Part of Fortune', zh: '福点' },
-  'East Point': { en: 'East Point', zh: '东方点' },
-  'Aries': { en: 'Aries', zh: '白羊座' },
-  'Taurus': { en: 'Taurus', zh: '金牛座' },
-  'Gemini': { en: 'Gemini', zh: '双子座' },
-  'Cancer': { en: 'Cancer', zh: '巨蟹座' },
-  'Leo': { en: 'Leo', zh: '狮子座' },
-  'Virgo': { en: 'Virgo', zh: '处女座' },
-  'Libra': { en: 'Libra', zh: '天秤座' },
-  'Scorpio': { en: 'Scorpio', zh: '天蝎座' },
-  'Sagittarius': { en: 'Sagittarius', zh: '射手座' },
-  'Capricorn': { en: 'Capricorn', zh: '摩羯座' },
-  'Aquarius': { en: 'Aquarius', zh: '水瓶座' },
-  'Pisces': { en: 'Pisces', zh: '双鱼座' },
-  'Conjunction': { en: 'Conjunction', zh: '合相' },
-  'Opposition': { en: 'Opposition', zh: '对分相' },
-  'Square': { en: 'Square', zh: '四分相' },
-  'Trine': { en: 'Trine', zh: '三分相' },
-  'Sextile': { en: 'Sextile', zh: '六分相' },
-  'House': { en: 'House', zh: '宫' },
+  Sun: { en: "Sun", zh: "太阳" },
+  Moon: { en: "Moon", zh: "月亮" },
+  Mercury: { en: "Mercury", zh: "水星" },
+  Venus: { en: "Venus", zh: "金星" },
+  Mars: { en: "Mars", zh: "火星" },
+  Jupiter: { en: "Jupiter", zh: "木星" },
+  Saturn: { en: "Saturn", zh: "土星" },
+  Uranus: { en: "Uranus", zh: "天王星" },
+  Neptune: { en: "Neptune", zh: "海王星" },
+  Pluto: { en: "Pluto", zh: "冥王星" },
+  Rising: { en: "Rising", zh: "上升" },
+  Ascendant: { en: "Ascendant", zh: "上升" },
+  Descendant: { en: "Descendant", zh: "下降" },
+  Midheaven: { en: "Midheaven", zh: "天顶" },
+  IC: { en: "IC", zh: "下中天" },
+  Chiron: { en: "Chiron", zh: "凯龙星" },
+  "North Node": { en: "North Node", zh: "北交点" },
+  "South Node": { en: "South Node", zh: "南交点" },
+  Lilith: { en: "Lilith", zh: "莉莉丝" },
+  Juno: { en: "Juno", zh: "婚神星" },
+  Vesta: { en: "Vesta", zh: "灶神星" },
+  Ceres: { en: "Ceres", zh: "谷神星" },
+  Pallas: { en: "Pallas", zh: "智神星" },
+  Vertex: { en: "Vertex", zh: "宿命点" },
+  Fortune: { en: "Part of Fortune", zh: "福点" },
+  "East Point": { en: "East Point", zh: "东方点" },
+  Aries: { en: "Aries", zh: "白羊座" },
+  Taurus: { en: "Taurus", zh: "金牛座" },
+  Gemini: { en: "Gemini", zh: "双子座" },
+  Cancer: { en: "Cancer", zh: "巨蟹座" },
+  Leo: { en: "Leo", zh: "狮子座" },
+  Virgo: { en: "Virgo", zh: "处女座" },
+  Libra: { en: "Libra", zh: "天秤座" },
+  Scorpio: { en: "Scorpio", zh: "天蝎座" },
+  Sagittarius: { en: "Sagittarius", zh: "射手座" },
+  Capricorn: { en: "Capricorn", zh: "摩羯座" },
+  Aquarius: { en: "Aquarius", zh: "水瓶座" },
+  Pisces: { en: "Pisces", zh: "双鱼座" },
+  Conjunction: { en: "Conjunction", zh: "合相" },
+  Opposition: { en: "Opposition", zh: "对分相" },
+  Square: { en: "Square", zh: "四分相" },
+  Trine: { en: "Trine", zh: "三分相" },
+  Sextile: { en: "Sextile", zh: "六分相" },
+  House: { en: "House", zh: "宫" },
 };
 
 // 行星 SVG 路径数据 (24x24 viewBox)
 export const PLANET_SVG_PATHS: Record<string, string> = {
-  'Sun': 'M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-2a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm0 5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
-  'Moon': 'M12 3c.132 0 .263 0 .393.01a7.5 7.5 0 0 0 0 14.98A8 8 0 1 1 12 3z',
-  'Mercury': 'M12 2a1 1 0 0 1 1 1v2.05A5.002 5.002 0 0 1 12 15a5.002 5.002 0 0 1-1-9.95V3a1 1 0 0 1 1-1zm0 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-4 12a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h8zm-3-2a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z',
-  'Venus': 'M12 2a6 6 0 0 1 1 11.91V16h2a1 1 0 1 1 0 2h-2v2a1 1 0 1 1-2 0v-2H9a1 1 0 1 1 0-2h2v-2.09A6.002 6.002 0 0 1 12 2zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
-  'Mars': 'M14 2h6v6h-2V5.414l-4.293 4.293a6 6 0 1 1-1.414-1.414L16.586 4H14V2zM9 10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
-  'Jupiter': 'M4 6h7v2H6.5L11 12l-4.5 4H11v2H4v-2h3.5L4 12l3.5-4H4V6zm16 0v2h-4v4h4v2h-4v4h-2V6h6z',
-  'Saturn': 'M5 3h6v2H8.236l3.528 4.704A5 5 0 1 1 7.05 15H5v-2h2.05a3 3 0 1 0 3.186-4.24L6.236 5H5V3zm14 0v18h-2V3h2z',
-  'Uranus': 'M11 2v4H9V2h2zm4 0v4h-2V2h2zm-3 5a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z',
-  'Neptune': 'M12 2v3l3-2v3l-3-1v4.1A5.002 5.002 0 0 1 12 19a5.002 5.002 0 0 1 0-9.9V5L9 6V3l3 2V2h0zm0 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z',
-  'Pluto': 'M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V22h-2v-5H10v5H8v-7.26A7 7 0 0 1 12 2zm0 2a5 5 0 0 0-2 9.58V17h4v-3.42A5 5 0 0 0 12 4zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z',
-  'Chiron': 'M12 2a8 8 0 0 1 8 8v1h-2v-1a6 6 0 0 0-12 0v1H4v-1a8 8 0 0 1 8-8zm0 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0-2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm-1 8v4h2v-4h-2z',
-  'North Node': 'M12 4a4 4 0 0 1 4 4v8a4 4 0 0 1-8 0V8a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v2h4V8a2 2 0 0 0-2-2zM6 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z',
-  'South Node': 'M12 4a4 4 0 0 0-4 4v8a4 4 0 0 0 8 0V8a4 4 0 0 0-4-4zm0 10a2 2 0 0 1-2-2v-2h4v2a2 2 0 0 1-2 2zM6 12a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z',
-  'Lilith': 'M12 2a7 7 0 0 1 7 7c0 1.5-.47 2.89-1.27 4.03l2.98 5.97-1.79.89-2.65-5.3A6.97 6.97 0 0 1 12 16a6.97 6.97 0 0 1-4.27-1.41l-2.65 5.3-1.79-.89 2.98-5.97A6.97 6.97 0 0 1 5 9a7 7 0 0 1 7-7zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z',
-  'Juno': 'M12 2l3 6h-2v4a4 4 0 0 1-8 0v-4H3l3-6 3 6h2L9 2h6zm0 10a2 2 0 1 0-4 0v6h4v-6z',
-  'Vesta': 'M12 2l8 10-8 10-8-10 8-10zm0 4L8 12l4 6 4-6-4-6z',
-  'Ceres': 'M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 3a5 5 0 0 1 5 5h-2a3 3 0 0 0-6 0H7a5 5 0 0 1 5-5z',
-  'Pallas': 'M12 2l2 4h4l-3 4 2 5-5-2-5 2 2-5-3-4h4l2-4zm0 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6z',
-  'Vertex': 'M12 2l4 8-4 8-4-8 4-8zm6 4l2 6-2 6V6zM6 6v12l-2-6 2-6z',
-  'Fortune': 'M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm-2 6h4v4h-4v-4z',
-  'Ascendant': 'M4 12h16M12 4l4 8-4 8-4-8 4-8z',
-  'Rising': 'M4 12h16M12 4l4 8-4 8-4-8 4-8z',  // Rising = Ascendant 别名
-  'Midheaven': 'M12 2v8M8 6l4-4 4 4M4 14h16M4 18h16',
-  'MC': 'M12 2v8M8 6l4-4 4 4M4 14h16M4 18h16',  // MC = Midheaven 别名
+  Sun: "M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-2a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm0 5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z",
+  Moon: "M12 3c.132 0 .263 0 .393.01a7.5 7.5 0 0 0 0 14.98A8 8 0 1 1 12 3z",
+  Mercury:
+    "M12 2a1 1 0 0 1 1 1v2.05A5.002 5.002 0 0 1 12 15a5.002 5.002 0 0 1-1-9.95V3a1 1 0 0 1 1-1zm0 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-4 12a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h8zm-3-2a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z",
+  Venus:
+    "M12 2a6 6 0 0 1 1 11.91V16h2a1 1 0 1 1 0 2h-2v2a1 1 0 1 1-2 0v-2H9a1 1 0 1 1 0-2h2v-2.09A6.002 6.002 0 0 1 12 2zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z",
+  Mars: "M14 2h6v6h-2V5.414l-4.293 4.293a6 6 0 1 1-1.414-1.414L16.586 4H14V2zM9 10a4 4 0 1 0 0 8 4 4 0 0 0 0-8z",
+  Jupiter:
+    "M4 6h7v2H6.5L11 12l-4.5 4H11v2H4v-2h3.5L4 12l3.5-4H4V6zm16 0v2h-4v4h4v2h-4v4h-2V6h6z",
+  Saturn:
+    "M5 3h6v2H8.236l3.528 4.704A5 5 0 1 1 7.05 15H5v-2h2.05a3 3 0 1 0 3.186-4.24L6.236 5H5V3zm14 0v18h-2V3h2z",
+  Uranus:
+    "M11 2v4H9V2h2zm4 0v4h-2V2h2zm-3 5a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z",
+  Neptune:
+    "M12 2v3l3-2v3l-3-1v4.1A5.002 5.002 0 0 1 12 19a5.002 5.002 0 0 1 0-9.9V5L9 6V3l3 2V2h0zm0 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z",
+  Pluto:
+    "M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V22h-2v-5H10v5H8v-7.26A7 7 0 0 1 12 2zm0 2a5 5 0 0 0-2 9.58V17h4v-3.42A5 5 0 0 0 12 4zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z",
+  Chiron:
+    "M12 2a8 8 0 0 1 8 8v1h-2v-1a6 6 0 0 0-12 0v1H4v-1a8 8 0 0 1 8-8zm0 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0-2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm-1 8v4h2v-4h-2z",
+  "North Node":
+    "M12 4a4 4 0 0 1 4 4v8a4 4 0 0 1-8 0V8a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v2h4V8a2 2 0 0 0-2-2zM6 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z",
+  "South Node":
+    "M12 4a4 4 0 0 0-4 4v8a4 4 0 0 0 8 0V8a4 4 0 0 0-4-4zm0 10a2 2 0 0 1-2-2v-2h4v2a2 2 0 0 1-2 2zM6 12a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm12 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z",
+  Lilith:
+    "M12 2a7 7 0 0 1 7 7c0 1.5-.47 2.89-1.27 4.03l2.98 5.97-1.79.89-2.65-5.3A6.97 6.97 0 0 1 12 16a6.97 6.97 0 0 1-4.27-1.41l-2.65 5.3-1.79-.89 2.98-5.97A6.97 6.97 0 0 1 5 9a7 7 0 0 1 7-7zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z",
+  Juno: "M12 2l3 6h-2v4a4 4 0 0 1-8 0v-4H3l3-6 3 6h2L9 2h6zm0 10a2 2 0 1 0-4 0v6h4v-6z",
+  Vesta: "M12 2l8 10-8 10-8-10 8-10zm0 4L8 12l4 6 4-6-4-6z",
+  Ceres:
+    "M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 3a5 5 0 0 1 5 5h-2a3 3 0 0 0-6 0H7a5 5 0 0 1 5-5z",
+  Pallas:
+    "M12 2l2 4h4l-3 4 2 5-5-2-5 2 2-5-3-4h4l2-4zm0 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6z",
+  Vertex: "M12 2l4 8-4 8-4-8 4-8zm6 4l2 6-2 6V6zM6 6v12l-2-6 2-6z",
+  Fortune:
+    "M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm-2 6h4v4h-4v-4z",
+  Ascendant: "M4 12h16M12 4l4 8-4 8-4-8 4-8z",
+  Rising: "M4 12h16M12 4l4 8-4 8-4-8 4-8z", // Rising = Ascendant 别名
+  Midheaven: "M12 2v8M8 6l4-4 4 4M4 14h16M4 18h16",
+  MC: "M12 2v8M8 6l4-4 4 4M4 14h16M4 18h16", // MC = Midheaven 别名
 };
 
 export const TECH_DATA = {
   PLANETS: {
     // 高明度霓虹配色方案 - 确保在黑色背景上清晰可见
-    'Sun': { glyph: '☉', color: '#FF6B6B', keywords: { zh: '自我、意志、生命力', en: 'Self, Will, Vitality' } },
-    'Moon': { glyph: '☽', color: '#74B9FF', keywords: { zh: '情绪、安全感、内在需求', en: 'Emotions, Security, Inner Needs' } },
-    'Mercury': { glyph: '☿', color: '#FFEAA7', keywords: { zh: '思维、沟通、学习', en: 'Mind, Communication, Learning' } },
-    'Venus': { glyph: '♀', color: '#55EFC4', keywords: { zh: '爱、美、价值观', en: 'Love, Beauty, Values' } },
-    'Mars': { glyph: '♂', color: '#FF85C1', keywords: { zh: '行动、欲望、勇气', en: 'Action, Desire, Courage' } },
-    'Jupiter': { glyph: '♃', color: '#FF7675', keywords: { zh: '扩张、信仰、好运', en: 'Expansion, Faith, Fortune' } },
-    'Saturn': { glyph: '♄', color: '#DFE6E9', keywords: { zh: '责任、限制、成熟', en: 'Responsibility, Limits, Maturity' } },
-    'Uranus': { glyph: '♅', color: '#00CEC9', keywords: { zh: '变革、独立、创新', en: 'Change, Independence, Innovation' } },
-    'Neptune': { glyph: '♆', color: '#74B9FF', keywords: { zh: '梦想、灵感、迷惑', en: 'Dreams, Inspiration, Illusion' } },
-    'Pluto': { glyph: '♇', color: '#A29BFE', keywords: { zh: '转化、权力、重生', en: 'Transformation, Power, Rebirth' } },
-    'Chiron': { glyph: '⚷', color: '#E056FD', keywords: { zh: '伤痛、疗愈、智慧', en: 'Wound, Healing, Wisdom' } },
-    'North Node': { glyph: '☊', color: '#E056FD', keywords: { zh: '今生灵魂的目标，一生努力的方向', en: 'Soul Purpose, Life Direction' } },
-    'South Node': { glyph: '☋', color: '#E056FD', keywords: { zh: '前世业力、舒适区', en: 'Past Karma, Comfort Zone' } },
-    'Lilith': { glyph: '⚸', color: '#FD79A8', keywords: { zh: '阴影、压抑、原始本能', en: 'Shadow, Repression, Raw Instinct' } },
-    'Juno': { glyph: '⚵', color: '#FF85C1', keywords: { zh: '婚姻、承诺、伴侣关系', en: 'Marriage, Commitment, Partnership' } },
-    'Vesta': { glyph: '⚶', color: '#FDCB6E', keywords: { zh: '奉献、专注、神圣使命', en: 'Devotion, Focus, Sacred Work' } },
-    'Ceres': { glyph: '⚳', color: '#55EFC4', keywords: { zh: '滋养、照顾、丰收', en: 'Nurturing, Care, Abundance' } },
-    'Pallas': { glyph: '⚴', color: '#00CEC9', keywords: { zh: '智慧、策略、创造力', en: 'Wisdom, Strategy, Creativity' } },
-    'Vertex': { glyph: 'Vx', color: '#DFE6E9', keywords: { zh: '命运交汇点、宿命邂逅', en: 'Fated Encounters, Destiny Point' } },
-    'Fortune': { glyph: '⊗', color: '#FDCB6E', keywords: { zh: '幸运、物质福报', en: 'Luck, Material Fortune' } },
-    'Ascendant': { glyph: 'Asc', color: '#FFFFFF', keywords: { zh: '外在形象、人格面具', en: 'Outer Image, Persona' } },
-    'Midheaven': { glyph: 'MC', color: '#00CEC9', keywords: { zh: '发展目标、事业顶峰、公众形象', en: 'Career Peak, Public Image, Goals' } },
-    'Descendant': { glyph: 'Dsc', color: '#FFFFFF', keywords: { zh: '关系投射、互动模式', en: 'Partnership, Projection' } },
-    'IC': { glyph: 'IC', color: '#00CEC9', keywords: { zh: '内在根基、安全感', en: 'Roots, Inner Foundations' } },
+    Sun: {
+      glyph: "☉",
+      color: "#FF6B6B",
+      keywords: { zh: "自我、意志、生命力", en: "Self, Will, Vitality" },
+    },
+    Moon: {
+      glyph: "☽",
+      color: "#74B9FF",
+      keywords: {
+        zh: "情绪、安全感、内在需求",
+        en: "Emotions, Security, Inner Needs",
+      },
+    },
+    Mercury: {
+      glyph: "☿",
+      color: "#FFEAA7",
+      keywords: { zh: "思维、沟通、学习", en: "Mind, Communication, Learning" },
+    },
+    Venus: {
+      glyph: "♀",
+      color: "#55EFC4",
+      keywords: { zh: "爱、美、价值观", en: "Love, Beauty, Values" },
+    },
+    Mars: {
+      glyph: "♂",
+      color: "#FF85C1",
+      keywords: { zh: "行动、欲望、勇气", en: "Action, Desire, Courage" },
+    },
+    Jupiter: {
+      glyph: "♃",
+      color: "#FF7675",
+      keywords: { zh: "扩张、信仰、好运", en: "Expansion, Faith, Fortune" },
+    },
+    Saturn: {
+      glyph: "♄",
+      color: "#DFE6E9",
+      keywords: {
+        zh: "责任、限制、成熟",
+        en: "Responsibility, Limits, Maturity",
+      },
+    },
+    Uranus: {
+      glyph: "♅",
+      color: "#00CEC9",
+      keywords: {
+        zh: "变革、独立、创新",
+        en: "Change, Independence, Innovation",
+      },
+    },
+    Neptune: {
+      glyph: "♆",
+      color: "#74B9FF",
+      keywords: { zh: "梦想、灵感、迷惑", en: "Dreams, Inspiration, Illusion" },
+    },
+    Pluto: {
+      glyph: "♇",
+      color: "#A29BFE",
+      keywords: {
+        zh: "转化、权力、重生",
+        en: "Transformation, Power, Rebirth",
+      },
+    },
+    Chiron: {
+      glyph: "⚷",
+      color: "#E056FD",
+      keywords: { zh: "伤痛、疗愈、智慧", en: "Wound, Healing, Wisdom" },
+    },
+    "North Node": {
+      glyph: "☊",
+      color: "#E056FD",
+      keywords: {
+        zh: "今生灵魂的目标，一生努力的方向",
+        en: "Soul Purpose, Life Direction",
+      },
+    },
+    "South Node": {
+      glyph: "☋",
+      color: "#E056FD",
+      keywords: { zh: "前世业力、舒适区", en: "Past Karma, Comfort Zone" },
+    },
+    Lilith: {
+      glyph: "⚸",
+      color: "#FD79A8",
+      keywords: {
+        zh: "阴影、压抑、原始本能",
+        en: "Shadow, Repression, Raw Instinct",
+      },
+    },
+    Juno: {
+      glyph: "⚵",
+      color: "#FF85C1",
+      keywords: {
+        zh: "婚姻、承诺、伴侣关系",
+        en: "Marriage, Commitment, Partnership",
+      },
+    },
+    Vesta: {
+      glyph: "⚶",
+      color: "#FDCB6E",
+      keywords: {
+        zh: "奉献、专注、神圣使命",
+        en: "Devotion, Focus, Sacred Work",
+      },
+    },
+    Ceres: {
+      glyph: "⚳",
+      color: "#55EFC4",
+      keywords: { zh: "滋养、照顾、丰收", en: "Nurturing, Care, Abundance" },
+    },
+    Pallas: {
+      glyph: "⚴",
+      color: "#00CEC9",
+      keywords: {
+        zh: "智慧、策略、创造力",
+        en: "Wisdom, Strategy, Creativity",
+      },
+    },
+    Vertex: {
+      glyph: "Vx",
+      color: "#DFE6E9",
+      keywords: {
+        zh: "命运交汇点、宿命邂逅",
+        en: "Fated Encounters, Destiny Point",
+      },
+    },
+    Fortune: {
+      glyph: "⊗",
+      color: "#FDCB6E",
+      keywords: { zh: "幸运、物质福报", en: "Luck, Material Fortune" },
+    },
+    Ascendant: {
+      glyph: "Asc",
+      color: "#FFFFFF",
+      keywords: { zh: "外在形象、人格面具", en: "Outer Image, Persona" },
+    },
+    Midheaven: {
+      glyph: "MC",
+      color: "#00CEC9",
+      keywords: {
+        zh: "发展目标、事业顶峰、公众形象",
+        en: "Career Peak, Public Image, Goals",
+      },
+    },
+    Descendant: {
+      glyph: "Dsc",
+      color: "#FFFFFF",
+      keywords: { zh: "关系投射、互动模式", en: "Partnership, Projection" },
+    },
+    IC: {
+      glyph: "IC",
+      color: "#00CEC9",
+      keywords: { zh: "内在根基、安全感", en: "Roots, Inner Foundations" },
+    },
   },
   SIGNS: {
     // 按元素分组 - 高明度霓虹配色
     // 火=亮红, 土=亮黄/金, 风=霓虹青, 水=亮蓝
-    'Aries': { glyph: '♈', element: 'Fire', modality: 'Cardinal', color: '#FF6B6B' },
-    'Taurus': { glyph: '♉', element: 'Earth', modality: 'Fixed', color: '#FFEAA7' },
-    'Gemini': { glyph: '♊', element: 'Air', modality: 'Mutable', color: '#00CEC9' },
-    'Cancer': { glyph: '♋', element: 'Water', modality: 'Cardinal', color: '#74B9FF' },
-    'Leo': { glyph: '♌', element: 'Fire', modality: 'Fixed', color: '#FF7675' },
-    'Virgo': { glyph: '♍', element: 'Earth', modality: 'Mutable', color: '#FFEAA7' },
-    'Libra': { glyph: '♎', element: 'Air', modality: 'Cardinal', color: '#00CEC9' },
-    'Scorpio': { glyph: '♏', element: 'Water', modality: 'Fixed', color: '#74B9FF' },
-    'Sagittarius': { glyph: '♐', element: 'Fire', modality: 'Mutable', color: '#FF6B6B' },
-    'Capricorn': { glyph: '♑', element: 'Earth', modality: 'Cardinal', color: '#FFEAA7' },
-    'Aquarius': { glyph: '♒', element: 'Air', modality: 'Fixed', color: '#00CEC9' },
-    'Pisces': { glyph: '♓', element: 'Water', modality: 'Mutable', color: '#74B9FF' },
+    Aries: {
+      glyph: "♈",
+      element: "Fire",
+      modality: "Cardinal",
+      color: "#FF6B6B",
+    },
+    Taurus: {
+      glyph: "♉",
+      element: "Earth",
+      modality: "Fixed",
+      color: "#FFEAA7",
+    },
+    Gemini: {
+      glyph: "♊",
+      element: "Air",
+      modality: "Mutable",
+      color: "#00CEC9",
+    },
+    Cancer: {
+      glyph: "♋",
+      element: "Water",
+      modality: "Cardinal",
+      color: "#74B9FF",
+    },
+    Leo: { glyph: "♌", element: "Fire", modality: "Fixed", color: "#FF7675" },
+    Virgo: {
+      glyph: "♍",
+      element: "Earth",
+      modality: "Mutable",
+      color: "#FFEAA7",
+    },
+    Libra: {
+      glyph: "♎",
+      element: "Air",
+      modality: "Cardinal",
+      color: "#00CEC9",
+    },
+    Scorpio: {
+      glyph: "♏",
+      element: "Water",
+      modality: "Fixed",
+      color: "#74B9FF",
+    },
+    Sagittarius: {
+      glyph: "♐",
+      element: "Fire",
+      modality: "Mutable",
+      color: "#FF6B6B",
+    },
+    Capricorn: {
+      glyph: "♑",
+      element: "Earth",
+      modality: "Cardinal",
+      color: "#FFEAA7",
+    },
+    Aquarius: {
+      glyph: "♒",
+      element: "Air",
+      modality: "Fixed",
+      color: "#00CEC9",
+    },
+    Pisces: {
+      glyph: "♓",
+      element: "Water",
+      modality: "Mutable",
+      color: "#74B9FF",
+    },
   },
   ELEMENTS: {
-    'Fire': { color: '#FF6B6B', label: 'Fire' },
-    'Earth': { color: '#FFEAA7', label: 'Earth' },
-    'Air': { color: '#00CEC9', label: 'Air' },
-    'Water': { color: '#74B9FF', label: 'Water' },
-  }
+    Fire: { color: "#FF6B6B", label: "Fire" },
+    Earth: { color: "#FFEAA7", label: "Earth" },
+    Air: { color: "#00CEC9", label: "Air" },
+    Water: { color: "#74B9FF", label: "Water" },
+  },
 };
 
 // --- Chart Configuration Constants ---
-import type { ChartConfig, DualWheelConfig, VisualLayerStyles, AspectSettings } from './types';
+import type {
+  ChartConfig,
+  DualWheelConfig,
+  VisualLayerStyles,
+  AspectSettings,
+} from "./types";
 
 // Major planets list (10 planets)
-export const MAJOR_PLANETS = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+export const MAJOR_PLANETS = [
+  "Sun",
+  "Moon",
+  "Mercury",
+  "Venus",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+  "Pluto",
+];
 
 // Angles list
-export const CHART_ANGLES = ['Ascendant', 'Midheaven', 'IC', 'Descendant'];
+export const CHART_ANGLES = ["Ascendant", "Midheaven", "IC", "Descendant"];
 
 // Minor bodies (hidden by default)
-export const MINOR_BODIES = ['Chiron', 'North Node', 'South Node', 'Lilith', 'Juno', 'Vesta', 'Ceres', 'Pallas', 'Vertex', 'Fortune'];
+export const MINOR_BODIES = [
+  "Chiron",
+  "North Node",
+  "South Node",
+  "Lilith",
+  "Juno",
+  "Vesta",
+  "Ceres",
+  "Pallas",
+  "Vertex",
+  "Fortune",
+];
 
 // Aspect colors - 高明度霓虹配色，确保清晰可见
 export const ASPECT_COLORS = {
-  conjunction: '#94A3B8',  // 中性灰（合相线在星盘中不绘制）
-  opposition: '#8B5CF6',   // 紫色
-  square: '#EF4444',       // 红色
-  trine: '#22C55E',        // 绿色
-  sextile: '#3B82F6',      // 蓝色
-  quincunx: '#CBD5F5',     // 浅灰紫 (disabled by default)
-  semisquare: '#CBD5F5',   // 浅灰紫 (disabled by default)
-  sesquiquadrate: '#CBD5F5', // 浅灰紫 (disabled by default)
+  conjunction: "#94A3B8", // 中性灰（合相线在星盘中不绘制）
+  opposition: "#8B5CF6", // 紫色
+  square: "#EF4444", // 红色
+  trine: "#22C55E", // 绿色
+  sextile: "#3B82F6", // 蓝色
+  quincunx: "#CBD5F5", // 浅灰紫 (disabled by default)
+  semisquare: "#CBD5F5", // 浅灰紫 (disabled by default)
+  sesquiquadrate: "#CBD5F5", // 浅灰紫 (disabled by default)
 };
 
 // Visual layer styles for aspect lines - 参考竞品使用细线设计
 export const VISUAL_LAYER_STYLES: VisualLayerStyles = {
-  foreground: { strokeWidth: 1.0, opacity: 1.0 },    // 紧密相位 (orb <= 2°)
-  midground: { strokeWidth: 0.8, opacity: 0.85 },    // 中等相位 (2° < orb <= 4°)
-  background: { strokeWidth: 0.6, opacity: 0.65 },   // 宽松相位 (4° < orb <= 6°)
+  foreground: { strokeWidth: 1.0, opacity: 1.0 }, // 紧密相位 (orb <= 2°)
+  midground: { strokeWidth: 0.8, opacity: 0.85 }, // 中等相位 (2° < orb <= 4°)
+  background: { strokeWidth: 0.6, opacity: 0.65 }, // 宽松相位 (4° < orb <= 6°)
 };
 
 // Default aspect settings (shared base)
@@ -224,14 +507,14 @@ const DEFAULT_ASPECT_SETTINGS: AspectSettings = {
 // Natal Chart Configuration (Reading Mode)
 // 单人盘 orb: 合相6°, 六分3°, 四分5°, 三分5°, 对分5°
 export const NATAL_CONFIG: ChartConfig = {
-  chartType: 'natal',
+  chartType: "natal",
   celestialBodies: {
-    planets: true,     // 10 major planets
-    angles: true,      // ASC/MC only (IC/DC filtered in AstroChart)
-    nodes: true,       // North Node only (South Node filtered in AstroChart)
-    chiron: false,     // Chiron hidden
-    lilith: false,     // Lilith hidden
-    asteroids: false,  // Asteroids hidden
+    planets: true, // 10 major planets
+    angles: true, // ASC/MC only (IC/DC filtered in AstroChart)
+    nodes: true, // North Node only (South Node filtered in AstroChart)
+    chiron: false, // Chiron hidden
+    lilith: false, // Lilith hidden
+    asteroids: false, // Asteroids hidden
   },
   aspects: {
     conjunction: { enabled: true, orb: 6 },
@@ -244,19 +527,19 @@ export const NATAL_CONFIG: ChartConfig = {
     sesquiquadrate: { enabled: false, orb: 2 },
   },
   visualLayers: {
-    highlightThreshold: 2,   // orb <= 2° = foreground
-    midgroundThreshold: 4,   // orb <= 4° = midground
-    backgroundThreshold: 6,  // orb <= 6° = background
+    highlightThreshold: 2, // orb <= 2° = foreground
+    midgroundThreshold: 4, // orb <= 4° = midground
+    backgroundThreshold: 6, // orb <= 6° = background
   },
 };
 
 // Composite Chart Configuration
 // 组合盘 orb 与本命盘相同: 合相6°, 六分3°, 四分5°, 三分5°, 对分5°
 export const COMPOSITE_CONFIG: ChartConfig = {
-  chartType: 'composite',
+  chartType: "composite",
   celestialBodies: {
     planets: true,
-    angles: true,      // Midpoint AC/MC
+    angles: true, // Midpoint AC/MC
     nodes: false,
     chiron: false,
     lilith: false,
@@ -282,8 +565,8 @@ export const COMPOSITE_CONFIG: ChartConfig = {
 // Synastry Chart Configuration (Bi-wheel: Person A inner, Person B outer)
 // 对比盘 orb 与行运盘一致: 合相3°, 六分2°, 四分3°, 三分3°, 对分3°
 export const SYNASTRY_CONFIG: DualWheelConfig = {
-  chartType: 'synastry',
-  inner: { ...NATAL_CONFIG, chartType: 'natal' },
+  chartType: "synastry",
+  inner: { ...NATAL_CONFIG, chartType: "natal" },
   outer: {
     celestialBodies: {
       planets: true,
@@ -306,12 +589,12 @@ export const SYNASTRY_CONFIG: DualWheelConfig = {
 // Transit Chart Configuration (Bi-wheel: Natal inner, Transit outer)
 // 行运盘 orb: 合相3°, 六分2°, 四分3°, 三分3°, 对分3°
 export const TRANSIT_CONFIG: DualWheelConfig = {
-  chartType: 'transit',
-  inner: { ...NATAL_CONFIG, chartType: 'natal' },
+  chartType: "transit",
+  inner: { ...NATAL_CONFIG, chartType: "natal" },
   outer: {
     celestialBodies: {
       planets: true,
-      angles: false,   // Transit chart doesn't show angles in outer ring
+      angles: false, // Transit chart doesn't show angles in outer ring
       nodes: true,
       chiron: false,
       lilith: false,
@@ -328,13 +611,20 @@ export const TRANSIT_CONFIG: DualWheelConfig = {
 };
 
 // Helper function to get config by chart type
-export const getChartConfig = (chartType: 'natal' | 'composite' | 'synastry' | 'transit'): ChartConfig | DualWheelConfig => {
+export const getChartConfig = (
+  chartType: "natal" | "composite" | "synastry" | "transit",
+): ChartConfig | DualWheelConfig => {
   switch (chartType) {
-    case 'natal': return NATAL_CONFIG;
-    case 'composite': return COMPOSITE_CONFIG;
-    case 'synastry': return SYNASTRY_CONFIG;
-    case 'transit': return TRANSIT_CONFIG;
-    default: return NATAL_CONFIG;
+    case "natal":
+      return NATAL_CONFIG;
+    case "composite":
+      return COMPOSITE_CONFIG;
+    case "synastry":
+      return SYNASTRY_CONFIG;
+    case "transit":
+      return TRANSIT_CONFIG;
+    default:
+      return NATAL_CONFIG;
   }
 };
 
@@ -351,7 +641,7 @@ export const PRESET_QUESTIONS = {
       { id: "SD-07", text: "Why am I so sensitive?" },
       { id: "SD-08", text: "What makes me magnetic to others?" },
       { id: "SD-09", text: "How do I find my real confidence?" },
-      { id: "SD-10", text: "What is my soul trying to learn?" }
+      { id: "SD-10", text: "What is my soul trying to learn?" },
     ],
     shadow_work: [
       { id: "SW-01", text: "Why do I feel so empty?" },
@@ -363,7 +653,7 @@ export const PRESET_QUESTIONS = {
       { id: "SW-07", text: "Why is it hard for me to trust?" },
       { id: "SW-08", text: "What am I repressing?" },
       { id: "SW-09", text: "How do I find inner peace?" },
-      { id: "SW-10", text: "Why am I so hard on myself?" }
+      { id: "SW-10", text: "Why am I so hard on myself?" },
     ],
     relationships: [
       { id: "RA-01", text: "Why am I still single?" },
@@ -375,7 +665,7 @@ export const PRESET_QUESTIONS = {
       { id: "RA-07", text: "What kind of partner do I actually need?" },
       { id: "RA-08", text: "Why am I afraid of commitment?" },
       { id: "RA-09", text: "How do I attract real love?" },
-      { id: "RA-10", text: "What is my love language?" }
+      { id: "RA-10", text: "What is my love language?" },
     ],
     vocation: [
       { id: "VP-01", text: "What is my true life purpose?" },
@@ -387,7 +677,7 @@ export const PRESET_QUESTIONS = {
       { id: "VP-07", text: "How do I stop burnout?" },
       { id: "VP-08", text: "What is blocking my financial abundance?" },
       { id: "VP-09", text: "Should I change my career right now?" },
-      { id: "VP-10", text: "What is my unique talent?" }
+      { id: "VP-10", text: "What is my unique talent?" },
     ],
     family_roots: [
       { id: "FR-01", text: "How do I heal my 'Mommy Issues'?" },
@@ -399,7 +689,7 @@ export const PRESET_QUESTIONS = {
       { id: "FR-07", text: "What did I inherit from my ancestors?" },
       { id: "FR-08", text: "How do I nurture my Inner Child?" },
       { id: "FR-09", text: "Why is my home life so chaotic?" },
-      { id: "FR-10", text: "How do I forgive my past?" }
+      { id: "FR-10", text: "How do I forgive my past?" },
     ],
     time_cycles: [
       { id: "TC-01", text: "What is coming next for me?" },
@@ -411,8 +701,8 @@ export const PRESET_QUESTIONS = {
       { id: "TC-07", text: "Am I on the right path?" },
       { id: "TC-08", text: "What opportunities are coming?" },
       { id: "TC-09", text: "What do I need to let go of?" },
-      { id: "TC-10", text: "What is the universe trying to tell me?" }
-    ]
+      { id: "TC-10", text: "What is the universe trying to tell me?" },
+    ],
   },
   zh: {
     self_discovery: [
@@ -425,7 +715,7 @@ export const PRESET_QUESTIONS = {
       { id: "SD-07", text: "为什么我这么敏感？" },
       { id: "SD-08", text: "我吸引人的点在哪里？" },
       { id: "SD-09", text: "如何找到真正的自信？" },
-      { id: "SD-10", text: "我的灵魂想学什么课题？" }
+      { id: "SD-10", text: "我的灵魂想学什么课题？" },
     ],
     shadow_work: [
       { id: "SW-01", text: "为什么我感到如此空虚？" },
@@ -437,7 +727,7 @@ export const PRESET_QUESTIONS = {
       { id: "SW-07", text: "为什么我很难信任别人？" },
       { id: "SW-08", text: "我在压抑什么？" },
       { id: "SW-09", text: "如何找到内心的平静？" },
-      { id: "SW-10", text: "为什么我对自己这么苛刻？" }
+      { id: "SW-10", text: "为什么我对自己这么苛刻？" },
     ],
     relationships: [
       { id: "RA-01", text: "为什么我还单身？" },
@@ -449,7 +739,7 @@ export const PRESET_QUESTIONS = {
       { id: "RA-07", text: "我到底需要什么样的伴侣？" },
       { id: "RA-08", text: "为什么我害怕承诺？" },
       { id: "RA-09", text: "如何吸引真正的爱？" },
-      { id: "RA-10", text: "我的爱的语言是什么？" }
+      { id: "RA-10", text: "我的爱的语言是什么？" },
     ],
     vocation: [
       { id: "VP-01", text: "我真正的人生使命是什么？" },
@@ -461,7 +751,7 @@ export const PRESET_QUESTIONS = {
       { id: "VP-07", text: "如何停止职业倦怠？" },
       { id: "VP-08", text: "是什么阻碍了我的财运？" },
       { id: "VP-09", text: "我现在该转行吗？" },
-      { id: "VP-10", text: "我独特的天赋是什么？" }
+      { id: "VP-10", text: "我独特的天赋是什么？" },
     ],
     family_roots: [
       { id: "FR-01", text: "如何治愈我的“恋母/母亲创伤”？" },
@@ -473,7 +763,7 @@ export const PRESET_QUESTIONS = {
       { id: "FR-07", text: "我从祖先那里继承了什么？" },
       { id: "FR-08", text: "如何疗愈我的内在小孩？" },
       { id: "FR-09", text: "为什么我的家庭生活这么混乱？" },
-      { id: "FR-10", text: "如何宽恕我的过去？" }
+      { id: "FR-10", text: "如何宽恕我的过去？" },
     ],
     time_cycles: [
       { id: "TC-01", text: "接下来会发生什么？" },
@@ -485,24 +775,24 @@ export const PRESET_QUESTIONS = {
       { id: "TC-07", text: "我在正确的道路上吗？" },
       { id: "TC-08", text: "有什么机会正在向我走来？" },
       { id: "TC-09", text: "我需要放手什么？" },
-      { id: "TC-10", text: "宇宙想告诉我什么？" }
-    ]
-  }
+      { id: "TC-10", text: "宇宙想告诉我什么？" },
+    ],
+  },
 } as const;
 
 // Chart type mapping for ASK questions
 // 'natal' = 本命盘 (single wheel)
 // 'transit' = 行运盘 (dual wheel: inner natal + outer transit)
-export type AskChartType = 'natal' | 'transit';
+export type AskChartType = "natal" | "transit";
 
 // By default, all categories use natal chart except time_cycles which uses transit
 export const ASK_CHART_TYPE_BY_CATEGORY: Record<string, AskChartType> = {
-  self_discovery: 'natal',
-  shadow_work: 'natal',
-  relationships: 'natal',
-  vocation: 'natal',
-  family_roots: 'natal',
-  time_cycles: 'transit',
+  self_discovery: "natal",
+  shadow_work: "natal",
+  relationships: "natal",
+  vocation: "natal",
+  family_roots: "natal",
+  time_cycles: "transit",
 };
 
 // Individual question overrides (if a specific question needs a different chart type)
@@ -514,13 +804,16 @@ export const ASK_CHART_TYPE_BY_QUESTION: Record<string, AskChartType> = {
 };
 
 // Helper function to get chart type for a question
-export const getAskChartType = (questionId: string | null, category: string): AskChartType => {
+export const getAskChartType = (
+  questionId: string | null,
+  category: string,
+): AskChartType => {
   // First check question-specific override
   if (questionId && ASK_CHART_TYPE_BY_QUESTION[questionId]) {
     return ASK_CHART_TYPE_BY_QUESTION[questionId];
   }
   // Fall back to category default
-  return ASK_CHART_TYPE_BY_CATEGORY[category] || 'natal';
+  return ASK_CHART_TYPE_BY_CATEGORY[category] || "natal";
 };
 
 export const TRANSLATIONS = {
@@ -535,13 +828,14 @@ export const TRANSLATIONS = {
       copy: "Copy",
       methodology: "Methodology",
       method_desc: "Psychological Astrology + Self-Care",
-      disclaimer: "This is a map of tendencies and potentials, not a destiny verdict. Use it as a mirror for self-observation. We do not provide medical diagnosis or fatalistic predictions.",
+      disclaimer:
+        "This is a map of tendencies and potentials, not a destiny verdict. Use it as a mirror for self-observation. We do not provide medical diagnosis or fatalistic predictions.",
       tap_explore: "Tap to explore",
       view_tech: "View Detailed Chart Data",
       tech_specs: "Astrological Appendix",
       day: "Day",
       option: "Option",
-      retry: "Retry"
+      retry: "Retry",
     },
     detail: {
       view_detail: "View Detail",
@@ -559,10 +853,11 @@ export const TRANSLATIONS = {
     app: {
       name: "AstrologyWiki",
       tagline: "Your psychological blueprint, decoded by AI.",
-      sub_tagline: "Scientific Astrology • Modern Psychology • Actionable Insights",
+      sub_tagline:
+        "Scientific Astrology • Modern Psychology • Actionable Insights",
       loading: "Consulting the stars...",
       error: "The stars are cloudy... please try again.",
-      landing_btn: "Get Started"
+      landing_btn: "Get Started",
     },
     onboarding: {
       btn_start: "Generate My Blueprint",
@@ -577,7 +872,7 @@ export const TRANSLATIONS = {
       step_focus: "Your Focus",
       focus_subtitle: "What brings you here today?",
       btn_analyze: "Analyze Stars",
-      placeholder_city: "e.g. New York, London, Tokyo"
+      placeholder_city: "e.g. New York, London, Tokyo",
     },
     nav: {
       dashboard: "Discover Me",
@@ -586,7 +881,7 @@ export const TRANSLATIONS = {
       oracle: "Ask",
       journal: "Journal",
       wiki: "Wiki",
-      settings: "Settings"
+      settings: "Settings",
     },
     wiki: {
       kicker: "PsychoAstro Wiki",
@@ -598,7 +893,8 @@ export const TRANSLATIONS = {
       tab_tools: "Synthetica",
       tab_articles: "Articles",
       articles_title: "Astrology Articles",
-      articles_subtitle: "In-depth guides and insights for your cosmic journey.",
+      articles_subtitle:
+        "In-depth guides and insights for your cosmic journey.",
       articles_kicker: "Featured Guides",
       articles_empty: "No articles yet.",
       articles_back: "Back to Articles",
@@ -632,12 +928,13 @@ export const TRANSLATIONS = {
         Techniques: "Techniques",
         "Classical & Hellenistic": "Classical & Hellenistic",
         "Expert & Specialized": "Expert & Specialized",
-        Philosophy: "Philosophy"
+        Philosophy: "Philosophy",
       },
       keywords: "Keywords",
       hero_kicker: "Psychological Astrology",
       hero_title: "Navigate the Inner Cosmos",
-      hero_subtitle: "A living wiki of archetypes, symbols, and inner dynamics.",
+      hero_subtitle:
+        "A living wiki of archetypes, symbols, and inner dynamics.",
       search_placeholder: "Search archetypes, aspects, or houses...",
       search_action: "Search",
       search_results: "Oracle Matches",
@@ -648,9 +945,11 @@ export const TRANSLATIONS = {
       daily_transit_badge: "Transit Focus",
       daily_transit_hint: "Use these signals as a gentle daily compass.",
       daily_transit_guide_action: "Action Focus",
-      daily_transit_guide_action_text: "Pick one arena to move forward instead of spreading your energy.",
+      daily_transit_guide_action_text:
+        "Pick one arena to move forward instead of spreading your energy.",
       daily_transit_guide_transform: "Inner Shift",
-      daily_transit_guide_transform_text: "Name the pattern you can soften today, then act from calmer ground.",
+      daily_transit_guide_transform_text:
+        "Name the pattern you can soften today, then act from calmer ground.",
       daily_transit_action: "Read Today's Transit",
       daily_transit_modal: "Daily Transit",
       daily_wisdom: "Daily Wisdom",
@@ -683,7 +982,7 @@ export const TRANSLATIONS = {
         "chart-types": "Chart Types",
         asteroids: "Asteroids",
         angles: "Angles",
-        points: "Points"
+        points: "Points",
       },
       detail_back: "Back to Wiki",
       detail_map: "Insight Map",
@@ -710,6 +1009,11 @@ export const TRANSLATIONS = {
       detail_placeholder: "Content in progress.",
       related_by_astrology: "Astrological Associations",
       related_content: "Related Content",
+      cta_kicker: "Personal Chart",
+      cta_title: "Curious what this means in your birth chart?",
+      cta_description:
+        "Enter your birth details and get an AI-powered personalized natal chart reading.",
+      cta_button: "Get Started Free",
       relation_ruling: "Ruler",
       relation_exalted: "Exaltation",
       relation_detriment: "Detriment",
@@ -722,7 +1026,7 @@ export const TRANSLATIONS = {
       relation_same_element: "Same Element",
       relation_same_modality: "Same Modality",
       relation_ruling_planet: "Ruling Planet",
-      relation_correspondence: "Correspondence"
+      relation_correspondence: "Correspondence",
     },
     me: {
       blueprint_label: "Your Blueprint",
@@ -788,7 +1092,7 @@ export const TRANSLATIONS = {
       root: "Root Cause",
       when_triggered: "Trigger Scenario",
       shadow_side: "Shadow Side",
-      what_helps: "Relief Options"
+      what_helps: "Relief Options",
     },
     chart: {
       hover_sign: "Sign",
@@ -857,7 +1161,7 @@ export const TRANSLATIONS = {
       aspects_matrix: "Aspect Matrix",
       planet_positions: "Planet Positions",
       asteroid_positions: "Asteroid Positions",
-      house_rulers: "House Rulers"
+      house_rulers: "House Rulers",
     },
     us: {
       input_title: "Relationship Analysis",
@@ -893,7 +1197,7 @@ export const TRANSLATIONS = {
       privacy_label: "Don't save this person (one-time analysis)",
       btn_generate: "Generate Report",
       new_analysis: "New Analysis",
-      
+
       report_title: "Relationship Dynamics",
       report_source_ai: "AI-generated report",
       report_source_mock: "Mock report (not AI)",
@@ -905,7 +1209,7 @@ export const TRANSLATIONS = {
       tab_dynamics: "Core Dynamics",
       tab_timeline: "Timeline",
       tab_action: "Action Plan",
-      
+
       keywords: "Key Dynamics",
       radar: "Compatibility Radar",
       sweet: "Sweet Spots",
@@ -936,7 +1240,7 @@ export const TRANSLATIONS = {
       needs_prefix: "What",
       needs_label: "needs",
       practice_focus: "'s Practice",
-      
+
       you_need: "You need",
       partner_need: "needs",
       typical_loop: "Typical Loop",
@@ -954,16 +1258,16 @@ export const TRANSLATIONS = {
       timing_cool_down: "Cool-down Window",
       dominant_theme: "Dominant Theme",
       reminder: "Reminder",
-      
+
       next_30: "Next 30 Days",
       next_90: "Next 90 Days",
       best_window: "Best Window",
-      
+
       do_this: "Do This",
       avoid_this: "Avoid This",
       conflict_scripts: "Conflict & Repair Scripts",
       script_desc: "Use these exact phrases when things get heated.",
-      
+
       harmony: "Harmony",
       challenges: "Challenges",
       house_overlays: "House Overlays",
@@ -1239,14 +1543,18 @@ export const TRANSLATIONS = {
       // Tab info translations (replaces hardcoded)
       tab_overview_title: "Holographic Overview",
       tab_overview_subtitle: "A Deep Health Check",
-      tab_overview_desc: "More than just good or bad. This is a deep MRI of your energetic interaction. We analyze how the sweet spots nourish you, what psychological contracts lie behind the friction points, and what the shared growth lessons of this relationship are.",
+      tab_overview_desc:
+        "More than just good or bad. This is a deep MRI of your energetic interaction. We analyze how the sweet spots nourish you, what psychological contracts lie behind the friction points, and what the shared growth lessons of this relationship are.",
       tab_natal_title: "Natal Script",
       tab_natal_subtitle: "Emotional Baseline",
-      tab_natal_desc: "Before entering this relationship, everyone brings their own script. This reveals attachment patterns from the family of origin, core emotional needs (Moon), and defense mechanisms. Only by understanding the 'factory settings' can you understand the reactions to specific behaviors.",
-      tab_perspective_desc_template: "In {self}'s subjective world, how is {other} experienced? Which of {self}'s natal stories does {other} activate?",
+      tab_natal_desc:
+        "Before entering this relationship, everyone brings their own script. This reveals attachment patterns from the family of origin, core emotional needs (Moon), and defense mechanisms. Only by understanding the 'factory settings' can you understand the reactions to specific behaviors.",
+      tab_perspective_desc_template:
+        "In {self}'s subjective world, how is {other} experienced? Which of {self}'s natal stories does {other} activate?",
       tab_composite_title: "Composite Chart",
       tab_composite_subtitle: "Relationship Blueprint",
-      tab_composite_desc: "If this relationship was a person, what is its character and where is it heading?",
+      tab_composite_desc:
+        "If this relationship was a person, what is its character and where is it heading?",
 
       // Synastry loading phrases
       synastry_loading_phrases: [
@@ -1261,8 +1569,8 @@ export const TRANSLATIONS = {
         "Deep connection analysis...",
         "Dual energy decoding...",
         "Orbit intersections found...",
-        "Relationship map forming..."
-      ]
+        "Relationship map forming...",
+      ],
     },
     ask: {
       title: "ORACLE",
@@ -1292,7 +1600,7 @@ export const TRANSLATIONS = {
         "Cosmic currents translate.",
         "Between stars, a response.",
         "The chart breathes a reply.",
-        "Waiting for the echo."
+        "Waiting for the echo.",
       ],
       modules: {
         self_discovery: "Me & My Vibe",
@@ -1300,7 +1608,7 @@ export const TRANSLATIONS = {
         relationships: "Love & Relationships",
         vocation: "Money & Career",
         family_roots: "Family & Trauma",
-        time_cycles: "Future & Destiny"
+        time_cycles: "Future & Destiny",
       },
       // Report display
       oracle_response: "Oracle Response",
@@ -1309,7 +1617,8 @@ export const TRANSLATIONS = {
       deep_insight: "Deep Insight",
       going_deeper: "Going Deeper",
       oracle_complete: "Oracle Complete",
-      oracle_blessing: "May the stars guide your path, and may you find answers in your journey of self-discovery.",
+      oracle_blessing:
+        "May the stars guide your path, and may you find answers in your journey of self-discovery.",
       analysis_complete: "Analysis Complete",
       category_label: "Category",
       question_label: "Your Question",
@@ -1318,7 +1627,7 @@ export const TRANSLATIONS = {
         signature: "The Astrological Signature",
         deep_dive: "Deep Dive Analysis",
         soulwork: "Soulwork",
-        takeaway: "The Cosmic Takeaway"
+        takeaway: "The Cosmic Takeaway",
       },
       report_labels: {
         headline: "Headline",
@@ -1330,8 +1639,8 @@ export const TRANSLATIONS = {
         journal: "Journal Prompt",
         micro: "Micro-Habit",
         summary: "Summary",
-        affirmation: "Affirmation"
-      }
+        affirmation: "Affirmation",
+      },
     },
     settings: {
       title: "Settings",
@@ -1357,9 +1666,11 @@ export const TRANSLATIONS = {
       export_data_desc: "Download all your personal data as a JSON file",
       export_loading: "Preparing export...",
       delete_account: "Delete Account",
-      delete_account_desc: "Permanently delete your account and all associated data. This action cannot be undone.",
+      delete_account_desc:
+        "Permanently delete your account and all associated data. This action cannot be undone.",
       delete_confirm_title: "Delete Account?",
-      delete_confirm_desc: "This will permanently delete your account, subscription, and all data. This cannot be undone.",
+      delete_confirm_desc:
+        "This will permanently delete your account, subscription, and all data. This cannot be undone.",
       delete_confirm_password: "Enter your password to confirm",
       delete_confirm_btn: "Yes, Delete My Account",
       delete_cancel_btn: "Cancel",
@@ -1390,7 +1701,8 @@ export const TRANSLATIONS = {
       benefit_bonus: "100 credits per successful payment",
       benefit_reports: "Reports at 20% off credits",
       migrate_title: "Migrate Local Data",
-      migrate_desc: "We found local birth data and preferences. Move them to your cloud account?",
+      migrate_desc:
+        "We found local birth data and preferences. Move them to your cloud account?",
       migrate_confirm: "Migrate now",
       migrate_later: "Later",
       migrate_success: "Migration complete. Local data cleared.",
@@ -1425,11 +1737,12 @@ export const TRANSLATIONS = {
         "Unlock relationship chemistry with extra synastry",
         "Monthly CBT mood insights, auto-unlocked",
         "10 daily Wiki & tool lookups",
-        "100 bonus credits with every payment"
+        "100 bonus credits with every payment",
       ],
       success_title: "Payment Successful!",
       success_subtitle: "Welcome to Pro",
-      success_desc: "Your subscription is active. Enjoy full access to premium features.",
+      success_desc:
+        "Your subscription is active. Enjoy full access to premium features.",
       success_primary: "Start Exploring",
       success_secondary: "View Subscription",
       // 首次折扣相关
@@ -1440,7 +1753,8 @@ export const TRANSLATIONS = {
       payment_card: "Card",
       payment_paypal: "PayPal",
       // 错误消息
-      payment_unavailable: "Payment service not configured. Use GM commands for testing in development.",
+      payment_unavailable:
+        "Payment service not configured. Use GM commands for testing in development.",
       portal_failed: "Failed to open subscription portal",
       free_benefit_1: "3 Ask questions per week",
       free_benefit_2: "3 synastry readings (lifetime)",
@@ -1449,7 +1763,7 @@ export const TRANSLATIONS = {
       free_benefit_5: "Daily horoscope, always free",
       free_benefit_6: "Astrology Wiki, always free",
       free_benefit_7: "CBT journal, unlimited entries",
-      buy_credits_cta: "Buy Credits Instead"
+      buy_credits_cta: "Buy Credits Instead",
     },
     paywall: {
       unlock_title: "Unlock {feature}",
@@ -1475,7 +1789,7 @@ export const TRANSLATIONS = {
         permanent: "Permanent unlock",
         daily: "Valid today",
         per_month: "Valid this month",
-        consumable: "Single use"
+        consumable: "Single use",
       },
       points_label: "pts",
       quota_week: "per week",
@@ -1490,14 +1804,14 @@ export const TRANSLATIONS = {
         detail: "Detail access",
         ask: "Ask question",
         cbt_stats: "CBT stats",
-        synthetica: "Wiki Tools"
+        synthetica: "Wiki Tools",
       },
       unlocking: "Unlocking...",
       subscribe_unlock: "Subscribe to unlock (unlimited)",
       unlock_feature_generic: "Unlock this feature",
       unlock_unlimited_access: "Unlock Unlimited",
       unlock_ask: "Unlock Ask Q&A",
-      login_generic: "Please sign in"
+      login_generic: "Please sign in",
     },
     login_gate: {
       reminder_title: "Sign In Required",
@@ -1513,7 +1827,8 @@ export const TRANSLATIONS = {
       unlock_cbt_stats: "Sign in to view your mood insights",
       unlock_generic: "Sign in to unlock this feature",
       quota_exhausted_title: "Daily Limit Reached",
-      quota_exhausted_desc: "You've used all your daily attempts. Resets in {time}.",
+      quota_exhausted_desc:
+        "You've used all your daily attempts. Resets in {time}.",
       quota_remaining: "{left}/{total}",
       quota_reset_countdown: "Resets in {hours}h {minutes}m",
     },
@@ -1522,21 +1837,22 @@ export const TRANSLATIONS = {
       subscription_unlocked: "Subscription unlocked",
       subscription_cancelled: "Subscription cancelled",
       unlock_sub_button: "Unlock Sub",
-      cancel_sub_button: "Cancel Sub"
+      cancel_sub_button: "Cancel Sub",
     },
     tags: {
       Emotions: "Emotions",
       Relationships: "Relationships",
       Work: "Work",
       Growth: "Growth",
-      Timing: "Timing"
+      Timing: "Timing",
     },
     journal: {
       // Page titles
       title: "CBT Journal",
       subtitle: "Cognitive Behavioral Therapy Diary",
       empty_title: "Your Cosmic Journal Awaits",
-      empty_desc: "Begin your journey of self-discovery. Each entry transforms fleeting thoughts into lasting insights.",
+      empty_desc:
+        "Begin your journey of self-discovery. Each entry transforms fleeting thoughts into lasting insights.",
       empty_cta: "Create First Entry",
 
       // Wizard flow
@@ -1575,44 +1891,57 @@ export const TRANSLATIONS = {
 
       // Step titles and guides
       step1_title: "What happened?",
-      step1_guide: "Describe what just happened like a neutral camera. No judgments or adjectives.",
-      step1_example: "Example: Tuesday meeting, manager said 'the proposal needs to be clearer'...",
+      step1_guide:
+        "Describe what just happened like a neutral camera. No judgments or adjectives.",
+      step1_example:
+        "Example: Tuesday meeting, manager said 'the proposal needs to be clearer'...",
 
       step2_title: "How you feel right now",
-      step2_guide: "Name this feeling. Is it anger? Shame? Or helplessness? Rate it honestly.",
+      step2_guide:
+        "Name this feeling. Is it anger? Shame? Or helplessness? Rate it honestly.",
       step2_example: "Example: Anxiety 7/10, mixed with some anger...",
 
       step3_title: "What does your body feel?",
-      step3_guide: "Emotions often land in the body first. Is your chest tight? Are your palms sweating? Capture these signals.",
+      step3_guide:
+        "Emotions often land in the body first. Is your chest tight? Are your palms sweating? Capture these signals.",
       step3_example: "Example: Shoulders are tense, slight headache...",
 
       step4_title: "What's in your mind?",
-      step4_guide: "What thoughts flashed through your mind? Even if they sound absurd or harsh, record them. These are called 'automatic thoughts' in CBT.",
-      step4_example: "Example: 'I'm so stupid' 'They must think I'm incompetent'...",
+      step4_guide:
+        "What thoughts flashed through your mind? Even if they sound absurd or harsh, record them. These are called 'automatic thoughts' in CBT.",
+      step4_example:
+        "Example: 'I'm so stupid' 'They must think I'm incompetent'...",
 
       step5_title: "Your most troubling thought",
-      step5_guide: "Among these thoughts, which one hurts the most and feels the truest? This is the 'hot thought' we need to address.",
+      step5_guide:
+        "Among these thoughts, which one hurts the most and feels the truest? This is the 'hot thought' we need to address.",
       step5_example: "Example: 'I'll never be good enough'...",
 
       step6_title: "Evidence supporting this thought",
-      step6_guide: "What objective evidence supports this hot thought? (Note: your feelings are not evidence)",
+      step6_guide:
+        "What objective evidence supports this hot thought? (Note: your feelings are not evidence)",
       step6_example: "Example: The manager did point out a problem...",
 
       step7_title: "Evidence against this thought",
-      step7_guide: "What evidence contradicts this hot thought? Were there times when this thought didn't hold true?",
+      step7_guide:
+        "What evidence contradicts this hot thought? Were there times when this thought didn't hold true?",
       step7_example: "Example: Last month's project was praised...",
 
       step8_title: "A different angle",
-      step8_guide: "Combining both sides of evidence, can you reach a more balanced conclusion closer to the truth?",
+      step8_guide:
+        "Combining both sides of evidence, can you reach a more balanced conclusion closer to the truth?",
       step8_example: "Example: One criticism doesn't define my worth...",
 
       step9_title: "How do you feel now?",
-      step9_guide: "When you believe this new balanced conclusion, what happens to the original emotional intensity? Rate your emotions again.",
+      step9_guide:
+        "When you believe this new balanced conclusion, what happens to the original emotional intensity? Rate your emotions again.",
       step9_example: "Example: Anxiety dropped from 7 to 4...",
 
       step10_title: "Save today's entry",
-      step10_guide: "Choose a representative color for this mental alchemy session and archive it in your cosmic coordinates.",
-      step10_example: "Example: Choose deep blue, representing calm after the storm...",
+      step10_guide:
+        "Choose a representative color for this mental alchemy session and archive it in your cosmic coordinates.",
+      step10_example:
+        "Example: Choose deep blue, representing calm after the storm...",
 
       // Report
       report_title: "Entry Analysis",
@@ -1640,7 +1969,8 @@ export const TRANSLATIONS = {
       // Wizard UI
       back_to_journal: "Back to Journal",
       analysis_saved: "Deep analysis saved to star map",
-      choose_soul_state: "Choose a state that best matches your current soul, and we'll begin deep cognitive analysis.",
+      choose_soul_state:
+        "Choose a state that best matches your current soul, and we'll begin deep cognitive analysis.",
       reassess_mood: "Reassess mood",
       inspiration_guide: "Inspiration / Examples",
       star_guidance: "Star Guidance",
@@ -1654,7 +1984,8 @@ export const TRANSLATIONS = {
       click_to_mark: "Click buttons above to mark your body feedback...",
       recording_memory: "Recording memory for",
       recording_memory_suffix: "",
-      situation_formula: "Formula: [Time] + [Place] + [People] + [What happened]",
+      situation_formula:
+        "Formula: [Time] + [Place] + [People] + [What happened]",
       your_feeling: "Your Feeling",
       intensity_label: "Intensity",
       action_label: "Action",
@@ -1664,10 +1995,12 @@ export const TRANSLATIONS = {
       your_thought: "Your Thought",
       evidence_for_label: "Supporting Evidence",
       evidence_against_label: "Contradicting Evidence",
-      select_hot_thought: "Please click to select the thought that makes your heart race most. We'll observe it deeply:",
+      select_hot_thought:
+        "Please click to select the thought that makes your heart race most. We'll observe it deeply:",
       analyzing_thought: "Analyzing Key Thought",
       balanced_thought: "Alternative or Balanced Thought",
-      balanced_template: "Template: Although [fact] happened, there's also [counter-evidence]. So more likely [new conclusion]. I can [specific action].",
+      balanced_template:
+        "Template: Although [fact] happened, there's also [counter-evidence]. So more likely [new conclusion]. I can [specific action].",
       belief_weight: "Belief Weight",
 
       // Calendar & Timeline
@@ -1763,11 +2096,16 @@ export const TRANSLATIONS = {
       keep_awareness: "Keep observing.",
       when_feel_mood: "When you feel ",
       body_alarms_with: ", your body most often alarms with ",
-      sleep_advice: "Prioritize 'physical foundation': 1. 4-6 breathing method (2 min); 2. Fixed pre-sleep wind-down ritual (10 min). Recharge your body first, then your mind can think clearly.",
-      high_arousal_advice: "High arousal signal: 'Cool down before thinking'. Splash cold water on face or brisk walk for 5 min to physically lower amygdala activation.",
-      tension_advice: "Your body is carrying your stress. Try 'progressive muscle relaxation' and tell yourself: it's okay to slow down.",
-      stomach_advice: "Gut-brain axis alert. Drink warm water, place hand on belly, breathe deeply 10 times, and tell yourself 'I am safe right now'.",
-      somatic_astro_note: "When themes lean toward [closure/introspection/pressure] (like Saturn or waning Moon), you're more likely to experience low mood and body signals; this isn't bad—the universe is reminding you to slow down and care for this physical vessel.",
+      sleep_advice:
+        "Prioritize 'physical foundation': 1. 4-6 breathing method (2 min); 2. Fixed pre-sleep wind-down ritual (10 min). Recharge your body first, then your mind can think clearly.",
+      high_arousal_advice:
+        "High arousal signal: 'Cool down before thinking'. Splash cold water on face or brisk walk for 5 min to physically lower amygdala activation.",
+      tension_advice:
+        "Your body is carrying your stress. Try 'progressive muscle relaxation' and tell yourself: it's okay to slow down.",
+      stomach_advice:
+        "Gut-brain axis alert. Drink warm water, place hand on belly, breathe deeply 10 times, and tell yourself 'I am safe right now'.",
+      somatic_astro_note:
+        "When themes lean toward [closure/introspection/pressure] (like Saturn or waning Moon), you're more likely to experience low mood and body signals; this isn't bad—the universe is reminding you to slow down and care for this physical vessel.",
 
       // SourceSupportView
       roots_resources: "Roots & Resources",
@@ -1793,14 +2131,21 @@ export const TRANSLATIONS = {
       factual_evidence: "Factual Evidence",
       unknown: "Unknown",
       exploring: "Exploring",
-      self_worth_advice: "Practice 'de-evaluation': Change 'I am terrible' (judgment) to 'I made a mistake today' (fact). Self-attack is the biggest energy drain.",
-      relationship_advice: "Practice 'Stop Mind-Reading 3 Questions': 1. What facts did I see? 2. What did I assume? 3. Can I verify directly?",
-      control_advice: "Practice 'Controllables List': List 3 small actions you can do right now, and one outcome you'll consciously wait on.",
-      work_advice: "Practice 'Task Breakdown': Break the mountain into steps, focus only on what you can finish in the next 5 minutes.",
+      self_worth_advice:
+        "Practice 'de-evaluation': Change 'I am terrible' (judgment) to 'I made a mistake today' (fact). Self-attack is the biggest energy drain.",
+      relationship_advice:
+        "Practice 'Stop Mind-Reading 3 Questions': 1. What facts did I see? 2. What did I assume? 3. Can I verify directly?",
+      control_advice:
+        "Practice 'Controllables List': List 3 small actions you can do right now, and one outcome you'll consciously wait on.",
+      work_advice:
+        "Practice 'Task Breakdown': Break the mountain into steps, focus only on what you can finish in the next 5 minutes.",
       since_main_support_effective: " Since ",
-      works_best_do_it: " works best for you, try doing it for 10 minutes next time.",
-      roots_astro_note_prefix: "When themes lean toward [relationships/communication], your bad moods more often come from ",
-      roots_astro_note_suffix: "; prioritize 'verification/expression' type actions.",
+      works_best_do_it:
+        " works best for you, try doing it for 10 minutes next time.",
+      roots_astro_note_prefix:
+        "When themes lean toward [relationships/communication], your bad moods more often come from ",
+      roots_astro_note_suffix:
+        "; prioritize 'verification/expression' type actions.",
 
       // MoodCompositionView
       mood_composition: "Mood Composition",
@@ -1810,16 +2155,21 @@ export const TRANSLATIONS = {
       no_clear_low_data: "No clear low point data",
       mood_component: "Mood Component:",
       low_point_dominated_by: "Your low points are most often dominated by ",
-      recognize_first_step: ". Recognizing it is the first step to mastering it.",
+      recognize_first_step:
+        ". Recognizing it is the first step to mastering it.",
       mood_very_stable: "Your mood state is very stable.",
       targeted_regulation: "Targeted Regulation",
       mood_full_title: "Full Low Point Mood Components",
       all_negative_components: "All Negative Mood Components",
       accept_all_emotions: "Accept the arrival of all emotions.",
-      anxiety_advice: "Body before cognition: 1. Do 2-minute breathing exercise; 2. Write down 3 verifiable objective facts.",
-      anger_advice: "Boundary sentence practice: Try filling in—'I need...' / 'I don't accept...' / 'I hope...'—to convert emotion into specific requests.",
-      emptiness_advice: "Minimal behavioral activation: 10 minutes outside in sunlight, or tidy up one corner, or contact one person. Move first, feelings will follow.",
-      mood_astro_note: "When themes lean toward [introspection/closure/emotional sensitivity], low points appear more often; this is better suited for 'reducing load + self-care' actions, not forcing yourself to push through.",
+      anxiety_advice:
+        "Body before cognition: 1. Do 2-minute breathing exercise; 2. Write down 3 verifiable objective facts.",
+      anger_advice:
+        "Boundary sentence practice: Try filling in—'I need...' / 'I don't accept...' / 'I hope...'—to convert emotion into specific requests.",
+      emptiness_advice:
+        "Minimal behavioral activation: 10 minutes outside in sunlight, or tidy up one corner, or contact one person. Move first, feelings will follow.",
+      mood_astro_note:
+        "When themes lean toward [introspection/closure/emotional sensitivity], low points appear more often; this is better suited for 'reducing load + self-care' actions, not forcing yourself to push through.",
 
       // CBTCompetenceView
       thinking_muscles: "Thinking Muscles",
@@ -1828,14 +2178,21 @@ export const TRANSLATIONS = {
       avg_count: "Avg Count",
       belief_score: "Belief Score",
       competence_assessment: "Competence Assessment:",
-      rational_brain_fast: "Your reality-testing ability is getting stronger, rational brain intervenes quickly.",
-      stuck_at_recording: "You're mostly staying at recording thoughts—'finding evidence' is the key to change.",
+      rational_brain_fast:
+        "Your reality-testing ability is getting stronger, rational brain intervenes quickly.",
+      stuck_at_recording:
+        "You're mostly staying at recording thoughts—'finding evidence' is the key to change.",
       advanced_practice: "Advanced Practice",
-      muscles_strong: "Your thinking muscles are already very strong, keep it up.",
-      low_rate_advice: "Minimum threshold template: When you can't write counter-evidence, just write [one exception] + [one possible alternative explanation].",
-      low_avg_advice: "Checklist prompt: 1. Have I had successful experiences before? 2. How would I comfort a friend facing this? 3. How much does this matter in my whole life?",
-      low_belief_advice: "Increase believability: Change 'big principles' to 'specific, actionable small steps'—concreteness increases believability.",
-      cbt_astro_note: "On [conflict/high pressure] theme days, writing counter-evidence is harder—that's normal; try 2 minutes of physiological calming first, then return to evidence practice.",
+      muscles_strong:
+        "Your thinking muscles are already very strong, keep it up.",
+      low_rate_advice:
+        "Minimum threshold template: When you can't write counter-evidence, just write [one exception] + [one possible alternative explanation].",
+      low_avg_advice:
+        "Checklist prompt: 1. Have I had successful experiences before? 2. How would I comfort a friend facing this? 3. How much does this matter in my whole life?",
+      low_belief_advice:
+        "Increase believability: Change 'big principles' to 'specific, actionable small steps'—concreteness increases believability.",
+      cbt_astro_note:
+        "On [conflict/high pressure] theme days, writing counter-evidence is harder—that's normal; try 2 minutes of physiological calming first, then return to evidence practice.",
 
       // CBT Loading Phrases
       cbt_loading_phrases: [
@@ -1846,12 +2203,12 @@ export const TRANSLATIONS = {
         "Archetypes awakening...",
         "Insight crystallizing...",
         "Deep analysis in motion...",
-        "Your inner cosmos revealing..."
+        "Your inner cosmos revealing...",
       ],
       cbt_loading_label: "Consulting Stars & Mind",
       cbt_analyzing_insight: "Analyzing insight...",
       cbt_generating_advice: "Generating advice...",
-      cbt_consulting_astro: "Consulting stars..."
+      cbt_consulting_astro: "Consulting stars...",
     },
     synthetica: {
       title: "ASTROSYNTHETICA",
@@ -1860,7 +2217,7 @@ export const TRANSLATIONS = {
         planet: "Planet",
         sign: "Sign",
         house: "House",
-        aspect: "Aspect"
+        aspect: "Aspect",
       },
       actions: {
         back: "Back",
@@ -1869,7 +2226,7 @@ export const TRANSLATIONS = {
         addAspect: "+ Add Aspect",
         skipHouse: "Skip House",
         reset: "✨ New Chart",
-        reset_short: "Reset"
+        reset_short: "Reset",
       },
       quota: "Today {left}/{total}",
       blueprint: {
@@ -1881,7 +2238,7 @@ export const TRANSLATIONS = {
           healing: "my inner child & healing",
           career: "my soul mission & vocation",
           timing: "navigating life chaos",
-          social: "my social circles & belonging"
+          social: "my social circles & belonging",
         },
         when: ", when ",
         clothed: " is clothed in ",
@@ -1890,39 +2247,40 @@ export const TRANSLATIONS = {
         stage_outro: "",
         aspects_intro: "accompanied by ",
         aspects_count: " aspect influences",
-        footer: "Based on Evolutionary Astrology"
+        footer: "Based on Evolutionary Astrology",
       },
       prompts: {
         context: {
           title: "Why do you look up at the stars?",
-          desc: ""
+          desc: "",
         },
         planet: {
           title: "Select 'Actor' (Planet)",
-          desc: "Which part of your psyche are we analyzing?"
+          desc: "Which part of your psyche are we analyzing?",
         },
         sign: {
           title: "Select 'Script' (Sign)",
-          desc: "What style or temperament does this actor use?"
+          desc: "What style or temperament does this actor use?",
         },
         house: {
           title: "Select 'Stage' (House - Optional)",
-          desc: "In which area of life is this play most vivid?"
+          desc: "In which area of life is this play most vivid?",
         },
         aspect_dashboard: {
           title: "Aspect Dashboard (Optional)",
           desc: "Add influences from other planets on {planet}",
-          empty: "No aspects. Adding aspects makes the reading more 3-dimensional.",
-          via: "via"
+          empty:
+            "No aspects. Adding aspects makes the reading more 3-dimensional.",
+          via: "via",
         },
         second_planet: {
           title: "Select Interacting Planet",
-          desc: "Who is influencing {planet}?"
+          desc: "Who is influencing {planet}?",
         },
         aspect_type: {
           title: "Select Aspect Type",
-          desc: "Is it conflict or cooperation?"
-        }
+          desc: "Is it conflict or cooperation?",
+        },
       },
       loading: {
         label: "Generating your analysis...",
@@ -1931,21 +2289,39 @@ export const TRANSLATIONS = {
           "Calculating aspect weights...",
           "Integrating psychological lens...",
           "Synthesizing deep insights...",
-          "Preparing your personal report..."
-        ]
+          "Preparing your personal report...",
+        ],
       },
       house_symbol: {
         prefix: "House",
-        suffix: ""
+        suffix: "",
       },
       catalog: {
         contexts: {
-          LOVE: { label: "Love & Intimacy", description: "Compatibility, red flags, attachment styles" },
-          SELF: { label: "Self & Identity", description: "Who am I? Authenticity and core archetypes" },
-          HEALING: { label: "Healing & Mental Health", description: "Inner child, shadow work, trauma transformation" },
-          CAREER: { label: "Purpose & Career", description: "Soul mission, vocation, anti-burnout direction" },
-          TIMING: { label: "Timing & Survival", description: "Retrogrades, Saturn return, life chaos" },
-          SOCIAL: { label: "Social & Friendship", description: "Tribe, real friends, energetic boundaries" }
+          LOVE: {
+            label: "Love & Intimacy",
+            description: "Compatibility, red flags, attachment styles",
+          },
+          SELF: {
+            label: "Self & Identity",
+            description: "Who am I? Authenticity and core archetypes",
+          },
+          HEALING: {
+            label: "Healing & Mental Health",
+            description: "Inner child, shadow work, trauma transformation",
+          },
+          CAREER: {
+            label: "Purpose & Career",
+            description: "Soul mission, vocation, anti-burnout direction",
+          },
+          TIMING: {
+            label: "Timing & Survival",
+            description: "Retrogrades, Saturn return, life chaos",
+          },
+          SOCIAL: {
+            label: "Social & Friendship",
+            description: "Tribe, real friends, energetic boundaries",
+          },
         },
         planets: {
           sun: { name: "Sun", archetype: "The Hero" },
@@ -1957,7 +2333,7 @@ export const TRANSLATIONS = {
           saturn: { name: "Saturn", archetype: "The Builder" },
           uranus: { name: "Uranus", archetype: "The Awakener" },
           neptune: { name: "Neptune", archetype: "The Mystic" },
-          pluto: { name: "Pluto", archetype: "The Transformer" }
+          pluto: { name: "Pluto", archetype: "The Transformer" },
         },
         signs: {
           aries: { name: "Aries", archetype: "The Pioneer" },
@@ -1971,7 +2347,7 @@ export const TRANSLATIONS = {
           sagittarius: { name: "Sagittarius", archetype: "The Explorer" },
           capricorn: { name: "Capricorn", archetype: "The Strategist" },
           aquarius: { name: "Aquarius", archetype: "The Innovator" },
-          pisces: { name: "Pisces", archetype: "The Dreamer" }
+          pisces: { name: "Pisces", archetype: "The Dreamer" },
         },
         houses: {
           h1: { name: "1st House", archetype: "Identity & Appearance" },
@@ -1985,15 +2361,30 @@ export const TRANSLATIONS = {
           h9: { name: "9th House", archetype: "Philosophy & Travel" },
           h10: { name: "10th House", archetype: "Career & Public Image" },
           h11: { name: "11th House", archetype: "Community & Future" },
-          h12: { name: "12th House", archetype: "Spirituality & Unconscious" }
+          h12: { name: "12th House", archetype: "Spirituality & Unconscious" },
         },
         aspects: {
-          conjunction: { name: "Conjunction", description: "Fusion: two forces merge as one." },
-          sextile: { name: "Sextile", description: "Support: easy opportunities and collaboration." },
-          square: { name: "Square", description: "Friction: inner tension and action." },
-          trine: { name: "Trine", description: "Flow: gifts and comfort zone." },
-          opposition: { name: "Opposition", description: "Opposition: polarity and perspective." }
-        }
+          conjunction: {
+            name: "Conjunction",
+            description: "Fusion: two forces merge as one.",
+          },
+          sextile: {
+            name: "Sextile",
+            description: "Support: easy opportunities and collaboration.",
+          },
+          square: {
+            name: "Square",
+            description: "Friction: inner tension and action.",
+          },
+          trine: {
+            name: "Trine",
+            description: "Flow: gifts and comfort zone.",
+          },
+          opposition: {
+            name: "Opposition",
+            description: "Opposition: polarity and perspective.",
+          },
+        },
       },
       report: {
         header_separator: "•",
@@ -2003,9 +2394,9 @@ export const TRANSLATIONS = {
         focus: "Focus",
         shadow: "Shadow Side",
         advice: "Actionable Advice",
-        error: "The stars are cloudy. Please check connection or try again."
-      }
-    }
+        error: "The stars are cloudy. Please check connection or try again.",
+      },
+    },
   },
   zh: {
     common: {
@@ -2018,13 +2409,14 @@ export const TRANSLATIONS = {
       copy: "复制",
       methodology: "方法论",
       method_desc: "心理占星 + 自我关怀",
-      disclaimer: "这是一张关于倾向和潜力的地图，而不是命运的判决书。请将其作为自我观察的镜子。我们不提供医学诊断或宿命论预测。",
+      disclaimer:
+        "这是一张关于倾向和潜力的地图，而不是命运的判决书。请将其作为自我观察的镜子。我们不提供医学诊断或宿命论预测。",
       tap_explore: "点击探索",
       view_tech: "查看详细星盘数据",
       tech_specs: "占星学附录",
       day: "第",
       option: "选项",
-      retry: "重试"
+      retry: "重试",
     },
     detail: {
       view_detail: "查看详情",
@@ -2037,7 +2429,7 @@ export const TRANSLATIONS = {
       loading_detail: "正在生成解读...",
       error_detail: "解读加载失败",
       generating: "正在请示宇宙智慧...",
-      interpretation: "深度解读"
+      interpretation: "深度解读",
     },
     app: {
       name: "AstrologyWiki",
@@ -2045,7 +2437,7 @@ export const TRANSLATIONS = {
       sub_tagline: "科学占星 • 现代心理学 • 可行建议",
       loading: "正在咨询星辰...",
       error: "星辰被云层遮挡... 请重试。",
-      landing_btn: "开始探索"
+      landing_btn: "开始探索",
     },
     onboarding: {
       btn_start: "生成我的蓝图",
@@ -2060,7 +2452,7 @@ export const TRANSLATIONS = {
       step_focus: "你的关注点",
       focus_subtitle: "今天是什么把你带到这里？",
       btn_analyze: "分析星盘",
-      placeholder_city: "例如：北京、上海、纽约"
+      placeholder_city: "例如：北京、上海、纽约",
     },
     nav: {
       dashboard: "探索自我",
@@ -2069,7 +2461,7 @@ export const TRANSLATIONS = {
       oracle: "星象问答",
       journal: "CBT 日记",
       wiki: "百科",
-      settings: "设置"
+      settings: "设置",
     },
     wiki: {
       kicker: "心理占星百科",
@@ -2115,7 +2507,7 @@ export const TRANSLATIONS = {
         Techniques: "技法",
         "Classical & Hellenistic": "古典与希腊化",
         "Expert & Specialized": "专精",
-        Philosophy: "哲学"
+        Philosophy: "哲学",
       },
       hero_kicker: "心理占星",
       hero_title: "导航你的内在宇宙",
@@ -2132,7 +2524,8 @@ export const TRANSLATIONS = {
       daily_transit_guide_action: "行动方向",
       daily_transit_guide_action_text: "集中到一个领域推进，而不是把能量分散。",
       daily_transit_guide_transform: "内在转化",
-      daily_transit_guide_transform_text: "识别你要放松的模式，再从更稳的位置行动。",
+      daily_transit_guide_transform_text:
+        "识别你要放松的模式，再从更稳的位置行动。",
       daily_transit_action: "查看星象解读",
       daily_transit_modal: "每日星象详解",
       daily_wisdom: "每日灵感",
@@ -2165,7 +2558,7 @@ export const TRANSLATIONS = {
         "chart-types": "星盘类型",
         asteroids: "小行星",
         angles: "四轴",
-        points: "虚点"
+        points: "虚点",
       },
       detail_back: "返回百科",
       detail_map: "能量全景图",
@@ -2192,6 +2585,10 @@ export const TRANSLATIONS = {
       detail_placeholder: "资料编撰中...",
       related_by_astrology: "星象关联",
       related_content: "相关内容",
+      cta_kicker: "个人星盘",
+      cta_title: "想看看这些星象在你的星盘中意味着什么？",
+      cta_description: "输入你的出生信息，获取 AI 驱动的个性化星盘解读。",
+      cta_button: "免费开始",
       relation_ruling: "守护",
       relation_exalted: "旺势",
       relation_detriment: "失势",
@@ -2204,7 +2601,7 @@ export const TRANSLATIONS = {
       relation_same_element: "同元素",
       relation_same_modality: "同模式",
       relation_ruling_planet: "守护星",
-      relation_correspondence: "关联"
+      relation_correspondence: "关联",
     },
     me: {
       blueprint_label: "你的蓝图",
@@ -2270,7 +2667,7 @@ export const TRANSLATIONS = {
       root: "关键成因",
       when_triggered: "触发场景",
       shadow_side: "阴影面",
-      what_helps: "缓解方式"
+      what_helps: "缓解方式",
     },
     chart: {
       hover_sign: "星座",
@@ -2339,7 +2736,7 @@ export const TRANSLATIONS = {
       aspects_matrix: "相位矩阵",
       planet_positions: "行星位置",
       asteroid_positions: "小行星位置",
-      house_rulers: "宫主星"
+      house_rulers: "宫主星",
     },
     us: {
       input_title: "关系分析",
@@ -2375,7 +2772,7 @@ export const TRANSLATIONS = {
       privacy_label: "不保存此人（一次性分析）",
       btn_generate: "生成报告",
       new_analysis: "新分析",
-      
+
       report_title: "关系动力学",
       report_source_ai: "AI 生成报告",
       report_source_mock: "模拟报告（非 AI）",
@@ -2387,7 +2784,7 @@ export const TRANSLATIONS = {
       tab_dynamics: "核心动力",
       tab_timeline: "时间线",
       tab_action: "行动计划",
-      
+
       keywords: "关键动力",
       radar: "兼容性雷达",
       sweet: "甜蜜点",
@@ -2418,7 +2815,7 @@ export const TRANSLATIONS = {
       needs_prefix: "",
       needs_label: "需要",
       practice_focus: "的练习",
-      
+
       you_need: "你需要",
       partner_need: "需要",
       typical_loop: "典型循环",
@@ -2436,16 +2833,16 @@ export const TRANSLATIONS = {
       timing_cool_down: "适合冷静",
       dominant_theme: "主要主题",
       reminder: "提醒",
-      
+
       next_30: "未来30天",
       next_90: "未来90天",
       best_window: "最佳窗口",
-      
+
       do_this: "这样做",
       avoid_this: "避免这样",
       conflict_scripts: "冲突与修复话术",
       script_desc: "当冲突升温时，使用这些确切的短语。",
-      
+
       harmony: "和谐",
       challenges: "挑战",
       house_overlays: "宫位叠加",
@@ -2721,14 +3118,18 @@ export const TRANSLATIONS = {
       // Tab info 翻译（替代硬编码）
       tab_overview_title: "全息总览",
       tab_overview_subtitle: "关系的深度体检",
-      tab_overview_desc: "不仅仅是简单的吉凶判断。这是一份关于你们能量互动的深度核磁共振。我们分析这里的甜蜜点如何滋养你们，摩擦点背后隐藏着怎样的心理契约，以及这段关系共同的成长课题是什么。",
+      tab_overview_desc:
+        "不仅仅是简单的吉凶判断。这是一份关于你们能量互动的深度核磁共振。我们分析这里的甜蜜点如何滋养你们，摩擦点背后隐藏着怎样的心理契约，以及这段关系共同的成长课题是什么。",
       tab_natal_title: "本命脚本",
       tab_natal_subtitle: "个人情感底色",
-      tab_natal_desc: "在走进这段关系之前，每个人都带着自己的剧本。这里揭示了原生家庭带来的依恋模式、核心的情感需求（月亮）以及防御机制。只有理解了「出厂设置」，才能理解为什么会对特定的行为产生反应。",
-      tab_perspective_desc_template: "在{self}的主观世界里，{other}是被体验成什么样的存在？激活了{self}哪些本命故事？",
+      tab_natal_desc:
+        "在走进这段关系之前，每个人都带着自己的剧本。这里揭示了原生家庭带来的依恋模式、核心的情感需求（月亮）以及防御机制。只有理解了「出厂设置」，才能理解为什么会对特定的行为产生反应。",
+      tab_perspective_desc_template:
+        "在{self}的主观世界里，{other}是被体验成什么样的存在？激活了{self}哪些本命故事？",
       tab_composite_title: "组合盘",
       tab_composite_subtitle: "关系人格蓝图",
-      tab_composite_desc: "如果把这段关系当成一个独立的人，这个'人'是什么性格，要往哪里发展？",
+      tab_composite_desc:
+        "如果把这段关系当成一个独立的人，这个'人'是什么性格，要往哪里发展？",
 
       // 合盘加载文案
       synastry_loading_phrases: [
@@ -2743,8 +3144,8 @@ export const TRANSLATIONS = {
         "深度连接扫描...",
         "双人能量解码...",
         "轨道交汇点定位...",
-        "关系图谱生成中..."
-      ]
+        "关系图谱生成中...",
+      ],
     },
     ask: {
       title: "神谕",
@@ -2774,7 +3175,7 @@ export const TRANSLATIONS = {
         "讯号穿越尘埃",
         "命运线被点亮",
         "星火照亮内心",
-        "静候回声到来"
+        "静候回声到来",
       ],
       modules: {
         self_discovery: "我是谁 / 个人特质",
@@ -2782,7 +3183,7 @@ export const TRANSLATIONS = {
         relationships: "恋爱与情感",
         vocation: "搞钱与搞事业",
         family_roots: "原生家庭与创伤",
-        time_cycles: "未来与命运"
+        time_cycles: "未来与命运",
       },
       // 报告展示
       oracle_response: "神谕回应",
@@ -2801,7 +3202,7 @@ export const TRANSLATIONS = {
         signature: "星盘密码",
         deep_dive: "深度解码",
         soulwork: "灵魂功课",
-        takeaway: "宇宙寄语"
+        takeaway: "宇宙寄语",
       },
       report_labels: {
         headline: "标题",
@@ -2813,8 +3214,8 @@ export const TRANSLATIONS = {
         journal: "觉醒日记",
         micro: "微行动",
         summary: "结语",
-        affirmation: "能量咒语"
-      }
+        affirmation: "能量咒语",
+      },
     },
     settings: {
       title: "设置",
@@ -2842,7 +3243,8 @@ export const TRANSLATIONS = {
       delete_account: "删除账户",
       delete_account_desc: "永久删除您的账户和所有关联数据。此操作不可撤销。",
       delete_confirm_title: "确认删除账户？",
-      delete_confirm_desc: "这将永久删除您的账户、订阅和所有数据。此操作不可撤销。",
+      delete_confirm_desc:
+        "这将永久删除您的账户、订阅和所有数据。此操作不可撤销。",
       delete_confirm_password: "输入密码以确认",
       delete_confirm_btn: "是的，删除我的账户",
       delete_cancel_btn: "取消",
@@ -2908,7 +3310,7 @@ export const TRANSLATIONS = {
         "免费 3 次合盘 + 每周额外 1 次",
         "CBT 统计解读自动解锁",
         "百科-工具 每日 +7 次（合计 10 次）",
-        "订阅成功发放 100 积分"
+        "订阅成功发放 100 积分",
       ],
       success_title: "支付成功！",
       success_subtitle: "欢迎成为 Pro 会员",
@@ -2923,7 +3325,8 @@ export const TRANSLATIONS = {
       payment_card: "银行卡",
       payment_paypal: "PayPal",
       // 错误消息
-      payment_unavailable: "支付服务未配置。开发环境请使用 GM 命令测试订阅功能。",
+      payment_unavailable:
+        "支付服务未配置。开发环境请使用 GM 命令测试订阅功能。",
       portal_failed: "无法打开订阅管理页面",
       free_benefit_1: "每周 3 次 Ask 问答",
       free_benefit_2: "永久免费 3 次合盘",
@@ -2932,7 +3335,7 @@ export const TRANSLATIONS = {
       free_benefit_5: "今日运势永久免费",
       free_benefit_6: "百科永久免费",
       free_benefit_7: "CBT 日记永久记录",
-      buy_credits_cta: "购买积分"
+      buy_credits_cta: "购买积分",
     },
     paywall: {
       unlock_title: "解锁 {feature}",
@@ -2958,7 +3361,7 @@ export const TRANSLATIONS = {
         permanent: "永久解锁",
         daily: "今日有效",
         per_month: "本月有效",
-        consumable: "单次使用"
+        consumable: "单次使用",
       },
       points_label: "积分",
       quota_week: "次/周",
@@ -2973,14 +3376,14 @@ export const TRANSLATIONS = {
         detail: "深度详情",
         ask: "Ask 问答",
         cbt_stats: "CBT 统计解读",
-        synthetica: "百科-工具"
+        synthetica: "百科-工具",
       },
       unlocking: "解锁中...",
       subscribe_unlock: "订阅解锁（无限使用）",
       unlock_feature_generic: "解锁此功能",
       unlock_unlimited_access: "解锁无限解读",
       unlock_ask: "解锁 Ask 问答",
-      login_generic: "请先登录"
+      login_generic: "请先登录",
     },
     login_gate: {
       reminder_title: "需要登录",
@@ -3005,21 +3408,22 @@ export const TRANSLATIONS = {
       subscription_unlocked: "订阅已解锁",
       subscription_cancelled: "订阅已取消",
       unlock_sub_button: "解锁订阅",
-      cancel_sub_button: "取消订阅"
+      cancel_sub_button: "取消订阅",
     },
     tags: {
       Emotions: "情绪",
       Relationships: "关系",
       Work: "工作",
       Growth: "成长",
-      Timing: "时机"
+      Timing: "时机",
     },
     journal: {
       // 页面标题
       title: "CBT 日记",
       subtitle: "认知行为疗法日记",
       empty_title: "你的宇宙日志等待开启",
-      empty_desc: "开始你的自我探索之旅。每一条记录都将瞬间的思绪转化为持久的洞察。",
+      empty_desc:
+        "开始你的自我探索之旅。每一条记录都将瞬间的思绪转化为持久的洞察。",
       empty_cta: "创建第一条记录",
 
       // 向导流程
@@ -3058,7 +3462,8 @@ export const TRANSLATIONS = {
 
       // 步骤标题和引导
       step1_title: "发生了什么？",
-      step1_guide: "请像一个不带感情的摄像机一样描述刚刚发生的事。不要包含你的猜测或形容词。",
+      step1_guide:
+        "请像一个不带感情的摄像机一样描述刚刚发生的事。不要包含你的猜测或形容词。",
       step1_example: "示例：周二开会时，经理说'这个方案需要更清晰'...",
 
       step2_title: "你现在的感受",
@@ -3066,35 +3471,43 @@ export const TRANSLATIONS = {
       step2_example: "示例：焦虑 7/10，混合着一些愤怒...",
 
       step3_title: "身体有什么反应？",
-      step3_guide: "情绪往往先在身体着陆。你的胸口闷吗？手心出汗吗？捕捉这些信号。",
+      step3_guide:
+        "情绪往往先在身体着陆。你的胸口闷吗？手心出汗吗？捕捉这些信号。",
       step3_example: "示例：肩膀很紧，轻微头痛...",
 
       step4_title: "脑子里在想什么？",
-      step4_guide: "当时脑子里闪过了什么话？哪怕它听起来很荒谬、很刻薄，也请记录下来。这些在CBT中叫做'自动思维'。",
+      step4_guide:
+        "当时脑子里闪过了什么话？哪怕它听起来很荒谬、很刻薄，也请记录下来。这些在CBT中叫做'自动思维'。",
       step4_example: "示例：'我太蠢了' '他们肯定觉得我不行'...",
 
       step5_title: "最困扰你的想法",
-      step5_guide: "在这些念头中，哪一个让你感到最痛、最真实？这就是我们要处理的'热点思维'（核心信念）。",
+      step5_guide:
+        "在这些念头中，哪一个让你感到最痛、最真实？这就是我们要处理的'热点思维'（核心信念）。",
       step5_example: "示例：'我永远都不够好'...",
 
       step6_title: "支持这个想法的证据",
-      step6_guide: "有什么客观证据能证明这个热点思维是真的？（注意：你的感觉不是证据）",
+      step6_guide:
+        "有什么客观证据能证明这个热点思维是真的？（注意：你的感觉不是证据）",
       step6_example: "示例：经理确实指出了一个问题...",
 
       step7_title: "反驳这个想法的证据",
-      step7_guide: "有什么证据能反驳这个热点思维？有没有什么时刻这个念头是不成立的？",
+      step7_guide:
+        "有什么证据能反驳这个热点思维？有没有什么时刻这个念头是不成立的？",
       step7_example: "示例：上个月的项目得到了表扬...",
 
       step8_title: "换个角度看",
-      step8_guide: "综合正反双方的证据，你能得出一个更平衡、更接近真相的新结论吗？",
+      step8_guide:
+        "综合正反双方的证据，你能得出一个更平衡、更接近真相的新结论吗？",
       step8_example: "示例：一次批评并不能定义我的价值...",
 
       step9_title: "现在感觉如何？",
-      step9_guide: "当你相信这个新的平衡思维时，原本的情绪强度发生了什么变化？重新给情绪打分。",
+      step9_guide:
+        "当你相信这个新的平衡思维时，原本的情绪强度发生了什么变化？重新给情绪打分。",
       step9_example: "示例：焦虑从 7 分降到了 4 分...",
 
       step10_title: "保存今天的记录",
-      step10_guide: "为这次心灵炼金选择一个代表色，并将其归档到你的宇宙坐标中。",
+      step10_guide:
+        "为这次心灵炼金选择一个代表色，并将其归档到你的宇宙坐标中。",
       step10_example: "示例：选择深蓝色，代表风暴后的平静...",
 
       // 报告
@@ -3123,7 +3536,8 @@ export const TRANSLATIONS = {
       // 向导 UI
       back_to_journal: "返回日记",
       analysis_saved: "深度解读已存入星图",
-      choose_soul_state: "选择一个最契合你当前灵魂状态的状态，我们将开启深度认知解读。",
+      choose_soul_state:
+        "选择一个最契合你当前灵魂状态的状态，我们将开启深度认知解读。",
       reassess_mood: "重新评估情绪",
       inspiration_guide: "灵感引导 / Examples",
       star_guidance: "星空指引",
@@ -3147,10 +3561,12 @@ export const TRANSLATIONS = {
       your_thought: "你的想法",
       evidence_for_label: "支持证据",
       evidence_against_label: "反对证据",
-      select_hot_thought: "请点击选择那个最让你心惊肉跳的念头，我们将深度观测它：",
+      select_hot_thought:
+        "请点击选择那个最让你心惊肉跳的念头，我们将深度观测它：",
       analyzing_thought: "正在剖析的关键念头",
       balanced_thought: "替代性或平衡性想法",
-      balanced_template: "模板：虽然发生过[事实]，但也有[反证]。所以更可能的情况是[新结论]。我可以[采取的具体行动]。",
+      balanced_template:
+        "模板：虽然发生过[事实]，但也有[反证]。所以更可能的情况是[新结论]。我可以[采取的具体行动]。",
       belief_weight: "相信权重",
 
       // Calendar & Timeline
@@ -3247,11 +3663,16 @@ export const TRANSLATIONS = {
       when_feel_mood: "当你感到【",
       body_alarms_with: "】时，身体最常以【",
       body_alarms_suffix: "】来报警。",
-      sleep_advice: "优先'生理底盘'：1. 4-6 呼吸法（2分钟）；2. 固定睡前关机仪式（10分钟）。身体充上电，认知才有力气。",
-      high_arousal_advice: "高唤醒信号：'先降温再思考'。用冷水洗脸或快走 5 分钟，物理降低杏仁核活跃度。",
-      tension_advice: "身体正在替你承担压力。建议进行'渐进式肌肉放松'，告诉自己：可以先缓一缓。",
-      stomach_advice: "肠脑轴报警。喝一杯温水，手捂腹部深呼吸 10 次，告诉自己'此刻我是安全的'。",
-      somatic_astro_note: "当行运触及土星（压力与责任）或月亮处于亏缺阶段（内省期）时，身体往往比头脑更早感知到能量的收缩。这并非倒退，而是宇宙在邀请你“关机重启”。此时的身体症状是灵魂的信使，提醒你当下的节奏已超过负荷。请试着将这些不适视为“强制休息令”，顺应星象的潮汐，给予身体深度滋养，而非对抗。",
+      sleep_advice:
+        "优先'生理底盘'：1. 4-6 呼吸法（2分钟）；2. 固定睡前关机仪式（10分钟）。身体充上电，认知才有力气。",
+      high_arousal_advice:
+        "高唤醒信号：'先降温再思考'。用冷水洗脸或快走 5 分钟，物理降低杏仁核活跃度。",
+      tension_advice:
+        "身体正在替你承担压力。建议进行'渐进式肌肉放松'，告诉自己：可以先缓一缓。",
+      stomach_advice:
+        "肠脑轴报警。喝一杯温水，手捂腹部深呼吸 10 次，告诉自己'此刻我是安全的'。",
+      somatic_astro_note:
+        "当行运触及土星（压力与责任）或月亮处于亏缺阶段（内省期）时，身体往往比头脑更早感知到能量的收缩。这并非倒退，而是宇宙在邀请你“关机重启”。此时的身体症状是灵魂的信使，提醒你当下的节奏已超过负荷。请试着将这些不适视为“强制休息令”，顺应星象的潮汐，给予身体深度滋养，而非对抗。",
 
       // SourceSupportView
       roots_resources: "根源与资源",
@@ -3277,14 +3698,21 @@ export const TRANSLATIONS = {
       factual_evidence: "事实证据",
       unknown: "未知",
       exploring: "探索中",
-      self_worth_advice: "1. 练习“去评判化”：将“我很糟糕”（人格评判）修改为“我今天这件事没做好”（具体行为）。自我攻击是最大的能量黑洞。2. 建立“成就清单”：每天记录3件微小的、无需他人认可的自我成就。3. 对话内在批评家：当那个严厉的声音出现时，试着问它“你是想保护我免受什么伤害？但现在我已经长大了”。",
-      relationship_advice: "1. 练习“停止读心术”三问：我看到了什么事实？我推测了什么？我能直接去核实吗？2. 区分“我的事”与“他人的事”：他人的情绪反应是他们的课题，不代表你做错了什么。3. 设立微边界：从拒绝一件小事开始，体验“拒绝别人并不意味着关系破裂”。",
-      control_advice: "1. 练习“控制二分法”：在一张纸上画两栏，左边写“我能控制的”（如我的呼吸、我的准备工作），右边写“我不能控制的”（如结果、他人的看法）。2. 关注当下微行动：将巨大的担忧拆解为此时此刻能做的5分钟小事。3. 允许不确定性：告诉自己“即使发生了意外，我也有能力去应对”，信任未来的自己。",
-      work_advice: "1. 练习“任务切片”：将大山般的任务切成一口能吃下的薄片，只关注未来5分钟能完成的动作。2. 设定“完成即完美”标准：在低能量时期，允许自己以60分的标准完成任务，保存心理能量。3. 区分“评价”与“事实”：上司的反馈是针对工作的，不是针对你这个人的价值。",
+      self_worth_advice:
+        "1. 练习“去评判化”：将“我很糟糕”（人格评判）修改为“我今天这件事没做好”（具体行为）。自我攻击是最大的能量黑洞。2. 建立“成就清单”：每天记录3件微小的、无需他人认可的自我成就。3. 对话内在批评家：当那个严厉的声音出现时，试着问它“你是想保护我免受什么伤害？但现在我已经长大了”。",
+      relationship_advice:
+        "1. 练习“停止读心术”三问：我看到了什么事实？我推测了什么？我能直接去核实吗？2. 区分“我的事”与“他人的事”：他人的情绪反应是他们的课题，不代表你做错了什么。3. 设立微边界：从拒绝一件小事开始，体验“拒绝别人并不意味着关系破裂”。",
+      control_advice:
+        "1. 练习“控制二分法”：在一张纸上画两栏，左边写“我能控制的”（如我的呼吸、我的准备工作），右边写“我不能控制的”（如结果、他人的看法）。2. 关注当下微行动：将巨大的担忧拆解为此时此刻能做的5分钟小事。3. 允许不确定性：告诉自己“即使发生了意外，我也有能力去应对”，信任未来的自己。",
+      work_advice:
+        "1. 练习“任务切片”：将大山般的任务切成一口能吃下的薄片，只关注未来5分钟能完成的动作。2. 设定“完成即完美”标准：在低能量时期，允许自己以60分的标准完成任务，保存心理能量。3. 区分“评价”与“事实”：上司的反馈是针对工作的，不是针对你这个人的价值。",
       since_main_support_effective: " 既然【",
-      works_best_do_it: "】对你最有效，下次遇到困难时，请尝试给自己预留10分钟，专门进行这项活动。",
-      roots_astro_note_prefix: "当星象主题倾向于[人际/沟通]（如水星逆行或金星受克）时，你的情绪波动更多源于【",
-      roots_astro_note_suffix: "】。这通常提示我们需要重新审视与外界的连接方式。此时，向内的自我确认比向外的寻求认同更为重要，利用这段时间修补你的心理围栏。",
+      works_best_do_it:
+        "】对你最有效，下次遇到困难时，请尝试给自己预留10分钟，专门进行这项活动。",
+      roots_astro_note_prefix:
+        "当星象主题倾向于[人际/沟通]（如水星逆行或金星受克）时，你的情绪波动更多源于【",
+      roots_astro_note_suffix:
+        "】。这通常提示我们需要重新审视与外界的连接方式。此时，向内的自我确认比向外的寻求认同更为重要，利用这段时间修补你的心理围栏。",
 
       // MoodCompositionView
       mood_composition: "情绪配方",
@@ -3299,11 +3727,16 @@ export const TRANSLATIONS = {
       targeted_regulation: "针对性调节建议",
       mood_full_title: "低谷情绪成分完整分析",
       all_negative_components: "所有负面情绪成分",
-      accept_all_emotions: "情绪是流动的能量，而非定论。接纳所有情绪的到来，它们带来了关于你内心需求的重要信息。",
-      anxiety_advice: "躯体优于认知：1. 着地练习：双脚踩实地面，感受地心引力，描述5个看到的东西，4个触碰到的感觉，3个听到的声音。2. 焦虑具体化：把“我很焦虑”改成“我在担心这件事没做好”，将弥散的恐惧聚焦为具体问题。3. 设定“担忧时间”：每天只允许自己在下午5:00-5:15担忧，其他时间推迟处理。",
-      anger_advice: "边界感与需求表达：1. 暂停6秒：愤怒是肾上腺素的飙升，数6下让前额叶重新接管大脑。2. 句式转换：用“我感到...因为...我希望...”的句式，将攻击性的指责转化为建设性的需求表达。3. 能量释放：通过撕纸、打枕头或运动，以安全的方式释放攻击性能量。",
-      emptiness_advice: "微小行为激活：1. 5分钟法则：不想动时，告诉自己“只做5分钟”，比如出门晒5分钟太阳，或整理一个抽屉。2. 建立连接：给一个朋友发条简单的问候信息，打破孤岛状态。3. 感官刺激：洗个热水澡，点个香薰，用具体的感官体验唤醒麻木的身体。行动先行，感受会随之而来。",
-      mood_astro_note: "当星象主题倾向于[水象能量/海王星]（如内省、敏感或边界模糊）时，低谷期更容易出现。这是潜意识在进行“排毒”，此时最适合做减法和自我关怀，而不是强迫自己振作或过度社交。允许自己像水一样流动，不需要时刻坚硬。",
+      accept_all_emotions:
+        "情绪是流动的能量，而非定论。接纳所有情绪的到来，它们带来了关于你内心需求的重要信息。",
+      anxiety_advice:
+        "躯体优于认知：1. 着地练习：双脚踩实地面，感受地心引力，描述5个看到的东西，4个触碰到的感觉，3个听到的声音。2. 焦虑具体化：把“我很焦虑”改成“我在担心这件事没做好”，将弥散的恐惧聚焦为具体问题。3. 设定“担忧时间”：每天只允许自己在下午5:00-5:15担忧，其他时间推迟处理。",
+      anger_advice:
+        "边界感与需求表达：1. 暂停6秒：愤怒是肾上腺素的飙升，数6下让前额叶重新接管大脑。2. 句式转换：用“我感到...因为...我希望...”的句式，将攻击性的指责转化为建设性的需求表达。3. 能量释放：通过撕纸、打枕头或运动，以安全的方式释放攻击性能量。",
+      emptiness_advice:
+        "微小行为激活：1. 5分钟法则：不想动时，告诉自己“只做5分钟”，比如出门晒5分钟太阳，或整理一个抽屉。2. 建立连接：给一个朋友发条简单的问候信息，打破孤岛状态。3. 感官刺激：洗个热水澡，点个香薰，用具体的感官体验唤醒麻木的身体。行动先行，感受会随之而来。",
+      mood_astro_note:
+        "当星象主题倾向于[水象能量/海王星]（如内省、敏感或边界模糊）时，低谷期更容易出现。这是潜意识在进行“排毒”，此时最适合做减法和自我关怀，而不是强迫自己振作或过度社交。允许自己像水一样流动，不需要时刻坚硬。",
 
       // CBTCompetenceView
       thinking_muscles: "思维肌肉",
@@ -3312,14 +3745,21 @@ export const TRANSLATIONS = {
       avg_count: "平均条数",
       belief_score: "相信度",
       competence_assessment: "能力评估：",
-      rational_brain_fast: "你的“现实核查”能力正在变强，理智脑介入的速度越来越快，这是神经可塑性在发生作用的证明。",
-      stuck_at_recording: "你目前更多停留在“记录”阶段。记录是觉察的开始，但“寻找反驳证据”才是改变认知模式的关键杠杆。",
+      rational_brain_fast:
+        "你的“现实核查”能力正在变强，理智脑介入的速度越来越快，这是神经可塑性在发生作用的证明。",
+      stuck_at_recording:
+        "你目前更多停留在“记录”阶段。记录是觉察的开始，但“寻找反驳证据”才是改变认知模式的关键杠杆。",
       advanced_practice: "进阶练习建议",
-      muscles_strong: "你的思维肌肉已经非常强壮！继续保持，你正在重塑大脑的神经网络。",
-      low_rate_advice: "降低门槛模板：1. “虽然法”：如果找不到反驳证据，试着写“虽然（发生了不好的事），但是（还有一个小的例外/我还能做的一件小事）”。2. 朋友视角：如果是你最好的朋友遇到这种情况，你会对Ta说什么？把这句话写下来作为反驳证据。",
-      low_avg_advice: "深度挖掘清单：1. 过去有成功的经验吗？2. 这件事在5年后还重要吗？3. 我是不是在用“全有或全无”的标准要求自己？4. 有没有被我忽略的微小正面细节？多问自己几个问题，拓宽思维的带宽。",
-      low_belief_advice: "提升信度技巧：1. 具象化：把大道理（如“一切都会好”）改为具体行动（如“我可以先完成这封邮件”）。2. 实验验证：设计一个小实验来验证你的新信念，比如“我试着拒绝一次，看看天会不会塌下来”。行动的反馈能最快提升信念的真实感。",
-      cbt_astro_note: "在[火星冲突/土星压抑]主题的日子里，你会发现写反驳证据变得格外困难，思维容易卡在负面循环中。这很正常，就像在大风天骑车更费力。此时，先做2分钟生理平静（深呼吸），平复杏仁核，再回到理智脑的练习中来。",
+      muscles_strong:
+        "你的思维肌肉已经非常强壮！继续保持，你正在重塑大脑的神经网络。",
+      low_rate_advice:
+        "降低门槛模板：1. “虽然法”：如果找不到反驳证据，试着写“虽然（发生了不好的事），但是（还有一个小的例外/我还能做的一件小事）”。2. 朋友视角：如果是你最好的朋友遇到这种情况，你会对Ta说什么？把这句话写下来作为反驳证据。",
+      low_avg_advice:
+        "深度挖掘清单：1. 过去有成功的经验吗？2. 这件事在5年后还重要吗？3. 我是不是在用“全有或全无”的标准要求自己？4. 有没有被我忽略的微小正面细节？多问自己几个问题，拓宽思维的带宽。",
+      low_belief_advice:
+        "提升信度技巧：1. 具象化：把大道理（如“一切都会好”）改为具体行动（如“我可以先完成这封邮件”）。2. 实验验证：设计一个小实验来验证你的新信念，比如“我试着拒绝一次，看看天会不会塌下来”。行动的反馈能最快提升信念的真实感。",
+      cbt_astro_note:
+        "在[火星冲突/土星压抑]主题的日子里，你会发现写反驳证据变得格外困难，思维容易卡在负面循环中。这很正常，就像在大风天骑车更费力。此时，先做2分钟生理平静（深呼吸），平复杏仁核，再回到理智脑的练习中来。",
 
       // CBT 加载文案
       cbt_loading_phrases: [
@@ -3330,12 +3770,12 @@ export const TRANSLATIONS = {
         "原型正在苏醒...",
         "洞见正在结晶...",
         "深度分析运转中...",
-        "你的内在宇宙显现..."
+        "你的内在宇宙显现...",
       ],
       cbt_loading_label: "正在请示星辰与心灵",
       cbt_analyzing_insight: "分析洞察中...",
       cbt_generating_advice: "生成建议中...",
-      cbt_consulting_astro: "请示星辰中..."
+      cbt_consulting_astro: "请示星辰中...",
     },
     synthetica: {
       title: "ASTROSYNTHETICA",
@@ -3344,7 +3784,7 @@ export const TRANSLATIONS = {
         planet: "行星",
         sign: "星座",
         house: "宫位",
-        aspect: "相位"
+        aspect: "相位",
       },
       actions: {
         back: "返回",
@@ -3353,7 +3793,7 @@ export const TRANSLATIONS = {
         addAspect: "+ 添加相位",
         skipHouse: "跳过宫位选择",
         reset: "✨ 构建新的星图",
-        reset_short: "重置"
+        reset_short: "重置",
       },
       quota: "今日剩余 {left}/{total}",
       blueprint: {
@@ -3365,7 +3805,7 @@ export const TRANSLATIONS = {
           healing: "疗愈 / 心理健康",
           career: "使命 / 职业方向",
           timing: "时机 / 生存指南",
-          social: "社交 / 友谊"
+          social: "社交 / 友谊",
         },
         when: "，当",
         clothed: " 披上了 ",
@@ -3374,39 +3814,39 @@ export const TRANSLATIONS = {
         stage_outro: " 的舞台上",
         aspects_intro: "同时伴随着",
         aspects_count: "个相位影响",
-        footer: "基于现代进化占星学"
+        footer: "基于现代进化占星学",
       },
       prompts: {
         context: {
           title: "您为何仰望星空？",
-          desc: ""
+          desc: "",
         },
         planet: {
           title: "选择“演员” (行星)",
-          desc: "我们要分析您心理的哪个面向？"
+          desc: "我们要分析您心理的哪个面向？",
         },
         sign: {
           title: "选择“剧本” (星座)",
-          desc: "这位演员使用什么样的风格或气质？"
+          desc: "这位演员使用什么样的风格或气质？",
         },
         house: {
           title: "选择“舞台” (宫位 - 可选)",
-          desc: "这出戏在生活的哪个领域上演得最生动？"
+          desc: "这出戏在生活的哪个领域上演得最生动？",
         },
         aspect_dashboard: {
           title: "相位仪表盘 (可选)",
           desc: "添加其他行星对 {planet} 的影响",
           empty: "暂无相位。添加相位可以让解读更加立体。",
-          via: "via"
+          via: "via",
         },
         second_planet: {
           title: "选择互动行星",
-          desc: "谁在影响 {planet}？"
+          desc: "谁在影响 {planet}？",
         },
         aspect_type: {
           title: "选择相位类型",
-          desc: "它们之间是冲突还是协作？"
-        }
+          desc: "它们之间是冲突还是协作？",
+        },
       },
       loading: {
         label: "正在生成分析报告",
@@ -3415,21 +3855,39 @@ export const TRANSLATIONS = {
           "计算相位权重...",
           "整合心理学视角...",
           "生成深度洞察...",
-          "即将呈现您的专属报告..."
-        ]
+          "即将呈现您的专属报告...",
+        ],
       },
       house_symbol: {
         prefix: "第",
-        suffix: "宫"
+        suffix: "宫",
       },
       catalog: {
         contexts: {
-          LOVE: { label: "爱情 / 亲密关系", description: "配对分析、红旗预警与依恋类型" },
-          SELF: { label: "自我 / 身份认同", description: "我是谁？探索真实性与人格原型" },
-          HEALING: { label: "疗愈 / 心理健康", description: "内在小孩、阴影工作与创伤转化" },
-          CAREER: { label: "使命 / 职业方向", description: "灵魂目标、天职与反卷指南" },
-          TIMING: { label: "时机 / 生存指南", description: "应对水逆、土星回归与生活混乱" },
-          SOCIAL: { label: "社交 / 友谊", description: "部落归属感、真朋友与能量场" }
+          LOVE: {
+            label: "爱情 / 亲密关系",
+            description: "配对分析、红旗预警与依恋类型",
+          },
+          SELF: {
+            label: "自我 / 身份认同",
+            description: "我是谁？探索真实性与人格原型",
+          },
+          HEALING: {
+            label: "疗愈 / 心理健康",
+            description: "内在小孩、阴影工作与创伤转化",
+          },
+          CAREER: {
+            label: "使命 / 职业方向",
+            description: "灵魂目标、天职与反卷指南",
+          },
+          TIMING: {
+            label: "时机 / 生存指南",
+            description: "应对水逆、土星回归与生活混乱",
+          },
+          SOCIAL: {
+            label: "社交 / 友谊",
+            description: "部落归属感、真朋友与能量场",
+          },
         },
         planets: {
           sun: { name: "太阳", archetype: "英雄" },
@@ -3441,7 +3899,7 @@ export const TRANSLATIONS = {
           saturn: { name: "土星", archetype: "建设者" },
           uranus: { name: "天王星", archetype: "觉醒者" },
           neptune: { name: "海王星", archetype: "神秘主义者" },
-          pluto: { name: "冥王星", archetype: "转化者" }
+          pluto: { name: "冥王星", archetype: "转化者" },
         },
         signs: {
           aries: { name: "白羊座", archetype: "先锋" },
@@ -3455,7 +3913,7 @@ export const TRANSLATIONS = {
           sagittarius: { name: "射手座", archetype: "探索者" },
           capricorn: { name: "摩羯座", archetype: "战略家" },
           aquarius: { name: "水瓶座", archetype: "革新者" },
-          pisces: { name: "双鱼座", archetype: "梦想家" }
+          pisces: { name: "双鱼座", archetype: "梦想家" },
         },
         houses: {
           h1: { name: "第1宫", archetype: "身份与外表" },
@@ -3469,15 +3927,18 @@ export const TRANSLATIONS = {
           h9: { name: "第9宫", archetype: "哲学与旅行" },
           h10: { name: "第10宫", archetype: "事业与公众形象" },
           h11: { name: "第11宫", archetype: "社群与未来" },
-          h12: { name: "第12宫", archetype: "灵性与潜意识" }
+          h12: { name: "第12宫", archetype: "灵性与潜意识" },
         },
         aspects: {
-          conjunction: { name: "合相", description: "融合：你中有我，我中有你" },
+          conjunction: {
+            name: "合相",
+            description: "融合：你中有我，我中有你",
+          },
           sextile: { name: "六分相", description: "支持：轻松的机会与协作" },
           square: { name: "四分相", description: "摩擦：内在张力与行动" },
           trine: { name: "三分相", description: "流动：天赋与舒适区" },
-          opposition: { name: "对分相", description: "对立：拉扯与客观化" }
-        }
+          opposition: { name: "对分相", description: "对立：拉扯与客观化" },
+        },
       },
       report: {
         header_separator: "•",
@@ -3487,40 +3948,46 @@ export const TRANSLATIONS = {
         focus: "Focus",
         shadow: "阴暗面",
         advice: "行动建议",
-        error: "星象混沌不清，请检查网络连接或重试。"
-      }
-    }
-  }
+        error: "星象混沌不清，请检查网络连接或重试。",
+      },
+    },
+  },
 };
 
 export const PROMPTS = {
-    // ... existing prompts
-    NATAL_OVERVIEW: "Analyze the following natal chart highlights and provide a 'Quick Glance' overview. JSON Format required. \nInput: {{input_json}} \nLanguage: {{language}}",
-    CORE_THEMES: "Based on the chart highlights, produce life tasks content with drive/fear/growth. JSON Format required. \nStructure: drive {title, summary, key_points[]}, fear {title, summary, key_points[]}, growth {title, summary, key_points[]}, confidence. \nInput: {{input_json}} \nLanguage: {{language}}",
-    DIMENSION_REPORT: "Analyze the specific psychological dimension '{{dimension_title}}' based on these signals. JSON Format required. \nSignals: {{input_json}} \nLanguage: {{language}}",
-    DAILY_PUBLIC: "Generate a daily forecast content card based on these transits. JSON Format required. \nDate: {{date}} \nTransits: {{input_json}} \nLanguage: {{language}}",
-    DAILY_DETAIL: "Generate a detailed daily psychological script. JSON Format required. \nPublic Context: {{public_json}} \nPersonal Transits: {{personal_json}} \nLanguage: {{language}}",
-    CYCLE_CARD_NAMING: "Name and tag this planetary cycle. JSON Format required. \nCycle Info: {{input_json}} \nLanguage: {{language}}",
-    SYNASTRY_OVERVIEW: `Generate a synastry overview report (overview/conclusion).
+  // ... existing prompts
+  NATAL_OVERVIEW:
+    "Analyze the following natal chart highlights and provide a 'Quick Glance' overview. JSON Format required. \nInput: {{input_json}} \nLanguage: {{language}}",
+  CORE_THEMES:
+    "Based on the chart highlights, produce life tasks content with drive/fear/growth. JSON Format required. \nStructure: drive {title, summary, key_points[]}, fear {title, summary, key_points[]}, growth {title, summary, key_points[]}, confidence. \nInput: {{input_json}} \nLanguage: {{language}}",
+  DIMENSION_REPORT:
+    "Analyze the specific psychological dimension '{{dimension_title}}' based on these signals. JSON Format required. \nSignals: {{input_json}} \nLanguage: {{language}}",
+  DAILY_PUBLIC:
+    "Generate a daily forecast content card based on these transits. JSON Format required. \nDate: {{date}} \nTransits: {{input_json}} \nLanguage: {{language}}",
+  DAILY_DETAIL:
+    "Generate a detailed daily psychological script. JSON Format required. \nPublic Context: {{public_json}} \nPersonal Transits: {{personal_json}} \nLanguage: {{language}}",
+  CYCLE_CARD_NAMING:
+    "Name and tag this planetary cycle. JSON Format required. \nCycle Info: {{input_json}} \nLanguage: {{language}}",
+  SYNASTRY_OVERVIEW: `Generate a synastry overview report (overview/conclusion).
 Relationship Type: {{relationship_type}}
 Facts: {{input_json}}
 Language: {{language}}
 
 Output strict JSON matching the 'SynastryOverviewContent' interface.`,
-    SYNASTRY_HIGHLIGHTS: `Generate synastry highlights (highlights only).
+  SYNASTRY_HIGHLIGHTS: `Generate synastry highlights (highlights only).
 Relationship Type: {{relationship_type}}
 Facts: {{input_json}}
 Language: {{language}}
 
 Output strict JSON matching the 'SynastryHighlights' interface.`,
-    SYNASTRY_DYNAMIC: `Analyze relationship dimension '{{dimension_title}}'. 
+  SYNASTRY_DYNAMIC: `Analyze relationship dimension '{{dimension_title}}'. 
 Focus on the Psychological Cycle: Trigger -> Defense -> Escalation -> Cost -> Repair.
 Relationship Type: {{relationship_type}}
 Signals: {{input_json}}
 Language: {{language}}
 Format strictly matching SynastryDynamicContent interface.`,
-    // === ASK MODULAR PROMPT ARCHITECTURE ===
-    ASK_BASE_SYSTEM: `You are a psychological astrologer who integrates:
+  // === ASK MODULAR PROMPT ARCHITECTURE ===
+  ASK_BASE_SYSTEM: `You are a psychological astrologer who integrates:
 - Jungian depth psychology (archetypes, shadow work, individuation)
 - Attachment theory and relational dynamics
 - Modern therapeutic frameworks (IFS, somatic awareness)
@@ -3529,43 +3996,43 @@ Voice: Warm yet incisive. Speak as a wise mentor who sees patterns others miss.
 Avoid: Fortune-telling, medical diagnosis, deterministic predictions.
 Always: Ground insights in specific chart factors; offer actionable soulwork.`,
 
-    ASK_CATEGORY_SELF: `[CATEGORY: SELF - Identity & Core Being]
+  ASK_CATEGORY_SELF: `[CATEGORY: SELF - Identity & Core Being]
 Focus: Core identity, ego structure, persona vs. true self
 Key Factors: Sun, Rising, 1st House, Sun aspects
 Lens: "Who am I beneath the masks?"
 Psychological Framework: Explore the tension between the social persona (Rising) and the authentic self (Sun). Look for integration opportunities.`,
 
-    ASK_CATEGORY_LOVE: `[CATEGORY: LOVE - Relationship Dynamics]
+  ASK_CATEGORY_LOVE: `[CATEGORY: LOVE - Relationship Dynamics]
 Focus: Attachment patterns, intimacy needs, projection dynamics
 Key Factors: Venus, Moon, 7th/8th House, Venus-Mars aspects
 Lens: "What do I seek in the mirror of relationship?"
 Psychological Framework: Analyze attachment style indicators, projection patterns, and the interplay between giving (Venus) and asserting (Mars) in love.`,
 
-    ASK_CATEGORY_CAREER: `[CATEGORY: CAREER - Vocation & Purpose]
+  ASK_CATEGORY_CAREER: `[CATEGORY: CAREER - Vocation & Purpose]
 Focus: Vocation, talent expression, worldly contribution
 Key Factors: MC, Saturn, 10th/6th House, Sun-Saturn aspects
 Lens: "What am I here to build or serve?"
 Psychological Framework: Explore the relationship between ego-drive (Sun), discipline (Saturn), and public role (MC). Identify authentic career expression vs. external expectations.`,
 
-    ASK_CATEGORY_MONEY: `[CATEGORY: MONEY - Value & Abundance]
+  ASK_CATEGORY_MONEY: `[CATEGORY: MONEY - Value & Abundance]
 Focus: Self-worth, resource management, abundance blocks
 Key Factors: Venus, 2nd/8th House, Jupiter, Venus-Saturn aspects
 Lens: "What is my relationship with receiving?"
 Psychological Framework: Connect financial patterns to self-worth issues. Explore the balance between security needs (2nd House) and shared resources/intimacy (8th House).`,
 
-    ASK_CATEGORY_TIMING: `[CATEGORY: TIMING - Cycles & Windows]
+  ASK_CATEGORY_TIMING: `[CATEGORY: TIMING - Cycles & Windows]
 Focus: Current transits, life cycles, optimal windows
 Key Factors: Progressed Moon, Saturn cycle, outer planet transits
 Lens: "What season am I in, and how do I flow with it?"
 Psychological Framework: Frame current challenges as developmental opportunities. Identify which life cycle (Saturn return, Chiron return, etc.) is active and its psychological invitation.`,
 
-    ASK_CATEGORY_HEALING: `[CATEGORY: HEALING - Shadow Integration]
+  ASK_CATEGORY_HEALING: `[CATEGORY: HEALING - Shadow Integration]
 Focus: Wounds, shadow patterns, transformation potential
 Key Factors: Chiron, Pluto, 12th House, South Node
 Lens: "What must I face to become whole?"
 Psychological Framework: Apply Jungian shadow work. Identify the wound (Chiron), the compulsion (Pluto), the unconscious material (12th House), and past-life patterns (South Node) seeking integration.`,
 
-    ASK_OUTPUT_FORMAT: `Output ONLY the following JSON schema:
+  ASK_OUTPUT_FORMAT: `Output ONLY the following JSON schema:
 {
   "essence": "1-2 sentence core insight that captures the heart of the matter",
   "astrological_signature": {
@@ -3589,7 +4056,7 @@ Psychological Framework: Apply Jungian shadow work. Identify the wound (Chiron),
   "cosmic_takeaway": "A poetic, memorable closing that grounds the insight"
 }`,
 
-    ASK_ANSWER: `{{base_system}}
+  ASK_ANSWER: `{{base_system}}
 
 {{category_module}}
 
@@ -3605,7 +4072,7 @@ Guidelines:
 - Make soulwork concrete and actionable with clear steps.
 - Keep cosmic_takeaway poetic but grounded.
 - Avoid certainty and avoid diagnosis.`,
-    CBT_ANALYSIS: `Analyze this CBT journal entry using Jungian Psychology and Astrology.
+  CBT_ANALYSIS: `Analyze this CBT journal entry using Jungian Psychology and Astrology.
     Input: {{input_json}}
     Language: {{language}}
     
@@ -3615,19 +4082,49 @@ Guidelines:
     4. Provide 3 specific actionable steps.
     5. A short philosophical insight.
 
-    Output Strict JSON matching CBTAnalysisResult interface.`
+    Output Strict JSON matching CBTAnalysisResult interface.`,
 };
 
 // CBT step-by-step guides
 export const CBT_GUIDES = {
-  1: { title: "客观还原", desc: "请像一个不带感情的摄像机一样描述刚刚发生的事。不要包含你的猜测或形容词。" },
-  2: { title: "情绪坐标", desc: "给这种感觉命名。是愤怒？羞耻？还是无力？并诚实地打分。" },
-  3: { title: "身体扫描", desc: "情绪往往先在身体着陆。你的胸口闷吗？手心出汗吗？捕捉这些信号。" },
-  4: { title: "念头捕捉", desc: "当时脑子里闪过了什么话？哪怕它听起来很荒谬、很刻薄，也请记录下来。" },
-  5: { title: "核心痛点", desc: "在这些念头中，哪一个让你感到最痛、最真实？这就是我们要处理的‘热点思维’。" },
-  6: { title: "法庭辩论：正方", desc: "有什么客观证据能证明这个念头是真的？（注意：你的感觉不是证据）" },
-  7: { title: "法庭辩论：反方", desc: "有什么证据能反驳这个念头？有没有什么时刻这个念头是不成立的？" },
-  8: { title: "见地重构", desc: "综合正反双方的证据，你能得出一个更平衡、更接近真相的新结论吗？" },
-  9: { title: "二次评估", desc: "当你相信这个新结论时，原本的情绪强度发生了什么变化？" },
-  10: { title: "星空归位", desc: "为这次心灵炼金选择一个代表色，并将其归档到你的宇宙坐标中。" }
+  1: {
+    title: "客观还原",
+    desc: "请像一个不带感情的摄像机一样描述刚刚发生的事。不要包含你的猜测或形容词。",
+  },
+  2: {
+    title: "情绪坐标",
+    desc: "给这种感觉命名。是愤怒？羞耻？还是无力？并诚实地打分。",
+  },
+  3: {
+    title: "身体扫描",
+    desc: "情绪往往先在身体着陆。你的胸口闷吗？手心出汗吗？捕捉这些信号。",
+  },
+  4: {
+    title: "念头捕捉",
+    desc: "当时脑子里闪过了什么话？哪怕它听起来很荒谬、很刻薄，也请记录下来。",
+  },
+  5: {
+    title: "核心痛点",
+    desc: "在这些念头中，哪一个让你感到最痛、最真实？这就是我们要处理的‘热点思维’。",
+  },
+  6: {
+    title: "法庭辩论：正方",
+    desc: "有什么客观证据能证明这个念头是真的？（注意：你的感觉不是证据）",
+  },
+  7: {
+    title: "法庭辩论：反方",
+    desc: "有什么证据能反驳这个念头？有没有什么时刻这个念头是不成立的？",
+  },
+  8: {
+    title: "见地重构",
+    desc: "综合正反双方的证据，你能得出一个更平衡、更接近真相的新结论吗？",
+  },
+  9: {
+    title: "二次评估",
+    desc: "当你相信这个新结论时，原本的情绪强度发生了什么变化？",
+  },
+  10: {
+    title: "星空归位",
+    desc: "为这次心灵炼金选择一个代表色，并将其归档到你的宇宙坐标中。",
+  },
 };

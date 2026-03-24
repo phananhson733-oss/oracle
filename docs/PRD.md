@@ -1,7 +1,7 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 2.1
-> **Last Updated**: 2026-03-04
+> **Version**: 2.2
+> **Last Updated**: 2026-03-24
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -214,14 +214,13 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | 功能 | 说明 |
 |------|------|
-| **首页聚合** | 每日行运 + 智慧语录 + 热门文章 |
+| **首页** | `/` 重定向至 `/:lang/wiki`（Wiki Hub 即首页，内容优先策略） |
 | **百科词条** | 行星、星座、宫位、相位等占星学概念 |
 | **经典书籍** | 30+ 本占星经典书籍的结构化书评与导读 |
 | **Synthetica 工具** | AI 心理综合分析工具 |
 | **搜索功能** | 全文搜索匹配 |
 
 **API**:
-- `GET /api/wiki/home` — 首页聚合内容
 - `GET /api/wiki/items` — 词条列表
 - `GET /api/wiki/items/:id` — 词条详情
 - `GET /api/wiki/classics` — 经典书籍列表
@@ -286,7 +285,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 #### 2.10.5 SEO 静态路由
 
 构建脚本 (`scripts/generate-seo-pages.mjs`) 自动生成多语言 SEO 静态页面：
-- `/en/**` — 英文 SEO 页面族（首页、Wiki 词条等）
+- `/en/**` — 英文 SEO 页面族（Wiki Hub 首页、Wiki 词条、经典书籍等）
 - `/zh/**` — 中文 SEO 页面族
 - 输出至 `public/en/`、`public/zh/` 目录，由 Vercel 直接托管
 
@@ -568,7 +567,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | POST | `/api/cbt/root-analysis` | 根因分析 | — |
 | POST | `/api/cbt/mood-analysis` | 情绪公式 | — |
 | POST | `/api/cbt/competence-analysis` | 能力评估 | — |
-| GET | `/api/wiki/home` | Wiki 首页聚合 | — |
+| — | `/` 重定向至 `/:lang/wiki` | 首页即 Wiki Hub | — |
 | GET | `/api/wiki/items` | 词条列表 | — |
 | GET | `/api/wiki/items/:id` | 词条详情 | — |
 | GET | `/api/wiki/classics` | 经典书籍列表 | — |

@@ -28,6 +28,7 @@ import { fetchWikiItem, fetchWikiItems } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { isArticleSlug } from "../../data/articles";
 import WikiArticleDetailPage from "./WikiArticleDetailPage";
+import WikiChartCTA from "./WikiChartCTA";
 import type { WikiItem, WikiItemSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
 
@@ -685,6 +686,8 @@ const WikiDetailPage: React.FC = () => {
           itemType={item.type}
           title={t.wiki?.related_by_astrology || "Astrological Associations"}
         />
+
+        <WikiChartCTA />
       </div>
     </Container>
   );

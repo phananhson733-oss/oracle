@@ -16,6 +16,7 @@ import {
 import { trackEvent } from "../../services/analytics";
 import type { WikiArticleSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
+import WikiChartCTA from "./WikiChartCTA";
 
 // Safe Markdown renderer with error handling
 interface SafeMarkdownProps {
@@ -703,6 +704,8 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
             </div>
           </section>
         )}
+
+        <WikiChartCTA />
       </div>
     </Container>
   );
