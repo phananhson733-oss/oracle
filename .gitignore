@@ -31,3 +31,4 @@ astromind/
 .vercel
 .env*.local
 backend/.env
+.gstack/

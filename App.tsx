@@ -179,6 +179,22 @@ const LangGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <>{children}</>;
 };
 
+// Catch-all for /:lang/* SPA routes: strip lang prefix and redirect to bare route
+// e.g. /en/settings → /settings, /zh/dashboard → /dashboard
+const LangStripRedirect: React.FC = () => {
+  const { lang, "*": rest } = useParams<{ lang: string; "*": string }>();
+  const location = useLocation();
+  if (lang === "en" || lang === "zh") {
+    return (
+      <Navigate
+        to={`/${rest || ""}${location.search}${location.hash}`}
+        replace
+      />
+    );
+  }
+  return <NotFoundPage />;
+};
+
 const NotFoundPage: React.FC = () => {
   const { theme } = useTheme();
   const { language } = useLanguage();
@@ -728,6 +744,8 @@ const AppContent: React.FC = () => {
               }
             />
             <Route path="/color-demo" element={<ColorSystemDemo />} />
+            {/* Catch-all: /:lang/* SPA routes strip prefix and redirect */}
+            <Route path="/:lang/*" element={<LangStripRedirect />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
