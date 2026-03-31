@@ -153,6 +153,9 @@ const TermsOfService = lazy(() => import("./components/legal/TermsOfService"));
 const CookiePolicy = lazy(() => import("./components/legal/CookiePolicy"));
 const AboutPage = lazy(() => import("./components/legal/AboutPage"));
 const HelpPage = lazy(() => import("./components/legal/HelpPage"));
+const SaturnReturnCalculator = lazy(
+  () => import("./components/SaturnReturnCalculator"),
+);
 
 // Redirect bare public routes (e.g. /wiki/sun) to language-prefixed version (e.g. /en/wiki/sun)
 const LangRedirect: React.FC = () => {
@@ -327,7 +330,12 @@ const AppContent: React.FC = () => {
     "/about",
     "/help",
   ].includes(pathWithoutLang);
-  const isPublicRoute = location.pathname === "/" || isWikiPath || isLegalPath;
+  const isSaturnReturnPath = pathWithoutLang === "/saturn-return-calculator";
+  const isPublicRoute =
+    location.pathname === "/" ||
+    isWikiPath ||
+    isLegalPath ||
+    isSaturnReturnPath;
   const shouldNoIndex = !isPublicRoute;
   const authT = t.auth;
   const lastTrackedPathRef = useRef<string | null>(null);
@@ -456,7 +464,7 @@ const AppContent: React.FC = () => {
   };
 
   const showNav =
-    (activeProfile || isWikiPath || isLegalPath) &&
+    (activeProfile || isWikiPath || isLegalPath || isSaturnReturnPath) &&
     !["/", "/onboarding", "/auth"].includes(pathWithoutLang);
 
   return (
@@ -702,7 +710,19 @@ const AppContent: React.FC = () => {
                 </LangGuard>
               }
             />
+            <Route
+              path="/:lang/saturn-return-calculator"
+              element={
+                <LangGuard>
+                  <SaturnReturnCalculator />
+                </LangGuard>
+              }
+            />
             {/* Bare public routes redirect to language-prefixed versions */}
+            <Route
+              path="/saturn-return-calculator"
+              element={<LangRedirect />}
+            />
             <Route path="/wiki/*" element={<LangRedirect />} />
             <Route path="/wiki" element={<LangRedirect />} />
             <Route path="/privacy" element={<LangRedirect />} />

@@ -1,7 +1,7 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 2.2
-> **Last Updated**: 2026-03-24
+> **Version**: 2.3
+> **Last Updated**: 2026-03-31
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -310,6 +310,30 @@ AI 生成的深度心理分析，每个维度独立解读：
 - 全局 `focus-visible` 焦点环（gold-500）
 - Modal 组件已内置 `role="dialog"` + `aria-modal="true"` + 焦点捕获
 
+### 2.12 Saturn Return Calculator (Free Tool)
+
+公开免费计算器工具页面，用于 SEO 获客和反向链接获取：
+
+| 路由 | 页面 | 说明 |
+|------|------|------|
+| `/:lang/saturn-return-calculator` | SaturnReturnCalculator | 免费 Saturn Return 计算器（公开可索引） |
+
+**功能说明**：
+- 用户输入出生日期（必填）、出生时间（可选）、出生城市（可选）
+- 后端使用 Swiss Ephemeris 计算本命土星位置及回归日期
+- 显示每次 Saturn Return 的开始/精确/结束日期及模板解读文本
+- 未提供出生时间时显示近似结果
+- CTA 引导用户注册查看完整星盘
+- 城市自动补全复用 `/api/geo/search` 端点
+
+**API 端点**：
+- `GET /api/saturn-return?date=YYYY-MM-DD&time=HH:mm&timezone=...&lat=...&lon=...`
+
+**SEO 策略**：
+- `generate-seo-pages.mjs` 生成静态 HTML（含 WebApplication + FAQPage Schema）
+- 添加至 `sitemap.xml`
+- `isPublicRoute` 中注册，不输出 `noindex,nofollow`
+
 ---
 
 ## 3. 商业模式 / Business Model
@@ -554,6 +578,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | GET | `/api/synastry/technical` | 技术数据附录 | — |
 | GET | `/api/cycle/list` | 周期列表 | — |
 | GET | `/api/cycle/naming` | AI 周期命名 | — |
+| GET | `/api/saturn-return` | Saturn Return 日期计算 | — |
 
 #### CBT & Wiki API
 
