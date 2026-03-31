@@ -497,101 +497,11 @@ const generate = async () => {
     }
   }
 
-  // Saturn Return Calculator page (English only — content is English-facing)
-  {
-    const lang = 'en';
-    const calcPath = `/${lang}/saturn-return-calculator`;
-    const calcUrl = `${siteUrl}${calcPath}`;
-    const calcTitle = 'Saturn Return Calculator - Free Saturn Return Dates';
-    const calcDescription = 'Calculate when your Saturn Return happens. Enter your birth date to discover your Saturn Return dates, meaning, and how this major life transit affects you.';
-    const calcCta = 'Open the Saturn Return Calculator';
-
-    sitemapUrls.push(calcUrl);
-
-    const calcSchema = [
-      {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Saturn Return Calculator',
-        description: calcDescription,
-        url: calcUrl,
-        applicationCategory: 'LifestyleApplication',
-        operatingSystem: 'Web',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      },
-      {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'How long does a Saturn Return last?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'A Saturn Return typically lasts about 2-3 years. The most intense period is when Saturn is within 2 degrees of your natal position, lasting several months.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'When is my Saturn Return?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Your first Saturn Return occurs between ages 27-30, your second between ages 56-60, and your third between ages 84-90. Use our free calculator to find your exact dates.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Do I need my exact birth time for a Saturn Return calculation?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'No. Saturn moves slowly (about 0.03 degrees per day), so even without birth time, calculated dates will be very close. Birth time helps determine which house is activated.',
-            },
-          },
-        ],
-      },
-    ];
-
-    const calcBodyHtml = `
-<main>
-  <h1>${escapeHtml(calcTitle)}</h1>
-  <p>${escapeHtml(calcDescription)}</p>
-  <section>
-    <h2>What is a Saturn Return?</h2>
-    <p>A Saturn Return is one of the most significant astrological transits in your lifetime. It occurs when Saturn completes its orbit and returns to the exact position it occupied at your birth, roughly every 29.5 years. Your first Saturn Return (ages 27-30) marks the transition from youth to adulthood. Many people experience major career shifts, relationship changes, and deeper self-understanding during this period.</p>
-    <p>Saturn governs structure, discipline, and responsibility. When it returns to your natal position, it tests the foundations you have built and pushes you to align your external life with your authentic self. While challenging, the Saturn Return is ultimately about growth and maturation.</p>
-    <h2>How Does This Calculator Work?</h2>
-    <p>Our calculator uses the Swiss Ephemeris, the same high-precision astronomical engine used by professional astrologers, to determine Saturn's exact position at your birth. It then calculates when transiting Saturn returns to that degree, giving you precise dates for each Saturn Return period.</p>
-  </section>
-  <p class="meta">AstrologyWiki &middot; ${lang.toUpperCase()}</p>
-  <a class="cta" data-astro-link href="${escapeHtml(calcPath)}">${escapeHtml(calcCta)}</a>
-</main>
-<script>
-  (function () {
-    var lang = document.body.getAttribute('data-astro-lang');
-    var links = document.querySelectorAll('[data-astro-link]');
-    for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener('click', function () {
-        try { if (lang) localStorage.setItem('astro_lang', lang); } catch (e) {}
-      });
-    }
-  })();
-</script>
-`;
-
-    const calcHtml = `<!DOCTYPE html>
-<html lang="${lang}">
-  <head>
-${buildHead({ lang, title: calcTitle, description: calcDescription, url: calcUrl, ogType: 'website', alternates: [{ hrefLang: 'en', href: calcUrl }, { hrefLang: 'x-default', href: calcUrl }], schema: calcSchema })}
-  </head>
-  <body data-astro-lang="${lang}">
-${calcBodyHtml}
-  </body>
-</html>
-`;
-    const calcOutputPath = path.join(publicDir, lang, 'saturn-return-calculator', 'index.html');
-    await ensureDir(path.dirname(calcOutputPath));
-    await fsPromises.writeFile(calcOutputPath, calcHtml, 'utf8');
-  }
+  // Saturn Return Calculator: SPA-rendered (no static HTML — SPA component provides
+  // full SEO meta, JSON-LD schemas, and 500+ word content via React <SEO> component.
+  // Static HTML was removed because Vercel serves it with higher priority than the
+  // SPA catch-all, preventing the interactive calculator from loading.)
+  sitemapUrls.push(`${siteUrl}/en/saturn-return-calculator`);
 
   // Add featured article URLs to sitemap (SPA-rendered, no static HTML needed)
   for (const slug of ARTICLE_SLUGS) {
