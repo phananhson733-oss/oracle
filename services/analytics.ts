@@ -7,7 +7,11 @@ import type {
   AnalyticsUserType,
   DataLayerEvent,
 } from "../types/analytics";
-import { hasAnalyticsConsent, getConsentStatus } from "./consent";
+import {
+  hasAnalyticsConsent,
+  getConsentStatus,
+  getConsentPreferences,
+} from "./consent";
 
 const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || "";
 const GTM_CONTAINER_ID = import.meta.env.VITE_GTM_CONTAINER_ID || "";
@@ -44,17 +48,26 @@ const ensureGtagStub = () => {
 };
 
 // Set default consent state BEFORE loading gtag.js (Google Consent Mode v2)
+let _consentDefaultSet = false;
 const setDefaultConsent = () => {
   if (typeof window === "undefined") return;
+  if (_consentDefaultSet) return;
+  _consentDefaultSet = true;
   ensureGtagStub();
   const status = getConsentStatus();
-  const granted = status === "granted";
-  const denied = status === "denied";
+  const prefs = getConsentPreferences();
+  const analyticsGranted = status === "granted";
+  const analyticsDenied = status === "denied";
+  const marketingGranted = prefs?.marketing === true && analyticsGranted;
   window.gtag("consent", "default", {
-    analytics_storage: denied ? "denied" : granted ? "granted" : "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
+    analytics_storage: analyticsDenied
+      ? "denied"
+      : analyticsGranted
+        ? "granted"
+        : "denied",
+    ad_storage: marketingGranted ? "granted" : "denied",
+    ad_user_data: marketingGranted ? "granted" : "denied",
+    ad_personalization: marketingGranted ? "granted" : "denied",
     wait_for_update: status === "unknown" ? 500 : undefined,
   });
 };
@@ -125,13 +138,15 @@ const loadGa4 = () => {
   });
 };
 
+let _analyticsInitialized = false;
+
 export const initAnalytics = (
   options: { userId?: string; userType?: AnalyticsUserType } = {},
 ) => {
   if (typeof window === "undefined") return;
-  // Set consent defaults BEFORE loading any scripts (Consent Mode v2)
-  setDefaultConsent();
-  // Always load GA4 — Consent Mode handles data collection gating
+  if (_analyticsInitialized) return;
+  _analyticsInitialized = true;
+  // Consent defaults already set at module load (see bottom of file)
   if (GTM_CONTAINER_ID) loadGtm();
   if (GA4_MEASUREMENT_ID) loadGa4();
   if (options.userId) setUserId(options.userId);
@@ -217,7 +232,10 @@ export const trackConversion = (conversionName: string, value?: number) => {
 export const setUserId = (userId: string) => {
   if (!canSendToGtag()) return;
   if (window.gtag && GA4_MEASUREMENT_ID) {
-    window.gtag("config", GA4_MEASUREMENT_ID, { user_id: userId });
+    window.gtag("config", GA4_MEASUREMENT_ID, {
+      user_id: userId,
+      send_page_view: false,
+    });
   }
 };
 
@@ -313,3 +331,8 @@ export const trackApiError = (
     error_message: errorMessage.slice(0, 200),
   });
 };
+
+// Run consent default synchronously at module load time (Google requires this
+// BEFORE any other gtag commands). This ensures consent state is set before
+// requestIdleCallback fires initAnalytics() or App.tsx fires trackPageView().
+setDefaultConsent();

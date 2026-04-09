@@ -13,7 +13,6 @@ import {
   type ConsentPreferences,
 } from "../services/consent";
 import {
-  trackPageView,
   trackFirstVisitIfNew,
   updateConsentState,
 } from "../services/analytics";
@@ -42,7 +41,8 @@ export const ConsentBanner: React.FC = () => {
   const handleAcceptAll = () => {
     acceptAllConsent();
     updateConsentState(true, true);
-    trackPageView();
+    // No trackPageView() here — Consent Mode v2 handles re-evaluation.
+    // App.tsx already sent the cookieless ping; GA4 uses modeling for the gap.
     trackFirstVisitIfNew();
     flushQueuedWebVitals();
     setIsVisible(false);
@@ -58,7 +58,6 @@ export const ConsentBanner: React.FC = () => {
     setConsentPreferences(prefs);
     updateConsentState(prefs.analytics, prefs.marketing);
     if (prefs.analytics) {
-      trackPageView();
       trackFirstVisitIfNew();
       flushQueuedWebVitals();
     }
