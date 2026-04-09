@@ -12,7 +12,11 @@ import {
   getConsentPreferences,
   type ConsentPreferences,
 } from "../services/consent";
-import { initAnalytics } from "../services/analytics";
+import {
+  trackPageView,
+  trackFirstVisitIfNew,
+  updateConsentState,
+} from "../services/analytics";
 import { flushQueuedWebVitals } from "../src/utils/performance";
 import { useLangPath } from "../hooks/useLangPath";
 
@@ -37,20 +41,25 @@ export const ConsentBanner: React.FC = () => {
 
   const handleAcceptAll = () => {
     acceptAllConsent();
-    initAnalytics();
+    updateConsentState(true, true);
+    trackPageView();
+    trackFirstVisitIfNew();
     flushQueuedWebVitals();
     setIsVisible(false);
   };
 
   const handleDeclineAll = () => {
     declineAllConsent();
+    updateConsentState(false, false);
     setIsVisible(false);
   };
 
   const handleSavePrefs = () => {
     setConsentPreferences(prefs);
+    updateConsentState(prefs.analytics, prefs.marketing);
     if (prefs.analytics) {
-      initAnalytics();
+      trackPageView();
+      trackFirstVisitIfNew();
       flushQueuedWebVitals();
     }
     setShowPrefs(false);

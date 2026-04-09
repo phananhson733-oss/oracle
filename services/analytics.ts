@@ -7,7 +7,7 @@ import type {
   AnalyticsUserType,
   DataLayerEvent,
 } from "../types/analytics";
-import { hasAnalyticsConsent } from "./consent";
+import { hasAnalyticsConsent, getConsentStatus } from "./consent";
 
 const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || "";
 const GTM_CONTAINER_ID = import.meta.env.VITE_GTM_CONTAINER_ID || "";
@@ -31,11 +31,42 @@ const ensureDataLayer = (): DataLayerEvent[] => {
   return window.dataLayer;
 };
 
-const canTrack = () => {
+// Initialize gtag stub using `arguments` (Google requires Arguments objects, not Arrays)
+const ensureGtagStub = () => {
+  if (typeof window === "undefined") return;
+  if (window.gtag) return;
+  const dataLayer = ensureDataLayer();
+  // Must use `function` keyword so `arguments` is an Arguments object, not an Array
+  window.gtag = function () {
+    // eslint-disable-next-line prefer-rest-params
+    dataLayer.push(arguments as unknown as DataLayerEvent);
+  };
+};
+
+// Set default consent state BEFORE loading gtag.js (Google Consent Mode v2)
+const setDefaultConsent = () => {
+  if (typeof window === "undefined") return;
+  ensureGtagStub();
+  const status = getConsentStatus();
+  const granted = status === "granted";
+  const denied = status === "denied";
+  window.gtag("consent", "default", {
+    analytics_storage: denied ? "denied" : granted ? "granted" : "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    wait_for_update: status === "unknown" ? 500 : undefined,
+  });
+};
+
+// Whether gtag is available (SSR-safe, measurement ID present)
+const canSendToGtag = () => {
   if (typeof window === "undefined") return false;
-  if (!hasAnalyticsConsent()) return false;
   return Boolean(GA4_MEASUREMENT_ID || GTM_CONTAINER_ID);
 };
+
+// Whether consent is granted (for our own side effects like localStorage writes)
+const hasFullConsent = () => canSendToGtag() && hasAnalyticsConsent();
 
 const injectScript = (src: string, id: string) => {
   if (typeof document === "undefined") return;
@@ -81,15 +112,12 @@ const IS_DEV = typeof import.meta !== "undefined" && import.meta.env?.DEV;
 
 const loadGa4 = () => {
   if (!GA4_MEASUREMENT_ID) return;
-  if (window.gtag) return;
+  if (document.getElementById("astro-ga4")) return;
   injectScript(
     `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`,
     "astro-ga4",
   );
-  const dataLayer = ensureDataLayer();
-  window.gtag = (...args: unknown[]) => {
-    dataLayer.push(args as unknown as DataLayerEvent);
-  };
+  ensureGtagStub();
   window.gtag("js", new Date());
   window.gtag("config", GA4_MEASUREMENT_ID, {
     send_page_view: false,
@@ -101,19 +129,34 @@ export const initAnalytics = (
   options: { userId?: string; userType?: AnalyticsUserType } = {},
 ) => {
   if (typeof window === "undefined") return;
-  ensureDataLayer();
-  if (!hasAnalyticsConsent()) return;
+  // Set consent defaults BEFORE loading any scripts (Consent Mode v2)
+  setDefaultConsent();
+  // Always load GA4 — Consent Mode handles data collection gating
   if (GTM_CONTAINER_ID) loadGtm();
   if (GA4_MEASUREMENT_ID) loadGa4();
   if (options.userId) setUserId(options.userId);
   if (options.userType) setUserProperties({ user_type: options.userType });
 };
 
+// Call when user grants or denies consent to update GA4 consent state
+export const updateConsentState = (analytics: boolean, marketing = false) => {
+  if (typeof window === "undefined") return;
+  if (!window.gtag) return;
+  const analyticsVal = analytics ? "granted" : "denied";
+  const marketingVal = marketing ? "granted" : "denied";
+  window.gtag("consent", "update", {
+    analytics_storage: analyticsVal,
+    ad_storage: marketingVal,
+    ad_user_data: marketingVal,
+    ad_personalization: marketingVal,
+  });
+};
+
 export const trackEvent = (
   eventName: string,
   params: AnalyticsEventParams = {},
 ) => {
-  if (!canTrack()) return;
+  if (!canSendToGtag()) return;
   // Push to dataLayer for GTM compatibility
   const dataLayer = ensureDataLayer();
   dataLayer.push({
@@ -148,7 +191,7 @@ export const trackPageView = (
   path?: string,
   extraParams?: AnalyticsEventParams,
 ) => {
-  if (!canTrack()) return;
+  if (!canSendToGtag()) return;
   const location = typeof window !== "undefined" ? window.location : undefined;
   const resolvedPath = path ?? (location?.pathname || "/");
   const resolvedLocation = location?.href || "";
@@ -172,13 +215,17 @@ export const trackConversion = (conversionName: string, value?: number) => {
 };
 
 export const setUserId = (userId: string) => {
-  if (!canTrack()) return;
-  trackEvent("set_user_properties", { user_id: userId });
+  if (!canSendToGtag()) return;
+  if (window.gtag && GA4_MEASUREMENT_ID) {
+    window.gtag("config", GA4_MEASUREMENT_ID, { user_id: userId });
+  }
 };
 
 export const setUserProperties = (properties: AnalyticsEventParams) => {
-  if (!canTrack()) return;
-  trackEvent("set_user_properties", properties);
+  if (!canSendToGtag()) return;
+  if (window.gtag) {
+    window.gtag("set", "user_properties", properties);
+  }
 };
 
 // Scroll depth tracking state
@@ -186,7 +233,7 @@ let maxScrollDepth = 0;
 let scrollDepthTracked = new Set<number>();
 
 export const trackScrollDepth = (depth: number) => {
-  if (!canTrack()) return;
+  if (!canSendToGtag()) return;
   const normalizedDepth = Math.min(
     100,
     Math.max(0, Math.round(depth / 10) * 10),
@@ -204,7 +251,7 @@ export const trackScrollDepth = (depth: number) => {
 
 // External link click tracking
 export const trackExternalLink = (url: string, linkText: string) => {
-  if (!canTrack()) return;
+  if (!canSendToGtag()) return;
   trackEvent("external_link_click", {
     link_url: url,
     link_text: linkText,
@@ -237,6 +284,7 @@ const FIRST_VISIT_KEY = "astro_first_visit_tracked";
 export const trackFirstVisitIfNew = () => {
   if (typeof window === "undefined") return;
   if (window.localStorage.getItem(FIRST_VISIT_KEY)) return;
+  if (!hasFullConsent()) return;
   window.localStorage.setItem(FIRST_VISIT_KEY, "1");
   trackEvent("first_visit", {
     landing_page: window.location.pathname || "/",
@@ -246,7 +294,7 @@ export const trackFirstVisitIfNew = () => {
 
 // Error tracking
 export const trackError = (errorMessage: string, errorSource: string) => {
-  if (!canTrack()) return;
+  if (!canSendToGtag()) return;
   trackEvent("error_occurred", {
     error_message: errorMessage.slice(0, 200),
     error_source: errorSource,
@@ -258,7 +306,7 @@ export const trackApiError = (
   statusCode: number,
   errorMessage: string,
 ) => {
-  if (!canTrack()) return;
+  if (!canSendToGtag()) return;
   trackEvent("api_error", {
     endpoint,
     status_code: statusCode,
