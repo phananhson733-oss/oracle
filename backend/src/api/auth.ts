@@ -1,13 +1,17 @@
 // Authentication API routes
-import { Router, Request, Response, NextFunction } from 'express';
-import { randomInt } from 'crypto';
-import { OAuth2Client } from 'google-auth-library';
-import rateLimit from 'express-rate-limit';
-import { userService, AuthTokens } from '../services/userService.js';
-import { supabase, isSupabaseConfigured } from '../db/supabase.js';
-import { GOOGLE_CONFIG, isGoogleConfigured, isResendConfigured } from '../config/auth.js';
-import { cacheService } from '../cache/redis.js';
-import { emailService } from '../services/emailService.js';
+import { Router, Request, Response, NextFunction } from "express";
+import { randomInt } from "crypto";
+import { OAuth2Client } from "google-auth-library";
+import rateLimit from "express-rate-limit";
+import { userService, AuthTokens } from "../services/userService.js";
+import { supabase, isSupabaseConfigured } from "../db/supabase.js";
+import {
+  GOOGLE_CONFIG,
+  isGoogleConfigured,
+  isResendConfigured,
+} from "../config/auth.js";
+import { cacheService } from "../cache/redis.js";
+import { emailService } from "../services/emailService.js";
 
 // Strict rate limit for destructive account operations
 const accountDeleteLimiter = rateLimit({
@@ -15,7 +19,7 @@ const accountDeleteLimiter = rateLimit({
   max: 5,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { error: 'Too many attempts, please try again later.' },
+  message: { error: "Too many attempts, please try again later." },
 });
 
 const router = Router();
@@ -34,17 +38,21 @@ declare global {
 }
 
 // Auth middleware (optional - continues without auth if no token)
-export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
+export const authMiddleware = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const authHeader = req.headers.authorization;
 
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return next(); // Continue without auth
   }
 
   const token = authHeader.substring(7);
   const payload = userService.verifyToken(token);
 
-  if (!payload || payload.type !== 'access') {
+  if (!payload || payload.type !== "access") {
     return next(); // Invalid token, continue without auth
   }
 
@@ -58,18 +66,22 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
 };
 
 // Optional auth middleware (accepts anonymous, but rejects invalid tokens)
-export const optionalAuthMiddleware = async (req: Request, res: Response, next: NextFunction) => {
+export const optionalAuthMiddleware = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const authHeader = req.headers.authorization;
 
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return next();
   }
 
   const token = authHeader.substring(7);
   const payload = userService.verifyToken(token);
 
-  if (!payload || payload.type !== 'access') {
-    return res.status(401).json({ error: 'Invalid token' });
+  if (!payload || payload.type !== "access") {
+    return res.status(401).json({ error: "Invalid token" });
   }
 
   req.userId = payload.userId;
@@ -82,15 +94,23 @@ export const optionalAuthMiddleware = async (req: Request, res: Response, next: 
 };
 
 // Require auth middleware
-export const requireAuth = (req: Request, res: Response, next: NextFunction) => {
+export const requireAuth = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   if (!req.userId) {
-    return res.status(401).json({ error: 'Authentication required' });
+    return res.status(401).json({ error: "Authentication required" });
   }
   next();
 };
 
 // Helper to send auth response
-const sendAuthResponse = (res: Response, tokens: AuthTokens, user: { id: string; email: string; name?: string | null }) => {
+const sendAuthResponse = (
+  res: Response,
+  tokens: AuthTokens,
+  user: { id: string; email: string; name?: string | null },
+) => {
   res.json({
     success: true,
     tokens,
@@ -103,20 +123,22 @@ const sendAuthResponse = (res: Response, tokens: AuthTokens, user: { id: string;
 };
 
 // Google login
-router.post('/google', async (req: Request, res: Response) => {
+router.post("/google", async (req: Request, res: Response) => {
   try {
     if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
+      return res
+        .status(503)
+        .json({ error: "Authentication service unavailable" });
     }
 
     if (!isGoogleConfigured()) {
-      return res.status(503).json({ error: 'Google login not configured' });
+      return res.status(503).json({ error: "Google login not configured" });
     }
 
     const { credential } = req.body;
 
     if (!credential) {
-      return res.status(400).json({ error: 'Google credential required' });
+      return res.status(400).json({ error: "Google credential required" });
     }
 
     // Verify Google token
@@ -128,18 +150,18 @@ router.post('/google', async (req: Request, res: Response) => {
 
     const payload = ticket.getPayload();
     if (!payload || !payload.email) {
-      return res.status(400).json({ error: 'Invalid Google token' });
+      return res.status(400).json({ error: "Invalid Google token" });
     }
 
     // Find or create user
-    let user = await userService.findByProvider('google', payload.sub);
+    let user = await userService.findByProvider("google", payload.sub);
 
     if (!user) {
       // Check if email exists with different provider
       const existingUser = await userService.findByEmail(payload.email);
       if (existingUser) {
         return res.status(400).json({
-          error: 'Email already registered with different method',
+          error: "Email already registered with different method",
           provider: existingUser.provider,
         });
       }
@@ -149,7 +171,7 @@ router.post('/google', async (req: Request, res: Response) => {
         email: payload.email,
         name: payload.name,
         avatar: payload.picture,
-        provider: 'google',
+        provider: "google",
         providerId: payload.sub,
       });
     }
@@ -159,22 +181,24 @@ router.post('/google', async (req: Request, res: Response) => {
 
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error('Google login error:', error);
-    res.status(500).json({ error: 'Login failed' });
+    console.error("Google login error:", error);
+    res.status(500).json({ error: "Login failed" });
   }
 });
 
 // Apple login
-router.post('/apple', async (req: Request, res: Response) => {
+router.post("/apple", async (req: Request, res: Response) => {
   try {
     if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
+      return res
+        .status(503)
+        .json({ error: "Authentication service unavailable" });
     }
 
     const { identityToken, user: appleUser } = req.body;
 
     if (!identityToken) {
-      return res.status(400).json({ error: 'Apple identity token required' });
+      return res.status(400).json({ error: "Apple identity token required" });
     }
 
     // TODO: Verify Apple token
@@ -183,11 +207,11 @@ router.post('/apple', async (req: Request, res: Response) => {
 
     const email = appleUser?.email;
     const name = appleUser?.name?.firstName
-      ? `${appleUser.name.firstName} ${appleUser.name.lastName || ''}`.trim()
+      ? `${appleUser.name.firstName} ${appleUser.name.lastName || ""}`.trim()
       : undefined;
 
     if (!email) {
-      return res.status(400).json({ error: 'Email required' });
+      return res.status(400).json({ error: "Email required" });
     }
 
     // Find or create user
@@ -197,12 +221,12 @@ router.post('/apple', async (req: Request, res: Response) => {
       user = await userService.createUser({
         email,
         name,
-        provider: 'apple',
+        provider: "apple",
         providerId: appleUser?.user || email,
       });
-    } else if (user.provider !== 'apple') {
+    } else if (user.provider !== "apple") {
       return res.status(400).json({
-        error: 'Email already registered with different method',
+        error: "Email already registered with different method",
         provider: user.provider,
       });
     }
@@ -210,35 +234,39 @@ router.post('/apple', async (req: Request, res: Response) => {
     const tokens = userService.generateTokens(user);
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error('Apple login error:', error);
-    res.status(500).json({ error: 'Login failed' });
+    console.error("Apple login error:", error);
+    res.status(500).json({ error: "Login failed" });
   }
 });
 
 // Send verification code for registration
-router.post('/send-code', async (req: Request, res: Response) => {
+router.post("/send-code", async (req: Request, res: Response) => {
   try {
     if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
+      return res
+        .status(503)
+        .json({ error: "Authentication service unavailable" });
     }
 
     if (!isResendConfigured()) {
-      return res.status(503).json({ error: 'Email service not configured' });
+      return res.status(503).json({ error: "Email service not configured" });
     }
 
     const { email, password, name } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ error: 'Email and password required' });
+      return res.status(400).json({ error: "Email and password required" });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).json({ error: 'Invalid email format' });
+      return res.status(400).json({ error: "Invalid email format" });
     }
 
     if (password.length < 8) {
-      return res.status(400).json({ error: 'Password must be at least 8 characters' });
+      return res
+        .status(400)
+        .json({ error: "Password must be at least 8 characters" });
     }
 
     const normalizedEmail = email.toLowerCase();
@@ -249,21 +277,28 @@ router.post('/send-code', async (req: Request, res: Response) => {
 
     const cooldownExists = await cacheService.exists(cooldownKey);
     if (cooldownExists) {
-      return res.status(429).json({ error: 'Please wait before requesting another code' });
+      return res
+        .status(429)
+        .json({ error: "Please wait before requesting another code" });
     }
 
-    const dailyCount = await cacheService.get<number>(dailyKey) || 0;
+    const dailyCount = (await cacheService.get<number>(dailyKey)) || 0;
     if (dailyCount >= 10) {
-      return res.status(429).json({ error: 'Too many requests today. Please try again tomorrow' });
+      return res
+        .status(429)
+        .json({ error: "Too many requests today. Please try again tomorrow" });
     }
 
-    // Check if email already registered — return same success response to prevent enumeration
+    // Check if email already registered
     const existingUser = await userService.findByEmail(normalizedEmail);
     if (existingUser) {
-      // Set cooldown so attacker can't rapidly probe emails
       await cacheService.set(cooldownKey, true, 60);
       await cacheService.set(dailyKey, dailyCount + 1, 86400);
-      return res.json({ success: true, message: 'Verification code sent' });
+      return res
+        .status(409)
+        .json({
+          error: "This email is already registered. Please sign in instead.",
+        });
     }
 
     // Generate 6-digit code
@@ -271,14 +306,14 @@ router.post('/send-code', async (req: Request, res: Response) => {
 
     // Delete previous unverified codes for this email
     await supabase
-      .from('registration_codes')
+      .from("registration_codes")
       .delete()
-      .eq('email', normalizedEmail)
-      .is('verified_at', null);
+      .eq("email", normalizedEmail)
+      .is("verified_at", null);
 
     // Insert new code (10 min expiry)
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
-    await supabase.from('registration_codes').insert({
+    await supabase.from("registration_codes").insert({
       email: normalizedEmail,
       code,
       expires_at: expiresAt.toISOString(),
@@ -291,79 +326,89 @@ router.post('/send-code', async (req: Request, res: Response) => {
     await cacheService.set(cooldownKey, true, 60); // 60s cooldown
     await cacheService.set(dailyKey, dailyCount + 1, 86400); // 24h daily counter
 
-    res.json({ success: true, message: 'Verification code sent' });
+    res.json({ success: true, message: "Verification code sent" });
   } catch (error) {
-    console.error('Send verification code error:', error);
-    res.status(500).json({ error: 'Failed to send verification code' });
+    console.error("Send verification code error:", error);
+    res.status(500).json({ error: "Failed to send verification code" });
   }
 });
 
 // Verify code and complete registration
-router.post('/verify-code', async (req: Request, res: Response) => {
+router.post("/verify-code", async (req: Request, res: Response) => {
   try {
     if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
+      return res
+        .status(503)
+        .json({ error: "Authentication service unavailable" });
     }
 
     const { email, code: rawCode, password, name } = req.body;
 
     if (!email || !rawCode || !password) {
-      return res.status(400).json({ error: 'Email, code and password required' });
+      return res
+        .status(400)
+        .json({ error: "Email, code and password required" });
     }
 
     // Sanitize code: trim whitespace and ensure 6-digit numeric
     const code = String(rawCode).trim();
     if (!/^\d{6}$/.test(code)) {
-      return res.status(400).json({ error: 'Invalid verification code' });
+      return res.status(400).json({ error: "Invalid verification code" });
     }
 
     if (password.length < 8) {
-      return res.status(400).json({ error: 'Password must be at least 8 characters' });
+      return res
+        .status(400)
+        .json({ error: "Password must be at least 8 characters" });
     }
 
     const normalizedEmail = email.toLowerCase();
 
     // Find the latest unexpired, unverified code
     const { data: codeRecord, error: queryError } = await supabase
-      .from('registration_codes')
-      .select('*')
-      .eq('email', normalizedEmail)
-      .is('verified_at', null)
-      .gt('expires_at', new Date().toISOString())
-      .order('created_at', { ascending: false })
+      .from("registration_codes")
+      .select("*")
+      .eq("email", normalizedEmail)
+      .is("verified_at", null)
+      .gt("expires_at", new Date().toISOString())
+      .order("created_at", { ascending: false })
       .limit(1)
       .single();
 
     if (queryError || !codeRecord) {
-      return res.status(400).json({ error: 'Code expired or not found. Please request a new one' });
+      return res
+        .status(400)
+        .json({ error: "Code expired or not found. Please request a new one" });
     }
 
     // Check attempts
     if (codeRecord.attempts >= 3) {
-      return res.status(400).json({ error: 'Too many attempts. Please request a new code' });
+      return res
+        .status(400)
+        .json({ error: "Too many attempts. Please request a new code" });
     }
 
     // Verify code
     if (codeRecord.code !== code) {
       // Increment attempts
       await supabase
-        .from('registration_codes')
+        .from("registration_codes")
         .update({ attempts: codeRecord.attempts + 1 })
-        .eq('id', codeRecord.id);
+        .eq("id", codeRecord.id);
 
-      return res.status(400).json({ error: 'Invalid verification code' });
+      return res.status(400).json({ error: "Invalid verification code" });
     }
 
     // Mark as verified
     await supabase
-      .from('registration_codes')
+      .from("registration_codes")
       .update({ verified_at: new Date().toISOString() })
-      .eq('id', codeRecord.id);
+      .eq("id", codeRecord.id);
 
     // Double-check email not taken (race condition guard)
     const existingUser = await userService.findByEmail(normalizedEmail);
     if (existingUser) {
-      return res.status(400).json({ error: 'Email already registered' });
+      return res.status(400).json({ error: "Email already registered" });
     }
 
     // Create user with email_verified: true
@@ -371,7 +416,7 @@ router.post('/verify-code', async (req: Request, res: Response) => {
       email: normalizedEmail,
       name: name || undefined,
       password,
-      provider: 'email',
+      provider: "email",
     });
 
     // Mark email as verified since code was validated
@@ -382,31 +427,35 @@ router.post('/verify-code', async (req: Request, res: Response) => {
 
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error('Verify code error:', error);
-    res.status(500).json({ error: 'Verification failed' });
+    console.error("Verify code error:", error);
+    res.status(500).json({ error: "Verification failed" });
   }
 });
 
 // Email registration (direct - no email verification required)
-router.post('/register', async (req: Request, res: Response) => {
+router.post("/register", async (req: Request, res: Response) => {
   try {
     if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
+      return res
+        .status(503)
+        .json({ error: "Authentication service unavailable" });
     }
 
     const { email, password, name } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ error: 'Email and password required' });
+      return res.status(400).json({ error: "Email and password required" });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).json({ error: 'Invalid email format' });
+      return res.status(400).json({ error: "Invalid email format" });
     }
 
     if (password.length < 8) {
-      return res.status(400).json({ error: 'Password must be at least 8 characters' });
+      return res
+        .status(400)
+        .json({ error: "Password must be at least 8 characters" });
     }
 
     const normalizedEmail = email.toLowerCase();
@@ -414,7 +463,7 @@ router.post('/register', async (req: Request, res: Response) => {
     // Check if email exists
     const existingUser = await userService.findByEmail(normalizedEmail);
     if (existingUser) {
-      return res.status(400).json({ error: 'Email already registered' });
+      return res.status(400).json({ error: "Email already registered" });
     }
 
     // Create user
@@ -422,7 +471,7 @@ router.post('/register', async (req: Request, res: Response) => {
       email: normalizedEmail,
       name: name || undefined,
       password,
-      provider: 'email',
+      provider: "email",
     });
 
     // Generate tokens
@@ -430,66 +479,68 @@ router.post('/register', async (req: Request, res: Response) => {
 
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error('Registration error:', error);
-    res.status(500).json({ error: 'Registration failed' });
+    console.error("Registration error:", error);
+    res.status(500).json({ error: "Registration failed" });
   }
 });
 
 // Email login
-router.post('/login', async (req: Request, res: Response) => {
+router.post("/login", async (req: Request, res: Response) => {
   try {
     if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
+      return res
+        .status(503)
+        .json({ error: "Authentication service unavailable" });
     }
 
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ error: 'Email and password required' });
+      return res.status(400).json({ error: "Email and password required" });
     }
 
     const normalizedEmail = email.toLowerCase();
     const user = await userService.findByEmail(normalizedEmail);
 
-    if (!user || user.provider !== 'email') {
-      return res.status(401).json({ error: 'Invalid email or password' });
+    if (!user || user.provider !== "email") {
+      return res.status(401).json({ error: "Invalid email or password" });
     }
 
     const validPassword = await userService.verifyPassword(user, password);
 
     if (!validPassword) {
-      return res.status(401).json({ error: 'Invalid email or password' });
+      return res.status(401).json({ error: "Invalid email or password" });
     }
 
     const tokens = userService.generateTokens(user);
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error('Login error:', error);
-    res.status(500).json({ error: 'Login failed' });
+    console.error("Login error:", error);
+    res.status(500).json({ error: "Login failed" });
   }
 });
 
 // Refresh token
-router.post('/refresh', async (req: Request, res: Response) => {
+router.post("/refresh", async (req: Request, res: Response) => {
   try {
     const { refreshToken } = req.body;
 
     if (!refreshToken) {
-      return res.status(400).json({ error: 'Refresh token required' });
+      return res.status(400).json({ error: "Refresh token required" });
     }
 
     // Verify refresh token
     const payload = userService.verifyToken(refreshToken);
 
-    if (!payload || payload.type !== 'refresh') {
-      return res.status(401).json({ error: 'Invalid refresh token' });
+    if (!payload || payload.type !== "refresh") {
+      return res.status(401).json({ error: "Invalid refresh token" });
     }
 
     // Get user
     const user = await userService.findById(payload.userId);
 
     if (!user) {
-      return res.status(401).json({ error: 'User not found' });
+      return res.status(401).json({ error: "User not found" });
     }
 
     // Generate new tokens
@@ -500,13 +551,13 @@ router.post('/refresh', async (req: Request, res: Response) => {
       tokens,
     });
   } catch (error) {
-    console.error('Token refresh error:', error);
-    res.status(500).json({ error: 'Token refresh failed' });
+    console.error("Token refresh error:", error);
+    res.status(500).json({ error: "Token refresh failed" });
   }
 });
 
 // Logout
-router.post('/logout', authMiddleware, async (req: Request, res: Response) => {
+router.post("/logout", authMiddleware, async (req: Request, res: Response) => {
   try {
     const { refreshToken } = req.body;
 
@@ -516,171 +567,208 @@ router.post('/logout', authMiddleware, async (req: Request, res: Response) => {
 
     res.json({ success: true });
   } catch (error) {
-    console.error('Logout error:', error);
-    res.status(500).json({ error: 'Logout failed' });
+    console.error("Logout error:", error);
+    res.status(500).json({ error: "Logout failed" });
   }
 });
 
 // Get current user
-router.get('/me', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  try {
-    const user = await userService.findById(req.userId!);
+router.get(
+  "/me",
+  authMiddleware,
+  requireAuth,
+  async (req: Request, res: Response) => {
+    try {
+      const user = await userService.findById(req.userId!);
 
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
 
-    res.json({
-      id: user.id,
-      email: user.email,
-      name: user.name,
-      avatar: user.avatar,
-      provider: user.provider,
-      birthProfile: user.birth_profile,
-      preferences: user.preferences,
-      emailVerified: user.email_verified,
-      createdAt: user.created_at,
-    });
-  } catch (error) {
-    console.error('Get user error:', error);
-    res.status(500).json({ error: 'Failed to get user' });
-  }
-});
-
-// Update profile
-router.put('/profile', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  try {
-    const { name, avatar, birthProfile, preferences } = req.body;
-
-    const updates: Record<string, unknown> = {};
-    if (name !== undefined) updates.name = name;
-    if (avatar !== undefined) updates.avatar = avatar;
-    if (birthProfile !== undefined) updates.birth_profile = birthProfile;
-    if (preferences !== undefined) updates.preferences = preferences;
-
-    const user = await userService.updateProfile(req.userId!, updates as any);
-
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    res.json({
-      success: true,
-      user: {
+      res.json({
         id: user.id,
         email: user.email,
         name: user.name,
         avatar: user.avatar,
+        provider: user.provider,
         birthProfile: user.birth_profile,
         preferences: user.preferences,
-      },
-    });
-  } catch (error) {
-    console.error('Update profile error:', error);
-    res.status(500).json({ error: 'Failed to update profile' });
-  }
-});
+        emailVerified: user.email_verified,
+        createdAt: user.created_at,
+      });
+    } catch (error) {
+      console.error("Get user error:", error);
+      res.status(500).json({ error: "Failed to get user" });
+    }
+  },
+);
+
+// Update profile
+router.put(
+  "/profile",
+  authMiddleware,
+  requireAuth,
+  async (req: Request, res: Response) => {
+    try {
+      const { name, avatar, birthProfile, preferences } = req.body;
+
+      const updates: Record<string, unknown> = {};
+      if (name !== undefined) updates.name = name;
+      if (avatar !== undefined) updates.avatar = avatar;
+      if (birthProfile !== undefined) updates.birth_profile = birthProfile;
+      if (preferences !== undefined) updates.preferences = preferences;
+
+      const user = await userService.updateProfile(req.userId!, updates as any);
+
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+
+      res.json({
+        success: true,
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          avatar: user.avatar,
+          birthProfile: user.birth_profile,
+          preferences: user.preferences,
+        },
+      });
+    } catch (error) {
+      console.error("Update profile error:", error);
+      res.status(500).json({ error: "Failed to update profile" });
+    }
+  },
+);
 
 // Migrate localStorage data
-router.post('/migrate', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  try {
-    const { birthProfile, preferences } = req.body;
+router.post(
+  "/migrate",
+  authMiddleware,
+  requireAuth,
+  async (req: Request, res: Response) => {
+    try {
+      const { birthProfile, preferences } = req.body;
 
-    if (!birthProfile) {
-      return res.status(400).json({ error: 'Birth profile required' });
+      if (!birthProfile) {
+        return res.status(400).json({ error: "Birth profile required" });
+      }
+
+      const user = await userService.migrateLocalData(
+        req.userId!,
+        birthProfile,
+        preferences || { theme: "dark", language: "en" },
+      );
+
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+
+      res.json({
+        success: true,
+        message: "Data migrated successfully",
+      });
+    } catch (error) {
+      console.error("Migration error:", error);
+      res.status(500).json({ error: "Migration failed" });
     }
-
-    const user = await userService.migrateLocalData(
-      req.userId!,
-      birthProfile,
-      preferences || { theme: 'dark', language: 'en' }
-    );
-
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    res.json({
-      success: true,
-      message: 'Data migrated successfully',
-    });
-  } catch (error) {
-    console.error('Migration error:', error);
-    res.status(500).json({ error: 'Migration failed' });
-  }
-});
+  },
+);
 
 // Verify email
-router.get('/verify-email/:token', async (req: Request, res: Response) => {
+router.get("/verify-email/:token", async (req: Request, res: Response) => {
   try {
     const { token } = req.params;
 
     const userId = await userService.verifyEmailToken(token);
 
     if (!userId) {
-      return res.status(400).json({ error: 'Invalid or expired verification token' });
+      return res
+        .status(400)
+        .json({ error: "Invalid or expired verification token" });
     }
 
     res.json({
       success: true,
-      message: 'Email verified successfully',
+      message: "Email verified successfully",
     });
   } catch (error) {
-    console.error('Email verification error:', error);
-    res.status(500).json({ error: 'Verification failed' });
+    console.error("Email verification error:", error);
+    res.status(500).json({ error: "Verification failed" });
   }
 });
 
 // Delete account (GDPR/CCPA right to erasure)
-router.delete('/account', accountDeleteLimiter, authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  try {
-    if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
-    }
-
-    const user = await userService.findById(req.userId!);
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    // Email users must confirm with password
-    if (user.provider === 'email') {
-      const { password } = req.body || {};
-      if (!password) {
-        return res.status(400).json({ error: 'Password required to confirm account deletion' });
+router.delete(
+  "/account",
+  accountDeleteLimiter,
+  authMiddleware,
+  requireAuth,
+  async (req: Request, res: Response) => {
+    try {
+      if (!isSupabaseConfigured()) {
+        return res
+          .status(503)
+          .json({ error: "Authentication service unavailable" });
       }
 
-      const validPassword = await userService.verifyPassword(user, password);
-      if (!validPassword) {
-        return res.status(401).json({ error: 'Invalid password' });
+      const user = await userService.findById(req.userId!);
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
       }
+
+      // Email users must confirm with password
+      if (user.provider === "email") {
+        const { password } = req.body || {};
+        if (!password) {
+          return res
+            .status(400)
+            .json({ error: "Password required to confirm account deletion" });
+        }
+
+        const validPassword = await userService.verifyPassword(user, password);
+        if (!validPassword) {
+          return res.status(401).json({ error: "Invalid password" });
+        }
+      }
+
+      await userService.deleteUser(req.userId!);
+
+      res.json({ success: true, message: "Account deleted successfully" });
+    } catch (error) {
+      console.error("Account deletion error:", error);
+      res.status(500).json({ error: "Failed to delete account" });
     }
-
-    await userService.deleteUser(req.userId!);
-
-    res.json({ success: true, message: 'Account deleted successfully' });
-  } catch (error) {
-    console.error('Account deletion error:', error);
-    res.status(500).json({ error: 'Failed to delete account' });
-  }
-});
+  },
+);
 
 // Export user data (GDPR/CCPA right to data portability)
-router.get('/export-data', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  try {
-    if (!isSupabaseConfigured()) {
-      return res.status(503).json({ error: 'Authentication service unavailable' });
+router.get(
+  "/export-data",
+  authMiddleware,
+  requireAuth,
+  async (req: Request, res: Response) => {
+    try {
+      if (!isSupabaseConfigured()) {
+        return res
+          .status(503)
+          .json({ error: "Authentication service unavailable" });
+      }
+
+      const data = await userService.exportUserData(req.userId!);
+
+      res.setHeader("Content-Type", "application/json");
+      res.setHeader(
+        "Content-Disposition",
+        'attachment; filename="astromind-data-export.json"',
+      );
+      res.json(data);
+    } catch (error) {
+      console.error("Data export error:", error);
+      res.status(500).json({ error: "Failed to export data" });
     }
-
-    const data = await userService.exportUserData(req.userId!);
-
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Content-Disposition', 'attachment; filename="astromind-data-export.json"');
-    res.json(data);
-  } catch (error) {
-    console.error('Data export error:', error);
-    res.status(500).json({ error: 'Failed to export data' });
-  }
-});
+  },
+);
 
 export default router;
