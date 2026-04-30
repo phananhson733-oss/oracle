@@ -1,17 +1,46 @@
 // User Service - handles user CRUD and authentication
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import { v4 as uuidv4 } from 'uuid';
-import { supabase, DbUser, BirthProfile, UserPreferences, isSupabaseConfigured } from '../db/supabase.js';
-import { JWT_CONFIG, SUBSCRIPTION_BENEFITS } from '../config/auth.js';
-import { airwallexService } from './airwallexService.js';
-import { cacheService } from '../cache/redis.js';
+import bcrypt from "bcryptjs";
+import crypto from "crypto";
+import jwt from "jsonwebtoken";
+import { v4 as uuidv4 } from "uuid";
+import {
+  supabase,
+  DbUser,
+  BirthProfile,
+  UserPreferences,
+  isSupabaseConfigured,
+} from "../db/supabase.js";
+import { JWT_CONFIG, SUBSCRIPTION_BENEFITS } from "../config/auth.js";
+import { airwallexService } from "./airwallexService.js";
+import { cacheService } from "../cache/redis.js";
+
+// Canonicalize an email for identity comparison: trim whitespace, lowercase.
+// Used for users.email storage AND trial_claims hashing — both MUST agree.
+function normalizeEmailForIdentity(email: string): string {
+  if (typeof email !== "string") {
+    throw new Error("Invalid email: expected string");
+  }
+  const normalized = email.trim().toLowerCase();
+  if (!normalized) {
+    throw new Error("Invalid email: empty");
+  }
+  return normalized;
+}
+
+// SHA-256 hash of the normalized email — used as primary key in `trial_claims`.
+// MUST stay in sync with migration 006_trial_claims.sql backfill, which uses
+// `digest(lower(btrim(u.email)), 'sha256')`. No salt/pepper: if we ever
+// introduce one we must rebuild the table or the hash domain diverges from
+// the backfill and existing users lose protection on re-registration.
+function hashEmailForTrialClaim(normalizedEmail: string): string {
+  return crypto.createHash("sha256").update(normalizedEmail).digest("hex");
+}
 
 export interface CreateUserInput {
   email: string;
   name?: string;
   avatar?: string;
-  provider: 'google' | 'apple' | 'email';
+  provider: "google" | "apple" | "email";
   providerId?: string;
   password?: string;
 }
@@ -19,7 +48,7 @@ export interface CreateUserInput {
 export interface TokenPayload {
   userId: string;
   email: string;
-  type: 'access' | 'refresh';
+  type: "access" | "refresh";
 }
 
 export interface AuthTokens {
@@ -29,53 +58,81 @@ export interface AuthTokens {
 }
 
 class UserService {
-  // Create a new user with 7-day trial
+  // Create a new user with 7-day trial.
+  // Trial is bound to the email (via SHA-256 hash) and persists across account
+  // deletion: re-registering with the same email reuses the original
+  // trial_ends_at instead of starting a fresh 7-day window.
+  //
+  // Implementation: delegates to the `create_user_with_trial` Postgres function
+  // (migration 006) which performs the trial_claims upsert + read + users
+  // insert in a single transaction. Atomicity matters: a failed users insert
+  // must roll back the claim row, otherwise an attacker could "burn" a
+  // victim's trial by submitting malformed registrations.
   async createUser(input: CreateUserInput): Promise<DbUser> {
     if (!isSupabaseConfigured()) {
-      throw new Error('Database not configured');
+      throw new Error("Database not configured");
     }
+
+    const normalizedEmail = normalizeEmailForIdentity(input.email);
 
     const passwordHash = input.password
       ? await bcrypt.hash(input.password, 12)
       : null;
 
-    // 计算试用期结束时间（7天后）
-    const trialEndsAt = new Date();
-    trialEndsAt.setDate(trialEndsAt.getDate() + SUBSCRIPTION_BENEFITS.TRIAL_DAYS);
-
     const { data, error } = await supabase
-      .from('users')
-      .insert({
-        email: input.email.toLowerCase(),
-        name: input.name || null,
-        avatar: input.avatar || null,
-        provider: input.provider,
-        provider_id: input.providerId || null,
-        password_hash: passwordHash,
-        email_verified: input.provider !== 'email', // OAuth users are pre-verified
-        trial_ends_at: trialEndsAt.toISOString(),   // 首次注册赠送 7 天试用
+      .rpc("create_user_with_trial", {
+        p_email: normalizedEmail,
+        p_name: input.name ?? null,
+        p_avatar: input.avatar ?? null,
+        p_provider: input.provider,
+        p_provider_id: input.providerId ?? null,
+        p_password_hash: passwordHash,
+        p_email_verified: input.provider !== "email",
+        p_trial_days: SUBSCRIPTION_BENEFITS.TRIAL_DAYS,
       })
-      .select()
       .single();
 
     if (error) {
-      if (error.code === '23505') {
-        throw new Error('Email already registered');
+      // 23505 = unique violation (duplicate email). Map to the same message
+      // the legacy code path produced so callers stay compatible.
+      if (error.code === "23505") {
+        throw new Error("Email already registered");
       }
       throw new Error(`Failed to create user: ${error.message}`);
     }
 
-    return data as DbUser;
+    if (!data) {
+      throw new Error("Failed to create user: no row returned");
+    }
+
+    // The RPC returns a `users` row; cast through unknown to satisfy the
+    // generated types (rpc return type defaults to `unknown` on untyped
+    // function signatures).
+    return data as unknown as DbUser;
+  }
+
+  // Used at startup if you ever need to verify the email-hash domain matches
+  // the migration. Not called from the request path. Kept exported via the
+  // class for future tooling/tests.
+  hashEmailForTrialClaim(email: string): string {
+    return hashEmailForTrialClaim(normalizeEmailForIdentity(email));
   }
 
   // Find user by email
   async findByEmail(email: string): Promise<DbUser | null> {
     if (!isSupabaseConfigured()) return null;
 
+    let normalizedEmail: string;
+    try {
+      normalizedEmail = normalizeEmailForIdentity(email);
+    } catch {
+      return null;
+    }
+
     const { data, error } = await supabase
-      .from('users')
-      .select('*')
-      .eq('email', email.toLowerCase())
+      .from("users")
+      .select("*")
+      .eq("email", normalizedEmail)
       .single();
 
     if (error || !data) return null;
@@ -87,9 +144,9 @@ class UserService {
     if (!isSupabaseConfigured()) return null;
 
     const { data, error } = await supabase
-      .from('users')
-      .select('*')
-      .eq('id', id)
+      .from("users")
+      .select("*")
+      .eq("id", id)
       .single();
 
     if (error || !data) return null;
@@ -97,14 +154,17 @@ class UserService {
   }
 
   // Find user by OAuth provider
-  async findByProvider(provider: string, providerId: string): Promise<DbUser | null> {
+  async findByProvider(
+    provider: string,
+    providerId: string,
+  ): Promise<DbUser | null> {
     if (!isSupabaseConfigured()) return null;
 
     const { data, error } = await supabase
-      .from('users')
-      .select('*')
-      .eq('provider', provider)
-      .eq('provider_id', providerId)
+      .from("users")
+      .select("*")
+      .eq("provider", provider)
+      .eq("provider_id", providerId)
       .single();
 
     if (error || !data) return null;
@@ -125,14 +185,14 @@ class UserService {
       avatar: string;
       birth_profile: BirthProfile;
       preferences: UserPreferences;
-    }>
+    }>,
   ): Promise<DbUser | null> {
     if (!isSupabaseConfigured()) return null;
 
     const { data, error } = await supabase
-      .from('users')
+      .from("users")
       .update(updates)
-      .eq('id', userId)
+      .eq("id", userId)
       .select()
       .single();
 
@@ -147,7 +207,7 @@ class UserService {
   async migrateLocalData(
     userId: string,
     birthProfile: BirthProfile,
-    preferences: UserPreferences
+    preferences: UserPreferences,
   ): Promise<DbUser | null> {
     return this.updateProfile(userId, {
       birth_profile: birthProfile,
@@ -160,9 +220,9 @@ class UserService {
     if (!isSupabaseConfigured()) return;
 
     await supabase
-      .from('users')
+      .from("users")
       .update({ email_verified: true })
-      .eq('id', userId);
+      .eq("id", userId);
   }
 
   // Generate JWT tokens
@@ -170,13 +230,13 @@ class UserService {
     const accessPayload: TokenPayload = {
       userId: user.id,
       email: user.email,
-      type: 'access',
+      type: "access",
     };
 
     const refreshPayload: TokenPayload = {
       userId: user.id,
       email: user.email,
-      type: 'refresh',
+      type: "refresh",
     };
 
     const accessToken = jwt.sign(accessPayload, JWT_CONFIG.SECRET, {
@@ -185,7 +245,7 @@ class UserService {
     });
 
     const refreshToken = jwt.sign(refreshPayload, JWT_CONFIG.SECRET, {
-      expiresIn: '7d',
+      expiresIn: "7d",
       issuer: JWT_CONFIG.ISSUER,
     });
 
@@ -209,10 +269,14 @@ class UserService {
   }
 
   // Store refresh token
-  async storeRefreshToken(userId: string, token: string, expiresAt: Date): Promise<void> {
+  async storeRefreshToken(
+    userId: string,
+    token: string,
+    expiresAt: Date,
+  ): Promise<void> {
     if (!isSupabaseConfigured()) return;
 
-    await supabase.from('refresh_tokens').insert({
+    await supabase.from("refresh_tokens").insert({
       user_id: userId,
       token,
       expires_at: expiresAt.toISOString(),
@@ -224,10 +288,10 @@ class UserService {
     if (!isSupabaseConfigured()) return null;
 
     const { data, error } = await supabase
-      .from('refresh_tokens')
-      .select('user_id')
-      .eq('token', token)
-      .gt('expires_at', new Date().toISOString())
+      .from("refresh_tokens")
+      .select("user_id")
+      .eq("token", token)
+      .gt("expires_at", new Date().toISOString())
       .single();
 
     if (error || !data) return null;
@@ -238,14 +302,14 @@ class UserService {
   async revokeRefreshToken(token: string): Promise<void> {
     if (!isSupabaseConfigured()) return;
 
-    await supabase.from('refresh_tokens').delete().eq('token', token);
+    await supabase.from("refresh_tokens").delete().eq("token", token);
   }
 
   // Revoke all user tokens
   async revokeAllUserTokens(userId: string): Promise<void> {
     if (!isSupabaseConfigured()) return;
 
-    await supabase.from('refresh_tokens').delete().eq('user_id', userId);
+    await supabase.from("refresh_tokens").delete().eq("user_id", userId);
   }
 
   // Create email verification token
@@ -254,7 +318,7 @@ class UserService {
     const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
 
     if (isSupabaseConfigured()) {
-      await supabase.from('email_verification_tokens').insert({
+      await supabase.from("email_verification_tokens").insert({
         user_id: userId,
         token,
         expires_at: expiresAt.toISOString(),
@@ -269,16 +333,19 @@ class UserService {
     if (!isSupabaseConfigured()) return null;
 
     const { data, error } = await supabase
-      .from('email_verification_tokens')
-      .select('user_id')
-      .eq('token', token)
-      .gt('expires_at', new Date().toISOString())
+      .from("email_verification_tokens")
+      .select("user_id")
+      .eq("token", token)
+      .gt("expires_at", new Date().toISOString())
       .single();
 
     if (error || !data) return null;
 
     // Delete the token after use
-    await supabase.from('email_verification_tokens').delete().eq('token', token);
+    await supabase
+      .from("email_verification_tokens")
+      .delete()
+      .eq("token", token);
 
     // Mark user as verified
     await this.verifyEmail(data.user_id);
@@ -289,24 +356,24 @@ class UserService {
   // Delete user account (GDPR/CCPA right to erasure)
   async deleteUser(userId: string): Promise<boolean> {
     if (!isSupabaseConfigured()) {
-      throw new Error('Database not configured');
+      throw new Error("Database not configured");
     }
 
     // 1. Find the user first
     const user = await this.findById(userId);
     if (!user) {
-      throw new Error('User not found');
+      throw new Error("User not found");
     }
 
     // 2. Cancel billable subscriptions (payment provider API + database)
     // Cover all statuses that may produce future charges
-    const BILLABLE_STATUSES = ['active', 'trialing', 'past_due'];
+    const BILLABLE_STATUSES = ["active", "trialing", "past_due"];
     try {
       const { data: billableSubs } = await supabase
-        .from('subscriptions')
-        .select('id, airwallex_subscription_id, payment_provider, status')
-        .eq('user_id', userId)
-        .in('status', BILLABLE_STATUSES);
+        .from("subscriptions")
+        .select("id, airwallex_subscription_id, payment_provider, status")
+        .eq("user_id", userId)
+        .in("status", BILLABLE_STATUSES);
 
       if (billableSubs && billableSubs.length > 0) {
         const failedCancellations: string[] = [];
@@ -314,37 +381,53 @@ class UserService {
         // Cancel at payment provider level (best-effort per subscription)
         for (const sub of billableSubs) {
           try {
-            if (sub.payment_provider === 'airwallex' && sub.airwallex_subscription_id) {
-              await airwallexService.cancelSubscription(sub.airwallex_subscription_id);
+            if (
+              sub.payment_provider === "airwallex" &&
+              sub.airwallex_subscription_id
+            ) {
+              await airwallexService.cancelSubscription(
+                sub.airwallex_subscription_id,
+              );
             }
             // PayPal/Stripe cancellation can be added here when needed
           } catch (providerErr) {
             failedCancellations.push(sub.airwallex_subscription_id || sub.id);
-            console.error(`Failed to cancel ${sub.payment_provider} subscription ${sub.airwallex_subscription_id}:`, providerErr);
+            console.error(
+              `Failed to cancel ${sub.payment_provider} subscription ${sub.airwallex_subscription_id}:`,
+              providerErr,
+            );
           }
         }
 
         if (failedCancellations.length > 0) {
-          console.warn(`Account deletion for ${userId}: ${failedCancellations.length} subscription(s) failed provider-side cancellation: ${failedCancellations.join(', ')}. Proceeding with local deletion.`);
+          console.warn(
+            `Account deletion for ${userId}: ${failedCancellations.length} subscription(s) failed provider-side cancellation: ${failedCancellations.join(", ")}. Proceeding with local deletion.`,
+          );
         }
 
         // Mark all as canceled in database
         await supabase
-          .from('subscriptions')
-          .update({ status: 'canceled', cancel_at_period_end: true })
-          .eq('user_id', userId)
-          .in('status', BILLABLE_STATUSES);
+          .from("subscriptions")
+          .update({ status: "canceled", cancel_at_period_end: true })
+          .eq("user_id", userId)
+          .in("status", BILLABLE_STATUSES);
       }
     } catch (err) {
       // Don't fail the deletion if subscription cancel fails
-      console.error('Failed to cancel subscriptions during account deletion:', err);
+      console.error(
+        "Failed to cancel subscriptions during account deletion:",
+        err,
+      );
     }
 
     // 3. Clean up non-cascading tables
-    await supabase.from('refresh_tokens').delete().eq('user_id', userId);
-    await supabase.from('free_usage').delete().eq('user_id', userId);
-    await supabase.from('registration_codes').delete().eq('email', user.email);
-    await supabase.from('email_verification_tokens').delete().eq('user_id', userId);
+    await supabase.from("refresh_tokens").delete().eq("user_id", userId);
+    await supabase.from("free_usage").delete().eq("user_id", userId);
+    await supabase.from("registration_codes").delete().eq("email", user.email);
+    await supabase
+      .from("email_verification_tokens")
+      .delete()
+      .eq("user_id", userId);
 
     // 4. Clear Redis cache for user
     try {
@@ -354,11 +437,11 @@ class UserService {
       await cacheService.del(`user:${userId}:credits`);
     } catch (err) {
       // Don't fail the deletion if cache cleanup fails
-      console.error('Failed to clear cache during account deletion:', err);
+      console.error("Failed to clear cache during account deletion:", err);
     }
 
     // 5. Delete the user row (CASCADE handles subscriptions, purchase_records, reports, synastry_records, etc.)
-    const { error } = await supabase.from('users').delete().eq('id', userId);
+    const { error } = await supabase.from("users").delete().eq("id", userId);
 
     if (error) {
       throw new Error(`Failed to delete user: ${error.message}`);
@@ -370,49 +453,61 @@ class UserService {
   // Export user data (GDPR/CCPA right to data portability)
   async exportUserData(userId: string): Promise<Record<string, unknown>> {
     if (!isSupabaseConfigured()) {
-      throw new Error('Database not configured');
+      throw new Error("Database not configured");
     }
 
     // Fetch user profile
     const { data: user } = await supabase
-      .from('users')
-      .select('id, email, name, avatar, provider, birth_profile, preferences, email_verified, trial_ends_at, created_at, updated_at')
-      .eq('id', userId)
+      .from("users")
+      .select(
+        "id, email, name, avatar, provider, birth_profile, preferences, email_verified, trial_ends_at, created_at, updated_at",
+      )
+      .eq("id", userId)
       .single();
 
     if (!user) {
-      throw new Error('User not found');
+      throw new Error("User not found");
     }
 
     // Fetch subscriptions
     const { data: subscriptions } = await supabase
-      .from('subscriptions')
-      .select('id, plan, status, current_period_start, current_period_end, cancel_at_period_end, usage, payment_provider, created_at, updated_at')
-      .eq('user_id', userId);
+      .from("subscriptions")
+      .select(
+        "id, plan, status, current_period_start, current_period_end, cancel_at_period_end, usage, payment_provider, created_at, updated_at",
+      )
+      .eq("user_id", userId);
 
     // Fetch purchase records
     const { data: purchaseRecords } = await supabase
-      .from('purchase_records')
-      .select('id, feature_type, feature_id, scope, price_cents, valid_until, quantity, consumed, created_at')
-      .eq('user_id', userId);
+      .from("purchase_records")
+      .select(
+        "id, feature_type, feature_id, scope, price_cents, valid_until, quantity, consumed, created_at",
+      )
+      .eq("user_id", userId);
 
     // Fetch reports
     const { data: reports } = await supabase
-      .from('reports')
-      .select('id, report_type, title, content, birth_profile, partner_profile, generated_at, created_at')
-      .eq('user_id', userId);
+      .from("reports")
+      .select(
+        "id, report_type, title, content, birth_profile, partner_profile, generated_at, created_at",
+      )
+      .eq("user_id", userId);
 
     // Fetch synastry records
     const { data: synastryRecords } = await supabase
-      .from('synastry_records')
-      .select('id, synastry_hash, person_a_info, person_b_info, relationship_type, is_free, created_at')
-      .eq('user_id', userId);
+      .from("synastry_records")
+      .select(
+        "id, synastry_hash, person_a_info, person_b_info, relationship_type, is_free, created_at",
+      )
+      .eq("user_id", userId);
 
     // Fetch free usage
     const { data: freeUsage } = await supabase
-      .from('free_usage')
-      .select('ask_used, ask_reset_at, detail_used, synastry_used, synastry_total_used, synthetica_used, synthetica_reset_at, synastry_daily_used, synastry_daily_reset_at, ask_daily_used, ask_daily_reset_at, created_at, updated_at')
-      .eq('user_id', userId);
+      .from("free_usage")
+      .select(
+        "ask_used, ask_reset_at, detail_used, synastry_used, synastry_total_used, synthetica_used, synthetica_reset_at, synastry_daily_used, synastry_daily_reset_at, ask_daily_used, ask_daily_reset_at, created_at, updated_at",
+      )
+      .eq("user_id", userId);
 
     return {
       exportedAt: new Date().toISOString(),

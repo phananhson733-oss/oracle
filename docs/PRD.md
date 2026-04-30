@@ -1,7 +1,7 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 2.3
-> **Last Updated**: 2026-03-31
+> **Version**: 2.4
+> **Last Updated**: 2026-04-30
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -745,6 +745,16 @@ AI 生成的深度心理分析，每个维度独立解读：
 | created_at | TIMESTAMPTZ | 创建时间 |
 | updated_at | TIMESTAMPTZ | 更新时间 |
 
+**trial_claims** — 试用领取历史（via migration 006，跨账号删除持久化）
+| Column | Type | 说明 |
+|--------|------|------|
+| email_hash | VARCHAR(64) | 主键：邮箱 SHA-256 哈希（小写+可选 salt） |
+| trial_ends_at | TIMESTAMPTZ | 首次发放试用的结束时间（保留以防重发） |
+| first_claimed_at | TIMESTAMPTZ | 首次领取试用的时间 |
+| created_at | TIMESTAMPTZ | 记录创建时间 |
+
+> 设计意图：用户删除账号后，该表不会被清理；同邮箱重新注册时，沿用 `trial_ends_at`（多半已过期）而非发放新试用，防止刷免费额度。仅存哈希，符合 GDPR 被遗忘权（不保留可恢复 PII）。
+
 **subscriptions** — 订阅管理
 | Column | Type | 说明 |
 |--------|------|------|
@@ -895,7 +905,10 @@ JWT Token 结构:
   └── Refresh Token (长期) → POST /api/auth/refresh → 新 Access Token
 
 首次注册:
-  → 自动设置 trial_ends_at = now + 7 days
+  → 计算 email_hash = sha256(salt + lower(email))
+  → 查询 trial_claims:
+      ├── 命中 → trial_ends_at 沿用历史值（防止删号刷试用）
+      └── 未命中 → trial_ends_at = now + 7 days，写入 trial_claims
   → 跳转 /onboarding 收集出生信息
   → 完成后跳转 /dashboard
 ```
