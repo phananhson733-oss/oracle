@@ -479,23 +479,17 @@ const AppContent: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
             {/* Logo */}
             <div
-              className="flex items-center cursor-pointer shrink-0"
+              className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0"
               onClick={() => navigate("/dashboard")}
             >
-              <img
-                src="/logo-lockup.png"
-                alt={t.app.name}
-                width={480}
-                height={247}
-                className="hidden md:block h-10 w-auto"
-              />
               <img
                 src="/logo.png"
                 alt={t.app.name}
                 width={32}
                 height={32}
-                className="md:hidden h-8 w-8 rounded-full object-cover"
+                className="h-8 w-8 rounded-full object-cover"
               />
+              {t.app.name}
             </div>
 
             {/* Navigation Links - Permanently Top Right */}
