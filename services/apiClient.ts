@@ -47,6 +47,33 @@ import { consumeFeatureV2 } from "./entitlementClientV2";
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
   (import.meta.env.DEV ? "http://localhost:3001/api" : "/api");
+
+// Defensive runtime check: if API_BASE is an absolute URL whose origin doesn't
+// match the page origin, the browser will treat every request as cross-origin
+// and the backend CORS allowlist must include this page's origin. Vercel
+// preview deployments commonly tripped this when VITE_API_BASE_URL was
+// accidentally hard-coded to the prod backend hostname during a misconfigured
+// build (task #39). Warn once at module load so misconfigs surface fast.
+if (typeof window !== "undefined" && API_BASE.startsWith("http")) {
+  try {
+    const apiOrigin = new URL(API_BASE).origin;
+    if (apiOrigin !== window.location.origin) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `[apiClient] cross-origin API base detected: page=${window.location.origin} api=${apiOrigin}. ` +
+          `Backend CORS allowlist must include the page origin or requests will fail. ` +
+          `If unintended, unset VITE_API_BASE_URL so the client falls back to the same-origin '/api' path.`,
+      );
+    }
+  } catch {
+    // URL parse failed — surface separately so misconfig isn't silently swallowed.
+    // eslint-disable-next-line no-console
+    console.warn(
+      `[apiClient] VITE_API_BASE_URL is not a valid URL: ${API_BASE}`,
+    );
+  }
+}
+
 const REQUEST_TIMEOUT_MS = 15000;
 const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
