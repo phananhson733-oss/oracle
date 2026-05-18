@@ -8,9 +8,9 @@ import type {
   BirthInput,
   DailyResponse,
   DailyDetailResponse,
-  Language,
   PlanetPosition,
 } from "../types/api.js";
+import { resolveLang } from "../utils/lang.js";
 import {
   buildCompactChartSummary,
   buildCompactTransitSummary,
@@ -133,10 +133,6 @@ function handleBirthInputError(
     return true;
   }
   return false;
-}
-
-function resolveLang(value: unknown): Language {
-  return value === "en" ? "en" : "zh";
 }
 
 // GET /api/daily - 每日运势

@@ -30,13 +30,18 @@ module.exports = {
           200: '#EFEAE2',
           300: '#D8D1C5',
           400: '#7A746B',
+          500: '#615A52',
           600: '#4A4540',
+          700: '#2D2A26',
+          800: '#1B1A18',
           900: '#0A0B0D',
         },
         // Text Colors (Warm Neutral)
         star: {
           50: 'rgb(var(--star-50) / <alpha-value>)', // Primary text
+          100: 'rgb(var(--star-100) / <alpha-value>)', // Near-primary text
           200: 'rgb(var(--star-200) / <alpha-value>)', // Secondary text
+          300: 'rgb(var(--star-300) / <alpha-value>)', // Near-secondary text
           400: 'rgb(var(--star-400) / <alpha-value>)', // Muted text
         },
         // Mystical Purple (Astrology & Spirituality)

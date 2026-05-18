@@ -6,12 +6,12 @@ import { Router } from "express";
 import { performance } from "perf_hooks";
 import type {
   BirthInput,
-  Language,
   NatalChartResponse,
   NatalOverviewResponse,
   NatalCoreThemesResponse,
   NatalDimensionResponse,
 } from "../types/api.js";
+import { resolveLang } from "../utils/lang.js";
 import {
   buildCompactChartSummary,
   ephemerisService,
@@ -72,10 +72,6 @@ function handleBirthInputError(
     return true;
   }
   return false;
-}
-
-function resolveLang(value: unknown): Language {
-  return value === "en" ? "en" : "zh";
 }
 
 // GET /api/natal/chart - 仅返回 Real Data

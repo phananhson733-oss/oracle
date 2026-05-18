@@ -10,11 +10,11 @@ AstrologyWiki 是一个将占星与心理学结合的单页应用，用于提供
 体验。应用可本地运行并构建为静态站点。
 
 ## 技术栈
-- React 19 与 React Router（HashRouter）
+- React 19 与 React Router（BrowserRouter）
 - TypeScript 与 Vite
-- Tailwind CSS（在 `index.html` 内通过 CDN 配置）
+- Tailwind CSS 本地构建（`postcss.config.cjs` / `tailwind.config.cjs` / `index.css`）
 - localStorage 持久化用户资料、主题与语言
-- `@google/genai` 依赖存在，但当前运行时通过后端 API 获取 AI 内容
+- 后端 API 提供 AI 内容（DeepSeek，集中在 `backend/src/services/ai.ts`）
 - `index.html` 使用 import map（esm.sh）
 
 ## 项目约定
@@ -34,15 +34,17 @@ AstrologyWiki 是一个将占星与心理学结合的单页应用，用于提供
 
 ### 架构模式
 - 单页应用入口为根目录 `index.html` -> `index.tsx`。
-- 路由在 `App.tsx` 使用 `HashRouter`（适配静态托管）。
+- 路由在 `App.tsx` 使用 `BrowserRouter`，Vercel 端 rewrites 处理 SPA fallback。
 - 页面组件集中在 `App.tsx`（目前为设计选择）。
 - `services/astroService.ts` 封装后端星盘与周期数据获取。
-- `services/geminiService.ts` 通过后端 API 获取 AI 内容。
+- `services/apiClient.ts` 通过后端 `/api/*` 获取 AI 内容（DeepSeek）。
 - `cbt/` 是独立子应用，非必要不要跨目录改动。
 
 ### 测试策略
-- 当前未配置自动化测试。
-- 通过 `npm run dev` 手动冒烟验证关键路径。
+- 后端单元/集成测试：`vitest`（`backend/src/**/*.test.ts`），运行 `cd backend && npm run test`。
+- 前端 E2E：`@playwright/test`（`tests/e2e/*.spec.ts`），运行 `npm run test:e2e`。
+- 核心算法（星历计算/Synastry 评分/ROI/Cycle）、鉴权/计费/配额/Webhook、Prompt 注册表新增与缓存键构造必须 TDD（RED→GREEN→REFACTOR）。
+- 覆盖率：核心算法/计费/鉴权 100%；普通代码 80%+。
 
 ### Git 工作流
 - 仓库未强制工作流。
@@ -57,12 +59,12 @@ AstrologyWiki 是一个将占星与心理学结合的单页应用，用于提供
 ## 重要约束
 - 前端通过后端 API 获取真实星历与 AI 内容。
 - `generateContent` 需保持离线/确定性，除非明确变更范围。
-- `HashRouter` 必须保留以支持静态部署。
-- Tailwind 主题 Token 维护在 `index.html` 配置脚本中。
+- 路由使用 `BrowserRouter`，Vercel rewrites 在 `vercel.json` 内处理 SPA fallback。
+- Tailwind 主题 Token 维护在 `tailwind.config.cjs`，扫描路径含全部组件目录。
 - 变更需遵循 `openspec/AGENTS.md` 工作流。
 
 ## 外部依赖
 - DeepSeek API Key：`backend/.env` 或根目录 `.env.local` 中的 `DEEPSEEK_API_KEY`（后端统一读取）。
-- Tailwind CDN 与 Google Fonts 在 `index.html` 中加载。
+- Google Fonts 在 `index.html` 中加载；Tailwind 本地构建不再走 CDN。
 - 依赖由 npm 管理，同时在 `index.html` 使用 import map。
 - AI Studio 元数据在 `metadata.json`。

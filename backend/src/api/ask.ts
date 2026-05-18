@@ -2,42 +2,61 @@
 // OUTPUT: 导出 ask 路由（含类别上下文、权益校验与消费）。
 // POS: Ask 端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import { Router } from 'express';
-import type { AskRequest, AskResponse, AskChartType, Language, TransitData } from '../types/api.js';
-import { ephemerisService } from '../services/ephemeris.js';
-import { AIUnavailableError, generateAIContentWithMeta } from '../services/ai.js';
-import { optionalAuthMiddleware } from './auth.js';
-import entitlementServiceV2 from '../services/entitlementServiceV2.js';
-import { PRICING } from '../config/auth.js';
+import { Router } from "express";
+import type {
+  AskRequest,
+  AskResponse,
+  AskChartType,
+  TransitData,
+} from "../types/api.js";
+import { resolveLang } from "../utils/lang.js";
+import { ephemerisService } from "../services/ephemeris.js";
+import {
+  AIUnavailableError,
+  generateAIContentWithMeta,
+} from "../services/ai.js";
+import { optionalAuthMiddleware } from "./auth.js";
+import entitlementServiceV2 from "../services/entitlementServiceV2.js";
+import { PRICING } from "../config/auth.js";
 
 export const askRouter = Router();
 
 // Determine chart type based on category
 // time_cycles questions need transit chart (includes natal + current transits)
 const getChartType = (category?: string): AskChartType => {
-  if (category === 'time_cycles') return 'transit';
-  return 'natal';
+  if (category === "time_cycles") return "transit";
+  return "natal";
 };
 
 // POST /api/ask - 问答
-askRouter.post('/', optionalAuthMiddleware, async (req, res) => {
+askRouter.post("/", optionalAuthMiddleware, async (req, res) => {
   try {
-    const { birth, question, context, category, lang: langInput, tz } = req.body as AskRequest & { tz?: string };
-    const lang: Language = langInput === 'en' ? 'en' : 'zh';
+    const {
+      birth,
+      question,
+      context,
+      category,
+      lang: langInput,
+      tz,
+    } = req.body as AskRequest & { tz?: string };
+    const lang = resolveLang(langInput);
     const chartType = getChartType(category);
-    const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
-    const timezone = (tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
+    const deviceFingerprint = req.headers["x-device-fingerprint"] as
+      | string
+      | undefined;
+    const timezone =
+      (tz as string) || (req.headers["x-user-timezone"] as string) || undefined;
 
     const access = await entitlementServiceV2.checkAccess(
       req.userId || null,
-      'ask',
+      "ask",
       undefined,
       deviceFingerprint,
-      timezone
+      timezone,
     );
     if (!access.canAccess) {
       return res.status(403).json({
-        error: 'Feature not available',
+        error: "Feature not available",
         needPurchase: access.needPurchase,
         price: access.price,
       });
@@ -48,25 +67,25 @@ askRouter.post('/', optionalAuthMiddleware, async (req, res) => {
 
     // Calculate transits if needed for time_cycles questions
     let transits: TransitData | undefined;
-    if (chartType === 'transit') {
+    if (chartType === "transit") {
       transits = await ephemerisService.calculateTransits(birth, new Date());
     }
 
     const { content, meta } = await generateAIContentWithMeta({
-      promptId: 'ask-answer',
+      promptId: "ask-answer",
       context: { chart, transits, question, context, category },
       lang,
     });
 
     const consumed = await entitlementServiceV2.consumeFeature(
       req.userId || null,
-      'ask',
+      "ask",
       deviceFingerprint,
-      timezone
+      timezone,
     );
     if (!consumed) {
       return res.status(403).json({
-        error: 'Failed to consume feature',
+        error: "Failed to consume feature",
         needPurchase: true,
         price: PRICING.ASK_SINGLE,
       });
@@ -82,7 +101,7 @@ askRouter.post('/', optionalAuthMiddleware, async (req, res) => {
     } as AskResponse);
   } catch (error) {
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: 'AI unavailable', reason: error.reason });
+      res.status(503).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });

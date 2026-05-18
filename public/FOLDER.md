@@ -14,6 +14,7 @@
 - favicon.svg｜地位：站点图标｜功能：浏览器与快捷方式图标。
 - icon-192.png｜地位：PWA 图标｜功能：web manifest 192px 图标。
 - icon-512.png｜地位：PWA 图标｜功能：web manifest 512px 图标。
+- logo-lockup.png｜地位：横版品牌锁定图｜功能：桌面端 nav header 显示（圆环+书本+wordmark），h-10 渲染。
 - og-image.png｜地位：分享图｜功能：默认社交分享预览图。
 - robots.txt｜地位：爬虫配置｜功能：索引规则与 sitemap 入口。
 - site.webmanifest｜地位：PWA 清单｜功能：站点名称与图标配置。
@@ -25,6 +26,7 @@
 - zh｜地位：SEO 静态页目录｜功能：中文静态索引页面（构建期生成）。
 
 近期更新
+- 品牌标识刷新：logo.png/logo.jpg、favicon-16/32、icon-192/512、og-image.png 替换为新 astrologyWiki 视觉（方形槽位取黄道圆环裁切，OG 图保留完整横向 lockup）；favicon.svg 暂未同步矢量化。
 - SEO 静态页与 sitemap 重新生成，hreflang/ItemList 结构化数据对齐最新规则。
 - 新增 SEO 静态页输出目录与 sitemap/robots 配置。
 - 新增 OG 默认图、favicon 与 PWA 图标/manifest 资源。
