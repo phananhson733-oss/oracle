@@ -14,7 +14,6 @@
 - favicon.svg｜地位：站点图标｜功能：浏览器与快捷方式图标。
 - icon-192.png｜地位：PWA 图标｜功能：web manifest 192px 图标。
 - icon-512.png｜地位：PWA 图标｜功能：web manifest 512px 图标。
-- logo-lockup.png｜地位：横版品牌锁定图｜功能：桌面端 nav header 显示（圆环+书本+wordmark），h-10 渲染。
 - og-image.png｜地位：分享图｜功能：默认社交分享预览图。
 - robots.txt｜地位：爬虫配置｜功能：索引规则与 sitemap 入口。
 - site.webmanifest｜地位：PWA 清单｜功能：站点名称与图标配置。
