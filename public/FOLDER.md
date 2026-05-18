@@ -25,6 +25,7 @@
 - zh｜地位：SEO 静态页目录｜功能：中文静态索引页面（构建期生成）。
 
 近期更新
+- 品牌标识刷新：logo.png/logo.jpg、favicon-16/32、icon-192/512、og-image.png 替换为新 astrologyWiki 视觉（方形槽位取黄道圆环裁切，OG 图保留完整横向 lockup）；favicon.svg 暂未同步矢量化。
 - SEO 静态页与 sitemap 重新生成，hreflang/ItemList 结构化数据对齐最新规则。
 - 新增 SEO 静态页输出目录与 sitemap/robots 配置。
 - 新增 OG 默认图、favicon 与 PWA 图标/manifest 资源。

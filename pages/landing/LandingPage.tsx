@@ -70,32 +70,35 @@ const LandingPage: React.FC = () => {
       {/* 2. HERO — eager */}
       <HeroSection />
 
-      {/* 3-10. Below-the-fold sections — code-split via React.lazy. */}
-      <Suspense fallback={<SectionFallback minHeight="32rem" />}>
+      {/* 3-10. Below-the-fold sections — code-split via React.lazy.
+          minHeight values match the post-hydration rendered height within
+          ~10% so chunk resolution does not cause cumulative layout shift.
+          Values: header (kicker+h2+subtitle ≈ 200px) + body content + py-* padding. */}
+      <Suspense fallback={<SectionFallback minHeight="40rem" />}>
         <BirthChartSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="24rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="38rem" />}>
         <CosmicWeatherSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="28rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="32rem" />}>
         <ToolsGridSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="20rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="26rem" />}>
         <SynastrySection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="32rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="44rem" />}>
         <WikiHubSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="20rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="32rem" />}>
         <AskOracleSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="10rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="22rem" />}>
         <SocialProofSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="24rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="26rem" />}>
         <NewsletterSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="8rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="16rem" />}>
         <FooterSection />
       </Suspense>
     </div>

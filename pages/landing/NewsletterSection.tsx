@@ -1,6 +1,5 @@
 // INPUT: i18n translations.
-// OUTPUT: STUB — Newsletter signup form shell. Will POST to /api/newsletter/subscribe (Lane 2 builds the API).
-//         Honeypot field included per A4 anti-spam decision.
+// OUTPUT: Newsletter signup form — POSTs to /api/newsletter (honeypot + 5/hr rate limit on backend).
 // POS: Below-the-fold landing section for /landing-v2.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -8,7 +7,26 @@ import React, { useCallback, useState } from "react";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { trackEvent } from "../../services/analytics";
 
-type Status = "idle" | "submitting" | "success" | "existed" | "error";
+type Status =
+  | "idle"
+  | "submitting"
+  | "success"
+  | "existed"
+  | "rate_limited"
+  | "error";
+
+interface NewsletterResponse {
+  success?: boolean;
+  already_subscribed?: boolean;
+  error?: string;
+  code?: string;
+}
+
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3001/api"
+    : "/api");
 
 const NewsletterSection: React.FC = () => {
   const { t, language } = useLanguage();
@@ -19,30 +37,46 @@ const NewsletterSection: React.FC = () => {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (status === "submitting") return;
-      // TODO(landing-v2): Wire to POST /api/newsletter/subscribe (Lane 2 dependency).
-      // Expected request: { email, lang: language, source: 'landing_v2_homepage', website (honeypot) }.
-      // Expected response: { success: true, existed?: boolean }.
-      // For now, simulate optimistic success so the form is interactive at the visual level.
       setStatus("submitting");
+      setErrorMessage("");
       trackEvent("newsletter_submit", {
         location: "landing_v2_newsletter",
         lang: language,
       });
-      window.setTimeout(() => {
-        if (website.trim().length > 0) {
-          // Honeypot triggered — pretend success per A4.
-          setStatus("success");
-        } else {
-          setStatus("success");
+
+      try {
+        const res = await fetch(`${API_BASE}/newsletter`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email.trim(), website }),
+        });
+        const data: NewsletterResponse = await res
+          .json()
+          .catch(() => ({}) as NewsletterResponse);
+
+        if (res.status === 429 || data.code === "rate_limited") {
+          setStatus("rate_limited");
+          return;
         }
-      }, 400);
+        if (res.ok && data.success) {
+          setStatus(data.already_subscribed ? "existed" : "success");
+          return;
+        }
+        if (data.error) {
+          setErrorMessage(data.error);
+        }
+        setStatus("error");
+      } catch {
+        setStatus("error");
+      }
     },
-    [status, language, website],
+    [status, language, email, website],
   );
 
   const message =
@@ -51,10 +85,14 @@ const NewsletterSection: React.FC = () => {
       : status === "existed"
         ? landing.newsletter_existed ||
           "You're already on the list — we'll keep the cosmos coming."
-        : status === "error"
-          ? landing.newsletter_error ||
-            "Could not subscribe. Please try again."
-          : "";
+        : status === "rate_limited"
+          ? landing.newsletter_rate_limited ||
+            "Too many attempts. Please try again in a bit."
+          : status === "error"
+            ? errorMessage ||
+              landing.newsletter_error ||
+              "Could not subscribe. Please try again."
+            : "";
 
   return (
     <section

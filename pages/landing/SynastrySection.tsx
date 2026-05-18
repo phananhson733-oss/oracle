@@ -1,39 +1,55 @@
-// INPUT: i18n translations.
-// OUTPUT: STUB — Synastry showcase section. Deeper editorial piece than the grid tile.
-// POS: Below-the-fold landing section for /landing-v2.
+// INPUT: i18n translations, router navigation, analytics tracking, theme context.
+// OUTPUT: Editorial Synastry section — left-column copy + right-column inline SVG (two interlocking circles).
+//         Routes the CTA to /us (Synastry tool). Mirrors HeroSection's secondary CTA style.
+// POS: Below-the-fold section on /landing-v2. Avoid purple/indigo gradients, heart/soulmate icons,
+//      pure #000 / #fff, or romance-themed cliché visuals. See COLOR_SYSTEM_GUIDE.md.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React from "react";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
+import { trackEvent } from "../../services/analytics";
 
 const SynastrySection: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const landing = t.landing;
   const isDark = theme === "dark";
+
+  const ctaText = landing.synastry_cta || "Compare two charts →";
+
+  const handleCta = useCallback(() => {
+    trackEvent("cta_clicked", {
+      cta_text: ctaText,
+      location: "landing_v2_synastry",
+    });
+    navigate("/us");
+  }, [ctaText, navigate]);
 
   return (
     <section
       aria-labelledby="synastry-heading"
-      className={`w-full py-28 ${isDark ? "bg-space-950" : "bg-paper-100"}`}
+      className="py-24 border-y border-paper-300/40 dark:border-gold-500/10 bg-paper-200/30 dark:bg-space-900/30"
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        {/* Left column — editorial copy */}
         <div>
           <p
             className={`mb-4 text-xs uppercase tracking-[0.18em] ${
               isDark ? "text-star-400" : "text-paper-600"
             }`}
           >
-            {landing.synastry_kicker || "Two Charts"}
+            {landing.synastry_kicker || "Synastry"}
           </p>
           <h2
             id="synastry-heading"
-            className={`font-serif font-semibold text-3xl md:text-5xl leading-tight tracking-tight ${
+            className={`font-serif text-4xl md:text-5xl leading-tight tracking-tight ${
               isDark ? "text-star-50" : "text-paper-900"
             }`}
           >
             {landing.synastry_title ||
-              "What happens when two psyches meet."}
+              "The geometry between two charts."}
           </h2>
           <p
             className={`mt-6 text-base md:text-lg leading-relaxed ${
@@ -41,21 +57,61 @@ const SynastrySection: React.FC = () => {
             }`}
           >
             {landing.synastry_subtitle ||
-              "Synastry maps where two people resonate, miss each other, and grow. Not compatibility theater."}
+              "Overlay two charts and see where they meet, clash, and recognise each other. Relationship astrology without the soulmate gloss."}
           </p>
-          {/* TODO(landing-v2): Replace with real "Start a chart comparison" CTA → /:lang/us (auth-gated). */}
+          <div className="mt-8">
+            <button
+              type="button"
+              onClick={handleCta}
+              className={`text-base underline underline-offset-4 transition-colors duration-200 hover:text-accent motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm ${
+                isDark
+                  ? "text-star-100 decoration-star-400"
+                  : "text-paper-800 decoration-paper-400"
+              }`}
+            >
+              {ctaText}
+            </button>
+          </div>
         </div>
-        <div
-          aria-hidden="true"
-          className={`rounded-2xl border border-dashed h-72 flex items-center justify-center ${
-            isDark
-              ? "border-gold-500/15 text-star-400"
-              : "border-paper-300 text-paper-500"
-          }`}
-        >
-          <span className="font-serif italic text-base">
-            Synastry visual / preview chart.
-          </span>
+
+        {/* Right column — inline SVG of two interlocking circles, plus caption */}
+        <div className="flex flex-col items-center">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 280 200"
+            width="280"
+            height="200"
+            className="text-accent opacity-80"
+          >
+            {/* Two overlapping circles — Venn-style synastry overlay */}
+            <circle
+              cx="105"
+              cy="100"
+              r="70"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <circle
+              cx="175"
+              cy="100"
+              r="70"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            {/* Three small dots inside the overlap region — suggesting aspects */}
+            <circle cx="140" cy="80" r="2.2" fill="currentColor" />
+            <circle cx="140" cy="100" r="2.2" fill="currentColor" />
+            <circle cx="140" cy="120" r="2.2" fill="currentColor" />
+          </svg>
+          <p
+            className={`mt-4 font-serif italic text-sm ${
+              isDark ? "text-star-300" : "text-paper-600"
+            }`}
+          >
+            {landing.synastry_diagram_caption || "where two charts overlap"}
+          </p>
         </div>
       </div>
     </section>

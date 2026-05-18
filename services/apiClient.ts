@@ -1430,6 +1430,29 @@ export async function fetchCBTCompetenceAnalysis(
   return res.json();
 }
 
+// === Astro API ===
+export interface TodayPosition {
+  name: string;
+  sign: string;
+  degree: number;
+  retrograde: boolean;
+}
+
+export interface TodaySkyResponse {
+  date: string;
+  positions: TodayPosition[];
+}
+
+export async function fetchTodaySky(): Promise<TodaySkyResponse> {
+  const res = await fetchWithTimeout(
+    `${API_BASE}/astro/today`,
+    {},
+    REQUEST_TIMEOUT_MS,
+  );
+  await assertOk(res, "Failed to fetch today's sky");
+  return res.json();
+}
+
 // === Geo API ===
 export async function searchCities(query: string, limit = 5, lang?: Language) {
   const params = new URLSearchParams({ q: query, limit: String(limit) });

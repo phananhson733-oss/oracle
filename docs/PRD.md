@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.6
+> **Version**: 2.9
 > **Last Updated**: 2026-05-18
 > **Status**: Living Document — synced with codebase
 
@@ -197,15 +197,16 @@ AI 生成的深度心理分析，每个维度独立解读：
 | **时间线视图** | Feed 流式查看历史记录 |
 | **日历统计** | 月度情绪与行为模式统计 |
 | **多维度分析报告** | 躯体信号、根源分析、情绪公式、能力评估 |
+| **危机短路检测** | 5 个 AI 分析端点在调用 LLM 前进行中英关键词检测，命中时返回 `status: 'crisis_detected'` + 地区化 helpline（不调用 LLM、不写入 records、脱敏遥测），前端渲染 `<CrisisCard>` 替代分析结果 |
 
 **API**:
 - `POST /api/cbt/records` — 创建 CBT 记录
 - `GET /api/cbt/records` — 获取记录列表
-- `POST /api/cbt/analysis` — CBT 认知分析
-- `POST /api/cbt/aggregate-analysis` — 月度综合分析
-- `POST /api/cbt/somatic-analysis` — 躯体信号报告
-- `POST /api/cbt/root-analysis` — 根因与资源报告
-- `POST /api/cbt/mood-analysis` — 情绪公式统计
+- `POST /api/cbt/analysis` — CBT 认知分析（含危机检测短路）
+- `POST /api/cbt/aggregate-analysis` — 月度综合分析（含危机检测短路）
+- `POST /api/cbt/somatic-analysis` — 躯体信号报告（含危机检测短路）
+- `POST /api/cbt/root-analysis` — 根因与资源报告（含危机检测短路）
+- `POST /api/cbt/mood-analysis` — 情绪公式统计（含危机检测短路）
 - `POST /api/cbt/competence-analysis` — CBT 能力统计
 
 ### 2.7 Wiki 知识库 (Astrology Encyclopedia)
@@ -645,12 +646,33 @@ AI 生成的深度心理分析，每个维度独立解读：
 |--------|------|------|------|
 | POST | `/api/cbt/records` | 创建 CBT 记录 | — |
 | GET | `/api/cbt/records` | 获取记录列表 | — |
-| POST | `/api/cbt/analysis` | 认知分析 | — |
-| POST | `/api/cbt/aggregate-analysis` | 月度综合分析 | — |
-| POST | `/api/cbt/somatic-analysis` | 躯体信号报告 | — |
-| POST | `/api/cbt/root-analysis` | 根因分析 | — |
-| POST | `/api/cbt/mood-analysis` | 情绪公式 | — |
+| POST | `/api/cbt/analysis` | 认知分析（含危机短路） | — |
+| POST | `/api/cbt/aggregate-analysis` | 月度综合分析（含危机短路） | — |
+| POST | `/api/cbt/somatic-analysis` | 躯体信号报告（含危机短路） | — |
+| POST | `/api/cbt/root-analysis` | 根因分析（含危机短路） | — |
+| POST | `/api/cbt/mood-analysis` | 情绪公式（含危机短路） | — |
 | POST | `/api/cbt/competence-analysis` | 能力评估 | — |
+
+**CBT 危机检测响应** (适用于上述 5 个含 `crisis_detected` 短路的分析端点):
+
+```jsonc
+// HTTP 200 — 注意不是错误响应，前端按正常分支处理
+{
+  "status": "crisis_detected",
+  "helpline": {
+    "region": "US",         // 由 x-region header → lang → international fallback 解析
+    "name": "988 Suicide & Crisis Lifeline",
+    "phone": "988",
+    "url": "https://988lifeline.org"
+  },
+  "message_zh": "请记得，你并不孤单。强烈建议立刻联系下方的专业危机援助资源。",
+  "message_en": "You are not alone. Please reach out to the crisis support resource below right now."
+}
+```
+
+- 命中时 **不调用 LLM**、**不写入 `cbt:records`**、不会扣减用户配额
+- 遥测仅记录 `{ event, region, lang, endpoint }`（不含用户原文，遵守 PRD §隐私规范）
+- 开发环境可用 `?override_crisis_check=true` 跳过（生产环境强制启用）
 | — | `/` 重定向至 `/:lang/wiki` | 首页即 Wiki Hub | — |
 | GET | `/api/wiki/items` | 词条列表 | — |
 | GET | `/api/wiki/items/:id` | 词条详情 | — |
@@ -765,9 +787,10 @@ AI 生成的深度心理分析，每个维度独立解读：
 | GET | `/api/geo/search` | 城市模糊搜索 | — |
 | POST | `/api/detail` | 技术细节解读 | — |
 | GET | `/api/astro/events` | 天象事件 | — |
+| GET | `/api/astro/today` | 今日普世行星位置（10 大行星，按 UTC 午夜按日缓存，无 AI 调用）; no rate limit (safe due to day-scoped cache + zero LLM/IO per cached request); single-flight + integrity validation guards against cache stampede and mock-fallback poisoning | — |
 | GET | `/api/user/status` | 用户状态 | Optional |
 | GET | `/api/config` | 当前支付提供商配置 | — |
-| POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9 使用） | — |
+| POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9 使用）; 5 req/hour per IP rate limit + honeypot field | — |
 | GET | `/health` | 健康检查 | — |
 
 #### GM 调试 API (开发环境)
@@ -916,25 +939,38 @@ users (1) ──┬─→ (1) subscriptions
 
 #### 架构概览
 
-Prompt 系统采用集中注册式架构，所有模板在 `manager.ts` 中统一注册和管理。
+Prompt 系统采用集中注册式架构，所有模板在 `manager.ts` 中统一注册和管理；全部 51 个模板均经 `withSafety()` 包装注入 AI 安全护栏。
 
 **核心文件**:
-- `backend/src/prompts/common.ts` — 类型定义 + 工具函数
-- `backend/src/prompts/manager.ts` — 注册表 + 全部模板 (~2600 行)
+- `backend/src/prompts/common.ts` — 类型定义 + 工具函数 + 安全常量
+- `backend/src/prompts/manager.ts` — 注册表 + 全部模板 + `withSafety` helper (~2600 行)
 
-#### Prompt 模板清单
+#### AI 安全护栏（覆盖全 51 个 prompt）
 
-| 模块 | 模板数 | 主要模板 |
-|------|--------|----------|
-| **Natal** | 3 | natal-overview, natal-core-themes, natal-dimension |
-| **Daily** | 2 | daily-forecast, daily-detail |
-| **Synastry** | 16 | synastry-overview, core-dynamics, highlights, vibe-tags, relationship-timing, dynamic 等 |
-| **Ask** | 1 | ask-answer (6 类别路由) |
-| **CBT** | 6 | cbt-analysis, aggregate, somatic, root, mood, competence |
-| **Wiki** | 2 | wiki-home, wiki-classics-master |
-| **Detail** | 19 | detail-{type}-{context} 组合（含 synthesis-synastry） |
-| **Cycle** | 1 | cycle-naming |
-| **Synthetica** | 1 | synthetica-analysis |
+所有 prompt 通过 `withSafety(template, { noFate?, cbtFooter? })` 包装注入：
+
+| 常量（zh / en）| 作用范围 | 注入位置 |
+|---|---|---|
+| `SAFETY_INSTRUCTION_ZH/EN` | 全部 51 prompt | system 前缀：禁止医学诊断、禁止治疗承诺 |
+| `NO_FATE_CERTAINTY_REMINDER_ZH/EN` | daily / ask / synastry / cycle / detail(transit/synastry/composite) — 共 34 个 | system 后缀：禁绝对化命运语言（"必然/will/destined"）→ 改用"可能/may/tends toward" |
+| `CBT_DISCLAIMER_FOOTER_ZH/EN` | cbt-* — 共 6 个 | user prompt 指示 LLM 在输出末尾追加"这不是临床诊断"段落 |
+
+**与危机检测的关系**：CBT 5 个分析端点先经关键词短路（`detectCrisis()`），命中即返回 helpline 不走 prompt；未命中才走 `withSafety` 包装的 prompt 路径——两层非重叠纵深防御。
+
+#### Prompt 模板清单（全部 51 个，2026-05-18 集体 minor version bump）
+
+| 模块 | 模板数 | 当前版本 | 主要模板 | 安全注入 |
+|------|--------|----------|----------|----------|
+| **Natal** | 3 | 5.2 | natal-overview, natal-core-themes, natal-dimension | SAFETY |
+| **Daily** | 2 | 5.2 | daily-forecast, daily-detail | SAFETY + NO_FATE |
+| **Synastry** | 16 | bumped minor | synastry-overview, core-dynamics, highlights, vibe-tags, relationship-timing, dynamic, weather-forecast 等 | SAFETY + NO_FATE |
+| **Ask** | 1 | 10.1 | ask-answer (6 类别路由) | SAFETY + NO_FATE |
+| **CBT** | 6 | bumped minor | cbt-analysis, aggregate, somatic, root, mood, competence | SAFETY + CBT_FOOTER |
+| **Wiki** | 3 | bumped minor | wiki-home, wiki-classics-master, synthetica-analysis | SAFETY |
+| **Detail** | 19 | bumped minor | detail-{type}-{context} 组合 | SAFETY + (NO_FATE for transit/synastry/composite contexts) |
+| **Cycle** | 1 | 2.3 | cycle-naming | SAFETY + NO_FATE |
+
+**部署影响**：全量 version bump 一次性失效所有 LLM 输出缓存（`ai:{promptId}:v{version}:{inputHash}`），首日 cache 命中率 ~0%，24h 自然回填；预计每次调用 system token 增加 60–150（~3-5% 成本上浮）。
 
 #### Temperature 策略
 

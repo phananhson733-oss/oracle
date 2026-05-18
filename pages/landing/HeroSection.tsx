@@ -152,7 +152,8 @@ const HeroSection: React.FC = () => {
             isDark ? "text-star-400" : "text-paper-500"
           }`}
         >
-          {landing.trust_line || "Used by readers in 50+ countries"}
+          {landing.trust_line ||
+            "Built on real astronomy, not fortune-telling."}
         </p>
       </div>
     </section>
