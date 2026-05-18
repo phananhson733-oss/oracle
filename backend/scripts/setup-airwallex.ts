@@ -101,9 +101,9 @@ async function main() {
   // Step 1: Create subscription product
   console.log('📦 Creating subscription product...');
   const product = await apiCall(token, '/api/v1/products/create', {
-    request_id: `product_astromind_subscription_${Date.now()}`,
-    name: 'AstroMind Pro Subscription',
-    description: 'AstroMind Pro subscription with unlimited access to all premium features',
+    request_id: `product_astrologywiki_subscription_${Date.now()}`,
+    name: 'AstrologyWiki Pro Subscription',
+    description: 'AstrologyWiki Pro subscription with unlimited access to all premium features',
   });
 
   if (!product) {

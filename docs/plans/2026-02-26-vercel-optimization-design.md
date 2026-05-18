@@ -1,4 +1,4 @@
-# AstroMind Website Optimization Design
+# AstrologyWiki Website Optimization Design
 
 **Date**: 2026-02-26
 **Approach**: Phased, gradual optimization (low risk)

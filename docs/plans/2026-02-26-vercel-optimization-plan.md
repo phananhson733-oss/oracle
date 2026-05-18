@@ -1,8 +1,8 @@
-# AstroMind Vercel Optimization — Implementation Plan
+# AstrologyWiki Vercel Optimization — Implementation Plan
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Optimize AstroMind's performance, architecture, and SEO using Vercel React Best Practices, delivered in 3 phases with independent commits.
+**Goal:** Optimize AstrologyWiki's performance, architecture, and SEO using Vercel React Best Practices, delivered in 3 phases with independent commits.
 
 **Architecture:** Gradual, non-breaking improvements to an existing React 19 + Vite 6 SPA deployed on Vercel. Each task is independently deployable. Phase 1 focuses on bundle/load optimizations, Phase 2 on code architecture, Phase 3 on SEO.
 
@@ -683,7 +683,7 @@ Add it to every public page:
 ```typescript
 // pages/LandingPage.tsx
 <SEO
-  title="AstroMind — Modern Astrology & Self-Discovery"
+  title="AstrologyWiki — Modern Astrology & Self-Discovery"
   description="Discover your cosmic blueprint with AI-powered natal charts, daily forecasts, and psychological astrology insights."
   url="/"
 />
@@ -692,7 +692,7 @@ Add it to every public page:
 // but also add dynamic SEO for SPA navigation:
 // WikiHubPage:
 <SEO
-  title="Astrology Wiki — AstroMind"
+  title="Astrology Wiki — AstrologyWiki"
   description="Explore the complete guide to zodiac signs, planets, houses, and aspects."
   url="/wiki"
   type="website"
@@ -751,7 +751,7 @@ git commit -m "seo: add per-page meta tags using SEO component"
     url: `https://www.astrologywiki.com/wiki/${item.id}`,
     author: {
       '@type': 'Organization',
-      name: 'AstroMind',
+      name: 'AstrologyWiki',
     },
   }}
 />
@@ -780,7 +780,7 @@ const breadcrumbSchema = {
   schema={{
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'AstroMind',
+    name: 'AstrologyWiki',
     applicationCategory: 'LifestyleApplication',
     operatingSystem: 'Web',
     offers: {

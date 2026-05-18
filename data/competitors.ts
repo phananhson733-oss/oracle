@@ -4,9 +4,9 @@
 
 export interface CompetitorFeature {
   name: string;
-  astromind: string | boolean | number;
+  astrologywiki: string | boolean | number;
   competitor: string | boolean | number;
-  winner: 'astromind' | 'competitor' | 'tie';
+  winner: 'astrologywiki' | 'competitor' | 'tie';
 }
 
 export interface CompetitorReview {
@@ -67,49 +67,49 @@ export const COMPETITORS: Record<string, CompetitorInfo> = {
     features: {
       natalChart: {
         name: 'Natal Chart',
-        astromind: true,
+        astrologywiki: true,
         competitor: true,
         winner: 'tie',
       },
       synastry: {
         name: 'Synastry (Relationship)',
-        astromind: true,
+        astrologywiki: true,
         competitor: 'Limited to premium',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       transitAnalysis: {
         name: 'Transit Analysis',
-        astromind: 'Detailed daily with psychological context',
+        astrologywiki: 'Detailed daily with psychological context',
         competitor: 'Brief push notifications',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       predictions: {
         name: 'Predictions',
-        astromind: 'Comprehensive with multi-level analysis',
+        astrologywiki: 'Comprehensive with multi-level analysis',
         competitor: 'Daily briefs only',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       socialFeatures: {
         name: 'Social Features',
-        astromind: 'Minimal, focused on content',
+        astrologywiki: 'Minimal, focused on content',
         competitor: 'Strong social compare features',
         winner: 'competitor',
       },
       aiInsights: {
         name: 'AI Insights',
-        astromind: 'Psychological astrology integration',
+        astrologywiki: 'Psychological astrology integration',
         competitor: 'AI-generated concise messages',
         winner: 'tie',
       },
       customization: {
         name: 'Customization',
-        astromind: 'Extensive chart customization',
+        astrologywiki: 'Extensive chart customization',
         competitor: 'Minimal options',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       userExperience: {
         name: 'User Experience',
-        astromind: 'Content-rich, learning-focused',
+        astrologywiki: 'Content-rich, learning-focused',
         competitor: 'Minimalist, quick-consumption',
         winner: 'tie',
       },
@@ -139,49 +139,49 @@ export const COMPETITORS: Record<string, CompetitorInfo> = {
     features: {
       natalChart: {
         name: 'Natal Chart',
-        astromind: true,
+        astrologywiki: true,
         competitor: true,
         winner: 'tie',
       },
       synastry: {
         name: 'Synastry (Relationship)',
-        astromind: true,
+        astrologywiki: true,
         competitor: true,
         winner: 'tie',
       },
       transitAnalysis: {
         name: 'Transit Analysis',
-        astromind: 'Detailed psychological context',
+        astrologywiki: 'Detailed psychological context',
         competitor: 'Relationship-focused insights',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       predictions: {
         name: 'Predictions',
-        astromind: 'Multi-level forecasts with guidance',
+        astrologywiki: 'Multi-level forecasts with guidance',
         competitor: 'Personality-based readings',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       socialFeatures: {
         name: 'Social Features',
-        astromind: 'Minimal',
+        astrologywiki: 'Minimal',
         competitor: 'Strong - find connections with contacts',
         winner: 'competitor',
       },
       aiInsights: {
         name: 'AI Insights',
-        astromind: 'Psychological astrology with development tips',
+        astrologywiki: 'Psychological astrology with development tips',
         competitor: 'Personality profiling',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       customization: {
         name: 'Customization',
-        astromind: 'Full control over display',
+        astrologywiki: 'Full control over display',
         competitor: 'Limited',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       userExperience: {
         name: 'User Experience',
-        astromind: 'Educational and content-rich',
+        astrologywiki: 'Educational and content-rich',
         competitor: 'Social and discovery-focused',
         winner: 'tie',
       },
@@ -211,49 +211,49 @@ export const COMPETITORS: Record<string, CompetitorInfo> = {
     features: {
       natalChart: {
         name: 'Natal Chart',
-        astromind: true,
+        astrologywiki: true,
         competitor: true,
         winner: 'tie',
       },
       synastry: {
         name: 'Synastry (Relationship)',
-        astromind: true,
+        astrologywiki: true,
         competitor: true,
         winner: 'tie',
       },
       transitAnalysis: {
         name: 'Transit Analysis',
-        astromind: 'Detailed psychological forecasts',
+        astrologywiki: 'Detailed psychological forecasts',
         competitor: 'Astrologer-guided interpretations',
         winner: 'tie',
       },
       predictions: {
         name: 'Predictions',
-        astromind: 'Comprehensive with development guidance',
+        astrologywiki: 'Comprehensive with development guidance',
         competitor: 'Personalized with human input',
         winner: 'competitor',
       },
       socialFeatures: {
         name: 'Social Features',
-        astromind: 'Minimal',
+        astrologywiki: 'Minimal',
         competitor: 'Community forums',
         winner: 'competitor',
       },
       aiInsights: {
         name: 'AI Insights',
-        astromind: 'Psychological integration',
+        astrologywiki: 'Psychological integration',
         competitor: 'Hybrid AI + human astrologer',
         winner: 'competitor',
       },
       customization: {
         name: 'Customization',
-        astromind: 'Full customization',
+        astrologywiki: 'Full customization',
         competitor: 'Limited',
-        winner: 'astromind',
+        winner: 'astrologywiki',
       },
       userExperience: {
         name: 'User Experience',
-        astromind: 'Self-learning focused',
+        astrologywiki: 'Self-learning focused',
         competitor: 'Consultation-focused',
         winner: 'tie',
       },
@@ -293,17 +293,17 @@ export const getAllCompetitors = (): CompetitorInfo[] => {
 };
 
 export const compareFeatures = (
-  astromindFeatures: Record<string, CompetitorFeature>,
+  astrologywikiFeatures: Record<string, CompetitorFeature>,
   competitorId: string
-): { name: string; astromind: string; competitor: string; winner: string }[] => {
+): { name: string; astrologywiki: string; competitor: string; winner: string }[] => {
   const competitor = COMPETITORS[competitorId];
   if (!competitor) return [];
 
-  return Object.values(astromindFeatures).map((feature) => {
+  return Object.values(astrologywikiFeatures).map((feature) => {
     const competitorFeature = competitor.features[feature.name as keyof typeof competitor.features];
     return {
       name: feature.name,
-      astromind: String(feature.astromind),
+      astrologywiki: String(feature.astrologywiki),
       competitor: String(competitorFeature?.competitor || 'N/A'),
       winner: feature.winner,
     };

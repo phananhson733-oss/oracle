@@ -1,6 +1,6 @@
 ## Context
 
-AstroMind（astrologywiki.com）是基于 React 19 + Vite + HashRouter 的单页应用，部署在 Vercel 上。
+AstrologyWiki（astrologywiki.com）是基于 React 19 + Vite + HashRouter 的单页应用，部署在 Vercel 上。
 项目已有完善的分析基础设施（`services/analytics.ts`），支持 GA4 和 GTM 双模式，但未配置任何 Measurement ID，导致埋点代码未生效。
 
 当前问题：

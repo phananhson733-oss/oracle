@@ -95,12 +95,12 @@ const FAQ_DATA: FAQCategory[] = [
       {
         question: 'Which browsers are supported?',
         answer:
-          'AstroMind works best on modern browsers including the latest versions of Chrome, Firefox, Safari, and Edge. We recommend keeping your browser up to date for the best experience.',
+          'AstrologyWiki works best on modern browsers including the latest versions of Chrome, Firefox, Safari, and Edge. We recommend keeping your browser up to date for the best experience.',
       },
       {
         question: 'Is there a mobile app?',
         answer:
-          'AstroMind is currently a web application optimized for mobile browsers. You can add it to your home screen for an app-like experience. A dedicated mobile app may be available in the future.',
+          'AstrologyWiki is currently a web application optimized for mobile browsers. You can add it to your home screen for an app-like experience. A dedicated mobile app may be available in the future.',
       },
       {
         question: 'How do I change the language?',
@@ -155,12 +155,12 @@ const HelpPage: React.FC = () => {
     <Container>
       <SEO
         title="Help & FAQ"
-        description="Frequently asked questions about AstroMind - accounts, subscriptions, features, and technical support."
+        description="Frequently asked questions about AstrologyWiki - accounts, subscriptions, features, and technical support."
       />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <h1 className={`text-3xl font-bold mb-2 ${strongClass}`}>Help & FAQ</h1>
         <p className={`text-sm mb-10 ${textClass}`}>
-          Find answers to common questions about AstroMind.
+          Find answers to common questions about AstrologyWiki.
         </p>
 
         {FAQ_DATA.map((category) => (
@@ -191,7 +191,7 @@ const HelpPage: React.FC = () => {
         {/* Back link */}
         <div className={`mt-8 pt-6 border-t ${theme === 'dark' ? 'border-star-50/10' : 'border-paper-200'}`}>
           <Link to="/" className={`text-sm ${linkClass}`}>
-            &larr; Back to AstroMind
+            &larr; Back to AstrologyWiki
           </Link>
         </div>
       </div>

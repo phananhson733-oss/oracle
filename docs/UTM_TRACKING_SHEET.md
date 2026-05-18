@@ -41,7 +41,7 @@
 
 ```csv
 Campaign Name,utm_source,utm_medium,utm_campaign,Start Date,End Date,Status,URL
-new-user-signup-2026q1,facebook,social,new-user-signup-2026q1,2026-01-01,2026-03-31,Active,https://astromind.ai?utm_source=facebook&utm_medium=social&utm_campaign=new-user-signup-2026q1
+new-user-signup-2026q1,facebook,social,new-user-signup-2026q1,2026-01-01,2026-03-31,Active,https://astrologywiki.com?utm_source=facebook&utm_medium=social&utm_campaign=new-user-signup-2026q1
 ```
 
 ## 相关文档

@@ -5,7 +5,7 @@ export const howToReadBirthChartEn: WikiArticle = {
   slug: 'how-to-read-birth-chart',
   title: 'How to Read Your Birth Chart: A Psychological Astrology Guide for Beginners',
   description: 'Learn how to read your natal chart through the lens of psychological astrology. A 5-step beginner\'s guide covering planets, signs, houses, and aspects.',
-  author: 'AstroMind Team',
+  author: 'AstrologyWiki Team',
   date: '2026-04-07',
   schema: 'Article',
   lang: 'en',
@@ -36,7 +36,7 @@ Think of it as a cast of characters inside your psyche. Each planet represents a
 - Your birth **time** (as precise as possible---check your birth certificate)
 - Your birth **location** (city and country)
 
-> **Try it:** Open the [AstroMind Dashboard](/dashboard) and enter your birth data. Keep the chart open as you read the rest of this guide---you'll be referencing it at every step.
+> **Try it:** Open the [AstrologyWiki Dashboard](/dashboard) and enter your birth data. Keep the chart open as you read the rest of this guide---you'll be referencing it at every step.
 
 ---
 
@@ -180,7 +180,7 @@ export const howToReadBirthChartZh: WikiArticle = {
   slug: 'how-to-read-birth-chart',
   title: '占星入门指南：5 步看懂你的星盘，从"我是什么座"到真正认识自己',
   description: '从心理占星学角度，手把手教你读懂自己的本命盘。涵盖行星、星座、宫位、相位四大模块，每一步都有实操练习。',
-  author: 'AstroMind 团队',
+  author: 'AstrologyWiki 团队',
   date: '2026-04-07',
   schema: 'Article',
   lang: 'zh',
@@ -211,7 +211,7 @@ export const howToReadBirthChartZh: WikiArticle = {
 - 出生**时间**（越精确越好，最好查看出生证明）
 - 出生**地点**（城市和国家）
 
-> **试一试：** 打开 [AstroMind 控制台](/dashboard)，输入你的出生信息。把生成的星盘放在一旁，后面每一步你都会用到它。
+> **试一试：** 打开 [AstrologyWiki 控制台](/dashboard)，输入你的出生信息。把生成的星盘放在一旁，后面每一步你都会用到它。
 
 ---
 

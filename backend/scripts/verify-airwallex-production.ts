@@ -307,7 +307,7 @@ async function checkFrontendDeployment() {
 async function main() {
   console.log('╔══════════════════════════════════════════════════╗');
   console.log('║  Airwallex 生产环境验证                          ║');
-  console.log('║  AstroMind — www.astrologywiki.com               ║');
+  console.log('║  AstrologyWiki — www.astrologywiki.com               ║');
   console.log('╚══════════════════════════════════════════════════╝');
   console.log(`\n  环境: ${ENV}`);
   console.log(`  API:  ${API_BASE}`);

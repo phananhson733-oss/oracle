@@ -36,7 +36,7 @@ const LandingPage: React.FC = () => {
     const softwareAppSchema = {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        name: 'AstroMind',
+        name: 'AstrologyWiki',
         applicationCategory: 'LifestyleApplication',
         operatingSystem: 'Web',
         description: 'AI-powered astrology app for natal charts, daily forecasts, and psychological self-discovery.',

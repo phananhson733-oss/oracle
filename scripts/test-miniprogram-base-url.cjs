@@ -44,7 +44,7 @@ const loadModule = (filePath) => {
   return module.exports;
 };
 
-const requestModule = loadModule(path.resolve(__dirname, '../astromind/miniprogram/utils/request.js'));
+const requestModule = loadModule(path.resolve(__dirname, '../astrologywiki/miniprogram/utils/request.js'));
 const baseUrl = requestModule.getBaseUrl();
 
 assert.strictEqual(

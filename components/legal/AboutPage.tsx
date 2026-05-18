@@ -26,17 +26,17 @@ const AboutPage: React.FC = () => {
     <Container>
       <SEO
         title="About"
-        description="About AstroMind - Modern astrology meets psychology. Empowerment over fatalism."
+        description="About AstrologyWiki - Modern astrology meets psychology. Empowerment over fatalism."
       />
       <div className="max-w-3xl mx-auto px-4 py-12">
-        <h1 className={`text-3xl font-bold mb-2 ${strongClass}`}>About AstroMind</h1>
+        <h1 className={`text-3xl font-bold mb-2 ${strongClass}`}>About AstrologyWiki</h1>
         <p className={`text-sm mb-8 ${textClass}`}>Where modern astrology meets psychology</p>
 
         {/* Mission */}
         <div className={sectionClass}>
           <h2 className={`text-2xl font-semibold mb-4 ${headingClass}`}>Our Mission</h2>
           <p className={textClass}>
-            We believe in empowerment over fatalism. AstroMind uses the wisdom of the stars as a mirror
+            We believe in empowerment over fatalism. AstrologyWiki uses the wisdom of the stars as a mirror
             for self-discovery, not a fixed destiny. By combining time-honored astrological traditions
             with modern psychological insights, we help you understand yourself more deeply and navigate
             life with greater clarity.
@@ -114,7 +114,7 @@ const AboutPage: React.FC = () => {
         {/* Back link */}
         <div className="mt-12 pt-6 border-t border-star-50/10">
           <Link to="/" className={`text-sm ${linkClass}`}>
-            &larr; Back to AstroMind
+            &larr; Back to AstrologyWiki
           </Link>
         </div>
       </div>

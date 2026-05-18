@@ -98,11 +98,11 @@ Wiki 详情页：详解太阳星座在白羊座的特征、性格优点与阴影
   description="页面描述"
   keywords={['关键词1', '关键词2']}
   image="/og-image.png"
-  url="https://astromind.ai/..."
+  url="https://astrologywiki.com/..."
   type="website" // 或 "article"
   alternateLanguages={[
-    { hrefLang: 'zh', href: 'https://astromind.ai/zh/...' },
-    { hrefLang: 'en', href: 'https://astromind.ai/en/...' },
+    { hrefLang: 'zh', href: 'https://astrologywiki.com/zh/...' },
+    { hrefLang: 'en', href: 'https://astrologywiki.com/en/...' },
   ]}
   // Article 专用
   publishedTime="2026-01-01T00:00:00Z"

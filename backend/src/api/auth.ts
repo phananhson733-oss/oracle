@@ -761,7 +761,7 @@ router.get(
       res.setHeader("Content-Type", "application/json");
       res.setHeader(
         "Content-Disposition",
-        'attachment; filename="astromind-data-export.json"',
+        'attachment; filename="astrologywiki-data-export.json"',
       );
       res.json(data);
     } catch (error) {

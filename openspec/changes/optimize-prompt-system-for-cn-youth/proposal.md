@@ -5,7 +5,7 @@
 
 ## 背景
 
-AstroMind（星智）定位为面向中国大陆 18-35 岁年轻人的占星应用。现有 Prompt 系统虽已建立三层架构（core/cultural/templates），且 cultural 层已包含场景库、比喻库等本土化内容，但存在以下核心问题：
+AstrologyWiki（星智）定位为面向中国大陆 18-35 岁年轻人的占星应用。现有 Prompt 系统虽已建立三层架构（core/cultural/templates），且 cultural 层已包含场景库、比喻库等本土化内容，但存在以下核心问题：
 
 ### 问题 1：本土化深度不足
 

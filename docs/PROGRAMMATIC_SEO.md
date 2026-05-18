@@ -152,7 +152,7 @@ const generateArticleSchema = (planet: string, sign: string) => ({
     name: 'Astromind',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://astromind.ai/logo.png',
+      url: 'https://astrologywiki.com/logo.png',
     },
   },
 });
@@ -184,7 +184,7 @@ const RelatedLinks = ({ planet, sign }) => (
 import { writeFileSync } from 'fs';
 import { PLANETS, SIGNS, ASPECTS, PLANETS as P2, HOUSES } from '../data';
 
-const BASE_URL = 'https://www.astromind.ai';
+const BASE_URL = 'https://www.astrologywiki.com';
 
 function generateUrls() {
   const urls: string[] = [];

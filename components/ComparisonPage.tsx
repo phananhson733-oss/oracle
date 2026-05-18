@@ -21,7 +21,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
   const isDark = theme === 'dark';
 
   const competitor = useMemo(() => getCompetitor(competitorId), [competitorId]);
-  const astromind = COMPETITORS['astromind'] || createAstromindData();
+  const astrologywiki = COMPETITORS['astrologywiki'] || createAstromindData();
 
   if (!competitor) {
     return (
@@ -40,12 +40,12 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
   const cardBg = isDark ? 'bg-space-800/40' : 'bg-paper-100/85';
 
   const pageTitle = type === 'vs'
-    ? `${astromind.name} vs ${competitor.name}`
+    ? `${astrologywiki.name} vs ${competitor.name}`
     : `${competitor.name} Alternative`;
 
   const pageDescription = type === 'vs'
-    ? `Compare ${astromind.name} and ${competitor.name} features, pricing, and reviews.`
-    : `Discover why ${astromind.name} is the best ${competitor.name} alternative for astrology enthusiasts.`;
+    ? `Compare ${astrologywiki.name} and ${competitor.name} features, pricing, and reviews.`
+    : `Discover why ${astrologywiki.name} is the best ${competitor.name} alternative for astrology enthusiasts.`;
 
   return (
     <>
@@ -61,7 +61,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
           <h1 className="text-4xl md:text-6xl font-serif font-semibold mb-4">
             {type === 'vs' ? (
               <>
-                <span className={highlightClass}>{astromind.name}</span>
+                <span className={highlightClass}>{astrologywiki.name}</span>
                 <span className="mx-3">vs</span>
                 <span>{competitor.name}</span>
               </>
@@ -105,12 +105,12 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
               <thead>
                 <tr className="border-b border-dashed border-current/20">
                   <th className="text-left py-3 px-4">Feature</th>
-                  <th className={`text-center py-3 px-4 ${highlightClass}`}>{astromind.name}</th>
+                  <th className={`text-center py-3 px-4 ${highlightClass}`}>{astrologywiki.name}</th>
                   <th className="text-center py-3 px-4">{competitor.name}</th>
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(astromind.features).map(([key, feature]) => {
+                {Object.entries(astrologywiki.features).map(([key, feature]) => {
                   const competitorFeature = competitor.features[key as keyof typeof competitor.features];
                   if (!competitorFeature) return null;
 
@@ -118,11 +118,11 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
                     <tr key={key} className="border-b border-dashed border-current/10">
                       <td className="py-3 px-4 font-medium">{feature.name}</td>
                       <td className="text-center py-3 px-4">
-                        <span className={feature.winner === 'astromind' ? highlightClass : ''}>
-                          {typeof feature.astromind === 'boolean' ? (
-                            feature.astromind ? '✓' : '—'
+                        <span className={feature.winner === 'astrologywiki' ? highlightClass : ''}>
+                          {typeof feature.astrologywiki === 'boolean' ? (
+                            feature.astrologywiki ? '✓' : '—'
                           ) : (
-                            feature.astromind
+                            feature.astrologywiki
                           )}
                         </span>
                       </td>
@@ -147,7 +147,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
         <Section title="Pricing">
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-6">
-              <h3 className={`text-xl font-semibold mb-4 ${highlightClass}`}>{astromind.name}</h3>
+              <h3 className={`text-xl font-semibold mb-4 ${highlightClass}`}>{astrologywiki.name}</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className={mutedText}>Free Tier</span>
@@ -188,7 +188,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
         <Section title="What Users Say">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="text-lg font-semibold mb-3">{astromind.name} Reviews</h4>
+              <h4 className="text-lg font-semibold mb-3">{astrologywiki.name} Reviews</h4>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-3xl font-bold text-gold-500">4.8</span>
                 <span className={mutedText}>/ 5.0</span>
@@ -209,7 +209,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
         </Section>
 
         {/* Why Choose Astromind */}
-        <Section title={type === 'alternatives' ? `Why Choose ${astromind.name}` : 'Why Choose Astromind'}>
+        <Section title={type === 'alternatives' ? `Why Choose ${astrologywiki.name}` : 'Why Choose Astromind'}>
           <div className="grid md:grid-cols-2 gap-6">
             <div className={`rounded-2xl p-6 border ${borderColor}`}>
               <h4 className={`font-semibold mb-3 ${highlightClass}`}>Psychological Depth</h4>
@@ -244,7 +244,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
             Ready to Explore Deep?
           </h2>
           <p className={`mb-6 ${mutedText}`}>
-            Start your journey of self-discovery with {astromind.name}
+            Start your journey of self-discovery with {astrologywiki.name}
           </p>
           <ActionButton size="lg">
             Get Started Free
@@ -255,10 +255,10 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
   );
 };
 
-// Create placeholder astromind data for comparison
+// Create placeholder astrologywiki data for comparison
 function createAstromindData(): CompetitorInfo {
   return {
-    id: 'astromind',
+    id: 'astrologywiki',
     name: 'Astromind',
     tagline: 'Psychological Astrology Platform',
     description: 'Comprehensive astrology platform combining psychological insights with traditional astrology.',
@@ -272,14 +272,14 @@ function createAstromindData(): CompetitorInfo {
       subscription: 'Flexible plans',
     },
     features: {
-      natalChart: { name: 'Natal Chart', astromind: true, competitor: true, winner: 'tie' },
-      synastry: { name: 'Synastry', astromind: true, competitor: true, winner: 'tie' },
-      transitAnalysis: { name: 'Transit Analysis', astromind: 'Detailed psychological', competitor: 'Varies', winner: 'astromind' },
-      predictions: { name: 'Predictions', astromind: 'Comprehensive', competitor: 'Varies', winner: 'astromind' },
-      socialFeatures: { name: 'Social', astromind: 'Minimal', competitor: 'Strong', winner: 'competitor' },
-      aiInsights: { name: 'AI Insights', astromind: 'Psychological integration', competitor: 'Varies', winner: 'astromind' },
-      customization: { name: 'Customization', astromind: 'Full', competitor: 'Limited', winner: 'astromind' },
-      userExperience: { name: 'UX', astromind: 'Educational', competitor: 'Varies', winner: 'tie' },
+      natalChart: { name: 'Natal Chart', astrologywiki: true, competitor: true, winner: 'tie' },
+      synastry: { name: 'Synastry', astrologywiki: true, competitor: true, winner: 'tie' },
+      transitAnalysis: { name: 'Transit Analysis', astrologywiki: 'Detailed psychological', competitor: 'Varies', winner: 'astrologywiki' },
+      predictions: { name: 'Predictions', astrologywiki: 'Comprehensive', competitor: 'Varies', winner: 'astrologywiki' },
+      socialFeatures: { name: 'Social', astrologywiki: 'Minimal', competitor: 'Strong', winner: 'competitor' },
+      aiInsights: { name: 'AI Insights', astrologywiki: 'Psychological integration', competitor: 'Varies', winner: 'astrologywiki' },
+      customization: { name: 'Customization', astrologywiki: 'Full', competitor: 'Limited', winner: 'astrologywiki' },
+      userExperience: { name: 'UX', astrologywiki: 'Educational', competitor: 'Varies', winner: 'tie' },
     },
     reviews: {
       appStore: { rating: 4.8, pros: ['Deep insights', 'Educational'], cons: [] },

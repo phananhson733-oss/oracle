@@ -1,4 +1,4 @@
-# AstroMind — Product Requirements Document (PRD)
+# AstrologyWiki — Product Requirements Document (PRD)
 
 > **Version**: 2.5
 > **Last Updated**: 2026-05-18
@@ -10,7 +10,7 @@
 
 ### 1.1 产品定位与愿景
 
-AstroMind 是一款面向欧美市场的现代占星应用，将西方占星学与现代心理学（荣格分析心理学、认知行为疗法）深度融合，为用户提供个性化的自我探索与心理成长体验。
+AstrologyWiki 是一款面向欧美市场的现代占星应用，将西方占星学与现代心理学（荣格分析心理学、认知行为疗法）深度融合，为用户提供个性化的自我探索与心理成长体验。
 
 **核心理念**：Empowerment over Fatalism — 赋能而非宿命论。
 
@@ -26,7 +26,7 @@ AstroMind 是一款面向欧美市场的现代占星应用，将西方占星学�
 
 ### 1.3 核心价值主张
 
-1. **心理学导向的占星解读** — 不同于传统占星 App 的"预测"模式，AstroMind 聚焦"理解自我"
+1. **心理学导向的占星解读** — 不同于传统占星 App 的"预测"模式，AstrologyWiki 聚焦"理解自我"
 2. **AI 个性化体验** — 基于用户星盘数据，AI 生成深度个性化分析
 3. **多维度自我探索** — 涵盖本命盘、每日运势、关系合盘、认知日记等完整体系
 4. **专业知识库** — 30+ 经典占星书籍 + 百科词条，兼顾学习与参考
@@ -456,7 +456,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `subscription.unpaid` → 发送支付失败提醒邮件（Dunning，含更新支付方式链接）
 - `payment_intent.succeeded` → 发送积分购买收据邮件
 
-**邮件模板**: 所有交易邮件使用统一的 AstroMind 品牌模板（深色主题 + 金色品牌色），通过 `emailService` 集中管理：
+**邮件模板**: 所有交易邮件使用统一的 AstrologyWiki 品牌模板（深色主题 + 金色品牌色），通过 `emailService` 集中管理：
 - `sendPaymentReceipt()` — 支付收据（金额、描述、交易 ID、日期）
 - `sendPaymentFailedNotice()` — 支付失败通知
 - `sendCancellationConfirmation()` — 退订确认（含到期日期）

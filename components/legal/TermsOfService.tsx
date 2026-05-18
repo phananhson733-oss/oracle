@@ -3,9 +3,9 @@ import { Container, useTheme } from "../UIComponents";
 import { SEO } from "../SEO";
 import { useLangPath } from "../../hooks/useLangPath";
 
-const LAST_UPDATED = "February 26, 2026";
+const LAST_UPDATED = "April 10, 2026";
 const COMPANY_NAME = "AIGenesis Limited";
-const PRODUCT_NAME = "AstroMind";
+const PRODUCT_NAME = "AstrologyWiki";
 const SITE_URL = "https://www.astrologywiki.com";
 const CONTACT_EMAIL = "support@astrologywiki.com";
 
@@ -96,6 +96,25 @@ const TermsOfService: React.FC = () => {
             a parent or legal guardian who agrees to be bound by these Terms. By
             using the Service, you represent and warrant that you meet these
             eligibility requirements.
+          </p>
+        </div>
+
+        {/* 2.1 Intended Audience and Service Territory */}
+        <div className={sectionClass}>
+          <h2 className={`text-2xl font-semibold mb-4 ${headingClass}`}>
+            2.1 Intended Audience and Service Territory
+          </h2>
+          <p className={textClass}>
+            {PRODUCT_NAME} ({SITE_URL}) is designed for and marketed to users
+            located in North America, Europe, and other regions where Western
+            astrology is part of mainstream cultural interest. The Service is{" "}
+            <span className={strongClass}>not</span> directed at, or intended
+            for use by, residents of mainland China. We do not actively market,
+            promote, or localize the Service for the mainland China market, and
+            we do not host any production infrastructure within mainland China.
+            If you choose to access the Service from mainland China, you do so
+            on your own initiative and are solely responsible for compliance
+            with any applicable local laws and regulations.
           </p>
         </div>
 

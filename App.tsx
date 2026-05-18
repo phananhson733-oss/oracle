@@ -77,9 +77,9 @@ const GlobalSchema: React.FC = () => {
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     sameAs: [
-      "https://twitter.com/astromind",
-      "https://www.instagram.com/astromind",
-      "https://www.youtube.com/@astromind",
+      "https://twitter.com/astrologywiki",
+      "https://www.instagram.com/astrologywiki",
+      "https://www.youtube.com/@astrologywiki",
     ],
   };
 
@@ -481,7 +481,14 @@ const AppContent: React.FC = () => {
               className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0"
               onClick={() => navigate("/dashboard")}
             >
-              <span className="text-gold-500">☾</span> {t.app.name}
+              <img
+                src="/logo.png"
+                alt={t.app.name}
+                width={32}
+                height={32}
+                className="h-8 w-8 rounded-full object-cover"
+              />
+              {t.app.name}
             </div>
 
             {/* Navigation Links - Permanently Top Right */}

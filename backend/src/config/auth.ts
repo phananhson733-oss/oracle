@@ -8,7 +8,7 @@ export const JWT_CONFIG = {
   SECRET: process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production',
   ACCESS_TOKEN_EXPIRES_IN: '15m',  // 15 minutes
   REFRESH_TOKEN_EXPIRES_IN: '7d',   // 7 days
-  ISSUER: 'astromind-ai',
+  ISSUER: 'astrologywiki',
 };
 
 // Google OAuth Configuration

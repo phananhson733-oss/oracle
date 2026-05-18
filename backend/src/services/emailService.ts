@@ -97,7 +97,7 @@ class EmailService {
           <p style="color:#a0a0b8;font-size:13px;margin:0;">Please update your payment method to continue enjoying AstrologyWiki Pro features.</p>
         </div>
         <a href="https://www.astrologywiki.com/settings" style="display:inline-block;background:#d4af37;color:#0f0f1a;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;">Update Payment Method</a>
-        <p style="color:#666680;font-size:12px;margin:24px 0 0;">If you believe this is an error, please contact us at support@astromind.ai.</p>
+        <p style="color:#666680;font-size:12px;margin:24px 0 0;">If you believe this is an error, please contact us at support@astrologywiki.com.</p>
         `,
       ),
     });
@@ -120,7 +120,7 @@ class EmailService {
         </div>
         <p style="color:#a0a0b8;font-size:13px;margin:0 0 16px;">Changed your mind? You can resubscribe anytime.</p>
         <a href="https://www.astrologywiki.com/settings" style="display:inline-block;background:#d4af37;color:#0f0f1a;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;">Resubscribe</a>
-        <p style="color:#666680;font-size:12px;margin:24px 0 0;">We'd love to have you back. If you have any feedback, email us at support@astromind.ai.</p>
+        <p style="color:#666680;font-size:12px;margin:24px 0 0;">We'd love to have you back. If you have any feedback, email us at support@astrologywiki.com.</p>
         `,
       ),
     });

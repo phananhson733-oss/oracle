@@ -5,8 +5,8 @@ export const trackMoodAstrologyEn: WikiArticle = {
   slug: "track-mood-astrology",
   title: "How to Track Mood with Astrology: The Beginner's Guide (2026)",
   description:
-    "Learn how to track your mood with astrology by monitoring the Moon sign. A step-by-step guide to emotional transits and using your AstroMind Journal.",
-  author: "AstroMind Team",
+    "Learn how to track your mood with astrology by monitoring the Moon sign. A step-by-step guide to emotional transits and using your AstrologyWiki Journal.",
+  author: "AstrologyWiki Team",
   date: "2025-05-22",
   schema: "Article",
   lang: "en",
@@ -45,7 +45,7 @@ This is your emotional anchor. You can understand this concept further in our gu
 
 ### Step 2: Check Today's Moon Sign
 
-Use the **AstroMind Dashboard** to see where the Moon is right now. Remember, the energy shifts every couple of days.
+Use the **AstrologyWiki Dashboard** to see where the Moon is right now. Remember, the energy shifts every couple of days.
 
 > **Tip:** Log in to your [Dashboard](/dashboard) for real-time transits.
 
@@ -97,7 +97,7 @@ export const trackMoodAstrologyZh: WikiArticle = {
   title: "如何用占星追踪情绪：入门指南（2026）",
   description:
     "学习如何通过监测月亮星座来追踪你的情绪。情绪行运的逐步指南，以及如何使用占星日记。",
-  author: "AstroMind 团队",
+  author: "AstrologyWiki 团队",
   date: "2025-05-22",
   schema: "Article",
   lang: "zh",
@@ -136,7 +136,7 @@ export const trackMoodAstrologyZh: WikiArticle = {
 
 ### 第二步：查看今天的月亮星座
 
-使用**AstroMind 仪表板**查看月亮现在的位置。记住，能量每隔几天就会转变。
+使用**AstrologyWiki 仪表板**查看月亮现在的位置。记住，能量每隔几天就会转变。
 
 > **提示：** 登录你的[仪表板](/dashboard)获取实时行运信息。
 

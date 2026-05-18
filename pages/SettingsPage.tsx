@@ -43,7 +43,7 @@ const DangerZoneSection: React.FC<{ user: any; language: string; theme: string }
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'astromind-data-export.json';
+            a.download = 'astrologywiki-data-export.json';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

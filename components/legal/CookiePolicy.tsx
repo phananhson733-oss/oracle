@@ -5,7 +5,7 @@ import { useLangPath } from "../../hooks/useLangPath";
 
 const LAST_UPDATED = "February 26, 2026";
 const COMPANY_NAME = "AstrologyWiki";
-const PRODUCT_NAME = "AstroMind";
+const PRODUCT_NAME = "AstrologyWiki";
 const SITE_URL = "https://www.astrologywiki.com";
 const CONTACT_EMAIL = "support@astrologywiki.com";
 

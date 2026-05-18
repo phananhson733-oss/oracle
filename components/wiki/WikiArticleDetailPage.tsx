@@ -462,7 +462,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       },
       publisher: {
         "@type": "Organization",
-        name: "AstroMind",
+        name: "AstrologyWiki",
         logo: {
           "@type": "ImageObject",
           url: `${siteUrl}/logo.png`,

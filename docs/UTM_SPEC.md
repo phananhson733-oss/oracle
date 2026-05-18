@@ -93,11 +93,11 @@ UTM 参数用于标识流量来源，帮助分析不同营销渠道的表现。�
 
 | 场景 | 完整 URL |
 |------|----------|
-| Facebook 推广 | `https://astromind.ai?utm_source=facebook&utm_medium=social&utm_campaign=new-user-signup-2026q1` |
-| Google Ads | `https.ai?utm_source=google&utm_medium=c://astromindpc&utm_campaign=astrology-app-promotion&utm_term=free+astrology+reading` |
-| 邮件营销 | `https://astromind.ai?utm_source=newsletter&utm_medium=email&utm_campaign=weekly-update-2026-01` |
-| 小红书笔记 | `https://astromind.ai?utm_source=xiaohongshu&utm_medium=social&utm_campaign=wiki-content-promo` |
-| A/B 测试 | `https://astromind.ai?utm_source=twitter&utm_medium=cpc&utm_campaign=pricing-test-variant-b&utm_content=cta_green` |
+| Facebook 推广 | `https://astrologywiki.com?utm_source=facebook&utm_medium=social&utm_campaign=new-user-signup-2026q1` |
+| Google Ads | `https.ai?utm_source=google&utm_medium=c://astrologywikipc&utm_campaign=astrology-app-promotion&utm_term=free+astrology+reading` |
+| 邮件营销 | `https://astrologywiki.com?utm_source=newsletter&utm_medium=email&utm_campaign=weekly-update-2026-01` |
+| 小红书笔记 | `https://astrologywiki.com?utm_source=xiaohongshu&utm_medium=social&utm_campaign=wiki-content-promo` |
+| A/B 测试 | `https://astrologywiki.com?utm_source=twitter&utm_medium=cpc&utm_campaign=pricing-test-variant-b&utm_content=cta_green` |
 
 ## 最佳实践
 

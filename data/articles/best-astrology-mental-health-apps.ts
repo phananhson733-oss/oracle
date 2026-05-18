@@ -6,7 +6,7 @@ export const bestAstrologyAppsEn: WikiArticle = {
   title: "The 5 Best Astrology Apps for Mental Health & Journaling (2026)",
   description:
     "We tested the top astrology apps (Co-Star, The Pattern, CHANI) to find which ones actually support mental health vs. causing anxiety. Here is the verdict.",
-  author: "AstroMind Team",
+  author: "AstrologyWiki Team",
   date: "2025-07-01",
   schema: "Article",
   lang: "en",
@@ -33,7 +33,7 @@ If you are looking for a tool to support your mental health—not just predict y
 | **The Pattern** | Deep Timing | ⭐⭐⭐ | Free/Premium |
 | **CHANI** | Affirmations | ⭐⭐⭐⭐⭐ | $12/month |
 | **TimePassages** | Serious Learning | ⭐⭐⭐ | $10 one-time |
-| **AstroMind** | CBT Journaling | ⭐⭐⭐⭐⭐ | Free |
+| **AstrologyWiki** | CBT Journaling | ⭐⭐⭐⭐⭐ | Free |
 
 ---
 
@@ -103,13 +103,13 @@ This is the "pro" tool in your pocket. It gives you the raw data of transits and
 
 ---
 
-## 5. AstroMind (Web)
+## 5. AstrologyWiki (Web)
 
 **Best For:** Mental Health, CBT Journaling & Mood Tracking.
 
 ### The Honest Review
 
-AstroMind takes a different approach. It is not an "app" you download to doom-scroll; it is a web-based tool designed for active work.
+AstrologyWiki takes a different approach. It is not an "app" you download to doom-scroll; it is a web-based tool designed for active work.
 
 - **The Philosophy:** Instead of predicting your day, it asks: "How are you handling today's energy?"
 - **The Core Feature:** It integrates CBT (Cognitive Behavioral Therapy) principles with transit tracking. You can log your mood (1-10) alongside the [Moon](/wiki/moon) sign to spot your personal patterns.
@@ -128,7 +128,7 @@ If you want to move from "passive consumption" (reading horoscopes) to "active h
 Passive consumption of astrology can create dependency. Active journaling builds agency.
 
 - If you want to know "what will happen," download The Pattern.
-- If you want to know "how to handle it," use AstroMind.
+- If you want to know "how to handle it," use AstrologyWiki.
 
 Ready to start? Check out our guide on [How to Track Your Mood with Astrology](/wiki/track-mood-astrology) to begin your practice today.`,
 };
@@ -138,7 +138,7 @@ export const bestAstrologyAppsZh: WikiArticle = {
   title: "2026年5款最佳心理健康与日记占星应用",
   description:
     "我们测试了顶级占星应用（Co-Star、The Pattern、CHANI），找出哪些真正支持心理健康，哪些会引发焦虑。这是我们的结论。",
-  author: "AstroMind 团队",
+  author: "AstrologyWiki 团队",
   date: "2025-07-01",
   schema: "Article",
   lang: "zh",
@@ -165,7 +165,7 @@ export const bestAstrologyAppsZh: WikiArticle = {
 | **The Pattern** | 深度时机 | ⭐⭐⭐ | 免费/付费 |
 | **CHANI** | 肯定语 | ⭐⭐⭐⭐⭐ | $12/月 |
 | **TimePassages** | 严肃学习 | ⭐⭐⭐ | $10一次性 |
-| **AstroMind** | CBT日记 | ⭐⭐⭐⭐⭐ | 免费 |
+| **AstrologyWiki** | CBT日记 | ⭐⭐⭐⭐⭐ | 免费 |
 
 ---
 
@@ -235,13 +235,13 @@ Co-Star 普及了极简、AI驱动的占星美学。它擅长与朋友比较星�
 
 ---
 
-## 5. AstroMind（网页版）
+## 5. AstrologyWiki（网页版）
 
 **最适合：** 心理健康、CBT日记和情绪追踪。
 
 ### 真实评测
 
-AstroMind采用不同的方法。它不是你下载来无限刷屏的"应用"；它是一个为积极工作而设计的网页工具。
+AstrologyWiki采用不同的方法。它不是你下载来无限刷屏的"应用"；它是一个为积极工作而设计的网页工具。
 
 - **理念：** 不是预测你的一天，而是问："你如何应对今天的能量？"
 - **核心功能：** 它将CBT（认知行为疗法）原则与行运追踪整合。你可以记录你的情绪（1-10分）以及[月亮](/wiki/moon)星座，以发现你的个人模式。
@@ -260,7 +260,7 @@ AstroMind采用不同的方法。它不是你下载来无限刷屏的"应用"；
 被动消费占星术可能产生依赖。主动日记建立主动性。
 
 - 如果你想知道"会发生什么"，下载 The Pattern。
-- 如果你想知道"如何应对"，使用AstroMind。
+- 如果你想知道"如何应对"，使用AstrologyWiki。
 
 准备好开始了吗？查看我们的[如何用占星追踪情绪](/wiki/track-mood-astrology)指南，今天就开始你的练习。`,
 };
