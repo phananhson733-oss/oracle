@@ -875,8 +875,8 @@ export const TRANSLATIONS = {
       placeholder_city: "e.g. New York, London, Tokyo",
     },
     nav: {
-      dashboard: "Birth Chart",
-      forecast: "Transit Chart",
+      dashboard: "Birth",
+      forecast: "Transit",
       us: "Synastry",
       oracle: "Ask",
       journal: "Journal",
