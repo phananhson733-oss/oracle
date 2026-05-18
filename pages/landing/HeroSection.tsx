@@ -74,24 +74,36 @@ const HeroSection: React.FC = () => {
           {landing.hero_kicker || "Astrology · Psychology · Self-Knowledge"}
         </p>
 
-        {/* Headline — Cormorant Garamond, editorial serif poster scale */}
+        {/* Headline — Cormorant Garamond, editorial serif poster scale.
+            Visual layout splits the title across two block lines with an italic
+            gold accent on the emphasis word. The two <span class="block"> would
+            concatenate without whitespace in the a11y tree ("Astrology meetsmodern
+            psychology"), so we expose a clean aria-label for assistive tech and
+            mark all visual fragments aria-hidden. */}
         <h1
           id="hero-heading"
+          aria-label={
+            [
+              landing.hero_title_part1,
+              landing.hero_title_part2,
+              landing.hero_emphasis,
+            ]
+              .filter(Boolean)
+              .join(" ") + (landing.hero_title_part3 ?? ".")
+          }
           className={`font-serif font-semibold leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
-          <span className="block">
+          <span aria-hidden="true" className="block">
             {landing.hero_title_part1 || "Astrology meets"}
           </span>
-          <span className="block">
+          <span aria-hidden="true" className="block">
             {landing.hero_title_part2 || "modern"}{" "}
             <span className="text-accent italic">
               {landing.hero_emphasis || "psychology"}
             </span>
-            <span aria-hidden="true">
-              {landing.hero_title_part3 || "."}
-            </span>
+            {landing.hero_title_part3 || "."}
           </span>
         </h1>
 
