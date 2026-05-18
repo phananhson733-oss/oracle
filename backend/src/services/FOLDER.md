@@ -14,7 +14,8 @@
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 services 目录结构与文件清单。
 - ai.ts｜地位：AI 服务｜功能：DeepSeek 调用、缓存与 Markdown/JSON 解析。
-- ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据。
+- ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。
+- ephemeris.test.ts｜地位：星历服务测试｜功能：验证本命缓存键的确定性、字段敏感性与敏感字段脱敏。
 - geocoding.ts｜地位：地理服务｜功能：城市搜索与坐标解析。
 
 近期更新
@@ -38,3 +39,4 @@
 - 合盘成长焦点 mock 增加 sweet_spots 与 friction_points 字段。
 - 行运相位计算加入 ASC 与北交点，并在星历异常时回退小行星位置。
 - 星历服务新增行运缓存与紧凑摘要构建，减少重复计算与 prompt 体量。
+- 本命缓存键改为 SHA-256 摘要，规避明文敏感字段；新增 ephemeris.test.ts 覆盖确定性与脱敏断言。

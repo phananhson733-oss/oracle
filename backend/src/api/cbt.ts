@@ -1,8 +1,8 @@
-// INPUT: CBT API 路由。
-// OUTPUT: 导出 cbt 路由（含 AI 分析、紧凑摘要与 Server-Timing）。
+// INPUT: CBT API 路由（含 LLM 调用前的危机关键词短路检测）。
+// OUTPUT: 导出 cbt 路由（含 AI 分析、紧凑摘要、Server-Timing 与 crisis_detected 分支）。
 // POS: CBT 端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import { Router } from "express";
+import { Router, type Request, type Response } from "express";
 import { performance } from "perf_hooks";
 import type {
   BirthInput,
@@ -21,8 +21,45 @@ import {
   LocationResolutionError,
   resolveLocation,
 } from "../services/geocoding.js";
+import {
+  buildCrisisResponse,
+  detectCrisis,
+  extractFreeText,
+  resolveRegion,
+  trackCrisisDetected,
+} from "../services/crisis-detector.js";
 
 export const cbtRouter = Router();
+
+/**
+ * LLM 调用前的危机短路。命中时直接返回 HTTP 200 + crisis_detected 响应，并发送脱敏遥测。
+ *
+ * Dev-only 旁路：`NODE_ENV !== 'production'` 且 `?override_crisis_check=true`
+ * 时跳过检测，便于 QA 测试包含关键词的良性文本。生产环境无论查询参数如何都不绕过。
+ *
+ * @returns true 表示已短路返回（调用方应 return）；false 表示放行进入主流程。
+ */
+function shortCircuitOnCrisis(
+  req: Request,
+  res: Response,
+  lang: Language,
+  endpoint: string,
+  startedAt: number,
+): boolean {
+  const isDev = process.env.NODE_ENV !== "production";
+  const overrideRequested = req.query?.override_crisis_check === "true";
+  if (isDev && overrideRequested) return false;
+
+  const detection = detectCrisis(extractFreeText(req.body));
+  if (!detection.hit) return false;
+
+  const region = resolveRegion(req, lang);
+  trackCrisisDetected({ region, lang, endpoint });
+  const elapsed = performance.now() - startedAt;
+  res.setHeader("Server-Timing", `crisis;dur=${elapsed.toFixed(2)}`);
+  res.status(200).json(buildCrisisResponse(region, lang));
+  return true;
+}
 
 // CBT 记录保留 3 个月（秒）
 const CBT_RETENTION_TTL = 90 * 24 * 60 * 60;
@@ -100,6 +137,15 @@ cbtRouter.post("/analysis", async (req, res) => {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === "en" ? "en" : "zh";
+
+    // Crisis short-circuit: must run BEFORE birth parsing / LLM call.
+    // Hits do not persist to cbt:records and do not invoke generateAIContent.
+    if (
+      shortCircuitOnCrisis(req, res, lang, "/api/cbt/analysis", requestStart)
+    ) {
+      return;
+    }
+
     const birth = await parseBirthInput(req.body);
     const {
       situation,
@@ -162,6 +208,19 @@ cbtRouter.post("/aggregate-analysis", async (req, res) => {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === "en" ? "en" : "zh";
+
+    if (
+      shortCircuitOnCrisis(
+        req,
+        res,
+        lang,
+        "/api/cbt/aggregate-analysis",
+        requestStart,
+      )
+    ) {
+      return;
+    }
+
     const birth = await parseBirthInput(req.body);
     const { period, somatic_stats, root_stats, mood_stats, competence_stats } =
       req.body;
@@ -212,6 +271,19 @@ cbtRouter.post("/somatic-analysis", async (req, res) => {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === "en" ? "en" : "zh";
+
+    if (
+      shortCircuitOnCrisis(
+        req,
+        res,
+        lang,
+        "/api/cbt/somatic-analysis",
+        requestStart,
+      )
+    ) {
+      return;
+    }
+
     const birth = await parseBirthInput(req.body);
     const { period, somatic_stats } = req.body;
 
@@ -258,6 +330,19 @@ cbtRouter.post("/root-analysis", async (req, res) => {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === "en" ? "en" : "zh";
+
+    if (
+      shortCircuitOnCrisis(
+        req,
+        res,
+        lang,
+        "/api/cbt/root-analysis",
+        requestStart,
+      )
+    ) {
+      return;
+    }
+
     const birth = await parseBirthInput(req.body);
     const { period, root_stats } = req.body;
 
@@ -304,6 +389,19 @@ cbtRouter.post("/mood-analysis", async (req, res) => {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === "en" ? "en" : "zh";
+
+    if (
+      shortCircuitOnCrisis(
+        req,
+        res,
+        lang,
+        "/api/cbt/mood-analysis",
+        requestStart,
+      )
+    ) {
+      return;
+    }
+
     const birth = await parseBirthInput(req.body);
     const { period, mood_stats } = req.body;
 
@@ -350,6 +448,19 @@ cbtRouter.post("/competence-analysis", async (req, res) => {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
     const lang: Language = langInput === "en" ? "en" : "zh";
+
+    if (
+      shortCircuitOnCrisis(
+        req,
+        res,
+        lang,
+        "/api/cbt/competence-analysis",
+        requestStart,
+      )
+    ) {
+      return;
+    }
+
     const birth = await parseBirthInput(req.body);
     const { period, competence_stats } = req.body;
 
