@@ -2397,6 +2397,88 @@ export const TRANSLATIONS = {
         error: "The stars are cloudy. Please check connection or try again.",
       },
     },
+    landing: {
+      // Hero
+      hero_kicker: "Astrology · Psychology · Self-Knowledge",
+      hero_title_part1: "Astrology meets",
+      hero_title_part2: "modern",
+      hero_emphasis: "psychology",
+      hero_title_part3: ".",
+      hero_subtitle:
+        "Birth charts, CBT journal, AI guidance. Science-grounded. No mysticism.",
+      hero_primary_cta: "Try Free Birth Chart",
+      hero_secondary_cta: "Calculate my chart",
+      trust_line: "Used by readers in 50+ countries",
+      // Birth chart section
+      birth_chart_kicker: "Free tool · No sign-up required",
+      birth_chart_title: "Calculate your birth chart in 30 seconds.",
+      birth_chart_subtitle:
+        "Real Swiss Ephemeris calculations. Get your Sun, Moon, Rising, and full planetary placements.",
+      birth_chart_cta: "Generate my chart",
+      // Today / cosmic weather
+      today_kicker: "Today's Sky",
+      today_title: "Where the planets are right now.",
+      today_subtitle: "Universal transits — not personalized fortune.",
+      today_cta: "See your personal forecast",
+      // Tools grid
+      tools_kicker: "Core Tools",
+      tools_title: "A small set of sharp instruments.",
+      tools_subtitle:
+        "Not 50 features. Three tools that actually help you understand yourself.",
+      tools_saturn_title: "Saturn Return Calculator",
+      tools_saturn_desc:
+        "Pinpoint your Saturn return window and what the cycle is really asking of you.",
+      tools_synastry_title: "Synastry",
+      tools_synastry_desc:
+        "Compare two charts to see how two psyches actually meet — beyond compatibility scores.",
+      tools_ask_title: "Ask Oracle",
+      tools_ask_desc:
+        "Ask any astrology question. Get a grounded, context-aware reading from your chart.",
+      tools_open: "Open",
+      // Wiki hub
+      wiki_kicker: "Learn the language of astrology",
+      wiki_title: "A working library, not a horoscope feed.",
+      wiki_subtitle:
+        "119 in-depth articles covering planets, signs, houses, aspects, and the classics.",
+      wiki_browse_all: "Browse all 119 articles",
+      wiki_cat_planets: "Planets",
+      wiki_cat_signs: "Signs",
+      wiki_cat_houses: "Houses",
+      wiki_cat_aspects: "Aspects",
+      // Synastry (own section, deeper than tool tile)
+      synastry_kicker: "Two Charts",
+      synastry_title: "What happens when two psyches meet.",
+      synastry_subtitle:
+        "Synastry maps where two people resonate, miss each other, and grow. Not compatibility theater.",
+      synastry_cta: "Start a chart comparison",
+      // Ask Oracle (own section)
+      ask_kicker: "Ask Oracle",
+      ask_title: "A second opinion from the cosmos.",
+      ask_subtitle:
+        "Bring a real question — career, love, a stuck pattern. Get a reading grounded in your actual chart, not generic horoscope copy.",
+      ask_cta: "Ask a question",
+      // Social proof / metric band
+      social_proof_articles: "in-depth articles",
+      social_proof_countries: "countries reached",
+      social_proof_psychology: "psychology-grounded",
+      // Newsletter
+      newsletter_kicker: "Newsletter",
+      newsletter_title: "Weekly cosmic insights, no spam.",
+      newsletter_subtitle:
+        "A short letter on the week's transits and one psychology lens to use them with. Unsubscribe anytime.",
+      newsletter_placeholder: "your@email.com",
+      newsletter_button: "Subscribe",
+      newsletter_success: "You're on the list. Watch your inbox.",
+      newsletter_existed:
+        "You're already on the list — we'll keep the cosmos coming.",
+      newsletter_error: "Could not subscribe. Please try again.",
+      // Footer
+      footer_tagline: "Astrology meets modern psychology.",
+      footer_privacy_note: "Privacy-first. We never sell your birth data.",
+      footer_links_product: "Product",
+      footer_links_resources: "Resources",
+      footer_links_legal: "Legal",
+    },
   },
   zh: {
     common: {
@@ -3950,6 +4032,83 @@ export const TRANSLATIONS = {
         advice: "行动建议",
         error: "星象混沌不清，请检查网络连接或重试。",
       },
+    },
+    landing: {
+      // Hero
+      hero_kicker: "占星 · 心理学 · 自我认知",
+      hero_title_part1: "占星，遇见",
+      hero_title_part2: "现代",
+      hero_emphasis: "心理学",
+      hero_title_part3: "。",
+      hero_subtitle: "本命星盘、CBT 日记、AI 解读，皆有科学依据，不靠玄学。",
+      hero_primary_cta: "免费生成本命盘",
+      hero_secondary_cta: "立即计算我的星盘",
+      trust_line: "全球 50+ 国家读者正在使用",
+      // Birth chart section
+      birth_chart_kicker: "免费工具 · 无需注册",
+      birth_chart_title: "30 秒内算出你的本命星盘。",
+      birth_chart_subtitle:
+        "真实瑞士星历计算。获取你的太阳、月亮、上升以及完整行星位置。",
+      birth_chart_cta: "生成我的星盘",
+      // Today / cosmic weather
+      today_kicker: "今日天象",
+      today_title: "此刻行星的位置。",
+      today_subtitle: "普世天象 — 不是个人化的运势预测。",
+      today_cta: "查看你的专属运势",
+      // Tools grid
+      tools_kicker: "核心工具",
+      tools_title: "一组少而锋利的工具。",
+      tools_subtitle: "不是 50 个功能，而是三件真正帮你了解自己的工具。",
+      tools_saturn_title: "土星回归计算器",
+      tools_saturn_desc:
+        "精确定位你的土星回归窗口，看清这场周期真正在问你什么。",
+      tools_synastry_title: "合盘",
+      tools_synastry_desc:
+        "比较两张星盘，看见两个心灵如何真正相遇 — 超越简单的「合不合」。",
+      tools_ask_title: "星象问答",
+      tools_ask_desc: "提出任何占星问题，获得基于你本人星盘的深度解读。",
+      tools_open: "进入",
+      // Wiki hub
+      wiki_kicker: "学习占星的语言",
+      wiki_title: "一座可用的图书馆，而非每日运势流。",
+      wiki_subtitle: "119 篇深度文章，涵盖行星、星座、宫位、相位与经典。",
+      wiki_browse_all: "浏览全部 119 篇",
+      wiki_cat_planets: "行星",
+      wiki_cat_signs: "星座",
+      wiki_cat_houses: "宫位",
+      wiki_cat_aspects: "相位",
+      // Synastry section
+      synastry_kicker: "两张星盘",
+      synastry_title: "两个心灵相遇时究竟发生了什么。",
+      synastry_subtitle:
+        "合盘呈现两人共鸣、错过与彼此成长之处。不是「配对秀」。",
+      synastry_cta: "开始一次合盘",
+      // Ask section
+      ask_kicker: "星象问答",
+      ask_title: "来自宇宙的第二意见。",
+      ask_subtitle:
+        "带着真实的问题来 — 事业、关系、卡住的模式。获得基于你本命星盘的解读，而非通用运势文案。",
+      ask_cta: "提一个问题",
+      // Social proof
+      social_proof_articles: "篇深度文章",
+      social_proof_countries: "个国家覆盖",
+      social_proof_psychology: "心理学根基",
+      // Newsletter
+      newsletter_kicker: "周刊",
+      newsletter_title: "每周宇宙洞察，绝无垃圾信息。",
+      newsletter_subtitle:
+        "一封短信讲清本周的关键天象，以及一个用得上的心理学视角。随时可退订。",
+      newsletter_placeholder: "your@email.com",
+      newsletter_button: "订阅",
+      newsletter_success: "已加入名单，请留意你的收件箱。",
+      newsletter_existed: "你已在名单中 — 宇宙的消息会持续送达。",
+      newsletter_error: "订阅失败，请稍后再试。",
+      // Footer
+      footer_tagline: "占星，遇见现代心理学。",
+      footer_privacy_note: "隐私优先，我们绝不出售你的出生数据。",
+      footer_links_product: "产品",
+      footer_links_resources: "资源",
+      footer_links_legal: "法律",
     },
   },
 };
