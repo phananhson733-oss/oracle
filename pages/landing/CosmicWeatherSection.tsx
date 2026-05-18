@@ -43,7 +43,9 @@ const GLYPH_FALLBACK: Record<string, string> = {
 };
 
 const getGlyph = (name: string): string => {
-  const meta = (TECH_DATA?.PLANETS as Record<string, { glyph?: string }> | undefined)?.[name];
+  const meta = (
+    TECH_DATA?.PLANETS as Record<string, { glyph?: string }> | undefined
+  )?.[name];
   return meta?.glyph || GLYPH_FALLBACK[name] || "∗";
 };
 
@@ -114,7 +116,9 @@ const CosmicWeatherSection: React.FC = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <p className={`mb-4 text-xs uppercase tracking-[0.18em] ${subtleColor}`}>
+        <p
+          className={`mb-4 text-xs uppercase tracking-[0.18em] ${subtleColor}`}
+        >
           {landing.today_kicker || "Today's Sky"}
         </p>
         <h2
@@ -181,7 +185,7 @@ const CosmicWeatherSection: React.FC = () => {
                   {p.retrograde && (
                     <span
                       className={`ml-2 text-xs uppercase tracking-wider ${subtleColor}`}
-                      aria-label="retrograde"
+                      aria-label={landing.today_retrograde_aria || "Retrograde"}
                     >
                       {landing.today_retrograde || "Rx"}
                     </span>

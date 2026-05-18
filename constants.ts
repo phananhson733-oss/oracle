@@ -2446,6 +2446,8 @@ export const TRANSLATIONS = {
       today_error: "The sky is shy today.",
       today_retry: "Try again",
       today_retrograde: "Rx",
+      today_retrograde_aria: "Retrograde",
+      birth_chart_loading_chart: "Loading chart…",
       // Tools grid
       tools_kicker: "Core Tools",
       tools_title: "A small set of sharp instruments.",
@@ -4147,6 +4149,8 @@ export const TRANSLATIONS = {
       today_error: "今天的天空有点害羞。",
       today_retry: "重试",
       today_retrograde: "Rx",
+      today_retrograde_aria: "逆行",
+      birth_chart_loading_chart: "正在加载星盘…",
       // Tools grid
       tools_kicker: "核心工具",
       tools_title: "一组少而锋利的工具。",

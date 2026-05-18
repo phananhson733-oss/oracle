@@ -21,6 +21,7 @@ const AstroChart = lazy(() =>
 );
 import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
+import { getLandingUtm } from "../../services/landingUtm";
 import { TECH_DATA } from "../../constants";
 import type {
   AccuracyLevel,
@@ -200,19 +201,41 @@ const BirthChartSection: React.FC = () => {
         });
         setFacts(chart);
         setProfile(transientProfile);
+        trackEvent("birth_chart_submit_success", {
+          location: "landing_v2_birth_chart_submit",
+          ...getLandingUtm(),
+        });
         window.requestAnimationFrame(() => {
           const el = document.getElementById("birth-chart-result");
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
         });
       } catch (err: unknown) {
         const { status, code } = readErrorCode(err);
-        if (status === 400 && code === "LOCATION_UNRESOLVED")
-          setErrorKind("location");
-        else if (status === 503 || code === "GEOCODING_SERVICE_UNAVAILABLE")
-          setErrorKind("service");
-        else setErrorKind("generic");
+        const kind: "location" | "service" | "generic" =
+          status === 400 && code === "LOCATION_UNRESOLVED"
+            ? "location"
+            : status === 503 || code === "GEOCODING_SERVICE_UNAVAILABLE"
+              ? "service"
+              : "generic";
+        setErrorKind(kind);
         setFacts(null);
         setProfile(null);
+        trackEvent("birth_chart_submit_error", {
+          location: "landing_v2_birth_chart_submit",
+          error_kind: kind,
+          status_code: typeof status === "number" ? status : 0,
+          error_code: code ?? "unknown",
+        });
+        // Sanitized dev-side log for diagnosis. We intentionally drop the
+        // err.message (upstream libs may embed user input — birth city is
+        // the canonical leak) and log only the bucket + status + code.
+        // 隐私红线 #3.
+        if (kind === "generic") {
+          // eslint-disable-next-line no-console
+          console.warn(
+            `[BirthChart] submit failed kind=${kind} status=${status ?? "?"} code=${code ?? "?"}`,
+          );
+        }
       } finally {
         setSubmitting(false);
       }
@@ -478,7 +501,7 @@ const BirthChartSection: React.FC = () => {
                       aria-busy="true"
                       aria-live="polite"
                     >
-                      Loading chart…
+                      {landing.birth_chart_loading_chart || "Loading chart…"}
                     </div>
                   }
                 >
