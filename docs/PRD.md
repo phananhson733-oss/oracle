@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.5
+> **Version**: 2.6
 > **Last Updated**: 2026-05-18
 > **Status**: Living Document — synced with codebase
 
@@ -334,6 +334,51 @@ AI 生成的深度心理分析，每个维度独立解读：
 - 添加至 `sitemap.xml`
 - `isPublicRoute` 中注册，不输出 `noindex,nofollow`
 
+### 2.13 Marketing Landing Page v2 (Staging)
+
+**路由**: `/landing-v2` (前端 SPA) · 静态 SEO 镜像 `/landing-v2/en/`、`/landing-v2/zh/`
+
+模块化营销 landing page，作为新版首页的 staging 环境。当前 `/` 仍重定向至 `/:lang/wiki` 保留 SEO 收益；待 v2 在 staging 验证完成后再切换为正式首页。
+
+**设计依据**：`~/.gstack/projects/xdawayer-oracle/wzb-main-design-20260518-161110.md`（design + eng review 已 APPROVED）
+
+**信息架构（10 模块自上而下）**：
+
+| # | 模块 | 用途 |
+|---|------|------|
+| 1 | Nav | 复用 `components/Header.tsx`，logo + Wiki/Pricing/Sign In + Get Started pill |
+| 2 | Hero | Editorial serif poster：H1 "Astrology meets **modern psychology.**" + subtitle + 双 CTA（Try Free Birth Chart / Watch 90-second tour） |
+| 3 | Inline Birth Chart Tool | 公开免费星盘计算器；调用 `GET /api/natal/chart`（无 LLM、无登录），结果区下方 CTA "Sign up for AI reading" |
+| 4 | Today's Sky | 通用版当日行星位置（universal transits），后端日级缓存，无 LLM；CTA "See your personal forecast" |
+| 5 | Core Tools Grid | 3 卡（Saturn Return Calculator / Synastry / Ask Oracle）；Synthetica 推迟到 v1.1 |
+| 6 | CBT Journal Showcase | 左截图右 3 行 bullets + CTA "Start your first entry — Free trial" |
+| 7 | Wiki Hub | 6-8 篇 featured 文章 + 4 个分类胶囊（Planets / Signs / Houses / Aspects）+ `<head>` 内 ItemList JSON-LD 指向全部 119 wiki URL |
+| 8 | Social Proof (metric) | "**119** articles · **N** charts cast · **N** journal entries this month"；不使用假证言 |
+| 9 | Newsletter Signup | 邮箱单字段 + honeypot 反垃圾，调用 `POST /api/newsletter` |
+| 10 | Footer | 复用 `components/Footer.tsx` |
+
+**SEO 策略**：
+- `scripts/generate-seo-pages.mjs` 输出 `/landing-v2/en/index.html` 与 `/landing-v2/zh/index.html`，含完整 hero 文案明文 HTML、`<title>`、`<meta description>`、Open Graph + Twitter Card meta、canonical、hreflang（en/zh/x-default）、JSON-LD（`WebSite` + `SoftwareApplication`）
+- 静态 HTML 提供 noscript-friendly 内容，确保爬虫即使在 React 水合前也能抓到核心文本与结构化数据
+- `public/sitemap.xml` 中以 `priority=0.9` `changefreq=weekly` 注册两条 URL
+- 静态文件路径与 Vercel 静态优先匹配，避免被 SPA fallback 吞掉
+
+**i18n**：
+- 文案双语，英文为主、中文为辅；新增翻译键命名空间 `t.landing.*`
+- Hero 英文版（design doc 锁定，不得改写）：
+  - H1: "Astrology meets modern psychology."（"psychology" 渲染为 accent 色）
+  - Sub: "Birth charts, CBT journal, AI guidance. Science-grounded. No mysticism."
+  - Primary CTA: "Try Free Birth Chart →"
+  - Secondary CTA: "Watch the 90-second tour"
+
+**已登录用户行为**：访问 `/` 时 `<Navigate to="/dashboard"/>`（不看营销页）；`/landing-v2` 始终可访问以便老用户预览新首页。
+
+**相关 API**：
+- `GET /api/natal/chart` — InlineBirthChartTool 调用
+- `POST /api/newsletter` — 模块 9 邮件订阅
+
+**v1 已 deferred 至 v1.1+ 的模块**：Synthetica 公开 preview、Today's 个性化版本、真实用户证言。
+
 ---
 
 ## 3. 商业模式 / Business Model
@@ -497,12 +542,15 @@ AI 生成的深度心理分析，每个维度独立解读：
 ├── types.ts                    # 全局类型定义
 ├── index.tsx                   # React 入口
 ├── index.css                   # 全局样式
+├── pages/                      # 顶层路由页面组件
+│   └── landing/                # Landing v2 营销页子模块（NewLandingPage 容器）
 ├── components/                 # React UI 组件
 │   ├── UIComponents.tsx        # 基础 UI + LanguageContext
 │   ├── cbt/                    # CBT 日记模块
 │   ├── wiki/                   # Wiki 知识库模块
 │   ├── reports/                # 报告系统模块
 │   ├── auth/                   # 认证 + 支付相关组件
+│   ├── landing/                # Landing v2 模块化区块（Hero / InlineBirthChartTool / CoreToolsGrid / WikiHub / NewsletterSignup 等）
 │   ├── design-tokens.ts        # 设计令牌
 │   └── ColorSystemDemo.tsx     # 颜色系统演示
 ├── services/                   # 前端服务层
@@ -719,6 +767,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | GET | `/api/astro/events` | 天象事件 | — |
 | GET | `/api/user/status` | 用户状态 | Optional |
 | GET | `/api/config` | 当前支付提供商配置 | — |
+| POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9 使用） | — |
 | GET | `/health` | 健康检查 | — |
 
 #### GM 调试 API (开发环境)
@@ -936,7 +985,13 @@ JWT Token 结构:
 
 **Vercel 路由配置**:
 - `/api/*` → `backend/src/index.ts` (Serverless Function)
+- `/landing-v2/{en,zh}/index.html` → 静态预渲染 HTML（SEO 镜像，由 `scripts/generate-seo-pages.mjs` 生成）
 - `/*` → `index.html` (SPA Fallback)
+
+**Landing v2 上线策略**：
+- `/landing-v2` 是新版营销首页的 staging 路由，**v2.6 阶段仅作灰度验证**
+- 根路径 `/` 仍执行 `<Navigate to="/${lang}/wiki" replace />`，保留当前 Wiki-as-homepage 的 SEO 收益
+- 待 v2 通过 GA4 弹出率 / Birth Chart 完成率 / Newsletter 订阅等指标验证后，再切换根路径至 NewLandingPage 并将 `/landing-v2` 设为 301 重定向
 
 ---
 
