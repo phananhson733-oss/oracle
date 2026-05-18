@@ -1,5 +1,5 @@
 // INPUT: Newsletter subscription API route.
-// OUTPUT: 导出 newsletter 路由（含蜜罐反爬、IP 限流、Supabase 持久化）。
+// OUTPUT: 导出 newsletter 路由（含蜜罐反爬、IP 限流、Supabase 持久化、8s upstream timeout）。
 // POS: 落地页 v2 邮件订阅端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { Router, Request, Response } from "express";
@@ -7,6 +7,35 @@ import rateLimit from "express-rate-limit";
 import { supabase, isSupabaseConfigured } from "../db/supabase.js";
 
 export const newsletterRouter = Router();
+
+// Hard upstream timeout for the Supabase insert. Without this, a hung PostgREST
+// response would keep the Express handler open until Vercel's 300s function
+// limit, exhausting concurrent invocations. 8s is generous for a single-row
+// insert and matches what we use elsewhere for transactional upstreams.
+const UPSTREAM_TIMEOUT_MS = 8000;
+
+class UpstreamTimeoutError extends Error {
+  constructor() {
+    super("Upstream timeout");
+    this.name = "UpstreamTimeoutError";
+  }
+}
+
+function withTimeout<T>(promise: PromiseLike<T>, ms: number): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new UpstreamTimeoutError()), ms);
+    Promise.resolve(promise).then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (err) => {
+        clearTimeout(timer);
+        reject(err);
+      },
+    );
+  });
+}
 
 // Per-IP rate limit: 5 requests / hour. Stricter than the global /api limiter
 // because this endpoint is unauthenticated and a prime target for scraping
@@ -99,12 +128,13 @@ newsletterRouter.post(
     }
 
     try {
-      const { error } = await supabase
-        .from("newsletter_subscribers")
-        .insert({
+      const { error } = await withTimeout(
+        supabase.from("newsletter_subscribers").insert({
           email: normalized,
           source: "landing_v2",
-        });
+        }),
+        UPSTREAM_TIMEOUT_MS,
+      );
 
       if (error) {
         // Postgres unique_violation (case-insensitive index on email).
@@ -126,6 +156,21 @@ newsletterRouter.post(
 
       return res.status(200).json({ success: true });
     } catch (err) {
+      // Upstream (Supabase / PostgREST) did not respond within budget.
+      // Return 502 so the client knows the failure is upstream, not its bug,
+      // and so we don't poison synthetic 5xx alerts for our own code.
+      if (err instanceof UpstreamTimeoutError) {
+        console.error(
+          "Newsletter subscription upstream timeout after",
+          UPSTREAM_TIMEOUT_MS,
+          "ms",
+        );
+        return res.status(502).json({
+          error: "Email service temporarily unavailable",
+          code: "EMAIL_SERVICE_TIMEOUT",
+        });
+      }
+
       console.error("Newsletter subscription unexpected error:", err);
       return res.status(500).json({
         error: "Unexpected server error.",

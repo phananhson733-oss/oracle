@@ -1,5 +1,5 @@
 // INPUT: /api/newsletter 路由的集成测试（mock Supabase 客户端 + 每个用例新建 app 以重置 express-rate-limit 状态）。
-// OUTPUT: vitest 测试套件，覆盖蜜罐静默、必填校验、邮箱格式、新订阅、重复订阅、限流 6 个分支。
+// OUTPUT: vitest 测试套件，覆盖蜜罐静默、必填校验、邮箱格式、新订阅、重复订阅、限流、上游 8s timeout 7 个分支。
 // POS: newsletter API 测试；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { describe, it, expect, beforeEach, vi } from "vitest";
@@ -105,6 +105,24 @@ describe("/api/newsletter", () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ success: true, already_subscribed: true });
   });
+
+  it("returns 502 EMAIL_SERVICE_TIMEOUT when upstream insert exceeds 8s budget", async () => {
+    // Mock supabase insert to never resolve — simulates a hung PostgREST
+    // response. Without the withTimeout wrapper, the handler would hang
+    // until Vercel's 300s function limit. With it, the request should
+    // reject after 8s with a 502.
+    mockInsert.mockReturnValueOnce(new Promise(() => {}));
+
+    const app = await createTestApp();
+    const res = await post(app, { email: "slow@example.com" });
+
+    expect(res.status).toBe(502);
+    expect(res.body).toEqual({
+      error: "Email service temporarily unavailable",
+      code: "EMAIL_SERVICE_TIMEOUT",
+    });
+    expect(mockInsert).toHaveBeenCalledTimes(1);
+  }, 15000); // upstream budget is 8s; allow headroom for CI scheduling jitter
 
   it("returns 429 rate_limited after exceeding 5 requests/hour from a single IP", async () => {
     mockInsert.mockResolvedValue({ error: null });
