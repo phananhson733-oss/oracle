@@ -53,10 +53,22 @@ describe("/api/astro/today", () => {
   });
 
   it("returns cached payload and short-circuits ephemeris call", async () => {
+    // Read-path validation requires a full 10-major payload with valid signs +
+    // finite degrees in [0, 30). Stale/partial cached payloads are recomputed
+    // (covered by the next test) — see backend/src/api/astro.ts isValidPayload.
     const cached = {
       date: "2026-05-18",
       positions: [
         { name: "Sun", sign: "Taurus", degree: 27.5, retrograde: false },
+        { name: "Moon", sign: "Leo", degree: 3.12, retrograde: false },
+        { name: "Mercury", sign: "Gemini", degree: 12.0, retrograde: true },
+        { name: "Venus", sign: "Aries", degree: 5.4, retrograde: false },
+        { name: "Mars", sign: "Cancer", degree: 18.9, retrograde: false },
+        { name: "Jupiter", sign: "Gemini", degree: 22.3, retrograde: false },
+        { name: "Saturn", sign: "Pisces", degree: 8.8, retrograde: false },
+        { name: "Uranus", sign: "Taurus", degree: 25.1, retrograde: false },
+        { name: "Neptune", sign: "Pisces", degree: 29.5, retrograde: false },
+        { name: "Pluto", sign: "Aquarius", degree: 1.7, retrograde: true },
       ],
     };
     mockCacheGet.mockResolvedValueOnce(cached);
@@ -67,6 +79,101 @@ describe("/api/astro/today", () => {
     expect(res.body).toEqual(cached);
     expect(mockGetPlanetPositions).not.toHaveBeenCalled();
     expect(mockCacheSet).not.toHaveBeenCalled();
+  });
+
+  it("rejects invalid cached payload and recomputes (read-path validation)", async () => {
+    // Stale/partial cache shouldn't be served. isValidPayload trips, route
+    // recomputes from the ephemeris service and caches the fresh result.
+    const stale = {
+      date: "2026-05-18",
+      positions: [
+        { name: "Sun", sign: "Taurus", degree: 27.5, retrograde: false },
+      ],
+    };
+    mockCacheGet.mockResolvedValueOnce(stale);
+    mockGetPlanetPositions.mockResolvedValueOnce({
+      positions: [
+        {
+          name: "Sun",
+          sign: "Taurus",
+          degree: 27,
+          minute: 30,
+          isRetrograde: false,
+        },
+        {
+          name: "Moon",
+          sign: "Leo",
+          degree: 3,
+          minute: 7,
+          isRetrograde: false,
+        },
+        {
+          name: "Mercury",
+          sign: "Gemini",
+          degree: 12,
+          minute: 0,
+          isRetrograde: true,
+        },
+        {
+          name: "Venus",
+          sign: "Aries",
+          degree: 5,
+          minute: 24,
+          isRetrograde: false,
+        },
+        {
+          name: "Mars",
+          sign: "Cancer",
+          degree: 18,
+          minute: 54,
+          isRetrograde: false,
+        },
+        {
+          name: "Jupiter",
+          sign: "Gemini",
+          degree: 22,
+          minute: 18,
+          isRetrograde: false,
+        },
+        {
+          name: "Saturn",
+          sign: "Pisces",
+          degree: 8,
+          minute: 48,
+          isRetrograde: false,
+        },
+        {
+          name: "Uranus",
+          sign: "Taurus",
+          degree: 25,
+          minute: 6,
+          isRetrograde: false,
+        },
+        {
+          name: "Neptune",
+          sign: "Pisces",
+          degree: 29,
+          minute: 30,
+          isRetrograde: false,
+        },
+        {
+          name: "Pluto",
+          sign: "Aquarius",
+          degree: 1,
+          minute: 42,
+          isRetrograde: true,
+        },
+      ],
+      houseCusps: [],
+      usedMockFallback: false,
+      mockedPlanets: [],
+    });
+
+    const res = await request(app, "/api/astro/today");
+
+    expect(res.status).toBe(200);
+    expect(mockGetPlanetPositions).toHaveBeenCalledTimes(1);
+    expect(mockCacheSet).toHaveBeenCalledTimes(1);
   });
 
   it("computes positions, filters to majors, combines degree + minute into fractional degree", async () => {

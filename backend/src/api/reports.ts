@@ -4,6 +4,7 @@ import { authMiddleware, requireAuth } from "./auth.js";
 import reportService, { ReportType } from "../services/reportService.js";
 import userService from "../services/userService.js";
 import entitlementServiceV2 from "../services/entitlementServiceV2.js";
+import { AIUnavailableError } from "../services/ai.js";
 import { SUBSCRIPTION_BENEFITS } from "../config/auth.js";
 
 const router = Router();
@@ -201,6 +202,18 @@ router.post(
         generatedAt: report.generated_at,
       });
     } catch (error) {
+      // AI upstream failure: reportService has already refunded the credit
+      // and deleted the unfulfilled purchase row. Surface a 502 so the client
+      // can prompt the user to retry without thinking they were charged.
+      if (error instanceof AIUnavailableError) {
+        console.error("Generate report AI unavailable:", error.reason);
+        return res.status(502).json({
+          error:
+            "Report generation temporarily unavailable. Your credit was not charged.",
+          code: "REPORT_UNAVAILABLE",
+          reason: error.reason,
+        });
+      }
       console.error("Generate report error:", error);
       res.status(500).json({ error: "Failed to generate report" });
     }

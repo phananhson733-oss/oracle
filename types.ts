@@ -4,13 +4,18 @@
 
 // Data Models
 
-export type AccuracyLevel = 'exact' | 'time_unknown' | 'approximate';
-export type Language = 'zh' | 'en';
+export type AccuracyLevel = "exact" | "time_unknown" | "approximate";
+export type Language = "zh" | "en";
 
 export interface AIContentMeta {
-  source: 'ai' | 'mock';
+  source: "ai" | "mock";
   cached?: boolean;
-  reason?: 'missing_api_key' | 'prompt_missing' | 'timeout' | 'invalid_json' | 'error';
+  reason?:
+    | "missing_api_key"
+    | "prompt_missing"
+    | "timeout"
+    | "invalid_json"
+    | "error";
 }
 
 export interface LocalizedContent<T> {
@@ -30,10 +35,11 @@ export interface UserProfile {
   timezone: string;
   accuracyLevel: AccuracyLevel;
   focusTags: string[];
+  zodiac?: string;
 }
 
 export interface PartnerProfile extends UserProfile {
-  relationType: 'romantic' | 'crush' | 'friend' | 'business' | 'family';
+  relationType: "romantic" | "crush" | "friend" | "business" | "family";
 }
 
 export interface SynastryProfile {
@@ -63,23 +69,31 @@ export interface PlanetPosition {
 export interface Aspect {
   planet1: string;
   planet2: string;
-  type: 'conjunction' | 'opposition' | 'square' | 'trine' | 'sextile';
+  type: "conjunction" | "opposition" | "square" | "trine" | "sextile";
   orb: number;
   isApplying: boolean;
 }
 
 // --- Chart Configuration Types ---
 
-export type ChartType = 'natal' | 'composite' | 'synastry' | 'transit';
-export type AspectType = 'conjunction' | 'opposition' | 'square' | 'trine' | 'sextile' | 'quincunx' | 'semisquare' | 'sesquiquadrate';
+export type ChartType = "natal" | "composite" | "synastry" | "transit";
+export type AspectType =
+  | "conjunction"
+  | "opposition"
+  | "square"
+  | "trine"
+  | "sextile"
+  | "quincunx"
+  | "semisquare"
+  | "sesquiquadrate";
 
 export interface CelestialBodyConfig {
-  planets: boolean;      // 10 major planets
-  angles: boolean;       // AC/DC/MC/IC
-  nodes: boolean;        // Lunar nodes
-  chiron: boolean;       // Chiron
-  lilith: boolean;       // Black Moon Lilith
-  asteroids: boolean;    // Major asteroids
+  planets: boolean; // 10 major planets
+  angles: boolean; // AC/DC/MC/IC
+  nodes: boolean; // Lunar nodes
+  chiron: boolean; // Chiron
+  lilith: boolean; // Black Moon Lilith
+  asteroids: boolean; // Major asteroids
 }
 
 export interface AspectConfig {
@@ -99,9 +113,9 @@ export interface AspectSettings {
 }
 
 export interface VisualLayerConfig {
-  highlightThreshold: number;   // orb <= this = foreground (bold)
-  midgroundThreshold: number;   // orb <= this = midground
-  backgroundThreshold: number;  // orb <= this = background, > this = hidden
+  highlightThreshold: number; // orb <= this = foreground (bold)
+  midgroundThreshold: number; // orb <= this = midground
+  backgroundThreshold: number; // orb <= this = background, > this = hidden
 }
 
 export interface AspectLineStyle {
@@ -123,7 +137,7 @@ export interface ChartConfig {
 }
 
 export interface DualWheelConfig {
-  chartType: 'synastry' | 'transit';
+  chartType: "synastry" | "transit";
   inner: ChartConfig;
   outer: Partial<ChartConfig>;
   crossAspects: Partial<AspectSettings>;
@@ -147,20 +161,26 @@ export interface TransitData {
   moonPhase: string;
 }
 
-export type AskChartType = 'natal' | 'transit';
+export type AskChartType = "natal" | "transit";
 
 export interface ExtendedNatalData {
   elements: Record<string, Record<string, string[]>>; // { Fire: { Cardinal: ['Sun', 'Mars'] } }
   planets: PlanetPosition[];
   asteroids: PlanetPosition[];
-  houseRulers: Array<{ house: number; sign: string; ruler: string; fliesTo: number; fliesToSign?: string }>;
+  houseRulers: Array<{
+    house: number;
+    sign: string;
+    ruler: string;
+    fliesTo: number;
+    fliesToSign?: string;
+  }>;
   aspects: Aspect[];
 }
 
 export interface SynastryOverlay {
   planet: string;
   house: number;
-  person: 'A' | 'B';
+  person: "A" | "B";
 }
 
 export interface SynastryComparisonTechnicalData {
@@ -181,7 +201,13 @@ export interface SynastrySuggestion {
   score: number;
 }
 
-export type SynastryTab = 'overview' | 'natal_a' | 'natal_b' | 'syn_ab' | 'syn_ba' | 'composite';
+export type SynastryTab =
+  | "overview"
+  | "natal_a"
+  | "natal_b"
+  | "syn_ab"
+  | "syn_ba"
+  | "composite";
 
 export interface NatalHighlights {
   dominance: string;
@@ -269,7 +295,7 @@ export interface SynastryItem {
 }
 
 // New Chemistry Lab v4.0 types
-export type IntensityLevel = 'flow' | 'friction' | 'fusion';
+export type IntensityLevel = "flow" | "friction" | "fusion";
 
 export interface DynamicItem {
   intensity: IntensityLevel;
@@ -363,7 +389,13 @@ export interface HouseOverlay {
 
 export interface ClosingOutput {
   nourishing: Array<{ mechanism: string; experience: string; usage: string }>;
-  triggers: Array<{ trigger: string; scene: string; reaction: string; misunderstanding: string; mitigation: string }>;
+  triggers: Array<{
+    trigger: string;
+    scene: string;
+    reaction: string;
+    misunderstanding: string;
+    mitigation: string;
+  }>;
   cycle: {
     trigger: string;
     reaction_self: string;
@@ -388,9 +420,9 @@ export interface PracticeItem {
 // v4.0 "The Entity" composite structure
 export interface CompositePlanetItem {
   sign_house: string;
-  meaning?: string;  // for heart_of_us
-  style?: string;    // for daily_rhythm
-  lesson?: string;   // for soul_contract
+  meaning?: string; // for heart_of_us
+  style?: string; // for daily_rhythm
+  lesson?: string; // for soul_contract
 }
 
 export interface CompositeImpactCard {
@@ -507,19 +539,23 @@ export interface SynastryOverviewContent {
   };
 }
 
-export type SynastryTabContent = SynastryOverviewContent | NatalScript | PerspectiveData | CompositeContent;
+export type SynastryTabContent =
+  | SynastryOverviewContent
+  | NatalScript
+  | PerspectiveData
+  | CompositeContent;
 
 // Overview lazy-loaded sections
 export type SynastryOverviewSection =
-  | 'core_dynamics'
-  | 'practice_tools'
-  | 'relationship_timing'
-  | 'highlights'
-  | 'vibe_tags'
-  | 'growth_task'         // NEW: lazy-load growth task
-  | 'conflict_loop'
-  | 'weather_forecast'
-  | 'action_plan';
+  | "core_dynamics"
+  | "practice_tools"
+  | "relationship_timing"
+  | "highlights"
+  | "vibe_tags"
+  | "growth_task" // NEW: lazy-load growth task
+  | "conflict_loop"
+  | "weather_forecast"
+  | "action_plan";
 
 // NEW: Vibe Tags section content
 export interface SynastryVibeTagsContent {
@@ -534,8 +570,18 @@ export interface SynastryGrowthTaskContent {
     evidence: string;
     action_steps: string[];
   };
-  sweet_spots?: Array<{ title: string; evidence: string; experience: string; usage: string }>;
-  friction_points?: Array<{ title: string; evidence: string; trigger: string; cost: string }>;
+  sweet_spots?: Array<{
+    title: string;
+    evidence: string;
+    experience: string;
+    usage: string;
+  }>;
+  friction_points?: Array<{
+    title: string;
+    evidence: string;
+    trigger: string;
+    cost: string;
+  }>;
 }
 
 // NEW: Conflict Loop section content
@@ -547,7 +593,7 @@ export interface SynastryConflictLoopContent {
     result: string;
   };
   repair_scripts: Array<{
-    for_person: 'a' | 'b';
+    for_person: "a" | "b";
     situation: string;
     script: string;
   }>;
@@ -557,7 +603,7 @@ export interface SynastryConflictLoopContent {
 export interface SynastryWeatherForecastContent {
   weekly_pulse: {
     headline: string;
-    wave_trend: ('up' | 'down' | 'flat')[];
+    wave_trend: ("up" | "down" | "flat")[];
     days: Array<{
       date: string;
       day_label: string;
@@ -568,7 +614,7 @@ export interface SynastryWeatherForecastContent {
     }>;
   };
   periods: Array<{
-    type: 'high_intensity' | 'sweet_spot' | 'deep_talk';
+    type: "high_intensity" | "sweet_spot" | "deep_talk";
     start_date: string;
     end_date: string;
     description: string;
@@ -587,7 +633,7 @@ export interface SynastryActionPlanContent {
   this_week: Array<{
     text: string;
     timing: string;
-    priority: 'high' | 'medium' | 'low';
+    priority: "high" | "medium" | "low";
   }>;
   bigger_picture: Array<{
     text: string;
@@ -641,7 +687,11 @@ export interface NatalOverviewContent {
   core_melody: { keywords: string[]; explanations: string[] };
   top_talent: { title: string; example: string; advice: string };
   top_pitfall: { title: string; triggers: string[]; protection: string };
-  trigger_card: { auto_reactions: string[]; inner_need: string; buffer_action: string };
+  trigger_card: {
+    auto_reactions: string[];
+    inner_need: string;
+    buffer_action: string;
+  };
   share_text: string;
 }
 
@@ -655,37 +705,37 @@ export interface DimensionReportContent {
   shadow: string;
   practice: { title: string; steps: string[] };
   prompt_question: string;
-  confidence: 'high' | 'med' | 'low';
+  confidence: "high" | "med" | "low";
 }
 
 export interface CoreThemesContent {
   drive: { title: string; summary: string; key_points: string[] };
   fear: { title: string; summary: string; key_points: string[] };
   growth: { title: string; summary: string; key_points: string[] };
-  confidence: 'high' | 'med' | 'low';
+  confidence: "high" | "med" | "low";
 }
 
 // --- Daily Forecast Types (Optimized v3.0) ---
 
 export interface DailyEnergy {
   score: number;
-  feeling: string;  // Level 2: Psychological description
+  feeling: string; // Level 2: Psychological description
   scenario: string; // Level 2: Real life scenario
-  action: string;   // Level 2: Actionable advice
+  action: string; // Level 2: Actionable advice
 }
 
 // New: Daily Focus (三件套)
 export interface DailyFocus {
-  move_forward: string;      // 今天最适合推进的一件事
+  move_forward: string; // 今天最适合推进的一件事
   communication_trap: string; // 今天最需要避免的沟通方式
-  best_window: 'morning' | 'midday' | 'evening'; // 最佳时间窗
+  best_window: "morning" | "midday" | "evening"; // 最佳时间窗
 }
 
 // New: Personalization (个性化触发点)
 export interface DailyPersonalization {
-  natal_trigger: string;     // 行运如何触发本命盘
+  natal_trigger: string; // 行运如何触发本命盘
   pattern_activated: string; // 被激活的心理模式
-  why_today: string;         // 为什么今天特别相关
+  why_today: string; // 为什么今天特别相关
 }
 
 export interface DailyPublicContent {
@@ -696,18 +746,18 @@ export interface DailyPublicContent {
 
   // 4 Dimensions v3.0 (Energy/Tension/Frictions/Pleasures)
   four_dimensions?: {
-    energy: DailyEnergy;     // 能量/动力
-    tension: DailyEnergy;    // 压力/紧张
-    frictions: DailyEnergy;  // 摩擦/挑战
-    pleasures: DailyEnergy;  // 滋养/愉悦
+    energy: DailyEnergy; // 能量/动力
+    tension: DailyEnergy; // 压力/紧张
+    frictions: DailyEnergy; // 摩擦/挑战
+    pleasures: DailyEnergy; // 滋养/愉悦
   };
 
   // 兼容旧版 energy_profile
   energy_profile?: {
-    drive: DailyEnergy;      // 推进感
-    pressure: DailyEnergy;   // 压力感
-    heat: DailyEnergy;       // 摩擦感
-    nourishment: DailyEnergy;// 滋养感
+    drive: DailyEnergy; // 推进感
+    pressure: DailyEnergy; // 压力感
+    heat: DailyEnergy; // 摩擦感
+    nourishment: DailyEnergy; // 滋养感
   };
 
   // Time Windows (Layer 1)
@@ -723,7 +773,7 @@ export interface DailyPublicContent {
   // 兼容旧版 strategy
   strategy?: {
     best_use: string; // "Do": Best push point
-    avoid: string;    // "Avoid": Communication trap
+    avoid: string; // "Avoid": Communication trap
   };
 
   share_text: string;
@@ -762,7 +812,7 @@ export interface DailyDetailContent {
     moon_phase_sign: string;
     key_aspects: string[];
   };
-  confidence: 'high' | 'med' | 'low';
+  confidence: "high" | "med" | "low";
 }
 
 // New: Transit Chart Data (行运星盘数据)
@@ -783,7 +833,7 @@ export interface CycleCardContent {
   title: string;
   one_liner: string;
   tags: string[];
-  intensity: 'low' | 'med' | 'high';
+  intensity: "low" | "med" | "high";
   dates: { start: string; peak: string; end: string };
   actions: string[];
   prompt_question: string;
@@ -793,8 +843,14 @@ export interface CycleCardContent {
 export type AskAnswerContent = string;
 
 // --- Section Detail Interpretation (懒加载详情解读) ---
-export type DetailType = 'elements' | 'aspects' | 'planets' | 'asteroids' | 'rulers' | 'synthesis';
-export type DetailContext = 'natal' | 'transit' | 'synastry' | 'composite';
+export type DetailType =
+  | "elements"
+  | "aspects"
+  | "planets"
+  | "asteroids"
+  | "rulers"
+  | "synthesis";
+export type DetailContext = "natal" | "transit" | "synastry" | "composite";
 
 export interface SectionDetailContent {
   title: string;
@@ -805,7 +861,16 @@ export interface SectionDetailContent {
 
 // --- Wiki Content Types ---
 
-export type WikiItemType = 'planets' | 'signs' | 'houses' | 'aspects' | 'concepts' | 'chart-types' | 'asteroids' | 'angles' | 'points';
+export type WikiItemType =
+  | "planets"
+  | "signs"
+  | "houses"
+  | "aspects"
+  | "concepts"
+  | "chart-types"
+  | "asteroids"
+  | "angles"
+  | "points";
 
 export interface WikiDeepDiveStep {
   step: number;
@@ -814,7 +879,7 @@ export interface WikiDeepDiveStep {
 }
 
 export interface WikiLifeArea {
-  area: 'career' | 'love' | 'health' | 'finance' | 'family' | 'spiritual';
+  area: "career" | "love" | "health" | "finance" | "family" | "spiritual";
   description: string;
 }
 
@@ -1000,7 +1065,7 @@ export interface WikiArticle {
   image?: string;
   image_alt?: string;
   keywords: string[];
-  schema: 'Article' | 'HowTo' | 'FAQPage';
+  schema: "Article" | "HowTo" | "FAQPage";
   lang: Language;
 }
 
@@ -1023,12 +1088,12 @@ export interface ArticleHotword {
 // --- Synthetica Tool Types ---
 
 export enum SyntheticaContextFilter {
-  LOVE = 'LOVE',             // 爱情与亲密关系
-  SELF = 'SELF',             // 自我探索与身份认同
-  HEALING = 'HEALING',       // 心理健康与情绪疗愈
-  CAREER = 'CAREER',         // 职业方向与人生使命
-  TIMING = 'TIMING',         // 时机把握与生存指南
-  SOCIAL = 'SOCIAL'          // 社交与友谊动力学
+  LOVE = "LOVE", // 爱情与亲密关系
+  SELF = "SELF", // 自我探索与身份认同
+  HEALING = "HEALING", // 心理健康与情绪疗愈
+  CAREER = "CAREER", // 职业方向与人生使命
+  TIMING = "TIMING", // 时机把握与生存指南
+  SOCIAL = "SOCIAL", // 社交与友谊动力学
 }
 
 export interface SyntheticaPlanet {
@@ -1044,8 +1109,8 @@ export interface SyntheticaSign {
   id: string;
   name: string;
   symbol: string;
-  element: 'Fire' | 'Earth' | 'Air' | 'Water';
-  modality: 'Cardinal' | 'Fixed' | 'Mutable';
+  element: "Fire" | "Earth" | "Air" | "Water";
+  modality: "Cardinal" | "Fixed" | "Mutable";
   archetype: string; // The "How"
 }
 
@@ -1058,9 +1123,9 @@ export interface SyntheticaHouse {
 }
 
 export enum SyntheticaAspectCategory {
-  FUSION = 'FUSION',     // 0度 - 合相
-  FRICTION = 'FRICTION', // 90/180度 - 硬相位
-  FLOW = 'FLOW'          // 60/120度 - 软相位
+  FUSION = "FUSION", // 0度 - 合相
+  FRICTION = "FRICTION", // 90/180度 - 硬相位
+  FLOW = "FLOW", // 60/120度 - 软相位
 }
 
 export interface SyntheticaAspect {
@@ -1093,7 +1158,8 @@ export interface SyntheticaAnalysisResult {
   synthesis: string;
 }
 
-export type SyntheticaReportResponse = LocalizedContent<SyntheticaAnalysisResult>;
+export type SyntheticaReportResponse =
+  LocalizedContent<SyntheticaAnalysisResult>;
 
 export type SyntheticaSelectionState = {
   planet: SyntheticaPlanet | null;

@@ -34,14 +34,6 @@ const SIGN_GLYPHS: Record<string, string> = Object.fromEntries(
 );
 
 const todayIso = () => new Date().toISOString().slice(0, 10);
-const safeTimezone = () => {
-  try {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
-  } catch {
-    return "UTC";
-  }
-};
-
 const findPosition = (
   positions: PlanetPosition[] | undefined,
   ...names: string[]
@@ -172,13 +164,18 @@ const BirthChartSection: React.FC = () => {
           ? "exact"
           : "approximate";
 
+      // Timezone precedence: only assert the browser timezone when the user
+      // has supplied explicit lat+lon (i.e. they know their precise birthplace).
+      // This landing form is city-only — leave timezone empty so the backend
+      // derives the correct historical timezone from the geocoded coordinates
+      // rather than mis-applying the visitor's current browser timezone.
       const transientProfile: UserProfile = {
         userId: `landing-${Date.now()}`,
         name: name.trim() || undefined,
         birthDate,
         birthTime: timeUnknown ? undefined : birthTime || undefined,
         birthCity: trimmedCity,
-        timezone: safeTimezone(),
+        timezone: "",
         accuracyLevel,
         focusTags: [],
       };

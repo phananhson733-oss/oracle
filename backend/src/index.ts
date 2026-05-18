@@ -50,6 +50,8 @@ const isProviderEnabled = (provider: string) =>
   PAYMENT_PROVIDER === "all" || PAYMENT_PROVIDER === provider;
 
 const app = express();
+// Trust the first proxy hop (Vercel) so req.ip resolves to the real client IP instead of the proxy. Required for express-rate-limit per-IP buckets to work correctly.
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3001;
 
 // Security headers (CSP off for SPA with external resources)

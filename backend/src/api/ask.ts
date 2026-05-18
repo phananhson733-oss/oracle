@@ -47,6 +47,7 @@ askRouter.post("/", optionalAuthMiddleware, async (req, res) => {
     const timezone =
       (tz as string) || (req.headers["x-user-timezone"] as string) || undefined;
 
+    // 1) checkAccess 作为 UX 预检 — 快速判断是否显然无额度
     const access = await entitlementServiceV2.checkAccess(
       req.userId || null,
       "ask",
@@ -62,46 +63,58 @@ askRouter.post("/", optionalAuthMiddleware, async (req, res) => {
       });
     }
 
-    // Calculate natal chart (always needed)
-    const chart = await ephemerisService.calculateNatalChart(birth);
-
-    // Calculate transits if needed for time_cycles questions
-    let transits: TransitData | undefined;
-    if (chartType === "transit") {
-      transits = await ephemerisService.calculateTransits(birth, new Date());
-    }
-
-    const { content, meta } = await generateAIContentWithMeta({
-      promptId: "ask-answer",
-      context: { chart, transits, question, context, category },
-      lang,
-    });
-
-    const consumed = await entitlementServiceV2.consumeFeature(
+    // 2) reserveFeature 是真正的并发安全闸门：原子扣减额度，
+    //    返回 reservationId 用于 commit/refund。并发请求中只有一个会拿到 reservationId。
+    const reservation = await entitlementServiceV2.reserveFeature(
       req.userId || null,
       "ask",
       deviceFingerprint,
       timezone,
     );
-    if (!consumed) {
-      return res.status(403).json({
-        error: "Failed to consume feature",
+    if (!reservation.reserved) {
+      return res.status(402).json({
+        error: "Out of credits",
         needPurchase: true,
         price: PRICING.ASK_SINGLE,
       });
     }
 
-    res.json({
-      lang: content.lang,
-      content: content.content,
-      meta,
-      chart,
-      transits,
-      chartType,
-    } as AskResponse);
+    try {
+      // 3) Calculate natal chart (always needed)
+      const chart = await ephemerisService.calculateNatalChart(birth);
+
+      // 4) Calculate transits if needed for time_cycles questions
+      let transits: TransitData | undefined;
+      if (chartType === "transit") {
+        transits = await ephemerisService.calculateTransits(birth, new Date());
+      }
+
+      // 5) 调用 LLM（昂贵操作 — 已被预占保护）
+      const { content, meta } = await generateAIContentWithMeta({
+        promptId: "ask-answer",
+        context: { chart, transits, question, context, category },
+        lang,
+      });
+
+      // 6) 成功：提交预占（扣减保持）
+      await entitlementServiceV2.commitReservation(reservation.reservationId);
+
+      res.json({
+        lang: content.lang,
+        content: content.content,
+        meta,
+        chart,
+        transits,
+        chartType,
+      } as AskResponse);
+    } catch (innerError) {
+      // 7) LLM / 星历失败：归还预占的额度
+      await entitlementServiceV2.refundReservation(reservation.reservationId);
+      throw innerError;
+    }
   } catch (error) {
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: "AI unavailable", reason: error.reason });
+      res.status(502).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });

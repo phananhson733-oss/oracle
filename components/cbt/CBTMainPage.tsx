@@ -41,6 +41,26 @@ const MOOD_IMAGES: MoodImages = {
 };
 
 const STORAGE_KEY = "astro_cbt_history_v1";
+// Anonymous fallback client id (only used when no auth session). Stored once
+// per browser to keep local CBT state separable across guest devices without
+// embedding any PII in the identifier (CLAUDE.md 隐私红线 #2).
+const ANON_CLIENT_ID_KEY = "astro_cbt_anon_client_id";
+
+function getClientFallbackId(): string {
+  if (typeof window === "undefined") return "anonymous";
+  try {
+    const existing = localStorage.getItem(ANON_CLIENT_ID_KEY);
+    if (existing) return existing;
+    const generated =
+      typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+        ? crypto.randomUUID()
+        : `anon-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    localStorage.setItem(ANON_CLIENT_ID_KEY, generated);
+    return generated;
+  } catch {
+    return "anonymous";
+  }
+}
 
 interface CBTMainPageProps {
   profile: UserProfile;
@@ -74,10 +94,18 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
     "cbt_stats",
     statsFeatureId,
   );
-  const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
+  const { openUpgradeModal, isAuthenticated, openLoginModal, user } = useAuth();
 
-  // Generate user ID from profile
-  const userId = `${profile?.name || "user"}_${profile?.birthDate || "unknown"}`;
+  // Use the authenticated user's opaque id for state separation / server lookup.
+  // When the user is anonymous, fall back to a stable client-generated UUID
+  // (stored once in localStorage). Never concatenate PII fields like name +
+  // birthDate — that creates a reversible identifier (CLAUDE.md 隐私红线 #2).
+  // Note: the backend trusts only its own auth session for CBT record ownership;
+  // any userId sent in body/query is ignored server-side.
+  const userId = React.useMemo(
+    () => user?.id || getClientFallbackId(),
+    [user?.id],
+  );
 
   // Initialize: try backend first, fallback to localStorage
   useEffect(() => {
