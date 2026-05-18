@@ -71,6 +71,14 @@ const ALLOWED_ORIGINS: (string | RegExp)[] = [
 if (process.env.NODE_ENV !== "production") {
   ALLOWED_ORIGINS.push(/^http:\/\/localhost(:\d+)?$/);
 }
+
+// Vercel preview deployments are same-origin (frontend + backend share the
+// `oracle-<hash>.vercel.app` hostname per vercel.json `rewrites`), so they
+// don't need to appear in this allowlist. If you see a CORS rejection log
+// for a `*-xdawayer.vercel.app` origin, the *frontend* is calling an
+// absolute API URL (VITE_API_BASE_URL misconfig — see services/apiClient.ts
+// warning at module load); the fix is to unset that env var, not to widen
+// this allowlist (widening would let any Vercel-hosted site call this API).
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -80,6 +88,14 @@ app.use(
         o instanceof RegExp ? o.test(origin) : o === origin,
       );
       if (allowed) return callback(null, true);
+      // Log rejected origins to aid diagnosis of misconfigured deploys (#39).
+      // Origin is the browser-sent value, not user-controlled content, so it's
+      // safe to log; but cap length defensively in case a malicious client
+      // sends a giant header.
+      const safeOrigin =
+        typeof origin === "string" ? origin.slice(0, 200) : String(origin);
+      // eslint-disable-next-line no-console
+      console.warn(`[cors] rejected origin: ${safeOrigin}`);
       callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
