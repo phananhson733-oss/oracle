@@ -3,8 +3,8 @@
 // POS: 后端 API 类型定义；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 // === 基础类型 ===
-export type Language = 'zh' | 'en';
-export type AccuracyLevel = 'exact' | 'time_unknown' | 'approximate';
+export type Language = "zh" | "en";
+export type AccuracyLevel = "exact" | "time_unknown" | "approximate";
 
 // === 单语言内容包装 ===
 export interface LocalizedContent<T> {
@@ -13,15 +13,20 @@ export interface LocalizedContent<T> {
 }
 
 export interface AIContentMeta {
-  source: 'ai' | 'mock';
+  source: "ai" | "mock";
   cached?: boolean;
-  reason?: 'missing_api_key' | 'prompt_missing' | 'timeout' | 'invalid_json' | 'error';
+  reason?:
+    | "missing_api_key"
+    | "prompt_missing"
+    | "timeout"
+    | "invalid_json"
+    | "error";
 }
 
 // === 用户输入 ===
 export interface BirthInput {
-  date: string;      // YYYY-MM-DD
-  time?: string;     // HH:mm
+  date: string; // YYYY-MM-DD
+  time?: string; // HH:mm
   city: string;
   lat?: number;
   lon?: number;
@@ -42,7 +47,7 @@ export interface PlanetPosition {
 export interface Aspect {
   planet1: string;
   planet2: string;
-  type: 'conjunction' | 'opposition' | 'square' | 'trine' | 'sextile';
+  type: "conjunction" | "opposition" | "square" | "trine" | "sextile";
   orb: number;
   isApplying: boolean;
 }
@@ -76,21 +81,27 @@ export interface CycleData {
 
 export interface SynastryData {
   aspects: Aspect[];
-  houseOverlays: Array<{ planet: string; house: number; person: 'A' | 'B' }>;
+  houseOverlays: Array<{ planet: string; house: number; person: "A" | "B" }>;
 }
 
 export interface ExtendedNatalData {
   elements: Record<string, Record<string, string[]>>;
   planets: PlanetPosition[];
   asteroids: PlanetPosition[];
-  houseRulers: Array<{ house: number; sign: string; ruler: string; fliesTo: number; fliesToSign?: string }>;
+  houseRulers: Array<{
+    house: number;
+    sign: string;
+    ruler: string;
+    fliesTo: number;
+    fliesToSign?: string;
+  }>;
   aspects: Aspect[];
 }
 
 export interface SynastryOverlay {
   planet: string;
   house: number;
-  person: 'A' | 'B';
+  person: "A" | "B";
 }
 
 export interface SynastryTechnicalData {
@@ -106,7 +117,13 @@ export interface SynastrySuggestion {
   score: number;
 }
 
-export type SynastryTab = 'overview' | 'natal_a' | 'natal_b' | 'syn_ab' | 'syn_ba' | 'composite';
+export type SynastryTab =
+  | "overview"
+  | "natal_a"
+  | "natal_b"
+  | "syn_ab"
+  | "syn_ba"
+  | "composite";
 
 // === AI Data 类型（AI 生成内容）===
 // 所有 AI 内容为单语言，结构与前端 snake_case schema 对齐
@@ -118,7 +135,11 @@ export interface NatalOverviewAI {
   core_melody: { keywords: string[]; explanations: string[] };
   top_talent: { title: string; example: string; advice: string };
   top_pitfall: { title: string; triggers: string[]; protection: string };
-  trigger_card: { auto_reactions: string[]; inner_need: string; buffer_action: string };
+  trigger_card: {
+    auto_reactions: string[];
+    inner_need: string;
+    buffer_action: string;
+  };
   share_text: string;
 }
 
@@ -132,14 +153,14 @@ export interface DimensionReportAI {
   shadow: string;
   practice: { title: string; steps: string[] };
   prompt_question: string;
-  confidence: 'high' | 'med' | 'low';
+  confidence: "high" | "med" | "low";
 }
 
 export interface CoreThemesAI {
   drive: { title: string; summary: string; key_points: string[] };
   fear: { title: string; summary: string; key_points: string[] };
   growth: { title: string; summary: string; key_points: string[] };
-  confidence: 'high' | 'med' | 'low';
+  confidence: "high" | "med" | "low";
 }
 
 export interface DailyEnergyAI {
@@ -184,7 +205,7 @@ export interface DailyDetailAI {
     moon_phase_sign: string;
     key_aspects: string[];
   };
-  confidence: 'high' | 'med' | 'low';
+  confidence: "high" | "med" | "low";
 }
 
 export interface CycleNamingAI {
@@ -192,7 +213,7 @@ export interface CycleNamingAI {
   title: string;
   one_liner: string;
   tags: string[];
-  intensity: 'low' | 'med' | 'high';
+  intensity: "low" | "med" | "high";
   dates: { start: string; peak: string; end: string };
   actions: string[];
   prompt_question: string;
@@ -262,7 +283,13 @@ export interface HouseOverlayAI {
 
 export interface ClosingOutputAI {
   nourishing: Array<{ mechanism: string; experience: string; usage: string }>;
-  triggers: Array<{ trigger: string; scene: string; reaction: string; misunderstanding: string; mitigation: string }>;
+  triggers: Array<{
+    trigger: string;
+    scene: string;
+    reaction: string;
+    misunderstanding: string;
+    mitigation: string;
+  }>;
   cycle: {
     trigger: string;
     reaction_self: string;
@@ -375,19 +402,23 @@ export interface SynastryOverviewAI {
   };
 }
 
-export type SynastryTabContent = SynastryOverviewAI | NatalScriptAI | PerspectiveDataAI | CompositeContentAI;
+export type SynastryTabContent =
+  | SynastryOverviewAI
+  | NatalScriptAI
+  | PerspectiveDataAI
+  | CompositeContentAI;
 
 // Overview lazy-loaded sections
 export type SynastryOverviewSection =
-  | 'core_dynamics'
-  | 'practice_tools'
-  | 'relationship_timing'
-  | 'highlights'
-  | 'vibe_tags'
-  | 'growth_task'
-  | 'conflict_loop'
-  | 'weather_forecast'
-  | 'action_plan';
+  | "core_dynamics"
+  | "practice_tools"
+  | "relationship_timing"
+  | "highlights"
+  | "vibe_tags"
+  | "growth_task"
+  | "conflict_loop"
+  | "weather_forecast"
+  | "action_plan";
 
 // NEW: Vibe Tags section
 export interface SynastryVibeTagsAI {
@@ -402,8 +433,18 @@ export interface SynastryGrowthTaskAI {
     evidence: string;
     action_steps: string[];
   };
-  sweet_spots?: Array<{ title: string; evidence: string; experience: string; usage: string }>;
-  friction_points?: Array<{ title: string; evidence: string; trigger: string; cost: string }>;
+  sweet_spots?: Array<{
+    title: string;
+    evidence: string;
+    experience: string;
+    usage: string;
+  }>;
+  friction_points?: Array<{
+    title: string;
+    evidence: string;
+    trigger: string;
+    cost: string;
+  }>;
 }
 
 // NEW: Conflict Loop section
@@ -415,7 +456,7 @@ export interface SynastryConflictLoopAI {
     result: string;
   };
   repair_scripts: Array<{
-    for_person: 'a' | 'b';
+    for_person: "a" | "b";
     situation: string;
     script: string;
   }>;
@@ -425,7 +466,7 @@ export interface SynastryConflictLoopAI {
 export interface SynastryWeatherForecastAI {
   weekly_pulse: {
     headline: string;
-    wave_trend: ('up' | 'down' | 'flat')[];
+    wave_trend: ("up" | "down" | "flat")[];
     days: Array<{
       date: string;
       day_label: string;
@@ -436,7 +477,7 @@ export interface SynastryWeatherForecastAI {
     }>;
   };
   periods: Array<{
-    type: 'high_intensity' | 'sweet_spot' | 'deep_talk';
+    type: "high_intensity" | "sweet_spot" | "deep_talk";
     start_date: string;
     end_date: string;
     description: string;
@@ -455,7 +496,7 @@ export interface SynastryActionPlanAI {
   this_week: Array<{
     text: string;
     timing: string;
-    priority: 'high' | 'medium' | 'low';
+    priority: "high" | "medium" | "low";
   }>;
   bigger_picture: Array<{
     text: string;
@@ -548,7 +589,7 @@ export interface DailyResponse {
   technical?: {
     transit_planets: PlanetPosition[];
     transit_asteroids: PlanetPosition[];
-    house_rulers: ExtendedNatalData['houseRulers'];
+    house_rulers: ExtendedNatalData["houseRulers"];
     cross_aspects: Aspect[];
   };
   lang: Language;
@@ -565,8 +606,12 @@ export interface UserStatusResponse {
   recentActions: string[];
 }
 
-export type AstroEventType = 'mercury_retrograde' | 'new_moon' | 'full_moon' | 'planet_ingress';
-export type AstroEventImportance = 'high' | 'medium' | 'low';
+export type AstroEventType =
+  | "mercury_retrograde"
+  | "new_moon"
+  | "full_moon"
+  | "planet_ingress";
+export type AstroEventImportance = "high" | "medium" | "low";
 
 export interface AstroEvent {
   id: string;
@@ -591,7 +636,7 @@ export interface AskRequest {
   context?: string;
   lang?: Language;
 }
-export type AskChartType = 'natal' | 'transit';
+export type AskChartType = "natal" | "transit";
 
 export interface AskResponse {
   lang: Language;
@@ -681,8 +726,33 @@ export interface CBTAnalysisResponse {
   content: CBTAnalysisAI;
 }
 
+// POST /api/cbt/* crisis short-circuit response (shared by all 6 analysis endpoints)
+export interface CBTCrisisHelpline {
+  region: string;
+  name_en: string;
+  name_zh: string;
+  phone: string;
+  url: string;
+}
+
+export interface CBTCrisisResponse {
+  status: "crisis_detected";
+  helpline: CBTCrisisHelpline;
+  message_zh: string;
+  message_en: string;
+}
+
 // === Wiki 内容类型 ===
-export type WikiItemType = 'planets' | 'signs' | 'houses' | 'aspects' | 'concepts' | 'chart-types' | 'asteroids' | 'angles' | 'points';
+export type WikiItemType =
+  | "planets"
+  | "signs"
+  | "houses"
+  | "aspects"
+  | "concepts"
+  | "chart-types"
+  | "asteroids"
+  | "angles"
+  | "points";
 
 export interface WikiDeepDiveStep {
   step: number;
@@ -691,7 +761,7 @@ export interface WikiDeepDiveStep {
 }
 
 export interface WikiLifeArea {
-  area: 'career' | 'love' | 'health' | 'finance' | 'family' | 'spiritual';
+  area: "career" | "love" | "health" | "finance" | "family" | "spiritual";
   description: string;
 }
 
