@@ -9,8 +9,6 @@ import type {
   UserProfile,
   SynastryProfile,
   NatalFacts,
-  NatalHighlights,
-  ExtendedNatalData,
   AskAnswerContent,
   AskChartType,
   TransitData,
@@ -519,6 +517,24 @@ function withCoords(params: URLSearchParams, birth: BirthInput) {
 }
 
 // === Natal API ===
+//
+// POST /natal/chart. Birth payload is in the JSON body — never the URL — so
+// PII (date / time / city / coords) stays out of browser history, referrer
+// headers, and Vercel access logs (隐私红线 #1). The endpoint also accepts
+// GET for legacy callers, but we always use POST from new code.
+function natalRequestBody(birth: BirthInput): Record<string, unknown> {
+  const body: Record<string, unknown> = {
+    date: birth.date,
+    city: birth.city,
+    timezone: birth.timezone,
+    accuracy: birth.accuracy,
+  };
+  if (birth.time) body.time = birth.time;
+  if (birth.lat !== undefined) body.lat = birth.lat;
+  if (birth.lon !== undefined) body.lon = birth.lon;
+  return body;
+}
+
 export async function fetchNatalChart(
   profile: BirthProfile,
   opts: { skipCache?: boolean } = {},
@@ -533,16 +549,12 @@ export async function fetchNatalChart(
     const cached = readLocalCache<NatalFacts>(cacheKey);
     if (cached) return cached;
   }
-  const params = new URLSearchParams({
-    date: birth.date,
-    city: birth.city,
-    timezone: birth.timezone,
-    accuracy: birth.accuracy,
-    ...(birth.time && { time: birth.time }),
-  });
-  withCoords(params, birth);
 
-  const res = await fetch(`${API_BASE}/natal/chart?${params}`);
+  const res = await fetchWithTimeout(`${API_BASE}/natal/chart`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(natalRequestBody(birth)),
+  });
   await assertOk(res, "Failed to fetch natal chart");
   const data = await res.json();
   const chart = data.chart as NatalFacts;

@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.10
-> **Last Updated**: 2026-05-18
+> **Version**: 2.11
+> **Last Updated**: 2026-05-19
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -614,10 +614,10 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | Method | Path | 说明 | Auth |
 |--------|------|------|------|
-| GET | `/api/natal/chart` | 星盘原始计算数据 | — |
-| GET | `/api/natal/overview` | 星盘总览 (AI) | — |
-| GET | `/api/natal/core-themes` | 核心主题分析 | — |
-| GET | `/api/natal/dimension` | 心理维度分析 | — |
+| POST / GET | `/api/natal/chart` | 星盘原始计算数据（POST 为新主路径，body 携带出生数据；GET 保留向后兼容，将逐步弃用） | — |
+| POST / GET | `/api/natal/overview` | 星盘总览 (AI) — POST/GET 等价 | — |
+| POST / GET | `/api/natal/core-themes` | 核心主题分析 — POST/GET 等价 | — |
+| POST / GET | `/api/natal/dimension` | 心理维度分析 — POST/GET 等价 | — |
 | GET | `/api/daily` | 每日运势 | — |
 | GET | `/api/daily/detail` | 每日详细行运 | — |
 | POST | `/api/ask` | AI 问答 | Optional |
@@ -659,12 +659,37 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | HTTP | Code | 触发场景 | 响应体 |
 |------|------|----------|--------|
-| 400 | `LOCATION_UNRESOLVED` | 空 city / 未匹配城市（用户输入问题） | `{ error: string, code: "LOCATION_UNRESOLVED", city: string }` |
+| 400 | `LOCATION_UNRESOLVED` | 空 city / 未匹配城市（用户输入问题） | `{ error: string, code: "LOCATION_UNRESOLVED" }` |
 | 503 | `GEOCODING_SERVICE_UNAVAILABLE` | 上游 Open-Meteo 网络故障 / 超时 / 非 2xx / JSON 解析失败 | `{ error: string, code: "GEOCODING_SERVICE_UNAVAILABLE" }` |
 
 历史上 v2.4 及之前，任何地理解析失败（包括上游服务异常）都会静默回退到上海（北纬 31.23，东经 121.47）默认坐标，导致用户拿到错误的星盘。v2.5 起拆分为两类显式错误：
 - **400 `LOCATION_UNRESOLVED`**：用户输入问题，前端必须提示用户输入更具体的城市名（如 `Springfield, IL, USA`），不应自动重试
 - **503 `GEOCODING_SERVICE_UNAVAILABLE`**：上游服务异常，前端可提示"稍后再试"并可选指数退避重试
+
+v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用户输入不再回显到错误响应，避免经 `services/analytics.ts::trackApiError` 进入 GA 事件参数（隐私红线 #1）。前端按 `code` 本地化文案，不需要 echo back 原值。
+
+**Natal 输入校验错误码** (`POST /api/natal/chart`、`POST /api/natal/overview`、`POST /api/natal/core-themes`、`POST /api/natal/dimension`，GET 兼容路径同此契约)：
+
+| HTTP | Code | 触发场景 |
+|------|------|----------|
+| 400 | `DATE_REQUIRED` | 缺失 birth date |
+| 400 | `INVALID_DATE` | 格式不是 YYYY-MM-DD 或日期不可达（如 2024-02-31） |
+| 400 | `INVALID_TIME` | 格式不是 HH:MM(:SS) |
+| 400 | `CITY_REQUIRED` | 既无 city 又无完整 lat+lon |
+| 400 | `CITY_TOO_LONG` | city 长度 > 200 |
+| 400 | `INVALID_LAT` | lat 不在 [-90, 90] |
+| 400 | `INVALID_LON` | lon 不在 [-180, 180] |
+| 400 | `INVALID_TIMEZONE` | timezone 不匹配 IANA 模式或长度 > 100 |
+| 400 | `INVALID_ACCURACY` | accuracy 不在 `exact`/`time_unknown`/`approximate` |
+| 500 | `INTERNAL` | 兜底响应；message 不回显 error.message 避免 PII 泄漏 |
+
+**Natal 端点限流与请求体限制** (v2.11 起)：
+
+- `/api/natal/*` 走专用 limiter：30 请求/分钟/IP（独立于 `/api` 100/min 全局桶）。挂载于全局 limiter 之前。
+- `/api/natal/*` POST 请求体硬上限 **4 KB**（典型 birth payload < 500B，多余视作恶意）。
+- 前端 `services/apiClient.fetchNatalChart` 默认 POST JSON body，复用 `fetchWithTimeout(15000ms)`，确保慢上游不会让 BirthChartSection 的 `submitting` 永久死锁。
+- 缓存键：`backend/src/services/geocoding.ts` 的 `geo:resolve:*` / `geo:search:*` 已改用 `hashInput(normalizeLocationValue(city))` 摘要，原始城市名永不入 Redis 键（隐私红线 #2）。
+- Analytics 端：`services/analytics.ts::trackApiError` 对 `/natal/*`、`/synastry/*`、`/cycle/*`、`/daily/*`、`/cbt/*`、`/ask/*`、`/wiki/*`、`/geo/*`、`/detail/*`、`/reports/*` 上报时将 `error_message` 替换为 `[redacted]`，仅保留 `endpoint + status_code`（隐私红线 #1）。
 
 #### CBT & Wiki API
 
