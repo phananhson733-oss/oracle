@@ -83,11 +83,19 @@ const parseErrorPayload = async (
   }
 };
 
-const trackAndThrow = (url: string, status: number, message: string): never => {
+const trackAndThrow = (
+  url: string,
+  status: number,
+  message: string,
+  payload?: unknown,
+  reason?: string,
+): never => {
   const endpoint = url.replace(API_BASE, "").split("?")[0];
   trackApiError(endpoint, status, message);
   const err = new Error(message) as ApiError;
   err.status = status;
+  if (payload !== undefined) err.payload = payload;
+  if (reason) err.reason = reason;
   throw err;
 };
 
@@ -95,7 +103,13 @@ const trackAndThrow = (url: string, status: number, message: string): never => {
 const assertOk = async (res: Response, fallbackMessage: string) => {
   if (res.ok) return;
   const parsed = await parseErrorPayload(res);
-  trackAndThrow(res.url, res.status, parsed.message || fallbackMessage);
+  trackAndThrow(
+    res.url,
+    res.status,
+    parsed.message || fallbackMessage,
+    parsed.payload,
+    parsed.reason,
+  );
 };
 
 const encodeCachePart = (value: unknown) =>
@@ -443,11 +457,18 @@ function withCoords(params: URLSearchParams, birth: BirthInput) {
 // === Natal API ===
 export async function fetchNatalChart(
   profile: BirthProfile,
+  opts: { skipCache?: boolean } = {},
 ): Promise<NatalFacts> {
   const birth = profileToBirthInput(profile);
-  const cacheKey = buildNatalCacheKey(birth);
-  const cached = readLocalCache<NatalFacts>(cacheKey);
-  if (cached) return cached;
+  // Anonymous landing flow opts out of localStorage cache to avoid persisting
+  // plaintext birth data (date/time/city/lat/lon) in cache keys per CLAUDE.md
+  // 隐私红线 #2. Logged-in chart pages still cache as before.
+  const skipCache = opts.skipCache === true;
+  const cacheKey = skipCache ? null : buildNatalCacheKey(birth);
+  if (cacheKey) {
+    const cached = readLocalCache<NatalFacts>(cacheKey);
+    if (cached) return cached;
+  }
   const params = new URLSearchParams({
     date: birth.date,
     city: birth.city,
@@ -461,7 +482,7 @@ export async function fetchNatalChart(
   await assertOk(res, "Failed to fetch natal chart");
   const data = await res.json();
   const chart = data.chart as NatalFacts;
-  writeLocalCache(cacheKey, chart);
+  if (cacheKey) writeLocalCache(cacheKey, chart);
   return chart;
 }
 

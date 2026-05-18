@@ -67,10 +67,15 @@ test.describe("/landing-v2 — Newsletter signup states", () => {
 
     const honeypot = page.locator('input[name="website"]');
     await expect(honeypot).toHaveCount(1);
-    // Hidden via sr-only class + aria-hidden + tabIndex=-1.
+    // Honeypot hidden from real users via sr-only (off-screen, screen-reader
+    // safe) + aria-hidden + tabIndex=-1. Playwright's toBeVisible treats
+    // sr-only as visible (it has dimensions), so check the class + a11y
+    // attributes + bounding box position is off-screen instead.
     await expect(honeypot).toHaveAttribute("aria-hidden", "true");
     await expect(honeypot).toHaveAttribute("tabindex", "-1");
-    await expect(honeypot).not.toBeVisible();
+    await expect(honeypot).toHaveClass(/sr-only/);
+    const box = await honeypot.boundingBox();
+    expect(box?.width ?? 0).toBeLessThanOrEqual(1);
   });
 
   test("429 rate_limited shows rate-limit copy", async ({ page }) => {

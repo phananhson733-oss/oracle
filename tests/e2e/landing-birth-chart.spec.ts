@@ -35,7 +35,9 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
 
     const cityError = page.locator("#bc-city-error");
     await expect(cityError).toBeVisible();
-    await expect(cityError).toHaveText(/couldn't find that place|specific name/i);
+    await expect(cityError).toHaveText(
+      /couldn't find that place|specific name/i,
+    );
   });
 
   test("503 GEOCODING_SERVICE_UNAVAILABLE shows service banner", async ({
@@ -62,7 +64,8 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
       .click();
 
     const banner = page.getByRole("alert").filter({
-      hasText: /location service is temporarily unavailable|try again in a moment/i,
+      hasText:
+        /location service is temporarily unavailable|try again in a moment/i,
     });
     await expect(banner.first()).toBeVisible();
   });
@@ -131,7 +134,9 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
         r.fulfill({
           status: 200,
           contentType: "application/json",
-          body: JSON.stringify(natalPayload),
+          // Backend returns { chart: NatalFacts } — fetchNatalChart unwraps
+          // data.chart, so the stub must mirror that envelope.
+          body: JSON.stringify({ chart: natalPayload }),
         }),
     });
 

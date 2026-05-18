@@ -15,10 +15,19 @@ import { AstroChart } from "../../components/AstroChart";
 import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { TECH_DATA } from "../../constants";
-import type { AccuracyLevel, NatalFacts, PlanetPosition, UserProfile } from "../../types";
+import type {
+  AccuracyLevel,
+  NatalFacts,
+  PlanetPosition,
+  UserProfile,
+} from "../../types";
 
 type ErrorKind = "location" | "service" | "generic" | null;
-interface ApiErrorShape { status?: number; payload?: { code?: string } | unknown; reason?: string }
+interface ApiErrorShape {
+  status?: number;
+  payload?: { code?: string } | unknown;
+  reason?: string;
+}
 
 const SIGN_GLYPHS: Record<string, string> = Object.fromEntries(
   Object.entries(TECH_DATA.SIGNS).map(([n, m]) => [n, m.glyph]),
@@ -26,10 +35,17 @@ const SIGN_GLYPHS: Record<string, string> = Object.fromEntries(
 
 const todayIso = () => new Date().toISOString().slice(0, 10);
 const safeTimezone = () => {
-  try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"; } catch { return "UTC"; }
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+  } catch {
+    return "UTC";
+  }
 };
 
-const findPosition = (positions: PlanetPosition[] | undefined, ...names: string[]) => {
+const findPosition = (
+  positions: PlanetPosition[] | undefined,
+  ...names: string[]
+) => {
   if (!positions?.length) return undefined;
   for (const name of names) {
     const found = positions.find((p) => p.name === name);
@@ -44,8 +60,12 @@ const readErrorCode = (err: unknown): { status?: number; code?: string } => {
   const payload = e.payload as { code?: string } | undefined;
   return {
     status: typeof e.status === "number" ? e.status : undefined,
-    code: typeof payload?.code === "string" ? payload.code
-      : typeof e.reason === "string" ? e.reason : undefined,
+    code:
+      typeof payload?.code === "string"
+        ? payload.code
+        : typeof e.reason === "string"
+          ? e.reason
+          : undefined,
   };
 };
 
@@ -55,29 +75,48 @@ const formatDegree = (p: PlanetPosition) => {
   return `${deg}°${min}'`;
 };
 
-const HighlightCard: React.FC<{ label: string; position?: PlanetPosition; isDark: boolean }> = ({
-  label, position, isDark,
-}) => {
+const HighlightCard: React.FC<{
+  label: string;
+  position?: PlanetPosition;
+  isDark: boolean;
+}> = ({ label, position, isDark }) => {
   const glyph = position ? SIGN_GLYPHS[position.sign] || "" : "";
   const sign = position?.sign || "—";
-  const degree = position && Number.isFinite(position.degree) ? formatDegree(position) : "";
+  const degree =
+    position && Number.isFinite(position.degree) ? formatDegree(position) : "";
   return (
-    <div className={`rounded-2xl border p-6 ${
-      isDark ? "border-gold-500/15 bg-space-900/40" : "border-paper-300 bg-paper-100"
-    }`}>
-      <p className={`text-xs uppercase tracking-[0.18em] ${
-        isDark ? "text-star-400" : "text-paper-600"
-      }`}>{label}</p>
-      <div className={`mt-3 font-serif text-3xl leading-tight ${
-        isDark ? "text-star-50" : "text-paper-900"
-      }`}>
-        <span aria-hidden="true" className="mr-2">{glyph}</span>
+    <div
+      className={`rounded-2xl border p-6 ${
+        isDark
+          ? "border-gold-500/15 bg-space-900/40"
+          : "border-paper-300 bg-paper-100"
+      }`}
+    >
+      <p
+        className={`text-xs uppercase tracking-[0.18em] ${
+          isDark ? "text-star-400" : "text-paper-600"
+        }`}
+      >
+        {label}
+      </p>
+      <div
+        className={`mt-3 font-serif text-3xl leading-tight ${
+          isDark ? "text-star-50" : "text-paper-900"
+        }`}
+      >
+        <span aria-hidden="true" className="mr-2">
+          {glyph}
+        </span>
         <span>{sign}</span>
       </div>
       {degree && (
-        <p className={`mt-2 text-sm tabular-nums ${
-          isDark ? "text-star-200" : "text-paper-700"
-        }`}>{degree}</p>
+        <p
+          className={`mt-2 text-sm tabular-nums ${
+            isDark ? "text-star-200" : "text-paper-700"
+          }`}
+        >
+          {degree}
+        </p>
       )}
     </div>
   );
@@ -110,11 +149,17 @@ const BirthChartSection: React.FC = () => {
       if (submitting) return;
       const trimmedCity = birthCity.trim();
       if (!birthDate) {
-        setValidationError(landing.birth_chart_form_date_required || "Please enter your birth date.");
+        setValidationError(
+          landing.birth_chart_form_date_required ||
+            "Please enter your birth date.",
+        );
         return;
       }
       if (!trimmedCity) {
-        setValidationError(landing.birth_chart_form_city_required || "Please enter the city where you were born.");
+        setValidationError(
+          landing.birth_chart_form_city_required ||
+            "Please enter the city where you were born.",
+        );
         return;
       }
       setValidationError(null);
@@ -123,7 +168,9 @@ const BirthChartSection: React.FC = () => {
 
       const accuracyLevel: AccuracyLevel = timeUnknown
         ? "time_unknown"
-        : birthTime ? "exact" : "approximate";
+        : birthTime
+          ? "exact"
+          : "approximate";
 
       const transientProfile: UserProfile = {
         userId: `landing-${Date.now()}`,
@@ -142,7 +189,11 @@ const BirthChartSection: React.FC = () => {
       });
 
       try {
-        const chart = await fetchNatalChart(transientProfile);
+        // skipCache:true — anonymous landing flow must not persist plaintext
+        // birth data to localStorage cache keys (CLAUDE.md 隐私红线 #2).
+        const chart = await fetchNatalChart(transientProfile, {
+          skipCache: true,
+        });
         setFacts(chart);
         setProfile(transientProfile);
         window.requestAnimationFrame(() => {
@@ -151,8 +202,10 @@ const BirthChartSection: React.FC = () => {
         });
       } catch (err: unknown) {
         const { status, code } = readErrorCode(err);
-        if (status === 400 && code === "LOCATION_UNRESOLVED") setErrorKind("location");
-        else if (status === 503 || code === "GEOCODING_SERVICE_UNAVAILABLE") setErrorKind("service");
+        if (status === 400 && code === "LOCATION_UNRESOLVED")
+          setErrorKind("location");
+        else if (status === 503 || code === "GEOCODING_SERVICE_UNAVAILABLE")
+          setErrorKind("service");
         else setErrorKind("generic");
         setFacts(null);
         setProfile(null);
@@ -161,8 +214,15 @@ const BirthChartSection: React.FC = () => {
       }
     },
     [
-      birthCity, birthDate, birthTime, name, submitting, timeUnknown,
-      landing.birth_chart_form_city_required, landing.birth_chart_form_date_required, landing.birth_chart_submit,
+      birthCity,
+      birthDate,
+      birthTime,
+      name,
+      submitting,
+      timeUnknown,
+      landing.birth_chart_form_city_required,
+      landing.birth_chart_form_date_required,
+      landing.birth_chart_submit,
     ],
   );
 
@@ -186,7 +246,9 @@ const BirthChartSection: React.FC = () => {
   const labelClass = `text-xs uppercase tracking-[0.18em] ${isDark ? "text-star-400" : "text-paper-600"}`;
   const mysticErrorClass = `text-sm font-serif italic ${isDark ? "text-gold-500" : "text-paper-800"}`;
   const ctaButtonClass = `inline-flex items-center justify-center rounded-full bg-accent text-paper-100 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
-    isDark ? "focus-visible:ring-offset-space-950" : "focus-visible:ring-offset-paper-100"
+    isDark
+      ? "focus-visible:ring-offset-space-950"
+      : "focus-visible:ring-offset-paper-100"
   }`;
 
   const sun = findPosition(facts?.positions, "Sun");
@@ -209,9 +271,12 @@ const BirthChartSection: React.FC = () => {
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
-          {landing.birth_chart_title || "Calculate your birth chart in 30 seconds."}
+          {landing.birth_chart_title ||
+            "Calculate your birth chart in 30 seconds."}
         </h2>
-        <p className={`mt-6 text-lg leading-relaxed ${isDark ? "text-star-200" : "text-paper-700"}`}>
+        <p
+          className={`mt-6 text-lg leading-relaxed ${isDark ? "text-star-200" : "text-paper-700"}`}
+        >
           {landing.birth_chart_subtitle ||
             "Real Swiss Ephemeris calculations. Get your Sun, Moon, Rising, and full planetary placements."}
         </p>
@@ -220,8 +285,9 @@ const BirthChartSection: React.FC = () => {
           <div
             role="alert"
             className={`mt-8 rounded-xl border px-4 py-3 text-sm font-serif italic ${
-              isDark ? "border-gold-500/30 bg-space-900/60 text-gold-500"
-                     : "border-paper-400 bg-paper-100 text-paper-800"
+              isDark
+                ? "border-gold-500/30 bg-space-900/60 text-gold-500"
+                : "border-paper-400 bg-paper-100 text-paper-800"
             }`}
           >
             {landing.birth_chart_error_service ||
@@ -229,16 +295,27 @@ const BirthChartSection: React.FC = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} noValidate className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5"
+        >
           <div className="md:col-span-2">
             <label htmlFor="bc-name" className={labelClass}>
-              {landing.birth_chart_form_name_placeholder || "Your name (optional)"}
+              {landing.birth_chart_form_name_placeholder ||
+                "Your name (optional)"}
             </label>
             <input
-              id="bc-name" type="text" value={name}
+              id="bc-name"
+              type="text"
+              value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder={landing.birth_chart_form_name_placeholder || "Your name (optional)"}
-              className={`mt-2 ${inputClass}`} autoComplete="given-name"
+              placeholder={
+                landing.birth_chart_form_name_placeholder ||
+                "Your name (optional)"
+              }
+              className={`mt-2 ${inputClass}`}
+              autoComplete="given-name"
             />
           </div>
 
@@ -247,8 +324,12 @@ const BirthChartSection: React.FC = () => {
               {landing.birth_chart_form_date_label || "Birth date"}
             </label>
             <input
-              id="bc-date" type="date" required max={maxDate}
-              value={birthDate} onChange={(e) => setBirthDate(e.target.value)}
+              id="bc-date"
+              type="date"
+              required
+              max={maxDate}
+              value={birthDate}
+              onChange={(e) => setBirthDate(e.target.value)}
               className={`mt-2 ${inputClass}`}
             />
           </div>
@@ -259,7 +340,9 @@ const BirthChartSection: React.FC = () => {
             </label>
             {!timeUnknown ? (
               <input
-                id="bc-time" type="time" value={birthTime}
+                id="bc-time"
+                type="time"
+                value={birthTime}
                 onChange={(e) => setBirthTime(e.target.value)}
                 className={`mt-2 ${inputClass}`}
               />
@@ -280,31 +363,47 @@ const BirthChartSection: React.FC = () => {
               }`}
             >
               <input
-                id="bc-time-unknown" type="checkbox" checked={timeUnknown}
+                id="bc-time-unknown"
+                type="checkbox"
+                checked={timeUnknown}
                 onChange={(e) => {
                   setTimeUnknown(e.target.checked);
                   if (e.target.checked) setBirthTime("");
                 }}
                 className="h-4 w-4 rounded border-paper-400 text-accent focus:ring-accent"
               />
-              <span>{landing.birth_chart_form_time_unknown || "Time unknown"}</span>
+              <span>
+                {landing.birth_chart_form_time_unknown || "Time unknown"}
+              </span>
             </label>
           </div>
 
           <div className="md:col-span-2">
             <label htmlFor="bc-city" className={labelClass}>
-              {landing.birth_chart_form_city_placeholder || "City, Country (e.g., New York, USA)"}
+              {landing.birth_chart_form_city_placeholder ||
+                "City, Country (e.g., New York, USA)"}
             </label>
             <input
-              id="bc-city" type="text" required value={birthCity}
+              id="bc-city"
+              type="text"
+              required
+              value={birthCity}
               onChange={(e) => setBirthCity(e.target.value)}
-              placeholder={landing.birth_chart_form_city_placeholder || "City, Country (e.g., New York, USA)"}
-              className={`mt-2 ${inputClass}`} autoComplete="address-level2"
+              placeholder={
+                landing.birth_chart_form_city_placeholder ||
+                "City, Country (e.g., New York, USA)"
+              }
+              className={`mt-2 ${inputClass}`}
+              autoComplete="address-level2"
               aria-invalid={locationError || undefined}
               aria-describedby={locationError ? "bc-city-error" : undefined}
             />
             {locationError && (
-              <p id="bc-city-error" role="alert" className={`mt-2 ${mysticErrorClass}`}>
+              <p
+                id="bc-city-error"
+                role="alert"
+                className={`mt-2 ${mysticErrorClass}`}
+              >
                 {landing.birth_chart_error_location ||
                   "We couldn't find that place. Try a more specific name like 'Springfield, IL, USA'."}
               </p>
@@ -312,18 +411,22 @@ const BirthChartSection: React.FC = () => {
           </div>
 
           {validationError && (
-            <p role="alert" className={`md:col-span-2 ${mysticErrorClass}`}>{validationError}</p>
+            <p role="alert" className={`md:col-span-2 ${mysticErrorClass}`}>
+              {validationError}
+            </p>
           )}
 
           {genericError && (
             <p role="alert" className={`md:col-span-2 ${mysticErrorClass}`}>
-              {landing.birth_chart_error_generic || "Something went wrong. Please try again."}
+              {landing.birth_chart_error_generic ||
+                "Something went wrong. Please try again."}
             </p>
           )}
 
           <div className="md:col-span-2 mt-2">
             <button
-              type="submit" disabled={submitting}
+              type="submit"
+              disabled={submitting}
               className={`${ctaButtonClass} disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 ${
                 submitting ? "font-serif italic" : ""
               }`}
@@ -339,7 +442,9 @@ const BirthChartSection: React.FC = () => {
               ) : (
                 <>
                   {landing.birth_chart_submit || "Cast my chart"}
-                  <span aria-hidden="true" className="ml-2">{"→"}</span>
+                  <span aria-hidden="true" className="ml-2">
+                    {"→"}
+                  </span>
                 </>
               )}
             </button>
@@ -347,8 +452,13 @@ const BirthChartSection: React.FC = () => {
         </form>
 
         {facts && profile && (
-          <div id="birth-chart-result" className="mt-14 transition-all duration-500 ease-out">
-            <p className={`text-base leading-relaxed ${isDark ? "text-star-200" : "text-paper-700"}`}>
+          <div
+            id="birth-chart-result"
+            className="mt-14 transition-all duration-500 ease-out"
+          >
+            <p
+              className={`text-base leading-relaxed ${isDark ? "text-star-200" : "text-paper-700"}`}
+            >
               {landing.birth_chart_result_intro || "Your chart, calculated."}
             </p>
 
@@ -359,15 +469,34 @@ const BirthChartSection: React.FC = () => {
             </div>
 
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-              <HighlightCard label={landing.birth_chart_result_sun || "Sun"} position={sun} isDark={isDark} />
-              <HighlightCard label={landing.birth_chart_result_moon || "Moon"} position={moon} isDark={isDark} />
-              <HighlightCard label={landing.birth_chart_result_rising || "Rising"} position={rising} isDark={isDark} />
+              <HighlightCard
+                label={landing.birth_chart_result_sun || "Sun"}
+                position={sun}
+                isDark={isDark}
+              />
+              <HighlightCard
+                label={landing.birth_chart_result_moon || "Moon"}
+                position={moon}
+                isDark={isDark}
+              />
+              <HighlightCard
+                label={landing.birth_chart_result_rising || "Rising"}
+                position={rising}
+                isDark={isDark}
+              />
             </div>
 
             <div className="mt-10">
-              <button type="button" onClick={handleSaveCta} className={ctaButtonClass}>
-                {landing.birth_chart_save_cta || "Save my chart and unlock the full reading"}
-                <span aria-hidden="true" className="ml-2">{"→"}</span>
+              <button
+                type="button"
+                onClick={handleSaveCta}
+                className={ctaButtonClass}
+              >
+                {landing.birth_chart_save_cta ||
+                  "Save my chart and unlock the full reading"}
+                <span aria-hidden="true" className="ml-2">
+                  {"→"}
+                </span>
               </button>
             </div>
           </div>

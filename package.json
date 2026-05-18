@@ -4,7 +4,7 @@
   "_comment_pos": "项目包清单。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。",
   "name": "astrologywiki",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "engines": {
     "node": "20.x"
