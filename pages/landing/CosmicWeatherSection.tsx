@@ -1,14 +1,14 @@
 // INPUT: i18n translations, today's sky API client, planet glyph lookup.
 // OUTPUT: Today's Sky section — renders 10 major planet positions (sign + degree + Rx)
 //         fetched from /api/astro/today (day-cached, universal, no auth). Editorial grid layout.
-// POS: Below-the-fold landing section for /landing-v2. CTA routes to /forecast (auth-gated).
+// POS: Below-the-fold landing section for /landing-v2. CTA scrolls to BirthChart anchor
+//      (was: navigate /forecast → ProtectedRedirect bait-and-switch for anon users).
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { TECH_DATA } from "../../constants";
-import { trackEvent } from "../../services/analytics";
+import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 import {
   fetchTodaySky,
   type TodayPosition,
@@ -43,7 +43,9 @@ const GLYPH_FALLBACK: Record<string, string> = {
 };
 
 const getGlyph = (name: string): string => {
-  const meta = (TECH_DATA?.PLANETS as Record<string, { glyph?: string }> | undefined)?.[name];
+  const meta = (
+    TECH_DATA?.PLANETS as Record<string, { glyph?: string }> | undefined
+  )?.[name];
   return meta?.glyph || GLYPH_FALLBACK[name] || "∗";
 };
 
@@ -64,7 +66,7 @@ const sortPositions = (positions: TodayPosition[]): TodayPosition[] => {
 const CosmicWeatherSection: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-  const navigate = useNavigate();
+  const scrollToBirthChart = useScrollToBirthChart();
   const landing = t.landing;
   const isDark = theme === "dark";
 
@@ -92,12 +94,15 @@ const CosmicWeatherSection: React.FC = () => {
   const ctaText = landing.today_personal_cta || "See your personal forecast →";
 
   const handleCta = useCallback(() => {
-    trackEvent("cta_clicked", {
-      cta_text: ctaText,
+    // High-intent CTA. Previously navigated to /forecast which kicks anon
+    // users to login (bait-and-switch). Now scrolls to the embedded
+    // BirthChart tool so the user can complete a real chart on this page,
+    // then hits the /onboarding handoff from the result view.
+    void scrollToBirthChart({
+      ctaText,
       location: "landing_v2_cosmic_weather",
     });
-    navigate("/forecast");
-  }, [ctaText, navigate]);
+  }, [ctaText, scrollToBirthChart]);
 
   const positions = data ? sortPositions(data.positions) : [];
   const showSkeleton = loading && !data;
@@ -114,7 +119,9 @@ const CosmicWeatherSection: React.FC = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <p className={`mb-4 text-xs uppercase tracking-[0.18em] ${subtleColor}`}>
+        <p
+          className={`mb-4 text-xs uppercase tracking-[0.18em] ${subtleColor}`}
+        >
           {landing.today_kicker || "Today's Sky"}
         </p>
         <h2

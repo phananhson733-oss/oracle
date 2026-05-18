@@ -13,6 +13,8 @@
 - FOLDER.md｜地位：目录索引文档｜功能：记录 hooks 目录结构与更新记录。
 - useAnalytics.ts｜地位：分析追踪钩子｜功能：提供滚动深度与外链点击追踪钩子。
 - useEntitlements.ts｜地位：权益查询钩子｜功能：封装权益检查与额度查询逻辑。
+- useScrollToBirthChart.ts｜地位：landing CTA 收敛 hook｜功能：所有高意图 CTA 统一滚动到 BirthChart anchor，处理 lazy chunk 未挂载的 race（1.5s polling），超时才 fallback 到 /onboarding。
 
 近期更新
 - 新增 useAnalytics 钩子，补齐滚动深度与外链点击追踪能力。
+- 新增 useScrollToBirthChart 钩子，收敛 landing-v2 五个 section CTA（Hero/CosmicWeather/Tools/Synastry/AskOracle）的导航，消除 ProtectedRedirect bait-and-switch 与 lazy-mount race。
