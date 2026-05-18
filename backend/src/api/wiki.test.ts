@@ -221,7 +221,10 @@ describe("/api/wiki/home", () => {
     expect(ttl).toBeGreaterThanOrEqual(60);
   });
 
-  it("returns 503 when AI service is unavailable", async () => {
+  it("soft-fails to static fallback (200 + degraded:true) when AI is unavailable", async () => {
+    // Previous behaviour: AIUnavailableError → 503 + landing module hard-breaks.
+    // v2.x: serve the static fallback with degraded:true so the section still
+    // renders; never cache the degraded payload so a real one replaces it ASAP.
     mockCacheGet.mockResolvedValueOnce(null);
     const { AIUnavailableError } = await import("../services/ai.js");
     mockGenerateAIContent.mockRejectedValueOnce(
@@ -230,9 +233,21 @@ describe("/api/wiki/home", () => {
 
     const res = await getRequest(app, "/api/wiki/home?lang=en");
 
-    expect(res.status).toBe(503);
-    expect(res.body.error).toBe("AI unavailable");
-    expect(res.body.reason).toBe("error");
+    expect(res.status).toBe(200);
+    expect(res.body.degraded).toBe(true);
+    expect(res.body.lang).toBe("en");
+    // Pillars + trending_tags come from the static module; daily_transit and
+    // daily_wisdom carry generic fallback copy (no AI-specific output).
+    expect(res.body.content.pillars).toBeDefined();
+    expect(res.body.content.trending_tags).toBeDefined();
+    expect(res.body.content.daily_transit.title).toContain(
+      "Today's reading is on its way",
+    );
+    expect(res.body.content.daily_wisdom.quote).toBeTruthy();
+    // Critical: degraded payload must NOT be cached. As soon as AI recovers,
+    // the next request must get a real response.
     expect(mockCacheSet).not.toHaveBeenCalled();
+    // Cache-Control: no-store so CDN doesn't pin the fallback either.
+    expect(res.headers["cache-control"]).toBe("no-store");
   });
 });

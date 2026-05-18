@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.11
+> **Version**: 2.13
 > **Last Updated**: 2026-05-19
 > **Status**: Living Document — synced with codebase
 
