@@ -1,5 +1,5 @@
-<!-- INPUT: Prompt 管理目录结构与输出规范索引（含详情解读分区标签、紧凑摘要上下文变更与 CBT 日常建议约束）。 -->
-<!-- OUTPUT: prompts 架构摘要与文件清单（含详情解读标签化结构、合盘成长焦点字段调整与 CBT 独立统计 Prompt）。 -->
+<!-- INPUT: Prompt 管理目录结构与输出规范索引（含详情解读分区标签、紧凑摘要上下文变更、CBT 日常建议约束与 AI 安全护栏全局注入）。 -->
+<!-- OUTPUT: prompts 架构摘要与文件清单（含详情解读标签化结构、合盘成长焦点字段调整、CBT 独立统计 Prompt 与 51 个模板的 AI 安全护栏注入）。 -->
 <!-- POS: Prompt 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -10,13 +10,16 @@
 - 管理后端 AI Prompt 模板与版本。
 - 统一输出策略与分类逻辑。
 - 提供 Prompt 获取与注册。
+- 通过 withSafety 包装器为全部 51 个模板注入 AI 安全护栏（医疗免责、宿命论约束、CBT 非临床诊断声明）。
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 prompts 目录结构与文件清单。
-- common.ts｜地位：共享模块｜功能：类型定义、共享常量（语言指令、格式要求）与工具函数（语言解析、上下文格式化）。
-- manager.ts｜地位：Prompt 管理器｜功能：注册 Prompt、构建缓存 key 与分类逻辑。
+- common.ts｜地位：共享模块｜功能：类型定义、共享常量（语言指令、格式要求、AI 安全护栏 SAFETY_INSTRUCTION/CBT_DISCLAIMER_FOOTER/NO_FATE_CERTAINTY_REMINDER 双语版本）与工具函数（语言解析、上下文格式化、resolveSafetyInstruction/resolveCbtDisclaimer/resolveNoFateReminder）。
+- manager.ts｜地位：Prompt 管理器｜功能：注册 Prompt、构建缓存 key、分类逻辑与 withSafety 安全护栏包装器（在所有 51 个 registerPrompt 调用前注入安全前缀）。
+- safety.test.ts｜地位：安全护栏测试｜功能：覆盖 8 个家族的 SAFETY_INSTRUCTION 注入、NO_FATE_CERTAINTY_REMINDER 应用矩阵、CBT_DISCLAIMER_FOOTER 输出以及中英语言切换。
 
 近期更新
+- 新增 AI 安全护栏：全部 51 个 prompt 模板版本号小幅递增，system 前置 SAFETY_INSTRUCTION；daily/ask/synastry/cycle/detail（transit/synastry/composite）追加 NO_FATE_CERTAINTY_REMINDER；6 个 cbt-* user 末尾追加 CBT_DISCLAIMER_FOOTER。配套 safety.test.ts 与 common.ts 双语 resolver。
 - CBT 分析 Prompt 补充日常建议的情境绑定与数组格式约束，修正执行建议输出。
 - CBT 聚合分析 Prompt 拆分为 4 个独立 Prompt：cbt-somatic-analysis、cbt-root-analysis、cbt-mood-analysis、cbt-competence-analysis。
 - 新增 common.ts 共享模块，提取类型定义与共享工具函数。
