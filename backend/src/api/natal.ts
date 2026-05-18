@@ -4,6 +4,12 @@
 
 import { Router } from "express";
 import { performance } from "perf_hooks";
+// tz-lookup ships no TypeScript declarations and we cannot add a separate .d.ts
+// file in this change. Declare the module shape inline; the lib is a single
+// function `(lat: number, lon: number) => string` (IANA tz name).
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore -- no upstream types
+import tzLookup from "tz-lookup";
 import type {
   BirthInput,
   NatalChartResponse,
@@ -25,6 +31,19 @@ import {
 
 export const natalRouter = Router();
 
+// Derive an IANA timezone from a coordinate pair. Returns null when the lookup
+// fails (e.g. invalid lat/lon, library throws on out-of-range polar values).
+const deriveTimezoneFromCoords = (lat: number, lon: number): string | null => {
+  if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  if (lat < -90 || lat > 90 || lon < -180 || lon > 180) return null;
+  try {
+    const tz = (tzLookup as (la: number, lo: number) => string)(lat, lon);
+    return typeof tz === "string" && tz.length > 0 ? tz : null;
+  } catch {
+    return null;
+  }
+};
+
 async function parseBirthInput(
   query: Record<string, unknown>,
 ): Promise<BirthInput> {
@@ -38,15 +57,36 @@ async function parseBirthInput(
     typeof timezoneParam === "string" && timezoneParam.trim() !== "";
   const shouldResolve = !hasLat || !hasLon || !hasTimezone;
   const geo = shouldResolve ? await resolveLocation(city) : null;
+  // Precedence: trust the client-supplied timezone ONLY when the client also
+  // supplied exact lat+lon (i.e. asserted "I know my exact location and tz").
+  // Otherwise (city-only or partial coords) derive tz from the resolved/supplied
+  // coords so the browser's wall-clock zone never silently overrides the birth
+  // city's actual zone — a silent override flips rising sign and houses.
+  const resolvedLat = hasLat ? Number(latParam) : geo!.lat;
+  const resolvedLon = hasLon ? Number(lonParam) : geo!.lon;
+  const clientAssertedExactLocation = hasLat && hasLon && hasTimezone;
+  let timezone: string;
+  if (clientAssertedExactLocation) {
+    timezone = timezoneParam as string;
+  } else {
+    const coordTz = deriveTimezoneFromCoords(resolvedLat, resolvedLon);
+    if (coordTz) {
+      timezone = coordTz;
+    } else if (hasTimezone) {
+      timezone = timezoneParam as string;
+    } else {
+      timezone = geo!.timezone;
+    }
+  }
   return {
     date: query.date as string,
     time: query.time as string | undefined,
     city: geo?.city || city || "Unknown",
     // 当 hasLat/hasLon/hasTimezone 为 false 时 shouldResolve=true，geo 必非空
     // （resolveLocation 在失败时抛 LocationResolutionError 由 catch 处理）。
-    lat: hasLat ? Number(latParam) : geo!.lat,
-    lon: hasLon ? Number(lonParam) : geo!.lon,
-    timezone: hasTimezone ? (timezoneParam as string) : geo!.timezone,
+    lat: resolvedLat,
+    lon: resolvedLon,
+    timezone,
     accuracy: (query.accuracy as BirthInput["accuracy"]) || "exact",
   };
 }

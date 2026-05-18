@@ -27,6 +27,7 @@
     "resend": "^6.9.2",
     "stripe": "^20.1.0",
     "swisseph": "^0.5.17",
+    "tz-lookup": "^6.1.25",
     "uuid": "^13.0.0"
   },
   "overrides": {

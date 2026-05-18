@@ -1,6 +1,7 @@
 // INPUT: 后端 API 客户端与查询参数构建（含百科入口、经典书架缓存版本与 Ask/Synastry 权益校验、地理搜索多语言参数）。
-// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略，含 AI 缓存版本刷新、本地缓存清理与日运旧结构清理）。
+// OUTPUT: 导出 API 调用函数（含百科内容、经典书籍、问答类别、地理搜索多语言参数与详情解读缓存策略，含 AI 缓存版本刷新、本地缓存清理与日运旧结构清理）。所有缓存键经 SHA-256 摘要，PII 永不入键（隐私红线 #2）。
 // POS: 前端 API 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// 缓存键助手 (buildNatalCacheKey / buildSynastry*CacheKey / buildAiCacheKey) 全部为 async，所有调用方必须 await。
 
 /// <reference types="vite/client" />
 
@@ -114,31 +115,51 @@ const assertOk = async (res: Response, fallbackMessage: string) => {
 
 const encodeCachePart = (value: unknown) =>
   encodeURIComponent(String(value ?? ""));
-const buildBirthCachePart = (birth: BirthInput) =>
-  [
-    birth.date,
-    birth.time || "",
-    birth.city,
-    birth.lat ?? "",
-    birth.lon ?? "",
-    birth.timezone,
-    birth.accuracy,
-  ]
-    .map(encodeCachePart)
-    .join("|");
 
-const buildNatalCacheKey = (birth: BirthInput) =>
-  `${LOCAL_CACHE_PREFIX}:natal:${buildBirthCachePart(birth)}`;
+/**
+ * SHA-256 hex digest of an input string. Used to keep PII (birth date/time/city,
+ * coords) out of localStorage cache keys per CLAUDE.md 隐私红线 #2 ("缓存键禁止
+ * 明文"). Exported so other modules (e.g. CBT analysis hook) can hash their
+ * own PII before composing cache keys.
+ */
+export async function sha256Hex(input: string): Promise<string> {
+  const enc = new TextEncoder().encode(input);
+  const buf = await crypto.subtle.digest("SHA-256", enc);
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
 
-const buildSynastryFactsCacheKey = (
+async function buildBirthCachePart(birth: BirthInput): Promise<string> {
+  const canonical = JSON.stringify({
+    date: birth.date,
+    time: birth.time,
+    city: birth.city,
+    lat: birth.lat,
+    lon: birth.lon,
+    timezone: birth.timezone,
+    accuracy: birth.accuracy,
+  });
+  return sha256Hex(canonical);
+}
+
+const buildNatalCacheKey = async (birth: BirthInput): Promise<string> =>
+  `${LOCAL_CACHE_PREFIX}:natal:${await buildBirthCachePart(birth)}`;
+
+const buildSynastryFactsCacheKey = async (
   birthA: BirthInput,
   birthB: BirthInput,
   lang: "zh" | "en",
   relationType?: string,
-) =>
-  `${LOCAL_CACHE_PREFIX}:synastry_facts:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || "none")}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
+): Promise<string> => {
+  const [partA, partB] = await Promise.all([
+    buildBirthCachePart(birthA),
+    buildBirthCachePart(birthB),
+  ]);
+  return `${LOCAL_CACHE_PREFIX}:synastry_facts:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || "none")}:${partA}:${partB}`;
+};
 
-const buildSynastryReportCacheKey = (
+const buildSynastryReportCacheKey = async (
   birthA: BirthInput,
   birthB: BirthInput,
   lang: "zh" | "en",
@@ -146,10 +167,17 @@ const buildSynastryReportCacheKey = (
   tab: SynastryTab,
   nameA?: string,
   nameB?: string,
-) =>
-  `${LOCAL_CACHE_PREFIX}:synastry_report:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || "none")}:${encodeCachePart(tab)}:${encodeCachePart(nameA || "")}:${encodeCachePart(nameB || "")}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
+): Promise<string> => {
+  const [partA, partB, hashedNameA, hashedNameB] = await Promise.all([
+    buildBirthCachePart(birthA),
+    buildBirthCachePart(birthB),
+    nameA ? sha256Hex(nameA) : Promise.resolve("none"),
+    nameB ? sha256Hex(nameB) : Promise.resolve("none"),
+  ]);
+  return `${LOCAL_CACHE_PREFIX}:synastry_report:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || "none")}:${encodeCachePart(tab)}:${hashedNameA}:${hashedNameB}:${partA}:${partB}`;
+};
 
-const buildSynastrySectionCacheKey = (
+const buildSynastrySectionCacheKey = async (
   birthA: BirthInput,
   birthB: BirthInput,
   lang: "zh" | "en",
@@ -157,8 +185,15 @@ const buildSynastrySectionCacheKey = (
   section: SynastryOverviewSection,
   nameA?: string,
   nameB?: string,
-) =>
-  `${LOCAL_CACHE_PREFIX}:synastry_section:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || "none")}:${encodeCachePart(section)}:${encodeCachePart(nameA || "")}:${encodeCachePart(nameB || "")}:${buildBirthCachePart(birthA)}:${buildBirthCachePart(birthB)}`;
+): Promise<string> => {
+  const [partA, partB, hashedNameA, hashedNameB] = await Promise.all([
+    buildBirthCachePart(birthA),
+    buildBirthCachePart(birthB),
+    nameA ? sha256Hex(nameA) : Promise.resolve("none"),
+    nameB ? sha256Hex(nameB) : Promise.resolve("none"),
+  ]);
+  return `${LOCAL_CACHE_PREFIX}:synastry_section:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${encodeCachePart(relationType || "none")}:${encodeCachePart(section)}:${hashedNameA}:${hashedNameB}:${partA}:${partB}`;
+};
 
 const resolveUtcDate = () => new Date().toISOString().split("T")[0];
 
@@ -193,19 +228,21 @@ const writeLocalCache = <T>(key: string, value: T) => {
   }
 };
 
-const hashInput = (input: unknown): string => {
-  const str = JSON.stringify(input);
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash |= 0;
-  }
-  return Math.abs(hash).toString(36);
-};
+/**
+ * Hash arbitrary JSON-serializable input to a SHA-256 hex digest. Replaces the
+ * old 32-bit string hash so PII fields (birth date/time/city/coords) embedded
+ * in `input` cannot be reversed out of cache-key strings stored in localStorage.
+ * Kept as `hashInput` for call-site compatibility; now async.
+ */
+const hashInput = (input: unknown): Promise<string> =>
+  sha256Hex(JSON.stringify(input));
 
-const buildAiCacheKey = (scope: string, lang: "zh" | "en", input: unknown) =>
-  `${LOCAL_CACHE_PREFIX}:ai:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${scope}:${hashInput(input)}`;
+const buildAiCacheKey = async (
+  scope: string,
+  lang: "zh" | "en",
+  input: unknown,
+): Promise<string> =>
+  `${LOCAL_CACHE_PREFIX}:ai:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${scope}:${await hashInput(input)}`;
 
 const fetchWithCache = async <T>(
   key: string,
@@ -464,7 +501,7 @@ export async function fetchNatalChart(
   // plaintext birth data (date/time/city/lat/lon) in cache keys per CLAUDE.md
   // 隐私红线 #2. Logged-in chart pages still cache as before.
   const skipCache = opts.skipCache === true;
-  const cacheKey = skipCache ? null : buildNatalCacheKey(birth);
+  const cacheKey = skipCache ? null : await buildNatalCacheKey(birth);
   if (cacheKey) {
     const cached = readLocalCache<NatalFacts>(cacheKey);
     if (cached) return cached;
@@ -501,7 +538,10 @@ export async function fetchNatalOverview(
   });
   withCoords(params, birth);
 
-  const cacheKey = buildAiCacheKey("natal_overview", lang, { birth, lang });
+  const cacheKey = await buildAiCacheKey("natal_overview", lang, {
+    birth,
+    lang,
+  });
   return fetchWithCache(cacheKey, async () => {
     const res = await fetch(`${API_BASE}/natal/overview?${params}`);
     await assertOk(res, "Failed to fetch natal overview");
@@ -524,7 +564,10 @@ export async function fetchNatalCoreThemes(
   });
   withCoords(params, birth);
 
-  const cacheKey = buildAiCacheKey("natal_core_themes", lang, { birth, lang });
+  const cacheKey = await buildAiCacheKey("natal_core_themes", lang, {
+    birth,
+    lang,
+  });
   return fetchWithCache(cacheKey, async () => {
     const res = await fetch(`${API_BASE}/natal/core-themes?${params}`);
     if (!res.ok) throw new Error("Failed to fetch natal core themes");
@@ -549,7 +592,7 @@ export async function fetchNatalDimension(
   });
   withCoords(params, birth);
 
-  const cacheKey = buildAiCacheKey("natal_dimension", lang, {
+  const cacheKey = await buildAiCacheKey("natal_dimension", lang, {
     birth,
     dimension,
     lang,
@@ -579,7 +622,7 @@ export async function fetchDailyForecast(
   });
   withCoords(params, birth);
 
-  const cacheKey = buildAiCacheKey("daily_forecast", lang, {
+  const cacheKey = await buildAiCacheKey("daily_forecast", lang, {
     birth,
     date,
     lang,
@@ -622,7 +665,11 @@ export async function fetchDailyDetail(
   });
   withCoords(params, birth);
 
-  const cacheKey = buildAiCacheKey("daily_detail", lang, { birth, date, lang });
+  const cacheKey = await buildAiCacheKey("daily_detail", lang, {
+    birth,
+    date,
+    lang,
+  });
   return fetchWithCache(cacheKey, async () => {
     const res = await fetch(`${API_BASE}/daily/detail?${params}`);
     if (!res.ok) {
@@ -705,7 +752,7 @@ export async function fetchSynastry(
   const birthA = profileToBirthInput(profileA);
   const birthB = profileToBirthInput(profileB);
   const tabKey = tab || "overview";
-  const cacheKey = buildSynastryReportCacheKey(
+  const cacheKey = await buildSynastryReportCacheKey(
     birthA,
     birthB,
     lang,
@@ -822,7 +869,7 @@ export async function fetchSynastryOverviewSection(
 }> {
   const birthA = profileToBirthInput(profileA);
   const birthB = profileToBirthInput(profileB);
-  const cacheKey = buildSynastrySectionCacheKey(
+  const cacheKey = await buildSynastrySectionCacheKey(
     birthA,
     birthB,
     lang,
@@ -974,7 +1021,7 @@ export async function fetchSynastryTechnical(
 ): Promise<SynastryTechnicalData> {
   const birthA = profileToBirthInput(profileA);
   const birthB = profileToBirthInput(profileB);
-  const cacheKey = buildSynastryFactsCacheKey(
+  const cacheKey = await buildSynastryFactsCacheKey(
     birthA,
     birthB,
     lang,
@@ -1517,7 +1564,7 @@ export async function fetchSectionDetail(
 
   const resolvedCacheKey = cacheKey
     ? `${LOCAL_CACHE_PREFIX}:ai:${AI_CACHE_VERSION}:${encodeCachePart(lang)}:${scope}:${encodeCachePart(cacheKey)}`
-    : buildAiCacheKey(scope, lang, {
+    : await buildAiCacheKey(scope, lang, {
         type,
         context,
         chartData,

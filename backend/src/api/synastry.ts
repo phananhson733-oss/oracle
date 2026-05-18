@@ -956,122 +956,126 @@ synastryRouter.get("/overview-section", authMiddleware, async (req, res) => {
       }
     }
 
-    const coreStart = performance.now();
-    const {
-      chartA,
-      chartB,
-      synastry,
-      synastryAspects,
-      overlaysAB,
-      overlaysBA,
-    } = await buildSynastryCore(birthA, birthB);
-    const coreMs = performance.now() - coreStart;
-    const summaryContext = buildSynastrySummaryContext(
-      chartA,
-      chartB,
-      synastryAspects,
-      synastry,
-      relationshipType,
-      birthA,
-      birthB,
-      nameA,
-      nameB,
-    );
-    const sectionContext =
-      section === "core_dynamics"
-        ? buildCoreDynamicsContext(
-            chartA,
-            chartB,
-            synastryAspects,
-            overlaysAB,
-            overlaysBA,
-            relationshipType,
-            birthA,
-            birthB,
-            nameA,
-            nameB,
-          )
-        : section === "highlights"
-          ? buildHighlightsContext(
+    // Atomic reserve BEFORE the AI call when this request will consume额度
+    // (shouldRecord = 新合盘要扣额度；shouldConsume = dev/no-supabase 路径要扣)。
+    // 重复合盘（hash 已存在）→ 不消耗额度，不预占。
+    const willConsume = shouldRecord || shouldConsume;
+    let reservationId: string | null = null;
+    if (willConsume) {
+      const reservation = await entitlementServiceV2.reserveFeature(
+        userId,
+        "synastry",
+        deviceFingerprint,
+        timezone,
+      );
+      if (!reservation.reserved) {
+        return res.status(402).json({
+          error: "Out of credits",
+          needPurchase: true,
+          price: PRICING.SYNASTRY_FULL,
+        });
+      }
+      reservationId = reservation.reservationId;
+    }
+
+    try {
+      const coreStart = performance.now();
+      const {
+        chartA,
+        chartB,
+        synastry,
+        synastryAspects,
+        overlaysAB,
+        overlaysBA,
+      } = await buildSynastryCore(birthA, birthB);
+      const coreMs = performance.now() - coreStart;
+      const summaryContext = buildSynastrySummaryContext(
+        chartA,
+        chartB,
+        synastryAspects,
+        synastry,
+        relationshipType,
+        birthA,
+        birthB,
+        nameA,
+        nameB,
+      );
+      const sectionContext =
+        section === "core_dynamics"
+          ? buildCoreDynamicsContext(
               chartA,
               chartB,
               synastryAspects,
-              synastry,
+              overlaysAB,
+              overlaysBA,
               relationshipType,
               birthA,
               birthB,
               nameA,
               nameB,
             )
-          : summaryContext;
+          : section === "highlights"
+            ? buildHighlightsContext(
+                chartA,
+                chartB,
+                synastryAspects,
+                synastry,
+                relationshipType,
+                birthA,
+                birthB,
+                nameA,
+                nameB,
+              )
+            : summaryContext;
 
-    const aiStart = performance.now();
-    const { content, meta } = await generateAIContentWithMeta({
-      promptId: OVERVIEW_SECTION_PROMPT_MAP[section],
-      context: sectionContext,
-      lang,
-      allowMock: false,
-      maxTokens: section === "highlights" ? HIGHLIGHTS_MAX_TOKENS : undefined,
-    });
-    const aiMs = performance.now() - aiStart;
-    const totalMs = performance.now() - requestStart;
-    const timing = {
-      core_ms: Math.round(coreMs),
-      ai_ms: Math.round(aiMs),
-      total_ms: Math.round(totalMs),
-    };
-    res.setHeader(
-      "Server-Timing",
-      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
-    );
+      const aiStart = performance.now();
+      const { content, meta } = await generateAIContentWithMeta({
+        promptId: OVERVIEW_SECTION_PROMPT_MAP[section],
+        context: sectionContext,
+        lang,
+        allowMock: false,
+        maxTokens: section === "highlights" ? HIGHLIGHTS_MAX_TOKENS : undefined,
+      });
+      const aiMs = performance.now() - aiStart;
+      const totalMs = performance.now() - requestStart;
+      const timing = {
+        core_ms: Math.round(coreMs),
+        ai_ms: Math.round(aiMs),
+        total_ms: Math.round(totalMs),
+      };
+      res.setHeader(
+        "Server-Timing",
+        `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+      );
 
-    if (shouldRecord) {
-      await entitlementServiceV2.recordSynastryUsage(
-        userId,
-        personA,
-        personB,
-        normalizedRelationshipType,
-        true,
-      );
-      const consumed = await entitlementServiceV2.consumeFeature(
-        userId,
-        "synastry",
-        deviceFingerprint,
-        timezone,
-      );
-      if (!consumed) {
-        return res.status(403).json({
-          error: "Failed to consume feature",
-          needPurchase: true,
-          price: PRICING.SYNASTRY_FULL,
-        });
+      if (shouldRecord) {
+        await entitlementServiceV2.recordSynastryUsage(
+          userId,
+          personA,
+          personB,
+          normalizedRelationshipType,
+          true,
+        );
       }
-    } else if (shouldConsume) {
-      const consumed = await entitlementServiceV2.consumeFeature(
-        userId,
-        "synastry",
-        deviceFingerprint,
-        timezone,
-      );
-      if (!consumed) {
-        return res.status(403).json({
-          error: "Failed to consume feature",
-          needPurchase: true,
-          price: PRICING.SYNASTRY_FULL,
-        });
-      }
+
+      // 成功：提交预占（扣减保持）
+      await entitlementServiceV2.commitReservation(reservationId);
+
+      res.json({
+        section,
+        lang: content.lang,
+        content: content.content,
+        meta,
+        timing,
+      } as SynastryOverviewSectionResponse);
+    } catch (innerError) {
+      // LLM / 计算失败：归还预占的额度
+      await entitlementServiceV2.refundReservation(reservationId);
+      throw innerError;
     }
-
-    res.json({
-      section,
-      lang: content.lang,
-      content: content.content,
-      meta,
-      timing,
-    } as SynastryOverviewSectionResponse);
   } catch (error) {
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: "AI unavailable", reason: error.reason });
+      res.status(502).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });
@@ -1146,99 +1150,102 @@ synastryRouter.get("/", authMiddleware, async (req, res) => {
       }
     }
 
-    const coreStart = performance.now();
-    const { chartA, chartB, synastry, synastryAspects } =
-      await buildSynastryCore(birthA, birthB);
-    const coreMs = performance.now() - coreStart;
-    const summaryContext = buildSynastrySummaryContext(
-      chartA,
-      chartB,
-      synastryAspects,
-      synastry,
-      relationshipType,
-      birthA,
-      birthB,
-      nameA,
-      nameB,
-    );
-    const fullContext = {
-      chartA,
-      chartB,
-      synastry,
-      relationship_type: relationshipType,
-      birth_accuracy: { nameA: birthA.accuracy, nameB: birthB.accuracy },
-      nameA,
-      nameB,
-    };
-
-    const aiStart = performance.now();
-    const { content, meta } = await generateAIContentWithMeta({
-      promptId: TAB_PROMPT_MAP[tab],
-      context: tab === "overview" ? summaryContext : fullContext,
-      lang,
-      allowMock: false,
-      maxTokens: tab === "overview" ? OVERVIEW_MAX_TOKENS : undefined,
-    });
-    const aiMs = performance.now() - aiStart;
-    const totalMs = performance.now() - requestStart;
-    const timing = {
-      core_ms: Math.round(coreMs),
-      ai_ms: Math.round(aiMs),
-      total_ms: Math.round(totalMs),
-    };
-    res.setHeader(
-      "Server-Timing",
-      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
-    );
-
-    if (shouldRecord) {
-      await entitlementServiceV2.recordSynastryUsage(
-        userId,
-        personA,
-        personB,
-        normalizedRelationshipType,
-        true,
-      );
-      const consumed = await entitlementServiceV2.consumeFeature(
+    // Atomic reserve BEFORE the AI call when this request will consume额度。
+    // 重复合盘（hash 已存在）→ shouldRecord=false → 不消耗额度，不预占。
+    const willConsume = shouldRecord || shouldConsume;
+    let reservationId: string | null = null;
+    if (willConsume) {
+      const reservation = await entitlementServiceV2.reserveFeature(
         userId,
         "synastry",
         deviceFingerprint,
         timezone,
       );
-      if (!consumed) {
-        return res.status(403).json({
-          error: "Failed to consume feature",
+      if (!reservation.reserved) {
+        return res.status(402).json({
+          error: "Out of credits",
           needPurchase: true,
           price: PRICING.SYNASTRY_FULL,
         });
       }
-    } else if (shouldConsume) {
-      const consumed = await entitlementServiceV2.consumeFeature(
-        userId,
-        "synastry",
-        deviceFingerprint,
-        timezone,
-      );
-      if (!consumed) {
-        return res.status(403).json({
-          error: "Failed to consume feature",
-          needPurchase: true,
-          price: PRICING.SYNASTRY_FULL,
-        });
-      }
+      reservationId = reservation.reservationId;
     }
 
-    res.json({
-      tab,
-      synastry,
-      lang: content.lang,
-      content: content.content,
-      meta,
-      timing,
-    } as SynastryResponse);
+    try {
+      const coreStart = performance.now();
+      const { chartA, chartB, synastry, synastryAspects } =
+        await buildSynastryCore(birthA, birthB);
+      const coreMs = performance.now() - coreStart;
+      const summaryContext = buildSynastrySummaryContext(
+        chartA,
+        chartB,
+        synastryAspects,
+        synastry,
+        relationshipType,
+        birthA,
+        birthB,
+        nameA,
+        nameB,
+      );
+      const fullContext = {
+        chartA,
+        chartB,
+        synastry,
+        relationship_type: relationshipType,
+        birth_accuracy: { nameA: birthA.accuracy, nameB: birthB.accuracy },
+        nameA,
+        nameB,
+      };
+
+      const aiStart = performance.now();
+      const { content, meta } = await generateAIContentWithMeta({
+        promptId: TAB_PROMPT_MAP[tab],
+        context: tab === "overview" ? summaryContext : fullContext,
+        lang,
+        allowMock: false,
+        maxTokens: tab === "overview" ? OVERVIEW_MAX_TOKENS : undefined,
+      });
+      const aiMs = performance.now() - aiStart;
+      const totalMs = performance.now() - requestStart;
+      const timing = {
+        core_ms: Math.round(coreMs),
+        ai_ms: Math.round(aiMs),
+        total_ms: Math.round(totalMs),
+      };
+      res.setHeader(
+        "Server-Timing",
+        `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+      );
+
+      if (shouldRecord) {
+        await entitlementServiceV2.recordSynastryUsage(
+          userId,
+          personA,
+          personB,
+          normalizedRelationshipType,
+          true,
+        );
+      }
+
+      // 成功：提交预占（扣减保持）
+      await entitlementServiceV2.commitReservation(reservationId);
+
+      res.json({
+        tab,
+        synastry,
+        lang: content.lang,
+        content: content.content,
+        meta,
+        timing,
+      } as SynastryResponse);
+    } catch (innerError) {
+      // LLM / 计算失败：归还预占的额度
+      await entitlementServiceV2.refundReservation(reservationId);
+      throw innerError;
+    }
   } catch (error) {
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: "AI unavailable", reason: error.reason });
+      res.status(502).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });

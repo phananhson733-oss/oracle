@@ -59,15 +59,14 @@ const PLANET_IDS: Record<string, number> = {
   "North Node": SE_TRUE_NODE,
 };
 
-// 尝试加载 swisseph
+// 尝试加载 swisseph。加载失败时 getPlanetPositions 会把 usedMockFallback 设为 true，
+// 由 /api/astro/today 的完整性门拒绝（不再落到 day cache）。
 let swisseph: any = null;
-let swissephAvailable = false;
 
 try {
   const swissephModule = await import("swisseph");
   // 处理 ESM 默认导出
   swisseph = swissephModule.default || swissephModule;
-  swissephAvailable = true;
 
   // 设置星历数据路径（如果有自定义路径可在环境变量中配置）
   const ephePath = process.env.SWISSEPH_PATH || "";
@@ -356,6 +355,8 @@ export class SwissEphemerisService implements EphemerisService {
   ): Promise<{
     positions: PlanetPosition[];
     houseCusps: number[];
+    usedMockFallback: boolean;
+    mockedPlanets: string[];
   }> {
     const jd = dateToJulian(date);
     if (!Number.isFinite(jd)) {
@@ -363,6 +364,20 @@ export class SwissEphemerisService implements EphemerisService {
     }
     const positions: PlanetPosition[] = [];
     const longitudes: Record<string, number> = {};
+    // Mock-fallback tracking: every time we substitute mockPlanetPosition() for a real
+    // ephemeris value, set the flag and record the body name. Consumers (e.g. astro/today)
+    // must refuse to cache or serve payloads where usedMockFallback === true; otherwise
+    // mock data poisons day-long caches with finite-but-fictitious degrees/signs.
+    let usedMockFallback = false;
+    const mockedPlanets: string[] = [];
+    const markMockUsed = (bodyName: string) => {
+      usedMockFallback = true;
+      mockedPlanets.push(bodyName);
+    };
+    // If swisseph itself failed to load at module init, every position is mock.
+    if (!this.useRealEphemeris) {
+      usedMockFallback = true;
+    }
 
     // 计算宫位（Placidus）
     let houses: number[] = [];
@@ -419,11 +434,13 @@ export class SwissEphemerisService implements EphemerisService {
           const mock = mockPlanetPosition(name, jd, i);
           longitude = mock.lon;
           speed = mock.speed;
+          markMockUsed(name);
         }
       } else {
         const mock = mockPlanetPosition(name, jd, i);
         longitude = mock.lon;
         speed = mock.speed;
+        markMockUsed(name);
       }
 
       const normalized = normalizeLongitude(longitude);
@@ -543,10 +560,15 @@ export class SwissEphemerisService implements EphemerisService {
       return undefined;
     })();
 
-    const lilithFallback = normalizeLongitude(
-      mockPlanetPosition("Lilith", jd, allBodies.length + 11).lon,
-    );
-    const resolvedLilithLon = lilithLon ?? lilithFallback;
+    let resolvedLilithLon: number;
+    if (lilithLon !== undefined) {
+      resolvedLilithLon = lilithLon;
+    } else {
+      resolvedLilithLon = normalizeLongitude(
+        mockPlanetPosition("Lilith", jd, allBodies.length + 11).lon,
+      );
+      markMockUsed("Lilith");
+    }
     const lilithSign = degreeToSign(resolvedLilithLon);
     positions.push({
       name: "Lilith",
@@ -557,11 +579,15 @@ export class SwissEphemerisService implements EphemerisService {
       isRetrograde: false,
     });
 
-    const vertexLon =
-      vertex ??
-      normalizeLongitude(
+    let vertexLon: number;
+    if (vertex !== undefined) {
+      vertexLon = vertex;
+    } else {
+      vertexLon = normalizeLongitude(
         mockPlanetPosition("Vertex", jd, allBodies.length + 12).lon,
       );
+      markMockUsed("Vertex");
+    }
     const vertexSign = degreeToSign(vertexLon);
     positions.push({
       name: "Vertex",
@@ -572,11 +598,15 @@ export class SwissEphemerisService implements EphemerisService {
       isRetrograde: false,
     });
 
-    const eastPointLon =
-      equatorialAscendant ??
-      normalizeLongitude(
+    let eastPointLon: number;
+    if (equatorialAscendant !== undefined) {
+      eastPointLon = equatorialAscendant;
+    } else {
+      eastPointLon = normalizeLongitude(
         mockPlanetPosition("East Point", jd, allBodies.length + 13).lon,
       );
+      markMockUsed("East Point");
+    }
     const eastPointSign = degreeToSign(eastPointLon);
     positions.push({
       name: "East Point",
@@ -587,7 +617,7 @@ export class SwissEphemerisService implements EphemerisService {
       isRetrograde: false,
     });
 
-    return { positions, houseCusps: houses };
+    return { positions, houseCusps: houses, usedMockFallback, mockedPlanets };
   }
 
   calculateAspects(positions: PlanetPosition[]): Aspect[] {

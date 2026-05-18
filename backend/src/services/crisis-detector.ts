@@ -2,23 +2,28 @@
 // OUTPUT: 导出 detectCrisis / resolveRegion / extractFreeText / buildCrisisResponse 工具函数。
 // POS: CBT 危机检测服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import type { Request } from 'express';
-import { EN_PATTERNS, ZH_KEYWORDS } from '../data/crisis-keywords.js';
+import type { Request } from "express";
+import { EN_PATTERNS, ZH_KEYWORDS } from "../data/crisis-keywords.js";
 import {
   getHelplineForRegion,
   type Helpline,
   type RegionCode,
   HELPLINES,
-} from '../data/helplines.js';
+} from "../data/helplines.js";
 
 export interface CrisisDetectionResult {
   hit: boolean;
   /** 关键词类别标签（如 "self_harm_en"、"self_harm_zh"），绝不包含命中的原文短语。 */
-  reason?: 'self_harm_en' | 'self_harm_zh';
+  reason?: "self_harm_en" | "self_harm_zh" | "detector-error";
+  /**
+   * 设为 true 表示检测器本身失败（异常 / 内部错误），调用方应按命中处理（fail-closed）。
+   * 真正命中关键词时仍只设置 `hit: true`，不会同时设置 `failSafe`。
+   */
+  failSafe?: boolean;
 }
 
 export interface CrisisResponse {
-  status: 'crisis_detected';
+  status: "crisis_detected";
   helpline: Helpline;
   message_zh: string;
   message_en: string;
@@ -29,14 +34,14 @@ export interface CrisisResponse {
  * 不引用 i18n 字典是为了在 server 端保持自包含 + 零依赖。
  */
 const CRISIS_MESSAGE_ZH =
-  '我们注意到你提到了一些让人担心的内容。如果你正在经历危机，请立刻联系下方专业求助热线，你并不孤单。';
+  "我们注意到你提到了一些让人担心的内容。如果你正在经历危机，请立刻联系下方专业求助热线，你并不孤单。";
 const CRISIS_MESSAGE_EN =
-  'We noticed something that concerns us. If you are in crisis right now, please reach out to the helpline below — you are not alone.';
+  "We noticed something that concerns us. If you are in crisis right now, please reach out to the helpline below — you are not alone.";
 
 /**
  * 在传入文本数组中检测危机关键词。
  *
- * - 任何异常都被吞掉并返回 `{ hit: false }`：检测器绝不阻塞主流程。
+ * - 异常时 fail-CLOSED：返回 `{ hit: true, failSafe: true }`，调用方应短路到安全响应。
  * - 不返回命中原文，只返回类别标签（隐私红线）。
  * - 接受 `string[]` 或 `(string | undefined | null)[]`，无效项跳过。
  */
@@ -45,30 +50,30 @@ export function detectCrisis(
 ): CrisisDetectionResult {
   try {
     for (const raw of texts) {
-      if (typeof raw !== 'string') continue;
+      if (typeof raw !== "string") continue;
       const trimmed = raw.trim();
       if (!trimmed) continue;
       const lower = trimmed.toLowerCase();
       for (const re of EN_PATTERNS) {
         if (re.test(lower)) {
-          return { hit: true, reason: 'self_harm_en' };
+          return { hit: true, reason: "self_harm_en" };
         }
       }
       for (const kw of ZH_KEYWORDS) {
         if (trimmed.includes(kw)) {
-          return { hit: true, reason: 'self_harm_zh' };
+          return { hit: true, reason: "self_harm_zh" };
         }
       }
     }
     return { hit: false };
   } catch (error) {
-    // 检测器不应抛错。退化为放行 + warn 日志。
-    console.warn(
-      `[crisis-detector] detection threw, falling back to no-hit: ${
-        (error as Error)?.message ?? 'unknown error'
-      }`,
+    // Fail-closed：检测器异常时按命中处理，避免静默放行可能含危机内容的请求到 LLM。
+    // 仅记录脱敏的错误信息（message），不记录任何用户输入文本。
+    const message = (error as Error)?.message ?? "unknown error";
+    console.error(
+      `[crisis-detector] detection failed (fail-closed): ${message}`,
     );
-    return { hit: false };
+    return { hit: true, failSafe: true, reason: "detector-error" };
   }
 }
 
@@ -76,20 +81,20 @@ export function detectCrisis(
  * 解析请求所属区域：
  *   x-region header → lang 推断 → INTL 兜底。
  */
-export function resolveRegion(req: Request, lang: 'zh' | 'en'): RegionCode {
+export function resolveRegion(req: Request, lang: "zh" | "en"): RegionCode {
   try {
-    const headerRaw = req.headers?.['x-region'];
+    const headerRaw = req.headers?.["x-region"];
     const header = Array.isArray(headerRaw) ? headerRaw[0] : headerRaw;
-    if (typeof header === 'string') {
+    if (typeof header === "string") {
       const upper = header.trim().toUpperCase() as RegionCode;
       if (HELPLINES[upper]) return upper;
     }
   } catch {
     // 头解析失败仍走 lang 推断。
   }
-  if (lang === 'zh') return 'CN';
-  if (lang === 'en') return 'US';
-  return 'INTL';
+  if (lang === "zh") return "CN";
+  if (lang === "en") return "US";
+  return "INTL";
 }
 
 /**
@@ -98,10 +103,10 @@ export function resolveRegion(req: Request, lang: 'zh' | 'en'): RegionCode {
  */
 export function buildCrisisResponse(
   region: RegionCode,
-  lang: 'zh' | 'en',
+  lang: "zh" | "en",
 ): CrisisResponse {
   return {
-    status: 'crisis_detected',
+    status: "crisis_detected",
     helpline: getHelplineForRegion(region, lang),
     message_zh: CRISIS_MESSAGE_ZH,
     message_en: CRISIS_MESSAGE_EN,
@@ -119,33 +124,33 @@ export function buildCrisisResponse(
  */
 export function extractFreeText(body: unknown): string[] {
   const out: string[] = [];
-  if (!body || typeof body !== 'object') return out;
+  if (!body || typeof body !== "object") return out;
   const b = body as Record<string, unknown>;
 
   // /analysis 字段
-  if (typeof b.situation === 'string') out.push(b.situation);
-  if (typeof b.hotThought === 'string') out.push(b.hotThought);
+  if (typeof b.situation === "string") out.push(b.situation);
+  if (typeof b.hotThought === "string") out.push(b.hotThought);
   if (Array.isArray(b.automaticThoughts)) {
     for (const t of b.automaticThoughts) {
-      if (typeof t === 'string') out.push(t);
+      if (typeof t === "string") out.push(t);
     }
   }
   if (Array.isArray(b.evidenceFor)) {
     for (const t of b.evidenceFor) {
-      if (typeof t === 'string') out.push(t);
+      if (typeof t === "string") out.push(t);
     }
   }
   if (Array.isArray(b.evidenceAgainst)) {
     for (const t of b.evidenceAgainst) {
-      if (typeof t === 'string') out.push(t);
+      if (typeof t === "string") out.push(t);
     }
   }
   if (Array.isArray(b.balancedEntries)) {
     for (const entry of b.balancedEntries) {
       if (
         entry &&
-        typeof entry === 'object' &&
-        typeof (entry as { text?: unknown }).text === 'string'
+        typeof entry === "object" &&
+        typeof (entry as { text?: unknown }).text === "string"
       ) {
         out.push((entry as { text: string }).text);
       }
@@ -157,8 +162,8 @@ export function extractFreeText(body: unknown): string[] {
     for (const m of b.moods) {
       if (
         m &&
-        typeof m === 'object' &&
-        typeof (m as { name?: unknown }).name === 'string'
+        typeof m === "object" &&
+        typeof (m as { name?: unknown }).name === "string"
       ) {
         out.push((m as { name: string }).name);
       }
@@ -167,10 +172,10 @@ export function extractFreeText(body: unknown): string[] {
 
   // stats 端点：递归扫描 notes / text / label / description 字段（深度受限 3）。
   const statsKeys = [
-    'somatic_stats',
-    'root_stats',
-    'mood_stats',
-    'competence_stats',
+    "somatic_stats",
+    "root_stats",
+    "mood_stats",
+    "competence_stats",
   ];
   for (const key of statsKeys) {
     if (b[key] !== undefined) {
@@ -182,14 +187,14 @@ export function extractFreeText(body: unknown): string[] {
 }
 
 const STATS_FREE_TEXT_KEYS = new Set([
-  'notes',
-  'note',
-  'text',
-  'label',
-  'description',
-  'name',
-  'thought',
-  'situation',
+  "notes",
+  "note",
+  "text",
+  "label",
+  "description",
+  "name",
+  "thought",
+  "situation",
 ]);
 
 function collectStringsFromStats(
@@ -198,7 +203,7 @@ function collectStringsFromStats(
   depth: number,
 ): void {
   if (depth > 3 || node === null || node === undefined) return;
-  if (typeof node === 'string') {
+  if (typeof node === "string") {
     acc.push(node);
     return;
   }
@@ -206,13 +211,13 @@ function collectStringsFromStats(
     for (const item of node) collectStringsFromStats(item, acc, depth + 1);
     return;
   }
-  if (typeof node === 'object') {
+  if (typeof node === "object") {
     for (const [k, v] of Object.entries(node)) {
-      if (typeof v === 'string') {
+      if (typeof v === "string") {
         if (STATS_FREE_TEXT_KEYS.has(k)) acc.push(v);
         continue;
       }
-      if (typeof v === 'object') {
+      if (typeof v === "object") {
         collectStringsFromStats(v, acc, depth + 1);
       }
     }
@@ -226,12 +231,12 @@ function collectStringsFromStats(
  */
 export function trackCrisisDetected(payload: {
   region: RegionCode;
-  lang: 'zh' | 'en';
+  lang: "zh" | "en";
   endpoint: string;
 }): void {
   try {
     const event = {
-      event: 'cbt_crisis_detected',
+      event: "cbt_crisis_detected",
       region: payload.region,
       lang: payload.lang,
       endpoint: payload.endpoint,

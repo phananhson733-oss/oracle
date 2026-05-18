@@ -6,6 +6,7 @@ import { Router } from "express";
 import { performance } from "perf_hooks";
 import { resolveLang } from "../utils/lang.js";
 import { AIUnavailableError, generateAIContent } from "../services/ai.js";
+import { resolveSynastryName } from "../prompts/manager.js";
 
 export const detailRouter = Router();
 
@@ -77,13 +78,16 @@ detailRouter.post("/", async (req, res) => {
     }
 
     const promptId = resolvePromptId(type, context);
+    // Privacy red line: never let real names enter the LLM prompt context.
+    // Force alias (Person A/B in EN, A/B in ZH) regardless of what the client sent.
+    const aliasCtx = { lang, nameA, nameB };
     const promptContext: Record<string, unknown> = {
       type,
       context,
       chartData,
       transitDate,
-      nameA,
-      nameB,
+      nameA: resolveSynastryName(aliasCtx, "nameA"),
+      nameB: resolveSynastryName(aliasCtx, "nameB"),
     };
 
     const aiStart = performance.now();

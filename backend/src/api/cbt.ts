@@ -28,14 +28,20 @@ import {
   resolveRegion,
   trackCrisisDetected,
 } from "../services/crisis-detector.js";
+import { authMiddleware, requireAuth } from "./auth.js";
 
 export const cbtRouter = Router();
 
 /**
  * LLM 调用前的危机短路。命中时直接返回 HTTP 200 + crisis_detected 响应，并发送脱敏遥测。
  *
- * Dev-only 旁路：`NODE_ENV !== 'production'` 且 `?override_crisis_check=true`
- * 时跳过检测，便于 QA 测试包含关键词的良性文本。生产环境无论查询参数如何都不绕过。
+ * Default-secure override gate (threefold AND):
+ *   1) `NODE_ENV !== 'production'`                              — never bypass in production
+ *   2) `process.env.ENABLE_CBT_CRISIS_OVERRIDE === 'true'`      — opt-in via env (off by default)
+ *   3) `x-crisis-override-token` header equals `QA_CRISIS_OVERRIDE_TOKEN` — shared secret
+ *
+ * Token is read from a request header (not query/body) so it never leaks into access logs.
+ * Detector failures fail CLOSED: `failSafe: true` is treated identically to a real hit.
  *
  * @returns true 表示已短路返回（调用方应 return）；false 表示放行进入主流程。
  */
@@ -47,11 +53,20 @@ function shortCircuitOnCrisis(
   startedAt: number,
 ): boolean {
   const isDev = process.env.NODE_ENV !== "production";
-  const overrideRequested = req.query?.override_crisis_check === "true";
-  if (isDev && overrideRequested) return false;
+  const overrideEnabled = process.env.ENABLE_CBT_CRISIS_OVERRIDE === "true";
+  const expectedToken = process.env.QA_CRISIS_OVERRIDE_TOKEN;
+  const providedTokenRaw = req.headers["x-crisis-override-token"];
+  const providedToken = Array.isArray(providedTokenRaw)
+    ? providedTokenRaw[0]
+    : providedTokenRaw;
+  const tokenMatches =
+    typeof expectedToken === "string" &&
+    expectedToken.length > 0 &&
+    providedToken === expectedToken;
+  if (isDev && overrideEnabled && tokenMatches) return false;
 
   const detection = detectCrisis(extractFreeText(req.body));
-  if (!detection.hit) return false;
+  if (!detection.hit && !detection.failSafe) return false;
 
   const region = resolveRegion(req, lang);
   trackCrisisDetected({ region, lang, endpoint });
@@ -502,12 +517,11 @@ cbtRouter.post("/competence-analysis", async (req, res) => {
 });
 
 // POST /api/cbt/records - 创建 CBT 记录
-cbtRouter.post("/records", async (req, res) => {
+cbtRouter.post("/records", authMiddleware, requireAuth, async (req, res) => {
   try {
-    const { userId, record } = req.body as {
-      userId: string;
-      record: CBTRecord;
-    };
+    // userId comes from authenticated session, never from request body — prevents IDOR per CLAUDE.md §隐私红线 #1.
+    const userId = req.userId!;
+    const { record } = req.body as { record: CBTRecord };
     const key = `cbt:records:${userId}`;
 
     // 获取现有记录
@@ -530,9 +544,10 @@ cbtRouter.post("/records", async (req, res) => {
 });
 
 // GET /api/cbt/records - 获取 CBT 记录列表
-cbtRouter.get("/records", async (req, res) => {
+cbtRouter.get("/records", authMiddleware, requireAuth, async (req, res) => {
   try {
-    const userId = req.query.userId as string;
+    // userId comes from authenticated session, never from request query — prevents IDOR per CLAUDE.md §隐私红线 #1.
+    const userId = req.userId!;
     const key = `cbt:records:${userId}`;
 
     const records = (await cacheService.get<CBTRecord[]>(key)) || [];
