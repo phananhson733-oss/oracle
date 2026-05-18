@@ -1,9 +1,15 @@
 // INPUT: 城市地理编码服务（含多语言与结构化位置解析）。
 // OUTPUT: 导出城市搜索与校验函数；用户输入未匹配抛 LocationResolutionError（→ 400），
 //         上游 Open-Meteo 故障抛 GeocodingServiceError（→ 503）。
+//         所有 Redis 缓存键经 SHA-256 hashInput 摘要，原始城市名永不入键（隐私红线 #2）。
 // POS: 地理编码服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { cacheService } from "../cache/redis.js";
+import { hashInput } from "../cache/strategy.js";
+
+// 用户城市输入硬上限。任何调用方传入超过此长度的字符串都视作非法，
+// 防止恶意巨型字符串污染上游 / 缓存键 / 日志。
+export const CITY_MAX_LENGTH = 200;
 
 export class LocationResolutionError extends Error {
   readonly kind = "LocationResolutionError" as const;
@@ -11,10 +17,10 @@ export class LocationResolutionError extends Error {
     public readonly cityName: string,
     message?: string,
   ) {
-    super(
-      message ??
-        `Could not resolve location: "${cityName}". Please try a more specific name (e.g. "Springfield, IL, USA").`,
-    );
+    // 默认 message 必须 PII-free（不回显原始 cityName），方便上游路由统一返回
+    // 通用文案 + code，避免 stack trace / analytics error_message 把城市泄漏给 GA。
+    // 调用方仍可读取 cityName 字段用于服务端日志（须经 sanitize），但绝不可下发到前端或上抛。
+    super(message ?? "Could not resolve birthplace from the supplied city.");
     this.name = "LocationResolutionError";
   }
 }
@@ -79,8 +85,11 @@ const parseLocationQuery = (query: string): ParsedLocationQuery => {
   };
 };
 
-const normalizeCacheKeyPart = (value?: string) =>
-  value ? normalizeLocationValue(value) : "none";
+// Hash 缓存键的输入。统一在调用方 normalize 之后再过 SHA-256，使同义输入仍命中
+// 缓存（例如 "Beijing" / "beijing" / "Beijing, CN" 经 normalize 后归一），但落到
+// Redis 的 key 已是不可逆摘要，符合 CLAUDE.md 隐私红线 #2。
+const hashCacheKeyPart = (value?: string) =>
+  value ? hashInput(normalizeLocationValue(value)) : "none";
 
 const matchesLocationPart = (candidate: string | undefined, target: string) => {
   if (!candidate) return false;
@@ -129,6 +138,9 @@ export async function searchCities(
 ): Promise<GeoLocation[]> {
   const trimmedQuery = query.trim();
   if (!trimmedQuery) return [];
+  // Hard length cap. Anything longer is treated as garbage and rejected silently
+  // rather than billed against the upstream geocoding API or stored in cache.
+  if (trimmedQuery.length > CITY_MAX_LENGTH) return [];
 
   const parsed = parseLocationQuery(trimmedQuery);
   const searchTerm = parsed.city || trimmedQuery;
@@ -147,7 +159,7 @@ export async function searchCities(
   );
 
   // 检查缓存
-  const cacheKey = `geo:search:${normalizeCacheKeyPart(searchTerm)}:${normalizeCacheKeyPart(parsed.admin1)}:${normalizeCacheKeyPart(parsed.country)}:${normalizeCacheKeyPart(parsed.regionHint)}:${language}:${safeLimit}`;
+  const cacheKey = `geo:search:${hashCacheKeyPart(searchTerm)}:${hashCacheKeyPart(parsed.admin1)}:${hashCacheKeyPart(parsed.country)}:${hashCacheKeyPart(parsed.regionHint)}:${language}:${safeLimit}`;
   const cached = await cacheService.get<GeoLocation[]>(cacheKey);
   if (cached) return cached;
 
@@ -217,7 +229,10 @@ export async function searchCities(
     return finalResults;
   } catch (error) {
     if (error instanceof GeocodingServiceError) throw error;
-    console.error("Geocoding search failed:", error);
+    // Log error name/code only — message may include the user's raw city name
+    // (e.g. fetch abort / DNS resolution failures embed it). 隐私红线 #3.
+    const errName = error instanceof Error ? error.name : typeof error;
+    console.error(`Geocoding search failed (${errName})`);
     throw new GeocodingServiceError(
       "Geocoding lookup failed (network or upstream error)",
       { cause: error },
@@ -238,8 +253,14 @@ export async function resolveLocation(cityName: string): Promise<GeoLocation> {
     );
   }
 
-  // 检查缓存
-  const cacheKey = `geo:resolve:${trimmed.toLowerCase()}`;
+  // 长度上限同 searchCities：超长输入直接判为不可解析，避免上游/缓存放大攻击面。
+  if (trimmed.length > CITY_MAX_LENGTH) {
+    throw new LocationResolutionError(trimmed);
+  }
+
+  // 检查缓存。明文 city 名永不入键 — 改为 SHA-256(normalize(city)) 摘要，
+  // 同义输入（大小写 / 标点 / 空格 / "市省" 后缀差异）仍命中同一 key。
+  const cacheKey = `geo:resolve:${hashCacheKeyPart(trimmed)}`;
   const cached = await cacheService.get<GeoLocation>(cacheKey);
   if (cached) return cached;
 

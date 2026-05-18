@@ -319,16 +319,41 @@ export const trackError = (errorMessage: string, errorSource: string) => {
   });
 };
 
+// Endpoints whose 4xx/5xx responses may embed user-input PII (city, name,
+// question text, automatic thoughts, hot thought) in error.message — either
+// because the upstream lib echoes it back or because the route includes it
+// for debugging. We send only endpoint + status to GA for these; the
+// human-readable error is intentionally dropped (隐私红线 #1).
+const PII_RISK_ENDPOINT_PREFIXES = [
+  "/natal/",
+  "/synastry/",
+  "/cycle/",
+  "/daily/",
+  "/cbt/",
+  "/ask/",
+  "/wiki/",
+  "/geo/",
+  "/detail/",
+  "/reports/",
+];
+
+const isPiiRiskEndpoint = (endpoint: string): boolean =>
+  PII_RISK_ENDPOINT_PREFIXES.some((prefix) => endpoint.startsWith(prefix));
+
 export const trackApiError = (
   endpoint: string,
   statusCode: number,
   errorMessage: string,
 ) => {
   if (!canSendToGtag()) return;
+  const piiRisk = isPiiRiskEndpoint(endpoint);
   trackEvent("api_error", {
     endpoint,
     status_code: statusCode,
-    error_message: errorMessage.slice(0, 200),
+    // For PII-risk endpoints we still want a non-empty marker so the GA event
+    // is searchable, but it MUST NOT contain raw upstream text (which often
+    // includes the city / name the user typed). Send the static label only.
+    error_message: piiRisk ? "[redacted]" : errorMessage.slice(0, 200),
   });
 };
 

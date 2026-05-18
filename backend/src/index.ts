@@ -112,6 +112,30 @@ const authLimiter = rateLimit({
 });
 app.use("/api/auth", authLimiter);
 
+// Rate limiting — natal endpoints. Tighter than the global /api bucket because
+// each natal request is a publicly reachable anonymous-friendly entrypoint
+// that triggers external geocoding + Swiss Ephemeris work (and AI calls on
+// /overview /core-themes /dimension). 30/min/IP keeps a single client from
+// running up upstream cost while leaving room for ~6 attempts during a normal
+// landing-page form session (typical: 1-2 retries on bad city).
+const natalLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many natal chart requests, please try again later.",
+    code: "natal_rate_limited",
+  },
+});
+app.use("/api/natal", natalLimiter);
+
+// Body size cap for natal POSTs. Birth payloads are <500B in practice; this
+// rejects malicious oversized bodies before the global parser allocates.
+// Must come before the global `express.json()` below so the per-mount
+// instance wins on `/api/natal/*` paths.
+app.use("/api/natal", express.json({ limit: "4kb" }));
+
 // Rate limiting — general API (broader)
 const apiLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute

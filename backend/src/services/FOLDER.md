@@ -16,7 +16,7 @@
 - ai.ts｜地位：AI 服务｜功能：DeepSeek 调用、缓存与 Markdown/JSON 解析。
 - ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。
 - ephemeris.test.ts｜地位：星历服务测试｜功能：验证本命缓存键的确定性、字段敏感性与敏感字段脱敏。
-- geocoding.ts｜地位：地理服务｜功能：城市搜索与坐标解析。
+- geocoding.ts｜地位：地理服务｜功能：城市搜索与坐标解析（Redis 缓存键经 SHA-256 hashInput 摘要，原始城市名永不入键；输入硬上限 CITY_MAX_LENGTH=200）。
 
 近期更新
 - geocoding 支持中英文查询、逗号分隔解析与省/国过滤兜底。
@@ -40,3 +40,4 @@
 - 行运相位计算加入 ASC 与北交点，并在星历异常时回退小行星位置。
 - 星历服务新增行运缓存与紧凑摘要构建，减少重复计算与 prompt 体量。
 - 本命缓存键改为 SHA-256 摘要，规避明文敏感字段；新增 ephemeris.test.ts 覆盖确定性与脱敏断言。
+- v2.11 隐私加固：geocoding 缓存键改用 hashInput(normalize(city))；LocationResolutionError 默认 message 不再回显 cityName；CITY_MAX_LENGTH=200 硬上限；上游错误日志改为只记录 error.name 避免泄漏。
