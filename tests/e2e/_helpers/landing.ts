@@ -44,8 +44,25 @@ export async function stubLanding(page: Page, overrides: Overrides = {}) {
           body: JSON.stringify({ success: true }),
         })),
   );
+  // Default natal stub: a minimal but valid 200 chart payload. Previously
+  // defaulted to 500 — any spec that forgot to provide its own override
+  // would silently exercise the error path. New default lets specs that
+  // don't care about /natal/chart pass without surprise; specs that do
+  // care still override per-test.
   await page.route(
     "**/api/natal/chart**",
-    overrides.natal ?? ((r) => r.fulfill({ status: 500, body: "{}" })),
+    overrides.natal ??
+      ((r) =>
+        r.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify({
+            chart: {
+              positions: [],
+              houses: [],
+              aspects: [],
+            },
+          }),
+        })),
   );
 }
