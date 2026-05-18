@@ -71,34 +71,36 @@ const LandingPage: React.FC = () => {
       <HeroSection />
 
       {/* 3-10. Below-the-fold sections — code-split via React.lazy.
-          minHeight values match the post-hydration rendered height within
-          ~10% so chunk resolution does not cause cumulative layout shift.
-          Values: header (kicker+h2+subtitle ≈ 200px) + body content + py-* padding. */}
-      <Suspense fallback={<SectionFallback minHeight="40rem" />}>
+          minHeight values match the md-breakpoint post-hydration rendered
+          height within ~±20px so chunk resolution does not cause CLS.
+          Derivation: header (kicker mb-4 + h2 text-3xl/5xl + subtitle mt-4/6 ≈ 200px)
+          + body content + py-* padding (py-24 = 384px, py-20 = 320px, py-16 = 256px).
+          Mobile may exceed these (grids stack); accepted CLS risk on narrow viewports. */}
+      <Suspense fallback={<SectionFallback minHeight="64rem" />}>
         <BirthChartSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="38rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="50rem" />}>
         <CosmicWeatherSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="32rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="52rem" />}>
         <ToolsGridSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="26rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="38rem" />}>
         <SynastrySection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="44rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="72rem" />}>
         <WikiHubSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="32rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="60rem" />}>
         <AskOracleSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="22rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="36rem" />}>
         <SocialProofSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="26rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="40rem" />}>
         <NewsletterSection />
       </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="16rem" />}>
+      <Suspense fallback={<SectionFallback minHeight="42rem" />}>
         <FooterSection />
       </Suspense>
     </div>

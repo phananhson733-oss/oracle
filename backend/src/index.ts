@@ -4,6 +4,7 @@
 
 import path from "path";
 import express from "express";
+import compression from "compression";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
@@ -116,6 +117,30 @@ if (isProviderEnabled("paypal")) {
 if (isProviderEnabled("airwallex")) {
   app.use("/api/airwallex/webhook", express.raw({ type: "application/json" }));
 }
+
+// Response compression (gzip / brotli) — must be before route handlers so it
+// can intercept res.write/end. Threshold avoids spending CPU on tiny payloads,
+// and the custom filter skips SSE / audio / video streams where compression
+// would either break streaming semantics or waste cycles on already-compressed
+// bytes. compression is a no-op on 304 responses (no body), so it stays
+// compatible with the ETag / If-None-Match short-circuits in API routes.
+app.use(
+  compression({
+    threshold: 1024,
+    filter: (req, res) => {
+      const ct = res.getHeader("Content-Type");
+      if (
+        typeof ct === "string" &&
+        (ct.includes("text/event-stream") ||
+          ct.includes("audio/") ||
+          ct.includes("video/"))
+      ) {
+        return false;
+      }
+      return compression.filter(req, res);
+    },
+  }),
+);
 
 app.use(express.json());
 app.use(apiResponseMiddleware);
