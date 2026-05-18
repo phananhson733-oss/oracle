@@ -908,7 +908,16 @@ export async function fetchSynastryOverviewSection(
         total_ms: number;
       };
     }>;
-  const params = new URLSearchParams({
+  // 隐私加固 (CLAUDE.md §隐私红线 #3): PII 字段（生日/时辰/城市/姓名）必须走 body，
+  // 不能进 URL query string，否则会被 Vercel/Nginx access log 完整记录。
+  const tzVal2 = (() => {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone;
+    } catch {
+      return "UTC";
+    }
+  })();
+  const requestBody: Record<string, unknown> = {
     section,
     aDate: birthA.date,
     aCity: birthA.city,
@@ -919,34 +928,30 @@ export async function fetchSynastryOverviewSection(
     bTimezone: birthB.timezone,
     bAccuracy: birthB.accuracy,
     lang,
-    ...(birthA.time && { aTime: birthA.time }),
-    ...(birthB.time && { bTime: birthB.time }),
-  });
-  if (relationType) params.set("relationType", relationType);
-  if (nameA) params.set("nameA", nameA);
-  if (nameB) params.set("nameB", nameB);
-  if (birthA.lat !== undefined) params.set("aLat", String(birthA.lat));
-  if (birthA.lon !== undefined) params.set("aLon", String(birthA.lon));
-  if (birthB.lat !== undefined) params.set("bLat", String(birthB.lat));
-  if (birthB.lon !== undefined) params.set("bLon", String(birthB.lon));
-  const tzVal2 = (() => {
-    try {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone;
-    } catch {
-      return "UTC";
-    }
-  })();
-  params.set("tz", tzVal2);
+    tz: tzVal2,
+  };
+  if (birthA.time) requestBody.aTime = birthA.time;
+  if (birthB.time) requestBody.bTime = birthB.time;
+  if (relationType) requestBody.relationType = relationType;
+  if (nameA) requestBody.nameA = nameA;
+  if (nameB) requestBody.nameB = nameB;
+  if (birthA.lat !== undefined) requestBody.aLat = birthA.lat;
+  if (birthA.lon !== undefined) requestBody.aLon = birthA.lon;
+  if (birthB.lat !== undefined) requestBody.bLat = birthB.lat;
+  if (birthB.lon !== undefined) requestBody.bLon = birthB.lon;
 
   const promise = (async () => {
     const deviceId = getDeviceId();
     const res = await authFetchWithTimeout(
-      `${API_BASE}/synastry/overview-section?${params}`,
+      `${API_BASE}/synastry/overview-section`,
       {
+        method: "POST",
         headers: {
+          "Content-Type": "application/json",
           "x-device-fingerprint": deviceId,
           "x-user-timezone": tzVal2,
         },
+        body: JSON.stringify(requestBody),
       },
       SYNASTRY_REQUEST_TIMEOUT_MS,
     );

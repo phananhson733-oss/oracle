@@ -3,14 +3,18 @@
 // POS: AI 生成服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
-import { getPrompt, buildCacheKey } from '../prompts/manager.js';
-import { hashInput, CACHE_TTL } from '../cache/strategy.js';
-import { cacheService } from '../cache/redis.js';
-import type { AIContentMeta, LocalizedContent, Language } from '../types/api.js';
+import { getPrompt, buildCacheKey } from "../prompts/manager.js";
+import { hashInput, CACHE_TTL } from "../cache/strategy.js";
+import { cacheService } from "../cache/redis.js";
+import type {
+  AIContentMeta,
+  LocalizedContent,
+  Language,
+} from "../types/api.js";
 
 const getDeepSeekApiKey = () => process.env.DEEPSEEK_API_KEY;
 const getDeepSeekBaseUrl = () =>
-  process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com';
+  process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com";
 const AI_TIMEOUT_MS = (() => {
   const parsed = Number(process.env.AI_TIMEOUT_MS);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
@@ -20,7 +24,7 @@ const AI_TEMPERATURE_DEFAULT = (() => {
   if (!Number.isFinite(parsed)) return 0.5;
   return Math.min(Math.max(parsed, 0), 1);
 })();
-const DEFAULT_LANG: Language = 'zh';
+const DEFAULT_LANG: Language = "en";
 
 // ============================================================
 // 温度分层配置
@@ -34,71 +38,71 @@ const DEFAULT_LANG: Language = 'zh';
 
 const TEMPERATURE_MAP: Record<string, number> = {
   // T2 (0.3): 百科/详情解读
-  'wiki-home': 0.3,
-  'wiki-classics-master': 0.3,
+  "wiki-home": 0.3,
+  "wiki-classics-master": 0.3,
   // 详情 - 行星
-  'detail-planets-natal': 0.3,
-  'detail-planets-transit': 0.3,
-  'detail-planets-synastry': 0.3,
-  'detail-planets-composite': 0.3,
+  "detail-planets-natal": 0.3,
+  "detail-planets-transit": 0.3,
+  "detail-planets-synastry": 0.3,
+  "detail-planets-composite": 0.3,
   // 详情 - 相位
-  'detail-aspects-natal': 0.3,
-  'detail-aspects-transit': 0.3,
-  'detail-aspects-synastry': 0.3,
-  'detail-aspects-composite': 0.3,
+  "detail-aspects-natal": 0.3,
+  "detail-aspects-transit": 0.3,
+  "detail-aspects-synastry": 0.3,
+  "detail-aspects-composite": 0.3,
   // 详情 - 元素/宫位
-  'detail-elements-natal': 0.3,
-  'detail-elements-composite': 0.3,
+  "detail-elements-natal": 0.3,
+  "detail-elements-composite": 0.3,
   // 详情 - 小行星
-  'detail-asteroids-natal': 0.3,
-  'detail-asteroids-transit': 0.3,
-  'detail-asteroids-synastry': 0.3,
-  'detail-asteroids-composite': 0.3,
+  "detail-asteroids-natal": 0.3,
+  "detail-asteroids-transit": 0.3,
+  "detail-asteroids-synastry": 0.3,
+  "detail-asteroids-composite": 0.3,
   // 详情 - 定位星
-  'detail-rulers-natal': 0.3,
-  'detail-rulers-transit': 0.3,
-  'detail-rulers-synastry': 0.3,
-  'detail-rulers-composite': 0.3,
+  "detail-rulers-natal": 0.3,
+  "detail-rulers-transit": 0.3,
+  "detail-rulers-synastry": 0.3,
+  "detail-rulers-composite": 0.3,
   // 详情 - 综合
-  'detail-synthesis-synastry': 0.3,
+  "detail-synthesis-synastry": 0.3,
 
   // T3 (0.5): 分析性内容
   // 本命盘
-  'natal-overview': 0.5,
-  'natal-core-themes': 0.5,
-  'natal-dimension': 0.5,
-  'cycle-naming': 0.5,
+  "natal-overview": 0.5,
+  "natal-core-themes": 0.5,
+  "natal-dimension": 0.5,
+  "cycle-naming": 0.5,
   // 合盘 - 综述/核心分析
-  'synastry-overview': 0.5,
-  'synastry-highlights': 0.5,
-  'synastry-core-dynamics': 0.5,
-  'synastry-growth-task': 0.5,
-  'synastry-conflict-loop': 0.5,
-  'synastry-dynamic': 0.5,
+  "synastry-overview": 0.5,
+  "synastry-highlights": 0.5,
+  "synastry-core-dynamics": 0.5,
+  "synastry-growth-task": 0.5,
+  "synastry-conflict-loop": 0.5,
+  "synastry-dynamic": 0.5,
   // 合盘 - 本命盘/对比盘/组合盘
-  'synastry-natal-a': 0.5,
-  'synastry-natal-b': 0.5,
-  'synastry-compare-ab': 0.5,
-  'synastry-compare-ba': 0.5,
-  'synastry-composite': 0.5,
+  "synastry-natal-a": 0.5,
+  "synastry-natal-b": 0.5,
+  "synastry-compare-ab": 0.5,
+  "synastry-compare-ba": 0.5,
+  "synastry-composite": 0.5,
   // CBT 分析
-  'cbt-analysis': 0.5,
-  'cbt-aggregate-analysis': 0.5,
+  "cbt-analysis": 0.5,
+  "cbt-aggregate-analysis": 0.5,
   // 工具分析
-  'synthetica-analysis': 0.5,
+  "synthetica-analysis": 0.5,
 
   // T4 (0.6): 时效性/建议性内容
-  'daily-forecast': 0.6,
-  'daily-detail': 0.6,
-  'synastry-practice-tools': 0.6,
-  'synastry-relationship-timing': 0.6,
-  'synastry-vibe-tags': 0.6,
-  'synastry-weather-forecast': 0.6,
-  'synastry-action-plan': 0.6,
+  "daily-forecast": 0.6,
+  "daily-detail": 0.6,
+  "synastry-practice-tools": 0.6,
+  "synastry-relationship-timing": 0.6,
+  "synastry-vibe-tags": 0.6,
+  "synastry-weather-forecast": 0.6,
+  "synastry-action-plan": 0.6,
 
   // T5 (0.7): 创意性/深度洞察
-  'ask-answer': 0.7,
-  'oracle-answer': 0.7,
+  "ask-answer": 0.7,
+  "oracle-answer": 0.7,
 };
 
 function getTemperatureForPrompt(promptId: string): number {
@@ -106,10 +110,13 @@ function getTemperatureForPrompt(promptId: string): number {
 }
 
 // 使用 reasoning 模型的 promptId
-const REASONING_PROMPTS = ['ask-answer', 'oracle-answer'];
-const RAW_TEXT_PROMPTS = new Set<string>(['ask-answer']);
+const REASONING_PROMPTS = ["ask-answer", "oracle-answer"];
+const RAW_TEXT_PROMPTS = new Set<string>(["ask-answer"]);
 const NO_CACHE_PROMPTS = new Set<string>();
-const SCHEMA_REPAIR_PROMPTS = new Set<string>(['natal-overview', 'daily-forecast']);
+const SCHEMA_REPAIR_PROMPTS = new Set<string>([
+  "natal-overview",
+  "daily-forecast",
+]);
 
 export interface AIGenerateOptions {
   promptId: string;
@@ -126,14 +133,18 @@ export interface AIGenerateResult<T> {
 }
 
 export class AIUnavailableError extends Error {
-  reason: AIContentMeta['reason'];
-  constructor(reason: AIContentMeta['reason'], message?: string) {
+  reason: AIContentMeta["reason"];
+  constructor(reason: AIContentMeta["reason"], message?: string) {
     super(message || reason);
     this.reason = reason;
   }
 }
 
-async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: number): Promise<Response> {
+async function fetchWithTimeout(
+  url: string,
+  options: RequestInit,
+  timeoutMs: number,
+): Promise<Response> {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
     return fetch(url, options);
   }
@@ -146,34 +157,46 @@ async function fetchWithTimeout(url: string, options: RequestInit, timeoutMs: nu
   }
 }
 
-function buildMockMeta(reason: AIContentMeta['reason']): AIContentMeta {
-  return { source: 'mock', reason };
+function buildMockMeta(reason: AIContentMeta["reason"]): AIContentMeta {
+  return { source: "mock", reason };
 }
 
-function buildAIResult<T>(content: LocalizedContent<T>, cached = false): AIGenerateResult<T> {
-  return { content, meta: { source: 'ai', cached } };
+function buildAIResult<T>(
+  content: LocalizedContent<T>,
+  cached = false,
+): AIGenerateResult<T> {
+  return { content, meta: { source: "ai", cached } };
 }
 
-function normalizeLocalizedContent<T>(value: unknown, fallbackLang: Language): LocalizedContent<T> {
-  if (!value || typeof value !== 'object') {
-    throw new Error('Invalid JSON response from DeepSeek');
+function normalizeLocalizedContent<T>(
+  value: unknown,
+  fallbackLang: Language,
+): LocalizedContent<T> {
+  if (!value || typeof value !== "object") {
+    throw new Error("Invalid JSON response from DeepSeek");
   }
   const record = value as Record<string, unknown>;
-  if ('content' in record) {
-    const langValue = typeof record.lang === 'string' ? record.lang : fallbackLang;
-    const lang = (langValue === 'zh' || langValue === 'en') ? (langValue as Language) : fallbackLang;
+  if ("content" in record) {
+    const langValue =
+      typeof record.lang === "string" ? record.lang : fallbackLang;
+    const lang =
+      langValue === "zh" || langValue === "en"
+        ? (langValue as Language)
+        : fallbackLang;
     return { lang, content: record.content as T };
   }
-  if ('zh' in record || 'en' in record) {
+  if ("zh" in record || "en" in record) {
     const bilingual = record as Record<string, unknown>;
-    const content = (bilingual[fallbackLang] ?? bilingual.zh ?? bilingual.en) as T;
+    const content = (bilingual[fallbackLang] ??
+      bilingual.zh ??
+      bilingual.en) as T;
     return { lang: fallbackLang, content };
   }
   return { lang: fallbackLang, content: record as T };
 }
 
 function extractJsonObject(text: string): string | null {
-  const start = text.indexOf('{');
+  const start = text.indexOf("{");
   if (start < 0) return null;
   let depth = 0;
   let inString = false;
@@ -183,7 +206,7 @@ function extractJsonObject(text: string): string | null {
     if (inString) {
       if (escaped) {
         escaped = false;
-      } else if (ch === '\\') {
+      } else if (ch === "\\") {
         escaped = true;
       } else if (ch === '"') {
         inString = false;
@@ -192,9 +215,9 @@ function extractJsonObject(text: string): string | null {
     }
     if (ch === '"') {
       inString = true;
-    } else if (ch === '{') {
+    } else if (ch === "{") {
       depth += 1;
-    } else if (ch === '}') {
+    } else if (ch === "}") {
       depth -= 1;
       if (depth === 0) {
         return text.slice(start, i + 1);
@@ -211,73 +234,73 @@ function stripCodeFence(text: string): string {
 }
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
-  !!value && typeof value === 'object' && !Array.isArray(value);
+  !!value && typeof value === "object" && !Array.isArray(value);
 
-const isString = (value: unknown): value is string => typeof value === 'string';
+const isString = (value: unknown): value is string => typeof value === "string";
 
 const isStringArray = (value: unknown): value is string[] =>
   Array.isArray(value) && value.every(isString);
 
-const isBig3Module = (value: unknown): boolean => (
-  isRecord(value)
-  && isString(value.title)
-  && isString(value.description)
-  && isStringArray(value.keywords)
-);
+const isBig3Module = (value: unknown): boolean =>
+  isRecord(value) &&
+  isString(value.title) &&
+  isString(value.description) &&
+  isStringArray(value.keywords);
 
 const isNatalOverviewContent = (value: unknown): boolean => {
   if (!isRecord(value)) return false;
   return (
-    isBig3Module(value.sun)
-    && isBig3Module(value.moon)
-    && isBig3Module(value.rising)
-    && isRecord(value.core_melody)
-    && isStringArray(value.core_melody.keywords)
-    && isStringArray(value.core_melody.explanations)
-    && isRecord(value.top_talent)
-    && isString(value.top_talent.title)
-    && isString(value.top_talent.example)
-    && isString(value.top_talent.advice)
-    && isRecord(value.top_pitfall)
-    && isString(value.top_pitfall.title)
-    && isStringArray(value.top_pitfall.triggers)
-    && isString(value.top_pitfall.protection)
-    && isRecord(value.trigger_card)
-    && isStringArray(value.trigger_card.auto_reactions)
-    && isString(value.trigger_card.inner_need)
-    && isString(value.trigger_card.buffer_action)
-    && isString(value.share_text)
+    isBig3Module(value.sun) &&
+    isBig3Module(value.moon) &&
+    isBig3Module(value.rising) &&
+    isRecord(value.core_melody) &&
+    isStringArray(value.core_melody.keywords) &&
+    isStringArray(value.core_melody.explanations) &&
+    isRecord(value.top_talent) &&
+    isString(value.top_talent.title) &&
+    isString(value.top_talent.example) &&
+    isString(value.top_talent.advice) &&
+    isRecord(value.top_pitfall) &&
+    isString(value.top_pitfall.title) &&
+    isStringArray(value.top_pitfall.triggers) &&
+    isString(value.top_pitfall.protection) &&
+    isRecord(value.trigger_card) &&
+    isStringArray(value.trigger_card.auto_reactions) &&
+    isString(value.trigger_card.inner_need) &&
+    isString(value.trigger_card.buffer_action) &&
+    isString(value.share_text)
   );
 };
 
-const isDailyEnergy = (value: unknown): boolean => (
-  isRecord(value)
-  && typeof value.score === 'number'
-  && isString(value.feeling)
-  && isString(value.scenario)
-  && isString(value.action)
-);
+const isDailyEnergy = (value: unknown): boolean =>
+  isRecord(value) &&
+  typeof value.score === "number" &&
+  isString(value.feeling) &&
+  isString(value.scenario) &&
+  isString(value.action);
 
-const isDailyForecastLegacyEnergy = (value: unknown): boolean => (
-  isRecord(value)
-  && isString(value.date)
-  && isString(value.theme_title)
-  && isRecord(value.energy_profile)
-  && isRecord(value.strategy)
-  && isRecord(value.time_windows)
-);
+const isDailyForecastLegacyEnergy = (value: unknown): boolean =>
+  isRecord(value) &&
+  isString(value.date) &&
+  isString(value.theme_title) &&
+  isRecord(value.energy_profile) &&
+  isRecord(value.strategy) &&
+  isRecord(value.time_windows);
 
-const isLegacyThemeItem = (value: unknown): boolean => (
-  isRecord(value)
-  && (isString(value.theme) || isString(value.interpretation) || isString(value.scenario) || isString(value.daily_focus))
-);
+const isLegacyThemeItem = (value: unknown): boolean =>
+  isRecord(value) &&
+  (isString(value.theme) ||
+    isString(value.interpretation) ||
+    isString(value.scenario) ||
+    isString(value.daily_focus));
 
-const isDailyForecastLegacyOverview = (value: unknown): boolean => (
-  isRecord(value)
-  && isString(value.date)
-  && (isString(value.overview) || Array.isArray(value.themes) || isStringArray(value.key_reminders))
-  && (!('theme_title' in value) || !isString(value.theme_title))
-);
+const isDailyForecastLegacyOverview = (value: unknown): boolean =>
+  isRecord(value) &&
+  isString(value.date) &&
+  (isString(value.overview) ||
+    Array.isArray(value.themes) ||
+    isStringArray(value.key_reminders)) &&
+  (!("theme_title" in value) || !isString(value.theme_title));
 
 const isDailyForecastLegacy = (value: unknown): boolean =>
   isDailyForecastLegacyEnergy(value) || isDailyForecastLegacyOverview(value);
@@ -285,18 +308,18 @@ const isDailyForecastLegacy = (value: unknown): boolean =>
 const isDailyForecastContent = (value: unknown): boolean => {
   if (!isRecord(value)) return false;
   return (
-    isString(value.date)
-    && isString(value.theme_title)
-    && isRecord(value.four_dimensions)
-    && isDailyEnergy(value.four_dimensions.energy)
-    && isDailyEnergy(value.four_dimensions.tension)
-    && isDailyEnergy(value.four_dimensions.frictions)
-    && isDailyEnergy(value.four_dimensions.pleasures)
-    && isRecord(value.time_windows)
-    && isRecord(value.daily_focus)
-    && isString(value.daily_focus.move_forward)
-    && isString(value.daily_focus.communication_trap)
-    && isString(value.daily_focus.best_window)
+    isString(value.date) &&
+    isString(value.theme_title) &&
+    isRecord(value.four_dimensions) &&
+    isDailyEnergy(value.four_dimensions.energy) &&
+    isDailyEnergy(value.four_dimensions.tension) &&
+    isDailyEnergy(value.four_dimensions.frictions) &&
+    isDailyEnergy(value.four_dimensions.pleasures) &&
+    isRecord(value.time_windows) &&
+    isRecord(value.daily_focus) &&
+    isString(value.daily_focus.move_forward) &&
+    isString(value.daily_focus.communication_trap) &&
+    isString(value.daily_focus.best_window)
   );
 };
 
@@ -307,106 +330,149 @@ const isLegacyNatalOverviewContent = (value: unknown): boolean => {
   if (!isRecord(value) || !isRecord(value.big3)) return false;
   const big3 = value.big3 as Record<string, unknown>;
   return (
-    isLegacyBig3Entry(big3.sun)
-    || isLegacyBig3Entry(big3.moon)
-    || isLegacyBig3Entry(big3.rising)
+    isLegacyBig3Entry(big3.sun) ||
+    isLegacyBig3Entry(big3.moon) ||
+    isLegacyBig3Entry(big3.rising)
   );
 };
 
 const ZODIAC_ZH: Record<string, string> = {
-  aries: '白羊',
-  taurus: '金牛',
-  gemini: '双子',
-  cancer: '巨蟹',
-  leo: '狮子',
-  virgo: '处女',
-  libra: '天秤',
-  scorpio: '天蝎',
-  sagittarius: '射手',
-  capricorn: '摩羯',
-  aquarius: '水瓶',
-  pisces: '双鱼',
+  aries: "白羊",
+  taurus: "金牛",
+  gemini: "双子",
+  cancer: "巨蟹",
+  leo: "狮子",
+  virgo: "处女",
+  libra: "天秤",
+  scorpio: "天蝎",
+  sagittarius: "射手",
+  capricorn: "摩羯",
+  aquarius: "水瓶",
+  pisces: "双鱼",
 };
 
 const ELEMENT_LABELS: Record<string, { zh: string; en: string }> = {
-  fire: { zh: '火象', en: 'Fire' },
-  earth: { zh: '土象', en: 'Earth' },
-  air: { zh: '风象', en: 'Air' },
-  water: { zh: '水象', en: 'Water' },
+  fire: { zh: "火象", en: "Fire" },
+  earth: { zh: "土象", en: "Earth" },
+  air: { zh: "风象", en: "Air" },
+  water: { zh: "水象", en: "Water" },
 };
 
-const BIG3_KEYWORDS: Record<'sun' | 'moon' | 'rising', { zh: string[]; en: string[] }> = {
-  sun: { zh: ['意志', '目标', '自我'], en: ['identity', 'drive', 'purpose'] },
-  moon: { zh: ['情绪', '安全', '需求'], en: ['emotion', 'security', 'needs'] },
-  rising: { zh: ['第一印象', '气质', '外在'], en: ['impression', 'style', 'expression'] },
+const BIG3_KEYWORDS: Record<
+  "sun" | "moon" | "rising",
+  { zh: string[]; en: string[] }
+> = {
+  sun: { zh: ["意志", "目标", "自我"], en: ["identity", "drive", "purpose"] },
+  moon: { zh: ["情绪", "安全", "需求"], en: ["emotion", "security", "needs"] },
+  rising: {
+    zh: ["第一印象", "气质", "外在"],
+    en: ["impression", "style", "expression"],
+  },
 };
 
-const BIG3_LABELS: Record<'sun' | 'moon' | 'rising', { zh: string; en: string }> = {
-  sun: { zh: '太阳', en: 'Sun' },
-  moon: { zh: '月亮', en: 'Moon' },
-  rising: { zh: '上升', en: 'Rising' },
+const BIG3_LABELS: Record<
+  "sun" | "moon" | "rising",
+  { zh: string; en: string }
+> = {
+  sun: { zh: "太阳", en: "Sun" },
+  moon: { zh: "月亮", en: "Moon" },
+  rising: { zh: "上升", en: "Rising" },
 };
 
 const formatSignLabel = (sign: unknown, lang: Language): string | undefined => {
   if (!isString(sign)) return undefined;
   const trimmed = sign.trim();
   if (!trimmed) return undefined;
-  if (lang === 'zh') {
+  if (lang === "zh") {
     const mapped = ZODIAC_ZH[trimmed.toLowerCase()];
     return mapped || trimmed;
   }
   return trimmed;
 };
 
-const pickTopElements = (elements: Record<string, unknown>) => (
+const pickTopElements = (elements: Record<string, unknown>) =>
   Object.entries(elements)
-    .filter(([, value]) => typeof value === 'number' && Number.isFinite(value as number))
+    .filter(
+      ([, value]) =>
+        typeof value === "number" && Number.isFinite(value as number),
+    )
     .sort((a, b) => (b[1] as number) - (a[1] as number))
     .slice(0, 2)
-    .map(([key]) => key)
-);
+    .map(([key]) => key);
 
 const buildCoreMelody = (legacy: Record<string, unknown>, lang: Language) => {
   const dominance = isRecord(legacy.dominance) ? legacy.dominance : null;
-  const elements = dominance && isRecord(dominance.elements) ? dominance.elements : null;
+  const elements =
+    dominance && isRecord(dominance.elements) ? dominance.elements : null;
   if (elements) {
     const topElements = pickTopElements(elements as Record<string, unknown>);
     if (topElements.length > 0) {
-      const keywords = topElements.map((key) => (ELEMENT_LABELS[key]?.[lang] || key));
-      const explanations = keywords.map((label, index) => (
-        lang === 'zh'
-          ? (index === 0 ? `${label}能量更突出` : `${label}为你带来补充节奏`)
-          : (index === 0 ? `${label} energy is most prominent` : `${label} energy adds balance`)
-      ));
+      const keywords = topElements.map(
+        (key) => ELEMENT_LABELS[key]?.[lang] || key,
+      );
+      const explanations = keywords.map((label, index) =>
+        lang === "zh"
+          ? index === 0
+            ? `${label}能量更突出`
+            : `${label}为你带来补充节奏`
+          : index === 0
+            ? `${label} energy is most prominent`
+            : `${label} energy adds balance`,
+      );
       return { keywords, explanations };
     }
   }
-  return lang === 'zh'
-    ? { keywords: ['动力', '敏感'], explanations: ['行动与情绪并重', '既追求推进也重视感受'] }
-    : { keywords: ['drive', 'sensitivity'], explanations: ['Balances action with feeling', 'Moves forward while staying attuned'] };
+  return lang === "zh"
+    ? {
+        keywords: ["动力", "敏感"],
+        explanations: ["行动与情绪并重", "既追求推进也重视感受"],
+      }
+    : {
+        keywords: ["drive", "sensitivity"],
+        explanations: [
+          "Balances action with feeling",
+          "Moves forward while staying attuned",
+        ],
+      };
 };
 
 const resolveLegacyDescription = (value: unknown): string | undefined =>
-  isRecord(value) && isString(value.description) ? value.description : undefined;
+  isRecord(value) && isString(value.description)
+    ? value.description
+    : undefined;
 
 function convertLegacyNatalOverview(
   legacy: Record<string, unknown>,
   context: Record<string, unknown>,
   lang: Language,
 ): LocalizedContent<unknown> {
-  const chartSummary = isRecord(context.chart_summary) ? context.chart_summary : null;
-  const big3Summary = chartSummary && isRecord(chartSummary.big3) ? chartSummary.big3 : null;
+  const chartSummary = isRecord(context.chart_summary)
+    ? context.chart_summary
+    : null;
+  const big3Summary =
+    chartSummary && isRecord(chartSummary.big3) ? chartSummary.big3 : null;
 
-  const buildBig3 = (key: 'sun' | 'moon' | 'rising') => {
+  const buildBig3 = (key: "sun" | "moon" | "rising") => {
     const legacyBig3 = isRecord(legacy.big3) ? legacy.big3 : {};
     const legacyEntry = (legacyBig3 as Record<string, unknown>)[key];
-    const summaryEntry = big3Summary ? (big3Summary as Record<string, unknown>)[key] : null;
-    const sign = formatSignLabel(summaryEntry && isRecord(summaryEntry) ? summaryEntry.sign : undefined, lang);
+    const summaryEntry = big3Summary
+      ? (big3Summary as Record<string, unknown>)[key]
+      : null;
+    const sign = formatSignLabel(
+      summaryEntry && isRecord(summaryEntry) ? summaryEntry.sign : undefined,
+      lang,
+    );
     const label = BIG3_LABELS[key][lang];
     const title = sign
-      ? (lang === 'zh' ? `${label}${sign}` : `${label} in ${sign}`)
+      ? lang === "zh"
+        ? `${label}${sign}`
+        : `${label} in ${sign}`
       : label;
-    const description = resolveLegacyDescription(legacyEntry) || (lang === 'zh' ? '这是你本命盘中的关键能量入口。' : 'This is a core pillar of your natal chart.');
+    const description =
+      resolveLegacyDescription(legacyEntry) ||
+      (lang === "zh"
+        ? "这是你本命盘中的关键能量入口。"
+        : "This is a core pillar of your natal chart.");
     return {
       title,
       keywords: BIG3_KEYWORDS[key][lang],
@@ -414,41 +480,76 @@ function convertLegacyNatalOverview(
     };
   };
 
-  const personalPlanets = isRecord(legacy.personal_planets) ? legacy.personal_planets : {};
+  const personalPlanets = isRecord(legacy.personal_planets)
+    ? legacy.personal_planets
+    : {};
   const mercuryText = resolveLegacyDescription(personalPlanets.mercury);
   const venusText = resolveLegacyDescription(personalPlanets.venus);
   const marsText = resolveLegacyDescription(personalPlanets.mars);
-  const interpretation = isRecord(legacy.interpretation) ? legacy.interpretation : null;
-  const overviewText = interpretation && isString(interpretation.overview) ? interpretation.overview : undefined;
+  const interpretation = isRecord(legacy.interpretation)
+    ? legacy.interpretation
+    : null;
+  const overviewText =
+    interpretation && isString(interpretation.overview)
+      ? interpretation.overview
+      : undefined;
 
-  const topTalentExample = mercuryText || overviewText || (lang === 'zh' ? '你的优势往往体现在思维与表达上。' : 'Your strengths often show up in how you think and express yourself.');
+  const topTalentExample =
+    mercuryText ||
+    overviewText ||
+    (lang === "zh"
+      ? "你的优势往往体现在思维与表达上。"
+      : "Your strengths often show up in how you think and express yourself.");
   const topPitfallTriggers = venusText
-    ? [lang === 'zh' ? '情感投入过度' : 'Over-investing emotionally', lang === 'zh' ? '关系失衡' : 'Relational imbalance']
-    : [lang === 'zh' ? '节奏失衡' : 'Overload', lang === 'zh' ? '情绪起伏' : 'Emotional swings'];
+    ? [
+        lang === "zh" ? "情感投入过度" : "Over-investing emotionally",
+        lang === "zh" ? "关系失衡" : "Relational imbalance",
+      ]
+    : [
+        lang === "zh" ? "节奏失衡" : "Overload",
+        lang === "zh" ? "情绪起伏" : "Emotional swings",
+      ];
 
   return {
     lang,
     content: {
-      sun: buildBig3('sun'),
-      moon: buildBig3('moon'),
-      rising: buildBig3('rising'),
+      sun: buildBig3("sun"),
+      moon: buildBig3("moon"),
+      rising: buildBig3("rising"),
       core_melody: buildCoreMelody(legacy, lang),
       top_talent: {
-        title: lang === 'zh' ? '思维与表达' : 'Mind & Expression',
+        title: lang === "zh" ? "思维与表达" : "Mind & Expression",
         example: topTalentExample,
-        advice: lang === 'zh' ? '把优势转化为清晰可执行的目标。' : 'Channel it into clear, practical goals.',
+        advice:
+          lang === "zh"
+            ? "把优势转化为清晰可执行的目标。"
+            : "Channel it into clear, practical goals.",
       },
       top_pitfall: {
-        title: lang === 'zh' ? '压力反应' : 'Stress Pattern',
+        title: lang === "zh" ? "压力反应" : "Stress Pattern",
         triggers: topPitfallTriggers,
-        protection: lang === 'zh' ? '放慢节奏，先稳定情绪再行动。' : 'Slow down, steady emotions before acting.',
+        protection:
+          lang === "zh"
+            ? "放慢节奏，先稳定情绪再行动。"
+            : "Slow down, steady emotions before acting.",
       },
       trigger_card: {
-        auto_reactions: lang === 'zh' ? ['先防御', '先解释'] : ['defend quickly', 'over-explain'],
-        inner_need: lang === 'zh' ? '被理解与被接住' : 'to be understood and supported',
-        buffer_action: lang === 'zh' ? '先停三秒再回应。' : 'Pause for three seconds before responding.',
+        auto_reactions:
+          lang === "zh"
+            ? ["先防御", "先解释"]
+            : ["defend quickly", "over-explain"],
+        inner_need:
+          lang === "zh" ? "被理解与被接住" : "to be understood and supported",
+        buffer_action:
+          lang === "zh"
+            ? "先停三秒再回应。"
+            : "Pause for three seconds before responding.",
       },
-      share_text: overviewText || (lang === 'zh' ? '我的星盘提示我正在学会平衡行动与感受。' : 'My chart reminds me to balance action with sensitivity.'),
+      share_text:
+        overviewText ||
+        (lang === "zh"
+          ? "我的星盘提示我正在学会平衡行动与感受。"
+          : "My chart reminds me to balance action with sensitivity."),
     },
   };
 }
@@ -462,64 +563,112 @@ function convertLegacyDailyForecast(
 
   const ensureDailyEnergy = (
     value: unknown,
-    fallback: { score: number; feeling: string; scenario: string; action: string },
-  ) => (
-    isRecord(value)
-    && typeof value.score === 'number'
-    && isString(value.feeling)
-    && isString(value.scenario)
-    && isString(value.action)
+    fallback: {
+      score: number;
+      feeling: string;
+      scenario: string;
+      action: string;
+    },
+  ) =>
+    isRecord(value) &&
+    typeof value.score === "number" &&
+    isString(value.feeling) &&
+    isString(value.scenario) &&
+    isString(value.action)
       ? value
-      : fallback
-  );
+      : fallback;
 
   if (isDailyForecastLegacyEnergy(legacy)) {
     const energy = isRecord(legacy.energy_profile) ? legacy.energy_profile : {};
     const strategy = isRecord(legacy.strategy) ? legacy.strategy : {};
     const rawWindows = isRecord(legacy.time_windows) ? legacy.time_windows : {};
-    const bestWindowRaw = isString((strategy as Record<string, unknown>).best_window)
-      ? (strategy as Record<string, unknown>).best_window as string
-      : 'morning';
-    const bestWindow = ['morning', 'midday', 'evening'].includes(bestWindowRaw) ? bestWindowRaw : 'morning';
+    const bestWindowRaw = isString(
+      (strategy as Record<string, unknown>).best_window,
+    )
+      ? ((strategy as Record<string, unknown>).best_window as string)
+      : "morning";
+    const bestWindow = ["morning", "midday", "evening"].includes(bestWindowRaw)
+      ? bestWindowRaw
+      : "morning";
 
     const fallbackWindows = {
-      morning: lang === 'zh' ? '上午适合聚焦推进。' : 'Morning favors focused progress.',
-      midday: lang === 'zh' ? '午间注意沟通与协作。' : 'Midday calls for steady communication.',
-      evening: lang === 'zh' ? '晚上适合放松与收尾。' : 'Evening is good for winding down.',
+      morning:
+        lang === "zh"
+          ? "上午适合聚焦推进。"
+          : "Morning favors focused progress.",
+      midday:
+        lang === "zh"
+          ? "午间注意沟通与协作。"
+          : "Midday calls for steady communication.",
+      evening:
+        lang === "zh"
+          ? "晚上适合放松与收尾。"
+          : "Evening is good for winding down.",
     };
 
     const timeWindows = {
-      morning: safeText((rawWindows as Record<string, unknown>).morning, fallbackWindows.morning),
-      midday: safeText((rawWindows as Record<string, unknown>).midday, fallbackWindows.midday),
-      evening: safeText((rawWindows as Record<string, unknown>).evening, fallbackWindows.evening),
+      morning: safeText(
+        (rawWindows as Record<string, unknown>).morning,
+        fallbackWindows.morning,
+      ),
+      midday: safeText(
+        (rawWindows as Record<string, unknown>).midday,
+        fallbackWindows.midday,
+      ),
+      evening: safeText(
+        (rawWindows as Record<string, unknown>).evening,
+        fallbackWindows.evening,
+      ),
     };
 
     const fourDimensions = {
-      energy: ensureDailyEnergy(
-        (energy as Record<string, unknown>).drive,
-        { score: 60, feeling: lang === 'zh' ? '动力平稳' : 'Steady drive', scenario: timeWindows.morning, action: lang === 'zh' ? '先推进一件关键任务。' : 'Advance one key task.' },
-      ),
-      tension: ensureDailyEnergy(
-        (energy as Record<string, unknown>).pressure,
-        { score: 45, feeling: lang === 'zh' ? '压力可控' : 'Manageable tension', scenario: timeWindows.midday, action: lang === 'zh' ? '减少同时处理事项。' : 'Limit multitasking.' },
-      ),
-      frictions: ensureDailyEnergy(
-        (energy as Record<string, unknown>).heat,
-        { score: 40, feeling: lang === 'zh' ? '摩擦偏低' : 'Low frictions', scenario: timeWindows.midday, action: lang === 'zh' ? '沟通前先对齐细节。' : 'Align details before talking.' },
-      ),
+      energy: ensureDailyEnergy((energy as Record<string, unknown>).drive, {
+        score: 60,
+        feeling: lang === "zh" ? "动力平稳" : "Steady drive",
+        scenario: timeWindows.morning,
+        action:
+          lang === "zh" ? "先推进一件关键任务。" : "Advance one key task.",
+      }),
+      tension: ensureDailyEnergy((energy as Record<string, unknown>).pressure, {
+        score: 45,
+        feeling: lang === "zh" ? "压力可控" : "Manageable tension",
+        scenario: timeWindows.midday,
+        action: lang === "zh" ? "减少同时处理事项。" : "Limit multitasking.",
+      }),
+      frictions: ensureDailyEnergy((energy as Record<string, unknown>).heat, {
+        score: 40,
+        feeling: lang === "zh" ? "摩擦偏低" : "Low frictions",
+        scenario: timeWindows.midday,
+        action:
+          lang === "zh"
+            ? "沟通前先对齐细节。"
+            : "Align details before talking.",
+      }),
       pleasures: ensureDailyEnergy(
         (energy as Record<string, unknown>).nourishment,
-        { score: 65, feeling: lang === 'zh' ? '滋养回升' : 'Growing nourishment', scenario: timeWindows.evening, action: lang === 'zh' ? '安排一段舒缓休息。' : 'Schedule a restorative break.' },
+        {
+          score: 65,
+          feeling: lang === "zh" ? "滋养回升" : "Growing nourishment",
+          scenario: timeWindows.evening,
+          action:
+            lang === "zh"
+              ? "安排一段舒缓休息。"
+              : "Schedule a restorative break.",
+        },
       ),
     };
 
     const dailyFocus = {
       move_forward: isString((strategy as Record<string, unknown>).best_use)
-        ? (strategy as Record<string, unknown>).best_use as string
-        : (lang === 'zh' ? '优先推进一件关键任务。' : 'Advance one key task.'),
+        ? ((strategy as Record<string, unknown>).best_use as string)
+        : lang === "zh"
+          ? "优先推进一件关键任务。"
+          : "Advance one key task.",
       communication_trap: isString((strategy as Record<string, unknown>).avoid)
-        ? (strategy as Record<string, unknown>).avoid as string
-        : (lang === 'zh' ? '避免情绪化沟通。' : 'Avoid emotionally charged communication.'),
+        ? ((strategy as Record<string, unknown>).avoid as string)
+        : lang === "zh"
+          ? "避免情绪化沟通。"
+          : "Avoid emotionally charged communication.",
       best_window: bestWindow,
     };
 
@@ -527,13 +676,18 @@ function convertLegacyDailyForecast(
       lang,
       content: {
         date: legacy.date,
-        theme_title: safeText(legacy.theme_title, lang === 'zh' ? '今日主线' : 'Today\'s Focus'),
-        theme_explanation: isString(legacy.theme_explanation) ? legacy.theme_explanation : '',
-        anchor_quote: isString(legacy.anchor_quote) ? legacy.anchor_quote : '',
+        theme_title: safeText(
+          legacy.theme_title,
+          lang === "zh" ? "今日主线" : "Today's Focus",
+        ),
+        theme_explanation: isString(legacy.theme_explanation)
+          ? legacy.theme_explanation
+          : "",
+        anchor_quote: isString(legacy.anchor_quote) ? legacy.anchor_quote : "",
         four_dimensions: fourDimensions,
         time_windows: timeWindows,
         daily_focus: dailyFocus,
-        share_text: isString(legacy.share_text) ? legacy.share_text : '',
+        share_text: isString(legacy.share_text) ? legacy.share_text : "",
         energy_profile: legacy.energy_profile,
         strategy: legacy.strategy,
       },
@@ -542,61 +696,107 @@ function convertLegacyDailyForecast(
 
   if (isDailyForecastLegacyOverview(legacy)) {
     const themes = Array.isArray(legacy.themes)
-      ? legacy.themes.filter(isLegacyThemeItem).map((item) => item as Record<string, unknown>)
+      ? legacy.themes
+          .filter(isLegacyThemeItem)
+          .map((item) => item as Record<string, unknown>)
       : [];
     const [firstTheme, secondTheme, thirdTheme] = themes;
-    const reminders = Array.isArray(legacy.key_reminders) ? legacy.key_reminders.filter(isString) : [];
-    const overviewText = safeText(legacy.overview, '');
+    const reminders = Array.isArray(legacy.key_reminders)
+      ? legacy.key_reminders.filter(isString)
+      : [];
+    const overviewText = safeText(legacy.overview, "");
     const themeTitle = safeText(
       legacy.theme_title,
-      safeText(firstTheme?.theme, lang === 'zh' ? '今日主线' : 'Today\'s Focus'),
+      safeText(firstTheme?.theme, lang === "zh" ? "今日主线" : "Today's Focus"),
     );
     const themeExplanation = safeText(
       legacy.theme_explanation,
-      safeText(overviewText, safeText(firstTheme?.interpretation, '')),
+      safeText(overviewText, safeText(firstTheme?.interpretation, "")),
     );
 
     const pickWindow = (
       theme: Record<string, unknown> | undefined,
       fallbackZh: string,
       fallbackEn: string,
-    ) => safeText(
-      theme?.scenario || theme?.interpretation,
-      lang === 'zh' ? fallbackZh : fallbackEn,
-    );
+    ) =>
+      safeText(
+        theme?.scenario || theme?.interpretation,
+        lang === "zh" ? fallbackZh : fallbackEn,
+      );
 
     const timeWindows = {
-      morning: pickWindow(firstTheme, '上午适合梳理重点并开始行动。', 'Morning is ideal for clarifying priorities.'),
-      midday: pickWindow(secondTheme, '午间留意沟通节奏与协作。', 'Midday favors steady communication.'),
-      evening: pickWindow(thirdTheme, '晚上适合整理情绪并收尾。', 'Evening is good for grounding and wrap-up.'),
+      morning: pickWindow(
+        firstTheme,
+        "上午适合梳理重点并开始行动。",
+        "Morning is ideal for clarifying priorities.",
+      ),
+      midday: pickWindow(
+        secondTheme,
+        "午间留意沟通节奏与协作。",
+        "Midday favors steady communication.",
+      ),
+      evening: pickWindow(
+        thirdTheme,
+        "晚上适合整理情绪并收尾。",
+        "Evening is good for grounding and wrap-up.",
+      ),
     };
 
-    const pickReminder = (index: number, fallbackZh: string, fallbackEn: string) =>
-      reminders[index] || (lang === 'zh' ? fallbackZh : fallbackEn);
+    const pickReminder = (
+      index: number,
+      fallbackZh: string,
+      fallbackEn: string,
+    ) => reminders[index] || (lang === "zh" ? fallbackZh : fallbackEn);
 
     const dailyFocus = {
-      move_forward: safeText(firstTheme?.daily_focus, pickReminder(0, '推进一件最重要的任务。', 'Advance the single most important task.')),
-      communication_trap: pickReminder(1, '避免情绪化表达。', 'Avoid emotionally charged communication.'),
-      best_window: 'morning',
+      move_forward: safeText(
+        firstTheme?.daily_focus,
+        pickReminder(
+          0,
+          "推进一件最重要的任务。",
+          "Advance the single most important task.",
+        ),
+      ),
+      communication_trap: pickReminder(
+        1,
+        "避免情绪化表达。",
+        "Avoid emotionally charged communication.",
+      ),
+      best_window: "morning",
     };
 
     const fourDimensions = {
-      energy: ensureDailyEnergy(
-        null,
-        { score: 62, feeling: lang === 'zh' ? '动力稳定' : 'Steady drive', scenario: timeWindows.morning, action: lang === 'zh' ? '先推进关键事项。' : 'Move the key task forward.' },
-      ),
-      tension: ensureDailyEnergy(
-        null,
-        { score: 48, feeling: lang === 'zh' ? '压力可控' : 'Manageable tension', scenario: timeWindows.midday, action: lang === 'zh' ? '减少同时处理事项。' : 'Reduce multitasking.' },
-      ),
-      frictions: ensureDailyEnergy(
-        null,
-        { score: 42, feeling: lang === 'zh' ? '摩擦偏低' : 'Low frictions', scenario: timeWindows.midday, action: lang === 'zh' ? '沟通前先对齐细节。' : 'Align details before talking.' },
-      ),
-      pleasures: ensureDailyEnergy(
-        null,
-        { score: 66, feeling: lang === 'zh' ? '滋养回升' : 'Growing nourishment', scenario: timeWindows.evening, action: lang === 'zh' ? '安排一段舒缓休息。' : 'Schedule a restorative break.' },
-      ),
+      energy: ensureDailyEnergy(null, {
+        score: 62,
+        feeling: lang === "zh" ? "动力稳定" : "Steady drive",
+        scenario: timeWindows.morning,
+        action:
+          lang === "zh" ? "先推进关键事项。" : "Move the key task forward.",
+      }),
+      tension: ensureDailyEnergy(null, {
+        score: 48,
+        feeling: lang === "zh" ? "压力可控" : "Manageable tension",
+        scenario: timeWindows.midday,
+        action: lang === "zh" ? "减少同时处理事项。" : "Reduce multitasking.",
+      }),
+      frictions: ensureDailyEnergy(null, {
+        score: 42,
+        feeling: lang === "zh" ? "摩擦偏低" : "Low frictions",
+        scenario: timeWindows.midday,
+        action:
+          lang === "zh"
+            ? "沟通前先对齐细节。"
+            : "Align details before talking.",
+      }),
+      pleasures: ensureDailyEnergy(null, {
+        score: 66,
+        feeling: lang === "zh" ? "滋养回升" : "Growing nourishment",
+        scenario: timeWindows.evening,
+        action:
+          lang === "zh"
+            ? "安排一段舒缓休息。"
+            : "Schedule a restorative break.",
+      }),
     };
 
     return {
@@ -605,7 +805,7 @@ function convertLegacyDailyForecast(
         date: legacy.date,
         theme_title: themeTitle,
         theme_explanation: themeExplanation,
-        anchor_quote: safeText(legacy.anchor_quote, ''),
+        anchor_quote: safeText(legacy.anchor_quote, ""),
         four_dimensions: fourDimensions,
         time_windows: timeWindows,
         daily_focus: dailyFocus,
@@ -627,52 +827,60 @@ async function reformatNatalOverviewContent(
   timeoutMs: number,
 ): Promise<LocalizedContent<unknown> | null> {
   const schema = {
-    lang: '<lang>',
+    lang: "<lang>",
     content: {
-      sun: { title: '', keywords: [] as string[], description: '' },
-      moon: { title: '', keywords: [] as string[], description: '' },
-      rising: { title: '', keywords: [] as string[], description: '' },
+      sun: { title: "", keywords: [] as string[], description: "" },
+      moon: { title: "", keywords: [] as string[], description: "" },
+      rising: { title: "", keywords: [] as string[], description: "" },
       core_melody: { keywords: [] as string[], explanations: [] as string[] },
-      top_talent: { title: '', example: '', advice: '' },
-      top_pitfall: { title: '', triggers: [] as string[], protection: '' },
-      trigger_card: { auto_reactions: [] as string[], inner_need: '', buffer_action: '' },
-      share_text: '',
+      top_talent: { title: "", example: "", advice: "" },
+      top_pitfall: { title: "", triggers: [] as string[], protection: "" },
+      trigger_card: {
+        auto_reactions: [] as string[],
+        inner_need: "",
+        buffer_action: "",
+      },
+      share_text: "",
     },
   };
 
   try {
-    const response = await fetchWithTimeout(`${baseUrl}/v1/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+    const response = await fetchWithTimeout(
+      `${baseUrl}/v1/chat/completions`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "deepseek-chat",
+          messages: [
+            {
+              role: "system",
+              content: [
+                "You are a JSON schema transformer.",
+                "Convert the input into the target schema exactly.",
+                "Output ONLY valid JSON. No markdown, no explanations.",
+                "If information is missing, infer from the input or use empty strings/arrays.",
+              ].join("\n"),
+            },
+            {
+              role: "user",
+              content: [
+                `lang: ${raw.lang}`,
+                `input_json: ${JSON.stringify(raw.content)}`,
+                `chart_summary: ${JSON.stringify(context.chart_summary || {})}`,
+                `target_schema: ${JSON.stringify(schema)}`,
+              ].join("\n"),
+            },
+          ],
+          temperature: 0.0,
+          max_tokens: 2048,
+        }),
       },
-      body: JSON.stringify({
-        model: 'deepseek-chat',
-        messages: [
-          {
-            role: 'system',
-            content: [
-              'You are a JSON schema transformer.',
-              'Convert the input into the target schema exactly.',
-              'Output ONLY valid JSON. No markdown, no explanations.',
-              'If information is missing, infer from the input or use empty strings/arrays.',
-            ].join('\n'),
-          },
-          {
-            role: 'user',
-            content: [
-              `lang: ${raw.lang}`,
-              `input_json: ${JSON.stringify(raw.content)}`,
-              `chart_summary: ${JSON.stringify(context.chart_summary || {})}`,
-              `target_schema: ${JSON.stringify(schema)}`,
-            ].join('\n'),
-          },
-        ],
-        temperature: 0.0,
-        max_tokens: 2048,
-      }),
-    }, timeoutMs);
+      timeoutMs,
+    );
 
     if (!response.ok) return null;
     const data = await response.json();
@@ -694,62 +902,66 @@ async function reformatDailyForecastContent(
   timeoutMs: number,
 ): Promise<LocalizedContent<unknown> | null> {
   const schema = {
-    lang: '<lang>',
+    lang: "<lang>",
     content: {
-      date: '',
-      theme_title: '',
-      theme_explanation: '',
+      date: "",
+      theme_title: "",
+      theme_explanation: "",
       four_dimensions: {
-        energy: { score: 0, feeling: '', scenario: '', action: '' },
-        tension: { score: 0, feeling: '', scenario: '', action: '' },
-        frictions: { score: 0, feeling: '', scenario: '', action: '' },
-        pleasures: { score: 0, feeling: '', scenario: '', action: '' },
+        energy: { score: 0, feeling: "", scenario: "", action: "" },
+        tension: { score: 0, feeling: "", scenario: "", action: "" },
+        frictions: { score: 0, feeling: "", scenario: "", action: "" },
+        pleasures: { score: 0, feeling: "", scenario: "", action: "" },
       },
-      time_windows: { morning: '', midday: '', evening: '' },
+      time_windows: { morning: "", midday: "", evening: "" },
       daily_focus: {
-        move_forward: '',
-        communication_trap: '',
-        best_window: 'morning',
+        move_forward: "",
+        communication_trap: "",
+        best_window: "morning",
       },
-      share_text: '',
+      share_text: "",
     },
   };
 
   try {
-    const response = await fetchWithTimeout(`${baseUrl}/v1/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+    const response = await fetchWithTimeout(
+      `${baseUrl}/v1/chat/completions`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "deepseek-chat",
+          messages: [
+            {
+              role: "system",
+              content: [
+                "You are a JSON schema transformer.",
+                "Convert the input into the target schema exactly.",
+                "Output ONLY valid JSON. No markdown, no explanations.",
+                "If information is missing, infer from the chart/transit summary or use concise defaults.",
+              ].join("\n"),
+            },
+            {
+              role: "user",
+              content: [
+                `lang: ${raw.lang}`,
+                `input_json: ${JSON.stringify(raw.content)}`,
+                `chart_summary: ${JSON.stringify(context.chart_summary || {})}`,
+                `transit_summary: ${JSON.stringify(context.transit_summary || {})}`,
+                `date: ${String(context.date || "")}`,
+                `target_schema: ${JSON.stringify(schema)}`,
+              ].join("\n"),
+            },
+          ],
+          temperature: 0.0,
+          max_tokens: 2048,
+        }),
       },
-      body: JSON.stringify({
-        model: 'deepseek-chat',
-        messages: [
-          {
-            role: 'system',
-            content: [
-              'You are a JSON schema transformer.',
-              'Convert the input into the target schema exactly.',
-              'Output ONLY valid JSON. No markdown, no explanations.',
-              'If information is missing, infer from the chart/transit summary or use concise defaults.',
-            ].join('\n'),
-          },
-          {
-            role: 'user',
-            content: [
-              `lang: ${raw.lang}`,
-              `input_json: ${JSON.stringify(raw.content)}`,
-              `chart_summary: ${JSON.stringify(context.chart_summary || {})}`,
-              `transit_summary: ${JSON.stringify(context.transit_summary || {})}`,
-              `date: ${String(context.date || '')}`,
-              `target_schema: ${JSON.stringify(schema)}`,
-            ].join('\n'),
-          },
-        ],
-        temperature: 0.0,
-        max_tokens: 2048,
-      }),
-    }, timeoutMs);
+      timeoutMs,
+    );
 
     if (!response.ok) return null;
     const data = await response.json();
@@ -763,32 +975,41 @@ async function reformatDailyForecastContent(
   }
 }
 
-async function repairJsonWithAI(jsonText: string, apiKey: string, baseUrl: string, timeoutMs: number): Promise<string | null> {
+async function repairJsonWithAI(
+  jsonText: string,
+  apiKey: string,
+  baseUrl: string,
+  timeoutMs: number,
+): Promise<string | null> {
   try {
-    const response = await fetchWithTimeout(`${baseUrl}/v1/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+    const response = await fetchWithTimeout(
+      `${baseUrl}/v1/chat/completions`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "deepseek-chat",
+          messages: [
+            {
+              role: "system",
+              content: [
+                "You are a JSON repair assistant.",
+                "Return ONLY valid JSON with the same content.",
+                "Escape any double quotes inside string values.",
+                "Do not add markdown fences or explanations.",
+              ].join("\n"),
+            },
+            { role: "user", content: jsonText },
+          ],
+          temperature: 0.0,
+          max_tokens: 4096,
+        }),
       },
-      body: JSON.stringify({
-        model: 'deepseek-chat',
-        messages: [
-          {
-            role: 'system',
-            content: [
-              'You are a JSON repair assistant.',
-              'Return ONLY valid JSON with the same content.',
-              'Escape any double quotes inside string values.',
-              'Do not add markdown fences or explanations.',
-            ].join('\n'),
-          },
-          { role: 'user', content: jsonText },
-        ],
-        temperature: 0.0,
-        max_tokens: 4096,
-      }),
-    }, timeoutMs);
+      timeoutMs,
+    );
 
     if (!response.ok) return null;
     const data = await response.json();
@@ -801,30 +1022,45 @@ async function repairJsonWithAI(jsonText: string, apiKey: string, baseUrl: strin
   }
 }
 
-function resolveMockReason(error?: unknown): AIContentMeta['reason'] {
-  if (!error || !(error instanceof Error)) return 'error';
-  if (error.name === 'AbortError') return 'timeout';
-  if (error.message.includes('Invalid JSON') || error.message.includes('Unexpected token')) return 'invalid_json';
-  if (error.message.includes('Prompt not found')) return 'prompt_missing';
-  return 'error';
+function resolveMockReason(error?: unknown): AIContentMeta["reason"] {
+  if (!error || !(error instanceof Error)) return "error";
+  if (error.name === "AbortError") return "timeout";
+  if (
+    error.message.includes("Invalid JSON") ||
+    error.message.includes("Unexpected token")
+  )
+    return "invalid_json";
+  if (error.message.includes("Prompt not found")) return "prompt_missing";
+  return "error";
 }
 
-async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise<AIGenerateResult<T>> {
+async function generateAIContentInternal<T>(
+  options: AIGenerateOptions,
+): Promise<AIGenerateResult<T>> {
   const allowMock = options.allowMock === true;
   const lang = options.lang ?? DEFAULT_LANG;
   const prompt = getPrompt(options.promptId);
   if (!prompt) {
     if (!allowMock) {
-      throw new AIUnavailableError('prompt_missing', `Prompt not found: ${options.promptId}`);
+      throw new AIUnavailableError(
+        "prompt_missing",
+        `Prompt not found: ${options.promptId}`,
+      );
     }
-    console.warn(`[AI] Prompt not found: ${options.promptId}. Using mock response.`);
-    return { content: getMockResponse<T>(options.promptId, lang), meta: buildMockMeta('prompt_missing') };
+    console.warn(
+      `[AI] Prompt not found: ${options.promptId}. Using mock response.`,
+    );
+    return {
+      content: getMockResponse<T>(options.promptId, lang),
+      meta: buildMockMeta("prompt_missing"),
+    };
   }
 
   const context = { ...options.context, lang };
-  const systemMessage = typeof prompt.system === 'function'
-    ? prompt.system(context)
-    : prompt.system;
+  const systemMessage =
+    typeof prompt.system === "function"
+      ? prompt.system(context)
+      : prompt.system;
   const userMessage = prompt.user(context);
   const cacheKey = buildCacheKey(options.promptId, hashInput(context));
 
@@ -834,23 +1070,30 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
   if (shouldUseCache) {
     const cached = await cacheService.get<LocalizedContent<T>>(cacheKey);
     if (cached) {
-      if (options.promptId === 'natal-overview') {
+      if (options.promptId === "natal-overview") {
         if (isNatalOverviewContent(cached.content)) {
           return buildAIResult(cached, true);
         }
         if (isLegacyNatalOverviewContent(cached.content)) {
-          const converted = convertLegacyNatalOverview(cached.content as Record<string, unknown>, context, lang);
+          const converted = convertLegacyNatalOverview(
+            cached.content as Record<string, unknown>,
+            context,
+            lang,
+          );
           if (isNatalOverviewContent(converted.content)) {
             await cacheService.set(cacheKey, converted, CACHE_TTL.AI_OUTPUT);
             return buildAIResult(converted as LocalizedContent<T>, true);
           }
         }
-      } else if (options.promptId === 'daily-forecast') {
+      } else if (options.promptId === "daily-forecast") {
         if (isDailyForecastContent(cached.content)) {
           return buildAIResult(cached, true);
         }
         if (isDailyForecastLegacy(cached.content)) {
-          const converted = convertLegacyDailyForecast(cached.content as Record<string, unknown>, lang);
+          const converted = convertLegacyDailyForecast(
+            cached.content as Record<string, unknown>,
+            lang,
+          );
           if (converted && isDailyForecastContent(converted.content)) {
             await cacheService.set(cacheKey, converted, CACHE_TTL.AI_OUTPUT);
             return buildAIResult(converted as LocalizedContent<T>, true);
@@ -865,34 +1108,44 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
   const apiKey = getDeepSeekApiKey();
   if (!apiKey) {
     if (!allowMock) {
-      throw new AIUnavailableError('missing_api_key', 'DeepSeek API key missing');
+      throw new AIUnavailableError(
+        "missing_api_key",
+        "DeepSeek API key missing",
+      );
     }
-    return { content: getMockResponse<T>(options.promptId, lang), meta: buildMockMeta('missing_api_key') };
+    return {
+      content: getMockResponse<T>(options.promptId, lang),
+      meta: buildMockMeta("missing_api_key"),
+    };
   }
 
   const useReasoning = REASONING_PROMPTS.includes(options.promptId);
-  const model = useReasoning ? 'deepseek-reasoner' : 'deepseek-chat';
+  const model = useReasoning ? "deepseek-reasoner" : "deepseek-chat";
   const baseUrl = getDeepSeekBaseUrl();
 
   try {
     const timeoutMs = options.timeoutMs ?? AI_TIMEOUT_MS;
     const maxTokens = options.maxTokens ?? 4096;
-    const response = await fetchWithTimeout(`${baseUrl}/v1/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
+    const response = await fetchWithTimeout(
+      `${baseUrl}/v1/chat/completions`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: "system", content: systemMessage },
+            { role: "user", content: userMessage },
+          ],
+          temperature: getTemperatureForPrompt(options.promptId),
+          max_tokens: maxTokens,
+        }),
       },
-      body: JSON.stringify({
-        model,
-        messages: [
-          { role: 'system', content: systemMessage },
-          { role: 'user', content: userMessage },
-        ],
-        temperature: getTemperatureForPrompt(options.promptId),
-        max_tokens: maxTokens,
-      }),
-    }, timeoutMs);
+      timeoutMs,
+    );
 
     if (!response.ok) {
       const errText = await response.text();
@@ -903,7 +1156,7 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
     const text = data.choices?.[0]?.message?.content;
 
     if (!text) {
-      throw new Error('No response from DeepSeek');
+      throw new Error("No response from DeepSeek");
     }
 
     if (RAW_TEXT_PROMPTS.has(options.promptId)) {
@@ -917,42 +1170,67 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
 
     // 解析 JSON 响应（优先提取首个完整 JSON 对象）
     const extracted = extractJsonObject(text);
-    const jsonMatch = extracted ? [extracted] : (text.match(/```json\s*([\s\S]*?)```/) || text.match(/\{[\s\S]*\}/));
-    const jsonStr = Array.isArray(jsonMatch) ? (jsonMatch[1] || jsonMatch[0]) : jsonMatch?.[1] || jsonMatch?.[0];
+    const jsonMatch = extracted
+      ? [extracted]
+      : text.match(/```json\s*([\s\S]*?)```/) || text.match(/\{[\s\S]*\}/);
+    const jsonStr = Array.isArray(jsonMatch)
+      ? jsonMatch[1] || jsonMatch[0]
+      : jsonMatch?.[1] || jsonMatch?.[0];
     if (!jsonStr) {
-      throw new Error('Invalid JSON response from DeepSeek');
+      throw new Error("Invalid JSON response from DeepSeek");
     }
 
     let parsed: unknown;
     try {
       parsed = JSON.parse(jsonStr) as unknown;
     } catch (parseError) {
-      const repaired = await repairJsonWithAI(jsonStr, apiKey, baseUrl, timeoutMs);
+      const repaired = await repairJsonWithAI(
+        jsonStr,
+        apiKey,
+        baseUrl,
+        timeoutMs,
+      );
       if (!repaired) throw parseError;
       parsed = JSON.parse(repaired) as unknown;
     }
     const result = normalizeLocalizedContent<T>(parsed, lang);
     let normalized = result as LocalizedContent<T>;
 
-    if (options.promptId === 'natal-overview' && !isNatalOverviewContent(normalized.content)) {
+    if (
+      options.promptId === "natal-overview" &&
+      !isNatalOverviewContent(normalized.content)
+    ) {
       if (isLegacyNatalOverviewContent(normalized.content)) {
-        const converted = convertLegacyNatalOverview(normalized.content as Record<string, unknown>, context, lang);
+        const converted = convertLegacyNatalOverview(
+          normalized.content as Record<string, unknown>,
+          context,
+          lang,
+        );
         if (isNatalOverviewContent(converted.content)) {
           normalized = converted as LocalizedContent<T>;
         }
       }
     }
 
-    if (options.promptId === 'daily-forecast' && !isDailyForecastContent(normalized.content)) {
+    if (
+      options.promptId === "daily-forecast" &&
+      !isDailyForecastContent(normalized.content)
+    ) {
       if (isDailyForecastLegacy(normalized.content)) {
-        const converted = convertLegacyDailyForecast(normalized.content as Record<string, unknown>, lang);
+        const converted = convertLegacyDailyForecast(
+          normalized.content as Record<string, unknown>,
+          lang,
+        );
         if (converted && isDailyForecastContent(converted.content)) {
           normalized = converted as LocalizedContent<T>;
         }
       }
     }
 
-    if (options.promptId === 'natal-overview' && !isNatalOverviewContent(normalized.content)) {
+    if (
+      options.promptId === "natal-overview" &&
+      !isNatalOverviewContent(normalized.content)
+    ) {
       const repaired = await reformatNatalOverviewContent(
         result as LocalizedContent<unknown>,
         context,
@@ -961,12 +1239,15 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
         timeoutMs,
       );
       if (!repaired || !isNatalOverviewContent(repaired.content)) {
-        throw new Error('Invalid JSON response from DeepSeek');
+        throw new Error("Invalid JSON response from DeepSeek");
       }
       normalized = repaired as LocalizedContent<T>;
     }
 
-    if (options.promptId === 'daily-forecast' && !isDailyForecastContent(normalized.content)) {
+    if (
+      options.promptId === "daily-forecast" &&
+      !isDailyForecastContent(normalized.content)
+    ) {
       const repaired = await reformatDailyForecastContent(
         result as LocalizedContent<unknown>,
         context,
@@ -975,7 +1256,7 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
         timeoutMs,
       );
       if (!repaired || !isDailyForecastContent(repaired.content)) {
-        throw new Error('Invalid JSON response from DeepSeek');
+        throw new Error("Invalid JSON response from DeepSeek");
       }
       normalized = repaired as LocalizedContent<T>;
     }
@@ -993,458 +1274,871 @@ async function generateAIContentInternal<T>(options: AIGenerateOptions): Promise
       console.error(`[AI] ${options.promptId} failed: ${message}`);
       throw new AIUnavailableError(reason, message);
     }
-    console.warn(`[AI] Using mock response for ${options.promptId}: ${message}`);
-    return { content: getMockResponse<T>(options.promptId, lang), meta: buildMockMeta(reason) };
+    console.warn(
+      `[AI] Using mock response for ${options.promptId}: ${message}`,
+    );
+    return {
+      content: getMockResponse<T>(options.promptId, lang),
+      meta: buildMockMeta(reason),
+    };
   }
 }
 
-export async function generateAIContent<T>(options: AIGenerateOptions): Promise<LocalizedContent<T>> {
+export async function generateAIContent<T>(
+  options: AIGenerateOptions,
+): Promise<LocalizedContent<T>> {
   const result = await generateAIContentInternal<T>(options);
   return result.content;
 }
 
-export async function generateAIContentWithMeta<T>(options: AIGenerateOptions): Promise<AIGenerateResult<T>> {
+export async function generateAIContentWithMeta<T>(
+  options: AIGenerateOptions,
+): Promise<AIGenerateResult<T>> {
   return generateAIContentInternal<T>(options);
 }
 
 // Mock 响应用于开发
-function getMockResponse<T>(promptId: string, lang: Language): LocalizedContent<T> {
+function getMockResponse<T>(
+  promptId: string,
+  lang: Language,
+): LocalizedContent<T> {
   const mocks: Record<string, { zh: unknown; en: unknown }> = {
-    'natal-overview': {
+    "natal-overview": {
       zh: {
-        sun: { title: '太阳白羊', keywords: ['开创', '直接', '热烈'], description: '你的核心动力来自主动推进与快速行动，倾向于用直接的方式影响局面。' },
-        moon: { title: '月亮巨蟹', keywords: ['情感', '保护', '敏感'], description: '你需要稳定的情感港湾来恢复能量，对亲密关系和安全感非常在意。' },
-        rising: { title: '上升天秤', keywords: ['和谐', '优雅', '合作'], description: '你给人的第一印象温和、体面，习惯在关系中寻找平衡与共识。' },
-        core_melody: { keywords: ['火象动力', '水象敏感'], explanations: ['行动力强', '内心细腻'] },
-        top_talent: { title: '带头推动', example: '在团队中自然承担启动角色', advice: '把冲劲转化为清晰的目标。' },
-        top_pitfall: { title: '过度保护', triggers: ['被忽视', '不安全感'], protection: '给自己和他人留出空间。' },
-        trigger_card: { auto_reactions: ['先防御', '先解释'], inner_need: '被理解与被接住', buffer_action: '先停三秒再回应。' },
-        share_text: '我的星盘提示我有强烈的行动力与情感敏感。'
+        sun: {
+          title: "太阳白羊",
+          keywords: ["开创", "直接", "热烈"],
+          description:
+            "你的核心动力来自主动推进与快速行动，倾向于用直接的方式影响局面。",
+        },
+        moon: {
+          title: "月亮巨蟹",
+          keywords: ["情感", "保护", "敏感"],
+          description:
+            "你需要稳定的情感港湾来恢复能量，对亲密关系和安全感非常在意。",
+        },
+        rising: {
+          title: "上升天秤",
+          keywords: ["和谐", "优雅", "合作"],
+          description:
+            "你给人的第一印象温和、体面，习惯在关系中寻找平衡与共识。",
+        },
+        core_melody: {
+          keywords: ["火象动力", "水象敏感"],
+          explanations: ["行动力强", "内心细腻"],
+        },
+        top_talent: {
+          title: "带头推动",
+          example: "在团队中自然承担启动角色",
+          advice: "把冲劲转化为清晰的目标。",
+        },
+        top_pitfall: {
+          title: "过度保护",
+          triggers: ["被忽视", "不安全感"],
+          protection: "给自己和他人留出空间。",
+        },
+        trigger_card: {
+          auto_reactions: ["先防御", "先解释"],
+          inner_need: "被理解与被接住",
+          buffer_action: "先停三秒再回应。",
+        },
+        share_text: "我的星盘提示我有强烈的行动力与情感敏感。",
       },
       en: {
-        sun: { title: 'Sun in Aries', keywords: ['Initiative', 'Direct', 'Bold'], description: 'Your core drive is to initiate and act fast, influencing situations head-on.' },
-        moon: { title: 'Moon in Cancer', keywords: ['Sensitive', 'Protective', 'Nurturing'], description: 'You need a steady emotional home base and feel deeply attuned to safety and closeness.' },
-        rising: { title: 'Rising in Libra', keywords: ['Harmony', 'Grace', 'Collaboration'], description: 'You come across as balanced and considerate, seeking harmony in first impressions.' },
-        core_melody: { keywords: ['Fire drive', 'Water sensitivity'], explanations: ['Action-first', 'Emotionally nuanced'] },
-        top_talent: { title: 'Momentum Builder', example: 'You naturally kick-start projects', advice: 'Turn momentum into clear focus.' },
-        top_pitfall: { title: 'Over-protective', triggers: ['Feeling unseen', 'Insecurity'], protection: 'Give space and trust.' },
-        trigger_card: { auto_reactions: ['Defend quickly', 'Over-explain'], inner_need: 'To be understood', buffer_action: 'Pause before responding.' },
-        share_text: 'My chart shows strong drive with emotional sensitivity.'
+        sun: {
+          title: "Sun in Aries",
+          keywords: ["Initiative", "Direct", "Bold"],
+          description:
+            "Your core drive is to initiate and act fast, influencing situations head-on.",
+        },
+        moon: {
+          title: "Moon in Cancer",
+          keywords: ["Sensitive", "Protective", "Nurturing"],
+          description:
+            "You need a steady emotional home base and feel deeply attuned to safety and closeness.",
+        },
+        rising: {
+          title: "Rising in Libra",
+          keywords: ["Harmony", "Grace", "Collaboration"],
+          description:
+            "You come across as balanced and considerate, seeking harmony in first impressions.",
+        },
+        core_melody: {
+          keywords: ["Fire drive", "Water sensitivity"],
+          explanations: ["Action-first", "Emotionally nuanced"],
+        },
+        top_talent: {
+          title: "Momentum Builder",
+          example: "You naturally kick-start projects",
+          advice: "Turn momentum into clear focus.",
+        },
+        top_pitfall: {
+          title: "Over-protective",
+          triggers: ["Feeling unseen", "Insecurity"],
+          protection: "Give space and trust.",
+        },
+        trigger_card: {
+          auto_reactions: ["Defend quickly", "Over-explain"],
+          inner_need: "To be understood",
+          buffer_action: "Pause before responding.",
+        },
+        share_text: "My chart shows strong drive with emotional sensitivity.",
       },
     },
-    'natal-core-themes': {
+    "natal-core-themes": {
       zh: {
         drive: {
-          title: '核心驱动',
-          summary: '你最深层的动力来自把个人意志落到现实中，渴望通过行动留下可见的成果。',
-          key_points: ['更愿意主动启动事情', '在混乱中寻找可执行路径', '对“无意义的忙碌”更敏感']
+          title: "核心驱动",
+          summary:
+            "你最深层的动力来自把个人意志落到现实中，渴望通过行动留下可见的成果。",
+          key_points: [
+            "更愿意主动启动事情",
+            "在混乱中寻找可执行路径",
+            "对“无意义的忙碌”更敏感",
+          ],
         },
         fear: {
-          title: '核心恐惧',
-          summary: '你害怕失控与被否定，尤其在关系或节奏被打乱时更容易紧绷。',
-          key_points: ['对突发变化更警觉', '倾向用理性压住情绪', '需要被清晰地看见与肯定']
+          title: "核心恐惧",
+          summary: "你害怕失控与被否定，尤其在关系或节奏被打乱时更容易紧绷。",
+          key_points: [
+            "对突发变化更警觉",
+            "倾向用理性压住情绪",
+            "需要被清晰地看见与肯定",
+          ],
         },
         growth: {
-          title: '成长路径',
-          summary: '你的成长来自把真实感受说出来，用更柔软的方式建立连接与影响力。',
-          key_points: ['练习说出当下的感受', '允许自己慢下来再回应', '把“控制”转化为“协作”']
+          title: "成长路径",
+          summary:
+            "你的成长来自把真实感受说出来，用更柔软的方式建立连接与影响力。",
+          key_points: [
+            "练习说出当下的感受",
+            "允许自己慢下来再回应",
+            "把“控制”转化为“协作”",
+          ],
         },
-        confidence: 'high'
+        confidence: "high",
       },
       en: {
         drive: {
-          title: 'Core Drive',
-          summary: 'Your deepest drive is to turn intent into tangible outcomes, leaving a clear mark through action.',
-          key_points: ['Prefer to initiate and lead', 'Seek practical paths in chaos', 'Sensitive to meaningless busyness']
+          title: "Core Drive",
+          summary:
+            "Your deepest drive is to turn intent into tangible outcomes, leaving a clear mark through action.",
+          key_points: [
+            "Prefer to initiate and lead",
+            "Seek practical paths in chaos",
+            "Sensitive to meaningless busyness",
+          ],
         },
         fear: {
-          title: 'Core Fear',
-          summary: 'You fear losing control or being dismissed, especially when the pace becomes unpredictable.',
-          key_points: ['Alert to sudden shifts', 'Use logic to contain emotion', 'Need clear recognition and safety']
+          title: "Core Fear",
+          summary:
+            "You fear losing control or being dismissed, especially when the pace becomes unpredictable.",
+          key_points: [
+            "Alert to sudden shifts",
+            "Use logic to contain emotion",
+            "Need clear recognition and safety",
+          ],
         },
         growth: {
-          title: 'Growth Path',
-          summary: 'Growth comes from naming your feelings and influencing with openness rather than control.',
-          key_points: ['Practice naming what you feel', 'Slow down before responding', 'Turn control into collaboration']
+          title: "Growth Path",
+          summary:
+            "Growth comes from naming your feelings and influencing with openness rather than control.",
+          key_points: [
+            "Practice naming what you feel",
+            "Slow down before responding",
+            "Turn control into collaboration",
+          ],
         },
-        confidence: 'high'
+        confidence: "high",
       },
     },
-    'natal-dimension': {
+    "natal-dimension": {
       zh: {
-        dimension_key: 'Emotions',
-        title: '情绪模式',
-        pattern: '情绪容易在安全感不足时被放大。',
-        root: '对稳定关系的高度需求。',
-        when_triggered: '当被忽视或节奏失控时。',
-        what_helps: ['明确表达需求', '先停顿再回应'],
-        shadow: '在压力下变得防御或讨好。',
-        practice: { title: '回到身体', steps: ['放慢呼吸', '感受脚底'] },
-        prompt_question: '我现在最需要被理解的是什么？',
-        confidence: 'high'
+        dimension_key: "Emotions",
+        title: "情绪模式",
+        pattern: "情绪容易在安全感不足时被放大。",
+        root: "对稳定关系的高度需求。",
+        when_triggered: "当被忽视或节奏失控时。",
+        what_helps: ["明确表达需求", "先停顿再回应"],
+        shadow: "在压力下变得防御或讨好。",
+        practice: { title: "回到身体", steps: ["放慢呼吸", "感受脚底"] },
+        prompt_question: "我现在最需要被理解的是什么？",
+        confidence: "high",
       },
       en: {
-        dimension_key: 'Emotions',
-        title: 'Emotional Pattern',
-        pattern: 'Emotions intensify when safety feels uncertain.',
-        root: 'A strong need for secure attachment.',
-        when_triggered: 'When you feel unseen or out of rhythm.',
-        what_helps: ['State your needs clearly', 'Pause before reacting'],
-        shadow: 'Defensiveness or people-pleasing under stress.',
-        practice: { title: 'Return to the body', steps: ['Slow the breath', 'Feel your feet'] },
-        prompt_question: 'What needs to be understood right now?',
-        confidence: 'high'
+        dimension_key: "Emotions",
+        title: "Emotional Pattern",
+        pattern: "Emotions intensify when safety feels uncertain.",
+        root: "A strong need for secure attachment.",
+        when_triggered: "When you feel unseen or out of rhythm.",
+        what_helps: ["State your needs clearly", "Pause before reacting"],
+        shadow: "Defensiveness or people-pleasing under stress.",
+        practice: {
+          title: "Return to the body",
+          steps: ["Slow the breath", "Feel your feet"],
+        },
+        prompt_question: "What needs to be understood right now?",
+        confidence: "high",
       },
     },
-    'daily-forecast': {
+    "daily-forecast": {
       zh: {
-        date: '2024-01-01',
-        theme_title: '今日主题：内在整合',
-        anchor_quote: '静水流深，力量在沉淀中积蓄',
+        date: "2024-01-01",
+        theme_title: "今日主题：内在整合",
+        anchor_quote: "静水流深，力量在沉淀中积蓄",
         energy_profile: {
-          drive: { score: 70, feeling: '动力充沛', scenario: '适合推进重要项目', action: '抓住上午的高效时段' },
-          pressure: { score: 40, feeling: '压力适中', scenario: '可能有小挑战', action: '保持冷静应对' },
-          heat: { score: 30, feeling: '摩擦较少', scenario: '人际关系顺畅', action: '适合沟通协作' },
-          nourishment: { score: 80, feeling: '滋养充足', scenario: '情感支持到位', action: '感恩身边的人' },
+          drive: {
+            score: 70,
+            feeling: "动力充沛",
+            scenario: "适合推进重要项目",
+            action: "抓住上午的高效时段",
+          },
+          pressure: {
+            score: 40,
+            feeling: "压力适中",
+            scenario: "可能有小挑战",
+            action: "保持冷静应对",
+          },
+          heat: {
+            score: 30,
+            feeling: "摩擦较少",
+            scenario: "人际关系顺畅",
+            action: "适合沟通协作",
+          },
+          nourishment: {
+            score: 80,
+            feeling: "滋养充足",
+            scenario: "情感支持到位",
+            action: "感恩身边的人",
+          },
         },
-        time_windows: { morning: '高效工作', midday: '社交互动', evening: '自我反思' },
-        strategy: { best_use: '推进长期目标', avoid: '避免冲动决策' },
-        share_text: '今日能量：内在整合，静水流深',
+        time_windows: {
+          morning: "高效工作",
+          midday: "社交互动",
+          evening: "自我反思",
+        },
+        strategy: { best_use: "推进长期目标", avoid: "避免冲动决策" },
+        share_text: "今日能量：内在整合，静水流深",
       },
       en: {
-        date: '2024-01-01',
-        theme_title: 'Today\'s Theme: Inner Integration',
-        anchor_quote: 'Still waters run deep, power accumulates in stillness',
+        date: "2024-01-01",
+        theme_title: "Today's Theme: Inner Integration",
+        anchor_quote: "Still waters run deep, power accumulates in stillness",
         energy_profile: {
-          drive: { score: 70, feeling: 'Energized', scenario: 'Good for advancing projects', action: 'Seize the morning hours' },
-          pressure: { score: 40, feeling: 'Moderate pressure', scenario: 'Minor challenges possible', action: 'Stay calm' },
-          heat: { score: 30, feeling: 'Low friction', scenario: 'Smooth relationships', action: 'Good for collaboration' },
-          nourishment: { score: 80, feeling: 'Well nourished', scenario: 'Emotional support available', action: 'Appreciate those around you' },
+          drive: {
+            score: 70,
+            feeling: "Energized",
+            scenario: "Good for advancing projects",
+            action: "Seize the morning hours",
+          },
+          pressure: {
+            score: 40,
+            feeling: "Moderate pressure",
+            scenario: "Minor challenges possible",
+            action: "Stay calm",
+          },
+          heat: {
+            score: 30,
+            feeling: "Low friction",
+            scenario: "Smooth relationships",
+            action: "Good for collaboration",
+          },
+          nourishment: {
+            score: 80,
+            feeling: "Well nourished",
+            scenario: "Emotional support available",
+            action: "Appreciate those around you",
+          },
         },
-        time_windows: { morning: 'Productive work', midday: 'Social interaction', evening: 'Self-reflection' },
-        strategy: { best_use: 'Advance long-term goals', avoid: 'Avoid impulsive decisions' },
-        share_text: 'Today\'s energy: Inner integration, still waters run deep',
+        time_windows: {
+          morning: "Productive work",
+          midday: "Social interaction",
+          evening: "Self-reflection",
+        },
+        strategy: {
+          best_use: "Advance long-term goals",
+          avoid: "Avoid impulsive decisions",
+        },
+        share_text: "Today's energy: Inner integration, still waters run deep",
       },
     },
-    'daily-detail': {
+    "daily-detail": {
       zh: {
-        theme_elaborated: '今日星象强调节奏与边界的平衡。',
-        how_it_shows_up: { emotions: '更敏感、更需要安稳', relationships: '沟通更需要温柔', work: '适合稳步推进' },
-        one_challenge: { pattern_name: '过度担忧', description: '担心失控会让你更紧绷。' },
-        one_practice: { title: '定心呼吸', action: '用 4-6 呼吸节奏完成 3 轮。' },
-        one_question: '我可以放下的担忧是什么？',
-        under_the_hood: { moon_phase_sign: '盈凸月·处女', key_aspects: ['Moon trine Venus', 'Sun square Mars'] },
-        confidence: 'high'
+        theme_elaborated: "今日星象强调节奏与边界的平衡。",
+        how_it_shows_up: {
+          emotions: "更敏感、更需要安稳",
+          relationships: "沟通更需要温柔",
+          work: "适合稳步推进",
+        },
+        one_challenge: {
+          pattern_name: "过度担忧",
+          description: "担心失控会让你更紧绷。",
+        },
+        one_practice: {
+          title: "定心呼吸",
+          action: "用 4-6 呼吸节奏完成 3 轮。",
+        },
+        one_question: "我可以放下的担忧是什么？",
+        under_the_hood: {
+          moon_phase_sign: "盈凸月·处女",
+          key_aspects: ["Moon trine Venus", "Sun square Mars"],
+        },
+        confidence: "high",
       },
       en: {
-        theme_elaborated: 'Today balances rhythm and boundaries.',
-        how_it_shows_up: { emotions: 'More sensitive and craving stability', relationships: 'Soft communication helps', work: 'Steady progress wins' },
-        one_challenge: { pattern_name: 'Over-worrying', description: 'Fear of losing control tightens the body.' },
-        one_practice: { title: 'Grounding breath', action: 'Use a 4-6 breathing cadence for 3 rounds.' },
-        one_question: 'What worry can I set down today?',
-        under_the_hood: { moon_phase_sign: 'Waxing Gibbous · Virgo', key_aspects: ['Moon trine Venus', 'Sun square Mars'] },
-        confidence: 'high'
+        theme_elaborated: "Today balances rhythm and boundaries.",
+        how_it_shows_up: {
+          emotions: "More sensitive and craving stability",
+          relationships: "Soft communication helps",
+          work: "Steady progress wins",
+        },
+        one_challenge: {
+          pattern_name: "Over-worrying",
+          description: "Fear of losing control tightens the body.",
+        },
+        one_practice: {
+          title: "Grounding breath",
+          action: "Use a 4-6 breathing cadence for 3 rounds.",
+        },
+        one_question: "What worry can I set down today?",
+        under_the_hood: {
+          moon_phase_sign: "Waxing Gibbous · Virgo",
+          key_aspects: ["Moon trine Venus", "Sun square Mars"],
+        },
+        confidence: "high",
       },
     },
-    'cycle-naming': {
+    "cycle-naming": {
       zh: {
-        cycle_id: 'jupiter-return-2024-01-01',
-        title: '木星回归',
-        one_liner: '扩张与机遇的周期窗口',
-        tags: ['成长', '机遇'],
-        intensity: 'high',
-        dates: { start: '2024-01-01', peak: '2024-02-01', end: '2024-03-01' },
-        actions: ['设定宏大目标', '学习新技能'],
-        prompt_question: '我想把生活拓展到什么新领域？'
+        cycle_id: "jupiter-return-2024-01-01",
+        title: "木星回归",
+        one_liner: "扩张与机遇的周期窗口",
+        tags: ["成长", "机遇"],
+        intensity: "high",
+        dates: { start: "2024-01-01", peak: "2024-02-01", end: "2024-03-01" },
+        actions: ["设定宏大目标", "学习新技能"],
+        prompt_question: "我想把生活拓展到什么新领域？",
       },
       en: {
-        cycle_id: 'jupiter-return-2024-01-01',
-        title: 'Jupiter Return',
-        one_liner: 'A window for expansion and opportunity',
-        tags: ['growth', 'opportunity'],
-        intensity: 'high',
-        dates: { start: '2024-01-01', peak: '2024-02-01', end: '2024-03-01' },
-        actions: ['Set bold goals', 'Learn a new skill'],
-        prompt_question: 'Where do I want to expand my life?'
+        cycle_id: "jupiter-return-2024-01-01",
+        title: "Jupiter Return",
+        one_liner: "A window for expansion and opportunity",
+        tags: ["growth", "opportunity"],
+        intensity: "high",
+        dates: { start: "2024-01-01", peak: "2024-02-01", end: "2024-03-01" },
+        actions: ["Set bold goals", "Learn a new skill"],
+        prompt_question: "Where do I want to expand my life?",
       },
     },
-    'synastry-overview': {
+    "synastry-overview": {
       zh: {
         overview: {
-          keywords: [{ word: '磁性', evidence: '金星合冥王' }],
-          growth_task: { task: '建立边界', evidence: '土星对冲' },
+          keywords: [{ word: "磁性", evidence: "金星合冥王" }],
+          growth_task: { task: "建立边界", evidence: "土星对冲" },
           compatibility_scores: [
-            { dim: '情绪安全', score: 82, desc: '情感底盘较稳' },
-            { dim: '沟通', score: 74, desc: '交流节奏可磨合' },
-            { dim: '吸引力', score: 88, desc: '化学反应明显' },
-            { dim: '价值观', score: 70, desc: '方向大体一致' },
-            { dim: '节奏', score: 64, desc: '步调需要校准' },
-            { dim: '长期潜力', score: 76, desc: '可持续经营' }
-          ]
+            { dim: "情绪安全", score: 82, desc: "情感底盘较稳" },
+            { dim: "沟通", score: 74, desc: "交流节奏可磨合" },
+            { dim: "吸引力", score: 88, desc: "化学反应明显" },
+            { dim: "价值观", score: 70, desc: "方向大体一致" },
+            { dim: "节奏", score: 64, desc: "步调需要校准" },
+            { dim: "长期潜力", score: 76, desc: "可持续经营" },
+          ],
         },
         conclusion: {
-          summary: '这段关系兼具吸引力与成长性。',
-          disclaimer: '仅供参考，用于自我观察。'
-        }
+          summary: "这段关系兼具吸引力与成长性。",
+          disclaimer: "仅供参考，用于自我观察。",
+        },
       },
       en: {
         overview: {
-          keywords: [{ word: 'Magnetic', evidence: 'Venus conjunct Pluto' }],
-          growth_task: { task: 'Build boundaries', evidence: 'Saturn opposition' },
+          keywords: [{ word: "Magnetic", evidence: "Venus conjunct Pluto" }],
+          growth_task: {
+            task: "Build boundaries",
+            evidence: "Saturn opposition",
+          },
           compatibility_scores: [
-            { dim: 'Emotional Safety', score: 82, desc: 'Steady emotional base' },
-            { dim: 'Communication', score: 74, desc: 'Talk flows with tuning' },
-            { dim: 'Attraction', score: 88, desc: 'Strong chemistry' },
-            { dim: 'Values', score: 70, desc: 'Mostly aligned priorities' },
-            { dim: 'Pacing', score: 64, desc: 'Rhythm needs syncing' },
-            { dim: 'Long-term Potential', score: 76, desc: 'Buildable over time' }
-          ]
+            {
+              dim: "Emotional Safety",
+              score: 82,
+              desc: "Steady emotional base",
+            },
+            { dim: "Communication", score: 74, desc: "Talk flows with tuning" },
+            { dim: "Attraction", score: 88, desc: "Strong chemistry" },
+            { dim: "Values", score: 70, desc: "Mostly aligned priorities" },
+            { dim: "Pacing", score: 64, desc: "Rhythm needs syncing" },
+            {
+              dim: "Long-term Potential",
+              score: 76,
+              desc: "Buildable over time",
+            },
+          ],
         },
         conclusion: {
-          summary: 'A relationship with attraction and growth potential.',
-          disclaimer: 'For reflection only.'
-        }
+          summary: "A relationship with attraction and growth potential.",
+          disclaimer: "For reflection only.",
+        },
       },
     },
-    'synastry-growth-task': {
+    "synastry-growth-task": {
       zh: {
         growth_task: {
-          task: '建立边界与节奏',
-          evidence: '土星对冲带来承诺与压力并存，需要共识与节制。',
-          action_steps: ['设定清晰的界限', '制定固定沟通节奏', '共同回顾边界是否有效'],
+          task: "建立边界与节奏",
+          evidence: "土星对冲带来承诺与压力并存，需要共识与节制。",
+          action_steps: [
+            "设定清晰的界限",
+            "制定固定沟通节奏",
+            "共同回顾边界是否有效",
+          ],
         },
-        sweet_spots: [{ title: '情感共鸣', evidence: '月亮三分', experience: '彼此理解感强', usage: '多做情绪确认' }],
-        friction_points: [{ title: '沟通摩擦', evidence: '水星刑火星', trigger: '急躁语气', cost: '误解升级' }],
+        sweet_spots: [
+          {
+            title: "情感共鸣",
+            evidence: "月亮三分",
+            experience: "彼此理解感强",
+            usage: "多做情绪确认",
+          },
+        ],
+        friction_points: [
+          {
+            title: "沟通摩擦",
+            evidence: "水星刑火星",
+            trigger: "急躁语气",
+            cost: "误解升级",
+          },
+        ],
       },
       en: {
         growth_task: {
-          task: 'Build clear boundaries and pacing',
-          evidence: 'Saturn oppositions bring commitment and pressure together, calling for shared structure.',
-          action_steps: ['Name boundaries explicitly', 'Set a steady check-in rhythm', 'Review what is working weekly'],
+          task: "Build clear boundaries and pacing",
+          evidence:
+            "Saturn oppositions bring commitment and pressure together, calling for shared structure.",
+          action_steps: [
+            "Name boundaries explicitly",
+            "Set a steady check-in rhythm",
+            "Review what is working weekly",
+          ],
         },
-        sweet_spots: [{ title: 'Emotional Resonance', evidence: 'Moon trine', experience: 'Strong mutual understanding', usage: 'Name feelings often' }],
-        friction_points: [{ title: 'Communication Friction', evidence: 'Mercury square Mars', trigger: 'Sharp tone', cost: 'Escalation' }],
+        sweet_spots: [
+          {
+            title: "Emotional Resonance",
+            evidence: "Moon trine",
+            experience: "Strong mutual understanding",
+            usage: "Name feelings often",
+          },
+        ],
+        friction_points: [
+          {
+            title: "Communication Friction",
+            evidence: "Mercury square Mars",
+            trigger: "Sharp tone",
+            cost: "Escalation",
+          },
+        ],
       },
     },
-    'synastry-highlights': {
+    "synastry-highlights": {
       zh: {
         highlights: {
           harmony: [
-            { aspect: '月亮拱金星', experience: '情绪容易被照顾与理解。', advice: '多表达欣赏。' },
-            { aspect: '太阳六合木星', experience: '彼此鼓励与乐观。', advice: '一起设定小目标。' },
-            { aspect: '水星合月亮', experience: '感受与表达更同步。', advice: '用“我感受”开场。' },
-            { aspect: '金星拱火星', experience: '吸引力明显。', advice: '安排有仪式感的约会。' },
-            { aspect: '上升合上升', experience: '日常相处自然。', advice: '保持小默契。' }
+            {
+              aspect: "月亮拱金星",
+              experience: "情绪容易被照顾与理解。",
+              advice: "多表达欣赏。",
+            },
+            {
+              aspect: "太阳六合木星",
+              experience: "彼此鼓励与乐观。",
+              advice: "一起设定小目标。",
+            },
+            {
+              aspect: "水星合月亮",
+              experience: "感受与表达更同步。",
+              advice: "用“我感受”开场。",
+            },
+            {
+              aspect: "金星拱火星",
+              experience: "吸引力明显。",
+              advice: "安排有仪式感的约会。",
+            },
+            {
+              aspect: "上升合上升",
+              experience: "日常相处自然。",
+              advice: "保持小默契。",
+            },
           ],
           challenges: [
-            { aspect: '水星刑火星', conflict: '沟通容易被点燃。', mitigation: '先停一拍再回应。' },
-            { aspect: '月亮冲土星', conflict: '容易感到被忽视。', mitigation: '主动做情绪确认。' },
-            { aspect: '金星刑天王', conflict: '亲密忽冷忽热。', mitigation: '建立可预期仪式。' },
-            { aspect: '火星冲冥王', conflict: '冲突升级快。', mitigation: '设置暂停机制。' },
-            { aspect: '太阳刑海王', conflict: '容易投射或误解。', mitigation: '把事实说清楚。' }
+            {
+              aspect: "水星刑火星",
+              conflict: "沟通容易被点燃。",
+              mitigation: "先停一拍再回应。",
+            },
+            {
+              aspect: "月亮冲土星",
+              conflict: "容易感到被忽视。",
+              mitigation: "主动做情绪确认。",
+            },
+            {
+              aspect: "金星刑天王",
+              conflict: "亲密忽冷忽热。",
+              mitigation: "建立可预期仪式。",
+            },
+            {
+              aspect: "火星冲冥王",
+              conflict: "冲突升级快。",
+              mitigation: "设置暂停机制。",
+            },
+            {
+              aspect: "太阳刑海王",
+              conflict: "容易投射或误解。",
+              mitigation: "把事实说清楚。",
+            },
           ],
           overlays: [
-            { overlay: 'B 的月亮落入 A 的 4 宫', meaning: '带来家的感觉与安全感主题。' },
-            { overlay: 'A 的金星落入 B 的 7 宫', meaning: '容易把对方当理想伴侣。' },
-            { overlay: 'B 的火星落入 A 的 8 宫', meaning: '吸引力强且带来深层课题。' }
+            {
+              overlay: "B 的月亮落入 A 的 4 宫",
+              meaning: "带来家的感觉与安全感主题。",
+            },
+            {
+              overlay: "A 的金星落入 B 的 7 宫",
+              meaning: "容易把对方当理想伴侣。",
+            },
+            {
+              overlay: "B 的火星落入 A 的 8 宫",
+              meaning: "吸引力强且带来深层课题。",
+            },
           ],
-          accuracy_note: '若出生时间不确定，宫位相关解读需保留弹性。'
-        }
+          accuracy_note: "若出生时间不确定，宫位相关解读需保留弹性。",
+        },
       },
       en: {
         highlights: {
           harmony: [
-            { aspect: 'Moon trine Venus', experience: 'Warm emotional ease shows up.', advice: 'Name appreciation often.' },
-            { aspect: 'Sun sextile Jupiter', experience: 'Mutual support and optimism.', advice: 'Plan small wins together.' },
-            { aspect: 'Mercury conjunct Moon', experience: 'Feelings and words connect fast.', advice: 'Lead with “I feel.”' },
-            { aspect: 'Venus trine Mars', experience: 'Strong attraction and chemistry.', advice: 'Create intentional dates.' },
-            { aspect: 'Ascendant conjunction', experience: 'Natural daily rhythm.', advice: 'Keep small rituals.' }
+            {
+              aspect: "Moon trine Venus",
+              experience: "Warm emotional ease shows up.",
+              advice: "Name appreciation often.",
+            },
+            {
+              aspect: "Sun sextile Jupiter",
+              experience: "Mutual support and optimism.",
+              advice: "Plan small wins together.",
+            },
+            {
+              aspect: "Mercury conjunct Moon",
+              experience: "Feelings and words connect fast.",
+              advice: "Lead with “I feel.”",
+            },
+            {
+              aspect: "Venus trine Mars",
+              experience: "Strong attraction and chemistry.",
+              advice: "Create intentional dates.",
+            },
+            {
+              aspect: "Ascendant conjunction",
+              experience: "Natural daily rhythm.",
+              advice: "Keep small rituals.",
+            },
           ],
           challenges: [
-            { aspect: 'Mercury square Mars', conflict: 'Talks ignite quickly.', mitigation: 'Pause before replying.' },
-            { aspect: 'Moon opposite Saturn', conflict: 'Emotional distance can appear.', mitigation: 'Offer explicit reassurance.' },
-            { aspect: 'Venus square Uranus', conflict: 'On/off closeness shows up.', mitigation: 'Build predictable rituals.' },
-            { aspect: 'Mars opposite Pluto', conflict: 'Conflict escalates fast.', mitigation: 'Use a pause protocol.' },
-            { aspect: 'Sun square Neptune', conflict: 'Projection or confusion creeps in.', mitigation: 'Clarify facts early.' }
+            {
+              aspect: "Mercury square Mars",
+              conflict: "Talks ignite quickly.",
+              mitigation: "Pause before replying.",
+            },
+            {
+              aspect: "Moon opposite Saturn",
+              conflict: "Emotional distance can appear.",
+              mitigation: "Offer explicit reassurance.",
+            },
+            {
+              aspect: "Venus square Uranus",
+              conflict: "On/off closeness shows up.",
+              mitigation: "Build predictable rituals.",
+            },
+            {
+              aspect: "Mars opposite Pluto",
+              conflict: "Conflict escalates fast.",
+              mitigation: "Use a pause protocol.",
+            },
+            {
+              aspect: "Sun square Neptune",
+              conflict: "Projection or confusion creeps in.",
+              mitigation: "Clarify facts early.",
+            },
           ],
           overlays: [
-            { overlay: 'B Moon in A 4th house', meaning: 'Feels like home and activates safety themes.' },
-            { overlay: 'A Venus in B 7th house', meaning: 'You naturally see each other as partners.' },
-            { overlay: 'B Mars in A 8th house', meaning: 'Strong pull with deep themes.' }
+            {
+              overlay: "B Moon in A 4th house",
+              meaning: "Feels like home and activates safety themes.",
+            },
+            {
+              overlay: "A Venus in B 7th house",
+              meaning: "You naturally see each other as partners.",
+            },
+            {
+              overlay: "B Mars in A 8th house",
+              meaning: "Strong pull with deep themes.",
+            },
           ],
-          accuracy_note: 'If birth times are uncertain, house-based readings stay flexible.'
-        }
+          accuracy_note:
+            "If birth times are uncertain, house-based readings stay flexible.",
+        },
       },
     },
-    'synastry-core-dynamics': {
+    "synastry-core-dynamics": {
       zh: {
         core_dynamics: [
           {
-            key: 'emotional_safety',
-            title: '情绪与安全感',
-            a_needs: 'A 需要持续的情绪确认与稳定回应。',
-            b_needs: 'B 需要空间与被理解的安全感。',
-            loop: { trigger: '情绪不确定', defense: '沉默回避', escalation: '猜测升温' },
-            repair: { script: '我现在有点不安，可以先告诉我你在吗？', action: '设定冷静时长后回访一次' }
+            key: "emotional_safety",
+            title: "情绪与安全感",
+            a_needs: "A 需要持续的情绪确认与稳定回应。",
+            b_needs: "B 需要空间与被理解的安全感。",
+            loop: {
+              trigger: "情绪不确定",
+              defense: "沉默回避",
+              escalation: "猜测升温",
+            },
+            repair: {
+              script: "我现在有点不安，可以先告诉我你在吗？",
+              action: "设定冷静时长后回访一次",
+            },
           },
           {
-            key: 'communication',
-            title: '沟通与冲突',
-            a_needs: 'A 需要明确、快速的回应。',
-            b_needs: 'B 需要更柔和的语气与节奏。',
-            loop: { trigger: '语气过快', defense: '反驳或关机', escalation: '误解加深' },
-            repair: { script: '我不是在指责你，我想先听听你的感受。', action: '先复述对方一句再表达' }
+            key: "communication",
+            title: "沟通与冲突",
+            a_needs: "A 需要明确、快速的回应。",
+            b_needs: "B 需要更柔和的语气与节奏。",
+            loop: {
+              trigger: "语气过快",
+              defense: "反驳或关机",
+              escalation: "误解加深",
+            },
+            repair: {
+              script: "我不是在指责你，我想先听听你的感受。",
+              action: "先复述对方一句再表达",
+            },
           },
           {
-            key: 'intimacy',
-            title: '亲密与吸引',
-            a_needs: 'A 需要被主动回应与亲密确认。',
-            b_needs: 'B 需要被尊重节奏与边界。',
-            loop: { trigger: '推进过快', defense: '退后观望', escalation: '距离拉开' },
-            repair: { script: '我很在意你，我们可以慢一点。', action: '设定一个小而确定的亲密仪式' }
+            key: "intimacy",
+            title: "亲密与吸引",
+            a_needs: "A 需要被主动回应与亲密确认。",
+            b_needs: "B 需要被尊重节奏与边界。",
+            loop: {
+              trigger: "推进过快",
+              defense: "退后观望",
+              escalation: "距离拉开",
+            },
+            repair: {
+              script: "我很在意你，我们可以慢一点。",
+              action: "设定一个小而确定的亲密仪式",
+            },
           },
           {
-            key: 'values',
-            title: '价值观与承诺',
-            a_needs: 'A 需要看到未来方向的共识。',
-            b_needs: 'B 需要先确认现实可行性。',
-            loop: { trigger: '目标分歧', defense: '各自坚持', escalation: '对立僵持' },
-            repair: { script: '我们先找一个都能接受的最小共识。', action: '用 10 分钟列出共同优先级' }
+            key: "values",
+            title: "价值观与承诺",
+            a_needs: "A 需要看到未来方向的共识。",
+            b_needs: "B 需要先确认现实可行性。",
+            loop: {
+              trigger: "目标分歧",
+              defense: "各自坚持",
+              escalation: "对立僵持",
+            },
+            repair: {
+              script: "我们先找一个都能接受的最小共识。",
+              action: "用 10 分钟列出共同优先级",
+            },
           },
           {
-            key: 'rhythm',
-            title: '生活节奏与规划',
-            a_needs: 'A 需要行动与变化的节奏感。',
-            b_needs: 'B 需要稳定与可预期的安排。',
-            loop: { trigger: '节奏错位', defense: '拖延或推进', escalation: '疲惫与抱怨' },
-            repair: { script: '我们把这周的节奏对齐一下。', action: '每周同步 1 次时间表' }
-          }
-        ]
+            key: "rhythm",
+            title: "生活节奏与规划",
+            a_needs: "A 需要行动与变化的节奏感。",
+            b_needs: "B 需要稳定与可预期的安排。",
+            loop: {
+              trigger: "节奏错位",
+              defense: "拖延或推进",
+              escalation: "疲惫与抱怨",
+            },
+            repair: {
+              script: "我们把这周的节奏对齐一下。",
+              action: "每周同步 1 次时间表",
+            },
+          },
+        ],
       },
       en: {
         core_dynamics: [
           {
-            key: 'emotional_safety',
-            title: 'Emotional Safety',
-            a_needs: 'A needs steady reassurance to feel safe.',
-            b_needs: 'B needs space and gentle validation.',
-            loop: { trigger: 'uncertainty', defense: 'withdrawal', escalation: 'second-guessing' },
-            repair: { script: 'I feel uneasy—can you confirm we are okay?', action: 'Set a clear check-in time' }
+            key: "emotional_safety",
+            title: "Emotional Safety",
+            a_needs: "A needs steady reassurance to feel safe.",
+            b_needs: "B needs space and gentle validation.",
+            loop: {
+              trigger: "uncertainty",
+              defense: "withdrawal",
+              escalation: "second-guessing",
+            },
+            repair: {
+              script: "I feel uneasy—can you confirm we are okay?",
+              action: "Set a clear check-in time",
+            },
           },
           {
-            key: 'communication',
-            title: 'Communication & Repair',
-            a_needs: 'A needs direct, quick responses.',
-            b_needs: 'B needs softer tone and pacing.',
-            loop: { trigger: 'fast tone', defense: 'pushback', escalation: 'misread intent' },
-            repair: { script: 'I’m not blaming you—I want to understand.', action: 'Reflect one sentence before replying' }
+            key: "communication",
+            title: "Communication & Repair",
+            a_needs: "A needs direct, quick responses.",
+            b_needs: "B needs softer tone and pacing.",
+            loop: {
+              trigger: "fast tone",
+              defense: "pushback",
+              escalation: "misread intent",
+            },
+            repair: {
+              script: "I’m not blaming you—I want to understand.",
+              action: "Reflect one sentence before replying",
+            },
           },
           {
-            key: 'intimacy',
-            title: 'Desire & Attraction',
-            a_needs: 'A needs active signals of closeness.',
-            b_needs: 'B needs respect for timing and boundaries.',
-            loop: { trigger: 'move too fast', defense: 'pull back', escalation: 'distance grows' },
-            repair: { script: 'I’m into you; let’s go at your pace.', action: 'Create a small shared ritual' }
+            key: "intimacy",
+            title: "Desire & Attraction",
+            a_needs: "A needs active signals of closeness.",
+            b_needs: "B needs respect for timing and boundaries.",
+            loop: {
+              trigger: "move too fast",
+              defense: "pull back",
+              escalation: "distance grows",
+            },
+            repair: {
+              script: "I’m into you; let’s go at your pace.",
+              action: "Create a small shared ritual",
+            },
           },
           {
-            key: 'values',
-            title: 'Values & Commitment',
-            a_needs: 'A needs clarity on shared direction.',
-            b_needs: 'B needs practical reassurance.',
-            loop: { trigger: 'goal mismatch', defense: 'dig in', escalation: 'stalemate' },
-            repair: { script: 'Let’s agree on the smallest common ground first.', action: 'List shared priorities for 10 minutes' }
+            key: "values",
+            title: "Values & Commitment",
+            a_needs: "A needs clarity on shared direction.",
+            b_needs: "B needs practical reassurance.",
+            loop: {
+              trigger: "goal mismatch",
+              defense: "dig in",
+              escalation: "stalemate",
+            },
+            repair: {
+              script: "Let’s agree on the smallest common ground first.",
+              action: "List shared priorities for 10 minutes",
+            },
           },
           {
-            key: 'rhythm',
-            title: 'Rhythm & Planning',
-            a_needs: 'A needs movement and momentum.',
-            b_needs: 'B needs stability and predictability.',
-            loop: { trigger: 'tempo clash', defense: 'delay or push', escalation: 'fatigue' },
-            repair: { script: 'Can we align this week’s rhythm?', action: 'Sync schedules once a week' }
-          }
-        ]
+            key: "rhythm",
+            title: "Rhythm & Planning",
+            a_needs: "A needs movement and momentum.",
+            b_needs: "B needs stability and predictability.",
+            loop: {
+              trigger: "tempo clash",
+              defense: "delay or push",
+              escalation: "fatigue",
+            },
+            repair: {
+              script: "Can we align this week’s rhythm?",
+              action: "Sync schedules once a week",
+            },
+          },
+        ],
       },
     },
-    'synastry-practice-tools': {
+    "synastry-practice-tools": {
       zh: {
         practice_tools: {
           person_a: [
-            { title: '表达感受', content: '用一句话说出真实需求。' },
-            { title: '明确边界', content: '说清你能接受的节奏。' }
+            { title: "表达感受", content: "用一句话说出真实需求。" },
+            { title: "明确边界", content: "说清你能接受的节奏。" },
           ],
           person_b: [
-            { title: '安全确认', content: '告诉对方你在意的点。' },
-            { title: '放慢节奏', content: '先稳定情绪再回应。' }
+            { title: "安全确认", content: "告诉对方你在意的点。" },
+            { title: "放慢节奏", content: "先稳定情绪再回应。" },
           ],
           joint: [
-            { title: '对话约定', content: '约定固定的沟通时间。' },
-            { title: '每日小连接', content: '每天留 10 分钟聊当日心情。' }
-          ]
-        }
+            { title: "对话约定", content: "约定固定的沟通时间。" },
+            { title: "每日小连接", content: "每天留 10 分钟聊当日心情。" },
+          ],
+        },
       },
       en: {
         practice_tools: {
           person_a: [
-            { title: 'Name feelings', content: 'Say one real need.' },
-            { title: 'State boundaries', content: 'Share your workable pace.' }
+            { title: "Name feelings", content: "Say one real need." },
+            { title: "State boundaries", content: "Share your workable pace." },
           ],
           person_b: [
-            { title: 'Offer reassurance', content: 'Confirm what you value.' },
-            { title: 'Soften pace', content: 'Stabilize emotions before replying.' }
+            { title: "Offer reassurance", content: "Confirm what you value." },
+            {
+              title: "Soften pace",
+              content: "Stabilize emotions before replying.",
+            },
           ],
           joint: [
-            { title: 'Conversation pact', content: 'Set a weekly check-in.' },
-            { title: 'Daily micro-ritual', content: 'Spend 10 minutes sharing the day.' }
-          ]
-        }
+            { title: "Conversation pact", content: "Set a weekly check-in." },
+            {
+              title: "Daily micro-ritual",
+              content: "Spend 10 minutes sharing the day.",
+            },
+          ],
+        },
       },
     },
-    'synastry-relationship-timing': {
+    "synastry-relationship-timing": {
       zh: {
         relationship_timing: {
-          theme_7: '未来 7 天适合稳住情绪与对齐节奏。',
-          theme_30: '前 30 天以节奏磨合与情绪确认为主。',
-          theme_90: '90 天内会进入更稳定的协作阶段。',
+          theme_7: "未来 7 天适合稳住情绪与对齐节奏。",
+          theme_30: "前 30 天以节奏磨合与情绪确认为主。",
+          theme_90: "90 天内会进入更稳定的协作阶段。",
           windows: {
-            big_talk: '第 3-4 周适合讨论未来安排。',
-            repair: '第 2 周适合做一次情绪修复。',
-            cool_down: '第 1 周注意不要在疲惫时硬碰硬。'
+            big_talk: "第 3-4 周适合讨论未来安排。",
+            repair: "第 2 周适合做一次情绪修复。",
+            cool_down: "第 1 周注意不要在疲惫时硬碰硬。",
           },
-          dominant_theme: '亲密与节奏',
-          reminder: '情绪波动时先稳定，再谈决定。'
-        }
+          dominant_theme: "亲密与节奏",
+          reminder: "情绪波动时先稳定，再谈决定。",
+        },
       },
       en: {
         relationship_timing: {
-          theme_7: 'The next 7 days favor calming and syncing rhythm.',
-          theme_30: 'First 30 days focus on pacing and reassurance.',
-          theme_90: 'By 90 days the bond stabilizes through routines.',
+          theme_7: "The next 7 days favor calming and syncing rhythm.",
+          theme_30: "First 30 days focus on pacing and reassurance.",
+          theme_90: "By 90 days the bond stabilizes through routines.",
           windows: {
-            big_talk: 'Weeks 3-4 are best for bigger conversations.',
-            repair: 'Week 2 is supportive for repair talks.',
-            cool_down: 'Week 1 needs more cooling space if tired.'
+            big_talk: "Weeks 3-4 are best for bigger conversations.",
+            repair: "Week 2 is supportive for repair talks.",
+            cool_down: "Week 1 needs more cooling space if tired.",
           },
-          dominant_theme: 'Intimacy & Rhythm',
-          reminder: 'Stabilize emotions first, then decide.'
-        }
+          dominant_theme: "Intimacy & Rhythm",
+          reminder: "Stabilize emotions first, then decide.",
+        },
       },
     },
-    'synastry-dynamic': {
+    "synastry-dynamic": {
       zh: {
-        communication: { style: '直觉型沟通', tips: ['先说感受', '再谈事实'] },
-        conflict: { triggers: ['节奏不一致'], resolution: '建立共识与规则' },
-        intimacy: { strengths: ['情感连接'], growth: ['表达真实需求'] },
-        long_term: { potential: '可持续成长', advice: '保持节奏与边界' }
+        communication: { style: "直觉型沟通", tips: ["先说感受", "再谈事实"] },
+        conflict: { triggers: ["节奏不一致"], resolution: "建立共识与规则" },
+        intimacy: { strengths: ["情感连接"], growth: ["表达真实需求"] },
+        long_term: { potential: "可持续成长", advice: "保持节奏与边界" },
       },
       en: {
-        communication: { style: 'Intuitive', tips: ['Name feelings first', 'Then facts'] },
-        conflict: { triggers: ['Pace mismatch'], resolution: 'Agree on rules' },
-        intimacy: { strengths: ['Emotional bond'], growth: ['Express real needs'] },
-        long_term: { potential: 'Sustainable growth', advice: 'Keep rhythm and boundaries' }
+        communication: {
+          style: "Intuitive",
+          tips: ["Name feelings first", "Then facts"],
+        },
+        conflict: { triggers: ["Pace mismatch"], resolution: "Agree on rules" },
+        intimacy: {
+          strengths: ["Emotional bond"],
+          growth: ["Express real needs"],
+        },
+        long_term: {
+          potential: "Sustainable growth",
+          advice: "Keep rhythm and boundaries",
+        },
       },
     },
-    'ask-answer': {
+    "ask-answer": {
       zh: `## 1. The Essence
 Headline: 沉重的皇冠：被看见的恐惧
 The Insight: 这种停滞感并非能力不足，而是你在保护自己不被评判。你按下的暂停键，是一种过度在乎而形成的心理防御。
@@ -1492,7 +2186,7 @@ Affirmation: I choose truth over perfection.`,
     },
   };
 
-  const entry = mocks[promptId] || mocks['natal-overview'];
+  const entry = mocks[promptId] || mocks["natal-overview"];
   const content = (entry[lang] ?? entry.zh) as T;
   return { lang, content };
 }

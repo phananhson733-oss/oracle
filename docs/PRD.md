@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.9
+> **Version**: 2.10
 > **Last Updated**: 2026-05-18
 > **Status**: Living Document — synced with codebase
 
@@ -622,12 +622,38 @@ AI 生成的深度心理分析，每个维度独立解读：
 | GET | `/api/daily/detail` | 每日详细行运 | — |
 | POST | `/api/ask` | AI 问答 | Optional |
 | GET | `/api/synastry` | 合盘分析 | Required |
-| GET | `/api/synastry/overview-section` | 合盘懒加载模块 | Required |
+| GET | `/api/synastry/overview-section` | 合盘懒加载模块 (P1 TODO: 改 POST 以脱离 URL-PII) | Required |
 | GET | `/api/synastry/suggestions` | 关系类型建议 | — |
 | GET | `/api/synastry/technical` | 技术数据附录 | — |
 | GET | `/api/cycle/list` | 周期列表 | — |
 | GET | `/api/cycle/naming` | AI 周期命名 | — |
 | GET | `/api/saturn-return` | Saturn Return 日期计算 | — |
+
+**配额错误码** (适用于消耗 credits 的 AI 端点 `/api/ask`、`/api/synastry`、`/api/synastry/overview-section`)：
+
+| HTTP | Code | 触发场景 | 响应体 |
+|------|------|----------|--------|
+| 402 | `OUT_OF_CREDITS` | `reserveFeature` 原子预留失败（额度不足或竞态扣减失败） | `{ error: string, code: "OUT_OF_CREDITS" }` |
+| 502 | — | 预留成功后 LLM 调用失败（已自动 `refundReservation`，配额已恢复） | `{ error: "AI unavailable", reason: string }` |
+
+`reserveFeature` 采用 CAS-retry（Compare-and-Swap，3 次重试窗）原子扣减；预留 metadata 存 Redis 键 `reserve:entitlement:<uuid>` TTL 300s。LLM 成功 → `commitReservation` 落盘；LLM 失败 → `refundReservation` 回滚（用户无感知）。
+
+**Report 生成错误码** (`POST /api/reports/generate`)：
+
+| HTTP | Code | 触发场景 | 响应体 |
+|------|------|----------|--------|
+| 502 | `REPORT_UNAVAILABLE` | LLM 失败且 `entitlementServiceV2.refundFeature` 已自动退款（删除 purchase_records 行 + 发回 gm_credit consumable） | `{ error: string, code: "REPORT_UNAVAILABLE", reason: string }` |
+
+报告路径默认禁 mock：`reportService.generateReport` 内部 `allowMock=false`，任何 section 的 LLM 失败即整体失败 + 退款，绝不返回 placeholder。
+
+**Astro Today 错误码** (`GET /api/astro/today`)：
+
+| HTTP | Code | 触发场景 | 响应体 |
+|------|------|----------|--------|
+| 503 | `EPHEMERIS_DEGRADED` | swisseph 加载失败或星历计算降级到 mockPlanetPosition（任意 1 颗主行星走 mock fallback） | `{ error: string, code: "EPHEMERIS_DEGRADED" }` |
+| 500 | `EPHEMERIS_UNAVAILABLE` | 星历服务抛错 | `{ error: string, code: "EPHEMERIS_UNAVAILABLE" }` |
+
+`getPlanetPositions` 返回 `{ positions, houseCusps, usedMockFallback, mockedPlanets }`；`usedMockFallback=true` 的响应**绝不入缓存**，且读路径会 `isValidPayload`（精确 10 大行星 + 有效星座 + 度数 ∈ [0, 30)）拒绝 stale 缓存并重算。
 
 **地理解析错误码** (适用于所有接受 `city` 参数的端点 `/api/natal/*`、`/api/daily*`、`/api/cycle/list`、`/api/cbt/*`、`/api/geo/search`)：
 
@@ -644,8 +670,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | Method | Path | 说明 | Auth |
 |--------|------|------|------|
-| POST | `/api/cbt/records` | 创建 CBT 记录 | — |
-| GET | `/api/cbt/records` | 获取记录列表 | — |
+| POST | `/api/cbt/records` | 创建 CBT 记录 | Required |
+| GET | `/api/cbt/records` | 获取记录列表 | Required |
 | POST | `/api/cbt/analysis` | 认知分析（含危机短路） | — |
 | POST | `/api/cbt/aggregate-analysis` | 月度综合分析（含危机短路） | — |
 | POST | `/api/cbt/somatic-analysis` | 躯体信号报告（含危机短路） | — |
@@ -672,7 +698,13 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 - 命中时 **不调用 LLM**、**不写入 `cbt:records`**、不会扣减用户配额
 - 遥测仅记录 `{ event, region, lang, endpoint }`（不含用户原文，遵守 PRD §隐私规范）
-- 开发环境可用 `?override_crisis_check=true` 跳过（生产环境强制启用）
+- **Detector fail-CLOSED**：`detectCrisis` 异常返回 `{ hit: true, failSafe: true, reason: 'detector-error' }`，调用方按命中处理，绝不把用户文本转给 LLM
+- **Override gate（threefold AND，default-secure，生产强制关闭）**：
+  1. `process.env.NODE_ENV !== 'production'`（生产环境永远 false）
+  2. `process.env.ENABLE_CBT_CRISIS_OVERRIDE === 'true'`（默认未设置，需显式开启）
+  3. 请求头 `x-crisis-override-token` 等于 `process.env.QA_CRISIS_OVERRIDE_TOKEN`（共享密钥）
+- Token 走 header 而非 query/body，避免泄漏到 access log
+- 历史 `?override_crisis_check=true` query 已在 PR #4 删除（生产从未启用，前端无 caller）
 | — | `/` 重定向至 `/:lang/wiki` | 首页即 Wiki Hub | — |
 | GET | `/api/wiki/items` | 词条列表 | — |
 | GET | `/api/wiki/items/:id` | 词条详情 | — |
@@ -1018,6 +1050,19 @@ JWT Token 结构:
 | **Database** | Supabase | PostgreSQL 托管 |
 | **Cache** | Redis | IORedis 连接 |
 | **Domain** | astrologywiki.com | www 子域名（301 重定向） |
+
+**环境变量** (Vercel Project → Environment Variables；以下为 PR #4 之后强相关的安全配置)：
+
+| Key | 用途 | Scope | 默认 / 必填 |
+|-----|------|-------|-------------|
+| `NODE_ENV` | Express + Vite 运行模式 | All | Vercel 自动注入 `production` |
+| `ENABLE_CBT_CRISIS_OVERRIDE` | CBT 危机检测 override 总开关（与 `NODE_ENV !== 'production'` AND） | Preview/Development | 未设置；生产环境忽略 |
+| `QA_CRISIS_OVERRIDE_TOKEN` | CBT override 共享密钥（header `x-crisis-override-token` 必须匹配） | Preview/Development | 未设置；生产环境忽略 |
+| `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | LLM 服务凭证 | All | 必填 |
+| `REDIS_URL` | IORedis 连接（缓存 + Reservation TTL） | All | 必填 |
+| `SUPABASE_URL` / `SUPABASE_SERVICE_KEY` | 数据库连接 | All | 必填 |
+| `CRON_SECRET` | Cron endpoint 鉴权 | All | 必填 |
+| 其余 | OAuth secrets / 支付 secrets / 邮件 secrets | All | 详见 backend/.env.example |
 
 **Vercel 路由配置**:
 - `/api/*` → `backend/src/index.ts` (Serverless Function)
