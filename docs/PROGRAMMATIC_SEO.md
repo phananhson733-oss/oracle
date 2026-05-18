@@ -130,7 +130,7 @@ export const HOUSES = Array.from({ length: 12 }, (_, i) => i + 1);
 
 | 元素 | 最佳实践 |
 |------|----------|
-| title | `{行星}在{星座}座的性格特征与运势解读 \| Astromind` |
+| title | `{行星}在{星座}座的性格特征与运势解读 \| AstrologyWiki` |
 | description | 150-160 字符，包含关键词 |
 | h1 | 与 title 一致 |
 | h2 | 包含变体关键词 |
@@ -145,11 +145,11 @@ const generateArticleSchema = (planet: string, sign: string) => ({
   description: `...`,
   author: {
     '@type': 'Organization',
-    name: 'Astromind',
+    name: 'AstrologyWiki',
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Astromind',
+    name: 'AstrologyWiki',
     logo: {
       '@type': 'ImageObject',
       url: 'https://astrologywiki.com/logo.png',

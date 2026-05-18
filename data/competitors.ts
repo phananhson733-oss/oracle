@@ -279,7 +279,7 @@ export const COMPARISON_TEMPLATES = {
   'alternatives': [
     { title: 'Key Differences', points: ['Unique positioning', 'Target audience', 'Core strengths'] },
     { title: 'Feature Comparison', metrics: ['natalChart', 'synastry', 'transitAnalysis', 'predictions'] },
-    { title: 'Why Choose Astromind', points: ['Psychological depth', 'Educational focus', 'Affordable pricing'] },
+    { title: 'Why Choose AstrologyWiki', points: ['Psychological depth', 'Educational focus', 'Affordable pricing'] },
   ],
 };
 

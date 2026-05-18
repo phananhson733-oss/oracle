@@ -73,7 +73,7 @@ const GlobalSchema: React.FC = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Astromind",
+    name: "AstrologyWiki",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
     sameAs: [
@@ -86,7 +86,7 @@ const GlobalSchema: React.FC = () => {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Astromind",
+    name: "AstrologyWiki",
     url: siteUrl,
     potentialAction: {
       "@type": "SearchAction",
@@ -156,6 +156,7 @@ const HelpPage = lazy(() => import("./components/legal/HelpPage"));
 const SaturnReturnCalculator = lazy(
   () => import("./components/SaturnReturnCalculator"),
 );
+const LandingPageV2 = lazy(() => import("./pages/landing/LandingPage"));
 
 // Redirect bare public routes (e.g. /wiki/sun) to language-prefixed version (e.g. /en/wiki/sun)
 const LangRedirect: React.FC = () => {
@@ -573,6 +574,7 @@ const AppContent: React.FC = () => {
               path="/"
               element={<Navigate to={`/${language}/wiki`} replace />}
             />
+            <Route path="/landing-v2" element={<LandingPageV2 />} />
             <Route
               path="/onboarding"
               element={

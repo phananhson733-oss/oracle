@@ -21,13 +21,13 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({
   title,
-  description = 'Astromind - Your guide to modern astrology, psychology, and self-discovery.',
+  description = 'AstrologyWiki - Your guide to modern astrology, psychology, and self-discovery.',
   image = '/og-image.png',
   url,
   type = 'website',
   schema,
   keywords = [],
-  author = 'Astromind',
+  author = 'AstrologyWiki',
   robots,
   alternateLanguages = [],
   publishedTime,
@@ -36,7 +36,7 @@ export const SEO: React.FC<SEOProps> = ({
   section,
   tags = [],
 }) => {
-  const siteTitle = 'Astromind';
+  const siteTitle = 'AstrologyWiki';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const fallbackUrl = typeof window !== 'undefined' ? window.location.href : 'https://www.astrologywiki.com';
   const currentUrl = url || fallbackUrl;

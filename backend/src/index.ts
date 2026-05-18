@@ -30,6 +30,7 @@ import entitlementsRouter from "./api/entitlements.js";
 import entitlementsV2Router from "./api/entitlementsV2.js";
 import reportsRouter from "./api/reports.js";
 import gmRouter from "./api/gm.js";
+import { newsletterRouter } from "./api/newsletter.js";
 import { apiResponseMiddleware } from "./utils/apiResponse.js";
 
 const envPaths = [
@@ -160,6 +161,7 @@ app.use("/api/entitlements", entitlementsRouter);
 app.use("/api/entitlements", entitlementsV2Router); // V2 路由挂载在 /v2 子路径
 app.use("/api/reports", reportsRouter);
 app.use("/api/gm", gmRouter); // GM 测试命令
+app.use("/api/newsletter", newsletterRouter);
 
 // Health check
 app.get("/health", (_, res) => res.json({ status: "ok" }));

@@ -21,7 +21,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
   const isDark = theme === 'dark';
 
   const competitor = useMemo(() => getCompetitor(competitorId), [competitorId]);
-  const astrologywiki = COMPETITORS['astrologywiki'] || createAstromindData();
+  const astrologywiki = COMPETITORS['astrologywiki'] || createAstrologyWikiData();
 
   if (!competitor) {
     return (
@@ -82,7 +82,7 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
           <div className="grid md:grid-cols-3 gap-4">
             <div className={`rounded-2xl p-6 border ${borderColor} ${cardBg}`}>
               <div className="text-sm uppercase tracking-wider mb-2">Overall Winner</div>
-              <div className={`text-2xl font-bold ${highlightClass}`}>Astromind</div>
+              <div className={`text-2xl font-bold ${highlightClass}`}>AstrologyWiki</div>
               <div className={`text-sm ${mutedText}`}>Psychology + Astrology depth</div>
             </div>
             <div className={`rounded-2xl p-6 border ${borderColor} ${cardBg}`}>
@@ -208,8 +208,8 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
           </div>
         </Section>
 
-        {/* Why Choose Astromind */}
-        <Section title={type === 'alternatives' ? `Why Choose ${astrologywiki.name}` : 'Why Choose Astromind'}>
+        {/* Why Choose AstrologyWiki */}
+        <Section title={type === 'alternatives' ? `Why Choose ${astrologywiki.name}` : 'Why Choose AstrologyWiki'}>
           <div className="grid md:grid-cols-2 gap-6">
             <div className={`rounded-2xl p-6 border ${borderColor}`}>
               <h4 className={`font-semibold mb-3 ${highlightClass}`}>Psychological Depth</h4>
@@ -256,10 +256,10 @@ const ComparisonPage: React.FC<ComparisonPageProps> = ({ type, competitorId }) =
 };
 
 // Create placeholder astrologywiki data for comparison
-function createAstromindData(): CompetitorInfo {
+function createAstrologyWikiData(): CompetitorInfo {
   return {
     id: 'astrologywiki',
-    name: 'Astromind',
+    name: 'AstrologyWiki',
     tagline: 'Psychological Astrology Platform',
     description: 'Comprehensive astrology platform combining psychological insights with traditional astrology.',
     logo: '/logo.png',

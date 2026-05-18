@@ -33,9 +33,9 @@
 
 **示例：**
 ```
-首页：占星与心理学自助平台 | Astromind
-Wiki 详情页：太阳星座在白羊座 | Astromind Wiki
-登录：登录/注册 | Astromind
+首页：占星与心理学自助平台 | AstrologyWiki
+Wiki 详情页：太阳星座在白羊座 | AstrologyWiki Wiki
+登录：登录/注册 | AstrologyWiki
 ```
 
 #### Meta Description
