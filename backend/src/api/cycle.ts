@@ -7,8 +7,8 @@ import type {
   BirthInput,
   CycleListResponse,
   CycleNamingResponse,
-  Language,
 } from "../types/api.js";
+import { resolveLang } from "../utils/lang.js";
 import { ephemerisService } from "../services/ephemeris.js";
 import { AIUnavailableError, generateAIContent } from "../services/ai.js";
 import {
@@ -58,10 +58,6 @@ function handleBirthInputError(
     return true;
   }
   return false;
-}
-
-function resolveLang(value: unknown): Language {
-  return value === "en" ? "en" : "zh";
 }
 
 // GET /api/cycle/list - 周期列表
