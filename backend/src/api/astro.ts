@@ -8,6 +8,7 @@
 // POS: Astro endpoints; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { Router, Request, Response } from "express";
+import { createHash } from "node:crypto";
 import { loadAstroEvents } from "../data/astro-events.js";
 import { ephemerisService } from "../services/ephemeris.js";
 import { cacheService } from "../cache/redis.js";
@@ -84,6 +85,24 @@ const secondsUntilNextUtcMidnight = (now: Date): number => {
 // distributed lock (e.g. SETNX on `lock:astro:today:<date>`). Not implemented now.
 const inflightToday = new Map<string, Promise<TodaySkyPayload>>();
 
+// Hard ceiling on how long an entry stays in the inflight map. If the compute hangs
+// (e.g. swisseph deadlock, Redis stall) the map entry would otherwise pin every
+// subsequent request to the same dead promise. After this timeout we evict the entry
+// so the next caller can start a fresh compute. The hanging promise itself still
+// settles in its own time (we don't cancel ephemeris work) — we just stop sharing it.
+const INFLIGHT_TIMEOUT_MS = 15_000;
+
+// Weak ETag derived from a SHA-256 of the JSON payload. Truncated to 16 hex chars:
+// 64 bits of collision resistance is more than enough for short-lived day caches.
+// Weak (W/"...") because we don't guarantee byte-for-byte equivalence of the entity
+// (whitespace from Express's res.json can vary in theory) — we only guarantee
+// semantic equivalence, which is exactly what the weak validator promises.
+const computeWeakEtag = (body: unknown): string => {
+  const json = JSON.stringify(body);
+  const hash = createHash("sha256").update(json).digest("hex").slice(0, 16);
+  return `W/"${hash}"`;
+};
+
 const isValidPayload = (
   payload: TodaySkyPayload | null | undefined,
 ): boolean => {
@@ -142,11 +161,37 @@ const computeTodaySky = async (dateKey: string): Promise<TodaySkyPayload> => {
   return { date: dateKey, positions: majors, usedMockFallback };
 };
 
-astroRouter.get("/today", async (_req: Request, res: Response) => {
+// Shared response helper: applies Cache-Control + weak ETag, and short-circuits
+// to 304 when the client's If-None-Match matches. Kept inline (vs a utility module)
+// because the header policy is endpoint-specific (max-age, swr window).
+const sendWithCaching = (
+  req: Request,
+  res: Response,
+  body: unknown,
+  cacheControl: string,
+): void => {
+  const etag = computeWeakEtag(body);
+  res.setHeader("Cache-Control", cacheControl);
+  res.setHeader("ETag", etag);
+  const ifNoneMatch = req.headers["if-none-match"];
+  if (typeof ifNoneMatch === "string" && ifNoneMatch === etag) {
+    // 304 must not carry a body. Headers (incl. ETag, Cache-Control) survive.
+    res.status(304).end();
+    return;
+  }
+  res.json(body);
+};
+
+astroRouter.get("/today", async (req: Request, res: Response) => {
   try {
     const now = new Date();
     const dateKey = now.toISOString().slice(0, 10);
     const cacheKey = `astro:today:${dateKey}`;
+    // CDN/browser cache policy: 60s fresh window + 5min stale-while-revalidate.
+    // The compute is identical for all users within a given UTC day, so a short
+    // edge cache absorbs traffic spikes without sacrificing intraday updates.
+    const TODAY_CACHE_CONTROL =
+      "public, max-age=60, stale-while-revalidate=300";
 
     const cached = await cacheService.get<TodaySkyPayload>(cacheKey);
     // Cache-read integrity gate: legacy payloads written before the mock-flag landed
@@ -157,7 +202,7 @@ astroRouter.get("/today", async (_req: Request, res: Response) => {
       // Strip the internal flag before responding (clients should not see it).
       const { usedMockFallback: _drop, ...clientPayload } = cached;
       void _drop;
-      res.json(clientPayload);
+      sendWithCaching(req, res, clientPayload, TODAY_CACHE_CONTROL);
       return;
     }
     if (cached) {
@@ -200,13 +245,27 @@ astroRouter.get("/today", async (_req: Request, res: Response) => {
         inflightToday.delete(cacheKey);
       });
       inflightToday.set(cacheKey, pending);
+      // Watchdog: forcibly evict the entry if the compute hasn't settled within
+      // INFLIGHT_TIMEOUT_MS, so a stuck promise can't lock out subsequent requests
+      // for the entire day. The .finally() above will still run (idempotent delete).
+      const watchdog = setTimeout(() => {
+        if (inflightToday.get(cacheKey) === pending) {
+          inflightToday.delete(cacheKey);
+        }
+      }, INFLIGHT_TIMEOUT_MS);
+      // Don't keep the event loop alive solely for this timer (clean process exit).
+      if (typeof watchdog.unref === "function") watchdog.unref();
+      // Fire-and-forget cleanup. .finally returns a new promise that mirrors
+      // `pending`'s rejection — swallow it here so the real `await pending` below
+      // owns the error, preventing a duplicate unhandled rejection.
+      pending.finally(() => clearTimeout(watchdog)).catch(() => {});
     }
 
     const payload = await pending;
     // Strip internal-only flag from client response.
     const { usedMockFallback: _omit, ...clientPayload } = payload;
     void _omit;
-    res.json(clientPayload);
+    sendWithCaching(req, res, clientPayload, TODAY_CACHE_CONTROL);
   } catch (error) {
     const code = (error as { code?: string })?.code;
     if (code === "EPHEMERIS_DEGRADED") {

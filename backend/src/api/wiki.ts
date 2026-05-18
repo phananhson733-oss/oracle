@@ -1,8 +1,11 @@
 // INPUT: 心理占星百科 API 路由与查询处理（含每日星象/灵感日级缓存与经典书籍 Markdown 内容）。
-// OUTPUT: 导出 wiki 路由（首页聚合、条目列表、经典书籍分类列表、详情与搜索）。
+// OUTPUT: 导出 wiki 路由（首页聚合、条目列表、经典书籍分类列表、详情与搜索）。/home is hardened
+//         with in-process single-flight dedup (one AI compute per lang+date across concurrent
+//         requests) plus Cache-Control + weak ETag (304 short-circuit on If-None-Match).
 // POS: Wiki 端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import { Router } from "express";
+import { Router, Request, Response } from "express";
+import { createHash } from "node:crypto";
 import { resolveLang } from "../utils/lang.js";
 import type {
   Language,
@@ -144,6 +147,48 @@ const resolveHomeCacheTtl = (date: string): number => {
   return Math.max(60, seconds);
 };
 
+// In-process single-flight registry for /home: bounds parallel AI+Supabase compute to
+// one per (lang, date) cache key across all concurrent requests in this Node process.
+// Without this, a cold-cache moment lets every concurrent request hit the AI service
+// for the same payload. NOTE: per-process only; horizontal scale would need a Redis
+// distributed lock — not implemented now.
+const inflightHome = new Map<string, Promise<WikiHomeResponse>>();
+
+// Same watchdog ceiling as astro/today: if the compute hangs (AI provider stall,
+// Supabase deadlock), force-evict so subsequent callers can retry. The hanging promise
+// itself still settles in its own time — we just stop sharing it.
+const INFLIGHT_TIMEOUT_MS = 15_000;
+
+// CDN/browser cache policy: wiki/home updates less frequently than astro/today (AI
+// generation is more expensive and the daily transit/wisdom is stable for the day),
+// so we use a 5min fresh window with 10min stale-while-revalidate.
+const HOME_CACHE_CONTROL = "public, max-age=300, stale-while-revalidate=600";
+
+// Weak ETag — same construction as astro.ts. 16 hex chars (64 bits) is ample for
+// short-lived day caches; weak validator because we only guarantee semantic equality.
+const computeWeakEtag = (body: unknown): string => {
+  const json = JSON.stringify(body);
+  const hash = createHash("sha256").update(json).digest("hex").slice(0, 16);
+  return `W/"${hash}"`;
+};
+
+const sendWithCaching = (
+  req: Request,
+  res: Response,
+  body: unknown,
+  cacheControl: string,
+): void => {
+  const etag = computeWeakEtag(body);
+  res.setHeader("Cache-Control", cacheControl);
+  res.setHeader("ETag", etag);
+  const ifNoneMatch = req.headers["if-none-match"];
+  if (typeof ifNoneMatch === "string" && ifNoneMatch === etag) {
+    res.status(304).end();
+    return;
+  }
+  res.json(body);
+};
+
 const buildSearchReason = (
   item: WikiItem,
   query: string,
@@ -219,36 +264,65 @@ wikiRouter.get("/home", async (req, res) => {
   try {
     const lang = resolveLang(req.query.lang);
     const date = resolveToday(req.query.date);
-    const staticContent = getWikiStaticContent(lang);
     const cacheKey = buildHomeCacheKey(lang, date);
 
     const cached = await cacheService.get<WikiHomeResponse>(cacheKey);
     if (cached) {
-      res.json(cached);
+      sendWithCaching(req, res, cached, HOME_CACHE_CONTROL);
       return;
     }
 
-    const ai = await generateAIContent<{
-      daily_transit: WikiDailyTransit;
-      daily_wisdom: WikiDailyWisdom;
-    }>({
-      promptId: "wiki-home",
-      context: { date },
-      lang,
-    });
+    // Single-flight: if another request is already computing this same (lang, date),
+    // await its result instead of issuing a parallel AI call. Prevents the cold-cache
+    // thundering herd where every concurrent request hits the AI provider for the
+    // identical payload.
+    let pending = inflightHome.get(cacheKey);
+    if (!pending) {
+      pending = (async () => {
+        const staticContent = getWikiStaticContent(lang);
+        const ai = await generateAIContent<{
+          daily_transit: WikiDailyTransit;
+          daily_wisdom: WikiDailyWisdom;
+        }>({
+          promptId: "wiki-home",
+          context: { date },
+          lang,
+        });
 
-    const payload: WikiHomeResponse = {
-      lang: ai.lang,
-      content: {
-        pillars: staticContent.pillars,
-        daily_transit: ai.content.daily_transit,
-        daily_wisdom: ai.content.daily_wisdom,
-        trending_tags: staticContent.trending_tags,
-      },
-    };
+        const payload: WikiHomeResponse = {
+          lang: ai.lang,
+          content: {
+            pillars: staticContent.pillars,
+            daily_transit: ai.content.daily_transit,
+            daily_wisdom: ai.content.daily_wisdom,
+            trending_tags: staticContent.trending_tags,
+          },
+        };
 
-    await cacheService.set(cacheKey, payload, resolveHomeCacheTtl(date));
-    res.json(payload);
+        await cacheService.set(cacheKey, payload, resolveHomeCacheTtl(date));
+        return payload;
+      })().finally(() => {
+        inflightHome.delete(cacheKey);
+      });
+      inflightHome.set(cacheKey, pending);
+      // Watchdog: evict the entry if compute hasn't settled within INFLIGHT_TIMEOUT_MS.
+      // The hanging promise still settles on its own; we just stop sharing it so the
+      // next caller can start fresh instead of inheriting a dead reference.
+      const watchdog = setTimeout(() => {
+        if (inflightHome.get(cacheKey) === pending) {
+          inflightHome.delete(cacheKey);
+        }
+      }, INFLIGHT_TIMEOUT_MS);
+      if (typeof watchdog.unref === "function") watchdog.unref();
+      // .finally returns a new promise that mirrors `pending`'s rejection. We don't
+      // await it (this branch is fire-and-forget cleanup), so chain a no-op .catch
+      // to prevent a duplicate unhandled rejection when the real `await pending`
+      // below catches the underlying error.
+      pending.finally(() => clearTimeout(watchdog)).catch(() => {});
+    }
+
+    const payload = await pending;
+    sendWithCaching(req, res, payload, HOME_CACHE_CONTROL);
   } catch (error) {
     if (error instanceof AIUnavailableError) {
       res.status(503).json({ error: "AI unavailable", reason: error.reason });

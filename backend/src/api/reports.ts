@@ -6,6 +6,7 @@ import userService from "../services/userService.js";
 import entitlementServiceV2 from "../services/entitlementServiceV2.js";
 import { AIUnavailableError } from "../services/ai.js";
 import { SUBSCRIPTION_BENEFITS } from "../config/auth.js";
+import { resolveLang } from "../utils/lang.js";
 
 const router = Router();
 
@@ -139,7 +140,8 @@ router.post(
   requireAuth,
   async (req: Request, res: Response) => {
     try {
-      const { reportType, lang = "en" } = req.body;
+      const { reportType } = req.body;
+      const lang = resolveLang(req.body.lang ?? req.body.language);
       const validTypes = [
         "monthly",
         "annual",

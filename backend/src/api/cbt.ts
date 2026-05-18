@@ -28,6 +28,7 @@ import {
   resolveRegion,
   trackCrisisDetected,
 } from "../services/crisis-detector.js";
+import { resolveLang } from "../utils/lang.js";
 import { authMiddleware, requireAuth } from "./auth.js";
 
 export const cbtRouter = Router();
@@ -150,8 +151,9 @@ function handleBirthInputError(
 cbtRouter.post("/analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
-    const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === "en" ? "en" : "zh";
+    const lang: Language = resolveLang(
+      (req.body as Record<string, unknown>).lang,
+    );
 
     // Crisis short-circuit: must run BEFORE birth parsing / LLM call.
     // Hits do not persist to cbt:records and do not invoke generateAIContent.
@@ -221,8 +223,9 @@ cbtRouter.post("/analysis", async (req, res) => {
 cbtRouter.post("/aggregate-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
-    const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === "en" ? "en" : "zh";
+    const lang: Language = resolveLang(
+      (req.body as Record<string, unknown>).lang,
+    );
 
     if (
       shortCircuitOnCrisis(
@@ -284,8 +287,9 @@ cbtRouter.post("/aggregate-analysis", async (req, res) => {
 cbtRouter.post("/somatic-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
-    const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === "en" ? "en" : "zh";
+    const lang: Language = resolveLang(
+      (req.body as Record<string, unknown>).lang,
+    );
 
     if (
       shortCircuitOnCrisis(
@@ -343,8 +347,9 @@ cbtRouter.post("/somatic-analysis", async (req, res) => {
 cbtRouter.post("/root-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
-    const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === "en" ? "en" : "zh";
+    const lang: Language = resolveLang(
+      (req.body as Record<string, unknown>).lang,
+    );
 
     if (
       shortCircuitOnCrisis(
@@ -402,8 +407,9 @@ cbtRouter.post("/root-analysis", async (req, res) => {
 cbtRouter.post("/mood-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
-    const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === "en" ? "en" : "zh";
+    const lang: Language = resolveLang(
+      (req.body as Record<string, unknown>).lang,
+    );
 
     if (
       shortCircuitOnCrisis(
@@ -461,8 +467,9 @@ cbtRouter.post("/mood-analysis", async (req, res) => {
 cbtRouter.post("/competence-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
-    const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === "en" ? "en" : "zh";
+    const lang: Language = resolveLang(
+      (req.body as Record<string, unknown>).lang,
+    );
 
     if (
       shortCircuitOnCrisis(

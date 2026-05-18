@@ -881,12 +881,32 @@ synastryRouter.get("/technical", async (req, res) => {
   }
 });
 
-// GET /api/synastry/overview-section - 合盘综述分区
-synastryRouter.get("/overview-section", authMiddleware, async (req, res) => {
+// GET /api/synastry/overview-section - DEPRECATED (PII in query string violates privacy red line #3)
+// 308 redirects to POST. Sunset: 2026-07-01.
+synastryRouter.get("/overview-section", (_req, res) => {
+  res.setHeader("Deprecation", "true");
+  res.setHeader("Sunset", "Wed, 01 Jul 2026 00:00:00 GMT");
+  res.setHeader(
+    "Link",
+    '</api/synastry/overview-section>; rel="successor-version"',
+  );
+  // 308 preserves method? No — 308 requires same method. We need clients to switch GET→POST.
+  // Return 410 Gone instructing the client to use POST. Old clients on cached builds will see
+  // a clear error rather than silently leaking PII to access logs.
+  res.status(410).json({
+    error:
+      "Use POST /api/synastry/overview-section instead (PII must not be sent in query string)",
+    code: "ENDPOINT_DEPRECATED",
+  });
+});
+
+// POST /api/synastry/overview-section - 合盘综述分区（PII 走 body，避免 access log 泄漏）
+synastryRouter.post("/overview-section", authMiddleware, async (req, res) => {
   try {
     const requestStart = performance.now();
-    const lang = resolveLang(req.query.lang);
-    const section = resolveOverviewSection(req.query.section);
+    const body = (req.body || {}) as Record<string, unknown>;
+    const lang = resolveLang(body.lang);
+    const section = resolveOverviewSection(body.section);
     if (!section) {
       res.status(400).json({
         error:
@@ -894,16 +914,16 @@ synastryRouter.get("/overview-section", authMiddleware, async (req, res) => {
       });
       return;
     }
-    const birthA = parseBirthInput(req.query as Record<string, unknown>, "a");
-    const birthB = parseBirthInput(req.query as Record<string, unknown>, "b");
-    const relationshipType = req.query.relationType as string | undefined;
-    const nameA = (req.query.nameA as string) || "A";
-    const nameB = (req.query.nameB as string) || "B";
+    const birthA = parseBirthInput(body, "a");
+    const birthB = parseBirthInput(body, "b");
+    const relationshipType = body.relationType as string | undefined;
+    const nameA = (body.nameA as string) || "A";
+    const nameB = (body.nameB as string) || "B";
     const deviceFingerprint = req.headers["x-device-fingerprint"] as
       | string
       | undefined;
     const timezone =
-      (req.query.tz as string) ||
+      (body.tz as string) ||
       (req.headers["x-user-timezone"] as string) ||
       undefined;
     const userId = req.userId!;

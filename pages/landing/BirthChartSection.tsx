@@ -7,11 +7,18 @@
 // POS: Below-the-fold landing section for /landing-v2 (anchor id="birth-chart-tool").
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useCallback, useMemo, useState } from "react";
+import React, { Suspense, lazy, useCallback, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { useLangPath } from "../../hooks/useLangPath";
-import { AstroChart } from "../../components/AstroChart";
+
+// AstroChart (~1535 LOC) is only needed AFTER the user submits the birth form.
+// Lazy-loading keeps it out of the landing first-paint bundle to improve LCP.
+const AstroChart = lazy(() =>
+  import("../../components/AstroChart").then((m) => ({
+    default: m.AstroChart,
+  })),
+);
 import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { TECH_DATA } from "../../constants";
@@ -461,7 +468,22 @@ const BirthChartSection: React.FC = () => {
 
             <div className="mt-8 flex justify-center">
               <div className="relative w-full">
-                <AstroChart type="natal" profile={profile} scale={0.85} />
+                <Suspense
+                  fallback={
+                    <div
+                      className={`mx-auto w-full max-w-[1280px] aspect-square flex items-center justify-center text-sm opacity-60 ${
+                        isDark ? "text-star-200" : "text-paper-700"
+                      }`}
+                      style={{ minHeight: 400 }}
+                      aria-busy="true"
+                      aria-live="polite"
+                    >
+                      Loading chart…
+                    </div>
+                  }
+                >
+                  <AstroChart type="natal" profile={profile} scale={0.85} />
+                </Suspense>
               </div>
             </div>
 
