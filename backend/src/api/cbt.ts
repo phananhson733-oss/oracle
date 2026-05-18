@@ -2,13 +2,25 @@
 // OUTPUT: 导出 cbt 路由（含 AI 分析、紧凑摘要与 Server-Timing）。
 // POS: CBT 端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import { Router } from 'express';
-import { performance } from 'perf_hooks';
-import type { BirthInput, CBTAnalysisResponse, Language } from '../types/api.js';
-import { buildCompactChartSummary, buildCompactTransitSummary, ephemerisService } from '../services/ephemeris.js';
-import { AIUnavailableError, generateAIContent } from '../services/ai.js';
-import { cacheService } from '../cache/redis.js';
-import { resolveLocation } from '../services/geocoding.js';
+import { Router } from "express";
+import { performance } from "perf_hooks";
+import type {
+  BirthInput,
+  CBTAnalysisResponse,
+  Language,
+} from "../types/api.js";
+import {
+  buildCompactChartSummary,
+  buildCompactTransitSummary,
+  ephemerisService,
+} from "../services/ephemeris.js";
+import { AIUnavailableError, generateAIContent } from "../services/ai.js";
+import { cacheService } from "../cache/redis.js";
+import {
+  GeocodingServiceError,
+  LocationResolutionError,
+  resolveLocation,
+} from "../services/geocoding.js";
 
 export const cbtRouter = Router();
 
@@ -19,7 +31,12 @@ interface CBTRecord {
   id: string;
   timestamp: number;
   situation: string;
-  moods: Array<{ id: string; name: string; initialIntensity: number; finalIntensity?: number }>;
+  moods: Array<{
+    id: string;
+    name: string;
+    initialIntensity: number;
+    finalIntensity?: number;
+  }>;
   automaticThoughts: string[];
   hotThought: string;
   evidenceFor: string[];
@@ -28,36 +45,71 @@ interface CBTRecord {
   analysis?: unknown;
 }
 
-async function parseBirthInput(body: Record<string, unknown>): Promise<BirthInput> {
+async function parseBirthInput(
+  body: Record<string, unknown>,
+): Promise<BirthInput> {
   const birth = body.birth as Record<string, unknown>;
-  const city = (birth.city as string) || '';
+  const city = (birth.city as string) || "";
   const latParam = birth.lat;
   const lonParam = birth.lon;
   const timezoneParam = birth.timezone as string | undefined;
-  const hasLat = latParam !== undefined && latParam !== '';
-  const hasLon = lonParam !== undefined && lonParam !== '';
-  const hasTimezone = typeof timezoneParam === 'string' && timezoneParam.trim() !== '';
+  const hasLat = latParam !== undefined && latParam !== "";
+  const hasLon = lonParam !== undefined && lonParam !== "";
+  const hasTimezone =
+    typeof timezoneParam === "string" && timezoneParam.trim() !== "";
   const shouldResolve = !hasLat || !hasLon || !hasTimezone;
   const geo = shouldResolve ? await resolveLocation(city) : null;
   return {
     date: birth.date as string,
     time: birth.time as string | undefined,
-    city: (geo?.city || city || 'Unknown'),
-    lat: hasLat ? Number(latParam) : geo?.lat,
-    lon: hasLon ? Number(lonParam) : geo?.lon,
-    timezone: hasTimezone ? (timezoneParam as string) : (geo?.timezone || 'UTC'),
-    accuracy: (birth.accuracy as BirthInput['accuracy']) || 'exact',
+    city: geo?.city || city || "Unknown",
+    // shouldResolve=true 时 geo 必非空（resolveLocation 失败会抛错由 catch 处理）。
+    lat: hasLat ? Number(latParam) : geo!.lat,
+    lon: hasLon ? Number(lonParam) : geo!.lon,
+    timezone: hasTimezone ? (timezoneParam as string) : geo!.timezone,
+    accuracy: (birth.accuracy as BirthInput["accuracy"]) || "exact",
   };
 }
 
+function handleBirthInputError(
+  error: unknown,
+  res: import("express").Response,
+): boolean {
+  if (error instanceof LocationResolutionError) {
+    res.status(400).json({
+      error: error.message,
+      code: "LOCATION_UNRESOLVED",
+      city: error.cityName,
+    });
+    return true;
+  }
+  if (error instanceof GeocodingServiceError) {
+    res.status(503).json({
+      error:
+        "Geocoding service temporarily unavailable. Please try again in a moment.",
+      code: "GEOCODING_SERVICE_UNAVAILABLE",
+    });
+    return true;
+  }
+  return false;
+}
+
 // POST /api/cbt/analysis - CBT 分析
-cbtRouter.post('/analysis', async (req, res) => {
+cbtRouter.post("/analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === 'en' ? 'en' : 'zh';
+    const lang: Language = langInput === "en" ? "en" : "zh";
     const birth = await parseBirthInput(req.body);
-    const { situation, moods, automaticThoughts, hotThought, evidenceFor, evidenceAgainst, balancedEntries } = req.body;
+    const {
+      situation,
+      moods,
+      automaticThoughts,
+      hotThought,
+      evidenceFor,
+      evidenceAgainst,
+      balancedEntries,
+    } = req.body;
 
     const coreStart = performance.now();
     const chart = await ephemerisService.calculateNatalChart(birth);
@@ -69,7 +121,7 @@ cbtRouter.post('/analysis', async (req, res) => {
 
     const aiStart = performance.now();
     const result = await generateAIContent({
-      promptId: 'cbt-analysis',
+      promptId: "cbt-analysis",
       context: {
         chart_summary: chartSummary,
         transit_summary: transitSummary,
@@ -85,12 +137,19 @@ cbtRouter.post('/analysis', async (req, res) => {
     });
     const aiMs = performance.now() - aiStart;
     const totalMs = performance.now() - requestStart;
-    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
+    res.setHeader(
+      "Server-Timing",
+      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+    );
 
-    res.json({ lang: result.lang, content: result.content } as CBTAnalysisResponse);
+    res.json({
+      lang: result.lang,
+      content: result.content,
+    } as CBTAnalysisResponse);
   } catch (error) {
+    if (handleBirthInputError(error, res)) return;
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: 'AI unavailable', reason: error.reason });
+      res.status(503).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });
@@ -98,13 +157,14 @@ cbtRouter.post('/analysis', async (req, res) => {
 });
 
 // POST /api/cbt/aggregate-analysis - CBT 聚合分析 (月度/阶段性)
-cbtRouter.post('/aggregate-analysis', async (req, res) => {
+cbtRouter.post("/aggregate-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === 'en' ? 'en' : 'zh';
+    const lang: Language = langInput === "en" ? "en" : "zh";
     const birth = await parseBirthInput(req.body);
-    const { period, somatic_stats, root_stats, mood_stats, competence_stats } = req.body;
+    const { period, somatic_stats, root_stats, mood_stats, competence_stats } =
+      req.body;
 
     const coreStart = performance.now();
     const chart = await ephemerisService.calculateNatalChart(birth);
@@ -116,26 +176,30 @@ cbtRouter.post('/aggregate-analysis', async (req, res) => {
 
     const aiStart = performance.now();
     const result = await generateAIContent({
-      promptId: 'cbt-aggregate-analysis',
-      context: { 
+      promptId: "cbt-aggregate-analysis",
+      context: {
         chart_summary: chartSummary,
         transit_summary: transitSummary,
         period,
         somatic_stats,
         root_stats,
         mood_stats,
-        competence_stats
+        competence_stats,
       },
       lang,
     });
     const aiMs = performance.now() - aiStart;
     const totalMs = performance.now() - requestStart;
-    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
+    res.setHeader(
+      "Server-Timing",
+      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+    );
 
     res.json({ lang: result.lang, content: result.content });
   } catch (error) {
+    if (handleBirthInputError(error, res)) return;
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: 'AI unavailable', reason: error.reason });
+      res.status(503).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });
@@ -143,11 +207,11 @@ cbtRouter.post('/aggregate-analysis', async (req, res) => {
 });
 
 // POST /api/cbt/somatic-analysis - 身心信号统计报告
-cbtRouter.post('/somatic-analysis', async (req, res) => {
+cbtRouter.post("/somatic-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === 'en' ? 'en' : 'zh';
+    const lang: Language = langInput === "en" ? "en" : "zh";
     const birth = await parseBirthInput(req.body);
     const { period, somatic_stats } = req.body;
 
@@ -161,23 +225,27 @@ cbtRouter.post('/somatic-analysis', async (req, res) => {
 
     const aiStart = performance.now();
     const result = await generateAIContent({
-      promptId: 'cbt-somatic-analysis',
+      promptId: "cbt-somatic-analysis",
       context: {
         chart_summary: chartSummary,
         transit_summary: transitSummary,
         period,
-        somatic_stats
+        somatic_stats,
       },
       lang,
     });
     const aiMs = performance.now() - aiStart;
     const totalMs = performance.now() - requestStart;
-    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
+    res.setHeader(
+      "Server-Timing",
+      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+    );
 
     res.json({ lang: result.lang, content: result.content });
   } catch (error) {
+    if (handleBirthInputError(error, res)) return;
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: 'AI unavailable', reason: error.reason });
+      res.status(503).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });
@@ -185,11 +253,11 @@ cbtRouter.post('/somatic-analysis', async (req, res) => {
 });
 
 // POST /api/cbt/root-analysis - 根源与资源统计报告
-cbtRouter.post('/root-analysis', async (req, res) => {
+cbtRouter.post("/root-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === 'en' ? 'en' : 'zh';
+    const lang: Language = langInput === "en" ? "en" : "zh";
     const birth = await parseBirthInput(req.body);
     const { period, root_stats } = req.body;
 
@@ -203,23 +271,27 @@ cbtRouter.post('/root-analysis', async (req, res) => {
 
     const aiStart = performance.now();
     const result = await generateAIContent({
-      promptId: 'cbt-root-analysis',
+      promptId: "cbt-root-analysis",
       context: {
         chart_summary: chartSummary,
         transit_summary: transitSummary,
         period,
-        root_stats
+        root_stats,
       },
       lang,
     });
     const aiMs = performance.now() - aiStart;
     const totalMs = performance.now() - requestStart;
-    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
+    res.setHeader(
+      "Server-Timing",
+      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+    );
 
     res.json({ lang: result.lang, content: result.content });
   } catch (error) {
+    if (handleBirthInputError(error, res)) return;
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: 'AI unavailable', reason: error.reason });
+      res.status(503).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });
@@ -227,11 +299,11 @@ cbtRouter.post('/root-analysis', async (req, res) => {
 });
 
 // POST /api/cbt/mood-analysis - 情绪配方统计报告
-cbtRouter.post('/mood-analysis', async (req, res) => {
+cbtRouter.post("/mood-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === 'en' ? 'en' : 'zh';
+    const lang: Language = langInput === "en" ? "en" : "zh";
     const birth = await parseBirthInput(req.body);
     const { period, mood_stats } = req.body;
 
@@ -245,23 +317,27 @@ cbtRouter.post('/mood-analysis', async (req, res) => {
 
     const aiStart = performance.now();
     const result = await generateAIContent({
-      promptId: 'cbt-mood-analysis',
+      promptId: "cbt-mood-analysis",
       context: {
         chart_summary: chartSummary,
         transit_summary: transitSummary,
         period,
-        mood_stats
+        mood_stats,
       },
       lang,
     });
     const aiMs = performance.now() - aiStart;
     const totalMs = performance.now() - requestStart;
-    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
+    res.setHeader(
+      "Server-Timing",
+      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+    );
 
     res.json({ lang: result.lang, content: result.content });
   } catch (error) {
+    if (handleBirthInputError(error, res)) return;
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: 'AI unavailable', reason: error.reason });
+      res.status(503).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });
@@ -269,11 +345,11 @@ cbtRouter.post('/mood-analysis', async (req, res) => {
 });
 
 // POST /api/cbt/competence-analysis - CBT能力统计报告
-cbtRouter.post('/competence-analysis', async (req, res) => {
+cbtRouter.post("/competence-analysis", async (req, res) => {
   try {
     const requestStart = performance.now();
     const langInput = (req.body as Record<string, unknown>).lang;
-    const lang: Language = langInput === 'en' ? 'en' : 'zh';
+    const lang: Language = langInput === "en" ? "en" : "zh";
     const birth = await parseBirthInput(req.body);
     const { period, competence_stats } = req.body;
 
@@ -287,23 +363,27 @@ cbtRouter.post('/competence-analysis', async (req, res) => {
 
     const aiStart = performance.now();
     const result = await generateAIContent({
-      promptId: 'cbt-competence-analysis',
+      promptId: "cbt-competence-analysis",
       context: {
         chart_summary: chartSummary,
         transit_summary: transitSummary,
         period,
-        competence_stats
+        competence_stats,
       },
       lang,
     });
     const aiMs = performance.now() - aiStart;
     const totalMs = performance.now() - requestStart;
-    res.setHeader('Server-Timing', `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`);
+    res.setHeader(
+      "Server-Timing",
+      `core;dur=${coreMs.toFixed(2)},ai;dur=${aiMs.toFixed(2)},total;dur=${totalMs.toFixed(2)}`,
+    );
 
     res.json({ lang: result.lang, content: result.content });
   } catch (error) {
+    if (handleBirthInputError(error, res)) return;
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: 'AI unavailable', reason: error.reason });
+      res.status(503).json({ error: "AI unavailable", reason: error.reason });
       return;
     }
     res.status(500).json({ error: (error as Error).message });
@@ -311,20 +391,23 @@ cbtRouter.post('/competence-analysis', async (req, res) => {
 });
 
 // POST /api/cbt/records - 创建 CBT 记录
-cbtRouter.post('/records', async (req, res) => {
+cbtRouter.post("/records", async (req, res) => {
   try {
-    const { userId, record } = req.body as { userId: string; record: CBTRecord };
+    const { userId, record } = req.body as {
+      userId: string;
+      record: CBTRecord;
+    };
     const key = `cbt:records:${userId}`;
 
     // 获取现有记录
-    const existing = await cacheService.get<CBTRecord[]>(key) || [];
+    const existing = (await cacheService.get<CBTRecord[]>(key)) || [];
 
     // 添加新记录
     existing.push(record);
 
     // 过滤过期记录（3 个月前）
     const cutoff = Date.now() - CBT_RETENTION_TTL * 1000;
-    const filtered = existing.filter(r => r.timestamp > cutoff);
+    const filtered = existing.filter((r) => r.timestamp > cutoff);
 
     // 保存（带 TTL）
     await cacheService.set(key, filtered, CBT_RETENTION_TTL);
@@ -336,16 +419,16 @@ cbtRouter.post('/records', async (req, res) => {
 });
 
 // GET /api/cbt/records - 获取 CBT 记录列表
-cbtRouter.get('/records', async (req, res) => {
+cbtRouter.get("/records", async (req, res) => {
   try {
     const userId = req.query.userId as string;
     const key = `cbt:records:${userId}`;
 
-    const records = await cacheService.get<CBTRecord[]>(key) || [];
+    const records = (await cacheService.get<CBTRecord[]>(key)) || [];
 
     // 过滤过期记录
     const cutoff = Date.now() - CBT_RETENTION_TTL * 1000;
-    const filtered = records.filter(r => r.timestamp > cutoff);
+    const filtered = records.filter((r) => r.timestamp > cutoff);
 
     res.json({ records: filtered });
   } catch (error) {

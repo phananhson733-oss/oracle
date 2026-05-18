@@ -1,7 +1,7 @@
 # AstroMind — Product Requirements Document (PRD)
 
-> **Version**: 2.4
-> **Last Updated**: 2026-04-30
+> **Version**: 2.5
+> **Last Updated**: 2026-05-18
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -579,6 +579,17 @@ AI 生成的深度心理分析，每个维度独立解读：
 | GET | `/api/cycle/list` | 周期列表 | — |
 | GET | `/api/cycle/naming` | AI 周期命名 | — |
 | GET | `/api/saturn-return` | Saturn Return 日期计算 | — |
+
+**地理解析错误码** (适用于所有接受 `city` 参数的端点 `/api/natal/*`、`/api/daily*`、`/api/cycle/list`、`/api/cbt/*`、`/api/geo/search`)：
+
+| HTTP | Code | 触发场景 | 响应体 |
+|------|------|----------|--------|
+| 400 | `LOCATION_UNRESOLVED` | 空 city / 未匹配城市（用户输入问题） | `{ error: string, code: "LOCATION_UNRESOLVED", city: string }` |
+| 503 | `GEOCODING_SERVICE_UNAVAILABLE` | 上游 Open-Meteo 网络故障 / 超时 / 非 2xx / JSON 解析失败 | `{ error: string, code: "GEOCODING_SERVICE_UNAVAILABLE" }` |
+
+历史上 v2.4 及之前，任何地理解析失败（包括上游服务异常）都会静默回退到上海（北纬 31.23，东经 121.47）默认坐标，导致用户拿到错误的星盘。v2.5 起拆分为两类显式错误：
+- **400 `LOCATION_UNRESOLVED`**：用户输入问题，前端必须提示用户输入更具体的城市名（如 `Springfield, IL, USA`），不应自动重试
+- **503 `GEOCODING_SERVICE_UNAVAILABLE`**：上游服务异常，前端可提示"稍后再试"并可选指数退避重试
 
 #### CBT & Wiki API
 
