@@ -136,6 +136,45 @@ app.use("/api/natal", natalLimiter);
 // instance wins on `/api/natal/*` paths.
 app.use("/api/natal", express.json({ limit: "4kb" }));
 
+// Rate limiting — /api/detail. Anonymous POST endpoint that feeds arbitrary
+// chartData into generateAIContent; mutating cosmetic fields can bypass the
+// AI cache. 20/min/IP is tighter than the global 100/min bucket because each
+// request costs an LLM token bill and detail UI flows show 3-6 cards in a
+// session (well under 20). See backend/src/api/detail.ts for the full threat
+// model and the schema + canonicalization layered defenses.
+const detailLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many detail requests, please try again later.",
+    code: "detail_rate_limited",
+  },
+});
+app.use("/api/detail", detailLimiter);
+
+// Body size cap for /api/detail. Legitimate chartData is ~1-2kb; 4kb leaves
+// headroom for client-side structural variance. Must come before the global
+// `express.json()` below so the per-mount instance wins on `/api/detail/*`.
+app.use("/api/detail", express.json({ limit: "4kb" }));
+
+// Rate limiting — /api/cycle/naming. Anonymous GET endpoint that feeds
+// planet/cycleType/dates directly into generateAIContent. 30/min/IP keeps
+// distributed abuse from burning AI budget while leaving plenty of room for
+// a normal session (typical: 3-10 naming requests after viewing /cycle/list).
+const cycleNamingLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many cycle naming requests, please try again later.",
+    code: "cycle_naming_rate_limited",
+  },
+});
+app.use("/api/cycle/naming", cycleNamingLimiter);
+
 // Rate limiting — general API (broader)
 const apiLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
@@ -183,6 +222,40 @@ app.use(
 );
 
 app.use(express.json());
+
+// Body-parse error normalizer. Both per-endpoint `express.json({ limit: ... })`
+// instances (/api/natal, /api/detail) and the global parser above throw raw
+// `PayloadTooLargeError` (413) / `SyntaxError` (400) with HTML-ish messages
+// when the body is oversized or malformed. Convert to the code-only JSON
+// shape so the AI cost-gate threat model (see detail.ts) stays consistent:
+// attacker probes get back a stable `{ error, code }` envelope, never raw
+// stack traces or payload echoes.
+app.use(
+  (
+    err: Error & { type?: string; status?: number },
+    _req: express.Request,
+    res: express.Response,
+    next: express.NextFunction,
+  ) => {
+    if (!err) return next();
+    if (err.type === "entity.too.large") {
+      res.status(413).json({
+        error: "Request body exceeds size limit.",
+        code: "PAYLOAD_TOO_LARGE",
+      });
+      return;
+    }
+    if (err.type === "entity.parse.failed" || err instanceof SyntaxError) {
+      res.status(400).json({
+        error: "Malformed JSON body.",
+        code: "INVALID_JSON",
+      });
+      return;
+    }
+    next(err);
+  },
+);
+
 app.use(apiResponseMiddleware);
 
 // API Routes
