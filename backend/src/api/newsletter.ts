@@ -179,7 +179,15 @@ newsletterRouter.post(
         });
       }
 
-      console.error("Newsletter subscription unexpected error:", err);
+      // Sanitize: the Supabase JS client can throw rather than return { error },
+      // and the thrown Error may serialize the attempted email into .message /
+      // .stack (隐私红线 #3). Log only err.name + a truncated message,
+      // never the raw object.
+      const safeErr =
+        err instanceof Error
+          ? `${err.name}: ${err.message.slice(0, 80)}`
+          : typeof err;
+      console.error(`Newsletter subscription unexpected error: ${safeErr}`);
       return res.status(500).json({
         error: "Unexpected server error.",
         code: "internal_error",
