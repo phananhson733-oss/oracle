@@ -12,6 +12,12 @@ import {
   getConsentStatus,
   getConsentPreferences,
 } from "./consent";
+import {
+  bufferUserId,
+  bufferUserProperties,
+  drainConsentBuffer,
+  clearConsentBuffer,
+} from "./analyticsConsentBuffer";
 
 const GA4_MEASUREMENT_ID = import.meta.env.VITE_GA4_MEASUREMENT_ID || "";
 const GTM_CONTAINER_ID = import.meta.env.VITE_GTM_CONTAINER_ID || "";
@@ -149,8 +155,39 @@ export const initAnalytics = (
   // Consent defaults already set at module load (see bottom of file)
   if (GTM_CONTAINER_ID) loadGtm();
   if (GA4_MEASUREMENT_ID) loadGa4();
+  // setUserId / setUserProperties internally gate on hasAnalyticsConsent()
+  // and buffer their payload via analyticsConsentBuffer until updateConsentState
+  // grants. We don't gate the loadGa4 / loadGtm calls themselves: Google's
+  // Consent Mode v2 requires gtag.js to load with denied defaults so it can
+  // re-evaluate on consent_update, otherwise the modeling ping won't fire.
   if (options.userId) setUserId(options.userId);
   if (options.userType) setUserProperties({ user_type: options.userType });
+};
+
+// Flush any user identity / properties that were buffered while consent was
+// pending. Called from updateConsentState when analytics consent is granted so
+// that the last-known-good identity reaches gtag exactly once and subsequent
+// setUserId / setUserProperties calls take the direct path.
+const flushConsentBufferedToGtag = () => {
+  if (typeof window === "undefined") return;
+  if (!window.gtag) {
+    // No gtag stub yet — drop the buffer; whatever was queued can't be sent
+    // and would otherwise grow unbounded across sessions. (Stub is created in
+    // setDefaultConsent at module load, so this branch is defensive.)
+    clearConsentBuffer();
+    return;
+  }
+  const drained = drainConsentBuffer();
+  if (drained.userId && GA4_MEASUREMENT_ID) {
+    window.gtag("config", GA4_MEASUREMENT_ID, {
+      user_id: drained.userId,
+      send_page_view: false,
+    });
+  }
+  const propertyKeys = Object.keys(drained.userProperties);
+  if (propertyKeys.length > 0) {
+    window.gtag("set", "user_properties", drained.userProperties);
+  }
 };
 
 // Call when user grants or denies consent to update GA4 consent state
@@ -165,6 +202,14 @@ export const updateConsentState = (analytics: boolean, marketing = false) => {
     ad_user_data: marketingVal,
     ad_personalization: marketingVal,
   });
+  if (analytics) {
+    flushConsentBufferedToGtag();
+  } else {
+    // Consent denied (either explicit decline or revoke): drop any buffered
+    // identity. We never flush on deny — the whole point of the buffer is to
+    // hold these values until the user opts in.
+    clearConsentBuffer();
+  }
 };
 
 export const trackEvent = (
@@ -231,6 +276,13 @@ export const trackConversion = (conversionName: string, value?: number) => {
 
 export const setUserId = (userId: string) => {
   if (!canSendToGtag()) return;
+  // Buffer the userId until consent is granted — calling gtag("config", ...,
+  // { user_id }) before consent would write user identity to dataLayer in
+  // violation of the consent gate that PR #10 introduced for trackEvent().
+  if (!hasAnalyticsConsent()) {
+    bufferUserId(userId);
+    return;
+  }
   if (window.gtag && GA4_MEASUREMENT_ID) {
     window.gtag("config", GA4_MEASUREMENT_ID, {
       user_id: userId,
@@ -241,6 +293,10 @@ export const setUserId = (userId: string) => {
 
 export const setUserProperties = (properties: AnalyticsEventParams) => {
   if (!canSendToGtag()) return;
+  if (!hasAnalyticsConsent()) {
+    bufferUserProperties(properties);
+    return;
+  }
   if (window.gtag) {
     window.gtag("set", "user_properties", properties);
   }

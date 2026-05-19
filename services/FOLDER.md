@@ -17,14 +17,17 @@
 - paymentClient.ts｜地位：支付与权益客户端｜功能：订阅/购买/权益查询与 GM 测试指令调用。
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
-- analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装。
+- analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。
+- analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
 - consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
 - abTest.ts｜地位：实验工具｜功能：A/B 测试分组与曝光追踪。
 
 子目录
 - cbt/｜地位：CBT 服务子目录｜功能：CBT 功能的后端服务。
+- __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- analytics.ts 扩展同意网关：setUserId / setUserProperties / initAnalytics 在 hasAnalyticsConsent() 为假时缓冲到 analyticsConsentBuffer，updateConsentState(true) 时一次性 flush，updateConsentState(false) 时清空。
 - paymentClient 新增 PayPal 订阅确认调用，支持支付回跳兜底同步订阅状态。
 - authClient 在缺失 access token 时尝试刷新并清理无效登录，避免权益被当作匿名。
 - 新增 analytics/consent/abTest 服务，补齐追踪初始化、同意管理与实验分组。
