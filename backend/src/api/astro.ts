@@ -136,10 +136,23 @@ const computeTodaySky = async (dateKey: string): Promise<TodaySkyPayload> => {
   const utcMidnight = new Date(`${dateKey}T00:00:00Z`);
   const result = await ephemerisService.getPlanetPositions(utcMidnight, 0, 0);
   const positions = result.positions;
-  // Propagate mock-fallback signal from the ephemeris layer. If any major planet
-  // (or supporting body) was filled from mockPlanetPosition(), the snapshot is
-  // not real data — caller MUST refuse to cache or serve it.
-  const usedMockFallback = result.usedMockFallback === true;
+  // The ephemeris service's `usedMockFallback` flag flips when ANY body falls back
+  // to mock — including asteroids (Chiron / Ceres / Pallas / Juno / Vesta) and
+  // derived points (Vertex / East Point) that swisseph's default ephemeris files
+  // can't resolve without the optional seas_*.se1 asteroid files. Today's Sky
+  // only ships the 10 major planets (asteroids are filtered out below), so the
+  // global flag is a false positive: it 503'd the endpoint even though the
+  // majors were full Swiss Ephemeris precision. Look only at whether a major
+  // planet specifically was mocked.
+  const mockedMajors = Array.isArray(result.mockedPlanets)
+    ? result.mockedPlanets.filter((name) => MAJOR_PLANETS.has(name))
+    : [];
+  // Defensive: if a future ephemeris implementation drops `mockedPlanets`,
+  // fall back to the conservative global flag so we don't silently lose the
+  // degradation signal.
+  const usedMockFallback =
+    mockedMajors.length > 0 ||
+    (!Array.isArray(result.mockedPlanets) && result.usedMockFallback === true);
 
   const majors: TodayPosition[] = positions
     .filter((p) => MAJOR_PLANETS.has(p.name))
