@@ -418,4 +418,208 @@ describe("/api/astro/today", () => {
     expect(res.body.error).toBeTruthy();
     expect(mockCacheSet).not.toHaveBeenCalled();
   });
+
+  // Regression: prior to this fix the endpoint propagated the ephemeris
+  // service's global `usedMockFallback` flag, which flips whenever ANY body
+  // — including asteroids (Chiron / Ceres / Pallas / Juno / Vesta) and
+  // derived points — falls back to mockPlanetPosition() because swisseph's
+  // default ephemeris files can't resolve them without optional seas_*.se1
+  // files. Today's Sky only ships the 10 major planets (asteroids are filtered
+  // out), so a mocked asteroid is irrelevant. The endpoint was 503'ing in
+  // production with full Swiss-Ephemeris-precision majors. The gate must look
+  // at `mockedPlanets ∩ MAJOR_PLANETS`, not the global flag.
+  it("ignores asteroid mock fallback when all 10 majors are real (200 + caches)", async () => {
+    mockCacheGet.mockResolvedValueOnce(null);
+    mockGetPlanetPositions.mockResolvedValueOnce({
+      positions: [
+        {
+          name: "Sun",
+          sign: "Taurus",
+          degree: 27,
+          minute: 30,
+          isRetrograde: false,
+        },
+        {
+          name: "Moon",
+          sign: "Leo",
+          degree: 3,
+          minute: 7,
+          isRetrograde: false,
+        },
+        {
+          name: "Mercury",
+          sign: "Gemini",
+          degree: 12,
+          minute: 0,
+          isRetrograde: true,
+        },
+        {
+          name: "Venus",
+          sign: "Aries",
+          degree: 5,
+          minute: 24,
+          isRetrograde: false,
+        },
+        {
+          name: "Mars",
+          sign: "Cancer",
+          degree: 18,
+          minute: 54,
+          isRetrograde: false,
+        },
+        {
+          name: "Jupiter",
+          sign: "Gemini",
+          degree: 22,
+          minute: 18,
+          isRetrograde: false,
+        },
+        {
+          name: "Saturn",
+          sign: "Pisces",
+          degree: 8,
+          minute: 48,
+          isRetrograde: false,
+        },
+        {
+          name: "Uranus",
+          sign: "Taurus",
+          degree: 25,
+          minute: 6,
+          isRetrograde: false,
+        },
+        {
+          name: "Neptune",
+          sign: "Pisces",
+          degree: 29,
+          minute: 30,
+          isRetrograde: false,
+        },
+        {
+          name: "Pluto",
+          sign: "Aquarius",
+          degree: 1,
+          minute: 42,
+          isRetrograde: true,
+        },
+        // Asteroids fell back to mock — production-realistic shape.
+        {
+          name: "Chiron",
+          sign: "Aries",
+          degree: 20,
+          minute: 0,
+          isRetrograde: false,
+        },
+        {
+          name: "Ceres",
+          sign: "Sagittarius",
+          degree: 5,
+          minute: 0,
+          isRetrograde: false,
+        },
+      ],
+      houseCusps: [],
+      usedMockFallback: true,
+      mockedPlanets: ["Chiron", "Ceres", "Pallas", "Juno", "Vesta"],
+    });
+
+    const res = await request(app, "/api/astro/today");
+
+    expect(res.status).toBe(200);
+    expect(res.body.positions).toHaveLength(10);
+    expect(mockCacheSet).toHaveBeenCalledTimes(1);
+    // The cached payload should also flag usedMockFallback as false now that
+    // we look at the filtered majors — a subsequent cache read must not be
+    // rejected by the read-path integrity gate.
+    const [, cachedPayload] = mockCacheSet.mock.calls[0];
+    expect(cachedPayload.usedMockFallback).toBe(false);
+  });
+
+  it("treats a mocked major planet as degraded (503, no cache write)", async () => {
+    mockCacheGet.mockResolvedValueOnce(null);
+    mockGetPlanetPositions.mockResolvedValueOnce({
+      positions: [
+        // Sun is fictional — a real major-planet failure must still 503.
+        {
+          name: "Sun",
+          sign: "Taurus",
+          degree: 27,
+          minute: 30,
+          isRetrograde: false,
+        },
+        {
+          name: "Moon",
+          sign: "Leo",
+          degree: 3,
+          minute: 7,
+          isRetrograde: false,
+        },
+        {
+          name: "Mercury",
+          sign: "Gemini",
+          degree: 12,
+          minute: 0,
+          isRetrograde: true,
+        },
+        {
+          name: "Venus",
+          sign: "Aries",
+          degree: 5,
+          minute: 24,
+          isRetrograde: false,
+        },
+        {
+          name: "Mars",
+          sign: "Cancer",
+          degree: 18,
+          minute: 54,
+          isRetrograde: false,
+        },
+        {
+          name: "Jupiter",
+          sign: "Gemini",
+          degree: 22,
+          minute: 18,
+          isRetrograde: false,
+        },
+        {
+          name: "Saturn",
+          sign: "Pisces",
+          degree: 8,
+          minute: 48,
+          isRetrograde: false,
+        },
+        {
+          name: "Uranus",
+          sign: "Taurus",
+          degree: 25,
+          minute: 6,
+          isRetrograde: false,
+        },
+        {
+          name: "Neptune",
+          sign: "Pisces",
+          degree: 29,
+          minute: 30,
+          isRetrograde: false,
+        },
+        {
+          name: "Pluto",
+          sign: "Aquarius",
+          degree: 1,
+          minute: 42,
+          isRetrograde: true,
+        },
+      ],
+      houseCusps: [],
+      usedMockFallback: true,
+      mockedPlanets: ["Sun", "Chiron"],
+    });
+
+    const res = await request(app, "/api/astro/today");
+
+    expect(res.status).toBe(503);
+    expect(res.body.code).toBe("EPHEMERIS_DEGRADED");
+    expect(mockCacheSet).not.toHaveBeenCalled();
+  });
 });
