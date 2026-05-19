@@ -212,11 +212,32 @@ export const updateConsentState = (analytics: boolean, marketing = false) => {
   }
 };
 
+// Events that fire BEFORE the user can grant consent (the consent UI itself)
+// and therefore must bypass the consent gate. Anything matching consent_*
+// is also exempt so the prefix convention works for future additions.
+// Caught in /qa on 2026-05-19 (ISSUE-003) — PR #10's trackEvent consent gate
+// was lost when PR #10 was closed; only setUserId / setUserProperties were
+// restored in PR #18. This re-instates the trackEvent gate.
+const CONSENT_EXEMPT_EVENTS = new Set<string>([
+  "consent_banner_shown",
+  "consent_granted",
+  "consent_denied",
+  "consent_preferences_saved",
+]);
+
+const isConsentExemptEvent = (eventName: string): boolean =>
+  CONSENT_EXEMPT_EVENTS.has(eventName) || eventName.startsWith("consent_");
+
 export const trackEvent = (
   eventName: string,
   params: AnalyticsEventParams = {},
 ) => {
   if (!canSendToGtag()) return;
+  // Drop pre-consent analytics events. GA4 Consent Mode v2 may also
+  // anonymize them at the wire, but we additionally short-circuit here so
+  // dataLayer (visible to GTM custom tags, FB Pixel, etc) never sees the
+  // event payload at all until the user has actively granted consent.
+  if (!isConsentExemptEvent(eventName) && !hasAnalyticsConsent()) return;
   // Push to dataLayer for GTM compatibility
   const dataLayer = ensureDataLayer();
   dataLayer.push({

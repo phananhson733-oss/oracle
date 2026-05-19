@@ -35,12 +35,17 @@ beforeEach(() => {
   ) => {
     gtagCalls.push({ command, eventName, params });
   };
+  // Pretend the user already granted analytics consent so trackEvent's
+  // consent gate (added 2026-05-19 to fix ISSUE-003) lets api_error events
+  // through. Without this stub, trackEvent silently drops everything and
+  // every redaction assertion would see undefined.
   win.window = {
     dataLayer,
     gtag: win.gtag,
     location: { pathname: "/", href: "http://test/" },
     localStorage: {
-      getItem: () => null,
+      getItem: (key: string) =>
+        key === "astro_analytics_consent" ? "granted" : null,
       setItem: () => undefined,
     },
   };
@@ -61,9 +66,8 @@ afterEach(() => {
 
 describe("redactErrorMessageForAnalytics (pure helper)", () => {
   it("redacts error message for /natal/chart endpoint", async () => {
-    const { redactErrorMessageForAnalytics } = await import(
-      "../../services/analytics"
-    );
+    const { redactErrorMessageForAnalytics } =
+      await import("../../services/analytics");
     const raw = 'Could not resolve location: "Shanghai"';
     expect(redactErrorMessageForAnalytics("/natal/chart", raw)).toBe(
       "[redacted]",
@@ -85,9 +89,8 @@ describe("redactErrorMessageForAnalytics (pure helper)", () => {
   });
 
   it("does NOT redact for non-PII endpoints", async () => {
-    const { redactErrorMessageForAnalytics } = await import(
-      "../../services/analytics"
-    );
+    const { redactErrorMessageForAnalytics } =
+      await import("../../services/analytics");
     expect(
       redactErrorMessageForAnalytics("/auth/login", "Invalid credentials"),
     ).toBe("Invalid credentials");
@@ -95,9 +98,8 @@ describe("redactErrorMessageForAnalytics (pure helper)", () => {
   });
 
   it("truncates non-PII messages to 200 chars", async () => {
-    const { redactErrorMessageForAnalytics } = await import(
-      "../../services/analytics"
-    );
+    const { redactErrorMessageForAnalytics } =
+      await import("../../services/analytics");
     const long = "x".repeat(500);
     expect(redactErrorMessageForAnalytics("/auth/login", long)).toHaveLength(
       200,
