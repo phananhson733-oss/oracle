@@ -7,8 +7,15 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     globals: true,
+    // Default to node; individual tests stub their own window when needed
+    // (analytics redaction + consent-gate tests install a globalThis.window stub).
     environment: "node",
-    include: ["tests/unit/**/*.test.ts", "services/**/*.test.ts"],
+    include: [
+      "tests/unit/**/*.test.ts",
+      "services/**/*.test.ts",
+      "services/__tests__/**/*.test.{ts,tsx}",
+      "{hooks,src}/**/*.test.{ts,tsx}",
+    ],
     testTimeout: 10000,
   },
 });
