@@ -180,11 +180,13 @@ const sendWithCaching = (
 ): void => {
   const etag = computeWeakEtag(body);
   res.setHeader("Cache-Control", cacheControl);
-  res.setHeader("ETag", etag);
-  const ifNoneMatch = req.headers["if-none-match"];
-  if (typeof ifNoneMatch === "string" && ifNoneMatch === etag) {
-    res.status(304).end();
-    return;
+  if (cacheControl !== "no-store") {
+    res.setHeader("ETag", etag);
+    const ifNoneMatch = req.headers["if-none-match"];
+    if (typeof ifNoneMatch === "string" && ifNoneMatch === etag) {
+      res.status(304).end();
+      return;
+    }
   }
   res.json(body);
 };

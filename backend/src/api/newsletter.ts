@@ -61,6 +61,13 @@ const newsletterLimiter = rateLimit({
 // because the limiter already caps damage and the blocklist is a defense-
 // in-depth layer, not the primary control.
 const HONEYPOT_BLOCK_MS = 60 * 60 * 1000; // 1 hour
+// NOTE: This Map lives in process memory. On Vercel serverless, each cold
+// start drops the blocklist. In practice that means honeypot trips block a
+// bot for "until next cold start" (seconds to minutes), not the documented
+// HONEYPOT_BLOCK_MS. This is intentionally best-effort defense — the primary
+// control is express-rate-limit (5/h/IP). For a horizontally-scaled durable
+// blocklist, swap this Map for cacheService.set(`newsletter:blocked:${ip}`,
+// 1, HONEYPOT_BLOCK_MS / 1000) which would use Redis.
 const honeypotBlockedIps = new Map<string, number>(); // ip → expiry ms
 
 const isIpBlocked = (ip: string): boolean => {
