@@ -61,8 +61,9 @@ const WikiHubSection: React.FC = () => {
 
   return (
     <section
+      id="wiki-hub"
       aria-labelledby="wiki-heading"
-      className="w-full py-24 bg-paper-100 dark:bg-space-950"
+      className="w-full py-24 scroll-mt-16 bg-paper-200 dark:bg-space-900"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Editorial header */}
@@ -75,7 +76,7 @@ const WikiHubSection: React.FC = () => {
         </p>
         <h2
           id="wiki-heading"
-          className={`font-serif font-semibold text-4xl md:text-5xl leading-tight tracking-tight ${
+          className={`font-mono font-medium text-3xl md:text-4xl leading-tight tracking-tight ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >

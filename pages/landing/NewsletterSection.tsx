@@ -103,8 +103,9 @@ const NewsletterSection: React.FC = () => {
 
   return (
     <section
+      id="newsletter"
       aria-labelledby="newsletter-heading"
-      className={`w-full py-24 ${isDark ? "bg-space-950" : "bg-paper-100"}`}
+      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-950" : "bg-paper-100"}`}
     >
       <div className="max-w-2xl mx-auto px-6 text-center">
         <p
@@ -116,7 +117,7 @@ const NewsletterSection: React.FC = () => {
         </p>
         <h2
           id="newsletter-heading"
-          className={`font-serif font-semibold text-3xl md:text-4xl leading-tight tracking-tight ${
+          className={`font-mono font-medium text-2xl md:text-3xl leading-tight tracking-tight ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >

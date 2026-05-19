@@ -41,8 +41,9 @@ const SocialProofSection: React.FC = () => {
 
   return (
     <section
+      id="social-proof"
       aria-labelledby="social-proof-heading"
-      className="w-full py-20 border-y border-paper-300/40 dark:border-gold-500/10 bg-paper-100 dark:bg-space-950"
+      className="w-full py-20 scroll-mt-16 border-y border-paper-300/60 dark:border-gold-500/10 bg-paper-200 dark:bg-space-900"
     >
       <h2 id="social-proof-heading" className="sr-only">
         {headingSr}

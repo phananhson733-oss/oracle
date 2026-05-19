@@ -32,8 +32,9 @@ const HeroSection: React.FC = () => {
 
   return (
     <section
+      id="hero"
       aria-labelledby="hero-heading"
-      className={`relative w-full min-h-[75vh] flex items-center ${
+      className={`relative w-full min-h-[75vh] flex items-center pt-16 ${
         isDark ? "bg-space-950" : "bg-paper-100"
       }`}
     >
@@ -74,7 +75,7 @@ const HeroSection: React.FC = () => {
               .filter(Boolean)
               .join(" ") + (landing.hero_title_part3 ?? ".")
           }
-          className={`font-serif font-semibold leading-[1.05] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${
+          className={`font-mono font-medium leading-[1.08] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
@@ -83,7 +84,7 @@ const HeroSection: React.FC = () => {
           </span>
           <span aria-hidden="true" className="block">
             {landing.hero_title_part2 || "modern"}{" "}
-            <span className="text-accent italic">
+            <span className="font-serif italic text-accent">
               {landing.hero_emphasis || "psychology"}
             </span>
             {landing.hero_title_part3 || "."}

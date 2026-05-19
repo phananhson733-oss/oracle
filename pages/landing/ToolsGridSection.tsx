@@ -146,8 +146,9 @@ const ToolsGridSection: React.FC = () => {
 
   return (
     <section
+      id="tools"
       aria-labelledby="tools-heading"
-      className={`w-full py-24 ${isDark ? "bg-space-950" : "bg-paper-100"}`}
+      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-900" : "bg-paper-200"}`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <p
@@ -159,7 +160,7 @@ const ToolsGridSection: React.FC = () => {
         </p>
         <h2
           id="tools-heading"
-          className={`font-serif font-semibold text-3xl md:text-5xl leading-tight tracking-tight ${
+          className={`font-mono font-medium text-2xl md:text-4xl leading-tight tracking-tight ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
