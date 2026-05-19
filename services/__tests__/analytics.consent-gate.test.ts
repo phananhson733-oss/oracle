@@ -93,9 +93,8 @@ describe("analytics consent gate — setUserId", () => {
 describe("analytics consent gate — setUserProperties", () => {
   it("does NOT call gtag set when consent is not granted; buffers properties", async () => {
     const { setUserProperties } = await import("../analytics");
-    const { peekBufferedUserProperties } = await import(
-      "../analyticsConsentBuffer"
-    );
+    const { peekBufferedUserProperties } =
+      await import("../analyticsConsentBuffer");
 
     setUserProperties({ user_type: "free", theme: "dark" });
 
@@ -122,12 +121,10 @@ describe("analytics consent gate — setUserProperties", () => {
 
 describe("analytics consent gate — updateConsentState flush behavior", () => {
   it("flushes buffered userId and properties when consent is granted", async () => {
-    const { setUserId, setUserProperties, updateConsentState } = await import(
-      "../analytics"
-    );
-    const { peekBufferedUserId, peekBufferedUserProperties } = await import(
-      "../analyticsConsentBuffer"
-    );
+    const { setUserId, setUserProperties, updateConsentState } =
+      await import("../analytics");
+    const { peekBufferedUserId, peekBufferedUserProperties } =
+      await import("../analyticsConsentBuffer");
 
     setUserId("user-123");
     setUserProperties({ user_type: "trial", language: "en" });
@@ -162,12 +159,10 @@ describe("analytics consent gate — updateConsentState flush behavior", () => {
   });
 
   it("clears buffer WITHOUT flushing when consent is denied", async () => {
-    const { setUserId, setUserProperties, updateConsentState } = await import(
-      "../analytics"
-    );
-    const { peekBufferedUserId, peekBufferedUserProperties } = await import(
-      "../analyticsConsentBuffer"
-    );
+    const { setUserId, setUserProperties, updateConsentState } =
+      await import("../analytics");
+    const { peekBufferedUserId, peekBufferedUserProperties } =
+      await import("../analyticsConsentBuffer");
 
     setUserId("user-456");
     setUserProperties({ user_type: "free" });
@@ -205,5 +200,60 @@ describe("analytics consent gate — updateConsentState flush behavior", () => {
         (c[2] as Record<string, unknown>)?.user_id === "user-direct",
     );
     expect(directConfig).toBeDefined();
+  });
+});
+
+describe("analytics consent gate — trackEvent (ISSUE-003 regression)", () => {
+  it("DROPS non-consent events when consent is not granted; no dataLayer push, no gtag call", async () => {
+    const { trackEvent } = await import("../analytics");
+    const win = (globalThis as unknown as { window: { dataLayer: unknown[] } })
+      .window;
+    const dataLayerLenBefore = win.dataLayer.length;
+    const gtagCallsBefore = gtagSpy.mock.calls.length;
+
+    trackEvent("cta_clicked", { cta_text: "Try", location: "hero" });
+    trackEvent("api_error", {
+      endpoint: "/natal/chart",
+      status_code: 500,
+      error_message: "[redacted]",
+    });
+    trackEvent("birth_chart_submit_success", { source: "landing_v2" });
+
+    expect(win.dataLayer.length).toBe(dataLayerLenBefore);
+    // gtagSpy may receive `consent default` at module load — assert no new
+    // `event`-shaped calls landed.
+    const newEventCalls = gtagSpy.mock.calls
+      .slice(gtagCallsBefore)
+      .filter((c) => c[0] === "event");
+    expect(newEventCalls).toHaveLength(0);
+  });
+
+  it("ALLOWS consent_* events through even when consent is not granted", async () => {
+    const { trackEvent } = await import("../analytics");
+    const win = (globalThis as unknown as { window: { dataLayer: unknown[] } })
+      .window;
+
+    trackEvent("consent_banner_shown");
+    trackEvent("consent_granted");
+    trackEvent("consent_denied");
+
+    const consentEvents = (win.dataLayer as Array<{ event?: string }>).filter(
+      (e) => e?.event?.startsWith("consent_"),
+    );
+    expect(consentEvents.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it("ALLOWS all events through when consent is granted", async () => {
+    consentState.granted = true;
+    const { trackEvent } = await import("../analytics");
+    const win = (globalThis as unknown as { window: { dataLayer: unknown[] } })
+      .window;
+
+    trackEvent("cta_clicked", { cta_text: "Calculate", location: "hero" });
+
+    const ctaEvent = (win.dataLayer as Array<{ event?: string }>).find(
+      (e) => e?.event === "cta_clicked",
+    );
+    expect(ctaEvent).toBeDefined();
   });
 });
