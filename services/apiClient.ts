@@ -1742,6 +1742,27 @@ export type NewsletterSubscribeOutcome =
   | { outcome: "error"; code?: string };
 
 /**
+ * Server-returned `code` values that are safe to forward into analytics
+ * (`trackEvent("newsletter_submit_error", { error_code })`). Any value
+ * outside this allowlist is mapped to `"unexpected"` so the wire can never
+ * inject arbitrary strings (e.g. echoed user input) into GA4 event params.
+ */
+const NEWSLETTER_SAFE_CODES = new Set([
+  "email_required",
+  "email_too_long",
+  "email_invalid",
+  "service_unavailable",
+  "db_error",
+  "EMAIL_SERVICE_TIMEOUT",
+  "internal_error",
+  "network_error",
+] as const);
+
+function safeNewsletterCode(raw: string | undefined): string {
+  return raw && NEWSLETTER_SAFE_CODES.has(raw as never) ? raw : "unexpected";
+}
+
+/**
  * Subscribe an email to the landing-page newsletter list. Wraps POST
  * /api/newsletter with:
  *   - shared API_BASE + fetchWithTimeout (so a hung Supabase upstream
@@ -1791,8 +1812,9 @@ export async function subscribeNewsletter(input: {
   if (res.ok && data.success) {
     return { outcome: data.already_subscribed ? "existed" : "success" };
   }
-  // Any other failure: stable error outcome with the server-provided code
+  // Any other failure: stable error outcome with an allowlisted code
   // (e.g. "email_invalid", "service_unavailable", "EMAIL_SERVICE_TIMEOUT")
-  // for analytics. UI never renders the raw error.message.
-  return { outcome: "error", code: data.code };
+  // for analytics. Unknown codes map to "unexpected" so unvetted server
+  // strings can never reach GA4. UI never renders the raw error.message.
+  return { outcome: "error", code: safeNewsletterCode(data.code) };
 }

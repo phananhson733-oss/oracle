@@ -155,7 +155,7 @@ const NewsletterSection: React.FC = () => {
             type="email"
             required
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value.trim())}
             placeholder={landing.newsletter_placeholder || "your@email.com"}
             className={`flex-1 min-h-[44px] px-5 py-3 rounded-full outline-none transition-all duration-300 ease-in-out text-sm focus-visible:ring-2 focus-visible:ring-accent ${
               isDark

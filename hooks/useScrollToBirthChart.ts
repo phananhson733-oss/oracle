@@ -5,15 +5,17 @@
 //         funnel break and the N5 Hero-lazy race in one place.
 // POS: Landing-page CTA convergence utility (PR #11). 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { trackEvent } from "../services/analytics";
 import { useLangPath } from "./useLangPath";
 
 // ID of the BirthChartSection root (id="birth-chart-tool"). Single source of
-// truth — must match the element in pages/landing/BirthChartSection.tsx and
-// the static prerender CTA anchor in scripts/generate-seo-pages.mjs.
+// truth — must match the element in pages/landing/BirthChartSection.tsx.
 export const BIRTH_CHART_ANCHOR_ID = "birth-chart-tool";
+// Heading id we move keyboard focus to after a successful scroll so screen
+// reader users land on the section title, not on the (now off-screen) button.
+const BIRTH_CHART_HEADING_ID = "birth-chart-heading";
 
 // Maximum time we wait for the lazy BirthChart chunk to mount before falling
 // back to /onboarding. 1.5s covers a slow 3G chunk fetch plus React Suspense
@@ -25,16 +27,38 @@ const MOUNT_POLL_INTERVAL_MS = 50;
 /**
  * Wait for the BirthChart anchor element to appear in the DOM, then scroll
  * to it. Resolves with `true` if the anchor was found and scrolled to; `false`
- * if the timeout elapsed. Pure polling — no MutationObserver — keeps this
- * SSR-safe and avoids leaking observers on unmount.
+ * if the timeout elapsed or the consumer unmounted mid-poll. Pure polling —
+ * no MutationObserver — keeps this SSR-safe and avoids leaking observers.
+ *
+ * `isMounted` lets the caller abort if the host component unmounted during the
+ * 1.5s wait, preventing a post-unmount scrollIntoView/focus on a dead tree.
  */
-async function waitForAnchorAndScroll(): Promise<boolean> {
+async function waitForAnchorAndScroll(
+  isMounted: () => boolean,
+): Promise<boolean> {
   if (typeof document === "undefined") return false;
   const start = Date.now();
   while (Date.now() - start < MOUNT_WAIT_TIMEOUT_MS) {
+    if (!isMounted()) return false;
     const el = document.getElementById(BIRTH_CHART_ANCHOR_ID);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Respect users who opted out of motion at the OS level.
+      const prefersReduced =
+        typeof window !== "undefined" &&
+        typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      el.scrollIntoView({
+        behavior: prefersReduced ? ("instant" as ScrollBehavior) : "smooth",
+        block: "start",
+      });
+      // Move keyboard focus into the section so AT users follow the visual jump.
+      // tabindex=-1 makes a non-interactive <h2> programmatically focusable;
+      // preventScroll avoids the browser re-scrolling away from our anchor.
+      const heading = document.getElementById(BIRTH_CHART_HEADING_ID);
+      if (heading) {
+        heading.setAttribute("tabindex", "-1");
+        heading.focus({ preventScroll: true });
+      }
       return true;
     }
     await new Promise((r) => setTimeout(r, MOUNT_POLL_INTERVAL_MS));
@@ -63,16 +87,39 @@ export interface ScrollToBirthChartOptions {
 export function useScrollToBirthChart() {
   const navigate = useNavigate();
   const { langPath } = useLangPath();
+  // Tracks whether the host component is still mounted; the 1.5s poll can
+  // outlive the click handler's React tree and we must not navigate/focus
+  // into an unmounted view.
+  const isMountedRef = useRef(true);
+  // Serializes concurrent invocations — e.g. a mobile double-tap firing the
+  // CTA twice before the first poll resolves would otherwise queue two
+  // navigates + two scrolls.
+  const pendingRef = useRef(false);
+
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   return useCallback(
     async ({ location, ctaText }: ScrollToBirthChartOptions) => {
-      trackEvent("cta_clicked", {
-        cta_text: ctaText,
-        location,
-      });
-      const scrolled = await waitForAnchorAndScroll();
-      if (!scrolled) {
-        navigate(langPath("/onboarding"));
+      if (pendingRef.current) return;
+      pendingRef.current = true;
+      try {
+        trackEvent("cta_clicked", {
+          cta_text: ctaText,
+          location,
+        });
+        const scrolled = await waitForAnchorAndScroll(
+          () => isMountedRef.current,
+        );
+        if (!scrolled && isMountedRef.current) {
+          navigate(langPath("/onboarding"));
+        }
+      } finally {
+        pendingRef.current = false;
       }
     },
     [navigate, langPath],
