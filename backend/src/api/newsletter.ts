@@ -147,7 +147,15 @@ newsletterRouter.post(
           });
         }
 
-        console.error("Newsletter subscription DB error:", error);
+        // Sanitize: never log the raw Supabase error object — it embeds the
+        // attempted email + Postgres message which may include the column
+        // value (隐私红线 #3). Log only the stable error.code (e.g. "23505",
+        // "23P01") so ops can still diagnose without writing PII to logs.
+        const safeCode =
+          error && typeof error === "object" && "code" in error
+            ? String((error as { code?: unknown }).code ?? "unknown")
+            : "unknown";
+        console.error(`Newsletter subscription DB error code=${safeCode}`);
         return res.status(500).json({
           error: "Failed to save subscription. Please try again.",
           code: "db_error",
