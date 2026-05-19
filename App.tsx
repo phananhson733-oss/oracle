@@ -603,10 +603,14 @@ const AppContent: React.FC = () => {
       >
         <Suspense fallback={<OracleLoading />}>
           <Routes>
-            <Route
-              path="/"
-              element={<Navigate to={`/${language}/wiki`} replace />}
-            />
+            {/* L2 cutover (2026-05-19): root now renders the v2 landing page
+                directly instead of redirecting to /:lang/wiki. The Wiki hub
+                remains reachable at /:lang/wiki for direct entry + internal
+                links; only the default unauthenticated landing experience
+                changed. Logged-in users still see the marketing landing —
+                AuthContext gating is handled inside LandingPageV2 sections
+                where it matters (e.g., BirthChart CTA). */}
+            <Route path="/" element={<LandingPageV2 />} />
             <Route path="/landing-v2" element={<LandingPageV2 />} />
             {/* SPA/static parity route for /landing-v2/{en,zh}/.
                 MUST be registered before the /:lang/* catch-all so React

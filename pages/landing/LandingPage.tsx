@@ -65,29 +65,45 @@ const LandingPage: React.FC = () => {
       document.documentElement.lang = prev;
     };
   }, [lang]);
-  // SPA/static parity: when mounted at /landing-v2/{en,zh}/, the static prerender
-  // emits canonical=/landing-v2/{lang}/ + robots=index,follow. The hydrated SPA
-  // MUST emit the same values or Googlebot sees a cloaking signal (index then
-  // noindex). When mounted at the bare /landing-v2 (no lang segment), the page
-  // is unindexed staging — keep noindex.
+  // SPA/static parity. Three indexable shapes:
+  //   /                            ← L2 cutover (2026-05-19). Root canonical;
+  //                                  index,follow. SSR shell is the Vite app
+  //                                  shell, so SEO depends on hydrated meta
+  //                                  matching what we'd emit if prerendered.
+  //                                  TODO: prerender public/index.html for
+  //                                  perfect first-byte parity.
+  //   /landing-v2/{en,zh}/         ← static prerender at
+  //                                  public/landing-v2/{en,zh}/index.html with
+  //                                  index,follow + per-lang canonical.
+  //   /landing-v2                  ← bare staging, noindex.
   const landingLangMatch = location.pathname.match(
     /^\/landing-v2\/(en|zh)\/?$/,
   );
   const isLangPrerenderedRoute = !!landingLangMatch;
-  const canonicalUrl = isLangPrerenderedRoute
-    ? `${siteUrl}/landing-v2/${lang}/`
-    : `${siteUrl}/landing-v2`;
-  const alternateLanguages = isLangPrerenderedRoute
+  const isRootRoute = location.pathname === "/";
+  const isIndexedRoute = isLangPrerenderedRoute || isRootRoute;
+  const canonicalUrl = isRootRoute
+    ? `${siteUrl}/`
+    : isLangPrerenderedRoute
+      ? `${siteUrl}/landing-v2/${lang}/`
+      : `${siteUrl}/landing-v2`;
+  const alternateLanguages = isRootRoute
     ? [
-        { hrefLang: "en", href: `${siteUrl}/landing-v2/en/` },
+        { hrefLang: "en", href: `${siteUrl}/` },
         { hrefLang: "zh", href: `${siteUrl}/landing-v2/zh/` },
-        { hrefLang: "x-default", href: `${siteUrl}/landing-v2/en/` },
+        { hrefLang: "x-default", href: `${siteUrl}/` },
       ]
-    : [
-        { hrefLang: "en", href: `${siteUrl}/landing-v2` },
-        { hrefLang: "zh", href: `${siteUrl}/landing-v2` },
-        { hrefLang: "x-default", href: `${siteUrl}/landing-v2` },
-      ];
+    : isLangPrerenderedRoute
+      ? [
+          { hrefLang: "en", href: `${siteUrl}/landing-v2/en/` },
+          { hrefLang: "zh", href: `${siteUrl}/landing-v2/zh/` },
+          { hrefLang: "x-default", href: `${siteUrl}/landing-v2/en/` },
+        ]
+      : [
+          { hrefLang: "en", href: `${siteUrl}/landing-v2` },
+          { hrefLang: "zh", href: `${siteUrl}/landing-v2` },
+          { hrefLang: "x-default", href: `${siteUrl}/landing-v2` },
+        ];
 
   const webSiteSchema = {
     "@context": "https://schema.org",
@@ -114,7 +130,7 @@ const LandingPage: React.FC = () => {
         alternateLanguages={alternateLanguages}
         schema={[webSiteSchema]}
         type="website"
-        robots={isLangPrerenderedRoute ? "index,follow" : "noindex,nofollow"}
+        robots={isIndexedRoute ? "index,follow" : "noindex,nofollow"}
       />
 
       {/* 1. NAV is provided globally by App.tsx */}
