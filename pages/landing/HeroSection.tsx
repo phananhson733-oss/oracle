@@ -5,45 +5,28 @@
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
-import { useLangPath } from "../../hooks/useLangPath";
-import { trackEvent } from "../../services/analytics";
+import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-  const navigate = useNavigate();
-  const { langPath } = useLangPath();
+  const scrollToBirthChart = useScrollToBirthChart();
   const landing = t.landing;
 
   const handlePrimaryCta = useCallback(() => {
-    trackEvent("cta_clicked", {
-      cta_text: landing.hero_primary_cta || "Try Free Birth Chart",
+    void scrollToBirthChart({
+      ctaText: landing.hero_primary_cta || "Try Free Birth Chart",
       location: "landing_v2_hero_primary",
     });
-    // Anchor scroll to the embedded Birth Chart tool below the hero.
-    const anchor = document.getElementById("birth-chart-tool");
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      // Fallback: route to onboarding flow if the tool isn't mounted yet.
-      navigate(langPath("/onboarding"));
-    }
-  }, [landing.hero_primary_cta, navigate, langPath]);
+  }, [landing.hero_primary_cta, scrollToBirthChart]);
 
   const handleSecondaryCta = useCallback(() => {
-    trackEvent("cta_clicked", {
-      cta_text: landing.hero_secondary_cta || "Calculate my chart",
+    void scrollToBirthChart({
+      ctaText: landing.hero_secondary_cta || "Calculate my chart",
       location: "landing_v2_hero_secondary",
     });
-    const anchor = document.getElementById("birth-chart-tool");
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      navigate(langPath("/onboarding"));
-    }
-  }, [landing.hero_secondary_cta, navigate, langPath]);
+  }, [landing.hero_secondary_cta, scrollToBirthChart]);
 
   const isDark = theme === "dark";
 

@@ -1,31 +1,29 @@
-// INPUT: i18n translations, router navigation, analytics tracking, theme context.
+// INPUT: i18n translations, theme context, useScrollToBirthChart helper.
 // OUTPUT: Editorial Synastry section — left-column copy + right-column inline SVG (two interlocking circles).
-//         Routes the CTA to /us (Synastry tool). Mirrors HeroSection's secondary CTA style.
+//         CTA scrolls to BirthChart anchor (was: navigate /us → ProtectedRedirect for anon).
 // POS: Below-the-fold section on /landing-v2. Avoid purple/indigo gradients, heart/soulmate icons,
 //      pure #000 / #fff, or romance-themed cliché visuals. See COLOR_SYSTEM_GUIDE.md.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
-import { trackEvent } from "../../services/analytics";
+import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 
 const SynastrySection: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-  const navigate = useNavigate();
+  const scrollToBirthChart = useScrollToBirthChart();
   const landing = t.landing;
   const isDark = theme === "dark";
 
   const ctaText = landing.synastry_cta || "Compare two charts →";
 
   const handleCta = useCallback(() => {
-    trackEvent("cta_clicked", {
-      cta_text: ctaText,
+    void scrollToBirthChart({
+      ctaText,
       location: "landing_v2_synastry",
     });
-    navigate("/us");
-  }, [ctaText, navigate]);
+  }, [ctaText, scrollToBirthChart]);
 
   return (
     <section
@@ -48,8 +46,7 @@ const SynastrySection: React.FC = () => {
               isDark ? "text-star-50" : "text-paper-900"
             }`}
           >
-            {landing.synastry_title ||
-              "The geometry between two charts."}
+            {landing.synastry_title || "The geometry between two charts."}
           </h2>
           <p
             className={`mt-6 text-base md:text-lg leading-relaxed ${

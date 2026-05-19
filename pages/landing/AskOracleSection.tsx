@@ -1,32 +1,30 @@
-// INPUT: i18n translations, router navigation, analytics tracking.
+// INPUT: i18n translations, theme context, useScrollToBirthChart helper.
 // OUTPUT: Ask Oracle editorial showcase — single-column "what this looks like" preview
 //         (Q/A card sample, NOT a live chat UI).
-// POS: Below-the-fold landing section for /landing-v2. Routes to /oracle on CTA (auth-gated;
-//      destination handles redirect). Must NOT use chat bubbles, purple/indigo, or pure #000/#fff.
+// POS: Below-the-fold landing section for /landing-v2. CTA scrolls to BirthChart anchor
+//      (was: navigate /oracle → ProtectedRedirect for anon users). Must NOT use chat
+//      bubbles, purple/indigo, or pure #000/#fff.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
-import { trackEvent } from "../../services/analytics";
+import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 
 const AskOracleSection: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
-  const navigate = useNavigate();
+  const scrollToBirthChart = useScrollToBirthChart();
   const landing = t.landing;
   const isDark = theme === "dark";
 
   const ctaText = landing.ask_cta || "Ask your question →";
 
   const handleCta = useCallback(() => {
-    trackEvent("cta_clicked", {
-      cta_text: ctaText,
+    void scrollToBirthChart({
+      ctaText,
       location: "landing_v2_ask_oracle",
     });
-    // /oracle is unprefixed in App.tsx and auth-gated; the destination handles redirect.
-    navigate("/oracle");
-  }, [ctaText, navigate]);
+  }, [ctaText, scrollToBirthChart]);
 
   return (
     <section

@@ -12,6 +12,7 @@ import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { trackEvent } from "../../services/analytics";
+import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 
 type ToolKey = "saturn_return" | "synastry" | "ask_oracle";
 
@@ -19,7 +20,11 @@ interface ToolDef {
   key: ToolKey;
   title: string;
   desc: string;
-  destination: string;
+  // Public tools navigate to their destination route. Auth-gated tools set
+  // `convergeToBirthChart: true` to funnel anon visitors into the inline
+  // BirthChart instead of being bounced to login (N6 funnel break).
+  destination?: string;
+  convergeToBirthChart?: boolean;
   Icon: React.FC;
 }
 
@@ -78,18 +83,30 @@ const ToolsGridSection: React.FC = () => {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
   const navigate = useNavigate();
+  const scrollToBirthChart = useScrollToBirthChart();
   const landing = t.landing;
   const isDark = theme === "dark";
 
   const handleOpen = useCallback(
-    (tool: ToolKey, destination: string) => {
+    (tool: ToolDef) => {
       trackEvent("tool_card_clicked", {
-        tool,
+        tool: tool.key,
         location: "landing_v2_tools_grid",
       });
-      navigate(destination);
+      if (tool.convergeToBirthChart) {
+        // Auth-gated tool: scroll to inline BirthChart so anon user can
+        // actually do something here instead of being bounced to login.
+        void scrollToBirthChart({
+          ctaText: tool.title,
+          location: `landing_v2_tools_${tool.key}`,
+        });
+        return;
+      }
+      if (tool.destination) {
+        navigate(tool.destination);
+      }
     },
-    [navigate],
+    [navigate, scrollToBirthChart],
   );
 
   const tools: ReadonlyArray<ToolDef> = [
@@ -110,8 +127,8 @@ const ToolsGridSection: React.FC = () => {
       desc:
         landing.tools_synastry_desc ||
         "Compare two birth charts. See where you meet, clash, and recognise each other.",
-      // Auth-gated; destination handles redirect to login if needed.
-      destination: "/us",
+      // Auth-gated — funnel into inline BirthChart instead of bouncing to login.
+      convergeToBirthChart: true,
       Icon: SynastryIcon,
     },
     {
@@ -120,7 +137,7 @@ const ToolsGridSection: React.FC = () => {
       desc:
         landing.tools_ask_desc ||
         "Ask anything. Get a science-grounded, psychology-aware answer in seconds.",
-      destination: "/oracle",
+      convergeToBirthChart: true,
       Icon: AskIcon,
     },
   ];
@@ -158,30 +175,33 @@ const ToolsGridSection: React.FC = () => {
         </p>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {tools.map(({ key, title, desc, destination, Icon }) => (
+          {tools.map((tool) => (
             <button
-              key={key}
+              key={tool.key}
               type="button"
-              onClick={() => handleOpen(key, destination)}
-              aria-label={`${title} — ${openLabel}`}
+              onClick={() => handleOpen(tool)}
+              aria-label={`${tool.title} — ${openLabel}`}
               className={`rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-100 dark:bg-space-900/40 p-8 transition-all duration-300 hover:border-accent/40 hover:shadow-xl text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                 isDark
                   ? "focus-visible:ring-offset-space-950"
                   : "focus-visible:ring-offset-paper-100"
               }`}
             >
-              <Icon />
+              <tool.Icon />
               <h3
                 className={`font-serif text-xl mt-6 ${
                   isDark ? "text-star-50" : "text-paper-900"
                 }`}
               >
-                {title}
+                {tool.title}
               </h3>
               <p className="text-sm mt-3 leading-relaxed text-paper-700 dark:text-star-200">
-                {desc}
+                {tool.desc}
               </p>
-              <span aria-hidden="true" className="mt-6 text-sm text-accent block">
+              <span
+                aria-hidden="true"
+                className="mt-6 text-sm text-accent block"
+              >
                 {openLabel} <span className="ml-1">→</span>
               </span>
             </button>
