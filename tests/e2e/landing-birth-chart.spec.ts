@@ -196,4 +196,42 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     });
     await expect(alert.first()).toBeVisible();
   });
+
+  test("city autocomplete: keyboard ArrowDown + Enter selects a suggestion", async ({
+    page,
+  }) => {
+    // The shared useCityAutocomplete hook owns the WAI-ARIA combobox keyboard
+    // contract. This covers the regression we'd otherwise miss with the
+    // pure-function unit tests in hooks/useCityAutocomplete.test.ts —
+    // verifying that aria-activedescendant updates, that Enter commits the
+    // active option into the input, and that the listbox closes after select.
+    await stubLanding(page);
+
+    await page.goto("/landing-v2");
+
+    const cityInput = page.locator("#bc-city");
+    // "Lon" matches London in the local cities index — keeps the spec
+    // independent of network fallback and stable across data revisions.
+    await cityInput.fill("Lon");
+    // Wait for the debounced search to populate the listbox.
+    const listbox = page.locator("#bc-city-listbox");
+    await expect(listbox).toBeVisible();
+    await expect(listbox.getByRole("option").first()).toBeVisible();
+
+    // ArrowDown moves keyboard focus to the first option without moving DOM
+    // focus off the input — aria-activedescendant must point at the option's id.
+    await cityInput.press("ArrowDown");
+    await expect(cityInput).toHaveAttribute(
+      "aria-activedescendant",
+      /^bc-city-option-0$/,
+    );
+
+    // Enter selects the active option, which closes the listbox and writes
+    // the canonical display label (with country/admin1) into the input.
+    await cityInput.press("Enter");
+    await expect(listbox).toBeHidden();
+    await expect(cityInput).not.toHaveValue("Lon");
+    // London resolves to a label containing the city name (allow any locale).
+    await expect(cityInput).toHaveValue(/London/i);
+  });
 });

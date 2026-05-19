@@ -8,7 +8,7 @@ import type { Page, Route } from "@playwright/test";
 
 type Stub = (r: Route) => Promise<void> | void;
 type Overrides = Partial<
-  Record<"today" | "wikiHome" | "newsletter" | "natal", Stub>
+  Record<"today" | "wikiHome" | "newsletter" | "natal" | "geo", Stub>
 >;
 
 export async function stubLanding(page: Page, overrides: Overrides = {}) {
@@ -63,6 +63,20 @@ export async function stubLanding(page: Page, overrides: Overrides = {}) {
               aspects: [],
             },
           }),
+        })),
+  );
+  // /api/geo/search defaults to empty so specs that don't care about the
+  // autocomplete network fallback still pass (the city autocomplete prefers
+  // local data/cities.ts and only hits backend on a miss). Specs that test
+  // the dropdown can override.
+  await page.route(
+    "**/api/geo/search**",
+    overrides.geo ??
+      ((r) =>
+        r.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify({ cities: [] }),
         })),
   );
 }

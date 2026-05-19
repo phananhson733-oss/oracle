@@ -1,8 +1,13 @@
-import React, { useState, useRef, useCallback, useEffect } from "react";
+// INPUT: i18n, theme, /api/saturn-return endpoint, shared useCityAutocomplete hook.
+// OUTPUT: Public Saturn Return calculator with city autocomplete + result card + SEO content.
+// POS: Standalone SEO landing component; city autocomplete delegates to the shared hook.
+
+import React, { useCallback, useRef, useState } from "react";
 import { useLanguage, useTheme } from "./UIComponents";
 import { SEO } from "./SEO";
 import { searchCities } from "../services/apiClient";
 import { trackEvent } from "../services/analytics";
+import { useCityAutocomplete } from "../hooks/useCityAutocomplete";
 
 interface GeoResult {
   city: string;
@@ -82,9 +87,6 @@ export const SaturnReturnCalculator: React.FC = () => {
   const [birthTime, setBirthTime] = useState("");
   const [cityQuery, setCityQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState<GeoResult | null>(null);
-  const [citySuggestions, setCitySuggestions] = useState<GeoResult[]>([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1);
 
   const [state, setState] = useState<CalculatorState>("idle");
   const [result, setResult] = useState<SaturnReturnResult | null>(null);
@@ -94,81 +96,45 @@ export const SaturnReturnCalculator: React.FC = () => {
   const [shareToast, setShareToast] = useState(false);
 
   const resultRef = useRef<HTMLDivElement>(null);
-  const cityDebounceRef = useRef<ReturnType<typeof setTimeout>>();
-  const listboxRef = useRef<HTMLUListElement>(null);
 
-  // P2 fix: clean up debounce timer on unmount
-  useEffect(() => {
-    return () => {
-      if (cityDebounceRef.current) {
-        clearTimeout(cityDebounceRef.current);
+  // Debounced city search + keyboard navigation + WAI-ARIA combobox props are
+  // owned by the shared hook. The backend returns `{ cities: GeoResult[] }`,
+  // so we unwrap to the array form the hook expects.
+  const citySearch = useCallback(
+    async (q: string): Promise<readonly GeoResult[]> => {
+      try {
+        const res = await searchCities(q, 5, language);
+        return (res?.cities as GeoResult[] | undefined) ?? [];
+      } catch {
+        return [];
       }
-    };
-  }, []);
-
-  const handleCityInput = useCallback(
-    (value: string) => {
-      setCityQuery(value);
-      setSelectedCity(null);
-      setActiveIndex(-1);
-
-      if (cityDebounceRef.current) {
-        clearTimeout(cityDebounceRef.current);
-      }
-
-      if (value.length < 2) {
-        setCitySuggestions([]);
-        setShowSuggestions(false);
-        return;
-      }
-
-      cityDebounceRef.current = setTimeout(async () => {
-        try {
-          const results = await searchCities(value, 5, language);
-          setCitySuggestions(results || []);
-          setShowSuggestions(true);
-        } catch {
-          setCitySuggestions([]);
-        }
-      }, 300);
     },
     [language],
   );
-
-  const selectCity = (city: GeoResult) => {
+  const handleCitySelect = useCallback((city: GeoResult) => {
     setSelectedCity(city);
     setCityQuery(
       city.admin1
         ? `${city.city}, ${city.admin1}, ${city.country}`
         : `${city.city}, ${city.country}`,
     );
-    setShowSuggestions(false);
-    setCitySuggestions([]);
-    setActiveIndex(-1);
-  };
-
-  // P1 fix: keyboard navigation for city autocomplete
-  const handleCityKeyDown = (e: React.KeyboardEvent) => {
-    if (!showSuggestions || citySuggestions.length === 0) return;
-
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setActiveIndex((prev) =>
-        prev < citySuggestions.length - 1 ? prev + 1 : 0,
-      );
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setActiveIndex((prev) =>
-        prev > 0 ? prev - 1 : citySuggestions.length - 1,
-      );
-    } else if (e.key === "Enter" && activeIndex >= 0) {
-      e.preventDefault();
-      selectCity(citySuggestions[activeIndex]);
-    } else if (e.key === "Escape") {
-      setShowSuggestions(false);
-      setActiveIndex(-1);
-    }
-  };
+  }, []);
+  const {
+    suggestions: citySuggestions,
+    isOpen: showSuggestions,
+    open: openSuggestions,
+    close: closeSuggestions,
+    selectIndex: selectCityIndex,
+    inputProps: cityInputProps,
+    listboxProps: cityListboxProps,
+    getOptionProps: getCityOptionProps,
+  } = useCityAutocomplete<GeoResult>({
+    query: cityQuery,
+    search: citySearch,
+    onSelect: handleCitySelect,
+    minLength: 2,
+    idPrefix: "saturn-city",
+  });
 
   const validateDate = (value: string): boolean => {
     if (!value) {
@@ -281,8 +247,6 @@ export const SaturnReturnCalculator: React.FC = () => {
   const seoDescription =
     "Calculate when your Saturn Return happens. Enter your birth date to discover your Saturn Return dates, meaning, and how this major life transit affects you.";
 
-  const listboxId = "city-suggestions";
-
   return (
     <div className="min-h-screen px-4 py-8 sm:py-12">
       <SEO
@@ -322,9 +286,7 @@ export const SaturnReturnCalculator: React.FC = () => {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1
-            className={`text-3xl sm:text-4xl font-bold mb-3 ${textPrimary}`}
-          >
+          <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${textPrimary}`}>
             Saturn Return Calculator
           </h1>
           <p className={`text-lg ${textSecondary}`}>
@@ -407,55 +369,48 @@ export const SaturnReturnCalculator: React.FC = () => {
             <input
               id="birth-city"
               type="text"
-              role="combobox"
-              aria-expanded={showSuggestions && citySuggestions.length > 0}
-              aria-controls={listboxId}
-              aria-activedescendant={
-                activeIndex >= 0 ? `city-option-${activeIndex}` : undefined
-              }
-              aria-autocomplete="list"
               value={cityQuery}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                handleCityInput(e.target.value)
-              }
-              onKeyDown={handleCityKeyDown}
-              onBlur={() =>
-                setTimeout(() => {
-                  setShowSuggestions(false);
-                  setActiveIndex(-1);
-                }, 200)
-              }
-              onFocus={() => {
-                if (citySuggestions.length > 0) setShowSuggestions(true);
+              onChange={(e) => {
+                setCityQuery(e.target.value);
+                // Free-typing invalidates a previously-picked city so we
+                // don't ship stale lat/lon/timezone with the submit.
+                setSelectedCity(null);
+                openSuggestions();
               }}
+              onFocus={openSuggestions}
+              onBlur={() => setTimeout(closeSuggestions, 200)}
               placeholder="e.g. New York, London, Tokyo"
               autoComplete="off"
+              {...cityInputProps}
               className={`w-full px-4 py-3 rounded-lg border ${inputBorder} ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
             />
             {showSuggestions && citySuggestions.length > 0 && (
               <ul
-                id={listboxId}
-                ref={listboxRef}
+                {...cityListboxProps}
                 className={`absolute z-10 w-full mt-1 ${cardBg} border ${cardBorder} rounded-lg shadow-lg max-h-48 overflow-y-auto`}
-                role="listbox"
               >
-                {citySuggestions.map((city: GeoResult, i: number) => (
-                  <li
-                    key={`${city.city}-${city.lat}-${city.lon}`}
-                    id={`city-option-${i}`}
-                    role="option"
-                    aria-selected={i === activeIndex}
-                    className={`px-4 py-2.5 cursor-pointer ${
-                      i === activeIndex
-                        ? "bg-gold-500/20"
-                        : "hover:bg-gold-500/10"
-                    } ${textPrimary} min-h-[44px] flex items-center`}
-                    onMouseDown={() => selectCity(city)}
-                  >
-                    {city.city}
-                    {city.admin1 ? `, ${city.admin1}` : ""}, {city.country}
-                  </li>
-                ))}
+                {citySuggestions.map((city, i) => {
+                  const optionProps = getCityOptionProps(i);
+                  const isActive = optionProps["aria-selected"];
+                  return (
+                    <li
+                      key={`${city.city}-${city.lat}-${city.lon}`}
+                      {...optionProps}
+                      className={`px-4 py-2.5 cursor-pointer ${
+                        isActive ? "bg-gold-500/20" : "hover:bg-gold-500/10"
+                      } ${textPrimary} min-h-[44px] flex items-center`}
+                      onMouseDown={(ev) => {
+                        // onMouseDown fires before input.onBlur so the
+                        // selection commits before the dropdown closes.
+                        ev.preventDefault();
+                        selectCityIndex(i);
+                      }}
+                    >
+                      {city.city}
+                      {city.admin1 ? `, ${city.admin1}` : ""}, {city.country}
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>
@@ -581,9 +536,7 @@ export const SaturnReturnCalculator: React.FC = () => {
         )}
 
         {/* SEO Content */}
-        <article
-          className={`prose ${isDark ? "prose-invert" : ""} max-w-none`}
-        >
+        <article className={`prose ${isDark ? "prose-invert" : ""} max-w-none`}>
           <h2 className={`text-2xl font-bold mb-4 ${textPrimary}`}>
             What is a Saturn Return?
           </h2>

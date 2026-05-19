@@ -45,7 +45,7 @@ backend/
 │   │   ├── synastry.ts# 合盘端点
 │   │   ├── cycle.ts   # 周期端点
 │   │   ├── cbt.ts     # CBT 端点
-│   │   └── geo.ts     # 地理搜索端点
+│   │   └── geo.ts     # 城市搜索端点（POST 规范入口；GET 弃用别名保留一个发布周期）
 │   ├── services/      # 业务服务
 │   │   ├── ephemeris.ts # 星历计算（Swiss Ephemeris）
 │   │   ├── ai.ts      # AI 内容生成（DeepSeek，snake_case 输出，含单语言解析、来源标记、统一 Key 与缓存策略）
@@ -110,10 +110,12 @@ npm run dev
 | `/api/cycle/naming` | GET | 获取周期命名 |
 | `/api/cbt/analysis` | POST | CBT 分析 |
 | `/api/cbt/records` | GET/POST | CBT 记录管理 |
-| `/api/geo/search` | GET | 城市模糊搜索 |
+| `/api/geo/search` | POST | 城市模糊搜索（规范入口，q 走 body 避免 access log 泄漏） |
+| `/api/geo/search` | GET | 已弃用：保留一个发布周期兼容旧前端 bundle，命中时进程级 warn 一次 |
 | `/health` | GET | 健康检查 |
 
 ## 近期更新
+- Geo 搜索改为 POST 规范入口（GET 保留一个发布周期作为弃用别名），用户出生城市不再进 URL/access log/referer，符合隐私红线 #3。
 - Geo 搜索支持多语言参数与省/国家过滤兜底。
 - 报告购买流程改为积分扣减并应用订阅折扣定价。
 - Ask/合盘生成端点补充权益校验与消费处理。

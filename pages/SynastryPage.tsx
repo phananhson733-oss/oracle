@@ -1,8 +1,16 @@
-// INPUT: UserProfile prop, synastry/natal API services, entitlement contexts.
+// INPUT: UserProfile prop, synastry/natal API services, entitlement contexts, shared useCityAutocomplete hook.
 // OUTPUT: Full synastry (relationship) page with profile selection, report tabs, and technical appendix.
+//         Add/Edit modal uses two shared combobox instances (birth city + current location).
 // POS: Synastry page extracted from App.tsx; if updated, keep App.tsx lazy import in sync.
 
-import React, { useState, useEffect, useMemo, useRef, lazy } from "react";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+  useCallback,
+  lazy,
+} from "react";
 import { SEO } from "../components/SEO";
 import {
   Container,
@@ -45,6 +53,7 @@ import {
   getCityCoordinates,
   type City,
 } from "../utils/city-search";
+import { useCityAutocomplete } from "../hooks/useCityAutocomplete";
 import {
   purchaseWithCreditsV2,
   type FeatureType,
@@ -1527,17 +1536,81 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     currentLocation: "",
   });
   const [cityQuery, setCityQuery] = useState("");
-  const [citySuggestions, setCitySuggestions] = useState<City[]>([]);
-  const [showCitySuggestions, setShowCitySuggestions] = useState(false);
-  const [isSearchingCity, setIsSearchingCity] = useState(false);
   const [currentLocationQuery, setCurrentLocationQuery] = useState("");
-  const [currentLocationSuggestions, setCurrentLocationSuggestions] = useState<
-    City[]
-  >([]);
-  const [showCurrentLocationSuggestions, setShowCurrentLocationSuggestions] =
-    useState(false);
-  const [isSearchingCurrentLocation, setIsSearchingCurrentLocation] =
-    useState(false);
+
+  // Shared combobox hook — two independent instances for birth city + current
+  // location. Searches are suspended when the modal is closed via `enabled`,
+  // preserving the previous `if (!modalOpen) return;` guard from the legacy
+  // hand-rolled debounce effects.
+  const cityAcSearch = useCallback(
+    (q: string) => searchCitiesWithFallback(q, 5, language),
+    [language],
+  );
+  const handleCitySelect = useCallback(
+    (city: City) => {
+      const displayLabel = formatCityDisplay(city, language);
+      const coords = getCityCoordinates(city);
+      setCityQuery(displayLabel);
+      setFormData((prev) => ({
+        ...prev,
+        birthCity: displayLabel,
+        lat: coords.lat,
+        lon: coords.lon,
+        timezone: coords.timezone,
+      }));
+    },
+    [language],
+  );
+  const cityAutocomplete = useCityAutocomplete<City>({
+    query: cityQuery,
+    search: cityAcSearch,
+    onSelect: handleCitySelect,
+    minLength: getLocationQueryMinLength,
+    enabled: modalOpen,
+    idPrefix: "syn-birth",
+  });
+  const {
+    suggestions: citySuggestions,
+    isSearching: isSearchingCity,
+    isOpen: showCitySuggestions,
+    open: openCitySuggestions,
+    close: closeCitySuggestions,
+    selectIndex: selectCityIndex,
+    inputProps: cityInputProps,
+    listboxProps: cityListboxProps,
+    getOptionProps: getCityOptionProps,
+  } = cityAutocomplete;
+
+  const handleCurrentLocationSelect = useCallback(
+    (city: City) => {
+      const displayLabel = formatCityDisplay(city, language);
+      setCurrentLocationQuery(displayLabel);
+      setFormData((prev) => ({
+        ...prev,
+        currentLocation: displayLabel,
+      }));
+    },
+    [language],
+  );
+  const currentLocationAutocomplete = useCityAutocomplete<City>({
+    query: currentLocationQuery,
+    search: cityAcSearch,
+    onSelect: handleCurrentLocationSelect,
+    minLength: getLocationQueryMinLength,
+    enabled: modalOpen,
+    idPrefix: "syn-current",
+  });
+  const {
+    suggestions: currentLocationSuggestions,
+    isSearching: isSearchingCurrentLocation,
+    isOpen: showCurrentLocationSuggestions,
+    open: openCurrentLocationSuggestions,
+    close: closeCurrentLocationSuggestions,
+    selectIndex: selectCurrentLocationIndex,
+    inputProps: currentLocationInputProps,
+    listboxProps: currentLocationListboxProps,
+    getOptionProps: getCurrentLocationOptionProps,
+  } = currentLocationAutocomplete;
 
   // 合盘详情解读弹窗状态
   const [synastryDetailModal, setSynastryDetailModal] = useState<{
@@ -1625,55 +1698,8 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     };
   }, [selectedA?.id, selectedB?.id, language]);
 
-  useEffect(() => {
-    if (!modalOpen) return;
-    const trimmedQuery = cityQuery.trim();
-    const minLength = getLocationQueryMinLength(trimmedQuery);
-    if (trimmedQuery.length < minLength) {
-      setCitySuggestions([]);
-      setIsSearchingCity(false);
-      return;
-    }
-    setIsSearchingCity(true);
-    let cancelled = false;
-    const timer = setTimeout(async () => {
-      const results = await searchCitiesWithFallback(trimmedQuery, 5, language);
-      if (!cancelled) {
-        setCitySuggestions(results);
-        setIsSearchingCity(false);
-      }
-    }, 300);
-    return () => {
-      cancelled = true;
-      clearTimeout(timer);
-      setIsSearchingCity(false);
-    };
-  }, [cityQuery, modalOpen, language]);
-
-  useEffect(() => {
-    if (!modalOpen) return;
-    const trimmedQuery = currentLocationQuery.trim();
-    const minLength = getLocationQueryMinLength(trimmedQuery);
-    if (trimmedQuery.length < minLength) {
-      setCurrentLocationSuggestions([]);
-      setIsSearchingCurrentLocation(false);
-      return;
-    }
-    setIsSearchingCurrentLocation(true);
-    let cancelled = false;
-    const timer = setTimeout(async () => {
-      const results = await searchCitiesWithFallback(trimmedQuery, 5, language);
-      if (!cancelled) {
-        setCurrentLocationSuggestions(results);
-        setIsSearchingCurrentLocation(false);
-      }
-    }, 300);
-    return () => {
-      cancelled = true;
-      clearTimeout(timer);
-      setIsSearchingCurrentLocation(false);
-    };
-  }, [currentLocationQuery, modalOpen, language]);
+  // Debounced city + currentLocation search and dropdown visibility are now
+  // owned by the shared useCityAutocomplete hook instances above.
 
   const createProfileId = () => {
     if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -1696,9 +1722,9 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       currentLocation: "",
     });
     setCityQuery("");
-    setShowCitySuggestions(false);
+    closeCitySuggestions();
     setCurrentLocationQuery("");
-    setShowCurrentLocationSuggestions(false);
+    closeCurrentLocationSuggestions();
     setModalOpen(true);
   };
 
@@ -1706,9 +1732,9 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     setEditingProfile(p);
     setFormData({ ...p });
     setCityQuery(p.birthCity || "");
-    setShowCitySuggestions(false);
+    closeCitySuggestions();
     setCurrentLocationQuery(p.currentLocation || "");
-    setShowCurrentLocationSuggestions(false);
+    closeCurrentLocationSuggestions();
     setModalOpen(true);
   };
 
@@ -3033,7 +3059,7 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   onChange={(e) => {
                     const nextValue = e.target.value;
                     setCityQuery(nextValue);
-                    setShowCitySuggestions(true);
+                    openCitySuggestions();
                     setFormData((prev) => ({
                       ...prev,
                       birthCity: nextValue,
@@ -3042,13 +3068,14 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                       timezone: prev.timezone || profile.timezone,
                     }));
                   }}
-                  onFocus={() => setShowCitySuggestions(true)}
-                  onBlur={() =>
-                    setTimeout(() => setShowCitySuggestions(false), 200)
-                  }
+                  onFocus={openCitySuggestions}
+                  onBlur={() => setTimeout(closeCitySuggestions, 200)}
+                  autoComplete="off"
+                  {...cityInputProps}
                 />
                 {showCitySuggestions && cityQuery.trim() && (
                   <div
+                    {...cityListboxProps}
                     className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === "dark" ? "bg-space-800 border-gold-500/15" : "bg-paper-100/85 border-paper-300"} shadow-lg max-h-48 overflow-auto`}
                   >
                     {isSearchingCity ? (
@@ -3057,22 +3084,26 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                       </div>
                     ) : citySuggestions.length > 0 ? (
                       citySuggestions.map((city, i) => {
-                        const displayLabel = formatCityDisplay(city, language);
-                        const coords = getCityCoordinates(city);
+                        const optionProps = getCityOptionProps(i);
+                        const isActive = optionProps["aria-selected"];
                         return (
                           <div
                             key={i}
-                            className={`px-4 py-2 cursor-pointer ${theme === "dark" ? "hover:bg-space-700" : "hover:bg-paper-200/60"}`}
-                            onMouseDown={() => {
-                              setCityQuery(displayLabel);
-                              setFormData((prev) => ({
-                                ...prev,
-                                birthCity: displayLabel,
-                                lat: coords.lat,
-                                lon: coords.lon,
-                                timezone: coords.timezone,
-                              }));
-                              setShowCitySuggestions(false);
+                            {...optionProps}
+                            className={`px-4 py-2 cursor-pointer ${
+                              theme === "dark"
+                                ? isActive
+                                  ? "bg-space-700"
+                                  : "hover:bg-space-700"
+                                : isActive
+                                  ? "bg-paper-200/60"
+                                  : "hover:bg-paper-200/60"
+                            }`}
+                            onMouseDown={(ev) => {
+                              // onMouseDown fires before input.onBlur so the
+                              // selection commits before the dropdown closes.
+                              ev.preventDefault();
+                              selectCityIndex(i);
                             }}
                           >
                             <div className="font-medium">
@@ -3115,23 +3146,23 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   onChange={(e) => {
                     const nextValue = e.target.value;
                     setCurrentLocationQuery(nextValue);
-                    setShowCurrentLocationSuggestions(true);
+                    openCurrentLocationSuggestions();
                     setFormData((prev) => ({
                       ...prev,
                       currentLocation: nextValue,
                     }));
                   }}
-                  onFocus={() => setShowCurrentLocationSuggestions(true)}
+                  onFocus={openCurrentLocationSuggestions}
                   onBlur={() =>
-                    setTimeout(
-                      () => setShowCurrentLocationSuggestions(false),
-                      200,
-                    )
+                    setTimeout(closeCurrentLocationSuggestions, 200)
                   }
+                  autoComplete="off"
+                  {...currentLocationInputProps}
                 />
                 {showCurrentLocationSuggestions &&
                   currentLocationQuery.trim() && (
                     <div
+                      {...currentLocationListboxProps}
                       className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === "dark" ? "bg-space-800 border-gold-500/15" : "bg-paper-100/85 border-paper-300"} shadow-lg max-h-48 overflow-auto`}
                     >
                       {isSearchingCurrentLocation ? (
@@ -3140,21 +3171,26 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                         </div>
                       ) : currentLocationSuggestions.length > 0 ? (
                         currentLocationSuggestions.map((city, i) => {
-                          const displayLabel = formatCityDisplay(
-                            city,
-                            language,
-                          );
+                          const optionProps = getCurrentLocationOptionProps(i);
+                          const isActive = optionProps["aria-selected"];
                           return (
                             <div
                               key={i}
-                              className={`px-4 py-2 cursor-pointer ${theme === "dark" ? "hover:bg-space-700" : "hover:bg-paper-200/60"}`}
-                              onMouseDown={() => {
-                                setCurrentLocationQuery(displayLabel);
-                                setFormData((prev) => ({
-                                  ...prev,
-                                  currentLocation: displayLabel,
-                                }));
-                                setShowCurrentLocationSuggestions(false);
+                              {...optionProps}
+                              className={`px-4 py-2 cursor-pointer ${
+                                theme === "dark"
+                                  ? isActive
+                                    ? "bg-space-700"
+                                    : "hover:bg-space-700"
+                                  : isActive
+                                    ? "bg-paper-200/60"
+                                    : "hover:bg-paper-200/60"
+                              }`}
+                              onMouseDown={(ev) => {
+                                // onMouseDown fires before input.onBlur so the
+                                // selection commits before the dropdown closes.
+                                ev.preventDefault();
+                                selectCurrentLocationIndex(i);
                               }}
                             >
                               <div className="font-medium">
