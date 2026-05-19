@@ -51,6 +51,20 @@ const LandingPage: React.FC = () => {
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
   const lang = language === "zh" ? "zh" : "en";
   const location = useLocation();
+  // Sync <html lang> to the active landing language on the lang-prerendered
+  // routes. SEO component updates <title> / <meta og:title> dynamically but
+  // it never touches the root element's lang attribute. Without this, /zh/
+  // loads with <html lang="en"> + Chinese body content — screen readers use
+  // English voice and search engines see conflicting lang signals against
+  // hreflang=zh. Caught in /qa on 2026-05-19 (ISSUE-002).
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const prev = document.documentElement.lang;
+    document.documentElement.lang = lang;
+    return () => {
+      document.documentElement.lang = prev;
+    };
+  }, [lang]);
   // SPA/static parity: when mounted at /landing-v2/{en,zh}/, the static prerender
   // emits canonical=/landing-v2/{lang}/ + robots=index,follow. The hydrated SPA
   // MUST emit the same values or Googlebot sees a cloaking signal (index then
@@ -86,8 +100,16 @@ const LandingPage: React.FC = () => {
   return (
     <div className="w-full">
       <SEO
-        title="Astrology meets modern psychology"
-        description="Birth charts, CBT journal, AI guidance. Science-grounded. No mysticism."
+        title={
+          lang === "zh"
+            ? "占星 × 现代心理学"
+            : "Astrology meets modern psychology"
+        }
+        description={
+          lang === "zh"
+            ? "出生星盘、CBT 心理日记、AI 指引。以科学为本，不玄学。"
+            : "Birth charts, CBT journal, AI guidance. Science-grounded. No mysticism."
+        }
         url={canonicalUrl}
         alternateLanguages={alternateLanguages}
         schema={[webSiteSchema]}
