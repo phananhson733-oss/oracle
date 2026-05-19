@@ -1,11 +1,16 @@
-// INPUT: i18n translations.
-// OUTPUT: Newsletter signup form — POSTs to /api/newsletter (honeypot + 5/hr rate limit on backend).
+// INPUT: i18n translations, apiClient.subscribeNewsletter, analytics.
+// OUTPUT: Newsletter signup form — submits via shared apiClient (timeout +
+//         code-only error mapping). Emits submit_attempt + submit_success /
+//         _existed / _rate_limited / _error outcomes so the visit→subscribe
+//         funnel is measurable end-to-end (was: only the attempt event).
 // POS: Below-the-fold landing section for /landing-v2.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useCallback, useState } from "react";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { trackEvent } from "../../services/analytics";
+import { subscribeNewsletter } from "../../services/apiClient";
+import { getLandingUtm } from "../../services/landingUtm";
 
 type Status =
   | "idle"
@@ -14,19 +19,6 @@ type Status =
   | "existed"
   | "rate_limited"
   | "error";
-
-interface NewsletterResponse {
-  success?: boolean;
-  already_subscribed?: boolean;
-  error?: string;
-  code?: string;
-}
-
-const API_BASE =
-  import.meta.env.VITE_API_BASE_URL ||
-  (typeof window !== "undefined" && window.location.hostname === "localhost"
-    ? "http://localhost:3001/api"
-    : "/api");
 
 const NewsletterSection: React.FC = () => {
   const { t, language } = useLanguage();
@@ -37,48 +29,64 @@ const NewsletterSection: React.FC = () => {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [status, setStatus] = useState<Status>("idle");
-  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (status === "submitting") return;
       setStatus("submitting");
-      setErrorMessage("");
-      trackEvent("newsletter_submit", {
+      trackEvent("newsletter_submit_attempt", {
         location: "landing_v2_newsletter",
         lang: language,
       });
 
-      try {
-        const res = await fetch(`${API_BASE}/newsletter`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: email.trim(), website }),
-        });
-        const data: NewsletterResponse = await res
-          .json()
-          .catch(() => ({}) as NewsletterResponse);
+      const result = await subscribeNewsletter({
+        email,
+        honeypotWebsite: website,
+      });
 
-        if (res.status === 429 || data.code === "rate_limited") {
+      // Fire stable outcome events so the funnel (visit → submit_attempt →
+      // submit_success/_existed/_rate_limited/_error) is measurable. We never
+      // include the raw email or server error.message — only the outcome
+      // tag + optional error code (隐私红线 #1 + GA event-param hygiene).
+      switch (result.outcome) {
+        case "success":
+          trackEvent("newsletter_submit_success", {
+            location: "landing_v2_newsletter",
+            lang: language,
+            ...getLandingUtm(),
+          });
+          setStatus("success");
+          break;
+        case "existed":
+          trackEvent("newsletter_submit_existed", {
+            location: "landing_v2_newsletter",
+            lang: language,
+          });
+          setStatus("existed");
+          break;
+        case "rate_limited":
+          trackEvent("newsletter_submit_rate_limited", {
+            location: "landing_v2_newsletter",
+            lang: language,
+          });
           setStatus("rate_limited");
-          return;
-        }
-        if (res.ok && data.success) {
-          setStatus(data.already_subscribed ? "existed" : "success");
-          return;
-        }
-        if (data.error) {
-          setErrorMessage(data.error);
-        }
-        setStatus("error");
-      } catch {
-        setStatus("error");
+          break;
+        case "error":
+          trackEvent("newsletter_submit_error", {
+            location: "landing_v2_newsletter",
+            lang: language,
+            error_code: result.code ?? "unknown",
+          });
+          setStatus("error");
+          break;
       }
     },
     [status, language, email, website],
   );
 
+  // Outcome → localised copy. We never render the server's raw error string;
+  // the i18n table owns every user-facing message.
   const message =
     status === "success"
       ? landing.newsletter_success || "You're on the list. Watch your inbox."
@@ -89,8 +97,7 @@ const NewsletterSection: React.FC = () => {
           ? landing.newsletter_rate_limited ||
             "Too many attempts. Please try again in a bit."
           : status === "error"
-            ? errorMessage ||
-              landing.newsletter_error ||
+            ? landing.newsletter_error ||
               "Could not subscribe. Please try again."
             : "";
 

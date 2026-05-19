@@ -188,7 +188,7 @@ const CosmicWeatherSection: React.FC = () => {
                   {p.retrograde && (
                     <span
                       className={`ml-2 text-xs uppercase tracking-wider ${subtleColor}`}
-                      aria-label="retrograde"
+                      aria-label={landing.today_retrograde_aria || "Retrograde"}
                     >
                       {landing.today_retrograde || "Rx"}
                     </span>

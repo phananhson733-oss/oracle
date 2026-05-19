@@ -1726,3 +1726,73 @@ export async function generateSyntheticaReport(
 
   return result;
 }
+
+// === Newsletter (landing-v2) ===
+
+/**
+ * Stable outcome shape returned to NewsletterSection. The frontend maps
+ * `outcome` to localised copy — it never renders the server's raw error
+ * string (which could leak Supabase stack traces or PII). Server `code`
+ * is preserved on `error` outcomes for analytics correlation.
+ */
+export type NewsletterSubscribeOutcome =
+  | { outcome: "success" }
+  | { outcome: "existed" }
+  | { outcome: "rate_limited" }
+  | { outcome: "error"; code?: string };
+
+/**
+ * Subscribe an email to the landing-page newsletter list. Wraps POST
+ * /api/newsletter with:
+ *   - shared API_BASE + fetchWithTimeout (so a hung Supabase upstream
+ *     doesn't lock the form button forever)
+ *   - code-only outcome mapping (raw server error.message is never
+ *     surfaced to the UI — defends against stack-trace leaks)
+ *   - honeypot field passthrough for the existing backend bot trap
+ *
+ * Replaces the inline fetch in pages/landing/NewsletterSection.tsx
+ * (which had its own duplicate API_BASE + rendered raw server errors).
+ */
+export async function subscribeNewsletter(input: {
+  email: string;
+  honeypotWebsite: string;
+}): Promise<NewsletterSubscribeOutcome> {
+  let res: Response;
+  try {
+    res = await fetchWithTimeout(`${API_BASE}/newsletter`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: input.email.trim(),
+        website: input.honeypotWebsite,
+      }),
+    });
+  } catch {
+    // Network failure or AbortController timeout. Don't expose a raw
+    // Error.message to UI — return a stable outcome instead.
+    return { outcome: "error", code: "network_error" };
+  }
+
+  let data: {
+    success?: boolean;
+    already_subscribed?: boolean;
+    code?: string;
+  } = {};
+  try {
+    data = await res.json();
+  } catch {
+    // Server returned non-JSON. Fall through to generic error mapping
+    // below (we still consult res.status for the rate-limit branch).
+  }
+
+  if (res.status === 429 || data.code === "rate_limited") {
+    return { outcome: "rate_limited" };
+  }
+  if (res.ok && data.success) {
+    return { outcome: data.already_subscribed ? "existed" : "success" };
+  }
+  // Any other failure: stable error outcome with the server-provided code
+  // (e.g. "email_invalid", "service_unavailable", "EMAIL_SERVICE_TIMEOUT")
+  // for analytics. UI never renders the raw error.message.
+  return { outcome: "error", code: data.code };
+}

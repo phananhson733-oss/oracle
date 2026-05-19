@@ -3,10 +3,11 @@
 // POS: Top-level page component for the modular marketing landing page rebuild.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect } from "react";
 import { useLanguage } from "../../components/UIComponents";
 import { SEO } from "../../components/SEO";
 import HeroSection from "./HeroSection";
+import { snapshotLandingUtm } from "../../services/landingUtm";
 
 // Eager: HeroSection only — must hit first paint with no fallback flash.
 // Lazy: every below-the-fold section. Suspense fallback keeps reserved height
@@ -35,6 +36,16 @@ const SectionFallback: React.FC<{ minHeight?: string }> = ({
 
 const LandingPage: React.FC = () => {
   const { language } = useLanguage();
+  // First-touch UTM snapshot. Captures utm_* + click IDs from ?query into
+  // sessionStorage on the first landing mount of this tab, so downstream
+  // conversion events (birth_chart_submit_success, newsletter_submit_*,
+  // /onboarding signup) can attribute back to the original acquisition
+  // source even after the SPA mutates the URL. No-op when there are no
+  // UTM params present. See services/landingUtm.ts.
+  useEffect(() => {
+    snapshotLandingUtm();
+  }, []);
+
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
   const lang = language === "zh" ? "zh" : "en";
