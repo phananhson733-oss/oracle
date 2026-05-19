@@ -31,6 +31,15 @@ geoRouter.get("/search", async (req, res) => {
         code: "GEOCODING_SERVICE_UNAVAILABLE",
       });
     }
-    res.status(500).json({ error: (error as Error).message });
+    // Do NOT echo error.message — upstream geocoder errors can embed the query
+    // (which is the user's typed birth city) or upstream URLs. Forwarding that
+    // to the HTTP body would leak PII into Vercel access logs and CDN traces.
+    // Log the full reason server-side; respond with a generic message.
+    const reason =
+      error instanceof Error
+        ? `${error.name}: ${error.message.slice(0, 120)}`
+        : typeof error;
+    console.error(`Geo /search unexpected error: ${reason}`);
+    res.status(500).json({ error: "City search temporarily unavailable." });
   }
 });
