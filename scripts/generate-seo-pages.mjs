@@ -708,19 +708,29 @@ const generate = async () => {
     sitemapUrls.push(`${siteUrl}/zh/wiki/${slug}`);
   }
 
+  // L2 cutover (2026-05-19): root is now the canonical home (renders
+  // LandingPageV2). Include "/" with priority 1.0 so Google treats it as
+  // the primary home URL ahead of /en/, /zh/, and /landing-v2/{en,zh}/.
+  const ROOT_URL = `${siteUrl}/`;
+  sitemapUrls.push(ROOT_URL);
+
   const sitemapEntries = Array.from(new Set(sitemapUrls)).sort();
   const landingV2Set = new Set(LANDING_V2_URLS);
   const sitemapXml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...sitemapEntries.map((loc) => {
+      const isRoot = loc === ROOT_URL;
       const isLandingV2 = landingV2Set.has(loc);
       const lines = [
         '  <url>',
         `    <loc>${loc}</loc>`,
         `    <lastmod>${today}</lastmod>`,
       ];
-      if (isLandingV2) {
+      if (isRoot) {
+        lines.push('    <changefreq>weekly</changefreq>');
+        lines.push('    <priority>1.0</priority>');
+      } else if (isLandingV2) {
         lines.push('    <changefreq>weekly</changefreq>');
         lines.push('    <priority>0.9</priority>');
       }
