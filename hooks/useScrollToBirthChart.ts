@@ -47,6 +47,13 @@ async function waitForAnchorAndScroll(
         typeof window !== "undefined" &&
         typeof window.matchMedia === "function" &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      // Capture pre-scroll position so we can detect if smooth scroll silently
+      // no-ops (observed in some environments: matchMedia returns false but
+      // smooth scrollIntoView still doesn't fire — likely macOS system-level
+      // Reduce Motion not surfaced via matchMedia, or focus/animation races).
+      // When that happens we fall back to instant scroll so the CTA never
+      // looks dead. Caught in /qa on 2026-05-19 (ISSUE-001).
+      const beforeY = typeof window !== "undefined" ? window.scrollY : 0;
       el.scrollIntoView({
         behavior: prefersReduced ? ("instant" as ScrollBehavior) : "smooth",
         block: "start",
@@ -58,6 +65,23 @@ async function waitForAnchorAndScroll(
       if (heading) {
         heading.setAttribute("tabindex", "-1");
         heading.focus({ preventScroll: true });
+      }
+      // Fallback: if smooth scroll didn't actually move the viewport within
+      // 250ms (and the anchor is still well outside it), force an instant
+      // scroll. Smooth scrolls that DO work complete well under 250ms for
+      // typical landing distances; this is a safety net, not a primary path.
+      if (!prefersReduced && typeof window !== "undefined") {
+        setTimeout(() => {
+          if (!isMounted()) return;
+          const stillTop = el.getBoundingClientRect().top;
+          const movedLittle = Math.abs(window.scrollY - beforeY) < 5;
+          if (movedLittle && Math.abs(stillTop) > 50) {
+            el.scrollIntoView({
+              behavior: "instant" as ScrollBehavior,
+              block: "start",
+            });
+          }
+        }, 250);
       }
       return true;
     }
