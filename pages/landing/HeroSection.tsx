@@ -58,12 +58,14 @@ const HeroSection: React.FC = () => {
           {landing.hero_kicker || "Astrology · Psychology · Self-Knowledge"}
         </p>
 
-        {/* Headline — Cormorant Garamond, editorial serif poster scale.
-            Visual layout splits the title across two block lines with an italic
-            gold accent on the emphasis word. The two <span class="block"> would
-            concatenate without whitespace in the a11y tree ("Astrology meetsmodern
-            psychology"), so we expose a clean aria-label for assistive tech and
-            mark all visual fragments aria-hidden. */}
+        {/* Headline — IBM Plex Mono throughout, no italic accent (italic
+            Cormorant overflowed the tight line-height and visually collided
+            with the subtitle). Emphasis word now gets the gold accent color
+            only — keeps the visual hierarchy without the descender clash.
+            The two <span class="block"> would concatenate without whitespace
+            in the a11y tree ("Astrology meetsmodern psychology"), so we
+            expose a clean aria-label for assistive tech and mark all visual
+            fragments aria-hidden. */}
         <h1
           id="hero-heading"
           aria-label={
@@ -84,7 +86,7 @@ const HeroSection: React.FC = () => {
           </span>
           <span aria-hidden="true" className="block">
             {landing.hero_title_part2 || "modern"}{" "}
-            <span className="font-serif italic text-accent">
+            <span className="text-accent">
               {landing.hero_emphasis || "psychology"}
             </span>
             {landing.hero_title_part3 || "."}

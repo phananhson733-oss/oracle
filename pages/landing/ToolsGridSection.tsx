@@ -14,7 +14,7 @@ import { useLanguage, useTheme } from "../../components/UIComponents";
 import { trackEvent } from "../../services/analytics";
 import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 
-type ToolKey = "saturn_return" | "synastry" | "ask_oracle";
+type ToolKey = "synthetica" | "synastry" | "ask_oracle";
 
 interface ToolDef {
   key: ToolKey;
@@ -111,14 +111,19 @@ const ToolsGridSection: React.FC = () => {
 
   const tools: ReadonlyArray<ToolDef> = [
     {
-      key: "saturn_return",
-      title: landing.tools_saturn_title || "Saturn Return Calculator",
+      // Was: "Saturn Return Calculator" → /:lang/saturn-return-calculator (standalone).
+      // Re-routed to the Wiki "tools" tab which renders WikiSyntheticaPage —
+      // a guided chart-inquiry builder (goal → planet → sign → house → aspect
+      // → AI-synthesised focused reading). Keep the title aligned with the
+      // destination's branded label ("Synthetica") so users don't lose context
+      // on arrival. The standalone Saturn Return page stays mounted for direct
+      // SEO entries.
+      key: "synthetica",
+      title: landing.tools_synthetica_title || "Synthetica",
       desc:
-        landing.tools_saturn_desc ||
-        "Find your Saturn return — the years when life recalibrates around what actually matters.",
-      // Saturn Return is a public, lang-prefixed route. /:lang/saturn-return-calculator
-      // isn't in PUBLIC_PREFIXED_PATHS, so we build the prefix explicitly.
-      destination: `/${language}/saturn-return-calculator`,
+        landing.tools_synthetica_desc ||
+        "Guided chart inquiry — goal · planet · sign · house · aspect → a focused, psychology-grounded reading.",
+      destination: `/${language}/wiki?tab=tools`,
       Icon: SaturnIcon,
     },
     {
@@ -148,7 +153,7 @@ const ToolsGridSection: React.FC = () => {
     <section
       id="tools"
       aria-labelledby="tools-heading"
-      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-900" : "bg-paper-200"}`}
+      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-800" : "bg-paper-200"}`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <p

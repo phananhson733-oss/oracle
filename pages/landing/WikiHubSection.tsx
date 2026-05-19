@@ -63,7 +63,7 @@ const WikiHubSection: React.FC = () => {
     <section
       id="wiki-hub"
       aria-labelledby="wiki-heading"
-      className="w-full py-24 scroll-mt-16 bg-paper-200 dark:bg-space-900"
+      className="w-full py-24 scroll-mt-16 bg-paper-200 dark:bg-space-800"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Editorial header */}

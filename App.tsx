@@ -8,7 +8,6 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useCallback,
   lazy,
   Suspense,
 } from "react";
@@ -498,11 +497,11 @@ const AppContent: React.FC = () => {
     setShowMigration(false);
   };
 
-  // Landing routes (root + /landing-v2 + /landing-v2/{en,zh}/) share the marketing
-  // top-nav so visitors always see entries to Birth Chart / Today / Wiki / Synastry
-  // / Ask. Without this they had no way to reach other modules unless they scrolled.
-  // Co-Star pattern: logo always returns to landing top; module entries are anchor
-  // links into the page sections.
+  // Landing routes (root + /landing-v2 + /landing-v2/{en,zh}/) reuse the standard
+  // app nav (Dashboard/Forecast/Us/Oracle/Journal/Wiki) so visitors see ONE
+  // information architecture across the whole site. Previously landing had a
+  // separate Co-Star-style anchor batch (Birth/Transit/Tools/Synastry/Ask/Wiki)
+  // which duplicated routes and confused users — removed per user direction.
   const isLandingRoute =
     location.pathname === "/" ||
     location.pathname === "/landing-v2" ||
@@ -511,53 +510,6 @@ const AppContent: React.FC = () => {
     isLandingRoute ||
     ((activeProfile || isWikiPath || isLegalPath || isSaturnReturnPath) &&
       !["/onboarding", "/auth"].includes(pathWithoutLang));
-
-  const scrollToAnchor = useCallback((anchorId: string) => {
-    if (typeof document === "undefined" || typeof window === "undefined") {
-      return;
-    }
-    const el = document.getElementById(anchorId);
-    if (!el) return;
-    const prefersReduced = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const beforeY = window.scrollY;
-    el.scrollIntoView({
-      behavior: prefersReduced ? ("instant" as ScrollBehavior) : "smooth",
-      block: "start",
-    });
-    // Defensive fallback: in some environments (Reduce Motion off but smooth
-    // scroll silently no-ops, or lazy-loaded sections that just mounted and
-    // miss the first scroll frame) the page doesn't move. After 250ms, if
-    // we haven't moved AND the anchor still isn't at the viewport top, force
-    // an instant snap. Same pattern as hooks/useScrollToBirthChart.ts.
-    if (!prefersReduced) {
-      window.setTimeout(() => {
-        const movedLittle = Math.abs(window.scrollY - beforeY) < 5;
-        const stillOff = Math.abs(el.getBoundingClientRect().top) > 50;
-        if (movedLittle && stillOff) {
-          el.scrollIntoView({
-            behavior: "instant" as ScrollBehavior,
-            block: "start",
-          });
-        }
-      }, 250);
-    }
-  }, []);
-
-  const landingNavLinks = useMemo(
-    () => [
-      {
-        anchor: "birth-chart-tool",
-        label: t.nav?.dashboard || "Birth Chart",
-      },
-      { anchor: "today", label: t.nav?.forecast || "Today" },
-      { anchor: "tools", label: language === "zh" ? "工具" : "Tools" },
-      { anchor: "synastry", label: t.nav?.us || "Synastry" },
-      { anchor: "ask-oracle", label: t.nav?.oracle || "Ask" },
-    ],
-    [t.nav, language],
-  );
 
   return (
     <>
@@ -591,50 +543,31 @@ const AppContent: React.FC = () => {
               {t.app.name}
             </div>
 
-            {/* Navigation Links - Permanently Top Right */}
+            {/* Navigation Links - Permanently Top Right.
+                Single unified IA — landing reuses the same 6 entries as the
+                rest of the app. Active state highlights the current route. */}
             <div className="flex items-center gap-6 ml-auto overflow-x-auto no-scrollbar">
-              {isLandingRoute ? (
-                <>
-                  {landingNavLinks.map((link) => (
-                    <button
-                      key={link.anchor}
-                      type="button"
-                      onClick={() => scrollToAnchor(link.anchor)}
-                      className="text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap opacity-70"
-                    >
-                      {link.label}
-                    </button>
-                  ))}
+              {[
+                { path: "/dashboard", label: t.nav.dashboard },
+                { path: "/forecast", label: t.nav.forecast },
+                { path: "/us", label: t.nav.us },
+                { path: "/oracle", label: t.nav.oracle },
+                { path: "/journal", label: t.nav.journal },
+                { path: langPath("/wiki"), label: t.nav.wiki },
+              ].map((link) => {
+                const isActive = isWikiPath
+                  ? link.path === langPath("/wiki")
+                  : location.pathname === link.path;
+                return (
                   <Link
-                    to={langPath("/wiki")}
-                    className="text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap opacity-70"
+                    key={link.path}
+                    to={link.path}
+                    className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap ${isActive ? "text-gold-500" : "opacity-70"}`}
                   >
-                    {t.nav?.wiki || "Wiki"}
+                    {link.label}
                   </Link>
-                </>
-              ) : (
-                [
-                  { path: "/dashboard", label: t.nav.dashboard },
-                  { path: "/forecast", label: t.nav.forecast },
-                  { path: "/us", label: t.nav.us },
-                  { path: "/oracle", label: t.nav.oracle },
-                  { path: "/journal", label: t.nav.journal },
-                  { path: langPath("/wiki"), label: t.nav.wiki },
-                ].map((link) => {
-                  const isActive = isWikiPath
-                    ? link.path === langPath("/wiki")
-                    : location.pathname === link.path;
-                  return (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap ${isActive ? "text-gold-500" : "opacity-70"}`}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })
-              )}
+                );
+              })}
 
               {/* Settings / Theme Toggles */}
               <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>

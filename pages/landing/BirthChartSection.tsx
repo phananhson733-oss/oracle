@@ -321,8 +321,35 @@ const BirthChartSection: React.FC = () => {
       cta_text: landing.birth_chart_save_cta || "Save my chart",
       location: "landing_v2_birth_chart_save",
     });
-    navigate(langPath("/onboarding"));
-  }, [landing.birth_chart_save_cta, langPath, navigate]);
+    // Forward everything the landing form already collected so onboarding can
+    // skip the redundant date/city steps and land the user on the last step
+    // (name confirm) — or fire onComplete immediately if name is also present.
+    const prefill = {
+      name: name.trim() || undefined,
+      birthDate,
+      birthTime: timeUnknown ? undefined : birthTime || undefined,
+      birthCity: birthCity.trim(),
+      lat: birthCoords.lat,
+      lon: birthCoords.lon,
+      timezone: birthCoords.timezone,
+      accuracyLevel: (timeUnknown
+        ? "time_unknown"
+        : birthTime
+          ? "exact"
+          : "approximate") as AccuracyLevel,
+    };
+    navigate(langPath("/onboarding"), { state: { prefill } });
+  }, [
+    birthCity,
+    birthCoords,
+    birthDate,
+    birthTime,
+    landing.birth_chart_save_cta,
+    langPath,
+    name,
+    navigate,
+    timeUnknown,
+  ]);
 
   const locationError = errorKind === "location";
   const serviceError = errorKind === "service";
@@ -349,7 +376,7 @@ const BirthChartSection: React.FC = () => {
     <section
       id="birth-chart-tool"
       aria-labelledby="birth-chart-heading"
-      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-900" : "bg-paper-200"}`}
+      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-800" : "bg-paper-200"}`}
     >
       <div className="max-w-3xl mx-auto px-6 md:px-8 text-left">
         <p className={`mb-4 ${labelClass}`}>
