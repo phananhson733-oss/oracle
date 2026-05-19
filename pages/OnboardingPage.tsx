@@ -3,7 +3,8 @@
 //         City step uses the shared combobox hook for debounced search + keyboard a11y.
 // POS: Onboarding page component; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { SEO } from "../components/SEO";
 import {
   Container,
@@ -22,18 +23,90 @@ import {
 import { getLocationQueryMinLength } from "../utils/astro-helpers";
 import { useCityAutocomplete } from "../hooks/useCityAutocomplete";
 
+// Shape of the prefill envelope passed via React Router state from the landing
+// BirthChartSection. Optional so a direct /onboarding visit (no prefill) still
+// renders the full 3-step wizard from scratch.
+interface OnboardingPrefill {
+  name?: string;
+  birthDate?: string;
+  birthTime?: string;
+  birthCity?: string;
+  lat?: number;
+  lon?: number;
+  timezone?: string;
+  accuracyLevel?: T.UserProfile["accuracyLevel"];
+}
+
 const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
   onComplete,
 }) => {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
-  const [step, setStep] = useState(1);
-  const [data, setData] = useState<Partial<T.UserProfile>>({
-    accuracyLevel: "exact",
+  const location = useLocation();
+  // Pull any prefill the previous screen (landing BirthChartSection) passed.
+  // Read once on mount via a ref so subsequent location updates don't reset
+  // the wizard state the user is editing.
+  const initialPrefill =
+    (location.state as { prefill?: OnboardingPrefill } | null)?.prefill ?? null;
+  const prefillRef = useRef(initialPrefill);
+
+  // Decide which step to start on based on what the prefill already provides.
+  // - birthDate + birthCity (+ ideally lat) → jump straight to step 3 (name).
+  // - birthDate only → jump to step 2 (location).
+  // - else → step 1.
+  const deriveInitialStep = (p: OnboardingPrefill | null): number => {
+    if (!p) return 1;
+    const hasDate = !!p.birthDate;
+    const hasCity = !!(p.birthCity && p.birthCity.trim());
+    if (hasDate && hasCity) return 3;
+    if (hasDate) return 2;
+    return 1;
+  };
+
+  const [step, setStep] = useState<number>(() =>
+    deriveInitialStep(initialPrefill),
+  );
+  const [data, setData] = useState<Partial<T.UserProfile>>(() => ({
+    accuracyLevel: initialPrefill?.accuracyLevel ?? "exact",
     focusTags: [],
-    timezone: "",
-  });
-  const [cityQuery, setCityQuery] = useState("");
+    timezone: initialPrefill?.timezone ?? "",
+    name: initialPrefill?.name,
+    birthDate: initialPrefill?.birthDate,
+    birthTime: initialPrefill?.birthTime,
+    birthCity: initialPrefill?.birthCity,
+    lat: initialPrefill?.lat,
+    lon: initialPrefill?.lon,
+  }));
+  const [cityQuery, setCityQuery] = useState<string>(
+    initialPrefill?.birthCity ?? "",
+  );
+
+  // When the prefill carries everything we need (date + city + name), the wizard
+  // has nothing left to ask — fire onComplete on the next tick so the user lands
+  // directly on the destination dashboard without seeing the wizard flash.
+  // Guarded by a ref to prevent double-fire on re-render / Strict Mode.
+  const autoCompletedRef = useRef(false);
+  useEffect(() => {
+    const p = prefillRef.current;
+    if (autoCompletedRef.current) return;
+    if (
+      p &&
+      p.birthDate &&
+      p.birthCity &&
+      p.birthCity.trim() &&
+      p.name &&
+      p.name.trim()
+    ) {
+      autoCompletedRef.current = true;
+      onComplete({
+        ...data,
+        accuracyLevel: data.accuracyLevel ?? "exact",
+        focusTags: data.focusTags ?? [],
+      } as T.UserProfile);
+    }
+    // Intentionally only on mount — `data` is initialized from prefill above.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Debounced city search + keyboard navigation + WAI-ARIA combobox wiring —
   // delegated to the shared hook.

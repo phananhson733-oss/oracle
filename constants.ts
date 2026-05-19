@@ -2456,6 +2456,12 @@ export const TRANSLATIONS = {
       tools_saturn_title: "Saturn Return Calculator",
       tools_saturn_desc:
         "Find your Saturn return — the years when life recalibrates around what actually matters.",
+      // Landing Tools-grid card that routes to /wiki?tab=tools which renders
+      // WikiSyntheticaPage. Title mirrors the destination's branded label so
+      // visitors don't lose context on arrival.
+      tools_synthetica_title: "Synthetica",
+      tools_synthetica_desc:
+        "Guided chart inquiry — goal · planet · sign · house · aspect → a focused, psychology-grounded reading.",
       tools_synastry_title: "Synastry",
       tools_synastry_desc:
         "Compare two birth charts. See where you meet, clash, and recognise each other.",
@@ -2547,6 +2553,22 @@ export const TRANSLATIONS = {
       footer_link_terms: "Terms",
       footer_link_cookies: "Cookies",
       footer_copyright: "© 2026 AstrologyWiki",
+    },
+    // Saturn Return Calculator (standalone SEO page).
+    // Form-side strings only; result-card interpretation comes from the
+    // backend and is localised separately when we wire `lang` to that route.
+    saturn_return: {
+      page_title: "Saturn Return Calculator",
+      page_subtitle: "Find out when Saturn returns to your birth position",
+      label_date: "Birth Date",
+      label_time: "Birth Time",
+      label_city: "Birth City",
+      optional: "optional",
+      time_hint:
+        "Don't know your birth time? No problem. Results will be approximate.",
+      placeholder_city: "e.g. New York, London, Tokyo",
+      cta: "Calculate My Saturn Return",
+      calculating: "Calculating…",
     },
   },
   zh: {
@@ -4158,6 +4180,11 @@ export const TRANSLATIONS = {
       tools_saturn_title: "土星回归计算器",
       tools_saturn_desc:
         "找到你的土星回归——那几年，生活会围绕真正重要的事重新校准。",
+      // Landing Tools-grid card → /wiki?tab=tools (WikiSyntheticaPage)。
+      // 标题与目的地的 tab 品牌一致，避免落地后失焦。
+      tools_synthetica_title: "Synthetica",
+      tools_synthetica_desc:
+        "引导式星盘探索 — 目标 · 行星 · 星座 · 宫位 · 相位 → 一段聚焦的、心理学锚定的解读。",
       tools_synastry_title: "合盘",
       tools_synastry_desc:
         "比较两张星盘。看清你们在哪里相遇、碰撞，又如何彼此辨认。",
@@ -4245,6 +4272,19 @@ export const TRANSLATIONS = {
       footer_link_terms: "服务条款",
       footer_link_cookies: "Cookie 政策",
       footer_copyright: "© 2026 AstrologyWiki",
+    },
+    // 土星回归计算器（独立 SEO 页）
+    saturn_return: {
+      page_title: "土星回归计算器",
+      page_subtitle: "查看土星回到你出生位置的时刻",
+      label_date: "出生日期",
+      label_time: "出生时间",
+      label_city: "出生城市",
+      optional: "可选",
+      time_hint: "不知道出生时间？没关系，结果会是近似值。",
+      placeholder_city: "例如：北京、上海、纽约",
+      cta: "计算我的土星回归",
+      calculating: "计算中…",
     },
   },
 };

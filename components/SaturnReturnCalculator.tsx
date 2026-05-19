@@ -2,7 +2,7 @@
 // OUTPUT: Public Saturn Return calculator with city autocomplete + result card + SEO content.
 // POS: Standalone SEO landing component; city autocomplete delegates to the shared hook.
 
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useLanguage, useTheme } from "./UIComponents";
 import { SEO } from "./SEO";
 import { searchCities } from "../services/apiClient";
@@ -79,9 +79,17 @@ const FAQ_SCHEMA = {
 };
 
 export const SaturnReturnCalculator: React.FC = () => {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const sr = t.saturn_return;
+
+  // SEO entry point: incoming visitors expect to land at the page top, not
+  // at whatever scroll offset the previous page left behind (e.g. landing's
+  // Tools section is ~3500px down; without this they'd land mid-page).
+  useEffect(() => {
+    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+  }, []);
 
   const [birthDate, setBirthDate] = useState("");
   const [birthTime, setBirthTime] = useState("");
@@ -287,10 +295,11 @@ export const SaturnReturnCalculator: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${textPrimary}`}>
-            Saturn Return Calculator
+            {sr?.page_title || "Saturn Return Calculator"}
           </h1>
           <p className={`text-lg ${textSecondary}`}>
-            Find out when Saturn returns to your birth position
+            {sr?.page_subtitle ||
+              "Find out when Saturn returns to your birth position"}
           </p>
         </div>
 
@@ -306,7 +315,8 @@ export const SaturnReturnCalculator: React.FC = () => {
               htmlFor="birth-date"
               className={`block text-sm font-medium mb-1.5 ${textPrimary}`}
             >
-              Birth Date <span className="text-red-400">*</span>
+              {sr?.label_date || "Birth Date"}{" "}
+              <span className="text-red-400">*</span>
             </label>
             <input
               id="birth-date"
@@ -339,8 +349,10 @@ export const SaturnReturnCalculator: React.FC = () => {
               htmlFor="birth-time"
               className={`block text-sm font-medium mb-1.5 ${textPrimary}`}
             >
-              Birth Time{" "}
-              <span className={`text-xs ${textSecondary}`}>(optional)</span>
+              {sr?.label_time || "Birth Time"}{" "}
+              <span className={`text-xs ${textSecondary}`}>
+                ({sr?.optional || "optional"})
+              </span>
             </label>
             <input
               id="birth-time"
@@ -352,8 +364,8 @@ export const SaturnReturnCalculator: React.FC = () => {
               className={`w-full px-4 py-3 rounded-lg border ${inputBorder} ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
             />
             <p className={`mt-1 text-xs ${textSecondary}`}>
-              Don't know your birth time? No problem. Results will be
-              approximate.
+              {sr?.time_hint ||
+                "Don't know your birth time? No problem. Results will be approximate."}
             </p>
           </div>
 
@@ -363,8 +375,10 @@ export const SaturnReturnCalculator: React.FC = () => {
               htmlFor="birth-city"
               className={`block text-sm font-medium mb-1.5 ${textPrimary}`}
             >
-              Birth City{" "}
-              <span className={`text-xs ${textSecondary}`}>(optional)</span>
+              {sr?.label_city || "Birth City"}{" "}
+              <span className={`text-xs ${textSecondary}`}>
+                ({sr?.optional || "optional"})
+              </span>
             </label>
             <input
               id="birth-city"
@@ -379,7 +393,9 @@ export const SaturnReturnCalculator: React.FC = () => {
               }}
               onFocus={openSuggestions}
               onBlur={() => setTimeout(closeSuggestions, 200)}
-              placeholder="e.g. New York, London, Tokyo"
+              placeholder={
+                sr?.placeholder_city || "e.g. New York, London, Tokyo"
+              }
               autoComplete="off"
               {...cityInputProps}
               className={`w-full px-4 py-3 rounded-lg border ${inputBorder} ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
@@ -424,10 +440,10 @@ export const SaturnReturnCalculator: React.FC = () => {
             {state === "loading" ? (
               <span className="flex items-center justify-center gap-2">
                 <span className="inline-block w-5 h-5 border-2 border-space-950/30 border-t-space-950 rounded-full animate-spin" />
-                Calculating...
+                {sr?.calculating || "Calculating..."}
               </span>
             ) : (
-              "Calculate My Saturn Return"
+              sr?.cta || "Calculate My Saturn Return"
             )}
           </button>
         </form>
