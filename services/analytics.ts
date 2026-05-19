@@ -321,24 +321,39 @@ export const trackError = (errorMessage: string, errorSource: string) => {
 
 // Endpoints whose 4xx/5xx responses may embed user-input PII (city, name,
 // question text, automatic thoughts, hot thought) in error.message — either
-// because the upstream lib echoes it back or because the route includes it
-// for debugging. We send only endpoint + status to GA for these; the
-// human-readable error is intentionally dropped (隐私红线 #1).
-const PII_RISK_ENDPOINT_PREFIXES = [
-  "/natal/",
-  "/synastry/",
-  "/cycle/",
-  "/daily/",
-  "/cbt/",
-  "/ask/",
-  "/wiki/",
-  "/geo/",
-  "/detail/",
-  "/reports/",
-];
+// because the upstream lib echoes it back (e.g. LocationResolutionError:
+// `Could not resolve location: "<birthCity>"`) or because the route includes
+// it for debugging. We send only endpoint + status to GA for these; the
+// human-readable error is intentionally dropped to honor 隐私红线 #1 (CLAUDE.md:
+// "Analytics 不传敏感字段"). Prefixes are intentionally written without a
+// trailing slash so they also match bare endpoints like `/natal` in addition
+// to nested ones like `/natal/chart`.
+export const PII_RISK_ENDPOINT_PREFIXES = [
+  "/natal",
+  "/daily",
+  "/cbt",
+  "/synastry",
+  "/ask",
+  "/detail",
+  "/geo",
+  "/cycle",
+  "/wiki",
+  "/reports",
+] as const;
 
 const isPiiRiskEndpoint = (endpoint: string): boolean =>
   PII_RISK_ENDPOINT_PREFIXES.some((prefix) => endpoint.startsWith(prefix));
+
+// Pure helper exported for unit testing — given an endpoint and a raw error
+// message, returns either the static `[redacted]` marker (for PII-risk
+// endpoints, per 隐私红线 #1) or the first 200 chars of the raw message.
+// Centralizing the rule here means individual callers cannot accidentally
+// leak by forgetting to sanitize.
+export const redactErrorMessageForAnalytics = (
+  endpoint: string,
+  errorMessage: string,
+): string =>
+  isPiiRiskEndpoint(endpoint) ? "[redacted]" : errorMessage.slice(0, 200);
 
 export const trackApiError = (
   endpoint: string,
@@ -346,14 +361,13 @@ export const trackApiError = (
   errorMessage: string,
 ) => {
   if (!canSendToGtag()) return;
-  const piiRisk = isPiiRiskEndpoint(endpoint);
+  // Hard-redact error_message for PII-risk endpoints BEFORE building the
+  // payload — see 隐私红线 #1 (CLAUDE.md). Categorical fields (endpoint,
+  // status_code) remain unchanged and safe to ship to GA.
   trackEvent("api_error", {
     endpoint,
     status_code: statusCode,
-    // For PII-risk endpoints we still want a non-empty marker so the GA event
-    // is searchable, but it MUST NOT contain raw upstream text (which often
-    // includes the city / name the user typed). Send the static label only.
-    error_message: piiRisk ? "[redacted]" : errorMessage.slice(0, 200),
+    error_message: redactErrorMessageForAnalytics(endpoint, errorMessage),
   });
 };
 
