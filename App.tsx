@@ -264,6 +264,31 @@ const LangStripRedirect: React.FC = () => {
   );
 };
 
+// SPA/static parity guard for /landing-v2/{en,zh}/.
+// The SEO prerender (scripts/generate-seo-pages.mjs) writes
+// public/landing-v2/{en,zh}/index.html with canonical=/landing-v2/{lang}/ +
+// robots=index,follow. Vercel's filesystem-first routing serves that HTML
+// directly. On hydration, React must mount LandingPageV2 with the matching
+// language so the rendered <head> stays index,follow + same canonical;
+// otherwise Googlebot sees a cloaking signal (static "index this" vs
+// hydrated 404 + noindex). This component validates the segment is en|zh,
+// syncs LanguageContext to that value, and mounts LandingPageV2.
+const LandingV2LangRoute: React.FC = () => {
+  const { landingLang } = useParams<{ landingLang: string }>();
+  const { setLanguage } = useLanguage();
+  const validLang =
+    landingLang === "en" || landingLang === "zh" ? landingLang : null;
+  useEffect(() => {
+    if (validLang) {
+      setLanguage(validLang);
+    }
+  }, [validLang, setLanguage]);
+  if (!validLang) {
+    return <NotFoundPage />;
+  }
+  return <LandingPageV2 />;
+};
+
 // --- CONTEXTS ---
 
 import { useUserProfile } from "./hooks/useUserProfile";
@@ -332,11 +357,19 @@ const AppContent: React.FC = () => {
     "/help",
   ].includes(pathWithoutLang);
   const isSaturnReturnPath = pathWithoutLang === "/saturn-return-calculator";
+  // /landing-v2/{en,zh}/ is a first-class public, SEO-indexed landing route
+  // (static prerender at public/landing-v2/{en,zh}/index.html emits
+  // robots=index,follow). It must NOT receive the global noindex flag, and
+  // it must NOT be misread by pathWithoutLang as /:lang/* with lang="landing-v2".
+  const isLandingV2LangPath = /^\/landing-v2\/(en|zh)\/?$/.test(
+    location.pathname,
+  );
   const isPublicRoute =
     location.pathname === "/" ||
     isWikiPath ||
     isLegalPath ||
-    isSaturnReturnPath;
+    isSaturnReturnPath ||
+    isLandingV2LangPath;
   const shouldNoIndex = !isPublicRoute;
   const authT = t.auth;
   const lastTrackedPathRef = useRef<string | null>(null);
@@ -575,6 +608,15 @@ const AppContent: React.FC = () => {
               element={<Navigate to={`/${language}/wiki`} replace />}
             />
             <Route path="/landing-v2" element={<LandingPageV2 />} />
+            {/* SPA/static parity route for /landing-v2/{en,zh}/.
+                MUST be registered before the /:lang/* catch-all so React
+                Router matches landingLang here instead of treating
+                "landing-v2" as the :lang param (which would route to
+                LangStripRedirect → NotFoundPage). See LandingV2LangRoute. */}
+            <Route
+              path="/landing-v2/:landingLang"
+              element={<LandingV2LangRoute />}
+            />
             <Route
               path="/onboarding"
               element={

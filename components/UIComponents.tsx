@@ -84,6 +84,13 @@ export const translateAstroTerm = (text: string, lang: Language): string => {
 export interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
+  /**
+   * Explicitly set the active language. Used by route components that derive
+   * language from a URL segment outside the standard `/[en|zh]/*` prefix
+   * (e.g. the static-prerendered `/landing-v2/{en,zh}/` routes), so SPA
+   * hydration matches the prerendered HTML's lang/canonical/robots.
+   */
+  setLanguage: (lang: Language) => void;
   t: (typeof TRANSLATIONS)["en"];
   tl: (key: string) => string;
 }
@@ -91,6 +98,7 @@ export interface LanguageContextType {
 export const LanguageContext = createContext<LanguageContextType>({
   language: "en",
   toggleLanguage: () => {},
+  setLanguage: () => {},
   t: TRANSLATIONS["en"],
   tl: (s) => s,
 });
@@ -138,11 +146,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
+  const setLanguageExplicit = (newLang: Language) => {
+    if (newLang !== language) {
+      setLanguage(newLang);
+      localStorage.setItem("astro_lang", newLang);
+    }
+  };
+
   return (
     <LanguageContext.Provider
       value={{
         language,
         toggleLanguage,
+        setLanguage: setLanguageExplicit,
         t: TRANSLATIONS[language],
         tl: (s) => translateAstroTerm(s, language),
       }}

@@ -4,6 +4,7 @@
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { Suspense, lazy, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useLanguage } from "../../components/UIComponents";
 import { SEO } from "../../components/SEO";
 import HeroSection from "./HeroSection";
@@ -49,12 +50,30 @@ const LandingPage: React.FC = () => {
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
   const lang = language === "zh" ? "zh" : "en";
-  const canonicalUrl = `${siteUrl}/landing-v2`;
-  const alternateLanguages = [
-    { hrefLang: "en", href: `${siteUrl}/landing-v2` },
-    { hrefLang: "zh", href: `${siteUrl}/landing-v2` },
-    { hrefLang: "x-default", href: `${siteUrl}/landing-v2` },
-  ];
+  const location = useLocation();
+  // SPA/static parity: when mounted at /landing-v2/{en,zh}/, the static prerender
+  // emits canonical=/landing-v2/{lang}/ + robots=index,follow. The hydrated SPA
+  // MUST emit the same values or Googlebot sees a cloaking signal (index then
+  // noindex). When mounted at the bare /landing-v2 (no lang segment), the page
+  // is unindexed staging — keep noindex.
+  const landingLangMatch = location.pathname.match(
+    /^\/landing-v2\/(en|zh)\/?$/,
+  );
+  const isLangPrerenderedRoute = !!landingLangMatch;
+  const canonicalUrl = isLangPrerenderedRoute
+    ? `${siteUrl}/landing-v2/${lang}/`
+    : `${siteUrl}/landing-v2`;
+  const alternateLanguages = isLangPrerenderedRoute
+    ? [
+        { hrefLang: "en", href: `${siteUrl}/landing-v2/en/` },
+        { hrefLang: "zh", href: `${siteUrl}/landing-v2/zh/` },
+        { hrefLang: "x-default", href: `${siteUrl}/landing-v2/en/` },
+      ]
+    : [
+        { hrefLang: "en", href: `${siteUrl}/landing-v2` },
+        { hrefLang: "zh", href: `${siteUrl}/landing-v2` },
+        { hrefLang: "x-default", href: `${siteUrl}/landing-v2` },
+      ];
 
   const webSiteSchema = {
     "@context": "https://schema.org",
@@ -73,7 +92,7 @@ const LandingPage: React.FC = () => {
         alternateLanguages={alternateLanguages}
         schema={[webSiteSchema]}
         type="website"
-        robots="noindex,nofollow"
+        robots={isLangPrerenderedRoute ? "index,follow" : "noindex,nofollow"}
       />
 
       {/* 1. NAV is provided globally by App.tsx */}
