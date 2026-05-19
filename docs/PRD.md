@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.13
+> **Version**: 2.14
 > **Last Updated**: 2026-05-19
 > **Status**: Living Document — synced with codebase
 
@@ -841,7 +841,8 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 
 | Method | Path | 说明 | Auth |
 |--------|------|------|------|
-| GET | `/api/geo/search` | 城市模糊搜索 | — |
+| POST | `/api/geo/search` | 城市模糊搜索（canonical；body `{ q, limit?, lang? }`，避免城市名进 URL/access log）| — |
+| GET | `/api/geo/search` | 城市模糊搜索（**deprecated alias**，一周期后下线；后端首次命中会 `console.warn`）| — |
 | POST | `/api/detail` | 技术细节解读 | — |
 | GET | `/api/astro/events` | 天象事件 | — |
 | GET | `/api/astro/today` | 今日普世行星位置（10 大行星，按 UTC 午夜按日缓存，无 AI 调用）; no rate limit (safe due to day-scoped cache + zero LLM/IO per cached request); single-flight + integrity validation guards against cache stampede and mock-fallback poisoning | — |

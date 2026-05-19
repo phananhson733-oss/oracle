@@ -1,8 +1,9 @@
-// INPUT: City search utilities, UI components, i18n translations.
+// INPUT: City search utilities, UI components, i18n translations, shared useCityAutocomplete hook.
 // OUTPUT: Three-step onboarding flow (birth date, location, name) that produces a UserProfile.
+//         City step uses the shared combobox hook for debounced search + keyboard a11y.
 // POS: Onboarding page component; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useState } from "react";
 import { SEO } from "../components/SEO";
 import {
   Container,
@@ -19,6 +20,7 @@ import {
   type City,
 } from "../utils/city-search";
 import { getLocationQueryMinLength } from "../utils/astro-helpers";
+import { useCityAutocomplete } from "../hooks/useCityAutocomplete";
 
 const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
   onComplete,
@@ -32,33 +34,45 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
     timezone: "",
   });
   const [cityQuery, setCityQuery] = useState("");
-  const [citySuggestions, setCitySuggestions] = useState<City[]>([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
 
-  useEffect(() => {
-    const trimmedQuery = cityQuery.trim();
-    const minLength = getLocationQueryMinLength(trimmedQuery);
-    if (trimmedQuery.length < minLength) {
-      setCitySuggestions([]);
-      setIsSearching(false);
-      return;
-    }
-    setIsSearching(true);
-    let cancelled = false;
-    const timer = setTimeout(async () => {
-      const results = await searchCitiesWithFallback(trimmedQuery, 5, language);
-      if (!cancelled) {
-        setCitySuggestions(results);
-        setIsSearching(false);
-      }
-    }, 300);
-    return () => {
-      cancelled = true;
-      clearTimeout(timer);
-      setIsSearching(false);
-    };
-  }, [cityQuery, language]);
+  // Debounced city search + keyboard navigation + WAI-ARIA combobox wiring —
+  // delegated to the shared hook.
+  const citySearch = useCallback(
+    (q: string) => searchCitiesWithFallback(q, 5, language),
+    [language],
+  );
+  const handleCitySelect = useCallback(
+    (city: City) => {
+      const displayLabel = formatCityDisplay(city, language);
+      const coords = getCityCoordinates(city);
+      setCityQuery(displayLabel);
+      setData((prev) => ({
+        ...prev,
+        birthCity: displayLabel,
+        lat: coords.lat,
+        lon: coords.lon,
+        timezone: coords.timezone,
+      }));
+    },
+    [language],
+  );
+  const {
+    suggestions: citySuggestions,
+    isSearching,
+    isOpen: showSuggestions,
+    open: openCitySuggestions,
+    close: closeCitySuggestions,
+    selectIndex: selectCityIndex,
+    inputProps: cityInputProps,
+    listboxProps: cityListboxProps,
+    getOptionProps: getCityOptionProps,
+  } = useCityAutocomplete<City>({
+    query: cityQuery,
+    search: citySearch,
+    onSelect: handleCitySelect,
+    minLength: getLocationQueryMinLength,
+    idPrefix: "onboarding-city",
+  });
 
   const headingClass = theme === "dark" ? "text-star-50" : "text-paper-900";
   const labelClass =
@@ -150,7 +164,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
                   onChange={(e) => {
                     const nextValue = e.target.value;
                     setCityQuery(nextValue);
-                    setShowSuggestions(true);
+                    openCitySuggestions();
                     setData((prev) => ({
                       ...prev,
                       birthCity: nextValue,
@@ -159,13 +173,14 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
                       timezone: "",
                     }));
                   }}
-                  onFocus={() => setShowSuggestions(true)}
-                  onBlur={() =>
-                    setTimeout(() => setShowSuggestions(false), 200)
-                  }
+                  onFocus={openCitySuggestions}
+                  onBlur={() => setTimeout(closeCitySuggestions, 200)}
+                  autoComplete="off"
+                  {...cityInputProps}
                 />
                 {showSuggestions && cityQuery.trim() && (
                   <div
+                    {...cityListboxProps}
                     className={`absolute z-10 w-full mt-1 rounded-lg border ${theme === "dark" ? "bg-space-800 border-gold-500/15" : "bg-paper-100/85 border-gold-600/30"} shadow-lg max-h-48 overflow-auto`}
                   >
                     {isSearching ? (
@@ -174,22 +189,26 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
                       </div>
                     ) : citySuggestions.length > 0 ? (
                       citySuggestions.map((city, i) => {
-                        const displayLabel = formatCityDisplay(city, language);
-                        const coords = getCityCoordinates(city);
+                        const optionProps = getCityOptionProps(i);
+                        const isActive = optionProps["aria-selected"];
                         return (
                           <div
                             key={i}
-                            className={`px-4 py-2 cursor-pointer ${theme === "dark" ? "hover:bg-space-700" : "hover:bg-paper-200/60"}`}
-                            onMouseDown={() => {
-                              setCityQuery(displayLabel);
-                              setData((prev) => ({
-                                ...prev,
-                                birthCity: displayLabel,
-                                lat: coords.lat,
-                                lon: coords.lon,
-                                timezone: coords.timezone,
-                              }));
-                              setShowSuggestions(false);
+                            {...optionProps}
+                            className={`px-4 py-2 cursor-pointer ${
+                              theme === "dark"
+                                ? isActive
+                                  ? "bg-space-700"
+                                  : "hover:bg-space-700"
+                                : isActive
+                                  ? "bg-paper-200/60"
+                                  : "hover:bg-paper-200/60"
+                            }`}
+                            onMouseDown={(ev) => {
+                              // onMouseDown fires before input.onBlur so the
+                              // selection commits before the dropdown closes.
+                              ev.preventDefault();
+                              selectCityIndex(i);
                             }}
                           >
                             <div className="font-medium">

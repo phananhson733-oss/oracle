@@ -1566,10 +1566,19 @@ export async function fetchTodaySky(): Promise<TodaySkyResponse> {
 }
 
 // === Geo API ===
+// POST (not GET): the city query is user-typed birth location (PII). Keeping it
+// in the request body avoids leaking the value into Vercel access logs, browser
+// history, Referer headers, and CDN traces. The backend still accepts GET as a
+// deprecated alias for one release cycle so in-flight tabs with stale bundles
+// don't 404. See 隐私红线 #3.
 export async function searchCities(query: string, limit = 5, lang?: Language) {
-  const params = new URLSearchParams({ q: query, limit: String(limit) });
-  if (lang) params.set("lang", lang);
-  const res = await fetch(`${API_BASE}/geo/search?${params}`);
+  const body: Record<string, unknown> = { q: query, limit };
+  if (lang) body.lang = lang;
+  const res = await fetch(`${API_BASE}/geo/search`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
   if (!res.ok) throw new Error("Failed to search cities");
   return res.json();
 }

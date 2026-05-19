@@ -7,17 +7,11 @@
 // POS: Below-the-fold landing section for /landing-v2 (anchor id="birth-chart-tool").
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, {
-  Suspense,
-  lazy,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { Suspense, lazy, useCallback, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { useLangPath } from "../../hooks/useLangPath";
+import { useCityAutocomplete } from "../../hooks/useCityAutocomplete";
 import {
   searchCitiesWithFallback,
   formatCityDisplay,
@@ -159,9 +153,6 @@ const BirthChartSection: React.FC = () => {
     lon?: number;
     timezone?: string;
   }>({});
-  const [citySuggestions, setCitySuggestions] = useState<City[]>([]);
-  const [showCitySuggestions, setShowCitySuggestions] = useState(false);
-  const [isSearchingCity, setIsSearchingCity] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [validationError, setValidationError] = useState<string | null>(null);
   const [errorKind, setErrorKind] = useState<ErrorKind>(null);
@@ -170,45 +161,46 @@ const BirthChartSection: React.FC = () => {
 
   const maxDate = useMemo(() => todayIso(), []);
 
-  // Debounced city search — mirrors OnboardingPage behavior: local-first
-  // (data/cities.ts) with backend Open-Meteo fallback for cities not in the
-  // local index. Empty input or below minLength clears suggestions.
-  // When the user has already picked a suggestion (birthCoords.lat is set)
-  // and the input still matches the canonical label, we skip the search —
-  // otherwise selecting a suggestion would immediately fire a second search
-  // for the canonical display label, costing a request and risking stale
-  // suggestions when the user re-focuses the field.
-  useEffect(() => {
-    const trimmedQuery = birthCity.trim();
-    const minLength = getLocationQueryMinLength(trimmedQuery);
-    if (trimmedQuery.length < minLength) {
-      setCitySuggestions([]);
-      setIsSearchingCity(false);
-      return;
-    }
-    if (birthCoords.lat !== undefined) {
-      // The current value came from picking a suggestion; don't re-query.
-      setCitySuggestions([]);
-      setIsSearchingCity(false);
-      return;
-    }
-    setIsSearchingCity(true);
-    let cancelled = false;
-    const timer = setTimeout(async () => {
-      const results = await searchCitiesWithFallback(trimmedQuery, 5, language);
-      if (!cancelled) {
-        setCitySuggestions(results);
-        setIsSearchingCity(false);
-      }
-    }, 300);
-    return () => {
-      // Note: do NOT call setIsSearchingCity here — the component may be
-      // unmounting (React 18 warns on state updates during unmount). The
-      // cancelled flag prevents the in-flight resolution from setting it.
-      cancelled = true;
-      clearTimeout(timer);
-    };
-  }, [birthCity, birthCoords.lat, language]);
+  // Debounced city search + keyboard navigation + WAI-ARIA combobox wiring —
+  // delegated to the shared hook. Skip-search when birthCoords.lat is set
+  // means the input already matches the canonical label the user just picked,
+  // so we don't fire a redundant query for that exact label.
+  const citySearch = useCallback(
+    (q: string) => searchCitiesWithFallback(q, 5, language),
+    [language],
+  );
+  const handleCitySelect = useCallback(
+    (city: City) => {
+      const displayLabel = formatCityDisplay(city, language);
+      const coords = getCityCoordinates(city);
+      setBirthCity(displayLabel);
+      setBirthCoords({
+        lat: coords.lat,
+        lon: coords.lon,
+        timezone: coords.timezone,
+      });
+    },
+    [language],
+  );
+  const cityAutocomplete = useCityAutocomplete<City>({
+    query: birthCity,
+    search: citySearch,
+    onSelect: handleCitySelect,
+    minLength: getLocationQueryMinLength,
+    enabled: birthCoords.lat === undefined,
+    idPrefix: "bc-city",
+  });
+  const {
+    suggestions: citySuggestions,
+    isSearching: isSearchingCity,
+    isOpen: showCitySuggestions,
+    open: openCitySuggestions,
+    close: closeCitySuggestions,
+    selectIndex: selectCityIndex,
+    inputProps: cityInputProps,
+    listboxProps: cityListboxProps,
+    getOptionProps: getCityOptionProps,
+  } = cityAutocomplete;
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -231,7 +223,7 @@ const BirthChartSection: React.FC = () => {
       }
       setValidationError(null);
       setErrorKind(null);
-      setShowCitySuggestions(false);
+      closeCitySuggestions();
       setSubmitting(true);
 
       const accuracyLevel: AccuracyLevel = timeUnknown
@@ -488,34 +480,26 @@ const BirthChartSection: React.FC = () => {
               value={birthCity}
               onChange={(e) => {
                 setBirthCity(e.target.value);
-                setShowCitySuggestions(true);
+                openCitySuggestions();
                 // Free-typing invalidates a previously-picked coord set so we
                 // don't ship stale lat/lon for a different city.
                 setBirthCoords({});
               }}
-              onFocus={() => setShowCitySuggestions(true)}
-              onBlur={() =>
-                window.setTimeout(() => setShowCitySuggestions(false), 200)
-              }
+              onFocus={openCitySuggestions}
+              onBlur={() => window.setTimeout(closeCitySuggestions, 200)}
               placeholder={
                 landing.birth_chart_form_city_placeholder ||
                 "City, Country (e.g., New York, USA)"
               }
               className={`mt-2 ${inputClass}`}
               autoComplete="off"
-              role="combobox"
-              aria-expanded={showCitySuggestions}
-              aria-autocomplete="list"
-              aria-controls={
-                showCitySuggestions ? "bc-city-suggestions" : undefined
-              }
+              {...cityInputProps}
               aria-invalid={locationError || undefined}
               aria-describedby={locationError ? "bc-city-error" : undefined}
             />
             {showCitySuggestions && birthCity.trim() && (
               <div
-                id="bc-city-suggestions"
-                role="listbox"
+                {...cityListboxProps}
                 className={`absolute z-20 left-0 right-0 mt-1 rounded-xl border shadow-lg max-h-64 overflow-auto ${
                   isDark
                     ? "bg-space-900 border-gold-500/20"
@@ -529,35 +513,28 @@ const BirthChartSection: React.FC = () => {
                     {language === "zh" ? "搜索中…" : "Searching…"}
                   </div>
                 ) : citySuggestions.length > 0 ? (
-                  citySuggestions.map((city) => {
-                    const displayLabel = formatCityDisplay(city, language);
-                    const coords = getCityCoordinates(city);
+                  citySuggestions.map((city, index) => {
+                    const optionProps = getCityOptionProps(index);
                     const secondary =
                       city.province && city.province !== city.name
                         ? `${city.province}${city.country ? `, ${city.country}` : ""}`
                         : city.country || "";
+                    const isActive = optionProps["aria-selected"];
                     return (
                       <button
                         key={city.id}
                         type="button"
-                        role="option"
-                        aria-selected={false}
+                        {...optionProps}
                         onMouseDown={(ev) => {
                           // onMouseDown fires before the input's onBlur so we
                           // commit selection before the dropdown closes.
                           ev.preventDefault();
-                          setBirthCity(displayLabel);
-                          setBirthCoords({
-                            lat: coords.lat,
-                            lon: coords.lon,
-                            timezone: coords.timezone,
-                          });
-                          setShowCitySuggestions(false);
+                          selectCityIndex(index);
                         }}
                         className={`w-full text-left px-4 py-3 transition-colors ${
                           isDark
-                            ? "hover:bg-space-800 text-star-50"
-                            : "hover:bg-paper-200 text-paper-900"
+                            ? `text-star-50 ${isActive ? "bg-space-800" : "hover:bg-space-800"}`
+                            : `text-paper-900 ${isActive ? "bg-paper-200" : "hover:bg-paper-200"}`
                         }`}
                       >
                         <span className="block font-medium">
