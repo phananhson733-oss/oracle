@@ -924,6 +924,13 @@ export interface WikiHomeContent {
 export interface WikiHomeResponse {
   lang: Language;
   content: WikiHomeContent;
+  /**
+   * Set to `true` when the AI provider was unreachable and the response is
+   * served from the static fallback (still safe to render — daily_transit /
+   * daily_wisdom carry generic copy, not personalised). Absent on the happy
+   * path. Frontend may surface a soft "today's reading is on its way" pill.
+   */
+  degraded?: boolean;
 }
 
 export interface WikiItemsResponse {

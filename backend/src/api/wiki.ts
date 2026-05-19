@@ -180,11 +180,13 @@ const sendWithCaching = (
 ): void => {
   const etag = computeWeakEtag(body);
   res.setHeader("Cache-Control", cacheControl);
-  res.setHeader("ETag", etag);
-  const ifNoneMatch = req.headers["if-none-match"];
-  if (typeof ifNoneMatch === "string" && ifNoneMatch === etag) {
-    res.status(304).end();
-    return;
+  if (cacheControl !== "no-store") {
+    res.setHeader("ETag", etag);
+    const ifNoneMatch = req.headers["if-none-match"];
+    if (typeof ifNoneMatch === "string" && ifNoneMatch === etag) {
+      res.status(304).end();
+      return;
+    }
   }
   res.json(body);
 };
@@ -259,6 +261,68 @@ const buildClassicReason = (
   return lang === "en" ? "Related classic" : "相关经典";
 };
 
+// Static fallback used when AI is unavailable. Keeps /home returning 200 with
+// renderable content (pillars + trending_tags are static anyway; daily_transit
+// and daily_wisdom get generic copy) so the landing page WikiHubSection doesn't
+// hard-error. `degraded: true` lets the client surface a soft notice without
+// blocking render.
+const buildStaticDailyTransit = (
+  lang: Language,
+  date: string,
+): WikiDailyTransit =>
+  lang === "en"
+    ? {
+        date,
+        highlight: "Today's reading is on its way.",
+        title: "Today's reading is on its way.",
+        summary:
+          "The cosmic weather feed is briefly unavailable. The planets are still moving — check back in a few minutes.",
+        energy_level: 5,
+        guidance: [],
+      }
+    : {
+        date,
+        highlight: "今日解读马上回来。",
+        title: "今日解读马上回来。",
+        summary: "宇宙天气数据暂时离线。行星仍在运行，请稍后再试。",
+        energy_level: 5,
+        guidance: [],
+      };
+
+const STATIC_DAILY_WISDOM_FALLBACK: Record<Language, WikiDailyWisdom> = {
+  en: {
+    quote:
+      "We are not the same persons this year as last; nor are those we love.",
+    author: "W. Somerset Maugham",
+    source: "The Razor's Edge",
+    interpretation:
+      "A reminder that change is the baseline, not the exception — both for you and for the people you orbit.",
+  },
+  zh: {
+    quote: "今年的我们与去年不同，所爱之人亦如是。",
+    author: "毛姆",
+    source: "《刀锋》",
+    interpretation: "提醒我们：改变才是常态，无论是自己还是身边的人。",
+  },
+};
+
+const buildStaticHomeFallback = (
+  lang: Language,
+  date: string,
+): WikiHomeResponse => {
+  const staticContent = getWikiStaticContent(lang);
+  return {
+    lang,
+    content: {
+      pillars: staticContent.pillars,
+      daily_transit: buildStaticDailyTransit(lang, date),
+      daily_wisdom: STATIC_DAILY_WISDOM_FALLBACK[lang],
+      trending_tags: staticContent.trending_tags,
+    },
+    degraded: true,
+  };
+};
+
 // GET /api/wiki/home - wiki 首页聚合内容
 wikiRouter.get("/home", async (req, res) => {
   try {
@@ -325,7 +389,18 @@ wikiRouter.get("/home", async (req, res) => {
     sendWithCaching(req, res, payload, HOME_CACHE_CONTROL);
   } catch (error) {
     if (error instanceof AIUnavailableError) {
-      res.status(503).json({ error: "AI unavailable", reason: error.reason });
+      // Soft-fail to a static fallback instead of 503. The landing page wiki
+      // hub treats /home as load-bearing — a hard 503 leaves a broken module
+      // for every visitor while the AI is degraded. The fallback uses
+      // generic copy + the same static pillars/trending_tags so the section
+      // still renders. `degraded: true` lets the client surface a soft
+      // notice. We intentionally do NOT cache this response (TTL=0
+      // semantics via skipping cacheService.set) so as soon as the AI is
+      // back, the next request gets a real payload.
+      const lang = resolveLang(req.query.lang);
+      const date = resolveToday(req.query.date);
+      const fallback = buildStaticHomeFallback(lang, date);
+      sendWithCaching(req, res, fallback, "no-store");
       return;
     }
     res.status(500).json({ error: (error as Error).message });

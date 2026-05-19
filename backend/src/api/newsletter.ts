@@ -51,6 +51,46 @@ const newsletterLimiter = rateLimit({
   },
 });
 
+// Sticky IP blocklist for honeypot trips. The existing limiter caps total
+// requests at 5/hour, but a bot that hits the honeypot still has 4 free
+// retries to vary the email and slip through. Once an IP is recorded as
+// having tripped the honeypot, every subsequent request from that IP for
+// HONEYPOT_BLOCK_MS is silently dropped (still 200 success, just like the
+// honeypot itself, so bots get no signal that the IP is burned).
+// Per-process Map — horizontal scale would need Redis; acceptable trade
+// because the limiter already caps damage and the blocklist is a defense-
+// in-depth layer, not the primary control.
+const HONEYPOT_BLOCK_MS = 60 * 60 * 1000; // 1 hour
+// NOTE: This Map lives in process memory. On Vercel serverless, each cold
+// start drops the blocklist. In practice that means honeypot trips block a
+// bot for "until next cold start" (seconds to minutes), not the documented
+// HONEYPOT_BLOCK_MS. This is intentionally best-effort defense — the primary
+// control is express-rate-limit (5/h/IP). For a horizontally-scaled durable
+// blocklist, swap this Map for cacheService.set(`newsletter:blocked:${ip}`,
+// 1, HONEYPOT_BLOCK_MS / 1000) which would use Redis.
+const honeypotBlockedIps = new Map<string, number>(); // ip → expiry ms
+
+const isIpBlocked = (ip: string): boolean => {
+  const expiry = honeypotBlockedIps.get(ip);
+  if (!expiry) return false;
+  if (Date.now() >= expiry) {
+    honeypotBlockedIps.delete(ip);
+    return false;
+  }
+  return true;
+};
+
+const blockIp = (ip: string): void => {
+  honeypotBlockedIps.set(ip, Date.now() + HONEYPOT_BLOCK_MS);
+};
+
+// Exported for tests so the suite can reset state between specs without
+// reaching into module internals via vi.resetModules() each time.
+export const __honeypotTest__ = {
+  clear: () => honeypotBlockedIps.clear(),
+  size: () => honeypotBlockedIps.size,
+};
+
 // Conservative email regex: requires local@domain.tld with at least one dot
 // in the domain. Intentionally not RFC 5322 strict — we just reject obvious
 // garbage on the API edge; deliverability is a separate concern (handled
@@ -81,11 +121,26 @@ newsletterRouter.post(
     res: Response<NewsletterSuccessResponse | NewsletterErrorResponse>,
   ) => {
     const { email, website } = req.body ?? {};
+    // req.ip resolves correctly because index.ts sets `trust proxy: 1` for
+    // Vercel's single proxy hop; falls back to an empty string only when no
+    // proxy header is present (curl from localhost in dev).
+    const clientIp = (req.ip || req.socket?.remoteAddress || "").toString();
+
+    // If this IP previously tripped the honeypot, every follow-up request
+    // within the blocklist TTL gets the same silent 200 (no signal to the
+    // bot that the IP is burned). Limiter alone allows 5 retries per hour
+    // post-trip; with the blocklist, the trip cost is 1 attempt.
+    if (clientIp && isIpBlocked(clientIp)) {
+      return res.status(200).json({ success: true });
+    }
 
     // Honeypot: real users never see/fill this field. Bots that auto-fill
     // every input will populate it. Silently return success so they don't
-    // learn the trap exists — but skip the DB write entirely.
+    // learn the trap exists — but skip the DB write entirely AND blocklist
+    // the IP for HONEYPOT_BLOCK_MS so the bot can't retry under a different
+    // email/payload.
     if (typeof website === "string" && website.trim() !== "") {
+      if (clientIp) blockIp(clientIp);
       return res.status(200).json({ success: true });
     }
 

@@ -148,4 +148,37 @@ describe("/api/newsletter", () => {
     expect(limited.status).toBe(429);
     expect(limited.body.code).toBe("rate_limited");
   });
+
+  it("blocklists the IP for an hour after a honeypot trip — subsequent retries silently 200 with no DB write", async () => {
+    // After hitting the honeypot, a bot has 4 retries left under the 5/hour
+    // limiter to try a different email. The sticky blocklist must drop those
+    // silently (still 200, no DB write) so the bot can't slip through.
+    mockInsert.mockResolvedValue({ error: null });
+    const { __honeypotTest__ } = await import("./newsletter.js");
+    __honeypotTest__.clear();
+
+    const app = await createTestApp();
+    const { default: supertest } = await import("supertest");
+    const agent = supertest(app);
+
+    // Trip the honeypot.
+    const trip = await agent
+      .post("/api/newsletter")
+      .set("Content-Type", "application/json")
+      .send({ email: "bot@example.com", website: "spam-link" });
+    expect(trip.status).toBe(200);
+    expect(mockInsert).not.toHaveBeenCalled();
+
+    // Same IP, clean payload (no honeypot field) — must still be silently
+    // dropped to 200 with no DB write, because the IP is now blocklisted.
+    const retry = await agent
+      .post("/api/newsletter")
+      .set("Content-Type", "application/json")
+      .send({ email: "follow-up@example.com" });
+    expect(retry.status).toBe(200);
+    expect(retry.body).toEqual({ success: true });
+    expect(mockInsert).not.toHaveBeenCalled();
+
+    __honeypotTest__.clear();
+  });
 });
