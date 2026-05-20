@@ -148,27 +148,9 @@ const LandingPage: React.FC = () => {
           "modern astrology",
         ];
 
-  const webSiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "AstrologyWiki",
-    url: `${siteUrl}/`,
-    inLanguage: lang,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
-  };
-
-  // Organization schema — establishes the brand entity for Knowledge Graph.
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "AstrologyWiki",
-    url: `${siteUrl}/`,
-    logo: `${siteUrl}/icon-192.png`,
-  };
+  // NOTE: Organization + WebSite schemas are owned by <GlobalSchema /> in
+  // App.tsx — emitted once for the whole SPA so they don't duplicate per
+  // route. Landing only emits page-specific schemas below.
 
   // SoftwareApplication schema — describes the calculator suite as a free
   // web app. Helps eligibility for AI Overviews / rich results that index
@@ -286,7 +268,7 @@ const LandingPage: React.FC = () => {
         keywords={seoKeywords}
         url={canonicalUrl}
         alternateLanguages={alternateLanguages}
-        schema={[webSiteSchema, organizationSchema, softwareSchema, faqSchema]}
+        schema={[softwareSchema, faqSchema]}
         type="website"
         robots={isIndexedRoute ? "index,follow" : "noindex,nofollow"}
       />
