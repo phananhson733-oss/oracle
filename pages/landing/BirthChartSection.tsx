@@ -11,7 +11,14 @@
 // POS: Below-the-fold landing section for /landing-v2 (anchor id="birth-chart-tool").
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { Suspense, lazy, useCallback, useMemo, useState } from "react";
+import React, {
+  Suspense,
+  lazy,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { useLangPath } from "../../hooks/useLangPath";
@@ -82,20 +89,6 @@ const daysInMonth = (year: number, monthIndex: number): number => {
   return new Date(year, monthIndex + 1, 0).getDate();
 };
 
-// Parse an ISO YYYY-MM-DD into {year, month1to12, day}. Returns nulls when the
-// string is empty or malformed so the three <select>s render as "unselected".
-const parseIsoDate = (
-  iso: string,
-): { year: number | null; month: number | null; day: number | null } => {
-  if (!iso) return { year: null, month: null, day: null };
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
-  if (!m) return { year: null, month: null, day: null };
-  return {
-    year: Number(m[1]),
-    month: Number(m[2]),
-    day: Number(m[3]),
-  };
-};
 const findPosition = (
   positions: PlanetPosition[] | undefined,
   ...names: string[]
@@ -204,7 +197,15 @@ const BirthChartSection: React.FC = () => {
   const isDark = theme === "dark";
 
   const [name, setName] = useState("");
-  const [birthDate, setBirthDate] = useState("");
+  // BC01: each date part owns its own state. The composed YYYY-MM-DD lives in
+  // `birthDate` (useMemo below) and is the wire format for submit/prefill.
+  // A prior version derived parts from a single `birthDate` string, which
+  // meant any handler that ran while another part was still unselected would
+  // recompose to "" and silently reset all three selects — making the form
+  // impossible to complete.
+  const [birthYear, setBirthYear] = useState<number | null>(null);
+  const [birthMonth, setBirthMonth] = useState<number | null>(null);
+  const [birthDay, setBirthDay] = useState<number | null>(null);
   const [birthTime, setBirthTime] = useState("");
   const [timeUnknown, setTimeUnknown] = useState(false);
   const [birthCity, setBirthCity] = useState("");
@@ -235,67 +236,52 @@ const BirthChartSection: React.FC = () => {
     return Array.from({ length: span }, (_, i) => currentYear - i);
   }, []);
 
-  // Derived parts of the currently-selected birthDate (YYYY-MM-DD). When the
-  // user hasn't picked anything yet these are null and the selects render an
-  // empty placeholder option.
-  const birthDateParts = useMemo(() => parseIsoDate(birthDate), [birthDate]);
-
-  // Day options depend on the currently-selected month + year (Feb 29 only in
-  // leap years; 30 vs 31 day months). When either is missing we fall back to
-  // 31 days so the user can still pick a day before selecting month/year.
+  // Day options track the selected month + year (Feb 29 only in leap years,
+  // 30 vs 31 day months). When either is missing we fall back to 31 so the
+  // user can still pick a day before completing the month/year selection;
+  // composeBirthDate clamps on submit and the effect below clamps live.
   const dayOptions = useMemo<number[]>(() => {
-    const refYear = birthDateParts.year ?? new Date().getFullYear();
-    const refMonthIdx =
-      birthDateParts.month !== null ? birthDateParts.month - 1 : 0;
     const max =
-      birthDateParts.year !== null && birthDateParts.month !== null
-        ? daysInMonth(refYear, refMonthIdx)
+      birthYear !== null && birthMonth !== null
+        ? daysInMonth(birthYear, birthMonth - 1)
         : 31;
     return Array.from({ length: max }, (_, i) => i + 1);
-  }, [birthDateParts.year, birthDateParts.month]);
+  }, [birthYear, birthMonth]);
 
-  // Compose a YYYY-MM-DD ISO string from year/month/day, clamping the day so
-  // changing month/year never produces an invalid date like 2024-02-31. When
-  // any part is missing, returns "" (which is the unselected sentinel used
-  // throughout the submit handler / onboarding prefill).
-  const composeBirthDate = useCallback(
-    (year: number | null, month: number | null, day: number | null): string => {
-      if (year === null || month === null || day === null) return "";
-      const clampedDay = Math.min(day, daysInMonth(year, month - 1));
-      return `${year}-${pad2(month)}-${pad2(clampedDay)}`;
-    },
-    [],
-  );
+  // Clamp the day when the user changes month/year into a shorter month
+  // (e.g. picked Feb 29 in a leap year, then switched to a non-leap year).
+  // The clamp updates state so the <select> value matches what we'd submit.
+  useEffect(() => {
+    if (birthYear === null || birthMonth === null || birthDay === null) return;
+    const maxDay = daysInMonth(birthYear, birthMonth - 1);
+    if (birthDay > maxDay) setBirthDay(maxDay);
+  }, [birthYear, birthMonth, birthDay]);
 
-  const handleYearChange = useCallback(
-    (raw: string) => {
-      const next = raw ? Number(raw) : null;
-      setBirthDate(
-        composeBirthDate(next, birthDateParts.month, birthDateParts.day),
-      );
-    },
-    [composeBirthDate, birthDateParts.month, birthDateParts.day],
-  );
+  // Derived ISO YYYY-MM-DD for downstream consumers (submit, onboarding
+  // prefill). Empty string when any part is unselected — matches the prior
+  // sentinel so the existing `!birthDate` validation paths still work.
+  const birthDate = useMemo(() => {
+    if (birthYear === null || birthMonth === null || birthDay === null) {
+      return "";
+    }
+    const clampedDay = Math.min(
+      birthDay,
+      daysInMonth(birthYear, birthMonth - 1),
+    );
+    return `${birthYear}-${pad2(birthMonth)}-${pad2(clampedDay)}`;
+  }, [birthYear, birthMonth, birthDay]);
 
-  const handleMonthChange = useCallback(
-    (raw: string) => {
-      const next = raw ? Number(raw) : null;
-      setBirthDate(
-        composeBirthDate(birthDateParts.year, next, birthDateParts.day),
-      );
-    },
-    [composeBirthDate, birthDateParts.year, birthDateParts.day],
-  );
+  const handleYearChange = useCallback((raw: string) => {
+    setBirthYear(raw ? Number(raw) : null);
+  }, []);
 
-  const handleDayChange = useCallback(
-    (raw: string) => {
-      const next = raw ? Number(raw) : null;
-      setBirthDate(
-        composeBirthDate(birthDateParts.year, birthDateParts.month, next),
-      );
-    },
-    [composeBirthDate, birthDateParts.year, birthDateParts.month],
-  );
+  const handleMonthChange = useCallback((raw: string) => {
+    setBirthMonth(raw ? Number(raw) : null);
+  }, []);
+
+  const handleDayChange = useCallback((raw: string) => {
+    setBirthDay(raw ? Number(raw) : null);
+  }, []);
 
   // Debounced city search + keyboard navigation + WAI-ARIA combobox wiring —
   // delegated to the shared hook. Skip-search when birthCoords.lat is set
@@ -594,11 +580,7 @@ const BirthChartSection: React.FC = () => {
               <select
                 id="bc-date-month"
                 required
-                value={
-                  birthDateParts.month !== null
-                    ? String(birthDateParts.month)
-                    : ""
-                }
+                value={birthMonth !== null ? String(birthMonth) : ""}
                 onChange={(e) => handleMonthChange(e.target.value)}
                 aria-label={tLanding(
                   "birth_chart_form_date_month_label",
@@ -624,9 +606,7 @@ const BirthChartSection: React.FC = () => {
               <select
                 id="bc-date-day"
                 required
-                value={
-                  birthDateParts.day !== null ? String(birthDateParts.day) : ""
-                }
+                value={birthDay !== null ? String(birthDay) : ""}
                 onChange={(e) => handleDayChange(e.target.value)}
                 aria-label={tLanding("birth_chart_form_date_day_label", "Day")}
                 className={inputClass}
@@ -643,11 +623,7 @@ const BirthChartSection: React.FC = () => {
               <select
                 id="bc-date-year"
                 required
-                value={
-                  birthDateParts.year !== null
-                    ? String(birthDateParts.year)
-                    : ""
-                }
+                value={birthYear !== null ? String(birthYear) : ""}
                 onChange={(e) => handleYearChange(e.target.value)}
                 aria-label={tLanding(
                   "birth_chart_form_date_year_label",
