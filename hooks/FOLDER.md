@@ -16,8 +16,10 @@
 - useScrollToBirthChart.ts｜地位：landing CTA 收敛 hook｜功能：所有高意图 CTA 统一滚动到 BirthChart anchor，处理 lazy chunk 未挂载的 race（1.5s polling），超时才 fallback 到 /onboarding。
 - useCityAutocomplete.ts｜地位：通用城市自动补全 hook｜功能：debounced 搜索 + 键盘导航 (Arrow/Enter/Esc/Home/End) + WAI-ARIA combobox/listbox/option a11y props，泛型支持 City 与 GeoResult，5 个调用点共用。
 - useCityAutocomplete.test.ts｜地位：纯函数单测｜功能：覆盖 nextActiveIndex 键盘 reducer 的所有路径（边界 / wrap / 空列表 / Home / End）。
+- useTodaySky.ts｜地位：landing today-sky 数据钩子｜功能：封装 fetchTodaySky 调用，模块级 promise 缓存去重 Hero 与 CosmicWeather 的并发首次挂载，返回 { data, loading, hasError, reload }；FINDING-H01 Hero 右半区数据来源。
 
 近期更新
+- 新增 useTodaySky 钩子，模块级 promise 缓存让 Hero 右半区编辑卡 (HeroTodayCard) 与 CosmicWeatherSection 共享 /api/astro/today 请求，FINDING-H01 修复。
 - 新增 useAnalytics 钩子，补齐滚动深度与外链点击追踪能力。
 - 新增 useScrollToBirthChart 钩子，收敛 landing-v2 五个 section CTA（Hero/CosmicWeather/Tools/Synastry/AskOracle）的导航，消除 ProtectedRedirect bait-and-switch 与 lazy-mount race。
 - 新增 useCityAutocomplete 钩子（PR #23），统一 OnboardingPage / landing BirthChartSection / SynastryPage (×2) / SaturnReturnCalculator 五处城市搜索的 debounce + 键盘导航 + WAI-ARIA combobox 实现，修 #85 keyboard a11y 阻塞。

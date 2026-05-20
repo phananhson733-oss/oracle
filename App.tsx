@@ -563,7 +563,7 @@ const AppContent: React.FC = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap ${isActive ? "text-gold-500" : "opacity-70"}`}
+                    className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap py-3.5 -my-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded ${isActive ? "text-gold-500" : "opacity-70"}`}
                   >
                     {link.label}
                   </Link>
@@ -574,13 +574,13 @@ const AppContent: React.FC = () => {
               <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
               <button
                 onClick={toggleTheme}
-                className="hidden md:flex w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0"
+                className="hidden md:flex relative w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
               >
                 {theme === "dark" ? "☀" : "☾"}
               </button>
               <button
                 onClick={toggleLanguage}
-                className="hidden md:flex w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0"
+                className="hidden md:flex relative w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
               >
                 {language === "zh" ? "EN" : "中"}
               </button>
@@ -599,13 +599,13 @@ const AppContent: React.FC = () => {
         <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
           <button
             onClick={toggleTheme}
-            className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
+            className={`relative w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
           >
             {theme === "dark" ? "☀" : "☾"}
           </button>
           <button
             onClick={toggleLanguage}
-            className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg text-xs font-bold ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
+            className={`relative w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg text-xs font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
           >
             {language === "zh" ? "EN" : "中"}
           </button>

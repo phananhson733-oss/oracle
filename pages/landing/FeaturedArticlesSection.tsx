@@ -1,6 +1,7 @@
 // INPUT: i18n translations, theme/language context, static article summaries from data/articles.
-// OUTPUT: Editorial 4-card grid of in-depth Wiki articles + "Browse all" CTA — pure SSR-friendly HTML
-//         so Google / GEO surfaces can crawl titles, descriptions, and internal links without JS.
+// OUTPUT: Editorial 4-card grid of in-depth Wiki articles + "Browse all" CTA + per-card hashtag
+//         Links (to /wiki?tab=articles&tag=…) — pure SSR-friendly HTML so Google / GEO surfaces
+//         can crawl titles, descriptions, internal article links, and tag pivots without JS.
 // POS: Below-the-fold landing section for /landing-v2 (anchor id="featured-articles").
 //      Landing positioning is SEO/GEO keyword entry — this section is mandatory content surface,
 //      not optional decoration. See memory/project_landing_seo_geo_positioning.md.
@@ -36,6 +37,15 @@ const FeaturedArticlesSection: React.FC = () => {
       article_slug: slug,
       position,
       location: "landing_v2_featured_articles",
+    });
+  };
+
+  const handleTagClick = (tag: string, articleSlug: string) => {
+    // Categorical fields only — no full-title PII, no user input. Tag and
+    // article slug are safe to ship per CLAUDE.md §隐私红线 #1.
+    trackEvent("landing_article_tag_clicked", {
+      tag,
+      article_id: articleSlug,
     });
   };
 
@@ -92,10 +102,8 @@ const FeaturedArticlesSection: React.FC = () => {
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {articles.map((article: WikiArticleSummary, idx: number) => (
-            <Link
+            <article
               key={article.slug}
-              to={langPath(`/wiki/${article.slug}`)}
-              onClick={() => handleArticleClick(article.slug, idx)}
               className={`group flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-xl ${
                 isDark
                   ? "border-gold-500/15 bg-space-900/40"
@@ -103,11 +111,17 @@ const FeaturedArticlesSection: React.FC = () => {
               }`}
             >
               <h3
-                className={`font-serif text-xl leading-snug ${
+                className={`font-serif font-semibold text-xl leading-snug ${
                   isDark ? "text-star-50" : "text-paper-900"
-                } group-hover:text-accent transition-colors`}
+                }`}
               >
-                {article.title}
+                <Link
+                  to={langPath(`/wiki/${article.slug}`)}
+                  onClick={() => handleArticleClick(article.slug, idx)}
+                  className="rounded-sm outline-none transition-colors group-hover:text-accent focus-visible:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                >
+                  {article.title}
+                </Link>
               </h3>
               <p
                 className={`mt-3 text-sm leading-relaxed line-clamp-3 ${
@@ -119,21 +133,31 @@ const FeaturedArticlesSection: React.FC = () => {
               {article.keywords && article.keywords.length > 0 ? (
                 <div className="mt-4 flex flex-wrap gap-x-2 gap-y-1">
                   {article.keywords.slice(0, 3).map((kw) => (
-                    <span
+                    <Link
                       key={`${article.slug}-${kw}`}
-                      className={`text-xs ${
+                      to={`/${language}/wiki?tab=articles&tag=${encodeURIComponent(kw)}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleTagClick(kw, article.slug);
+                      }}
+                      className={`cursor-pointer rounded-sm text-xs outline-none transition-colors hover:text-accent focus-visible:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
                         isDark ? "text-star-400" : "text-paper-500"
                       }`}
                     >
                       #{kw}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               ) : null}
-              <span className="mt-auto pt-6 text-sm text-accent">
+              <Link
+                to={langPath(`/wiki/${article.slug}`)}
+                onClick={() => handleArticleClick(article.slug, idx)}
+                className="mt-auto pt-6 text-sm text-accent rounded-sm outline-none transition-colors hover:underline focus-visible:underline focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                aria-label={`${readMore}: ${article.title}`}
+              >
                 {readMore} <span aria-hidden="true">→</span>
-              </span>
-            </Link>
+              </Link>
+            </article>
           ))}
         </div>
 

@@ -174,6 +174,9 @@ const NewsletterSection: React.FC = () => {
             }`}
           >
             {landing.newsletter_button || "Subscribe"}
+            <span aria-hidden="true" className="ml-2">
+              →
+            </span>
           </button>
         </form>
 

@@ -1,9 +1,13 @@
 // INPUT: i18n translations, theme context, router navigation; ephemeral form state (name/date/time/city)
-//        feeding services/apiClient.fetchNatalChart() and components/AstroChart.
+//        feeding services/apiClient.fetchNatalChart() and components/AstroChart. Birth date is composed
+//        from three locale-stable <select>s (Month / Day / Year) to avoid native date-picker OS-locale
+//        placeholder leaks (e.g. macOS rendering "年/月/日" on an English page).
 // OUTPUT: Inline anonymous Birth Chart tool. Renders a form, calls /api/natal/chart on submit, then
 //         reveals an AstroChart visualization + three highlight cards (Sun/Moon/Rising) and a CTA
 //         that converts to the /onboarding signup flow. No persistence — all state held in component
 //         memory only; nothing written to localStorage or remote storage until the user signs up.
+//         birthDate retains the exact YYYY-MM-DD shape forwarded to fetchNatalChart() and onboarding
+//         prefill, so callers downstream are unchanged.
 // POS: Below-the-fold landing section for /landing-v2 (anchor id="birth-chart-tool").
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -49,7 +53,49 @@ const SIGN_GLYPHS: Record<string, string> = Object.fromEntries(
   Object.entries(TECH_DATA.SIGNS).map(([n, m]) => [n, m.glyph]),
 );
 
-const todayIso = () => new Date().toISOString().slice(0, 10);
+// English month fallbacks. Kept locale-stable here so the picker never renders
+// the visitor OS locale (e.g. macOS would otherwise inject 年/月/日 placeholder
+// text into a native <input type="date"> on an English landing page).
+// Translation keys for these labels are listed in CLAUDE.md / BC01 follow-up;
+// constants.ts may later supply localized strings via t.landing.month_*.
+const MONTH_NAMES_EN: readonly string[] = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+] as const;
+
+const pad2 = (n: number) => String(n).padStart(2, "0");
+
+// Days-in-month for given (year, monthIndex 0-11). Handles Gregorian leap years.
+const daysInMonth = (year: number, monthIndex: number): number => {
+  if (!Number.isFinite(year) || !Number.isFinite(monthIndex)) return 31;
+  // Date(y, m+1, 0) -> last day of month m. Works for any month including Feb.
+  return new Date(year, monthIndex + 1, 0).getDate();
+};
+
+// Parse an ISO YYYY-MM-DD into {year, month1to12, day}. Returns nulls when the
+// string is empty or malformed so the three <select>s render as "unselected".
+const parseIsoDate = (
+  iso: string,
+): { year: number | null; month: number | null; day: number | null } => {
+  if (!iso) return { year: null, month: null, day: null };
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return { year: null, month: null, day: null };
+  return {
+    year: Number(m[1]),
+    month: Number(m[2]),
+    day: Number(m[3]),
+  };
+};
 const findPosition = (
   positions: PlanetPosition[] | undefined,
   ...names: string[]
@@ -136,6 +182,25 @@ const BirthChartSection: React.FC = () => {
   const navigate = useNavigate();
   const { langPath } = useLangPath();
   const landing = t.landing;
+  // Safe optional-key lookup. Looks in t.landing first, then falls back to
+  // the top-level translation namespace (so shared keys like month_jan…month_dec
+  // are reused without duplicating them under landing.*).
+  const tLanding = useCallback(
+    (key: string, fallback: string): string => {
+      const landingRecord = landing as unknown as Record<string, unknown>;
+      const landingValue = landingRecord[key];
+      if (typeof landingValue === "string" && landingValue.length > 0) {
+        return landingValue;
+      }
+      const topLevel = t as unknown as Record<string, unknown>;
+      const topValue = topLevel[key];
+      if (typeof topValue === "string" && topValue.length > 0) {
+        return topValue;
+      }
+      return fallback;
+    },
+    [landing, t],
+  );
   const isDark = theme === "dark";
 
   const [name, setName] = useState("");
@@ -159,7 +224,78 @@ const BirthChartSection: React.FC = () => {
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [facts, setFacts] = useState<NatalFacts | null>(null);
 
-  const maxDate = useMemo(() => todayIso(), []);
+  // Year range for the year <select>. We cap min at 1900 (Swiss Ephemeris
+  // accuracy degrades earlier and few living users need it) and max at the
+  // current year. Rendered newest-first so the common case (recent birth
+  // years) is reachable without long scrolls.
+  const yearOptions = useMemo<number[]>(() => {
+    const currentYear = new Date().getFullYear();
+    const minYear = 1900;
+    const span = currentYear - minYear + 1;
+    return Array.from({ length: span }, (_, i) => currentYear - i);
+  }, []);
+
+  // Derived parts of the currently-selected birthDate (YYYY-MM-DD). When the
+  // user hasn't picked anything yet these are null and the selects render an
+  // empty placeholder option.
+  const birthDateParts = useMemo(() => parseIsoDate(birthDate), [birthDate]);
+
+  // Day options depend on the currently-selected month + year (Feb 29 only in
+  // leap years; 30 vs 31 day months). When either is missing we fall back to
+  // 31 days so the user can still pick a day before selecting month/year.
+  const dayOptions = useMemo<number[]>(() => {
+    const refYear = birthDateParts.year ?? new Date().getFullYear();
+    const refMonthIdx =
+      birthDateParts.month !== null ? birthDateParts.month - 1 : 0;
+    const max =
+      birthDateParts.year !== null && birthDateParts.month !== null
+        ? daysInMonth(refYear, refMonthIdx)
+        : 31;
+    return Array.from({ length: max }, (_, i) => i + 1);
+  }, [birthDateParts.year, birthDateParts.month]);
+
+  // Compose a YYYY-MM-DD ISO string from year/month/day, clamping the day so
+  // changing month/year never produces an invalid date like 2024-02-31. When
+  // any part is missing, returns "" (which is the unselected sentinel used
+  // throughout the submit handler / onboarding prefill).
+  const composeBirthDate = useCallback(
+    (year: number | null, month: number | null, day: number | null): string => {
+      if (year === null || month === null || day === null) return "";
+      const clampedDay = Math.min(day, daysInMonth(year, month - 1));
+      return `${year}-${pad2(month)}-${pad2(clampedDay)}`;
+    },
+    [],
+  );
+
+  const handleYearChange = useCallback(
+    (raw: string) => {
+      const next = raw ? Number(raw) : null;
+      setBirthDate(
+        composeBirthDate(next, birthDateParts.month, birthDateParts.day),
+      );
+    },
+    [composeBirthDate, birthDateParts.month, birthDateParts.day],
+  );
+
+  const handleMonthChange = useCallback(
+    (raw: string) => {
+      const next = raw ? Number(raw) : null;
+      setBirthDate(
+        composeBirthDate(birthDateParts.year, next, birthDateParts.day),
+      );
+    },
+    [composeBirthDate, birthDateParts.year, birthDateParts.day],
+  );
+
+  const handleDayChange = useCallback(
+    (raw: string) => {
+      const next = raw ? Number(raw) : null;
+      setBirthDate(
+        composeBirthDate(birthDateParts.year, birthDateParts.month, next),
+      );
+    },
+    [composeBirthDate, birthDateParts.year, birthDateParts.month],
+  );
 
   // Debounced city search + keyboard navigation + WAI-ARIA combobox wiring —
   // delegated to the shared hook. Skip-search when birthCoords.lat is set
@@ -437,18 +573,98 @@ const BirthChartSection: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="bc-date" className={labelClass}>
+            <label htmlFor="bc-date-month" className={labelClass}>
               {landing.birth_chart_form_date_label || "Birth date"}
             </label>
-            <input
-              id="bc-date"
-              type="date"
-              required
-              max={maxDate}
-              value={birthDate}
-              onChange={(e) => setBirthDate(e.target.value)}
-              className={`mt-2 ${inputClass}`}
-            />
+            {/*
+              Three locale-stable <select>s replace <input type="date"> so the
+              page's i18n (not the OS locale) drives placeholder + option text.
+              "No future dates" is enforced implicitly: yearOptions caps at the
+              current year and composeBirthDate clamps day-of-month per the
+              selected month/year. aria-labels use landing.* keys with English
+              fallbacks so screen readers announce each part.
+              TODO(temporary): apply same fix to authenticated Onboarding +
+              Synastry birth-date inputs (BC01 follow-up).
+            */}
+            <div
+              className="mt-2 grid grid-cols-[1.4fr_1fr_1fr] gap-2"
+              role="group"
+              aria-label={landing.birth_chart_form_date_label || "Birth date"}
+            >
+              <select
+                id="bc-date-month"
+                required
+                value={
+                  birthDateParts.month !== null
+                    ? String(birthDateParts.month)
+                    : ""
+                }
+                onChange={(e) => handleMonthChange(e.target.value)}
+                aria-label={tLanding(
+                  "birth_chart_form_date_month_label",
+                  "Month",
+                )}
+                className={inputClass}
+              >
+                <option value="" disabled>
+                  {tLanding("birth_chart_form_date_month_placeholder", "Month")}
+                </option>
+                {MONTH_NAMES_EN.map((monthName, idx) => {
+                  const monthNum = idx + 1;
+                  const localizedKey = `month_${monthName
+                    .slice(0, 3)
+                    .toLowerCase()}`;
+                  return (
+                    <option key={monthNum} value={String(monthNum)}>
+                      {tLanding(localizedKey, monthName)}
+                    </option>
+                  );
+                })}
+              </select>
+              <select
+                id="bc-date-day"
+                required
+                value={
+                  birthDateParts.day !== null ? String(birthDateParts.day) : ""
+                }
+                onChange={(e) => handleDayChange(e.target.value)}
+                aria-label={tLanding("birth_chart_form_date_day_label", "Day")}
+                className={inputClass}
+              >
+                <option value="" disabled>
+                  {tLanding("birth_chart_form_date_day_placeholder", "Day")}
+                </option>
+                {dayOptions.map((d) => (
+                  <option key={d} value={String(d)}>
+                    {d}
+                  </option>
+                ))}
+              </select>
+              <select
+                id="bc-date-year"
+                required
+                value={
+                  birthDateParts.year !== null
+                    ? String(birthDateParts.year)
+                    : ""
+                }
+                onChange={(e) => handleYearChange(e.target.value)}
+                aria-label={tLanding(
+                  "birth_chart_form_date_year_label",
+                  "Year",
+                )}
+                className={inputClass}
+              >
+                <option value="" disabled>
+                  {tLanding("birth_chart_form_date_year_placeholder", "Year")}
+                </option>
+                {yearOptions.map((y) => (
+                  <option key={y} value={String(y)}>
+                    {y}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           <div>

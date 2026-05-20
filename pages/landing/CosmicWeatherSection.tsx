@@ -1,19 +1,19 @@
-// INPUT: i18n translations, today's sky API client, planet glyph lookup.
+// INPUT: i18n translations, useTodaySky shared hook (today's sky from /api/astro/today),
+//        planet glyph lookup.
 // OUTPUT: Today's Sky section — renders 10 major planet positions (sign + degree + Rx)
-//         fetched from /api/astro/today (day-cached, universal, no auth). Editorial grid layout.
+//         fetched via useTodaySky (module-cached, day-cached upstream, universal, no auth).
+//         Editorial grid layout. Shares fetch with HeroTodayCard so the API hits at most
+//         once per landing load.
 // POS: Below-the-fold landing section for /landing-v2. CTA scrolls to BirthChart anchor
 //      (was: navigate /forecast → ProtectedRedirect bait-and-switch for anon users).
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback } from "react";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { TECH_DATA } from "../../constants";
 import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
-import {
-  fetchTodaySky,
-  type TodayPosition,
-  type TodaySkyResponse,
-} from "../../services/apiClient";
+import { useTodaySky } from "../../hooks/useTodaySky";
+import type { TodayPosition } from "../../services/apiClient";
 
 // Major planets in display order. Glyph lookup falls back to Unicode if TECH_DATA misses.
 const PLANET_ORDER = [
@@ -70,26 +70,7 @@ const CosmicWeatherSection: React.FC = () => {
   const landing = t.landing;
   const isDark = theme === "dark";
 
-  const [data, setData] = useState<TodaySkyResponse | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [hasError, setHasError] = useState<boolean>(false);
-
-  const loadSky = useCallback(async () => {
-    setLoading(true);
-    setHasError(false);
-    try {
-      const result = await fetchTodaySky();
-      setData(result);
-    } catch {
-      setHasError(true);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    void loadSky();
-  }, [loadSky]);
+  const { data, loading, hasError, reload } = useTodaySky();
 
   const ctaText = landing.today_personal_cta || "See your personal forecast →";
 
@@ -209,7 +190,7 @@ const CosmicWeatherSection: React.FC = () => {
             {landing.today_error || "The sky is shy today."}{" "}
             <button
               type="button"
-              onClick={() => void loadSky()}
+              onClick={() => void reload()}
               className="underline decoration-accent/60 underline-offset-4 hover:text-accent transition-colors"
             >
               {landing.today_retry || "Try again"}
