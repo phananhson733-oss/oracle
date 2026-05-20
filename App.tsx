@@ -65,62 +65,86 @@ import { ConsentBanner } from "./components/ConsentBanner";
 import { Footer } from "./components/Footer";
 import { useAnalyticsTracking } from "./hooks/useAnalytics";
 
-// Global SEO schemas (Organization, WebSite)
+// Global SEO schemas (Organization + WebSite). Single script tag that owns
+// the brand-level structured data for the entire SPA. Page-level <SEO>
+// instances must NOT also emit Organization or WebSite — they delegate to
+// this component and emit only page-specific schemas (SoftwareApplication,
+// FAQPage, Article, etc.). Dedupe defense: if a prerendered route already
+// has these schemas in the first-byte HTML (e.g. /landing-v2/{en,zh}/),
+// skip the inject so hydration doesn't duplicate.
 const GlobalSchema: React.FC = () => {
+  const { language } = useLanguage();
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "AstrologyWiki",
-    url: siteUrl,
-    logo: `${siteUrl}/logo.png`,
-    sameAs: [
-      "https://twitter.com/astrologywiki",
-      "https://www.instagram.com/astrologywiki",
-      "https://www.youtube.com/@astrologywiki",
-    ],
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "AstrologyWiki",
-    url: siteUrl,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteUrl}/wiki?search={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
-  };
+  const lang = language === "zh" ? "zh" : "en";
 
   React.useEffect(() => {
     if (typeof document === "undefined") return;
 
-    // Organization schema
-    const orgScript = document.createElement("script");
-    orgScript.type = "application/ld+json";
-    orgScript.textContent = JSON.stringify(organizationSchema);
-    orgScript.setAttribute("data-astro-global-schema", "organization");
-    document.head.appendChild(orgScript);
+    // Dedupe: if the prerender baked an Organization OR WebSite schema into
+    // the first-byte HTML, leave it alone. Hydrating a duplicate confuses
+    // structured-data crawlers and bloats the head.
+    const existingTypes = new Set<string>();
+    document
+      .querySelectorAll('script[type="application/ld+json"]')
+      .forEach((s) => {
+        try {
+          const json = JSON.parse(s.textContent ?? "");
+          const arr = Array.isArray(json) ? json : [json];
+          arr.forEach((entry) => {
+            if (entry && typeof entry["@type"] === "string") {
+              existingTypes.add(entry["@type"]);
+            }
+          });
+        } catch {
+          /* ignore unparsable */
+        }
+      });
+    if (existingTypes.has("Organization") && existingTypes.has("WebSite")) {
+      return;
+    }
 
-    // Website schema
-    const webScript = document.createElement("script");
-    webScript.type = "application/ld+json";
-    webScript.textContent = JSON.stringify(websiteSchema);
-    webScript.setAttribute("data-astro-global-schema", "website");
-    document.head.appendChild(webScript);
+    const organizationSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "AstrologyWiki",
+      url: `${siteUrl}/`,
+      logo: `${siteUrl}/logo.png`,
+      sameAs: [
+        "https://twitter.com/astrologywiki",
+        "https://www.instagram.com/astrologywiki",
+        "https://www.youtube.com/@astrologywiki",
+      ],
+    };
+
+    const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "AstrologyWiki",
+      url: `${siteUrl}/`,
+      inLanguage: lang,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify([organizationSchema, websiteSchema]);
+    script.setAttribute("data-astro-global-schema", "true");
+    document.head.appendChild(script);
 
     return () => {
       document
         .querySelectorAll("[data-astro-global-schema]")
         .forEach((el) => el.remove());
     };
-  }, []);
+  }, [siteUrl, lang]);
 
   return null;
 };
