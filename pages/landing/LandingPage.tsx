@@ -106,30 +106,187 @@ const LandingPage: React.FC = () => {
           { hrefLang: "x-default", href: `${siteUrl}/landing-v2` },
         ];
 
+  // SEO copy is the single most weighted signal we send to Google + GEO
+  // crawlers. We keep the hero h1 editorial ("Astrology meets modern
+  // psychology") and surface high-intent keywords here in <title>/<meta
+  // description>/<keywords> + structured data instead — so the editorial
+  // brand voice owns the visible UI while the head element owns search
+  // intent. EN targets: free birth chart calculator, today's sky,
+  // synastry calculator, saturn return, psychological astrology.
+  const seoTitle =
+    lang === "zh"
+      ? "AstrologyWiki — 免费出生星盘、今日星象与合盘计算器"
+      : "Free Birth Chart, Today's Sky & Synastry Calculator";
+  const seoDescription =
+    lang === "zh"
+      ? "免费出生星盘计算器、今日行星过运、合盘相性与土星回归 — 基于真实天文与现代心理学，无玄学、无需注册。"
+      : "Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up.";
+  const seoKeywords =
+    lang === "zh"
+      ? [
+          "免费出生星盘",
+          "出生星盘计算器",
+          "本命盘",
+          "今日星象",
+          "行星过运",
+          "合盘",
+          "相性分析",
+          "土星回归",
+          "心理占星",
+          "现代占星",
+        ]
+      : [
+          "free birth chart",
+          "birth chart calculator",
+          "natal chart",
+          "today's sky",
+          "planetary transits",
+          "synastry",
+          "relationship compatibility",
+          "saturn return",
+          "psychological astrology",
+          "modern astrology",
+        ];
+
   const webSiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "AstrologyWiki",
-    url: canonicalUrl,
+    url: `${siteUrl}/`,
     inLanguage: lang,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  // Organization schema — establishes the brand entity for Knowledge Graph.
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "AstrologyWiki",
+    url: `${siteUrl}/`,
+    logo: `${siteUrl}/icon-192.png`,
+  };
+
+  // SoftwareApplication schema — describes the calculator suite as a free
+  // web app. Helps eligibility for AI Overviews / rich results that index
+  // free tools.
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "AstrologyWiki",
+    applicationCategory: "LifestyleApplication",
+    operatingSystem: "Web",
+    description: seoDescription,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    inLanguage: lang,
+    featureList:
+      lang === "zh"
+        ? [
+            "免费出生星盘计算器",
+            "今日星象与行星过运",
+            "合盘相性分析",
+            "土星回归计算器",
+            "Ask Oracle 占星问答",
+          ]
+        : [
+            "Free birth chart calculator",
+            "Today's sky and planetary transits",
+            "Synastry compatibility analysis",
+            "Saturn return calculator",
+            "Ask Oracle astrology Q&A",
+          ],
+  };
+
+  // FAQPage schema — captures highest-intent informational queries so they
+  // can appear as expandable answers in SERP / AI overviews. Lang-aware.
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: lang,
+    mainEntity:
+      lang === "zh"
+        ? [
+            {
+              "@type": "Question",
+              name: "AstrologyWiki 真的免费吗？",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "是。出生星盘、今日星象、合盘与土星回归计算器全部免费，无需注册即可使用。",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "什么是出生星盘？",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "出生星盘（本命盘）是你出生那一刻太阳、月亮与各行星在天空中位置的瞬时快照，以你的出生地为视角绘制。它是现代心理占星阅读你的人格模式与潜在课题的起点。",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "什么是合盘（Synastry）？",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "合盘把两人的出生星盘叠加在一起，呈现彼此能量如何相遇、碰撞与互相辨识。不是宿命论的灵魂伴侣判定，而是关系动力学的几何描述。",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "什么是土星回归？",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "土星大约每 29.5 年回到出生时所在的位置，通常在 27-30、56-60、85-90 岁触发。这是个体重新对齐价值观与人生结构的天文周期。",
+              },
+            },
+          ]
+        : [
+            {
+              "@type": "Question",
+              name: "Is AstrologyWiki really free?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. The birth chart, today's sky, synastry, and Saturn return calculators are all free to use with no sign-up required.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What is a birth chart?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "A birth chart (natal chart) is a snapshot of where the Sun, Moon, and planets were in the sky at the exact moment and place you were born. In modern psychological astrology it's the starting point for reading personality patterns and developmental themes.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What is synastry?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Synastry overlays two birth charts and shows where the two people's energies meet, clash, and recognise each other. It's relationship astrology as geometry — not soulmate determinism.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What is Saturn return?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Saturn takes roughly 29.5 years to return to the position it occupied at your birth, typically triggering at ages 27-30, 56-60, and 85-90. It's the astronomical cycle astrologers associate with realigning your values and life structure.",
+              },
+            },
+          ],
   };
 
   return (
     <div className="w-full">
       <SEO
-        title={
-          lang === "zh"
-            ? "占星 × 现代心理学"
-            : "Astrology meets modern psychology"
-        }
-        description={
-          lang === "zh"
-            ? "出生星盘、CBT 心理日记、AI 指引。以科学为本，不玄学。"
-            : "Birth charts, CBT journal, AI guidance. Science-grounded. No mysticism."
-        }
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
         url={canonicalUrl}
         alternateLanguages={alternateLanguages}
-        schema={[webSiteSchema]}
+        schema={[webSiteSchema, organizationSchema, softwareSchema, faqSchema]}
         type="website"
         robots={isIndexedRoute ? "index,follow" : "noindex,nofollow"}
       />

@@ -1,24 +1,67 @@
 // INPUT: i18n translations, router navigation, analytics tracking, HeroTodayCard (right-half
-//        editorial mini-card backed by today's-sky data).
+//        editorial mini-card backed by today's-sky data), useLangPath for the Saturn Return
+//        pill (the only feature-pill that routes off-page rather than scrolling to an anchor).
 // OUTPUT: Hero section — Editorial Serif Poster (D1 decision from /plan-design-review 2026-05-18).
 //         md+ renders a 7/5 two-column grid: copy + CTAs on the left, HeroTodayCard on the right.
 //         Mobile hides the card (hidden md:block inside the card) and the hero collapses to a
 //         single column. Right-half fix per FINDING-H01 — "real astronomy" data anchors the hero
-//         instead of empty whitespace.
+//         instead of empty whitespace. Feature-pills row below CTAs surfaces 5 keyword anchors
+//         (Free Birth Chart / Today's Sky / Synastry / Saturn Return / Ask Oracle) for both UX
+//         wayfinding and crawlable internal-link SEO.
 // POS: Eagerly-loaded hero for the v2 landing page (/landing-v2). Must NOT use purple/violet/indigo gradients,
 //      icon-in-colored-circle SaaS aesthetics, "Welcome to..." copy, or system default fonts. See COLOR_SYSTEM_GUIDE.md.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useCallback } from "react";
+import { Link } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
+import { useLangPath } from "../../hooks/useLangPath";
 import HeroTodayCard from "./HeroTodayCard";
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const { theme } = useTheme();
   const scrollToBirthChart = useScrollToBirthChart();
+  const { langPath } = useLangPath();
   const landing = t.landing;
+
+  // Feature pills: 4 same-page anchor jumps + 1 route link to the dedicated
+  // Saturn Return SEO page. The mix is intentional — Saturn Return has its
+  // own keyword-targeted landing at /:lang/saturn-return-calculator, so a
+  // route link strengthens that page's internal-link signal; the other four
+  // already live as sections below the fold so anchor scrolls are correct.
+  const featurePills: Array<{
+    label: string;
+    href: string;
+    isRoute: boolean;
+  }> = [
+    {
+      label: landing.hero_feature_birth_chart || "Free Birth Chart",
+      href: "#birth-chart-tool",
+      isRoute: false,
+    },
+    {
+      label: landing.hero_feature_today || "Today's Sky",
+      href: "#today",
+      isRoute: false,
+    },
+    {
+      label: landing.hero_feature_synastry || "Synastry",
+      href: "#synastry",
+      isRoute: false,
+    },
+    {
+      label: landing.hero_feature_saturn || "Saturn Return",
+      href: langPath("/saturn-return-calculator"),
+      isRoute: true,
+    },
+    {
+      label: landing.hero_feature_ask || "Ask Oracle",
+      href: "#ask-oracle",
+      isRoute: false,
+    },
+  ];
 
   const handlePrimaryCta = useCallback(() => {
     void scrollToBirthChart({
@@ -139,9 +182,37 @@ const HeroSection: React.FC = () => {
             </button>
           </div>
 
+          {/* Feature pills — crawlable internal-link row that doubles as
+              same-page wayfinding. Pure <a href="#anchor"> + <Link to=...> so
+              search engines see keyword-bearing anchor text without any JS
+              dependency. Pills wrap on narrow viewports, preserve gold accent
+              on hover, and keep the editorial poster rhythm by sitting between
+              CTAs and the trust line. */}
+          <nav
+            aria-label={landing.hero_features_label || "Jump to a tool"}
+            className="mt-8 flex flex-wrap items-center gap-2"
+          >
+            {featurePills.map((pill) => {
+              const baseClasses = `inline-flex items-center rounded-full border px-3.5 py-1.5 text-xs font-medium tracking-tight transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                isDark
+                  ? "border-star-400/25 text-star-200 hover:border-accent hover:text-accent"
+                  : "border-paper-400/40 text-paper-700 hover:border-accent hover:text-accent"
+              }`;
+              return pill.isRoute ? (
+                <Link key={pill.label} to={pill.href} className={baseClasses}>
+                  {pill.label}
+                </Link>
+              ) : (
+                <a key={pill.label} href={pill.href} className={baseClasses}>
+                  {pill.label}
+                </a>
+              );
+            })}
+          </nav>
+
           {/* Trust line */}
           <p
-            className={`mt-12 text-xs uppercase tracking-[0.18em] ${
+            className={`mt-10 text-xs uppercase tracking-[0.18em] ${
               isDark ? "text-star-400" : "text-paper-500"
             }`}
           >
