@@ -545,16 +545,33 @@ const AppContent: React.FC = () => {
           className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === "dark" ? "bg-space-950/90 border-gold-500/15" : "bg-paper-100/90 border-paper-300"}`}
         >
           <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-            {/* Logo — on landing routes scrolls back to top; elsewhere routes to dashboard. */}
+            {/* Logo — on landing routes scrolls back to top; elsewhere routes
+                to "/" (landing page). Conventional brand-logo behaviour: clicking
+                the wordmark returns the user home, not into the authenticated
+                Dashboard. */}
             <div
               className="flex items-center gap-2 font-serif font-medium text-xl cursor-pointer shrink-0"
+              role="link"
+              tabIndex={0}
+              aria-label={t.app.name}
               onClick={() => {
                 if (isLandingRoute) {
                   if (typeof window !== "undefined") {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }
                 } else {
-                  navigate("/dashboard");
+                  navigate("/");
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key !== "Enter" && e.key !== " ") return;
+                e.preventDefault();
+                if (isLandingRoute) {
+                  if (typeof window !== "undefined") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                } else {
+                  navigate("/");
                 }
               }}
             >
