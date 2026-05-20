@@ -2,7 +2,7 @@
 // OUTPUT: 导出 Wiki 聚合页面组件（包含首页/百科/经典页签与基础 SEO 输出）。
 // POS: Wiki 路由入口；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ActionButton, Container, useLanguage } from "../UIComponents";
 import { SEO } from "../SEO";
@@ -41,6 +41,15 @@ const WikiHubPage: React.FC = () => {
     () => resolveTab(location.search),
     [location.search],
   );
+  // Reset scroll on tab change. When a landing CTA (e.g. ToolsGrid Synthetica
+  // card) navigates from a scrolled-down landing position into /wiki?tab=tools,
+  // React Router preserves scrollY by default, so the user lands mid-page with
+  // the tab header above the fold. Mirror the explicit scrollTo(0,0) pattern
+  // WikiDetailPage / WikiArticleDetailPage already use.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [activeTab]);
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
   const lang = language === "en" ? "en" : "zh";

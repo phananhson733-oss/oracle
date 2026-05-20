@@ -376,7 +376,7 @@ const BirthChartSection: React.FC = () => {
     <section
       id="birth-chart-tool"
       aria-labelledby="birth-chart-heading"
-      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-800" : "bg-paper-200"}`}
+      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-700" : "bg-paper-200"}`}
     >
       <div className="max-w-3xl mx-auto px-6 md:px-8 text-left">
         <p className={`mb-4 ${labelClass}`}>

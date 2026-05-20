@@ -2553,6 +2553,12 @@ export const TRANSLATIONS = {
       footer_link_terms: "Terms",
       footer_link_cookies: "Cookies",
       footer_copyright: "© 2026 AstrologyWiki",
+      // Featured Articles landing section — editorial copy distinct from the
+      // /wiki article hub headings so the landing keeps its "magazine" voice.
+      featured_articles_kicker: "In-depth reading",
+      featured_articles_title: "Read the foundations.",
+      featured_articles_subtitle:
+        "Long-form essays on charts, cycles, and the psychology behind them — written to be useful, not mystical.",
     },
     // Saturn Return Calculator (standalone SEO page).
     // Form-side strings only; result-card interpretation comes from the
@@ -4272,6 +4278,11 @@ export const TRANSLATIONS = {
       footer_link_terms: "服务条款",
       footer_link_cookies: "Cookie 政策",
       footer_copyright: "© 2026 AstrologyWiki",
+      // 精选文章 landing section
+      featured_articles_kicker: "深度阅读",
+      featured_articles_title: "读懂占星的底层逻辑。",
+      featured_articles_subtitle:
+        "关于星盘、行运与背后心理学的长文 —— 写给想真正理解的人，不是给迷信的人。",
     },
     // 土星回归计算器（独立 SEO 页）
     saturn_return: {
