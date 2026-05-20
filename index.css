@@ -7,11 +7,13 @@
 @tailwind utilities;
 
 /* Native control theming: keep scrollbars, autofill, native dialogs, and form
-   widgets in sync with the active theme. Dark mode is keyed off body.dark
-   (see index.html); :root.dark / html.dark kept as defensive aliases. */
-:root { color-scheme: dark; }
-body.light { color-scheme: light; }
-:root.dark, html.dark { color-scheme: dark; }
+   widgets in sync with the active theme. The dark/light class lives on <body>
+   (see index.html), but scrollbars are owned by :root — so use :has() to lift
+   the body class into the :root color-scheme. Defaults to "light dark" so
+   browsers can pick a sensible UA fallback if neither class is present. */
+:root { color-scheme: light dark; }
+:root:has(body.dark)  { color-scheme: dark; }
+:root:has(body.light) { color-scheme: light; }
 
 /* Accessibility: focus-visible ring for keyboard navigation */
 *:focus-visible {
