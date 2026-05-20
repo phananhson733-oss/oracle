@@ -1,9 +1,21 @@
-// INPUT: City search utilities, UI components, i18n translations, shared useCityAutocomplete hook.
+// INPUT: City search utilities, UI components, i18n translations, shared useCityAutocomplete hook,
+//        shared <DateSelectGroup> primitive for locale-stable Month/Day/Year selection.
 // OUTPUT: Three-step onboarding flow (birth date, location, name) that produces a UserProfile.
-//         City step uses the shared combobox hook for debounced search + keyboard a11y.
+//         City step uses the shared combobox hook for debounced search + keyboard a11y. Birth date
+//         uses <DateSelectGroup> (three <select>s) to avoid native date-picker OS-locale leaks
+//         (e.g. macOS rendering "年/月/日" placeholders on an English page). Prefill via the
+//         `data.birthDate` state seed is preserved — <DateSelectGroup> seeds its internal
+//         year/month/day from the incoming `value` and syncs on external changes via an
+//         echo-guard ref.
 // POS: Onboarding page component; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useLocation } from "react-router-dom";
 import { SEO } from "../components/SEO";
 import {
@@ -13,6 +25,10 @@ import {
   useTheme,
   useLanguage,
 } from "../components/UIComponents";
+import {
+  DateSelectGroup,
+  DEFAULT_MONTH_NAMES_EN,
+} from "../components/forms/DateSelectGroup";
 import * as T from "../types";
 import {
   searchCitiesWithFallback,
@@ -151,6 +167,48 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
   const labelClass =
     "text-xs font-bold uppercase tracking-widest opacity-80 mb-2 block";
 
+  // Localised month names sourced from t.journal.month_jan…month_dec (the
+  // shared journal namespace already has both EN and ZH translations —
+  // constants.ts L2021/L3791). Falls back to the component's English defaults
+  // if a key ever goes missing. Memoised so array identity is stable across
+  // renders (DateSelectGroup uses it inside useMemo deps).
+  const monthNames = useMemo<string[]>(() => {
+    const journal = (t as unknown as Record<string, unknown>).journal as
+      | Record<string, unknown>
+      | undefined;
+    const keys = [
+      "month_jan",
+      "month_feb",
+      "month_mar",
+      "month_apr",
+      "month_may",
+      "month_jun",
+      "month_jul",
+      "month_aug",
+      "month_sep",
+      "month_oct",
+      "month_nov",
+      "month_dec",
+    ];
+    return keys.map((k, idx) => {
+      const v = journal?.[k];
+      return typeof v === "string" && v.length > 0
+        ? v
+        : (DEFAULT_MONTH_NAMES_EN[idx] ?? "");
+    });
+  }, [t]);
+
+  // Selects need a controlled className matching GlassInput's visual surface
+  // so the date row sits flush with the rest of the form. Mirrors
+  // getStyles().input from UIComponents.tsx and the GlassInput chrome
+  // (rounded-xl, w-full, etc.) without routing through <GlassInput> (which is
+  // hard-wired to <input>).
+  const selectClass = `w-full min-h-[44px] px-3 py-3 rounded-xl outline-none transition-all duration-300 ease-in-out font-sans text-sm ${
+    theme === "dark"
+      ? "bg-space-900/70 border border-gold-500/40 text-star-50 focus:border-accent focus:ring-1 focus:ring-accent/40"
+      : "bg-paper-100/85 border border-paper-400 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40"
+  }`;
+
   return (
     <>
       <SEO title="Get Started" robots="noindex,nofollow" />
@@ -174,14 +232,26 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
               </h2>
               <div className="space-y-6">
                 <div>
-                  <label className={labelClass}>
+                  <label htmlFor="onb-date-month" className={labelClass}>
                     {t.onboarding.label_date}
                   </label>
-                  <GlassInput
-                    type="date"
-                    onChange={(e) =>
-                      setData({ ...data, birthDate: e.target.value })
-                    }
+                  <DateSelectGroup
+                    value={data.birthDate || ""}
+                    onChange={(iso) => setData({ ...data, birthDate: iso })}
+                    idPrefix="onb"
+                    required
+                    monthNames={monthNames}
+                    selectClassName={selectClass}
+                    className="grid grid-cols-[1.4fr_1fr_1fr] gap-2"
+                    labels={{
+                      month: language === "zh" ? "月" : "Month",
+                      day: language === "zh" ? "日" : "Day",
+                      year: language === "zh" ? "年" : "Year",
+                      monthPlaceholder: language === "zh" ? "月" : "Month",
+                      dayPlaceholder: language === "zh" ? "日" : "Day",
+                      yearPlaceholder: language === "zh" ? "年" : "Year",
+                      groupLabel: t.onboarding.label_date,
+                    }}
                   />
                 </div>
                 <div>
