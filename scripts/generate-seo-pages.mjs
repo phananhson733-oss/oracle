@@ -51,9 +51,9 @@ const LANG_CONFIG = {
 // English version is primary per product positioning; Chinese is auxiliary.
 const LANDING_V2_CONFIG = {
   en: {
-    title: 'Astrology meets modern psychology | AstrologyWiki',
+    title: 'Free Birth Chart, Today’s Sky & Synastry Calculator | AstrologyWiki',
     description:
-      'Birth charts, CBT journal, AI guidance. Science-grounded astrology with no mysticism — calculate your free natal chart instantly.',
+      'Free birth chart calculator, today’s planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up.',
     h1Lead: 'Astrology meets',
     h1Accent: 'modern psychology.',
     subA: 'Birth charts, CBT journal, AI guidance.',
@@ -71,9 +71,9 @@ const LANDING_V2_CONFIG = {
     ],
   },
   zh: {
-    title: '占星 × 现代心理学 | AstrologyWiki',
+    title: '免费出生星盘、今日星象与合盘计算器 | AstrologyWiki',
     description:
-      '本命星盘、CBT 日记、AI 指引——一款以心理学为根基的占星工具，无需登录即可免费计算你的星盘。',
+      '免费出生星盘计算器、今日行星过运、合盘相性与土星回归——基于真实天文与现代心理学，无玄学、无需注册。',
     h1Lead: '占星，遇见',
     h1Accent: '现代心理学。',
     subA: '本命星盘、CBT 日记、AI 指引。',
@@ -354,7 +354,7 @@ const buildLandingV2WebSiteSchema = (lang, url) => ({
   },
 });
 
-const buildLandingV2SoftwareAppSchema = (description) => ({
+const buildLandingV2SoftwareAppSchema = (lang, description) => ({
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'AstrologyWiki',
@@ -362,11 +362,89 @@ const buildLandingV2SoftwareAppSchema = (description) => ({
   operatingSystem: 'Web',
   description,
   url: siteUrl,
+  inLanguage: lang,
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
   },
+  featureList: lang === 'zh'
+    ? [
+        '免费出生星盘计算器',
+        '今日星象与行星过运',
+        '合盘相性分析',
+        '土星回归计算器',
+        'Ask Oracle 占星问答',
+      ]
+    : [
+        'Free birth chart calculator',
+        "Today's sky and planetary transits",
+        'Synastry compatibility analysis',
+        'Saturn return calculator',
+        'Ask Oracle astrology Q&A',
+      ],
+});
+
+// Organization schema — establishes the brand entity for Knowledge Graph.
+const buildLandingV2OrganizationSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AstrologyWiki',
+  url: `${siteUrl}/`,
+  logo: `${siteUrl}/icon-192.png`,
+});
+
+// FAQPage schema — captures highest-intent informational queries so they can
+// appear as expandable answers in SERP / AI overviews. Lang-aware.
+const buildLandingV2FAQSchema = (lang) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: lang,
+  mainEntity: lang === 'zh'
+    ? [
+        {
+          '@type': 'Question',
+          name: 'AstrologyWiki 真的免费吗？',
+          acceptedAnswer: { '@type': 'Answer', text: '是。出生星盘、今日星象、合盘与土星回归计算器全部免费，无需注册即可使用。' },
+        },
+        {
+          '@type': 'Question',
+          name: '什么是出生星盘？',
+          acceptedAnswer: { '@type': 'Answer', text: '出生星盘（本命盘）是你出生那一刻太阳、月亮与各行星在天空中位置的瞬时快照，以你的出生地为视角绘制。它是现代心理占星阅读你的人格模式与潜在课题的起点。' },
+        },
+        {
+          '@type': 'Question',
+          name: '什么是合盘（Synastry）？',
+          acceptedAnswer: { '@type': 'Answer', text: '合盘把两人的出生星盘叠加在一起，呈现彼此能量如何相遇、碰撞与互相辨识。不是宿命论的灵魂伴侣判定，而是关系动力学的几何描述。' },
+        },
+        {
+          '@type': 'Question',
+          name: '什么是土星回归？',
+          acceptedAnswer: { '@type': 'Answer', text: '土星大约每 29.5 年回到出生时所在的位置，通常在 27-30、56-60、85-90 岁触发。这是个体重新对齐价值观与人生结构的天文周期。' },
+        },
+      ]
+    : [
+        {
+          '@type': 'Question',
+          name: 'Is AstrologyWiki really free?',
+          acceptedAnswer: { '@type': 'Answer', text: "Yes. The birth chart, today's sky, synastry, and Saturn return calculators are all free to use with no sign-up required." },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is a birth chart?',
+          acceptedAnswer: { '@type': 'Answer', text: "A birth chart (natal chart) is a snapshot of where the Sun, Moon, and planets were in the sky at the exact moment and place you were born. In modern psychological astrology it's the starting point for reading personality patterns and developmental themes." },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is synastry?',
+          acceptedAnswer: { '@type': 'Answer', text: "Synastry overlays two birth charts and shows where the two people's energies meet, clash, and recognise each other. It's relationship astrology as geometry — not soulmate determinism." },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is Saturn return?',
+          acceptedAnswer: { '@type': 'Answer', text: "Saturn takes roughly 29.5 years to return to the position it occupied at your birth, typically triggering at ages 27-30, 56-60, and 85-90. It's the astronomical cycle astrologers associate with realigning your values and life structure." },
+        },
+      ],
 });
 
 const buildLandingV2AlternateLinks = () => ([
@@ -381,7 +459,9 @@ const buildLandingV2Html = (lang) => {
   const description = truncate(copy.description, 200);
   const schema = [
     buildLandingV2WebSiteSchema(lang, url),
-    buildLandingV2SoftwareAppSchema(description),
+    buildLandingV2OrganizationSchema(),
+    buildLandingV2SoftwareAppSchema(lang, description),
+    buildLandingV2FAQSchema(lang),
   ];
   const alternates = buildLandingV2AlternateLinks();
 

@@ -2583,6 +2583,15 @@ export const TRANSLATIONS = {
       hero_today_cta: "See full sky",
       hero_today_direct: "direct",
       hero_today_aria: "Today's sky snapshot",
+      // Hero feature-pills row — keyword-anchored in-page nav. Doubles as
+      // wayfinding for visitors AND crawlable internal links for SEO.
+      // 4 same-page anchors + Saturn Return points to its dedicated SEO page.
+      hero_features_label: "Jump to a tool",
+      hero_feature_birth_chart: "Free Birth Chart",
+      hero_feature_today: "Today's Sky",
+      hero_feature_synastry: "Synastry",
+      hero_feature_saturn: "Saturn Return",
+      hero_feature_ask: "Ask Oracle",
     },
     // Saturn Return Calculator (standalone SEO page).
     // Form-side strings only; result-card interpretation comes from the
@@ -4331,6 +4340,13 @@ export const TRANSLATIONS = {
       hero_today_cta: "查看完整天象",
       hero_today_direct: "顺行",
       hero_today_aria: "今日天象速览",
+      // Hero 工具入口 pill 列 — 关键词锚点 + 站内寻路
+      hero_features_label: "跳转工具",
+      hero_feature_birth_chart: "免费出生星盘",
+      hero_feature_today: "今日星象",
+      hero_feature_synastry: "合盘",
+      hero_feature_saturn: "土星回归",
+      hero_feature_ask: "Ask Oracle",
     },
     // 土星回归计算器（独立 SEO 页）
     saturn_return: {
