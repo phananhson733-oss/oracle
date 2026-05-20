@@ -17,6 +17,7 @@ const BirthChartSection = lazy(() => import("./BirthChartSection"));
 const CosmicWeatherSection = lazy(() => import("./CosmicWeatherSection"));
 const ToolsGridSection = lazy(() => import("./ToolsGridSection"));
 const WikiHubSection = lazy(() => import("./WikiHubSection"));
+const FeaturedArticlesSection = lazy(() => import("./FeaturedArticlesSection"));
 const SynastrySection = lazy(() => import("./SynastrySection"));
 const AskOracleSection = lazy(() => import("./AskOracleSection"));
 const SocialProofSection = lazy(() => import("./SocialProofSection"));
@@ -158,6 +159,13 @@ const LandingPage: React.FC = () => {
       </Suspense>
       <Suspense fallback={<SectionFallback minHeight="72rem" />}>
         <WikiHubSection />
+      </Suspense>
+      {/* Featured Articles — SEO/GEO keyword surface. Renders crawlable article
+          titles + descriptions + internal links to /:lang/wiki/:slug so search
+          engines index the article hub directly from the landing page. See
+          memory/project_landing_seo_geo_positioning.md for the why. */}
+      <Suspense fallback={<SectionFallback minHeight="40rem" />}>
+        <FeaturedArticlesSection />
       </Suspense>
       <Suspense fallback={<SectionFallback minHeight="60rem" />}>
         <AskOracleSection />

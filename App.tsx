@@ -335,6 +335,7 @@ const AppContent: React.FC = () => {
   const {
     isAuthenticated,
     migrateLocalData,
+    openLoginModal,
     refreshUser,
     user: authUser,
   } = useAuth();
@@ -644,21 +645,42 @@ const AppContent: React.FC = () => {
               path="/landing-v2/:landingLang"
               element={<LandingV2LangRoute />}
             />
+            {/* /onboarding completes via saveUser → localStorage → /dashboard.
+                When the visitor is NOT authenticated, suppress the save and
+                surface the login modal instead. Without this gate the landing
+                BirthChart → "Save my chart" → auto-complete flow silently
+                writes a guest chart into localStorage that the next sign-in
+                inherits as the user's chart — surprising the user (reported
+                2026-05-20). Wizard stays mounted so post-login click of
+                "Save" resumes naturally with the prefilled fields. */}
             <Route
               path="/onboarding"
               element={
                 <OnboardingPage
                   onComplete={(u) => {
+                    if (!isAuthenticated) {
+                      openLoginModal("save_chart");
+                      return;
+                    }
                     saveUser(u);
                     navigate("/dashboard");
                   }}
                 />
               }
             />
+            {/* Protected routes gate on isAuthenticated AND activeProfile.
+                Previously only `activeProfile` was checked, so unauthenticated
+                visitors whose localStorage held a chart (from the landing
+                inline form → onboarding auto-complete path introduced in
+                PR #25) saw populated /dashboard, /forecast, etc. — surprising
+                "I haven't signed in, why is my data here?" behavior reported
+                by the user on 2026-05-20. ProtectedRedirect handles both
+                branches: unauth opens login modal + returns to /wiki;
+                authenticated-but-no-profile sends to /onboarding. */}
             <Route
               path="/dashboard"
               element={
-                activeProfile ? (
+                isAuthenticated && activeProfile ? (
                   <MePage profile={activeProfile} />
                 ) : (
                   <ProtectedRedirect />
@@ -668,7 +690,7 @@ const AppContent: React.FC = () => {
             <Route
               path="/forecast"
               element={
-                activeProfile ? (
+                isAuthenticated && activeProfile ? (
                   <TodayPage profile={activeProfile} />
                 ) : (
                   <ProtectedRedirect />
@@ -678,7 +700,7 @@ const AppContent: React.FC = () => {
             <Route
               path="/cycles"
               element={
-                activeProfile ? (
+                isAuthenticated && activeProfile ? (
                   <CyclesPage profile={activeProfile} />
                 ) : (
                   <ProtectedRedirect />
@@ -688,7 +710,7 @@ const AppContent: React.FC = () => {
             <Route
               path="/us"
               element={
-                activeProfile ? (
+                isAuthenticated && activeProfile ? (
                   <UsPage profile={activeProfile} />
                 ) : (
                   <ProtectedRedirect />
@@ -698,7 +720,7 @@ const AppContent: React.FC = () => {
             <Route
               path="/oracle"
               element={
-                activeProfile ? (
+                isAuthenticated && activeProfile ? (
                   <AskOraclePage profile={activeProfile} />
                 ) : (
                   <ProtectedRedirect />
@@ -708,7 +730,7 @@ const AppContent: React.FC = () => {
             <Route
               path="/journal"
               element={
-                activeProfile ? (
+                isAuthenticated && activeProfile ? (
                   <CBTMainPage profile={activeProfile} />
                 ) : (
                   <ProtectedRedirect />
@@ -811,7 +833,7 @@ const AppContent: React.FC = () => {
             <Route
               path="/settings"
               element={
-                activeProfile ? (
+                isAuthenticated && activeProfile ? (
                   <SettingsPage
                     profile={activeProfile}
                     onReset={() => {
@@ -827,7 +849,11 @@ const AppContent: React.FC = () => {
             <Route
               path="/usage"
               element={
-                activeProfile ? <CreditsUsagePage /> : <ProtectedRedirect />
+                isAuthenticated && activeProfile ? (
+                  <CreditsUsagePage />
+                ) : (
+                  <ProtectedRedirect />
+                )
               }
             />
             <Route

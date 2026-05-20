@@ -153,7 +153,7 @@ const ToolsGridSection: React.FC = () => {
     <section
       id="tools"
       aria-labelledby="tools-heading"
-      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-800" : "bg-paper-200"}`}
+      className={`w-full py-24 scroll-mt-16 ${isDark ? "bg-space-700" : "bg-paper-200"}`}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <p
