@@ -362,6 +362,8 @@ const AppContent: React.FC = () => {
     openLoginModal,
     refreshUser,
     user: authUser,
+    showLoginModal,
+    setShowLoginModal,
   } = useAuth();
   const { entitlements } = useEntitlement();
 
@@ -536,6 +538,23 @@ const AppContent: React.FC = () => {
     ((activeProfile || isWikiPath || isLegalPath || isSaturnReturnPath) &&
       !["/onboarding", "/auth"].includes(pathWithoutLang));
 
+  // Landing routes are 100% public — never show a leftover login modal there.
+  // The modal is global state in AuthContext; it persists across navigation,
+  // so if a CTA on /en/wiki (or anywhere else) opened it and the user then
+  // clicked the logo to escape, the modal would still be visible on /. Close
+  // it on *navigation events* into a landing route — but only when the path
+  // actually changed, so clicking Sign In *while already on* landing doesn't
+  // instantly re-close the modal the user just opened.
+  const prevPathRef = useRef(location.pathname);
+  useEffect(() => {
+    const prev = prevPathRef.current;
+    const next = location.pathname;
+    prevPathRef.current = next;
+    if (prev !== next && isLandingRoute && showLoginModal) {
+      setShowLoginModal(false);
+    }
+  }, [location.pathname, isLandingRoute, showLoginModal, setShowLoginModal]);
+
   return (
     <>
       {shouldNoIndex && <SEO robots="noindex,nofollow" />}
@@ -555,6 +574,7 @@ const AppContent: React.FC = () => {
               tabIndex={0}
               aria-label={t.app.name}
               onClick={() => {
+                setShowLoginModal(false);
                 if (isLandingRoute) {
                   if (typeof window !== "undefined") {
                     window.scrollTo({ top: 0, behavior: "smooth" });
