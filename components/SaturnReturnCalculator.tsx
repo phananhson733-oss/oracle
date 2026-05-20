@@ -1,13 +1,26 @@
-// INPUT: i18n, theme, /api/saturn-return endpoint, shared useCityAutocomplete hook.
+// INPUT: i18n, theme, /api/saturn-return endpoint, shared useCityAutocomplete hook,
+//        shared <DateSelectGroup> primitive for locale-stable Month/Day/Year selection.
 // OUTPUT: Public Saturn Return calculator with city autocomplete + result card + SEO content.
+//         Birth date is captured via three <select>s (not native <input type="date">) so
+//         placeholder text never leaks the visitor's OS locale on an English page.
 // POS: Standalone SEO landing component; city autocomplete delegates to the shared hook.
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useLanguage, useTheme } from "./UIComponents";
 import { SEO } from "./SEO";
 import { searchCities } from "../services/apiClient";
 import { trackEvent } from "../services/analytics";
 import { useCityAutocomplete } from "../hooks/useCityAutocomplete";
+import {
+  DateSelectGroup,
+  DEFAULT_MONTH_NAMES_EN,
+} from "./forms/DateSelectGroup";
 
 interface GeoResult {
   city: string;
@@ -95,6 +108,34 @@ export const SaturnReturnCalculator: React.FC = () => {
   const [birthTime, setBirthTime] = useState("");
   const [cityQuery, setCityQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState<GeoResult | null>(null);
+
+  // Localised month names sourced from the top-level translation namespace
+  // (t.month_jan…month_dec exist for both en and zh — constants.ts L2021/L3791).
+  // Falls back to the shared component's English defaults if a key ever goes
+  // missing. Memoised so the array identity is stable across renders.
+  const monthNames = useMemo<string[]>(() => {
+    const tRecord = t as unknown as Record<string, unknown>;
+    const keys = [
+      "month_jan",
+      "month_feb",
+      "month_mar",
+      "month_apr",
+      "month_may",
+      "month_jun",
+      "month_jul",
+      "month_aug",
+      "month_sep",
+      "month_oct",
+      "month_nov",
+      "month_dec",
+    ];
+    return keys.map((k, idx) => {
+      const v = tRecord[k];
+      return typeof v === "string" && v.length > 0
+        ? v
+        : (DEFAULT_MONTH_NAMES_EN[idx] ?? "");
+    });
+  }, [t]);
 
   const [state, setState] = useState<CalculatorState>("idle");
   const [result, setResult] = useState<SaturnReturnResult | null>(null);
@@ -309,28 +350,35 @@ export const SaturnReturnCalculator: React.FC = () => {
           className={`${cardBg} border ${cardBorder} rounded-xl p-6 sm:p-8 mb-8`}
           noValidate
         >
-          {/* Birth Date */}
+          {/* Birth Date — three locale-stable selects (Month / Day / Year).
+              The shared <DateSelectGroup> owns split year/month/day state and
+              emits a composed YYYY-MM-DD via onChange (or "" when any part is
+              cleared), so validateDate() below still receives the same wire
+              format the prior native <input type="date"> produced. */}
           <div className="mb-5">
             <label
-              htmlFor="birth-date"
+              htmlFor="saturn-date-month"
               className={`block text-sm font-medium mb-1.5 ${textPrimary}`}
             >
               {sr?.label_date || "Birth Date"}{" "}
               <span className="text-red-400">*</span>
             </label>
-            <input
-              id="birth-date"
-              type="date"
-              required
+            <DateSelectGroup
               value={birthDate}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setBirthDate(e.target.value);
-                if (dateError) validateDate(e.target.value);
+              onChange={(iso) => {
+                setBirthDate(iso);
+                if (dateError) validateDate(iso);
               }}
-              aria-describedby={dateError ? "date-error" : undefined}
-              className={`w-full px-4 py-3 rounded-lg border ${
+              idPrefix="saturn"
+              required
+              monthNames={monthNames}
+              className="grid grid-cols-[1.4fr_1fr_1fr] gap-2"
+              selectClassName={`w-full px-4 py-3 rounded-lg border ${
                 dateError ? "border-red-400" : inputBorder
               } ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
+              labels={{
+                groupLabel: sr?.label_date || "Birth Date",
+              }}
             />
             {dateError && (
               <p

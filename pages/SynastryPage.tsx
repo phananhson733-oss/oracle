@@ -1,6 +1,9 @@
-// INPUT: UserProfile prop, synastry/natal API services, entitlement contexts, shared useCityAutocomplete hook.
+// INPUT: UserProfile prop, synastry/natal API services, entitlement contexts, shared useCityAutocomplete hook,
+//        shared DateSelectGroup (locale-stable Month/Day/Year picker for the Add/Edit profile modal).
 // OUTPUT: Full synastry (relationship) page with profile selection, report tabs, and technical appendix.
-//         Add/Edit modal uses two shared combobox instances (birth city + current location).
+//         Add/Edit modal uses two shared combobox instances (birth city + current location) and a shared
+//         <DateSelectGroup> birth-date picker (replaces native <input type="date"> to avoid OS-locale
+//         placeholder leaks). 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // POS: Synastry page extracted from App.tsx; if updated, keep App.tsx lazy import in sync.
 
 import React, {
@@ -71,6 +74,10 @@ import {
   DETAIL_LABEL_CLASS,
 } from "../components/shared/astro-glyphs";
 import { MiniLoader } from "../components/shared/MiniLoader";
+import {
+  DateSelectGroup,
+  DEFAULT_MONTH_NAMES_EN,
+} from "../components/forms/DateSelectGroup";
 import { FrameworkDisclaimer } from "../components/shared/FrameworkDisclaimer";
 import { WeatherMoodIcon } from "../components/shared/WeatherMoodIcon";
 import {
@@ -1537,6 +1544,34 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
   });
   const [cityQuery, setCityQuery] = useState("");
   const [currentLocationQuery, setCurrentLocationQuery] = useState("");
+
+  // Localised month names for the shared <DateSelectGroup> in the Add/Edit
+  // modal. Reuses the existing t.journal.month_jan…month_dec dictionary so we
+  // don't fork a synastry-specific copy. Falls back to the component's English
+  // defaults if a key is missing.
+  const monthNames = useMemo<string[]>(() => {
+    const keys = [
+      "month_jan",
+      "month_feb",
+      "month_mar",
+      "month_apr",
+      "month_may",
+      "month_jun",
+      "month_jul",
+      "month_aug",
+      "month_sep",
+      "month_oct",
+      "month_nov",
+      "month_dec",
+    ] as const;
+    const journal = (t.journal ?? {}) as unknown as Record<string, unknown>;
+    return keys.map((k, idx) => {
+      const v = journal[k];
+      return typeof v === "string" && v.length > 0
+        ? v
+        : (DEFAULT_MONTH_NAMES_EN[idx] ?? "");
+    });
+  }, [t]);
 
   // Shared combobox hook — two independent instances for birth city + current
   // location. Searches are suspended when the modal is closed via `enabled`,
@@ -3019,18 +3054,31 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">
+                  <label
+                    htmlFor="syn-a-date-month"
+                    className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block"
+                  >
                     {t.onboarding.label_date}
                   </label>
-                  <GlassInput
-                    type="date"
+                  <DateSelectGroup
                     value={formData.birthDate || ""}
-                    onChange={(e) =>
+                    onChange={(iso) =>
                       setFormData((prev) => ({
                         ...prev,
-                        birthDate: e.target.value,
+                        birthDate: iso,
                       }))
                     }
+                    idPrefix="syn-a"
+                    monthNames={monthNames}
+                    className="grid grid-cols-[1.4fr_1fr_1fr] gap-2"
+                    selectClassName={`w-full min-h-[44px] px-3 py-4 rounded-xl outline-none transition-all duration-300 ease-in-out font-sans text-sm ${
+                      theme === "dark"
+                        ? "bg-space-900/70 border border-gold-500/40 text-star-50 focus:border-accent focus:ring-1 focus:ring-accent/40"
+                        : "bg-paper-100/85 border border-paper-400 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40"
+                    }`}
+                    labels={{
+                      groupLabel: t.onboarding.label_date,
+                    }}
                   />
                 </div>
                 <div>
