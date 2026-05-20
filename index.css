@@ -6,6 +6,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Native control theming: keep scrollbars, autofill, native dialogs, and form
+   widgets in sync with the active theme. Dark mode is keyed off body.dark
+   (see index.html); :root.dark / html.dark kept as defensive aliases. */
+:root { color-scheme: dark; }
+body.light { color-scheme: light; }
+:root.dark, html.dark { color-scheme: dark; }
+
 /* Accessibility: focus-visible ring for keyboard navigation */
 *:focus-visible {
   outline: 2px solid var(--gold-500, #D4A853);

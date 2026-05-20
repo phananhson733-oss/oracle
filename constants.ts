@@ -2559,6 +2559,30 @@ export const TRANSLATIONS = {
       featured_articles_title: "Read the foundations.",
       featured_articles_subtitle:
         "Long-form essays on charts, cycles, and the psychology behind them — written to be useful, not mystical.",
+      // BirthChart inline form — locale-stable date selects (BC01).
+      birth_chart_form_date_month_label: "Month",
+      birth_chart_form_date_month_placeholder: "Month",
+      birth_chart_form_date_day_label: "Day",
+      birth_chart_form_date_day_placeholder: "Day",
+      birth_chart_form_date_year_label: "Year",
+      birth_chart_form_date_year_placeholder: "Year",
+      month_jan: "January",
+      month_feb: "February",
+      month_mar: "March",
+      month_apr: "April",
+      month_may: "May",
+      month_jun: "June",
+      month_jul: "July",
+      month_aug: "August",
+      month_sep: "September",
+      month_oct: "October",
+      month_nov: "November",
+      month_dec: "December",
+      // Hero today-sky mini-card (H01).
+      hero_today_kicker: "Today's Sky",
+      hero_today_cta: "See full sky",
+      hero_today_direct: "direct",
+      hero_today_aria: "Today's sky snapshot",
     },
     // Saturn Return Calculator (standalone SEO page).
     // Form-side strings only; result-card interpretation comes from the
@@ -4283,6 +4307,30 @@ export const TRANSLATIONS = {
       featured_articles_title: "读懂占星的底层逻辑。",
       featured_articles_subtitle:
         "关于星盘、行运与背后心理学的长文 —— 写给想真正理解的人，不是给迷信的人。",
+      // 出生信息内嵌表单 —— 不依赖系统 locale 的日期下拉 (BC01)
+      birth_chart_form_date_month_label: "月",
+      birth_chart_form_date_month_placeholder: "月",
+      birth_chart_form_date_day_label: "日",
+      birth_chart_form_date_day_placeholder: "日",
+      birth_chart_form_date_year_label: "年",
+      birth_chart_form_date_year_placeholder: "年",
+      month_jan: "一月",
+      month_feb: "二月",
+      month_mar: "三月",
+      month_apr: "四月",
+      month_may: "五月",
+      month_jun: "六月",
+      month_jul: "七月",
+      month_aug: "八月",
+      month_sep: "九月",
+      month_oct: "十月",
+      month_nov: "十一月",
+      month_dec: "十二月",
+      // 首屏今日天象小卡 (H01)
+      hero_today_kicker: "今日天象",
+      hero_today_cta: "查看完整天象",
+      hero_today_direct: "顺行",
+      hero_today_aria: "今日天象速览",
     },
     // 土星回归计算器（独立 SEO 页）
     saturn_return: {
