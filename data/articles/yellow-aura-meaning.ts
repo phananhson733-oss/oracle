@@ -67,14 +67,14 @@ A practical caveat applies across these comparisons: aura color systems are not 
 
 ## Related Reading
 
-- **pillar page on aura colors overview** — the full color map this entry sits inside, useful before comparing shades.
-- **blue aura explainer** — contrast with a cooler, throat-led energy that reads as calm rather than quick.
-- **comparison with orange aura** — the closest neighbor on the warm side, with a clearer body-led mechanism.
-- **guide to the solar plexus chakra** — the energy center most aura traditions tie yellow to, with longer-form practice notes.
-- **overview of aura color shades** — how bright, muddy, and metallic variants change a color's read.
+- [pillar page on aura colors overview](/en/wiki/aura-colors-pillar) — the full color map this entry sits inside, useful before comparing shades.
+- [blue aura explainer](/en/wiki/blue-aura-meaning) — contrast with a cooler, throat-led energy that reads as calm rather than quick.
+- *comparison with orange aura* — the closest neighbor on the warm side, with a clearer body-led mechanism.
+- *guide to the solar plexus chakra* — the energy center most aura traditions tie yellow to, with longer-form practice notes.
+- [overview of aura color shades](/en/wiki/aura-colors-pillar) — how bright, muddy, and metallic variants change a color's read.
 
 ## Take Action
 
-Not sure which shade of yellow is showing up right now? Take the 60-second Aura Reading Quiz to see how your colors map: https://astrologywiki.com/tools/aura-reading-quiz
+Not sure which shade of yellow is showing up right now? Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
 `,
 };

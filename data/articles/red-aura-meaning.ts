@@ -67,14 +67,14 @@ The honest framework limit: aura readings are interpretive vocabulary used in su
 
 ## Related Reading
 
-- **pillar page on aura colors overview** — anchor entry for how every aura color fits together, including where red sits in the broader map.
-- **orange aura explainer** — sibling read for the next center up, useful for telling drive-energy apart from creative-social energy.
-- **yellow aura explainer** — sibling read for confidence and identity energy, often confused with red's directness.
-- **guide to the root chakra** — background on the energy center most associated with red, helpful for grounding the reading in tradition.
-- **comparison with violet aura** — counterweight read for people anxious about aura color rankings, showing why the spectrum is not a hierarchy.
+- [pillar page on aura colors overview](/en/wiki/aura-colors-pillar) — anchor entry for how every aura color fits together, including where red sits in the broader map.
+- *orange aura explainer* — sibling read for the next center up, useful for telling drive-energy apart from creative-social energy.
+- [yellow aura explainer](/en/wiki/yellow-aura-meaning) — sibling read for confidence and identity energy, often confused with red's directness.
+- *guide to the root chakra* — background on the energy center most associated with red, helpful for grounding the reading in tradition.
+- [comparison with violet aura](/en/wiki/purple-aura-meaning) — counterweight read for people anxious about aura color rankings, showing why the spectrum is not a hierarchy.
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: https://astrologywiki.com/tools/aura-reading-quiz
+Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
 `,
 };

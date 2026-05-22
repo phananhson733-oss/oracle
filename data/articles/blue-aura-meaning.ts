@@ -63,14 +63,14 @@ One more practical contrast: blue versus red. Red aura readings are typically ti
 
 ## Related Reading
 
-- **pillar page on all aura colors overview** — start here for a side-by-side view of how each color is interpreted across traditions.
-- **throat chakra explainer** — the energy center most often paired with this color in aura readings.
-- **comparison with purple aura** — useful when your reading shifts between blue and violet shades.
-- **guide to yellow aura traits** — a contrasting solar-plexus reading that highlights what blue is not.
-- **explainer on aura color shades** — read this to tell light blue, mid blue, and indigo apart in practice.
+- [pillar page on all aura colors overview](/en/wiki/aura-colors-pillar) — start here for a side-by-side view of how each color is interpreted across traditions.
+- *throat chakra explainer* — the energy center most often paired with this color in aura readings.
+- [comparison with purple aura](/en/wiki/purple-aura-meaning) — useful when your reading shifts between blue and violet shades.
+- [guide to yellow aura traits](/en/wiki/yellow-aura-meaning) — a contrasting solar-plexus reading that highlights what blue is not.
+- [explainer on aura color shades](/en/wiki/aura-colors-pillar) — read this to tell light blue, mid blue, and indigo apart in practice.
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: https://astrologywiki.com/tools/aura-reading-quiz
+Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
 `,
 };

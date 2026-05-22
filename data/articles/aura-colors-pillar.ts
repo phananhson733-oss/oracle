@@ -48,19 +48,19 @@ Finally, looking at the whole family first protects readers from the most common
 
 ## The 7 aura colors: Quick Guide
 
-**Red aura** — Red sits at the root chakra end of the family and reads as raw vitality: physical drive, embodied presence, and the willingness to take grounded action. People showing strong red tend to be doers, and the color often deepens when someone is in a survival-mode push rather than purely thriving. The common misread is to flatten red into "angry person." Red is energy and grounding, not aggression by default — muddy or overheated red can read as frustration, but bright clear red usually just means someone is alive in their body. For the deeper aura colors meaning of red, see **red aura explainer**.
+**Red aura** — Red sits at the root chakra end of the family and reads as raw vitality: physical drive, embodied presence, and the willingness to take grounded action. People showing strong red tend to be doers, and the color often deepens when someone is in a survival-mode push rather than purely thriving. The common misread is to flatten red into "angry person." Red is energy and grounding, not aggression by default — muddy or overheated red can read as frustration, but bright clear red usually just means someone is alive in their body. For the deeper aura colors meaning of red, see [red aura explainer](/en/wiki/red-aura-meaning).
 
-**Orange aura** — Orange maps to the sacral chakra and reads as creative, sensual, expressive aliveness. People showing strong orange tend to be embodied and emotionally fluid, often working in creative or relational fields where being permeable to feeling is a feature, not a bug. The misread is to slot orange into "flirty" or "attention-seeking." That projection misses what orange actually carries: the capacity to make something — a meal, a room, a conversation — feel warm and alive. For the deeper reading, see **orange aura explainer**.
+**Orange aura** — Orange maps to the sacral chakra and reads as creative, sensual, expressive aliveness. People showing strong orange tend to be embodied and emotionally fluid, often working in creative or relational fields where being permeable to feeling is a feature, not a bug. The misread is to slot orange into "flirty" or "attention-seeking." That projection misses what orange actually carries: the capacity to make something — a meal, a room, a conversation — feel warm and alive. For the deeper reading, see *orange aura explainer*.
 
-**Yellow aura** — Yellow sits at the solar plexus and reads as confidence, mental clarity, and forward momentum. A bright clear yellow often shows up in people running on healthy self-trust — they make decisions and follow through without needing constant outside validation. The misread is to call bright yellow "ego." Self-trust is not the same as arrogance; muddy or anxious yellow reads very differently from clear yellow, and the distinction matters. For the deeper reading, see **yellow aura explainer**.
+**Yellow aura** — Yellow sits at the solar plexus and reads as confidence, mental clarity, and forward momentum. A bright clear yellow often shows up in people running on healthy self-trust — they make decisions and follow through without needing constant outside validation. The misread is to call bright yellow "ego." Self-trust is not the same as arrogance; muddy or anxious yellow reads very differently from clear yellow, and the distinction matters. For the deeper reading, see [yellow aura explainer](/en/wiki/yellow-aura-meaning).
 
-**Green aura** — Green maps to the heart chakra and reads as nurturing, healing-oriented, relationally tuned. People with strong green often work in caregiving roles or are the friend who notices when others are off. The common misread is to label green a "people-pleaser." Green's care is not codependence by default — it is empathic capacity, and the unhealthy version (muddy green leaning toward giving past one's limits) is a distortion of the core trait, not the core trait itself. For the deeper reading, see **green aura explainer**.
+**Green aura** — Green maps to the heart chakra and reads as nurturing, healing-oriented, relationally tuned. People with strong green often work in caregiving roles or are the friend who notices when others are off. The common misread is to label green a "people-pleaser." Green's care is not codependence by default — it is empathic capacity, and the unhealthy version (muddy green leaning toward giving past one's limits) is a distortion of the core trait, not the core trait itself. For the deeper reading, see *green aura explainer*.
 
-**Blue aura** — Blue sits at the throat chakra and reads as calm communication, truth-telling, and measured self-expression. People showing strong blue tend to be the steady voices in a group — they say what is true without theatrical delivery. The misread is to call blue "cold" or "detached." Composure under pressure is not absence of feeling; it is feeling that has been routed through clear expression rather than reactive volume. For the deeper reading, see **blue aura explainer**.
+**Blue aura** — Blue sits at the throat chakra and reads as calm communication, truth-telling, and measured self-expression. People showing strong blue tend to be the steady voices in a group — they say what is true without theatrical delivery. The misread is to call blue "cold" or "detached." Composure under pressure is not absence of feeling; it is feeling that has been routed through clear expression rather than reactive volume. For the deeper reading, see [blue aura explainer](/en/wiki/blue-aura-meaning).
 
-**Purple aura** — Purple bridges the third eye and crown chakras and reads as intuition, mystical orientation, and inward processing. People showing strong purple tend to be reflective, often picking up on subtle dynamics before others name them. The misread is to write purple off as "spaced out" or unfocused. Inward processing is not absence of presence — it is a different attention rhythm, and the depth purple brings is often what makes someone trustworthy in big-picture decisions. For the deeper reading, see **purple aura explainer**.
+**Purple aura** — Purple bridges the third eye and crown chakras and reads as intuition, mystical orientation, and inward processing. People showing strong purple tend to be reflective, often picking up on subtle dynamics before others name them. The misread is to write purple off as "spaced out" or unfocused. Inward processing is not absence of presence — it is a different attention rhythm, and the depth purple brings is often what makes someone trustworthy in big-picture decisions. For the deeper reading, see [purple aura explainer](/en/wiki/purple-aura-meaning).
 
-**White aura** — White sits at the crown and is treated in most traditions as full-spectrum integration rather than a single trait. People showing white are not "purer" than others — they typically read as having the other colors held in some kind of working balance, often in a season of integration or transition. The misread is to romanticize white as "spiritually advanced." White is balance, not hierarchy. For the deeper reading, see **white aura explainer**.
+**White aura** — White sits at the crown and is treated in most traditions as full-spectrum integration rather than a single trait. People showing white are not "purer" than others — they typically read as having the other colors held in some kind of working balance, often in a season of integration or transition. The misread is to romanticize white as "spiritually advanced." White is balance, not hierarchy. For the deeper reading, see [white aura explainer](/en/wiki/white-aura-meaning).
 
 ## How Shade and Combination Shift Readings
 
@@ -98,19 +98,19 @@ Two practical guardrails make the framework safer to work with over time. The fi
 
 ## Related Reading
 
-- **red aura explainer**
-- **orange aura explainer**
-- **yellow aura explainer**
-- **green aura explainer**
-- **blue aura explainer**
-- **purple aura explainer**
-- **white aura explainer**
-- **overview of the chakra system**
-- **guide to aura reading**
-- **comparison with the four-element framework**
+- [red aura explainer](/en/wiki/red-aura-meaning)
+- *orange aura explainer*
+- [yellow aura explainer](/en/wiki/yellow-aura-meaning)
+- *green aura explainer*
+- [blue aura explainer](/en/wiki/blue-aura-meaning)
+- [purple aura explainer](/en/wiki/purple-aura-meaning)
+- [white aura explainer](/en/wiki/white-aura-meaning)
+- *overview of the chakra system*
+- [guide to aura reading](/en/wiki/aura-colors-pillar)
+- *comparison with the four-element framework*
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: https://astrologywiki.com/tools/aura-reading-quiz
+Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
 `,
 };

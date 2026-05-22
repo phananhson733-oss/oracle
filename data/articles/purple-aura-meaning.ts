@@ -69,14 +69,14 @@ One last note on the "am I imagining it" question that drives much of the search
 
 ## Related Reading
 
-- **pillar page on all aura colors** — the overview that places this color in the full spectrum and clarifies how shades relate.
-- **comparison with violet aura** — close cousin that often gets blurred with purple; this page makes the empath-versus-introspective split explicit.
-- **comparison with indigo aura** — the third-eye-dominant neighbor that shares much of the same territory but reads as more pattern-sharp.
-- **blue aura explainer** — the throat-led contrast, useful when you want to feel the trade-off between expression and interiority.
-- **white aura explainer** — the integrative neighbor, useful for understanding why purple feels narrower in register.
-- **crown chakra explainer** — the center most often paired with purple in mainstream aura teaching.
-- **third eye chakra explainer** — the secondary center that explains the perception side of darker shades.
-- **guide to aura color shades** — a side-by-side on how lineages name lavender, violet, indigo, and purple differently.
+- [pillar page on all aura colors](/en/wiki/aura-colors-pillar) — the overview that places this color in the full spectrum and clarifies how shades relate.
+- [comparison with violet aura](/en/wiki/purple-aura-meaning) — close cousin that often gets blurred with purple; this page makes the empath-versus-introspective split explicit.
+- [comparison with indigo aura](/en/wiki/purple-aura-meaning) — the third-eye-dominant neighbor that shares much of the same territory but reads as more pattern-sharp.
+- [blue aura explainer](/en/wiki/blue-aura-meaning) — the throat-led contrast, useful when you want to feel the trade-off between expression and interiority.
+- [white aura explainer](/en/wiki/white-aura-meaning) — the integrative neighbor, useful for understanding why purple feels narrower in register.
+- *crown chakra explainer* — the center most often paired with purple in mainstream aura teaching.
+- *third eye chakra explainer* — the secondary center that explains the perception side of darker shades.
+- [guide to aura color shades](/en/wiki/aura-colors-pillar) — a side-by-side on how lineages name lavender, violet, indigo, and purple differently.
 
 ## Take Action
 

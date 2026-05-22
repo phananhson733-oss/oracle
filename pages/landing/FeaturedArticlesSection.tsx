@@ -25,8 +25,13 @@ const FeaturedArticlesSection: React.FC = () => {
 
   // Static import — articles ship with the bundle, so SSR/prerender includes
   // the full card text in initial HTML. Used by /qa /ai-crawler verification.
+  // Sort by `date` descending (newest first) so freshly published batches
+  // surface on the landing page without manual reorder of the index registry.
   const articles = useMemo(
-    () => getArticleSummaries(language).slice(0, 4),
+    () =>
+      [...getArticleSummaries(language)]
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+        .slice(0, 4),
     [language],
   );
 
