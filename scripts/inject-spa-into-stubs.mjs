@@ -15,11 +15,20 @@
 // What it does (per stub):
 //   1. Locate <main>…</main>; wrap it in <div id="root">…</div> so React
 //      mounts on top of the static content and replaces it.
-//   2. Inject the Vite-emitted <script src="/assets/index-*.js">,
+//   2. Strip the stub template's inline <style> blocks from <head>. They
+//      contain bare-selector rules (`main { max-width: 780px }`,
+//      `a { color: ... }`, `body { ... }`) intended only for the static
+//      fallback. After React renders the SPA, the SPA's own <main>/<a>
+//      elements would still match those rules and visually narrow / re-
+//      color the live app. Crawlers index text + schema, not visuals, so
+//      removing fallback styling doesn't affect SEO.
+//   3. Inject the Vite-emitted <script src="/assets/index-*.js">,
 //      <link rel="modulepreload" href="/assets/react-vendor-*.js">, and
-//      <link rel="stylesheet" href="/assets/index-*.css"> tags from
-//      dist/index.html just before </head>.
-//   3. Skip stubs that already contain the dedicated `<!-- spa-injected -->`
+//      <link rel="stylesheet" href="/assets/index-*.css"> tags + the SPA
+//      shell's inline <style> (carries --space-*/--star-* design tokens
+//      Tailwind classes depend on) + the font-loading inline <script>,
+//      all just before </head>.
+//   4. Skip stubs that already contain the dedicated `<!-- spa-injected -->`
 //      marker (idempotent — safe to run twice if a build pipeline re-runs
 //      after partial failure).
 //
@@ -123,15 +132,26 @@ const injectInto = (html, payload) => {
   if (!/<\/head>/.test(html)) {
     return { html, status: 'no-head-close' };
   }
-  // Wrap <main>…</main> in <div id="root"> so React mounts here.
-  // class mirrors dist/index.html (relative z-10) for layout parity.
-  let next = html.replace(
-    /(<main\b)/,
-    '<div id="root" class="relative z-10">$1',
-  );
+  let next = html;
+  // 1. Wrap <main>…</main> in <div id="root"> so React mounts here.
+  //    class mirrors dist/index.html (relative z-10) for layout parity.
+  next = next.replace(/(<main\b)/, '<div id="root" class="relative z-10">$1');
   next = next.replace(/(<\/main>)/, '$1</div>');
-  // Inject critical inline <style>, font-loading <script>, asset tags
-  // right before </head>. Marker comment makes future runs idempotent.
+  // 2. Strip the stub template's inline <style> from <head>. Those rules
+  //    use bare element selectors (e.g. `main { max-width: 780px }`,
+  //    `a { color: ... }`, `body { ... }`) intended only for the static
+  //    fallback view. After React mounts and the SPA renders its own
+  //    <main>/<a>/etc., those rules would still match and visually
+  //    narrow / re-color the live SPA. The SPA-shell's <style> we inject
+  //    in step 3 carries the design-token CSS the SPA actually needs.
+  //    Crawlers don't render visuals, so removing the static visual
+  //    styling does not affect SEO indexing.
+  next = next.replace(
+    /<head>([\s\S]*?)<\/head>/,
+    (_m, head) => `<head>${head.replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '')}</head>`,
+  );
+  // 3. Inject SPA shell's inline <style>, font-loading <script>, and
+  //    asset tags just before </head>. Marker comment makes idempotent.
   next = next.replace(/<\/head>/, `\n${INJECTED_MARKER}\n${payload}  </head>`);
   return { html: next, status: 'injected' };
 };
