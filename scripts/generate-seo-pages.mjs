@@ -585,6 +585,19 @@ const ARTICLE_SLUGS = [
   'best-astrology-mental-health-apps',
 ];
 
+// EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
+// ARTICLE_SLUGS because there is no ZH variant — adding /zh/wiki/<slug>
+// to the sitemap would produce 404s for Google. Listed separately and
+// emitted into the sitemap with /en/wiki/ only (see loop below).
+const ARTICLE_SLUGS_EN_ONLY = [
+  'aura-colors-pillar',
+  'blue-aura-meaning',
+  'yellow-aura-meaning',
+  'purple-aura-meaning',
+  'white-aura-meaning',
+  'red-aura-meaning',
+];
+
 const generate = async () => {
   const wikiModule = loadTsModule(path.join(rootDir, 'backend/src/data/wiki.ts'));
   const wikiContent = wikiModule.WIKI_CONTENT || {};
@@ -786,6 +799,10 @@ const generate = async () => {
   for (const slug of ARTICLE_SLUGS) {
     sitemapUrls.push(`${siteUrl}/en/wiki/${slug}`);
     sitemapUrls.push(`${siteUrl}/zh/wiki/${slug}`);
+  }
+  // EN-only featured articles (no ZH variant — emit /en/wiki/ only)
+  for (const slug of ARTICLE_SLUGS_EN_ONLY) {
+    sitemapUrls.push(`${siteUrl}/en/wiki/${slug}`);
   }
 
   // L2 cutover (2026-05-19): root is now the canonical home (renders

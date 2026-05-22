@@ -26,6 +26,14 @@ import {
   howToReadBirthChartZh,
 } from "./how-to-read-birth-chart";
 
+// v8 aura batch (2026-05-22) — EN-only, sourced from gengrowth-flow-mvp _staging/
+import { auraColorsPillarEn } from "./aura-colors-pillar";
+import { blueAuraMeaningEn } from "./blue-aura-meaning";
+import { yellowAuraMeaningEn } from "./yellow-aura-meaning";
+import { purpleAuraMeaningEn } from "./purple-aura-meaning";
+import { whiteAuraMeaningEn } from "./white-aura-meaning";
+import { redAuraMeaningEn } from "./red-aura-meaning";
+
 // All articles organized by language
 const ARTICLES_EN: WikiArticle[] = [
   trackMoodAstrologyEn,
@@ -33,6 +41,12 @@ const ARTICLES_EN: WikiArticle[] = [
   marsAngerTriggersEn,
   bestAstrologyAppsEn,
   howToReadBirthChartEn,
+  auraColorsPillarEn,
+  blueAuraMeaningEn,
+  yellowAuraMeaningEn,
+  purpleAuraMeaningEn,
+  whiteAuraMeaningEn,
+  redAuraMeaningEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
