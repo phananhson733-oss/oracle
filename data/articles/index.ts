@@ -33,6 +33,10 @@ import { yellowAuraMeaningEn } from "./yellow-aura-meaning";
 import { purpleAuraMeaningEn } from "./purple-aura-meaning";
 import { whiteAuraMeaningEn } from "./white-aura-meaning";
 import { redAuraMeaningEn } from "./red-aura-meaning";
+import { orangeAuraMeaningEn } from "./orange-aura-meaning";
+import { greenAuraMeaningEn } from "./green-aura-meaning";
+import { chakraSystemOverviewEn } from "./chakra-system-overview";
+import { fourElementFrameworkEn } from "./four-element-framework";
 
 // All articles organized by language
 const ARTICLES_EN: WikiArticle[] = [
@@ -47,6 +51,10 @@ const ARTICLES_EN: WikiArticle[] = [
   purpleAuraMeaningEn,
   whiteAuraMeaningEn,
   redAuraMeaningEn,
+  orangeAuraMeaningEn,
+  greenAuraMeaningEn,
+  chakraSystemOverviewEn,
+  fourElementFrameworkEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

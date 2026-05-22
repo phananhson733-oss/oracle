@@ -74,8 +74,8 @@ One last note on the "am I imagining it" question that drives much of the search
 - [comparison with indigo aura](/en/wiki/purple-aura-meaning) — the third-eye-dominant neighbor that shares much of the same territory but reads as more pattern-sharp.
 - [blue aura explainer](/en/wiki/blue-aura-meaning) — the throat-led contrast, useful when you want to feel the trade-off between expression and interiority.
 - [white aura explainer](/en/wiki/white-aura-meaning) — the integrative neighbor, useful for understanding why purple feels narrower in register.
-- *crown chakra explainer* — the center most often paired with purple in mainstream aura teaching.
-- *third eye chakra explainer* — the secondary center that explains the perception side of darker shades.
+- [crown chakra explainer](/en/wiki/chakra-system-overview) — the center most often paired with purple in mainstream aura teaching.
+- [third eye chakra explainer](/en/wiki/chakra-system-overview) — the secondary center that explains the perception side of darker shades.
 - [guide to aura color shades](/en/wiki/aura-colors-pillar) — a side-by-side on how lineages name lavender, violet, indigo, and purple differently.
 
 ## Take Action

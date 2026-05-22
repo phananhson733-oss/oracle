@@ -50,11 +50,11 @@ Finally, looking at the whole family first protects readers from the most common
 
 **Red aura** — Red sits at the root chakra end of the family and reads as raw vitality: physical drive, embodied presence, and the willingness to take grounded action. People showing strong red tend to be doers, and the color often deepens when someone is in a survival-mode push rather than purely thriving. The common misread is to flatten red into "angry person." Red is energy and grounding, not aggression by default — muddy or overheated red can read as frustration, but bright clear red usually just means someone is alive in their body. For the deeper aura colors meaning of red, see [red aura explainer](/en/wiki/red-aura-meaning).
 
-**Orange aura** — Orange maps to the sacral chakra and reads as creative, sensual, expressive aliveness. People showing strong orange tend to be embodied and emotionally fluid, often working in creative or relational fields where being permeable to feeling is a feature, not a bug. The misread is to slot orange into "flirty" or "attention-seeking." That projection misses what orange actually carries: the capacity to make something — a meal, a room, a conversation — feel warm and alive. For the deeper reading, see *orange aura explainer*.
+**Orange aura** — Orange maps to the sacral chakra and reads as creative, sensual, expressive aliveness. People showing strong orange tend to be embodied and emotionally fluid, often working in creative or relational fields where being permeable to feeling is a feature, not a bug. The misread is to slot orange into "flirty" or "attention-seeking." That projection misses what orange actually carries: the capacity to make something — a meal, a room, a conversation — feel warm and alive. For the deeper reading, see [orange aura explainer](/en/wiki/orange-aura-meaning).
 
 **Yellow aura** — Yellow sits at the solar plexus and reads as confidence, mental clarity, and forward momentum. A bright clear yellow often shows up in people running on healthy self-trust — they make decisions and follow through without needing constant outside validation. The misread is to call bright yellow "ego." Self-trust is not the same as arrogance; muddy or anxious yellow reads very differently from clear yellow, and the distinction matters. For the deeper reading, see [yellow aura explainer](/en/wiki/yellow-aura-meaning).
 
-**Green aura** — Green maps to the heart chakra and reads as nurturing, healing-oriented, relationally tuned. People with strong green often work in caregiving roles or are the friend who notices when others are off. The common misread is to label green a "people-pleaser." Green's care is not codependence by default — it is empathic capacity, and the unhealthy version (muddy green leaning toward giving past one's limits) is a distortion of the core trait, not the core trait itself. For the deeper reading, see *green aura explainer*.
+**Green aura** — Green maps to the heart chakra and reads as nurturing, healing-oriented, relationally tuned. People with strong green often work in caregiving roles or are the friend who notices when others are off. The common misread is to label green a "people-pleaser." Green's care is not codependence by default — it is empathic capacity, and the unhealthy version (muddy green leaning toward giving past one's limits) is a distortion of the core trait, not the core trait itself. For the deeper reading, see [green aura explainer](/en/wiki/green-aura-meaning).
 
 **Blue aura** — Blue sits at the throat chakra and reads as calm communication, truth-telling, and measured self-expression. People showing strong blue tend to be the steady voices in a group — they say what is true without theatrical delivery. The misread is to call blue "cold" or "detached." Composure under pressure is not absence of feeling; it is feeling that has been routed through clear expression rather than reactive volume. For the deeper reading, see [blue aura explainer](/en/wiki/blue-aura-meaning).
 
@@ -99,15 +99,15 @@ Two practical guardrails make the framework safer to work with over time. The fi
 ## Related Reading
 
 - [red aura explainer](/en/wiki/red-aura-meaning)
-- *orange aura explainer*
+- [orange aura explainer](/en/wiki/orange-aura-meaning)
 - [yellow aura explainer](/en/wiki/yellow-aura-meaning)
-- *green aura explainer*
+- [green aura explainer](/en/wiki/green-aura-meaning)
 - [blue aura explainer](/en/wiki/blue-aura-meaning)
 - [purple aura explainer](/en/wiki/purple-aura-meaning)
 - [white aura explainer](/en/wiki/white-aura-meaning)
-- *overview of the chakra system*
+- [overview of the chakra system](/en/wiki/chakra-system-overview)
 - [guide to aura reading](/en/wiki/aura-colors-pillar)
-- *comparison with the four-element framework*
+- [comparison with the four-element framework](/en/wiki/four-element-framework)
 
 ## Take Action
 

@@ -596,6 +596,10 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'purple-aura-meaning',
   'white-aura-meaning',
   'red-aura-meaning',
+  'orange-aura-meaning',
+  'green-aura-meaning',
+  'chakra-system-overview',
+  'four-element-framework',
 ];
 
 const generate = async () => {

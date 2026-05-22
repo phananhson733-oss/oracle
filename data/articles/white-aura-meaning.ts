@@ -70,7 +70,7 @@ There is also a sober limit to mention. White, like every aura colour, is a self
 - [pillar page on aura colors overview](/en/wiki/aura-colors-pillar) — sets the wider map this entry sits inside so white can be read against the full palette.
 - [explainer on purple aura meaning](/en/wiki/purple-aura-meaning) — useful neighbour for separating crown-area presence from third-eye pattern-spotting.
 - [comparison with blue aura meaning](/en/wiki/blue-aura-meaning) — clarifies how throat-led expression differs from crown-led stillness.
-- *guide to the crown chakra* — gives the energy-centre background that most white-aura readings lean on.
+- [guide to the crown chakra](/en/wiki/chakra-system-overview) — gives the energy-centre background that most white-aura readings lean on.
 - [overview of aura color shades](/en/wiki/aura-colors-pillar) — supports the shade-aware reading bright white, grey-white, and silver-white each need.
 
 ## Take Action

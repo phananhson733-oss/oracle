@@ -69,8 +69,8 @@ A practical caveat applies across these comparisons: aura color systems are not 
 
 - [pillar page on aura colors overview](/en/wiki/aura-colors-pillar) — the full color map this entry sits inside, useful before comparing shades.
 - [blue aura explainer](/en/wiki/blue-aura-meaning) — contrast with a cooler, throat-led energy that reads as calm rather than quick.
-- *comparison with orange aura* — the closest neighbor on the warm side, with a clearer body-led mechanism.
-- *guide to the solar plexus chakra* — the energy center most aura traditions tie yellow to, with longer-form practice notes.
+- [comparison with orange aura](/en/wiki/orange-aura-meaning) — the closest neighbor on the warm side, with a clearer body-led mechanism.
+- [guide to the solar plexus chakra](/en/wiki/chakra-system-overview) — the energy center most aura traditions tie yellow to, with longer-form practice notes.
 - [overview of aura color shades](/en/wiki/aura-colors-pillar) — how bright, muddy, and metallic variants change a color's read.
 
 ## Take Action
