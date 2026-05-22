@@ -595,7 +595,16 @@ const FeaturedArticlesSection: React.FC<FeaturedArticlesSectionProps> = ({
   t,
 }) => {
   const { langPath } = useLangPath();
-  const articles = useMemo(() => getArticleSummaries(language), [language]);
+  // Sort by `date` descending so freshly published batches surface here
+  // without manual reorder of the article registry (matches the landing
+  // FeaturedArticlesSection convention).
+  const articles = useMemo(
+    () =>
+      [...getArticleSummaries(language)].sort((a, b) =>
+        (b.date || "").localeCompare(a.date || ""),
+      ),
+    [language],
+  );
 
   if (articles.length === 0) return null;
 
