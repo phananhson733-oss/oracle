@@ -6,7 +6,7 @@ export const orangeAuraMeaningEn: WikiArticle = {
   slug: "orange-aura-meaning",
   title: "Orange Aura Meaning",
   description: "Orange aura is an interpretive color label used in subtle-energy traditions to describe a personal energy field that reads as a warm, creative, and...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

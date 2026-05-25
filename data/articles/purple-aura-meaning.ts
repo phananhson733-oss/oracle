@@ -6,7 +6,7 @@ export const purpleAuraMeaningEn: WikiArticle = {
   slug: "purple-aura-meaning",
   title: "Purple Aura Meaning",
   description: "In subtle-energy traditions, purple aura meaning usually points to an introspective, intuition-leaning energy field tied to the crown and third eye centers....",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

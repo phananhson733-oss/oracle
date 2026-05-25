@@ -6,7 +6,7 @@ export const redAuraMeaningEn: WikiArticle = {
   slug: "red-aura-meaning",
   title: "Red Aura Meaning",
   description: "In subtle-energy traditions, red aura meaning usually points to a vital, grounded energy field tied to the root center and physical drive. Most aura...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

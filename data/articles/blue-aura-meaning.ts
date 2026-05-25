@@ -6,7 +6,7 @@ export const blueAuraMeaningEn: WikiArticle = {
   slug: "blue-aura-meaning",
   title: "Blue Aura Meaning",
   description: "In aura traditions, blue aura meaning usually points to a calm, expressive energy field linked to the throat center. Practitioners read the color as a sign...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

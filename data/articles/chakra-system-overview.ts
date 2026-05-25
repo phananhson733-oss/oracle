@@ -6,7 +6,7 @@ export const chakraSystemOverviewEn: WikiArticle = {
   slug: "chakra-system-overview",
   title: "Chakra System",
   description: "Chakra System is a seven-center framework for reading inner experience through body-located themes such as safety, desire, confidence, connection,...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

@@ -161,6 +161,7 @@ const WikiClassicDetailPage = lazy(() =>
 const WikiClassicsPage = lazy(
   () => import("./components/wiki/WikiClassicsPage"),
 );
+const AuthorPage = lazy(() => import("./components/wiki/AuthorPage"));
 const ReportsPage = lazy(() =>
   import("./components/reports").then((m) => ({ default: m.ReportsPage })),
 );
@@ -820,6 +821,14 @@ const AppContent: React.FC = () => {
               element={
                 <LangGuard>
                   <WikiClassicDetailPage />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/wiki/author/:authorId"
+              element={
+                <LangGuard>
+                  <AuthorPage />
                 </LangGuard>
               }
             />
