@@ -3,6 +3,7 @@ import fsPromises from 'fs/promises';
 import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import ts from 'typescript';
+import { safeJsonLd } from './lib/safe-jsonld.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
@@ -142,12 +143,17 @@ const loadTsModule = (tsPath) => {
     }
     if (specifier.startsWith('./') || specifier.startsWith('../')) {
       const resolved = path.resolve(dirname, specifier);
-      const tsCandidate = resolved.replace(/\.js$/, '.ts');
-      if (fs.existsSync(tsCandidate)) {
-        return loadTsModule(tsCandidate);
-      }
-      if (fs.existsSync(resolved)) {
-        return loadTsModule(resolved);
+      // Try, in order: .js→.ts rewrite, extensionless .ts, raw path, dir/index.ts.
+      const candidates = [
+        resolved.replace(/\.js$/, '.ts'),
+        `${resolved}.ts`,
+        resolved,
+        path.join(resolved, 'index.ts'),
+      ];
+      for (const candidate of candidates) {
+        if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+          return loadTsModule(candidate);
+        }
       }
     }
     throw new Error(`Unsupported import in SEO generator: ${specifier}`);
@@ -203,7 +209,7 @@ const buildHead = ({
   ];
 
   if (schema) {
-    headParts.push(`<script type="application/ld+json">${JSON.stringify(schema)}</script>`);
+    headParts.push(`<script type="application/ld+json">${safeJsonLd(schema)}</script>`);
   }
 
   headParts.push(`
@@ -484,7 +490,7 @@ const buildLandingV2Html = (lang) => {
     `<meta name="twitter:title" content="${escapeHtml(copy.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(ogImageUrl)}" />`,
-    `<script type="application/ld+json">${JSON.stringify(schema)}</script>`,
+    `<script type="application/ld+json">${safeJsonLd(schema)}</script>`,
     `
 <style>
   :root { color-scheme: light; }
@@ -608,6 +614,44 @@ const generate = async () => {
   const classicsModule = await import(pathToFileURL(path.join(rootDir, 'backend/src/data/wiki-classics-markdown.js')).href);
   const getWikiClassics = classicsModule.getWikiClassics;
   const getWikiClassicDetail = classicsModule.getWikiClassicDetail;
+
+  // Editorial author personas (EN-only author pages). Pure-data module —
+  // loadTsModule resolves it without React/Vite imports.
+  const authorsModule = loadTsModule(path.join(rootDir, 'data/authors/index.ts'));
+  const authorSchemaModule = loadTsModule(path.join(rootDir, 'data/authors/schema.ts'));
+  const ALL_AUTHORS = authorsModule.getAllAuthors();
+  const buildPersonSchema = authorSchemaModule.buildPersonSchema;
+
+  // Build-time invariant: persona.id is used as a URL path segment AND a
+  // filesystem path (author/<id>/index.html). Reject anything that isn't a
+  // clean slug to prevent malformed URLs / path traversal, and reject
+  // duplicate ids (Map registry would silently shadow them).
+  const AUTHOR_ID_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  const seenAuthorIds = new Set();
+  for (const persona of ALL_AUTHORS) {
+    if (!AUTHOR_ID_SLUG.test(persona.id)) {
+      throw new Error(
+        `SEO build: author id "${persona.id}" is not a safe slug (expected ^[a-z0-9]+(?:-[a-z0-9]+)*$)`,
+      );
+    }
+    if (seenAuthorIds.has(persona.id)) {
+      throw new Error(`SEO build: duplicate author id "${persona.id}" in registry`);
+    }
+    seenAuthorIds.add(persona.id);
+  }
+
+  // Build-time integrity gate: every article's authorId MUST resolve to a
+  // registered persona. Fail the build loudly if a backfill was missed.
+  const articlesModule = loadTsModule(path.join(rootDir, 'data/articles/index.ts'));
+  for (const lang of ['en', 'zh']) {
+    for (const summary of articlesModule.getArticleSummaries(lang)) {
+      if (!authorsModule.getAuthorById(summary.authorId)) {
+        throw new Error(
+          `SEO build: article "${summary.slug}" (${lang}) has unresolved authorId="${summary.authorId}"`,
+        );
+      }
+    }
+  }
   const classicsByLang = {
     zh: getWikiClassics('zh') || [],
     en: getWikiClassics('en') || [],
@@ -723,6 +767,37 @@ const generate = async () => {
         ctaText: config.classicsCta,
         spaPath: `/${lang}/wiki/classics`,
       });
+
+      // Author profile pages (EN-only) — static stubs with ProfilePage/Person
+      // JSON-LD so crawlers read the author entity without executing JS.
+      for (const persona of ALL_AUTHORS) {
+        const authorPath = `/${lang}/wiki/author/${persona.id}`;
+        const authorPageUrl = `${siteUrl}${authorPath}`;
+        sitemapUrls.push(authorPageUrl);
+        await writeHtmlPage({
+          outputPath: path.join(langRoot, 'wiki', 'author', persona.id, 'index.html'),
+          lang,
+          title: `${persona.name} — ${persona.title}`,
+          description: persona.bio.en || '',
+          url: authorPageUrl,
+          ogType: 'profile',
+          alternates: buildAlternateLinks(`/wiki/author/${persona.id}`, { zh: false, en: true }),
+          schema: [
+            {
+              '@context': 'https://schema.org',
+              '@type': 'ProfilePage',
+              mainEntity: buildPersonSchema(persona, lang, siteUrl),
+            },
+            buildBreadcrumb(lang, [
+              { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+              { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
+              { name: persona.name, url: authorPageUrl },
+            ]),
+          ],
+          ctaText: config.wikiCta,
+          spaPath: authorPath,
+        });
+      }
     }
 
     // For zh, only generate whitelisted wiki items; for en, generate all

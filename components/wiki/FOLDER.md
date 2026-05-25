@@ -19,6 +19,8 @@
 | `WikiClassicDetailPage.tsx` | Wiki 经典书籍详情页，展示长文解读 |
 | `WikiSyntheticaPage.tsx` | Wiki 工具页，提供 Synthetica 洞察生成与结果展示 |
 | `RelatedArticles.tsx` | 相关文章组件，基于星象关联展示相关内容 |
+| `AuthorByline.tsx` | 文章署名组件（detail/card 两 variant）+ AuthorMonogram CSS 头像 |
+| `AuthorPage.tsx` | 编辑作者档案页 `/:lang/wiki/author/:authorId`（EN-only，ProfilePage/Person JSON-LD） |
 
 ## 依赖
 
@@ -28,6 +30,7 @@
 
 ## 近期更新
 
+- 新增 AuthorByline + AuthorPage：编辑作者人设署名与作者档案页，文章 author→authorId，JSON-LD author 改 Person。
 - 新增 RelatedArticles 组件，基于星象关联展示相关内容（守护、旺势、同元素等关系）。
 - 新增 wiki-associations.ts 数据文件，定义行星-星座守护关系、元素分组、宫位对应等关联数据。
 

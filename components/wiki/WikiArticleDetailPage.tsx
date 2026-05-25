@@ -7,12 +7,15 @@ import { Link, useParams } from "react-router-dom";
 import { Card, Container, useLanguage, useTheme } from "../UIComponents";
 import { SEO } from "../SEO";
 import { Breadcrumb } from "../Breadcrumb";
-import { ArrowLeft, Calendar, User } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import {
   getArticleBySlug,
   getArticleSummaries,
   isArticleSlug,
 } from "../../data/articles";
+import { getAuthorById } from "../../data/authors";
+import { buildPersonSchema } from "../../data/authors/schema";
+import { AuthorByline } from "./AuthorByline";
 import { trackEvent } from "../../services/analytics";
 import type { WikiArticleSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
@@ -449,10 +452,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       "@type": "Article",
       headline: article.title,
       description: article.description,
-      author: {
-        "@type": "Organization",
-        name: article.author,
-      },
+      author: getAuthorById(article.authorId)
+        ? buildPersonSchema(getAuthorById(article.authorId)!, lang, siteUrl)
+        : { "@type": "Organization", name: "AstrologyWiki" },
       datePublished: article.date,
       dateModified: article.date,
       image: article.image || `${siteUrl}/og-image.png`,
@@ -469,7 +471,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         },
       },
     };
-  }, [article, canonicalUrl, siteUrl]);
+  }, [article, canonicalUrl, siteUrl, lang]);
 
   const breadcrumbSchema = useMemo(
     () => ({
@@ -629,14 +631,22 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
             <div
               className={`flex flex-wrap items-center gap-x-6 gap-y-2 text-sm ${mutedText} border-b pb-6 ${borderColor}`}
             >
-              <span className="flex items-center gap-2">
-                <User size={16} className={highlightText} />
-                {article.author}
-              </span>
-              <span className="flex items-center gap-2">
-                <Calendar size={16} className={highlightText} />
-                {formatDate(article.date)}
-              </span>
+              {getAuthorById(article.authorId) ? (
+                <AuthorByline
+                  persona={getAuthorById(article.authorId)!}
+                  variant="detail"
+                  lang={lang}
+                  isDark={isDark}
+                  date={article.date}
+                  langPath={langPath}
+                  formatDate={formatDate}
+                />
+              ) : (
+                <span className="flex items-center gap-2">
+                  <Calendar size={16} className={highlightText} />
+                  {formatDate(article.date)}
+                </span>
+              )}
             </div>
 
             {article.keywords && article.keywords.length > 0 && (

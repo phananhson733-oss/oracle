@@ -6,7 +6,7 @@ export const fourElementFrameworkEn: WikiArticle = {
   slug: "four-element-framework",
   title: "Four Element Framework Astrology",
   description: "Four-Element Framework is the plain-language system in astrology that groups signs and chart placements into fire, earth, air, and water so a birth chart...",
-  author: "AstrologyWiki Team",
+  authorId: "marcus-orion",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

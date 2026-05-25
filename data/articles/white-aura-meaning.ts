@@ -6,7 +6,7 @@ export const whiteAuraMeaningEn: WikiArticle = {
   slug: "white-aura-meaning",
   title: "White Aura Meaning",
   description: "In subtle-energy traditions, white aura meaning usually points to a clear, integrative energy field tied to the crown center and spiritual orientation. It...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

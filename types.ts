@@ -1053,6 +1053,27 @@ export interface WikiSearchResponse {
   matches: WikiSearchMatch[];
 }
 
+// --- Editorial Author Persona Types ---
+
+// 作者垂直分类（与内容主题对齐，用于路由分组与 SEO knowsAbout）。
+export type AuthorVertical =
+  | "aura_energy"
+  | "psychological_astrology"
+  | "fundamentals"
+  | "vedic";
+
+// 编辑作者人设。诚实人设立场：保留专长声音，不伪造真人身份。
+// 头像为 CSS monogram（首字母 + avatarColors 渐变），非图片资产。
+export interface AuthorPersona {
+  id: string; // 稳定 slug，如 'elena-vane'，进路由与 Person @id
+  name: string;
+  title: string; // jobTitle，如 "Aura & Energy Columnist"
+  vertical: AuthorVertical;
+  bio: Partial<Record<Language, string>>; // EN 必填，缺失语言回退 EN
+  topics: string[]; // → JSON-LD knowsAbout + 话题 pill
+  avatarColors: [string, string]; // monogram 渐变两端色（CSS 颜色值）
+}
+
 // --- Wiki Article Types ---
 
 export interface WikiArticle {
@@ -1060,7 +1081,7 @@ export interface WikiArticle {
   title: string;
   description: string;
   content: string;
-  author: string;
+  authorId: string; // 引用 AuthorPersona.id（取代旧裸 author 字符串）
   date: string;
   image?: string;
   image_alt?: string;
@@ -1073,7 +1094,7 @@ export interface WikiArticleSummary {
   slug: string;
   title: string;
   description: string;
-  author: string;
+  authorId: string;
   date: string;
   image?: string;
   image_alt?: string;

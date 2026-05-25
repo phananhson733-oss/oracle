@@ -15,6 +15,7 @@
 
 目录
 - archive｜地位：归档目录｜功能：存放已完成变更。
+- add-editorial-author-personas｜地位：进行中变更｜功能：百科精选文章编辑作者人设、作者页与 Person 结构化数据。
 - add-gm-dev-session｜地位：进行中变更｜功能：GM 开发会话与登录替代入口。
 - add-seo-geo-foundation｜地位：进行中变更｜功能：SEO/GEO 基础能力与可索引页面输出。
 - add-wiki-classics｜地位：进行中变更｜功能：百科经典书籍书架与详情体验。
@@ -26,6 +27,7 @@
 - update-ui-system｜地位：进行中变更｜功能：UI 整体优化与色彩系统对齐。
 
 近期更新
+- 新增 add-editorial-author-personas 变更提案。
 - 新增 add-gm-dev-session 变更提案。
 - 新增 add-seo-geo-foundation 变更提案。
 - 新增 add-wiki-classics 变更提案。

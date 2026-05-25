@@ -6,7 +6,7 @@ export const trackMoodAstrologyEn: WikiArticle = {
   title: "How to Track Mood with Astrology: The Beginner's Guide (2026)",
   description:
     "Learn how to track your mood with astrology by monitoring the Moon sign. A step-by-step guide to emotional transits and using your AstrologyWiki Journal.",
-  author: "AstrologyWiki Team",
+  authorId: "julian-thorne",
   date: "2025-05-22",
   schema: "Article",
   lang: "en",
@@ -97,7 +97,7 @@ export const trackMoodAstrologyZh: WikiArticle = {
   title: "如何用占星追踪情绪：入门指南（2026）",
   description:
     "学习如何通过监测月亮星座来追踪你的情绪。情绪行运的逐步指南，以及如何使用占星日记。",
-  author: "AstrologyWiki 团队",
+  authorId: "julian-thorne",
   date: "2025-05-22",
   schema: "Article",
   lang: "zh",

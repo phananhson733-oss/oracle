@@ -6,7 +6,7 @@ export const greenAuraMeaningEn: WikiArticle = {
   slug: "green-aura-meaning",
   title: "Green Aura Meaning",
   description: "Green aura is the color band most aura readers associate with care, connection, and a heart-led way of relating to people and the natural world. The green...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

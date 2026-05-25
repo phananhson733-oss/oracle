@@ -6,7 +6,7 @@ export const yellowAuraMeaningEn: WikiArticle = {
   slug: "yellow-aura-meaning",
   title: "Yellow Aura Meaning",
   description: "In subtle-energy traditions, a yellow aura is read as a mental and confident energy field tied to the solar plexus center. The color is commonly associated...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 import { Card, Section, useLanguage, useTheme } from "../UIComponents";
 import { SEO } from "../SEO";
 import { Breadcrumb } from "../Breadcrumb";
-import { Calendar, FileText, User } from "lucide-react";
+import { Calendar, FileText } from "lucide-react";
 import { getArticleSummaries } from "../../data/articles";
+import { getAuthorById } from "../../data/authors";
+import { buildPersonSchema } from "../../data/authors/schema";
+import { AuthorByline } from "./AuthorByline";
 import type { WikiArticleSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
 
@@ -47,10 +50,9 @@ const WikiArticlesPage: React.FC = () => {
           name: article.title,
           description: article.description,
           url: `${siteUrl}/${lang}/wiki/${article.slug}`,
-          author: {
-            "@type": "Organization",
-            name: article.author,
-          },
+          author: getAuthorById(article.authorId)
+            ? buildPersonSchema(getAuthorById(article.authorId)!, lang, siteUrl)
+            : { "@type": "Organization", name: "AstrologyWiki" },
           datePublished: article.date,
         },
       })),
@@ -160,6 +162,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   t,
 }) => {
   const { langPath } = useLangPath();
+  const { language } = useLanguage();
   const isDark = theme === "dark";
   const mutedText = isDark ? "text-star-400" : "text-paper-600";
   const borderColor = isDark ? "border-gold-500/15" : "border-paper-300";
@@ -196,10 +199,14 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
           </p>
 
           <div className={`flex items-center gap-4 text-xs ${mutedText}`}>
-            <span className="flex items-center gap-1">
-              <User size={12} />
-              {article.author}
-            </span>
+            {getAuthorById(article.authorId) && (
+              <AuthorByline
+                persona={getAuthorById(article.authorId)!}
+                variant="card"
+                lang={language}
+                isDark={isDark}
+              />
+            )}
             <span className="flex items-center gap-1">
               <Calendar size={12} />
               {formatDate(article.date)}

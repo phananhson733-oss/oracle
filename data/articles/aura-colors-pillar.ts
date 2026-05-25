@@ -6,7 +6,7 @@ export const auraColorsPillarEn: WikiArticle = {
   slug: "aura-colors-pillar",
   title: "Aura Colors Meaning",
   description: "Aura colors are the color labels practitioners use to describe a person's prevailing energetic state within subtle-energy traditions. They are not a single...",
-  author: "AstrologyWiki Team",
+  authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",

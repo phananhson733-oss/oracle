@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.14
-> **Last Updated**: 2026-05-19
+> **Version**: 2.15
+> **Last Updated**: 2026-05-25
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -211,13 +211,14 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 ### 2.7 Wiki 知识库 (Astrology Encyclopedia)
 
-**路由**: `/wiki` (WikiHubPage), `/wiki/classics` (WikiClassicsPage), `/wiki/classics/:id` (WikiClassicDetailPage), `/wiki/:id` (WikiDetailPage) — **公开访问，无需登录**
+**路由**: `/wiki` (WikiHubPage), `/wiki/classics` (WikiClassicsPage), `/wiki/classics/:id` (WikiClassicDetailPage), `/wiki/author/:authorId` (AuthorPage, EN-only), `/wiki/:id` (WikiDetailPage) — **公开访问，无需登录**
 
 | 功能 | 说明 |
 |------|------|
 | **首页** | `/` 重定向至 `/:lang/wiki`（Wiki Hub 即首页，内容优先策略） |
 | **百科词条** | 行星、星座、宫位、相位等占星学概念 |
 | **经典书籍** | 30+ 本占星经典书籍的结构化书评与导读 |
+| **精选文章作者** | 编辑作者人设（Elena Vane / Julian Thorne / Marcus Orion），文章按 authorId 署名，作者页 `/wiki/author/:authorId` 展示 bio + 该作者文章列表，输出 ProfilePage/Person 结构化数据。诚实人设：CSS monogram 头像、就近披露 AI 辅助创作 |
 | **Synthetica 工具** | AI 心理综合分析工具 |
 | **搜索功能** | 全文搜索匹配 |
 

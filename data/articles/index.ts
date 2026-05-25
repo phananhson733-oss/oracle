@@ -78,7 +78,7 @@ export const getArticleSummaries = (lang: Language): WikiArticleSummary[] => {
       slug,
       title,
       description,
-      author,
+      authorId,
       date,
       image,
       image_alt,
@@ -87,7 +87,7 @@ export const getArticleSummaries = (lang: Language): WikiArticleSummary[] => {
       slug,
       title,
       description,
-      author,
+      authorId,
       date,
       image,
       image_alt,
@@ -95,6 +95,14 @@ export const getArticleSummaries = (lang: Language): WikiArticleSummary[] => {
     }),
   );
 };
+
+// Get article summaries written by a specific author (for author profile page).
+// EN-only authors return an empty list under zh — caller renders empty state.
+export const getArticlesByAuthor = (
+  authorId: string,
+  lang: Language,
+): WikiArticleSummary[] =>
+  getArticleSummaries(lang).filter((a) => a.authorId === authorId);
 
 // Get single article by slug
 export const getArticleBySlug = (

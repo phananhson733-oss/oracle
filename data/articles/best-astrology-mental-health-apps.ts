@@ -6,7 +6,7 @@ export const bestAstrologyAppsEn: WikiArticle = {
   title: "The 5 Best Astrology Apps for Mental Health & Journaling (2026)",
   description:
     "We tested the top astrology apps (Co-Star, The Pattern, CHANI) to find which ones actually support mental health vs. causing anxiety. Here is the verdict.",
-  author: "AstrologyWiki Team",
+  authorId: "julian-thorne",
   date: "2025-07-01",
   schema: "Article",
   lang: "en",
@@ -138,7 +138,7 @@ export const bestAstrologyAppsZh: WikiArticle = {
   title: "2026年5款最佳心理健康与日记占星应用",
   description:
     "我们测试了顶级占星应用（Co-Star、The Pattern、CHANI），找出哪些真正支持心理健康，哪些会引发焦虑。这是我们的结论。",
-  author: "AstrologyWiki 团队",
+  authorId: "julian-thorne",
   date: "2025-07-01",
   schema: "Article",
   lang: "zh",
