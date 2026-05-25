@@ -30,6 +30,22 @@ test.describe("/en/wiki/author — editorial author pages", () => {
     await expect(
       page.locator(`a[href$="/wiki/${ELENA.articleSlug}"]`).first(),
     ).toBeVisible();
+
+    // SEO：作者页注入 ProfilePage/Person JSON-LD（SEO 产品关键结构化数据）。
+    await expect
+      .poll(async () =>
+        page.evaluate(() =>
+          Array.from(
+            document.head.querySelectorAll(
+              'script[type="application/ld+json"]',
+            ),
+          ).some((s) => {
+            const t = s.textContent || "";
+            return t.includes('"ProfilePage"') && t.includes('"Person"');
+          }),
+        ),
+      )
+      .toBe(true);
   });
 
   test("无效 authorId 降级为未命中提示，不渲染文章列表", async ({ page }) => {
@@ -48,9 +64,7 @@ test.describe("/en/wiki/author — editorial author pages", () => {
     await page.goto(`/en/wiki/${ELENA.articleSlug}`);
 
     // byline 中作者名是链接。
-    const bylineLink = page
-      .getByRole("link", { name: ELENA.name })
-      .first();
+    const bylineLink = page.getByRole("link", { name: ELENA.name }).first();
     await expect(bylineLink).toBeVisible();
     await bylineLink.click();
 
