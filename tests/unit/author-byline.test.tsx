@@ -6,7 +6,10 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { AuthorByline, AuthorMonogram } from "../../components/wiki/AuthorByline";
+import {
+  AuthorByline,
+  AuthorMonogram,
+} from "../../components/wiki/AuthorByline";
 import { getAuthorById } from "../../data/authors/index";
 
 const elena = getAuthorById("elena-vane")!;
@@ -44,9 +47,28 @@ describe("AuthorByline — detail variant", () => {
     expect(screen.getByText("Editorial persona · AI-assisted")).toBeTruthy();
   });
 
+  it("作者链接强制 EN-only：即便 langPath 产出 /zh 前缀，href 仍指向 /en 作者页", () => {
+    renderInRouter(
+      <AuthorByline
+        persona={elena}
+        variant="detail"
+        lang="zh"
+        isDark={false}
+        langPath={(p) => `/zh${p}`}
+      />,
+    );
+    const link = screen.getByRole("link", { name: "Elena Vane" });
+    expect(link.getAttribute("href")).toBe("/en/wiki/author/elena-vane");
+  });
+
   it("无 langPath 时姓名不可点（降级为纯文本）", () => {
     renderInRouter(
-      <AuthorByline persona={elena} variant="detail" lang="en" isDark={false} />,
+      <AuthorByline
+        persona={elena}
+        variant="detail"
+        lang="en"
+        isDark={false}
+      />,
     );
     expect(screen.queryByRole("link")).toBeNull();
     expect(screen.getByText("Elena Vane")).toBeTruthy();
@@ -55,7 +77,12 @@ describe("AuthorByline — detail variant", () => {
   it("zh 语境渲染中文披露文案", () => {
     const julian = getAuthorById("julian-thorne")!;
     renderInRouter(
-      <AuthorByline persona={julian} variant="detail" lang="zh" isDark={false} />,
+      <AuthorByline
+        persona={julian}
+        variant="detail"
+        lang="zh"
+        isDark={false}
+      />,
     );
     expect(screen.getByText("编辑人设 · AI 辅助创作")).toBeTruthy();
   });

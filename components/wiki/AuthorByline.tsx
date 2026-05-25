@@ -8,7 +8,8 @@ import type { AuthorPersona, Language } from "../../types";
 import { getAuthorBio } from "../../data/authors";
 
 // byline 就近披露文案（编辑人设 + AI 辅助），EN 默认 + ZH。
-const DISCLOSURE: Record<Language, string> = {
+// 导出为单一来源，作者页 header 复用同一文案，避免两处定义漂移。
+export const DISCLOSURE: Record<Language, string> = {
   en: "Editorial persona · AI-assisted",
   zh: "编辑人设 · AI 辅助创作",
 };
@@ -24,7 +25,10 @@ const initialsOf = (name: string): string =>
 
 type MonogramSize = "lg" | "md" | "sm";
 
-const SIZE_MAP: Record<MonogramSize, { box: string; radius: string; font: string }> = {
+const SIZE_MAP: Record<
+  MonogramSize,
+  { box: string; radius: string; font: string }
+> = {
   lg: { box: "w-24 h-24", radius: "rounded-3xl", font: "text-3xl" },
   md: { box: "w-11 h-11", radius: "rounded-xl", font: "text-base" },
   sm: { box: "w-6 h-6", radius: "rounded-md", font: "text-[10px]" },
@@ -84,15 +88,20 @@ export const AuthorByline: React.FC<AuthorBylineProps> = ({
     );
   }
 
-  // detail variant
-  const authorHref = langPath ? langPath(`/wiki/author/${persona.id}`) : undefined;
+  // detail variant — 作者页为 EN-only（canonical/stub/sitemap 皆 /en/）。byline 链接
+  // 强制 EN，避免在 zh 文章页生成指向非 canonical /zh 作者页的内部链接（SEO 契约一致）。
+  // langPath 仅作"是否可链接"的开关（消费方传入即启用链接），不参与作者页路径构造。
+  const authorHref = langPath ? `/en/wiki/author/${persona.id}` : undefined;
   return (
     <span className="flex items-center gap-3">
       <AuthorMonogram persona={persona} size="md" />
       <span className="flex flex-col">
         <span className="text-sm">
           {authorHref ? (
-            <Link to={authorHref} className={`font-semibold ${linkText} hover:underline`}>
+            <Link
+              to={authorHref}
+              className={`font-semibold ${linkText} hover:underline`}
+            >
               {persona.name}
             </Link>
           ) : (

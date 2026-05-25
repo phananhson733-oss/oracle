@@ -14,3 +14,4 @@
 | `author-personas.test.ts` | 守护作者人设注册表（`getAuthorById` 命中/未命中、`getAllAuthors`、bio EN 回退）与 `buildPersonSchema` Person 实体字段完整性、`@id` 跨语言稳定。 |
 | `articles-by-author.test.ts` | CRITICAL 回归：`getArticleSummaries` 形状含 `authorId` 且消费方不破；`getArticlesByAuthor` 按作者/语言过滤。 |
 | `author-byline.test.tsx` | jsdom 组件测试：`<AuthorByline>` card 不可点 / detail 链到作者页+就近披露+日期，`<AuthorMonogram>` 首字母渲染。 |
+| `safe-jsonld.test.ts` | 回归：`scripts/lib/safe-jsonld.mjs` 的 `safeJsonLd` 转义 `<`/`>`/`&` 与 U+2028/U+2029，含 `</script>` 字段不突破 script 标签（防 SEO 静态页存储型 XSS），输出仍合法 JSON 可往返。 |

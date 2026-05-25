@@ -11,13 +11,8 @@ import { ArrowLeft, Calendar, ArrowRight } from "lucide-react";
 import { getAuthorById, getAuthorBio } from "../../data/authors";
 import { buildPersonSchema, authorUrl } from "../../data/authors/schema";
 import { getArticlesByAuthor } from "../../data/articles";
-import { AuthorMonogram } from "./AuthorByline";
+import { AuthorMonogram, DISCLOSURE } from "./AuthorByline";
 import { useLangPath } from "../../hooks/useLangPath";
-
-const DISCLOSURE: Record<"en" | "zh", string> = {
-  en: "Editorial persona · AI-assisted",
-  zh: "编辑人设 · AI 辅助创作",
-};
 
 const formatDate = (date: string, lang: "en" | "zh"): string => {
   const d = new Date(date);
