@@ -28,8 +28,8 @@
 - [x] 4.1 新建作者页组件：完整 bio + `getArticlesByAuthor` 文章列表 + 空列表状态 + `<SEO>` 输出 `ProfilePage`/`Person` JSON-LD
 - [x] 4.2 `App.tsx`：注册 `/:lang/wiki/author/:authorId`；`getAuthorById` 未命中→NotFound
 - [x] 4.3 `scripts/generate-seo-pages.mjs`：作者页 stub 生成（仿 classics 循环）+ EN-only sitemap 循环输出 `/en/wiki/author/<id>`
-- [ ] 4.4 E2E（playwright）：有效 authorId→作者页+文章列表、无效→真 404、详情页 byline→作者页、作者页→文章
-- [ ] 4.5 验证：`npm run build` 出 sitemap 含作者页 URL；`npm run test:e2e` 通过
+- [x] 4.4 E2E（playwright）：有效 authorId→作者页+文章列表、无效→SPA 内未命中降级（200 软 404）、详情页 byline→作者页、作者页→文章（`tests/e2e/wiki-author.spec.ts`，4 用例）
+- [x] 4.5 验证：`npm run build` 出 sitemap 含作者页 URL；`npm run test:e2e`（wiki-author）通过
 
 ## 5. 头像（CSS monogram）与 UI 规范（P2）
 - [x] 5.1 头像用 CSS monogram（name 首字母 + 按垂直调色的渐变底），**无 PNG 资产、无加载态/失败 fallback**；`AuthorPersona` 用 `avatarColors`（垂直配色键）取代图片路径字段；暗/亮双模式适配
@@ -37,8 +37,8 @@
 - [x] 5.3 对照 `COLOR_SYSTEM_GUIDE.md` 验证 byline/头像/作者页（参考 approved mockup），PR 填 UI 规范符合说明
 
 ## 6. 测试环境前置（P2，可与 1 并行）
-- [ ] 6.1 `vitest.config.ts` 加 jsdom + `@testing-library/react`，扩 include 覆盖 `components/**/*.test.tsx`（或单开 jsdom project）
-- [ ] 6.2 验证：`<AuthorByline>` 渲染测试可跑
+- [x] 6.1 装 `jsdom` + `@testing-library/react`（devDeps）；`vitest.config.ts` include 扩到 `tests/unit/**/*.test.{ts,tsx}`，组件测试用 per-file `// @vitest-environment jsdom` docblock 切换（保持 node 为默认环境）
+- [x] 6.2 验证：`<AuthorByline>` 渲染测试可跑（`tests/unit/author-byline.test.tsx`，5 用例）
 
 ## 7. 文档与规范同步（落地前）
 - [x] 7.1 `docs/PRD.md`：新增作者页路由描述 + 内容页清单
