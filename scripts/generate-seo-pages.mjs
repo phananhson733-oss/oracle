@@ -585,6 +585,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs (SPA-rendered, added to sitemap only)
 const ARTICLE_SLUGS = [
+  'north-node-in-scorpio',
   'north-node-vs-south-node',
   '11th-house',
   '9th-house-astrology',
