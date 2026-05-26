@@ -38,6 +38,7 @@ import { greenAuraMeaningEn } from "./green-aura-meaning";
 import { chakraSystemOverviewEn } from "./chakra-system-overview";
 import { fourElementFrameworkEn } from "./four-element-framework";
 
+import { greenAuraMeaningZh } from "./green-aura-meaning";
 // All articles organized by language
 const ARTICLES_EN: WikiArticle[] = [
   trackMoodAstrologyEn,
@@ -63,6 +64,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   marsAngerTriggersZh,
   bestAstrologyAppsZh,
   howToReadBirthChartZh,
+  greenAuraMeaningZh,
 ];
 
 // Get all articles for a language

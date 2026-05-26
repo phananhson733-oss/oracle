@@ -585,6 +585,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs (SPA-rendered, added to sitemap only)
 const ARTICLE_SLUGS = [
+  'green-aura-meaning',
   'track-mood-astrology',
   'mercury-retrograde-vs-moon-anxiety',
   'mars-anger-triggers',
@@ -603,7 +604,6 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'white-aura-meaning',
   'red-aura-meaning',
   'orange-aura-meaning',
-  'green-aura-meaning',
   'chakra-system-overview',
   'four-element-framework',
 ];
