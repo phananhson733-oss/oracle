@@ -46,6 +46,8 @@ import { eighthHouseMeaningEn } from "./8th-house-meaning";
 import { eighthHouseMeaningZh } from "./8th-house-meaning";
 import { twelfthHouseAstrologyEn } from "./12th-house-astrology";
 import { twelfthHouseAstrologyZh } from "./12th-house-astrology";
+import { ninthHouseAstrologyEn } from "./9th-house-astrology";
+import { ninthHouseAstrologyZh } from "./9th-house-astrology";
 // All articles organized by language
 const ARTICLES_EN: WikiArticle[] = [
   trackMoodAstrologyEn,
@@ -66,6 +68,7 @@ const ARTICLES_EN: WikiArticle[] = [
   astrologyHousesEn,
   eighthHouseMeaningEn,
   twelfthHouseAstrologyEn,
+  ninthHouseAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -79,6 +82,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   astrologyHousesZh,
   eighthHouseMeaningZh,
   twelfthHouseAstrologyZh,
+  ninthHouseAstrologyZh,
 ];
 
 // Get all articles for a language
