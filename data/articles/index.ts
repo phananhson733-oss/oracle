@@ -54,6 +54,8 @@ import { northNodeVsSouthNodeEn } from "./north-node-vs-south-node";
 import { northNodeVsSouthNodeZh } from "./north-node-vs-south-node";
 import { northNodeInScorpioEn } from "./north-node-in-scorpio";
 import { northNodeInScorpioZh } from "./north-node-in-scorpio";
+import { northNodeInTaurusEn } from "./north-node-in-taurus";
+import { northNodeInTaurusZh } from "./north-node-in-taurus";
 // All articles organized by language
 const ARTICLES_EN: WikiArticle[] = [
   trackMoodAstrologyEn,
@@ -78,6 +80,7 @@ const ARTICLES_EN: WikiArticle[] = [
   eleventhHouseEn,
   northNodeVsSouthNodeEn,
   northNodeInScorpioEn,
+  northNodeInTaurusEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -95,6 +98,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   eleventhHouseZh,
   northNodeVsSouthNodeZh,
   northNodeInScorpioZh,
+  northNodeInTaurusZh,
 ];
 
 // Get all articles for a language
