@@ -585,6 +585,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs (SPA-rendered, added to sitemap only)
 const ARTICLE_SLUGS = [
+  'astrology-houses',
   'orange-aura-meaning',
   'green-aura-meaning',
   'track-mood-astrology',
