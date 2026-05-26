@@ -50,6 +50,8 @@ import { ninthHouseAstrologyEn } from "./9th-house-astrology";
 import { ninthHouseAstrologyZh } from "./9th-house-astrology";
 import { eleventhHouseEn } from "./11th-house";
 import { eleventhHouseZh } from "./11th-house";
+import { northNodeVsSouthNodeEn } from "./north-node-vs-south-node";
+import { northNodeVsSouthNodeZh } from "./north-node-vs-south-node";
 // All articles organized by language
 const ARTICLES_EN: WikiArticle[] = [
   trackMoodAstrologyEn,
@@ -72,6 +74,7 @@ const ARTICLES_EN: WikiArticle[] = [
   twelfthHouseAstrologyEn,
   ninthHouseAstrologyEn,
   eleventhHouseEn,
+  northNodeVsSouthNodeEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -87,6 +90,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   twelfthHouseAstrologyZh,
   ninthHouseAstrologyZh,
   eleventhHouseZh,
+  northNodeVsSouthNodeZh,
 ];
 
 // Get all articles for a language
