@@ -42,6 +42,8 @@ import { greenAuraMeaningZh } from "./green-aura-meaning";
 import { orangeAuraMeaningZh } from "./orange-aura-meaning";
 import { astrologyHousesEn } from "./astrology-houses";
 import { astrologyHousesZh } from "./astrology-houses";
+import { eighthHouseMeaningEn } from "./8th-house-meaning";
+import { eighthHouseMeaningZh } from "./8th-house-meaning";
 // All articles organized by language
 const ARTICLES_EN: WikiArticle[] = [
   trackMoodAstrologyEn,
@@ -60,6 +62,7 @@ const ARTICLES_EN: WikiArticle[] = [
   chakraSystemOverviewEn,
   fourElementFrameworkEn,
   astrologyHousesEn,
+  eighthHouseMeaningEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -71,6 +74,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   greenAuraMeaningZh,
   orangeAuraMeaningZh,
   astrologyHousesZh,
+  eighthHouseMeaningZh,
 ];
 
 // Get all articles for a language
