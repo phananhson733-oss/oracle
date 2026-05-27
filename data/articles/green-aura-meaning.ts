@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const greenAuraMeaningEn: WikiArticle = {
   slug: "green-aura-meaning",
   title: "Green Aura Meaning",
-  description: "Green aura is the color band that aura readers most often link with care, connection, and a heart-led way of relating to people and the living world.",
+  description:
+    "Green aura is the color band that aura readers most often link with care, connection, and a heart-led way of relating to people and the living world.",
   authorId: "elena-vane",
   date: "2026-05-27",
   schema: "Article",
@@ -15,7 +16,7 @@ export const greenAuraMeaningEn: WikiArticle = {
     "what does a green aura mean",
     "green aura",
     "what does green aura mean",
-    "blue green aura meaning"
+    "blue green aura meaning",
   ],
   content: `# Green Aura Meaning
 
@@ -120,20 +121,19 @@ The comparison is a dial, not a ladder. You are not trying to climb from yellow 
 
 - [comparison with yellow aura meaning](/en/wiki/yellow-aura-meaning) — the sibling read that clarifies heart-centered care against solar-plexus drive.
 - [heart chakra explainer](/en/wiki/chakra-system-overview) — unpacks the energy center green is most often associated with.
-- [[<TBD-external-link: Wikipedia | Anahata | overview of the heart chakra that green aura traditions map onto>]]
+- [Anahata, the heart chakra (Wikipedia)](https://en.wikipedia.org/wiki/Anahata) — background on the energy center green aura traditions map onto.
 
 ## Take Action
 
-Check your own placement with the free reading tool.
-
-[工具页]
+Check your own placement with the free reading tool — open your [full birth chart report](/dashboard) and see where your care is landing today.
 `,
 };
 
 export const greenAuraMeaningZh: WikiArticle = {
   slug: "green-aura-meaning",
   title: "Green Aura Meaning",
-  description: "绿色气场代表什么？它通常指向一种以关爱、连接、修复为主调的能量场。",
+  description:
+    "绿色气场代表什么？它通常指向一种以关爱、连接、修复为主调的能量场。",
   authorId: "elena-vane",
   date: "2026-05-27",
   schema: "Article",
@@ -143,7 +143,7 @@ export const greenAuraMeaningZh: WikiArticle = {
     "what does a green aura mean",
     "green aura",
     "what does green aura mean",
-    "blue green aura meaning"
+    "blue green aura meaning",
   ],
   content: `# 绿色气场代表什么
 
@@ -211,6 +211,6 @@ export const greenAuraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-与其对着资料反复猜，不如用免费的解读工具看看自己当下的气场落点。打开[工具页](工具页)，把今天的状态对一对。
+与其对着资料反复猜，不如用免费的解读工具看看自己当下的气场落点。打开你的[完整本命盘报告](/dashboard)，把今天的状态对一对。
 `,
 };
