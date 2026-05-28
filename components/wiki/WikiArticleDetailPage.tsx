@@ -528,7 +528,15 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       const h2 = line.match(/^##\s+(.+)/);
       if (h2) {
         flush();
-        inFaq = /frequently asked|常见问题/i.test(h2[1]);
+        // v4.5.1 Phase C: FAQ heading may vary per entity (去模板感). Detect by
+        // role token, mirroring flow-mvp EN_/ZH_FAQ_HEADING_RE so a varied
+        // heading like "Common Questions About X" / "关于X的常见问题" still emits
+        // FAQPage JSON-LD. Non-FAQ false positives are harmless (no bold-? lines
+        // inside → faqs stays empty → schema null).
+        inFaq =
+          /\bfaqs?\b|\bquestions?\b|\bq\s*&\s*a\b|问题|问答|常问|疑问|問題|問答|常問|疑問/i.test(
+            h2[1],
+          );
         continue;
       }
       if (!inFaq) continue;
