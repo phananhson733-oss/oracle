@@ -89,7 +89,7 @@ Most aura literature treats color as a snapshot of a prevailing state, not a fix
 
 - [companion guide to the yellow aura](/en/wiki/yellow-aura-meaning) — how confidence and clarity read differently from orange's creative warmth.
 - [overview of the sacral chakra and wider chakra system](/en/wiki/chakra-system-overview) — the energy center the orange reading maps onto, with more on creative and emotional flow.
-- [[<TBD-external-link: Wikipedia | Chakra | background on the chakra system the orange aura reading maps onto>]] — encyclopedic context for the energy-center framework.
+- [Chakra (Wikipedia)](https://en.wikipedia.org/wiki/Chakra) — encyclopedic context for the energy-center framework.
 
 ## Take Action
 
