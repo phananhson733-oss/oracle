@@ -7,13 +7,6 @@ import { Link } from "react-router-dom";
 import type { AuthorPersona, Language } from "../../types";
 import { getAuthorBio } from "../../data/authors";
 
-// byline 就近披露文案（编辑人设 + AI 辅助），EN 默认 + ZH。
-// 导出为单一来源，作者页 header 复用同一文案，避免两处定义漂移。
-export const DISCLOSURE: Record<Language, string> = {
-  en: "Editorial persona · AI-assisted",
-  zh: "编辑人设 · AI 辅助创作",
-};
-
 // name → 首字母（取前两个词首字母）。
 const initialsOf = (name: string): string =>
   name
@@ -69,7 +62,6 @@ interface AuthorBylineProps {
 export const AuthorByline: React.FC<AuthorBylineProps> = ({
   persona,
   variant,
-  lang,
   isDark,
   date,
   langPath,
@@ -109,11 +101,11 @@ export const AuthorByline: React.FC<AuthorBylineProps> = ({
           )}
           <span className={mutedText}> · {persona.title}</span>
         </span>
-        <span className={`text-xs ${mutedText} flex items-center gap-2`}>
-          {date && <span>{formatDate ? formatDate(date) : date}</span>}
-          <span aria-hidden="true">·</span>
-          <span>{DISCLOSURE[lang] ?? DISCLOSURE.en}</span>
-        </span>
+        {date && (
+          <span className={`text-xs ${mutedText}`}>
+            {formatDate ? formatDate(date) : date}
+          </span>
+        )}
       </span>
     </span>
   );

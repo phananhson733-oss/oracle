@@ -11,7 +11,7 @@ import { ArrowLeft, Calendar, ArrowRight } from "lucide-react";
 import { getAuthorById, getAuthorBio } from "../../data/authors";
 import { buildPersonSchema, authorUrl } from "../../data/authors/schema";
 import { getArticlesByAuthor } from "../../data/articles";
-import { AuthorMonogram, DISCLOSURE } from "./AuthorByline";
+import { AuthorMonogram } from "./AuthorByline";
 import { useLangPath } from "../../hooks/useLangPath";
 
 const formatDate = (date: string, lang: "en" | "zh"): string => {
@@ -122,7 +122,6 @@ const AuthorPage: React.FC = () => {
               {persona.name}
             </h1>
             <div className={`text-base ${mutedText}`}>{persona.title}</div>
-            <div className={`text-xs ${mutedText}`}>{DISCLOSURE[lang]}</div>
             <p
               className={`text-lg leading-relaxed font-serif ${nameText} max-w-2xl`}
             >
