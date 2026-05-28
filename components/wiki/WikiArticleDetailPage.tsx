@@ -512,6 +512,47 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
     ],
   );
 
+  // FAQPage structured data — parsed from the article's FAQ section so the Q&A
+  // qualifies for PAA / rich results (清单 §7 / GEO). Null when <2 Q&A present.
+  const faqSchema = useMemo(() => {
+    if (!article?.content) return null;
+    const faqs: { q: string; a: string }[] = [];
+    let inFaq = false;
+    let cur: { q: string; a: string } | null = null;
+    const flush = () => {
+      if (cur && cur.a.trim()) faqs.push({ q: cur.q, a: cur.a.trim() });
+      cur = null;
+    };
+    for (const raw of article.content.split("\n")) {
+      const line = raw.trim();
+      const h2 = line.match(/^##\s+(.+)/);
+      if (h2) {
+        flush();
+        inFaq = /frequently asked|常见问题/i.test(h2[1]);
+        continue;
+      }
+      if (!inFaq) continue;
+      const q = line.match(/^\*\*(.+?)\*\*$/);
+      if (q && /[?？]/.test(q[1])) {
+        flush();
+        cur = { q: q[1].trim(), a: "" };
+        continue;
+      }
+      if (cur && line) cur.a += (cur.a ? " " : "") + line;
+    }
+    flush();
+    if (faqs.length < 2) return null;
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    };
+  }, [article]);
+
   const breadcrumbItems = useMemo(() => {
     const items = [
       { name: t.wiki.tab_articles, path: langPath("/wiki?tab=articles") },
@@ -597,7 +638,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         alternateLanguages={alternateLanguages}
         type="article"
         image={article.image}
-        schema={[articleSchema, breadcrumbSchema].filter(Boolean)}
+        schema={[articleSchema, breadcrumbSchema, faqSchema].filter(Boolean)}
       />
 
       <Breadcrumb items={breadcrumbItems} homePath={langPath("/wiki")} />
