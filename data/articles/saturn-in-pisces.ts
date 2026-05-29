@@ -27,7 +27,7 @@ Saturn in Pisces is **the multi-year transit of structure-bringing Saturn throug
 
 ## Why It Matters for Self-Awareness
 
-Most people meet a Saturn transit braced for punishment. The cultural shorthand treats Saturn as the stern disciplinarian, so the news that Saturn is moving into your Piscean territory can read as a sentence rather than an assignment. That framing misses the actual ask. This transit does not arrive to dissolve you into your fears; it arrives to test whether you can hold a steady form around things that resist holding — your imagination, your need for rest, your sense of where you end and other people begin. Reading the whole transit as a family of related lessons, instead of bracing for one dreaded outcome, changes what you do with it.
+Most people meet a Saturn transit braced for punishment. The cultural shorthand treats Saturn as the stern disciplinarian, so the news that Saturn transits your Piscean territory can read as a sentence rather than an assignment. That framing misses the actual ask. This transit does not arrive to dissolve you into your fears; it arrives to test whether you can hold a steady form around things that resist holding — your imagination, your need for rest, your sense of where you end and other people begin. Reading the whole transit as a family of related lessons, instead of bracing for one dreaded outcome, changes what you do with it.
 
 The reason to understand the full system before zooming into any single piece is that Pisces themes are slippery by nature, and a one-trait reading tends to mislead. If you only learn that "this transit is hard on boundaries," you will treat every tired, foggy week as confirmation that you are failing the test. But the transit touches several distinct domains at once, and they do not all move on the same schedule. One person feels it most in their creative discipline; another feels it in caregiving fatigue; another in a slow, sobering shift in what they believe. Seeing them as a connected set lets you tell the difference between a real structural problem you can build around and ordinary noise you can let pass.
 
@@ -51,7 +51,7 @@ The wide view also protects you from two failure modes that catch most people. A
 Each strand of Saturn in Pisces deserves a short orientation before you go deep on any one of them. The briefs below sketch the core of each theme plus the most common way it gets read wrong.
 
 1. **Saturn testing your boundaries** — This is the strand most people feel first. Saturn asks you to build firm, repeatable limits around your time and attention in a sign that would rather merge than separate. The work is unglamorous: noticing where you over-give, then practicing a clean no without a paragraph of apology attached to it. The misread is treating your fatigue as proof that something is wrong with you, when the transit is simply showing you a boundary that was never built in the first place. For the underlying area this often touches — the hidden, easily drained part of the chart — see [deep dive on the twelfth house](/en/wiki/12th-house-astrology).
-2. **Saturn and structured rest** — Pisces governs the part of life that runs underground: sleep, retreat, the unconscious, the need to dissolve and recover. Saturn here asks you to give rest an actual structure instead of treating it as the thing you do once everything else is finished. The core idea is that recovery is a discipline, not a reward. The common misread is mistaking real rest for laziness and powering through until you crash.
+2. **Saturn and structured rest** — The 12th house is the part of life that runs underground: sleep, retreat, the unconscious, the need to dissolve and recover, while Pisces adds imagination, compassion, and the pull toward dissolution. Saturn here asks you to give rest an actual structure instead of treating it as the thing you do once everything else is finished. The core idea is that recovery is a discipline, not a reward. The common misread is mistaking real rest for laziness and powering through until you crash.
 3. **Saturn and creative discipline** — Pisces is the imaginative, image-rich part of the zodiac, and Saturn wants that imagination to take a durable shape. This strand rewards showing up to the work on a schedule rather than waiting to feel inspired. The misread is believing that structure kills creativity, when under this transit it is usually the only thing that lets a vague vision become finished work.
 4. **Saturn and maturing belief** — Faith, meaning, and what you trust in all come under quiet review. Saturn does not delete belief; it asks you to test it, drop what was sentimental, and keep what holds weight. The misread is reading honest doubt as a crisis of faith rather than the slow maturing of it. What survives this review tends to be sturdier than what went in, precisely because it has been questioned rather than inherited.
 5. **Saturn and grounded compassion** — Pisces is the most empathic part of the zodiac, the place where you feel other people's states as if they were your own. Saturn here asks you to keep caring while staying intact, which means learning that compassion without a container quietly turns into self-erasure. The strand rewards the kind of care that has limits built into it — showing up reliably for the people who matter without dissolving into their needs. The misread is mistaking that self-erasure for generosity and calling burnout a virtue.
@@ -102,15 +102,15 @@ Find which house Pisces occupies in your own birth chart, because that house is 
 
 1. Think of a recent week you spent exhausted — where exactly did you keep a door open that you could have closed?
 2. Name one creative or caregiving commitment you have been waiting to "feel ready" for instead of giving it a schedule.
-3. Notice a belief you have quietly outgrown this year, and ask what holds up once you stop defending it.
+3. Notice a belief you have quietly outgrown during this transit, and ask what holds up once you stop defending it.
 
 ## Related Reading
 
-To go deeper on any single strand of this transit, start with the pieces that explain the building blocks it touches. For the elemental logic behind why Pisces behaves the way it does, read the [overview of the four-element framework](/en/wiki/four-element-framework), which places Pisces among the water signs and explains the emotional, boundary-soft quality Saturn is working against here. To understand the long maturation arc that Saturn is part of, see the [explainer on the lunar nodes, north node and south node](/en/wiki/north-node-vs-south-node), which covers the slower karmic timeline that gives a Saturn transit its larger meaning. For the structural map of your own chart, the [overview of the astrological houses](/en/wiki/astrology-houses) shows how to locate which domain this transit is actually reshaping, and the [deep dive on the twelfth house](/en/wiki/12th-house-astrology) covers the specific Pisces-ruled territory of rest, retreat, and the unconscious that this transit touches most directly.
+To go deeper on any single strand of this transit, start with the pieces that explain the building blocks it touches. For the elemental logic behind why Pisces behaves the way it does, read the [overview of the four-element framework](/en/wiki/four-element-framework), which places Pisces among the water signs and explains the emotional, boundary-soft quality Saturn is working against here. To explore a different long-arc lens you can set beside this one, see the [explainer on the lunar nodes, north node and south node](/en/wiki/north-node-vs-south-node), which covers a separate growth-axis framework you can compare with Saturn's themes. For the structural map of your own chart, the [overview of the astrological houses](/en/wiki/astrology-houses) shows how to locate which domain this transit is actually reshaping, and the [deep dive on the twelfth house](/en/wiki/12th-house-astrology) covers the specific Pisces-ruled territory of rest, retreat, and the unconscious that this transit touches most directly.
 
 ## Take Action
 
-Open your birth chart and find which house holds Pisces, then trace where Saturn is currently transiting across it. Doing that gives you a single, concrete answer to "which part of my life is under review right now," instead of a vague dread spread across everything. Once you can name the actual domain, the transit stops being a weather warning and becomes a place you can build — which is the quieter point of Saturn anywhere: structure is not the thing that limits you, it is the thing that finally lets the formless hold a shape. [Read the full guide to reading a birth chart to see where Saturn in Pisces is transiting for you.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+Open your birth chart and find which house holds Pisces, then trace where Saturn transits across it during its passage through the sign (most recently 2023-2026). Doing that gives you a single, concrete answer to "which part of my life is under review," instead of a vague dread spread across everything. Once you can name the actual domain, the transit stops being a weather warning and becomes a place you can build — which is the quieter point of Saturn anywhere: structure is not the thing that limits you, it is the thing that finally lets the formless hold a shape. [Read the full guide to reading a birth chart to see where this transit lands for you.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 
@@ -170,7 +170,7 @@ Saturn in Pisces 这组主题拆开来，大致是下面这几块。每块都给
 
 **边界与现实检验** — 在双鱼座这种容易"我顾不上自己"的领域里，土星要你把界线从感觉变成规则。核心是把"我应该照顾所有人"换成"我能稳定提供的是这些"。常见误读：以为划界就是变得冷漠，其实它是为了让你的善意能长久。延伸阅读见 *土星行运边界课题对照说明*。
 
-**休息与自律** — 双鱼座容易把休息和逃避混在一起，土星来了就要你给休息排出结构，让它真的能恢复你，而不是越歇越散。常见误读：把它读成"可以无限躺平"，其实它要的是有节制的休整。
+**休息与自律** — 睡眠、退隐、潜意识、需要消融再恢复的那块"地下"领域，其实归第十二宫管，而双鱼座添上的是想象、慈悲与"化掉边界"的那层底色。这两者容易把休息和逃避混在一起，土星来了就要你给休息排出结构，让它真的能恢复你，而不是越歇越散。常见误读：把它读成"可以无限躺平"，其实它要的是有节制的休整。
 
 **想象与落地** — 灵感很多但落不了地，是双鱼座领域的老问题。土星要你给想象配上日程和步骤。常见误读：以为土星会扼杀创造力，其实它是给创造力装上能承重的骨架。
 
@@ -227,14 +227,14 @@ Saturn in Pisces 在搜索里被反复问到的，往往是几个很具体的操
 
 ## 延伸阅读
 
-- [占星十二宫总览速查](/zh/wiki/astrology-houses) —— 想知道土星在双鱼座正在重塑你哪块生活，先从宫位的全局分布看起
-- [第十二宫深度解析](/zh/wiki/12th-house-astrology) —— 双鱼座主管的领域，这段行运最直接触及的就是它
+- [占星十二宫总览速查](/zh/wiki/astrology-houses) —— 想知道土星行经双鱼座时会重塑你哪块生活，先从宫位的全局分布看起
+- [第十二宫深度解析](/zh/wiki/12th-house-astrology) —— 睡眠、退隐、潜意识这块领域归第十二宫管，这段行运最直接触及的就是它
 - *四元素框架与水象星座对照说明* —— 双鱼属水象，理解水象的特性才读得懂这段行运的底色
-- [月亮南北交点与成长轴线指南](/zh/wiki/north-node-vs-south-node) —— 土星处理的是长线成熟，和交点的成长弧线值得对照着读
+- [月亮南北交点与成长轴线指南](/zh/wiki/north-node-vs-south-node) —— 交点是另一套独立的成长轴线框架，可以拿来和土星的主题对照着看
 
 ## 下一步行动
 
-打开一张你自己的星盘，找到双鱼座落在第几宫——这是看懂这段行运的第一步，参见[读懂本命星盘的完整入门指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。读完你会拿到一套定位法，能直接看出土星在双鱼座正在你人生的哪一块领域要求你建立结构；而当你能为那块领域说出一句具体的话，这段行运对你就不再是悬在头顶的考验，而是一份可以动手去做的功课清单。
+打开一张你自己的星盘，找到双鱼座落在第几宫——这是看懂这段行运的第一步，参见[读懂本命星盘的完整入门指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。读完你会拿到一套定位法，能直接看出土星行经双鱼座时（最近一轮约在 2023–2026 年）会在你人生的哪一块领域要求你建立结构；而当你能为那块领域说出一句具体的话，这段行运对你就不再是悬在头顶的考验，而是一份可以动手去做的功课清单。
 
 ## 参考来源
 

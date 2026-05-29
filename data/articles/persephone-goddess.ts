@@ -19,11 +19,11 @@ export const persephoneGoddessEn: WikiArticle = {
 
 ## What is Persephone?
 
-Persephone is **the Greek goddess of the underworld whose myth maps the human pattern of descent, change, and altered return**. In Greek myth she is the maiden daughter of Demeter who is pulled down into the underworld by Hades, mourned by her grieving mother, and finally allowed to spend part of each year above ground. That underworld she presides over is the same terrain read through the [explainer on the eighth house of loss and regeneration](/en/wiki/8th-house-meaning), where loss and regeneration concentrate in a chart. In astrology and depth psychology, the persephone goddess works as a living archetype rather than a finished story, naming a process people move through again and again.
+Persephone is **the Greek goddess of the underworld whose myth maps the human pattern of descent, change, and altered return**. In Greek myth she is the maiden daughter of Demeter and Zeus who is pulled down into the underworld by Hades, mourned by her grieving mother, and finally allowed to spend part of each year above ground. That underworld she presides over symbolically overlaps with some modern eighth-house themes read through the [explainer on the eighth house of loss and regeneration](/en/wiki/8th-house-meaning), where loss and regeneration concentrate in a chart. In astrology and depth psychology, the persephone goddess works as a living archetype rather than a finished story, naming a process people move through again and again.
 
 - Describes a three-beat rhythm: being pulled under, being changed, and coming back different
 - Carries both roles at once, the innocent maiden and the queen of the dead
-- Read through Pluto, the eighth house, and any chart point touched by loss and renewal
+- Read through Pluto, eighth-house themes, and chart factors clearly tied to loss-and-renewal symbolism
 
 ## Why It Matters for Self-Awareness
 
@@ -51,13 +51,13 @@ The persephone goddess shows up less as a fixed trait and more as a recognizable
 4. **The altered return.** People say you seem different; you have authority where you once had only innocence.
 5. **The recurring cycle.** You notice this is not the first descent, and the pattern itself becomes familiar.
 
-In my years integrating evolutionary astrology with depth-psychological work, the people who recognized which phase they were standing in moved through the descent with far less self-blame than those who read it as personal failure. This way of treating myths as recurring patterns rather than relics owes a great deal to the archetypal lineage Richard Tarnas helped formalize, where the same mythic structures keep activating across both individual lives and shared history. The signals above are not a diagnosis and they do not predict an outcome; they are a way of locating yourself inside a rhythm. Often the most useful question is not how do I get out of this, but which beat of the cycle am I actually in right now, and what does this beat tend to ask of a person. Naming the phase rarely shortens the descent, but it tends to change how you carry it, and that shift is frequently what people describe as the turning point.
+People who recognize which phase they are standing in tend to move through the descent with far less self-blame than those who read it as personal failure. This way of treating myths as recurring patterns rather than relics owes a great deal to the archetypal lineage Richard Tarnas helped formalize, where the same mythic structures keep activating across both individual lives and shared history. The signals above are not a diagnosis and they do not predict an outcome; they are a way of locating yourself inside a rhythm. Often the most useful question is not how do I get out of this, but which beat of the cycle am I actually in right now, and what does this beat tend to ask of a person. Naming the phase rarely shortens the descent, but it tends to change how you carry it, and that shift is frequently what people describe as the turning point.
 
 ## Common Misreadings
 
 The persephone goddess gets flattened in a handful of predictable ways, and each misreading keeps people stuck. Here are the most common:
 
-1. **Misreading: she is a passive victim.** Reality: the myth turns on her becoming queen of the realm that took her; the descent ends in sovereignty, not helplessness.
+1. **Misreading: she is a passive victim.** Reality: the myth holds both coercion and a later sovereignty as underworld queen, the abduction and pomegranate binding alongside the throne she eventually takes; the archetype carries both.
 2. **Misreading: the return means going back to normal.** Reality: she comes back altered and bound to two worlds, so return is transformation, not reversal.
 3. **Misreading: it is a one-time event.** Reality: the persephone goddess names a repeating cycle, and most people meet several descents across a lifetime.
 4. **Misreading: the underworld is purely negative.** Reality: in this pattern the dark place is where depth and authority are earned, not just where things are lost.
@@ -68,7 +68,7 @@ The persephone goddess gets flattened in a handful of predictable ways, and each
 | --- | --- | --- | --- |
 | Forced descent | An ending or loss pulls you somewhere unchosen | Pluto, eighth house | A cherished thing is taken without consent |
 | Binding change | You absorb something you cannot give back | Twelfth house, Scorpio | A truth or grief that reshapes your identity |
-| Altered return | You re-emerge carrying underworld knowledge | Lunar nodes, fixed signs | Others notice a new depth or authority in you |
+| Altered return | You re-emerge carrying underworld knowledge | Pluto, Scorpio / eighth-house symbolism, and relevant hard aspects | Others notice a new depth or authority in you |
 | Recurring rhythm | The cycle repeats across a lifetime | Pluto transits, hard aspects | You recognize this descent is not your first |
 
 ## Common Questions About Persephone
@@ -87,7 +87,7 @@ Because she ate pomegranate seeds in the underworld, binding part of her to it p
 
 **How is Persephone different from Hades or Pluto?**
 
-Hades and Pluto are the force and the place; Persephone is the figure who undergoes the descent and slowly comes to rule it. The archetype centers the lived experience of transformation, not the raw power behind it.
+Hades names the underworld's ruler (and Pluto the modern planet that carries the same charge), while the underworld itself is the realm; Persephone is the figure who undergoes the descent and slowly comes to rule that realm alongside him. The archetype centers the lived experience of transformation, not the raw power behind it.
 
 ## Reflection Prompts
 
@@ -127,7 +127,7 @@ export const persephoneGoddessZh: WikiArticle = {
 
 ## Persephone 是什么？
 
-珀耳塞福涅原型（Persephone）是用来描述一个人**被拉入低谷、在那里改变、再带着新样子回来**的内在循环。在希腊神话里，Persephone 是采花少女被冥王哈迪斯掳入冥府、又在每年部分时间回到母亲身边的那个角色；但当代占星与心理学更看重她身上那条反复发生的轨迹，而不是把她当成一段固定的旧故事。把珀耳塞福涅原型读成"活的模式"，你看的就不是她经历了什么，而是下降与回归的节奏怎样在真实的人身上一再上演——这条贯穿一生的下降与回归轴线，[月亮南北交点指南](/zh/wiki/north-node-vs-south-node) 里也有对应的描述。
+珀耳塞福涅原型（Persephone）是用来描述一个人**被拉入低谷、在那里改变、再带着新样子回来**的内在循环。在希腊神话里，Persephone 是谷神得墨忒尔与宙斯的女儿，那位采花少女被冥王哈迪斯掳入冥府、又在每年部分时间回到母亲身边；但当代占星与心理学更看重她身上那条反复发生的轨迹，而不是把她当成一段固定的旧故事。把珀耳塞福涅原型读成"活的模式"，你看的就不是她经历了什么，而是下降与回归的节奏怎样在真实的人身上一再上演——这条贯穿一生的下降与回归轴线，[月亮南北交点指南](/zh/wiki/north-node-vs-south-node) 里也有对应的描述。
 
 - 核心是一条循环：被动下沉 → 在暗处发生质变 → 带着改变回到地面
 - 它不是一次性的剧情，而是会在不同人生阶段重复出现的内在节律
@@ -161,7 +161,7 @@ export const persephoneGoddessZh: WikiArticle = {
 
 围绕珀耳塞福涅原型，浅层内容最常制造下面几种误读，把来搜 Persephone 的人带偏。逐条对照：
 
-1. **误读：它只是一个被害者故事。** 实际上下降之后还有回归，Persephone 从被掳的少女变成冥府的王后，重点在那次身份的转变，而不是停在受害。
+1. **误读：它只是一个被害者故事。** 实际上这个神话同时容纳两面：既有被掳、吃下石榴籽这层被迫与束缚，也有她后来作为冥府王后的主权——下降里有胁迫，回归里有权能，这个原型两者都承载。
 2. **误读：回归就等于复原如初。** 实际上她在底下吃了石榴籽，回来的人同时属于两个世界，"完整复原"恰恰不是这个原型在说的事。
 3. **误读：下降是要尽快逃离的坏事。** 实际上这条下降与回归的轨迹里，底下那段时间是质变发生的地方，急着逃开反而错过它要给的深度。
 
@@ -180,11 +180,11 @@ export const persephoneGoddessZh: WikiArticle = {
 
 **珀耳塞福涅是谁，她算女神吗？**
 
-在希腊神话里，Persephone 是谷神得墨忒尔的女儿，被掳入冥府后成为冥府之后，确实被视为兼掌春回与亡者的女神。当代解读更常把她当成一个心理原型来用，而不只是供奉的对象。
+在希腊神话里，Persephone 是谷神得墨忒尔与宙斯的女儿，被掳入冥府后成为冥府之后，确实被视为兼掌春回与亡者的女神。当代解读更常把她当成一个心理原型来用，而不只是供奉的对象。
 
 **珀耳塞福涅原型和谷神星、冥王星是一回事吗？**
 
-不是同一个，但彼此相关。冥府那段下沉常和冥王星经验的剧烈转化对照，失去与放手的母题则常落在 [第八宫失落与再生解析](/zh/wiki/8th-house-meaning) 所讲的那片领域，而她跨入的那片隐秘、会消融旧自我的疆域，更接近 [第十二宫隐秘领域指南](/zh/wiki/12th-house-astrology) 描述的状态。
+不是同一个，但彼此相关。这里要分清：哈迪斯是冥府的统治者，冥王星是承载同一股转化能量的现代行星，而冥府本身才是那片领域，Persephone 则是亲历下降、并逐渐与哈迪斯一同执掌这片领域的角色。冥府那段下沉常和冥王星经验的剧烈转化对照，失去与放手的母题则常落在 [第八宫失落与再生解析](/zh/wiki/8th-house-meaning) 所讲的那片领域，而她跨入的那片隐秘、会消融旧自我的疆域，更接近 [第十二宫隐秘领域指南](/zh/wiki/12th-house-astrology) 描述的状态。
 
 **经历这种下降后还能回到原来的自己吗？**
 

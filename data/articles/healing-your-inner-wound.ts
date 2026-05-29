@@ -19,7 +19,7 @@ export const healingYourInnerWoundEn: WikiArticle = {
 
 ## What are inner wound?
 
-An inner wound is **the long-standing sore spot in your psyche that shapes how you protect, withdraw, and reach for connection**. In astrology it is not a single placement but a family of chart signatures that point to where the sore spot tends to hide, repeat, and ask for attention — most of which gather in the hidden, dissolving 12th house, so the [12th house overview](/en/wiki/12th-house-astrology) is a useful first stop. Healing Your Inner Wound, in this reading, means learning to recognize the pattern rather than expecting the chart to erase it. The signatures cluster mostly around the hidden, dissolving parts of the chart, and they overlap rather than line up neatly.
+An inner wound is **the long-standing sore spot in your psyche that shapes how you protect, withdraw, and reach for connection**. In astrology it is not a single placement but a family of chart signatures that point to where the sore spot tends to hide, repeat, and ask for attention — several of which can involve hidden or 12th-house themes, depending on the chart, so the [12th house overview](/en/wiki/12th-house-astrology) is a useful first stop. Healing Your Inner Wound, in this reading, means learning to recognize the pattern rather than expecting the chart to erase it. The signatures cluster mostly around the hidden, dissolving parts of the chart, and they overlap rather than line up neatly.
 
 - A family of related chart signatures, not one fixed point you can isolate
 - Each signature names a different texture of the same sore spot, with heavy overlap between them
@@ -46,7 +46,7 @@ The pull toward a single answer is understandable. A wound is uncomfortable, and
 | Mars in the 12th house | Anger and drive that go underground instead of out | 12th house — the unconscious, self-undoing | Mistaking buried drive for weakness or passivity |
 | The 12th house overview | Where the self dissolves, hides, and rests | 12th house — endings, retreat, the unseen | Reading it only as the "bad house" of loss |
 | The 8th house | Depth, loss, shared resources, regeneration | 8th house — intimacy, transformation | Confusing intensity with danger |
-| The lunar nodes | The direction the wound keeps pointing toward | North node / south node axis | Reading the south node as a flaw instead of a comfort zone |
+| The lunar nodes | A growth-and-familiarity axis that can interact with wound themes | North node / south node axis | Reading the south node as a flaw instead of a comfort zone |
 
 ## The inner wound: Quick Guide
 
@@ -120,7 +120,7 @@ To go deeper into each signature that makes up the inner wound, these explainers
 
 ## Take Action
 
-To start Healing Your Inner Wound in practice, open your full birth chart and locate your own Chiron and Mars in the 12th house, then note which other placements touch them. Doing this gives you a personal map of where your sore spot hides and how your buried drive defends it — your own version of the family described above. Seen clearly, that map is less a list of problems to solve than a quieter understanding of why you protect what you protect. Read the full guide to reading a birth chart at [reading a birth chart from scratch](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find these placements for yourself.
+To start Healing Your Inner Wound in practice, open your full birth chart and locate your own Chiron and Mars in the 12th house, then note which other placements touch them. Doing this gives you a reflective map of possible sore-spot themes and defensive patterns — your own version of the family described above. Seen clearly, that map is less a list of problems to solve than a quieter understanding of why you protect what you protect. Read the full guide to reading a birth chart at [reading a birth chart from scratch](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find these placements for yourself.
 
 ## Sources
 
@@ -133,7 +133,7 @@ To start Healing Your Inner Wound in practice, open your full birth chart and lo
 export const healingYourInnerWoundZh: WikiArticle = {
   slug: "healing-your-inner-wound",
   title: "内在伤口：用占星视角理解它，而不是急着修好它",
-  description: "内在伤口（inner wound）是心里那块影响你防御与靠近的旧痛。在占星里，它不是某一个单独的盘面落点，而是一组互相牵连的盘面信号，标出这块旧痛容易藏在哪、容易在哪里重复、又在哪里向你要注意力——这些信号大多聚在隐蔽、易消融的第十二宫，所以 第十二宫总览说明...",
+  description: "内在伤口（inner wound）是心里那块影响你防御与靠近的旧痛。在占星里，它不是某一个单独的盘面落点，而是一组互相牵连的盘面信号，标出这块旧痛容易藏在哪、容易在哪里重复、又在哪里向你要注意力——其中有几个可能牵涉隐蔽或第十二宫的主题，具体要看星盘，所以 第十二宫总览说明...",
   authorId: "julian-thorne",
   date: "2026-05-29",
   schema: "Article",
@@ -147,7 +147,7 @@ export const healingYourInnerWoundZh: WikiArticle = {
 
 ## inner wound 是什么？
 
-内在伤口（inner wound）是**心里那块影响你防御与靠近的旧痛**。在占星里，它不是某一个单独的盘面落点，而是一组互相牵连的盘面信号，标出这块旧痛容易藏在哪、容易在哪里重复、又在哪里向你要注意力——这些信号大多聚在隐蔽、易消融的第十二宫，所以 [第十二宫总览说明](/zh/wiki/12th-house-astrology) 是个不错的起点。把它放进星盘来读，重点是认出这套模式，而不是指望盘面替你把痛抹掉。这些信号大多聚集在星盘里比较隐蔽、比较容易消融的角落，彼此重叠，而不是整整齐齐排成一列。
+内在伤口（inner wound）是**心里那块影响你防御与靠近的旧痛**。在占星里，它不是某一个单独的盘面落点，而是一组互相牵连的盘面信号，标出这块旧痛容易藏在哪、容易在哪里重复、又在哪里向你要注意力——其中有几个可能牵涉隐蔽或第十二宫的主题，具体要看星盘，所以 [第十二宫总览说明](/zh/wiki/12th-house-astrology) 是个不错的起点。把它放进星盘来读，重点是认出这套模式，而不是指望盘面替你把痛抹掉。这些信号大多聚集在星盘里比较隐蔽、比较容易消融的角落，彼此重叠，而不是整整齐齐排成一列。
 
 - 是一组互相关联的盘面信号，而不是某个孤立的固定点
 - 每个信号描述的是同一块旧痛的不同质地，彼此重叠很多
@@ -171,7 +171,7 @@ export const healingYourInnerWoundZh: WikiArticle = {
 | 火星落第十二宫 | 怒气与行动力转向内部、不外放 | 第十二宫——潜意识、自我消耗 | 把压住的行动力错当成软弱被动 |
 | 第十二宫总览 | 自我消融、退隐与歇息的地方 | 第十二宫——结束、退守、不可见 | 只把它读成「失去之宫」 |
 | 第八宫 | 深度、失去、共享资源、再生 | 第八宫——亲密、转化 | 把强度错当成危险 |
-| 月亮南北交点 | 这块痛一直指向的成长方向 | 北交点 / 南交点轴线 | 把南交点读成缺陷而非舒适区 |
+| 月亮南北交点 | 一条成长与熟悉的轴线，可能与伤口主题相互作用 | 北交点 / 南交点轴线 | 把南交点读成缺陷而非舒适区 |
 
 ## 这几处 inner wound：速览
 
@@ -240,7 +240,7 @@ export const healingYourInnerWoundZh: WikiArticle = {
 
 ## 下一步行动
 
-要把照看 inner wound 落到实处，先打开你完整的出生星盘，找出你自己落在第十二宫的凯龙与火星，再记下还有哪些落点跟它们相邻。这样做，会给你一张私人地图，标出你的旧痛藏在哪、你压住的行动力又如何防守它——就是上面那个家族的你自己的版本。看清之后，那张地图与其说是一串要解决的问题，不如说是更安静地明白了你为什么护着你所护着的东西。完整方法见[从零读懂出生星盘的指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，自己把这些落点找出来。
+要把照看 inner wound 落到实处，先打开你完整的出生星盘，找出你自己落在第十二宫的凯龙与火星，再记下还有哪些落点跟它们相邻。这样做，会给你一张反思用的地图，标出可能的旧痛主题与防御模式——就是上面那个家族的你自己的版本。看清之后，那张地图与其说是一串要解决的问题，不如说是更安静地明白了你为什么护着你所护着的东西。完整方法见[从零读懂出生星盘的指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，自己把这些落点找出来。
 
 ## 参考来源
 

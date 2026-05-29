@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const chironIn12thHouseEn: WikiArticle = {
   slug: "chiron-in-12th-house",
   title: "What Chiron in 12th House Reveals About a Quiet, Hidden Sensitivity",
-  description: "Chiron in the 12th house describes a birth-chart placement where the point named for an old, hard-to-name wound sits in the most private, behind-the-scenes...",
+  description: "Chiron in the 12th house describes a birth-chart placement where the point named for the centaur Chiron, whose myth centers on a wound that never fully...",
   authorId: "julian-thorne",
   date: "2026-05-29",
   schema: "Article",
@@ -19,7 +19,7 @@ export const chironIn12thHouseEn: WikiArticle = {
 
 ## What is Chiron in the 12th house?
 
-Chiron in the 12th house describes a birth-chart placement where the point named for an old, hard-to-name wound sits in the most private, behind-the-scenes part of the chart. In plain terms, chiron in 12th house usually points to **a tender spot you keep hidden, even from yourself**. The [explainer on the twelfth house in astrology](/en/wiki/12th-house-astrology) governs the unseen interior, so the sensitivity rarely shows up loudly; it works underneath ordinary life and shapes how you read other people's pain.
+Chiron in the 12th house describes a birth-chart placement where the point named for the centaur Chiron, whose myth centers on a wound that never fully closes, sits in the most private, behind-the-scenes part of the chart. In plain terms, chiron in 12th house usually points to **a tender spot you keep hidden, even from yourself**. The [explainer on the twelfth house in astrology](/en/wiki/12th-house-astrology) governs the unseen interior, so the sensitivity rarely shows up loudly; it works underneath ordinary life and shapes how you read other people's pain.
 
 - Centers on a private vulnerability you tend to conceal rather than name
 - Surfaces as quiet empathy or unease more than dramatic outer events
@@ -29,7 +29,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Why It Matters for Self-Awareness
 
-Understanding chiron in 12th house matters because most write-ups read the placement as a verdict, "you are wounded," and stop there. That framing leaves the real friction unaddressed: people sense a sensitivity they cannot quite locate, assume it is a flaw, and hide it harder. The placement points instead to a private signal worth listening to. When the hidden part stays buried, it tends to leak out sideways, as guilt that arrives without a clear cause, or a habit of absorbing other people's moods until you cannot tell which feelings began as your own. In my years integrating psychological frameworks with evolutionary astrology, I have watched the same pattern recur in chart after chart: the reader who arrives convinced something is permanently wrong, when the chart is really describing a quiet capacity that has never been given room to surface.
+Understanding chiron in 12th house matters because most write-ups read the placement as a verdict, "you are wounded," and stop there. That framing leaves the real friction unaddressed: people sense a sensitivity they cannot quite locate, assume it is a flaw, and hide it harder. The placement points instead to a private signal worth listening to. When the hidden part stays buried, it tends to leak out sideways, as guilt that arrives without a clear cause, or a habit of absorbing other people's moods until you cannot tell which feelings began as your own. The same pattern recurs in chart after chart: the reader who arrives convinced something is permanently wrong, when the chart is really describing a quiet capacity that has never been given room to surface.
 
 Naming the sensitivity as information rather than a defect changes what you do with it. A reader might notice, for example, that they downplay their own needs in any group, or that a private theme they never discuss keeps steering choices they call practical. Those are not symptoms to fix; they are the placement asking to be acknowledged. For a wider frame on this kind of inner work, see the [pillar page on tending your inner wound](/en/wiki/healing-your-inner-wound), which sets out how a chart's wounded point can become a quiet strength rather than a sentence. Working with chiron in 12th house this way means moving the material from something hidden into something you can name, weigh, and use.
 
@@ -126,7 +126,7 @@ export const chironIn12thHouseZh: WikiArticle = {
 
 ## Chiron in the 12th house 是什么？
 
-Chiron in the 12th house（凯龙在12宫）指的是凯龙星落在星盘最幽深、最私密的 [占星第十二宫总览 pillar 页](/zh/wiki/12th-house-astrology)，标记出一处你很早就学会藏起来、几乎说不出口的敏感。它不是「你坏掉了」的证据，而是**一处被你藏起来、却能转成洞察的隐秘敏感**。凯龙在占星里常被叫作「受伤的疗愈者」，落进第十二宫后，这份伤往往连本人都难以指认。
+Chiron in the 12th house（凯龙在12宫）指的是凯龙星落在星盘最幽深、最私密的 [占星第十二宫总览 pillar 页](/zh/wiki/12th-house-astrology)，标记出一处你很早就学会藏起来、几乎说不出口的敏感。它不是「你坏掉了」的证据，而是**一处被你藏起来、却能转成洞察的隐秘敏感**。凯龙星得名于希腊神话中的半人马凯龙，其神话核心是一道始终无法平复的旧伤，而非「以伤口命名」；落进第十二宫后，这份伤往往连本人都难以指认。
 
 - 它指向一处你习惯独自消化、很少向外人提起的敏感
 - 第十二宫主管潜意识、独处与一切看不见的内在世界

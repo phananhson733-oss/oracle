@@ -41,7 +41,7 @@ Mars in 12th house is easy to confuse with placements that look similar but func
 
 1. **Versus Mars in the 1st house.** A first-house Mars pushes drive straight outward and reads as obvious confidence; people meet it as direct, sometimes blunt, energy. The way the twelfth-house version functions is the reverse: action runs through private channels first, surfacing only once it has been processed inwardly. To gain the protective cover of acting unseen, you sacrifice the immediate recognition that open assertion brings, and you often lose the quick feedback that helps a first-house Mars correct course.
 2. **Versus Chiron in the 12th house.** Both involve a tender, hidden theme, but they differ in what is buried. Chiron carries old hurt and the sense that something cannot be made fully whole; Mars carries raw drive and anger waiting for an outlet. The placements often interact, with one feeding the other, which is why many readers compare this with [sibling article on Chiron in the twelfth house](/en/wiki/chiron-in-12th-house) to tell the two apart. To work with the Mars layer, you have to separate "I am wounded" from "I am angry and holding it back," because the two ask for very different responses.
-3. **Versus a suppressed planet in any house.** Suppression is situational and often temporary; the twelfth house makes indirectness structural and lasting. A suppressed Mars elsewhere can be coaxed out once the pressure lifts, while this placement keeps routing the same force inward by default. To get the depth, imagination, and capacity for quiet, sustained effort this placement offers, you give up the easy clarity of always knowing exactly where your anger is pointed.
+3. **Versus a suppressed planet in any house.** Suppression is situational and often temporary; the twelfth house can make indirectness a recurring tendency. A suppressed Mars elsewhere can be coaxed out once the pressure lifts, while this placement keeps routing the same force inward by default. To get the depth, imagination, and capacity for quiet, sustained effort this placement offers, you give up the easy clarity of always knowing exactly where your anger is pointed.
 
 In each comparison the trade-off is the same shape: privacy and depth in exchange for directness. Recognizing that exchange is what lets a person choose, rather than default, the way their force moves, and it reframes the placement as a question about routing rather than a fixed verdict on how strong someone is.
 
@@ -68,8 +68,8 @@ The reason mars in 12th house gets misunderstood is that surface-level content r
 
 | Property | How It Works | Energy Center | How to Observe |
 | --- | --- | --- | --- |
-| Submerged drive | Action runs through private channels before it surfaces | Twelfth house (Pisces, Neptune ruling) | You work hardest where no one is watching |
-| Indirect anger | Force is held back, then leaks or bursts | Mars in its natal house and sign | Late, body-first reactions to old triggers |
+| Submerged drive | Action runs through private channels before it surfaces | Twelfth house; its ruler depends on the sign on the 12th-house cusp | You work hardest where no one is watching |
+| Indirect anger | Force is held back, then leaks or bursts | Mars in the 12th house, modified by its sign, aspects, and the house ruler | Late, body-first reactions to old triggers |
 | Hidden ambition | Effort happens out of sight, results feel unowned | Twelfth-house placement, behind-the-scenes sector | Achievements rarely feel earned to you |
 | Private fight | Conflict gets managed alone, not voiced | Mars channeled inward rather than first-house outward | You withdraw or solve it quietly instead of naming it |
 
@@ -154,7 +154,7 @@ Mars in the 12th house（火星在12宫）指的是出生星盘里，掌管行�
 
 要分清 Mars in the 12th house 和几个相邻配置的差别，关键看那股行动力是怎么走的、又在什么情境下倾向哪一边。火星在12宫的运作方式是"先潜行、后浮现"，这跟更外显的位置形成明显取舍。
 
-1. **十二宫的火星 对 一宫的火星。** 一宫的火星把劲直接挂在脸上，行动当场可见；落在十二宫则把同一股劲藏进幕后。要换来那份不轻易暴露、能在暗处持续推进的耐力，就要牺牲一部分当场亮明态度的直接和痛快。
+1. **十二宫的火星 对 一宫的火星。** 一宫的火星把劲直接挂在脸上，行动当场可见；落在十二宫则容易让间接表达成为一种反复出现的倾向，把同一股劲藏进幕后。要换来那份不轻易暴露、能在暗处持续推进的耐力，就要牺牲一部分当场亮明态度的直接和痛快。
 2. **十二宫的火星 对 合相上升点的火星。** 后者一开口就带锋芒，存在感强；前者更像一团需要被翻译的内在动能。选了内敛与缓冲，代价是别人常读不准你真实的意图与火气。
 3. **与凯龙的隐痛区分。** 同在十二宫，凯龙更偏向那道久未愈合的旧伤，火星则是想动却没出口的劲。这一点和兄弟篇 [凯龙在12宫的隐性创伤解读](/zh/wiki/chiron-in-12th-house) 可以对照着看，两者常被混为一谈。
 
@@ -180,10 +180,10 @@ Mars in the 12th house（火星在12宫）指的是出生星盘里，掌管行�
 
 | 属性 | 运作方式 | 能量定位 | 如何观察应用 |
 |---|---|---|---|
-| 隐藏的驱力 | 行动先在幕后酝酿，迟一步才浮现 | 本命第十二宫（幕后宫位） | 留意你是否常事后才想清楚该怎么行动 |
+| 隐藏的驱力 | 行动先在幕后酝酿，迟一步才浮现 | 第十二宫；其主管行星取决于宫头所落星座 | 留意你是否常事后才想清楚该怎么行动 |
 | 延后的愤怒 | 当场压住，转成夜里难眠、烦躁或暗中较劲 | 火星主管的行动与攻击主题 | 记下哪些场合你笑着咽下、回家才上头 |
 | 间接的表达 | 用拖延、回避代替正面说不 | 第十二宫的自我消解倾向 | 观察你说"不"时是否绕弯而非直说 |
-| 内向的行动风格 | 独处、夜深时驱力最容易出来 | 本命火星落点（私密场域） | 看看你最敢动手的时段是不是无人时 |
+| 内向的行动风格 | 独处、夜深时驱力最容易出来 | 火星落第十二宫，受其星座、相位与宫主星影响 | 看看你最敢动手的时段是不是无人时 |
 
 ## 关于 Mars in the 12th house 的常见问题
 
