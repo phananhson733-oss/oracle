@@ -5,16 +5,17 @@ import type { WikiArticle } from "../../types";
 export const greenAuraMeaningEn: WikiArticle = {
   slug: "green-aura-meaning",
   title: "What a Green Aura Really Means for Healing and Connection",
-  description: "Green Aura is the green band that practitioners describe seeing or sensing in a person's energy field. In most aura traditions, green aura meaning points to...",
+  description:
+    "Green Aura is the green band that practitioners describe seeing or sensing in a person's energy field. In most aura traditions, green aura meaning points to...",
   authorId: "elena-vane",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
   keywords: [
-    "\"green aura meaning\"",
-    "\"green aura\"",
-    "\"green aura personality\"",
-    "\"what does green aura mean\""
+    '"green aura meaning"',
+    '"green aura"',
+    '"green aura personality"',
+    '"what does green aura mean"',
   ],
   content: `# What a Green Aura Really Means for Healing and Connection
 
@@ -108,7 +109,7 @@ Most aura literature treats color as a snapshot of your prevailing state, not a 
 
 ## Take Action
 
-[Take the 60-second Aura Reading Quiz](https://astrologywiki.com/tools/aura-reading-quiz) to see how your colors map. Answer a few quick questions about how you spend and restore your energy, and the quiz returns a plain-language read on which colors are loudest for you right now — including whether green is leading with healthy care or tipping into the overgiving the labels keep warning about. Seeing that on the page is what turns a vague color label into a small, usable check-in you can do for yourself the next time you can't tell whether you're caring or quietly running on empty.
+Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine. As you read through how you spend and restore your energy, you get a plain-language sense of which colors are loudest for you right now — including whether green is leading with healthy care or tipping into the overgiving the labels keep warning about. Seeing that on the page is what turns a vague color label into a small, usable check-in you can do for yourself the next time you can't tell whether you're caring or quietly running on empty.
 
 ## Sources
 
@@ -120,16 +121,17 @@ Most aura literature treats color as a snapshot of your prevailing state, not a 
 export const greenAuraMeaningZh: WikiArticle = {
   slug: "green-aura-meaning",
   title: "绿色气场代表什么，不必在 healer 和嫉妒之间二选一",
-  description: "绿色气场（Green Aura）是西方灵性圈用来描述以关怀、连接和内在平稳为主调的能量场的说法，和黄色、蓝色并列，是 气场颜色总览 pillar 页...",
+  description:
+    "绿色气场（Green Aura）是西方灵性圈用来描述以关怀、连接和内在平稳为主调的能量场的说法，和黄色、蓝色并列，是 气场颜色总览 pillar 页...",
   authorId: "elena-vane",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
   keywords: [
-    "\"green aura meaning\"",
-    "\"green aura\"",
-    "\"green aura personality\"",
-    "\"what does green aura mean\""
+    '"green aura meaning"',
+    '"green aura"',
+    '"green aura personality"',
+    '"what does green aura mean"',
   ],
   content: `# 绿色气场代表什么，不必在 healer 和嫉妒之间二选一
 
@@ -221,7 +223,7 @@ export const greenAuraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-花 60 秒做一次 [气场颜色速测](https://astrologywiki.com/tools/aura-reading-quiz)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。测完你会拿到一份属于自己的颜色组合解读，而不是一个非 healer 即嫉妒的笼统标签。读懂自己的绿色气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻你把关怀放在了谁身上、又有没有顾到自己。
+查看 [气场颜色总览](/zh/wiki/aura-colors-pillar)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。读懂自己的颜色组合，而不是套一个非 healer 即嫉妒的笼统标签。读懂自己的绿色气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻你把关怀放在了谁身上、又有没有顾到自己。
 
 ## 参考来源
 

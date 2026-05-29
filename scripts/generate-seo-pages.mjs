@@ -585,6 +585,23 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs (SPA-rendered, added to sitemap only)
 const ARTICLE_SLUGS = [
+  '10th-house-astrology',
+  '7th-house-astrology',
+  '6th-house-astrology',
+  '5th-house',
+  '3rd-house-astrology',
+  'solar-plexus-chakra-affirmations',
+  'vedic-birth-chart-calculator',
+  '4th-house-meaning',
+  'sacral-chakra-meaning',
+  'how-to-find-north-node',
+  'chakra-test',
+  '2nd-house-astrology',
+  'vedic-vs-western-astrology',
+  'crown-chakra-meaning',
+  'aura-reading',
+  '1st-house-meaning',
+  'root-chakra-meaning',
   'north-node-in-taurus',
   'north-node-in-scorpio',
   'north-node-vs-south-node',
@@ -599,6 +616,18 @@ const ARTICLE_SLUGS = [
   'mercury-retrograde-vs-moon-anxiety',
   'mars-anger-triggers',
   'best-astrology-mental-health-apps',
+  // 5/29 batch — both clusters now in sitemap (staggered: chakra shipped batch 1,
+  // astrology-terms cluster added in batch 2 ~45min later).
+  'heart-chakra-meaning',
+  'throat-chakra-meaning',
+  'ajna-chakra',
+  'crystals-for-each-chakra',
+  'astrology-terms',
+  'sextile-astrology',
+  'trine-in-astrology',
+  'square-astrology',
+  'descendant-astrology',
+  'ic-astrology',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from

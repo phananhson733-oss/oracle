@@ -56,8 +56,135 @@ import { northNodeInScorpioEn } from "./north-node-in-scorpio";
 import { northNodeInScorpioZh } from "./north-node-in-scorpio";
 import { northNodeInTaurusEn } from "./north-node-in-taurus";
 import { northNodeInTaurusZh } from "./north-node-in-taurus";
+// 5/29 batch — chakra spokes + astrology-terms glossary cluster
+import {
+  heartChakraMeaningEn,
+  heartChakraMeaningZh,
+} from "./heart-chakra-meaning";
+import {
+  throatChakraMeaningEn,
+  throatChakraMeaningZh,
+} from "./throat-chakra-meaning";
+import { ajnaChakraEn, ajnaChakraZh } from "./ajna-chakra";
+import {
+  crystalsForEachChakraEn,
+  crystalsForEachChakraZh,
+} from "./crystals-for-each-chakra";
+import { astrologyTermsEn, astrologyTermsZh } from "./astrology-terms";
+import { sextileAstrologyEn, sextileAstrologyZh } from "./sextile-astrology";
+import { trineInAstrologyEn, trineInAstrologyZh } from "./trine-in-astrology";
+import { squareAstrologyEn, squareAstrologyZh } from "./square-astrology";
+import {
+  descendantAstrologyEn,
+  descendantAstrologyZh,
+} from "./descendant-astrology";
+import { icAstrologyEn, icAstrologyZh } from "./ic-astrology";
 // All articles organized by language
+
+import {
+  rootChakraMeaningEn,
+  rootChakraMeaningZh,
+} from "./root-chakra-meaning";
+
+import { firstHouseMeaningEn, firstHouseMeaningZh } from "./1st-house-meaning";
+
+import { auraReadingEn, auraReadingZh } from "./aura-reading";
+
+import {
+  crownChakraMeaningEn,
+  crownChakraMeaningZh,
+} from "./crown-chakra-meaning";
+
+import {
+  vedicVsWesternAstrologyEn,
+  vedicVsWesternAstrologyZh,
+} from "./vedic-vs-western-astrology";
+
+import {
+  secondHouseAstrologyEn,
+  secondHouseAstrologyZh,
+} from "./2nd-house-astrology";
+
+import { chakraTestEn, chakraTestZh } from "./chakra-test";
+
+import {
+  howToFindNorthNodeEn,
+  howToFindNorthNodeZh,
+} from "./how-to-find-north-node";
+
+import {
+  sacralChakraMeaningEn,
+  sacralChakraMeaningZh,
+} from "./sacral-chakra-meaning";
+
+import {
+  fourthHouseMeaningEn,
+  fourthHouseMeaningZh,
+} from "./4th-house-meaning";
+
+import {
+  vedicBirthChartCalculatorEn,
+  vedicBirthChartCalculatorZh,
+} from "./vedic-birth-chart-calculator";
+
+import {
+  solarPlexusChakraAffirmationsEn,
+  solarPlexusChakraAffirmationsZh,
+} from "./solar-plexus-chakra-affirmations";
+
+import {
+  thirdHouseAstrologyEn,
+  thirdHouseAstrologyZh,
+} from "./3rd-house-astrology";
+
+import { fifthHouseEn, fifthHouseZh } from "./5th-house";
+
+import {
+  sixthHouseAstrologyEn,
+  sixthHouseAstrologyZh,
+} from "./6th-house-astrology";
+
+import {
+  seventhHouseAstrologyEn,
+  seventhHouseAstrologyZh,
+} from "./7th-house-astrology";
+
+import {
+  tenthHouseAstrologyEn,
+  tenthHouseAstrologyZh,
+} from "./10th-house-astrology";
+
+// 5/30 batch — healing_placements (pillar + spokes) + saturn-in-pisces transit + persephone myth
+import {
+  healingYourInnerWoundEn,
+  healingYourInnerWoundZh,
+} from "./healing-your-inner-wound";
+import {
+  chironIn12thHouseEn,
+  chironIn12thHouseZh,
+} from "./chiron-in-12th-house";
+import { marsIn12thHouseEn, marsIn12thHouseZh } from "./mars-in-12th-house";
+import { saturnInPiscesEn, saturnInPiscesZh } from "./saturn-in-pisces";
+import { persephoneGoddessEn, persephoneGoddessZh } from "./persephone-goddess";
+
 const ARTICLES_EN: WikiArticle[] = [
+  tenthHouseAstrologyEn,
+  seventhHouseAstrologyEn,
+  sixthHouseAstrologyEn,
+  fifthHouseEn,
+  thirdHouseAstrologyEn,
+  solarPlexusChakraAffirmationsEn,
+  vedicBirthChartCalculatorEn,
+  fourthHouseMeaningEn,
+  sacralChakraMeaningEn,
+  howToFindNorthNodeEn,
+  chakraTestEn,
+  secondHouseAstrologyEn,
+  vedicVsWesternAstrologyEn,
+  crownChakraMeaningEn,
+  auraReadingEn,
+  firstHouseMeaningEn,
+  rootChakraMeaningEn,
   trackMoodAstrologyEn,
   mercuryRetrogradeMoonAnxietyEn,
   marsAngerTriggersEn,
@@ -81,9 +208,41 @@ const ARTICLES_EN: WikiArticle[] = [
   northNodeVsSouthNodeEn,
   northNodeInScorpioEn,
   northNodeInTaurusEn,
+  heartChakraMeaningEn,
+  throatChakraMeaningEn,
+  ajnaChakraEn,
+  crystalsForEachChakraEn,
+  astrologyTermsEn,
+  sextileAstrologyEn,
+  trineInAstrologyEn,
+  squareAstrologyEn,
+  descendantAstrologyEn,
+  icAstrologyEn,
+  healingYourInnerWoundEn,
+  chironIn12thHouseEn,
+  marsIn12thHouseEn,
+  saturnInPiscesEn,
+  persephoneGoddessEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
+  tenthHouseAstrologyZh,
+  seventhHouseAstrologyZh,
+  sixthHouseAstrologyZh,
+  fifthHouseZh,
+  thirdHouseAstrologyZh,
+  solarPlexusChakraAffirmationsZh,
+  vedicBirthChartCalculatorZh,
+  fourthHouseMeaningZh,
+  sacralChakraMeaningZh,
+  howToFindNorthNodeZh,
+  chakraTestZh,
+  secondHouseAstrologyZh,
+  vedicVsWesternAstrologyZh,
+  crownChakraMeaningZh,
+  auraReadingZh,
+  firstHouseMeaningZh,
+  rootChakraMeaningZh,
   trackMoodAstrologyZh,
   mercuryRetrogradeMoonAnxietyZh,
   marsAngerTriggersZh,
@@ -99,6 +258,21 @@ const ARTICLES_ZH: WikiArticle[] = [
   northNodeVsSouthNodeZh,
   northNodeInScorpioZh,
   northNodeInTaurusZh,
+  heartChakraMeaningZh,
+  throatChakraMeaningZh,
+  ajnaChakraZh,
+  crystalsForEachChakraZh,
+  astrologyTermsZh,
+  sextileAstrologyZh,
+  trineInAstrologyZh,
+  squareAstrologyZh,
+  descendantAstrologyZh,
+  icAstrologyZh,
+  healingYourInnerWoundZh,
+  chironIn12thHouseZh,
+  marsIn12thHouseZh,
+  saturnInPiscesZh,
+  persephoneGoddessZh,
 ];
 
 // Get all articles for a language

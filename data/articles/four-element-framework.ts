@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const fourElementFrameworkEn: WikiArticle = {
   slug: "four-element-framework",
   title: "Four Element Framework Astrology",
-  description: "Four-Element Framework is the plain-language system in astrology that groups signs and chart placements into fire, earth, air, and water so a birth chart...",
+  description:
+    "Four-Element Framework is the plain-language system in astrology that groups signs and chart placements into fire, earth, air, and water so a birth chart...",
   authorId: "marcus-orion",
   date: "2026-05-22",
   schema: "Article",
@@ -15,7 +16,7 @@ export const fourElementFrameworkEn: WikiArticle = {
     "four elements astrology",
     "fire earth air water signs",
     "elemental balance birth chart",
-    "astrology elements meaning"
+    "astrology elements meaning",
   ],
   content: `# Four Element Framework Astrology
 
@@ -82,6 +83,6 @@ A careful reading can use all of these systems without merging them into one cla
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
+Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
 `,
 };

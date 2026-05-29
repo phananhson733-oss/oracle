@@ -5,16 +5,17 @@ import type { WikiArticle } from "../../types";
 export const orangeAuraMeaningEn: WikiArticle = {
   slug: "orange-aura-meaning",
   title: "Why an Orange Aura Reads as Drive, Pleasure, and Connection",
-  description: "Orange Aura is the energy field most commonly read as a warm, creative current tied to the sacral center. In plain terms, it points to someone who runs on...",
+  description:
+    "Orange Aura is the energy field most commonly read as a warm, creative current tied to the sacral center. In plain terms, it points to someone who runs on...",
   authorId: "elena-vane",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
   keywords: [
-    "\"orange aura meaning\"",
-    "\"orange aura\"",
-    "\"orange aura personality\"",
-    "\"what does orange aura mean\""
+    '"orange aura meaning"',
+    '"orange aura"',
+    '"orange aura personality"',
+    '"what does orange aura mean"',
   ],
   content: `# Why an Orange Aura Reads as Drive, Pleasure, and Connection
 
@@ -106,7 +107,7 @@ These pieces go deeper on threads this entry only touches:
 
 ## Take Action
 
-Take the [60-second Aura Reading Quiz](https://astrologywiki.com/tools/aura-reading-quiz) to see how your colors map. In about two minutes you get a clear read on whether your orange is running vibrant, muddy, or amber right now — and that one small distinction is often the difference between knowing you need to create again and knowing you simply need to rest before you give anything more.
+Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine. It can help you tell whether your orange is running vibrant, muddy, or amber right now — and that one small distinction is often the difference between knowing you need to create again and knowing you simply need to rest before you give anything more.
 
 ## Sources
 
@@ -118,16 +119,17 @@ Take the [60-second Aura Reading Quiz](https://astrologywiki.com/tools/aura-read
 export const orangeAuraMeaningZh: WikiArticle = {
   slug: "orange-aura-meaning",
   title: "橙色气场到底在说你的哪种能量",
-  description: "橙色气场（Orange Aura）是西方灵性圈用来描述以创造力和情绪流动为主调的能量场的说法，和红色、黄色并列，是 气场颜色总览 pillar 页...",
+  description:
+    "橙色气场（Orange Aura）是西方灵性圈用来描述以创造力和情绪流动为主调的能量场的说法，和红色、黄色并列，是 气场颜色总览 pillar 页...",
   authorId: "elena-vane",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
   keywords: [
-    "\"orange aura meaning\"",
-    "\"orange aura\"",
-    "\"orange aura personality\"",
-    "\"what does orange aura mean\""
+    '"orange aura meaning"',
+    '"orange aura"',
+    '"orange aura personality"',
+    '"what does orange aura mean"',
   ],
   content: `# 橙色气场到底在说你的哪种能量
 
@@ -219,7 +221,7 @@ export const orangeAuraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-花 60 秒做一次 [气场颜色速测](https://astrologywiki.com/tools/aura-reading-quiz)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。测完你会拿到一份属于自己的颜色组合解读，而不是一个笼统的标签。读懂自己的气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻的你把能量放在了哪里。
+查看 [气场颜色总览](/zh/wiki/aura-colors-pillar)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。读懂自己的颜色组合，而不是套一个笼统的标签。读懂自己的气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻的你把能量放在了哪里。
 
 ## 参考来源
 

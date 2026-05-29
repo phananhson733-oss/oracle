@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const redAuraMeaningEn: WikiArticle = {
   slug: "red-aura-meaning",
   title: "Red Aura Meaning",
-  description: "In subtle-energy traditions, red aura meaning usually points to a vital, grounded energy field tied to the root center and physical drive. Most aura...",
+  description:
+    "In subtle-energy traditions, red aura meaning usually points to a vital, grounded energy field tied to the root center and physical drive. Most aura...",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
@@ -14,7 +15,7 @@ export const redAuraMeaningEn: WikiArticle = {
     "red aura meaning",
     "red aura",
     "red aura personality",
-    "what does red aura mean"
+    "what does red aura mean",
   ],
   content: `# Red Aura Meaning
 
@@ -75,6 +76,6 @@ The honest framework limit: aura readings are interpretive vocabulary used in su
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
+Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
 `,
 };
