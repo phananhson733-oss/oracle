@@ -635,6 +635,8 @@ const ARTICLE_SLUGS = [
   'mars-in-12th-house',
   // Batch 2: saturn-in-pisces (T1 transit pillar, evergreen).
   'saturn-in-pisces',
+  // Batch 3: persephone-goddess (T2 myth archetype, highest vol of batch — 12k/mo).
+  'persephone-goddess',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
