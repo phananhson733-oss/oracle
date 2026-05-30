@@ -633,6 +633,8 @@ const ARTICLE_SLUGS = [
   'healing-your-inner-wound',
   'chiron-in-12th-house',
   'mars-in-12th-house',
+  // Batch 2: saturn-in-pisces (T1 transit pillar, evergreen).
+  'saturn-in-pisces',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
