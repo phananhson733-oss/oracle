@@ -628,6 +628,11 @@ const ARTICLE_SLUGS = [
   'square-astrology',
   'descendant-astrology',
   'ic-astrology',
+  // 5/30 batch — staggered prod rollout (3 sub-batches, ~45min apart).
+  // Batch 1: healing_placements cluster (pillar + 2 spokes, tightly cross-linked).
+  'healing-your-inner-wound',
+  'chiron-in-12th-house',
+  'mars-in-12th-house',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
