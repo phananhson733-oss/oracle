@@ -90,6 +90,36 @@ describe("mdToHtml — 链接", () => {
   it("不安全 href (javascript:) 降级为纯文本", () => {
     expect(mdToHtml("[x](javascript:evil)")).toBe("<p>x</p>");
   });
+  it("URL 含平衡括号不被截断 (Wikipedia)", () => {
+    expect(
+      mdToHtml(
+        "[House (astrology)](https://en.wikipedia.org/wiki/House_(astrology))",
+      ),
+    ).toBe(
+      '<p><a href="https://en.wikipedia.org/wiki/House_(astrology)">House (astrology)</a></p>',
+    );
+  });
+  it("protocol-relative // 链接降级为纯文本 (拒绝外链绕过)", () => {
+    expect(mdToHtml("[x](//evil.test/path)")).toBe("<p>x</p>");
+  });
+});
+
+describe("mdToHtml — 解析健壮性", () => {
+  it("裸星号不被误当斜体", () => {
+    expect(mdToHtml("2 * 3 = 6 and 4 * 5 = 20")).toBe(
+      "<p>2 * 3 = 6 and 4 * 5 = 20</p>",
+    );
+  });
+  it("未闭合代码块仍保留正文 (不静默丢失)", () => {
+    expect(mdToHtml("```\nkept line")).toBe(
+      "<pre><code>kept line</code></pre>",
+    );
+  });
+  it("多行引用合并", () => {
+    expect(mdToHtml("> line a\n> line b")).toBe(
+      "<blockquote><p>line a line b</p></blockquote>",
+    );
+  });
 });
 
 describe("stripInlineMarkdown", () => {

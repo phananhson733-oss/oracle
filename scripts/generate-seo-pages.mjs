@@ -190,9 +190,13 @@ const buildHead = ({
   ogType,
   alternates,
   schema,
+  ogImage,
 }) => {
   // 清洗未渲染的 markdown 标记（如 summary 里的 *书名*），再截断，避免脏摘要进 SERP。
   const desc = truncate(stripInlineMarkdown(description || ''));
+  // T3：per-page OG 图（文章传 per-article PNG），缺省回退全站通用图。爬虫不跑 JS，
+  // 必须把图写进静态 stub head，否则社媒分享卡片只会拿到通用图。
+  const pageOgImage = ogImage || ogImageUrl;
   const headParts = [
     '<meta charset="UTF-8" />',
     '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
@@ -204,13 +208,13 @@ const buildHead = ({
     `<meta property="og:type" content="${escapeHtml(ogType)}" />`,
     `<meta property="og:title" content="${escapeHtml(title)}" />`,
     `<meta property="og:description" content="${escapeHtml(desc)}" />`,
-    `<meta property="og:image" content="${escapeHtml(ogImageUrl)}" />`,
+    `<meta property="og:image" content="${escapeHtml(pageOgImage)}" />`,
     `<meta property="og:url" content="${escapeHtml(url)}" />`,
     `<meta property="og:site_name" content="AstrologyWiki" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(desc)}" />`,
-    `<meta name="twitter:image" content="${escapeHtml(ogImageUrl)}" />`,
+    `<meta name="twitter:image" content="${escapeHtml(pageOgImage)}" />`,
   ];
 
   if (schema) {
@@ -274,11 +278,11 @@ const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml }) 
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath, contentHtml }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
-${buildHead({ lang, title, description, url, ogType, alternates, schema })}
+${buildHead({ lang, title, description, url, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
 ${buildBody({ lang, title, description, ctaText, spaPath, contentHtml })}
@@ -404,17 +408,28 @@ const buildBookSchema = (lang, item, url) => ({
   image: item.cover_url || undefined,
 });
 
-const buildArticleSchema = (lang, article, url, authorName) => ({
+// T3：文章静态 stub 的 OG 图 = 构建期生成的 per-article PNG（scripts/generate-og-images.mjs，
+// 落在 public/og/articles/<slug>[.zh].png）。图缺失时回退全站通用图，保证 head 始终有有效 og:image。
+const articleOgImage = (slug, lang) => {
+  const file = `${slug}${lang === 'zh' ? '.zh' : ''}.png`;
+  const fsPath = path.join(publicDir, 'og', 'articles', file);
+  return fs.existsSync(fsPath) ? `${siteUrl}/og/articles/${file}` : ogImageUrl;
+};
+
+// T2：文章 author 用编辑部 Organization（E-E-A-T 责任主体），不放大 persona 拟真人感。
+// author 由调用点传入已构造好的 schema 对象（buildEditorialOrganizationSchema），保持与
+// 前端 WikiArticleDetailPage 渲染的 JSON-LD 一致。image 传 per-article OG 图。
+const buildArticleSchema = (lang, article, url, author, image) => ({
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: article.title,
   description: truncate(stripInlineMarkdown(article.description || '')),
-  author: authorName ? { '@type': 'Person', name: authorName } : undefined,
+  author: author || undefined,
   datePublished: article.date || undefined,
   url,
   mainEntityOfPage: url,
   inLanguage: lang,
-  image: ogImageUrl,
+  image: image || ogImageUrl,
   keywords: article.keywords && article.keywords.length ? article.keywords : undefined,
 });
 
@@ -739,6 +754,9 @@ const generate = async () => {
   const authorSchemaModule = loadTsModule(path.join(rootDir, 'data/authors/schema.ts'));
   const ALL_AUTHORS = authorsModule.getAllAuthors();
   const buildPersonSchema = authorSchemaModule.buildPersonSchema;
+  // T2：文章 author 责任主体（Organization 编辑部），跨页一致建立单一编辑部实体。
+  const buildEditorialOrganizationSchema = authorSchemaModule.buildEditorialOrganizationSchema;
+  const editorialOrgSchema = buildEditorialOrganizationSchema(siteUrl);
 
   // Build-time invariant: persona.id is used as a URL path segment AND a
   // filesystem path (author/<id>/index.html). Reject anything that isn't a
@@ -1035,7 +1053,7 @@ const generate = async () => {
     if (!article || !contentMd) return; // 无该语言内容则只留 sitemap URL（保持既有行为），不写空壳静态页。
     const config = LANG_CONFIG[lang];
     const wikiPath = `/${lang}/wiki`;
-    const author = authorsModule.getAuthorById(article.authorId);
+    const ogImage = articleOgImage(slug, lang);
     await writeHtmlPage({
       outputPath: path.join(publicDir, lang, 'wiki', slug, 'index.html'),
       lang,
@@ -1043,12 +1061,13 @@ const generate = async () => {
       description: article.description || config.wikiDescription,
       url,
       ogType: 'article',
+      ogImage,
       alternates: buildAlternateLinks(`/wiki/${slug}`, {
         en: !!articlesModule.getArticleBySlug(slug, 'en'),
         zh: !!articlesModule.getArticleBySlug(slug, 'zh'),
       }),
       schema: [
-        buildArticleSchema(lang, article, url, author?.name),
+        buildArticleSchema(lang, article, url, editorialOrgSchema, ogImage),
         buildBreadcrumb(lang, [
           { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
           { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },

@@ -14,23 +14,28 @@ export const escapeHtml = (value) => {
     .replace(/'/g, '&#39;');
 };
 
-// 仅允许安全协议的 href，杜绝 javascript:/data: 等注入。
-const SAFE_HREF = /^(https?:\/\/|\/|#|mailto:)/;
+// 仅允许安全协议的 href。`\/(?!\/)` 允许站内绝对路径 /x 但拒绝 protocol-relative //host（外链绕过）。
+const SAFE_HREF = /^(https?:\/\/|\/(?!\/)|#|mailto:)/;
+
+// 链接 URL：允许一层平衡括号（如 Wikipedia House_(astrology)），不在第一个 ) 处截断。
+const LINK_RE = /\[([^\]]+)\]\(([^()\s]*(?:\([^()]*\)[^()\s]*)*)\)/g;
+const LINK_STRIP_RE = /\[([^\]]+)\]\([^()\s]*(?:\([^()]*\)[^()\s]*)*\)/g;
 
 // 行内：先转义，再处理 [text](url) 链接（安全 href 白名单），再 **bold** / *italic*。
-// 链接先于强调，避免链接文字里的 ** 被误拆。
+// 链接先于强调，避免链接文字里的 ** 被误拆。italic 要求 * 内侧紧邻非空白，
+// 避免 "2 * 3 and 4 * 5" 这类裸星号被误当强调。
 const inline = (text) =>
   escapeHtml(text)
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, href) =>
+    .replace(LINK_RE, (_m, label, href) =>
       SAFE_HREF.test(href) ? `<a href="${href}">${label}</a>` : label)
     .replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*([^*]+?)\*/g, '<em>$1</em>');
+    .replace(/\*(?=\S)([^*]+?)(?<=\S)\*/g, '<em>$1</em>');
 
 // 把 Markdown 行内标记剥成纯文本，供 meta description 使用（去掉 *强调*、`代码`、[链接](url) 残留）。
 export const stripInlineMarkdown = (text) => {
   if (text === null || text === undefined) return '';
   return String(text)
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(LINK_STRIP_RE, '$1')
     .replace(/\*\*?/g, '')
     .replace(/`/g, '')
     .replace(/\s+/g, ' ')
@@ -154,5 +159,9 @@ export function mdToHtml(md) {
   }
 
   flushAll();
+  // 未闭合的围栏代码块：别把已积累的正文尾部静默丢掉。
+  if (inCode && pre && pre.length) {
+    out.push(`<pre><code>${escapeHtml(pre.join('\n'))}</code></pre>`);
+  }
   return out.join('');
 }
