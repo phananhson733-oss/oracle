@@ -14,7 +14,7 @@ import {
   isArticleSlug,
 } from "../../data/articles";
 import { getAuthorById } from "../../data/authors";
-import { buildPersonSchema } from "../../data/authors/schema";
+import { buildEditorialOrganizationSchema } from "../../data/authors/schema";
 import { AuthorByline } from "./AuthorByline";
 import { trackEvent } from "../../services/analytics";
 import type { WikiArticleSummary } from "../../types";
@@ -452,9 +452,8 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       "@type": "Article",
       headline: article.title,
       description: article.description,
-      author: getAuthorById(article.authorId)
-        ? buildPersonSchema(getAuthorById(article.authorId)!, lang, siteUrl)
-        : { "@type": "Organization", name: "AstrologyWiki" },
+      // D1.3：文章 author 用编辑部 Organization，不用 persona Person（避免拟真人专家声明）。
+      author: buildEditorialOrganizationSchema(siteUrl),
       datePublished: article.date,
       dateModified: article.date,
       image: article.image || `${siteUrl}/og-image.png`,

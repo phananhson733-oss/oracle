@@ -10,7 +10,7 @@ import { Breadcrumb } from "../Breadcrumb";
 import { Calendar, FileText } from "lucide-react";
 import { getArticleSummaries } from "../../data/articles";
 import { getAuthorById } from "../../data/authors";
-import { buildPersonSchema } from "../../data/authors/schema";
+import { buildEditorialOrganizationSchema } from "../../data/authors/schema";
 import { AuthorByline } from "./AuthorByline";
 import type { WikiArticleSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
@@ -50,9 +50,8 @@ const WikiArticlesPage: React.FC = () => {
           name: article.title,
           description: article.description,
           url: `${siteUrl}/${lang}/wiki/${article.slug}`,
-          author: getAuthorById(article.authorId)
-            ? buildPersonSchema(getAuthorById(article.authorId)!, lang, siteUrl)
-            : { "@type": "Organization", name: "AstrologyWiki" },
+          // D1.3：文章 author 用编辑部 Organization，不用 persona Person。
+          author: buildEditorialOrganizationSchema(siteUrl),
           datePublished: article.date,
         },
       })),
