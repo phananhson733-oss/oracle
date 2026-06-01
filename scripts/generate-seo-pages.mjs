@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import ts from 'typescript';
 import { safeJsonLd } from './lib/safe-jsonld.mjs';
+import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
@@ -11,6 +12,8 @@ const publicDir = path.join(rootDir, 'public');
 const siteUrl = (process.env.SITE_URL || 'https://www.astrologywiki.com').replace(/\/$/, '');
 const ogImageUrl = `${siteUrl}/og-image.png`;
 const today = new Date().toISOString().split('T')[0];
+// T1: sitemap lastmod 只在内容真实变更时改 today，否则保留旧值。manifest 记录每个 URL 的内容签名与 lastmod，随仓库提交。
+const lastmodManifestPath = path.join(scriptDir, 'seo-lastmod-manifest.json');
 
 const LANG_CONFIG = {
   zh: {
@@ -720,22 +723,27 @@ const generate = async () => {
   // hero copy + JSON-LD before the SPA hydrates.
   await writeLandingV2Pages();
 
-  const sitemapUrls = [];
+  // T1: 收集 sitemap URL 及其内容签名片段（url → parts[]）。lastmod 在写出时按签名变化解析，
+  // 不再每个 URL 写 today。Map 自带去重，最后取 keys 排序。
+  const urlSignatures = new Map();
+  const addUrl = (url, parts) => { urlSignatures.set(url, parts); };
 
   // Landing v2 URLs (manually included; sitemap entries get priority 0.9 below).
   const LANDING_V2_URLS = [
     `${siteUrl}/landing-v2/en/`,
     `${siteUrl}/landing-v2/zh/`,
   ];
-  for (const url of LANDING_V2_URLS) {
-    sitemapUrls.push(url);
-  }
+  // 签名取渲染 HTML 的 hash：landing 文案变了才更新 lastmod。
+  const landingHtmlByLang = { en: buildLandingV2Html('en'), zh: buildLandingV2Html('zh') };
+  addUrl(`${siteUrl}/landing-v2/en/`, ['landing-v2', 'en', contentHash([landingHtmlByLang.en])]);
+  addUrl(`${siteUrl}/landing-v2/zh/`, ['landing-v2', 'zh', contentHash([landingHtmlByLang.zh])]);
 
   // Add public SPA routes with lang prefix for each language
   const publicRoutes = ['/privacy', '/terms', '/cookies', '/about', '/help'];
   for (const route of publicRoutes) {
-    sitemapUrls.push(`${siteUrl}/en${route}`);
-    sitemapUrls.push(`${siteUrl}/zh${route}`);
+    // 法务/信息页内容不在本脚本，签名用稳定常量 → lastmod 冻结（这些页极少变；变更时 bump 版本号）。
+    addUrl(`${siteUrl}/en${route}`, ['static-route', 'en', route, 'v1']);
+    addUrl(`${siteUrl}/zh${route}`, ['static-route', 'zh', route, 'v1']);
   }
 
   for (const lang of ['zh', 'en']) {
@@ -754,11 +762,12 @@ const generate = async () => {
     const wikiPath = `/${lang}/wiki`;
     const classicsPath = `/${lang}/wiki/classics`;
 
-    sitemapUrls.push(`${siteUrl}${homePath}`);
+    addUrl(`${siteUrl}${homePath}`, ['home', lang, config.homeTitle, config.homeDescription, config.homeCta]);
     // Only add wiki hub for all langs; classics hub only for en
     if (lang === 'en') {
-      sitemapUrls.push(`${siteUrl}${wikiPath}`);
-      sitemapUrls.push(`${siteUrl}${classicsPath}`);
+      // hub 的 lastmod 在 hub 文案变或条目集合变（新增/删除条目）时更新。
+      addUrl(`${siteUrl}${wikiPath}`, ['wiki-hub', lang, config.wikiTitle, config.wikiDescription, ...wikiItems.map((i) => i.id)]);
+      addUrl(`${siteUrl}${classicsPath}`, ['classics-hub', lang, config.classicsTitle, config.classicsDescription, ...classics.map((c) => c.id)]);
     }
 
     await writeHtmlPage({
@@ -819,7 +828,7 @@ const generate = async () => {
       for (const persona of ALL_AUTHORS) {
         const authorPath = `/${lang}/wiki/author/${persona.id}`;
         const authorPageUrl = `${siteUrl}${authorPath}`;
-        sitemapUrls.push(authorPageUrl);
+        addUrl(authorPageUrl, ['author', persona.id, persona.name, persona.title, persona.bio.en || '', ...persona.topics]);
         await writeHtmlPage({
           outputPath: path.join(langRoot, 'wiki', 'author', persona.id, 'index.html'),
           lang,
@@ -858,7 +867,7 @@ const generate = async () => {
         zh: wikiIds.zh.has(item.id) && (lang === 'en' || ZH_WIKI_WHITELIST.has(item.id)),
         en: wikiIds.en.has(item.id),
       };
-      sitemapUrls.push(itemUrl);
+      addUrl(itemUrl, ['wiki', lang, item.id, item.title, item.description || '', item.subtitle || '', ...(item.keywords || [])]);
       await writeHtmlPage({
         outputPath: path.join(langRoot, 'wiki', item.id, 'index.html'),
         lang,
@@ -891,7 +900,7 @@ const generate = async () => {
         zh: classicIds.zh.has(classic.id),
         en: classicIds.en.has(classic.id),
       };
-      sitemapUrls.push(classicUrl);
+      addUrl(classicUrl, ['classic', lang, classic.id, classicDetail.title, classicDetail.summary || '']);
       await writeHtmlPage({
         outputPath: path.join(langRoot, 'wiki', 'classics', classic.id, 'index.html'),
         lang,
@@ -918,26 +927,60 @@ const generate = async () => {
   // full SEO meta, JSON-LD schemas, and 500+ word content via React <SEO> component.
   // Static HTML was removed because Vercel serves it with higher priority than the
   // SPA catch-all, preventing the interactive calculator from loading.)
-  sitemapUrls.push(`${siteUrl}/en/saturn-return-calculator`);
+  addUrl(`${siteUrl}/en/saturn-return-calculator`, ['saturn-return-calculator', 'v1']);
+
+  // 文章摘要按 lang/slug 索引，供 sitemap 签名（date/title/desc/image/keywords 变 → lastmod 更新）。
+  const articleSummaries = {
+    en: new Map(articlesModule.getArticleSummaries('en').map((s) => [s.slug, s])),
+    zh: new Map(articlesModule.getArticleSummaries('zh').map((s) => [s.slug, s])),
+  };
+  const articleSig = (lang, slug) => {
+    const s = articleSummaries[lang].get(slug);
+    return s
+      ? ['article', lang, slug, s.date || '', s.title || '', s.description || '', s.image || '', ...(s.keywords || [])]
+      : ['article', lang, slug];
+  };
 
   // Add featured article URLs to sitemap (SPA-rendered, no static HTML needed)
   for (const slug of ARTICLE_SLUGS) {
-    sitemapUrls.push(`${siteUrl}/en/wiki/${slug}`);
-    sitemapUrls.push(`${siteUrl}/zh/wiki/${slug}`);
+    addUrl(`${siteUrl}/en/wiki/${slug}`, articleSig('en', slug));
+    addUrl(`${siteUrl}/zh/wiki/${slug}`, articleSig('zh', slug));
   }
   // EN-only featured articles (no ZH variant — emit /en/wiki/ only)
   for (const slug of ARTICLE_SLUGS_EN_ONLY) {
-    sitemapUrls.push(`${siteUrl}/en/wiki/${slug}`);
+    addUrl(`${siteUrl}/en/wiki/${slug}`, articleSig('en', slug));
   }
 
   // L2 cutover (2026-05-19): root is now the canonical home (renders
   // LandingPageV2). Include "/" with priority 1.0 so Google treats it as
   // the primary home URL ahead of /en/, /zh/, and /landing-v2/{en,zh}/.
   const ROOT_URL = `${siteUrl}/`;
-  sitemapUrls.push(ROOT_URL);
+  // root 渲染 LandingPageV2（EN home）；签名跟随 landing EN 文案。
+  addUrl(ROOT_URL, ['root', contentHash([landingHtmlByLang.en])]);
 
-  const sitemapEntries = Array.from(new Set(sitemapUrls)).sort();
+  const sitemapEntries = Array.from(urlSignatures.keys()).sort();
   const landingV2Set = new Set(LANDING_V2_URLS);
+
+  // T1: 解析每个 URL 的 lastmod。签名(hash)未变则保留旧 lastmod；首跑用旧 sitemap 日期作种子，
+  // 文章则用其 date 字段（比污染过的旧 sitemap 更真实）。只有内容真正变更才写 today。
+  const sitemapPath = path.join(publicDir, 'sitemap.xml');
+  const priorSitemapXml = fs.existsSync(sitemapPath)
+    ? await fsPromises.readFile(sitemapPath, 'utf8')
+    : '';
+  const priorLastmods = parseSitemapLastmods(priorSitemapXml);
+  for (const lang of ['en', 'zh']) {
+    for (const [slug, summary] of articleSummaries[lang]) {
+      if (summary.date) priorLastmods.set(`${siteUrl}/${lang}/wiki/${slug}`, summary.date);
+    }
+  }
+  const prevManifest = fs.existsSync(lastmodManifestPath)
+    ? JSON.parse(await fsPromises.readFile(lastmodManifestPath, 'utf8'))
+    : {};
+  const signatures = new Map(
+    sitemapEntries.map((url) => [url, contentHash(urlSignatures.get(url) || [url])]),
+  );
+  const { lastmodByUrl, manifest } = resolveLastmods(signatures, prevManifest, priorLastmods, today);
+
   const sitemapXml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -947,7 +990,7 @@ const generate = async () => {
       const lines = [
         '  <url>',
         `    <loc>${loc}</loc>`,
-        `    <lastmod>${today}</lastmod>`,
+        `    <lastmod>${lastmodByUrl.get(loc) || today}</lastmod>`,
       ];
       if (isRoot) {
         lines.push('    <changefreq>weekly</changefreq>');
@@ -963,7 +1006,13 @@ const generate = async () => {
     '',
   ].join('\n');
 
-  await fsPromises.writeFile(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf8');
+  await fsPromises.writeFile(sitemapPath, sitemapXml, 'utf8');
+
+  // manifest 按 URL 排序写出，diff 干净；随仓库提交以跨 build 保留 lastmod 真相。
+  const sortedManifest = Object.fromEntries(
+    Object.keys(manifest).sort().map((url) => [url, manifest[url]]),
+  );
+  await fsPromises.writeFile(lastmodManifestPath, `${JSON.stringify(sortedManifest, null, 2)}\n`, 'utf8');
 
   console.log(`SEO pages generated: ${sitemapEntries.length} URLs`);
 };
