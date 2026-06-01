@@ -4,6 +4,8 @@ import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import ts from 'typescript';
 import { safeJsonLd } from './lib/safe-jsonld.mjs';
+import { mdToHtml, stripInlineMarkdown } from './lib/md-to-html.mjs';
+import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
@@ -11,6 +13,8 @@ const publicDir = path.join(rootDir, 'public');
 const siteUrl = (process.env.SITE_URL || 'https://www.astrologywiki.com').replace(/\/$/, '');
 const ogImageUrl = `${siteUrl}/og-image.png`;
 const today = new Date().toISOString().split('T')[0];
+// T1: sitemap lastmod 只在内容真实变更时改 today，否则保留旧值。manifest 记录每个 URL 的内容签名与 lastmod，随仓库提交。
+const lastmodManifestPath = path.join(scriptDir, 'seo-lastmod-manifest.json');
 
 const LANG_CONFIG = {
   zh: {
@@ -186,8 +190,13 @@ const buildHead = ({
   ogType,
   alternates,
   schema,
+  ogImage,
 }) => {
-  const desc = truncate(description || '');
+  // 清洗未渲染的 markdown 标记（如 summary 里的 *书名*），再截断，避免脏摘要进 SERP。
+  const desc = truncate(stripInlineMarkdown(description || ''));
+  // T3：per-page OG 图（文章传 per-article PNG），缺省回退全站通用图。爬虫不跑 JS，
+  // 必须把图写进静态 stub head，否则社媒分享卡片只会拿到通用图。
+  const pageOgImage = ogImage || ogImageUrl;
   const headParts = [
     '<meta charset="UTF-8" />',
     '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
@@ -199,13 +208,13 @@ const buildHead = ({
     `<meta property="og:type" content="${escapeHtml(ogType)}" />`,
     `<meta property="og:title" content="${escapeHtml(title)}" />`,
     `<meta property="og:description" content="${escapeHtml(desc)}" />`,
-    `<meta property="og:image" content="${escapeHtml(ogImageUrl)}" />`,
+    `<meta property="og:image" content="${escapeHtml(pageOgImage)}" />`,
     `<meta property="og:url" content="${escapeHtml(url)}" />`,
     `<meta property="og:site_name" content="AstrologyWiki" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(desc)}" />`,
-    `<meta name="twitter:image" content="${escapeHtml(ogImageUrl)}" />`,
+    `<meta name="twitter:image" content="${escapeHtml(pageOgImage)}" />`,
   ];
 
   if (schema) {
@@ -219,6 +228,11 @@ const buildHead = ({
   main { max-width: 780px; margin: 0 auto; }
   h1 { font-size: 2.25rem; margin: 0 0 1rem; }
   p { line-height: 1.6; font-size: 1rem; }
+  article.content { margin-top: 1.5rem; }
+  article.content h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
+  article.content h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+  article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid #c9bfaf; color: #4a4540; }
+  article.content li { line-height: 1.6; }
   .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #4a4540; }
   a { color: #7f5e36; text-decoration: none; border-bottom: 1px solid rgba(127, 94, 54, 0.35); }
   a:hover { color: #5f442b; }
@@ -229,15 +243,18 @@ const buildHead = ({
   return headParts.join('\n');
 };
 
-const buildBody = ({ lang, title, description, ctaText, spaPath }) => {
+const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml }) => {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
   const safeCta = escapeHtml(ctaText);
   const safeSpaPath = escapeHtml(spaPath);
+  // contentHtml 已由 mdToHtml 转义，直接注入。它让爬虫读到完整正文（修复 soft 404）；
+  // 真实浏览器水合后 React 会用 SPA 覆盖这段静态内容（见 inject-spa-into-stubs.mjs）。
+  const article = contentHtml ? `\n  <article class="content">${contentHtml}</article>` : '';
   return `
 <main>
   <h1>${safeTitle}</h1>
-  <p>${safeDescription}</p>
+  <p>${safeDescription}</p>${article}
   <p class="meta">AstrologyWiki · ${lang.toUpperCase()}</p>
   <a class="cta" data-astro-link href="${safeSpaPath}">${safeCta}</a>
 </main>
@@ -261,19 +278,63 @@ const buildBody = ({ lang, title, description, ctaText, spaPath }) => {
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
-${buildHead({ lang, title, description, url, ogType, alternates, schema })}
+${buildHead({ lang, title, description, url, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
-${buildBody({ lang, title, description, ctaText, spaPath })}
+${buildBody({ lang, title, description, ctaText, spaPath, contentHtml })}
   </body>
 </html>
 `;
   await ensureDir(path.dirname(outputPath));
   await fsPromises.writeFile(outputPath, html, 'utf8');
+};
+
+// Wiki 条目正文分段标题，与前端 constants.ts TRANSLATIONS 的 wiki.detail_* 文案保持一致。
+const WIKI_SECTION_TITLES = {
+  zh: {
+    astronomy_myth: '天文学与神话',
+    psychology: '心理占星',
+    shadow: '阴影模式',
+    integration: '整合路径',
+    deep_dive: '深入解读',
+  },
+  en: {
+    astronomy_myth: 'Astronomy & Myth',
+    psychology: 'Psychological Lens',
+    shadow: 'Shadow Pattern',
+    integration: 'Integration Path',
+    deep_dive: 'Deep Dive',
+  },
+};
+
+// 把 wiki 条目的 5 个正文字段拼成带 ## 小标题的 Markdown，供 mdToHtml 注入静态页正文。
+const buildWikiItemMarkdown = (item, lang) => {
+  const titles = WIKI_SECTION_TITLES[lang] || WIKI_SECTION_TITLES.en;
+  const parts = [];
+  const addSection = (title, body) => {
+    if (body && String(body).trim()) parts.push(`## ${title}\n\n${String(body).trim()}`);
+  };
+  addSection(titles.astronomy_myth, item.astronomy_myth);
+  addSection(titles.psychology, item.psychology);
+  addSection(titles.shadow, item.shadow);
+  addSection(titles.integration, item.integration);
+  if (Array.isArray(item.deep_dive) && item.deep_dive.length) {
+    const steps = item.deep_dive
+      .map((step) => {
+        if (!step) return '';
+        const heading = step.title ? `### ${String(step.title).trim()}\n\n` : '';
+        const desc = step.description ? String(step.description).trim() : '';
+        return desc ? `${heading}${desc}` : '';
+      })
+      .filter(Boolean)
+      .join('\n\n');
+    if (steps) parts.push(`## ${titles.deep_dive}\n\n${steps}`);
+  }
+  return parts.join('\n\n');
 };
 
 const buildBreadcrumb = (lang, items) => ({
@@ -340,11 +401,36 @@ const buildBookSchema = (lang, item, url) => ({
   author: item.author
     ? { '@type': 'Person', name: item.author }
     : undefined,
-  description: truncate(item.summary || ''),
+  description: truncate(stripInlineMarkdown(item.summary || '')),
   url,
   inLanguage: lang,
   keywords: item.keywords || undefined,
   image: item.cover_url || undefined,
+});
+
+// T3：文章静态 stub 的 OG 图 = 构建期生成的 per-article PNG（scripts/generate-og-images.mjs，
+// 落在 public/og/articles/<slug>[.zh].png）。图缺失时回退全站通用图，保证 head 始终有有效 og:image。
+const articleOgImage = (slug, lang) => {
+  const file = `${slug}${lang === 'zh' ? '.zh' : ''}.png`;
+  const fsPath = path.join(publicDir, 'og', 'articles', file);
+  return fs.existsSync(fsPath) ? `${siteUrl}/og/articles/${file}` : ogImageUrl;
+};
+
+// T2：文章 author 用编辑部 Organization（E-E-A-T 责任主体），不放大 persona 拟真人感。
+// author 由调用点传入已构造好的 schema 对象（buildEditorialOrganizationSchema），保持与
+// 前端 WikiArticleDetailPage 渲染的 JSON-LD 一致。image 传 per-article OG 图。
+const buildArticleSchema = (lang, article, url, author, image) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.title,
+  description: truncate(stripInlineMarkdown(article.description || '')),
+  author: author || undefined,
+  datePublished: article.date || undefined,
+  url,
+  mainEntityOfPage: url,
+  inLanguage: lang,
+  image: image || ogImageUrl,
+  keywords: article.keywords && article.keywords.length ? article.keywords : undefined,
 });
 
 const buildLandingV2WebSiteSchema = (lang, url) => ({
@@ -583,8 +669,26 @@ const ZH_WIKI_WHITELIST = new Set([
   'water-element',
 ]);
 
-// Featured article slugs (SPA-rendered, added to sitemap only)
+// Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'how-to-read-birth-chart',
+  '10th-house-astrology',
+  '7th-house-astrology',
+  '6th-house-astrology',
+  '5th-house',
+  '3rd-house-astrology',
+  'solar-plexus-chakra-affirmations',
+  'vedic-birth-chart-calculator',
+  '4th-house-meaning',
+  'sacral-chakra-meaning',
+  'how-to-find-north-node',
+  'chakra-test',
+  '2nd-house-astrology',
+  'vedic-vs-western-astrology',
+  'crown-chakra-meaning',
+  'aura-reading',
+  '1st-house-meaning',
+  'root-chakra-meaning',
   'north-node-in-taurus',
   'north-node-in-scorpio',
   'north-node-vs-south-node',
@@ -599,6 +703,27 @@ const ARTICLE_SLUGS = [
   'mercury-retrograde-vs-moon-anxiety',
   'mars-anger-triggers',
   'best-astrology-mental-health-apps',
+  // 5/29 batch — both clusters now in sitemap (staggered: chakra shipped batch 1,
+  // astrology-terms cluster added in batch 2 ~45min later).
+  'heart-chakra-meaning',
+  'throat-chakra-meaning',
+  'ajna-chakra',
+  'crystals-for-each-chakra',
+  'astrology-terms',
+  'sextile-astrology',
+  'trine-in-astrology',
+  'square-astrology',
+  'descendant-astrology',
+  'ic-astrology',
+  // 5/30 batch — staggered prod rollout (3 sub-batches, ~45min apart).
+  // Batch 1: healing_placements cluster (pillar + 2 spokes, tightly cross-linked).
+  'healing-your-inner-wound',
+  'chiron-in-12th-house',
+  'mars-in-12th-house',
+  // Batch 2: saturn-in-pisces (T1 transit pillar, evergreen).
+  'saturn-in-pisces',
+  // Batch 3: persephone-goddess (T2 myth archetype, highest vol of batch — 12k/mo).
+  'persephone-goddess',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
@@ -629,6 +754,9 @@ const generate = async () => {
   const authorSchemaModule = loadTsModule(path.join(rootDir, 'data/authors/schema.ts'));
   const ALL_AUTHORS = authorsModule.getAllAuthors();
   const buildPersonSchema = authorSchemaModule.buildPersonSchema;
+  // T2：文章 author 责任主体（Organization 编辑部），跨页一致建立单一编辑部实体。
+  const buildEditorialOrganizationSchema = authorSchemaModule.buildEditorialOrganizationSchema;
+  const editorialOrgSchema = buildEditorialOrganizationSchema(siteUrl);
 
   // Build-time invariant: persona.id is used as a URL path segment AND a
   // filesystem path (author/<id>/index.html). Reject anything that isn't a
@@ -682,22 +810,27 @@ const generate = async () => {
   // hero copy + JSON-LD before the SPA hydrates.
   await writeLandingV2Pages();
 
-  const sitemapUrls = [];
+  // T1: 收集 sitemap URL 及其内容签名片段（url → parts[]）。lastmod 在写出时按签名变化解析，
+  // 不再每个 URL 写 today。Map 自带去重，最后取 keys 排序。
+  const urlSignatures = new Map();
+  const addUrl = (url, parts) => { urlSignatures.set(url, parts); };
 
   // Landing v2 URLs (manually included; sitemap entries get priority 0.9 below).
   const LANDING_V2_URLS = [
     `${siteUrl}/landing-v2/en/`,
     `${siteUrl}/landing-v2/zh/`,
   ];
-  for (const url of LANDING_V2_URLS) {
-    sitemapUrls.push(url);
-  }
+  // 签名取渲染 HTML 的 hash：landing 文案变了才更新 lastmod。
+  const landingHtmlByLang = { en: buildLandingV2Html('en'), zh: buildLandingV2Html('zh') };
+  addUrl(`${siteUrl}/landing-v2/en/`, ['landing-v2', 'en', contentHash([landingHtmlByLang.en])]);
+  addUrl(`${siteUrl}/landing-v2/zh/`, ['landing-v2', 'zh', contentHash([landingHtmlByLang.zh])]);
 
   // Add public SPA routes with lang prefix for each language
   const publicRoutes = ['/privacy', '/terms', '/cookies', '/about', '/help'];
   for (const route of publicRoutes) {
-    sitemapUrls.push(`${siteUrl}/en${route}`);
-    sitemapUrls.push(`${siteUrl}/zh${route}`);
+    // 法务/信息页内容不在本脚本，签名用稳定常量 → lastmod 冻结（这些页极少变；变更时 bump 版本号）。
+    addUrl(`${siteUrl}/en${route}`, ['static-route', 'en', route, 'v1']);
+    addUrl(`${siteUrl}/zh${route}`, ['static-route', 'zh', route, 'v1']);
   }
 
   for (const lang of ['zh', 'en']) {
@@ -709,6 +842,12 @@ const generate = async () => {
       description: item.description || '',
       keywords: item.keywords || [],
       subtitle: item.subtitle || '',
+      // 正文字段，供 SEO 静态页注入完整内容（修复 soft 404）。
+      astronomy_myth: item.astronomy_myth || '',
+      psychology: item.psychology || '',
+      shadow: item.shadow || '',
+      integration: item.integration || '',
+      deep_dive: item.deep_dive || [],
     }));
     const classics = classicsByLang[lang] || [];
 
@@ -716,11 +855,12 @@ const generate = async () => {
     const wikiPath = `/${lang}/wiki`;
     const classicsPath = `/${lang}/wiki/classics`;
 
-    sitemapUrls.push(`${siteUrl}${homePath}`);
+    addUrl(`${siteUrl}${homePath}`, ['home', lang, config.homeTitle, config.homeDescription, config.homeCta]);
     // Only add wiki hub for all langs; classics hub only for en
     if (lang === 'en') {
-      sitemapUrls.push(`${siteUrl}${wikiPath}`);
-      sitemapUrls.push(`${siteUrl}${classicsPath}`);
+      // hub 的 lastmod 在 hub 文案变或条目集合变（新增/删除条目）时更新。
+      addUrl(`${siteUrl}${wikiPath}`, ['wiki-hub', lang, config.wikiTitle, config.wikiDescription, ...wikiItems.map((i) => i.id)]);
+      addUrl(`${siteUrl}${classicsPath}`, ['classics-hub', lang, config.classicsTitle, config.classicsDescription, ...classics.map((c) => c.id)]);
     }
 
     await writeHtmlPage({
@@ -781,7 +921,7 @@ const generate = async () => {
       for (const persona of ALL_AUTHORS) {
         const authorPath = `/${lang}/wiki/author/${persona.id}`;
         const authorPageUrl = `${siteUrl}${authorPath}`;
-        sitemapUrls.push(authorPageUrl);
+        addUrl(authorPageUrl, ['author', persona.id, persona.name, persona.title, persona.bio.en || '', ...persona.topics]);
         await writeHtmlPage({
           outputPath: path.join(langRoot, 'wiki', 'author', persona.id, 'index.html'),
           lang,
@@ -820,7 +960,9 @@ const generate = async () => {
         zh: wikiIds.zh.has(item.id) && (lang === 'en' || ZH_WIKI_WHITELIST.has(item.id)),
         en: wikiIds.en.has(item.id),
       };
-      sitemapUrls.push(itemUrl);
+      const itemMarkdown = buildWikiItemMarkdown(item, lang);
+      // 正文签名纳入 lastmod：正文变化才更新，否则保持稳定（与 T1 防 churn 协同）。
+      addUrl(itemUrl, ['wiki', lang, item.id, item.title, item.description || '', item.subtitle || '', ...(item.keywords || []), contentHash([itemMarkdown])]);
       await writeHtmlPage({
         outputPath: path.join(langRoot, 'wiki', item.id, 'index.html'),
         lang,
@@ -839,6 +981,7 @@ const generate = async () => {
         ],
         ctaText: config.wikiCta,
         spaPath: `/${lang}/wiki/${item.id}`,
+        contentHtml: mdToHtml(itemMarkdown),
       });
     }
 
@@ -853,7 +996,9 @@ const generate = async () => {
         zh: classicIds.zh.has(classic.id),
         en: classicIds.en.has(classic.id),
       };
-      sitemapUrls.push(classicUrl);
+      const classicMarkdown = classicDetail.content || '';
+      // 正文签名纳入 lastmod：正文变化才更新，否则保持稳定（与 T1 防 churn 协同）。
+      addUrl(classicUrl, ['classic', lang, classic.id, classicDetail.title, classicDetail.summary || '', contentHash([classicMarkdown])]);
       await writeHtmlPage({
         outputPath: path.join(langRoot, 'wiki', 'classics', classic.id, 'index.html'),
         lang,
@@ -872,6 +1017,7 @@ const generate = async () => {
         ],
         ctaText: config.classicsCta,
         spaPath: `/${lang}/wiki/classics/${classic.id}`,
+        contentHtml: mdToHtml(classicMarkdown),
       });
     }
   }
@@ -880,26 +1026,99 @@ const generate = async () => {
   // full SEO meta, JSON-LD schemas, and 500+ word content via React <SEO> component.
   // Static HTML was removed because Vercel serves it with higher priority than the
   // SPA catch-all, preventing the interactive calculator from loading.)
-  sitemapUrls.push(`${siteUrl}/en/saturn-return-calculator`);
+  addUrl(`${siteUrl}/en/saturn-return-calculator`, ['saturn-return-calculator', 'v1']);
 
-  // Add featured article URLs to sitemap (SPA-rendered, no static HTML needed)
+  // 文章摘要按 lang/slug 索引，供 sitemap 签名（date/title/desc/image/keywords 变 → lastmod 更新）。
+  const articleSummaries = {
+    en: new Map(articlesModule.getArticleSummaries('en').map((s) => [s.slug, s])),
+    zh: new Map(articlesModule.getArticleSummaries('zh').map((s) => [s.slug, s])),
+  };
+  const articleSig = (lang, slug) => {
+    const s = articleSummaries[lang].get(slug);
+    return s
+      ? ['article', lang, slug, s.date || '', s.title || '', s.description || '', s.image || '', ...(s.keywords || [])]
+      : ['article', lang, slug];
+  };
+
+  // Featured articles: generate static HTML with full body so crawlers read the
+  // article (data/articles/<slug>.ts, rendered via WikiArticleDetailPage in the
+  // SPA) instead of the generic /index.html shell. Without this the sitemap URLs
+  // resolve to the SPA shell → soft 404. Body comes from article.content (Markdown).
+  const writeArticle = async (slug, lang) => {
+    const url = `${siteUrl}/${lang}/wiki/${slug}`;
+    const article = articlesModule.getArticleBySlug(slug, lang);
+    const contentMd = article?.content || '';
+    // 正文签名纳入 lastmod：正文变化才更新（与 T1 防 churn 协同）。
+    addUrl(url, [...articleSig(lang, slug), contentHash([contentMd])]);
+    if (!article || !contentMd) return; // 无该语言内容则只留 sitemap URL（保持既有行为），不写空壳静态页。
+    const config = LANG_CONFIG[lang];
+    const wikiPath = `/${lang}/wiki`;
+    const ogImage = articleOgImage(slug, lang);
+    await writeHtmlPage({
+      outputPath: path.join(publicDir, lang, 'wiki', slug, 'index.html'),
+      lang,
+      title: article.title,
+      description: article.description || config.wikiDescription,
+      url,
+      ogType: 'article',
+      ogImage,
+      alternates: buildAlternateLinks(`/wiki/${slug}`, {
+        en: !!articlesModule.getArticleBySlug(slug, 'en'),
+        zh: !!articlesModule.getArticleBySlug(slug, 'zh'),
+      }),
+      schema: [
+        buildArticleSchema(lang, article, url, editorialOrgSchema, ogImage),
+        buildBreadcrumb(lang, [
+          { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+          { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
+          { name: article.title, url },
+        ]),
+      ],
+      ctaText: config.wikiCta,
+      spaPath: `/${lang}/wiki/${slug}`,
+      contentHtml: mdToHtml(contentMd),
+    });
+  };
+
   for (const slug of ARTICLE_SLUGS) {
-    sitemapUrls.push(`${siteUrl}/en/wiki/${slug}`);
-    sitemapUrls.push(`${siteUrl}/zh/wiki/${slug}`);
+    await writeArticle(slug, 'en');
+    await writeArticle(slug, 'zh');
   }
   // EN-only featured articles (no ZH variant — emit /en/wiki/ only)
   for (const slug of ARTICLE_SLUGS_EN_ONLY) {
-    sitemapUrls.push(`${siteUrl}/en/wiki/${slug}`);
+    await writeArticle(slug, 'en');
   }
 
   // L2 cutover (2026-05-19): root is now the canonical home (renders
   // LandingPageV2). Include "/" with priority 1.0 so Google treats it as
   // the primary home URL ahead of /en/, /zh/, and /landing-v2/{en,zh}/.
   const ROOT_URL = `${siteUrl}/`;
-  sitemapUrls.push(ROOT_URL);
+  // root 渲染 LandingPageV2（EN home）；签名跟随 landing EN 文案。
+  addUrl(ROOT_URL, ['root', contentHash([landingHtmlByLang.en])]);
 
-  const sitemapEntries = Array.from(new Set(sitemapUrls)).sort();
+  const sitemapEntries = Array.from(urlSignatures.keys()).sort();
   const landingV2Set = new Set(LANDING_V2_URLS);
+
+  // T1: 解析每个 URL 的 lastmod。签名(hash)未变则保留旧 lastmod；首跑用旧 sitemap 日期作种子，
+  // 文章则用其 date 字段（比污染过的旧 sitemap 更真实）。只有内容真正变更才写 today。
+  const sitemapPath = path.join(publicDir, 'sitemap.xml');
+  const priorSitemapXml = fs.existsSync(sitemapPath)
+    ? await fsPromises.readFile(sitemapPath, 'utf8')
+    : '';
+  const priorLastmods = parseSitemapLastmods(priorSitemapXml);
+  for (const lang of ['en', 'zh']) {
+    for (const [slug, summary] of articleSummaries[lang]) {
+      if (summary.date) priorLastmods.set(`${siteUrl}/${lang}/wiki/${slug}`, summary.date);
+    }
+  }
+  const prevManifest = fs.existsSync(lastmodManifestPath)
+    ? JSON.parse(await fsPromises.readFile(lastmodManifestPath, 'utf8'))
+    : {};
+  const signatures = new Map(
+    sitemapEntries.map((url) => [url, contentHash(urlSignatures.get(url) || [url])]),
+  );
+  const { lastmodByUrl, manifest } = resolveLastmods(signatures, prevManifest, priorLastmods, today);
+
   const sitemapXml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -909,7 +1128,7 @@ const generate = async () => {
       const lines = [
         '  <url>',
         `    <loc>${loc}</loc>`,
-        `    <lastmod>${today}</lastmod>`,
+        `    <lastmod>${lastmodByUrl.get(loc) || today}</lastmod>`,
       ];
       if (isRoot) {
         lines.push('    <changefreq>weekly</changefreq>');
@@ -925,7 +1144,13 @@ const generate = async () => {
     '',
   ].join('\n');
 
-  await fsPromises.writeFile(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf8');
+  await fsPromises.writeFile(sitemapPath, sitemapXml, 'utf8');
+
+  // manifest 按 URL 排序写出，diff 干净；随仓库提交以跨 build 保留 lastmod 真相。
+  const sortedManifest = Object.fromEntries(
+    Object.keys(manifest).sort().map((url) => [url, manifest[url]]),
+  );
+  await fsPromises.writeFile(lastmodManifestPath, `${JSON.stringify(sortedManifest, null, 2)}\n`, 'utf8');
 
   console.log(`SEO pages generated: ${sitemapEntries.length} URLs`);
 };

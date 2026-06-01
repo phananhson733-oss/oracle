@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const yellowAuraMeaningEn: WikiArticle = {
   slug: "yellow-aura-meaning",
   title: "Yellow Aura Meaning",
-  description: "In subtle-energy traditions, a yellow aura is read as a mental and confident energy field tied to the solar plexus center. The color is commonly associated...",
+  description:
+    "In subtle-energy traditions, a yellow aura is read as a mental and confident energy field tied to the solar plexus center. The color is commonly associated...",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
@@ -14,7 +15,7 @@ export const yellowAuraMeaningEn: WikiArticle = {
     "yellow aura meaning",
     "yellow aura",
     "yellow aura personality",
-    "what does yellow aura mean"
+    "what does yellow aura mean",
   ],
   content: `# Yellow Aura Meaning
 
@@ -75,6 +76,6 @@ A practical caveat applies across these comparisons: aura color systems are not 
 
 ## Take Action
 
-Not sure which shade of yellow is showing up right now? Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
+Not sure which shade of yellow is showing up right now? Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
 `,
 };

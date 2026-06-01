@@ -14,7 +14,7 @@ import {
   isArticleSlug,
 } from "../../data/articles";
 import { getAuthorById } from "../../data/authors";
-import { buildPersonSchema } from "../../data/authors/schema";
+import { buildEditorialOrganizationSchema } from "../../data/authors/schema";
 import { AuthorByline } from "./AuthorByline";
 import { trackEvent } from "../../services/analytics";
 import type { WikiArticleSummary } from "../../types";
@@ -437,6 +437,12 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
   const canonicalUrl = article
     ? `${siteUrl}/${lang}/wiki/${article.slug}`
     : `${siteUrl}/${lang}/wiki`;
+  // T3：构建期生成的 per-article OG 图（scripts/generate-og-images.mjs）。
+  // ZH 变体在 <slug>.zh.png；EN 在 <slug>.png。显式 article.image 仍优先覆盖。
+  // 局限：文章是纯 SPA（无静态 stub），只有会执行 JS 的爬虫看得到此 tag。
+  const ogImageUrl = article
+    ? `${siteUrl}/og/articles/${article.slug}${lang === "zh" ? ".zh" : ""}.png`
+    : `${siteUrl}/og-image.png`;
   const alternateLanguages = article
     ? [
         { hrefLang: "zh", href: `${siteUrl}/zh/wiki/${article.slug}` },
@@ -452,12 +458,11 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       "@type": "Article",
       headline: article.title,
       description: article.description,
-      author: getAuthorById(article.authorId)
-        ? buildPersonSchema(getAuthorById(article.authorId)!, lang, siteUrl)
-        : { "@type": "Organization", name: "AstrologyWiki" },
+      // D1.3：文章 author 用编辑部 Organization，不用 persona Person（避免拟真人专家声明）。
+      author: buildEditorialOrganizationSchema(siteUrl),
       datePublished: article.date,
       dateModified: article.date,
-      image: article.image || `${siteUrl}/og-image.png`,
+      image: article.image || ogImageUrl,
       mainEntityOfPage: {
         "@type": "WebPage",
         "@id": canonicalUrl,
@@ -511,6 +516,55 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       t.wiki.tab_home,
     ],
   );
+
+  // FAQPage structured data — parsed from the article's FAQ section so the Q&A
+  // qualifies for PAA / rich results (清单 §7 / GEO). Null when <2 Q&A present.
+  const faqSchema = useMemo(() => {
+    if (!article?.content) return null;
+    const faqs: { q: string; a: string }[] = [];
+    let inFaq = false;
+    let cur: { q: string; a: string } | null = null;
+    const flush = () => {
+      if (cur && cur.a.trim()) faqs.push({ q: cur.q, a: cur.a.trim() });
+      cur = null;
+    };
+    for (const raw of article.content.split("\n")) {
+      const line = raw.trim();
+      const h2 = line.match(/^##\s+(.+)/);
+      if (h2) {
+        flush();
+        // v4.5.1 Phase C: FAQ heading may vary per entity (去模板感). Detect by
+        // role token, mirroring flow-mvp EN_/ZH_FAQ_HEADING_RE so a varied
+        // heading like "Common Questions About X" / "关于X的常见问题" still emits
+        // FAQPage JSON-LD. Non-FAQ false positives are harmless (no bold-? lines
+        // inside → faqs stays empty → schema null).
+        inFaq =
+          /\bfaqs?\b|\bquestions?\b|\bq\s*&\s*a\b|问题|问答|常问|疑问|問題|問答|常問|疑問/i.test(
+            h2[1],
+          );
+        continue;
+      }
+      if (!inFaq) continue;
+      const q = line.match(/^\*\*(.+?)\*\*$/);
+      if (q && /[?？]/.test(q[1])) {
+        flush();
+        cur = { q: q[1].trim(), a: "" };
+        continue;
+      }
+      if (cur && line) cur.a += (cur.a ? " " : "") + line;
+    }
+    flush();
+    if (faqs.length < 2) return null;
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    };
+  }, [article]);
 
   const breadcrumbItems = useMemo(() => {
     const items = [
@@ -596,8 +650,8 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         url={canonicalUrl}
         alternateLanguages={alternateLanguages}
         type="article"
-        image={article.image}
-        schema={[articleSchema, breadcrumbSchema].filter(Boolean)}
+        image={article.image || ogImageUrl}
+        schema={[articleSchema, breadcrumbSchema, faqSchema].filter(Boolean)}
       />
 
       <Breadcrumb items={breadcrumbItems} homePath={langPath("/wiki")} />

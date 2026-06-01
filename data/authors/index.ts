@@ -42,6 +42,18 @@ export const AUTHORS: AuthorPersona[] = [
     topics: ["Astrology Basics & Terms", "Transits", "Aspects"],
     avatarColors: ["#C9B27F", "#8FA9A0"],
   },
+  {
+    id: "aditi-sharma",
+    name: "Aditi Sharma",
+    title: "Vedic Astrology Writer",
+    vertical: "vedic",
+    bio: {
+      en: "Reads Vedic charts through their classical sources, translating sidereal placements and dasha timing into grounded, present-tense self-reflection rather than fixed fate.",
+      zh: "以古典典籍为据解读吠陀星盘，把恒星黄道落点与大运周期译成当下、可自省的语言，而非既定命运。",
+    },
+    topics: ["Vedic Astrology", "Nakshatras", "Sidereal Chart"],
+    avatarColors: ["#B58FC9", "#C9A06B"],
+  },
 ];
 
 const AUTHORS_BY_ID: Map<string, AuthorPersona> = new Map(
@@ -56,7 +68,5 @@ export const getAuthorById = (id: string): AuthorPersona | undefined =>
 export const getAllAuthors = (): AuthorPersona[] => AUTHORS;
 
 // 取作者 bio，缺失语言回退 EN。
-export const getAuthorBio = (
-  persona: AuthorPersona,
-  lang: Language,
-): string => persona.bio[lang] ?? persona.bio.en ?? "";
+export const getAuthorBio = (persona: AuthorPersona, lang: Language): string =>
+  persona.bio[lang] ?? persona.bio.en ?? "";

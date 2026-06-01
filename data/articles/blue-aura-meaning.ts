@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const blueAuraMeaningEn: WikiArticle = {
   slug: "blue-aura-meaning",
   title: "Blue Aura Meaning",
-  description: "In aura traditions, blue aura meaning usually points to a calm, expressive energy field linked to the throat center. Practitioners read the color as a sign...",
+  description:
+    "In aura traditions, blue aura meaning usually points to a calm, expressive energy field linked to the throat center. Practitioners read the color as a sign...",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
@@ -14,7 +15,7 @@ export const blueAuraMeaningEn: WikiArticle = {
     "blue aura meaning",
     "blue aura",
     "blue aura personality",
-    "what does blue aura mean"
+    "what does blue aura mean",
   ],
   content: `# Blue Aura Meaning
 
@@ -71,6 +72,6 @@ One more practical contrast: blue versus red. Red aura readings are typically ti
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
+Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
 `,
 };

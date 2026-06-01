@@ -10,7 +10,7 @@ import { Breadcrumb } from "../Breadcrumb";
 import { Calendar, FileText } from "lucide-react";
 import { getArticleSummaries } from "../../data/articles";
 import { getAuthorById } from "../../data/authors";
-import { buildPersonSchema } from "../../data/authors/schema";
+import { buildEditorialOrganizationSchema } from "../../data/authors/schema";
 import { AuthorByline } from "./AuthorByline";
 import type { WikiArticleSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
@@ -50,9 +50,8 @@ const WikiArticlesPage: React.FC = () => {
           name: article.title,
           description: article.description,
           url: `${siteUrl}/${lang}/wiki/${article.slug}`,
-          author: getAuthorById(article.authorId)
-            ? buildPersonSchema(getAuthorById(article.authorId)!, lang, siteUrl)
-            : { "@type": "Organization", name: "AstrologyWiki" },
+          // D1.3：文章 author 用编辑部 Organization，不用 persona Person。
+          author: buildEditorialOrganizationSchema(siteUrl),
           datePublished: article.date,
         },
       })),
@@ -169,25 +168,29 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
   const highlightText = isDark ? "text-gold-400" : "text-gold-600";
   const cardBg = isDark ? "bg-space-900/60" : "bg-paper-100/90";
 
+  // T3 卡片封面：显式 article.image 优先；否则用构建期生成的 WebP OG 变体
+  // （scripts/generate-og-images.mjs）。ZH 在 <slug>.zh.webp。
+  const coverImage =
+    article.image ||
+    `/og/articles/${article.slug}${language === "zh" ? ".zh" : ""}.webp`;
+
   return (
     <Link to={langPath(`/wiki/${article.slug}`)} className="group block">
       <Card
         className={`h-full flex flex-col transition-all duration-300 hover:border-gold-500/30 ${cardBg}`}
         noPadding
       >
-        {article.image && (
-          <div className="relative h-40 overflow-hidden rounded-t-[1.75rem]">
-            <img
-              src={article.image}
-              alt={article.image_alt || article.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div
-              className={`absolute inset-0 bg-gradient-to-t ${isDark ? "from-space-900/80" : "from-paper-50/80"} to-transparent`}
-            />
-          </div>
-        )}
+        <div className="relative h-40 overflow-hidden rounded-t-[1.75rem]">
+          <img
+            src={coverImage}
+            alt={article.image_alt || article.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div
+            className={`absolute inset-0 bg-gradient-to-t ${isDark ? "from-space-900/80" : "from-paper-50/80"} to-transparent`}
+          />
+        </div>
 
         <div className="flex-1 p-6 space-y-4">
           <h2 className="text-lg font-serif font-semibold line-clamp-2 group-hover:text-gold-500 transition-colors">

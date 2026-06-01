@@ -385,6 +385,8 @@ const AppContent: React.FC = () => {
     "/help",
   ].includes(pathWithoutLang);
   const isSaturnReturnPath = pathWithoutLang === "/saturn-return-calculator";
+  // T7 嵌入路由 /embed/*：渲染无 chrome 的可 iframe widget（见下方早返回）。
+  const isEmbedRoute = location.pathname.startsWith("/embed/");
   // /landing-v2/{en,zh}/ is a first-class public, SEO-indexed landing route
   // (static prerender at public/landing-v2/{en,zh}/index.html emits
   // robots=index,follow). It must NOT receive the global noindex flag, and
@@ -555,6 +557,28 @@ const AppContent: React.FC = () => {
       setShowLoginModal(false);
     }
   }, [location.pathname, isLandingRoute, showLoginModal, setShowLoginModal]);
+
+  // T7：嵌入路由在所有 hooks 之后早返回一个无 chrome 的最小树（仍在 Theme/Language/Auth
+  // Provider 内，故 useLanguage/useTheme 正常）。绕开全站 nav/footer/login modal/paywall/analytics，
+  // 让宿主站点用 <iframe src="/embed/saturn-return"> 干净嵌入。/embed/* 默认可被 iframe
+  // （vercel.json 未设 X-Frame-Options / frame-ancestors）。
+  if (isEmbedRoute) {
+    return (
+      <>
+        {/* 嵌入页是工具型 iframe，非独立内容页 → noindex，避免被当薄/重复内容索引。 */}
+        <SEO robots="noindex,nofollow" />
+        <Suspense fallback={<OracleLoading />}>
+          <Routes>
+            <Route
+              path="/embed/saturn-return"
+              element={<SaturnReturnCalculator variant="embed" />}
+            />
+            <Route path="/embed/*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </>
+    );
+  }
 
   return (
     <>

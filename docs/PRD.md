@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.15
-> **Last Updated**: 2026-05-25
+> **Version**: 2.16
+> **Last Updated**: 2026-06-01
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -319,6 +319,9 @@ AI 生成的深度心理分析，每个维度独立解读：
 | 路由 | 页面 | 说明 |
 |------|------|------|
 | `/:lang/saturn-return-calculator` | SaturnReturnCalculator | 免费 Saturn Return 计算器（公开可索引） |
+| `/embed/saturn-return` | SaturnReturnCalculator (variant="embed") | 可嵌入 widget：宿主站点 `<iframe>` 引用，无站点 chrome，带可见 dofollow 品牌回链；`noindex,nofollow` |
+
+**嵌入 widget（T7）**：`variant="embed"` 渲染无 chrome 的计算器（跳过 `<SEO>` 头注入与 SEO 长文），底部「Powered by AstrologyWiki」回链指向 canonical 计算器页。App.tsx 在 `/embed/*` 早返回最小树绕开全站 nav/footer/paywall/analytics。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。
 
 **功能说明**：
 - 用户输入出生日期（必填）、出生时间（可选）、出生城市（可选）

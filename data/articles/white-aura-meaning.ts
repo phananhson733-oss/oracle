@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const whiteAuraMeaningEn: WikiArticle = {
   slug: "white-aura-meaning",
   title: "White Aura Meaning",
-  description: "In subtle-energy traditions, white aura meaning usually points to a clear, integrative energy field tied to the crown center and spiritual orientation. It...",
+  description:
+    "In subtle-energy traditions, white aura meaning usually points to a clear, integrative energy field tied to the crown center and spiritual orientation. It...",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
@@ -14,7 +15,7 @@ export const whiteAuraMeaningEn: WikiArticle = {
     "white aura meaning",
     "white aura",
     "white aura personality",
-    "what does white aura mean"
+    "what does white aura mean",
   ],
   content: `# White Aura Meaning
 
@@ -75,6 +76,6 @@ There is also a sober limit to mention. White, like every aura colour, is a self
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
+Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
 `,
 };

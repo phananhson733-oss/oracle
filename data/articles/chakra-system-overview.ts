@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const chakraSystemOverviewEn: WikiArticle = {
   slug: "chakra-system-overview",
   title: "Chakra System",
-  description: "Chakra System is a seven-center framework for reading inner experience through body-located themes such as safety, desire, confidence, connection,...",
+  description:
+    "Chakra System is a seven-center framework for reading inner experience through body-located themes such as safety, desire, confidence, connection,...",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
@@ -15,7 +16,7 @@ export const chakraSystemOverviewEn: WikiArticle = {
     "chakra system overview",
     "what are chakras",
     "7 chakras explained",
-    "chakra meanings"
+    "chakra meanings",
   ],
   content: `# Chakra System Overview
 
@@ -111,6 +112,6 @@ The fourth limit is that chakra language cannot replace clinical care, direct co
 
 ## Take Action
 
-If you want a quick entry into the chakra system, start with how your aura colors line up against the seven centers. Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
+If you want a quick entry into the chakra system, start with how your aura colors line up against the seven centers. Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
 `,
 };

@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const purpleAuraMeaningEn: WikiArticle = {
   slug: "purple-aura-meaning",
   title: "Purple Aura Meaning",
-  description: "In subtle-energy traditions, purple aura meaning usually points to an introspective, intuition-leaning energy field tied to the crown and third eye centers....",
+  description:
+    "In subtle-energy traditions, purple aura meaning usually points to an introspective, intuition-leaning energy field tied to the crown and third eye centers....",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
@@ -14,7 +15,7 @@ export const purpleAuraMeaningEn: WikiArticle = {
     "purple aura meaning",
     "purple aura",
     "purple aura personality",
-    "what does purple aura mean"
+    "what does purple aura mean",
   ],
   content: `# Purple Aura Meaning
 
@@ -80,6 +81,6 @@ One last note on the "am I imagining it" question that drives much of the search
 
 ## Take Action
 
-[Take the 60-second Aura Reading Quiz to see how your colors map](https://astrologywiki.com/tools/aura-reading-quiz)
+Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
 `,
 };

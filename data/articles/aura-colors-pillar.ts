@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const auraColorsPillarEn: WikiArticle = {
   slug: "aura-colors-pillar",
   title: "Aura Colors Meaning",
-  description: "Aura colors are the color labels practitioners use to describe a person's prevailing energetic state within subtle-energy traditions. They are not a single...",
+  description:
+    "Aura colors are the color labels practitioners use to describe a person's prevailing energetic state within subtle-energy traditions. They are not a single...",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
@@ -14,7 +15,7 @@ export const auraColorsPillarEn: WikiArticle = {
     "aura colors meaning",
     "aura colors chart",
     "aura color meanings",
-    "how to read auras"
+    "how to read auras",
   ],
   content: `# Aura Colors Meaning
 
@@ -111,6 +112,6 @@ Two practical guardrails make the framework safer to work with over time. The fi
 
 ## Take Action
 
-Take the 60-second Aura Reading Quiz to see how your colors map: [https://astrologywiki.com/tools/aura-reading-quiz](https://astrologywiki.com/tools/aura-reading-quiz)
+Start with the [aura reading guide](/en/wiki/aura-reading) to see how to read your colors and what they map to.
 `,
 };
