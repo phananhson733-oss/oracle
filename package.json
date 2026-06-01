@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-og-images.mjs && node scripts/generate-seo-pages.mjs && vite build && node scripts/inject-spa-into-stubs.mjs",
+    "build": "node scripts/generate-og-images.mjs && node scripts/generate-seo-pages.mjs && node scripts/ping-indexnow.mjs && vite build && node scripts/inject-spa-into-stubs.mjs",
     "preview": "vite preview",
     "postinstall": "npm --prefix backend install",
     "test": "vitest run",
