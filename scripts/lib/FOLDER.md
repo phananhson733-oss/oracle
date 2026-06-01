@@ -11,4 +11,4 @@
 | 文件 | 职责 |
 |------|------|
 | `safe-jsonld.mjs` | `safeJsonLd` —— JSON-LD 写入 `<script>` 前的 HTML 安全序列化，转义 `<`/`>`/`&` 与 U+2028/U+2029，防 `</script>` 突破型 XSS。被 `generate-seo-pages.mjs` 导入；回归测试见 `tests/unit/safe-jsonld.test.ts`。 |
-| `md-to-html.mjs` | `mdToHtml` / `escapeHtml` —— 零依赖 Markdown→HTML，覆盖标题/段落/列表/引用/代码块/行内强调，全部转义。让 `generate-seo-pages.mjs` 把 wiki/classics 完整正文注入静态页 `<main>`，修复 soft 404。回归测试见 `tests/unit/md-to-html.test.ts`。 |
+| `md-to-html.mjs` | `mdToHtml` / `escapeHtml` / `stripInlineMarkdown` —— 零依赖 Markdown→HTML，覆盖标题/段落/列表/引用/代码块/行内强调与 `[text](url)` 链接（安全 href 白名单），全部转义。`stripInlineMarkdown` 把行内标记剥成纯文本供 meta description。让 `generate-seo-pages.mjs` 把 wiki/classics/article 完整正文注入静态页 `<main>`，修复 soft 404。回归测试见 `tests/unit/md-to-html.test.ts`。 |
