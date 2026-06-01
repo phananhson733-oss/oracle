@@ -14,11 +14,28 @@ export const escapeHtml = (value) => {
     .replace(/'/g, '&#39;');
 };
 
-// 行内强调：先转义，再把 **bold** / *italic* 包成标签（bold 先于 italic，避免误拆 **）。
+// 仅允许安全协议的 href，杜绝 javascript:/data: 等注入。
+const SAFE_HREF = /^(https?:\/\/|\/|#|mailto:)/;
+
+// 行内：先转义，再处理 [text](url) 链接（安全 href 白名单），再 **bold** / *italic*。
+// 链接先于强调，避免链接文字里的 ** 被误拆。
 const inline = (text) =>
   escapeHtml(text)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, href) =>
+      SAFE_HREF.test(href) ? `<a href="${href}">${label}</a>` : label)
     .replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*([^*]+?)\*/g, '<em>$1</em>');
+
+// 把 Markdown 行内标记剥成纯文本，供 meta description 使用（去掉 *强调*、`代码`、[链接](url) 残留）。
+export const stripInlineMarkdown = (text) => {
+  if (text === null || text === undefined) return '';
+  return String(text)
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/\*\*?/g, '')
+    .replace(/`/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
 
 // 极简 Markdown→HTML：标题、段落、有序/无序列表、引用、围栏代码块、行内强调。
 // 紧凑输出（块间无空白），适合注入静态 SEO stub 的 <main>。

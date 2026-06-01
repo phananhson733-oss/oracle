@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import ts from 'typescript';
 import { safeJsonLd } from './lib/safe-jsonld.mjs';
-import { mdToHtml } from './lib/md-to-html.mjs';
+import { mdToHtml, stripInlineMarkdown } from './lib/md-to-html.mjs';
 import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
@@ -191,7 +191,8 @@ const buildHead = ({
   alternates,
   schema,
 }) => {
-  const desc = truncate(description || '');
+  // 清洗未渲染的 markdown 标记（如 summary 里的 *书名*），再截断，避免脏摘要进 SERP。
+  const desc = truncate(stripInlineMarkdown(description || ''));
   const headParts = [
     '<meta charset="UTF-8" />',
     '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
@@ -396,11 +397,25 @@ const buildBookSchema = (lang, item, url) => ({
   author: item.author
     ? { '@type': 'Person', name: item.author }
     : undefined,
-  description: truncate(item.summary || ''),
+  description: truncate(stripInlineMarkdown(item.summary || '')),
   url,
   inLanguage: lang,
   keywords: item.keywords || undefined,
   image: item.cover_url || undefined,
+});
+
+const buildArticleSchema = (lang, article, url, authorName) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.title,
+  description: truncate(stripInlineMarkdown(article.description || '')),
+  author: authorName ? { '@type': 'Person', name: authorName } : undefined,
+  datePublished: article.date || undefined,
+  url,
+  mainEntityOfPage: url,
+  inLanguage: lang,
+  image: ogImageUrl,
+  keywords: article.keywords && article.keywords.length ? article.keywords : undefined,
 });
 
 const buildLandingV2WebSiteSchema = (lang, url) => ({
@@ -1006,14 +1021,52 @@ const generate = async () => {
       : ['article', lang, slug];
   };
 
-  // Add featured article URLs to sitemap (SPA-rendered, no static HTML needed)
+  // Featured articles: generate static HTML with full body so crawlers read the
+  // article (data/articles/<slug>.ts, rendered via WikiArticleDetailPage in the
+  // SPA) instead of the generic /index.html shell. Without this the sitemap URLs
+  // resolve to the SPA shell → soft 404. Body comes from article.content (Markdown).
+  const writeArticle = async (slug, lang) => {
+    const url = `${siteUrl}/${lang}/wiki/${slug}`;
+    const article = articlesModule.getArticleBySlug(slug, lang);
+    const contentMd = article?.content || '';
+    // 正文签名纳入 lastmod：正文变化才更新（与 T1 防 churn 协同）。
+    addUrl(url, [...articleSig(lang, slug), contentHash([contentMd])]);
+    if (!article || !contentMd) return; // 无该语言内容则只留 sitemap URL（保持既有行为），不写空壳静态页。
+    const config = LANG_CONFIG[lang];
+    const wikiPath = `/${lang}/wiki`;
+    const author = authorsModule.getAuthorById(article.authorId);
+    await writeHtmlPage({
+      outputPath: path.join(publicDir, lang, 'wiki', slug, 'index.html'),
+      lang,
+      title: article.title,
+      description: article.description || config.wikiDescription,
+      url,
+      ogType: 'article',
+      alternates: buildAlternateLinks(`/wiki/${slug}`, {
+        en: !!articlesModule.getArticleBySlug(slug, 'en'),
+        zh: !!articlesModule.getArticleBySlug(slug, 'zh'),
+      }),
+      schema: [
+        buildArticleSchema(lang, article, url, author?.name),
+        buildBreadcrumb(lang, [
+          { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+          { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
+          { name: article.title, url },
+        ]),
+      ],
+      ctaText: config.wikiCta,
+      spaPath: `/${lang}/wiki/${slug}`,
+      contentHtml: mdToHtml(contentMd),
+    });
+  };
+
   for (const slug of ARTICLE_SLUGS) {
-    addUrl(`${siteUrl}/en/wiki/${slug}`, articleSig('en', slug));
-    addUrl(`${siteUrl}/zh/wiki/${slug}`, articleSig('zh', slug));
+    await writeArticle(slug, 'en');
+    await writeArticle(slug, 'zh');
   }
   // EN-only featured articles (no ZH variant — emit /en/wiki/ only)
   for (const slug of ARTICLE_SLUGS_EN_ONLY) {
-    addUrl(`${siteUrl}/en/wiki/${slug}`, articleSig('en', slug));
+    await writeArticle(slug, 'en');
   }
 
   // L2 cutover (2026-05-19): root is now the canonical home (renders

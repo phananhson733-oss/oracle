@@ -4,11 +4,17 @@
 
 import { describe, it, expect } from "vitest";
 // @ts-expect-error — 纯 JS 工具，无类型声明
-import { mdToHtml, escapeHtml } from "../../scripts/lib/md-to-html.mjs";
+import {
+  mdToHtml,
+  escapeHtml,
+  stripInlineMarkdown,
+} from "../../scripts/lib/md-to-html.mjs";
 
 describe("escapeHtml", () => {
   it("转义 HTML 特殊字符", () => {
-    expect(escapeHtml(`<a href="x">&'`)).toBe("&lt;a href=&quot;x&quot;&gt;&amp;&#39;");
+    expect(escapeHtml(`<a href="x">&'`)).toBe(
+      "&lt;a href=&quot;x&quot;&gt;&amp;&#39;",
+    );
   });
   it("空值返回空串", () => {
     expect(escapeHtml("")).toBe("");
@@ -29,7 +35,9 @@ describe("mdToHtml — 块级", () => {
   });
 
   it("空行分隔多段", () => {
-    expect(mdToHtml("para one\n\npara two")).toBe("<p>para one</p><p>para two</p>");
+    expect(mdToHtml("para one\n\npara two")).toBe(
+      "<p>para one</p><p>para two</p>",
+    );
   });
 
   it("单段内换行合并为一段", () => {
@@ -50,7 +58,9 @@ describe("mdToHtml — 块级", () => {
   });
 
   it("代码块原样保留并转义", () => {
-    expect(mdToHtml("```\n<b>x</b>\n```")).toBe("<pre><code>&lt;b&gt;x&lt;/b&gt;</code></pre>");
+    expect(mdToHtml("```\n<b>x</b>\n```")).toBe(
+      "<pre><code>&lt;b&gt;x&lt;/b&gt;</code></pre>",
+    );
   });
 });
 
@@ -66,12 +76,51 @@ describe("mdToHtml — 行内强调", () => {
   });
 });
 
+describe("mdToHtml — 链接", () => {
+  it("[text](/url) 转锚点", () => {
+    expect(mdToHtml("see [houses](/en/wiki/astrology-houses) here")).toBe(
+      '<p>see <a href="/en/wiki/astrology-houses">houses</a> here</p>',
+    );
+  });
+  it("外链 https 允许", () => {
+    expect(mdToHtml("[x](https://a.com/p)")).toBe(
+      '<p><a href="https://a.com/p">x</a></p>',
+    );
+  });
+  it("不安全 href (javascript:) 降级为纯文本", () => {
+    expect(mdToHtml("[x](javascript:evil)")).toBe("<p>x</p>");
+  });
+});
+
+describe("stripInlineMarkdown", () => {
+  it("去除 * 强调标记保留文字", () => {
+    expect(
+      stripInlineMarkdown("Arroyo's *Four Elements*, first published"),
+    ).toBe("Arroyo's Four Elements, first published");
+  });
+  it("链接转为纯文本", () => {
+    expect(stripInlineMarkdown("see [houses](/x) now")).toBe("see houses now");
+  });
+  it("去除反引号", () => {
+    expect(stripInlineMarkdown("use `code` here")).toBe("use code here");
+  });
+  it("空值返回空串", () => {
+    expect(stripInlineMarkdown(null)).toBe("");
+    expect(stripInlineMarkdown(undefined)).toBe("");
+    expect(stripInlineMarkdown("")).toBe("");
+  });
+});
+
 describe("mdToHtml — XSS 安全", () => {
   it("段落中的标签被转义", () => {
-    expect(mdToHtml("<script>alert(1)</script>")).toBe("<p>&lt;script&gt;alert(1)&lt;/script&gt;</p>");
+    expect(mdToHtml("<script>alert(1)</script>")).toBe(
+      "<p>&lt;script&gt;alert(1)&lt;/script&gt;</p>",
+    );
   });
   it("标题中的标签被转义", () => {
-    expect(mdToHtml("# <img src=x onerror=y>")).toBe("<h1>&lt;img src=x onerror=y&gt;</h1>");
+    expect(mdToHtml("# <img src=x onerror=y>")).toBe(
+      "<h1>&lt;img src=x onerror=y&gt;</h1>",
+    );
   });
   it("强调内部仍转义", () => {
     expect(mdToHtml("**<b>**")).toBe("<p><strong>&lt;b&gt;</strong></p>");
@@ -85,7 +134,8 @@ describe("mdToHtml — 边界", () => {
     expect(mdToHtml(undefined)).toBe("");
   });
   it("综合文档结构正确", () => {
-    const md = "# Book\n\nIntro **bold** here.\n\n## Section\n\n- one\n- two\n\n> a note";
+    const md =
+      "# Book\n\nIntro **bold** here.\n\n## Section\n\n- one\n- two\n\n> a note";
     expect(mdToHtml(md)).toBe(
       "<h1>Book</h1>" +
         "<p>Intro <strong>bold</strong> here.</p>" +
