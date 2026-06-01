@@ -1,6 +1,6 @@
 // INPUT: public/sitemap.xml（由 generate-seo-pages.mjs 生成）+ 环境变量 INDEXNOW_KEY / SITE_URL；复用 scripts/seo-lastmod.mjs 的 parseSitemapLastmods。
 // OUTPUT: 向 https://api.indexnow.org/indexnow POST 当天变更 URL，通知 Bing / Yandex（非 Google——Google 不支持 IndexNow）；构建期可据 INDEXNOW_KEY 动态生成 public/<key>.txt 验证文件。
-// POS: SEO T4 部署后步骤，应在 sitemap 生成之后、部署完成后运行；无 key / 无当天变更 / 网络失败时一律优雅 no-op 并 exit 0，绝不阻断部署。若更新此文件，务必更新本头注释（scripts/ 目录暂无 FOLDER.md，不要新建）。
+// POS: SEO T4。已接入 package.json build 链：generate-seo-pages 之后、vite build 之前运行（writeKeyFile 写 public/<key>.txt，需在 vite 拷贝 public→dist 之前）。INDEXNOW_KEY 仅配 Production 环境时此步在 production 构建才真正提交；无 key / 无当天变更 / 网络失败一律优雅 no-op 并 exit 0，绝不阻断部署。若更新此文件，务必更新本头注释（scripts/ 目录暂无 FOLDER.md，不要新建）。
 
 // Key 文件机制（防泄密）：
 //   IndexNow 协议要求站点根可公开访问一个 <key>.txt，内容就是 key 本身，用于验证所有权。
