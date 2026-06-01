@@ -79,6 +79,10 @@ import {
   descendantAstrologyZh,
 } from "./descendant-astrology";
 import { icAstrologyEn, icAstrologyZh } from "./ic-astrology";
+import { transitsEn } from "./transits";
+import { transitsZh } from "./transits";
+import { natalChartTransitsEn } from "./natal-chart-transits";
+import { natalChartTransitsZh } from "./natal-chart-transits";
 // All articles organized by language
 
 import {
@@ -223,6 +227,8 @@ const ARTICLES_EN: WikiArticle[] = [
   marsIn12thHouseEn,
   saturnInPiscesEn,
   persephoneGoddessEn,
+  transitsEn,
+  natalChartTransitsEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -273,6 +279,8 @@ const ARTICLES_ZH: WikiArticle[] = [
   marsIn12thHouseZh,
   saturnInPiscesZh,
   persephoneGoddessZh,
+  transitsZh,
+  natalChartTransitsZh,
 ];
 
 // Get all articles for a language
