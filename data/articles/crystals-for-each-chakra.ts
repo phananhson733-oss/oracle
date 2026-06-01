@@ -125,7 +125,7 @@ export const crystalsForEachChakraZh: WikiArticle = {
 
 ## Chakra Crystals 是什么？
 
-脉轮水晶（Chakra Crystals，对应身体七个能量中心的水晶）指的是**按脉轮的能量状态来配对石头，而不是只看颜色**。它把每个能量中心（脉轮，chakra，西方瑜伽与灵性传统里的能量中心概念）配上一两块常用石头，背后沿用的是 Anodea Judith 系统化的现代脉轮框架；要看懂单个配对，先得理解整套 [脉轮系统总览 pillar 页](/zh/wiki/chakra-system-overview)，那里梳理了七个中心彼此的关系。
+脉轮水晶（Chakra Crystals，对应身体七个能量中心的水晶）指的是**按脉轮的能量状态来配对石头，而不是只看颜色**。它把每个能量中心（脉轮，chakra，西方瑜伽与灵性传统里的能量中心概念）配上一两块常用石头，背后沿用的是 Anodea Judith 系统化的现代脉轮框架；要看懂单个配对，先得理解整套 [脉轮系统总览 pillar 页](/en/wiki/chakra-system-overview)，那里梳理了七个中心彼此的关系。
 
 - 给七个能量中心各配一两块常用的水晶
 - 把石头的作用看成支持一个偏弱或偏旺的中心，而不是装饰
@@ -202,7 +202,7 @@ export const crystalsForEachChakraZh: WikiArticle = {
 
 ## 延伸阅读
 
-- [七大脉轮颜色与含义指南](/zh/wiki/chakra-system-overview) —— 先看颜色与各能量中心的关联，再决定要不要照色相去挑石头。
+- [七大脉轮颜色与含义指南](/en/wiki/chakra-system-overview) —— 先看颜色与各能量中心的关联，再决定要不要照色相去挑石头。
 
 ## 下一步行动
 

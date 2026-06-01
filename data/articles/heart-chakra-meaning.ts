@@ -126,7 +126,7 @@ export const heartChakraMeaningZh: WikiArticle = {
 
 ## Heart Chakra 是什么？
 
-Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第四个中心，位置在胸口正中，恰好夹在下三轮的本能和上三轮的觉知之间。在更完整的 [脉轮系统总览 pillar 页](/zh/wiki/chakra-system-overview) 里，它承上启下，是整张能量地图的转折点。说到心轮代表什么，它指的其实是**一种在爱自己和爱别人之间求平衡的能量**。
+Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第四个中心，位置在胸口正中，恰好夹在下三轮的本能和上三轮的觉知之间。在更完整的 [脉轮系统总览 pillar 页](/en/wiki/chakra-system-overview) 里，它承上启下，是整张能量地图的转折点。说到心轮代表什么，它指的其实是**一种在爱自己和爱别人之间求平衡的能量**。
 
 - 管的是付出与接收之间的来回，而不只是男女之情
 - 在传统体系里对应胸口、绿色和风元素

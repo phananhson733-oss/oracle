@@ -131,7 +131,7 @@ export const sacralChakraMeaningZh: WikiArticle = {
 
 ## The Sacral Chakra 是什么？
 
-The Sacral Chakra（生殖轮，也叫本我轮、骶轮）是脉轮（chakra，灵性传统中的能量中心）体系里的第二个能量中心，在更完整的 [脉轮系统总览 pillar 页](/zh/wiki/chakra-system-overview) 里，它紧挨在底层之上、排在第二位，承接住下方那份安全感之后开始往外流动。说到生殖轮代表什么，它指的其实是一种**以创造、愉悦和情绪流动为主调的能量**。
+The Sacral Chakra（生殖轮，也叫本我轮、骶轮）是脉轮（chakra，灵性传统中的能量中心）体系里的第二个能量中心，在更完整的 [脉轮系统总览 pillar 页](/en/wiki/chakra-system-overview) 里，它紧挨在底层之上、排在第二位，承接住下方那份安全感之后开始往外流动。说到生殖轮代表什么，它指的其实是一种**以创造、愉悦和情绪流动为主调的能量**。
 
 - 关注的是流动与感受，而不是稳固、掌控或意志
 - 在传统体系里对应橙色与水元素，位置落在下腹、骨盆一带
@@ -213,7 +213,7 @@ The Sacral Chakra（生殖轮，也叫本我轮、骶轮）是脉轮（chakra，
 
 ## 下一步行动
 
-把生殖轮（The Sacral Chakra）放回整条脉轮序列里再看一遍，你会发现它上承底层的安全感、下接太阳轮的意志，单独盯着一个中心，远不如看清它在整体里的位置。顺着这份[完整的脉轮系统总览](https://astrologywiki.com/zh/wiki/chakra-system-overview)走一遍，能帮你把生殖轮摆回它该在的那一格——很多时候，读懂一个脉轮的前提，是先读懂它和上下邻居的关系。
+把生殖轮（The Sacral Chakra）放回整条脉轮序列里再看一遍，你会发现它上承底层的安全感、下接太阳轮的意志，单独盯着一个中心，远不如看清它在整体里的位置。顺着这份[完整的脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)走一遍，能帮你把生殖轮摆回它该在的那一格——很多时候，读懂一个脉轮的前提，是先读懂它和上下邻居的关系。
 
 ## 参考来源
 

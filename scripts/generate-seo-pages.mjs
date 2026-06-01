@@ -654,8 +654,9 @@ const ZH_WIKI_WHITELIST = new Set([
   'water-element',
 ]);
 
-// Featured article slugs (SPA-rendered, added to sitemap only)
+// Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'how-to-read-birth-chart',
   '10th-house-astrology',
   '7th-house-astrology',
   '6th-house-astrology',
