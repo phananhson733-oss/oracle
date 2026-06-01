@@ -3,7 +3,10 @@
 // OUTPUT: Public Saturn Return calculator with city autocomplete + result card + SEO content.
 //         Birth date is captured via three <select>s (not native <input type="date">) so
 //         placeholder text never leaks the visitor's OS locale on an English page.
-// POS: Standalone SEO landing component; city autocomplete delegates to the shared hook.
+//         variant="embed" (T7): drops <SEO> head + SEO essay, renders a chrome-free widget
+//         with a branded dofollow backlink, for <iframe src="/embed/saturn-return">.
+// POS: Standalone SEO landing component (variant=full) + embeddable widget (variant=embed,
+//      mounted chrome-free by App.tsx /embed/* early return); city autocomplete via shared hook.
 
 import React, {
   useCallback,
@@ -91,10 +94,19 @@ const FAQ_SCHEMA = {
   ],
 };
 
-export const SaturnReturnCalculator: React.FC = () => {
+interface SaturnReturnCalculatorProps {
+  // 'embed' = iframe 嵌入态（T7）：不注入 SEO 头、隐藏 SEO 长文，仅表单+结果+品牌回链。
+  // 默认 'full' 保持线上 /saturn-return-calculator 页行为不变。
+  variant?: "full" | "embed";
+}
+
+export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
+  variant = "full",
+}) => {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const isEmbed = variant === "embed";
   const sr = t.saturn_return;
 
   // SEO entry point: incoming visitors expect to land at the page top, not
@@ -298,39 +310,42 @@ export const SaturnReturnCalculator: React.FC = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 sm:py-12">
-      <SEO
-        title="Saturn Return Calculator - Free Saturn Return Dates"
-        description={seoDescription}
-        url={canonicalUrl}
-        keywords={[
-          "saturn return calculator",
-          "saturn return dates",
-          "when is my saturn return",
-          "saturn return meaning",
-          "astrology calculator",
-          "saturn transit",
-        ]}
-        alternateLanguages={[
-          { hrefLang: "en", href: `${SITE_URL}/en/saturn-return-calculator` },
-          { hrefLang: "zh", href: `${SITE_URL}/zh/saturn-return-calculator` },
-          {
-            hrefLang: "x-default",
-            href: `${SITE_URL}/en/saturn-return-calculator`,
-          },
-        ]}
-        schema={[
-          {
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: "Saturn Return Calculator",
-            description: seoDescription,
-            applicationCategory: "LifestyleApplication",
-            operatingSystem: "Web",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-          },
-          FAQ_SCHEMA,
-        ]}
-      />
+      {/* 嵌入态不注入页面级 SEO 头/schema（避免覆盖宿主页 meta）。 */}
+      {!isEmbed && (
+        <SEO
+          title="Saturn Return Calculator - Free Saturn Return Dates"
+          description={seoDescription}
+          url={canonicalUrl}
+          keywords={[
+            "saturn return calculator",
+            "saturn return dates",
+            "when is my saturn return",
+            "saturn return meaning",
+            "astrology calculator",
+            "saturn transit",
+          ]}
+          alternateLanguages={[
+            { hrefLang: "en", href: `${SITE_URL}/en/saturn-return-calculator` },
+            { hrefLang: "zh", href: `${SITE_URL}/zh/saturn-return-calculator` },
+            {
+              hrefLang: "x-default",
+              href: `${SITE_URL}/en/saturn-return-calculator`,
+            },
+          ]}
+          schema={[
+            {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "Saturn Return Calculator",
+              description: seoDescription,
+              applicationCategory: "LifestyleApplication",
+              operatingSystem: "Web",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+            },
+            FAQ_SCHEMA,
+          ]}
+        />
+      )}
 
       <div className="max-w-2xl mx-auto">
         {/* Header */}
@@ -599,111 +614,129 @@ export const SaturnReturnCalculator: React.FC = () => {
           </div>
         )}
 
-        {/* SEO Content */}
-        <article className={`prose ${isDark ? "prose-invert" : ""} max-w-none`}>
-          <h2 className={`text-2xl font-bold mb-4 ${textPrimary}`}>
-            What is a Saturn Return?
-          </h2>
-          <div className={`space-y-4 ${textSecondary} leading-relaxed`}>
-            <p>
-              A Saturn Return is one of the most significant astrological
-              transits you will experience in your lifetime. It occurs when the
-              planet Saturn completes its orbit around the Sun and returns to
-              the exact zodiacal position it occupied at the moment of your
-              birth. This cycle takes approximately 29.5 years, meaning your
-              first Saturn Return happens between ages 27 and 30.
-            </p>
-            <p>
-              In astrology, Saturn is known as the taskmaster of the zodiac. It
-              governs structure, discipline, responsibility, and the passage of
-              time. When Saturn returns to your natal position, it brings a
-              period of profound self-examination and life restructuring. Many
-              people experience major life changes during their Saturn Return,
-              including career shifts, relationship changes, and a deeper
-              understanding of their life purpose.
-            </p>
-            <p>
-              Your first Saturn Return (ages 27-30) marks the transition from
-              youth to true adulthood. The structures, beliefs, and
-              relationships that are not built on solid foundations tend to
-              dissolve during this period. While it can feel challenging, the
-              Saturn Return is ultimately about growth. It pushes you to align
-              your external life with your authentic self.
-            </p>
-            <p>
-              The second Saturn Return (ages 56-60) is a time of mature
-              reflection and legacy building. Having lived through one full
-              Saturn cycle, you have the wisdom to evaluate what truly matters.
-              Many people use this period to simplify their lives, focus on
-              meaningful work, and prepare for the next chapter.
-            </p>
-            <p>
-              The third Saturn Return (ages 84-90) is rare and represents the
-              completion of a full life cycle. Those who reach this milestone
-              often experience a profound sense of peace and acceptance, having
-              integrated all the lessons Saturn has taught them.
-            </p>
+        {/* SEO 长文仅 full 态展示；嵌入态用品牌回链替代（避免把整篇长文塞进宿主 iframe）。 */}
+        {!isEmbed && (
+          <article
+            className={`prose ${isDark ? "prose-invert" : ""} max-w-none`}
+          >
+            <h2 className={`text-2xl font-bold mb-4 ${textPrimary}`}>
+              What is a Saturn Return?
+            </h2>
+            <div className={`space-y-4 ${textSecondary} leading-relaxed`}>
+              <p>
+                A Saturn Return is one of the most significant astrological
+                transits you will experience in your lifetime. It occurs when
+                the planet Saturn completes its orbit around the Sun and returns
+                to the exact zodiacal position it occupied at the moment of your
+                birth. This cycle takes approximately 29.5 years, meaning your
+                first Saturn Return happens between ages 27 and 30.
+              </p>
+              <p>
+                In astrology, Saturn is known as the taskmaster of the zodiac.
+                It governs structure, discipline, responsibility, and the
+                passage of time. When Saturn returns to your natal position, it
+                brings a period of profound self-examination and life
+                restructuring. Many people experience major life changes during
+                their Saturn Return, including career shifts, relationship
+                changes, and a deeper understanding of their life purpose.
+              </p>
+              <p>
+                Your first Saturn Return (ages 27-30) marks the transition from
+                youth to true adulthood. The structures, beliefs, and
+                relationships that are not built on solid foundations tend to
+                dissolve during this period. While it can feel challenging, the
+                Saturn Return is ultimately about growth. It pushes you to align
+                your external life with your authentic self.
+              </p>
+              <p>
+                The second Saturn Return (ages 56-60) is a time of mature
+                reflection and legacy building. Having lived through one full
+                Saturn cycle, you have the wisdom to evaluate what truly
+                matters. Many people use this period to simplify their lives,
+                focus on meaningful work, and prepare for the next chapter.
+              </p>
+              <p>
+                The third Saturn Return (ages 84-90) is rare and represents the
+                completion of a full life cycle. Those who reach this milestone
+                often experience a profound sense of peace and acceptance,
+                having integrated all the lessons Saturn has taught them.
+              </p>
 
-            <h3 className={`text-xl font-semibold mt-6 mb-3 ${textPrimary}`}>
-              How Does the Saturn Return Calculator Work?
-            </h3>
-            <p>
-              Our calculator uses the Swiss Ephemeris, the same high-precision
-              astronomical engine used by professional astrologers worldwide, to
-              determine the exact position of Saturn at the time of your birth.
-              It then calculates when transiting Saturn will return to that
-              exact degree, giving you precise dates for your Saturn Return
-              periods.
-            </p>
-            <p>
-              For the most accurate results, enter your exact birth time and
-              city. If you don't know your birth time, the calculator will still
-              provide approximate dates, as Saturn moves slowly enough that the
-              degree difference within a single day is minimal.
-            </p>
+              <h3 className={`text-xl font-semibold mt-6 mb-3 ${textPrimary}`}>
+                How Does the Saturn Return Calculator Work?
+              </h3>
+              <p>
+                Our calculator uses the Swiss Ephemeris, the same high-precision
+                astronomical engine used by professional astrologers worldwide,
+                to determine the exact position of Saturn at the time of your
+                birth. It then calculates when transiting Saturn will return to
+                that exact degree, giving you precise dates for your Saturn
+                Return periods.
+              </p>
+              <p>
+                For the most accurate results, enter your exact birth time and
+                city. If you don't know your birth time, the calculator will
+                still provide approximate dates, as Saturn moves slowly enough
+                that the degree difference within a single day is minimal.
+              </p>
 
-            <h3 className={`text-xl font-semibold mt-6 mb-3 ${textPrimary}`}>
-              Frequently Asked Questions
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className={`font-medium ${textPrimary}`}>
-                  How long does a Saturn Return last?
-                </h4>
-                <p>
-                  A Saturn Return typically lasts about 2-3 years from start to
-                  finish. The most intense period is when Saturn is within 2
-                  degrees of your natal Saturn position, which lasts several
-                  months.
-                </p>
-              </div>
-              <div>
-                <h4 className={`font-medium ${textPrimary}`}>
-                  Is the Saturn Return always difficult?
-                </h4>
-                <p>
-                  Not necessarily. While Saturn Returns can bring challenges,
-                  they are ultimately about growth and maturation. People who
-                  have already been building solid foundations in their lives
-                  often experience their Saturn Return as a period of reward and
-                  recognition rather than crisis.
-                </p>
-              </div>
-              <div>
-                <h4 className={`font-medium ${textPrimary}`}>
-                  Do I need my exact birth time?
-                </h4>
-                <p>
-                  For Saturn Return dates, exact birth time is helpful but not
-                  essential. Saturn moves about 0.03 degrees per day, so even
-                  without birth time, the calculated dates will be very close to
-                  accurate. Birth time matters more for determining which house
-                  your Saturn Return activates.
-                </p>
+              <h3 className={`text-xl font-semibold mt-6 mb-3 ${textPrimary}`}>
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className={`font-medium ${textPrimary}`}>
+                    How long does a Saturn Return last?
+                  </h4>
+                  <p>
+                    A Saturn Return typically lasts about 2-3 years from start
+                    to finish. The most intense period is when Saturn is within
+                    2 degrees of your natal Saturn position, which lasts several
+                    months.
+                  </p>
+                </div>
+                <div>
+                  <h4 className={`font-medium ${textPrimary}`}>
+                    Is the Saturn Return always difficult?
+                  </h4>
+                  <p>
+                    Not necessarily. While Saturn Returns can bring challenges,
+                    they are ultimately about growth and maturation. People who
+                    have already been building solid foundations in their lives
+                    often experience their Saturn Return as a period of reward
+                    and recognition rather than crisis.
+                  </p>
+                </div>
+                <div>
+                  <h4 className={`font-medium ${textPrimary}`}>
+                    Do I need my exact birth time?
+                  </h4>
+                  <p>
+                    For Saturn Return dates, exact birth time is helpful but not
+                    essential. Saturn moves about 0.03 degrees per day, so even
+                    without birth time, the calculated dates will be very close
+                    to accurate. Birth time matters more for determining which
+                    house your Saturn Return activates.
+                  </p>
+                </div>
               </div>
             </div>
+          </article>
+        )}
+
+        {/* 嵌入态品牌回链（可见、dofollow，回站点 canonical 计算器页）。合规外链形态。 */}
+        {isEmbed && (
+          <div className={`mt-6 text-center text-sm ${textSecondary}`}>
+            <a
+              href={`${SITE_URL}/${language}/saturn-return-calculator`}
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-gold-500 hover:underline"
+            >
+              Powered by AstrologyWiki
+            </a>
           </div>
-        </article>
+        )}
       </div>
     </div>
   );
