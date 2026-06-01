@@ -134,7 +134,7 @@ export const solarPlexusChakraAffirmationsZh: WikiArticle = {
 
 ## The Solar Plexus Chakra 是什么？
 
-太阳轮（The Solar Plexus Chakra，又称太阳神经丛脉轮，对应梵文 Manipura）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里掌管个人意志、自信与选择力的能量中心，位置大约在肚脐上方、上腹一带，最常被对应到黄色。在现代脉轮体系（如 Anodea Judith 的整理）里，它常和更上位的 [脉轮系统总览 pillar 页](/zh/wiki/chakra-system-overview) 放在一起理解。太阳轮肯定语，就是**针对太阳轮能量状态设计的肯定语**。
+太阳轮（The Solar Plexus Chakra，又称太阳神经丛脉轮，对应梵文 Manipura）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里掌管个人意志、自信与选择力的能量中心，位置大约在肚脐上方、上腹一带，最常被对应到黄色。在现代脉轮体系（如 Anodea Judith 的整理）里，它常和更上位的 [脉轮系统总览 pillar 页](/en/wiki/chakra-system-overview) 放在一起理解。太阳轮肯定语，就是**针对太阳轮能量状态设计的肯定语**。
 
 - 核心主题是为自己做主，而不是情绪的浓淡
 - 在脉轮体系里被对应到黄色，位置在肚脐上方
@@ -206,12 +206,12 @@ export const solarPlexusChakraAffirmationsZh: WikiArticle = {
 
 ## 延伸阅读
 
-- [黄色气场含义解析](/zh/wiki/yellow-aura-meaning) — 太阳轮对应的颜色，能帮你从气场角度印证自己的能量调性
+- [黄色气场含义解析](/en/wiki/yellow-aura-meaning) — 太阳轮对应的颜色，能帮你从气场角度印证自己的能量调性
 - *海底轮肯定语对照说明* — 先打好安全感的地基，太阳轮的肯定语才不会显得用力
 
 ## 下一步行动
 
-挑一句贴合你此刻状态的太阳轮（The Solar Plexus Chakra）的肯定语，今晚找个安静的时刻默念三次，再记下念完后情绪有没有松一点。这样你会慢慢攒下一份属于自己的"措辞清单"，知道哪一句在偏弱时管用、哪一句在过满时管用。当你能照着当下的能量挑话说，自我肯定就不再是空喊口号，而是一次次把"我可以做主"重新认回来的练习。想把太阳轮放回整套系统里理解，可以读这份[脉轮系统总览](https://astrologywiki.com/zh/wiki/chakra-system-overview)。
+挑一句贴合你此刻状态的太阳轮（The Solar Plexus Chakra）的肯定语，今晚找个安静的时刻默念三次，再记下念完后情绪有没有松一点。这样你会慢慢攒下一份属于自己的"措辞清单"，知道哪一句在偏弱时管用、哪一句在过满时管用。当你能照着当下的能量挑话说，自我肯定就不再是空喊口号，而是一次次把"我可以做主"重新认回来的练习。想把太阳轮放回整套系统里理解，可以读这份[脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)。
 
 ## 参考来源
 

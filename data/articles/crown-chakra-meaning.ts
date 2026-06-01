@@ -138,7 +138,7 @@ export const crownChakraMeaningZh: WikiArticle = {
 
 ## The Crown Chakra 是什么？
 
-顶轮（crown chakra，也叫 sahasrara、第七脉轮）是脉轮（chakra，西方瑜伽与灵性传统里描述的能量中心概念）体系里位置最高的一个，落在头顶，传统上和[脉轮系统总览 pillar 页](/zh/wiki/chakra-system-overview)里那条从尾椎一路升到头顶的能量主线连在一起。顶轮代表什么？在多数灵性传统的描述里，它通常代表**一种关乎觉知、开阔与连接感的能量调性**。
+顶轮（crown chakra，也叫 sahasrara、第七脉轮）是脉轮（chakra，西方瑜伽与灵性传统里描述的能量中心概念）体系里位置最高的一个，落在头顶，传统上和[脉轮系统总览 pillar 页](/en/wiki/chakra-system-overview)里那条从尾椎一路升到头顶的能量主线连在一起。顶轮代表什么？在多数灵性传统的描述里，它通常代表**一种关乎觉知、开阔与连接感的能量调性**。
 
 - 主调是"向上打开"的开阔与觉察，而不是某种具体情绪
 - 在七个脉轮里位置最高，常被对应到头顶，以及紫色或白色
@@ -220,7 +220,7 @@ export const crownChakraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-顺着[完整脉轮系统总览](https://astrologywiki.com/zh/wiki/chakra-system-overview)把七个脉轮从尾椎到头顶整条看一遍，你会清楚地看到顶轮处在序列的最末端、也是最高处；而一旦明白它只是整条能量主线的收尾、不是一个可以孤立追求的高点，所谓"打开顶轮"就会从一个玄乎的执念，变成对自己当下是清明还是脱节的踏实觉察。
+顺着[完整脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)把七个脉轮从尾椎到头顶整条看一遍，你会清楚地看到顶轮处在序列的最末端、也是最高处；而一旦明白它只是整条能量主线的收尾、不是一个可以孤立追求的高点，所谓"打开顶轮"就会从一个玄乎的执念，变成对自己当下是清明还是脱节的踏实觉察。
 
 ## 参考来源
 

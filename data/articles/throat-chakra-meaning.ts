@@ -133,7 +133,7 @@ export const throatChakraMeaningZh: WikiArticle = {
 
 ## Throat Chakra 是什么？
 
-喉轮（Throat Chakra，对应梵文 Vishuddha）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第五个能量中心，位置在颈部喉咙一带，掌管表达与倾听。要说喉轮含义，最稳的一句话是：**喉轮是负责真诚表达与倾听的能量中心**。它管的是内心真实感受和说出口的话之间那道缝隙。在现代脉轮体系（如 Anodea Judith 的整理）里，它常和更上位的 [脉轮系统总览 pillar 页](/zh/wiki/chakra-system-overview) 放在一起理解，看每个中心如何彼此支撑。
+喉轮（Throat Chakra，对应梵文 Vishuddha）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第五个能量中心，位置在颈部喉咙一带，掌管表达与倾听。要说喉轮含义，最稳的一句话是：**喉轮是负责真诚表达与倾听的能量中心**。它管的是内心真实感受和说出口的话之间那道缝隙。在现代脉轮体系（如 Anodea Judith 的整理）里，它常和更上位的 [脉轮系统总览 pillar 页](/en/wiki/chakra-system-overview) 放在一起理解，看每个中心如何彼此支撑。
 
 - 关联清晰的表达、真诚的发声，以及愿意听别人把话说完
 - 位置在喉咙，传统里最常被对应到蓝色
