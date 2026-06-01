@@ -1,0 +1,19 @@
+EXAMPLE_ONLY_NOT_A_REAL_KEY_replace_with_INDEXNOW_KEY_env_value
+
+# IndexNow key file format (example — NOT a real key, safe to commit)
+#
+# IndexNow lets a site notify Bing and Yandex that specific URLs changed.
+# It is NOT a Google indexing mechanism — Google does not support IndexNow.
+#
+# The real key file must:
+#   - be named exactly "<key>.txt" (e.g. a3f1c9...txt)
+#   - live at the site root so it is publicly fetchable at https://<host>/<key>.txt
+#   - contain ONLY the key string itself (no comments, no whitespace)
+#
+# How the real key is provisioned (no secret in git):
+#   1. Generate a key (32+ hex chars), e.g. `openssl rand -hex 16`.
+#   2. Set it as the Vercel env var INDEXNOW_KEY (Production).
+#   3. At build/deploy time, scripts/ping-indexnow.mjs writes public/<INDEXNOW_KEY>.txt
+#      dynamically from that env var. The real key file is never committed.
+#
+# This .example file documents the format only and contains no real secret.
