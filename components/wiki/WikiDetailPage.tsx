@@ -389,8 +389,8 @@ const WikiDetailPage: React.FC = () => {
   if (error || !item) {
     return (
       <Container>
-        {/* 数据缺失/加载失败时输出 noindex，避免运行时渲染的空内容被判定 soft 404。 */}
-        <SEO title={item?.title || t.app.error} robots="noindex" />
+        {/* static-first：静态 stub 已是 index,follow + 完整正文。SPA 运行时拉取抖动
+            不应把已有内容的页面误标 noindex（会被 Google WRS 卡死），故不在此输出 robots。 */}
         <div className="space-y-6">
           <Card className="border-l border-l-danger/40 text-sm text-danger">
             {error || t.app.error}

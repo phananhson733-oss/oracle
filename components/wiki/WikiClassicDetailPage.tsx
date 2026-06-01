@@ -717,8 +717,8 @@ export const WikiClassicDetailPage: React.FC = () => {
   if (error) {
     return (
       <Container>
-        {/* 加载失败时输出 noindex，避免运行时渲染的空内容被判定 soft 404。 */}
-        <SEO title={t.app?.error} robots="noindex" />
+        {/* static-first：不输出 noindex（静态 stub 已 index,follow + 完整正文）。
+            运行时拉取失败时若注入 noindex，会被 Google WRS 卡死，反害已有内容的页面。 */}
         <Section>
           <Card className={`p-8 border ${cardBorder} ${cardSurface}`}>
             <div className="flex items-center gap-3 text-red-700 dark:text-red-300">
@@ -734,8 +734,8 @@ export const WikiClassicDetailPage: React.FC = () => {
   if (!item) {
     return (
       <Container>
-        {/* 条目不存在时输出 noindex，避免空内容被判定 soft 404。 */}
-        <SEO title={t.wiki.classics_not_found} robots="noindex" />
+        {/* static-first：不输出 noindex（理由同上）。真·不存在的 slug 不会进 sitemap，
+            不必靠运行时 noindex 兜底。 */}
         <Section>
           <Card className={`p-8 border ${cardBorder} ${cardSurface}`}>
             <p className={palette.inkMuted}>{t.wiki.classics_not_found}</p>
