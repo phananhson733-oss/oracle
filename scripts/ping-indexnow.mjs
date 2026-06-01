@@ -65,10 +65,18 @@ const submit = async ({ host, key, urlList }) => {
   console.log(`[indexnow] submitted ${urlList.length} URL(s) -> HTTP ${res.status}`);
 };
 
+// IndexNow key 协议要求 8-128 位十六进制/字母数字（连字符）。校验后才当文件名用，
+// 防 INDEXNOW_KEY 含 `/` 或 `..` 时 writeKeyFile 把文件写出 public/ 之外（path traversal）。
+const KEY_PATTERN = /^[a-zA-Z0-9-]{8,128}$/;
+
 const main = async () => {
   const key = process.env.INDEXNOW_KEY;
   if (!key) {
     console.log("[indexnow] INDEXNOW_KEY not set — skipping (no-op). Notifies Bing/Yandex only, never Google.");
+    return;
+  }
+  if (!KEY_PATTERN.test(key)) {
+    console.log("[indexnow] INDEXNOW_KEY has invalid format (expect 8-128 alphanumeric/hyphen) — skipping to avoid unsafe key-file path.");
     return;
   }
 
