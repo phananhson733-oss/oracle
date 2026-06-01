@@ -1,4 +1,4 @@
-// INPUT: Wiki 条目详情与关联条目数据（含 SEO 元信息、hreflang 校验与符号文本变体）。
+// INPUT: Wiki 条目详情与关联条目数据（含 SEO 元信息、hreflang 校验与符号文本变体），首屏读 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap。
 // OUTPUT: 导出 Wiki 详情页组件（含阅读宽度限制、SEO 输出与多语言链接校验）。
 // POS: Wiki 详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -198,16 +198,49 @@ const buildAlternateLanguages = (
   return links;
 };
 
+// 读取 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap（generate-seo-pages.mjs）。首屏直接用它
+// 渲染，跳过 loading/error 壳，消除「SPA 用慢 API 内容替换静态正文」造成的 soft 404。
+// 无副作用、解析失败回退 API（StrictMode 下重复执行安全）。校验 kind+lang+id 防错配。
+const readInitialWikiItem = (
+  id: string,
+  lang: "zh" | "en",
+): WikiItem | null => {
+  if (typeof document === "undefined" || !id) return null;
+  const el = document.getElementById("__WIKI_INITIAL__");
+  if (!el?.textContent) return null;
+  try {
+    const data = JSON.parse(el.textContent);
+    if (
+      data?.kind === "wiki-item" &&
+      data.lang === lang &&
+      data.id === id &&
+      data.item
+    ) {
+      return data.item as WikiItem;
+    }
+  } catch {
+    // bootstrap 损坏 → 回退正常 API 拉取。
+  }
+  return null;
+};
+
 const WikiDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
   const { theme } = useTheme();
   const { langPath } = useLangPath();
-  const [item, setItem] = useState<WikiItem | null>(null);
+  // 首屏从 bootstrap 同步取初始内容（无则 null）。有内容则首帧直接渲染、不显示 loading。
+  const [item, setItem] = useState<WikiItem | null>(() =>
+    readInitialWikiItem(id ?? "", language === "en" ? "en" : "zh"),
+  );
   const [relatedItems, setRelatedItems] = useState<WikiItemSummary[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(() => item === null);
   const [error, setError] = useState<string | null>(null);
   const trackedViewRef = useRef<string | null>(null);
+  // 镜像最新 item（渲染期同步赋值），供 fetch effect 判断当前路由是否已有内容，
+  // 而无需把 item 放进 effect 依赖（否则成功 setItem 会触发二次拉取）。
+  const itemRef = useRef(item);
+  itemRef.current = item;
 
   // Check if this is an article slug - if so, render the article detail page instead
   if (id && isArticleSlug(id)) {
@@ -260,29 +293,24 @@ const WikiDetailPage: React.FC = () => {
   useEffect(() => {
     let mounted = true;
     if (!id) return;
-    setLoading(true);
-    setError(null);
+
+    // 已有该 id 的内容（来自 bootstrap 或上次成功加载）→ 背景刷新：不显示 loading、
+    // 失败保持现有内容不降级为错误页（避免 Google WRS 把有正文的页面读成 soft 404）。
+    const hasContent = itemRef.current?.id === id;
+    if (!hasContent) {
+      setLoading(true);
+      setError(null);
+    }
 
     const load = async () => {
       try {
         const detail = await fetchWikiItem(id, language);
         if (!mounted) return;
         setItem(detail.item);
-
-        const relatedIds = detail.item.related_ids || [];
-        if (relatedIds.length > 0) {
-          const list = await fetchWikiItems(language);
-          if (!mounted) return;
-          setRelatedItems(
-            (list.items || []).filter((entry) => relatedIds.includes(entry.id)),
-          );
-        } else {
-          setRelatedItems([]);
-        }
         window.scrollTo(0, 0);
       } catch (err) {
         if (!mounted) return;
-        setError(err?.message || t.app.error);
+        if (!hasContent) setError(err?.message || t.app.error);
       } finally {
         if (mounted) setLoading(false);
       }
@@ -293,6 +321,32 @@ const WikiDetailPage: React.FC = () => {
       mounted = false;
     };
   }, [id, language, t.app.error]);
+
+  // 关联条目独立拉取：失败只清空 related，绝不影响主内容/error（修复旧逻辑里
+  // related 拉取失败会把整页降级为错误页的隐患）。
+  useEffect(() => {
+    let active = true;
+    const relatedIds = item?.related_ids || [];
+    if (relatedIds.length === 0) {
+      setRelatedItems([]);
+      return () => {
+        active = false;
+      };
+    }
+    fetchWikiItems(language)
+      .then((list) => {
+        if (!active) return;
+        setRelatedItems(
+          (list.items || []).filter((entry) => relatedIds.includes(entry.id)),
+        );
+      })
+      .catch(() => {
+        if (active) setRelatedItems([]);
+      });
+    return () => {
+      active = false;
+    };
+  }, [item, language]);
 
   useEffect(() => {
     if (!item) return;

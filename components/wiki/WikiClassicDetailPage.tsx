@@ -1,8 +1,8 @@
-// INPUT: Wiki 经典书籍详情数据与滚动阅读布局(含 SEO 元信息、hreflang 校验与 Markdown 清洗)。
+// INPUT: Wiki 经典书籍详情数据与滚动阅读布局(含 SEO 元信息、hreflang 校验与 Markdown 清洗)，首屏读 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap。
 // OUTPUT: 导出经典书籍详情页组件(含单页 A4 居中滚动、SEO 输出与多语言链接校验)。
 // POS: Wiki 经典书籍详情模块;若更新此文件,务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   Card,
@@ -285,6 +285,32 @@ const buildAlternateLanguages = (
   return links;
 };
 
+// 读取 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap（generate-seo-pages.mjs）。首屏直接用它
+// 渲染，跳过 loading/error 壳，消除「SPA 用慢 API 内容替换静态正文」造成的 soft 404。
+// 无副作用、解析失败回退 API（StrictMode 下重复执行安全）。校验 kind+lang+id 防错配。
+const readInitialWikiClassic = (
+  id: string,
+  lang: "zh" | "en",
+): WikiClassicDetail | null => {
+  if (typeof document === "undefined" || !id) return null;
+  const el = document.getElementById("__WIKI_INITIAL__");
+  if (!el?.textContent) return null;
+  try {
+    const data = JSON.parse(el.textContent);
+    if (
+      data?.kind === "wiki-classic" &&
+      data.lang === lang &&
+      data.id === id &&
+      data.item
+    ) {
+      return data.item as WikiClassicDetail;
+    }
+  } catch {
+    // bootstrap 损坏 → 回退正常 API 拉取。
+  }
+  return null;
+};
+
 export const WikiClassicDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
@@ -293,9 +319,16 @@ export const WikiClassicDetailPage: React.FC = () => {
   const { langPath } = useLangPath();
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
-  const [item, setItem] = useState<WikiClassicDetail | null>(null);
+  // 首屏从 bootstrap 同步取初始内容（无则 null）。有内容则首帧直接渲染、不显示 loading。
+  const [item, setItem] = useState<WikiClassicDetail | null>(() =>
+    readInitialWikiClassic(id ?? "", lang),
+  );
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(() => item === null);
+  // 镜像最新 item（渲染期同步赋值），供 fetch effect 判断当前路由是否已有内容，
+  // 而无需把 item 放进 effect 依赖（否则成功 setItem 会触发二次拉取）。
+  const itemRef = useRef(item);
+  itemRef.current = item;
   const detailPath = id ? `/wiki/classics/${id}` : "/wiki/classics";
   const canonicalUrl = `${siteUrl}/${lang}${detailPath}`;
   const [alternateAvailability, setAlternateAvailability] =
@@ -334,19 +367,31 @@ export const WikiClassicDetailPage: React.FC = () => {
 
   useEffect(() => {
     if (!id) return;
+    let active = true;
 
-    setIsLoading(true);
-    setError(null);
+    // 已有该 id 的内容（来自 bootstrap 或上次成功加载）→ 背景刷新：不显示 loading、
+    // 失败保持现有内容不降级为错误页（避免 Google WRS 把有正文的页面读成 soft 404）。
+    const hasContent = itemRef.current?.id === id;
+    if (!hasContent) {
+      setIsLoading(true);
+      setError(null);
+    }
 
     fetchWikiClassic(id, lang)
       .then((data) => {
+        if (!active) return;
         setItem(data.item ?? null);
         setIsLoading(false);
       })
       .catch(() => {
-        setError(t.wiki.classics_load_error);
+        if (!active) return;
+        if (!hasContent) setError(t.wiki.classics_load_error);
         setIsLoading(false);
       });
+
+    return () => {
+      active = false;
+    };
   }, [id, lang, t.wiki.classics_load_error]);
 
   const blocks = useMemo(() => {
