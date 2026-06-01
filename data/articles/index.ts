@@ -83,6 +83,10 @@ import { transitsEn } from "./transits";
 import { transitsZh } from "./transits";
 import { natalChartTransitsEn } from "./natal-chart-transits";
 import { natalChartTransitsZh } from "./natal-chart-transits";
+import { june2026PlanetaryTransitsEn } from "./june-2026-planetary-transits";
+import { june2026PlanetaryTransitsZh } from "./june-2026-planetary-transits";
+import { july2026PlanetaryTransitsEn } from "./july-2026-planetary-transits";
+import { july2026PlanetaryTransitsZh } from "./july-2026-planetary-transits";
 // All articles organized by language
 
 import {
@@ -229,6 +233,8 @@ const ARTICLES_EN: WikiArticle[] = [
   persephoneGoddessEn,
   transitsEn,
   natalChartTransitsEn,
+  june2026PlanetaryTransitsEn,
+  july2026PlanetaryTransitsEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -281,6 +287,8 @@ const ARTICLES_ZH: WikiArticle[] = [
   persephoneGoddessZh,
   transitsZh,
   natalChartTransitsZh,
+  june2026PlanetaryTransitsZh,
+  july2026PlanetaryTransitsZh,
 ];
 
 // Get all articles for a language
