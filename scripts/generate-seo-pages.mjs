@@ -926,6 +926,22 @@ const generate = async () => {
         ],
         ctaText: config.classicsCta,
         spaPath: `/${lang}/wiki/classics`,
+        // 首屏 bootstrap：经典书摘要列表（与 fetchWikiClassics 的 { lang, items } 同构）。
+        // 只取摘要字段、剔除 content（每本 ~30KB，全列会把 hub stub 撑到近 1MB）；
+        // 让书架列表 + ItemList 在冷 API 下也能首屏渲染（修复 hub soft 404）。
+        bootstrap: {
+          kind: 'wiki-classics-list',
+          lang,
+          items: classics.map((c) => ({
+            id: c.id,
+            title: c.title,
+            author: c.author,
+            summary: c.summary || '',
+            cover_url: c.cover_url ?? null,
+            keywords: c.keywords || [],
+            category: c.category,
+          })),
+        },
       });
 
       // Author profile pages (EN-only) — static stubs with ProfilePage/Person

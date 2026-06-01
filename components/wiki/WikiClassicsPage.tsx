@@ -1,8 +1,8 @@
-// INPUT: Wiki 经典书籍列表与书架视觉体系（含 SEO 元信息、ItemList 结构化数据与封面降级）。
+// INPUT: Wiki 经典书籍列表与书架视觉体系（含 SEO 元信息、ItemList 结构化数据与封面降级），首屏读 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap。
 // OUTPUT: 导出经典书籍书架页组件（含分类书架、SEO 输出与 ItemList 结构化数据修正）。
 // POS: Wiki 经典书籍模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, Section, useLanguage, useTheme } from "../UIComponents";
 import { SEO } from "../SEO";
@@ -10,6 +10,30 @@ import { BookOpen, Star, Sparkles } from "lucide-react";
 import { fetchWikiClassics } from "../../services/apiClient";
 import type { WikiClassicSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
+
+// 读取 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap（generate-seo-pages.mjs）。首屏直接用它
+// 渲染书架列表 + ItemList schema，跳过 loading 骨架，消除冷 API 下 hub 的 soft-404。
+// 无副作用、解析失败回退 API（StrictMode 下重复执行安全）。校验 kind+lang。
+const readInitialClassicsList = (
+  lang: "zh" | "en",
+): WikiClassicSummary[] | null => {
+  if (typeof document === "undefined") return null;
+  const el = document.getElementById("__WIKI_INITIAL__");
+  if (!el?.textContent) return null;
+  try {
+    const data = JSON.parse(el.textContent);
+    if (
+      data?.kind === "wiki-classics-list" &&
+      data.lang === lang &&
+      Array.isArray(data.items)
+    ) {
+      return data.items as WikiClassicSummary[];
+    }
+  } catch {
+    // bootstrap 损坏 → 回退正常 API 拉取。
+  }
+  return null;
+};
 
 // =====================================================
 // 书架环境样式
@@ -68,9 +92,16 @@ const WikiClassicsPage: React.FC = () => {
   const { language, t } = useLanguage();
   const { theme } = useTheme();
   const { langPath } = useLangPath();
-  const [items, setItems] = useState<WikiClassicSummary[]>([]);
-  const [loading, setLoading] = useState(true);
+  const langInit = language === "en" ? "en" : "zh";
+  // 首屏从 bootstrap 同步取书架列表（无则空数组）。有列表则首帧直接渲染、不显示骨架。
+  const [items, setItems] = useState<WikiClassicSummary[]>(
+    () => readInitialClassicsList(langInit) ?? [],
+  );
+  const [loading, setLoading] = useState<boolean>(() => items.length === 0);
   const [error, setError] = useState<string | null>(null);
+  // 镜像最新 items，供 fetch effect 判断是否已有内容（背景刷新失败不清空）。
+  const itemsRef = useRef(items);
+  itemsRef.current = items;
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
   const lang = language === "en" ? "en" : "zh";
@@ -166,16 +197,21 @@ const WikiClassicsPage: React.FC = () => {
 
   useEffect(() => {
     let mounted = true;
-    setLoading(true);
-    setError(null);
+    // 已有列表（来自 bootstrap 或上次成功加载）→ 背景刷新：不显示骨架、失败保持现有列表
+    // 不降级为错误态（避免 Google WRS 把有书架的 hub 读成 soft 404）。
+    const hasContent = itemsRef.current.length > 0;
+    if (!hasContent) {
+      setLoading(true);
+      setError(null);
+    }
     fetchWikiClassics(language)
       .then((data) => {
         if (!mounted) return;
-        setItems(data.items || []);
+        if (data.items && data.items.length) setItems(data.items);
       })
       .catch((err) => {
         if (!mounted) return;
-        setError(err?.message || t.app.error);
+        if (!hasContent) setError(err?.message || t.app.error);
       })
       .finally(() => {
         if (mounted) setLoading(false);
