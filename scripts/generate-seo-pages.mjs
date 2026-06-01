@@ -736,6 +736,7 @@ const ARTICLE_SLUGS = [
   // -> june-2026 (batch 3) -> july-2026 (batch 4).
   'transits',
   'natal-chart-transits',
+  'june-2026-planetary-transits',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
