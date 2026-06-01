@@ -389,6 +389,8 @@ const WikiDetailPage: React.FC = () => {
   if (error || !item) {
     return (
       <Container>
+        {/* 数据缺失/加载失败时输出 noindex，避免运行时渲染的空内容被判定 soft 404。 */}
+        <SEO title={item?.title || t.app.error} robots="noindex" />
         <div className="space-y-6">
           <Card className="border-l border-l-danger/40 text-sm text-danger">
             {error || t.app.error}

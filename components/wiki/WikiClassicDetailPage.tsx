@@ -717,6 +717,8 @@ export const WikiClassicDetailPage: React.FC = () => {
   if (error) {
     return (
       <Container>
+        {/* 加载失败时输出 noindex，避免运行时渲染的空内容被判定 soft 404。 */}
+        <SEO title={t.app?.error} robots="noindex" />
         <Section>
           <Card className={`p-8 border ${cardBorder} ${cardSurface}`}>
             <div className="flex items-center gap-3 text-red-700 dark:text-red-300">
@@ -732,6 +734,8 @@ export const WikiClassicDetailPage: React.FC = () => {
   if (!item) {
     return (
       <Container>
+        {/* 条目不存在时输出 noindex，避免空内容被判定 soft 404。 */}
+        <SEO title={t.wiki.classics_not_found} robots="noindex" />
         <Section>
           <Card className={`p-8 border ${cardBorder} ${cardSurface}`}>
             <p className={palette.inkMuted}>{t.wiki.classics_not_found}</p>

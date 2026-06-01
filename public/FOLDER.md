@@ -23,8 +23,10 @@
 - astro-icons｜地位：资源目录｜功能：行星/点位 SVG 图标。
 - en｜地位：SEO 静态页目录｜功能：英文静态索引页面（构建期生成）。
 - zh｜地位：SEO 静态页目录｜功能：中文静态索引页面（构建期生成）。
+- og｜地位：OG 图资源目录｜功能：构建期为每篇文章生成的 1200×630 分享图（PNG/WebP，按语言）。
 
 近期更新
+- 新增 og/articles 构建期 OG 图（scripts/generate-og-images.mjs，satori+resvg+sharp）；文章 og:image 指向 /og/articles/&lt;slug&gt;.png（zh 为 .zh.png）。
 - 品牌标识刷新：logo.png/logo.jpg、favicon-16/32、icon-192/512、og-image.png 替换为新 astrologyWiki 视觉（方形槽位取黄道圆环裁切，OG 图保留完整横向 lockup）；favicon.svg 暂未同步矢量化。
 - SEO 静态页与 sitemap 重新生成，hreflang/ItemList 结构化数据对齐最新规则。
 - 新增 SEO 静态页输出目录与 sitemap/robots 配置。

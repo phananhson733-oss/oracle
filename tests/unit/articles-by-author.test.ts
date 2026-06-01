@@ -44,8 +44,10 @@ describe("getArticlesByAuthor", () => {
     expect(list.every((a) => a.authorId === "elena-vane")).toBe(true);
   });
 
-  it("EN-only 作者在 zh 下返回空列表（Elena 无 zh 文章）", () => {
-    expect(getArticlesByAuthor("elena-vane", "zh")).toEqual([]);
+  it("Elena 在 zh 下有文章（aura/chakra cluster 已补 ZH 版）", () => {
+    const list = getArticlesByAuthor("elena-vane", "zh");
+    expect(list.length).toBeGreaterThan(0);
+    expect(list.every((a) => a.authorId === "elena-vane")).toBe(true);
   });
 
   it("不存在的 authorId 返回空数组", () => {
@@ -53,6 +55,8 @@ describe("getArticlesByAuthor", () => {
   });
 
   it("Julian 在 zh 下有文章（4 篇有 ZH 版）", () => {
-    expect(getArticlesByAuthor("julian-thorne", "zh").length).toBeGreaterThan(0);
+    expect(getArticlesByAuthor("julian-thorne", "zh").length).toBeGreaterThan(
+      0,
+    );
   });
 });

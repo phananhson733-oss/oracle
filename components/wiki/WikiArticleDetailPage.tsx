@@ -14,7 +14,7 @@ import {
   isArticleSlug,
 } from "../../data/articles";
 import { getAuthorById } from "../../data/authors";
-import { buildPersonSchema } from "../../data/authors/schema";
+import { buildEditorialOrganizationSchema } from "../../data/authors/schema";
 import { AuthorByline } from "./AuthorByline";
 import { trackEvent } from "../../services/analytics";
 import type { WikiArticleSummary } from "../../types";
@@ -437,6 +437,12 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
   const canonicalUrl = article
     ? `${siteUrl}/${lang}/wiki/${article.slug}`
     : `${siteUrl}/${lang}/wiki`;
+  // T3：构建期生成的 per-article OG 图（scripts/generate-og-images.mjs）。
+  // ZH 变体在 <slug>.zh.png；EN 在 <slug>.png。显式 article.image 仍优先覆盖。
+  // 局限：文章是纯 SPA（无静态 stub），只有会执行 JS 的爬虫看得到此 tag。
+  const ogImageUrl = article
+    ? `${siteUrl}/og/articles/${article.slug}${lang === "zh" ? ".zh" : ""}.png`
+    : `${siteUrl}/og-image.png`;
   const alternateLanguages = article
     ? [
         { hrefLang: "zh", href: `${siteUrl}/zh/wiki/${article.slug}` },
@@ -452,12 +458,11 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       "@type": "Article",
       headline: article.title,
       description: article.description,
-      author: getAuthorById(article.authorId)
-        ? buildPersonSchema(getAuthorById(article.authorId)!, lang, siteUrl)
-        : { "@type": "Organization", name: "AstrologyWiki" },
+      // D1.3：文章 author 用编辑部 Organization，不用 persona Person（避免拟真人专家声明）。
+      author: buildEditorialOrganizationSchema(siteUrl),
       datePublished: article.date,
       dateModified: article.date,
-      image: article.image || `${siteUrl}/og-image.png`,
+      image: article.image || ogImageUrl,
       mainEntityOfPage: {
         "@type": "WebPage",
         "@id": canonicalUrl,
@@ -645,7 +650,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         url={canonicalUrl}
         alternateLanguages={alternateLanguages}
         type="article"
-        image={article.image}
+        image={article.image || ogImageUrl}
         schema={[articleSchema, breadcrumbSchema, faqSchema].filter(Boolean)}
       />
 

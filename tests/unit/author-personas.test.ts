@@ -9,7 +9,11 @@ import {
   getAllAuthors,
   getAuthorBio,
 } from "../../data/authors/index";
-import { buildPersonSchema, authorUrl } from "../../data/authors/schema";
+import {
+  buildPersonSchema,
+  buildEditorialOrganizationSchema,
+  authorUrl,
+} from "../../data/authors/schema";
 
 describe("author personas registry", () => {
   it("getAuthorById 命中返回 persona", () => {
@@ -22,11 +26,12 @@ describe("author personas registry", () => {
     expect(getAuthorById("nonexistent-author")).toBeUndefined();
   });
 
-  it("getAllAuthors 返回首版全部作者", () => {
+  it("getAllAuthors 返回全部作者（首版顺序）", () => {
     expect(getAllAuthors().map((a) => a.id)).toEqual([
       "elena-vane",
       "julian-thorne",
       "marcus-orion",
+      "aditi-sharma",
     ]);
   });
 
@@ -44,18 +49,32 @@ describe("author personas registry", () => {
   });
 });
 
-describe("buildPersonSchema", () => {
+describe("buildPersonSchema（披露式 editorial persona）", () => {
   const site = "https://www.astrologywiki.com";
 
-  it("输出 Person 类型并含 @id/url/jobTitle/knowsAbout/description", () => {
+  it("输出 Person，含 @id/url/name/description，但不声称真实专家资质", () => {
     const elena = getAuthorById("elena-vane")!;
     const s = buildPersonSchema(elena, "en", site);
     expect(s["@type"]).toBe("Person");
     expect(s["@id"]).toBe(`${site}/en/wiki/author/elena-vane`);
     expect(s.url).toBe(s["@id"]);
-    expect(s.jobTitle).toBe("Aura & Energy Columnist");
-    expect(s.knowsAbout).toEqual(elena.topics);
+    expect(s.name).toBe("Elena Vane");
     expect(s.description).toBeTruthy();
+  });
+
+  it("D1：不输出 jobTitle / knowsAbout（移除拟真人专家声明，降 E-E-A-T/spam 风险）", () => {
+    const elena = getAuthorById("elena-vane")!;
+    const s = buildPersonSchema(elena, "en", site);
+    expect(s.jobTitle).toBeUndefined();
+    expect(s.knowsAbout).toBeUndefined();
+  });
+
+  it("disambiguatingDescription 显式披露其为编辑人设而非真实个人", () => {
+    const elena = getAuthorById("elena-vane")!;
+    const s = buildPersonSchema(elena, "en", site);
+    expect(String(s.disambiguatingDescription).toLowerCase()).toContain(
+      "editorial persona",
+    );
   });
 
   it("@id 跨页/跨语言对同一作者保持一致（实体稳定性）", () => {
@@ -67,8 +86,24 @@ describe("buildPersonSchema", () => {
 
   it("authorUrl 始终为 EN-only 前缀", () => {
     const marcus = getAuthorById("marcus-orion")!;
-    expect(authorUrl(marcus, site)).toBe(
-      `${site}/en/wiki/author/marcus-orion`,
+    expect(authorUrl(marcus, site)).toBe(`${site}/en/wiki/author/marcus-orion`);
+  });
+});
+
+describe("buildEditorialOrganizationSchema（文章 author 责任主体）", () => {
+  const site = "https://www.astrologywiki.com";
+
+  it("D1.3：文章 author 用 Organization 编辑部，不放大 persona 拟真人感", () => {
+    const org = buildEditorialOrganizationSchema(site);
+    expect(org["@type"]).toBe("Organization");
+    expect(org.name).toBe("AstrologyWiki Editorial Team");
+    expect(org["@id"]).toBe(`${site}/#editorial-team`);
+    expect(org.url).toBeTruthy();
+  });
+
+  it("@id 稳定（跨页一致建立单一编辑部实体）", () => {
+    expect(buildEditorialOrganizationSchema(site)["@id"]).toBe(
+      buildEditorialOrganizationSchema(site)["@id"],
     );
   });
 });

@@ -32,3 +32,9 @@ astrologywiki/
 .env*.local
 backend/.env
 .gstack/
+
+# IndexNow: real verification key file is generated at build from INDEXNOW_KEY,
+# never committed. Only the .example template is tracked; robots.txt stays tracked.
+public/*.txt
+!public/robots.txt
+!public/indexnow-key.txt.example
