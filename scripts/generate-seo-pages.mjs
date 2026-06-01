@@ -243,7 +243,7 @@ const buildHead = ({
   return headParts.join('\n');
 };
 
-const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml }) => {
+const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap }) => {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
   const safeCta = escapeHtml(ctaText);
@@ -251,8 +251,15 @@ const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml }) 
   // contentHtml 已由 mdToHtml 转义，直接注入。它让爬虫读到完整正文（修复 soft 404）；
   // 真实浏览器水合后 React 会用 SPA 覆盖这段静态内容（见 inject-spa-into-stubs.mjs）。
   const article = contentHtml ? `\n  <article class="content">${contentHtml}</article>` : '';
+  // bootstrap：把 API 同构的初始数据写进 #__WIKI_INITIAL__（置于 <main> 前 → inject-spa 把
+  // <main> 包进 #root，本 script 留在 #root 外不被 React 清除）。详情页首屏直接读它渲染，
+  // 跳过 loading/error 壳，彻底消除「SPA 用慢 API 内容替换静态正文」造成的 soft 404。
+  // safeJsonLd 转义 </script>/U+2028/U+2029，防构建期存储型 XSS。
+  const bootstrapScript = bootstrap
+    ? `<script id="__WIKI_INITIAL__" type="application/json">${safeJsonLd(bootstrap)}</script>\n`
+    : '';
   return `
-<main>
+${bootstrapScript}<main>
   <h1>${safeTitle}</h1>
   <p>${safeDescription}</p>${article}
   <p class="meta">AstrologyWiki · ${lang.toUpperCase()}</p>
@@ -278,14 +285,14 @@ const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml }) 
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
 ${buildHead({ lang, title, description, url, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
-${buildBody({ lang, title, description, ctaText, spaPath, contentHtml })}
+${buildBody({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap })}
   </body>
 </html>
 `;
@@ -836,7 +843,12 @@ const generate = async () => {
   for (const lang of ['zh', 'en']) {
     const config = LANG_CONFIG[lang];
     const langRoot = path.join(publicDir, lang);
-    const wikiItems = (wikiContent[lang]?.items || []).map((item) => ({
+    const rawWikiItems = wikiContent[lang]?.items || [];
+    // 完整 raw item（与后端 /wiki/items/:id 返回的 item 同构），供 #__WIKI_INITIAL__ bootstrap。
+    // 必须用完整体——首屏渲染需要 type/symbol/prototype/analogy/color_token/related_ids，
+    // 下面 wikiItems 的瘦身版缺这些字段（codex 评审纠正点）。
+    const rawWikiById = new Map(rawWikiItems.map((item) => [item.id, item]));
+    const wikiItems = rawWikiItems.map((item) => ({
       id: item.id,
       title: item.title,
       description: item.description || '',
@@ -982,6 +994,10 @@ const generate = async () => {
         ctaText: config.wikiCta,
         spaPath: `/${lang}/wiki/${item.id}`,
         contentHtml: mdToHtml(itemMarkdown),
+        // 首屏 bootstrap：完整 raw item，shape 与 WikiItemResponse({ lang, item }) 同构。
+        bootstrap: rawWikiById.get(item.id)
+          ? { kind: 'wiki-item', lang, id: item.id, item: rawWikiById.get(item.id) }
+          : undefined,
       });
     }
 
@@ -1018,6 +1034,11 @@ const generate = async () => {
         ctaText: config.classicsCta,
         spaPath: `/${lang}/wiki/classics/${classic.id}`,
         contentHtml: mdToHtml(classicMarkdown),
+        // 首屏 bootstrap：完整 classicDetail（含 content/title/summary/author/keywords），
+        // shape 与 WikiClassicResponse({ lang, item }) 同构。无正文则不注入（避免空壳首屏）。
+        bootstrap: classicMarkdown
+          ? { kind: 'wiki-classic', lang, id: classic.id, item: { ...classicDetail, id: classic.id, lang } }
+          : undefined,
       });
     }
   }
