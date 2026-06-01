@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import ts from 'typescript';
 import { safeJsonLd } from './lib/safe-jsonld.mjs';
+import { mdToHtml } from './lib/md-to-html.mjs';
 import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
@@ -222,6 +223,11 @@ const buildHead = ({
   main { max-width: 780px; margin: 0 auto; }
   h1 { font-size: 2.25rem; margin: 0 0 1rem; }
   p { line-height: 1.6; font-size: 1rem; }
+  article.content { margin-top: 1.5rem; }
+  article.content h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
+  article.content h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+  article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid #c9bfaf; color: #4a4540; }
+  article.content li { line-height: 1.6; }
   .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #4a4540; }
   a { color: #7f5e36; text-decoration: none; border-bottom: 1px solid rgba(127, 94, 54, 0.35); }
   a:hover { color: #5f442b; }
@@ -232,15 +238,18 @@ const buildHead = ({
   return headParts.join('\n');
 };
 
-const buildBody = ({ lang, title, description, ctaText, spaPath }) => {
+const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml }) => {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
   const safeCta = escapeHtml(ctaText);
   const safeSpaPath = escapeHtml(spaPath);
+  // contentHtml 已由 mdToHtml 转义，直接注入。它让爬虫读到完整正文（修复 soft 404）；
+  // 真实浏览器水合后 React 会用 SPA 覆盖这段静态内容（见 inject-spa-into-stubs.mjs）。
+  const article = contentHtml ? `\n  <article class="content">${contentHtml}</article>` : '';
   return `
 <main>
   <h1>${safeTitle}</h1>
-  <p>${safeDescription}</p>
+  <p>${safeDescription}</p>${article}
   <p class="meta">AstrologyWiki · ${lang.toUpperCase()}</p>
   <a class="cta" data-astro-link href="${safeSpaPath}">${safeCta}</a>
 </main>
@@ -264,19 +273,63 @@ const buildBody = ({ lang, title, description, ctaText, spaPath }) => {
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath, contentHtml }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
 ${buildHead({ lang, title, description, url, ogType, alternates, schema })}
   </head>
   <body data-astro-lang="${lang}">
-${buildBody({ lang, title, description, ctaText, spaPath })}
+${buildBody({ lang, title, description, ctaText, spaPath, contentHtml })}
   </body>
 </html>
 `;
   await ensureDir(path.dirname(outputPath));
   await fsPromises.writeFile(outputPath, html, 'utf8');
+};
+
+// Wiki 条目正文分段标题，与前端 constants.ts TRANSLATIONS 的 wiki.detail_* 文案保持一致。
+const WIKI_SECTION_TITLES = {
+  zh: {
+    astronomy_myth: '天文学与神话',
+    psychology: '心理占星',
+    shadow: '阴影模式',
+    integration: '整合路径',
+    deep_dive: '深入解读',
+  },
+  en: {
+    astronomy_myth: 'Astronomy & Myth',
+    psychology: 'Psychological Lens',
+    shadow: 'Shadow Pattern',
+    integration: 'Integration Path',
+    deep_dive: 'Deep Dive',
+  },
+};
+
+// 把 wiki 条目的 5 个正文字段拼成带 ## 小标题的 Markdown，供 mdToHtml 注入静态页正文。
+const buildWikiItemMarkdown = (item, lang) => {
+  const titles = WIKI_SECTION_TITLES[lang] || WIKI_SECTION_TITLES.en;
+  const parts = [];
+  const addSection = (title, body) => {
+    if (body && String(body).trim()) parts.push(`## ${title}\n\n${String(body).trim()}`);
+  };
+  addSection(titles.astronomy_myth, item.astronomy_myth);
+  addSection(titles.psychology, item.psychology);
+  addSection(titles.shadow, item.shadow);
+  addSection(titles.integration, item.integration);
+  if (Array.isArray(item.deep_dive) && item.deep_dive.length) {
+    const steps = item.deep_dive
+      .map((step) => {
+        if (!step) return '';
+        const heading = step.title ? `### ${String(step.title).trim()}\n\n` : '';
+        const desc = step.description ? String(step.description).trim() : '';
+        return desc ? `${heading}${desc}` : '';
+      })
+      .filter(Boolean)
+      .join('\n\n');
+    if (steps) parts.push(`## ${titles.deep_dive}\n\n${steps}`);
+  }
+  return parts.join('\n\n');
 };
 
 const buildBreadcrumb = (lang, items) => ({
@@ -755,6 +808,12 @@ const generate = async () => {
       description: item.description || '',
       keywords: item.keywords || [],
       subtitle: item.subtitle || '',
+      // 正文字段，供 SEO 静态页注入完整内容（修复 soft 404）。
+      astronomy_myth: item.astronomy_myth || '',
+      psychology: item.psychology || '',
+      shadow: item.shadow || '',
+      integration: item.integration || '',
+      deep_dive: item.deep_dive || [],
     }));
     const classics = classicsByLang[lang] || [];
 
@@ -867,7 +926,9 @@ const generate = async () => {
         zh: wikiIds.zh.has(item.id) && (lang === 'en' || ZH_WIKI_WHITELIST.has(item.id)),
         en: wikiIds.en.has(item.id),
       };
-      addUrl(itemUrl, ['wiki', lang, item.id, item.title, item.description || '', item.subtitle || '', ...(item.keywords || [])]);
+      const itemMarkdown = buildWikiItemMarkdown(item, lang);
+      // 正文签名纳入 lastmod：正文变化才更新，否则保持稳定（与 T1 防 churn 协同）。
+      addUrl(itemUrl, ['wiki', lang, item.id, item.title, item.description || '', item.subtitle || '', ...(item.keywords || []), contentHash([itemMarkdown])]);
       await writeHtmlPage({
         outputPath: path.join(langRoot, 'wiki', item.id, 'index.html'),
         lang,
@@ -886,6 +947,7 @@ const generate = async () => {
         ],
         ctaText: config.wikiCta,
         spaPath: `/${lang}/wiki/${item.id}`,
+        contentHtml: mdToHtml(itemMarkdown),
       });
     }
 
@@ -900,7 +962,9 @@ const generate = async () => {
         zh: classicIds.zh.has(classic.id),
         en: classicIds.en.has(classic.id),
       };
-      addUrl(classicUrl, ['classic', lang, classic.id, classicDetail.title, classicDetail.summary || '']);
+      const classicMarkdown = classicDetail.content || '';
+      // 正文签名纳入 lastmod：正文变化才更新，否则保持稳定（与 T1 防 churn 协同）。
+      addUrl(classicUrl, ['classic', lang, classic.id, classicDetail.title, classicDetail.summary || '', contentHash([classicMarkdown])]);
       await writeHtmlPage({
         outputPath: path.join(langRoot, 'wiki', 'classics', classic.id, 'index.html'),
         lang,
@@ -919,6 +983,7 @@ const generate = async () => {
         ],
         ctaText: config.classicsCta,
         spaPath: `/${lang}/wiki/classics/${classic.id}`,
+        contentHtml: mdToHtml(classicMarkdown),
       });
     }
   }
