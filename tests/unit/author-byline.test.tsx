@@ -44,7 +44,7 @@ describe("AuthorByline — detail variant", () => {
     expect(link.getAttribute("href")).toBe("/en/wiki/author/elena-vane");
     expect(screen.getByText(/Aura & Energy Columnist/)).toBeTruthy();
     expect(screen.getByText("formatted:2026-05-20")).toBeTruthy();
-    expect(screen.getByText("Editorial persona · AI-assisted")).toBeTruthy();
+    expect(screen.getByText("Editorial persona")).toBeTruthy();
   });
 
   it("作者链接强制 EN-only：即便 langPath 产出 /zh 前缀，href 仍指向 /en 作者页", () => {
@@ -84,7 +84,7 @@ describe("AuthorByline — detail variant", () => {
         isDark={false}
       />,
     );
-    expect(screen.getByText("编辑人设 · AI 辅助创作")).toBeTruthy();
+    expect(screen.getByText("编辑人设")).toBeTruthy();
   });
 });
 
