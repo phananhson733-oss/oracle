@@ -731,9 +731,11 @@ const ARTICLE_SLUGS = [
   'saturn-in-pisces',
   // Batch 3: persephone-goddess (T2 myth archetype, highest vol of batch — 12k/mo).
   'persephone-goddess',
-  // 6/1 batch — transit cluster (staggered: transits pillar batch 1;
-  // natal-chart-transits spoke batch 2 ~45-60min later).
+  // 6/1 batch — transit cluster (staggered 45-60min apart):
+  // transits pillar (batch 1) -> natal-chart-transits spoke (batch 2)
+  // -> june-2026 (batch 3) -> july-2026 (batch 4).
   'transits',
+  'natal-chart-transits',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from

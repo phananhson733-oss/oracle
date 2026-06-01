@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const natalChartTransitsEn: WikiArticle = {
   slug: "natal-chart-transits",
   title: "Reading Natal Chart Transits on Your Own Birth Chart",
-  description: "Natal chart transits are the current sky's planets forming aspects to your fixed birth chart — the live positions of the planets today, read against the...",
+  description:
+    "Natal chart transits are today's moving planets forming aspects to your fixed birth chart. Learn how to read the live sky against your own natal positions.",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",
@@ -14,7 +15,7 @@ export const natalChartTransitsEn: WikiArticle = {
     "natal chart transits",
     "natal transit chart",
     "birth chart transits",
-    "natal chart transit"
+    "natal chart transit",
   ],
   content: `# Reading Natal Chart Transits on Your Own Birth Chart
 
@@ -114,7 +115,8 @@ New to your chart? Read the full [guide to reading a birth chart](https://astrol
 export const natalChartTransitsZh: WikiArticle = {
   slug: "natal-chart-transits",
   title: "读懂本命盘行运，关键是把流动的星空叠回你的出生盘",
-  description: "Natal Chart Transits（本命盘行运）指的是当下移动的行星对你出生星盘的触动。你的出生盘是定格的，记录你出生那一刻的星象；而天上的行星仍在不停移动，当它们走到与本命某颗行星或某个角度相同的位置，就形成一次行运。想先弄清行运这个概念本身，可以看 占星行运总览 pillar...",
+  description:
+    "本命盘行运指当下移动的行星对你出生星盘形成的相位。本文讲清它和行运总览的区别，以及如何把今天的星空对照本命盘来解读。",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",
@@ -123,7 +125,7 @@ export const natalChartTransitsZh: WikiArticle = {
     "natal chart transits",
     "natal transit chart",
     "birth chart transits",
-    "natal chart transit"
+    "natal chart transit",
   ],
   content: `# 读懂本命盘行运，关键是把流动的星空叠回你的出生盘
 

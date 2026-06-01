@@ -4,8 +4,10 @@ import type { WikiArticle } from "../../types";
 
 export const june2026PlanetaryTransitsEn: WikiArticle = {
   slug: "june-2026-planetary-transits",
-  title: "June 2026 Planetary Transits: Cancer Season Opens, a Gemini New Moon Resets Mid-Month, and a Mercury Retrograde Closes It Out",
-  description: "All positions are based on the June 2026 ephemeris. Where this guide names an aspect or a sign relationship, treat it as an approximate read of the...",
+  title:
+    "June 2026 Planetary Transits: Cancer Season Opens, a Gemini New Moon Resets Mid-Month, and a Mercury Retrograde Closes It Out",
+  description:
+    "A grounded guide to June 2026 planetary transits — every ingress, retrograde, and lunation dated from the ephemeris, with a plain method for reading them.",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",
@@ -108,7 +110,8 @@ None of this is a prediction, and none of it decides your month for you. It's a 
 export const june2026PlanetaryTransitsZh: WikiArticle = {
   slug: "june-2026-planetary-transits",
   title: "2026 年 6 月行运预报：巨蟹季开场、双子新月中场重置，月末以水逆收尾",
-  description: "所有位置均基于 2026 年 6 月星历。本文凡是提到某个相位或星座之间的关系，请当成对月中盘的近似判断，不是有精确时刻的事件。",
+  description:
+    "所有位置均基于 2026 年 6 月星历。本文凡是提到某个相位或星座之间的关系，请当成对月中盘的近似判断，不是有精确时刻的事件。",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",

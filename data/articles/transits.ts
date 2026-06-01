@@ -4,8 +4,10 @@ import type { WikiArticle } from "../../types";
 
 export const transitsEn: WikiArticle = {
   slug: "transits",
-  title: "Astrological Transits — Reading the Moving Sky Against Your Fixed Chart",
-  description: "Astrological transits are the angles formed when present-moment planets move into relationship with the fixed points of your birth chart. Put plainly, a...",
+  title:
+    "Astrological Transits — Reading the Moving Sky Against Your Fixed Chart",
+  description:
+    "Astrological transits are the angles today's moving planets form to the fixed points of your birth chart. Learn what they mean, how to read them, and why timing matters.",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",
@@ -15,7 +17,7 @@ export const transitsEn: WikiArticle = {
     "transits astrology",
     "astrological transits",
     "what are transits in astrology",
-    "planetary transits"
+    "planetary transits",
   ],
   content: `# Astrological Transits — Reading the Moving Sky Against Your Fixed Chart
 
@@ -136,7 +138,8 @@ Pick one slow-moving planet in the current sky and find where it falls in your o
 export const transitsZh: WikiArticle = {
   slug: "transits",
   title: "占星行运是什么：不预设吉凶，读懂此刻天象怎样落在你的本命盘上",
-  description: "Astrological...",
+  description:
+    "占星行运是此刻移动的行星与你出生星盘固定点形成的角度。本文讲清行运是什么、如何解读，以及为什么时机比星座本身更重要。",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",
@@ -146,7 +149,7 @@ export const transitsZh: WikiArticle = {
     "transits astrology",
     "astrological transits",
     "what are transits in astrology",
-    "planetary transits"
+    "planetary transits",
   ],
   content: `# 占星行运是什么：不预设吉凶，读懂此刻天象怎样落在你的本命盘上
 
@@ -187,7 +190,7 @@ Astrological Transits（占星行运）是此刻正在移动的行星，与你�
 
 **土星行运** — 在两到三年内会反复被感受到，核心是责任、结构与成熟的课题，往往逼人把不牢靠的东西重新搭过。常见误读是把它当成单纯的厄运，其实它更像一次结算。想看一个完整实例，可参考[土星在双鱼座的行运解读](/zh/wiki/saturn-in-pisces)。
 
-**外行星行运（天王·海王·冥王）** — 移动很慢，单次行运可横跨数年，触及的是更不个人、更深层的转向与重整。它的误读往往是急着「熬过去」，但这类长周期更像缓慢换季，催不动也跳不过。[外行星行运总览](/zh/wiki/transits)
+**外行星行运（天王·海王·冥王）** — 移动很慢，单次行运可横跨数年，触及的是更不个人、更深层的转向与重整。它的误读往往是急着「熬过去」，但这类长周期更像缓慢换季，催不动也跳不过。
 
 ## 色调浓淡与组合如何改变解读
 
