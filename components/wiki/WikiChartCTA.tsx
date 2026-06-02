@@ -3,22 +3,31 @@ import { Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 import { useLanguage, useTheme } from "../UIComponents";
 import { useAuth } from "../../contexts/AuthContext";
-import { useLangPath } from "../../hooks/useLangPath";
 import { trackEvent } from "../../services/analytics";
+import { getLandingUtm } from "../../services/landingUtm";
+import { BIRTH_CHART_ANCHOR_ID } from "../../hooks/useScrollToBirthChart";
 
 const WikiChartCTA: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { theme } = useTheme();
   const { isAuthenticated, isLoading } = useAuth();
-  const { langPath } = useLangPath();
 
   if (isLoading || isAuthenticated) return null;
 
-  const handleClick = () => {
-    trackEvent("wiki_cta_clicked", { source: "article_bottom" });
-  };
-
   const wiki = t.wiki;
+  // Anon high-intent CTA → embedded free birth-chart tool on the landing page
+  // (with #birth-chart-tool so it scrolls/focuses on arrival) instead of the
+  // /auth login wall. Closes the wiki→tool funnel break (backlog #6);
+  // LandingPage's useBirthChartHashScroll handles the post-nav scroll.
+  const toolHref = `/landing-v2/${language === "zh" ? "zh" : "en"}/#${BIRTH_CHART_ANCHOR_ID}`;
+
+  const handleClick = () => {
+    trackEvent("wiki_cta_clicked", {
+      source: "article_bottom",
+      destination: "birth_chart_tool",
+      ...getLandingUtm(),
+    });
+  };
 
   return (
     <section
@@ -48,7 +57,7 @@ const WikiChartCTA: React.FC = () => {
             "Enter your birth details and get an AI-powered personalized natal chart reading."}
         </p>
         <Link
-          to={langPath("/auth")}
+          to={toolHref}
           onClick={handleClick}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-space-950 font-bold text-sm hover:from-gold-500 hover:to-gold-400 transition-all shadow-lg shadow-gold-500/20"
         >

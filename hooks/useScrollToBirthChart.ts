@@ -3,10 +3,12 @@
 //         that converges any high-intent landing CTA on the embedded BirthChart
 //         tool instead of bouncing the user to a protected route. Closes the N6
 //         funnel break and the N5 Hero-lazy race in one place.
+//         + useBirthChartHashScroll() — for off-page CTAs (e.g. wiki article)
+//         that navigate in with the #birth-chart-tool hash; scrolls on mount.
 // POS: Landing-page CTA convergence utility (PR #11). 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { useCallback, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { trackEvent } from "../services/analytics";
 import { useLangPath } from "./useLangPath";
 
@@ -148,4 +150,27 @@ export function useScrollToBirthChart() {
     },
     [navigate, langPath],
   );
+}
+
+/**
+ * Mount-time scroll for off-page CTAs. When the user arrives on the landing
+ * page from another route (e.g. a wiki article's "Get Started Free" CTA) with
+ * the `#birth-chart-tool` hash, scroll them to the embedded free tool once it
+ * mounts. The section is lazy, so the browser's native hash anchoring fires
+ * before the element exists and silently misses — we poll for it instead,
+ * reusing the same reduced-motion / focus / instant-fallback logic as the
+ * in-page CTAs. No-op when the hash isn't present.
+ *
+ * Call once near the top of the landing page component.
+ */
+export function useBirthChartHashScroll(): void {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash !== `#${BIRTH_CHART_ANCHOR_ID}`) return;
+    let active = true;
+    void waitForAnchorAndScroll(() => active);
+    return () => {
+      active = false;
+    };
+  }, [location.hash]);
 }
