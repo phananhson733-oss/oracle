@@ -6,6 +6,7 @@ import ts from 'typescript';
 import { safeJsonLd } from './lib/safe-jsonld.mjs';
 import { mdToHtml, stripInlineMarkdown } from './lib/md-to-html.mjs';
 import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
+import { resolveCanonicalUrl, includeInSitemap } from './lib/seo-canonical.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
@@ -187,6 +188,8 @@ const buildHead = ({
   title,
   description,
   url,
+  canonical,
+  robots,
   ogType,
   alternates,
   schema,
@@ -202,8 +205,8 @@ const buildHead = ({
     '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
     `<title>${escapeHtml(title)}</title>`,
     `<meta name="description" content="${escapeHtml(desc)}" />`,
-    `<meta name="robots" content="index,follow" />`,
-    `<link rel="canonical" href="${escapeHtml(url)}" />`,
+    `<meta name="robots" content="${escapeHtml(robots || 'index,follow')}" />`,
+    `<link rel="canonical" href="${escapeHtml(canonical || url)}" />`,
     ...alternates.map((alt) => `<link rel="alternate" hreflang="${alt.hrefLang}" href="${escapeHtml(alt.href)}" />`),
     `<meta property="og:type" content="${escapeHtml(ogType)}" />`,
     `<meta property="og:title" content="${escapeHtml(title)}" />`,
@@ -285,11 +288,11 @@ ${bootstrapScript}<main>
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, description, url, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, description, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
-${buildHead({ lang, title, description, url, ogType, alternates, schema, ogImage })}
+${buildHead({ lang, title, description, url, canonical, robots, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
 ${buildBody({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap })}
@@ -738,6 +741,9 @@ const ARTICLE_SLUGS = [
   'natal-chart-transits',
   'june-2026-planetary-transits',
   'july-2026-planetary-transits',
+  // 6/2 EMPATH/HSP cluster (staggered 45-60min apart): pillar first,
+  // then signs -> vs-autism -> famous.
+  'highly-sensitive-person',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
@@ -839,12 +845,61 @@ const generate = async () => {
   addUrl(`${siteUrl}/landing-v2/en/`, ['landing-v2', 'en', contentHash([landingHtmlByLang.en])]);
   addUrl(`${siteUrl}/landing-v2/zh/`, ['landing-v2', 'zh', contentHash([landingHtmlByLang.zh])]);
 
-  // Add public SPA routes with lang prefix for each language
+  // P0-3：法务/信息页静态化。此前这些路由只进 sitemap、不写静态 HTML → 爬虫拿到空壳 SPA（soft 404）。
+  // 现为每条路由写带 <main> 的静态 stub（简明真实摘要 + CTA 进 SPA 完整页），inject-spa 再注入水合。
+  // 摘要为自洽的真实内容、不复制法律全文（避免与 SPA 正文漂移/合规风险），完整条款仍由 SPA 渲染。
+  const PUBLIC_ROUTE_COPY = {
+    en: {
+      '/privacy': { title: 'Privacy Policy', description: 'How AstrologyWiki collects, uses, and protects your data — birth details, journal entries, and account information.', body: 'AstrologyWiki treats birth data, CBT journal text, and the questions you ask as sensitive personal information. We do not sell your data, and astrology inputs are hashed before caching. This page summarizes our practices; open the full policy for the complete terms on data collection, retention, and your deletion rights.' },
+      '/terms': { title: 'Terms of Service', description: 'The terms that govern your use of AstrologyWiki, including acceptable use and the educational nature of our content.', body: 'AstrologyWiki provides psychological astrology content and tools for self-reflection and education. It is not a substitute for professional medical, psychological, or financial advice. By using the site you agree to the full Terms of Service, which cover acceptable use, account responsibilities, and limitations of liability.' },
+      '/cookies': { title: 'Cookie Policy', description: 'Which cookies AstrologyWiki uses, why, and how you can control them.', body: 'AstrologyWiki uses a small number of essential cookies to remember your language and theme preferences, plus privacy-respecting analytics. We do not use cookies to resell your browsing data. The full Cookie Policy explains each category and how to opt out.' },
+      '/about': { title: 'About AstrologyWiki', description: 'AstrologyWiki is a modern, psychology-grounded astrology knowledge base built on real astronomy — no mysticism, no fortune-telling.', body: 'AstrologyWiki pairs Swiss Ephemeris astronomy with modern psychology to make astrology a tool for self-knowledge rather than prediction. Our wiki, calculators, and CBT journal are free to use. Learn more about our editorial approach, data sources, and the people behind the project.' },
+      '/help': { title: 'Help & FAQ', description: 'Answers to common questions about birth charts, calculators, accounts, and using AstrologyWiki.', body: 'Find answers about generating a birth chart, reading your Saturn return, using the synastry and transit tools, and managing your data. Browse the full help center for step-by-step guides and frequently asked questions.' },
+    },
+    zh: {
+      '/privacy': { title: '隐私政策', description: 'AstrologyWiki 如何收集、使用与保护你的数据——出生信息、日记内容与账户信息。', body: 'AstrologyWiki 将出生数据、CBT 日记文本与你提出的问题视为敏感个人信息。我们不出售你的数据，占星输入在缓存前会先经哈希处理。本页为做法摘要；完整政策详述数据收集、保留期限与你的删除权利。' },
+      '/terms': { title: '服务条款', description: '规范你使用 AstrologyWiki 的条款，包括可接受使用与内容的教育性质。', body: 'AstrologyWiki 提供心理占星内容与自我反思、教育用途的工具，不能替代专业的医疗、心理或财务建议。使用本站即表示你同意完整服务条款，其涵盖可接受使用、账户责任与责任限制。' },
+      '/cookies': { title: 'Cookie 政策', description: 'AstrologyWiki 使用哪些 Cookie、为何使用，以及你如何控制它们。', body: 'AstrologyWiki 仅使用少量必要 Cookie 来记住你的语言与主题偏好，并采用尊重隐私的分析。我们不会用 Cookie 转售你的浏览数据。完整 Cookie 政策说明各类别及退出方式。' },
+      '/about': { title: '关于 AstrologyWiki', description: 'AstrologyWiki 是基于真实天文与现代心理学的占星知识库——无玄学、不算命。', body: 'AstrologyWiki 将 Swiss Ephemeris 天文计算与现代心理学结合，让占星成为自我认识的工具而非预测。我们的百科、计算器与 CBT 日记均免费。了解更多关于我们的编辑理念、数据来源与团队。' },
+      '/help': { title: '帮助与常见问题', description: '关于出生星盘、计算器、账户与使用 AstrologyWiki 的常见问题解答。', body: '在这里找到生成出生星盘、解读土星回归、使用合盘与过运工具，以及管理你的数据的解答。浏览完整帮助中心获取分步指南与常见问题。' },
+    },
+  };
   const publicRoutes = ['/privacy', '/terms', '/cookies', '/about', '/help'];
-  for (const route of publicRoutes) {
-    // 法务/信息页内容不在本脚本，签名用稳定常量 → lastmod 冻结（这些页极少变；变更时 bump 版本号）。
-    addUrl(`${siteUrl}/en${route}`, ['static-route', 'en', route, 'v1']);
-    addUrl(`${siteUrl}/zh${route}`, ['static-route', 'zh', route, 'v1']);
+  for (const lang of ['en', 'zh']) {
+    for (const route of publicRoutes) {
+      const copy = PUBLIC_ROUTE_COPY[lang][route];
+      const url = `${siteUrl}/${lang}${route}`;
+      // 签名取真实内容 hash → 文案变更才更新 lastmod（取代旧的冻结 'v1'）。
+      addUrl(url, ['static-route', lang, route, contentHash([copy.title, copy.description, copy.body])]);
+      await writeHtmlPage({
+        outputPath: path.join(publicDir, lang, route.slice(1), 'index.html'),
+        lang,
+        title: copy.title,
+        description: copy.description,
+        url,
+        ogType: 'website',
+        alternates: buildAlternateLinks(route),
+        schema: [
+          // 页面级 WebPage 实体，给爬虫语义框定（法务/信息页本身的类型），不只有 breadcrumb。
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: copy.title,
+            description: copy.description,
+            url,
+            inLanguage: lang,
+            isPartOf: { '@type': 'WebSite', name: 'AstrologyWiki', url: `${siteUrl}/${lang}/` },
+          },
+          buildBreadcrumb(lang, [
+            { name: LANG_CONFIG[lang].breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: copy.title, url },
+          ]),
+        ],
+        ctaText: LANG_CONFIG[lang].homeCta,
+        spaPath: `/${lang}${route}`,
+        contentHtml: mdToHtml(copy.body),
+      });
+    }
   }
 
   for (const lang of ['zh', 'en']) {
@@ -867,6 +922,8 @@ const generate = async () => {
       shadow: item.shadow || '',
       integration: item.integration || '',
       deep_dive: item.deep_dive || [],
+      // SEO 收口策略（canonicalPath/robots/sitemap），P1-1 由 wiki.ts 的 WIKI_SEO_OVERRIDES 注入。
+      seo: item.seo,
     }));
     const classics = classicsByLang[lang] || [];
 
@@ -904,7 +961,8 @@ const generate = async () => {
         description: config.wikiDescription,
         url: `${siteUrl}${wikiPath}`,
         ogType: 'website',
-        alternates: buildAlternateLinks('/wiki'),
+        // P1-2：zh wiki hub 当前不预渲染、也不进 sitemap，故 en hub 不宣告 zh alternate（保持 hreflang 互惠诚实）。
+        alternates: buildAlternateLinks('/wiki', { zh: false, en: true }),
         schema: [
           buildItemListSchema(lang, '/wiki', wikiItems),
           buildBreadcrumb(lang, [
@@ -923,7 +981,8 @@ const generate = async () => {
         description: config.classicsDescription,
         url: `${siteUrl}${classicsPath}`,
         ogType: 'website',
-        alternates: buildAlternateLinks('/wiki/classics'),
+        // P1-2：classics hub 同理 en-only（无 zh classics 页），不宣告 zh alternate。
+        alternates: buildAlternateLinks('/wiki/classics', { zh: false, en: true }),
         schema: [
           buildItemListSchema(lang, '/wiki/classics', classics),
           buildBreadcrumb(lang, [
@@ -991,21 +1050,30 @@ const generate = async () => {
     for (const item of filteredWikiItems) {
       const itemPath = `/${lang}/wiki/${item.id}`;
       const itemUrl = `${siteUrl}${itemPath}`;
+      // P1-1：canonical 收口（loser 条目 canonical 指向 winner 长文）+ sitemap 收录由 item.seo 控制。
+      const canonicalUrl = resolveCanonicalUrl({ seo: item.seo, lang, selfUrl: itemUrl, siteUrl });
       const alternateAvailability = {
         zh: wikiIds.zh.has(item.id) && (lang === 'en' || ZH_WIKI_WHITELIST.has(item.id)),
         en: wikiIds.en.has(item.id),
       };
       const itemMarkdown = buildWikiItemMarkdown(item, lang);
       // 正文签名纳入 lastmod：正文变化才更新，否则保持稳定（与 T1 防 churn 协同）。
-      addUrl(itemUrl, ['wiki', lang, item.id, item.title, item.description || '', item.subtitle || '', ...(item.keywords || []), contentHash([itemMarkdown])]);
+      // loser 页（seo.sitemap === false）canonical 已指向 winner，不再进 sitemap（避免发混合信号）。
+      if (includeInSitemap(item.seo)) {
+        addUrl(itemUrl, ['wiki', lang, item.id, item.title, item.description || '', item.subtitle || '', ...(item.keywords || []), contentHash([itemMarkdown])]);
+      }
       await writeHtmlPage({
         outputPath: path.join(langRoot, 'wiki', item.id, 'index.html'),
         lang,
         title: item.title,
         description: item.description || config.wikiDescription,
         url: itemUrl,
+        canonical: canonicalUrl,
+        robots: item.seo?.robots,
         ogType: 'article',
-        alternates: buildAlternateLinks(`/wiki/${item.id}`, alternateAvailability),
+        // loser 页（canonical 指向 winner）不发 hreflang：canonicaled-away 页若仍声明指向自己的
+        // hreflang，会与 canonical 互相矛盾（且可能指向未生成的 zh loser 页）。winner 自带 hreflang 簇。
+        alternates: item.seo?.canonicalPath ? [] : buildAlternateLinks(`/wiki/${item.id}`, alternateAvailability),
         schema: [
           buildDefinedTermSchema(lang, item, itemUrl),
           buildBreadcrumb(lang, [
@@ -1066,11 +1134,66 @@ const generate = async () => {
     }
   }
 
-  // Saturn Return Calculator: SPA-rendered (no static HTML — SPA component provides
-  // full SEO meta, JSON-LD schemas, and 500+ word content via React <SEO> component.
-  // Static HTML was removed because Vercel serves it with higher priority than the
-  // SPA catch-all, preventing the interactive calculator from loading.)
-  addUrl(`${siteUrl}/en/saturn-return-calculator`, ['saturn-return-calculator', 'v1']);
+  // P0-2：Saturn Return Calculator 静态化（V=14k KD=20 高价值工具词，URL 已存在但此前是空壳）。
+  // 旧顾虑「静态 HTML 会被 Vercel 高优先 serve、盖住 SPA 导致计算器加载不出来」早于 inject-spa-into-stubs：
+  // 该 injector 会把 stub 的 <main> 包进 #root 并注入 SPA bundle → 爬虫拿到静态正文+JSON-LD，浏览器水合后
+  // 计算器照常交互。故此处恢复写静态 stub（EN-only：无 zh 工具页，alternates 不宣告 zh）。不带 bootstrap
+  // （计算器为纯客户端、无需 API 首屏数据，也无对应 SPA bootstrap reader）。
+  {
+    const saturnUrl = `${siteUrl}/en/saturn-return-calculator`;
+    const saturnTitle = 'Saturn Return Calculator - Free Saturn Return Dates';
+    const saturnDescription =
+      'Calculate when your Saturn Return happens. Enter your birth date to discover your Saturn Return dates, meaning, and how this major life transit affects you.';
+    const saturnBody = [
+      '## What is a Saturn Return?',
+      'A Saturn Return is the moment the planet Saturn comes back to the exact position it held in the sky when you were born. Because Saturn takes about 29.5 years to orbit the Sun, this homecoming happens at roughly ages 27-30, 56-60, and 85-90. Astrologers treat it as a threshold between life chapters — the end of one structure and the building of the next.',
+      '## When is my Saturn Return?',
+      'Your first Saturn Return usually begins between ages 27 and 30. Enter your birth date in the calculator above to get your personal Saturn Return dates, including when Saturn first enters its return and when it finishes. The exact timing depends on the year you were born, because Saturn does not move at a perfectly even pace.',
+      '## How long does a Saturn Return last?',
+      'A Saturn Return is not a single day — it is a transit that unfolds over roughly two to three years as Saturn moves across its birth position, often retrograding back and forth. Most people feel it most strongly in the year Saturn is exactly conjunct its natal point.',
+      '## What does the Saturn Return mean?',
+      'In modern psychological astrology, the Saturn Return is associated with maturity, responsibility, and realigning your life with your real values. It is not a prediction of fate. It tends to surface questions about career, relationships, and identity — a developmental checkpoint where you decide what to keep building and what to let go. Treat it as a tendency and an invitation, not a guarantee.',
+      '## Using the Saturn Return Calculator',
+      'This free calculator uses your birth date to estimate your Saturn Return window. No account or birth time is required. For a deeper reading, pair your Saturn Return dates with your full birth chart and the psychological astrology articles in the AstrologyWiki wiki.',
+    ].join('\n\n');
+    const saturnFaqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: 'en',
+      mainEntity: [
+        { '@type': 'Question', name: 'What is a Saturn Return?', acceptedAnswer: { '@type': 'Answer', text: 'A Saturn Return is when the planet Saturn returns to the position it held at your birth, roughly every 29.5 years — typically at ages 27-30, 56-60, and 85-90. It marks a transition between major life chapters.' } },
+        { '@type': 'Question', name: 'When is my Saturn Return?', acceptedAnswer: { '@type': 'Answer', text: 'Your first Saturn Return usually begins between ages 27 and 30. Enter your birth date in the Saturn Return Calculator to get your exact Saturn Return dates.' } },
+        { '@type': 'Question', name: 'How long does a Saturn Return last?', acceptedAnswer: { '@type': 'Answer', text: 'A Saturn Return unfolds over about two to three years as Saturn crosses its birth position, with the strongest effect in the year it is exactly conjunct its natal point.' } },
+        { '@type': 'Question', name: 'What does the Saturn Return mean?', acceptedAnswer: { '@type': 'Answer', text: 'It is associated with maturity, responsibility, and realigning your life with your values. It is a developmental checkpoint, not a fixed prediction of fate.' } },
+      ],
+    };
+    addUrl(saturnUrl, ['saturn-return-calculator', 'v2', contentHash([saturnBody])]);
+    await writeHtmlPage({
+      outputPath: path.join(publicDir, 'en', 'saturn-return-calculator', 'index.html'),
+      lang: 'en',
+      title: saturnTitle,
+      description: saturnDescription,
+      url: saturnUrl,
+      ogType: 'website',
+      alternates: buildAlternateLinks('/saturn-return-calculator', { zh: false, en: true }),
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: 'Saturn Return Calculator',
+          description: saturnDescription,
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web',
+          url: saturnUrl,
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        },
+        saturnFaqSchema,
+      ],
+      ctaText: LANG_CONFIG.en.homeCta,
+      spaPath: '/en/saturn-return-calculator',
+      contentHtml: mdToHtml(saturnBody),
+    });
+  }
 
   // 文章摘要按 lang/slug 索引，供 sitemap 签名（date/title/desc/image/keywords 变 → lastmod 更新）。
   const articleSummaries = {

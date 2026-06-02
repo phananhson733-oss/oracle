@@ -87,6 +87,15 @@ import { june2026PlanetaryTransitsEn } from "./june-2026-planetary-transits";
 import { june2026PlanetaryTransitsZh } from "./june-2026-planetary-transits";
 import { july2026PlanetaryTransitsEn } from "./july-2026-planetary-transits";
 import { july2026PlanetaryTransitsZh } from "./july-2026-planetary-transits";
+// 6/2 EMPATH/HSP cluster
+import { highlySensitivePersonEn } from "./highly-sensitive-person";
+import { highlySensitivePersonZh } from "./highly-sensitive-person";
+import { signsOfAHighlySensitivePersonEn } from "./signs-of-a-highly-sensitive-person";
+import { signsOfAHighlySensitivePersonZh } from "./signs-of-a-highly-sensitive-person";
+import { highlySensitivePersonVsAutismEn } from "./highly-sensitive-person-vs-autism";
+import { highlySensitivePersonVsAutismZh } from "./highly-sensitive-person-vs-autism";
+import { famousHighlySensitivePeopleEn } from "./famous-highly-sensitive-people";
+import { famousHighlySensitivePeopleZh } from "./famous-highly-sensitive-people";
 // All articles organized by language
 
 import {
@@ -235,6 +244,10 @@ const ARTICLES_EN: WikiArticle[] = [
   natalChartTransitsEn,
   june2026PlanetaryTransitsEn,
   july2026PlanetaryTransitsEn,
+  highlySensitivePersonEn,
+  signsOfAHighlySensitivePersonEn,
+  highlySensitivePersonVsAutismEn,
+  famousHighlySensitivePeopleEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -289,6 +302,10 @@ const ARTICLES_ZH: WikiArticle[] = [
   natalChartTransitsZh,
   june2026PlanetaryTransitsZh,
   july2026PlanetaryTransitsZh,
+  highlySensitivePersonZh,
+  signsOfAHighlySensitivePersonZh,
+  highlySensitivePersonVsAutismZh,
+  famousHighlySensitivePeopleZh,
 ];
 
 // Get all articles for a language
