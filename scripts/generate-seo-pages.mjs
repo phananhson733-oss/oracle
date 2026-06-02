@@ -754,6 +754,7 @@ const ARTICLE_SLUGS = [
   // mahadasha -> rahu -> ketu -> saturn(shani) -> venus.
   'mahadasha',
   'rahu-mahadasha',
+  'ketu-mahadasha',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
