@@ -9,6 +9,7 @@ import { useLanguage } from "../../components/UIComponents";
 import { SEO } from "../../components/SEO";
 import HeroSection from "./HeroSection";
 import { snapshotLandingUtm } from "../../services/landingUtm";
+import { useBirthChartHashScroll } from "../../hooks/useScrollToBirthChart";
 
 // Eager: HeroSection only — must hit first paint with no fallback flash.
 // Lazy: every below-the-fold section. Suspense fallback keeps reserved height
@@ -47,6 +48,10 @@ const LandingPage: React.FC = () => {
   useEffect(() => {
     snapshotLandingUtm();
   }, []);
+  // Off-page CTAs (e.g. a wiki article's "Get Started Free") navigate in with
+  // the #birth-chart-tool hash; scroll to the embedded free tool once the lazy
+  // section mounts. No-op when the hash isn't present.
+  useBirthChartHashScroll();
 
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";

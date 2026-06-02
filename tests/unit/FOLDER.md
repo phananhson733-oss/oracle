@@ -14,6 +14,7 @@
 | `author-personas.test.ts` | 守护作者人设注册表（`getAuthorById` 命中/未命中、`getAllAuthors`、bio EN 回退）与 `buildPersonSchema` Person 实体字段完整性、`@id` 跨语言稳定。 |
 | `articles-by-author.test.ts` | CRITICAL 回归：`getArticleSummaries` 形状含 `authorId` 且消费方不破；`getArticlesByAuthor` 按作者/语言过滤。 |
 | `author-byline.test.tsx` | jsdom 组件测试：`<AuthorByline>` card 不可点 / detail 链到作者页+就近披露+日期，`<AuthorMonogram>` 首字母渲染。 |
+| `wiki-chart-cta.test.tsx` | jsdom 组件测试（backlog #6）：匿名 `<WikiChartCTA>` 链到 `/landing-v2/{lang}/#birth-chart-tool`（非 /auth）、登录/加载态隐藏、点击发 `wiki_cta_clicked` 带 `destination` 归因。 |
 | `safe-jsonld.test.ts` | 回归：`scripts/lib/safe-jsonld.mjs` 的 `safeJsonLd` 转义 `<`/`>`/`&` 与 U+2028/U+2029，含 `</script>` 字段不突破 script 标签（防 SEO 静态页存储型 XSS），输出仍合法 JSON 可往返。 |
 | `md-to-html.test.ts` | 回归：`scripts/lib/md-to-html.mjs` 的 `mdToHtml` / `escapeHtml` / `stripInlineMarkdown` —— 标题/列表/引用/代码块/行内强调与链接渲染、XSS 转义、安全 href 白名单（拒 `javascript:`/`//`）、含括号 URL 不截断、裸星号不误斜体、未闭合代码块不丢正文。 |
 | `seo-canonical.test.ts` | 回归：`scripts/lib/seo-canonical.mjs` 的 `resolveCanonicalUrl`（无 override 自指 / lang-relative 前缀 `/<lang>` / 绝对 URL 原样）与 `includeInSitemap`（仅 `seo.sitemap === false` 排除）。守护 P1-1 canonical 收口与 sitemap loser 排除逻辑。 |
