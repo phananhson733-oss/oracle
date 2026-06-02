@@ -746,6 +746,7 @@ const ARTICLE_SLUGS = [
   'highly-sensitive-person',
   'signs-of-a-highly-sensitive-person',
   'highly-sensitive-person-vs-autism',
+  'famous-highly-sensitive-people',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
