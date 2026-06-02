@@ -35,7 +35,7 @@ const FAQ_DATA: FAQCategory[] = [
       {
         question: 'Is my birth data private?',
         answer:
-          'Yes. Your birth data is encrypted at rest and in transit. We never share your personal information with third parties. You can review our full Privacy Policy for details.',
+          'Yes. Your birth data is encrypted at rest and in transit. We never sell your personal information, and we share it only with trusted service providers (such as our AI providers) strictly to deliver the Service. You can review our full Privacy Policy for details.',
       },
     ],
   },

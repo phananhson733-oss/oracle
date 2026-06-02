@@ -212,15 +212,18 @@ const TermsOfService: React.FC = () => {
             4.5 Refunds
           </h3>
           <p className={textClass}>
-            Refund eligibility depends on the payment method used and the
-            policies of the applicable payment provider. Generally, we do not
-            offer refunds for subscription fees already charged. If you believe
-            you are entitled to a refund due to a billing error or technical
-            issue, please contact us at{" "}
+            If you are unsatisfied with the Service, you may request a refund
+            within 7 days of your purchase by contacting us at{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>
               {CONTACT_EMAIL}
-            </a>{" "}
-            and we will review your request on a case-by-case basis.
+            </a>
+            . Approved refunds are returned to your original payment method,
+            subject to the processing policies of the applicable payment
+            provider. After this 7-day window, subscription fees already charged
+            are generally non-refundable, except where required by law or in
+            the case of a billing error or technical issue, which we will review
+            on a case-by-case basis. Credits are non-refundable as described in
+            Section 4.6.
           </p>
 
           <h3 className={`text-lg font-medium mb-2 mt-6 ${strongClass}`}>

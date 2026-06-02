@@ -271,15 +271,13 @@ const { t, language } = useLanguage();
 | 端点文件 | Lang 来源 | 默认值 | helper |
 |---|---|---|---|
 | `daily.ts` / `detail.ts` / `natal.ts` / `cycle.ts` / `wiki.ts` / `synastry.ts` / `ask.ts` | query/body `lang` | `'en'` | 共享 `backend/src/utils/lang.ts` 的 `resolveLang` |
-| `cbt.ts` | body `lang` | `'zh'`（内联三元，待迁移） | 内联 |
+| `cbt.ts` | body `lang` | `'en'` | 共享 `resolveLang`（调用前含危机短路） |
 | `airwallex.ts` | query/body `lang` | `'en'` | 直接读取（值仅用于货币映射，不进 prompt） |
 | `reports.ts` | body `lang`（已从 `language` 重命名） | `'en'` | 直接默认 |
 | `geo.ts` | query `lang` | 无显式默认 | 直接判断 |
 | `services/ai.ts` | 上游传入 | `DEFAULT_LANG = 'zh'`（行 23，仅作 ai service 最终兜底） | — |
 
-**当前一致性**：前后端默认值统一为 `'en'`；reports 的 body 字段统一为 `lang`；新增 endpoint 必须使用 `resolveLang(value)`，避免内联三元。
-
-**待办**：cbt.ts 仍内联三元未迁移 `resolveLang`，下次触到该文件时顺手替换。
+**当前一致性**：前后端默认值统一为 `'en'`；reports 的 body 字段统一为 `lang`；所有端点（含 `cbt.ts`，默认 `'en'`）已使用 `resolveLang(value)`，无内联三元残留；新增 endpoint 必须沿用。
 
 **错误消息**：API 错误响应统一英文（`{ error: 'Authentication required' }`）。
 

@@ -19,7 +19,13 @@ class EmailService {
     if (error) {
       throw new Error(`Resend error: ${error.message}`);
     }
-    console.log(`Email sent to ${params.to}: ${data?.id}`);
+    console.log(`Email sent to ${this.maskEmail(params.to)}: ${data?.id}`);
+  }
+
+  private maskEmail(email: string): string {
+    const at = email.indexOf('@');
+    if (at <= 0) return '***';
+    return `${email[0]}***@${email.slice(at + 1)}`;
   }
 
   async sendVerificationCode(email: string, code: string): Promise<void> {
