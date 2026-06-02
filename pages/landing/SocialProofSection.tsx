@@ -35,7 +35,7 @@ const SocialProofSection: React.FC = () => {
       display: landing.social_proof_privacy_word || "Privacy-first",
       label:
         landing.social_proof_privacy_label ||
-        "We don't sell or share birth data",
+        "We never sell your birth data",
     },
   ];
 

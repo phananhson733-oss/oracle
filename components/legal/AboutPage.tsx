@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
               },
               {
                 title: 'Privacy-First Design',
-                desc: 'Your birth data is encrypted and never shared with third parties. You own your data, always.',
+                desc: 'Your birth data is encrypted and never sold. We share it only with trusted service providers to deliver the Service. You own your data, always.',
               },
             ].map((item) => (
               <div key={item.title} className={cardClass}>

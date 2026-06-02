@@ -1,8 +1,8 @@
 // INPUT: React 与 UI 组件依赖。
-// OUTPUT: 导出社交证明与紧迫感组件。
+// OUTPUT: 导出付费墙转化组件（社交证明 / 退款保障 / 价值对比 / 功能清单）。
 
 import React, { useState, useEffect } from 'react';
-import { Star, Clock, TrendingUp, Users, Check } from 'lucide-react';
+import { Sparkles, Brain, Check } from 'lucide-react';
 import { useTheme, useLanguage } from './UIComponents';
 
 // =====================================================
@@ -11,116 +11,51 @@ import { useTheme, useLanguage } from './UIComponents';
 
 interface PaywallSocialProofProps {
   variant?: 'compact' | 'full';
-  showRating?: boolean;
-  showUserCount?: boolean;
-  showUrgency?: boolean;
 }
 
 export const PaywallSocialProof: React.FC<PaywallSocialProofProps> = ({
   variant = 'full',
-  showRating = true,
-  showUserCount = true,
-  showUrgency = true,
 }) => {
   const { theme } = useTheme();
   const { language } = useLanguage();
   const isDark = theme === 'dark';
 
+  // 真实可证实的产品陈述（替换此前编造的评分/评价数/活跃用户数/写死倒计时）。
   const translations = {
     zh: {
-      rating: '4.9 分',
-      reviews: '基于 2,847 条评价',
-      users: '50,000+',
-      usersLabel: '活跃用户',
-      urgency: '年付特惠仅剩',
-      urgencySuffix: '天',
-      trending: '本周热门',
-      cta: '立即升级',
+      realAstronomy: '基于真实天文学',
+      psychology: '心理学导向，非玄学',
+      cancelAnytime: '随时可取消',
     },
     en: {
-      rating: '4.9',
-      reviews: 'based on 2,847 reviews',
-      users: '50,000+',
-      usersLabel: 'active users',
-      urgency: 'Annual deal ends in',
-      urgencySuffix: 'days',
-      trending: 'Trending this week',
-      cta: 'Upgrade Now',
+      realAstronomy: 'Grounded in real astronomy',
+      psychology: 'Psychology-based, no mysticism',
+      cancelAnytime: 'Cancel anytime',
     },
   };
 
   const lang = language === 'zh' ? 'zh' : 'en';
   const t = translations[lang];
 
-  if (variant === 'compact') {
-    return (
-      <div className={`flex items-center justify-center gap-4 py-3 text-sm ${
-        isDark ? 'text-star-400' : 'text-paper-500'
-      }`}>
-        {showRating && (
-          <div className="flex items-center gap-1.5">
-            <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-            <span className="font-medium">{t.rating}</span>
-          </div>
-        )}
-        {showUserCount && (
-          <div className="flex items-center gap-1.5">
-            <Users className="w-4 h-4" />
-            <span>{t.users}</span>
-          </div>
-        )}
-      </div>
-    );
-  }
+  const items = [
+    { icon: Sparkles, label: t.realAstronomy },
+    { icon: Brain, label: t.psychology },
+    { icon: Check, label: t.cancelAnytime },
+  ];
+
+  const wrapClass =
+    variant === 'compact'
+      ? 'flex flex-wrap items-center justify-center gap-x-4 gap-y-2 py-3 text-xs'
+      : 'flex flex-col items-center gap-2 text-sm';
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-center gap-2">
-        <div className="flex items-center gap-0.5">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <Star
-              key={star}
-              className={`w-4 h-4 ${star <= 5 ? 'text-amber-500 fill-amber-500' : 'text-star-400/30'}`}
-            />
-          ))}
+    <div className={`${wrapClass} ${isDark ? 'text-star-400' : 'text-paper-500'}`}>
+      {items.map(({ icon: Icon, label }) => (
+        <div key={label} className="flex items-center gap-1.5">
+          <Icon className="w-3.5 h-3.5 text-gold-500" />
+          <span>{label}</span>
         </div>
-        <span className={`text-sm font-medium ${isDark ? 'text-star-200' : 'text-paper-700'}`}>
-          {t.rating}
-        </span>
-        <span className={`text-xs ${isDark ? 'text-star-500' : 'text-paper-400'}`}>
-          {t.reviews}
-        </span>
-      </div>
-
-      {showUserCount && (
-        <div className={`flex items-center justify-center gap-2 text-sm ${
-          isDark ? 'text-star-400' : 'text-paper-500'
-        }`}>
-          <Users className="w-4 h-4" />
-          <span>{t.users}</span>
-          <span>{t.usersLabel}</span>
-        </div>
-      )}
-
-      {showUrgency && (
-        <div className={`flex items-center justify-center gap-2 px-4 py-2 rounded-full text-xs font-medium ${
-          isDark
-            ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
-            : 'bg-amber-50 text-amber-700 border border-amber-200'
-        }`}>
-          <Clock className="w-3.5 h-3.5" />
-          <span>{t.urgency}</span>
-          <span className="font-bold">7</span>
-          <span>{t.urgencySuffix}</span>
-        </div>
-      )}
-
-      <div className={`flex items-center justify-center gap-1.5 text-xs ${
-        isDark ? 'text-gold-400' : 'text-amber-600'
-      }`}>
-        <TrendingUp className="w-3.5 h-3.5" />
-        <span>{t.trending}</span>
-      </div>
+      ))}
     </div>
   );
 };
@@ -136,12 +71,12 @@ export const RiskReversal: React.FC = () => {
 
   const translations = {
     zh: {
-      guarantee: '30天无条件退款',
+      guarantee: '购买后 7 天内可申请退款',
       trial: '免费试用7天',
       noCancel: '随时取消，无违约金',
     },
     en: {
-      guarantee: '30-day money-back guarantee',
+      guarantee: '7-day refund window',
       trial: '7-day free trial',
       noCancel: 'Cancel anytime, no penalty',
     },

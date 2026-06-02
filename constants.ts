@@ -1575,6 +1575,8 @@ export const TRANSLATIONS = {
     ask: {
       title: "ORACLE",
       subtitle: "The universe answers only those who dare to ask.",
+      cloud_notice:
+        "Your question and your birth chart details are sent to a third-party cloud AI to generate this reading.",
       online: "ORACLE ONLINE",
       placeholder: "Select from the matrix above or inscribe query...",
       empty_title: "What's on your mind?",
@@ -2517,7 +2519,7 @@ export const TRANSLATIONS = {
       social_proof_source_word: "Open",
       social_proof_source_label: "Source astronomy",
       social_proof_privacy_word: "Privacy-first",
-      social_proof_privacy_label: "We don't sell or share birth data",
+      social_proof_privacy_label: "We never sell your birth data",
       social_proof_motto: "Built on real astronomy, not fortune-telling.",
       // Newsletter
       newsletter_kicker: "Newsletter",
@@ -3363,6 +3365,7 @@ export const TRANSLATIONS = {
     ask: {
       title: "神谕",
       subtitle: "敢问者，星辰必回应。",
+      cloud_notice: "你的问题与星盘信息将发送至第三方云端 AI 以生成解读。",
       online: "神谕在线",
       placeholder: "从上方矩阵选择或写下你的问题...",
       empty_title: "你在想什么？",
@@ -4278,7 +4281,7 @@ export const TRANSLATIONS = {
       social_proof_source_word: "开源",
       social_proof_source_label: "源码可查的天文",
       social_proof_privacy_word: "隐私优先",
-      social_proof_privacy_label: "绝不出售或分享出生数据",
+      social_proof_privacy_label: "绝不出售你的出生数据",
       social_proof_motto: "建立在真实天文之上，而非占卜。",
       // Newsletter
       newsletter_kicker: "周刊",

@@ -880,6 +880,10 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
       />
       <Container className={containerClassName}>
         <FrameworkDisclaimer />
+        <p className="text-center text-[11px] leading-snug text-star-500 px-6 mb-1">
+          {t.ask?.cloud_notice ||
+            "Your question and your birth chart details are sent to a third-party cloud AI to generate this reading."}
+        </p>
         {showLoadingView ? (
           <OracleLoading
             phrases={loadingPhrases}
