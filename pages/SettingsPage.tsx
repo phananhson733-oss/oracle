@@ -198,7 +198,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-4">
                             {user?.avatar ? (
-                                <img src={user.avatar} alt="" className="w-14 h-14 rounded-full object-cover border-2 border-gold-500/20" />
+                                <img src={user.avatar} alt="" width={56} height={56} loading="lazy" className="w-14 h-14 rounded-full object-cover border-2 border-gold-500/20" />
                             ) : (
                                 <div className={`w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold border-2 border-gold-500/20 ${theme === 'dark' ? 'bg-space-800 text-star-500' : 'bg-paper-200 text-paper-500'}`}>
                                     {profile.name?.[0] || user?.email?.[0] || '?'}
