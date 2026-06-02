@@ -14,6 +14,7 @@
 - META_AUDIT_CHECKLIST.md｜地位：Meta 标签审计清单｜功能：审计清单与优化指南。
 - CWV_OPTIMIZATION.md｜地位：CWV 优化指南｜功能：Core Web Vitals 优化策略与实施。
 - PROGRAMMATIC_SEO.md｜地位：程序化 SEO 指南｜功能：程序化页面设计与生成规范。
+- CSP_DOMAIN_ALLOWLIST.md｜地位：CSP 域名清单｜功能：按 directive 分组的外部子资源域名 allowlist，供 backlog #8 重新启用 CSP 消费（含 Report-Only 实测步骤）。
 - GOOGLE_OAUTH_SETUP.md｜地位：OAuth 配置指南｜功能：说明如何配置 Google OAuth 登录功能（含凭据获取与重定向配置）。
 - GOOGLE_OAUTH_SETUP.md｜地位：OAuth 配置指南｜功能：说明如何配置 Google OAuth 登录功能（含凭据获取与重定向配置）。
 - FOLDER.md｜地位：目录索引文档｜功能：记录 docs 目录下的文件清单。
