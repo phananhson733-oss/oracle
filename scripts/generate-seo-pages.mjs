@@ -753,6 +753,7 @@ const ARTICLE_SLUGS = [
   // 6/2 MAHADASHA cluster (sequential staggered, pillar first):
   // mahadasha -> rahu -> ketu -> saturn(shani) -> venus.
   'mahadasha',
+  'rahu-mahadasha',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
