@@ -384,6 +384,14 @@ const BirthChartSection: React.FC = () => {
       cta_text: landing.birth_chart_save_cta || "Save my chart",
       location: "landing_v2_birth_chart_save",
     });
+    // Funnel spine — step 2 (#12 deferred this to #7). NON-PII only:
+    // source + has_time(bool) + language + UTM. Never birth fields — 隐私红线 #1.
+    trackEvent(FUNNEL_EVENTS.saveIntent, {
+      ...getLandingUtm(),
+      source: "landing_v2_birth_chart",
+      has_time: !timeUnknown && birthTime.trim().length > 0,
+      language,
+    });
     // Forward everything the landing form already collected so onboarding can
     // skip the redundant date/city steps and land the user on the last step
     // (name confirm) — or fire onComplete immediately if name is also present.
@@ -409,6 +417,7 @@ const BirthChartSection: React.FC = () => {
     birthTime,
     landing.birth_chart_save_cta,
     langPath,
+    language,
     name,
     navigate,
     timeUnknown,

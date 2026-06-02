@@ -61,6 +61,8 @@ interface AuthContextType {
   openCreditsModal: () => void;
   loginModalReason?: string;
   openLoginModal: (reason?: string) => void;
+  pendingSaveResume: boolean;
+  clearPendingSaveResume: () => void;
   openUpgradeModal: (reason?: string) => void;
   upgradeModalReason?: string;
 }
@@ -75,6 +77,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [showCreditsModal, setShowCreditsModal] = useState(false);
   const [loginModalReason, setLoginModalReason] = useState<string>();
+  const [pendingSaveResume, setPendingSaveResume] = useState(false);
   const [upgradeModalReason, setUpgradeModalReason] = useState<string>();
 
   const isAuthenticated = !!user && !!getAccessToken();
@@ -128,6 +131,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setUser(result.user);
       setUserId(result.user.id);
       trackEvent('login', { method: 'google' });
+      if (loginModalReason === 'save_chart') setPendingSaveResume(true);
       setShowLoginModal(false);
     } catch (err) {
       trackEvent('login_failed', { method: 'google', error_type: err instanceof Error ? err.message : 'unknown' });
@@ -141,6 +145,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setUser(result.user);
       setUserId(result.user.id);
       trackEvent('login', { method: 'apple' });
+      if (loginModalReason === 'save_chart') setPendingSaveResume(true);
       setShowLoginModal(false);
     } catch (err) {
       trackEvent('login_failed', { method: 'apple', error_type: err instanceof Error ? err.message : 'unknown' });
@@ -154,6 +159,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setUser(result.user);
       setUserId(result.user.id);
       trackEvent('login', { method: 'email' });
+      if (loginModalReason === 'save_chart') setPendingSaveResume(true);
       setShowLoginModal(false);
     } catch (err) {
       trackEvent('login_failed', { method: 'email', error_type: err instanceof Error ? err.message : 'unknown' });
@@ -170,6 +176,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // NON-PII only: method + UTM attribution. Never email / name — 隐私红线 #1.
     // (save_intent / auth_prompted / chart_migrated steps belong to backlog #7.)
     trackEvent(FUNNEL_EVENTS.accountCreated, { ...getLandingUtm(), method: 'email' });
+    if (loginModalReason === 'save_chart') setPendingSaveResume(true);
     setShowLoginModal(false);
   };
 
@@ -186,6 +193,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Funnel attribution spine — step 4 (additive, see services/funnelEvents.ts).
     // NON-PII only: method + UTM attribution. Never email / name — 隐私红线 #1.
     trackEvent(FUNNEL_EVENTS.accountCreated, { ...getLandingUtm(), method: 'email_verified' });
+    if (loginModalReason === 'save_chart') setPendingSaveResume(true);
     setShowLoginModal(false);
   };
 
@@ -276,6 +284,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         openCreditsModal,
         loginModalReason,
         openLoginModal,
+        pendingSaveResume,
+        clearPendingSaveResume: () => setPendingSaveResume(false),
         openUpgradeModal,
         upgradeModalReason,
       }}
