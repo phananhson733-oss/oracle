@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const famousHighlySensitivePeopleEn: WikiArticle = {
   slug: "famous-highly-sensitive-people",
   title: "What Famous Highly Sensitive People Reveal About a Misread Strength",
-  description: "A famous highly sensitive person is a well-known public figure who has openly described living with unusually deep emotional and sensory responsiveness —...",
+  description:
+    "Famous highly sensitive people: public figures who have openly described living with unusually deep emotional and sensory responsiveness, and what it shows.",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",
@@ -14,7 +15,7 @@ export const famousHighlySensitivePeopleEn: WikiArticle = {
     "famous highly sensitive person",
     "famous highly sensitive people",
     "celebrities who are highly sensitive",
-    "famous hsp"
+    "famous hsp",
   ],
   content: `# What Famous Highly Sensitive People Reveal About a Misread Strength
 
@@ -121,7 +122,8 @@ Wondering if you share the trait? Start with the [full guide to the highly sensi
 export const famousHighlySensitivePeopleZh: WikiArticle = {
   slug: "famous-highly-sensitive-people",
   title: "高敏感名人为什么往往活得很出彩",
-  description: "本文不构成临床或心理咨询诊断，只报告这些公众人物公开自述的敏感倾向，不替任何人下诊断标签。Famous Highly Sensitive...",
+  description:
+    "著名高敏感人群：公开自述天生高度敏感的名人——他们如何谈论自己容易被情绪、声音与他人状态影响、需要独处恢复，以及这对理解高敏感特质的启示。",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",
@@ -130,7 +132,7 @@ export const famousHighlySensitivePeopleZh: WikiArticle = {
     "famous highly sensitive person",
     "famous highly sensitive people",
     "celebrities who are highly sensitive",
-    "famous hsp"
+    "famous hsp",
   ],
   content: `# 高敏感名人为什么往往活得很出彩
 

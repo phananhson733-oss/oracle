@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const signsOfAHighlySensitivePersonEn: WikiArticle = {
   slug: "signs-of-a-highly-sensitive-person",
   title: "Spotting the Real Signs You're a Highly Sensitive Person",
-  description: "Signs of a highly sensitive person are the consistent patterns of deep processing, strong empathy, and easy sensory overwhelm that show up across many...",
+  description:
+    "The signs of a highly sensitive person are consistent patterns: deep processing, strong empathy, and easy sensory overwhelm. Here's how to read your own.",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",
@@ -15,7 +16,7 @@ export const signsOfAHighlySensitivePersonEn: WikiArticle = {
     "signs of a highly sensitive person",
     "am i a highly sensitive person",
     "highly sensitive person traits",
-    "hsp signs"
+    "hsp signs",
   ],
   content: `# Spotting the Real Signs You're a Highly Sensitive Person
 
@@ -127,7 +128,8 @@ This is not a clinical interpretation or mental-health advice; for assessment or
 export const signsOfAHighlySensitivePersonZh: WikiArticle = {
   slug: "signs-of-a-highly-sensitive-person",
   title: "高敏感人群特征，哪些信号才真正算数",
-  description: "Signs of a Highly Sensitive Person（高敏感人群特征）是一组天生更敏感、加工更深的稳定反应。",
+  description:
+    "Signs of a Highly Sensitive Person（高敏感人群特征）是一组天生更敏感、加工更深的稳定反应。",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",
@@ -137,7 +139,7 @@ export const signsOfAHighlySensitivePersonZh: WikiArticle = {
     "signs of a highly sensitive person",
     "am i a highly sensitive person",
     "highly sensitive person traits",
-    "hsp signs"
+    "hsp signs",
   ],
   content: `# 高敏感人群特征，哪些信号才真正算数
 

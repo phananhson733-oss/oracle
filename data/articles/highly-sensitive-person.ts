@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const highlySensitivePersonEn: WikiArticle = {
   slug: "highly-sensitive-person",
   title: "Understanding What It Really Means to Be a Highly Sensitive Person",
-  description: "A highly sensitive person is someone whose nervous system processes sensory and emotional input more deeply than average. If that description already sounds...",
+  description: "A highly sensitive person is someone whose nervous system processes sensory and emotional input more deeply than average.",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",
@@ -125,7 +125,7 @@ Curious how your chart frames life as a highly sensitive person? [Read the birth
 export const highlySensitivePersonZh: WikiArticle = {
   slug: "highly-sensitive-person",
   title: "高敏感人群是什么——把敏感读成一种气质，而不是缺陷或病",
-  description: "Highly Sensitive Person（高敏感人群 / 高敏感人，HSP）是对刺激更敏锐、加工更深的一种气质特质；想先快速对照自己是不是高敏感，可以看高敏感人群自查清单。心理学家 Elaine Aron 在上世纪九十年代提出这个说法，对应的学术名称叫感觉处理敏感性（sensory processing...",
+  description: "Highly Sensitive Person（高敏感人群 / 高敏感人，HSP）是对刺激更敏锐、加工更深的一种气质特质；想先快速对照自己是不是高敏感，可以看高敏感人群自查清单。",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",

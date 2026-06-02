@@ -4,8 +4,10 @@ import type { WikiArticle } from "../../types";
 
 export const highlySensitivePersonVsAutismEn: WikiArticle = {
   slug: "highly-sensitive-person-vs-autism",
-  title: "Where Highly Sensitive Person vs Autism Overlap, and Where They Don't",
-  description: "Highly sensitive person vs autism is a comparison between a temperament trait and a clinical condition that can look alike from the outside while working...",
+  title:
+    "Where Highly Sensitive Person vs Autism Overlap, and Where They Don't",
+  description:
+    "Highly sensitive person vs autism: how a temperament trait and a clinical condition can look alike yet differ, and when to seek a professional assessment.",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",
@@ -15,7 +17,7 @@ export const highlySensitivePersonVsAutismEn: WikiArticle = {
     "hsp vs autism",
     "is hsp on the autism spectrum",
     "sensory processing sensitivity vs autism",
-    "hsp or autistic"
+    "hsp or autistic",
   ],
   content: `# Where Highly Sensitive Person vs Autism Overlap, and Where They Don't
 
@@ -119,7 +121,8 @@ Start with the sensitivity side on its own terms before reaching for any compari
 export const highlySensitivePersonVsAutismZh: WikiArticle = {
   slug: "highly-sensitive-person-vs-autism",
   title: "高敏感和自闭症，常被混为一谈，其实是两回事",
-  description: "Highly Sensitive Person vs Autism（高敏感人群与自闭症）是把两个常被混淆的概念放在一起对照：高敏感（highly sensitive person，一种与生俱来的气质特质），以及自闭症（autism，一种需要专业评估的神经发展性诊断）。想先弄清高敏感这一端是什么，可以参考...",
+  description:
+    "Highly Sensitive Person vs Autism（高敏感人群与自闭症）是把两个常被混淆的概念放在一起对照：高敏感（highly sensitive person，一种与生俱来的气质特质），以及自闭症（autism，一种需要专业评估的神经发展性诊断）。",
   authorId: "elena-vane",
   date: "2026-06-02",
   schema: "Article",
@@ -129,7 +132,7 @@ export const highlySensitivePersonVsAutismZh: WikiArticle = {
     "hsp vs autism",
     "is hsp on the autism spectrum",
     "sensory processing sensitivity vs autism",
-    "hsp or autistic"
+    "hsp or autistic",
   ],
   content: `# 高敏感和自闭症，常被混为一谈，其实是两回事
 
