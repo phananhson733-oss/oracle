@@ -96,6 +96,17 @@ import { highlySensitivePersonVsAutismEn } from "./highly-sensitive-person-vs-au
 import { highlySensitivePersonVsAutismZh } from "./highly-sensitive-person-vs-autism";
 import { famousHighlySensitivePeopleEn } from "./famous-highly-sensitive-people";
 import { famousHighlySensitivePeopleZh } from "./famous-highly-sensitive-people";
+// 6/2 MAHADASHA cluster
+import { mahadashaEn } from "./mahadasha";
+import { mahadashaZh } from "./mahadasha";
+import { rahuMahadashaEn } from "./rahu-mahadasha";
+import { rahuMahadashaZh } from "./rahu-mahadasha";
+import { ketuMahadashaEn } from "./ketu-mahadasha";
+import { ketuMahadashaZh } from "./ketu-mahadasha";
+import { saturnMahadashaEn } from "./saturn-mahadasha";
+import { saturnMahadashaZh } from "./saturn-mahadasha";
+import { venusMahadashaEn } from "./venus-mahadasha";
+import { venusMahadashaZh } from "./venus-mahadasha";
 // All articles organized by language
 
 import {
@@ -248,6 +259,11 @@ const ARTICLES_EN: WikiArticle[] = [
   signsOfAHighlySensitivePersonEn,
   highlySensitivePersonVsAutismEn,
   famousHighlySensitivePeopleEn,
+  mahadashaEn,
+  rahuMahadashaEn,
+  ketuMahadashaEn,
+  saturnMahadashaEn,
+  venusMahadashaEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -306,6 +322,11 @@ const ARTICLES_ZH: WikiArticle[] = [
   signsOfAHighlySensitivePersonZh,
   highlySensitivePersonVsAutismZh,
   famousHighlySensitivePeopleZh,
+  mahadashaZh,
+  rahuMahadashaZh,
+  ketuMahadashaZh,
+  saturnMahadashaZh,
+  venusMahadashaZh,
 ];
 
 // Get all articles for a language
