@@ -755,6 +755,7 @@ const ARTICLE_SLUGS = [
   'mahadasha',
   'rahu-mahadasha',
   'ketu-mahadasha',
+  'saturn-mahadasha',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
