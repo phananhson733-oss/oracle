@@ -13,6 +13,7 @@
 |------|------|
 | `WikiHubPage.tsx` | Wiki 入口页签容器，负责首页/百科/经典切换 |
 | `WikiHomePage.tsx` | Wiki 首页，包含搜索、每日星象/灵感与支柱入口 |
+| `WikiEnergyRadar.tsx` | 每日能量雷达子组件，独占 recharts、经 props 收数据与主题色，供 WikiHomePage 懒加载 |
 | `WikiIndexPage.tsx` | Wiki 百科页，包含主题分区卡片与条目索引 |
 | `WikiDetailPage.tsx` | Wiki 详情页，包含核心解读、能量地图与关联条目 |
 | `WikiClassicsPage.tsx` | Wiki 经典书籍页，呈现书架列表 |
@@ -30,6 +31,7 @@
 
 ## 近期更新
 
+- 抽离 WikiEnergyRadar 子组件：将 hero 雷达的 recharts import 从 WikiHomePage 顶层移出，改 React.lazy + Suspense 懒加载，避免 /wiki 首帧急加载 charts chunk（颜色/数据仍由 WikiHomePage 算好经 props 传入）。
 - 新增 AuthorByline + AuthorPage：编辑作者人设署名与作者档案页，文章 author→authorId，JSON-LD author 改 Person。
 - 新增 RelatedArticles 组件，基于星象关联展示相关内容（守护、旺势、同元素等关系）。
 - 新增 wiki-associations.ts 数据文件，定义行星-星座守护关系、元素分组、宫位对应等关联数据。
