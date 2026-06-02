@@ -21,12 +21,15 @@
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
 - consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
 - abTest.ts｜地位：实验工具｜功能：A/B 测试分组与曝光追踪。
+- landingUtm.ts｜地位：归因快照｜功能：首触快照 UTM/click-id 到 sessionStorage 并供漏斗事件读取。
+- funnelEvents.ts｜地位：漏斗事件契约｜功能：获客漏斗事件名常量 + 非 PII 字段白名单 + isFunnelFieldAllowed 守卫（chart_cast/account_created 本批接线，save_intent/auth_prompted/chart_migrated 由 #7 接线）。
 
 子目录
 - cbt/｜地位：CBT 服务子目录｜功能：CBT 功能的后端服务。
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- 新增 funnelEvents.ts 漏斗事件契约（backlog #12 切片）：FUNNEL_EVENTS 五段事件名 + 非 PII 字段白名单；BirthChartSection 发 funnel_chart_cast、AuthContext 发 funnel_account_created（均 additive、仅非 PII），其余三个事件 deferred to #7。
 - analytics.ts 扩展同意网关：setUserId / setUserProperties / initAnalytics 在 hasAnalyticsConsent() 为假时缓冲到 analyticsConsentBuffer，updateConsentState(true) 时一次性 flush，updateConsentState(false) 时清空。
 - paymentClient 新增 PayPal 订阅确认调用，支持支付回跳兜底同步订阅状态。
 - authClient 在缺失 access token 时尝试刷新并清理无效登录，避免权益被当作匿名。
