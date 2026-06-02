@@ -741,9 +741,10 @@ const ARTICLE_SLUGS = [
   'natal-chart-transits',
   'june-2026-planetary-transits',
   'july-2026-planetary-transits',
-  // 6/2 EMPATH/HSP cluster (staggered 45-60min apart): pillar first,
-  // then signs -> vs-autism -> famous.
+  // 6/2 EMPATH/HSP cluster (staggered ~20min apart, pillar first):
+  // pillar -> signs -> vs-autism -> famous.
   'highly-sensitive-person',
+  'signs-of-a-highly-sensitive-person',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
