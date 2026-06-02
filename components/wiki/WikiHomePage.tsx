@@ -2,7 +2,7 @@
 // OUTPUT: 导出 Wiki 首页组件（含当日星象稳定展示与 Unicode 文本图标）。
 // POS: Wiki 首页模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ActionButton,
@@ -13,21 +13,7 @@ import {
   useLanguage,
   useTheme,
 } from "../UIComponents";
-import {
-  ArrowRight,
-  Compass,
-  Heart,
-  Search,
-  Share2,
-  Sparkles,
-} from "lucide-react";
-import {
-  PolarAngleAxis,
-  PolarGrid,
-  Radar,
-  RadarChart,
-  ResponsiveContainer,
-} from "recharts";
+import { ArrowRight, Heart, Search, Share2, Sparkles } from "lucide-react";
 import { fetchWikiHome, fetchWikiSearch } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { getArticleHotwords, getArticleSummaries } from "../../data/articles";
@@ -55,6 +41,15 @@ const forceTextSymbol = (value: string) => {
 };
 const resolvePillarIcon = (pillar: { id: string; icon: string }) =>
   forceTextSymbol(PILLAR_ICON_MAP[pillar.id] || pillar.icon);
+
+// recharts 体积大，仅为 hero 一个小雷达，懒加载到独立 charts chunk，
+// 避免污染 /wiki 首帧 JS。
+const WikiEnergyRadar = lazy(() => import("./WikiEnergyRadar"));
+
+// 雷达占位：撑满父容器固定高度，懒加载在途时防止布局抖动（CLS）。
+const RadarFallback: React.FC = () => (
+  <div aria-hidden="true" className="w-full h-full" />
+);
 
 const WikiHomePage: React.FC = () => {
   const { language, t } = useLanguage();
@@ -376,21 +371,15 @@ const WikiHomePage: React.FC = () => {
                   className={`absolute inset-0 rounded-2xl border ${borderColor} ${theme === "dark" ? "bg-space-900/60" : "bg-paper-100/85"}`}
                 />
                 <div className="relative h-full p-4">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart data={radarData} outerRadius="80%">
-                      <PolarGrid stroke={radarGrid} />
-                      <PolarAngleAxis
-                        dataKey="subject"
-                        tick={{ fill: radarAxis, fontSize: 11 }}
-                      />
-                      <Radar
-                        dataKey="value"
-                        stroke={radarStroke}
-                        fill={radarFill}
-                        fillOpacity={0.6}
-                      />
-                    </RadarChart>
-                  </ResponsiveContainer>
+                  <Suspense fallback={<RadarFallback />}>
+                    <WikiEnergyRadar
+                      data={radarData}
+                      gridColor={radarGrid}
+                      axisColor={radarAxis}
+                      strokeColor={radarStroke}
+                      fillColor={radarFill}
+                    />
+                  </Suspense>
                 </div>
                 <div
                   className={`absolute right-4 bottom-3 text-xs ${mutedText}`}
