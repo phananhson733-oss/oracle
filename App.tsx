@@ -372,9 +372,16 @@ const AppContent: React.FC = () => {
   useAnalyticsTracking();
 
   const { langPath } = useLangPath();
-  const pathWithoutLang = extractLangFromPath(location.pathname)
+  // 去 lang 前缀后再归一化尾斜杠：isLegalPath / isSaturnReturnPath 用精确匹配，
+  // 若 URL 带尾斜杠（如 /en/saturn-return-calculator/）会匹配失败 → 误判为非公开页 → 运行时 noindex
+  // 覆盖静态 stub 的 index,follow。只对多字符路径去尾斜杠，保留 "/" 与空串（/en → ""）的既有行为。
+  const rawPathWithoutLang = extractLangFromPath(location.pathname)
     ? location.pathname.replace(/^\/[a-z]{2}/, "")
     : location.pathname;
+  const pathWithoutLang =
+    rawPathWithoutLang.length > 1
+      ? rawPathWithoutLang.replace(/\/$/, "")
+      : rawPathWithoutLang;
   const isWikiPath =
     pathWithoutLang === "/wiki" || pathWithoutLang.startsWith("/wiki/");
   const isLegalPath = [
@@ -394,8 +401,12 @@ const AppContent: React.FC = () => {
   const isLandingV2LangPath = /^\/landing-v2\/(en|zh)\/?$/.test(
     location.pathname,
   );
+  // lang-home（/en /en/ /zh /zh/，去 lang 前缀后为 "" 或 "/"）也是公开可索引页：静态 stub 输出
+  // index,follow 且在 sitemap，运行时必须一致，否则 WRS 注入 noindex 会误伤 sitemap 里的本地化首页。
+  const isLangHome = pathWithoutLang === "" || pathWithoutLang === "/";
   const isPublicRoute =
     location.pathname === "/" ||
+    isLangHome ||
     isWikiPath ||
     isLegalPath ||
     isSaturnReturnPath ||

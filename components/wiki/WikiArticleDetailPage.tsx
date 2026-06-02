@@ -434,9 +434,17 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
 
   const siteUrl =
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
-  const canonicalUrl = article
+  const selfUrl = article
     ? `${siteUrl}/${lang}/wiki/${article.slug}`
     : `${siteUrl}/${lang}/wiki`;
+  // canonical 收口（P1-1）：article.seo.canonicalPath 可把长文 canonical 指向他页；缺省自指。
+  // 当前长文均无 override → canonicalUrl === selfUrl（行为不变）。仅 canonical/schema @id 用它，og:url 保持 selfUrl。
+  const canonicalUrl =
+    article && article.seo?.canonicalPath
+      ? article.seo.canonicalPath.startsWith("http")
+        ? article.seo.canonicalPath
+        : `${siteUrl}/${lang}${article.seo.canonicalPath}`
+      : selfUrl;
   // T3：构建期生成的 per-article OG 图（scripts/generate-og-images.mjs）。
   // ZH 变体在 <slug>.zh.png；EN 在 <slug>.png。显式 article.image 仍优先覆盖。
   // 局限：文章是纯 SPA（无静态 stub），只有会执行 JS 的爬虫看得到此 tag。
@@ -465,7 +473,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
       image: article.image || ogImageUrl,
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": canonicalUrl,
+        "@id": selfUrl,
       },
       publisher: {
         "@type": "Organization",
@@ -476,7 +484,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         },
       },
     };
-  }, [article, canonicalUrl, siteUrl, lang]);
+  }, [article, selfUrl, siteUrl, lang]);
 
   const breadcrumbSchema = useMemo(
     () => ({
@@ -501,20 +509,13 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
                 "@type": "ListItem",
                 position: 3,
                 name: article.title,
-                item: canonicalUrl,
+                item: selfUrl,
               },
             ]
           : []),
       ],
     }),
-    [
-      article,
-      canonicalUrl,
-      lang,
-      siteUrl,
-      t.wiki.tab_articles,
-      t.wiki.tab_home,
-    ],
+    [article, selfUrl, lang, siteUrl, t.wiki.tab_articles, t.wiki.tab_home],
   );
 
   // FAQPage structured data — parsed from the article's FAQ section so the Q&A
@@ -647,8 +648,12 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         title={article.title}
         description={article.description}
         keywords={article.keywords}
-        url={canonicalUrl}
-        alternateLanguages={alternateLanguages}
+        url={selfUrl}
+        canonicalUrl={canonicalUrl}
+        robots={article.seo?.robots}
+        alternateLanguages={
+          article.seo?.canonicalPath ? [] : alternateLanguages
+        }
         type="article"
         image={article.image || ogImageUrl}
         schema={[articleSchema, breadcrumbSchema, faqSchema].filter(Boolean)}

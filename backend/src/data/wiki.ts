@@ -2,8 +2,24 @@
 // OUTPUT: 导出百科静态内容与类型标签映射（含符号去 emoji 化）。
 // POS: Wiki 数据源。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import type { Language, WikiItem, WikiItemType, WikiPillar, WikiTrendTag } from '../types/api.js';
+import type { Language, WikiItem, WikiItemType, WikiPillar, WikiSeoOverride, WikiTrendTag } from '../types/api.js';
 import { WIKI_GENERATED_CONTENT } from './wiki-generated.js';
+
+// SEO canonical 收口（P1-1）：把重复/cannibalization 的百科条目 canonical 指向 winner 长文，并
+// 将 loser 从 sitemap 排除。lang-aware —— elements 仅 EN 有 four-element-framework 长文，故 ZH
+// elements 不在表中、保持自指；house-5 / transit-chart 的 winner 双语都有，故 EN+ZH 都收口。
+// canonicalPath 为 lang-relative（消费端前缀 "/<lang>"）。
+const WIKI_SEO_OVERRIDES: Partial<Record<Language, Record<string, WikiSeoOverride>>> = {
+  en: {
+    'house-5': { canonicalPath: '/wiki/5th-house', sitemap: false },
+    elements: { canonicalPath: '/wiki/four-element-framework', sitemap: false },
+    'transit-chart': { canonicalPath: '/wiki/transits', sitemap: false },
+  },
+  zh: {
+    'house-5': { canonicalPath: '/wiki/5th-house', sitemap: false },
+    'transit-chart': { canonicalPath: '/wiki/transits', sitemap: false },
+  },
+};
 
 export interface WikiStaticContent {
   items: WikiItem[];
@@ -27,9 +43,12 @@ const buildEnPlaceholder = (title: string) => ({
 
 const mergeGeneratedContent = (lang: Language, items: WikiItem[]) => {
   const overrides = WIKI_GENERATED_CONTENT?.[lang] || {};
+  const seoOverrides = WIKI_SEO_OVERRIDES[lang] || {};
   return items.map((item) => {
     const override = overrides[item.id];
-    return override ? { ...item, ...override } : item;
+    const merged = override ? { ...item, ...override } : item;
+    const seo = seoOverrides[item.id];
+    return seo ? { ...merged, seo } : merged;
   });
 };
 

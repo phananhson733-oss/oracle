@@ -255,7 +255,16 @@ const WikiDetailPage: React.FC = () => {
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
   const lang = language === "en" ? "en" : "zh";
   const detailPath = id ? `/wiki/${id}` : "/wiki";
-  const canonicalUrl = `${siteUrl}/${lang}${detailPath}`;
+  const selfUrl = `${siteUrl}/${lang}${detailPath}`;
+  // canonical 收口（P1-1）：item.seo.canonicalPath 把重复条目（house-5/elements/transit-chart）
+  // canonical 指向 winner 长文；缺省自指。canonicalPath 为 lang-relative，绝对 URL 则原样用。
+  // 仅 <link rel=canonical> 用收口后的 canonicalUrl（唯一权威信号）；og:url / breadcrumb / schema
+  // 实体 URL 一律用 selfUrl（描述本页自身），与静态 generator 一致，避免首字节与 WRS DOM 结构化数据不一致。
+  const canonicalUrl = item?.seo?.canonicalPath
+    ? item.seo.canonicalPath.startsWith("http")
+      ? item.seo.canonicalPath
+      : `${siteUrl}/${lang}${item.seo.canonicalPath}`
+    : selfUrl;
   const [alternateAvailability, setAlternateAvailability] =
     useState<LanguageAvailability>(() => ({
       zh: lang === "zh",
@@ -375,8 +384,9 @@ const WikiDetailPage: React.FC = () => {
         "@type": "Organization",
         name: "AstrologyWiki",
       },
-      datePublished: new Date().toISOString(),
-      dateModified: new Date().toISOString(),
+      // P2-1：百科条目无真实发布/更新日期。此前用 new Date() 每次渲染都变，导致静态 stub 与
+      // WRS DOM 的 JSON-LD 日期不一致、并向 Google 谎报每日"更新"。Article schema 不要求日期，
+      // 故直接省略，而非伪造时间戳。若将来数据层提供真实 publishedAt/updatedAt 再补回。
       image: item.image_url || `${siteUrl}/og-image.png`,
       articleBody: [
         item.description,
@@ -389,10 +399,10 @@ const WikiDetailPage: React.FC = () => {
         .join("\n\n"),
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": canonicalUrl,
+        "@id": selfUrl,
       },
     };
-  }, [item, siteUrl, canonicalUrl]);
+  }, [item, siteUrl, selfUrl]);
 
   const faqSchema = useMemo(() => {
     if (!item) return null;
@@ -472,8 +482,11 @@ const WikiDetailPage: React.FC = () => {
         title={item.title}
         description={item.description || t.wiki.subtitle}
         keywords={item.keywords}
-        url={canonicalUrl}
-        alternateLanguages={alternateLanguages}
+        url={selfUrl}
+        canonicalUrl={canonicalUrl}
+        robots={item.seo?.robots}
+        // loser 页（canonical 收口到 winner）不发 hreflang，与静态 stub 一致、避免与 canonical 矛盾。
+        alternateLanguages={item.seo?.canonicalPath ? [] : alternateLanguages}
         type="article"
         schema={[
           {
@@ -486,7 +499,7 @@ const WikiDetailPage: React.FC = () => {
               name: "AstrologyWiki",
               url: `${siteUrl}/${lang}/wiki`,
             },
-            url: canonicalUrl,
+            url: selfUrl,
             inLanguage: lang,
             alternateName: item.subtitle || undefined,
             keywords: item.keywords,
@@ -511,7 +524,7 @@ const WikiDetailPage: React.FC = () => {
                 "@type": "ListItem",
                 position: 3,
                 name: item.title,
-                item: canonicalUrl,
+                item: selfUrl,
               },
             ],
           },

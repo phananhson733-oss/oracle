@@ -8,28 +8,28 @@
     "lastmod": "2026-05-30"
   },
   "https://www.astrologywiki.com/en/about": {
-    "hash": "c6afc744c110",
-    "lastmod": "2026-05-30"
+    "hash": "28fad4214a30",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/en/cookies": {
-    "hash": "421aa87423de",
-    "lastmod": "2026-05-30"
+    "hash": "556545837993",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/en/help": {
-    "hash": "c3456d56c6a1",
-    "lastmod": "2026-05-30"
+    "hash": "0ed73c884a00",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/en/privacy": {
-    "hash": "964d89d4a308",
-    "lastmod": "2026-05-30"
+    "hash": "84db299b3c4a",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/en/saturn-return-calculator": {
-    "hash": "83cdbfb2b62d",
-    "lastmod": "2026-05-30"
+    "hash": "e3425f664359",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/en/terms": {
-    "hash": "183117a3dbc6",
-    "lastmod": "2026-05-30"
+    "hash": "2041df472c78",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/en/wiki": {
     "hash": "f34b9ad26147",
@@ -323,10 +323,6 @@
     "hash": "e584a8a93f5e",
     "lastmod": "2026-06-01"
   },
-  "https://www.astrologywiki.com/en/wiki/elements": {
-    "hash": "e2032e7e7655",
-    "lastmod": "2026-06-01"
-  },
   "https://www.astrologywiki.com/en/wiki/fire-element": {
     "hash": "3e155e983baa",
     "lastmod": "2026-06-01"
@@ -355,6 +351,10 @@
     "hash": "32582c2b2cad",
     "lastmod": "2026-06-01"
   },
+  "https://www.astrologywiki.com/en/wiki/highly-sensitive-person": {
+    "hash": "e02c2352766c",
+    "lastmod": "2026-06-02"
+  },
   "https://www.astrologywiki.com/en/wiki/house-1": {
     "hash": "d1206d2adcae",
     "lastmod": "2026-06-01"
@@ -381,10 +381,6 @@
   },
   "https://www.astrologywiki.com/en/wiki/house-4": {
     "hash": "f23c1e3c79f6",
-    "lastmod": "2026-06-01"
-  },
-  "https://www.astrologywiki.com/en/wiki/house-5": {
-    "hash": "631598d07dda",
     "lastmod": "2026-06-01"
   },
   "https://www.astrologywiki.com/en/wiki/house-6": {
@@ -607,10 +603,6 @@
     "hash": "c3b1ddfb7a72",
     "lastmod": "2026-06-01"
   },
-  "https://www.astrologywiki.com/en/wiki/transit-chart": {
-    "hash": "b49776541c41",
-    "lastmod": "2026-06-01"
-  },
   "https://www.astrologywiki.com/en/wiki/transits": {
     "hash": "0fe9415c444c",
     "lastmod": "2026-06-01"
@@ -668,24 +660,24 @@
     "lastmod": "2026-05-30"
   },
   "https://www.astrologywiki.com/zh/about": {
-    "hash": "85c1dbcada21",
-    "lastmod": "2026-05-30"
+    "hash": "7e2ad738e1d2",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/zh/cookies": {
-    "hash": "ac67738f39dc",
-    "lastmod": "2026-05-30"
+    "hash": "eed0d940256a",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/zh/help": {
-    "hash": "6f87af7b163d",
-    "lastmod": "2026-05-30"
+    "hash": "7a178f39a91d",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/zh/privacy": {
-    "hash": "1b6e995d5a3a",
-    "lastmod": "2026-05-30"
+    "hash": "fa34768848db",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/zh/terms": {
-    "hash": "9f1d83909441",
-    "lastmod": "2026-05-30"
+    "hash": "9dc93679558c",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/zh/wiki/10th-house-astrology": {
     "hash": "49e557cf5139",
@@ -798,6 +790,10 @@
   "https://www.astrologywiki.com/zh/wiki/heart-chakra-meaning": {
     "hash": "357b769aecca",
     "lastmod": "2026-06-01"
+  },
+  "https://www.astrologywiki.com/zh/wiki/highly-sensitive-person": {
+    "hash": "8661d9d03c1f",
+    "lastmod": "2026-06-02"
   },
   "https://www.astrologywiki.com/zh/wiki/house-10": {
     "hash": "31bbc8c9c7d0",
@@ -917,10 +913,6 @@
   },
   "https://www.astrologywiki.com/zh/wiki/track-mood-astrology": {
     "hash": "52de687f4784",
-    "lastmod": "2026-06-01"
-  },
-  "https://www.astrologywiki.com/zh/wiki/transit-chart": {
-    "hash": "c23dbbb3cc62",
     "lastmod": "2026-06-01"
   },
   "https://www.astrologywiki.com/zh/wiki/transits": {

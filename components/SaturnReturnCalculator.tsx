@@ -303,8 +303,10 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
   const inputBorder = isDark ? "border-space-600" : "border-paper-300";
   const inputText = isDark ? "text-star-50" : "text-paper-900";
 
-  // P2 fix: canonical URL and hreflang for SPA rendering
-  const canonicalUrl = `${SITE_URL}/${language}/saturn-return-calculator`;
+  // EN-only 工具页：canonical 恒指 /en（仅 /en 有预渲染静态 stub + 进 sitemap）。
+  // 若用户/爬虫到达 /zh/saturn-return-calculator（SPA 可路由），canonical 收口到 /en，避免
+  // 产生一个可索引但无 zh 版、且 hreflang 不宣告 zh 的 orphan 页。
+  const canonicalUrl = `${SITE_URL}/en/saturn-return-calculator`;
   const seoDescription =
     "Calculate when your Saturn Return happens. Enter your birth date to discover your Saturn Return dates, meaning, and how this major life transit affects you.";
 
@@ -324,9 +326,10 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
             "astrology calculator",
             "saturn transit",
           ]}
+          // EN-only 工具页（仅 /en 有预渲染静态 stub）。不宣告 zh alternate，否则指向无静态正文的 shell，
+          // 破坏 hreflang 互惠（与 generate-seo-pages.mjs 的 saturn stub 保持一致）。
           alternateLanguages={[
             { hrefLang: "en", href: `${SITE_URL}/en/saturn-return-calculator` },
-            { hrefLang: "zh", href: `${SITE_URL}/zh/saturn-return-calculator` },
             {
               hrefLang: "x-default",
               href: `${SITE_URL}/en/saturn-return-calculator`,

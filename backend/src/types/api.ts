@@ -765,6 +765,17 @@ export interface WikiLifeArea {
   description: string;
 }
 
+// 每页 SEO 索引策略 override。用于把重复/cannibalization 页（如 house-5 → 5th-house）
+// canonical 收口到 winner、并控制 robots / sitemap 收录。全部可选，缺省即沿用既有自指行为。
+export interface WikiSeoOverride {
+  // lang-relative canonical 路径（如 "/wiki/5th-house"，由消费端前缀 "/<lang>"）；也可传完整绝对 URL。
+  canonicalPath?: string;
+  // robots 指令（如 "index,follow" | "noindex,follow"）。缺省时不输出 robots meta（沿用现状）。
+  robots?: string;
+  // sitemap 收录提示：显式 false 时该 URL 不进 sitemap.xml（runtime 忽略此字段）。
+  sitemap?: boolean;
+}
+
 export interface WikiItem {
   id: string;
   type: WikiItemType;
@@ -789,6 +800,7 @@ export interface WikiItem {
   practical_tips?: string[];
   common_misconceptions?: string[];
   affirmation?: string;
+  seo?: WikiSeoOverride;
 }
 
 export interface WikiItemSummary {

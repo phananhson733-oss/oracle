@@ -76,7 +76,10 @@ const REQUEST_TIMEOUT_MS = 15000;
 const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
 const LOCAL_CACHE_PREFIX = "astro_cache_v2";
-const WIKI_CACHE_VERSION = "v4";
+// v5：P1-1 给 house-5/elements/transit-chart 加了 seo.canonicalPath。bump 版本失效旧缓存，
+// 否则部署前缓存过这些 item 的用户读到无 seo 字段的旧体，运行时把 canonical 算回自指、不抑制 hreflang，
+// 令 canonical 收口对老缓存用户失效。
+const WIKI_CACHE_VERSION = "v5";
 const AI_CACHE_VERSION = "v5";
 
 type ApiErrorPayload = { error?: string; reason?: string };

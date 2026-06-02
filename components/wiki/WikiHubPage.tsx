@@ -54,8 +54,9 @@ const WikiHubPage: React.FC = () => {
     import.meta.env.VITE_SITE_URL || "https://www.astrologywiki.com";
   const lang = language === "en" ? "en" : "zh";
   const canonicalUrl = `${siteUrl}/${lang}/wiki`;
+  // P1-2：wiki hub 仅预渲染 EN（/zh/wiki 不进 sitemap、无静态 stub）。运行时必须与静态 stub 一致，
+  // 只宣告 en + x-default —— 否则会向不存在的 /zh/wiki 发 zh hreflang，且首字节静态 HTML 与水合 DOM 互相矛盾。
   const alternateLanguages = [
-    { hrefLang: "zh", href: `${siteUrl}/zh/wiki` },
     { hrefLang: "en", href: `${siteUrl}/en/wiki` },
     { hrefLang: "x-default", href: `${siteUrl}/en/wiki` },
   ];

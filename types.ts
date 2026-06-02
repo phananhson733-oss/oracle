@@ -883,6 +883,14 @@ export interface WikiLifeArea {
   description: string;
 }
 
+// 每页 SEO 索引策略 override（前端镜像，与 backend/src/types/api.ts 的同名接口保持一致）。
+// 用于把重复/cannibalization 页 canonical 收口到 winner、并控制 robots / sitemap。全部可选。
+export interface WikiSeoOverride {
+  canonicalPath?: string;
+  robots?: string;
+  sitemap?: boolean;
+}
+
 export interface WikiItem {
   id: string;
   type: WikiItemType;
@@ -907,6 +915,7 @@ export interface WikiItem {
   practical_tips?: string[];
   common_misconceptions?: string[];
   affirmation?: string;
+  seo?: WikiSeoOverride;
 }
 
 export interface WikiItemSummary {
@@ -1088,6 +1097,7 @@ export interface WikiArticle {
   keywords: string[];
   schema: "Article" | "HowTo" | "FAQPage";
   lang: Language;
+  seo?: WikiSeoOverride;
 }
 
 export interface WikiArticleSummary {

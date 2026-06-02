@@ -5,6 +5,8 @@ interface SEOProps {
   description?: string;
   image?: string;
   url?: string;
+  /** 显式 canonical override。设置后 <link rel=canonical> 用它而非 self/url，避免 WRS 把静态 canonical 改回自指。可传 lang-relative 或绝对 URL。 */
+  canonicalUrl?: string;
   type?: 'website' | 'article' | 'book' | 'profile';
   schema?: Record<string, any> | Array<Record<string, any>>;
   keywords?: string[];
@@ -24,6 +26,7 @@ export const SEO: React.FC<SEOProps> = ({
   description = 'AstrologyWiki - Your guide to modern astrology, psychology, and self-discovery.',
   image = '/og-image.png',
   url,
+  canonicalUrl,
   type = 'website',
   schema,
   keywords = [],
@@ -48,6 +51,9 @@ export const SEO: React.FC<SEOProps> = ({
     return `${baseUrl}${value.startsWith('/') ? '' : '/'}${value}`;
   };
   const resolvedImage = resolveAbsoluteUrl(image);
+  // canonical 优先用显式 override（来自 seo.canonicalPath），否则回退 self/url。
+  // 这样静态 stub 与运行时输出同一个 canonical，WRS 执行 React 后不会改回自指。
+  const resolvedCanonical = resolveAbsoluteUrl(canonicalUrl || currentUrl);
   const allKeywords = useMemo(() => [
     'astrology',
     'psychological astrology',
@@ -198,7 +204,7 @@ export const SEO: React.FC<SEOProps> = ({
     upsertMeta('name', 'keywords', allKeywords);
     upsertMeta('name', 'author', author);
     if (robots) upsertMeta('name', 'robots', robots);
-    upsertLink('canonical', currentUrl);
+    upsertLink('canonical', resolvedCanonical);
     alternateLanguages.forEach((alt) => {
       upsertLink('alternate', alt.href, { hreflang: alt.hrefLang });
     });
@@ -240,6 +246,7 @@ export const SEO: React.FC<SEOProps> = ({
     author,
     robots,
     currentUrl,
+    resolvedCanonical,
     resolvedImage,
     type,
     siteTitle,

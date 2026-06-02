@@ -150,7 +150,24 @@
   <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950 loading-fonts">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-gold-500 focus:text-space-950 focus:font-bold focus:text-sm focus:outline-none">Skip to main content</a>
     <div class="bg-noise"></div>
-    <div id="root" class="relative z-10"></div>
+    <!-- P0-1：root '/' 静态首屏 fallback。爬虫读原始 HTML 即见 h1+正文+核心链接（修复首页空壳 soft 404）；
+         浏览器执行 /index.tsx 后 ReactDOM.createRoot 在 #root 上挂载并替换这段内容（无水合不匹配，见 index.tsx）。
+         h1 与 HeroSection 水合后的 h1 文案完全一致以避免 CLS。inject-spa-into-stubs.mjs 故意跳过 dist/index.html，
+         故 root 的静态正文只能写在本模板的 #root 内，不经该 injector。 -->
+    <div id="root" class="relative z-10">
+      <main>
+        <p>Astrology · Psychology · Self-Knowledge</p>
+        <h1>Astrology meets modern psychology.</h1>
+        <p>Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up.</p>
+        <nav aria-label="AstrologyWiki tools">
+          <a href="/en/">Free Birth Chart Calculator</a>
+          <a href="/en/saturn-return-calculator">Saturn Return Calculator</a>
+          <a href="/en/wiki">Astrology Wiki — planets, signs, houses &amp; aspects</a>
+          <a href="/en/wiki/transits">Today's Sky &amp; Planetary Transits</a>
+        </nav>
+        <p>Built on real astronomy, not fortune-telling. Used by readers in 50+ countries.</p>
+      </main>
+    </div>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
