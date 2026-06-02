@@ -375,7 +375,10 @@ const buildItemListSchema = (lang, pathSuffix, items) => ({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   itemListElement: items.map((item, index) => {
-    const url = `${siteUrl}/${lang}${pathSuffix}/${item.id}`;
+    // P1-1：canonicaled-away 的 loser 条目（house-5/elements/transit-chart）在 hub 列表里指向 winner，
+    // 避免结构化数据替自我否定权威的 loser 背书、削弱 canonical 收口信号。
+    const selfUrl = `${siteUrl}/${lang}${pathSuffix}/${item.id}`;
+    const url = resolveCanonicalUrl({ seo: item.seo, lang, selfUrl, siteUrl });
     return {
       '@type': 'ListItem',
       position: index + 1,
@@ -747,6 +750,9 @@ const ARTICLE_SLUGS = [
   'signs-of-a-highly-sensitive-person',
   'highly-sensitive-person-vs-autism',
   'famous-highly-sensitive-people',
+  // 6/2 MAHADASHA cluster (sequential staggered, pillar first):
+  // mahadasha -> rahu -> ketu -> saturn(shani) -> venus.
+  'mahadasha',
 ];
 
 // EN-only featured articles (v8 aura batch 2026-05-22). Excluded from
@@ -1076,7 +1082,7 @@ const generate = async () => {
         ogType: 'article',
         // loser 页（canonical 指向 winner）不发 hreflang：canonicaled-away 页若仍声明指向自己的
         // hreflang，会与 canonical 互相矛盾（且可能指向未生成的 zh loser 页）。winner 自带 hreflang 簇。
-        alternates: item.seo?.canonicalPath ? [] : buildAlternateLinks(`/wiki/${item.id}`, alternateAvailability),
+        alternates: item.seo?.canonicalPath || item.seo?.alternates === false ? [] : buildAlternateLinks(`/wiki/${item.id}`, alternateAvailability),
         schema: [
           buildDefinedTermSchema(lang, item, itemUrl),
           buildBreadcrumb(lang, [
