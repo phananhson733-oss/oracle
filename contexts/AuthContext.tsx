@@ -19,6 +19,8 @@ import {
   getAccessToken,
 } from '../services/authClient';
 import { setUserId, setUserProperties, trackEvent } from '../services/analytics';
+import { getLandingUtm } from '../services/landingUtm';
+import { FUNNEL_EVENTS } from '../services/funnelEvents';
 import { FREE_MODE, LOGIN_GATE_MODE } from '../constants';
 import type { EntitlementsV2 } from '../services/entitlementClientV2';
 import { cacheEntitlements, clearEntitlementsCache, getCachedEntitlements, getEntitlementsV2 } from '../services/entitlementClientV2';
@@ -164,6 +166,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(result.user);
     setUserId(result.user.id);
     trackEvent('signup_completed', { method: 'email' });
+    // Funnel attribution spine — step 4 (additive, see services/funnelEvents.ts).
+    // NON-PII only: method + UTM attribution. Never email / name — 隐私红线 #1.
+    // (save_intent / auth_prompted / chart_migrated steps belong to backlog #7.)
+    trackEvent(FUNNEL_EVENTS.accountCreated, { ...getLandingUtm(), method: 'email' });
     setShowLoginModal(false);
   };
 
@@ -177,6 +183,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(result.user);
     setUserId(result.user.id);
     trackEvent('signup_completed', { method: 'email_verified' });
+    // Funnel attribution spine — step 4 (additive, see services/funnelEvents.ts).
+    // NON-PII only: method + UTM attribution. Never email / name — 隐私红线 #1.
+    trackEvent(FUNNEL_EVENTS.accountCreated, { ...getLandingUtm(), method: 'email_verified' });
     setShowLoginModal(false);
   };
 

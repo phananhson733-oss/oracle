@@ -34,6 +34,7 @@ const AstroChart = lazy(() =>
 import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { getLandingUtm } from "../../services/landingUtm";
+import { FUNNEL_EVENTS } from "../../services/funnelEvents";
 import {
   DateSelectGroup,
   DEFAULT_MONTH_NAMES_EN,
@@ -317,6 +318,17 @@ const BirthChartSection: React.FC = () => {
           location: "landing_v2_birth_chart_submit",
           ...getLandingUtm(),
         });
+        // Funnel attribution spine — step 1 (additive, see services/funnelEvents.ts).
+        // NON-PII only: source / has_time(boolean) / language + UTM attribution.
+        // NEVER birthCity / lat / lon / birthDate / name — 隐私红线 #1.
+        // Next steps (save_intent / auth_prompted / chart_migrated) are wired by
+        // backlog #7's save -> login -> migration flow, not here.
+        trackEvent(FUNNEL_EVENTS.chartCast, {
+          ...getLandingUtm(),
+          source: "landing_v2_birth_chart",
+          has_time: !timeUnknown && birthTime.trim().length > 0,
+          language,
+        });
         window.requestAnimationFrame(() => {
           const el = document.getElementById("birth-chart-result");
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -360,6 +372,7 @@ const BirthChartSection: React.FC = () => {
       name,
       submitting,
       timeUnknown,
+      language,
       landing.birth_chart_form_city_required,
       landing.birth_chart_form_date_required,
       landing.birth_chart_submit,
