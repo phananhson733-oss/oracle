@@ -774,6 +774,9 @@ export interface WikiSeoOverride {
   robots?: string;
   // sitemap 收录提示：显式 false 时该 URL 不进 sitemap.xml（runtime 忽略此字段）。
   sitemap?: boolean;
+  // hreflang 抑制：显式 false 时该页不发 hreflang alternates。用于无有效跨语对应页的自指页
+  // （如 zh/wiki/elements——en 兄弟页已 canonical 收口，声明 en alternate 会指向 loser 且非互惠）。
+  alternates?: boolean;
 }
 
 export interface WikiItem {

@@ -11,6 +11,10 @@
     <title>AstrologyWiki — Free Birth Chart, Today's Sky &amp; Synastry Calculator</title>
     <meta name="description" content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up." />
     <meta name="keywords" content="free birth chart, birth chart calculator, natal chart, today's sky, planetary transits, synastry, relationship compatibility, saturn return, psychological astrology, modern astrology" />
+    <!-- P0-1：静态 canonical + robots，与水合后 SEO.tsx 注入值一致（SEO.tsx upsert 同一标签，不产生重复）。
+         首页是 sitemap priority 1.0 入口，静态首字节须自带 canonical/robots，不依赖 WRS 执行 JS 后补。 -->
+    <link rel="canonical" href="https://www.astrologywiki.com/" />
+    <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0A0B0D" />
     <!-- Google Search Console verification meta is injected at deploy time. Do not
          ship a hard-coded placeholder — it gets indexed as a malformed token. -->
@@ -165,6 +169,24 @@
           <a href="/en/wiki">Astrology Wiki — planets, signs, houses &amp; aspects</a>
           <a href="/en/wiki/transits">Today's Sky &amp; Planetary Transits</a>
         </nav>
+        <section aria-label="What you can do">
+          <h2>Tools and guides for self-understanding</h2>
+          <p>AstrologyWiki pairs Swiss-ephemeris astronomy with frameworks from modern psychology, so every chart reads as a map of tendencies — not a fixed fate. Generate your natal chart in seconds, see how today's transits touch your placements, compare two charts with synastry, or look up any planet, sign, house, or aspect in the wiki. Everything is free, with no account required.</p>
+        </section>
+        <section aria-label="Featured guides">
+          <h2>Featured guides</h2>
+          <ul>
+            <li><a href="/en/wiki/transits">Planetary transits</a> — how the moving sky activates your birth chart, and how to read a transit without doom or hype.</li>
+            <li><a href="/en/wiki/natal-chart-transits">Natal chart transits</a> — a step-by-step guide to tracking the current sky against your own placements.</li>
+            <li><a href="/en/wiki/5th-house">The 5th house</a> — creativity, play, romance, and self-expression in the natal chart.</li>
+            <li><a href="/en/wiki/four-element-framework">The four elements</a> — fire, earth, air, and water as a psychological temperament model.</li>
+            <li><a href="/en/wiki/highly-sensitive-person">The highly sensitive person</a> — what astrology and trait-sensitivity research say about deep processing.</li>
+          </ul>
+        </section>
+        <section aria-label="Explore the wiki">
+          <h2>Explore the wiki</h2>
+          <p>Browse plain-language entries on the <a href="/en/wiki">planets, zodiac signs, houses, and aspects</a>, read the <a href="/en/wiki/classics">astrology classics</a>, or calculate your <a href="/en/saturn-return-calculator">Saturn return</a> — the late-twenties turning point when Saturn comes back to where it sat at your birth. Each page explains the symbolism in grounded, psychological language you can actually use.</p>
+        </section>
         <p>Built on real astronomy, not fortune-telling. Used by readers in 50+ countries.</p>
       </main>
     </div>

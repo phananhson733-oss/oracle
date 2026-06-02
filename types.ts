@@ -889,6 +889,8 @@ export interface WikiSeoOverride {
   canonicalPath?: string;
   robots?: string;
   sitemap?: boolean;
+  // hreflang 抑制：显式 false 时不发 hreflang alternates（无有效跨语对应页的自指页，如 zh/wiki/elements）。
+  alternates?: boolean;
 }
 
 export interface WikiItem {

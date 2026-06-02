@@ -485,8 +485,13 @@ const WikiDetailPage: React.FC = () => {
         url={selfUrl}
         canonicalUrl={canonicalUrl}
         robots={item.seo?.robots}
-        // loser 页（canonical 收口到 winner）不发 hreflang，与静态 stub 一致、避免与 canonical 矛盾。
-        alternateLanguages={item.seo?.canonicalPath ? [] : alternateLanguages}
+        // loser 页（canonical 收口到 winner）或 seo.alternates===false（无有效跨语对应页）不发 hreflang，
+        // 与静态 stub 一致、避免与 canonical 矛盾或声明指向 loser 的非互惠 alternate。
+        alternateLanguages={
+          item.seo?.canonicalPath || item.seo?.alternates === false
+            ? []
+            : alternateLanguages
+        }
         type="article"
         schema={[
           {

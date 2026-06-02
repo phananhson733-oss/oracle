@@ -18,6 +18,9 @@ const WIKI_SEO_OVERRIDES: Partial<Record<Language, Record<string, WikiSeoOverrid
   zh: {
     'house-5': { canonicalPath: '/wiki/5th-house', sitemap: false },
     'transit-chart': { canonicalPath: '/wiki/transits', sitemap: false },
+    // zh 无 four-element-framework 文章，故 elements 保持自指 canonical + 进 sitemap；但其 en 兄弟页
+    // /en/wiki/elements 已 canonical 收口，故抑制 hreflang，避免声明指向 loser 的非互惠 alternate。
+    elements: { alternates: false },
   },
 };
 

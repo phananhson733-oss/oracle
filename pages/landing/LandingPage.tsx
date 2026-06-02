@@ -89,9 +89,11 @@ const LandingPage: React.FC = () => {
       ? `${siteUrl}/landing-v2/${lang}/`
       : `${siteUrl}/landing-v2`;
   const alternateLanguages = isRootRoute
-    ? [
+    ? // 根 "/" 是英文主页，无对应的 "/" 中文版（zh landing 在 /landing-v2/zh/，属另一簇）。
+      // 此前声明 zh → /landing-v2/zh/ 是非互惠 hreflang（目标回指 /landing-v2/en/ 而非 /），
+      // Google 会忽略整条注解。改为只发 en + x-default → /，与 saturn/wiki hub 的"无真 zh 等价页"处理一致。
+      [
         { hrefLang: "en", href: `${siteUrl}/` },
-        { hrefLang: "zh", href: `${siteUrl}/landing-v2/zh/` },
         { hrefLang: "x-default", href: `${siteUrl}/` },
       ]
     : isLangPrerenderedRoute

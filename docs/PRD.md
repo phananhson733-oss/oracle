@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.16
-> **Last Updated**: 2026-06-01
+> **Version**: 2.17
+> **Last Updated**: 2026-06-02
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -291,6 +291,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `/zh/**` — 中文 SEO 页面族
 - 输出至 `public/en/`、`public/zh/` 目录，由 Vercel 直接托管
 
+**Canonical 收口（cannibalization 防治）**：百科短词条（`WikiItem`）与长文（`WikiArticle`）共享 `/{lang}/wiki/{slug}` URL 空间时会争抢同一搜索意图。数据层用 `WikiItem.seo` / `WikiArticle.seo`（类型 `WikiSeoOverride { canonicalPath?, robots?, sitemap?, alternates? }`，定义于 `types.ts` 与 `backend/src/types/api.ts`）声明索引策略：loser 页 `canonicalPath` 指向 winner 长文、`sitemap: false` 排除收录、抑制 hreflang。当前收口对：`house-5 → 5th-house`、`elements → four-element-framework`（仅 en；zh 无对应长文故自指，并以 `alternates: false` 抑制指向 en loser 的非互惠 hreflang）、`transit-chart → transits`。`natal-chart-transits` 不合并（是 transits pillar 的 spoke）。解析逻辑集中在 `scripts/lib/seo-canonical.mjs`（`resolveCanonicalUrl` / `includeInSitemap`），静态脚本（`generate-seo-pages.mjs`）与运行时（`components/SEO.tsx` / `WikiDetailPage`）共用同一策略，保证双渲染路径一致。
+
 ### 2.11 法律合规页面 (Legal Pages)
 
 公开法律合规页面，GDPR/CCPA 合规必需：
@@ -343,7 +345,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **路由**: `/landing-v2` (前端 SPA) · 静态 SEO 镜像 `/landing-v2/en/`、`/landing-v2/zh/`
 
-模块化营销 landing page，作为新版首页的 staging 环境。当前 `/` 仍重定向至 `/:lang/wiki` 保留 SEO 收益；待 v2 在 staging 验证完成后再切换为正式首页。
+模块化营销 landing page。2026-05-19 L2 cutover 后，正式首页 `/` 已**直接渲染 `LandingPageV2`**（root canonical、`index,follow`、静态首屏 fallback + SPA 水合；见 `App.tsx` 与 `index.html` 的 `#root` 静态正文）；`/landing-v2/{en,zh}/` 保留为 staging SEO 镜像。
 
 **设计依据**：`~/.gstack/projects/xdawayer-oracle/wzb-main-design-20260518-161110.md`（design + eng review 已 APPROVED）
 
@@ -607,7 +609,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 │   │   └── db/                 # 数据库 Schema
 │   └── migrations/             # 数据库迁移文件
 ├── public/                     # 静态资源
-├── scripts/                    # SEO 构建脚本
+├── scripts/                    # SEO 构建脚本（generate-seo-pages / inject-spa-into-stubs）
+│   └── lib/                    # 共享纯函数（seo-canonical.mjs：canonical 解析 / sitemap 收录判定）
 ├── docs/                       # 文档
 └── vercel.json                 # Vercel 部署配置
 ```
