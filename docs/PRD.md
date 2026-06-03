@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.17
-> **Last Updated**: 2026-06-02
+> **Version**: 2.18
+> **Last Updated**: 2026-06-03
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -1101,6 +1101,10 @@ JWT Token 结构:
 - `/api/*` → `backend/src/index.ts` (Serverless Function)
 - `/landing-v2/{en,zh}/index.html` → 静态预渲染 HTML（SEO 镜像，由 `scripts/generate-seo-pages.mjs` 生成）
 - `/*` → `index.html` (SPA Fallback)
+
+**安全响应头**（`vercel.json` headers，`source: "/(.*)"`）：
+- `Cross-Origin-Opener-Policy: same-origin-allow-popups`
+- `Content-Security-Policy-Report-Only`（**非强制，仅上报不阻断**）：按 `docs/CSP_DOMAIN_ALLOWLIST.md` 的 directive 分组放行 GA4/GTM、Google Fonts、Google GIS、Unsplash、transparenttextures、Airwallex 等域名；`script-src`/`style-src` 暂用 `'unsafe-inline'` 占位（enforce 前需改 nonce/hash）。这是 backlog #8 重新启用 enforcing CSP 前的实测收集阶段——后端 helmet 的 `contentSecurityPolicy:false` 暂保持不变。
 
 **Landing v2 上线策略**：
 - `/landing-v2` 是新版营销首页的 staging 路由，**v2.6 阶段仅作灰度验证**
