@@ -769,6 +769,8 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'what-is-a-full-moon-ritual',
+  'solar-return-chart',
   'aura-colors-pillar',
   'blue-aura-meaning',
   'yellow-aura-meaning',
