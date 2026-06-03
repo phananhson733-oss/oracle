@@ -73,6 +73,7 @@ import {
 } from "./components/auth";
 import { CreditsModal } from "./components/payment";
 import { ConsentBanner } from "./components/ConsentBanner";
+import { MobileBottomNav } from "./components/MobileBottomNav";
 import { Footer } from "./components/Footer";
 import { useAnalyticsTracking } from "./hooks/useAnalytics";
 
@@ -776,11 +777,13 @@ const AppContent: React.FC = () => {
         role="main"
         className={
           showNav
-            ? isLandingRoute
-              ? "" /* Hero section provides its own pt-16 to clear the fixed nav. */
+            ? // max-md:pb-24 clears the fixed mobile bottom tab bar so the last
+              // row of content is never hidden behind it (desktop keeps pb-12).
+              isLandingRoute
+              ? "max-md:pb-24" /* Hero section provides its own pt-16 to clear the fixed nav. */
               : location.pathname === "/journal"
-                ? "pt-16 pb-12"
-                : "pt-24 pb-12"
+                ? "pt-16 pb-12 max-md:pb-24"
+                : "pt-24 pb-12 max-md:pb-24"
             : ""
         }
       >
@@ -1123,6 +1126,7 @@ const AppContent: React.FC = () => {
       )}
 
       {showNav && <Footer />}
+      {showNav && <MobileBottomNav />}
       <ConsentBanner />
       {/* Auth Modals */}
       <LoginModal />

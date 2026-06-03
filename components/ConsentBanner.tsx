@@ -124,6 +124,10 @@ export const ConsentBanner: React.FC = () => {
     savePrefs: language === "zh" ? "保存偏好" : "Save Preferences",
     cookiePolicy: language === "zh" ? "Cookie 政策" : "Cookie Policy",
     alwaysOn: language === "zh" ? "始终开启" : "Always on",
+    analyticsToggleLabel:
+      language === "zh" ? "启用分析 Cookie" : "Enable analytics cookies",
+    marketingToggleLabel:
+      language === "zh" ? "启用营销 Cookie" : "Enable marketing cookies",
   };
 
   return (
@@ -204,12 +208,19 @@ export const ConsentBanner: React.FC = () => {
             {/* Analytics Cookies */}
             <div className={`pb-4 border-b ${dividerClasses}`}>
               <div className="flex items-center justify-between mb-1">
-                <span className={`font-medium ${labelClasses}`}>
+                <label
+                  htmlFor="consent-analytics"
+                  className={`font-medium cursor-pointer ${labelClasses}`}
+                >
                   {content.analyticsLabel}
-                </span>
+                </label>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input
+                    id="consent-analytics"
                     type="checkbox"
+                    role="switch"
+                    aria-label={content.analyticsToggleLabel}
+                    aria-checked={prefs.analytics}
                     checked={prefs.analytics}
                     onChange={(e) =>
                       setPrefs({ ...prefs, analytics: e.target.checked })
@@ -227,12 +238,19 @@ export const ConsentBanner: React.FC = () => {
             {/* Marketing Cookies */}
             <div className="pb-4">
               <div className="flex items-center justify-between mb-1">
-                <span className={`font-medium ${labelClasses}`}>
+                <label
+                  htmlFor="consent-marketing"
+                  className={`font-medium cursor-pointer ${labelClasses}`}
+                >
                   {content.marketingLabel}
-                </span>
+                </label>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input
+                    id="consent-marketing"
                     type="checkbox"
+                    role="switch"
+                    aria-label={content.marketingToggleLabel}
+                    aria-checked={prefs.marketing}
                     checked={prefs.marketing}
                     onChange={(e) =>
                       setPrefs({ ...prefs, marketing: e.target.checked })

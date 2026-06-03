@@ -17,7 +17,8 @@
 - TechSpecsComponents.tsx｜地位：功能组件｜功能：技术参数表格与列表 UI。
 - UIComponents.tsx｜地位：基础组件库｜功能：主题/语言上下文与通用组件。
 - payment.tsx｜地位：功能弹窗｜功能：积分充值占位弹窗与订阅引导。
-- ConsentBanner.tsx｜地位：提示组件｜功能：展示分析追踪同意横幅并收集授权。
+- ConsentBanner.tsx｜地位：提示组件｜功能：展示分析追踪同意横幅并收集授权（analytics/marketing toggle 以 htmlFor + aria-label 暴露可访问名 + role=switch）。
+- MobileBottomNav.tsx｜地位：导航组件｜功能：移动端（<md）固定底部 tab bar，icon + label + active 高亮，镜像顶部 6 个 nav 项与 t.nav.*/isActive 逻辑；safe-area 内边距，z-[150] 让位 consent banner（z-[200]）。
 - Breadcrumb.tsx｜地位：导航组件｜功能：面包屑导航与结构化数据输出。
 - ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式）。
 - ChartMiniCalc.tsx｜地位：工具组件｜功能：tool-led 北交点迷你计算器（客户端纯查表，DOB 不出浏览器；instrument chart_start/result_shown/full_chart_cta_click 漏斗，只送分类字段）。分层互补定位：作为 #6 全盘（WikiChartCTA/BirthChartSection）的轻型上游钩子，结果区 CTA 经 `fullChartHref` prop 指向全盘（默认回退 /auth）。
@@ -29,6 +30,7 @@
 - wiki｜地位：Wiki 组件目录｜功能：心理占星百科页面与详情组件。
 
 近期更新
+- 新增 MobileBottomNav（移动端固定底部 tab bar，复用顶部 6 项 + t.nav.* + isActive，safe-area + z-[150] 让位 consent banner）；ConsentBanner 的 analytics/marketing toggle 补可访问名（htmlFor 关联可见文字 + aria-label en/zh + role=switch），不改持久化逻辑。
 - 新增 SafetyFooter（psych-adjacent 强制安全 footer 的 SPA 渲染），并由 WikiArticleDetailPage 在 article.embeddedTool/psychAdjacent 时挂载 ChartMiniCalc + SafetyFooter（embeddedTool 在场时抑制底部 WikiChartCTA，避免重复 CTA）。
 - 支付成功页增加 PayPal 订阅确认兜底，同步登录/订阅状态并默认返回个人信息页，避免订阅后回到 onboarding。
 - 新增积分充值弹窗组件（CreditsModal），展示积分余额并引导订阅，充值入口保持占位提示。
