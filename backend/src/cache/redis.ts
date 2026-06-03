@@ -3,6 +3,7 @@
 // POS: Redis 缓存实现；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import Redis from 'ioredis';
+import { logger } from '../utils/logger.js';
 import type { CacheService } from './strategy.js';
 
 const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
@@ -39,7 +40,7 @@ class RedisCacheService implements CacheService {
       await this.client.connect();
       return this.client;
     } catch {
-      console.warn('Redis connection failed, using in-memory fallback');
+      logger.warn('Redis connection failed, using in-memory fallback');
       this.connectionFailed = true;
       return null;
     }

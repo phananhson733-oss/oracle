@@ -9,6 +9,7 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
+import { logger } from "./utils/logger.js";
 import { natalRouter } from "./api/natal.js";
 import { dailyRouter } from "./api/daily.js";
 import { askRouter } from "./api/ask.js";
@@ -94,8 +95,7 @@ app.use(
       // sends a giant header.
       const safeOrigin =
         typeof origin === "string" ? origin.slice(0, 200) : String(origin);
-      // eslint-disable-next-line no-console
-      console.warn(`[cors] rejected origin: ${safeOrigin}`);
+      logger.warn("CORS rejected origin", { origin: safeOrigin });
       callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
@@ -295,7 +295,7 @@ app.get("/api/config", (_, res) =>
   res.json({ paymentProvider: PAYMENT_PROVIDER }),
 );
 
-console.log(`💳 Payment provider: ${PAYMENT_PROVIDER}`);
+logger.info("Payment provider configured", { provider: PAYMENT_PROVIDER });
 
 app.use("/api/entitlements", entitlementsRouter);
 app.use("/api/entitlements", entitlementsV2Router); // V2 路由挂载在 /v2 子路径
@@ -307,5 +307,5 @@ app.use("/api/newsletter", newsletterRouter);
 app.get("/health", (_, res) => res.json({ status: "ok" }));
 
 app.listen(PORT, () => {
-  console.log(`Backend running on port ${PORT}`);
+  logger.info("Backend running", { port: PORT });
 });

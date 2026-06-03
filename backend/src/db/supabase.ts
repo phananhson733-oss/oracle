@@ -1,5 +1,6 @@
 // Supabase client configuration
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { logger } from '../utils/logger.js';
 import dotenv from 'dotenv';
 import path from 'path';
 
@@ -17,7 +18,7 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 const isPlaceholder = supabaseUrl.includes('placeholder') || !supabaseUrl || !supabaseServiceKey;
 
 if (isPlaceholder) {
-  console.warn('Warning: Supabase credentials not configured or using placeholder. Payment features will be disabled.');
+  logger.warn('Supabase credentials not configured or using placeholder; payment features disabled.');
 }
 
 // Service role client for backend operations (bypasses RLS)
