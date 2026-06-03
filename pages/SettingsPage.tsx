@@ -260,6 +260,14 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                         </div>
                     </div>}
 
+                    <button
+                        onClick={() => navigate('/saved')}
+                        className={`w-full rounded-lg px-4 py-3 text-sm font-bold transition-colors text-left flex items-center justify-between ${theme === 'dark' ? 'bg-space-800/50 hover:bg-space-700 text-star-50' : 'bg-paper-50 hover:bg-paper-100 text-paper-900'}`}
+                    >
+                        <span>{t.saved?.title || 'Saved Readings'}</span>
+                        <span>›</span>
+                    </button>
+
                     <ActionButton onClick={() => { logout(); navigate('/'); }} size="sm" variant="secondary" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10 hover:border-red-500/50">
                         {language === 'zh' ? '退出登录' : 'Log Out'}
                     </ActionButton>
