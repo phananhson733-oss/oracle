@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.19
+> **Version**: 2.20
 > **Last Updated**: 2026-06-03
 > **Status**: Living Document — synced with codebase
 
@@ -535,6 +535,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | **Runtime** | Node.js | 20.x |
 | **Database** | PostgreSQL (Supabase) | 8.x |
 | **Cache** | Redis (IORedis) | 5.3 |
+| **Error Monitoring** | Sentry (`@sentry/node`) | 10.x（仅 `SENTRY_DSN` 配置时动态加载启用，否则不初始化） |
 | **AI Model** | DeepSeek API | — |
 | **Astro Engine** | Swiss Ephemeris | 0.5.17 |
 | **Auth** | JWT + bcryptjs | jsonwebtoken 9.0 |
@@ -1097,6 +1098,7 @@ JWT Token 结构:
 | `REDIS_URL` | IORedis 连接（缓存 + Reservation TTL） | All | 必填 |
 | `SUPABASE_URL` / `SUPABASE_SERVICE_KEY` | 数据库连接 | All | 必填 |
 | `CRON_SECRET` | Cron endpoint 鉴权 | All | 必填 |
+| `SENTRY_DSN` | 错误监控（Sentry）；未设则不加载 SDK、不初始化（生产 no-op，非 mock） | All | 选填 |
 | 其余 | OAuth secrets / 支付 secrets / 邮件 secrets | All | 详见 backend/.env.example |
 
 **Vercel 路由配置**:
