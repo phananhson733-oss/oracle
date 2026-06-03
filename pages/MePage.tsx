@@ -31,6 +31,7 @@ import { trackEvent } from "../services/analytics";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntitlement } from "../contexts/EntitlementContext";
 import * as Astro from "../services/astroService";
+import SaveReadingButton from "../components/SaveReadingButton";
 import {
   formatTimezoneOffset,
   buildBirthCacheKey,
@@ -809,7 +810,17 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
         <div>
           {overview && (
-            <Section title={t.me.glance_title}>
+            <Section
+              title={t.me.glance_title}
+              action={
+                <SaveReadingButton
+                  toolType="natal"
+                  title={`${t.saved?.type_natal || "Natal chart"} · ${profile.birthDate}`}
+                  inputJson={profile as unknown as Record<string, unknown>}
+                  outputJson={overview as unknown as Record<string, unknown>}
+                />
+              }
+            >
               <QuickGlance data={overview} />
             </Section>
           )}

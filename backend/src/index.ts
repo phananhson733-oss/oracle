@@ -33,6 +33,7 @@ import entitlementsV2Router from "./api/entitlementsV2.js";
 import reportsRouter from "./api/reports.js";
 import gmRouter from "./api/gm.js";
 import { newsletterRouter } from "./api/newsletter.js";
+import { savedReadingsRouter } from "./api/savedReadings.js";
 import { apiResponseMiddleware } from "./utils/apiResponse.js";
 
 import { initMonitoring, captureError } from "./observability/monitoring.js";
@@ -307,6 +308,7 @@ app.use("/api/entitlements", entitlementsV2Router); // V2 路由挂载在 /v2 �
 app.use("/api/reports", reportsRouter);
 app.use("/api/gm", gmRouter); // GM 测试命令
 app.use("/api/newsletter", newsletterRouter);
+app.use("/api/saved-readings", savedReadingsRouter);
 
 // Unhandled-error capture: report to monitoring (no-op unless active), then
 // delegate to the default handler. Context is method+path only (non-PII); any

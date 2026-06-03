@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.21
+> **Version**: 2.22
 > **Last Updated**: 2026-06-03
 > **Status**: Living Document — synced with codebase
 
@@ -275,16 +275,22 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 展示用户的积分余额与消耗明细，包含各功能的使用量追踪。
 
-#### 2.10.3 支付结果页
+#### 2.10.3 已保存解读 (Saved Readings — #24)
+
+**路由**: `/saved` (SavedReadingsPage，列表) · `/saved/:id` (SavedReadingDetailPage，只读详情) — 均为登录态保护路由（`PROTECTED_PATHS`），不可索引、无 SEO 静态页。
+
+登录用户可保存生成的解读（natal/cycle/synastry）以便回看，重开不再消耗 credits。结果页（MePage/CyclesPage）提供 Save 按钮（匿名点击打开登录弹窗）；Settings 提供入口。后端 `saved_readings` 表持久化（见 §4.4），最高 PII：出生输入按 `user_id` RLS 隔离、service-role 写入；账号删除级联清理。v1 前端保存覆盖 natal/cycle；synastry 因 output 散文可能含真名暂缓（红线#4），后端 schema 已支持。
+
+#### 2.10.4 支付结果页
 
 - **路由**: `/payment/success` (PaymentSuccessPage) — 订阅支付成功后的确认页
 - **路由**: `/payment/credits-success` (CreditsSuccessPage) — 积分包购买成功后的确认页
 
-#### 2.10.4 开发工具
+#### 2.10.5 开发工具
 
 - **路由**: `/color-demo` (ColorSystemDemo) — 设计系统颜色演示页（开发/调试用途）
 
-#### 2.10.5 SEO 静态路由
+#### 2.10.6 SEO 静态路由
 
 构建脚本 (`scripts/generate-seo-pages.mjs`) 自动生成多语言 SEO 静态页面：
 - `/en/**` — 英文 SEO 页面族（Wiki Hub 首页、Wiki 词条、经典书籍等）
@@ -871,6 +877,17 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | POST | `/api/reports/purchase` | 购买报告 | Required |
 | DELETE | `/api/reports/:reportId` | 删除报告 | Required |
 
+#### 已保存解读 API (Saved Readings — #24)
+
+| Method | Path | 说明 | Auth |
+|--------|------|------|------|
+| POST | `/api/saved-readings` | 保存一份解读（natal/cycle/synastry） | Required |
+| GET | `/api/saved-readings` | 列出当前用户的已保存解读（仅元数据） | Required |
+| GET | `/api/saved-readings/:id` | 读取自己的某份解读（完整 payload） | Required |
+| DELETE | `/api/saved-readings/:id` | 删除自己的某份解读 | Required |
+
+> 隔离：每个查询都按会话 `user_id`（取自 JWT，非 body/params）过滤；他人 id 一律 404。最高 PII：`input_json` 存出生数据，service-role 写入 + RLS 用户行隔离读取；synastry `nameA/nameB` 防御性剥除（红线#4）。v1 前端保存仅 natal/cycle（synastry 因 output 散文可能含真名而延后）。
+
 #### 工具 API
 
 | Method | Path | 说明 | Auth |
@@ -929,6 +946,20 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | created_at | TIMESTAMPTZ | 记录创建时间 |
 
 > 设计意图：用户删除账号后，该表不会被清理；同邮箱重新注册时，沿用 `trial_ends_at`（多半已过期）而非发放新试用，防止刷免费额度。仅存哈希，符合 GDPR 被遗忘权（不保留可恢复 PII）。
+
+**saved_readings** — 已保存解读（via migration 009，#24）
+| Column | Type | 说明 |
+|--------|------|------|
+| id | UUID | 主键 |
+| user_id | UUID | 用户 (FK → users, ON DELETE CASCADE) |
+| tool_type | VARCHAR(20) | natal / cycle / synastry（CHECK 约束） |
+| title | TEXT | 列表显示标题（不含 synastry 真名） |
+| input_json | JSONB | 解读输入（出生数据 — 最高 PII） |
+| output_json | JSONB | 解读输出快照（重开不重算、不扣 credits） |
+| lang | VARCHAR(5) | 生成时语言 |
+| created_at | TIMESTAMPTZ | 保存时间 |
+
+> RLS：用户仅能 SELECT 自己的行（`auth.uid()::text = user_id::text`）+ service-role 管理全部。API 用 service-role client，按会话 `user_id` 过滤实现隔离。账号删除经 `userService.deleteUser` 显式清理 + FK CASCADE 双重保证。synastry `nameA/nameB` 入库前剥除（红线#4）。
 
 **subscriptions** — 订阅管理
 | Column | Type | 说明 |

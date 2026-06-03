@@ -285,6 +285,7 @@ const PROTECTED_PATHS = new Set([
   "journal",
   "settings",
   "usage",
+  "saved",
 ]);
 
 const LangStripRedirect: React.FC = () => {
@@ -348,6 +349,10 @@ const AskOraclePage = lazy(() => import("./pages/OraclePage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 
 const CreditsUsagePage = lazy(() => import("./pages/CreditsUsagePage"));
+const SavedReadingsPage = lazy(() => import("./pages/SavedReadingsPage"));
+const SavedReadingDetailPage = lazy(
+  () => import("./pages/SavedReadingDetailPage"),
+);
 
 const AuthPage = lazy(() => import("./pages/AuthPage"));
 
@@ -1043,6 +1048,26 @@ const AppContent: React.FC = () => {
               element={
                 isAuthenticated && activeProfile ? (
                   <CreditsUsagePage />
+                ) : (
+                  <ProtectedRedirect />
+                )
+              }
+            />
+            <Route
+              path="/saved"
+              element={
+                isAuthenticated && activeProfile ? (
+                  <SavedReadingsPage />
+                ) : (
+                  <ProtectedRedirect />
+                )
+              }
+            />
+            <Route
+              path="/saved/:id"
+              element={
+                isAuthenticated && activeProfile ? (
+                  <SavedReadingDetailPage />
                 ) : (
                   <ProtectedRedirect />
                 )
