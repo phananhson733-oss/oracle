@@ -7,6 +7,7 @@ import {
   isPayPalConfigured,
 } from '../config/paypal.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
+import { logger } from "../utils/logger.js";
 
 // 类型定义
 interface PayPalLink {
@@ -104,7 +105,7 @@ class PayPalService {
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('PayPal OAuth error:', error);
+      logger.error('PayPal OAuth error', { error });
       throw new Error(`PayPal OAuth failed: ${error.message || response.statusText}`);
     }
 
@@ -133,7 +134,7 @@ class PayPalService {
         usedFirstDiscount = true;
       } else {
         // 如果首次折扣计划未配置，回退到标准计划
-        console.warn(`PayPal first discount plan not configured for ${input.plan}, falling back to standard plan`);
+        logger.warn(`PayPal first discount plan not configured for ${input.plan}, falling back to standard plan`);
         planId = input.plan === 'yearly' ? PAYPAL_PLANS.yearly : PAYPAL_PLANS.monthly;
       }
     } else {
@@ -173,7 +174,7 @@ class PayPalService {
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('PayPal create subscription error:', error);
+      logger.error('PayPal create subscription error', { error });
       throw new Error(`Failed to create subscription: ${error.message || response.statusText}`);
     }
 
@@ -213,7 +214,7 @@ class PayPalService {
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('PayPal get subscription error:', error);
+      logger.error('PayPal get subscription error', { error });
       throw new Error(`Failed to get subscription: ${error.message || response.statusText}`);
     }
 
@@ -244,7 +245,7 @@ class PayPalService {
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('PayPal cancel subscription error:', error);
+      logger.error('PayPal cancel subscription error', { error });
       throw new Error(`Failed to cancel subscription: ${error.message || response.statusText}`);
     }
   }
@@ -294,7 +295,7 @@ class PayPalService {
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('PayPal create order error:', error);
+      logger.error('PayPal create order error', { error });
       throw new Error(`Failed to create order: ${error.message || response.statusText}`);
     }
 
@@ -339,7 +340,7 @@ class PayPalService {
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('PayPal capture order error:', error);
+      logger.error('PayPal capture order error', { error });
       throw new Error(`Failed to capture order: ${error.message || response.statusText}`);
     }
 
@@ -357,7 +358,7 @@ class PayPalService {
       try {
         customData = JSON.parse(customIdStr);
       } catch {
-        console.warn('Failed to parse custom_id:', customIdStr);
+        logger.warn('Failed to parse custom_id', { customIdStr });
       }
     }
 
@@ -398,7 +399,9 @@ class PayPalService {
     );
 
     if (!response.ok) {
-      console.error('PayPal verify webhook error:', await response.text());
+      logger.error('PayPal verify webhook error', {
+        responseBody: await response.text(),
+      });
       return false;
     }
 

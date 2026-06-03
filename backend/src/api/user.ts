@@ -7,6 +7,7 @@ import { authMiddleware } from './auth.js';
 import { userService } from '../services/userService.js';
 import entitlementService from '../services/entitlementService.js';
 import { cacheService } from '../cache/redis.js';
+import { logger } from "../utils/logger.js";
 
 export const userRouter = Router();
 
@@ -55,7 +56,7 @@ userRouter.get('/status', authMiddleware, async (req: Request, res: Response) =>
       recentActions,
     });
   } catch (error) {
-    console.error('Get user status error:', error);
+    logger.error('Get user status error', { error });
     res.status(500).json({ error: 'Failed to get user status' });
   }
 });

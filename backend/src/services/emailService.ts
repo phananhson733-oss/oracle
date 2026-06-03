@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { RESEND_CONFIG } from '../config/auth.js';
+import { logger } from "../utils/logger.js";
 
 class EmailService {
   private resend: Resend | null = null;
@@ -19,7 +20,7 @@ class EmailService {
     if (error) {
       throw new Error(`Resend error: ${error.message}`);
     }
-    console.log(`Email sent to ${this.maskEmail(params.to)}: ${data?.id}`);
+    logger.info(`Email sent to ${this.maskEmail(params.to)}: ${data?.id}`);
   }
 
   private maskEmail(email: string): string {

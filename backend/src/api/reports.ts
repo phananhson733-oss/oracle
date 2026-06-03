@@ -7,6 +7,7 @@ import entitlementServiceV2 from "../services/entitlementServiceV2.js";
 import { AIUnavailableError } from "../services/ai.js";
 import { SUBSCRIPTION_BENEFITS } from "../config/auth.js";
 import { resolveLang } from "../utils/lang.js";
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -35,7 +36,7 @@ router.get(
         })),
       });
     } catch (error) {
-      console.error("Get reports error:", error);
+      logger.error("Get reports error", { error });
       res.status(500).json({ error: "Failed to get reports" });
     }
   },
@@ -67,7 +68,7 @@ router.get(
         createdAt: report.created_at,
       });
     } catch (error) {
-      console.error("Get report error:", error);
+      logger.error("Get report error", { error });
       res.status(500).json({ error: "Failed to get report" });
     }
   },
@@ -127,7 +128,7 @@ router.get(
         price,
       });
     } catch (error) {
-      console.error("Check access error:", error);
+      logger.error("Check access error", { error });
       res.status(500).json({ error: "Failed to check access" });
     }
   },
@@ -208,7 +209,7 @@ router.post(
       // and deleted the unfulfilled purchase row. Surface a 502 so the client
       // can prompt the user to retry without thinking they were charged.
       if (error instanceof AIUnavailableError) {
-        console.error("Generate report AI unavailable:", error.reason);
+        logger.error("Generate report AI unavailable", { reason: error.reason });
         return res.status(502).json({
           error:
             "Report generation temporarily unavailable. Your credit was not charged.",
@@ -216,7 +217,7 @@ router.post(
           reason: error.reason,
         });
       }
-      console.error("Generate report error:", error);
+      logger.error("Generate report error", { error });
       res.status(500).json({ error: "Failed to generate report" });
     }
   },
@@ -291,7 +292,7 @@ router.post(
 
       res.json({ success: true, entitlements: updated, price });
     } catch (error) {
-      console.error("Purchase report error:", error);
+      logger.error("Purchase report error", { error });
       res.status(500).json({ error: "Failed to purchase report" });
     }
   },
@@ -313,7 +314,7 @@ router.delete(
 
       res.json({ success: true });
     } catch (error) {
-      console.error("Delete report error:", error);
+      logger.error("Delete report error", { error });
       res.status(500).json({ error: "Failed to delete report" });
     }
   },

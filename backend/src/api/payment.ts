@@ -7,6 +7,7 @@ import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 import { stripe, STRIPE_WEBHOOK_SECRET, isStripeConfigured, PRODUCTS, SUBSCRIBER_DISCOUNT } from '../config/stripe.js';
 import { SUBSCRIPTION_BENEFITS } from '../config/auth.js';
 import { addDevGmCredits } from '../services/entitlementService.js';
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -34,7 +35,7 @@ router.get('/subscription', authMiddleware, requireAuth, async (req: Request, re
       },
     });
   } catch (error) {
-    console.error('Get subscription error:', error);
+    logger.error('Get subscription error', { error });
     res.status(500).json({ error: 'Failed to get subscription' });
   }
 });
@@ -85,7 +86,7 @@ router.post('/create-checkout', authMiddleware, requireAuth, async (req: Request
 
     res.json({ url: checkoutUrl });
   } catch (error) {
-    console.error('Create checkout error:', error);
+    logger.error('Create checkout error', { error });
     res.status(500).json({ error: 'Failed to create checkout session' });
   }
 });
@@ -133,7 +134,7 @@ router.post('/purchase', authMiddleware, requireAuth, async (req: Request, res: 
 
     res.json({ url: checkoutUrl });
   } catch (error) {
-    console.error('Create purchase checkout error:', error);
+    logger.error('Create purchase checkout error', { error });
     res.status(500).json({ error: 'Failed to create checkout session' });
   }
 });
@@ -163,7 +164,7 @@ router.post('/create-portal', authMiddleware, requireAuth, async (req: Request, 
 
     res.json({ url: portalUrl });
   } catch (error) {
-    console.error('Create portal error:', error);
+    logger.error('Create portal error', { error });
     res.status(500).json({ error: 'Failed to create portal session' });
   }
 });
@@ -187,7 +188,7 @@ router.get('/purchases', authMiddleware, requireAuth, async (req: Request, res: 
       })),
     });
   } catch (error) {
-    console.error('Get purchases error:', error);
+    logger.error('Get purchases error', { error });
     res.status(500).json({ error: 'Failed to get purchases' });
   }
 });
@@ -239,7 +240,7 @@ router.get('/first-discount-eligibility', authMiddleware, requireAuth, async (re
     const eligible = await subscriptionService.isEligibleForFirstDiscount(req.userId!);
     res.json({ eligible });
   } catch (error) {
-    console.error('Check first discount eligibility error:', error);
+    logger.error('Check first discount eligibility error', { error });
     res.status(500).json({ error: 'Failed to check eligibility' });
   }
 });
@@ -262,7 +263,7 @@ router.post('/webhook', async (req: Request, res: Response) => {
       STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
-    console.error('Webhook signature verification failed:', err);
+    logger.error('Webhook signature verification failed', { err });
     return res.status(400).json({ error: 'Webhook signature verification failed' });
   }
 
@@ -384,14 +385,14 @@ router.post('/webhook', async (req: Request, res: Response) => {
       case 'invoice.payment_failed': {
         const invoice = event.data.object;
         // TODO: Send email notification about payment failure
-        console.log('Payment failed for invoice:', invoice.id);
+        logger.info('Payment failed for invoice', { id: invoice.id });
         break;
       }
     }
 
     res.json({ received: true });
   } catch (error) {
-    console.error('Webhook processing error:', error);
+    logger.error('Webhook processing error', { error });
     res.status(500).json({ error: 'Webhook processing failed' });
   }
 });

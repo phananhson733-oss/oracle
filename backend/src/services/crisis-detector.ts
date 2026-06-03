@@ -10,6 +10,7 @@ import {
   type RegionCode,
   HELPLINES,
 } from "../data/helplines.js";
+import { logger } from "../utils/logger.js";
 
 export interface CrisisDetectionResult {
   hit: boolean;
@@ -70,9 +71,9 @@ export function detectCrisis(
     // Fail-closed：检测器异常时按命中处理，避免静默放行可能含危机内容的请求到 LLM。
     // 仅记录脱敏的错误信息（message），不记录任何用户输入文本。
     const message = (error as Error)?.message ?? "unknown error";
-    console.error(
-      `[crisis-detector] detection failed (fail-closed): ${message}`,
-    );
+    logger.error("[crisis-detector] detection failed (fail-closed)", {
+      error: message,
+    });
     return { hit: true, failSafe: true, reason: "detector-error" };
   }
 }
@@ -241,7 +242,7 @@ export function trackCrisisDetected(payload: {
       lang: payload.lang,
       endpoint: payload.endpoint,
     };
-    console.warn(`[crisis-detector] ${JSON.stringify(event)}`);
+    logger.warn(`[crisis-detector] ${JSON.stringify(event)}`);
   } catch {
     // 埋点失败不能影响主响应。
   }

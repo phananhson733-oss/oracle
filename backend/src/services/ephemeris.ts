@@ -19,6 +19,7 @@ import {
 } from "../data/sources.js";
 import { cacheService } from "../cache/redis.js";
 import { CACHE_PREFIX, CACHE_TTL, hashInput } from "../cache/strategy.js";
+import { logger } from "../utils/logger.js";
 
 // Swiss Ephemeris 常量
 const SE_SUN = 0,
@@ -74,15 +75,14 @@ try {
     swisseph.swe_set_ephe_path(ephePath);
   }
 
-  console.log(
-    "✅ Swiss Ephemeris loaded successfully (NASA JPL DE431 precision)",
+  logger.info(
+    "Swiss Ephemeris loaded successfully (NASA JPL DE431 precision)",
   );
 } catch (err) {
-  console.warn("⚠️ Swiss Ephemeris not available, using mock calculations");
-  console.warn(
-    "   For production accuracy, ensure swisseph native module is compiled",
+  logger.warn(
+    "Swiss Ephemeris not available, using mock calculations; for production accuracy ensure swisseph native module is compiled",
+    { error: err instanceof Error ? err.message : String(err) },
   );
-  console.warn("   Error:", err instanceof Error ? err.message : String(err));
 }
 
 function dateToJulian(date: Date): number {

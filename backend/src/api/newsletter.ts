@@ -5,6 +5,7 @@
 import { Router, Request, Response } from "express";
 import rateLimit from "express-rate-limit";
 import { supabase, isSupabaseConfigured } from "../db/supabase.js";
+import { logger } from "../utils/logger.js";
 
 export const newsletterRouter = Router();
 
@@ -210,7 +211,7 @@ newsletterRouter.post(
           error && typeof error === "object" && "code" in error
             ? String((error as { code?: unknown }).code ?? "unknown")
             : "unknown";
-        console.error(`Newsletter subscription DB error code=${safeCode}`);
+        logger.error(`Newsletter subscription DB error code=${safeCode}`);
         return res.status(500).json({
           error: "Failed to save subscription. Please try again.",
           code: "db_error",
@@ -223,11 +224,9 @@ newsletterRouter.post(
       // Return 502 so the client knows the failure is upstream, not its bug,
       // and so we don't poison synthetic 5xx alerts for our own code.
       if (err instanceof UpstreamTimeoutError) {
-        console.error(
-          "Newsletter subscription upstream timeout after",
-          UPSTREAM_TIMEOUT_MS,
-          "ms",
-        );
+        logger.error("Newsletter subscription upstream timeout", {
+          timeoutMs: UPSTREAM_TIMEOUT_MS,
+        });
         return res.status(502).json({
           error: "Email service temporarily unavailable",
           code: "EMAIL_SERVICE_TIMEOUT",
@@ -242,7 +241,7 @@ newsletterRouter.post(
         err instanceof Error
           ? `${err.name}: ${err.message.slice(0, 80)}`
           : typeof err;
-      console.error(`Newsletter subscription unexpected error: ${safeErr}`);
+      logger.error(`Newsletter subscription unexpected error: ${safeErr}`);
       return res.status(500).json({
         error: "Unexpected server error.",
         code: "internal_error",

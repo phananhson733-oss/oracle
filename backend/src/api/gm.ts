@@ -5,6 +5,7 @@ import { supabase, isSupabaseConfigured, DbUser } from '../db/supabase.js';
 import { userService } from '../services/userService.js';
 import { addDevGmCredits, clearDevGmCredits, resetDevEntitlements, setDevSubscription } from '../services/entitlementService.js';
 import Redis from 'ioredis';
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -47,7 +48,7 @@ router.post('/unlock-subscription', authMiddleware, requireAuth, async (req: Req
       });
 
     if (error) {
-      console.error('GM unlock subscription error:', error);
+      logger.error('GM unlock subscription error', { error });
       return res.status(500).json({ error: 'Failed to unlock subscription' });
     }
 
@@ -59,7 +60,7 @@ router.post('/unlock-subscription', authMiddleware, requireAuth, async (req: Req
 
     res.json({ success: true, message: 'Subscription unlocked' });
   } catch (error) {
-    console.error('GM unlock subscription error:', error);
+    logger.error('GM unlock subscription error', { error });
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -89,7 +90,7 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
       .eq('user_id', userId);
 
     if (error) {
-      console.error('GM cancel subscription error:', error);
+      logger.error('GM cancel subscription error', { error });
       return res.status(500).json({ error: 'Failed to cancel subscription' });
     }
 
@@ -101,7 +102,7 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
 
     res.json({ success: true, message: 'Subscription cancelled' });
   } catch (error) {
-    console.error('GM cancel subscription error:', error);
+    logger.error('GM cancel subscription error', { error });
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -141,13 +142,13 @@ router.post('/add-tokens', authMiddleware, requireAuth, async (req: Request, res
       });
 
     if (error) {
-      console.error('GM add tokens error:', error);
+      logger.error('GM add tokens error', { error });
       return res.status(500).json({ error: 'Failed to add tokens' });
     }
 
     res.json({ success: true, message: `Added ${amount} credits` });
   } catch (error) {
-    console.error('GM add tokens error:', error);
+    logger.error('GM add tokens error', { error });
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -177,7 +178,7 @@ router.post('/clear-tokens', authMiddleware, requireAuth, async (req: Request, r
       .eq('feature_type', 'gm_credit');
 
     if (deleteError) {
-      console.error('GM clear tokens error:', deleteError);
+      logger.error('GM clear tokens error', { deleteError });
       return res.status(500).json({ error: 'Failed to clear tokens' });
     }
 
@@ -193,7 +194,7 @@ router.post('/clear-tokens', authMiddleware, requireAuth, async (req: Request, r
       });
 
     if (usageError) {
-      console.error('GM clear tokens usage error:', usageError);
+      logger.error('GM clear tokens usage error', { usageError });
     }
 
     // 重置订阅使用记录
@@ -211,7 +212,7 @@ router.post('/clear-tokens', authMiddleware, requireAuth, async (req: Request, r
 
     res.json({ success: true, message: 'Credits cleared' });
   } catch (error) {
-    console.error('GM clear tokens error:', error);
+    logger.error('GM clear tokens error', { error });
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -254,7 +255,7 @@ router.post('/reset-all', authMiddleware, requireAuth, async (req: Request, res:
 
     res.json({ success: true, message: 'All entitlements reset' });
   } catch (error) {
-    console.error('GM reset all error:', error);
+    logger.error('GM reset all error', { error });
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -314,7 +315,7 @@ router.post('/dev-session', async (_req: Request, res: Response) => {
       },
     });
   } catch (error) {
-    console.error('GM dev session error:', error);
+    logger.error('GM dev session error', { error });
     res.status(500).json({ error: 'Failed to create GM session' });
   }
 });
@@ -368,7 +369,7 @@ router.post('/clear-ai-cache', async (req: Request, res: Response) => {
       clearedKeys: keys.slice(0, 20), // 只返回前20个，避免响应过大
     });
   } catch (error) {
-    console.error('GM clear AI cache error:', error);
+    logger.error('GM clear AI cache error', { error });
     res.status(500).json({ error: 'Failed to clear cache' });
   }
 });

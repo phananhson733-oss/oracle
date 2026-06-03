@@ -7,6 +7,7 @@ import {
 import { PRODUCTS } from "../config/stripe.js";
 import { AIUnavailableError, generateAIContent } from "./ai.js";
 import entitlementServiceV2 from "./entitlementServiceV2.js";
+import { logger } from "../utils/logger.js";
 
 export type ReportType =
   | "monthly"
@@ -291,10 +292,11 @@ class ReportService {
       try {
         await entitlementServiceV2.refundFeature(userId, "report", reportType);
       } catch (refundError) {
-        console.error(
-          `Refund failed for user ${userId} report ${reportType}:`,
-          refundError,
-        );
+        logger.error("Refund failed", {
+          userId,
+          reportType,
+          error: refundError,
+        });
       }
       // Re-throw as AIUnavailableError so the route can map to 502; preserve
       // the original reason when available.

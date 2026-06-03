@@ -14,6 +14,7 @@ import { resolveCurrencyFromRequest } from '../utils/currency.js';
 import { SUBSCRIPTION_BENEFITS } from '../config/auth.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 import { emailService } from '../services/emailService.js';
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -138,7 +139,7 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error('Airwallex create subscription error:', message, error);
+    logger.error('Airwallex create subscription error', { message, error });
     res.status(500).json({ error: `Failed to create subscription: ${message}` });
   }
 });
@@ -270,7 +271,7 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
     res.json({ confirmed: true });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error('Airwallex confirm-checkout error:', message);
+    logger.error('Airwallex confirm-checkout error', { message });
     res.status(500).json({ error: 'Failed to confirm checkout' });
   }
 });
@@ -357,7 +358,7 @@ router.post('/confirm-renewal', authMiddleware, requireAuth, async (req: Request
         .eq('id', sub.id);
 
       if (updateError) {
-        console.error('Failed to update subscription for renewal:', updateError);
+        logger.error('Failed to update subscription for renewal', { updateError });
         return res.status(500).json({ error: 'Failed to update subscription' });
       }
 
@@ -387,7 +388,7 @@ router.post('/confirm-renewal', authMiddleware, requireAuth, async (req: Request
     res.json({ confirmed: true });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error('Airwallex confirm-renewal error:', message);
+    logger.error('Airwallex confirm-renewal error', { message });
     res.status(500).json({ error: 'Failed to confirm renewal' });
   }
 });
@@ -434,7 +435,7 @@ router.get('/subscription', authMiddleware, requireAuth, async (req: Request, re
       },
     });
   } catch (error) {
-    console.error('Get subscription error:', error);
+    logger.error('Get subscription error', { error });
     res.status(500).json({ error: 'Failed to get subscription' });
   }
 });
@@ -486,12 +487,12 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
 
     if (reason) {
       const sanitizedReason = String(reason).replace(/[\n\r]/g, ' ').slice(0, 200);
-      console.log(`[CancelSubscription] user=${req.userId} reason="${sanitizedReason}" airwallex=${airwallexResult.airwallexSuccess}`);
+      logger.info(`[CancelSubscription] user=${req.userId} reason="${sanitizedReason}" airwallex=${airwallexResult.airwallexSuccess}`);
     }
 
     res.json({ success: true });
   } catch (error) {
-    console.error('Cancel subscription error:', error);
+    logger.error('Cancel subscription error', { error });
     res.status(500).json({ error: 'Failed to cancel subscription' });
   }
 });
@@ -539,7 +540,7 @@ router.post('/create-order', authMiddleware, requireAuth, async (req: Request, r
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error('Airwallex create order error:', message, error);
+    logger.error('Airwallex create order error', { message, error });
     res.status(500).json({ error: `Failed to create order: ${message}` });
   }
 });
@@ -620,7 +621,7 @@ router.post('/confirm-order', authMiddleware, requireAuth, async (req: Request, 
     res.json({ confirmed: true, credits });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error('Airwallex confirm-order error:', message);
+    logger.error('Airwallex confirm-order error', { message });
     res.status(500).json({ error: 'Failed to confirm order' });
   }
 });
@@ -655,13 +656,13 @@ router.post('/webhook', async (req: Request, res: Response) => {
     const timestamp = req.headers['x-timestamp'] as string;
 
     if (!signature || !timestamp) {
-      console.error('Airwallex webhook missing signature headers');
+      logger.error('Airwallex webhook missing signature headers');
       return res.status(401).json({ error: 'Missing signature headers' });
     }
 
     const isValid = airwallexService.verifyWebhookSignature(payload, signature, timestamp);
     if (!isValid) {
-      console.error('Airwallex webhook signature verification failed');
+      logger.error('Airwallex webhook signature verification failed');
       return res.status(401).json({ error: 'Invalid signature' });
     }
 
@@ -670,7 +671,7 @@ router.post('/webhook', async (req: Request, res: Response) => {
 
     // Idempotency check
     if (await airwallexService.isEventProcessed(eventId)) {
-      console.log(`Airwallex webhook event already processed: ${eventId}`);
+      logger.info(`Airwallex webhook event already processed: ${eventId}`);
       return res.json({ received: true, status: 'already_processed' });
     }
 
@@ -698,12 +699,12 @@ router.post('/webhook', async (req: Request, res: Response) => {
         break;
 
       default:
-        console.log(`Unhandled Airwallex webhook event: ${eventType}`);
+        logger.info(`Unhandled Airwallex webhook event: ${eventType}`);
     }
 
     res.json({ received: true });
   } catch (error) {
-    console.error('Airwallex webhook error:', error);
+    logger.error('Airwallex webhook error', { error });
     res.status(500).json({ error: 'Webhook processing failed' });
   }
 });
@@ -714,7 +715,7 @@ router.post('/webhook', async (req: Request, res: Response) => {
 
 /** Fire-and-forget email sender — logs errors, never blocks webhook response. */
 function sendEmailBestEffort(fn: () => Promise<void>, label: string): void {
-  fn().catch((err) => console.error(`Failed to send ${label} email:`, err));
+  fn().catch((err) => logger.error(`Failed to send ${label} email`, { err }));
 }
 
 async function getUserEmail(userId: string): Promise<string | null> {
@@ -725,7 +726,7 @@ async function getUserEmail(userId: string): Promise<string | null> {
     .eq('id', userId)
     .single();
   if (error) {
-    console.error(`getUserEmail failed for user ${userId}:`, error.message);
+    logger.error(`getUserEmail failed for user ${userId}`, { message: error.message });
     return null;
   }
   return data?.email || null;
@@ -745,7 +746,7 @@ async function handleSubscriptionActive(event: any): Promise<void> {
   const useFirstDiscount = metadata.useFirstDiscount === 'true';
 
   if (!userId || !subscriptionId) {
-    console.error('Missing userId or subscriptionId in Airwallex subscription event');
+    logger.error('Missing userId or subscriptionId in Airwallex subscription event');
     return;
   }
 
@@ -836,7 +837,7 @@ async function handleSubscriptionActive(event: any): Promise<void> {
     }
   }
 
-  console.log(`Airwallex subscription activated: ${subscriptionId} for user ${userId}`);
+  logger.info(`Airwallex subscription activated: ${subscriptionId} for user ${userId}`);
 
   // Send payment receipt email (fire-and-forget, don't block webhook)
   sendEmailBestEffort(async () => {
@@ -887,7 +888,7 @@ async function handleSubscriptionCancelled(event: any): Promise<void> {
       .eq('airwallex_subscription_id', subscriptionId);
   }
 
-  console.log(`Airwallex subscription cancelled: ${subscriptionId}`);
+  logger.info(`Airwallex subscription cancelled: ${subscriptionId}`);
 
   // Send cancellation confirmation email (fire-and-forget)
   if (subUserId) {
@@ -932,7 +933,7 @@ async function handleSubscriptionUnpaid(event: any): Promise<void> {
       .eq('airwallex_subscription_id', subscriptionId);
   }
 
-  console.log(`Airwallex subscription unpaid: ${subscriptionId}`);
+  logger.info(`Airwallex subscription unpaid: ${subscriptionId}`);
 
   // Send payment failed notice email (fire-and-forget)
   if (subUserId) {
@@ -958,13 +959,13 @@ async function handlePaymentIntentSucceeded(event: any): Promise<void> {
 
   if (!userId || !packageId) {
     // May be a renewal or non-credits payment — skip silently
-    console.log('Airwallex payment_intent.succeeded: no packageId in metadata, skipping credits flow');
+    logger.info('Airwallex payment_intent.succeeded: no packageId in metadata, skipping credits flow');
     return;
   }
 
   const packageInfo = AIRWALLEX_CREDITS_PACKAGES[packageId];
   if (!packageInfo) {
-    console.error(`Unknown package ID: ${packageId}`);
+    logger.error(`Unknown package ID: ${packageId}`);
     return;
   }
 
@@ -985,7 +986,7 @@ async function handlePaymentIntentSucceeded(event: any): Promise<void> {
       .single();
 
     if (existing) {
-      console.log(`Airwallex credits already processed for PI ${piId}, skipping`);
+      logger.info(`Airwallex credits already processed for PI ${piId}, skipping`);
       return;
     }
 
@@ -1002,14 +1003,14 @@ async function handlePaymentIntentSucceeded(event: any): Promise<void> {
 
     if (insertErr) {
       if (insertErr.code === '23505') {
-        console.log(`Airwallex webhook: duplicate insert for PI ${piId}, already processed`);
+        logger.info(`Airwallex webhook: duplicate insert for PI ${piId}, already processed`);
         return;
       }
       throw insertErr;
     }
   }
 
-  console.log(`Airwallex credits purchase: ${credits} credits for user ${userId}`);
+  logger.info(`Airwallex credits purchase: ${credits} credits for user ${userId}`);
 
   // Send payment receipt email for credits purchase (fire-and-forget)
   sendEmailBestEffort(async () => {

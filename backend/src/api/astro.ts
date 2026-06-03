@@ -13,6 +13,7 @@ import { loadAstroEvents } from "../data/astro-events.js";
 import { ephemerisService } from "../services/ephemeris.js";
 import { cacheService } from "../cache/redis.js";
 import { PLANETS, SIGNS } from "../data/sources.js";
+import { logger } from "../utils/logger.js";
 
 export const astroRouter = Router();
 
@@ -35,7 +36,7 @@ astroRouter.get("/events", async (req: Request, res: Response) => {
     );
     res.json({ events: filtered });
   } catch (error) {
-    console.error("Get astro events error:", error);
+    logger.error("Get astro events error", { error });
     res.status(500).json({ error: "Failed to get astro events" });
   }
 });
@@ -219,7 +220,7 @@ astroRouter.get("/today", async (req: Request, res: Response) => {
       return;
     }
     if (cached) {
-      console.warn("astro/today cache rejected: invalid payload, recomputing", {
+      logger.warn("astro/today cache rejected: invalid payload, recomputing", {
         dateKey,
       });
     }
@@ -282,14 +283,14 @@ astroRouter.get("/today", async (req: Request, res: Response) => {
   } catch (error) {
     const code = (error as { code?: string })?.code;
     if (code === "EPHEMERIS_DEGRADED") {
-      console.error("Today sky degraded payload rejected:", error);
+      logger.error("Today sky degraded payload rejected", { error });
       res.status(503).json({
         error: "Sky data is currently degraded; try again shortly.",
         code: "EPHEMERIS_DEGRADED",
       });
       return;
     }
-    console.error("Get today sky error:", error);
+    logger.error("Get today sky error", { error });
     res.status(500).json({
       error: "Failed to compute today's sky",
       code: "EPHEMERIS_UNAVAILABLE",

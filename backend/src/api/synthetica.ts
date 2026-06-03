@@ -6,6 +6,7 @@ import { normalizeSyntheticaConfig } from '../utils/syntheticaConfig.js';
 import { optionalAuthMiddleware } from './auth.js';
 import entitlementServiceV2 from '../services/entitlementServiceV2.js';
 import { PRICING } from '../config/auth.js';
+import { logger } from "../utils/logger.js";
 
 export const syntheticaRouter = Router();
 
@@ -269,7 +270,7 @@ syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
 
     res.json({ ...result.content, meta: result.meta });
   } catch (error) {
-    console.error('Synthetica Generation Error:', error);
+    logger.error('Synthetica Generation Error', { error });
     res.status(500).json({ error: 'Failed to generate report' });
   }
 });

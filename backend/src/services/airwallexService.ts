@@ -12,6 +12,7 @@ import {
 } from '../config/airwallex.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 import crypto from 'crypto';
+import { logger } from "../utils/logger.js";
 
 // Bearer Token cache
 let cachedToken: string | null = null;
@@ -58,7 +59,7 @@ export const resolvePriceIdWithFallback = (
       // Try USD first-discount before dropping to non-discount prices.
       const usdFirst = pick(`${plan}_first_usd`);
       if (usdFirst) {
-        console.warn(`Airwallex first-discount price not configured for ${plan} ${key}, falling back to USD first-discount price`);
+        logger.warn(`Airwallex first-discount price not configured for ${plan} ${key}, falling back to USD first-discount price`);
         return { priceId: usdFirst, usedFirstDiscount: true, fellBackToUsd: true };
       }
     }
@@ -75,7 +76,7 @@ export const resolvePriceIdWithFallback = (
   // Currency-specific price ID missing → fall back to the real USD price ID.
   const usdPriceId = pick(`${plan}_usd`);
   if (usdPriceId) {
-    console.warn(`Airwallex price ID not configured for ${plan} ${key}; falling back to USD price ID (no amount fabricated)`);
+    logger.warn(`Airwallex price ID not configured for ${plan} ${key}; falling back to USD price ID (no amount fabricated)`);
     return { priceId: usdPriceId, usedFirstDiscount: false, fellBackToUsd: true };
   }
 
@@ -124,7 +125,7 @@ class AirwallexService {
 
     if (!response.ok) {
       const error = await response.text();
-      console.error('Airwallex auth error:', error);
+      logger.error('Airwallex auth error', { error });
       throw new Error(`Airwallex authentication failed: ${response.statusText}`);
     }
 
@@ -180,7 +181,7 @@ class AirwallexService {
 
     if (!response.ok) {
       const errorBody = await response.text();
-      console.error('Airwallex create subscription error:', response.status, errorBody);
+      logger.error('Airwallex create subscription error', { status: response.status, errorBody });
       throw new Error(`Airwallex ${response.status}: ${errorBody}`);
     }
 
@@ -267,7 +268,7 @@ class AirwallexService {
 
     if (!piResponse.ok) {
       const errorBody = await piResponse.text();
-      console.error('Airwallex renewal payment intent error:', errorBody);
+      logger.error('Airwallex renewal payment intent error', { errorBody });
       throw new Error(`Airwallex ${piResponse.status}: ${errorBody}`);
     }
 
@@ -336,7 +337,7 @@ class AirwallexService {
 
     if (!piResponse.ok) {
       const errorBody = await piResponse.text();
-      console.error('Airwallex create payment intent error:', errorBody);
+      logger.error('Airwallex create payment intent error', { errorBody });
       throw new Error(`Airwallex payment intent ${piResponse.status}: ${errorBody}`);
     }
 
@@ -377,7 +378,7 @@ class AirwallexService {
 
     if (!response.ok) {
       const error = await response.text();
-      console.error('Airwallex get subscription error:', error);
+      logger.error('Airwallex get subscription error', { error });
       throw new Error(`Failed to get Airwallex subscription: ${response.statusText}`);
     }
 
@@ -413,7 +414,7 @@ class AirwallexService {
       }
 
       const errorText = await response.text();
-      console.warn('Airwallex update subscription error:', response.status, errorText);
+      logger.warn('Airwallex update subscription error', { status: response.status, errorText });
 
       // Fallback: try the cancel endpoint directly
       const cancelResponse = await fetch(
@@ -435,11 +436,11 @@ class AirwallexService {
       }
 
       const cancelError = await cancelResponse.text();
-      console.warn('Airwallex cancel (fallback) error:', cancelResponse.status, cancelError);
+      logger.warn('Airwallex cancel (fallback) error', { status: cancelResponse.status, cancelError });
       return { airwallexSuccess: false, error: `Update ${response.status}, Cancel ${cancelResponse.status}` };
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      console.warn('Airwallex cancel subscription network error:', msg);
+      logger.warn('Airwallex cancel subscription network error', { msg });
       return { airwallexSuccess: false, error: msg };
     }
   }
@@ -447,7 +448,7 @@ class AirwallexService {
   // Verify webhook signature
   verifyWebhookSignature(payload: string, signature: string, timestamp: string): boolean {
     if (!AIRWALLEX_CREDENTIALS.webhookSecret) {
-      console.error('Airwallex webhook secret not configured, rejecting webhook');
+      logger.error('Airwallex webhook secret not configured, rejecting webhook');
       return false;
     }
 
