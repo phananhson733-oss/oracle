@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.20
+> **Version**: 2.21
 > **Last Updated**: 2026-06-03
 > **Status**: Living Document — synced with codebase
 
@@ -386,6 +386,27 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **v1 已 deferred 至 v1.1+ 的模块**：Synthetica 公开 preview、Today's 个性化版本、真实用户证言。
 
+### 2.14 定价页 (Pricing Page)
+
+**路由**: `/:lang/pricing`（公开可索引，无需登录）
+
+公开定价页，面向 SEO 与转化：用户无需注册即可查看订阅方案、积分包与免费/Pro 权益对比。
+
+**功能说明**：
+- 三档方案：Free（$0）、Pro 月付（$6.99/mo · ¥49/月）、Pro 年付（$41.99/yr · ¥294/年，省 50% + 首单 5 折）
+- 积分包四档（100 / 300 / 500 / 1000，价格对应 §3.2）
+- Free vs Pro 权益对比表（Ask / Synastry / Synthetica / Detail / 心理维度 / CBT 月度统计 / 奖励积分，对应 §3.3）
+- 注册赠 7 天试用提示
+- 匿名 CTA → 登录弹窗（`openLoginModal`）；已登录 → 升级弹窗（`openUpgradeModal`）；页面无 LLM、无后端依赖
+- 价格来源：`data/pricing.ts`（前端展示常量，镜像 `backend/src/config/airwallex.ts`；`tests/unit/pricing-consistency.test.ts` 守护两者漂移）
+
+**i18n**：双语，新增命名空间 `t.pricing.*`（en 主、zh 辅）
+
+**SEO 策略**：
+- `scripts/generate-seo-pages.mjs` 的 `PUBLIC_ROUTE_COPY` 输出 `/en/pricing`、`/zh/pricing` 静态 HTML，正文含可见价格文案（防 soft-404）+ WebPage Schema + breadcrumb + hreflang（en/zh/x-default）
+- 添加至 `sitemap.xml`
+- `isPublicRoute` 中注册（`isPricingPath`），不输出 `noindex,nofollow`；PricingPage 从 `data/pricing.ts` 首帧同步渲染价格，水合 DOM 与静态 stub 一致
+
 ---
 
 ## 3. 商业模式 / Business Model
@@ -553,7 +574,10 @@ AI 生成的深度心理分析，每个维度独立解读：
 ├── index.tsx                   # React 入口
 ├── index.css                   # 全局样式
 ├── pages/                      # 顶层路由页面组件
+│   ├── PricingPage.tsx         # 公开定价页（/:lang/pricing，static-first 价格渲染）
 │   └── landing/                # Landing v2 营销页子模块（NewLandingPage 容器）
+├── data/                       # 内容 / 展示数据模块（articles / wiki / competitors / pricing）
+│   └── pricing.ts              # 公开定价页展示常量（镜像 backend/src/config/airwallex.ts）
 ├── components/                 # React UI 组件
 │   ├── UIComponents.tsx        # 基础 UI + LanguageContext
 │   ├── cbt/                    # CBT 日记模块

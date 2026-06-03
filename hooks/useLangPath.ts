@@ -13,6 +13,7 @@ const PUBLIC_PREFIXED_PATHS = [
   '/cookies',
   '/about',
   '/help',
+  '/pricing',
 ] as const;
 
 /** Supported language codes for URL prefix validation. */
