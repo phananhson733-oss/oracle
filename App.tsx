@@ -1,5 +1,5 @@
 // INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、付费墙回调与分析追踪）。
-// OUTPUT: 导出主应用组件（含合盘积分购买后自动触发生成、Analytics 路由追踪、同意横幅与核心功能事件）。
+// OUTPUT: 导出主应用组件（含合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅与核心功能事件）。
 // POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -45,7 +45,18 @@ import {
   trackPageView,
   startPageEngagement,
   endPageEngagement,
+  trackEvent,
 } from "./services/analytics";
+// Aliased: AuthContext also exposes a no-arg migrateLocalData() (localStorage
+// path). This direct client call migrates the in-memory save-chart prefill to
+// the cloud after login WITHOUT ever touching localStorage (2026-05-20 invariant).
+import { migrateLocalData as migrateBirthProfileToAccount } from "./services/authClient";
+import { FUNNEL_EVENTS } from "./services/funnelEvents";
+import { getLandingUtm } from "./services/landingUtm";
+import {
+  buildBirthProfileFromPrefill,
+  type SavePrefill,
+} from "./services/saveChartResume";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 // deleteAccount, exportData moved to pages/SettingsPage.tsx
 import {
@@ -365,6 +376,8 @@ const AppContent: React.FC = () => {
     user: authUser,
     showLoginModal,
     setShowLoginModal,
+    pendingSaveResume,
+    clearPendingSaveResume,
   } = useAuth();
   const { entitlements } = useEntitlement();
 
@@ -537,6 +550,55 @@ const AppContent: React.FC = () => {
     sessionStorage.setItem("astro_migrate_prompted", "1");
     setShowMigration(false);
   };
+
+  // Save-chart resume (backlog #7): after a "save_chart" login/register
+  // succeeds, AuthContext arms pendingSaveResume. We pick up the chart the
+  // landing Save CTA forwarded in router state (memory only — it was NEVER
+  // written to localStorage while anonymous, per the 2026-05-20 invariant) and
+  // push it straight to the cloud, then land /dashboard so the user never has
+  // to click "Save" a second time. The ref guards against the effect re-firing
+  // while the async migration is in flight.
+  const saveResumeInFlightRef = useRef(false);
+  useEffect(() => {
+    if (!pendingSaveResume || saveResumeInFlightRef.current) return;
+    saveResumeInFlightRef.current = true;
+    const prefill = (location.state as { prefill?: SavePrefill } | null)
+      ?.prefill;
+    (async () => {
+      try {
+        if (prefill?.birthDate && prefill?.birthCity && prefill?.timezone) {
+          // 登录后把内存里的盘直接推云端（零 localStorage）——不变量安全。
+          await migrateBirthProfileToAccount(
+            buildBirthProfileFromPrefill(prefill),
+            {
+              theme:
+                (localStorage.getItem("astro_theme") as "dark" | "light") ||
+                "dark",
+              language,
+            },
+          );
+          localStorage.setItem("astro_profile_migrated", "1");
+          await refreshUser();
+          // Funnel spine — step 5 (#12 deferred this to #7). NON-PII only.
+          trackEvent(FUNNEL_EVENTS.chartMigrated, {
+            ...getLandingUtm(),
+            source: "save_chart_resume",
+            language,
+          });
+          navigate(langPath("/dashboard"));
+        } else {
+          // 无 prefill（手动登录 / 刷新丢了 state）：已登录，落 dashboard。
+          navigate(langPath("/dashboard"));
+        }
+      } catch {
+        // 迁移失败：保持已登录，用户可经既有 migrate 提示重试。不抛。
+      } finally {
+        clearPendingSaveResume();
+        saveResumeInFlightRef.current = false;
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingSaveResume]);
 
   // Landing routes (root + /landing-v2 + /landing-v2/{en,zh}/) reuse the standard
   // app nav (Dashboard/Forecast/Us/Oracle/Journal/Wiki) so visitors see ONE
@@ -756,6 +818,14 @@ const AppContent: React.FC = () => {
                 <OnboardingPage
                   onComplete={(u) => {
                     if (!isAuthenticated) {
+                      // Funnel spine — step 3 (#12 deferred this to #7).
+                      // NON-PII only: source + UTM + language. The chart itself
+                      // stays in router state until login (no localStorage).
+                      trackEvent(FUNNEL_EVENTS.authPrompted, {
+                        ...getLandingUtm(),
+                        source: "save_chart",
+                        language,
+                      });
                       openLoginModal("save_chart");
                       return;
                     }
