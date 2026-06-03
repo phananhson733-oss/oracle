@@ -135,7 +135,7 @@ const WikiSyntheticaPage: React.FC = () => {
         setError(msg);
         setViewState('error');
       } else if (access.needPurchase) {
-        openUpgradeModal('解锁 Synthetica 洞察');
+        openUpgradeModal(t.subscription?.upgrade_reason_synthetica || 'Unlock Synthetica insights');
       }
       return;
     }
@@ -156,7 +156,7 @@ const WikiSyntheticaPage: React.FC = () => {
         const access = await checkAccess('synthetica');
         if (!access.canAccess && access.needPurchase) {
           // 使用统一的订阅弹窗
-          openUpgradeModal('解锁 Synthetica 洞察');
+          openUpgradeModal(t.subscription?.upgrade_reason_synthetica || 'Unlock Synthetica insights');
           return;
         }
       } catch {

@@ -223,7 +223,7 @@ const CBTMainPage: React.FC<CBTMainPageProps> = ({ profile }) => {
       if (access.canAccess) {
         setActiveAnalysisView(view);
       } else if (access.needPurchase) {
-        openUpgradeModal("解锁 CBT 统计分析");
+        openUpgradeModal(t.subscription?.upgrade_reason_cbt_stats || "Unlock CBT statistics");
       }
     },
     [checkStatsAccess, openUpgradeModal, isAuthenticated, openLoginModal, t],

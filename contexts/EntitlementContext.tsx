@@ -22,6 +22,7 @@ import {
   POINTS_PRICING,
 } from '../services/entitlementClientV2';
 import { useAuth } from './AuthContext';
+import { useLanguage } from '../components/UIComponents';
 import { setUserProperties, trackEvent } from '../services/analytics';
 import { FREE_MODE, LOGIN_GATE_MODE, LOGIN_REQUIRED_FEATURES } from '../constants';
 
@@ -369,6 +370,7 @@ export function useFeatureAccess(featureType: FeatureType, featureId?: string) {
 export function useAskQuota() {
   const { entitlements, consumeFeature, checkAccess } = useEntitlement();
   const { openUpgradeModal } = useAuth();
+  const { t } = useLanguage();
 
   const freeLeft = entitlements?.ask.freeLeft ?? 0;
   const subscriptionLeft = entitlements?.ask.subscriptionLeft ?? 0;
@@ -382,11 +384,11 @@ export function useAskQuota() {
     if (!success) {
       const access = await checkAccess('ask');
       if (access.needPurchase) {
-        openUpgradeModal('解锁 Ask 问答');
+        openUpgradeModal(t.subscription?.upgrade_reason_ask || 'Unlock Ask Q&A');
       }
     }
     return success;
-  }, [consumeFeature, checkAccess, openUpgradeModal]);
+  }, [consumeFeature, checkAccess, openUpgradeModal, t]);
 
   return {
     freeLeft,
@@ -402,6 +404,7 @@ export function useAskQuota() {
 export function useSyntheticaQuota() {
   const { entitlements, consumeFeature, checkAccess } = useEntitlement();
   const { openUpgradeModal } = useAuth();
+  const { t } = useLanguage();
 
   const freeLeft = entitlements?.synthetica.freeLeft ?? 0;
   const subscriptionLeft = entitlements?.synthetica.subscriptionLeft ?? 0;
@@ -415,11 +418,11 @@ export function useSyntheticaQuota() {
     if (!success) {
       const access = await checkAccess('synthetica');
       if (access.needPurchase) {
-        openUpgradeModal('解锁 Synthetica 洞察');
+        openUpgradeModal(t.subscription?.upgrade_reason_synthetica || 'Unlock Synthetica insights');
       }
     }
     return success;
-  }, [consumeFeature, checkAccess, openUpgradeModal]);
+  }, [consumeFeature, checkAccess, openUpgradeModal, t]);
 
   return {
     freeLeft,
@@ -435,6 +438,7 @@ export function useSyntheticaQuota() {
 export function useSynastryQuota() {
   const { entitlements, checkSynastry, recordSynastry, checkAccess } = useEntitlement();
   const { openUpgradeModal } = useAuth();
+  const { t } = useLanguage();
 
   const freeLeft = entitlements?.synastry.freeLeft ?? 0;
   const subscriptionLeft = entitlements?.synastry.subscriptionLeft ?? 0;
@@ -494,10 +498,10 @@ export function useSynastryQuota() {
     }
 
     // 需要付费 - 使用统一的订阅弹窗
-    openUpgradeModal('解锁合盘分析');
+    openUpgradeModal(t.subscription?.upgrade_reason_synastry || 'Unlock synastry analysis');
     // 注意：UpgradeModal 不支持 onPurchased 回调，如需回调需要监听 entitlements 变化
     return { hash: result.hash, isNew: false, needPurchase: true };
-  }, [checkSynastry, recordSynastry, openUpgradeModal, checkAccess, entitlements?.purchasedFeatures.synastryHashes]);
+  }, [checkSynastry, recordSynastry, openUpgradeModal, checkAccess, entitlements?.purchasedFeatures.synastryHashes, t]);
 
   return {
     freeLeft,
