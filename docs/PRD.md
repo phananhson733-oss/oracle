@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.18
+> **Version**: 2.19
 > **Last Updated**: 2026-06-03
 > **Status**: Living Document — synced with codebase
 
@@ -397,6 +397,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 | **月付** | $6.99/月 | 自动续费，随时取消 |
 | **年付** | $41.99/年 (Airwallex) | 相当于 $3.50/月，节省 50%。注：Stripe 遗留链路年付同步为 50% 折扣 |
 | **首次折扣** | 50% off | 所有用户首次订阅享 50% 折扣 |
+
+> **多币种**：结算货币为 USD / CNY / EUR / GBP，按访客地区（Vercel IP 国家 → Accept-Language → USD）自动选定。EUR 镜像 USD 金额、GBP 略低；完整映射与兜底策略见 §6.2。
 
 **订阅权益**:
 
@@ -1170,10 +1172,16 @@ JWT Token 结构:
 
 ### 6.2 多币种支持
 
-| 币种 | 用途 |
-|------|------|
-| **USD** | 主要定价货币（欧美市场） |
-| **CNY** | 中国用户可选 |
+支持 4 种 Airwallex 结算货币，按**真实请求信号**自动选定（`backend/src/utils/currency.ts::resolveCurrencyFromRequest`），优先级：`?currency=` 显式覆盖 → Vercel `x-vercel-ip-country`（IP 国家）→ `Accept-Language` 地区子标签 → USD 默认。
+
+| 币种 | 用途 | 触发国家 |
+|------|------|----------|
+| **USD** | 主要定价货币 / 默认兜底 | 默认 + 非映射国家 |
+| **CNY** | 中国用户 | CN |
+| **EUR** | 欧元区 | 欧元区 20 国 |
+| **GBP** | 英国 | GB |
+
+**Price ID 兜底（红线：绝不编造金额）**：EUR/GBP 的订阅 Airwallex price ID 未配置时，回退到 USD price ID 并记 warning，不生成虚构金额；续费 / 积分为 PaymentIntent，按 `config/airwallex.ts` 的 per-currency 金额计价。EUR/GBP 订阅 price ID 经 `AIRWALLEX_PRICE_{MONTHLY,YEARLY}[_FIRST]_{EUR,GBP}` env 配置（未配则走 USD 兜底）。
 
 ### 6.3 翻译系统
 

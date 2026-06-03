@@ -17,6 +17,71 @@ import crypto from 'crypto';
 let cachedToken: string | null = null;
 let tokenExpiry = 0;
 
+// Price-block keys (lowercase) for the per-currency price/pricing tables.
+type CurrencyKey = 'usd' | 'cny' | 'eur' | 'gbp';
+const VALID_CURRENCY_KEYS: ReadonlySet<CurrencyKey> = new Set<CurrencyKey>(['usd', 'cny', 'eur', 'gbp']);
+
+/**
+ * Lowercase a SupportedCurrency to its price-block key, defaulting to 'usd' for
+ * any unexpected input. Replaces the old `=== 'CNY' ? 'cny' : 'usd'` ternaries.
+ */
+export const currencyKeyOf = (currency: SupportedCurrency): CurrencyKey => {
+  const key = (currency ?? '').toLowerCase() as CurrencyKey;
+  return VALID_CURRENCY_KEYS.has(key) ? key : 'usd';
+};
+
+/**
+ * Resolve the Airwallex subscription price ID for a currency/plan, with a safe
+ * USD fallback when the currency's price ID is not configured in the dashboard.
+ *
+ * Hard rule: we NEVER fabricate a charge amount. When EUR/GBP price IDs are
+ * unset we charge the real USD price ID (logging a warning) rather than
+ * inventing a EUR/GBP amount. Throws only when even the USD base price is unset.
+ */
+export const resolvePriceIdWithFallback = (
+  prices: Record<string, string>,
+  currency: SupportedCurrency,
+  plan: 'monthly' | 'yearly',
+  useFirstDiscount: boolean,
+): { priceId: string; usedFirstDiscount: boolean; fellBackToUsd: boolean } => {
+  const key = currencyKeyOf(currency);
+  const pick = (k: string): string => prices[k] || '';
+
+  let usedFirstDiscount = false;
+  let priceId = '';
+
+  if (useFirstDiscount) {
+    priceId = pick(`${plan}_first_${key}`);
+    if (priceId) {
+      usedFirstDiscount = true;
+    } else {
+      // Try USD first-discount before dropping to non-discount prices.
+      const usdFirst = pick(`${plan}_first_usd`);
+      if (usdFirst) {
+        console.warn(`Airwallex first-discount price not configured for ${plan} ${key}, falling back to USD first-discount price`);
+        return { priceId: usdFirst, usedFirstDiscount: true, fellBackToUsd: true };
+      }
+    }
+  }
+
+  if (!priceId) {
+    priceId = pick(`${plan}_${key}`);
+  }
+
+  if (priceId) {
+    return { priceId, usedFirstDiscount, fellBackToUsd: false };
+  }
+
+  // Currency-specific price ID missing → fall back to the real USD price ID.
+  const usdPriceId = pick(`${plan}_usd`);
+  if (usdPriceId) {
+    console.warn(`Airwallex price ID not configured for ${plan} ${key}; falling back to USD price ID (no amount fabricated)`);
+    return { priceId: usdPriceId, usedFirstDiscount: false, fellBackToUsd: true };
+  }
+
+  throw new Error(`Airwallex price not configured for ${plan} ${key} (and no USD fallback price set)`);
+};
+
 interface CreateSubscriptionInput {
   userId: string;
   email: string;
@@ -77,29 +142,14 @@ class AirwallexService {
       throw new Error('Airwallex not configured');
     }
 
-    const currencyKey = input.currency === 'CNY' ? 'cny' : 'usd';
-    let priceId: string;
-    let usedFirstDiscount = false;
-
-    if (input.useFirstDiscount) {
-      const firstPriceId = input.plan === 'yearly'
-        ? AIRWALLEX_PRICES[`yearly_first_${currencyKey}` as keyof typeof AIRWALLEX_PRICES]
-        : AIRWALLEX_PRICES[`monthly_first_${currencyKey}` as keyof typeof AIRWALLEX_PRICES];
-
-      if (firstPriceId) {
-        priceId = firstPriceId;
-        usedFirstDiscount = true;
-      } else {
-        console.warn(`Airwallex first discount price not configured for ${input.plan} ${currencyKey}, falling back`);
-        priceId = AIRWALLEX_PRICES[`${input.plan}_${currencyKey}` as keyof typeof AIRWALLEX_PRICES];
-      }
-    } else {
-      priceId = AIRWALLEX_PRICES[`${input.plan}_${currencyKey}` as keyof typeof AIRWALLEX_PRICES];
-    }
-
-    if (!priceId) {
-      throw new Error(`Airwallex price not configured for ${input.plan} ${currencyKey}`);
-    }
+    const resolved = resolvePriceIdWithFallback(
+      AIRWALLEX_PRICES as Record<string, string>,
+      input.currency,
+      input.plan,
+      Boolean(input.useFirstDiscount),
+    );
+    const priceId = resolved.priceId;
+    const usedFirstDiscount = resolved.usedFirstDiscount;
 
     const token = await this.getAccessToken();
 
@@ -188,7 +238,7 @@ class AirwallexService {
       throw new Error('Airwallex not configured');
     }
 
-    const currencyKey = input.currency === 'CNY' ? 'cny' : 'usd';
+    const currencyKey = currencyKeyOf(input.currency);
     const pricing = AIRWALLEX_SUBSCRIPTION_PRICING[currencyKey][input.plan];
     const token = await this.getAccessToken();
     const shortId = input.userId.replace(/-/g, '').slice(0, 12);
@@ -259,7 +309,7 @@ class AirwallexService {
       throw new Error(`Invalid package ID: ${input.packageId}`);
     }
 
-    const pricing = input.currency === 'CNY' ? packageInfo.cny : packageInfo.usd;
+    const pricing = packageInfo[currencyKeyOf(input.currency)];
     const token = await this.getAccessToken();
 
     // Create PaymentIntent — return_url controls post-payment redirect on HPP
@@ -440,7 +490,7 @@ class AirwallexService {
 
   // Get pricing info for API response
   getPricing(currency: SupportedCurrency) {
-    const currencyKey = currency === 'CNY' ? 'cny' : 'usd';
+    const currencyKey = currencyKeyOf(currency);
     const subPricing = AIRWALLEX_SUBSCRIPTION_PRICING[currencyKey];
 
     const creditsPackages = Object.values(AIRWALLEX_CREDITS_PACKAGES).map((pkg) => ({

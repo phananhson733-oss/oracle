@@ -17,6 +17,8 @@
 - ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。
 - ephemeris.test.ts｜地位：星历服务测试｜功能：验证本命缓存键的确定性、字段敏感性与敏感字段脱敏。
 - geocoding.ts｜地位：地理服务｜功能：城市搜索与坐标解析（Redis 缓存键经 SHA-256 hashInput 摘要，原始城市名永不入键；输入硬上限 CITY_MAX_LENGTH=200）。
+- airwallexService.ts｜地位：Airwallex 支付服务｜功能：订阅/积分/续费 REST 调用与定价；导出 `currencyKeyOf`（货币→price 块键，USD 兜底）+ `resolvePriceIdWithFallback`（EUR/GBP price ID 未配置时回退 USD price ID + warn，绝不编造金额），支持 USD/CNY/EUR/GBP 四币种。
+- __tests__/airwallexCurrency.test.ts｜地位：货币计费单测｜功能：覆盖 4 币种 price 块、price ID 缺失 USD 兜底分支、getPricing 各币种金额（backlog #13）。
 
 近期更新
 - geocoding 支持中英文查询、逗号分隔解析与省/国过滤兜底。
@@ -41,3 +43,4 @@
 - 星历服务新增行运缓存与紧凑摘要构建，减少重复计算与 prompt 体量。
 - 本命缓存键改为 SHA-256 摘要，规避明文敏感字段；新增 ephemeris.test.ts 覆盖确定性与脱敏断言。
 - v2.11 隐私加固：geocoding 缓存键改用 hashInput(normalize(city))；LocationResolutionError 默认 message 不再回显 cityName；CITY_MAX_LENGTH=200 硬上限；上游错误日志改为只记录 error.name 避免泄漏。
+- backlog #13 多货币：airwallexService 引入 `currencyKeyOf` / `resolvePriceIdWithFallback`，4 处 `=== 'CNY' ? 'cny':'usd'` 二元判断改为查表 + USD 兜底；支持 USD/CNY/EUR/GBP；EUR/GBP price ID 缺失时回退 USD price ID 并 warn（不编造金额）。货币按 `utils/currency.ts::resolveCurrencyFromRequest` 从请求头派生。

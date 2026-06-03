@@ -1,15 +1,16 @@
 // Airwallex Payment API
 import { Router, Request, Response } from 'express';
 import { authMiddleware, requireAuth } from './auth.js';
-import { airwallexService } from '../services/airwallexService.js';
+import { airwallexService, currencyKeyOf } from '../services/airwallexService.js';
 import subscriptionService from '../services/subscriptionService.js';
 import entitlementServiceV2 from '../services/entitlementServiceV2.js';
 import {
   isAirwallexConfigured,
   AIRWALLEX_CREDITS_PACKAGES,
   AIRWALLEX_SUBSCRIPTION_PRICING,
-  resolveCurrency,
+  type SupportedCurrency,
 } from '../config/airwallex.js';
+import { resolveCurrencyFromRequest } from '../utils/currency.js';
 import { SUBSCRIPTION_BENEFITS } from '../config/auth.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 import { emailService } from '../services/emailService.js';
@@ -34,8 +35,9 @@ function isValidRedirectUrl(url: string): boolean {
 
 // GET /api/airwallex/pricing
 router.get('/pricing', async (req: Request, res: Response) => {
-  const lang = (req.query.lang as string) || 'en';
-  const currency = resolveCurrency(lang);
+  // Derive currency from real request signals (IP country, then Accept-Language),
+  // with an optional explicit ?currency= override. Falls back to USD.
+  const currency = resolveCurrencyFromRequest(req);
   const pricing = airwallexService.getPricing(currency);
   res.json(pricing);
 });
@@ -51,7 +53,7 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
       return res.status(503).json({ error: 'Airwallex service unavailable' });
     }
 
-    const { plan, successUrl, cancelUrl, useFirstDiscount, lang } = req.body;
+    const { plan, successUrl, cancelUrl, useFirstDiscount } = req.body;
 
     if (!successUrl || !cancelUrl) {
       return res.status(400).json({ error: 'successUrl and cancelUrl required' });
@@ -78,7 +80,7 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
           .single();
         email = user?.email || '';
       }
-      const currency = resolveCurrency(lang);
+      const currency = resolveCurrencyFromRequest(req);
       const result = await airwallexService.createRenewalPayment({
         userId: req.userId!,
         email,
@@ -117,7 +119,7 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
       email = user?.email || '';
     }
 
-    const currency = resolveCurrency(lang);
+    const currency = resolveCurrencyFromRequest(req);
 
     const result = await airwallexService.createSubscription({
       userId: req.userId!,
@@ -505,7 +507,7 @@ router.post('/create-order', authMiddleware, requireAuth, async (req: Request, r
       return res.status(503).json({ error: 'Airwallex service unavailable' });
     }
 
-    const { packageId, successUrl, cancelUrl, lang } = req.body;
+    const { packageId, successUrl, cancelUrl } = req.body;
 
     if (!packageId || !AIRWALLEX_CREDITS_PACKAGES[packageId]) {
       return res.status(400).json({ error: 'Invalid packageId' });
@@ -519,7 +521,7 @@ router.post('/create-order', authMiddleware, requireAuth, async (req: Request, r
       return res.status(400).json({ error: 'Invalid redirect URL' });
     }
 
-    const currency = resolveCurrency(lang);
+    const currency = resolveCurrencyFromRequest(req);
 
     const result = await airwallexService.createOrder({
       userId: req.userId!,
@@ -843,7 +845,7 @@ async function handleSubscriptionActive(event: any): Promise<void> {
       await emailService.sendPaymentReceipt(email, {
         amount: data.amount ? String(data.amount) : (() => {
           const cur = (data.currency || 'USD').toUpperCase();
-          const tier = cur === 'CNY' ? AIRWALLEX_SUBSCRIPTION_PRICING.cny : AIRWALLEX_SUBSCRIPTION_PRICING.usd;
+          const tier = AIRWALLEX_SUBSCRIPTION_PRICING[currencyKeyOf(cur as SupportedCurrency)];
           return (plan === 'yearly' ? tier.yearly.amount : tier.monthly.amount) / 100;
         })().toFixed(2),
         currency: data.currency || 'USD',
