@@ -111,6 +111,7 @@ import { saturnMahadashaZh } from "./saturn-mahadasha";
 import { venusMahadashaEn } from "./venus-mahadasha";
 import { venusMahadashaZh } from "./venus-mahadasha";
 import { solarReturnChartEn } from "./solar-return-chart";
+import { whatIsAFullMoonRitualEn } from "./what-is-a-full-moon-ritual";
 // All articles organized by language
 
 import {
@@ -270,6 +271,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnMahadashaEn,
   venusMahadashaEn,
   solarReturnChartEn,
+  whatIsAFullMoonRitualEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
