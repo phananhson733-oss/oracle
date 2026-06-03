@@ -110,6 +110,7 @@ import { saturnMahadashaEn } from "./saturn-mahadasha";
 import { saturnMahadashaZh } from "./saturn-mahadasha";
 import { venusMahadashaEn } from "./venus-mahadasha";
 import { venusMahadashaZh } from "./venus-mahadasha";
+import { solarReturnChartEn } from "./solar-return-chart";
 // All articles organized by language
 
 import {
@@ -268,6 +269,7 @@ const ARTICLES_EN: WikiArticle[] = [
   ketuMahadashaEn,
   saturnMahadashaEn,
   venusMahadashaEn,
+  solarReturnChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
