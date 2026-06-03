@@ -17,3 +17,5 @@
 | `safe-jsonld.test.ts` | 回归：`scripts/lib/safe-jsonld.mjs` 的 `safeJsonLd` 转义 `<`/`>`/`&` 与 U+2028/U+2029，含 `</script>` 字段不突破 script 标签（防 SEO 静态页存储型 XSS），输出仍合法 JSON 可往返。 |
 | `md-to-html.test.ts` | 回归：`scripts/lib/md-to-html.mjs` 的 `mdToHtml` / `escapeHtml` / `stripInlineMarkdown` —— 标题/列表/引用/代码块/行内强调与链接渲染、XSS 转义、安全 href 白名单（拒 `javascript:`/`//`）、含括号 URL 不截断、裸星号不误斜体、未闭合代码块不丢正文。 |
 | `seo-canonical.test.ts` | 回归：`scripts/lib/seo-canonical.mjs` 的 `resolveCanonicalUrl`（无 override 自指 / lang-relative 前缀 `/<lang>` / 绝对 URL 原样）与 `includeInSitemap`（仅 `seo.sitemap === false` 排除）。守护 P1-1 canonical 收口与 sitemap loser 排除逻辑。 |
+| `seo-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<SEO>` 的页面级 JSON-LD type-aware 去重——stub 已 bake 同 @type 时不产生重复 FAQPage/Article/BreadcrumbList，保留 Org/WebSite，不碰 `data-astro-global-schema`，unmount 还原。守护 GSC "字段 FAQPage 重复"根因修复。 |
+| `breadcrumb-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<Breadcrumb>` 的 BreadcrumbList JSON-LD 自去重——已存在 BreadcrumbList（stub/SEO）时跳过注入，否则注入 head（如 AuthorPage），unmount 移除。守护 BreadcrumbList 三重发的修复。 |
