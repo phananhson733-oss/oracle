@@ -35,3 +35,5 @@
 | `article-seo-config.test.ts` | 回归（T7/T8）：锁定 aura bridge 实验页 SEO 契约——`noindex,follow` + `includeInSitemap` 排除 + hreflang 抑制，及 `embeddedTool`/`psychAdjacent` 证链 wiring。若 bridge 的 seo 配置或 embeddedTool 变更则大声失败。 |
 | `wiki-article-seo-alternates.test.tsx` | jsdom 组件测试：守护"SPA 运行时不得撤销 static SEO 信号"——`WikiArticleDetailPage` 渲染时传给 `<SEO>` 的 `alternateLanguages` 必须与静态生成器同步：普通文章发 zh/en/x-default，`seo.alternates===false`（noindex EN-only 实验页如 bridge）或 `canonicalPath` 收口页发空数组（不注入指向不存在 zh 页的 hreflang）。 |
 | `pricing-consistency.test.ts` | 计费守护（backlog #14 定价页）：`data/pricing.ts` 的订阅/积分包展示金额必须与 `backend/src/config/airwallex.ts`（文本匹配，避免 import 副作用）逐格一致——价格漂移会让定价页标错用户实付价；并验 `formatDisplayPrice`（USD 2 位小数 / CNY 整元）与后端 `formatPrice` 同构。 |
+| `seo-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<SEO>` 的页面级 JSON-LD type-aware 去重——stub 已 bake 同 @type 时不产生重复 FAQPage/Article/BreadcrumbList，保留 Org/WebSite，不碰 `data-astro-global-schema`，unmount 还原。守护 GSC "字段 FAQPage 重复"根因修复。 |
+| `breadcrumb-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<Breadcrumb>` 的 BreadcrumbList JSON-LD 自去重——已存在 BreadcrumbList（stub/SEO）时跳过注入，否则注入 head（如 AuthorPage），unmount 移除。守护 BreadcrumbList 三重发的修复。 |
