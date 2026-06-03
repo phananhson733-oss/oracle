@@ -16,5 +16,5 @@
 - PROGRAMMATIC_SEO.md｜地位：程序化 SEO 指南｜功能：程序化页面设计与生成规范。
 - CSP_DOMAIN_ALLOWLIST.md｜地位：CSP 域名清单｜功能：按 directive 分组的外部子资源域名 allowlist，供 backlog #8 重新启用 CSP 消费（含 Report-Only 实测步骤）。
 - GOOGLE_OAUTH_SETUP.md｜地位：OAuth 配置指南｜功能：说明如何配置 Google OAuth 登录功能（含凭据获取与重定向配置）。
-- GOOGLE_OAUTH_SETUP.md｜地位：OAuth 配置指南｜功能：说明如何配置 Google OAuth 登录功能（含凭据获取与重定向配置）。
+- BACKUP_RUNBOOK.md｜地位：备份/恢复 runbook｜功能：数据存储拓扑、备份机制、RPO/RTO 目标、恢复步骤与待核验 TODO（backlog #21）；平台事实标 UNVERIFIED 须 dashboard 核实。
 - FOLDER.md｜地位：目录索引文档｜功能：记录 docs 目录下的文件清单。
