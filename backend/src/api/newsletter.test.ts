@@ -88,9 +88,14 @@ describe("/api/newsletter", () => {
     expect(res.body).toEqual({ success: true });
     expect(mockFrom).toHaveBeenCalledWith("newsletter_subscribers");
     expect(mockInsert).toHaveBeenCalledTimes(1);
+    // Double opt-in defaults OFF (NEWSLETTER_CONFIRM_ENABLED unset): the row is
+    // inserted as already-confirmed with no token — today's single-opt-in flow.
     expect(mockInsert).toHaveBeenCalledWith({
       email: "new@example.com",
       source: "landing_v2",
+      status: "confirmed",
+      confirm_token: null,
+      confirmed_at: expect.any(String),
     });
   });
 

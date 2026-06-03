@@ -1,13 +1,28 @@
-// INPUT: Newsletter subscription API route.
-// OUTPUT: 导出 newsletter 路由（含蜜罐反爬、IP 限流、Supabase 持久化、8s upstream timeout）。
-// POS: 落地页 v2 邮件订阅端点；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: express + rate-limit, node:crypto (token), Supabase, logger, isResendConfigured, emailService。
+// OUTPUT: newsletter 路由 — POST /（蜜罐+限流+持久化）+ 双 opt-in（NEWSLETTER_CONFIRM_ENABLED）+ GET /confirm/:token、/unsubscribe/:token（幂等、渲染本地化 HTML、List-Unsubscribe 头）。
+// POS: 落地页 v2 邮件订阅端点（#23 升级为可确认/可退订列表）。双 opt-in 默认关，待 Resend DKIM 验证后由 ops 开。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { Router, Request, Response } from "express";
 import rateLimit from "express-rate-limit";
+import { randomBytes } from "node:crypto";
 import { supabase, isSupabaseConfigured } from "../db/supabase.js";
 import { logger } from "../utils/logger.js";
+import { isResendConfigured } from "../config/auth.js";
+import { emailService } from "../services/emailService.js";
 
 export const newsletterRouter = Router();
+
+// Double opt-in is OFF by default so this ships dark: until ops verifies the
+// Resend sending domain (SPF/DKIM) and sets NEWSLETTER_CONFIRM_ENABLED=true,
+// the POST keeps today's single-opt-in behavior (insert as confirmed, no mail).
+// Sending confirmation mail from an unverified domain would land in spam and
+// hurt sender reputation — hence the explicit gate.
+const NEWSLETTER_CONFIRM_ENABLED =
+  (process.env.NEWSLETTER_CONFIRM_ENABLED || "").toLowerCase() === "true";
+const PUBLIC_BASE_URL = (
+  process.env.PUBLIC_SITE_URL || "https://www.astrologywiki.com"
+).replace(/\/$/, "");
+const randomToken = (): string => randomBytes(32).toString("hex");
 
 // Hard upstream timeout for the Supabase insert. Without this, a hung PostgREST
 // response would keep the Express handler open until Vercel's 300s function
@@ -184,10 +199,15 @@ newsletterRouter.post(
     }
 
     try {
+      const confirmToken = NEWSLETTER_CONFIRM_ENABLED ? randomToken() : null;
+      const nowIso = new Date().toISOString();
       const { error } = await withTimeout(
         supabase.from("newsletter_subscribers").insert({
           email: normalized,
           source: "landing_v2",
+          status: NEWSLETTER_CONFIRM_ENABLED ? "pending" : "confirmed",
+          confirm_token: confirmToken,
+          confirmed_at: NEWSLETTER_CONFIRM_ENABLED ? null : nowIso,
         }),
         UPSTREAM_TIMEOUT_MS,
       );
@@ -197,6 +217,34 @@ newsletterRouter.post(
         // Treat as a soft success — design spec calls for differentiated
         // copy on the client, not a 4xx.
         if (error.code === "23505") {
+          // Existing email. With double opt-in on, a row stuck in 'pending'
+          // may belong to someone whose first confirmation never arrived —
+          // give them a fresh token + email so they aren't permanently stuck.
+          // Confirmed/unsubscribed rows are left untouched (we never auto-
+          // reactivate an unsubscribe).
+          if (NEWSLETTER_CONFIRM_ENABLED) {
+            const retryToken = randomToken();
+            const { data: reset } = await withTimeout(
+              supabase
+                .from("newsletter_subscribers")
+                .update({ confirm_token: retryToken, confirmed_at: null })
+                .eq("email", normalized)
+                .eq("status", "pending")
+                .select("id"),
+              UPSTREAM_TIMEOUT_MS,
+            );
+            if (reset && reset.length > 0 && isResendConfigured()) {
+              try {
+                await emailService.sendNewsletterConfirmation(
+                  normalized,
+                  `${PUBLIC_BASE_URL}/api/newsletter/confirm/${retryToken}`,
+                  `${PUBLIC_BASE_URL}/api/newsletter/unsubscribe/${retryToken}`,
+                );
+              } catch {
+                logger.error("Newsletter confirmation resend failed");
+              }
+            }
+          }
           return res.status(200).json({
             success: true,
             already_subscribed: true,
@@ -216,6 +264,22 @@ newsletterRouter.post(
           error: "Failed to save subscription. Please try again.",
           code: "db_error",
         });
+      }
+
+      // Double opt-in: send the confirmation mail best-effort. A send failure
+      // must not fail the subscription (the row is already pending; the user
+      // can re-trigger). Skipped entirely when Resend isn't configured.
+      if (NEWSLETTER_CONFIRM_ENABLED && confirmToken && isResendConfigured()) {
+        try {
+          await emailService.sendNewsletterConfirmation(
+            normalized,
+            `${PUBLIC_BASE_URL}/api/newsletter/confirm/${confirmToken}`,
+            `${PUBLIC_BASE_URL}/api/newsletter/unsubscribe/${confirmToken}`,
+          );
+        } catch {
+          // Never log the email; the row stays pending and is re-triggerable.
+          logger.error("Newsletter confirmation email send failed");
+        }
       }
 
       return res.status(200).json({ success: true });
@@ -246,6 +310,169 @@ newsletterRouter.post(
         error: "Unexpected server error.",
         code: "internal_error",
       });
+    }
+  },
+);
+
+// Confirmation tokens are 32 random bytes → 64 hex chars. Validate the shape on
+// the edge before any DB lookup.
+const TOKEN_RE = /^[0-9a-f]{64}$/i;
+
+// Static, trusted copy for the confirm/unsubscribe landing pages (no user input
+// reaches the markup; lang is whitelisted to en/zh).
+const RESULT_COPY = {
+  confirmed: {
+    en: [
+      "You're subscribed",
+      "Thanks for confirming — you'll start receiving AstrologyWiki updates.",
+    ],
+    zh: ["订阅已确认", "感谢确认——你将开始收到 AstrologyWiki 的更新。"],
+  },
+  unsubscribed: {
+    en: [
+      "You're unsubscribed",
+      "You won't receive any more newsletter emails. You can resubscribe anytime.",
+    ],
+    zh: ["已退订", "你将不再收到订阅邮件，随时可以重新订阅。"],
+  },
+  invalid: {
+    en: ["Link not valid", "This link is invalid or has expired."],
+    zh: ["链接无效", "该链接无效或已过期。"],
+  },
+} as const;
+
+type ResultKind = keyof typeof RESULT_COPY;
+
+// Escape for an HTML attribute context. PUBLIC_BASE_URL is trusted infra config,
+// but escaping it keeps the rendered page injection-proof even if the env var is
+// ever set to something with a quote (defense in depth — mirrors emailService).
+const escAttr = (s: string): string =>
+  s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+const renderResultPage = (lang: "en" | "zh", kind: ResultKind): string => {
+  const [heading, body] = RESULT_COPY[kind][lang];
+  return `<!DOCTYPE html>
+<html lang="${lang}"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AstrologyWiki</title></head>
+<body style="margin:0;background:#0f0f1a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#e0e0f0;">
+<div style="max-width:480px;margin:0 auto;padding:64px 24px;text-align:center;">
+<h1 style="color:#d4af37;font-size:22px;margin:0 0 12px;">AstrologyWiki</h1>
+<p style="font-size:18px;font-weight:600;margin:0 0 8px;">${heading}</p>
+<p style="color:#a0a0b8;font-size:14px;margin:0 0 28px;">${body}</p>
+<a href="${escAttr(PUBLIC_BASE_URL)}/${lang}/" style="display:inline-block;background:#d4af37;color:#0f0f1a;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;">Open AstrologyWiki</a>
+</div></body></html>`;
+};
+
+const langOf = (req: Request): "en" | "zh" =>
+  req.query.lang === "zh" ? "zh" : "en";
+
+// State-mutating GET links (clicked from email) must never be cached or
+// prefetched by mail clients / proxies — no-store keeps a link preview from
+// silently confirming or unsubscribing someone.
+const sendResultPage = (
+  res: Response,
+  lang: "en" | "zh",
+  kind: ResultKind,
+  status: number,
+) =>
+  res
+    .status(status)
+    .set("Cache-Control", "no-store, max-age=0")
+    .set("Pragma", "no-cache")
+    .type("html")
+    .send(renderResultPage(lang, kind));
+
+// Flip any row bearing this token to unsubscribed. Idempotent; returns whether
+// a row matched. Shared by the human GET link and the RFC 8058 one-click POST.
+const unsubscribeByToken = async (token: string): Promise<boolean> => {
+  const { data, error } = await withTimeout(
+    supabase
+      .from("newsletter_subscribers")
+      .update({
+        status: "unsubscribed",
+        unsubscribed_at: new Date().toISOString(),
+      })
+      .eq("confirm_token", token)
+      .select("id"),
+    UPSTREAM_TIMEOUT_MS,
+  );
+  if (error) throw error;
+  return !!data && data.length > 0;
+};
+
+// GET /confirm/:token — flip a pending/confirmed row to confirmed (idempotent).
+// No auth; the token is the bearer secret. No email ever enters logs.
+newsletterRouter.get("/confirm/:token", async (req: Request, res: Response) => {
+  const lang = langOf(req);
+  const { token } = req.params;
+  if (!TOKEN_RE.test(token) || !isSupabaseConfigured())
+    return sendResultPage(res, lang, "invalid", 404);
+  try {
+    const { data, error } = await withTimeout(
+      supabase
+        .from("newsletter_subscribers")
+        .update({ status: "confirmed", confirmed_at: new Date().toISOString() })
+        .eq("confirm_token", token)
+        .neq("status", "unsubscribed")
+        .select("id"),
+      UPSTREAM_TIMEOUT_MS,
+    );
+    if (error || !data || data.length === 0)
+      return sendResultPage(res, lang, "invalid", 404);
+    return sendResultPage(res, lang, "confirmed", 200);
+  } catch {
+    logger.error("Newsletter confirm failed");
+    return sendResultPage(res, lang, "invalid", 404);
+  }
+});
+
+// GET /unsubscribe/:token — human click from the email body → HTML page.
+newsletterRouter.get(
+  "/unsubscribe/:token",
+  async (req: Request, res: Response) => {
+    const lang = langOf(req);
+    const { token } = req.params;
+    if (!TOKEN_RE.test(token) || !isSupabaseConfigured())
+      return sendResultPage(res, lang, "invalid", 404);
+    try {
+      const matched = await unsubscribeByToken(token);
+      return sendResultPage(
+        res,
+        lang,
+        matched ? "unsubscribed" : "invalid",
+        matched ? 200 : 404,
+      );
+    } catch {
+      logger.error("Newsletter unsubscribe failed");
+      return sendResultPage(res, lang, "invalid", 404);
+    }
+  },
+);
+
+// POST /unsubscribe/:token — RFC 8058 one-click (the List-Unsubscribe-Post
+// header). Mail clients POST here; respond with a bare 2xx, no HTML.
+newsletterRouter.post(
+  "/unsubscribe/:token",
+  async (req: Request, res: Response) => {
+    const { token } = req.params;
+    if (!TOKEN_RE.test(token) || !isSupabaseConfigured())
+      return res
+        .status(404)
+        .json({ error: "Invalid token", code: "invalid_token" });
+    try {
+      const matched = await unsubscribeByToken(token);
+      return res.status(matched ? 200 : 404).json({ success: matched });
+    } catch {
+      logger.error("Newsletter unsubscribe failed");
+      return res
+        .status(500)
+        .json({ error: "Unsubscribe failed", code: "db_error" });
     }
   },
 );

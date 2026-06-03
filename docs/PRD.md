@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.22
+> **Version**: 2.23
 > **Last Updated**: 2026-06-03
 > **Status**: Living Document — synced with codebase
 
@@ -899,7 +899,9 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | GET | `/api/astro/today` | 今日普世行星位置（10 大行星，按 UTC 午夜按日缓存，无 AI 调用）; no rate limit (safe due to day-scoped cache + zero LLM/IO per cached request); single-flight + integrity validation guards against cache stampede and mock-fallback poisoning | — |
 | GET | `/api/user/status` | 用户状态 | Optional |
 | GET | `/api/config` | 当前支付提供商配置 | — |
-| POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9 使用）; 5 req/hour per IP rate limit + honeypot field | — |
+| POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9）; 5 req/hour per IP + honeypot. 双 opt-in（`NEWSLETTER_CONFIRM_ENABLED=true` 时插 pending+token+发确认信；默认关 → 插 confirmed、不发信，dark until Resend DKIM 验证）| — |
+| GET | `/api/newsletter/confirm/:token` | 双 opt-in 确认链接：翻 confirmed（幂等），渲染本地化 HTML 结果页（`?lang=en\|zh`）；无效 token 友好 404 | — |
+| GET | `/api/newsletter/unsubscribe/:token` | 一键退订：翻 unsubscribed（幂等），渲染本地化 HTML；支撑 `List-Unsubscribe` 头 | — |
 | GET | `/health` | 健康检查 | — |
 
 #### GM 调试 API (开发环境)
@@ -960,6 +962,20 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | created_at | TIMESTAMPTZ | 保存时间 |
 
 > RLS：用户仅能 SELECT 自己的行（`auth.uid()::text = user_id::text`）+ service-role 管理全部。API 用 service-role client，按会话 `user_id` 过滤实现隔离。账号删除经 `userService.deleteUser` 显式清理 + FK CASCADE 双重保证。synastry `nameA/nameB` 入库前剥除（红线#4）。
+
+**newsletter_subscribers** — 邮件订阅（via migration 007，双 opt-in 列 via migration 008，#23）
+| Column | Type | 说明 |
+|--------|------|------|
+| id | UUID | 主键 |
+| email | TEXT | 订阅邮箱（`lower(email)` 唯一索引） |
+| source | TEXT | 采集来源（默认 `landing_v2`） |
+| status | TEXT | `pending` / `confirmed` / `unsubscribed`（CHECK；008 默认 pending，旧行回填 confirmed） |
+| confirm_token | TEXT | 32 随机字节 hex（64 字符），confirm + 一键退订的 bearer 密钥（部分唯一索引） |
+| confirmed_at | TIMESTAMPTZ | 确认时间 |
+| unsubscribed_at | TIMESTAMPTZ | 退订时间 |
+| created_at | TIMESTAMPTZ | 创建时间 |
+
+> RLS（007 起）：service-role only，无用户直接访问。双 opt-in 由 `NEWSLETTER_CONFIRM_ENABLED` 开关 dark-launch（默认关 → 单 opt-in 行为；开 → pending+token+确认信，须先验证 Resend SPF/DKIM）。token 仅 service-role 可见、不进日志。
 
 **subscriptions** — 订阅管理
 | Column | Type | 说明 |

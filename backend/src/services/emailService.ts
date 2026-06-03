@@ -12,10 +12,14 @@ class EmailService {
     return this.resend;
   }
 
-  private async send(params: { to: string; subject: string; html: string }): Promise<void> {
+  private async send(params: { to: string; subject: string; html: string; headers?: Record<string, string> }): Promise<void> {
+    const { to, subject, html, headers } = params;
     const { data, error } = await this.getClient().emails.send({
       from: RESEND_CONFIG.FROM_EMAIL,
-      ...params,
+      to,
+      subject,
+      html,
+      ...(headers ? { headers } : {}),
     });
     if (error) {
       throw new Error(`Resend error: ${error.message}`);
@@ -34,6 +38,36 @@ class EmailService {
       to: email,
       subject: 'Your AstrologyWiki verification code',
       html: this.buildTemplate(code),
+    });
+  }
+
+  // Double opt-in confirmation (backlog #23). The confirm/unsubscribe URLs are
+  // backend routes carrying a high-entropy per-subscriber token. List-Unsubscribe
+  // headers enable one-click unsubscribe in Gmail/Apple Mail.
+  async sendNewsletterConfirmation(
+    email: string,
+    confirmUrl: string,
+    unsubscribeUrl: string,
+  ): Promise<void> {
+    const safeConfirm = this.escapeHtml(confirmUrl);
+    const safeUnsub = this.escapeHtml(unsubscribeUrl);
+    await this.send({
+      to: email,
+      subject: 'Confirm your AstrologyWiki newsletter subscription',
+      html: this.buildBaseTemplate(
+        'Confirm your subscription',
+        'One quick step to start receiving AstrologyWiki updates',
+        `
+      <p style="color:#a0a0b8;font-size:14px;margin:0 0 24px;">Tap the button below to confirm you want astrology, psychology, and product updates from AstrologyWiki.</p>
+      <a href="${safeConfirm}" style="display:inline-block;background:#d4af37;color:#0f0f1a;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;">Confirm subscription</a>
+      <p style="color:#666680;font-size:12px;margin:24px 0 0;">If you didn't request this, ignore this email — you won't be subscribed.</p>
+      <p style="color:#666680;font-size:12px;margin:12px 0 0;"><a href="${safeUnsub}" style="color:#666680;">Unsubscribe</a></p>
+      `,
+      ),
+      headers: {
+        "List-Unsubscribe": `<${unsubscribeUrl}>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
     });
   }
 
