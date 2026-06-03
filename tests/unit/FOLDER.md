@@ -37,3 +37,4 @@
 | `pricing-consistency.test.ts` | 计费守护（backlog #14 定价页）：`data/pricing.ts` 的订阅/积分包展示金额必须与 `backend/src/config/airwallex.ts`（文本匹配，避免 import 副作用）逐格一致——价格漂移会让定价页标错用户实付价；并验 `formatDisplayPrice`（USD 2 位小数 / CNY 整元）与后端 `formatPrice` 同构。 |
 | `seo-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<SEO>` 的页面级 JSON-LD type-aware 去重——stub 已 bake 同 @type 时不产生重复 FAQPage/Article/BreadcrumbList，保留 Org/WebSite，不碰 `data-astro-global-schema`，unmount 还原。守护 GSC "字段 FAQPage 重复"根因修复。 |
 | `breadcrumb-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<Breadcrumb>` 的 BreadcrumbList JSON-LD 自去重——已存在 BreadcrumbList（stub/SEO）时跳过注入，否则注入 head（如 AuthorPage），unmount 移除。守护 BreadcrumbList 三重发的修复。 |
+| `clear-user-data.test.ts` | DSAR 守卫（backlog #26）：`services/authClient.ts::clearAllUserData` 删号时必须清掉所有 PII/账号 localStorage 键（synastry 真名 `astro_synastry_profiles` + CBT `astro_cbt_*` + token/entitlements/purchases/device），保留 consent/lang/theme；新增 PII 键漏接入清单即红。 |

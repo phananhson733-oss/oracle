@@ -13,6 +13,7 @@ import {
 import { cacheService } from "../cache/redis.js";
 import { emailService } from "../services/emailService.js";
 import { logger } from "../utils/logger.js";
+import { logDsarEvent } from "../utils/dsarAudit.js";
 
 // Strict rate limit for destructive account operations
 const accountDeleteLimiter = rateLimit({
@@ -735,6 +736,7 @@ router.delete(
       }
 
       await userService.deleteUser(req.userId!);
+      logDsarEvent("account_erasure", req.userId!);
 
       res.json({ success: true, message: "Account deleted successfully" });
     } catch (error) {
@@ -758,6 +760,7 @@ router.get(
       }
 
       const data = await userService.exportUserData(req.userId!);
+      logDsarEvent("data_export", req.userId!);
 
       res.setHeader("Content-Type", "application/json");
       res.setHeader(

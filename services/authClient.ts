@@ -65,6 +65,35 @@ export function clearTokens(): void {
   localStorage.removeItem(USER_KEY);
 }
 
+// localStorage keys holding account-bound or PII data, wiped on account erasure
+// so client-side personal data does not survive a deletion (DSAR #26). Consent /
+// theme / lang prefs are intentionally kept (not PII; resetting them is worse UX).
+// CBT keys mirror components/cbt/CBTMainPage.tsx; synastry mirrors constants.ts
+// SYNASTRY_PROFILE_STORAGE_KEY. tests/unit/clear-user-data.test.ts pins this list.
+const PII_LOCAL_KEYS = [
+  'astro_synastry_profiles', // synastry partner profiles (incl. real names)
+  'astro_cbt_history_v1', // CBT journal records
+  'astro_cbt_anon_client_id',
+  'astro_entitlements_v2',
+  'astro_purchases_v2',
+  'astro_device_id',
+  'astro_user',
+  'astro_profile_migrated',
+];
+
+// Full client-side erasure: tokens + every account-bound / PII key. Called when
+// an account is deleted so no personal data lingers in the browser (DSAR #26).
+export function clearAllUserData(): void {
+  clearTokens();
+  for (const key of PII_LOCAL_KEYS) {
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      // best-effort wipe
+    }
+  }
+}
+
 export function getStoredUser(): AuthUser | null {
   const stored = localStorage.getItem(USER_KEY);
   return stored ? JSON.parse(stored) : null;
@@ -321,7 +350,7 @@ export async function deleteAccount(password?: string): Promise<void> {
     throw new Error(error.error || 'Failed to delete account');
   }
 
-  clearTokens();
+  clearAllUserData();
 }
 
 export async function exportData(): Promise<Blob> {
