@@ -5,18 +5,21 @@ import type { WikiArticle } from "../../types";
 export const northNodeInScorpioEn: WikiArticle = {
   slug: "north-node-in-scorpio",
   title: "What the North Node in Scorpio Is Quietly Asking You to Risk",
-  description: "North Node in Scorpio is the point in a birth chart that marks an unlived growth direction, one that leads away from material comfort and toward emotional...",
+  description:
+    "North Node in Scorpio is the point in a birth chart that marks an unlived growth direction, one that leads away from material comfort and toward emotional...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
-    "\"north node in scorpio\"",
-    "\"scorpio north node\"",
-    "\"what is my north node\"",
-    "\"north node in scorpio soulmate\"",
-    "\"what does north node in scorpio mean\"",
-    "\"what is north node in scorpio\""
+    '"north node in scorpio"',
+    '"scorpio north node"',
+    '"what is my north node"',
+    '"north node in scorpio soulmate"',
+    '"what does north node in scorpio mean"',
+    '"what is north node in scorpio"',
   ],
   content: `# What the North Node in Scorpio Is Quietly Asking You to Risk
 
@@ -121,18 +124,21 @@ Open your birth chart, locate the Scorpio-Taurus node axis, and [read the North 
 export const northNodeInScorpioZh: WikiArticle = {
   slug: "north-node-in-scorpio",
   title: "读懂天蝎座北交点，把成长方向看成功课而非宿命",
-  description: "天蝎座北交点（North Node in Scorpio）是占星里用来描述一条这辈子要往情感与转化方向成长的功课的说法，它不是某颗实体行星，而是月亮轨道与黄道的交点落在天蝎座的位置。它和对面的金牛座南交点是一组，南交点代表你早已熟练、待着很舒服的老路（看重稳定、占有、可掌控的安全感），而天蝎座北交点（North...",
+  description:
+    "天蝎座北交点（North Node in Scorpio）是占星里用来描述一条这辈子要往情感与转化方向成长的功课的说法，它不是某颗实体行星，而是月亮轨道与黄道的交点落在天蝎座的位置。它和对面的金牛座南交点是一组，南交点代表你早已熟练、待着很舒服的老路（看重稳定、占有、可掌控的安全感），而天蝎座北交点（North...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
-    "\"north node in scorpio\"",
-    "\"scorpio north node\"",
-    "\"what is my north node\"",
-    "\"north node in scorpio soulmate\"",
-    "\"what does north node in scorpio mean\"",
-    "\"what is north node in scorpio\""
+    '"north node in scorpio"',
+    '"scorpio north node"',
+    '"what is my north node"',
+    '"north node in scorpio soulmate"',
+    '"what does north node in scorpio mean"',
+    '"what is north node in scorpio"',
   ],
   content: `# 读懂天蝎座北交点，把成长方向看成功课而非宿命
 

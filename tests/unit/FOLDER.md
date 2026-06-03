@@ -15,6 +15,10 @@
 | 文件 | 职责 |
 |---|---|
 | `analytics-redaction.test.ts` | 验证 `trackApiError` / `redactErrorMessageForAnalytics` 对 PII-risk endpoint 的 `error_message` 做硬性 `[redacted]` 处理，防止 birthCity / 姓名等敏感字段流向 GA4（隐私红线 #1）。 |
+| `analytics-chart-funnel.test.ts` | 验证 `sanitizeChartFunnelParams` 对 tool-led 证链漏斗事件做 default-deny allowlist 守卫：只放行 sign/module/tool/step/placement 五个分类字段，DOB/birthCity/coords/姓名/question/hotThought 等 PII 与未知键一律剥除（隐私红线 #1）。 |
+| `node-sign-lookup.test.ts` | `utils/nodeSign.ts::resolveNorthNodeSign` 纯查表算法：exact/区间内/边界日期命中、超范围与畸形/非法日历日期返回 null（用 fixture，与真实星历解耦）。 |
+| `node-sign-table.test.ts` | 守护已提交的 `data/nodeSignTable.ts` 生成产物：True Node 标记/范围/首 ingress 锚定 rangeStart/严格日期升序/合法星座名/数量下限（防 mock 退化），以及对真实表的黄金值（1990-08-15→Aquarius 等，已用 swisseph 交叉验证）。不依赖 swisseph，CI 通用。 |
+| `chart-mini-calc.test.tsx` | jsdom 组件测试：`<ChartMiniCalc>` 客户端解析北交点星座 + 显示 signup CTA、chart_start 仅触发一次、result_shown 带分类 sign，以及**核心隐私断言**——任何 trackChartFunnel 调用参数都不含出生日期或其任何片段（隐私红线 #1 + DOB 不出浏览器）。 |
 | `funnel-events.test.ts` | 守护 `services/funnelEvents.ts` 漏斗事件名契约（五段 funnel_*）与非 PII 字段白名单；用共享 `helpers/assertNoPii` 断言 chart_cast / account_created payload 形状无 PII（隐私红线 #1）。 |
 | `save-chart-resume.test.ts` | backlog #7：测 `services/saveChartResume.ts` 的 `buildBirthProfileFromPrefill`（齐全 / 缺 birthTime / accuracyLevel 缺省 exact / 不 mutate 入参）；用共享 `helpers/assertNoPii` 断言 save_intent / auth_prompted / chart_migrated payload 形状无 PII（隐私红线 #1）。 |
 | `author-personas.test.ts` | 守护作者人设注册表（`getAuthorById` 命中/未命中、`getAllAuthors`、bio EN 回退）与 `buildPersonSchema` Person 实体字段完整性、`@id` 跨语言稳定。 |
@@ -24,3 +28,9 @@
 | `safe-jsonld.test.ts` | 回归：`scripts/lib/safe-jsonld.mjs` 的 `safeJsonLd` 转义 `<`/`>`/`&` 与 U+2028/U+2029，含 `</script>` 字段不突破 script 标签（防 SEO 静态页存储型 XSS），输出仍合法 JSON 可往返。 |
 | `md-to-html.test.ts` | 回归：`scripts/lib/md-to-html.mjs` 的 `mdToHtml` / `escapeHtml` / `stripInlineMarkdown` —— 标题/列表/引用/代码块/行内强调与链接渲染、XSS 转义、安全 href 白名单（拒 `javascript:`/`//`）、含括号 URL 不截断、裸星号不误斜体、未闭合代码块不丢正文。 |
 | `seo-canonical.test.ts` | 回归：`scripts/lib/seo-canonical.mjs` 的 `resolveCanonicalUrl`（无 override 自指 / lang-relative 前缀 `/<lang>` / 绝对 URL 原样）与 `includeInSitemap`（仅 `seo.sitemap === false` 排除）。守护 P1-1 canonical 收口与 sitemap loser 排除逻辑。 |
+| `faq-jsonld.test.ts` | `scripts/lib/faq-jsonld.mjs` —— `buildFaqPageSchema` 从 question/answer 对生成 FAQPage（trim/丢缺项/全无效返回 null）；`parseFaqsFromMarkdown` 从文章正文按 FAQ 小标题 + 粗体问句解析 Q&A（含 ZH heading、忽略非 FAQ 段，正则镜像 SPA 内联解析）；`buildFaqSchemaFromMarkdown` 按 ≥2 门槛产出 schema（与 SPA 门槛一致）。 |
+| `safety-footer.test.ts` | `utils/safetyFooter.ts::buildSafetyFooterHtml`（静态 stub 侧）—— EN/ZH 强制安全 footer 含临床免责声明（"not a clinical diagnosis"/"这不是临床诊断"+持证心理咨询师）、不做医学诊断/宿命预测、危机热线（988/Samaritans/Befrienders + tel:）、未知 lang 回退 EN（CLAUDE.md AI 安全边界合规守卫）。 |
+| `safety-footer-spa.test.tsx` | jsdom 组件测试：`<SafetyFooter>`（SPA 侧）渲染与 stub 同源的强制文案——临床免责声明、非诊断/非宿命框架、危机热线（988 tel 链 + Befrienders nofollow）。守 inject-spa replace 语义下 JS 用户也必须看到 disclaimer（红线 #4）。 |
+| `wiki-article-embedded-tool.test.tsx` | jsdom 组件测试（T4）：`WikiArticleDetailPage` 在 `embeddedTool` 在场时渲染 `<ChartMiniCalc>`（props 指向上游全盘 `/landing-v2/{lang}/#birth-chart-tool`）并抑制底部 `<WikiChartCTA>`；无 embeddedTool 则保留底部 CTA、不渲染工具；`psychAdjacent` 在场时页面渲染强制安全 footer。 |
+| `article-seo-config.test.ts` | 回归（T7/T8）：锁定 aura bridge 实验页 SEO 契约——`noindex,follow` + `includeInSitemap` 排除 + hreflang 抑制，及 `embeddedTool`/`psychAdjacent` 证链 wiring。若 bridge 的 seo 配置或 embeddedTool 变更则大声失败。 |
+| `wiki-article-seo-alternates.test.tsx` | jsdom 组件测试：守护"SPA 运行时不得撤销 static SEO 信号"——`WikiArticleDetailPage` 渲染时传给 `<SEO>` 的 `alternateLanguages` 必须与静态生成器同步：普通文章发 zh/en/x-default，`seo.alternates===false`（noindex EN-only 实验页如 bridge）或 `canonicalPath` 收口页发空数组（不注入指向不存在 zh 页的 hreflang）。 |

@@ -5,17 +5,20 @@ import type { WikiArticle } from "../../types";
 export const howToFindNorthNodeEn: WikiArticle = {
   slug: "how-to-find-north-node",
   title: "How to Find North Node Placements You Can Actually Trust",
-  description: "The North Node is the point where the Moon's orbit crosses the ecliptic heading north, and in a birth chart it marks the growth direction you are still...",
+  description:
+    "The North Node is the point where the Moon's orbit crosses the ecliptic heading north, and in a birth chart it marks the growth direction you are still...",
   authorId: "julian-thorne",
   date: "2026-05-29",
   schema: "Article",
   lang: "en",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
     "how to find north node",
     "true node vs mean node",
     "north node calculator",
     "whats my north node",
-    "north node by sign"
+    "north node by sign",
   ],
   content: `# How to Find North Node Placements You Can Actually Trust
 
@@ -120,17 +123,20 @@ Once you have located your node's sign and house, read both ends of the axis tog
 export const howToFindNorthNodeZh: WikiArticle = {
   slug: "how-to-find-north-node",
   title: "北交点怎么找，一套绕开真假交点的定位方法",
-  description: "The North Node（北交点）是月亮轨道与黄道相交时朝北的那个点，象征你这一生要主动发展的方向。它和南交点是一条轴的两端，想先看清整条轴怎么运作，可以对照 月交点轴线总览 pillar 页，那里把南北交点放在一起讲。用一句话概括，北交点是你星盘里标记此生成长方向的点位。",
+  description:
+    "The North Node（北交点）是月亮轨道与黄道相交时朝北的那个点，象征你这一生要主动发展的方向。它和南交点是一条轴的两端，想先看清整条轴怎么运作，可以对照 月交点轴线总览 pillar 页，那里把南北交点放在一起讲。用一句话概括，北交点是你星盘里标记此生成长方向的点位。",
   authorId: "julian-thorne",
   date: "2026-05-29",
   schema: "Article",
   lang: "zh",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
     "how to find north node",
     "true node vs mean node",
     "north node calculator",
     "whats my north node",
-    "north node by sign"
+    "north node by sign",
   ],
   content: `# 北交点怎么找，一套绕开真假交点的定位方法
 

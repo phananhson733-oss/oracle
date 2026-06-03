@@ -37,6 +37,9 @@ import { orangeAuraMeaningEn } from "./orange-aura-meaning";
 import { greenAuraMeaningEn } from "./green-aura-meaning";
 import { chakraSystemOverviewEn } from "./chakra-system-overview";
 import { fourElementFrameworkEn } from "./four-element-framework";
+// tool-led prove-chain：aura→Moon/Venus/Rising 桥页（EN-only，noindex 转化实验，
+// 带北交点迷你计算器 + 强制安全 footer）。不进 sitemap（见 article.seo）。
+import { auraMoonVenusRisingBridgeEn } from "./aura-moon-venus-rising-bridge";
 
 import { greenAuraMeaningZh } from "./green-aura-meaning";
 import { orangeAuraMeaningZh } from "./orange-aura-meaning";
@@ -228,6 +231,7 @@ const ARTICLES_EN: WikiArticle[] = [
   greenAuraMeaningEn,
   chakraSystemOverviewEn,
   fourElementFrameworkEn,
+  auraMoonVenusRisingBridgeEn,
   astrologyHousesEn,
   eighthHouseMeaningEn,
   twelfthHouseAstrologyEn,

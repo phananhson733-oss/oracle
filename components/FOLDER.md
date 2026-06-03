@@ -20,6 +20,8 @@
 - ConsentBanner.tsx｜地位：提示组件｜功能：展示分析追踪同意横幅并收集授权。
 - Breadcrumb.tsx｜地位：导航组件｜功能：面包屑导航与结构化数据输出。
 - ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式）。
+- ChartMiniCalc.tsx｜地位：工具组件｜功能：tool-led 北交点迷你计算器（客户端纯查表，DOB 不出浏览器；instrument chart_start/result_shown/full_chart_cta_click 漏斗，只送分类字段）。分层互补定位：作为 #6 全盘（WikiChartCTA/BirthChartSection）的轻型上游钩子，结果区 CTA 经 `fullChartHref` prop 指向全盘（默认回退 /auth）。
+- SafetyFooter.tsx｜地位：合规组件｜功能：psych-adjacent 文章的强制安全 footer SPA 渲染（临床免责声明 + 危机热线），文案与静态 stub 同源自 `utils/safetyFooter.ts`（单一来源、绝不漂移）。因 inject-spa 是 replace 非 hydrate，JS 用户这份必须由 SPA 渲染（CLAUDE.md AI 安全边界 #1/#4）。由 `wiki/WikiArticleDetailPage` 在 `article.psychAdjacent` 时渲染。
 
 目录
 - auth｜地位：认证组件目录｜功能：登录/升级订阅、支付成功页与用户菜单。
@@ -27,6 +29,7 @@
 - wiki｜地位：Wiki 组件目录｜功能：心理占星百科页面与详情组件。
 
 近期更新
+- 新增 SafetyFooter（psych-adjacent 强制安全 footer 的 SPA 渲染），并由 WikiArticleDetailPage 在 article.embeddedTool/psychAdjacent 时挂载 ChartMiniCalc + SafetyFooter（embeddedTool 在场时抑制底部 WikiChartCTA，避免重复 CTA）。
 - 支付成功页增加 PayPal 订阅确认兜底，同步登录/订阅状态并默认返回个人信息页，避免订阅后回到 onboarding。
 - 新增积分充值弹窗组件（CreditsModal），展示积分余额并引导订阅，充值入口保持占位提示。
 - 新增竞品对比页面组件（ComparisonPage），支持 vs 与 alternatives 两种格式。

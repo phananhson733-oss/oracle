@@ -16,6 +16,7 @@
 - icon-512.png｜地位：PWA 图标｜功能：web manifest 512px 图标。
 - og-image.png｜地位：分享图｜功能：默认社交分享预览图。
 - robots.txt｜地位：爬虫配置｜功能：索引规则与 sitemap 入口。
+- llms.txt｜地位：GEO/LLM 入口｜功能：llmstxt.org 规范的站点导览（定位、wiki/工具/政策 hub 链接），供 LLM 爬虫理解站点；仅列已上线稳定 hub。
 - site.webmanifest｜地位：PWA 清单｜功能：站点名称与图标配置。
 - sitemap.xml｜地位：SEO 入口｜功能：公开页面索引清单。
 

@@ -1100,6 +1100,12 @@ export interface WikiArticle {
   schema: "Article" | "HowTo" | "FAQPage";
   lang: Language;
   seo?: WikiSeoOverride;
+  // tool-led "prove-chain"：在正文后挂载一个轻量构件（如北交点迷你计算器），
+  // 把 SEO 阅读流量转成星盘漏斗。仅 SPA 渲染（绝不进静态 stub，避免破坏双渲染/soft-404）。
+  embeddedTool?: { tool: "north-node-sign"; module?: string };
+  // 心理/疗愈邻近内容：触发强制安全 footer（临床免责声明 + 危机热线），
+  // 满足 CLAUDE.md AI 安全边界 #1/#4。静态 stub 与 SPA 两侧都渲染同一份文案。
+  psychAdjacent?: boolean;
 }
 
 export interface WikiArticleSummary {

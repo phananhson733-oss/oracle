@@ -30,6 +30,7 @@
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- analytics.ts 新增 tool-led 证链漏斗追踪：`trackChartFunnel` + 纯函数 `sanitizeChartFunnelParams`（default-deny allowlist，只放行 sign/module/tool/step/placement），构造型防止节点星座迷你计算器周边 DOB/birthCity/姓名等 PII 泄漏到 GA4（隐私红线 #1，沿用 redactErrorMessageForAnalytics 模式）。
 - 新增 saveChartResume.ts（backlog #7）：buildBirthProfileFromPrefill 纯映射，App.tsx 登录后把内存里的盘直推云端续接迁移；同批接线 save_intent（BirthChartSection）/auth_prompted（App onboarding）/chart_migrated（App resume effect）三个漏斗事件，均 additive、仅非 PII。
 - 新增 funnelEvents.ts 漏斗事件契约（backlog #12 切片）：FUNNEL_EVENTS 五段事件名 + 非 PII 字段白名单；BirthChartSection 发 funnel_chart_cast、AuthContext 发 funnel_account_created（均 additive、仅非 PII），其余三个事件 deferred to #7。
 - analytics.ts 扩展同意网关：setUserId / setUserProperties / initAnalytics 在 hasAnalyticsConsent() 为假时缓冲到 analyticsConsentBuffer，updateConsentState(true) 时一次性 flush，updateConsentState(false) 时清空。

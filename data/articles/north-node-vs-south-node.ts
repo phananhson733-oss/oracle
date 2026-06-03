@@ -5,19 +5,22 @@ import type { WikiArticle } from "../../types";
 export const northNodeVsSouthNodeEn: WikiArticle = {
   slug: "north-node-vs-south-node",
   title: "How North Node vs South Node Maps Your Growth Edge",
-  description: "North Node vs South Node describes the two opposite points where the Moon's orbit crosses the Sun's apparent path, read in astrology as a single growth axis...",
+  description:
+    "North Node vs South Node describes the two opposite points where the Moon's orbit crosses the Sun's apparent path, read in astrology as a single growth axis...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
-    "\"North Node vs South Node\"",
-    "\"north node meaning\"",
-    "\"south node astrology\"",
-    "\"soul's path\"",
-    "\"north node in scorpio\"",
-    "\"north node in taurus\"",
-    "\"how to find north node\""
+    '"North Node vs South Node"',
+    '"north node meaning"',
+    '"south node astrology"',
+    '"soul\'s path"',
+    '"north node in scorpio"',
+    '"north node in taurus"',
+    '"how to find north node"',
   ],
   content: `# How North Node vs South Node Maps Your Growth Edge
 
@@ -122,19 +125,22 @@ Open your birth chart and locate your North Node by sign, then read one worked e
 export const northNodeVsSouthNodeZh: WikiArticle = {
   slug: "north-node-vs-south-node",
   title: "北交点和南交点，说的是成长方向而不是写好的命",
-  description: "北交点和南交点（North Node 与 South Node）是星盘上一对标记成长方向与舒适区的相对点。它们不是行星，而是月亮轨道与黄道相交算出来的两个点，所以又叫月亮交点，始终相隔一百八十度，构成一条慢慢平衡的轴。读懂这对交点的关键，是把它放回整张盘里看，可以先翻一翻 出生星盘入门总览 pillar...",
+  description:
+    "北交点和南交点（North Node 与 South Node）是星盘上一对标记成长方向与舒适区的相对点。它们不是行星，而是月亮轨道与黄道相交算出来的两个点，所以又叫月亮交点，始终相隔一百八十度，构成一条慢慢平衡的轴。读懂这对交点的关键，是把它放回整张盘里看，可以先翻一翻 出生星盘入门总览 pillar...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
-    "\"North Node vs South Node\"",
-    "\"north node meaning\"",
-    "\"south node astrology\"",
-    "\"soul's path\"",
-    "\"north node in scorpio\"",
-    "\"north node in taurus\"",
-    "\"how to find north node\""
+    '"North Node vs South Node"',
+    '"north node meaning"',
+    '"south node astrology"',
+    '"soul\'s path"',
+    '"north node in scorpio"',
+    '"north node in taurus"',
+    '"how to find north node"',
   ],
   content: `# 北交点和南交点，说的是成长方向而不是写好的命
 

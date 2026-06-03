@@ -2611,6 +2611,21 @@ export const TRANSLATIONS = {
       cta: "Calculate My Saturn Return",
       calculating: "Calculating…",
     },
+    node_sign_calc: {
+      title: "Find Your North Node Sign",
+      subtitle:
+        "Your North Node points to this life's growth edge. Enter your birth date — it is computed right here in your browser and never sent anywhere.",
+      label_date: "Birth Date",
+      cta_reveal: "Reveal My North Node",
+      result_prefix: "Your North Node is in",
+      result_hint:
+        "The North Node drifts slowly, so your birth date is almost always enough to pin the sign.",
+      out_of_range:
+        "We can resolve North Node signs for birth dates from 1940 to 2035.",
+      signup_cta: "Get your full birth chart",
+      privacy_note:
+        "Computed in your browser — your birth date never leaves this page.",
+    },
   },
   zh: {
     common: {
@@ -4363,6 +4378,18 @@ export const TRANSLATIONS = {
       placeholder_city: "例如：北京、上海、纽约",
       cta: "计算我的土星回归",
       calculating: "计算中…",
+    },
+    node_sign_calc: {
+      title: "查出你的北交点星座",
+      subtitle:
+        "北交点指向你今生的成长方向。输入出生日期——计算在你的浏览器本地完成，日期不会发送到任何地方。",
+      label_date: "出生日期",
+      cta_reveal: "揭晓我的北交点",
+      result_prefix: "你的北交点在",
+      result_hint: "北交点移动缓慢，出生日期几乎总能确定星座。",
+      out_of_range: "我们可计算 1940 至 2035 年间出生日期的北交点星座。",
+      signup_cta: "获取完整出生星盘",
+      privacy_note: "在你的浏览器本地计算——出生日期绝不离开此页面。",
     },
   },
 };

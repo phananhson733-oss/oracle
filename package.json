@@ -19,7 +19,8 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "check:links": "node scripts/check-internal-links.mjs",
-    "ping:indexnow": "node scripts/ping-indexnow.mjs"
+    "ping:indexnow": "node scripts/ping-indexnow.mjs",
+    "gen:node-sign-table": "node scripts/gen-node-sign-table.mjs"
   },
   "dependencies": {
     "@google/genai": "latest",

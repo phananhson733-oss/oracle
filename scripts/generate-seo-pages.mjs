@@ -7,6 +7,7 @@ import { safeJsonLd } from './lib/safe-jsonld.mjs';
 import { mdToHtml, stripInlineMarkdown } from './lib/md-to-html.mjs';
 import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
 import { resolveCanonicalUrl, includeInSitemap } from './lib/seo-canonical.mjs';
+import { buildFaqSchemaFromMarkdown } from './lib/faq-jsonld.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
@@ -240,6 +241,10 @@ const buildHead = ({
   a { color: #7f5e36; text-decoration: none; border-bottom: 1px solid rgba(127, 94, 54, 0.35); }
   a:hover { color: #5f442b; }
   .cta { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
+  .safety-footer { margin-top: 2.5rem; padding: 1rem 1.25rem; border: 1px solid #d8cfbf; border-radius: 12px; background: #efeae1; font-size: 0.9rem; color: #4a4540; }
+  .safety-footer p { margin: 0 0 0.5rem; line-height: 1.55; }
+  .safety-footer ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+  .safety-footer li { line-height: 1.6; }
 </style>
 `);
 
@@ -772,6 +777,9 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'red-aura-meaning',
   'chakra-system-overview',
   'four-element-framework',
+  // tool-led prove-chain 桥页：写静态 stub（noindex,follow，给直达/内链访客兜底），
+  // 但 article.seo.sitemap===false 使其不进 sitemap（转化实验，不求收录）。
+  'aura-moon-venus-rising-bridge',
 ];
 
 const generate = async () => {
@@ -812,6 +820,10 @@ const generate = async () => {
   // Build-time integrity gate: every article's authorId MUST resolve to a
   // registered persona. Fail the build loudly if a backfill was missed.
   const articlesModule = loadTsModule(path.join(rootDir, 'data/articles/index.ts'));
+  // T9：psych-adjacent 文章强制安全 footer。文案与 SPA <SafetyFooter> 同源自 utils/safetyFooter.ts
+  // （单一来源、绝不漂移），生成器经 loadTsModule 取其 HTML builder 注入静态 stub。
+  const safetyFooterModule = loadTsModule(path.join(rootDir, 'utils/safetyFooter.ts'));
+  const buildSafetyFooterHtml = safetyFooterModule.buildSafetyFooterHtml;
   for (const lang of ['en', 'zh']) {
     for (const summary of articlesModule.getArticleSummaries(lang)) {
       if (!authorsModule.getAuthorById(summary.authorId)) {
@@ -1228,12 +1240,18 @@ const generate = async () => {
     const url = `${siteUrl}/${lang}/wiki/${slug}`;
     const article = articlesModule.getArticleBySlug(slug, lang);
     const contentMd = article?.content || '';
-    // 正文签名纳入 lastmod：正文变化才更新（与 T1 防 churn 协同）。
-    addUrl(url, [...articleSig(lang, slug), contentHash([contentMd])]);
+    // T7：article.seo.sitemap === false（如 noindex 桥页/转化实验页）时排除出 sitemap。
+    // 缺省（无 seo / 无内容兜底）一律收录，保持既有行为。正文签名纳入 lastmod。
+    if (includeInSitemap(article?.seo)) {
+      addUrl(url, [...articleSig(lang, slug), contentHash([contentMd])]);
+    }
     if (!article || !contentMd) return; // 无该语言内容则只留 sitemap URL（保持既有行为），不写空壳静态页。
     const config = LANG_CONFIG[lang];
     const wikiPath = `/${lang}/wiki`;
     const ogImage = articleOgImage(slug, lang);
+    // T6：解析正文 FAQ 段注入 FAQPage JSON-LD（爬虫读静态 stub head）。解析逻辑与
+    // WikiArticleDetailPage 的 SPA 内联解析镜像，stub 与水合后页面发出同一份 FAQPage。
+    const faqSchema = buildFaqSchemaFromMarkdown(contentMd);
     await writeHtmlPage({
       outputPath: path.join(publicDir, lang, 'wiki', slug, 'index.html'),
       lang,
@@ -1242,10 +1260,15 @@ const generate = async () => {
       url,
       ogType: 'article',
       ogImage,
-      alternates: buildAlternateLinks(`/wiki/${slug}`, {
-        en: !!articlesModule.getArticleBySlug(slug, 'en'),
-        zh: !!articlesModule.getArticleBySlug(slug, 'zh'),
-      }),
+      // T7：noindex,follow 等 robots override 透传到 stub head（buildHead 缺省 index,follow）。
+      robots: article.seo?.robots,
+      // T7：seo.alternates === false 显式抑制 hreflang（无有效跨语对应页的自指/实验页）。
+      alternates: article.seo?.alternates === false
+        ? []
+        : buildAlternateLinks(`/wiki/${slug}`, {
+            en: !!articlesModule.getArticleBySlug(slug, 'en'),
+            zh: !!articlesModule.getArticleBySlug(slug, 'zh'),
+          }),
       schema: [
         buildArticleSchema(lang, article, url, editorialOrgSchema, ogImage),
         buildBreadcrumb(lang, [
@@ -1253,10 +1276,15 @@ const generate = async () => {
           { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
           { name: article.title, url },
         ]),
+        ...(faqSchema ? [faqSchema] : []),
       ],
       ctaText: config.wikiCta,
       spaPath: `/${lang}/wiki/${slug}`,
-      contentHtml: mdToHtml(contentMd),
+      // T9：psych-adjacent 文章在正文末尾追加强制安全 footer（爬虫/无 JS 读 stub 这份；
+      // JS 用户读 SPA 的 <SafetyFooter>，两侧同源自 utils/safetyFooter.ts）。
+      contentHtml:
+        mdToHtml(contentMd) +
+        (article.psychAdjacent ? buildSafetyFooterHtml(lang) : ''),
     });
   };
 

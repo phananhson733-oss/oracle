@@ -1,5 +1,8 @@
-// INPUT: Wiki 文章详情与 Markdown 渲染（含 SEO 元信息与内部链接处理）。
-// OUTPUT: 导出 Wiki 文章详情页组件（含 Article schema、面包屑与 Markdown 渲染）。
+// INPUT: Wiki 文章详情与 Markdown 渲染（含 SEO 元信息与内部链接处理）；article.embeddedTool
+//        驱动 ChartMiniCalc、article.psychAdjacent 驱动 SafetyFooter。
+// OUTPUT: 导出 Wiki 文章详情页组件（含 Article/FAQPage schema、面包屑、Markdown 渲染，
+//         以及 tool-led 嵌入：embeddedTool→ChartMiniCalc + 抑制底部 WikiChartCTA、
+//         psychAdjacent→SafetyFooter，仅 SPA 渲染，不进静态 stub）。
 // POS: Wiki 文章详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -20,6 +23,9 @@ import { trackEvent } from "../../services/analytics";
 import type { WikiArticleSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
 import WikiChartCTA from "./WikiChartCTA";
+import ChartMiniCalc from "../ChartMiniCalc";
+import SafetyFooter from "../SafetyFooter";
+import { BIRTH_CHART_ANCHOR_ID } from "../../hooks/useScrollToBirthChart";
 
 // Safe Markdown renderer with error handling
 interface SafeMarkdownProps {
@@ -651,8 +657,15 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         url={selfUrl}
         canonicalUrl={canonicalUrl}
         robots={article.seo?.robots}
+        // hreflang 抑制必须与静态生成器同步（scripts/generate-seo-pages.mjs:
+        // seo.alternates === false 时不发 hreflang）。否则 SPA mount 后 SEO.tsx
+        // 仍把 zh/en/x-default alternate 注入 live head，为 noindex 的 EN-only
+        // 实验页（如 aura bridge）广告一个不存在的 zh 对应页 —— 正是"SPA 运行时
+        // 撤销 static SEO 信号"的回归。canonicalPath 收口页同样抑制。
         alternateLanguages={
-          article.seo?.canonicalPath ? [] : alternateLanguages
+          article.seo?.canonicalPath || article.seo?.alternates === false
+            ? []
+            : alternateLanguages
         }
         type="article"
         image={article.image || ogImageUrl}
@@ -740,6 +753,23 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
           />
         </article>
 
+        {/* tool-led prove-chain：正文后挂载轻量构件（北交点迷你计算器）。仅 SPA 渲染，
+            绝不进静态 stub（generate-seo-pages 的 contentHtml 只含正文 markdown），以免破坏
+            双渲染/soft-404。结果区 CTA 经 fullChartHref 指向上游全盘工具（#6 锚点），形成
+            轻→重→signup 漏斗，而非直接弹 /auth。 */}
+        {article.embeddedTool?.tool === "north-node-sign" && (
+          <ChartMiniCalc
+            module={article.embeddedTool.module}
+            placement="wiki"
+            fullChartHref={`/landing-v2/${lang}/#${BIRTH_CHART_ANCHOR_ID}`}
+          />
+        )}
+
+        {/* 心理/疗愈邻近内容的强制安全 footer（CLAUDE.md AI 安全边界 #1/#4）。
+            因 inject-spa 是 replace 非 hydrate，stub 里的 footer 会被 React 覆盖，
+            故 JS 用户这一份必须由 SPA 渲染；文案与 stub 同源自 utils/safetyFooter。 */}
+        {article.psychAdjacent && <SafetyFooter />}
+
         {/* Related articles */}
         {relatedArticles.length > 0 && (
           <section className="space-y-6 pt-8 border-t border-dashed border-current/10">
@@ -774,7 +804,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
           </section>
         )}
 
-        <WikiChartCTA />
+        {/* 嵌入工具在场时抑制底部通用 CTA：mini-calc 的结果区已导向同一全盘锚点，
+            两个指向同一 #birth-chart-tool 的 CTA 会重复。无工具的文章保留底部 CTA。 */}
+        {!article.embeddedTool && <WikiChartCTA />}
       </div>
     </Container>
   );

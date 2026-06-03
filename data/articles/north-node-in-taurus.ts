@@ -4,19 +4,23 @@ import type { WikiArticle } from "../../types";
 
 export const northNodeInTaurusEn: WikiArticle = {
   slug: "north-node-in-taurus",
-  title: "Why the North Node in Taurus Is a Path Toward Steadiness, Not a Punishment",
-  description: "The North Node in Taurus marks a growth direction toward stability, simplicity, and steady self-worth, set against a South Node in Scorpio that arrives...",
+  title:
+    "Why the North Node in Taurus Is a Path Toward Steadiness, Not a Punishment",
+  description:
+    "The North Node in Taurus marks a growth direction toward stability, simplicity, and steady self-worth, set against a South Node in Scorpio that arrives...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
-    "\"north node in taurus\"",
-    "\"taurus north node\"",
-    "\"taurus nodes\"",
-    "\"north node in taurus meaning\"",
-    "\"north node in taurus soulmate\"",
-    "\"what does a north node in taurus mean\""
+    '"north node in taurus"',
+    '"taurus north node"',
+    '"taurus nodes"',
+    '"north node in taurus meaning"',
+    '"north node in taurus soulmate"',
+    '"what does a north node in taurus mean"',
   ],
   content: `# Why the North Node in Taurus Is a Path Toward Steadiness, Not a Punishment
 
@@ -120,13 +124,15 @@ export const northNodeInTaurusZh: WikiArticle = {
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
+  embeddedTool: { tool: "north-node-sign", module: "north-node" },
+  psychAdjacent: true,
   keywords: [
-    "\"north node in taurus\"",
-    "\"taurus north node\"",
-    "\"taurus nodes\"",
-    "\"north node in taurus meaning\"",
-    "\"north node in taurus soulmate\"",
-    "\"what does a north node in taurus mean\""
+    '"north node in taurus"',
+    '"taurus north node"',
+    '"taurus nodes"',
+    '"north node in taurus meaning"',
+    '"north node in taurus soulmate"',
+    '"what does a north node in taurus mean"',
   ],
   content: `# 金牛座北交点，指的是把日子过踏实的成长方向
 

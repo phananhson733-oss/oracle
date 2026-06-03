@@ -448,6 +448,62 @@ export const trackApiError = (
   });
 };
 
+// Tool-led "prove-chain" funnel (north-node mini-calc → result → signup CTA).
+// The chart mini-calc runs on raw DOB/birth-city client-side, so its surrounding
+// analytics events are the single highest-risk place to leak PII into GA. This
+// allowlist makes leakage impossible BY CONSTRUCTION: only the five categorical
+// fields below can ever reach trackEvent — DOB/birthCity/coordinates/names/
+// question/hotThought are dropped even if a caller passes them, honoring
+// 隐私红线 #1 (CLAUDE.md: "Analytics 不传敏感字段"). Mirrors the redact pattern
+// of redactErrorMessageForAnalytics above — centralize the rule so individual
+// callers cannot accidentally leak.
+// Declared as a `type` (not `interface`) on purpose: object-literal type aliases
+// are "closed", so the sanitized result is assignable to AnalyticsEventParams
+// (Record<string, unknown>); an interface would not be (declaration-merging).
+export type ChartFunnelParams = {
+  sign?: string;
+  module?: string;
+  tool?: string;
+  step?:
+    | "chart_start"
+    | "result_shown"
+    | "full_chart_cta_click"
+    | "signup_cta_click";
+  placement?: string;
+};
+
+const CHART_FUNNEL_ALLOWLIST = [
+  "sign",
+  "module",
+  "tool",
+  "step",
+  "placement",
+] as const;
+
+// Pure helper exported for unit testing — default-deny: copies ONLY allowlisted
+// non-PII fields (and only when defined). Any other key (PII or unknown) is
+// silently dropped. See 隐私红线 #1 (CLAUDE.md).
+export const sanitizeChartFunnelParams = (
+  params: ChartFunnelParams & Record<string, unknown>,
+): ChartFunnelParams => {
+  const out: Record<string, unknown> = {};
+  for (const key of CHART_FUNNEL_ALLOWLIST) {
+    if (params[key] !== undefined) out[key] = params[key];
+  }
+  return out as ChartFunnelParams;
+};
+
+export const trackChartFunnel = (params: ChartFunnelParams) => {
+  // Sanitize BEFORE the event reaches dataLayer/gtag — never trust the caller
+  // to have pre-stripped PII.
+  trackEvent(
+    "chart_funnel",
+    sanitizeChartFunnelParams(
+      params as ChartFunnelParams & Record<string, unknown>,
+    ),
+  );
+};
+
 // Run consent default synchronously at module load time (Google requires this
 // BEFORE any other gtag commands). This ensures consent state is set before
 // requestIdleCallback fires initAnalytics() or App.tsx fires trackPageView().
