@@ -119,6 +119,7 @@ import { bharaniNakshatraEn } from "./bharani-nakshatra";
 import { chironInTaurusEn } from "./chiron-in-taurus";
 import { ashleshaNakshatraEn } from "./ashlesha-nakshatra";
 import { rohiniNakshatraEn } from "./rohini-nakshatra";
+import { southNodeEn } from "./south-node";
 // All articles organized by language
 
 import {
@@ -286,6 +287,7 @@ const ARTICLES_EN: WikiArticle[] = [
   chironInTaurusEn,
   ashleshaNakshatraEn,
   rohiniNakshatraEn,
+  southNodeEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
