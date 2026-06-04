@@ -122,6 +122,7 @@ import { rohiniNakshatraEn } from "./rohini-nakshatra";
 import { southNodeEn } from "./south-node";
 import { northNodeInGeminiEn } from "./north-node-in-gemini";
 import { northNodeInSagittariusEn } from "./north-node-in-sagittarius";
+import { cancerNorthNodeEn } from "./cancer-north-node";
 // All articles organized by language
 
 import {
@@ -292,6 +293,7 @@ const ARTICLES_EN: WikiArticle[] = [
   southNodeEn,
   northNodeInGeminiEn,
   northNodeInSagittariusEn,
+  cancerNorthNodeEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
