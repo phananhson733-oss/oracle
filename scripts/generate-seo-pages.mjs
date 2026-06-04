@@ -769,6 +769,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'anuradha-nakshatra',
   'what-to-do-on-a-full-moon-spiritually',
   'full-moon-energy',
   'what-is-a-full-moon-ritual',
