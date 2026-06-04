@@ -101,6 +101,17 @@ interface CreateOrderInput {
   cancelUrl: string;
 }
 
+// Airwallex 订阅列表项的真实形状（已实测，仅取对账需要的字段）。
+export interface AirwallexSubscriptionListItem {
+  id: string;
+  billing_customer_id?: string;
+  status: string;
+  current_period_starts_at?: string;
+  current_period_ends_at?: string;
+  cancel_at_period_end?: boolean;
+  recurring?: { period?: number; period_unit?: string };
+}
+
 class AirwallexService {
   // Get Bearer Token (with caching and auto-refresh)
   async getAccessToken(): Promise<string> {
@@ -351,14 +362,9 @@ class AirwallexService {
     };
   }
 
-  // Get subscription details from Airwallex
-  async getSubscriptionDetails(subscriptionId: string): Promise<{
-    id: string;
-    status: string;
-    current_period_start?: string;
-    current_period_end?: string;
-    cancel_at_period_end?: boolean;
-  }> {
+  // Get subscription details from Airwallex (returns the full subscription object;
+  // shape verified — includes billing_customer_id / current_period_*_at / recurring).
+  async getSubscriptionDetails(subscriptionId: string): Promise<AirwallexSubscriptionListItem> {
     if (!isAirwallexConfigured()) {
       throw new Error('Airwallex not configured');
     }
@@ -382,6 +388,48 @@ class AirwallexService {
       throw new Error(`Failed to get Airwallex subscription: ${response.statusText}`);
     }
 
+    return await response.json();
+  }
+
+  // List subscriptions (paginated). Used by reconciliation/backfill — webhook-independent.
+  // Real Airwallex shape (verified): items[] with id, billing_customer_id,
+  // current_period_starts_at/ends_at, status, cancel_at_period_end, recurring.period_unit.
+  async listSubscriptions(pageNum = 0, pageSize = 100): Promise<{
+    items: AirwallexSubscriptionListItem[];
+    hasMore: boolean;
+  }> {
+    if (!isAirwallexConfigured()) {
+      throw new Error('Airwallex not configured');
+    }
+    const token = await this.getAccessToken();
+    const response = await fetch(
+      `${AIRWALLEX_API_BASE}/api/v1/subscriptions?page_num=${pageNum}&page_size=${pageSize}`,
+      { method: 'GET', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' } },
+    );
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Airwallex list subscriptions ${response.status}: ${errorBody}`);
+    }
+    const data = await response.json();
+    const items: AirwallexSubscriptionListItem[] = Array.isArray(data.items) ? data.items : [];
+    return { items, hasMore: items.length >= pageSize };
+  }
+
+  // Fetch a billing customer by its bcus_ id to resolve the email we set at checkout.
+  // Real endpoint (verified): GET /api/v1/billing_customers/{id} -> { id, email, name, ... }.
+  async getBillingCustomer(billingCustomerId: string): Promise<{ id: string; email?: string }> {
+    if (!isAirwallexConfigured()) {
+      throw new Error('Airwallex not configured');
+    }
+    const token = await this.getAccessToken();
+    const response = await fetch(
+      `${AIRWALLEX_API_BASE}/api/v1/billing_customers/${billingCustomerId}`,
+      { method: 'GET', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' } },
+    );
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Airwallex get billing customer ${response.status}: ${errorBody}`);
+    }
     return await response.json();
   }
 
