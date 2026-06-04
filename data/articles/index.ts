@@ -114,6 +114,7 @@ import { solarReturnChartEn } from "./solar-return-chart";
 import { whatIsAFullMoonRitualEn } from "./what-is-a-full-moon-ritual";
 import { fullMoonEnergyEn } from "./full-moon-energy";
 import { whatToDoOnAFullMoonSpirituallyEn } from "./what-to-do-on-a-full-moon-spiritually";
+import { anuradhaNakshatraEn } from "./anuradha-nakshatra";
 // All articles organized by language
 
 import {
@@ -276,6 +277,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whatIsAFullMoonRitualEn,
   fullMoonEnergyEn,
   whatToDoOnAFullMoonSpirituallyEn,
+  anuradhaNakshatraEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
