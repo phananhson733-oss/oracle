@@ -769,6 +769,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'chiron-in-taurus',
   'bharani-nakshatra',
   'anuradha-nakshatra',
   'what-to-do-on-a-full-moon-spiritually',

@@ -116,6 +116,7 @@ import { fullMoonEnergyEn } from "./full-moon-energy";
 import { whatToDoOnAFullMoonSpirituallyEn } from "./what-to-do-on-a-full-moon-spiritually";
 import { anuradhaNakshatraEn } from "./anuradha-nakshatra";
 import { bharaniNakshatraEn } from "./bharani-nakshatra";
+import { chironInTaurusEn } from "./chiron-in-taurus";
 // All articles organized by language
 
 import {
@@ -280,6 +281,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whatToDoOnAFullMoonSpirituallyEn,
   anuradhaNakshatraEn,
   bharaniNakshatraEn,
+  chironInTaurusEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
