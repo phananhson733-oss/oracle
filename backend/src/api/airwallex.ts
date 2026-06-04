@@ -4,6 +4,7 @@ import { authMiddleware, requireAuth } from './auth.js';
 import { airwallexService, currencyKeyOf } from '../services/airwallexService.js';
 import subscriptionService from '../services/subscriptionService.js';
 import entitlementServiceV2 from '../services/entitlementServiceV2.js';
+import { reconcileAirwallexSubscriptionById } from '../services/subscriptionReconcilerDriver.js';
 import {
   isAirwallexConfigured,
   AIRWALLEX_CREDITS_PACKAGES,
@@ -467,13 +468,24 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
       return res.status(404).json({ error: 'No active Airwallex subscription' });
     }
 
-    // Best-effort Airwallex API call — DB update is the source of truth
+    // B1 fix: cancel at the PROVIDER first. We must not report success unless
+    // Airwallex actually stopped the recurring billing — otherwise the card keeps
+    // getting charged while the UI says "cancelled" (the original silent-failure bug).
     let airwallexResult: { airwallexSuccess: boolean; error?: string } = { airwallexSuccess: false, error: 'no subscription id' };
     if (subscription.airwallex_subscription_id) {
       airwallexResult = await airwallexService.cancelSubscription(subscription.airwallex_subscription_id);
     }
 
-    // Always update DB regardless of Airwallex API result
+    if (!airwallexResult.airwallexSuccess) {
+      console.error(`[CancelSubscription] provider cancel FAILED user=${req.userId} sub=${subscription.id} err=${airwallexResult.error}`);
+      // Do NOT mark the local row cancelled — that would hide a still-billing subscription.
+      return res.status(502).json({
+        error: 'Could not cancel the subscription with the payment provider. Please retry or contact support so we can stop the billing.',
+      });
+    }
+
+    // Provider confirmed cancellation — mark cancel-at-period-end locally and
+    // keep access (status stays active) until current_period_end.
     if (isSupabaseConfigured()) {
       await supabase
         .from('subscriptions')
@@ -695,6 +707,19 @@ router.post('/webhook', async (req: Request, res: Response) => {
 
       case 'payment_intent.succeeded':
         await handlePaymentIntentSucceeded(event);
+        break;
+
+      // Recurring subscription billing fires invoice.* events (the renewal charge
+      // = an invoice). These were previously unhandled, so renewals never updated
+      // the DB. Reconcile the subscription from the live API on any invoice event.
+      case 'invoice.paid':
+      case 'invoice.finalized':
+      case 'invoice.payment_failed':
+      case 'invoice.payment_attempt_failed':
+      case 'invoice.created':
+      case 'invoice.updated':
+      case 'invoice.voided':
+        await handleInvoiceEvent(event);
         break;
 
       default:
@@ -946,6 +971,38 @@ async function handleSubscriptionUnpaid(event: any): Promise<void> {
         });
       }
     }, 'payment failed notice');
+  }
+}
+
+// Invoice events (incl. recurring renewal charges). The event carries
+// data.subscription_id; we re-fetch the live subscription and reconcile it into
+// the DB (webhook-independent path also used by the backfill). This is what was
+// missing: renewals generate invoice.* events that the old switch ignored, so the
+// subscription period never extended and paying users showed as FREE.
+async function handleInvoiceEvent(event: any): Promise<void> {
+  const data = event.data || event;
+  const subscriptionId = data.subscription_id;
+  const eventName = event.name || event.type;
+
+  if (!subscriptionId) {
+    console.log(
+      `Airwallex ${eventName} without subscription_id, skipping invoice ${data.id}`,
+    );
+    return;
+  }
+
+  try {
+    const result = await reconcileAirwallexSubscriptionById(subscriptionId);
+    console.log(
+      `Airwallex ${eventName} reconciled sub=${subscriptionId}: ${
+        result.reconciled ? result.action : `skip(${result.reason})`
+      }`,
+    );
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error(
+      `Airwallex invoice reconcile failed for sub=${subscriptionId}: ${msg}`,
+    );
   }
 }
 
