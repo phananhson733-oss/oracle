@@ -32,6 +32,7 @@ import entitlementsRouter from "./api/entitlements.js";
 import entitlementsV2Router from "./api/entitlementsV2.js";
 import reportsRouter from "./api/reports.js";
 import gmRouter from "./api/gm.js";
+import cronRouter from "./api/cron.js";
 import { newsletterRouter } from "./api/newsletter.js";
 import { savedReadingsRouter } from "./api/savedReadings.js";
 import { apiResponseMiddleware } from "./utils/apiResponse.js";
@@ -309,6 +310,7 @@ app.use("/api/reports", reportsRouter);
 app.use("/api/gm", gmRouter); // GM 测试命令
 app.use("/api/newsletter", newsletterRouter);
 app.use("/api/saved-readings", savedReadingsRouter);
+app.use("/api/cron", cronRouter); // Vercel Cron：定时对账 Airwallex 订阅
 
 // Unhandled-error capture: report to monitoring (no-op unless active), then
 // delegate to the default handler. Context is method+path only (non-PII); any

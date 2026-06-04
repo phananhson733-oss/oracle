@@ -66,5 +66,11 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/reconcile-subscriptions",
+      "schedule": "0 3 * * *"
+    }
+  ]
 }
