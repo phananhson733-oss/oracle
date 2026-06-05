@@ -26,6 +26,16 @@
   ],
   "redirects": [
     {
+      "source": "/en/wiki/famous-highly-sensitive-people",
+      "destination": "/en/wiki/famous-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/zh/wiki/famous-highly-sensitive-people",
+      "destination": "/zh/wiki/famous-highly-sensitive-person",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

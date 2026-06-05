@@ -756,7 +756,6 @@ const ARTICLE_SLUGS = [
   'highly-sensitive-person',
   'signs-of-a-highly-sensitive-person',
   'highly-sensitive-person-vs-autism',
-  'famous-highly-sensitive-people',
   // 6/2 MAHADASHA cluster (sequential staggered, pillar first):
   // mahadasha -> rahu -> ketu -> saturn(shani) -> venus.
   'mahadasha',
