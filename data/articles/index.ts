@@ -129,6 +129,8 @@ import { solarReturnEn } from "./solar-return";
 import { n3GunasEn } from "./3-gunas";
 import { signsYouReAHighlySensitivePersonEn } from "./signs-you-re-a-highly-sensitive-person";
 import { signsYouReAHighlySensitivePersonZh } from "./signs-you-re-a-highly-sensitive-person";
+import { famousHighlySensitivePersonEn } from "./famous-highly-sensitive-person";
+import { famousHighlySensitivePersonZh } from "./famous-highly-sensitive-person";
 // All articles organized by language
 
 import {
@@ -305,6 +307,7 @@ const ARTICLES_EN: WikiArticle[] = [
   solarReturnEn,
   n3GunasEn,
   signsYouReAHighlySensitivePersonEn,
+  famousHighlySensitivePersonEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -369,6 +372,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   saturnMahadashaZh,
   venusMahadashaZh,
   signsYouReAHighlySensitivePersonZh,
+  famousHighlySensitivePersonZh,
 ];
 
 // Get all articles for a language
