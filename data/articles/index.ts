@@ -97,8 +97,6 @@ import { signsOfAHighlySensitivePersonEn } from "./signs-of-a-highly-sensitive-p
 import { signsOfAHighlySensitivePersonZh } from "./signs-of-a-highly-sensitive-person";
 import { highlySensitivePersonVsAutismEn } from "./highly-sensitive-person-vs-autism";
 import { highlySensitivePersonVsAutismZh } from "./highly-sensitive-person-vs-autism";
-import { famousHighlySensitivePeopleEn } from "./famous-highly-sensitive-people";
-import { famousHighlySensitivePeopleZh } from "./famous-highly-sensitive-people";
 // 6/2 MAHADASHA cluster
 import { mahadashaEn } from "./mahadasha";
 import { mahadashaZh } from "./mahadasha";
@@ -283,7 +281,6 @@ const ARTICLES_EN: WikiArticle[] = [
   highlySensitivePersonEn,
   signsOfAHighlySensitivePersonEn,
   highlySensitivePersonVsAutismEn,
-  famousHighlySensitivePeopleEn,
   mahadashaEn,
   rahuMahadashaEn,
   ketuMahadashaEn,
@@ -365,7 +362,6 @@ const ARTICLES_ZH: WikiArticle[] = [
   highlySensitivePersonZh,
   signsOfAHighlySensitivePersonZh,
   highlySensitivePersonVsAutismZh,
-  famousHighlySensitivePeopleZh,
   mahadashaZh,
   rahuMahadashaZh,
   ketuMahadashaZh,
