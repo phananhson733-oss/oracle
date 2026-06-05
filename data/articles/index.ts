@@ -127,6 +127,8 @@ import { junoAstrologyEn } from "./juno-astrology";
 import { howToBalanceVataDoshaEn } from "./how-to-balance-vata-dosha";
 import { solarReturnEn } from "./solar-return";
 import { n3GunasEn } from "./3-gunas";
+import { signsYouReAHighlySensitivePersonEn } from "./signs-you-re-a-highly-sensitive-person";
+import { signsYouReAHighlySensitivePersonZh } from "./signs-you-re-a-highly-sensitive-person";
 import { famousHighlySensitivePersonEn } from "./famous-highly-sensitive-person";
 import { famousHighlySensitivePersonZh } from "./famous-highly-sensitive-person";
 // All articles organized by language
@@ -304,6 +306,7 @@ const ARTICLES_EN: WikiArticle[] = [
   howToBalanceVataDoshaEn,
   solarReturnEn,
   n3GunasEn,
+  signsYouReAHighlySensitivePersonEn,
   famousHighlySensitivePersonEn,
 ];
 
@@ -368,6 +371,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   ketuMahadashaZh,
   saturnMahadashaZh,
   venusMahadashaZh,
+  signsYouReAHighlySensitivePersonZh,
   famousHighlySensitivePersonZh,
 ];
 
