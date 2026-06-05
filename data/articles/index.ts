@@ -133,6 +133,7 @@ import { pushyaNakshatraEn } from "./pushya-nakshatra";
 import { nakshatraEn } from "./nakshatra";
 import { aiAstrologyAppEn } from "./ai-astrology-app";
 import { sattvaRajasTamasEn } from "./sattva-rajas-tamas";
+import { libraRisingHousesEn } from "./libra-rising-houses";
 // All articles organized by language
 
 import {
@@ -313,6 +314,7 @@ const ARTICLES_EN: WikiArticle[] = [
   nakshatraEn,
   aiAstrologyAppEn,
   sattvaRajasTamasEn,
+  libraRisingHousesEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
