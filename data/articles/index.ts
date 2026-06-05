@@ -134,6 +134,7 @@ import { nakshatraEn } from "./nakshatra";
 import { aiAstrologyAppEn } from "./ai-astrology-app";
 import { sattvaRajasTamasEn } from "./sattva-rajas-tamas";
 import { libraRisingHousesEn } from "./libra-rising-houses";
+import { leoRisingHousesEn } from "./leo-rising-houses";
 // All articles organized by language
 
 import {
@@ -315,6 +316,7 @@ const ARTICLES_EN: WikiArticle[] = [
   aiAstrologyAppEn,
   sattvaRajasTamasEn,
   libraRisingHousesEn,
+  leoRisingHousesEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
