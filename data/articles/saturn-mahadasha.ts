@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const saturnMahadashaEn: WikiArticle = {
   slug: "saturn-mahadasha",
   title: "Reading the Saturn Mahadasha as 19 Years of Earned Structure",
-  description: "Saturn (Shani) Mahadasha is the longest major planetary period in Vedic astrology's Vimshottari cycle, running nineteen years under Shani — the Sanskrit name",
+  description:
+    "Saturn (Shani) Mahadasha is the second-longest major planetary period in Vedic astrology's Vimshottari cycle, running nineteen years under Shani — the Sanskrit name",
   authorId: "aditi-sharma",
   date: "2026-06-02",
   schema: "Article",
@@ -16,15 +17,15 @@ export const saturnMahadashaEn: WikiArticle = {
     "saturn dasha",
     "shani dasha",
     "19 year saturn period",
-    "saturn mahadasha effects"
+    "saturn mahadasha effects",
   ],
   content: `# Reading the Saturn Mahadasha as 19 Years of Earned Structure
 
 ## What is Saturn (Shani) Mahadasha?
 
-Saturn (Shani) Mahadasha is the longest major planetary period in Vedic astrology's Vimshottari cycle, running nineteen years under Shani — the Sanskrit name for the planet Saturn. Because it only makes sense inside the larger count, define that system first through the [pillar guide to mahadasha and the Vimshottari dasha system](/en/wiki/mahadasha), then read Saturn's chapter within it. Recorded in the classical Brihat Parashara Hora Shastra of the Parashara lineage, it reads as **the 19-year Vimshottari period ruled by Shani (Saturn)**.
+Saturn (Shani) Mahadasha is the second-longest major planetary period in Vedic astrology's Vimshottari cycle (only Venus, at twenty years, is longer), running nineteen years under Shani — the Sanskrit name for the planet Saturn. Because it only makes sense inside the larger count, define that system first through the [pillar guide to mahadasha and the Vimshottari dasha system](/en/wiki/mahadasha), then read Saturn's chapter within it. Recorded in the classical Brihat Parashara Hora Shastra of the Parashara lineage, it reads as **the 19-year Vimshottari period ruled by Shani (Saturn)**.
 
-- Longest of the nine Vimshottari periods, so its lessons unfold slowly rather than all at once
+- Second-longest of the nine Vimshottari periods (only Venus, at twenty years, is longer), so its lessons unfold slowly rather than all at once
 - Linked with discipline, delay, and structure earned through patient effort
 - Answers to both names at once, since Shani and Saturn are one graha in two languages
 
@@ -71,7 +72,7 @@ The most common misreading of the Saturn mahadasha is treating it as a verdict i
 
 | Property | How It Works | Energy Center | How to Observe |
 | --- | --- | --- | --- |
-| Length | Runs nineteen years, the longest of the Vimshottari periods | Tied to Saturn's natal house and sign | Map the dasha dates from your birth chart |
+| Length | Runs nineteen years, the second-longest of the Vimshottari periods (only Venus, at twenty, is longer) | Tied to Saturn's natal house and sign | Map the dasha dates from your birth chart |
 | Core theme | Rewards patient, structured effort that compounds over time | Strongest where Saturn sits by house | Notice where life asks for discipline, not luck |
 | Early phase | Often feels like delay and added weight before it settles | Colored by Saturn's natal sign | Track the first two to three years for slow starts |
 | Reward pattern | Returns earned structure late rather than quick wins | Shifted by each antardasha sub-period | Watch what consolidates by the period's end |
@@ -92,7 +93,7 @@ There is none; Shani is simply the Sanskrit name for the planet Saturn. Both ter
 
 **How long does this 19-year dasha last?**
 
-It runs nineteen years, the longest of the nine planetary periods in the Vimshottari system. Within it, shorter antardasha sub-periods change the tone every few years.
+It runs nineteen years, the second-longest of the nine planetary periods in the Vimshottari system (only Venus, at twenty years, is longer). Within it, shorter antardasha sub-periods change the tone every few years.
 
 ## Reflection Prompts
 
@@ -122,7 +123,8 @@ Want the full system first? Read the [complete guide to mahadasha and the Vimsho
 export const saturnMahadashaZh: WikiArticle = {
   slug: "saturn-mahadasha",
   title: "土星大运这19年，其实是在教你慢慢成器",
-  description: "土星大运（Saturn Mahadasha，梵文称 Shani Mahadasha，沙尼即土星）是长达19年的土星主管期。它来自吠陀占星的维实多里（Vimshottari）大运体系——一种把人一生切成若干段、每段由一颗行星主管的计时框架，这套体系最常被追溯到古典文献《Brihat Parashara Hora",
+  description:
+    "土星大运（Saturn Mahadasha，梵文称 Shani Mahadasha，沙尼即土星）是长达19年的土星主管期。它来自吠陀占星的维实多里（Vimshottari）大运体系——一种把人一生切成若干段、每段由一颗行星主管的计时框架，这套体系最常被追溯到古典文献《Brihat Parashara Hora",
   authorId: "aditi-sharma",
   date: "2026-06-02",
   schema: "Article",
@@ -133,15 +135,15 @@ export const saturnMahadashaZh: WikiArticle = {
     "saturn dasha",
     "shani dasha",
     "19 year saturn period",
-    "saturn mahadasha effects"
+    "saturn mahadasha effects",
   ],
   content: `# 土星大运这19年，其实是在教你慢慢成器
 
 ## Saturn (Shani) Mahadasha 是什么？
 
-土星大运（Saturn Mahadasha，梵文称 Shani Mahadasha，沙尼即土星）是**长达19年的土星主管期**。它来自吠陀占星的维实多里（Vimshottari）大运体系——一种把人一生切成若干段、每段由一颗行星主管的计时框架，这套体系最常被追溯到古典文献《Brihat Parashara Hora Shastra》；想先弄懂大运这套底层逻辑，可以看 [大运体系总览 pillar 页](/zh/wiki/mahadasha)。在九颗行星里，土星这一段是时间最长的。
+土星大运（Saturn Mahadasha，梵文称 Shani Mahadasha，沙尼即土星）是**长达19年的土星主管期**。它来自吠陀占星的维实多里（Vimshottari）大运体系——一种把人一生切成若干段、每段由一颗行星主管的计时框架，这套体系最常被追溯到古典文献《Brihat Parashara Hora Shastra》；想先弄懂大运这套底层逻辑，可以看 [大运体系总览 pillar 页](/zh/wiki/mahadasha)。在九颗行星里，土星这一段时间偏长，是第二长的一段（只有金星的20年更长）。
 
-- 它是维实多里循环中最长的一段，整整19年
+- 它是维实多里循环中第二长的一段，整整19年（只有金星的20年更长）
 - 主题围绕纪律、延迟、踏实积累，而不是速成
 - 沙尼（Shani）和土星是同一颗星的两个名字，搜哪个都指向这里
 
@@ -176,7 +178,7 @@ export const saturnMahadashaZh: WikiArticle = {
 
 | 维度 | 运作方式 | 本命落点 | 如何观察应用 |
 |---|---|---|---|
-| 时长 | 19年，维实多里循环中最长的一段 | 看本命盘里土星所在的宫位与星座 | 提前规划长线目标，别用短期心态应对 |
+| 时长 | 19年，维实多里循环中第二长的一段（仅次于金星20年） | 看本命盘里土星所在的宫位与星座 | 提前规划长线目标，别用短期心态应对 |
 | 主题 | 纪律、延迟、踏实积累 | 留意土星主管的责任领域（事业、长辈） | 把延迟当成打磨期，而不是被针对 |
 | 节奏 | 慢热、反复打磨，回报滞后 | 结合年龄窗口看哪一段最吃力 | 用小步持续推进，代替急于求成 |
 | 回报 | 奖励诚实、耐心的努力 | 对照土星与本命月亮、上升的关系 | 记录长期坚持的事，年底回看成果 |
@@ -193,7 +195,7 @@ export const saturnMahadashaZh: WikiArticle = {
 
 **土星大运具体有多长？**
 
-整整19年，是维实多里九星大运里最长的一段，也因此最容易被当成漫长的考验。
+整整19年，是维实多里九星大运里第二长的一段（仅次于金星20年），也因此常被当成漫长的考验。
 
 **这段周期里该做什么？**
 
@@ -216,6 +218,6 @@ export const saturnMahadashaZh: WikiArticle = {
 ## 参考来源
 
 - 《Brihat Parashara Hora Shastra》（BPHS）—— 维实多里大运体系最常被追溯到的古典占星文献
-- 维实多里（Vimshottari）大运传统 —— 以九星周期划分一生、土星段最长达19年的吠陀计时框架
+- 维实多里（Vimshottari）大运传统 —— 以九星周期划分一生、土星段长达19年的吠陀计时框架
 `,
 };
