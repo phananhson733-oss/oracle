@@ -131,6 +131,7 @@ import { famousHighlySensitivePersonEn } from "./famous-highly-sensitive-person"
 import { famousHighlySensitivePersonZh } from "./famous-highly-sensitive-person";
 import { pushyaNakshatraEn } from "./pushya-nakshatra";
 import { nakshatraEn } from "./nakshatra";
+import { aiAstrologyAppEn } from "./ai-astrology-app";
 // All articles organized by language
 
 import {
@@ -309,6 +310,7 @@ const ARTICLES_EN: WikiArticle[] = [
   famousHighlySensitivePersonEn,
   pushyaNakshatraEn,
   nakshatraEn,
+  aiAstrologyAppEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
