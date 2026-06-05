@@ -129,6 +129,7 @@ import { signsYouReAHighlySensitivePersonEn } from "./signs-you-re-a-highly-sens
 import { signsYouReAHighlySensitivePersonZh } from "./signs-you-re-a-highly-sensitive-person";
 import { famousHighlySensitivePersonEn } from "./famous-highly-sensitive-person";
 import { famousHighlySensitivePersonZh } from "./famous-highly-sensitive-person";
+import { pushyaNakshatraEn } from "./pushya-nakshatra";
 // All articles organized by language
 
 import {
@@ -305,6 +306,7 @@ const ARTICLES_EN: WikiArticle[] = [
   n3GunasEn,
   signsYouReAHighlySensitivePersonEn,
   famousHighlySensitivePersonEn,
+  pushyaNakshatraEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
