@@ -139,6 +139,7 @@ import { scorpioRisingHousesEn } from "./scorpio-rising-houses";
 import { fullMoonJune2026En } from "./full-moon-june-2026";
 import { moonJournalEn } from "./moon-journal";
 import { fullMoonJournalPromptsEn } from "./full-moon-journal-prompts";
+import { newMoonJournalPromptsEn } from "./new-moon-journal-prompts";
 // All articles organized by language
 
 import {
@@ -325,6 +326,7 @@ const ARTICLES_EN: WikiArticle[] = [
   fullMoonJune2026En,
   moonJournalEn,
   fullMoonJournalPromptsEn,
+  newMoonJournalPromptsEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

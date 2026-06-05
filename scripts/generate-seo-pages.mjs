@@ -770,6 +770,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'new-moon-journal-prompts',
   'full-moon-journal-prompts',
   'moon-journal',
   'full-moon-june-2026',
