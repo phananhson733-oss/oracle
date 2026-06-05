@@ -126,6 +126,7 @@ import { cancerNorthNodeEn } from "./cancer-north-node";
 import { junoAstrologyEn } from "./juno-astrology";
 import { howToBalanceVataDoshaEn } from "./how-to-balance-vata-dosha";
 import { solarReturnEn } from "./solar-return";
+import { n3GunasEn } from "./3-gunas";
 // All articles organized by language
 
 import {
@@ -300,6 +301,7 @@ const ARTICLES_EN: WikiArticle[] = [
   junoAstrologyEn,
   howToBalanceVataDoshaEn,
   solarReturnEn,
+  n3GunasEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
