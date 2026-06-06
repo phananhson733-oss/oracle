@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-og-images.mjs && node scripts/generate-seo-pages.mjs && node scripts/ping-indexnow.mjs && vite build && node scripts/inject-spa-into-stubs.mjs",
+    "build": "node scripts/generate-og-images.mjs && node scripts/generate-seo-pages.mjs && tsx scripts/ensure-static-article-stubs.ts && node scripts/ping-indexnow.mjs && vite build && node scripts/inject-spa-into-stubs.mjs",
     "preview": "vite preview",
     "postinstall": "npm --prefix backend install",
     "test": "vitest run",
@@ -49,6 +49,7 @@
     "jsdom": "^29.1.1",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.6",
     "vite": "^6.2.0",
     "vitest": "^4.1.6"
   }
