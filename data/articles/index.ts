@@ -109,6 +109,7 @@ import { saturnMahadashaZh } from "./saturn-mahadasha";
 import { venusMahadashaEn } from "./venus-mahadasha";
 import { venusMahadashaZh } from "./venus-mahadasha";
 import { solarReturnChartEn } from "./solar-return-chart";
+import { solarReturnChartZh } from "./solar-return-chart";
 import { whatIsAFullMoonRitualEn } from "./what-is-a-full-moon-ritual";
 import { fullMoonEnergyEn } from "./full-moon-energy";
 import { whatToDoOnAFullMoonSpirituallyEn } from "./what-to-do-on-a-full-moon-spiritually";
@@ -393,6 +394,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   ketuMahadashaZh,
   saturnMahadashaZh,
   venusMahadashaZh,
+  solarReturnChartZh,
   signsYouReAHighlySensitivePersonZh,
   famousHighlySensitivePersonZh,
 ];
