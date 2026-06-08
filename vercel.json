@@ -36,6 +36,16 @@
       "permanent": true
     },
     {
+      "source": "/en/wiki/signs-you-re-a-highly-sensitive-person",
+      "destination": "/en/wiki/signs-of-a-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/zh/wiki/signs-you-re-a-highly-sensitive-person",
+      "destination": "/zh/wiki/signs-of-a-highly-sensitive-person",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
