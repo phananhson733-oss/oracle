@@ -150,6 +150,7 @@ import { swatiNakshatraEn } from "./swati-nakshatra";
 import { hastaNakshatraEn } from "./hasta-nakshatra";
 import { krittikaNakshatraEn } from "./krittika-nakshatra";
 import { ashwiniNakshatraEn } from "./ashwini-nakshatra";
+import { neptuneInPiscesEn } from "./neptune-in-pisces";
 // All articles organized by language
 
 import {
@@ -347,6 +348,7 @@ const ARTICLES_EN: WikiArticle[] = [
   hastaNakshatraEn,
   krittikaNakshatraEn,
   ashwiniNakshatraEn,
+  neptuneInPiscesEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
