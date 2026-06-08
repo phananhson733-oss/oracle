@@ -771,6 +771,7 @@ const ARTICLE_SLUGS = [
 const ARTICLE_SLUGS_EN_ONLY = [
   'ashwini-nakshatra',
   'hasta-nakshatra',
+  'krittika-nakshatra',
   'swati-nakshatra',
   'mrigashira-nakshatra',
   'synastry-chart-compatibility',
