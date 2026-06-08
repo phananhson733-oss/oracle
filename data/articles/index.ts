@@ -146,6 +146,7 @@ import { journalPromptsEn } from "./journal-prompts";
 import { shadowWorkJournalPromptsEn } from "./shadow-work-journal-prompts";
 import { blackMoonLilithEn } from "./black-moon-lilith";
 import { compositeChartCalculatorEn } from "./composite-chart-calculator";
+import { synastryChartCompatibilityEn } from "./synastry-chart-compatibility";
 // All articles organized by language
 
 import {
@@ -338,6 +339,7 @@ const ARTICLES_EN: WikiArticle[] = [
   shadowWorkJournalPromptsEn,
   blackMoonLilithEn,
   compositeChartCalculatorEn,
+  synastryChartCompatibilityEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
