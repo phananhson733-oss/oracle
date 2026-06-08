@@ -149,6 +149,7 @@ import { mrigashiraNakshatraEn } from "./mrigashira-nakshatra";
 import { swatiNakshatraEn } from "./swati-nakshatra";
 import { hastaNakshatraEn } from "./hasta-nakshatra";
 import { krittikaNakshatraEn } from "./krittika-nakshatra";
+import { ashwiniNakshatraEn } from "./ashwini-nakshatra";
 // All articles organized by language
 
 import {
@@ -345,6 +346,7 @@ const ARTICLES_EN: WikiArticle[] = [
   swatiNakshatraEn,
   hastaNakshatraEn,
   krittikaNakshatraEn,
+  ashwiniNakshatraEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
