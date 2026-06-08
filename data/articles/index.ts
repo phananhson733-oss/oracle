@@ -147,6 +147,7 @@ import { compositeChartCalculatorEn } from "./composite-chart-calculator";
 import { synastryChartCompatibilityEn } from "./synastry-chart-compatibility";
 import { mrigashiraNakshatraEn } from "./mrigashira-nakshatra";
 import { swatiNakshatraEn } from "./swati-nakshatra";
+import { hastaNakshatraEn } from "./hasta-nakshatra";
 // All articles organized by language
 
 import {
@@ -341,6 +342,7 @@ const ARTICLES_EN: WikiArticle[] = [
   synastryChartCompatibilityEn,
   mrigashiraNakshatraEn,
   swatiNakshatraEn,
+  hastaNakshatraEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
