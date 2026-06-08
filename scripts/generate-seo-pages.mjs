@@ -689,7 +689,6 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
-  'neptune-in-pisces',
   'famous-highly-sensitive-person',
   'how-to-read-birth-chart',
   '10th-house-astrology',
@@ -773,6 +772,7 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'ashwini-nakshatra',
   'hasta-nakshatra',
   'krittika-nakshatra',
+  'neptune-in-pisces',
   'swati-nakshatra',
   'mrigashira-nakshatra',
   'synastry-chart-compatibility',

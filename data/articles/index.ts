@@ -151,7 +151,6 @@ import { hastaNakshatraEn } from "./hasta-nakshatra";
 import { krittikaNakshatraEn } from "./krittika-nakshatra";
 import { ashwiniNakshatraEn } from "./ashwini-nakshatra";
 import { neptuneInPiscesEn } from "./neptune-in-pisces";
-import { neptuneInPiscesZh } from "./neptune-in-pisces";
 // All articles organized by language
 
 import {
@@ -414,7 +413,6 @@ const ARTICLES_ZH: WikiArticle[] = [
   venusMahadashaZh,
   solarReturnChartZh,
   famousHighlySensitivePersonZh,
-  neptuneInPiscesZh,
 ];
 
 // Get all articles for a language
