@@ -689,6 +689,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'neptune-in-pisces',
   'famous-highly-sensitive-person',
   'how-to-read-birth-chart',
   '10th-house-astrology',
