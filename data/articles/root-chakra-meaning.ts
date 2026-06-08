@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const rootChakraMeaningEn: WikiArticle = {
   slug: "root-chakra-meaning",
   title: "What Root Chakra Meaning Reveals About Your Sense of Safety",
-  description: "The Root Chakra is best understood as your base of safety, stability, and physical security.",
+  description:
+    "The Root Chakra is best understood as your base of safety, stability, and physical security.",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
@@ -15,7 +16,7 @@ export const rootChakraMeaningEn: WikiArticle = {
     "muladhara",
     "root chakra blockage",
     "first chakra",
-    "root chakra healing"
+    "root chakra healing",
   ],
   content: `# What Root Chakra Meaning Reveals About Your Sense of Safety
 
@@ -28,6 +29,16 @@ The Root Chakra is best understood as **your base of safety, stability, and phys
 - Reads as steadiness when it feels settled and as low-grade fear or restlessness when it feels shaky
 
 In subtle-energy tradition — the modern chakra framework Anodea Judith helped systematize — root chakra meaning points to how grounded you feel right now rather than a fixed verdict about who you are. It sits first in the [pillar overview of the seven-chakra system](/en/wiki/chakra-system-overview), the foundation every center above it is said to build on. Most people meet the idea only when a stretch of stress leaves them feeling unsafe in their own life, and they go looking for a name for it.
+
+**A note before we go further.** This article is for general information and self-reflection only. It is not medical, psychological, or therapeutic advice, and the chakra and grounding practices described here are not a treatment for any condition; they are not a substitute for care from a doctor or mental-health professional. If you are dealing with persistent anxiety, low mood, pain, or problems with sleep or appetite — or any concern about your safety — please reach out to a qualified healthcare professional.
+
+## Where the Root Chakra Idea Comes From
+
+The root chakra reading is anchored in a documented history, separate from any health claim. In the Vedas the Sanskrit word "cakra" meant "wheel" — the sun's wheel, the wheel of time — and did not name a body energy center; the inner subtle-body map took shape later, with hierarchies of inner energy centers appearing about the 8th century CE in Buddhist texts such as the Hevajra Tantra and Caryagiti, per the scholar David Gordon White ([Chakra, Wikipedia](https://en.wikipedia.org/wiki/Chakra)). The specific six-plus-one arrangement Western readers inherited is usually traced to the Sat-Cakra-Nirupana, a 16th-century Sanskrit text often dated to 1577 and attributed to Purnananda of Bengal, in whose commonly cited scheme Muladhara is listed first ([Chakra, Wikipedia](https://en.wikipedia.org/wiki/Chakra); [Shat-cakra-nirupana, WisdomLib](https://www.wisdomlib.org/hinduism/book/shat-cakra-nirupana-english)). That text helped draw Western attention to the system through Sir John Woodroffe, writing as Arthur Avalon, whose 1919 book The Serpent Power: Being the Sat-Cakra-Nirupana rendered it into English ([Chakra, Wikipedia](https://en.wikipedia.org/wiki/Chakra); [The Serpent Power (1919), Open Library](https://openlibrary.org/books/OL18552948M/The_serpent_power)). The name "Muladhara" itself comes from the Sanskrit mula, "root," and the chakra is described as sitting near the base of the spine and traditionally tied to the earth element ([Muladhara, Wikipedia](https://en.wikipedia.org/wiki/Muladhara)).
+
+## How Common Are Yoga and Meditation in the U.S. Today
+
+For context on how widely the related practices discussed here have spread — not as evidence that any of them treats a condition — national survey data is useful. Among U.S. adults, meditation use rose from 4.1% in 2012 to 14.2% in 2017, and yoga use from 9.5% to 14.3% over the same years, per the 2017 National Health Interview Survey as reported by the NIH's National Center for Complementary and Integrative Health ([NCCIH/NIH](https://www.nccih.nih.gov/news/press-releases/more-adults-and-children-are-using-yoga-and-meditation)); the underlying figures are published in CDC NCHS Data Brief No. 325 ([CDC NCHS](https://www.cdc.gov/nchs/products/databriefs/db325.htm)). These are population-use percentages, not measures of medical benefit.
 
 ## Why It Matters for Self-Awareness
 
@@ -85,7 +96,7 @@ A root chakra blockage is commonly described as ongoing worry about security, re
 
 **How is root chakra healing usually approached?**
 
-Root chakra healing typically centers on grounding habits — steady routines, time in nature, and attention to the body — meant to restore a felt sense of safety. These are everyday practices rather than a fix for serious distress, which is its own separate matter.
+Root chakra healing typically centers on grounding habits — steady routines, time in nature, and attention to the body — meant to restore a felt sense of safety. These are everyday wellness and self-reflection practices, not a treatment for any medical or mental-health condition; persistent anxiety, low mood, or physical symptoms are a separate matter best discussed with a qualified professional.
 
 **Is the root chakra the same as the first chakra?**
 
@@ -106,6 +117,10 @@ Yes — the root chakra is the first chakra, sitting at the base of the spine an
 
 Start by reading your own baseline for a week: each evening, note whether the day's unease was a passing stressor or that deeper not-safe undercurrent. That gives you a simple map of when your foundation actually wobbles versus when life is just loud for a while. [See the full Chakra System overview](https://astrologywiki.com/en/wiki/chakra-system-overview) to place the root chakra at the base of the sequence — because knowing where safety lives in your body is the first step toward feeling steady enough to grow everywhere above it.
 
+## Disclaimer
+
+Reminder: this page describes chakra and grounding ideas as cultural and self-reflection traditions, not as medical, psychological, or therapeutic treatment, and nothing here is meant to diagnose, treat, cure, or prevent any condition. If you are struggling with ongoing distress or physical symptoms, please consult a qualified healthcare professional.
+
 ## Sources
 
 - Anodea Judith — helped systematize the modern Western chakra framework this reading draws on
@@ -116,7 +131,8 @@ Start by reading your own baseline for a week: each evening, note whether the da
 export const rootChakraMeaningZh: WikiArticle = {
   slug: "root-chakra-meaning",
   title: "海底轮代表什么，怎么分清真正失衡和普通的累",
-  description: "The Root Chakra（海底轮，又称根轮，梵文 Muladhara）是脉轮（chakra，西方灵性传统里的能量中心概念）体系里位于底端的一个，在 脉轮系统总览 pillar 页 里坐落于整条序列的根基。海底轮代表什么？传统灵性教学普遍把它说成一种关于安全感与扎根的基础能量。",
+  description:
+    "The Root Chakra（海底轮，又称根轮，梵文 Muladhara）是脉轮（chakra，西方灵性传统里的能量中心概念）体系里位于底端的一个，在 脉轮系统总览 pillar 页 里坐落于整条序列的根基。海底轮代表什么？传统灵性教学普遍把它说成一种关于安全感与扎根的基础能量。",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
@@ -126,7 +142,7 @@ export const rootChakraMeaningZh: WikiArticle = {
     "muladhara",
     "root chakra blockage",
     "first chakra",
-    "root chakra healing"
+    "root chakra healing",
   ],
   content: `# 海底轮代表什么，怎么分清真正失衡和普通的累
 
