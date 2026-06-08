@@ -148,6 +148,7 @@ import { synastryChartCompatibilityEn } from "./synastry-chart-compatibility";
 import { mrigashiraNakshatraEn } from "./mrigashira-nakshatra";
 import { swatiNakshatraEn } from "./swati-nakshatra";
 import { hastaNakshatraEn } from "./hasta-nakshatra";
+import { krittikaNakshatraEn } from "./krittika-nakshatra";
 // All articles organized by language
 
 import {
@@ -343,6 +344,7 @@ const ARTICLES_EN: WikiArticle[] = [
   mrigashiraNakshatraEn,
   swatiNakshatraEn,
   hastaNakshatraEn,
+  krittikaNakshatraEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
