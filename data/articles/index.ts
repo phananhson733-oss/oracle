@@ -146,6 +146,7 @@ import { blackMoonLilithEn } from "./black-moon-lilith";
 import { compositeChartCalculatorEn } from "./composite-chart-calculator";
 import { synastryChartCompatibilityEn } from "./synastry-chart-compatibility";
 import { mrigashiraNakshatraEn } from "./mrigashira-nakshatra";
+import { swatiNakshatraEn } from "./swati-nakshatra";
 // All articles organized by language
 
 import {
@@ -339,6 +340,7 @@ const ARTICLES_EN: WikiArticle[] = [
   compositeChartCalculatorEn,
   synastryChartCompatibilityEn,
   mrigashiraNakshatraEn,
+  swatiNakshatraEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
