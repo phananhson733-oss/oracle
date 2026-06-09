@@ -1,0 +1,129 @@
+{
+  "_comment": "MAHADASHA cluster illustration plan (2026-06-09 batch). Hero = 1 diffusion image per article (gemini-web, no text). Inline = LLM-planned SVG infographics, bilingual EN+ZH. Year/duration numbers verified against article text by the planning layer.",
+  "imagesDir": "public/images/mahadasha",
+  "urlBase": "/images/mahadasha",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "maxWidth": 1280, "quality": 82 },
+  "articles": {
+    "mahadasha": {
+      "hero": {
+        "prompt": "An atmospheric editorial night sky in deep indigo fading to near-black, nine softly glowing planetary orbs of warm gold light arranged along a slow sweeping arc like beads on an unseen thread, the largest low and bright and the smallest high and faint, faint concentric orbital rings suggesting a vast cycle of time, contemplative and cinematic, no text or letters.",
+        "altEn": "Nine glowing planetary lights strung along a slow arc across a deep indigo night sky, evoking a long cycle of time.",
+        "altZh": "九颗金色行星之光沿着缓缓展开的弧线排列在深靛蓝夜空中，象征一段漫长循环的时间。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The Nine Mahadasha Periods: Quick Guide",
+          "afterHeadingZh": "## 九大行星大运：速览",
+          "titleEn": "The Vimshottari Order: Nine Periods, 120 Years",
+          "titleZh": "Vimshottari 顺序：九段大运，共 120 年",
+          "items": [
+            { "nameEn": "Ketu", "nameZh": "计都", "subEn": "7 yrs · release", "subZh": "7 年 · 收束" },
+            { "nameEn": "Venus", "nameZh": "金星", "subEn": "20 yrs · relationship", "subZh": "20 年 · 关系" },
+            { "nameEn": "Sun", "nameZh": "太阳", "subEn": "6 yrs · authority", "subZh": "6 年 · 自我" },
+            { "nameEn": "Moon", "nameZh": "月亮", "subEn": "10 yrs · emotion", "subZh": "10 年 · 情绪" },
+            { "nameEn": "Mars", "nameZh": "火星", "subEn": "7 yrs · drive", "subZh": "7 年 · 行动" },
+            { "nameEn": "Rahu", "nameZh": "罗睺", "subEn": "18 yrs · ambition", "subZh": "18 年 · 欲望" },
+            { "nameEn": "Jupiter", "nameZh": "木星", "subEn": "16 yrs · wisdom", "subZh": "16 年 · 成长" },
+            { "nameEn": "Saturn", "nameZh": "土星", "subEn": "19 yrs · discipline", "subZh": "19 年 · 磨炼" },
+            { "nameEn": "Mercury", "nameZh": "水星", "subEn": "17 yrs · intellect", "subZh": "17 年 · 思考" }
+          ],
+          "altEn": "The nine mahadasha periods in their fixed Vimshottari order with each planet's year-span, from Ketu's 7 years through Mercury's 17, totaling 120 years.",
+          "altZh": "九段行星大运按固定的 Vimshottari 顺序排列，标注每颗行星的年限，从计都 7 年到水星 17 年，合计 120 年。"
+        }
+      ]
+    },
+    "rahu-mahadasha": {
+      "hero": {
+        "prompt": "An atmospheric editorial scene of a partial lunar eclipse over a deep indigo near-black sky, a darkened moon rimmed with a hungry corona of gold light, faint streaks of restless cloud reaching outward, a sense of shadow and amplified longing, cinematic and contemplative, no text or letters.",
+        "altEn": "A shadowed moon ringed with gold light against a deep indigo sky, evoking the amplifying, restless tone of the Rahu period.",
+        "altZh": "深靛蓝夜空中，一轮被阴影笼罩、边缘镶着金光的月亮，象征罗睺大运放大欲望与不安的基调。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Rahu Mahadasha vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Rahu Mahadasha 与相近概念：运作方式 + 取舍",
+          "titleEn": "Two Ends of the Node Axis",
+          "titleZh": "同一根交点轴的两端",
+          "columns": [
+            { "nameEn": "Rahu (north node)", "nameZh": "罗睺（北交点）", "linesEn": ["Pushes outward: ambition, acquisition, the unfamiliar", "Gains reach and speed, at the cost of grounding"], "linesZh": ["向外推：野心、获取、陌生新奇", "换来进取与速度，代价是难以安定"] },
+            { "nameEn": "Ketu (south node)", "nameZh": "计都（南交点）", "linesEn": ["Pulls inward: detachment, release, inner search", "Its 7 years steady you, at the cost of outward drive"], "linesZh": ["向内收：出离、放下、向内探寻", "七年给你安定，代价是向外的冲劲"] }
+          ],
+          "altEn": "A two-column contrast of Rahu pushing outward toward ambition versus Ketu pulling inward toward release, the two ends of the lunar-node axis.",
+          "altZh": "两栏对照：罗睺向外推动野心，计都向内收回放下，是月亮交点轴的两端。"
+        }
+      ]
+    },
+    "ketu-mahadasha": {
+      "hero": {
+        "prompt": "An atmospheric editorial scene of thin gold smoke and dissolving mist drifting upward and thinning to nothing against a deep indigo near-black sky, a faint distant star, a quiet sense of things being gently released and let go, contemplative and still, no text or letters.",
+        "altEn": "Thin gold smoke dissolving into a deep indigo sky, evoking the Ketu period's themes of release and quiet inward turning.",
+        "altZh": "缕缕金色轻烟在深靛蓝夜空中消散，象征计都大运放下与向内收束的主题。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Ketu Mahadasha vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Ketu Mahadasha 与相近概念：运作方式 + 取舍",
+          "titleEn": "Two Ends of the Node Axis",
+          "titleZh": "同一根交点轴的两端",
+          "columns": [
+            { "nameEn": "Ketu (south node)", "nameZh": "计都（南交点）", "linesEn": ["Subtractive: strips over-identification, turns attention inward", "7 years that bring clarity, at the cost of familiar comforts"], "linesZh": ["做减法：剥落过度执着，把注意力收回向内", "七年带来清明，代价是放掉熟悉的依恋"] },
+            { "nameEn": "Rahu (north node)", "nameZh": "罗睺（北交点）", "linesEn": ["Additive: pushes toward desire, accumulation, the worldly", "18 years that expand reach, at the cost of inner steadiness"], "linesZh": ["做加法：推向欲望、积累与世俗", "十八年拓宽进取，代价是内在的安定"] }
+          ],
+          "altEn": "A two-column contrast of Ketu's subtractive inward release versus Rahu's additive outward desire, the opposite ends of the same lunar-node axis.",
+          "altZh": "两栏对照：计都做减法向内放下，罗睺做加法向外渴求，是同一根月亮交点轴的两端。"
+        }
+      ]
+    },
+    "saturn-mahadasha": {
+      "hero": {
+        "prompt": "An atmospheric editorial scene of a single weathered standing stone under a deep indigo near-black night sky, a slow trail of gold starlight arcing overhead like a long exposure marking the passage of years, patient and grave, a sense of time and earned endurance, contemplative and cinematic, no text or letters.",
+        "altEn": "A weathered standing stone beneath a long arc of gold starlight in a deep indigo sky, evoking the Saturn period's slow, earned passage of time.",
+        "altZh": "深靛蓝夜空下一块风化的立石，头顶划过一道金色星轨，象征土星大运缓慢而踏实积累的时间感。"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read Saturn (Shani) Mahadasha in Your Timing",
+          "afterHeadingZh": "## 如何在自己星盘里识别 Saturn (Shani) Mahadasha",
+          "titleEn": "The 19-Year Arc of Earned Structure",
+          "titleZh": "十九年：踏实积累的长弧",
+          "items": [
+            { "labelEn": "Early years", "labelZh": "前段", "titleEn": "Delay & weight", "titleZh": "延迟与负重", "noteEn": "Often feels like added responsibility and slow starts before it settles.", "noteZh": "常表现为责任加重、迟迟卡住，事情慢热难推。" },
+            { "labelEn": "Mid period", "labelZh": "中段", "titleEn": "Antardasha shifts", "titleZh": "小运轮转", "noteEn": "The sub-period inside the dasha changes the tone every few years.", "noteZh": "大运里的小运每隔几年改变体感，并非一成不变。" },
+            { "labelEn": "Late years", "labelZh": "后段", "titleEn": "Structure consolidates", "titleZh": "结构成形", "noteEn": "Returns earned structure late: what you built through steady work compounds.", "noteZh": "回报来得晚：靠踏实努力搭起的根基逐渐累积成形。" }
+          ],
+          "altEn": "A three-stage timeline of the 19-year Saturn period: early delay and weight, mid-period antardasha shifts, and late consolidation of earned structure.",
+          "altZh": "土星十九年的三段时间轴：前段延迟负重，中段小运轮转，后段结构成形、回报渐显。"
+        }
+      ]
+    },
+    "venus-mahadasha": {
+      "hero": {
+        "prompt": "An atmospheric editorial scene of the bright planet Venus glowing low and warm gold over a tranquil deep-indigo twilight horizon, its light reflected softly on still water, a serene sense of beauty, harmony and gentle abundance, contemplative and cinematic, no text or letters.",
+        "altEn": "Venus glowing warm gold low over a calm indigo twilight horizon reflected on still water, evoking the Venus period's themes of beauty and ease.",
+        "altZh": "金星泛着温暖金光低悬在靛蓝暮色地平线上，倒映于静水，象征金星大运关于美感与安适的主题。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "afterHeadingZh": "## 为什么了解它能帮助自我觉察",
+          "titleEn": "Three Areas Venus's Period Leans Toward",
+          "titleZh": "金星大运倾向的三个领域",
+          "columns": [
+            { "nameEn": "Relationships", "nameZh": "关系", "linesEn": ["Partnership, marriage, renewed closeness surface", "Whether nourishing or strained depends on Venus's condition"], "linesZh": ["伴侣、婚姻、重新靠近浮上来", "滋养还是紧张，取决于金星的状态"] },
+            { "nameEn": "Finances & material", "nameZh": "财务与物质", "linesEn": ["Gains tied to beauty, art, luxury, pleasant living", "An afflicted Venus can tip toward overspending instead"], "linesZh": ["与美、艺术、奢享、安适相关的收益", "金星受克时反而可能偏向过度消费"] },
+            { "nameEn": "Creativity", "nameZh": "创造", "linesEn": ["Music, design and craft finally get room to breathe", "A lean, not a guarantee — it rewards attention"], "linesZh": ["音乐、设计与手艺终于有了空间", "是倾向而非承诺——它回报用心的人"] }
+          ],
+          "altEn": "A three-column view of the life areas Venus's twenty-year period leans toward: relationships, finances and material life, and creativity, each a tendency rather than a promise.",
+          "altZh": "三栏呈现金星二十年大运倾向的生活领域：关系、财务与物质、创造，每一项都是倾向而非定数。"
+        }
+      ]
+    }
+  }
+}

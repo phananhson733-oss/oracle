@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 948 250" role="img" aria-label="行运家族：从最慢到最快">
+  <defs>
+    <linearGradient id="transits0zh-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="transits0zh-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="transits0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="945" height="247" rx="22" fill="url(#transits0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">行运家族：从最慢到最快</text>
+  <line x1="44" y1="64" x2="904" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <line x1="129.0" y1="150" x2="819.0" y2="150" stroke="#d4af6a" stroke-opacity="0.30"/>
+  <g text-anchor="middle">
+    <text x="129.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">月亮行运</text>
+    <circle cx="129.0" cy="150" r="17" fill="url(#transits0zh-node)" filter="url(#transits0zh-soft)" opacity="0.55"/>
+    <circle cx="129.0" cy="150" r="14" fill="url(#transits0zh-node)"/>
+    <text x="129.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">1</text>
+    <text x="129.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">几小时·情绪与节奏</text>
+    <text x="267.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">水星·金星</text>
+    <circle cx="267.0" cy="150" r="17" fill="url(#transits0zh-node)" filter="url(#transits0zh-soft)" opacity="0.55"/>
+    <circle cx="267.0" cy="150" r="14" fill="url(#transits0zh-node)"/>
+    <text x="267.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">2</text>
+    <text x="267.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">几天·沟通与好感</text>
+    <text x="405.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">火星行运</text>
+    <circle cx="405.0" cy="150" r="17" fill="url(#transits0zh-node)" filter="url(#transits0zh-soft)" opacity="0.55"/>
+    <circle cx="405.0" cy="150" r="14" fill="url(#transits0zh-node)"/>
+    <text x="405.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">3</text>
+    <text x="405.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">一两周·行动力</text>
+    <text x="543.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">木星行运</text>
+    <circle cx="543.0" cy="150" r="17" fill="url(#transits0zh-node)" filter="url(#transits0zh-soft)" opacity="0.55"/>
+    <circle cx="543.0" cy="150" r="14" fill="url(#transits0zh-node)"/>
+    <text x="543.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">4</text>
+    <text x="543.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">数周到数月·扩张</text>
+    <text x="681.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">土星行运</text>
+    <circle cx="681.0" cy="150" r="17" fill="url(#transits0zh-node)" filter="url(#transits0zh-soft)" opacity="0.55"/>
+    <circle cx="681.0" cy="150" r="14" fill="url(#transits0zh-node)"/>
+    <text x="681.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">5</text>
+    <text x="681.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">两三年·结构</text>
+    <text x="819.0" y="93.5" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">外行星（天·海·冥</text>
+    <text x="819.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">）</text>
+    <circle cx="819.0" cy="150" r="17" fill="url(#transits0zh-node)" filter="url(#transits0zh-soft)" opacity="0.55"/>
+    <circle cx="819.0" cy="150" r="14" fill="url(#transits0zh-node)"/>
+    <text x="819.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">6</text>
+    <text x="819.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">数年·深层重整</text>
+  </g>
+  <text x="474" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+</svg>

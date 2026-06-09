@@ -1,0 +1,142 @@
+{
+  "_comment": "TRANSITS cluster illustration plan (2026-06-09 batch). Hero = 1 diffusion image per article (gemini-web, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), bilingual EN+ZH, wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/transits",
+  "urlBase": "/images/transits",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "maxWidth": 1280, "quality": 82 },
+  "articles": {
+    "transits": {
+      "hero": {
+        "prompt": "A serene wide-angle cosmic scene: a single fixed constellation of pale gold stars holds steady in the foreground while, behind it, several planets of different sizes trace luminous arcing orbital paths at different speeds, the faster inner ones leaving short bright streaks and the slow outer ones nearly still. Deep indigo-to-near-black sky (#16112c fading to #0b0a1b), soft gold light (#d4af6a) catching the planetary rims, calm and introspective, editorial illustration, no text or letters.",
+        "altEn": "A fixed gold constellation against slow and fast planets tracing orbital arcs at different speeds in a deep indigo cosmos.",
+        "altZh": "深靛蓝星空中，一组定格的金色星座衬着快慢不一的行星划出明暗不同的轨道弧线。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The Nine Transits: Quick Guide",
+          "afterHeadingZh": "## 六类占星行运：速览",
+          "titleEn": "The Transit Family, Slowest to Fastest",
+          "titleZh": "行运家族：从最慢到最快",
+          "items": [
+            { "nameEn": "Moon", "nameZh": "月亮行运", "subEn": "Hours — mood & rhythm", "subZh": "几小时·情绪与节奏" },
+            { "nameEn": "Mercury / Venus", "nameZh": "水星·金星", "subEn": "Days — talk & connection", "subZh": "几天·沟通与好感" },
+            { "nameEn": "Mars", "nameZh": "火星行运", "subEn": "A week or two — drive", "subZh": "一两周·行动力" },
+            { "nameEn": "Jupiter", "nameZh": "木星行运", "subEn": "Weeks to months — growth", "subZh": "数周到数月·扩张" },
+            { "nameEn": "Saturn", "nameZh": "土星行运", "subEn": "1–2 years — structure", "subZh": "两三年·结构" },
+            { "nameEn": "Outer (U/N/P)", "nameZh": "外行星（天·海·冥）", "subEn": "Years — deep reshaping", "subZh": "数年·深层重整" }
+          ],
+          "altEn": "The transit family ordered by speed, from the hours-long Moon to the years-long outer planets.",
+          "altZh": "按速度排列的行运家族，从只持续几小时的月亮到横跨数年的外行星。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How Shade and Combination Shift Readings",
+          "afterHeadingZh": "## 色调浓淡与组合如何改变解读",
+          "titleEn": "Three Factors That Shift a Reading",
+          "titleZh": "改变解读的三个变量",
+          "items": [
+            { "nameEn": "Angle", "nameZh": "相位角度", "subEn": "Sets the intensity", "subZh": "决定体感强弱" },
+            { "nameEn": "Element", "nameZh": "元素", "subEn": "Colors the tone", "subZh": "改变调性" },
+            { "nameEn": "Overlap", "nameZh": "叠加组合", "subEn": "Layers the picture", "subZh": "多条叠加加码" }
+          ],
+          "altEn": "Three factors that change how a transit reads: angle, element, and overlap.",
+          "altZh": "改变一次行运解读的三个变量：相位角度、元素、叠加组合。"
+        }
+      ]
+    },
+    "natal-chart-transits": {
+      "hero": {
+        "prompt": "An overhead view of a translucent circular star map lying flat like a still pool, its rim marked by faint gold zodiac glyph-shapes (abstract, illegible) — and above it, casting soft light downward, a few luminous planets drift across, their reflections meeting points on the fixed map below. Deep indigo-to-near-black palette (#16112c to #0b0a1b), warm gold accents (#d4af6a), two layers clearly visible: the still chart beneath, the moving sky above. Calm, contemplative editorial illustration, no readable text.",
+        "altEn": "Moving planets drifting above a fixed circular star chart, their light meeting points on the still map below.",
+        "altZh": "移动的行星在固定的圆形星盘上方飘移，光点落在下方静止的底盘上。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Natal Chart Transits vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Natal Chart Transits 与相近概念：运作方式 + 取舍",
+          "titleEn": "Transits vs Adjacent Timing Tools",
+          "titleZh": "行运与相近技法的取舍",
+          "columns": [
+            { "nameEn": "Transits", "nameZh": "行运", "linesEn": ["Planets' real positions today", "Datable, day-level timing"], "linesZh": ["用行星此刻真实位置", "可标到具体日期"] },
+            { "nameEn": "Progressions", "nameZh": "推运", "linesEn": ["Chart advanced a day per year", "Slow inner-development arc"], "linesZh": ["盘按一天一年象征推进", "缓慢的内在心理节奏"] },
+            { "nameEn": "Solar Return", "nameZh": "太阳返照", "linesEn": ["Fresh chart at the Sun's return", "One year-at-a-glance theme"], "linesZh": ["太阳回归本命度另起盘", "一张图看完整年主题"] }
+          ],
+          "altEn": "Transits, progressions, and the solar return compared as three different ways to map time onto a chart.",
+          "altZh": "行运、推运与太阳返照三种把时间映射到星盘上的不同方式对照。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Transit Contacts at a Glance",
+          "afterHeadingZh": "## Natal Chart Transits 速查表",
+          "titleEn": "Four Kinds of Transit Contact",
+          "titleZh": "四种行运触动",
+          "items": [
+            { "nameEn": "Outer-planet contact", "nameZh": "外行星行运", "subEn": "Slow, in orb for months or years", "subZh": "慢·停留数月到数年" },
+            { "nameEn": "Inner-planet contact", "nameZh": "内行星行运", "subEn": "Fast, hours to days", "subZh": "快·几天到几周" },
+            { "nameEn": "Exact orb", "nameZh": "精确合相", "subEn": "Peaks within one degree", "subZh": "一度内·强度到顶" },
+            { "nameEn": "Retrograde transit", "nameZh": "逆行行运", "subEn": "Same point hit up to three times", "subZh": "同一点反复触及" }
+          ],
+          "altEn": "Four kinds of transit contact: outer-planet, inner-planet, exact orb, and retrograde.",
+          "altZh": "四种行运触动：外行星、内行星、精确合相与逆行。"
+        }
+      ]
+    },
+    "june-2026-planetary-transits": {
+      "hero": {
+        "prompt": "A horizontal celestial procession illustrating a month's arc: on the left the airy, scattered light of Gemini with many small drifting points; a clear pivot at center where the light deepens into the slower, water-toned glow of Cancer; and on the right two close bright bodies — a full moon and a planet poised to turn back — hanging over a quiet horizon. Deep indigo-to-near-black sky (#16112c to #0b0a1b), soft gold accents (#d4af6a), introspective and seasonal. Editorial illustration, no text or letters.",
+        "altEn": "A left-to-right celestial arc from scattered Gemini light into deeper Cancer tones, ending on a full moon beside a turning planet.",
+        "altZh": "一道由左向右的天象弧线，从发散的双子之光转入更深的巨蟹色调，止于满月与一颗即将转向的行星。"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Key Dates at a Glance",
+          "afterHeadingZh": "## 关键日期一览",
+          "titleEn": "June 2026 Key Dates",
+          "titleZh": "2026 年 6 月关键日期",
+          "items": [
+            { "labelEn": "Jun 2", "labelZh": "6月2日", "titleEn": "Mercury enters Cancer", "titleZh": "水星入巨蟹", "noteEn": "Talk turns personal, indirect", "noteZh": "沟通更私人、更间接" },
+            { "labelEn": "Jun 14", "labelZh": "6月14日", "titleEn": "Venus enters Leo", "titleZh": "金星入狮子", "noteEn": "Warmer, more visible", "noteZh": "更暖、更愿被看见" },
+            { "labelEn": "Jun 16", "labelZh": "6月16日", "titleEn": "New Moon in Gemini", "titleZh": "双子新月", "noteEn": "Fresh cycle of connection", "noteZh": "连接的新循环" },
+            { "labelEn": "Jun 22", "labelZh": "6月22日", "titleEn": "Sun enters Cancer (Solstice)", "titleZh": "太阳入巨蟹（夏至）", "noteEn": "Outward to inward", "noteZh": "向外转向内" },
+            { "labelEn": "Jun 29", "labelZh": "6月29日", "titleEn": "Mars enters Gemini", "titleZh": "火星入双子", "noteEn": "Drive scatters", "noteZh": "干劲分散" },
+            { "labelEn": "Jun 30", "labelZh": "6月30日", "titleEn": "Capricorn Full Moon + Mercury retrograde", "titleZh": "魔羯满月＋水星逆行", "noteEn": "Finish, don't launch", "noteZh": "宜收尾不宜开新" }
+          ],
+          "altEn": "A timeline of June 2026's six key transit dates from Mercury entering Cancer to the June 30 full moon and Mercury retrograde.",
+          "altZh": "2026 年 6 月六个关键行运日期的时间线，从水星入巨蟹到 6 月 30 日满月与水逆。"
+        }
+      ]
+    },
+    "july-2026-planetary-transits": {
+      "hero": {
+        "prompt": "A wide twilight cosmos with a single large, warm-golden planet (Jupiter) rising as the clear focal point, its generous light opening across the scene like a new chapter; smaller, dimmer bodies sit low and quiet at the edges, two of them faintly reversing direction. Deep indigo-to-near-black sky (#16112c to #0b0a1b), rich gold glow (#d4af6a) around the great planet, expansive yet calm and introspective. Editorial illustration, no text or letters.",
+        "altEn": "A large warm-gold planet rising as the focal point of a deep indigo sky, with smaller dim bodies quietly turning at the edges.",
+        "altZh": "一颗暖金色的大行星在深靛蓝星空中升起成为焦点，边缘几颗暗淡的星体悄悄转向。"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Key Dates at a Glance",
+          "afterHeadingZh": "## 关键日期一览",
+          "titleEn": "July 2026 Key Dates",
+          "titleZh": "2026 年 7 月关键日期",
+          "items": [
+            { "labelEn": "Jul 1", "labelZh": "7月1日", "titleEn": "Jupiter enters Leo", "titleZh": "木星入狮子", "noteEn": "Once-a-year new chapter", "noteZh": "一年一度的新篇" },
+            { "labelEn": "Jul 8", "labelZh": "7月8日", "titleEn": "Neptune stations retrograde", "titleZh": "海王星起逆", "noteEn": "First outer-planet turn", "noteZh": "第一次外行星转向" },
+            { "labelEn": "Jul 10", "labelZh": "7月10日", "titleEn": "Venus enters Virgo", "titleZh": "金星入处女", "noteEn": "Venus shifts register", "noteZh": "金星换调" },
+            { "labelEn": "Jul 15", "labelZh": "7月15日", "titleEn": "New Moon in Cancer", "titleZh": "巨蟹新月", "noteEn": "Rework close to home", "noteZh": "重做贴近家的事" },
+            { "labelEn": "Jul 23", "labelZh": "7月23日", "titleEn": "Sun enters Leo", "titleZh": "太阳入狮子", "noteEn": "Solar season turns", "noteZh": "太阳季更替" },
+            { "labelEn": "Jul 24", "labelZh": "7月24日", "titleEn": "Mercury stations direct", "titleZh": "水星顺行", "noteEn": "Retrograde lifts", "noteZh": "水逆结束" },
+            { "labelEn": "Jul 27", "labelZh": "7月27日", "titleEn": "Saturn stations retrograde", "titleZh": "土星起逆", "noteEn": "Second outer-planet turn", "noteZh": "第二次外行星转向" },
+            { "labelEn": "Jul 30", "labelZh": "7月30日", "titleEn": "Full Moon in Aquarius", "titleZh": "水瓶满月", "noteEn": "Leo–Aquarius axis peaks", "noteZh": "狮子—水瓶轴到顶" }
+          ],
+          "altEn": "A timeline of July 2026's eight key transit dates from Jupiter entering Leo to the July 30 Aquarius full moon.",
+          "altZh": "2026 年 7 月八个关键行运日期的时间线，从木星入狮子到 7 月 30 日水瓶满月。"
+        }
+      ]
+    }
+  }
+}

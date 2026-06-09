@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1070 300" role="img" aria-label="2026 年 6 月关键日期">
+  <defs>
+    <linearGradient id="june2026planetarytransits0zh-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="june2026planetarytransits0zh-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="june2026planetarytransits0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="1067" height="297" rx="22" fill="url(#june2026planetarytransits0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">2026 年 6 月关键日期</text>
+  <line x1="44" y1="64" x2="1026" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <line x1="56" y1="150" x2="1014" y2="150" stroke="#d4af6a" stroke-opacity="0.35"/>
+  <g text-anchor="middle">
+    <text x="135.8" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">6月2日</text>
+    <circle cx="135.8" cy="150" r="9" fill="url(#june2026planetarytransits0zh-node)" filter="url(#june2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="135.8" cy="150" r="6" fill="url(#june2026planetarytransits0zh-node)"/>
+    <text x="135.8" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">水星入巨蟹</text>
+    <text x="135.8" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">沟通更私人、更间接</text>
+    <text x="295.5" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">6月14日</text>
+    <circle cx="295.5" cy="150" r="9" fill="url(#june2026planetarytransits0zh-node)" filter="url(#june2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="295.5" cy="150" r="6" fill="url(#june2026planetarytransits0zh-node)"/>
+    <text x="295.5" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">金星入狮子</text>
+    <text x="295.5" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">更暖、更愿被看见</text>
+    <text x="455.2" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">6月16日</text>
+    <circle cx="455.2" cy="150" r="9" fill="url(#june2026planetarytransits0zh-node)" filter="url(#june2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="455.2" cy="150" r="6" fill="url(#june2026planetarytransits0zh-node)"/>
+    <text x="455.2" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">双子新月</text>
+    <text x="455.2" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">连接的新循环</text>
+    <text x="614.8" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">6月22日</text>
+    <circle cx="614.8" cy="150" r="9" fill="url(#june2026planetarytransits0zh-node)" filter="url(#june2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="614.8" cy="150" r="6" fill="url(#june2026planetarytransits0zh-node)"/>
+    <text x="614.8" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">太阳入巨蟹（夏至）</text>
+    <text x="614.8" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">向外转向内</text>
+    <text x="774.5" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">6月29日</text>
+    <circle cx="774.5" cy="150" r="9" fill="url(#june2026planetarytransits0zh-node)" filter="url(#june2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="774.5" cy="150" r="6" fill="url(#june2026planetarytransits0zh-node)"/>
+    <text x="774.5" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">火星入双子</text>
+    <text x="774.5" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">干劲分散</text>
+    <text x="934.2" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">6月30日</text>
+    <circle cx="934.2" cy="150" r="9" fill="url(#june2026planetarytransits0zh-node)" filter="url(#june2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="934.2" cy="150" r="6" fill="url(#june2026planetarytransits0zh-node)"/>
+    <text x="934.2" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">魔羯满月＋水星逆行</text>
+    <text x="934.2" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">宜收尾不宜开新</text>
+  </g>
+  <text x="535" y="278" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+</svg>

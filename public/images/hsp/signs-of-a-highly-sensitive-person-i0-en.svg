@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 250" role="img" aria-label="Four Signs to Watch for Over Time">
+  <defs>
+    <linearGradient id="signsofahighlysensitiveperson0en-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="signsofahighlysensitiveperson0en-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="signsofahighlysensitiveperson0en-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="837" height="247" rx="22" fill="url(#signsofahighlysensitiveperson0en-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">Four Signs to Watch for Over Time</text>
+  <line x1="44" y1="64" x2="796" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <line x1="150.0" y1="150" x2="690.0" y2="150" stroke="#d4af6a" stroke-opacity="0.30"/>
+  <g text-anchor="middle">
+    <text x="150.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Sensory Sensitivity</text>
+    <circle cx="150.0" cy="150" r="17" fill="url(#signsofahighlysensitiveperson0en-node)" filter="url(#signsofahighlysensitiveperson0en-soft)" opacity="0.55"/>
+    <circle cx="150.0" cy="150" r="14" fill="url(#signsofahighlysensitiveperson0en-node)"/>
+    <text x="150.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">1</text>
+    <text x="150.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Stimulation stacks up faster</text>
+    <text x="150.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">than usual</text>
+    <text x="330.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Emotional Attunement</text>
+    <circle cx="330.0" cy="150" r="17" fill="url(#signsofahighlysensitiveperson0en-node)" filter="url(#signsofahighlysensitiveperson0en-soft)" opacity="0.55"/>
+    <circle cx="330.0" cy="150" r="14" fill="url(#signsofahighlysensitiveperson0en-node)"/>
+    <text x="330.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">2</text>
+    <text x="330.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Reads the feelings around</text>
+    <text x="330.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">you before they're spoken</text>
+    <text x="510.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Deep Processing</text>
+    <circle cx="510.0" cy="150" r="17" fill="url(#signsofahighlysensitiveperson0en-node)" filter="url(#signsofahighlysensitiveperson0en-soft)" opacity="0.55"/>
+    <circle cx="510.0" cy="150" r="14" fill="url(#signsofahighlysensitiveperson0en-node)"/>
+    <text x="510.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">3</text>
+    <text x="510.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Turns each experience over</text>
+    <text x="510.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">slowly and thoroughly</text>
+    <text x="690.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Need for Recovery</text>
+    <circle cx="690.0" cy="150" r="17" fill="url(#signsofahighlysensitiveperson0en-node)" filter="url(#signsofahighlysensitiveperson0en-soft)" opacity="0.55"/>
+    <circle cx="690.0" cy="150" r="14" fill="url(#signsofahighlysensitiveperson0en-node)"/>
+    <text x="690.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">4</text>
+    <text x="690.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Restores balance through</text>
+    <text x="690.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">quiet and solitude</text>
+  </g>
+  <text x="420" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">A self-reflection framework — tendencies, not predictions.</text>
+</svg>

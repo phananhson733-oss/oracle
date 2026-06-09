@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const natalChartTransitsEn: WikiArticle = {
   slug: "natal-chart-transits",
+  image: "/images/transits/natal-chart-transits.jpg",
+  image_alt: "Moving planets drifting above a fixed circular star chart, their light meeting points on the still map below.",
   title: "Reading Natal Chart Transits on Your Own Birth Chart",
   description:
     "Natal chart transits are today's moving planets forming aspects to your fixed birth chart. Learn how to read the live sky against your own natal positions.",
@@ -43,6 +45,8 @@ Transits to your natal chart differ from the other timing tools they get confuse
 
 The point is not that one tool wins. Each answers a different question, and the transits earn their place by being the only one of the three that tells you what the sky is doing to your chart this week, in real time.
 
+
+![Transits, progressions, and the solar return compared as three different ways to map time onto a chart.](/images/transits/natal-chart-transits-i0-en.svg)
 ## How to Read Natal Chart Transits on Your Own Chart
 
 Reading the transits on your own chart comes down to a short, repeatable sequence rather than memorizing every planetary cycle:
@@ -73,6 +77,8 @@ The friction most readers feel with transit-to-natal contacts traces back to a h
 | Exact orb | The contact peaks as degrees line up within one degree | The precise natal degree being hit | Intensity spikes, then eases as the planet moves on |
 | Retrograde transit | A planet crosses the same natal point up to three times | One natal point, revisited | A theme that returns twice more before it clears |
 
+
+![Four kinds of transit contact: outer-planet, inner-planet, exact orb, and retrograde.](/images/transits/natal-chart-transits-i1-en.svg)
 ## Questions People Ask About Transits
 
 **How do I find my transits for today?**
@@ -114,6 +120,8 @@ New to your chart? Read the full [guide to reading a birth chart](https://astrol
 
 export const natalChartTransitsZh: WikiArticle = {
   slug: "natal-chart-transits",
+  image: "/images/transits/natal-chart-transits.jpg",
+  image_alt: "移动的行星在固定的圆形星盘上方飘移，光点落在下方静止的底盘上。",
   title: "读懂本命盘行运，关键是把流动的星空叠回你的出生盘",
   description:
     "本命盘行运指当下移动的行星对你出生星盘形成的相位。本文讲清它和行运总览的区别，以及如何把今天的星空对照本命盘来解读。",
@@ -152,6 +160,8 @@ Natal Chart Transits（本命盘行运）指的是**当下移动的行星对你�
 
 一个经典实例，是土星这类外行星走进某个星座、压到你本命的某颗行星——比如 [土星进入双鱼座行运示例](/zh/wiki/saturn-in-pisces)，它能让你直观看到「一次行运具体怎么落在一张本命盘上」。把行运逐一对照本命点来读的细致方法，在现代占星里由 Robert Hand 等人系统化。
 
+
+![行运、推运与太阳返照三种把时间映射到星盘上的不同方式对照。](/images/transits/natal-chart-transits-i0-zh.svg)
 ## 如何在你的星盘里认出本命盘行运
 
 想在自己的盘上认出一次正在发生的行运，可以按这几步走，每一步都对着图找：
@@ -179,6 +189,8 @@ Natal Chart Transits（本命盘行运）指的是**当下移动的行星对你�
 | 月亮行运 | 约两天半换一个星座，最快 | 扫过本命各宫与各行星 | 当成每日心情的底色，不必过度解读 |
 | 行运相位（合 / 刑 / 冲） | 行星与本命点的角度关系 | 角度越紧，本命点被触动越明显 | 用一两度误差范围筛掉无关的松散角度 |
 
+
+![四种行运触动：外行星、内行星、精确合相与逆行。](/images/transits/natal-chart-transits-i1-zh.svg)
 ## 关于本命盘行运的常见问题
 
 **怎么判断一次行运重不重要？**

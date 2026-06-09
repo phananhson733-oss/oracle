@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" role="img" aria-label="2026 年 7 月关键日期">
+  <defs>
+    <linearGradient id="july2026planetarytransits0zh-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="july2026planetarytransits0zh-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="july2026planetarytransits0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="1277" height="297" rx="22" fill="url(#july2026planetarytransits0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">2026 年 7 月关键日期</text>
+  <line x1="44" y1="64" x2="1236" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <line x1="56" y1="150" x2="1224" y2="150" stroke="#d4af6a" stroke-opacity="0.35"/>
+  <g text-anchor="middle">
+    <text x="129.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月1日</text>
+    <circle cx="129.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="129.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="129.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">木星入狮子</text>
+    <text x="129.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">一年一度的新篇</text>
+    <text x="275.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月8日</text>
+    <circle cx="275.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="275.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="275.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">海王星起逆</text>
+    <text x="275.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">第一次外行星转向</text>
+    <text x="421.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月10日</text>
+    <circle cx="421.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="421.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="421.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">金星入处女</text>
+    <text x="421.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">金星换调</text>
+    <text x="567.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月15日</text>
+    <circle cx="567.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="567.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="567.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">巨蟹新月</text>
+    <text x="567.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">重做贴近家的事</text>
+    <text x="713.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月23日</text>
+    <circle cx="713.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="713.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="713.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">太阳入狮子</text>
+    <text x="713.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">太阳季更替</text>
+    <text x="859.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月24日</text>
+    <circle cx="859.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="859.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="859.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">水星顺行</text>
+    <text x="859.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">水逆结束</text>
+    <text x="1005.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月27日</text>
+    <circle cx="1005.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="1005.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="1005.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">土星起逆</text>
+    <text x="1005.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">第二次外行星转向</text>
+    <text x="1151.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月30日</text>
+    <circle cx="1151.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
+    <circle cx="1151.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
+    <text x="1151.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">水瓶满月</text>
+    <text x="1151.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">狮子—水瓶轴到顶</text>
+  </g>
+  <text x="640" y="278" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+</svg>

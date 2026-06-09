@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const july2026PlanetaryTransitsEn: WikiArticle = {
   slug: "july-2026-planetary-transits",
+  image: "/images/transits/july-2026-planetary-transits.jpg",
+  image_alt: "A large warm-gold planet rising as the focal point of a deep indigo sky, with smaller dim bodies quietly turning at the edges.",
   title: "July 2026 Planetary Transits: Jupiter Enters Leo While Mercury Retrograde Finally Lifts",
   description: "Every dated event for July 2026, drawn straight from the ephemeris. Times are in UT, so adjust for your location.",
   authorId: "marcus-orion",
@@ -36,6 +38,8 @@ Every dated event for July 2026, drawn straight from the ephemeris. Times are in
 
 To see which house each date falls into for you, lay this table beside your own chart and read it alongside the overview of [astrological transits and how they move through your chart](/en/wiki/transits). The same date lands very differently depending on where it touches your placements.
 
+
+![A timeline of July 2026's eight key transit dates from Jupiter entering Leo to the July 30 Aquarius full moon.](/images/transits/july-2026-planetary-transits-i0-en.svg)
 ## Jupiter Enters Leo: A Once-a-Year New Chapter
 
 The July 1 Jupiter ingress is the event worth slowing down for, because Jupiter only changes signs about once a year. By mid-month the background chart shows Jupiter still early in the sign, at 3 degrees of Leo, so this is the opening of a long passage, not its peak. Here is how to work with it:
@@ -109,6 +113,8 @@ For the structural map of which life area each date touches, the overview of [th
 
 export const july2026PlanetaryTransitsZh: WikiArticle = {
   slug: "july-2026-planetary-transits",
+  image: "/images/transits/july-2026-planetary-transits.jpg",
+  image_alt: "一颗暖金色的大行星在深靛蓝星空中升起成为焦点，边缘几颗暗淡的星体悄悄转向。",
   title: "2026 年 7 月行运预报：木星入狮子，上旬水逆终于在月末收尾",
   description: "下面是 2026 年 7 月每一个有确切日期的事件，直接取自星历。时间为 UT（世界时），请按你所在地时区换算。",
   authorId: "marcus-orion",
@@ -141,6 +147,8 @@ export const july2026PlanetaryTransitsZh: WikiArticle = {
 
 要看清这些日期对你个人分别落在哪一宫，把这张表摆在你自己的星盘旁，配合 [占星行运 astrological transits 如何穿行你的星盘](/zh/wiki/transits) 这篇总览一起读。同一个日期，落在不同位置，呈现会非常不同。
 
+
+![2026 年 7 月八个关键行运日期的时间线，从木星入狮子到 7 月 30 日水瓶满月。](/images/transits/july-2026-planetary-transits-i0-zh.svg)
 ## 木星入狮子：一年一度的新篇章
 
 7 月 1 日的木星换座，是值得放慢脚步看的事件，因为木星大约一年才换一次星座。到月中，背景盘显示木星仍在该星座早段，位于狮子座 3 度，所以这是一段长行程的开端，而非其顶点。具体可以这样用：

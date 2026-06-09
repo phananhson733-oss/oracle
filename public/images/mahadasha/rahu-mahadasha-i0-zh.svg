@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 312" role="img" aria-label="同一根交点轴的两端">
+  <defs>
+    <linearGradient id="rahumahadasha0zh-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="rahumahadasha0zh-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="rahumahadasha0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="837" height="309" rx="22" fill="url(#rahumahadasha0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">同一根交点轴的两端</text>
+  <line x1="44" y1="64" x2="796" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+    <rect x="44" y="84" width="365.0" height="188" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#d4af6a" stroke-opacity="0.20"/>
+    <rect x="44" y="84" width="365.0" height="4" rx="2" fill="#d4af6a" fill-opacity="0.55"/>
+    <text x="60" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#f3effb">罗睺（北交点）</text>
+    <circle cx="61" cy="144" r="2.4" fill="#d4af6a"/>
+    <text x="70" y="148" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">向外推：野心、获取、陌生新奇</text>
+    <circle cx="61" cy="170" r="2.4" fill="#d4af6a"/>
+    <text x="70" y="174" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">换来进取与速度，代价是难以安定</text>
+    <rect x="431" y="84" width="365.0" height="188" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#d4af6a" stroke-opacity="0.20"/>
+    <rect x="431" y="84" width="365.0" height="4" rx="2" fill="#d4af6a" fill-opacity="0.55"/>
+    <text x="447" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#f3effb">计都（南交点）</text>
+    <circle cx="448" cy="144" r="2.4" fill="#d4af6a"/>
+    <text x="457" y="148" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">向内收：出离、放下、向内探寻</text>
+    <circle cx="448" cy="170" r="2.4" fill="#d4af6a"/>
+    <text x="457" y="174" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">七年给你安定，代价是向外的冲劲</text>
+  <text x="420" y="290" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+</svg>

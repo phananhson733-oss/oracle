@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const mahadashaEn: WikiArticle = {
   slug: "mahadasha",
+  image: "/images/mahadasha/mahadasha.jpg",
+  image_alt: "Nine glowing planetary lights strung along a slow arc across a deep indigo night sky, evoking a long cycle of time.",
   title: "Mahadasha Explained: Reading Vedic Planetary Periods as Seasons, Not Sentences",
   description: "A mahadasha is a major planetary period in the Vimshottari timing system of Vedic astrology.",
   authorId: "aditi-sharma",
@@ -64,6 +66,8 @@ The Vimshottari scheme of the Brihat Parashara Hora Shastra runs the nine mahada
 8. **Saturn period (19 years)** — The 19-year Shani period, the longest after Venus, built around discipline, delay, endurance, and maturity. It has the heaviest reputation of the set, and it does ask for patience. But reading it only as punishment misses the point: Saturn rewards steady, unglamorous work and tends to build things that last. See how to work with its long arc in [deep dive on the Saturn planetary period](/en/wiki/saturn-mahadasha).
 9. **Mercury period (17 years)** — Seventeen years emphasizing intellect, communication, commerce, and skill. It can sharpen learning, writing, business, and the exchange of ideas. The misread is to flatten Mercury into mere cleverness; at its fuller range the period is about how clearly you think and how well you connect what you know to what you do.
 
+
+![The nine mahadasha periods in their fixed Vimshottari order with each planet's year-span, from Ketu's 7 years through Mercury's 17, totaling 120 years.](/images/mahadasha/mahadasha-i0-en.svg)
 ## How Shade and Combination Shift Readings
 
 The single most useful thing to understand about this family is that no mahadasha reads the same way twice. The planet's name gives you the headline theme, but three layers underneath bend that headline in very different directions. Treating the period as a fixed label is exactly the mistake that turns timing into fatalism.
@@ -133,6 +137,8 @@ Read how Vedic and Western astrology differ, then find your current period: [htt
 
 export const mahadashaZh: WikiArticle = {
   slug: "mahadasha",
+  image: "/images/mahadasha/mahadasha.jpg",
+  image_alt: "九颗金色行星之光沿着缓缓展开的弧线排列在深靛蓝夜空中，象征一段漫长循环的时间。",
   title: "行星大运是什么：把吠陀占星的九大行星周期当成趋势而非定数来读",
   description: "Mahadasha（玛哈达沙，中文常译作「大运」或「行星大运」）是吠陀占星划分人生阶段的行星周期系统。",
   authorId: "aditi-sharma",
@@ -203,6 +209,8 @@ Mahadasha（玛哈达沙，中文常译作「大运」或「行星大运」）�
 
 **水星大运（17 年）** — 主题是沟通、思考、学习与各种信息往来，适合动脑和动嘴的事。常见误读是以为它只关乎口才；其实它更广，涉及你如何处理信息、做判断、与世界交换想法。
 
+
+![九段行星大运按固定的 Vimshottari 顺序排列，标注每颗行星的年限，从计都 7 年到水星 17 年，合计 120 年。](/images/mahadasha/mahadasha-i0-zh.svg)
 ## 色调浓淡与组合如何改变解读
 
 同一段大运，强弱浓淡可以差很多，再叠上行星组合与落宫，读法就完全不同。它不是九个互不相干的标签，而更像一条有层次、会叠加、会互相染色的时间轴。要读懂某一段，得同时看几件事：周期有多长（决定主题铺得多浓），大运里还套着哪一段小运，以及主管行星落在星盘的哪个宫位、与谁形成组合。具体来说，有三个维度会改变同一段大运的读法：

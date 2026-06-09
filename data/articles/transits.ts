@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const transitsEn: WikiArticle = {
   slug: "transits",
+  image: "/images/transits/transits.jpg",
+  image_alt: "A fixed gold constellation against slow and fast planets tracing orbital arcs at different speeds in a deep indigo cosmos.",
   title:
     "Astrological Transits — Reading the Moving Sky Against Your Fixed Chart",
   description:
@@ -69,6 +71,8 @@ Here is each member at hub depth — enough to recognize these transits, with th
 8. **Neptune** moves slowly, often lasting two to three years, and softens edges — dissolving old certainties, raising inspiration, and sometimes spreading confusion. It is excellent for art and devotion, harder for contracts and clear decisions. The misread is mistaking fog for clarity and acting on an idealized picture of a person or plan. The [Neptune transit deep dive](/en/wiki/12th-house-astrology) covers how.
 9. **Pluto** is the rarest and longest, sometimes running two to three years, and works on the most guarded parts of your life. The theme is death and rebirth — not literal loss, but the ending of an identity or pattern that has outlived its use. The misread is bracing for outer catastrophe instead of expecting deep inner change. The [Pluto transit explainer](/en/wiki/8th-house-meaning) goes further.
 
+
+![The transit family ordered by speed, from the hours-long Moon to the years-long outer planets.](/images/transits/transits-i0-en.svg)
 ## How Shade and Combination Shift Readings
 
 Single transits rarely act alone, and reading one as an isolated event is the fastest way to misjudge it. What changes the meaning is angle, element, and overlap — the way several moving planets layer over each other and over your chart at once. Three factors do most of the work.
@@ -79,6 +83,8 @@ Single transits rarely act alone, and reading one as an isolated event is the fa
 
 Two quick examples show how this plays out. First, transiting Saturn square your natal Moon is not the same as Saturn gently sextile that Moon: the square brings a felt test of security and belonging, while the sextile offers a quiet chance to mature with far less strain. Second, a fast Mars contact lighting up a slow Pluto one can act like a match dropped on a long fuse — Mars supplies the trigger and the heat, Pluto supplies the depth and the lasting change. In both cases the reading lives in the combination, not in any single planet's standard meaning. The real skill is learning to read these stacked contacts as chords rather than single notes, and to keep asking which one is loudest right now and which is only background.
 
+
+![Three factors that change how a transit reads: angle, element, and overlap.](/images/transits/transits-i1-en.svg)
 ## Common Misreads + Framework Limits
 
 Most mistakes with transits happen at the level of the whole family, not any single planet. Four show up again and again.
@@ -137,6 +143,8 @@ Pick one slow-moving planet in the current sky and find where it falls in your o
 
 export const transitsZh: WikiArticle = {
   slug: "transits",
+  image: "/images/transits/transits.jpg",
+  image_alt: "深靛蓝星空中，一组定格的金色星座衬着快慢不一的行星划出明暗不同的轨道弧线。",
   title: "占星行运是什么：不预设吉凶，读懂此刻天象怎样落在你的本命盘上",
   description:
     "占星行运是此刻移动的行星与你出生星盘固定点形成的角度。本文讲清行运是什么、如何解读，以及为什么时机比星座本身更重要。",
@@ -192,6 +200,8 @@ Astrological Transits（占星行运）是此刻正在移动的行星，与你�
 
 **外行星行运（天王·海王·冥王）** — 移动很慢，单次行运可横跨数年，触及的是更不个人、更深层的转向与重整。它的误读往往是急着「熬过去」，但这类长周期更像缓慢换季，催不动也跳不过。
 
+
+![按速度排列的行运家族，从只持续几小时的月亮到横跨数年的外行星。](/images/transits/transits-i0-zh.svg)
 ## 色调浓淡与组合如何改变解读
 
 一次占星行运到底分量多重，从来不是只看「哪颗行星」，而是几个变量叠在一起的结果。同样一个词，换一组条件，读出来的意思可能差很多。下面三组对照，是把单一行运放回整张地图时首先该掂量的：
@@ -204,6 +214,8 @@ Astrological Transits（占星行运）是此刻正在移动的行星，与你�
 
 所以读一次行运怎么看，顺序其实很固定：先看是哪一层的行星（定深度），再看打的是什么角度（定强弱），最后才落到它在你本命盘的哪个领域（定主题）。跳过前两步直接问「这个行运好不好」，基本上一定会读偏。
 
+
+![改变一次行运解读的三个变量：相位角度、元素、叠加组合。](/images/transits/transits-i1-zh.svg)
 ## 常见误读 + 框架边界
 
 把占星行运用偏，多半不是因为算错了角度，而是因为对这套框架的定位想错了。常见的几种偏差是：

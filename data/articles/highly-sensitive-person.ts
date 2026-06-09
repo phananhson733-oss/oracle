@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const highlySensitivePersonEn: WikiArticle = {
   slug: "highly-sensitive-person",
+  image: "/images/hsp/highly-sensitive-person.jpg",
+  image_alt: "A person sitting quietly by a window at dusk, bathed in soft gold light against deep indigo shadow, evoking a rich inner life",
   title: "Understanding What It Really Means to Be a Highly Sensitive Person",
   description: "A highly sensitive person is someone whose nervous system processes sensory and emotional input more deeply than average.",
   authorId: "elena-vane",
@@ -50,6 +52,8 @@ Seeing the trait this clearly takes a few related moves, and each one turns a va
 | Emotional Reactivity & Empathy | Strong feeling responses and attunement to others | Relationships, mood, caregiving | Mistaken for being dramatic or having no boundaries |
 | Sensitivity to Subtleties | Noticing small details others miss | Perception, surroundings, tone | Mistaken for being picky or paranoid |
 
+
+![A row of the four facets of high sensitivity: depth of processing, overstimulation, emotional reactivity and empathy, and sensitivity to subtleties](/images/hsp/highly-sensitive-person-i0-en.svg)
 ## The Highly Sensitive Person: Quick Guide
 
 Being a highly sensitive person is best understood through four facets, each one a different angle on the same trait. Each facet below gets a short brief explaining how it shapes the everyday experience of the trait, with the deep dive living on its own linked page. Taken together they describe what makes a sensitive temperament tick rather than reducing it to a single headline.
@@ -124,6 +128,8 @@ Curious how your chart frames life as a highly sensitive person? [Read the birth
 
 export const highlySensitivePersonZh: WikiArticle = {
   slug: "highly-sensitive-person",
+  image: "/images/hsp/highly-sensitive-person.jpg",
+  image_alt: "黄昏时分一个人静静坐在窗边，暖金色光线洒落，背景是深靛蓝的阴影，传达丰富的内在世界",
   title: "高敏感人群是什么——把敏感读成一种气质，而不是缺陷或病",
   description: "Highly Sensitive Person（高敏感人群 / 高敏感人，HSP）是对刺激更敏锐、加工更深的一种气质特质；想先快速对照自己是不是高敏感，可以看高敏感人群自查清单。",
   authorId: "elena-vane",
@@ -166,6 +172,8 @@ Highly Sensitive Person（高敏感人群 / 高敏感人，HSP）是**对刺激�
 | 占星第十二宫 | 星盘里哪块对应内向、边界薄的世界 | 一种描述内在体验的象征语言 | 把象征当成命运判决 |
 | 内在情绪的照顾 | 敏感的人怎么处理积压的感受 | 把强烈感受安放好的日常做法 | 以为敏感本身就是创伤造成的 |
 
+
+![高敏感四个面向并排展示：深度加工、容易过载、情绪反应与共情、感知细腻](/images/hsp/highly-sensitive-person-i0-zh.svg)
 ## 五个相关主题：速览
 
 高敏感人群是什么，常常要从五个具体话题去看，每一个都在帮你把敏感读成一种气质而不是缺陷。**高敏感自查清单** — 这是很多人接触这个话题的第一站：用一组日常反应来对照自己，比如容易被强光和噪音弄烦、能察觉到别人没说出口的情绪、热闹之后需要独处才缓得过来。它的作用是帮你从「我是不是太矫情」换成「也许只是我的神经系统更敏锐」。常见误读是把它当成确诊工具，中了几条就给自己盖章——它更像一面照出倾向的镜子，不负责下结论。想逐条对照可以看[高敏感人群自查清单](/zh/wiki/signs-of-a-highly-sensitive-person)。

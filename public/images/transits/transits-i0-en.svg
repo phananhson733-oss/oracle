@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 948 250" role="img" aria-label="The Transit Family, Slowest to Fastest">
+  <defs>
+    <linearGradient id="transits0en-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="transits0en-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="transits0en-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="945" height="247" rx="22" fill="url(#transits0en-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">The Transit Family, Slowest to Fastest</text>
+  <line x1="44" y1="64" x2="904" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <line x1="129.0" y1="150" x2="819.0" y2="150" stroke="#d4af6a" stroke-opacity="0.30"/>
+  <g text-anchor="middle">
+    <text x="129.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Moon</text>
+    <circle cx="129.0" cy="150" r="17" fill="url(#transits0en-node)" filter="url(#transits0en-soft)" opacity="0.55"/>
+    <circle cx="129.0" cy="150" r="14" fill="url(#transits0en-node)"/>
+    <text x="129.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">1</text>
+    <text x="129.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Hours — mood &amp; rhythm</text>
+    <text x="267.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Mercury / Venus</text>
+    <circle cx="267.0" cy="150" r="17" fill="url(#transits0en-node)" filter="url(#transits0en-soft)" opacity="0.55"/>
+    <circle cx="267.0" cy="150" r="14" fill="url(#transits0en-node)"/>
+    <text x="267.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">2</text>
+    <text x="267.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Days — talk &amp;</text>
+    <text x="267.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">connection</text>
+    <text x="405.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Mars</text>
+    <circle cx="405.0" cy="150" r="17" fill="url(#transits0en-node)" filter="url(#transits0en-soft)" opacity="0.55"/>
+    <circle cx="405.0" cy="150" r="14" fill="url(#transits0en-node)"/>
+    <text x="405.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">3</text>
+    <text x="405.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">A week or two — drive</text>
+    <text x="543.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Jupiter</text>
+    <circle cx="543.0" cy="150" r="17" fill="url(#transits0en-node)" filter="url(#transits0en-soft)" opacity="0.55"/>
+    <circle cx="543.0" cy="150" r="14" fill="url(#transits0en-node)"/>
+    <text x="543.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">4</text>
+    <text x="543.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Weeks to months —</text>
+    <text x="543.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">growth</text>
+    <text x="681.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Saturn</text>
+    <circle cx="681.0" cy="150" r="17" fill="url(#transits0en-node)" filter="url(#transits0en-soft)" opacity="0.55"/>
+    <circle cx="681.0" cy="150" r="14" fill="url(#transits0en-node)"/>
+    <text x="681.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">5</text>
+    <text x="681.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">1–2 years — structure</text>
+    <text x="819.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Outer (U/N/P)</text>
+    <circle cx="819.0" cy="150" r="17" fill="url(#transits0en-node)" filter="url(#transits0en-soft)" opacity="0.55"/>
+    <circle cx="819.0" cy="150" r="14" fill="url(#transits0en-node)"/>
+    <text x="819.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">6</text>
+    <text x="819.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Years — deep</text>
+    <text x="819.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">reshaping</text>
+  </g>
+  <text x="474" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">A self-reflection framework — tendencies, not predictions.</text>
+</svg>

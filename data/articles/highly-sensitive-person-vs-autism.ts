@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const highlySensitivePersonVsAutismEn: WikiArticle = {
   slug: "highly-sensitive-person-vs-autism",
+  image: "/images/hsp/highly-sensitive-person-vs-autism.jpg",
+  image_alt: "Two soft pools of gold light side by side on deep indigo, gently overlapping where they meet, suggesting two distinct things that touch without merging",
   title:
     "Where Highly Sensitive Person vs Autism Overlap, and Where They Don't",
   description:
@@ -78,6 +80,8 @@ Most quick takes on HSP and autism get stuck on the same few errors, and readers
 | Routine | Mild preference for calm | Often a deeper need for predictability | See how much change destabilizes the day |
 | Who confirms it | No diagnosis needed | Qualified professional only | Seek a formal assessment for autism questions |
 
+
+![A two-column contrast of highly sensitive person as a self-described temperament trait versus autism as a professionally assessed clinical condition, not a self-diagnosis](/images/hsp/highly-sensitive-person-vs-autism-i0-en.svg)
 ## Common Questions About Highly Sensitive Person vs Autism
 
 **Is a highly sensitive person on the autism spectrum?**
@@ -120,6 +124,8 @@ Start with the sensitivity side on its own terms before reaching for any compari
 
 export const highlySensitivePersonVsAutismZh: WikiArticle = {
   slug: "highly-sensitive-person-vs-autism",
+  image: "/images/hsp/highly-sensitive-person-vs-autism.jpg",
+  image_alt: "深靛蓝底色上两束柔和的金色光并排，在交界处轻轻交叠，象征两个相互接触却不混为一体的不同事物",
   title: "高敏感和自闭症，常被混为一谈，其实是两回事",
   description:
     "Highly Sensitive Person vs Autism（高敏感人群与自闭症）是把两个常被混淆的概念放在一起对照：高敏感（highly sensitive person，一种与生俱来的气质特质），以及自闭症（autism，一种需要专业评估的神经发展性诊断）。",
@@ -195,6 +201,8 @@ Highly Sensitive Person vs Autism（高敏感人群与自闭症）是把两个�
 | 自闭症 | 社交沟通差异、固定模式 | 涉及多个发展维度 | 需专业评估的神经发展性诊断 | 长期相关表现请预约专业评估 |
 | 内向 | 偏好安静、独处 | 社交后需独处充电 | 性格偏好 | 分辨是怕吵还是怕社交本身 |
 
+
+![两栏对照：高敏感是可自我描述的气质特质，自闭症是需专业评估的临床诊断，不可自我诊断](/images/hsp/highly-sensitive-person-vs-autism-i0-zh.svg)
 ## 高敏感和自闭症：读者常问
 
 **高敏感是自闭症的一种吗？**

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 250" role="img" aria-label="Four Kinds of Transit Contact">
+  <defs>
+    <linearGradient id="natalcharttransits1en-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="natalcharttransits1en-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="natalcharttransits1en-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="837" height="247" rx="22" fill="url(#natalcharttransits1en-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">Four Kinds of Transit Contact</text>
+  <line x1="44" y1="64" x2="796" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <line x1="150.0" y1="150" x2="690.0" y2="150" stroke="#d4af6a" stroke-opacity="0.30"/>
+  <g text-anchor="middle">
+    <text x="150.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Outer-planet contact</text>
+    <circle cx="150.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
+    <circle cx="150.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
+    <text x="150.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">1</text>
+    <text x="150.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Slow, in orb for months or</text>
+    <text x="150.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">years</text>
+    <text x="330.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Inner-planet contact</text>
+    <circle cx="330.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
+    <circle cx="330.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
+    <text x="330.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">2</text>
+    <text x="330.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Fast, hours to days</text>
+    <text x="510.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Exact orb</text>
+    <circle cx="510.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
+    <circle cx="510.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
+    <text x="510.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">3</text>
+    <text x="510.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Peaks within one degree</text>
+    <text x="690.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Retrograde transit</text>
+    <circle cx="690.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
+    <circle cx="690.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
+    <text x="690.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">4</text>
+    <text x="690.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Same point hit up to three</text>
+    <text x="690.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">times</text>
+  </g>
+  <text x="420" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">A self-reflection framework — tendencies, not predictions.</text>
+</svg>

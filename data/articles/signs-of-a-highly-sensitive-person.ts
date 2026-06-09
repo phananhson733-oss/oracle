@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const signsOfAHighlySensitivePersonEn: WikiArticle = {
   slug: "signs-of-a-highly-sensitive-person",
+  image: "/images/hsp/signs-of-a-highly-sensitive-person.jpg",
+  image_alt: "An open hand resting palm-up in soft gold light against deep indigo, evoking quiet attentiveness and noticing the subtle",
   title: "Spotting the Real Signs You're a Highly Sensitive Person",
   description:
     "The signs of a highly sensitive person are consistent patterns: deep processing, strong empathy, and easy sensory overwhelm. Here's how to read your own.",
@@ -84,6 +86,8 @@ Naming these misreadings does more than tidy up definitions. It hands back the s
 
 The energy-center column draws on the modern chakra framework Anodea Judith systematized, matching each sign to the seat where many practitioners feel it most strongly. Read it as a reflective lens, not a measurement — it is one more way to notice a pattern, never proof of one.
 
+
+![A row of four signs of a highly sensitive person to watch over time: sensory sensitivity, emotional attunement, deep processing, and need for recovery](/images/hsp/signs-of-a-highly-sensitive-person-i0-en.svg)
 ## Questions People Ask About Signs of a Highly Sensitive Person
 
 **Is being a highly sensitive person a flaw?**
@@ -127,6 +131,8 @@ This is not a clinical interpretation or mental-health advice; for assessment or
 
 export const signsOfAHighlySensitivePersonZh: WikiArticle = {
   slug: "signs-of-a-highly-sensitive-person",
+  image: "/images/hsp/signs-of-a-highly-sensitive-person.jpg",
+  image_alt: "一只摊开的手掌在柔和金光中静静朝上，背景是深靛蓝，传达一种安静的觉察与对细微之物的留意",
   title: "高敏感人群特征，哪些信号才真正算数",
   description:
     "Signs of a Highly Sensitive Person（高敏感人群特征）是一组天生更敏感、加工更深的稳定反应。",
@@ -198,6 +204,8 @@ Signs of a Highly Sensitive Person（高敏感人群特征）是**一组天生�
 | 情绪反应强、共情高 | 自己和他人的情绪都接收得更满 | 情绪共情 | 朋友难过时你几乎跟着一起难受 |
 | 察觉细微变化 | 留意到别人忽略的细节 | 感知细腻 | 一进门就发现家具或气氛挪动过 |
 
+
+![高敏感人群值得长期留意的四个信号并排展示：感官敏锐、情绪共情、深度加工、需要恢复](/images/hsp/signs-of-a-highly-sensitive-person-i0-zh.svg)
 ## 关于 Signs of a Highly Sensitive Person 的常见问题
 
 **高敏感人群特征是天生的还是后天养成的？**

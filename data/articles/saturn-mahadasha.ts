@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const saturnMahadashaEn: WikiArticle = {
   slug: "saturn-mahadasha",
+  image: "/images/mahadasha/saturn-mahadasha.jpg",
+  image_alt: "A weathered standing stone beneath a long arc of gold starlight in a deep indigo sky, evoking the Saturn period's slow, earned passage of time.",
   title: "Reading the Saturn Mahadasha as 19 Years of Earned Structure",
   description: "Saturn (Shani) Mahadasha is the longest major planetary period in Vedic astrology's Vimshottari cycle, running nineteen years under Shani — the Sanskrit name",
   authorId: "aditi-sharma",
@@ -58,6 +60,8 @@ To spot Saturn's dasha in your own timing, you read the dasha sequence from your
 
 The classical texts add one more layer worth checking: Saturn's dignity by sign. The Brihat Parashara Hora Shastra treats Saturn as exalted in Libra and debilitated in Aries, with Capricorn and Aquarius as its own signs. A dignified Saturn tends to deliver its rewards more cleanly, while a debilitated one asks for more patience before the structure holds. Reading the dasha well means weighing this placement alongside the dates, not in place of them — dignity colors the tone, but the nineteen-year span and its antardasha order stay fixed by the Vimshottari count itself.
 
+
+![A three-stage timeline of the 19-year Saturn period: early delay and weight, mid-period antardasha shifts, and late consolidation of earned structure.](/images/mahadasha/saturn-mahadasha-i0-en.svg)
 ## Common Misreadings
 
 The most common misreading of the Saturn mahadasha is treating it as a verdict instead of a season of work. The same mistakes show up again and again:
@@ -121,6 +125,8 @@ Want the full system first? Read the [complete guide to mahadasha and the Vimsho
 
 export const saturnMahadashaZh: WikiArticle = {
   slug: "saturn-mahadasha",
+  image: "/images/mahadasha/saturn-mahadasha.jpg",
+  image_alt: "深靛蓝夜空下一块风化的立石，头顶划过一道金色星轨，象征土星大运缓慢而踏实积累的时间感。",
   title: "土星大运这19年，其实是在教你慢慢成器",
   description: "土星大运（Saturn Mahadasha，梵文称 Shani Mahadasha，沙尼即土星）是长达19年的土星主管期。它来自吠陀占星的维实多里（Vimshottari）大运体系——一种把人一生切成若干段、每段由一颗行星主管的计时框架，这套体系最常被追溯到古典文献《Brihat Parashara Hora",
   authorId: "aditi-sharma",
@@ -165,6 +171,8 @@ export const saturnMahadashaZh: WikiArticle = {
 4. 越想抄近路越碰壁，老老实实做反而慢慢有进展。
 5. 身边的人和事在做减法，留下来的关系更真也更少。
 
+
+![土星十九年的三段时间轴：前段延迟负重，中段小运轮转，后段结构成形、回报渐显。](/images/mahadasha/saturn-mahadasha-i0-zh.svg)
 ## 常见误读
 
 1. **误读：进入这段周期就是19年厄运。** 实际上传统把它读成磨炼期，回报给踏实做事的人，而不是无差别地降灾。

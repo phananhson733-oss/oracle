@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1212 250" role="img" aria-label="Vimshottari 顺序：九段大运，共 120 年">
+  <defs>
+    <linearGradient id="mahadasha0zh-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="mahadasha0zh-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="mahadasha0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="1209" height="247" rx="22" fill="url(#mahadasha0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">Vimshottari 顺序：九段大运，共 120 年</text>
+  <line x1="44" y1="64" x2="1168" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <line x1="120.7" y1="150" x2="1091.3" y2="150" stroke="#d4af6a" stroke-opacity="0.30"/>
+  <g text-anchor="middle">
+    <text x="120.7" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">计都</text>
+    <circle cx="120.7" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="120.7" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="120.7" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">1</text>
+    <text x="120.7" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">7 年 · 收束</text>
+    <text x="242.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">金星</text>
+    <circle cx="242.0" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="242.0" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="242.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">2</text>
+    <text x="242.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">20 年 · 关系</text>
+    <text x="363.3" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">太阳</text>
+    <circle cx="363.3" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="363.3" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="363.3" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">3</text>
+    <text x="363.3" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">6 年 · 自我</text>
+    <text x="484.7" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">月亮</text>
+    <circle cx="484.7" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="484.7" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="484.7" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">4</text>
+    <text x="484.7" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">10 年 · 情绪</text>
+    <text x="606.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">火星</text>
+    <circle cx="606.0" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="606.0" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="606.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">5</text>
+    <text x="606.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">7 年 · 行动</text>
+    <text x="727.3" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">罗睺</text>
+    <circle cx="727.3" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="727.3" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="727.3" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">6</text>
+    <text x="727.3" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">18 年 · 欲望</text>
+    <text x="848.7" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">木星</text>
+    <circle cx="848.7" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="848.7" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="848.7" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">7</text>
+    <text x="848.7" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">16 年 · 成长</text>
+    <text x="970.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">土星</text>
+    <circle cx="970.0" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="970.0" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="970.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">8</text>
+    <text x="970.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">19 年 · 磨炼</text>
+    <text x="1091.3" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">水星</text>
+    <circle cx="1091.3" cy="150" r="17" fill="url(#mahadasha0zh-node)" filter="url(#mahadasha0zh-soft)" opacity="0.55"/>
+    <circle cx="1091.3" cy="150" r="14" fill="url(#mahadasha0zh-node)"/>
+    <text x="1091.3" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">9</text>
+    <text x="1091.3" y="184" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#9a93b5">17 年 · 思考</text>
+  </g>
+  <text x="606" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+</svg>

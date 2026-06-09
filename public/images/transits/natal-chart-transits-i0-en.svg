@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 312" role="img" aria-label="Transits vs Adjacent Timing Tools">
+  <defs>
+    <linearGradient id="natalcharttransits0en-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="natalcharttransits0en-node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    </radialGradient>
+    <filter id="natalcharttransits0en-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="977" height="309" rx="22" fill="url(#natalcharttransits0en-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">Transits vs Adjacent Timing Tools</text>
+  <line x1="44" y1="64" x2="936" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
+    <rect x="44" y="84" width="282.7" height="188" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#d4af6a" stroke-opacity="0.20"/>
+    <rect x="44" y="84" width="282.7" height="4" rx="2" fill="#d4af6a" fill-opacity="0.55"/>
+    <text x="60" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#f3effb">Transits</text>
+    <circle cx="61" cy="144" r="2.4" fill="#d4af6a"/>
+    <text x="70" y="148" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Planets' real positions today</text>
+    <circle cx="61" cy="170" r="2.4" fill="#d4af6a"/>
+    <text x="70" y="174" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Datable, day-level timing</text>
+    <rect x="348.6666666666667" y="84" width="282.7" height="188" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#d4af6a" stroke-opacity="0.20"/>
+    <rect x="348.6666666666667" y="84" width="282.7" height="4" rx="2" fill="#d4af6a" fill-opacity="0.55"/>
+    <text x="364.6666666666667" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#f3effb">Progressions</text>
+    <circle cx="365.6666666666667" cy="144" r="2.4" fill="#d4af6a"/>
+    <text x="374.6666666666667" y="148" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Chart advanced a day per year</text>
+    <circle cx="365.6666666666667" cy="170" r="2.4" fill="#d4af6a"/>
+    <text x="374.6666666666667" y="174" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Slow inner-development arc</text>
+    <rect x="653.3333333333334" y="84" width="282.7" height="188" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#d4af6a" stroke-opacity="0.20"/>
+    <rect x="653.3333333333334" y="84" width="282.7" height="4" rx="2" fill="#d4af6a" fill-opacity="0.55"/>
+    <text x="669.3333333333334" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#f3effb">Solar Return</text>
+    <circle cx="670.3333333333334" cy="144" r="2.4" fill="#d4af6a"/>
+    <text x="679.3333333333334" y="148" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Fresh chart at the Sun's return</text>
+    <circle cx="670.3333333333334" cy="170" r="2.4" fill="#d4af6a"/>
+    <text x="679.3333333333334" y="174" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">One year-at-a-glance theme</text>
+  <text x="490" y="290" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">A self-reflection framework — tendencies, not predictions.</text>
+</svg>
