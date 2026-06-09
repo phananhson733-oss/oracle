@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const greenAuraMeaningEn: WikiArticle = {
   slug: "green-aura-meaning",
   image: "/images/aura/green-aura-meaning.jpg",
-  image_alt: "green aura energy field, heart chakra healing and emotional balance",
+  image_alt:
+    "green aura energy field, heart chakra healing and emotional balance",
   title: "What a Green Aura Really Means for Healing and Connection",
   description:
     "Green Aura is the green band that practitioners describe seeing or sensing in a person's energy field. In most aura traditions, green aura meaning points to...",
@@ -45,7 +46,11 @@ That last point matters most, because a label that doesn't match your real life 
 
 green aura meaning becomes clearer when you set it next to its neighbours on the spectrum, because the difference is mostly about where the energy is centred and what it asks of you. Green works through the heart center, so it pulls attention outward toward connection, repair, and balance — it's the person who senses a room has gone tense and quietly moves to smooth it. A nearby color like yellow aura works differently, running through the solar plexus and leading with confidence and personal drive. You can see that contrast in the [sibling entry on yellow aura](/en/wiki/yellow-aura-meaning). To lead with green's heart-led warmth, you give up some of yellow's self-forward momentum: the green reader tends to others first and themselves last, which steadies the group and slowly drains the individual.
 
+### Against blue aura
+
 Green also reads differently from blue aura, which is throat-centred and leads with clear, measured expression. Choosing green's emotional attunement over blue's articulate distance gets you closeness, but you lose some of blue's clean boundary, and the [comparison with blue aura](/en/wiki/blue-aura-meaning) lays out how the two diverge. In practice that looks like a green reader who absorbs a friend's bad mood instead of naming it, where a blue one would have said the hard thing and moved on. The trade-off stays consistent: to be the person others lean on, you tend to take in more than you put out, and that often surfaces as quiet fatigue rather than open conflict.
+
+### Clear green vs muddy green
 
 The sharpest contrast, though, sits inside green itself, between its clear and muddy shades. A vibrant or emerald green works by directing care toward genuine repair, while a muddy, yellow-green shows what happens when that same caring energy curdles into comparison and keeping score. The difference isn't really a new color so much as the same orientation under strain — the cost of caring deeply is that, left unprocessed, it can tip into resentment. Reading the shade honestly tells you whether your green is feeding you or quietly running you down. None of this is fixed; it describes how the energy tends to function, not a rule about who you have to be.
 
@@ -127,7 +132,8 @@ Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your col
 export const greenAuraMeaningZh: WikiArticle = {
   slug: "green-aura-meaning",
   image: "/images/aura/green-aura-meaning.jpg",
-  image_alt: "green aura energy field, heart chakra healing and emotional balance",
+  image_alt:
+    "green aura energy field, heart chakra healing and emotional balance",
   title: "绿色气场代表什么，不必在 healer 和嫉妒之间二选一",
   description:
     "绿色气场（Green Aura）是西方灵性圈用来描述以关怀、连接和内在平稳为主调的能量场的说法，和黄色、蓝色并列，是 气场颜色总览 pillar 页...",
