@@ -118,6 +118,18 @@ export function mdToHtml(md) {
       continue;
     }
 
+    // Standalone image line: ![alt](src) → <figure><img>. Intercepted before
+    // paragraph/link processing so the leading "!" isn't rendered as text.
+    // SAFE_HREF gates src (same allowlist as links). General — any article.
+    const image = line.match(/^!\[([^\]]*)\]\(([^()\s]+)\)$/);
+    if (image && SAFE_HREF.test(image[2])) {
+      flushAll();
+      out.push(
+        `<figure class="article-image"><img src="${image[2]}" alt="${escapeHtml(image[1])}" loading="lazy"></figure>`,
+      );
+      continue;
+    }
+
     // Blockquote.
     if (line.startsWith('>')) {
       flushPara();

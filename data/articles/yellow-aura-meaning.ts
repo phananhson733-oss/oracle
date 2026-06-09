@@ -4,7 +4,10 @@ import type { WikiArticle } from "../../types";
 
 export const yellowAuraMeaningEn: WikiArticle = {
   slug: "yellow-aura-meaning",
-  title: "Yellow Aura Meaning",
+  image: "/images/aura/yellow-aura-meaning.jpg",
+  image_alt: "yellow aura energy field, solar plexus radiance, confidence and creative drive",
+  title:
+    "Yellow Aura Meaning: Optimism, Creative Drive, and Solar Energy Explained",
   description:
     "In subtle-energy traditions, a yellow aura is read as a mental and confident energy field tied to the solar plexus center. The color is commonly associated...",
   authorId: "elena-vane",
@@ -17,7 +20,7 @@ export const yellowAuraMeaningEn: WikiArticle = {
     "yellow aura personality",
     "what does yellow aura mean",
   ],
-  content: `# Yellow Aura Meaning
+  content: `# Yellow Aura Meaning: Optimism, Creative Drive, and Solar Energy Explained
 
 ## What is Yellow Aura?
 
@@ -51,6 +54,36 @@ Yellow aura vs throat-led blue energy. Blue is usually read as a calmer, communi
 
 A practical caveat applies across these comparisons: aura color systems are not consistent across traditions. One school will split bright yellow and gold into separate categories; another will collapse them; a third will treat shade variation as more meaningful than category. When you read a description that does not match yours, the move is not to declare a source wrong; it is to ask which lineage is being used, and whether its way of assigning the color matches the question you actually came in with. Most disagreements between aura sources are not "is yellow good or bad" — they are which sub-shade each writer is centering as the default, and how strict each one is about separating gold from plain yellow.
 
+
+![yellow aura compared with orange, green, and blue](/images/aura/yellow-aura-vs.svg)
+## How to Read Yellow Aura in Yourself
+
+Yellow aura often reveals itself through a person's relationship with creative energy and self-confidence.
+
+Three self-check indicators:
+1. **Idea generation**: Do ideas and connections come to you rapidly,
+   sometimes faster than you can act on them?
+2. **Social radiance**: Do people frequently describe you as energizing or uplifting to be around?
+3. **Confidence cycles**: Is your confidence tied to intellectual or creative output —
+   high when you're making things, lower when you're not?
+
+If two or more apply consistently, yellow is likely a dominant frequency in your current field.
+
+## Common Misreadings
+
+**Misread 1: Yellow always means happy**
+Yellow signals active solar energy — intellectual drive, creative output, confidence.
+Happiness may accompany it, but a yellow aura in an anxious or overloaded person will read
+as scattered or erratic, not calm joy.
+
+**Misread 2: Pale yellow means weak**
+Pale or soft yellow often indicates emerging gifts — particularly in people developing
+their intellectual or creative voice. It is potential, not deficiency.
+
+**Misread 3: Yellow is a "beginner" color**
+Chakra frameworks have sometimes implied lower-spectrum colors are less evolved.
+Yellow governs personal power and mental clarity — capacities that require sustained development, not luck.
+
 ## Quick Reference Table
 
 | Property | Mechanism | Energy Center | Common Misread |
@@ -60,11 +93,36 @@ A practical caveat applies across these comparisons: aura color systems are not 
 | Gold or metallic yellow | Confidence settling into teaching or guiding others | Solar plexus, with overlap toward heart and throat | Read as ego or grandiosity; usually reads as steady authority |
 | Yellow-green edge | Mental energy bleeding into anxiety or comparison | Solar plexus drifting toward heart | Read as jealousy; often just overthinking dressed as feeling |
 
+
+![the four yellow aura shades from bright to muddy to gold](/images/aura/yellow-aura-shades.svg)
 ## Reflection Prompts
 
 1. Think of a recent week when your thinking felt sharp and your sleep felt fine — did the yellow aura meaning of "bright, in range" match how you actually showed up?
 2. Recall the last time someone called you "on" or "wired" — what was running underneath, and which shade of yellow would honestly describe that day?
 3. Notice one decision this month where you used optimism to skip a hard conversation — what would a steadier, gold-leaning yellow have chosen instead?
+
+## Common Questions About Yellow Aura
+
+**Q: What does a bright yellow aura vs. pale yellow mean?**
+A: Bright yellow signals high creative output, intellectual confidence, and active engagement.
+Pale yellow indicates emerging energy — often seen in people developing their sense of self or a new skill.
+
+**Q: Is yellow aura connected to a chakra?**
+A: Yes — yellow corresponds to the Solar Plexus Chakra (Manipura), located above the navel.
+It governs personal power, self-worth, and mental clarity.
+
+**Q: What does it mean if my yellow aura has green in it?**
+A: Yellow-green combinations often appear in people bridging intellectual work with relational care —
+teachers, healers, and communicators who use ideas to serve others.
+
+**Q: Can a yellow aura shift color?**
+A: Yes. Under stress, yellow can intensify into a muddy or greenish yellow —
+signaling mental overload or unprocessed self-doubt.
+During creative flow states, it often brightens toward gold.
+
+## Sources
+- Judith, A. (1999). *Wheels of Life*. Llewellyn Publications.
+- Brennan, B. A. (1988). *Hands of Light*. Bantam Books.
 
 ## Related Reading
 
@@ -72,7 +130,8 @@ A practical caveat applies across these comparisons: aura color systems are not 
 - [blue aura explainer](/en/wiki/blue-aura-meaning) — contrast with a cooler, throat-led energy that reads as calm rather than quick.
 - [comparison with orange aura](/en/wiki/orange-aura-meaning) — the closest neighbor on the warm side, with a clearer body-led mechanism.
 - [guide to the solar plexus chakra](/en/wiki/chakra-system-overview) — the energy center most aura traditions tie yellow to, with longer-form practice notes.
-- [overview of aura color shades](/en/wiki/aura-colors-pillar) — how bright, muddy, and metallic variants change a color's read.
+- [green aura explainer](/en/wiki/green-aura-meaning) — the heart-centered neighbor, useful for telling solar-plexus drive apart from relational, balancing energy.
+- [red aura explainer](/en/wiki/red-aura-meaning) — the root-center contrast: physical drive and survival energy versus yellow's mental, solar-plexus confidence.
 
 ## Take Action
 

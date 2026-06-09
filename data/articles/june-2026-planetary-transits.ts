@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const june2026PlanetaryTransitsEn: WikiArticle = {
   slug: "june-2026-planetary-transits",
+  image: "/images/transits/june-2026-planetary-transits.jpg",
+  image_alt: "A left-to-right celestial arc from scattered Gemini light into deeper Cancer tones, ending on a full moon beside a turning planet.",
   title:
     "June 2026 Planetary Transits: Cancer Season Opens, a Gemini New Moon Resets Mid-Month, and a Mercury Retrograde Closes It Out",
   description:
@@ -39,6 +41,8 @@ Three things are worth watching this month:
 
 All positions are based on the June 2026 ephemeris. Where this guide names an aspect or a sign relationship, treat it as an approximate read of the mid-month chart, not a timed event.
 
+
+![A timeline of June 2026's six key transit dates from Mercury entering Cancer to the June 30 full moon and Mercury retrograde.](/images/transits/june-2026-planetary-transits-i0-en.svg)
 ## The Solstice and the Turn Into Cancer Season
 
 The Sun spends the first three weeks of June at the tail end of Gemini and crosses into Cancer at the **June 22 solstice** — the most reliable shift of the month, because it's literally seasonal: the longest day in the Northern Hemisphere, after which the light starts to recede. Mercury already moved into Cancer back on June 2, so by the solstice the chart's center of gravity has clearly relocated from the airy Gemini register to the slower, home-facing register of Cancer.
@@ -109,6 +113,8 @@ None of this is a prediction, and none of it decides your month for you. It's a 
 
 export const june2026PlanetaryTransitsZh: WikiArticle = {
   slug: "june-2026-planetary-transits",
+  image: "/images/transits/june-2026-planetary-transits.jpg",
+  image_alt: "一道由左向右的天象弧线，从发散的双子之光转入更深的巨蟹色调，止于满月与一颗即将转向的行星。",
   title: "2026 年 6 月行运预报：巨蟹季开场、双子新月中场重置，月末以水逆收尾",
   description:
     "所有位置均基于 2026 年 6 月星历。本文凡是提到某个相位或星座之间的关系，请当成对月中盘的近似判断，不是有精确时刻的事件。",
@@ -143,6 +149,8 @@ export const june2026PlanetaryTransitsZh: WikiArticle = {
 
 所有位置均基于 2026 年 6 月星历。本文凡是提到某个相位或星座之间的关系，请当成对月中盘的近似判断，不是有精确时刻的事件。
 
+
+![2026 年 6 月六个关键行运日期的时间线，从水星入巨蟹到 6 月 30 日满月与水逆。](/images/transits/june-2026-planetary-transits-i0-zh.svg)
 ## 夏至与转入巨蟹季
 
 太阳在 6 月头三周还停在双子的尾段，到 **6 月 22 日夏至**那天越过进入巨蟹。这是本月最可靠的转折，因为它本来就是季节性的：北半球最长的一天，过了之后白昼开始变短。水星早在 6 月 2 日就已经移进巨蟹，所以到夏至时，整张盘的重心已经明显从双子那种轻盈的频道，挪到了巨蟹那种更慢、更面向家的频道。

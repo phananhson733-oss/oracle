@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const greenAuraMeaningEn: WikiArticle = {
   slug: "green-aura-meaning",
+  image: "/images/aura/green-aura-meaning.jpg",
+  image_alt: "green aura energy field, heart chakra healing and emotional balance",
   title: "What a Green Aura Really Means for Healing and Connection",
   description:
     "Green Aura is the green band that practitioners describe seeing or sensing in a person's energy field. In most aura traditions, green aura meaning points to...",
@@ -47,6 +49,8 @@ Green also reads differently from blue aura, which is throat-centred and leads w
 
 The sharpest contrast, though, sits inside green itself, between its clear and muddy shades. A vibrant or emerald green works by directing care toward genuine repair, while a muddy, yellow-green shows what happens when that same caring energy curdles into comparison and keeping score. The difference isn't really a new color so much as the same orientation under strain — the cost of caring deeply is that, left unprocessed, it can tip into resentment. Reading the shade honestly tells you whether your green is feeding you or quietly running you down. None of this is fixed; it describes how the energy tends to function, not a rule about who you have to be.
 
+
+![green aura compared with its neighbors yellow and blue](/images/aura/green-aura-vs.svg)
 ## How to Read Green Aura in Yourself
 
 Reading green aura meaning in yourself is less about staring at a photo and more about noticing recurring patterns in how you spend and recover your energy day to day. A few honest signals worth watching for:
@@ -77,6 +81,8 @@ Most of the trouble around green aura meaning comes from a handful of misreading
 | Muddy / yellow-green | Signals comparison or unprocessed resentment moving through | Heart center under strain | You catch envy or score-keeping creeping into close ties |
 | Mint / light green | Opens a fresh emotional start and gentle renewal | Heart center, newly active | You feel cautiously hopeful after a stretch of repair |
 
+
+![the four green aura shades from emerald to forest to muddy to mint](/images/aura/green-aura-shades.svg)
 ## Common Questions About Green Aura
 
 **What does a green aura mean spiritually?**
@@ -103,8 +109,8 @@ Most aura literature treats color as a snapshot of your prevailing state, not a 
 
 ## Related Reading
 
-- [guide to reading aura color shades](/en/wiki/aura-colors-pillar) — for telling emerald, forest, mint, and muddy green apart in more detail
-- [explainer on how aura colors shift over time](/en/wiki/aura-colors-pillar) — for why a green reading is a snapshot, not a fixed trait
+- [red aura explainer](/en/wiki/red-aura-meaning) — the root-chakra contrast to green's heart-centered balance.
+- [orange aura explainer](/en/wiki/orange-aura-meaning) — the sacral creative-social energy, one center below the heart.
 - [Chakra (Wikipedia)](https://en.wikipedia.org/wiki/Chakra) — background on the energy centres behind the color
 
 ## Take Action
@@ -113,13 +119,15 @@ Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your col
 
 ## Sources
 
-- Anodea Judith — systematized the modern chakra framework that this color-to-center mapping draws on
-- Barbara Ann Brennan — helped bring structured reading of the human energy field into wider practice
+- Judith, A. (1999). *Wheels of Life*. Llewellyn Publications.
+- Brennan, B. A. (1988). *Hands of Light*. Bantam Books.
 `,
 };
 
 export const greenAuraMeaningZh: WikiArticle = {
   slug: "green-aura-meaning",
+  image: "/images/aura/green-aura-meaning.jpg",
+  image_alt: "green aura energy field, heart chakra healing and emotional balance",
   title: "绿色气场代表什么，不必在 healer 和嫉妒之间二选一",
   description:
     "绿色气场（Green Aura）是西方灵性圈用来描述以关怀、连接和内在平稳为主调的能量场的说法，和黄色、蓝色并列，是 气场颜色总览 pillar 页...",

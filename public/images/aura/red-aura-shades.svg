@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 286" role="img" aria-label="Red aura shades — and what each one signals: Vibrant / clear, Muddy / dark, Scarlet / bright, Pinkish">
+  <defs>
+    <linearGradient id="red-aura-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/>
+      <stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="red-aura-0" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#ff6b6b"/><stop offset="1" stop-color="#d61f33"/></radialGradient>
+    <radialGradient id="red-aura-1" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#a14444"/><stop offset="1" stop-color="#5f2222"/></radialGradient>
+    <radialGradient id="red-aura-2" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#ff5a3c"/><stop offset="1" stop-color="#e22318"/></radialGradient>
+    <radialGradient id="red-aura-3" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#f3a6b6"/><stop offset="1" stop-color="#d86077"/></radialGradient>
+    <filter id="red-aura-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="837" height="283" rx="22" fill="url(#red-aura-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill="#efeaf8">Red aura shades — and what each one signals</text>
+  <line x1="44" y1="68" x2="796" y2="68" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <circle cx="157.5" cy="128" r="30" fill="url(#red-aura-0)" filter="url(#red-aura-soft)"/>
+    <circle cx="157.5" cy="128" r="23" fill="url(#red-aura-0)"/>
+    <text x="157.5" y="186" font-size="17" fill="#f3effb">Vibrant / clear</text>
+    <text x="157.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">High-output vitality and</text>
+    <text x="157.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">clean forward drive</text>
+    <circle cx="332.5" cy="128" r="30" fill="url(#red-aura-1)" filter="url(#red-aura-soft)"/>
+    <circle cx="332.5" cy="128" r="23" fill="url(#red-aura-1)"/>
+    <text x="332.5" y="186" font-size="17" fill="#f3effb">Muddy / dark</text>
+    <text x="332.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Drive without release:</text>
+    <text x="332.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">stress or backlog</text>
+    <circle cx="507.5" cy="128" r="30" fill="url(#red-aura-2)" filter="url(#red-aura-soft)"/>
+    <circle cx="507.5" cy="128" r="23" fill="url(#red-aura-2)"/>
+    <text x="507.5" y="186" font-size="17" fill="#f3effb">Scarlet / bright</text>
+    <text x="507.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Decisive, time-bounded</text>
+    <text x="507.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">leadership</text>
+    <circle cx="682.5" cy="128" r="30" fill="url(#red-aura-3)" filter="url(#red-aura-soft)"/>
+    <circle cx="682.5" cy="128" r="23" fill="url(#red-aura-3)"/>
+    <text x="682.5" y="186" font-size="17" fill="#f3effb">Pinkish</text>
+    <text x="682.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Drive softened by</text>
+    <text x="682.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">warmth or affection</text>
+  </g>
+  <text x="420" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">Shade describes a current state, not a fixed trait — most people move across these over time.</text>
+</svg>

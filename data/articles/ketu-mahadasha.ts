@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const ketuMahadashaEn: WikiArticle = {
   slug: "ketu-mahadasha",
+  image: "/images/mahadasha/ketu-mahadasha.jpg",
+  image_alt: "Thin gold smoke dissolving into a deep indigo sky, evoking the Ketu period's themes of release and quiet inward turning.",
   title: "What Ketu Mahadasha Really Asks of You Over Seven Years",
   description: "Ketu Mahadasha is the seven-year Vimshottari period assigned to the south lunar node.",
   authorId: "aditi-sharma",
@@ -39,6 +41,8 @@ Ketu's dasha works differently from the periods around it, and the clearest cont
 
 It also reads differently from a generic planetary period. A benefic period might add resources or relationships; Ketu's chapter more often removes the scaffolding around an identity to test what stands without it. Choosing to read it this way gets you a usable map of where to let go, but you lose the reassurance of a forecast that promises gain. Modern classical teachers such as K. N. Rao keep stressing that a dasha marks a tendency in timing, not a fixed event — a distinction that separates a sober Vedic reading from a fatalistic one, and that keeps the south node's period from being mistaken for a guaranteed downturn.
 
+
+![A two-column contrast of Ketu's subtractive inward release versus Rahu's additive outward desire, the opposite ends of the same lunar-node axis.](/images/mahadasha/ketu-mahadasha-i0-en.svg)
 ## How to Read Ketu Mahadasha in Your Chart
 
 Reading Ketu Mahadasha in your own chart starts with noticing where detachment is already showing up, not waiting for a single dramatic event. A few observable signals:
@@ -112,6 +116,8 @@ Want the full system first? Read the [complete guide to mahadasha and the Vimsho
 
 export const ketuMahadashaZh: WikiArticle = {
   slug: "ketu-mahadasha",
+  image: "/images/mahadasha/ketu-mahadasha.jpg",
+  image_alt: "缕缕金色轻烟在深靛蓝夜空中消散，象征计都大运放下与向内收束的主题。",
   title: "读懂计都大运这七年，是出离不是失去",
   description: "Ketu Mahadasha（计都大运）是吠陀占星 Vimshottari 大运体系里，由南交点\"计都\"主管的一段七年人生周期。要看懂它，得先了解 大运体系总览 pillar 页 怎么把一生切成一段段行星轮值的时期——每颗星各管一段，南交点主管的那一段，就是这里要谈的主题。",
   authorId: "aditi-sharma",
@@ -149,6 +155,8 @@ Ketu Mahadasha（计都大运）是吠陀占星 Vimshottari 大运体系里，�
 
 和计都大运最该放在一起看的，是它正对面的 [罗睺大运周期解读](/zh/wiki/rahu-mahadasha)——南北交点本就是同一根轴的两头。罗睺（北交点）主管的那段，传统读成向外抓取、扩张欲望、卷进世俗的热闹；计都这一段恰好相反，运作方式是把能量从外境收回，去清算那些没了结的功课。所以两段大运的取舍很清楚：走罗睺，你换来进取和"想要更多"的冲劲，代价是容易迷失在外境里；走计都，你换来向内的清明和收尾的余裕，但要得到这份沉静，就得放掉一部分往外扩张的势头。这也是为什么同样是大运，有人觉得计都那段"空"，有人却觉得终于能喘口气。
 
+
+![两栏对照：计都做减法向内放下，罗睺做加法向外渴求，是同一根月亮交点轴的两端。](/images/mahadasha/ketu-mahadasha-i0-zh.svg)
 ## 如何看出自己正走在 Ketu Mahadasha
 
 想判断自己是不是正走在计都大运里，光靠排出大运起讫的年份还不够，可以对照几个日常的体感信号：

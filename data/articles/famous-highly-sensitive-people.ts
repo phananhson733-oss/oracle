@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const famousHighlySensitivePeopleEn: WikiArticle = {
   slug: "famous-highly-sensitive-people",
+  image: "/images/hsp/famous-highly-sensitive-people.jpg",
+  image_alt: "A single warm gold spotlight on an empty stage seen from the wings, the theatre fading into deep indigo, evoking a quiet, inward moment before public intensity",
   title: "What Famous Highly Sensitive People Reveal About a Misread Strength",
   description:
     "Famous highly sensitive people: public figures who have openly described living with unusually deep emotional and sensory responsiveness, and what it shows.",
@@ -79,6 +81,8 @@ Most quick takes on a famous highly sensitive person get a few things backwards.
 | Sensory sensitivity | Registers light, sound, and texture at low thresholds | Bodily / sensory | Scratchy tags, bright rooms, and noise wear you down fast |
 | Sensing the subtle | Picks up faint cues most people miss | Perceptual | You read a room's mood the second you walk in |
 
+
+![A row of the four shared traits behind famous sensitive people's work: depth of processing, emotional responsiveness, sensory sensitivity, and sensing the subtle](/images/hsp/famous-highly-sensitive-people-i0-en.svg)
 ## Questions People Ask About Famous Highly Sensitive People
 
 **Who is the most well-known famous highly sensitive person?**
@@ -121,6 +125,8 @@ Wondering if you share the trait? Start with the [full guide to the highly sensi
 
 export const famousHighlySensitivePeopleZh: WikiArticle = {
   slug: "famous-highly-sensitive-people",
+  image: "/images/hsp/famous-highly-sensitive-people.jpg",
+  image_alt: "从侧台望去，一束暖金色聚光灯落在空舞台上，剧场隐入深靛蓝，传达登台面对强烈场面前那一刻的安静与内省",
   title: "高敏感名人为什么往往活得很出彩",
   description:
     "著名高敏感人群：公开自述天生高度敏感的名人——他们如何谈论自己容易被情绪、声音与他人状态影响、需要独处恢复，以及这对理解高敏感特质的启示。",
@@ -182,6 +188,8 @@ export const famousHighlySensitivePeopleZh: WikiArticle = {
 | 易过载 | 强刺激下神经系统更快疲劳 | 恢复 | 记录哪些场合后你特别需要独处 |
 | 加工深 | 信息要反复琢磨才放得下 | 思考 | 观察一句反馈会不会被你回想好几天 |
 
+
+![高敏感名人成就背后共有的四个特质并排展示：加工深、共情深、觉察力强、察觉细微](/images/hsp/famous-highly-sensitive-people-i0-zh.svg)
 ## 关于高敏感名人的常见问题
 
 **高敏感是一种心理疾病吗？**

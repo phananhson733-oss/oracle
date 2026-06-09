@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const venusMahadashaEn: WikiArticle = {
   slug: "venus-mahadasha",
+  image: "/images/mahadasha/venus-mahadasha.jpg",
+  image_alt: "Venus glowing warm gold low over a calm indigo twilight horizon reflected on still water, evoking the Venus period's themes of beauty and ease.",
   title: "What Venus Mahadasha Really Brings Over Its Long Twenty Years",
   description: "Venus (Shukra) Mahadasha is the twenty-year planetary period that the Vimshottari dasha system assigns to Venus, known in Sanskrit as Shukra — the longest",
   authorId: "aditi-sharma",
@@ -35,6 +37,8 @@ In my own work with classical Sanskrit dasha texts, I have seen how often people
 
 Across twenty years, the Brihat Parashara Hora Shastra frames Shukra's themes as touching three broad areas of life, and seeing them separately helps you read the period more honestly. In relationships, Venus's dasha tends to bring partnership, marriage or renewed closeness to the surface — though whether those bonds feel nourishing or strained depends on Venus's house and any aspects on it. In finances and material life, the same period often coincides with gains tied to beauty, art, luxury or pleasant living, yet a Venus afflicted by combustion or a difficult sign can just as easily pull the years toward overspending and comfort that never quite satisfies. In creativity, the tradition links Shukra to music, design and craft, and many people find this stretch is when artistic work finally gets room to breathe. None of these are guaranteed; each is a direction the period leans, and the lean only becomes lived experience when you actually attend to it.
 
+
+![A three-column view of the life areas Venus's twenty-year period leans toward: relationships, finances and material life, and creativity, each a tendency rather than a promise.](/images/mahadasha/venus-mahadasha-i0-en.svg)
 ## Venus (Shukra) Mahadasha vs Adjacent Concepts: How It Works + Trade-offs
 
 venus mahadasha differs most clearly from the other long stretch in the cycle, the Saturn mahadasha, and reading them side by side shows how each period works. Venus's period leans toward pleasure, connection and ease; Saturn's nineteen-year period — the contrasting long chapter explained in this [companion explainer on the Saturn mahadasha period](/en/wiki/saturn-mahadasha) — leans toward effort, limitation and slow-built structure. The way each functions is a real trade-off: to get the relational warmth and material comfort Venus favors, you sacrifice some of the hard discipline that forges Saturn-built resilience. Leaning into Venus's ease can soften you; leaning into Saturn's restraint can harden you. Neither is better, and the tradition never ranks them.
@@ -108,6 +112,8 @@ Map your own Venus by house, sign and dignity, then find where this twenty-year 
 
 export const venusMahadashaZh: WikiArticle = {
   slug: "venus-mahadasha",
+  image: "/images/mahadasha/venus-mahadasha.jpg",
+  image_alt: "金星泛着温暖金光低悬在靛蓝暮色地平线上，倒映于静水，象征金星大运关于美感与安适的主题。",
   title: "金星大运为什么不等于二十年好运",
   description: "Venus (Shukra) Mahadasha（金星大运）是吠陀占星 Vimshottari 大运体系里，由金星（Shukra）主管的一段长达二十年的人生周期。在了解这段周期之前，最好先弄懂大运本身——可以参考更上位的 大运周期总览 pillar 页，那里梳理了九颗行星轮流主管人生阶段的整套逻辑。",
   authorId: "aditi-sharma",
@@ -137,6 +143,8 @@ Venus (Shukra) Mahadasha（金星大运）是吠陀占星 Vimshottari 大运体�
 
 理解这段周期的真正价值，是帮你把「倾向」和「定数」分开看。同样是这段金星周期，金星在本命盘里状态好的人，确实更容易在关系与创造上顺风；状态受克的人，则可能反而在感情与金钱上反复打转。想看清两段长周期的不同质地，可以对照 [土星大运周期解读](/zh/wiki/saturn-mahadasha)——土星那段长周期偏向考验与沉淀，和金星这二十年的柔软取向恰好相反。把这层区别想明白，你就不会再用「好运／坏运」这种二分法去套自己的人生阶段。
 
+
+![三栏呈现金星二十年大运倾向的生活领域：关系、财务与物质、创造，每一项都是倾向而非定数。](/images/mahadasha/venus-mahadasha-i0-zh.svg)
 ## Venus (Shukra) Mahadasha 与相近概念：运作方式 + 取舍
 
 金星大运最容易被拿来和土星大运比较，两者都是动辄二十年上下的长周期，运作方式却截然不同。差别主要落在三处：

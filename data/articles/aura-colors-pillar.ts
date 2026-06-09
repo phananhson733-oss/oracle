@@ -4,7 +4,9 @@ import type { WikiArticle } from "../../types";
 
 export const auraColorsPillarEn: WikiArticle = {
   slug: "aura-colors-pillar",
-  title: "Aura Colors Meaning",
+  image: "/images/aura/aura-colors-pillar.jpg",
+  image_alt: "the seven aura colors as a flowing spectrum of light — red, orange, yellow, green, blue, purple and white",
+  title: "Aura Colors: A Complete Guide to Reading Every Color and Shade",
   description:
     "Aura colors are the color labels practitioners use to describe a person's prevailing energetic state within subtle-energy traditions. They are not a single...",
   authorId: "elena-vane",
@@ -17,13 +19,13 @@ export const auraColorsPillarEn: WikiArticle = {
     "aura color meanings",
     "how to read auras",
   ],
-  content: `# Aura Colors Meaning
+  content: `# Aura Colors: A Complete Guide to Reading Every Color and Shade
 
 ## What are aura colors?
 
 Aura colors are **the color labels practitioners use to describe a person's prevailing energetic state** within subtle-energy traditions. They are not a single thing — they are a family of seven main color categories (red, orange, yellow, green, blue, purple, and white) that together form an interpretive vocabulary. Each color maps to one of the seven main chakra centers, and the whole set is treated as a framework for self-reflection rather than a measurable physical signal. The aura colors meaning system gives readers a shared language for describing how someone's energy reads in a moment, without forcing every person into a single fixed label.
 
-## Why It Matters for Self-Awareness
+## Why it matters for self-awareness
 
 Most articles on aura colors meaning treat each color as a personality verdict — read one paragraph, get told you are "a green person," move on. That misses the actual question people bring to the search bar. Readers usually arrive with three friction points stacked on top of each other. First, they cannot tell if the framework has any internal consistency or if every site is just inventing vibes. Second, they have seen aura photos showing two or three colors at once, and the articles around them keep picking only one as the answer. Third, they have read three sites giving three different definitions of the same color, and they want to know which tradition to trust.
 
@@ -35,7 +37,7 @@ There is also a social function worth naming. Friends, partners, and small commu
 
 Finally, looking at the whole family first protects readers from the most common trap: walking into a single-color article, identifying with the description, and walking out with an identity. Single-entity pages are deeper, but they are also where the "I am a green person" mistake gets minted. Pillar-level orientation — seeing the spectrum, seeing the overlaps, seeing the shade variations — gives readers context to use any single-color page as a description rather than a category they have to live inside.
 
-## The aura colors at a Glance
+## The aura colors at a glance
 
 | Aura Color | Core Theme | Energy Center (Chakra) | Common Misread |
 | --- | --- | --- | --- |
@@ -47,7 +49,9 @@ Finally, looking at the whole family first protects readers from the most common
 | Purple | Intuition, inward processing, mysticism | Third Eye / Crown | Read as "spaced out" when it is reflective depth |
 | White | Integration, full-spectrum balance | Crown / Soul Star | Read as "purity" when it is balance across the others |
 
-## The 7 aura colors: Quick Guide
+## The 7 aura colors: quick guide
+
+![the seven aura colors mapped to the seven chakra centers, from red at the root to white at the crown](/images/aura/aura-colors-chakra-chart.svg)
 
 **Red aura** — Red sits at the root chakra end of the family and reads as raw vitality: physical drive, embodied presence, and the willingness to take grounded action. People showing strong red tend to be doers, and the color often deepens when someone is in a survival-mode push rather than purely thriving. The common misread is to flatten red into "angry person." Red is energy and grounding, not aggression by default — muddy or overheated red can read as frustration, but bright clear red usually just means someone is alive in their body. For the deeper aura colors meaning of red, see [red aura explainer](/en/wiki/red-aura-meaning).
 
@@ -63,7 +67,7 @@ Finally, looking at the whole family first protects readers from the most common
 
 **White aura** — White sits at the crown and is treated in most traditions as full-spectrum integration rather than a single trait. People showing white are not "purer" than others — they typically read as having the other colors held in some kind of working balance, often in a season of integration or transition. The misread is to romanticize white as "spiritually advanced." White is balance, not hierarchy. For the deeper reading, see [white aura explainer](/en/wiki/white-aura-meaning).
 
-## How Shade and Combination Shift Readings
+## How shade and combination shift readings
 
 One of the biggest gaps in standard aura colors meaning coverage is that the seven main colors are not discrete labels. Real readings come in shades, combinations, and gradients, and the same base color can read in very different directions depending on its state and what else sits next to it.
 
@@ -77,7 +81,7 @@ A third example helps. Consider a red-purple reading: vitality and inward intuit
 
 The takeaway for working with the aura colors meaning framework: train yourself to ask three questions instead of one. Which color? Which shade? What is it sitting next to? That shifts the reading from a personality verdict into something closer to a snapshot — useful for the moment, not binding for the year. Practitioners who have worked with the family for a long time tend to describe readings in two or three layers rather than a single label, and that habit is exactly what lets the framework stay accurate as people change over time.
 
-## Common Misreads + Framework Limits
+## Common misreads + framework limits
 
 The aura colors meaning system gets misread in predictable ways once people start treating it as more than a vocabulary. Four patterns come up across almost every advice column and forum thread.
 
@@ -91,11 +95,34 @@ The fourth — and most important for honest use — is expecting the framework 
 
 Two practical guardrails make the framework safer to work with over time. The first is to keep the language descriptive, not prescriptive: "my green is doing a lot right now" rather than "I have to honor my green energy." The descriptive frame keeps the reading reversible, which is the whole point of treating it as a snapshot. The second is to cross-check important decisions outside the framework entirely. If a reading is telling you something you would not be willing to act on without confirmation from a friend, a therapist, or your own quiet judgment, then the reading was never going to be the deciding factor anyway — it was a prompt to look closer, and looking closer is the actual work.
 
-## Reflection Prompts
+## Reflection prompts
 
 1. Think of a recent moment when you read someone — which color or shade did you reach for, and which would you reach for after sitting with it longer?
 2. Recall a season when your dominant color seemed to shift; what changed in your relationships or work that made the new reading more accurate?
 3. Notice when a single color label felt too small for what you were experiencing; what combination would have described it better?
+
+## Common Questions About Aura Colors
+
+**Q: How many aura colors are there?**
+A: Most traditions identify 7 primary aura colors (red, orange, yellow, green, blue, purple, white),
+each corresponding to a chakra center. Shades and combinations within these colors further refine the reading.
+
+**Q: Can your aura color change?**
+A: Yes. Aura colors shift with emotional states, health, and energy levels.
+A reading reflects a moment in time, not a fixed identity.
+
+**Q: Why do different readers see different colors for the same person?**
+A: Readers come from different traditions and perceptual frameworks.
+This guide uses a structural, cross-tradition approach to reduce that confusion.
+
+**Q: Do I need special ability to read auras?**
+A: Basic aura awareness is a trainable skill.
+See our [aura reading guide](/en/wiki/aura-reading) for a step-by-step methodology.
+
+## Sources
+- Brennan, B. A. (1988). *Hands of Light*. Bantam Books.
+- Hunt, V. (1996). *Infinite Mind: Science of the Human Vibrations of Consciousness*. Malibu Publishing.
+- Motoyama, H. (1982). *Theories of the Chakras*. Quest Books.
 
 ## Related Reading
 
@@ -107,7 +134,7 @@ Two practical guardrails make the framework safer to work with over time. The fi
 - [purple aura explainer](/en/wiki/purple-aura-meaning)
 - [white aura explainer](/en/wiki/white-aura-meaning)
 - [overview of the chakra system](/en/wiki/chakra-system-overview)
-- [guide to aura reading](/en/wiki/aura-colors-pillar)
+- [guide to aura reading](/en/wiki/aura-reading)
 - [comparison with the four-element framework](/en/wiki/four-element-framework)
 
 ## Take Action

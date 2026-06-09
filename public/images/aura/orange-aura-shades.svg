@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 286" role="img" aria-label="Orange aura shades — and what each one signals: Vibrant, Muddy / dark, Amber / gold">
+  <defs>
+    <linearGradient id="orange-aura-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/>
+      <stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="orange-aura-0" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#ffb15a"/><stop offset="1" stop-color="#e07a1f"/></radialGradient>
+    <radialGradient id="orange-aura-1" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#9a6a3a"/><stop offset="1" stop-color="#5e3c1c"/></radialGradient>
+    <radialGradient id="orange-aura-2" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#ffcf7a"/><stop offset="1" stop-color="#d99a2e"/></radialGradient>
+    <filter id="orange-aura-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="837" height="283" rx="22" fill="url(#orange-aura-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill="#efeaf8">Orange aura shades — and what each one signals</text>
+  <line x1="44" y1="68" x2="796" y2="68" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <circle cx="186.7" cy="128" r="30" fill="url(#orange-aura-0)" filter="url(#orange-aura-soft)"/>
+    <circle cx="186.7" cy="128" r="23" fill="url(#orange-aura-0)"/>
+    <text x="186.7" y="186" font-size="17" fill="#f3effb">Vibrant</text>
+    <text x="186.7" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Creative drive and social</text>
+    <text x="186.7" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">warmth flowing outward</text>
+    <circle cx="420.0" cy="128" r="30" fill="url(#orange-aura-1)" filter="url(#orange-aura-soft)"/>
+    <circle cx="420.0" cy="128" r="23" fill="url(#orange-aura-1)"/>
+    <text x="420.0" y="186" font-size="17" fill="#f3effb">Muddy / dark</text>
+    <text x="420.0" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Giving turns inward as</text>
+    <text x="420.0" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">guilt or depletion</text>
+    <circle cx="653.3" cy="128" r="30" fill="url(#orange-aura-2)" filter="url(#orange-aura-soft)"/>
+    <circle cx="653.3" cy="128" r="23" fill="url(#orange-aura-2)"/>
+    <text x="653.3" y="186" font-size="17" fill="#f3effb">Amber / gold</text>
+    <text x="653.3" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Mature creativity with</text>
+    <text x="653.3" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">warm, calm authority</text>
+  </g>
+  <text x="420" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">Shade describes a current state, not a fixed trait — most people move across these over time.</text>
+</svg>

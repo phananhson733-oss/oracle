@@ -1,0 +1,68 @@
+{
+  "_comment": "Per-color shade vocabularies, taken verbatim-in-spirit from each article's reference table. Drives gen-shade-strip.mjs to emit inline SVG infographics.",
+  "footnote": "Shade describes a current state, not a fixed trait — most people move across these over time.",
+  "colors": {
+    "red-aura": {
+      "title": "Red aura shades — and what each one signals",
+      "shades": [
+        { "name": "Vibrant / clear", "lines": ["High-output vitality and", "clean forward drive"], "from": "#ff6b6b", "to": "#d61f33" },
+        { "name": "Muddy / dark", "lines": ["Drive without release:", "stress or backlog"], "from": "#a14444", "to": "#5f2222" },
+        { "name": "Scarlet / bright", "lines": ["Decisive, time-bounded", "leadership"], "from": "#ff5a3c", "to": "#e22318" },
+        { "name": "Pinkish", "lines": ["Drive softened by", "warmth or affection"], "from": "#f3a6b6", "to": "#d86077" }
+      ]
+    },
+    "orange-aura": {
+      "title": "Orange aura shades — and what each one signals",
+      "shades": [
+        { "name": "Vibrant", "lines": ["Creative drive and social", "warmth flowing outward"], "from": "#ffb15a", "to": "#e07a1f" },
+        { "name": "Muddy / dark", "lines": ["Giving turns inward as", "guilt or depletion"], "from": "#9a6a3a", "to": "#5e3c1c" },
+        { "name": "Amber / gold", "lines": ["Mature creativity with", "warm, calm authority"], "from": "#ffcf7a", "to": "#d99a2e" }
+      ]
+    },
+    "yellow-aura": {
+      "title": "Yellow aura shades — and what each one signals",
+      "shades": [
+        { "name": "Bright / clear", "lines": ["Curiosity and confidence,", "well-rested and engaged"], "from": "#ffe27a", "to": "#e0b033" },
+        { "name": "Muddy / dim", "lines": ["Mental engine running", "past recovery"], "from": "#b0a04a", "to": "#6e6322" },
+        { "name": "Gold / metallic", "lines": ["Confidence settling into", "guiding others"], "from": "#ffd95a", "to": "#caa12a" },
+        { "name": "Yellow-green edge", "lines": ["Mental energy bleeding", "into anxiety"], "from": "#cfe07a", "to": "#9aae3a" }
+      ]
+    },
+    "green-aura": {
+      "title": "Green aura shades — and what each one signals",
+      "shades": [
+        { "name": "Emerald / vibrant", "lines": ["Active healing and", "heart-led growth"], "from": "#7fe0a0", "to": "#3f9a64" },
+        { "name": "Forest / deep", "lines": ["Compassion grounded into", "steady stability"], "from": "#4f9a6a", "to": "#26603c" },
+        { "name": "Muddy yellow-green", "lines": ["Comparison or unprocessed", "resentment moving through"], "from": "#9aae5a", "to": "#5e6e2e" },
+        { "name": "Mint / light", "lines": ["A fresh emotional start", "and gentle renewal"], "from": "#b8f0d0", "to": "#7fd0a8" }
+      ]
+    },
+    "blue-aura": {
+      "title": "Blue aura shades — and what each one signals",
+      "shades": [
+        { "name": "Light", "lines": ["Gentle, sensitive expression", "that comforts others"], "from": "#9fd0ff", "to": "#4a8fe0" },
+        { "name": "Mid", "lines": ["Clear, steady, honest", "structured communication"], "from": "#5a9ae8", "to": "#2f6ec0" },
+        { "name": "Deep / indigo", "lines": ["Inward intuition and", "slower processing"], "from": "#5a6ed0", "to": "#33388f" },
+        { "name": "Grey-haze", "lines": ["Words held back under", "stress or caution"], "from": "#8a9ab0", "to": "#566074" }
+      ]
+    },
+    "purple-aura": {
+      "title": "Purple aura shades — and what each one signals",
+      "shades": [
+        { "name": "Light / lavender", "lines": ["Soft inward attention,", "felt-sense before words"], "from": "#cdb6ff", "to": "#9a7ee0" },
+        { "name": "Mid", "lines": ["Steady symbol- and", "meaning-seeking"], "from": "#b89cff", "to": "#7250c0" },
+        { "name": "Deep / near-indigo", "lines": ["Strong inner pattern", "recognition"], "from": "#8a6ad0", "to": "#4f3a9f" },
+        { "name": "Purple-blue", "lines": ["Inner meaning trying", "to become words"], "from": "#9c8ce0", "to": "#5a6ec0" }
+      ]
+    },
+    "white-aura": {
+      "title": "White aura shades — and what each one signals",
+      "shades": [
+        { "name": "Bright / clear", "lines": ["Presence, mental quiet,", "outward orientation"], "from": "#ffffff", "to": "#cfcae4" },
+        { "name": "Grey-white", "lines": ["Depletion, over-giving,", "poor recovery"], "from": "#b8b4c4", "to": "#7c7890" },
+        { "name": "Silver-white", "lines": ["Receptive, tuned to", "atmosphere and mood"], "from": "#dfe2ee", "to": "#a9adc4" },
+        { "name": "Integrative", "lines": ["An all-color blend,", "not a rank"], "from": "#edeaf6", "to": "#bcb6d0" }
+      ]
+    }
+  }
+}

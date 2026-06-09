@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const rahuMahadashaEn: WikiArticle = {
   slug: "rahu-mahadasha",
+  image: "/images/mahadasha/rahu-mahadasha.jpg",
+  image_alt: "A shadowed moon ringed with gold light against a deep indigo sky, evoking the amplifying, restless tone of the Rahu period.",
   title: "What Rahu Mahadasha Really Brings Over Its 18-Year Span",
   description: "This period is the roughly 18-year stretch in a Vedic birth chart when Rahu, the north lunar node, sets the background tone of a person's life.",
   authorId: "aditi-sharma",
@@ -45,6 +47,8 @@ Rahu's dasha is easiest to understand next to its natural pair. The clearest con
 
 The thread across all three is that Rahu rewards ambition and novelty at the cost of grounding. Naming that trade is what keeps a long period of amplification from being read as fate.
 
+
+![A two-column contrast of Rahu pushing outward toward ambition versus Ketu pulling inward toward release, the two ends of the lunar-node axis.](/images/mahadasha/rahu-mahadasha-i0-en.svg)
 ## How to Read Rahu Mahadasha in Yourself
 
 The point of the Rahu period is not prediction but recognition. These are observable signals the tradition links to the period — patterns to notice, not omens to fear.
@@ -115,6 +119,8 @@ Pull your dasha timeline and find the start year of your Rahu period; doing so r
 
 export const rahuMahadashaZh: WikiArticle = {
   slug: "rahu-mahadasha",
+  image: "/images/mahadasha/rahu-mahadasha.jpg",
+  image_alt: "深靛蓝夜空中，一轮被阴影笼罩、边缘镶着金光的月亮，象征罗睺大运放大欲望与不安的基调。",
   title: "读懂罗睺大运，不必把这十八年当成劫数",
   description: "罗睺大运（Rahu Mahadasha）是吠陀占星 Vimshottari 行星周期体系里，由北交点罗睺（月亮升交点）主管的一段时间，通常被读作北交点罗睺主管的十八年生命周期；这套大运划分系统记载于经典《Brihat Parashara Hora Shastra》。",
   authorId: "aditi-sharma",
@@ -154,6 +160,8 @@ export const rahuMahadashaZh: WikiArticle = {
 
 另一个常被混淆的是土星主管的大运。传统里罗睺常被类比为土星，但路径不同：土星靠"限制与负重"逼出成熟，罗睺靠"放大与诱惑"逼出觉察。想借这段周期快速突破原有边界，就要接受它附带的不确定与反复；想要土星那种踏实积累，则得放慢脚步、守住既有的盘面。
 
+
+![两栏对照：罗睺向外推动野心，计都向内收回放下，是月亮交点轴的两端。](/images/mahadasha/rahu-mahadasha-i0-zh.svg)
 ## 如何在自己身上识别 Rahu Mahadasha
 
 要看清罗睺大运的影响落在生活的哪一块，可以留意几个信号：
