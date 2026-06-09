@@ -312,7 +312,7 @@ const renderMarkdownContent = (
       elements.push(
         <h3
           key={`h3-${i}`}
-          className="text-xl font-serif font-semibold mt-8 mb-4"
+          className={`text-xl font-serif font-semibold ${highlightText} mt-9 mb-3 pl-4 border-l-2 border-gold-500/50`}
         >
           {processInlineContent(trimmed.slice(4))}
         </h3>,
