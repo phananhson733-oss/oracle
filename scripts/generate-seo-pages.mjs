@@ -233,7 +233,7 @@ const buildHead = ({
   p { line-height: 1.6; font-size: 1rem; }
   article.content { margin-top: 1.5rem; }
   article.content h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
-  article.content h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+  article.content h3 { font-size: 1.2rem; margin: 1.9rem 0 0.5rem; padding-left: 0.85rem; border-left: 3px solid rgba(127, 94, 54, 0.5); color: #7f5e36; }
   article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid #c9bfaf; color: #4a4540; }
   article.content li { line-height: 1.6; }
   .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #4a4540; }
