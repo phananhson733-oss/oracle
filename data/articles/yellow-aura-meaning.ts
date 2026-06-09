@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const yellowAuraMeaningEn: WikiArticle = {
   slug: "yellow-aura-meaning",
+  image: "/images/aura/yellow-aura-meaning.jpg",
+  image_alt: "yellow aura energy field, solar plexus radiance, confidence and creative drive",
   title:
     "Yellow Aura Meaning: Optimism, Creative Drive, and Solar Energy Explained",
   description:

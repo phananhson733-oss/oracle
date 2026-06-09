@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const purpleAuraMeaningEn: WikiArticle = {
   slug: "purple-aura-meaning",
+  image: "/images/aura/purple-aura-meaning.jpg",
+  image_alt: "purple aura energy field around a faint human silhouette, intuition and perception",
   title: "Purple Aura Meaning: Gifts, Intuition, and the Psychic Frequency",
   description:
     "In subtle-energy traditions, purple aura meaning usually points to an introspective, intuition-leaning energy field tied to the crown and third eye centers....",

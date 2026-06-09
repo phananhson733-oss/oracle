@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const auraColorsPillarEn: WikiArticle = {
   slug: "aura-colors-pillar",
+  image: "/images/aura/aura-colors-pillar.jpg",
+  image_alt: "the seven aura colors as a flowing spectrum of light — red, orange, yellow, green, blue, purple and white",
   title: "Aura Colors: A Complete Guide to Reading Every Color and Shade",
   description:
     "Aura colors are the color labels practitioners use to describe a person's prevailing energetic state within subtle-energy traditions. They are not a single...",
@@ -48,6 +50,8 @@ Finally, looking at the whole family first protects readers from the most common
 | White | Integration, full-spectrum balance | Crown / Soul Star | Read as "purity" when it is balance across the others |
 
 ## The 7 aura colors: quick guide
+
+![the seven aura colors mapped to the seven chakra centers, from red at the root to white at the crown](/images/aura/aura-colors-chakra-chart.svg)
 
 **Red aura** — Red sits at the root chakra end of the family and reads as raw vitality: physical drive, embodied presence, and the willingness to take grounded action. People showing strong red tend to be doers, and the color often deepens when someone is in a survival-mode push rather than purely thriving. The common misread is to flatten red into "angry person." Red is energy and grounding, not aggression by default — muddy or overheated red can read as frustration, but bright clear red usually just means someone is alive in their body. For the deeper aura colors meaning of red, see [red aura explainer](/en/wiki/red-aura-meaning).
 

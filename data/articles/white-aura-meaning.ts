@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const whiteAuraMeaningEn: WikiArticle = {
   slug: "white-aura-meaning",
+  image: "/images/aura/white-aura-meaning.jpg",
+  image_alt: "white aura energy field surrounding a faint human silhouette, integration and transition",
   title: "White Aura Meaning",
   description:
     "In subtle-energy traditions, white aura meaning usually points to a clear, integrative energy field tied to the crown center and spiritual orientation. It...",

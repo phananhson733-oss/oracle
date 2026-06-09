@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const redAuraMeaningEn: WikiArticle = {
   slug: "red-aura-meaning",
+  image: "/images/aura/red-aura-meaning.jpg",
+  image_alt: "red aura energy field contrasting vibrant clear red with muddy dark red, root chakra",
   title: "Red Aura Meaning: What Your Root Energy Actually Signals",
   description:
     "In subtle-energy traditions, red aura meaning usually points to a vital, grounded energy field tied to the root center and physical drive. Most aura...",

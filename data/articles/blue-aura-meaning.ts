@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const blueAuraMeaningEn: WikiArticle = {
   slug: "blue-aura-meaning",
+  image: "/images/aura/blue-aura-meaning.jpg",
+  image_alt: "blue aura energy field spectrum from light blue to deep blue and indigo, throat chakra",
   title:
     "Blue Aura Meaning: Why Interpretations Vary — and What's Actually True",
   description:

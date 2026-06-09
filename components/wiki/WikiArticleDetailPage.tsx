@@ -321,6 +321,25 @@ const renderMarkdownContent = (
         </h4>,
       );
     }
+    // Standalone image line: ![alt](src) — rendered as a block <figure><img>.
+    // Intercepted before paragraph/link handling so the leading "!" isn't shown
+    // and the inner [alt](src) isn't parsed as a link. General — any article.
+    else if (/^!\[[^\]]*\]\([^()\s]+\)$/.test(trimmed)) {
+      const m = trimmed.match(/^!\[([^\]]*)\]\(([^()\s]+)\)$/)!;
+      const src = m[2];
+      if (/^(https?:\/\/|\/(?!\/))/.test(src)) {
+        elements.push(
+          <figure key={`img-${i}`} className="my-8">
+            <img
+              src={src}
+              alt={m[1]}
+              loading="lazy"
+              className={`w-full rounded-2xl border ${borderColor}`}
+            />
+          </figure>,
+        );
+      }
+    }
     // Blockquote
     else if (trimmed.startsWith("> ")) {
       elements.push(

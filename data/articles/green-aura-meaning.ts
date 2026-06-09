@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const greenAuraMeaningEn: WikiArticle = {
   slug: "green-aura-meaning",
+  image: "/images/aura/green-aura-meaning.jpg",
+  image_alt: "green aura energy field, heart chakra healing and emotional balance",
   title: "What a Green Aura Really Means for Healing and Connection",
   description:
     "Green Aura is the green band that practitioners describe seeing or sensing in a person's energy field. In most aura traditions, green aura meaning points to...",
@@ -120,6 +122,8 @@ Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your col
 
 export const greenAuraMeaningZh: WikiArticle = {
   slug: "green-aura-meaning",
+  image: "/images/aura/green-aura-meaning.jpg",
+  image_alt: "green aura energy field, heart chakra healing and emotional balance",
   title: "绿色气场代表什么，不必在 healer 和嫉妒之间二选一",
   description:
     "绿色气场（Green Aura）是西方灵性圈用来描述以关怀、连接和内在平稳为主调的能量场的说法，和黄色、蓝色并列，是 气场颜色总览 pillar 页...",

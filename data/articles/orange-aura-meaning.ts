@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const orangeAuraMeaningEn: WikiArticle = {
   slug: "orange-aura-meaning",
+  image: "/images/aura/orange-aura-meaning.jpg",
+  image_alt: "orange aura energy field, sacral chakra warmth and creative drive",
   title: "Why an Orange Aura Reads as Drive, Pleasure, and Connection",
   description:
     "Orange Aura is the energy field most commonly read as a warm, creative current tied to the sacral center. In plain terms, it points to someone who runs on...",
@@ -118,6 +120,8 @@ Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your col
 
 export const orangeAuraMeaningZh: WikiArticle = {
   slug: "orange-aura-meaning",
+  image: "/images/aura/orange-aura-meaning.jpg",
+  image_alt: "orange aura energy field, sacral chakra warmth and creative drive",
   title: "橙色气场到底在说你的哪种能量",
   description:
     "橙色气场（Orange Aura）是西方灵性圈用来描述以创造力和情绪流动为主调的能量场的说法，和红色、黄色并列，是 气场颜色总览 pillar 页...",
