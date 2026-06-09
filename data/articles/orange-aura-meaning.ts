@@ -72,7 +72,7 @@ Most of the confusion around orange aura meaning comes from a handful of misread
 | Muddy / dark orange | Pleasure and giving turn inward as guilt or depletion | Sacral center, running low | You feel drained after generosity and resist resting |
 | Amber / gold-orange | Mature creativity steadied by a warm, calm authority | Sacral center, balanced | You create and lead without needing applause |
 
-## Orange Aura FAQ
+## Common Questions About Orange Aura
 
 **What does an orange aura mean spiritually?**
 
@@ -111,8 +111,8 @@ Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your col
 
 ## Sources
 
-- Anodea Judith — systematized the modern chakra framework this color mapping draws on
-- Barbara Ann Brennan — shaped the contemporary practice of reading the body's energy field and aura
+- Judith, A. (1999). *Wheels of Life*. Llewellyn Publications.
+- Brennan, B. A. (1988). *Hands of Light*. Bantam Books.
 `,
 };
 

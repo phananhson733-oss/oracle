@@ -1220,6 +1220,49 @@ const generate = async () => {
       : ['article', lang, slug];
   };
 
+  // FAQPage schema for article stubs — mirrors WikiArticleDetailPage.faqSchema so the
+  // crawled static stub gets FAQ structured data (the SPA emits its own after hydration;
+  // identical @id/content keeps them mergeable). Returns null when <2 Q&A are present.
+  const buildArticleFaqSchema = (article, url) => {
+    if (!article?.content) return null;
+    const faqs = [];
+    let inFaq = false;
+    let cur = null;
+    const flush = () => {
+      if (cur && cur.a.trim()) faqs.push({ q: cur.q, a: cur.a.trim() });
+      cur = null;
+    };
+    for (const raw of article.content.split('\n')) {
+      const line = raw.trim();
+      const h2 = line.match(/^##\s+(.+)/);
+      if (h2) {
+        flush();
+        inFaq = /\bfaqs?\b|\bquestions?\b|\bq\s*&\s*a\b|问题|问答|常问|疑问|問題|問答|常問|疑問/i.test(h2[1]);
+        continue;
+      }
+      if (!inFaq) continue;
+      const q = line.match(/^\*\*(.+?)\*\*$/);
+      if (q && /[?？]/.test(q[1])) {
+        flush();
+        cur = { q: q[1].trim(), a: '' };
+        continue;
+      }
+      if (cur && line) cur.a += (cur.a ? ' ' : '') + line;
+    }
+    flush();
+    if (faqs.length < 2) return null;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    };
+  };
+
   // Featured articles: generate static HTML with full body so crawlers read the
   // article (data/articles/<slug>.ts, rendered via WikiArticleDetailPage in the
   // SPA) instead of the generic /index.html shell. Without this the sitemap URLs
@@ -1253,10 +1296,15 @@ const generate = async () => {
           { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
           { name: article.title, url },
         ]),
-      ],
+        // FAQPage：从正文 FAQ 章节解析（与 SPA WikiArticleDetailPage faqSchema 对齐），
+        // 让爬虫先读的静态 stub 也带 FAQ 结构化数据。@id 用 url#faq 便于与 SPA 版去重。
+        buildArticleFaqSchema(article, url),
+      ].filter(Boolean),
       ctaText: config.wikiCta,
-      spaPath: `/${lang}/wiki/${slug}`,
-      contentHtml: mdToHtml(contentMd),
+      // footer CTA 指向 wiki hub，而非文章自身 → 消除静态 stub 里的自链接（SEO）。
+      spaPath: `/${lang}/wiki`,
+      // 去掉正文首个 H1（buildBody 已用 <h1>{title}</h1> 渲染）→ 避免静态 stub 出现两个 H1。
+      contentHtml: mdToHtml(contentMd.replace(/^#\s+[^\n]*\r?\n+/, '')),
     });
   };
 

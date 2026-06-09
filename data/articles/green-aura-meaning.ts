@@ -103,8 +103,8 @@ Most aura literature treats color as a snapshot of your prevailing state, not a 
 
 ## Related Reading
 
-- [guide to reading aura color shades](/en/wiki/aura-colors-pillar) — for telling emerald, forest, mint, and muddy green apart in more detail
-- [explainer on how aura colors shift over time](/en/wiki/aura-colors-pillar) — for why a green reading is a snapshot, not a fixed trait
+- [red aura explainer](/en/wiki/red-aura-meaning) — the root-chakra contrast to green's heart-centered balance.
+- [orange aura explainer](/en/wiki/orange-aura-meaning) — the sacral creative-social energy, one center below the heart.
 - [Chakra (Wikipedia)](https://en.wikipedia.org/wiki/Chakra) — background on the energy centres behind the color
 
 ## Take Action
@@ -113,8 +113,8 @@ Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your col
 
 ## Sources
 
-- Anodea Judith — systematized the modern chakra framework that this color-to-center mapping draws on
-- Barbara Ann Brennan — helped bring structured reading of the human energy field into wider practice
+- Judith, A. (1999). *Wheels of Life*. Llewellyn Publications.
+- Brennan, B. A. (1988). *Hands of Light*. Bantam Books.
 `,
 };
 
