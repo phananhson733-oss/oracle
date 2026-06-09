@@ -46,7 +46,8 @@ const plan = JSON.parse(fs.readFileSync(planPath, 'utf8'));
 const imagesDir = path.resolve(repoRoot, plan.imagesDir);
 const articlesDir = path.resolve(repoRoot, plan.articlesDir || 'data/articles');
 const urlBase = plan.urlBase.replace(/\/$/, '');
-const maxWidth = plan.optimize?.maxWidth || 1280;
+const heroW = plan.optimize?.heroWidth || 1200;
+const heroH = plan.optimize?.heroHeight || 675;
 const quality = plan.optimize?.quality || 82;
 const geminiSkill = plan.geminiSkill;
 
@@ -69,11 +70,18 @@ function generate(prompt, outPng, retries = 3) {
   return false;
 }
 
-// Resize + convert to JPEG via macOS sips. Returns the dest path.
+// Normalize to a standard, scrape-safe ratio (default 1200×675 = 16:9) via macOS
+// sips: resample to COVER the target (preserving aspect, no distortion), then
+// center-crop to exactly heroW×heroH. Returns the dest path.
 function optimize(srcPath, slug) {
   const dest = path.join(imagesDir, `${slug}.jpg`);
+  const info = sh('sips', ['-g', 'pixelWidth', '-g', 'pixelHeight', srcPath]);
+  const sw = +(info.match(/pixelWidth:\s*(\d+)/) || [])[1] || heroW;
+  const shh = +(info.match(/pixelHeight:\s*(\d+)/) || [])[1] || heroH;
+  const sf = Math.max(heroW / sw, heroH / shh);
   sh('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', String(quality),
-    '-Z', String(maxWidth), srcPath, '--out', dest]);
+    '-z', String(Math.round(shh * sf)), String(Math.round(sw * sf)), srcPath, '--out', dest]);
+  sh('sips', ['-c', String(heroH), String(heroW), dest]);
   return dest;
 }
 

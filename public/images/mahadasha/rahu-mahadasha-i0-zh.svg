@@ -1,29 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 312" role="img" aria-label="同一根交点轴的两端">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 387" role="img" aria-label="同一根交点轴的两端">
   <defs>
-    <linearGradient id="rahumahadasha0zh-panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    <linearGradient id="rahumahadasha0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
     </linearGradient>
-    <radialGradient id="rahumahadasha0zh-node" cx="0.5" cy="0.4" r="0.7">
-      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    <radialGradient id="rahumahadasha0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
     </radialGradient>
-    <filter id="rahumahadasha0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+    <radialGradient id="rahumahadasha0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rahumahadasha0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rahumahadasha0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rahumahadasha0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect x="1.5" y="1.5" width="837" height="309" rx="22" fill="url(#rahumahadasha0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
-  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">同一根交点轴的两端</text>
-  <line x1="44" y1="64" x2="796" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
-    <rect x="44" y="84" width="365.0" height="188" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#d4af6a" stroke-opacity="0.20"/>
-    <rect x="44" y="84" width="365.0" height="4" rx="2" fill="#d4af6a" fill-opacity="0.55"/>
-    <text x="60" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#f3effb">罗睺（北交点）</text>
-    <circle cx="61" cy="144" r="2.4" fill="#d4af6a"/>
-    <text x="70" y="148" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">向外推：野心、获取、陌生新奇</text>
-    <circle cx="61" cy="170" r="2.4" fill="#d4af6a"/>
-    <text x="70" y="174" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">换来进取与速度，代价是难以安定</text>
-    <rect x="431" y="84" width="365.0" height="188" rx="14" fill="#ffffff" fill-opacity="0.035" stroke="#d4af6a" stroke-opacity="0.20"/>
-    <rect x="431" y="84" width="365.0" height="4" rx="2" fill="#d4af6a" fill-opacity="0.55"/>
-    <text x="447" y="114" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#f3effb">计都（南交点）</text>
-    <circle cx="448" cy="144" r="2.4" fill="#d4af6a"/>
-    <text x="457" y="148" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">向内收：出离、放下、向内探寻</text>
-    <circle cx="448" cy="170" r="2.4" fill="#d4af6a"/>
-    <text x="457" y="174" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">七年给你安定，代价是向外的冲劲</text>
-  <text x="420" y="290" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+  <rect x="1.5" y="1.5" width="757" height="384" rx="22" fill="url(#rahumahadasha0zh-panel)"/>
+  <ellipse cx="198" cy="93" rx="380" ry="132" fill="url(#rahumahadasha0zh-neb1)"/>
+  <ellipse cx="623" cy="310" rx="334" ry="124" fill="url(#rahumahadasha0zh-neb2)"/>
+  <circle cx="399.7" cy="203.2" r="1.52" fill="#cfc8ea" opacity="0.17"/><circle cx="382.8" cy="53.7" r="0.52" fill="#cfc8ea" opacity="0.24"/><circle cx="389.7" cy="220.7" r="0.83" fill="#cfc8ea" opacity="0.19"/><circle cx="588.0" cy="20.0" r="0.65" fill="#cfc8ea" opacity="0.18"/><circle cx="73.3" cy="40.8" r="0.62" fill="#cfc8ea" opacity="0.25"/><circle cx="535.1" cy="285.2" r="1.51" fill="#cfc8ea" opacity="0.44"/><circle cx="699.0" cy="71.5" r="0.47" fill="#cfc8ea" opacity="0.43"/><circle cx="234.7" cy="352.1" r="0.92" fill="#cfc8ea" opacity="0.26"/><circle cx="416.2" cy="334.5" r="0.58" fill="#cfc8ea" opacity="0.30"/><circle cx="483.3" cy="207.4" r="1.23" fill="#cfc8ea" opacity="0.45"/><circle cx="409.6" cy="203.0" r="0.80" fill="#cfc8ea" opacity="0.20"/><circle cx="18.3" cy="132.5" r="0.57" fill="#cfc8ea" opacity="0.45"/><circle cx="298.3" cy="200.2" r="1.41" fill="#cfc8ea" opacity="0.43"/><circle cx="513.9" cy="126.0" r="0.56" fill="#cfc8ea" opacity="0.47"/><circle cx="696.8" cy="324.7" r="1.36" fill="#cfc8ea" opacity="0.23"/><circle cx="587.9" cy="147.2" r="1.27" fill="#cfc8ea" opacity="0.12"/><circle cx="286.8" cy="269.4" r="1.53" fill="#cfc8ea" opacity="0.29"/><circle cx="167.0" cy="274.7" r="0.62" fill="#cfc8ea" opacity="0.48"/><circle cx="473.3" cy="290.6" r="1.56" fill="#cfc8ea" opacity="0.33"/><circle cx="498.2" cy="82.7" r="1.06" fill="#cfc8ea" opacity="0.26"/><circle cx="119.6" cy="180.8" r="1.09" fill="#cfc8ea" opacity="0.48"/><circle cx="720.4" cy="347.4" r="0.46" fill="#cfc8ea" opacity="0.44"/><circle cx="39.6" cy="82.1" r="1.34" fill="#cfc8ea" opacity="0.36"/><circle cx="573.6" cy="224.5" r="1.52" fill="#cfc8ea" opacity="0.34"/><circle cx="613.2" cy="363.5" r="1.52" fill="#cfc8ea" opacity="0.38"/><circle cx="511.8" cy="126.5" r="0.92" fill="#cfc8ea" opacity="0.17"/><circle cx="434.8" cy="351.0" r="1.25" fill="#cfc8ea" opacity="0.36"/><circle cx="634.3" cy="102.8" r="0.94" fill="#cfc8ea" opacity="0.46"/><circle cx="308.8" cy="37.3" r="1.31" fill="#cfc8ea" opacity="0.27"/><circle cx="40.6" cy="190.5" r="1.16" fill="#cfc8ea" opacity="0.43"/><circle cx="292.1" cy="216.3" r="1.32" fill="#cfc8ea" opacity="0.46"/><circle cx="463.9" cy="191.7" r="1.55" fill="#cfc8ea" opacity="0.41"/><circle cx="165.1" cy="150.0" r="1.26" fill="#cfc8ea" opacity="0.28"/><path d="M 117.97953620180488 320.7 L 118.4 322.9 L 120.7 323.3681481645908 L 118.4 323.8 L 117.97953620180488 326.1 L 117.5 323.8 L 115.3 323.3681481645908 L 117.5 322.9 Z" fill="#f6e6bf" opacity="0.516614031442441"/><path d="M 602.0572803802788 143.5 L 602.7 146.8 L 606.0 147.38352466444485 L 602.7 148.0 L 602.0572803802788 151.3 L 601.4 148.0 L 598.2 147.38352466444485 L 601.4 146.8 Z" fill="#f6e6bf" opacity="0.7209416634636"/><path d="M 484.8250612132251 180.4 L 485.3 182.6 L 487.5 183.0818139759358 L 485.3 183.5 L 484.8250612132251 185.8 L 484.4 183.5 L 482.1 183.0818139759358 L 484.4 182.6 Z" fill="#f6e6bf" opacity="0.62073178908322"/><path d="M 384.96044332161546 179.8 L 385.4 182.1 L 387.7 182.54132587346248 L 385.4 183.0 L 384.96044332161546 185.2 L 384.5 183.0 L 382.3 182.54132587346248 L 384.5 182.1 Z" fill="#f6e6bf" opacity="0.6352416438283399"/><path d="M 181.04672252759337 338.8 L 181.5 340.9 L 183.6 341.2781714925077 L 181.5 341.7 L 181.04672252759337 343.8 L 180.6 341.7 L 178.5 341.2781714925077 L 180.6 340.9 Z" fill="#f6e6bf" opacity="0.6573380060726777"/><path d="M 399.7 203.2 L 389.7 220.7 L 587.9 147.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="384" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="373" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 367.8 L 16.5 370.5 L 19.2 371 L 16.5 371.5 L 16 374.2 L 15.5 371.5 L 12.8 371 L 15.5 370.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 367.8 L 744.5 370.5 L 747.2 371 L 744.5 371.5 L 744 374.2 L 743.5 371.5 L 740.8 371 L 743.5 370.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">同一根交点轴的两端</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#rahumahadasha0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#rahumahadasha0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">罗睺（北交点）</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">向外推：野心、获取、陌生新奇</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">换来进取与速度，代价是难以安定</text>
+  <path d="M 380 221.5 L 380.7 225.3 L 384.5 226 L 380.7 226.7 L 380 230.5 L 379.3 226.7 L 375.5 226 L 379.3 225.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="239" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="239" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 237.1 L 380.5 240.0 L 383.4 240.5 L 380.5 241.0 L 380 243.9 L 379.5 241.0 L 376.6 240.5 L 379.5 240.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="268.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">计都（南交点）</text>
+  <path d="M 70 297.8 L 70.5 300.5 L 73.2 301 L 70.5 301.5 L 70 304.2 L 69.5 301.5 L 66.8 301 L 69.5 300.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="306.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">向内收：出离、放下、向内探寻</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">七年给你安定，代价是向外的冲劲</text>
+  <path d="M 280.025 358.4 L 280.4 360.6 L 282.6 361 L 280.4 361.4 L 280.025 363.6 L 279.6 361.4 L 277.4 361 L 279.6 360.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="365" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 358.4 L 480.4 360.6 L 482.6 361 L 480.4 361.4 L 479.975 363.6 L 479.6 361.4 L 477.4 361 L 479.6 360.6 Z" fill="#d4af6a" opacity="0.5"/>
 </svg>

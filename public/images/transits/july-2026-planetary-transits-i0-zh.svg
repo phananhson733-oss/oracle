@@ -1,58 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" role="img" aria-label="2026 年 7 月关键日期">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 787" role="img" aria-label="2026 年 7 月关键日期">
   <defs>
-    <linearGradient id="july2026planetarytransits0zh-panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    <linearGradient id="july2026planetarytransits0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
     </linearGradient>
-    <radialGradient id="july2026planetarytransits0zh-node" cx="0.5" cy="0.4" r="0.7">
-      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    <radialGradient id="july2026planetarytransits0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
     </radialGradient>
-    <filter id="july2026planetarytransits0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+    <radialGradient id="july2026planetarytransits0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="july2026planetarytransits0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="july2026planetarytransits0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="july2026planetarytransits0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect x="1.5" y="1.5" width="1277" height="297" rx="22" fill="url(#july2026planetarytransits0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
-  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">2026 年 7 月关键日期</text>
-  <line x1="44" y1="64" x2="1236" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
-  <line x1="56" y1="150" x2="1224" y2="150" stroke="#d4af6a" stroke-opacity="0.35"/>
-  <g text-anchor="middle">
-    <text x="129.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月1日</text>
-    <circle cx="129.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="129.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="129.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">木星入狮子</text>
-    <text x="129.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">一年一度的新篇</text>
-    <text x="275.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月8日</text>
-    <circle cx="275.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="275.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="275.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">海王星起逆</text>
-    <text x="275.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">第一次外行星转向</text>
-    <text x="421.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月10日</text>
-    <circle cx="421.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="421.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="421.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">金星入处女</text>
-    <text x="421.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">金星换调</text>
-    <text x="567.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月15日</text>
-    <circle cx="567.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="567.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="567.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">巨蟹新月</text>
-    <text x="567.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">重做贴近家的事</text>
-    <text x="713.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月23日</text>
-    <circle cx="713.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="713.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="713.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">太阳入狮子</text>
-    <text x="713.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">太阳季更替</text>
-    <text x="859.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月24日</text>
-    <circle cx="859.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="859.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="859.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">水星顺行</text>
-    <text x="859.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">水逆结束</text>
-    <text x="1005.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月27日</text>
-    <circle cx="1005.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="1005.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="1005.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">土星起逆</text>
-    <text x="1005.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">第二次外行星转向</text>
-    <text x="1151.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">7月30日</text>
-    <circle cx="1151.0" cy="150" r="9" fill="url(#july2026planetarytransits0zh-node)" filter="url(#july2026planetarytransits0zh-soft)" opacity="0.6"/>
-    <circle cx="1151.0" cy="150" r="6" fill="url(#july2026planetarytransits0zh-node)"/>
-    <text x="1151.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">水瓶满月</text>
-    <text x="1151.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">狮子—水瓶轴到顶</text>
-  </g>
-  <text x="640" y="278" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+  <rect x="1.5" y="1.5" width="757" height="784" rx="22" fill="url(#july2026planetarytransits0zh-panel)"/>
+  <ellipse cx="198" cy="189" rx="380" ry="268" fill="url(#july2026planetarytransits0zh-neb1)"/>
+  <ellipse cx="623" cy="630" rx="334" ry="252" fill="url(#july2026planetarytransits0zh-neb2)"/>
+  <circle cx="702.5" cy="299.7" r="0.56" fill="#cfc8ea" opacity="0.29"/><circle cx="296.1" cy="712.7" r="1.00" fill="#cfc8ea" opacity="0.14"/><circle cx="181.5" cy="250.4" r="1.44" fill="#cfc8ea" opacity="0.38"/><circle cx="271.2" cy="517.7" r="0.99" fill="#cfc8ea" opacity="0.28"/><circle cx="23.9" cy="147.2" r="0.96" fill="#cfc8ea" opacity="0.52"/><circle cx="692.6" cy="246.1" r="0.48" fill="#cfc8ea" opacity="0.35"/><circle cx="19.3" cy="361.2" r="1.13" fill="#cfc8ea" opacity="0.37"/><circle cx="324.4" cy="287.7" r="0.69" fill="#cfc8ea" opacity="0.29"/><circle cx="514.7" cy="384.6" r="1.00" fill="#cfc8ea" opacity="0.24"/><circle cx="741.7" cy="533.2" r="1.27" fill="#cfc8ea" opacity="0.35"/><circle cx="144.1" cy="382.7" r="1.19" fill="#cfc8ea" opacity="0.27"/><circle cx="93.0" cy="365.7" r="1.09" fill="#cfc8ea" opacity="0.31"/><circle cx="461.8" cy="211.8" r="0.52" fill="#cfc8ea" opacity="0.43"/><circle cx="192.2" cy="472.3" r="1.69" fill="#cfc8ea" opacity="0.31"/><circle cx="507.8" cy="472.9" r="1.27" fill="#cfc8ea" opacity="0.34"/><circle cx="641.8" cy="676.9" r="0.97" fill="#cfc8ea" opacity="0.20"/><circle cx="452.3" cy="500.3" r="0.47" fill="#cfc8ea" opacity="0.16"/><circle cx="718.4" cy="386.4" r="0.57" fill="#cfc8ea" opacity="0.14"/><circle cx="346.5" cy="100.8" r="0.92" fill="#cfc8ea" opacity="0.25"/><circle cx="181.1" cy="711.5" r="1.06" fill="#cfc8ea" opacity="0.30"/><circle cx="630.8" cy="194.6" r="1.69" fill="#cfc8ea" opacity="0.28"/><circle cx="126.7" cy="126.4" r="0.76" fill="#cfc8ea" opacity="0.33"/><circle cx="442.4" cy="659.7" r="1.61" fill="#cfc8ea" opacity="0.44"/><circle cx="297.8" cy="773.9" r="1.53" fill="#cfc8ea" opacity="0.36"/><circle cx="229.3" cy="61.9" r="0.63" fill="#cfc8ea" opacity="0.22"/><circle cx="607.0" cy="668.0" r="0.88" fill="#cfc8ea" opacity="0.27"/><circle cx="28.2" cy="340.4" r="0.58" fill="#cfc8ea" opacity="0.41"/><circle cx="360.5" cy="675.6" r="0.55" fill="#cfc8ea" opacity="0.47"/><circle cx="714.8" cy="638.5" r="1.52" fill="#cfc8ea" opacity="0.17"/><circle cx="129.4" cy="201.6" r="0.96" fill="#cfc8ea" opacity="0.36"/><circle cx="441.6" cy="257.3" r="0.58" fill="#cfc8ea" opacity="0.53"/><circle cx="77.2" cy="319.0" r="1.69" fill="#cfc8ea" opacity="0.53"/><circle cx="99.2" cy="490.5" r="1.06" fill="#cfc8ea" opacity="0.53"/><circle cx="300.1" cy="320.8" r="1.06" fill="#cfc8ea" opacity="0.31"/><circle cx="593.6" cy="569.3" r="1.37" fill="#cfc8ea" opacity="0.45"/><circle cx="188.0" cy="704.1" r="1.39" fill="#cfc8ea" opacity="0.24"/><circle cx="734.2" cy="331.8" r="0.74" fill="#cfc8ea" opacity="0.21"/><circle cx="145.7" cy="718.8" r="0.73" fill="#cfc8ea" opacity="0.19"/><circle cx="405.9" cy="627.7" r="0.55" fill="#cfc8ea" opacity="0.48"/><circle cx="290.6" cy="269.1" r="1.18" fill="#cfc8ea" opacity="0.35"/><circle cx="103.8" cy="421.7" r="1.04" fill="#cfc8ea" opacity="0.28"/><circle cx="675.7" cy="669.5" r="1.21" fill="#cfc8ea" opacity="0.47"/><circle cx="593.2" cy="589.4" r="1.44" fill="#cfc8ea" opacity="0.16"/><circle cx="345.8" cy="739.8" r="0.93" fill="#cfc8ea" opacity="0.28"/><circle cx="552.7" cy="219.8" r="0.67" fill="#cfc8ea" opacity="0.29"/><circle cx="364.9" cy="580.0" r="0.80" fill="#cfc8ea" opacity="0.46"/><circle cx="593.8" cy="594.4" r="1.53" fill="#cfc8ea" opacity="0.13"/><circle cx="74.3" cy="228.9" r="0.45" fill="#cfc8ea" opacity="0.32"/><circle cx="471.0" cy="309.2" r="1.37" fill="#cfc8ea" opacity="0.47"/><circle cx="148.4" cy="146.9" r="1.46" fill="#cfc8ea" opacity="0.27"/><circle cx="319.4" cy="669.4" r="1.45" fill="#cfc8ea" opacity="0.40"/><circle cx="215.9" cy="349.9" r="1.27" fill="#cfc8ea" opacity="0.50"/><circle cx="298.3" cy="688.0" r="1.58" fill="#cfc8ea" opacity="0.16"/><circle cx="647.3" cy="519.2" r="0.71" fill="#cfc8ea" opacity="0.50"/><circle cx="537.0" cy="127.9" r="0.96" fill="#cfc8ea" opacity="0.25"/><circle cx="232.2" cy="128.6" r="1.45" fill="#cfc8ea" opacity="0.29"/><circle cx="219.0" cy="399.2" r="1.17" fill="#cfc8ea" opacity="0.35"/><circle cx="282.9" cy="512.1" r="0.71" fill="#cfc8ea" opacity="0.39"/><circle cx="560.4" cy="771.1" r="0.41" fill="#cfc8ea" opacity="0.45"/><circle cx="469.4" cy="43.6" r="0.83" fill="#cfc8ea" opacity="0.44"/><circle cx="463.1" cy="610.0" r="1.08" fill="#cfc8ea" opacity="0.33"/><circle cx="180.0" cy="762.4" r="1.50" fill="#cfc8ea" opacity="0.16"/><circle cx="208.9" cy="72.9" r="0.67" fill="#cfc8ea" opacity="0.29"/><circle cx="52.3" cy="39.6" r="0.91" fill="#cfc8ea" opacity="0.44"/><circle cx="590.6" cy="469.9" r="1.17" fill="#cfc8ea" opacity="0.41"/><circle cx="597.7" cy="146.5" r="1.49" fill="#cfc8ea" opacity="0.54"/><path d="M 660.3130831550807 392.6 L 660.9 395.6 L 663.9 396.20674714818597 L 660.9 396.8 L 660.3130831550807 399.8 L 659.7 396.8 L 656.7 396.20674714818597 L 659.7 395.6 Z" fill="#f6e6bf" opacity="0.7857552105095238"/><path d="M 167.89418334327638 374.4 L 168.5 377.6 L 171.8 378.26469240989536 L 168.5 378.9 L 167.89418334327638 382.2 L 167.3 378.9 L 164.0 378.26469240989536 L 167.3 377.6 Z" fill="#f6e6bf" opacity="0.5341782443691045"/><path d="M 290.283404616639 415.6 L 290.7 418.0 L 293.1 418.44586459733546 L 290.7 418.9 L 290.283404616639 421.3 L 289.8 418.9 L 287.5 418.44586459733546 L 289.8 418.0 Z" fill="#f6e6bf" opacity="0.6715755737852305"/><path d="M 22.734613170847297 386.5 L 23.2 388.7 L 25.4 389.16878821421415 L 23.2 389.6 L 22.734613170847297 391.8 L 22.3 389.6 L 20.1 389.16878821421415 L 22.3 388.7 Z" fill="#f6e6bf" opacity="0.6206526345107705"/><path d="M 252.0647550355643 55.0 L 252.5 57.5 L 255.1 58.03144256770611 L 252.5 58.5 L 252.0647550355643 61.1 L 251.6 58.5 L 249.0 58.03144256770611 L 251.6 57.5 Z" fill="#f6e6bf" opacity="0.7182837923523039"/><path d="M 296.1 712.7 L 461.8 211.8 L 630.8 194.6 L 590.6 469.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="784" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="773" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 767.8 L 16.5 770.5 L 19.2 771 L 16.5 771.5 L 16 774.2 L 15.5 771.5 L 12.8 771 L 15.5 770.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 767.8 L 744.5 770.5 L 747.2 771 L 744.5 771.5 L 744 774.2 L 743.5 771.5 L 740.8 771 L 743.5 770.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">2026 年 7 月关键日期</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#july2026planetarytransits0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#july2026planetarytransits0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="687" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月1日</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">木星入狮子</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">一年一度的新篇</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月8日</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">海王星起逆</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">第一次外行星转向</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月10日</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">金星入处女</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">金星换调</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月15日</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">巨蟹新月</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">重做贴近家的事</text>
+  <circle cx="92" cy="441" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="441" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="438.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 437.0 L 92.6 440.4 L 96.0 441 L 92.6 441.6 L 92 445.0 L 91.4 441.6 L 88.0 441 L 91.4 440.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="446.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月23日</text>
+  <text x="132" y="469.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">太阳入狮子</text>
+  <text x="132" y="492.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">太阳季更替</text>
+  <circle cx="92" cy="523" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="523" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="520.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 519.0 L 92.6 522.4 L 96.0 523 L 92.6 523.6 L 92 527.0 L 91.4 523.6 L 88.0 523 L 91.4 522.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="528.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月24日</text>
+  <text x="132" y="551.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">水星顺行</text>
+  <text x="132" y="574.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">水逆结束</text>
+  <circle cx="92" cy="605" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="605" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="602.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 601.0 L 92.6 604.4 L 96.0 605 L 92.6 605.6 L 92 609.0 L 91.4 605.6 L 88.0 605 L 91.4 604.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="610.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月27日</text>
+  <text x="132" y="633.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">土星起逆</text>
+  <text x="132" y="656.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">第二次外行星转向</text>
+  <circle cx="92" cy="687" r="13.0" fill="url(#july2026planetarytransits0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="687" r="8" fill="url(#july2026planetarytransits0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="684.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 683.0 L 92.6 686.4 L 96.0 687 L 92.6 687.6 L 92 691.0 L 91.4 687.6 L 88.0 687 L 91.4 686.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="692.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月30日</text>
+  <text x="132" y="715.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">水瓶满月</text>
+  <text x="132" y="738.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">狮子—水瓶轴到顶</text>
+  <path d="M 280.025 758.4 L 280.4 760.6 L 282.6 761 L 280.4 761.4 L 280.025 763.6 L 279.6 761.4 L 277.4 761 L 279.6 760.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="765" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 758.4 L 480.4 760.6 L 482.6 761 L 480.4 761.4 L 479.975 763.6 L 479.6 761.4 L 477.4 761 L 479.6 760.6 Z" fill="#d4af6a" opacity="0.5"/>
 </svg>

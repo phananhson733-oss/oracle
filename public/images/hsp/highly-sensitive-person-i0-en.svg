@@ -1,44 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 250" role="img" aria-label="The Four Facets of High Sensitivity (DOES)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="The Four Facets of High Sensitivity (DOES)">
   <defs>
-    <linearGradient id="highlysensitiveperson0en-panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    <linearGradient id="highlysensitiveperson0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
     </linearGradient>
-    <radialGradient id="highlysensitiveperson0en-node" cx="0.5" cy="0.4" r="0.7">
-      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    <radialGradient id="highlysensitiveperson0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
     </radialGradient>
-    <filter id="highlysensitiveperson0en-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+    <radialGradient id="highlysensitiveperson0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="highlysensitiveperson0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="highlysensitiveperson0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="highlysensitiveperson0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect x="1.5" y="1.5" width="837" height="247" rx="22" fill="url(#highlysensitiveperson0en-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
-  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">The Four Facets of High Sensitivity (DOES)</text>
-  <line x1="44" y1="64" x2="796" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
-  <line x1="150.0" y1="150" x2="690.0" y2="150" stroke="#d4af6a" stroke-opacity="0.30"/>
-  <g text-anchor="middle">
-    <text x="150.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Depth of Processing</text>
-    <circle cx="150.0" cy="150" r="17" fill="url(#highlysensitiveperson0en-node)" filter="url(#highlysensitiveperson0en-soft)" opacity="0.55"/>
-    <circle cx="150.0" cy="150" r="14" fill="url(#highlysensitiveperson0en-node)"/>
-    <text x="150.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">1</text>
-    <text x="150.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Takes input in and turns it</text>
-    <text x="150.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">over before responding</text>
-    <text x="330.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Overstimulation</text>
-    <circle cx="330.0" cy="150" r="17" fill="url(#highlysensitiveperson0en-node)" filter="url(#highlysensitiveperson0en-soft)" opacity="0.55"/>
-    <circle cx="330.0" cy="150" r="14" fill="url(#highlysensitiveperson0en-node)"/>
-    <text x="330.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">2</text>
-    <text x="330.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Hits a sensory ceiling in</text>
-    <text x="330.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">loud, busy settings sooner</text>
-    <text x="510.0" y="93.5" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Emotional Reactivity &amp;</text>
-    <text x="510.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Empathy</text>
-    <circle cx="510.0" cy="150" r="17" fill="url(#highlysensitiveperson0en-node)" filter="url(#highlysensitiveperson0en-soft)" opacity="0.55"/>
-    <circle cx="510.0" cy="150" r="14" fill="url(#highlysensitiveperson0en-node)"/>
-    <text x="510.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">3</text>
-    <text x="510.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Strong feeling responses and</text>
-    <text x="510.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">quick attunement to others</text>
-    <text x="690.0" y="93.5" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Sensitivity to</text>
-    <text x="690.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Subtleties</text>
-    <circle cx="690.0" cy="150" r="17" fill="url(#highlysensitiveperson0en-node)" filter="url(#highlysensitiveperson0en-soft)" opacity="0.55"/>
-    <circle cx="690.0" cy="150" r="14" fill="url(#highlysensitiveperson0en-node)"/>
-    <text x="690.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">4</text>
-    <text x="690.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Notices small cues and</text>
-    <text x="690.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">details others filter out</text>
-  </g>
-  <text x="420" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">A self-reflection framework — tendencies, not predictions.</text>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#highlysensitiveperson0en-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#highlysensitiveperson0en-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#highlysensitiveperson0en-neb2)"/>
+  <circle cx="264.6" cy="116.7" r="0.84" fill="#cfc8ea" opacity="0.13"/><circle cx="195.9" cy="260.4" r="0.92" fill="#cfc8ea" opacity="0.48"/><circle cx="438.9" cy="88.2" r="0.67" fill="#cfc8ea" opacity="0.15"/><circle cx="391.5" cy="294.0" r="0.81" fill="#cfc8ea" opacity="0.15"/><circle cx="148.1" cy="126.2" r="1.07" fill="#cfc8ea" opacity="0.30"/><circle cx="338.9" cy="23.9" r="1.06" fill="#cfc8ea" opacity="0.20"/><circle cx="540.2" cy="141.4" r="1.13" fill="#cfc8ea" opacity="0.24"/><circle cx="146.9" cy="14.5" r="0.42" fill="#cfc8ea" opacity="0.26"/><circle cx="556.1" cy="56.3" r="1.36" fill="#cfc8ea" opacity="0.21"/><circle cx="31.8" cy="100.5" r="1.54" fill="#cfc8ea" opacity="0.38"/><circle cx="602.4" cy="316.5" r="1.12" fill="#cfc8ea" opacity="0.47"/><circle cx="740.5" cy="137.7" r="0.90" fill="#cfc8ea" opacity="0.41"/><circle cx="480.2" cy="200.3" r="1.69" fill="#cfc8ea" opacity="0.52"/><circle cx="226.2" cy="232.4" r="0.54" fill="#cfc8ea" opacity="0.25"/><circle cx="730.0" cy="136.5" r="1.36" fill="#cfc8ea" opacity="0.40"/><circle cx="620.3" cy="196.5" r="1.48" fill="#cfc8ea" opacity="0.28"/><circle cx="87.8" cy="131.4" r="1.23" fill="#cfc8ea" opacity="0.13"/><circle cx="431.8" cy="276.8" r="1.05" fill="#cfc8ea" opacity="0.30"/><circle cx="355.3" cy="96.2" r="0.87" fill="#cfc8ea" opacity="0.29"/><circle cx="344.9" cy="120.2" r="1.12" fill="#cfc8ea" opacity="0.41"/><circle cx="372.2" cy="332.3" r="0.50" fill="#cfc8ea" opacity="0.40"/><circle cx="148.5" cy="127.2" r="0.70" fill="#cfc8ea" opacity="0.28"/><circle cx="195.1" cy="318.2" r="0.45" fill="#cfc8ea" opacity="0.31"/><circle cx="629.3" cy="124.6" r="0.84" fill="#cfc8ea" opacity="0.44"/><circle cx="633.4" cy="45.2" r="0.62" fill="#cfc8ea" opacity="0.28"/><circle cx="162.1" cy="358.7" r="0.40" fill="#cfc8ea" opacity="0.51"/><circle cx="272.1" cy="255.2" r="1.51" fill="#cfc8ea" opacity="0.17"/><circle cx="211.3" cy="31.1" r="1.05" fill="#cfc8ea" opacity="0.50"/><circle cx="55.9" cy="314.3" r="1.06" fill="#cfc8ea" opacity="0.24"/><circle cx="724.2" cy="244.1" r="0.70" fill="#cfc8ea" opacity="0.50"/><circle cx="360.2" cy="247.5" r="0.60" fill="#cfc8ea" opacity="0.12"/><path d="M 589.0175171364099 284.5 L 589.6 287.6 L 592.7 288.18446919647977 L 589.6 288.8 L 589.0175171364099 291.9 L 588.4 288.8 L 585.3 288.18446919647977 L 588.4 287.6 Z" fill="#f6e6bf" opacity="0.6491824291646481"/><path d="M 389.0409777853638 130.2 L 389.7 133.5 L 392.9 134.0892240111716 L 389.7 134.7 L 389.0409777853638 138.0 L 388.4 134.7 L 385.1 134.0892240111716 L 388.4 133.5 Z" fill="#f6e6bf" opacity="0.5024492382071912"/><path d="M 474.7545795161277 343.5 L 475.3 346.3 L 478.1 346.8333317465149 L 475.3 347.4 L 474.7545795161277 350.2 L 474.2 347.4 L 471.4 346.8333317465149 L 474.2 346.3 Z" fill="#f6e6bf" opacity="0.785880454443395"/><path d="M 99.12008952535689 340.4 L 99.6 342.8 L 102.0 343.3018739321269 L 99.6 343.8 L 99.12008952535689 346.2 L 98.7 343.8 L 96.2 343.3018739321269 L 98.7 342.8 Z" fill="#f6e6bf" opacity="0.7259056118316949"/><path d="M 524.033692734316 175.1 L 524.5 177.6 L 527.1 178.09113281173632 L 524.5 178.6 L 524.033692734316 181.1 L 523.6 178.6 L 521.0 178.09113281173632 L 523.6 177.6 Z" fill="#f6e6bf" opacity="0.6901648003607989"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">The Four Facets of High Sensitivity (DOES)</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#highlysensitiveperson0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#highlysensitiveperson0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#highlysensitiveperson0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#highlysensitiveperson0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Depth of Processing</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Takes input in and turns it over before responding</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#highlysensitiveperson0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#highlysensitiveperson0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Overstimulation</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Hits a sensory ceiling in loud, busy settings sooner</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#highlysensitiveperson0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#highlysensitiveperson0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Emotional Reactivity &amp; Empathy</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Strong feeling responses and quick attunement to others</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#highlysensitiveperson0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#highlysensitiveperson0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Sensitivity to Subtleties</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Notices small cues and details others filter out</text>
+  <path d="M 202.22749999999988 344.4 L 202.6 346.6 L 204.8 347 L 202.6 347.4 L 202.22749999999988 349.6 L 201.8 347.4 L 199.6 347 L 201.8 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 344.4 L 558.2 346.6 L 560.4 347 L 558.2 347.4 L 557.7725000000002 349.6 L 557.4 347.4 L 555.2 347 L 557.4 346.6 Z" fill="#d4af6a" opacity="0.5"/>
 </svg>

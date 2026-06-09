@@ -1,36 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 300" role="img" aria-label="十九年：踏实积累的长弧">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 377" role="img" aria-label="十九年：踏实积累的长弧">
   <defs>
-    <linearGradient id="saturnmahadasha0zh-panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    <linearGradient id="saturnmahadasha0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
     </linearGradient>
-    <radialGradient id="saturnmahadasha0zh-node" cx="0.5" cy="0.4" r="0.7">
-      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    <radialGradient id="saturnmahadasha0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
     </radialGradient>
-    <filter id="saturnmahadasha0zh-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+    <radialGradient id="saturnmahadasha0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnmahadasha0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnmahadasha0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnmahadasha0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect x="1.5" y="1.5" width="837" height="297" rx="22" fill="url(#saturnmahadasha0zh-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
-  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">十九年：踏实积累的长弧</text>
-  <line x1="44" y1="64" x2="796" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
-  <line x1="56" y1="150" x2="784" y2="150" stroke="#d4af6a" stroke-opacity="0.35"/>
-  <g text-anchor="middle">
-    <text x="177.3" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">前段</text>
-    <circle cx="177.3" cy="150" r="9" fill="url(#saturnmahadasha0zh-node)" filter="url(#saturnmahadasha0zh-soft)" opacity="0.6"/>
-    <circle cx="177.3" cy="150" r="6" fill="url(#saturnmahadasha0zh-node)"/>
-    <text x="177.3" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">延迟与负重</text>
-    <text x="177.3" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">常表现为责任加重、迟迟卡住，事情慢热难推</text>
-    <text x="177.3" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">。</text>
-    <text x="420.0" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">中段</text>
-    <circle cx="420.0" cy="150" r="9" fill="url(#saturnmahadasha0zh-node)" filter="url(#saturnmahadasha0zh-soft)" opacity="0.6"/>
-    <circle cx="420.0" cy="150" r="6" fill="url(#saturnmahadasha0zh-node)"/>
-    <text x="420.0" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">小运轮转</text>
-    <text x="420.0" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">大运里的小运每隔几年改变体感，并非一成不</text>
-    <text x="420.0" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">变。</text>
-    <text x="662.7" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#d4af6a">后段</text>
-    <circle cx="662.7" cy="150" r="9" fill="url(#saturnmahadasha0zh-node)" filter="url(#saturnmahadasha0zh-soft)" opacity="0.6"/>
-    <circle cx="662.7" cy="150" r="6" fill="url(#saturnmahadasha0zh-node)"/>
-    <text x="662.7" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#f3effb">结构成形</text>
-    <text x="662.7" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">回报来得晚：靠踏实努力搭起的根基逐渐累积</text>
-    <text x="662.7" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9a93b5">成形。</text>
-  </g>
-  <text x="420" y="278" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">自我反思框架，描述倾向而非预测。</text>
+  <rect x="1.5" y="1.5" width="757" height="374" rx="22" fill="url(#saturnmahadasha0zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="128" fill="url(#saturnmahadasha0zh-neb1)"/>
+  <ellipse cx="623" cy="302" rx="334" ry="121" fill="url(#saturnmahadasha0zh-neb2)"/>
+  <circle cx="412.0" cy="329.0" r="0.86" fill="#cfc8ea" opacity="0.43"/><circle cx="610.8" cy="363.0" r="1.00" fill="#cfc8ea" opacity="0.40"/><circle cx="672.5" cy="151.8" r="0.96" fill="#cfc8ea" opacity="0.46"/><circle cx="513.9" cy="133.6" r="0.69" fill="#cfc8ea" opacity="0.36"/><circle cx="582.2" cy="97.7" r="1.53" fill="#cfc8ea" opacity="0.23"/><circle cx="516.2" cy="150.4" r="0.88" fill="#cfc8ea" opacity="0.37"/><circle cx="715.2" cy="52.4" r="1.61" fill="#cfc8ea" opacity="0.49"/><circle cx="375.1" cy="88.5" r="1.42" fill="#cfc8ea" opacity="0.47"/><circle cx="645.0" cy="359.6" r="0.71" fill="#cfc8ea" opacity="0.45"/><circle cx="156.8" cy="267.9" r="1.12" fill="#cfc8ea" opacity="0.29"/><circle cx="373.3" cy="93.4" r="1.57" fill="#cfc8ea" opacity="0.33"/><circle cx="730.5" cy="345.0" r="1.12" fill="#cfc8ea" opacity="0.23"/><circle cx="355.6" cy="347.4" r="0.77" fill="#cfc8ea" opacity="0.29"/><circle cx="128.2" cy="207.3" r="1.29" fill="#cfc8ea" opacity="0.49"/><circle cx="472.6" cy="36.1" r="1.27" fill="#cfc8ea" opacity="0.34"/><circle cx="617.5" cy="225.0" r="1.61" fill="#cfc8ea" opacity="0.46"/><circle cx="400.5" cy="204.7" r="1.64" fill="#cfc8ea" opacity="0.47"/><circle cx="394.1" cy="266.7" r="1.52" fill="#cfc8ea" opacity="0.47"/><circle cx="133.6" cy="32.8" r="1.67" fill="#cfc8ea" opacity="0.46"/><circle cx="343.9" cy="128.0" r="1.67" fill="#cfc8ea" opacity="0.18"/><circle cx="422.5" cy="348.4" r="0.49" fill="#cfc8ea" opacity="0.50"/><circle cx="629.0" cy="58.6" r="0.47" fill="#cfc8ea" opacity="0.32"/><circle cx="399.3" cy="247.5" r="1.69" fill="#cfc8ea" opacity="0.32"/><circle cx="417.7" cy="319.8" r="1.63" fill="#cfc8ea" opacity="0.30"/><circle cx="66.6" cy="84.8" r="0.53" fill="#cfc8ea" opacity="0.45"/><circle cx="487.4" cy="261.9" r="1.00" fill="#cfc8ea" opacity="0.31"/><circle cx="242.1" cy="85.0" r="0.88" fill="#cfc8ea" opacity="0.51"/><circle cx="500.8" cy="46.1" r="0.65" fill="#cfc8ea" opacity="0.21"/><circle cx="24.7" cy="271.6" r="0.93" fill="#cfc8ea" opacity="0.47"/><circle cx="407.3" cy="123.7" r="1.49" fill="#cfc8ea" opacity="0.34"/><circle cx="417.6" cy="276.6" r="0.49" fill="#cfc8ea" opacity="0.15"/><circle cx="192.3" cy="108.5" r="0.61" fill="#cfc8ea" opacity="0.25"/><path d="M 238.85560736060143 78.3 L 239.4 81.4 L 242.4 81.9300643845927 L 239.4 82.5 L 238.85560736060143 85.5 L 238.3 82.5 L 235.3 81.9300643845927 L 238.3 81.4 Z" fill="#f6e6bf" opacity="0.7777850727317854"/><path d="M 426.1291547641158 35.1 L 426.7 38.0 L 429.6 38.54084781720303 L 426.7 39.1 L 426.1291547641158 42.0 L 425.6 39.1 L 422.7 38.54084781720303 L 425.6 38.0 Z" fill="#f6e6bf" opacity="0.5041411427548155"/><path d="M 31.686825469136238 62.5 L 32.3 65.7 L 35.5 66.26442703488283 L 32.3 66.9 L 31.686825469136238 70.0 L 31.1 66.9 L 27.9 66.26442703488283 L 31.1 65.7 Z" fill="#f6e6bf" opacity="0.6755242229206487"/><path d="M 569.225120253861 274.8 L 569.8 277.7 L 572.7 278.21794876805507 L 569.8 278.8 L 569.225120253861 281.7 L 568.7 278.8 L 565.8 278.21794876805507 L 568.7 277.7 Z" fill="#f6e6bf" opacity="0.7746385473525151"/><path d="M 255.88167148828506 78.2 L 256.3 80.3 L 258.3 80.67986422101967 L 256.3 81.1 L 255.88167148828506 83.1 L 255.5 81.1 L 253.4 80.67986422101967 L 255.5 80.3 Z" fill="#f6e6bf" opacity="0.6583746752468869"/><path d="M 715.2 52.4 L 133.6 32.8 L 399.3 247.5 L 500.8 46.1 L 24.7 271.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="374" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="363" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 357.8 L 16.5 360.5 L 19.2 361 L 16.5 361.5 L 16 364.2 L 15.5 361.5 L 12.8 361 L 15.5 360.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 357.8 L 744.5 360.5 L 747.2 361 L 744.5 361.5 L 744 364.2 L 743.5 361.5 L 740.8 361 L 743.5 360.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">十九年：踏实积累的长弧</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturnmahadasha0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturnmahadasha0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="277" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#saturnmahadasha0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#saturnmahadasha0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">前段</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">延迟与负重</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">常表现为责任加重、迟迟卡住，事情慢热难推。</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#saturnmahadasha0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#saturnmahadasha0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">中段</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">小运轮转</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">大运里的小运每隔几年改变体感，并非一成不变。</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#saturnmahadasha0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#saturnmahadasha0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">后段</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">结构成形</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">回报来得晚：靠踏实努力搭起的根基逐渐累积成形。</text>
+  <path d="M 280.025 348.4 L 280.4 350.6 L 282.6 351 L 280.4 351.4 L 280.025 353.6 L 279.6 351.4 L 277.4 351 L 279.6 350.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="355" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 348.4 L 480.4 350.6 L 482.6 351 L 480.4 351.4 L 479.975 353.6 L 479.6 351.4 L 477.4 351 L 479.6 350.6 Z" fill="#d4af6a" opacity="0.5"/>
 </svg>

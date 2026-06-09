@@ -1,40 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 250" role="img" aria-label="Four Kinds of Transit Contact">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="Four Kinds of Transit Contact">
   <defs>
-    <linearGradient id="natalcharttransits1en-panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#16112c"/><stop offset="1" stop-color="#0b0a1b"/>
+    <linearGradient id="natalcharttransits1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
     </linearGradient>
-    <radialGradient id="natalcharttransits1en-node" cx="0.5" cy="0.4" r="0.7">
-      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#cda354"/>
+    <radialGradient id="natalcharttransits1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
     </radialGradient>
-    <filter id="natalcharttransits1en-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+    <radialGradient id="natalcharttransits1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="natalcharttransits1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="natalcharttransits1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="natalcharttransits1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect x="1.5" y="1.5" width="837" height="247" rx="22" fill="url(#natalcharttransits1en-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
-  <text x="44" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#efeaf8">Four Kinds of Transit Contact</text>
-  <line x1="44" y1="64" x2="796" y2="64" stroke="#d4af6a" stroke-opacity="0.18"/>
-  <line x1="150.0" y1="150" x2="690.0" y2="150" stroke="#d4af6a" stroke-opacity="0.30"/>
-  <g text-anchor="middle">
-    <text x="150.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Outer-planet contact</text>
-    <circle cx="150.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
-    <circle cx="150.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
-    <text x="150.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">1</text>
-    <text x="150.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Slow, in orb for months or</text>
-    <text x="150.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">years</text>
-    <text x="330.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Inner-planet contact</text>
-    <circle cx="330.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
-    <circle cx="330.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
-    <text x="330.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">2</text>
-    <text x="330.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Fast, hours to days</text>
-    <text x="510.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Exact orb</text>
-    <circle cx="510.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
-    <circle cx="510.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
-    <text x="510.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">3</text>
-    <text x="510.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Peaks within one degree</text>
-    <text x="690.0" y="110" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" fill="#f3effb">Retrograde transit</text>
-    <circle cx="690.0" cy="150" r="17" fill="url(#natalcharttransits1en-node)" filter="url(#natalcharttransits1en-soft)" opacity="0.55"/>
-    <circle cx="690.0" cy="150" r="14" fill="url(#natalcharttransits1en-node)"/>
-    <text x="690.0" y="154.5" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#2a2012">4</text>
-    <text x="690.0" y="184" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">Same point hit up to three</text>
-    <text x="690.0" y="198.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#9a93b5">times</text>
-  </g>
-  <text x="420" y="228" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">A self-reflection framework — tendencies, not predictions.</text>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#natalcharttransits1en-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#natalcharttransits1en-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#natalcharttransits1en-neb2)"/>
+  <circle cx="668.6" cy="22.8" r="0.42" fill="#cfc8ea" opacity="0.19"/><circle cx="520.5" cy="82.3" r="1.47" fill="#cfc8ea" opacity="0.28"/><circle cx="663.5" cy="232.3" r="0.92" fill="#cfc8ea" opacity="0.27"/><circle cx="708.5" cy="255.6" r="1.64" fill="#cfc8ea" opacity="0.42"/><circle cx="316.4" cy="319.5" r="1.54" fill="#cfc8ea" opacity="0.30"/><circle cx="521.8" cy="310.6" r="0.97" fill="#cfc8ea" opacity="0.45"/><circle cx="472.3" cy="171.0" r="1.24" fill="#cfc8ea" opacity="0.12"/><circle cx="540.3" cy="359.0" r="0.52" fill="#cfc8ea" opacity="0.16"/><circle cx="568.8" cy="244.4" r="1.28" fill="#cfc8ea" opacity="0.54"/><circle cx="635.8" cy="339.1" r="0.68" fill="#cfc8ea" opacity="0.45"/><circle cx="64.0" cy="15.5" r="1.33" fill="#cfc8ea" opacity="0.40"/><circle cx="690.1" cy="179.4" r="1.03" fill="#cfc8ea" opacity="0.46"/><circle cx="197.4" cy="213.8" r="1.48" fill="#cfc8ea" opacity="0.38"/><circle cx="176.9" cy="71.9" r="1.14" fill="#cfc8ea" opacity="0.15"/><circle cx="371.9" cy="213.3" r="1.00" fill="#cfc8ea" opacity="0.38"/><circle cx="466.2" cy="349.5" r="1.23" fill="#cfc8ea" opacity="0.21"/><circle cx="605.0" cy="329.0" r="0.46" fill="#cfc8ea" opacity="0.32"/><circle cx="369.1" cy="94.9" r="0.54" fill="#cfc8ea" opacity="0.40"/><circle cx="31.9" cy="20.2" r="1.03" fill="#cfc8ea" opacity="0.54"/><circle cx="546.1" cy="195.7" r="0.94" fill="#cfc8ea" opacity="0.45"/><circle cx="501.4" cy="171.2" r="1.36" fill="#cfc8ea" opacity="0.23"/><circle cx="494.1" cy="121.2" r="1.01" fill="#cfc8ea" opacity="0.14"/><circle cx="44.6" cy="138.8" r="0.65" fill="#cfc8ea" opacity="0.17"/><circle cx="524.2" cy="193.2" r="1.58" fill="#cfc8ea" opacity="0.29"/><circle cx="537.4" cy="139.2" r="1.01" fill="#cfc8ea" opacity="0.32"/><circle cx="292.3" cy="216.4" r="0.64" fill="#cfc8ea" opacity="0.52"/><circle cx="507.9" cy="280.4" r="0.91" fill="#cfc8ea" opacity="0.16"/><circle cx="258.5" cy="92.0" r="1.21" fill="#cfc8ea" opacity="0.38"/><circle cx="569.2" cy="103.0" r="1.53" fill="#cfc8ea" opacity="0.38"/><circle cx="626.1" cy="205.1" r="0.77" fill="#cfc8ea" opacity="0.45"/><circle cx="519.7" cy="34.5" r="1.02" fill="#cfc8ea" opacity="0.39"/><path d="M 62.98549505695701 195.7 L 63.6 198.7 L 66.6 199.30346446321346 L 63.6 199.9 L 62.98549505695701 202.9 L 62.4 199.9 L 59.4 199.30346446321346 L 62.4 198.7 Z" fill="#f6e6bf" opacity="0.6369718555593863"/><path d="M 134.16745390370488 179.5 L 134.8 182.6 L 137.9 183.21422976185568 L 134.8 183.8 L 134.16745390370488 187.0 L 133.6 183.8 L 130.4 183.21422976185568 L 133.6 182.6 Z" fill="#f6e6bf" opacity="0.7793338432209567"/><path d="M 589.1974846832454 106.8 L 589.7 109.7 L 592.6 110.22555335634388 L 589.7 110.8 L 589.1974846832454 113.6 L 588.6 110.8 L 585.8 110.22555335634388 L 588.6 109.7 Z" fill="#f6e6bf" opacity="0.5570419380674139"/><path d="M 508.0844508446753 205.0 L 508.6 207.9 L 511.6 208.48887705919333 L 508.6 209.1 L 508.0844508446753 212.0 L 507.5 209.1 L 504.6 208.48887705919333 L 507.5 207.9 Z" fill="#f6e6bf" opacity="0.5024667789461091"/><path d="M 710.1374782882631 275.1 L 710.7 277.9 L 713.5 278.3919135874603 L 710.7 278.9 L 710.1374782882631 281.7 L 709.6 278.9 L 706.8 278.3919135874603 L 709.6 277.9 Z" fill="#f6e6bf" opacity="0.6841373756760731"/><path d="M 316.4 319.5 L 371.9 213.3 L 258.5 92.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Four Kinds of Transit Contact</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#natalcharttransits1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#natalcharttransits1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#natalcharttransits1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#natalcharttransits1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Outer-planet contact</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Slow, in orb for months or years</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#natalcharttransits1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#natalcharttransits1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Inner-planet contact</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Fast, hours to days</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#natalcharttransits1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#natalcharttransits1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Exact orb</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Peaks within one degree</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#natalcharttransits1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#natalcharttransits1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Retrograde transit</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Same point hit up to three times</text>
+  <path d="M 202.22749999999988 344.4 L 202.6 346.6 L 204.8 347 L 202.6 347.4 L 202.22749999999988 349.6 L 201.8 347.4 L 199.6 347 L 201.8 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 344.4 L 558.2 346.6 L 560.4 347 L 558.2 347.4 L 557.7725000000002 349.6 L 557.4 347.4 L 555.2 347 L 557.4 346.6 Z" fill="#d4af6a" opacity="0.5"/>
 </svg>
