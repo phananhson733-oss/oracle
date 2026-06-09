@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const orangeAuraMeaningEn: WikiArticle = {
   slug: "orange-aura-meaning",
   image: "/images/aura/orange-aura-meaning.jpg",
-  image_alt: "orange aura energy field, sacral chakra warmth and creative drive",
+  image_alt:
+    "orange aura energy field, sacral chakra warmth and creative drive",
   title: "Why an Orange Aura Reads as Drive, Pleasure, and Connection",
   description:
     "Orange Aura is the energy field most commonly read as a warm, creative current tied to the sacral center. In plain terms, it points to someone who runs on...",
@@ -43,7 +44,11 @@ In my years reading auras — eight of them now, following an earlier career in 
 
 The clearest way to pin down orange aura meaning is to set this color beside the ones it gets confused with, since orange sits right between red and yellow on the warm end of the spectrum. Red aura runs on drive, grounding, and physical boundaries — the way it works is to push energy down and out, fueling action and protecting your edges. Orange softens that downward push into pleasure and relating; instead of holding a boundary, it keeps creative and emotional energy moving between you and the people around you. The trade-off is honest: to get orange's social warmth and flexibility, you give up some of red's hard edges, which is exactly why so many orange-leaning people struggle to say no. If you recognize more of that protective, boundaried energy in yourself, the [comparison with the red aura entry](/en/wiki/red-aura-meaning) is worth a look.
 
+### Against yellow aura
+
 Yellow aura makes a useful contrast on the other side. Yellow leads with confidence, mental clarity, and a certain sunny detachment — it tends to process the world through the head and keep a little distance from the emotional weather. Orange leads with feeling and the body instead. The way it functions is to read the emotional temperature of a room and respond to it, often before anyone has said a word out loud. To get that relational openness and quick attunement, you sacrifice some of yellow's cool steadiness: orange feels everything that moves through a space, and that sensitivity is both its real gift and its hidden cost. Where a yellow type can shrug off a tense dinner and move on, an orange one tends to carry the whole evening home and replay it.
+
+### Vibrant, muddy, and amber orange
 
 The harder comparison is orange measured against itself, because the very same color reads in three distinct ways depending on its shade. A vibrant, clear orange works like an open tap — creative ideas and social warmth pour out easily, and you rarely stop to wonder whether you have enough left to give. A muddy or darkened orange is that same energy running low: the giving continues out of habit, but it's shadowed by guilt and a quiet depletion, and rest starts to feel like something you have to earn rather than something you're allowed. Amber or gold-orange is the most settled of the three — creativity that no longer needs an audience to feel real, paired with a warm, steady kind of authority. None of these shades makes you a better or worse person than the others; each is a snapshot of where your energy happens to sit today, which is why treating any single shade as a permanent identity tends to do more harm than good.
 
@@ -125,7 +130,8 @@ Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your col
 export const orangeAuraMeaningZh: WikiArticle = {
   slug: "orange-aura-meaning",
   image: "/images/aura/orange-aura-meaning.jpg",
-  image_alt: "orange aura energy field, sacral chakra warmth and creative drive",
+  image_alt:
+    "orange aura energy field, sacral chakra warmth and creative drive",
   title: "橙色气场到底在说你的哪种能量",
   description:
     "橙色气场（Orange Aura）是西方灵性圈用来描述以创造力和情绪流动为主调的能量场的说法，和红色、黄色并列，是 气场颜色总览 pillar 页...",
