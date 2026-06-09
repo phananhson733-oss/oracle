@@ -1,0 +1,58 @@
+{
+  "_comment": "sibling-comparison infographics. Siblings + contrasts decided by the LLM planning layer (per each article's actual 'vs Adjacent Concepts' prose). Swatch hue = the sibling color; label = how that neighbor differs.",
+  "footnote": "Neighboring colors share a region of the spectrum but carry distinct mechanisms — not a ranking.",
+  "colors": {
+    "red-aura": {
+      "title": "How red aura differs from its neighbors",
+      "shades": [
+        { "name": "Orange", "lines": ["Creative-social,", "not survival drive"], "from": "#ffb15a", "to": "#d97724" },
+        { "name": "Yellow", "lines": ["Identity-led, not", "physical impulse"], "from": "#ffe27a", "to": "#e0b033" }
+      ]
+    },
+    "orange-aura": {
+      "title": "How orange aura differs from its neighbors",
+      "shades": [
+        { "name": "Red", "lines": ["Boundaried drive,", "not relating"], "from": "#ff5a5a", "to": "#b01e2e" },
+        { "name": "Yellow", "lines": ["Cool-headed, not", "feeling-led"], "from": "#ffe27a", "to": "#e0b033" }
+      ]
+    },
+    "yellow-aura": {
+      "title": "How yellow aura differs from its neighbors",
+      "shades": [
+        { "name": "Orange", "lines": ["Body-led start,", "not head-led plan"], "from": "#ffb15a", "to": "#d97724" },
+        { "name": "Green", "lines": ["Heart-balancing,", "not solar drive"], "from": "#7fe0a0", "to": "#3f9a64" },
+        { "name": "Blue", "lines": ["Slow-careful,", "not quick-warm"], "from": "#7ab8ff", "to": "#3a72c4" }
+      ]
+    },
+    "green-aura": {
+      "title": "How green aura differs from its neighbors",
+      "shades": [
+        { "name": "Yellow", "lines": ["Self-forward drive,", "not heart-led care"], "from": "#ffe27a", "to": "#e0b033" },
+        { "name": "Blue", "lines": ["Articulate distance,", "not attunement"], "from": "#7ab8ff", "to": "#3a72c4" }
+      ]
+    },
+    "blue-aura": {
+      "title": "How blue aura differs from its neighbors",
+      "shades": [
+        { "name": "Green", "lines": ["Heart warmth, one", "step upstream"], "from": "#7fe0a0", "to": "#3f9a64" },
+        { "name": "Yellow", "lines": ["Quick-warm spark,", "not cool delivery"], "from": "#ffe27a", "to": "#e0b033" },
+        { "name": "Purple", "lines": ["Inward depth, less", "everyday legible"], "from": "#b89cff", "to": "#7250c0" }
+      ]
+    },
+    "purple-aura": {
+      "title": "How purple aura differs from its neighbors",
+      "shades": [
+        { "name": "Blue", "lines": ["Outward voice, not", "inward meaning"], "from": "#7ab8ff", "to": "#3a72c4" },
+        { "name": "White", "lines": ["All-purpose balance,", "not one register"], "from": "#ffffff", "to": "#c9c4e0" }
+      ]
+    },
+    "white-aura": {
+      "title": "How white aura differs from its neighbors",
+      "shades": [
+        { "name": "Purple", "lines": ["Steps back from", "pattern-spotting"], "from": "#b89cff", "to": "#7250c0" },
+        { "name": "Blue", "lines": ["Quiet presence,", "not articulate voice"], "from": "#7ab8ff", "to": "#3a72c4" },
+        { "name": "Green", "lines": ["Warmth stepped back,", "not toward people"], "from": "#7fe0a0", "to": "#3f9a64" }
+      ]
+    }
+  }
+}

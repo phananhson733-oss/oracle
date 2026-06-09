@@ -1,0 +1,36 @@
+{
+  "_comment": "Inline-only plan (no hero) — placements decided by the LLM planning layer per each article's content. Executed by illustrate-article.mjs (inserts ![alt](url) at the end of each named section).",
+  "imagesDir": "public/images/aura",
+  "urlBase": "/images/aura",
+  "articlesDir": "data/articles",
+  "articles": {
+    "red-aura-meaning": { "inline": [
+      { "afterHeading": "## Quick Reference Table", "url": "/images/aura/red-aura-shades.svg", "alt": "the four red aura shades and what each one signals" },
+      { "afterHeading": "## Red Aura vs Adjacent Concepts: Mechanism + Trade-offs", "url": "/images/aura/red-aura-vs.svg", "alt": "red aura compared with its neighbors orange and yellow" }
+    ]},
+    "orange-aura-meaning": { "inline": [
+      { "afterHeading": "## Orange Aura at a Glance", "url": "/images/aura/orange-aura-shades.svg", "alt": "the three orange aura shades from vibrant to muddy to amber" },
+      { "afterHeading": "## Orange Aura vs Adjacent Concepts: How It Works + Trade-offs", "url": "/images/aura/orange-aura-vs.svg", "alt": "orange aura compared with its neighbors red and yellow" }
+    ]},
+    "yellow-aura-meaning": { "inline": [
+      { "afterHeading": "## Quick Reference Table", "url": "/images/aura/yellow-aura-shades.svg", "alt": "the four yellow aura shades from bright to muddy to gold" },
+      { "afterHeading": "## Yellow Aura vs Adjacent Concepts: Mechanism + Trade-offs", "url": "/images/aura/yellow-aura-vs.svg", "alt": "yellow aura compared with orange, green, and blue" }
+    ]},
+    "green-aura-meaning": { "inline": [
+      { "afterHeading": "## Green Aura at a Glance", "url": "/images/aura/green-aura-shades.svg", "alt": "the four green aura shades from emerald to forest to muddy to mint" },
+      { "afterHeading": "## Green Aura vs Adjacent Concepts: How It Works + Trade-offs", "url": "/images/aura/green-aura-vs.svg", "alt": "green aura compared with its neighbors yellow and blue" }
+    ]},
+    "blue-aura-meaning": { "inline": [
+      { "afterHeading": "## Quick Reference Table", "url": "/images/aura/blue-aura-shades.svg", "alt": "the four blue aura shades from light to mid to deep indigo" },
+      { "afterHeading": "## Blue Aura vs Adjacent Concepts: Mechanism + Trade-offs", "url": "/images/aura/blue-aura-vs.svg", "alt": "blue aura compared with green, yellow, and purple" }
+    ]},
+    "purple-aura-meaning": { "inline": [
+      { "afterHeading": "## Quick Reference Table", "url": "/images/aura/purple-aura-shades.svg", "alt": "the four purple aura shades from lavender to mid to deep near-indigo" },
+      { "afterHeading": "## Purple Aura vs Adjacent Concepts: Mechanism + Trade-offs", "url": "/images/aura/purple-aura-vs.svg", "alt": "purple aura compared with blue and white" }
+    ]},
+    "white-aura-meaning": { "inline": [
+      { "afterHeading": "## Quick Reference Table", "url": "/images/aura/white-aura-shades.svg", "alt": "the white aura shades from bright clear to grey to silver" },
+      { "afterHeading": "## White Aura vs Adjacent Concepts: Mechanism + Trade-offs", "url": "/images/aura/white-aura-vs.svg", "alt": "white aura compared with purple, blue, and green" }
+    ]}
+  }
+}

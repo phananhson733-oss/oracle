@@ -55,6 +55,8 @@ A practical caveat applies to every one of these contrasts. Aura color systems a
 
 One last note on the "am I imagining it" question that drives much of the search traffic. The traditions themselves do not require you to literally see color to use the framework. Many readers use the vocabulary based on temperament: they read a description, recognize themselves, and start using the label as a way of naming a tendency they had not previously had a word for. That is a legitimate use of the purple aura meaning even if you have never seen a colored field around anyone, including yourself. The framework rewards attention to inner pattern, not certainty about visual perception, and the readers who get the most value from it tend to be the ones who treat the color name as a working description of their own attention rather than a perceptual claim they need to defend to a skeptic or prove to themselves on a bad day.
 
+
+![purple aura compared with blue and white](/images/aura/purple-aura-vs.svg)
 ## How to Read Purple Aura in Yourself
 
 Purple aura tends to manifest as a perceptual or relational signal before becoming visual.
@@ -93,6 +95,8 @@ current orientation — not a rank, achievement, or fixed identity.
 | Deep purple / near-indigo | Strong inner pattern recognition, drawn to structure beneath surface | Third eye-dominant, crown nearby | Read as detached when the person is simply running an inner thread |
 | Purple flickering with blue | Inner meaning-making trying to translate into words | Crown plus throat | Read as scattered when the person is mid-articulation |
 
+
+![the four purple aura shades from lavender to mid to deep near-indigo](/images/aura/purple-aura-shades.svg)
 ## Reflection Prompts
 
 1. Think of a recent moment when a conversation felt meaningful, what specifically drew your attention inward rather than to the speaker's words?

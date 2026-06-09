@@ -57,6 +57,8 @@ There is also a sober limit to mention. White, like every aura colour, is a self
 
 One more comparison is worth drawing, this time against green, because the two are easy to confuse in someone who is gentle and unhurried. Green, tied to the heart area, reads as warmth that moves toward people — tending, repairing, drawing closer. White reads as warmth that has stepped back from the work of relating into something quieter and less directed. A friend who spends an evening patiently talking someone through a hard decision is showing the green-leaning move; the same friend, a week later, sitting with that person and saying almost nothing while the room settles, is closer to the white-leaning one. The honest trade-off is that white's spaciousness can read as distance, and someone who needs active comfort may find it cool rather than soothing. Naming which one is actually present on a given day keeps the reader from mistaking a need for rest for a loss of care.
 
+
+![white aura compared with purple, blue, and green](/images/aura/white-aura-vs.svg)
 ## How to Read White Aura in Yourself
 
 White aura often appears during transitional states — it can be easy to misread as "nothing"
@@ -95,6 +97,8 @@ Reading white as a fixed identity rather than a current state leads to misapplic
 | Silver-white | Reads as receptive and atmospherically sensitive, more tuned to mood than to action | Crown, with overlap toward third-eye sensitivity | Confused with bright white or labelled as a fixed "psychic gift" |
 | White as integrative state | Treated by some lineages as an "all-color" blend, not a rank on a ladder | Crown, framed as integration of the lower centres | Mistaken for the top of an aura colour hierarchy |
 
+
+![the white aura shades from bright clear to grey to silver](/images/aura/white-aura-shades.svg)
 ## Reflection Prompts
 
 1. Think of a recent moment when your presence felt clean and uncluttered; what had you stopped doing in the hours before that white aura meaning seemed to fit?

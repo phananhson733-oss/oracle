@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 286" role="img" aria-label="White aura shades — and what each one signals: Bright / clear, Grey-white, Silver-white, Integrative">
+  <defs>
+    <linearGradient id="white-aura-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/>
+      <stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="white-aura-0" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfcae4"/></radialGradient>
+    <radialGradient id="white-aura-1" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#b8b4c4"/><stop offset="1" stop-color="#7c7890"/></radialGradient>
+    <radialGradient id="white-aura-2" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#dfe2ee"/><stop offset="1" stop-color="#a9adc4"/></radialGradient>
+    <radialGradient id="white-aura-3" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#edeaf6"/><stop offset="1" stop-color="#bcb6d0"/></radialGradient>
+    <filter id="white-aura-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="837" height="283" rx="22" fill="url(#white-aura-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill="#efeaf8">White aura shades — and what each one signals</text>
+  <line x1="44" y1="68" x2="796" y2="68" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <circle cx="157.5" cy="128" r="30" fill="url(#white-aura-0)" filter="url(#white-aura-soft)"/>
+    <circle cx="157.5" cy="128" r="23" fill="url(#white-aura-0)"/>
+    <text x="157.5" y="186" font-size="17" fill="#f3effb">Bright / clear</text>
+    <text x="157.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Presence, mental quiet,</text>
+    <text x="157.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">outward orientation</text>
+    <circle cx="332.5" cy="128" r="30" fill="url(#white-aura-1)" filter="url(#white-aura-soft)"/>
+    <circle cx="332.5" cy="128" r="23" fill="url(#white-aura-1)"/>
+    <text x="332.5" y="186" font-size="17" fill="#f3effb">Grey-white</text>
+    <text x="332.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Depletion, over-giving,</text>
+    <text x="332.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">poor recovery</text>
+    <circle cx="507.5" cy="128" r="30" fill="url(#white-aura-2)" filter="url(#white-aura-soft)"/>
+    <circle cx="507.5" cy="128" r="23" fill="url(#white-aura-2)"/>
+    <text x="507.5" y="186" font-size="17" fill="#f3effb">Silver-white</text>
+    <text x="507.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Receptive, tuned to</text>
+    <text x="507.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">atmosphere and mood</text>
+    <circle cx="682.5" cy="128" r="30" fill="url(#white-aura-3)" filter="url(#white-aura-soft)"/>
+    <circle cx="682.5" cy="128" r="23" fill="url(#white-aura-3)"/>
+    <text x="682.5" y="186" font-size="17" fill="#f3effb">Integrative</text>
+    <text x="682.5" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">An all-color blend,</text>
+    <text x="682.5" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">not a rank</text>
+  </g>
+  <text x="420" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">Shade describes a current state, not a fixed trait — most people move across these over time.</text>
+</svg>

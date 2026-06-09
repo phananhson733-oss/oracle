@@ -50,6 +50,8 @@ Two common confusions are worth flagging. First, people sometimes see "different
 
 One more practical contrast: blue versus red. Red aura readings are typically tied to the root area and described as physical, action-driven, and quick to assert. To get red's drive and immediacy, you sacrifice some of the throat reading's patience and editorial restraint. People often have one as a default and the other as a back-up gear they reach for under pressure. Knowing which is which is useful when you are choosing a job, a co-founder, or how to plan a hard conversation. The point of the comparisons is not to rank colors but to give you language for trade-offs you are already making by temperament.
 
+
+![blue aura compared with green, yellow, and purple](/images/aura/blue-aura-vs.svg)
 ## How to Read Blue Aura in Yourself
 
 Blue aura tends to manifest as a communication or perceptual signal before becoming a visual one.
@@ -86,6 +88,8 @@ highly active. What reads as "calm" may be sustained internal processing.
 | Deep / indigo blue | Inward intuition, slower processing, protective of inner convictions | Throat area extending toward the brow | Read as aloof or "psychic" rather than introspective |
 | Blue with grey haze | Communication style under stress; words held back or filtered | Throat center, restricted flow | Read as dishonesty instead of fatigue or caution |
 
+
+![the four blue aura shades from light to mid to deep indigo](/images/aura/blue-aura-shades.svg)
 ## Reflection Prompts
 
 1. Think of a recent moment when you stayed quiet to choose words carefully — was that clarity, or avoidance dressed up as calm in your blue aura meaning?

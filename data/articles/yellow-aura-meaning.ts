@@ -54,6 +54,8 @@ Yellow aura vs throat-led blue energy. Blue is usually read as a calmer, communi
 
 A practical caveat applies across these comparisons: aura color systems are not consistent across traditions. One school will split bright yellow and gold into separate categories; another will collapse them; a third will treat shade variation as more meaningful than category. When you read a description that does not match yours, the move is not to declare a source wrong; it is to ask which lineage is being used, and whether its way of assigning the color matches the question you actually came in with. Most disagreements between aura sources are not "is yellow good or bad" — they are which sub-shade each writer is centering as the default, and how strict each one is about separating gold from plain yellow.
 
+
+![yellow aura compared with orange, green, and blue](/images/aura/yellow-aura-vs.svg)
 ## How to Read Yellow Aura in Yourself
 
 Yellow aura often reveals itself through a person's relationship with creative energy and self-confidence.
@@ -91,6 +93,8 @@ Yellow governs personal power and mental clarity — capacities that require sus
 | Gold or metallic yellow | Confidence settling into teaching or guiding others | Solar plexus, with overlap toward heart and throat | Read as ego or grandiosity; usually reads as steady authority |
 | Yellow-green edge | Mental energy bleeding into anxiety or comparison | Solar plexus drifting toward heart | Read as jealousy; often just overthinking dressed as feeling |
 
+
+![the four yellow aura shades from bright to muddy to gold](/images/aura/yellow-aura-shades.svg)
 ## Reflection Prompts
 
 1. Think of a recent week when your thinking felt sharp and your sleep felt fine — did the yellow aura meaning of "bright, in range" match how you actually showed up?

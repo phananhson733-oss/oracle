@@ -47,6 +47,8 @@ Yellow aura makes a useful contrast on the other side. Yellow leads with confide
 
 The harder comparison is orange measured against itself, because the very same color reads in three distinct ways depending on its shade. A vibrant, clear orange works like an open tap — creative ideas and social warmth pour out easily, and you rarely stop to wonder whether you have enough left to give. A muddy or darkened orange is that same energy running low: the giving continues out of habit, but it's shadowed by guilt and a quiet depletion, and rest starts to feel like something you have to earn rather than something you're allowed. Amber or gold-orange is the most settled of the three — creativity that no longer needs an audience to feel real, paired with a warm, steady kind of authority. None of these shades makes you a better or worse person than the others; each is a snapshot of where your energy happens to sit today, which is why treating any single shade as a permanent identity tends to do more harm than good.
 
+
+![orange aura compared with its neighbors red and yellow](/images/aura/orange-aura-vs.svg)
 ## How to Read Orange Aura in Yourself
 
 You don't need a special photograph or a professional reader to catch orange in yourself — it tends to show up in ordinary moments. Watch for these signals:
@@ -74,6 +76,8 @@ Most of the confusion around orange aura meaning comes from a handful of misread
 | Muddy / dark orange | Pleasure and giving turn inward as guilt or depletion | Sacral center, running low | You feel drained after generosity and resist resting |
 | Amber / gold-orange | Mature creativity steadied by a warm, calm authority | Sacral center, balanced | You create and lead without needing applause |
 
+
+![the three orange aura shades from vibrant to muddy to amber](/images/aura/orange-aura-shades.svg)
 ## Common Questions About Orange Aura
 
 **What does an orange aura mean spiritually?**

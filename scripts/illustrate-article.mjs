@@ -100,9 +100,14 @@ function insertInline(slug, heading, url, alt) {
   if (src.includes(`](${url})`)) return false; // already present
   const idx = src.indexOf(heading + '\n');
   if (idx < 0) throw new Error(`heading not found in ${file}: ${heading}`);
-  const eol = idx + heading.length; // points at the '\n'
+  const afterHeading = idx + heading.length;
+  // Insert at the END of this section (just before the next "## " heading) so the
+  // image follows the section's prose/table rather than splitting a heading from
+  // its content. Falls back to right-after-heading if no following heading.
+  const nextH = src.indexOf('\n## ', afterHeading + 1);
+  const insertAt = nextH >= 0 ? nextH : afterHeading;
   const imgMd = `\n\n![${alt}](${url})`;
-  src = src.slice(0, eol) + imgMd + src.slice(eol);
+  src = src.slice(0, insertAt) + imgMd + src.slice(insertAt);
   fs.writeFileSync(file, src);
   return true;
 }

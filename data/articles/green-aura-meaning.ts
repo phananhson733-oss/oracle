@@ -49,6 +49,8 @@ Green also reads differently from blue aura, which is throat-centred and leads w
 
 The sharpest contrast, though, sits inside green itself, between its clear and muddy shades. A vibrant or emerald green works by directing care toward genuine repair, while a muddy, yellow-green shows what happens when that same caring energy curdles into comparison and keeping score. The difference isn't really a new color so much as the same orientation under strain — the cost of caring deeply is that, left unprocessed, it can tip into resentment. Reading the shade honestly tells you whether your green is feeding you or quietly running you down. None of this is fixed; it describes how the energy tends to function, not a rule about who you have to be.
 
+
+![green aura compared with its neighbors yellow and blue](/images/aura/green-aura-vs.svg)
 ## How to Read Green Aura in Yourself
 
 Reading green aura meaning in yourself is less about staring at a photo and more about noticing recurring patterns in how you spend and recover your energy day to day. A few honest signals worth watching for:
@@ -79,6 +81,8 @@ Most of the trouble around green aura meaning comes from a handful of misreading
 | Muddy / yellow-green | Signals comparison or unprocessed resentment moving through | Heart center under strain | You catch envy or score-keeping creeping into close ties |
 | Mint / light green | Opens a fresh emotional start and gentle renewal | Heart center, newly active | You feel cautiously hopeful after a stretch of repair |
 
+
+![the four green aura shades from emerald to forest to muddy to mint](/images/aura/green-aura-shades.svg)
 ## Common Questions About Green Aura
 
 **What does a green aura mean spiritually?**

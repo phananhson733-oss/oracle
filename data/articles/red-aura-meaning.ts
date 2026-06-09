@@ -53,6 +53,8 @@ Scarlet, the bright assertive shade, sits between the two and is the one most of
 
 The honest framework limit: aura readings are interpretive vocabulary used in subtle-energy practice. They are not measurable electromagnetic phenomena, and they are not psychiatric assessments. Muddy red is not a diagnosis of an anger problem; it is a prompt to ask what has been wearing you out.
 
+
+![red aura compared with its neighbors orange and yellow](/images/aura/red-aura-vs.svg)
 ## How to Read Red Aura in Yourself
 
 Red aura is one of the easiest to sense physically — it tends to manifest as heat,
@@ -88,6 +90,8 @@ Red is foundational — without it, upper-chakra energy has no ground to land on
 | Scarlet / bright red | Decisive, leadership-leaning action | Root chakra, outward expression | Read as "domineering" when it is often clean, time-bounded leadership |
 | Pinkish red | Drive softened by warmth or affection | Root chakra blending with heart center | Read as romantic-only when it can also mean kindly assertive |
 
+
+![the four red aura shades and what each one signals](/images/aura/red-aura-shades.svg)
 ## Reflection Prompts
 
 1. Think of a recent moment when someone described your energy as intense — what shade of red would that map to, and was it accurate?
