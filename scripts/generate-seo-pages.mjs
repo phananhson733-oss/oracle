@@ -246,11 +246,16 @@ const buildHead = ({
   return headParts.join('\n');
 };
 
-const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap }) => {
+const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt }) => {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
   const safeCta = escapeHtml(ctaText);
   const safeSpaPath = escapeHtml(spaPath);
+  // 文章 hero 图（article.image）渲染进静态 stub，让爬虫/图片索引看到配图 + alt。
+  // 仅文章页传入；水合后 React 用 SPA 版覆盖（不会重复）。
+  const hero = heroImage
+    ? `\n  <figure class="hero"><img src="${escapeHtml(heroImage)}" alt="${escapeHtml(heroAlt || title)}" loading="lazy"></figure>`
+    : '';
   // contentHtml 已由 mdToHtml 转义，直接注入。它让爬虫读到完整正文（修复 soft 404）；
   // 真实浏览器水合后 React 会用 SPA 覆盖这段静态内容（见 inject-spa-into-stubs.mjs）。
   const article = contentHtml ? `\n  <article class="content">${contentHtml}</article>` : '';
@@ -264,7 +269,7 @@ const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml, bo
   return `
 ${bootstrapScript}<main>
   <h1>${safeTitle}</h1>
-  <p>${safeDescription}</p>${article}
+  <p>${safeDescription}</p>${hero}${article}
   <p class="meta">AstrologyWiki · ${lang.toUpperCase()}</p>
   <a class="cta" data-astro-link href="${safeSpaPath}">${safeCta}</a>
 </main>
@@ -288,14 +293,14 @@ ${bootstrapScript}<main>
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, description, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, description, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
 ${buildHead({ lang, title, description, url, canonical, robots, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
-${buildBody({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap })}
+${buildBody({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt })}
   </body>
 </html>
 `;
@@ -1301,6 +1306,9 @@ const generate = async () => {
         buildArticleFaqSchema(article, url),
       ].filter(Boolean),
       ctaText: config.wikiCta,
+      // article.image → 静态 stub 的 hero 图（爬虫/图片索引可见，带 alt）。
+      heroImage: article.image,
+      heroAlt: article.image_alt,
       // footer CTA 指向 wiki hub，而非文章自身 → 消除静态 stub 里的自链接（SEO）。
       spaPath: `/${lang}/wiki`,
       // 去掉正文首个 H1（buildBody 已用 <h1>{title}</h1> 渲染）→ 避免静态 stub 出现两个 H1。
