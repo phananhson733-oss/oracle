@@ -24,7 +24,7 @@ export const orangeAuraMeaningEn: WikiArticle = {
 
 ## What is Orange Aura?
 
-Orange Aura is the energy field most commonly read as **a warm, creative current tied to the sacral center**. In plain terms, it points to someone who runs on emotional flow, pleasure, and easy connection with other people rather than cool logic or quiet restraint. The full orange aura meaning shifts with shade: a bright, clear orange reads as creative drive and social warmth, a muddy or darkened orange tends to signal depletion or guilt about enjoying yourself, and an amber, gold-tinged orange reads as steadier, more mature creativity. In the chakra framework Anodea Judith helped systematize, this color maps to Svadhisthana, the center of creativity and relating. Treat it less as a fixed label and more as a snapshot of how your creative and relational energy is moving — one thread inside the broader [pillar page on all aura colors](/en/wiki/aura-colors-pillar), which maps every color's tone.
+Orange Aura is the energy field most commonly read as **a warm, creative current tied to the sacral center**. In plain terms, it points to someone who runs on emotional flow, pleasure, and easy connection with other people rather than cool logic or quiet restraint. The full orange aura meaning shifts with shade: a bright, clear orange reads as creative drive and social warmth, a muddy or darkened orange tends to signal depletion or guilt about enjoying yourself, and an amber, gold-tinged orange reads as steadier, more mature creativity. In the chakra framework Anodea Judith helped systematize, this color maps to Svadhisthana, the center of creativity and relating. Treat it less as a fixed label and more as a snapshot of how your creative and relational energy is moving — one thread inside the broader [pillar page on all aura colors](/en/wiki/aura-colors-guide), which maps every color's tone.
 
 - Leads with creative and emotional flow more than logic or restraint
 - Most often linked to the sacral center (Svadhisthana) in chakra-aura systems
@@ -113,12 +113,12 @@ These pieces go deeper on threads this entry only touches:
 
 - [yellow aura entry](/en/wiki/yellow-aura-meaning) — the confidence-led neighbor that gets mistaken for orange's warmth.
 - [sacral chakra explainer](/en/wiki/chakra-system-overview) — the energy center this color is most often mapped onto.
-- [guide to aura color shades](/en/wiki/aura-colors-pillar) — how vibrant, muddy, and amber versions of one color read differently.
+- [guide to aura color shades](/en/wiki/aura-colors-guide) — how vibrant, muddy, and amber versions of one color read differently.
 - [Svadhishthana (Wikipedia)](https://en.wikipedia.org/wiki/Svadhishthana)
 
 ## Take Action
 
-Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine. It can help you tell whether your orange is running vibrant, muddy, or amber right now — and that one small distinction is often the difference between knowing you need to create again and knowing you simply need to rest before you give anything more.
+Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine. It can help you tell whether your orange is running vibrant, muddy, or amber right now — and that one small distinction is often the difference between knowing you need to create again and knowing you simply need to rest before you give anything more.
 
 ## Sources
 
@@ -149,7 +149,7 @@ export const orangeAuraMeaningZh: WikiArticle = {
 
 ## Orange Aura 是什么？
 
-橙色气场（Orange Aura）是西方灵性圈用来描述**以创造力和情绪流动为主调的能量场**的说法，和红色、黄色并列，是 [气场颜色总览 pillar 页](/en/wiki/aura-colors-pillar) 里的一种色调。气场也常被叫作光环或磁场（aura，指人身上的能量场概念）。在脉轮（chakra，西方瑜伽与灵性传统里的能量中心概念）体系中，橙色最常被对应到生殖轮（Svadhisthana），象征愉悦感、关系里的开放，以及把情绪转成行动的那股劲。要先讲清楚：它不是性欲的刻度，也不是能用仪器测出来的电磁现象，而是一套帮人做自我觉察的描述性词汇。
+橙色气场（Orange Aura）是西方灵性圈用来描述**以创造力和情绪流动为主调的能量场**的说法，和红色、黄色并列，是 [气场颜色总览 pillar 页](/en/wiki/aura-colors-guide) 里的一种色调。气场也常被叫作光环或磁场（aura，指人身上的能量场概念）。在脉轮（chakra，西方瑜伽与灵性传统里的能量中心概念）体系中，橙色最常被对应到生殖轮（Svadhisthana），象征愉悦感、关系里的开放，以及把情绪转成行动的那股劲。要先讲清楚：它不是性欲的刻度，也不是能用仪器测出来的电磁现象，而是一套帮人做自我觉察的描述性词汇。
 
 - 以创造和体验的流动为先，而不是稳定与秩序
 - 在脉轮气场体系里最常被对应到生殖轮
@@ -174,6 +174,8 @@ export const orangeAuraMeaningZh: WikiArticle = {
 3. **橙色内部的深浅。** 同样是橙，鲜明清亮和暗浊发沉读出来差很多，越亮越偏向往外创造，越浊越偏向往里耗损，这部分留到速查表里细看。
 
 所以"它是不是比别的颜色好"是个假问题。每种色调都在某件事上更顺手，就得在另一件事上让步，关键看你当下最需要哪一种。
+
+![橙色气场与相邻的红色、黄色有何不同](/images/aura/orange-aura-vs-zh.svg)
 
 ## 如何在自己身上识别 Orange Aura
 
@@ -201,6 +203,8 @@ export const orangeAuraMeaningZh: WikiArticle = {
 | 鲜明橙 | 创造力、社交温暖、爱冒险 | 把情绪和点子快速转成行动与连接 | 生殖轮 | 留意自己是不是一有灵感就想开做、聚会里自然带节奏 |
 | 暗浊橙 | 过度付出、愉悦里夹着愧疚 | 能量向外流失多过回补 | 生殖轮（偏失衡） | 注意最近是不是常照顾别人到掏空、事后莫名失落 |
 | 琥珀金橙 | 成熟创造力、温暖的权威感 | 把创造力沉淀成稳定的影响力 | 生殖轮（偏整合） | 看自己能否既保持热度、又不被情绪牵着走 |
+
+![橙色气场的三种色调：鲜明橙、暗浊橙、琥珀金橙](/images/aura/orange-aura-shades-zh.svg)
 
 ## 关于 Orange Aura 的常见问题
 
@@ -235,7 +239,7 @@ export const orangeAuraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-查看 [气场颜色总览](/en/wiki/aura-colors-pillar)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。读懂自己的颜色组合，而不是套一个笼统的标签。读懂自己的气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻的你把能量放在了哪里。
+查看 [气场颜色总览](/en/wiki/aura-colors-guide)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。读懂自己的颜色组合，而不是套一个笼统的标签。读懂自己的气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻的你把能量放在了哪里。
 
 ## 参考来源
 

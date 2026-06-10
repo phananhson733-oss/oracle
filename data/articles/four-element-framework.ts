@@ -69,7 +69,7 @@ A careful reading can use all of these systems without merging them into one cla
 
 ## Related Reading
 
-[pillar page on aura colors overview](/en/wiki/aura-colors-pillar) explains how color meanings work before element-to-color comparisons are added.
+[pillar page on aura colors overview](/en/wiki/aura-colors-guide) explains how color meanings work before element-to-color comparisons are added.
 
 [chakra system overview](/en/wiki/chakra-system-overview) gives the seven-center map that often overlaps with elemental symbolism.
 
@@ -83,6 +83,6 @@ A careful reading can use all of these systems without merging them into one cla
 
 ## Take Action
 
-Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
+Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.
 `,
 };

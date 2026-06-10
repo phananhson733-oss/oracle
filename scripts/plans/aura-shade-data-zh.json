@@ -1,0 +1,23 @@
+{
+  "_comment": "ZH shade vocabularies for the bilingual aura pages (green/orange). Mirrors aura-shade-data.json in spirit. Drives gen-shade-strip.mjs --suffix shades-zh.",
+  "footnote": "色调说的是当下状态，不是固定特质——多数人会随时间在这些之间移动。",
+  "colors": {
+    "green-aura": {
+      "title": "绿色气场的色调——各自在说什么",
+      "shades": [
+        { "name": "翠绿 / 鲜亮", "lines": ["主动疗愈，", "心轮带动的成长"], "from": "#7fe0a0", "to": "#3f9a64" },
+        { "name": "深森林绿", "lines": ["把关怀沉淀成", "稳定的存在感"], "from": "#4f9a6a", "to": "#26603c" },
+        { "name": "发浊黄绿", "lines": ["比较心或没消化的", "怨气在流动"], "from": "#9aae5a", "to": "#5e6e2e" },
+        { "name": "薄荷浅绿", "lines": ["情绪重新开始，", "温和地回血"], "from": "#b8f0d0", "to": "#7fd0a8" }
+      ]
+    },
+    "orange-aura": {
+      "title": "橙色气场的色调——各自在说什么",
+      "shades": [
+        { "name": "鲜明橙", "lines": ["创造驱动力与社交", "温度向外流动"], "from": "#ffb15a", "to": "#e07a1f" },
+        { "name": "暗浊橙", "lines": ["给予转向内耗：", "愧疚或被掏空"], "from": "#9a6a3a", "to": "#5e3c1c" },
+        { "name": "琥珀金橙", "lines": ["成熟的创造力，带", "温暖沉稳的权威感"], "from": "#ffcf7a", "to": "#d99a2e" }
+      ]
+    }
+  }
+}

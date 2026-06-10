@@ -141,7 +141,7 @@ highly intuitive communicator; purple with white suggests spiritual purification
 
 ## Related Reading
 
-- [pillar page on all aura colors](/en/wiki/aura-colors-pillar) — the overview that places this color in the full spectrum and clarifies how shades relate.
+- [pillar page on all aura colors](/en/wiki/aura-colors-guide) — the overview that places this color in the full spectrum and clarifies how shades relate.
 - Violet aura — close cousin that often gets blurred with purple; the empath-versus-introspective split is what separates them.
 - Indigo aura — the third-eye-dominant neighbor that shares much of the same territory but reads as more pattern-sharp.
 - [blue aura explainer](/en/wiki/blue-aura-meaning) — the throat-led contrast, useful when you want to feel the trade-off between expression and interiority.
@@ -152,6 +152,6 @@ highly intuitive communicator; purple with white suggests spiritual purification
 
 ## Take Action
 
-Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
+Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.
 `,
 };

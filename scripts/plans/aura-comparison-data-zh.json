@@ -1,0 +1,20 @@
+{
+  "_comment": "ZH sibling-comparison data for the bilingual aura pages (green/orange). Swatch hue = sibling color; label = how that neighbor differs. Drives gen-shade-strip.mjs --suffix vs-zh.",
+  "footnote": "相邻颜色共享一段光谱，却各有不同的运作方式——这不是排名。",
+  "colors": {
+    "green-aura": {
+      "title": "绿色气场与相邻颜色的区别",
+      "shades": [
+        { "name": "黄色", "lines": ["自我驱动，", "不是心轮的关怀"], "from": "#ffe27a", "to": "#e0b033" },
+        { "name": "蓝色", "lines": ["清晰但有距离，", "不是共情贴近"], "from": "#7ab8ff", "to": "#3a72c4" }
+      ]
+    },
+    "orange-aura": {
+      "title": "橙色气场与相邻颜色的区别",
+      "shades": [
+        { "name": "红色", "lines": ["有边界的冲劲，", "不是关系流动"], "from": "#ff5a5a", "to": "#b01e2e" },
+        { "name": "黄色", "lines": ["冷静理性，", "不是情绪带动"], "from": "#ffe27a", "to": "#e0b033" }
+      ]
+    }
+  }
+}

@@ -30,7 +30,7 @@ Green Aura is the green band that practitioners describe seeing or sensing in a 
 - Most often tied to the heart center, called Anahata, in chakra-aura systems
 - Shifts in tone by shade, so the same green can read as growth or as resentment
 
-Green sits in the middle of the classic aura spectrum, between the warmer reds and oranges and the cooler blues, which is part of why it gets framed as the balancing point of the whole map. It belongs to the broader picture laid out in the [pillar page on all aura colors](/en/wiki/aura-colors-pillar), where every color's energy sits side by side — a way of reading the human energy field that teachers like Barbara Ann Brennan helped bring into wider practice. Green is less about intensity and more about how naturally someone moves toward repair, nature, and the people around them.
+Green sits in the middle of the classic aura spectrum, between the warmer reds and oranges and the cooler blues, which is part of why it gets framed as the balancing point of the whole map. It belongs to the broader picture laid out in the [pillar page on all aura colors](/en/wiki/aura-colors-guide), where every color's energy sits side by side — a way of reading the human energy field that teachers like Barbara Ann Brennan helped bring into wider practice. Green is less about intensity and more about how naturally someone moves toward repair, nature, and the people around them.
 
 ## Why It Matters for Self-Awareness
 
@@ -120,7 +120,7 @@ Most aura literature treats color as a snapshot of your prevailing state, not a 
 
 ## Take Action
 
-Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine. As you read through how you spend and restore your energy, you get a plain-language sense of which colors are loudest for you right now — including whether green is leading with healthy care or tipping into the overgiving the labels keep warning about. Seeing that on the page is what turns a vague color label into a small, usable check-in you can do for yourself the next time you can't tell whether you're caring or quietly running on empty.
+Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine. As you read through how you spend and restore your energy, you get a plain-language sense of which colors are loudest for you right now — including whether green is leading with healthy care or tipping into the overgiving the labels keep warning about. Seeing that on the page is what turns a vague color label into a small, usable check-in you can do for yourself the next time you can't tell whether you're caring or quietly running on empty.
 
 ## Sources
 
@@ -151,7 +151,7 @@ export const greenAuraMeaningZh: WikiArticle = {
 
 ## Green Aura 是什么？
 
-绿色气场（Green Aura）是西方灵性圈用来描述**以关怀、连接和内在平稳为主调的能量场**的说法，和黄色、蓝色并列，是 [气场颜色总览 pillar 页](/en/wiki/aura-colors-pillar) 里的一种色调。气场也常被叫作光环或磁场（aura，指人身上的能量场概念）。在脉轮（chakra，西方瑜伽与灵性传统里的能量中心概念）体系里，绿色最常被对应到心轮（Anahata），象征关系里的开放、给予，以及那种想把人和环境照顾好的本能。要先说清楚：它不是一张"天生 healer"的身份证，也不是能用仪器测出来的现象，而是一套帮人做自我觉察的描述性词汇。
+绿色气场（Green Aura）是西方灵性圈用来描述**以关怀、连接和内在平稳为主调的能量场**的说法，和黄色、蓝色并列，是 [气场颜色总览 pillar 页](/en/wiki/aura-colors-guide) 里的一种色调。气场也常被叫作光环或磁场（aura，指人身上的能量场概念）。在脉轮（chakra，西方瑜伽与灵性传统里的能量中心概念）体系里，绿色最常被对应到心轮（Anahata），象征关系里的开放、给予，以及那种想把人和环境照顾好的本能。要先说清楚：它不是一张"天生 healer"的身份证，也不是能用仪器测出来的现象，而是一套帮人做自我觉察的描述性词汇。
 
 - 以关怀和连接为先，而不是输出与征服
 - 在脉轮气场体系里最常被对应到心轮
@@ -176,6 +176,8 @@ export const greenAuraMeaningZh: WikiArticle = {
 3. **绿色内部的深浅。** 同样是绿，翠绿鲜亮、深森林绿沉稳、发黄发浊的绿读出来差很多——越亮越偏向健康的给予，越浊越偏向耗在比较和怨气里，这部分留到速查表里细看。
 
 所以"绿色是不是比别的颜色更好"是个假问题。每种色调都在某件事上更顺手，就得在另一件事上让步，关键看你当下最需要哪一种。这与更上位的 *心轮深度解析* 一脉相承，那里梳理了关怀与连接这股能量的来龙去脉。
+
+![绿色气场与相邻的黄色、蓝色有何不同](/images/aura/green-aura-vs-zh.svg)
 
 ## 如何在自己身上识别 Green Aura
 
@@ -204,6 +206,8 @@ export const greenAuraMeaningZh: WikiArticle = {
 | 深森林绿 | 沉稳的同理心、安全感、可靠 | 用稳定的存在感托住关系和环境 | 心轮（偏扎根） | 看自己是不是那个让大家安心、能长期依靠的人 |
 | 发黄发浊的绿 | 比较心、未消化的怨气、付出失衡 | 能量耗在盯着别人和憋着情绪上 | 心轮（偏失衡） | 注意最近是不是常拿自己跟人比、心里堵着没说的话 |
 | 薄荷浅绿 | 重新开始、情绪松动、新鲜的开放 | 在一段消耗后慢慢回血、重新敞开 | 心轮（偏修复） | 觉察自己是不是刚走出一段关系或情绪，正重新打开 |
+
+![绿色气场的四种色调：翠绿、森林绿、发浊黄绿、薄荷绿](/images/aura/green-aura-shades-zh.svg)
 
 ## 关于 Green Aura 的常见问题
 
@@ -237,7 +241,7 @@ export const greenAuraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-查看 [气场颜色总览](/en/wiki/aura-colors-pillar)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。读懂自己的颜色组合，而不是套一个非 healer 即嫉妒的笼统标签。读懂自己的绿色气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻你把关怀放在了谁身上、又有没有顾到自己。
+查看 [气场颜色总览](/en/wiki/aura-colors-guide)，看看你身上主导的是哪一种色调、它们又是怎么搭在一起的。读懂自己的颜色组合，而不是套一个非 healer 即嫉妒的笼统标签。读懂自己的绿色气场，与其说是给自己下定义，不如说是多一面镜子，看清此刻你把关怀放在了谁身上、又有没有顾到自己。
 
 ## 参考来源
 

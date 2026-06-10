@@ -22,6 +22,16 @@
   ],
   "redirects": [
     {
+      "source": "/en/wiki/aura-colors-pillar",
+      "destination": "/en/wiki/aura-colors-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/wiki/aura-colors-pillar/",
+      "destination": "/en/wiki/aura-colors-guide",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

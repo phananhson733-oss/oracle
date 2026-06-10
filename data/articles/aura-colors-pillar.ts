@@ -3,7 +3,7 @@
 import type { WikiArticle } from "../../types";
 
 export const auraColorsPillarEn: WikiArticle = {
-  slug: "aura-colors-pillar",
+  slug: "aura-colors-guide",
   image: "/images/aura/aura-colors-pillar.jpg",
   image_alt:
     "the seven aura colors as a flowing spectrum of light — red, orange, yellow, green, blue, purple and white",

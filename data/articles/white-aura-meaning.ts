@@ -147,7 +147,7 @@ rely on a qualified professional rather than an aura reading.
 
 ## Related Reading
 
-- [pillar page on aura colors overview](/en/wiki/aura-colors-pillar) — sets the wider map this entry sits inside so white can be read against the full palette.
+- [pillar page on aura colors overview](/en/wiki/aura-colors-guide) — sets the wider map this entry sits inside so white can be read against the full palette.
 - [explainer on purple aura meaning](/en/wiki/purple-aura-meaning) — useful neighbour for separating crown-area presence from third-eye pattern-spotting.
 - [comparison with blue aura meaning](/en/wiki/blue-aura-meaning) — clarifies how throat-led expression differs from crown-led stillness.
 - [guide to the crown chakra](/en/wiki/chakra-system-overview) — gives the energy-centre background that most white-aura readings lean on.
@@ -156,6 +156,6 @@ rely on a qualified professional rather than an aura reading.
 
 ## Take Action
 
-Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
+Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.
 `,
 };

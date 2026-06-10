@@ -106,12 +106,12 @@ The fourth limit is that chakra language cannot replace clinical care, direct co
 - [blue aura explainer](/en/wiki/blue-aura-meaning)
 - [purple aura explainer](/en/wiki/purple-aura-meaning)
 - [white aura explainer](/en/wiki/white-aura-meaning)
-- [overview of aura colors](/en/wiki/aura-colors-pillar)
+- [overview of aura colors](/en/wiki/aura-colors-guide)
 - *guide to reading auras*
-- [comparison with aura colors](/en/wiki/aura-colors-pillar)
+- [comparison with aura colors](/en/wiki/aura-colors-guide)
 
 ## Take Action
 
-If you want a quick entry into the chakra system, start with how your aura colors line up against the seven centers. Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
+If you want a quick entry into the chakra system, start with how your aura colors line up against the seven centers. Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.
 `,
 };
