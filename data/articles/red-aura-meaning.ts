@@ -133,7 +133,7 @@ Red can brighten to orange when creative energy activates, or deepen to burgundy
 
 ## Related Reading
 
-- [pillar page on aura colors overview](/en/wiki/aura-colors-pillar) — anchor entry for how every aura color fits together, including where red sits in the broader map.
+- [pillar page on aura colors overview](/en/wiki/aura-colors-guide) — anchor entry for how every aura color fits together, including where red sits in the broader map.
 - [orange aura explainer](/en/wiki/orange-aura-meaning) — sibling read for the next center up, useful for telling drive-energy apart from creative-social energy.
 - [yellow aura explainer](/en/wiki/yellow-aura-meaning) — sibling read for confidence and identity energy, often confused with red's directness.
 - [guide to the root chakra](/en/wiki/chakra-system-overview) — background on the energy center most associated with red, helpful for grounding the reading in tradition.
@@ -141,6 +141,6 @@ Red can brighten to orange when creative energy activates, or deepen to burgundy
 
 ## Take Action
 
-Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
+Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.
 `,
 };

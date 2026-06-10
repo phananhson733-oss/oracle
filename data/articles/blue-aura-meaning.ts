@@ -139,7 +139,7 @@ Blue with purple suggests heightened intuitive perception layered over strong ex
 
 ## Related Reading
 
-- [pillar page on all aura colors overview](/en/wiki/aura-colors-pillar) — start here for a side-by-side view of how each color is interpreted across traditions.
+- [pillar page on all aura colors overview](/en/wiki/aura-colors-guide) — start here for a side-by-side view of how each color is interpreted across traditions.
 - [throat chakra explainer](/en/wiki/chakra-system-overview) — the energy center most often paired with this color in aura readings.
 - [comparison with purple aura](/en/wiki/purple-aura-meaning) — useful when your reading shifts between blue and violet shades.
 - [guide to yellow aura traits](/en/wiki/yellow-aura-meaning) — a contrasting solar-plexus reading that highlights what blue is not.
@@ -148,6 +148,6 @@ Blue with purple suggests heightened intuitive perception layered over strong ex
 
 ## Take Action
 
-Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
+Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.
 `,
 };

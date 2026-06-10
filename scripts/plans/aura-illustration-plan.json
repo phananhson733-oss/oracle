@@ -33,7 +33,7 @@
     "white-aura-meaning": {
       "hero": { "reuse": "/tmp/aura-gen/white-aura-meaning.png", "alt": "white aura energy field surrounding a faint human silhouette, integration and transition" }
     },
-    "aura-colors-pillar": {
+    "aura-colors-guide": {
       "hero": { "reuse": "/tmp/aura-gen/aura-colors-pillar.png", "alt": "the seven aura colors as a flowing spectrum of light — red, orange, yellow, green, blue, purple and white" },
       "inline": [
         {

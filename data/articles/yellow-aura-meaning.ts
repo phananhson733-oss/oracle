@@ -147,7 +147,7 @@ During creative flow states, it often brightens toward gold.
 
 ## Related Reading
 
-- [pillar page on aura colors overview](/en/wiki/aura-colors-pillar) — the full color map this entry sits inside, useful before comparing shades.
+- [pillar page on aura colors overview](/en/wiki/aura-colors-guide) — the full color map this entry sits inside, useful before comparing shades.
 - [blue aura explainer](/en/wiki/blue-aura-meaning) — contrast with a cooler, throat-led energy that reads as calm rather than quick.
 - [comparison with orange aura](/en/wiki/orange-aura-meaning) — the closest neighbor on the warm side, with a clearer body-led mechanism.
 - [guide to the solar plexus chakra](/en/wiki/chakra-system-overview) — the energy center most aura traditions tie yellow to, with longer-form practice notes.
@@ -156,6 +156,6 @@ During creative flow states, it often brightens toward gold.
 
 ## Take Action
 
-Not sure which shade of yellow is showing up right now? Explore the [aura colors guide](/en/wiki/aura-colors-pillar) to see how your colors map and combine.
+Not sure which shade of yellow is showing up right now? Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.
 `,
 };

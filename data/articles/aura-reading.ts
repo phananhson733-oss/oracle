@@ -27,7 +27,7 @@ Aura reading is the practice of sensing and interpreting the energy field that m
 - Pairs each color with a recognizable mood, theme, or relational style
 - Treats clear visual sight as the final skill, not the entry fee
 
-For a beginner, that order is the whole game. Most people open the broader [pillar page on all aura colors](/en/wiki/aura-colors-pillar) expecting to see a glowing outline, get nothing, and quit within a week. The felt layer comes first — a warmth, a heaviness, a quiet pull toward someone — long before a single color shows up. Treating that felt signal as the real work, rather than a warm-up to seeing, is what turns a frustrating party trick into a skill you can build at your own pace.
+For a beginner, that order is the whole game. Most people open the broader [pillar page on all aura colors](/en/wiki/aura-colors-guide) expecting to see a glowing outline, get nothing, and quit within a week. The felt layer comes first — a warmth, a heaviness, a quiet pull toward someone — long before a single color shows up. Treating that felt signal as the real work, rather than a warm-up to seeing, is what turns a frustrating party trick into a skill you can build at your own pace.
 
 ## Why It Matters for Self-Awareness
 
@@ -108,12 +108,12 @@ Most beginners sense dependable felt impressions within a few weeks of short dai
 
 - *explainer on how to see auras with practice* — the visual layer to add once your felt readings feel steady.
 - [overview of the seven-chakra system](/en/wiki/chakra-system-overview) — the energy-center map that anchors most color interpretations.
-- [comparison of warm and cool aura colors](/en/wiki/aura-colors-pillar) — useful when a reading sits between two neighboring hues.
+- [comparison of warm and cool aura colors](/en/wiki/aura-colors-guide) — useful when a reading sits between two neighboring hues.
 - [Chakra (Wikipedia)](https://en.wikipedia.org/wiki/Chakra) — background on the energy centers behind the color framework.
 
 ## Take Action
 
-Once the felt layer clicks, the natural next step is learning to name what you sense. [Explore the Aura Colors guide to decode the colors you start to sense](https://astrologywiki.com/en/wiki/aura-colors-pillar), and that guide gives you a working vocabulary for the moods and states you have been picking up all along. Over time that vocabulary turns into a mirror: the colors you read most often in other people tend to be the ones quietly asking for your own attention, too.
+Once the felt layer clicks, the natural next step is learning to name what you sense. [Explore the Aura Colors guide to decode the colors you start to sense](https://astrologywiki.com/en/wiki/aura-colors-guide), and that guide gives you a working vocabulary for the moods and states you have been picking up all along. Over time that vocabulary turns into a mirror: the colors you read most often in other people tend to be the ones quietly asking for your own attention, too.
 
 ## Sources
 
@@ -142,7 +142,7 @@ export const auraReadingZh: WikiArticle = {
 
 ## Aura Reading 是什么？
 
-Aura Reading（气场解读）是一套先靠体感、再靠颜色联想去读懂当下能量的方法。气场（aura，西方灵性圈用来描述围绕身体的能量场概念，也常被译成光环或磁场）在这套体系里被当成会变化的状态，而不是贴死的身份标签。想横向比较每种颜色分别代表什么，可以先看 [气场颜色总览 pillar 页](/en/wiki/aura-colors-pillar)；这篇专门讲「怎么读」。说得直白些，气场解读就是**一种靠体感和颜色读懂能量的方法**。
+Aura Reading（气场解读）是一套先靠体感、再靠颜色联想去读懂当下能量的方法。气场（aura，西方灵性圈用来描述围绕身体的能量场概念，也常被译成光环或磁场）在这套体系里被当成会变化的状态，而不是贴死的身份标签。想横向比较每种颜色分别代表什么，可以先看 [气场颜色总览 pillar 页](/en/wiki/aura-colors-guide)；这篇专门讲「怎么读」。说得直白些，气场解读就是**一种靠体感和颜色读懂能量的方法**。
 
 - 先从身体感受和颜色联想入手，而不是一上来就要「看见」光
 - 把读到的颜色当成当下能量的快照，而非贴在人身上的固定标签
@@ -227,7 +227,7 @@ Aura Reading（气场解读）是一套先靠体感、再靠颜色联想去读�
 
 ## 下一步行动
 
-照着上面的方法用 Aura Reading 记下几次体感和颜色后，下一步就是去查这些颜色各自在说什么——读一读 [气场颜色完整指南](https://astrologywiki.com/en/wiki/aura-colors-pillar)，把你开始感觉到的颜色逐一对上含义。你会攒出一份属于自己的「颜色—状态」对照；慢慢地，你会发现读懂气场，其实就是在更细地读懂自己每天的状态。
+照着上面的方法用 Aura Reading 记下几次体感和颜色后，下一步就是去查这些颜色各自在说什么——读一读 [气场颜色完整指南](https://astrologywiki.com/en/wiki/aura-colors-guide)，把你开始感觉到的颜色逐一对上含义。你会攒出一份属于自己的「颜色—状态」对照；慢慢地，你会发现读懂气场，其实就是在更细地读懂自己每天的状态。
 
 ## 参考来源
 
