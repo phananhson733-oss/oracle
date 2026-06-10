@@ -126,9 +126,20 @@ function insertInline(slug, heading, url, alt) {
   // Insert at the END of this section (just before the next "## " heading) so the
   // image follows the section's prose/table rather than splitting a heading from
   // its content. Falls back to right-after-heading if no following heading.
-  const nextH = src.indexOf('\n## ', afterHeading + 1);
-  const insertAt = nextH >= 0 ? nextH : afterHeading;
-  const imgMd = `\n\n![${alt}](${url})`;
+  // Bilingual files hold En + Zh exports in one source: clamp the search to the
+  // current export so an En image whose anchor is the LAST En heading doesn't
+  // jump the export boundary and land glued to the next export's first heading
+  // (which renders as a non-standalone block and gets dropped).
+  const exportEnd = src.indexOf('\nexport const', afterHeading + 1);
+  const limit = exportEnd >= 0 ? exportEnd : src.length;
+  let nextH = src.indexOf('\n## ', afterHeading + 1);
+  if (nextH < 0 || nextH > limit) nextH = -1;
+  // End of this export's content = the closing backtick of its template literal.
+  const contentClose = src.lastIndexOf('`', limit);
+  const insertAt = nextH >= 0 ? nextH : (contentClose > afterHeading ? contentClose : afterHeading);
+  // Trailing newline keeps the image a standalone block even when what follows is
+  // a heading or the content-closing backtick (single \n would glue them).
+  const imgMd = `\n\n![${alt}](${url})\n`;
   src = src.slice(0, insertAt) + imgMd + src.slice(insertAt);
   fs.writeFileSync(file, src);
   return true;
