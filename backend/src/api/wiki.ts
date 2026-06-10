@@ -35,6 +35,7 @@ import { WIKI_CLASSICS_ENHANCED_ZH } from "../data/wiki-classics-enhanced.js";
 import { cacheService } from "../cache/redis.js";
 import { CACHE_TTL } from "../cache/strategy.js";
 import { AIUnavailableError, generateAIContent } from "../services/ai.js";
+import { logger } from "../utils/logger.js";
 
 export const wikiRouter = Router();
 
@@ -580,7 +581,7 @@ wikiRouter.get("/classics/:id", (req, res) => {
       res.json({ lang, item: itemWithContent } as WikiClassicResponse);
       return;
     } catch (e) {
-      console.error(`Failed to parse enhanced data for ${legacyItem.id}:`, e);
+      logger.error(`Failed to parse enhanced data for ${legacyItem.id}`, { e });
       // Fall through to old format
     }
   }

@@ -6,6 +6,7 @@
 
 import { cacheService } from "../cache/redis.js";
 import { hashInput } from "../cache/strategy.js";
+import { logger } from "../utils/logger.js";
 
 // 用户城市输入硬上限。任何调用方传入超过此长度的字符串都视作非法，
 // 防止恶意巨型字符串污染上游 / 缓存键 / 日志。
@@ -232,7 +233,7 @@ export async function searchCities(
     // Log error name/code only — message may include the user's raw city name
     // (e.g. fetch abort / DNS resolution failures embed it). 隐私红线 #3.
     const errName = error instanceof Error ? error.name : typeof error;
-    console.error(`Geocoding search failed (${errName})`);
+    logger.error(`Geocoding search failed (${errName})`);
     throw new GeocodingServiceError(
       "Geocoding lookup failed (network or upstream error)",
       { cause: error },

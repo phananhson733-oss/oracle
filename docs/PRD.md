@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.19
+> **Version**: 2.23
 > **Last Updated**: 2026-06-03
 > **Status**: Living Document — synced with codebase
 
@@ -275,16 +275,22 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 展示用户的积分余额与消耗明细，包含各功能的使用量追踪。
 
-#### 2.10.3 支付结果页
+#### 2.10.3 已保存解读 (Saved Readings — #24)
+
+**路由**: `/saved` (SavedReadingsPage，列表) · `/saved/:id` (SavedReadingDetailPage，只读详情) — 均为登录态保护路由（`PROTECTED_PATHS`），不可索引、无 SEO 静态页。
+
+登录用户可保存生成的解读（natal/cycle/synastry）以便回看，重开不再消耗 credits。结果页（MePage/CyclesPage）提供 Save 按钮（匿名点击打开登录弹窗）；Settings 提供入口。后端 `saved_readings` 表持久化（见 §4.4），最高 PII：出生输入按 `user_id` RLS 隔离、service-role 写入；账号删除级联清理。v1 前端保存覆盖 natal/cycle；synastry 因 output 散文可能含真名暂缓（红线#4），后端 schema 已支持。
+
+#### 2.10.4 支付结果页
 
 - **路由**: `/payment/success` (PaymentSuccessPage) — 订阅支付成功后的确认页
 - **路由**: `/payment/credits-success` (CreditsSuccessPage) — 积分包购买成功后的确认页
 
-#### 2.10.4 开发工具
+#### 2.10.5 开发工具
 
 - **路由**: `/color-demo` (ColorSystemDemo) — 设计系统颜色演示页（开发/调试用途）
 
-#### 2.10.5 SEO 静态路由
+#### 2.10.6 SEO 静态路由
 
 构建脚本 (`scripts/generate-seo-pages.mjs`) 自动生成多语言 SEO 静态页面：
 - `/en/**` — 英文 SEO 页面族（Wiki Hub 首页、Wiki 词条、经典书籍等）
@@ -385,6 +391,27 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `POST /api/newsletter` — 模块 9 邮件订阅
 
 **v1 已 deferred 至 v1.1+ 的模块**：Synthetica 公开 preview、Today's 个性化版本、真实用户证言。
+
+### 2.14 定价页 (Pricing Page)
+
+**路由**: `/:lang/pricing`（公开可索引，无需登录）
+
+公开定价页，面向 SEO 与转化：用户无需注册即可查看订阅方案、积分包与免费/Pro 权益对比。
+
+**功能说明**：
+- 三档方案：Free（$0）、Pro 月付（$6.99/mo · ¥49/月）、Pro 年付（$41.99/yr · ¥294/年，省 50% + 首单 5 折）
+- 积分包四档（100 / 300 / 500 / 1000，价格对应 §3.2）
+- Free vs Pro 权益对比表（Ask / Synastry / Synthetica / Detail / 心理维度 / CBT 月度统计 / 奖励积分，对应 §3.3）
+- 注册赠 7 天试用提示
+- 匿名 CTA → 登录弹窗（`openLoginModal`）；已登录 → 升级弹窗（`openUpgradeModal`）；页面无 LLM、无后端依赖
+- 价格来源：`data/pricing.ts`（前端展示常量，镜像 `backend/src/config/airwallex.ts`；`tests/unit/pricing-consistency.test.ts` 守护两者漂移）
+
+**i18n**：双语，新增命名空间 `t.pricing.*`（en 主、zh 辅）
+
+**SEO 策略**：
+- `scripts/generate-seo-pages.mjs` 的 `PUBLIC_ROUTE_COPY` 输出 `/en/pricing`、`/zh/pricing` 静态 HTML，正文含可见价格文案（防 soft-404）+ WebPage Schema + breadcrumb + hreflang（en/zh/x-default）
+- 添加至 `sitemap.xml`
+- `isPublicRoute` 中注册（`isPricingPath`），不输出 `noindex,nofollow`；PricingPage 从 `data/pricing.ts` 首帧同步渲染价格，水合 DOM 与静态 stub 一致
 
 ---
 
@@ -535,6 +562,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | **Runtime** | Node.js | 20.x |
 | **Database** | PostgreSQL (Supabase) | 8.x |
 | **Cache** | Redis (IORedis) | 5.3 |
+| **Error Monitoring** | Sentry (`@sentry/node`) | 10.x（仅 `SENTRY_DSN` 配置时动态加载启用，否则不初始化） |
 | **AI Model** | DeepSeek API | — |
 | **Astro Engine** | Swiss Ephemeris | 0.5.17 |
 | **Auth** | JWT + bcryptjs | jsonwebtoken 9.0 |
@@ -552,7 +580,10 @@ AI 生成的深度心理分析，每个维度独立解读：
 ├── index.tsx                   # React 入口
 ├── index.css                   # 全局样式
 ├── pages/                      # 顶层路由页面组件
+│   ├── PricingPage.tsx         # 公开定价页（/:lang/pricing，static-first 价格渲染）
 │   └── landing/                # Landing v2 营销页子模块（NewLandingPage 容器）
+├── data/                       # 内容 / 展示数据模块（articles / wiki / competitors / pricing）
+│   └── pricing.ts              # 公开定价页展示常量（镜像 backend/src/config/airwallex.ts）
 ├── components/                 # React UI 组件
 │   ├── UIComponents.tsx        # 基础 UI + LanguageContext
 │   ├── cbt/                    # CBT 日记模块
@@ -846,6 +877,17 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | POST | `/api/reports/purchase` | 购买报告 | Required |
 | DELETE | `/api/reports/:reportId` | 删除报告 | Required |
 
+#### 已保存解读 API (Saved Readings — #24)
+
+| Method | Path | 说明 | Auth |
+|--------|------|------|------|
+| POST | `/api/saved-readings` | 保存一份解读（natal/cycle/synastry） | Required |
+| GET | `/api/saved-readings` | 列出当前用户的已保存解读（仅元数据） | Required |
+| GET | `/api/saved-readings/:id` | 读取自己的某份解读（完整 payload） | Required |
+| DELETE | `/api/saved-readings/:id` | 删除自己的某份解读 | Required |
+
+> 隔离：每个查询都按会话 `user_id`（取自 JWT，非 body/params）过滤；他人 id 一律 404。最高 PII：`input_json` 存出生数据，service-role 写入 + RLS 用户行隔离读取；synastry `nameA/nameB` 防御性剥除（红线#4）。v1 前端保存仅 natal/cycle（synastry 因 output 散文可能含真名而延后）。
+
 #### 工具 API
 
 | Method | Path | 说明 | Auth |
@@ -857,7 +899,9 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | GET | `/api/astro/today` | 今日普世行星位置（10 大行星，按 UTC 午夜按日缓存，无 AI 调用）; no rate limit (safe due to day-scoped cache + zero LLM/IO per cached request); single-flight + integrity validation guards against cache stampede and mock-fallback poisoning | — |
 | GET | `/api/user/status` | 用户状态 | Optional |
 | GET | `/api/config` | 当前支付提供商配置 | — |
-| POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9 使用）; 5 req/hour per IP rate limit + honeypot field | — |
+| POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9）; 5 req/hour per IP + honeypot. 双 opt-in（`NEWSLETTER_CONFIRM_ENABLED=true` 时插 pending+token+发确认信；默认关 → 插 confirmed、不发信，dark until Resend DKIM 验证）| — |
+| GET | `/api/newsletter/confirm/:token` | 双 opt-in 确认链接：翻 confirmed（幂等），渲染本地化 HTML 结果页（`?lang=en\|zh`）；无效 token 友好 404 | — |
+| GET | `/api/newsletter/unsubscribe/:token` | 一键退订：翻 unsubscribed（幂等），渲染本地化 HTML；支撑 `List-Unsubscribe` 头 | — |
 | GET | `/health` | 健康检查 | — |
 
 #### GM 调试 API (开发环境)
@@ -904,6 +948,34 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | created_at | TIMESTAMPTZ | 记录创建时间 |
 
 > 设计意图：用户删除账号后，该表不会被清理；同邮箱重新注册时，沿用 `trial_ends_at`（多半已过期）而非发放新试用，防止刷免费额度。仅存哈希，符合 GDPR 被遗忘权（不保留可恢复 PII）。
+
+**saved_readings** — 已保存解读（via migration 009，#24）
+| Column | Type | 说明 |
+|--------|------|------|
+| id | UUID | 主键 |
+| user_id | UUID | 用户 (FK → users, ON DELETE CASCADE) |
+| tool_type | VARCHAR(20) | natal / cycle / synastry（CHECK 约束） |
+| title | TEXT | 列表显示标题（不含 synastry 真名） |
+| input_json | JSONB | 解读输入（出生数据 — 最高 PII） |
+| output_json | JSONB | 解读输出快照（重开不重算、不扣 credits） |
+| lang | VARCHAR(5) | 生成时语言 |
+| created_at | TIMESTAMPTZ | 保存时间 |
+
+> RLS：用户仅能 SELECT 自己的行（`auth.uid()::text = user_id::text`）+ service-role 管理全部。API 用 service-role client，按会话 `user_id` 过滤实现隔离。账号删除经 `userService.deleteUser` 显式清理 + FK CASCADE 双重保证。synastry `nameA/nameB` 入库前剥除（红线#4）。
+
+**newsletter_subscribers** — 邮件订阅（via migration 007，双 opt-in 列 via migration 008，#23）
+| Column | Type | 说明 |
+|--------|------|------|
+| id | UUID | 主键 |
+| email | TEXT | 订阅邮箱（`lower(email)` 唯一索引） |
+| source | TEXT | 采集来源（默认 `landing_v2`） |
+| status | TEXT | `pending` / `confirmed` / `unsubscribed`（CHECK；008 默认 pending，旧行回填 confirmed） |
+| confirm_token | TEXT | 32 随机字节 hex（64 字符），confirm + 一键退订的 bearer 密钥（部分唯一索引） |
+| confirmed_at | TIMESTAMPTZ | 确认时间 |
+| unsubscribed_at | TIMESTAMPTZ | 退订时间 |
+| created_at | TIMESTAMPTZ | 创建时间 |
+
+> RLS（007 起）：service-role only，无用户直接访问。双 opt-in 由 `NEWSLETTER_CONFIRM_ENABLED` 开关 dark-launch（默认关 → 单 opt-in 行为；开 → pending+token+确认信，须先验证 Resend SPF/DKIM）。token 仅 service-role 可见、不进日志。
 
 **subscriptions** — 订阅管理
 | Column | Type | 说明 |
@@ -1097,6 +1169,7 @@ JWT Token 结构:
 | `REDIS_URL` | IORedis 连接（缓存 + Reservation TTL） | All | 必填 |
 | `SUPABASE_URL` / `SUPABASE_SERVICE_KEY` | 数据库连接 | All | 必填 |
 | `CRON_SECRET` | Cron endpoint 鉴权 | All | 必填 |
+| `SENTRY_DSN` | 错误监控（Sentry）；未设则不加载 SDK、不初始化（生产 no-op，非 mock） | All | 选填 |
 | 其余 | OAuth secrets / 支付 secrets / 邮件 secrets | All | 详见 backend/.env.example |
 
 **Vercel 路由配置**:

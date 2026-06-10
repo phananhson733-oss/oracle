@@ -7,6 +7,7 @@ import entitlementServiceV2, { FeatureType } from '../services/entitlementServic
 import { stripe, STRIPE_WEBHOOK_SECRET, isStripeConfigured, PRODUCTS, SUBSCRIBER_DISCOUNT } from '../config/stripe.js';
 import { PRICING } from '../config/auth.js';
 import { PurchaseScope } from '../db/supabase.js';
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -149,7 +150,7 @@ router.post('/v2/subscribe', authMiddleware, requireAuth, async (req: Request, r
 
     res.json({ url: checkoutUrl });
   } catch (error) {
-    console.error('Create subscribe checkout error:', error);
+    logger.error('Create subscribe checkout error', { error });
     res.status(500).json({ error: 'Failed to create checkout session' });
   }
 });
@@ -213,7 +214,7 @@ router.post('/v2/purchase-with-credits', authMiddleware, requireAuth, async (req
       entitlements: updated,
     });
   } catch (error) {
-    console.error('Purchase with credits error:', error);
+    logger.error('Purchase with credits error', { error });
     res.status(500).json({ error: 'Failed to purchase with credits' });
   }
 });
@@ -240,7 +241,7 @@ router.post('/v2/webhook', async (req: Request, res: Response) => {
       STRIPE_WEBHOOK_SECRET
     );
   } catch (err) {
-    console.error('Webhook signature verification failed:', err);
+    logger.error('Webhook signature verification failed', { err });
     return res.status(400).json({ error: 'Webhook signature verification failed' });
   }
 
@@ -272,7 +273,7 @@ router.post('/v2/webhook', async (req: Request, res: Response) => {
               session.id
             );
 
-            console.log(`Purchase recorded: ${featureType}/${featureId} for user ${userId}`);
+            logger.info(`Purchase recorded: ${featureType}/${featureId} for user ${userId}`);
           }
         }
         break;
@@ -283,7 +284,7 @@ router.post('/v2/webhook', async (req: Request, res: Response) => {
 
     res.json({ received: true });
   } catch (error) {
-    console.error('Webhook processing error:', error);
+    logger.error('Webhook processing error', { error });
     res.status(500).json({ error: 'Webhook processing failed' });
   }
 });

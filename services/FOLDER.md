@@ -15,6 +15,7 @@
 - FOLDER.md｜地位：目录索引文档｜功能：记录服务目录架构与文件清单。
 - apiClient.ts｜地位：API 客户端｜功能：调用后端 API 获取数据（含问答类别、Markdown 报告、AI 来源元数据与详情缓存提示）。
 - paymentClient.ts｜地位：支付与权益客户端｜功能：订阅/购买/权益查询与 GM 测试指令调用。
+- savedReadingsClient.ts｜地位：已保存解读客户端（#24）｜功能：调用 /api/saved-readings 的 saveReading/list/get/delete；synastry payload 须为剥名后数据（红线#4）。
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
 - analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。

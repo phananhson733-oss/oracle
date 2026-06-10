@@ -71,7 +71,7 @@ No two sensitive people read the same way, because the intensity of each facet a
 2. **High empathy plus a higher overstimulation ceiling.** This person can stay in emotionally intense rooms far longer, absorbing and steadying other people's feelings. The trade-off is a tendency to lose track of their own state while tuned into everyone else's, surfacing the exhaustion only hours later when the room has emptied out.
 3. **High subtlety plus high emotional reactivity.** Tiny cues land hard here — a clipped reply or a flicker in someone's face can set off a real response. The gift of noticing early comes paired with the cost of reacting to signals other people never registered, which is easy to mislabel as being "touchy."
 
-Intensity also drifts with context. The same highly sensitive person can look unflappable in a familiar one-on-one conversation and overwhelmed thirty minutes into a crowded event, which is why a single snapshot rarely captures the trait fairly. Public figures who describe running this way — performers, writers, and athletes among them — tend to talk about exactly this swing between depth and overload; a roundup of [famous highly sensitive people examples](/en/wiki/famous-highly-sensitive-people) collects several of those firsthand accounts. Many sensitive people also gravitate toward the inner, boundary-thin symbolism of the [12th house in astrology overview](/en/wiki/12th-house-astrology) when they go looking for language that matches that interior weather. The practical takeaway is to read your own mix of facets, at their own intensities, instead of asking whether you are sensitive in some all-or-nothing way.
+Intensity also drifts with context. The same highly sensitive person can look unflappable in a familiar one-on-one conversation and overwhelmed thirty minutes into a crowded event, which is why a single snapshot rarely captures the trait fairly. Public figures who describe running this way — performers, writers, and athletes among them — tend to talk about exactly this swing between depth and overload; a roundup of [famous highly sensitive people examples](/en/wiki/famous-highly-sensitive-person) collects several of those firsthand accounts. Many sensitive people also gravitate toward the inner, boundary-thin symbolism of the [12th house in astrology overview](/en/wiki/12th-house-astrology) when they go looking for language that matches that interior weather. The practical takeaway is to read your own mix of facets, at their own intensities, instead of asking whether you are sensitive in some all-or-nothing way.
 
 ## Common Misreads + Framework Limits
 
@@ -180,7 +180,7 @@ Highly Sensitive Person（高敏感人群 / 高敏感人，HSP）是**对刺激�
 
 **高敏感与自闭谱系的区别** — 两者都对感官刺激敏感、都容易在嘈杂环境里过载，所以经常被混为一谈。区别在于：高敏感主要是加工得深、共情强，社交本身通常没有障碍；自闭谱系则更多牵涉社交沟通和重复行为模式，是另一套需要专业评估的情况。常见误读是把高敏感当成「轻度自闭」，可它们并不是同一条线上的程度差别。想理清重叠与差异，见[高敏感与自闭谱系的区别对照](/zh/wiki/highly-sensitive-person-vs-autism)。
 
-**谈过这种特质的名人** — 不少作家、音乐人、演员都公开说过自己容易共情、需要大量独处来消化外界刺激。这些例子的意义不在追星，而在打破一个偏见：敏感的人都脆弱、成不了事。事实是高敏感人群里同样有人长期站在台前、做出很有分量的作品。常见误读是只看到他们光鲜的一面，忽略了背后那套「先把自己照顾好再上场」的方法。更多例子见[公开谈论高敏感特质的名人案例](/zh/wiki/famous-highly-sensitive-people)。
+**谈过这种特质的名人** — 不少作家、音乐人、演员都公开说过自己容易共情、需要大量独处来消化外界刺激。这些例子的意义不在追星，而在打破一个偏见：敏感的人都脆弱、成不了事。事实是高敏感人群里同样有人长期站在台前、做出很有分量的作品。常见误读是只看到他们光鲜的一面，忽略了背后那套「先把自己照顾好再上场」的方法。更多例子见[公开谈论高敏感特质的名人案例](/zh/wiki/famous-highly-sensitive-person)。
 
 **占星里的第十二宫** — 在占星这套象征语言里，第十二宫常被用来描述一个人内向、边界感薄、内在世界格外丰富的那一面，很多敏感的人会在这里认出自己的体验。需要说清楚的是，这只是一种帮你描述感受的视角，不是对命运的判决，也替代不了心理层面的自我了解。常见误读是把象征当成宿命，觉得「星盘这么写所以我注定如此」。这个视角的展开见[占星第十二宫深度解析](/zh/wiki/12th-house-astrology)。
 

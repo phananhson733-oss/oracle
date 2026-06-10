@@ -12,6 +12,8 @@ import {
 } from "../config/auth.js";
 import { cacheService } from "../cache/redis.js";
 import { emailService } from "../services/emailService.js";
+import { logger } from "../utils/logger.js";
+import { logDsarEvent } from "../utils/dsarAudit.js";
 
 // Strict rate limit for destructive account operations
 const accountDeleteLimiter = rateLimit({
@@ -181,7 +183,7 @@ router.post("/google", async (req: Request, res: Response) => {
 
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error("Google login error:", error);
+    logger.error("Google login error", { error });
     res.status(500).json({ error: "Login failed" });
   }
 });
@@ -234,7 +236,7 @@ router.post("/apple", async (req: Request, res: Response) => {
     const tokens = userService.generateTokens(user);
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error("Apple login error:", error);
+    logger.error("Apple login error", { error });
     res.status(500).json({ error: "Login failed" });
   }
 });
@@ -328,7 +330,7 @@ router.post("/send-code", async (req: Request, res: Response) => {
 
     res.json({ success: true, message: "Verification code sent" });
   } catch (error) {
-    console.error("Send verification code error:", error);
+    logger.error("Send verification code error", { error });
     res.status(500).json({ error: "Failed to send verification code" });
   }
 });
@@ -427,7 +429,7 @@ router.post("/verify-code", async (req: Request, res: Response) => {
 
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error("Verify code error:", error);
+    logger.error("Verify code error", { error });
     res.status(500).json({ error: "Verification failed" });
   }
 });
@@ -479,7 +481,7 @@ router.post("/register", async (req: Request, res: Response) => {
 
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error("Registration error:", error);
+    logger.error("Registration error", { error });
     res.status(500).json({ error: "Registration failed" });
   }
 });
@@ -515,7 +517,7 @@ router.post("/login", async (req: Request, res: Response) => {
     const tokens = userService.generateTokens(user);
     sendAuthResponse(res, tokens, user);
   } catch (error) {
-    console.error("Login error:", error);
+    logger.error("Login error", { error });
     res.status(500).json({ error: "Login failed" });
   }
 });
@@ -551,7 +553,7 @@ router.post("/refresh", async (req: Request, res: Response) => {
       tokens,
     });
   } catch (error) {
-    console.error("Token refresh error:", error);
+    logger.error("Token refresh error", { error });
     res.status(500).json({ error: "Token refresh failed" });
   }
 });
@@ -567,7 +569,7 @@ router.post("/logout", authMiddleware, async (req: Request, res: Response) => {
 
     res.json({ success: true });
   } catch (error) {
-    console.error("Logout error:", error);
+    logger.error("Logout error", { error });
     res.status(500).json({ error: "Logout failed" });
   }
 });
@@ -597,7 +599,7 @@ router.get(
         createdAt: user.created_at,
       });
     } catch (error) {
-      console.error("Get user error:", error);
+      logger.error("Get user error", { error });
       res.status(500).json({ error: "Failed to get user" });
     }
   },
@@ -636,7 +638,7 @@ router.put(
         },
       });
     } catch (error) {
-      console.error("Update profile error:", error);
+      logger.error("Update profile error", { error });
       res.status(500).json({ error: "Failed to update profile" });
     }
   },
@@ -670,7 +672,7 @@ router.post(
         message: "Data migrated successfully",
       });
     } catch (error) {
-      console.error("Migration error:", error);
+      logger.error("Migration error", { error });
       res.status(500).json({ error: "Migration failed" });
     }
   },
@@ -694,7 +696,7 @@ router.get("/verify-email/:token", async (req: Request, res: Response) => {
       message: "Email verified successfully",
     });
   } catch (error) {
-    console.error("Email verification error:", error);
+    logger.error("Email verification error", { error });
     res.status(500).json({ error: "Verification failed" });
   }
 });
@@ -734,10 +736,11 @@ router.delete(
       }
 
       await userService.deleteUser(req.userId!);
+      logDsarEvent("account_erasure", req.userId!);
 
       res.json({ success: true, message: "Account deleted successfully" });
     } catch (error) {
-      console.error("Account deletion error:", error);
+      logger.error("Account deletion error", { error });
       res.status(500).json({ error: "Failed to delete account" });
     }
   },
@@ -757,6 +760,7 @@ router.get(
       }
 
       const data = await userService.exportUserData(req.userId!);
+      logDsarEvent("data_export", req.userId!);
 
       res.setHeader("Content-Type", "application/json");
       res.setHeader(
@@ -765,7 +769,7 @@ router.get(
       );
       res.json(data);
     } catch (error) {
-      console.error("Data export error:", error);
+      logger.error("Data export error", { error });
       res.status(500).json({ error: "Failed to export data" });
     }
   },

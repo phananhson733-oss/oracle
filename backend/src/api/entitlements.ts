@@ -2,6 +2,7 @@
 import { Router, Request, Response } from 'express';
 import { authMiddleware } from './auth.js';
 import entitlementService, { Feature } from '../services/entitlementService.js';
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -17,7 +18,7 @@ router.get('/', authMiddleware, async (req: Request, res: Response) => {
 
     res.json(entitlements);
   } catch (error) {
-    console.error('Get entitlements error:', error);
+    logger.error('Get entitlements error', { error });
     res.status(500).json({ error: 'Failed to get entitlements' });
   }
 });
@@ -43,7 +44,7 @@ router.get('/check/:feature', authMiddleware, async (req: Request, res: Response
 
     res.json(result);
   } catch (error) {
-    console.error('Check feature error:', error);
+    logger.error('Check feature error', { error });
     res.status(500).json({ error: 'Failed to check feature' });
   }
 });
@@ -98,7 +99,7 @@ router.post('/consume', authMiddleware, async (req: Request, res: Response) => {
       entitlements,
     });
   } catch (error) {
-    console.error('Consume feature error:', error);
+    logger.error('Consume feature error', { error });
     res.status(500).json({ error: 'Failed to consume feature' });
   }
 });
@@ -128,7 +129,7 @@ router.get('/free-usage', async (req: Request, res: Response) => {
       synastryUsed: freeUsage.synastry_used,
     });
   } catch (error) {
-    console.error('Get free usage error:', error);
+    logger.error('Get free usage error', { error });
     res.status(500).json({ error: 'Failed to get free usage' });
   }
 });

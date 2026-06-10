@@ -97,8 +97,6 @@ import { signsOfAHighlySensitivePersonEn } from "./signs-of-a-highly-sensitive-p
 import { signsOfAHighlySensitivePersonZh } from "./signs-of-a-highly-sensitive-person";
 import { highlySensitivePersonVsAutismEn } from "./highly-sensitive-person-vs-autism";
 import { highlySensitivePersonVsAutismZh } from "./highly-sensitive-person-vs-autism";
-import { famousHighlySensitivePeopleEn } from "./famous-highly-sensitive-people";
-import { famousHighlySensitivePeopleZh } from "./famous-highly-sensitive-people";
 // 6/2 MAHADASHA cluster
 import { mahadashaEn } from "./mahadasha";
 import { mahadashaZh } from "./mahadasha";
@@ -110,6 +108,49 @@ import { saturnMahadashaEn } from "./saturn-mahadasha";
 import { saturnMahadashaZh } from "./saturn-mahadasha";
 import { venusMahadashaEn } from "./venus-mahadasha";
 import { venusMahadashaZh } from "./venus-mahadasha";
+import { solarReturnChartEn } from "./solar-return-chart";
+import { solarReturnChartZh } from "./solar-return-chart";
+import { whatIsAFullMoonRitualEn } from "./what-is-a-full-moon-ritual";
+import { fullMoonEnergyEn } from "./full-moon-energy";
+import { whatToDoOnAFullMoonSpirituallyEn } from "./what-to-do-on-a-full-moon-spiritually";
+import { anuradhaNakshatraEn } from "./anuradha-nakshatra";
+import { bharaniNakshatraEn } from "./bharani-nakshatra";
+import { chironInTaurusEn } from "./chiron-in-taurus";
+import { ashleshaNakshatraEn } from "./ashlesha-nakshatra";
+import { rohiniNakshatraEn } from "./rohini-nakshatra";
+import { southNodeEn } from "./south-node";
+import { northNodeInGeminiEn } from "./north-node-in-gemini";
+import { northNodeInSagittariusEn } from "./north-node-in-sagittarius";
+import { cancerNorthNodeEn } from "./cancer-north-node";
+import { junoAstrologyEn } from "./juno-astrology";
+import { howToBalanceVataDoshaEn } from "./how-to-balance-vata-dosha";
+import { solarReturnEn } from "./solar-return";
+import { n3GunasEn } from "./3-gunas";
+import { famousHighlySensitivePersonEn } from "./famous-highly-sensitive-person";
+import { famousHighlySensitivePersonZh } from "./famous-highly-sensitive-person";
+import { pushyaNakshatraEn } from "./pushya-nakshatra";
+import { nakshatraEn } from "./nakshatra";
+import { aiAstrologyAppEn } from "./ai-astrology-app";
+import { sattvaRajasTamasEn } from "./sattva-rajas-tamas";
+import { libraRisingHousesEn } from "./libra-rising-houses";
+import { leoRisingHousesEn } from "./leo-rising-houses";
+import { scorpioRisingHousesEn } from "./scorpio-rising-houses";
+import { fullMoonJune2026En } from "./full-moon-june-2026";
+import { fullMoonJuly2026En } from "./full-moon-july-2026";
+import { moonJournalEn } from "./moon-journal";
+import { fullMoonJournalPromptsEn } from "./full-moon-journal-prompts";
+import { newMoonJournalPromptsEn } from "./new-moon-journal-prompts";
+import { journalPromptsEn } from "./journal-prompts";
+import { shadowWorkJournalPromptsEn } from "./shadow-work-journal-prompts";
+import { blackMoonLilithEn } from "./black-moon-lilith";
+import { compositeChartCalculatorEn } from "./composite-chart-calculator";
+import { synastryChartCompatibilityEn } from "./synastry-chart-compatibility";
+import { mrigashiraNakshatraEn } from "./mrigashira-nakshatra";
+import { swatiNakshatraEn } from "./swati-nakshatra";
+import { hastaNakshatraEn } from "./hasta-nakshatra";
+import { krittikaNakshatraEn } from "./krittika-nakshatra";
+import { ashwiniNakshatraEn } from "./ashwini-nakshatra";
+import { neptuneInPiscesEn } from "./neptune-in-pisces";
 // All articles organized by language
 
 import {
@@ -262,12 +303,52 @@ const ARTICLES_EN: WikiArticle[] = [
   highlySensitivePersonEn,
   signsOfAHighlySensitivePersonEn,
   highlySensitivePersonVsAutismEn,
-  famousHighlySensitivePeopleEn,
   mahadashaEn,
   rahuMahadashaEn,
   ketuMahadashaEn,
   saturnMahadashaEn,
   venusMahadashaEn,
+  solarReturnChartEn,
+  whatIsAFullMoonRitualEn,
+  fullMoonEnergyEn,
+  whatToDoOnAFullMoonSpirituallyEn,
+  anuradhaNakshatraEn,
+  bharaniNakshatraEn,
+  chironInTaurusEn,
+  ashleshaNakshatraEn,
+  rohiniNakshatraEn,
+  southNodeEn,
+  northNodeInGeminiEn,
+  northNodeInSagittariusEn,
+  cancerNorthNodeEn,
+  junoAstrologyEn,
+  howToBalanceVataDoshaEn,
+  solarReturnEn,
+  n3GunasEn,
+  famousHighlySensitivePersonEn,
+  pushyaNakshatraEn,
+  nakshatraEn,
+  aiAstrologyAppEn,
+  sattvaRajasTamasEn,
+  libraRisingHousesEn,
+  leoRisingHousesEn,
+  scorpioRisingHousesEn,
+  fullMoonJune2026En,
+  fullMoonJuly2026En,
+  moonJournalEn,
+  fullMoonJournalPromptsEn,
+  newMoonJournalPromptsEn,
+  journalPromptsEn,
+  shadowWorkJournalPromptsEn,
+  blackMoonLilithEn,
+  compositeChartCalculatorEn,
+  synastryChartCompatibilityEn,
+  mrigashiraNakshatraEn,
+  swatiNakshatraEn,
+  hastaNakshatraEn,
+  krittikaNakshatraEn,
+  ashwiniNakshatraEn,
+  neptuneInPiscesEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -325,12 +406,13 @@ const ARTICLES_ZH: WikiArticle[] = [
   highlySensitivePersonZh,
   signsOfAHighlySensitivePersonZh,
   highlySensitivePersonVsAutismZh,
-  famousHighlySensitivePeopleZh,
   mahadashaZh,
   rahuMahadashaZh,
   ketuMahadashaZh,
   saturnMahadashaZh,
   venusMahadashaZh,
+  solarReturnChartZh,
+  famousHighlySensitivePersonZh,
 ];
 
 // Get all articles for a language

@@ -18,6 +18,7 @@ import {
 } from '../config/paypal.js';
 import { SUBSCRIPTION_BENEFITS } from '../config/auth.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -149,7 +150,7 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
       usedFirstDiscount: result.usedFirstDiscount,
     });
   } catch (error) {
-    console.error('PayPal create subscription error:', error);
+    logger.error('PayPal create subscription error', { error });
     res.status(500).json({ error: 'Failed to create subscription' });
   }
 });
@@ -199,7 +200,7 @@ router.get('/subscription', authMiddleware, requireAuth, async (req: Request, re
       },
     });
   } catch (error) {
-    console.error('Get subscription error:', error);
+    logger.error('Get subscription error', { error });
     res.status(500).json({ error: 'Failed to get subscription' });
   }
 });
@@ -319,7 +320,7 @@ router.post('/confirm-subscription', authMiddleware, requireAuth, async (req: Re
 
     res.json({ success: true });
   } catch (error) {
-    console.error('Confirm PayPal subscription error:', error);
+    logger.error('Confirm PayPal subscription error', { error });
     res.status(500).json({ error: 'Failed to confirm subscription' });
   }
 });
@@ -359,7 +360,7 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
 
     res.json({ success: true });
   } catch (error) {
-    console.error('Cancel subscription error:', error);
+    logger.error('Cancel subscription error', { error });
     res.status(500).json({ error: 'Failed to cancel subscription' });
   }
 });
@@ -402,7 +403,7 @@ router.post('/create-order', authMiddleware, requireAuth, async (req: Request, r
       approvalUrl: result.approvalUrl,
     });
   } catch (error) {
-    console.error('PayPal create order error:', error);
+    logger.error('PayPal create order error', { error });
     res.status(500).json({ error: 'Failed to create order' });
   }
 });
@@ -429,7 +430,10 @@ router.post('/capture-order', authMiddleware, requireAuth, async (req: Request, 
 
     // 验证用户 ID
     if (result.customData?.userId !== req.userId) {
-      console.error('User ID mismatch in capture:', result.customData?.userId, req.userId);
+      logger.error('User ID mismatch in capture', {
+        orderUserId: result.customData?.userId,
+        requestUserId: req.userId,
+      });
       return res.status(400).json({ error: 'Invalid order' });
     }
 
@@ -466,7 +470,7 @@ router.post('/capture-order', authMiddleware, requireAuth, async (req: Request, 
       newBalance: entitlements.credits,
     });
   } catch (error) {
-    console.error('PayPal capture order error:', error);
+    logger.error('PayPal capture order error', { error });
     res.status(500).json({ error: 'Failed to capture order' });
   }
 });
@@ -492,7 +496,7 @@ router.post('/webhook', async (req: Request, res: Response) => {
     const transmissionTime = headers['paypal-transmission-time'] as string;
 
     if (!authAlgo || !certUrl || !transmissionId || !transmissionSig || !transmissionTime) {
-      console.error('Missing PayPal webhook headers');
+      logger.error('Missing PayPal webhook headers');
       return res.status(400).json({ error: 'Missing webhook headers' });
     }
 
@@ -518,7 +522,7 @@ router.post('/webhook', async (req: Request, res: Response) => {
     });
 
     if (!isValid) {
-      console.error('PayPal webhook signature verification failed');
+      logger.error('PayPal webhook signature verification failed');
       return res.status(401).json({ error: 'Invalid signature' });
     }
 
@@ -527,7 +531,7 @@ router.post('/webhook', async (req: Request, res: Response) => {
 
     // 幂等性检查
     if (await paypalService.isEventProcessed(eventId)) {
-      console.log(`PayPal webhook event already processed: ${eventId}`);
+      logger.info(`PayPal webhook event already processed: ${eventId}`);
       return res.json({ received: true, status: 'already_processed' });
     }
 
@@ -554,16 +558,16 @@ router.post('/webhook', async (req: Request, res: Response) => {
 
       case 'PAYMENT.CAPTURE.COMPLETED':
         // 一次性支付已在 capture-order 端点处理，这里仅记录
-        console.log('Payment capture completed:', eventId);
+        logger.info('Payment capture completed', { eventId });
         break;
 
       default:
-        console.log(`Unhandled PayPal webhook event: ${eventType}`);
+        logger.info(`Unhandled PayPal webhook event: ${eventType}`);
     }
 
     res.json({ received: true });
   } catch (error) {
-    console.error('PayPal webhook error:', error);
+    logger.error('PayPal webhook error', { error });
     res.status(500).json({ error: 'Webhook processing failed' });
   }
 });
@@ -591,7 +595,7 @@ async function handleSubscriptionActivated(event: any): Promise<void> {
   }
 
   if (!customData?.userId || !subscriptionId) {
-    console.error('Missing userId or subscriptionId in subscription activated event');
+    logger.error('Missing userId or subscriptionId in subscription activated event');
     return;
   }
 
@@ -679,7 +683,7 @@ async function handleSubscriptionActivated(event: any): Promise<void> {
     }
   }
 
-  console.log(`PayPal subscription activated: ${subscriptionId} for user ${userId}, firstDiscount: ${useFirstDiscount}`);
+  logger.info(`PayPal subscription activated: ${subscriptionId} for user ${userId}, firstDiscount: ${useFirstDiscount}`);
 }
 
 async function handleSubscriptionCancelled(event: any): Promise<void> {
@@ -699,7 +703,7 @@ async function handleSubscriptionCancelled(event: any): Promise<void> {
       .eq('paypal_subscription_id', subscriptionId);
   }
 
-  console.log(`PayPal subscription cancelled: ${subscriptionId}`);
+  logger.info(`PayPal subscription cancelled: ${subscriptionId}`);
 }
 
 async function handleSubscriptionExpired(event: any): Promise<void> {
@@ -718,7 +722,7 @@ async function handleSubscriptionExpired(event: any): Promise<void> {
       .eq('paypal_subscription_id', subscriptionId);
   }
 
-  console.log(`PayPal subscription expired: ${subscriptionId}`);
+  logger.info(`PayPal subscription expired: ${subscriptionId}`);
 }
 
 async function handlePaymentFailed(event: any): Promise<void> {
@@ -737,7 +741,7 @@ async function handlePaymentFailed(event: any): Promise<void> {
       .eq('paypal_subscription_id', subscriptionId);
   }
 
-  console.log(`[PAYMENT_FAILED] PayPal subscription payment failed: subscriptionId=${subscriptionId}`);
+  logger.info(`[PAYMENT_FAILED] PayPal subscription payment failed: subscriptionId=${subscriptionId}`);
 }
 
 export default router;

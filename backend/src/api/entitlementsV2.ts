@@ -6,6 +6,7 @@ import entitlementServiceV2, {
   generateSynastryHash,
 } from '../services/entitlementServiceV2.js';
 import { SynastryPersonInfo, isSupabaseConfigured } from '../db/supabase.js';
+import { logger } from "../utils/logger.js";
 
 const router = Router();
 
@@ -20,7 +21,7 @@ router.get('/v2', optionalAuthMiddleware, async (req: Request, res: Response) =>
   const timezone = (req.query.tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
 
   try {
-    console.log('[Entitlements V2] Request:', {
+    logger.info('[Entitlements V2] Request', {
       userId: req.userId || 'anonymous',
       deviceFingerprint: deviceFingerprint ? 'present' : 'missing',
       headers: Object.keys(req.headers),
@@ -32,7 +33,7 @@ router.get('/v2', optionalAuthMiddleware, async (req: Request, res: Response) =>
       timezone
     );
 
-    console.log('[Entitlements V2] Success:', {
+    logger.info('[Entitlements V2] Success', {
       userId: req.userId || 'anonymous',
       isSubscriber: entitlements.isSubscriber,
       totalLeft: entitlements.ask.totalLeft,
@@ -40,14 +41,10 @@ router.get('/v2', optionalAuthMiddleware, async (req: Request, res: Response) =>
 
     res.json(entitlements);
   } catch (error) {
-    console.error('[Entitlements V2] Error:', {
+    logger.error('[Entitlements V2] Error', {
       userId: req.userId || 'anonymous',
       deviceFingerprint: deviceFingerprint ? 'present' : 'missing',
-      error: error instanceof Error ? {
-        message: error.message,
-        stack: error.stack,
-        name: error.name,
-      } : error,
+      error,
     });
     res.status(500).json({ error: 'Failed to get entitlements' });
   }
@@ -80,7 +77,7 @@ router.post('/v2/check', optionalAuthMiddleware, async (req: Request, res: Respo
 
     res.json(result);
   } catch (error) {
-    console.error('Check feature error:', error);
+    logger.error('Check feature error', { error });
     res.status(500).json({ error: 'Failed to check feature' });
   }
 });
@@ -142,7 +139,7 @@ router.post('/v2/consume', optionalAuthMiddleware, async (req: Request, res: Res
       entitlements,
     });
   } catch (error) {
-    console.error('Consume feature error:', error);
+    logger.error('Consume feature error', { error });
     res.status(500).json({ error: 'Failed to consume feature' });
   }
 });
@@ -201,7 +198,7 @@ router.post('/v2/synastry/check-hash', authMiddleware, async (req: Request, res:
       totalLeft: entitlements.synastry.totalLeft,
     });
   } catch (error) {
-    console.error('Check synastry hash error:', error);
+    logger.error('Check synastry hash error', { error });
     res.status(500).json({ error: 'Failed to check synastry hash' });
   }
 });
@@ -283,7 +280,7 @@ router.post('/v2/synastry/record', authMiddleware, async (req: Request, res: Res
       entitlements,
     });
   } catch (error) {
-    console.error('Record synastry error:', error);
+    logger.error('Record synastry error', { error });
     res.status(500).json({ error: 'Failed to record synastry' });
   }
 });
@@ -312,7 +309,7 @@ router.get('/v2/purchases', authMiddleware, async (req: Request, res: Response) 
       })),
     });
   } catch (error) {
-    console.error('Get purchases error:', error);
+    logger.error('Get purchases error', { error });
     res.status(500).json({ error: 'Failed to get purchases' });
   }
 });
@@ -339,7 +336,7 @@ router.post('/v2/generate-hash', async (req: Request, res: Response) => {
 
     res.json({ hash });
   } catch (error) {
-    console.error('Generate hash error:', error);
+    logger.error('Generate hash error', { error });
     res.status(500).json({ error: 'Failed to generate hash' });
   }
 });

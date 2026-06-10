@@ -1,5 +1,6 @@
 // PayPal configuration for China Enterprise Account
 import dotenv from 'dotenv';
+import { logger } from '../utils/logger.js';
 import path from 'path';
 
 // 加载环境变量
@@ -136,7 +137,7 @@ export const formatCNYRef = (usdCents: number): string => {
 };
 
 if (!isPayPalConfigured()) {
-  console.warn('⚠️  PayPal credentials not configured. PayPal payment features will be disabled.');
+  logger.warn('PayPal credentials not configured; PayPal payment features disabled.');
 } else {
-  console.log(`✅ PayPal configured (Mode: ${paypalMode})`);
+  logger.info('PayPal configured', { mode: paypalMode });
 }

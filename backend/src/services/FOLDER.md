@@ -17,8 +17,12 @@
 - ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。
 - ephemeris.test.ts｜地位：星历服务测试｜功能：验证本命缓存键的确定性、字段敏感性与敏感字段脱敏。
 - geocoding.ts｜地位：地理服务｜功能：城市搜索与坐标解析（Redis 缓存键经 SHA-256 hashInput 摘要，原始城市名永不入键；输入硬上限 CITY_MAX_LENGTH=200）。
-- airwallexService.ts｜地位：Airwallex 支付服务｜功能：订阅/积分/续费 REST 调用与定价；导出 `currencyKeyOf`（货币→price 块键，USD 兜底）+ `resolvePriceIdWithFallback`（EUR/GBP price ID 未配置时回退 USD price ID + warn，绝不编造金额），支持 USD/CNY/EUR/GBP 四币种。
+- airwallexService.ts｜地位：Airwallex 支付服务｜功能：订阅/积分/续费 REST 调用与定价；导出 `currencyKeyOf`（货币→price 块键，USD 兜底）+ `resolvePriceIdWithFallback`（EUR/GBP price ID 未配置时回退 USD price ID + warn，绝不编造金额），支持 USD/CNY/EUR/GBP 四币种。新增 `listSubscriptions`/`getBillingCustomer`（对账驱动器用，端点已实测）+ 导出 `AirwallexSubscriptionListItem`。
 - __tests__/airwallexCurrency.test.ts｜地位：货币计费单测｜功能：覆盖 4 币种 price 块、price ID 缺失 USD 兜底分支、getPricing 各币种金额（backlog #13）。
+- subscriptionReconciler.ts｜地位：订阅对账核心（P0）｜功能：把一条 Airwallex 订阅(可缺 metadata.userId)按 metadataUserId→billing_customer_id→email 三级反查用户并 upsert subscriptions 行，不依赖 webhook/前端 confirm-checkout；导出 `reconcileAirwallexSubscription` + `mapAirwallexStatus`。
+- subscriptionReconciler.test.ts｜地位：对账核心单测｜功能：覆盖缺 userId 按 email 反查新建、无法映射不写库、已有行更新 + 状态映射 3 分支。
+- subscriptionReconcilerDriver.ts｜地位：对账驱动器（P0）｜功能：导出 `reconcileFromSubscriptionObject`(对账单个订阅对象)、`reconcileAirwallexSubscriptionById`(按 id 拉详情后对账，webhook invoice.* 用)、`reconcileAllAirwallexSubscriptions`(全量分页扫描→取 email→对账，聚合 {scanned,reconciled,skipped}，单条失败隔离，支持 dryRun)。供回填脚本 + webhook handler 调用。
+- subscriptionReconcilerDriver.test.ts｜地位：驱动器单测｜功能：覆盖取 email/plan 映射(MONTH/YEAR)/聚合/单条失败隔离/无法映射记 skipped/dryRun 透传/分页 6 分支。
 
 近期更新
 - geocoding 支持中英文查询、逗号分隔解析与省/国过滤兜底。
@@ -44,3 +48,4 @@
 - 本命缓存键改为 SHA-256 摘要，规避明文敏感字段；新增 ephemeris.test.ts 覆盖确定性与脱敏断言。
 - v2.11 隐私加固：geocoding 缓存键改用 hashInput(normalize(city))；LocationResolutionError 默认 message 不再回显 cityName；CITY_MAX_LENGTH=200 硬上限；上游错误日志改为只记录 error.name 避免泄漏。
 - backlog #13 多货币：airwallexService 引入 `currencyKeyOf` / `resolvePriceIdWithFallback`，4 处 `=== 'CNY' ? 'cny':'usd'` 二元判断改为查表 + USD 兜底；支持 USD/CNY/EUR/GBP；EUR/GBP price ID 缺失时回退 USD price ID 并 warn（不编造金额）。货币按 `utils/currency.ts::resolveCurrencyFromRequest` 从请求头派生。
+- P0 订阅落库根因修复：新增 subscriptionReconciler，提供不依赖 webhook/前端 confirm-checkout 的服务端对账（按 billing_customer_id→email 反查用户落库）。根因为生产 Airwallex webhook 从未配置(webhook_events=0) + 续费发票无前端往返，导致付费用户订阅不入库、显示 FREE、扣款继续。

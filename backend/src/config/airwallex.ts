@@ -1,5 +1,6 @@
 // Airwallex configuration for global payment collection
 import dotenv from 'dotenv';
+import { logger } from '../utils/logger.js';
 import path from 'path';
 
 const envPaths = [
@@ -177,7 +178,7 @@ export const formatPrice = (amountCents: number, currency: SupportedCurrency): s
 };
 
 if (!isAirwallexConfigured()) {
-  console.warn('⚠️  Airwallex credentials not configured. Airwallex payment features will be disabled.');
+  logger.warn('Airwallex credentials not configured; Airwallex payment features disabled.');
 } else {
-  console.log(`✅ Airwallex configured (Env: ${airwallexEnv})`);
+  logger.info('Airwallex configured', { env: airwallexEnv });
 }

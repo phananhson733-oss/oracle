@@ -118,7 +118,7 @@
 **测试栈**：
 - 后端：`vitest`（`backend/src/**/*.test.ts`），`cd backend && npm run test`
 - 前端 E2E：`@playwright/test`（`tests/e2e/*.spec.ts`），`npm run test:e2e`
-- 覆盖率：核心算法 / 计费 / 鉴权 100%；普通代码 80%+。当前未配置覆盖率工具，新增覆盖率改动需同步加 `c8` 或 `vitest --coverage` 配置。
+- 覆盖率：核心算法 / 计费 / 鉴权 100%；普通代码 80%+（**长期目标**）。已配置 `@vitest/coverage-v8`（root + backend），`npm run test:coverage` 出 text+lcov 报告；两 config 设有 thresholds 作为 ratchet floor（当前略低于 2026-06-03 baseline，逐步上调）。
 
 ### 4. 完成前验证（按改动面挑选）
 

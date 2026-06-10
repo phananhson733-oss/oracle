@@ -9,6 +9,7 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
+import { logger } from "./utils/logger.js";
 import { natalRouter } from "./api/natal.js";
 import { dailyRouter } from "./api/daily.js";
 import { askRouter } from "./api/ask.js";
@@ -31,8 +32,12 @@ import entitlementsRouter from "./api/entitlements.js";
 import entitlementsV2Router from "./api/entitlementsV2.js";
 import reportsRouter from "./api/reports.js";
 import gmRouter from "./api/gm.js";
+import cronRouter from "./api/cron.js";
 import { newsletterRouter } from "./api/newsletter.js";
+import { savedReadingsRouter } from "./api/savedReadings.js";
 import { apiResponseMiddleware } from "./utils/apiResponse.js";
+
+import { initMonitoring, captureError } from "./observability/monitoring.js";
 
 const envPaths = [
   path.resolve(process.cwd(), ".env"),
@@ -44,6 +49,9 @@ const envPaths = [
 envPaths.forEach((envPath) => {
   dotenv.config({ path: envPath });
 });
+
+// Initialize error monitoring (no-op unless SENTRY_DSN is set; must run after dotenv.config).
+await initMonitoring();
 
 // Payment provider switch (default: airwallex) — must be after dotenv.config
 const PAYMENT_PROVIDER = process.env.PAYMENT_PROVIDER || "airwallex";
@@ -94,8 +102,7 @@ app.use(
       // sends a giant header.
       const safeOrigin =
         typeof origin === "string" ? origin.slice(0, 200) : String(origin);
-      // eslint-disable-next-line no-console
-      console.warn(`[cors] rejected origin: ${safeOrigin}`);
+      logger.warn("CORS rejected origin", { origin: safeOrigin });
       callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
@@ -295,17 +302,34 @@ app.get("/api/config", (_, res) =>
   res.json({ paymentProvider: PAYMENT_PROVIDER }),
 );
 
-console.log(`💳 Payment provider: ${PAYMENT_PROVIDER}`);
+logger.info("Payment provider configured", { provider: PAYMENT_PROVIDER });
 
 app.use("/api/entitlements", entitlementsRouter);
 app.use("/api/entitlements", entitlementsV2Router); // V2 路由挂载在 /v2 子路径
 app.use("/api/reports", reportsRouter);
 app.use("/api/gm", gmRouter); // GM 测试命令
 app.use("/api/newsletter", newsletterRouter);
+app.use("/api/saved-readings", savedReadingsRouter);
+app.use("/api/cron", cronRouter); // Vercel Cron：定时对账 Airwallex 订阅
+
+// Unhandled-error capture: report to monitoring (no-op unless active), then
+// delegate to the default handler. Context is method+path only (non-PII); any
+// richer event data is scrubbed in scrubEvent/captureError before egress.
+app.use(
+  (
+    err: Error,
+    req: express.Request,
+    _res: express.Response,
+    next: express.NextFunction,
+  ) => {
+    captureError(err, { method: req.method, path: req.path });
+    next(err);
+  },
+);
 
 // Health check
 app.get("/health", (_, res) => res.json({ status: "ok" }));
 
 app.listen(PORT, () => {
-  console.log(`Backend running on port ${PORT}`);
+  logger.info("Backend running", { port: PORT });
 });

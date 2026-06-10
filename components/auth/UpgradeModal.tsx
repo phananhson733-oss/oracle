@@ -478,7 +478,7 @@ const UpgradeModal: React.FC = () => {
               onClick={() => { setShowCancelFlow(true); setCancelStep('reason'); setCancelError(null); }}
               className={`text-xs underline opacity-40 hover:opacity-70 transition-opacity ${isDark ? 'text-star-400' : 'text-paper-400'}`}
             >
-              {language === 'zh' ? '取消订阅' : 'Cancel subscription'}
+              {t.subscription?.cancel_trigger || 'Cancel subscription'}
             </button>
           </div>
         )}
@@ -489,20 +489,17 @@ const UpgradeModal: React.FC = () => {
       <Modal
         isOpen={showCancelFlow}
         onClose={() => { setShowCancelFlow(false); setCancelStep('reason'); setCancelReason(''); }}
-        title={language === 'zh' ? '取消订阅' : 'Cancel Subscription'}
+        title={t.subscription?.cancel_modal_title || 'Cancel Subscription'}
       >
         {cancelStep === 'reason' ? (
           <div className="space-y-4">
             <p className={`text-sm ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
-              {language === 'zh'
-                ? '我们很遗憾听到您想要取消。能告诉我们原因吗？这将帮助我们改进服务。'
-                : "We're sorry to see you go. Could you tell us why? This helps us improve."}
+              {t.subscription?.cancel_intro ||
+                "We're sorry to see you go. Could you tell us why? This helps us improve."}
             </p>
             <div className="space-y-2">
-              {(language === 'zh'
-                ? ['功能不符合预期', '价格太高', '使用频率不高', '找到了更好的替代', '其他原因']
-                : ["Doesn't meet my needs", 'Too expensive', "Don't use it enough", 'Found a better alternative', 'Other']
-              ).map((reason) => (
+              {(t.subscription?.cancel_reasons || ["Doesn't meet my needs", 'Too expensive', "Don't use it enough", 'Found a better alternative', 'Other']
+              ).map((reason: string) => (
                 <button
                   key={reason}
                   onClick={() => setCancelReason(reason)}
@@ -525,7 +522,7 @@ const UpgradeModal: React.FC = () => {
                 className="flex-1"
                 size="sm"
               >
-                {language === 'zh' ? '我再想想' : 'Never mind'}
+                {t.subscription?.cancel_nevermind || 'Never mind'}
               </ActionButton>
               <ActionButton
                 variant="secondary"
@@ -534,7 +531,7 @@ const UpgradeModal: React.FC = () => {
                 className="flex-1 border-red-500/30 text-red-500 hover:bg-red-500/10 disabled:opacity-30"
                 size="sm"
               >
-                {language === 'zh' ? '继续取消' : 'Continue'}
+                {t.subscription?.cancel_continue || 'Continue'}
               </ActionButton>
             </div>
           </div>
@@ -542,12 +539,12 @@ const UpgradeModal: React.FC = () => {
           <div className="space-y-4">
             <div className={`p-4 rounded-lg ${isDark ? 'bg-amber-500/10 border border-amber-500/30' : 'bg-amber-50 border border-amber-200'}`}>
               <p className="text-sm font-medium text-amber-600 mb-2">
-                {language === 'zh' ? '取消后您将失去：' : "You'll lose access to:"}
+                {t.subscription?.cancel_lose_title || "You'll lose access to:"}
               </p>
               <ul className="text-xs text-amber-600/80 space-y-1">
-                <li>• {language === 'zh' ? '无限详情解读（自我 / 今日 / 合盘）' : 'Unlimited detail access (Me / Today / Us)'}</li>
-                <li>• {language === 'zh' ? '每周额外 7 次 Ask 提问' : '7 extra Ask questions per week'}</li>
-                <li>• {language === 'zh' ? '每次续费赠送 100 积分' : '100 bonus credits per payment'}</li>
+                <li>• {t.subscription?.cancel_lose_1 || 'Unlimited detail access (Me / Today / Us)'}</li>
+                <li>• {t.subscription?.cancel_lose_2 || '7 extra Ask questions per week'}</li>
+                <li>• {t.subscription?.cancel_lose_3 || '100 bonus credits per payment'}</li>
               </ul>
             </div>
             {cancelError && (
@@ -560,7 +557,7 @@ const UpgradeModal: React.FC = () => {
                 className="flex-1"
                 size="sm"
               >
-                {language === 'zh' ? '保留订阅' : 'Keep Subscription'}
+                {t.subscription?.cancel_keep || 'Keep Subscription'}
               </ActionButton>
               <ActionButton
                 variant="secondary"
@@ -570,8 +567,8 @@ const UpgradeModal: React.FC = () => {
                 size="sm"
               >
                 {cancelLoading
-                  ? (language === 'zh' ? '处理中...' : 'Cancelling...')
-                  : (language === 'zh' ? '确认取消' : 'Confirm Cancel')}
+                  ? (t.subscription?.cancel_processing || 'Cancelling...')
+                  : (t.subscription?.cancel_confirm || 'Confirm Cancel')}
               </ActionButton>
             </div>
           </div>
@@ -582,12 +579,11 @@ const UpgradeModal: React.FC = () => {
               <Check className="w-7 h-7 text-green-500" />
             </div>
             <p className={`text-base font-medium ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
-              {language === 'zh' ? '订阅已取消' : 'Subscription Cancelled'}
+              {t.subscription?.cancel_success_title || 'Subscription Cancelled'}
             </p>
             <p className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-500'}`}>
-              {language === 'zh'
-                ? `您的 Pro 权益将保留至到期日，届时不再自动续费。`
-                : `Your Pro benefits will remain active until the end of your current period.`}
+              {t.subscription?.cancel_success_desc ||
+                'Your Pro benefits will remain active until the end of your current period.'}
             </p>
             <ActionButton
               variant="secondary"
@@ -595,7 +591,7 @@ const UpgradeModal: React.FC = () => {
               className="w-full mt-2"
               size="sm"
             >
-              {language === 'zh' ? '我知道了' : 'Got it'}
+              {t.subscription?.cancel_got_it || 'Got it'}
             </ActionButton>
           </div>
         )}

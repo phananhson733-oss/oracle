@@ -22,6 +22,7 @@ import {
 import subscriptionService from "./subscriptionService.js";
 import { getOrCreateDevEntitlementState } from "./entitlementService.js";
 import { cacheService } from "../cache/redis.js";
+import { logger } from "../utils/logger.js";
 
 // =====================================================
 // 类型定义
@@ -603,7 +604,7 @@ class EntitlementServiceV2 {
         entitlements.synthetica.totalLeft = entitlements.synthetica.freeLeft;
         return entitlements;
       } catch (error) {
-        console.error("Failed to load free usage for device:", error);
+        logger.error("Failed to load free usage for device", { error });
         return entitlements;
       }
     }
@@ -1072,7 +1073,7 @@ class EntitlementServiceV2 {
           return { canAccess: false };
       }
     } catch (error) {
-      console.error("Check access error:", error);
+      logger.error("Check access error", { error });
       // Return safe default instead of throwing
       return { canAccess: false };
     }

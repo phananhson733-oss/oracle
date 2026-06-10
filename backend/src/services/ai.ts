@@ -11,6 +11,7 @@ import type {
   LocalizedContent,
   Language,
 } from "../types/api.js";
+import { logger } from "../utils/logger.js";
 
 const getDeepSeekApiKey = () => process.env.DEEPSEEK_API_KEY;
 const getDeepSeekBaseUrl = () =>
@@ -1047,9 +1048,9 @@ async function generateAIContentInternal<T>(
         `Prompt not found: ${options.promptId}`,
       );
     }
-    console.warn(
-      `[AI] Prompt not found: ${options.promptId}. Using mock response.`,
-    );
+    logger.warn("[AI] Prompt not found, using mock response", {
+      promptId: options.promptId,
+    });
     return {
       content: getMockResponse<T>(options.promptId, lang),
       meta: buildMockMeta("prompt_missing"),
@@ -1271,12 +1272,16 @@ async function generateAIContentInternal<T>(
     const message = error instanceof Error ? error.message : String(error);
     const reason = resolveMockReason(error);
     if (!allowMock) {
-      console.error(`[AI] ${options.promptId} failed: ${message}`);
+      logger.error("[AI] generation failed", {
+        promptId: options.promptId,
+        error: message,
+      });
       throw new AIUnavailableError(reason, message);
     }
-    console.warn(
-      `[AI] Using mock response for ${options.promptId}: ${message}`,
-    );
+    logger.warn("[AI] Using mock response", {
+      promptId: options.promptId,
+      error: message,
+    });
     return {
       content: getMockResponse<T>(options.promptId, lang),
       meta: buildMockMeta(reason),

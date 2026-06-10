@@ -36,6 +36,26 @@
       "statusCode": 301
     },
     {
+      "source": "/en/wiki/famous-highly-sensitive-people",
+      "destination": "/en/wiki/famous-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/zh/wiki/famous-highly-sensitive-people",
+      "destination": "/zh/wiki/famous-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/en/wiki/signs-you-re-a-highly-sensitive-person",
+      "destination": "/en/wiki/signs-of-a-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/zh/wiki/signs-you-re-a-highly-sensitive-person",
+      "destination": "/zh/wiki/signs-of-a-highly-sensitive-person",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -76,5 +96,11 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/reconcile-subscriptions",
+      "schedule": "0 3 * * *"
+    }
+  ]
 }

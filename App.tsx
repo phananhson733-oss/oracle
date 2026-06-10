@@ -194,6 +194,7 @@ const SaturnReturnCalculator = lazy(
   () => import("./components/SaturnReturnCalculator"),
 );
 const LandingPageV2 = lazy(() => import("./pages/landing/LandingPage"));
+const PricingPage = lazy(() => import("./pages/PricingPage"));
 
 // Redirect bare public routes (e.g. /wiki/sun) to language-prefixed version (e.g. /en/wiki/sun)
 const LangRedirect: React.FC = () => {
@@ -284,6 +285,7 @@ const PROTECTED_PATHS = new Set([
   "journal",
   "settings",
   "usage",
+  "saved",
 ]);
 
 const LangStripRedirect: React.FC = () => {
@@ -347,6 +349,10 @@ const AskOraclePage = lazy(() => import("./pages/OraclePage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 
 const CreditsUsagePage = lazy(() => import("./pages/CreditsUsagePage"));
+const SavedReadingsPage = lazy(() => import("./pages/SavedReadingsPage"));
+const SavedReadingDetailPage = lazy(
+  () => import("./pages/SavedReadingDetailPage"),
+);
 
 const AuthPage = lazy(() => import("./pages/AuthPage"));
 
@@ -406,6 +412,9 @@ const AppContent: React.FC = () => {
     "/help",
   ].includes(pathWithoutLang);
   const isSaturnReturnPath = pathWithoutLang === "/saturn-return-calculator";
+  // /:lang/pricing 是公开可索引营销页：静态 stub（public/{lang}/pricing/index.html）输出
+  // index,follow 且在 sitemap，运行时必须一致，否则 WRS 注入 noindex 会误伤 sitemap 里的定价页。
+  const isPricingPath = pathWithoutLang === "/pricing";
   // T7 嵌入路由 /embed/*：渲染无 chrome 的可 iframe widget（见下方早返回）。
   const isEmbedRoute = location.pathname.startsWith("/embed/");
   // /landing-v2/{en,zh}/ is a first-class public, SEO-indexed landing route
@@ -424,6 +433,7 @@ const AppContent: React.FC = () => {
     isWikiPath ||
     isLegalPath ||
     isSaturnReturnPath ||
+    isPricingPath ||
     isLandingV2LangPath;
   const shouldNoIndex = !isPublicRoute;
   const authT = t.auth;
@@ -996,11 +1006,20 @@ const AppContent: React.FC = () => {
                 </LangGuard>
               }
             />
+            <Route
+              path="/:lang/pricing"
+              element={
+                <LangGuard>
+                  <PricingPage />
+                </LangGuard>
+              }
+            />
             {/* Bare public routes redirect to language-prefixed versions */}
             <Route
               path="/saturn-return-calculator"
               element={<LangRedirect />}
             />
+            <Route path="/pricing" element={<LangRedirect />} />
             <Route path="/wiki/*" element={<LangRedirect />} />
             <Route path="/wiki" element={<LangRedirect />} />
             <Route path="/privacy" element={<LangRedirect />} />
@@ -1029,6 +1048,26 @@ const AppContent: React.FC = () => {
               element={
                 isAuthenticated && activeProfile ? (
                   <CreditsUsagePage />
+                ) : (
+                  <ProtectedRedirect />
+                )
+              }
+            />
+            <Route
+              path="/saved"
+              element={
+                isAuthenticated && activeProfile ? (
+                  <SavedReadingsPage />
+                ) : (
+                  <ProtectedRedirect />
+                )
+              }
+            />
+            <Route
+              path="/saved/:id"
+              element={
+                isAuthenticated && activeProfile ? (
+                  <SavedReadingDetailPage />
                 ) : (
                   <ProtectedRedirect />
                 )

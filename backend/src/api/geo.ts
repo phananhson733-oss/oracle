@@ -6,6 +6,7 @@
 import { Router, type Response } from "express";
 import { GeocodingServiceError, searchCities } from "../services/geocoding.js";
 import { resolveLang } from "../utils/lang.js";
+import { logger } from "../utils/logger.js";
 
 export const geoRouter = Router();
 
@@ -52,7 +53,7 @@ async function handleCitySearch(
       error instanceof Error
         ? `${error.name}: ${error.message.slice(0, 120)}`
         : typeof error;
-    console.error(`Geo /search unexpected error: ${reason}`);
+    logger.error(`Geo /search unexpected error: ${reason}`);
     return res
       .status(500)
       .json({ error: "City search temporarily unavailable." });
@@ -80,7 +81,7 @@ geoRouter.post("/search", async (req, res) => {
 geoRouter.get("/search", async (req, res) => {
   if (!getDeprecationWarned) {
     getDeprecationWarned = true;
-    console.warn("[geo] GET /api/geo/search is deprecated; use POST");
+    logger.warn("[geo] GET /api/geo/search is deprecated; use POST");
   }
   const query = typeof req.query.q === "string" ? req.query.q : "";
   const limit = Number(req.query.limit) || 5;

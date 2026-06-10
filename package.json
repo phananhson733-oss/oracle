@@ -11,10 +11,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-og-images.mjs && node scripts/generate-seo-pages.mjs && node scripts/ping-indexnow.mjs && vite build && node scripts/inject-spa-into-stubs.mjs",
+    "build": "node scripts/generate-og-images.mjs && node scripts/generate-seo-pages.mjs && tsx scripts/ensure-static-article-stubs.ts && node scripts/ping-indexnow.mjs && vite build && node scripts/inject-spa-into-stubs.mjs",
     "preview": "vite preview",
     "postinstall": "npm --prefix backend install",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
@@ -23,7 +24,7 @@
     "gen:node-sign-table": "node scripts/gen-node-sign-table.mjs"
   },
   "dependencies": {
-    "@google/genai": "latest",
+    "@google/genai": "^1.34.0",
     "@resvg/resvg-js": "^2.6.2",
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
@@ -43,10 +44,12 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "@vitest/coverage-v8": "^4.1.8",
     "autoprefixer": "^10.4.21",
     "jsdom": "^29.1.1",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.6",
     "vite": "^6.2.0",
     "vitest": "^4.1.6"
   }

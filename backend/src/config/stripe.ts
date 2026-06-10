@@ -1,5 +1,6 @@
 // Stripe configuration
 import Stripe from 'stripe';
+import { logger } from '../utils/logger.js';
 import dotenv from 'dotenv';
 import path from 'path';
 
@@ -14,7 +15,7 @@ const stripeSecretKey = process.env.STRIPE_SECRET_KEY || '';
 const stripeWebhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
 if (!stripeSecretKey) {
-  console.warn('Warning: Stripe secret key not configured. Payment features will be disabled.');
+  logger.warn('Stripe secret key not configured; payment features disabled.');
 }
 
 // 使用占位密钥避免初始化错误 - 实际调用时检查 isStripeConfigured

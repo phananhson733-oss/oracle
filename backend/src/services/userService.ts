@@ -13,6 +13,7 @@ import {
 import { JWT_CONFIG, SUBSCRIPTION_BENEFITS } from "../config/auth.js";
 import { airwallexService } from "./airwallexService.js";
 import { cacheService } from "../cache/redis.js";
+import { logger } from "../utils/logger.js";
 
 // Canonicalize an email for identity comparison: trim whitespace, lowercase.
 // Used for users.email storage AND trial_claims hashing — both MUST agree.
@@ -392,16 +393,22 @@ class UserService {
             // PayPal/Stripe cancellation can be added here when needed
           } catch (providerErr) {
             failedCancellations.push(sub.airwallex_subscription_id || sub.id);
-            console.error(
-              `Failed to cancel ${sub.payment_provider} subscription ${sub.airwallex_subscription_id}:`,
-              providerErr,
-            );
+            logger.error("Failed to cancel subscription", {
+              provider: sub.payment_provider,
+              subscriptionId: sub.airwallex_subscription_id,
+              error: providerErr,
+            });
           }
         }
 
         if (failedCancellations.length > 0) {
-          console.warn(
-            `Account deletion for ${userId}: ${failedCancellations.length} subscription(s) failed provider-side cancellation: ${failedCancellations.join(", ")}. Proceeding with local deletion.`,
+          logger.warn(
+            "Account deletion: some subscriptions failed provider-side cancellation, proceeding with local deletion",
+            {
+              userId,
+              failedCount: failedCancellations.length,
+              failedIds: failedCancellations.join(", "),
+            },
           );
         }
 
@@ -414,10 +421,9 @@ class UserService {
       }
     } catch (err) {
       // Don't fail the deletion if subscription cancel fails
-      console.error(
-        "Failed to cancel subscriptions during account deletion:",
-        err,
-      );
+      logger.error("Failed to cancel subscriptions during account deletion", {
+        error: err,
+      });
     }
 
     // 3. Clean up non-cascading tables
@@ -428,6 +434,10 @@ class UserService {
       .from("email_verification_tokens")
       .delete()
       .eq("user_id", userId);
+    // saved_readings already has ON DELETE CASCADE, but it is the highest-PII
+    // table (stores birth inputs) — delete it explicitly first so erasure is
+    // intentional and auditable, not silently reliant on the FK (backlog #24).
+    await supabase.from("saved_readings").delete().eq("user_id", userId);
 
     // 4. Clear Redis cache for user
     try {
@@ -437,10 +447,10 @@ class UserService {
       await cacheService.del(`user:${userId}:credits`);
     } catch (err) {
       // Don't fail the deletion if cache cleanup fails
-      console.error("Failed to clear cache during account deletion:", err);
+      logger.error("Failed to clear cache during account deletion", { err });
     }
 
-    // 5. Delete the user row (CASCADE handles subscriptions, purchase_records, reports, synastry_records, etc.)
+    // 5. Delete the user row (CASCADE handles subscriptions, purchase_records, reports, synastry_records, saved_readings, etc.)
     const { error } = await supabase.from("users").delete().eq("id", userId);
 
     if (error) {
@@ -509,6 +519,15 @@ class UserService {
       )
       .eq("user_id", userId);
 
+    // Fetch saved readings (#24 — highest-PII table: birth inputs + outputs).
+    // Must be in the export for GDPR Art. 20 / CCPA data portability.
+    const { data: savedReadings } = await supabase
+      .from("saved_readings")
+      .select(
+        "id, tool_type, title, input_json, output_json, lang, created_at",
+      )
+      .eq("user_id", userId);
+
     return {
       exportedAt: new Date().toISOString(),
       user,
@@ -517,6 +536,7 @@ class UserService {
       reports: reports || [],
       synastryRecords: synastryRecords || [],
       freeUsage: freeUsage || [],
+      savedReadings: savedReadings || [],
     };
   }
 }

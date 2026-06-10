@@ -12,6 +12,7 @@ import {
 } from '../config/airwallex.js';
 import { supabase, isSupabaseConfigured } from '../db/supabase.js';
 import crypto from 'crypto';
+import { logger } from "../utils/logger.js";
 
 // Bearer Token cache
 let cachedToken: string | null = null;
@@ -58,7 +59,7 @@ export const resolvePriceIdWithFallback = (
       // Try USD first-discount before dropping to non-discount prices.
       const usdFirst = pick(`${plan}_first_usd`);
       if (usdFirst) {
-        console.warn(`Airwallex first-discount price not configured for ${plan} ${key}, falling back to USD first-discount price`);
+        logger.warn(`Airwallex first-discount price not configured for ${plan} ${key}, falling back to USD first-discount price`);
         return { priceId: usdFirst, usedFirstDiscount: true, fellBackToUsd: true };
       }
     }
@@ -75,7 +76,7 @@ export const resolvePriceIdWithFallback = (
   // Currency-specific price ID missing → fall back to the real USD price ID.
   const usdPriceId = pick(`${plan}_usd`);
   if (usdPriceId) {
-    console.warn(`Airwallex price ID not configured for ${plan} ${key}; falling back to USD price ID (no amount fabricated)`);
+    logger.warn(`Airwallex price ID not configured for ${plan} ${key}; falling back to USD price ID (no amount fabricated)`);
     return { priceId: usdPriceId, usedFirstDiscount: false, fellBackToUsd: true };
   }
 
@@ -98,6 +99,17 @@ interface CreateOrderInput {
   currency: SupportedCurrency;
   successUrl: string;
   cancelUrl: string;
+}
+
+// Airwallex 订阅列表项的真实形状（已实测，仅取对账需要的字段）。
+export interface AirwallexSubscriptionListItem {
+  id: string;
+  billing_customer_id?: string;
+  status: string;
+  current_period_starts_at?: string;
+  current_period_ends_at?: string;
+  cancel_at_period_end?: boolean;
+  recurring?: { period?: number; period_unit?: string };
 }
 
 class AirwallexService {
@@ -124,7 +136,7 @@ class AirwallexService {
 
     if (!response.ok) {
       const error = await response.text();
-      console.error('Airwallex auth error:', error);
+      logger.error('Airwallex auth error', { error });
       throw new Error(`Airwallex authentication failed: ${response.statusText}`);
     }
 
@@ -180,7 +192,7 @@ class AirwallexService {
 
     if (!response.ok) {
       const errorBody = await response.text();
-      console.error('Airwallex create subscription error:', response.status, errorBody);
+      logger.error('Airwallex create subscription error', { status: response.status, errorBody });
       throw new Error(`Airwallex ${response.status}: ${errorBody}`);
     }
 
@@ -267,7 +279,7 @@ class AirwallexService {
 
     if (!piResponse.ok) {
       const errorBody = await piResponse.text();
-      console.error('Airwallex renewal payment intent error:', errorBody);
+      logger.error('Airwallex renewal payment intent error', { errorBody });
       throw new Error(`Airwallex ${piResponse.status}: ${errorBody}`);
     }
 
@@ -336,7 +348,7 @@ class AirwallexService {
 
     if (!piResponse.ok) {
       const errorBody = await piResponse.text();
-      console.error('Airwallex create payment intent error:', errorBody);
+      logger.error('Airwallex create payment intent error', { errorBody });
       throw new Error(`Airwallex payment intent ${piResponse.status}: ${errorBody}`);
     }
 
@@ -350,14 +362,9 @@ class AirwallexService {
     };
   }
 
-  // Get subscription details from Airwallex
-  async getSubscriptionDetails(subscriptionId: string): Promise<{
-    id: string;
-    status: string;
-    current_period_start?: string;
-    current_period_end?: string;
-    cancel_at_period_end?: boolean;
-  }> {
+  // Get subscription details from Airwallex (returns the full subscription object;
+  // shape verified — includes billing_customer_id / current_period_*_at / recurring).
+  async getSubscriptionDetails(subscriptionId: string): Promise<AirwallexSubscriptionListItem> {
     if (!isAirwallexConfigured()) {
       throw new Error('Airwallex not configured');
     }
@@ -377,10 +384,52 @@ class AirwallexService {
 
     if (!response.ok) {
       const error = await response.text();
-      console.error('Airwallex get subscription error:', error);
+      logger.error('Airwallex get subscription error', { error });
       throw new Error(`Failed to get Airwallex subscription: ${response.statusText}`);
     }
 
+    return await response.json();
+  }
+
+  // List subscriptions (paginated). Used by reconciliation/backfill — webhook-independent.
+  // Real Airwallex shape (verified): items[] with id, billing_customer_id,
+  // current_period_starts_at/ends_at, status, cancel_at_period_end, recurring.period_unit.
+  async listSubscriptions(pageNum = 0, pageSize = 100): Promise<{
+    items: AirwallexSubscriptionListItem[];
+    hasMore: boolean;
+  }> {
+    if (!isAirwallexConfigured()) {
+      throw new Error('Airwallex not configured');
+    }
+    const token = await this.getAccessToken();
+    const response = await fetch(
+      `${AIRWALLEX_API_BASE}/api/v1/subscriptions?page_num=${pageNum}&page_size=${pageSize}`,
+      { method: 'GET', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' } },
+    );
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Airwallex list subscriptions ${response.status}: ${errorBody}`);
+    }
+    const data = await response.json();
+    const items: AirwallexSubscriptionListItem[] = Array.isArray(data.items) ? data.items : [];
+    return { items, hasMore: items.length >= pageSize };
+  }
+
+  // Fetch a billing customer by its bcus_ id to resolve the email we set at checkout.
+  // Real endpoint (verified): GET /api/v1/billing_customers/{id} -> { id, email, name, ... }.
+  async getBillingCustomer(billingCustomerId: string): Promise<{ id: string; email?: string }> {
+    if (!isAirwallexConfigured()) {
+      throw new Error('Airwallex not configured');
+    }
+    const token = await this.getAccessToken();
+    const response = await fetch(
+      `${AIRWALLEX_API_BASE}/api/v1/billing_customers/${billingCustomerId}`,
+      { method: 'GET', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' } },
+    );
+    if (!response.ok) {
+      const errorBody = await response.text();
+      throw new Error(`Airwallex get billing customer ${response.status}: ${errorBody}`);
+    }
     return await response.json();
   }
 
@@ -413,7 +462,7 @@ class AirwallexService {
       }
 
       const errorText = await response.text();
-      console.warn('Airwallex update subscription error:', response.status, errorText);
+      logger.warn('Airwallex update subscription error', { status: response.status, errorText });
 
       // Fallback: try the cancel endpoint directly
       const cancelResponse = await fetch(
@@ -435,11 +484,11 @@ class AirwallexService {
       }
 
       const cancelError = await cancelResponse.text();
-      console.warn('Airwallex cancel (fallback) error:', cancelResponse.status, cancelError);
+      logger.warn('Airwallex cancel (fallback) error', { status: cancelResponse.status, cancelError });
       return { airwallexSuccess: false, error: `Update ${response.status}, Cancel ${cancelResponse.status}` };
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
-      console.warn('Airwallex cancel subscription network error:', msg);
+      logger.warn('Airwallex cancel subscription network error', { msg });
       return { airwallexSuccess: false, error: msg };
     }
   }
@@ -447,7 +496,7 @@ class AirwallexService {
   // Verify webhook signature
   verifyWebhookSignature(payload: string, signature: string, timestamp: string): boolean {
     if (!AIRWALLEX_CREDENTIALS.webhookSecret) {
-      console.error('Airwallex webhook secret not configured, rejecting webhook');
+      logger.error('Airwallex webhook secret not configured, rejecting webhook');
       return false;
     }
 

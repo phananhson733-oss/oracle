@@ -694,6 +694,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'famous-highly-sensitive-person',
   'how-to-read-birth-chart',
   '10th-house-astrology',
   '7th-house-astrology',
@@ -759,7 +760,6 @@ const ARTICLE_SLUGS = [
   'highly-sensitive-person',
   'signs-of-a-highly-sensitive-person',
   'highly-sensitive-person-vs-autism',
-  'famous-highly-sensitive-people',
   // 6/2 MAHADASHA cluster (sequential staggered, pillar first):
   // mahadasha -> rahu -> ketu -> saturn(shani) -> venus.
   'mahadasha',
@@ -774,6 +774,46 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'ashwini-nakshatra',
+  'hasta-nakshatra',
+  'krittika-nakshatra',
+  'neptune-in-pisces',
+  'swati-nakshatra',
+  'mrigashira-nakshatra',
+  'synastry-chart-compatibility',
+  'composite-chart-calculator',
+  'black-moon-lilith',
+  'shadow-work-journal-prompts',
+  'full-moon-july-2026',
+  'journal-prompts',
+  'new-moon-journal-prompts',
+  'full-moon-journal-prompts',
+  'moon-journal',
+  'full-moon-june-2026',
+  'scorpio-rising-houses',
+  'leo-rising-houses',
+  'libra-rising-houses',
+  'sattva-rajas-tamas',
+  'ai-astrology-app',
+  'nakshatra',
+  'pushya-nakshatra',
+  '3-gunas',
+  'solar-return',
+  'how-to-balance-vata-dosha',
+  'juno-astrology',
+  'cancer-north-node',
+  'north-node-in-sagittarius',
+  'north-node-in-gemini',
+  'south-node',
+  'rohini-nakshatra',
+  'ashlesha-nakshatra',
+  'chiron-in-taurus',
+  'bharani-nakshatra',
+  'anuradha-nakshatra',
+  'what-to-do-on-a-full-moon-spiritually',
+  'full-moon-energy',
+  'what-is-a-full-moon-ritual',
+  'solar-return-chart',
   'aura-colors-guide',
   'blue-aura-meaning',
   'yellow-aura-meaning',
@@ -885,6 +925,41 @@ const generate = async () => {
       '/cookies': { title: 'Cookie Policy', description: 'Which cookies AstrologyWiki uses, why, and how you can control them.', body: 'AstrologyWiki uses a small number of essential cookies to remember your language and theme preferences, plus privacy-respecting analytics. We do not use cookies to resell your browsing data. The full Cookie Policy explains each category and how to opt out.' },
       '/about': { title: 'About AstrologyWiki', description: 'AstrologyWiki is a modern, psychology-grounded astrology knowledge base built on real astronomy — no mysticism, no fortune-telling.', body: 'AstrologyWiki pairs Swiss Ephemeris astronomy with modern psychology to make astrology a tool for self-knowledge rather than prediction. Our wiki, calculators, and CBT journal are free to use. Learn more about our editorial approach, data sources, and the people behind the project.' },
       '/help': { title: 'Help & FAQ', description: 'Answers to common questions about birth charts, calculators, accounts, and using AstrologyWiki.', body: 'Find answers about generating a birth chart, reading your Saturn return, using the synastry and transit tools, and managing your data. Browse the full help center for step-by-step guides and frequently asked questions.' },
+      // 定价页：body 含可见价格文案，爬虫无需执行 JS 即可读到价格（防 soft 404）。
+      // 金额须与 backend/src/config/airwallex.ts 及 data/pricing.ts 保持一致（见 docs/PRD.md §3）。
+      '/pricing': {
+        title: 'Pricing',
+        description: 'AstrologyWiki pricing: start free, or go Pro from $6.99/month ($41.99/year, save 50%). One-time credit packs from $4.99, plus a 7-day free trial.',
+        body: `## Plans
+
+AstrologyWiki is free to start — create a birth chart, explore the wiki, and use the CBT journal without an account.
+
+Go Pro for full access:
+
+- **Monthly** — $6.99/month, cancel anytime
+- **Yearly** — $41.99/year (about $3.50/month), save 50%
+- **First subscription** — 50% off your first plan
+- **Free trial** — 7 days unlocked when you sign up
+
+Pro unlocks deep-dive readings, up to 10 Ask questions a week, extra synastry, monthly CBT insights, 10 daily wiki and tool lookups, and 100 bonus credits with every payment.
+
+## Credit packs
+
+Prefer to pay as you go? One-time credits:
+
+- **Starter** — 100 credits for $4.99
+- **Standard** — 300 credits for $12.49 (save 17%)
+- **Value** — 500 credits for $19.99 (save 20%)
+- **Pro** — 1,000 credits for $34.99 (save 30%)
+
+Credits cover Ask, synastry, and Synthetica when your free quota runs out.
+
+## Free vs Pro
+
+Free members get 3 Ask questions a week, 3 synastry readings (lifetime), 3 Synthetica runs a day, and the first three psychological dimensions. Pro members unlock unlimited details, higher weekly limits, every dimension, and monthly CBT insights.
+
+Prices shown in USD; EUR, GBP, and CNY are supported at checkout. Payments are processed securely by Airwallex.`,
+      },
     },
     zh: {
       '/privacy': { title: '隐私政策', description: 'AstrologyWiki 如何收集、使用与保护你的数据——出生信息、日记内容与账户信息。', body: 'AstrologyWiki 将出生数据、CBT 日记文本与你提出的问题视为敏感个人信息。我们不出售你的数据，占星输入在缓存前会先经哈希处理。本页为做法摘要；完整政策详述数据收集、保留期限与你的删除权利。' },
@@ -892,9 +967,42 @@ const generate = async () => {
       '/cookies': { title: 'Cookie 政策', description: 'AstrologyWiki 使用哪些 Cookie、为何使用，以及你如何控制它们。', body: 'AstrologyWiki 仅使用少量必要 Cookie 来记住你的语言与主题偏好，并采用尊重隐私的分析。我们不会用 Cookie 转售你的浏览数据。完整 Cookie 政策说明各类别及退出方式。' },
       '/about': { title: '关于 AstrologyWiki', description: 'AstrologyWiki 是基于真实天文与现代心理学的占星知识库——无玄学、不算命。', body: 'AstrologyWiki 将 Swiss Ephemeris 天文计算与现代心理学结合，让占星成为自我认识的工具而非预测。我们的百科、计算器与 CBT 日记均免费。了解更多关于我们的编辑理念、数据来源与团队。' },
       '/help': { title: '帮助与常见问题', description: '关于出生星盘、计算器、账户与使用 AstrologyWiki 的常见问题解答。', body: '在这里找到生成出生星盘、解读土星回归、使用合盘与过运工具，以及管理你的数据的解答。浏览完整帮助中心获取分步指南与常见问题。' },
+      '/pricing': {
+        title: '定价方案',
+        description: 'AstrologyWiki 定价：免费起步，Pro 每月 ¥49（年付 ¥294，立省 50%）。一次性积分包 ¥34 起，注册赠 7 天试用。',
+        body: `## 方案
+
+AstrologyWiki 免费起步——无需账户即可生成出生星盘、浏览百科、使用 CBT 日记。
+
+升级 Pro 解锁全部功能：
+
+- **月付** — 每月 ¥49，随时取消
+- **年付** — 每年 ¥294（约每月 ¥24.5），立省 50%
+- **首次订阅** — 首个方案享 5 折
+- **免费试用** — 注册即赠 7 天
+
+Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 CBT 统计、每日 10 次百科与工具查询，以及每次支付赠送 100 积分。
+
+## 积分包
+
+更喜欢按需付费？一次性积分：
+
+- **入门包** — 100 积分 ¥34
+- **标准包** — 300 积分 ¥84（省 17%）
+- **超值包** — 500 积分 ¥134（省 20%）
+- **专业包** — 1,000 积分 ¥234（省 30%）
+
+免费额度用完时，积分可用于 Ask、合盘与 Synthetica。
+
+## 免费 vs Pro
+
+免费用户每周 3 次 Ask、3 次合盘（终身）、每天 3 次 Synthetica，以及前 3 个心理维度。Pro 用户解锁无限详情、更高每周额度、全部维度与月度 CBT 统计。
+
+价格以人民币显示；结账支持美元、欧元与英镑。支付由 Airwallex 安全处理。`,
+      },
     },
   };
-  const publicRoutes = ['/privacy', '/terms', '/cookies', '/about', '/help'];
+  const publicRoutes = ['/privacy', '/terms', '/cookies', '/about', '/help', '/pricing'];
   for (const lang of ['en', 'zh']) {
     for (const route of publicRoutes) {
       const copy = PUBLIC_ROUTE_COPY[lang][route];
