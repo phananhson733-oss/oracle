@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const eleventhHouseEn: WikiArticle = {
   slug: "11th-house",
+  image: "/images/houses/11th-house.jpg",
+  image_alt: "Scattered faint stars threaded by gold lines into one shared constellation over a common horizon",
   title: "What the 11th House Really Governs Beyond Friendship",
   description: "The 11th house is the sector of a birth chart that governs your relationship to the wider collective: friendships, groups, shared ideals, and the long-range...",
   authorId: "julian-thorne",
@@ -47,6 +49,8 @@ A second comparison runs along the 5th-to-11th axis itself, and here the trade-o
 
 A third confusion worth untangling is the overlap with the 10th House of career and public standing. The 10th is about your visible role and the reputation you build through it; the way it works is vertical, a climb toward recognition. This house is horizontal instead, concerned with peers, allies, and the causes you join as an equal rather than the status you reach. To gain the lateral support and shared purpose this sector offers, you set aside the solo authority the 10th rewards; to gain the public standing of the 10th, you give up some of the easy belonging a group of equals provides. A person with strong placements in both often feels the pull between leading from the front and standing shoulder to shoulder, which is less a contradiction than a rhythm to learn. Knowing which house a given motivation belongs to keeps a reading honest rather than blurring ambition and affiliation into one vague drive.
 
+
+![Comparison of the 5th house personal spark, 7th house one-to-one bond, and 11th house group alliance](/images/houses/11th-house-i0-en.svg)
 ## How to Read The 11th House in Your Chart
 
 Reading this house in your own chart works best as a set of observable cues rather than a memory test. Find the sign on the house cusp and any planets inside it, then look for these signals:
@@ -57,6 +61,8 @@ Reading this house in your own chart works best as a set of observable cues rath
 4. **Who shows up for you.** Observe the aligned allies who appear when your work needs lift, even if there are only a few.
 5. **The Saturn signal.** If belonging feels effortful or guarded, that hesitation itself is data about how you join.
 
+
+![Five signals for reading the 11th house: pulling cause, group role, defended vision, allies, the Saturn signal](/images/houses/11th-house-i1-en.svg)
 ## Common Misreadings
 
 The most common misreadings of this house all flow from the narrow "friendship" label, and three trip up readers more than any others:
@@ -118,6 +124,8 @@ Place this house inside the whole wheel before reading it in isolation. Read the
 
 export const eleventhHouseZh: WikiArticle = {
   slug: "11th-house",
+  image: "/images/houses/11th-house.jpg",
+  image_alt: "散落的微光星辰被金线串成一座共同的星座，横跨遥远的地平线",
   title: "读懂第十一宫，把孤身一人也读成被群体接住的位置",
   description: "第十一宫（The 11th House）是星盘里管友谊、群体归属、长期愿景和你想为之努力的共同目标的那块生活领域。一句话说，它是你和比自己更大的圈子之间的接口。",
   authorId: "julian-thorne",
@@ -157,6 +165,8 @@ export const eleventhHouseZh: WikiArticle = {
 
 第十一宫和第七宫则是「群体」和「一对一」的差别：第七宫管的是与某个具体伴侣或对手的双人关系，第十一宫管的是与一群人、一个理念的多人对齐。运作上，第七宫靠深度绑定一个人来运转，第十一宫靠松散却广泛的认同来运转——要换来一对一的亲密深度，就得牺牲群体那种「人多但各自保留空间」的弹性。也正因如此，这一宫尤其讲究区分：你是在追求归属，还是只是在收集联系人。
 
+
+![第五宫（个人火花）、第七宫（一对一关系）与第十一宫（群体同盟）的对照图](/images/houses/11th-house-i0-zh.svg)
 ## 如何在你的星盘里识别 The 11th House
 
 要在星盘里认出第十一宫（The 11th House）并真正用起来，别去数你有多少朋友，而是观察你和「群体」打交道时反复出现的那些信号。下面几条，对照着自己最近的生活看：
@@ -167,6 +177,8 @@ export const eleventhHouseZh: WikiArticle = {
 4. 看你对「未来」的谈法：聊到五年十年后，那段描述偏向个人成就，还是某种集体图景？
 5. 看你的第十一宫宫头星座和宫内行星：它们会染上这块领域的具体风格和脾气。
 
+
+![读第十一宫的五个信号：所向往的事业、群体角色、捍卫的愿景、同盟、土星信号](/images/houses/11th-house-i1-zh.svg)
 ## 常见误读
 
 关于第十一宫，最常见的误读集中在这几处，先点破再说清：

@@ -3,6 +3,8 @@ import type { WikiArticle } from '../../types';
 
 export const marsAngerTriggersEn: WikiArticle = {
   slug: 'mars-anger-triggers',
+  image: "/images/psych/mars-anger-triggers.jpg",
+  image_alt: "Glowing Mars sphere radiating four elemental energy streams — fire, earth, air and water — symbolizing the four anger styles.",
   title: 'Mars in Your Chart: Understanding Your Triggers and Anger Style',
   description: 'Discover your "Anger Style" based on your Mars sign. Learn the specific triggers, shadow patterns, and healing paths for all 12 signs.',
   authorId: "julian-thorne",
@@ -35,6 +37,8 @@ Anger gets a bad reputation. We're taught to swallow it or feel shame when it su
 
 ---
 
+
+![Sequence of the four elemental Mars anger styles: fire explosive, earth slow-burn, air verbal, water emotional undercurrent.](/images/psych/mars-anger-triggers-i0-en.svg)
 ## Fire Mars: The Explosive Warriors
 
 *Ignites quickly. Hot, visible, and usually burns out fast.*
@@ -165,6 +169,8 @@ Understanding is step one. Integration is the practice.
 
 ---
 
+
+![Three-step practice for integrating your Mars: move the energy, express the anger, track your triggers.](/images/psych/mars-anger-triggers-i1-en.svg)
 ## Frequently Asked Questions (FAQ)
 
 ### Which Mars sign has the worst temper?
@@ -186,6 +192,8 @@ Ready to dig deeper? Anger often masks hurt or grief. Use our [Mood Tracking Gui
 
 export const marsAngerTriggersZh: WikiArticle = {
   slug: 'mars-anger-triggers',
+  image: "/images/psych/mars-anger-triggers.jpg",
+  image_alt: "发光的火星球体向外辐射火、土、风、水四道元素能量流，象征四种愤怒风格。",
   title: '星盘中的火星：了解你的愤怒触发点和风格',
   description: '根据你的火星星座发现你的"愤怒风格"。了解所有12个星座的具体触发点、阴影模式和疗愈路径。',
   authorId: "julian-thorne",
@@ -218,6 +226,8 @@ export const marsAngerTriggersZh: WikiArticle = {
 
 ---
 
+
+![四种元素火星愤怒风格的序列图：火象爆发、土象慢热、风象言语、水象情绪暗流。](/images/psych/mars-anger-triggers-i0-zh.svg)
 ## 火象火星：爆发型战士
 
 *点火迅速。炽热、可见，通常很快熄灭。*
@@ -348,6 +358,8 @@ export const marsAngerTriggersZh: WikiArticle = {
 
 ---
 
+
+![整合火星能量的三步练习：动起来、表达愤怒、追踪触发点。](/images/psych/mars-anger-triggers-i1-zh.svg)
 ## 常见问题（FAQ）
 
 ### 哪个火星星座脾气最差？

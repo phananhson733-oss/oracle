@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const icAstrologyEn: WikiArticle = {
   slug: "ic-astrology",
+  image: "/images/aspects/ic-astrology.jpg",
+  image_alt: "Glowing gold roots reaching down into dark earth from a hidden hearth-light, a faint halo high in the sky above.",
   title: "What IC Astrology Reveals About Your Private Roots",
   description: "The Imum Coeli (IC) is the lowest point of a birth chart, the spot directly opposite the Midheaven at the very base of the wheel. Sitting within the wider...",
   authorId: "marcus-orion",
@@ -39,6 +41,8 @@ ic astrology becomes clearer when you set the IC beside the concepts it is most 
 2. **The IC versus the Midheaven.** The Midheaven crowns the chart with your public standing and visible direction, whereas the IC anchors the opposite end with your private base. To lean into the IC over the Midheaven is to prize inner security over outward recognition: you gain a stable foundation to operate from, but you sacrifice some of the Midheaven's drive toward being seen. In practice the Midheaven asks who you are to the world; the IC asks what you quietly stand on when no one is watching.
 3. **The IC versus the Ascendant.** The Ascendant is the mask and first impression you lead with, while the IC is the hidden interior that mask protects. Choosing to read from the IC rather than the Ascendant trades surface legibility for depth; you reach the private root, but you give up the quick, visible signal the rising sign offers. The Ascendant shows the door; the IC shows the room behind it.
 
+
+![Comparison of the IC as the exact private base point, the 4th house as the whole home sector it opens, and the Midheaven as the public crown opposite it](/images/aspects/ic-astrology-i0-en.svg)
 ## How to Read IC in Your Chart
 
 Reading ic astrology in your own chart works best as a single observe-then-apply sequence rather than a trait checklist, because the root of identity rarely announces itself as one obvious symbol. Instead of staring at the bottom of the chart and waiting for a verdict, trace the IC through parts of the chart you can already see:
@@ -49,6 +53,8 @@ Reading ic astrology in your own chart works best as a single observe-then-apply
 4. Recall the home or atmosphere you retreat to when you are depleted, and match its tone to the sign on your IC.
 5. Name out loud what actually makes you feel rooted, because that act of naming turns a vague "home point" into a foundation you can use.
 
+
+![Five-step sequence for reading the IC: find its sign and ruler, locate the ruler's house, note planets near the IC, match your retreat to the sign, name what roots you](/images/aspects/ic-astrology-i1-en.svg)
 ## Common Misreadings
 
 Most confusion about ic astrology comes from a few popular shortcuts that flatten a foundation-rich angle into a single keyword. Each common misreading is worth correcting on its own terms:
@@ -109,6 +115,8 @@ Pull up your own birth chart and find the point at the very bottom of the wheel,
 
 export const icAstrologyZh: WikiArticle = {
   slug: "ic-astrology",
+  image: "/images/aspects/ic-astrology.jpg",
+  image_alt: "金色发光的根系从隐藏的炉火般暖光向下扎进黑暗土壤，天空高处只悬着一圈微弱光晕。",
   title: "天底 IC：星盘最底端那条藏起来的根",
   description: "IC（天底，Imum Coeli）是星盘最底端的那个点，正好落在天顶的对面。把它放进更上位的 占星术语总览 pillar 页 一起看，IC...",
   authorId: "marcus-orion",
@@ -144,6 +152,8 @@ IC（天底，Imum Coeli）是星盘最底端的那个点，正好落在天顶�
 2. **IC 与天顶。** 天顶在顶端代表你的公开身份和对外方向，IC 则在另一头锚住私密地基。倾向读 IC 而不是天顶，是把内在的安稳看得比对外的认可更重：你换来一块立足的地基，却要牺牲天顶那股想被看见的劲头。天顶问的是你对世界来说是谁，IC 问的是没人看着时你踩在什么上面。
 3. **IC 与上升点。** 上升点是你亮出来的面具和第一印象，IC 是这张面具护着的隐藏内在。选择从 IC 读起、而不是从上升读起，是拿表面的好懂去换深度：你够到了私密的根，却放弃了上升星座那种一眼可见的信号。上升点给你看门，IC 给你看门后那个房间。
 
+
+![对比图：天底IC是盘底精确的私密地基点，第四宫是它打开的整片家庭领域，天顶是正对面的公开冠冕](/images/aspects/ic-astrology-i0-zh.svg)
 ## 如何在自己身上识别 IC
 
 要在自己的盘里认出 IC 并真正用起来，最好走一遍「先观察、再应用」的固定顺序，而不是堆一摞特质清单，因为身份之根很少会以一个明显的符号自己跳出来。别盯着星盘底端等结论，而是顺着你已经看得见的部分去追这个 IC：
@@ -154,6 +164,8 @@ IC（天底，Imum Coeli）是星盘最底端的那个点，正好落在天顶�
 4. 回想你累垮时会退回去的那个家或那种氛围，把它的调子对上你 IC 的星座。
 5. 把到底什么让你觉得扎了根，出声说出来，因为这个命名的动作，会把模糊的「家的点」变成一块你用得上的地基。
 
+
+![读懂天底的五步：找星座与主管、看主管落宫、留意贴近IC的行星、对上退回的氛围、说出什么让你扎根](/images/aspects/ic-astrology-i1-zh.svg)
 ## 常见误读
 
 关于 IC，最常见的误读都来自几个把这个根源丰厚的轴点压成单一关键词的捷径。每一条都值得单独点破：

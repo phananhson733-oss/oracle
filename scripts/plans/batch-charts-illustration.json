@@ -11,9 +11,9 @@
   "articles": {
     "how-to-read-birth-chart": {
       "hero": {
-        "prompt": "A circular natal chart wheel rendered as a glowing map of inner terrain: twelve sector divisions, concentric rings for planets, signs and houses, ten small luminous planet orbs placed around the rim, thin golden aspect lines forming triangle and square chords weaving across the center like threads of an inner dialogue, a soft mirror-like sheen across the wheel suggesting self-reflection rather than fortune-telling, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "Natal chart wheel drawn as a glowing map of inner terrain, with golden aspect lines weaving between planet points",
-        "altZh": "本命星盘被描绘成一张发光的内在地形图，金色相位线在行星点之间交织"
+        "prompt": "An atmospheric painterly editorial scene: a calm still lake mirroring the sky with a low pine treeline on the horizon, a vast night sky filling the frame; a luminous teal-and-gold Milky-Way wash drifts across the deep indigo dark with many faint star points. Across the sky, several soft glowing celestial bodies of different sizes hang at different heights — a brighter sun and moon among smaller planetary orbs, a few faint constellation lines drawn lightly between them — a whole readable sky seen all at once, layered and depth-filled, the personal lights close and warm, the distant ones cool and far, inviting and expansive in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A whole night sky of glowing bodies at different heights — sun, moon, planets, faint constellation lines — over a still mirroring lake.",
+        "altZh": "一整片夜空：太阳、月亮与行星高低错落地发光，淡淡的星座连线交织，倒映在平静的湖面上。"
       },
       "inline": [
         {
@@ -137,9 +137,9 @@
     },
     "synastry-chart-compatibility": {
       "hero": {
-        "prompt": "Two distinct natal chart wheels overlapping like interlocking rings, fine golden threads stretching between points on opposite wheels — some threads smooth flowing arcs, others taut straight lines under visible tension — the intersection of the rings glowing softly as a third shared field, while a faint gauge-like dial fragment dissolves into stardust at the edge, suggesting a single score breaking apart into something richer, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "Two overlapping chart wheels joined by golden threads of differing tension while a score gauge dissolves at the edge",
-        "altZh": "两张星盘交叠，金线或松或紧地相连，一旁的评分刻度正在消散"
+        "prompt": "An atmospheric painterly editorial scene: two adjacent still pools of water separated by a thin dark spit of land, under a vast shared night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. Above each pool floats its own distinct cluster of soft glowing celestial forms, and between the two clusters several fine threads of light cross the gap — some smooth flowing gold lines, some taut bright charged ones under tension — the contacts where one sky activates the other, harmonious and demanding contacts woven together in the space between, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two distinct clusters of glowing forms over twin pools, fine threads of light crossing between them, some smooth, some taut.",
+        "altZh": "并列双潭各自上方悬着一族发光星体，两族之间数条光线交错——有的柔顺流动，有的紧绷带电。"
       },
       "inline": [
         {
@@ -238,9 +238,9 @@
     },
     "composite-chart-calculator": {
       "hero": {
-        "prompt": "Two luminous natal chart wheels on either side converging toward a single central relationship wheel, but the convergence splits along two ghostly paths — one path drawn as pure geometry of averaged degree lines meeting at abstract midpoints, the other anchored to a tiny glowing location marker on a faint map beneath a calendar-like ring — yielding two subtly different versions of the same central chart, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "Two natal wheels merging into one relationship chart along two diverging calculation paths",
-        "altZh": "两张本命盘汇聚成一张关系盘，却沿两条不同的计算路径产生微妙差异"
+        "prompt": "An atmospheric painterly editorial scene: a still wide lake with a low horizon under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. High in the sky two separate clusters of soft glowing celestial forms hang apart, and at the exact midpoint between each matched pair a new, third gentle light has formed, the set of midpoints together composing a single new emergent constellation glowing softer than either source — the relationship as a third entity born from the space between two charts, quiet and integrative in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two clusters of glowing forms with a soft new third light formed at each midpoint, composing an emergent constellation over a still lake.",
+        "altZh": "夜空中两族发光星体相隔而悬，每对之间的中点生出第三束柔光，共同组成一座新生的星座，倒映静湖。"
       },
       "inline": [
         {
@@ -331,9 +331,9 @@
     },
     "solar-return": {
       "hero": {
-        "prompt": "A large fixed constellation wheel etched into the night sky like a permanent star map, with a smaller translucent golden ring resting over one sector like an annual lens, casting a warm spotlight that illuminates only that segment while the rest of the wheel stays dim and enduring, a small sun orb traveling a circular orbit and arriving back at a marked degree point on the rim, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "A temporary golden lens highlights one sector of a fixed natal star wheel as a small sun returns to its marked degree",
-        "altZh": "一枚临时的金色透镜照亮固定本命星轮的一个扇区，小小的太阳回到出生度数"
+        "prompt": "An atmospheric painterly editorial scene: an open landscape at the turn of dawn, a low horizon and still water under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. A single warm-gold sun returns to one precise marked point of light in the sky — the same degree it held at birth — and from that returning sun a soft translucent sheet of golden light settles like a temporary overlay across the whole familiar sky beneath it, gently re-coloring the existing constellation without replacing it — a yearly overlay on the lasting chart, cyclical and renewing in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A warm-gold sun returning to one marked point, casting a translucent overlay of light across a familiar constellation at dawn.",
+        "altZh": "一轮暖金太阳回归到天空中一个标记点，向下铺开一层半透明的金色覆盖光，轻染原有星座而不取代它。"
       },
       "inline": [
         {
@@ -432,9 +432,9 @@
     },
     "solar-return-chart": {
       "hero": {
-        "prompt": "Five translucent glass-like chart wheels stacked in a gentle offset cascade, each layer highlighting a different feature in gold — a rising point glowing on a horizon edge, two small orbs touching in tight conjunction, a sun radiating inside one house sector, a single ruling planet trailing a guiding thread, and sharp notched degree marks along a rim — the layers resolving together into one composite year-map, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "Five translucent chart layers stacked into one solar return year-map, each highlighting a different reading layer",
-        "altZh": "五层半透明星盘叠成一张太阳回归年度图，每层点亮一个解读重点"
+        "prompt": "An atmospheric painterly editorial scene: a still lake with a low horizon under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. Two faintly overlapping skies hang in the frame — a deeper, lasting constellation behind and a brighter annual one in front — and five soft glowing accents stand out where the layers meet: a rising light at the eastern horizon, the points where the two skies switch certain stars on, one cluster where light pools most densely, a single steering planet glowing brighter, and a few sharp pressured glints at critical points; two charts read side by side as one luminous overlay, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two faintly overlapping skies over a still lake, with five glowing accents marking where the lasting and annual charts meet.",
+        "altZh": "静湖上方两片微微重叠的夜空，五处发光的亮点标出本命与流年两盘交汇的关键之处。"
       },
       "inline": [
         {
@@ -521,9 +521,9 @@
     },
     "astrology-terms": {
       "hero": {
-        "prompt": "A celestial vocabulary coming together: scattered geometric fragments — a cross of four pivot axes, golden chord lines forming triangle and square shapes, and small hollow calculated points — drifting in from the edges and clicking into place inside one unified chart wheel, like loose flashcards assembling into a single connected map, faint trails showing where each fragment traveled, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "Scattered chart fragments — aspect lines, angle axes, and calculated points — assembling into one connected wheel",
-        "altZh": "散落的相位线、轴点与虚点碎片，正拼合成一张完整星盘"
+        "prompt": "An atmospheric painterly editorial scene: a calm still lake with a low pine treeline on the horizon under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. Two soft glowing celestial orbs hold steady high in the sky while three faint threads of gold light connect them at three different opening angles in turn — a narrow opportunity angle, a wide flowing angle, and a tense right-angle — the same two lights telling three different stories purely through the angle between them, a quiet study of relationship rather than a diagram, contemplative in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two steady glowing orbs joined by faint gold threads at three different angles, the same lights telling three stories over a still lake.",
+        "altZh": "静湖夜空中两颗稳定的发光星体，被三道不同张开角度的金线相连，同两束光因角度不同而讲出三种故事。"
       },
       "inline": [
         {
@@ -647,9 +647,9 @@
     },
     "ai-astrology-app": {
       "hero": {
-        "prompt": "Split scene of two machine-made readings: on one side an astrological wheel built from a precise circuit-like lattice, planet nodes wired to an ephemeris grid with crisp golden data threads; on the other side a soft hazy mirror emitting the same warm glow but containing only vague drifting mist that reflects whatever approaches it — two outputs that look alike until examined closely, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "A precise circuit-built chart wheel beside a hazy mirror that only reflects — two readings that look alike",
-        "altZh": "一侧是电路般精密的星盘，另一侧是只会映照的雾面镜子，两种解读看似相同"
+        "prompt": "An atmospheric painterly editorial scene: a perfectly still mirror-calm lake at night under a vast detailed starfield, the real constellations crisply reflected in the water; across one stretch of the reflection the mirrored stars blur and smear into a vague featureless golden haze that no longer matches the true sky above it, a single continuous nightscape quietly contrasting an accurate reflection with a hollow blurred one, calm and discerning in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A still lake mirroring a crisp starfield, with one stretch of the reflection blurred into vague haze that no longer matches the real sky.",
+        "altZh": "静如镜的夜湖倒映清晰星空，倒影的一段却糊成空洞的金色雾斑，与上方真实星空不再对应。"
       },
       "inline": [
         {
@@ -850,17 +850,17 @@
     },
     "aura-moon-venus-rising-bridge": {
       "hero": {
-        "prompt": "A slender bridge of golden light spanning a quiet night chasm: on one side a soft radiant aura field of layered translucent color veils, on the other a crisp natal chart wheel showing a glowing moon orb, a bright morning-star point, and a horizon line where a constellation rises, the bridge's golden filaments weaving the two maps together as equals rather than rivals, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "A golden bridge of light connects a soft aura color field to a natal chart wheel with moon, venus, and rising horizon",
-        "altZh": "一座金色光桥连接柔和的气场色域与标有月亮、金星和上升地平线的星盘"
+        "prompt": "An atmospheric painterly editorial scene: a still lake at the threshold of dawn with a low horizon under a vast sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points, and a soft outer halo of warm colored aura-light glows along the very edge of the scene like the weather one arrives in. Within the sky three gentle source-lights shine as the origin of that outward glow — a tender Moon low and reflective over the water, a warm Venus point of rose-gold light, and a soft rising light at the eastern horizon — the inner sources feeding the outer aura, intimate and warm in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A soft colored aura-glow along the scene's edge fed by three inner source-lights — Moon, Venus, and a rising light — over a still lake.",
+        "altZh": "黎明静湖，画面边缘晕开柔和的彩色气场光，由内部三束源光供养——低映的月亮、玫瑰金的金星与东方升起之光。"
       },
       "inline": []
     },
     "four-element-framework": {
       "hero": {
-        "prompt": "A central natal chart wheel balanced amid four elemental quadrants — a curling flame swirl, layered crystalline earth strata, drifting ribbons of air current, and deep rippling water — with small golden planet markers from the wheel scattered unevenly across the four regions like weights on a living balance scale, some quadrants crowded and one nearly empty, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "A chart wheel surrounded by fire, earth, air, and water quadrants with planet markers distributed unevenly among them",
-        "altZh": "星盘四周环绕火、土、风、水四个象限，行星标记不均匀地分布其间"
+        "prompt": "An atmospheric painterly editorial scene: a wide landscape where four elemental zones meet on one horizon under a vast night sky — open ground, still water, a faint breath of moving air, and a warm glow of distant fire — held together as one continuous scene; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. Above each zone hovers a soft glowing celestial form in its own temperature: a fiery warm-gold ember high in the air, a cool teal water-light low over the lake, an airy pale drifting glow, and a steady grounded amber light over the earth — four modes of energy balanced in one sky, expansive and even in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Four elemental zones meeting on one horizon — earth, water, air, fire — each with its own glowing celestial light, balanced in one sky.",
+        "altZh": "一道地平线上四种元素地带相接——大地、静水、流动的气息与远处火光，每个地带上方各悬一束对应色温的发光星体。"
       },
       "inline": [
         {

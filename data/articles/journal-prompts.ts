@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const journalPromptsEn: WikiArticle = {
   slug: "journal-prompts",
+  image: "/images/moon/journal-prompts.jpg",
+  image_alt: "Scattered identical pages beside one page whose gold points connect into a constellation — topic lists versus diagnostic prompts that surface patterns",
   title: "Journal Prompts That Actually Surface Patterns vs. the Ones That Fill Pages",
   description: "Journal prompts are focused questions designed to direct reflection toward a specific theme or pattern.",
   authorId: "marcus-orion",
@@ -49,6 +51,8 @@ Shadow work prompts, when well-constructed, follow the diagnostic model — whic
 
 The three structural rules that distinguish diagnostic journal prompts from narrative ones hold across all topic areas: they name a function rather than a feeling, they span multiple situations rather than one event, and they demand behavioral evidence rather than interpretation. All three must hold for a prompt to produce pattern-level insight rather than emotionally honest narrative.
 
+
+![Topic-organized versus diagnostic journal prompts: emotional coverage and fluent writing against cross-situational behavioral evidence and pattern recognition](/images/moon/journal-prompts-i0-en.svg)
 ## How to Read journal prompts in Yourself
 
 Distinguishing diagnostic prompts from narrative ones in any given list takes a single pass of structured attention. Look for these signals:
@@ -63,6 +67,8 @@ Distinguishing diagnostic prompts from narrative ones in any given list takes a 
 
 5. **Cross-domain applicability.** The most structurally sound diagnostic prompts surface the same behavioral tendency across work, relationships, and internal life at once. A question that only makes sense in one domain has limited diagnostic reach.
 
+
+![Five markers of a diagnostic journal prompt: function over feeling, multiple situations, behavioral evidence, hesitation as signal, and cross-domain reach](/images/moon/journal-prompts-i1-en.svg)
 ## Common Misreadings
 
 The way journal prompts are discussed and packaged online produces consistent misconceptions that keep journalers working at the narrative level:

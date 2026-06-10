@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fullMoonJune2026En: WikiArticle = {
   slug: "full-moon-june-2026",
+  image: "/images/moon/full-moon-june-2026.jpg",
+  image_alt: "Full moon over a mountain summit while a planet's gold path loops back on itself — the double completion signal of June 29, 2026",
   title: "The Full Moon June 2026 Is a Double Completion Signal, Not a Launch Window",
   description: "Full moon June 2026 is the Capricorn full moon occurring on June 29, 2026, notable for coinciding with Mercury stationing retrograde on the same day —",
   authorId: "marcus-orion",
@@ -42,6 +44,8 @@ A standard Capricorn full moon functions as a results check on the ambition-secu
 
 Mercury stationing retrograde works differently. The station is the day Mercury appears to halt before reversing direction — maximum apparent stillness, which shows up in practice as communication drag, decision fog, and plans that stall without obvious cause. To get the clarity that retrograde review eventually delivers, you pay with the ability to confidently launch anything new; things initiated at the station tend to need renegotiating within the retrograde period. On June 29, both turning points land simultaneously: the Capricorn moon calls for an honest reckoning with results, and Mercury's station calls for a review of all active plans and communications. Working with this day means treating it as a dual audit rather than a launch platform. Attempting to launch on this date works against prevailing energy on two simultaneous fronts — both the lunar and the mercurial layers point backward, not forward.
 
+
+![Comparison of the Capricorn full moon's results check with Mercury's retrograde station and its 25-day review cycle, both landing June 29, 2026](/images/moon/full-moon-june-2026-i0-en.svg)
 ## How to Read full moon June 2026 in Your Timing
 
 Full moon June 2026 shows up in real experience through recognizable patterns in the days surrounding June 29. Look for these in your own life:
@@ -52,6 +56,8 @@ Full moon June 2026 shows up in real experience through recognizable patterns in
 4. **Pulls toward emotional ground or origin.** Cancer's opposition to the Capricorn moon can surface as unexpected draws toward family, home, or personal comfort — often sharpest around what sustained professional ambition has cost in personal terms.
 5. **Clarity arriving through release, not addition.** The clearest indicator this window is working as designed: the most useful action you take on or around June 29 involves removing something from your plate rather than adding to it.
 
+
+![Five signs the June 29, 2026 window is active: resurfacing projects, ambition fatigue, communication delays, pulls toward home, and clarity through release](/images/moon/full-moon-june-2026-i1-en.svg)
 ## Common Misreadings
 
 The most common errors practitioners make with full moon June 2026 come from applying a generic ritual template to a chart configuration that calls for a different orientation entirely. Applying the wrong template doesn't just produce a less effective ritual; it sets up decisions and communications for the renegotiation Mercury retrograde is already prepared to demand.

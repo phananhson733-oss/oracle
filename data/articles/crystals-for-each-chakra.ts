@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const crystalsForEachChakraEn: WikiArticle = {
   slug: "crystals-for-each-chakra",
+  image: "/images/chakra/crystals-for-each-chakra.jpg",
+  image_alt: "Seven faceted crystals in a rising line, each haloed with gold light of different intensity, showing crystals chosen by a center's energy state rather than color",
   title: "How to Pick Crystals for Each Chakra by Energy, Not Just Color",
   description: "Chakra crystals are stones paired with the seven energy centers of the body, where the idea of crystals for each chakra means matching a stone to a center...",
   authorId: "elena-vane",
@@ -40,6 +42,8 @@ People mix up three things that look similar, so it helps to put crystals for ea
 3. **Chakra crystals vs single all-purpose stones.** Some traditions lean on one master stone, often clear quartz, for everything. To get the simplicity of one stone, you sacrifice the per-center precision that a full set offers; a root center that runs cold and a third-eye center that runs hot rarely want the same support, and a single stone can only point in one direction at a time.
 4. **Chakra crystals vs guided crystal sessions.** A session hands the choosing to someone else, which feels easy. To get that convenience, you give up the self-reading skill that makes the practice yours, since the value of the pairing is learning to notice your own centers, not outsourcing the read.
 
+
+![Four concepts often confused with chakra crystal work — color charts, collecting, one master stone, guided sessions — and what each trade-off costs](/images/chakra/crystals-for-each-chakra-i2-en.svg)
 ## How to Read Chakra Crystals in Yourself
 
 The honest way to pick crystals for each chakra is to read your own state first, then choose the stone that answers it. Here is what to watch for:
@@ -49,6 +53,8 @@ The honest way to pick crystals for each chakra is to read your own state first,
 3. **Match the stone to the gap.** Pick a calming stone for an over-active center and an activating one for a drained center, rather than defaulting to color.
 4. **Check the body cue.** Tension that gathers in the chest, throat, or lower back is a plain signal of where to start, no special sensitivity required.
 
+
+![Four-step process for matching crystals to chakras: notice loud centers, notice quiet ones, match the stone to the gap, check the body cue](/images/chakra/crystals-for-each-chakra-i1-en.svg)
 ## Common Misreadings
 
 A few myths keep readers stuck, and clearing them is the fastest fix for crystals for each chakra.
@@ -70,6 +76,8 @@ A few myths keep readers stuck, and clearing them is the fastest fix for crystal
 | Third eye | Amethyst, lapis lazuli | Settles an overactive or foggy mind | Notice racing thoughts or trouble focusing |
 | Crown | Clear quartz, selenite | Supports a calm, open sense of perspective | Observe feeling scattered or disconnected |
 
+
+![Sequence pairing each of the seven chakras with its go-to crystals, from red jasper at the root to selenite at the crown](/images/chakra/crystals-for-each-chakra-i0-en.svg)
 ## Questions People Ask About Chakra Crystals
 
 **How do I choose chakra crystals if I'm a beginner?**
@@ -110,6 +118,8 @@ Take the free Chakra Test to find which energy center is most under- or over-act
 
 export const crystalsForEachChakraZh: WikiArticle = {
   slug: "crystals-for-each-chakra",
+  image: "/images/chakra/crystals-for-each-chakra.jpg",
+  image_alt: "七颗晶体沿斜线排开，金色光晕亮度各不相同，象征挑水晶要读能量状态而非只看颜色",
   title: "脉轮水晶：按能量状态挑选，而不是只看颜色",
   description: "脉轮水晶（Chakra Crystals，对应身体七个能量中心的水晶）指的是按脉轮的能量状态来配对石头，而不是只看颜色。它把每个能量中心（脉轮，chakra，西方瑜伽与灵性传统里的能量中心概念）配上一两块常用石头，背后沿用的是 Anodea Judith 系统化的现代脉轮框架；要看懂单个配对，先得理解整套...",
   authorId: "elena-vane",
@@ -146,6 +156,8 @@ export const crystalsForEachChakraZh: WikiArticle = {
 3. **脉轮配对 vs 单一万能石。** 有些做法只靠一块"主石"（常是白水晶）应付一切。要换来一块石头的省事，你就牺牲了一整套带来的逐中心精度；一个偏冷的海底轮和一个偏热的眉心轮，几乎不会想要同一种支持，单块石头一次只能指向一个方向。
 4. **脉轮配对 vs 由人带的水晶环节。** 让别人替你挑，听起来轻松。要换来这份省心，你就放下了让这门练习真正属于你的自读能力——它的价值在于学会读自己的中心，而不是把这份判断外包出去。
 
+
+![常与脉轮水晶混淆的四种做法——色卡、收藏、万能石、他人代选——及各自的代价](/images/chakra/crystals-for-each-chakra-i2-zh.svg)
 ## 如何在自己身上识别 Chakra Crystals
 
 要老实地用好脉轮水晶，先读自己的状态，再挑回应这个状态的石头。Chakra Crystals 的实操，可以从下面几条信号入手：
@@ -155,6 +167,8 @@ export const crystalsForEachChakraZh: WikiArticle = {
 3. **把石头补在缺口上。** 偏旺的中心配安定的石头，偏弱的中心配提振的石头，而不是一律照颜色来。
 4. **听身体的提示。** 紧绷感聚在胸口、喉咙还是后腰，就是个最朴素的起点信号，不需要什么特别的灵敏度。
 
+
+![脉轮水晶配对四步法：看哪里吵、看哪里哑、补在缺口、听身体提示](/images/chakra/crystals-for-each-chakra-i1-zh.svg)
 ## 常见误读
 
 有几个流行说法把人卡住，把它们说清，是用好脉轮水晶最快的一步。Chakra Crystals 最常被误读的几处是：
@@ -176,6 +190,8 @@ export const crystalsForEachChakraZh: WikiArticle = {
 | 眉心轮 | 紫水晶、青金石 | 安定过度活跃或发懵的头脑 | 思绪乱跑、难以专注时观察 |
 | 顶轮 | 白水晶、透石膏 | 支持平静、开阔的视角 | 留意发散、抽离的感觉 |
 
+
+![七大脉轮与常用水晶的配对顺序图，从海底轮的红碧玉到顶轮的透石膏](/images/chakra/crystals-for-each-chakra-i0-zh.svg)
 ## 关于 Chakra Crystals 的常见问题
 
 **新手该怎么开始挑脉轮水晶？**

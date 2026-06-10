@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const ajnaChakraEn: WikiArticle = {
   slug: "ajna-chakra",
+  image: "/images/chakra/ajna-chakra.jpg",
+  image_alt: "A single luminous gold point low on the horizon casting a long reflection on a still indigo lake like a quiet open eye.",
   title: "How the Ajna Chakra Sharpens Real Insight Instead of Noise",
   description: "Ajna chakra is the sixth energy center in the traditional chakra map, sitting at the brow, just above and between the eyebrows, and it is usually described...",
   authorId: "elena-vane",
@@ -53,6 +55,8 @@ You do not need a special state to notice this center at work; it shows up in pl
 4. **The settled decision.** When discernment is leading, choices feel clear and a little boring; when it is blocked, you keep re-litigating the same choice for days.
 5. **The strain signal.** If you are squinting for symbolism in everything, that is usually an over-active brow center scattering, not opening.
 
+
+![Comparison of a steady true intuition with an urgent anxious thought loop, the core ajna chakra distinction](/images/chakra/ajna-chakra-i0-en.svg)
 ## Common Misreadings
 
 The popular write-ups push readers toward a few specific misreads of the brow chakra, and each one keeps people stuck on the friction that sent them searching. Corrected one by one:
@@ -61,6 +65,8 @@ The popular write-ups push readers toward a few specific misreads of the brow ch
 2. **"More activity is better."** The misread: a buzzing, hyper-active third eye is a sign of progress. The reality: an over-active brow center scatters focus, so flooding feels like awakening but reads as noise.
 3. **"You have to force it open."** The misread: straining and special techniques pry it open. The reality: forcing usually backfires, and the calmer, observing state is what the tradition actually points to.
 
+
+![Three common myths about the third eye corrected: not psychic powers, not maximum activity, not forced opening](/images/chakra/ajna-chakra-i1-en.svg)
 ## The Brow Center at a Glance
 
 | Property | How It Works | Energy Center | How to Observe |
@@ -113,6 +119,8 @@ Take the Chakra Test to see whether your ajna chakra reads as open, blocked, or 
 
 export const ajnaChakraZh: WikiArticle = {
   slug: "ajna-chakra",
+  image: "/images/chakra/ajna-chakra.jpg",
+  image_alt: "深夜静湖，地平线低处一点金光，在镜面般的暗水上投下长长倒影，宛如一只静静睁开的觉知之眼。",
   title: "眉心轮代表什么：把真直觉和想太多分开",
   description: "Ajna Chakra（眉心轮，又称第三眼脉轮）是脉轮（chakra，西方瑜伽与灵性传统里的能量中心概念）体系里的第六个中心，位置在两眉之间、眉心略上方。说眉心轮代表什么，最贴切的一句是：它是内在觉知与清晰辨别的中心。在较早的瑜伽说法里，它被描述为两条能量通道交会、再上行到顶轮之前的那个点。沿着 Anodea...",
   authorId: "elena-vane",
@@ -160,6 +168,8 @@ Ajna Chakra（眉心轮，又称第三眼脉轮）是脉轮（chakra，西方瑜
 4. **落定的决定。** 辨别在主导时，选择会显得清楚、甚至有点无聊；它被堵住时，你会反复纠结同一个选择好几天。
 5. **用力过猛的信号。** 如果你在所有事里硬找象征意义，那通常是这个中心在散，不是在开。
 
+
+![稳定的真直觉与急切的焦虑空转对比，这是眉心轮辨别力的核心区分](/images/chakra/ajna-chakra-i0-zh.svg)
 ## 常见误读
 
 坊间内容总把读者推向几个对 Ajna Chakra 的固定误读，而每一个都让人继续卡在当初来搜的那个困扰上。逐条纠正：
@@ -168,6 +178,8 @@ Ajna Chakra（眉心轮，又称第三眼脉轮）是脉轮（chakra，西方瑜
 2. **「越活跃越好。」** 误读：第三眼越是嗡嗡作响、越亢奋，就越进步。实际：过度活跃的眉心轮是在散焦，那种「信息泛滥」感觉像觉醒，读起来却只是噪音。
 3. **「必须用力把它逼开。」** 误读：靠硬撑和特殊技巧才能把它打开。实际：硬逼通常适得其反，传统真正指向的，是那个更安静、在观察的状态。
 
+
+![对第三眼的三个常见迷思纠正：不是超能力、不是越活跃越好、不必硬逼着打开](/images/chakra/ajna-chakra-i1-zh.svg)
 ## Ajna Chakra 速查表
 
 | 属性 | 运作方式 | 能量中心 | 如何观察应用 |

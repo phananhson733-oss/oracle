@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const rootChakraMeaningEn: WikiArticle = {
   slug: "root-chakra-meaning",
+  image: "/images/chakra/root-chakra-meaning.jpg",
+  image_alt: "A steady glowing orb anchored by deep golden roots in dark earth while wind streaks pass above, showing root chakra safety as ground that outlasts passing stress",
   title: "What Root Chakra Meaning Reveals About Your Sense of Safety",
   description:
     "The Root Chakra is best understood as your base of safety, stability, and physical security.",
@@ -36,6 +38,8 @@ In subtle-energy tradition — the modern chakra framework Anodea Judith helped 
 
 The root chakra reading is anchored in a documented history, separate from any health claim. In the Vedas the Sanskrit word "cakra" meant "wheel" — the sun's wheel, the wheel of time — and did not name a body energy center; the inner subtle-body map took shape later, with hierarchies of inner energy centers appearing about the 8th century CE in Buddhist texts such as the Hevajra Tantra and Caryagiti, per the scholar David Gordon White ([Chakra, Wikipedia](https://en.wikipedia.org/wiki/Chakra)). The specific six-plus-one arrangement Western readers inherited is usually traced to the Sat-Cakra-Nirupana, a 16th-century Sanskrit text often dated to 1577 and attributed to Purnananda of Bengal, in whose commonly cited scheme Muladhara is listed first ([Chakra, Wikipedia](https://en.wikipedia.org/wiki/Chakra); [Shat-cakra-nirupana, WisdomLib](https://www.wisdomlib.org/hinduism/book/shat-cakra-nirupana-english)). That text helped draw Western attention to the system through Sir John Woodroffe, writing as Arthur Avalon, whose 1919 book The Serpent Power: Being the Sat-Cakra-Nirupana rendered it into English ([Chakra, Wikipedia](https://en.wikipedia.org/wiki/Chakra); [The Serpent Power (1919), Open Library](https://openlibrary.org/books/OL18552948M/The_serpent_power)). The name "Muladhara" itself comes from the Sanskrit mula, "root," and the chakra is described as sitting near the base of the spine and traditionally tied to the earth element ([Muladhara, Wikipedia](https://en.wikipedia.org/wiki/Muladhara)).
 
+
+![Timeline of the root chakra idea from the Vedic wheel through 8th-century subtle-body texts, the 1577 Sat-Cakra-Nirupana, and Woodroffe's 1919 English translation](/images/chakra/root-chakra-meaning-i0-en.svg)
 ## How Common Are Yoga and Meditation in the U.S. Today
 
 For context on how widely the related practices discussed here have spread — not as evidence that any of them treats a condition — national survey data is useful. Among U.S. adults, meditation use rose from 4.1% in 2012 to 14.2% in 2017, and yoga use from 9.5% to 14.3% over the same years, per the 2017 National Health Interview Survey as reported by the NIH's National Center for Complementary and Integrative Health ([NCCIH/NIH](https://www.nccih.nih.gov/news/press-releases/more-adults-and-children-are-using-yoga-and-meditation)); the underlying figures are published in CDC NCHS Data Brief No. 325 ([CDC NCHS](https://www.cdc.gov/nchs/products/databriefs/db325.htm)). These are population-use percentages, not measures of medical benefit.
@@ -48,6 +52,8 @@ In eight years of energy-work and aura-reading practice, I've found the useful q
 
 Self-awareness here is less about labeling yourself and more about catching the difference in real time. When you can feel the line between "today was hard" and "I haven't felt safe in months," you stop treating every bad mood as evidence of a deep block, and you stop dismissing a real pattern as just another busy stretch. That accuracy is what makes the rest of this page usable rather than only interesting — just as distinguishing the root from [the solar plexus chakra and personal power](/en/wiki/chakra-system-overview) keeps a confidence dip from being misread as a safety wound.
 
+
+![Comparison of ordinary passing stress with a genuine root chakra imbalance that persists as a baseline](/images/chakra/root-chakra-meaning-i1-en.svg)
 ## The Root Chakra vs Adjacent Concepts: How It Works + Trade-offs
 
 Root chakra meaning is easiest to grasp by contrast with the centers and states it gets confused with. The root works by anchoring your attention to survival basics — body, money, shelter, safety — so everything above it has stable ground to stand on. The center just above it, covered in this [explainer on the sacral chakra](/en/wiki/chakra-system-overview), works differently: it moves through pleasure, creativity, and emotional flow. To get the root's steadiness, you trade some of the sacral's spontaneity — a strongly root-led day feels secure but can read a little flat, while a sacral-led day feels alive but less anchored.
@@ -130,6 +136,8 @@ Reminder: this page describes chakra and grounding ideas as cultural and self-re
 
 export const rootChakraMeaningZh: WikiArticle = {
   slug: "root-chakra-meaning",
+  image: "/images/chakra/root-chakra-meaning.jpg",
+  image_alt: "金色深根把一颗安定发光的球体锚入暗色地层，风痕掠过上空，象征海底轮的安全感是经得住风浪的地基",
   title: "海底轮代表什么，怎么分清真正失衡和普通的累",
   description:
     "The Root Chakra（海底轮，又称根轮，梵文 Muladhara）是脉轮（chakra，西方灵性传统里的能量中心概念）体系里位于底端的一个，在 脉轮系统总览 pillar 页 里坐落于整条序列的根基。海底轮代表什么？传统灵性教学普遍把它说成一种关于安全感与扎根的基础能量。",
@@ -160,6 +168,8 @@ The Root Chakra（海底轮，又称根轮，梵文 Muladhara）是脉轮（chak
 
 这种分不清，正是大多数人卡住的地方。压力大的时候，谁都会心慌、想抓住点确定的东西，于是很容易顺手给自己贴一个"我能量出问题了"的标签，结果反而更紧。先承认"我现在分不清"，再用后面几节的观察方法慢慢看，比急着下结论要踏实得多。这一步不是要你立刻解决什么，而是先把"真失衡"和"普通的累"两条线分开。
 
+
+![普通压力与真正海底轮失衡的对比：一个随事件消退，一个成为挥之不去的底色](/images/chakra/root-chakra-meaning-i1-zh.svg)
 ## The Root Chakra 与相近概念：运作方式 + 取舍
 
 海底轮代表什么，放到相近的能量中心旁边看会更清楚。在 Anodea Judith 等人系统化的现代脉轮框架里，海底轮被放在整条序列的底端，运作方式是把"我是安全的"这种底层感受，转成持续做事的定力，它处理的是"活下去、站得稳"这件事。

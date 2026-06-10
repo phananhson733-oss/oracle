@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fifthHouseEn: WikiArticle = {
   slug: "5th-house",
+  image: "/images/houses/5th-house.jpg",
+  image_alt: "A single spotlight on an unfolding paper flower on a small stage in an empty dark amphitheater",
   title: "Why the 5th House Asks You to Risk Being Seen",
   description: "The 5th House is the area of the birth chart that governs how you express who you really are.",
   authorId: "julian-thorne",
@@ -45,6 +47,8 @@ The fifth house is easiest to understand when you set it beside the houses it is
 2. **This house versus the first.** The first house works as your immediate self-presentation, the instinctive manner you wear at the door before a word is spoken. The fifth works one layer deeper, through what you deliberately choose to create and show once you feel safe enough to play. To keep the instantly recognisable identity the first provides, you sacrifice some spontaneity; to gain the playful authenticity of the fifth, you give up the protection of a fixed, predictable image.
 3. **This house versus the tenth.** The tenth house works through public achievement and reputation — the structured, long climb toward a visible goal. The fifth works through play that has no destination beyond the pleasure of doing it. To build the lasting status the tenth promises, you sacrifice spontaneity and immediacy; to keep the freedom of pure creative play, you give up any guarantee that the effort will amount to something the world rewards.
 
+
+![Comparison of the 1st house presented self, 5th house creative self, and 11th house collective self](/images/houses/5th-house-i0-en.svg)
 ## How to Read The Fifth House in Your Chart
 
 To read the fifth house in your own chart, start with three things — the sign on its cusp, any planets sitting inside it, and the condition of its ruling planet — then watch how those themes actually surface in daily life rather than only on paper.
@@ -55,6 +59,8 @@ To read the fifth house in your own chart, start with three things — the sign 
 4. **Watch your relationship to praise.** Whether you crave applause or quietly deflect it shows how freely this part of you believes it is allowed to shine.
 5. **Look at where its ruler lands.** The house holding that ruler shows where your need to play and be seen most wants to express itself.
 
+
+![Five steps to read the 5th house: element, planets, exposure points, response to praise, ruler's house](/images/houses/5th-house-i1-en.svg)
 ## Common Misreadings
 
 Because surface-level write-ups dominate the search results, this house collects a few stubborn misreadings that are worth correcting one by one.
@@ -115,6 +121,8 @@ Because this part of the chart is exactly where the authentic self steps into op
 
 export const fifthHouseZh: WikiArticle = {
   slug: "5th-house",
+  image: "/images/houses/5th-house.jpg",
+  image_alt: "空旷黑暗的剧场里，一束金色聚光灯打在小舞台上正在绽开的纸花上",
   title: "第五宫代表什么，远不止恋爱与玩乐",
   description: "第五宫（the 5th house）是星盘里掌管创造、恋爱、游戏与自我表达的宫位，也是 占星十二宫总览 pillar 页 当中很容易被误读的一个。要回答第五宫代表什么，核心的一句是：它是你纯粹做自己的舞台。你在这里做事，不为完成任务、也不为取悦谁，只因为那件事让你觉得「这就是我」。心理占星传统里，像...",
   authorId: "julian-thorne",
@@ -156,6 +164,8 @@ export const fifthHouseZh: WikiArticle = {
 2. **第五宫 vs 第十一宫：我 vs 我们。** 与它隔轴相对的 [第十一宫的群体归属对照](/zh/wiki/11th-house) 关心友谊、社群和共同理想。选择先把「我的独特」表达清楚，代价是你得先承受被单独看见的目光；而一头扎进集体认同，你换来归属感，却容易把那个独特的自己稀释掉。
 3. **第五宫 vs 第七宫：自我流露 vs 关系协调。** 第七宫讲一对一的关系经营，处处要照顾对方；这一宫则允许你先不管别人怎么想。想要那种纯粹的自我表达，你就得放下一点第七宫式的「时刻顾及对方感受」。
 
+
+![第一宫（出场自我）、第五宫（创造自我）与第十一宫（群体自我）的对照图](/images/houses/5th-house-i0-zh.svg)
 ## 如何在星盘里认出第五宫的作用
 
 想知道第五宫代表什么在你身上怎么运作，与其背定义，不如观察这些时刻：
@@ -166,6 +176,8 @@ export const fifthHouseZh: WikiArticle = {
 4. 看到别人大方展示自己，你冒出的是欣赏，还是「凭什么是他」的酸？
 5. 谈恋爱时，你更在意对方好不好，还是终于能放心做自己？
 
+
+![读第五宫的五个步骤：元素、行星、暴露时刻、对赞美的反应、宫主星落宫](/images/houses/5th-house-i1-zh.svg)
 ## 常见误读
 
 围绕第五宫，流传很广的几个说法其实都跑偏了：

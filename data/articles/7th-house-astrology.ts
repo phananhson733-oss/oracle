@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const seventhHouseAstrologyEn: WikiArticle = {
   slug: "7th-house-astrology",
+  image: "/images/houses/7th-house-astrology.jpg",
+  image_alt: "A beam of gold light crossing still water to a far glowing form that returns the light magnified, two lights in dialogue.",
   title: "What 7th House Astrology Reveals About the Self You Project",
   description: "The 7th House is the sector of an astrological chart that governs one-to-one relationships — marriage, committed partnership, business alliances, and even...",
   authorId: "julian-thorne",
@@ -51,6 +53,8 @@ The planets sitting in the 7th house sharpen each of these contrasts with a spec
 
 A harder version of the mirror appears when the 7th house tilts toward idealization. Instead of meeting an exaggerated trait, you meet a fantasy — the partner cast as rescuer, soulmate, or the answer to a private emptiness you have never quite named. The relationship can feel luminous until the real, limited human underneath comes into view, and the let-down often lands less like ordinary disappointment than like something collapsing. Here the trade-off is steep: you get the intoxication of seemingly perfect love, but you sacrifice the chance to see, and be genuinely seen by, an actual person standing in front of you.
 
+
+![Comparison of the Ascendant as the presented self and the Descendant as the projected self met in partners](/images/houses/7th-house-astrology-i0-en.svg)
 ## How to Read The 7th House in Your Chart
 
 In the depth-psychological house tradition Howard Sasportas helped define, 7th house astrology becomes practical once you stop scanning for a partner type and start watching for projections. A few observable signals show where the mirror is working:
@@ -63,6 +67,8 @@ In the depth-psychological house tradition Howard Sasportas helped define, 7th h
 
 These signals are most reliable when you watch them over time rather than in a single charged moment. One difficult partner proves very little; a theme that repeats across years, across genuinely different people, is the house pointing steadily at something in you. Treat each repetition not as a sentence you are stuck with, but as a clue about which quality is ready to be reclaimed.
 
+
+![Five signals for reading the 7th house: Descendant sign, repeated traits, charged reactions, planets, telltale phrasing](/images/houses/7th-house-astrology-i1-en.svg)
 ## Common Misreadings
 
 The popular take on 7th house astrology collapses a rich mirror into a marriage horoscope, and a few misreadings surface again and again:
@@ -124,6 +130,8 @@ Open your birth chart, locate the sign on your Descendant, and write down the th
 
 export const seventhHouseAstrologyZh: WikiArticle = {
   slug: "7th-house-astrology",
+  image: "/images/houses/7th-house-astrology.jpg",
+  image_alt: "一束金光越过静水射向远方一团发光的星体，光被放大后返回，两束光隔水对话。",
   title: "第七宫不只是婚姻宫，它是你投射出去的那面镜子",
   description: "第七宫（the 7th house）是星盘里正对上升点的宫位，掌管婚姻、合伙与一对一关系。在 占星十二宫总览 pillar 页...",
   authorId: "julian-thorne",
@@ -163,6 +171,8 @@ export const seventhHouseAstrologyZh: WikiArticle = {
 
 和它正对的第一宫则是另一组取舍：第一宫问「我如何呈现自己」，第七宫问「我在别人身上找回了什么」，要把注意力转向关系这面镜子，就得暂时放下「只盯着自己」的视角。说到底，第七宫代表什么，关键不在「和谁」，而在「这段对照照出了你的哪一面」。
 
+
+![上升点（呈现的自我）与下降点（投射到伴侣身上的自我）的对照图](/images/houses/7th-house-astrology-i0-zh.svg)
 ## 如何在你的星盘里读出第七宫
 
 想在自己的星盘和生活里读出第七宫，可以从这几个信号入手：
@@ -173,6 +183,8 @@ export const seventhHouseAstrologyZh: WikiArticle = {
 4. 回想冲突里你常说的那句指责，它常常是你自己没认领的那一面。
 5. 注意合作、谈判、签约这类一对一对等关系，第七宫不只管恋爱。
 
+
+![读第七宫的五个信号：下降点星座、重复特质、强烈情绪、宫内行星、口头禅](/images/houses/7th-house-astrology-i1-zh.svg)
 ## 常见误读
 
 关于第七宫代表什么，坊间很容易传错的有这几条：

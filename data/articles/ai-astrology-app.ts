@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const aiAstrologyAppEn: WikiArticle = {
   slug: "ai-astrology-app",
+  image: "/images/charts/ai-astrology-app.jpg",
+  image_alt: "A still lake mirroring a crisp starfield, with one stretch of the reflection blurred into vague haze that no longer matches the real sky.",
   title: "When AI Astrology Apps Actually Read Your Chart (and When They Don't)",
   description: "An ai astrology app is a software application that generates personalized readings from a user's natal chart.",
   authorId: "marcus-orion",
@@ -48,6 +50,8 @@ Three categories of chart-adjacent tools define most of what's available, and th
 
 The *comparison of AI astrology tools by chart data depth* tracks specific tools across these three categories in more detail.
 
+
+![Three categories of AI astrology tools compared by how they handle chart data](/images/charts/ai-astrology-app-i0-en.svg)
 ## How to Read ai astrology app in Yourself
 
 Identifying where a given ai astrology app falls on the synthesis spectrum takes deliberate testing. Most interfaces don't surface this information directly — ratings and reviews capture user experience, not chart-data depth. These observations work across most app formats:
@@ -62,6 +66,8 @@ Identifying where a given ai astrology app falls on the synthesis spectrum takes
 
 5. **Ask a chart-specific question directly.** Request what your Moon's house placement suggests about how you relate to emotional security. If the app gives a generic Moon-sign response or deflects, it doesn't have your full chart in the generation context.
 
+
+![Five practical tests to check whether an AI astrology app actually uses your chart](/images/charts/ai-astrology-app-i1-en.svg)
 ## Common Misreadings
 
 Several assumptions about what ai astrology app output represents tend to calcify after early use, and they shape how seriously users take the readings in ways that don't serve them.

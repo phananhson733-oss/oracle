@@ -627,9 +627,9 @@
     },
     "krittika-nakshatra": {
       "hero": {
-        "prompt": "A single razor-thin vertical flame of gold light standing exactly on the seam between two halves of a dark field: the left half alive with quick darting sparks and sharp angular energy, the right half settled with slow round embers glowing in patient stillness — one purifying fire expressed through two different containers; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "A razor-thin gold flame on the seam between a field of quick sparks and a field of slow embers",
-        "altZh": "薄如刀锋的金色火焰立于交界，左为疾速火花，右为缓燃余烬"
+        "prompt": "An atmospheric painterly editorial scene: a dark open plain at night under a vast nebula sky with a tight bright cluster of stars high above (the Pleiades); rising from the dark ground a single tall sharp blade of golden flame-light burns clean and precise, throwing fine sparks upward toward the star cluster, fire as a cutting purifying edge, intense yet contained in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A single sharp blade of golden flame rising from a dark plain toward a tight bright star cluster, throwing fine sparks.",
+        "altZh": "暗色平原上升起一道锋利洁净的金色火焰，向高空一簇明亮星团抛出细小火花。"
       },
       "inline": [
         {

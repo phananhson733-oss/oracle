@@ -11,9 +11,9 @@
   "articles": {
     "vedic-birth-chart-calculator": {
       "hero": {
-        "prompt": "Editorial illustration of a North Indian style Vedic birth chart: a large diamond-within-square chart drawn in fine gold linework floating over a field of pinned fixed stars; a single luminous gold thread enters at the eastern ascendant point and traces an ordered, numbered-feeling path through the twelve house compartments, then spills out below into a long horizontal ribbon divided into unequal segments like a timeline of planetary life chapters; one house compartment softly lit like a lamp-lit room while the others stay dim; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
-        "altEn": "A Vedic chart diamond with a gold thread tracing the reading order from the ascendant through the houses into a dasha timeline ribbon",
-        "altZh": "吠陀星盘菱形盘面上，一条金线从上升点出发依序穿过各宫位，延伸成下方的大运时间轴缎带"
+        "prompt": "An atmospheric painterly editorial scene: a perfectly still lake at night mirroring an unusually dense, precise field of fixed sidereal stars; on the calm water a single faint ring of soft gold light is just resolving into focus from the reflected stars, as though a true map were forming itself out of the real sky, quiet and exact in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A still lake mirroring a dense sidereal starfield, a faint gold ring of light resolving on the water as a chart forms from the sky.",
+        "altZh": "静湖映出异常致密精确的恒星，水面上一圈淡金色光环正从倒影中凝聚成形，仿佛真实天空自行生成星图。"
       },
       "inline": [
         {
@@ -104,9 +104,9 @@
     },
     "vedic-vs-western-astrology": {
       "hero": {
-        "prompt": "Editorial illustration of two large translucent zodiac wheels of twelve equal segments overlapping in a night sky, rotated roughly 24 degrees out of alignment with each other; the outer wheel is tethered by fine gold threads to a cluster of bright fixed stars, the inner wheel is tethered to a stylized equinox horizon mark where a thin sun line crosses; the narrow misaligned wedge between the two wheels glows softly gold, and one small luminous orb sits in a different segment of each wheel, the same sky read from two starting points; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
-        "altEn": "Two zodiac wheels offset by about 24 degrees, one anchored to fixed stars and one to the spring equinox, with one orb landing in different segments",
-        "altZh": "两只黄道轮错开约24度叠在一起，一只锚定恒星、一只锚定春分点，同一颗星落在不同的星座区"
+        "prompt": "An atmospheric painterly editorial scene: a vast open plain at night beneath two faint great arcs of light spanning the sky, slightly offset from one another by a small angle; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with dense faint star points. One arc is anchored to the bright fixed stars woven into the nebula behind it — the sidereal sky; the other is anchored to a single warm gold point glowing at the horizon where the season turns — the tropical equinox; a single celestial orb sits in the slim gap where the two arcs disagree, landing in two slightly different places, two maps of one sky drawn to different scales, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two faint great arcs of light across the sky offset by a small angle, one anchored to fixed stars, one to a horizon equinox point.",
+        "altZh": "夜空中两道微弱的大弧光略有偏角交错，一道锚定背景恒星，一道锚定地平线上回归点的暖金光。"
       },
       "inline": [
         {
@@ -397,9 +397,9 @@
     },
     "sattva-rajas-tamas": {
       "hero": {
-        "prompt": "Editorial illustration of three horizontal luminous ribbons flowing side by side across a long day-arc sky, from a faint dawn glow at the left edge to a dusk glow at the right: one clear pale-gold ribbon, one fast rippling kinetic ribbon, and one slow, heavy, deep ribbon; their thicknesses swell and thin as they travel so each dominates a different stretch of the arc, woven level with each other and never stacked into a ranking; behind them the faint silhouette of a ladder dissolves into scattered particles, a discarded hierarchy; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
-        "altEn": "Three ribbons of differing texture flowing side by side across a dawn-to-dusk arc, each swelling at different hours, while a faint ladder dissolves behind them",
-        "altZh": "三条质地不同的光带并排流过从黎明到黄昏的弧线，各自在不同时段变宽，背后一架阶梯悄然消散"
+        "prompt": "An atmospheric painterly editorial scene: one continuous landscape rising from a dark still valley floor at the bottom, through a warm fiery active middle slope glowing amber, up to a luminous calm clear peak catching pale gold light at the top, under a vast nebula night sky — three natural bands of one mountainside expressing dark inertia below, restless heat in the middle, and serene clarity above, all in a single unbroken vertical scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "One mountainside rising from a dark still valley through a fiery amber slope to a calm luminous peak under a nebula sky.",
+        "altZh": "一道连续的山坡：底部幽暗静止的谷地，中段炽热躁动的琥珀色斜坡，顶端宁静澄明的发光山巅。"
       },
       "inline": [
         {

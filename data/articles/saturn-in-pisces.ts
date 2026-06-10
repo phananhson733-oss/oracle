@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const saturnInPiscesEn: WikiArticle = {
   slug: "saturn-in-pisces",
+  image: "/images/placements/saturn-in-pisces.jpg",
+  image_alt: "A heavy gold ringed planet hanging low in dissolving fog over still misty water, its reflection breaking apart on the surface.",
   title: "Saturn in Pisces — A Grounded Field Guide to Building Structure Inside the Boundless",
   description: "Saturn in Pisces is the multi-year transit of structure-bringing Saturn through boundary-dissolving Pisces. It is not a single event but a family of related...",
   authorId: "marcus-orion",
@@ -25,6 +27,8 @@ Saturn in Pisces is **the multi-year transit of structure-bringing Saturn throug
 - A meeting of two opposing instincts — Saturn's demand for form and Pisces's pull toward dissolution
 - A set of life areas put under review, each one tied to where the sign sits in your own chart
 
+
+![Comparison of Saturn's demand for edges, rules, and proof against Pisces's pull toward flow, imagination, and surrender.](/images/placements/saturn-in-pisces-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Most people meet a Saturn transit braced for punishment. The cultural shorthand treats Saturn as the stern disciplinarian, so the news that Saturn transits your Piscean territory can read as a sentence rather than an assignment. That framing misses the actual ask. This transit does not arrive to dissolve you into your fears; it arrives to test whether you can hold a steady form around things that resist holding — your imagination, your need for rest, your sense of where you end and other people begin. Reading the whole transit as a family of related lessons, instead of bracing for one dreaded outcome, changes what you do with it.
@@ -56,6 +60,8 @@ Each strand of Saturn in Pisces deserves a short orientation before you go deep 
 4. **Saturn and maturing belief** — Faith, meaning, and what you trust in all come under quiet review. Saturn does not delete belief; it asks you to test it, drop what was sentimental, and keep what holds weight. The misread is reading honest doubt as a crisis of faith rather than the slow maturing of it. What survives this review tends to be sturdier than what went in, precisely because it has been questioned rather than inherited.
 5. **Saturn and grounded compassion** — Pisces is the most empathic part of the zodiac, the place where you feel other people's states as if they were your own. Saturn here asks you to keep caring while staying intact, which means learning that compassion without a container quietly turns into self-erasure. The strand rewards the kind of care that has limits built into it — showing up reliably for the people who matter without dissolving into their needs. The misread is mistaking that self-erasure for generosity and calling burnout a virtue.
 
+
+![Five strands of the Saturn in Pisces transit: boundaries, structured rest, creative discipline, maturing belief, and grounded compassion.](/images/placements/saturn-in-pisces-i1-en.svg)
 ## How Shade and Combination Shift Readings
 
 No single strand of Saturn in Pisces acts alone, and that is the part most quick takes miss. The transit reads more like a gradient than a checklist, because the same planetary placement bends depending on which life area it touches, what angle it forms to the rest of your chart, and how long it lingers there on its retrograde passes. Two people living through the identical transit years can describe almost opposite experiences, and both can be reading it accurately. The skill is learning to combine the strands rather than score them one at a time, and a few concrete examples make the gradient clearer:
@@ -80,6 +86,8 @@ The biggest errors with Saturn in Pisces happen at the level of the whole system
 
 The limit worth naming plainly is that this is interpretive language, not measurement. Astrology offers a vocabulary for noticing patterns in your own experience; it does not make scientific claims about cause and effect, and treating it as if it did is the fastest way to misuse it. The fair test is whether a reading helps you describe and act on something you already half-noticed, not whether it can predict an outcome you could not have reached any other way. Held as a set of testable observations you check against real life, this transit stays useful. Held as proof of anything, it stops being honest.
 
+
+![Four common misuses of the Saturn in Pisces framework: treating it as a verdict, forcing one lineage, making it an identity, and substituting it for real help.](/images/placements/saturn-in-pisces-i2-en.svg)
 ## Common Questions About Saturn in Pisces
 
 **How long does Saturn in Pisces last?**
@@ -123,6 +131,8 @@ The grounded, non-punitive reading of Saturn in Pisces in this guide draws on th
 
 export const saturnInPiscesZh: WikiArticle = {
   slug: "saturn-in-pisces",
+  image: "/images/placements/saturn-in-pisces.jpg",
+  image_alt: "一颗沉重的金色带环行星低悬在消融的雾气中，下方静水朦胧，倒影在水面碎裂散开。",
   title: "土星在双鱼座完整指南：在无边界里搭出可落地的结构",
   description: "Saturn in Pisces（土星在双鱼座）是土星行运经过双鱼座期间形成的一组解读主题。它不是单一的吉凶判断，而是一个把双鱼座的边界、休息、想象、慈悲等议题，统统拉去接受土星那套\"现实检验\"的框架。它落在你星盘的哪一块，决定了这段行运在你身上的重点，所以读这篇时不妨配合 占星十二宫总览速查...",
   authorId: "marcus-orion",
@@ -199,6 +209,8 @@ Saturn in Pisces 最常被读偏的地方，多半不是细节算错，而是把
 
 还有一条边界要单独说清：这是一套西方占星的解读视角，它**不等同于**中医、八字、风水这些体系。如果你之前接触过别的命理传统，请把土星在双鱼座当成一个独立的观察角度来用，不要在两套体系之间做术语级的硬对应——不要去想"这个行运对应哪个穴位""这颗星对应哪颗主星"，那样只会拼出两边都不认的伪概念。
 
+
+![土星在双鱼座框架的四种常见误用：当成判决、钦定单一流派、升格为身份标签、替代专业帮助。](/images/placements/saturn-in-pisces-i2-zh.svg)
 ## 关于 Saturn in Pisces 的常见问题
 
 Saturn in Pisces 在搜索里被反复问到的，往往是几个很具体的操作问题。下面挑四个最常见的，给你简短直接的回答。

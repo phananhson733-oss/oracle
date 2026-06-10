@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const whatIsAFullMoonRitualEn: WikiArticle = {
   slug: "what-is-a-full-moon-ritual",
+  image: "/images/moon/what-is-a-full-moon-ritual.jpg",
+  image_alt: "An extinguished candle with smoke rising toward a full moon and light arcing toward dawn — the 48-hour integration window after a ritual",
   title: "What a Full Moon Ritual Really Does in the 48 Hours After",
   description: "A full moon ritual is a structured release and reclamation practice timed to peak lunar light.",
   authorId: "marcus-orion",
@@ -55,6 +57,8 @@ Knowing what is a full moon ritual on paper is one thing; recognizing one that a
 4. **You change one concrete behavior within 48 hours.** A delayed text, a declined invitation, a single different choice. Without behavioral evidence, the ritual stayed symbolic.
 5. **You don't talk about it immediately.** Posting the candle photo within an hour usually means the energy went into performance instead of integration, and the practice loses most of its private weight.
 
+
+![Five signs a full moon ritual landed: a one-sentence intention, optional tools, a quiet emotional drop, one behavior change within 48 hours, and no immediate sharing](/images/moon/what-is-a-full-moon-ritual-i0-en.svg)
 ## Common Misreadings
 
 Several misreadings circulate widely and quietly sabotage what is a full moon ritual is supposed to do. Each one looks plausible on the surface and breaks the practice in a different way.
@@ -74,6 +78,8 @@ Several misreadings circulate widely and quietly sabotage what is a full moon ri
 | 48-hour integration window | Determines whether intention crystallizes into behavior | First 48 hours after peak | At least one concrete behavioral change occurs within the window |
 | Closing acknowledgement | Marks transition from ritual time to ordinary time | End of practice | Practitioner notices a quiet emotional drop, not euphoria |
 
+
+![Timeline of a full moon ritual: release intention on peak night, reclamation the same night, a closing acknowledgement, then the 48-hour integration window](/images/moon/what-is-a-full-moon-ritual-i1-en.svg)
 ## Common Questions About Full Moon Ritual
 
 **What is a full moon ritual supposed to feel like?**

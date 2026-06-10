@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const newMoonJournalPromptsEn: WikiArticle = {
   slug: "new-moon-journal-prompts",
+  image: "/images/moon/new-moon-journal-prompts.jpg",
+  image_alt: "A gold seed of light planted under a dark new moon, with a thread arcing to a distant full moon — an intention specific enough to assess later",
   title: "New Moon Journal Prompts That Build Intentions Worth Tracking",
   description: "New moon journal prompts are structured questions for setting specific, assessable intentions at the lunar cycle's start.",
   authorId: "marcus-orion",
@@ -62,6 +64,8 @@ The clearest sign that a prompt set is doing its job at the new moon level is wh
 4. **Release language is absent.** If a prompt asks "What are you ready to let go of?" it has crossed into full moon territory. Correctly structured prompts at the new moon phase do not ask for release.
 5. **You feel mild accountability.** The slight discomfort of having written something specific enough to be wrong about later is a reliable signal that the prompts are doing their job. If an entry only feels inspiring, it is likely too vague to close.
 
+
+![Five marks of a new moon entry that can be honestly assessed: a specific outcome, a named internal shift, a 48-hour action, no release language, and mild accountability](/images/moon/new-moon-journal-prompts-i0-en.svg)
 ## Common Misreadings
 
 Several misreadings are widespread in new moon journaling content. Each produces the same outcome: a meaningful-feeling entry that generates no useful information about the journaler's actual follow-through.
@@ -80,6 +84,8 @@ Several misreadings are widespread in new moon journaling content. Each produces
 | Behavioral anchor | Requires one concrete action within 48 hours of the new moon entry | New moon — immediately operational | Check at 48 hours: did the action happen or did you avoid it? |
 | Full moon assessment | Closes the loop — honest review of what was planted | Full moon, two weeks after the new moon entry | Read the original entry and answer: did this move? What made the difference? |
 
+
+![Timeline of the new moon entry structure: external expectation and internal shift at the new moon, a behavioral anchor within 48 hours, and the full moon assessment two weeks later](/images/moon/new-moon-journal-prompts-i1-en.svg)
 ## Questions About New Moon Journaling
 
 **What distinguishes these prompts from general journaling questions?**

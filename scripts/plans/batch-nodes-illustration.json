@@ -11,9 +11,9 @@
   "articles": {
     "how-to-find-north-node": {
       "hero": {
-        "prompt": "A luminous lunar orbit ring intersecting the flat plane of the ecliptic against a quiet star field, the ascending crossing point marked by a small radiant gold node; a large magnifying lens circle hovers over that crossing, revealing two slightly offset gold points straddling a thin boundary line on a zodiac band — two calculations of the same node, almost but not quite agreeing; faint compass tick marks ring the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "Magnified crossing point of the Moon's orbit and the ecliptic showing two slightly offset node positions near a sign boundary",
-        "altZh": "月亮轨道与黄道交点的放大示意，星座边界旁显示真假交点的细微偏移"
+        "prompt": "An atmospheric painterly editorial scene: an open dark landscape with a low horizon under a vast nebula night sky; from a faint glowing point on the ground a single luminous golden arc of light sweeps up across the sky toward one distinct bright star high above, a clear path from where you stand to your growth direction, hopeful and directional in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A luminous gold arc sweeping from a faint point on the ground up to one bright star high in the night sky.",
+        "altZh": "开阔夜景，一道发光的金色弧线自地面微光点扬起，越过夜空射向高处一颗明亮的星。"
       },
       "inline": [
         {
@@ -388,9 +388,9 @@
     },
     "north-node-vs-south-node": {
       "hero": {
-        "prompt": "A great circular chart wheel spans the sky, crossed by one luminous diagonal axis exactly through its center; at the lower end rests a fully polished gold sphere on a smooth, deeply worn path, while the opposite upper end holds the same sphere only half-drawn, its remaining contour sketched in faint dotted lines amid unmarked open space; the single axis binds the finished and the unfinished as two ends of one line, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "One axis across a chart wheel joining a polished sphere on a worn path with a half-sketched sphere in open space",
-        "altZh": "一条轴线贯穿星盘，连接磨亮的旧端与尚未画完的新端"
+        "prompt": "An atmospheric painterly editorial scene: a long open landscape stretching from a well-worn dark path on one side to open untouched ground on the other, under a vast night sky bisected by a single luminous axis of light; a teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. Low on the familiar-path side a polished, fully formed glowing sphere rests over the worn ground — the South Node, the practiced past; high on the open side a half-sketched, still-forming sphere of softer light hangs over the empty space — the North Node, the growth edge — the two joined by one continuous line across the sky, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A polished sphere over a worn path and a half-formed sphere over open ground, joined by one axis of light across the sky.",
+        "altZh": "一颗圆润成形的星体悬在熟悉的旧路上方，一颗半成形的星体悬在开阔空地上方，二者被一条贯穿夜空的光轴相连。"
       },
       "inline": [
         {

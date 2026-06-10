@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const synastryChartCompatibilityEn: WikiArticle = {
   slug: "synastry-chart-compatibility",
+  image: "/images/charts/synastry-chart-compatibility.jpg",
+  image_alt: "Two distinct clusters of glowing forms over twin pools, fine threads of light crossing between them, some smooth, some taut.",
   title: "Why Your Synastry Chart Compatibility Score Misses the Point",
   description: "Synastry chart compatibility is a two-chart comparison that maps attraction signals and developmental pressure points",
   authorId: "marcus-orion",
@@ -49,6 +51,8 @@ Several comparison tools get used interchangeably, though each reads something d
 
 The way synastry functions is through orb-weighted angular contacts. When one person's Saturn falls within a tight orb of another's Sun, that contact describes a pattern where structuring energy lands on the other's core identity expression. How that reads depends on the natal charts of both people — the same Saturn-Sun square reads differently when Saturn is well-supported in the aspecting chart versus stressed.
 
+
+![Comparison of synastry, composite, and Davison relationship charts](/images/charts/synastry-chart-compatibility-i0-en.svg)
 ## How to Read synastry chart compatibility in Yourself
 
 Synastry chart compatibility analysis works by scanning inter-chart contacts in order of weight. Here are the signals to read, from highest to lowest priority:
@@ -63,6 +67,8 @@ Synastry chart compatibility analysis works by scanning inter-chart contacts in 
 
 5. **Mutual aspects.** When your Venus aspects their Mars and their Mars aspects your Venus, both people tend to feel the activation with roughly equal weight. Single-direction contacts can create an asymmetry in how much each person is moved by the connection.
 
+
+![Five synastry signals scanned in priority order, from tight orbs to mutual aspects](/images/charts/synastry-chart-compatibility-i1-en.svg)
 ## Common Misreadings
 
 A few consistent misreadings steer people away from what synastry analysis is actually showing them:

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const ninthHouseAstrologyEn: WikiArticle = {
   slug: "9th-house-astrology",
+  image: "/images/houses/9th-house-astrology.jpg",
+  image_alt: "Scattered stones and pages aligning into a gold arrow arcing toward a constellation archway on the horizon",
   title: "What 9th House Astrology Reveals About Your Inner Seeker",
   description: "The 9th House is the sector of a birth chart that governs how you reach beyond your immediate surroundings toward meaning, belief, and a bigger picture of...",
   authorId: "julian-thorne",
@@ -39,6 +41,8 @@ Across nearly fifteen years spent helping people read the belief, meaning-making
 2. **The 9th versus the 12th House.** The 12th house dissolves the self into something larger and often wordless, whereas the 9th reaches toward the larger through belief you can actually articulate and argue. Choosing the 9th's explicit faith over the 12th's quiet surrender gets you a worldview you can teach and share, but you sacrifice some of the 12th's tolerance for mystery that refuses to be named. The 12th lets go of the question; the 9th insists on an answer it can put into words.
 3. **The 9th versus the 10th House.** The 10th house builds outward reputation and concrete standing in the world, while the 9th builds the inner conviction that gives that standing a direction. To lean on the 9th rather than the 10th is to prize meaning over achievement — you gain a clear sense of why, but you can lose ground on the visible markers of how far you have come. In practice the 10th asks what you have accomplished; the 9th asks whether it pointed anywhere worth going.
 
+
+![Comparison of the 3rd house gathering facts, the 9th house building worldview, and the 12th house dissolving into mystery](/images/houses/9th-house-astrology-i0-en.svg)
 ## How to Read The 9th House in Your Chart
 
 Reading 9th house astrology in your own chart works best as a single observe-then-apply sequence rather than a trait checklist, because belief rarely announces itself as one neat symbol. Instead of staring at the house and waiting for a verdict, you trace it through the parts of the chart you can already see:
@@ -51,6 +55,8 @@ Reading 9th house astrology in your own chart works best as a single observe-the
 
 Run this sequence once and the house stops being an abstract field of "philosophy and travel"; it becomes a specific pattern you can point to in how you actually form, defend, and revise what you believe.
 
+
+![Five steps to read the 9th house: cusp ruler, its house, planet cluster, a changed belief, naming the conviction](/images/houses/9th-house-astrology-i1-en.svg)
 ## Common Misreadings
 
 Most confusion about 9th house astrology comes from a few popular shortcuts that flatten a meaning-rich house into a single keyword. Each of the most common misreadings is worth correcting on its own terms:
@@ -111,6 +117,8 @@ Once you have traced your 9th-house ruler and read its planets as a cluster, set
 
 export const ninthHouseAstrologyZh: WikiArticle = {
   slug: "9th-house-astrology",
+  image: "/images/houses/9th-house-astrology.jpg",
+  image_alt: "散落的石子与纸页汇成一支金色箭矢，射向地平线上由星座连成的拱门",
   title: "读懂第九宫，看清你为什么总在追问人生的意义",
   description: "第九宫（The 9th House）是星盘里掌管高等教育、长途旅行、哲学与信仰的那块生活领域，说第九宫代表什么，核心是一张标记人如何追寻意义的地图。它和第三宫遥遥相对：第三宫收集眼前的事实，9th house 则把这些事实拔高成一套你愿意信的世界观。",
   authorId: "julian-thorne",
@@ -150,6 +158,8 @@ export const ninthHouseAstrologyZh: WikiArticle = {
 
 第九宫和第十二宫则是「向外求道」和「向内消融」的差别：第九宫推着你出门、求学、建立一套能讲清楚的世界观，第十二宫把你拉回独处、放下与潜意识。要得到一套对外站得住的信念体系，就要牺牲一部分第十二宫式的「不必解释、安住其中」。Howard Sasportas 在梳理第三宫与第九宫这条心智轴线时就强调过：这两端不是高下之分，而是一近一远、互相需要的两种认知方式。
 
+
+![第三宫（收集事实）、第九宫（建立世界观）与第十二宫（融入未知）的对照图](/images/houses/9th-house-astrology-i0-zh.svg)
 ## 如何在你的星盘里识别 The 9th House
 
 要在星盘里认出第九宫（The 9th House）并真正用起来，关键不是背含义，而是观察你的真实反应。第九宫代表什么，往往藏在下面这些信号里：
@@ -160,6 +170,8 @@ export const ninthHouseAstrologyZh: WikiArticle = {
 4. 看你怎么对待学习：是为了考试，还是为了把一套道理从头到尾想通。
 5. 留意宫头星座：它描述你追寻意义时惯用的风格和脾气。
 
+
+![读第九宫的五步：宫头主星、主星落宫、行星整体、一次改观、说出信念](/images/houses/9th-house-astrology-i1-zh.svg)
 ## 常见误读
 
 关于第九宫，最常见的误读集中在这几处，先点破再说清：

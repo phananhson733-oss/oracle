@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const chakraTestEn: WikiArticle = {
   slug: "chakra-test",
+  image: "/images/chakra/chakra-test.jpg",
+  image_alt: "Seven round glowing lights spaced up a misty mountain path, some bright and some dim, under a nebula sky.",
   title: "What Your Chakra Test Result Actually Tells You",
   description: "The Chakra System is a map of seven energy centers running from the base of the spine to the crown, each tied to a life domain such as safety, creativity,...",
   authorId: "elena-vane",
@@ -38,6 +40,8 @@ A chakra test matters less for the score it hands you and more for what people t
 
 In my years reading auras and energy centers, the people who get the most from a result treat it as a question, not a sentence. A blocked reading the week after a hard breakup is information about that week, not a fault line carved into who you are. Picture two people with the same low throat-center score: one just spent a month biting their tongue at work, the other simply had a quiet, restful stretch — same number, completely different story. Read this way, the result stops being a score you pass or fail and becomes a mirror for what's genuinely loud in your life, whether that's a strained friendship, a stalled project, or the money stress humming under everything else. The point isn't the rating next to each center; it's the pause it gives you to notice what you'd otherwise move straight past.
 
+
+![Four predictable ways people freeze a chakra test snapshot into a permanent diagnosis](/images/chakra/chakra-test-i0-en.svg)
 ## The Chakra System vs Adjacent Concepts: How It Works + Trade-offs
 
 A chakra test differs from the tools it gets confused with most, and knowing how each one works keeps you from over-trusting any single result:
@@ -49,6 +53,8 @@ A chakra test differs from the tools it gets confused with most, and knowing how
 
 These pairings aren't new, even if the online quizzes are. The color-to-center mapping most tests rely on traces back to early theosophical writers such as Charles Leadbeater, and the seven-center model was later organized for modern readers by Anodea Judith. What carries through every version is the same quiet rule: the framework describes tendencies and themes, never a fixed fate. If you want to see how a single center reads from day to day, the [guide to recognizing a blocked chakra](/en/wiki/chakra-system-overview) walks through the everyday signs.
 
+
+![Comparison of a chakra test with a personality quiz and a clinical assessment, showing what each gives and costs](/images/chakra/chakra-test-i1-en.svg)
 ## How to Read The Chakra System in Yourself
 
 Before or after you take a chakra test, you can read the same patterns directly in everyday life. Watch for signals like these:
@@ -123,6 +129,8 @@ Take your result and read it against the whole map: [See the full Chakra System 
 
 export const chakraTestZh: WikiArticle = {
   slug: "chakra-test",
+  image: "/images/chakra/chakra-test.jpg",
+  image_alt: "雾中山径蜿蜒而上，七盏圆形柔光沿坡如脊柱排布，有的明亮饱满，有的黯淡微弱。",
   title: "读懂脉轮测试，别急着把结果当成定论",
   description: "The Chakra System（脉轮系统）是一套把人体能量分成七个能量中心的框架，每个中心对应一组生活主题。这些中心又叫脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念），从安全感、表达到亲密关系，各管一摊。想先看清七个中心各自负责什么，可以参考 脉轮系统总览 pillar...",
   authorId: "elena-vane",

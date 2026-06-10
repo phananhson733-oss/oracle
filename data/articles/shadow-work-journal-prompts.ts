@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const shadowWorkJournalPromptsEn: WikiArticle = {
   slug: "shadow-work-journal-prompts",
+  image: "/images/moon/shadow-work-journal-prompts.jpg",
+  image_alt: "A moonlit tree whose shadow reveals a glowing gold root system underground — tracing surface reactions back to their root patterns",
   title: "Shadow Work Journal Prompts That Reveal Root Wounds, Not Just Feelings",
   description: "Shadow work journal prompts are structured written questions designed to surface repressed psychological material — the attitudes, impulses",
   authorId: "marcus-orion",
@@ -47,6 +49,8 @@ Three tools appear regularly in the same searches: shadow work journal prompts, 
 
 The trade-off is directional: mindfulness and inner child work ease activation; shadow work uses activation as data to locate source patterns. Which approach fits depends on whether the immediate goal is relief or structural recognition — these tools answer different questions.
 
+
+![Comparison of shadow work prompts, inner child prompts, and mindfulness journaling: behavioral roots, wound-site re-parenting, and calming awareness](/images/moon/shadow-work-journal-prompts-i0-en.svg)
 ## How to Read shadow work journal prompts in Yourself
 
 The prompts produce movement when applied to concrete, recent moments rather than abstract tendencies. Four observable signals indicate a prompt is touching shadow material rather than surface reflection:
@@ -56,6 +60,8 @@ The prompts produce movement when applied to concrete, recent moments rather tha
 3. **Repetition across unrelated contexts.** The same emotional pattern appearing in work, family, and friendships points to a source pattern, not a contextual reaction.
 4. **Confident negative judgments.** Shadow material often surfaces as certainty about another person's motives that feels entirely factual and requires no verification.
 
+
+![Four signals a prompt is touching shadow material: resistance to writing, disproportionate emotional charge, repetition across contexts, and confident negative judgments](/images/moon/shadow-work-journal-prompts-i1-en.svg)
 ## Common Misreadings
 
 Four misreadings consistently lead writers away from productive shadow work and back into surface cycling.

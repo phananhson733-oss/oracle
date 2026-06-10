@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const trineInAstrologyEn: WikiArticle = {
   slug: "trine-in-astrology",
+  image: "/images/aspects/trine-in-astrology.jpg",
+  image_alt: "Three harmonious orbs in a triangle, a gold stream flowing effortlessly between them and pooling into unused mist over a still lake.",
   title: "What a Trine in Astrology Reveals About Talent You Forget to Use",
   description: "A trine in astrology is the 120-degree angle between two planets, and it marks the easiest, most natural flow of talent between two parts of a chart. The...",
   authorId: "marcus-orion",
@@ -42,6 +44,8 @@ A trine in astrology is best understood against the angles it sits next to, beca
 2. **Trine vs sextile.** A sextile is a 60-degree angle, an open door of opportunity that still asks you to walk through it. The trine hands you the result; the sextile hands you the chance. To get the trine's automatic talent, you give up the small spark of effort that makes a sextile feel earned and memorable.
 3. **Trine vs conjunction.** A conjunction fuses two planets into one blended force you cannot easily separate. The trine keeps the two planets distinct yet friendly. To get the conjunction's raw intensity, you lose the trine's ability to step back and direct each planet on its own terms.
 
+
+![Comparison of trine handing you the result at 120 degrees, sextile handing you the chance at 60 degrees, and square forcing resolution through tension at 90 degrees](/images/aspects/trine-in-astrology-i0-en.svg)
 ## How to Read a Trine in Your Chart
 
 You can spot a trine in astrology by looking for the places where life has always felt suspiciously easy. Watch for these signals:
@@ -51,6 +55,8 @@ You can spot a trine in astrology by looking for the places where life has alway
 3. **The chart geometry.** Find two planets roughly 120 degrees apart, usually in fire-fire, earth-earth, air-air, or water-water pairings.
 4. **The quiet plateau.** Spot a talent that stopped improving years ago because you never needed to push it; that stall is often a trine left on autopilot.
 
+
+![Four signals of a trine: an effortless skill, an unforced rhythm between life areas, planets 120 degrees apart in the same element, and a talent quietly plateaued](/images/aspects/trine-in-astrology-i1-en.svg)
 ## Common Misreadings
 
 Popular write-ups tend to flatten the trine into something it is not. Here are the misreads worth correcting:
@@ -110,6 +116,8 @@ Open your full birth chart and trace the lines that connect planets 120 degrees 
 
 export const trineInAstrologyZh: WikiArticle = {
   slug: "trine-in-astrology",
+  image: "/images/aspects/trine-in-astrology.jpg",
+  image_alt: "三颗和谐的发光星体构成三角，金色光流毫不费力地在它们之间流动，最终在静湖上化为无人取用的薄雾。",
   title: "三分相到底在说你哪一种被忽略的天赋",
   description: "三分相（Trine）是星盘里两颗行星相隔一百二十度时形成的相位，它代表两颗行星之间最自然、最不费力的天赋流动。这两颗行星在圆盘上正好隔开三分之一圈，通常落在同一种元素的星座里，所以它们不需要被提醒就会互相配合。它们各自掌管的领域会自动彼此支持。要看懂单个相位，先得熟悉整张盘的语言，这一点可以参考...",
   authorId: "marcus-orion",
@@ -148,6 +156,8 @@ export const trineInAstrologyZh: WikiArticle = {
 2. **三分相 vs 六分相。** 六分相是六十度，一扇敞开的机会之门，但仍要你自己走过去。三分相直接把结果递给你，六分相递给你的是机会。要换来三分相那种自动到手的天赋，你就放弃了让六分相显得是"挣来的"、因而更让人记得住的那一点点努力火花。
 3. **三分相 vs 合相。** 合相把两颗行星揉成一股难以拆开的混合力量。三分相则让两颗行星既清晰独立又彼此友好。要换来合相那股原始的强烈，你就失去了三分相那种能退一步、分别去调度每颗行星的余地。
 
+
+![对比图：120度三分相直接给结果，60度六分相给机会，90度四分相用张力逼你解决](/images/aspects/trine-in-astrology-i0-zh.svg)
 ## 如何在自己身上识别 Trine
 
 想认出自己盘里的 Trine，可以去找那些一直顺得有点不寻常的地方。留意这几个信号：
@@ -157,6 +167,8 @@ export const trineInAstrologyZh: WikiArticle = {
 3. **盘面上的几何。** 找两颗大约隔一百二十度的行星，通常是火对火、土对土、风对风或水对水这样的配对。
 4. **安静的停滞。** 留意一项很多年前就不再进步的天赋，因为你从来不需要去推它；这种卡住，往往就是一段被放到自动挡上的三分相。
 
+
+![识别三分相的四个信号：不费力的本事、不用协调的节奏、相隔120度的同元素行星、安静停滞的天赋](/images/aspects/trine-in-astrology-i1-zh.svg)
 ## 常见误读
 
 大众和浅层的写法常常把三分相（Trine）压扁成它本不是的样子。下面这几个误读值得逐条纠正：

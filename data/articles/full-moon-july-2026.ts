@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fullMoonJuly2026En: WikiArticle = {
   slug: "full-moon-july-2026",
+  image: "/images/moon/full-moon-july-2026.jpg",
+  image_alt: "A gold path that loops back once then runs straight to a full moon — post-retrograde integration at the July 29, 2026 Aquarius full moon",
   title: "Full Moon July 2026 Peaks After Mercury Retrograde — Use It to Integrate What Changed",
   description: "Full moon July 2026 is the Aquarius full moon on July 29, 2026, at 14:36 UTC, arriving six days after Mercury stations direct and shifting the emphasis",
   authorId: "marcus-orion",
@@ -28,6 +30,8 @@ Full moon July 2026 is **the Aquarius full moon on July 29, 2026, at 14:36 UTC**
 
 This lunation belongs to the broader *pillar page on full moon meanings and lunar cycle rituals*, but it should not be framed as a full moon happening inside Mercury retrograde. That factual distinction changes the entire interpretation. The useful question is no longer whether everything must be postponed. The better question is what became clearer during the retrograde and is now ready for a cleaner decision, announcement, or completion pass.
 
+
+![Timeline of July 2026: Cancer new moon July 14, Mercury direct July 23, Aquarius full moon peaking July 29 at 14:36 UTC](/images/moon/full-moon-july-2026-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Search results around full moon July 2026 often mix together three different timing ideas: the full moon itself, Mercury's retrograde cycle, and the general "Buck Moon" release ritual language that gets repeated every year. That blur creates real friction. Readers come in looking for a simple answer about whether to launch, hold back, or ritualize the date, but the guidance they find is often built on the wrong calendar premise.
@@ -44,6 +48,8 @@ It also helps to separate this full moon from the Mercury-retrograde frame itsel
 
 There is a second trade-off inside the Aquarius-Leo polarity. Leo wants confident expression, pride, and visible output. Aquarius wants contribution, systems awareness, and a broader social frame. To get recognition, you sacrifice some detachment; to get alignment, you sacrifice some ego gratification. July 2026 works best when readers let those two needs talk to each other instead of choosing one as the only truth.
 
+
+![The Leo–Aquarius polarity of the July 2026 full moon: personal visibility and recognition versus collective contribution and alignment](/images/moon/full-moon-july-2026-i1-en.svg)
 ## How to Read full moon July 2026 in Your Timing
 
 1. **Check 6-7° Aquarius and Leo in your chart.** Those houses show where culmination and exposure are most likely to be felt around this lunation.

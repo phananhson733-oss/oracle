@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const solarReturnEn: WikiArticle = {
   slug: "solar-return",
+  image: "/images/charts/solar-return.jpg",
+  image_alt: "A warm-gold sun returning to one marked point, casting a translucent overlay of light across a familiar constellation at dawn.",
   title: "What a Solar Return Really Highlights in Your Year Ahead",
   description: "Solar return is an annual astrological chart cast for the exact moment each year when the Sun returns to the precise zodiac position it held at your birth.",
   authorId: "marcus-orion",
@@ -46,6 +48,8 @@ Across all three, the same rule holds, and it is the rule the cyclic, person-cen
 
 This hierarchy also settles the question that stalls most beginners — which technique "wins" when two of them disagree. They are not competing. Transits, progressions, and the yearly chart are layered readings of the same life, and when several of them point at the same natal theme at once, that convergence is the real signal. One lonely placement in the annual chart, with nothing natal standing behind it, rarely amounts to much.
 
+
+![Comparison of transits, progressions, and the solar return as layered timing tools](/images/charts/solar-return-i0-en.svg)
 ## How to Read Your Annual Chart in Your Timing
 
 Reading a solar return well starts with locating what the year emphasizes, then checking every signal against the birth chart. These cues, read in order, keep the annual layer in its proper place:
@@ -60,6 +64,8 @@ Predictive astrologers such as Robert Hand stress this back-checking habit: a pl
 
 The same discipline applies to the hard aspects that scare people. A return Saturn squaring the Sun can look ominous in isolation, yet if your natal Saturn already aspects the Sun, the year simply turns up the volume on a lifelong negotiation with structure and limits — a familiar lesson revisited, not a fresh punishment dropped from the sky.
 
+
+![Five solar return reading cues in order, each checked back against the natal chart](/images/charts/solar-return-i1-en.svg)
 ## Common Misreadings
 
 Most shallow guides repeat the same handful of mistakes about the solar return, and each one traces back to forgetting its subordinate role:

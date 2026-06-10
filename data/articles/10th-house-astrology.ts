@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const tenthHouseAstrologyEn: WikiArticle = {
   slug: "10th-house-astrology",
+  image: "/images/houses/10th-house-astrology.jpg",
+  image_alt: "A worn stone stairway climbing to a half-built golden beacon at a mountain summit under a zenith star",
   title: "What 10th House Astrology Reveals About Your Public Role",
   description: "The 10th House is the sector of a birth chart that describes your public role — the reputation, standing, and authority you build in the world beyond your...",
   authorId: "julian-thorne",
@@ -46,6 +48,8 @@ Read that way, the placement becomes a growth question rather than a verdict. Co
 
 None of these comparisons make one sector more important than another. They simply keep you from reading a career label where the chart is describing a role, or reading public ambition where it is really pointing at private security. Holding the distinctions lets you ask a sharper question of any placement near the Midheaven: is this telling me what I do, or who the world is slowly learning to trust me as?
 
+
+![Comparison of the 6th house daily tasks and craft versus the 10th house public reputation they earn](/images/houses/10th-house-astrology-i0-en.svg)
 ## How to Read The 10th House in Your Chart
 
 Reading 10th house astrology in your own chart starts with observation rather than prediction. Look for these signals before reaching for any conclusion:
@@ -58,6 +62,8 @@ Reading 10th house astrology in your own chart starts with observation rather th
 
 Taken together, these signals describe a pattern that unfolds over time rather than a single fixed answer, which is exactly how this sector tends to reveal itself in a real life.
 
+
+![Five steps to read the 10th house: MC sign, planets near the MC, the ruler's house, feedback, resisted duties](/images/houses/10th-house-astrology-i1-en.svg)
 ## Common Misreadings
 
 The gap between 10th house astrology and the way it gets summarised online creates a few predictable misreadings. Each is worth correcting directly, because these are exactly the assumptions that send readers looking for clarity in the first place.
@@ -122,6 +128,8 @@ Open your birth chart, find your Midheaven sign, and read it as a public role yo
 
 export const tenthHouseAstrologyZh: WikiArticle = {
   slug: "10th-house-astrology",
+  image: "/images/houses/10th-house-astrology.jpg",
+  image_alt: "磨损的石阶通向山顶天星之下尚未建完的金色灯塔",
   title: "第十宫说的从来不是职业头衔，而是你正在长成的公众角色",
   description: "The 10th House（第十宫）是星盘里代表公众角色与社会身份的区域。它从天顶（MC，Midheaven，星盘最高点）起算，自然对应摩羯座与土星的主题——责任、结构，以及你愿意为之负长期责任的位置。想把它放回更大的框架里看，可以先读 占星十二宫总览 pillar...",
   authorId: "julian-thorne",
@@ -164,6 +172,8 @@ The 10th House（第十宫）是星盘里代表公众角色与社会身份的区
 
 如果你想顺着这条轴往下读，对面的 [第四宫家庭根基深度解析](/zh/wiki/astrology-houses) 正好是第十宫的私人底面——一个朝外、一个朝内，合起来才是完整的你。
 
+
+![第六宫（日常任务与手艺）与第十宫（由此换来的公众声望）的对照图](/images/houses/10th-house-astrology-i0-zh.svg)
 ## 如何在你的星盘里识别 The 10th House
 
 想在自己的星盘里读懂第十宫，不用先懂一堆术语，盯住几个可观察的信号就够了：
@@ -174,6 +184,8 @@ The 10th House（第十宫）是星盘里代表公众角色与社会身份的区
 4. 想想在家庭聚会上，长辈是用哪个标签向亲戚介绍你的。
 5. 注意职场里别人开始主动征询你意见的那一刻——权威是从那时长出来的。
 
+
+![读第十宫的五步：天顶星座、天顶行星、主星落宫、外界反馈、抗拒的责任](/images/houses/10th-house-astrology-i1-zh.svg)
 ## 常见误读
 
 大众内容对第十宫最常见的几个误读，恰恰是把读者困住的地方：

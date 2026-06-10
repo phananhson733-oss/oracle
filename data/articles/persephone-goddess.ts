@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const persephoneGoddessEn: WikiArticle = {
   slug: "persephone-goddess",
+  image: "/images/placements/persephone-goddess.jpg",
+  image_alt: "A glowing path descends underground past a split pomegranate with golden seeds and rises again toward dawn, symbolizing Persephone's cycle of descent, change, and altered return.",
   title: "Why the Persephone Goddess Still Names a Pattern You Live Through",
   description: "Persephone is the Greek goddess of the underworld whose myth maps the human pattern of descent, change, and altered return. In Greek myth she is the maiden...",
   authorId: "julian-thorne",
@@ -25,6 +27,8 @@ Persephone is **the Greek goddess of the underworld whose myth maps the human pa
 - Carries both roles at once, the innocent maiden and the queen of the dead
 - Read through Pluto, eighth-house themes, and chart factors clearly tied to loss-and-renewal symbolism
 
+
+![The three beats of the Persephone cycle: forced descent, binding change marked by the pomegranate seed, and an altered return.](/images/placements/persephone-goddess-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Most readers meet the persephone goddess as a tidy seasonal fable and stop there, which is exactly where the trouble starts. The friction is not that people misremember the plot; it is that they treat the abduction, the underworld, and the return as a single ancient event instead of a pattern that keeps repeating inside a life. Someone in the middle of a hard separation, a forced ending, or a slow grief rarely recognizes that they are standing in the descent phase of a cycle they have lived before.
@@ -41,6 +45,8 @@ Persephone also differs from the pure Pluto signature. Pluto names the raw force
 
 A third comparison is worth holding: the difference between the innocent-maiden Kore reading and the queen reading of the same figure. Some treat her only as the abducted girl, which gets you the sympathy of the victim but costs you the whole second half of the story, where she takes the throne of the place that claimed her. To read her purely as the maiden, you sacrifice her authority; to read her purely as the queen, you sacrifice the genuine wound that the descent began with. The pattern asks you to hold both at once. That same descent-and-return rhythm is sometimes read along the soul axis described in this [guide to the lunar nodes as a descent-and-return soul axis](/en/wiki/north-node-vs-south-node), where the pull downward and the climb back form a single line.
 
+
+![Comparison of three readings of the underworld: the Demeter lens of grief, the Pluto lens of raw upheaval, and the Persephone lens of lived transformation and sovereignty.](/images/placements/persephone-goddess-i1-en.svg)
 ## How to Read Persephone in Yourself
 
 The persephone goddess shows up less as a fixed trait and more as a recognizable sequence you can learn to spot in real time. Look for these signals:
@@ -112,6 +118,8 @@ Map your own chart for the descent-and-return pattern by working through the ful
 
 export const persephoneGoddessZh: WikiArticle = {
   slug: "persephone-goddess",
+  image: "/images/placements/persephone-goddess.jpg",
+  image_alt: "一条发光的小径沉入地底，经过缀满金色籽粒的石榴，再升向微光黎明，象征珀耳塞福涅下降、转变与改变后回归的循环。",
   title: "读懂珀耳塞福涅原型：下降、转变、再回来的内在循环",
   description: "珀耳塞福涅原型（Persephone）是用来描述一个人被拉入低谷、在那里改变、再带着新样子回来的内在循环。在希腊神话里，Persephone...",
   authorId: "julian-thorne",
@@ -133,6 +141,8 @@ export const persephoneGoddessZh: WikiArticle = {
 - 它不是一次性的剧情，而是会在不同人生阶段重复出现的内在节律
 - 回来的人不再是原来那个人——这正是这个原型最容易被忽略的地方
 
+
+![珀耳塞福涅循环的三拍：被动下沉、以石榴籽为记的暗处质变、带着改变的回归。](/images/placements/persephone-goddess-i0-zh.svg)
 ## 为什么了解它能帮助自我觉察
 
 理解珀耳塞福涅原型为什么值得花心思，是因为很多人把 Persephone 只当成一则采花被掳的旧神话，于是错过了它最有用的部分：下降与回归其实是一种会反复发生的内在模式。当你只把它看成一个固定结局的故事，就会以为低谷只是"挺过去就好"，等同样的下沉再来一次时，依然措手不及。

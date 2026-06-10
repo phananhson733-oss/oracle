@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const astrologyTermsEn: WikiArticle = {
   slug: "astrology-terms",
+  image: "/images/charts/astrology-terms.jpg",
+  image_alt: "Two steady glowing orbs joined by faint gold threads at three different angles, the same lights telling three stories over a still lake.",
   title: "How the Core Astrology Terms Fit Together in One Chart",
   description: "Astrology terms are the shared vocabulary that names the parts of a birth chart and the relationships between them. The words fall into three working...",
   authorId: "marcus-orion",
@@ -28,6 +30,8 @@ Astrology terms are **the shared vocabulary that names the parts of a birth char
 - Angles mark the four corners of the wheel that anchor where life plays out
 - Points are calculated positions, not bodies, that fill in the chart's structure
 
+
+![The three working groups of astrology terms: aspects, angles, and points](/images/charts/astrology-terms-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Learning astrology terms in isolation is the trap that sends people back to search, which is why this glossary links each one out to the broader [guide to reading a complete birth chart](/en/wiki/how-to-read-birth-chart) where the words work together. You can memorize that a square is "tense" and a trine is "easy," then open your own chart and have no idea how those labels connect to the angles and points sitting right next to them. The terms feel like flashcards, not a system.
@@ -44,6 +48,8 @@ Astrology terms get confused with two neighbors: the raw astronomy they come fro
 
 A worked example shows how it works in practice. Two planets sitting 60 degrees apart form the [explainer on the sextile aspect](/en/wiki/sextile-astrology), an opportunity angle that asks for a small push to activate. Move them to 120 degrees and you have the [explainer on the trine aspect](/en/wiki/trine-in-astrology), a flowing angle that runs on its own but can drift into laziness. Push them to 90 degrees and you reach the [explainer on the square aspect](/en/wiki/square-astrology), a friction angle that creates pressure and growth. Same two planets, three different shapes, three different stories, all decided by the angle between them.
 
+
+![One planetary pair at 60, 90, and 120 degrees producing three different aspect stories](/images/charts/astrology-terms-i1-en.svg)
 ## How to Read These Terms in Your Chart
 
 Once your wheel is in front of you, resist the urge to look up every word at once. Move through these four passes in sequence instead, treating each one as a single question to answer before the next.
@@ -53,6 +59,8 @@ Once your wheel is in front of you, resist the urge to look up every word at onc
 3. **Spot a repeated pattern.** If three or more planets keep forming the same shape, that pattern often outweighs a single dramatic label.
 4. **Check what touches an angle.** A planet sitting on an angle tends to act louder than its sign alone would suggest, so note which words cluster near those four corners.
 
+
+![Four sequential passes for reading chart terms: angles, tightest aspect, patterns, angular planets](/images/charts/astrology-terms-i2-en.svg)
 ## Common Misreadings
 
 The reason most people stay stuck is that the popular write-ups flatten astrology terms into good-or-bad scores. As Robert Hand's interpretive work makes clear, the same shape can read very differently depending on the planets involved, so a few corrections clear the fog.
@@ -114,6 +122,8 @@ Open your own chart and label the four angles plus your single tightest aspect u
 
 export const astrologyTermsZh: WikiArticle = {
   slug: "astrology-terms",
+  image: "/images/charts/astrology-terms.jpg",
+  image_alt: "静湖夜空中两颗稳定的发光星体，被三道不同张开角度的金线相连，同两束光因角度不同而讲出三种故事。",
   title: "占星术语：把相位、轴点和虚点读成一张星盘",
   description: "Astrology Terms（占星术语）是星盘里用来命名各个部件、以及部件之间关系的一整套词汇。说到底，它是一套描述星盘内部关系的共用语言。它大致分成三组：相位（两颗行星之间的角度）、轴点（星盘四个枢纽位置）、虚点（算出来的、并非真实星体的位置）。",
   authorId: "marcus-orion",
@@ -138,6 +148,8 @@ Astrology Terms（占星术语）是星盘里用来命名各个部件、以及�
 - 轴点标出星盘的四个角，决定一件事落在你人生的哪一块
 - 虚点不是星体，而是算出来的位置，补全星盘的结构
 
+
+![占星术语的三组分类：相位、轴点、虚点](/images/charts/astrology-terms-i0-zh.svg)
 ## 为什么了解它能帮助自我觉察
 
 理解 Astrology Terms 能帮你跨过初学者最容易卡住的那道坎——很多人把占星术语一个一个孤立地背，却没看出相位、轴点和虚点说的都是同一张盘里的关系。词背得越多，越像一摞对不上号的卡片：
@@ -157,6 +169,8 @@ Astrology Terms（占星术语）是星盘里用来命名各个部件、以及�
 3. **找重复出现的图形。** 如果三颗以上行星反复构成同一形状，这个模式往往比某个单独的标签更重要。
 4. **看什么压在轴点上。** 一颗行星压在轴点上，往往比它单凭星座更高调，留意哪些词聚在那四个角附近。
 
+
+![按顺序读盘的四遍：轴点、最紧相位、重复图形、轴点行星](/images/charts/astrology-terms-i2-zh.svg)
 ## 常见误读
 
 关于占星术语，最常见的误读集中在这几处，先点破再说清：
@@ -172,6 +186,8 @@ Astrology Terms 最容易和两个邻居搞混：它脱胎自的那套天文学�
 
 再说和关键词的差别，以及相位和轴点之间的取舍。关键词「有野心」是一个结论，而「四分相」这个词是产出这个结论的结构——要图关键词的快，你就牺牲了背后的推理，盘一变就没法跟着改。相位和轴点也是一组取舍：相位说的是两颗行星隔着盘怎么互动，轴点说的是盘本身固定的框架；要读出动态就靠相位，要读出舞台就靠轴点。举个能看出运作方式的例子：两颗行星相隔 60 度，构成 [六分相相位详解](/zh/wiki/sextile-astrology)，是个需要轻轻一推才启动的机会角；挪到 120 度就成了 [三分相相位详解](/zh/wiki/trine-in-astrology)，自己会顺着跑，却容易滑向懒散；推到 90 度则是 [四分相相位详解](/zh/wiki/square-astrology)，制造压力也带来成长。正如 Robert Hand 这类作者所提醒的，同一组行星，三个角度，就是三套不同的占星术语和三个不同的故事。
 
+
+![同一组行星在 60、90、120 度时形成三种不同的相位故事](/images/charts/astrology-terms-i1-zh.svg)
 ## Astrology Terms 速查表
 
 | 词汇分组 | 运作方式 | 在星盘里的角色 | 如何观察 |

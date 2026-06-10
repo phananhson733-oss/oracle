@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const bharaniNakshatraEn: WikiArticle = {
   slug: "bharani-nakshatra",
+  image: "/images/nakshatra/bharani-nakshatra.jpg",
+  image_alt: "A glowing golden vessel holds a bright seed between a fading star and a rising one",
   title: "Why Bharani Nakshatra Carries What Others Cannot Hold",
   description: "Bharani nakshatra is the second lunar mansion in Vedic astrology, spanning 13°20′ to 26°40′ of Aries, ruled by Venus and presided over by Yama",
   authorId: "aditi-sharma",
@@ -43,6 +45,8 @@ Krittika, the nakshatra that follows, cuts and purifies with fire, burning away 
 
 It also helps to separate this placement from the generic idea of a "malefic" or simply intense position. A Mars-driven intensity tends to push outward and confront; here the intensity turns inward and holds. To gain that capacity for containment, you trade away the easy release of acting on impulse — the energy is meant to be carried, not discharged. In practice that can look like someone who absorbs a tense situation and quietly stabilizes it instead of reacting and escalating it. You can see the contrast more clearly alongside *explainer on Ashwini nakshatra*, the initiating placement right before it.
 
+
+![Three Aries nakshatras compared: Ashwini initiates, Bharani contains and completes, Krittika cuts and purifies](/images/nakshatra/bharani-nakshatra-i0-en.svg)
 ## How to Read Bharani in Your Chart
 
 Bharani shows up less as obvious drama and more as a particular relationship with intensity and endings. A handful of signals tend to point to it when it sits on your Moon, Ascendant, or another sensitive point:
@@ -55,6 +59,8 @@ Bharani shows up less as obvious drama and more as a particular relationship wit
 
 None of these confirms the placement on its own, but together they sketch the bearer's signature fairly well.
 
+
+![Five signals of a Bharani placement, from calm in crisis to recurring birth-death-renewal themes](/images/nakshatra/bharani-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 Most popular write-ups flatten bharani nakshatra into a few clichés, and those clichés are usually what push people to look for something more accurate. The ones worth correcting:

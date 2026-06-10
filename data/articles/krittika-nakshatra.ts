@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const krittikaNakshatraEn: WikiArticle = {
   slug: "krittika-nakshatra",
+  image: "/images/nakshatra/krittika-nakshatra.jpg",
+  image_alt: "A single sharp blade of golden flame rising from a dark plain toward a tight bright star cluster, throwing fine sparks.",
   title: "What Krittika Nakshatra Really Means Across Aries and Taurus",
   description: "Krittika nakshatra is a Vedic lunar mansion governed by Agni, split between Aries and Taurus.",
   authorId: "aditi-sharma",
@@ -45,6 +47,8 @@ The sign split creates explicit, observable trade-offs. Aries Pada 1 puts fire i
 
 Compared to *Bharani nakshatra overview*, which also appears in the early zodiac and involves transformation, Bharani centers on containment and release — the ending of one cycle before the next. Krittika centers on purification within a continuing process: fire that refines what remains, not fire that marks an ending. Choosing Krittika's mode of engagement means gaining a fine edge for clarity, but accepting that the edge is not always read as care by everyone in the environment.
 
+
+![Krittika's sign split compared: fast direct Aries Pada 1 versus patient exacting Taurus Padas 2–4](/images/nakshatra/krittika-nakshatra-i0-en.svg)
 ## How to Read Krittika Nakshatra in Your Chart
 
 A Krittika nakshatra placement is located by finding the exact degree and sign of the moon, ascendant, or a key planet in a sidereal chart. The single most important step is identifying which sign the placement falls in — Aries or Taurus — before applying any further description. That determination reshapes the reading more than any other factor.
@@ -57,6 +61,8 @@ Practical signals to observe by placement:
 4. **Craft and mastery as recurring themes.** Many people with this placement describe a drive toward specific skill development — not broad ambition, but a precise internal standard applied to a chosen domain.
 5. **Near the sign cusp.** If the placement sits within a degree or two of the Aries-Taurus boundary, both signatures may surface, with one becoming more dominant through different dasha periods.
 
+
+![Five steps for reading Krittika in a chart, from the Aries and Taurus pada signals to cusp placements](/images/nakshatra/krittika-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 The most persistent misreadings of krittika nakshatra trace back to a single source: descriptions that flatten both sign expressions into one behavioral portrait, almost always privileging the Aries pada because its sharp, fire-on-fire quality is more distinctive on paper.

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const southNodeEn: WikiArticle = {
   slug: "south-node",
+  image: "/images/nodes/south-node.jpg",
+  image_alt: "A worn, glowing stone platform launching an arc of light toward a faint distant constellation",
   title: "Your South Node Is a Launch Pad, Not Baggage to Escape",
   description: "South Node is a chart point marking the innate skills you already arrive fluent in.",
   authorId: "julian-thorne",
@@ -50,6 +52,8 @@ The south node is easiest to understand next to the points people most often con
 
 Picture a chart where this point falls in a bold fire sign in the house of career: the inherited gift might be fearless self-promotion, brilliant in a past context but exhausting now. The integration approach keeps the courage and redirects it toward listening, which is exactly what the opposing North Node asks for. Swap the fire sign for a cautious earth sign and the same logic holds — the gift of relentless reliability becomes the trap of never delegating, and the stretch is learning to trust other hands. Because the axis also marks where eclipses fall, the themes tied to this point tend to resurface on a roughly six-month rhythm, which is why the same lesson can feel like it keeps coming back around. This redeployment reading runs through the psychological-astrology lineage of Liz Greene and Howard Sasportas, building on the person-centered approach Dane Rudhyar established — each treats inherited tendencies as material to work with consciously, not a fate to obey.
 
+
+![Comparison of the South Node with the North Node and the natal Moon](/images/nodes/south-node-i0-en.svg)
 ## How to Read south node in Your Chart
 
 Spotting the south node in your own chart comes down to a few observable signals you can check once you know the glyph (☋).
@@ -62,6 +66,8 @@ Spotting the south node in your own chart comes down to a few observable signals
 
 Put together, these signals sketch a character. Say the glyph falls in a communicative air sign in the house of daily work: the inherited talent might be quick, fluent explaining — the person who can talk anyone through anything. Under stress they over-explain, reaching for words when action is what the moment needs. Read this way, a vague "past-life" label becomes something you can actually watch for in a Tuesday meeting. The placement is rarely exotic; it usually looks like the one thing you have always been a little too good at.
 
+
+![Five steps for spotting the South Node in your own chart](/images/nodes/south-node-i1-en.svg)
 ## Common Misreadings
 
 A handful of misreadings keep showing up, and each one comes straight from the "burden to escape" framing.

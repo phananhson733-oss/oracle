@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const libraRisingHousesEn: WikiArticle = {
   slug: "libra-rising-houses",
+  image: "/images/placements/libra-rising-houses.jpg",
+  image_alt: "A calm golden scale holds a coin in one pan and two rings in the other, joined underneath by one hidden glowing cord, symbolizing the shared Mars rulership linking money and partnerships for Libra rising.",
   title: "How Libra Rising Houses Link Your Finances to Your Closest Relationships",
   description: "Libra rising houses describes the dual-planet ruler map activated by a Libra ascendant",
   authorId: "marcus-orion",
@@ -28,6 +30,8 @@ Libra rising houses describes **the dual-planet ruler map activated by a Libra a
 
 In Western astrology, the ascendant sign determines which planet governs each of the twelve houses. For Libra rising, Venus and Mars each govern two significant domains — a structure mapped across all twelve rising sign configurations in the [pillar page on houses and life areas in astrology](/en/wiki/astrology-houses).
 
+
+![The Libra rising dual-ruler map: Venus governs the 1st house identity and 8th house depth, while Mars governs both the 2nd house of money and the 7th house of partnerships.](/images/placements/libra-rising-houses-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 The problem that libra rising houses produces in practice is concrete: nearly every popular Libra resource describes Libra as Venus-ruled and treats the entire rising sign through diplomacy, relational harmony, and balance. Those descriptions apply to the 1st house — the identity layer Venus governs. They say nothing specific about the 2nd house (personal money) or the 7th house (one-on-one partnerships), both of which run on Martian energy for this placement.
@@ -60,6 +64,8 @@ Five concrete signals help locate libra rising houses in real experience:
 
 5. **Watch for the gap between first impression and behavior under pressure.** Venus governs the 1st house, which produces a relational, ease-seeking presentation. Mars governs the 7th — the partnership house. When stakes are genuinely high in a close relationship, the Martian layer often surfaces in a way that surprises both the Libra rising person and their partner. Noticing when this gap opens is one of the clearest live signals of this house structure.
 
+
+![Five signals for reading Libra rising houses: check natal Mars, track its transits, compare the 2nd and 7th houses, note Venus's placement, and watch the gap between calm presentation and behavior under pressure.](/images/placements/libra-rising-houses-i1-en.svg)
 ## Common Misreadings
 
 Libra rising houses generate several recurring misreadings in self-study astrology, most traceable to resources that apply sun-sign Libra material directly to the ascendant without mapping the actual house rulers:

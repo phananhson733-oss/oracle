@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const firstHouseMeaningEn: WikiArticle = {
   slug: "1st-house-meaning",
+  image: "/images/houses/1st-house-meaning.jpg",
+  image_alt: "A glowing open doorway at the eastern horizon at first light, with a deeper inner sun half-hidden behind it.",
   title: "The 1st House Meaning Behind the Self You Lead With",
   description:
     "The 1st House is the segment of the birth chart that opens at the Ascendant, the exact zodiac degree rising on the eastern horizon at the moment you were...",
@@ -34,6 +36,8 @@ Think of it as the front door of the chart, the part of you that walks into a ro
 
 The 1st house has a traceable history, not just a set of trait descriptions. Horoscopic astrology — the tradition that introduced the Ascendant and the system of twelve houses — developed in the Hellenistic Mediterranean, especially Egypt, around the late 2nd to early 1st century BCE, when Babylonian astrology merged with the Egyptian tradition of decanic astrology ([Hellenistic astrology, Wikipedia](https://en.wikipedia.org/wiki/Hellenistic_astrology)). The 1st house is anchored to that rising point: the Ascendant is called the horoskopos, Greek for "hour marker," the degree rising on the eastern horizon at birth ([Hellenistic astrology, Wikipedia](https://en.wikipedia.org/wiki/Hellenistic_astrology)). Encyclopaedia Britannica describes how astrologers regarded "the one that is momentarily in the ascendant as the first place, the one to follow it as the second, and so on," forming the twelve-place dodecatropos — what later house language calls the first house — a method that has been the essential procedure of astrology since about 100 BCE ([Encyclopaedia Britannica](https://www.britannica.com/topic/astrology/Astrology-in-the-Hellenistic-period-3rd-century-bce-to-3rd-century-ce)). The traditional signification of the house has centered on the self, the body, and vitality for two millennia: in a community transcription of William Lilly's Christian Astrology (1647), the first house "hath signification of the life of man, of the stature, colour, complexion, form and shape of him that propounds the Question, or is born" ([Skyscript, transcription of Lilly's Christian Astrology, 1647](https://www.skyscript.co.uk/lilly_houses.html)). Read these as the documented history of how the tradition has defined the first house, not as empirical claims about outcomes.
 
+
+![Timeline of the 1st house from Hellenistic horoscopic astrology around 100 BCE to Lilly in 1647](/images/houses/1st-house-meaning-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Understanding 1st house meaning matters because most people reach for their Sun sign to describe themselves, then feel quietly misread. The gap shows up in a few predictable ways:
@@ -52,6 +56,8 @@ A second comparison sharpens the picture. Planets sitting inside the 1st house b
 
 A third distinction often gets skipped. The Ascendant is involuntary, while the image you deliberately craft, the polished version you choose for an interview or a first date, is a conscious overlay. To present a curated self, you gain control over the message, but you sacrifice some authenticity, because the instinctive 1st house tone tends to leak through anyway in your posture, your pace, and your tone of voice. This is why a rehearsed introduction can still feel slightly off to the listener: the deliberate words say one thing while the rising sign quietly says another, and most people register that second signal without knowing why.
 
+
+![Comparison of the 1st house as the instinctive presented self versus the Sun sign as core motive](/images/houses/1st-house-meaning-i1-en.svg)
 ## How to Read The 1st House in Your Chart
 
 Reading the 1st house starts with noticing concrete signals rather than memorizing trait lists, the grounded, psychological approach Liz Greene helped establish. Watch for these in your own chart and behavior:
@@ -79,6 +85,8 @@ Each correction points the same direction: the 1st house is a real, observable l
 
 The honest quantitative lever for a subjective topic like this is not an "effect" statistic — none exists — but belief-and-practice prevalence. In a fall 2024 Pew Research Center survey of 9,593 U.S. adults (conducted Oct. 21-27, 2024), 27% said they believe in astrology, meaning that the position of the stars and planets can affect people's lives; and 30% said they consult astrology or a horoscope, tarot cards, or a fortune teller at least once a year, though most who do so say it is mostly "just for fun" ([Pew Research Center](https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/)). Belief skews by gender and age: 35% of women versus 18% of men, and 33% of adults ages 18-29 versus 17% of those 65 and older, said they believe in astrology (the age and gender breakdown appears in the survey's demographic table, October 2024 column, of the [Pew report PDF](https://www.pewresearch.org/wp-content/uploads/sites/20/2025/05/PR_2025.05.21_astrology-tarot-cards-fortune-tellers_report.pdf)). The point for the 1st house is editorial: because so many people engage with rising-sign and Ascendant content casually, the most common error is treating a popular single-sign read as the whole self — which loops back to this page's thesis that the 1st house is one observable layer, not a verdict.
 
+
+![Key Pew 2024 survey figures: 27% of US adults believe in astrology, 30% consult yearly, with gender and age gaps](/images/houses/1st-house-meaning-i2-en.svg)
 ## The 1st House at a Glance
 
 | Property | How It Works | Natural Ruler & Sign | How to Observe |
@@ -130,6 +138,8 @@ Open your birth chart, find the sign on your 1st house cusp, and read that risin
 
 export const firstHouseMeaningZh: WikiArticle = {
   slug: "1st-house-meaning",
+  image: "/images/houses/1st-house-meaning.jpg",
+  image_alt: "东方地平线破晓处立着一道敞开的发光门廊，门后半隐着一轮更内在的太阳。",
   title: "第一宫代表什么，和你以为的太阳星座并不是一回事",
   description:
     "第一宫（The 1st House）是占星星盘的第一个宫位，描述你本能露在外、让人第一眼就接收到的那一面。它对应上升点（Ascendant），是整张星盘的入口；想看清它在十二宫里的位置，可以先对照 占星十二宫总览 pillar...",
@@ -172,6 +182,8 @@ export const firstHouseMeaningZh: WikiArticle = {
 2. **第一宫 vs 第七宫。** 第一宫管"我本能怎么出场"，对面的第七宫管"我在关系里怎么迎向别人"。把能量押在第一宫的自我主张上，你换来鲜明的个人风格，代价是有时显得只顾自己、不够照顾对面的人。
 3. **上升点 vs 整张星盘。** 上升星座只是入口，它定调你给人的第一印象，说了算的是"开场"，却说不了"全程"。只盯着上升点，你会错过太阳、月亮共同写成的那个更完整的你。
 
+
+![第一宫（本能示人的自我）与太阳星座（核心动机）的对照图](/images/houses/1st-house-meaning-i1-zh.svg)
 ## 如何在你的星盘里识别 The 1st House
 
 如果你还在纠结第一宫（The 1st House）是什么意思，想在自己身上认出它，其实不用先学会排盘，几个日常信号就能帮你定位：

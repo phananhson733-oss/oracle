@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const swatiNakshatraEn: WikiArticle = {
   slug: "swati-nakshatra",
+  image: "/images/nakshatra/swati-nakshatra.jpg",
+  image_alt: "A blade of grass bends in the wind as luminous coin-like orbs flow past without pooling",
   title: "Why Money Keeps Moving for Swati Nakshatra Natives",
   description: "Swati nakshatra is the fifteenth lunar mansion in Vedic astrology, spanning 6°40'–20°00' Libra with Rahu as planetary ruler and Vayu, the wind deity",
   authorId: "aditi-sharma",
@@ -49,6 +51,8 @@ swati nakshatra operates differently from other placements that share some of it
 
 A deeper reading of how Rahu's positioning shapes this flow pattern is at *guide to Rahu's influence in Venus-ruled signs*.
 
+
+![Swati's circulating distribution compared with Chitra's constructive drive and Vishakha's long-horizon ambition](/images/nakshatra/swati-nakshatra-i0-en.svg)
 ## How to Read swati nakshatra in Yourself
 
 Five observable patterns tend to surface when this placement is prominent in a natal chart. These are concrete signals to look for in real situations, not abstract tendencies:
@@ -63,6 +67,8 @@ Five observable patterns tend to surface when this placement is prominent in a n
 
 5. **Conventional retention structures produce friction.** Fixed savings schedules, long-hold investments, and structured accumulation plans often show disruptions or irregular results — not from incompetence, but from a placement that runs on flow. Working with structures that accommodate circulation tends to reduce that friction rather than add to it.
 
+
+![Swati's Rahu cycle in three phases: momentum, redistribution, and reset before a reserve forms](/images/nakshatra/swati-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 Most available content on this placement either emphasizes social charisma and independence without addressing the financial pattern, or frames the circulation tendency as instability without explaining what's driving it. For swati nakshatra, the misreadings cluster around two assumptions — that circulation means disorder, and that adaptability means lack of discipline. The specific corrections:

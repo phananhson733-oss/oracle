@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const pushyaNakshatraEn: WikiArticle = {
   slug: "pushya-nakshatra",
+  image: "/images/nakshatra/pushya-nakshatra.jpg",
+  image_alt: "A ringed planet as a bowl pouring steady streams of golden light into small cups below",
   title: "How Pushya Nakshatra Reframes Saturn as a Nurturer, Not a Restrictor",
   description: "Pushya nakshatra is the eighth lunar mansion in Vedic astrology, spanning 3°20' to 16°40' of Cancer",
   authorId: "aditi-sharma",
@@ -45,6 +47,8 @@ Pushya nakshatra sits alongside Punarvasu and Ashlesha, the two other nakshatras
 
 3. **The underlying dynamic.** The way Pushya works is that Saturn, when it serves nourishment rather than control, becomes a container rather than a cage. The same disciplining force that hardens in other configurations softens into a boundary that holds good things in rather than keeping people out. Parashara's tradition identifies this as the nakshatra's essential teaching: discipline and abundance are not opposites but collaborators, when discipline serves something worth sustaining.
 
+
+![The three Cancer nakshatras compared: Punarvasu's renewing care, Pushya's structured care, Ashlesha's strategic care](/images/nakshatra/pushya-nakshatra-i0-en.svg)
 ## How to Read pushya nakshatra in Yourself
 
 Spotting pushya nakshatra in a natal chart or transit period means looking for specific, observable patterns rather than abstract impressions of good fortune. Here are five signals worth tracking:
@@ -55,6 +59,8 @@ Spotting pushya nakshatra in a natal chart or transit period means looking for s
 4. **Pushya muhurta (electional timing).** The Moon's transit through this nakshatra is treated in traditional Jyotish as among the most favorable windows for beginning lasting enterprises — agreements, courses of study, businesses connected to food, health, or welfare, or any endeavor that requires sustained effort to pay off.
 5. **Dasha or bhukti with natal planets in this range.** When a planet placed in Pushya's degrees becomes active in the dasha sequence, its themes emerge with cumulative, patient, Saturnine quality — building steadily over years rather than peaking and receding.
 
+
+![Five ways Pushya activates: natal Moon, Ascendant, Saturn transit, muhurta timing, and dasha periods](/images/nakshatra/pushya-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 Several misreadings cluster persistently around pushya nakshatra, and most trace back to the Saturn-in-Cancer debilitation assumption. Here's what each one gets wrong:

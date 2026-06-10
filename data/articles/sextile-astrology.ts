@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const sextileAstrologyEn: WikiArticle = {
   slug: "sextile-astrology",
+  image: "/images/aspects/sextile-astrology.jpg",
+  image_alt: "Two glowing orbs over a still lake, joined by a thin gold bridge with a faint open archway of light at its midpoint.",
   title: "Why a Sextile Is an Open Door, Not a Free Gift",
   description: "A sextile is a 60-degree angle between two planets that signals easy cooperation you have to choose to use. In sextile astrology, those two planets sit...",
   authorId: "marcus-orion",
@@ -45,6 +47,8 @@ Sextile astrology gets confused with the two angles sitting next to it on the ch
 
 The practical takeaway is that the sextile occupies the middle ground: more workable than a square, less automatic than a trine. As Robert Hand's interpretive work makes clear, the same two planets read completely differently at 60, 90, and 120 degrees, so the angle, not the planets alone, sets the story.
 
+
+![Comparison of trine at 120 degrees flowing effortlessly, sextile at 60 degrees needing a first push, and square at 90 degrees forcing action through friction](/images/aspects/sextile-astrology-i0-en.svg)
 ## How to Read Sextile in Your Chart
 
 Spotting a sextile is more about scanning for a pattern than recalling a definition. With your wheel open, walk through these five cues in turn and let each one narrow the search before you move on.
@@ -55,6 +59,8 @@ Spotting a sextile is more about scanning for a pattern than recalling a definit
 4. **Watch for the "if I just tried" feeling.** When a strength feels one small step away from paying off, a sextile is frequently the connection describing it.
 5. **Tie it to a real scene.** Think of a recent moment when an opportunity was clearly there and only your inaction kept it closed; that is the sextile pattern in daily life.
 
+
+![Five-step sequence for spotting a sextile: find 60-degree gaps, check elements, notice easy unused skills, catch the 'if I just tried' feeling, tie it to a real scene](/images/aspects/sextile-astrology-i1-en.svg)
 ## Common Misreadings
 
 The reason people stay stuck is that shallow content flattens sextile astrology into a luck label, so a few corrections clear the path.
@@ -116,6 +122,8 @@ Open your own chart and circle every pair of planets sitting about two signs apa
 
 export const sextileAstrologyZh: WikiArticle = {
   slug: "sextile-astrology",
+  image: "/images/aspects/sextile-astrology.jpg",
+  image_alt: "静湖上方两颗发光星体，被一道细金光桥相连，桥的中点悬着一道微光拱门，像一份等待被走过的邀请。",
   title: "六分相：一扇为你打开却要你自己走过去的门",
   description: "六分相（Sextile）是两颗行星之间相隔 60 度、代表一种需要你主动把握的顺畅配合。在星盘上，这两颗行星刚好相距整个圆盘的六分之一，近到彼此能轻松搭上线，又远到不会自己发生作用。很多人记住了符号和度数就停下了，于是这个词总是把人重新送回搜索框。它属于占星术语总览 pillar...",
   authorId: "marcus-orion",
@@ -157,6 +165,8 @@ export const sextileAstrologyZh: WikiArticle = {
 
 落到实处一句话：这个角度比四分相好操作，又不像三分相那样自动。正如 Robert Hand 的解读所强调的，同样两颗行星在 60、90、120 度上读出来完全不同，所以定调的是角度本身，而不只是行星。
 
+
+![对比图：120度三分相毫不费力，60度六分相需要你先推一把，90度四分相靠摩擦逼你行动](/images/aspects/sextile-astrology-i0-zh.svg)
 ## 如何在自己身上识别 Sextile
 
 在自己星盘里读六分相，最好当成一份按顺序走的清单，而不是一堆定义。打开星盘，一条一条对照下面这些信号。
@@ -167,6 +177,8 @@ export const sextileAstrologyZh: WikiArticle = {
 4. **抓住「我只要试一下」的感觉。** 当一项长处感觉离兑现只差一小步，描述它的往往就是这样一个角度。
 5. **接到真实场景。** 想想最近一次明明机会就在眼前、只因你没动手而错过的时刻——那就是 Sextile 在日常里的样子，比如同事递来一个项目、家庭聚会上有人想引荐资源，你却没接。
 
+
+![识别六分相的五步：找60度间隔、看元素相合、留意会而未用的本事、抓住「只要试一下」的感觉、接到真实场景](/images/aspects/sextile-astrology-i1-zh.svg)
 ## 常见误读
 
 人们之所以卡住，是因为浅层内容把 Sextile 压成一个「幸运」标签，下面几条纠正能把路理顺。

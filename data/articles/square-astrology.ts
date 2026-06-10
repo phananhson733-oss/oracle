@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const squareAstrologyEn: WikiArticle = {
   slug: "square-astrology",
+  image: "/images/aspects/square-astrology.jpg",
+  image_alt: "Two glowing orbs pressing into a right-angle seam of light above dark cliffs, sparks flaring from the tension.",
   title: "Why the Square in Astrology Is the Aspect That Pushes You to Grow",
   description: "A square is a 90-degree angle between two planets that creates steady internal tension. In square astrology, that angle pulls two parts of your chart in...",
   authorId: "marcus-orion",
@@ -39,6 +41,8 @@ Square astrology gets confused with two neighbors that look similar on the surfa
 2. **Square vs opposition.** Both are hard aspects, but they work differently. An opposition pulls two planets to face each other across the wheel, so the tension shows up as an external standoff, often with other people. A square turns the tension inward, so it feels like two parts of you pulling against each other. To get the clarity of an opposition's clear "other side," you sacrifice the internal ownership the square forces on you.
 3. **Square vs sextile.** A sextile, like the [explainer on the sextile aspect](/en/wiki/sextile-astrology), offers a gentle opportunity that only activates if you reach for it. To get that low-cost option, you sacrifice the urgency a square supplies for free. The sextile waits politely; the square does not.
 
+
+![Comparison of the square's inward tension at 90 degrees, the opposition's external standoff at 180 degrees, and the trine's effortless flow at 120 degrees](/images/aspects/square-astrology-i0-en.svg)
 ## How to Read a Square in Your Chart
 
 A square rarely announces itself in one obvious placement; square astrology tends to hide in repeating patterns, so hunt for it deliberately. Work down these five cues, settling each one before the next rather than skimming for a quick label.
@@ -49,6 +53,8 @@ A square rarely announces itself in one obvious placement; square astrology tend
 4. **Check the modality.** Squares between cardinal, fixed, or mutable signs feel different; fixed-sign squares tend to dig in hardest and ask for the most patience.
 5. **Notice the workaround you already built.** Many people with a tight square have quietly developed a coping move around it; spotting that move is often how you first recognize the square at all.
 
+
+![Five-step sequence for spotting a square: find 90-degree gaps, name the two drives, watch the recurring snag, check the modality, spot the workaround you built](/images/aspects/square-astrology-i1-en.svg)
 ## Common Misreadings
 
 The reason most people stay stuck is that popular write-ups flatten square astrology into a damage report. As Robert Hand's interpretive work makes clear, the same 90-degree angle can read very differently depending on the planets involved, so a few corrections clear the fog.
@@ -109,6 +115,8 @@ Open your own chart and mark every pair of planets sitting about 90 degrees apar
 
 export const squareAstrologyZh: WikiArticle = {
   slug: "square-astrology",
+  image: "/images/aspects/square-astrology.jpg",
+  image_alt: "暗色峭壁上方，两颗发光星体在直角张力处相互挤压，金色火花从交界缝隙迸出。",
   title: "四分相：星盘里最逼你成长的那个张力角度",
   description: "Square（四分相）是两颗行星相距约 90 度时形成的硬相位，带来一种持续的内在张力。在星盘里，这个角度会把你身上两股需求往不同方向拉扯，它们谁也不肯迁就谁，于是不断较劲，直到你真正做点什么去回应。它属于主要相位之一，是 核心占星术语总览 pillar 页...",
   authorId: "marcus-orion",
@@ -144,6 +152,8 @@ Square 在表面上很容易跟两个邻居搞混：一个是人人偏爱的柔�
 2. **它 vs 对分相。** 两者都是硬相位，但运作方式不同。对分相把两颗行星拉到星盘两端面对面，张力多半往外显现，常常牵扯到别人；它则把张力收向内部，更像你身上两个部分在互相顶。要得到对分相那种"对面有个对手"的清楚，你就要牺牲这个相位逼你向内认领的那份主动。
 3. **它 vs 六分相。** [六分相含义解析](/zh/wiki/sextile-astrology) 递来的是一个温和的机会，你伸手去够它才会启动。要得到这种低成本的选项，你就要牺牲这个角度白送的那股紧迫。六分相会礼貌地等你，它不会。
 
+
+![对比图：90度四分相把张力收向内部，180度对分相向外对峙，120度三分相毫无阻力地流动](/images/aspects/square-astrology-i0-zh.svg)
 ## 如何在自己身上识别 Square
 
 想在自己盘里认出 Square，最好把它当成一份按顺序跑的清单，而不是一堆定义堆在那。打开你的星盘，一条一条对照下面这些信号，因为这个角度更多藏在反复出现的模式里，而不是某一个戏剧化的单点。
@@ -154,6 +164,8 @@ Square 在表面上很容易跟两个邻居搞混：一个是人人偏爱的柔�
 4. **看模式属性。** 开创、固定、变动三种模式之间的张力手感各异，固定星座之间的那种往往最顽固，最考验耐心。
 5. **留意你早就练出的那套应付动作。** 很多人早已悄悄围着它发展出一套绕行的招数，认出这招，往往就是你第一次真正看见它。
 
+
+![识别四分相的五步：找90度间隔、说出两股驱力、盯住反复卡点、看模式属性、认出已练成的应付动作](/images/aspects/square-astrology-i1-zh.svg)
 ## 常见误读
 
 读者之所以一直卡住，是因为坊间写法把 Square 压扁成了一份损伤报告。正如 Robert Hand 的解读所强调的，同一个 90 度角，会因为牵涉的行星不同而读出截然不同的味道，所以几条澄清就能拨开迷雾。

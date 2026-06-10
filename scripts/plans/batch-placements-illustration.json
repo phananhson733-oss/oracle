@@ -11,9 +11,9 @@
   "articles": {
     "saturn-in-pisces": {
       "hero": {
-        "prompt": "Editorial illustration of structure built inside the boundless: a precise golden geometric scaffold with clean lines, right angles and a ringed-planet motif holds its shape half-submerged in a vast drifting sea of soft mist and dissolving water, fog curling around the frame without toppling it — Saturn's demand for edges meeting Pisces's pull toward dissolution; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
-        "altEn": "A golden geometric scaffold holding firm inside a sea of drifting indigo mist, symbolizing Saturn building structure within boundless Pisces.",
-        "altZh": "金色几何框架稳立于弥漫的靛蓝雾海之中，象征土星在无边界的双鱼座里搭建结构。"
+        "prompt": "An atmospheric painterly editorial scene: a vast expanse of still misty water dissolving into low fog at the horizon under a wide night sky; a luminous teal-and-gold nebula wash drifts softly across the deep indigo dark with faint star points. A single slow, heavy ringed planet hangs low and luminous in the fog, its solid gold rings the one piece of firm structure in an otherwise boundless dissolving haze — discipline trying to take form in formless water — its reflection blurring and breaking apart on the misty surface below, solemn and dreamlike in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A heavy gold ringed planet hanging low in dissolving fog over still misty water, its reflection breaking apart on the surface.",
+        "altZh": "一颗沉重的金色带环行星低悬在消融的雾气中，下方静水朦胧，倒影在水面碎裂散开。"
       },
       "inline": [
         {
@@ -369,9 +369,9 @@
     },
     "chiron-in-12th-house": {
       "hero": {
-        "prompt": "Editorial illustration of a hidden sensitivity: a small antique golden key rests in a dim alcove behind a sheer translucent veil, glowing softly through the fabric, set at the dark edge of a great wheel of sky just before dawn — the most private corner of the chart, where what is concealed quietly becomes a source of light; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
-        "altEn": "A golden key glows softly behind a sheer veil at the pre-dawn edge of the sky, symbolizing the hidden sensitivity of Chiron in the 12th house.",
-        "altZh": "破晓前的天际边缘，一把金钥匙在薄纱后微微发光，象征凯龙在第十二宫的隐秘敏感。"
+        "prompt": "An atmospheric painterly editorial scene: a quiet shoreline of still water at the pre-dawn edge of night, a low horizon and a vast sky above; a luminous teal-and-gold nebula wash drifts softly across the deep indigo dark with faint star points, the whole scene veiled in a thin pre-dawn mist. Behind a sheer translucent veil of light low in the sky, a single soft glowing golden key hovers half-hidden — a tender hidden sensitivity and a wound that quietly holds a way through, almost unseen, waiting to be noticed rather than fixed, intimate and gentle in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A soft glowing gold key half-hidden behind a sheer veil at the pre-dawn edge of the sky, over still water.",
+        "altZh": "破晓前的天际，一把柔和发光的金色钥匙半隐在薄纱般的光幕后，下方是静水。"
       },
       "inline": [
         {
@@ -559,9 +559,9 @@
     },
     "black-moon-lilith": {
       "hero": {
-        "prompt": "Editorial illustration of a calculated point in space: a wide elliptical orbit drawn in fine golden lines around a small dark Earth, the Moon resting at the orbit's farthest reach, where two slightly diverging dotted paths — one smooth and averaged, one oscillating — mark two versions of the same empty apogee point glowing like a hollow ring of light; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
-        "altEn": "A golden elliptical lunar orbit with two slightly diverging paths marking the Moon's apogee, symbolizing the mean and true calculations of Black Moon Lilith.",
-        "altZh": "金色椭圆月轨上两条微微分岔的轨迹标出远地点，象征黑月莉莉丝的平均位与真实位两种算法。"
+        "prompt": "An atmospheric painterly editorial scene: a wild dark shoreline of restless black water under a moonless night sky thick with a deep teal-and-gold nebula; low on the far horizon glows a single dark luminous point where the moon is conspicuously absent, an aura of shadowed gold around an emptiness, the untamed hidden feminine power that lives in the chart, mysterious and potent in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A single dark luminous point low on a moonless horizon over wild black water, a shadowed glow around an emptiness.",
+        "altZh": "无月的夜，狂野黑水之上，远方地平线低处亮着一点幽暗的光——一圈阴影金晕环绕着虚空。"
       },
       "inline": [
         {
@@ -851,9 +851,9 @@
     },
     "leo-rising-houses": {
       "hero": {
-        "prompt": "Editorial illustration of one chart, two rulers: a great arc of a zodiac wheel spans the frame, a radiant golden sun cresting the eastern horizon line while a quiet ringed planet hangs with visible weight at the western edge, a fine gold axis connecting the two across the wheel's dark segmented houses — warmth at the surface, gravity in the house of partnership; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
-        "altEn": "A radiant sun rises at one edge of a zodiac wheel while a ringed planet weighs on the opposite edge, symbolizing Leo rising's Sun-ruled identity and Saturn-ruled partnerships.",
-        "altZh": "星盘一端旭日升起，另一端土星沉静压轴，象征狮子座上升太阳主导自我、土星掌管伴侣宫的结构。"
+        "prompt": "An atmospheric painterly editorial scene: an open landscape with a low horizon and still water under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. On one side a radiant warm-gold sun rises bright and generous over the eastern edge — Leo's solar self — while directly opposite, low on the far western horizon, a slower, heavier ringed planet hangs with a cooler, grave golden weight, pressing down over the place where partnerships form — Saturn governing the relational domain — the warm rising light and the weighty ringed planet in tense balance across one sky, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A radiant rising sun on one horizon and a heavy ringed planet on the opposite edge, in tense balance across the night sky.",
+        "altZh": "一侧地平线升起灿烂的暖金太阳，对面边缘悬着一颗沉重的带环行星，二者在夜空中形成紧张的平衡。"
       },
       "inline": [
         {

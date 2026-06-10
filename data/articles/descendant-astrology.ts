@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const descendantAstrologyEn: WikiArticle = {
   slug: "descendant-astrology",
+  image: "/images/aspects/descendant-astrology.jpg",
+  image_alt: "A setting light on the western horizon and a rising answering light opposite, meeting along one line over still water.",
   title: "Why the Descendant in Astrology Marks Your Relationship Blind Spot",
   description: "The Descendant is the point on the western horizon directly opposite your rising sign, and it sits on the cusp of your seventh house of one-to-one...",
   authorId: "marcus-orion",
@@ -40,6 +42,8 @@ Descendant astrology gets clearer when you set the angle beside its neighbors an
 3. **Descendant vs the IC.** The Descendant points outward to partnership, while the chart's private base of home and roots is marked by the IC. Focusing on the Descendant gets you insight into how you relate, but it says little about the inner ground you retreat to when the relationship is over.
 4. **Descendant vs the Moon.** The Moon describes how you feel and self-soothe, while the Descendant describes who you reach for to meet a need you have not yet met yourself. Leaning on the Descendant alone gets you the relationship pattern, but you can miss the quieter emotional habits the Moon reveals. In practice, descendant astrology reads best when each of these neighbors fills in a gap the angle leaves open.
 
+
+![Four contrasts that define the Descendant: against the Ascendant, the seventh-house planets, the IC, and the Moon](/images/aspects/descendant-astrology-i0-en.svg)
 ## How to Read the Descendant in Yourself
 
 Descendant astrology becomes practical once you watch for it in real situations rather than treating it as a label. Look for these signals.
@@ -49,6 +53,8 @@ Descendant astrology becomes practical once you watch for it in real situations 
 3. **The missing function.** Spot a quality you say you "can't do" but admire in a partner, such as directness or ease.
 4. **The recurring conflict.** Track the argument you have in relationship after relationship; the theme usually traces back to your seventh-house cusp.
 
+
+![Four signals for reading your Descendant: the repeated type, the strong reaction, the missing function, and the recurring conflict](/images/aspects/descendant-astrology-i1-en.svg)
 ## Common Misreadings
 
 Most surface-level takes on the Descendant repeat the same few errors, and each one keeps readers stuck on the friction that brought them here.
@@ -109,6 +115,8 @@ Cast your full birth chart and locate your Descendant sign and seventh-house cus
 
 export const descendantAstrologyZh: WikiArticle = {
   slug: "descendant-astrology",
+  image: "/images/aspects/descendant-astrology.jpg",
+  image_alt: "西方地平线上一束下沉的光，与对面升起的回应之光沿同一条横线在静水上相遇，如倒影迎向本体。",
   title: "下降点为什么藏着你在亲密关系里的盲区",
   description: "下降点（Descendant）是星盘上与你的上升点正好相对的那个点，落在第七宫的宫头，也就是一对一亲密关系的起点。它指向你最容易投射到亲密伴侣身上的那些特质。换句话说，下降点描述的，往往是你自己身上没有完全认领、却总在别人身上一再被你看见或被你吸引的那部分。它属于更上位的占星语言体系，可以从 占星术语总览...",
   authorId: "marcus-orion",
@@ -145,6 +153,8 @@ export const descendantAstrologyZh: WikiArticle = {
 3. **下降点 vs 天底（IC）。** 下降点朝外指向伴侣关系，而代表家庭与根基的私密底座则由天底（IC）标记。盯着下降点你能看清自己怎么去关系，却看不太到关系结束后你退回去歇脚的那块内在地面。
 4. **下降点 vs 月亮。** 月亮讲的是你如何感受、如何自我安抚，下降点讲的是你伸手去找谁来满足一个你还没替自己满足的需要。只靠下降点你拿到关系模式，却可能漏掉月亮揭示的那些更安静的情绪习惯。说到底，下降点和这些邻居各补一块对方的空白，一起读才最完整。
 
+
+![四组对比界定下降点：与上升点、第七宫行星、天底IC和月亮的区别](/images/aspects/descendant-astrology-i0-zh.svg)
 ## 如何在自己身上识别 Descendant
 
 下降点（Descendant）不是一张贴在身上的标签，要在真实情境里去认它才有用。可以留意下面这几个信号。
@@ -154,6 +164,8 @@ export const descendantAstrologyZh: WikiArticle = {
 3. **缺失的功能。** 找出一个你嘴上说「我做不到」、却又在伴侣身上很欣赏的品质，比如直接、比如松弛。
 4. **重复的冲突。** 追踪那个在一段又一段关系里都会上演的争执，主题通常能追回你的第七宫宫头。
 
+
+![识别下降点的四个信号：反复出现的类型、过强的反应、缺失的功能、重复的冲突](/images/aspects/descendant-astrology-i1-zh.svg)
 ## 常见误读
 
 关于下降点，大多数浅层说法都在重复同样几个错误，每一个都把读者困在他们一开始就想解开的那个结上。

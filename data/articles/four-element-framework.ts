@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fourElementFrameworkEn: WikiArticle = {
   slug: "four-element-framework",
+  image: "/images/charts/four-element-framework.jpg",
+  image_alt: "Four elemental zones meeting on one horizon — earth, water, air, fire — each with its own glowing celestial light, balanced in one sky.",
   title: "Four Element Framework Astrology",
   description:
     "Four-Element Framework is the plain-language system in astrology that groups signs and chart placements into fire, earth, air, and water so a birth chart...",
@@ -24,6 +26,8 @@ export const fourElementFrameworkEn: WikiArticle = {
 
 Four-Element Framework is the plain-language system in astrology that groups signs and chart placements into fire, earth, air, and water so a birth chart can be read by elemental pattern, not only by one sign. In four element framework astrology, fire points to drive and spark, earth to form and steadiness, air to thought and exchange, and water to feeling and receptivity. **A four-part lens for reading chart energy** helps explain why two people with the same Sun sign can still feel very different. Your Sun matters, but the Moon, Ascendant, Mercury, Venus, and Mars can shift the balance. The framework is also used in aura and chakra conversations, where fire may be associated with red or orange, earth with green or brown, air with yellow or blue, and water with indigo or purple. Those color links are interpretive conventions, not physical rules or personality verdicts.
 
+
+![The four elements as modes of chart energy: fire, earth, air, and water](/images/charts/four-element-framework-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Understanding four element framework astrology matters because many people first meet the elements through a single label: fire sign, earth sign, air sign, or water sign. That shortcut is easy to remember, but it can flatten the chart. A person with a fire Sun may still have a water Moon, an earth Ascendant, and several inner planets in air signs. Another person may identify strongly with a water Sun, yet make choices through an earth-heavy pattern of routine, caution, and steady effort. The element balance gives you a broader reading than Sun sign identity alone.
@@ -50,6 +54,8 @@ Compared with chakra framing, elements are broader and less center-specific. Cha
 
 A careful reading can use all of these systems without merging them into one claim. Count the chart placements first. Then ask what the strongest and quietest elements mean in lived situations. After that, compare aura or chakra language as a second symbolic layer. The trade-off is discipline: you gain a richer vocabulary, but you lose the comfort of saying one system "proves" the other.
 
+
+![Sun-sign reading versus element-balance reading of a birth chart](/images/charts/four-element-framework-i1-en.svg)
 ## Quick Reference Table
 
 | Property | Mechanism | Energy Center | Common Misread |

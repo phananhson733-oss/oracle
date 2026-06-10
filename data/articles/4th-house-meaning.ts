@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fourthHouseMeaningEn: WikiArticle = {
   slug: "4th-house-meaning",
+  image: "/images/houses/4th-house-meaning.jpg",
+  image_alt: "A small dark house above ground with vast glowing golden roots and a hearth-light below",
   title: "The 4th House Meaning Behind Your Emotional Foundation",
   description: "The 4th House is the base of the birth chart, the point directly beneath the horizon known as the Imum Coeli, or IC. Read through a psychological lens, the...",
   authorId: "julian-thorne",
@@ -49,6 +51,8 @@ The Moon offers a subtler contrast: field versus function. The Moon is the insti
 
 The literal idea of a house gives the most important contrast of all. The 4th house is not the building you own; it is the felt structure of belonging underneath it. Treating it as property gets you a tidy keyword, but you sacrifice the very thing the house was built to describe: the conditioning you carry with you no matter where you live.
 
+
+![Comparison of the 4th house private base at the chart's bottom and the 10th house public peak at the top](/images/houses/4th-house-meaning-i0-en.svg)
 ## How to Read The 4th House in Your Chart
 
 Reading the 4th house meaning in your own chart starts with observation, not prediction. Before interpreting anything, look for these concrete signals:
@@ -61,6 +65,8 @@ Reading the 4th house meaning in your own chart starts with observation, not pre
 
 None of these signals is a verdict on its own. Read together, they sketch the foundation you started from, which is the first step toward changing how you live on it.
 
+
+![Five steps to read the 4th house: IC sign, planets, home themes, comfort reflex, past versus present](/images/houses/4th-house-meaning-i1-en.svg)
 ## Common Misreadings
 
 Most popular content flattens the 4th house meaning into a few tidy clichés, partly because literal answers are easier to optimize for search. These are the misreadings worth correcting:
@@ -123,6 +129,8 @@ Begin by finding the sign on your IC and any planet sitting in your 4th house, t
 
 export const fourthHouseMeaningZh: WikiArticle = {
   slug: "4th-house-meaning",
+  image: "/images/houses/4th-house-meaning.jpg",
+  image_alt: "地面上安静的小屋，地下是发光的庞大金色根系与一点炉火",
   title: "第四宫代表什么，远不止你住的那个家",
   description: "The 4th House（第四宫）是本命盘里位于星盘底部的宫位，也叫天底（IC，Imum Coeli）。它在传统占星教学里被当成整张星盘的地基，和 占星十二宫总览 pillar 页...",
   authorId: "julian-thorne",
@@ -160,6 +168,8 @@ The 4th House（第四宫）是本命盘里位于星盘底部的宫位，也叫�
 2. **第四宫 vs 月亮。** 月亮是你即时的情感反应本能，第四宫则是这些反应扎根的"场域"。月亮像天气，第四宫像气候；想读懂当下的情绪波动看月亮，想读懂它为什么总往同一个方向走，得回到第四宫。这点和 [月亮在本命盘里的角色解析](/zh/wiki/how-to-read-birth-chart) 讲的情感需求是同一条线。
 3. **第四宫 vs 巨蟹座。** 巨蟹座是黄道上的星座调性，第四宫是星盘上的生活场域。选择用"宫位"来定位，你换来的是"发生在你生活哪个领域"的具体感，代价是不像星座那样自带一套现成的性格标签。
 
+
+![第四宫（盘底私密根基）与第十宫（盘顶公众高点）的对照图](/images/houses/4th-house-meaning-i0-zh.svg)
 ## 如何在你的星盘里识别 The 4th House
 
 想在自己的星盘里认出第四宫的含义和作用，不用先背术语，先从这几个可观察的信号入手：
@@ -170,6 +180,8 @@ The 4th House（第四宫）是本命盘里位于星盘底部的宫位，也叫�
 4. **观察家庭聚会里你的位置。** 饭桌上你自动扮演的角色，是早年模式的回放。
 5. **注意你说"这才像个家"的标准。** 你默认怎样算"安稳"，就是直接的线索。
 
+
+![读第四宫的五个步骤：天底星座、宫内行星、家庭主题、安抚反射、今昔对照](/images/houses/4th-house-meaning-i1-zh.svg)
 ## 常见误读
 
 想弄清第四宫是什么意思，先得避开坊间几条容易带偏的说法：

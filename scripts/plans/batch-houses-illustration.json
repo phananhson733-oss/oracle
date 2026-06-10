@@ -11,9 +11,9 @@
   "articles": {
     "astrology-houses": {
       "hero": {
-        "prompt": "A great circular birth-chart wheel rendered as the cross-section of a twelve-roomed house, each wedge-shaped room glowing with its own faint scene — a hearth, a pair of scales, a small stage, a mountain path — while tiny gold planet-orbs drift through open doorways between the rooms, light trailing along their paths to suggest living, movable patterns rather than sealed fates. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "A zodiac wheel drawn as twelve glowing rooms with small gold planets drifting between them",
-        "altZh": "画成十二个发光房间的星盘轮，金色小行星在房间之间游走"
+        "prompt": "An atmospheric painterly editorial scene: a vast open valley landscape at night with a low horizon and a distant treeline, the wide sky filling most of the frame; a luminous teal-and-gold Milky-Way wash sweeps across the deep indigo dark with faint star points. Across the sky, twelve soft pools of glowing light are spaced like windows lit in the dark, each a different gentle warmth, and a few small gold planetary orbs drift slowly between them as if moving room to room through the night — twelve life-stages as luminous fields rather than a diagram, expansive and contemplative, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Twelve soft pools of glowing light spaced across the night sky with small gold planets drifting between them, over a wide valley.",
+        "altZh": "广阔山谷夜空中，十二处柔和的发光区域如点亮的窗，几颗金色小行星在其间游走，像穿行于一个个房间。"
       },
       "inline": [
         {
@@ -145,9 +145,9 @@
     },
     "1st-house-meaning": {
       "hero": {
-        "prompt": "An arched golden doorway standing open at the eastern rim of a vast zodiac wheel, the exact rising degree breaking the horizon as a thin gold beam through the door; deeper inside the chart a second, warmer sun glows behind a translucent veil — two layers of one self, the instinctive front door and the core identity waiting further in. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "A glowing doorway at the eastern horizon of a chart wheel with a deeper sun behind it",
-        "altZh": "星盘东方地平线上的发光门廊，门后深处藏着一轮更内在的太阳"
+        "prompt": "An atmospheric painterly editorial scene: open ground meeting a low eastern horizon under a vast pre-dawn night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. At the eastern edge a soft glowing doorway of warm light stands open right at the horizon where the first light breaks, and just behind and beneath it a deeper, more inward sun glows half-hidden — the instinctive self you lead with in front, the truer core waiting behind, a threshold of arrival, quiet and expectant in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A glowing open doorway at the eastern horizon at first light, with a deeper inner sun half-hidden behind it.",
+        "altZh": "东方地平线破晓处立着一道敞开的发光门廊，门后半隐着一轮更内在的太阳。"
       },
       "inline": [
         {
@@ -661,9 +661,9 @@
     },
     "6th-house-astrology": {
       "hero": {
-        "prompt": "A single continuous golden thread looping in a figure-eight between two quiet scenes: on one side a small tidy workbench with simple tools and an open notebook, on the other a calm bed beneath a crescent moon with a steaming cup beside it; along its path the one thread stitches through a clock face, a leaf, and a bowl — daily work and the body's rest bound into one feedback loop. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "A golden figure-eight thread linking a small workbench and a resting bed through everyday objects",
-        "altZh": "一根金线绕成无限环，把工作台与休憩的床和日常小物串成一条回路"
+        "prompt": "An atmospheric painterly editorial scene: a quiet pre-dawn countryside under a fading night sky with a faint teal-gold nebula and the first warm light low on the horizon; neat tended rows of a field curve across the foreground, a single small lantern-glow marking a path of patient daily work, ordered and humble and calm in mood, the gentle dignity of routine and service, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "Neat tended field rows curving under a pre-dawn sky with a single lantern marking a path of patient daily work.",
+        "altZh": "黎明前的田野，整齐的垄行在微光中铺展，一盏小灯标出一条日复一日耕作的小径。"
       },
       "inline": [
         {
@@ -770,9 +770,9 @@
     },
     "7th-house-astrology": {
       "hero": {
-        "prompt": "A tall oval mirror standing at the western rim of a great zodiac wheel, directly opposite a small bright lantern at the eastern edge; the lantern's thin gold beam crosses the dark wheel and returns from the mirror widened and intensified, carrying reflected constellation patterns back toward its source — what a self sends across a relationship comes back magnified. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "A lantern's beam crossing a zodiac wheel and returning magnified from a tall mirror opposite",
-        "altZh": "星盘东缘的灯光射向西缘的高镜，被放大后携星图返回原点"
+        "prompt": "An atmospheric painterly editorial scene: a still wide lake with a tall mirror-smooth water surface and a low horizon under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. A single soft beam of gold light reaches out from one side of the scene across the dark water toward the far horizon, where it meets a glowing celestial form that sends the light back magnified and changed — the self projected onto the other and returned amplified, two lights in quiet dialogue across the open water, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A beam of gold light crossing still water to a far glowing form that returns the light magnified, two lights in dialogue.",
+        "altZh": "一束金光越过静水射向远方一团发光的星体，光被放大后返回，两束光隔水对话。"
       },
       "inline": [
         {
@@ -863,9 +863,9 @@
     },
     "8th-house-meaning": {
       "hero": {
-        "prompt": "A radiant lantern fixed at the eastern rim of a great engraved chart wheel, its gold rays sweeping across nearly every sector — except one wedge that remains in deep shadow, untouched by the beams; inside that unlit eighth sector, faint outlines of entwined roots, a shared key and a buried vessel glimmer at the very edge of visibility — the powerful region the light of identity cannot turn to see. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "A lantern lighting a chart wheel while one shadowed sector hides a key, roots, and a buried vessel",
-        "altZh": "灯光照亮星盘各区，唯独一格阴影中藏着钥匙、根系与埋藏的器皿"
+        "prompt": "An atmospheric painterly editorial scene: a darkened landscape where still water meets a shadowed shore and a low horizon under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points, most of the scene held in deep shadow. A single soft lantern-glow of gold light illuminates only part of the foreground, while the deeper shadowed zone beside it hides faint half-seen forms — submerged roots, a glint of a buried key, a partly sunken vessel beneath the dark surface — the shared, surrendered, transformative material the conscious self cannot easily see, mysterious and charged, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A lantern-glow lighting part of a dark shore while a shadowed zone hides submerged roots, a buried key, and a sunken vessel.",
+        "altZh": "一盏灯光只照亮黑暗岸边的一隅，旁边的阴影区藏着沉没的根系、一把埋藏的钥匙和半沉的器皿。"
       },
       "inline": [
         {
@@ -1265,9 +1265,9 @@
     },
     "12th-house-astrology": {
       "hero": {
-        "prompt": "The final sector of a great engraved zodiac wheel dissolving at its rim into a calm sea of mist, the chart's fine gold lines loosening into drifting flecks that settle onto dark still water like embers cooling into light; near the dissolving edge a small empty boat rests in the shallows — release, retreat, and quiet renewal where the wheel completes itself. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "The edge of a zodiac wheel dissolving into misty water with gold flecks and a small empty boat",
-        "altZh": "星盘边缘化作薄雾与水面，金色光屑飘落，一叶空舟静泊浅处"
+        "prompt": "An atmospheric painterly editorial scene: a vast expanse of still misty water with no clear shoreline, the horizon dissolving into a low veil of fog under a wide night sky; a luminous teal-and-gold nebula wash drifts softly across the deep indigo dark with faint star points, its edges blurring into the mist. Gold flecks of light scatter on the water's surface, and a single small empty boat drifts unmoored in the haze where identity loosens and blends into something wider — release, dissolution, and quiet self-renewal, hushed and dreamlike in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A small empty boat adrift on still misty water under a dissolving nebula sky, gold flecks scattered on the surface.",
+        "altZh": "一叶空舟漂在雾蒙蒙的静水上，星云在朦胧中消融，金色光点散落水面。"
       },
       "inline": [
         {

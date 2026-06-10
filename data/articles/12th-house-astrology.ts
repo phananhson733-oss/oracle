@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const twelfthHouseAstrologyEn: WikiArticle = {
   slug: "12th-house-astrology",
+  image: "/images/houses/12th-house-astrology.jpg",
+  image_alt: "A small empty boat adrift on still misty water under a dissolving nebula sky, gold flecks scattered on the surface.",
   title: "How 12th House Astrology Reframes Self-Undoing as Growth",
   description: "The 12th House is the final house of the birth chart, the sector traditionally tied to solitude, the unconscious, retreat, and the parts of life a person...",
   authorId: "julian-thorne",
@@ -37,6 +39,8 @@ The shift becomes obvious with a concrete example. Someone with several planets 
 
 The contrast with the 1st house is sharper still. The 1st house is the visible self, the way you walk into a room and announce who you are; the 12th house is everything you quietly set down before you arrived. To get the 1st house's clear, projected identity, you sacrifice easy access to the unconscious material the 12th house keeps in storage. A similar trade-off appears against the 4th house: where the 4th roots you in family and a felt sense of home, the 12th loosens those roots, trading belonging for the freedom of having nothing left to defend. Each comparison says the same thing in a different key — this house offers perspective in exchange for the solid ground you could otherwise stand on.
 
+
+![Comparison of the 1st house visible self, the 8th house charged exchange, and the 12th house dissolving depths](/images/houses/12th-house-astrology-i0-en.svg)
 ## How to Read The 12th House in Your Chart
 
 Reading 12th house astrology in your own chart starts with observation, not keyword recall. Work through these signals in order before you reach for any meaning:
@@ -49,6 +53,8 @@ Reading 12th house astrology in your own chart starts with observation, not keyw
 
 Once you have the raw observations, apply the one method that turns this house constructive: for each pattern you spot, ask what it is inviting you to release rather than what it is taking from you. That single question reframes a static trait into a piece of ongoing growth, and it gives you something to work with instead of a fate to dread.
 
+
+![Five steps to read the 12th house: cusp sign, planets, house ruler, recurring areas, watching the pattern](/images/houses/12th-house-astrology-i1-en.svg)
 ## Common Misreadings
 
 A handful of misreadings keep students circling the same fear instead of using the house:
@@ -110,6 +116,8 @@ Map your own 12th house inside the full wheel: [read the full Astrological House
 
 export const twelfthHouseAstrologyZh: WikiArticle = {
   slug: "12th-house-astrology",
+  image: "/images/houses/12th-house-astrology.jpg",
+  image_alt: "一叶空舟漂在雾蒙蒙的静水上，星云在朦胧中消融，金色光点散落水面。",
   title: "读懂第十二宫代表什么，别把它读成命运的判决",
   description: "第十二宫（The 12th House）是星盘里掌管独处、潜意识、退场与自我消解的那一块区域。它讲的不是你示人的那一面，而是那些你独自一人时才真正发生的事。",
   authorId: "julian-thorne",
@@ -150,6 +158,8 @@ export const twelfthHouseAstrologyZh: WikiArticle = {
 1. **和第一宫比。** 两者正好是星盘上相对的一条轴：第一宫管你冲进世界时的那张脸、那股向外的劲（可循着 [第一宫与自我形象解读](/zh/wiki/astrology-houses) 往下读），第十二宫管的是退场之后、独自一人时那个没有面具的你。要养出第一宫那种鲜明的存在感，你就得不断对外表达；可一直对外，就会失去第十二宫式的回收与沉淀——想要被看见，就要牺牲一部分独处的安静。
 2. **和第八宫比。** 两块都向内、都碰深层的东西，但运作方式不同：第八宫处理的是和另一个人深度捆绑后的转化，第十二宫处理的是你独自面对自己时的消解。要得到第八宫那种交底式的亲密，你得有个对象一起卷进去；而第十二宫的功课往往是把别人都请出去，单独面对剩下的那部分自己。
 
+
+![第一宫（可见自我）、第八宫（炽烈交换）与第十二宫（消融之境）的对照图](/images/houses/12th-house-astrology-i0-zh.svg)
 ## 如何在你的星盘里识别 The 12th House
 
 想认出第十二宫（The 12th House）在你身上怎么运作，与其背特质表，不如回看几个真实场景——它通常藏在你「需要消失一会儿」的时刻里：
@@ -161,6 +171,8 @@ export const twelfthHouseAstrologyZh: WikiArticle = {
 
 观察到之后，下一步是应用：下次发现自己想躲，先别急着定性成「逃避」，而是停下来问一句——我是在回收能量，还是在拖延一件事？把这一问养成习惯，就是把这块盲区带进日常意识的方法。
 
+
+![读第十二宫的五步：宫头星座、宫内行星、宫主星、反复出现的领域、观察模式](/images/houses/12th-house-astrology-i1-zh.svg)
 ## 常见误读
 
 关于第十二宫代表什么，流传很广的几种说法其实都偏了，先点破再说清：

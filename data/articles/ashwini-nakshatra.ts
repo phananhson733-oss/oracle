@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const ashwiniNakshatraEn: WikiArticle = {
   slug: "ashwini-nakshatra",
+  image: "/images/nakshatra/ashwini-nakshatra.jpg",
+  image_alt: "A constellation horse head charging through the zodiac's first gate, trailing a comet tail of gold stardust",
   title: "Why Ashwini Nakshatra Moves Fast — and What Ketu Has to Do With It",
   description: "Ashwini nakshatra is Vedic astrology's first lunar mansion — Aries-placed, Ketu-ruled, and built for rapid-onset action.",
   authorId: "aditi-sharma",
@@ -44,6 +46,8 @@ The structural paradox of ashwini nakshatra — the zodiac's most initiatory pos
 
 3. **Ketu in Ashwini vs Ketu elsewhere in the chart.** In other positions, Ketu typically produces detachment and instinctive excellence within a specific house — the person excels there but treats the ability as unremarkable. In Ashwini, that same pattern meets Aries at the zodiac's very first degree, which means detachment reads as momentum and instinctive skill reads as raw speed. The directional quality is different: Ketu-in-Ashwini faces outward and forward. To get that outward momentum, you give up the quiet inward self-awareness Ketu elsewhere can provide — the competence deploys so quickly that it bypasses the moment where you might recognize it as competence.
 
+
+![Ashwini's preloaded instinct compared with Bharani's earned emotional effort and Magha's lineage-bearing authority](/images/nakshatra/ashwini-nakshatra-i0-en.svg)
 ## How to Read ashwini nakshatra in Your Chart
 
 Reading this placement is less about identifying a personality type and more about tracking a specific response pattern across time. These signals point toward Ashwini's functioning in a natal chart:
@@ -54,6 +58,8 @@ Reading this placement is less about identifying a personality type and more abo
 4. **Pull toward immediate, practical help.** Many people with strong Ashwini placements describe an instinct to assist others directly and now — fix the problem rather than map a recovery arc. This mirrors the Ashwini Kumaras' mythological mode of direct, swift intervention.
 5. **Undervaluing your own speed.** Because rapid competence feels natural, results that required significant effort from others may feel unremarkable to you. The ease is the competence — but ease can mask the skill from the person who carries it.
 
+
+![Five signals of Ashwini in a chart, from first-response accuracy to undervaluing one's own speed](/images/nakshatra/ashwini-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 Most descriptions of ashwini nakshatra treat swiftness as a fixed personality trait and leave the structural source unexplained. That pattern produces a set of persistent misreadings that circulate across most SERP results:

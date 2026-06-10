@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const throatChakraMeaningEn: WikiArticle = {
   slug: "throat-chakra-meaning",
+  image: "/images/chakra/throat-chakra-meaning.jpg",
+  image_alt: "A stream of blue-gold light rising from a still lake and spreading across the sky as wide concentric ripples.",
   title: "What Throat Chakra Meaning Says About Your Voice",
   description: "The throat chakra is the fifth energy center in the traditional seven-chakra system, sitting at the base of the neck and named Vishuddha in the older yogic...",
   authorId: "elena-vane",
@@ -37,6 +39,8 @@ This shows up in ordinary places, not on retreat weekends. Picture three common 
 
 In my years of energy-work and aura-reading practice, the pattern I see most is people treating this as a confidence problem to push through, when it is usually a question of whether the channel between feeling and speech is open. That reframe is what makes throat chakra meaning useful rather than just motivational.
 
+
+![Three everyday scenes where the throat chakra shows up: the swallowed point, the over-explanation, and the late truth](/images/chakra/throat-chakra-meaning-i0-en.svg)
 ## Throat Chakra vs Adjacent Concepts: How It Works + Trade-offs
 
 Throat chakra meaning is easiest to grasp next to the centers on either side, because the contrast shows how it actually works. The heart center, just below, governs warmth, connection, and care for other people. The third-eye center, just above, governs insight, intuition, and the inner picture of how things fit together. The throat sits between them as the bridge that turns private feeling and private insight into spoken words — a role that energy practitioners like Cyndi Dale describe by checking a center's charge before working with it. Because of that in-between position, it is easy to borrow a habit from a neighbor and wonder why expression still feels stuck.
@@ -57,6 +61,8 @@ Reading throat chakra meaning in yourself starts with watching which way the cha
 
 Once you can name which pattern is running, the next move is obvious instead of guessed. If you saw yourself in the swallowing signals, the work is letting truth out a beat sooner; if you recognized the flooding signals, the work is leaving room and trusting silence. Notice it first, then choose — that order is the whole method.
 
+
+![Comparison of blocked, overactive, and balanced throat chakra states with their everyday signals](/images/chakra/throat-chakra-meaning-i1-en.svg)
 ## Common Misreadings
 
 Most popular content flattens throat chakra meaning into a single slogan, and that is exactly why so many readers stay stuck. Four misreadings come up over and over:
@@ -118,6 +124,8 @@ Take the Chakra Test to see whether your throat chakra reads as open, blocked, o
 
 export const throatChakraMeaningZh: WikiArticle = {
   slug: "throat-chakra-meaning",
+  image: "/images/chakra/throat-chakra-meaning.jpg",
+  image_alt: "静湖上方一束蓝金色光升起，化作宽阔的同心涟漪铺满整片夜空，如声音与真实向外回荡。",
   title: "喉轮含义，其实在说你能不能把真心话说出口",
   description: "喉轮（Throat Chakra，对应梵文 Vishuddha）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第五个能量中心，位置在颈部喉咙一带，掌管表达与倾听。要说喉轮含义，最稳的一句话是：喉轮是负责真诚表达与倾听的能量中心。它管的是内心真实感受和说出口的话之间那道缝隙。在现代脉轮体系（如...",
   authorId: "elena-vane",
@@ -151,6 +159,8 @@ export const throatChakraMeaningZh: WikiArticle = {
 
 在我从事能量工作与气场解读的这些年里，最常见的模式是：人们把它当成一个要硬扛过去的自信问题，其实更多是感受到表达之间那条通道开没开。换个角度看喉轮含义，它才从一句口号变成真能用上的东西。
 
+
+![喉轮显形的三个日常场景：咽下的要点、过度的解释、迟到的真心话](/images/chakra/throat-chakra-meaning-i0-zh.svg)
 ## Throat Chakra 与相近概念：运作方式 + 取舍
 
 喉轮含义放在两侧能量中心旁边最好懂，因为一对比就看出它怎么运作。Throat Chakra 下方的心轮掌管温暖、连结与对人的关怀；上方的眉心轮掌管洞见、直觉，以及对事情整体格局的内在画面。喉轮夹在中间，是把私下的感受和私下的洞见转成话语的那座桥。也正因为这个居中的位置，人很容易把邻居的习惯借过来用，再纳闷为什么表达还是卡。
@@ -174,6 +184,8 @@ export const throatChakraMeaningZh: WikiArticle = {
 
 能叫出自己是哪一种，下一步就清楚了，不用瞎猜。看到的是"咽回去"的信号，功课就是让真话早一拍出口；认出的是"填满"的信号，功课就是留白、信任沉默。先看清，再选——这就是全部方法。
 
+
+![喉轮堵住、过满与平衡三种状态及其日常信号的对比](/images/chakra/throat-chakra-meaning-i1-zh.svg)
 ## 常见误读
 
 关于喉轮含义，坊间最常见的几个误读，恰好把来搜的人卡在原地。Throat Chakra 被简化成一句口号时，下面这几条就反复出现：

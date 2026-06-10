@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const howToBalanceVataDoshaEn: WikiArticle = {
   slug: "how-to-balance-vata-dosha",
+  image: "/images/vedic/how-to-balance-vata-dosha.jpg",
+  image_alt: "Wind-blown leaves and scattered particles settling into a steady rhythm of gold beads around a warm bowl, oil lamp, and grounding stone",
   title: "How to Balance Vata Dosha Without Overhauling Your Whole Life",
   description: "Balancing Vata dosha means gently offsetting Ayurveda's air-and-space energy when it runs high",
   authorId: "aditi-sharma",
@@ -55,6 +57,8 @@ Let the loudest signal pick your first habit: if meals are the mess, anchor brea
 
 One safety note: dosha self-reading is for everyday self-awareness, not diagnosis. Persistent insomnia, ongoing anxiety, unexplained weight loss, severe dryness, or real digestive problems deserve a qualified professional — not a self-interpretation that explains them away as "just high Vata."
 
+
+![Five everyday signals that Vata is running high, from racing thoughts to burst-then-crash energy](/images/vedic/how-to-balance-vata-dosha-i0-en.svg)
 ## Common Misreadings
 
 Most popular write-ups get how to balance vata dosha wrong in the same few ways, and each misread keeps readers stuck in the loop that sent them searching:
@@ -101,6 +105,8 @@ Yes — warmth, regular timing, and proper rest often do more than a full diet r
 
 Not always; stress, poor sleep, and sensory overload can produce the same surface signs, so Ayurveda reads the pattern in context rather than as a fixed label.
 
+
+![Seven-day sequence adding one small Vata-calming habit per day, from a fixed warm breakfast to keeping what stuck](/images/vedic/how-to-balance-vata-dosha-i1-en.svg)
 ## Reflection Prompts
 
 1. Think of a recent day your mind would not slow down — what had your routine looked like in the two days before?

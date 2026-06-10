@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const junoAstrologyEn: WikiArticle = {
   slug: "juno-astrology",
+  image: "/images/placements/juno-astrology.jpg",
+  image_alt: "Two interlocked golden rings on a balanced scale with an asteroid at its fulcrum, symbolizing Juno's themes of commitment and power balance.",
   title: "What Your Juno Sign Reveals About Power, Not Romance",
   description: "Juno astrology is the study of the asteroid Juno in your birth chart, read as a signal of commitment, power balance",
   authorId: "marcus-orion",
@@ -48,6 +50,8 @@ The trade-off is worth saying out loud, because each lens costs you something. L
 
 None of this makes Venus less important — it just refuses to let attraction stand in for compatibility. A chart can show dazzling Venus contacts and still flag a setup where power never quite settles, where loyalty gets tested until someone names the imbalance out loud. That long-game view is the asteroid's whole contribution: it shows where equity is negotiated, where betrayal patterns surface, and where a couple has to rewrite the rules to stay together.
 
+
+![Comparison of Venus (attraction and the opening move), Mars (raw desire), and Juno (commitment, equity, and whether the bond holds).](/images/placements/juno-astrology-i0-en.svg)
 ## How to Read Juno in Your Chart
 
 Reading juno astrology starts with locating the asteroid: most chart calculators hide it by default, so enable the asteroids option or add Juno — often listed as asteroid 3 or shown with the ⚵ glyph — then read its sign, house, and aspects. Each gives a concrete clue about how you handle commitment.
@@ -60,6 +64,8 @@ Reading juno astrology starts with locating the asteroid: most chart calculators
 
 Read together, these signals describe how you negotiate fairness, not who you are meant to meet. Track them across a few past relationships and the placement stops feeling abstract — you start to see the exact terms you keep asking for, and the ones you keep conceding. The point is not to predict a partner but to recognize the deal you tend to strike, so you can renegotiate it on purpose instead of by accident.
 
+
+![Five steps for reading Juno: its sign sets the style of fairness, its house shows where justice is tested, hard aspects mark friction, personal-planet contacts link the blueprint, and repeating themes confirm it.](/images/placements/juno-astrology-i1-en.svg)
 ## Common Misreadings
 
 The biggest errors in reading Juno all trace back to treating the asteroid as a romance oracle. A few keep tripping people up:

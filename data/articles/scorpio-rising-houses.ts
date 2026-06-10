@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const scorpioRisingHousesEn: WikiArticle = {
   slug: "scorpio-rising-houses",
+  image: "/images/placements/scorpio-rising-houses.jpg",
+  image_alt: "A scorpion constellation over a house wheel where two doorways glow with warm golden light, symbolizing Venus quietly ruling the 7th and 12th houses for Scorpio rising.",
   title: "Why Scorpio Rising Houses Map More Venus Than Most Astrologers Admit",
   description: "Scorpio rising houses are the twelve life domains set when Scorpio takes the Ascendant, each governed by the planetary ruler of its cusp sign.",
   authorId: "marcus-orion",
@@ -44,6 +46,8 @@ The 12th house, where Libra sits on the cusp, does carry a Venusian orientation 
 
 **Venus as a house ruler versus Venus in a house** is a subtler distinction that matters for practical reading. Venus ruling the 7th means it governs that sector regardless of where it sits in the chart. Venus placed in the 7th means it's physically located there, expressing directly. To read partnerships fully: locate Venus by sign and house, check dignity (domicile, exaltation, detriment, or fall), note major aspects, and identify any planets in or closely aspecting the 7th. That complete picture governs the relational domain — the cusp sign names Venus as the relevant planet; Venus's full condition reveals how it operates.
 
+
+![Mirror comparison: Scorpio rising pairs a Mars–Pluto persona with Venus-ruled partnerships, while Taurus rising pairs a Venusian persona with Mars–Pluto-ruled partnerships.](/images/placements/scorpio-rising-houses-i0-en.svg)
 ## How to Read scorpio rising houses in Your Chart
 
 1. **Confirm Scorpio on the Ascendant.** Birth time must be accurate — thirty minutes can shift the rising sign. The [guide to generating an accurate birth chart](/en/wiki/how-to-read-birth-chart) explains how to source and enter your birth time correctly.
@@ -53,6 +57,8 @@ The 12th house, where Libra sits on the cusp, does carry a Venusian orientation 
 5. **Check for planets in your 7th house.** Any planet residing there co-shapes the partnership pattern alongside Venus and deserves equal attention.
 6. **Note your 12th house cusp.** If Libra is there, your private inner life runs on Venus — balance-seeking and aesthetic, but also prone to the 12th's tendencies toward concealment and conflict avoidance.
 
+
+![Six steps for reading Scorpio rising houses: confirm the Ascendant, identify the house system, check the 7th cusp for Taurus, locate Venus fully, check planets in the 7th, and note Libra on the 12th cusp.](/images/placements/scorpio-rising-houses-i1-en.svg)
 ## Common Misreadings
 
 1. **"Scorpio rising means a Scorpio-dominant chart."** The Ascendant shapes first impressions, not every domain. The 7th runs on Venus. The 9th runs on the Moon (Cancer cusp). The 10th runs on the Sun (Leo cusp). The planetary map diversifies quickly past the rising sign.

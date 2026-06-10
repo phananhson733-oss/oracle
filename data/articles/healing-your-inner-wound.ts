@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const healingYourInnerWoundEn: WikiArticle = {
   slug: "healing-your-inner-wound",
+  image: "/images/psych/healing-your-inner-wound.jpg",
+  image_alt: "A family of soft glowing forms across the sky, a faint gold thread reaching down to one tender dim spot of light over a still lake.",
   title: "Healing Your Inner Wound Through an Astrological Frame for Reflection",
   description: "An inner wound is the long-standing sore spot in your psyche that shapes how you protect, withdraw, and reach for connection. In astrology it is not a...",
   authorId: "julian-thorne",
@@ -48,6 +50,8 @@ The pull toward a single answer is understandable. A wound is uncomfortable, and
 | The 8th house | Depth, loss, shared resources, regeneration | 8th house — intimacy, transformation | Confusing intensity with danger |
 | The lunar nodes | A growth-and-familiarity axis that can interact with wound themes | North node / south node axis | Reading the south node as a flaw instead of a comfort zone |
 
+
+![The five chart signatures of the inner wound: Chiron in the 12th, Mars in the 12th, the 12th house, the 8th house, and the lunar nodes.](/images/psych/healing-your-inner-wound-i0-en.svg)
 ## The inner wound: Quick Guide
 
 **Chiron in the 12th house** — This is usually the first signature people reach for when they map the inner wound, describing a sore spot that feels older than you, tucked into the most private corner of the chart. People with it often sense an ache they cannot trace to a single event, and they tend to carry quiet sensitivity to suffering, their own and other people's. Because the wound lives in the hidden house, it can be hard to point to, which sometimes leaves people feeling like they are aching over nothing. The work here is to sit with the feeling without demanding it explain itself, and to let the sensitivity become a source of compassion rather than a private burden. Common misread: reading this as a fixed wound you were sentenced to, rather than a tender place that can soften with attention. To go deeper, see the [Chiron in the 12th house explainer](/en/wiki/chiron-in-12th-house).
@@ -71,6 +75,8 @@ In each case the individual placement barely changes; what changes is the conver
 1. **What a checklist does.** It tells you what each placement supposedly means and stops there, leaving you with a stack of separate traits and no sense of how they pressure each other.
 2. **What a combination reading does.** It asks how the placements pressure each other, which one tends to lead, and where they cancel out — slower work, but the work that actually reflects an inner life, which is never the sum of separate traits stacked in a list. That is why a hub view serves you better than a single deep dive when you first sit down with the chart.
 
+
+![Three placement combinations that shift the inner-wound reading: Chiron with Mars, 12th house tied to the 8th, and a wound on the nodal axis.](/images/psych/healing-your-inner-wound-i1-en.svg)
 ## Common Misreads + Framework Limits
 
 The most common errors with the inner wound happen at the family level, not inside any one placement. Healing Your Inner Wound goes sideways when you mistake a reflective vocabulary for something it is not. A short intro, then the recurring traps:
@@ -84,6 +90,8 @@ There is a quieter limit worth naming, the kind a standard cluster overview tend
 
 A second limit lives in the gap between traditions. Older, classical readings often describe the 12th house in stark terms of loss and self-undoing, while modern psychological astrology reads the same house as a place of compassion, retreat, and quiet integration. Neither is the final word, and the honest move is to hold both rather than to flatten the wound into whichever version feels more comfortable. The same caution applies to the nodes, where one school reads the south node as baggage to shed and another reads it as a hard-won resource to keep. When you notice these disagreements instead of resolving them too quickly, the framework stays useful, because the edges of what the chart can say are exactly where you remember it is a frame and not the territory itself.
 
+
+![Four common traps when reading the inner wound: discrete diagnosis, one correct lineage, framework as identity, chart as ground truth.](/images/psych/healing-your-inner-wound-i2-en.svg)
 ## Common Questions About Healing Your Inner Wound
 
 **Can the birth chart actually show my inner wound?**
@@ -132,6 +140,8 @@ To start Healing Your Inner Wound in practice, open your full birth chart and lo
 
 export const healingYourInnerWoundZh: WikiArticle = {
   slug: "healing-your-inner-wound",
+  image: "/images/psych/healing-your-inner-wound.jpg",
+  image_alt: "夜空中散布着一族大小冷暖不一的柔光星体，一缕微弱的金光垂向静湖边那处隐隐发光的脆弱角落。",
   title: "内在伤口：用占星视角理解它，而不是急着修好它",
   description: "内在伤口（inner wound）是心里那块影响你防御与靠近的旧痛。在占星里，它不是某一个单独的盘面落点，而是一组互相牵连的盘面信号，标出这块旧痛容易藏在哪、容易在哪里重复、又在哪里向你要注意力——其中有几个可能牵涉隐蔽或第十二宫的主题，具体要看星盘，所以 第十二宫总览说明...",
   authorId: "julian-thorne",
@@ -173,6 +183,8 @@ export const healingYourInnerWoundZh: WikiArticle = {
 | 第八宫 | 深度、失去、共享资源、再生 | 第八宫——亲密、转化 | 把强度错当成危险 |
 | 月亮南北交点 | 一条成长与熟悉的轴线，可能与伤口主题相互作用 | 北交点 / 南交点轴线 | 把南交点读成缺陷而非舒适区 |
 
+
+![内在伤口的五个盘面信号：凯龙落十二宫、火星落十二宫、第十二宫、第八宫与月亮南北交点。](/images/psych/healing-your-inner-wound-i0-zh.svg)
 ## 这几处 inner wound：速览
 
 **凯龙落第十二宫** — 这是这组内在伤口（inner wound）里最常被人先认出来的一处。它描述一块感觉比你年纪还老的旧痛，塞在星盘最私密的角落里。带这个落点的人常感到一种追溯不到单一事件的酸楚，对苦难——自己的和别人的——都带着安静的敏感。因为伤住在隐蔽的宫位，很难指出来，有时让人觉得自己在为没来由的事难受。这里的功课是陪着那份感受、不逼它解释自己。常见误读：把它读成你被判了刑的固定伤口，而不是一处会随注意力变柔软的嫩处。想更深入，见 [凯龙落第十二宫深度解析](/zh/wiki/chiron-in-12th-house)。
@@ -193,6 +205,8 @@ export const healingYourInnerWoundZh: WikiArticle = {
 
 每一种情况里，单个落点几乎没变；变的是落点之间的对话。一个具体例子能说清：两个人都带凯龙落第十二宫，一个主要把它体验成对他人痛苦的温柔敏感，另一个主要把它体验成一种说不出口的私密羞耻。差别常来自房间里还有什么——一个第十二宫的火星会把酸楚磨成挫败，而一处连上交点轴线的伤会把它柔化成一种未竟成长的感觉。落点是共享的，解读却不是。这也是为什么两位称职的占星师可以用明显不同的语言描述同一张盘，而谁都没错。
 
+
+![改变内在伤口解读的三种落点组合：凯龙与火星同宫、第十二宫牵连第八宫、伤与交点轴线对齐。](/images/psych/healing-your-inner-wound-i1-zh.svg)
 ## 常见误读 + 框架边界
 
 关于内在伤口（inner wound），最常见的错误发生在家族层面，而不在任何单一落点内部。当你把一套反思词汇错当成它不是的东西，理解就会跑偏。先一句引子，再说反复出现的陷阱：
@@ -204,6 +218,8 @@ export const healingYourInnerWoundZh: WikiArticle = {
 
 还有一个安静的边界值得点出，这是一般的家族综述容易跳过的：内在伤口对时间是敏感的。同一个落点,二十岁读和五十岁读不一样，因为你围绕它过了不同的生活。多年前曾经无比贴切的解读，现在可能只对了一半，而这不是星盘的毛病——它说明这个框架在做它的事，自己站着不动，让你去变。
 
+
+![解读内在伤口的四个常见陷阱：离散诊断、硬选正解、框架变身份、星盘替代现实。](/images/psych/healing-your-inner-wound-i2-zh.svg)
 ## 关于 inner wound 的常见问题
 
 **星盘真能显示我的内在伤口吗？**

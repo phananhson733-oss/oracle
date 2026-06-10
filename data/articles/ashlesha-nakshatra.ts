@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const ashleshaNakshatraEn: WikiArticle = {
   slug: "ashlesha-nakshatra",
+  image: "/images/nakshatra/ashlesha-nakshatra.jpg",
+  image_alt: "A gold serpent coiled in a spiral beneath dark water, compressing toward one bright point of light",
   title: "Ashlesha Nakshatra and the Misunderstood Power of the Serpent's Coil",
   description: "Ashlesha nakshatra is the ninth of the 27 lunar mansions in Vedic astrology, sitting entirely within the sign of Cancer and ruled by Mercury.",
   authorId: "aditi-sharma",
@@ -44,6 +46,8 @@ A second contrast sharpens it further: Mercury here versus Mercury in a breezy a
 
 One nuance most popular pages skip: the tail end of this mansion sits at a gandanta point, the knotted junction where Cancer's water meets the fire of the next sign. Traditional Vedic astrology treats that junction as an especially raw, intense stretch — a place where both the clinging and the perception run hotter. It's a reminder that not every degree of this nakshatra reads the same; the early degrees and the final, gandanta degrees carry different pressure, and lumping them together is one reason generic descriptions feel slightly off to the people they're describing.
 
+
+![Pushya's open outward nourishment compared with Ashlesha's inward compressed perception in Cancer](/images/nakshatra/ashlesha-nakshatra-i0-en.svg)
 ## How to Read Ashlesha in Your Chart
 
 You don't need a precise birth time to recognize this energy at work. A handful of practical signals point to it:
@@ -54,6 +58,8 @@ You don't need a precise birth time to recognize this energy at work. A handful 
 4. **Protective secrecy.** You hold information close and decide slowly and deliberately who has earned the full story.
 5. **Intensity that can tip.** Under stress, the same focus curdles into brooding, suspicion, or holding on to people and grudges too long.
 
+
+![Five practical signals of Ashlesha energy, from magnetic watchfulness to intensity that can tip under stress](/images/nakshatra/ashlesha-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 The same handful of misreadings is what sends people searching in the first place. Here is what the popular take gets wrong about ashlesha nakshatra, and what's actually going on underneath:

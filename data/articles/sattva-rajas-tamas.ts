@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const sattvaRajasTamasEn: WikiArticle = {
   slug: "sattva-rajas-tamas",
+  image: "/images/vedic/sattva-rajas-tamas.jpg",
+  image_alt: "One mountainside rising from a dark still valley through a fiery amber slope to a calm luminous peak under a nebula sky.",
   title: "Why Sattva Rajas Tamas Work as a Dial, Not a Moral Rank",
   description: "Sattva rajas tamas is the three-guna framework from Samkhya-Yoga philosophy that maps every moment of consciousness into shifting proportions of clarity",
   authorId: "aditi-sharma",
@@ -54,6 +56,8 @@ The most reliable way to observe sattva rajas tamas directly is through the firs
 4. **Breath quality.** Even, slow breathing without visible effort is traditionally associated with sattva. Shallow, high-chest, rapid breathing tends to accompany rajas. Slow but labored or irregular breathing tends to accompany tamas.
 5. **Practice response.** Meditation that feels spacious and returns to focus easily suggests sattvic conditions. Meditation where the mind generates plans throughout suggests rajas. Meditation where you fall asleep or cannot sustain any thread suggests tamas — and sometimes the correct response is to rest rather than resist it.
 
+
+![Five signals — morning, food, decisions, breath, practice — for reading guna proportions in yourself](/images/vedic/sattva-rajas-tamas-i0-en.svg)
 ## Common Misreadings
 
 These misreadings of sattva rajas tamas each follow from the same root mistake — treating shifting proportions as fixed categories:
@@ -89,6 +93,8 @@ Yes — this is the system's core claim. All three are always present in differe
 
 Both. The Samkhya framework treats mind and body as continuous expressions of the same natural world, so guna proportions apply across physical sensation, emotional tone, thought patterns, and perceptual clarity. Anger typically carries high rajas; grief often carries tamasic weight; equanimity reflects sattvic conditions in the mind. The same person can move through all three emotional registers in a single afternoon.
 
+
+![Timeline of natural guna shifts across the day, from a sattvic dawn to a brief sattvic window around sunset](/images/vedic/sattva-rajas-tamas-i1-en.svg)
 ## Reflection Prompts
 
 1. Think of a morning this week when your mind felt unusually clear — what did you eat the night before, how long did you sleep, and what time did you wake?

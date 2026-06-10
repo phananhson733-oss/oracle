@@ -84,9 +84,9 @@
     },
     "mercury-retrograde-vs-moon-anxiety": {
       "hero": {
-        "prompt": "Split-panel conceptual scene contrasting two kinds of anxiety: on the left a small Mercury planet whose orbital path tangles into knotted retrograde loops above a faintly fractured grid, evoking a noisy overthinking mind; on the right a serene full moon drawing a slow heavy tide upward from dark water, evoking a heavy heart; the panels divided by a thin vertical gold meridian, soft gold accents (#d4af6a), deep indigo-to-near-black palette (#16112c fading to #0b0a1b), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "Split scene: Mercury with a tangled retrograde orbit on one side and a full moon pulling a dark tide on the other, contrasting mental and emotional anxiety.",
-        "altZh": "分割画面：一侧是轨道打结的逆行水星，另一侧是牵动暗潮的满月，对比精神焦虑与情绪焦虑。"
+        "prompt": "An atmospheric painterly editorial scene: a calm still lake at night with a low pine treeline on the horizon under a vast sky; high in the sky a single small bright planet traces a faint delicate golden loop among the stars (an apparent backward curl), while across the rest of the sky and down onto the dark water a soft moon-glow diffuses into a gentle low-lying emotional haze, the precise little loop and the soft pervasive mist sharing one quiet continuous night, contemplative in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A small planet tracing a faint gold loop high in the sky while soft moonlight diffuses into low haze over a still lake.",
+        "altZh": "夜空高处一颗小行星划出淡淡的金色回环，柔和月光在静湖上方弥散成低低的情绪薄雾，同处一片连续夜景。"
       },
       "inline": [
         {
@@ -306,9 +306,9 @@
     },
     "healing-your-inner-wound": {
       "hero": {
-        "prompt": "A large astrological chart wheel half-veiled in drifting mist, one hidden segment glowing faintly behind the haze, five translucent overlapping circles of different sizes converging around a single small tender point of warm gold light (#d4af6a) — a family of signatures gathered around one old sore spot rather than a single answer — fine gold threads linking the circles to each other, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
-        "altEn": "Misted chart wheel with five overlapping translucent circles converging on one small glowing point, showing a family of signatures around a hidden inner wound.",
-        "altZh": "薄雾笼罩的星盘上，五个半透明圆圈交叠汇聚于一个微光点，象征围绕内在伤口的一组盘面信号。"
+        "prompt": "An atmospheric painterly editorial scene: a quiet still lake at night with a low pine treeline on the horizon and a vast sky above; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. Scattered across the sky, several soft glowing celestial forms of different sizes and temperatures hold a constellation-like family, and from the gentlest of them a single faint thread of warm gold light reaches down toward one tender, dim spot of glow resting low near the dark water — a long-held sore place that the whole pattern, not any single light, slowly speaks to; quiet, reflective, and tender in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A family of soft glowing forms across the sky, a faint gold thread reaching down to one tender dim spot of light over a still lake.",
+        "altZh": "夜空中散布着一族大小冷暖不一的柔光星体，一缕微弱的金光垂向静湖边那处隐隐发光的脆弱角落。"
       },
       "inline": [
         {

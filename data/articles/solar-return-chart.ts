@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const solarReturnChartEn: WikiArticle = {
   slug: "solar-return-chart",
+  image: "/images/charts/solar-return-chart.jpg",
+  image_alt: "Two faintly overlapping skies over a still lake, with five glowing accents marking where the lasting and annual charts meet.",
   title: "What a Solar Return Chart Really Reveals About the Year Ahead",
   description: "Solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, and critical degree positions are the five reading layers that",
   authorId: "marcus-orion",
@@ -43,6 +45,8 @@ A solar return chart sits next to *guide to transit cycles for predictive astrol
 
 The location detail is what most write-ups skip: the return is cast for wherever you physically are at the moment of return, not your birthplace. Travel on your birthday and the ascendant shifts, sometimes dramatically.
 
+
+![Reading the return wheel alone versus overlaying it on the natal chart](/images/charts/solar-return-chart-i1-en.svg)
 ## How to Read solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions in Your Chart
 
 When you sit down with a return wheel, work through the five layers in order rather than scanning the whole chart at once:
@@ -55,6 +59,8 @@ When you sit down with a return wheel, work through the five layers in order rat
 
 Skip step two and you may misread which themes actually matter, since the return looks dramatic on its own no matter what year it represents.
 
+
+![The five solar return reading layers in working order, from return Ascendant to critical degrees](/images/charts/solar-return-chart-i0-en.svg)
 ## Common Misreadings
 
 Most practitioners get the same things wrong about the solar return chart, and each misreading flattens its usefulness:
@@ -120,6 +126,8 @@ Calculate your free birth chart to map your solar return ascendant and house ove
 
 export const solarReturnChartZh: WikiArticle = {
   slug: "solar-return-chart",
+  image: "/images/charts/solar-return-chart.jpg",
+  image_alt: "静湖上方两片微微重叠的夜空，五处发光的亮点标出本命与流年两盘交汇的关键之处。",
   title: "读懂太阳回归盘这一年的主题线索",
   description: "solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions（太阳回归五项重点）是用生日回归时刻看一年主题的读盘组合。",
   authorId: "marcus-orion",
@@ -159,6 +167,8 @@ solar return ascendant, natal chart overlay, sun's house placement, ascendant ru
 2. **行运。** 行运按天、按月追踪天空行星与本命点的互动，适合看阶段变化。要得到细密时间线，就要牺牲单张年度图的简洁；要得到年度轮廓，就要放下每天都解释的冲动。
 3. **独立年度盘。** 单看太阳返照盘很快，但容易把每个人都读成同一种年度模板。要得到贴合本命的判断，就要牺牲快速套话，改用 [本命盘相位基础指南](/zh/wiki/how-to-read-birth-chart) 和 *太阳返照盘计算器使用指南* 里的合相思路，只抓回归盘贴近本命点的位置。
 
+
+![单独读回归盘与叠回本命盘的差别对照](/images/charts/solar-return-chart-i1-zh.svg)
 ## 如何在你的星盘里识别 solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions
 
 看太阳回归盘时，先把盘面拉回日常生活，再逐项核对：
@@ -169,6 +179,8 @@ solar return ascendant, natal chart overlay, sun's house placement, ascendant ru
 4. 看上升主星和临界度数，追踪突出点。
 5. 叠回本命盘，只记贴近本命点的合相。
 
+
+![太阳回归盘的五个解读层次，从回归上升到临界度数](/images/charts/solar-return-chart-i0-zh.svg)
 ## 常见误读
 
 1. **误读：太阳回归盘可以单独读成年度答案表。** 实际：它说明本命盘哪些主题被推到台前，不能脱离出生盘。

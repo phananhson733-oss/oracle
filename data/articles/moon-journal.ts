@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const moonJournalEn: WikiArticle = {
   slug: "moon-journal",
+  image: "/images/moon/moon-journal.jpg",
+  image_alt: "Four moon phases each casting a distinct gold beam onto one open journal, the beams joining into a loop — four written tasks forming one feedback cycle",
   title: "What a Moon Journal Actually Tracks Across Four Phases",
   description: "A moon journal is a structured journaling practice organized around the four distinct phases of the lunar cycle — new moon, waxing, full moon",
   authorId: "marcus-orion",
@@ -47,6 +49,8 @@ Three formats are regularly confused with a moon journal, and the distinctions c
 
 In the psychological astrology tradition — a framework that practitioners like Steven Forrest helped shape — the lunar cycle functions as a repeating feedback structure, not a passive backdrop. The moon journal applies that principle at the personal scale: each 28-day cycle is a complete loop of intention, resistance, evaluation, and release. Collapsing that into undifferentiated emotional documentation removes the loop while keeping the aesthetic.
 
+
+![Three formats often confused with a moon journal — general journal, gratitude journal, and lunar calendar — and what each lacks](/images/moon/moon-journal-i0-en.svg)
 ## How to Read moon journal in Yourself
 
 Recognizing whether a moon journal practice is functioning as designed comes down to whether each phase entry activates a distinct task. Five observable signals indicate the structure is working:
@@ -61,6 +65,8 @@ Recognizing whether a moon journal practice is functioning as designed comes dow
 
 5. **Re-reading across a full cycle surfaces new information.** The test of whether the structure is working: reading the new moon entry at the end of a full cycle should reveal something you couldn't see at the start. If it produces nothing, the phase functions have collapsed into entries that all read the same.
 
+
+![Five signs a moon journal's feedback loop is working: specific intentions, named obstacles, honest full moon evaluation, listed releases, and revealing re-reads](/images/moon/moon-journal-i1-en.svg)
 ## Common Misreadings
 
 Generic descriptions of moon journaling produce consistent misreadings that explain why practitioners lose interest within two cycles. Four of the most common, and what they miss:
@@ -82,6 +88,8 @@ Generic descriptions of moon journaling produce consistent misreadings that expl
 | Full Moon | Evaluate what actually materialized against the new moon intention — what worked, what was projection | Culmination — honest gap analysis between intention and outcome | Entry asks "did this actually happen and why?" not "doesn't this feel right?" |
 | Waning | Name what to consciously leave behind before the next cycle begins | Release — clears patterns and expectations that no longer fit the next intention | Entry lists specific releases, not a vague sense of letting go |
 
+
+![Timeline of the four moon journal phases and their functions: new moon anchoring, waxing tracking, full moon culmination review, and waning release](/images/moon/moon-journal-i2-en.svg)
 ## Common Questions About Moon Journal
 
 **What is a moon journal for?**

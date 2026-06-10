@@ -11,9 +11,9 @@
   "articles": {
     "sextile-astrology": {
       "hero": {
-        "prompt": "Calm introspective editorial illustration of a vast night-sky astrology chart wheel: two luminous planet orbs resting exactly two zodiac segments apart, joined by a thin golden 60-degree chord, and at the midpoint of that chord a single open golden doorway standing free, warm light spilling through it onto a short flight of untouched steps that no one has climbed, the door inviting but waiting, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
-        "altEn": "An open golden door standing on the 60-degree line between two planets, with untouched steps leading up to it",
-        "altZh": "两颗行星之间的60度连线上立着一扇敞开的金色门，门前是无人走过的台阶"
+        "prompt": "An atmospheric painterly editorial scene: a still mountain lake at night with a low pine treeline along the horizon and a vast sky above; a luminous teal-and-gold Milky-Way wash drifts across the deep indigo dark, faint star points scattered through it. Two soft glowing celestial orbs hang in the sky a comfortable distance apart, joined by a single thin filament of gold light like a 60-degree bridge between them, and at the bridge's midpoint a faint open archway of warm light hovers as an invitation, with a short ribbon of glow trailing down toward the dark water unhurried, as if the path is offered but waiting to be walked, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two glowing orbs over a still lake, joined by a thin gold bridge with a faint open archway of light at its midpoint.",
+        "altZh": "静湖上方两颗发光星体，被一道细金光桥相连，桥的中点悬着一道微光拱门，像一份等待被走过的邀请。"
       },
       "inline": [
         {
@@ -114,9 +114,9 @@
     },
     "square-astrology": {
       "hero": {
-        "prompt": "Calm introspective editorial illustration of two luminous planet orbs locked at a strict 90-degree right angle on a dark astrology chart wheel, their two golden beams pressing hard into a glowing corner joint where fine gold sparks scatter like metal being worked on a forge, the angle taut with visible tension yet quietly shaping a stronger brighter form at the junction, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
-        "altEn": "Two planets pressing into a glowing right-angle joint that throws golden forge-like sparks",
-        "altZh": "两颗行星在90度直角处相互挤压，金色火花如锻造般迸出"
+        "prompt": "An atmospheric painterly editorial scene: a windswept clifftop edge above dark restless water under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. Two soft glowing celestial orbs press toward each other at a sharp right-angle tension in the sky, golden sparks and a brighter charged seam of light flaring where their lines of force meet, the friction throwing a faint forge-like glow that catches the cliff rocks below, energetic yet held in a tense, generative balance rather than chaos, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two glowing orbs pressing into a right-angle seam of light above dark cliffs, sparks flaring from the tension.",
+        "altZh": "暗色峭壁上方，两颗发光星体在直角张力处相互挤压，金色火花从交界缝隙迸出。"
       },
       "inline": [
         {
@@ -217,9 +217,9 @@
     },
     "trine-in-astrology": {
       "hero": {
-        "prompt": "Calm introspective editorial illustration of a dark astrology chart wheel holding a faint equilateral triangle of light, two luminous planet orbs 120 degrees apart connected by a smooth golden stream that flows effortlessly between them like a quiet river, yet at its far end the stream pools unused and fades into still drifting mist, beauty left on autopilot, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
-        "altEn": "A golden stream flowing effortlessly between two planets 120 degrees apart, pooling unused into mist at its end",
-        "altZh": "两颗相距120度的行星之间一道金色溪流自然流淌，却在尽头无人取用地积成薄雾"
+        "prompt": "An atmospheric painterly editorial scene: a calm still lake mirroring the sky, low pine forest along the far horizon, a vast night sky above; a luminous teal-and-gold Milky-Way wash drifts across the deep indigo dark with faint star points. Three soft glowing celestial orbs of the same warm element rest in an even, harmonious triangle high in the sky, a smooth golden stream of light flowing effortlessly between them with no resistance, and where the stream reaches the dark lake it pools and thins into a faint unused mist, suggesting easy talent that can quietly go untouched, serene and effortless in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Three harmonious orbs in a triangle, a gold stream flowing effortlessly between them and pooling into unused mist over a still lake.",
+        "altZh": "三颗和谐的发光星体构成三角，金色光流毫不费力地在它们之间流动，最终在静湖上化为无人取用的薄雾。"
       },
       "inline": [
         {
@@ -314,9 +314,9 @@
     },
     "descendant-astrology": {
       "hero": {
-        "prompt": "Calm introspective editorial illustration of a dark astrology chart wheel crossed by a long horizon line, a radiant golden point sinking at the western edge, and directly across the axis a tall arched standing mirror catching that light so the glow seems to shine from inside the mirror itself, two slender crescent forms facing each other across the wheel like a projection meeting its source, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
-        "altEn": "A point of light setting on the western horizon of a chart wheel, its golden glow reflected back from an arched mirror across the axis",
-        "altZh": "星盘西方地平线上一个下沉的光点，轴线另一端的拱形镜子映回它的金光"
+        "prompt": "An atmospheric painterly editorial scene: an open plain meeting a wide still body of water at a low horizon under a vast twilight-into-night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. On the western edge of the horizon a soft glowing light is setting into the water, and directly opposite across the scene a second answering light rises, the two meeting along one unbroken line low across the horizon like a reflection greeting its source — one light is the self, the other the partner it projects, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A setting light on the western horizon and a rising answering light opposite, meeting along one line over still water.",
+        "altZh": "西方地平线上一束下沉的光，与对面升起的回应之光沿同一条横线在静水上相遇，如倒影迎向本体。"
       },
       "inline": [
         {
@@ -393,9 +393,9 @@
     },
     "ic-astrology": {
       "hero": {
-        "prompt": "Calm introspective editorial illustration of a luminous astrology chart wheel suspended in deep indigo darkness, fine glowing golden roots growing downward from the wheel's lowest point and spreading into rich dark ground below, the root system glowing warmest where it anchors deepest, while only a faint pale halo of public light hovers at the very top of the wheel, the hidden foundation outshining the visible crown, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
-        "altEn": "Golden roots growing downward from the base of a glowing chart wheel into dark ground, beneath a faint halo of light at the top",
-        "altZh": "金色根系从发光星盘的最底端向下扎进黑暗土壤，盘顶只悬着一圈微光"
+        "prompt": "An atmospheric painterly editorial scene: a quiet darkened landscape where the ground opens to reveal deep soil beneath, a faint horizon and a vast night sky above; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. A single faint halo of light glows high at the top of the sky like a distant public crown, while the true emphasis sits low and below the ground line, where soft glowing golden roots reach downward into the dark earth from a warm hidden hearth-light, the private base everything is built on, intimate and grounded in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Glowing gold roots reaching down into dark earth from a hidden hearth-light, a faint halo high in the sky above.",
+        "altZh": "金色发光的根系从隐藏的炉火般暖光向下扎进黑暗土壤，天空高处只悬着一圈微弱光晕。"
       },
       "inline": [
         {

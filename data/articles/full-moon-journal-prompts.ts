@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fullMoonJournalPromptsEn: WikiArticle = {
   slug: "full-moon-journal-prompts",
+  image: "/images/moon/full-moon-journal-prompts.jpg",
+  image_alt: "A gold thread arcing from an open journal back through waxing moons to the new moon and closing at the full moon — journaling as cycle completion",
   title: "Full Moon Journal Prompts That Actually Match Lunar Energy",
   description: "Full moon journal prompts are reflective questions timed to the full moon's completion and release phase.",
   authorId: "marcus-orion",
@@ -51,6 +53,8 @@ Full moon journal prompts function by constraining reflection to a specific wind
 
 3. **vs open reflective writing.** Unstructured journaling follows wherever attention leads. Full moon reflection prompts constrain that flow to the cycle: what was seeded, what grew, what peaked, and what can go. The trade-off is structure over spontaneity — but at the full moon, unanchored writing tends to loop without landing. The *new moon journaling and intention-setting guide* covers the initiating side of the lunation cycle; full moon prompts close the loop by asking what that initiation actually produced.
 
+
+![Comparison of new moon journaling, gratitude journaling, and full moon prompts: opening cycles, appreciating the present, and explicitly closing what's finished](/images/moon/full-moon-journal-prompts-i0-en.svg)
 ## How to Read full moon journal prompts in Yourself
 
 Recognizing whether a full moon journaling practice is working comes down to what you find yourself writing. Five observable signals:
@@ -61,6 +65,8 @@ Recognizing whether a full moon journaling practice is working comes down to wha
 4. **Honesty costs something.** Completion reflection requires accurate assessment of what worked and what didn't. If the writing feels comfortable and affirming throughout, the session may have drifted into gratitude rather than reckoning.
 5. **The page contracts.** New moon energy generates more — goals, plans, desires. Full moon energy moves toward what actually matters. A session that ends with fewer, clearer priorities is working as it should.
 
+
+![Five signals full moon journal prompts are working: backward-looking writing, a sense of completion, named releases, costly honesty, and a contracting page](/images/moon/full-moon-journal-prompts-i1-en.svg)
 ## Common Misreadings
 
 The most widespread errors in full moon journaling trace back to one root inversion: applying the new moon's generative mechanics to a culmination event. Four common misreadings:

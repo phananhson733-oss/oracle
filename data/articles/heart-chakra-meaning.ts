@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const heartChakraMeaningEn: WikiArticle = {
   slug: "heart-chakra-meaning",
+  image: "/images/chakra/heart-chakra-meaning.jpg",
+  image_alt: "A golden figure-eight current flowing out to distant orbs and back into a central glowing heart, showing the heart chakra as balanced giving and receiving",
   title: "What the Heart Chakra Really Governs Beyond Romantic Love",
   description: "The Heart Chakra, called Anahata in the traditional system, is the fourth of the seven main energy centers and sits at the center of the chest, where the...",
   authorId: "elena-vane",
@@ -41,6 +43,8 @@ The throat center just above works through clear expression and truth-telling, w
 
 The most common confusion, though, isn't with another center — it's with romantic love itself. Romance is one real expression of heart energy, but the wider current is balanced compassion of every kind: for friends, for strangers, and for yourself. To reduce this center to romance, you lose sight of why chronic overgiving or a long-held grudge can each signal a heart imbalance as loudly as a breakup. That trade — one vivid image for accuracy across the whole center — is exactly the friction this page exists to clear up.
 
+
+![Three-column comparison of the solar plexus, heart, and throat centers and the trade-off each emphasis carries](/images/chakra/heart-chakra-meaning-i0-en.svg)
 ## How to Read Heart Chakra in Yourself
 
 Reading heart chakra meaning in yourself doesn't take special training — the signals show up in ordinary days. A few worth noticing:
@@ -51,6 +55,8 @@ Reading heart chakra meaning in yourself doesn't take special training — the s
 4. **Guardedness.** Do you keep people at arm's length long after any real risk has passed?
 5. **Genuine warmth.** Can you feel glad for someone else's good news without comparison creeping in?
 
+
+![Five ordinary signals for reading the heart chakra: giving and receiving, self-compassion, resentment, guardedness, and genuine warmth](/images/chakra/heart-chakra-meaning-i1-en.svg)
 ## Common Misreadings
 
 More than almost any other center, heart chakra meaning gets flattened by a handful of popular misreadings — and those misreadings are usually what sent people searching in the first place.
@@ -111,6 +117,8 @@ Take the Chakra Test to see whether your heart chakra reads as open, blocked, or
 
 export const heartChakraMeaningZh: WikiArticle = {
   slug: "heart-chakra-meaning",
+  image: "/images/chakra/heart-chakra-meaning.jpg",
+  image_alt: "一条金色八字形光流向外抵达远处光点又折返回中央光球，象征心轮是付出与接收的双向平衡",
   title: "心轮代表什么，远不只是谈情说爱",
   description: "Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第四个中心，位置在胸口正中，恰好夹在下三轮的本能和上三轮的觉知之间。在更完整的 脉轮系统总览 pillar 页...",
   authorId: "elena-vane",
@@ -150,6 +158,8 @@ Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，�
 
 再往上是喉轮，喉轮靠的是清晰的表达和说真话，心轮靠的是不靠言语的温度和共情。要得到喉轮那种"我说的正是我想的"的精准，你就得放掉一些心轮那种话还没出口、就先读懂一屋子气氛的本事。很多以"直来直去"自居的人，底下其实藏着一颗设了防的心，把生硬当成了坦诚。
 
+
+![太阳轮、心轮与喉轮三栏对比，呈现侧重每个中心各自的取舍](/images/chakra/heart-chakra-meaning-i0-zh.svg)
 ## 如何在自己身上识别 Heart Chakra
 
 不用看气场颜色，下面这些日常信号，就能让你感觉到 Heart Chakra（心轮）在不在线。理解心轮代表什么，往往就是从这些小处认出来的：
@@ -160,6 +170,8 @@ Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，�
 4. 危险早过去了，你还在不自觉地把人挡在一臂之外吗？
 5. 别人报喜时，你能由衷替他高兴，还是先冒出一丝比较的酸？
 
+
+![解读心轮的五个日常信号：施与受、自我关怀、旧怨、设防与由衷的暖意](/images/chakra/heart-chakra-meaning-i1-zh.svg)
 ## 常见误读
 
 围绕 Heart Chakra（心轮）的含义，最容易把人带偏的有这么几个说法，逐个拆开看。读者来搜心轮代表什么，多半就是被这些误读困住了：

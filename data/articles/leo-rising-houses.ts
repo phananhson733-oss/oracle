@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const leoRisingHousesEn: WikiArticle = {
   slug: "leo-rising-houses",
+  image: "/images/placements/leo-rising-houses.jpg",
+  image_alt: "A radiant rising sun on one horizon and a heavy ringed planet on the opposite edge, in tense balance across the night sky.",
   title: "What Leo Rising Houses Actually Reveal About Your Relationship Patterns",
   description: "Leo rising houses is a fixed house map placing Saturn over the partnership domain and Venus over communication and career",
   authorId: "marcus-orion",
@@ -28,6 +30,8 @@ Leo rising houses is **a fixed house map placing Saturn over the partnership dom
 
 This sits alongside the broader [pillar page on all twelve houses and their life domains](/en/wiki/astrology-houses), which maps house rulerships across every rising sign.
 
+
+![The Leo rising house map: the Sun rules the 1st house identity, Saturn rules the 7th house of partnerships, and Venus rules both the 3rd house of communication and the 10th house of career.](/images/placements/leo-rising-houses-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Understanding leo rising houses matters because almost every widely read resource on Leo rising focuses on the Sun sign: warmth, courage, creative magnetism, the desire to be genuinely seen. Those qualities describe Leo's solar energy accurately, and they show up in the 1st house. The structural gap appears when people with Leo rising look at their close relationships and find the popular descriptions don't explain what's actually happening there.
@@ -53,6 +57,8 @@ Applying leo rising houses to a real chart means tracing each house cusp sign ba
 3. **Trace Venus through the 3rd and 10th.** The sign Venus occupies and the aspects it receives color both daily communication and long-term professional reputation. A Venus in a comfortable sign tends to ease these areas; Venus under pressure from difficult aspects often asks for more deliberate effort in both communication and career.
 4. **Find where the Sun sits.** The Sun rules the 1st house as chart ruler, but its natal position shows which life domain most expresses Leo rising's identity. Sun in the 10th puts identity directly into public career; Sun in the 7th brings it into partnerships even while Saturn structures that house cusp.
 
+
+![Four steps for reading Leo rising houses: locate Saturn, notice the structural weight in partnerships, trace Venus through the 3rd and 10th, and find where the Sun sits.](/images/placements/leo-rising-houses-i1-en.svg)
 ## Common Misreadings
 
 People with Leo rising run into several consistent misreadings in popular resources, most of which trace back to applying Leo Sun descriptions to the full chart.

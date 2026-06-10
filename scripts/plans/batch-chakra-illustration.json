@@ -144,9 +144,9 @@
     },
     "chakra-test": {
       "hero": {
-        "prompt": "Editorial illustration of a thin rectangular frame of soft gold light floating like an instant photograph above a still night landscape, inside the frame seven small glowing orbs in a vertical column partly veiled by slow drifting bands of cloud, the same seven orbs faintly visible outside the frame at slightly different brightness, conveying a reading that is a passing snapshot of inner weather rather than a permanent label, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "Seven glowing chakra points veiled by drifting clouds inside a thin golden snapshot frame, showing a chakra test as a picture of present inner weather",
-        "altZh": "细金边相框内七个被流云半掩的发光脉轮点，呈现脉轮测试只是当下内在天气的一张快照"
+        "prompt": "An atmospheric painterly editorial scene: a misty mountain path winding upward into a vast night sky with a soft teal-gold nebula; seven soft round glowing lights are spaced up the dark slope along the path like lamps on a spine, some burning bright and full, others dim and faint, a quiet reading of which centers are open, contemplative in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "Seven round glowing lights spaced up a misty mountain path, some bright and some dim, under a nebula sky.",
+        "altZh": "雾中山径蜿蜒而上，七盏圆形柔光沿坡如脊柱排布，有的明亮饱满，有的黯淡微弱。"
       },
       "inline": [
         {
@@ -419,9 +419,9 @@
     },
     "solar-plexus-chakra-affirmations": {
       "hero": {
-        "prompt": "Editorial illustration of three sun-like discs resting along a thin horizontal golden balance line: a faint dim ember on the left, an oversized flaring blaze with jagged rays on the right, and a calm steady medium golden sun at the exact center where the line sits perfectly level, conveying that the right practice matches an under-active or over-active state rather than always turning the volume up, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "A dim ember, a balanced golden sun, and an overblown flare on one balance line, showing solar plexus affirmations must match an under-active or over-active state",
-        "altZh": "一条平衡线上的微弱余烬、安定金日与过旺烈焰，象征太阳轮肯定语要先分清底气不足还是用力过猛"
+        "prompt": "An atmospheric painterly editorial scene: a warm golden sun-glow rising over a calm still lake at the horizon under a soft teal-and-gold nebula sky, its strong steady light flooding warmly across the water toward the viewer, grounded personal radiance and quiet confidence, warm and empowering in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A warm golden sun-glow rising over a calm lake, its steady light flooding warmly across the water.",
+        "altZh": "暖金色的日光在静湖地平线升起，稳定的光芒温暖地铺满水面涌向观者。"
       },
       "inline": [
         {
@@ -618,9 +618,9 @@
     },
     "throat-chakra-meaning": {
       "hero": {
-        "prompt": "Editorial illustration of a slender vertical channel of golden light connecting a small steady flame sealed inside a dark inner chamber in the lower half of the frame to evenly spaced concentric sound ripples opening into the night sky above, the channel neither pinched shut nor overflowing, a few faint unspoken sparks resting quietly at the channel's base, conveying alignment between inner truth and outward speech, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "A slim golden channel carrying an inner flame upward into even sound ripples, showing the throat chakra as the open passage between inner truth and spoken words",
-        "altZh": "一条纤细金色通道把内在火光向上送成均匀的声波涟漪，象征喉轮是内心真实与说出口的话之间的通道"
+        "prompt": "An atmospheric painterly editorial scene that completely fills the wide frame edge to edge: a broad still lake at night under an expansive teal-and-gold nebula sky; from a single soft source low over the water a stream of blue-gold light rises and spreads outward across the whole sky as wide concentric ripples of light, voice and truth radiating into the open air, serene and resonant in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A stream of blue-gold light rising from a still lake and spreading across the sky as wide concentric ripples.",
+        "altZh": "静湖上方一束蓝金色光升起，化作宽阔的同心涟漪铺满整片夜空，如声音与真实向外回荡。"
       },
       "inline": [
         {
@@ -709,9 +709,9 @@
     },
     "ajna-chakra": {
       "hero": {
-        "prompt": "Editorial illustration of a wide field of jittery scattered sparks and faint looping scribble-like trails of dim light filling the frame edge to edge, with one single perfectly still golden point of light at the center surrounded by a quiet circular zone where the noise fades to calm, conveying discernment as the steady signal held apart from anxious mental noise, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
-        "altEn": "One still golden point of light inside a calm circle amid a field of jittery scattered sparks, showing the ajna chakra as discernment separating a true signal from noise",
-        "altZh": "纷乱火花之中，一点静止的金光被一圈安静包围，象征眉心轮把真实信号从杂念噪音中分辨出来"
+        "prompt": "An atmospheric painterly editorial scene: a vast still indigo lake at the dead of night under a soft teal-and-gold nebula; low on the horizon a single luminous point of gold light glows and casts a long clean reflection down the dark mirror-water like a quiet open eye of perception, minimal, hushed and inward in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A single luminous gold point low on the horizon casting a long reflection on a still indigo lake like a quiet open eye.",
+        "altZh": "深夜静湖，地平线低处一点金光，在镜面般的暗水上投下长长倒影，宛如一只静静睁开的觉知之眼。"
       },
       "inline": [
         {
