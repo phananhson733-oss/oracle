@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="四个月相，四种功能">
+  <defs>
+    <linearGradient id="moonjournal2zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moonjournal2zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moonjournal2zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonjournal2zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonjournal2zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonjournal2zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#moonjournal2zh-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#moonjournal2zh-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#moonjournal2zh-neb2)"/>
+  <circle cx="50.4" cy="350.6" r="1.61" fill="#cfc8ea" opacity="0.15"/><circle cx="701.2" cy="19.3" r="1.69" fill="#cfc8ea" opacity="0.13"/><circle cx="305.4" cy="48.4" r="1.65" fill="#cfc8ea" opacity="0.30"/><circle cx="741.9" cy="334.0" r="1.63" fill="#cfc8ea" opacity="0.37"/><circle cx="542.2" cy="306.7" r="1.03" fill="#cfc8ea" opacity="0.33"/><circle cx="103.0" cy="165.6" r="0.74" fill="#cfc8ea" opacity="0.35"/><circle cx="313.2" cy="397.4" r="1.10" fill="#cfc8ea" opacity="0.27"/><circle cx="47.5" cy="305.1" r="1.05" fill="#cfc8ea" opacity="0.33"/><circle cx="71.0" cy="337.2" r="0.56" fill="#cfc8ea" opacity="0.26"/><circle cx="77.8" cy="28.6" r="1.41" fill="#cfc8ea" opacity="0.28"/><circle cx="77.4" cy="121.3" r="0.75" fill="#cfc8ea" opacity="0.28"/><circle cx="385.4" cy="164.5" r="0.42" fill="#cfc8ea" opacity="0.43"/><circle cx="106.9" cy="420.4" r="0.82" fill="#cfc8ea" opacity="0.27"/><circle cx="699.0" cy="335.1" r="0.66" fill="#cfc8ea" opacity="0.33"/><circle cx="200.4" cy="260.9" r="1.46" fill="#cfc8ea" opacity="0.15"/><circle cx="381.8" cy="444.0" r="0.80" fill="#cfc8ea" opacity="0.53"/><circle cx="579.9" cy="103.2" r="0.90" fill="#cfc8ea" opacity="0.25"/><circle cx="277.0" cy="200.5" r="1.34" fill="#cfc8ea" opacity="0.16"/><circle cx="103.6" cy="395.8" r="1.37" fill="#cfc8ea" opacity="0.19"/><circle cx="126.9" cy="329.4" r="1.11" fill="#cfc8ea" opacity="0.23"/><circle cx="671.0" cy="213.9" r="0.67" fill="#cfc8ea" opacity="0.51"/><circle cx="183.9" cy="312.3" r="0.89" fill="#cfc8ea" opacity="0.14"/><circle cx="93.2" cy="42.7" r="1.28" fill="#cfc8ea" opacity="0.53"/><circle cx="230.4" cy="338.8" r="0.74" fill="#cfc8ea" opacity="0.34"/><circle cx="97.9" cy="332.4" r="1.42" fill="#cfc8ea" opacity="0.30"/><circle cx="534.5" cy="13.7" r="1.24" fill="#cfc8ea" opacity="0.32"/><circle cx="109.6" cy="15.6" r="1.40" fill="#cfc8ea" opacity="0.40"/><circle cx="40.7" cy="100.6" r="0.95" fill="#cfc8ea" opacity="0.34"/><circle cx="678.1" cy="344.4" r="0.73" fill="#cfc8ea" opacity="0.43"/><circle cx="257.0" cy="66.3" r="0.66" fill="#cfc8ea" opacity="0.13"/><circle cx="553.1" cy="382.9" r="1.66" fill="#cfc8ea" opacity="0.30"/><circle cx="559.9" cy="236.7" r="1.28" fill="#cfc8ea" opacity="0.52"/><circle cx="38.0" cy="158.5" r="1.09" fill="#cfc8ea" opacity="0.19"/><circle cx="555.0" cy="360.4" r="0.68" fill="#cfc8ea" opacity="0.34"/><circle cx="459.7" cy="30.0" r="1.53" fill="#cfc8ea" opacity="0.43"/><circle cx="105.7" cy="67.2" r="0.70" fill="#cfc8ea" opacity="0.32"/><circle cx="433.3" cy="41.7" r="1.58" fill="#cfc8ea" opacity="0.52"/><circle cx="638.2" cy="217.7" r="1.21" fill="#cfc8ea" opacity="0.42"/><circle cx="260.0" cy="337.4" r="1.55" fill="#cfc8ea" opacity="0.51"/><path d="M 395.9383723177016 352.9 L 396.6 356.2 L 399.8 356.8105362362694 L 396.6 357.4 L 395.9383723177016 360.7 L 395.3 357.4 L 392.1 356.8105362362694 L 395.3 356.2 Z" fill="#f6e6bf" opacity="0.6973440495552495"/><path d="M 197.772727008909 373.3 L 198.3 376.0 L 200.9 376.4911222902592 L 198.3 377.0 L 197.772727008909 379.6 L 197.3 377.0 L 194.6 376.4911222902592 L 197.3 376.0 Z" fill="#f6e6bf" opacity="0.5597198717528954"/><path d="M 720.5823756940663 161.3 L 721.2 164.3 L 724.1 164.82611141982488 L 721.2 165.4 L 720.5823756940663 168.4 L 720.0 165.4 L 717.0 164.82611141982488 L 720.0 164.3 Z" fill="#f6e6bf" opacity="0.7284320059465245"/><path d="M 150.72496722266078 86.2 L 151.3 89.2 L 154.3 89.73509719758295 L 151.3 90.3 L 150.72496722266078 93.3 L 150.2 90.3 L 147.2 89.73509719758295 L 150.2 89.2 Z" fill="#f6e6bf" opacity="0.6367547927657142"/><path d="M 603.8569480516016 94.4 L 604.5 97.6 L 607.7 98.25403290684335 L 604.5 98.9 L 603.8569480516016 102.1 L 603.2 98.9 L 600.0 98.25403290684335 L 603.2 97.6 Z" fill="#f6e6bf" opacity="0.5505625942023471"/><path d="M 385.4 164.5 L 126.9 329.4 L 93.2 42.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">四个月相，四种功能</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moonjournal2zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moonjournal2zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#moonjournal2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#moonjournal2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">新月</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">锚定</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">写下要启动的具体意图、目标或决定</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#moonjournal2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#moonjournal2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">盈月</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">追踪</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">点名拖慢意图的因素——需求、习惯、缺口</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#moonjournal2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#moonjournal2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">满月</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">检视</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">评估实际发生了什么，对照一厢情愿的投射</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#moonjournal2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#moonjournal2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">亏月</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">释放</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">在下个周期开始前，命名要留下的东西</text>
+  <path d="M 280.025 430.4 L 280.4 432.6 L 282.6 433 L 280.4 433.4 L 280.025 435.6 L 279.6 433.4 L 277.4 433 L 279.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 430.4 L 480.4 432.6 L 482.6 433 L 480.4 433.4 L 479.975 435.6 L 479.6 433.4 L 477.4 433 L 479.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

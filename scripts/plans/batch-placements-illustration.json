@@ -1,0 +1,1128 @@
+{
+  "_comment": "PLACEMENTS cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/placements",
+  "urlBase": "/images/placements",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-in-pisces": {
+      "hero": {
+        "prompt": "Editorial illustration of structure built inside the boundless: a precise golden geometric scaffold with clean lines, right angles and a ringed-planet motif holds its shape half-submerged in a vast drifting sea of soft mist and dissolving water, fog curling around the frame without toppling it — Saturn's demand for edges meeting Pisces's pull toward dissolution; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A golden geometric scaffold holding firm inside a sea of drifting indigo mist, symbolizing Saturn building structure within boundless Pisces.",
+        "altZh": "金色几何框架稳立于弥漫的靛蓝雾海之中，象征土星在无边界的双鱼座里搭建结构。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## What are Saturn in Pisces?",
+          "titleEn": "Two Opposing Instincts in One Transit",
+          "titleZh": "一次行运里的两股相反本能",
+          "columns": [
+            {
+              "nameEn": "Saturn",
+              "nameZh": "土星",
+              "linesEn": [
+                "Wants edges, rules, and proof",
+                "Demands workable form",
+                "Tests whether structures hold"
+              ],
+              "linesZh": [
+                "要边界、规则与凭据",
+                "要求可落地的形态",
+                "检验结构是否撑得住"
+              ]
+            },
+            {
+              "nameEn": "Pisces",
+              "nameZh": "双鱼座",
+              "linesEn": [
+                "Wants flow and imagination",
+                "Pulls toward surrender",
+                "Resists being measured"
+              ],
+              "linesZh": [
+                "要流动与想象",
+                "倾向交托与消融",
+                "抗拒被度量"
+              ]
+            }
+          ],
+          "altEn": "Comparison of Saturn's demand for edges, rules, and proof against Pisces's pull toward flow, imagination, and surrender.",
+          "altZh": "对比土星对边界、规则与凭据的要求，与双鱼座对流动、想象与交托的偏好。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The Saturn in Pisces: Quick Guide",
+          "titleEn": "The Five Strands of Saturn in Pisces",
+          "titleZh": "土星在双鱼座的五条主线",
+          "items": [
+            {
+              "nameEn": "Boundaries",
+              "nameZh": "边界",
+              "subEn": "A clean no without apology; fatigue is not moral failure",
+              "subZh": "练习干净地说不；疲惫不等于道德缺陷"
+            },
+            {
+              "nameEn": "Structured rest",
+              "nameZh": "有结构的休息",
+              "subEn": "Recovery as a discipline, not a reward",
+              "subZh": "恢复是一种自律，不是奖励"
+            },
+            {
+              "nameEn": "Creative discipline",
+              "nameZh": "创作自律",
+              "subEn": "Show up on a schedule instead of waiting for inspiration",
+              "subZh": "按日程到场，而不是等灵感"
+            },
+            {
+              "nameEn": "Maturing belief",
+              "nameZh": "信念的成熟",
+              "subEn": "Test what you trust; keep what holds weight",
+              "subZh": "检验所信，留下经得起追问的部分"
+            },
+            {
+              "nameEn": "Grounded compassion",
+              "nameZh": "有边界的慈悲",
+              "subEn": "Care with limits built in, without self-erasure",
+              "subZh": "带着界限去关怀，不自我消解"
+            }
+          ],
+          "altEn": "Five strands of the Saturn in Pisces transit: boundaries, structured rest, creative discipline, maturing belief, and grounded compassion.",
+          "altZh": "土星在双鱼座行运的五条主线：边界、有结构的休息、创作自律、信念成熟与有边界的慈悲。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreads + Framework Limits",
+          "afterHeadingZh": "## 常见误读 + 框架边界",
+          "titleEn": "Four Ways the Framework Gets Misused",
+          "titleZh": "这套框架最常被误用的四种方式",
+          "items": [
+            {
+              "nameEn": "Verdict, not vocabulary",
+              "nameZh": "当成判决而非语言",
+              "subEn": "Read it as language to test, not a sentence on you",
+              "subZh": "它是可检验的解读语言，不是吉凶判决"
+            },
+            {
+              "nameEn": "One lineage as truth",
+              "nameZh": "钦定单一流派",
+              "subEn": "Traditional and modern readings differ; hold both",
+              "subZh": "传统与现代说法不一时，并列参考更稳妥"
+            },
+            {
+              "nameEn": "Framework as identity",
+              "nameZh": "升格成身份标签",
+              "subEn": "\"My Saturn era\" can become a story you hide inside",
+              "subZh": "「被土星压着」会变成固化的自我设定"
+            },
+            {
+              "nameEn": "Substitute for ground truth",
+              "nameZh": "替代真实帮助",
+              "subEn": "It cannot replace professionals or real-world judgment",
+              "subZh": "不能替代专业人士与现实判断"
+            }
+          ],
+          "altEn": "Four common misuses of the Saturn in Pisces framework: treating it as a verdict, forcing one lineage, making it an identity, and substituting it for real help.",
+          "altZh": "土星在双鱼座框架的四种常见误用：当成判决、钦定单一流派、升格为身份标签、替代专业帮助。"
+        }
+      ]
+    },
+    "neptune-in-pisces": {
+      "hero": {
+        "prompt": "Editorial illustration of a generational tide: one vast luminous planet veiled in haze hangs above a dark ocean of mist, while dozens of small identical golden star-points drift below, all carried by the same slow current — individual lights inside one shared dissolving field, the boundaries between water, fog and sky melting together; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A hazy planet above a misty ocean where many small golden lights drift in one shared current, symbolizing the Neptune in Pisces generational field.",
+        "altZh": "雾海之上悬着一颗朦胧行星，无数金色光点随同一股潮流漂移，象征海王星双鱼座的世代场域。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## neptune in pisces vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Personal Influence vs Generational Field",
+          "titleZh": "个人影响与世代场域之分",
+          "columns": [
+            {
+              "nameEn": "Personal natal Neptune",
+              "nameZh": "个人层面的海王星",
+              "linesEn": [
+                "Conjunct ASC, aspecting Moon, 1st house",
+                "Describes one person's psychology",
+                "Individual scale"
+              ],
+              "linesZh": [
+                "合上升、对月亮成相或落一宫",
+                "描述个体心理的运作",
+                "作用在个人尺度"
+              ]
+            },
+            {
+              "nameEn": "Pisces Sun",
+              "nameZh": "双鱼座太阳",
+              "linesEn": [
+                "Colors personal identity",
+                "Will orientation, core character",
+                "Particular to you"
+              ],
+              "linesZh": [
+                "塑造个人身份",
+                "意志取向与核心性格",
+                "专属于你个人"
+              ]
+            },
+            {
+              "nameEn": "Neptune in Pisces",
+              "nameZh": "海王星在双鱼座",
+              "linesEn": [
+                "Shared field of a birth cohort",
+                "Collective intuition and longing",
+                "Marks everyone born 2012–2026"
+              ],
+              "linesZh": [
+                "整个出生世代的共享场域",
+                "集体直觉与精神渴望",
+                "标记 2012–2026 年出生者"
+              ]
+            }
+          ],
+          "altEn": "Three-way comparison: personal natal Neptune shapes individual psychology, a Pisces Sun colors personal identity, while Neptune in Pisces conditions the shared 2012–2026 generational field.",
+          "altZh": "三方对比：本命海王星作用于个体心理，双鱼座太阳塑造个人身份，而海王星双鱼座塑造 2012–2026 整个世代的共享场域。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Transit in Your Chart",
+          "titleEn": "Five Signals to Examine in Your Chart",
+          "titleZh": "星盘解读的五个信号",
+          "items": [
+            {
+              "nameEn": "Find the Pisces house",
+              "nameZh": "找出双鱼座落宫",
+              "subEn": "The dissolving quality concentrates in that life domain",
+              "subZh": "消融特质集中在该宫主管的生活领域"
+            },
+            {
+              "nameEn": "Check planets in Pisces",
+              "nameZh": "查双鱼座内的行星",
+              "subEn": "Any planet there gets a compounding Neptune influence",
+              "subZh": "落在此处的行星受到双重海王星影响"
+            },
+            {
+              "nameEn": "Notice emotional absorption",
+              "nameZh": "留意情绪吸收",
+              "subEn": "Picking up a room's tone before registering why",
+              "subZh": "先吸收到场域情绪，后知后觉其来源"
+            },
+            {
+              "nameEn": "Track softening structures",
+              "nameZh": "追踪松动的结构",
+              "subEn": "Forms loosen despite effort: transit pressure, not failure",
+              "subZh": "结构再三松动是行运压力，不是个人失败"
+            },
+            {
+              "nameEn": "Register spiritual questions",
+              "nameZh": "觉察灵性叩问",
+              "subEn": "Pressing questions may reflect the generational current",
+              "subZh": "无端迫切的灵性议题可能来自世代潮流"
+            }
+          ],
+          "altEn": "Five steps for reading Neptune in Pisces in a natal chart: locate the Pisces house, check planets in Pisces, notice emotional absorption, track softening structures, and register pressing spiritual questions.",
+          "altZh": "在星盘中解读海王星双鱼座的五步：找双鱼座落宫、查双鱼座行星、留意情绪吸收、追踪结构松动、觉察灵性叩问。"
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Questions About This Generational Placement",
+          "titleEn": "The Neptune in Pisces Window",
+          "titleZh": "海王星双鱼座的时间窗口",
+          "items": [
+            {
+              "labelEn": "2012",
+              "labelZh": "2012 年",
+              "titleEn": "Neptune enters Pisces",
+              "titleZh": "海王星进入双鱼座",
+              "noteEn": "The planet begins moving through its own home sign",
+              "noteZh": "海王星开始行经自己守护的星座"
+            },
+            {
+              "labelEn": "2012–2026",
+              "labelZh": "2012–2026",
+              "titleEn": "The cohort window",
+              "titleZh": "世代印记窗口",
+              "noteEn": "Every chart cast in this span carries it as a natal signature",
+              "noteZh": "此间出生的每张星盘都带有这一世代印记"
+            },
+            {
+              "labelEn": "2025–2026",
+              "labelZh": "2025–2026",
+              "titleEn": "Neptune moves into Aries",
+              "titleZh": "海王星移入白羊座",
+              "noteEn": "Closing a roughly 14-year generational window",
+              "noteZh": "约 14 年的世代窗口就此收尾"
+            }
+          ],
+          "altEn": "Timeline of Neptune in Pisces: entering in 2012, marking all charts through the 2012–2026 cohort window, and moving into Aries around 2025–2026.",
+          "altZh": "海王星双鱼座时间线：2012 年进入双鱼座，2012–2026 年构成世代窗口，约 2025–2026 年移入白羊座。"
+        }
+      ]
+    },
+    "chiron-in-taurus": {
+      "hero": {
+        "prompt": "Editorial illustration of worth beneath money: a sturdy ceramic vessel mended with luminous gold seams stands whole and dignified at center while a drift of coins dissolves into mist around it, the repaired crack glowing warmer than the fading currency, a faint bull-horn crescent suggested in the dark sky above; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A ceramic vessel mended with glowing gold seams stands firm while coins dissolve into mist, symbolizing the Chiron in Taurus wound of worth beneath money.",
+        "altZh": "金缮陶器在雾化的钱币间安然伫立，象征凯龙在金牛座关于价值而非金钱的旧伤。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Chiron in Taurus vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Telling the Neighboring Wounds Apart",
+          "titleZh": "分清相邻的几种印记",
+          "columns": [
+            {
+              "nameEn": "Chiron in Taurus",
+              "nameZh": "凯龙在金牛座",
+              "linesEn": [
+                "Aches around deserving",
+                "\"I'm not sure I'm worth it\"",
+                "Worth, body, material safety"
+              ],
+              "linesZh": [
+                "痛点在配不配得上",
+                "「我不确定自己值得」",
+                "关乎价值、身体与物质安全"
+              ]
+            },
+            {
+              "nameEn": "Saturn in Taurus",
+              "nameZh": "土星在金牛座",
+              "linesEn": [
+                "Discipline, not a wound",
+                "\"I must manage this\"",
+                "Responsibility and boundaries"
+              ],
+              "linesZh": [
+                "是纪律课题而非伤口",
+                "「我必须管好这些」",
+                "关乎责任、延迟与边界"
+              ]
+            },
+            {
+              "nameEn": "Chiron in Scorpio",
+              "nameZh": "凯龙在天蝎座",
+              "linesEn": [
+                "Deep wound, different ground",
+                "Intimacy, power, and trust",
+                "Rawest spot: being betrayed"
+              ],
+              "linesZh": [
+                "同样深的伤，落点不同",
+                "关乎亲密、权力与信任",
+                "最痛处是被背叛"
+              ]
+            }
+          ],
+          "altEn": "Comparison of Chiron in Taurus (worth and deserving), Saturn in Taurus (discipline and resource management), and Chiron in Scorpio (intimacy, power, and trust).",
+          "altZh": "凯龙在金牛座（价值与配得感）、土星在金牛座（纪律与资源管理）、凯龙在天蝎座（亲密、权力与信任）的对比。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Chiron in Taurus in Yourself",
+          "titleEn": "Daily-Life Signals of the Worth Wound",
+          "titleZh": "价值之伤的日常信号",
+          "items": [
+            {
+              "nameEn": "The low hum of not enough",
+              "nameZh": "挥之不去的「不够」感",
+              "subEn": "You earn or save well, yet \"not enough\" persists",
+              "subZh": "收入储蓄尚可，「不够」的低鸣仍在"
+            },
+            {
+              "nameEn": "Receiving feels undeserved",
+              "nameZh": "接受让你不自在",
+              "subEn": "Gifts, compliments, and rest feel like they must be earned",
+              "subZh": "礼物、夸奖与休息都像要先挣来"
+            },
+            {
+              "nameEn": "Worth tracks productivity",
+              "nameZh": "价值随产出涨落",
+              "subEn": "A slow week reads as proof you are worth less",
+              "subZh": "低产的一周被读成自己贬值的证据"
+            },
+            {
+              "nameEn": "The body keeps score",
+              "nameZh": "身体替你记账",
+              "subEn": "Tight throat, guarded voice, neck tension, uneasy appetite",
+              "subZh": "喉咙发紧、肩颈紧绷、食欲与触觉不安"
+            },
+            {
+              "nameEn": "Spending swings",
+              "nameZh": "消费摇摆",
+              "subEn": "Guilt-heavy restriction or comfort-buying that never lands",
+              "subZh": "在愧疚节制与无效安慰性购物间摆动"
+            }
+          ],
+          "altEn": "Five everyday signals of Chiron in Taurus: a persistent sense of not enough, discomfort receiving, worth tied to productivity, bodily tension, and swinging spending habits.",
+          "altZh": "凯龙在金牛座的五个日常信号：挥之不去的匮乏感、不敢接受、价值随产出涨落、身体紧绷、消费摇摆。"
+        }
+      ]
+    },
+    "chiron-in-12th-house": {
+      "hero": {
+        "prompt": "Editorial illustration of a hidden sensitivity: a small antique golden key rests in a dim alcove behind a sheer translucent veil, glowing softly through the fabric, set at the dark edge of a great wheel of sky just before dawn — the most private corner of the chart, where what is concealed quietly becomes a source of light; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A golden key glows softly behind a sheer veil at the pre-dawn edge of the sky, symbolizing the hidden sensitivity of Chiron in the 12th house.",
+        "altZh": "破晓前的天际边缘，一把金钥匙在薄纱后微微发光，象征凯龙在第十二宫的隐秘敏感。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Chiron in the 12th house vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Chiron in the 12th house 与相近概念：运作方式 + 取舍",
+          "titleEn": "Two Buried Currents in the Same House",
+          "titleZh": "同一宫位里的两股潜流",
+          "columns": [
+            {
+              "nameEn": "Chiron in the 12th",
+              "nameZh": "凯龙在十二宫",
+              "linesEn": [
+                "Buries old hurt and tenderness",
+                "Feels tender on behalf of others",
+                "The pain you never name"
+              ],
+              "linesZh": [
+                "把伤痛与敏感压进幕后",
+                "替别人的痛而痛",
+                "课题：我不敢提的痛"
+              ]
+            },
+            {
+              "nameEn": "Mars in the 12th",
+              "nameZh": "火星在十二宫",
+              "linesEn": [
+                "Buries drive and anger",
+                "Effort hides, anger turns inward",
+                "The fight you never use"
+              ],
+              "linesZh": [
+                "把行动力与愤怒压进幕后",
+                "使劲不让人看见，火气向内",
+                "课题：我不敢使的力"
+              ]
+            }
+          ],
+          "altEn": "Comparison of Chiron in the 12th house, which buries tenderness and old hurt, with Mars in the 12th house, which buries drive and anger.",
+          "altZh": "凯龙在十二宫（藏起的旧伤与敏感）与火星在十二宫（藏起的行动力与愤怒）的对比。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Chiron in the 12th house in Yourself",
+          "titleEn": "Five Quiet Signals of This Placement",
+          "titleZh": "这一配置的五个安静信号",
+          "items": [
+            {
+              "nameEn": "Downplayed sensitivity",
+              "nameZh": "被淡化的敏感",
+              "subEn": "A private theme stings; you talk yourself out of naming it",
+              "subZh": "私密话题刺痛你，你却劝自己别提"
+            },
+            {
+              "nameEn": "Uninvited empathy",
+              "nameZh": "不请自来的共情",
+              "subEn": "You sense unspoken pain before a word is said",
+              "subZh": "对方还没开口，你已接住那份痛"
+            },
+            {
+              "nameEn": "Pull toward solitude",
+              "nameZh": "向独处的牵引",
+              "subEn": "You recover best alone after emotionally crowded days",
+              "subZh": "情绪拥挤的日子后，独处才能复原"
+            },
+            {
+              "nameEn": "Help offered, rarely asked",
+              "nameZh": "只给予，少求助",
+              "subEn": "You tend others freely but struggle to ask in return",
+              "subZh": "乐于照顾别人，却难开口求助"
+            },
+            {
+              "nameEn": "Hurt surfacing in dreams",
+              "nameZh": "梦境里的旧伤",
+              "subEn": "A theme returns in half-remembered dreams and sudden moods",
+              "subZh": "旧主题在残梦与突来的情绪里重现"
+            }
+          ],
+          "altEn": "Five quiet signals of Chiron in the 12th house: downplayed sensitivity, uninvited empathy, a pull toward solitude, one-way helping, and old hurt surfacing in dreams.",
+          "altZh": "凯龙在十二宫的五个安静信号：淡化敏感、不请自来的共情、向独处的牵引、只给予少求助、旧伤入梦。"
+        }
+      ]
+    },
+    "mars-in-12th-house": {
+      "hero": {
+        "prompt": "Editorial illustration of submerged drive: a bright golden ember burns steadily beneath the surface of deep still water, its glow refracting upward through the calm — the surface unbroken, the fire fully alive below, faint currents tracing where the hidden force moves; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A golden ember burns beneath calm dark water, its glow rising through the still surface, symbolizing the submerged drive of Mars in the 12th house.",
+        "altZh": "金色火种在沉静深水下持续燃烧，光透出平静水面，象征火星在第十二宫被压在水下的劲。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Mars in the 12th house vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Mars in the 12th house 与相近概念：运作方式 + 取舍",
+          "titleEn": "Where the Force Lives: Three Placements",
+          "titleZh": "劲落在哪里：三种配置对照",
+          "columns": [
+            {
+              "nameEn": "Mars in the 1st",
+              "nameZh": "火星在一宫",
+              "linesEn": [
+                "Drive pushes straight outward",
+                "Reads as obvious confidence",
+                "Quick feedback, quick correction"
+              ],
+              "linesZh": [
+                "劲直接向外、挂在脸上",
+                "当场可见的笃定",
+                "反馈快，修正也快"
+              ]
+            },
+            {
+              "nameEn": "Mars in the 12th",
+              "nameZh": "火星在十二宫",
+              "linesEn": [
+                "Action runs through private channels",
+                "Processed inwardly before surfacing",
+                "Cover and depth, less recognition"
+              ],
+              "linesZh": [
+                "行动先走隐蔽通道",
+                "先潜行酝酿，后浮现",
+                "换来掩护与深度，少了被看见"
+              ]
+            },
+            {
+              "nameEn": "Chiron in the 12th",
+              "nameZh": "凯龙在十二宫",
+              "linesEn": [
+                "Old hurt, not raw drive",
+                "\"I am wounded\", not \"I hold back\"",
+                "Asks a different response"
+              ],
+              "linesZh": [
+                "藏的是旧伤而非冲劲",
+                "是隐痛，不是压住的火",
+                "需要的回应完全不同"
+              ]
+            }
+          ],
+          "altEn": "Comparison of Mars in the 1st house (open, direct drive), Mars in the 12th house (drive routed through private channels), and Chiron in the 12th house (buried old hurt rather than anger).",
+          "altZh": "火星在一宫（外放直接的劲）、火星在十二宫（走隐蔽通道的劲）与凯龙在十二宫（藏起的旧伤）的对比。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Mars in the 12th house in Yourself",
+          "titleEn": "Five Signals of an Underground Mars",
+          "titleZh": "潜行火星的五个信号",
+          "items": [
+            {
+              "nameEn": "Anger arrives late",
+              "nameZh": "愤怒迟到",
+              "subEn": "Body first: clenched jaw, restless sleep, unnamed heaviness",
+              "subZh": "先到身体：咬紧的下颌、难眠与莫名沉重"
+            },
+            {
+              "nameEn": "Unseen effort, hollow finish",
+              "nameZh": "无人见的苦功",
+              "subEn": "Hardest work happens out of sight, results feel unowned",
+              "subZh": "最拼的活没人看见，成果却不踏实"
+            },
+            {
+              "nameEn": "Indirect conflict",
+              "nameZh": "迂回的冲突",
+              "subEn": "You withdraw, go quiet, or solve it alone",
+              "subZh": "退开、沉默，或独自把问题消化掉"
+            },
+            {
+              "nameEn": "Private fire",
+              "nameZh": "私下的火",
+              "subEn": "A quiet cause or project carries more fire than public life",
+              "subZh": "私下的事业或创作比台前更有火力"
+            },
+            {
+              "nameEn": "Slow burn, big release",
+              "nameZh": "积压后的爆发",
+              "subEn": "Small things build unspoken; one trigger releases too much",
+              "subZh": "小事积压不说，一个引信放出过量的火"
+            }
+          ],
+          "altEn": "Five observable signals of Mars in the 12th house: late body-first anger, unseen effort, indirect conflict, private passion projects, and resentment that builds then bursts.",
+          "altZh": "火星在十二宫的五个信号：迟到的身体化愤怒、无人见的苦功、迂回的冲突、私下的火力、积压后的爆发。"
+        }
+      ]
+    },
+    "black-moon-lilith": {
+      "hero": {
+        "prompt": "Editorial illustration of a calculated point in space: a wide elliptical orbit drawn in fine golden lines around a small dark Earth, the Moon resting at the orbit's farthest reach, where two slightly diverging dotted paths — one smooth and averaged, one oscillating — mark two versions of the same empty apogee point glowing like a hollow ring of light; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A golden elliptical lunar orbit with two slightly diverging paths marking the Moon's apogee, symbolizing the mean and true calculations of Black Moon Lilith.",
+        "altZh": "金色椭圆月轨上两条微微分岔的轨迹标出远地点，象征黑月莉莉丝的平均位与真实位两种算法。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## black moon lilith vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Liliths in Your Chart Software",
+          "titleZh": "排盘软件里的三个莉莉丝",
+          "columns": [
+            {
+              "nameEn": "Mean Lilith",
+              "nameZh": "平均莉莉丝",
+              "linesEn": [
+                "Smoothed, averaged apogee path",
+                "Moves ~40° per year, sign-stable",
+                "Matches older reference tables"
+              ],
+              "linesZh": [
+                "取远地点的平滑平均轨迹",
+                "每年约行 40°，星座稳定",
+                "与传统星历表一致"
+              ]
+            },
+            {
+              "nameEn": "True Lilith",
+              "nameZh": "真实莉莉丝",
+              "linesEn": [
+                "Real-time oscillating geometry",
+                "Most precise for a birth moment",
+                "Can shift signs within days"
+              ],
+              "linesZh": [
+                "实时震荡的轨道几何",
+                "对具体出生时刻最精确",
+                "数天内就可能换星座"
+              ]
+            },
+            {
+              "nameEn": "Asteroid Lilith (1181)",
+              "nameZh": "小行星莉莉丝 1181",
+              "linesEn": [
+                "Physical rock, discovered 1927",
+                "Standard ephemeris position",
+                "Differs from both apogee points"
+              ],
+              "linesZh": [
+                "实体小行星，1927 年发现",
+                "用标准星历定位，位置一致",
+                "与两种远地点位置都不同"
+              ]
+            }
+          ],
+          "altEn": "Comparison of mean Lilith (smoothed apogee, about 40 degrees per year), true Lilith (oscillating real-time apogee), and asteroid Lilith 1181 (a physical body discovered in 1927).",
+          "altZh": "平均莉莉丝（平滑远地点，每年约 40°）、真实莉莉丝（实时震荡远地点）与小行星莉莉丝 1181（1927 年发现的实体）的对比。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read black moon lilith in Yourself",
+          "titleEn": "Reading Lilith: Five Real-Life Signals",
+          "titleZh": "解读莉莉丝的五个信号",
+          "items": [
+            {
+              "nameEn": "Recurring self-censorship",
+              "nameZh": "反复的自我审查",
+              "subEn": "One quality gets edited out from learned social risk",
+              "subZh": "因习得的社交风险，反复删改同一特质"
+            },
+            {
+              "nameEn": "The \"too much\" accusation",
+              "nameZh": "「太过了」的指控",
+              "subEn": "The trait once labeled excessive, aggressive, or taboo",
+              "subZh": "曾被贴上过度、强势或禁忌标签的特质"
+            },
+            {
+              "nameEn": "Sign-mismatch frustration",
+              "nameZh": "星座对不上的困惑",
+              "subEn": "A reading never fits? Check mean vs true first",
+              "subZh": "解读总不贴合？先查是平均位还是真实位"
+            },
+            {
+              "nameEn": "Pull toward the prohibited",
+              "nameZh": "被禁止之物的吸引",
+              "subEn": "Repeated attraction just past the edge of the permitted",
+              "subZh": "反复被「不太被允许」的渴望吸引"
+            },
+            {
+              "nameEn": "House over sign",
+              "nameZh": "宫位重于星座",
+              "subEn": "The house shows the life arena where suppression plays out",
+              "subZh": "宫位指出压抑模式落在哪块生活领域"
+            }
+          ],
+          "altEn": "Five signals for reading Black Moon Lilith: recurring self-censorship, the 'too much' label, sign mismatches from calculation methods, pull toward the prohibited, and house placement as the life arena.",
+          "altZh": "解读黑月莉莉丝的五个信号：反复自我审查、「太过了」的标签、算法导致的星座错位、被禁止之物吸引、宫位指明领域。"
+        }
+      ]
+    },
+    "juno-astrology": {
+      "hero": {
+        "prompt": "Editorial illustration of partnership equity: two golden rings interlocked at the center of a perfectly balanced beam scale floating in a quiet starfield, a small asteroid resting at the fulcrum, the two pans holding equal constellations of stars — commitment weighed as fairness rather than romance; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "Two interlocked golden rings on a balanced scale with an asteroid at its fulcrum, symbolizing Juno's themes of commitment and power balance.",
+        "altZh": "天平支点上的小行星与两只相扣的金环，象征婚神星关于承诺与权力平衡的主题。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## juno astrology vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "The Relay: Venus, Mars, and Juno",
+          "titleZh": "接力三棒：金星、火星与婚神星",
+          "columns": [
+            {
+              "nameEn": "Venus",
+              "nameZh": "金星",
+              "linesEn": [
+                "Governs the opening move",
+                "Attraction, beauty, pleasure",
+                "Describes the meeting"
+              ],
+              "linesZh": [
+                "掌管开场的吸引",
+                "审美、愉悦与心动",
+                "描述相遇的那一刻"
+              ]
+            },
+            {
+              "nameEn": "Mars",
+              "nameZh": "火星",
+              "linesEn": [
+                "Supplies the raw desire",
+                "Heat and passion",
+                "Misses whether trust holds"
+              ],
+              "linesZh": [
+                "供给原始的欲望",
+                "热度与激情",
+                "看不出信任能否持久"
+              ]
+            },
+            {
+              "nameEn": "Juno",
+              "nameZh": "婚神星",
+              "linesEn": [
+                "Governs the staying power",
+                "Equity, loyalty, shared power",
+                "Describes the marriage"
+              ],
+              "linesZh": [
+                "掌管能否走得长远",
+                "公平、忠诚与权力分配",
+                "描述婚姻般的长期关系"
+              ]
+            }
+          ],
+          "altEn": "Comparison of Venus (attraction and the opening move), Mars (raw desire), and Juno (commitment, equity, and whether the bond holds).",
+          "altZh": "金星（吸引与开场）、火星（原始欲望）与婚神星（承诺、公平与关系能否持久）的对比。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Juno in Your Chart",
+          "titleEn": "Five Steps to Read Juno in a Chart",
+          "titleZh": "解读婚神星的五个步骤",
+          "items": [
+            {
+              "nameEn": "Juno's sign",
+              "nameZh": "婚神星的星座",
+              "subEn": "Sets the style of fairness: Libra balance, Scorpio loyalty",
+              "subZh": "定义公平的风格：天秤求对等，天蝎求忠诚"
+            },
+            {
+              "nameEn": "Juno's house",
+              "nameZh": "婚神星的宫位",
+              "subEn": "Where partnership justice gets tested: 7th, 8th, 4th, 10th",
+              "subZh": "公平在哪受考验：七宫、八宫、四宫、十宫"
+            },
+            {
+              "nameEn": "Hard aspects",
+              "nameZh": "硬相位",
+              "subEn": "Square Pluto: control struggles; opposite Moon: autonomy",
+              "subZh": "刑冥王见控制拉锯，冲月亮见安全与自主"
+            },
+            {
+              "nameEn": "Links to personal planets",
+              "nameZh": "与个人行星的连接",
+              "subEn": "Ties the blueprint to feeling, attraction, or drive",
+              "subZh": "把承诺蓝图连向情感、吸引或动力"
+            },
+            {
+              "nameEn": "Repeating themes",
+              "nameZh": "重复出现的主题",
+              "subEn": "The same imbalance across partners names the lesson",
+              "subZh": "跨对象重复的失衡，点名你的功课"
+            }
+          ],
+          "altEn": "Five steps for reading Juno: its sign sets the style of fairness, its house shows where justice is tested, hard aspects mark friction, personal-planet contacts link the blueprint, and repeating themes confirm it.",
+          "altZh": "解读婚神星五步：星座定公平风格、宫位看考验领域、硬相位标摩擦、个人行星连接蓝图、重复主题验证落点。"
+        }
+      ]
+    },
+    "persephone-goddess": {
+      "hero": {
+        "prompt": "Editorial illustration of descent and altered return: a winding path of pale golden light descends from a moonlit meadow into a deep dark hollow beneath the earth where a split pomegranate glows with seed-points of gold, and the same path rises again on the far side into faint dawn — one continuous loop through darkness, going down and coming back changed; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A glowing path descends underground past a split pomegranate with golden seeds and rises again toward dawn, symbolizing Persephone's cycle of descent, change, and altered return.",
+        "altZh": "一条发光的小径沉入地底，经过缀满金色籽粒的石榴，再升向微光黎明，象征珀耳塞福涅下降、转变与改变后回归的循环。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## What is Persephone?",
+          "afterHeadingZh": "## Persephone 是什么？",
+          "titleEn": "The Three-Beat Rhythm of the Myth",
+          "titleZh": "神话中的三拍循环",
+          "items": [
+            {
+              "nameEn": "The descent",
+              "nameZh": "被动下沉",
+              "subEn": "Pulled under without consent, somewhere unchosen",
+              "subZh": "未经同意被拉离熟悉处境"
+            },
+            {
+              "nameEn": "The binding change",
+              "nameZh": "暗处质变",
+              "subEn": "The pomegranate seed: absorbing what cannot be given back",
+              "subZh": "吃下石榴籽，收下无法归还的改变"
+            },
+            {
+              "nameEn": "The altered return",
+              "nameZh": "带着改变回归",
+              "subEn": "Coming back different, bound to two worlds",
+              "subZh": "回到地面，却同时属于两个世界"
+            }
+          ],
+          "altEn": "The three beats of the Persephone cycle: forced descent, binding change marked by the pomegranate seed, and an altered return.",
+          "altZh": "珀耳塞福涅循环的三拍：被动下沉、以石榴籽为记的暗处质变、带着改变的回归。"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Persephone vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Lenses on the Same Underworld",
+          "titleZh": "同一座冥府的三种透镜",
+          "columns": [
+            {
+              "nameEn": "Demeter lens",
+              "nameZh": "得墨忒尔视角",
+              "linesEn": [
+                "Centers the one left behind",
+                "Grief of the barren surface",
+                "Loses the change underground"
+              ],
+              "linesZh": [
+                "聚焦被留下的那个人",
+                "地面荒芜的哀伤",
+                "看不见地底正发生的质变"
+              ]
+            },
+            {
+              "nameEn": "Pluto lens",
+              "nameZh": "冥王星视角",
+              "linesEn": [
+                "Raw force of upheaval",
+                "The volcano, no negotiation",
+                "Loses the human arc of adapting"
+              ],
+              "linesZh": [
+                "剧变的原始力量",
+                "不容商量的火山",
+                "看不见人如何适应它"
+              ]
+            },
+            {
+              "nameEn": "Persephone lens",
+              "nameZh": "珀耳塞福涅视角",
+              "linesEn": [
+                "Lived experience of being taken",
+                "Becoming sovereign of the dark",
+                "Holds maiden and queen at once"
+              ],
+              "linesZh": [
+                "被卷入者的亲身经历",
+                "渐成冥府的主权者",
+                "同时承载少女与王后"
+              ]
+            }
+          ],
+          "altEn": "Comparison of three readings of the underworld: the Demeter lens of grief, the Pluto lens of raw upheaval, and the Persephone lens of lived transformation and sovereignty.",
+          "altZh": "冥府的三种解读：得墨忒尔的哀伤视角、冥王星的剧变视角，以及珀耳塞福涅亲历转化与主权的视角。"
+        }
+      ]
+    },
+    "leo-rising-houses": {
+      "hero": {
+        "prompt": "Editorial illustration of one chart, two rulers: a great arc of a zodiac wheel spans the frame, a radiant golden sun cresting the eastern horizon line while a quiet ringed planet hangs with visible weight at the western edge, a fine gold axis connecting the two across the wheel's dark segmented houses — warmth at the surface, gravity in the house of partnership; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A radiant sun rises at one edge of a zodiac wheel while a ringed planet weighs on the opposite edge, symbolizing Leo rising's Sun-ruled identity and Saturn-ruled partnerships.",
+        "altZh": "星盘一端旭日升起，另一端土星沉静压轴，象征狮子座上升太阳主导自我、土星掌管伴侣宫的结构。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## What is leo rising houses?",
+          "titleEn": "Three Planetary Lords of the Leo Rising Map",
+          "titleZh": "狮子上升星图的三位主星",
+          "columns": [
+            {
+              "nameEn": "Sun — 1st house",
+              "nameZh": "太阳：第一宫",
+              "linesEn": [
+                "Chart ruler, identity layer",
+                "Warmth and commanding presence",
+                "Governs the self, not partnership"
+              ],
+              "linesZh": [
+                "命主星，掌身份层",
+                "温暖而有气场的存在感",
+                "只管自我层，不管伴侣层"
+              ]
+            },
+            {
+              "nameEn": "Saturn — 7th house",
+              "nameZh": "土星：第七宫",
+              "linesEn": [
+                "Rules Aquarius on the 7th cusp",
+                "Weight, discipline, maturation",
+                "Partnerships form under gravity"
+              ],
+              "linesZh": [
+                "主管七宫宫头的水瓶座",
+                "分量、纪律与成熟课题",
+                "亲密关系在重力下成形"
+              ]
+            },
+            {
+              "nameEn": "Venus — 3rd & 10th",
+              "nameZh": "金星：三宫与十宫",
+              "linesEn": [
+                "Rules Libra (3rd), Taurus (10th)",
+                "Diplomacy in communication",
+                "Career builds on aesthetic grace"
+              ],
+              "linesZh": [
+                "主管三宫天秤与十宫金牛",
+                "沟通自带圆融分寸",
+                "事业靠审美与稳健累积"
+              ]
+            }
+          ],
+          "altEn": "The Leo rising house map: the Sun rules the 1st house identity, Saturn rules the 7th house of partnerships, and Venus rules both the 3rd house of communication and the 10th house of career.",
+          "altZh": "狮子座上升的宫主星结构：太阳掌第一宫身份，土星掌第七宫伴侣关系，金星同时掌第三宫沟通与第十宫事业。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read leo rising houses in Your Chart",
+          "titleEn": "Four Steps to Read This House Map",
+          "titleZh": "读懂这张宫位图的四步",
+          "items": [
+            {
+              "nameEn": "Locate Saturn",
+              "nameZh": "定位土星",
+              "subEn": "Its sign and natal house set the character of the 7th",
+              "subZh": "土星的星座与落宫决定七宫的气质"
+            },
+            {
+              "nameEn": "Notice partnership weight",
+              "nameZh": "觉察关系的分量",
+              "subEn": "Structure, slow timelines, authority themes by design",
+              "subZh": "结构感、慢节奏与责任主题是结构使然"
+            },
+            {
+              "nameEn": "Trace Venus (3rd & 10th)",
+              "nameZh": "追踪金星（三宫与十宫）",
+              "subEn": "Its sign and aspects color communication and career",
+              "subZh": "金星的星座与相位染色沟通与事业"
+            },
+            {
+              "nameEn": "Find the Sun",
+              "nameZh": "找到太阳",
+              "subEn": "Its natal house shows where the identity expresses most",
+              "subZh": "太阳落宫指出身份感最外显的领域"
+            }
+          ],
+          "altEn": "Four steps for reading Leo rising houses: locate Saturn, notice the structural weight in partnerships, trace Venus through the 3rd and 10th, and find where the Sun sits.",
+          "altZh": "解读狮子座上升宫位图四步：定位土星、觉察关系分量、追踪金星双宫、找到太阳落宫。"
+        }
+      ]
+    },
+    "libra-rising-houses": {
+      "hero": {
+        "prompt": "Editorial illustration of hidden linkage: a serene balance scale rendered in fine gold line floats at the center, one pan holding a single coin, the other holding two clasped rings, while beneath the calm surface a single taut glowing cord runs underground from pan to pan, connecting money and partnership through one shared hidden current; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A calm golden scale holds a coin in one pan and two rings in the other, joined underneath by one hidden glowing cord, symbolizing the shared Mars rulership linking money and partnerships for Libra rising.",
+        "altZh": "金色天平一端是钱币、一端是双环，底下由同一根发光的线相连，象征天秤座上升下金钱与亲密关系共享火星主管。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## What is libra rising houses?",
+          "titleEn": "One Chart, Two Planetary Tracks",
+          "titleZh": "一张星盘，两条行星轨道",
+          "columns": [
+            {
+              "nameEn": "Venus — 1st & 8th",
+              "nameZh": "金星：一宫与八宫",
+              "linesEn": [
+                "Chart ruler, identity layer",
+                "Relational, balance-seeking surface",
+                "Depth, intimacy, shared stakes"
+              ],
+              "linesZh": [
+                "命主星，掌身份层",
+                "以和谐为先的外在呈现",
+                "也掌深度、亲密与共同利害"
+              ]
+            },
+            {
+              "nameEn": "Mars — 2nd & 7th",
+              "nameZh": "火星：二宫与七宫",
+              "linesEn": [
+                "Charged personal finances",
+                "Directness in close partnerships",
+                "Money and bonds share one ruler"
+              ],
+              "linesZh": [
+                "让金钱决定自带张力",
+                "亲密关系里的直接火力",
+                "财务与关系共享同一主星"
+              ]
+            }
+          ],
+          "altEn": "The Libra rising dual-ruler map: Venus governs the 1st house identity and 8th house depth, while Mars governs both the 2nd house of money and the 7th house of partnerships.",
+          "altZh": "天秤座上升的双主星结构：金星掌第一宫身份与第八宫深度，火星同时掌第二宫金钱与第七宫亲密关系。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read libra rising houses in Your Chart",
+          "titleEn": "Five Signals of the Mars-Linked Domains",
+          "titleZh": "火星双宫联动的五个信号",
+          "items": [
+            {
+              "nameEn": "Check natal Mars first",
+              "nameZh": "先查本命火星",
+              "subEn": "Its sign, house, and aspects shape both money and bonds",
+              "subZh": "星座、落宫与相位同时塑造财与情"
+            },
+            {
+              "nameEn": "Track Mars transits",
+              "nameZh": "追踪火星行运",
+              "subEn": "Financial and relational stress often share one window",
+              "subZh": "财务与关系压力常在同一时段出现"
+            },
+            {
+              "nameEn": "Compare the 2nd and 7th",
+              "nameZh": "对照二宫与七宫",
+              "subEn": "Planets in either house operate under Mars rulership",
+              "subZh": "两宫内的行星都在火星主管之下"
+            },
+            {
+              "nameEn": "Note where Venus sits",
+              "nameZh": "看金星的落点",
+              "subEn": "Chart ruler colors identity and depth of engagement",
+              "subZh": "命主星定调呈现方式与投入深度"
+            },
+            {
+              "nameEn": "Watch the pressure gap",
+              "nameZh": "观察压力下的落差",
+              "subEn": "Martian intensity surfaces when stakes get high",
+              "subZh": "利害升高时，火星式的直接会浮现"
+            }
+          ],
+          "altEn": "Five signals for reading Libra rising houses: check natal Mars, track its transits, compare the 2nd and 7th houses, note Venus's placement, and watch the gap between calm presentation and behavior under pressure.",
+          "altZh": "解读天秤座上升宫位的五个信号：查本命火星、追踪行运、对照二宫与七宫、看金星落点、观察压力下的落差。"
+        }
+      ]
+    },
+    "scorpio-rising-houses": {
+      "hero": {
+        "prompt": "Editorial illustration of a hidden Venusian signature: a faint scorpion constellation traced in thin silvery-indigo lines dominates the dark foreground sky, while across a great house wheel two arched doorways glow with warm soft golden light — one on the western partnership horizon, one tucked behind the eastern pre-dawn edge — gentle rose-like warmth radiating from inside both; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A scorpion constellation over a house wheel where two doorways glow with warm golden light, symbolizing Venus quietly ruling the 7th and 12th houses for Scorpio rising.",
+        "altZh": "天蝎星座图案笼罩星盘，两扇宫门透出温润金光，象征天蝎座上升下金星悄然主管第七宫与第十二宫。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## scorpio rising houses vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Mirror Maps: Scorpio vs Taurus Rising",
+          "titleZh": "镜像结构：天蝎上升对照金牛上升",
+          "columns": [
+            {
+              "nameEn": "Scorpio rising",
+              "nameZh": "天蝎座上升",
+              "linesEn": [
+                "Mars–Pluto shape the persona",
+                "Venus rules the 7th (Taurus cusp)",
+                "Drawn to steady, grounded partners"
+              ],
+              "linesZh": [
+                "火星与冥王塑造外在气场",
+                "金星主管七宫（金牛宫头）",
+                "被沉稳务实的伴侣吸引"
+              ]
+            },
+            {
+              "nameEn": "Taurus rising",
+              "nameZh": "金牛座上升",
+              "linesEn": [
+                "Venus rules the 1st, soft persona",
+                "Mars–Pluto rule the 7th",
+                "Draws intense, transforming partners"
+              ],
+              "linesZh": [
+                "金星掌一宫，气质温和",
+                "火星与冥王主管七宫",
+                "常吸引强烈而具转化力的伴侣"
+              ]
+            }
+          ],
+          "altEn": "Mirror comparison: Scorpio rising pairs a Mars–Pluto persona with Venus-ruled partnerships, while Taurus rising pairs a Venusian persona with Mars–Pluto-ruled partnerships.",
+          "altZh": "镜像对比：天蝎座上升以火星冥王气场配金星主管的伴侣宫，金牛座上升则以金星气质配火星冥王主管的伴侣宫。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read scorpio rising houses in Your Chart",
+          "titleEn": "Six Steps to Verify the Venus Signature",
+          "titleZh": "验证金星签名的六个步骤",
+          "items": [
+            {
+              "nameEn": "Confirm the Ascendant",
+              "nameZh": "确认上升星座",
+              "subEn": "Birth time must be accurate; thirty minutes can shift it",
+              "subZh": "出生时间要准，半小时就可能换上升"
+            },
+            {
+              "nameEn": "Identify your house system",
+              "nameZh": "确认分宫制",
+              "subEn": "Whole-sign and equal-house show the cusps cleanly",
+              "subZh": "整宫制与等宫制下宫头星座最清晰"
+            },
+            {
+              "nameEn": "Check the 7th cusp",
+              "nameZh": "查第七宫宫头",
+              "subEn": "Taurus there means Venus governs partnerships",
+              "subZh": "若是金牛座，金星即主管伴侣宫"
+            },
+            {
+              "nameEn": "Locate Venus fully",
+              "nameZh": "完整定位金星",
+              "subEn": "Sign, house, dignity, and aspects set how it operates",
+              "subZh": "星座、宫位、庙旺与相位决定其表现"
+            },
+            {
+              "nameEn": "Check planets in the 7th",
+              "nameZh": "查七宫内行星",
+              "subEn": "Any resident planet co-shapes the partnership pattern",
+              "subZh": "宫内行星与金星共同塑造关系模式"
+            },
+            {
+              "nameEn": "Note the 12th cusp",
+              "nameZh": "看第十二宫宫头",
+              "subEn": "Libra there puts the private inner life on Venus too",
+              "subZh": "若是天秤座，隐秘内在生活也归金星"
+            }
+          ],
+          "altEn": "Six steps for reading Scorpio rising houses: confirm the Ascendant, identify the house system, check the 7th cusp for Taurus, locate Venus fully, check planets in the 7th, and note Libra on the 12th cusp.",
+          "altZh": "解读天蝎座上升宫位的六步：确认上升、确认分宫制、查七宫宫头、完整定位金星、查七宫行星、看十二宫宫头。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,709 @@
+{
+  "_comment": "NODES cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/nodes",
+  "urlBase": "/images/nodes",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "how-to-find-north-node": {
+      "hero": {
+        "prompt": "A luminous lunar orbit ring intersecting the flat plane of the ecliptic against a quiet star field, the ascending crossing point marked by a small radiant gold node; a large magnifying lens circle hovers over that crossing, revealing two slightly offset gold points straddling a thin boundary line on a zodiac band — two calculations of the same node, almost but not quite agreeing; faint compass tick marks ring the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Magnified crossing point of the Moon's orbit and the ecliptic showing two slightly offset node positions near a sign boundary",
+        "altZh": "月亮轨道与黄道交点的放大示意，星座边界旁显示真假交点的细微偏移"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The North Node vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The North Node 与相近概念：运作方式 + 取舍",
+          "titleEn": "True Node vs Mean Node",
+          "titleZh": "真交点与平交点对照",
+          "columns": [
+            {
+              "nameEn": "True Node",
+              "nameZh": "真交点",
+              "linesEn": [
+                "Moon's exact, gently oscillating position",
+                "Default in most modern software",
+                "Closer to the actual sky position"
+              ],
+              "linesZh": [
+                "按月亮轨道实际摆动计算",
+                "多数现代排盘的默认设置",
+                "更贴近天象的真实位置"
+              ]
+            },
+            {
+              "nameEn": "Mean Node",
+              "nameZh": "平交点",
+              "linesEn": [
+                "Smoothed average of the node's motion",
+                "Drifts steadily backward through the zodiac",
+                "Clean, even motion without oscillation"
+              ],
+              "linesZh": [
+                "取一段时间的平均值",
+                "沿黄道稳定逆行漂移",
+                "数值平稳、不来回抖动"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the true node and mean node calculation settings, which normally agree within a degree or two",
+          "altZh": "真交点与平交点两种计算方式的对照图，两者通常只差一两度"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The North Node in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The North Node",
+          "titleEn": "Five Steps to a North Node You Can Trust",
+          "titleZh": "五步定位可信的北交点",
+          "items": [
+            {
+              "nameEn": "Run your chart",
+              "nameZh": "排出星盘",
+              "subEn": "One reliable calculator, accurate date, time, and location",
+              "subZh": "用可靠工具，备齐准确的出生日期、时间与地点"
+            },
+            {
+              "nameEn": "Read sign, then house",
+              "nameZh": "先读星座再看宫位",
+              "subEn": "Note the node's zodiac sign first, then its house number",
+              "subZh": "先确认交点星座，再记下它落入的宫位"
+            },
+            {
+              "nameEn": "Check the node setting",
+              "nameZh": "核对计算方式",
+              "subEn": "See whether the chart uses the true node or the mean node",
+              "subZh": "确认工具用的是真交点还是平交点"
+            },
+            {
+              "nameEn": "Mark the South Node",
+              "nameZh": "标出南交点",
+              "subEn": "Same degree, exactly opposite sign and house",
+              "subZh": "在正对面的星座与宫位、同一度数处"
+            },
+            {
+              "nameEn": "Run the cusp check",
+              "nameZh": "做边界复核",
+              "subEn": "Born near a sign boundary? Rerun on the other setting",
+              "subZh": "若靠近星座交界，换另一种交点设置重算"
+            }
+          ],
+          "altEn": "Five-step sequence for locating a trustworthy North Node placement",
+          "altZh": "定位可信北交点的五步流程图"
+        }
+      ]
+    },
+    "north-node-in-gemini": {
+      "hero": {
+        "prompt": "One massive, confident arrow shot across the night sky dissolves mid-flight into a scattering flock of small light-winged paper birds that branch off in many different directions, each trailing a thin thread of inquiry; the single bold trajectory breaks into a delicate web of crisscrossing conversational paths strung between faint twin stars, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A single grand arrow dissolving mid-flight into many small birds branching in different directions",
+        "altZh": "一支笃定的巨箭在空中化作四散探问的小鸟群"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## north node in gemini vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Sagittarius Habit vs Gemini Growth",
+          "titleZh": "射手惯性与双子成长方向",
+          "columns": [
+            {
+              "nameEn": "South Node in Sagittarius",
+              "nameZh": "射手座南交点",
+              "linesEn": [
+                "Fire element, ruled by Jupiter",
+                "Sweeping certainty is the default reflex",
+                "Reaches for the grand theory before the details",
+                "Comfort of always having the answer"
+              ],
+              "linesZh": [
+                "火象，由木星主管",
+                "习惯性的大局笃定",
+                "先抓宏大理论，再听细节",
+                "总有答案的舒适感"
+              ]
+            },
+            {
+              "nameEn": "North Node in Gemini",
+              "nameZh": "双子座北交点",
+              "linesEn": [
+                "Air element, ruled by Mercury",
+                "Curiosity, questions, everyday exchange",
+                "Gathers details, holds more than one view",
+                "Relief, not defeat, in being surprised"
+              ],
+              "linesZh": [
+                "风象，由水星主管",
+                "好奇、提问与日常交流",
+                "收集细节，容纳多个视角",
+                "被问倒时感到松弛而非挫败"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the Sagittarius south node default and the Gemini north node growth direction",
+          "altZh": "射手座南交点惯性与双子座北交点成长方向对照图"
+        }
+      ]
+    },
+    "north-node-in-sagittarius": {
+      "hero": {
+        "prompt": "Tall, teetering stacks of loose pages, open books and unspooled scrolls fill the left foreground, fading into shadow; from their midst a single bow has just released one clean gold arrow that arcs decisively across the wide sky toward a lone bright beacon star on the far horizon, leaving the clutter behind; the arrow's trail gathers a few loose page fragments into one coherent line of light, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A gold arrow leaving stacks of unread pages behind and arcing toward a single distant beacon star",
+        "altZh": "金色箭矢离开成堆资料，朝远方孤星笃定飞去"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## north node in sagittarius vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Gemini Default vs Sagittarius Direction",
+          "titleZh": "双子惯性与射手成长方向",
+          "columns": [
+            {
+              "nameEn": "South Node in Gemini",
+              "nameZh": "双子座南交点",
+              "linesEn": [
+                "Air — Mercury-ruled, third-house themes",
+                "Quick data-gathering runs as the default",
+                "One more source before letting yourself decide",
+                "Fluent on every side, quiet on belief"
+              ],
+              "linesZh": [
+                "风象，水星主管，三宫主题",
+                "快速收集信息是默认模式",
+                "总想再查一个来源才肯决定",
+                "能论证各方，却少有立场"
+              ]
+            },
+            {
+              "nameEn": "North Node in Sagittarius",
+              "nameZh": "射手座北交点",
+              "linesEn": [
+                "Fire — Jupiter-ruled, ninth-house themes",
+                "Pulls scattered facts toward synthesized meaning",
+                "Commit to a working framework before certainty",
+                "Craves a bigger why, not one more what"
+              ],
+              "linesZh": [
+                "火象，木星主管，九宫主题",
+                "把零散信息整合成意义",
+                "在完全确定前先选定框架",
+                "追问更大的为什么"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the Gemini south node fact-collecting default and the Sagittarius north node pull toward committed meaning",
+          "altZh": "双子座南交点的信息收集惯性与射手座北交点的意义承诺方向对照图"
+        }
+      ]
+    },
+    "north-node-in-scorpio": {
+      "hero": {
+        "prompt": "A sturdy stone vault built into solid earth stands with its heavy circular door ajar at the edge of a vast, still, deep pool; a single thread of warm light spills from the vault and descends below the dark water's surface, illuminating hidden depths where faint intertwined forms glow; ripples barely disturb the calm, solid ground and deep water meeting as two halves of one scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A stone vault door ajar beside deep still water, with a gold thread of light descending beneath the surface",
+        "altZh": "石造保险库微微敞开，一缕金光潜入深水之下"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## North Node in Scorpio vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## North Node in Scorpio 与相近概念：运作方式 + 取舍",
+          "titleEn": "Taurus Comfort vs Scorpio Depth",
+          "titleZh": "金牛舒适区与天蝎深度",
+          "columns": [
+            {
+              "nameEn": "South Node in Taurus",
+              "nameZh": "金牛座南交点",
+              "linesEn": [
+                "Stability, patience, self-reliance",
+                "Keeps everything predictable and controlled",
+                "Reaches for control when unsettled",
+                "Treats change as loss until practiced"
+              ],
+              "linesZh": [
+                "稳定、耐心、自给自足",
+                "凡事求可控、可预期",
+                "不安时先抓住掌控感",
+                "未经练习时把改变当损失"
+              ]
+            },
+            {
+              "nameEn": "North Node in Scorpio",
+              "nameZh": "天蝎座北交点",
+              "linesEn": [
+                "Intimacy, shared resources, honesty",
+                "Ruled by Mars and Pluto",
+                "Sustained feeling over quick reassurance",
+                "Enter change before it is forced"
+              ],
+              "linesZh": [
+                "亲密、共享资源与坦诚",
+                "由火星与冥王星主管",
+                "停留在感受里而非速效安抚",
+                "在被逼迫之前主动迎向改变"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the Taurus south node comfort zone and the Scorpio north node pull toward depth and intimacy",
+          "altZh": "金牛座南交点舒适区与天蝎座北交点深度方向对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read North Node in Scorpio in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 North Node in Scorpio",
+          "titleEn": "Five Signals of the Scorpio Node",
+          "titleZh": "天蝎北交点的五个信号",
+          "items": [
+            {
+              "nameEn": "Guarding resources tightly",
+              "nameZh": "紧紧守住资源",
+              "subEn": "Money, time, possessions held so close nothing new is risked",
+              "subZh": "钱、时间、物品攥得太紧，新事物无从冒险"
+            },
+            {
+              "nameEn": "Calm as the only option",
+              "nameZh": "只允许平静",
+              "subEn": "Uncertainty treated as a problem to manage, not feel",
+              "subZh": "把不确定当成要处理的问题，而不是去感受"
+            },
+            {
+              "nameEn": "Managing emotions away",
+              "nameZh": "把情绪处理掉",
+              "subEn": "Reaching for distraction the moment a feeling surfaces",
+              "subZh": "难受的感觉一冒头就转向分心"
+            },
+            {
+              "nameEn": "Testing or rushing closeness",
+              "nameZh": "试探或催逼亲密",
+              "subEn": "Pushed to rupture, or kept shallow enough to control",
+              "subZh": "把关系逼到破裂，或停在浅处以便掌控"
+            },
+            {
+              "nameEn": "Postponing endings",
+              "nameZh": "拖延告别",
+              "subEn": "Routines and items held long past their usefulness",
+              "subZh": "习惯与物件早已无用，却迟迟不放手"
+            }
+          ],
+          "altEn": "Five everyday signals that the Scorpio north node pattern is active",
+          "altZh": "天蝎座北交点模式的五个日常信号"
+        }
+      ]
+    },
+    "north-node-in-taurus": {
+      "hero": {
+        "prompt": "A wide landscape split in motion: on the left, churning storm waves and forked lightning over restless dark water; the turbulence settles rightward into layered, solid earth strata where a single steady tree with deep visible roots stands beside a low stone wall under a calm, faintly gold-lit sky; stillness gradually replacing turmoil across the frame, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Storm water settling into solid layered earth where one steady deep-rooted tree stands",
+        "altZh": "翻涌的风暴归于沉静土地，一棵深根之树安然伫立"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## North Node in Taurus vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## North Node in Taurus 与相近概念：运作方式 + 取舍",
+          "titleEn": "Scorpio Reflex vs Taurus Growth",
+          "titleZh": "天蝎惯性与金牛成长方向",
+          "columns": [
+            {
+              "nameEn": "South Node in Scorpio",
+              "nameZh": "天蝎座南交点",
+              "linesEn": [
+                "Water (fixed) — the opposing pole",
+                "Inherited fluency with crisis and intensity",
+                "Manufactures drama where none is needed",
+                "Distrusts situations quietly going well"
+              ],
+              "linesZh": [
+                "固定水象，轴的另一端",
+                "与危机和强烈感天生熟稔",
+                "在平静处制造不必要的波澜",
+                "对悄悄变好的事心存怀疑"
+              ]
+            },
+            {
+              "nameEn": "North Node in Taurus",
+              "nameZh": "金牛座北交点",
+              "linesEn": [
+                "Earth (fixed), in polarity with Scorpio",
+                "Stability, simplicity, steady self-worth",
+                "Calmest in slow, tangible, ordinary things",
+                "Peace stops reading as a threat over time"
+              ],
+              "linesZh": [
+                "固定土象，与天蝎相对",
+                "稳定、简单、扎实的自我价值",
+                "在缓慢具体的日常里最安定",
+                "平静渐渐不再像威胁"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the Scorpio south node crisis reflex and the Taurus north node growth toward steadiness",
+          "altZh": "天蝎座南交点危机惯性与金牛座北交点安稳方向对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read North Node in Taurus in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 North Node in Taurus",
+          "titleEn": "Five Signals of the Taurus Node",
+          "titleZh": "金牛北交点的五个信号",
+          "items": [
+            {
+              "nameEn": "Calm feels suspicious",
+              "nameZh": "平静令人起疑",
+              "subEn": "Bracing during peaceful stretches for the moment that feels real",
+              "subZh": "日子平顺时反而紧绷，等着那个更真实的时刻"
+            },
+            {
+              "nameEn": "Inventing stakes",
+              "nameZh": "凭空制造风险",
+              "subEn": "Simple plans get complicated; complexity feels safer",
+              "subZh": "简单的计划被复杂化，复杂才显得可信"
+            },
+            {
+              "nameEn": "Slowing down reads as losing",
+              "nameZh": "慢下来像掉队",
+              "subEn": "Rest triggers guilt instead of restoration",
+              "subZh": "休息带来内疚，而不是恢复"
+            },
+            {
+              "nameEn": "Undervaluing enough",
+              "nameZh": "低估已经足够的",
+              "subEn": "Stable income or a quiet bond feels like a thing to escape",
+              "subZh": "稳定收入、平静关系反而想逃离"
+            },
+            {
+              "nameEn": "Relief in the ordinary",
+              "nameZh": "日常带来安定",
+              "subEn": "Cooking, walking, countable money steady you most",
+              "subZh": "做饭、散步、看得见的钱最能稳住你"
+            }
+          ],
+          "altEn": "Five observable signals of the Taurus north node growth direction",
+          "altZh": "金牛座北交点成长方向的五个可观察信号"
+        }
+      ]
+    },
+    "north-node-vs-south-node": {
+      "hero": {
+        "prompt": "A great circular chart wheel spans the sky, crossed by one luminous diagonal axis exactly through its center; at the lower end rests a fully polished gold sphere on a smooth, deeply worn path, while the opposite upper end holds the same sphere only half-drawn, its remaining contour sketched in faint dotted lines amid unmarked open space; the single axis binds the finished and the unfinished as two ends of one line, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "One axis across a chart wheel joining a polished sphere on a worn path with a half-sketched sphere in open space",
+        "altZh": "一条轴线贯穿星盘，连接磨亮的旧端与尚未画完的新端"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## What is North Node vs South Node?",
+          "afterHeadingZh": "## North Node vs South Node 是什么？",
+          "titleEn": "One Axis, Two Ends",
+          "titleZh": "一条轴的两端",
+          "columns": [
+            {
+              "nameEn": "South Node",
+              "nameZh": "南交点",
+              "linesEn": [
+                "Over-rehearsed strength, safe and automatic",
+                "Pulls backward toward comfort",
+                "The default you reach for under stress",
+                "A talent to keep using consciously"
+              ],
+              "linesZh": [
+                "练过头的强项，安全而自动",
+                "向后拉回舒适区",
+                "压力下的第一反应",
+                "值得有意识续用的天赋"
+              ]
+            },
+            {
+              "nameEn": "North Node",
+              "nameZh": "北交点",
+              "linesEn": [
+                "Underdeveloped direction, unfamiliar at first",
+                "Exact opposite sign and house",
+                "The quality you admire but rarely practice",
+                "Earned through repeated practice"
+              ],
+              "linesZh": [
+                "尚未发展的方向，起初陌生",
+                "落在正对面的星座与宫位",
+                "欣赏却很少练习的品质",
+                "靠反复练习挣来的成长"
+              ]
+            }
+          ],
+          "altEn": "The South Node comfort pole and the North Node growth pole compared as one axis",
+          "altZh": "南交点舒适端与北交点成长端的同轴对照图"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## North Node vs South Node vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "What Each Chart Feature Answers",
+          "titleZh": "星盘要素各自回答什么",
+          "columns": [
+            {
+              "nameEn": "Natal planet",
+              "nameZh": "本命行星",
+              "linesEn": [
+                "A standing capacity carried at all times",
+                "Describes what you are like on any given day"
+              ],
+              "linesZh": [
+                "随时携带的固有能力",
+                "描述你在任何一天的样子"
+              ]
+            },
+            {
+              "nameEn": "Transit",
+              "nameZh": "行运",
+              "linesEn": [
+                "Times an external event",
+                "Precision of timing, not slow development"
+              ],
+              "linesZh": [
+                "为外部事件计时",
+                "重在对时，不谈长期发展"
+              ]
+            },
+            {
+              "nameEn": "Nodal axis",
+              "nameZh": "交点轴",
+              "linesEn": [
+                "A directional pull between past and future",
+                "Only resolves across years and decades"
+              ],
+              "linesZh": [
+                "在过去与未来之间指方向",
+                "要放在数年数十年里看"
+              ]
+            }
+          ],
+          "altEn": "Comparison of what a natal planet, a transit, and the nodal axis each answer in a chart",
+          "altZh": "本命行星、行运与交点轴各自回答什么问题的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read North Node vs South Node in Yourself",
+          "afterHeadingZh": "## 如何在自己星盘里识别 North Node vs South Node",
+          "titleEn": "Five Signals of Your Nodal Axis",
+          "titleZh": "交点轴的五个观察信号",
+          "items": [
+            {
+              "nameEn": "Default under stress",
+              "nameZh": "压力下的默认动作",
+              "subEn": "The automatic move when pressured points to the South Node",
+              "subZh": "受压时的自动反应多指向南交点"
+            },
+            {
+              "nameEn": "Admired but avoided",
+              "nameZh": "欣赏却回避的能力",
+              "subEn": "A quality you respect in others yet rarely practice",
+              "subZh": "敬佩别人身上、自己却少练的品质"
+            },
+            {
+              "nameEn": "Praise that feels hollow",
+              "nameZh": "听着发空的夸奖",
+              "subEn": "Celebrated for a strength that no longer satisfies",
+              "subZh": "因不再满足你的强项而被称赞"
+            },
+            {
+              "nameEn": "Clumsy-then-rewarding growth",
+              "nameZh": "先别扭后回甘的成长",
+              "subEn": "Awkward and unnatural at first, then quietly rewarding",
+              "subZh": "起初笨拙不自然，随后悄悄给出回报"
+            },
+            {
+              "nameEn": "The repeating life theme",
+              "nameZh": "反复出现的人生主题",
+              "subEn": "A pattern circled back to decade after decade",
+              "subZh": "几十年间一再绕回的同一模式"
+            }
+          ],
+          "altEn": "Five observable signals for reading your own nodal axis",
+          "altZh": "识别自己交点轴的五个观察信号"
+        }
+      ]
+    },
+    "south-node": {
+      "hero": {
+        "prompt": "A weathered stone launch platform built from smooth, well-worn interlocking blocks glows softly from within, standing on dark ground; from its surface a slender arc of gold light ascends across the sky toward a faint, half-formed constellation high in the distance; the platform's worn steps shine with use rather than decay, clearly the foundation the ascending arc pushes off from; behind it an orbital ring crosses a flat ecliptic plane, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A worn, glowing stone platform launching an arc of light toward a faint distant constellation",
+        "altZh": "被岁月磨亮的石造发射台，托起一道升向远方星座的光弧"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## south node vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "South Node Next to Its Neighbors",
+          "titleZh": "南交点与易混概念对照",
+          "columns": [
+            {
+              "nameEn": "South Node",
+              "nameZh": "南交点",
+              "linesEn": [
+                "Competence you arrive already fluent in",
+                "Reads as inherited, pre-installed skill",
+                "Over-relied on, it stalls growth"
+              ],
+              "linesZh": [
+                "与生俱来就熟练的能力",
+                "像预装好的旧有本领",
+                "过度依赖会拖住成长"
+              ]
+            },
+            {
+              "nameEn": "North Node",
+              "nameZh": "北交点",
+              "linesEn": [
+                "The stretch you have not made yet",
+                "A fixed 180 degrees opposite",
+                "Funded by redeployed South Node skill"
+              ],
+              "linesZh": [
+                "尚未迈出的伸展方向",
+                "固定相隔一百八十度",
+                "靠转用南交点的本事供给"
+              ]
+            },
+            {
+              "nameEn": "Natal Moon",
+              "nameZh": "本命月亮",
+              "linesEn": [
+                "Present-life emotional baseline",
+                "Comfort learned this lifetime",
+                "Distinct from inherited competence"
+              ],
+              "linesZh": [
+                "今生的情绪基线",
+                "这一世习得的安适",
+                "不同于先天带来的熟练"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the South Node with the North Node and the natal Moon",
+          "altZh": "南交点与北交点、本命月亮的三方对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read south node in Your Chart",
+          "titleEn": "Spotting Your South Node",
+          "titleZh": "在星盘里认出南交点",
+          "items": [
+            {
+              "nameEn": "Find the glyph",
+              "nameZh": "找到符号",
+              "subEn": "The horseshoe mark sits exactly opposite your North Node",
+              "subZh": "马蹄形符号永远在北交点正对面"
+            },
+            {
+              "nameEn": "Notice the easy skill",
+              "nameZh": "留意毫不费力的本事",
+              "subEn": "Praised by others, barely registers as effort to you",
+              "subZh": "别人称赞、你却不觉得费力的技能"
+            },
+            {
+              "nameEn": "Watch your retreat",
+              "nameZh": "观察你的退路",
+              "subEn": "The competency you default to under pressure",
+              "subZh": "压力之下你自动调用的那套能力"
+            },
+            {
+              "nameEn": "Spot the finished feeling",
+              "nameZh": "找似曾相识的领域",
+              "subEn": "A life area that feels done even when you are young",
+              "subZh": "年纪轻轻就觉得早已经历过的领域"
+            },
+            {
+              "nameEn": "Check nearby planets",
+              "nameZh": "查看贴近的行星",
+              "subEn": "A planet close to the node colors and strengthens the pull",
+              "subZh": "贴近交点的行星会加深这股回拉"
+            }
+          ],
+          "altEn": "Five steps for spotting the South Node in your own chart",
+          "altZh": "在自己星盘里认出南交点的五个步骤"
+        }
+      ]
+    },
+    "cancer-north-node": {
+      "hero": {
+        "prompt": "A stark mountain summit crowned by a rigid stone watchtower stands on the left, cold and self-contained; a winding path descends the slope toward a small cottage by moonlit tidal water on the right, its rounded door open and hearth light spilling warm gold onto the shore; a crescent moon hangs over the gentle tide, the journey from solitary summit to lit home traced as one continuous line, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A path descending from a solitary mountain watchtower to a warm-lit cottage beside moonlit water",
+        "altZh": "山顶孤塔沿小径而下，通向月光海岸边亮灯的家"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## cancer north node vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Capricorn Anchor vs Cancer Growth",
+          "titleZh": "摩羯惯性与巨蟹成长方向",
+          "columns": [
+            {
+              "nameEn": "South Node in Capricorn",
+              "nameZh": "摩羯座南交点",
+              "linesEn": [
+                "Control, achievement, composure",
+                "Safety measured by what it can control",
+                "Duty, mastery, status feel automatic",
+                "Composure is the reflex when stress hits"
+              ],
+              "linesZh": [
+                "掌控、成就与镇定",
+                "以可掌控之物衡量安全",
+                "责任、专精、地位驾轻就熟",
+                "压力一来先端起镇定"
+              ]
+            },
+            {
+              "nameEn": "North Node in Cancer",
+              "nameZh": "巨蟹座北交点",
+              "linesEn": [
+                "Home, belonging, emotional security",
+                "Safety measured by care given and received",
+                "Feeling, roots, and being held",
+                "Stretched when asked to accept care"
+              ],
+              "linesZh": [
+                "家、归属与情感安全",
+                "以给予和接受的关怀衡量安全",
+                "感受、根基与被承接",
+                "被照顾时反而感到吃力"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the Capricorn south node self-reliance and the Cancer north node pull toward belonging",
+          "altZh": "摩羯座南交点自立惯性与巨蟹座北交点归属方向对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read cancer north node in Yourself",
+          "titleEn": "Where the Axis Plays Out by House",
+          "titleZh": "交点轴落宫的不同舞台",
+          "items": [
+            {
+              "nameEn": "4th / 10th houses",
+              "nameZh": "四宫 / 十宫",
+              "subEn": "Home versus career",
+              "subZh": "家庭与事业之间"
+            },
+            {
+              "nameEn": "7th / 1st houses",
+              "nameZh": "七宫 / 一宫",
+              "subEn": "Partnership versus going it alone",
+              "subZh": "伙伴关系与独自前行之间"
+            },
+            {
+              "nameEn": "5th / 11th houses",
+              "nameZh": "五宫 / 十一宫",
+              "subEn": "Personal joy versus public role",
+              "subZh": "个人喜悦与公共角色之间"
+            }
+          ],
+          "altEn": "Three house pairings showing where the Cancer-Capricorn nodal axis plays out",
+          "altZh": "巨蟹—摩羯交点轴在三组宫位中的不同生活领域"
+        }
+      ]
+    }
+  }
+}

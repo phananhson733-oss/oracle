@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="How the Root Chakra Idea Reached the West">
+  <defs>
+    <linearGradient id="rootchakrameaning0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="rootchakrameaning0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="rootchakrameaning0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rootchakrameaning0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rootchakrameaning0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rootchakrameaning0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#rootchakrameaning0en-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#rootchakrameaning0en-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#rootchakrameaning0en-neb2)"/>
+  <circle cx="745.5" cy="44.3" r="0.50" fill="#cfc8ea" opacity="0.19"/><circle cx="327.3" cy="325.4" r="0.91" fill="#cfc8ea" opacity="0.44"/><circle cx="563.9" cy="288.9" r="0.96" fill="#cfc8ea" opacity="0.50"/><circle cx="275.1" cy="386.3" r="0.88" fill="#cfc8ea" opacity="0.32"/><circle cx="60.9" cy="398.8" r="0.69" fill="#cfc8ea" opacity="0.18"/><circle cx="550.6" cy="272.8" r="0.96" fill="#cfc8ea" opacity="0.35"/><circle cx="239.6" cy="378.8" r="1.59" fill="#cfc8ea" opacity="0.22"/><circle cx="219.1" cy="413.2" r="0.41" fill="#cfc8ea" opacity="0.33"/><circle cx="497.1" cy="257.6" r="1.40" fill="#cfc8ea" opacity="0.46"/><circle cx="396.7" cy="191.3" r="1.15" fill="#cfc8ea" opacity="0.23"/><circle cx="145.9" cy="394.7" r="0.70" fill="#cfc8ea" opacity="0.42"/><circle cx="228.3" cy="353.2" r="0.92" fill="#cfc8ea" opacity="0.32"/><circle cx="312.9" cy="69.7" r="0.62" fill="#cfc8ea" opacity="0.27"/><circle cx="316.9" cy="40.4" r="0.90" fill="#cfc8ea" opacity="0.46"/><circle cx="538.8" cy="197.4" r="1.05" fill="#cfc8ea" opacity="0.19"/><circle cx="393.7" cy="35.0" r="0.99" fill="#cfc8ea" opacity="0.33"/><circle cx="537.4" cy="134.3" r="1.47" fill="#cfc8ea" opacity="0.38"/><circle cx="708.6" cy="408.0" r="0.75" fill="#cfc8ea" opacity="0.34"/><circle cx="457.3" cy="361.5" r="0.55" fill="#cfc8ea" opacity="0.26"/><circle cx="511.1" cy="335.4" r="1.06" fill="#cfc8ea" opacity="0.24"/><circle cx="73.5" cy="51.0" r="1.05" fill="#cfc8ea" opacity="0.31"/><circle cx="399.8" cy="145.3" r="0.73" fill="#cfc8ea" opacity="0.40"/><circle cx="331.7" cy="25.1" r="0.43" fill="#cfc8ea" opacity="0.45"/><circle cx="325.0" cy="306.9" r="1.29" fill="#cfc8ea" opacity="0.21"/><circle cx="54.7" cy="312.8" r="0.74" fill="#cfc8ea" opacity="0.40"/><circle cx="380.3" cy="174.6" r="1.36" fill="#cfc8ea" opacity="0.44"/><circle cx="235.9" cy="189.4" r="0.97" fill="#cfc8ea" opacity="0.24"/><circle cx="34.2" cy="19.6" r="1.14" fill="#cfc8ea" opacity="0.51"/><circle cx="214.3" cy="176.9" r="1.32" fill="#cfc8ea" opacity="0.41"/><circle cx="96.3" cy="397.4" r="1.16" fill="#cfc8ea" opacity="0.46"/><circle cx="554.0" cy="131.6" r="0.72" fill="#cfc8ea" opacity="0.40"/><circle cx="244.1" cy="232.3" r="1.14" fill="#cfc8ea" opacity="0.21"/><circle cx="392.1" cy="411.0" r="0.85" fill="#cfc8ea" opacity="0.30"/><circle cx="303.4" cy="233.9" r="0.66" fill="#cfc8ea" opacity="0.47"/><circle cx="245.2" cy="368.6" r="1.26" fill="#cfc8ea" opacity="0.41"/><circle cx="731.7" cy="123.1" r="1.51" fill="#cfc8ea" opacity="0.23"/><circle cx="608.4" cy="46.7" r="1.00" fill="#cfc8ea" opacity="0.51"/><circle cx="161.8" cy="378.2" r="1.00" fill="#cfc8ea" opacity="0.20"/><circle cx="582.8" cy="53.4" r="1.69" fill="#cfc8ea" opacity="0.48"/><path d="M 518.1335346028209 72.9 L 518.7 75.9 L 521.8 76.48448824440129 L 518.7 77.1 L 518.1335346028209 80.1 L 517.6 77.1 L 514.5 76.48448824440129 L 517.6 75.9 Z" fill="#f6e6bf" opacity="0.5602155798813329"/><path d="M 280.318278118968 404.7 L 280.9 407.6 L 283.8 408.1420755854342 L 280.9 408.7 L 280.318278118968 411.6 L 279.8 408.7 L 276.8 408.1420755854342 L 279.8 407.6 Z" fill="#f6e6bf" opacity="0.7296758559299633"/><path d="M 440.453639306128 44.3 L 441.1 47.6 L 444.4 48.23342832294293 L 441.1 48.9 L 440.453639306128 52.2 L 439.8 48.9 L 436.5 48.23342832294293 L 439.8 47.6 Z" fill="#f6e6bf" opacity="0.783273683465086"/><path d="M 498.39734330773354 277.0 L 498.9 279.7 L 501.6 280.2530854793731 L 498.9 280.8 L 498.39734330773354 283.5 L 497.9 280.8 L 495.2 280.2530854793731 L 497.9 279.7 Z" fill="#f6e6bf" opacity="0.6375416504917666"/><path d="M 468.82861795276403 284.3 L 469.5 287.6 L 472.7 288.20321165700443 L 469.5 288.8 L 468.82861795276403 292.1 L 468.2 288.8 L 464.9 288.20321165700443 L 468.2 287.6 Z" fill="#f6e6bf" opacity="0.5030167853226886"/><path d="M 275.1 386.3 L 708.6 408.0 L 511.1 335.4 L 325.0 306.9 L 54.7 312.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">How the Root Chakra Idea Reached the West</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#rootchakrameaning0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#rootchakrameaning0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#rootchakrameaning0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#rootchakrameaning0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Vedic era</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">'Cakra' means wheel</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">The sun's wheel, the wheel of time — not yet a body energy center</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#rootchakrameaning0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#rootchakrameaning0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">~8th century CE</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Subtle-body maps emerge</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Buddhist texts like the Hevajra Tantra name inner energy centers</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#rootchakrameaning0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#rootchakrameaning0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">1577</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Sat-Cakra-Nirupana</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Sanskrit text attributed to Purnananda lists Muladhara first</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#rootchakrameaning0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#rootchakrameaning0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">1919</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">The Serpent Power</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">John Woodroffe, as Arthur Avalon, renders it into English</text>
+  <path d="M 202.22749999999988 430.4 L 202.6 432.6 L 204.8 433 L 202.6 433.4 L 202.22749999999988 435.6 L 201.8 433.4 L 199.6 433 L 201.8 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 430.4 L 558.2 432.6 L 560.4 433 L 558.2 433.4 L 557.7725000000002 435.6 L 557.4 433.4 L 555.2 433 L 557.4 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

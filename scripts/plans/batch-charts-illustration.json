@@ -1,0 +1,941 @@
+{
+  "_comment": "CHARTS cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/charts",
+  "urlBase": "/images/charts",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "how-to-read-birth-chart": {
+      "hero": {
+        "prompt": "A circular natal chart wheel rendered as a glowing map of inner terrain: twelve sector divisions, concentric rings for planets, signs and houses, ten small luminous planet orbs placed around the rim, thin golden aspect lines forming triangle and square chords weaving across the center like threads of an inner dialogue, a soft mirror-like sheen across the wheel suggesting self-reflection rather than fortune-telling, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Natal chart wheel drawn as a glowing map of inner terrain, with golden aspect lines weaving between planet points",
+        "altZh": "本命星盘被描绘成一张发光的内在地形图，金色相位线在行星点之间交织"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## What Is a Birth Chart, Really?",
+          "afterHeadingZh": "## 星盘是什么？",
+          "titleEn": "The 5-Step Chart Reading Path",
+          "titleZh": "读盘五步法",
+          "items": [
+            {
+              "nameEn": "Planets",
+              "nameZh": "行星",
+              "subEn": "The verbs — what psychological drive is at work",
+              "subZh": "动词——哪种心理驱动力在运作"
+            },
+            {
+              "nameEn": "Signs",
+              "nameZh": "星座",
+              "subEn": "The adverbs — how each drive expresses itself",
+              "subZh": "副词——每种驱动力的表达风格"
+            },
+            {
+              "nameEn": "Houses",
+              "nameZh": "宫位",
+              "subEn": "The nouns — where life plays out",
+              "subZh": "名词——人生剧情上演的舞台"
+            },
+            {
+              "nameEn": "Aspects",
+              "nameZh": "相位",
+              "subEn": "The inner dialogue — drives cooperate or clash",
+              "subZh": "内在对话——驱动力的合作与冲突"
+            },
+            {
+              "nameEn": "Synthesis",
+              "nameZh": "整合",
+              "subEn": "Weave all four layers into one coherent story",
+              "subZh": "把四层编织成一个连贯的故事"
+            }
+          ],
+          "altEn": "Five-step sequence for reading a birth chart: planets, signs, houses, aspects, synthesis",
+          "altZh": "读懂星盘的五个步骤：行星、星座、宫位、相位、整合"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Step 2: The Signs --- How Each Drive Expresses Itself",
+          "afterHeadingZh": "## 第二步：星座---每种驱动力的表达风格",
+          "titleEn": "The Four Elements",
+          "titleZh": "四元素心理取向",
+          "items": [
+            {
+              "nameEn": "Fire",
+              "nameZh": "火",
+              "subEn": "Aries, Leo, Sagittarius — identity and inspiration",
+              "subZh": "白羊、狮子、射手——认同与灵感"
+            },
+            {
+              "nameEn": "Earth",
+              "nameZh": "土",
+              "subEn": "Taurus, Virgo, Capricorn — materiality and mastery",
+              "subZh": "金牛、处女、摩羯——物质与掌控"
+            },
+            {
+              "nameEn": "Air",
+              "nameZh": "风",
+              "subEn": "Gemini, Libra, Aquarius — connection and concepts",
+              "subZh": "双子、天秤、水瓶——连接与概念"
+            },
+            {
+              "nameEn": "Water",
+              "nameZh": "水",
+              "subEn": "Cancer, Scorpio, Pisces — feeling and intuition",
+              "subZh": "巨蟹、天蝎、双鱼——感受与直觉"
+            }
+          ],
+          "altEn": "The four elements grouping the twelve signs by psychological orientation",
+          "altZh": "四元素将十二星座按心理取向分组"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Step 4: Aspects --- The Inner Dialogue",
+          "afterHeadingZh": "## 第四步：相位---内在对话",
+          "titleEn": "The Five Major Aspects",
+          "titleZh": "五种主要相位",
+          "items": [
+            {
+              "nameEn": "Conjunction 0°",
+              "nameZh": "合相 0°",
+              "subEn": "Fusion — two drives merge into one",
+              "subZh": "融合——两种驱动力合为一体"
+            },
+            {
+              "nameEn": "Sextile 60°",
+              "nameZh": "六分相 60°",
+              "subEn": "Opportunity — easy flow that needs conscious effort",
+              "subZh": "机会——顺畅但需要主动激活"
+            },
+            {
+              "nameEn": "Square 90°",
+              "nameZh": "四分相 90°",
+              "subEn": "Tension — friction that demands growth",
+              "subZh": "张力——推动成长的摩擦力"
+            },
+            {
+              "nameEn": "Trine 120°",
+              "nameZh": "三分相 120°",
+              "subEn": "Harmony — natural talent that flows effortlessly",
+              "subZh": "和谐——毫不费力的天赋流动"
+            },
+            {
+              "nameEn": "Opposition 180°",
+              "nameZh": "对分相 180°",
+              "subEn": "Polarity — opposite pulls that need integration",
+              "subZh": "对立——相反拉扯，需要整合"
+            }
+          ],
+          "altEn": "The five major aspects ordered by angle, from conjunction at 0 degrees to opposition at 180",
+          "altZh": "按角度排列的五种主要相位，从 0 度合相到 180 度对分相"
+        }
+      ]
+    },
+    "synastry-chart-compatibility": {
+      "hero": {
+        "prompt": "Two distinct natal chart wheels overlapping like interlocking rings, fine golden threads stretching between points on opposite wheels — some threads smooth flowing arcs, others taut straight lines under visible tension — the intersection of the rings glowing softly as a third shared field, while a faint gauge-like dial fragment dissolves into stardust at the edge, suggesting a single score breaking apart into something richer, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Two overlapping chart wheels joined by golden threads of differing tension while a score gauge dissolves at the edge",
+        "altZh": "两张星盘交叠，金线或松或紧地相连，一旁的评分刻度正在消散"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## synastry chart compatibility vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Relationship Charts",
+          "titleZh": "三种合盘工具",
+          "columns": [
+            {
+              "nameEn": "Synastry",
+              "nameZh": "比较盘",
+              "linesEn": [
+                "Overlays two intact charts",
+                "Maps who activates whom",
+                "Keeps directional detail"
+              ],
+              "linesZh": [
+                "两张本命盘叠加比对",
+                "看谁触动了谁",
+                "保留方向性细节"
+              ]
+            },
+            {
+              "nameEn": "Composite",
+              "nameZh": "组合盘",
+              "linesEn": [
+                "Averages planetary midpoints",
+                "Reads the bond as one entity",
+                "Loses directionality"
+              ],
+              "linesZh": [
+                "取行星中点平均",
+                "把关系当作第三实体",
+                "失去方向信息"
+              ]
+            },
+            {
+              "nameEn": "Davison",
+              "nameZh": "戴维森盘",
+              "linesEn": [
+                "Time-place midpoint chart",
+                "Has a real birth moment",
+                "Can receive transits"
+              ],
+              "linesZh": [
+                "时间与地点的中点盘",
+                "拥有真实诞生时刻",
+                "可承接行运"
+              ]
+            }
+          ],
+          "altEn": "Comparison of synastry, composite, and Davison relationship charts",
+          "altZh": "比较盘、组合盘与戴维森盘三种关系星盘对照"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read synastry chart compatibility in Yourself",
+          "titleEn": "Five Signals, Read by Weight",
+          "titleZh": "按分量排序的五类信号",
+          "items": [
+            {
+              "nameEn": "Tight orb contacts",
+              "nameZh": "紧密容许度相位",
+              "subEn": "Within 3° between personal planets carries most weight",
+              "subZh": "个人行星间 3° 内的相位分量最重"
+            },
+            {
+              "nameEn": "Saturn contacts",
+              "nameZh": "土星接触",
+              "subEn": "Steadying trines or squares where love feels earned",
+              "subZh": "三分带来稳定，四分让爱像要挣得"
+            },
+            {
+              "nameEn": "Pluto contacts",
+              "nameZh": "冥王星接触",
+              "subEn": "Activates buried material; intensity turns clarifying",
+              "subZh": "激活深层心理素材，强度渐变为清晰"
+            },
+            {
+              "nameEn": "House overlays",
+              "nameZh": "宫位叠置",
+              "subEn": "Where each planet lands in the other person's houses",
+              "subZh": "你的行星落入对方哪个宫位"
+            },
+            {
+              "nameEn": "Mutual aspects",
+              "nameZh": "双向相位",
+              "subEn": "Two-way contacts register equally for both people",
+              "subZh": "双向接触让两人感受大致同等"
+            }
+          ],
+          "altEn": "Five synastry signals scanned in priority order, from tight orbs to mutual aspects",
+          "altZh": "按优先级扫描的五类比较盘信号，从紧密容许度到双向相位"
+        }
+      ]
+    },
+    "composite-chart-calculator": {
+      "hero": {
+        "prompt": "Two luminous natal chart wheels on either side converging toward a single central relationship wheel, but the convergence splits along two ghostly paths — one path drawn as pure geometry of averaged degree lines meeting at abstract midpoints, the other anchored to a tiny glowing location marker on a faint map beneath a calendar-like ring — yielding two subtly different versions of the same central chart, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Two natal wheels merging into one relationship chart along two diverging calculation paths",
+        "altZh": "两张本命盘汇聚成一张关系盘，却沿两条不同的计算路径产生微妙差异"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## composite chart calculator vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Midpoint vs Davison",
+          "titleZh": "中点法 vs 戴维森法",
+          "columns": [
+            {
+              "nameEn": "Midpoint composite",
+              "nameZh": "中点组合盘",
+              "linesEn": [
+                "Averages each planetary pair's degrees",
+                "Ignores birth times and geography",
+                "Stable on any calculator"
+              ],
+              "linesZh": [
+                "对每组行星度数取平均",
+                "忽略出生时间与地理位置",
+                "任何计算器都可复现"
+              ]
+            },
+            {
+              "nameEn": "Davison chart",
+              "nameZh": "戴维森盘",
+              "linesEn": [
+                "Midpoint in time and space",
+                "Has a real date, time and place",
+                "House positions can diverge"
+              ],
+              "linesZh": [
+                "取时间与空间的中点",
+                "拥有真实日期、时间、地点",
+                "宫位可能明显不同"
+              ]
+            }
+          ],
+          "altEn": "Side-by-side comparison of the midpoint composite and Davison calculation methods",
+          "altZh": "中点组合盘与戴维森盘两种计算方法对照"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read composite chart calculator in Yourself",
+          "titleEn": "Six Steps to Read a Composite",
+          "titleZh": "组合盘解读六步",
+          "items": [
+            {
+              "nameEn": "Identify the method",
+              "nameZh": "确认计算方法",
+              "subEn": "Midpoint or Davison — check settings before reading",
+              "subZh": "先确认是中点法还是戴维森法"
+            },
+            {
+              "nameEn": "Composite Sun",
+              "nameZh": "组合盘太阳",
+              "subEn": "House and sign show the bond's core identity",
+              "subZh": "宫位与星座显示关系的核心认同"
+            },
+            {
+              "nameEn": "Composite Moon",
+              "nameZh": "组合盘月亮",
+              "subEn": "The shared emotional atmosphere created together",
+              "subZh": "两人共处时的情绪氛围"
+            },
+            {
+              "nameEn": "Venus and Mars",
+              "nameZh": "金星与火星",
+              "subEn": "Do the bond's desire and its action align?",
+              "subZh": "关系的渴望与行动是否一致"
+            },
+            {
+              "nameEn": "Composite Saturn",
+              "nameZh": "组合盘土星",
+              "subEn": "Where the relationship meets its structural test",
+              "subZh": "关系遭遇结构性考验之处"
+            },
+            {
+              "nameEn": "Nodal axis",
+              "nameZh": "交点轴",
+              "subEn": "South Node rut versus North Node growth pull",
+              "subZh": "南交点的惯性与北交点的成长方向"
+            }
+          ],
+          "altEn": "Six-step reading order for a composite chart, from confirming the method to the nodal axis",
+          "altZh": "组合盘解读的六个步骤：从确认计算方法到交点轴"
+        }
+      ]
+    },
+    "solar-return": {
+      "hero": {
+        "prompt": "A large fixed constellation wheel etched into the night sky like a permanent star map, with a smaller translucent golden ring resting over one sector like an annual lens, casting a warm spotlight that illuminates only that segment while the rest of the wheel stays dim and enduring, a small sun orb traveling a circular orbit and arriving back at a marked degree point on the rim, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A temporary golden lens highlights one sector of a fixed natal star wheel as a small sun returns to its marked degree",
+        "altZh": "一枚临时的金色透镜照亮固定本命星轮的一个扇区，小小的太阳回到出生度数"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## solar return vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "One Life, Three Timing Layers",
+          "titleZh": "同一人生的三层时间工具",
+          "columns": [
+            {
+              "nameEn": "Transits",
+              "nameZh": "行运",
+              "linesEn": [
+                "Real sky striking the chart daily",
+                "Pinpoint exact dates and events",
+                "Trade theme for precision"
+              ],
+              "linesZh": [
+                "真实天象逐日触发本命盘",
+                "可精确到具体日期",
+                "以主题感换取精度"
+              ]
+            },
+            {
+              "nameEn": "Progressions",
+              "nameZh": "推运",
+              "linesEn": [
+                "Unfold slowly across years",
+                "Trace inner development",
+                "Trade yearly focus for long arc"
+              ],
+              "linesZh": [
+                "跨越数年缓慢推进",
+                "描绘内在心理发展",
+                "以年度焦点换取长弧线"
+              ]
+            },
+            {
+              "nameEn": "Solar return",
+              "nameZh": "太阳回归",
+              "linesEn": [
+                "One symbolic snapshot per year",
+                "Resets each birthday, then expires",
+                "Activates the natal, never overrules"
+              ],
+              "linesZh": [
+                "每年一张主题快照",
+                "生日重置，来年失效",
+                "只激活本命，从不凌驾"
+              ]
+            }
+          ],
+          "altEn": "Comparison of transits, progressions, and the solar return as layered timing tools",
+          "altZh": "行运、推运与太阳回归三种时间工具对照"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Your Annual Chart in Your Timing",
+          "titleEn": "Five Cues, Read in Order",
+          "titleZh": "年度盘五项线索",
+          "items": [
+            {
+              "nameEn": "Return Ascendant",
+              "nameZh": "回归上升",
+              "subEn": "Sets the year's overall tone and lens",
+              "subZh": "定下这一年的基调与视角"
+            },
+            {
+              "nameEn": "Sun's house",
+              "nameZh": "太阳落宫",
+              "subEn": "The life area under the brightest spotlight",
+              "subZh": "聚光灯最亮的生活领域"
+            },
+            {
+              "nameEn": "Repeated emphasis",
+              "nameZh": "重复强调",
+              "subEn": "Themes stressed in both annual and natal charts",
+              "subZh": "年度盘与本命盘共同强调的主题"
+            },
+            {
+              "nameEn": "Angular planets",
+              "nameZh": "轴点行星",
+              "subEn": "Planets near the four angles feel most active",
+              "subZh": "靠近四轴的行星最活跃"
+            },
+            {
+              "nameEn": "Chart ruler",
+              "nameZh": "命主星",
+              "subEn": "The return Ascendant's ruler names the storyline",
+              "subZh": "回归上升守护星点出年度剧情"
+            }
+          ],
+          "altEn": "Five solar return reading cues in order, each checked back against the natal chart",
+          "altZh": "太阳回归盘的五项阅读线索，每一项都要对照本命盘"
+        }
+      ]
+    },
+    "solar-return-chart": {
+      "hero": {
+        "prompt": "Five translucent glass-like chart wheels stacked in a gentle offset cascade, each layer highlighting a different feature in gold — a rising point glowing on a horizon edge, two small orbs touching in tight conjunction, a sun radiating inside one house sector, a single ruling planet trailing a guiding thread, and sharp notched degree marks along a rim — the layers resolving together into one composite year-map, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Five translucent chart layers stacked into one solar return year-map, each highlighting a different reading layer",
+        "altZh": "五层半透明星盘叠成一张太阳回归年度图，每层点亮一个解读重点"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions",
+          "titleEn": "The Five Reading Layers",
+          "titleZh": "太阳回归五项重点",
+          "items": [
+            {
+              "nameEn": "Return Ascendant",
+              "nameZh": "回归上升",
+              "subEn": "The year's visible tone — how you show up",
+              "subZh": "一年的外在基调与姿态"
+            },
+            {
+              "nameEn": "Natal overlay",
+              "nameZh": "本命叠盘",
+              "subEn": "Conjunctions within ~3° mark the year's hot zones",
+              "subZh": "约 3° 内的合相标出年度热区"
+            },
+            {
+              "nameEn": "Sun's house",
+              "nameZh": "太阳落宫",
+              "subEn": "Where life energy concentrates this year",
+              "subZh": "今年生命能量集中的领域"
+            },
+            {
+              "nameEn": "Ascendant ruler",
+              "nameZh": "上升主星",
+              "subEn": "The planet steering the year's storyline",
+              "subZh": "牵动年度剧情走向的行星"
+            },
+            {
+              "nameEn": "Critical degrees",
+              "nameZh": "临界度数",
+              "subEn": "Cardinal 0°, 13°, 26° mark the pressure points",
+              "subZh": "基本星座 0°、13°、26° 标出压力点"
+            }
+          ],
+          "altEn": "The five solar return reading layers in working order, from return Ascendant to critical degrees",
+          "altZh": "太阳回归盘的五个解读层次，从回归上升到临界度数"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions 与相近概念：运作方式 + 取舍",
+          "titleEn": "Standalone vs Natal-Overlaid",
+          "titleZh": "单独看 vs 叠回本命盘",
+          "columns": [
+            {
+              "nameEn": "Return read alone",
+              "nameZh": "单独读回归盘",
+              "linesEn": [
+                "A clean but generic picture",
+                "Looks dramatic every year",
+                "Description, not prediction"
+              ],
+              "linesZh": [
+                "画面干净却容易泛泛",
+                "每年看起来都很热闹",
+                "只有描述，没有预测力"
+              ]
+            },
+            {
+              "nameEn": "Overlaid on natal",
+              "nameZh": "叠回本命盘",
+              "linesEn": [
+                "Shows which natal promises activate",
+                "Conjunctions reveal the hot zones",
+                "Turns description into prediction"
+              ],
+              "linesZh": [
+                "看出哪些本命主题被点亮",
+                "贴近合相揭示年度热区",
+                "让描述变成可用的预测"
+              ]
+            }
+          ],
+          "altEn": "Reading the return wheel alone versus overlaying it on the natal chart",
+          "altZh": "单独读回归盘与叠回本命盘的差别对照"
+        }
+      ]
+    },
+    "astrology-terms": {
+      "hero": {
+        "prompt": "A celestial vocabulary coming together: scattered geometric fragments — a cross of four pivot axes, golden chord lines forming triangle and square shapes, and small hollow calculated points — drifting in from the edges and clicking into place inside one unified chart wheel, like loose flashcards assembling into a single connected map, faint trails showing where each fragment traveled, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Scattered chart fragments — aspect lines, angle axes, and calculated points — assembling into one connected wheel",
+        "altZh": "散落的相位线、轴点与虚点碎片，正拼合成一张完整星盘"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## What is Astrology Terms?",
+          "afterHeadingZh": "## Astrology Terms 是什么？",
+          "titleEn": "Three Working Groups",
+          "titleZh": "三组工作词汇",
+          "columns": [
+            {
+              "nameEn": "Aspects",
+              "nameZh": "相位",
+              "linesEn": [
+                "Angles between two planets",
+                "Show cooperation or friction",
+                "Read the tightest orb first"
+              ],
+              "linesZh": [
+                "两颗行星之间的角度",
+                "显示合作还是较劲",
+                "先读容许度最小的"
+              ]
+            },
+            {
+              "nameEn": "Angles",
+              "nameZh": "轴点",
+              "linesEn": [
+                "Four pivot points of the wheel",
+                "Anchor where life plays out",
+                "Ascendant, MC, Descendant, IC"
+              ],
+              "linesZh": [
+                "星盘的四个枢纽点",
+                "锚定人生主题落点",
+                "上升、天顶、下降、天底"
+              ]
+            },
+            {
+              "nameEn": "Points",
+              "nameZh": "虚点",
+              "linesEn": [
+                "Calculated, not real bodies",
+                "Fill in structural detail",
+                "Note what sits near an angle"
+              ],
+              "linesZh": [
+                "算出来的非星体位置",
+                "补全星盘结构细节",
+                "看什么压在轴点附近"
+              ]
+            }
+          ],
+          "altEn": "The three working groups of astrology terms: aspects, angles, and points",
+          "altZh": "占星术语的三组分类：相位、轴点、虚点"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Astrology Terms vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Astrology Terms 与相近概念：运作方式 + 取舍",
+          "titleEn": "Same Planets, Three Angles",
+          "titleZh": "同一组行星，三个角度",
+          "items": [
+            {
+              "nameEn": "Sextile 60°",
+              "nameZh": "六分相 60°",
+              "subEn": "Opportunity angle — needs a small push to activate",
+              "subZh": "机会角——需要轻轻一推才启动"
+            },
+            {
+              "nameEn": "Square 90°",
+              "nameZh": "四分相 90°",
+              "subEn": "Friction angle — creates pressure and growth",
+              "subZh": "摩擦角——制造压力也带来成长"
+            },
+            {
+              "nameEn": "Trine 120°",
+              "nameZh": "三分相 120°",
+              "subEn": "Flowing angle — runs alone but can drift lazy",
+              "subZh": "顺流角——自动运转却易滑向懒散"
+            }
+          ],
+          "altEn": "One planetary pair at 60, 90, and 120 degrees producing three different aspect stories",
+          "altZh": "同一组行星在 60、90、120 度时形成三种不同的相位故事"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read These Terms in Your Chart",
+          "afterHeadingZh": "## 如何在自己身上识别 Astrology Terms",
+          "titleEn": "Four Passes Through Your Chart",
+          "titleZh": "读盘四遍法",
+          "items": [
+            {
+              "nameEn": "Find the four angles",
+              "nameZh": "先找四个轴点",
+              "subEn": "Ascendant, Midheaven, Descendant, and IC first",
+              "subZh": "定位上升、天顶、下降、天底"
+            },
+            {
+              "nameEn": "Trace the tightest aspect",
+              "nameZh": "抓最紧的相位",
+              "subEn": "The smallest orb carries the loudest relationship",
+              "subZh": "角度差最小的关系最响亮"
+            },
+            {
+              "nameEn": "Spot repeated patterns",
+              "nameZh": "找重复图形",
+              "subEn": "Three-plus planets in one shape outweigh one label",
+              "subZh": "三颗以上行星的重复图形更重要"
+            },
+            {
+              "nameEn": "Check the angles' guests",
+              "nameZh": "看轴点上的行星",
+              "subEn": "Planets on angles act louder than their sign suggests",
+              "subZh": "压在轴点上的行星格外高调"
+            }
+          ],
+          "altEn": "Four sequential passes for reading chart terms: angles, tightest aspect, patterns, angular planets",
+          "altZh": "按顺序读盘的四遍：轴点、最紧相位、重复图形、轴点行星"
+        }
+      ]
+    },
+    "ai-astrology-app": {
+      "hero": {
+        "prompt": "Split scene of two machine-made readings: on one side an astrological wheel built from a precise circuit-like lattice, planet nodes wired to an ephemeris grid with crisp golden data threads; on the other side a soft hazy mirror emitting the same warm glow but containing only vague drifting mist that reflects whatever approaches it — two outputs that look alike until examined closely, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A precise circuit-built chart wheel beside a hazy mirror that only reflects — two readings that look alike",
+        "altZh": "一侧是电路般精密的星盘，另一侧是只会映照的雾面镜子，两种解读看似相同"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## ai astrology app vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Kinds of Chart Tools",
+          "titleZh": "三类星盘工具",
+          "columns": [
+            {
+              "nameEn": "Traditional software",
+              "nameZh": "传统排盘软件",
+              "linesEn": [
+                "Computes precise positions",
+                "Interpretation left to a human",
+                "Precision without accessibility"
+              ],
+              "linesZh": [
+                "精确计算行星位置",
+                "解读完全交给人",
+                "精确但有门槛"
+              ]
+            },
+            {
+              "nameEn": "General AI models",
+              "nameZh": "通用 AI 模型",
+              "linesEn": [
+                "Pattern-match training text",
+                "No chart unless you paste it in",
+                "Coverage without specificity"
+              ],
+              "linesZh": [
+                "靠语料模式匹配作答",
+                "不贴星盘就没有你的数据",
+                "覆盖广但不具体"
+              ]
+            },
+            {
+              "nameEn": "Chart-synthesis apps",
+              "nameZh": "真实合成类应用",
+              "linesEn": [
+                "Roughly 8% of tools analyzed",
+                "Ephemeris data shapes the output",
+                "Specificity over smooth praise"
+              ],
+              "linesZh": [
+                "内容分析中约占 8%",
+                "星历数据决定输出",
+                "具体性优先于顺耳"
+              ]
+            }
+          ],
+          "altEn": "Three categories of AI astrology tools compared by how they handle chart data",
+          "altZh": "按星盘数据深度对照三类 AI 占星工具"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read ai astrology app in Yourself",
+          "titleEn": "Five Tests for Any App",
+          "titleZh": "五个检验动作",
+          "items": [
+            {
+              "nameEn": "Shift birth time 2 hours",
+              "nameZh": "出生时间挪两小时",
+              "subEn": "Rerun it: real chart apps change their output",
+              "subZh": "重测一次，真用星盘的应用输出会变"
+            },
+            {
+              "nameEn": "Ascendant and houses",
+              "nameZh": "找上升与宫位",
+              "subEn": "Grounded readings cite rising sign and house numbers",
+              "subZh": "扎实的解读会提到上升与宫位编号"
+            },
+            {
+              "nameEn": "Aspect language",
+              "nameZh": "查相位语言",
+              "subEn": "Conjunction, square, trine tied to planet pairs",
+              "subZh": "看是否提到具体行星的合、刑、拱"
+            },
+            {
+              "nameEn": "Pronoun-to-planet ratio",
+              "nameZh": "代词与行星比",
+              "subEn": "Heavy you/your with zero aspects = empathy text",
+              "subZh": "满屏“你”却无相位＝共情模板"
+            },
+            {
+              "nameEn": "Ask a chart question",
+              "nameZh": "直接提问星盘",
+              "subEn": "Request your Moon's house; deflection means no chart",
+              "subZh": "问月亮落宫，闪避即没有你的盘"
+            }
+          ],
+          "altEn": "Five practical tests to check whether an AI astrology app actually uses your chart",
+          "altZh": "五个实操测试，检验 AI 占星应用是否真用了你的星盘"
+        }
+      ]
+    },
+    "aura-reading": {
+      "hero": {
+        "prompt": "An abstract field of energy sensed before it is seen: a warm glowing core surrounded by gentle tactile ripple rings spreading outward like touch made visible, while faint veils of colored light — red, gold, green, blue, violet — only begin to condense at the far outer edge, still soft and unformed, the felt ripples rendered more solid and present than the barely-emerging colors, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Tactile ripple rings spread from a warm core while faint aura colors only begin to form at the edge",
+        "altZh": "暖色核心向外扩散触感般的涟漪，气场颜色才刚在边缘隐约成形"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Aura Reading in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 Aura Reading",
+          "titleEn": "Felt-First Practice, Five Steps",
+          "titleZh": "先感受后颜色的五步练习",
+          "items": [
+            {
+              "nameEn": "Scan your body",
+              "nameZh": "扫描身体",
+              "subEn": "Notice where energy feels light, dense, warm, stuck",
+              "subZh": "留意哪里轻盈、沉重、温热或卡住"
+            },
+            {
+              "nameEn": "Name the tone",
+              "nameZh": "命名状态",
+              "subEn": "One plain word: settled, buzzy, foggy, sharp",
+              "subZh": "用一个词：安定、躁动、迷糊、锐利"
+            },
+            {
+              "nameEn": "Add color last",
+              "nameZh": "最后配色",
+              "subEn": "Ask which hue matches the tone — never the reverse",
+              "subZh": "问哪种颜色配这个状态，别反过来"
+            },
+            {
+              "nameEn": "Keep a short log",
+              "nameZh": "持续记录",
+              "subEn": "Write it down; patterns surface quickly",
+              "subZh": "把颜色和体感写下来，模式很快浮现"
+            },
+            {
+              "nameEn": "Compare your days",
+              "nameZh": "对比回看",
+              "subEn": "A calm day against a tense one teaches the most",
+              "subZh": "平静日与紧绷日的对比最有教益"
+            }
+          ],
+          "altEn": "Five-step felt-first aura practice, from body scan to comparing days",
+          "altZh": "从身体扫描到对比回看的五步体感练习"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Aura Reading vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Ways to Read Energy",
+          "titleZh": "三种读能量的方式",
+          "columns": [
+            {
+              "nameEn": "Felt aura reading",
+              "nameZh": "体感气场解读",
+              "linesEn": [
+                "No equipment, works anywhere",
+                "Reads the shifting moment",
+                "Skill builds with practice"
+              ],
+              "linesZh": [
+                "无需设备，随处可读",
+                "读的是流动的当下",
+                "靠反复练习累积"
+              ]
+            },
+            {
+              "nameEn": "Aura photography",
+              "nameZh": "气场摄影",
+              "linesEn": [
+                "Camera and biofeedback plates",
+                "Instant shareable image",
+                "Freezes a fluid state"
+              ],
+              "linesZh": [
+                "相机加生物反馈板",
+                "秒出可分享的照片",
+                "把流动状态定格成一帧"
+              ]
+            },
+            {
+              "nameEn": "Chakra-based reading",
+              "nameZh": "脉轮式解读",
+              "linesEn": [
+                "Works from named centers",
+                "Structured inside-out map",
+                "Structure can box you in"
+              ],
+              "linesZh": [
+                "从命名的能量中心入手",
+                "由内而外的结构地图",
+                "结构也可能框住感受"
+              ]
+            }
+          ],
+          "altEn": "Felt aura reading compared with aura photography and chakra-based reading",
+          "altZh": "体感气场解读与气场摄影、脉轮式解读的对照"
+        }
+      ]
+    },
+    "aura-moon-venus-rising-bridge": {
+      "hero": {
+        "prompt": "A slender bridge of golden light spanning a quiet night chasm: on one side a soft radiant aura field of layered translucent color veils, on the other a crisp natal chart wheel showing a glowing moon orb, a bright morning-star point, and a horizon line where a constellation rises, the bridge's golden filaments weaving the two maps together as equals rather than rivals, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A golden bridge of light connects a soft aura color field to a natal chart wheel with moon, venus, and rising horizon",
+        "altZh": "一座金色光桥连接柔和的气场色域与标有月亮、金星和上升地平线的星盘"
+      },
+      "inline": []
+    },
+    "four-element-framework": {
+      "hero": {
+        "prompt": "A central natal chart wheel balanced amid four elemental quadrants — a curling flame swirl, layered crystalline earth strata, drifting ribbons of air current, and deep rippling water — with small golden planet markers from the wheel scattered unevenly across the four regions like weights on a living balance scale, some quadrants crowded and one nearly empty, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A chart wheel surrounded by fire, earth, air, and water quadrants with planet markers distributed unevenly among them",
+        "altZh": "星盘四周环绕火、土、风、水四个象限，行星标记不均匀地分布其间"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## What is Four-Element Framework?",
+          "titleEn": "Four Modes of Chart Energy",
+          "titleZh": "四种元素能量模式",
+          "items": [
+            {
+              "nameEn": "Fire",
+              "nameZh": "火",
+              "subEn": "Drive and spark — motivation, courage, creative heat",
+              "subZh": "驱动与火花——动力、勇气、创造热度"
+            },
+            {
+              "nameEn": "Earth",
+              "nameZh": "土",
+              "subEn": "Form and steadiness — routine, patience, follow-through",
+              "subZh": "形态与稳定——常规、耐心、执行力"
+            },
+            {
+              "nameEn": "Air",
+              "nameZh": "风",
+              "subEn": "Thought and exchange — language, comparison, connection",
+              "subZh": "思维与交流——语言、比较、连接"
+            },
+            {
+              "nameEn": "Water",
+              "nameZh": "水",
+              "subEn": "Feeling and receptivity — bonding, memory, atmosphere",
+              "subZh": "感受与接纳——联结、记忆、氛围"
+            }
+          ],
+          "altEn": "The four elements as modes of chart energy: fire, earth, air, and water",
+          "altZh": "火、土、风、水四种星盘能量模式"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Four-Element Framework vs Adjacent Concepts: Mechanism + Trade-offs",
+          "titleEn": "Sun-Sign Label vs Element Balance",
+          "titleZh": "太阳标签 vs 元素配比",
+          "columns": [
+            {
+              "nameEn": "Sun-sign reading",
+              "nameZh": "太阳星座式解读",
+              "linesEn": [
+                "One placement as the headline",
+                "Instant clarity of a single label",
+                "Sacrifices chart-level nuance"
+              ],
+              "linesZh": [
+                "以一个落点当人格标题",
+                "单一标签，瞬间清晰",
+                "牺牲整盘层面的细微差别"
+              ]
+            },
+            {
+              "nameEn": "Element balance",
+              "nameZh": "元素配比解读",
+              "linesEn": [
+                "Counts Sun, Moon, ASC, Mercury, Venus, Mars",
+                "Distribution shows loud and quiet elements",
+                "Sacrifices the instant single label"
+              ],
+              "linesZh": [
+                "统计日月升与水金火的落点",
+                "分布显示强势与安静的元素",
+                "失去单一标签的即时感"
+              ]
+            }
+          ],
+          "altEn": "Sun-sign reading versus element-balance reading of a birth chart",
+          "altZh": "太阳星座解读与元素配比解读的取舍对照"
+        }
+      ]
+    }
+  }
+}

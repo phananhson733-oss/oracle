@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="Ascendant vs Descendant: Presented vs Projected">
+  <defs>
+    <linearGradient id="7thhouseastrology0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="7thhouseastrology0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="7thhouseastrology0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="7thhouseastrology0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="7thhouseastrology0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="7thhouseastrology0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#7thhouseastrology0en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#7thhouseastrology0en-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#7thhouseastrology0en-neb2)"/>
+  <circle cx="568.9" cy="337.8" r="1.67" fill="#cfc8ea" opacity="0.52"/><circle cx="402.9" cy="53.6" r="0.62" fill="#cfc8ea" opacity="0.24"/><circle cx="728.3" cy="240.8" r="0.42" fill="#cfc8ea" opacity="0.44"/><circle cx="451.1" cy="72.8" r="1.18" fill="#cfc8ea" opacity="0.36"/><circle cx="716.8" cy="371.6" r="0.43" fill="#cfc8ea" opacity="0.27"/><circle cx="241.4" cy="199.2" r="1.15" fill="#cfc8ea" opacity="0.24"/><circle cx="427.3" cy="43.6" r="1.25" fill="#cfc8ea" opacity="0.31"/><circle cx="372.3" cy="156.0" r="0.97" fill="#cfc8ea" opacity="0.30"/><circle cx="387.6" cy="333.9" r="1.09" fill="#cfc8ea" opacity="0.23"/><circle cx="465.5" cy="467.4" r="0.54" fill="#cfc8ea" opacity="0.30"/><circle cx="557.4" cy="220.4" r="0.91" fill="#cfc8ea" opacity="0.40"/><circle cx="146.2" cy="73.9" r="0.45" fill="#cfc8ea" opacity="0.30"/><circle cx="391.1" cy="479.8" r="1.31" fill="#cfc8ea" opacity="0.44"/><circle cx="592.8" cy="81.1" r="0.95" fill="#cfc8ea" opacity="0.17"/><circle cx="106.4" cy="76.0" r="1.41" fill="#cfc8ea" opacity="0.13"/><circle cx="497.8" cy="66.9" r="1.17" fill="#cfc8ea" opacity="0.48"/><circle cx="264.8" cy="158.8" r="1.36" fill="#cfc8ea" opacity="0.44"/><circle cx="76.4" cy="262.2" r="1.04" fill="#cfc8ea" opacity="0.51"/><circle cx="657.1" cy="218.1" r="0.59" fill="#cfc8ea" opacity="0.34"/><circle cx="445.6" cy="272.9" r="0.97" fill="#cfc8ea" opacity="0.40"/><circle cx="206.1" cy="256.2" r="1.32" fill="#cfc8ea" opacity="0.49"/><circle cx="349.9" cy="22.0" r="1.08" fill="#cfc8ea" opacity="0.24"/><circle cx="142.2" cy="357.0" r="0.75" fill="#cfc8ea" opacity="0.21"/><circle cx="592.6" cy="227.3" r="1.08" fill="#cfc8ea" opacity="0.27"/><circle cx="233.3" cy="155.3" r="0.66" fill="#cfc8ea" opacity="0.14"/><circle cx="165.6" cy="115.0" r="0.44" fill="#cfc8ea" opacity="0.48"/><circle cx="255.8" cy="325.9" r="1.58" fill="#cfc8ea" opacity="0.19"/><circle cx="289.7" cy="422.1" r="0.58" fill="#cfc8ea" opacity="0.26"/><circle cx="38.4" cy="303.3" r="1.12" fill="#cfc8ea" opacity="0.25"/><circle cx="705.6" cy="341.9" r="1.47" fill="#cfc8ea" opacity="0.50"/><circle cx="531.6" cy="138.6" r="1.31" fill="#cfc8ea" opacity="0.39"/><circle cx="93.9" cy="34.2" r="0.73" fill="#cfc8ea" opacity="0.29"/><circle cx="231.1" cy="31.4" r="1.41" fill="#cfc8ea" opacity="0.14"/><circle cx="329.2" cy="420.4" r="0.89" fill="#cfc8ea" opacity="0.16"/><circle cx="120.9" cy="288.3" r="0.57" fill="#cfc8ea" opacity="0.37"/><circle cx="515.4" cy="378.5" r="1.29" fill="#cfc8ea" opacity="0.31"/><circle cx="708.9" cy="35.6" r="1.04" fill="#cfc8ea" opacity="0.43"/><circle cx="220.3" cy="388.3" r="1.66" fill="#cfc8ea" opacity="0.28"/><circle cx="520.0" cy="260.7" r="1.03" fill="#cfc8ea" opacity="0.49"/><circle cx="744.6" cy="294.3" r="1.56" fill="#cfc8ea" opacity="0.45"/><circle cx="166.5" cy="365.9" r="0.97" fill="#cfc8ea" opacity="0.53"/><circle cx="429.7" cy="456.9" r="0.99" fill="#cfc8ea" opacity="0.17"/><path d="M 471.8470538575202 56.6 L 472.3 58.7 L 474.4 59.137836143840104 L 472.3 59.5 L 471.8470538575202 61.7 L 471.4 59.5 L 469.3 59.137836143840104 L 471.4 58.7 Z" fill="#f6e6bf" opacity="0.7325558369979263"/><path d="M 684.3024591151625 325.0 L 684.9 328.3 L 688.2 328.89377924008295 L 684.9 329.5 L 684.3024591151625 332.7 L 683.7 329.5 L 680.5 328.89377924008295 L 683.7 328.3 Z" fill="#f6e6bf" opacity="0.5266611707396806"/><path d="M 394.67128350026906 333.5 L 395.1 335.9 L 397.5 336.3382425145246 L 395.1 336.8 L 394.67128350026906 339.2 L 394.2 336.8 L 391.8 336.3382425145246 L 394.2 335.9 Z" fill="#f6e6bf" opacity="0.6287922684103251"/><path d="M 310.58784059621394 160.4 L 311.1 163.1 L 313.7 163.56360053038225 L 311.1 164.1 L 310.58784059621394 166.7 L 310.1 164.1 L 307.5 163.56360053038225 L 310.1 163.1 Z" fill="#f6e6bf" opacity="0.7334809283725917"/><path d="M 533.1706663984805 284.9 L 533.6 287.2 L 535.8 287.61071036430076 L 533.6 288.0 L 533.1706663984805 290.3 L 532.7 288.0 L 530.5 287.61071036430076 L 532.7 287.2 Z" fill="#f6e6bf" opacity="0.628703391738236"/><path d="M 76.4 262.2 L 445.6 272.9 L 349.9 22.0 L 142.2 357.0 L 255.8 325.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Ascendant vs Descendant: Presented vs Projected</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#7thhouseastrology0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#7thhouseastrology0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">1st House — Ascendant</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">The self you present</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">How you arrive and read the world</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Clean, conscious self-image</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Blind to what you outsource</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">7th House — Descendant</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">The self handed to others to embody</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Disowned traits magnified in partners</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">A mirror, not a forecast</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Strong reactions map back to you</text>
+  <path d="M 202.22749999999988 474.4 L 202.6 476.6 L 204.8 477 L 202.6 477.4 L 202.22749999999988 479.6 L 201.8 477.4 L 199.6 477 L 201.8 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 474.4 L 558.2 476.6 L 560.4 477 L 558.2 477.4 L 557.7725000000002 479.6 L 557.4 477.4 L 555.2 477 L 557.4 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="识别三分相的四个信号">
+  <defs>
+    <linearGradient id="trineinastrology1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="trineinastrology1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="trineinastrology1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="trineinastrology1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="trineinastrology1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="trineinastrology1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#trineinastrology1zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#trineinastrology1zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#trineinastrology1zh-neb2)"/>
+  <circle cx="221.3" cy="125.1" r="0.60" fill="#cfc8ea" opacity="0.20"/><circle cx="406.1" cy="52.7" r="1.21" fill="#cfc8ea" opacity="0.32"/><circle cx="236.4" cy="98.4" r="1.04" fill="#cfc8ea" opacity="0.25"/><circle cx="675.8" cy="215.0" r="0.50" fill="#cfc8ea" opacity="0.43"/><circle cx="639.3" cy="360.0" r="1.50" fill="#cfc8ea" opacity="0.26"/><circle cx="274.7" cy="286.9" r="0.91" fill="#cfc8ea" opacity="0.22"/><circle cx="458.4" cy="291.2" r="1.50" fill="#cfc8ea" opacity="0.34"/><circle cx="264.3" cy="166.4" r="0.54" fill="#cfc8ea" opacity="0.35"/><circle cx="432.0" cy="181.3" r="1.34" fill="#cfc8ea" opacity="0.29"/><circle cx="742.8" cy="103.3" r="0.98" fill="#cfc8ea" opacity="0.31"/><circle cx="700.6" cy="350.2" r="0.80" fill="#cfc8ea" opacity="0.48"/><circle cx="247.6" cy="85.8" r="0.79" fill="#cfc8ea" opacity="0.44"/><circle cx="460.0" cy="63.5" r="0.87" fill="#cfc8ea" opacity="0.52"/><circle cx="173.0" cy="100.4" r="1.54" fill="#cfc8ea" opacity="0.48"/><circle cx="215.0" cy="73.9" r="1.64" fill="#cfc8ea" opacity="0.44"/><circle cx="217.2" cy="198.8" r="0.84" fill="#cfc8ea" opacity="0.42"/><circle cx="233.6" cy="120.9" r="1.10" fill="#cfc8ea" opacity="0.41"/><circle cx="155.7" cy="218.8" r="1.25" fill="#cfc8ea" opacity="0.52"/><circle cx="129.1" cy="349.8" r="0.78" fill="#cfc8ea" opacity="0.42"/><circle cx="187.6" cy="229.9" r="0.96" fill="#cfc8ea" opacity="0.13"/><circle cx="362.7" cy="105.4" r="1.11" fill="#cfc8ea" opacity="0.33"/><circle cx="514.4" cy="310.4" r="1.47" fill="#cfc8ea" opacity="0.46"/><circle cx="550.6" cy="125.9" r="1.12" fill="#cfc8ea" opacity="0.19"/><circle cx="403.7" cy="167.6" r="1.09" fill="#cfc8ea" opacity="0.47"/><circle cx="195.2" cy="279.8" r="1.04" fill="#cfc8ea" opacity="0.50"/><circle cx="169.0" cy="342.7" r="1.14" fill="#cfc8ea" opacity="0.18"/><circle cx="685.3" cy="269.1" r="1.69" fill="#cfc8ea" opacity="0.27"/><circle cx="272.3" cy="339.7" r="0.87" fill="#cfc8ea" opacity="0.18"/><circle cx="84.2" cy="289.3" r="1.28" fill="#cfc8ea" opacity="0.14"/><circle cx="187.0" cy="309.0" r="1.47" fill="#cfc8ea" opacity="0.53"/><circle cx="94.4" cy="311.2" r="1.46" fill="#cfc8ea" opacity="0.12"/><path d="M 202.25535732507706 41.1 L 202.7 43.2 L 204.7 43.62308763875626 L 202.7 44.0 L 202.25535732507706 46.1 L 201.9 44.0 L 199.8 43.62308763875626 L 201.9 43.2 Z" fill="#f6e6bf" opacity="0.5162826142041013"/><path d="M 717.8610957190394 120.6 L 718.4 123.5 L 721.3 124.0442037533503 L 718.4 124.6 L 717.8610957190394 127.4 L 717.3 124.6 L 714.5 124.0442037533503 L 717.3 123.5 Z" fill="#f6e6bf" opacity="0.5558766552945599"/><path d="M 162.75162117183208 129.3 L 163.3 132.0 L 166.0 132.5172282566782 L 163.3 133.0 L 162.75162117183208 135.7 L 162.2 133.0 L 159.5 132.5172282566782 L 162.2 132.0 Z" fill="#f6e6bf" opacity="0.7917194586945697"/><path d="M 265.47096864134073 183.1 L 266.0 185.9 L 268.8 186.46929685468785 L 266.0 187.0 L 265.47096864134073 189.8 L 264.9 187.0 L 262.1 186.46929685468785 L 264.9 185.9 Z" fill="#f6e6bf" opacity="0.5507337033515796"/><path d="M 715.830476552248 162.9 L 716.3 165.1 L 718.5 165.572818843415 L 716.3 166.0 L 715.830476552248 168.2 L 715.4 166.0 L 713.2 165.572818843415 L 715.4 165.1 Z" fill="#f6e6bf" opacity="0.6034375729737803"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">识别三分相的四个信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#trineinastrology1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#trineinastrology1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#trineinastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#trineinastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">不费力的本事</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">朋友夸你、你却觉得没什么大不了</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#trineinastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#trineinastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">不用协调的节奏</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">生活两部分自己配合好，不需谈判</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#trineinastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#trineinastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">盘面上的几何</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">约隔120度、同元素配对的两颗行星</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#trineinastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#trineinastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">安静的停滞</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">多年不再进步、被放上自动挡的天赋</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="The Five Reading Layers">
+  <defs>
+    <linearGradient id="solarreturnchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="solarreturnchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="solarreturnchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="solarreturnchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="solarreturnchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="solarreturnchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#solarreturnchart0en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#solarreturnchart0en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#solarreturnchart0en-neb2)"/>
+  <circle cx="105.4" cy="25.7" r="1.40" fill="#cfc8ea" opacity="0.26"/><circle cx="44.5" cy="164.7" r="0.81" fill="#cfc8ea" opacity="0.15"/><circle cx="222.7" cy="143.6" r="1.34" fill="#cfc8ea" opacity="0.14"/><circle cx="597.7" cy="130.2" r="0.70" fill="#cfc8ea" opacity="0.48"/><circle cx="51.5" cy="294.5" r="0.98" fill="#cfc8ea" opacity="0.38"/><circle cx="602.0" cy="307.2" r="1.50" fill="#cfc8ea" opacity="0.48"/><circle cx="163.4" cy="360.6" r="0.83" fill="#cfc8ea" opacity="0.47"/><circle cx="512.1" cy="212.9" r="1.23" fill="#cfc8ea" opacity="0.18"/><circle cx="474.1" cy="281.8" r="0.41" fill="#cfc8ea" opacity="0.27"/><circle cx="615.6" cy="15.3" r="1.14" fill="#cfc8ea" opacity="0.49"/><circle cx="571.7" cy="366.4" r="0.83" fill="#cfc8ea" opacity="0.29"/><circle cx="423.3" cy="365.2" r="0.41" fill="#cfc8ea" opacity="0.23"/><circle cx="463.8" cy="167.2" r="1.61" fill="#cfc8ea" opacity="0.48"/><circle cx="77.3" cy="36.4" r="1.53" fill="#cfc8ea" opacity="0.52"/><circle cx="357.2" cy="301.6" r="1.53" fill="#cfc8ea" opacity="0.20"/><circle cx="214.8" cy="174.1" r="0.93" fill="#cfc8ea" opacity="0.35"/><circle cx="289.7" cy="316.2" r="0.43" fill="#cfc8ea" opacity="0.46"/><circle cx="674.2" cy="325.0" r="1.09" fill="#cfc8ea" opacity="0.54"/><circle cx="337.7" cy="368.4" r="1.46" fill="#cfc8ea" opacity="0.47"/><circle cx="242.5" cy="280.1" r="0.89" fill="#cfc8ea" opacity="0.18"/><circle cx="155.6" cy="57.1" r="0.52" fill="#cfc8ea" opacity="0.25"/><circle cx="293.7" cy="59.3" r="0.99" fill="#cfc8ea" opacity="0.19"/><circle cx="155.0" cy="110.7" r="0.70" fill="#cfc8ea" opacity="0.51"/><circle cx="523.6" cy="135.0" r="1.30" fill="#cfc8ea" opacity="0.39"/><circle cx="671.0" cy="48.5" r="0.86" fill="#cfc8ea" opacity="0.33"/><circle cx="487.0" cy="267.3" r="1.58" fill="#cfc8ea" opacity="0.19"/><circle cx="636.8" cy="23.3" r="0.84" fill="#cfc8ea" opacity="0.32"/><circle cx="32.6" cy="418.6" r="1.18" fill="#cfc8ea" opacity="0.19"/><circle cx="34.1" cy="319.2" r="1.27" fill="#cfc8ea" opacity="0.14"/><circle cx="314.1" cy="303.6" r="1.32" fill="#cfc8ea" opacity="0.45"/><circle cx="437.4" cy="75.3" r="1.65" fill="#cfc8ea" opacity="0.18"/><circle cx="531.9" cy="382.1" r="0.89" fill="#cfc8ea" opacity="0.35"/><circle cx="35.7" cy="70.0" r="0.88" fill="#cfc8ea" opacity="0.49"/><circle cx="227.4" cy="374.6" r="0.68" fill="#cfc8ea" opacity="0.18"/><circle cx="264.3" cy="64.3" r="1.19" fill="#cfc8ea" opacity="0.20"/><circle cx="412.6" cy="118.9" r="1.66" fill="#cfc8ea" opacity="0.53"/><circle cx="57.7" cy="114.7" r="0.95" fill="#cfc8ea" opacity="0.53"/><path d="M 89.42938094586134 325.2 L 89.8 327.4 L 92.0 327.8618675840553 L 89.8 328.3 L 89.42938094586134 330.5 L 89.0 328.3 L 86.8 327.8618675840553 L 89.0 327.4 Z" fill="#f6e6bf" opacity="0.6728067258140072"/><path d="M 710.2837774008512 119.9 L 710.8 122.7 L 713.7 123.28081407095306 L 710.8 123.8 L 710.2837774008512 126.7 L 709.7 123.8 L 706.9 123.28081407095306 L 709.7 122.7 Z" fill="#f6e6bf" opacity="0.6945189845515415"/><path d="M 461.4900061264634 162.5 L 462.0 165.0 L 464.4 165.48843403323554 L 462.0 166.0 L 461.4900061264634 168.4 L 461.0 166.0 L 458.5 165.48843403323554 L 461.0 165.0 Z" fill="#f6e6bf" opacity="0.6963400929933414"/><path d="M 656.9072571098804 133.7 L 657.3 136.0 L 659.6 136.38916858914308 L 657.3 136.8 L 656.9072571098804 139.1 L 656.5 136.8 L 654.2 136.38916858914308 L 656.5 136.0 Z" fill="#f6e6bf" opacity="0.6483609887538477"/><path d="M 612.0521605238318 19.0 L 612.5 21.5 L 615.1 21.985073145246133 L 612.5 22.5 L 612.0521605238318 25.0 L 611.6 22.5 L 609.0 21.985073145246133 L 611.6 21.5 Z" fill="#f6e6bf" opacity="0.5536418935051188"/><path d="M 602.0 307.2 L 163.4 360.6 L 463.8 167.2 L 214.8 174.1 L 671.0 48.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">The Five Reading Layers</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#solarreturnchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#solarreturnchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#solarreturnchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#solarreturnchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Return Ascendant</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The year's visible tone — how you show up</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#solarreturnchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#solarreturnchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Natal overlay</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Conjunctions within ~3° mark the year's hot zones</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#solarreturnchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#solarreturnchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Sun's house</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Where life energy concentrates this year</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#solarreturnchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#solarreturnchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Ascendant ruler</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The planet steering the year's storyline</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#solarreturnchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#solarreturnchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Critical degrees</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cardinal 0°, 13°, 26° mark the pressure points</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

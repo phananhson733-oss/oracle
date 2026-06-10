@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 701" role="img" aria-label="第六宫与邻居：日常、头衔、体质">
+  <defs>
+    <linearGradient id="6thhouseastrology0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="6thhouseastrology0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="6thhouseastrology0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="6thhouseastrology0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="6thhouseastrology0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="6thhouseastrology0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="url(#6thhouseastrology0zh-panel)"/>
+  <ellipse cx="198" cy="168" rx="380" ry="238" fill="url(#6thhouseastrology0zh-neb1)"/>
+  <ellipse cx="623" cy="561" rx="334" ry="224" fill="url(#6thhouseastrology0zh-neb2)"/>
+  <circle cx="612.8" cy="85.5" r="1.38" fill="#cfc8ea" opacity="0.26"/><circle cx="540.2" cy="480.3" r="1.60" fill="#cfc8ea" opacity="0.26"/><circle cx="575.1" cy="64.4" r="0.60" fill="#cfc8ea" opacity="0.16"/><circle cx="385.2" cy="540.1" r="0.68" fill="#cfc8ea" opacity="0.34"/><circle cx="712.8" cy="513.6" r="1.29" fill="#cfc8ea" opacity="0.26"/><circle cx="234.0" cy="348.2" r="0.65" fill="#cfc8ea" opacity="0.17"/><circle cx="645.4" cy="300.7" r="0.59" fill="#cfc8ea" opacity="0.39"/><circle cx="256.9" cy="241.6" r="1.47" fill="#cfc8ea" opacity="0.22"/><circle cx="185.6" cy="672.7" r="1.53" fill="#cfc8ea" opacity="0.29"/><circle cx="496.5" cy="418.9" r="0.84" fill="#cfc8ea" opacity="0.44"/><circle cx="610.7" cy="209.0" r="1.04" fill="#cfc8ea" opacity="0.25"/><circle cx="543.3" cy="620.8" r="0.47" fill="#cfc8ea" opacity="0.35"/><circle cx="690.9" cy="544.5" r="0.79" fill="#cfc8ea" opacity="0.33"/><circle cx="296.8" cy="395.7" r="0.70" fill="#cfc8ea" opacity="0.29"/><circle cx="190.2" cy="51.9" r="0.54" fill="#cfc8ea" opacity="0.24"/><circle cx="448.0" cy="509.2" r="1.67" fill="#cfc8ea" opacity="0.20"/><circle cx="352.0" cy="475.1" r="0.44" fill="#cfc8ea" opacity="0.30"/><circle cx="349.4" cy="232.4" r="1.23" fill="#cfc8ea" opacity="0.46"/><circle cx="201.5" cy="149.7" r="1.46" fill="#cfc8ea" opacity="0.22"/><circle cx="395.8" cy="499.3" r="1.55" fill="#cfc8ea" opacity="0.29"/><circle cx="686.1" cy="590.5" r="0.84" fill="#cfc8ea" opacity="0.54"/><circle cx="455.3" cy="59.2" r="1.40" fill="#cfc8ea" opacity="0.22"/><circle cx="523.8" cy="529.2" r="1.33" fill="#cfc8ea" opacity="0.18"/><circle cx="691.5" cy="172.7" r="1.36" fill="#cfc8ea" opacity="0.38"/><circle cx="466.3" cy="660.1" r="1.54" fill="#cfc8ea" opacity="0.49"/><circle cx="240.6" cy="437.6" r="1.23" fill="#cfc8ea" opacity="0.18"/><circle cx="360.8" cy="666.7" r="1.48" fill="#cfc8ea" opacity="0.28"/><circle cx="706.1" cy="611.5" r="1.24" fill="#cfc8ea" opacity="0.20"/><circle cx="307.9" cy="588.1" r="1.09" fill="#cfc8ea" opacity="0.18"/><circle cx="725.4" cy="34.8" r="0.88" fill="#cfc8ea" opacity="0.46"/><circle cx="34.6" cy="263.7" r="0.55" fill="#cfc8ea" opacity="0.15"/><circle cx="532.1" cy="231.9" r="1.12" fill="#cfc8ea" opacity="0.48"/><circle cx="740.2" cy="526.4" r="0.89" fill="#cfc8ea" opacity="0.32"/><circle cx="664.6" cy="163.5" r="1.50" fill="#cfc8ea" opacity="0.50"/><circle cx="42.2" cy="139.4" r="0.59" fill="#cfc8ea" opacity="0.13"/><circle cx="614.2" cy="576.5" r="1.30" fill="#cfc8ea" opacity="0.35"/><circle cx="262.6" cy="452.2" r="1.60" fill="#cfc8ea" opacity="0.35"/><circle cx="182.9" cy="78.2" r="0.87" fill="#cfc8ea" opacity="0.27"/><circle cx="654.8" cy="453.2" r="0.56" fill="#cfc8ea" opacity="0.42"/><circle cx="191.7" cy="286.6" r="1.14" fill="#cfc8ea" opacity="0.21"/><circle cx="64.9" cy="573.4" r="1.39" fill="#cfc8ea" opacity="0.24"/><circle cx="124.0" cy="257.1" r="0.53" fill="#cfc8ea" opacity="0.52"/><circle cx="366.4" cy="418.4" r="1.64" fill="#cfc8ea" opacity="0.18"/><circle cx="731.5" cy="325.2" r="0.99" fill="#cfc8ea" opacity="0.29"/><circle cx="198.6" cy="34.6" r="0.46" fill="#cfc8ea" opacity="0.43"/><circle cx="437.7" cy="608.6" r="1.28" fill="#cfc8ea" opacity="0.43"/><circle cx="519.4" cy="446.2" r="1.06" fill="#cfc8ea" opacity="0.30"/><circle cx="99.7" cy="362.2" r="1.31" fill="#cfc8ea" opacity="0.39"/><circle cx="135.7" cy="365.4" r="1.10" fill="#cfc8ea" opacity="0.41"/><circle cx="375.3" cy="338.4" r="0.44" fill="#cfc8ea" opacity="0.53"/><circle cx="63.4" cy="384.5" r="0.93" fill="#cfc8ea" opacity="0.39"/><circle cx="210.1" cy="254.2" r="0.91" fill="#cfc8ea" opacity="0.30"/><circle cx="645.6" cy="648.9" r="0.69" fill="#cfc8ea" opacity="0.45"/><circle cx="506.4" cy="292.8" r="0.95" fill="#cfc8ea" opacity="0.28"/><circle cx="654.2" cy="547.2" r="1.54" fill="#cfc8ea" opacity="0.21"/><circle cx="284.3" cy="408.6" r="0.42" fill="#cfc8ea" opacity="0.46"/><circle cx="422.1" cy="669.9" r="1.10" fill="#cfc8ea" opacity="0.16"/><circle cx="127.7" cy="637.6" r="0.81" fill="#cfc8ea" opacity="0.46"/><circle cx="527.9" cy="213.4" r="1.06" fill="#cfc8ea" opacity="0.44"/><path d="M 298.17212607711554 404.9 L 298.6 407.4 L 301.1 407.830720622791 L 298.6 408.3 L 298.17212607711554 410.7 L 297.7 408.3 L 295.3 407.830720622791 L 297.7 407.4 Z" fill="#f6e6bf" opacity="0.7306539198150859"/><path d="M 226.39345015585423 197.8 L 226.8 199.9 L 228.9 200.25659338920377 L 226.8 200.6 L 226.39345015585423 202.7 L 226.0 200.6 L 223.9 200.25659338920377 L 226.0 199.9 Z" fill="#f6e6bf" opacity="0.7712091796798631"/><path d="M 575.6548923328519 20.7 L 576.3 24.0 L 579.7 24.64765920373611 L 576.3 25.3 L 575.6548923328519 28.6 L 575.0 25.3 L 571.7 24.64765920373611 L 575.0 24.0 Z" fill="#f6e6bf" opacity="0.6905269872164354"/><path d="M 268.89950489997864 431.8 L 269.5 435.1 L 272.8 435.7815996555146 L 269.5 436.4 L 268.89950489997864 439.7 L 268.3 436.4 L 264.9 435.7815996555146 L 268.3 435.1 Z" fill="#f6e6bf" opacity="0.7686637951759621"/><path d="M 682.0852022096515 43.6 L 682.5 46.0 L 684.9 46.41632475773804 L 682.5 46.9 L 682.0852022096515 49.2 L 681.6 46.9 L 679.3 46.41632475773804 L 681.6 46.0 Z" fill="#f6e6bf" opacity="0.7743826450547203"/><path d="M 448.0 509.2 L 686.1 590.5 L 307.9 588.1 L 182.9 78.2 L 654.8 453.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="687" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 681.8 L 16.5 684.5 L 19.2 685 L 16.5 685.5 L 16 688.2 L 15.5 685.5 L 12.8 685 L 15.5 684.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 681.8 L 744.5 684.5 L 747.2 685 L 744.5 685.5 L 744 688.2 L 743.5 685.5 L 740.8 685 L 743.5 684.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">第六宫与邻居：日常、头衔、体质</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#6thhouseastrology0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#6thhouseastrology0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">第六宫</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">不被看见的日常打磨</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">真正送你抵达的重复努力</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">经年累月的身体养护</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">换来稳定，少了即兴</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">第十宫</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">公开的事业与认可</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">设定目的地与头衔</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">看得见的成就</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">赢得地位，让渡沉浸</text>
+  <path d="M 380 477.5 L 380.7 481.3 L 384.5 482 L 380.7 482.7 L 380 486.5 L 379.3 482.7 L 375.5 482 L 379.3 481.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="495" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="495" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 493.1 L 380.5 496.0 L 383.4 496.5 L 380.5 497.0 L 380 499.9 L 379.5 497.0 L 376.6 496.5 L 379.5 496.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">第一宫</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">天生的活力与身体</text>
+  <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">出厂自带的体质</text>
+  <path d="M 70 611.8 L 70.5 614.5 L 73.2 615 L 70.5 615.5 L 70 618.2 L 69.5 615.5 L 66.8 615 L 69.5 614.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">与生俱来的精力</text>
+  <path d="M 70 640.8 L 70.5 643.5 L 73.2 644 L 70.5 644.5 L 70 647.2 L 69.5 644.5 L 66.8 644 L 69.5 643.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">只是起点，不管养护</text>
+  <path d="M 280.025 672.4 L 280.4 674.6 L 282.6 675 L 280.4 675.4 L 280.025 677.6 L 279.6 675.4 L 277.4 675 L 279.6 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="679" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 672.4 L 480.4 674.6 L 482.6 675 L 480.4 675.4 L 479.975 677.6 L 479.6 675.4 L 477.4 675 L 479.6 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

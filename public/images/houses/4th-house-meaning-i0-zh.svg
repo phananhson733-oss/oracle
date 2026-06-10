@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="第四宫与第十宫：私密根基与公众高点">
+  <defs>
+    <linearGradient id="4thhousemeaning0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="4thhousemeaning0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="4thhousemeaning0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="4thhousemeaning0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="4thhousemeaning0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="4thhousemeaning0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#4thhousemeaning0zh-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#4thhousemeaning0zh-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#4thhousemeaning0zh-neb2)"/>
+  <circle cx="48.5" cy="74.3" r="1.34" fill="#cfc8ea" opacity="0.17"/><circle cx="58.6" cy="301.9" r="1.52" fill="#cfc8ea" opacity="0.17"/><circle cx="183.6" cy="350.5" r="1.70" fill="#cfc8ea" opacity="0.52"/><circle cx="553.7" cy="387.0" r="1.32" fill="#cfc8ea" opacity="0.43"/><circle cx="536.0" cy="249.1" r="0.53" fill="#cfc8ea" opacity="0.25"/><circle cx="33.5" cy="360.0" r="0.80" fill="#cfc8ea" opacity="0.19"/><circle cx="518.1" cy="379.6" r="0.82" fill="#cfc8ea" opacity="0.47"/><circle cx="122.6" cy="63.7" r="0.60" fill="#cfc8ea" opacity="0.34"/><circle cx="387.6" cy="457.0" r="1.09" fill="#cfc8ea" opacity="0.27"/><circle cx="538.9" cy="362.3" r="0.50" fill="#cfc8ea" opacity="0.22"/><circle cx="244.9" cy="422.7" r="1.50" fill="#cfc8ea" opacity="0.40"/><circle cx="517.0" cy="203.2" r="0.88" fill="#cfc8ea" opacity="0.34"/><circle cx="493.8" cy="90.4" r="0.55" fill="#cfc8ea" opacity="0.35"/><circle cx="561.8" cy="343.0" r="1.63" fill="#cfc8ea" opacity="0.48"/><circle cx="448.7" cy="344.8" r="0.74" fill="#cfc8ea" opacity="0.35"/><circle cx="41.1" cy="264.8" r="0.66" fill="#cfc8ea" opacity="0.16"/><circle cx="103.2" cy="164.1" r="0.46" fill="#cfc8ea" opacity="0.15"/><circle cx="290.7" cy="35.7" r="1.02" fill="#cfc8ea" opacity="0.24"/><circle cx="226.8" cy="262.3" r="0.59" fill="#cfc8ea" opacity="0.46"/><circle cx="178.9" cy="238.4" r="0.62" fill="#cfc8ea" opacity="0.46"/><circle cx="159.2" cy="98.0" r="1.36" fill="#cfc8ea" opacity="0.51"/><circle cx="206.3" cy="263.5" r="0.74" fill="#cfc8ea" opacity="0.52"/><circle cx="130.6" cy="478.5" r="1.06" fill="#cfc8ea" opacity="0.14"/><circle cx="359.2" cy="288.6" r="0.58" fill="#cfc8ea" opacity="0.39"/><circle cx="476.9" cy="98.2" r="0.99" fill="#cfc8ea" opacity="0.19"/><circle cx="598.0" cy="30.6" r="0.58" fill="#cfc8ea" opacity="0.50"/><circle cx="347.5" cy="287.2" r="1.67" fill="#cfc8ea" opacity="0.37"/><circle cx="559.4" cy="371.0" r="1.37" fill="#cfc8ea" opacity="0.34"/><circle cx="154.0" cy="13.4" r="1.30" fill="#cfc8ea" opacity="0.44"/><circle cx="183.9" cy="161.6" r="1.10" fill="#cfc8ea" opacity="0.29"/><circle cx="170.8" cy="229.4" r="0.76" fill="#cfc8ea" opacity="0.34"/><circle cx="579.4" cy="187.5" r="1.11" fill="#cfc8ea" opacity="0.34"/><circle cx="493.3" cy="32.7" r="0.58" fill="#cfc8ea" opacity="0.51"/><circle cx="56.1" cy="23.8" r="1.20" fill="#cfc8ea" opacity="0.41"/><circle cx="329.4" cy="59.4" r="1.41" fill="#cfc8ea" opacity="0.39"/><circle cx="461.7" cy="446.0" r="0.44" fill="#cfc8ea" opacity="0.27"/><circle cx="326.9" cy="90.0" r="1.61" fill="#cfc8ea" opacity="0.13"/><circle cx="221.5" cy="333.0" r="1.68" fill="#cfc8ea" opacity="0.36"/><circle cx="370.9" cy="119.5" r="1.68" fill="#cfc8ea" opacity="0.26"/><circle cx="89.2" cy="283.6" r="0.47" fill="#cfc8ea" opacity="0.53"/><circle cx="314.0" cy="225.4" r="1.01" fill="#cfc8ea" opacity="0.34"/><circle cx="477.6" cy="254.7" r="0.63" fill="#cfc8ea" opacity="0.54"/><path d="M 400.96597792208195 54.2 L 401.5 56.7 L 404.0 57.231679807649925 L 401.5 57.7 L 400.96597792208195 60.3 L 400.5 57.7 L 397.9 57.231679807649925 L 400.5 56.7 Z" fill="#f6e6bf" opacity="0.75682521245908"/><path d="M 398.4155895784497 387.5 L 398.9 390.1 L 401.4 390.5422565920744 L 398.9 391.0 L 398.4155895784497 393.6 L 397.9 391.0 L 395.4 390.5422565920744 L 397.9 390.1 Z" fill="#f6e6bf" opacity="0.5807966407155618"/><path d="M 499.41010868549347 124.6 L 500.0 127.6 L 503.1 128.1939182591159 L 500.0 128.8 L 499.41010868549347 131.8 L 498.8 128.8 L 495.8 128.1939182591159 L 498.8 127.6 Z" fill="#f6e6bf" opacity="0.7724108456401154"/><path d="M 97.68039881438017 103.4 L 98.2 106.0 L 100.7 106.4514360318426 L 98.2 106.9 L 97.68039881438017 109.5 L 97.2 106.9 L 94.6 106.4514360318426 L 97.2 106.0 Z" fill="#f6e6bf" opacity="0.7488866792758927"/><path d="M 187.4248223155737 22.9 L 187.9 25.4 L 190.4 25.889559618430212 L 187.9 26.4 L 187.4248223155737 28.9 L 186.9 26.4 L 184.4 25.889559618430212 L 186.9 25.4 Z" fill="#f6e6bf" opacity="0.7781796117080375"/><path d="M 518.1 379.6 L 517.0 203.2 L 226.8 262.3 L 159.2 98.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">第四宫与第十宫：私密根基与公众高点</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#4thhousemeaning0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#4thhousemeaning0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">第四宫 · 天底</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">位于星盘最底端</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">根、家与归属感</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">情感的诚实与扎根</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">安稳，却可能不敢登台</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">第十宫 · 天顶</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">位于星盘最顶端</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">公众角色与名声</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">对外的可见度与地位</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">有成就，内里却可能漂泊</text>
+  <path d="M 280.025 474.4 L 280.4 476.6 L 282.6 477 L 280.4 477.4 L 280.025 479.6 L 279.6 477.4 L 277.4 477 L 279.6 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 474.4 L 480.4 476.6 L 482.6 477 L 480.4 477.4 L 479.975 479.6 L 479.6 477.4 L 477.4 477 L 479.6 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

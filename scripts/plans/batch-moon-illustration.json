@@ -1,0 +1,981 @@
+{
+  "_comment": "MOON cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/moon",
+  "urlBase": "/images/moon",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "full-moon-energy": {
+      "hero": {
+        "prompt": "A vast night sky in a deep indigo-to-near-black palette (#16112c fading to #0b0a1b), a luminous full moon at upper right sitting directly opposite a tiny distant sun at lower left; across the dark sea below, a single tide wave rendered as a thin soft gold line (#d4af6a) grows steadily larger in amplitude as it approaches the moon — the same wave amplified, not a new one. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human figures or faces.",
+        "altEn": "A gold tide wave growing in amplitude beneath a full moon, showing how full moon energy amplifies what is already building",
+        "altZh": "满月下振幅逐渐增强的金色潮汐波形，象征满月能量放大原已积聚的情绪"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## full moon energy vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Points in One Lunar Cycle",
+          "titleZh": "一个月相周期中的三个节点",
+          "columns": [
+            {
+              "nameEn": "New moon",
+              "nameZh": "新月",
+              "linesEn": [
+                "Dark, inward start of the cycle",
+                "Plant intentions you cannot yet see clearly",
+                "Private, low-pressure quiet"
+              ],
+              "linesZh": [
+                "周期幽暗、内向的起点",
+                "种下尚看不清的意图",
+                "私密而低压的安静"
+              ]
+            },
+            {
+              "nameEn": "Full moon",
+              "nameZh": "满月",
+              "linesEn": [
+                "Floods the same intentions with light",
+                "Everything exposed at once",
+                "Sharpest insight of the cycle"
+              ],
+              "linesZh": [
+                "以光照亮同一批意图",
+                "一切同时暴露",
+                "整个周期中最锐利的洞察"
+              ]
+            },
+            {
+              "nameEn": "Waning phase",
+              "nameZh": "亏月阶段",
+              "linesEn": [
+                "Releasing and integrating",
+                "Works with what the light revealed",
+                "Calmer days without the peak's intensity"
+              ],
+              "linesZh": [
+                "释放与整合",
+                "消化月光揭示的内容",
+                "平静、不再有峰值的强度"
+              ]
+            }
+          ],
+          "altEn": "Comparison of new moon, full moon, and waning phase energies: planting in darkness, full exposure and insight, then release and integration",
+          "altZh": "新月、满月与亏月能量对比：暗中播种、全面照亮、随后释放整合"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read full moon energy in Yourself",
+          "titleEn": "Five Signals of Full Moon Energy",
+          "titleZh": "满月能量的五个信号",
+          "items": [
+            {
+              "nameEn": "Sleep turns lighter",
+              "nameZh": "睡眠变浅",
+              "subEn": "Waking more often, mentally wired on bright nights",
+              "subZh": "明亮的夜晚更易醒来，头脑亢奋"
+            },
+            {
+              "nameEn": "Old feelings resurface",
+              "nameZh": "旧情绪重现",
+              "subEn": "Settled tensions flare, echoing the last new moon",
+              "subZh": "以为平息的张力复燃，呼应上次新月的主题"
+            },
+            {
+              "nameEn": "Clarity arrives uninvited",
+              "nameZh": "清晰感不请自来",
+              "subEn": "A choice you circled for weeks suddenly feels obvious",
+              "subZh": "盘旋数周的抉择突然变得显而易见"
+            },
+            {
+              "nameEn": "More, not different",
+              "nameZh": "被放大而非被改变",
+              "subEn": "The peak magnifies your existing mood",
+              "subZh": "峰值放大的是你原有的情绪"
+            },
+            {
+              "nameEn": "Endings feel timely",
+              "nameZh": "收尾恰逢其时",
+              "subEn": "A pull to finish, release, or close something",
+              "subZh": "想要完成、放下或了结某事的冲动"
+            }
+          ],
+          "altEn": "Five observable signals of full moon energy: lighter sleep, resurfacing feelings, uninvited clarity, amplified mood, and timely endings",
+          "altZh": "满月能量的五个可观察信号：睡眠变浅、旧情绪重现、清晰感袭来、情绪被放大、收尾感"
+        }
+      ]
+    },
+    "full-moon-june-2026": {
+      "hero": {
+        "prompt": "A stark mountain summit silhouette beneath a radiant full moon at its zenith, deep indigo-to-near-black palette (#16112c fading to #0b0a1b); beside the moon a small bright planet traces a thin gold orbital path (#d4af6a) that loops and doubles back on itself in a retrograde curl, while the moonlight and the looping path both bend downward toward the mountain rather than outward — two completion signals converging on one peak. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Full moon over a mountain summit while a planet's gold path loops back on itself — the double completion signal of June 29, 2026",
+        "altZh": "满月悬于山巅，行星金色轨迹折返成环，象征2026年6月29日的双重收尾信号"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## full moon June 2026 vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Two Turning Points on June 29",
+          "titleZh": "6月29日的两个转折点",
+          "columns": [
+            {
+              "nameEn": "Capricorn full moon",
+              "nameZh": "摩羯座满月",
+              "linesEn": [
+                "Results check on the ambition-security axis",
+                "Light falls on what effort actually produced",
+                "Trades comfortable deferral for clarity"
+              ],
+              "linesZh": [
+                "对野心—安全轴线的成果检验",
+                "照亮努力真正产出的结果",
+                "以放弃舒适的拖延换取清晰"
+              ]
+            },
+            {
+              "nameEn": "Mercury retrograde station",
+              "nameZh": "水星逆行停滞点",
+              "linesEn": [
+                "Maximum apparent stillness before reversing",
+                "Communication drag, decision fog, stalled plans",
+                "Launches need renegotiating within 25 days"
+              ],
+              "linesZh": [
+                "转向前最大程度的视停滞",
+                "沟通迟滞、决策迷雾、计划停摆",
+                "此时启动的事25天内需重新协商"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the Capricorn full moon's results check with Mercury's retrograde station and its 25-day review cycle, both landing June 29, 2026",
+          "altZh": "摩羯座满月的成果检验与水星逆行停滞点的25天复盘周期对比，两者同落于2026年6月29日"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read full moon June 2026 in Your Timing",
+          "titleEn": "Five Signs This Window Is Active",
+          "titleZh": "这一窗口期的五个征兆",
+          "items": [
+            {
+              "nameEn": "Unfinished work resurfaces",
+              "nameZh": "未完成事项重新浮现",
+              "subEn": "Contracts, milestones, negotiations need another round",
+              "subZh": "合同、里程碑、谈判需要再过一轮"
+            },
+            {
+              "nameEn": "Ambition fatigue",
+              "nameZh": "事业倦怠感",
+              "subEn": "Quiet questioning of a long-held professional structure",
+              "subZh": "对长期维持的职业结构悄然生疑"
+            },
+            {
+              "nameEn": "Communication delays",
+              "nameZh": "沟通延迟与返工",
+              "subEn": "Messages misread, plans rescheduled, timing feels off",
+              "subZh": "信息被误读、计划改期、时机总觉不对"
+            },
+            {
+              "nameEn": "Pull to emotional ground",
+              "nameZh": "被情感根基牵引",
+              "subEn": "Unexpected draws toward family, home, personal comfort",
+              "subZh": "意外地想靠近家人、家庭与个人慰藉"
+            },
+            {
+              "nameEn": "Clarity through release",
+              "nameZh": "借放下而清晰",
+              "subEn": "The most useful action removes something from your plate",
+              "subZh": "最有用的行动是从手中移走一件事"
+            }
+          ],
+          "altEn": "Five signs the June 29, 2026 window is active: resurfacing projects, ambition fatigue, communication delays, pulls toward home, and clarity through release",
+          "altZh": "2026年6月29日窗口期的五个征兆：旧事重现、事业倦怠、沟通延迟、回归情感根基、放下后的清晰"
+        }
+      ]
+    },
+    "full-moon-july-2026": {
+      "hero": {
+        "prompt": "A luminous full moon low above a wide horizon in a deep indigo-to-near-black sky (#16112c fading to #0b0a1b); a thin gold river of light (#d4af6a) crosses the dark landscape, doubling back in a single loop midway — a review just completed — then straightening cleanly toward the moon, where its glow scatters into rippling parallel waves suggesting open air and shared space. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A gold path that loops back once then runs straight to a full moon — post-retrograde integration at the July 29, 2026 Aquarius full moon",
+        "altZh": "金色路径折返一次后笔直通向满月，象征2026年7月29日水瓶座满月的逆行后整合"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## What is full moon July 2026?",
+          "titleEn": "July 2026 Timing Sequence",
+          "titleZh": "2026年7月时间线",
+          "items": [
+            {
+              "labelEn": "Jul 14",
+              "labelZh": "7月14日",
+              "titleEn": "Cancer new moon",
+              "titleZh": "巨蟹座新月",
+              "noteEn": "Start of the two-week window that reveals what changed",
+              "noteZh": "两周窗口的起点，照见其间发生的变化"
+            },
+            {
+              "labelEn": "Jul 23",
+              "labelZh": "7月23日",
+              "titleEn": "Mercury stations direct",
+              "titleZh": "水星恢复顺行",
+              "noteEn": "Retrograde review ends; revision and clarification favored",
+              "noteZh": "逆行复盘结束，利于修订与澄清"
+            },
+            {
+              "labelEn": "Jul 29",
+              "labelZh": "7月29日",
+              "titleEn": "Aquarius full moon",
+              "titleZh": "水瓶座满月",
+              "noteEn": "Peaks 14:36 UTC near 6°30′ Aquarius — integrate, don't delay",
+              "noteZh": "14:36 UTC于水瓶座6°30′附近达峰——宜整合而非搁置"
+            }
+          ],
+          "altEn": "Timeline of July 2026: Cancer new moon July 14, Mercury direct July 23, Aquarius full moon peaking July 29 at 14:36 UTC",
+          "altZh": "2026年7月时间线：14日巨蟹座新月、23日水星顺行、29日14:36 UTC水瓶座满月达峰"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## full moon July 2026 vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "The Leo–Aquarius Trade-off",
+          "titleZh": "狮子—水瓶的取舍",
+          "columns": [
+            {
+              "nameEn": "Leo (Sun)",
+              "nameZh": "狮子座（太阳）",
+              "linesEn": [
+                "Confident expression, pride, visible output",
+                "Performs for recognition",
+                "Gains recognition at the cost of detachment"
+              ],
+              "linesZh": [
+                "自信表达、自豪与可见的产出",
+                "为获得认可而展现",
+                "赢得认可，付出抽离的代价"
+              ]
+            },
+            {
+              "nameEn": "Aquarius (Moon)",
+              "nameZh": "水瓶座（月亮）",
+              "linesEn": [
+                "Contribution and systems awareness",
+                "Offers to the group, broader frame",
+                "Gains alignment at the cost of ego reward"
+              ],
+              "linesZh": [
+                "贡献感与系统视角",
+                "面向群体、更宽的社会框架",
+                "赢得校准，付出自我满足的代价"
+              ]
+            }
+          ],
+          "altEn": "The Leo–Aquarius polarity of the July 2026 full moon: personal visibility and recognition versus collective contribution and alignment",
+          "altZh": "2026年7月满月的狮子—水瓶两极：个人可见度与认可，对照集体贡献与校准"
+        }
+      ]
+    },
+    "what-is-a-full-moon-ritual": {
+      "hero": {
+        "prompt": "A just-extinguished candle on a dark windowsill, its last thread of smoke rising in soft gold (#d4af6a) toward a brilliant full moon; beyond the window the moonlight traces a long quiet arc across a deep indigo-to-near-black sky (#16112c fading to #0b0a1b) toward a faint glow of dawn at the frame's far edge — the hours after the flame, where the ritual's real work happens. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "An extinguished candle with smoke rising toward a full moon and light arcing toward dawn — the 48-hour integration window after a ritual",
+        "altZh": "熄灭的蜡烛轻烟升向满月，月光弧线延向黎明，象征仪式后48小时的整合窗口"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Recognize a Full Moon Ritual That Actually Lands",
+          "titleEn": "Five Signs a Ritual Landed",
+          "titleZh": "仪式真正落地的五个迹象",
+          "items": [
+            {
+              "nameEn": "The intention has a body",
+              "nameZh": "意图有了实体",
+              "subEn": "Stated in one sentence, without a paragraph of qualifiers",
+              "subZh": "一句话说清，不带成段的修饰限定"
+            },
+            {
+              "nameEn": "The tools feel optional",
+              "nameZh": "工具可有可无",
+              "subEn": "Candle out, playlist glitched — the practice still holds",
+              "subZh": "蜡烛熄了、歌单卡了，练习依然成立"
+            },
+            {
+              "nameEn": "A small drop afterward",
+              "nameZh": "仪式后的轻微回落",
+              "subEn": "Quiet descent, not euphoria — the integration starting",
+              "subZh": "安静的回落而非兴奋——整合正在开始"
+            },
+            {
+              "nameEn": "One behavior changes in 48h",
+              "nameZh": "48小时内改变一个行为",
+              "subEn": "A delayed text, a declined invite, one different choice",
+              "subZh": "晚回一条消息、婉拒一次邀约、一个不同的选择"
+            },
+            {
+              "nameEn": "You don't talk about it",
+              "nameZh": "不急着对外讲述",
+              "subEn": "No candle photo within the hour; energy stays private",
+              "subZh": "一小时内不发蜡烛照片，能量留在私域"
+            }
+          ],
+          "altEn": "Five signs a full moon ritual landed: a one-sentence intention, optional tools, a quiet emotional drop, one behavior change within 48 hours, and no immediate sharing",
+          "altZh": "满月仪式落地的五个迹象：一句话意图、工具可有可无、安静回落、48小时内一个行为改变、不急于分享"
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Full Moon Ritual at a Glance",
+          "titleEn": "Anatomy of a Full Moon Ritual",
+          "titleZh": "满月仪式的结构",
+          "items": [
+            {
+              "labelEn": "Peak night",
+              "labelZh": "满月当晚",
+              "titleEn": "Release intention",
+              "titleZh": "释放意图",
+              "noteEn": "Name a single thing to let go, out loud or in writing",
+              "noteZh": "说出或写下唯一一件要放下的事"
+            },
+            {
+              "labelEn": "Same night",
+              "labelZh": "同一晚",
+              "titleEn": "Reclamation intention",
+              "titleZh": "收回意图",
+              "noteEn": "Name what fills the cleared space, right after release",
+              "noteZh": "紧接释放之后，命名将填补空位的事物"
+            },
+            {
+              "labelEn": "End of practice",
+              "labelZh": "仪式结束时",
+              "titleEn": "Closing acknowledgement",
+              "titleZh": "收尾确认",
+              "noteEn": "Marks the shift from ritual time back to ordinary time",
+              "noteZh": "标记从仪式时间回到日常时间"
+            },
+            {
+              "labelEn": "Next 48 hours",
+              "labelZh": "之后48小时",
+              "titleEn": "Integration window",
+              "titleZh": "整合窗口",
+              "noteEn": "One concrete behavioral change confirms the release",
+              "noteZh": "一个具体的行为改变印证这次释放"
+            }
+          ],
+          "altEn": "Timeline of a full moon ritual: release intention on peak night, reclamation the same night, a closing acknowledgement, then the 48-hour integration window",
+          "altZh": "满月仪式时间线：满月夜释放、同晚收回、仪式收尾确认，再到48小时整合窗口"
+        }
+      ]
+    },
+    "what-to-do-on-a-full-moon-spiritually": {
+      "hero": {
+        "prompt": "A moonlit field at harvest beneath a brilliant full moon, gathered sheaves gleaming with soft gold accents (#d4af6a) against a deep indigo-to-near-black sky (#16112c fading to #0b0a1b); on the far opposite horizon a thin sliver of dark new moon hangs over freshly turned, empty soil — harvest on one side of the cycle, planting waiting on the other. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A harvest field under a full moon opposite empty turned soil under a dark new moon — release and completion versus planting intentions",
+        "altZh": "满月下的收获田野与新月下待播种的土地相对，寓意满月宜收束释放而非播种许愿"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## full moon spiritually vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Planting vs Harvest",
+          "titleZh": "播种与收获",
+          "columns": [
+            {
+              "nameEn": "New moon",
+              "nameZh": "新月",
+              "linesEn": [
+                "Seeds an intention in the dark",
+                "Results not yet visible",
+                "Open-ended 'anything is possible'"
+              ],
+              "linesZh": [
+                "在黑暗中种下意图",
+                "结果尚不可见",
+                "开放式的'一切皆有可能'"
+              ]
+            },
+            {
+              "nameEn": "Full moon",
+              "nameZh": "满月",
+              "linesEn": [
+                "Reveals everything in light",
+                "Completion, gratitude, letting go",
+                "Trades raw potential for visibility"
+              ],
+              "linesZh": [
+                "在光中照见一切",
+                "完成、感恩与放下",
+                "以原始潜能换取可见性"
+              ]
+            }
+          ],
+          "altEn": "New moon versus full moon: planting intentions in darkness with open potential, versus revealing, completing, and releasing in full light",
+          "altZh": "新月与满月对比：暗中播种、潜能开放，对照光中照见、完成与释放"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read full moon spiritually in Yourself",
+          "titleEn": "Five Cues the Peak Is Working",
+          "titleZh": "感知满月峰值的五个线索",
+          "items": [
+            {
+              "nameEn": "Things come to a head",
+              "nameZh": "事情到达临界点",
+              "subEn": "A building project or feeling forces a decision",
+              "subZh": "积聚中的事务或情绪逼出一个决定"
+            },
+            {
+              "nameEn": "Heightened sensitivity",
+              "nameZh": "感受力增强",
+              "subEn": "Stronger reactions, vivid dreams, a restless edge",
+              "subZh": "反应更强烈、梦境鲜明、隐隐的躁动"
+            },
+            {
+              "nameEn": "Clarity on what's finished",
+              "nameZh": "清楚什么已完结",
+              "subEn": "A habit, commitment, or worry you've quietly outgrown",
+              "subZh": "悄然不再适合你的习惯、承诺或担忧"
+            },
+            {
+              "nameEn": "A pull to release",
+              "nameZh": "想要放下的冲动",
+              "subEn": "Urges to clean, declutter, journal, or finally talk",
+              "subZh": "想打扫、断舍离、写日记或进行迟来的对话"
+            },
+            {
+              "nameEn": "Low patience for new starts",
+              "nameZh": "对新开始缺乏耐心",
+              "subEn": "Brand-new plans feel resistant, nudging you to complete",
+              "subZh": "全新计划推进迟滞，把你推回收尾"
+            }
+          ],
+          "altEn": "Five cues the full moon peak is active: things come to a head, sensitivity rises, what's finished becomes clear, release beckons, and fresh starts stall",
+          "altZh": "满月峰值的五个线索：事情到临界点、感受力增强、完结清晰、释放冲动、新开始受阻"
+        }
+      ]
+    },
+    "full-moon-journal-prompts": {
+      "hero": {
+        "prompt": "An open journal on a dark desk beneath a window of deep indigo-to-near-black night sky (#16112c fading to #0b0a1b); a thin gold thread of light (#d4af6a) rises from the page and arcs backward across two weeks of small waxing moons to a dark new moon, then returns and closes at a radiant full moon directly above the journal — a cycle being consciously closed rather than opened. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A gold thread arcing from an open journal back through waxing moons to the new moon and closing at the full moon — journaling as cycle completion",
+        "altZh": "金色丝线从摊开的日记本回溯一串盈月直到新月，再于满月处收拢成环，象征满月日记的收束功能"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## full moon journal prompts vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Where Full Moon Prompts Fit",
+          "titleZh": "满月日记提示的定位",
+          "columns": [
+            {
+              "nameEn": "New moon journaling",
+              "nameZh": "新月日记",
+              "linesEn": [
+                "Opens a cycle",
+                "Asks what to begin, call in, commit to",
+                "Generates goals, plans, desires"
+              ],
+              "linesZh": [
+                "开启一个周期",
+                "问要开始、召唤、承诺什么",
+                "生成目标、计划与渴望"
+              ]
+            },
+            {
+              "nameEn": "Gratitude journaling",
+              "nameZh": "感恩日记",
+              "linesEn": [
+                "Can run on any day",
+                "Focuses on what is working right now",
+                "Warmth and continuity, no endings named"
+              ],
+              "linesZh": [
+                "任何一天都可进行",
+                "聚焦当下正在奏效的部分",
+                "温暖延续，却不命名终点"
+              ]
+            },
+            {
+              "nameEn": "Full moon prompts",
+              "nameZh": "满月提示",
+              "linesEn": [
+                "Closes the cycle",
+                "Asks what arrived, peaked, or stalled",
+                "Explicitly names what's finished"
+              ],
+              "linesZh": [
+                "收束这个周期",
+                "问什么到来、登顶或停滞",
+                "明确说出什么已经完结"
+              ]
+            }
+          ],
+          "altEn": "Comparison of new moon journaling, gratitude journaling, and full moon prompts: opening cycles, appreciating the present, and explicitly closing what's finished",
+          "altZh": "新月日记、感恩日记与满月提示对比：开启周期、欣赏当下、明确收束已完结之事"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read full moon journal prompts in Yourself",
+          "titleEn": "Five Signs the Prompts Work",
+          "titleZh": "满月日记起效的五个信号",
+          "items": [
+            {
+              "nameEn": "Writing moves backward",
+              "nameZh": "书写转向回顾",
+              "subEn": "Entries describe what happened since the last new moon",
+              "subZh": "写下的是自上次新月以来发生的事"
+            },
+            {
+              "nameEn": "Something feels finished",
+              "nameZh": "有事尘埃落定",
+              "subEn": "One specific situation feels genuinely resolved",
+              "subZh": "某个具体情境真正有了了结之感"
+            },
+            {
+              "nameEn": "You name the release",
+              "nameZh": "明确说出要放下什么",
+              "subEn": "'I'm choosing to release ___' — not 'I want to attract ___'",
+              "subZh": "写'我选择放下___'而非'我想吸引___'"
+            },
+            {
+              "nameEn": "Honesty costs something",
+              "nameZh": "诚实需要代价",
+              "subEn": "Comfortable, affirming writing signals drift into gratitude",
+              "subZh": "全程舒适肯定，说明已滑向感恩而非清算"
+            },
+            {
+              "nameEn": "The page contracts",
+              "nameZh": "篇幅收紧",
+              "subEn": "The session ends with fewer, clearer priorities",
+              "subZh": "一次书写以更少、更清晰的优先级收尾"
+            }
+          ],
+          "altEn": "Five signals full moon journal prompts are working: backward-looking writing, a sense of completion, named releases, costly honesty, and a contracting page",
+          "altZh": "满月日记起效的五个信号：回顾式书写、完结感、点名释放、诚实有代价、篇幅收紧"
+        }
+      ]
+    },
+    "new-moon-journal-prompts": {
+      "hero": {
+        "prompt": "A nearly dark new moon sky in a deep indigo-to-near-black palette (#16112c fading to #0b0a1b); just below the horizon line a single seed of gold light (#d4af6a) rests in dark soil, and from it one precise gold thread rises and arcs across the sky toward a small, distant full moon — an intention planted specifically enough to be checked two weeks later. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A gold seed of light planted under a dark new moon, with a thread arcing to a distant full moon — an intention specific enough to assess later",
+        "altZh": "新月黑夜中埋下的金色光种，引出一条延伸至远处满月的细线，象征足够具体、可供检验的意图"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read new moon journal prompts in Yourself",
+          "titleEn": "Five Marks of a Closeable Entry",
+          "titleZh": "可复盘新月日记的五个特征",
+          "items": [
+            {
+              "nameEn": "External outcome is specific",
+              "nameZh": "外在结果足够具体",
+              "subEn": "'Finish chapter two's draft' passes; 'feel creative' fails",
+              "subZh": "'完成第二章初稿'合格，'更有创造力'不合格"
+            },
+            {
+              "nameEn": "Internal shift is named",
+              "nameZh": "点名内在转变",
+              "subEn": "'Stop treating revision as failure' is a real anchor",
+              "subZh": "'不再把修改视为失败'才是真正的锚点"
+            },
+            {
+              "nameEn": "A 48-hour action exists",
+              "nameZh": "有48小时内的行动",
+              "subEn": "One email, one time block, one conversation starts now",
+              "subZh": "一封邮件、一个时间块、一次对话即刻开始"
+            },
+            {
+              "nameEn": "No release language",
+              "nameZh": "没有释放型语言",
+              "subEn": "'What to let go of' belongs to the full moon, not here",
+              "subZh": "'要放下什么'属于满月，不属于此刻"
+            },
+            {
+              "nameEn": "Mild accountability",
+              "nameZh": "轻微的问责不适感",
+              "subEn": "Specific enough to be wrong about later — that's the point",
+              "subZh": "具体到日后可能被证伪——这正是关键"
+            }
+          ],
+          "altEn": "Five marks of a new moon entry that can be honestly assessed: a specific outcome, a named internal shift, a 48-hour action, no release language, and mild accountability",
+          "altZh": "可被诚实复盘的新月日记五特征：结果具体、点名内在转变、48小时行动、无释放语言、轻微问责感"
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## New Moon Prompts at a Glance",
+          "titleEn": "Three Layers Plus the Review",
+          "titleZh": "三层结构与满月复盘",
+          "items": [
+            {
+              "labelEn": "New moon",
+              "labelZh": "新月",
+              "titleEn": "External expectation",
+              "titleZh": "外在期待",
+              "noteEn": "Name an observable outcome tied to the two-week window",
+              "noteZh": "写下与两周窗口绑定、可观察的结果"
+            },
+            {
+              "labelEn": "New moon",
+              "labelZh": "新月",
+              "titleEn": "Internal shift",
+              "titleZh": "内在转变",
+              "noteEn": "Identify the belief that must update for it to be real",
+              "noteZh": "找出必须更新的信念，意图才算真实"
+            },
+            {
+              "labelEn": "Within 48 hours",
+              "labelZh": "48小时内",
+              "titleEn": "Behavioral anchor",
+              "titleZh": "行为锚点",
+              "noteEn": "One concrete action begins immediately — did it happen?",
+              "noteZh": "一个具体行动立即启动——它发生了吗？"
+            },
+            {
+              "labelEn": "Full moon, +2 weeks",
+              "labelZh": "两周后的满月",
+              "titleEn": "Assessment closes the loop",
+              "titleZh": "复盘收束循环",
+              "noteEn": "Re-read the entry: did this move? What made the difference?",
+              "noteZh": "重读原文：它推进了吗？关键差异是什么？"
+            }
+          ],
+          "altEn": "Timeline of the new moon entry structure: external expectation and internal shift at the new moon, a behavioral anchor within 48 hours, and the full moon assessment two weeks later",
+          "altZh": "新月日记结构时间线：新月写外在期待与内在转变，48小时内落实行为锚点，两周后满月复盘收束"
+        }
+      ]
+    },
+    "moon-journal": {
+      "hero": {
+        "prompt": "Four moons in sequence — a dark new moon, a waxing half, a radiant full moon, and a waning crescent — arc across a deep indigo-to-near-black sky (#16112c fading to #0b0a1b) above one open journal on a dark surface; from each moon a distinct soft gold beam (#d4af6a) falls onto a different region of the pages, and beneath the journal the beams join into a single circular loop of light. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Four moon phases each casting a distinct gold beam onto one open journal, the beams joining into a loop — four written tasks forming one feedback cycle",
+        "altZh": "四个月相向同一本日记投下四道金光并连成闭环，象征四个阶段各司其职的反馈循环"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## moon journal vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "What a Moon Journal Is Not",
+          "titleZh": "月亮日记不是什么",
+          "columns": [
+            {
+              "nameEn": "General journal",
+              "nameZh": "普通日记",
+              "linesEn": [
+                "No built-in review cycle",
+                "Follows wherever attention leads",
+                "Freeform continuity over tracking"
+              ],
+              "linesZh": [
+                "没有内建的复盘周期",
+                "随注意力自由流动",
+                "重自由连贯，轻追踪比较"
+              ]
+            },
+            {
+              "nameEn": "Gratitude journal",
+              "nameZh": "感恩日记",
+              "linesEn": [
+                "Focuses on what's already working",
+                "Deliberately excludes what isn't",
+                "Consistently affirming register"
+              ],
+              "linesZh": [
+                "聚焦已经奏效的部分",
+                "刻意回避未奏效之处",
+                "始终保持肯定的语调"
+              ]
+            },
+            {
+              "nameEn": "Lunar calendar",
+              "nameZh": "月相日历",
+              "linesEn": [
+                "Tracks when phases occur",
+                "External timing, not your response",
+                "No written task attached"
+              ],
+              "linesZh": [
+                "记录月相何时发生",
+                "管外部时间，不管内在回应",
+                "不附带任何书写任务"
+              ]
+            }
+          ],
+          "altEn": "Three formats often confused with a moon journal — general journal, gratitude journal, and lunar calendar — and what each lacks",
+          "altZh": "常与月亮日记混淆的三种形式——普通日记、感恩日记、月相日历——及各自缺少的功能"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read moon journal in Yourself",
+          "titleEn": "Five Signs the Loop Is Working",
+          "titleZh": "反馈循环生效的五个迹象",
+          "items": [
+            {
+              "nameEn": "Intentions are specific",
+              "nameZh": "意图具体",
+              "subEn": "'Three focused sessions a week' — not 'feel more at peace'",
+              "subZh": "'每周三次专注工作'而非'更平静一些'"
+            },
+            {
+              "nameEn": "Obstacles get named",
+              "nameZh": "写明具体阻碍",
+              "subEn": "Competing demands, habits, decisions, resource gaps",
+              "subZh": "相互竞争的需求、习惯、悬而未决、资源缺口"
+            },
+            {
+              "nameEn": "Full moon entries evaluate",
+              "nameZh": "满月条目做评估",
+              "subEn": "Where it succeeded, where it stalled, what explains the gap",
+              "subZh": "哪里成功、哪里停滞、差距因何而来"
+            },
+            {
+              "nameEn": "Releases are listed",
+              "nameZh": "列出具体的放下",
+              "subEn": "Habits, expectations, self-narratives that won't serve next",
+              "subZh": "不再适用下个周期的习惯、期待与自我叙事"
+            },
+            {
+              "nameEn": "Re-reading reveals",
+              "nameZh": "重读带来新信息",
+              "subEn": "The new moon entry shows something invisible at the start",
+              "subZh": "回看新月条目能看到起点看不见的东西"
+            }
+          ],
+          "altEn": "Five signs a moon journal's feedback loop is working: specific intentions, named obstacles, honest full moon evaluation, listed releases, and revealing re-reads",
+          "altZh": "月亮日记反馈循环生效的五个迹象：意图具体、写明阻碍、满月评估、列出放下、重读有新发现"
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Moon Phases at a Glance",
+          "titleEn": "Four Phases, Four Functions",
+          "titleZh": "四个月相，四种功能",
+          "items": [
+            {
+              "labelEn": "New Moon",
+              "labelZh": "新月",
+              "titleEn": "Anchoring",
+              "titleZh": "锚定",
+              "noteEn": "Write a specific intention, goal, or decision to activate",
+              "noteZh": "写下要启动的具体意图、目标或决定"
+            },
+            {
+              "labelEn": "Waxing",
+              "labelZh": "盈月",
+              "titleEn": "Tracking",
+              "titleZh": "追踪",
+              "noteEn": "Name what is slowing the intention — demands, habits, gaps",
+              "noteZh": "点名拖慢意图的因素——需求、习惯、缺口"
+            },
+            {
+              "labelEn": "Full Moon",
+              "labelZh": "满月",
+              "titleEn": "Culmination",
+              "titleZh": "检视",
+              "noteEn": "Evaluate what actually happened versus wishful projection",
+              "noteZh": "评估实际发生了什么，对照一厢情愿的投射"
+            },
+            {
+              "labelEn": "Waning",
+              "labelZh": "亏月",
+              "titleEn": "Release",
+              "titleZh": "释放",
+              "noteEn": "Name what to leave behind before the next cycle begins",
+              "noteZh": "在下个周期开始前，命名要留下的东西"
+            }
+          ],
+          "altEn": "Timeline of the four moon journal phases and their functions: new moon anchoring, waxing tracking, full moon culmination review, and waning release",
+          "altZh": "月亮日记四阶段功能时间线：新月锚定、盈月追踪、满月检视、亏月释放"
+        }
+      ]
+    },
+    "journal-prompts": {
+      "hero": {
+        "prompt": "A split editorial night scene in a deep indigo-to-near-black palette (#16112c fading to #0b0a1b): on the left, dozens of identical blank journal pages drift loose and unconnected into the dark; on the right, a single page where small gold points (#d4af6a) are joined by thin gold lines into one clear constellation pattern lifting off the paper — many pages of coverage versus one pattern finally surfaced. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Scattered identical pages beside one page whose gold points connect into a constellation — topic lists versus diagnostic prompts that surface patterns",
+        "altZh": "散乱重复的纸页与一页连成星座图的金色光点相对，寓意主题清单与能揭示行为模式的诊断式提问"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## journal prompts vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Two Prompt Structures",
+          "titleZh": "两种提示结构",
+          "columns": [
+            {
+              "nameEn": "Topic-organized",
+              "nameZh": "按主题组织",
+              "linesEn": [
+                "Grouped by emotional theme",
+                "Anchors you inside a named feeling",
+                "Fluent, immediate writing",
+                "Gain coverage, lose pattern visibility"
+              ],
+              "linesZh": [
+                "按情绪主题分组",
+                "把你锚定在被命名的感受里",
+                "下笔流畅、立即可写",
+                "得到覆盖面，失去模式可见性"
+              ]
+            },
+            {
+              "nameEn": "Diagnostic",
+              "nameZh": "诊断式",
+              "linesEn": [
+                "Targets a psychological function",
+                "Compares behavior across situations",
+                "Demands what you actually did",
+                "Gain pattern data, lose quick catharsis"
+              ],
+              "linesZh": [
+                "瞄准一种心理功能",
+                "跨情境比较实际行为",
+                "要求写出你究竟做了什么",
+                "得到模式数据，失去即时宣泄"
+              ]
+            }
+          ],
+          "altEn": "Topic-organized versus diagnostic journal prompts: emotional coverage and fluent writing against cross-situational behavioral evidence and pattern recognition",
+          "altZh": "主题式与诊断式日记提示对比：情绪覆盖与流畅书写，对照跨情境行为证据与模式识别"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read journal prompts in Yourself",
+          "titleEn": "Spotting a Diagnostic Prompt",
+          "titleZh": "识别诊断式提问的五个标准",
+          "items": [
+            {
+              "nameEn": "Function vs. feeling",
+              "nameZh": "功能还是感受",
+              "subEn": "Targets an operation, not 'how does it make you feel'",
+              "subZh": "瞄准心理操作，而非'这让你感觉如何'"
+            },
+            {
+              "nameEn": "Many situations, not one",
+              "nameZh": "多情境而非单一事件",
+              "subEn": "Asks for several instances rather than one memory",
+              "subZh": "要求列出多个实例，而非一段回忆"
+            },
+            {
+              "nameEn": "Behavioral evidence",
+              "nameZh": "行为证据",
+              "subEn": "'What did you actually do?' beats 'how did it affect you?'",
+              "subZh": "'你实际做了什么'胜过'它如何影响你'"
+            },
+            {
+              "nameEn": "Hesitation as a signal",
+              "nameZh": "迟疑即信号",
+              "subEn": "Hard-to-answer prompts often touch unexamined material",
+              "subZh": "难以具体作答的问题往往触及未审视之处"
+            },
+            {
+              "nameEn": "Cross-domain reach",
+              "nameZh": "跨领域适用",
+              "subEn": "Same tendency across work, relationships, and inner life",
+              "subZh": "同一倾向横跨工作、关系与内在生活"
+            }
+          ],
+          "altEn": "Five markers of a diagnostic journal prompt: function over feeling, multiple situations, behavioral evidence, hesitation as signal, and cross-domain reach",
+          "altZh": "诊断式提问的五个标准：重功能轻感受、多情境、行为证据、迟疑即信号、跨领域适用"
+        }
+      ]
+    },
+    "shadow-work-journal-prompts": {
+      "hero": {
+        "prompt": "A solitary bare tree beneath a bright moon in a deep indigo-to-near-black night (#16112c fading to #0b0a1b); the tree casts a long dark shadow across the ground, and exactly where the shadow falls, thin gold lines (#d4af6a) glow beneath the surface tracing a hidden root system that mirrors the branches above — the visible reaction above ground, the root pattern beneath it. Calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A moonlit tree whose shadow reveals a glowing gold root system underground — tracing surface reactions back to their root patterns",
+        "altZh": "月光下树影所及之处透出金色发光的地下根系，寓意从表层情绪反应追溯至根源行为模式"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## shadow work journal prompts vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Tools, Three Directions",
+          "titleZh": "三种工具，三个方向",
+          "columns": [
+            {
+              "nameEn": "Shadow work prompts",
+              "nameZh": "阴影工作提问",
+              "linesEn": [
+                "Targets adult behavior patterns",
+                "Uses emotional activation as data",
+                "Trades comfort for structural recognition"
+              ],
+              "linesZh": [
+                "瞄准成年后的行为模式",
+                "把情绪激活当作数据",
+                "以舒适换取结构性认知"
+              ]
+            },
+            {
+              "nameEn": "Inner child prompts",
+              "nameZh": "内在小孩提问",
+              "linesEn": [
+                "Targets early wound sites",
+                "Re-parents memories with present awareness",
+                "Provides direct emotional validation"
+              ],
+              "linesZh": [
+                "瞄准早年的创伤位置",
+                "以当下觉知重新养育记忆",
+                "提供直接的情感确认"
+              ]
+            },
+            {
+              "nameEn": "Mindfulness journaling",
+              "nameZh": "正念日记",
+              "linesEn": [
+                "Builds present-moment awareness",
+                "Reduces reactive thinking",
+                "Eases activation rather than using it"
+              ],
+              "linesZh": [
+                "建立当下时刻的觉察",
+                "减少反应性思维",
+                "平息激活而非利用激活"
+              ]
+            }
+          ],
+          "altEn": "Comparison of shadow work prompts, inner child prompts, and mindfulness journaling: behavioral roots, wound-site re-parenting, and calming awareness",
+          "altZh": "阴影工作、内在小孩与正念日记三种工具对比：行为根源、创伤再养育与平静觉察"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read shadow work journal prompts in Yourself",
+          "titleEn": "Four Signals of Shadow Contact",
+          "titleZh": "触及阴影素材的四个信号",
+          "items": [
+            {
+              "nameEn": "Resistance to writing",
+              "nameZh": "抗拒下笔",
+              "subEn": "The urge to skip or soften a prompt points at the material",
+              "subZh": "想跳过或软化某个问题，正指向核心素材"
+            },
+            {
+              "nameEn": "Disproportionate charge",
+              "nameZh": "不成比例的情绪强度",
+              "subEn": "Excess irritation or envy usually signals projection",
+              "subZh": "过度的恼怒或嫉妒通常是投射的信号"
+            },
+            {
+              "nameEn": "Repetition across contexts",
+              "nameZh": "跨情境重复出现",
+              "subEn": "The same pattern in work, family, and friendships",
+              "subZh": "同一模式出现在工作、家庭与友谊中"
+            },
+            {
+              "nameEn": "Confident negative judgments",
+              "nameZh": "笃定的负面论断",
+              "subEn": "Certainty about others' motives that needs no verification",
+              "subZh": "对他人动机的笃定，且自觉无需求证"
+            }
+          ],
+          "altEn": "Four signals a prompt is touching shadow material: resistance to writing, disproportionate emotional charge, repetition across contexts, and confident negative judgments",
+          "altZh": "触及阴影素材的四个信号：抗拒下笔、情绪强度不成比例、跨情境重复、笃定的负面论断"
+        }
+      ]
+    }
+  }
+}

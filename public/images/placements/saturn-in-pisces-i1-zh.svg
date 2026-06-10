@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="土星在双鱼座的五条主线">
+  <defs>
+    <linearGradient id="saturninpisces1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturninpisces1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturninpisces1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturninpisces1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturninpisces1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturninpisces1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#saturninpisces1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#saturninpisces1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#saturninpisces1zh-neb2)"/>
+  <circle cx="381.0" cy="174.9" r="1.11" fill="#cfc8ea" opacity="0.42"/><circle cx="261.4" cy="270.0" r="1.63" fill="#cfc8ea" opacity="0.29"/><circle cx="25.6" cy="77.2" r="0.92" fill="#cfc8ea" opacity="0.45"/><circle cx="61.3" cy="231.0" r="1.09" fill="#cfc8ea" opacity="0.25"/><circle cx="695.2" cy="183.1" r="1.25" fill="#cfc8ea" opacity="0.41"/><circle cx="609.7" cy="105.3" r="0.81" fill="#cfc8ea" opacity="0.14"/><circle cx="118.1" cy="90.8" r="1.24" fill="#cfc8ea" opacity="0.37"/><circle cx="64.8" cy="176.1" r="0.84" fill="#cfc8ea" opacity="0.42"/><circle cx="241.6" cy="280.8" r="1.70" fill="#cfc8ea" opacity="0.39"/><circle cx="179.7" cy="258.2" r="0.77" fill="#cfc8ea" opacity="0.29"/><circle cx="209.5" cy="416.7" r="1.37" fill="#cfc8ea" opacity="0.29"/><circle cx="336.2" cy="404.5" r="1.38" fill="#cfc8ea" opacity="0.27"/><circle cx="479.2" cy="193.8" r="0.94" fill="#cfc8ea" opacity="0.49"/><circle cx="367.5" cy="14.9" r="1.70" fill="#cfc8ea" opacity="0.42"/><circle cx="53.8" cy="207.6" r="0.61" fill="#cfc8ea" opacity="0.46"/><circle cx="149.9" cy="316.4" r="1.47" fill="#cfc8ea" opacity="0.39"/><circle cx="460.7" cy="153.7" r="0.99" fill="#cfc8ea" opacity="0.53"/><circle cx="738.4" cy="96.1" r="0.57" fill="#cfc8ea" opacity="0.38"/><circle cx="676.0" cy="145.9" r="1.32" fill="#cfc8ea" opacity="0.38"/><circle cx="443.8" cy="164.7" r="1.47" fill="#cfc8ea" opacity="0.22"/><circle cx="14.8" cy="356.6" r="0.73" fill="#cfc8ea" opacity="0.28"/><circle cx="289.3" cy="157.3" r="0.61" fill="#cfc8ea" opacity="0.43"/><circle cx="406.2" cy="57.0" r="1.08" fill="#cfc8ea" opacity="0.27"/><circle cx="479.1" cy="376.9" r="0.58" fill="#cfc8ea" opacity="0.22"/><circle cx="513.8" cy="362.1" r="0.42" fill="#cfc8ea" opacity="0.37"/><circle cx="134.8" cy="235.4" r="1.14" fill="#cfc8ea" opacity="0.20"/><circle cx="418.8" cy="364.5" r="1.32" fill="#cfc8ea" opacity="0.44"/><circle cx="460.3" cy="379.5" r="1.59" fill="#cfc8ea" opacity="0.33"/><circle cx="616.6" cy="24.9" r="1.37" fill="#cfc8ea" opacity="0.42"/><circle cx="360.5" cy="345.5" r="1.37" fill="#cfc8ea" opacity="0.39"/><circle cx="698.6" cy="33.4" r="1.36" fill="#cfc8ea" opacity="0.41"/><circle cx="743.9" cy="381.9" r="0.64" fill="#cfc8ea" opacity="0.45"/><circle cx="16.8" cy="381.1" r="1.68" fill="#cfc8ea" opacity="0.47"/><circle cx="163.0" cy="305.1" r="1.21" fill="#cfc8ea" opacity="0.33"/><circle cx="659.9" cy="106.6" r="0.73" fill="#cfc8ea" opacity="0.28"/><circle cx="221.7" cy="271.2" r="1.36" fill="#cfc8ea" opacity="0.34"/><circle cx="120.5" cy="149.0" r="1.30" fill="#cfc8ea" opacity="0.40"/><path d="M 277.6201305836439 324.8 L 278.1 327.2 L 280.5 327.60642275656573 L 278.1 328.1 L 277.6201305836439 330.4 L 277.2 328.1 L 274.8 327.60642275656573 L 277.2 327.2 Z" fill="#f6e6bf" opacity="0.5201482948614284"/><path d="M 286.14772275835276 238.3 L 286.8 241.5 L 289.9 242.13618365093134 L 286.8 242.7 L 286.14772275835276 245.9 L 285.5 242.7 L 282.4 242.13618365093134 L 285.5 241.5 Z" fill="#f6e6bf" opacity="0.7426212921505794"/><path d="M 203.18659964203835 137.0 L 203.7 139.6 L 206.3 140.07663802686147 L 203.7 140.6 L 203.18659964203835 143.2 L 202.7 140.6 L 200.1 140.07663802686147 L 202.7 139.6 Z" fill="#f6e6bf" opacity="0.5639524477301165"/><path d="M 61.81149687618017 119.3 L 62.2 121.4 L 64.3 121.75631834170781 L 62.2 122.2 L 61.81149687618017 124.2 L 61.4 122.2 L 59.3 121.75631834170781 L 61.4 121.4 Z" fill="#f6e6bf" opacity="0.630433184443973"/><path d="M 664.3009770065546 240.0 L 664.8 242.5 L 667.3 242.98595386068337 L 664.8 243.5 L 664.3009770065546 246.0 L 663.8 243.5 L 661.3 242.98595386068337 L 663.8 242.5 Z" fill="#f6e6bf" opacity="0.561088613490574"/><path d="M 381.0 174.9 L 61.3 231.0 L 149.9 316.4 L 676.0 145.9 L 513.8 362.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">土星在双鱼座的五条主线</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturninpisces1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturninpisces1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#saturninpisces1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#saturninpisces1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">边界</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">练习干净地说不；疲惫不等于道德缺陷</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#saturninpisces1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#saturninpisces1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">有结构的休息</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">恢复是一种自律，不是奖励</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#saturninpisces1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#saturninpisces1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">创作自律</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">按日程到场，而不是等灵感</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#saturninpisces1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#saturninpisces1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">信念的成熟</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">检验所信，留下经得起追问的部分</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#saturninpisces1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#saturninpisces1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">有边界的慈悲</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">带着界限去关怀，不自我消解</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

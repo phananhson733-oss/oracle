@@ -1,0 +1,547 @@
+{
+  "_comment": "PSYCH cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/psych",
+  "urlBase": "/images/psych",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "mars-anger-triggers": {
+      "hero": {
+        "prompt": "Conceptual editorial illustration of anger as fuel: a small glowing ember-red Mars sphere at the center of a quiet cosmos, four distinct energy streams radiating outward in four textures — a fast explosive flare of fire, a slow smoldering ember seam of earth, sharp angular gusts of air drawn as thin quick lines, and a deep rolling water undercurrent — each stream traced in soft gold accents (#d4af6a) against a deep indigo-to-near-black palette (#16112c fading to #0b0a1b), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human figures or faces.",
+        "altEn": "Glowing Mars sphere radiating four elemental energy streams — fire, earth, air and water — symbolizing the four anger styles.",
+        "altZh": "发光的火星球体向外辐射火、土、风、水四道元素能量流，象征四种愤怒风格。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Quick Reference: Mars Signs at a Glance",
+          "afterHeadingZh": "## 快速参考：火星星座一览",
+          "titleEn": "Four Elemental Anger Styles",
+          "titleZh": "四种元素愤怒风格",
+          "items": [
+            {
+              "nameEn": "Fire Mars",
+              "nameZh": "火象火星",
+              "subEn": "Aries, Leo, Sagittarius — explosive, fast, visible",
+              "subZh": "白羊、狮子、射手——爆发性、快速、明显"
+            },
+            {
+              "nameEn": "Earth Mars",
+              "nameZh": "土象火星",
+              "subEn": "Taurus, Virgo, Capricorn — slow-burn, strategic, seismic",
+              "subZh": "金牛、处女、摩羯——慢热、策略性、地震级"
+            },
+            {
+              "nameEn": "Air Mars",
+              "nameZh": "风象火星",
+              "subEn": "Gemini, Libra, Aquarius — verbal, mental, detached",
+              "subZh": "双子、天秤、水瓶——口头、精神、超脱"
+            },
+            {
+              "nameEn": "Water Mars",
+              "nameZh": "水象火星",
+              "subEn": "Cancer, Scorpio, Pisces — deep, emotional, undercurrent",
+              "subZh": "巨蟹、天蝎、双鱼——深沉、情绪化、暗流"
+            }
+          ],
+          "altEn": "Sequence of the four elemental Mars anger styles: fire explosive, earth slow-burn, air verbal, water emotional undercurrent.",
+          "altZh": "四种元素火星愤怒风格的序列图：火象爆发、土象慢热、风象言语、水象情绪暗流。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to \"Work With\" Your Mars",
+          "afterHeadingZh": "## 如何\"与你的火星合作\"",
+          "titleEn": "Working With Your Mars",
+          "titleZh": "与你的火星合作",
+          "items": [
+            {
+              "nameEn": "Move",
+              "nameZh": "动起来",
+              "subEn": "Fire/Air Mars: run, box, sprint to metabolize adrenaline",
+              "subZh": "火象/风象火星：跑步、拳击、冲刺，代谢肾上腺素"
+            },
+            {
+              "nameEn": "Express",
+              "nameZh": "表达",
+              "subEn": "Earth/Water Mars: scream into a pillow, say \"I am angry\"",
+              "subZh": "土象/水象火星：对着枕头尖叫，练习说出\"我很生气\""
+            },
+            {
+              "nameEn": "Track",
+              "nameZh": "追踪",
+              "subEn": "For everyone: notice what sets you off",
+              "subZh": "对每个人：注意什么会触发你"
+            }
+          ],
+          "altEn": "Three-step practice for integrating your Mars: move the energy, express the anger, track your triggers.",
+          "altZh": "整合火星能量的三步练习：动起来、表达愤怒、追踪触发点。"
+        }
+      ]
+    },
+    "mercury-retrograde-vs-moon-anxiety": {
+      "hero": {
+        "prompt": "Split-panel conceptual scene contrasting two kinds of anxiety: on the left a small Mercury planet whose orbital path tangles into knotted retrograde loops above a faintly fractured grid, evoking a noisy overthinking mind; on the right a serene full moon drawing a slow heavy tide upward from dark water, evoking a heavy heart; the panels divided by a thin vertical gold meridian, soft gold accents (#d4af6a), deep indigo-to-near-black palette (#16112c fading to #0b0a1b), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Split scene: Mercury with a tangled retrograde orbit on one side and a full moon pulling a dark tide on the other, contrasting mental and emotional anxiety.",
+        "altZh": "分割画面：一侧是轨道打结的逆行水星，另一侧是牵动暗潮的满月，对比精神焦虑与情绪焦虑。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## In Short: The Difference",
+          "afterHeadingZh": "## 简而言之：区别在哪里",
+          "titleEn": "Noisy Brain or Heavy Heart?",
+          "titleZh": "嘈杂的大脑还是沉重的心？",
+          "columns": [
+            {
+              "nameEn": "Mercury Retrograde",
+              "nameZh": "水星逆行",
+              "linesEn": [
+                "Mental anxiety: fog, overthinking",
+                "Restlessness, tech frustration",
+                "Relief: brain-dump writing",
+                "Lasts ~3 weeks"
+              ],
+              "linesZh": [
+                "精神焦虑：脑雾、过度思考",
+                "坐立不安、技术挫败感",
+                "缓解：大脑倾泻式书写",
+                "持续约3周"
+              ]
+            },
+            {
+              "nameEn": "Moon Transit",
+              "nameZh": "月亮行运",
+              "linesEn": [
+                "Emotional anxiety: heavy heart",
+                "Hyper-sensitivity, need for comfort",
+                "Relief: sensory self-soothing",
+                "Lasts 2-3 days per sign"
+              ],
+              "linesZh": [
+                "情绪焦虑：心情沉重",
+                "过度敏感、渴求安全感",
+                "缓解：感官自我安抚",
+                "月亮在每个星座2-3天"
+              ]
+            }
+          ],
+          "altEn": "Comparison of Mercury retrograde mental anxiety versus Moon transit emotional anxiety, with relief strategies and durations.",
+          "altZh": "水星逆行的精神焦虑与月亮行运的情绪焦虑对比图，含缓解方式与持续时间。"
+        }
+      ]
+    },
+    "track-mood-astrology": {
+      "hero": {
+        "prompt": "An open blank journal lying beneath a vast night sky where the moon's phases arc gracefully from crescent to full and back across the heavens, a single soft gold mood-wave line (#d4af6a) flowing across the empty journal pages, rising and falling in step with the lunar arc above as if the sky were being transcribed into feeling, faint zodiac tick marks along the arc, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Open journal under an arc of moon phases, with a gold mood wave on the pages mirroring the lunar cycle above.",
+        "altZh": "摊开的日记本上方是月相弧线，页面上的金色情绪波线与天上的月亮周期相互呼应。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Why Astrology Reflects Your Emotions",
+          "afterHeadingZh": "## 为什么占星能反映你的情绪",
+          "titleEn": "Natal Moon vs Transiting Moon",
+          "titleZh": "本命月亮 vs 行运月亮",
+          "columns": [
+            {
+              "nameEn": "Natal Moon",
+              "nameZh": "本命月亮",
+              "linesEn": [
+                "Where the Moon was at your birth",
+                "Your emotional factory setting",
+                "Baseline reaction to stress and joy"
+              ],
+              "linesZh": [
+                "你出生时月亮所在的位置",
+                "你的情绪出厂设置",
+                "对压力和快乐的基准反应"
+              ]
+            },
+            {
+              "nameEn": "Transiting Moon",
+              "nameZh": "行运月亮",
+              "linesEn": [
+                "Where the Moon is right now",
+                "Current emotional weather forecast",
+                "Changes sign every ~2.5 days"
+              ],
+              "linesZh": [
+                "月亮现在所在的位置",
+                "当前的情绪天气预报",
+                "约每2.5天换一个星座"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the natal Moon as your emotional baseline versus the transiting Moon as the current emotional weather.",
+          "altZh": "本命月亮（情绪基准线）与行运月亮（当前情绪天气）的对比图。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Step-by-Step: How to Start Tracking",
+          "afterHeadingZh": "## 分步指南：如何开始追踪",
+          "titleEn": "How to Start Tracking",
+          "titleZh": "如何开始追踪",
+          "items": [
+            {
+              "nameEn": "Find Your Natal Moon Sign",
+              "nameZh": "找到本命月亮星座",
+              "subEn": "Your emotional anchor and baseline",
+              "subZh": "你的情绪锚点与基准反应"
+            },
+            {
+              "nameEn": "Check Today's Moon Sign",
+              "nameZh": "查看今日月亮星座",
+              "subEn": "The energy shifts every couple of days",
+              "subZh": "能量每隔几天就会转变"
+            },
+            {
+              "nameEn": "Log Your Data",
+              "nameZh": "记录你的数据",
+              "subEn": "Date, moon sign & phase, mood 1-10, key emotion",
+              "subZh": "日期、月亮星座与相位、心情1-10分、关键情绪"
+            }
+          ],
+          "altEn": "Three steps to start mood tracking with astrology: find your natal Moon, check today's Moon sign, log your daily data.",
+          "altZh": "用占星开始追踪情绪的三个步骤：找到本命月亮、查看今日月亮星座、记录每日数据。"
+        }
+      ]
+    },
+    "best-astrology-mental-health-apps": {
+      "hero": {
+        "prompt": "A smartphone silhouette floating in a quiet cosmos, its dark screen split down the middle: one half an endless hypnotic doom-scroll spiral sinking into blackness, the other half an open journal page glowing softly with a calm constellation and a gentle upward path, a few small rounded app-like orbs drifting in orbit around the phone, soft gold accents (#d4af6a), deep indigo-to-near-black palette (#16112c fading to #0b0a1b), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Smartphone with a screen split between a doom-scroll spiral and a glowing journal page, contrasting addictive apps with healing tools.",
+        "altZh": "手机屏幕一分为二：一半是无尽刷屏漩涡，一半是发光的日记页，对比令人上瘾的应用与疗愈工具。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Quick Verdict: Which One Should You Download?",
+          "afterHeadingZh": "## 快速结论：你应该下载哪一个？",
+          "titleEn": "The 5 Apps at a Glance",
+          "titleZh": "5款应用速览",
+          "items": [
+            {
+              "nameEn": "Co-Star",
+              "nameZh": "Co-Star",
+              "subEn": "Social & memes · score 2/5 · Free",
+              "subZh": "社交与表情包 · 2/5分 · 免费"
+            },
+            {
+              "nameEn": "The Pattern",
+              "nameZh": "The Pattern",
+              "subEn": "Deep timing · score 3/5 · Free/Premium",
+              "subZh": "深度时机 · 3/5分 · 免费/付费"
+            },
+            {
+              "nameEn": "CHANI",
+              "nameZh": "CHANI",
+              "subEn": "Affirmations · score 5/5 · $12/month",
+              "subZh": "肯定语 · 5/5分 · $12/月"
+            },
+            {
+              "nameEn": "TimePassages",
+              "nameZh": "TimePassages",
+              "subEn": "Serious learning · score 3/5 · $10 one-time",
+              "subZh": "严肃学习 · 3/5分 · $10一次性"
+            },
+            {
+              "nameEn": "AstrologyWiki",
+              "nameZh": "AstrologyWiki",
+              "subEn": "CBT journaling · score 5/5 · Free",
+              "subZh": "CBT日记 · 5/5分 · 免费"
+            }
+          ],
+          "altEn": "The five astrology apps ranked with their best use, mental health score and price: Co-Star, The Pattern, CHANI, TimePassages and AstrologyWiki.",
+          "altZh": "五款占星应用的用途、心理健康评分与价格一览：Co-Star、The Pattern、CHANI、TimePassages 和 AstrologyWiki。"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Conclusion: Prediction vs. Reflection",
+          "afterHeadingZh": "## 结论：预测 vs 反思",
+          "titleEn": "Prediction vs Reflection",
+          "titleZh": "预测 vs 反思",
+          "columns": [
+            {
+              "nameEn": "Prediction",
+              "nameZh": "预测",
+              "linesEn": [
+                "Know \"what will happen\"",
+                "Passive consumption",
+                "Can create dependency",
+                "Download The Pattern"
+              ],
+              "linesZh": [
+                "想知道\"会发生什么\"",
+                "被动消费",
+                "可能产生依赖",
+                "下载 The Pattern"
+              ]
+            },
+            {
+              "nameEn": "Reflection",
+              "nameZh": "反思",
+              "linesEn": [
+                "Know \"how to handle it\"",
+                "Active journaling",
+                "Builds agency",
+                "Use AstrologyWiki"
+              ],
+              "linesZh": [
+                "想知道\"如何应对\"",
+                "主动日记",
+                "建立主动性",
+                "使用 AstrologyWiki"
+              ]
+            }
+          ],
+          "altEn": "Comparison of prediction-focused passive astrology consumption versus reflection-focused active journaling.",
+          "altZh": "以预测为主的被动消费与以反思为主的主动日记的对比图。"
+        }
+      ]
+    },
+    "healing-your-inner-wound": {
+      "hero": {
+        "prompt": "A large astrological chart wheel half-veiled in drifting mist, one hidden segment glowing faintly behind the haze, five translucent overlapping circles of different sizes converging around a single small tender point of warm gold light (#d4af6a) — a family of signatures gathered around one old sore spot rather than a single answer — fine gold threads linking the circles to each other, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Misted chart wheel with five overlapping translucent circles converging on one small glowing point, showing a family of signatures around a hidden inner wound.",
+        "altZh": "薄雾笼罩的星盘上，五个半透明圆圈交叠汇聚于一个微光点，象征围绕内在伤口的一组盘面信号。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The inner wound at a Glance",
+          "afterHeadingZh": "## inner wound 一览表",
+          "titleEn": "Five Signatures of the Inner Wound",
+          "titleZh": "内在伤口的五个盘面信号",
+          "items": [
+            {
+              "nameEn": "Chiron in the 12th House",
+              "nameZh": "凯龙落第十二宫",
+              "subEn": "The hidden, inherited ache you cannot quite name",
+              "subZh": "说不清来历、像是继承来的隐痛"
+            },
+            {
+              "nameEn": "Mars in the 12th House",
+              "nameZh": "火星落第十二宫",
+              "subEn": "Anger and drive that go underground instead of out",
+              "subZh": "怒气与行动力转向内部、不外放"
+            },
+            {
+              "nameEn": "The 12th House",
+              "nameZh": "第十二宫总览",
+              "subEn": "Where the self dissolves, hides, and rests",
+              "subZh": "自我消融、退隐与歇息的地方"
+            },
+            {
+              "nameEn": "The 8th House",
+              "nameZh": "第八宫",
+              "subEn": "Depth, loss, shared resources, regeneration",
+              "subZh": "深度、失去、共享资源、再生"
+            },
+            {
+              "nameEn": "The Lunar Nodes",
+              "nameZh": "月亮南北交点",
+              "subEn": "A growth-and-familiarity axis touching wound themes",
+              "subZh": "与伤口主题相互作用的成长与熟悉轴线"
+            }
+          ],
+          "altEn": "The five chart signatures of the inner wound: Chiron in the 12th, Mars in the 12th, the 12th house, the 8th house, and the lunar nodes.",
+          "altZh": "内在伤口的五个盘面信号：凯龙落十二宫、火星落十二宫、第十二宫、第八宫与月亮南北交点。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How Shade and Combination Shift Readings",
+          "afterHeadingZh": "## 色调浓淡与组合如何改变解读",
+          "titleEn": "How Combinations Shift the Reading",
+          "titleZh": "组合如何改变解读",
+          "items": [
+            {
+              "nameEn": "Chiron + Mars, Same House",
+              "nameZh": "凯龙与火星同落一宫",
+              "subEn": "Ache and anger tangle: fury with nowhere to go",
+              "subZh": "痛与怒缠在一起：无处安放的愤怒"
+            },
+            {
+              "nameEn": "12th House Tied to the 8th",
+              "nameZh": "第十二宫牵连第八宫",
+              "subEn": "Wound surfaces inside depth and shared vulnerability",
+              "subZh": "伤在亲密与共享的脆弱中浮上来"
+            },
+            {
+              "nameEn": "Wound on the Nodal Axis",
+              "nameZh": "伤与交点轴线对齐",
+              "subEn": "Pattern repeats where growth is being asked of you",
+              "subZh": "模式反复出现处，正是被要求成长之处"
+            }
+          ],
+          "altEn": "Three placement combinations that shift the inner-wound reading: Chiron with Mars, 12th house tied to the 8th, and a wound on the nodal axis.",
+          "altZh": "改变内在伤口解读的三种落点组合：凯龙与火星同宫、第十二宫牵连第八宫、伤与交点轴线对齐。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreads + Framework Limits",
+          "afterHeadingZh": "## 常见误读 + 框架边界",
+          "titleEn": "Four Traps to Avoid",
+          "titleZh": "四个常见陷阱",
+          "items": [
+            {
+              "nameEn": "Discrete Diagnosis",
+              "nameZh": "读成离散诊断",
+              "subEn": "Signatures are reflective language, not fixed types",
+              "subZh": "信号是反思语言，不是固定分类"
+            },
+            {
+              "nameEn": "One \"Correct\" Lineage",
+              "nameZh": "硬选一派当正解",
+              "subEn": "Disagreement shows the edges of what charts can say",
+              "subZh": "分歧本身显示星盘能说的边界"
+            },
+            {
+              "nameEn": "Framework as Identity",
+              "nameZh": "把框架升格成身份",
+              "subEn": "A tendency you carry, not the whole of who you are",
+              "subZh": "信号描述一种倾向，不是你的全部"
+            },
+            {
+              "nameEn": "Chart as Ground Truth",
+              "nameZh": "把星盘当现实替身",
+              "subEn": "It cannot replace real relationships and choices",
+              "subZh": "星盘无法替代真实的关系、记忆与选择"
+            }
+          ],
+          "altEn": "Four common traps when reading the inner wound: discrete diagnosis, one correct lineage, framework as identity, chart as ground truth.",
+          "altZh": "解读内在伤口的四个常见陷阱：离散诊断、硬选正解、框架变身份、星盘替代现实。"
+        }
+      ]
+    },
+    "famous-highly-sensitive-person": {
+      "hero": {
+        "reuse": "public/images/hsp/famous-highly-sensitive-people.jpg",
+        "altEn": "Golden tuning fork standing on a dark stage, its fine resonance ripples reaching faint distant constellations — sensitivity as a finely tuned strength.",
+        "altZh": "黑暗舞台上矗立的金色音叉，细密的共振涟漪触及遥远微弱的星座——敏感是一种精密调校的力量。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "titleEn": "Three Self-Described Sensitive Artists",
+          "titleZh": "三位自述高敏感的音乐人",
+          "items": [
+            {
+              "nameEn": "Alanis Morissette",
+              "nameZh": "艾拉妮丝·莫莉塞特",
+              "subEn": "Works with a strong inner responsiveness, not against it",
+              "subZh": "与强烈的内在感受力合作，而非对抗它"
+            },
+            {
+              "nameEn": "Bruce Springsteen",
+              "nameZh": "布鲁斯·斯普林斯汀",
+              "subEn": "Emotional sensitivity under decades of stadium-sized work",
+              "subZh": "数十年体育场级演出之下的情感敏感"
+            },
+            {
+              "nameEn": "Lorde",
+              "nameZh": "洛德",
+              "subEn": "Takes in sound and feeling with unusual intensity",
+              "subZh": "以异常的强度接收声音与感受"
+            }
+          ],
+          "altEn": "Three artists who have publicly described themselves as highly sensitive: Alanis Morissette, Bruce Springsteen and Lorde.",
+          "altZh": "三位公开自述高度敏感的音乐人：艾拉妮丝·莫莉塞特、布鲁斯·斯普林斯汀与洛德。"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Famous Highly Sensitive People vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Famous Highly Sensitive People 与相近概念：运作方式 + 取舍",
+          "titleEn": "Sensitivity vs Its Neighbours",
+          "titleZh": "高敏感与相近概念",
+          "columns": [
+            {
+              "nameEn": "vs Introversion",
+              "nameZh": "对比内向",
+              "linesEn": [
+                "Introversion: social battery drains",
+                "Sensitivity: depth of processing",
+                "Many sensitive people are extroverts"
+              ],
+              "linesZh": [
+                "内向：社交后需独处充电",
+                "高敏感：对刺激加工得更深",
+                "代价：更易被嘈杂环境耗尽"
+              ]
+            },
+            {
+              "nameEn": "vs Empath",
+              "nameZh": "对比共情者",
+              "linesEn": [
+                "Empath: porous, near-psychic absorption",
+                "Sensitivity: reads cues and reflects",
+                "Observable and self-reported"
+              ],
+              "linesZh": [
+                "共情者：主动接收他人情绪",
+                "高敏感：光线声音气味也被放大",
+                "代价：恢复需要更长时间"
+              ]
+            },
+            {
+              "nameEn": "vs Anxiety",
+              "nameZh": "对比焦虑",
+              "linesEn": [
+                "Anxiety: chronic worry, a disorder",
+                "Sensitivity: careful noticing",
+                "Non-clinical, strengths-based frame"
+              ],
+              "linesZh": [
+                "焦虑：对威胁的过度预警",
+                "高敏感：中性的觉察力",
+                "别把一时敏锐当情绪问题"
+              ]
+            }
+          ],
+          "altEn": "Comparison of high sensitivity with introversion, the empath label, and anxiety, showing how each frame differs.",
+          "altZh": "高敏感与内向、共情者标签及焦虑的对比图，展示每种框架的差异。"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Famous Highly Sensitive People at a Glance",
+          "afterHeadingZh": "## Famous Highly Sensitive People 关键特征对照表",
+          "titleEn": "Four Markers of the Trait",
+          "titleZh": "高敏感的四个关键特征",
+          "items": [
+            {
+              "nameEn": "Depth of Processing",
+              "nameZh": "加工深",
+              "subEn": "Takes input in slowly, reflects before reacting",
+              "subZh": "信息要反复琢磨才放得下"
+            },
+            {
+              "nameEn": "Emotional Responsiveness",
+              "nameZh": "共情深",
+              "subEn": "Feels and mirrors moods with unusual intensity",
+              "subZh": "容易接住他人的情绪状态"
+            },
+            {
+              "nameEn": "Sensory Sensitivity",
+              "nameZh": "易过载",
+              "subEn": "Registers light, sound, texture at low thresholds",
+              "subZh": "强刺激下神经系统更快疲劳"
+            },
+            {
+              "nameEn": "Sensing the Subtle",
+              "nameZh": "觉察力强",
+              "subEn": "Picks up faint cues most people miss",
+              "subZh": "对细节和情绪的分辨率更高"
+            }
+          ],
+          "altEn": "Four markers of the highly sensitive trait: depth of processing, emotional responsiveness, sensory sensitivity, and sensing the subtle.",
+          "altZh": "高敏感特质的四个关键特征：加工深、共情深、易过载、觉察力强。"
+        }
+      ]
+    }
+  }
+}

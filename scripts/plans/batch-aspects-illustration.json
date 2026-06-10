@@ -1,0 +1,498 @@
+{
+  "_comment": "ASPECTS cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/aspects",
+  "urlBase": "/images/aspects",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "sextile-astrology": {
+      "hero": {
+        "prompt": "Calm introspective editorial illustration of a vast night-sky astrology chart wheel: two luminous planet orbs resting exactly two zodiac segments apart, joined by a thin golden 60-degree chord, and at the midpoint of that chord a single open golden doorway standing free, warm light spilling through it onto a short flight of untouched steps that no one has climbed, the door inviting but waiting, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
+        "altEn": "An open golden door standing on the 60-degree line between two planets, with untouched steps leading up to it",
+        "altZh": "两颗行星之间的60度连线上立着一扇敞开的金色门，门前是无人走过的台阶"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sextile vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Sextile 与相近概念：运作方式 + 取舍",
+          "titleEn": "Sextile vs Trine vs Square",
+          "titleZh": "六分相、三分相、四分相对比",
+          "columns": [
+            {
+              "nameEn": "Trine 120°",
+              "nameZh": "三分相 120°",
+              "linesEn": [
+                "Flows with no effort at all",
+                "Talent can sit unused",
+                "Comfort, no urgency to grow"
+              ],
+              "linesZh": [
+                "毫不费力地自动合作",
+                "天赋可能一直闲置",
+                "舒服，却没有紧迫感"
+              ]
+            },
+            {
+              "nameEn": "Sextile 60°",
+              "nameZh": "六分相 60°",
+              "linesEn": [
+                "Needs a small push first",
+                "Activates only when you act",
+                "Workable middle ground"
+              ],
+              "linesZh": [
+                "要你先推一把",
+                "你迈出一步才会启动",
+                "好操作的中间地带"
+              ]
+            },
+            {
+              "nameEn": "Square 90°",
+              "nameZh": "四分相 90°",
+              "linesEn": [
+                "Friction forces action",
+                "Motivation through pressure",
+                "Charges you stress for it"
+              ],
+              "linesZh": [
+                "靠摩擦逼你行动",
+                "用压力换来动力",
+                "代价是焦虑和压力"
+              ]
+            }
+          ],
+          "altEn": "Comparison of trine at 120 degrees flowing effortlessly, sextile at 60 degrees needing a first push, and square at 90 degrees forcing action through friction",
+          "altZh": "对比图：120度三分相毫不费力，60度六分相需要你先推一把，90度四分相靠摩擦逼你行动"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Sextile in Your Chart",
+          "afterHeadingZh": "## 如何在自己身上识别 Sextile",
+          "titleEn": "Five Cues to Spot a Sextile",
+          "titleZh": "识别六分相的五个信号",
+          "items": [
+            {
+              "nameEn": "Find the 60-degree gaps",
+              "nameZh": "找 60 度的间隔",
+              "subEn": "Two planets roughly two signs apart on the wheel",
+              "subZh": "找两颗大约相隔两个星座的行星"
+            },
+            {
+              "nameEn": "Check the elements",
+              "nameZh": "看元素是否相合",
+              "subEn": "Fire with air, earth with water — natural affinity",
+              "subZh": "火配风、土配水，天然的亲和"
+            },
+            {
+              "nameEn": "Easy but undeveloped",
+              "nameZh": "会但没用上的本事",
+              "subEn": "A skill that comes readily yet is never used on purpose",
+              "subZh": "上手很快、却从没刻意拿来用的技能"
+            },
+            {
+              "nameEn": "'If I just tried' feeling",
+              "nameZh": "「只要试一下」的感觉",
+              "subEn": "A strength one small step away from paying off",
+              "subZh": "一项长处感觉离兑现只差一小步"
+            },
+            {
+              "nameEn": "Tie it to a real scene",
+              "nameZh": "接到真实场景",
+              "subEn": "A chance kept closed only by your own inaction",
+              "subZh": "明明机会在眼前，只因没动手而错过"
+            }
+          ],
+          "altEn": "Five-step sequence for spotting a sextile: find 60-degree gaps, check elements, notice easy unused skills, catch the 'if I just tried' feeling, tie it to a real scene",
+          "altZh": "识别六分相的五步：找60度间隔、看元素相合、留意会而未用的本事、抓住「只要试一下」的感觉、接到真实场景"
+        }
+      ]
+    },
+    "square-astrology": {
+      "hero": {
+        "prompt": "Calm introspective editorial illustration of two luminous planet orbs locked at a strict 90-degree right angle on a dark astrology chart wheel, their two golden beams pressing hard into a glowing corner joint where fine gold sparks scatter like metal being worked on a forge, the angle taut with visible tension yet quietly shaping a stronger brighter form at the junction, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
+        "altEn": "Two planets pressing into a glowing right-angle joint that throws golden forge-like sparks",
+        "altZh": "两颗行星在90度直角处相互挤压，金色火花如锻造般迸出"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Square vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Square 与相近概念：运作方式 + 取舍",
+          "titleEn": "Square vs Opposition vs Trine",
+          "titleZh": "四分相、对分相、三分相对比",
+          "columns": [
+            {
+              "nameEn": "Square 90°",
+              "nameZh": "四分相 90°",
+              "linesEn": [
+                "Hard aspect, tension turns inward",
+                "Two of your own drives clash",
+                "Friction you must answer"
+              ],
+              "linesZh": [
+                "硬相位，张力收向内部",
+                "你自己两股驱力在撞",
+                "一股你必须回应的摩擦"
+              ]
+            },
+            {
+              "nameEn": "Opposition 180°",
+              "nameZh": "对分相 180°",
+              "linesEn": [
+                "Hard aspect, faces across the wheel",
+                "External standoff, often with others",
+                "A clear 'other side'"
+              ],
+              "linesZh": [
+                "硬相位，隔盘面对面",
+                "张力向外，常牵扯他人",
+                "对面有个清楚的对手"
+              ]
+            },
+            {
+              "nameEn": "Trine 120°",
+              "nameZh": "三分相 120°",
+              "linesEn": [
+                "Soft aspect, no resistance",
+                "Talent runs on its own",
+                "Ease with no push to refine"
+              ],
+              "linesZh": [
+                "柔和相位，毫无阻力",
+                "天赋自己就转起来",
+                "轻松，但没人逼你打磨"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the square's inward tension at 90 degrees, the opposition's external standoff at 180 degrees, and the trine's effortless flow at 120 degrees",
+          "altZh": "对比图：90度四分相把张力收向内部，180度对分相向外对峙，120度三分相毫无阻力地流动"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Square in Your Chart",
+          "afterHeadingZh": "## 如何在自己身上识别 Square",
+          "titleEn": "Five Cues to Spot a Square",
+          "titleZh": "识别四分相的五个信号",
+          "items": [
+            {
+              "nameEn": "Find the 90-degree gaps",
+              "nameZh": "找出约 90 度的间隔",
+              "subEn": "A quarter-turn apart; the tighter, the louder",
+              "subZh": "相差约四分之一圈，越精确越响"
+            },
+            {
+              "nameEn": "Name the two drives",
+              "nameZh": "说出两股驱力",
+              "subEn": "What each planet wants and where they refuse one plan",
+              "subZh": "弄清各自想要什么、在哪不肯共用计划"
+            },
+            {
+              "nameEn": "Watch the recurring snag",
+              "nameZh": "盯住反复出现的卡点",
+              "subEn": "Same friction surfacing again in different settings",
+              "subZh": "同一种摩擦在不同场合一再冒头"
+            },
+            {
+              "nameEn": "Check the modality",
+              "nameZh": "看模式属性",
+              "subEn": "Fixed-sign squares dig in hardest, ask most patience",
+              "subZh": "固定星座间的最顽固，最考验耐心"
+            },
+            {
+              "nameEn": "Spot your workaround",
+              "nameZh": "认出你的应付动作",
+              "subEn": "The coping move you quietly built around it",
+              "subZh": "你早已悄悄练出的那套绕行招数"
+            }
+          ],
+          "altEn": "Five-step sequence for spotting a square: find 90-degree gaps, name the two drives, watch the recurring snag, check the modality, spot the workaround you built",
+          "altZh": "识别四分相的五步：找90度间隔、说出两股驱力、盯住反复卡点、看模式属性、认出已练成的应付动作"
+        }
+      ]
+    },
+    "trine-in-astrology": {
+      "hero": {
+        "prompt": "Calm introspective editorial illustration of a dark astrology chart wheel holding a faint equilateral triangle of light, two luminous planet orbs 120 degrees apart connected by a smooth golden stream that flows effortlessly between them like a quiet river, yet at its far end the stream pools unused and fades into still drifting mist, beauty left on autopilot, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
+        "altEn": "A golden stream flowing effortlessly between two planets 120 degrees apart, pooling unused into mist at its end",
+        "altZh": "两颗相距120度的行星之间一道金色溪流自然流淌，却在尽头无人取用地积成薄雾"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Trine vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Trine 与相近概念：运作方式 + 取舍",
+          "titleEn": "Trine vs Sextile vs Square",
+          "titleZh": "三分相、六分相、四分相对比",
+          "columns": [
+            {
+              "nameEn": "Trine 120°",
+              "nameZh": "三分相 120°",
+              "linesEn": [
+                "Hands you the result",
+                "Same element, automatic flow",
+                "Ease, no push to develop"
+              ],
+              "linesZh": [
+                "直接把结果递给你",
+                "同元素，自动流动",
+                "轻松，却没人逼你发展"
+              ]
+            },
+            {
+              "nameEn": "Sextile 60°",
+              "nameZh": "六分相 60°",
+              "linesEn": [
+                "Hands you the chance",
+                "Open door you must walk through",
+                "Effort makes it feel earned"
+              ],
+              "linesZh": [
+                "递给你的是机会",
+                "一扇要你自己走过去的门",
+                "那点努力让它像挣来的"
+              ]
+            },
+            {
+              "nameEn": "Square 90°",
+              "nameZh": "四分相 90°",
+              "linesEn": [
+                "Tension forces a resolution",
+                "Friction and discomfort",
+                "Supplies the drive to grow"
+              ],
+              "linesZh": [
+                "张力逼你去解决",
+                "摩擦与不舒服",
+                "换来推动成长的劲"
+              ]
+            }
+          ],
+          "altEn": "Comparison of trine handing you the result at 120 degrees, sextile handing you the chance at 60 degrees, and square forcing resolution through tension at 90 degrees",
+          "altZh": "对比图：120度三分相直接给结果，60度六分相给机会，90度四分相用张力逼你解决"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Trine in Your Chart",
+          "afterHeadingZh": "## 如何在自己身上识别 Trine",
+          "titleEn": "Four Signals of a Trine",
+          "titleZh": "识别三分相的四个信号",
+          "items": [
+            {
+              "nameEn": "The effortless skill",
+              "nameZh": "不费力的本事",
+              "subEn": "Praised by friends, shrugged off as no big deal",
+              "subZh": "朋友夸你、你却觉得没什么大不了"
+            },
+            {
+              "nameEn": "The unforced rhythm",
+              "nameZh": "不用协调的节奏",
+              "subEn": "Two life areas cooperating with no negotiation",
+              "subZh": "生活两部分自己配合好，不需谈判"
+            },
+            {
+              "nameEn": "The chart geometry",
+              "nameZh": "盘面上的几何",
+              "subEn": "Planets about 120° apart in same-element pairs",
+              "subZh": "约隔120度、同元素配对的两颗行星"
+            },
+            {
+              "nameEn": "The quiet plateau",
+              "nameZh": "安静的停滞",
+              "subEn": "A talent that stopped improving on autopilot",
+              "subZh": "多年不再进步、被放上自动挡的天赋"
+            }
+          ],
+          "altEn": "Four signals of a trine: an effortless skill, an unforced rhythm between life areas, planets 120 degrees apart in the same element, and a talent quietly plateaued",
+          "altZh": "识别三分相的四个信号：不费力的本事、不用协调的节奏、相隔120度的同元素行星、安静停滞的天赋"
+        }
+      ]
+    },
+    "descendant-astrology": {
+      "hero": {
+        "prompt": "Calm introspective editorial illustration of a dark astrology chart wheel crossed by a long horizon line, a radiant golden point sinking at the western edge, and directly across the axis a tall arched standing mirror catching that light so the glow seems to shine from inside the mirror itself, two slender crescent forms facing each other across the wheel like a projection meeting its source, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
+        "altEn": "A point of light setting on the western horizon of a chart wheel, its golden glow reflected back from an arched mirror across the axis",
+        "altZh": "星盘西方地平线上一个下沉的光点，轴线另一端的拱形镜子映回它的金光"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Descendant vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Descendant 与相近概念：运作方式 + 取舍",
+          "titleEn": "The Descendant vs Its Neighbors",
+          "titleZh": "下降点与它的相邻概念",
+          "items": [
+            {
+              "nameEn": "vs Ascendant",
+              "nameZh": "对比上升点",
+              "subEn": "Self you present vs self you meet through others",
+              "subZh": "你示人的自己 vs 透过他人遇见的自己"
+            },
+            {
+              "nameEn": "vs 7th-house planets",
+              "nameZh": "对比第七宫行星",
+              "subEn": "The sign sets the tone; planets add specific drives",
+              "subZh": "星座定基调，宫内行星补上具体驱力"
+            },
+            {
+              "nameEn": "vs the IC",
+              "nameZh": "对比天底 IC",
+              "subEn": "DC points outward to partners; IC holds the private base",
+              "subZh": "下降点朝外指向伴侣，天底守着私密根基"
+            },
+            {
+              "nameEn": "vs the Moon",
+              "nameZh": "对比月亮",
+              "subEn": "Moon is how you self-soothe; DC is who you reach for",
+              "subZh": "月亮讲自我安抚，下降点讲你伸手找谁"
+            }
+          ],
+          "altEn": "Four contrasts that define the Descendant: against the Ascendant, the seventh-house planets, the IC, and the Moon",
+          "altZh": "四组对比界定下降点：与上升点、第七宫行星、天底IC和月亮的区别"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Descendant in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 Descendant",
+          "titleEn": "Four Signals of the Descendant",
+          "titleZh": "识别下降点的四个信号",
+          "items": [
+            {
+              "nameEn": "The repeated type",
+              "nameZh": "反复出现的类型",
+              "subEn": "Drawn to people sharing one strong trait",
+              "subZh": "总被同一鲜明特质的人吸引"
+            },
+            {
+              "nameEn": "The strong reaction",
+              "nameZh": "过强的反应",
+              "subEn": "An outsized charge marks something unclaimed",
+              "subZh": "过头的反应往往标记未认领的东西"
+            },
+            {
+              "nameEn": "The missing function",
+              "nameZh": "缺失的功能",
+              "subEn": "A quality you 'can't do' but admire in a partner",
+              "subZh": "你说做不到、却在伴侣身上欣赏的品质"
+            },
+            {
+              "nameEn": "The recurring conflict",
+              "nameZh": "重复的冲突",
+              "subEn": "The argument repeating across relationships",
+              "subZh": "一段段关系里都会上演的同一场争执"
+            }
+          ],
+          "altEn": "Four signals for reading your Descendant: the repeated type, the strong reaction, the missing function, and the recurring conflict",
+          "altZh": "识别下降点的四个信号：反复出现的类型、过强的反应、缺失的功能、重复的冲突"
+        }
+      ]
+    },
+    "ic-astrology": {
+      "hero": {
+        "prompt": "Calm introspective editorial illustration of a luminous astrology chart wheel suspended in deep indigo darkness, fine glowing golden roots growing downward from the wheel's lowest point and spreading into rich dark ground below, the root system glowing warmest where it anchors deepest, while only a faint pale halo of public light hovers at the very top of the wheel, the hidden foundation outshining the visible crown, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), wide 16:9 composition, no human figures, no faces, no text or letters",
+        "altEn": "Golden roots growing downward from the base of a glowing chart wheel into dark ground, beneath a faint halo of light at the top",
+        "altZh": "金色根系从发光星盘的最底端向下扎进黑暗土壤，盘顶只悬着一圈微光"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## IC vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## IC 与相近概念：运作方式 + 取舍",
+          "titleEn": "IC vs 4th House vs Midheaven",
+          "titleZh": "天底、第四宫、天顶对比",
+          "columns": [
+            {
+              "nameEn": "IC (the angle)",
+              "nameZh": "天底 IC（轴点）",
+              "linesEn": [
+                "Exact point at the chart's base",
+                "Private emotional foundation",
+                "What you stand on unseen"
+              ],
+              "linesZh": [
+                "盘底那个精确的点",
+                "私密的情感地基",
+                "没人看时你踩着的东西"
+              ]
+            },
+            {
+              "nameEn": "4th House",
+              "nameZh": "第四宫",
+              "linesEn": [
+                "Whole sector the IC opens",
+                "Breadth of home and roots",
+                "Context around the angle"
+              ],
+              "linesZh": [
+                "IC 打开的一整片领域",
+                "家与根源的广度",
+                "补上轴点周围的背景"
+              ]
+            },
+            {
+              "nameEn": "Midheaven",
+              "nameZh": "天顶 MC",
+              "linesEn": [
+                "Crown at the top of the chart",
+                "Public standing and direction",
+                "Who you are to the world"
+              ],
+              "linesZh": [
+                "星盘顶端的冠冕",
+                "公开身份与对外方向",
+                "你对世界来说是谁"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the IC as the exact private base point, the 4th house as the whole home sector it opens, and the Midheaven as the public crown opposite it",
+          "altZh": "对比图：天底IC是盘底精确的私密地基点，第四宫是它打开的整片家庭领域，天顶是正对面的公开冠冕"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read IC in Your Chart",
+          "afterHeadingZh": "## 如何在自己身上识别 IC",
+          "titleEn": "Five Steps to Read Your IC",
+          "titleZh": "读懂你天底的五个步骤",
+          "items": [
+            {
+              "nameEn": "Find the sign and ruler",
+              "nameZh": "找出 IC 星座与主管",
+              "subEn": "Exact degree and sign name your foundation's flavor",
+              "subZh": "确切度数和星座点出地基的味道"
+            },
+            {
+              "nameEn": "Locate the ruler's house",
+              "nameZh": "看主管行星落宫",
+              "subEn": "Where your sense of home shows up in daily life",
+              "subZh": "归属感在日常里冒头的地方"
+            },
+            {
+              "nameEn": "Note planets near the IC",
+              "nameZh": "留意贴近 IC 的行星",
+              "subEn": "Read together as family of origin and inner base",
+              "subZh": "一起读，当成原生家庭和内在地基"
+            },
+            {
+              "nameEn": "Match retreat to the sign",
+              "nameZh": "对上你退回的氛围",
+              "subEn": "The atmosphere you return to when depleted",
+              "subZh": "累垮时退回的家或氛围对上 IC 星座"
+            },
+            {
+              "nameEn": "Name what roots you",
+              "nameZh": "说出什么让你扎根",
+              "subEn": "Naming turns a vague point into a usable base",
+              "subZh": "出声命名让模糊的点变成可用地基"
+            }
+          ],
+          "altEn": "Five-step sequence for reading the IC: find its sign and ruler, locate the ruler's house, note planets near the IC, match your retreat to the sign, name what roots you",
+          "altZh": "读懂天底的五步：找星座与主管、看主管落宫、留意贴近IC的行星、对上退回的氛围、说出什么让你扎根"
+        }
+      ]
+    }
+  }
+}

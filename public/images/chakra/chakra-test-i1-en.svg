@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="Chakra Test vs the Tools It Gets Confused With">
+  <defs>
+    <linearGradient id="chakratest1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="chakratest1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="chakratest1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chakratest1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chakratest1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chakratest1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#chakratest1en-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#chakratest1en-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#chakratest1en-neb2)"/>
+  <circle cx="577.7" cy="177.2" r="1.65" fill="#cfc8ea" opacity="0.41"/><circle cx="127.0" cy="240.2" r="0.63" fill="#cfc8ea" opacity="0.34"/><circle cx="87.2" cy="99.7" r="0.41" fill="#cfc8ea" opacity="0.49"/><circle cx="546.2" cy="291.9" r="1.37" fill="#cfc8ea" opacity="0.53"/><circle cx="21.6" cy="421.6" r="1.30" fill="#cfc8ea" opacity="0.49"/><circle cx="126.9" cy="513.4" r="1.47" fill="#cfc8ea" opacity="0.16"/><circle cx="674.5" cy="403.1" r="1.57" fill="#cfc8ea" opacity="0.13"/><circle cx="286.4" cy="382.6" r="0.50" fill="#cfc8ea" opacity="0.42"/><circle cx="44.7" cy="433.5" r="1.35" fill="#cfc8ea" opacity="0.15"/><circle cx="663.0" cy="318.4" r="0.93" fill="#cfc8ea" opacity="0.49"/><circle cx="501.9" cy="596.4" r="0.75" fill="#cfc8ea" opacity="0.16"/><circle cx="676.3" cy="247.4" r="0.53" fill="#cfc8ea" opacity="0.50"/><circle cx="527.9" cy="371.3" r="0.73" fill="#cfc8ea" opacity="0.15"/><circle cx="577.5" cy="343.0" r="1.20" fill="#cfc8ea" opacity="0.21"/><circle cx="98.8" cy="188.9" r="0.75" fill="#cfc8ea" opacity="0.37"/><circle cx="189.1" cy="458.6" r="1.26" fill="#cfc8ea" opacity="0.40"/><circle cx="225.1" cy="160.7" r="1.56" fill="#cfc8ea" opacity="0.52"/><circle cx="105.1" cy="470.4" r="0.41" fill="#cfc8ea" opacity="0.20"/><circle cx="656.8" cy="388.3" r="1.40" fill="#cfc8ea" opacity="0.39"/><circle cx="633.3" cy="77.1" r="0.67" fill="#cfc8ea" opacity="0.53"/><circle cx="624.1" cy="26.9" r="1.42" fill="#cfc8ea" opacity="0.34"/><circle cx="433.9" cy="424.9" r="0.63" fill="#cfc8ea" opacity="0.43"/><circle cx="118.4" cy="191.1" r="0.86" fill="#cfc8ea" opacity="0.30"/><circle cx="26.9" cy="35.1" r="1.68" fill="#cfc8ea" opacity="0.30"/><circle cx="601.3" cy="385.5" r="0.44" fill="#cfc8ea" opacity="0.54"/><circle cx="222.8" cy="260.9" r="0.44" fill="#cfc8ea" opacity="0.51"/><circle cx="581.3" cy="370.2" r="1.32" fill="#cfc8ea" opacity="0.53"/><circle cx="166.3" cy="60.9" r="1.12" fill="#cfc8ea" opacity="0.17"/><circle cx="513.8" cy="66.5" r="1.59" fill="#cfc8ea" opacity="0.17"/><circle cx="494.4" cy="521.3" r="0.67" fill="#cfc8ea" opacity="0.32"/><circle cx="489.3" cy="252.5" r="1.42" fill="#cfc8ea" opacity="0.32"/><circle cx="658.6" cy="551.8" r="1.36" fill="#cfc8ea" opacity="0.39"/><circle cx="696.8" cy="257.6" r="1.18" fill="#cfc8ea" opacity="0.47"/><circle cx="67.4" cy="266.5" r="0.61" fill="#cfc8ea" opacity="0.26"/><circle cx="463.7" cy="54.1" r="1.42" fill="#cfc8ea" opacity="0.40"/><circle cx="678.3" cy="292.5" r="1.20" fill="#cfc8ea" opacity="0.29"/><circle cx="128.9" cy="457.6" r="0.85" fill="#cfc8ea" opacity="0.49"/><circle cx="674.7" cy="174.2" r="0.91" fill="#cfc8ea" opacity="0.52"/><circle cx="290.6" cy="446.8" r="1.39" fill="#cfc8ea" opacity="0.15"/><circle cx="458.1" cy="541.3" r="0.65" fill="#cfc8ea" opacity="0.40"/><circle cx="474.2" cy="18.8" r="0.82" fill="#cfc8ea" opacity="0.42"/><circle cx="620.4" cy="357.9" r="1.55" fill="#cfc8ea" opacity="0.27"/><circle cx="95.7" cy="32.0" r="1.02" fill="#cfc8ea" opacity="0.48"/><circle cx="593.1" cy="187.4" r="0.42" fill="#cfc8ea" opacity="0.18"/><circle cx="286.9" cy="126.4" r="1.13" fill="#cfc8ea" opacity="0.23"/><circle cx="170.1" cy="397.9" r="1.33" fill="#cfc8ea" opacity="0.31"/><circle cx="519.5" cy="388.8" r="1.46" fill="#cfc8ea" opacity="0.23"/><circle cx="363.9" cy="464.9" r="1.29" fill="#cfc8ea" opacity="0.48"/><circle cx="411.7" cy="27.2" r="1.33" fill="#cfc8ea" opacity="0.46"/><circle cx="102.1" cy="378.4" r="0.93" fill="#cfc8ea" opacity="0.15"/><circle cx="569.4" cy="197.8" r="1.49" fill="#cfc8ea" opacity="0.49"/><circle cx="152.8" cy="92.9" r="0.43" fill="#cfc8ea" opacity="0.49"/><path d="M 579.8022036347538 347.8 L 580.3 350.6 L 583.1 351.16139695513994 L 580.3 351.7 L 579.8022036347538 354.5 L 579.3 351.7 L 576.5 351.16139695513994 L 579.3 350.6 Z" fill="#f6e6bf" opacity="0.5698508384637535"/><path d="M 592.8532978314906 46.3 L 593.3 48.5 L 595.5 48.959122887812555 L 593.3 49.4 L 592.8532978314906 51.6 L 592.4 49.4 L 590.2 48.959122887812555 L 592.4 48.5 Z" fill="#f6e6bf" opacity="0.6605993652716279"/><path d="M 329.7659331802279 471.6 L 330.2 473.8 L 332.4 474.2549472237006 L 330.2 474.7 L 329.7659331802279 476.9 L 329.3 474.7 L 327.2 474.2549472237006 L 329.3 473.8 Z" fill="#f6e6bf" opacity="0.5972531468607485"/><path d="M 173.9730377662927 238.9 L 174.4 241.0 L 176.5 241.43354069720954 L 174.4 241.8 L 173.9730377662927 244.0 L 173.6 241.8 L 171.4 241.43354069720954 L 173.6 241.0 Z" fill="#f6e6bf" opacity="0.7783742092549801"/><path d="M 262.2594378683716 327.8 L 262.9 331.1 L 266.1 331.69195960182697 L 262.9 332.3 L 262.2594378683716 335.5 L 261.6 332.3 L 258.4 331.69195960182697 L 261.6 331.1 Z" fill="#f6e6bf" opacity="0.5328647731803358"/><path d="M 546.2 291.9 L 633.3 77.1 L 601.3 385.5 L 593.1 187.4 L 363.9 464.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Chakra Test vs the Tools It Gets Confused With</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#chakratest1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#chakratest1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Chakra test</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads your present state</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Shifts as your life shifts</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">A prompt to observe, not a verdict</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Personality quiz</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sorts you into a stable type</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Meant to hold for years</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Comforting but fixed</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Clinical assessment</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Built to name a condition</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Professional rigor</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">The only route to medical accuracy</text>
+  <path d="M 202.22749999999988 585.4 L 202.6 587.6 L 204.8 588 L 202.6 588.4 L 202.22749999999988 590.6 L 201.8 588.4 L 199.6 588 L 201.8 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 585.4 L 558.2 587.6 L 560.4 588 L 558.2 588.4 L 557.7725000000002 590.6 L 557.4 588.4 L 555.2 588 L 557.4 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

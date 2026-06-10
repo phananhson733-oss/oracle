@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="The Guna Clock of a Day">
+  <defs>
+    <linearGradient id="sattvarajastamas1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="sattvarajastamas1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="sattvarajastamas1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sattvarajastamas1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sattvarajastamas1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sattvarajastamas1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#sattvarajastamas1en-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#sattvarajastamas1en-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#sattvarajastamas1en-neb2)"/>
+  <circle cx="119.6" cy="436.9" r="1.23" fill="#cfc8ea" opacity="0.49"/><circle cx="215.2" cy="237.9" r="1.04" fill="#cfc8ea" opacity="0.16"/><circle cx="127.8" cy="176.0" r="1.68" fill="#cfc8ea" opacity="0.30"/><circle cx="619.8" cy="152.8" r="1.16" fill="#cfc8ea" opacity="0.40"/><circle cx="60.4" cy="223.0" r="1.00" fill="#cfc8ea" opacity="0.39"/><circle cx="531.1" cy="264.0" r="0.55" fill="#cfc8ea" opacity="0.31"/><circle cx="299.2" cy="394.0" r="0.45" fill="#cfc8ea" opacity="0.13"/><circle cx="56.0" cy="29.1" r="0.58" fill="#cfc8ea" opacity="0.51"/><circle cx="192.0" cy="16.0" r="1.45" fill="#cfc8ea" opacity="0.14"/><circle cx="190.6" cy="100.8" r="1.46" fill="#cfc8ea" opacity="0.41"/><circle cx="48.6" cy="112.4" r="0.48" fill="#cfc8ea" opacity="0.14"/><circle cx="326.8" cy="106.2" r="1.20" fill="#cfc8ea" opacity="0.17"/><circle cx="293.3" cy="104.0" r="1.67" fill="#cfc8ea" opacity="0.53"/><circle cx="684.0" cy="109.8" r="0.43" fill="#cfc8ea" opacity="0.32"/><circle cx="525.6" cy="220.1" r="0.44" fill="#cfc8ea" opacity="0.17"/><circle cx="506.8" cy="407.3" r="0.97" fill="#cfc8ea" opacity="0.53"/><circle cx="80.5" cy="411.8" r="1.59" fill="#cfc8ea" opacity="0.48"/><circle cx="575.7" cy="28.4" r="1.37" fill="#cfc8ea" opacity="0.50"/><circle cx="73.1" cy="79.9" r="0.64" fill="#cfc8ea" opacity="0.49"/><circle cx="655.1" cy="411.4" r="0.97" fill="#cfc8ea" opacity="0.38"/><circle cx="111.6" cy="40.6" r="0.57" fill="#cfc8ea" opacity="0.30"/><circle cx="586.6" cy="215.9" r="0.44" fill="#cfc8ea" opacity="0.15"/><circle cx="351.3" cy="91.2" r="0.41" fill="#cfc8ea" opacity="0.50"/><circle cx="702.8" cy="439.2" r="0.68" fill="#cfc8ea" opacity="0.21"/><circle cx="678.9" cy="274.5" r="1.09" fill="#cfc8ea" opacity="0.13"/><circle cx="428.2" cy="210.6" r="1.09" fill="#cfc8ea" opacity="0.30"/><circle cx="566.2" cy="69.5" r="1.15" fill="#cfc8ea" opacity="0.45"/><circle cx="688.7" cy="137.2" r="0.78" fill="#cfc8ea" opacity="0.17"/><circle cx="311.5" cy="18.8" r="1.42" fill="#cfc8ea" opacity="0.13"/><circle cx="557.9" cy="71.5" r="1.50" fill="#cfc8ea" opacity="0.36"/><circle cx="283.4" cy="298.0" r="0.91" fill="#cfc8ea" opacity="0.45"/><circle cx="148.0" cy="238.0" r="1.32" fill="#cfc8ea" opacity="0.14"/><circle cx="108.7" cy="156.3" r="1.10" fill="#cfc8ea" opacity="0.32"/><circle cx="124.2" cy="78.7" r="0.79" fill="#cfc8ea" opacity="0.39"/><circle cx="580.7" cy="39.9" r="1.33" fill="#cfc8ea" opacity="0.44"/><circle cx="529.5" cy="399.7" r="1.57" fill="#cfc8ea" opacity="0.45"/><circle cx="438.3" cy="350.0" r="1.04" fill="#cfc8ea" opacity="0.32"/><circle cx="223.7" cy="131.9" r="0.60" fill="#cfc8ea" opacity="0.20"/><circle cx="101.6" cy="151.2" r="0.44" fill="#cfc8ea" opacity="0.17"/><path d="M 712.4489804692566 385.1 L 712.9 387.2 L 715.0 387.6160642008763 L 712.9 388.0 L 712.4489804692566 390.1 L 712.0 388.0 L 709.9 387.6160642008763 L 712.0 387.2 Z" fill="#f6e6bf" opacity="0.5682543649571017"/><path d="M 665.4988171570003 161.5 L 666.0 164.2 L 668.6 164.6639478148427 L 666.0 165.2 L 665.4988171570003 167.8 L 665.0 165.2 L 662.4 164.6639478148427 L 665.0 164.2 Z" fill="#f6e6bf" opacity="0.5873034784803167"/><path d="M 242.4998275078833 212.7 L 243.0 215.5 L 245.8 216.02535554091446 L 243.0 216.6 L 242.4998275078833 219.3 L 242.0 216.6 L 239.2 216.02535554091446 L 242.0 215.5 Z" fill="#f6e6bf" opacity="0.6946564962388948"/><path d="M 441.2064499221742 154.2 L 441.7 156.7 L 444.3 157.2211764228996 L 441.7 157.7 L 441.2064499221742 160.3 L 440.7 157.7 L 438.1 157.2211764228996 L 440.7 156.7 Z" fill="#f6e6bf" opacity="0.6655807093018666"/><path d="M 18.356490720063448 97.5 L 18.8 99.8 L 21.0 100.18419144186191 L 18.8 100.6 L 18.356490720063448 102.9 L 17.9 100.6 L 15.7 100.18419144186191 L 17.9 99.8 Z" fill="#f6e6bf" opacity="0.6000454808818176"/><path d="M 190.6 100.8 L 684.0 109.8 L 525.6 220.1 L 678.9 274.5 L 428.2 210.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">The Guna Clock of a Day</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#sattvarajastamas1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#sattvarajastamas1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#sattvarajastamas1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#sattvarajastamas1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Dawn</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Sattvic window</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Trends clear and calm — schedule deep work here</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#sattvarajastamas1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#sattvarajastamas1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Midday</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Rajasic stretch</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Runs active and driven — take on intensive tasks</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#sattvarajastamas1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#sattvarajastamas1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Late afternoon</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Tamasic dip</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Can turn heavy — switch to lighter work</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#sattvarajastamas1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#sattvarajastamas1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Around sunset</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Brief sattvic return</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">A short window of clarity often comes back</text>
+  <path d="M 202.22749999999988 430.4 L 202.6 432.6 L 204.8 433 L 202.6 433.4 L 202.22749999999988 435.6 L 201.8 433.4 L 199.6 433 L 201.8 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 430.4 L 558.2 432.6 L 560.4 433 L 558.2 433.4 L 557.7725000000002 435.6 L 557.4 433.4 L 555.2 433 L 557.4 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

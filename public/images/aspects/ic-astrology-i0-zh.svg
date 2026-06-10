@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="天底、第四宫、天顶对比">
+  <defs>
+    <linearGradient id="icastrology0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="icastrology0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="icastrology0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="icastrology0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="icastrology0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="icastrology0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#icastrology0zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#icastrology0zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#icastrology0zh-neb2)"/>
+  <circle cx="434.5" cy="110.3" r="1.51" fill="#cfc8ea" opacity="0.31"/><circle cx="301.5" cy="600.2" r="1.46" fill="#cfc8ea" opacity="0.30"/><circle cx="336.3" cy="465.0" r="0.44" fill="#cfc8ea" opacity="0.38"/><circle cx="153.3" cy="313.7" r="0.78" fill="#cfc8ea" opacity="0.34"/><circle cx="301.6" cy="569.0" r="0.72" fill="#cfc8ea" opacity="0.44"/><circle cx="282.4" cy="236.1" r="0.62" fill="#cfc8ea" opacity="0.32"/><circle cx="607.2" cy="574.3" r="1.57" fill="#cfc8ea" opacity="0.14"/><circle cx="185.7" cy="211.4" r="0.46" fill="#cfc8ea" opacity="0.41"/><circle cx="72.6" cy="423.4" r="0.81" fill="#cfc8ea" opacity="0.15"/><circle cx="636.4" cy="42.0" r="1.65" fill="#cfc8ea" opacity="0.17"/><circle cx="638.5" cy="493.5" r="0.96" fill="#cfc8ea" opacity="0.36"/><circle cx="426.2" cy="549.6" r="1.27" fill="#cfc8ea" opacity="0.42"/><circle cx="317.3" cy="47.9" r="1.14" fill="#cfc8ea" opacity="0.45"/><circle cx="745.6" cy="45.2" r="1.47" fill="#cfc8ea" opacity="0.28"/><circle cx="533.3" cy="98.8" r="1.45" fill="#cfc8ea" opacity="0.39"/><circle cx="643.9" cy="54.6" r="0.61" fill="#cfc8ea" opacity="0.24"/><circle cx="609.9" cy="85.8" r="1.57" fill="#cfc8ea" opacity="0.44"/><circle cx="623.9" cy="43.0" r="0.64" fill="#cfc8ea" opacity="0.47"/><circle cx="160.4" cy="339.5" r="0.85" fill="#cfc8ea" opacity="0.23"/><circle cx="298.2" cy="239.0" r="0.82" fill="#cfc8ea" opacity="0.49"/><circle cx="583.0" cy="167.9" r="0.72" fill="#cfc8ea" opacity="0.25"/><circle cx="733.6" cy="252.1" r="0.48" fill="#cfc8ea" opacity="0.53"/><circle cx="571.6" cy="293.2" r="0.60" fill="#cfc8ea" opacity="0.46"/><circle cx="564.4" cy="597.0" r="0.56" fill="#cfc8ea" opacity="0.21"/><circle cx="642.3" cy="297.3" r="0.92" fill="#cfc8ea" opacity="0.48"/><circle cx="493.8" cy="428.7" r="1.20" fill="#cfc8ea" opacity="0.21"/><circle cx="118.9" cy="44.2" r="1.30" fill="#cfc8ea" opacity="0.16"/><circle cx="616.9" cy="351.0" r="1.54" fill="#cfc8ea" opacity="0.21"/><circle cx="192.6" cy="191.8" r="0.91" fill="#cfc8ea" opacity="0.30"/><circle cx="94.0" cy="85.7" r="0.94" fill="#cfc8ea" opacity="0.24"/><circle cx="507.7" cy="31.1" r="1.65" fill="#cfc8ea" opacity="0.46"/><circle cx="236.9" cy="304.2" r="0.81" fill="#cfc8ea" opacity="0.31"/><circle cx="240.4" cy="278.2" r="1.33" fill="#cfc8ea" opacity="0.31"/><circle cx="102.8" cy="222.4" r="1.10" fill="#cfc8ea" opacity="0.15"/><circle cx="673.1" cy="40.5" r="1.01" fill="#cfc8ea" opacity="0.46"/><circle cx="381.2" cy="273.8" r="1.33" fill="#cfc8ea" opacity="0.32"/><circle cx="494.5" cy="514.9" r="0.73" fill="#cfc8ea" opacity="0.29"/><circle cx="171.4" cy="49.6" r="1.49" fill="#cfc8ea" opacity="0.29"/><circle cx="706.6" cy="588.0" r="0.63" fill="#cfc8ea" opacity="0.15"/><circle cx="161.7" cy="115.3" r="1.34" fill="#cfc8ea" opacity="0.12"/><circle cx="405.2" cy="442.3" r="1.36" fill="#cfc8ea" opacity="0.19"/><circle cx="524.0" cy="38.3" r="0.58" fill="#cfc8ea" opacity="0.49"/><circle cx="713.4" cy="130.2" r="0.73" fill="#cfc8ea" opacity="0.37"/><circle cx="641.6" cy="106.6" r="1.04" fill="#cfc8ea" opacity="0.36"/><circle cx="522.2" cy="472.4" r="1.67" fill="#cfc8ea" opacity="0.31"/><circle cx="542.7" cy="351.6" r="0.54" fill="#cfc8ea" opacity="0.37"/><circle cx="267.7" cy="580.8" r="0.57" fill="#cfc8ea" opacity="0.44"/><circle cx="281.0" cy="148.4" r="0.82" fill="#cfc8ea" opacity="0.18"/><circle cx="728.9" cy="443.0" r="0.86" fill="#cfc8ea" opacity="0.32"/><circle cx="712.9" cy="382.2" r="0.48" fill="#cfc8ea" opacity="0.13"/><circle cx="640.0" cy="121.9" r="0.72" fill="#cfc8ea" opacity="0.44"/><circle cx="166.3" cy="333.5" r="1.60" fill="#cfc8ea" opacity="0.13"/><path d="M 200.40998463518918 456.7 L 200.9 459.1 L 203.2 459.56314599048346 L 200.9 460.0 L 200.40998463518918 462.4 L 200.0 460.0 L 197.6 459.56314599048346 L 200.0 459.1 Z" fill="#f6e6bf" opacity="0.6380331657826901"/><path d="M 564.6567729208618 318.3 L 565.3 321.5 L 568.5 322.1358501734212 L 565.3 322.8 L 564.6567729208618 326.0 L 564.0 322.8 L 560.8 322.1358501734212 L 564.0 321.5 Z" fill="#f6e6bf" opacity="0.5098416923545301"/><path d="M 49.4560069758445 149.1 L 50.0 151.8 L 52.7 152.3450628509745 L 50.0 152.9 L 49.4560069758445 155.5 L 48.9 152.9 L 46.3 152.3450628509745 L 48.9 151.8 Z" fill="#f6e6bf" opacity="0.6148297628387809"/><path d="M 457.19132899679244 436.6 L 457.7 439.1 L 460.2 439.61942295823246 L 457.7 440.1 L 457.19132899679244 442.7 L 456.7 440.1 L 454.2 439.61942295823246 L 456.7 439.1 Z" fill="#f6e6bf" opacity="0.7167315986938775"/><path d="M 343.9307989049703 500.6 L 344.5 503.6 L 347.5 504.13489151280373 L 344.5 504.7 L 343.9307989049703 507.7 L 343.4 504.7 L 340.4 504.13489151280373 L 343.4 503.6 Z" fill="#f6e6bf" opacity="0.6423669774085283"/><path d="M 301.5 600.2 L 301.6 569.0 L 72.6 423.4 L 636.4 42.0 L 745.6 45.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">天底、第四宫、天顶对比</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#icastrology0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#icastrology0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">天底 IC（轴点）</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">盘底那个精确的点</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">私密的情感地基</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">没人看时你踩着的东西</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">第四宫</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">IC 打开的一整片领域</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">家与根源的广度</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">补上轴点周围的背景</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">天顶 MC</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">星盘顶端的冠冕</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">公开身份与对外方向</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">你对世界来说是谁</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

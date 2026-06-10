@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 313" role="img" aria-label="神话中的三拍循环">
+  <defs>
+    <linearGradient id="persephonegoddess0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="persephonegoddess0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="persephonegoddess0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="persephonegoddess0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="persephonegoddess0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="persephonegoddess0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="310" rx="22" fill="url(#persephonegoddess0zh-panel)"/>
+  <ellipse cx="198" cy="75" rx="380" ry="106" fill="url(#persephonegoddess0zh-neb1)"/>
+  <ellipse cx="623" cy="250" rx="334" ry="100" fill="url(#persephonegoddess0zh-neb2)"/>
+  <circle cx="747.8" cy="140.6" r="0.97" fill="#cfc8ea" opacity="0.19"/><circle cx="719.3" cy="34.4" r="1.36" fill="#cfc8ea" opacity="0.24"/><circle cx="249.5" cy="92.4" r="0.82" fill="#cfc8ea" opacity="0.16"/><circle cx="581.2" cy="38.4" r="1.60" fill="#cfc8ea" opacity="0.34"/><circle cx="391.4" cy="112.4" r="1.49" fill="#cfc8ea" opacity="0.28"/><circle cx="716.8" cy="286.6" r="0.47" fill="#cfc8ea" opacity="0.24"/><circle cx="174.8" cy="244.3" r="0.53" fill="#cfc8ea" opacity="0.12"/><circle cx="173.3" cy="55.8" r="0.45" fill="#cfc8ea" opacity="0.21"/><circle cx="218.0" cy="12.9" r="1.52" fill="#cfc8ea" opacity="0.22"/><circle cx="30.0" cy="13.1" r="0.92" fill="#cfc8ea" opacity="0.36"/><circle cx="222.4" cy="75.7" r="0.83" fill="#cfc8ea" opacity="0.33"/><circle cx="660.2" cy="123.4" r="1.09" fill="#cfc8ea" opacity="0.46"/><circle cx="489.3" cy="134.3" r="1.10" fill="#cfc8ea" opacity="0.23"/><circle cx="303.9" cy="116.7" r="1.45" fill="#cfc8ea" opacity="0.38"/><circle cx="250.7" cy="297.4" r="1.39" fill="#cfc8ea" opacity="0.42"/><circle cx="84.8" cy="81.2" r="1.01" fill="#cfc8ea" opacity="0.25"/><circle cx="736.6" cy="149.4" r="1.51" fill="#cfc8ea" opacity="0.22"/><circle cx="224.1" cy="61.8" r="0.99" fill="#cfc8ea" opacity="0.27"/><circle cx="139.0" cy="116.6" r="0.52" fill="#cfc8ea" opacity="0.27"/><circle cx="519.1" cy="42.4" r="0.84" fill="#cfc8ea" opacity="0.48"/><circle cx="50.3" cy="219.0" r="1.63" fill="#cfc8ea" opacity="0.46"/><circle cx="86.5" cy="57.6" r="1.45" fill="#cfc8ea" opacity="0.21"/><circle cx="171.1" cy="196.8" r="0.63" fill="#cfc8ea" opacity="0.38"/><circle cx="12.7" cy="214.9" r="1.34" fill="#cfc8ea" opacity="0.13"/><circle cx="584.8" cy="159.5" r="0.97" fill="#cfc8ea" opacity="0.35"/><circle cx="654.5" cy="239.1" r="0.77" fill="#cfc8ea" opacity="0.21"/><path d="M 133.75749932043254 55.0 L 134.3 57.9 L 137.2 58.399643894284964 L 134.3 58.9 L 133.75749932043254 61.8 L 133.2 58.9 L 130.3 58.399643894284964 L 133.2 57.9 Z" fill="#f6e6bf" opacity="0.7456770667340606"/><path d="M 720.5241940673441 102.6 L 721.0 105.1 L 723.5 105.60222195554525 L 721.0 106.1 L 720.5241940673441 108.6 L 720.0 106.1 L 717.5 105.60222195554525 L 720.0 105.1 Z" fill="#f6e6bf" opacity="0.6778503723908216"/><path d="M 166.26945057325065 191.0 L 166.8 193.9 L 169.8 194.50244974903762 L 166.8 195.1 L 166.26945057325065 198.0 L 165.7 195.1 L 162.7 194.50244974903762 L 165.7 193.9 Z" fill="#f6e6bf" opacity="0.710422610444948"/><path d="M 419.970279565081 67.7 L 420.5 70.4 L 423.2 70.94149305578321 L 420.5 71.5 L 419.970279565081 74.2 L 419.5 71.5 L 416.7 70.94149305578321 L 419.5 70.4 Z" fill="#f6e6bf" opacity="0.6435711404774338"/><path d="M 558.1745841037482 130.9 L 558.6 133.2 L 560.8 133.5836415886879 L 558.6 134.0 L 558.1745841037482 136.2 L 557.8 134.0 L 555.5 133.5836415886879 L 557.8 133.2 Z" fill="#f6e6bf" opacity="0.7272867833729834"/>
+  <rect x="1.5" y="1.5" width="757" height="310" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="299" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 293.8 L 16.5 296.5 L 19.2 297 L 16.5 297.5 L 16 300.2 L 15.5 297.5 L 12.8 297 L 15.5 296.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 293.8 L 744.5 296.5 L 747.2 297 L 744.5 297.5 L 744 300.2 L 743.5 297.5 L 740.8 297 L 743.5 296.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">神话中的三拍循环</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#persephonegoddess0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#persephonegoddess0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="241" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#persephonegoddess0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#persephonegoddess0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">被动下沉</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">未经同意被拉离熟悉处境</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#persephonegoddess0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#persephonegoddess0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">暗处质变</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">吃下石榴籽，收下无法归还的改变</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#persephonegoddess0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#persephonegoddess0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">带着改变回归</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">回到地面，却同时属于两个世界</text>
+  <path d="M 280.025 284.4 L 280.4 286.6 L 282.6 287 L 280.4 287.4 L 280.025 289.6 L 279.6 287.4 L 277.4 287 L 279.6 286.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="291" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 284.4 L 480.4 286.6 L 482.6 287 L 480.4 287.4 L 479.975 289.6 L 479.6 287.4 L 477.4 287 L 479.6 286.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

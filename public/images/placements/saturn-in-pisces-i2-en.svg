@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="Four Ways the Framework Gets Misused">
+  <defs>
+    <linearGradient id="saturninpisces2en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturninpisces2en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturninpisces2en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturninpisces2en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturninpisces2en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturninpisces2en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#saturninpisces2en-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#saturninpisces2en-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#saturninpisces2en-neb2)"/>
+  <circle cx="262.0" cy="278.0" r="1.43" fill="#cfc8ea" opacity="0.33"/><circle cx="657.3" cy="108.2" r="0.75" fill="#cfc8ea" opacity="0.33"/><circle cx="247.2" cy="276.3" r="0.74" fill="#cfc8ea" opacity="0.45"/><circle cx="479.4" cy="211.6" r="0.60" fill="#cfc8ea" opacity="0.42"/><circle cx="621.3" cy="312.3" r="0.92" fill="#cfc8ea" opacity="0.50"/><circle cx="394.8" cy="95.0" r="0.80" fill="#cfc8ea" opacity="0.52"/><circle cx="638.3" cy="55.6" r="1.37" fill="#cfc8ea" opacity="0.29"/><circle cx="450.9" cy="291.7" r="1.52" fill="#cfc8ea" opacity="0.17"/><circle cx="298.9" cy="187.6" r="1.38" fill="#cfc8ea" opacity="0.51"/><circle cx="296.8" cy="83.1" r="1.62" fill="#cfc8ea" opacity="0.41"/><circle cx="596.2" cy="294.5" r="0.40" fill="#cfc8ea" opacity="0.41"/><circle cx="391.5" cy="197.9" r="1.53" fill="#cfc8ea" opacity="0.42"/><circle cx="672.3" cy="173.2" r="1.54" fill="#cfc8ea" opacity="0.26"/><circle cx="631.1" cy="158.6" r="0.60" fill="#cfc8ea" opacity="0.36"/><circle cx="548.9" cy="81.6" r="1.28" fill="#cfc8ea" opacity="0.50"/><circle cx="685.0" cy="115.9" r="0.99" fill="#cfc8ea" opacity="0.28"/><circle cx="33.6" cy="174.3" r="0.70" fill="#cfc8ea" opacity="0.42"/><circle cx="411.0" cy="242.9" r="1.33" fill="#cfc8ea" opacity="0.25"/><circle cx="667.1" cy="324.0" r="1.64" fill="#cfc8ea" opacity="0.26"/><circle cx="51.0" cy="196.6" r="0.99" fill="#cfc8ea" opacity="0.43"/><circle cx="124.1" cy="220.2" r="0.97" fill="#cfc8ea" opacity="0.24"/><circle cx="627.6" cy="156.9" r="1.41" fill="#cfc8ea" opacity="0.37"/><circle cx="532.7" cy="209.6" r="0.60" fill="#cfc8ea" opacity="0.20"/><circle cx="505.3" cy="18.8" r="0.62" fill="#cfc8ea" opacity="0.23"/><circle cx="193.0" cy="296.7" r="0.62" fill="#cfc8ea" opacity="0.27"/><circle cx="453.3" cy="158.3" r="1.21" fill="#cfc8ea" opacity="0.36"/><circle cx="182.3" cy="226.1" r="0.45" fill="#cfc8ea" opacity="0.27"/><circle cx="352.4" cy="184.7" r="0.80" fill="#cfc8ea" opacity="0.54"/><circle cx="440.4" cy="271.0" r="1.59" fill="#cfc8ea" opacity="0.13"/><circle cx="688.5" cy="232.5" r="0.98" fill="#cfc8ea" opacity="0.24"/><circle cx="558.9" cy="311.5" r="0.70" fill="#cfc8ea" opacity="0.54"/><path d="M 611.6077910251915 354.2 L 612.2 357.5 L 615.5 358.15346629102714 L 612.2 358.8 L 611.6077910251915 362.1 L 611.0 358.8 L 607.7 358.15346629102714 L 611.0 357.5 Z" fill="#f6e6bf" opacity="0.7859378016786649"/><path d="M 234.78722728416324 48.1 L 235.2 50.3 L 237.3 50.657508701318875 L 235.2 51.1 L 234.78722728416324 53.2 L 234.4 51.1 L 232.2 50.657508701318875 L 234.4 50.3 Z" fill="#f6e6bf" opacity="0.7234028788516298"/><path d="M 374.5179196037352 119.2 L 375.0 121.6 L 377.3 122.04276455310173 L 375.0 122.5 L 374.5179196037352 124.9 L 374.1 122.5 L 371.7 122.04276455310173 L 374.1 121.6 Z" fill="#f6e6bf" opacity="0.7873407674254849"/><path d="M 408.438827868551 106.7 L 409.1 110.0 L 412.4 110.58833450288512 L 409.1 111.2 L 408.438827868551 114.5 L 407.8 111.2 L 404.5 110.58833450288512 L 407.8 110.0 Z" fill="#f6e6bf" opacity="0.5433355309301987"/><path d="M 611.6058736331761 221.8 L 612.2 225.1 L 615.5 225.6758620843757 L 612.2 226.3 L 611.6058736331761 229.5 L 611.0 226.3 L 607.7 225.6758620843757 L 611.0 225.1 Z" fill="#f6e6bf" opacity="0.659944789414294"/><path d="M 621.3 312.3 L 596.2 294.5 L 631.1 158.6 L 193.0 296.7 L 182.3 226.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Four Ways the Framework Gets Misused</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturninpisces2en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturninpisces2en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#saturninpisces2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#saturninpisces2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Verdict, not vocabulary</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Read it as language to test, not a sentence on you</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#saturninpisces2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#saturninpisces2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">One lineage as truth</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Traditional and modern readings differ; hold both</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#saturninpisces2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#saturninpisces2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Framework as identity</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">&quot;My Saturn era&quot; can become a story you hide inside</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#saturninpisces2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#saturninpisces2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Substitute for ground truth</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">It cannot replace professionals or real-world judgment</text>
+  <path d="M 202.22749999999988 344.4 L 202.6 346.6 L 204.8 347 L 202.6 347.4 L 202.22749999999988 349.6 L 201.8 347.4 L 199.6 347 L 201.8 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 344.4 L 558.2 346.6 L 560.4 347 L 558.2 347.4 L 557.7725000000002 349.6 L 557.4 347.4 L 555.2 347 L 557.4 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="金牛北交点的五个信号">
+  <defs>
+    <linearGradient id="northnodeintaurus1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="northnodeintaurus1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="northnodeintaurus1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodeintaurus1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodeintaurus1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="northnodeintaurus1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#northnodeintaurus1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#northnodeintaurus1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#northnodeintaurus1zh-neb2)"/>
+  <circle cx="522.1" cy="17.0" r="0.41" fill="#cfc8ea" opacity="0.22"/><circle cx="64.2" cy="395.6" r="1.33" fill="#cfc8ea" opacity="0.14"/><circle cx="397.8" cy="126.7" r="0.71" fill="#cfc8ea" opacity="0.53"/><circle cx="677.0" cy="393.5" r="1.15" fill="#cfc8ea" opacity="0.33"/><circle cx="105.3" cy="321.0" r="1.51" fill="#cfc8ea" opacity="0.29"/><circle cx="338.2" cy="108.0" r="0.93" fill="#cfc8ea" opacity="0.37"/><circle cx="293.8" cy="282.7" r="1.13" fill="#cfc8ea" opacity="0.18"/><circle cx="593.2" cy="49.6" r="1.54" fill="#cfc8ea" opacity="0.26"/><circle cx="518.2" cy="133.7" r="0.45" fill="#cfc8ea" opacity="0.39"/><circle cx="252.7" cy="113.1" r="1.59" fill="#cfc8ea" opacity="0.27"/><circle cx="616.1" cy="210.0" r="1.65" fill="#cfc8ea" opacity="0.19"/><circle cx="368.9" cy="48.6" r="1.25" fill="#cfc8ea" opacity="0.27"/><circle cx="144.5" cy="365.9" r="1.22" fill="#cfc8ea" opacity="0.13"/><circle cx="392.0" cy="388.8" r="0.96" fill="#cfc8ea" opacity="0.27"/><circle cx="81.0" cy="321.7" r="1.70" fill="#cfc8ea" opacity="0.23"/><circle cx="605.1" cy="306.1" r="1.50" fill="#cfc8ea" opacity="0.40"/><circle cx="255.8" cy="50.2" r="0.73" fill="#cfc8ea" opacity="0.15"/><circle cx="351.2" cy="145.7" r="1.14" fill="#cfc8ea" opacity="0.27"/><circle cx="620.6" cy="33.3" r="0.98" fill="#cfc8ea" opacity="0.30"/><circle cx="371.5" cy="317.2" r="0.78" fill="#cfc8ea" opacity="0.45"/><circle cx="234.3" cy="112.3" r="1.25" fill="#cfc8ea" opacity="0.51"/><circle cx="604.6" cy="373.3" r="0.58" fill="#cfc8ea" opacity="0.42"/><circle cx="567.6" cy="206.0" r="0.97" fill="#cfc8ea" opacity="0.28"/><circle cx="163.5" cy="56.7" r="1.63" fill="#cfc8ea" opacity="0.16"/><circle cx="729.0" cy="33.2" r="1.54" fill="#cfc8ea" opacity="0.48"/><circle cx="241.0" cy="41.4" r="1.32" fill="#cfc8ea" opacity="0.43"/><circle cx="126.6" cy="68.8" r="1.16" fill="#cfc8ea" opacity="0.12"/><circle cx="731.5" cy="302.8" r="0.76" fill="#cfc8ea" opacity="0.19"/><circle cx="496.3" cy="216.2" r="0.65" fill="#cfc8ea" opacity="0.47"/><circle cx="558.4" cy="74.9" r="1.48" fill="#cfc8ea" opacity="0.22"/><circle cx="557.5" cy="52.8" r="1.10" fill="#cfc8ea" opacity="0.29"/><circle cx="140.1" cy="192.8" r="0.59" fill="#cfc8ea" opacity="0.17"/><circle cx="92.0" cy="68.4" r="0.81" fill="#cfc8ea" opacity="0.39"/><circle cx="408.7" cy="282.1" r="1.36" fill="#cfc8ea" opacity="0.49"/><circle cx="28.1" cy="394.6" r="1.14" fill="#cfc8ea" opacity="0.27"/><circle cx="430.6" cy="145.8" r="1.47" fill="#cfc8ea" opacity="0.42"/><circle cx="743.2" cy="316.8" r="1.44" fill="#cfc8ea" opacity="0.41"/><path d="M 278.48999652452767 280.4 L 279.1 283.4 L 282.1 283.9939585546963 L 279.1 284.6 L 278.48999652452767 287.6 L 277.9 284.6 L 274.9 283.9939585546963 L 277.9 283.4 Z" fill="#f6e6bf" opacity="0.7027813768014312"/><path d="M 603.352326983586 177.7 L 603.9 180.4 L 606.5 180.85657176421955 L 603.9 181.4 L 603.352326983586 184.0 L 602.9 181.4 L 600.2 180.85657176421955 L 602.9 180.4 Z" fill="#f6e6bf" opacity="0.5350503248162568"/><path d="M 46.90401651151478 122.6 L 47.3 124.8 L 49.5 125.23108779778704 L 47.3 125.7 L 46.90401651151478 127.9 L 46.5 125.7 L 44.3 125.23108779778704 L 46.5 124.8 Z" fill="#f6e6bf" opacity="0.7800241444259881"/><path d="M 646.4991052541882 308.6 L 647.0 311.2 L 649.6 311.6475800597109 L 647.0 312.1 L 646.4991052541882 314.7 L 646.0 312.1 L 643.4 311.6475800597109 L 646.0 311.2 Z" fill="#f6e6bf" opacity="0.5597370753996074"/><path d="M 322.36648076958954 179.2 L 322.8 181.7 L 325.3 182.15315457759425 L 322.8 182.6 L 322.36648076958954 185.1 L 321.9 182.6 L 319.5 182.15315457759425 L 321.9 181.7 Z" fill="#f6e6bf" opacity="0.7343943627551198"/><path d="M 293.8 282.7 L 604.6 373.3 L 557.5 52.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">金牛北交点的五个信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#northnodeintaurus1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#northnodeintaurus1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#northnodeintaurus1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#northnodeintaurus1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">平静令人起疑</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">日子平顺时反而紧绷，等着那个更真实的时刻</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#northnodeintaurus1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#northnodeintaurus1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">凭空制造风险</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">简单的计划被复杂化，复杂才显得可信</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#northnodeintaurus1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#northnodeintaurus1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">慢下来像掉队</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">休息带来内疚，而不是恢复</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#northnodeintaurus1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#northnodeintaurus1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">低估已经足够的</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">稳定收入、平静关系反而想逃离</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#northnodeintaurus1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#northnodeintaurus1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">日常带来安定</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">做饭、散步、看得见的钱最能稳住你</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

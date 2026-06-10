@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="海底轮概念如何传到西方">
+  <defs>
+    <linearGradient id="rootchakrameaning0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="rootchakrameaning0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="rootchakrameaning0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rootchakrameaning0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rootchakrameaning0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rootchakrameaning0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#rootchakrameaning0zh-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#rootchakrameaning0zh-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#rootchakrameaning0zh-neb2)"/>
+  <circle cx="404.8" cy="38.3" r="0.82" fill="#cfc8ea" opacity="0.31"/><circle cx="483.3" cy="315.6" r="0.80" fill="#cfc8ea" opacity="0.44"/><circle cx="482.9" cy="21.3" r="1.22" fill="#cfc8ea" opacity="0.40"/><circle cx="539.2" cy="377.3" r="1.45" fill="#cfc8ea" opacity="0.53"/><circle cx="77.7" cy="337.1" r="0.42" fill="#cfc8ea" opacity="0.14"/><circle cx="226.1" cy="132.6" r="1.09" fill="#cfc8ea" opacity="0.47"/><circle cx="181.1" cy="116.3" r="1.37" fill="#cfc8ea" opacity="0.16"/><circle cx="420.2" cy="161.6" r="1.37" fill="#cfc8ea" opacity="0.41"/><circle cx="413.7" cy="199.2" r="1.01" fill="#cfc8ea" opacity="0.44"/><circle cx="67.4" cy="51.0" r="1.33" fill="#cfc8ea" opacity="0.27"/><circle cx="364.4" cy="148.0" r="1.04" fill="#cfc8ea" opacity="0.31"/><circle cx="508.9" cy="96.5" r="1.16" fill="#cfc8ea" opacity="0.36"/><circle cx="143.4" cy="220.1" r="0.78" fill="#cfc8ea" opacity="0.14"/><circle cx="205.1" cy="279.2" r="0.67" fill="#cfc8ea" opacity="0.37"/><circle cx="552.4" cy="70.9" r="0.99" fill="#cfc8ea" opacity="0.38"/><circle cx="722.0" cy="304.7" r="1.10" fill="#cfc8ea" opacity="0.26"/><circle cx="364.2" cy="342.9" r="1.29" fill="#cfc8ea" opacity="0.47"/><circle cx="746.1" cy="417.8" r="1.58" fill="#cfc8ea" opacity="0.17"/><circle cx="43.1" cy="63.3" r="1.16" fill="#cfc8ea" opacity="0.44"/><circle cx="324.2" cy="31.7" r="0.67" fill="#cfc8ea" opacity="0.13"/><circle cx="578.4" cy="21.0" r="1.47" fill="#cfc8ea" opacity="0.18"/><circle cx="657.0" cy="84.2" r="1.10" fill="#cfc8ea" opacity="0.23"/><circle cx="161.4" cy="13.1" r="0.44" fill="#cfc8ea" opacity="0.18"/><circle cx="362.0" cy="132.3" r="0.65" fill="#cfc8ea" opacity="0.46"/><circle cx="324.6" cy="244.1" r="0.84" fill="#cfc8ea" opacity="0.14"/><circle cx="154.5" cy="81.1" r="1.21" fill="#cfc8ea" opacity="0.23"/><circle cx="307.5" cy="299.2" r="0.68" fill="#cfc8ea" opacity="0.22"/><circle cx="573.2" cy="298.3" r="0.53" fill="#cfc8ea" opacity="0.47"/><circle cx="709.5" cy="228.3" r="1.53" fill="#cfc8ea" opacity="0.24"/><circle cx="428.0" cy="252.3" r="0.48" fill="#cfc8ea" opacity="0.47"/><circle cx="604.2" cy="421.8" r="0.55" fill="#cfc8ea" opacity="0.34"/><circle cx="580.3" cy="277.7" r="0.82" fill="#cfc8ea" opacity="0.47"/><circle cx="330.1" cy="387.7" r="1.50" fill="#cfc8ea" opacity="0.38"/><circle cx="660.5" cy="288.3" r="0.70" fill="#cfc8ea" opacity="0.31"/><circle cx="574.5" cy="409.3" r="0.44" fill="#cfc8ea" opacity="0.39"/><circle cx="642.6" cy="90.2" r="0.84" fill="#cfc8ea" opacity="0.52"/><circle cx="136.1" cy="255.4" r="1.52" fill="#cfc8ea" opacity="0.39"/><circle cx="593.5" cy="278.4" r="0.58" fill="#cfc8ea" opacity="0.29"/><circle cx="392.9" cy="34.7" r="0.91" fill="#cfc8ea" opacity="0.38"/><path d="M 367.27375102974474 437.3 L 367.8 439.9 L 370.4 440.43558573303744 L 367.8 440.9 L 367.27375102974474 443.5 L 366.8 440.9 L 364.2 440.43558573303744 L 366.8 439.9 Z" fill="#f6e6bf" opacity="0.734281166549772"/><path d="M 573.0938734132797 188.4 L 573.6 190.9 L 576.0 191.3143019885756 L 573.6 191.8 L 573.0938734132797 194.2 L 572.6 191.8 L 570.2 191.3143019885756 L 572.6 190.9 Z" fill="#f6e6bf" opacity="0.5598835153505206"/><path d="M 693.5477003399283 145.0 L 694.0 147.2 L 696.2 147.66079840203747 L 694.0 148.1 L 693.5477003399283 150.3 L 693.1 148.1 L 690.9 147.66079840203747 L 693.1 147.2 Z" fill="#f6e6bf" opacity="0.5554119815118611"/><path d="M 742.4139850903302 404.7 L 743.0 407.9 L 746.2 408.5248288777657 L 743.0 409.1 L 742.4139850903302 412.3 L 741.8 409.1 L 738.6 408.5248288777657 L 741.8 407.9 Z" fill="#f6e6bf" opacity="0.6574122946709394"/><path d="M 187.3409572634846 128.9 L 187.8 131.2 L 190.1 131.66447175247595 L 187.8 132.1 L 187.3409572634846 134.5 L 186.9 132.1 L 184.5 131.66447175247595 L 186.9 131.2 Z" fill="#f6e6bf" opacity="0.5067205744795501"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">海底轮概念如何传到西方</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#rootchakrameaning0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#rootchakrameaning0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#rootchakrameaning0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#rootchakrameaning0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">吠陀时期</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">「Cakra」意为轮</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">太阳之轮、时间之轮——尚非身体能量中心</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#rootchakrameaning0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#rootchakrameaning0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">约公元8世纪</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">精微身地图出现</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">《喜金刚本续》等佛教文本记载内在能量中心层级</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#rootchakrameaning0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#rootchakrameaning0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">1577年</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">《六轮探微》</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">归于普纳南达的梵文文本，将海底轮列于首位</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#rootchakrameaning0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#rootchakrameaning0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">1919年</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">《灵蛇之力》</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">约翰·伍德罗夫以笔名阿瑟·阿瓦隆译成英文</text>
+  <path d="M 280.025 430.4 L 280.4 432.6 L 282.6 433 L 280.4 433.4 L 280.025 435.6 L 279.6 433.4 L 277.4 433 L 279.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 430.4 L 480.4 432.6 L 482.6 433 L 480.4 433.4 L 479.975 435.6 L 479.6 433.4 L 477.4 433 L 479.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

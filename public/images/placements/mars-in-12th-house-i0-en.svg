@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="Where the Force Lives: Three Placements">
+  <defs>
+    <linearGradient id="marsin12thhouse0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="marsin12thhouse0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="marsin12thhouse0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marsin12thhouse0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marsin12thhouse0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="marsin12thhouse0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#marsin12thhouse0en-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#marsin12thhouse0en-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#marsin12thhouse0en-neb2)"/>
+  <circle cx="690.6" cy="421.7" r="1.42" fill="#cfc8ea" opacity="0.13"/><circle cx="456.4" cy="66.2" r="0.79" fill="#cfc8ea" opacity="0.53"/><circle cx="733.8" cy="139.2" r="1.11" fill="#cfc8ea" opacity="0.30"/><circle cx="334.0" cy="54.3" r="0.56" fill="#cfc8ea" opacity="0.37"/><circle cx="626.1" cy="288.8" r="0.83" fill="#cfc8ea" opacity="0.48"/><circle cx="648.6" cy="389.2" r="0.68" fill="#cfc8ea" opacity="0.33"/><circle cx="151.3" cy="379.2" r="1.42" fill="#cfc8ea" opacity="0.36"/><circle cx="70.6" cy="513.7" r="0.64" fill="#cfc8ea" opacity="0.36"/><circle cx="391.0" cy="424.1" r="0.83" fill="#cfc8ea" opacity="0.28"/><circle cx="212.7" cy="105.8" r="1.33" fill="#cfc8ea" opacity="0.35"/><circle cx="641.7" cy="376.6" r="1.28" fill="#cfc8ea" opacity="0.35"/><circle cx="653.4" cy="345.8" r="1.08" fill="#cfc8ea" opacity="0.50"/><circle cx="38.8" cy="98.7" r="0.59" fill="#cfc8ea" opacity="0.27"/><circle cx="398.9" cy="249.7" r="1.41" fill="#cfc8ea" opacity="0.44"/><circle cx="178.4" cy="569.8" r="0.71" fill="#cfc8ea" opacity="0.24"/><circle cx="422.7" cy="38.9" r="1.46" fill="#cfc8ea" opacity="0.37"/><circle cx="17.4" cy="518.4" r="1.57" fill="#cfc8ea" opacity="0.29"/><circle cx="107.3" cy="135.6" r="0.91" fill="#cfc8ea" opacity="0.40"/><circle cx="187.9" cy="504.3" r="0.64" fill="#cfc8ea" opacity="0.37"/><circle cx="607.6" cy="448.0" r="1.10" fill="#cfc8ea" opacity="0.40"/><circle cx="111.3" cy="128.4" r="0.91" fill="#cfc8ea" opacity="0.49"/><circle cx="311.0" cy="303.7" r="0.97" fill="#cfc8ea" opacity="0.25"/><circle cx="526.9" cy="451.9" r="1.31" fill="#cfc8ea" opacity="0.34"/><circle cx="108.6" cy="96.7" r="0.66" fill="#cfc8ea" opacity="0.12"/><circle cx="12.1" cy="98.2" r="1.39" fill="#cfc8ea" opacity="0.12"/><circle cx="170.4" cy="569.4" r="0.57" fill="#cfc8ea" opacity="0.46"/><circle cx="233.0" cy="364.5" r="1.68" fill="#cfc8ea" opacity="0.14"/><circle cx="258.6" cy="15.6" r="0.62" fill="#cfc8ea" opacity="0.15"/><circle cx="654.9" cy="378.5" r="1.65" fill="#cfc8ea" opacity="0.25"/><circle cx="303.0" cy="378.4" r="1.51" fill="#cfc8ea" opacity="0.25"/><circle cx="702.2" cy="227.5" r="0.56" fill="#cfc8ea" opacity="0.44"/><circle cx="532.8" cy="86.3" r="1.53" fill="#cfc8ea" opacity="0.23"/><circle cx="488.7" cy="499.7" r="0.65" fill="#cfc8ea" opacity="0.24"/><circle cx="157.0" cy="554.7" r="0.59" fill="#cfc8ea" opacity="0.41"/><circle cx="35.9" cy="125.4" r="0.57" fill="#cfc8ea" opacity="0.15"/><circle cx="211.7" cy="507.3" r="0.73" fill="#cfc8ea" opacity="0.34"/><circle cx="172.7" cy="548.2" r="1.42" fill="#cfc8ea" opacity="0.52"/><circle cx="173.7" cy="365.3" r="1.64" fill="#cfc8ea" opacity="0.22"/><circle cx="601.3" cy="250.4" r="0.74" fill="#cfc8ea" opacity="0.18"/><circle cx="584.3" cy="314.7" r="1.66" fill="#cfc8ea" opacity="0.26"/><circle cx="664.7" cy="264.8" r="0.57" fill="#cfc8ea" opacity="0.37"/><circle cx="467.8" cy="495.6" r="1.32" fill="#cfc8ea" opacity="0.48"/><circle cx="515.8" cy="52.3" r="1.47" fill="#cfc8ea" opacity="0.43"/><circle cx="247.7" cy="379.5" r="1.14" fill="#cfc8ea" opacity="0.49"/><circle cx="467.0" cy="257.8" r="1.42" fill="#cfc8ea" opacity="0.15"/><circle cx="454.9" cy="253.6" r="1.25" fill="#cfc8ea" opacity="0.36"/><circle cx="301.0" cy="594.1" r="0.65" fill="#cfc8ea" opacity="0.37"/><circle cx="536.8" cy="159.3" r="1.34" fill="#cfc8ea" opacity="0.26"/><circle cx="179.5" cy="28.0" r="1.46" fill="#cfc8ea" opacity="0.23"/><circle cx="357.1" cy="481.8" r="1.04" fill="#cfc8ea" opacity="0.43"/><circle cx="199.1" cy="167.6" r="1.48" fill="#cfc8ea" opacity="0.44"/><circle cx="26.4" cy="51.6" r="0.70" fill="#cfc8ea" opacity="0.40"/><path d="M 617.8564076963812 43.2 L 618.5 46.3 L 621.6 46.90478798840195 L 618.5 47.5 L 617.8564076963812 50.6 L 617.3 47.5 L 614.1 46.90478798840195 L 617.3 46.3 Z" fill="#f6e6bf" opacity="0.6632949654944241"/><path d="M 557.7775954771787 439.3 L 558.2 441.7 L 560.7 442.20592467766255 L 558.2 442.7 L 557.7775954771787 445.1 L 557.3 442.7 L 554.9 442.20592467766255 L 557.3 441.7 Z" fill="#f6e6bf" opacity="0.6214177962392569"/><path d="M 569.5361125264317 491.3 L 570.1 494.4 L 573.3 495.00340405572206 L 570.1 495.6 L 569.5361125264317 498.7 L 568.9 495.6 L 565.8 495.00340405572206 L 568.9 494.4 Z" fill="#f6e6bf" opacity="0.7525035771541297"/><path d="M 228.53443038649857 298.2 L 229.0 300.6 L 231.4 301.0406462466344 L 229.0 301.5 L 228.53443038649857 303.9 L 228.1 301.5 L 225.7 301.0406462466344 L 228.1 300.6 Z" fill="#f6e6bf" opacity="0.7634219819679856"/><path d="M 126.06305160559714 184.6 L 126.7 187.9 L 130.0 188.53727529291064 L 126.7 189.2 L 126.06305160559714 192.5 L 125.4 189.2 L 122.1 188.53727529291064 L 125.4 187.9 Z" fill="#f6e6bf" opacity="0.5187388361431658"/><path d="M 648.6 389.2 L 107.3 135.6 L 526.9 451.9 L 654.9 378.5 L 211.7 507.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Where the Force Lives: Three Placements</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#marsin12thhouse0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#marsin12thhouse0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Mars in the 1st</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Drive pushes straight outward</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads as obvious confidence</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Quick feedback, quick correction</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Mars in the 12th</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Action runs through private channels</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Processed inwardly before surfacing</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Cover and depth, less recognition</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Chiron in the 12th</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Old hurt, not raw drive</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">&quot;I am wounded&quot;, not &quot;I hold back&quot;</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Asks a different response</text>
+  <path d="M 202.22749999999988 585.4 L 202.6 587.6 L 204.8 588 L 202.6 588.4 L 202.22749999999988 590.6 L 201.8 588.4 L 199.6 588 L 201.8 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 585.4 L 558.2 587.6 L 560.4 588 L 558.2 588.4 L 557.7725000000002 590.6 L 557.4 588.4 L 555.2 588 L 557.4 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
