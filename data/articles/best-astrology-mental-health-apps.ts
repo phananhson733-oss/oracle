@@ -39,8 +39,8 @@ If you are looking for a tool to support your mental health—not just predict y
 
 ---
 
-
 ![The five astrology apps ranked with their best use, mental health score and price: Co-Star, The Pattern, CHANI, TimePassages and AstrologyWiki.](/images/psych/best-astrology-mental-health-apps-i0-en.svg)
+
 ## The Selection Criteria
 
 We evaluated these tools based on impact:
@@ -134,7 +134,10 @@ Passive consumption of astrology can create dependency. Active journaling builds
 - If you want to know "what will happen," download The Pattern.
 - If you want to know "how to handle it," use AstrologyWiki.
 
-Ready to start? Check out our guide on [How to Track Your Mood with Astrology](/wiki/track-mood-astrology) to begin your practice today.`,
+Ready to start? Check out our guide on [How to Track Your Mood with Astrology](/wiki/track-mood-astrology) to begin your practice today.
+
+![Comparison of prediction-focused passive astrology consumption versus reflection-focused active journaling.](/images/psych/best-astrology-mental-health-apps-i1-en.svg)
+`,
 };
 
 export const bestAstrologyAppsZh: WikiArticle = {
@@ -162,9 +165,6 @@ export const bestAstrologyAppsZh: WikiArticle = {
 占星应用已经进化了。它们不再只是关于每日星座运势；而是自我反思的工具。但说实话：有些应用被设计成让人上瘾（无限刷屏），而另一些则被设计成疗愈工具。
 
 如果你正在寻找一个支持心理健康的工具——而不仅仅是预测未来——这份指南就是为你准备的。
-
-
-![Comparison of prediction-focused passive astrology consumption versus reflection-focused active journaling.](/images/psych/best-astrology-mental-health-apps-i1-en.svg)
 ## 快速结论：你应该下载哪一个？
 
 | 应用 | 最适合 | 心理健康评分 | 价格 |
@@ -177,8 +177,8 @@ export const bestAstrologyAppsZh: WikiArticle = {
 
 ---
 
-
 ![五款占星应用的用途、心理健康评分与价格一览：Co-Star、The Pattern、CHANI、TimePassages 和 AstrologyWiki。](/images/psych/best-astrology-mental-health-apps-i0-zh.svg)
+
 ## 选择标准
 
 我们根据影响来评估这些工具：
@@ -267,12 +267,13 @@ AstrologyWiki采用不同的方法。它不是你下载来无限刷屏的"应用
 
 ## 结论：预测 vs 反思
 
-![以预测为主的被动消费与以反思为主的主动日记的对比图。](/images/psych/best-astrology-mental-health-apps-i1-zh.svg)
-
 被动消费占星术可能产生依赖。主动日记建立主动性。
 
 - 如果你想知道"会发生什么"，下载 The Pattern。
 - 如果你想知道"如何应对"，使用AstrologyWiki。
 
-准备好开始了吗？查看我们的[如何用占星追踪情绪](/wiki/track-mood-astrology)指南，今天就开始你的练习。`,
+准备好开始了吗？查看我们的[如何用占星追踪情绪](/wiki/track-mood-astrology)指南，今天就开始你的练习。
+
+![以预测为主的被动消费与以反思为主的主动日记的对比图。](/images/psych/best-astrology-mental-health-apps-i1-zh.svg)
+`,
 };
