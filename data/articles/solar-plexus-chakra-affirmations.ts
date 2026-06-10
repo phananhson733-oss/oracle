@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const solarPlexusChakraAffirmationsEn: WikiArticle = {
   slug: "solar-plexus-chakra-affirmations",
+  image: "/images/chakra/solar-plexus-chakra-affirmations.jpg",
+  image_alt: "A warm golden sun-glow rising over a calm lake, its steady light flooding warmly across the water.",
   title: "Solar Plexus Chakra Affirmations That Finally Feel True",
   description: "The Solar Plexus Chakra is the third energy center in the traditional seven-chakra system, sitting just above the navel and tied to confidence, willpower,...",
   authorId: "elena-vane",
@@ -55,6 +57,8 @@ Before choosing solar plexus chakra affirmations, read which way your center is 
 
 Once you can name the pattern, the right wording becomes obvious instead of guessed. If you saw yourself in the deferring signals, your lines should grant permission and take up space; if you recognized the pushing signals, they should give permission to ease off and trust others. Read first, then choose the phrasing — that order is the entire method, and it is what separates affirmations that stick from the ones you abandon after a week.
 
+
+![Comparison of under-active, over-active, and balanced solar plexus states and the affirmation style each needs](/images/chakra/solar-plexus-chakra-affirmations-i0-en.svg)
 ## Common Misreadings
 
 Most popular content flattens solar plexus chakra affirmations into one-size-fits-all confidence boosters, which is exactly why so many of them misfire. Four misreadings come up again and again, and each one keeps readers stuck on the same friction:
@@ -66,6 +70,8 @@ Most popular content flattens solar plexus chakra affirmations into one-size-fit
 
 The thread running through all four is the same: the wording has to be chosen for the state in front of you, not borrowed wholesale from a list that happened to work for someone else.
 
+
+![Four misreadings that make solar plexus affirmations misfire, all from ignoring the state being addressed](/images/chakra/solar-plexus-chakra-affirmations-i1-en.svg)
 ## The Solar Plexus Chakra at a Glance
 
 | Property | How It Works | Energy Center | How to Observe |
@@ -117,6 +123,8 @@ Pick one affirmation that fits your current state — something softening if you
 
 export const solarPlexusChakraAffirmationsZh: WikiArticle = {
   slug: "solar-plexus-chakra-affirmations",
+  image: "/images/chakra/solar-plexus-chakra-affirmations.jpg",
+  image_alt: "暖金色的日光在静湖地平线升起，稳定的光芒温暖地铺满水面涌向观者。",
   title: "太阳轮肯定语，先看你是底气不足还是用力过猛",
   description: "太阳轮（The Solar Plexus Chakra，又称太阳神经丛脉轮，对应梵文 Manipura）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里掌管个人意志、自信与选择力的能量中心，位置大约在肚脐上方、上腹一带，最常被对应到黄色。在现代脉轮体系（如 Anodea Judith...",
   authorId: "elena-vane",
@@ -163,6 +171,8 @@ export const solarPlexusChakraAffirmationsZh: WikiArticle = {
 3. **被拒绝后**：是默默自责很久（偏弱），还是立刻要证明"我才是对的"（过满）？
 4. **家庭聚会里**：是习惯迁就所有人（偏弱），还是非得安排和掌控全场（过满）？
 
+
+![太阳轮偏弱、过满与平衡三种状态的对比，以及各自适合的肯定语方向](/images/chakra/solar-plexus-chakra-affirmations-i0-zh.svg)
 ## 常见误读
 
 关于该怎么挑肯定语，坊间最常见的几个误读，正好把人带偏：

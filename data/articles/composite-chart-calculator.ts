@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const compositeChartCalculatorEn: WikiArticle = {
   slug: "composite-chart-calculator",
+  image: "/images/charts/composite-chart-calculator.jpg",
+  image_alt: "Two clusters of glowing forms with a soft new third light formed at each midpoint, composing an emergent constellation over a still lake.",
   title: "Your Composite Chart Calculator Result Depends on a Choice You Probably Never Made",
   description: "A composite chart calculator is a tool that merges two natal charts into a single chart representing the relationship itself — not either person in it",
   authorId: "marcus-orion",
@@ -49,6 +51,8 @@ Three tools appear regularly in relationship astrology, and each handles two nat
 
 The practical takeaway: composite methods fit when you want to understand the relationship's overall nature as a third thing that exists between you. Synastry fits when you want to understand how two specific people act on each other. Neither is more correct — they answer different questions, and using both together gives the fullest picture.
 
+
+![Side-by-side comparison of the midpoint composite and Davison calculation methods](/images/charts/composite-chart-calculator-i0-en.svg)
 ## How to Read composite chart calculator in Yourself
 
 Running a composite chart calculator effectively means confirming a few things before interpreting any placement. Working through these steps in order prevents the most common structural misreads.
@@ -65,6 +69,8 @@ Running a composite chart calculator effectively means confirming a few things b
 
 6. **Check the composite nodal axis if available.** The nodes in the composite chart point toward the relationship's directional pull — the South Node describing a dynamic that comes naturally but may become a rut, the North Node pointing toward where the relationship is drawn to grow. Not all platforms include composite nodes; the [lunar nodes and relationship purpose guide](/en/wiki/north-node-vs-south-node) covers how to read them when present.
 
+
+![Six-step reading order for a composite chart, from confirming the method to the nodal axis](/images/charts/composite-chart-calculator-i1-en.svg)
 ## Common Misreadings
 
 The most persistent misreadings of composite work share a common root: treating the composite chart as if it were one person's natal chart, or assuming the calculator produced an error when two platforms returned different results. Four misreadings come up consistently.

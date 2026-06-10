@@ -1,0 +1,490 @@
+{
+  "_comment": "VEDIC cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/vedic",
+  "urlBase": "/images/vedic",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "vedic-birth-chart-calculator": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a perfectly still lake at night mirroring an unusually dense, precise field of fixed sidereal stars; on the calm water a single faint ring of soft gold light is just resolving into focus from the reflected stars, as though a true map were forming itself out of the real sky, quiet and exact in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A still lake mirroring a dense sidereal starfield, a faint gold ring of light resolving on the water as a chart forms from the sky.",
+        "altZh": "静湖映出异常致密精确的恒星，水面上一圈淡金色光环正从倒影中凝聚成形，仿佛真实天空自行生成星图。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Your Vedic Birth Chart in Practice",
+          "afterHeadingZh": "## 如何在你的星盘里识别 Vedic Birth Chart",
+          "titleEn": "The Five-Step Reading Order",
+          "titleZh": "看盘顺序：五个步骤",
+          "items": [
+            {
+              "nameEn": "Find the lagna first",
+              "nameZh": "先找上升点（lagna）",
+              "subEn": "Locate the ascendant and the house numbering it sets",
+              "subZh": "定位上升点，整张盘的宫位由它起算"
+            },
+            {
+              "nameEn": "Note the lagna lord",
+              "nameZh": "看上升主星",
+              "subEn": "See which planet rules the lagna and where it sits",
+              "subZh": "看哪颗行星主管上升、落在哪一宫"
+            },
+            {
+              "nameEn": "House first, then sign",
+              "nameZh": "先宫位，后星座",
+              "subEn": "A planet's house shows the life area; its sign, the style",
+              "subZh": "宫位指生活领域，星座指风格"
+            },
+            {
+              "nameEn": "Check the current dasha",
+              "nameZh": "查当前大运",
+              "subEn": "The active period sets the background theme of these years",
+              "subZh": "当前大运定下这段岁月的背景主题"
+            },
+            {
+              "nameEn": "Look for repetition",
+              "nameZh": "找重复出现的主题",
+              "subEn": "Repeating signs, houses, or planets mark lived tendencies",
+              "subZh": "反复出现的星座、宫位指向真实倾向"
+            }
+          ],
+          "altEn": "Five-step sequence for reading a Vedic chart: lagna, lagna lord, house then sign, current dasha, repetition",
+          "altZh": "读吠陀星盘的五步顺序：上升点、上升主星、先宫后座、当前大运、重复主题"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Vedic Birth Chart vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Vedic Birth Chart 与相近概念：运作方式 + 取舍",
+          "titleEn": "Sidereal vs Tropical: Two Sky Maps",
+          "titleZh": "恒星黄道与回归黄道：两套天空坐标",
+          "columns": [
+            {
+              "nameEn": "Vedic (Sidereal)",
+              "nameZh": "吠陀（恒星黄道）",
+              "linesEn": [
+                "Anchored to fixed stars via ayanamsa",
+                "Drifts ~24 degrees from tropical",
+                "A tropical Leo Sun reads as Cancer",
+                "Dasha periods time long life chapters"
+              ],
+              "linesZh": [
+                "靠岁差校正值锚定恒星",
+                "与回归黄道相差约24度",
+                "回归狮子太阳常变恒星巨蟹",
+                "大运划分漫长人生章节"
+              ]
+            },
+            {
+              "nameEn": "Western (Tropical)",
+              "nameZh": "西方（回归黄道）",
+              "linesEn": [
+                "0° Aries pinned to the spring equinox",
+                "Signs locked to the seasons",
+                "Seasonal, psychological symbolism",
+                "Gives up alignment with overhead stars"
+              ],
+              "linesZh": [
+                "白羊0°钉在春分点上",
+                "星座锁定四季循环",
+                "偏重季节与心理象征",
+                "放弃与真实星空对齐"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the sidereal Vedic and tropical Western zodiac reference frames and what each trades away",
+          "altZh": "吠陀恒星黄道与西方回归黄道参照系及各自取舍的对比图"
+        }
+      ]
+    },
+    "vedic-vs-western-astrology": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a vast open plain at night beneath two faint great arcs of light spanning the sky, slightly offset from one another by a small angle; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with dense faint star points. One arc is anchored to the bright fixed stars woven into the nebula behind it — the sidereal sky; the other is anchored to a single warm gold point glowing at the horizon where the season turns — the tropical equinox; a single celestial orb sits in the slim gap where the two arcs disagree, landing in two slightly different places, two maps of one sky drawn to different scales, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Two faint great arcs of light across the sky offset by a small angle, one anchored to fixed stars, one to a horizon equinox point.",
+        "altZh": "夜空中两道微弱的大弧光略有偏角交错，一道锚定背景恒星，一道锚定地平线上回归点的暖金光。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Vedic Astrology vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Vedic Astrology 与相近概念：运作方式 + 取舍",
+          "titleEn": "Two Zodiacs, Two Jobs",
+          "titleZh": "两套黄道，两种用途",
+          "columns": [
+            {
+              "nameEn": "Vedic (Sidereal)",
+              "nameZh": "吠陀（恒星黄道）",
+              "linesEn": [
+                "Anchored to fixed stars via ayanamsa",
+                "Asks when events tend to unfold",
+                "Times life with dasha periods",
+                "Whole-sign houses by default",
+                "Predictive, remedial reading style"
+              ],
+              "linesZh": [
+                "靠岁差校正值锚定恒星",
+                "回答事件何时展开",
+                "用大运周期推算时机",
+                "默认整宫制宫位",
+                "偏预测与化解的读法"
+              ]
+            },
+            {
+              "nameEn": "Western (Tropical)",
+              "nameZh": "西方（回归黄道）",
+              "linesEn": [
+                "Anchored to equinox and seasons",
+                "Asks how personality is wired",
+                "Times with transits, progressions",
+                "Often quadrant houses like Placidus",
+                "Psychological, reflective style"
+              ],
+              "linesZh": [
+                "锚定春分点与四季",
+                "回答性格如何构成",
+                "用行运与推运看时间",
+                "常用普拉西德等象限宫制",
+                "偏心理与自省的读法"
+              ]
+            }
+          ],
+          "altEn": "Side-by-side comparison of sidereal Vedic and tropical Western astrology across reference point, core question, timing tools, houses, and style",
+          "altZh": "吠陀与西方占星在基准、核心问题、时间工具、宫制与风格上的对照"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Vedic Astrology in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里看出吠陀占星与西方占星的差别",
+          "titleEn": "Five Signals When Comparing Charts",
+          "titleZh": "对照两张盘的五个信号",
+          "items": [
+            {
+              "nameEn": "Check your Sun first",
+              "nameZh": "先对比太阳落座",
+              "subEn": "A Vedic Sun one sign earlier is the ~24° ayanamsa at work",
+              "subZh": "吠陀太阳退后一格，是约24°岁差校正值所致"
+            },
+            {
+              "nameEn": "Notice the cutoff cases",
+              "nameZh": "留意星座交界出生者",
+              "subEn": "Early-degree births shift back into the previous sign most",
+              "subZh": "生在星座头几天的人最容易整格后退"
+            },
+            {
+              "nameEn": "Look for timing language",
+              "nameZh": "找时间线语言",
+              "subEn": "Vedic readings name dated dasha periods; Western rarely do",
+              "subZh": "吠陀盘列出标注日期的大运，西方盘少有"
+            },
+            {
+              "nameEn": "Watch the house emphasis",
+              "nameZh": "观察宫位重心",
+              "subEn": "Whole-sign houses and the lagna reorganize life areas",
+              "subZh": "整宫制与上升点会重排生活领域重心"
+            },
+            {
+              "nameEn": "Compare tone, not verdict",
+              "nameZh": "比语气，不比结论",
+              "subEn": "One shows how you are wired; one shows when themes surface",
+              "subZh": "一张讲你如何构成，一张讲主题何时浮现"
+            }
+          ],
+          "altEn": "Five-step checklist for spotting the Vedic-Western difference in your own two charts",
+          "altZh": "在自己两张星盘中识别吠陀与西方差异的五步清单"
+        }
+      ]
+    },
+    "how-to-balance-vata-dosha": {
+      "hero": {
+        "prompt": "Editorial illustration of restless air being gently grounded: on the left, thin swirling wind lines carry drifting dry leaves and scattered light particles upward in a chaotic flurry; moving rightward the swirl settles into a calm, evenly spaced rhythm of small round gold beads descending toward a heavy smooth dark stone, beside a steaming bowl of warm food and a softly glowing oil lamp radiating gentle warmth; the composition reads as weight, warmth, and steady routine slowly calming the wind; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "Wind-blown leaves and scattered particles settling into a steady rhythm of gold beads around a warm bowl, oil lamp, and grounding stone",
+        "altZh": "被风吹散的叶片与微粒，在温热的碗、油灯与沉稳石头旁安定为均匀的金色节律"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read balance vata dosha in Yourself",
+          "titleEn": "Five Signals of High Vata",
+          "titleZh": "Vata 偏高的五个信号",
+          "items": [
+            {
+              "nameEn": "Racing thoughts at rest",
+              "nameZh": "一静下来思绪狂奔",
+              "subEn": "The mind speeds up the moment you sit still",
+              "subZh": "一坐定，念头就在计划与担忧间乱跳"
+            },
+            {
+              "nameEn": "Skipped, drifting meals",
+              "nameZh": "三餐漂移或漏掉",
+              "subEn": "You forget to eat, then grab food at random times",
+              "subZh": "忘记吃饭，又在不固定的时间随手乱抓"
+            },
+            {
+              "nameEn": "Cold, dry, and fidgety",
+              "nameZh": "发冷、干燥、坐不住",
+              "subEn": "Cold hands and feet, dry skin, restless fidgeting",
+              "subZh": "手脚冰凉、皮肤干燥、不停小动作"
+            },
+            {
+              "nameEn": "Wired-but-tired sleep",
+              "nameZh": "累却睡不着",
+              "subEn": "Exhausted yet alert, replaying the day in bed",
+              "subZh": "躺下精疲力竭却清醒，反复回放白天"
+            },
+            {
+              "nameEn": "Burst-then-crash energy",
+              "nameZh": "爆发后崩落的精力",
+              "subEn": "Projects start intense, then scatter before the finish",
+              "subZh": "开局猛冲，没到终点就散了架"
+            }
+          ],
+          "altEn": "Five everyday signals that Vata is running high, from racing thoughts to burst-then-crash energy",
+          "altZh": "Vata 偏高的五个日常信号，从思绪狂奔到先冲后垮"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Questions People Ask About balance vata dosha",
+          "titleEn": "A One-Habit-a-Day Starter Week",
+          "titleZh": "一天加一个习惯的起步周",
+          "items": [
+            {
+              "nameEn": "Day 1 · Fix breakfast",
+              "nameZh": "第1天 · 固定早餐",
+              "subEn": "A warm, cooked breakfast at the same time each morning",
+              "subZh": "每天同一时间吃温热熟食早餐"
+            },
+            {
+              "nameEn": "Day 2 · Warm it up",
+              "nameZh": "第2天 · 换成温食",
+              "subEn": "Swap one cold or raw item for soup, dal, or steamed food",
+              "subZh": "把一样生冷食物换成汤、豆糊或蒸菜"
+            },
+            {
+              "nameEn": "Day 3 · Sip warm",
+              "nameZh": "第3天 · 喝温饮",
+              "subEn": "Warm water or ginger tea instead of iced, fizzy drinks",
+              "subZh": "用温水或姜茶替代冰饮和气泡饮"
+            },
+            {
+              "nameEn": "Day 4 · Ease the caffeine",
+              "nameZh": "第4天 · 减咖啡因",
+              "subEn": "No caffeine after noon to break the wired-tired loop",
+              "subZh": "中午后停咖啡因，打断累却清醒的循环"
+            },
+            {
+              "nameEn": "Day 5 · Earlier window",
+              "nameZh": "第5天 · 提前入睡",
+              "subEn": "Wind down by 9:30-10 p.m. with screens and lights low",
+              "subZh": "晚上9:30-10点开始调暗灯光放下屏幕"
+            },
+            {
+              "nameEn": "Day 6 · Oil massage",
+              "nameZh": "第6天 · 油按摩",
+              "subEn": "Five minutes of warm sesame-oil abhyanga before a shower",
+              "subZh": "洗澡前做五分钟温芝麻油自我按摩"
+            },
+            {
+              "nameEn": "Day 7 · Keep what stuck",
+              "nameZh": "第7天 · 留住有效的",
+              "subEn": "Drop what didn't fit; hold the two or three that did",
+              "subZh": "放下不合适的，留住两三个能坚持的"
+            }
+          ],
+          "altEn": "Seven-day sequence adding one small Vata-calming habit per day, from a fixed warm breakfast to keeping what stuck",
+          "altZh": "七天序列，每天加一个安定 Vata 的小习惯，从固定早餐到留住有效的"
+        }
+      ]
+    },
+    "3-gunas": {
+      "hero": {
+        "prompt": "Editorial illustration of a large circular dial woven from three distinct threads: one smooth, luminous pale-gold strand, one taut strand crackling with small kinetic spark lines, and one thick, dark, heavy strand; the three strands braid together around the dial's rim in visibly shifting proportions, and a slender gold needle rests partway around the arc as if caught mid-turn, suggesting a setting that can be adjusted rather than a fixed label; loose thread ends trail off softly into the dark background; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces",
+        "altEn": "A circular dial braided from three contrasting threads — luminous, sparking, and heavy — with a gold needle caught mid-turn",
+        "altZh": "由三股质地不同的丝线编成的圆形旋钮，金色指针停在转动途中"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## What is 3 gunas?",
+          "titleEn": "The Three Strands of Prakriti",
+          "titleZh": "构成自然的三股丝线",
+          "columns": [
+            {
+              "nameEn": "Sattva",
+              "nameZh": "萨埵（Sattva）",
+              "linesEn": [
+                "Purity and harmony",
+                "Clarity, calm, balanced attention",
+                "The unhurried focus of a good first hour"
+              ],
+              "linesZh": [
+                "纯净与和谐",
+                "清明、平静、专注均衡",
+                "美好清晨第一小时的从容专注"
+              ]
+            },
+            {
+              "nameEn": "Rajas",
+              "nameZh": "罗阇（Rajas）",
+              "linesEn": [
+                "Activity and passion",
+                "Motion, drive, restlessness",
+                "The wired push before a deadline"
+              ],
+              "linesZh": [
+                "活动与激情",
+                "运动、冲劲、躁动不安",
+                "截止期限前的紧绷冲刺"
+              ]
+            },
+            {
+              "nameEn": "Tamas",
+              "nameZh": "答磨（Tamas）",
+              "linesEn": [
+                "Inertia and darkness",
+                "Heaviness, dullness, mental fog",
+                "The leaden pull to the couch after lunch"
+              ],
+              "linesZh": [
+                "惰性与晦暗",
+                "沉重、迟钝、头脑发雾",
+                "饱餐后瘫向沙发的下坠感"
+              ]
+            }
+          ],
+          "altEn": "Three-column comparison of sattva, rajas, and tamas as clarity, drive, and inertia",
+          "altZh": "萨埵、罗阇、答磨三质对比：清明、冲劲与惰性"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Gunas in Yourself",
+          "titleEn": "Reading Your State, Not Your Type",
+          "titleZh": "读状态，而不是贴类型",
+          "items": [
+            {
+              "nameEn": "Sattva: focus feels easy",
+              "nameZh": "萨埵在线：专注不费力",
+              "subEn": "Work flows unforced; small irritations slide off",
+              "subZh": "工作不必硬撑，小烦扰滑过不沾"
+            },
+            {
+              "nameEn": "Rajas: can't sit still",
+              "nameZh": "罗阇升高：坐立不安",
+              "subEn": "Tabs multiply, jaw tightens, rest feels like falling behind",
+              "subZh": "标签页越开越多，休息像在落后"
+            },
+            {
+              "nameEn": "Tamas: starting feels huge",
+              "nameZh": "答磨沉重：起步变艰难",
+              "subEn": "The couch wins; thoughts slow; motivation flatlines",
+              "subZh": "沙发获胜，念头迟缓，动力一条平线"
+            },
+            {
+              "nameEn": "Watch meals and screens",
+              "nameZh": "留意饭后与刷屏后",
+              "subEn": "A heavy lunch or long scroll tips you to tamas in an hour",
+              "subZh": "一顿重食或长刷屏，一小时内倒向答磨"
+            }
+          ],
+          "altEn": "Four everyday signals for reading which guna is dominant right now",
+          "altZh": "判断当下哪种古纳主导的四个日常信号"
+        }
+      ]
+    },
+    "sattva-rajas-tamas": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: one continuous landscape rising from a dark still valley floor at the bottom, through a warm fiery active middle slope glowing amber, up to a luminous calm clear peak catching pale gold light at the top, under a vast nebula night sky — three natural bands of one mountainside expressing dark inertia below, restless heat in the middle, and serene clarity above, all in a single unbroken vertical scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "One mountainside rising from a dark still valley through a fiery amber slope to a calm luminous peak under a nebula sky.",
+        "altZh": "一道连续的山坡：底部幽暗静止的谷地，中段炽热躁动的琥珀色斜坡，顶端宁静澄明的发光山巅。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read sattva rajas tamas in Yourself",
+          "titleEn": "Five Observable Signals",
+          "titleZh": "五个可观察的信号",
+          "items": [
+            {
+              "nameEn": "Morning quality",
+              "nameZh": "晨起状态",
+              "subEn": "Clear waking is sattva; restless, rajas; heavy, tamas",
+              "subZh": "醒来清明属萨埵，烦躁属罗阇，沉重属答磨"
+            },
+            {
+              "nameEn": "Food response",
+              "nameZh": "食物反应",
+              "subEn": "Light fresh food keeps clarity; rich food deepens tamas",
+              "subZh": "清淡新鲜保清明，厚重饮食加深答磨"
+            },
+            {
+              "nameEn": "Decision tempo",
+              "nameZh": "决策节奏",
+              "subEn": "Unhurried: sattva; fast then revised: rajas; deferred: tamas",
+              "subZh": "从容是萨埵，快而反悔是罗阇，拖延是答磨"
+            },
+            {
+              "nameEn": "Breath quality",
+              "nameZh": "呼吸质地",
+              "subEn": "Even and slow: sattva; shallow, rapid: rajas; labored: tamas",
+              "subZh": "匀缓属萨埵，浅快属罗阇，滞涩属答磨"
+            },
+            {
+              "nameEn": "Practice response",
+              "nameZh": "练习中的反应",
+              "subEn": "Spacious focus: sattva; planning mind: rajas; sleep: tamas",
+              "subZh": "开阔专注属萨埵，满脑计划属罗阇，睡着属答磨"
+            }
+          ],
+          "altEn": "Five signals — morning, food, decisions, breath, practice — for reading guna proportions in yourself",
+          "altZh": "晨起、饮食、决策、呼吸、练习五个信号，读出自己的三质比例"
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Common Questions About Sattva Rajas Tamas",
+          "titleEn": "The Guna Clock of a Day",
+          "titleZh": "一天中的古纳时钟",
+          "items": [
+            {
+              "labelEn": "Dawn",
+              "labelZh": "清晨",
+              "titleEn": "Sattvic window",
+              "titleZh": "萨埵时段",
+              "noteEn": "Trends clear and calm — schedule deep work here",
+              "noteZh": "清明平静，适合安排深度工作"
+            },
+            {
+              "labelEn": "Midday",
+              "labelZh": "正午",
+              "titleEn": "Rajasic stretch",
+              "titleZh": "罗阇时段",
+              "noteEn": "Runs active and driven — take on intensive tasks",
+              "noteZh": "活跃有冲劲，适合高强度任务"
+            },
+            {
+              "labelEn": "Late afternoon",
+              "labelZh": "午后偏晚",
+              "titleEn": "Tamasic dip",
+              "titleZh": "答磨低谷",
+              "noteEn": "Can turn heavy — switch to lighter work",
+              "noteZh": "易转沉重，改做轻量工作"
+            },
+            {
+              "labelEn": "Around sunset",
+              "labelZh": "日落前后",
+              "titleEn": "Brief sattvic return",
+              "titleZh": "萨埵短暂回归",
+              "noteEn": "A short window of clarity often comes back",
+              "noteZh": "一小段清明窗口常会重现"
+            }
+          ],
+          "altEn": "Timeline of natural guna shifts across the day, from a sattvic dawn to a brief sattvic window around sunset",
+          "altZh": "一天内三质自然变化的时间线：从清晨萨埵到日落前后的清明小窗"
+        }
+      ]
+    }
+  }
+}

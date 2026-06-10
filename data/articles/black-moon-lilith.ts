@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const blackMoonLilithEn: WikiArticle = {
   slug: "black-moon-lilith",
+  image: "/images/placements/black-moon-lilith.jpg",
+  image_alt: "A single dark luminous point low on a moonless horizon over wild black water, a shadowed glow around an emptiness.",
   title: "Why Your Black Moon Lilith Placement Keeps Changing (True vs. Mean vs. Asteroid Lilith Explained)",
   description: "Black moon lilith is the Moon's calculated apogee — the farthest point in the Moon's elliptical orbit around Earth",
   authorId: "marcus-orion",
@@ -48,6 +50,8 @@ Three distinct black moon lilith calculation types appear in modern chart softwa
 
 The practical split: mean position works better for comparing placements across groups or using older printed ephemerides; true position suits readers who want precision tied to the actual orbital geometry of their specific birth moment.
 
+
+![Comparison of mean Lilith (smoothed apogee, about 40 degrees per year), true Lilith (oscillating real-time apogee), and asteroid Lilith 1181 (a physical body discovered in 1927).](/images/placements/black-moon-lilith-i0-en.svg)
 ## How to Read black moon lilith in Yourself
 
 Reading black moon lilith in a birth chart starts with confirming which version the software is calculating — mean and true can differ by multiple signs for the same birth data. Once that is settled, look for these signals in real life:
@@ -58,6 +62,8 @@ Reading black moon lilith in a birth chart starts with confirming which version 
 4. **Compulsive pull toward the prohibited.** Repeated attraction to something just outside the edge of what feels permitted to want, with no clear origin for the pull.
 5. **House placement over sign flavor.** The house tells you the life arena — career, relationships, creative expression — where the suppression pattern shows up most concretely day to day.
 
+
+![Five signals for reading Black Moon Lilith: recurring self-censorship, the 'too much' label, sign mismatches from calculation methods, pull toward the prohibited, and house placement as the life arena.](/images/placements/black-moon-lilith-i1-en.svg)
 ## Common Misreadings
 
 Four misreadings about black moon lilith circulate consistently in popular write-ups. Here is where each one goes wrong:

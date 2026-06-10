@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const vedicVsWesternAstrologyEn: WikiArticle = {
   slug: "vedic-vs-western-astrology",
+  image: "/images/vedic/vedic-vs-western-astrology.jpg",
+  image_alt: "Two faint great arcs of light across the sky offset by a small angle, one anchored to fixed stars, one to a horizon equinox point.",
   title: "Why Vedic vs Western Astrology Gives You Two Different Signs",
   description: "Vedic astrology is the traditional Indian system of chart reading, also called Jyotish (the Sanskrit term for the \"science of light\"), that maps the planets...",
   authorId: "aditi-sharma",
@@ -45,6 +47,8 @@ The Western tropical zodiac begins at the exact point where the Sun crosses the 
 
 The Vedic sidereal zodiac makes the opposite trade: it begins from a fixed stellar reference and applies an ayanamsa (the measured angle of offset between the two zodiacs, currently close to 24 degrees). The way it works keeps every sign anchored to the fixed stars, which is why the system pairs so naturally with dasha cycles (planetary time-periods used to date life events) and nakshatras (the 27 lunar mansions that subdivide the sky). To get a chart that stays aligned with the fixed stars and supports precise timing, Vedic astrology sacrifices the tidy season-to-sign overlap that Western readers take for granted. This is also why the sidereal tradition, codified in classical form by Parashara and carried to modern English-speaking readers by B. V. Raman, leans predictive and remedial, while the tropical approach leans psychological. For the coordinate difference underneath all of this, this *explainer on the sidereal versus tropical zodiac* lays it out step by step.
 
+
+![Side-by-side comparison of sidereal Vedic and tropical Western astrology across reference point, core question, timing tools, houses, and style](/images/vedic/vedic-vs-western-astrology-i0-en.svg)
 ## How to Read Vedic Astrology in Your Chart
 
 You do not need software to feel the Vedic versus Western difference once you know what to look for. Pull both charts, set them side by side, and read these signals:
@@ -57,6 +61,8 @@ You do not need software to feel the Vedic versus Western difference once you kn
 
 Because the house emphasis shifts so much between the two charts, it helps to know how the twelve [astrology houses | how the twelve houses map to life areas | see which life areas each house governs before comparing the two charts](/en/wiki/astrology-houses) map to your life areas. Read together, the two charts usually replace the "which one is right" reflex with a more useful habit: matching the question to the system before you read a single line.
 
+
+![Five-step checklist for spotting the Vedic-Western difference in your own two charts](/images/vedic/vedic-vs-western-astrology-i1-en.svg)
 ## Common Misreadings
 
 Most of the confusion in the Vedic vs Western astrology debate comes from a few assumptions that sound reasonable but quietly miss the point. Here is what the popular version gets wrong, and what is actually happening:
@@ -120,6 +126,8 @@ Open your birth chart in both a tropical and a sidereal setting, then compare wh
 
 export const vedicVsWesternAstrologyZh: WikiArticle = {
   slug: "vedic-vs-western-astrology",
+  image: "/images/vedic/vedic-vs-western-astrology.jpg",
+  image_alt: "夜空中两道微弱的大弧光略有偏角交错，一道锚定背景恒星，一道锚定地平线上回归点的暖金光。",
   title: "吠陀占星和西方占星，为什么同一个人算出两套星座",
   description: "吠陀占星（Vedic Astrology，又称印度占星 Jyotish）是以恒星实际位置为基准的占星体系。",
   authorId: "aditi-sharma",
@@ -164,6 +172,8 @@ export const vedicVsWesternAstrologyZh: WikiArticle = {
 
 想看时间线怎么落到具体宫位，可以参考 *行星周期与时机推算说明*。所以这不是谁对谁错，而是两套坐标系在量不同的东西。
 
+
+![吠陀与西方占星在基准、核心问题、时间工具、宫制与风格上的对照](/images/vedic/vedic-vs-western-astrology-i0-zh.svg)
 ## 如何在你的星盘里看出吠陀占星与西方占星的差别
 
 想确认吠陀占星与西方占星的差别落在自己身上，不用懂复杂排盘，先做几个简单观察：
@@ -174,6 +184,8 @@ export const vedicVsWesternAstrologyZh: WikiArticle = {
 4. 看月亮：印度占星会特别强调月亮落在哪个星座和"宿"。
 5. 留意盘里有没有"行运周期"这类时间线，这是吠陀盘特有的栏目。
 
+
+![在自己两张星盘中识别吠陀与西方差异的五步清单](/images/vedic/vedic-vs-western-astrology-i1-zh.svg)
 ## 常见误读
 
 围绕吠陀占星和西方占星，坊间最容易传错的有这么几条：

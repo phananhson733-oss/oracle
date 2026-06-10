@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const northNodeInSagittariusEn: WikiArticle = {
   slug: "north-node-in-sagittarius",
+  image: "/images/nodes/north-node-in-sagittarius.jpg",
+  image_alt: "A gold arrow leaving stacks of unread pages behind and arcing toward a single distant beacon star",
   title: "Why Your North Node in Sagittarius Rewards Commitment Over More Facts",
   description: "North Node in Sagittarius is the growth direction in a birth chart that points away from scattered fact-collecting and toward big-picture meaning, conviction",
   authorId: "julian-thorne",
@@ -47,6 +49,8 @@ north node in sagittarius differs from the placements people often confuse it wi
 
 The way it works in daily life is far quieter than "find your truth" makes it sound. It is the repeated, slightly uncomfortable choice to act on a synthesized conclusion before you have read every counter-argument, and the growth shows up precisely in tolerating the gap between "enough" and "certain." Someone with this axis might finally pick one teacher and study with them for a year instead of auditing ten; might write the essay instead of researching it forever; might say "this is what I believe" and let it be revisable rather than provisional. None of these are dramatic, and that is the point — the leap lives in the size of the gap you are willing to act across. A Sagittarius Sun is explored further on the [Sagittarius sign overview page](/en/wiki/9th-house-astrology), which maps the same fire-sign energy this node is reaching toward.
 
+
+![Comparison of the Gemini south node fact-collecting default and the Sagittarius north node pull toward committed meaning](/images/nodes/north-node-in-sagittarius-i0-en.svg)
 ## How to Read north node in sagittarius in Your Chart
 
 Spotting the north node in sagittarius in real life is less about the chart symbol and more about a recurring pattern you can catch yourself in. Watch for these signs:

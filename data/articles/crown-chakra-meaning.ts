@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const crownChakraMeaningEn: WikiArticle = {
   slug: "crown-chakra-meaning",
+  image: "/images/chakra/crown-chakra-meaning.jpg",
+  image_alt: "A rooted column of light blooming into a thousand-petaled radiance while a rootless wisp drifts in the background, showing a grounded crown chakra versus untethered floating",
   title: "What Crown Chakra Meaning Really Tells You About Staying Grounded",
   description: "The Crown Chakra is the seventh and highest energy center in the chakra system, sitting right at the top of your head. In plain terms, crown chakra meaning...",
   authorId: "elena-vane",
@@ -35,6 +37,8 @@ In my years reading auras and working hands-on with energy, the most common mix-
 
 Picture two people who both meditate every morning. One comes out of it able to make a clear decision about the day ahead, call a friend back, and handle a difficult email without spiralling — the calm carries into ordinary life. The other comes out blissed-out but vague, lets the day slide, forgets half of what they meant to do, and feels faintly above small tasks like paying bills or answering texts. Both would describe their crown as "open," and both might even feel proud of it. Only one of them is actually grounded in that openness. That gap — between connection that lands and connection that drifts — is the whole reason crown chakra meaning is worth pinning down instead of chasing.
 
+
+![Comparison of a grounded open crown that returns you to life with an ungrounded crown that drifts above it](/images/chakra/crown-chakra-meaning-i0-en.svg)
 ## The Crown Chakra vs Adjacent Concepts: How It Works + Trade-offs
 
 The crown rarely causes trouble on its own; the confusion almost always comes from how it relates to the centers just below it. It helps to set crown chakra meaning beside the ones it gets mixed up with, because each pairing carries a real trade-off you can feel in daily life:
@@ -59,6 +63,8 @@ You do not need special sight or any equipment to read your own crown chakra. Yo
 
 The pattern across these answers matters more than any single one. A balanced crown shows up as connection that returns you to your life; an overactive one shows up as connection that quietly removes you from it. If three or four of these signals point toward fuzziness, that is not a cue to meditate harder — it is a cue to come back down and ground first. Reading the crown honestly means being willing to notice when "spiritual" is really just spaced-out, and treating that as useful information rather than a failure.
 
+
+![Five everyday checks for whether the crown chakra is grounded: after meditation, direct questions, awe, daily basics, and stress](/images/chakra/crown-chakra-meaning-i1-en.svg)
 ## Common Misreadings
 
 Most popular write-ups get crown chakra meaning slightly wrong in the same few ways, and these are usually the exact misreadings that send people searching in the first place. Here is the honest correction for each one:
@@ -121,6 +127,8 @@ Pick one grounding check from this page — feet flat on the floor, three slow b
 
 export const crownChakraMeaningZh: WikiArticle = {
   slug: "crown-chakra-meaning",
+  image: "/images/chakra/crown-chakra-meaning.jpg",
+  image_alt: "扎根的光柱顶端绽放千瓣光辉，背景一缕无根光丝飘散，对比接地的顶轮与飘忽的脱节",
   title: "顶轮代表什么，平衡的清明和飘忽的脱节差在哪",
   description: "顶轮（crown chakra，也叫 sahasrara、第七脉轮）是脉轮（chakra，西方瑜伽与灵性传统里描述的能量中心概念）体系里位置最高的一个，落在头顶，传统上和脉轮系统总览 pillar...",
   authorId: "elena-vane",
@@ -154,6 +162,8 @@ export const crownChakraMeaningZh: WikiArticle = {
 
 这种分辨，正是*眉心轮觉察指南*这类相邻主题也在反复强调的：开阔感要有觉知托底，才不会变成脱节。
 
+
+![接地的开阔顶轮与飘忽脱节顶轮的对比：一个把你送回生活，一个让你悬在生活上方](/images/chakra/crown-chakra-meaning-i0-zh.svg)
 ## The Crown Chakra 与相近概念：运作方式 + 取舍
 
 要把顶轮代表什么说清楚，最好的办法是拿它和最容易混淆的两端做对比。

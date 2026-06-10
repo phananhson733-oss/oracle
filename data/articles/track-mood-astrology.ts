@@ -3,6 +3,8 @@ import type { WikiArticle } from "../../types";
 
 export const trackMoodAstrologyEn: WikiArticle = {
   slug: "track-mood-astrology",
+  image: "/images/psych/track-mood-astrology.jpg",
+  image_alt: "Open journal under an arc of moon phases, with a gold mood wave on the pages mirroring the lunar cycle above.",
   title: "How to Track Mood with Astrology: The Beginner's Guide (2026)",
   description:
     "Learn how to track your mood with astrology by monitoring the Moon sign. A step-by-step guide to emotional transits and using your AstrologyWiki Journal.",
@@ -35,6 +37,8 @@ Your emotions, however, are fluid—much like the tides. In astrology, the Moon 
 - **The Speed of Feeling:** The Moon moves through the entire Zodiac every 28 days, spending only about 2.5 days in each sign. This rapid movement explains why you might wake up feeling industrious and critical one morning (Moon in Virgo) and dreamy and lethargic three days later (Moon in Pisces).
 - **The Baseline:** Your **Natal Moon** (where the Moon was when you were born) is your emotional factory setting. The **Transiting Moon** (where the Moon is right now) is the current emotional weather forecast.
 
+
+![Comparison of the natal Moon as your emotional baseline versus the transiting Moon as the current emotional weather.](/images/psych/track-mood-astrology-i0-en.svg)
 ## Step-by-Step: How to Start Tracking
 
 Tracking your astrological mood is a practice of mindfulness. It allows you to stop judging your feelings and start understanding them.
@@ -59,6 +63,8 @@ Consistency is key. You don't need a complex notebook; our digital tool is desig
 - **My Mood:** [1-10 scale]
 - **Key Emotion:** [e.g., Anxious, Productive, Calm, Weepy]
 
+
+![Three steps to start mood tracking with astrology: find your natal Moon, check today's Moon sign, log your daily data.](/images/psych/track-mood-astrology-i1-en.svg)
 ## Reference Guide: The 12 Moon Signs & Emotional Tendencies
 
 When the Moon is in one of these signs, the collective "mood" tends to shift in that direction. Use this table to interpret your daily log.
@@ -94,6 +100,8 @@ Astrology is not just about prediction; it is a profound tool for self-awareness
 
 export const trackMoodAstrologyZh: WikiArticle = {
   slug: "track-mood-astrology",
+  image: "/images/psych/track-mood-astrology.jpg",
+  image_alt: "摊开的日记本上方是月相弧线，页面上的金色情绪波线与天上的月亮周期相互呼应。",
   title: "如何用占星追踪情绪：入门指南（2026）",
   description:
     "学习如何通过监测月亮星座来追踪你的情绪。情绪行运的逐步指南，以及如何使用占星日记。",
@@ -126,6 +134,8 @@ export const trackMoodAstrologyZh: WikiArticle = {
 - **感受的速度：** 月亮每28天走完整个黄道，在每个星座只停留约2.5天。这种快速移动解释了为什么你可能在某天早上醒来时感到勤奋且挑剔（月亮在处女座），而三天后又变得梦幻且懒散（月亮在双鱼座）。
 - **基准线：** 你的**本命月亮**（你出生时月亮所在的位置）是你的情绪出厂设置。**行运月亮**（月亮现在的位置）是当前的情绪天气预报。
 
+
+![本命月亮（情绪基准线）与行运月亮（当前情绪天气）的对比图。](/images/psych/track-mood-astrology-i0-zh.svg)
 ## 分步指南：如何开始追踪
 
 追踪你的占星情绪是一种正念练习。它让你停止评判自己的感受，开始理解它们。
@@ -150,6 +160,8 @@ export const trackMoodAstrologyZh: WikiArticle = {
 - **我的心情：** [1-10分]
 - **关键情绪：** [例如：焦虑、高效、平静、想哭]
 
+
+![用占星开始追踪情绪的三个步骤：找到本命月亮、查看今日月亮星座、记录每日数据。](/images/psych/track-mood-astrology-i1-zh.svg)
 ## 参考指南：12个月亮星座与情绪倾向
 
 当月亮位于这些星座之一时，集体"情绪"往往会朝那个方向转变。使用此表格来解读你的每日日志。

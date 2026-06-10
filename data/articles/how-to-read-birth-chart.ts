@@ -3,6 +3,8 @@ import type { WikiArticle } from '../../types';
 
 export const howToReadBirthChartEn: WikiArticle = {
   slug: 'how-to-read-birth-chart',
+  image: "/images/charts/how-to-read-birth-chart.jpg",
+  image_alt: "A whole night sky of glowing bodies at different heights — sun, moon, planets, faint constellation lines — over a still mirroring lake.",
   title: 'How to Read Your Birth Chart: A Psychological Astrology Guide for Beginners',
   description: 'Learn how to read your natal chart through the lens of psychological astrology. A 5-step beginner\'s guide covering planets, signs, houses, and aspects.',
   authorId: "marcus-orion",
@@ -40,6 +42,8 @@ Think of it as a cast of characters inside your psyche. Each planet represents a
 
 ---
 
+
+![Five-step sequence for reading a birth chart: planets, signs, houses, aspects, synthesis](/images/charts/how-to-read-birth-chart-i0-en.svg)
 ## Step 1: The Planets --- Your Inner Cast of Characters
 
 In Steven Forrest's framework from *The Inner Sky*, every planet answers the question **"What psychological function is at work?"** He calls planets the **verbs** of the chart---they describe drives and actions.
@@ -84,6 +88,8 @@ When you see that someone has Moon in Capricorn, for instance, you know their em
 
 ---
 
+
+![The four elements grouping the twelve signs by psychological orientation](/images/charts/how-to-read-birth-chart-i1-en.svg)
 ## Step 3: The Houses --- Where Life Plays Out
 
 The twelve [houses](/wiki/house-1) divide your chart into areas of life experience. In Forrest's framework, houses are the **nouns**---the stage where the planetary drama unfolds.
@@ -131,6 +137,8 @@ Trines, by contrast, flow so easily that they can go unnoticed. A person with Su
 
 ---
 
+
+![The five major aspects ordered by angle, from conjunction at 0 degrees to opposition at 180](/images/charts/how-to-read-birth-chart-i2-en.svg)
 ## Step 5: Putting It All Together --- Reading a Placement
 
 Now you have all four building blocks: planets (what), signs (how), houses (where), and aspects (internal dynamics). Reading a chart means weaving these layers into a coherent story.
@@ -178,6 +186,8 @@ The beauty of psychological astrology is that it hands you a mirror, not a scrip
 
 export const howToReadBirthChartZh: WikiArticle = {
   slug: 'how-to-read-birth-chart',
+  image: "/images/charts/how-to-read-birth-chart.jpg",
+  image_alt: "一整片夜空：太阳、月亮与行星高低错落地发光，淡淡的星座连线交织，倒映在平静的湖面上。",
   title: '占星入门指南：5 步看懂你的星盘，从"我是什么座"到真正认识自己',
   description: '从心理占星学角度，手把手教你读懂自己的本命盘。涵盖行星、星座、宫位、相位四大模块，每一步都有实操练习。',
   authorId: "marcus-orion",
@@ -215,6 +225,8 @@ export const howToReadBirthChartZh: WikiArticle = {
 
 ---
 
+
+![读懂星盘的五个步骤：行星、星座、宫位、相位、整合](/images/charts/how-to-read-birth-chart-i0-zh.svg)
 ## 第一步：行星---你内心的角色
 
 在 Steven Forrest 的经典著作《The Inner Sky》中，他把行星比作星盘的**动词**---它们描述的是心理驱动力和行为倾向。
@@ -259,6 +271,8 @@ Stephen Arroyo 在《Astrology, Psychology, and the Four Elements》中，按[�
 
 ---
 
+
+![四元素将十二星座按心理取向分组](/images/charts/how-to-read-birth-chart-i1-zh.svg)
 ## 第三步：宫位---人生舞台
 
 十二个[宫位](/wiki/house-1)把你的星盘划分为十二个生活领域。在 Forrest 的框架中，宫位是**名词**---它们是行星剧情上演的舞台。
@@ -306,6 +320,8 @@ Greene 强调，**四分相和对分相不是"坏"的相位。** 用荣格的语
 
 ---
 
+
+![按角度排列的五种主要相位，从 0 度合相到 180 度对分相](/images/charts/how-to-read-birth-chart-i2-zh.svg)
 ## 第五步：整合---如何阅读一个完整落点
 
 现在你掌握了四个构建模块：行星（做什么）、星座（怎么做）、宫位（在哪里）、相位（内在关系）。读星盘就是把这四层编织成一个连贯的故事。

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const whatToDoOnAFullMoonSpirituallyEn: WikiArticle = {
   slug: "what-to-do-on-a-full-moon-spiritually",
+  image: "/images/moon/what-to-do-on-a-full-moon-spiritually.jpg",
+  image_alt: "A harvest field under a full moon opposite empty turned soil under a dark new moon — release and completion versus planting intentions",
   title: "What to Do on a Full Moon Spiritually to Close What the New Moon Began",
   description: "Full moon spiritually is the symbolic peak of the lunar cycle — the point where the Moon is fully lit and attention turns toward completion, release, and",
   authorId: "marcus-orion",
@@ -38,6 +40,8 @@ The clearest contrast is the full moon versus the new moon, and knowing what to 
 
 A second contrast is release work versus manifestation work, and the two pull in opposite directions. Manifestation leans forward, naming what you want to call in; release leans back, naming what you're finally ready to set down. The way it functions is that the full moon's heightened visibility makes unfinished business and lingering tension easier to see, which is why letting-go practices land so well here while goal-setting tends to fall flat. To get the catharsis of real release, you sacrifice the momentum of building something new — choosing one for the night means setting the other aside until the cycle turns. People who try to do both at once often end up scattered, unsure whether they're opening or closing, which is the exact trade-off the *explainer on lunar phase timing* is meant to resolve.
 
+
+![New moon versus full moon: planting intentions in darkness with open potential, versus revealing, completing, and releasing in full light](/images/moon/what-to-do-on-a-full-moon-spiritually-i0-en.svg)
 ## How to Read full moon spiritually in Yourself
 
 You don't need an ephemeris to feel a full moon working — the signs tend to show up in mood, energy, and whatever rises to the top of your attention. Use these as observation cues:
@@ -50,6 +54,8 @@ You don't need an ephemeris to feel a full moon working — the signs tend to sh
 
 Reading these cues is most of what to do on a full moon spiritually in everyday terms — you notice the peak, then choose to work with it rather than against it.
 
+
+![Five cues the full moon peak is active: things come to a head, sensitivity rises, what's finished becomes clear, release beckons, and fresh starts stall](/images/moon/what-to-do-on-a-full-moon-spiritually-i1-en.svg)
 ## Common Misreadings
 
 A lot of popular full moon content blurs the phases, and that's exactly where what to do on a full moon spiritually goes wrong for most people. Four misreadings come up again and again:

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="三种工具，三个方向">
+  <defs>
+    <linearGradient id="shadowworkjournalprompts0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="shadowworkjournalprompts0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="shadowworkjournalprompts0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shadowworkjournalprompts0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shadowworkjournalprompts0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shadowworkjournalprompts0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#shadowworkjournalprompts0zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#shadowworkjournalprompts0zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#shadowworkjournalprompts0zh-neb2)"/>
+  <circle cx="171.4" cy="102.3" r="0.73" fill="#cfc8ea" opacity="0.20"/><circle cx="521.4" cy="52.7" r="1.63" fill="#cfc8ea" opacity="0.35"/><circle cx="197.3" cy="420.8" r="1.38" fill="#cfc8ea" opacity="0.21"/><circle cx="716.2" cy="73.2" r="0.70" fill="#cfc8ea" opacity="0.25"/><circle cx="699.2" cy="491.1" r="0.42" fill="#cfc8ea" opacity="0.17"/><circle cx="54.3" cy="44.7" r="1.26" fill="#cfc8ea" opacity="0.43"/><circle cx="227.1" cy="526.6" r="0.89" fill="#cfc8ea" opacity="0.17"/><circle cx="289.6" cy="20.4" r="1.63" fill="#cfc8ea" opacity="0.52"/><circle cx="146.1" cy="144.3" r="0.62" fill="#cfc8ea" opacity="0.24"/><circle cx="309.2" cy="106.8" r="1.46" fill="#cfc8ea" opacity="0.15"/><circle cx="575.3" cy="288.7" r="1.36" fill="#cfc8ea" opacity="0.35"/><circle cx="584.6" cy="13.9" r="1.57" fill="#cfc8ea" opacity="0.37"/><circle cx="591.0" cy="118.6" r="1.64" fill="#cfc8ea" opacity="0.28"/><circle cx="378.3" cy="356.2" r="1.48" fill="#cfc8ea" opacity="0.23"/><circle cx="150.4" cy="341.4" r="1.68" fill="#cfc8ea" opacity="0.41"/><circle cx="610.5" cy="148.5" r="0.53" fill="#cfc8ea" opacity="0.50"/><circle cx="478.8" cy="271.0" r="0.66" fill="#cfc8ea" opacity="0.35"/><circle cx="529.6" cy="390.1" r="0.66" fill="#cfc8ea" opacity="0.28"/><circle cx="43.3" cy="175.3" r="1.34" fill="#cfc8ea" opacity="0.47"/><circle cx="381.2" cy="233.6" r="0.76" fill="#cfc8ea" opacity="0.43"/><circle cx="383.6" cy="75.9" r="0.43" fill="#cfc8ea" opacity="0.22"/><circle cx="240.7" cy="160.8" r="1.24" fill="#cfc8ea" opacity="0.20"/><circle cx="674.3" cy="467.9" r="1.52" fill="#cfc8ea" opacity="0.52"/><circle cx="634.9" cy="396.4" r="1.42" fill="#cfc8ea" opacity="0.13"/><circle cx="235.9" cy="471.3" r="1.35" fill="#cfc8ea" opacity="0.39"/><circle cx="285.8" cy="326.6" r="0.63" fill="#cfc8ea" opacity="0.46"/><circle cx="645.5" cy="473.4" r="0.51" fill="#cfc8ea" opacity="0.33"/><circle cx="726.9" cy="41.6" r="1.43" fill="#cfc8ea" opacity="0.34"/><circle cx="263.5" cy="436.6" r="0.58" fill="#cfc8ea" opacity="0.20"/><circle cx="472.3" cy="26.2" r="1.54" fill="#cfc8ea" opacity="0.53"/><circle cx="70.8" cy="475.4" r="0.82" fill="#cfc8ea" opacity="0.44"/><circle cx="730.8" cy="267.1" r="0.48" fill="#cfc8ea" opacity="0.53"/><circle cx="410.9" cy="444.0" r="1.50" fill="#cfc8ea" opacity="0.44"/><circle cx="257.7" cy="194.5" r="0.85" fill="#cfc8ea" opacity="0.53"/><circle cx="297.6" cy="569.2" r="1.59" fill="#cfc8ea" opacity="0.39"/><circle cx="723.9" cy="229.8" r="0.43" fill="#cfc8ea" opacity="0.40"/><circle cx="551.1" cy="291.2" r="0.63" fill="#cfc8ea" opacity="0.38"/><circle cx="97.8" cy="42.9" r="1.66" fill="#cfc8ea" opacity="0.17"/><circle cx="217.8" cy="174.6" r="0.83" fill="#cfc8ea" opacity="0.13"/><circle cx="716.9" cy="525.7" r="1.41" fill="#cfc8ea" opacity="0.14"/><circle cx="303.5" cy="212.4" r="1.55" fill="#cfc8ea" opacity="0.27"/><circle cx="87.6" cy="427.0" r="1.00" fill="#cfc8ea" opacity="0.38"/><circle cx="585.0" cy="461.7" r="1.19" fill="#cfc8ea" opacity="0.49"/><circle cx="457.9" cy="243.8" r="0.85" fill="#cfc8ea" opacity="0.25"/><circle cx="402.6" cy="150.3" r="1.51" fill="#cfc8ea" opacity="0.53"/><circle cx="735.8" cy="249.5" r="1.00" fill="#cfc8ea" opacity="0.51"/><circle cx="712.3" cy="222.4" r="1.50" fill="#cfc8ea" opacity="0.52"/><circle cx="732.2" cy="462.4" r="0.73" fill="#cfc8ea" opacity="0.25"/><circle cx="384.4" cy="480.6" r="0.75" fill="#cfc8ea" opacity="0.24"/><circle cx="595.1" cy="507.0" r="0.45" fill="#cfc8ea" opacity="0.54"/><circle cx="71.4" cy="58.7" r="0.96" fill="#cfc8ea" opacity="0.35"/><circle cx="603.1" cy="553.2" r="0.65" fill="#cfc8ea" opacity="0.22"/><path d="M 57.635408252477646 544.2 L 58.0 546.3 L 60.1 546.6956848851405 L 58.0 547.1 L 57.635408252477646 549.2 L 57.2 547.1 L 55.1 546.6956848851405 L 57.2 546.3 Z" fill="#f6e6bf" opacity="0.5362034241436049"/><path d="M 684.2870760783553 299.0 L 684.7 301.1 L 686.8 301.4996563787572 L 684.7 301.9 L 684.2870760783553 304.0 L 683.9 301.9 L 681.8 301.4996563787572 L 683.9 301.1 Z" fill="#f6e6bf" opacity="0.6168843118241056"/><path d="M 88.70150490105152 322.9 L 89.3 326.0 L 92.3 326.56250482192263 L 89.3 327.1 L 88.70150490105152 330.2 L 88.1 327.1 L 85.1 326.56250482192263 L 88.1 326.0 Z" fill="#f6e6bf" opacity="0.6990329445106909"/><path d="M 702.2177736237645 522.0 L 702.8 525.0 L 705.8 525.5414400878362 L 702.8 526.1 L 702.2177736237645 529.1 L 701.7 526.1 L 698.7 525.5414400878362 L 701.7 525.0 Z" fill="#f6e6bf" opacity="0.7721162516390905"/><path d="M 439.6473427414894 323.2 L 440.3 326.5 L 443.6 327.15120531385764 L 440.3 327.8 L 439.6473427414894 331.1 L 439.0 327.8 L 435.7 327.15120531385764 L 439.0 326.5 Z" fill="#f6e6bf" opacity="0.6923656127182767"/><path d="M 478.8 271.0 L 257.7 194.5 L 732.2 462.4 L 595.1 507.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">三种工具，三个方向</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#shadowworkjournalprompts0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#shadowworkjournalprompts0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">阴影工作提问</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">瞄准成年后的行为模式</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">把情绪激活当作数据</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">以舒适换取结构性认知</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">内在小孩提问</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">瞄准早年的创伤位置</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">以当下觉知重新养育记忆</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">提供直接的情感确认</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">正念日记</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">建立当下时刻的觉察</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">减少反应性思维</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">平息激活而非利用激活</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

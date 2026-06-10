@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const hastaNakshatraEn: WikiArticle = {
   slug: "hasta-nakshatra",
+  image: "/images/nakshatra/hasta-nakshatra.jpg",
+  image_alt: "An open constellation hand cradles a crescent moon, ringed by fine measuring threads",
   title: "What Hasta Nakshatra Really Reveals About Moon in Virgo",
   description: "Hasta nakshatra is the thirteenth lunar mansion in Vedic astrology, spanning 10°00′ to 23°20′ of Virgo",
   authorId: "aditi-sharma",
@@ -46,6 +48,8 @@ Comparing hasta nakshatra with adjacent placements makes the functional differen
 
 3. **Hasta vs. other Virgo-placed nakshatras.** Hasta shares Virgo with Uttara Phalguni and Chitra, but Savitar's artisanal influence gives Hasta a specific frame that neither neighbor carries. Savitar encodes skill as something that deepens through disciplined repetition — a form of craft-as-devotion. To operate in that register means accepting that no version of the work is definitively complete. To get that depth of mastery, you give up the sense of arrival: there is always a better iteration being prepared.
 
+
+![Hasta's inward refinement compared with Chitra's outward display and Ashwini's swift healing response](/images/nakshatra/hasta-nakshatra-i0-en.svg)
 ## How to Read hasta nakshatra in Yourself
 
 This placement shows up not in dramatic gestures or obvious markers but in the habitual texture of how someone works and cares for others. Several patterns tend to surface consistently:
@@ -60,6 +64,8 @@ This placement shows up not in dramatic gestures or obvious markers but in the h
 
 5. **A low threshold for noticing what is off.** The same attentional quality that produces excellent work also catches flaws, inefficiencies, and misalignments in the environment — in systems, in others' work, and in one's own output. This reads as critical from the outside while feeling like simple accurate perception from the inside.
 
+
+![Five habitual patterns of Hasta, from satisfaction in precision to involuntarily noticing flaws](/images/nakshatra/hasta-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 Popular Vedic content flattens hasta nakshatra in predictable ways. Here is what gets misread and what is more accurate:

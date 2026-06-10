@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const northNodeInTaurusEn: WikiArticle = {
   slug: "north-node-in-taurus",
+  image: "/images/nodes/north-node-in-taurus.jpg",
+  image_alt: "Storm water settling into solid layered earth where one steady deep-rooted tree stands",
   title:
     "Why the North Node in Taurus Is a Path Toward Steadiness, Not a Punishment",
   description:
@@ -48,6 +50,8 @@ The North Node in Taurus is easy to confuse with a few nearby ideas, and seeing 
 
 The way it functions in daily life is direct: the chart pulls a person to release Scorpio's grip on crisis and rebuild around what is durable, and the cost of that durability is the loss of the intensity that used to organize their sense of self. In the teaching tradition Howard Sasportas developed, the nodes are read as a single growth axis rather than a good end and a bad end, which is why the goal is never to amputate the Scorpio gift. The point is to let the steadier Taurus side carry more of the weight, so that depth becomes something a person can return to by choice instead of a place they keep getting dragged back into.
 
+
+![Comparison of the Scorpio south node crisis reflex and the Taurus north node growth toward steadiness](/images/nodes/north-node-in-taurus-i0-en.svg)
 ## How to Read North Node in Taurus in Yourself
 
 You can recognize the North Node in Taurus less by a personality quiz and more by where your discomfort and your relief show up. Watch for these observable signals:
@@ -58,6 +62,8 @@ You can recognize the North Node in Taurus less by a personality quiz and more b
 4. **You undervalue what is already enough.** Stable income, a quiet relationship, or a settled body can feel like things to escape rather than enjoy.
 5. **Relief arrives through the physical and ordinary.** Cooking, gardening, money you can count, or a long walk steadies you more than another intense conversation does.
 
+
+![Five observable signals of the Taurus north node growth direction](/images/nodes/north-node-in-taurus-i1-en.svg)
 ## Common Misreadings
 
 Most popular write-ups leave readers stuck because they repeat the same distortions about the Taurus node and its growth direction. Each one is worth correcting directly:
@@ -118,6 +124,8 @@ Open your birth chart and locate both ends of your nodal axis, then read the Nor
 
 export const northNodeInTaurusZh: WikiArticle = {
   slug: "north-node-in-taurus",
+  image: "/images/nodes/north-node-in-taurus.jpg",
+  image_alt: "翻涌的风暴归于沉静土地，一棵深根之树安然伫立",
   title: "金牛座北交点，指的是把日子过踏实的成长方向",
   description: "金牛座北交点（North Node in...",
   authorId: "julian-thorne",
@@ -162,6 +170,8 @@ export const northNodeInTaurusZh: WikiArticle = {
 2. **方向对照功能。** 一颗行星落在金牛座谈的是某种功能怎么运作，交点谈的不是功能，而是你该把劲往哪边使。要专注往安稳这一端走，代价是不能再把所有注意力都耗在揭穿、对抗与翻盘上。
 3. **现代读法对照传统读法。** 把交点读成「灵魂成长方向」更多是现代心理占星这几十年的角度；传统占星里它更接近一个由轨道算出的敏感点。选了成长导向的读法，你换来一套好用的自省工具，但要清楚它不是写死的命运结论。
 
+
+![天蝎座南交点危机惯性与金牛座北交点安稳方向对照图](/images/nodes/north-node-in-taurus-i0-zh.svg)
 ## 如何在自己身上识别 North Node in Taurus
 
 金牛座北交点（North Node in Taurus）怎么在日常里认出来？与其背一堆特质表，不如对照下面几个可观察的信号：
@@ -172,6 +182,8 @@ export const northNodeInTaurusZh: WikiArticle = {
 4. 谈钱、谈拥有、谈「我值得过得舒服」时，心里会冒出隐隐的不安或愧疚。
 5. 通勤路上、家庭聚会里，你常是那个停不下来、闲着就难受的人。
 
+
+![金牛座北交点成长方向的五个可观察信号](/images/nodes/north-node-in-taurus-i1-zh.svg)
 ## 常见误读
 
 关于金牛座北交点（North Node in Taurus），坊间常见的几种说法其实都把人带偏了，逐条拆开看：

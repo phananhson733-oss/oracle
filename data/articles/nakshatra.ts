@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const nakshatraEn: WikiArticle = {
   slug: "nakshatra",
+  image: "/images/nakshatra/nakshatra.jpg",
+  image_alt: "Ring of 27 gold lunar stations as a celestial clock, a crescent moon hand pointing to one station",
   title: "What Nakshatra Tells You About Timing That Your Sun Sign Cannot",
   description: "Nakshatra is one of 27 Vedic lunar mansions tracking the Moon's ecliptic position for timing.",
   authorId: "aditi-sharma",
@@ -47,6 +49,8 @@ That distinction matters for anyone trying to understand why certain periods fel
 
 3. **Rashi and nakshatra.** Both coexist: a Moon in Taurus can fall in Rohini, Krittika, or Mrigashira — each with a different ruling planet (Moon, Sun, Mars respectively) and a different dasha implication. Rashi gives the neighborhood; nakshatra gives the block-level address. Reading only the rashi means knowing the city without the street — the station adds the precision needed for any serious timing work.
 
+
+![Comparison of zodiac signs (30°, character, how) and nakshatras (13°20', dasha timing, when)](/images/nakshatra/nakshatra-i0-en.svg)
 ## How to Read nakshatra in Your Chart
 
 Identifying your nakshatra requires a Vedic natal chart rather than a Western one — the two use different zero-point references (ayanamsha), so the Moon's stated degree will differ between systems. With a Vedic chart available, these are the practical signals to locate and interpret:
@@ -57,6 +61,8 @@ Identifying your nakshatra requires a Vedic natal chart rather than a Western on
 4. **Notice the station's associated qualities.** Anuradha tends to surface themes of devotion and collective loyalty; Ashlesha, penetrating insight and emotional intensity; Rohini, growth and attachment to sustenance. These are observational frames — watch for where the associated qualities appear in current friction, recurring choices, or relationship patterns.
 5. **Track the Moon's monthly return.** The Moon completes a full circuit roughly every 27–28 days, passing through your natal station once a month. Many Jyotish practitioners treat that window as a period of heightened resonance with the themes your natal Moon carries.
 
+
+![Five steps for reading your birth nakshatra, from Moon degree to monthly lunar return](/images/nakshatra/nakshatra-i1-en.svg)
 ## Common Misreadings
 
 The most persistent misreading of nakshatra is treating the 27 stations as 27 personality types — a finer-grained version of the twelve zodiac archetypes. This sends readers looking for the wrong thing: a character description rather than a timing tool.
@@ -75,6 +81,8 @@ The most persistent misreading of nakshatra is treating the 27 stations as 27 pe
 | Pushya | Associated with nourishment, patient structure, and duty-bearing; lends a quality of disciplined care and long-term service orientation | Saturn | In Pushya dasha, watch for a calling toward caretaking or structure-building — and notice where willing service tips into burden |
 | Anuradha | Linked to devotion, sustained friendship, and collective loyalty held under pressure; carries a relational depth that persists through difficulty | Saturn | Anuradha themes often appear as a test of commitment — notice where loyalty is authentic versus where it has quietly become obligation |
 
+
+![Four nakshatras with their ruling planets: Rohini (Moon), Bharani (Venus), Pushya and Anuradha (Saturn)](/images/nakshatra/nakshatra-i2-en.svg)
 ## Vedic Lunar Mansion FAQ
 
 **What is the difference between a nakshatra and a zodiac sign?**

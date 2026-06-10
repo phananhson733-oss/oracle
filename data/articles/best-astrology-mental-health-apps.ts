@@ -3,6 +3,8 @@ import type { WikiArticle } from "../../types";
 
 export const bestAstrologyAppsEn: WikiArticle = {
   slug: "best-astrology-mental-health-apps",
+  image: "/images/psych/best-astrology-mental-health-apps.jpg",
+  image_alt: "Smartphone with a screen split between a doom-scroll spiral and a glowing journal page, contrasting addictive apps with healing tools.",
   title: "The 5 Best Astrology Apps for Mental Health & Journaling (2026)",
   description:
     "We tested the top astrology apps (Co-Star, The Pattern, CHANI) to find which ones actually support mental health vs. causing anxiety. Here is the verdict.",
@@ -37,6 +39,8 @@ If you are looking for a tool to support your mental health—not just predict y
 
 ---
 
+
+![The five astrology apps ranked with their best use, mental health score and price: Co-Star, The Pattern, CHANI, TimePassages and AstrologyWiki.](/images/psych/best-astrology-mental-health-apps-i0-en.svg)
 ## The Selection Criteria
 
 We evaluated these tools based on impact:
@@ -135,6 +139,8 @@ Ready to start? Check out our guide on [How to Track Your Mood with Astrology](/
 
 export const bestAstrologyAppsZh: WikiArticle = {
   slug: "best-astrology-mental-health-apps",
+  image: "/images/psych/best-astrology-mental-health-apps.jpg",
+  image_alt: "手机屏幕一分为二：一半是无尽刷屏漩涡，一半是发光的日记页，对比令人上瘾的应用与疗愈工具。",
   title: "2026年5款最佳心理健康与日记占星应用",
   description:
     "我们测试了顶级占星应用（Co-Star、The Pattern、CHANI），找出哪些真正支持心理健康，哪些会引发焦虑。这是我们的结论。",
@@ -157,6 +163,8 @@ export const bestAstrologyAppsZh: WikiArticle = {
 
 如果你正在寻找一个支持心理健康的工具——而不仅仅是预测未来——这份指南就是为你准备的。
 
+
+![Comparison of prediction-focused passive astrology consumption versus reflection-focused active journaling.](/images/psych/best-astrology-mental-health-apps-i1-en.svg)
 ## 快速结论：你应该下载哪一个？
 
 | 应用 | 最适合 | 心理健康评分 | 价格 |
@@ -169,6 +177,8 @@ export const bestAstrologyAppsZh: WikiArticle = {
 
 ---
 
+
+![五款占星应用的用途、心理健康评分与价格一览：Co-Star、The Pattern、CHANI、TimePassages 和 AstrologyWiki。](/images/psych/best-astrology-mental-health-apps-i0-zh.svg)
 ## 选择标准
 
 我们根据影响来评估这些工具：
@@ -256,6 +266,8 @@ AstrologyWiki采用不同的方法。它不是你下载来无限刷屏的"应用
 ---
 
 ## 结论：预测 vs 反思
+
+![以预测为主的被动消费与以反思为主的主动日记的对比图。](/images/psych/best-astrology-mental-health-apps-i1-zh.svg)
 
 被动消费占星术可能产生依赖。主动日记建立主动性。
 

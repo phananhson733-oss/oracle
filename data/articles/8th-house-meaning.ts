@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const eighthHouseMeaningEn: WikiArticle = {
   slug: "8th-house-meaning",
+  image: "/images/houses/8th-house-meaning.jpg",
+  image_alt: "A lantern-glow lighting part of a dark shore while a shadowed zone hides submerged roots, a buried key, and a sunken vessel.",
   title: "The 8th House Meaning Your Ascendant Can't See",
   description: "The 8th House is the sector of a birth chart that governs what we share, surrender, and transform rather than what we own alone. Placed within pillar guide...",
   authorId: "julian-thorne",
@@ -39,6 +41,8 @@ The 8th house meaning becomes clearer when you set it beside the houses it is mo
 2. **The 8th versus the 7th House.** The 7th house operates at the level of the visible partnership — the contract, the first meeting, the mirror you see yourself in — whereas the 8th works beneath it, in the psychological exchange that only begins once the introductions are over. Choosing the 8th's intimacy over the 7th's clarity gets you genuine bonding, but you sacrifice the safe distance a formal, well-defined relationship keeps in place. The 7th asks who you are with; the 8th asks what the two of you become once the guard finally drops.
 3. **The 8th versus the 12th House.** Both store material the Ascendant cannot easily see, yet the 12th tends toward dissolution and the collective, while the 8th concentrates intensity into a single charged exchange between two people. Leaning on the 8th rather than the 12th gets you change through direct contact, at the cost of the quieter peace that comes from simply letting go. In practice the 12th feels like a tide you dissolve into, while the 8th feels like a current that runs between you and one other person.
 
+
+![Comparison of the 2nd house sole ownership, 7th house visible partnership, and 8th house merged depths](/images/houses/8th-house-meaning-i0-en.svg)
 ## How to Read The 8th House in Your Chart
 
 Reading the 8th house meaning in your own chart works best as a single observe-then-apply sequence rather than a list of fixed traits, because a house this far inside your blind spot rarely announces itself directly. Instead of staring at the 8th and waiting for insight, you trace it through the parts of the chart you can already see:
@@ -51,6 +55,8 @@ Reading the 8th house meaning in your own chart works best as a single observe-t
 
 Run this sequence once and the house stops being an abstract symbol; it becomes a specific behavior you can point to in your own recent past, which is exactly the bridge the blind spot keeps missing.
 
+
+![Five-step sequence for tracing the 8th house: cusp ruler, its house, planets, a real situation, naming the strength](/images/houses/8th-house-meaning-i1-en.svg)
 ## Common Misreadings
 
 Most confusion about the 8th house meaning comes from a handful of popular shortcuts that flatten the house into something either lurid or frightening. Each of the most common misreadings is worth correcting on its own terms:
@@ -111,6 +117,8 @@ Once you have traced your 8th-house ruler and matched it to a real situation, se
 
 export const eighthHouseMeaningZh: WikiArticle = {
   slug: "8th-house-meaning",
+  image: "/images/houses/8th-house-meaning.jpg",
+  image_alt: "一盏灯光只照亮黑暗岸边的一隅，旁边的阴影区藏着沉没的根系、一把埋藏的钥匙和半沉的器皿。",
   title: "读懂第八宫代表什么，找回那块你看不见的力量",
   description: "第八宫（The 8th House）是星盘里掌管深度亲密、共享资源与心理转化的那一块区域。它不只关乎你一个人能掌控什么，更处理两个人之间深层的捆绑与交换。",
   authorId: "julian-thorne",
@@ -151,6 +159,8 @@ export const eighthHouseMeaningZh: WikiArticle = {
 1. **和第二宫比。** 两者是同一条资源轴的两端：第二宫（详见 [第二宫含义解析](/zh/wiki/astrology-houses)）管「我自己的」，靠攥紧来建立安全感；第八宫管「我们共有的、对方的」，靠交付来运转。要得到第八宫那种深度联结，你就得放掉第二宫式的全盘掌控——想要融合，就要牺牲一部分「全由我说了算」。
 2. **和第七宫比。** 第七宫是关系里你看得见、能选择的那层——你被谁吸引、和谁签约；第八宫是签约之后才浮现的那层——共享账户、彼此的底牌、深夜里的真实。停在第七宫的体面与对等，你换来清爽的边界，却会错过交底式的亲密；愿意往第八宫走，亲密更深，代价是得承担被看穿、被影响的风险。
 
+
+![第二宫（独自拥有）、第七宫（可见伴侣关系）与第八宫（深层交融）的对照图](/images/houses/8th-house-meaning-i0-zh.svg)
 ## 如何在你的星盘里识别 The 8th House
 
 想认出第八宫在你身上怎么运作，与其背特质表，不如回看几个真实场景——它通常藏在你「表现得比预期更好」的时刻里：
@@ -162,6 +172,8 @@ export const eighthHouseMeaningZh: WikiArticle = {
 
 观察到之后，下一步是认领：把这些「危机里才冒出来的我」当成核心能力的一部分，而不是偶然走运。这一步，就是把盲区里的力量带进日常意识的方法。
 
+
+![追踪第八宫的五步：宫头主星、主星落宫、宫内行星、真实场景、说出力量](/images/houses/8th-house-meaning-i1-zh.svg)
 ## 常见误读
 
 关于第八宫代表什么，流传很广的几种说法其实都偏了：

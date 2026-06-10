@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const anuradhaNakshatraEn: WikiArticle = {
   slug: "anuradha-nakshatra",
+  image: "/images/nakshatra/anuradha-nakshatra.jpg",
+  image_alt: "Braided golden threads form an archway over dark water framing a shared star, backed by a ringed planet",
   title: "Anuradha Nakshatra and the Devotion That Builds Lasting Alliances",
   description: "Anuradha Nakshatra is the seventeenth lunar mansion in Vedic astrology, sitting in the heart of Scorpio and ruled by Saturn, with the deity Mitra as its",
   authorId: "aditi-sharma",
@@ -45,6 +47,8 @@ The same trade-off runs inside the placement itself. The way it functions, loyal
 
 The trade-off is easy to see in practice. In a workplace, the Anuradha-flavored colleague is the one who quietly keeps a project alive long after the excitement fades, holding the team together through the dull middle stretch — but may struggle to claim credit or push for a promotion the way a more status-driven placement would. In friendship, the same person remembers the anniversary of a loss and shows up a year later; the cost is that they can stay loyal to a draining relationship past the point where discernment would say to step back. Strength and shadow share the same root.
 
+
+![Anuradha's Saturn-built durable loyalty compared with Jyeshtha's Mercury-led visible authority](/images/nakshatra/anuradha-nakshatra-i0-en.svg)
 ## How to Read Anuradha in Your Chart
 
 In a birth chart, the Moon's placement is what sets someone in this lunar mansion, and a handful of signals tend to stand out:
@@ -57,6 +61,8 @@ In a birth chart, the Moon's placement is what sets someone in this lunar mansio
 
 None of these signals work in isolation. Read together, they describe someone whose care is steady, structured, and aimed at something beyond themselves — and whose growth edge is learning when devotion has stopped serving that larger aim. The chart shows the placement; honest reflection shows how it is actually being used.
 
+
+![Five chart signals of Anuradha: Scorpio span, follow-through, mission-driven bonds, gripping shadow, Saturn themes](/images/nakshatra/anuradha-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 Most surface-level takes on Anuradha Nakshatra get a few things backward, and the corrections matter because readers usually arrive already stuck on them:

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const northNodeVsSouthNodeEn: WikiArticle = {
   slug: "north-node-vs-south-node",
+  image: "/images/nodes/north-node-vs-south-node.jpg",
+  image_alt: "A polished sphere over a worn path and a half-formed sphere over open ground, joined by one axis of light across the sky.",
   title: "How North Node vs South Node Maps Your Growth Edge",
   description:
     "North Node vs South Node describes the two opposite points where the Moon's orbit crosses the Sun's apparent path, read in astrology as a single growth axis...",
@@ -32,6 +34,8 @@ North Node vs South Node describes the two opposite points where the Moon's orbi
 - The North Node marks an underdeveloped direction that feels unfamiliar and worth practicing
 - Read as one axis, never as two isolated traits, because each side defines the other
 
+
+![The South Node comfort pole and the North Node growth pole compared as one axis](/images/nodes/north-node-vs-south-node-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 Understanding North Node vs South Node matters because students often struggle to trust nodal readings at all, since the historical traditions hand down contradictory definitions and leave the reader unsure which one to believe. Some lineages treat the nodes as essential karmic indicators; others have technically rejected them as abstract calculated points with no real influence. That gap is the friction most people carry into a search, and it shows up in a few recognizable ways:
@@ -52,6 +56,8 @@ The North Node and South Node are often confused with adjacent chart features, s
 
 The practical takeaway from these contrasts is that the axis answers a different question than its neighbors. A planet or a sign tells you what you are like, while the nodes tell you which way your development leans over a long horizon. The clearest test is the timescale: a sign or planet describes something true of you on any given day, whereas the axis only resolves when you watch it play out across years and even decades. Keeping the axis in its own lane, set against these adjacent placements rather than blended into them, is what lets a nodal reading stay precise instead of collapsing into a generic personality sketch.
 
+
+![Comparison of what a natal planet, a transit, and the nodal axis each answer in a chart](/images/nodes/north-node-vs-south-node-i1-en.svg)
 ## How to Read North Node vs South Node in Yourself
 
 Reading the North Node and South Node in yourself starts with noticing the difference between what drains you when overused and what stretches you when attempted, since that contrast is where the axis becomes observable in ordinary life. You are not looking for a dramatic revelation; you are looking for the quiet, repeated tug between a familiar move and an unfamiliar one. Watch for these signals:
@@ -64,6 +70,8 @@ Reading the North Node and South Node in yourself starts with noticing the diffe
 
 None of these signals is meant to be read once and filed away. The point of observing first is that the same scene can read differently depending on the day: a strength that feels like overuse during a stressful month can feel like steady ground during a calm one. Returning to these cues over time, rather than locking in a single verdict, is what turns observation into a usable practice.
 
+
+![Five observable signals for reading your own nodal axis](/images/nodes/north-node-vs-south-node-i2-en.svg)
 ## Common Misreadings
 
 Most popular write-ups flatten the North Node and South Node into slogans, and those shortcuts are exactly what trip up the readers who come looking for clarity. The modern internet leans almost entirely on a tidy "soul purpose" story, which sounds reassuring but skips the historical skepticism and the technical debates that make a careful reading possible. Each misreading has a more accurate version underneath it:
@@ -124,6 +132,8 @@ Open your birth chart and locate your North Node by sign, then read one worked e
 
 export const northNodeVsSouthNodeZh: WikiArticle = {
   slug: "north-node-vs-south-node",
+  image: "/images/nodes/north-node-vs-south-node.jpg",
+  image_alt: "一颗圆润成形的星体悬在熟悉的旧路上方，一颗半成形的星体悬在开阔空地上方，二者被一条贯穿夜空的光轴相连。",
   title: "北交点和南交点，说的是成长方向而不是写好的命",
   description:
     "北交点和南交点（North Node 与 South Node）是星盘上一对标记成长方向与舒适区的相对点。它们不是行星，而是月亮轨道与黄道相交算出来的两个点，所以又叫月亮交点，始终相隔一百八十度，构成一条慢慢平衡的轴。读懂这对交点的关键，是把它放回整张盘里看，可以先翻一翻 出生星盘入门总览 pillar...",
@@ -152,6 +162,8 @@ export const northNodeVsSouthNodeZh: WikiArticle = {
 - 北交点：陌生、做起来有点别扭，却值得刻意练习的方向
 - 两端是一条要来回平衡的轴，而不是非此即彼的二选一
 
+
+![南交点舒适端与北交点成长端的同轴对照图](/images/nodes/north-node-vs-south-node-i0-zh.svg)
 ## 为什么了解它能帮助自我觉察
 
 理解北交点和南交点（North Node 与 South Node），最实际的用处是帮你分清「哪些事我做起来顺手、哪些方向我一直在绕开」。很多刚接触的人会卡在一组矛盾里，看得越多反而越不敢下判断，困惑大致集中在几处：
@@ -181,6 +193,8 @@ export const northNodeVsSouthNodeZh: WikiArticle = {
 3. **回看一次真实成长。** 想想上一回你明显有长进，多半发生在你顶着别扭往陌生方向多走了一步的时候。
 4. **留意通勤与开会里的小习惯。** 比如每次开会都埋头把方案做细，却绕开当众把观点讲明白，这种偏好就是线索。
 
+
+![识别自己交点轴的五个观察信号](/images/nodes/north-node-vs-south-node-i2-zh.svg)
 ## 常见误读
 
 围绕北交点和南交点（North Node 与 South Node），大众内容里最常见几种误读，逐条对照一下：

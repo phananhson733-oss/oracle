@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const astrologyHousesEn: WikiArticle = {
   slug: "astrology-houses",
+  image: "/images/houses/astrology-houses.jpg",
+  image_alt: "Twelve soft pools of glowing light spaced across the night sky with small gold planets drifting between them, over a wide valley.",
   title: "How to Read the Astrology Houses as Living Patterns, Not Fixed Fate",
   description: "The astrological houses are the twelve divisions of a birth chart, each one mapping a different arena of lived experience (identity, money, relationships,...",
   authorId: "julian-thorne",
@@ -47,6 +49,8 @@ A second comparison sits one level deeper, at the choice of house system. Whole-
 
 This trade-off is not academic, because it changes readings. A planet sitting late in one sign can land in different houses depending on the system you pick, which means the same birth data can highlight career in one chart and partnership in another. Whole-sign keeps the boundaries intuitive but may understate that a planet feels angular and prominent; Placidus captures that prominence but asks more of a beginner. The practical move is to choose one system, stay consistent, and note what each choice quietly emphasizes or hides.
 
+
+![Comparison of zodiac signs as style versus houses as the life setting where style lands](/images/houses/astrology-houses-i1-en.svg)
 ## How to Read the Astrological Houses in Your Chart
 
 Reading the astrology houses in your own chart works best as a repeatable sequence rather than a memory test. Find one placement, then walk these five steps in order:
@@ -59,6 +63,8 @@ Reading the astrology houses in your own chart works best as a repeatable sequen
 
 Run this loop on three or four placements and the chart stops being a wall of symbols; it becomes a set of readable, working sentences you can return to. The sequence is deliberately modular, so the same five steps apply whether you are decoding a cluster of planets in the 10th house or a lone planet tucked into the 12th. That is what lets a beginner scale from a single placement to a whole chart without memorizing a hundred separate verdicts.
 
+
+![Five-step sequence for reading a house placement: house, sign, planet, synthesis, growth question](/images/houses/astrology-houses-i0-en.svg)
 ## Common Misreadings
 
 The most common misreadings of the astrology houses all stem from treating them as fixed verdicts instead of a working syntax. Three trip up beginners more than any others:
@@ -79,6 +85,8 @@ Underneath all three lies the same root error the beginner friction points to: s
 | 8th house | Governs shared resources, intimacy, and transformation | Scorpio / Pluto | Notice what intensifies when trust and money mix |
 | 10th house (Midheaven) | Directs public role, reputation, and long-arc goals | Capricorn / Saturn | See where others expect you to carry responsibility |
 
+
+![Five key houses with their domains and natural rulers, from the Ascendant to the Midheaven](/images/houses/astrology-houses-i2-en.svg)
 ## Questions People Ask About the Astrological Houses
 
 **What are the houses in astrology, in plain terms?**
@@ -125,6 +133,8 @@ Ready to see the syntax of The Astrological Houses in motion? Read the [8th Hous
 
 export const astrologyHousesZh: WikiArticle = {
   slug: "astrology-houses",
+  image: "/images/houses/astrology-houses.jpg",
+  image_alt: "广阔山谷夜空中，十二处柔和的发光区域如点亮的窗，几颗金色小行星在其间游走，像穿行于一个个房间。",
   title: "读懂占星宫位，行星和星座才拼得成一句完整的话",
   description: "占星宫位（astrology houses）是星盘里把天空划分出的十二个生活领域。说到底，它是一张标记人生各领域的分区地图。",
   authorId: "julian-thorne",
@@ -168,6 +178,8 @@ export const astrologyHousesZh: WikiArticle = {
 
 宫位和相位则是「场地」和「对话」的差别：宫位告诉你能量在哪块生活里活动，相位告诉你不同行星之间是合作还是较劲。想看清一段内在张力怎么来的，就得去读相位；可只追着相位跑，又会丢掉「这场张力砸在哪块领域」的着陆点——要得到关系网的全貌，就要牺牲对单一领域的聚焦。也正因如此，Robert Hand 这类作者特别提醒：天空的分法不止一种，不同分宫法可能让同一颗行星落进相邻的宫，所以宫位边界附近的配置尤其要慎读。
 
+
+![星座（风格）与宫位（生活场域）的对照图](/images/houses/astrology-houses-i1-zh.svg)
 ## 如何在你的星盘里识别 The Astrological Houses
 
 要在星盘里认出占星宫位并真正用起来，关键是把它读成一句话的语法：行星是「谁」，星座是「用什么方式」，宫位是「在哪块生活里」。星盘十二宫就像十二个舞台，按下面的顺序拼，解读就成形了：
@@ -178,6 +190,8 @@ export const astrologyHousesZh: WikiArticle = {
 4. 拼成一句话：比如火星在事业宫，用摩羯式的务实稳健去推进。
 5. 遇到空宫别慌：没有行星，不代表那块生活是空的或有缺陷。
 
+
+![读宫位的五步流程图：宫位、星座、行星、合成一句话、成长之问](/images/houses/astrology-houses-i0-zh.svg)
 ## 常见误读
 
 关于占星宫位，最常见的误读集中在这几处，先点破再说清：
@@ -198,6 +212,8 @@ export const astrologyHousesZh: WikiArticle = {
 | 第十宫 | 事业、社会角色、公众形象 | 摩羯 | 看天顶（MC）落点和十宫内行星 |
 | 第十二宫 | 潜意识、独处、收尾与放下 | 双鱼 | 看十二宫内行星和宫头星座 |
 
+
+![五个关键宫位及其主管领域与自然守护：从上升点到天顶](/images/houses/astrology-houses-i2-zh.svg)
 ## 关于 The Astrological Houses 的常见问题
 
 **宫位和星座到底有什么区别？**

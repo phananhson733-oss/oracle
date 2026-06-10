@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const auraReadingEn: WikiArticle = {
   slug: "aura-reading",
+  image: "/images/charts/aura-reading.jpg",
+  image_alt: "Tactile ripple rings spread from a warm core while faint aura colors only begin to form at the edge",
   title: "Aura Reading Starts With Feeling, Not Seeing",
   description: "Aura reading is the practice of sensing and interpreting the energy field that many traditions believe surrounds a living body, then matching what you...",
   authorId: "elena-vane",
@@ -47,6 +49,8 @@ This practice is easy to confuse with two close neighbors, and the clearest way 
 
 Chakra-based reading, the lineage Anodea Judith helped systematize and that early aura writers like Charles Leadbeater described long before, works from the inside out. You locate energy at named centers — the throat, the heart, the solar plexus — and interpret from there. To get that structured map, you give up some of the loose, whole-body intuition that open reading allows; the structure can box you in if you force every sensation into a named center. A practical beginner path borrows from both: use the scaffolding of a [throat chakra explainer](/en/wiki/chakra-system-overview) to anchor what you feel, then let the felt sense lead. The trade-off worth remembering is that no single method gives you everything — precision and looseness pull against each other, and beginners do best holding both lightly.
 
+
+![Felt aura reading compared with aura photography and chakra-based reading](/images/charts/aura-reading-i1-en.svg)
 ## How to Read Aura Reading in Yourself
 
 In my eight years of reading auras professionally, in the hands-on tradition Barbara Ann Brennan helped popularize, the beginners who broke through were the ones who stopped staring and started sensing. The fastest way past the no-sight wall is to read your own energy as pure sensation first, then add color last. Work in this order:
@@ -59,6 +63,8 @@ In my eight years of reading auras professionally, in the hands-on tradition Bar
 
 The point of the log is repetition. A felt impression you have noticed thirty times becomes a reliable signal; one you glimpsed once stays a guess. Beginners often expect a dramatic visual breakthrough, but the real shift is subtler: you start trusting the body data you were already collecting and simply ignoring.
 
+
+![Five-step felt-first aura practice, from body scan to comparing days](/images/charts/aura-reading-i0-en.svg)
 ## Common Misreadings
 
 Most beginner frustration with reading auras traces back to a handful of myths that the popular write-ups repeat and never correct. Clearing them up early saves months of feeling like you are doing it wrong:
@@ -125,6 +131,8 @@ Once the felt layer clicks, the natural next step is learning to name what you s
 
 export const auraReadingZh: WikiArticle = {
   slug: "aura-reading",
+  image: "/images/charts/aura-reading.jpg",
+  image_alt: "暖色核心向外扩散触感般的涟漪，气场颜色才刚在边缘隐约成形",
   title: "学气场解读，先靠感受而不是急着看见颜色",
   description: "Aura Reading（气场解读）是一套先靠体感、再靠颜色联想去读懂当下能量的方法。气场（aura，西方灵性圈用来描述围绕身体的能量场概念，也常被译成光环或磁场）在这套体系里被当成会变化的状态，而不是贴死的身份标签。想横向比较每种颜色分别代表什么，可以先看 气场颜色总览 pillar...",
   authorId: "elena-vane",
@@ -176,6 +184,8 @@ Aura Reading（气场解读）是一套先靠体感、再靠颜色联想去读�
 4. 别急着解释，先把那个颜色和对应的身体感受记下来。
 5. 一周后回看记录，留意同一种颜色常配着哪类场景。
 
+
+![从身体扫描到对比回看的五步体感练习](/images/charts/aura-reading-i0-zh.svg)
 ## 常见误读
 
 关于气场解读（Aura Reading），坊间流传的几个说法特别容易把新手带偏：

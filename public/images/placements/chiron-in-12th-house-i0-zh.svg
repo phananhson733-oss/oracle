@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="同一宫位里的两股潜流">
+  <defs>
+    <linearGradient id="chironin12thhouse0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="chironin12thhouse0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="chironin12thhouse0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chironin12thhouse0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chironin12thhouse0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chironin12thhouse0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#chironin12thhouse0zh-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#chironin12thhouse0zh-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#chironin12thhouse0zh-neb2)"/>
+  <circle cx="395.5" cy="226.6" r="1.49" fill="#cfc8ea" opacity="0.23"/><circle cx="83.2" cy="362.5" r="0.66" fill="#cfc8ea" opacity="0.27"/><circle cx="100.0" cy="129.3" r="1.15" fill="#cfc8ea" opacity="0.26"/><circle cx="366.0" cy="277.5" r="0.81" fill="#cfc8ea" opacity="0.27"/><circle cx="708.7" cy="258.4" r="1.11" fill="#cfc8ea" opacity="0.50"/><circle cx="81.8" cy="191.5" r="1.53" fill="#cfc8ea" opacity="0.22"/><circle cx="14.7" cy="269.0" r="1.16" fill="#cfc8ea" opacity="0.22"/><circle cx="638.5" cy="297.4" r="0.61" fill="#cfc8ea" opacity="0.37"/><circle cx="187.0" cy="23.1" r="1.42" fill="#cfc8ea" opacity="0.28"/><circle cx="298.1" cy="279.1" r="1.04" fill="#cfc8ea" opacity="0.44"/><circle cx="592.2" cy="410.1" r="1.64" fill="#cfc8ea" opacity="0.54"/><circle cx="274.7" cy="115.6" r="0.58" fill="#cfc8ea" opacity="0.39"/><circle cx="413.8" cy="153.0" r="1.11" fill="#cfc8ea" opacity="0.14"/><circle cx="351.0" cy="397.1" r="1.45" fill="#cfc8ea" opacity="0.44"/><circle cx="515.5" cy="210.3" r="0.42" fill="#cfc8ea" opacity="0.26"/><circle cx="254.9" cy="61.4" r="0.84" fill="#cfc8ea" opacity="0.31"/><circle cx="323.2" cy="94.2" r="1.66" fill="#cfc8ea" opacity="0.25"/><circle cx="178.3" cy="317.2" r="0.79" fill="#cfc8ea" opacity="0.38"/><circle cx="219.8" cy="134.3" r="1.15" fill="#cfc8ea" opacity="0.35"/><circle cx="45.7" cy="119.2" r="0.49" fill="#cfc8ea" opacity="0.46"/><circle cx="247.2" cy="354.6" r="1.34" fill="#cfc8ea" opacity="0.52"/><circle cx="467.7" cy="264.7" r="0.80" fill="#cfc8ea" opacity="0.37"/><circle cx="460.9" cy="318.6" r="1.19" fill="#cfc8ea" opacity="0.45"/><circle cx="703.9" cy="364.2" r="0.59" fill="#cfc8ea" opacity="0.16"/><circle cx="275.0" cy="127.0" r="0.51" fill="#cfc8ea" opacity="0.26"/><circle cx="258.9" cy="338.0" r="1.28" fill="#cfc8ea" opacity="0.25"/><circle cx="605.1" cy="105.8" r="0.48" fill="#cfc8ea" opacity="0.38"/><circle cx="511.0" cy="380.2" r="0.71" fill="#cfc8ea" opacity="0.42"/><circle cx="293.8" cy="57.0" r="0.87" fill="#cfc8ea" opacity="0.36"/><circle cx="147.9" cy="110.8" r="1.15" fill="#cfc8ea" opacity="0.39"/><circle cx="424.9" cy="278.6" r="1.16" fill="#cfc8ea" opacity="0.34"/><circle cx="125.5" cy="192.6" r="1.13" fill="#cfc8ea" opacity="0.30"/><circle cx="436.6" cy="242.3" r="1.14" fill="#cfc8ea" opacity="0.40"/><circle cx="568.7" cy="160.9" r="0.83" fill="#cfc8ea" opacity="0.40"/><circle cx="535.3" cy="29.2" r="0.61" fill="#cfc8ea" opacity="0.17"/><circle cx="564.8" cy="302.8" r="0.74" fill="#cfc8ea" opacity="0.16"/><circle cx="107.5" cy="73.8" r="1.13" fill="#cfc8ea" opacity="0.51"/><circle cx="272.6" cy="216.6" r="0.68" fill="#cfc8ea" opacity="0.14"/><path d="M 469.1788287907839 164.7 L 469.8 168.0 L 473.0 168.57093872665428 L 469.8 169.2 L 469.1788287907839 172.4 L 468.6 169.2 L 465.3 168.57093872665428 L 468.6 168.0 Z" fill="#f6e6bf" opacity="0.7046605632407591"/><path d="M 246.16621834784746 192.2 L 246.7 194.8 L 249.3 195.26493668439798 L 246.7 195.8 L 246.16621834784746 198.4 L 245.7 195.8 L 243.1 195.26493668439798 L 245.7 194.8 Z" fill="#f6e6bf" opacity="0.564134532562457"/><path d="M 267.4849686026573 169.2 L 268.1 172.2 L 271.1 172.79269634908997 L 268.1 173.4 L 267.4849686026573 176.4 L 266.9 173.4 L 263.9 172.79269634908997 L 266.9 172.2 Z" fill="#f6e6bf" opacity="0.7201668745605275"/><path d="M 592.8144294545054 89.4 L 593.4 92.5 L 596.5 93.07261967728846 L 593.4 93.7 L 592.8144294545054 96.7 L 592.2 93.7 L 589.2 93.07261967728846 L 592.2 92.5 Z" fill="#f6e6bf" opacity="0.6190078133484349"/><path d="M 140.5709808319807 319.5 L 141.2 322.6 L 144.3 323.1567183972802 L 141.2 323.7 L 140.5709808319807 326.8 L 140.0 323.7 L 136.9 323.1567183972802 L 140.0 322.6 Z" fill="#f6e6bf" opacity="0.7373805192066356"/><path d="M 413.8 153.0 L 460.9 318.6 L 275.0 127.0 L 568.7 160.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">同一宫位里的两股潜流</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#chironin12thhouse0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#chironin12thhouse0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">凯龙在十二宫</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">把伤痛与敏感压进幕后</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">替别人的痛而痛</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">课题：我不敢提的痛</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">火星在十二宫</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">把行动力与愤怒压进幕后</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">使劲不让人看见，火气向内</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">课题：我不敢使的力</text>
+  <path d="M 280.025 416.4 L 280.4 418.6 L 282.6 419 L 280.4 419.4 L 280.025 421.6 L 279.6 419.4 L 277.4 419 L 279.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 416.4 L 480.4 418.6 L 482.6 419 L 480.4 419.4 L 479.975 421.6 L 479.6 419.4 L 477.4 419 L 479.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

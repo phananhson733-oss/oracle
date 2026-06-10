@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const howToFindNorthNodeEn: WikiArticle = {
   slug: "how-to-find-north-node",
+  image: "/images/nodes/how-to-find-north-node.jpg",
+  image_alt: "A luminous gold arc sweeping from a faint point on the ground up to one bright star high in the night sky.",
   title: "How to Find North Node Placements You Can Actually Trust",
   description:
     "The North Node is the point where the Moon's orbit crosses the ecliptic heading north, and in a birth chart it marks the growth direction you are still...",
@@ -46,6 +48,8 @@ Working out how to find north node positions differs from reading a planet, beca
 2. **True node vs mean node.** The mean node is a smoothed average that drifts steadily backward through the zodiac, while the true node is the Moon's exact, gently oscillating position; as technical astrologers like Robert Hand have detailed, the two normally agree within a degree or two. To gain the astronomical precision of the true node, you give up the clean, even motion the mean node shows, and most modern software quietly defaults to the true setting. The trade-off only becomes visible near a sign boundary, where that small gap can place your node in one sign or the next.
 3. **The node vs a personality placement.** A Sun or Moon sign describes how you tend to operate right now, whereas the North Node describes where growth tends to pull you over time. The difference is one of tense, not category — present habit versus future direction. To read the node as a current trait, you would have to surrender the single thing it actually offers, which is a sense of direction rather than a description of who you already are.
 
+
+![Comparison of the true node and mean node calculation settings, which normally agree within a degree or two](/images/nodes/how-to-find-north-node-i0-en.svg)
 ## How to Read The North Node in Your Chart
 
 The practical answer to how to find north node placements comes down to a short, repeatable sequence rather than a single lookup, and once you have the sign you can pair it with a [north node by sign meanings guide](/en/wiki/north-node-vs-south-node) to interpret it:
@@ -58,6 +62,8 @@ The practical answer to how to find north node placements comes down to a short,
 
 Run through these once and the result stops feeling fragile. The order matters: you confirm the sign, settle the true-or-mean question, and only then move on to interpretation, so a calculator quirk never derails the reading before it has a chance to start. Most people who feel stuck have simply skipped the third step and never noticed which setting their chart used.
 
+
+![Five-step sequence for locating a trustworthy North Node placement](/images/nodes/how-to-find-north-node-i1-en.svg)
 ## Common Misreadings of the North Node
 
 Most trouble with how to find north node settings comes from a handful of repeatable mistakes, and each has a clean correction:
@@ -122,6 +128,8 @@ Once you have located your node's sign and house, read both ends of the axis tog
 
 export const howToFindNorthNodeZh: WikiArticle = {
   slug: "how-to-find-north-node",
+  image: "/images/nodes/how-to-find-north-node.jpg",
+  image_alt: "开阔夜景，一道发光的金色弧线自地面微光点扬起，越过夜空射向高处一颗明亮的星。",
   title: "北交点怎么找，一套绕开真假交点的定位方法",
   description:
     "The North Node（北交点）是月亮轨道与黄道相交时朝北的那个点，象征你这一生要主动发展的方向。它和南交点是一条轴的两端，想先看清整条轴怎么运作，可以对照 月交点轴线总览 pillar 页，那里把南北交点放在一起讲。用一句话概括，北交点是你星盘里标记此生成长方向的点位。",
@@ -167,6 +175,8 @@ The North Node（北交点）是月亮轨道与黄道相交时朝北的那个点
 
 如果你已经定位好星座，想知道每个星座的北交点各代表什么，可以接着看 [北交点星座对照解读](/zh/wiki/north-node-vs-south-node)，把坐标读成具体的成长课题。
 
+
+![真交点与平交点两种计算方式的对照图，两者通常只差一两度](/images/nodes/how-to-find-north-node-i0-zh.svg)
 ## 如何在你的星盘里识别 The North Node
 
 定位北交点不靠玄感，靠的是几个可操作的步骤，照着做就能在星盘里把它认出来：
@@ -177,6 +187,8 @@ The North Node（北交点）是月亮轨道与黄道相交时朝北的那个点
 4. **读出星座和宫位。** 符号落在哪个星座、第几宫，就是你北交点的星座与宫位。
 5. **顺手记下南交点。** 它一定在正对面的星座和宫位，一起记下，方便后续解读。
 
+
+![定位可信北交点的五步流程图](/images/nodes/how-to-find-north-node-i1-zh.svg)
 ## 常见误读
 
 大众内容里关于北交点的说法，常把人带进几个坑，逐条对照一下：

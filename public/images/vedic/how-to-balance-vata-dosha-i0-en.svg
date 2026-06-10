@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="Five Signals of High Vata">
+  <defs>
+    <linearGradient id="howtobalancevatadosha0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="howtobalancevatadosha0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="howtobalancevatadosha0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howtobalancevatadosha0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howtobalancevatadosha0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="howtobalancevatadosha0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#howtobalancevatadosha0en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#howtobalancevatadosha0en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#howtobalancevatadosha0en-neb2)"/>
+  <circle cx="182.6" cy="353.9" r="1.14" fill="#cfc8ea" opacity="0.33"/><circle cx="628.5" cy="26.4" r="0.87" fill="#cfc8ea" opacity="0.34"/><circle cx="436.6" cy="346.6" r="1.23" fill="#cfc8ea" opacity="0.53"/><circle cx="90.0" cy="212.3" r="0.60" fill="#cfc8ea" opacity="0.18"/><circle cx="295.8" cy="123.9" r="1.40" fill="#cfc8ea" opacity="0.43"/><circle cx="355.3" cy="16.2" r="0.76" fill="#cfc8ea" opacity="0.47"/><circle cx="379.7" cy="48.6" r="1.38" fill="#cfc8ea" opacity="0.28"/><circle cx="321.2" cy="18.9" r="1.38" fill="#cfc8ea" opacity="0.14"/><circle cx="331.1" cy="66.3" r="0.96" fill="#cfc8ea" opacity="0.45"/><circle cx="132.0" cy="29.0" r="0.65" fill="#cfc8ea" opacity="0.24"/><circle cx="670.7" cy="51.0" r="0.86" fill="#cfc8ea" opacity="0.49"/><circle cx="724.6" cy="145.8" r="0.71" fill="#cfc8ea" opacity="0.48"/><circle cx="722.8" cy="119.2" r="1.01" fill="#cfc8ea" opacity="0.19"/><circle cx="480.6" cy="281.2" r="0.90" fill="#cfc8ea" opacity="0.32"/><circle cx="367.1" cy="45.3" r="0.79" fill="#cfc8ea" opacity="0.51"/><circle cx="684.0" cy="110.7" r="0.73" fill="#cfc8ea" opacity="0.34"/><circle cx="59.3" cy="363.5" r="1.30" fill="#cfc8ea" opacity="0.52"/><circle cx="174.0" cy="404.7" r="1.06" fill="#cfc8ea" opacity="0.34"/><circle cx="161.4" cy="362.4" r="1.28" fill="#cfc8ea" opacity="0.49"/><circle cx="133.8" cy="36.3" r="1.01" fill="#cfc8ea" opacity="0.40"/><circle cx="477.4" cy="48.3" r="0.80" fill="#cfc8ea" opacity="0.19"/><circle cx="425.4" cy="248.6" r="1.26" fill="#cfc8ea" opacity="0.47"/><circle cx="139.3" cy="130.7" r="1.02" fill="#cfc8ea" opacity="0.41"/><circle cx="193.6" cy="211.8" r="0.42" fill="#cfc8ea" opacity="0.49"/><circle cx="156.2" cy="156.5" r="0.99" fill="#cfc8ea" opacity="0.19"/><circle cx="281.0" cy="322.2" r="1.21" fill="#cfc8ea" opacity="0.41"/><circle cx="77.1" cy="78.7" r="0.94" fill="#cfc8ea" opacity="0.29"/><circle cx="25.3" cy="156.4" r="1.16" fill="#cfc8ea" opacity="0.18"/><circle cx="340.3" cy="290.6" r="1.22" fill="#cfc8ea" opacity="0.49"/><circle cx="660.2" cy="300.3" r="1.52" fill="#cfc8ea" opacity="0.13"/><circle cx="358.5" cy="195.0" r="1.36" fill="#cfc8ea" opacity="0.27"/><circle cx="459.3" cy="159.9" r="1.31" fill="#cfc8ea" opacity="0.50"/><circle cx="37.7" cy="388.5" r="0.74" fill="#cfc8ea" opacity="0.22"/><circle cx="83.7" cy="250.0" r="1.27" fill="#cfc8ea" opacity="0.44"/><circle cx="301.2" cy="154.7" r="1.09" fill="#cfc8ea" opacity="0.34"/><circle cx="94.7" cy="190.2" r="1.53" fill="#cfc8ea" opacity="0.17"/><circle cx="301.1" cy="300.7" r="1.30" fill="#cfc8ea" opacity="0.27"/><path d="M 633.0646875780076 337.2 L 633.6 340.0 L 636.4 340.53028606437147 L 633.6 341.1 L 633.0646875780076 343.8 L 632.5 341.1 L 629.8 340.53028606437147 L 632.5 340.0 Z" fill="#f6e6bf" opacity="0.7173943712841719"/><path d="M 590.3487523104995 244.6 L 590.9 247.5 L 593.8 248.09729806240648 L 590.9 248.7 L 590.3487523104995 251.6 L 589.8 248.7 L 586.9 248.09729806240648 L 589.8 247.5 Z" fill="#f6e6bf" opacity="0.7335469348821789"/><path d="M 701.7884990107268 157.7 L 702.4 160.9 L 705.6 161.52086851745844 L 702.4 162.1 L 701.7884990107268 165.4 L 701.2 162.1 L 697.9 161.52086851745844 L 701.2 160.9 Z" fill="#f6e6bf" opacity="0.6129701254423707"/><path d="M 425.7969125267118 181.5 L 426.2 183.6 L 428.4 184.05605595652014 L 426.2 184.5 L 425.7969125267118 186.7 L 425.4 184.5 L 423.2 184.05605595652014 L 425.4 183.6 Z" fill="#f6e6bf" opacity="0.6742701050359756"/><path d="M 300.9037684779614 135.9 L 301.4 138.7 L 304.2 139.21802403964102 L 301.4 139.8 L 300.9037684779614 142.6 L 300.4 139.8 L 297.6 139.21802403964102 L 300.4 138.7 Z" fill="#f6e6bf" opacity="0.7952781181316823"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signals of High Vata</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#howtobalancevatadosha0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#howtobalancevatadosha0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#howtobalancevatadosha0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#howtobalancevatadosha0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Racing thoughts at rest</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The mind speeds up the moment you sit still</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#howtobalancevatadosha0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#howtobalancevatadosha0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Skipped, drifting meals</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">You forget to eat, then grab food at random times</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#howtobalancevatadosha0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#howtobalancevatadosha0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Cold, dry, and fidgety</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cold hands and feet, dry skin, restless fidgeting</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#howtobalancevatadosha0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#howtobalancevatadosha0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Wired-but-tired sleep</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Exhausted yet alert, replaying the day in bed</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#howtobalancevatadosha0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#howtobalancevatadosha0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Burst-then-crash energy</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Projects start intense, then scatter before the finish</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

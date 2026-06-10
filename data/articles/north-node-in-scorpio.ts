@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const northNodeInScorpioEn: WikiArticle = {
   slug: "north-node-in-scorpio",
+  image: "/images/nodes/north-node-in-scorpio.jpg",
+  image_alt: "A stone vault door ajar beside deep still water, with a gold thread of light descending beneath the surface",
   title: "What the North Node in Scorpio Is Quietly Asking You to Risk",
   description:
     "North Node in Scorpio is the point in a birth chart that marks an unlived growth direction, one that leads away from material comfort and toward emotional...",
@@ -53,6 +55,8 @@ One caution keeps this honest: because the node points toward intensity, some pe
 
 Held together, these comparisons turn an abstract polarity into a daily choice you can feel rather than merely understand. The question the placement keeps asking is not whether you can survive change, but whether you are willing to enter it before circumstances force your hand. In practice the work tends to look ordinary rather than cinematic: one honest conversation instead of a comfortable silence, one shared decision instead of a guarded solo one, one possession or plan released without a replacement lined up first. None of this erases the steadiness the South Node built; it simply lets that steadiness become a foundation for depth rather than a wall against it.
 
+
+![Comparison of the Taurus south node comfort zone and the Scorpio north node pull toward depth and intimacy](/images/nodes/north-node-in-scorpio-i0-en.svg)
 ## How to Read North Node in Scorpio in Yourself
 
 Reading the Scorpio node in yourself starts with watching for the small, repeatable moments where the pull toward safety overrides the pull toward depth. The signals tend to be ordinary rather than dramatic, which is exactly why they are easy to miss:
@@ -63,6 +67,8 @@ Reading the Scorpio node in yourself starts with watching for the small, repeata
 4. **Closeness gets tested or rushed.** Observe whether you push intimacy to the point of rupture, or keep it shallow enough to stay in control.
 5. **Endings get postponed.** Catch the routine, item, or arrangement you have held long past its usefulness because letting go feels like losing everything.
 
+
+![Five everyday signals that the Scorpio north node pattern is active](/images/nodes/north-node-in-scorpio-i1-en.svg)
 ## Common Misreadings
 
 Most surface-level write-ups flatten the North Node in Scorpio into something tidier than it is, and those misreadings are usually what trap readers before they arrive here. Correcting them in order makes the placement usable rather than ominous:
@@ -123,6 +129,8 @@ Open your birth chart, locate the Scorpio-Taurus node axis, and [read the North 
 
 export const northNodeInScorpioZh: WikiArticle = {
   slug: "north-node-in-scorpio",
+  image: "/images/nodes/north-node-in-scorpio.jpg",
+  image_alt: "石造保险库微微敞开，一缕金光潜入深水之下",
   title: "读懂天蝎座北交点，把成长方向看成功课而非宿命",
   description:
     "天蝎座北交点（North Node in Scorpio）是占星里用来描述一条这辈子要往情感与转化方向成长的功课的说法，它不是某颗实体行星，而是月亮轨道与黄道的交点落在天蝎座的位置。它和对面的金牛座南交点是一组，南交点代表你早已熟练、待着很舒服的老路（看重稳定、占有、可掌控的安全感），而天蝎座北交点（North...",
@@ -170,6 +178,8 @@ export const northNodeInScorpioZh: WikiArticle = {
 
 所以问"哪条路更好"是个假命题。南交点的路你早就走熟了，舒服却原地踏步；北交点的路别扭却长进——功课不在于否定旧的，而在于把重心慢慢挪过去。
 
+
+![金牛座南交点舒适区与天蝎座北交点深度方向对照图](/images/nodes/north-node-in-scorpio-i0-zh.svg)
 ## 如何在自己身上识别 North Node in Scorpio
 
 天蝎座北交点（North Node in Scorpio）在真实生活里怎么认出来，可以对照下面几条信号，看哪几条像你：
@@ -180,6 +190,8 @@ export const northNodeInScorpioZh: WikiArticle = {
 4. 家庭聚会里你习惯当那个稳住场面、不动声色的人，宁可憋着也不愿先暴露情绪。
 5. 你常觉得日子过得稳，却隐隐有种"少了点什么真实的连接"的空。
 
+
+![天蝎座北交点模式的五个日常信号](/images/nodes/north-node-in-scorpio-i1-zh.svg)
 ## 常见误读
 
 围绕天蝎座北交点（North Node in Scorpio），浅层内容里有几个反复出现的误读，正好是把人困住的地方：

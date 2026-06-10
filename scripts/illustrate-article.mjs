@@ -91,12 +91,16 @@ function optimize(srcPath, slug) {
 function setHero(slug, url, altEn, altZh) {
   const file = path.join(articlesDir, `${slug}.ts`);
   let src = fs.readFileSync(file, 'utf8');
-  // Strip any prior image/image_alt fields (idempotent), across every export object.
-  src = src.replace(/\n  image: "[^"]*",(\n  image_alt: [^\n]*,)?/g, '');
-  const slugLine = `\n  slug: ${JSON.stringify(slug)},\n`;
-  let out = '', pos = 0, idx, count = 0;
-  while ((idx = src.indexOf(slugLine, pos)) >= 0) {
-    const end = idx + slugLine.length;
+  // Strip any prior image/image_alt fields (idempotent), across every export
+  // object. Quote-agnostic: some older articles use single-quoted string fields.
+  src = src.replace(/\n  image: ['"][^'"]*['"],(\n  image_alt: [^\n]*,)?/g, '');
+  // Match the slug line with EITHER quote style — single-quoted articles (older
+  // prettier config) otherwise silently fail to wire.
+  const slugRe = new RegExp(`\\n  slug: ['"]${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}['"],\\n`, 'g');
+  let out = '', pos = 0, m, count = 0;
+  while ((m = slugRe.exec(src)) !== null) {
+    const idx = m.index;
+    const end = idx + m[0].length;
     // language of the enclosing export = nearest preceding `export const <name>:`
     const decls = [...src.slice(0, idx).matchAll(/export const (\w+)\s*:/g)];
     const name = decls.length ? decls[decls.length - 1][1] : '';

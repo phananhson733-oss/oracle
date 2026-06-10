@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fullMoonEnergyEn: WikiArticle = {
   slug: "full-moon-energy",
+  image: "/images/moon/full-moon-energy.jpg",
+  image_alt: "A gold tide wave growing in amplitude beneath a full moon, showing how full moon energy amplifies what is already building",
   title: "Why Full Moon Energy Feels Amplified and How to Read It",
   description: "Full moon energy is the heightened emotional charge at the lunar cycle's brightest point.",
   authorId: "marcus-orion",
@@ -41,6 +43,8 @@ Full moon energy is easiest to understand next to the phases around it, building
 3. **Versus the waning phase.** Once the peak passes, the waning moon is about releasing and integrating what the light revealed. The full moon itself holds clarity and emotional charge in the very same moment. Leaning into the peak gets you the sharpest insight of the cycle, but the cost is the intensity that the calmer waning days simply do not carry.
 4. **Versus an ordinary mood swing.** An everyday mood swing has no predictable timing and tends to fade on its own. Full-moon reactivity often clusters around the same few days each month and echoes themes that began at the last new moon. Treating it as a cycle rather than random noise gets you a usable pattern, but you give up the easy excuse that it was "just a bad day."
 
+
+![Comparison of new moon, full moon, and waning phase energies: planting in darkness, full exposure and insight, then release and integration](/images/moon/full-moon-energy-i0-en.svg)
 ## How to Read full moon energy in Yourself
 
 Reading this energy in yourself is mostly about tracking timing and intensity, not hunting for dramatic omens. The clues are usually small and repeatable, so it helps to watch for the same handful of signals around the nights the moon looks full and bright:
@@ -51,6 +55,8 @@ Reading this energy in yourself is mostly about tracking timing and intensity, n
 4. **You feel "more," not different.** The peak tends to magnify your existing mood rather than hand you a brand-new one.
 5. **Endings feel timely.** You might find yourself wanting to finish, release, or close something you had been carrying for a while.
 
+
+![Five observable signals of full moon energy: lighter sleep, resurfacing feelings, uninvited clarity, amplified mood, and timely endings](/images/moon/full-moon-energy-i1-en.svg)
 ## Common Misreadings
 
 Most popular write-ups get this slightly wrong in ways that feed the exact shame people are searching to escape. A few misreadings come up again and again:

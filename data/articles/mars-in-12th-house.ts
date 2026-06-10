@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const marsIn12thHouseEn: WikiArticle = {
   slug: "mars-in-12th-house",
+  image: "/images/placements/mars-in-12th-house.jpg",
+  image_alt: "A golden ember burns beneath calm dark water, its glow rising through the still surface, symbolizing the submerged drive of Mars in the 12th house.",
   title: "What Mars in 12th House Really Says About Hidden Drive and Anger",
   description: "Mars in 12th house describes a placement where the planet of drive, will, and anger sits in the chart's most private, behind-the-scenes sector, the part of...",
   authorId: "julian-thorne",
@@ -45,6 +47,8 @@ Mars in 12th house is easy to confuse with placements that look similar but func
 
 In each comparison the trade-off is the same shape: privacy and depth in exchange for directness. Recognizing that exchange is what lets a person choose, rather than default, the way their force moves, and it reframes the placement as a question about routing rather than a fixed verdict on how strong someone is.
 
+
+![Comparison of Mars in the 1st house (open, direct drive), Mars in the 12th house (drive routed through private channels), and Chiron in the 12th house (buried old hurt rather than anger).](/images/placements/mars-in-12th-house-i0-en.svg)
 ## How to Read Mars in the 12th house in Yourself
 
 Spotting mars in 12th house in your own life means watching for where drive goes when it cannot move straight ahead. Look for these observable signals:
@@ -55,6 +59,8 @@ Spotting mars in 12th house in your own life means watching for where drive goes
 4. A private cause, creative project, or quiet act of service carries far more of your fire than your public life does.
 5. You notice resentment building over small unspoken things, then a single trigger releases more than the moment deserves.
 
+
+![Five observable signals of Mars in the 12th house: late body-first anger, unseen effort, indirect conflict, private passion projects, and resentment that builds then bursts.](/images/placements/mars-in-12th-house-i1-en.svg)
 ## Common Misreadings
 
 The reason mars in 12th house gets misunderstood is that surface-level content reaches for the easiest label. A few corrections matter most:
@@ -115,6 +121,8 @@ Open your own chart and locate Mars and the twelfth house using the full guide t
 
 export const marsIn12thHouseZh: WikiArticle = {
   slug: "mars-in-12th-house",
+  image: "/images/placements/mars-in-12th-house.jpg",
+  image_alt: "金色火种在沉静深水下持续燃烧，光透出平静水面，象征火星在第十二宫被压在水下的劲。",
   title: "火星在12宫：那股被压在水面下的劲，到底去了哪里",
   description: "Mars in the 12th house（火星在12宫）指的是出生星盘里，掌管行动、欲望与愤怒的火星，落在最幽微、最不外显的第十二宫，是 内在伤口疗愈 pillar 总览页...",
   authorId: "julian-thorne",
@@ -158,6 +166,8 @@ Mars in the 12th house（火星在12宫）指的是出生星盘里，掌管行�
 2. **十二宫的火星 对 合相上升点的火星。** 后者一开口就带锋芒，存在感强；前者更像一团需要被翻译的内在动能。选了内敛与缓冲，代价是别人常读不准你真实的意图与火气。
 3. **与凯龙的隐痛区分。** 同在十二宫，凯龙更偏向那道久未愈合的旧伤，火星则是想动却没出口的劲。这一点和兄弟篇 [凯龙在12宫的隐性创伤解读](/zh/wiki/chiron-in-12th-house) 可以对照着看，两者常被混为一谈。
 
+
+![火星在一宫（外放直接的劲）、火星在十二宫（走隐蔽通道的劲）与凯龙在十二宫（藏起的旧伤）的对比。](/images/placements/mars-in-12th-house-i0-zh.svg)
 ## 如何在自己身上识别 Mars in the 12th house
 
 想在生活里认出 Mars in the 12th house，与其背属性清单，不如留意几个具体场景里的真实反应。下面几条信号，挑你认得出的对号入座：

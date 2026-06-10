@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const famousHighlySensitivePersonEn: WikiArticle = {
   slug: "famous-highly-sensitive-person",
+  image: "/images/psych/famous-highly-sensitive-person.jpg",
+  image_alt: "Golden tuning fork standing on a dark stage, its fine resonance ripples reaching faint distant constellations — sensitivity as a finely tuned strength.",
   title: "What Famous Highly Sensitive People Reveal About a Misread Strength",
   description: "A famous highly sensitive person is a well-known public figure who has openly described living with unusually deep emotional and sensory responsiveness —",
   authorId: "elena-vane",
@@ -37,6 +39,8 @@ Understanding what a famous highly sensitive person actually is matters because 
 5. **Lorde** has described taking in sound and feeling with unusual intensity, and treating that as central to how she writes.
 6. **Self-description is the only honest proof.** A label borrowed without consent turns a real trait into gossip, and gossip reassures no one; a person telling you in their own words how their inner life runs is the only evidence a famous highly sensitive person can offer.
 
+
+![Three artists who have publicly described themselves as highly sensitive: Alanis Morissette, Bruce Springsteen and Lorde.](/images/psych/famous-highly-sensitive-person-i0-en.svg)
 ## Famous Highly Sensitive People vs Adjacent Concepts: How It Works + Trade-offs
 
 A famous highly sensitive person is easy to confuse with a few neighbouring ideas, and looking at how each one works explains the mix-ups — along with the trade-off you accept whenever you choose one label over another:
@@ -48,6 +52,8 @@ A famous highly sensitive person is easy to confuse with a few neighbouring idea
 
 Notice that none of these trade-offs makes one label simply right. The trait is usually some braid of them — a little introverted, occasionally anxious, sometimes shy — and the value of the sensitivity frame is that it names the through-line the other words keep missing: depth of response.
 
+
+![Comparison of high sensitivity with introversion, the empath label, and anxiety, showing how each frame differs.](/images/psych/famous-highly-sensitive-person-i1-en.svg)
 ## How to Read Famous Highly Sensitive People in Yourself
 
 The same signals that show up in a famous highly sensitive person tend to show up quietly in ordinary life. A few you can watch for:
@@ -78,6 +84,8 @@ Most quick takes on a famous highly sensitive person get a few things backwards.
 | Sensory sensitivity | Registers light, sound, and texture at low thresholds | Bodily / sensory | Scratchy tags, bright rooms, and noise wear you down fast |
 | Sensing the subtle | Picks up faint cues most people miss | Perceptual | You read a room's mood the second you walk in |
 
+
+![Four markers of the highly sensitive trait: depth of processing, emotional responsiveness, sensory sensitivity, and sensing the subtle.](/images/psych/famous-highly-sensitive-person-i2-en.svg)
 ## Questions People Ask About Famous Highly Sensitive People
 
 **Who is the most well-known famous highly sensitive person?**
@@ -120,6 +128,8 @@ Wondering if you share the trait? Start with the [full guide to the highly sensi
 
 export const famousHighlySensitivePersonZh: WikiArticle = {
   slug: "famous-highly-sensitive-person",
+  image: "/images/psych/famous-highly-sensitive-person.jpg",
+  image_alt: "黑暗舞台上矗立的金色音叉，细密的共振涟漪触及遥远微弱的星座——敏感是一种精密调校的力量。",
   title: "高敏感名人为什么往往活得很出彩",
   description: "本文不构成临床或心理咨询诊断，只报告这些公众人物公开自述的敏感倾向，不替任何人下诊断标签。Famous Highly Sensitive People（著名高敏感人群，也常被叫作高敏感名人）是指公开说过自己天生高度敏感的名人。他们在访谈或作品里谈到，自己容易被情绪、声音和他人的状态影响，需要更多独处才能恢复。",
   authorId: "elena-vane",
@@ -154,6 +164,8 @@ export const famousHighlySensitivePersonZh: WikiArticle = {
 2. **和共情者比。** 共情更偏向主动接收他人情绪，高敏感是连光线、声音、气味这些非情绪刺激也一并放大；选择把感官全开，你得到了丰富的体验，代价是恢复需要的时间更长。
 3. **和焦虑比。** 焦虑是对威胁的过度预警，往往伴随明显的不适，而高敏感本身是中性的觉察力；把两者分清，你才不会把一时的敏锐误当成需要处理的情绪问题。
 
+
+![高敏感与内向、共情者标签及焦虑的对比图，展示每种框架的差异。](/images/psych/famous-highly-sensitive-person-i1-zh.svg)
 ## 如何在自己身上识别 Famous Highly Sensitive People
 
 要判断自己身上有没有高敏感名人共有的那种特质，不用去对照明星，看几个日常场景就够了：
@@ -180,6 +192,8 @@ export const famousHighlySensitivePersonZh: WikiArticle = {
 | 易过载 | 强刺激下神经系统更快疲劳 | 恢复 | 记录哪些场合后你特别需要独处 |
 | 加工深 | 信息要反复琢磨才放得下 | 思考 | 观察一句反馈会不会被你回想好几天 |
 
+
+![高敏感特质的四个关键特征：加工深、共情深、易过载、觉察力强。](/images/psych/famous-highly-sensitive-person-i2-zh.svg)
 ## 关于高敏感名人的常见问题
 
 **高敏感是一种心理疾病吗？**

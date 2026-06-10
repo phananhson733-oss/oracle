@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="Four Elemental Anger Styles">
+  <defs>
+    <linearGradient id="marsangertriggers0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="marsangertriggers0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="marsangertriggers0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marsangertriggers0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marsangertriggers0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="marsangertriggers0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#marsangertriggers0en-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#marsangertriggers0en-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#marsangertriggers0en-neb2)"/>
+  <circle cx="415.7" cy="271.7" r="0.70" fill="#cfc8ea" opacity="0.40"/><circle cx="20.0" cy="342.7" r="0.67" fill="#cfc8ea" opacity="0.53"/><circle cx="574.8" cy="232.2" r="1.03" fill="#cfc8ea" opacity="0.45"/><circle cx="307.1" cy="226.0" r="0.61" fill="#cfc8ea" opacity="0.51"/><circle cx="588.0" cy="312.3" r="1.40" fill="#cfc8ea" opacity="0.37"/><circle cx="513.8" cy="82.2" r="1.02" fill="#cfc8ea" opacity="0.16"/><circle cx="356.6" cy="331.4" r="0.80" fill="#cfc8ea" opacity="0.35"/><circle cx="357.0" cy="51.8" r="0.92" fill="#cfc8ea" opacity="0.33"/><circle cx="421.2" cy="68.3" r="0.48" fill="#cfc8ea" opacity="0.44"/><circle cx="112.5" cy="107.6" r="1.13" fill="#cfc8ea" opacity="0.19"/><circle cx="450.7" cy="288.2" r="1.32" fill="#cfc8ea" opacity="0.49"/><circle cx="625.6" cy="157.8" r="1.61" fill="#cfc8ea" opacity="0.39"/><circle cx="481.4" cy="98.9" r="1.25" fill="#cfc8ea" opacity="0.49"/><circle cx="451.0" cy="107.1" r="0.93" fill="#cfc8ea" opacity="0.33"/><circle cx="605.6" cy="308.2" r="0.55" fill="#cfc8ea" opacity="0.43"/><circle cx="210.0" cy="247.5" r="0.50" fill="#cfc8ea" opacity="0.39"/><circle cx="224.6" cy="177.3" r="0.85" fill="#cfc8ea" opacity="0.21"/><circle cx="335.5" cy="309.8" r="1.37" fill="#cfc8ea" opacity="0.49"/><circle cx="691.3" cy="222.6" r="0.47" fill="#cfc8ea" opacity="0.33"/><circle cx="684.0" cy="197.6" r="0.80" fill="#cfc8ea" opacity="0.35"/><circle cx="492.5" cy="91.4" r="1.54" fill="#cfc8ea" opacity="0.27"/><circle cx="112.4" cy="268.5" r="0.78" fill="#cfc8ea" opacity="0.35"/><circle cx="98.2" cy="302.6" r="0.48" fill="#cfc8ea" opacity="0.46"/><circle cx="612.2" cy="124.6" r="1.68" fill="#cfc8ea" opacity="0.14"/><circle cx="494.4" cy="135.8" r="1.17" fill="#cfc8ea" opacity="0.20"/><circle cx="382.9" cy="304.3" r="1.03" fill="#cfc8ea" opacity="0.42"/><circle cx="458.5" cy="55.6" r="1.61" fill="#cfc8ea" opacity="0.14"/><circle cx="400.0" cy="127.9" r="1.04" fill="#cfc8ea" opacity="0.41"/><circle cx="740.5" cy="78.1" r="1.43" fill="#cfc8ea" opacity="0.29"/><circle cx="42.6" cy="12.3" r="0.78" fill="#cfc8ea" opacity="0.21"/><circle cx="66.5" cy="111.4" r="1.16" fill="#cfc8ea" opacity="0.25"/><path d="M 470.44163957983255 254.7 L 470.9 257.1 L 473.3 257.57526267762296 L 470.9 258.0 L 470.44163957983255 260.4 L 470.0 258.0 L 467.6 257.57526267762296 L 470.0 257.1 Z" fill="#f6e6bf" opacity="0.6675866693025455"/><path d="M 674.9400062859058 16.6 L 675.6 19.9 L 678.9 20.549565134337172 L 675.6 21.2 L 674.9400062859058 24.5 L 674.3 21.2 L 671.0 20.549565134337172 L 674.3 19.9 Z" fill="#f6e6bf" opacity="0.7072761746821925"/><path d="M 611.7060644850135 250.3 L 612.2 252.8 L 614.7 253.24631655099802 L 612.2 253.7 L 611.7060644850135 256.2 L 611.2 253.7 L 608.7 253.24631655099802 L 611.2 252.8 Z" fill="#f6e6bf" opacity="0.6454039117088541"/><path d="M 542.4837087541819 95.9 L 543.0 98.4 L 545.5 98.90958912647329 L 543.0 99.4 L 542.4837087541819 101.9 L 542.0 99.4 L 539.5 98.90958912647329 L 542.0 98.4 Z" fill="#f6e6bf" opacity="0.5771973841590807"/><path d="M 371.9623597934842 76.0 L 372.6 79.2 L 375.7 79.77402894268744 L 372.6 80.4 L 371.9623597934842 83.6 L 371.4 80.4 L 368.2 79.77402894268744 L 371.4 79.2 Z" fill="#f6e6bf" opacity="0.7764954697107895"/><path d="M 307.1 226.0 L 356.6 331.4 L 451.0 107.1 L 612.2 124.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Four Elemental Anger Styles</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#marsangertriggers0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#marsangertriggers0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#marsangertriggers0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#marsangertriggers0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Fire Mars</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aries, Leo, Sagittarius — explosive, fast, visible</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#marsangertriggers0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#marsangertriggers0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Earth Mars</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Taurus, Virgo, Capricorn — slow-burn, strategic, seismic</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#marsangertriggers0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#marsangertriggers0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Air Mars</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Gemini, Libra, Aquarius — verbal, mental, detached</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#marsangertriggers0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#marsangertriggers0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Water Mars</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer, Scorpio, Pisces — deep, emotional, undercurrent</text>
+  <path d="M 202.22749999999988 344.4 L 202.6 346.6 L 204.8 347 L 202.6 347.4 L 202.22749999999988 349.6 L 201.8 347.4 L 199.6 347 L 201.8 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 344.4 L 558.2 346.6 L 560.4 347 L 558.2 347.4 L 557.7725000000002 349.6 L 557.4 347.4 L 555.2 347 L 557.4 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

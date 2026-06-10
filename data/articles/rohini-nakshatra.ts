@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const rohiniNakshatraEn: WikiArticle = {
   slug: "rohini-nakshatra",
+  image: "/images/nakshatra/rohini-nakshatra.jpg",
+  image_alt: "A golden ox-cart heaped with glowing harvest under a full moon, gold shoots sprouting in its wake",
   title: "Why Rohini Nakshatra Is the Moon's Favored Station of Abundance",
   description: "Rohini nakshatra is the fourth of the 27 nakshatras, or lunar mansions, in Vedic astrology — a slice of the zodiac that sits entirely within Taurus",
   authorId: "aditi-sharma",
@@ -39,6 +41,8 @@ Rohini works by pulling the Moon's feeling-nature into earthy Taurus and aiming 
 
 Mrigashira, the station just after, is ruled by Mars and works by searching — restless, curious, always reaching for the next thing worth wanting. Rohini settles in and savors instead. Choosing its rooted contentment over Mrigashira's hunger buys depth, loyalty, and staying power at the cost of some momentum. In practice it is the difference between someone who remodels the same home for twenty years and someone already mapping the next move. How Rohini works, in short, is by deepening attachment until attachment becomes either devotion or inertia — the same gravity that builds a rich, well-tended life can harden into a refusal to change.
 
+
+![Rohini's ripening pull compared with Krittika's cutting refinement before it and Mrigashira's restless search after it](/images/nakshatra/rohini-nakshatra-i0-en.svg)
 ## How to Read Rohini in Your Chart
 
 Rohini is most often read from the Moon, but any planet or the Ascendant can fall here, and each tells a different story:
@@ -56,6 +60,8 @@ The placement is also refined by its four *padas* (quarters), each mapped to a n
 3. **Pada 3 (16°40′–20°, Gemini navamsa):** the most communicative and curious — beauty expressed through words, trade, and ideas.
 4. **Pada 4 (20°–23°20′, Cancer navamsa):** the most nurturing and emotional — abundance turned toward home and care.
 
+
+![Rohini's four padas from 10° to 23°20′ Taurus, each colored by an Aries, Taurus, Gemini, or Cancer navamsa](/images/nakshatra/rohini-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 The most useful correction — that Rohini's pull toward comfort is emotional fullness expressed through the senses, not greed — is covered above. The remaining misreadings cluster around the same blind spot:

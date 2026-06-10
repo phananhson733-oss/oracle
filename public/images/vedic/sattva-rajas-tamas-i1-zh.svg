@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="一天中的古纳时钟">
+  <defs>
+    <linearGradient id="sattvarajastamas1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="sattvarajastamas1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="sattvarajastamas1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sattvarajastamas1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sattvarajastamas1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sattvarajastamas1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#sattvarajastamas1zh-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#sattvarajastamas1zh-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#sattvarajastamas1zh-neb2)"/>
+  <circle cx="514.9" cy="430.9" r="1.55" fill="#cfc8ea" opacity="0.18"/><circle cx="371.2" cy="228.1" r="0.93" fill="#cfc8ea" opacity="0.16"/><circle cx="46.8" cy="343.4" r="0.64" fill="#cfc8ea" opacity="0.20"/><circle cx="148.0" cy="143.8" r="0.43" fill="#cfc8ea" opacity="0.19"/><circle cx="77.2" cy="161.3" r="0.73" fill="#cfc8ea" opacity="0.35"/><circle cx="206.7" cy="123.9" r="0.68" fill="#cfc8ea" opacity="0.43"/><circle cx="240.6" cy="131.6" r="1.53" fill="#cfc8ea" opacity="0.49"/><circle cx="257.1" cy="212.5" r="1.55" fill="#cfc8ea" opacity="0.18"/><circle cx="108.6" cy="392.7" r="1.06" fill="#cfc8ea" opacity="0.12"/><circle cx="597.3" cy="395.5" r="1.64" fill="#cfc8ea" opacity="0.45"/><circle cx="267.1" cy="300.7" r="0.82" fill="#cfc8ea" opacity="0.45"/><circle cx="607.4" cy="284.6" r="1.44" fill="#cfc8ea" opacity="0.21"/><circle cx="123.8" cy="254.5" r="0.53" fill="#cfc8ea" opacity="0.40"/><circle cx="572.2" cy="348.6" r="1.50" fill="#cfc8ea" opacity="0.23"/><circle cx="539.2" cy="93.7" r="1.68" fill="#cfc8ea" opacity="0.36"/><circle cx="99.1" cy="242.0" r="1.08" fill="#cfc8ea" opacity="0.46"/><circle cx="643.3" cy="185.4" r="1.41" fill="#cfc8ea" opacity="0.15"/><circle cx="613.3" cy="38.2" r="0.90" fill="#cfc8ea" opacity="0.34"/><circle cx="395.0" cy="216.7" r="1.25" fill="#cfc8ea" opacity="0.26"/><circle cx="468.3" cy="107.7" r="0.59" fill="#cfc8ea" opacity="0.27"/><circle cx="616.4" cy="445.7" r="0.99" fill="#cfc8ea" opacity="0.16"/><circle cx="107.8" cy="154.8" r="0.80" fill="#cfc8ea" opacity="0.41"/><circle cx="181.0" cy="79.2" r="0.42" fill="#cfc8ea" opacity="0.23"/><circle cx="739.9" cy="264.7" r="1.34" fill="#cfc8ea" opacity="0.46"/><circle cx="212.9" cy="205.8" r="1.19" fill="#cfc8ea" opacity="0.29"/><circle cx="202.4" cy="117.1" r="0.93" fill="#cfc8ea" opacity="0.51"/><circle cx="637.8" cy="179.3" r="0.86" fill="#cfc8ea" opacity="0.43"/><circle cx="491.6" cy="416.0" r="1.47" fill="#cfc8ea" opacity="0.13"/><circle cx="70.7" cy="70.3" r="1.63" fill="#cfc8ea" opacity="0.38"/><circle cx="153.6" cy="361.4" r="0.81" fill="#cfc8ea" opacity="0.36"/><circle cx="333.5" cy="153.2" r="0.74" fill="#cfc8ea" opacity="0.38"/><circle cx="484.1" cy="283.5" r="0.99" fill="#cfc8ea" opacity="0.40"/><circle cx="46.6" cy="133.0" r="0.46" fill="#cfc8ea" opacity="0.40"/><circle cx="481.3" cy="133.2" r="0.83" fill="#cfc8ea" opacity="0.23"/><circle cx="174.0" cy="80.6" r="0.52" fill="#cfc8ea" opacity="0.41"/><circle cx="440.5" cy="366.7" r="0.90" fill="#cfc8ea" opacity="0.33"/><circle cx="702.0" cy="123.7" r="1.55" fill="#cfc8ea" opacity="0.20"/><circle cx="655.4" cy="32.0" r="1.48" fill="#cfc8ea" opacity="0.28"/><circle cx="647.8" cy="132.5" r="0.95" fill="#cfc8ea" opacity="0.49"/><path d="M 561.5891968961805 317.0 L 562.2 320.0 L 565.2 320.56716168951243 L 562.2 321.1 L 561.5891968961805 324.2 L 561.0 321.1 L 558.0 320.56716168951243 L 561.0 320.0 Z" fill="#f6e6bf" opacity="0.7423199516255409"/><path d="M 230.27441245131195 376.3 L 230.7 378.4 L 232.8 378.8361742179841 L 230.7 379.2 L 230.27441245131195 381.4 L 229.9 379.2 L 227.7 378.8361742179841 L 229.9 378.4 Z" fill="#f6e6bf" opacity="0.7175111379008741"/><path d="M 495.59388854168355 311.8 L 496.2 314.9 L 499.2 315.452725620009 L 496.2 316.0 L 495.59388854168355 319.1 L 495.0 316.0 L 492.0 315.452725620009 L 495.0 314.9 Z" fill="#f6e6bf" opacity="0.7667947942856699"/><path d="M 685.2230917047709 281.8 L 685.8 284.9 L 688.9 285.49291982129216 L 685.8 286.1 L 685.2230917047709 289.1 L 684.6 286.1 L 681.6 285.49291982129216 L 684.6 284.9 Z" fill="#f6e6bf" opacity="0.6854513534810394"/><path d="M 464.868830030784 371.5 L 465.4 374.1 L 468.0 374.64545153733343 L 465.4 375.2 L 464.868830030784 377.8 L 464.4 375.2 L 461.7 374.64545153733343 L 464.4 374.1 Z" fill="#f6e6bf" opacity="0.6037492700386793"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">一天中的古纳时钟</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#sattvarajastamas1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#sattvarajastamas1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#sattvarajastamas1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#sattvarajastamas1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">清晨</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">萨埵时段</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">清明平静，适合安排深度工作</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#sattvarajastamas1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#sattvarajastamas1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">正午</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">罗阇时段</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">活跃有冲劲，适合高强度任务</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#sattvarajastamas1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#sattvarajastamas1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">午后偏晚</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">答磨低谷</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">易转沉重，改做轻量工作</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#sattvarajastamas1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#sattvarajastamas1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">日落前后</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">萨埵短暂回归</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">一小段清明窗口常会重现</text>
+  <path d="M 280.025 430.4 L 280.4 432.6 L 282.6 433 L 280.4 433.4 L 280.025 435.6 L 279.6 433.4 L 277.4 433 L 279.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 430.4 L 480.4 432.6 L 482.6 433 L 480.4 433.4 L 479.975 435.6 L 479.6 433.4 L 477.4 433 L 479.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const neptuneInPiscesEn: WikiArticle = {
   slug: "neptune-in-pisces",
+  image: "/images/placements/neptune-in-pisces.jpg",
+  image_alt: "A hazy planet above a misty ocean where many small golden lights drift in one shared current, symbolizing the Neptune in Pisces generational field.",
   title: "How Neptune in Pisces Shapes the 2012–2026 Birth Chart Cohort",
   description: "Neptune in Pisces is a dignified generational transit that amplifies collective intuition, boundary dissolution",
   authorId: "marcus-orion",
@@ -43,6 +45,8 @@ When Neptune occupies a personal position in a natal chart — conjunct the Asce
 
 The contrast with a Pisces sun or rising is equally worth separating. A Pisces sun colors personal identity — will orientation, core character — while neptune in pisces colors the collective environment the cohort inhabits; a Pisces sun says something particular to you, while the generational placement says something about the conditions everyone born in this window shares. To get the personal read, look at which house Pisces rules in your natal chart and what planets sit there — covered in detail at [guide to reading personal vs generational placements in a birth chart](/en/wiki/how-to-read-birth-chart). One further trade-off runs through the transit's defining feature: the heightened collective spiritual receptivity it generates carries a corresponding risk — spiritual bypassing, using transcendence as avoidance rather than as a path toward integration. The gain is an unusually open channel to collective intuitive material; the cost is that the channel requires deliberate discernment to use well. Without it, receptivity tips into absorbed projection rather than personal insight. The placement offers the sensitivity; the discernment has to be built separately.
 
+
+![Three-way comparison: personal natal Neptune shapes individual psychology, a Pisces Sun colors personal identity, while Neptune in Pisces conditions the shared 2012–2026 generational field.](/images/placements/neptune-in-pisces-i0-en.svg)
 ## How to Read the Transit in Your Chart
 
 Reading neptune in pisces usefully starts with the natal chart. Five concrete signals to examine:
@@ -57,6 +61,8 @@ Reading neptune in pisces usefully starts with the natal chart. Five concrete si
 
 5. **Register which spiritual questions feel unusually pressing.** Collective spiritual longing is a defining feature of this era. Questions arising without a clear personal trigger may reflect the generational current rather than individual psychological material.
 
+
+![Five steps for reading Neptune in Pisces in a natal chart: locate the Pisces house, check planets in Pisces, notice emotional absorption, track softening structures, and register pressing spiritual questions.](/images/placements/neptune-in-pisces-i1-en.svg)
 ## Common Misreadings
 
 A consistent cluster of interpretive errors surrounds neptune in pisces in mainstream astrology writing. Each one redirects readers away from what makes the transit interpretively useful.
@@ -96,6 +102,8 @@ Neptune is the modern ruler of Pisces, which means it operates in its home sign 
 
 A Pisces sun describes personal identity — the character at your core and how you orient your will. This generational placement describes the collective intuitive and spiritual field the cohort shares. Both can be present in the same chart and read in relation to each other: the sun sign gives personal character; the generational placement gives the shared conditions that character operates within.
 
+
+![Timeline of Neptune in Pisces: entering in 2012, marking all charts through the 2012–2026 cohort window, and moving into Aries around 2025–2026.](/images/placements/neptune-in-pisces-i2-en.svg)
 ## Reflection Prompts
 
 1. Think back to a recent moment when you couldn't determine whether what you were feeling originated with you or came from the emotional atmosphere of the space around you — what was different about that situation?

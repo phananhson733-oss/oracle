@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const mrigashiraNakshatraEn: WikiArticle = {
   slug: "mrigashira-nakshatra",
+  image: "/images/nakshatra/mrigashira-nakshatra.jpg",
+  image_alt: "A constellation deer follows a winding gold scent trail that loops back to its own chest",
   title: "What Mrigashira Nakshatra's Restlessness Is Really Telling You",
   description: "Mrigashira nakshatra is the fifth lunar mansion in Vedic astrology, spanning 23°20' Taurus through 6°40' Gemini",
   authorId: "aditi-sharma",
@@ -45,6 +47,8 @@ Ardra follows Mrigashira and is ruled by Rahu, the lunar north node, with storm 
 
 One additional point of contrast that most surface-level write-ups miss: practitioners sometimes group Mrigashira with Rohini as a "pleasant" or gentle placement, since both carry lunar-adjacent imagery. This grouping flattens Mars's role entirely. The nakshatra's persistence is not gentle — it is Mars-driven momentum that happens to express through sensory attunement rather than aggression. Holding both Soma and Mars in the frame simultaneously — as Parashara's foundational framework requires — is what distinguishes an accurate reading of mrigashira nakshatra from one that pathologizes the placement's most productive quality.
 
+
+![Rohini's settled arrival, Mrigashira's scent-tracking pursuit, and Ardra's storm-forced breakthrough compared](/images/nakshatra/mrigashira-nakshatra-i0-en.svg)
 ## How to Read mrigashira nakshatra in Yourself
 
 Mrigashira nakshatra's signature shows up most clearly in the quality of desire rather than its specific direction. Look for these five observable signals:
@@ -55,6 +59,8 @@ Mrigashira nakshatra's signature shows up most clearly in the quality of desire 
 4. **The Taurus-Gemini split.** A recurring experience of wanting to hold what's been found (Taurus) and wanting to circulate toward the next thing (Gemini) at the same time, without either impulse feeling wrong. This tension doesn't resolve; it characterizes the cusp.
 5. **The recognition moment.** Many people with significant Mrigashira influence describe a point where they realize that what they've been pursuing was internal the whole time. That recognition doesn't end the seeking — it reorients it from anxious to intentional.
 
+
+![Five observable signals of Mrigashira, from the moving goalpost to the moment seeking turns inward](/images/nakshatra/mrigashira-nakshatra-i1-en.svg)
 ## Common Misreadings
 
 Most misreadings of mrigashira nakshatra come from applying one planet's lens when two are in play. The three most common:

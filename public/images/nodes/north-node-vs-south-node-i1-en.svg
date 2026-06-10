@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 527" role="img" aria-label="What Each Chart Feature Answers">
+  <defs>
+    <linearGradient id="northnodevssouthnode1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="northnodevssouthnode1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="northnodevssouthnode1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodevssouthnode1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodevssouthnode1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="northnodevssouthnode1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="url(#northnodevssouthnode1en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="179" fill="url(#northnodevssouthnode1en-neb1)"/>
+  <ellipse cx="623" cy="422" rx="334" ry="169" fill="url(#northnodevssouthnode1en-neb2)"/>
+  <circle cx="614.6" cy="30.2" r="1.42" fill="#cfc8ea" opacity="0.29"/><circle cx="282.1" cy="366.6" r="1.42" fill="#cfc8ea" opacity="0.49"/><circle cx="670.2" cy="231.9" r="0.49" fill="#cfc8ea" opacity="0.30"/><circle cx="603.0" cy="267.7" r="1.18" fill="#cfc8ea" opacity="0.52"/><circle cx="700.0" cy="290.2" r="1.22" fill="#cfc8ea" opacity="0.28"/><circle cx="421.8" cy="111.4" r="0.92" fill="#cfc8ea" opacity="0.50"/><circle cx="746.0" cy="35.7" r="0.97" fill="#cfc8ea" opacity="0.49"/><circle cx="114.3" cy="342.8" r="1.17" fill="#cfc8ea" opacity="0.51"/><circle cx="427.1" cy="397.2" r="1.23" fill="#cfc8ea" opacity="0.29"/><circle cx="276.1" cy="88.5" r="0.45" fill="#cfc8ea" opacity="0.45"/><circle cx="580.5" cy="53.3" r="0.64" fill="#cfc8ea" opacity="0.13"/><circle cx="344.1" cy="168.1" r="1.31" fill="#cfc8ea" opacity="0.15"/><circle cx="621.4" cy="38.2" r="1.23" fill="#cfc8ea" opacity="0.43"/><circle cx="128.5" cy="249.3" r="0.90" fill="#cfc8ea" opacity="0.30"/><circle cx="287.3" cy="205.5" r="0.73" fill="#cfc8ea" opacity="0.27"/><circle cx="747.7" cy="337.1" r="1.01" fill="#cfc8ea" opacity="0.31"/><circle cx="56.4" cy="403.9" r="0.88" fill="#cfc8ea" opacity="0.30"/><circle cx="226.3" cy="28.5" r="1.36" fill="#cfc8ea" opacity="0.53"/><circle cx="325.8" cy="75.2" r="1.24" fill="#cfc8ea" opacity="0.15"/><circle cx="231.5" cy="166.6" r="1.10" fill="#cfc8ea" opacity="0.51"/><circle cx="254.7" cy="488.2" r="1.38" fill="#cfc8ea" opacity="0.17"/><circle cx="607.5" cy="60.4" r="1.09" fill="#cfc8ea" opacity="0.15"/><circle cx="592.7" cy="188.0" r="0.76" fill="#cfc8ea" opacity="0.20"/><circle cx="342.1" cy="492.1" r="1.39" fill="#cfc8ea" opacity="0.29"/><circle cx="92.2" cy="123.4" r="1.53" fill="#cfc8ea" opacity="0.17"/><circle cx="583.1" cy="83.0" r="1.28" fill="#cfc8ea" opacity="0.53"/><circle cx="616.1" cy="257.6" r="1.47" fill="#cfc8ea" opacity="0.28"/><circle cx="527.8" cy="155.0" r="1.36" fill="#cfc8ea" opacity="0.33"/><circle cx="88.0" cy="296.7" r="0.45" fill="#cfc8ea" opacity="0.49"/><circle cx="417.6" cy="14.6" r="1.11" fill="#cfc8ea" opacity="0.48"/><circle cx="217.1" cy="341.4" r="0.83" fill="#cfc8ea" opacity="0.27"/><circle cx="248.6" cy="273.2" r="0.47" fill="#cfc8ea" opacity="0.19"/><circle cx="385.9" cy="473.0" r="0.60" fill="#cfc8ea" opacity="0.40"/><circle cx="571.4" cy="251.8" r="0.73" fill="#cfc8ea" opacity="0.24"/><circle cx="194.6" cy="422.6" r="1.21" fill="#cfc8ea" opacity="0.47"/><circle cx="81.0" cy="332.0" r="1.14" fill="#cfc8ea" opacity="0.35"/><circle cx="164.4" cy="318.7" r="0.66" fill="#cfc8ea" opacity="0.13"/><circle cx="679.6" cy="378.6" r="0.87" fill="#cfc8ea" opacity="0.48"/><circle cx="556.1" cy="90.2" r="1.36" fill="#cfc8ea" opacity="0.44"/><circle cx="34.0" cy="439.6" r="1.16" fill="#cfc8ea" opacity="0.30"/><circle cx="512.1" cy="271.8" r="0.91" fill="#cfc8ea" opacity="0.25"/><circle cx="624.9" cy="128.2" r="0.88" fill="#cfc8ea" opacity="0.53"/><circle cx="634.3" cy="117.7" r="1.64" fill="#cfc8ea" opacity="0.33"/><circle cx="103.9" cy="72.2" r="1.34" fill="#cfc8ea" opacity="0.42"/><circle cx="475.7" cy="52.2" r="1.36" fill="#cfc8ea" opacity="0.35"/><path d="M 357.40819721482694 29.5 L 357.9 32.2 L 360.6 32.73066006693989 L 357.9 33.2 L 357.40819721482694 35.9 L 356.9 33.2 L 354.2 32.73066006693989 L 356.9 32.2 Z" fill="#f6e6bf" opacity="0.7385198040399701"/><path d="M 374.27312244288623 310.2 L 374.8 313.0 L 377.7 313.53141894191504 L 374.8 314.1 L 374.27312244288623 316.9 L 373.7 314.1 L 370.9 313.53141894191504 L 373.7 313.0 Z" fill="#f6e6bf" opacity="0.5459547934588045"/><path d="M 436.7898443695158 35.6 L 437.2 37.9 L 439.6 38.371936245821416 L 437.2 38.8 L 436.7898443695158 41.1 L 436.3 38.8 L 434.0 38.371936245821416 L 436.3 37.9 Z" fill="#f6e6bf" opacity="0.7059529122430831"/><path d="M 603.4275917392224 260.5 L 603.9 263.0 L 606.4 263.49808995984495 L 603.9 264.0 L 603.4275917392224 266.5 L 603.0 264.0 L 600.4 263.49808995984495 L 603.0 263.0 Z" fill="#f6e6bf" opacity="0.6826002876739949"/><path d="M 536.9105676617473 320.1 L 537.3 322.4 L 539.6 322.7868577660993 L 537.3 323.2 L 536.9105676617473 325.5 L 536.5 323.2 L 534.2 322.7868577660993 L 536.5 322.4 Z" fill="#f6e6bf" opacity="0.7265457759145647"/><path d="M 254.7 488.2 L 342.1 492.1 L 417.6 14.6 L 103.9 72.2 L 475.7 52.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="513" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 507.8 L 16.5 510.5 L 19.2 511 L 16.5 511.5 L 16 514.2 L 15.5 511.5 L 12.8 511 L 15.5 510.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 507.8 L 744.5 510.5 L 747.2 511 L 744.5 511.5 L 744 514.2 L 743.5 511.5 L 740.8 511 L 743.5 510.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">What Each Chart Feature Answers</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#northnodevssouthnode1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#northnodevssouthnode1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Natal planet</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">A standing capacity carried at all times</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Describes what you are like on any given day</text>
+  <path d="M 380 221.5 L 380.7 225.3 L 384.5 226 L 380.7 226.7 L 380 230.5 L 379.3 226.7 L 375.5 226 L 379.3 225.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="239" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="239" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 237.1 L 380.5 240.0 L 383.4 240.5 L 380.5 241.0 L 380 243.9 L 379.5 241.0 L 376.6 240.5 L 379.5 240.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="268.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Transit</text>
+  <path d="M 70 297.8 L 70.5 300.5 L 73.2 301 L 70.5 301.5 L 70 304.2 L 69.5 301.5 L 66.8 301 L 69.5 300.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="306.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Times an external event</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Precision of timing, not slow development</text>
+  <path d="M 380 361.5 L 380.7 365.3 L 384.5 366 L 380.7 366.7 L 380 370.5 L 379.3 366.7 L 375.5 366 L 379.3 365.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="379" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="379" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 377.1 L 380.5 380.0 L 383.4 380.5 L 380.5 381.0 L 380 383.9 L 379.5 381.0 L 376.6 380.5 L 379.5 380.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="408.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Nodal axis</text>
+  <path d="M 70 437.8 L 70.5 440.5 L 73.2 441 L 70.5 441.5 L 70 444.2 L 69.5 441.5 L 66.8 441 L 69.5 440.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="446.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">A directional pull between past and future</text>
+  <path d="M 70 466.8 L 70.5 469.5 L 73.2 470 L 70.5 470.5 L 70 473.2 L 69.5 470.5 L 66.8 470 L 69.5 469.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="475.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Only resolves across years and decades</text>
+  <path d="M 202.22749999999988 498.4 L 202.6 500.6 L 204.8 501 L 202.6 501.4 L 202.22749999999988 503.6 L 201.8 501.4 L 199.6 501 L 201.8 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="505" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 498.4 L 558.2 500.6 L 560.4 501 L 558.2 501.4 L 557.7725000000002 503.6 L 557.4 501.4 L 555.2 501 L 557.4 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="中点法 vs 戴维森法">
+  <defs>
+    <linearGradient id="compositechartcalculator0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="compositechartcalculator0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="compositechartcalculator0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="compositechartcalculator0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="compositechartcalculator0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="compositechartcalculator0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#compositechartcalculator0zh-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#compositechartcalculator0zh-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#compositechartcalculator0zh-neb2)"/>
+  <circle cx="694.4" cy="83.0" r="1.35" fill="#cfc8ea" opacity="0.36"/><circle cx="259.1" cy="380.6" r="0.60" fill="#cfc8ea" opacity="0.45"/><circle cx="19.7" cy="394.3" r="1.38" fill="#cfc8ea" opacity="0.42"/><circle cx="701.0" cy="255.7" r="0.87" fill="#cfc8ea" opacity="0.52"/><circle cx="252.3" cy="183.9" r="1.14" fill="#cfc8ea" opacity="0.43"/><circle cx="551.7" cy="99.1" r="0.53" fill="#cfc8ea" opacity="0.51"/><circle cx="62.7" cy="198.8" r="0.41" fill="#cfc8ea" opacity="0.43"/><circle cx="523.1" cy="231.4" r="0.57" fill="#cfc8ea" opacity="0.50"/><circle cx="292.9" cy="99.1" r="1.64" fill="#cfc8ea" opacity="0.23"/><circle cx="689.3" cy="247.9" r="1.15" fill="#cfc8ea" opacity="0.17"/><circle cx="17.1" cy="295.1" r="1.52" fill="#cfc8ea" opacity="0.34"/><circle cx="333.0" cy="334.4" r="1.32" fill="#cfc8ea" opacity="0.50"/><circle cx="166.6" cy="89.7" r="0.67" fill="#cfc8ea" opacity="0.48"/><circle cx="688.7" cy="282.7" r="1.63" fill="#cfc8ea" opacity="0.45"/><circle cx="57.1" cy="321.5" r="1.14" fill="#cfc8ea" opacity="0.42"/><circle cx="27.5" cy="124.2" r="1.60" fill="#cfc8ea" opacity="0.30"/><circle cx="13.9" cy="410.1" r="1.50" fill="#cfc8ea" opacity="0.33"/><circle cx="654.3" cy="196.3" r="1.16" fill="#cfc8ea" opacity="0.53"/><circle cx="346.4" cy="424.3" r="0.52" fill="#cfc8ea" opacity="0.23"/><circle cx="88.4" cy="205.0" r="1.40" fill="#cfc8ea" opacity="0.40"/><circle cx="252.3" cy="268.3" r="0.61" fill="#cfc8ea" opacity="0.37"/><circle cx="252.5" cy="66.3" r="1.34" fill="#cfc8ea" opacity="0.29"/><circle cx="396.4" cy="415.8" r="1.20" fill="#cfc8ea" opacity="0.39"/><circle cx="97.8" cy="12.7" r="1.26" fill="#cfc8ea" opacity="0.50"/><circle cx="117.7" cy="71.8" r="1.46" fill="#cfc8ea" opacity="0.34"/><circle cx="77.2" cy="411.8" r="1.52" fill="#cfc8ea" opacity="0.17"/><circle cx="727.3" cy="275.6" r="1.68" fill="#cfc8ea" opacity="0.18"/><circle cx="255.8" cy="34.6" r="0.48" fill="#cfc8ea" opacity="0.46"/><circle cx="149.0" cy="362.9" r="1.26" fill="#cfc8ea" opacity="0.35"/><circle cx="182.3" cy="212.7" r="0.93" fill="#cfc8ea" opacity="0.45"/><circle cx="37.0" cy="290.1" r="1.01" fill="#cfc8ea" opacity="0.20"/><circle cx="161.7" cy="311.5" r="1.49" fill="#cfc8ea" opacity="0.40"/><circle cx="437.2" cy="210.6" r="0.82" fill="#cfc8ea" opacity="0.24"/><circle cx="69.5" cy="66.8" r="1.08" fill="#cfc8ea" opacity="0.21"/><circle cx="399.6" cy="73.8" r="1.07" fill="#cfc8ea" opacity="0.39"/><circle cx="344.1" cy="227.4" r="1.54" fill="#cfc8ea" opacity="0.27"/><circle cx="633.5" cy="40.7" r="0.75" fill="#cfc8ea" opacity="0.24"/><circle cx="188.6" cy="389.6" r="0.91" fill="#cfc8ea" opacity="0.47"/><path d="M 86.6496272943914 30.8 L 87.1 33.4 L 89.7 33.89323764317669 L 87.1 34.4 L 86.6496272943914 36.9 L 86.2 34.4 L 83.6 33.89323764317669 L 86.2 33.4 Z" fill="#f6e6bf" opacity="0.5239637691760436"/><path d="M 170.5984337516129 250.7 L 171.0 252.9 L 173.2 253.31554830935784 L 171.0 253.7 L 170.5984337516129 255.9 L 170.2 253.7 L 168.0 253.31554830935784 L 170.2 252.9 Z" fill="#f6e6bf" opacity="0.7201094835298136"/><path d="M 280.2466610185802 80.0 L 280.8 82.9 L 283.8 83.47485576034524 L 280.8 84.0 L 280.2466610185802 87.0 L 279.7 84.0 L 276.7 83.47485576034524 L 279.7 82.9 Z" fill="#f6e6bf" opacity="0.5587321186671034"/><path d="M 381.56459832563996 47.7 L 382.1 50.6 L 385.0 51.16653987322934 L 382.1 51.7 L 381.56459832563996 54.6 L 381.0 51.7 L 378.1 51.16653987322934 L 381.0 50.6 Z" fill="#f6e6bf" opacity="0.5118324403883889"/><path d="M 413.14310985431075 143.0 L 413.7 145.7 L 416.3 146.19571944721974 L 413.7 146.7 L 413.14310985431075 149.4 L 412.6 146.7 L 410.0 146.19571944721974 L 412.6 145.7 Z" fill="#f6e6bf" opacity="0.5614953667158261"/><path d="M 701.0 255.7 L 551.7 99.1 L 688.7 282.7 L 27.5 124.2 L 396.4 415.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">中点法 vs 戴维森法</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#compositechartcalculator0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#compositechartcalculator0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">中点组合盘</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">对每组行星度数取平均</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">忽略出生时间与地理位置</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">任何计算器都可复现</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">戴维森盘</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">取时间与空间的中点</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">拥有真实日期、时间、地点</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">宫位可能明显不同</text>
+  <path d="M 280.025 416.4 L 280.4 418.6 L 282.6 419 L 280.4 419.4 L 280.025 421.6 L 279.6 419.4 L 277.4 419 L 279.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 416.4 L 480.4 418.6 L 482.6 419 L 480.4 419.4 L 479.975 421.6 L 479.6 419.4 L 477.4 419 L 479.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

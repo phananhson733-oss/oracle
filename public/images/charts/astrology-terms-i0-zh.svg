@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="三组工作词汇">
+  <defs>
+    <linearGradient id="astrologyterms0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="astrologyterms0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="astrologyterms0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="astrologyterms0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="astrologyterms0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="astrologyterms0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#astrologyterms0zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#astrologyterms0zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#astrologyterms0zh-neb2)"/>
+  <circle cx="326.7" cy="400.4" r="0.55" fill="#cfc8ea" opacity="0.15"/><circle cx="270.6" cy="481.9" r="0.83" fill="#cfc8ea" opacity="0.43"/><circle cx="508.3" cy="534.0" r="1.35" fill="#cfc8ea" opacity="0.48"/><circle cx="391.1" cy="221.9" r="1.48" fill="#cfc8ea" opacity="0.12"/><circle cx="134.2" cy="69.9" r="0.65" fill="#cfc8ea" opacity="0.12"/><circle cx="44.0" cy="302.3" r="0.88" fill="#cfc8ea" opacity="0.23"/><circle cx="667.4" cy="443.8" r="1.48" fill="#cfc8ea" opacity="0.39"/><circle cx="415.4" cy="226.4" r="1.12" fill="#cfc8ea" opacity="0.44"/><circle cx="32.0" cy="383.6" r="1.10" fill="#cfc8ea" opacity="0.25"/><circle cx="616.9" cy="312.0" r="0.68" fill="#cfc8ea" opacity="0.52"/><circle cx="367.7" cy="370.0" r="0.78" fill="#cfc8ea" opacity="0.38"/><circle cx="575.9" cy="21.3" r="1.48" fill="#cfc8ea" opacity="0.42"/><circle cx="500.1" cy="216.6" r="1.62" fill="#cfc8ea" opacity="0.47"/><circle cx="324.1" cy="267.4" r="1.47" fill="#cfc8ea" opacity="0.32"/><circle cx="61.5" cy="206.5" r="1.20" fill="#cfc8ea" opacity="0.20"/><circle cx="623.2" cy="482.5" r="0.84" fill="#cfc8ea" opacity="0.31"/><circle cx="553.6" cy="260.3" r="1.10" fill="#cfc8ea" opacity="0.15"/><circle cx="266.5" cy="114.7" r="0.78" fill="#cfc8ea" opacity="0.14"/><circle cx="20.6" cy="139.0" r="1.26" fill="#cfc8ea" opacity="0.16"/><circle cx="555.0" cy="197.9" r="0.65" fill="#cfc8ea" opacity="0.38"/><circle cx="307.9" cy="454.0" r="1.43" fill="#cfc8ea" opacity="0.51"/><circle cx="59.9" cy="502.1" r="1.39" fill="#cfc8ea" opacity="0.34"/><circle cx="601.2" cy="514.6" r="1.65" fill="#cfc8ea" opacity="0.39"/><circle cx="353.9" cy="236.4" r="0.82" fill="#cfc8ea" opacity="0.12"/><circle cx="579.6" cy="460.5" r="1.45" fill="#cfc8ea" opacity="0.45"/><circle cx="609.6" cy="117.8" r="1.48" fill="#cfc8ea" opacity="0.27"/><circle cx="264.9" cy="444.5" r="1.28" fill="#cfc8ea" opacity="0.23"/><circle cx="731.4" cy="235.3" r="0.58" fill="#cfc8ea" opacity="0.39"/><circle cx="456.9" cy="500.5" r="0.80" fill="#cfc8ea" opacity="0.12"/><circle cx="447.1" cy="559.6" r="0.99" fill="#cfc8ea" opacity="0.48"/><circle cx="474.1" cy="495.9" r="0.53" fill="#cfc8ea" opacity="0.21"/><circle cx="705.6" cy="123.4" r="1.47" fill="#cfc8ea" opacity="0.26"/><circle cx="576.1" cy="13.0" r="0.41" fill="#cfc8ea" opacity="0.23"/><circle cx="311.6" cy="83.1" r="0.79" fill="#cfc8ea" opacity="0.50"/><circle cx="269.2" cy="226.3" r="0.50" fill="#cfc8ea" opacity="0.51"/><circle cx="531.4" cy="113.9" r="0.44" fill="#cfc8ea" opacity="0.37"/><circle cx="158.3" cy="12.5" r="0.45" fill="#cfc8ea" opacity="0.52"/><circle cx="672.8" cy="210.0" r="1.60" fill="#cfc8ea" opacity="0.22"/><circle cx="321.1" cy="341.5" r="1.40" fill="#cfc8ea" opacity="0.15"/><circle cx="291.3" cy="598.4" r="1.57" fill="#cfc8ea" opacity="0.23"/><circle cx="327.8" cy="413.3" r="1.68" fill="#cfc8ea" opacity="0.53"/><circle cx="621.5" cy="349.3" r="0.87" fill="#cfc8ea" opacity="0.18"/><circle cx="367.5" cy="526.8" r="1.12" fill="#cfc8ea" opacity="0.41"/><circle cx="90.7" cy="182.4" r="1.17" fill="#cfc8ea" opacity="0.37"/><circle cx="661.8" cy="258.8" r="0.90" fill="#cfc8ea" opacity="0.32"/><circle cx="119.5" cy="575.4" r="1.62" fill="#cfc8ea" opacity="0.46"/><circle cx="627.4" cy="75.7" r="0.58" fill="#cfc8ea" opacity="0.18"/><circle cx="627.5" cy="277.3" r="1.47" fill="#cfc8ea" opacity="0.40"/><circle cx="388.2" cy="89.2" r="1.52" fill="#cfc8ea" opacity="0.34"/><circle cx="422.2" cy="404.2" r="0.91" fill="#cfc8ea" opacity="0.13"/><circle cx="302.3" cy="330.9" r="0.45" fill="#cfc8ea" opacity="0.16"/><circle cx="146.5" cy="34.8" r="0.54" fill="#cfc8ea" opacity="0.21"/><path d="M 381.7420689575374 517.5 L 382.2 520.0 L 384.7 520.4625976742245 L 382.2 520.9 L 381.7420689575374 523.4 L 381.3 520.9 L 378.8 520.4625976742245 L 381.3 520.0 Z" fill="#f6e6bf" opacity="0.5884239981183782"/><path d="M 322.45981514826417 489.9 L 323.0 492.9 L 326.0 493.47932569729164 L 323.0 494.0 L 322.45981514826417 497.0 L 321.9 494.0 L 318.9 493.47932569729164 L 321.9 492.9 Z" fill="#f6e6bf" opacity="0.6795561601640656"/><path d="M 472.9837593398988 68.5 L 473.5 71.3 L 476.3 71.85359805310145 L 473.5 72.4 L 472.9837593398988 75.2 L 472.4 72.4 L 469.6 71.85359805310145 L 472.4 71.3 Z" fill="#f6e6bf" opacity="0.7119328573578969"/><path d="M 40.78608285263181 18.7 L 41.4 21.8 L 44.4 22.385725353378803 L 41.4 23.0 L 40.78608285263181 26.0 L 40.2 23.0 L 37.1 22.385725353378803 L 40.2 21.8 Z" fill="#f6e6bf" opacity="0.5611093904124573"/><path d="M 450.1226278953254 361.3 L 450.6 363.7 L 453.0 364.19533125916496 L 450.6 364.7 L 450.1226278953254 367.1 L 449.7 364.7 L 447.3 364.19533125916496 L 449.7 363.7 Z" fill="#f6e6bf" opacity="0.7755548021057621"/><path d="M 134.2 69.9 L 32.0 383.6 L 307.9 454.0 L 447.1 559.6 L 474.1 495.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">三组工作词汇</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#astrologyterms0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#astrologyterms0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">相位</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">两颗行星之间的角度</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">显示合作还是较劲</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">先读容许度最小的</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">轴点</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">星盘的四个枢纽点</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">锚定人生主题落点</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">上升、天顶、下降、天底</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">虚点</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">算出来的非星体位置</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">补全星盘结构细节</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">看什么压在轴点附近</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

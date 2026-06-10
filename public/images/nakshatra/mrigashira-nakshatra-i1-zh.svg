@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="追寻者的五个信号">
+  <defs>
+    <linearGradient id="mrigashiranakshatra1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mrigashiranakshatra1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mrigashiranakshatra1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mrigashiranakshatra1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mrigashiranakshatra1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mrigashiranakshatra1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#mrigashiranakshatra1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#mrigashiranakshatra1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#mrigashiranakshatra1zh-neb2)"/>
+  <circle cx="121.8" cy="160.1" r="1.69" fill="#cfc8ea" opacity="0.27"/><circle cx="485.9" cy="323.4" r="0.82" fill="#cfc8ea" opacity="0.52"/><circle cx="559.4" cy="326.1" r="1.64" fill="#cfc8ea" opacity="0.44"/><circle cx="40.7" cy="411.0" r="0.58" fill="#cfc8ea" opacity="0.23"/><circle cx="213.4" cy="288.8" r="0.88" fill="#cfc8ea" opacity="0.34"/><circle cx="460.2" cy="237.4" r="0.97" fill="#cfc8ea" opacity="0.19"/><circle cx="248.1" cy="401.0" r="0.66" fill="#cfc8ea" opacity="0.38"/><circle cx="175.4" cy="418.1" r="1.36" fill="#cfc8ea" opacity="0.35"/><circle cx="128.0" cy="228.8" r="1.64" fill="#cfc8ea" opacity="0.20"/><circle cx="233.7" cy="389.3" r="1.70" fill="#cfc8ea" opacity="0.36"/><circle cx="536.4" cy="174.9" r="0.84" fill="#cfc8ea" opacity="0.29"/><circle cx="102.5" cy="57.8" r="0.93" fill="#cfc8ea" opacity="0.27"/><circle cx="531.3" cy="300.3" r="1.43" fill="#cfc8ea" opacity="0.35"/><circle cx="666.1" cy="21.3" r="1.38" fill="#cfc8ea" opacity="0.50"/><circle cx="704.4" cy="327.8" r="1.67" fill="#cfc8ea" opacity="0.31"/><circle cx="324.3" cy="68.8" r="1.11" fill="#cfc8ea" opacity="0.30"/><circle cx="299.3" cy="310.0" r="0.74" fill="#cfc8ea" opacity="0.38"/><circle cx="97.8" cy="315.7" r="0.73" fill="#cfc8ea" opacity="0.48"/><circle cx="219.1" cy="167.4" r="1.08" fill="#cfc8ea" opacity="0.30"/><circle cx="357.0" cy="111.7" r="1.09" fill="#cfc8ea" opacity="0.18"/><circle cx="511.3" cy="113.4" r="1.57" fill="#cfc8ea" opacity="0.29"/><circle cx="740.7" cy="38.3" r="0.98" fill="#cfc8ea" opacity="0.23"/><circle cx="307.2" cy="234.3" r="1.38" fill="#cfc8ea" opacity="0.47"/><circle cx="88.5" cy="82.3" r="0.76" fill="#cfc8ea" opacity="0.13"/><circle cx="224.1" cy="310.5" r="1.69" fill="#cfc8ea" opacity="0.47"/><circle cx="694.6" cy="18.1" r="1.28" fill="#cfc8ea" opacity="0.31"/><circle cx="143.5" cy="164.3" r="0.47" fill="#cfc8ea" opacity="0.15"/><circle cx="154.4" cy="257.3" r="0.70" fill="#cfc8ea" opacity="0.46"/><circle cx="230.7" cy="297.1" r="1.20" fill="#cfc8ea" opacity="0.36"/><circle cx="626.6" cy="59.3" r="1.20" fill="#cfc8ea" opacity="0.49"/><circle cx="270.8" cy="323.2" r="0.55" fill="#cfc8ea" opacity="0.49"/><circle cx="652.8" cy="278.4" r="1.58" fill="#cfc8ea" opacity="0.48"/><circle cx="279.1" cy="399.9" r="1.61" fill="#cfc8ea" opacity="0.34"/><circle cx="607.6" cy="204.2" r="0.40" fill="#cfc8ea" opacity="0.28"/><circle cx="290.4" cy="295.9" r="0.57" fill="#cfc8ea" opacity="0.33"/><circle cx="647.3" cy="356.8" r="1.13" fill="#cfc8ea" opacity="0.37"/><circle cx="435.0" cy="202.6" r="0.40" fill="#cfc8ea" opacity="0.28"/><path d="M 319.21199223957956 367.9 L 319.7 370.3 L 322.0 370.73383037094027 L 319.7 371.2 L 319.21199223957956 373.5 L 318.8 371.2 L 316.4 370.73383037094027 L 318.8 370.3 Z" fill="#f6e6bf" opacity="0.5844050657469779"/><path d="M 532.5957894902676 74.9 L 533.0 77.2 L 535.3 77.6199212167412 L 533.0 78.1 L 532.5957894902676 80.3 L 532.2 78.1 L 529.9 77.6199212167412 L 532.2 77.2 Z" fill="#f6e6bf" opacity="0.709887933311984"/><path d="M 702.7867598738521 344.3 L 703.3 346.9 L 705.9 347.42209577094764 L 703.3 347.9 L 702.7867598738521 350.6 L 702.3 347.9 L 699.6 347.42209577094764 L 702.3 346.9 Z" fill="#f6e6bf" opacity="0.7909551227930933"/><path d="M 371.71915899030864 62.6 L 372.2 65.2 L 374.9 65.72418987378478 L 372.2 66.2 L 371.71915899030864 68.9 L 371.2 66.2 L 368.6 65.72418987378478 L 371.2 65.2 Z" fill="#f6e6bf" opacity="0.7098621645476669"/><path d="M 720.3742089923471 168.2 L 721.0 171.4 L 724.2 172.03927291650325 L 721.0 172.7 L 720.3742089923471 175.9 L 719.8 172.7 L 716.5 172.03927291650325 L 719.8 171.4 Z" fill="#f6e6bf" opacity="0.7676416732836515"/><path d="M 121.8 160.1 L 511.3 113.4 L 88.5 82.3 L 224.1 310.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">追寻者的五个信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mrigashiranakshatra1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mrigashiranakshatra1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#mrigashiranakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#mrigashiranakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">不断移动的门柱</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">一经抵达，曾经的刚好便显不足</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#mrigashiranakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#mrigashiranakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">循气息而非地图</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">直觉牵引先于逻辑给出解释</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#mrigashiranakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#mrigashiranakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">以美为罗盘</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">审美反应是方向信息而非装饰</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#mrigashiranakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#mrigashiranakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">金牛—双子的拉扯</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">想留存也想流转，两者并行</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#mrigashiranakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#mrigashiranakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">认出的那一刻</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">发觉所寻之物始终在自身之内</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

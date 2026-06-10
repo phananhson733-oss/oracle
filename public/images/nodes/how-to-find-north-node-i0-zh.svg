@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="真交点与平交点对照">
+  <defs>
+    <linearGradient id="howtofindnorthnode0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="howtofindnorthnode0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="howtofindnorthnode0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howtofindnorthnode0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howtofindnorthnode0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="howtofindnorthnode0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#howtofindnorthnode0zh-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#howtofindnorthnode0zh-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#howtofindnorthnode0zh-neb2)"/>
+  <circle cx="264.4" cy="334.4" r="1.23" fill="#cfc8ea" opacity="0.33"/><circle cx="433.8" cy="190.8" r="1.66" fill="#cfc8ea" opacity="0.41"/><circle cx="613.8" cy="168.3" r="1.34" fill="#cfc8ea" opacity="0.21"/><circle cx="423.6" cy="332.1" r="1.02" fill="#cfc8ea" opacity="0.36"/><circle cx="337.2" cy="306.8" r="1.25" fill="#cfc8ea" opacity="0.44"/><circle cx="102.2" cy="345.2" r="0.55" fill="#cfc8ea" opacity="0.42"/><circle cx="494.4" cy="126.2" r="0.41" fill="#cfc8ea" opacity="0.14"/><circle cx="692.1" cy="137.3" r="1.46" fill="#cfc8ea" opacity="0.40"/><circle cx="308.1" cy="69.6" r="1.02" fill="#cfc8ea" opacity="0.17"/><circle cx="673.2" cy="87.7" r="0.90" fill="#cfc8ea" opacity="0.33"/><circle cx="501.3" cy="221.8" r="1.49" fill="#cfc8ea" opacity="0.18"/><circle cx="655.1" cy="202.6" r="0.64" fill="#cfc8ea" opacity="0.50"/><circle cx="346.9" cy="29.7" r="1.46" fill="#cfc8ea" opacity="0.47"/><circle cx="686.2" cy="218.7" r="1.51" fill="#cfc8ea" opacity="0.44"/><circle cx="705.3" cy="348.6" r="0.94" fill="#cfc8ea" opacity="0.15"/><circle cx="82.1" cy="350.2" r="0.84" fill="#cfc8ea" opacity="0.42"/><circle cx="15.9" cy="318.6" r="1.53" fill="#cfc8ea" opacity="0.23"/><circle cx="583.1" cy="142.4" r="1.16" fill="#cfc8ea" opacity="0.24"/><circle cx="489.8" cy="260.0" r="0.56" fill="#cfc8ea" opacity="0.12"/><circle cx="56.3" cy="227.0" r="1.15" fill="#cfc8ea" opacity="0.53"/><circle cx="164.9" cy="293.7" r="0.88" fill="#cfc8ea" opacity="0.51"/><circle cx="189.9" cy="178.0" r="1.13" fill="#cfc8ea" opacity="0.47"/><circle cx="331.3" cy="217.2" r="1.46" fill="#cfc8ea" opacity="0.42"/><circle cx="98.6" cy="114.5" r="0.48" fill="#cfc8ea" opacity="0.46"/><circle cx="160.9" cy="184.4" r="0.93" fill="#cfc8ea" opacity="0.35"/><circle cx="235.4" cy="421.3" r="1.28" fill="#cfc8ea" opacity="0.48"/><circle cx="736.4" cy="76.4" r="0.79" fill="#cfc8ea" opacity="0.40"/><circle cx="301.1" cy="42.2" r="0.84" fill="#cfc8ea" opacity="0.52"/><circle cx="215.6" cy="22.0" r="1.53" fill="#cfc8ea" opacity="0.42"/><circle cx="329.1" cy="428.9" r="1.07" fill="#cfc8ea" opacity="0.14"/><circle cx="97.3" cy="214.8" r="0.59" fill="#cfc8ea" opacity="0.32"/><circle cx="614.1" cy="266.3" r="0.95" fill="#cfc8ea" opacity="0.37"/><circle cx="358.9" cy="359.8" r="1.19" fill="#cfc8ea" opacity="0.50"/><circle cx="722.9" cy="307.7" r="0.59" fill="#cfc8ea" opacity="0.17"/><circle cx="29.8" cy="222.8" r="0.49" fill="#cfc8ea" opacity="0.44"/><circle cx="658.0" cy="381.1" r="0.69" fill="#cfc8ea" opacity="0.40"/><circle cx="301.3" cy="131.1" r="1.43" fill="#cfc8ea" opacity="0.13"/><circle cx="646.9" cy="113.2" r="0.54" fill="#cfc8ea" opacity="0.42"/><path d="M 451.9875143542886 236.3 L 452.5 238.7 L 454.9 239.2189828704577 L 452.5 239.7 L 451.9875143542886 242.2 L 451.5 239.7 L 449.0 239.2189828704577 L 451.5 238.7 Z" fill="#f6e6bf" opacity="0.6657601855462417"/><path d="M 607.2979795634747 382.3 L 607.9 385.3 L 610.9 385.9149548893329 L 607.9 386.5 L 607.2979795634747 389.5 L 606.7 386.5 L 603.7 385.9149548893329 L 606.7 385.3 Z" fill="#f6e6bf" opacity="0.5658187891123816"/><path d="M 236.26290079206228 68.9 L 236.7 71.3 L 239.1 71.737540301634 L 236.7 72.2 L 236.26290079206228 74.5 L 235.8 72.2 L 233.5 71.737540301634 L 235.8 71.3 Z" fill="#f6e6bf" opacity="0.5999248696258291"/><path d="M 51.02729566395283 380.3 L 51.6 383.0 L 54.3 383.55624045967124 L 51.6 384.1 L 51.02729566395283 386.9 L 50.5 384.1 L 47.7 383.55624045967124 L 50.5 383.0 Z" fill="#f6e6bf" opacity="0.566867332230322"/><path d="M 57.25592667609453 114.4 L 57.8 117.2 L 60.7 117.79634666326456 L 57.8 118.3 L 57.25592667609453 121.2 L 56.7 118.3 L 53.8 117.79634666326456 L 56.7 117.2 Z" fill="#f6e6bf" opacity="0.6639195028459653"/><path d="M 337.2 306.8 L 189.9 178.0 L 97.3 214.8 L 614.1 266.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">真交点与平交点对照</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#howtofindnorthnode0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#howtofindnorthnode0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">真交点</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">按月亮轨道实际摆动计算</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">多数现代排盘的默认设置</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">更贴近天象的真实位置</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">平交点</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">取一段时间的平均值</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">沿黄道稳定逆行漂移</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">数值平稳、不来回抖动</text>
+  <path d="M 280.025 416.4 L 280.4 418.6 L 282.6 419 L 280.4 419.4 L 280.025 421.6 L 279.6 419.4 L 277.4 419 L 279.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 416.4 L 480.4 418.6 L 482.6 419 L 480.4 419.4 L 479.975 421.6 L 479.6 419.4 L 477.4 419 L 479.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

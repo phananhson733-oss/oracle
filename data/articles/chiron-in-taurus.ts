@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const chironInTaurusEn: WikiArticle = {
   slug: "chiron-in-taurus",
+  image: "/images/placements/chiron-in-taurus.jpg",
+  image_alt: "A ceramic vessel mended with glowing gold seams stands firm while coins dissolve into mist, symbolizing the Chiron in Taurus wound of worth beneath money.",
   title: "Why Chiron in Taurus Is Really About Worth, Not Money",
   description: "Chiron in Taurus is a natal placement where Chiron — the wounded centaur of the chart — sits in Taurus, the sign of the body, money, and self-worth.",
   authorId: "julian-thorne",
@@ -48,6 +50,8 @@ Chiron in Taurus is easy to confuse with neighboring ideas, and telling them apa
 
 Take two people uneasy about money: the Saturn type may steady as boundaries and a buffer mature, while the person with this Chiron keeps a healthy account and still lies awake feeling short. Here, pleasure and rest are less indulgence than repair, landing best as specific practice — a slow meal you don't rush, a real break taken without guilt, and a quiet log of how the body responds to the thought, "I have worth even when I produce nothing."
 
+
+![Comparison of Chiron in Taurus (worth and deserving), Saturn in Taurus (discipline and resource management), and Chiron in Scorpio (intimacy, power, and trust).](/images/placements/chiron-in-taurus-i0-en.svg)
 ## How to Read Chiron in Taurus in Yourself
 
 Chiron in Taurus rarely announces itself loudly, so read it on two levels — the chart and the everyday signals.
@@ -62,6 +66,8 @@ In daily life, a few patterns tend to point to it:
 4. The wound speaks through the body: a tight throat or guarded voice, tension in the neck, an uneasy relationship with appetite and touch, a hunger for steady rhythm.
 5. Spending swings between guilt-heavy restriction and comfort-buying that never quite lands.
 
+
+![Five everyday signals of Chiron in Taurus: a persistent sense of not enough, discomfort receiving, worth tied to productivity, bodily tension, and swinging spending habits.](/images/placements/chiron-in-taurus-i1-en.svg)
 ## Common Misreadings
 
 The popular take on Chiron in Taurus gets a few things backwards, and each misreading keeps people stuck in the wrong fix:

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const vedicBirthChartCalculatorEn: WikiArticle = {
   slug: "vedic-birth-chart-calculator",
+  image: "/images/vedic/vedic-birth-chart-calculator.jpg",
+  image_alt: "A still lake mirroring a dense sidereal starfield, a faint gold ring of light resolving on the water as a chart forms from the sky.",
   title: "Reading Your Vedic Birth Chart Calculator Output, Placement by Placement",
   description: "A Vedic birth chart is a sidereal map of where the planets stood at your birth, calculated from your exact date, time, and place of birth. A vedic birth...",
   authorId: "aditi-sharma",
@@ -46,6 +48,8 @@ A Western natal chart uses the tropical zodiac, which pins the signs to the seas
 
 A second contrast sits inside the Vedic system itself: dasha timing versus transit reading. Dasha periods, a classical Jyotish timing framework from the Parashara tradition (the Vimshottari dasha) later popularised and case-studied by teachers such as B. V. Raman and K. N. Rao, track long internal chapters, while transits track short external triggers. Choosing dasha as your primary lens gets you a clear life-stage narrative, but you lose the day-to-day precision that transit work offers.
 
+
+![Comparison of the sidereal Vedic and tropical Western zodiac reference frames and what each trades away](/images/vedic/vedic-birth-chart-calculator-i1-en.svg)
 ## How to Read Your Vedic Birth Chart in Practice
 
 A vedic birth chart calculator gives you the raw data; reading it is a matter of working in the right order rather than left to right. As a second-generation Jyotish practitioner, the sequence I was taught — and still run first on any chart — starts with the frame, not the planets:
@@ -58,6 +62,8 @@ A vedic birth chart calculator gives you the raw data; reading it is a matter of
 
 Worked in this order, the chart reveals itself as a layered structure rather than a flat list. The lagna is the room you are standing in, the houses are the walls, the planets are the furniture, and the dasha tells you which room is lit right now. The calculator will never hand you that narrative directly; building it from the raw placements is the skill that turns data into self-knowledge.
 
+
+![Five-step sequence for reading a Vedic chart: lagna, lagna lord, house then sign, current dasha, repetition](/images/vedic/vedic-birth-chart-calculator-i0-en.svg)
 ## Common Misreadings
 
 Most confusion around a vedic birth chart calculator comes from importing habits that belong to a different system. Four misreadings account for the bulk of it:
@@ -121,6 +127,8 @@ Open the chart your tool saved, then read it in order: lagna first, lagna lord, 
 
 export const vedicBirthChartCalculatorZh: WikiArticle = {
   slug: "vedic-birth-chart-calculator",
+  image: "/images/vedic/vedic-birth-chart-calculator.jpg",
+  image_alt: "静湖映出异常致密精确的恒星，水面上一圈淡金色光环正从倒影中凝聚成形，仿佛真实天空自行生成星图。",
   title: "排出吠陀星盘之后，最该先读懂的几个配置",
   description: "吠陀星盘（Vedic Birth Chart）是基于恒星黄道排出的印度占星本命盘。它记录你出生那一刻行星在天空中的真实位置。它和多数人熟悉的西方占星不同：西方用回归黄道，吠陀占星（Vedic astrology，源自印度的 jyotisha...",
   authorId: "aditi-sharma",
@@ -165,6 +173,8 @@ export const vedicBirthChartCalculatorZh: WikiArticle = {
 
 恒星黄道星盘换来的是与真实天象对齐，代价是要重新认识一个略显"陌生"的自己。要不要为这份精确买单，是你读吠陀星盘前先得想清楚的取舍。这一点也和 *恒星黄道与回归黄道对比说明* 里讲的取舍互相呼应。
 
+
+![吠陀恒星黄道与西方回归黄道参照系及各自取舍的对比图](/images/vedic/vedic-birth-chart-calculator-i1-zh.svg)
 ## 如何在你的星盘里识别 Vedic Birth Chart
 
 拿到 Vedic Birth Chart 排盘工具给的盘面后，别想一次看懂全部，先按这几个信号逐个认：
@@ -177,6 +187,8 @@ export const vedicBirthChartCalculatorZh: WikiArticle = {
 
 读这张盘的诀窍，是把抽象符号一条条对回到具体生活场景，而不是追求一次背完所有规则。
 
+
+![读吠陀星盘的五步顺序：上升点、上升主星、先宫后座、当前大运、重复主题](/images/vedic/vedic-birth-chart-calculator-i0-zh.svg)
 ## 常见误读
 
 围绕 Vedic Birth Chart 这张盘，网上流传的浅层说法最容易把人带偏。最常见的几个误读如下：

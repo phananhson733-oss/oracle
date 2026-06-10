@@ -1,0 +1,1370 @@
+{
+  "_comment": "HOUSES cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/houses",
+  "urlBase": "/images/houses",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "astrology-houses": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a vast open valley landscape at night with a low horizon and a distant treeline, the wide sky filling most of the frame; a luminous teal-and-gold Milky-Way wash sweeps across the deep indigo dark with faint star points. Across the sky, twelve soft pools of glowing light are spaced like windows lit in the dark, each a different gentle warmth, and a few small gold planetary orbs drift slowly between them as if moving room to room through the night — twelve life-stages as luminous fields rather than a diagram, expansive and contemplative, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "Twelve soft pools of glowing light spaced across the night sky with small gold planets drifting between them, over a wide valley.",
+        "altZh": "广阔山谷夜空中，十二处柔和的发光区域如点亮的窗，几颗金色小行星在其间游走，像穿行于一个个房间。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Astrological Houses in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The Astrological Houses",
+          "titleEn": "Five Steps to Read Any House Placement",
+          "titleZh": "五步读懂任意宫位配置",
+          "items": [
+            {
+              "nameEn": "Name the house & life area",
+              "nameZh": "定位宫位与生活领域",
+              "subEn": "State the domain plainly: money, partnership, home, career",
+              "subZh": "直白说出领域：金钱、伴侣、家庭、事业"
+            },
+            {
+              "nameEn": "Read the sign for style",
+              "nameZh": "读星座定风格",
+              "subEn": "The cusp sign sets the tone: cautious, expressive, steady",
+              "subZh": "宫头星座定基调：谨慎、外放或沉稳"
+            },
+            {
+              "nameEn": "Read the planet for drive",
+              "nameZh": "读行星定动力",
+              "subEn": "Venus seeks harmony, Mars pushes, Saturn builds structure",
+              "subZh": "金星求和谐，火星向前推，土星建结构"
+            },
+            {
+              "nameEn": "Synthesize one sentence",
+              "nameZh": "合成一句话",
+              "subEn": "Combine area, style, and drive into a single line",
+              "subZh": "把领域、风格、动力拼成完整一句"
+            },
+            {
+              "nameEn": "Ask a growth question",
+              "nameZh": "转成成长之问",
+              "subEn": "Where is the pattern asking for development, not a verdict",
+              "subZh": "问模式在哪要求成长，而非宿命判词"
+            }
+          ],
+          "altEn": "Five-step sequence for reading a house placement: house, sign, planet, synthesis, growth question",
+          "altZh": "读宫位的五步流程图：宫位、星座、行星、合成一句话、成长之问"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Astrological Houses vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The Astrological Houses 与相近概念：运作方式 + 取舍",
+          "titleEn": "Signs Describe Style, Houses Describe Setting",
+          "titleZh": "星座说风格，宫位说场域",
+          "columns": [
+            {
+              "nameEn": "Zodiac Signs",
+              "nameZh": "黄道星座",
+              "linesEn": [
+                "Describe style: tone, pace, motivation",
+                "How a planet expresses itself",
+                "Vivid character, less specific",
+                "Answer: how does it feel?"
+              ],
+              "linesZh": [
+                "描述风格：基调、节奏、动机",
+                "行星如何表达自己",
+                "鲜明生动，但定位模糊",
+                "回答「以什么方式」"
+              ]
+            },
+            {
+              "nameEn": "Houses",
+              "nameZh": "宫位",
+              "linesEn": [
+                "Describe setting: the life area lit up",
+                "Where that style actually lands",
+                "Concrete, less colorful",
+                "Answer: where does it show up?"
+              ],
+              "linesZh": [
+                "描述场域：被点亮的生活领域",
+                "风格实际落在哪里",
+                "具体落地，少了性格色彩",
+                "回答「在哪块生活里」"
+              ]
+            }
+          ],
+          "altEn": "Comparison of zodiac signs as style versus houses as the life setting where style lands",
+          "altZh": "星座（风格）与宫位（生活场域）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The Astrological Houses at a Glance",
+          "afterHeadingZh": "## The Astrological Houses 速查表",
+          "titleEn": "Five Key Houses and Their Natural Rulers",
+          "titleZh": "五个关键宫位与自然主管",
+          "items": [
+            {
+              "nameEn": "1st House — Ascendant",
+              "nameZh": "第一宫 · 上升点",
+              "subEn": "Identity and outward approach · Aries / Mars",
+              "subZh": "自我形象与对外姿态 · 白羊 / 火星"
+            },
+            {
+              "nameEn": "4th House — IC",
+              "nameZh": "第四宫 · 天底",
+              "subEn": "Home, family, inner security · Cancer / Moon",
+              "subZh": "家庭根基与内在安全感 · 巨蟹 / 月亮"
+            },
+            {
+              "nameEn": "7th House — Descendant",
+              "nameZh": "第七宫 · 下降点",
+              "subEn": "One-to-one partnership mirror · Libra / Venus",
+              "subZh": "一对一伴侣关系之镜 · 天秤 / 金星"
+            },
+            {
+              "nameEn": "8th House",
+              "nameZh": "第八宫",
+              "subEn": "Shared resources & transformation · Scorpio / Pluto",
+              "subZh": "共有资源与深层转化 · 天蝎 / 冥王星"
+            },
+            {
+              "nameEn": "10th House — Midheaven",
+              "nameZh": "第十宫 · 天顶",
+              "subEn": "Public role and long-arc goals · Capricorn / Saturn",
+              "subZh": "公众角色与长期目标 · 摩羯 / 土星"
+            }
+          ],
+          "altEn": "Five key houses with their domains and natural rulers, from the Ascendant to the Midheaven",
+          "altZh": "五个关键宫位及其主管领域与自然守护：从上升点到天顶"
+        }
+      ]
+    },
+    "1st-house-meaning": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: open ground meeting a low eastern horizon under a vast pre-dawn night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. At the eastern edge a soft glowing doorway of warm light stands open right at the horizon where the first light breaks, and just behind and beneath it a deeper, more inward sun glows half-hidden — the instinctive self you lead with in front, the truer core waiting behind, a threshold of arrival, quiet and expectant in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A glowing open doorway at the eastern horizon at first light, with a deeper inner sun half-hidden behind it.",
+        "altZh": "东方地平线破晓处立着一道敞开的发光门廊，门后半隐着一轮更内在的太阳。"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Where the 1st House Comes From: A Short History",
+          "titleEn": "How the 1st House Entered the Tradition",
+          "titleZh": "第一宫如何进入占星传统",
+          "items": [
+            {
+              "labelEn": "Late 2nd–1st c. BCE",
+              "labelZh": "公元前2世纪末–1世纪",
+              "titleEn": "Horoscopic astrology emerges",
+              "titleZh": "天宫图占星成形",
+              "noteEn": "Babylonian astrology merges with Egyptian decanic tradition",
+              "noteZh": "巴比伦占星与埃及旬星传统在希腊化地中海融合"
+            },
+            {
+              "labelEn": "Hellenistic Egypt",
+              "labelZh": "希腊化埃及",
+              "titleEn": "The Ascendant named horoskopos",
+              "titleZh": "上升点得名 horoskopos",
+              "noteEn": "Greek for 'hour marker' — the degree rising in the east",
+              "noteZh": "意为「时刻标记」，即东方地平线正升起的度数"
+            },
+            {
+              "labelEn": "c. 100 BCE",
+              "labelZh": "约公元前100年",
+              "titleEn": "Twelve-place dodecatropos set",
+              "titleZh": "十二位体系确立",
+              "noteEn": "Counting places from the ascendant becomes the core method",
+              "noteZh": "自上升起算十二位，成为占星核心程序"
+            },
+            {
+              "labelEn": "1647",
+              "labelZh": "1647年",
+              "titleEn": "Lilly's Christian Astrology",
+              "titleZh": "里利《基督教占星学》",
+              "noteEn": "1st house signifies life, stature, complexion, and form",
+              "noteZh": "第一宫主掌生命、身形、气色与形貌"
+            }
+          ],
+          "altEn": "Timeline of the 1st house from Hellenistic horoscopic astrology around 100 BCE to Lilly in 1647",
+          "altZh": "第一宫的历史时间线：从公元前100年左右的希腊化占星到1647年的里利"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 1st House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 1st House 与相近概念：运作方式 + 取舍",
+          "titleEn": "1st House vs Sun Sign: Two Layers of Self",
+          "titleZh": "第一宫与太阳星座：自我的两个层面",
+          "columns": [
+            {
+              "nameEn": "1st House / Ascendant",
+              "nameZh": "第一宫 / 上升点",
+              "linesEn": [
+                "The instinctive self you lead with",
+                "A lens on how you enter a room",
+                "What strangers notice in a minute",
+                "Quick, accurate — but not the why"
+              ],
+              "linesZh": [
+                "你本能率先示人的那一面",
+                "过滤你如何进入场合的镜头",
+                "陌生人第一分钟读到的你",
+                "快而准，却说不出动机"
+              ]
+            },
+            {
+              "nameEn": "Sun Sign",
+              "nameZh": "太阳星座",
+              "linesEn": [
+                "The deeper identity and core motive",
+                "Drives your biggest life choices",
+                "Shows in private, over a lifetime",
+                "Depth — but no immediate cue"
+              ],
+              "linesZh": [
+                "更深层的核心身份与动机",
+                "驱动你重大的人生选择",
+                "多显现于私下与长期轨迹",
+                "有深度，却少即时线索"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 1st house as the instinctive presented self versus the Sun sign as core motive",
+          "altZh": "第一宫（本能示人的自我）与太阳星座（核心动机）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How Common Is Belief in the Rising Sign? What Surveys Show",
+          "titleEn": "Pew 2024: Belief in Astrology, by the Numbers",
+          "titleZh": "皮尤 2024：占星信念数据一览",
+          "items": [
+            {
+              "nameEn": "27% believe in astrology",
+              "nameZh": "27% 相信占星",
+              "subEn": "U.S. adults, Pew survey of 9,593 (Oct 21–27, 2024)",
+              "subZh": "美国成年人，皮尤 9,593 人调查（2024 年 10 月）"
+            },
+            {
+              "nameEn": "30% consult at least yearly",
+              "nameZh": "30% 每年至少咨询一次",
+              "subEn": "Astrology, tarot, or fortune tellers — mostly just for fun",
+              "subZh": "占星、塔罗或算命——多数人称只是图个有趣"
+            },
+            {
+              "nameEn": "Women 35% vs men 18%",
+              "nameZh": "女性 35% 对男性 18%",
+              "subEn": "Belief in astrology skews notably by gender",
+              "subZh": "占星信念存在明显的性别差异"
+            },
+            {
+              "nameEn": "Ages 18–29: 33% vs 65+: 17%",
+              "nameZh": "18–29 岁 33%，65 岁以上 17%",
+              "subEn": "Younger adults are far more likely to believe",
+              "subZh": "年轻人相信占星的比例显著更高"
+            }
+          ],
+          "altEn": "Key Pew 2024 survey figures: 27% of US adults believe in astrology, 30% consult yearly, with gender and age gaps",
+          "altZh": "皮尤2024调查要点：27%美国成年人相信占星，30%每年咨询，性别与年龄差异明显"
+        }
+      ]
+    },
+    "2nd-house-astrology": {
+      "hero": {
+        "prompt": "A small brass balance scale resting on still, dark water: one pan holds a neat stack of gold coins, the other a single softly glowing orb of light, the two pans perfectly level; in the water's mirror reflection the coins dissolve into the same warm glow as the orb — material security and felt self-worth weighed as one quantity. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A balance scale weighing gold coins against a glowing orb, reflected as one light in dark water",
+        "altZh": "天平一端是金币、一端是发光圆球，暗色水面倒影中两者融为同一道光"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 2nd House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 2nd House 与相近概念：运作方式 + 取舍",
+          "titleEn": "2nd House vs 8th House: Yours vs Shared",
+          "titleZh": "第二宫与第八宫：我的与我们的",
+          "columns": [
+            {
+              "nameEn": "2nd House",
+              "nameZh": "第二宫",
+              "linesEn": [
+                "Resources you hold alone",
+                "What you earn, own, and protect",
+                "Self-worth beneath your money",
+                "Clean read on self-made security"
+              ],
+              "linesZh": [
+                "你独自持有的资源",
+                "你挣来、拥有、守护的东西",
+                "金钱底下的自我价值感",
+                "看清自给自足的安全感"
+              ]
+            },
+            {
+              "nameEn": "8th House",
+              "nameZh": "第八宫",
+              "linesEn": [
+                "What you share, inherit, merge",
+                "Joint accounts and inheritance",
+                "Worth entangled with others",
+                "Depth and leverage of pooled trust"
+              ],
+              "linesZh": [
+                "你共享、继承、交融的部分",
+                "共同账户与遗产",
+                "与他人交缠的价值感",
+                "共担信任带来的深度"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 2nd house of personal resources versus the 8th house of shared and merged resources",
+          "altZh": "第二宫（个人资源）与第八宫（共享交融资源）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 2nd House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 2nd House",
+          "titleEn": "Reading Your 2nd House in Five Steps",
+          "titleZh": "五步读出你的第二宫",
+          "items": [
+            {
+              "nameEn": "Find the cusp sign",
+              "nameZh": "找宫头星座",
+              "subEn": "It flavors how you pursue and protect what is yours",
+              "subZh": "它决定你追求与守护所有物的风格"
+            },
+            {
+              "nameEn": "Note planets in the house",
+              "nameZh": "看宫内行星",
+              "subEn": "Each adds a voice to your money-and-worth story",
+              "subZh": "每颗都为金钱与价值的故事添一个声音"
+            },
+            {
+              "nameEn": "Locate Venus by sign & house",
+              "nameZh": "定位金星的星座与宫位",
+              "subEn": "Its condition colors what you treat as valuable",
+              "subZh": "金星状态决定你视什么为真正有价值"
+            },
+            {
+              "nameEn": "Track spending for one week",
+              "nameZh": "记录一周消费",
+              "subEn": "Purchases you defend fastest mark shaky worth",
+              "subZh": "你最快为之辩护的花销，指向价值感不稳处"
+            },
+            {
+              "nameEn": "What you'd grieve losing",
+              "nameZh": "想想失去什么最痛",
+              "subEn": "Those possessions are quietly tied to identity",
+              "subZh": "那些物件早已悄悄绑定你的身份认同"
+            }
+          ],
+          "altEn": "Five steps to read the 2nd house: cusp sign, planets, Venus, a week of spending, treasured possessions",
+          "altZh": "读第二宫的五个步骤：宫头星座、宫内行星、金星、一周消费记录、最珍视之物"
+        }
+      ]
+    },
+    "3rd-house-astrology": {
+      "hero": {
+        "prompt": "A close-range night map of a small neighborhood seen gently from above — short lanes looping between nearby houses, a low garden wall, a corner bus-stop lantern — with folded paper notes gliding like quick gold moths along the lanes between windows, while a far horizon arc stays dim and untraveled at the top edge: the everyday mind lit brightly at close range. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A night map of short neighborhood lanes with glowing paper notes flying between houses",
+        "altZh": "夜色中的街区小巷地图，发光的纸条在邻里房屋之间穿梭"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 3rd House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 3rd House 与相近概念：运作方式 + 取舍",
+          "titleEn": "3rd House vs 9th House: Facts vs Meaning",
+          "titleZh": "第三宫与第九宫：事实与意义",
+          "columns": [
+            {
+              "nameEn": "3rd House",
+              "nameZh": "第三宫",
+              "linesEn": [
+                "Collects facts, labels, keeps moving",
+                "Close range, checkable daily detail",
+                "Knowing the bus schedule",
+                "Quickness and range, less depth"
+              ],
+              "linesZh": [
+                "收集事实、贴标签、继续前进",
+                "近距离、可查证的日常细节",
+                "知道公交时刻表",
+                "快而广，深度有限"
+              ]
+            },
+            {
+              "nameEn": "9th House",
+              "nameZh": "第九宫",
+              "linesEn": [
+                "Reaches past details toward meaning",
+                "Belief, philosophy, the long view",
+                "Asking where the journey heads",
+                "Perspective, but drifts from detail"
+              ],
+              "linesZh": [
+                "越过细节去够意义",
+                "信念、哲学与长远视野",
+                "追问旅程最终去向",
+                "有高度，却可能漂离具体"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 3rd house collecting close-range facts versus the 9th house synthesizing meaning",
+          "altZh": "第三宫（近距离收集事实）与第九宫（综合成意义）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 3rd House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 3rd House",
+          "titleEn": "Reading Your 3rd House in Five Steps",
+          "titleZh": "五步读出你的第三宫",
+          "items": [
+            {
+              "nameEn": "Find the cusp sign",
+              "nameZh": "找宫头星座",
+              "subEn": "It flavors your default thinking style",
+              "subZh": "它决定你思维的默认风格"
+            },
+            {
+              "nameEn": "Locate planets inside",
+              "nameZh": "看宫内行星",
+              "subEn": "Mercury sharpens, Moon ties mood, Saturn slows",
+              "subZh": "水星敏锐、月亮牵情绪、土星放慢节奏"
+            },
+            {
+              "nameEn": "Check the ruling planet",
+              "nameZh": "追踪宫主星",
+              "subEn": "Its sign and house show where your mind dwells",
+              "subZh": "宫主星落点显示心智常驻何处"
+            },
+            {
+              "nameEn": "Watch information habits",
+              "nameZh": "观察信息习惯",
+              "subEn": "Note-taking, rapid texting, thinking out loud",
+              "subZh": "记笔记、秒回消息、把想法说出声"
+            },
+            {
+              "nameEn": "Notice low-stakes talk",
+              "nameZh": "留意手足邻里对话",
+              "subEn": "Sibling and neighbor exchanges reveal the style",
+              "subZh": "低压力的近距离交流最显思维底色"
+            }
+          ],
+          "altEn": "Five steps to read the 3rd house: cusp sign, planets, ruler, information habits, everyday conversations",
+          "altZh": "读第三宫的五个步骤：宫头星座、宫内行星、宫主星、信息习惯、日常对话"
+        }
+      ]
+    },
+    "4th-house-meaning": {
+      "hero": {
+        "prompt": "A quiet house silhouette standing at the lowest point of a great zodiac arc, its visible walls dark and modest while beneath the ground line an immense root system glows in fine gold filaments, the roots forming faint chambers and a small hearth-light deep underground — the inherited, unseen foundation carrying everything built above it. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A small dark house above ground with vast glowing golden roots and a hearth-light below",
+        "altZh": "地面上安静的小屋，地下是发光的庞大金色根系与一点炉火"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 4th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 4th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "4th vs 10th House: Private Base, Public Peak",
+          "titleZh": "第四宫与第十宫：私密根基与公众高点",
+          "columns": [
+            {
+              "nameEn": "4th House — IC",
+              "nameZh": "第四宫 · 天底",
+              "linesEn": [
+                "Bottom of the chart",
+                "Roots, home, felt belonging",
+                "Emotional honesty, rootedness",
+                "Anchored, yet may shun the stage"
+              ],
+              "linesZh": [
+                "位于星盘最底端",
+                "根、家与归属感",
+                "情感的诚实与扎根",
+                "安稳，却可能不敢登台"
+              ]
+            },
+            {
+              "nameEn": "10th House — MC",
+              "nameZh": "第十宫 · 天顶",
+              "linesEn": [
+                "Top of the chart",
+                "Public role and reputation",
+                "Outward visibility and status",
+                "Achieving, yet homeless inside"
+              ],
+              "linesZh": [
+                "位于星盘最顶端",
+                "公众角色与名声",
+                "对外的可见度与地位",
+                "有成就，内里却可能漂泊"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 4th house private base at the chart's bottom and the 10th house public peak at the top",
+          "altZh": "第四宫（盘底私密根基）与第十宫（盘顶公众高点）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 4th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 4th House",
+          "titleEn": "Reading Your 4th House in Five Steps",
+          "titleZh": "五步读出你的第四宫",
+          "items": [
+            {
+              "nameEn": "Find the sign on the IC",
+              "nameZh": "看天底星座",
+              "subEn": "It colors how you first experienced safety at home",
+              "subZh": "它定下你最初体会家中安全感的方式"
+            },
+            {
+              "nameEn": "Note planets in the 4th",
+              "nameZh": "看四宫行星",
+              "subEn": "The Moon or Saturn here dominates your felt family",
+              "subZh": "月亮或土星在此，主导你对家的体感"
+            },
+            {
+              "nameEn": "Track recurring home themes",
+              "nameZh": "追踪重复的家庭主题",
+              "subEn": "Frequent moves, a guarded family, a distant parent",
+              "subZh": "频繁搬家、设防的家、难以靠近的家长"
+            },
+            {
+              "nameEn": "Watch your comfort reflex",
+              "nameZh": "观察安抚反射",
+              "subEn": "Where you retreat under stress traces back here",
+              "subZh": "压力下退回何处，往往源自这里"
+            },
+            {
+              "nameEn": "Compare past and present",
+              "nameZh": "对照过去与现在",
+              "subEn": "Which childhood rules do you still follow unchosen?",
+              "subZh": "哪些童年规则你至今仍未经选择地沿用？"
+            }
+          ],
+          "altEn": "Five steps to read the 4th house: IC sign, planets, home themes, comfort reflex, past versus present",
+          "altZh": "读第四宫的五个步骤：天底星座、宫内行星、家庭主题、安抚反射、今昔对照"
+        }
+      ]
+    },
+    "5th-house": {
+      "hero": {
+        "prompt": "A small round stage at the center of a vast dark amphitheater, one warm gold spotlight falling on a single paper flower caught mid-unfolding at center stage, rows of empty seats receding into deep shadow all around; faint gold dust hangs in the beam — the tender, exposed moment of making something and letting it be seen. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A single spotlight on an unfolding paper flower on a small stage in an empty dark amphitheater",
+        "altZh": "空旷黑暗的剧场里，一束金色聚光灯打在小舞台上正在绽开的纸花上"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 5th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 5th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "Three Layers of Self: 1st, 5th, 11th Houses",
+          "titleZh": "自我的三个层次：一宫、五宫、十一宫",
+          "columns": [
+            {
+              "nameEn": "1st House",
+              "nameZh": "第一宫",
+              "linesEn": [
+                "Instant self-presentation",
+                "The manner worn at the door",
+                "Fixed, predictable image",
+                "Recognisable, less spontaneous"
+              ],
+              "linesZh": [
+                "即时的自我呈现",
+                "进门时戴上的姿态",
+                "固定可预期的形象",
+                "好辨认，却少了即兴"
+              ]
+            },
+            {
+              "nameEn": "5th House",
+              "nameZh": "第五宫",
+              "linesEn": [
+                "Deliberate creation and play",
+                "Shown once you feel safe enough",
+                "Playful authenticity",
+                "Joy of being seen, risk included"
+              ],
+              "linesZh": [
+                "有意的创造与游戏",
+                "感到安全后才端出的自己",
+                "带着玩心的真实",
+                "被看见的喜悦与风险并存"
+              ]
+            },
+            {
+              "nameEn": "11th House",
+              "nameZh": "第十一宫",
+              "linesEn": [
+                "Self as one voice among many",
+                "Groups, friends, shared ideals",
+                "Belonging in a collective",
+                "Safety gained, edge softened"
+              ],
+              "linesZh": [
+                "群体中的一个声音",
+                "友谊、社群与共同理想",
+                "融入集体的归属",
+                "换得安全，独特被稀释"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 1st house presented self, 5th house creative self, and 11th house collective self",
+          "altZh": "第一宫（出场自我）、第五宫（创造自我）与第十一宫（群体自我）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The Fifth House in Your Chart",
+          "afterHeadingZh": "## 如何在星盘里认出第五宫的作用",
+          "titleEn": "Reading Your 5th House in Five Steps",
+          "titleZh": "五步读出你的第五宫",
+          "items": [
+            {
+              "nameEn": "Read the cusp sign's element",
+              "nameZh": "看宫头星座元素",
+              "subEn": "Fire acts boldly, earth builds, air plays, water feels",
+              "subZh": "火大胆、土慢建、风玩概念、水凭感受"
+            },
+            {
+              "nameEn": "Note planets inside",
+              "nameZh": "看宫内行星",
+              "subEn": "Venus leans to beauty; Saturn holds play till earned",
+              "subZh": "金星偏爱美；土星先克制玩心"
+            },
+            {
+              "nameEn": "Track where you feel exposed",
+              "nameZh": "追踪暴露时刻",
+              "subEn": "Sharing work, flirting, performing mark the edge",
+              "subZh": "晒作品、调情、登台，都是边界所在"
+            },
+            {
+              "nameEn": "Watch your take on praise",
+              "nameZh": "观察你对赞美的反应",
+              "subEn": "Craving or deflecting shows how freely you shine",
+              "subZh": "渴望或闪避，显出你敢不敢发光"
+            },
+            {
+              "nameEn": "Follow the ruler's house",
+              "nameZh": "追踪宫主星落宫",
+              "subEn": "It shows where your play most wants expression",
+              "subZh": "它指向玩心最想表达的领域"
+            }
+          ],
+          "altEn": "Five steps to read the 5th house: element, planets, exposure points, response to praise, ruler's house",
+          "altZh": "读第五宫的五个步骤：元素、行星、暴露时刻、对赞美的反应、宫主星落宫"
+        }
+      ]
+    },
+    "6th-house-astrology": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a quiet pre-dawn countryside under a fading night sky with a faint teal-gold nebula and the first warm light low on the horizon; neat tended rows of a field curve across the foreground, a single small lantern-glow marking a path of patient daily work, ordered and humble and calm in mood, the gentle dignity of routine and service, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "Neat tended field rows curving under a pre-dawn sky with a single lantern marking a path of patient daily work.",
+        "altZh": "黎明前的田野，整齐的垄行在微光中铺展，一盏小灯标出一条日复一日耕作的小径。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 6th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 6th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "6th House and Its Neighbors: Craft, Title, Body",
+          "titleZh": "第六宫与邻居：日常、头衔、体质",
+          "columns": [
+            {
+              "nameEn": "6th House",
+              "nameZh": "第六宫",
+              "linesEn": [
+                "Unseen daily craft and routines",
+                "Repeated effort that gets you there",
+                "Upkeep of the body over years",
+                "Steady health, less spontaneity"
+              ],
+              "linesZh": [
+                "不被看见的日常打磨",
+                "真正送你抵达的重复努力",
+                "经年累月的身体养护",
+                "换来稳定，少了即兴"
+              ]
+            },
+            {
+              "nameEn": "10th House",
+              "nameZh": "第十宫",
+              "linesEn": [
+                "Public career and recognition",
+                "Sets the destination and the title",
+                "Visible achievement",
+                "Standing gained, privacy paid"
+              ],
+              "linesZh": [
+                "公开的事业与认可",
+                "设定目的地与头衔",
+                "看得见的成就",
+                "赢得地位，让渡沉浸"
+              ]
+            },
+            {
+              "nameEn": "1st House",
+              "nameZh": "第一宫",
+              "linesEn": [
+                "Innate vitality, the born body",
+                "The constitution you start with",
+                "Energy as a given",
+                "Starting point, not the upkeep"
+              ],
+              "linesZh": [
+                "天生的活力与身体",
+                "出厂自带的体质",
+                "与生俱来的精力",
+                "只是起点，不管养护"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 6th house daily craft, the 10th house public career, and the 1st house innate vitality",
+          "altZh": "第六宫（日常打磨）、第十宫（公众事业）与第一宫（先天体质）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 6th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘和日常里认出 The 6th House",
+          "titleEn": "Reading Your 6th House in Five Steps",
+          "titleZh": "五步读出你的第六宫",
+          "items": [
+            {
+              "nameEn": "Find the cusp sign",
+              "nameZh": "看宫头星座",
+              "subEn": "It colors how you organize tasks and self-care",
+              "subZh": "它决定你安排任务与自我照顾的风格"
+            },
+            {
+              "nameEn": "Note planets in the house",
+              "nameZh": "看宫内行星",
+              "subEn": "They show where routine carries extra weight",
+              "subZh": "它们显示日常哪里格外吃重"
+            },
+            {
+              "nameEn": "Track a real week's schedule",
+              "nameZh": "记录真实的一周",
+              "subEn": "Recurring friction clusters around 6th themes",
+              "subZh": "反复的摩擦点常聚在第六宫主题上"
+            },
+            {
+              "nameEn": "Watch work–rest energy flow",
+              "nameZh": "观察工作与休息的能量",
+              "subEn": "That exchange is the house in live action",
+              "subZh": "这股流动就是第六宫的现场"
+            },
+            {
+              "nameEn": "Spot the keystone habit",
+              "nameZh": "找出关键小习惯",
+              "subEn": "The one that, skipped, derails your whole day",
+              "subZh": "一旦跳过，全天节奏就乱的那件小事"
+            }
+          ],
+          "altEn": "Five steps to read the 6th house: cusp sign, planets, a week's schedule, energy flow, keystone habit",
+          "altZh": "读第六宫的五个步骤：宫头星座、行星、一周作息、能量流动、关键小习惯"
+        }
+      ]
+    },
+    "7th-house-astrology": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a still wide lake with a tall mirror-smooth water surface and a low horizon under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points. A single soft beam of gold light reaches out from one side of the scene across the dark water toward the far horizon, where it meets a glowing celestial form that sends the light back magnified and changed — the self projected onto the other and returned amplified, two lights in quiet dialogue across the open water, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A beam of gold light crossing still water to a far glowing form that returns the light magnified, two lights in dialogue.",
+        "altZh": "一束金光越过静水射向远方一团发光的星体，光被放大后返回，两束光隔水对话。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 7th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 7th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "Ascendant vs Descendant: Presented vs Projected",
+          "titleZh": "上升与下降：呈现的我与投射的我",
+          "columns": [
+            {
+              "nameEn": "1st House — Ascendant",
+              "nameZh": "第一宫 · 上升点",
+              "linesEn": [
+                "The self you present",
+                "How you arrive and read the world",
+                "Clean, conscious self-image",
+                "Blind to what you outsource"
+              ],
+              "linesZh": [
+                "你主动呈现的自我",
+                "你出场与解读世界的方式",
+                "清晰可控的自我形象",
+                "看不见外包出去的部分"
+              ]
+            },
+            {
+              "nameEn": "7th House — Descendant",
+              "nameZh": "第七宫 · 下降点",
+              "linesEn": [
+                "The self handed to others to embody",
+                "Disowned traits magnified in partners",
+                "A mirror, not a forecast",
+                "Strong reactions map back to you"
+              ],
+              "linesZh": [
+                "交给他人替你活出的自我",
+                "未认领的特质在伴侣身上放大",
+                "是镜子，不是预言",
+                "强烈反应都指回你自己"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the Ascendant as the presented self and the Descendant as the projected self met in partners",
+          "altZh": "上升点（呈现的自我）与下降点（投射到伴侣身上的自我）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 7th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里读出第七宫",
+          "titleEn": "Five Signals the Mirror Is Working",
+          "titleZh": "镜子正在工作的五个信号",
+          "items": [
+            {
+              "nameEn": "Read your Descendant sign",
+              "nameZh": "读下降点星座",
+              "subEn": "'So not me' qualities often name what you outsource",
+              "subZh": "「最不像我」的特质常是你外包的部分"
+            },
+            {
+              "nameEn": "Recurring partner traits",
+              "nameZh": "追踪重复的伴侣特质",
+              "subEn": "Repetition across different people is projection",
+              "subZh": "不同人身上的同一特质，指向投射"
+            },
+            {
+              "nameEn": "What you admire or resent",
+              "nameZh": "观察迷恋与怨怼",
+              "subEn": "A strong charge marks a disowned part of you",
+              "subZh": "强烈情绪标记你未认领的那一面"
+            },
+            {
+              "nameEn": "Find planets in the 7th",
+              "nameZh": "看七宫行星",
+              "subEn": "They color how you expect 'the other' to behave",
+              "subZh": "它们决定你预设的「对方」模样"
+            },
+            {
+              "nameEn": "Catch 'they made me feel'",
+              "nameZh": "捕捉「他让我觉得」",
+              "subEn": "That phrasing flags a quality waiting to come home",
+              "subZh": "这句口头禅提示有特质等你领回"
+            }
+          ],
+          "altEn": "Five signals for reading the 7th house: Descendant sign, repeated traits, charged reactions, planets, telltale phrasing",
+          "altZh": "读第七宫的五个信号：下降点星座、重复特质、强烈情绪、宫内行星、口头禅"
+        }
+      ]
+    },
+    "8th-house-meaning": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a darkened landscape where still water meets a shadowed shore and a low horizon under a vast night sky; a luminous teal-and-gold nebula wash drifts across the deep indigo dark with faint star points, most of the scene held in deep shadow. A single soft lantern-glow of gold light illuminates only part of the foreground, while the deeper shadowed zone beside it hides faint half-seen forms — submerged roots, a glint of a buried key, a partly sunken vessel beneath the dark surface — the shared, surrendered, transformative material the conscious self cannot easily see, mysterious and charged, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A lantern-glow lighting part of a dark shore while a shadowed zone hides submerged roots, a buried key, and a sunken vessel.",
+        "altZh": "一盏灯光只照亮黑暗岸边的一隅，旁边的阴影区藏着沉没的根系、一把埋藏的钥匙和半沉的器皿。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 8th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 8th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "The 8th House Against Its Neighbors",
+          "titleZh": "第八宫与它的邻居们",
+          "columns": [
+            {
+              "nameEn": "2nd House",
+              "nameZh": "第二宫",
+              "linesEn": [
+                "Sole ownership: money, body, worth",
+                "Clean autonomy, yours to hold",
+                "A personal paycheck"
+              ],
+              "linesZh": [
+                "独自拥有：钱、身体、价值",
+                "干净的自主权",
+                "一份属于自己的薪水"
+              ]
+            },
+            {
+              "nameEn": "7th House",
+              "nameZh": "第七宫",
+              "linesEn": [
+                "The visible partnership contract",
+                "Safe distance of defined roles",
+                "Who you are with"
+              ],
+              "linesZh": [
+                "看得见的伴侣契约",
+                "角色分明的安全距离",
+                "你和谁在一起"
+              ]
+            },
+            {
+              "nameEn": "8th House",
+              "nameZh": "第八宫",
+              "linesEn": [
+                "Merged resources and deep trust",
+                "Bonding after the guard drops",
+                "What you become together"
+              ],
+              "linesZh": [
+                "交融的资源与深层信任",
+                "卸下防备后的联结",
+                "你们一起变成什么"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 2nd house sole ownership, 7th house visible partnership, and 8th house merged depths",
+          "altZh": "第二宫（独自拥有）、第七宫（可见伴侣关系）与第八宫（深层交融）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 8th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 8th House",
+          "titleEn": "Tracing the Blind Spot in Five Steps",
+          "titleZh": "五步追出盲区里的第八宫",
+          "items": [
+            {
+              "nameEn": "Find the 8th-house cusp ruler",
+              "nameZh": "找八宫宫头主星",
+              "subEn": "It names the tone of your hidden material",
+              "subZh": "它命名你隐藏素材的基调"
+            },
+            {
+              "nameEn": "Locate the ruler's house",
+              "nameZh": "看主星落宫",
+              "subEn": "That visible house is where 8th themes leak out",
+              "subZh": "八宫主题正从那个看得见的宫位渗出"
+            },
+            {
+              "nameEn": "Note planets inside the 8th",
+              "nameZh": "看八宫内行星",
+              "subEn": "Then track where those planets rule elsewhere",
+              "subZh": "再追踪它们在盘中主管何处"
+            },
+            {
+              "nameEn": "Recall one real situation",
+              "nameZh": "回想一个真实场景",
+              "subEn": "Shared money, deep trust, or loss — match it up",
+              "subZh": "共财、深信或失去，对回那个宫位"
+            },
+            {
+              "nameEn": "Name the strength out loud",
+              "nameZh": "大声说出那份力量",
+              "subEn": "Naming moves it from blind spot to conscious tool",
+              "subZh": "命名让盲区变成可用的工具"
+            }
+          ],
+          "altEn": "Five-step sequence for tracing the 8th house: cusp ruler, its house, planets, a real situation, naming the strength",
+          "altZh": "追踪第八宫的五步：宫头主星、主星落宫、宫内行星、真实场景、说出力量"
+        }
+      ]
+    },
+    "9th-house-astrology": {
+      "hero": {
+        "prompt": "A trail of small scattered stones and loose pages lying on dark ground in the foreground, gradually aligning and lifting into a single drawn gold arrow that arcs high toward a vast horizon, where faint constellation lines assemble themselves into a luminous open archway — fragments of fact gathered into one far-reaching line of meaning. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Scattered stones and pages aligning into a gold arrow arcing toward a constellation archway on the horizon",
+        "altZh": "散落的石子与纸页汇成一支金色箭矢，射向地平线上由星座连成的拱门"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 9th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 9th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "3rd, 9th, 12th: Three Ways of Knowing",
+          "titleZh": "三宫、九宫、十二宫：三种认知方式",
+          "columns": [
+            {
+              "nameEn": "3rd House",
+              "nameZh": "第三宫",
+              "linesEn": [
+                "Near-range data and daily facts",
+                "Constant gathering, short trips",
+                "Comfort with not-knowing"
+              ],
+              "linesZh": [
+                "近距离信息与日常事实",
+                "不断采集、短途往返",
+                "能与「未知」共处"
+              ]
+            },
+            {
+              "nameEn": "9th House",
+              "nameZh": "第九宫",
+              "linesEn": [
+                "Synthesis into one worldview",
+                "Belief you can argue and teach",
+                "Insists on an answer in words"
+              ],
+              "linesZh": [
+                "综合成一套世界观",
+                "能讲清、能辩护的信念",
+                "坚持要说得出的答案"
+              ]
+            },
+            {
+              "nameEn": "12th House",
+              "nameZh": "第十二宫",
+              "linesEn": [
+                "Dissolves the self into the larger",
+                "Often wordless surrender",
+                "Lets go of the question"
+              ],
+              "linesZh": [
+                "让自我融入更大整体",
+                "常是无言的交付",
+                "放下问题本身"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 3rd house gathering facts, the 9th house building worldview, and the 12th house dissolving into mystery",
+          "altZh": "第三宫（收集事实）、第九宫（建立世界观）与第十二宫（融入未知）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 9th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 9th House",
+          "titleEn": "Reading Your 9th House in Five Steps",
+          "titleZh": "五步读出你的第九宫",
+          "items": [
+            {
+              "nameEn": "Find the 9th-house cusp ruler",
+              "nameZh": "找九宫宫头主星",
+              "subEn": "It names the flavor of your search for meaning",
+              "subZh": "它命名你追寻意义的风格"
+            },
+            {
+              "nameEn": "Locate the ruler's house",
+              "nameZh": "看主星落宫",
+              "subEn": "That's where your worldview shows up daily",
+              "subZh": "你的世界观正在那块日常显形"
+            },
+            {
+              "nameEn": "Read 9th planets as a cluster",
+              "nameZh": "把九宫行星当整体读",
+              "subEn": "The combined story beats one-at-a-time readings",
+              "subZh": "合奏的故事胜过逐颗单读"
+            },
+            {
+              "nameEn": "Recall a belief you changed",
+              "nameZh": "回想一次改观",
+              "subEn": "Match that shift to the planets you found",
+              "subZh": "把那次转变对回宫里的行星"
+            },
+            {
+              "nameEn": "Name the conviction aloud",
+              "nameZh": "大声说出信念",
+              "subEn": "Naming turns vague seeking into a usable worldview",
+              "subZh": "命名让模糊的追寻变成可用的世界观"
+            }
+          ],
+          "altEn": "Five steps to read the 9th house: cusp ruler, its house, planet cluster, a changed belief, naming the conviction",
+          "altZh": "读第九宫的五步：宫头主星、主星落宫、行星整体、一次改观、说出信念"
+        }
+      ]
+    },
+    "10th-house-astrology": {
+      "hero": {
+        "prompt": "A stone stairway built step by uneven step up a steep dark mountainside to the highest point of a great chart arc, where a half-finished beacon of stacked gold blocks glows at the summit beneath a single bright zenith star; the lower steps are worn and faintly warm with the light of years of climbing — public standing assembled slowly over decades, never granted at birth. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "A worn stone stairway climbing to a half-built golden beacon at a mountain summit under a zenith star",
+        "altZh": "磨损的石阶通向山顶天星之下尚未建完的金色灯塔"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 10th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 10th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "6th vs 10th House: The Work vs The Standing",
+          "titleZh": "第六宫与第十宫：做事与立身",
+          "columns": [
+            {
+              "nameEn": "6th House",
+              "nameZh": "第六宫",
+              "linesEn": [
+                "The daily work itself",
+                "Tasks, routines, practiced craft",
+                "Head-down absorption",
+                "Private process, unseen hours"
+              ],
+              "linesZh": [
+                "日常工作本身",
+                "任务、流程与手艺打磨",
+                "低头沉浸",
+                "不为人见的过程"
+              ]
+            },
+            {
+              "nameEn": "10th House",
+              "nameZh": "第十宫",
+              "linesEn": [
+                "How that work reads in public",
+                "Reputation the tasks accumulate",
+                "Authority earned over decades",
+                "Visible standing, less privacy"
+              ],
+              "linesZh": [
+                "这份工作的公众读法",
+                "任务累积出的声望",
+                "数十年挣来的权威",
+                "看得见的位置，少了私密"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 6th house daily tasks and craft versus the 10th house public reputation they earn",
+          "altZh": "第六宫（日常任务与手艺）与第十宫（由此换来的公众声望）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 10th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 10th House",
+          "titleEn": "Reading Your 10th House in Five Steps",
+          "titleZh": "五步读出你的第十宫",
+          "items": [
+            {
+              "nameEn": "Find your MC sign and degree",
+              "nameZh": "找天顶星座与度数",
+              "subEn": "It colors the tone of authority you grow toward",
+              "subZh": "它决定你正在长成的权威色调"
+            },
+            {
+              "nameEn": "Note any planet near the MC",
+              "nameZh": "看天顶附近的行星",
+              "subEn": "It's often the quality the public reads in you first",
+              "subZh": "那常是公众最先读到的特质"
+            },
+            {
+              "nameEn": "Follow the MC ruler's house",
+              "nameZh": "追踪天顶主星落宫",
+              "subEn": "It often says more than the MC sign alone",
+              "subZh": "它常比天顶星座本身说得更多"
+            },
+            {
+              "nameEn": "Track recurring feedback",
+              "nameZh": "收集重复出现的反馈",
+              "subEn": "Roles strangers assume you hold hint your signature",
+              "subZh": "陌生人默认你担任的角色就是你的签名"
+            },
+            {
+              "nameEn": "Spot the duties you resist",
+              "nameZh": "留意你抗拒的责任",
+              "subEn": "Yet keep being handed — authority surfaces there",
+              "subZh": "却总被交到手上——权威正从那里冒头"
+            }
+          ],
+          "altEn": "Five steps to read the 10th house: MC sign, planets near the MC, the ruler's house, feedback, resisted duties",
+          "altZh": "读第十宫的五步：天顶星座、天顶行星、主星落宫、外界反馈、抗拒的责任"
+        }
+      ]
+    },
+    "11th-house": {
+      "hero": {
+        "prompt": "Dozens of small scattered gold stars across a wide night field, each one faint on its own, being threaded by fine gold lines into a single shared constellation that arcs over a distant common horizon; one modest star glows brighter at the exact point where its thread joins the larger figure — individual light folded into a collective pattern of future hope. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters, no human faces.",
+        "altEn": "Scattered faint stars threaded by gold lines into one shared constellation over a common horizon",
+        "altZh": "散落的微光星辰被金线串成一座共同的星座，横跨遥远的地平线"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 11th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 11th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "5th, 7th, 11th: Spark, Mirror, Alliance",
+          "titleZh": "五宫、七宫、十一宫：火花、镜子、同盟",
+          "columns": [
+            {
+              "nameEn": "5th House",
+              "nameZh": "第五宫",
+              "linesEn": [
+                "Personal spark shining for joy",
+                "Romance, play, creative output",
+                "The ego at full expression"
+              ],
+              "linesZh": [
+                "为喜悦而亮的个人火花",
+                "恋爱、玩乐与创作",
+                "尽情舒展的自我"
+              ]
+            },
+            {
+              "nameEn": "7th House",
+              "nameZh": "第七宫",
+              "linesEn": [
+                "One-to-one partnership",
+                "Intimate and reciprocal",
+                "Bond to a single other"
+              ],
+              "linesZh": [
+                "一对一的伴侣关系",
+                "亲密且相互",
+                "与一个具体的人绑定"
+              ]
+            },
+            {
+              "nameEn": "11th House",
+              "nameZh": "第十一宫",
+              "linesEn": [
+                "Group, network, shared cause",
+                "Bond to a collective aim",
+                "Broad reach, less focused depth"
+              ],
+              "linesZh": [
+                "群体、网络与共同事业",
+                "与集体目标结盟",
+                "触达广，深度浅"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 5th house personal spark, 7th house one-to-one bond, and 11th house group alliance",
+          "altZh": "第五宫（个人火花）、第七宫（一对一关系）与第十一宫（群体同盟）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 11th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 11th House",
+          "titleEn": "Five Signals of Your 11th House at Work",
+          "titleZh": "第十一宫运作中的五个信号",
+          "items": [
+            {
+              "nameEn": "The cause that pulls you",
+              "nameZh": "吸引你的事业",
+              "subEn": "Aims you gravitate to, unpaid and unpushed",
+              "subZh": "没人付钱也没人推，你仍靠近的目标"
+            },
+            {
+              "nameEn": "Your role in groups",
+              "nameZh": "你在群体中的角色",
+              "subEn": "Organizer, dissenter, mediator, or back row",
+              "subZh": "组织者、异见者、调停者，还是后排"
+            },
+            {
+              "nameEn": "The vision you defend",
+              "nameZh": "你捍卫的愿景",
+              "subEn": "The world you keep saying should exist",
+              "subZh": "你反复说「本该存在」的那个世界"
+            },
+            {
+              "nameEn": "Who shows up for you",
+              "nameZh": "谁会为你现身",
+              "subEn": "Aligned allies who lift your work, even a few",
+              "subZh": "哪怕寥寥几位，同频盟友抬升你的事"
+            },
+            {
+              "nameEn": "The Saturn signal",
+              "nameZh": "土星的信号",
+              "subEn": "Effortful belonging is itself data on how you join",
+              "subZh": "归属感费力，本身就是入群方式的线索"
+            }
+          ],
+          "altEn": "Five signals for reading the 11th house: pulling cause, group role, defended vision, allies, the Saturn signal",
+          "altZh": "读第十一宫的五个信号：所向往的事业、群体角色、捍卫的愿景、同盟、土星信号"
+        }
+      ]
+    },
+    "12th-house-astrology": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a vast expanse of still misty water with no clear shoreline, the horizon dissolving into a low veil of fog under a wide night sky; a luminous teal-and-gold nebula wash drifts softly across the deep indigo dark with faint star points, its edges blurring into the mist. Gold flecks of light scatter on the water's surface, and a single small empty boat drifts unmoored in the haze where identity loosens and blends into something wider — release, dissolution, and quiet self-renewal, hushed and dreamlike in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, wide 16:9 composition, no chart wheel, no text or letters, no human faces",
+        "altEn": "A small empty boat adrift on still misty water under a dissolving nebula sky, gold flecks scattered on the surface.",
+        "altZh": "一叶空舟漂在雾蒙蒙的静水上，星云在朦胧中消融，金色光点散落水面。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The 12th House vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The 12th House 与相近概念：运作方式 + 取舍",
+          "titleEn": "1st, 8th, 12th: Visible, Charged, Dissolved",
+          "titleZh": "一宫、八宫、十二宫：可见、炽烈、消融",
+          "columns": [
+            {
+              "nameEn": "1st House",
+              "nameZh": "第一宫",
+              "linesEn": [
+                "The visible, announced self",
+                "How you walk into a room",
+                "Clear projected identity"
+              ],
+              "linesZh": [
+                "公开宣告的可见自我",
+                "你走进房间的样子",
+                "清晰投射的身份"
+              ]
+            },
+            {
+              "nameEn": "8th House",
+              "nameZh": "第八宫",
+              "linesEn": [
+                "One charged, named exchange",
+                "Grief with a single cause",
+                "A contained reckoning"
+              ],
+              "linesZh": [
+                "一段具名的炽烈交换",
+                "有明确对象的哀伤",
+                "有边界的清算"
+              ]
+            },
+            {
+              "nameEn": "12th House",
+              "nameZh": "第十二宫",
+              "linesEn": [
+                "No fixed target; boundaries dissolve",
+                "Diffuse, oceanic sorrow",
+                "Surrender and wide perspective"
+              ],
+              "linesZh": [
+                "没有固定对象，边界消融",
+                "弥散如海的愁绪",
+                "交付换来开阔视野"
+              ]
+            }
+          ],
+          "altEn": "Comparison of the 1st house visible self, the 8th house charged exchange, and the 12th house dissolving depths",
+          "altZh": "第一宫（可见自我）、第八宫（炽烈交换）与第十二宫（消融之境）的对照图"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The 12th House in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 The 12th House",
+          "titleEn": "Reading Your 12th House in Five Steps",
+          "titleZh": "五步读出你的第十二宫",
+          "items": [
+            {
+              "nameEn": "Find the cusp sign",
+              "nameZh": "看宫头星座",
+              "subEn": "Aries here retreats very differently than Cancer",
+              "subZh": "白羊式的隐退与巨蟹式的大不相同"
+            },
+            {
+              "nameEn": "Locate planets inside",
+              "nameZh": "看宫内行星",
+              "subEn": "They operate privately before showing openly",
+              "subZh": "它们先私下运作，再公开现身"
+            },
+            {
+              "nameEn": "Check the house ruler",
+              "nameZh": "追踪宫主星",
+              "subEn": "Follow it to where hidden material surfaces",
+              "subZh": "顺着它看隐藏素材在哪浮现"
+            },
+            {
+              "nameEn": "Map recurring life areas",
+              "nameZh": "标记反复出现的领域",
+              "subEn": "Where solitude and withdrawal keep appearing",
+              "subZh": "独处与退场反复出现之处"
+            },
+            {
+              "nameEn": "Watch pattern, not label",
+              "nameZh": "看模式，别贴标签",
+              "subEn": "Ask what it invites you to release",
+              "subZh": "问它邀请你放下什么"
+            }
+          ],
+          "altEn": "Five steps to read the 12th house: cusp sign, planets, house ruler, recurring areas, watching the pattern",
+          "altZh": "读第十二宫的五步：宫头星座、宫内行星、宫主星、反复出现的领域、观察模式"
+        }
+      ]
+    }
+  }
+}

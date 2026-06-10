@@ -7,6 +7,8 @@ import type { WikiArticle } from "../../types";
 
 export const auraMoonVenusRisingBridgeEn: WikiArticle = {
   slug: "aura-moon-venus-rising-bridge",
+  image: "/images/charts/aura-moon-venus-rising-bridge.jpg",
+  image_alt: "A soft colored aura-glow along the scene's edge fed by three inner source-lights — Moon, Venus, and a rising light — over a still lake.",
   title:
     "Your Aura and Your Birth Chart: Where Energy Meets the Moon, Venus, and Rising Sign",
   description:

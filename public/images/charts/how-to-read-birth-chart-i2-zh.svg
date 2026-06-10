@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="五种主要相位">
+  <defs>
+    <linearGradient id="howtoreadbirthchart2zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="howtoreadbirthchart2zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="howtoreadbirthchart2zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howtoreadbirthchart2zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howtoreadbirthchart2zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="howtoreadbirthchart2zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#howtoreadbirthchart2zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#howtoreadbirthchart2zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#howtoreadbirthchart2zh-neb2)"/>
+  <circle cx="725.5" cy="103.3" r="1.45" fill="#cfc8ea" opacity="0.37"/><circle cx="65.1" cy="223.3" r="1.12" fill="#cfc8ea" opacity="0.38"/><circle cx="221.7" cy="80.2" r="1.08" fill="#cfc8ea" opacity="0.28"/><circle cx="266.0" cy="63.2" r="0.77" fill="#cfc8ea" opacity="0.44"/><circle cx="738.4" cy="205.0" r="0.78" fill="#cfc8ea" opacity="0.47"/><circle cx="724.6" cy="79.7" r="0.96" fill="#cfc8ea" opacity="0.49"/><circle cx="403.8" cy="241.3" r="1.44" fill="#cfc8ea" opacity="0.46"/><circle cx="672.8" cy="39.3" r="1.22" fill="#cfc8ea" opacity="0.30"/><circle cx="271.9" cy="112.4" r="1.15" fill="#cfc8ea" opacity="0.46"/><circle cx="26.5" cy="37.5" r="1.25" fill="#cfc8ea" opacity="0.22"/><circle cx="744.8" cy="215.2" r="0.45" fill="#cfc8ea" opacity="0.18"/><circle cx="355.2" cy="399.4" r="0.44" fill="#cfc8ea" opacity="0.19"/><circle cx="544.1" cy="324.0" r="0.98" fill="#cfc8ea" opacity="0.49"/><circle cx="72.7" cy="200.1" r="1.35" fill="#cfc8ea" opacity="0.14"/><circle cx="701.9" cy="77.8" r="1.70" fill="#cfc8ea" opacity="0.53"/><circle cx="345.1" cy="244.0" r="1.01" fill="#cfc8ea" opacity="0.51"/><circle cx="655.7" cy="256.6" r="0.59" fill="#cfc8ea" opacity="0.45"/><circle cx="533.0" cy="401.3" r="1.01" fill="#cfc8ea" opacity="0.51"/><circle cx="240.7" cy="71.1" r="0.79" fill="#cfc8ea" opacity="0.20"/><circle cx="239.3" cy="79.0" r="1.33" fill="#cfc8ea" opacity="0.45"/><circle cx="432.4" cy="259.8" r="1.36" fill="#cfc8ea" opacity="0.22"/><circle cx="708.0" cy="317.2" r="0.99" fill="#cfc8ea" opacity="0.23"/><circle cx="379.4" cy="228.3" r="1.13" fill="#cfc8ea" opacity="0.25"/><circle cx="705.5" cy="118.0" r="0.56" fill="#cfc8ea" opacity="0.21"/><circle cx="226.5" cy="271.7" r="0.67" fill="#cfc8ea" opacity="0.20"/><circle cx="663.5" cy="32.7" r="1.08" fill="#cfc8ea" opacity="0.24"/><circle cx="605.9" cy="106.2" r="1.05" fill="#cfc8ea" opacity="0.29"/><circle cx="718.5" cy="398.1" r="1.03" fill="#cfc8ea" opacity="0.25"/><circle cx="126.7" cy="131.3" r="1.40" fill="#cfc8ea" opacity="0.51"/><circle cx="344.6" cy="121.6" r="0.82" fill="#cfc8ea" opacity="0.41"/><circle cx="492.9" cy="420.5" r="0.45" fill="#cfc8ea" opacity="0.29"/><circle cx="303.3" cy="386.2" r="0.74" fill="#cfc8ea" opacity="0.22"/><circle cx="474.1" cy="123.0" r="1.66" fill="#cfc8ea" opacity="0.16"/><circle cx="177.3" cy="405.7" r="0.76" fill="#cfc8ea" opacity="0.43"/><circle cx="509.2" cy="302.9" r="1.26" fill="#cfc8ea" opacity="0.14"/><circle cx="607.4" cy="360.8" r="1.33" fill="#cfc8ea" opacity="0.39"/><circle cx="613.7" cy="21.7" r="1.35" fill="#cfc8ea" opacity="0.51"/><path d="M 225.73500872030854 331.6 L 226.3 334.6 L 229.3 335.1336546728853 L 226.3 335.7 L 225.73500872030854 338.7 L 225.2 335.7 L 222.2 335.1336546728853 L 225.2 334.6 Z" fill="#f6e6bf" opacity="0.5772647415520623"/><path d="M 173.13234120234847 87.1 L 173.7 90.2 L 176.9 90.82612080243416 L 173.7 91.4 L 173.13234120234847 94.6 L 172.5 91.4 L 169.4 90.82612080243416 L 172.5 90.2 Z" fill="#f6e6bf" opacity="0.7297172129387036"/><path d="M 51.6409082300961 363.2 L 52.3 366.4 L 55.5 367.05607129470445 L 52.3 367.7 L 51.6409082300961 370.9 L 51.0 367.7 L 47.8 367.05607129470445 L 51.0 366.4 Z" fill="#f6e6bf" opacity="0.7893011699663475"/><path d="M 503.17426685616374 313.0 L 503.6 315.3 L 505.9 315.7451610893477 L 503.6 316.2 L 503.17426685616374 318.5 L 502.7 316.2 L 500.4 315.7451610893477 L 502.7 315.3 Z" fill="#f6e6bf" opacity="0.6396846300223842"/><path d="M 573.1830529905856 138.5 L 573.7 141.0 L 576.2 141.47299266629852 L 573.7 142.0 L 573.1830529905856 144.5 L 572.7 142.0 L 570.2 141.47299266629852 L 572.7 141.0 Z" fill="#f6e6bf" opacity="0.6342938349815086"/><path d="M 271.9 112.4 L 239.3 79.0 L 705.5 118.0 L 605.9 106.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">五种主要相位</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#howtoreadbirthchart2zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#howtoreadbirthchart2zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#howtoreadbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#howtoreadbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">合相 0°</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">融合——两种驱动力合为一体</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#howtoreadbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#howtoreadbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">六分相 60°</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">机会——顺畅但需要主动激活</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#howtoreadbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#howtoreadbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">四分相 90°</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">张力——推动成长的摩擦力</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#howtoreadbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#howtoreadbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">三分相 120°</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">和谐——毫不费力的天赋流动</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#howtoreadbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#howtoreadbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">对分相 180°</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">对立——相反拉扯，需要整合</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const secondHouseAstrologyEn: WikiArticle = {
   slug: "2nd-house-astrology",
+  image: "/images/houses/2nd-house-astrology.jpg",
+  image_alt: "A balance scale weighing gold coins against a glowing orb, reflected as one light in dark water",
   title: "How 2nd House Astrology Links Your Money to a Deeper Sense of Worth",
   description: "The 2nd House is the sector of an astrological chart that governs what you earn, what you own, and the quieter question sitting beneath both: how much you...",
   authorId: "julian-thorne",
@@ -51,6 +53,8 @@ This is also why a sibling placement like [spoke article on the 8th house and sh
 
 Held together, these lenses keep you from collapsing the house into a single keyword and let you read it as a living relationship between what you own and who you believe yourself to be.
 
+
+![Comparison of the 2nd house of personal resources versus the 8th house of shared and merged resources](/images/houses/2nd-house-astrology-i0-en.svg)
 ## How to Read The 2nd House in Your Chart
 
 Reading 2nd house astrology in your own chart means watching for concrete signals rather than memorizing keywords. Look for these patterns in order:
@@ -61,6 +65,8 @@ Reading 2nd house astrology in your own chart means watching for concrete signal
 4. Track your spending for one week; the purchases you defend most quickly point to where worth feels shaky.
 5. Notice which possessions you would grieve losing, as those reveal what you have quietly tied to your identity.
 
+
+![Five steps to read the 2nd house: cusp sign, planets, Venus, a week of spending, treasured possessions](/images/houses/2nd-house-astrology-i1-en.svg)
 ## Common Misreadings
 
 The friction most readers bring to 2nd house astrology comes from a handful of stubborn misreadings, and correcting each one changes the whole interpretation:
@@ -123,6 +129,8 @@ Take one placement you found in your own 2nd house and trace it through a full w
 
 export const secondHouseAstrologyZh: WikiArticle = {
   slug: "2nd-house-astrology",
+  image: "/images/houses/2nd-house-astrology.jpg",
+  image_alt: "天平一端是金币、一端是发光圆球，暗色水面倒影中两者融为同一道光",
   title: "第二宫真正在说的，是你觉得自己值多少",
   description: "The 2nd House（第二宫）是星盘里掌管金钱、资源与自我价值感的宫位。它紧跟在上升点之后，与 占星十二宫总览 pillar 页...",
   authorId: "julian-thorne",
@@ -158,6 +166,8 @@ The 2nd House（第二宫）是星盘里掌管金钱、资源与自我价值感�
 2. **第二宫 vs 金星。** 金星讲你被什么吸引、欣赏什么；第二宫讲你实际把什么留在身边、愿意为什么买单。要看清一个人的价值观，光看他喜欢什么不够，得看他真金白银投在哪——这正是第二宫比金星更"落地"的地方，代价是它不像金星那样浪漫好懂。
 3. **金钱层 vs 自我价值层。** 同一个第二宫，你可以只读表层的收支，也可以读底层的"我觉得自己值多少"。选择停在数字上，你换来一份简单清晰，却会错过它真正想给你看的东西。
 
+
+![第二宫（个人资源）与第八宫（共享交融资源）的对照图](/images/houses/2nd-house-astrology-i0-zh.svg)
 ## 如何在你的星盘里识别 The 2nd House
 
 想知道第二宫在你身上怎么运作，不用懂复杂技法，从几个日常信号就能入手：
@@ -167,6 +177,8 @@ The 2nd House（第二宫）是星盘里掌管金钱、资源与自我价值感�
 3. 找出第二宫宫头落在哪个星座，那是你安全感的默认风格。
 4. 想想你格外舍不得扔的东西，它常对应你给自己估的价。
 
+
+![读第二宫的五个步骤：宫头星座、宫内行星、金星、一周消费记录、最珍视之物](/images/houses/2nd-house-astrology-i1-zh.svg)
 ## 常见误读
 
 围绕第二宫的解释里，有几种说法传得很广，也很容易把人带偏：

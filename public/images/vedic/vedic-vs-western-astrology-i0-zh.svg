@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 561" role="img" aria-label="两套黄道，两种用途">
+  <defs>
+    <linearGradient id="vedicvswesternastrology0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="vedicvswesternastrology0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="vedicvswesternastrology0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vedicvswesternastrology0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vedicvswesternastrology0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vedicvswesternastrology0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="url(#vedicvswesternastrology0zh-panel)"/>
+  <ellipse cx="198" cy="135" rx="380" ry="191" fill="url(#vedicvswesternastrology0zh-neb1)"/>
+  <ellipse cx="623" cy="449" rx="334" ry="180" fill="url(#vedicvswesternastrology0zh-neb2)"/>
+  <circle cx="52.8" cy="213.8" r="0.95" fill="#cfc8ea" opacity="0.37"/><circle cx="498.2" cy="80.0" r="0.70" fill="#cfc8ea" opacity="0.15"/><circle cx="491.6" cy="345.0" r="0.66" fill="#cfc8ea" opacity="0.29"/><circle cx="747.8" cy="153.5" r="1.21" fill="#cfc8ea" opacity="0.32"/><circle cx="551.3" cy="24.3" r="0.87" fill="#cfc8ea" opacity="0.18"/><circle cx="572.7" cy="300.2" r="1.56" fill="#cfc8ea" opacity="0.38"/><circle cx="623.7" cy="197.3" r="0.49" fill="#cfc8ea" opacity="0.39"/><circle cx="360.7" cy="323.6" r="0.49" fill="#cfc8ea" opacity="0.49"/><circle cx="43.6" cy="89.5" r="1.04" fill="#cfc8ea" opacity="0.19"/><circle cx="489.0" cy="31.4" r="0.58" fill="#cfc8ea" opacity="0.27"/><circle cx="560.9" cy="347.5" r="0.63" fill="#cfc8ea" opacity="0.33"/><circle cx="489.7" cy="424.8" r="1.35" fill="#cfc8ea" opacity="0.41"/><circle cx="64.2" cy="192.3" r="1.40" fill="#cfc8ea" opacity="0.25"/><circle cx="648.3" cy="133.0" r="1.69" fill="#cfc8ea" opacity="0.46"/><circle cx="480.9" cy="531.4" r="0.77" fill="#cfc8ea" opacity="0.26"/><circle cx="304.1" cy="374.9" r="1.02" fill="#cfc8ea" opacity="0.20"/><circle cx="624.4" cy="102.4" r="0.76" fill="#cfc8ea" opacity="0.48"/><circle cx="187.2" cy="165.1" r="1.69" fill="#cfc8ea" opacity="0.28"/><circle cx="310.9" cy="19.8" r="0.55" fill="#cfc8ea" opacity="0.16"/><circle cx="233.2" cy="448.7" r="0.50" fill="#cfc8ea" opacity="0.39"/><circle cx="291.6" cy="180.9" r="0.68" fill="#cfc8ea" opacity="0.47"/><circle cx="428.6" cy="429.1" r="1.09" fill="#cfc8ea" opacity="0.15"/><circle cx="614.5" cy="371.5" r="0.45" fill="#cfc8ea" opacity="0.53"/><circle cx="225.9" cy="121.9" r="1.61" fill="#cfc8ea" opacity="0.21"/><circle cx="726.6" cy="493.5" r="0.74" fill="#cfc8ea" opacity="0.51"/><circle cx="366.9" cy="141.9" r="0.60" fill="#cfc8ea" opacity="0.46"/><circle cx="120.7" cy="238.1" r="1.59" fill="#cfc8ea" opacity="0.13"/><circle cx="54.9" cy="468.2" r="0.80" fill="#cfc8ea" opacity="0.51"/><circle cx="462.0" cy="187.1" r="1.51" fill="#cfc8ea" opacity="0.23"/><circle cx="22.8" cy="174.2" r="1.46" fill="#cfc8ea" opacity="0.32"/><circle cx="165.3" cy="153.1" r="0.60" fill="#cfc8ea" opacity="0.35"/><circle cx="664.7" cy="84.1" r="0.96" fill="#cfc8ea" opacity="0.15"/><circle cx="429.8" cy="90.6" r="1.63" fill="#cfc8ea" opacity="0.39"/><circle cx="455.5" cy="126.2" r="1.10" fill="#cfc8ea" opacity="0.47"/><circle cx="738.3" cy="463.0" r="0.61" fill="#cfc8ea" opacity="0.42"/><circle cx="596.2" cy="424.4" r="1.50" fill="#cfc8ea" opacity="0.43"/><circle cx="501.4" cy="359.3" r="0.89" fill="#cfc8ea" opacity="0.31"/><circle cx="442.8" cy="51.9" r="0.56" fill="#cfc8ea" opacity="0.26"/><circle cx="245.7" cy="398.9" r="0.44" fill="#cfc8ea" opacity="0.37"/><circle cx="102.1" cy="49.8" r="1.55" fill="#cfc8ea" opacity="0.24"/><circle cx="347.6" cy="152.9" r="1.55" fill="#cfc8ea" opacity="0.13"/><circle cx="329.8" cy="94.9" r="1.49" fill="#cfc8ea" opacity="0.39"/><circle cx="240.9" cy="510.8" r="0.42" fill="#cfc8ea" opacity="0.46"/><circle cx="729.5" cy="382.3" r="0.68" fill="#cfc8ea" opacity="0.31"/><circle cx="442.1" cy="25.9" r="0.86" fill="#cfc8ea" opacity="0.12"/><circle cx="177.3" cy="24.0" r="0.52" fill="#cfc8ea" opacity="0.41"/><circle cx="369.8" cy="82.8" r="0.48" fill="#cfc8ea" opacity="0.31"/><path d="M 107.68937836587429 53.1 L 108.3 56.2 L 111.3 56.74392118747346 L 108.3 57.3 L 107.68937836587429 60.4 L 107.1 57.3 L 104.0 56.74392118747346 L 107.1 56.2 Z" fill="#f6e6bf" opacity="0.7026398394955322"/><path d="M 379.1669074073434 503.0 L 379.7 505.8 L 382.5 506.29995342507027 L 379.7 506.8 L 379.1669074073434 509.6 L 378.6 506.8 L 375.8 506.29995342507027 L 378.6 505.8 Z" fill="#f6e6bf" opacity="0.7565447620814666"/><path d="M 357.9756827056408 307.9 L 358.4 310.2 L 360.6 310.60065588983707 L 358.4 311.0 L 357.9756827056408 313.3 L 357.5 311.0 L 355.3 310.60065588983707 L 357.5 310.2 Z" fill="#f6e6bf" opacity="0.6352456862805411"/><path d="M 493.510996542871 170.8 L 494.1 174.0 L 497.3 174.61604053131305 L 494.1 175.2 L 493.510996542871 178.4 L 492.9 175.2 L 489.7 174.61604053131305 L 492.9 174.0 Z" fill="#f6e6bf" opacity="0.7428862077882513"/><path d="M 102.96962435543537 366.0 L 103.6 369.1 L 106.7 369.7026129818987 L 103.6 370.3 L 102.96962435543537 373.4 L 102.4 370.3 L 99.3 369.7026129818987 L 102.4 369.1 Z" fill="#f6e6bf" opacity="0.633150251279585"/>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="547" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 541.8 L 16.5 544.5 L 19.2 545 L 16.5 545.5 L 16 548.2 L 15.5 545.5 L 12.8 545 L 15.5 544.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 541.8 L 744.5 544.5 L 747.2 545 L 744.5 545.5 L 744 548.2 L 743.5 545.5 L 740.8 545 L 743.5 544.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">两套黄道，两种用途</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#vedicvswesternastrology0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#vedicvswesternastrology0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="201.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">吠陀（恒星黄道）</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">靠岁差校正值锚定恒星</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">回答事件何时展开</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">用大运周期推算时机</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">默认整宫制宫位</text>
+  <path d="M 70 273.8 L 70.5 276.5 L 73.2 277 L 70.5 277.5 L 70 280.2 L 69.5 277.5 L 66.8 277 L 69.5 276.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="282.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">偏预测与化解的读法</text>
+  <path d="M 380 308.5 L 380.7 312.3 L 384.5 313 L 380.7 313.7 L 380 317.5 L 379.3 313.7 L 375.5 313 L 379.3 312.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="326" width="668" height="201.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="326" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 324.1 L 380.5 327.0 L 383.4 327.5 L 380.5 328.0 L 380 330.9 L 379.5 328.0 L 376.6 327.5 L 379.5 327.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="355.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">西方（回归黄道）</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">锚定春分点与四季</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">回答性格如何构成</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">用行运与推运看时间</text>
+  <path d="M 70 471.8 L 70.5 474.5 L 73.2 475 L 70.5 475.5 L 70 478.2 L 69.5 475.5 L 66.8 475 L 69.5 474.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="480.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">常用普拉西德等象限宫制</text>
+  <path d="M 70 500.8 L 70.5 503.5 L 73.2 504 L 70.5 504.5 L 70 507.2 L 69.5 504.5 L 66.8 504 L 69.5 503.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="509.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">偏心理与自省的读法</text>
+  <path d="M 280.025 532.4 L 280.4 534.6 L 282.6 535 L 280.4 535.4 L 280.025 537.6 L 279.6 535.4 L 277.4 535 L 279.6 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="539" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 532.4 L 480.4 534.6 L 482.6 535 L 480.4 535.4 L 479.975 537.6 L 479.6 535.4 L 477.4 535 L 479.6 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

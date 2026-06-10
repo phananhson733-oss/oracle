@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="Reading Your 12th House in Five Steps">
+  <defs>
+    <linearGradient id="12thhouseastrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="12thhouseastrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="12thhouseastrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="12thhouseastrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="12thhouseastrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="12thhouseastrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#12thhouseastrology1en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#12thhouseastrology1en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#12thhouseastrology1en-neb2)"/>
+  <circle cx="652.6" cy="216.4" r="0.83" fill="#cfc8ea" opacity="0.51"/><circle cx="394.2" cy="228.1" r="0.91" fill="#cfc8ea" opacity="0.38"/><circle cx="620.3" cy="255.8" r="1.05" fill="#cfc8ea" opacity="0.17"/><circle cx="41.2" cy="43.6" r="1.36" fill="#cfc8ea" opacity="0.16"/><circle cx="662.2" cy="335.0" r="0.73" fill="#cfc8ea" opacity="0.17"/><circle cx="738.9" cy="419.1" r="0.81" fill="#cfc8ea" opacity="0.37"/><circle cx="395.2" cy="218.0" r="0.59" fill="#cfc8ea" opacity="0.30"/><circle cx="22.7" cy="145.6" r="0.81" fill="#cfc8ea" opacity="0.13"/><circle cx="558.7" cy="56.6" r="0.83" fill="#cfc8ea" opacity="0.22"/><circle cx="538.8" cy="355.2" r="1.45" fill="#cfc8ea" opacity="0.36"/><circle cx="280.3" cy="260.7" r="1.54" fill="#cfc8ea" opacity="0.36"/><circle cx="495.9" cy="242.0" r="1.21" fill="#cfc8ea" opacity="0.41"/><circle cx="439.8" cy="29.6" r="0.86" fill="#cfc8ea" opacity="0.22"/><circle cx="577.8" cy="149.9" r="1.59" fill="#cfc8ea" opacity="0.41"/><circle cx="359.1" cy="193.1" r="0.41" fill="#cfc8ea" opacity="0.51"/><circle cx="199.8" cy="56.6" r="1.61" fill="#cfc8ea" opacity="0.43"/><circle cx="243.8" cy="310.0" r="0.61" fill="#cfc8ea" opacity="0.30"/><circle cx="337.8" cy="201.9" r="1.42" fill="#cfc8ea" opacity="0.20"/><circle cx="709.4" cy="392.8" r="0.64" fill="#cfc8ea" opacity="0.40"/><circle cx="494.7" cy="197.6" r="1.57" fill="#cfc8ea" opacity="0.45"/><circle cx="113.4" cy="169.8" r="1.36" fill="#cfc8ea" opacity="0.47"/><circle cx="336.5" cy="382.5" r="0.56" fill="#cfc8ea" opacity="0.43"/><circle cx="702.3" cy="352.4" r="0.64" fill="#cfc8ea" opacity="0.43"/><circle cx="537.2" cy="215.0" r="1.54" fill="#cfc8ea" opacity="0.12"/><circle cx="379.0" cy="260.2" r="1.29" fill="#cfc8ea" opacity="0.54"/><circle cx="619.6" cy="273.5" r="1.29" fill="#cfc8ea" opacity="0.41"/><circle cx="522.8" cy="403.9" r="0.59" fill="#cfc8ea" opacity="0.19"/><circle cx="483.2" cy="49.4" r="1.15" fill="#cfc8ea" opacity="0.28"/><circle cx="343.2" cy="414.5" r="1.20" fill="#cfc8ea" opacity="0.33"/><circle cx="432.4" cy="359.7" r="0.95" fill="#cfc8ea" opacity="0.34"/><circle cx="510.1" cy="157.0" r="1.65" fill="#cfc8ea" opacity="0.23"/><circle cx="540.6" cy="329.6" r="1.18" fill="#cfc8ea" opacity="0.52"/><circle cx="386.6" cy="380.4" r="0.59" fill="#cfc8ea" opacity="0.31"/><circle cx="599.4" cy="90.9" r="1.45" fill="#cfc8ea" opacity="0.25"/><circle cx="719.5" cy="383.9" r="1.15" fill="#cfc8ea" opacity="0.33"/><circle cx="67.3" cy="349.3" r="1.37" fill="#cfc8ea" opacity="0.28"/><circle cx="322.9" cy="243.6" r="1.15" fill="#cfc8ea" opacity="0.19"/><path d="M 27.790595227852464 282.4 L 28.3 285.2 L 31.1 285.6944309999235 L 28.3 286.2 L 27.790595227852464 289.0 L 27.3 286.2 L 24.5 285.6944309999235 L 27.3 285.2 Z" fill="#f6e6bf" opacity="0.7945204813964665"/><path d="M 440.9502111244947 197.3 L 441.4 199.4 L 443.5 199.82684190711007 L 441.4 200.2 L 440.9502111244947 202.4 L 440.5 200.2 L 438.4 199.82684190711007 L 440.5 199.4 Z" fill="#f6e6bf" opacity="0.6708548914641141"/><path d="M 280.590863564983 77.1 L 281.1 79.7 L 283.8 80.22027468169108 L 281.1 80.7 L 280.590863564983 83.4 L 280.1 80.7 L 277.4 80.22027468169108 L 280.1 79.7 Z" fill="#f6e6bf" opacity="0.5041370081715286"/><path d="M 75.08230924792588 59.5 L 75.7 62.7 L 78.9 63.32231752900407 L 75.7 63.9 L 75.08230924792588 67.2 L 74.5 63.9 L 71.2 63.32231752900407 L 74.5 62.7 Z" fill="#f6e6bf" opacity="0.6426000306382775"/><path d="M 469.34639837779105 216.8 L 469.8 219.2 L 472.2 219.62499606283382 L 469.8 220.1 L 469.34639837779105 222.5 L 468.9 220.1 L 466.5 219.62499606283382 L 468.9 219.2 Z" fill="#f6e6bf" opacity="0.5219584659673273"/><path d="M 495.9 242.0 L 439.8 29.6 L 337.8 201.9 L 702.3 352.4 L 619.6 273.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Reading Your 12th House in Five Steps</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#12thhouseastrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#12thhouseastrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#12thhouseastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#12thhouseastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Find the cusp sign</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aries here retreats very differently than Cancer</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#12thhouseastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#12thhouseastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Locate planets inside</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">They operate privately before showing openly</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#12thhouseastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#12thhouseastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Check the house ruler</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Follow it to where hidden material surfaces</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#12thhouseastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#12thhouseastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Map recurring life areas</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Where solitude and withdrawal keep appearing</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#12thhouseastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#12thhouseastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Watch pattern, not label</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Ask what it invites you to release</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

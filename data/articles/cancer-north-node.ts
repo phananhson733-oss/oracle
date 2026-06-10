@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const cancerNorthNodeEn: WikiArticle = {
   slug: "cancer-north-node",
+  image: "/images/nodes/cancer-north-node.jpg",
+  image_alt: "A path descending from a solitary mountain watchtower to a warm-lit cottage beside moonlit water",
   title: "What Your North Node in Cancer Is Really Asking You to Unlearn",
   description: "Cancer north node is the Moon's north node sitting in the sign of Cancer, and it marks a pull away from self-reliance toward home, belonging",
   authorId: "julian-thorne",
@@ -48,6 +50,8 @@ Next, the node versus simply having a Cancer Sun or Moon. A Cancer Sun or Moon d
 
 Finally, the node versus the popular "destination" framing, where the north node is sold as a finished personality you arrive at and keep. In practice it behaves more like a muscle than a finish line. The trade here is honesty over comfort: durable growth means giving up the fantasy of being "done," because the Capricorn reflex never fully disappears — it simply stops running the show unsupervised. Naming that keeps the work realistic.
 
+
+![Comparison of the Capricorn south node self-reliance and the Cancer north node pull toward belonging](/images/nodes/cancer-north-node-i0-en.svg)
 ## How to Read cancer north node in Yourself
 
 **North Node in Cancer, South Node in Capricorn in the natal chart.** The sign axis sets the theme, but the houses your nodes occupy decide where it plays out — a 4th/10th placement points to home versus career, 7th/1st to partnership versus going it alone, 5th/11th to personal joy versus public role. Two people can share these nodes and live the lesson in completely different arenas depending on house, aspects, and the state of the Moon and Saturn. Knowing your houses turns a general theme into a specific assignment.
@@ -59,6 +63,8 @@ Day to day, you won't notice this node as a mood; it shows up as friction around
 3. You quietly rank your worth by output, not by how connected, rested, or supported you feel.
 4. Home, family, and roots tug at you even when work fills every hour of the day.
 
+
+![Three house pairings showing where the Cancer-Capricorn nodal axis plays out](/images/nodes/cancer-north-node-i1-en.svg)
 ## Common Misreadings
 
 Most popular write-ups get cancer north node half right, and the half they miss is the part keeping readers stuck.

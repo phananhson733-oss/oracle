@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const sacralChakraMeaningEn: WikiArticle = {
   slug: "sacral-chakra-meaning",
+  image: "/images/chakra/sacral-chakra-meaning.jpg",
+  image_alt: "Three golden currents of sparks, ripples and pearls merging into one glowing orb beneath calm water, showing the sacral chakra as the wider flow of creativity, emotion and pleasure",
   title: "Sacral Chakra Meaning Runs Deeper Than Sexuality Alone",
   description: "The Sacral Chakra is the second of the seven main energy centers in the traditional chakra system, sitting just below the navel and tied to creativity,...",
   authorId: "elena-vane",
@@ -35,6 +37,8 @@ Widening the definition gives you somewhere useful to look. Think of a stretch w
 
 Self-awareness here isn't about chasing a perfect, wide-open state. It's about recognizing the early signs that your creative and emotional flow has narrowed while the change is still small and easy to work with. People who only know the sexual association tend to wait until something feels dramatic before they look inward. People who hold the wider meaning catch the dip when it's still just a slow creative week or a faint flicker of guilt around enjoying themselves.
 
+
+![Three disguises of the same sacral contraction: creative drought, guilt around rest, and stuck emotion](/images/chakra/sacral-chakra-meaning-i0-en.svg)
 ## The Sacral Chakra vs Adjacent Concepts: How It Works + Trade-offs
 
 Sacral chakra meaning becomes clearer when you set this center beside the ones it's most often confused with. The Sacral Chakra works by keeping creative and emotional energy in motion — taking experience in, responding to it, and letting feeling pass through rather than pool. The root center directly below it does the opposite job: it grounds, stabilizes, and watches over safety and survival, the themes mapped to the [Root Chakra explainer](/en/wiki/chakra-system-overview) just beneath it. To get the root's steadiness and sense of security, you sacrifice some of the sacral's improvisation and its willingness to be moved by feeling, because stability and fluidity pull in genuinely different directions.
@@ -43,6 +47,8 @@ The solar plexus center just above runs on directed will, confidence, and the pu
 
 The most common confusion, though, isn't with another center at all — it's with sexuality itself. Sex is one real expression of sacral energy, but the wider current is creativity, pleasure, and emotional exchange of every kind. To reduce this center to sex, you lose sight of why a creative drought, a joyless month, or a frozen feeling can each signal a sacral block just as loudly as anything to do with desire. That trade — the vividness of one striking image for accuracy across the whole center — is exactly the friction this page exists to clear up.
 
+
+![Three-column comparison of root stability, sacral flow, and solar plexus will, with the trade-off each carries](/images/chakra/sacral-chakra-meaning-i1-en.svg)
 ## How to Read The Sacral Chakra in Yourself
 
 Reading sacral chakra meaning in yourself doesn't take special training — the signals show up in ordinary moments. A few worth noticing:
@@ -114,6 +120,8 @@ Read [the full Chakra System overview](https://astrologywiki.com/en/wiki/chakra-
 
 export const sacralChakraMeaningZh: WikiArticle = {
   slug: "sacral-chakra-meaning",
+  image: "/images/chakra/sacral-chakra-meaning.jpg",
+  image_alt: "三股带着火花、涟漪与圆珠的金色水流在静水下汇入同一发光球体，象征生殖轮是创造、情绪与愉悦的整体流动",
   title: "生殖轮代表什么，远不只是性那一面",
   description: "The Sacral Chakra（生殖轮，也叫本我轮、骶轮）是脉轮（chakra，灵性传统中的能量中心）体系里的第二个能量中心，在更完整的 脉轮系统总览 pillar 页 里，它紧挨在底层之上、排在第二位，承接住下方那份安全感之后开始往外流动。说到生殖轮代表什么，它指的其实是一种以创造、愉悦和情绪流动为主调的能量。",
   authorId: "elena-vane",
@@ -155,6 +163,8 @@ The Sacral Chakra（生殖轮，也叫本我轮、骶轮）是脉轮（chakra，
 
 和太阳轮比，太阳轮管的是意志、方向和把事情推到底的执行力，生殖轮管的是灵感冒出来、情绪涌上来时那股鲜活劲。选择以生殖轮（感受、流动）为主导，而不是以太阳轮（意志、目标）为主导，你换来了创造的敏锐和情绪的丰沛，代价是专注和持续推进上会松一截。
 
+
+![海底轮的稳、生殖轮的流动与太阳轮的意志三栏对比，以及各自的取舍](/images/chakra/sacral-chakra-meaning-i1-zh.svg)
 ## 如何在自己身上识别 The Sacral Chakra
 
 不用看气场颜色，下面这些日常信号，就能让你感觉到生殖轮（The Sacral Chakra）在不在线：

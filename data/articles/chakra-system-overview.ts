@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const chakraSystemOverviewEn: WikiArticle = {
   slug: "chakra-system-overview",
+  image: "/images/chakra/chakra-system-overview.jpg",
+  image_alt: "Seven glowing energy centers strung on a single golden thread rising from earth to sky, showing the chakra system as one connected family",
   title: "Chakra System",
   description:
     "Chakra System is a seven-center framework for reading inner experience through body-located themes such as safety, desire, confidence, connection,...",
@@ -62,6 +64,8 @@ In this chakra system, read each center as a life domain first and a color assoc
 
 **Crown chakra** - The crown chakra points to integration, spiritual perspective, humility, meaning, and the sense that life is wider than the personal ego. Its sibling is the white aura, often read as spacious, clean, quiet, or reset-like. Crown language can be helpful during endings, retreats, prayer, meditation, or periods when old roles loosen. Common misread: treating crown energy as a rank. A person is not better because this center is active, and blankness is not the same as clarity. The useful question is whether perspective helps daily life become more honest and kind. [white aura explainer](/en/wiki/white-aura-meaning)
 
+
+![Sequence of the seven chakras from root to crown with each center's life domain and sibling aura color](/images/chakra/chakra-system-overview-i0-en.svg)
 ## How Shade and Combination Shift Readings
 
 The chakra system gets more useful when you stop reading the centers as seven separate drawers. Real experience is mixed. A person can feel grounded in one area and scattered in another. A conversation can activate heart and throat at the same time. A creative season can light up sacral movement while also asking for solar plexus discipline. This is where shade, intensity, and combination matter. The color attached to each center gives you a first clue, but the way that color is described - clear, muddy, bright, soft, heavy, hot, pale - often says more about the current state than the center name does.
@@ -74,6 +78,8 @@ Sacral plus solar plexus is another common pair. Orange wants movement, play, an
 
 This is also where lineage differences become less confusing. Some maps use five centers, some emphasize seven, and some name more. Some color systems split indigo and violet, while others fold them into purple or white language. Instead of forcing every chart to match, ask what the map is trying to sort: body-located themes, meditative practice, ritual symbolism, aura colors, or daily self-reflection. The centers are not identical across every tradition, but the comparison can still be useful when you keep the frame clear.
 
+
+![Comparison of clear versus muddy shades of the same chakra colors and how the reading changes](/images/chakra/chakra-system-overview-i1-en.svg)
 ## Common Misreads + Framework Limits
 
 A chakra system reading becomes weaker when it tries to sound more certain than it can be. The first misread is treating the centers as a diagnostic grid. If someone says your throat is "blocked," that should not become a verdict about your health, your future, or your worth. At most, it is a prompt: Where am I not saying what needs to be said? Where am I talking too much to avoid listening? Where does my voice feel timed, tense, or withheld? The answer still has to be checked against real relationships and real choices.
@@ -84,6 +90,8 @@ The third misread is turning the framework into identity branding. "I am heart-c
 
 The fourth limit is that chakra language cannot replace clinical care, direct communication, or practical evidence. If you are sick, unsafe, or in a recurring harmful pattern, color and center language should not be used as the final authority. It can help you describe what the situation feels like. It cannot tell another person what they meant, prove a diagnosis, or erase the need for support. It also cannot make a hard choice painless. A center may point to the domain involved, but it will not decide whether you should leave, apologize, rest, ask for help, or change a habit. The most adult use is modest: let the map organize reflection, then bring the insight back to behavior. What did you say? What did you avoid? What boundary would change the pattern? What repair is needed now?
 
+
+![Four common misuses of the chakra framework, from diagnosis to identity branding to replacing clinical care](/images/chakra/chakra-system-overview-i2-en.svg)
 ## Reflection Prompts
 
 1. Think of a recent moment when safety felt shaky; what did your body want, and which center seemed loud?

@@ -3,6 +3,8 @@ import type { WikiArticle } from '../../types';
 
 export const mercuryRetrogradeMoonAnxietyEn: WikiArticle = {
   slug: 'mercury-retrograde-vs-moon-anxiety',
+  image: "/images/psych/mercury-retrograde-vs-moon-anxiety.jpg",
+  image_alt: "A small planet tracing a faint gold loop high in the sky while soft moonlight diffuses into low haze over a still lake.",
   title: 'Why Do I Feel So Anxious? Mercury Retrograde vs. Moon Signs',
   description: 'Feeling jittery? Learn the difference between Mercury Retrograde (mental) anxiety and Moon sign (emotional) anxiety, and how to soothe each.',
   authorId: "julian-thorne",
@@ -20,6 +22,8 @@ Feeling jittery, overthinking every text, or waking up with a sense of dread for
 
 ---
 
+
+![Comparison of Mercury retrograde mental anxiety versus Moon transit emotional anxiety, with relief strategies and durations.](/images/psych/mercury-retrograde-vs-moon-anxiety-i0-en.svg)
 ## The Mercury Factor: Mental Anxiety
 
 [Mercury](/wiki/mercury) is the planet of the mind, ruling communication, logic, and logistics. When Mercury goes retrograde, logical pathways get "tangled."
@@ -74,6 +78,8 @@ Start by checking out our guide on [How to Track Your Mood with Astrology](/wiki
 
 export const mercuryRetrogradeMoonAnxietyZh: WikiArticle = {
   slug: 'mercury-retrograde-vs-moon-anxiety',
+  image: "/images/psych/mercury-retrograde-vs-moon-anxiety.jpg",
+  image_alt: "夜空高处一颗小行星划出淡淡的金色回环，柔和月光在静湖上方弥散成低低的情绪薄雾，同处一片连续夜景。",
   title: '为什么我感到如此焦虑？水星逆行 vs 月亮星座',
   description: '感到紧张不安？了解水星逆行（精神层面）焦虑和月亮星座（情绪层面）焦虑的区别，以及如何分别舒缓它们。',
   authorId: "julian-thorne",
@@ -91,6 +97,8 @@ export const mercuryRetrogradeMoonAnxietyZh: WikiArticle = {
 
 ---
 
+
+![水星逆行的精神焦虑与月亮行运的情绪焦虑对比图，含缓解方式与持续时间。](/images/psych/mercury-retrograde-vs-moon-anxiety-i0-zh.svg)
 ## 水星因素：精神焦虑
 
 [水星](/wiki/mercury)是掌管思维的行星，统治着沟通、逻辑和事务处理。当水星逆行时，逻辑通道会变得"纠缠"。

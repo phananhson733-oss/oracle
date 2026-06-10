@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const chironIn12thHouseEn: WikiArticle = {
   slug: "chiron-in-12th-house",
+  image: "/images/placements/chiron-in-12th-house.jpg",
+  image_alt: "A soft glowing gold key half-hidden behind a sheer veil at the pre-dawn edge of the sky, over still water.",
   title: "What Chiron in 12th House Reveals About a Quiet, Hidden Sensitivity",
   description: "Chiron in the 12th house describes a birth-chart placement where the point named for the centaur Chiron, whose myth centers on a wound that never fully...",
   authorId: "julian-thorne",
@@ -41,6 +43,8 @@ Action-driven placements work the opposite way. The sibling spoke, [companion gu
 
 The placement also leans on the nature of the 12th house overview itself, which frames why anything here operates out of sight. The 12th governs what dissolves, recedes, and works behind the scenes, so any point sitting there inherits that hidden register. Choosing the 12th's interior over a visible house gets you depth and inner range, but you give up easy outward recognition; the sensitivity rarely earns credit because almost no one sees it operating.
 
+
+![Comparison of Chiron in the 12th house, which buries tenderness and old hurt, with Mars in the 12th house, which buries drive and anger.](/images/placements/chiron-in-12th-house-i0-en.svg)
 ## How to Read Chiron in the 12th house in Yourself
 
 Reading chiron in 12th house in your own life means watching for quiet, repeating patterns rather than one obvious trait. Look for these signals:
@@ -51,6 +55,8 @@ Reading chiron in 12th house in your own life means watching for quiet, repeatin
 4. **Help offered, rarely requested.** You tend others freely yet struggle to ask for the same in return.
 5. **Old hurt surfacing in dreams or images.** A theme reappears in half-remembered dreams or sudden moods.
 
+
+![Five quiet signals of Chiron in the 12th house: downplayed sensitivity, uninvited empathy, a pull toward solitude, one-way helping, and old hurt surfacing in dreams.](/images/placements/chiron-in-12th-house-i1-en.svg)
 ## Common Misreadings
 
 The friction that drives most searches comes from a handful of misreadings, and each one is worth correcting:
@@ -111,6 +117,8 @@ Open your birth chart and locate both Chiron and the 12th house cusp, then trace
 
 export const chironIn12thHouseZh: WikiArticle = {
   slug: "chiron-in-12th-house",
+  image: "/images/placements/chiron-in-12th-house.jpg",
+  image_alt: "破晓前的天际，一把柔和发光的金色钥匙半隐在薄纱般的光幕后，下方是静水。",
   title: "凯龙在12宫，藏着一份没被命名的敏感",
   description: "Chiron in the 12th house（凯龙在12宫）指的是凯龙星落在星盘最幽深、最私密的 占星第十二宫总览 pillar...",
   authorId: "julian-thorne",
@@ -148,6 +156,8 @@ Chiron in the 12th house（凯龙在12宫）指的是凯龙星落在星盘最幽
 
 再和它的兄弟配置 [火星落第十二宫的隐藏行动力解析](/zh/wiki/mars-in-12th-house) 对照：火星在十二宫是把行动力、愤怒压进幕后，凯龙在十二宫则是把伤痛与敏感压进幕后。一个关乎「我不敢使的力」，一个关乎「我不敢提的痛」。要专注于读懂凯龙这份说不出口的敏感，你会暂时放下火星那条「我的力气都去哪了」的线索，先把注意力收回到那处最不愿被碰的角落。
 
+
+![凯龙在十二宫（藏起的旧伤与敏感）与火星在十二宫（藏起的行动力与愤怒）的对比。](/images/placements/chiron-in-12th-house-i0-zh.svg)
 ## 如何在自己的星盘里识别 Chiron in the 12th house
 
 想在自己的星盘和日常里认出 Chiron in the 12th house，凯龙在12宫往往不靠戏剧化的事件，而藏在一些很安静的反应里，可以从这几条线索入手：

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const n3GunasEn: WikiArticle = {
   slug: "3-gunas",
+  image: "/images/vedic/3-gunas.jpg",
+  image_alt: "A circular dial braided from three contrasting threads — luminous, sparking, and heavy — with a gold needle caught mid-turn",
   title: "Reading the 3 Gunas as a Dial You Can Turn, Not a Label You Wear",
   description: "The 3 gunas are the three qualities — sattva, rajas, and tamas — that, in classical Samkhya philosophy, make up prakriti",
   authorId: "aditi-sharma",
@@ -26,6 +28,8 @@ The 3 gunas are the three qualities — sattva, rajas, and tamas — that, in cl
 - **Rajas** (*rajas*, "activity, passion") — motion, drive, restlessness; the wired push before a deadline.
 - **Tamas** (*tamas*, "inertia, darkness") — heaviness, dullness, mental fog; the leaden pull to the couch after a heavy lunch.
 
+
+![Three-column comparison of sattva, rajas, and tamas as clarity, drive, and inertia](/images/vedic/3-gunas-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
 The most common way the gunas get taught quietly breaks them. Wellness content loves a clean category — the "sattvic person," the "rajasic type," the "tamasic friend" — and that framing turns a moving signal into a sticker you wear all year. Once you've decided you *are* rajasic, you stop noticing the calm, clear hours you genuinely have, and you stop using the model for what it does best: showing where your state sits right now and which way to steer it. People usually meet this framework when they already feel stuck — scattered at the desk by ten, foggy after lunch, wired past midnight. They came for a way to shift, and a fixed label hands them the opposite: it answers who you supposedly are instead of what your attention is doing today, and only the second question points at something you can act on.
@@ -49,6 +53,8 @@ Reading the 3 gunas in yourself starts with watching your state instead of reach
 
 Once you've named the quality, the adjustment is specific. If **tamas** is heavy, move first — a short walk beats more analysis. If **rajas** is high, slow first — one task, one longer exhale, before you add anything. If **sattva** is present, don't chase more of it; protect the conditions that produced it, since that clarity is the easiest of the three to spend carelessly.
 
+
+![Four everyday signals for reading which guna is dominant right now](/images/vedic/3-gunas-i1-en.svg)
 ## Common Misreadings
 
 Most confusion around the 3 gunas comes from a handful of misreadings that wellness content repeats until they sound like fact. Here's what each gets wrong:

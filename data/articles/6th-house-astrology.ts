@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const sixthHouseAstrologyEn: WikiArticle = {
   slug: "6th-house-astrology",
+  image: "/images/houses/6th-house-astrology.jpg",
+  image_alt: "Neat tended field rows curving under a pre-dawn sky with a single lantern marking a path of patient daily work.",
   title: "What 6th House Astrology Reveals About How You Work and Heal",
   description: "The 6th House, also called the sixth house, is the part of the birth chart that governs daily work, physical health, and the small routines that hold...",
   authorId: "julian-thorne",
@@ -47,6 +49,8 @@ In my own work — twelve years integrating psychological frameworks with evolut
 2. **The 6th house versus the 1st.** The 1st house is your innate vitality and the body you were born with; the 6th is how you tend that body over months and years. The first is the constitution you start with, the second is the upkeep that decides what shape it stays in. To get the steady, dependable health the 6th rewards, you give up spontaneity, because its energy favors the person who keeps consistent sleep, food, and movement over the one always chasing the next novelty.
 3. **The 6th house versus the 12th.** The 12th house is retreat, rest, and quiet dissolution; the 6th is structured, visible activity. To get the productivity and order the 6th offers, you trade away some of the open, unstructured downtime the 12th needs — and a life that leans too hard into 6th house busyness tends to borrow that rest back later, often as burnout.
 
+
+![Comparison of the 6th house daily craft, the 10th house public career, and the 1st house innate vitality](/images/houses/6th-house-astrology-i0-en.svg)
 ## How to Read The 6th House in Your Chart
 
 Reading 6th house astrology in your own chart is less about the sign on the cusp alone and more about noticing where work and body intersect over an ordinary week. The sign and any planets there set the tone, but the living pattern shows up in your actual schedule. A few concrete signals make it readable:
@@ -57,6 +61,8 @@ Reading 6th house astrology in your own chart is less about the sign on the cusp
 4. Watch how energy moves between work and rest, because that exchange is the house in live action.
 5. Notice the small habit that, when skipped, throws off your whole day — that habit is a 6th house signature.
 
+
+![Five steps to read the 6th house: cusp sign, planets, a week's schedule, energy flow, keystone habit](/images/houses/6th-house-astrology-i1-en.svg)
 ## Common Misreadings
 
 The most common errors in 6th house astrology come from treating the house as smaller or grimmer than it really is. Four misreadings keep readers stuck:
@@ -118,6 +124,8 @@ Pick one routine this week — a single meal, a wind-down, or a start-of-work ri
 
 export const sixthHouseAstrologyZh: WikiArticle = {
   slug: "6th-house-astrology",
+  image: "/images/houses/6th-house-astrology.jpg",
+  image_alt: "黎明前的田野，整齐的垄行在微光中铺展，一盏小灯标出一条日复一日耕作的小径。",
   title: "第六宫看的不是工作或健康，而是串起两者的日常作息",
   description: "The 6th House（第六宫）是星盘里掌管日常作息、工作方式与身体状态的那一块。想知道它在整张星图里处于什么位置，可以先看 占星十二宫总览 pillar 页...",
   authorId: "julian-thorne",
@@ -157,6 +165,8 @@ The 6th House（第六宫）是星盘里掌管日常作息、工作方式与身�
 
 和身体有关的部分也有类似取舍。第一宫讲的是你天生的体质和外在精力，那是出厂设置；这块日常领域讲的则是你后天怎么用、怎么养这副身体。想了解先天那一面，可以参考 [上升点与第一宫解读](/zh/wiki/astrology-houses)；但真正决定你长期状态的，常常是后天这套每天重复的安排。现代占星作者 Howard Sasportas 这一脉的解读就提醒人：这一宫的核心是"自我完善"，不是逼自己追求完美，而是靠日复一日的小练习慢慢靠近一个更好的状态。
 
+
+![第六宫（日常打磨）、第十宫（公众事业）与第一宫（先天体质）的对照图](/images/houses/6th-house-astrology-i0-zh.svg)
 ## 如何在你的星盘和日常里认出 The 6th House
 
 不用先学会画星盘，你也能从生活里看出第六宫的影子。试着留意这几个信号：
@@ -167,6 +177,8 @@ The 6th House（第六宫）是星盘里掌管日常作息、工作方式与身�
 4. 回消息、整理、跑流程这类琐事，你是拖到崩溃还是默默清掉。
 5. 哪种作息能让你第二天既有精神、又不容易烦躁。
 
+
+![读第六宫的五个步骤：宫头星座、行星、一周作息、能量流动、关键小习惯](/images/houses/6th-house-astrology-i1-zh.svg)
 ## 常见误读
 
 关于第六宫，坊间容易传错的有这么几条，可以逐条拆开看：

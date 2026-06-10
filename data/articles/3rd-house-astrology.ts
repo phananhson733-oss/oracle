@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const thirdHouseAstrologyEn: WikiArticle = {
   slug: "3rd-house-astrology",
+  image: "/images/houses/3rd-house-astrology.jpg",
+  image_alt: "A night map of short neighborhood lanes with glowing paper notes flying between houses",
   title: "What 3rd House Astrology Reveals About How You Think",
   description: "The 3rd House is the slice of the birth chart that shows how you take in, sort, and pass along everyday information. It governs the small, constant mental...",
   authorId: "julian-thorne",
@@ -43,6 +45,8 @@ The trade-off is worth stating plainly, because it explains a frustration many r
 
 The 3rd house also differs from the planet Mercury itself, and blurring the two is a common mistake. Mercury is the moving part — the way information actually travels through your mind — while the 3rd house is the field that information moves through. You can have a sharp Mercury and a quiet 3rd house, or a crowded 3rd house steadied by a careful Mercury, and the combination changes the whole picture. To favor a fast, fact-led thinking style buys you agility and quick recall, but the cost is the patience that turns scattered facts into understanding you can stand behind. Naming which trade you tend to make is the first real step toward choosing it on purpose instead of by default.
 
+
+![Comparison of the 3rd house collecting close-range facts versus the 9th house synthesizing meaning](/images/houses/3rd-house-astrology-i0-en.svg)
 ## How to Read The 3rd House in Your Chart
 
 You can read 3rd house astrology in a chart through a handful of concrete markers rather than one sweeping verdict. Look at these in order, and a clear picture of your everyday thinking style usually comes together:
@@ -53,6 +57,8 @@ You can read 3rd house astrology in a chart through a handful of concrete marker
 4. **Watch your real information habits.** Constant note-taking, rapid texting, or talking ideas out loud are this house working in plain sight.
 5. **Notice how you speak with siblings and neighbors.** These close, low-stakes exchanges tend to reveal your thinking style most plainly.
 
+
+![Five steps to read the 3rd house: cusp sign, planets, ruler, information habits, everyday conversations](/images/houses/3rd-house-astrology-i1-en.svg)
 ## Common Misreadings
 
 A few stubborn misreadings keep people from using this house well:
@@ -114,6 +120,8 @@ Map your own 3rd house this week: find its sign, note any planets inside it, and
 
 export const thirdHouseAstrologyZh: WikiArticle = {
   slug: "3rd-house-astrology",
+  image: "/images/houses/3rd-house-astrology.jpg",
+  image_alt: "夜色中的街区小巷地图，发光的纸条在邻里房屋之间穿梭",
   title: "第三宫不只是兄弟姐妹，更是你每天的思维方式",
   description: "第三宫（the 3rd house）是占星星盘里掌管日常思维、沟通方式与信息习惯的区域。把它放回整张星盘来看，它和 占星十二宫总览 pillar 页...",
   authorId: "julian-thorne",
@@ -155,6 +163,8 @@ export const thirdHouseAstrologyZh: WikiArticle = {
 2. **场景 vs 功能（对照水星）。** 水星是「思考与表达」这项功能本身，而这个宫位是这项功能经常上演的舞台：日常、近距离、口头交流。选择从场景角度切入，你换来的是对具体生活情境的理解，代价是暂时放下水星横跨整张星盘的全局影响。
 3. **交流 vs 关系（对照第七宫）。** 它管的是信息怎么准确传递，第七宫管的是一对一关系怎么长期经营。偏重前者，你更擅长把事情说清楚，代价是容易忽略对方在情感层面有没有真正被理解。
 
+
+![第三宫（近距离收集事实）与第九宫（综合成意义）的对照图](/images/houses/3rd-house-astrology-i0-zh.svg)
 ## 如何在你的星盘里识别 The 3rd House
 
 想知道第三宫在你身上怎么运作，不用先学会画整张星盘，先从这些日常信号入手：
@@ -165,6 +175,8 @@ export const thirdHouseAstrologyZh: WikiArticle = {
 4. 注意职场沟通：你遇到新任务是先开口问，还是先自己查清楚再行动。
 5. 看你和手足、邻里、老同学的相处，里头往往藏着早期形成的交流模式。
 
+
+![读第三宫的五个步骤：宫头星座、宫内行星、宫主星、信息习惯、日常对话](/images/houses/3rd-house-astrology-i1-zh.svg)
 ## 常见误读
 
 说到第三宫含义，外界流传很广的几个说法，其实都把它讲窄了：

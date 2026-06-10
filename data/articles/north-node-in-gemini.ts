@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const northNodeInGeminiEn: WikiArticle = {
   slug: "north-node-in-gemini",
+  image: "/images/nodes/north-node-in-gemini.jpg",
+  image_alt: "A single grand arrow dissolving mid-flight into many small birds branching in different directions",
   title: "Why Your Gemini North Node Rewards Questions Over Answers",
   description: "North node in Gemini is a karmic pull toward curiosity, questions, and everyday exchange, set against a south node in Sagittarius that already feels like home.",
   authorId: "julian-thorne",
@@ -52,6 +54,8 @@ Consider a concrete version: two people read the same news story. The Sagittariu
 
 Underneath all three comparisons sits a single idea worth holding still for: when you organize your identity only around keeping power and never being defeated in an argument, you are defining yourself from a place of loss. This way of reading the nodes — as a direction of growth rather than a fixed fate — follows the person-centered lineage Dane Rudhyar helped establish and the psychological work on the nodal axis later developed by Howard Sasportas. The growth here is not a sharper debating style; it is letting yourself be questioned, because that exchange is how the learning actually arrives.
 
+
+![Comparison of the Sagittarius south node default and the Gemini north node growth direction](/images/nodes/north-node-in-gemini-i0-en.svg)
 ## How to Read north node in gemini in Yourself
 
 In a chart, north node in gemini sits in whichever house holds Gemini, directly opposite the Sagittarius south node — but you can usually spot the pattern in behavior long before you open the chart. Watch for these signals:

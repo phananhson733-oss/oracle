@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="Five Signals of an Anuradha Moon">
+  <defs>
+    <linearGradient id="anuradhanakshatra1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="anuradhanakshatra1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="anuradhanakshatra1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="anuradhanakshatra1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="anuradhanakshatra1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="anuradhanakshatra1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#anuradhanakshatra1en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#anuradhanakshatra1en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#anuradhanakshatra1en-neb2)"/>
+  <circle cx="372.5" cy="147.6" r="1.17" fill="#cfc8ea" opacity="0.42"/><circle cx="255.0" cy="283.6" r="1.07" fill="#cfc8ea" opacity="0.51"/><circle cx="729.4" cy="51.4" r="1.34" fill="#cfc8ea" opacity="0.50"/><circle cx="346.6" cy="347.1" r="0.49" fill="#cfc8ea" opacity="0.15"/><circle cx="279.1" cy="315.5" r="0.91" fill="#cfc8ea" opacity="0.24"/><circle cx="740.3" cy="314.9" r="1.43" fill="#cfc8ea" opacity="0.36"/><circle cx="298.7" cy="260.4" r="1.23" fill="#cfc8ea" opacity="0.19"/><circle cx="269.6" cy="241.8" r="0.83" fill="#cfc8ea" opacity="0.44"/><circle cx="175.5" cy="223.1" r="0.86" fill="#cfc8ea" opacity="0.32"/><circle cx="99.0" cy="224.8" r="1.51" fill="#cfc8ea" opacity="0.15"/><circle cx="453.6" cy="110.0" r="0.75" fill="#cfc8ea" opacity="0.42"/><circle cx="592.9" cy="256.9" r="0.61" fill="#cfc8ea" opacity="0.20"/><circle cx="476.0" cy="141.1" r="0.53" fill="#cfc8ea" opacity="0.39"/><circle cx="110.1" cy="12.2" r="0.93" fill="#cfc8ea" opacity="0.18"/><circle cx="418.5" cy="79.0" r="0.63" fill="#cfc8ea" opacity="0.28"/><circle cx="744.6" cy="157.3" r="1.32" fill="#cfc8ea" opacity="0.48"/><circle cx="289.0" cy="342.2" r="0.78" fill="#cfc8ea" opacity="0.49"/><circle cx="571.0" cy="116.8" r="0.73" fill="#cfc8ea" opacity="0.19"/><circle cx="354.8" cy="383.6" r="0.58" fill="#cfc8ea" opacity="0.29"/><circle cx="181.7" cy="69.9" r="1.15" fill="#cfc8ea" opacity="0.32"/><circle cx="461.4" cy="335.9" r="1.45" fill="#cfc8ea" opacity="0.44"/><circle cx="688.9" cy="418.2" r="0.51" fill="#cfc8ea" opacity="0.47"/><circle cx="243.1" cy="303.5" r="1.55" fill="#cfc8ea" opacity="0.47"/><circle cx="527.6" cy="273.0" r="1.00" fill="#cfc8ea" opacity="0.53"/><circle cx="487.0" cy="186.8" r="1.14" fill="#cfc8ea" opacity="0.25"/><circle cx="93.9" cy="382.7" r="0.69" fill="#cfc8ea" opacity="0.23"/><circle cx="338.6" cy="81.3" r="0.76" fill="#cfc8ea" opacity="0.50"/><circle cx="207.7" cy="156.3" r="1.68" fill="#cfc8ea" opacity="0.46"/><circle cx="511.5" cy="420.2" r="0.51" fill="#cfc8ea" opacity="0.28"/><circle cx="726.6" cy="417.3" r="0.77" fill="#cfc8ea" opacity="0.18"/><circle cx="544.5" cy="109.5" r="1.15" fill="#cfc8ea" opacity="0.41"/><circle cx="222.7" cy="143.0" r="0.48" fill="#cfc8ea" opacity="0.49"/><circle cx="720.3" cy="395.7" r="1.22" fill="#cfc8ea" opacity="0.33"/><circle cx="733.8" cy="91.8" r="1.34" fill="#cfc8ea" opacity="0.21"/><circle cx="644.1" cy="401.4" r="0.98" fill="#cfc8ea" opacity="0.30"/><circle cx="142.1" cy="238.4" r="1.28" fill="#cfc8ea" opacity="0.12"/><circle cx="142.6" cy="35.5" r="1.33" fill="#cfc8ea" opacity="0.28"/><path d="M 394.3652930241078 31.3 L 394.9 34.2 L 397.8 34.71087514050305 L 394.9 35.3 L 394.3652930241078 38.2 L 393.8 35.3 L 390.9 34.71087514050305 L 393.8 34.2 Z" fill="#f6e6bf" opacity="0.6678497809451074"/><path d="M 567.9405932035297 322.4 L 568.4 324.9 L 571.0 325.40471670310944 L 568.4 325.9 L 567.9405932035297 328.4 L 567.5 325.9 L 564.9 325.40471670310944 L 567.5 324.9 Z" fill="#f6e6bf" opacity="0.7699692713562398"/><path d="M 191.26511935703456 260.4 L 191.8 263.1 L 194.5 263.59529826417565 L 191.8 264.1 L 191.26511935703456 266.8 L 190.8 264.1 L 188.1 263.59529826417565 L 190.8 263.1 Z" fill="#f6e6bf" opacity="0.5051714958157391"/><path d="M 634.5405526217073 123.2 L 635.0 125.5 L 637.3 125.93695508409292 L 635.0 126.4 L 634.5405526217073 128.7 L 634.1 126.4 L 631.8 125.93695508409292 L 634.1 125.5 Z" fill="#f6e6bf" opacity="0.510020685242489"/><path d="M 142.00138053111732 114.6 L 142.6 117.9 L 145.8 118.4688834156841 L 142.6 119.1 L 142.00138053111732 122.3 L 141.4 119.1 L 138.2 118.4688834156841 L 141.4 117.9 Z" fill="#f6e6bf" opacity="0.534627442015335"/><path d="M 243.1 303.5 L 93.9 382.7 L 544.5 109.5 L 222.7 143.0 L 644.1 401.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signals of an Anuradha Moon</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#anuradhanakshatra1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#anuradhanakshatra1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#anuradhanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#anuradhanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Moon in 3°20'–16°40' Scorpio</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The exact span that defines the 17th nakshatra</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#anuradhanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#anuradhanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Loyalty as follow-through</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Returning to the same people and causes for years</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#anuradhanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#anuradhanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Friendships carry a mission</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Bonds exist to serve something larger than two people</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#anuradhanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#anuradhanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Shadow: holding too tightly</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Under pressure the discernment boundary thins out</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#anuradhanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#anuradhanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Saturn shapes the devotion</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Patience, structure, delayed reward color daily care</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
