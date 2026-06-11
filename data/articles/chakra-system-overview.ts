@@ -118,6 +118,25 @@ The fourth limit is that chakra language cannot replace clinical care, direct co
 - *guide to reading auras*
 - [comparison with aura colors](/en/wiki/aura-colors-guide)
 
+
+## Questions People Ask About the 7 Chakras
+
+**What are the chakras?**
+
+The chakra system is a seven-center framework for reading inner experience through body-located themes such as safety, desire, confidence, connection, expression, insight, and spiritual integration. In the most familiar modern map, it names seven main chakras: root, sacral, solar plexus, heart, throat, third eye, and crown. Each center works like a reference point, not a separate object you can measure or a hidden organ.
+
+**Are there always exactly seven chakras?**
+
+Seven is the version most common in modern English-language aura and yoga-adjacent writing, but it is not the only possible map. Some maps use five centers, some emphasize seven, and some name more, and classical Indian and Tantric traditions contain several chakra maps. The honest move is to name the frame you are using rather than pretending one chart settles every tradition.
+
+**What order do the 7 chakras go in?**
+
+The names usually move from the base of the body upward, pairing a location image with a life domain: root, sacral, solar plexus, heart, throat, third eye, and crown. The article frames this as a reading sequence — safety before desire, desire before will, will before care, care before voice, voice before insight, insight before integration. The order is not a ladder of personal worth.
+
+**Can chakras diagnose health problems?**
+
+No. Chakra language cannot replace clinical care, direct communication, or practical evidence, and body locations are reference points inside an interpretive tradition, not proof that a center is an organ, gland, or measurable object. If someone says a center is "blocked," treat it as a prompt for self-observation rather than a verdict about your health, future, or worth.
+
 ## Take Action
 
 If you want a quick entry into the chakra system, start with how your aura colors line up against the seven centers. Explore the [aura colors guide](/en/wiki/aura-colors-guide) to see how your colors map and combine.

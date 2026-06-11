@@ -108,6 +108,24 @@ Run the same check for each of June's signs:
 Three placements, and most of the month's meaning resolves into specifics you can observe. Same sky, different life area — and the only way to know which is to look at your own chart, not a generic forecast. If you've never mapped your houses, start with the basics in [a guide to the astrology houses](/en/wiki/astrology-houses), and keep the broader [overview of astrological transits](/en/wiki/transits) handy for how moving planets interact with a fixed natal chart.
 
 None of this is a prediction, and none of it decides your month for you. It's a way of paying attention — a vocabulary for noticing shifts in pace and priority that you can check against your own experience and keep or discard. To build the one skill that makes every monthly forecast like this one legible, learn to read your own chart: start with [how to read a birth chart](/en/wiki/how-to-read-birth-chart) and you'll have the map you need for June and every month after.
+
+## Questions People Ask About June 2026 Planetary Transits
+
+**What happens on June 30, 2026?**
+
+June 30 is the month's single loaded day: a Full Moon in Capricorn arrives at the same time Mercury stations retrograde at 26° Cancer. Cancer and Capricorn sit opposite each other, so the day carries a built-in tension between home-and-care and structure-and-responsibility. The article reads it as a day that rewards finishing and reviewing rather than launching something new.
+
+**When does the June 2026 Mercury retrograde end?**
+
+Mercury stations retrograde at 26° Cancer on June 30 and the review window the article describes runs through July 24. During that stretch the conventional advice favors the "re-" verbs — revisit, revise, reconnect, reconsider — treated as a scheduling heuristic, not a forecast of disaster.
+
+**When is the Cancer season solstice in June 2026?**
+
+The Sun leaves Gemini and enters Cancer at the June 22 solstice, the longest day in the Northern Hemisphere. The article calls it the most reliable shift of the month because it's literally seasonal, marking a pivot from outward gathering to tending what's close to home.
+
+**What does the Gemini New Moon on June 16 mean?**
+
+The article frames the June 16 New Moon in Gemini as a workmanlike fresh cycle around the everyday machinery of connection — talking, writing, learning, and short hops between people and ideas. Paired with Venus entering Leo on June 14, it's read as a mid-month reset in how you talk, connect, and show up socially, with a warmer and more visible tone.
 `,
 };
 
@@ -216,5 +234,23 @@ export const june2026PlanetaryTransitsZh: WikiArticle = {
 三个落点，本月大部分含义就分解成你真能去观察的具体事项。同一片天空，不同的生活领域——而要知道是哪一种，唯一的办法是看你自己的盘，而不是一份通用的月度预报。如果你从没把自己的宫位排过，先从 [占星十二宫入门 astrology houses](/zh/wiki/astrology-houses) 的基础看起，再把更宏观的 [占星行运总览 astrological transits](/zh/wiki/transits) 放手边，当作"移动的行星如何与固定的本命盘互动"的参考。
 
 这些都不是预言，没有一条替你决定这个月。它是一种留意的方式——一套给"节奏和优先级的变化"命名的词汇，你可以拿它对照自己的实际经验，然后该留留、该丢丢。想练就一项让每一份这样的月度预报都看得懂的本事，就去学读你自己的盘：从 [how to read a birth chart 怎么读出生星盘](/zh/wiki/how-to-read-birth-chart) 开始，你就有了 6 月、以及之后每个月需要的那张地图。
+
+## 关于 2026 年 6 月行运的常见问题
+
+**2026 年 6 月 30 日会发生什么？**
+
+6 月 30 日是本月信息量最大的单日：魔羯满月到来，同一时间水星在巨蟹 26° 转入逆行。巨蟹和魔羯正好彼此对面，所以这一天自带一股张力，是"家与照看"的轴和"结构与责任"的轴在互相拉扯。文章把它读作一个奖励"收尾"和复盘、而不是开新坑的日子。
+
+**2026 年 6 月的水星逆行什么时候结束？**
+
+水星在 6 月 30 日于巨蟹 26° 转入逆行，文章描述的复盘窗口持续到 7 月 24 日。在这段时间里，常规建议偏向那些"重新"开头的动作——重看、重改、重连、重新考虑——它是一条排程的经验法则，而不是在预报灾难。
+
+**2026 年 6 月的巨蟹季夏至是哪一天？**
+
+太阳在 6 月 22 日夏至那天离开双子、进入巨蟹，这是北半球最长的一天。文章称它是本月最可靠的转折，因为它本来就是季节性的，标记着从"向外收集"转向"照看身边近处的事"。
+
+**6 月 16 日的双子新月意味着什么？**
+
+文章把 6 月 16 日的双子新月读作一个干活型的新循环，围绕连接的日常机械——说话、写字、学习，以及人与想法之间的短距离来回。搭配 6 月 14 日金星进入狮子，它被读作一次关于你怎么说话、怎么连接、怎么社交露面的中场重置，基调更暖、更愿意被看见。
 `,
 };

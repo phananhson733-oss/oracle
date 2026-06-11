@@ -103,6 +103,25 @@ This narrows a month of sky-wide events down to the few places they actually tou
 
 The discipline worth keeping is to treat all of this as a language for observing your own experience, not a forecast of what is coming. A transit is useful when it helps you name something you had already half-noticed and check it against a real week. It stops being honest the moment it becomes a prediction you stop questioning.
 
+
+## Questions People Ask About July 2026 Planetary Transits
+
+**What happens when Jupiter enters Leo on July 1, 2026?**
+
+On July 1, Jupiter leaves the sign it has been crossing and moves into Leo, a once-a-year ingress that resets the backdrop for the months ahead. By mid-month it sits early in the sign, at 3 degrees of Leo, so this is the opening of a roughly year-long passage rather than its peak.
+
+**When does Mercury retrograde end in July 2026?**
+
+Mercury turned retrograde back on June 30 and stays that way until July 24, when it stations direct at 16 degrees of Cancer. The first three weeks carry the familiar drag of a retrograde, and the relief arrives only in that final stretch.
+
+**What does the New Moon in Cancer on July 15 mean?**
+
+The New Moon in Cancer on July 15 starts a lunar cycle pointing toward home, roots, and the people you treat as family. Because it lands while Mercury is still retrograde, the cleaner read is not to launch something brand new but to quietly begin reworking something close to home.
+
+**Which signs does the Full Moon on July 30 affect?**
+
+On July 30 the Full Moon in Aquarius closes the month, sitting opposite the Sun that entered Leo on July 23, so it lights up the Leo-Aquarius axis end to end. The theme on this axis is the tension between standing out and fitting in, offered as a checkpoint rather than a verdict.
+
 ## Take Action
 
 The fastest way to make July 2026 useful is to stop reading these transits in the abstract and locate them on your own chart. If you have never mapped the houses against the planets, start with the basics. [Read the full guide to reading a birth chart to see where July's transits land for you.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
@@ -211,6 +230,25 @@ export const july2026PlanetaryTransitsZh: WikiArticle = {
 这把一个布满全天空事件的月份，收窄到它们真正与你生活相交的那几个地方。盯住那些，让其余的过去。
 
 值得守住的纪律是：把这一切当作观察自己经验的一套语言，而不是对将至之事的预报。一项行运之所以有用，是当它帮你说出某件你早已隐约察觉的事，并拿真实的一周去核对它。它在变成一个你不再质疑的预言的那一刻，就不再诚实。
+
+
+## 关于 2026 年 7 月行运的常见问题
+
+**2026 年 7 月 1 日木星入狮子座会发生什么？**
+
+7 月 1 日，木星离开它一直行经的星座，进入狮子座，这是一年一度的换座，会重置接下来数月的背景盘。到月中它仍在该星座早段，位于狮子座 3 度，所以这是一段约一年长行程的开端，而非其顶点。
+
+**2026 年 7 月水星逆行什么时候结束？**
+
+水星早在 6 月 30 日就开始逆行，一直持续到 7 月 24 日，才在巨蟹座 16 度顺行。本月前三周带着熟悉的逆行拖滞感，而松绑只在最后一段才到来。
+
+**7 月 15 日的巨蟹座新月意味着什么？**
+
+7 月 15 日的巨蟹座新月开启一个月相周期，指向家、根脉，以及你视为家人的那些人。因为它落在水星仍逆行之时，更干净的读法不是「启动全新的东西」，而是「悄悄开始重做某件贴近家的事」。
+
+**7 月 30 日的满月影响哪些星座？**
+
+7 月 30 日的水瓶座满月为本月收尾，与 7 月 23 日进入狮子座的太阳相对，因此把狮子—水瓶这条轴线从头到尾点亮。这条轴线上的主题是突出与融入之间的张力，它是一个检查点，而非判决。
 
 ## 立即行动
 
