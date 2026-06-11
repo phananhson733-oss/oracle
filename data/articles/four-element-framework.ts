@@ -1,4 +1,4 @@
-// Article: Four Element Framework Astrology
+// Article: The Four Elements in Astrology (Fire, Earth, Air, Water)
 // Generated from flow-mvp _staging/ by tools/scripts/gg-md-to-oracle-ts.mjs.
 import type { WikiArticle } from "../../types";
 
@@ -6,31 +6,31 @@ export const fourElementFrameworkEn: WikiArticle = {
   slug: "four-element-framework",
   image: "/images/charts/four-element-framework.jpg",
   image_alt: "Four elemental zones meeting on one horizon — earth, water, air, fire — each with its own glowing celestial light, balanced in one sky.",
-  title: "Four Element Framework Astrology",
+  title: "The Four Elements in Astrology: Fire, Earth, Air & Water",
   description:
-    "Four-Element Framework is the plain-language system in astrology that groups signs and chart placements into fire, earth, air, and water so a birth chart...",
+    "The four elements in astrology group signs and chart placements into fire, earth, air, and water so a birth chart can be read by elemental pattern, not only by one Sun sign.",
   authorId: "marcus-orion",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",
   keywords: [
-    "four element framework astrology",
     "four elements astrology",
+    "astrology elements meaning",
     "fire earth air water signs",
     "elemental balance birth chart",
-    "astrology elements meaning",
+    "the four elements in astrology",
   ],
-  content: `# Four Element Framework Astrology
+  content: `# The Four Elements in Astrology: Fire, Earth, Air, and Water
 
-## What is Four-Element Framework?
+## What Are the Four Elements in Astrology?
 
-Four-Element Framework is the plain-language system in astrology that groups signs and chart placements into fire, earth, air, and water so a birth chart can be read by elemental pattern, not only by one sign. In four element framework astrology, fire points to drive and spark, earth to form and steadiness, air to thought and exchange, and water to feeling and receptivity. **A four-part lens for reading chart energy** helps explain why two people with the same Sun sign can still feel very different. Your Sun matters, but the Moon, Ascendant, Mercury, Venus, and Mars can shift the balance. The framework is also used in aura and chakra conversations, where fire may be associated with red or orange, earth with green or brown, air with yellow or blue, and water with indigo or purple. Those color links are interpretive conventions, not physical rules or personality verdicts.
+The four elements in astrology are a plain-language system that groups signs and chart placements into fire, earth, air, and water, so a birth chart can be read by elemental pattern, not only by one sign. In this elemental view, fire points to drive and spark, earth to form and steadiness, air to thought and exchange, and water to feeling and receptivity. **A four-part lens for reading chart energy** helps explain why two people with the same Sun sign can still feel very different. Your Sun matters, but the Moon, Ascendant, Mercury, Venus, and Mars can shift the balance. The framework is also used in aura and chakra conversations, where fire may be associated with red or orange, earth with green or brown, air with yellow or blue, and water with indigo or purple. Those color links are interpretive conventions, not physical rules or personality verdicts.
 
 
 ![The four elements as modes of chart energy: fire, earth, air, and water](/images/charts/four-element-framework-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
-Understanding four element framework astrology matters because many people first meet the elements through a single label: fire sign, earth sign, air sign, or water sign. That shortcut is easy to remember, but it can flatten the chart. A person with a fire Sun may still have a water Moon, an earth Ascendant, and several inner planets in air signs. Another person may identify strongly with a water Sun, yet make choices through an earth-heavy pattern of routine, caution, and steady effort. The element balance gives you a broader reading than Sun sign identity alone.
+Understanding the four elements in astrology matters because many people first meet the elements through a single label: fire sign, earth sign, air sign, or water sign. That shortcut is easy to remember, but it can flatten the chart. A person with a fire Sun may still have a water Moon, an earth Ascendant, and several inner planets in air signs. Another person may identify strongly with a water Sun, yet make choices through an earth-heavy pattern of routine, caution, and steady effort. The element balance gives you a broader reading than Sun sign identity alone.
 
 The practical value is pattern recognition. Fire asks where your motivation, courage, urgency, and creative appetite show up. Earth asks how you handle body, time, money, tasks, and follow-through. Air asks how you think, speak, compare, question, and connect ideas. Water asks how you feel, receive, bond, remember, and respond to atmosphere. None of these is better or more evolved than the others. A chart with a strong element can show where energy comes quickly; a chart with a quieter element can show where skill-building may require more attention.
 
@@ -38,9 +38,9 @@ This is also where aura and chakra language can either help or confuse. Some tra
 
 The framework also protects against stereotypes. Water does not mean "dramatic." Earth does not mean "boring." Fire does not mean "loud." Air does not mean "shallow." Elements describe modes of attention and response. They are a map for reading tendencies, not a sentence passed on your character.
 
-## Four-Element Framework vs Adjacent Concepts: Mechanism + Trade-offs
+## The Four Elements vs Adjacent Concepts: Mechanism + Trade-offs
 
-Four element framework astrology differs from Sun-sign astrology by changing the unit of analysis. Sun-sign reading starts with one placement and treats it as the headline of the personality. Element reading counts the signs behind several placements, especially the Sun, Moon, Ascendant, Mercury, Venus, and Mars. The mechanism is distribution: if many key placements fall in fire signs, fire is louder in the chart; if almost none fall in earth signs, earth may need deliberate practice. To get speed and simplicity from Sun-sign reading, you sacrifice chart-level nuance. To get nuance from element balance, you sacrifice the instant clarity of a single label.
+Reading a chart by its four elements differs from Sun-sign astrology by changing the unit of analysis. Sun-sign reading starts with one placement and treats it as the headline of the personality. Element reading counts the signs behind several placements, especially the Sun, Moon, Ascendant, Mercury, Venus, and Mars. The mechanism is distribution: if many key placements fall in fire signs, fire is louder in the chart; if almost none fall in earth signs, earth may need deliberate practice. To get speed and simplicity from Sun-sign reading, you sacrifice chart-level nuance. To get nuance from element balance, you sacrifice the instant clarity of a single label.
 
 It also differs from planet-based interpretation. Planets describe functions: the Moon relates to emotional rhythm, Mercury to thinking and speech, Venus to attraction and values, Mars to assertion and action. Elements describe the style those functions use. Mercury in an air sign may think by comparing and naming; Mercury in water may think through mood, memory, and implied meaning. Mars in fire may act quickly; Mars in earth may act after testing what will last. To get precise psychological functions from planet reading, you sacrifice the quick pattern view. To get the pattern view from elements, you sacrifice some placement-by-placement detail.
 
@@ -69,7 +69,7 @@ A careful reading can use all of these systems without merging them into one cla
 
 ## Reflection Prompts
 
-1. Think of a recent choice where four element framework astrology separated drive, practicality, ideas, and feelings.
+1. Think of a recent choice where reading by the four elements separated drive, practicality, ideas, and feelings.
 2. Recall a recent conflict where your strongest element helped you, then created a blind spot.
 3. Notice one week when your least represented element needed practice, support, or a simpler routine.
 

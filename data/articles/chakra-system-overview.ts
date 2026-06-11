@@ -1,4 +1,4 @@
-// Article: Chakra System
+// Article: The 7 Chakras Explained (chakra system guide)
 // Generated from flow-mvp _staging/ by tools/scripts/gg-md-to-oracle-ts.mjs.
 import type { WikiArticle } from "../../types";
 
@@ -6,25 +6,25 @@ export const chakraSystemOverviewEn: WikiArticle = {
   slug: "chakra-system-overview",
   image: "/images/chakra/chakra-system-overview.jpg",
   image_alt: "Seven glowing energy centers strung on a single golden thread rising from earth to sky, showing the chakra system as one connected family",
-  title: "Chakra System",
+  title: "The 7 Chakras Explained: A Guide to the Chakra System",
   description:
-    "Chakra System is a seven-center framework for reading inner experience through body-located themes such as safety, desire, confidence, connection,...",
+    "The 7 chakras explained: a seven-center framework for reading inner experience through body-located themes such as safety, desire, confidence, connection, expression, insight, and integration.",
   authorId: "elena-vane",
   date: "2026-05-22",
   schema: "Article",
   lang: "en",
   keywords: [
-    "chakra system",
-    "chakra system overview",
     "what are chakras",
     "7 chakras explained",
     "chakra meanings",
+    "chakra system",
+    "the 7 chakras",
   ],
-  content: `# Chakra System Overview
+  content: `# The 7 Chakras Explained: A Guide to the Chakra System
 
-## What are Chakra System?
+## What Are the Chakras?
 
-Chakra System is **a seven-center framework for reading inner experience** through body-located themes such as safety, desire, confidence, connection, expression, insight, and spiritual integration. In the most familiar modern map, it names seven main chakras: root, sacral, solar plexus, heart, throat, third eye, and crown. Each center works like a reference point, not a separate object you can measure or a hidden organ. Classical Indian and Tantric traditions contain several chakra maps, and modern aura writing often uses the seven-center version because it gives readers a simple shared vocabulary. The names usually move from the base of the body upward, pairing a location image with a life domain. That lets the set function as a family: one center may be loud in a given situation, but its meaning becomes clearer when you see how it relates to the other six.
+The chakra system is **a seven-center framework for reading inner experience** through body-located themes such as safety, desire, confidence, connection, expression, insight, and spiritual integration. In the most familiar modern map, it names seven main chakras: root, sacral, solar plexus, heart, throat, third eye, and crown. Each center works like a reference point, not a separate object you can measure or a hidden organ. Classical Indian and Tantric traditions contain several chakra maps, and modern aura writing often uses the seven-center version because it gives readers a simple shared vocabulary. The names usually move from the base of the body upward, pairing a location image with a life domain. That lets the set function as a family: one center may be loud in a given situation, but its meaning becomes clearer when you see how it relates to the other six.
 
 ## Why It Matters for Self-Awareness
 
@@ -46,7 +46,7 @@ It also keeps the framework honest. Chakras are often described with body locati
 | Third eye chakra | Purple or indigo | Intuition, perception, pattern-reading | Purple aura | Inner seeing and discernment | "Third eye focus means every hunch is correct." |
 | Crown chakra | White or violet | Meaning, integration, spiritual perspective | White aura | Spacious awareness and connection to something larger | "Crown energy makes someone superior or finished." |
 
-## The 7 Chakra System: Quick Guide
+## The 7 Chakras: Quick Guide
 
 In this chakra system, read each center as a life domain first and a color association second; the sibling aura color gives a related language for how that domain may show up around a person.
 
@@ -100,13 +100,13 @@ The fourth limit is that chakra language cannot replace clinical care, direct co
 
 ## Related Reading
 
-- [root chakra explainer](/en/wiki/chakra-system-overview)
-- [sacral chakra explainer](/en/wiki/chakra-system-overview)
-- [solar plexus chakra explainer](/en/wiki/chakra-system-overview)
-- [heart chakra explainer](/en/wiki/chakra-system-overview)
-- [throat chakra explainer](/en/wiki/chakra-system-overview)
-- [third eye chakra explainer](/en/wiki/chakra-system-overview)
-- [crown chakra explainer](/en/wiki/chakra-system-overview)
+- [root chakra explainer](/en/wiki/root-chakra-meaning)
+- [sacral chakra explainer](/en/wiki/sacral-chakra-meaning)
+- [solar plexus chakra explainer](/en/wiki/solar-plexus-chakra-affirmations)
+- [heart chakra explainer](/en/wiki/heart-chakra-meaning)
+- [throat chakra explainer](/en/wiki/throat-chakra-meaning)
+- [third eye chakra explainer](/en/wiki/ajna-chakra)
+- [crown chakra explainer](/en/wiki/crown-chakra-meaning)
 - [red aura explainer](/en/wiki/red-aura-meaning)
 - [orange aura explainer](/en/wiki/orange-aura-meaning)
 - [yellow aura explainer](/en/wiki/yellow-aura-meaning)
