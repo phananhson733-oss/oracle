@@ -102,9 +102,9 @@ module.exports = {
         info: '#3B82F6', // Blue - professional, trust
       },
       fontFamily: {
-        sans: ['"Readex Pro"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        serif: ['"Cormorant Garamond"', 'serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
+        sans: ['"Readex Pro"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', '"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', '"Noto Sans SC"', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', '"Songti SC"', '"STSong"', '"SimSun"', '"Noto Serif SC"', 'serif'],
+        mono: ['"IBM Plex Mono"', '"PingFang SC"', '"Microsoft YaHei"', 'monospace'],
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #C6A062 0%, #D4B47A 100%)',
