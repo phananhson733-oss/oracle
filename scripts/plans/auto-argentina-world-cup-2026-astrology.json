@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "argentina-world-cup-2026-astrology": {
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Argentina's World Cup 2026 Astrology in the National Chart",
+          "titleEn": "5 Steps to Read a National Chart Transit",
+          "titleZh": "阅读国家星盘过境的5个步骤",
+          "altEn": "Five-step sequence for reading mundane astrology transits in a national chart",
+          "altZh": "世俗占星学国家星盘过境解读五步流程",
+          "items": [
+            {
+              "nameEn": "Locate the National Sun",
+              "nameZh": "定位国家太阳",
+              "subEn": "Cancer Sun in the 1816 independence chart — read as collective identity",
+              "subZh": "1816年独立星盘中的巨蟹座太阳——代表集体认同"
+            },
+            {
+              "nameEn": "Track Jupiter in Cancer",
+              "nameZh": "追踪木星入巨蟹",
+              "subEn": "Same-sign emphasis across 2025–26, exact contact earlier in 2026",
+              "subZh": "2025至2026年同星座强调，精确相位早于赛事"
+            },
+            {
+              "nameEn": "Track Saturn in Aries",
+              "nameZh": "追踪土星入白羊",
+              "subEn": "Applying square to the Cancer Sun — a season of testing, not a single date",
+              "subZh": "对巨蟹座太阳形成入相位四分——持续考验季节"
+            },
+            {
+              "nameEn": "Hold Both Transits Together",
+              "nameZh": "同时持握两组过境",
+              "subEn": "Expansion and pressure on the same national point — not one verdict",
+              "subZh": "扩张与压力同时作用于同一点——而非单一判断"
+            },
+            {
+              "nameEn": "Read Each as a Chapter",
+              "nameZh": "将每组视为章节",
+              "subEn": "A theme the nation still has to play through, not a fixed outcome",
+              "subZh": "国家仍需演绎的主题，而非固定结局"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Argentina's World Cup 2026 Astrology at a Glance",
+          "titleEn": "Jupiter in Cancer vs Saturn in Aries: Two Transits on One National Sun",
+          "titleZh": "木星入巨蟹 vs 土星入白羊：作用于同一国家太阳的两组过境",
+          "altEn": "Comparison of Jupiter in Cancer and Saturn in Aries transits on Argentina's 1816 Cancer national Sun",
+          "altZh": "木星入巨蟹与土星入白羊对阿根廷1816年巨蟹座国家太阳的影响对比",
+          "columns": [
+            {
+              "nameEn": "Jupiter in Cancer (2025–26)",
+              "nameZh": "木星入巨蟹（2025–26）",
+              "linesEn": [
+                "Same-sign emphasis on the national Cancer Sun",
+                "Supportive, expansive quality",
+                "Exact pass earlier in 2026 — separating by tournament",
+                "Themes: pride, cohesion, expanded collective identity"
+              ],
+              "linesZh": [
+                "与国家巨蟹座太阳同星座强调",
+                "支持性、扩张性特质",
+                "精确相位早于赛事——赛期已离相",
+                "主题：荣耀、凝聚、集体身份扩展"
+              ]
+            },
+            {
+              "nameEn": "Saturn in Aries (2025–28)",
+              "nameZh": "土星入白羊（2025–28）",
+              "linesEn": [
+                "Applying hard square to the Cancer Sun",
+                "Testing and consolidating pressure",
+                "Exact square arrives after the 2026 tournament",
+                "Themes: burden of defending title, generational handover"
+              ],
+              "linesZh": [
+                "对巨蟹座太阳形成入相位四分",
+                "考验性、巩固性压力",
+                "精确四分出现在2026赛事之后",
+                "主题：卫冕压力、世代交替"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
