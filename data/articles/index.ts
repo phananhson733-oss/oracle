@@ -163,6 +163,7 @@ import { viniciusJrZodiacSignEn } from "./vinicius-jr-zodiac-sign";
 import { argentinaWorldCup2026AstrologyEn } from "./argentina-world-cup-2026-astrology";
 import { zodiacSignsAsWorldCup2026TeamsEn } from "./zodiac-signs-as-world-cup-2026-teams";
 import { bestSoccerPlayersZodiacSignEn } from "./best-soccer-players-zodiac-sign";
+import { worldCup2026JuneAstrologyEn } from "./world-cup-2026-june-astrology";
 // All articles organized by language
 
 import {
@@ -370,6 +371,7 @@ const ARTICLES_EN: WikiArticle[] = [
   argentinaWorldCup2026AstrologyEn,
   zodiacSignsAsWorldCup2026TeamsEn,
   bestSoccerPlayersZodiacSignEn,
+  worldCup2026JuneAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

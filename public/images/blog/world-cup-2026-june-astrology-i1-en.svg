@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 701" role="img" aria-label="June 2026 Tournament Sky: Key Transits Compared">
+  <defs>
+    <linearGradient id="worldcup2026juneastrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="worldcup2026juneastrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="worldcup2026juneastrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="url(#worldcup2026juneastrology1en-panel)"/>
+  <ellipse cx="198" cy="168" rx="380" ry="238" fill="url(#worldcup2026juneastrology1en-neb1)"/>
+  <ellipse cx="623" cy="561" rx="334" ry="224" fill="url(#worldcup2026juneastrology1en-neb2)"/>
+  <circle cx="691.6" cy="522.8" r="0.86" fill="#cfc8ea" opacity="0.14"/><circle cx="747.4" cy="457.9" r="1.39" fill="#cfc8ea" opacity="0.21"/><circle cx="487.8" cy="37.2" r="1.09" fill="#cfc8ea" opacity="0.41"/><circle cx="745.8" cy="177.2" r="0.95" fill="#cfc8ea" opacity="0.31"/><circle cx="406.0" cy="74.9" r="0.80" fill="#cfc8ea" opacity="0.23"/><circle cx="198.5" cy="123.2" r="1.07" fill="#cfc8ea" opacity="0.53"/><circle cx="420.5" cy="182.2" r="0.66" fill="#cfc8ea" opacity="0.23"/><circle cx="267.0" cy="665.1" r="0.89" fill="#cfc8ea" opacity="0.33"/><circle cx="216.9" cy="432.4" r="0.60" fill="#cfc8ea" opacity="0.42"/><circle cx="493.7" cy="84.7" r="1.56" fill="#cfc8ea" opacity="0.19"/><circle cx="491.0" cy="396.6" r="1.08" fill="#cfc8ea" opacity="0.41"/><circle cx="446.3" cy="124.6" r="0.69" fill="#cfc8ea" opacity="0.43"/><circle cx="540.4" cy="309.5" r="0.72" fill="#cfc8ea" opacity="0.44"/><circle cx="563.0" cy="679.2" r="1.18" fill="#cfc8ea" opacity="0.46"/><circle cx="180.3" cy="396.1" r="1.15" fill="#cfc8ea" opacity="0.32"/><circle cx="50.3" cy="262.2" r="0.76" fill="#cfc8ea" opacity="0.47"/><circle cx="384.0" cy="227.8" r="1.48" fill="#cfc8ea" opacity="0.43"/><circle cx="300.5" cy="506.8" r="0.72" fill="#cfc8ea" opacity="0.52"/><circle cx="162.0" cy="348.4" r="1.58" fill="#cfc8ea" opacity="0.40"/><circle cx="126.6" cy="114.8" r="1.08" fill="#cfc8ea" opacity="0.20"/><circle cx="118.9" cy="105.0" r="1.49" fill="#cfc8ea" opacity="0.34"/><circle cx="525.7" cy="431.1" r="1.54" fill="#cfc8ea" opacity="0.15"/><circle cx="261.4" cy="305.6" r="1.04" fill="#cfc8ea" opacity="0.12"/><circle cx="87.4" cy="221.0" r="0.66" fill="#cfc8ea" opacity="0.30"/><circle cx="159.0" cy="364.5" r="1.43" fill="#cfc8ea" opacity="0.50"/><circle cx="573.8" cy="551.0" r="0.47" fill="#cfc8ea" opacity="0.46"/><circle cx="639.9" cy="644.8" r="1.08" fill="#cfc8ea" opacity="0.52"/><circle cx="190.3" cy="361.8" r="0.82" fill="#cfc8ea" opacity="0.33"/><circle cx="664.5" cy="59.8" r="1.52" fill="#cfc8ea" opacity="0.45"/><circle cx="609.4" cy="521.5" r="1.33" fill="#cfc8ea" opacity="0.40"/><circle cx="744.8" cy="481.2" r="1.42" fill="#cfc8ea" opacity="0.30"/><circle cx="675.8" cy="316.3" r="1.37" fill="#cfc8ea" opacity="0.36"/><circle cx="210.9" cy="571.1" r="1.01" fill="#cfc8ea" opacity="0.39"/><circle cx="489.9" cy="229.2" r="0.91" fill="#cfc8ea" opacity="0.27"/><circle cx="311.1" cy="664.8" r="1.10" fill="#cfc8ea" opacity="0.44"/><circle cx="518.2" cy="385.5" r="0.55" fill="#cfc8ea" opacity="0.53"/><circle cx="381.5" cy="585.1" r="1.66" fill="#cfc8ea" opacity="0.26"/><circle cx="429.9" cy="29.2" r="0.98" fill="#cfc8ea" opacity="0.41"/><circle cx="267.5" cy="538.9" r="0.60" fill="#cfc8ea" opacity="0.38"/><circle cx="399.8" cy="636.9" r="1.55" fill="#cfc8ea" opacity="0.45"/><circle cx="607.8" cy="51.3" r="0.65" fill="#cfc8ea" opacity="0.37"/><circle cx="78.6" cy="597.5" r="1.03" fill="#cfc8ea" opacity="0.24"/><circle cx="106.1" cy="150.3" r="1.48" fill="#cfc8ea" opacity="0.34"/><circle cx="721.7" cy="22.7" r="0.82" fill="#cfc8ea" opacity="0.51"/><circle cx="153.9" cy="521.0" r="0.53" fill="#cfc8ea" opacity="0.47"/><circle cx="158.1" cy="587.6" r="0.47" fill="#cfc8ea" opacity="0.31"/><circle cx="238.7" cy="135.2" r="0.82" fill="#cfc8ea" opacity="0.27"/><circle cx="364.3" cy="79.1" r="0.44" fill="#cfc8ea" opacity="0.48"/><circle cx="30.1" cy="267.5" r="1.20" fill="#cfc8ea" opacity="0.31"/><circle cx="696.1" cy="610.1" r="0.78" fill="#cfc8ea" opacity="0.15"/><circle cx="379.5" cy="476.6" r="0.85" fill="#cfc8ea" opacity="0.19"/><circle cx="627.8" cy="481.1" r="1.11" fill="#cfc8ea" opacity="0.50"/><circle cx="22.4" cy="364.0" r="1.03" fill="#cfc8ea" opacity="0.41"/><circle cx="371.9" cy="552.2" r="0.61" fill="#cfc8ea" opacity="0.27"/><circle cx="638.3" cy="174.8" r="0.64" fill="#cfc8ea" opacity="0.43"/><circle cx="562.0" cy="299.2" r="1.63" fill="#cfc8ea" opacity="0.33"/><circle cx="182.3" cy="150.0" r="1.39" fill="#cfc8ea" opacity="0.13"/><circle cx="207.5" cy="448.0" r="0.94" fill="#cfc8ea" opacity="0.42"/><circle cx="410.4" cy="41.9" r="1.17" fill="#cfc8ea" opacity="0.18"/><path d="M 258.8998278863728 17.9 L 259.4 20.7 L 262.3 21.275471051456407 L 259.4 21.8 L 258.8998278863728 24.6 L 258.4 21.8 L 255.5 21.275471051456407 L 258.4 20.7 Z" fill="#f6e6bf" opacity="0.5627314004348591"/><path d="M 149.78025434538722 111.6 L 150.4 114.8 L 153.6 115.43232273147441 L 150.4 116.0 L 149.78025434538722 119.3 L 149.2 116.0 L 145.9 115.43232273147441 L 149.2 114.8 Z" fill="#f6e6bf" opacity="0.5483391432324425"/><path d="M 703.2547453977168 577.6 L 703.7 580.1 L 706.3 580.6332917578984 L 703.7 581.1 L 703.2547453977168 583.7 L 702.8 581.1 L 700.2 580.6332917578984 L 702.8 580.1 Z" fill="#f6e6bf" opacity="0.6634972998173907"/><path d="M 292.1520802639425 103.6 L 292.8 107.0 L 296.1 107.60877463989891 L 292.8 108.2 L 292.1520802639425 111.6 L 291.5 108.2 L 288.2 107.60877463989891 L 291.5 107.0 Z" fill="#f6e6bf" opacity="0.757809403934516"/><path d="M 183.2082342095673 57.5 L 183.6 59.7 L 185.9 60.134856515796855 L 183.6 60.6 L 183.2082342095673 62.8 L 182.8 60.6 L 180.5 60.134856515796855 L 182.8 59.7 Z" fill="#f6e6bf" opacity="0.658046881784685"/><path d="M 747.4 457.9 L 487.8 37.2 L 745.8 177.2 L 118.9 105.0 L 190.3 361.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="687" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 681.8 L 16.5 684.5 L 19.2 685 L 16.5 685.5 L 16 688.2 L 15.5 685.5 L 12.8 685 L 15.5 684.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 681.8 L 744.5 684.5 L 747.2 685 L 744.5 685.5 L 744 688.2 L 743.5 685.5 L 740.8 685 L 743.5 684.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">June 2026 Tournament Sky: Key Transits Compared</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#worldcup2026juneastrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#worldcup2026juneastrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Jupiter in Cancer</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Exalted placement</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Collective, home-soil warmth</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Active through June 30</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Group stage backdrop</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Saturn in Aries</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Testing undertone</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Patience and nerve under pressure</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Runs the whole month</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Quiet discipline</text>
+  <path d="M 380 477.5 L 380.7 481.3 L 384.5 482 L 380.7 482.7 L 380 486.5 L 379.3 482.7 L 375.5 482 L 379.3 481.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="495" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="495" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 493.1 L 380.5 496.0 L 383.4 496.5 L 380.5 497.0 L 380 499.9 L 379.5 497.0 L 376.6 496.5 L 379.5 496.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Lunations</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">New Moon: mid-month reset</text>
+  <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Full Moon: late-June peak</text>
+  <path d="M 70 611.8 L 70.5 614.5 L 73.2 615 L 70.5 615.5 L 70 618.2 L 69.5 615.5 L 66.8 615 L 69.5 614.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Momentum turning points</text>
+  <path d="M 70 640.8 L 70.5 643.5 L 73.2 644 L 70.5 644.5 L 70 647.2 L 69.5 644.5 L 66.8 644 L 69.5 643.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Timing, not fate</text>
+  <path d="M 202.22749999999988 672.4 L 202.6 674.6 L 204.8 675 L 202.6 675.4 L 202.22749999999988 677.6 L 201.8 675.4 L 199.6 675 L 201.8 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="679" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 672.4 L 558.2 674.6 L 560.4 675 L 558.2 675.4 L 557.7725000000002 677.6 L 557.4 675.4 L 555.2 675 L 557.4 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

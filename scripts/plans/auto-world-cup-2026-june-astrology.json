@@ -1,0 +1,115 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "world-cup-2026-june-astrology": {
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the June 2026 Tournament Sky in Your Timing",
+          "titleEn": "5 Steps to Read the June 2026 Tournament Sky",
+          "titleZh": "解读2026年6月赛事星象的5个步骤",
+          "altEn": "Five-step sequence for reading Jupiter, Saturn and lunations across June 2026",
+          "altZh": "逐步解读2026年6月木星、土星与月相的五步流程",
+          "items": [
+            {
+              "nameEn": "Jupiter in Cancer",
+              "nameZh": "巨蟹座木星",
+              "subEn": "Warm, belonging-centered backdrop through June 30",
+              "subZh": "6月30日前营造温暖归属感氛围"
+            },
+            {
+              "nameEn": "Jupiter enters Leo",
+              "nameZh": "木星入狮子座",
+              "subEn": "Late-June shift toward visibility and individual flair",
+              "subZh": "六月末转向聚光灯与个人风采"
+            },
+            {
+              "nameEn": "Saturn in Aries",
+              "nameZh": "白羊座土星",
+              "subEn": "Steadying test of patience and nerve under pressure",
+              "subZh": "持续考验耐心与在压力下的沉稳"
+            },
+            {
+              "nameEn": "New Moon",
+              "nameZh": "新月",
+              "subEn": "Mid-month reset point for fresh starts and recommitment",
+              "subZh": "月中重启节点，适合新的开始与重新投入"
+            },
+            {
+              "nameEn": "Full Moon",
+              "nameZh": "满月",
+              "subEn": "Late-June culmination around the opening knockout window",
+              "subZh": "六月末高潮节点，恰逢首轮淘汰赛窗口"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the June 2026 Tournament Sky at a Glance",
+          "titleEn": "June 2026 Tournament Sky: Key Transits Compared",
+          "titleZh": "2026年6月赛事星象：关键行运对比",
+          "altEn": "Three-column comparison of June 2026 planetary transits: Jupiter in Cancer, Saturn in Aries, lunations",
+          "altZh": "2026年6月三大行运对比：巨蟹座木星、白羊座土星与月相",
+          "columns": [
+            {
+              "nameEn": "Jupiter in Cancer",
+              "nameZh": "巨蟹座木星",
+              "linesEn": [
+                "Exalted placement",
+                "Collective, home-soil warmth",
+                "Active through June 30",
+                "Group stage backdrop"
+              ],
+              "linesZh": [
+                "入旺位置",
+                "集体与主场温暖",
+                "持续至6月30日",
+                "小组赛氛围基调"
+              ]
+            },
+            {
+              "nameEn": "Saturn in Aries",
+              "nameZh": "白羊座土星",
+              "linesEn": [
+                "Testing undertone",
+                "Patience and nerve under pressure",
+                "Runs the whole month",
+                "Quiet discipline"
+              ],
+              "linesZh": [
+                "考验底色",
+                "压力下的耐心与沉稳",
+                "贯穿整个月份",
+                "无声的纪律"
+              ]
+            },
+            {
+              "nameEn": "Lunations",
+              "nameZh": "月相",
+              "linesEn": [
+                "New Moon: mid-month reset",
+                "Full Moon: late-June peak",
+                "Momentum turning points",
+                "Timing, not fate"
+              ],
+              "linesZh": [
+                "新月：月中重启",
+                "满月：六月末高潮",
+                "动能转折点",
+                "时机而非命运"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
