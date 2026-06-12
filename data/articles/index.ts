@@ -153,6 +153,8 @@ import { ashwiniNakshatraEn } from "./ashwini-nakshatra";
 import { neptuneInPiscesEn } from "./neptune-in-pisces";
 import { worldCup2026AstrologyPredictionEn } from "./world-cup-2026-astrology-prediction";
 import { worldCup2026AstrologyPredictionZh } from "./world-cup-2026-astrology-prediction";
+import { mbappeBirthChartEn } from "./mbappe-birth-chart";
+import { mbappeBirthChartZh } from "./mbappe-birth-chart";
 // All articles organized by language
 
 import {
@@ -352,6 +354,7 @@ const ARTICLES_EN: WikiArticle[] = [
   ashwiniNakshatraEn,
   neptuneInPiscesEn,
   worldCup2026AstrologyPredictionEn,
+  mbappeBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -417,6 +420,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   solarReturnChartZh,
   famousHighlySensitivePersonZh,
   worldCup2026AstrologyPredictionZh,
+  mbappeBirthChartZh,
 ];
 
 // Get all articles for a language

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 487" role="img" aria-label="5 Steps to Read Any Sun-Ruler Chart">
+  <defs>
+    <linearGradient id="mbappebirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mbappebirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mbappebirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mbappebirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mbappebirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mbappebirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="484" rx="22" fill="url(#mbappebirthchart1en-panel)"/>
+  <ellipse cx="198" cy="117" rx="380" ry="166" fill="url(#mbappebirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="390" rx="334" ry="156" fill="url(#mbappebirthchart1en-neb2)"/>
+  <circle cx="731.0" cy="149.7" r="0.66" fill="#cfc8ea" opacity="0.34"/><circle cx="562.6" cy="61.8" r="0.56" fill="#cfc8ea" opacity="0.49"/><circle cx="262.2" cy="360.7" r="1.49" fill="#cfc8ea" opacity="0.50"/><circle cx="55.7" cy="305.6" r="0.64" fill="#cfc8ea" opacity="0.43"/><circle cx="108.7" cy="316.2" r="1.21" fill="#cfc8ea" opacity="0.41"/><circle cx="36.1" cy="60.2" r="1.08" fill="#cfc8ea" opacity="0.18"/><circle cx="270.0" cy="358.1" r="0.40" fill="#cfc8ea" opacity="0.28"/><circle cx="448.6" cy="398.1" r="0.91" fill="#cfc8ea" opacity="0.47"/><circle cx="359.5" cy="369.6" r="1.57" fill="#cfc8ea" opacity="0.33"/><circle cx="309.7" cy="346.4" r="1.29" fill="#cfc8ea" opacity="0.47"/><circle cx="626.3" cy="346.5" r="1.20" fill="#cfc8ea" opacity="0.34"/><circle cx="43.7" cy="245.9" r="1.09" fill="#cfc8ea" opacity="0.29"/><circle cx="129.1" cy="26.5" r="1.56" fill="#cfc8ea" opacity="0.26"/><circle cx="239.0" cy="99.7" r="1.45" fill="#cfc8ea" opacity="0.29"/><circle cx="365.7" cy="57.5" r="1.17" fill="#cfc8ea" opacity="0.51"/><circle cx="140.5" cy="108.5" r="1.45" fill="#cfc8ea" opacity="0.53"/><circle cx="30.1" cy="130.5" r="0.58" fill="#cfc8ea" opacity="0.35"/><circle cx="184.2" cy="374.8" r="0.45" fill="#cfc8ea" opacity="0.45"/><circle cx="203.8" cy="406.8" r="0.82" fill="#cfc8ea" opacity="0.49"/><circle cx="187.7" cy="140.6" r="1.14" fill="#cfc8ea" opacity="0.43"/><circle cx="426.1" cy="141.7" r="1.27" fill="#cfc8ea" opacity="0.38"/><circle cx="249.3" cy="286.2" r="0.76" fill="#cfc8ea" opacity="0.54"/><circle cx="150.8" cy="397.6" r="1.52" fill="#cfc8ea" opacity="0.29"/><circle cx="20.0" cy="439.9" r="0.83" fill="#cfc8ea" opacity="0.30"/><circle cx="521.2" cy="55.5" r="1.36" fill="#cfc8ea" opacity="0.42"/><circle cx="746.3" cy="29.9" r="1.05" fill="#cfc8ea" opacity="0.24"/><circle cx="735.8" cy="179.0" r="0.87" fill="#cfc8ea" opacity="0.19"/><circle cx="160.5" cy="324.4" r="1.35" fill="#cfc8ea" opacity="0.28"/><circle cx="101.9" cy="160.1" r="0.91" fill="#cfc8ea" opacity="0.12"/><circle cx="476.3" cy="187.7" r="0.67" fill="#cfc8ea" opacity="0.25"/><circle cx="81.5" cy="22.5" r="0.96" fill="#cfc8ea" opacity="0.23"/><circle cx="292.9" cy="464.0" r="0.52" fill="#cfc8ea" opacity="0.22"/><circle cx="307.3" cy="30.1" r="0.41" fill="#cfc8ea" opacity="0.27"/><circle cx="385.9" cy="300.5" r="1.44" fill="#cfc8ea" opacity="0.35"/><circle cx="593.1" cy="375.7" r="0.76" fill="#cfc8ea" opacity="0.26"/><circle cx="606.1" cy="32.0" r="1.27" fill="#cfc8ea" opacity="0.51"/><circle cx="725.8" cy="119.3" r="0.91" fill="#cfc8ea" opacity="0.32"/><circle cx="465.0" cy="278.3" r="0.61" fill="#cfc8ea" opacity="0.25"/><circle cx="203.1" cy="395.2" r="1.10" fill="#cfc8ea" opacity="0.22"/><circle cx="595.7" cy="140.3" r="1.41" fill="#cfc8ea" opacity="0.16"/><circle cx="603.8" cy="172.1" r="1.70" fill="#cfc8ea" opacity="0.24"/><path d="M 20.52526516839862 452.3 L 21.1 455.3 L 24.1 455.8895852200221 L 21.1 456.5 L 20.52526516839862 459.5 L 19.9 456.5 L 16.9 455.8895852200221 L 19.9 455.3 Z" fill="#f6e6bf" opacity="0.7147703210124746"/><path d="M 354.2862662114203 443.7 L 354.9 446.7 L 357.8 447.2273067419883 L 354.9 447.8 L 354.2862662114203 450.8 L 353.7 447.8 L 350.7 447.2273067419883 L 353.7 446.7 Z" fill="#f6e6bf" opacity="0.6126033325912431"/><path d="M 338.7511092983186 382.8 L 339.3 385.5 L 342.0 386.0310178983491 L 339.3 386.5 L 338.7511092983186 389.3 L 338.2 386.5 L 335.5 386.0310178983491 L 338.2 385.5 Z" fill="#f6e6bf" opacity="0.7499162003630773"/><path d="M 341.73084293678403 368.9 L 342.2 371.2 L 344.4 371.6144877912011 L 342.2 372.0 L 341.73084293678403 374.3 L 341.3 372.0 L 339.0 371.6144877912011 L 341.3 371.2 Z" fill="#f6e6bf" opacity="0.6420957680093125"/><path d="M 571.8670515231788 177.2 L 572.4 179.8 L 574.9 180.32073280657642 L 572.4 180.8 L 571.8670515231788 183.4 L 571.4 180.8 L 568.8 180.32073280657642 L 571.4 179.8 Z" fill="#f6e6bf" opacity="0.6913098087767139"/><path d="M 270.0 358.1 L 359.5 369.6 L 239.0 99.7 L 426.1 141.7 L 521.2 55.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="484" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="473" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 467.8 L 16.5 470.5 L 19.2 471 L 16.5 471.5 L 16 474.2 L 15.5 471.5 L 12.8 471 L 15.5 470.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 467.8 L 744.5 470.5 L 747.2 471 L 744.5 471.5 L 744 474.2 L 743.5 471.5 L 740.8 471 L 743.5 470.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Steps to Read Any Sun-Ruler Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mbappebirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mbappebirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="415" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#mbappebirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#mbappebirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Find the Sun sign and its ruling planet</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">For a Sagittarius Sun, the ruler is Jupiter</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#mbappebirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#mbappebirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Track where transiting Jupiter sits</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Its element and angles to the natal Sun time the chart's high-visibility</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">windows</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#mbappebirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#mbappebirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Note the Leo ingress on June 30, 2026</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Jupiter joins the Sun's fire family as a supportive backdrop for the later</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">rounds</text>
+  <circle cx="76" cy="337" r="20.0" fill="url(#mbappebirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="337" r="15" fill="url(#mbappebirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="332.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="341.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="333.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Treat time-sensitive points as provisional</text>
+  <text x="116" y="355.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Keep the Ascendant and Moon's exact degree provisional until a birth time is</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">confirmed</text>
+  <circle cx="76" cy="415" r="20.0" fill="url(#mbappebirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="415" r="15" fill="url(#mbappebirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="410.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="419.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="411.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read each transit as a window, not a fixed outcome</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A window still has to be lived — the chart frames timing, not verdicts</text>
+  <path d="M 202.22749999999988 458.4 L 202.6 460.6 L 204.8 461 L 202.6 461.4 L 202.22749999999988 463.6 L 201.8 461.4 L 199.6 461 L 201.8 460.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 458.4 L 558.2 460.6 L 560.4 461 L 558.2 461.4 L 557.7725000000002 463.6 L 557.4 461.4 L 555.2 461 L 557.4 460.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

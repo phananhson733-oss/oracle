@@ -1,0 +1,117 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mbappe-birth-chart": {
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Mbappé's Birth Chart vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 姆巴佩的出生星盘与相近概念：运作方式 + 取舍",
+          "titleEn": "Three Chart Reading Approaches Compared",
+          "titleZh": "三种星盘解读方式对比",
+          "altEn": "Comparison of sign-by-sign celebrity profile, natal-plus-transit reading, and full predictive forecast",
+          "altZh": "逐星座名人侧写、本命加过运解读与完整结果预测三种方式的对比",
+          "columns": [
+            {
+              "nameEn": "Sign-by-Sign Profile",
+              "nameZh": "逐星座侧写",
+              "linesEn": [
+                "Lists trait labels by sign",
+                "Easy but gives no timing texture",
+                "Fixed personality verdict",
+                "Readers get stuck on labels"
+              ],
+              "linesZh": [
+                "按星座列特质标签",
+                "易读但无时机质感",
+                "固定的性格判词",
+                "读者卡在标签上"
+              ]
+            },
+            {
+              "nameEn": "Natal + Transit Reading",
+              "nameZh": "本命加过运解读",
+              "linesEn": [
+                "Jupiter rules the Sagittarius Sun",
+                "Times high-visibility windows",
+                "Describes opportunities, not outcomes",
+                "Honest, defensible, repeatable"
+              ],
+              "linesZh": [
+                "木星主管射手座太阳",
+                "标定高曝光窗口",
+                "描述机会而非结果",
+                "诚实、站得住脚、可重复"
+              ]
+            },
+            {
+              "nameEn": "Full Predictive Forecast",
+              "nameZh": "完整结果预测",
+              "linesEn": [
+                "Names a winner outright",
+                "Stakes credibility on accuracy",
+                "Lives or dies on the result",
+                "False thrill over honest windows"
+              ],
+              "linesZh": [
+                "直接点名赢家",
+                "以可信度押注于准确性",
+                "成败系于结果",
+                "用虚假快感换诚实窗口"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Mbappé's Birth Chart in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别姆巴佩出生星盘的读法",
+          "titleEn": "5 Steps to Read Any Sun-Ruler Chart",
+          "titleZh": "用守护星读盘的五步法",
+          "altEn": "Five-step sequence for reading a birth chart by finding the Sun sign ruler then tracking its transits",
+          "altZh": "通过找到太阳守护星再追踪其过运来解读出生星盘的五步流程",
+          "items": [
+            {
+              "nameEn": "Find the Sun sign and its ruling planet",
+              "nameZh": "找到太阳星座及其守护星",
+              "subEn": "For a Sagittarius Sun, the ruler is Jupiter",
+              "subZh": "射手座太阳的守护星是木星"
+            },
+            {
+              "nameEn": "Track where transiting Jupiter sits",
+              "nameZh": "追踪过运木星的位置",
+              "subEn": "Its element and angles to the natal Sun time the chart's high-visibility windows",
+              "subZh": "它的元素与对本命太阳的角度标定高曝光窗口"
+            },
+            {
+              "nameEn": "Note the Leo ingress on June 30, 2026",
+              "nameZh": "留意2026年6月30日进狮子座",
+              "subEn": "Jupiter joins the Sun's fire family as a supportive backdrop for the later rounds",
+              "subZh": "木星加入太阳的火象家族，成为后段的支持性背景"
+            },
+            {
+              "nameEn": "Treat time-sensitive points as provisional",
+              "nameZh": "把依时间而定的落点当作暂定",
+              "subEn": "Keep the Ascendant and Moon's exact degree provisional until a birth time is confirmed",
+              "subZh": "在出生时间确认前，上升与月亮精确度数保持暂定"
+            },
+            {
+              "nameEn": "Read each transit as a window, not a fixed outcome",
+              "nameZh": "把每个过运读成窗口而非固定结果",
+              "subEn": "A window still has to be lived — the chart frames timing, not verdicts",
+              "subZh": "窗口仍须亲历——星盘框定的是时机，不是判词"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
