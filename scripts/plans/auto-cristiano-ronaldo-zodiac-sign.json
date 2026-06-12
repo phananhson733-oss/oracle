@@ -1,0 +1,82 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "cristiano-ronaldo-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Cristiano Ronaldo's Zodiac Sign vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Ways to Read an Aquarius Sun",
+          "altEn": "Comparison of flat sun-sign label, structural Aquarius reading, and transit forecast approaches",
+          "altZh": "平面星座标签、结构性水瓶座解读与过境预测三种方法对比",
+          "columns": [
+            {
+              "nameEn": "Flat Label",
+              "linesEn": [
+                "Names the sign only",
+                "No ruler context",
+                "Fixed verdict",
+                "Comfort over precision"
+              ]
+            },
+            {
+              "nameEn": "Structural Reading",
+              "linesEn": [
+                "Reads Sun + Saturn ruler",
+                "Legacy wiring explained",
+                "Pressure pattern, not destiny",
+                "Precise and open-ended"
+              ]
+            },
+            {
+              "nameEn": "Transit Forecast",
+              "linesEn": [
+                "Times events precisely",
+                "Needs confirmed birth time",
+                "Claims results",
+                "Risks false certainty"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Cristiano Ronaldo's Zodiac Sign in Your Chart",
+          "titleEn": "5 Steps to Read Any Aquarius Sun",
+          "altEn": "Five-step sequence for reading an Aquarius Sun using Saturn rulership and transit timing",
+          "altZh": "用土星守护与过境时机解读水瓶座太阳的五步骤",
+          "items": [
+            {
+              "nameEn": "Find Sun in Aquarius",
+              "subEn": "Read it as a legacy-and-individuality theme, not a slogan"
+            },
+            {
+              "nameEn": "Check Saturn",
+              "subEn": "Traditional ruler of Aquarius; its transits time seasons of pressure"
+            },
+            {
+              "nameEn": "Note Saturn in Aries 2025-26",
+              "subEn": "Moving over natal Mars and Venus — a backdrop of consolidation"
+            },
+            {
+              "nameEn": "Treat Moon Degree as Provisional",
+              "subEn": "Exact degree and houses depend on a birth time not firmly confirmed"
+            },
+            {
+              "nameEn": "Read Transits as Chapters",
+              "subEn": "Each transit is a season still to be lived, not a fixed outcome"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
