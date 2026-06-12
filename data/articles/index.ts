@@ -162,6 +162,7 @@ import { lamineYamalBirthChartEn } from "./lamine-yamal-birth-chart";
 import { viniciusJrZodiacSignEn } from "./vinicius-jr-zodiac-sign";
 import { argentinaWorldCup2026AstrologyEn } from "./argentina-world-cup-2026-astrology";
 import { zodiacSignsAsWorldCup2026TeamsEn } from "./zodiac-signs-as-world-cup-2026-teams";
+import { bestSoccerPlayersZodiacSignEn } from "./best-soccer-players-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -368,6 +369,7 @@ const ARTICLES_EN: WikiArticle[] = [
   viniciusJrZodiacSignEn,
   argentinaWorldCup2026AstrologyEn,
   zodiacSignsAsWorldCup2026TeamsEn,
+  bestSoccerPlayersZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
