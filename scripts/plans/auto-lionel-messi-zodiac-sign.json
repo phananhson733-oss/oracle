@@ -1,0 +1,116 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "lionel-messi-zodiac-sign": {
+      "hero": {
+        "prompt": "A moonlit tidal coastline stretching across the full frame at twilight, calm silver water reflecting a swollen luminous crescent moon low on the indigo horizon, faint crab-shaped constellation etched in soft gold light high above, tidal wash of bioluminescent foam along the shoreline, vast amber orb glowing on the far horizon evoking Jupiter's once-in-twelve-years passage, atmosphere of quiet protective power and emotional depth, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit tidal shore at twilight with a glowing crescent moon and amber orb on the indigo horizon, evoking Cancer Sun astrology",
+        "altZh": "暮色中的月光海岸，靛蓝天际挂着发光的月牙与琥珀色星体，唤起巨蟹座太阳的占星意象"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Lionel Messi's Zodiac Sign in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别梅西星座的读法",
+          "titleEn": "5 Steps to Apply the Cancer Sun Method",
+          "titleZh": "五步应用巨蟹太阳读法",
+          "altEn": "Five-step guide to reading a Cancer Sun chart the way Messi's zodiac sign is read",
+          "altZh": "像读梅西星座那样解读巨蟹太阳的五个步骤",
+          "items": [
+            {
+              "nameEn": "Locate the Sun",
+              "nameZh": "定位太阳",
+              "subEn": "Read Cancer Sun as a security-and-belonging growth theme, not a fixed mood",
+              "subZh": "把巨蟹座太阳读成安全与归属的成长主题，而非固定情绪"
+            },
+            {
+              "nameEn": "Check the Moon",
+              "nameZh": "检查月亮",
+              "subEn": "Cancer's ruler — its sign and house color how security is sought",
+              "subZh": "巨蟹的守护星——它的星座与宫位影响安全感如何被寻求"
+            },
+            {
+              "nameEn": "Note the Axis",
+              "nameZh": "留意轴线",
+              "subEn": "Cancer-Capricorn axis — safety vs mastery pull, if Capricorn rising confirmed",
+              "subZh": "巨蟹—摩羯轴线——安全与掌控的拉扯（若摩羯上升已确认）"
+            },
+            {
+              "nameEn": "Track Jupiter in Cancer",
+              "nameZh": "追踪木星在巨蟹",
+              "subEn": "Same-sign backdrop to the Sun until June 30, 2026 — not an exact contact",
+              "subZh": "直到 2026 年 6 月 30 日的同星座背景——而非精确接触"
+            },
+            {
+              "nameEn": "Keep Rising Provisional",
+              "nameZh": "上升保持暂定",
+              "subEn": "Treat any rising-sign claim as provisional until birth time is confirmed",
+              "subZh": "在出生时间确认前，把任何上升星座说法都当作暂定"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Lionel Messi's Zodiac Sign at a Glance",
+          "afterHeadingZh": "## 梅西星座一览",
+          "titleEn": "Three Key Astrological Layers",
+          "titleZh": "三个关键占星层次",
+          "altEn": "Comparison of Cancer Sun, Cancer-Capricorn axis, and Jupiter in Cancer in Messi's chart",
+          "altZh": "梅西星盘中巨蟹太阳、巨蟹—摩羯轴线与木星在巨蟹的对比",
+          "columns": [
+            {
+              "nameEn": "Cancer Sun",
+              "nameZh": "巨蟹座太阳",
+              "linesEn": [
+                "Ties identity to security and belonging",
+                "Fixed by June 24, 1987 birth date",
+                "Ruled by the Moon"
+              ],
+              "linesZh": [
+                "把身份系于安全与归属",
+                "由 1987 年 6 月 24 日出生日期固定",
+                "守护星为月亮"
+              ]
+            },
+            {
+              "nameEn": "Cancer-Cap Axis",
+              "nameZh": "巨蟹—摩羯轴线",
+              "linesEn": [
+                "Pairs safety-seeking Sun with mastery drive",
+                "Growth arc: private care to public authority",
+                "Provisional — depends on confirmed birth time"
+              ],
+              "linesZh": [
+                "把寻求安全的太阳与掌控驱动配对",
+                "成长弧线：私人关怀→公共权威",
+                "暂定——取决于确认的出生时间"
+              ]
+            },
+            {
+              "nameEn": "Jupiter in Cancer",
+              "nameZh": "木星在巨蟹",
+              "linesEn": [
+                "Same-sign backdrop to the Cancer Sun",
+                "Active until June 30, 2026",
+                "Broad belonging-and-legacy emphasis"
+              ],
+              "linesZh": [
+                "巨蟹太阳的同星座背景",
+                "有效至 2026 年 6 月 30 日",
+                "归属与传承主题的宽泛强调"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
