@@ -777,6 +777,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'world-cup-2026-june-astrology',
   'best-soccer-players-zodiac-sign',
   'zodiac-signs-as-world-cup-2026-teams',
   'argentina-world-cup-2026-astrology',
