@@ -157,6 +157,7 @@ import { mbappeBirthChartEn } from "./mbappe-birth-chart";
 import { mbappeBirthChartZh } from "./mbappe-birth-chart";
 import { lionelMessiZodiacSignEn } from "./lionel-messi-zodiac-sign";
 import { lionelMessiZodiacSignZh } from "./lionel-messi-zodiac-sign";
+import { cristianoRonaldoZodiacSignEn } from "./cristiano-ronaldo-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -358,6 +359,7 @@ const ARTICLES_EN: WikiArticle[] = [
   worldCup2026AstrologyPredictionEn,
   mbappeBirthChartEn,
   lionelMessiZodiacSignEn,
+  cristianoRonaldoZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
