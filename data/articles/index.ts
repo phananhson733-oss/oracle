@@ -151,6 +151,8 @@ import { hastaNakshatraEn } from "./hasta-nakshatra";
 import { krittikaNakshatraEn } from "./krittika-nakshatra";
 import { ashwiniNakshatraEn } from "./ashwini-nakshatra";
 import { neptuneInPiscesEn } from "./neptune-in-pisces";
+import { worldCup2026AstrologyPredictionEn } from "./world-cup-2026-astrology-prediction";
+import { worldCup2026AstrologyPredictionZh } from "./world-cup-2026-astrology-prediction";
 // All articles organized by language
 
 import {
@@ -349,6 +351,7 @@ const ARTICLES_EN: WikiArticle[] = [
   krittikaNakshatraEn,
   ashwiniNakshatraEn,
   neptuneInPiscesEn,
+  worldCup2026AstrologyPredictionEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -413,6 +416,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   venusMahadashaZh,
   solarReturnChartZh,
   famousHighlySensitivePersonZh,
+  worldCup2026AstrologyPredictionZh,
 ];
 
 // Get all articles for a language
