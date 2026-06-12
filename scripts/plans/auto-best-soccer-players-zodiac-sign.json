@@ -1,0 +1,109 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "best-soccer-players-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Best-Sign Theory in the Data",
+          "titleEn": "How to Check the Best-Sign Theory Yourself",
+          "titleZh": "如何自行验证最佳星座理论",
+          "altEn": "Five steps for checking the best soccer players zodiac sign theory against birth-month data",
+          "altZh": "验证最佳足球运动员星座理论的五个步骤",
+          "items": [
+            {
+              "nameEn": "Find the Cutoff Date",
+              "nameZh": "找到截止日期",
+              "subEn": "Locate the youth selection cutoff for the league or country — often January 1 in football",
+              "subZh": "找到联赛或国家的青少年选拔截止日期，足球中通常为1月1日"
+            },
+            {
+              "nameEn": "Expect Early-Cohort Clustering",
+              "nameZh": "预期早期队列聚集",
+              "subEn": "Births just after the cutoff are overrepresented among elite players, regardless of sign",
+              "subZh": "截止日期后不久出生的球员在精英行列中比例偏高，与星座无关"
+            },
+            {
+              "nameEn": "Translate Months to Signs as Labels Only",
+              "nameZh": "将月份转化为标签式星座",
+              "subEn": "Map birth months to zodiac signs only as a label, never as a cause of talent",
+              "subZh": "将出生月份对应星座仅视为标签，而非天赋的成因"
+            },
+            {
+              "nameEn": "Test the Cutoff Shift",
+              "nameZh": "测试截止日期变动",
+              "subEn": "Notice whether the best sign changes when the cutoff changes — which rules out astrology",
+              "subZh": "观察截止日期改变时最佳星座是否随之变化，这能排除占星因素"
+            },
+            {
+              "nameEn": "Flag Single-Sign Claims",
+              "nameZh": "识别单一星座主张",
+              "subEn": "Treat any best-zodiac claim as a calendar artifact, not a star-based forecast",
+              "subZh": "将任何最佳星座主张视为日历效应的产物，而非基于星象的预测"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Best-Sign Theory at a Glance",
+          "titleEn": "Best-Sign Theory at a Glance",
+          "titleZh": "最佳星座理论概览",
+          "altEn": "Comparison of Relative Age Effect, Cutoff Dependence, and Zodiac as Label in soccer birth-month data",
+          "altZh": "足球出生月份数据中相对年龄效应、截止日期依赖与星座标签的对比",
+          "columns": [
+            {
+              "nameEn": "Relative Age Effect",
+              "nameZh": "相对年龄效应",
+              "linesEn": [
+                "Older-in-cohort kids get selected more",
+                "Births just after the age-group cutoff",
+                "More elite players born early in the selection year"
+              ],
+              "linesZh": [
+                "同队列中年龄较大的孩子更易被选中",
+                "出生在年龄组截止日期后不久",
+                "精英球员中更多人出生于选拔年度初期"
+              ]
+            },
+            {
+              "nameEn": "Cutoff Dependence",
+              "nameZh": "截止日期依赖",
+              "linesEn": [
+                "Lucky months shift with the cutoff date",
+                "Whichever quarter follows the cutoff",
+                "Favored months move when a country changes its rule"
+              ],
+              "linesZh": [
+                "幸运月份随截止日期变动",
+                "截止日期之后的任何季度",
+                "国家更改规则时受青睐的月份也随之改变"
+              ]
+            },
+            {
+              "nameEn": "Zodiac as Label",
+              "nameZh": "星座作为标签",
+              "linesEn": [
+                "Maps a birth month onto a sign, not a cause",
+                "The sign covering the overrepresented months",
+                "A sign looks lucky only because of the calendar"
+              ],
+              "linesZh": [
+                "将出生月份映射为星座，而非因果关系",
+                "覆盖过度代表月份的星座",
+                "星座看起来幸运仅因为日历效应"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
