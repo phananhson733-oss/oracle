@@ -159,6 +159,7 @@ import { lionelMessiZodiacSignEn } from "./lionel-messi-zodiac-sign";
 import { lionelMessiZodiacSignZh } from "./lionel-messi-zodiac-sign";
 import { cristianoRonaldoZodiacSignEn } from "./cristiano-ronaldo-zodiac-sign";
 import { lamineYamalBirthChartEn } from "./lamine-yamal-birth-chart";
+import { viniciusJrZodiacSignEn } from "./vinicius-jr-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -362,6 +363,7 @@ const ARTICLES_EN: WikiArticle[] = [
   lionelMessiZodiacSignEn,
   cristianoRonaldoZodiacSignEn,
   lamineYamalBirthChartEn,
+  viniciusJrZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
