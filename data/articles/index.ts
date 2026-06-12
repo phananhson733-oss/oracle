@@ -155,6 +155,8 @@ import { worldCup2026AstrologyPredictionEn } from "./world-cup-2026-astrology-pr
 import { worldCup2026AstrologyPredictionZh } from "./world-cup-2026-astrology-prediction";
 import { mbappeBirthChartEn } from "./mbappe-birth-chart";
 import { mbappeBirthChartZh } from "./mbappe-birth-chart";
+import { lionelMessiZodiacSignEn } from "./lionel-messi-zodiac-sign";
+import { lionelMessiZodiacSignZh } from "./lionel-messi-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -355,6 +357,7 @@ const ARTICLES_EN: WikiArticle[] = [
   neptuneInPiscesEn,
   worldCup2026AstrologyPredictionEn,
   mbappeBirthChartEn,
+  lionelMessiZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -421,6 +424,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   famousHighlySensitivePersonZh,
   worldCup2026AstrologyPredictionZh,
   mbappeBirthChartZh,
+  lionelMessiZodiacSignZh,
 ];
 
 // Get all articles for a language
