@@ -471,9 +471,11 @@ const AppContent: React.FC = () => {
     window.location.replace(targetUrl);
   }, []);
 
-  const hasCloudProfile =
-    !!authUser?.birthProfile &&
-    localStorage.getItem("astro_profile_migrated") === "1";
+  // Cloud profile shows on ANY signed-in device. We no longer gate on the
+  // device-local `astro_profile_migrated` flag — that flag only ever got set on
+  // the device that ran the local→cloud migration, so a second device (mobile
+  // after web) saw an empty chart even though birthProfile exists in the account.
+  const hasCloudProfile = !!authUser?.birthProfile;
   const cloudProfile = useMemo(() => {
     if (!hasCloudProfile || !authUser?.birthProfile) return null;
     const birth = authUser.birthProfile;

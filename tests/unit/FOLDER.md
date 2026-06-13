@@ -38,3 +38,4 @@
 | `seo-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<SEO>` 的页面级 JSON-LD type-aware 去重——stub 已 bake 同 @type 时不产生重复 FAQPage/Article/BreadcrumbList，保留 Org/WebSite，不碰 `data-astro-global-schema`，unmount 还原。守护 GSC "字段 FAQPage 重复"根因修复。 |
 | `breadcrumb-jsonld-dedupe.test.tsx` | jsdom 组件测试：`<Breadcrumb>` 的 BreadcrumbList JSON-LD 自去重——已存在 BreadcrumbList（stub/SEO）时跳过注入，否则注入 head（如 AuthorPage），unmount 移除。守护 BreadcrumbList 三重发的修复。 |
 | `clear-user-data.test.ts` | DSAR 守卫（backlog #26）：`services/authClient.ts::clearAllUserData` 删号时必须清掉所有 PII/账号 localStorage 键（synastry 真名 `astro_synastry_profiles` + CBT `astro_cbt_*` + token/entitlements/purchases/device），保留 consent/lang/theme；新增 PII 键漏接入清单即红。 |
+| `use-user-profile-cloud-hydration.test.tsx` | jsdom hook 测试：守护跨设备云端 profile hydration——已登录用户账号里的 `birthProfile` 必须在任何设备（包括无 `astro_profile_migrated` 本地标记的新设备，如 web 后手机）都灌入 UI；本地 `astro_user` 优先不被覆盖、字段不全不 hydrate、未登录不 hydrate。守护「web 有数据手机看不到」根因修复。 |

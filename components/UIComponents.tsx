@@ -178,7 +178,10 @@ export const useUserProfile = () => {
   });
   useEffect(() => {
     if (user || !authUser?.birthProfile) return;
-    if (localStorage.getItem("astro_profile_migrated") !== "1") return;
+    // Hydrate from the account on ANY device. The account birthProfile is the
+    // source of truth once signed in; the old `astro_profile_migrated` gate was
+    // device-local localStorage, so a second device (e.g. mobile after web)
+    // never had it set and refused to show the cloud profile that exists.
     const birth = authUser.birthProfile;
     if (!birth.birthDate || !birth.birthCity || !birth.timezone) return;
     const profile: UserProfile = {
