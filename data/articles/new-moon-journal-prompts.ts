@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const newMoonJournalPromptsEn: WikiArticle = {
   slug: "new-moon-journal-prompts",
   image: "/images/moon/new-moon-journal-prompts.jpg",
-  image_alt: "A gold seed of light planted under a dark new moon, with a thread arcing to a distant full moon — an intention specific enough to assess later",
+  image_alt:
+    "A gold seed of light planted under a dark new moon, with a thread arcing to a distant full moon — an intention specific enough to assess later",
   title: "New Moon Journal Prompts That Build Intentions Worth Tracking",
-  description: "New moon journal prompts are structured questions for setting specific, assessable intentions at the lunar cycle's start.",
+  description:
+    "New moon journal prompts are structured questions for setting specific, assessable intentions at the lunar cycle's start.",
   authorId: "marcus-orion",
   date: "2026-06-05",
   schema: "Article",
@@ -16,11 +18,11 @@ export const newMoonJournalPromptsEn: WikiArticle = {
     "new moon journal prompts",
     "new moon journaling",
     "new moon intention setting",
-    "new moon reflection"
+    "new moon reflection",
   ],
   content: `# New Moon Journal Prompts That Build Intentions Worth Tracking
 
-## What is new moon journal prompts?
+## What Are New Moon Journal Prompts?
 
 New moon journal prompts are **structured questions for setting specific, assessable intentions at the lunar cycle's start**.
 
@@ -28,7 +30,7 @@ New moon journal prompts are **structured questions for setting specific, assess
 - Designed for planting intentions, not releasing what is past — release belongs to the full moon two weeks later
 - Most effective when the answers are concrete enough to honestly revisit at the corresponding full moon
 
-This sits alongside the broader *pillar page on lunar cycle rituals and moon phase practices*, which maps each phase's distinct function in cyclical practice. The term covers everything from a single question to a full structured entry, but what separates a useful set from an unhelpful one is whether the answers are specific enough to assess later. Most available resources skip that test, mixing full moon release language — "release what no longer serves you" — directly into new moon sets. That bidirectional phase confusion means most new moon journal prompts produce entries that feel meaningful in the moment but cannot be honestly evaluated when the full moon arrives.
+This is the forward-facing half of lunar journaling. Its counterpart is the set of [full moon journal prompts](/en/wiki/full-moon-journal-prompts), which handle the backward-facing work of review and release two weeks later — and keeping the two distinct is exactly the point. The term here covers everything from a single question to a full structured entry, but what separates a useful set from an unhelpful one is whether the answers are specific enough to assess later. Most available resources skip that test, mixing full moon release language — "release what no longer serves you" — directly into new moon sets. That bidirectional phase confusion means most new moon journal prompts produce entries that feel meaningful in the moment but cannot be honestly evaluated when the full moon arrives.
 
 ## Why It Matters for Self-Awareness
 
@@ -42,7 +44,7 @@ The confusion found in most published prompt resources compounds the problem in 
 
 Understanding which of these three patterns is active in a given entry is the first step toward building a new moon practice that produces usable information over time. Each failure produces the same result: a beautifully written entry that closes no loop and teaches the journaler nothing about their own follow-through.
 
-## new moon journal prompts vs Adjacent Concepts: How It Works + Trade-offs
+## New Moon Prompts vs Gratitude, Manifestation, and Freewriting
 
 This practice is frequently grouped with general journaling, gratitude writing, and manifestation scripting — but how each one functions differs in ways that affect what a practitioner actually gets. What separates new moon journal prompts from looser approaches is a three-layer structure: an observable external expectation (something you can confirm or deny at the full moon), an internal shift (the belief that must change for the intention to be genuine), and a behavioral anchor (one concrete action within 48 hours). This structure, rooted in the tradition practitioners like Bernadette Brady helped establish, treats the lunar phase as a specific functional window — not a mood descriptor.
 
@@ -54,7 +56,7 @@ Each adjacent practice makes a different trade:
 
 Mixing these approaches — as most published moon-prompt collections do — produces entries that are neither usable for assessment nor satisfying as pure expression.
 
-## How to Read new moon journal prompts in Yourself
+## How to Tell a New Moon Entry Is Working
 
 The clearest sign that a prompt set is doing its job at the new moon level is whether the entry produces something you can honestly revisit at the full moon. Here are five observable signals:
 
@@ -112,7 +114,9 @@ Because content is often drawn from general moon-cycle libraries without disting
 
 ## Related Reading
 
-- *full moon journaling and release practices* — the counterpart practice: how the full moon's phase function supports honest review and release of what was planted at the new moon
+- [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — the counterpart practice for the other half of the cycle: where the new moon set plants an intention, the full moon journal prompts two weeks later take honest stock of what grew and name what to release.
+- [Moon journal](/en/wiki/moon-journal) — the four-phase practice these new moon prompts fit inside, from new moon intention through full moon evaluation to waning release.
+- [Full moon energy](/en/wiki/full-moon-energy) — what the peak this entry is later assessed against actually feels like and how to read it.
 
 ## Take Action
 

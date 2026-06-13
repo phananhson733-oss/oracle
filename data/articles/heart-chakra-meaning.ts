@@ -5,18 +5,16 @@ import type { WikiArticle } from "../../types";
 export const heartChakraMeaningEn: WikiArticle = {
   slug: "heart-chakra-meaning",
   image: "/images/chakra/heart-chakra-meaning.jpg",
-  image_alt: "A golden figure-eight current flowing out to distant orbs and back into a central glowing heart, showing the heart chakra as balanced giving and receiving",
+  image_alt:
+    "A golden figure-eight current flowing out to distant orbs and back into a central glowing heart, showing the heart chakra as balanced giving and receiving",
   title: "What the Heart Chakra Really Governs Beyond Romantic Love",
-  description: "The Heart Chakra, called Anahata in the traditional system, is the fourth of the seven main energy centers and sits at the center of the chest, where the...",
+  description:
+    "The Heart Chakra, called Anahata in the traditional system, is the fourth of the seven main energy centers and sits at the center of the chest, where the...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "en",
-  keywords: [
-    "\"heart chakra meaning\"",
-    "\"anahata\"",
-    "\"healing heart chakra\""
-  ],
+  keywords: ['"heart chakra meaning"', '"anahata"', '"healing heart chakra"'],
   content: `# What the Heart Chakra Really Governs Beyond Romantic Love
 
 ## What is Heart Chakra?
@@ -101,8 +99,10 @@ It is mapped to the center of the chest, between the lower three centers and the
 
 ## Related Reading
 
-- The throat center just above the heart, where felt warmth hands off to clear expression — useful for telling empathy and honesty apart.
-- A practical look at restoring balanced giving and receiving, for readers who recognize the overgiving pattern in themselves.
+- [chakra system overview](/en/wiki/chakra-system-overview) — the hub that places the heart fourth, at the midpoint between the lower and upper centers.
+- [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — the will center just below, useful for telling self-direction apart from self-giving.
+- [sacral chakra meaning](/en/wiki/sacral-chakra-meaning) — where emotional flow begins, two centers below the heart.
+- [chakra test](/en/wiki/chakra-test) — self-assess whether your heart energy is leaning toward overgiving, self-protection, or balance.
 
 ## Take Action
 
@@ -118,18 +118,16 @@ Take the Chakra Test to see whether your heart chakra reads as open, blocked, or
 export const heartChakraMeaningZh: WikiArticle = {
   slug: "heart-chakra-meaning",
   image: "/images/chakra/heart-chakra-meaning.jpg",
-  image_alt: "一条金色八字形光流向外抵达远处光点又折返回中央光球，象征心轮是付出与接收的双向平衡",
+  image_alt:
+    "一条金色八字形光流向外抵达远处光点又折返回中央光球，象征心轮是付出与接收的双向平衡",
   title: "心轮代表什么，远不只是谈情说爱",
-  description: "Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第四个中心，位置在胸口正中，恰好夹在下三轮的本能和上三轮的觉知之间。在更完整的 脉轮系统总览 pillar 页...",
+  description:
+    "Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第四个中心，位置在胸口正中，恰好夹在下三轮的本能和上三轮的觉知之间。在更完整的 脉轮系统总览 pillar 页...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "\"heart chakra meaning\"",
-    "\"anahata\"",
-    "\"healing heart chakra\""
-  ],
+  keywords: ['"heart chakra meaning"', '"anahata"', '"healing heart chakra"'],
   content: `# 心轮代表什么，远不只是谈情说爱
 
 ## Heart Chakra 是什么？

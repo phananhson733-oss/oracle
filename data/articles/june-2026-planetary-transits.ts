@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const june2026PlanetaryTransitsEn: WikiArticle = {
   slug: "june-2026-planetary-transits",
   image: "/images/transits/june-2026-planetary-transits.jpg",
-  image_alt: "A left-to-right celestial arc from scattered Gemini light into deeper Cancer tones, ending on a full moon beside a turning planet.",
+  image_alt:
+    "A left-to-right celestial arc from scattered Gemini light into deeper Cancer tones, ending on a full moon beside a turning planet.",
   title:
     "June 2026 Planetary Transits: Cancer Season Opens, a Gemini New Moon Resets Mid-Month, and a Mercury Retrograde Closes It Out",
   description:
@@ -107,6 +108,8 @@ Run the same check for each of June's signs:
 
 Three placements, and most of the month's meaning resolves into specifics you can observe. Same sky, different life area — and the only way to know which is to look at your own chart, not a generic forecast. If you've never mapped your houses, start with the basics in [a guide to the astrology houses](/en/wiki/astrology-houses), and keep the broader [overview of astrological transits](/en/wiki/transits) handy for how moving planets interact with a fixed natal chart.
 
+Two June dates deserve a closer read on their own. The [Capricorn full moon that closes June](/en/wiki/full-moon-june-2026) caps a six-month arc that began at the start of the year, and as the [2026 World Cup opens under Jupiter in Cancer](/en/wiki/world-cup-2026-astrology-prediction), the same theme of belonging, home, and collective feeling runs quietly underneath the tournament's noise.
+
 None of this is a prediction, and none of it decides your month for you. It's a way of paying attention — a vocabulary for noticing shifts in pace and priority that you can check against your own experience and keep or discard. To build the one skill that makes every monthly forecast like this one legible, learn to read your own chart: start with [how to read a birth chart](/en/wiki/how-to-read-birth-chart) and you'll have the map you need for June and every month after.
 
 ## Questions People Ask About June 2026 Planetary Transits
@@ -132,7 +135,8 @@ The article frames the June 16 New Moon in Gemini as a workmanlike fresh cycle a
 export const june2026PlanetaryTransitsZh: WikiArticle = {
   slug: "june-2026-planetary-transits",
   image: "/images/transits/june-2026-planetary-transits.jpg",
-  image_alt: "一道由左向右的天象弧线，从发散的双子之光转入更深的巨蟹色调，止于满月与一颗即将转向的行星。",
+  image_alt:
+    "一道由左向右的天象弧线，从发散的双子之光转入更深的巨蟹色调，止于满月与一颗即将转向的行星。",
   title: "2026 年 6 月行运预报：巨蟹季开场、双子新月中场重置，月末以水逆收尾",
   description:
     "所有位置均基于 2026 年 6 月星历。本文凡是提到某个相位或星座之间的关系，请当成对月中盘的近似判断，不是有精确时刻的事件。",

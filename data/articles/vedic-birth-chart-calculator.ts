@@ -1,13 +1,16 @@
-// Article: Reading Your Vedic Birth Chart Calculator Output, Placement by Placement
+// Article: Vedic Birth Chart Calculator: How to Read Every Placement in Your Output
 // Generated from flow-mvp _staging/ by tools/scripts/gg-md-to-oracle-ts.mjs.
 import type { WikiArticle } from "../../types";
 
 export const vedicBirthChartCalculatorEn: WikiArticle = {
   slug: "vedic-birth-chart-calculator",
   image: "/images/vedic/vedic-birth-chart-calculator.jpg",
-  image_alt: "A still lake mirroring a dense sidereal starfield, a faint gold ring of light resolving on the water as a chart forms from the sky.",
-  title: "Reading Your Vedic Birth Chart Calculator Output, Placement by Placement",
-  description: "A Vedic birth chart is a sidereal map of where the planets stood at your birth, calculated from your exact date, time, and place of birth. A vedic birth...",
+  image_alt:
+    "A still lake mirroring a dense sidereal starfield, a faint gold ring of light resolving on the water as a chart forms from the sky.",
+  title:
+    "Vedic Birth Chart Calculator: How to Read Every Placement in Your Output",
+  description:
+    "A vedic birth chart calculator builds a sidereal map of your birth sky in seconds. Here is how to read what it returns — lagna, Moon sign (rashi), the navamsa, and your dasha periods — placement by placement.",
   authorId: "aditi-sharma",
   date: "2026-05-29",
   schema: "Article",
@@ -18,13 +21,13 @@ export const vedicBirthChartCalculatorEn: WikiArticle = {
     "vedic birth chart calculator online free",
     "vedic astrology birth chart",
     "sidereal birth chart calculator",
-    "free vedic birth chart with interpretation"
+    "free vedic birth chart with interpretation",
   ],
-  content: `# Reading Your Vedic Birth Chart Calculator Output, Placement by Placement
+  content: `# Vedic Birth Chart Calculator: How to Read Every Placement in Your Output
 
-## What is Vedic Birth Chart?
+## What a Vedic Birth Chart Calculator Gives You
 
-A Vedic birth chart is **a sidereal map of where the planets stood at your birth**, calculated from your exact date, time, and place of birth. A vedic birth chart calculator builds that map in seconds, fixing each planet against the fixed stars (via the ayanamsa offset) rather than the seasons of the year. What it hands back is dense: sign placements, your ascendant or lagna (the sidereal degree and sign rising on the eastern horizon at the moment you were born), and a dasha timeline — the sequence of planetary periods that the classical Jyotish tradition descending from Parashara uses to time the chapters of a life. Most people generate this chart in under a minute, then stall, because the output looks like a wheel of symbols with no obvious starting line. For the wider context before you read any single placement, start with the *pillar overview of vedic astrology and the sidereal zodiac*.
+A **vedic birth chart calculator** builds a sidereal map of where the planets stood at the moment you were born, calculated from your exact date, time, and place of birth — and it does it in seconds. The hard part is not generating the chart; it is reading what comes back. The calculator fixes each planet against the fixed stars (via the ayanamsa offset) rather than the seasons of the year, then hands you a dense wheel: sign placements, your ascendant or lagna (the sidereal degree and sign rising on the eastern horizon at your birth), and a dasha timeline — the sequence of planetary periods that the classical Jyotish tradition descending from Parashara uses to time the chapters of a life. Most people pull this chart in under a minute and then stall, because the output looks like a ring of symbols with no obvious starting line. This guide is the missing key: it walks through each placement a vedic birth chart calculator returns, in the order a practitioner actually reads them. For the wider context before you read any single placement, start with the [companion explainer on Vedic vs Western astrology](/en/wiki/vedic-vs-western-astrology), which covers why your signs differ from a Western chart in the first place.
 
 - Fixes the planets to the sidereal zodiac, not the tropical seasons
 - Centres the reading on your lagna, the ascendant that anchors every house
@@ -40,11 +43,11 @@ The gap a vedic birth chart calculator exposes is not access — anyone can pull
 
 Reading the output well changes what the chart is for. Instead of a one-time curiosity, it becomes a way to name tendencies you already live with — the stretch of years that felt heavier, the area of life where your attention reliably concentrates — and to see them located in a structure rather than felt only vaguely. That move, from generating to reading, is the entire point of learning the chart at all.
 
-## Vedic Birth Chart vs Adjacent Concepts: How It Works + Trade-offs
+## Vedic Calculator vs Western Calculator: Why the Output Differs
 
 The output of a vedic birth chart calculator looks similar to a Western natal wheel, but the two systems are built on different sky maps, and conflating them is the single most common interpretive error. Here is how each one works and what each one costs.
 
-A Western natal chart uses the tropical zodiac, which pins the signs to the seasons — 0° Aries always falls at the spring equinox. A Vedic chart uses the sidereal zodiac — twelve equal 30° signs anchored to the fixed stars — which drifts from the tropical one by roughly 24 degrees, an offset called the ayanamsa. How it works in practice: the sidereal calculation often shifts a planet back a whole sign, so a tropical Leo Sun reads as a sidereal Cancer Sun. That single shift is why a lifelong "Leo" can open a Vedic chart and find a Cancer Sun looking back — not an error, but a different reference frame. To get the seasonal, psychological symbolism that modern Western astrology leans on, you sacrifice alignment with the stars actually overhead at your birth, and the reverse is equally true. For the full mechanics of that offset, the *guide to the sidereal versus tropical zodiac* walks through it slowly.
+A Western natal chart uses the tropical zodiac, which pins the signs to the seasons — 0° Aries always falls at the spring equinox. A Vedic chart uses the sidereal zodiac — twelve equal 30° signs anchored to the fixed stars — which drifts from the tropical one by roughly 24 degrees, an offset called the ayanamsa. How it works in practice: the sidereal calculation often shifts a planet back a whole sign, so a tropical Leo Sun reads as a sidereal Cancer Sun. That single shift is why a lifelong "Leo" can open a Vedic chart and find a Cancer Sun looking back — not an error, but a different reference frame. To get the seasonal, psychological symbolism that modern Western astrology leans on, you sacrifice alignment with the stars actually overhead at your birth, and the reverse is equally true. For the full mechanics of that offset, the [Vedic vs Western astrology guide](/en/wiki/vedic-vs-western-astrology) walks through it slowly.
 
 A second contrast sits inside the Vedic system itself: dasha timing versus transit reading. Dasha periods, a classical Jyotish timing framework from the Parashara tradition (the Vimshottari dasha) later popularised and case-studied by teachers such as B. V. Raman and K. N. Rao, track long internal chapters, while transits track short external triggers. Choosing dasha as your primary lens gets you a clear life-stage narrative, but you lose the day-to-day precision that transit work offers.
 
@@ -60,7 +63,23 @@ A vedic birth chart calculator gives you the raw data; reading it is a matter of
 4. **Check the current dasha.** Identify the planetary period you are in now; it tends to set the background theme for this stretch of years.
 5. **Look for repetition.** When the same sign, house, or planet keeps surfacing, that emphasis often points to a lived tendency rather than a stray detail.
 
-Worked in this order, the chart reveals itself as a layered structure rather than a flat list. The lagna is the room you are standing in, the houses are the walls, the planets are the furniture, and the dasha tells you which room is lit right now. The calculator will never hand you that narrative directly; building it from the raw placements is the skill that turns data into self-knowledge.
+Worked in this order, the chart reveals itself as a layered structure rather than a flat list. The lagna is the room you are standing in, the houses are the walls, the planets are the furniture, and the dasha tells you which room is lit right now. The calculator will never hand you that narrative directly; building it from the raw placements is the skill that turns data into self-knowledge. The four placements below are the ones your calculator returns that most reward a close reading.
+
+### Lagna (Ascendant) — Where to Start
+
+The lagna is the sidereal sign that was rising on the eastern horizon at your birth, and in a Vedic chart it is the headline, not the Sun. Everything else is read relative to it: the lagna becomes the first house, and the house numbering flows from there counterclockwise. Your calculator will list it as the "ascendant" or "lagna." Because the rising sign changes roughly every two hours, an accurate lagna depends on a precise birth time — get the minute wrong and the entire house framework can shift. Read the lagna first for the *style* you meet life with, then note its ruling planet (the lagna lord) and follow it to wherever it sits; that planet's house often shows where your energy genuinely concentrates.
+
+### Moon Sign (Rashi) in Vedic Astrology
+
+In Western astrology the Sun sign is king; in Vedic practice the **Moon sign, or rashi, carries far more weight**. It anchors much of the predictive work, and it is the placement most classical Jyotish readings open with after the lagna. Your calculator will name your rashi and usually the nakshatra (lunar mansion) the Moon falls in. Read the rashi for emotional temperament and inner needs, and expect it to differ from the Moon sign a Western app gave you — that one-sign shift is the ayanamsa doing its job, not a calculation error.
+
+### Reading the Navamsa Chart
+
+Most full vedic birth chart calculators also generate a **navamsa (D9) chart** — a divisional chart that subdivides each sign into nine parts and is read alongside the main birth chart (the rashi chart, or D1). Practitioners use the navamsa to check the underlying strength of a placement and, traditionally, for marriage and partnership themes. A planet that looks strong in the main chart but weak in the navamsa is read as promising but unsupported; one that strengthens in the navamsa is considered to deliver on its potential. You do not need to master it on day one — but knowing the D9 exists explains the second wheel your calculator quietly produces.
+
+### Dasha Periods and Timing
+
+The dasha timeline is what most distinguishes a vedic birth chart calculator's output from a Western one. The standard system, **Vimshottari dasha**, divides life into planetary periods (mahadashas) lasting anywhere from 6 to 20 years, each subdivided into shorter sub-periods (antardashas). Your calculator prints these as a dated schedule. Read the dasha you are *in now* for the background theme of this stretch of years — it sets emphasis and timing, not a fixed event. A dasha never predicts a specific outcome; it tells you which planet's themes are currently lit, so you can read the rest of the chart through that active lens.
 
 
 ![Five-step sequence for reading a Vedic chart: lagna, lagna lord, house then sign, current dasha, repetition](/images/vedic/vedic-birth-chart-calculator-i0-en.svg)
@@ -128,9 +147,11 @@ Open the chart your tool saved, then read it in order: lagna first, lagna lord, 
 export const vedicBirthChartCalculatorZh: WikiArticle = {
   slug: "vedic-birth-chart-calculator",
   image: "/images/vedic/vedic-birth-chart-calculator.jpg",
-  image_alt: "静湖映出异常致密精确的恒星，水面上一圈淡金色光环正从倒影中凝聚成形，仿佛真实天空自行生成星图。",
+  image_alt:
+    "静湖映出异常致密精确的恒星，水面上一圈淡金色光环正从倒影中凝聚成形，仿佛真实天空自行生成星图。",
   title: "排出吠陀星盘之后，最该先读懂的几个配置",
-  description: "吠陀星盘（Vedic Birth Chart）是基于恒星黄道排出的印度占星本命盘。它记录你出生那一刻行星在天空中的真实位置。它和多数人熟悉的西方占星不同：西方用回归黄道，吠陀占星（Vedic astrology，源自印度的 jyotisha...",
+  description:
+    "吠陀星盘（Vedic Birth Chart）是基于恒星黄道排出的印度占星本命盘。它记录你出生那一刻行星在天空中的真实位置。它和多数人熟悉的西方占星不同：西方用回归黄道，吠陀占星（Vedic astrology，源自印度的 jyotisha...",
   authorId: "aditi-sharma",
   date: "2026-05-29",
   schema: "Article",
@@ -141,7 +162,7 @@ export const vedicBirthChartCalculatorZh: WikiArticle = {
     "vedic birth chart calculator online free",
     "vedic astrology birth chart",
     "sidereal birth chart calculator",
-    "free vedic birth chart with interpretation"
+    "free vedic birth chart with interpretation",
   ],
   content: `# 排出吠陀星盘之后，最该先读懂的几个配置
 

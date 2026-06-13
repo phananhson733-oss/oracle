@@ -5,17 +5,19 @@ import type { WikiArticle } from "../../types";
 export const ninthHouseAstrologyEn: WikiArticle = {
   slug: "9th-house-astrology",
   image: "/images/houses/9th-house-astrology.jpg",
-  image_alt: "Scattered stones and pages aligning into a gold arrow arcing toward a constellation archway on the horizon",
+  image_alt:
+    "Scattered stones and pages aligning into a gold arrow arcing toward a constellation archway on the horizon",
   title: "What 9th House Astrology Reveals About Your Inner Seeker",
-  description: "The 9th House is the sector of a birth chart that governs how you reach beyond your immediate surroundings toward meaning, belief, and a bigger picture of...",
+  description:
+    "The 9th House is the sector of a birth chart that governs how you reach beyond your immediate surroundings toward meaning, belief, and a bigger picture of...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
   keywords: [
-    "\"9th house astrology\"",
-    "\"9th house meaning\"",
-    "\"what is the 9th house\""
+    '"9th house astrology"',
+    '"9th house meaning"',
+    '"what is the 9th house"',
   ],
   content: `# What 9th House Astrology Reveals About Your Inner Seeker
 
@@ -102,6 +104,7 @@ The 3rd house gathers near-range facts and handles daily communication, while th
 ## Related Reading
 
 - [explainer on the 10th house and public standing](/en/wiki/astrology-houses) — useful for seeing how inner conviction in the 9th turns into outward direction and reputation.
+- [the 6th house of daily work, health, and routine](/en/wiki/6th-house-astrology) — where the 9th house's big beliefs get grounded in the everyday practice that actually carries them.
 - [House (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/House_(astrology)) — background on the house system this sector belongs to.
 
 ## Take Action
@@ -120,15 +123,16 @@ export const ninthHouseAstrologyZh: WikiArticle = {
   image: "/images/houses/9th-house-astrology.jpg",
   image_alt: "散落的石子与纸页汇成一支金色箭矢，射向地平线上由星座连成的拱门",
   title: "读懂第九宫，看清你为什么总在追问人生的意义",
-  description: "第九宫（The 9th House）是星盘里掌管高等教育、长途旅行、哲学与信仰的那块生活领域，说第九宫代表什么，核心是一张标记人如何追寻意义的地图。它和第三宫遥遥相对：第三宫收集眼前的事实，9th house 则把这些事实拔高成一套你愿意信的世界观。",
+  description:
+    "第九宫（The 9th House）是星盘里掌管高等教育、长途旅行、哲学与信仰的那块生活领域，说第九宫代表什么，核心是一张标记人如何追寻意义的地图。它和第三宫遥遥相对：第三宫收集眼前的事实，9th house 则把这些事实拔高成一套你愿意信的世界观。",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
   keywords: [
-    "\"9th house astrology\"",
-    "\"9th house meaning\"",
-    "\"what is the 9th house\""
+    '"9th house astrology"',
+    '"9th house meaning"',
+    '"what is the 9th house"',
   ],
   content: `# 读懂第九宫，看清你为什么总在追问人生的意义
 

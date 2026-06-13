@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const transitsEn: WikiArticle = {
   slug: "transits",
   image: "/images/transits/transits.jpg",
-  image_alt: "A fixed gold constellation against slow and fast planets tracing orbital arcs at different speeds in a deep indigo cosmos.",
+  image_alt:
+    "A fixed gold constellation against slow and fast planets tracing orbital arcs at different speeds in a deep indigo cosmos.",
   title:
     "Astrological Transits — Reading the Moving Sky Against Your Fixed Chart",
   description:
@@ -65,7 +66,7 @@ Here is each member at hub depth — enough to recognize these transits, with th
 2. **Mercury** lasts a day or two and stirs the realm of thinking, messages, errands, and short conversations — a useful window for signing documents, sorting details, or finally having the talk you have been putting off. The misread is blaming every dropped call or traffic jam on "Mercury retrograde"; most days are simply ordinary, retrograde or not. Read the *Mercury transit deep dive* for the detail.
 3. **Venus** runs a few days and warms matters of attraction, money, taste, and small pleasures. People often feel more magnetic, social plans fill up, and spending gets easier. The misread is mistaking a brief Venusian sweetness for a destined relationship; a lovely few days is not a forecast of forever. See the *Venus transit explainer*.
 4. **Mars** unfolds over a week or two and raises drive, courage, irritation, and the urge to act. It can sharpen focus or shorten your temper, depending on the angle and the point it strikes. The misread is reading ordinary frustration as a full crisis — Mars heat usually passes once the planet moves on. The *Mars transit explainer* covers the details.
-5. **Jupiter** lasts weeks to months and tends to expand whatever it touches — opportunity, confidence, travel, or plain excess. It is the closest astrology comes to a tailwind, but growth still asks for participation. The misread is assuming luck will arrive on its own; Jupiter opens a door, it does not walk you through it. The [Jupiter transit deep dive](/en/wiki/9th-house-astrology) shows how.
+5. **Jupiter** lasts weeks to months and tends to expand whatever it touches — opportunity, confidence, travel, or plain excess. It is the closest astrology comes to a tailwind, but growth still asks for participation. The misread is assuming luck will arrive on its own; Jupiter opens a door, it does not walk you through it. The [Jupiter transit deep dive](/en/wiki/9th-house-astrology) shows how, and for a worked example of a single Jupiter transit shaping a shared moment, see how [Jupiter in Cancer colors the World Cup 2026 window](/en/wiki/world-cup-2026-astrology-prediction) as collective energy rather than a winner forecast.
 6. **Saturn** can run one to two years and brings limits, responsibility, and the slow work of maturing in one area of life. It often feels like pressure, but the point is structure that holds up over time. The misread is hearing only punishment and missing the mastery Saturn rewards once the work is done. For a fully worked example, follow [Saturn in Pisces worked example](/en/wiki/saturn-in-pisces).
 7. **Uranus** spans a year or more and brings disruption, sudden insight, and a pull toward freedom in whatever area it crosses. Change can feel abrupt and liberating at the same time. The misread is forcing a breakup or quitting on impulse before the shift has fully formed — Uranus rewards readiness, not panic. The *Uranus transit explainer* explains the difference.
 8. **Neptune** moves slowly, often lasting two to three years, and softens edges — dissolving old certainties, raising inspiration, and sometimes spreading confusion. It is excellent for art and devotion, harder for contracts and clear decisions. The misread is mistaking fog for clarity and acting on an idealized picture of a person or plan. The [Neptune transit deep dive](/en/wiki/12th-house-astrology) covers how.
@@ -144,7 +145,8 @@ Pick one slow-moving planet in the current sky and find where it falls in your o
 export const transitsZh: WikiArticle = {
   slug: "transits",
   image: "/images/transits/transits.jpg",
-  image_alt: "深靛蓝星空中，一组定格的金色星座衬着快慢不一的行星划出明暗不同的轨道弧线。",
+  image_alt:
+    "深靛蓝星空中，一组定格的金色星座衬着快慢不一的行星划出明暗不同的轨道弧线。",
   title: "占星行运是什么：不预设吉凶，读懂此刻天象怎样落在你的本命盘上",
   description:
     "占星行运是此刻移动的行星与你出生星盘固定点形成的角度。本文讲清行运是什么、如何解读，以及为什么时机比星座本身更重要。",

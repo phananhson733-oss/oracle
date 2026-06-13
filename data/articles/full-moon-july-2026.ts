@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const fullMoonJuly2026En: WikiArticle = {
   slug: "full-moon-july-2026",
   image: "/images/moon/full-moon-july-2026.jpg",
-  image_alt: "A gold path that loops back once then runs straight to a full moon — post-retrograde integration at the July 29, 2026 Aquarius full moon",
-  title: "Full Moon July 2026 Peaks After Mercury Retrograde — Use It to Integrate What Changed",
-  description: "Full moon July 2026 is the Aquarius full moon on July 29, 2026, at 14:36 UTC, arriving six days after Mercury stations direct and shifting the emphasis",
+  image_alt:
+    "A gold path that loops back once then runs straight to a full moon — post-retrograde integration at the July 29, 2026 Aquarius full moon",
+  title:
+    "Full Moon July 2026 Peaks After Mercury Retrograde — Use It to Integrate What Changed",
+  description:
+    "Full moon July 2026 is the Aquarius full moon on July 29, 2026, at 14:36 UTC, arriving six days after Mercury stations direct and shifting the emphasis",
   authorId: "marcus-orion",
   date: "2026-06-06",
   schema: "Article",
@@ -16,19 +19,19 @@ export const fullMoonJuly2026En: WikiArticle = {
     "full moon July 2026",
     "july full moon 2026",
     "full moon ritual july 2026",
-    "buck moon 2026"
+    "buck moon 2026",
   ],
   content: `# Full Moon July 2026 Peaks After Mercury Retrograde — Use It to Integrate What Changed
 
-## What is full moon July 2026?
+## What Is the Full Moon in July 2026?
 
-Full moon July 2026 is **the Aquarius full moon on July 29, 2026, at 14:36 UTC**, arriving six days after Mercury stations direct and shifting the emphasis from retrograde confusion to post-review integration.
+The full moon in July 2026 is **the Aquarius full moon on July 29, 2026, at 14:36 UTC** — and the key fact most roundups get wrong is that it lands *after* Mercury retrograde ends, not during it. Mercury stations direct on July 23, six days before the peak, which shifts the whole emphasis from retrograde confusion to post-review integration. If you are deciding what to do with this date, the practical takeaway is the opposite of the June full moon: this is a window for clarification, second-pass decisions, and cleaner follow-through on whatever the retrograde shook loose — not blanket delay, and not a frantic new launch either.
 
 - Peaks in Aquarius with the Sun in Leo, highlighting the tension between collective alignment and personal visibility
 - Lands after Mercury turns direct on July 23, so the timing favors revision, clarification, and second-pass decisions more than blanket delay
 - Occurs near 6°30′ Aquarius/Leo, giving readers a concrete degree range to check in their own charts
 
-This lunation belongs to the broader *pillar page on full moon meanings and lunar cycle rituals*, but it should not be framed as a full moon happening inside Mercury retrograde. That factual distinction changes the entire interpretation. The useful question is no longer whether everything must be postponed. The better question is what became clearer during the retrograde and is now ready for a cleaner decision, announcement, or completion pass.
+This lunation is the integration counterpart to the [June 2026 full moon](/en/wiki/full-moon-june-2026), which landed on the Mercury retrograde station and called for completion; July's peak is about using what that review revealed. For the underlying mechanics of why any full moon brings things to a head, see [full moon energy](/en/wiki/full-moon-energy). The useful question here is no longer whether everything must be postponed — it is what became clearer during the retrograde and is now ready for a cleaner decision, announcement, or completion pass.
 
 
 ![Timeline of July 2026: Cancer new moon July 14, Mercury direct July 23, Aquarius full moon peaking July 29 at 14:36 UTC](/images/moon/full-moon-july-2026-i0-en.svg)
@@ -40,9 +43,9 @@ This is why the correction matters. Mercury stations direct on July 23, while th
 
 There is also a timing nuance many readers miss: direct motion does not erase the review tone overnight. Mercury is moving forward again, but the mind is still sorting what the retrograde exposed. That is why this full moon tends to feel like a public checkpoint rather than a pure release valve. If July brought reversals, delays, or message edits, the emotional pressure around July 29 often comes from seeing what those corrections now require in the open. Self-awareness here means noticing whether clarity is being used to communicate better or merely to defend old positioning.
 
-## full moon July 2026 vs Adjacent Concepts: How It Works + Trade-offs
+## A Post-Retrograde Full Moon vs an Ordinary One — What Changes
 
-A standard full moon release ritual still applies here, but not in the oversimplified way many July roundups suggest. In Rudhyar's person-centered reading of lunation cycles, a full moon brings culmination, visibility, and emotional clarity. That framework still holds. What changes in July 2026 is the surrounding sky: Mercury has just turned direct, so culmination is paired with reorientation. To get cleaner momentum, you sacrifice the fantasy of instant certainty.
+A standard full moon release ritual still applies here, but not in the oversimplified way many July roundups suggest. In Rudhyar's person-centered reading of lunation cycles, a full moon brings culmination, visibility, and emotional clarity. That framework still holds. What changes in July 2026 is the surrounding sky: Mercury has just turned direct, so culmination is paired with reorientation. To get cleaner momentum, you sacrifice the fantasy of instant certainty. (The mechanics of that base full moon charge are covered in [full moon energy](/en/wiki/full-moon-energy); this section is about what the recent retrograde adds on top.)
 
 It also helps to separate this full moon from the Mercury-retrograde frame itself. A retrograde period favors review, revision, and retrieval. A post-retrograde full moon favors using what that review revealed. To get forward movement, you sacrifice some speed for accuracy; to get accuracy, you avoid pretending the review never happened.
 
@@ -50,13 +53,35 @@ There is a second trade-off inside the Aquarius-Leo polarity. Leo wants confiden
 
 
 ![The Leo–Aquarius polarity of the July 2026 full moon: personal visibility and recognition versus collective contribution and alignment](/images/moon/full-moon-july-2026-i1-en.svg)
-## How to Read full moon July 2026 in Your Timing
+## How to Read the July 2026 Full Moon in Your Own Timing
 
 1. **Check 6-7° Aquarius and Leo in your chart.** Those houses show where culmination and exposure are most likely to be felt around this lunation.
 2. **Track 16-26° Cancer if Mercury themes were active for you in July.** That range shows where the retrograde review likely did its cleanup work before the full moon arrived.
 3. **Notice what changed between the July 14 Cancer new moon and July 29 full moon.** That two-week window often reveals what is now ready for clearer expression.
 4. **Watch any early fixed-sign placements.** Natal planets near early Aquarius, Leo, Taurus, or Scorpio may feel the lunation as a stronger demand for clarity, commitment, or public honesty.
 5. **Pay attention to group settings, audiences, and shared platforms.** Aquarius full moons often show their message through communities, team dynamics, newsletters, launches, or social visibility rather than private feelings alone.
+
+To find which houses 6-7° Aquarius and Leo occupy for you specifically, [generate your birth chart](/en/wiki/how-to-read-birth-chart) and read the house pair the axis falls across — that is where this lunation's themes will feel personal rather than general.
+
+### What Changes After Mercury Retrograde Ends
+
+The most useful thing to understand about this date is the gap between July 23 and July 29. Mercury turns direct on the 23rd, but a planet does not snap back to full speed the moment it stations — it spends the following days in its "post-shadow," retracing the degrees it covered during the retrograde. By July 29 the worst of the fog has lifted, yet the mind is still sorting what the review exposed. In practice this means the full moon is not the place to pretend the retrograde never happened, nor the place to keep stalling. It is the place to take the clearer version of a conversation, plan, or decision that the retrograde forced you to revisit and finally state it cleanly. Edits, clarifications, and follow-up conversations land especially well; brand-new launches built on no review at all are still premature.
+
+### The Aquarius Full Moon Theme
+
+Aquarius full moons turn the focus outward — toward groups, communities, audiences, and shared systems. With the Sun opposite in Leo, the polarity becomes individual recognition versus collective contribution: Leo wants to be seen as a distinct person, Aquarius wants to belong to and serve something larger. The full moon brings that tension to a head, and it often shows its message through external settings — a team dynamic, a public post, a community you belong to — rather than through private feeling alone. The Aquarian tone also tends to add perspective: emotion is still present, but it is held at enough distance to be examined rather than simply obeyed. The growth edge is letting the two needs talk to each other instead of picking one as the only truth — being genuinely yourself *and* genuinely part of the group.
+
+### Integrating Retrograde Insights at the Full Moon
+
+The practical work of July 29 is integration: choosing one thing to refine, complete, or communicate more cleanly rather than starting five new things. A simple approach is to look back at what got revised, reversed, or delayed earlier in July and ask what each of those corrections now requires of you in the open. Then pick the single most important one and take one clean next step — send the clarified message, publish the corrected version, have the follow-up conversation. Because this is still a full moon, a release component fits too: name what the retrograde revealed you are ready to stop carrying. For a written structure to do this with, the [full moon journal prompts](/en/wiki/full-moon-journal-prompts) grouped under recognition and release map neatly onto a post-retrograde integration pass, and the broader practice set is laid out in [what to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually).
+
+### The Jupiter–Pluto Backdrop and Why the Stakes Feel Higher
+
+This particular Aquarius full moon does not occur in isolation. Jupiter sitting in early Leo and Pluto in early Aquarius frame the lunation in the same fixed signs it activates, which tends to raise the stakes around truth, scale, and public meaning. In plain terms: whatever becomes visible around July 29 can feel more consequential than an ordinary monthly full moon, because the slower outer-planet themes — power, transformation, and who gets to define the shared story — sit right behind it. If you have natal planets in the early degrees of the fixed signs (Taurus, Leo, Scorpio, Aquarius), this is where the lunation will press hardest, and where the question of "individual recognition versus collective contribution" stops being abstract. The useful move is not to inflate the moment but to notice where visibility now carries more weight than usual and to choose your words accordingly.
+
+### Sleep, Dreams, and Verifying the Date
+
+Two practical notes round out the timing. First, like most full moons, the brightest nights of late July are a common window for lighter sleep and more vivid dreams; given the Aquarian, mentally active tone of this lunation, dreams may lean toward problem-solving or social scenes rather than pure emotion, and they are worth jotting down on waking. Second, because the calendar facts matter here, it is worth verifying them rather than trusting a roundup: reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet, and consumer full-moon calendars all place this full moon on July 29, 2026, near 6°30′ Aquarius, with Mercury direct from July 23. To locate exactly where 6-7° Aquarius and Leo fall in your own chart, [generate your birth chart](/en/wiki/how-to-read-birth-chart) and read the houses that degree range occupies.
 
 ## Common Misreadings
 
@@ -100,9 +125,11 @@ Reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet
 
 ## Related Reading
 
-- *overview of Aquarius full moon themes* — useful if you want the Aquarius symbolism without the July 2026 timing specifics
-- *Mercury retrograde timing and post-shadow practice* — helps separate retrograde review from post-retrograde integration
-- [how to read a birth chart by house and degree](/en/wiki/astrology-houses) — the practical next step for locating this lunation in a personal chart
+- [Full moon energy](/en/wiki/full-moon-energy) — the base mechanics of the full moon charge, including how to read its house and aspects in your chart.
+- [Full moon June 2026](/en/wiki/full-moon-june-2026) — the completion-heavy counterpart on the Mercury retrograde station, two weeks of context before this integration peak.
+- [What a full moon ritual really does](/en/wiki/what-is-a-full-moon-ritual) — the release-and-reclamation structure to adapt for an integration-focused ritual.
+- [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — written prompts for the recognition-and-release pass this lunation favors.
+- [How to read a birth chart by house and degree](/en/wiki/astrology-houses) — the practical next step for locating this lunation in a personal chart.
 
 ## Take Action
 

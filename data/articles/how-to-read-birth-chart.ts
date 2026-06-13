@@ -1,23 +1,26 @@
 // Article: How to Read Your Birth Chart - Psychological Astrology Beginner's Guide
-import type { WikiArticle } from '../../types';
+import type { WikiArticle } from "../../types";
 
 export const howToReadBirthChartEn: WikiArticle = {
-  slug: 'how-to-read-birth-chart',
+  slug: "how-to-read-birth-chart",
   image: "/images/charts/how-to-read-birth-chart.jpg",
-  image_alt: "A whole night sky of glowing bodies at different heights — sun, moon, planets, faint constellation lines — over a still mirroring lake.",
-  title: 'How to Read Your Birth Chart: A Psychological Astrology Guide for Beginners',
-  description: 'Learn how to read your natal chart through the lens of psychological astrology. A 5-step beginner\'s guide covering planets, signs, houses, and aspects.',
+  image_alt:
+    "A whole night sky of glowing bodies at different heights — sun, moon, planets, faint constellation lines — over a still mirroring lake.",
+  title:
+    "How to Read Your Birth Chart: A Psychological Astrology Guide for Beginners",
+  description:
+    "Learn how to read your natal chart through the lens of psychological astrology. A 5-step beginner's guide covering planets, signs, houses, and aspects.",
   authorId: "marcus-orion",
-  date: '2026-04-07',
-  schema: 'Article',
-  lang: 'en',
+  date: "2026-04-07",
+  schema: "Article",
+  lang: "en",
   keywords: [
-    'how to read a birth chart',
-    'astrology for beginners',
-    'natal chart guide',
-    'psychological astrology',
-    'birth chart interpretation',
-    'natal chart meaning',
+    "how to read a birth chart",
+    "astrology for beginners",
+    "natal chart guide",
+    "psychological astrology",
+    "birth chart interpretation",
+    "natal chart meaning",
   ],
   content: `# How to Read Your Birth Chart: A Psychological Astrology Guide for Beginners
 
@@ -179,28 +182,32 @@ The beauty of psychological astrology is that it hands you a mirror, not a scrip
 
 **Your next step:** Open your [full natal chart report](/dashboard) and read through the interpretations with fresh eyes. You'll be surprised how much more you understand now.
 
+Once the Western chart feels familiar, it is worth seeing how the same birth looks in a different system. The [Vedic vs Western astrology guide](/en/wiki/vedic-vs-western-astrology) explains why your Sun sign can shift by a whole sign between the two, and the [Vedic birth chart calculator walkthrough](/en/wiki/vedic-birth-chart-calculator) shows how to read a sidereal chart placement by placement — from the lagna to the dasha timeline.
+
 ---
 
 *This guide draws on the work of Steven Forrest (The Inner Sky), Stephen Arroyo (Astrology, Psychology, and the Four Elements), and Liz Greene (The Astrology of Fate, Relating). For deeper reading on any concept mentioned here, explore our [Wiki](/wiki).*`,
 };
 
 export const howToReadBirthChartZh: WikiArticle = {
-  slug: 'how-to-read-birth-chart',
+  slug: "how-to-read-birth-chart",
   image: "/images/charts/how-to-read-birth-chart.jpg",
-  image_alt: "一整片夜空：太阳、月亮与行星高低错落地发光，淡淡的星座连线交织，倒映在平静的湖面上。",
+  image_alt:
+    "一整片夜空：太阳、月亮与行星高低错落地发光，淡淡的星座连线交织，倒映在平静的湖面上。",
   title: '占星入门指南：5 步看懂你的星盘，从"我是什么座"到真正认识自己',
-  description: '从心理占星学角度，手把手教你读懂自己的本命盘。涵盖行星、星座、宫位、相位四大模块，每一步都有实操练习。',
+  description:
+    "从心理占星学角度，手把手教你读懂自己的本命盘。涵盖行星、星座、宫位、相位四大模块，每一步都有实操练习。",
   authorId: "marcus-orion",
-  date: '2026-04-07',
-  schema: 'Article',
-  lang: 'zh',
+  date: "2026-04-07",
+  schema: "Article",
+  lang: "zh",
   keywords: [
-    '星盘怎么看',
-    '占星入门',
-    '本命盘',
-    '心理占星',
-    '星盘解读',
-    '新手学占星',
+    "星盘怎么看",
+    "占星入门",
+    "本命盘",
+    "心理占星",
+    "星盘解读",
+    "新手学占星",
   ],
   content: `# 占星入门指南：5 步看懂你的星盘，从"我是什么座"到真正认识自己
 

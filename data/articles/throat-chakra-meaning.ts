@@ -5,17 +5,19 @@ import type { WikiArticle } from "../../types";
 export const throatChakraMeaningEn: WikiArticle = {
   slug: "throat-chakra-meaning",
   image: "/images/chakra/throat-chakra-meaning.jpg",
-  image_alt: "A stream of blue-gold light rising from a still lake and spreading across the sky as wide concentric ripples.",
+  image_alt:
+    "A stream of blue-gold light rising from a still lake and spreading across the sky as wide concentric ripples.",
   title: "What Throat Chakra Meaning Says About Your Voice",
-  description: "The throat chakra is the fifth energy center in the traditional seven-chakra system, sitting at the base of the neck and named Vishuddha in the older yogic...",
+  description:
+    "The throat chakra is the fifth energy center in the traditional seven-chakra system, sitting at the base of the neck and named Vishuddha in the older yogic...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "en",
   keywords: [
-    "\"throat chakra meaning\"",
-    "\"vishuddha\"",
-    "\"throat chakra healing\""
+    '"throat chakra meaning"',
+    '"vishuddha"',
+    '"throat chakra healing"',
   ],
   content: `# What Throat Chakra Meaning Says About Your Voice
 
@@ -109,7 +111,7 @@ Subtle-energy traditions have long mapped the throat center to blue, treating it
 
 ## Related Reading
 
-If you want the bigger picture, the chakra-system overview earlier in this piece shows how the throat center leans on the others, and the heart-center reading explains the warmth it borrows from below. If insight feels clear but stays unspoken, the center just above the throat is the natural next stop, since the throat is what turns that private clarity into words.
+If you want the bigger picture, the [chakra system overview](/en/wiki/chakra-system-overview) shows how the throat center leans on the others, and the [heart chakra reading](/en/wiki/heart-chakra-meaning) explains the warmth it borrows from below. To see which way your own expression is leaning right now, the [chakra test](/en/wiki/chakra-test) walks through how to self-assess the throat alongside the other six centers. If insight feels clear but stays unspoken, the center just above the throat is the natural next stop, since the throat is what turns that private clarity into words.
 
 ## Take Action
 
@@ -125,17 +127,19 @@ Take the Chakra Test to see whether your throat chakra reads as open, blocked, o
 export const throatChakraMeaningZh: WikiArticle = {
   slug: "throat-chakra-meaning",
   image: "/images/chakra/throat-chakra-meaning.jpg",
-  image_alt: "静湖上方一束蓝金色光升起，化作宽阔的同心涟漪铺满整片夜空，如声音与真实向外回荡。",
+  image_alt:
+    "静湖上方一束蓝金色光升起，化作宽阔的同心涟漪铺满整片夜空，如声音与真实向外回荡。",
   title: "喉轮含义，其实在说你能不能把真心话说出口",
-  description: "喉轮（Throat Chakra，对应梵文 Vishuddha）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第五个能量中心，位置在颈部喉咙一带，掌管表达与倾听。要说喉轮含义，最稳的一句话是：喉轮是负责真诚表达与倾听的能量中心。它管的是内心真实感受和说出口的话之间那道缝隙。在现代脉轮体系（如...",
+  description:
+    "喉轮（Throat Chakra，对应梵文 Vishuddha）是脉轮（chakra，西方瑜伽与灵性传统中的能量中心概念）体系里的第五个能量中心，位置在颈部喉咙一带，掌管表达与倾听。要说喉轮含义，最稳的一句话是：喉轮是负责真诚表达与倾听的能量中心。它管的是内心真实感受和说出口的话之间那道缝隙。在现代脉轮体系（如...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "zh",
   keywords: [
-    "\"throat chakra meaning\"",
-    "\"vishuddha\"",
-    "\"throat chakra healing\""
+    '"throat chakra meaning"',
+    '"vishuddha"',
+    '"throat chakra healing"',
   ],
   content: `# 喉轮含义，其实在说你能不能把真心话说出口
 
