@@ -191,6 +191,26 @@ import { ascendantMeaningEn } from "./ascendant-meaning";
 import { cancerRisingEn } from "./cancer-rising";
 import { virgoRisingEn } from "./virgo-rising";
 import { geminiRisingEn } from "./gemini-rising";
+import { emotionJournalZh } from "./emotion-journal";
+import { blueNodeAstrologyZh } from "./blue-node-astrology";
+import { northNodeInLeoZh } from "./north-node-in-leo";
+import { rahuAndKetuAstrologyZh } from "./rahu-and-ketu-astrology";
+import { uttaraBhadrapadaNakshatraZh } from "./uttara-bhadrapada-nakshatra";
+import { uttaraPhalguniNakshatraZh } from "./uttara-phalguni-nakshatra";
+import { purvaBhadrapadaNakshatraZh } from "./purva-bhadrapada-nakshatra";
+import { revatiNakshatraZh } from "./revati-nakshatra";
+import { punarvasuNakshatraZh } from "./punarvasu-nakshatra";
+import { maghaNakshatraZh } from "./magha-nakshatra";
+import { ardraNakshatraZh } from "./ardra-nakshatra";
+import { dhanishtaNakshatraZh } from "./dhanishta-nakshatra";
+import { saturnInAries2026Zh } from "./saturn-in-aries-2026";
+import { uranusOppositionZh } from "./uranus-opposition";
+import { marsReturnAstrologyZh } from "./mars-return-astrology";
+import { ascendantMeaningZh } from "./ascendant-meaning";
+import { cancerRisingZh } from "./cancer-rising";
+import { virgoRisingZh } from "./virgo-rising";
+import { geminiRisingZh } from "./gemini-rising";
+import { moonRisingSignZh } from "./moon-rising-sign";
 // All articles organized by language
 
 import {
@@ -493,6 +513,26 @@ const ARTICLES_ZH: WikiArticle[] = [
   zodiacSignsAsWorldCup2026TeamsZh,
   bestSoccerPlayersZodiacSignZh,
   worldCup2026JuneAstrologyZh,
+  emotionJournalZh,
+  blueNodeAstrologyZh,
+  northNodeInLeoZh,
+  rahuAndKetuAstrologyZh,
+  uttaraBhadrapadaNakshatraZh,
+  uttaraPhalguniNakshatraZh,
+  purvaBhadrapadaNakshatraZh,
+  revatiNakshatraZh,
+  punarvasuNakshatraZh,
+  maghaNakshatraZh,
+  ardraNakshatraZh,
+  dhanishtaNakshatraZh,
+  saturnInAries2026Zh,
+  uranusOppositionZh,
+  marsReturnAstrologyZh,
+  ascendantMeaningZh,
+  cancerRisingZh,
+  virgoRisingZh,
+  geminiRisingZh,
+  moonRisingSignZh,
 ];
 
 // Get all articles for a language
