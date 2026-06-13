@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const uttaraBhadrapadaNakshatraEn: WikiArticle = {
   slug: "uttara-bhadrapada-nakshatra",
   image: "/images/blog/uttara-bhadrapada-nakshatra.jpg",
-  image_alt: "Uttara Bhadrapada nakshatra — a still night ocean reflecting stars, serpentine deep wisdom coiling in the abyssal depths below the calm surface",
+  image_alt: "Still night ocean reflecting stars, golden serpentine coil in the deep — Uttara Bhadrapada nakshatra's still waters and hidden wisdom",
   title: "Why Uttara Bhadrapada Is the Nakshatra of Still Waters and Deep Wisdom",
   description: "Uttara Bhadrapada nakshatra is the twenty-sixth of the twenty-seven lunar mansions in Vedic astrology",
   authorId: "aditi-sharma",
@@ -127,6 +127,8 @@ Your chart shows precisely which planets, if any, fall within this mansion's ran
 
 export const uttaraBhadrapadaNakshatraZh: WikiArticle = {
   slug: "uttara-bhadrapada-nakshatra",
+  image: "/images/blog/uttara-bhadrapada-nakshatra.jpg",
+  image_alt: "星空下的静谧深海，金色巨蛇轮廓隐现于深渊——乌塔拉巴德拉帕达星宿的静水与深藏的智慧",
   title: "乌塔拉巴德拉帕达，那片静水深流里藏着的吠陀智慧",
   description: "乌塔拉巴德拉帕达（Uttara Bhadrapada）是吠陀占星二十七星宿里的第二十六个，它是一处完全落在双鱼座、由土星主管的月宿，核心质地是克制而内省的力量——深流之上的静水，而非外显的声势。",
   authorId: "aditi-sharma",
@@ -164,6 +166,9 @@ export const uttaraBhadrapadaNakshatraZh: WikiArticle = {
 
 第三种对比，大多数浮于表面的介绍都跳过了：实践者有时因为它平静的名声，把它和那些更温柔的水象位置归为一类。这种归类把土星整个抹掉了。这里的稳定并不柔软——它是 Shani 的重量压在双鱼的深度之上，这也是为什么这个位置读起来是沉静的不可撼动，而不仅仅是讨人喜欢。把土星与 Ahirbudhnya 同时放进画面——正如经典归属所要求的——才是把准确的解读，和那种把克制误当被动的解读区分开来的关键。
 
+
+![普尔瓦巴德拉帕达（木星之火）与乌塔拉巴德拉帕达（土星之深）对比](/images/blog/uttara-bhadrapada-nakshatra-i0-zh.svg)
+
 ## 如何在自己身上识别这一宿
 
 乌塔拉巴德拉帕达的签名，显现在深度被"如何收住"的质地里，而不是它被"如何展示"。留意下面这些可观察的信号，每一条都是这个位置倾向于具备、而非一定拥有的特征。
@@ -173,6 +178,9 @@ export const uttaraBhadrapadaNakshatraZh: WikiArticle = {
 3. **土星的长地平线。** 天然朝向那些能存续的东西——长线项目、慢工的手艺、以年计的投入与坚持。快速的胜利吸引力更弱，能随时间累积的工作才更有分量。
 4. **是蓄水池，不是火花。** 能量在累积，而非闪现。火象位置点火的地方，这一宿是缓缓蓄满、在压力下释放，常常让那些把平静误当空洞的人吃一惊。
 5. **晚熟的深度。** 一种它的天赋随成熟而至的感觉。许多人形容自己最有力的贡献，出现在那些更快的位置达到峰值的早年阶段之后——这与一个整合前序诸宿的倒数第二宿是一致的。
+
+
+![乌塔拉巴德拉帕达的五个信号：静水深流、等待的智慧、土星的长地平线、蓄水池能量、晚熟的深度](/images/blog/uttara-bhadrapada-nakshatra-i1-zh.svg)
 
 ## 常见误读
 

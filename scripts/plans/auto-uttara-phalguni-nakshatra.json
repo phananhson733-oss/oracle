@@ -11,53 +11,50 @@
   "articles": {
     "uttara-phalguni-nakshatra": {
       "hero": {
-        "prompt": "A vast ceremonial landscape at twilight where a luminous golden sun rests just above a serene horizon, its warm rays streaming purposefully over an orderly expanse of softly terraced earth below, the light sustained and deliberate rather than blazing, as if solar authority is quietly binding itself to an obligation — radiance that stays, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Uttara Phalguni nakshatra — solar warmth binding itself to committed patronage across the Leo-Virgo cusp",
-        "altZh": "Uttara Phalguni星宿——太阳的温暖越过狮子-处女座交界，化为恒久承诺与庇护服务"
+        "prompt": "A vast twilight sky where a luminous golden solar orb descends from its zenith toward a tranquil harvest horizon, warm gold rays extending outward like open hands cradling a quiet orderly landscape below, the sky graduating from burnished amber-gold at the horizon through deep indigo to near-black at the crown, teal nebula whorls drifting through the upper dark, soft gold light pooling across a still field, the entire scene held in one continuous unbroken sweep from earth to zenith capturing the moment solar radiance accepts an obligation and becomes a patron rather than a luminary, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Uttara Phalguni nakshatra — solar warmth descending into committed patronage across the Leo-Virgo twilight horizon",
+        "altZh": "乌塔拉帕尔古尼星宿——太阳的温度在狮子-处女黄昏地平线上化为践诺式的靠山之光"
       },
       "inline": [
         {
           "kind": "compare",
           "afterHeadingEn": "## Uttara Phalguni vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 它与相近概念：运作方式 + 取舍",
           "titleEn": "Purva Phalguni vs Uttara Phalguni",
-          "titleZh": "前弗尔古尼 vs 后弗尔古尼",
+          "titleZh": "前哈尔古尼 vs 乌塔拉帕尔古尼",
           "altEn": "Comparison of Purva Phalguni free pleasure versus Uttara Phalguni committed service",
-          "altZh": "前弗尔古尼（自由享乐）与后弗尔古尼（承诺服务）对比",
+          "altZh": "前哈尔古尼自在欢愉与乌塔拉帕尔古尼践诺式服务对比",
           "columns": [
             {
               "nameEn": "Purva Phalguni",
-              "nameZh": "前弗尔古尼",
+              "nameZh": "前哈尔古尼",
               "linesEn": [
                 "Ruled by Venus",
-                "Free pleasure and rest",
-                "Warmth asking nothing in return",
-                "Delight for its own sake",
-                "Venusian lightness"
+                "Free pleasure, rest, enjoyment",
+                "Warmth that asks nothing in return",
+                "Lightness — delight for its own sake"
               ],
               "linesZh": [
-                "金星主宰",
-                "自由享乐与休憩",
-                "不求回报的温暖",
-                "纯粹的喜悦",
-                "金星的轻盈"
+                "金星主管",
+                "自在欢愉、休息、享受",
+                "不求回报的温情",
+                "轻盈——纯粹为享乐而享乐"
               ]
             },
             {
               "nameEn": "Uttara Phalguni",
-              "nameZh": "后弗尔古尼",
+              "nameZh": "乌塔拉帕尔古尼",
               "linesEn": [
                 "Ruled by the Sun",
-                "Committed service and duty",
-                "Warmth bound by agreement",
-                "Patronage that sustains",
-                "Solar discipline"
+                "Committed service, durable patronage",
+                "Warmth bound to obligation",
+                "Leo authority + Virgo discipline"
               ],
               "linesZh": [
-                "太阳主宰",
-                "承诺服务与责任",
-                "受协议约束的温暖",
-                "持续的庇护",
-                "太阳的纪律"
+                "太阳主管",
+                "践诺式服务、持久的赞助",
+                "被义务约束的温情",
+                "狮子权威 + 处女纪律"
               ]
             }
           ]
@@ -65,40 +62,41 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read Uttara Phalguni in a Chart",
-          "titleEn": "5 Steps for Reading Uttara Phalguni",
-          "titleZh": "解读Uttara Phalguni的五个步骤",
+          "afterHeadingZh": "## 如何在星盘里识别它",
+          "titleEn": "Five-Step Method for Reading Uttara Phalguni",
+          "titleZh": "识读乌塔拉帕尔古尼的五步法",
           "altEn": "Five-step method for reading Uttara Phalguni in a Vedic birth chart",
-          "altZh": "在吠陀星盘中解读Uttara Phalguni的五步法",
+          "altZh": "在吠陀出生星盘中识读乌塔拉帕尔古尼的五步方法",
           "items": [
             {
-              "nameEn": "1. Leo-Virgo Position",
-              "nameZh": "1. 狮子-处女位置",
-              "subEn": "Late Leo leans toward visible authority; early Virgo toward quiet, exacting service",
-              "subZh": "晚期狮子偏向显性权威；早期处女偏向安静精准的服务"
+              "nameEn": "Leo-Virgo Position",
+              "nameZh": "狮子-处女位置",
+              "subEn": "Late Leo = visible authority; early Virgo = quiet, exacting service",
+              "subZh": "狮子座末 = 可见的权威；处女座初 = 安静而讲究的服务"
             },
             {
-              "nameEn": "2. Sun as Ruler",
-              "nameZh": "2. 太阳作为主宰",
+              "nameEn": "Sun as Ruler",
+              "nameZh": "太阳作为主管",
               "subEn": "Ask where confidence and self-direction want to express themselves in the chart",
-              "subZh": "问问自信与自我导向在星盘中想要如何表达"
+              "subZh": "问问自信与自我导向想在星盘的哪里表达出来"
             },
             {
-              "nameEn": "3. Aryaman's Theme",
-              "nameZh": "3. Aryaman的主题",
+              "nameEn": "Aryaman's Theme",
+              "nameZh": "阿耶曼的主题",
               "subEn": "Where are you the one others rely on by agreement, not just affection?",
-              "subZh": "你在哪里是他人因协议而依赖的人，而非仅仅因为感情？"
+              "subZh": "你在哪里是别人按约定、而非仅凭情分依靠的那个人？"
             },
             {
-              "nameEn": "4. Contrast with Purva Phalguni",
-              "nameZh": "4. 与前弗尔古尼对比",
-              "subEn": "Separate free enjoyment from committed duty rather than blending them",
-              "subZh": "将自由享乐与承诺责任分开，而非混为一谈"
+              "nameEn": "Contrast Purva Phalguni",
+              "nameZh": "对比前哈尔古尼",
+              "subEn": "Separate free enjoyment from committed duty — don't blend them",
+              "subZh": "将自在的享受与信守的责任区分开，不要混作一团"
             },
             {
-              "nameEn": "5. Patronage as a Question",
-              "nameZh": "5. 将庇护视为问题",
-              "subEn": "Treat the patronage archetype as a question about reliability, never a fixed label",
-              "subZh": "将庇护原型视为关于可靠性的问题，而非固定标签"
+              "nameEn": "Patronage as Question",
+              "nameZh": "赞助作为提问",
+              "subEn": "Treat the patronage archetype as a reliability question, never a fixed label",
+              "subZh": "把靠山原型当成一道关于可靠的提问，而绝不是钉在人身上的固定标签"
             }
           ]
         }

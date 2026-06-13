@@ -11,89 +11,91 @@
   "articles": {
     "dhanishta-nakshatra": {
       "hero": {
-        "prompt": "Vast dark cosmic plain stretching to a horizon where rhythmic concentric golden light-rings pulse outward from a single luminous origin point, illuminating twin zones of landscape — dense structured amber rock formations to the left, soft ethereal glowing networks of stars to the right — teal nebula mist flowing overhead between them, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Golden rhythmic wave-rings pulse from a luminous horizon across a dark cosmic plain bridging two glowing realms in deep indigo sky",
-        "altZh": "金色节奏波纹从深靛蓝宇宙平原的发光地平线向外扩散，连接两个发光领域"
+        "prompt": "A vast dark cosmic plain stretching to the horizon, where concentric golden wave-rings radiate outward from a single luminous Damaru hourglass drum glowing at the centre of the horizon line, the rings expanding in perfect rhythmic cadence across the landscape like visible sound waves, the left half of the plain cloaked in austere crystalline rock formations evoking Capricorn discipline, the right half dissolving into softly glowing communal lantern clusters evoking Aquarian community, both sides bound by the same golden wave rhythm, teal-and-gold nebula wash arcing overhead — deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Golden rhythmic wave-rings radiate from a glowing cosmic drum across an indigo plain bridging two realms under a teal-gold nebula sky",
+        "altZh": "金色节奏波环从发光的宇宙鼓向外辐射，穿越靛蓝色平原，连接两个领域"
       },
       "inline": [
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read Dhanishta in a Chart",
-          "titleEn": "5 Steps to Reading Dhanishta in Your Birth Chart",
-          "titleZh": "解读星盘中陀罗伊斯塔的5个步骤",
+          "afterHeadingZh": "## 如何在星盘里识别这颗第 23 宿",
+          "titleEn": "5 Steps to Read Dhanishta in Your Birth Chart",
+          "titleZh": "在星盘中识读达尼湿塔的 5 个步骤",
           "altEn": "Five-step sequence for reading Dhanishta nakshatra placement in a birth chart",
-          "altZh": "解读出生星盘中陀罗伊斯塔位置的五步流程",
+          "altZh": "在出生星盘中识读达尼湿塔月宿位置的五步流程",
           "items": [
             {
               "nameEn": "Find the Exact Degree",
               "nameZh": "找到精确度数",
-              "subEn": "Locate the placement's exact degree to see whether it falls in the Capricorn or Aquarius portion of Dhanishta",
-              "subZh": "找到星位的精确度数，判断是落在陀罗伊斯塔的摩羯座部分还是水瓶座部分"
+              "subEn": "Locate the placement and check whether it falls in the Capricorn or Aquarius portion of Dhanishta",
+              "subZh": "找到该位置的精确度数，确认落在摩羯座段还是水瓶座段"
             },
             {
-              "nameEn": "Read by Sign Portion",
-              "nameZh": "按星座部分解读",
-              "subEn": "Capricorn degrees: Mars-driven discipline, ambition, and structure; Aquarian degrees: community, networks, and coordination",
+              "nameEn": "Read the Sign Portion",
+              "nameZh": "识读所在星座段",
+              "subEn": "Capricorn degrees: Mars-driven discipline, ambition, structure; Aquarius degrees: community, networks, coordination",
               "subZh": "摩羯座度数：火星驱动的纪律、野心与结构；水瓶座度数：社群、网络与协调"
             },
             {
               "nameEn": "Reframe Wealth as Rhythm",
-              "nameZh": "将财富重新定义为节奏",
-              "subEn": "Treat wealth as synchronization with cycles and timing — not a literal prediction of money",
-              "subZh": "将财富理解为与周期和时机同步，而非对金钱的字面预测"
+              "nameZh": "把财富重新理解为节奏",
+              "subEn": "Treat wealth as synchronization with cycles and right timing, not as a literal money prediction",
+              "subZh": "把财富当作与周期同步、把握时机，而非对金钱的字面预测"
             },
             {
-              "nameEn": "Notice the Damaru Drum Theme",
-              "nameZh": "关注达玛鲁鼓的主题",
-              "subEn": "Ask: where in life does this person keep time, set tempo, or coordinate a group?",
-              "subZh": "问：这个人在生活中哪里掌控节奏、设定节拍或协调群体？"
+              "nameEn": "Spot the Damaru Drum Theme",
+              "nameZh": "捕捉达玛茹鼓的主题",
+              "subEn": "Ask: where does this person keep time, set tempo, or coordinate a group?",
+              "subZh": "追问：这个人在生活的哪个地方掌握节拍、定下速度、协调一个群体？"
             },
             {
-              "nameEn": "Credit Collective Abundance",
-              "nameZh": "认可集体丰盈",
-              "subEn": "Read the Ashta Vasus as harmony within a whole — prosperity as shared coordination, not individual accumulation",
-              "subZh": "将八神读作整体中的和谐——繁荣是共同协调，而非个人积累"
+              "nameEn": "Apply Collective Lens",
+              "nameZh": "用集体视角来读",
+              "subEn": "Credit the Ashta Vasus: read prosperity as harmony within a whole, not individual accumulation",
+              "subZh": "归功于 Ashta Vasus：把繁荣读作整体内部的和谐，而非个人的积累"
             }
           ]
         },
         {
           "kind": "compare",
           "afterHeadingEn": "## Dhanishta vs Adjacent Concepts: How It Works + Trade-offs",
-          "titleEn": "Capricorn Degrees vs. Aquarius Degrees in Dhanishta",
-          "titleZh": "陀罗伊斯塔中摩羯座度数与水瓶座度数对比",
+          "afterHeadingZh": "## 达尼湿塔星宿与相近概念：运作方式 + 取舍",
+          "titleEn": "Dhanishta: Capricorn Degrees vs Aquarius Degrees",
+          "titleZh": "达尼湿塔：摩羯座度数 vs 水瓶座度数",
           "altEn": "Side-by-side comparison of Dhanishta's Capricorn and Aquarius degree portions and their distinct themes",
-          "altZh": "陀罗伊斯塔摩羯座与水瓶座度数部分的主题对比",
+          "altZh": "达尼湿塔摩羯座段与水瓶座段的主题并列对比",
           "columns": [
             {
               "nameEn": "Capricorn Degrees",
-              "nameZh": "摩羯座度数",
+              "nameZh": "摩羯座段",
               "linesEn": [
                 "Mars-driven discipline",
                 "Ambition and structure",
-                "Individual drive and stamina",
-                "Competitive timing"
+                "Individual stamina and focus",
+                "Building toward tangible results"
               ],
               "linesZh": [
                 "火星驱动的纪律",
                 "野心与结构",
-                "个人驱动与耐力",
-                "竞争性时机"
+                "个人耐力与专注",
+                "向具体成果迈进"
               ]
             },
             {
               "nameEn": "Aquarius Degrees",
-              "nameZh": "水瓶座度数",
+              "nameZh": "水瓶座段",
               "linesEn": [
                 "Community and networks",
                 "Shared coordination",
-                "Collective rhythm and timing",
-                "Group harmony"
+                "Collective rhythm and belonging",
+                "Prosperity through group harmony"
               ],
               "linesZh": [
                 "社群与网络",
-                "共同协调",
-                "集体节奏与时机",
-                "群体和谐"
+                "共同的协调",
+                "集体节奏与归属感",
+                "通过群体和谐而来的繁荣"
               ]
             }
           ]

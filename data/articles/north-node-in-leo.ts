@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const northNodeInLeoEn: WikiArticle = {
   slug: "north-node-in-leo",
   image: "/images/blog/north-node-in-leo.jpg",
-  image_alt: "A single golden sun crests an indigo cosmic horizon as cool silver starforms recede into the collective dark",
+  image_alt: "A golden orb rises over an indigo cosmic horizon as cool silver star-forms dissolve into the dark behind it",
   title: "North Node in Leo and the Quiet Courage to Be Seen",
   description: "The Leo North Node is a soul-growth direction that asks a person to move from blending into the crowd toward owning a heartfelt, individual creative voice.",
   authorId: "julian-thorne",
@@ -122,6 +122,8 @@ The Leo North Node only becomes concrete once you find it in your own chart. [Ge
 
 export const northNodeInLeoZh: WikiArticle = {
   slug: "north-node-in-leo",
+  image: "/images/blog/north-node-in-leo.jpg",
+  image_alt: "一颗金色光体在靛蓝宇宙地平线升起，身后的银色星形消散于深黑之中",
   title: "北交点落在狮子座，是一场把自己从人群里走出来的功课",
   description: "狮子座北交点指的是北交点在狮子座所标记的灵魂成长方向：把一个人从隐入群体、保持抽离，推向拥有一份发自真心的、属于自己的创造表达。它位于狮子—水瓶交点轴的一端，南交点则永远落在对面的水瓶座，因为交点是一条始终对分一百八十度的轴线。",
   authorId: "julian-thorne",
@@ -159,6 +161,9 @@ export const northNodeInLeoZh: WikiArticle = {
 
 实用的结论是，这条轴回答的，是和它的邻居们不一样的问题。一个狮子座的落点或第五宫，告诉你此刻是什么在为一个人的天性上色；而北交点在狮子座，告诉你他的成长在一条长地平线上往哪一边倾。最干净的检验是时间尺度：一个星座在任何单独的一天都读得通，而这条轴只有放在数年里观察才会显形。把它留在自己的车道上、而不是揉进笼统的"狮子座特质"里，才是让解读保持精确的关键。
 
+
+![狮子座北交点轴线与狮子座太阳、第五宫的对比图](/images/blog/north-node-in-leo-i0-zh.svg)
+
 ## 如何在自己身上识别狮子座北交点
 
 在自己身上读狮子座北交点，先从留意"什么让你觉得安全"和"什么让你觉得暴露"之间的落差开始，因为这道反差正是这条轴在日常生活里变得可观察的地方。你要找的不是一个戏剧性的顿悟，而是那股安静、反复的拉扯——躲进群体，还是作为一个个体往前站一步。留意下面这些信号。
@@ -170,6 +175,9 @@ export const northNodeInLeoZh: WikiArticle = {
 5. **反复出现的自我抹除主题。** 一种把自己消融进事业或集体、年复一年的人生模式，正是这条轴在请求被重新平衡。
 
 这些线索都不是读一次就归档的。同一个场景，会因日子不同而读出不同的意思——一股向群体靠拢的拉力，在某个季节像健康的谦逊，在另一个季节却像自我抹除。隔一段时间就回到这些信号、而不是锁死一个单一的判定，才是把观察变成一项能用的练习的办法。
+
+
+![显示狮子座北交点轴在日常生活中运作的五个可观察信号](/images/blog/north-node-in-leo-i1-zh.svg)
 
 ## 常见误读
 

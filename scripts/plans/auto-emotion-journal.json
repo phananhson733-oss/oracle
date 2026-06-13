@@ -19,6 +19,7 @@
         {
           "kind": "compare",
           "afterHeadingEn": "## the Affect-Labeling Practice vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 情绪记录练习与相近概念：运作方式 + 取舍",
           "titleEn": "Three Emotion-Journaling Approaches Compared",
           "titleZh": "三种情绪日记方式对比",
           "altEn": "Comparison of naming-focused emotion journal, mood log, and free-form venting across depth, speed, and pattern recognition",
@@ -77,6 +78,7 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read the Affect-Labeling Practice in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别情绪记录练习",
           "titleEn": "4 Signals That You Are Naming, Not Just Logging",
           "titleZh": "判断你在命名而非仅记录的4个信号",
           "altEn": "Four signals that show affect labeling is working in your emotion journal: word narrows, context attaches, charge softens, repeats emerge",

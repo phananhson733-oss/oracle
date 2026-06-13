@@ -119,6 +119,8 @@ Either is defensible; they are both the North Node, located by slightly differen
 
 export const blueNodeAstrologyZh: WikiArticle = {
   slug: "blue-node-astrology",
+  image: "/images/blog/blue-node-astrology.jpg",
+  image_alt: "两条轨道弧线在深邃靛蓝夜空中交汇，交叉点散发金色光芒，象征北交点所在位置",
   title: "星盘里那个蓝色节点，其实只是换了个颜色，不是新的点",
   description: "蓝色节点约定说的是很多排盘软件把北交点画成蓝色符号，所以\"蓝色节点占星\"根本不是什么隐藏的点，而是被涂成某个颜色的、每张星盘本来就有的北交点。很多人是在星盘上瞥见一个陌生的蓝色小图标，便以为它自成一格，于是去找一个其实从不存在的含义。",
   authorId: "julian-thorne",
@@ -154,6 +156,9 @@ export const blueNodeAstrologyZh: WikiArticle = {
 
 还有一个更细微的取舍藏在这个点内部，介于真交点（True Node）和平均交点（Mean Node）之间。两者都是同一个北交点的版本，软件也都可能把它们显示成蓝色。真交点追踪的是交点实际的、略带摆动的位置，它会漂移，在短时段里甚至看起来在倒退；平均交点用的是一个平滑后的均值，移动得很匀。在两者之间做选择，会让交点的度数变动一小点，偶尔足以让它在星座交界处换一个星座——这才是一个真实的解读选择，不像颜色，颜色什么也改变不了。
 
+
+![真实节点与平均节点的对比，展示其运动方式、度数稳定性及解读影响](/images/blog/blue-node-astrology-i1-zh.svg)
+
 ## 如何在自己星盘里识别蓝色节点约定
 
 你可以用几个诚实的步骤，在自己的星盘里把这个蓝色节点的问题一次弄清，而且不管是哪个软件画的，这套方法都管用。
@@ -163,6 +168,9 @@ export const blueNodeAstrologyZh: WikiArticle = {
 3. 留意你的软件设的是真交点还是平均交点，通常在设置里能看到，这样你就知道自己读的是哪个版本的度数。
 4. 把同一份出生数据在第二个软件里打开，看着颜色变了、而那个点纹丝不动——这就证明蓝从来不是含义所在。
 5. 按交点所在的星座和宫位去读它，正如[如何查到北交点的星座与宫位指南](/zh/wiki/astrology-houses)所讲的那样，然后把颜色干脆放到一边。
+
+
+![识别任意星盘软件中蓝色节点即北交点的五步流程图](/images/blog/blue-node-astrology-i0-zh.svg)
 
 ## 常见误读
 

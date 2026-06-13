@@ -19,6 +19,7 @@
         {
           "kind": "compare",
           "afterHeadingEn": "## the Ascendant vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 上升点与相近概念：运作方式 + 取舍",
           "titleEn": "Ascendant vs Sun Sign vs Moon Sign",
           "titleZh": "上升星座 vs 太阳星座 vs 月亮星座",
           "altEn": "Three-column comparison: Ascendant needs birth time and place; Sun Sign needs date only; Moon Sign is private and inward",
@@ -77,6 +78,7 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read the Ascendant in Your Chart",
+          "afterHeadingZh": "## 如何在星盘里识别上升点",
           "titleEn": "How to Find Your Ascendant in 5 Steps",
           "titleZh": "五步找到你的上升星座",
           "altEn": "Five-step sequence: gather accurate birth time, cast the chart, note rising sign and degree, trace house cusps, read instinct and structure",

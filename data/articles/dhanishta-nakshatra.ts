@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const dhanishtaNakshatraEn: WikiArticle = {
   slug: "dhanishta-nakshatra",
   image: "/images/blog/dhanishta-nakshatra.jpg",
-  image_alt: "Golden rhythmic wave-rings pulse from a luminous horizon across a dark cosmic plain bridging two glowing realms in deep indigo sky",
+  image_alt: "Golden rhythmic wave-rings radiate from a glowing cosmic drum across an indigo plain bridging two realms under a teal-gold nebula sky",
   title: "Dhanishta Nakshatra Explained: The Cosmic Drum Where \"Wealth\" Means Rhythm, Not Riches",
   description: "Dhanishta nakshatra is the 23rd lunar mansion in Vedic astrology, stretching from the late degrees of Capricorn into the early degrees of Aquarius",
   authorId: "aditi-sharma",
@@ -121,6 +121,8 @@ The Capricorn degrees emphasize Mars-driven discipline, ambition, and structure,
 
 export const dhanishtaNakshatraZh: WikiArticle = {
   slug: "dhanishta-nakshatra",
+  image: "/images/blog/dhanishta-nakshatra.jpg",
+  image_alt: "金色节奏波环从发光的宇宙鼓向外辐射，穿越靛蓝色平原，连接两个领域",
   title: "达尼湿塔：那面叫\"财富\"的鼓，敲的其实是宇宙的节奏",
   description: "达尼湿塔星宿是吠陀占星里的第 23 个月宿，横跨摩羯座的末段与水瓶座的起段，它那个广为人知的\"财富\"标签，指向的是对宇宙节奏与时机的掌握，而远不只是金钱。 多数人是通过\"最富有者\"这个译名认识它的，于是默认它许诺物质上的丰盛。更古老的含义其实更深：这是一面鼓的星，是与宇宙的鼓点同频共振的星。",
   authorId: "aditi-sharma",
@@ -156,6 +158,9 @@ export const dhanishtaNakshatraZh: WikiArticle = {
 
 这也是诚实读占星的所在。守护它的八位元素神 Ashta Vasus，是掌管集体丰盛与元素和谐的神祇，而不是个人的囤积。透过他们去读，这颗星的"财富"是一个被妥善协调的整体的繁荣——一支队伍、一支乐团、一个合着拍子的市场。这样去看这个问题，你既能享受"富有"的象征，又把它归功于时机与和谐，而这种分开，正是把星盘读好的全部要点。
 
+
+![达尼湿塔摩羯座段与水瓶座段的主题并列对比](/images/blog/dhanishta-nakshatra-i1-zh.svg)
+
 ## 如何在星盘里识别这颗第 23 宿
 
 你可以用几个诚实的步骤自己来读达尼湿塔，无论这个位置落在你的月亮、上升还是其他点上，这套方法都成立。古典作者 B. V. Raman 所确立的度数边界，就是下面这套读法的底子。
@@ -167,6 +172,9 @@ export const dhanishtaNakshatraZh: WikiArticle = {
 5. 把丰盛归功于 Ashta Vasus 这层集体维度，把它读成整体内部的和谐，而非个人的积累。
 
 贯穿这五步的是同一个原则：第 23 个月宿偏向那些能感知一个周期、并把自己的力气放在它正确节拍上的人。火星供给能量，摩羯—水瓶的跨度定下基调，达玛茹鼓点明了那项技能。先为这份"对时机的感知力"去读星盘，任何关于"财富"的解读，都会更诚实地从中自然生出。
+
+
+![在出生星盘中识读达尼湿塔月宿位置的五步流程](/images/blog/dhanishta-nakshatra-i0-zh.svg)
 
 ## 常见误读
 
