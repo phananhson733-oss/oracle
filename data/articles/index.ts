@@ -171,6 +171,26 @@ import { argentinaWorldCup2026AstrologyZh } from "./argentina-world-cup-2026-ast
 import { zodiacSignsAsWorldCup2026TeamsZh } from "./zodiac-signs-as-world-cup-2026-teams";
 import { bestSoccerPlayersZodiacSignZh } from "./best-soccer-players-zodiac-sign";
 import { worldCup2026JuneAstrologyZh } from "./world-cup-2026-june-astrology";
+import { moonRisingSignEn } from "./moon-rising-sign";
+import { northNodeInLeoEn } from "./north-node-in-leo";
+import { emotionJournalEn } from "./emotion-journal";
+import { blueNodeAstrologyEn } from "./blue-node-astrology";
+import { rahuAndKetuAstrologyEn } from "./rahu-and-ketu-astrology";
+import { uttaraBhadrapadaNakshatraEn } from "./uttara-bhadrapada-nakshatra";
+import { uttaraPhalguniNakshatraEn } from "./uttara-phalguni-nakshatra";
+import { purvaBhadrapadaNakshatraEn } from "./purva-bhadrapada-nakshatra";
+import { revatiNakshatraEn } from "./revati-nakshatra";
+import { punarvasuNakshatraEn } from "./punarvasu-nakshatra";
+import { maghaNakshatraEn } from "./magha-nakshatra";
+import { ardraNakshatraEn } from "./ardra-nakshatra";
+import { dhanishtaNakshatraEn } from "./dhanishta-nakshatra";
+import { saturnInAries2026En } from "./saturn-in-aries-2026";
+import { uranusOppositionEn } from "./uranus-opposition";
+import { marsReturnAstrologyEn } from "./mars-return-astrology";
+import { ascendantMeaningEn } from "./ascendant-meaning";
+import { cancerRisingEn } from "./cancer-rising";
+import { virgoRisingEn } from "./virgo-rising";
+import { geminiRisingEn } from "./gemini-rising";
 // All articles organized by language
 
 import {
@@ -379,6 +399,26 @@ const ARTICLES_EN: WikiArticle[] = [
   zodiacSignsAsWorldCup2026TeamsEn,
   bestSoccerPlayersZodiacSignEn,
   worldCup2026JuneAstrologyEn,
+  moonRisingSignEn,
+  northNodeInLeoEn,
+  emotionJournalEn,
+  blueNodeAstrologyEn,
+  rahuAndKetuAstrologyEn,
+  uttaraBhadrapadaNakshatraEn,
+  uttaraPhalguniNakshatraEn,
+  purvaBhadrapadaNakshatraEn,
+  revatiNakshatraEn,
+  punarvasuNakshatraEn,
+  maghaNakshatraEn,
+  ardraNakshatraEn,
+  dhanishtaNakshatraEn,
+  saturnInAries2026En,
+  uranusOppositionEn,
+  marsReturnAstrologyEn,
+  ascendantMeaningEn,
+  cancerRisingEn,
+  virgoRisingEn,
+  geminiRisingEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
