@@ -14,51 +14,52 @@
         {
           "kind": "compare",
           "afterHeadingEn": "## Lamine Yamal's Birth Chart vs Adjacent Concepts: How It Works + Trade-offs",
-          "titleEn": "Three Ways to Read a Cancer Sun",
-          "titleZh": "解读巨蟹座太阳的三种方式",
-          "altEn": "Comparison of sun-sign profile, psychological natal reading, and transit forecast for a Cancer Sun birth chart",
-          "altZh": "比较星座标签、心理本命盘解读和行运预测三种方法",
+          "afterHeadingZh": "## 亚马尔的星盘与相近概念：运作方式 + 取舍",
+          "titleEn": "Three Approaches to a Birth Chart",
+          "titleZh": "三种读盘方式的对比",
+          "altEn": "Comparison of sun-sign profile, psychological birth chart reading, and results-driven forecast approaches",
+          "altZh": "太阳星座侧写、心理占星本命盘解读与结果导向预测三种方式的对比",
           "columns": [
             {
               "nameEn": "Sun-Sign Profile",
-              "nameZh": "星座标签法",
+              "nameZh": "太阳星座侧写",
               "linesEn": [
-                "A sign and adjectives only",
-                "No developmental depth",
-                "Fixed label, no growth arc"
+                "Labels mood and personality",
+                "Stops at adjectives",
+                "No growth arc or timing"
               ],
               "linesZh": [
-                "只有星座加形容词",
-                "缺乏成长维度",
-                "固定标签，无发展方向"
+                "标注情绪与性格",
+                "止步于形容词",
+                "不涉及成长弧线或时机"
               ]
             },
             {
-              "nameEn": "Psychological Natal Reading",
-              "nameZh": "心理本命盘解读",
+              "nameEn": "Psychological Chart Reading",
+              "nameZh": "心理占星本命盘解读",
               "linesEn": [
-                "Cancer Sun = instinct and belonging",
-                "Direction, not destiny",
-                "Explains how placement develops"
+                "Reads a growth direction",
+                "Explains how Cancer Sun works",
+                "Tracks transits as timing activators"
               ],
               "linesZh": [
-                "巨蟹座太阳=本能与归属感",
-                "方向而非命运",
-                "揭示位置如何成长"
+                "读出成长方向",
+                "解释巨蟹太阳如何运作",
+                "把过运读作时机激活器"
               ]
             },
             {
-              "nameEn": "Transit Forecast (2026)",
-              "nameZh": "行运预测（2026）",
+              "nameEn": "Results-Driven Forecast",
+              "nameZh": "结果导向预测",
               "linesEn": [
-                "Jupiter in Cancer 2025–26",
-                "Exact pass mid-May 2026",
-                "Tournament catches separating tail"
+                "Names a winner",
+                "Stands or falls on verdict",
+                "Sacrifices long-term credibility"
               ],
               "linesZh": [
-                "木星2025–26年行经巨蟹",
-                "精确合相于2026年5月中旬",
-                "世界杯期间木星渐离"
+                "点名冠军",
+                "成败系于判词",
+                "以长期可信度换取快感"
               ]
             }
           ]
@@ -66,40 +67,41 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read Lamine Yamal's Birth Chart in Your Chart",
-          "titleEn": "5 Steps to Apply the Cancer Sun Method",
-          "titleZh": "运用巨蟹座太阳法的5个步骤",
-          "altEn": "Five-step sequence for reading a Cancer Sun birth chart using the psychological transit method",
-          "altZh": "用心理行运法解读巨蟹座太阳本命盘的五个步骤",
+          "afterHeadingZh": "## 如何在你的星盘里识别亚马尔星盘的读法",
+          "titleEn": "Five Steps to Apply the Cancer Sun Method",
+          "titleZh": "五步运用巨蟹太阳读法",
+          "altEn": "Five-step sequence for applying the Cancer Sun birth chart method to any natal chart",
+          "altZh": "将巨蟹太阳本命盘读法运用到任何星盘的五步流程",
           "items": [
             {
-              "nameEn": "Locate the Sun in Cancer",
-              "nameZh": "定位巨蟹座太阳",
+              "nameEn": "Locate the Cancer Sun",
+              "nameZh": "找到巨蟹座太阳",
               "subEn": "Read it as an instinct-and-belonging theme, not a fixed mood",
-              "subZh": "将其视为本能与归属感的主题，而非固定情绪"
+              "subZh": "把它读成直觉与归属的主题，而不是固定的情绪"
             },
             {
               "nameEn": "Check the Moon",
-              "nameZh": "检视月亮",
-              "subEn": "Cancer's ruler — its sign and house color how instinct is sought and shown",
-              "subZh": "巨蟹座守护星——月亮的星座和宫位决定本能如何被寻求与表达"
+              "nameZh": "检查月亮",
+              "subEn": "Cancer's ruler — its sign and house colour how that instinct is sought and shown",
+              "subZh": "巨蟹的守护星——它的星座与宫位影响这份直觉如何被寻求与显现"
             },
             {
-              "nameEn": "Note Jupiter in Cancer 2025–26",
-              "nameZh": "关注木星2025–26年位于巨蟹",
-              "subEn": "A once-in-twelve-years expansion of Cancer's solar themes, exact contact earlier in 2026",
-              "subZh": "十二年一遇的巨蟹太阳主题扩展，精确合相在2026年较早时"
+              "nameEn": "Note Jupiter in Cancer 2025-26",
+              "nameZh": "留意木星 2025-26 年行经巨蟹",
+              "subEn": "A twelve-year expansion of the Sun's themes; the exact contact fell earlier in 2026",
+              "subZh": "十二年一次的太阳主题扩张，精确接触在 2026 年更早时就已发生"
             },
             {
-              "nameEn": "Treat Rising and Houses as Provisional",
-              "nameZh": "将上升和宫位视为暂定",
-              "subEn": "Cancer Moon, Virgo rising, and house claims need a confirmed birth time",
-              "subZh": "月亮星座、处女座上升及宫位主张均需确认出生时间"
+              "nameEn": "Treat Unconfirmed Placements as Provisional",
+              "nameZh": "把未确认落点视为暂定",
+              "subEn": "Cancer Moon, Virgo rising, and house claims all require a confirmed birth time",
+              "subZh": "巨蟹月亮、处女上升以及宫位说法，都依赖经确认的出生时间"
             },
             {
-              "nameEn": "Read Transits as Chapters",
-              "nameZh": "将行运视为人生章节",
-              "subEn": "Each transit is still to be lived — not a fixed outcome",
-              "subZh": "每次行运都是待经历的章节，而非固定结果"
+              "nameEn": "Read Each Transit as a Chapter",
+              "nameZh": "把每次过运读成一个篇章",
+              "subEn": "A chapter still to be lived, not a fixed outcome",
+              "subZh": "一个还要被活出来的篇章——而不是一个已定的结果"
             }
           ]
         }
