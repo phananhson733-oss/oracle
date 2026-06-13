@@ -694,6 +694,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'cristiano-ronaldo-zodiac-sign',
   'lionel-messi-zodiac-sign',
   'mbappe-birth-chart',
   'world-cup-2026-astrology-prediction',
@@ -783,7 +784,6 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'argentina-world-cup-2026-astrology',
   'vinicius-jr-zodiac-sign',
   'lamine-yamal-birth-chart',
-  'cristiano-ronaldo-zodiac-sign',
   'ashwini-nakshatra',
   'hasta-nakshatra',
   'krittika-nakshatra',

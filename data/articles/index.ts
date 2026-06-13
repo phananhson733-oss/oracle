@@ -164,6 +164,7 @@ import { argentinaWorldCup2026AstrologyEn } from "./argentina-world-cup-2026-ast
 import { zodiacSignsAsWorldCup2026TeamsEn } from "./zodiac-signs-as-world-cup-2026-teams";
 import { bestSoccerPlayersZodiacSignEn } from "./best-soccer-players-zodiac-sign";
 import { worldCup2026JuneAstrologyEn } from "./world-cup-2026-june-astrology";
+import { cristianoRonaldoZodiacSignZh } from "./cristiano-ronaldo-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -439,6 +440,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   worldCup2026AstrologyPredictionZh,
   mbappeBirthChartZh,
   lionelMessiZodiacSignZh,
+  cristianoRonaldoZodiacSignZh,
 ];
 
 // Get all articles for a language
