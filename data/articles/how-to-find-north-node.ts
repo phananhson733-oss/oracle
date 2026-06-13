@@ -5,7 +5,8 @@ import type { WikiArticle } from "../../types";
 export const howToFindNorthNodeEn: WikiArticle = {
   slug: "how-to-find-north-node",
   image: "/images/nodes/how-to-find-north-node.jpg",
-  image_alt: "A luminous gold arc sweeping from a faint point on the ground up to one bright star high in the night sky.",
+  image_alt:
+    "A luminous gold arc sweeping from a faint point on the ground up to one bright star high in the night sky.",
   title: "How to Find North Node Placements You Can Actually Trust",
   description:
     "The North Node is the point where the Moon's orbit crosses the ecliptic heading north, and in a birth chart it marks the growth direction you are still...",
@@ -112,6 +113,7 @@ No. The rising sign and Moon describe how you tend to operate now, while the nod
 ## Related Reading
 
 - [guide to the twelve astrological houses](/en/wiki/astrology-houses) — to read the life area your node's house points to.
+- [the Persephone goddess and the descent-and-return cycle](/en/wiki/persephone-goddess) — the underworld myth and asteroid that trace the same descend-and-rise rhythm the nodal axis describes between the South and North Nodes.
 - [Lunar node (Wikipedia)](https://en.wikipedia.org/wiki/Lunar_node) — for the orbital background behind the calculation.
 
 ## Take Action
@@ -129,7 +131,8 @@ Once you have located your node's sign and house, read both ends of the axis tog
 export const howToFindNorthNodeZh: WikiArticle = {
   slug: "how-to-find-north-node",
   image: "/images/nodes/how-to-find-north-node.jpg",
-  image_alt: "开阔夜景，一道发光的金色弧线自地面微光点扬起，越过夜空射向高处一颗明亮的星。",
+  image_alt:
+    "开阔夜景，一道发光的金色弧线自地面微光点扬起，越过夜空射向高处一颗明亮的星。",
   title: "北交点怎么找，一套绕开真假交点的定位方法",
   description:
     "The North Node（北交点）是月亮轨道与黄道相交时朝北的那个点，象征你这一生要主动发展的方向。它和南交点是一条轴的两端，想先看清整条轴怎么运作，可以对照 月交点轴线总览 pillar 页，那里把南北交点放在一起讲。用一句话概括，北交点是你星盘里标记此生成长方向的点位。",

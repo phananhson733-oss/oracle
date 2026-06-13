@@ -5,18 +5,16 @@ import type { WikiArticle } from "../../types";
 export const twelfthHouseAstrologyEn: WikiArticle = {
   slug: "12th-house-astrology",
   image: "/images/houses/12th-house-astrology.jpg",
-  image_alt: "A small empty boat adrift on still misty water under a dissolving nebula sky, gold flecks scattered on the surface.",
+  image_alt:
+    "A small empty boat adrift on still misty water under a dissolving nebula sky, gold flecks scattered on the surface.",
   title: "How 12th House Astrology Reframes Self-Undoing as Growth",
-  description: "The 12th House is the final house of the birth chart, the sector traditionally tied to solitude, the unconscious, retreat, and the parts of life a person...",
+  description:
+    "The 12th House is the final house of the birth chart, the sector traditionally tied to solitude, the unconscious, retreat, and the parts of life a person...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
-  keywords: [
-    "\"12th house astrology\"",
-    "\"12th house meaning\"",
-    "\"12th house\""
-  ],
+  keywords: ['"12th house astrology"', '"12th house meaning"', '"12th house"'],
   content: `# How 12th House Astrology Reframes Self-Undoing as Growth
 
 ## What is The 12th House?
@@ -100,6 +98,8 @@ Look for planets inside the house, a tightly aspected house ruler, or a stellium
 ## Related Reading
 
 - [companion guide to the 4th house and emotional roots](/en/wiki/astrology-houses) — pairs naturally with the 12th as another deeply private, inward sector of the chart.
+- [the 6th house of work, health, and routine](/en/wiki/6th-house-astrology) — the 12th house's structured opposite, where daily activity refills (or drains) what the 12th withdraws to restore.
+- [the Persephone goddess and the descent-and-return cycle](/en/wiki/persephone-goddess) — the underworld myth and asteroid that map the dissolving, hidden terrain this house crosses into.
 - [explainer on Neptune in the birth chart](/en/wiki/how-to-read-birth-chart) — unpacks the planet most associated with this house and its themes of dissolution.
 - [House (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/House_(astrology)) — background on how the house framework is constructed.
 
@@ -119,16 +119,13 @@ export const twelfthHouseAstrologyZh: WikiArticle = {
   image: "/images/houses/12th-house-astrology.jpg",
   image_alt: "一叶空舟漂在雾蒙蒙的静水上，星云在朦胧中消融，金色光点散落水面。",
   title: "读懂第十二宫代表什么，别把它读成命运的判决",
-  description: "第十二宫（The 12th House）是星盘里掌管独处、潜意识、退场与自我消解的那一块区域。它讲的不是你示人的那一面，而是那些你独自一人时才真正发生的事。",
+  description:
+    "第十二宫（The 12th House）是星盘里掌管独处、潜意识、退场与自我消解的那一块区域。它讲的不是你示人的那一面，而是那些你独自一人时才真正发生的事。",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "\"12th house astrology\"",
-    "\"12th house meaning\"",
-    "\"12th house\""
-  ],
+  keywords: ['"12th house astrology"', '"12th house meaning"', '"12th house"'],
   content: `# 读懂第十二宫代表什么，别把它读成命运的判决
 
 ## The 12th House 是什么？

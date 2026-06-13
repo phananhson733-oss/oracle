@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const july2026PlanetaryTransitsEn: WikiArticle = {
   slug: "july-2026-planetary-transits",
   image: "/images/transits/july-2026-planetary-transits.jpg",
-  image_alt: "A large warm-gold planet rising as the focal point of a deep indigo sky, with smaller dim bodies quietly turning at the edges.",
-  title: "July 2026 Planetary Transits: Jupiter Enters Leo While Mercury Retrograde Finally Lifts",
-  description: "Every dated event for July 2026, drawn straight from the ephemeris. Times are in UT, so adjust for your location.",
+  image_alt:
+    "A large warm-gold planet rising as the focal point of a deep indigo sky, with smaller dim bodies quietly turning at the edges.",
+  title:
+    "July 2026 Planetary Transits: Jupiter Enters Leo While Mercury Retrograde Finally Lifts",
+  description:
+    "Every dated event for July 2026, drawn straight from the ephemeris. Times are in UT, so adjust for your location.",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",
@@ -63,6 +66,8 @@ The observable pattern is well worn, and so is the practical response:
 Sitting inside that window is the New Moon in Cancer on July 15. A new moon starts a lunar cycle, and in Cancer it points toward home, roots, and the people you treat as family. Because it lands while Mercury is still retrograde, the cleaner read is not "launch something brand new" but "quietly begin reworking something close to home."
 
 By July 24, when Mercury stations direct, the friction lifts and the loose threads from those three weeks become easier to tie off. To understand how a passing transit like this interacts with your own birth placements, the explainer on [natal chart transits and how to read them against your birth chart](/en/wiki/natal-chart-transits) is the place to start.
+
+Two July peaks are worth marking on the chart. The [Aquarius full moon at the end of July](/en/wiki/full-moon-july-2026) arrives just after Mercury turns direct, making it a natural point to integrate whatever the retrograde stirred up, and the [2026 World Cup reaches its final under the same summer sky](/en/wiki/world-cup-2026-astrology-prediction) — a useful lens on the collective mood carrying the month.
 
 ## Neptune and Saturn Both Station Retrograde: The Outer Planets Turn Inward
 
@@ -133,9 +138,11 @@ For the structural map of which life area each date touches, the overview of [th
 export const july2026PlanetaryTransitsZh: WikiArticle = {
   slug: "july-2026-planetary-transits",
   image: "/images/transits/july-2026-planetary-transits.jpg",
-  image_alt: "一颗暖金色的大行星在深靛蓝星空中升起成为焦点，边缘几颗暗淡的星体悄悄转向。",
+  image_alt:
+    "一颗暖金色的大行星在深靛蓝星空中升起成为焦点，边缘几颗暗淡的星体悄悄转向。",
   title: "2026 年 7 月行运预报：木星入狮子，上旬水逆终于在月末收尾",
-  description: "下面是 2026 年 7 月每一个有确切日期的事件，直接取自星历。时间为 UT（世界时），请按你所在地时区换算。",
+  description:
+    "下面是 2026 年 7 月每一个有确切日期的事件，直接取自星历。时间为 UT（世界时），请按你所在地时区换算。",
   authorId: "marcus-orion",
   date: "2026-06-01",
   schema: "Article",

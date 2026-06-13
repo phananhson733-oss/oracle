@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const crownChakraMeaningEn: WikiArticle = {
   slug: "crown-chakra-meaning",
   image: "/images/chakra/crown-chakra-meaning.jpg",
-  image_alt: "A rooted column of light blooming into a thousand-petaled radiance while a rootless wisp drifts in the background, showing a grounded crown chakra versus untethered floating",
+  image_alt:
+    "A rooted column of light blooming into a thousand-petaled radiance while a rootless wisp drifts in the background, showing a grounded crown chakra versus untethered floating",
   title: "What Crown Chakra Meaning Really Tells You About Staying Grounded",
-  description: "The Crown Chakra is the seventh and highest energy center in the chakra system, sitting right at the top of your head. In plain terms, crown chakra meaning...",
+  description:
+    "The Crown Chakra is the seventh and highest energy center in the chakra system, sitting right at the top of your head. In plain terms, crown chakra meaning...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
@@ -17,7 +19,7 @@ export const crownChakraMeaningEn: WikiArticle = {
     "crown chakra",
     "sahasrara",
     "crown chakra healing",
-    "seventh chakra"
+    "seventh chakra",
   ],
   content: `# What Crown Chakra Meaning Really Tells You About Staying Grounded
 
@@ -72,7 +74,7 @@ Most popular write-ups get crown chakra meaning slightly wrong in the same few w
 1. **"More open is always better."** In practice, an over-emphasised crown with no grounding reads as detachment, not enlightenment. The goal is a crown that opens and closes with the situation, not one propped permanently wide.
 2. **"Feeling spacey means I am spiritually advanced."** More often it just means you have drifted out of your body and need to come back down, not climb higher. Spaciness is a signal to ground, not a badge to collect.
 3. **"The crown is only about religion or belief."** It is really about connection and perspective, which skeptics and atheists experience too, just under different names. You do not have to believe anything specific to notice when you feel part of something larger.
-4. **"I fix it by concentrating harder on the top of my head."** Counterintuitively, the steadiest way to settle the crown is to ground through the feet and lower centers first. Reaching upward when you already feel floaty usually makes the floating worse.
+4. **"I fix it by concentrating harder on the top of my head."** Counterintuitively, the steadiest way to settle the crown is to ground through the feet and lower centers first — the steadiness mapped to the [root chakra meaning explainer](/en/wiki/root-chakra-meaning) is what an ungrounded crown borrows from. Reaching upward when you already feel floaty usually makes the floating worse.
 
 ## The Crown Chakra at a Glance
 
@@ -111,6 +113,7 @@ Come back into the body: feel your feet, breathe low into your belly, and do som
 
 - [explainer on the third eye chakra](/en/wiki/chakra-system-overview) — the insight center the crown is most often confused with, and a useful contrast.
 - [guide to crown chakra healing and grounding practices](/en/wiki/chakra-system-overview) — practical ways to settle an overactive or ungrounded crown.
+- [chakra test](/en/wiki/chakra-test) — self-assess whether your crown reads grounded, open, or floating, and how the lower centers compare.
 - [Sahasrara (Wikipedia)](https://en.wikipedia.org/wiki/Sahasrara) — for the traditional symbolism behind the modern reading.
 
 ## Take Action
@@ -128,9 +131,11 @@ Pick one grounding check from this page — feet flat on the floor, three slow b
 export const crownChakraMeaningZh: WikiArticle = {
   slug: "crown-chakra-meaning",
   image: "/images/chakra/crown-chakra-meaning.jpg",
-  image_alt: "扎根的光柱顶端绽放千瓣光辉，背景一缕无根光丝飘散，对比接地的顶轮与飘忽的脱节",
+  image_alt:
+    "扎根的光柱顶端绽放千瓣光辉，背景一缕无根光丝飘散，对比接地的顶轮与飘忽的脱节",
   title: "顶轮代表什么，平衡的清明和飘忽的脱节差在哪",
-  description: "顶轮（crown chakra，也叫 sahasrara、第七脉轮）是脉轮（chakra，西方瑜伽与灵性传统里描述的能量中心概念）体系里位置最高的一个，落在头顶，传统上和脉轮系统总览 pillar...",
+  description:
+    "顶轮（crown chakra，也叫 sahasrara、第七脉轮）是脉轮（chakra，西方瑜伽与灵性传统里描述的能量中心概念）体系里位置最高的一个，落在头顶，传统上和脉轮系统总览 pillar...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
@@ -140,7 +145,7 @@ export const crownChakraMeaningZh: WikiArticle = {
     "crown chakra",
     "sahasrara",
     "crown chakra healing",
-    "seventh chakra"
+    "seventh chakra",
   ],
   content: `# 顶轮代表什么，平衡的清明和飘忽的脱节差在哪
 

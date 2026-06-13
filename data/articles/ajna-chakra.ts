@@ -5,18 +5,16 @@ import type { WikiArticle } from "../../types";
 export const ajnaChakraEn: WikiArticle = {
   slug: "ajna-chakra",
   image: "/images/chakra/ajna-chakra.jpg",
-  image_alt: "A single luminous gold point low on the horizon casting a long reflection on a still indigo lake like a quiet open eye.",
+  image_alt:
+    "A single luminous gold point low on the horizon casting a long reflection on a still indigo lake like a quiet open eye.",
   title: "How the Ajna Chakra Sharpens Real Insight Instead of Noise",
-  description: "Ajna chakra is the sixth energy center in the traditional chakra map, sitting at the brow, just above and between the eyebrows, and it is usually described...",
+  description:
+    "Ajna chakra is the sixth energy center in the traditional chakra map, sitting at the brow, just above and between the eyebrows, and it is usually described...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "en",
-  keywords: [
-    "\"ajna chakra\"",
-    "\"3rd eye chakra meaning\"",
-    "\"brow chakra\""
-  ],
+  keywords: ['"ajna chakra"', '"3rd eye chakra meaning"', '"brow chakra"'],
   content: `# How the Ajna Chakra Sharpens Real Insight Instead of Noise
 
 ## What is Ajna Chakra?
@@ -103,6 +101,8 @@ You can. Many people treat the brow center as a vocabulary for self-awareness, a
 ## Related Reading
 
 - [explainer on the crown chakra](/en/wiki/crown-chakra-meaning) — the center directly above, useful for telling open awareness apart from grounded discernment.
+- [chakra system overview](/en/wiki/chakra-system-overview) — the hub that places the brow center sixth in the full sequence.
+- [chakra test](/en/wiki/chakra-test) — self-assess whether your brow center reads clear, scattered, or blocked alongside the other six.
 
 ## Take Action
 
@@ -120,18 +120,16 @@ Take the Chakra Test to see whether your ajna chakra reads as open, blocked, or 
 export const ajnaChakraZh: WikiArticle = {
   slug: "ajna-chakra",
   image: "/images/chakra/ajna-chakra.jpg",
-  image_alt: "深夜静湖，地平线低处一点金光，在镜面般的暗水上投下长长倒影，宛如一只静静睁开的觉知之眼。",
+  image_alt:
+    "深夜静湖，地平线低处一点金光，在镜面般的暗水上投下长长倒影，宛如一只静静睁开的觉知之眼。",
   title: "眉心轮代表什么：把真直觉和想太多分开",
-  description: "Ajna Chakra（眉心轮，又称第三眼脉轮）是脉轮（chakra，西方瑜伽与灵性传统里的能量中心概念）体系里的第六个中心，位置在两眉之间、眉心略上方。说眉心轮代表什么，最贴切的一句是：它是内在觉知与清晰辨别的中心。在较早的瑜伽说法里，它被描述为两条能量通道交会、再上行到顶轮之前的那个点。沿着 Anodea...",
+  description:
+    "Ajna Chakra（眉心轮，又称第三眼脉轮）是脉轮（chakra，西方瑜伽与灵性传统里的能量中心概念）体系里的第六个中心，位置在两眉之间、眉心略上方。说眉心轮代表什么，最贴切的一句是：它是内在觉知与清晰辨别的中心。在较早的瑜伽说法里，它被描述为两条能量通道交会、再上行到顶轮之前的那个点。沿着 Anodea...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "\"ajna chakra\"",
-    "\"3rd eye chakra meaning\"",
-    "\"brow chakra\""
-  ],
+  keywords: ['"ajna chakra"', '"3rd eye chakra meaning"', '"brow chakra"'],
   content: `# 眉心轮代表什么：把真直觉和想太多分开
 
 ## Ajna Chakra 是什么？

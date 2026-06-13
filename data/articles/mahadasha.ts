@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const mahadashaEn: WikiArticle = {
   slug: "mahadasha",
   image: "/images/mahadasha/mahadasha.jpg",
-  image_alt: "Nine glowing planetary lights strung along a slow arc across a deep indigo night sky, evoking a long cycle of time.",
-  title: "Mahadasha Explained: Reading Vedic Planetary Periods as Seasons, Not Sentences",
-  description: "A mahadasha is a major planetary period in the Vimshottari timing system of Vedic astrology.",
+  image_alt:
+    "Nine glowing planetary lights strung along a slow arc across a deep indigo night sky, evoking a long cycle of time.",
+  title:
+    "Mahadasha Explained: Reading Vedic Planetary Periods as Seasons, Not Sentences",
+  description:
+    "A mahadasha is a major planetary period in the Vimshottari timing system of Vedic astrology.",
   authorId: "aditi-sharma",
   date: "2026-06-02",
   schema: "Article",
@@ -18,7 +21,7 @@ export const mahadashaEn: WikiArticle = {
     "mahadasha meaning",
     "what is mahadasha",
     "dasha system",
-    "planetary periods vedic astrology"
+    "planetary periods vedic astrology",
   ],
   content: `# Mahadasha Explained: Reading Vedic Planetary Periods as Seasons, Not Sentences
 
@@ -120,6 +123,7 @@ They are not. The dasha system is specific to Vedic astrology and has no direct 
 - [deep dive on the Saturn planetary period](/en/wiki/saturn-mahadasha) for the longest hard period and how to work with it
 - [overview of the Venus planetary period](/en/wiki/venus-mahadasha) for the 20-year relationship and comfort period
 - [comparison of Vedic and Western astrology](/en/wiki/vedic-vs-western-astrology) for why dasha timing exists in one system and not the other
+- [reading a Vedic birth chart calculator output](/en/wiki/vedic-birth-chart-calculator) for finding your Moon nakshatra and the dasha currently running
 - *introduction to the nakshatra lunar mansions* for the lunar map that decides which period you start in
 
 ## Take Action
@@ -138,9 +142,11 @@ Read how Vedic and Western astrology differ, then find your current period: [htt
 export const mahadashaZh: WikiArticle = {
   slug: "mahadasha",
   image: "/images/mahadasha/mahadasha.jpg",
-  image_alt: "九颗金色行星之光沿着缓缓展开的弧线排列在深靛蓝夜空中，象征一段漫长循环的时间。",
+  image_alt:
+    "九颗金色行星之光沿着缓缓展开的弧线排列在深靛蓝夜空中，象征一段漫长循环的时间。",
   title: "行星大运是什么：把吠陀占星的九大行星周期当成趋势而非定数来读",
-  description: "Mahadasha（玛哈达沙，中文常译作「大运」或「行星大运」）是吠陀占星划分人生阶段的行星周期系统。",
+  description:
+    "Mahadasha（玛哈达沙，中文常译作「大运」或「行星大运」）是吠陀占星划分人生阶段的行星周期系统。",
   authorId: "aditi-sharma",
   date: "2026-06-02",
   schema: "Article",
@@ -151,7 +157,7 @@ export const mahadashaZh: WikiArticle = {
     "mahadasha meaning",
     "what is mahadasha",
     "dasha system",
-    "planetary periods vedic astrology"
+    "planetary periods vedic astrology",
   ],
   content: `# 行星大运是什么：把吠陀占星的九大行星周期当成趋势而非定数来读
 

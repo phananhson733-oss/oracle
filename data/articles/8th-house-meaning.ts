@@ -5,17 +5,19 @@ import type { WikiArticle } from "../../types";
 export const eighthHouseMeaningEn: WikiArticle = {
   slug: "8th-house-meaning",
   image: "/images/houses/8th-house-meaning.jpg",
-  image_alt: "A lantern-glow lighting part of a dark shore while a shadowed zone hides submerged roots, a buried key, and a sunken vessel.",
+  image_alt:
+    "A lantern-glow lighting part of a dark shore while a shadowed zone hides submerged roots, a buried key, and a sunken vessel.",
   title: "The 8th House Meaning Your Ascendant Can't See",
-  description: "The 8th House is the sector of a birth chart that governs what we share, surrender, and transform rather than what we own alone. Placed within pillar guide...",
+  description:
+    "The 8th House is the sector of a birth chart that governs what we share, surrender, and transform rather than what we own alone. Placed within pillar guide...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
   keywords: [
-    "\"8th house meaning\"",
-    "\"what does the 8th house represent\"",
-    "\"8th house\""
+    '"8th house meaning"',
+    '"what does the 8th house represent"',
+    '"8th house"',
   ],
   content: `# The 8th House Meaning Your Ascendant Can't See
 
@@ -102,6 +104,7 @@ Pluto is the modern ruler through its link to Scorpio, while Mars carries the ol
 ## Related Reading
 
 - [explainer on the 2nd house and personal resources](/en/wiki/astrology-houses) — the polarity point of the 8th, useful for seeing what you own alone versus what you share.
+- [the Persephone goddess and the descent-and-return pattern](/en/wiki/persephone-goddess) — the underworld myth and asteroid that put a face on the loss-and-regeneration themes the 8th house concentrates.
 - [House (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/House_(astrology)) — background on the house system this sector belongs to.
 
 ## Take Action
@@ -118,17 +121,19 @@ Once you have traced your 8th-house ruler and matched it to a real situation, se
 export const eighthHouseMeaningZh: WikiArticle = {
   slug: "8th-house-meaning",
   image: "/images/houses/8th-house-meaning.jpg",
-  image_alt: "一盏灯光只照亮黑暗岸边的一隅，旁边的阴影区藏着沉没的根系、一把埋藏的钥匙和半沉的器皿。",
+  image_alt:
+    "一盏灯光只照亮黑暗岸边的一隅，旁边的阴影区藏着沉没的根系、一把埋藏的钥匙和半沉的器皿。",
   title: "读懂第八宫代表什么，找回那块你看不见的力量",
-  description: "第八宫（The 8th House）是星盘里掌管深度亲密、共享资源与心理转化的那一块区域。它不只关乎你一个人能掌控什么，更处理两个人之间深层的捆绑与交换。",
+  description:
+    "第八宫（The 8th House）是星盘里掌管深度亲密、共享资源与心理转化的那一块区域。它不只关乎你一个人能掌控什么，更处理两个人之间深层的捆绑与交换。",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
   keywords: [
-    "\"8th house meaning\"",
-    "\"what does the 8th house represent\"",
-    "\"8th house\""
+    '"8th house meaning"',
+    '"what does the 8th house represent"',
+    '"8th house"',
   ],
   content: `# 读懂第八宫代表什么，找回那块你看不见的力量
 

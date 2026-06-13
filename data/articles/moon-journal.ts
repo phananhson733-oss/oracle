@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const moonJournalEn: WikiArticle = {
   slug: "moon-journal",
   image: "/images/moon/moon-journal.jpg",
-  image_alt: "Four moon phases each casting a distinct gold beam onto one open journal, the beams joining into a loop — four written tasks forming one feedback cycle",
+  image_alt:
+    "Four moon phases each casting a distinct gold beam onto one open journal, the beams joining into a loop — four written tasks forming one feedback cycle",
   title: "What a Moon Journal Actually Tracks Across Four Phases",
-  description: "A moon journal is a structured journaling practice organized around the four distinct phases of the lunar cycle — new moon, waxing, full moon",
+  description:
+    "A moon journal is a structured journaling practice organized around the four distinct phases of the lunar cycle — new moon, waxing, full moon",
   authorId: "marcus-orion",
   date: "2026-06-05",
   schema: "Article",
@@ -17,13 +19,13 @@ export const moonJournalEn: WikiArticle = {
     "moon journaling",
     "lunar journal",
     "moon journal prompts",
-    "full moon journal"
+    "full moon journal",
   ],
   content: `# What a Moon Journal Actually Tracks Across Four Phases
 
-## What is moon journal?
+## What Is a Moon Journal?
 
-A moon journal is **a structured journaling practice organized around the four distinct phases of the lunar cycle — new moon, waxing, full moon, and waning — each assigned a different psychological function**. This practice sits within the broader tradition of *pillar page on lunar cycles and astrological symbolism*, which frames each moon phase as a specific moment for a different kind of inner work rather than a point on an undifferentiated monthly circle. At the new moon, the practice anchors a specific intention. During the waxing phase, it tracks what's slowing that intention down. At the full moon, it evaluates honestly what actually materialized. During the waning phase, it names what to consciously release before the next cycle begins.
+A moon journal is **a structured journaling practice organized around the four distinct phases of the lunar cycle — new moon, waxing, full moon, and waning — each assigned a different psychological function**. It frames each moon phase as a specific moment for a different kind of inner work rather than a point on an undifferentiated monthly circle. At the new moon, the practice anchors a specific intention. During the waxing phase, it tracks what's slowing that intention down. At the full moon, it evaluates honestly what actually materialized. During the waning phase, it names what to consciously release before the next cycle begins. In practice, the two phases that carry the most weight are the bookends: a tightly structured new moon entry built from [new moon journal prompts](/en/wiki/new-moon-journal-prompts), and an honest full moon entry guided by [full moon journal prompts](/en/wiki/full-moon-journal-prompts) — the gap between the two is where the practice's tracking value lives.
 
 - Organized around four phase-specific written tasks rather than open-ended daily reflection
 - Uses the 28-day lunar rhythm as a repeating review loop, not a schedule for noting moods
@@ -37,7 +39,7 @@ The specific frustration practitioners report is this: after two or three cycles
 
 The self-awareness that phase-specific journaling offers is structural, not decorative. It comes from comparing a goal-setting entry against an honest evaluation entry, then identifying what patterns carry from one cycle to the next without scrutiny. That comparison requires each phase to do a different job. Resources that advise "document your feelings each phase" remove the phase differentiation and, with it, the iterative self-knowledge that makes the practice worth sustaining.
 
-## moon journal vs Adjacent Concepts: How It Works + Trade-offs
+## Moon Journal vs General, Gratitude, and Calendar Journaling
 
 Three formats are regularly confused with a moon journal, and the distinctions carry real trade-offs worth naming explicitly.
 
@@ -51,7 +53,7 @@ In the psychological astrology tradition — a framework that practitioners like
 
 
 ![Three formats often confused with a moon journal — general journal, gratitude journal, and lunar calendar — and what each lacks](/images/moon/moon-journal-i0-en.svg)
-## How to Read moon journal in Yourself
+## How to Tell a Moon Journal Practice Is Working
 
 Recognizing whether a moon journal practice is functioning as designed comes down to whether each phase entry activates a distinct task. Five observable signals indicate the structure is working:
 
@@ -59,7 +61,7 @@ Recognizing whether a moon journal practice is functioning as designed comes dow
 
 2. **Waxing entries name specific obstacles.** The question at this phase is not "how is this going?" but "what specifically is slowing this down?" Naming friction by category — a competing demand, a habit pattern, an unresolved decision, a resource gap — is the task. General progress summaries skip the obstacle function entirely.
 
-3. **Full moon entries evaluate, not confirm.** An honest culmination review asks what actually materialized against the new moon intention, not whether the intention still feels right. A full moon entry that confirms everything is on track and the original intention was sound has avoided the evaluative work. The useful question is: where did the intention succeed, where did it stall, and what explains the gap?
+3. **Full moon entries evaluate, not confirm.** An honest culmination review asks what actually materialized against the new moon intention, not whether the intention still feels right. A full moon entry that confirms everything is on track and the original intention was sound has avoided the evaluative work. The useful question is: where did the intention succeed, where did it stall, and what explains the gap? This is also the phase where the heightened charge of [full moon energy](/en/wiki/full-moon-energy) makes honest assessment easier — and where pairing the entry with a deliberate [full moon ritual](/en/wiki/what-is-a-full-moon-ritual) turns evaluation into action.
 
 4. **Waning entries list specific releases.** This phase is most often skipped. The entry should name what you're choosing to leave behind before the next cycle — a habit pattern, an expectation, a commitment that no longer fits, a self-narrative that served the last intention but won't serve the next. Vague feelings of "letting go" without specifics mean the release function hasn't been completed.
 
@@ -116,9 +118,10 @@ A lunar calendar tracks external timing — when phases occur. A structured phas
 
 ## Related Reading
 
-- *guide to new moon intention-setting in astrology* — expands the new moon anchoring step with chart-based context for setting intentions aligned to natal placements
-- *full moon meaning and astrological themes* — deepens the culmination review function with the astrological significance behind each full moon's sign placement
-- *guide to waning moon release practices* — expands the waning phase beyond journaling into a broader ritual context for conscious release
+- [New moon journal prompts](/en/wiki/new-moon-journal-prompts) — expands the new moon anchoring step with a three-layer structure for intentions you can actually assess later.
+- [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — deepens the culmination review function with prompts grouped by release, gratitude, relationships, and birth chart.
+- [Full moon energy](/en/wiki/full-moon-energy) — the astrological significance behind the culmination phase and how to read which house it activates.
+- [What to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually) — extends the waning and release work beyond journaling into a broader ritual context.
 - [Lunar phase (Wikipedia)](https://en.wikipedia.org/wiki/Lunar_phase)
 
 ## Take Action

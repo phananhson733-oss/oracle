@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const fullMoonJournalPromptsEn: WikiArticle = {
   slug: "full-moon-journal-prompts",
   image: "/images/moon/full-moon-journal-prompts.jpg",
-  image_alt: "A gold thread arcing from an open journal back through waxing moons to the new moon and closing at the full moon — journaling as cycle completion",
+  image_alt:
+    "A gold thread arcing from an open journal back through waxing moons to the new moon and closing at the full moon — journaling as cycle completion",
   title: "Full Moon Journal Prompts That Actually Match Lunar Energy",
-  description: "Full moon journal prompts are reflective questions timed to the full moon's completion and release phase.",
+  description:
+    "Full moon journal prompts are reflective questions timed to the full moon's completion and release phase.",
   authorId: "marcus-orion",
   date: "2026-06-05",
   schema: "Article",
@@ -16,19 +18,64 @@ export const fullMoonJournalPromptsEn: WikiArticle = {
     "full moon journal prompts",
     "full moon journaling",
     "journaling on a full moon",
-    "full moon reflection prompts"
+    "full moon reflection prompts",
   ],
   content: `# Full Moon Journal Prompts That Actually Match Lunar Energy
 
-## What is full moon journal prompts?
+## What Are Full Moon Journal Prompts?
 
-Full moon journal prompts are **reflective questions timed to the full moon's completion and release phase.** Rather than calling in new intentions, they ask what a lunar cycle produced, what reached its natural peak, and what can be consciously closed. They belong to the broader *pillar page on moon phase journaling and ritual practice*, which maps the distinct inner work each phase calls for.
+Full moon journal prompts are **reflective questions timed to the full moon's completion and release phase.** Rather than calling in new intentions, they ask what a lunar cycle produced, what reached its natural peak, and what can be consciously closed. They are the counterpart to [new moon journal prompts](/en/wiki/new-moon-journal-prompts): the new moon set plants intentions, and the full moon set, two weeks later, takes honest stock of what grew and names what to let go.
+
+If you came here for the prompts themselves, skip ahead to [the full list of full moon journal prompts](#25-full-moon-journal-prompts-by-theme) — there are 25 below, grouped by release, gratitude, relationships, and your birth chart. The short version of how to use them: choose three or four that match where you are this cycle, write for 15 to 30 minutes within a day or two of the full moon, and let each answer point backward at what happened rather than forward at what you want next.
 
 - Draw attention to what has arrived or peaked since the preceding new moon — not what is desired next
 - Ask for honest accounting of whether the intentions set two weeks earlier actually produced anything concrete
 - Prompt a named, deliberate release of what no longer fits this cycle's continuation
 
 Traditional lunar practice — including the progressed lunation frameworks Bernadette Brady systematized — treats the full moon as the cycle's midpoint illumination: whatever was seeded at the new moon has grown to full visibility, and what no longer serves rises to be named. The phase sits roughly two weeks after the new moon, making it the natural moment for assessment and completion, not initiation.
+
+## 25 Full Moon Journal Prompts by Theme
+
+Here is the working list. Each group does a different part of the full moon's job — naming what to release, recognizing what grew, taking honest stock of relationships, and locating the cycle in your chart. You do not need all 25 in one sitting; pick three or four that match this cycle and answer them slowly.
+
+### Prompts for Release and Letting Go
+
+1. What am I still carrying from this cycle that I am ready to set down for good?
+2. What expectation did I hold two weeks ago that turned out to be wrong, and what would it mean to release it without blame?
+3. Where have I been forcing something that has clearly run its course?
+4. What story about myself did this cycle finally disprove?
+5. If I could put down one resentment tonight, which one would lighten the most?
+6. What habit served an old version of me but no longer fits the direction I am heading?
+7. What am I afraid to release because I am not sure who I am without it?
+
+### Prompts for Recognizing What Grew
+
+8. Looking back at the past two weeks, what actually arrived that I had hoped for?
+9. What effort of mine produced a real result this cycle, even a small one?
+10. What did I learn about my own follow-through since the last new moon?
+11. Where did I surprise myself this cycle?
+12. What am I genuinely grateful for right now that did not exist a month ago?
+13. Which quiet, unglamorous thing did I do consistently that is starting to add up?
+14. What reached its full, natural peak this cycle — and how do I want to honor it before it passes?
+
+### Prompts for Relationships and Connection
+
+15. Which relationship came into clearer focus this cycle, for better or worse?
+16. Is there a conversation I have been postponing that the full moon's clarity is asking me to have?
+17. Where did I give more than felt sustainable, and what boundary is ready to be named?
+18. Who supported a cycle of mine in closing well, and have I acknowledged them?
+19. What pattern in how I relate to others showed up again this month?
+20. What am I ready to forgive — in someone else or in myself — so I can close this chapter cleanly?
+
+### Prompts for Your Birth Chart and This Moon
+
+21. Which house is this month's full moon activating in my chart, and what area of life does that point to? (If you are not sure, [generate your birth chart](/en/wiki/how-to-read-birth-chart) to find the house.)
+22. How does the sign of this full moon — and the polarity it sits on — describe the tension I have been feeling?
+23. Does this full moon contact any of my natal planets closely, and if so, what does that planet govern in my life?
+24. Reading my natal Moon, where do I most naturally process emotion — and is this cycle asking me to use that strength or stretch beyond it?
+25. Set against the intention I planted at the last new moon, what does this full moon reveal about whether it took root?
+
+For more context on why the full moon, specifically, amplifies all of this, see [full moon energy](/en/wiki/full-moon-energy); for the wider set of evening practices these prompts fit inside, see [what to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually).
 
 ## Why It Matters for Self-Awareness
 
@@ -43,7 +90,7 @@ The confusion shows up in predictable patterns:
 
 Understanding full moon journal prompts as a completion tool changes what makes it into your journal — and what finally gets left behind.
 
-## full moon journal prompts vs Adjacent Concepts: How It Works + Trade-offs
+## Full Moon vs New Moon and Gratitude Journaling — How They Differ
 
 Full moon journal prompts function by constraining reflection to a specific window — the two weeks since the new moon — and asking what that window produced, what peaked, and what can be consciously closed. Three adjacent practices sharpen what makes this tool distinct:
 
@@ -51,11 +98,11 @@ Full moon journal prompts function by constraining reflection to a specific wind
 
 2. **vs gratitude journaling.** Gratitude practices can run on any day and focus on what is working right now. Full moon reflection includes appreciation but doesn't stop there — it specifically targets what has peaked and what can be released. To use gratitude-only prompts at the full moon is to circle the feeling without making a deliberate choice about what ends. The trade-off: gratitude gives warmth and continuity; you lose the clarity that only comes from explicitly naming what's finished.
 
-3. **vs open reflective writing.** Unstructured journaling follows wherever attention leads. Full moon reflection prompts constrain that flow to the cycle: what was seeded, what grew, what peaked, and what can go. The trade-off is structure over spontaneity — but at the full moon, unanchored writing tends to loop without landing. The *new moon journaling and intention-setting guide* covers the initiating side of the lunation cycle; full moon prompts close the loop by asking what that initiation actually produced.
+3. **vs open reflective writing.** Unstructured journaling follows wherever attention leads. Full moon reflection prompts constrain that flow to the cycle: what was seeded, what grew, what peaked, and what can go. The trade-off is structure over spontaneity — but at the full moon, unanchored writing tends to loop without landing. The [new moon journal prompts](/en/wiki/new-moon-journal-prompts) cover the initiating side of the lunation cycle; full moon prompts close the loop by asking what that initiation actually produced.
 
 
 ![Comparison of new moon journaling, gratitude journaling, and full moon prompts: opening cycles, appreciating the present, and explicitly closing what's finished](/images/moon/full-moon-journal-prompts-i0-en.svg)
-## How to Read full moon journal prompts in Yourself
+## How to Tell the Prompts Are Working
 
 Recognizing whether a full moon journaling practice is working comes down to what you find yourself writing. Five observable signals:
 
@@ -106,6 +153,10 @@ Most practitioners keep it to 15–30 minutes. The goal is honest assessment, no
 
 The prompts still work without a prior new moon record. They apply equally well to any open cycle — an unresolved situation, an ongoing project, a pattern that has been running. The phase supports honest accounting regardless of whether a specific intention was logged two weeks earlier.
 
+**Should I write before or after the full moon?**
+
+Either works, and many practitioners do a little of both. Writing on the night of the peak captures the charge while it is strongest; writing in the day or two after lets the clarity settle into something more usable. The traditional window is the three nights around the exact full moon. If you only journal once, the evening of the peak or the morning after are the two most common choices — pick whichever fits your sleep and schedule rather than forcing a specific minute.
+
 ## Reflection Prompts
 
 1. Think back to what you said you wanted two weeks ago — what actually arrived, and what part of that are you choosing to carry forward?
@@ -114,8 +165,10 @@ The prompts still work without a prior new moon record. They apply equally well 
 
 ## Related Reading
 
-- *new moon journal prompts and intention-setting guide* — explains where manifestation and intention-setting prompts belong in the lunar cycle, and how they pair with the full moon's release function
-- *moon phase overview and the eight-phase lunation cycle* — maps each phase's distinct inner function and how they build on one another across the month
+- [New moon journal prompts](/en/wiki/new-moon-journal-prompts) — the intention-setting counterpart; explains where manifestation prompts actually belong in the cycle and how they pair with the full moon's release function.
+- [Moon journal](/en/wiki/moon-journal) — maps each phase's distinct inner function and how the four written tasks build on one another across the month.
+- [Full moon energy](/en/wiki/full-moon-energy) — why the full moon amplifies what these prompts are designed to surface.
+- [What to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually) — the wider set of evening practices these prompts fit inside.
 - [Lunar phase (Wikipedia)](https://en.wikipedia.org/wiki/Lunar_phase)
 
 ## Take Action

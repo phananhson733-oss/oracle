@@ -5,21 +5,23 @@ import type { WikiArticle } from "../../types";
 export const astrologyHousesEn: WikiArticle = {
   slug: "astrology-houses",
   image: "/images/houses/astrology-houses.jpg",
-  image_alt: "Twelve soft pools of glowing light spaced across the night sky with small gold planets drifting between them, over a wide valley.",
+  image_alt:
+    "Twelve soft pools of glowing light spaced across the night sky with small gold planets drifting between them, over a wide valley.",
   title: "How to Read the Astrology Houses as Living Patterns, Not Fixed Fate",
-  description: "The astrological houses are the twelve divisions of a birth chart, each one mapping a different arena of lived experience (identity, money, relationships,...",
+  description:
+    "The astrological houses are the twelve divisions of a birth chart, each one mapping a different arena of lived experience (identity, money, relationships,...",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "en",
   keywords: [
-    "\"astrology houses\"",
-    "\"what are houses in astrology\"",
-    "\"house meanings\"",
-    "\"8th house meaning\"",
-    "\"12th house astrology\"",
-    "\"9th house astrology\"",
-    "\"11th house\""
+    '"astrology houses"',
+    '"what are houses in astrology"',
+    '"house meanings"',
+    '"8th house meaning"',
+    '"12th house astrology"',
+    '"9th house astrology"',
+    '"11th house"',
   ],
   content: `# How to Read the Astrology Houses as Living Patterns, Not Fixed Fate
 
@@ -117,6 +119,7 @@ These guides extend the framework of The Astrological Houses without repeating w
 
 - *guide to the twelve zodiac signs and their styles* — shows the "style" layer that each house cusp filters
 - *explainer on the planets and what each one drives* — covers the "drive" layer you place inside the houses
+- [the 6th house of daily work, health, and routine](/en/wiki/6th-house-astrology) — a worked single-house example showing how work and well-being read as one connected system
 - [comparison of whole-sign and Placidus house systems](/en/wiki/astrology-houses) — unpacks the trade-off between simplicity and cuspal precision
 
 ## Take Action
@@ -134,21 +137,23 @@ Ready to see the syntax of The Astrological Houses in motion? Read the [8th Hous
 export const astrologyHousesZh: WikiArticle = {
   slug: "astrology-houses",
   image: "/images/houses/astrology-houses.jpg",
-  image_alt: "广阔山谷夜空中，十二处柔和的发光区域如点亮的窗，几颗金色小行星在其间游走，像穿行于一个个房间。",
+  image_alt:
+    "广阔山谷夜空中，十二处柔和的发光区域如点亮的窗，几颗金色小行星在其间游走，像穿行于一个个房间。",
   title: "读懂占星宫位，行星和星座才拼得成一句完整的话",
-  description: "占星宫位（astrology houses）是星盘里把天空划分出的十二个生活领域。说到底，它是一张标记人生各领域的分区地图。",
+  description:
+    "占星宫位（astrology houses）是星盘里把天空划分出的十二个生活领域。说到底，它是一张标记人生各领域的分区地图。",
   authorId: "julian-thorne",
   date: "2026-05-28",
   schema: "Article",
   lang: "zh",
   keywords: [
-    "\"astrology houses\"",
-    "\"what are houses in astrology\"",
-    "\"house meanings\"",
-    "\"8th house meaning\"",
-    "\"12th house astrology\"",
-    "\"9th house astrology\"",
-    "\"11th house\""
+    '"astrology houses"',
+    '"what are houses in astrology"',
+    '"house meanings"',
+    '"8th house meaning"',
+    '"12th house astrology"',
+    '"9th house astrology"',
+    '"11th house"',
   ],
   content: `# 读懂占星宫位，行星和星座才拼得成一句完整的话
 
