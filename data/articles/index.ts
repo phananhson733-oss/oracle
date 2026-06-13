@@ -165,6 +165,12 @@ import { zodiacSignsAsWorldCup2026TeamsEn } from "./zodiac-signs-as-world-cup-20
 import { bestSoccerPlayersZodiacSignEn } from "./best-soccer-players-zodiac-sign";
 import { worldCup2026JuneAstrologyEn } from "./world-cup-2026-june-astrology";
 import { cristianoRonaldoZodiacSignZh } from "./cristiano-ronaldo-zodiac-sign";
+import { lamineYamalBirthChartZh } from "./lamine-yamal-birth-chart";
+import { viniciusJrZodiacSignZh } from "./vinicius-jr-zodiac-sign";
+import { argentinaWorldCup2026AstrologyZh } from "./argentina-world-cup-2026-astrology";
+import { zodiacSignsAsWorldCup2026TeamsZh } from "./zodiac-signs-as-world-cup-2026-teams";
+import { bestSoccerPlayersZodiacSignZh } from "./best-soccer-players-zodiac-sign";
+import { worldCup2026JuneAstrologyZh } from "./world-cup-2026-june-astrology";
 // All articles organized by language
 
 import {
@@ -441,6 +447,12 @@ const ARTICLES_ZH: WikiArticle[] = [
   mbappeBirthChartZh,
   lionelMessiZodiacSignZh,
   cristianoRonaldoZodiacSignZh,
+  lamineYamalBirthChartZh,
+  viniciusJrZodiacSignZh,
+  argentinaWorldCup2026AstrologyZh,
+  zodiacSignsAsWorldCup2026TeamsZh,
+  bestSoccerPlayersZodiacSignZh,
+  worldCup2026JuneAstrologyZh,
 ];
 
 // Get all articles for a language

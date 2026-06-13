@@ -14,98 +14,92 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read the June 2026 Tournament Sky in Your Timing",
-          "titleEn": "5 Steps to Read the June 2026 Tournament Sky",
-          "titleZh": "解读2026年6月赛事星象的5个步骤",
-          "altEn": "Five-step sequence for reading Jupiter, Saturn and lunations across June 2026",
-          "altZh": "逐步解读2026年6月木星、土星与月相的五步流程",
+          "afterHeadingZh": "## 如何在你自己的时机里识别2026年6月赛事天象",
+          "titleEn": "5 Steps to Read the June 2026 Sky",
+          "titleZh": "读懂2026年6月赛事天象的5步",
+          "altEn": "Five-step sequence for reading June 2026 transits: Jupiter Cancer, Leo shift, Saturn Aries, New Moon, Full Moon",
+          "altZh": "解读2026年6月行星过运的五个步骤：巨蟹木星、狮子换座、白羊土星、新月、满月",
           "items": [
             {
-              "nameEn": "Jupiter in Cancer",
-              "nameZh": "巨蟹座木星",
+              "nameEn": "Note Jupiter in Cancer",
+              "nameZh": "记住木星旺相于巨蟹座",
               "subEn": "Warm, belonging-centered backdrop through June 30",
-              "subZh": "6月30日前营造温暖归属感氛围"
+              "subZh": "至6月30日，偏暖的归属背景"
             },
             {
-              "nameEn": "Jupiter enters Leo",
-              "nameZh": "木星入狮子座",
+              "nameEn": "Watch Jupiter Enter Leo",
+              "nameZh": "盯住木星进入狮子座",
               "subEn": "Late-June shift toward visibility and individual flair",
-              "subZh": "六月末转向聚光灯与个人风采"
+              "subZh": "六月下旬，基调转向可见度与个人发挥"
             },
             {
-              "nameEn": "Saturn in Aries",
-              "nameZh": "白羊座土星",
-              "subEn": "Steadying test of patience and nerve under pressure",
-              "subZh": "持续考验耐心与在压力下的沉稳"
+              "nameEn": "Track Saturn in Aries",
+              "nameZh": "追踪白羊座土星",
+              "subEn": "Steadying test of patience and nerve all month",
+              "subZh": "整月对耐心与胆识的稳定考验"
             },
             {
-              "nameEn": "New Moon",
-              "nameZh": "新月",
-              "subEn": "Mid-month reset point for fresh starts and recommitment",
-              "subZh": "月中重启节点，适合新的开始与重新投入"
+              "nameEn": "Use the Two Moons",
+              "nameZh": "用好两次月相",
+              "subEn": "New Moon as reset; Full Moon as culmination",
+              "subZh": "新月为重启点，满月为收束点"
             },
             {
-              "nameEn": "Full Moon",
-              "nameZh": "满月",
-              "subEn": "Late-June culmination around the opening knockout window",
-              "subZh": "六月末高潮节点，恰逢首轮淘汰赛窗口"
+              "nameEn": "Read Mood, Not Outcome",
+              "nameZh": "读成情绪而非定数",
+              "subEn": "Each window is a mood to meet, not a fixed result to await",
+              "subZh": "每个窗口是待你迎接的气氛，不是枯等的固定结局"
             }
           ]
         },
         {
-          "kind": "compare",
+          "kind": "timeline",
           "afterHeadingEn": "## the June 2026 Tournament Sky at a Glance",
-          "titleEn": "June 2026 Tournament Sky: Key Transits Compared",
-          "titleZh": "2026年6月赛事星象：关键行运对比",
-          "altEn": "Three-column comparison of June 2026 planetary transits: Jupiter in Cancer, Saturn in Aries, lunations",
-          "altZh": "2026年6月三大行运对比：巨蟹座木星、白羊座土星与月相",
-          "columns": [
+          "afterHeadingZh": "## 2026年6月赛事天象一览",
+          "titleEn": "June 2026 Planetary Arc",
+          "titleZh": "2026年6月行星弧线",
+          "altEn": "Timeline of June 2026 planetary transits: Saturn all month, Jupiter Cancer group stage, New Moon, Full Moon, Jupiter Leo",
+          "altZh": "2026年6月行星过运时间线：土星贯穿全月、巨蟹木星覆盖小组赛、新月、满月、木星入狮子",
+          "items": [
             {
-              "nameEn": "Jupiter in Cancer",
-              "nameZh": "巨蟹座木星",
-              "linesEn": [
-                "Exalted placement",
-                "Collective, home-soil warmth",
-                "Active through June 30",
-                "Group stage backdrop"
-              ],
-              "linesZh": [
-                "入旺位置",
-                "集体与主场温暖",
-                "持续至6月30日",
-                "小组赛氛围基调"
-              ]
+              "labelEn": "All of June",
+              "labelZh": "贯穿6月",
+              "titleEn": "Saturn in Aries",
+              "titleZh": "土星在白羊座",
+              "noteEn": "Steadying undertone — tests patience and nerve across the entire opening month",
+              "noteZh": "稳住阵脚的底色，整个开赛首月考验耐心与胆识"
             },
             {
-              "nameEn": "Saturn in Aries",
-              "nameZh": "白羊座土星",
-              "linesEn": [
-                "Testing undertone",
-                "Patience and nerve under pressure",
-                "Runs the whole month",
-                "Quiet discipline"
-              ],
-              "linesZh": [
-                "考验底色",
-                "压力下的耐心与沉稳",
-                "贯穿整个月份",
-                "无声的纪律"
-              ]
+              "labelEn": "Group Stage → Jun 30",
+              "labelZh": "小组赛至6月30日",
+              "titleEn": "Jupiter Exalted in Cancer",
+              "titleZh": "木星旺相于巨蟹座",
+              "noteEn": "Collective warmth and home-soil themes lift the opening rounds",
+              "noteZh": "集体暖意与主场归属感烘托开赛几轮"
             },
             {
-              "nameEn": "Lunations",
-              "nameZh": "月相",
-              "linesEn": [
-                "New Moon: mid-month reset",
-                "Full Moon: late-June peak",
-                "Momentum turning points",
-                "Timing, not fate"
-              ],
-              "linesZh": [
-                "新月：月中重启",
-                "满月：六月末高潮",
-                "动能转折点",
-                "时机而非命运"
-              ]
+              "labelEn": "Mid-June",
+              "labelZh": "六月中旬",
+              "titleEn": "New Moon",
+              "titleZh": "新月",
+              "noteEn": "Reset window — a good moment to begin or recommit mid-tournament",
+              "noteZh": "重启窗口，适合开始或重新投入"
+            },
+            {
+              "labelEn": "Late June",
+              "labelZh": "六月下旬",
+              "titleEn": "Full Moon",
+              "titleZh": "满月",
+              "noteEn": "Culmination — energy peaks around the first knockout window",
+              "noteZh": "收束高点，势头在淘汰赛开端前后达到顶峰"
+            },
+            {
+              "labelEn": "From Jun 30",
+              "labelZh": "自6月30日起",
+              "titleEn": "Jupiter Enters Leo",
+              "titleZh": "木星进入狮子座",
+              "noteEn": "Spotlight shifts — individual flair and standout stories take center stage",
+              "noteZh": "基调转向高光，个人发挥与突出故事走到台前"
             }
           ]
         }

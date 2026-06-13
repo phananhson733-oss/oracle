@@ -14,10 +14,11 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read Vinicius Jr's Zodiac Sign in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别维尼修斯的星座",
           "titleEn": "5 Steps to Apply the Cancer Sun / Sagittarius Moon Method",
           "titleZh": "五步应用巨蟹座太阳与射手座月亮读法",
           "altEn": "Five-step method for reading a Cancer Sun Sagittarius Moon chart using transits as timing activators",
-          "altZh": "用过境作时间激活器解读巨蟹太阳射手月亮星盘的五个步骤",
+          "altZh": "用过运作时机激活器解读巨蟹太阳射手月亮星盘的五个步骤",
           "items": [
             {
               "nameEn": "Sun in Cancer",
@@ -33,7 +34,7 @@
             },
             {
               "nameEn": "Jupiter in Cancer 2025-26",
-              "nameZh": "木星2025-26年过境巨蟹",
+              "nameZh": "木星2025-26年过运巨蟹",
               "subEn": "Rules the Moon and lights the Sun's sign — a doubled emphasis on core themes",
               "subZh": "守护月亮并照亮太阳所在星座，双重强调核心主题"
             },
@@ -41,19 +42,20 @@
               "nameEn": "Vedic Shift to Gemini",
               "nameZh": "吠陀体系转换至双子",
               "subEn": "Sidereal zodiac moves the Sun ~24° back to Gemini — treat it as a separate, consistent lens",
-              "subZh": "恒星黄道将太阳后移约24度至双子座——将其作为独立自洽的体系对待"
+              "subZh": "恒星黄道将太阳后移约24度至双子座——作为独立自洽的体系对待"
             },
             {
               "nameEn": "Transits as Chapters",
-              "nameZh": "过境即章节",
+              "nameZh": "过运即章节",
               "subEn": "Read each transit as a theme still to be lived, not a fixed outcome to forecast",
-              "subZh": "将每次过境视为有待经历的主题，而非可预测的固定结果"
+              "subZh": "将每次过运视为有待经历的主题，而非可预测的固定结果"
             }
           ]
         },
         {
           "kind": "compare",
           "afterHeadingEn": "## Vinicius Jr's Zodiac Sign at a Glance",
+          "afterHeadingZh": "## 维尼修斯的星座一览",
           "titleEn": "Western Tropical vs Vedic Sidereal: Two Consistent Lenses",
           "titleZh": "西方回归黄道与吠陀恒星黄道：两种自洽视角",
           "altEn": "Side-by-side comparison of Western tropical and Vedic sidereal placements in Vinicius Jr's zodiac sign reading",
@@ -69,8 +71,8 @@
               ],
               "linesZh": [
                 "巨蟹座太阳——身份认同与情感及保护本能相连",
-                "射手座月亮——木星守护，渴望自由与表达风险",
-                "木星2025-26年过境巨蟹——照亮太阳星座并守护月亮"
+                "射手座月亮——木星守护，渴望自由与外放冒险",
+                "木星2025-26年过运巨蟹——照亮太阳星座并守护月亮"
               ]
             },
             {
@@ -84,7 +86,7 @@
               "linesZh": [
                 "双子座太阳——相同出生数据，恒星黄道将太阳后移约24度",
                 "月亮在恒星黄道中重新计算",
-                "同样的过境方法，通过不同的黄道体系诠释"
+                "同样的过运方法，通过不同的黄道体系诠释"
               ]
             }
           ]

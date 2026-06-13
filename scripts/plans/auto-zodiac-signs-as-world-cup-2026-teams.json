@@ -10,15 +10,11 @@
   },
   "articles": {
     "zodiac-signs-as-world-cup-2026-teams": {
-      "hero": {
-        "prompt": "Four luminous elemental masses drift across one vast open cosmos: a blazing crimson fire-cloud surging forward on the left, a dense amber earth-formation anchored low at the horizon, a sweeping silver-blue air current threading through the centre, and a shimmering teal water-flow curling at the right edge — all four distinct yet woven seamlessly into a single continuous night landscape, each glowing with its own celestial energy, interplaying under a canopy of distant stars, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Four elemental forms — fire, earth, air, water — glowing in one cosmic sky, representing zodiac signs as World Cup 2026 playing styles",
-        "altZh": "火、土、风、水四大元素在同一片宇宙星空中发光，象征十二星座与2026年世界杯球队风格的对应关系"
-      },
       "inline": [
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read the Zodiac-Team Lens in Your Chart",
+          "afterHeadingZh": "## 如何在你自己身上识别星座球队透镜",
           "titleEn": "How to Read Your Zodiac Playing Style",
           "titleZh": "如何解读你的星座球风",
           "altEn": "Five-step sequence for reading your zodiac sign as a World Cup 2026 playing style through element and modality",
@@ -28,37 +24,38 @@
               "nameEn": "Find Your Element",
               "nameZh": "找到你的元素",
               "subEn": "Identify your Sun sign and its element: fire, earth, air, or water",
-              "subZh": "确定你的太阳星座及其元素：火、土、风或水"
+              "subZh": "找到你的太阳星座和它的元素——火、土、风，还是水"
             },
             {
               "nameEn": "Read the Element",
               "nameZh": "理解元素含义",
               "subEn": "Fire = attack and flair; earth = structure and stamina; air = passing and tactics; water = intuition and flow",
-              "subZh": "火=进攻与天赋；土=结构与耐力；风=传控与战术；水=直觉与流动"
+              "subZh": "火=进攻与灵光；土=结构与耐力；风=传球与战术；水=直觉与流动"
             },
             {
               "nameEn": "Add Your Modality",
-              "nameZh": "加入形态层",
+              "nameZh": "加上你的模态",
               "subEn": "Cardinal signs start moves, fixed signs hold shape, mutable signs adapt mid-play",
-              "subZh": "开创星座主动出击，固定星座稳守阵型，变动星座随机应变"
+              "subZh": "基本星座发起进攻，固定星座守住阵型，变动星座中途应变"
             },
             {
               "nameEn": "Match a Style",
-              "nameZh": "匹配球队风格",
+              "nameZh": "对应踢球风格",
               "subEn": "Map yourself to a style of team rather than a forecast for any nation",
-              "subZh": "将自己对应一种球队风格，而非预测某支具体球队"
+              "subZh": "把自己对应到一种球队风格，而不是给哪个国家的预测"
             },
             {
               "nameEn": "Keep It Light",
-              "nameZh": "保持轻松心态",
+              "nameZh": "放轻松",
               "subEn": "This is a metaphor for temperament, not a scouting report",
-              "subZh": "这是气质的隐喻，不是球探报告"
+              "subZh": "用星座看世界杯球队是气质的比喻，不是球探报告"
             }
           ]
         },
         {
           "kind": "compare",
           "afterHeadingEn": "## The Zodiac-Team Lens at a Glance",
+          "afterHeadingZh": "## 星座球队透镜一览表",
           "titleEn": "The Four Elements as Playing Styles",
           "titleZh": "四大元素与球风对照",
           "altEn": "Comparison of fire, earth, and water zodiac elements as World Cup 2026 playing styles with representative signs and traits",
@@ -74,8 +71,8 @@
               ],
               "linesZh": [
                 "白羊、狮子、射手",
-                "偏好进攻、冒险与华丽发挥",
-                "追逐机会、充满娱乐性的球队"
+                "偏爱进攻、冒险与灵光",
+                "扑向空当、踢得好看的队"
               ]
             },
             {
@@ -88,8 +85,8 @@
               ],
               "linesZh": [
                 "金牛、处女、摩羯",
-                "偏好结构与耐力",
-                "保持阵型、以坚韧取胜的球队"
+                "偏爱结构与耐力",
+                "守住阵型、磨出结果的队"
               ]
             },
             {
@@ -102,8 +99,8 @@
               ],
               "linesZh": [
                 "巨蟹、天蝎、双鱼",
-                "偏好直觉与流动",
-                "感知时机、随感觉变化的打法"
+                "偏爱直觉与流动",
+                "读得懂当下、随感觉切换的踢法"
               ]
             }
           ]
