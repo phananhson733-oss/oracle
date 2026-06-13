@@ -34,41 +34,41 @@
   <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
   <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
   <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
-  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Flat Label</text>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Flat Sun-Sign Label</text>
   <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Names the sign only</text>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">One-word trait: quirky, aloof</text>
   <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">No ruler context</text>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">No ruler or timing signal</text>
   <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Fixed verdict</text>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Fixed character verdict</text>
   <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Comfort over precision</text>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Comfortable but shallow</text>
   <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
   <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
   <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
   <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
-  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Structural Reading</text>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Structural Reading (This Method)</text>
   <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads Sun + Saturn ruler</text>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sun + Saturn ruler structure</text>
   <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Legacy wiring explained</text>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Legacy and discipline wired together</text>
   <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Pressure pattern, not destiny</text>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Saturn transits as timing signal</text>
   <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Precise and open-ended</text>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Pressure pattern, not a destiny</text>
   <path d="M 380 477.5 L 380.7 481.3 L 384.5 482 L 380.7 482.7 L 380 486.5 L 379.3 482.7 L 375.5 482 L 379.3 481.3 Z" fill="#d4af6a" opacity="0.65"/>
   <rect x="46" y="495" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
   <rect x="46" y="495" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
   <path d="M 380 493.1 L 380.5 496.0 L 383.4 496.5 L 380.5 497.0 L 380 499.9 L 379.5 497.0 L 376.6 496.5 L 379.5 496.0 Z" fill="#f6e6bf" opacity="0.7"/>
-  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Transit Forecast</text>
+  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Results-Driven Prediction</text>
   <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Times events precisely</text>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Names a champion or outcome</text>
   <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Needs confirmed birth time</text>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Stands or falls on the result</text>
   <path d="M 70 611.8 L 70.5 614.5 L 73.2 615 L 70.5 615.5 L 70 618.2 L 69.5 615.5 L 66.8 615 L 69.5 614.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Claims results</text>
+  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Loses credibility after the score</text>
   <path d="M 70 640.8 L 70.5 643.5 L 73.2 644 L 70.5 644.5 L 70 647.2 L 69.5 644.5 L 66.8 644 L 69.5 643.5 Z" fill="#d4af6a" opacity="0.8"/>
-  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Risks false certainty</text>
+  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">No chart can supply a scoreline</text>
   <path d="M 202.22749999999988 672.4 L 202.6 674.6 L 204.8 675 L 202.6 675.4 L 202.22749999999988 677.6 L 201.8 675.4 L 199.6 675 L 201.8 674.6 Z" fill="#d4af6a" opacity="0.5"/>
   <text x="380" y="679" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
   <path d="M 557.7725000000002 672.4 L 558.2 674.6 L 560.4 675 L 558.2 675.4 L 557.7725000000002 677.6 L 557.4 675.4 L 555.2 675 L 557.4 674.6 Z" fill="#d4af6a" opacity="0.5"/>
