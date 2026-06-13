@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const virgoRisingEn: WikiArticle = {
   slug: "virgo-rising",
+  image: "/images/blog/virgo-rising.jpg",
+  image_alt: "Pre-dawn indigo landscape with teal-gold constellation lines, an owl on a stone wall watching as soft gold light breaks the horizon",
   title: "Virgo Rising, Decoded: Why a Mercury-Ruled Ascendant Reads as Quietly Sharp, Not Cold",
   description: "The Virgo Ascendant is the rising sign that places Virgo on the eastern horizon at birth",
   authorId: "julian-thorne",
@@ -43,6 +45,9 @@ Against the Sun sign, the Ascendant trades inner identity for outward interface.
 
 This separation is where careful astrology lives. Liz Greene treated the chart as a language of symbol rather than a fixed script, and Robert Hand framed each placement as a field of meaning rather than a guaranteed outcome. Read that way, the Virgo Ascendant is not a sentence handed down about who someone is, but a vocabulary for how their approach to the world tends to show up first — analytical, useful, and more socially agile than the label admits.
 
+
+![Three-column comparison of the real Virgo Ascendant versus the perfectionist stereotype and the Sun sign distinction](/images/blog/virgo-rising-i1-en.svg)
+
 ## How to Read the Virgo Ascendant in a Birth Chart
 
 You can read a Virgo Ascendant for yourself with a few honest steps, and the method holds for any ascendant once you know to start from the chart ruler.
@@ -52,6 +57,9 @@ You can read a Virgo Ascendant for yourself with a few honest steps, and the met
 3. Note the prominence of the 6th house theme: routine, health, work, and service tend to carry real weight in daily life.
 4. Watch the first impression in practice — a noticing quality, a tendency to spot misalignments early, often before commenting.
 5. Read the rest of the chart for contrast, so the practical Virgo doorway is not mistaken for the whole person behind it.
+
+
+![A five-step sequence showing how to read the Virgo Ascendant from confirming the 1st-house cusp to reading the full chart for contrast](/images/blog/virgo-rising-i0-en.svg)
 
 ## Common Misreadings
 

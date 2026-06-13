@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "dhanishta-nakshatra": {
+      "hero": {
+        "prompt": "Vast dark cosmic plain stretching to a horizon where rhythmic concentric golden light-rings pulse outward from a single luminous origin point, illuminating twin zones of landscape — dense structured amber rock formations to the left, soft ethereal glowing networks of stars to the right — teal nebula mist flowing overhead between them, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Golden rhythmic wave-rings pulse from a luminous horizon across a dark cosmic plain bridging two glowing realms in deep indigo sky",
+        "altZh": "金色节奏波纹从深靛蓝宇宙平原的发光地平线向外扩散，连接两个发光领域"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Dhanishta in a Chart",
+          "titleEn": "5 Steps to Reading Dhanishta in Your Birth Chart",
+          "titleZh": "解读星盘中陀罗伊斯塔的5个步骤",
+          "altEn": "Five-step sequence for reading Dhanishta nakshatra placement in a birth chart",
+          "altZh": "解读出生星盘中陀罗伊斯塔位置的五步流程",
+          "items": [
+            {
+              "nameEn": "Find the Exact Degree",
+              "nameZh": "找到精确度数",
+              "subEn": "Locate the placement's exact degree to see whether it falls in the Capricorn or Aquarius portion of Dhanishta",
+              "subZh": "找到星位的精确度数，判断是落在陀罗伊斯塔的摩羯座部分还是水瓶座部分"
+            },
+            {
+              "nameEn": "Read by Sign Portion",
+              "nameZh": "按星座部分解读",
+              "subEn": "Capricorn degrees: Mars-driven discipline, ambition, and structure; Aquarian degrees: community, networks, and coordination",
+              "subZh": "摩羯座度数：火星驱动的纪律、野心与结构；水瓶座度数：社群、网络与协调"
+            },
+            {
+              "nameEn": "Reframe Wealth as Rhythm",
+              "nameZh": "将财富重新定义为节奏",
+              "subEn": "Treat wealth as synchronization with cycles and timing — not a literal prediction of money",
+              "subZh": "将财富理解为与周期和时机同步，而非对金钱的字面预测"
+            },
+            {
+              "nameEn": "Notice the Damaru Drum Theme",
+              "nameZh": "关注达玛鲁鼓的主题",
+              "subEn": "Ask: where in life does this person keep time, set tempo, or coordinate a group?",
+              "subZh": "问：这个人在生活中哪里掌控节奏、设定节拍或协调群体？"
+            },
+            {
+              "nameEn": "Credit Collective Abundance",
+              "nameZh": "认可集体丰盈",
+              "subEn": "Read the Ashta Vasus as harmony within a whole — prosperity as shared coordination, not individual accumulation",
+              "subZh": "将八神读作整体中的和谐——繁荣是共同协调，而非个人积累"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Dhanishta vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Capricorn Degrees vs. Aquarius Degrees in Dhanishta",
+          "titleZh": "陀罗伊斯塔中摩羯座度数与水瓶座度数对比",
+          "altEn": "Side-by-side comparison of Dhanishta's Capricorn and Aquarius degree portions and their distinct themes",
+          "altZh": "陀罗伊斯塔摩羯座与水瓶座度数部分的主题对比",
+          "columns": [
+            {
+              "nameEn": "Capricorn Degrees",
+              "nameZh": "摩羯座度数",
+              "linesEn": [
+                "Mars-driven discipline",
+                "Ambition and structure",
+                "Individual drive and stamina",
+                "Competitive timing"
+              ],
+              "linesZh": [
+                "火星驱动的纪律",
+                "野心与结构",
+                "个人驱动与耐力",
+                "竞争性时机"
+              ]
+            },
+            {
+              "nameEn": "Aquarius Degrees",
+              "nameZh": "水瓶座度数",
+              "linesEn": [
+                "Community and networks",
+                "Shared coordination",
+                "Collective rhythm and timing",
+                "Group harmony"
+              ],
+              "linesZh": [
+                "社群与网络",
+                "共同协调",
+                "集体节奏与时机",
+                "群体和谐"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

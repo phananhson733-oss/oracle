@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const moonRisingSignEn: WikiArticle = {
   slug: "moon-rising-sign",
+  image: "/images/blog/moon-rising-sign.jpg",
+  image_alt: "Moonlit seascape with glowing tidal currents beneath a still surface, representing inner emotional depths and outer first impressions",
   title: "Moon and Rising Sign: How Your Inner Tides and Outer Mask Work Together",
   description: "The moon rising sign question is really two questions, because the Moon and Ascendant are two different points in a birth chart: the Moon sign describes",
   authorId: "julian-thorne",
@@ -54,6 +56,9 @@ You can read your own Moon and Ascendant in a few honest steps, and the method i
 4. Hold the two together and notice the gap — a more guarded Ascendant over a tender Moon, or an open rising sign over a private one, each tells a different story.
 5. Treat any single "moon rising sign" verdict as a starting prompt, not a conclusion, and let the interaction between the two points do the real explaining.
 
+
+![Five-step guide to reading your Moon sign and rising sign side by side in a birth chart](/images/blog/moon-rising-sign-i0-en.svg)
+
 ## Common Misreadings
 
 1. **"Moon rising" is one sign.** It is two placements — the Moon sign and the rising sign — and reading them as a single label erases the very gap between inner self and outer mask that makes the pairing worth knowing.
@@ -69,6 +74,9 @@ You can read your own Moon and Ascendant in a few honest steps, and the method i
 | Rising sign (Ascendant) | Outer personality, appearance, first impression | Outer mask | The manner others meet on first contact |
 | Sun sign | Conscious sense of self and purpose | Core identity | The intentional "I" you steer toward |
 | Moon-rising interaction | The gap between inner needs and outer presentation | Both at once | Where felt self and first impression diverge |
+
+
+![Comparison of Moon sign as inner self versus rising sign as outer mask, showing what each placement describes](/images/blog/moon-rising-sign-i1-en.svg)
 
 ## Common Questions About the Moon and Ascendant
 

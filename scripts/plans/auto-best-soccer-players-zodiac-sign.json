@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -10,6 +10,11 @@
   },
   "articles": {
     "best-soccer-players-zodiac-sign": {
+      "hero": {
+        "prompt": "A vast indigo night landscape: in the foreground, a luminous soccer pitch glows with geometric gold light, its grid lines radiating like a calendar — orderly, measurable, earthbound; high above, a sweeping star-canopy traces soft constellation shapes in pale teal and gold, yet the earthly grid and the celestial patterns diverge across the open horizon, two systems of meaning lit but uncoupled in one seamless panoramic sky; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Soccer pitch glowing under a starry indigo sky, earthly calendar grid and celestial constellations diverging across the horizon",
+        "altZh": "深蓝夜空下光格球场与星座图案在地平线上各行其道的全景夜景"
+      },
       "inline": [
         {
           "kind": "sequence",

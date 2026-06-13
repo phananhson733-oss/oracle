@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const blueNodeAstrologyEn: WikiArticle = {
   slug: "blue-node-astrology",
+  image: "/images/blog/blue-node-astrology.jpg",
+  image_alt: "Two orbital arcs crossing in a vast indigo night sky, their glowing intersection marking the North Node as a single luminous point",
   title: "Why the Blue Node in Your Chart Is Just a Color, Not a New Placement",
   description: "The Blue-Node Convention is the simple fact that most birth-chart software draws the North Node as a blue symbol",
   authorId: "julian-thorne",
@@ -43,6 +45,9 @@ Against the North Node itself, the contrast is sharper still. The North Node is 
 
 A subtler trade-off sits inside the placement, between the True Node and the Mean Node. Both are versions of the same North Node, and software may show either in blue. The True Node tracks the node's actual, slightly wobbling position, which drifts and even appears to move backward over short spans; the Mean Node uses a smoothed average that moves steadily. Choosing one over the other changes the node's degree by a small amount, occasionally enough to shift its sign near a cusp — a genuine interpretive choice, unlike the color, which changes nothing at all.
 
+
+![Side-by-side comparison of True Node and Mean Node showing motion type, degree stability, and interpretive impact](/images/blog/blue-node-astrology-i1-en.svg)
+
 ## How to Read the Blue-Node Convention in Your Own Chart
 
 You can settle the blue-node question in your own chart with a few honest steps, and the same method works no matter which program drew it.
@@ -52,6 +57,9 @@ You can settle the blue-node question in your own chart with a few honest steps,
 3. Note whether your software is set to True Node or Mean Node, usually shown in the settings, so you know which version of the degree you are reading.
 4. Open the same birth data in a second program and watch the color change while the placement stays put — proof the blue was never the meaning.
 5. Read the node by its sign and house, as covered in the [guide to finding the North Node sign and house](/en/wiki/astrology-houses), and set the color aside for good.
+
+
+![Five-step sequence for identifying the blue node as the North Node in any birth chart software](/images/blog/blue-node-astrology-i0-en.svg)
 
 ## Common Misreadings
 

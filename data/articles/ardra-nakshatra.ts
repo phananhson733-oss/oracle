@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const ardraNakshatraEn: WikiArticle = {
   slug: "ardra-nakshatra",
+  image: "/images/blog/ardra-nakshatra.jpg",
+  image_alt: "Ardra nakshatra storm-to-renewal landscape with parting indigo clouds and golden dawn light",
   title: "Ardra Nakshatra Meaning, From Storm to Renewal in Gemini",
   description: "Ardra is the sixth nakshatra of the Vedic zodiac, ruled by Rahu and presided over by the storm-god Rudra",
   authorId: "aditi-sharma",
@@ -53,6 +55,9 @@ You can locate the ardra nakshatra by finding the exact degree and sign of the m
 4. Read intensity as the engine, not the symptom — the diamond is formed under pressure, and that is the design, not the malfunction.
 5. Credit Rahu for the amplification: the same Gemini mind runs hotter and wider here, which is the source of both the overwhelm and the insight.
 
+
+![Five-step sequence for reading Ardra nakshatra placement in a Vedic birth chart](/images/blog/ardra-nakshatra-i0-en.svg)
+
 ## Common Misreadings
 
 The most persistent misreadings of the ardra nakshatra trace to reading its symbols literally instead of structurally, almost always treating the teardrop as the whole story.
@@ -61,6 +66,9 @@ The most persistent misreadings of the ardra nakshatra trace to reading its symb
 2. **Rahu rulership makes Ardra unlucky.** Rahu amplifies and intensifies; it does not condemn. The same amplification that makes Gemini's mind feel overloaded is what gives an Ardra placement its exceptional capacity for insight under pressure.
 3. **Rudra is only destructive.** In the Vedic frame, Rudra's fierceness dissolves the stagnant so the living can emerge. The destruction is functional and precedes renewal — it is the storm that ends a drought, not chaos for its own sake.
 4. **Intensity is a problem to fix.** The emotional and intellectual intensity is the gateway, not the obstacle. The Ardra cycle reaches clarity through pressure, so trying to eliminate the intensity would also eliminate the breakthrough it produces.
+
+
+![Comparison of four common Ardra nakshatra misreadings against their accurate interpretations](/images/blog/ardra-nakshatra-i1-en.svg)
 
 ## Ardra Nakshatra at a Glance
 

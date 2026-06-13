@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const worldCup2026JuneAstrologyEn: WikiArticle = {
   slug: "world-cup-2026-june-astrology",
+  image: "/images/blog/world-cup-2026-june-astrology.jpg",
+  image_alt: "June 2026 tournament sky — Jupiter in Cancer warmth arcing toward Leo spotlight, Saturn in Aries steadying the whole month",
   title: "Reading World Cup 2026 June Astrology Over the Opening Rounds",
   description: "The June 2026 tournament sky is the set of transits and lunations overhead during the World Cup's opening month, led by Jupiter exalted in Cancer.",
   authorId: "elena-vane",
@@ -118,6 +120,8 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 
 export const worldCup2026JuneAstrologyZh: WikiArticle = {
   slug: "world-cup-2026-june-astrology",
+  image: "/images/blog/world-cup-2026-june-astrology.jpg",
+  image_alt: "2026年6月赛事天象——木星巨蟹的集体暖意弧向狮子座高光，土星白羊贯穿全月稳住底色",
   title: "2026世界杯六月占星：读开赛初的那片天空",
   description: "2026年6月赛事天象，指的是世界杯开赛首月头顶的过运与朔望，由旺相于巨蟹座的木星领衔。所谓2026世界杯6月占星日历，是去读小组赛期间真实的行星日历，而不是去猜哪支球队夺冠。它不是哪个赛果模型，而是一段时间窗口的描述：哪几天天空偏暖、哪几天底色偏紧、哪两次月相分别标记重启与收束。",
   authorId: "elena-vane",
@@ -166,6 +170,9 @@ export const worldCup2026JuneAstrologyZh: WikiArticle = {
 4. **用好两次月相。** 把这个月的新月当作重启点、满月当作收束点，赛事里如此，你自己的计划里也如此。
 5. **读成情绪而非定数。** 每个窗口都是一种待你迎接的气氛，不是一个枯等的固定结局。
 
+
+![解读2026年6月行星过运的五个步骤：巨蟹木星、狮子换座、白羊土星、新月、满月](/images/blog/world-cup-2026-june-astrology-i0-zh.svg)
+
 ## 常见误读
 
 围绕六月行星过运，浅层内容常踩这几个坑：
@@ -183,6 +190,9 @@ export const worldCup2026JuneAstrologyZh: WikiArticle = {
 | 木星进入狮子座 | 把基调挪向高光与个人发挥 | 自6月30日起，落在32强早段/淘汰赛开端 | 故事开始聚焦突出的个体 |
 | 土星在白羊座 | 添上一层对胆识的稳定考验 | 贯穿整个月 | 耐心与沉着读作那种安静的优势 |
 | 六月两次月相 | 标记重启与收束的节点 | 新月与满月窗口 | 势头在这个月的两次月相前后转向 |
+
+
+![2026年6月行星过运时间线：土星贯穿全月、巨蟹木星覆盖小组赛、新月、满月、木星入狮子](/images/blog/world-cup-2026-june-astrology-i1-zh.svg)
 
 ## 关于2026年6月赛事天象的常见问题
 

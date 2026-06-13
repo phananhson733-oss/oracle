@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="解读星盘中蓝色节点的5个步骤">
+  <defs>
+    <linearGradient id="bluenodeastrology0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="bluenodeastrology0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="bluenodeastrology0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bluenodeastrology0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bluenodeastrology0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bluenodeastrology0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#bluenodeastrology0zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#bluenodeastrology0zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#bluenodeastrology0zh-neb2)"/>
+  <circle cx="384.6" cy="314.1" r="1.30" fill="#cfc8ea" opacity="0.29"/><circle cx="639.5" cy="243.5" r="0.55" fill="#cfc8ea" opacity="0.25"/><circle cx="167.9" cy="51.0" r="0.92" fill="#cfc8ea" opacity="0.51"/><circle cx="60.2" cy="44.8" r="0.84" fill="#cfc8ea" opacity="0.15"/><circle cx="75.2" cy="294.5" r="0.68" fill="#cfc8ea" opacity="0.21"/><circle cx="628.3" cy="380.1" r="1.69" fill="#cfc8ea" opacity="0.29"/><circle cx="611.7" cy="175.8" r="0.85" fill="#cfc8ea" opacity="0.44"/><circle cx="48.6" cy="288.0" r="0.98" fill="#cfc8ea" opacity="0.32"/><circle cx="366.0" cy="209.6" r="0.56" fill="#cfc8ea" opacity="0.40"/><circle cx="578.8" cy="74.2" r="1.55" fill="#cfc8ea" opacity="0.48"/><circle cx="72.2" cy="142.2" r="1.55" fill="#cfc8ea" opacity="0.51"/><circle cx="12.0" cy="299.5" r="0.79" fill="#cfc8ea" opacity="0.38"/><circle cx="25.5" cy="400.8" r="0.64" fill="#cfc8ea" opacity="0.39"/><circle cx="590.1" cy="98.6" r="0.69" fill="#cfc8ea" opacity="0.43"/><circle cx="520.0" cy="186.4" r="0.88" fill="#cfc8ea" opacity="0.28"/><circle cx="639.1" cy="345.4" r="0.71" fill="#cfc8ea" opacity="0.45"/><circle cx="106.0" cy="294.7" r="1.25" fill="#cfc8ea" opacity="0.41"/><circle cx="302.3" cy="275.7" r="0.90" fill="#cfc8ea" opacity="0.48"/><circle cx="480.4" cy="390.3" r="0.92" fill="#cfc8ea" opacity="0.45"/><circle cx="85.8" cy="37.9" r="1.22" fill="#cfc8ea" opacity="0.15"/><circle cx="232.7" cy="418.2" r="0.93" fill="#cfc8ea" opacity="0.53"/><circle cx="183.6" cy="16.9" r="1.08" fill="#cfc8ea" opacity="0.21"/><circle cx="700.3" cy="397.5" r="1.29" fill="#cfc8ea" opacity="0.16"/><circle cx="330.6" cy="218.0" r="0.64" fill="#cfc8ea" opacity="0.29"/><circle cx="229.7" cy="226.8" r="1.07" fill="#cfc8ea" opacity="0.28"/><circle cx="123.4" cy="60.6" r="0.45" fill="#cfc8ea" opacity="0.53"/><circle cx="22.6" cy="173.8" r="1.07" fill="#cfc8ea" opacity="0.39"/><circle cx="102.2" cy="58.6" r="1.44" fill="#cfc8ea" opacity="0.39"/><circle cx="424.4" cy="85.0" r="0.77" fill="#cfc8ea" opacity="0.24"/><circle cx="220.3" cy="226.6" r="1.60" fill="#cfc8ea" opacity="0.20"/><circle cx="295.7" cy="385.4" r="1.23" fill="#cfc8ea" opacity="0.28"/><circle cx="701.4" cy="411.2" r="1.00" fill="#cfc8ea" opacity="0.36"/><circle cx="43.4" cy="299.7" r="0.56" fill="#cfc8ea" opacity="0.40"/><circle cx="739.3" cy="375.2" r="1.00" fill="#cfc8ea" opacity="0.43"/><circle cx="317.4" cy="254.8" r="1.03" fill="#cfc8ea" opacity="0.51"/><circle cx="442.4" cy="391.3" r="1.24" fill="#cfc8ea" opacity="0.33"/><circle cx="657.8" cy="24.9" r="1.48" fill="#cfc8ea" opacity="0.45"/><path d="M 605.0018660128117 406.9 L 605.4 409.1 L 607.5 409.47719247522764 L 605.4 409.9 L 605.0018660128117 412.0 L 604.6 409.9 L 602.5 409.47719247522764 L 604.6 409.1 Z" fill="#f6e6bf" opacity="0.770090554910712"/><path d="M 141.53909768909216 123.2 L 142.1 126.1 L 144.9 126.62027506134473 L 142.1 127.2 L 141.53909768909216 130.0 L 141.0 127.2 L 138.2 126.62027506134473 L 141.0 126.1 Z" fill="#f6e6bf" opacity="0.7596196448197587"/><path d="M 161.876642242074 318.1 L 162.5 321.4 L 165.8 322.0812037817668 L 162.5 322.7 L 161.876642242074 326.0 L 161.2 322.7 L 157.9 322.0812037817668 L 161.2 321.4 Z" fill="#f6e6bf" opacity="0.5415758379502222"/><path d="M 240.42901802808046 293.2 L 240.9 295.6 L 243.4 296.104015549412 L 240.9 296.6 L 240.42901802808046 299.0 L 240.0 296.6 L 237.5 296.104015549412 L 240.0 295.6 Z" fill="#f6e6bf" opacity="0.6886810686206445"/><path d="M 323.1339062452316 44.8 L 323.6 47.5 L 326.4 48.01907006162219 L 323.6 48.5 L 323.1339062452316 51.2 L 322.6 48.5 L 319.9 48.01907006162219 L 322.6 47.5 Z" fill="#f6e6bf" opacity="0.7971111743478104"/><path d="M 12.0 299.5 L 480.4 390.3 L 424.4 85.0 L 220.3 226.6 L 701.4 411.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">解读星盘中蓝色节点的5个步骤</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#bluenodeastrology0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#bluenodeastrology0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#bluenodeastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#bluenodeastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">查看图例</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">找到蓝色符号，确认图例将其标注为北交点</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#bluenodeastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#bluenodeastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">确认轴线</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">确认南交点位于正对面180°处，两者构成同一条轴线</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#bluenodeastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#bluenodeastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">查看节点模式</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">查看软件设置，了解星盘使用真实节点还是平均节点</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#bluenodeastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#bluenodeastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">跨软件对比</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">在另一软件中打开相同数据，颜色改变而位置不变</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#bluenodeastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#bluenodeastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">读取星座与宫位</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">按星座与宫位解读节点，彻底放下显示颜色的执念</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

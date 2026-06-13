@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const bestSoccerPlayersZodiacSignEn: WikiArticle = {
   slug: "best-soccer-players-zodiac-sign",
+  image: "/images/blog/best-soccer-players-zodiac-sign.jpg",
+  image_alt: "Soccer pitch glowing under a starry indigo sky, earthly calendar grid and celestial constellations diverging across the horizon",
   title: "Best Soccer Players' Zodiac Sign: What the Birth-Date Data Actually Shows",
   description: "The best-player zodiac question is the search for a single zodiac sign that produces the best soccer players",
   authorId: "marcus-orion",
@@ -119,6 +121,8 @@ Yes — as symbolism, not statistics. Read the sign for fun and personality, but
 
 export const bestSoccerPlayersZodiacSignZh: WikiArticle = {
   slug: "best-soccer-players-zodiac-sign",
+  image: "/images/blog/best-soccer-players-zodiac-sign.jpg",
+  image_alt: "深蓝夜空下光格球场与星座图案在地平线上各行其道的全景夜景",
   title: "足球运动员星座背后，真正在说话的其实是日历",
   description: "顶尖球员星座论说的是球员生日扎堆是真的，但星座导致出色不是真的。很多人查足球运动员星座，期待找出一个专出好球员的星座，可精英队里的生日规律来自日历，而不是星空。把它当成一道数据题、而不是一份运势来读，2026 世界杯占星主题支柱页这一类内容才能既保留星座的趣味、又不把数字读歪。",
   authorId: "marcus-orion",
@@ -166,6 +170,9 @@ export const bestSoccerPlayersZodiacSignZh: WikiArticle = {
 4. 留意截止日一变，"占优"的星座就变，这一点把星座排除在外。
 5. 把任何单一星座论都当作日历产物，而不是一份预言。
 
+
+![用生日数据和青训截止日检验足球运动员星座说法的五步流程](/images/blog/best-soccer-players-zodiac-sign-i0-zh.svg)
+
 ## 常见误读
 
 1. **某个星座就是天生踢得更好。** 扎堆是相对年龄效应；星座只是贴在出生月份上的标签，不是天赋的成因，换任何一套读月份的系统，同样这几个月都会显得"走运"。
@@ -181,6 +188,9 @@ export const bestSoccerPlayersZodiacSignZh: WikiArticle = {
 | 截止日依赖 | "走运"的月份随截止日移动 | 截止日之后那个季度 | 一国改规则，受青睐的月份就跟着挪 |
 | 星座作为标签 | 把出生月份映射成星座，而非成因 | 覆盖被高估月份的那个星座 | 某星座显得"走运"只是因为日历 |
 | 无星座信号 | 数据里没有星座导致天赋 | 控制截止日后，任何星座都一样 | 校正年龄段后规律就消失了 |
+
+
+![精英足球出生日期数据中相对年龄效应、截止日依赖和星座标签三个层次的对比](/images/blog/best-soccer-players-zodiac-sign-i1-zh.svg)
 
 ## 关于顶尖球员星座论的常见问题
 

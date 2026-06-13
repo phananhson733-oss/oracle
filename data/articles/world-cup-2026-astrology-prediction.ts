@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const worldCup2026AstrologyPredictionEn: WikiArticle = {
   slug: "world-cup-2026-astrology-prediction",
+  image: "/images/blog/world-cup-2026-astrology-prediction.jpg",
+  image_alt: "Jupiter in Cancer rising over a dark indigo sea, symbolizing the 2026 World Cup astrology timing window",
   title: "Reading the World Cup 2026 Astrology Prediction Through Jupiter in Cancer",
   description: "World Cup 2026 astrology is a mundane reading of how 2026's planetary transits favor each host nation's chart.",
   authorId: "julian-thorne",
@@ -118,6 +120,8 @@ The June 11 chart acts as the tournament's symbolic birth moment, framing the op
 
 export const worldCup2026AstrologyPredictionZh: WikiArticle = {
   slug: "world-cup-2026-astrology-prediction",
+  image: "/images/blog/world-cup-2026-astrology-prediction.jpg",
+  image_alt: "巨蟹座木星从靛蓝海面升起，象征2026世界杯占星的时机窗口",
   title: "透过巨蟹座木星读懂 2026 世界杯占星预测",
   description: "2026世界杯占星是一种用 2026 年行星过运来读各东道主国家星盘的世俗占星方法。它不把赛事当成\"揭晓冠军\"的占卜，而是当成一项时机研究：这一年的天象会激活哪些国家星盘、在什么时候激活。",
   authorId: "julian-thorne",

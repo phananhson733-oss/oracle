@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -10,6 +10,11 @@
   },
   "articles": {
     "mbappe-birth-chart": {
+      "hero": {
+        "prompt": "A colossal luminous golden orb drifting slowly across a vast indigo night plain toward a warm roiling amber-and-copper nebula on the far horizon, its long gold light path mirrored in a still dark lake below, the sky shifting from deep indigo overhead to a faint fire-glow where the orb approaches the nebula, evoking the grand moment of celestial alignment and expanding visibility across an open cosmos — deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A golden orb drifts toward a fiery nebula across an indigo night plain, evoking Jupiter entering Leo's fire family.",
+        "altZh": "一颗金色星球在靛蓝夜野上漂向火焰星云，寓意木星过运进入狮子座火象家族"
+      },
       "inline": [
         {
           "kind": "compare",
@@ -25,14 +30,14 @@
               "nameZh": "逐星座侧写",
               "linesEn": [
                 "Lists trait labels by sign",
-                "Easy but gives no timing texture",
                 "Fixed personality verdict",
+                "No timing texture",
                 "Readers get stuck on labels"
               ],
               "linesZh": [
                 "按星座列特质标签",
-                "易读但无时机质感",
                 "固定的性格判词",
+                "无时机质感",
                 "读者卡在标签上"
               ]
             },
@@ -59,13 +64,13 @@
                 "Names a winner outright",
                 "Stakes credibility on accuracy",
                 "Lives or dies on the result",
-                "False thrill over honest windows"
+                "Sacrifices honesty for false thrill"
               ],
               "linesZh": [
                 "直接点名赢家",
-                "以可信度押注于准确性",
+                "以可信度押注准确性",
                 "成败系于结果",
-                "用虚假快感换诚实窗口"
+                "用诚实换虚假快感"
               ]
             }
           ]

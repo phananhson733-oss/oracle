@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "uranus-opposition": {
+      "hero": {
+        "prompt": "Two luminous orbs of electric cerulean and molten amber glow positioned at exact opposite ends of a vast deep-space horizon, their radiance arcing across the void in a bridge of drifting stardust and nebula haze, one orb rising over a darkened cosmic mesa while the other sets at the opposite edge, the full 180-degree span of sky between them alive with soft luminescence, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two luminous orbs in perfect opposition across a deep cosmic landscape, representing the Uranus 180-degree midlife transit",
+        "altZh": "两颗发光天体在深邃宇宙景观中形成精确对冲，象征人生中点的天王星对冲相位"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Uranus Opposition in Your Chart",
+          "titleEn": "5 Steps to Read Your Uranus Opposition",
+          "titleZh": "解读天王星对冲的5个步骤",
+          "altEn": "Five-step guide to reading the Uranus opposition in a birth chart, from locating natal Uranus to interpreting the activated house",
+          "altZh": "解读本命盘天王星对冲的五步指南，从定位本命天王星到诠释被激活宫位",
+          "items": [
+            {
+              "nameEn": "Find Natal Uranus",
+              "nameZh": "定位本命天王星",
+              "subEn": "Note its house and sign — one pole of the polarity",
+              "subZh": "记录其宫位与星座，这是极性的一端"
+            },
+            {
+              "nameEn": "Identify the Opposite House",
+              "nameZh": "找到对面宫位",
+              "subEn": "The domain transiting Uranus will activate",
+              "subZh": "过运天王星将激活的人生领域"
+            },
+            {
+              "nameEn": "Estimate Your Timing",
+              "nameZh": "估算时间窗口",
+              "subEn": "Window around ages 38–44, exact opposition near 40–42",
+              "subZh": "38–44岁区间，精确对冲约在40–42岁"
+            },
+            {
+              "nameEn": "Read the Activated House",
+              "nameZh": "解读被激活的宫位",
+              "subEn": "A life area asking for attention, not a specific forecast",
+              "subZh": "某个人生领域在寻求关注，而非预言具体结果"
+            },
+            {
+              "nameEn": "Stay Process-Oriented",
+              "nameZh": "保持过程导向",
+              "subEn": "The transit unfolds gradually over 1–3 years, not a single event",
+              "subZh": "过运在1–3年内逐渐展开，并非单一事件"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Midlife Uranus Transit at a Glance",
+          "titleEn": "Uranus Opposition: Key Properties at a Glance",
+          "titleZh": "天王星对冲：核心属性一览",
+          "altEn": "Three-column overview of the Uranus opposition covering its geometric basis, orbital timing window, and polarity-integration theme",
+          "altZh": "天王星对冲三维概览：几何基础、时间窗口与极性整合主题",
+          "columns": [
+            {
+              "nameEn": "Geometric Basis",
+              "nameZh": "几何基础",
+              "linesEn": [
+                "Transiting Uranus 180° from natal position",
+                "Once-per-lifetime event",
+                "Exact near ages 40–42"
+              ],
+              "linesZh": [
+                "过运天王星与本命位置形成180度对冲",
+                "一生仅发生一次",
+                "精确时间约在40–42岁"
+              ]
+            },
+            {
+              "nameEn": "Orbital Timing",
+              "nameZh": "运行时间",
+              "linesEn": [
+                "Based on Uranus's ~84-year orbit",
+                "Full window spans ages 38–44",
+                "Active 1–3 years around the exact date"
+              ],
+              "linesZh": [
+                "基于天王星约84年的公转周期",
+                "完整窗口跨越38–44岁",
+                "精确时刻前后持续1–3年"
+              ]
+            },
+            {
+              "nameEn": "What to Integrate",
+              "nameZh": "整合的核心",
+              "linesEn": [
+                "The house opposite natal Uranus is activated",
+                "A suppressed life domain asks for attention",
+                "Authenticity pressure peaks at exact opposition"
+              ],
+              "linesZh": [
+                "本命天王星对面宫位被激活",
+                "被压抑的人生领域寻求关注",
+                "真实性压力在精确对冲时达到顶峰"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

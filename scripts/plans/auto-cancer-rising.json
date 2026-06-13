@@ -1,0 +1,126 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "cancer-rising": {
+      "hero": {
+        "prompt": "A moonlit tidal shore at deep dusk, the full moon casting a rippling silver-gold reflection across dark moving water, waves gently retreating from smooth pebbles, sea mist softening the distant horizon, one unbroken coastal sweep from shadowed cliffside to open ocean, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit tidal shore at dusk with silver-gold reflections on dark water, evoking Cancer Rising's shifting lunar quality",
+        "altZh": "月光下的潮汐海岸，深色海水映出银金色倒影，象征巨蟹座上升随月亮流动的外在特质"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Cancer Ascendant in Your Chart",
+          "titleEn": "5 Steps to Reading Cancer Rising in Any Chart",
+          "titleZh": "解读巨蟹座上升的5个步骤",
+          "altEn": "Five-step guide to Cancer Ascendant: confirm Cancer first house, find Moon sign, locate Moon house, note aspects, read fourth house",
+          "altZh": "巨蟹座上升解读五步骤：确认第一宫星座、月亮星座、月亮宫位、月亮相位、第四宫",
+          "items": [
+            {
+              "nameEn": "Step 1",
+              "nameZh": "第一步",
+              "subEn": "Confirm the first house is in Cancer — this places the Moon as the ruler of the whole chart",
+              "subZh": "确认第一宫在巨蟹座，这使月亮成为整张星盘的命主星"
+            },
+            {
+              "nameEn": "Step 2",
+              "nameZh": "第二步",
+              "subEn": "Find the Moon's sign — it tints the Cancer mask (a Capricorn Moon reads cooler, a Leo Moon reads warmer)",
+              "subZh": "找到月亮所在星座，它为巨蟹面具染色（摩羯月亮更冷静，狮子月亮更温暖）"
+            },
+            {
+              "nameEn": "Step 3",
+              "nameZh": "第三步",
+              "subEn": "Locate the Moon by house — the life area where the protective, caretaking instinct most visibly surfaces",
+              "subZh": "按宫位定位月亮，这是保护性养育本能最明显浮现的生活领域"
+            },
+            {
+              "nameEn": "Step 4",
+              "nameZh": "第四步",
+              "subEn": "Note the Moon's main aspects — tense aspects make the outer self more defensive, soft aspects make it more openly warm",
+              "subZh": "注意月亮的主要相位，紧张相位使外在自我更具防御性，柔和相位则更开放温暖"
+            },
+            {
+              "nameEn": "Step 5",
+              "nameZh": "第五步",
+              "subEn": "Read the fourth house — home and roots quietly feed every public interaction for Cancer rising",
+              "subZh": "解读第四宫，家庭与根基悄然滋养巨蟹座上升的每一次公众互动"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Cancer Ascendant vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Cancer Ascendant vs Cancer Sun vs Other Water Ascendants",
+          "titleZh": "巨蟹座上升 vs 巨蟹座太阳 vs 其他水象上升",
+          "altEn": "Comparison of Cancer Ascendant, Cancer Sun, and Scorpio/Pisces Ascendants by ruler, outer quality, and key trade-offs",
+          "altZh": "巨蟹座上升、巨蟹座太阳与天蝎/双鱼座上升的对比：命主星、外在特质与权衡取舍",
+          "columns": [
+            {
+              "nameEn": "Cancer Ascendant",
+              "nameZh": "巨蟹座上升",
+              "linesEn": [
+                "Ruled by the Moon",
+                "Outer mask, not core identity",
+                "Shifts with mood and setting",
+                "Protective and nurturing style",
+                "Warm yet hard to read at first"
+              ],
+              "linesZh": [
+                "月亮主宰",
+                "外在面具而非核心身份",
+                "随情绪与环境变化",
+                "保护性、养育性外在风格",
+                "温暖但初次难以捉摸"
+              ]
+            },
+            {
+              "nameEn": "Cancer Sun",
+              "nameZh": "巨蟹座太阳",
+              "linesEn": [
+                "Sun is the core identity",
+                "Steady inner emotional center",
+                "Constant beneath the surface",
+                "Same emotional quality all year",
+                "More predictable, stable presence"
+              ],
+              "linesZh": [
+                "太阳是核心身份",
+                "稳定的内在情感中心",
+                "深层恒定不变",
+                "全年相同的情感特质",
+                "更可预测、稳定的存在感"
+              ]
+            },
+            {
+              "nameEn": "Scorpio / Pisces Ascendant",
+              "nameZh": "天蝎座/双鱼座上升",
+              "linesEn": [
+                "Mars/Pluto or Jupiter/Neptune",
+                "Intense-controlled or diffuse-dreamy",
+                "Penetrating or boundless outer manner",
+                "More uniform fixed-planet front",
+                "Steadier but less attuned to the room"
+              ],
+              "linesZh": [
+                "火星/冥王星或木星/海王星主宰",
+                "强烈控制型或扩散梦幻型",
+                "穿透性或无界限的外在表现",
+                "更稳定统一的固定行星风格",
+                "更稳定但对环境的感应略逊"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

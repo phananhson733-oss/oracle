@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="五步找到你的上升星座">
+  <defs>
+    <linearGradient id="ascendantmeaning1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="ascendantmeaning1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="ascendantmeaning1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ascendantmeaning1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ascendantmeaning1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ascendantmeaning1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#ascendantmeaning1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#ascendantmeaning1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#ascendantmeaning1zh-neb2)"/>
+  <circle cx="203.5" cy="206.8" r="0.47" fill="#cfc8ea" opacity="0.48"/><circle cx="530.9" cy="286.5" r="0.88" fill="#cfc8ea" opacity="0.50"/><circle cx="581.6" cy="124.6" r="1.54" fill="#cfc8ea" opacity="0.53"/><circle cx="637.9" cy="91.9" r="0.44" fill="#cfc8ea" opacity="0.51"/><circle cx="314.8" cy="274.8" r="1.56" fill="#cfc8ea" opacity="0.13"/><circle cx="610.7" cy="123.0" r="1.46" fill="#cfc8ea" opacity="0.53"/><circle cx="679.1" cy="223.9" r="0.93" fill="#cfc8ea" opacity="0.52"/><circle cx="112.7" cy="336.5" r="1.00" fill="#cfc8ea" opacity="0.41"/><circle cx="603.8" cy="296.1" r="0.44" fill="#cfc8ea" opacity="0.49"/><circle cx="95.8" cy="100.6" r="1.03" fill="#cfc8ea" opacity="0.12"/><circle cx="568.9" cy="298.7" r="0.76" fill="#cfc8ea" opacity="0.34"/><circle cx="205.1" cy="414.3" r="1.36" fill="#cfc8ea" opacity="0.39"/><circle cx="301.4" cy="48.4" r="1.02" fill="#cfc8ea" opacity="0.48"/><circle cx="137.4" cy="116.1" r="1.49" fill="#cfc8ea" opacity="0.28"/><circle cx="92.2" cy="232.0" r="1.15" fill="#cfc8ea" opacity="0.19"/><circle cx="741.2" cy="301.1" r="0.44" fill="#cfc8ea" opacity="0.42"/><circle cx="488.2" cy="241.0" r="1.36" fill="#cfc8ea" opacity="0.36"/><circle cx="742.6" cy="183.5" r="0.94" fill="#cfc8ea" opacity="0.42"/><circle cx="590.6" cy="354.3" r="0.79" fill="#cfc8ea" opacity="0.23"/><circle cx="542.0" cy="86.2" r="1.17" fill="#cfc8ea" opacity="0.26"/><circle cx="468.9" cy="389.3" r="0.75" fill="#cfc8ea" opacity="0.49"/><circle cx="29.7" cy="151.0" r="1.65" fill="#cfc8ea" opacity="0.21"/><circle cx="102.2" cy="109.8" r="1.33" fill="#cfc8ea" opacity="0.43"/><circle cx="431.4" cy="119.4" r="0.78" fill="#cfc8ea" opacity="0.54"/><circle cx="555.4" cy="249.3" r="1.00" fill="#cfc8ea" opacity="0.41"/><circle cx="728.6" cy="23.9" r="0.77" fill="#cfc8ea" opacity="0.33"/><circle cx="745.1" cy="311.7" r="0.65" fill="#cfc8ea" opacity="0.39"/><circle cx="386.3" cy="348.5" r="1.55" fill="#cfc8ea" opacity="0.31"/><circle cx="231.1" cy="395.8" r="0.49" fill="#cfc8ea" opacity="0.18"/><circle cx="708.8" cy="30.0" r="0.93" fill="#cfc8ea" opacity="0.24"/><circle cx="424.6" cy="326.5" r="1.06" fill="#cfc8ea" opacity="0.21"/><circle cx="454.0" cy="79.6" r="0.72" fill="#cfc8ea" opacity="0.47"/><circle cx="722.7" cy="85.6" r="1.34" fill="#cfc8ea" opacity="0.47"/><circle cx="435.6" cy="77.9" r="1.64" fill="#cfc8ea" opacity="0.43"/><circle cx="63.3" cy="35.9" r="0.86" fill="#cfc8ea" opacity="0.30"/><circle cx="525.2" cy="316.2" r="0.48" fill="#cfc8ea" opacity="0.44"/><circle cx="584.1" cy="54.0" r="1.40" fill="#cfc8ea" opacity="0.35"/><path d="M 92.35759738646448 396.3 L 92.9 399.3 L 96.0 399.8888894924894 L 92.9 400.5 L 92.35759738646448 403.5 L 91.8 400.5 L 88.8 399.8888894924894 L 91.8 399.3 Z" fill="#f6e6bf" opacity="0.6223602165002375"/><path d="M 526.0621582251042 185.6 L 526.5 188.1 L 529.1 188.56007686443627 L 526.5 189.0 L 526.0621582251042 191.6 L 525.6 189.0 L 523.1 188.56007686443627 L 525.6 188.1 Z" fill="#f6e6bf" opacity="0.6716113779228181"/><path d="M 500.50188597105443 221.4 L 500.9 223.6 L 503.1 224.0678553758189 L 500.9 224.5 L 500.50188597105443 226.7 L 500.1 224.5 L 497.9 224.0678553758189 L 500.1 223.6 Z" fill="#f6e6bf" opacity="0.7085629882756621"/><path d="M 450.08198348991573 280.8 L 450.6 283.5 L 453.3 284.0515723414719 L 450.6 284.6 L 450.08198348991573 287.3 L 449.6 284.6 L 446.8 284.0515723414719 L 449.6 283.5 Z" fill="#f6e6bf" opacity="0.621979977330193"/><path d="M 726.008526450023 371.8 L 726.6 375.2 L 730.0 375.80002347100526 L 726.6 376.4 L 726.008526450023 379.8 L 725.4 376.4 L 722.0 375.80002347100526 L 725.4 375.2 Z" fill="#f6e6bf" opacity="0.7966016248334199"/><path d="M 679.1 223.9 L 205.1 414.3 L 29.7 151.0 L 454.0 79.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">五步找到你的上升星座</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#ascendantmeaning1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#ascendantmeaning1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#ascendantmeaning1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#ascendantmeaning1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">获取出生时间</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">尽量精确到分钟；靠近星座边界时每分钟都可能改变上升星座</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#ascendantmeaning1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#ascendantmeaning1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">绘制星盘</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">使用精确时间和地点；上升点位于星盘左侧九点钟位置</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#ascendantmeaning1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#ascendantmeaning1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">记录星座与度数</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">该星座与度数即为你的上升星座和第一宫宫头</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#ascendantmeaning1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#ascendantmeaning1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">追踪宫位</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">从上升点依次标记各宫位宫头；观察每个生活领域的分配</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#ascendantmeaning1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#ascendantmeaning1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">阅读星座与结构</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">上升星座揭示本能与第一印象；宫位则是整张星盘结构意义的关键</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

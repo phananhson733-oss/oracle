@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "rahu-and-ketu-astrology": {
+      "hero": {
+        "prompt": "A vast nocturnal astronomical landscape where two luminous orbital intersection points glow at opposite ends of a wide horizon beneath an infinite sky — one node blazes amber-gold over a dark mountain ridge like an ascending hunger reaching forward, the other dissolves into pale teal mist over a still ocean horizon like memory releasing into stillness, both connected by a faint luminous arc tracing the Moon's curved path across the ecliptic, the sky filled with drifting gold-and-teal nebula light and scattered starfield, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Rahu and Ketu lunar nodes as two glowing intersection points at opposing horizons beneath a deep indigo cosmic sky",
+        "altZh": "罗睺与计都月交点化为两道对立的光芒，在深靛蓝宇宙夜空下分踞两端地平线"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Rahu and Ketu in a Chart",
+          "titleEn": "5 Steps to Read the Nodal Axis",
+          "titleZh": "解读月交轴线的5个步骤",
+          "altEn": "Five-step sequence for reading Rahu and Ketu in a Vedic birth chart",
+          "altZh": "在吠陀星盘中解读罗睺与计都的五步流程图",
+          "items": [
+            {
+              "nameEn": "1. Find Rahu's Sign & House",
+              "nameZh": "1. 找出罗睺所在星座与宫位",
+              "subEn": "The arena of desire and ambition the chart is most drawn to grow into",
+              "subZh": "星盘最渴望成长进入的欲望与抱负领域"
+            },
+            {
+              "nameEn": "2. Read Ketu Directly Opposite",
+              "nameZh": "2. 解读正对面的计都",
+              "subEn": "The south node as the domain of inherited ease the chart can lean on or hide behind",
+              "subZh": "南交点代表天生的从容，可依靠也可躲避其后"
+            },
+            {
+              "nameEn": "3. Treat the Pair as One Axis",
+              "nameZh": "3. 将两者视为一条轴线",
+              "subEn": "Progress means leaning toward Rahu's frontier without abandoning Ketu's hard-won ground",
+              "subZh": "进步意味着靠近罗睺的前沿，同时不放弃计都积累的根基"
+            },
+            {
+              "nameEn": "4. Note Dasha Timing",
+              "nameZh": "4. 留意大运时序",
+              "subEn": "Dasha periods activating either node are among the most consequential phases in Jyotish",
+              "subZh": "激活任一月交点的大运期，是吠陀占星中最重要的预测阶段之一"
+            },
+            {
+              "nameEn": "5. Map onto Zodiac Signs",
+              "nameZh": "5. 对应黄道星座特质",
+              "subEn": "The sign context gives the abstract polarity the texture of an actual sign's qualities",
+              "subZh": "星座背景赋予抽象对立极点以具体星座特质的质感"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Rahu and Ketu at a Glance",
+          "titleEn": "Rahu vs Ketu: Key Properties",
+          "titleZh": "罗睺与计都：核心属性对比",
+          "altEn": "Comparison of Rahu north node and Ketu south node key properties in Vedic astrology",
+          "altZh": "吠陀占星中罗睺（北交点）与计都（南交点）核心属性对比",
+          "columns": [
+            {
+              "nameEn": "Rahu (North Node)",
+              "nameZh": "罗睺（北交点）",
+              "linesEn": [
+                "Shadow planet — no physical body",
+                "Insatiable worldly desire & ambition",
+                "Amplifies the house it occupies",
+                "18-year major Dasha period"
+              ],
+              "linesZh": [
+                "影子行星，无实体",
+                "无尽的世俗欲望与抱负",
+                "放大所在宫位的主题",
+                "主大运周期18年"
+              ]
+            },
+            {
+              "nameEn": "Ketu (South Node)",
+              "nameZh": "计都（南交点）",
+              "linesEn": [
+                "Shadow planet — no physical body",
+                "Past-life mastery, detachment & moksha",
+                "Tends toward release in its house",
+                "7-year major Dasha period"
+              ],
+              "linesZh": [
+                "影子行星，无实体",
+                "前世造诣、超脱与解脱",
+                "在所在宫位趋向放下",
+                "主大运周期7年"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

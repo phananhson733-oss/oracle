@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -10,45 +10,50 @@
   },
   "articles": {
     "vinicius-jr-zodiac-sign": {
+      "hero": {
+        "prompt": "A vast nocturnal seascape where a warm amber-gold glow rises low over calm protective water on the left horizon while a sweeping teal crescent arc climbs toward the open starfield on the right, the two luminous forms meeting in a single unbroken sky above a shoreline that gradually opens into boundless plains, evoking the tension between sheltered depth and adventurous reach of a Cancer Sun and Sagittarius Moon under Jupiter's light, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A nocturnal seascape where warm amber light meets a teal arc over open plains, symbolising Cancer Sun and Sagittarius Moon in tension",
+        "altZh": "夜晚海岸线上，温暖琥珀色光芒与蓝绿色弧光交相辉映，象征维尼修斯星盘中巨蟹太阳与射手月亮的张力"
+      },
       "inline": [
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read Vinicius Jr's Zodiac Sign in Your Chart",
           "afterHeadingZh": "## 如何在你的星盘里识别维尼修斯的星座",
-          "titleEn": "5 Steps to Apply the Cancer Sun / Sagittarius Moon Method",
-          "titleZh": "五步应用巨蟹座太阳与射手座月亮读法",
+          "titleEn": "Five Steps to Read a Cancer Sun, Sagittarius Moon Chart",
+          "titleZh": "五步读懂巨蟹太阳配射手月亮的星盘",
           "altEn": "Five-step method for reading a Cancer Sun Sagittarius Moon chart using transits as timing activators",
-          "altZh": "用过运作时机激活器解读巨蟹太阳射手月亮星盘的五个步骤",
+          "altZh": "五步法：用过运作为时机激活器读取巨蟹太阳射手月亮星盘",
           "items": [
             {
-              "nameEn": "Sun in Cancer",
-              "nameZh": "巨蟹座太阳",
-              "subEn": "Read as a security-and-feeling theme, not a fixed mood",
-              "subZh": "读作安全感与情感主题，而非固定情绪"
+              "nameEn": "Step 1",
+              "nameZh": "第一步",
+              "subEn": "Locate the Sun in Cancer — read it as a security-and-feeling theme, not a fixed mood",
+              "subZh": "找到巨蟹座太阳，读作安全与感受的主题，而非固定情绪"
             },
             {
-              "nameEn": "Moon in Sagittarius",
-              "nameZh": "射手座月亮",
-              "subEn": "Ruled by Jupiter — the appetite for freedom that pulls against Cancer's security",
-              "subZh": "木星守护——拉向自由、对抗巨蟹安全需求的欲望"
+              "nameEn": "Step 2",
+              "nameZh": "第二步",
+              "subEn": "Check the Moon in Sagittarius, ruled by Jupiter, for the appetite that pulls against security",
+              "subZh": "检查射手座月亮（木星主管），看那股与安全感对着拉的胃口"
             },
             {
-              "nameEn": "Jupiter in Cancer 2025-26",
-              "nameZh": "木星2025-26年过运巨蟹",
-              "subEn": "Rules the Moon and lights the Sun's sign — a doubled emphasis on core themes",
-              "subZh": "守护月亮并照亮太阳所在星座，双重强调核心主题"
+              "nameEn": "Step 3",
+              "nameZh": "第三步",
+              "subEn": "Note Jupiter in Cancer 2025–26, ruling the Moon and lighting the Sun's sign, exact contact earlier in the year",
+              "subZh": "留意木星 2025–26 年停留巨蟹，主管月亮并照亮太阳星座，年初已有精确接触"
             },
             {
-              "nameEn": "Vedic Shift to Gemini",
-              "nameZh": "吠陀体系转换至双子",
-              "subEn": "Sidereal zodiac moves the Sun ~24° back to Gemini — treat it as a separate, consistent lens",
-              "subZh": "恒星黄道将太阳后移约24度至双子座——作为独立自洽的体系对待"
+              "nameEn": "Step 4",
+              "nameZh": "第四步",
+              "subEn": "In Vedic astrology the sidereal Sun shifts to Gemini, reframing the entire reading",
+              "subZh": "若用吠陀占星，恒星制太阳挪到双子，整份解读随之重新框定"
             },
             {
-              "nameEn": "Transits as Chapters",
-              "nameZh": "过运即章节",
-              "subEn": "Read each transit as a theme still to be lived, not a fixed outcome to forecast",
-              "subZh": "将每次过运视为有待经历的主题，而非可预测的固定结果"
+              "nameEn": "Step 5",
+              "nameZh": "第五步",
+              "subEn": "Read each transit as a chapter still to be lived, not a fixed outcome",
+              "subZh": "把每一次过运读成还要靠自己去过的章节，而不是已定的结局"
             }
           ]
         },
@@ -56,37 +61,37 @@
           "kind": "compare",
           "afterHeadingEn": "## Vinicius Jr's Zodiac Sign at a Glance",
           "afterHeadingZh": "## 维尼修斯的星座一览",
-          "titleEn": "Western Tropical vs Vedic Sidereal: Two Consistent Lenses",
-          "titleZh": "西方回归黄道与吠陀恒星黄道：两种自洽视角",
+          "titleEn": "Western Tropical vs Vedic Sidereal: Vinicius Jr's Key Placements",
+          "titleZh": "西方回归黄道 vs 吠陀恒星黄道：维尼修斯关键落点对比",
           "altEn": "Side-by-side comparison of Western tropical and Vedic sidereal placements in Vinicius Jr's zodiac sign reading",
-          "altZh": "维尼修斯星座解读中西方回归黄道与吠陀恒星黄道位置的并列对比图",
+          "altZh": "维尼修斯星座：西方回归黄道与吠陀恒星黄道落点对比",
           "columns": [
             {
               "nameEn": "Western Tropical",
               "nameZh": "西方回归黄道",
               "linesEn": [
                 "Cancer Sun — identity tied to feeling and protective instinct",
-                "Sagittarius Moon — Jupiter-ruled appetite for freedom and expressive risk",
-                "Jupiter in Cancer 2025-26 — lights Sun's sign and rules the Moon"
+                "Sagittarius Moon — appetite for freedom and expressive risk, ruled by Jupiter",
+                "Jupiter in Cancer 2025–26 — lights the Sun's sign and rules the Moon"
               ],
               "linesZh": [
-                "巨蟹座太阳——身份认同与情感及保护本能相连",
-                "射手座月亮——木星守护，渴望自由与外放冒险",
-                "木星2025-26年过运巨蟹——照亮太阳星座并守护月亮"
+                "巨蟹太阳——身份系于感受与守护本能",
+                "射手月亮——对自由与外放冒险的胃口，由木星主管",
+                "木星 2025–26 在巨蟹——照亮太阳星座并主管月亮"
               ]
             },
             {
               "nameEn": "Vedic Sidereal",
               "nameZh": "吠陀恒星黄道",
               "linesEn": [
-                "Gemini Sun — same birth data, sidereal zodiac shifts Sun ~24° back",
-                "Moon recalculated in sidereal zodiac",
-                "Same transit method applied through a different zodiac convention"
+                "Gemini Sun — sidereal shift of ~24° moves Sun back from Cancer",
+                "Moon likely recalculates into sidereal Scorpio",
+                "A separate, internally consistent lens — not a contradiction"
               ],
               "linesZh": [
-                "双子座太阳——相同出生数据，恒星黄道将太阳后移约24度",
-                "月亮在恒星黄道中重新计算",
-                "同样的过运方法，通过不同的黄道体系诠释"
+                "双子太阳——恒星黄道后退约 24 度，太阳从巨蟹挪回双子",
+                "月亮重算后可能移至恒星天蝎",
+                "另一套自洽的独立视角，并非矛盾"
               ]
             }
           ]

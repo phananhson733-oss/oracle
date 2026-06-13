@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -10,6 +10,11 @@
   },
   "articles": {
     "world-cup-2026-june-astrology": {
+      "hero": {
+        "prompt": "A vast nocturnal bay where warm golden light ripples outward from the near shore under a canopy of deep stars, the collective glow of the near horizon slowly giving way to a single luminous spotlight cresting at the far shore, while one steady cold brilliant point of light anchors the midsky — an arc from communal warmth to individual flair under a steadying celestial presence, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "June 2026 tournament sky — Jupiter in Cancer warmth arcing toward Leo spotlight, Saturn in Aries steadying the whole month",
+        "altZh": "2026年6月赛事天象——木星巨蟹的集体暖意弧向狮子座高光，土星白羊贯穿全月稳住底色"
+      },
       "inline": [
         {
           "kind": "sequence",

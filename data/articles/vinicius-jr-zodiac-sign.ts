@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const viniciusJrZodiacSignEn: WikiArticle = {
   slug: "vinicius-jr-zodiac-sign",
+  image: "/images/blog/vinicius-jr-zodiac-sign.jpg",
+  image_alt: "A nocturnal seascape where warm amber light meets a teal arc over open plains, symbolising Cancer Sun and Sagittarius Moon in tension",
   title: "Vinicius Jr's Zodiac Sign: A Cancer Sun With a Sagittarius Moon",
   description: "Vinicius Jr's zodiac sign is Cancer in Western astrology, set by his July 12, 2000 birth date and ruled by the Moon.",
   authorId: "aditi-sharma",
@@ -119,6 +121,8 @@ Jupiter spends 2025-26 in Cancer, lighting his Sun's sign and ruling his Moon, w
 
 export const viniciusJrZodiacSignZh: WikiArticle = {
   slug: "vinicius-jr-zodiac-sign",
+  image: "/images/blog/vinicius-jr-zodiac-sign.jpg",
+  image_alt: "夜晚海岸线上，温暖琥珀色光芒与蓝绿色弧光交相辉映，象征维尼修斯星盘中巨蟹太阳与射手月亮的张力",
   title: "维尼修斯星座为什么踢出和梅西不一样的味道，答案在那颗射手月亮",
   description: "维尼修斯星座是巨蟹座，守护星是月亮，由 2000 年 7 月 12 日的出生日期确定。巨蟹座太阳把身份框定在感受、归属与\"护住重要之物\"的本能上，而他那颗射手座月亮又添了一股不安分、想往外冲的情绪劲——这一组配对，远比一个词的标签耐读。",
   authorId: "aditi-sharma",
@@ -167,6 +171,9 @@ export const viniciusJrZodiacSignZh: WikiArticle = {
 4. 若你用吠陀占星，记得恒星制的太阳挪到双子，整份解读会重新框定。
 5. 把每一次过运读成一个还要靠自己去过的章节，而不是一个已定的结局。
 
+
+![五步法：用过运作为时机激活器读取巨蟹太阳射手月亮星盘](/images/blog/vinicius-jr-zodiac-sign-i0-zh.svg)
+
 ## 常见误读
 
 1. **巨蟹太阳就是软、宅。** 巨蟹是一个开创星座，配上一颗射手月亮，它可以读作大胆、外放、很快就去追逐开阔空间。
@@ -182,6 +189,9 @@ export const viniciusJrZodiacSignZh: WikiArticle = {
 | 射手座月亮 | 添上对自由与外放冒险的胃口 | 回归制月亮在射手，由木星主管 | 不安分、爱冒险的情绪节奏 |
 | 木星在巨蟹（2025–26） | 照亮太阳的星座，又主管这颗月亮 | 过运木星在巨蟹，太阳所在的星座 | 一年里对核心主题的双重强调 |
 | 双子座太阳（吠陀） | 在恒星黄道里重新框定太阳 | 恒星制太阳在双子，约后退 24 度 | 把它当作另一套自洽的独立视角 |
+
+
+![维尼修斯星座：西方回归黄道与吠陀恒星黄道落点对比](/images/blog/vinicius-jr-zodiac-sign-i1-zh.svg)
 
 ## 关于维尼修斯星座的常见问题
 

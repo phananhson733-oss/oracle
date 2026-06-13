@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -10,6 +10,11 @@
   },
   "articles": {
     "lamine-yamal-birth-chart": {
+      "hero": {
+        "prompt": "A vast midnight ocean shoreline where a full moon hangs high over dark Cancer waters and a second great orb of amber-gold light crests the far horizon — Jupiter's radiance spreading across slow tidal swells and catching sea-cliff edges in teal-gold shimmer, seafoam glowing at the base of dark rocks, the sky layered with stars, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit ocean shoreline at night with Jupiter's golden glow cresting the horizon over dark Cancer tidal waters",
+        "altZh": "夜晚月光下的海岸线，木星的金色光芒从地平线升起，照亮巨蟹星座的深色潮水"
+      },
       "inline": [
         {
           "kind": "compare",

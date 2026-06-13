@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const revatiNakshatraEn: WikiArticle = {
   slug: "revati-nakshatra",
+  image: "/images/blog/revati-nakshatra.jpg",
+  image_alt: "Cosmic estuary at twilight where golden light-paths cross from ocean depths into a fresh dawn, the zodiac's final threshold glowing with guided passage",
   title: "Revati Nakshatra, the 27th and Final Lunar Mansion, Explained",
   description: "The revati nakshatra is the twenty-seventh and final lunar mansion in Vedic astrology, spanning the closing degrees of Pisces, ruled by Mercury",
   authorId: "aditi-sharma",
@@ -55,6 +57,9 @@ You can interpret the revati nakshatra placement with a few grounded steps, and 
 4. Hold the Pisces backdrop, so compassion and intuition color the Mercurial clarity rather than competing with it.
 5. Treat the placement as a symbol of crossing thresholds, not as a literal forecast about any single life event.
 
+
+![Five-step guide to interpreting a Revati nakshatra placement in a natal chart](/images/blog/revati-nakshatra-i0-en.svg)
+
 ## Common Misreadings
 
 1. **The final nakshatra must feel heavy and Saturnian.** The close of the cycle is Mercury-ruled, so it reads as a guided crossing, not a weighty verdict, and that lightness is the point.
@@ -70,6 +75,9 @@ You can interpret the revati nakshatra placement with a few grounded steps, and 
 | Ruling planet | Mercury brings communication and bridging | Imported into Pisces's compassion | Clarity and connection, not heavy finality |
 | Presiding deity | Pushan, the shepherd-guide | Escort through transitions and passage | Safe crossing, nourishment, protection |
 | Symbolic key | Threshold between end and start | Equinox-adjacent point of the year | Rebirth encoded inside completion |
+
+
+![Four core properties of Revati nakshatra: cycle position, ruling planet, presiding deity, and symbolic key](/images/blog/revati-nakshatra-i1-en.svg)
 
 ## Common Questions About Revati
 

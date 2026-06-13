@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "moon-rising-sign": {
+      "hero": {
+        "prompt": "A moonlit nocturnal seascape at the hour before dawn: a luminous full moon hangs low above an indigo horizon, its warm gold light casting a gleaming path across the mirror-still ocean surface — the visible outer glow that all first encounter — while far beneath that calm reflection, unseen tidal currents of teal and deep gold drift silently through the dark water, the hidden inner world moving independent of the surface calm; two distinct presences — outer light and inner tide — dwelling within one single unbroken landscape that stretches from star-dusted sky down to luminous ocean depth, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit seascape with glowing tidal currents beneath a still surface, representing inner emotional depths and outer first impressions",
+        "altZh": "月光照耀的海景，平静水面下涌动着发光的潮汐，象征内在情感深处与外在第一印象"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Moon and Ascendant in Your Chart",
+          "titleEn": "How to Read Your Moon and Rising Sign",
+          "titleZh": "如何解读你的月亮与上升星座",
+          "altEn": "Five-step guide to reading your Moon sign and rising sign side by side in a birth chart",
+          "altZh": "五步法对照解读出生盘中的月亮星座与上升星座",
+          "items": [
+            {
+              "nameEn": "Find Both Points",
+              "nameZh": "找到两个位置",
+              "subEn": "Locate your Moon sign and rising sign in your birth chart using your exact birth time and place",
+              "subZh": "用精确的出生时间和地点在出生盘中找到月亮星座和上升星座"
+            },
+            {
+              "nameEn": "Read the Moon Sign",
+              "nameZh": "解读月亮星座",
+              "subEn": "Understand what reassures you, what unsettles you, and the instinctive response that arrives before thought",
+              "subZh": "了解什么能让你安心、什么令你不安，以及思考之前本能浮现的反应"
+            },
+            {
+              "nameEn": "Read the Rising Sign",
+              "nameZh": "解读上升星座",
+              "subEn": "Understand your outer interface: the manner, pace, and first impression others meet before reaching your inner world",
+              "subZh": "了解你的外在界面：他人在触及你内心世界之前所遇到的举止、节奏与第一印象"
+            },
+            {
+              "nameEn": "Notice the Gap",
+              "nameZh": "感知两者的落差",
+              "subEn": "Hold both together and observe the distance between your outer interface and your inner emotional needs",
+              "subZh": "将两者结合，观察外在界面与内在情感需求之间的距离"
+            },
+            {
+              "nameEn": "Use It as a Prompt",
+              "nameZh": "以此为起点",
+              "subEn": "Treat any single moon rising sign verdict as a starting prompt, not a conclusion; let the interaction between the two do the explaining",
+              "subZh": "将任何单一判断视为起始提示而非结论，让两个位置之间的互动来真正解释你自己"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Moon and Ascendant at a Glance",
+          "titleEn": "Moon Sign vs Rising Sign at a Glance",
+          "titleZh": "月亮星座与上升星座一览对比",
+          "altEn": "Comparison of Moon sign as inner self versus rising sign as outer mask, showing what each placement describes",
+          "altZh": "月亮星座（内在自我）与上升星座（外在面具）对比，展示每个位置所描述的内容",
+          "columns": [
+            {
+              "nameEn": "Moon Sign",
+              "nameZh": "月亮星座",
+              "linesEn": [
+                "Emotional needs, instincts, inner security",
+                "Inner self",
+                "What soothes or unsettles you before thought",
+                "The private weather felt before others see"
+              ],
+              "linesZh": [
+                "情感需求、本能与内在安全感",
+                "内在自我",
+                "思考之前令你安心或不安的事物",
+                "他人看到之前内心感受的私密天气"
+              ]
+            },
+            {
+              "nameEn": "Rising Sign (Ascendant)",
+              "nameZh": "上升星座（上升点）",
+              "linesEn": [
+                "Outer personality, appearance, first impression",
+                "Outer mask",
+                "The manner others meet on first contact",
+                "The doorway people walk through to reach you"
+              ],
+              "linesZh": [
+                "外在性格、外貌与第一印象",
+                "外在面具",
+                "他人第一次接触时所遇见的举止",
+                "人们进入你内心世界的门廊"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

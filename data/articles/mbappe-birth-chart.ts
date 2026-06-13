@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const mbappeBirthChartEn: WikiArticle = {
   slug: "mbappe-birth-chart",
+  image: "/images/blog/mbappe-birth-chart.jpg",
+  image_alt: "A golden orb drifts toward a fiery nebula across an indigo night plain, evoking Jupiter entering Leo's fire family.",
   title: "Mbappé's Birth Chart: How a Jupiter-Ruled Sagittarius Reads in 2026",
   description: "Mbappé's birth chart is the natal horoscope of Kylian Mbappé, born December 20, 1998, anchored by a Sagittarius Sun.",
   authorId: "marcus-orion",
@@ -119,6 +121,8 @@ Jupiter enters Leo on June 30 and joins the Sun's fire family as a supportive ba
 
 export const mbappeBirthChartZh: WikiArticle = {
   slug: "mbappe-birth-chart",
+  image: "/images/blog/mbappe-birth-chart.jpg",
+  image_alt: "一颗金色星球在靛蓝夜野上漂向火焰星云，寓意木星过运进入狮子座火象家族",
   title: "姆巴佩的出生星盘：一张木星主管的射手座盘在 2026 年怎么读",
   description: "姆巴佩的出生星盘是基利安·姆巴佩（1998 年 12 月 20 日出生）的本命盘，核心是一颗射手座太阳。因为射手座由木星主管，木星就是他太阳的守护星，这让木星的移动成为判断\"太阳主题何时大规模显现\"的主要时机信号。仔细读，这张盘与其说是对天赋的判词，不如说是一张关于时机与气质的地图。",
   authorId: "marcus-orion",

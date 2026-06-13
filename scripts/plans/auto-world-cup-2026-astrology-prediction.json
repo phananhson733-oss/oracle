@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -10,45 +10,50 @@
   },
   "articles": {
     "world-cup-2026-astrology-prediction": {
+      "hero": {
+        "prompt": "A vast indigo coastline at dusk, a single luminous gold orb rising from dark still waters and casting long shimmering teal reflections across the sea, the sky arching from deep ocean-blue near the horizon to near-black above, soft nebula wisps in teal and gold curling across the upper atmosphere, the far shoreline glowing faintly with warm ember light hinting at a change of sky beyond, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Jupiter in Cancer rising over a dark indigo sea, symbolizing the 2026 World Cup astrology timing window",
+        "altZh": "巨蟹座木星从靛蓝海面升起，象征2026世界杯占星的时机窗口"
+      },
       "inline": [
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read World Cup 2026 Astrology in Your Timing",
           "afterHeadingZh": "## 如何在你的星盘里识别 2026世界杯占星",
-          "titleEn": "5-Step Transit Tracking Method",
-          "titleZh": "五步过运追踪法",
-          "altEn": "Five steps for reading 2026 World Cup astrology through transits: track Jupiter, open chart, solar arcs, Capricorn flags, live questions",
+          "titleEn": "5 Steps for Reading 2026 World Cup Astrology Through Transits",
+          "titleZh": "用过运读懂2026世界杯占星的5个步骤",
+          "altEn": "Five steps for reading 2026 World Cup astrology: track Jupiter in Cancer, opening chart, solar arcs, Capricorn flags, live questions",
           "altZh": "五步读懂2026世界杯占星：追踪木星巨蟹、解读开幕图、运用太阳弧、标记摩羯国家、提出活的时机问题",
           "items": [
             {
               "nameEn": "Track Jupiter in Cancer",
               "nameZh": "追踪木星在巨蟹座",
-              "subEn": "Follow Jupiter through June 30; note natal Cancer placements in each host nation's chart",
-              "subZh": "跟踪到 6 月 30 日；留意各东道主星盘中被触及的本命巨蟹配置"
+              "subEn": "Follow through June 30; note which national charts have natal Cancer placements it touches",
+              "subZh": "追踪至6月30日，留意哪些国家带有被它触及的本命巨蟹配置"
             },
             {
               "nameEn": "Read the June 11 Opening Chart",
-              "nameZh": "解读 6 月 11 日开幕图",
-              "subEn": "Use Estadio Azteca's opening moment as symbolic tournament tone, not a universal rule governing every stage",
-              "subZh": "把阿兹特克体育场的开幕时刻当作象征性的赛事基调，而非通用规则"
+              "nameZh": "解读6月11日开幕图",
+              "subEn": "Estadio Azteca chart as symbolic opening tone, not a rule for every later stage",
+              "subZh": "阿兹特克体育场开幕图定下象征性基调，而不是统辖后续每个阶段的规则"
             },
             {
-              "nameEn": "Apply Solar Arcs and Lunar Windows",
-              "nameZh": "运用太阳弧与月相窗口",
-              "subEn": "Solar arcs set the slow year-theme on national charts; match charts and lunar transits map week-to-week windows",
-              "subZh": "太阳弧定下各国星盘的年度主题；比赛盘与月相过运划定每周窗口"
+              "nameEn": "Use Solar Arcs and Lunar Transits",
+              "nameZh": "运用太阳弧与月相过运",
+              "subEn": "Solar arcs give the slow year-theme; lunar transits give week-to-week windows",
+              "subZh": "太阳弧读年度主题，月相过运读逐周时机窗口"
             },
             {
-              "nameEn": "Flag Capricorn Emphasis Nations",
-              "nameZh": "标记摩羯强调国家",
-              "subEn": "Cancer transit can show as pressure or heightened visibility for Capricorn-heavy charts, not automatic weakness",
-              "subZh": "对摩羯突出的国家，巨蟹过运可能表现为压力或曝光，而非必然弱势"
+              "nameEn": "Flag Capricorn-Emphasis Nations",
+              "nameZh": "标记摩羯强调的国家",
+              "subEn": "Cancer transit may show as pressure or exposure for them, not automatic weakness",
+              "subZh": "巨蟹过运在这些国家可能表现为压力或曝光，而非必然弱势"
             },
             {
-              "nameEn": "Ask a Live Timing Question",
-              "nameZh": "提出活的时机问题",
-              "subEn": "Treat each window as 'Is this team's chart lit right now?' rather than a predetermined verdict",
-              "subZh": "把每个时机窗口当成『这支球队的星盘此刻被点亮了吗？』而非既定结论"
+              "nameEn": "Treat Each Window as a Live Question",
+              "nameZh": "把每个窗口当成活的问题",
+              "subEn": "Ask: is this team's chart lit right now? Not a settled outcome",
+              "subZh": "问：这支球队的星盘此刻被点亮了吗？而非一个已定的结果"
             }
           ]
         },
@@ -56,61 +61,51 @@
           "kind": "compare",
           "afterHeadingEn": "## World Cup 2026 Astrology at a Glance",
           "afterHeadingZh": "## 2026世界杯占星一览",
-          "titleEn": "Three Planetary Dynamics at a Glance",
-          "titleZh": "三大行星动态一览",
+          "titleEn": "Jupiter in Cancer vs Jupiter in Leo vs Capricorn Opposition",
+          "titleZh": "木星巨蟹 vs 木星狮子 vs 摩羯对宫动态",
           "altEn": "Comparing Jupiter in Cancer, Jupiter in Leo, and Capricorn opposition dynamics for the 2026 World Cup astrology framework",
           "altZh": "对比巨蟹座木星、狮子座木星与摩羯对宫动态在2026世界杯占星框架中的作用",
           "columns": [
             {
-              "nameEn": "Jupiter in Cancer",
-              "nameZh": "木星在巨蟹",
+              "nameEn": "Jupiter in Cancer (Jun 11–30)",
+              "nameZh": "木星巨蟹庙旺（6/11–30）",
               "linesEn": [
-                "Exalted — peak strength",
-                "June 11 to June 30",
                 "Amplifies collective home-territory feeling",
-                "Activates host nations' Cancer placements",
-                "Group-stage cohesion window"
+                "Favors host nations in the group stage",
+                "Activates natal Cancer placements"
               ],
               "linesZh": [
-                "庙旺——行星力量最强",
-                "6月11日至6月30日",
-                "放大集体主场归属感",
-                "激活东道主本命巨蟹落点",
-                "小组赛凝聚力窗口"
+                "放大集体、主场土壤的归属感",
+                "小组赛阶段偏向东道主",
+                "激活本命巨蟹落点"
               ]
             },
             {
-              "nameEn": "Jupiter in Leo",
-              "nameZh": "木星在狮子",
+              "nameEn": "Jupiter in Leo (from Jun 30)",
+              "nameZh": "木星进狮子（6/30 起）",
               "linesEn": [
-                "From June 30 onward",
-                "Shifts to individual spotlight",
-                "Energizes Leo and 5th-house charts",
-                "Knockout rounds favor standout performers",
-                "July 19 final under Leo sky"
+                "Shifts emphasis to individual spotlight",
+                "Late-tournament stories favor standout individuals",
+                "Activates natal Leo or 5th-house emphasis"
               ],
               "linesZh": [
-                "6月30日起",
-                "重心转向个人聚光",
-                "激活本命狮子或第五宫星盘",
-                "淘汰赛后段聚焦突出个人",
-                "7月19日决赛在狮子天空下进行"
+                "重心转向个人聚光与表演",
+                "后段故事或围绕突出个人展开",
+                "激活本命狮子或第五宫强调的星盘"
               ]
             },
             {
               "nameEn": "Capricorn Opposition",
-              "nameZh": "摩羯对宫",
+              "nameZh": "摩羯对宫激活",
               "linesEn": [
-                "Receives Cancer transit opposition",
-                "Nations with natal Capricorn stelliums",
-                "May show as pressure or heightened visibility",
-                "Structured sides face exposure, not certain loss"
+                "Receives opposition activation from Cancer transit",
+                "May show as pressure, exposure, or overextension",
+                "Not automatic weakness — read the full chart"
               ],
               "linesZh": [
                 "承接巨蟹过运的对宫激活",
-                "本命摩羯星群的国家",
-                "可能表现为压力或高度曝光",
-                "结构型球队面临曝光，非必然落败"
+                "可能表现为压力、曝光或过度伸展",
+                "非必然弱势，需结合完整星盘来读"
               ]
             }
           ]

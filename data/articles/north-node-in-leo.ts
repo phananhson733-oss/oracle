@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const northNodeInLeoEn: WikiArticle = {
   slug: "north-node-in-leo",
+  image: "/images/blog/north-node-in-leo.jpg",
+  image_alt: "A single golden sun crests an indigo cosmic horizon as cool silver starforms recede into the collective dark",
   title: "North Node in Leo and the Quiet Courage to Be Seen",
   description: "The Leo North Node is a soul-growth direction that asks a person to move from blending into the crowd toward owning a heartfelt, individual creative voice.",
   authorId: "julian-thorne",
@@ -43,6 +45,9 @@ It helps to set the north node in leo against the placements it gets confused wi
 
 The practical takeaway is that the axis answers a different question than its neighbors. A Leo placement or the fifth house tells you what colors a person's nature now; the north node in leo tells you which way their growth leans over a long horizon. The cleanest test is timescale: a sign reads true on any single day, while the axis only resolves when watched across years. Keeping it in its own lane, rather than blending it into "Leo traits," is what keeps the reading precise.
 
+
+![Comparison of the Leo North Node axis against the Leo Sun placement and the Fifth House](/images/blog/north-node-in-leo-i0-en.svg)
+
 ## How to Read the Leo North Node in Yourself
 
 Reading the Leo North Node in yourself starts with noticing the gap between what feels safe and what feels exposing, since that contrast is where the axis becomes observable in ordinary life. You are not hunting for a dramatic revelation, only the quiet, repeated tug between hiding in the group and stepping forward as an individual. Watch for these signals:
@@ -54,6 +59,9 @@ Reading the Leo North Node in yourself starts with noticing the gap between what
 5. **The recurring theme of self-erasure.** A life pattern of disappearing into causes or collectives, decade after decade, is the axis asking to be rebalanced.
 
 None of these cues is meant to be read once and filed away. The same scene can read differently depending on the day, since a pull toward the group can feel like healthy humility in one season and like self-erasure in another. Returning to these signals over time, rather than locking in a single verdict, is what turns observation into a usable practice.
+
+
+![Five observable signals showing the Leo North Node axis at work in everyday life](/images/blog/north-node-in-leo-i1-en.svg)
 
 ## Common Misreadings
 

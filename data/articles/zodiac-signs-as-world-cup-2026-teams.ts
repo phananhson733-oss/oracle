@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const zodiacSignsAsWorldCup2026TeamsEn: WikiArticle = {
   slug: "zodiac-signs-as-world-cup-2026-teams",
+  image: "/images/blog/zodiac-signs-as-world-cup-2026-teams.jpg",
+  image_alt: "Four elemental glows — fire, earth, air, water — flowing across one nocturnal plain under a starlit indigo sky",
   title: "Reading Zodiac Signs as World Cup 2026 Teams Through the Elements",
   description: "The Zodiac-Team lens is a playful way of mapping the twelve zodiac signs onto national playing styles by element.",
   authorId: "elena-vane",
@@ -118,6 +120,8 @@ Yes, and it is the most useful part. Read your Sun's element and modality as a p
 
 export const zodiacSignsAsWorldCup2026TeamsZh: WikiArticle = {
   slug: "zodiac-signs-as-world-cup-2026-teams",
+  image: "/images/blog/zodiac-signs-as-world-cup-2026-teams.jpg",
+  image_alt: "火、土、风、水四种元素光芒在星空下广阔夜景中共存流淌",
   title: "用星座看世界杯球队，把四元素读成踢球风格",
   description: "星座球队透镜是一种按元素把十二星座对应世界杯球队踢球风格的趣味方式。它是球迷用占星语言聊\"这支队是什么脾气\"的一种说法，而不是说比赛结果写在星星里。用星座看世界杯球队，就是把火、土、风、水四元素翻译成一眼能认出的风格：火象偏爱扑上去搏一下的对攻，土象稳着守、慢慢磨，风象在中场倒脚找空间，水象凭感觉随势头起落。",
   authorId: "elena-vane",
@@ -170,6 +174,9 @@ export const zodiacSignsAsWorldCup2026TeamsZh: WikiArticle = {
 
 跑一遍这个快速自测，这套透镜真正的活儿就出来了：它把一个关于足球的好玩问题，变成一次小而诚实的观察——看你怎么面对压力、怎么扑机会、计划崩了又怎么缓过来。职场里赶一个临时插进来的需求，你是火象那样先冲上去试，还是土象那样先把流程理清，往往跟你看球时偏爱哪种风格是同一种本能。给球队分类的那套元素思路，同样能给你过一周的方式分类，看球于是顺手变成了一面照自己的小镜子。
 
+
+![通过元素与模态把你的星座读成世界杯踢球风格的五步流程](/images/blog/zodiac-signs-as-world-cup-2026-teams-i0-zh.svg)
+
 ## 常见误读
 
 1. **某个星座的风格能预测一支队的结果。** 透镜描述的是气质，不是结果；世界杯由球员决定，不是元素。
@@ -185,6 +192,9 @@ export const zodiacSignsAsWorldCup2026TeamsZh: WikiArticle = {
 | 土象星座 | 偏爱结构与耐力 | 金牛、处女、摩羯 | 一支守住阵型、磨出结果的队 |
 | 风象星座 | 偏爱传球与战术 | 双子、天秤、水瓶 | 靠跑动与想法搭起的控球打法 |
 | 水象星座 | 偏爱直觉与流动 | 巨蟹、天蝎、双鱼 | 读得懂当下、随感觉切换的踢法 |
+
+
+![火、土、水三种星座元素作为世界杯踢球风格的对比，含代表星座与特征](/images/blog/zodiac-signs-as-world-cup-2026-teams-i1-zh.svg)
 
 ## 关于星座球队透镜的常见问题
 

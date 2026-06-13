@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const rahuAndKetuAstrologyEn: WikiArticle = {
   slug: "rahu-and-ketu-astrology",
+  image: "/images/blog/rahu-and-ketu-astrology.jpg",
+  image_alt: "Rahu and Ketu lunar nodes as two glowing intersection points at opposing horizons beneath a deep indigo cosmic sky",
   title: "Rahu and Ketu: The Karmic Lunar Nodes of Vedic Astrology, Decoded",
   description: "Rahu and Ketu are the two lunar nodes of Vedic astrology — Rahu the north node of insatiable worldly desire and Ketu the south node of spiritual release —",
   authorId: "julian-thorne",
@@ -53,6 +55,9 @@ You can begin reading the nodal axis with a few grounded steps, and the method h
 4. Note any Dasha period that activates either node, since these are among the most consequential predictive phases in Jyotish.
 5. Map the axis onto the relevant *zodiac sign meaning pages* so the abstract polarity gains the texture of an actual sign.
 
+
+![Five-step sequence for reading Rahu and Ketu in a Vedic birth chart](/images/blog/rahu-and-ketu-astrology-i0-en.svg)
+
 ## Common Misreadings
 
 1. **Rahu is simply malefic and Ketu benefic.** Neither node is good or bad on its own; Rahu's hunger drives growth as often as excess, and Ketu's detachment can read as wisdom or as avoidance depending on the rest of the chart.
@@ -68,6 +73,9 @@ You can begin reading the nodal axis with a few grounded steps, and the method h
 | Direction | Insatiable worldly desire, ambition | Past-life mastery, detachment, moksha | The growth edge versus the inherited ground |
 | House effect | Amplifies the house it occupies | Tends toward release in its house | One arena reaches out, the other lets go |
 | Dasha length | 18-year major period | 7-year major period | Among the most consequential life phases in Jyotish |
+
+
+![Comparison of Rahu north node and Ketu south node key properties in Vedic astrology](/images/blog/rahu-and-ketu-astrology-i1-en.svg)
 
 ## Common Questions About Rahu and Ketu
 

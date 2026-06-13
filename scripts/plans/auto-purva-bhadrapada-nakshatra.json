@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "purva-bhadrapada-nakshatra": {
+      "hero": {
+        "prompt": "A lone ancient basalt monolith rising from a dark volcanic plain beneath a vast cosmic sky poised at the threshold of two realms: on one side a precise geometric lattice of luminous Aquarian stars, on the other a softly dissolving Piscean nebula of swirling indigo mist, while a single bolt of golden spiritual fire descends from storm-wracked clouds to crown the stone pillar in an unbroken arc from zenith to earth, teal-lit tempest clouds spiraling overhead unifying sky and ground across the full breadth of the landscape; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Purva Bhadrapada nakshatra: solitary monolith at the Aquarius-Pisces threshold struck by Jupiter's golden spiritual fire under a stormy cosmic sky",
+        "altZh": "前吉祥床宿：木星金色神火降临双界之间的孤石，暴风星空见证变容"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Purva Bhadrapada vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Neighboring Nakshatras Compared",
+          "titleZh": "相邻三宿对比",
+          "altEn": "Comparison of Shatabhisha, Purva Bhadrapada and Uttara Bhadrapada by ruling quality and core theme",
+          "altZh": "危宿、前吉祥床宿与后吉祥床宿的核心特质对比",
+          "columns": [
+            {
+              "nameEn": "Shatabhisha (24th)",
+              "nameZh": "危宿（第24）",
+              "linesEn": [
+                "Fully in Aquarius",
+                "Detached, healing-oriented",
+                "Cool withdrawal"
+              ],
+              "linesZh": [
+                "全在水瓶座",
+                "超然、治愈导向",
+                "冷静疏离"
+              ]
+            },
+            {
+              "nameEn": "Purva Bhadrapada (25th)",
+              "nameZh": "前吉祥床宿（第25）",
+              "linesEn": [
+                "Aquarius-Pisces crossing",
+                "Volatile spiritual fire",
+                "Jupiter + Aja Ekapada"
+              ],
+              "linesZh": [
+                "跨水瓶-双鱼",
+                "激烈精神之火",
+                "木星+独脚神"
+              ]
+            },
+            {
+              "nameEn": "Uttara Bhadrapada (26th)",
+              "nameZh": "后吉祥床宿（第26）",
+              "linesEn": [
+                "Primarily in Pisces",
+                "Calmer, grounded depth",
+                "Fire cooled into steady wisdom"
+              ],
+              "linesZh": [
+                "主在双鱼座",
+                "沉稳深邃",
+                "火焰沉淀为稳固智慧"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Purva Bhadrapada in a Chart",
+          "titleEn": "5 Steps to Interpret Purva Bhadrapada",
+          "titleZh": "解读前吉祥床宿的五个步骤",
+          "altEn": "Five-step method for reading Purva Bhadrapada nakshatra in a birth chart, from locating the degree to naming where conviction flows",
+          "altZh": "出生盘中前吉祥床宿的五步解读法：从定位度数到追问信念出口",
+          "items": [
+            {
+              "nameEn": "Locate the exact degree",
+              "nameZh": "确定精确度数",
+              "subEn": "Aquarius 20°–30°: idealistic, reform-minded; Pisces 0°–3°20': mystical, dissolving",
+              "subZh": "水瓶20°–30°偏理想改革；双鱼0°–3°20'偏神秘溶解"
+            },
+            {
+              "nameEn": "Check Jupiter's condition",
+              "nameZh": "查看木星状态",
+              "subEn": "Jupiter rules the nakshatra — its house and strength reveal how the fire is directed",
+              "subZh": "木星为主星，其宫位与力量揭示火焰的方向"
+            },
+            {
+              "nameEn": "Frame intensity as transformation",
+              "nameZh": "将强烈视为转化",
+              "subEn": "Aja Ekapada governs storm and renewal — the intensity is the source, not a defect",
+              "subZh": "独脚神主宰风暴与更新，强烈是驱动力而非缺陷"
+            },
+            {
+              "nameEn": "Identify the planet here",
+              "nameZh": "辨认所在行星",
+              "subEn": "Moon → emotional zeal; Ascendant → fervent outward identity",
+              "subZh": "月亮→情感热忱；上升→外显的热切身份"
+            },
+            {
+              "nameEn": "Ask where conviction flows",
+              "nameZh": "追问信念的出口",
+              "subEn": "Conviction is the keyword — find whether the native's idealism has found a worthy outlet",
+              "subZh": "信念是关键词——看理想主义是否找到值得的出口"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const argentinaWorldCup2026AstrologyEn: WikiArticle = {
   slug: "argentina-world-cup-2026-astrology",
+  image: "/images/blog/argentina-world-cup-2026-astrology.jpg",
+  image_alt: "Argentina's Cancer national chart under Jupiter and Saturn transits — two opposing glowing forces across one twilight pampas sky",
   title: "Argentina's World Cup 2026 Astrology: A Cancer Nation Under Jupiter and Saturn",
   description: "Argentina's World Cup 2026 astrology is a mundane reading of the country's 1816 national chart against the year's transits, led by a Cancer Sun.",
   authorId: "aditi-sharma",
@@ -119,6 +121,8 @@ This reading uses the Western tropical national chart. A Vedic mundane reading w
 
 export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
   slug: "argentina-world-cup-2026-astrology",
+  image: "/images/blog/argentina-world-cup-2026-astrology.jpg",
+  image_alt: "阿根廷巨蟹国家盘同时承受木星扩张与土星考验——两道对立光芒横跨南美草原暮空",
   title: "阿根廷世界杯占星：一颗巨蟹太阳同时被木星抬升、被土星考验",
   description: "阿根廷世界杯占星，是用阿根廷1816年国家星盘去读这一年过运、以巨蟹座太阳为主轴的国运解读。国运占星（mundane）读的是国家与事件，用的是国家盘而非个人盘，所以问题不是某个球员状态好坏，而是2026年的天象替这支卫冕队点亮了哪些集体主题。这套读法不替奖杯下注，它只标定一张国家盘里的主题何时被天象激活。",
   authorId: "aditi-sharma",
@@ -167,6 +171,9 @@ export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
 4. 把两个过运一起握住：同一个落点上的扩张与压力，而不是某一句判词。
 5. 把每个过运读成这个国度还要去打的一章，而不是写死的结局。
 
+
+![在国家星盘里读阿根廷世界杯占星过运的五步方法](/images/blog/argentina-world-cup-2026-astrology-i0-zh.svg)
+
 ## 常见误读
 
 1. **巨蟹太阳意味着一个柔软、防守的国度。** 巨蟹是一个开创星座；在集体层面它既守护也发起，在木星之下还可以读作骄傲、凝聚的身份，而不是退缩。
@@ -182,6 +189,9 @@ export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
 | 木星在巨蟹（2025—26） | 一种支持性的同星座强调 | 过运木星压在国家巨蟹太阳上 | 一次正在分离的扩张，精确接触在2026更早 |
 | 土星在白羊（2025 短暂预演；2026—28 主段） | 对那颗太阳逼近中的硬四分 | 过运土星四分国家太阳 | 头衔与交接的重量，随时间累积 |
 | 卫冕周期 | 把过往成功与当下压力配对 | 木土张力落在同一个国家落点 | 骄傲与负重被一起读出，而非一句判词 |
+
+
+![木星在巨蟹与土星在白羊对阿根廷2026年国家巨蟹太阳的过运对比](/images/blog/argentina-world-cup-2026-astrology-i1-zh.svg)
 
 ## 关于阿根廷世界杯占星的常见问题
 

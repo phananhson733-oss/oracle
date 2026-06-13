@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const cancerRisingEn: WikiArticle = {
   slug: "cancer-rising",
+  image: "/images/blog/cancer-rising.jpg",
+  image_alt: "Moonlit tidal shore at dusk with silver-gold reflections on dark water, evoking Cancer Rising's shifting lunar quality",
   title: "Cancer Rising Shifts With the Moon: Why Your First Impression Is Never Quite Fixed",
   description: "The Cancer Ascendant is a chart in which the sign Cancer was rising on the eastern horizon at birth",
   authorId: "julian-thorne",
@@ -43,6 +45,9 @@ Against the other water Ascendants, the difference is the planet in charge. A Sc
 
 This is also where the honest reading of astrology lives. Liz Greene treated the rising sign as a developing mask the psyche grows into rather than a fixed label, and Steven Forrest reads the Ascendant as a style of engaging life rather than a destiny. Neither would freeze the Cancer Ascendant into one stereotype, because both leave room for the Moon's placement and the person's own growth to shape how the mask is actually worn.
 
+
+![Comparison of Cancer Ascendant, Cancer Sun, and Scorpio/Pisces Ascendants by ruler, outer quality, and key trade-offs](/images/blog/cancer-rising-i1-en.svg)
+
 ## How to Read the Cancer Ascendant in Your Chart
 
 You can read this placement yourself with a few steps, and the method works for any Ascendant once you know which planet rules the sign on the first house. The aim is to move from a generic label to the specific Moon that actually governs the chart in front of you.
@@ -52,6 +57,9 @@ You can read this placement yourself with a few steps, and the method works for 
 3. Locate the Moon by house, since the life area it occupies is where the protective, caretaking instinct most visibly surfaces.
 4. Note the Moon's main aspects, because tense aspects can make the outer self more defensive and soft aspects make it more openly warm.
 5. Read the fourth house, the natural counterweight to a Cancer first house, where home and roots quietly feed every public interaction.
+
+
+![Five-step guide to Cancer Ascendant: confirm Cancer first house, find Moon sign, locate Moon house, note aspects, read fourth house](/images/blog/cancer-rising-i0-en.svg)
 
 ## Common Misreadings
 

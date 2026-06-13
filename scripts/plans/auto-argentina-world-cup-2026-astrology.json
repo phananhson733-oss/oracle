@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -10,6 +10,11 @@
   },
   "articles": {
     "argentina-world-cup-2026-astrology": {
+      "hero": {
+        "prompt": "Wide southern pampas at deep twilight, an immense flat horizon stretching to infinity, a warm amber-gold atmospheric luminosity swelling on one side of the sky — Jupiter's tide in Cancer — while a cold silver-blue aura emanates from the opposite arc — Saturn's square in Aries — both currents bleeding into one unbroken indigo canopy above the endless plain, two opposing glowing forces held in quiet tension across a single seamless sky, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Argentina's Cancer national chart under Jupiter and Saturn transits — two opposing glowing forces across one twilight pampas sky",
+        "altZh": "阿根廷巨蟹国家盘同时承受木星扩张与土星考验——两道对立光芒横跨南美草原暮空"
+      },
       "inline": [
         {
           "kind": "sequence",

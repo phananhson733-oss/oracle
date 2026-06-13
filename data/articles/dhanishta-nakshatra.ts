@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const dhanishtaNakshatraEn: WikiArticle = {
   slug: "dhanishta-nakshatra",
+  image: "/images/blog/dhanishta-nakshatra.jpg",
+  image_alt: "Golden rhythmic wave-rings pulse from a luminous horizon across a dark cosmic plain bridging two glowing realms in deep indigo sky",
   title: "Dhanishta Nakshatra Explained: The Cosmic Drum Where \"Wealth\" Means Rhythm, Not Riches",
   description: "Dhanishta nakshatra is the 23rd lunar mansion in Vedic astrology, stretching from the late degrees of Capricorn into the early degrees of Aquarius",
   authorId: "aditi-sharma",
@@ -43,6 +45,9 @@ Against a single-planet reading, Dhanishta trades simplicity for nuance because 
 
 This is also where a grounded reading of astrology lives. The Ashta Vasus, the eight elemental gods who govern Dhanishta, are deities of collective abundance and elemental harmony, not personal hoarding. Read through them, the star's "wealth" is the prosperity of a well-coordinated whole — a group, an orchestra, a market in rhythm. The dhanishta nakshatra question, taken that way, lets you enjoy the symbolism of richness while crediting timing and harmony for it, and that separation is the whole point of reading the chart well.
 
+
+![Side-by-side comparison of Dhanishta's Capricorn and Aquarius degree portions and their distinct themes](/images/blog/dhanishta-nakshatra-i1-en.svg)
+
 ## How to Read Dhanishta in a Chart
 
 You can work with the dhanishta nakshatra yourself in a few honest steps, and the method holds whether the placement is your Moon, Ascendant, or another point.
@@ -54,6 +59,9 @@ You can work with the dhanishta nakshatra yourself in a few honest steps, and th
 5. Credit the Ashta Vasus for collective abundance, and read the star as harmony within a whole rather than individual accumulation.
 
 Across all five steps, the same principle holds: the 23rd nakshatra rewards people who can feel a cycle and place their effort at the right beat in it. Mars supplies the energy, the Capricorn-Aquarius span sets the tone, and the Damaru drum names the skill. Read the chart for that capacity for timing first, and any reading of "wealth" will follow more honestly from it.
+
+
+![Five-step sequence for reading Dhanishta nakshatra placement in a birth chart](/images/blog/dhanishta-nakshatra-i0-en.svg)
 
 ## Common Misreadings
 

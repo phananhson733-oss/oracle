@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const marsReturnAstrologyEn: WikiArticle = {
   slug: "mars-return-astrology",
+  image: "/images/blog/mars-return-astrology.jpg",
+  image_alt: "Mars completing its two-year orbital arc and returning to its natal degree, glowing rust-red against a deep indigo night sky",
   title: "How the Mars Return Resets Your Drive Roughly Every Two Years",
   description: "The Mars-Return Cycle is the recurring moment, roughly every two years, when transiting Mars returns to the exact degree it held in your birth chart",
   authorId: "marcus-orion",
@@ -44,6 +46,9 @@ Against the Saturn return, the contrast is pace and stakes. Saturn returns once 
 
 Here the older sources matter. Classical tradition reads Mars through force, severance, and courage, not only the upbeat "fresh start" framing common online. Liz Greene treated the chart as a language of pattern rather than a fixed verdict, and Robert Hand framed astrology as meaning rather than a predictive machine. Read that way, a mars return astrology chart is a structured prompt about how you will assert yourself next, including where conflict may surface, not a promise of smooth momentum. Keeping the difficult half in view is what makes the reading useful instead of flattering.
 
+
+![Side-by-side comparison of Mars Return, Solar Return, and Saturn Return cycles showing frequency, scope, and stakes](/images/blog/mars-return-astrology-i0-en.svg)
+
 ## How to Read the Mars-Return Cycle in Your Chart
 
 You can work through a mars return astrology chart with a few ordered steps, and the same process applies to any planetary return you want to study.
@@ -54,6 +59,9 @@ You can work through a mars return astrology chart with a few ordered steps, and
 4. Note which house holds Mars in the return chart — that house names the life domain where drive and assertion concentrate for the cycle.
 5. Read the aspects Mars makes in the return chart as the tone: supportive angles point to channelled effort, hard angles flag where friction or conflict is more likely.
 6. Treat the whole reading as a planning prompt for the next roughly two years, then revisit it at the following return to see what actually unfolded.
+
+
+![Six ordered steps for reading a Mars return chart: find natal Mars, identify return date, cast the chart, note the house, read aspects, use as planning prompt](/images/blog/mars-return-astrology-i1-en.svg)
 
 ## Common Misreadings
 

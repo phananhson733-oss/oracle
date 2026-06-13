@@ -1,0 +1,96 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-in-aries-2026": {
+      "hero": {
+        "prompt": "A solitary volcanic mountain peak rising from a vast darkened plain at night, its rocky summit aglow with smoldering amber embers drifting skyward, the heavens above swept with billowing crimson-and-copper auroras that gradually dissolve into deep indigo darkness, the interplay of immovable stone and elemental fire filling the entire panoramic scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Volcanic mountain peak glowing with amber fire under crimson auroras in a deep indigo sky, evoking Saturn's discipline meeting Aries fire",
+        "altZh": "深靛蓝夜空下，火山山峰在绯红极光中燃烧，象征土星纪律与白羊座烈火的交汇"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Saturn in Aries in Your Chart",
+          "titleEn": "5 Steps to Map Saturn in Aries in Your Chart",
+          "titleZh": "在星盘中解读牧羊座土星的5个步骤",
+          "altEn": "Five-step sequence for mapping the Saturn in Aries transit in your natal chart",
+          "altZh": "在本命盘中解读牧羊座土星过境的五步流程",
+          "items": [
+            {
+              "nameEn": "Find Your Aries House",
+              "nameZh": "找到你的白羊座宫位",
+              "subEn": "Locate the house Aries rules in your natal chart — that domain carries Saturn's structural demand 2026–2028",
+              "subZh": "在本命盘中找到白羊座所在宫位，该领域将承受2026至2028年的土星结构压力"
+            },
+            {
+              "nameEn": "Read the House, Not the Headline",
+              "nameZh": "读宫位，不读标题",
+              "subEn": "10th house = career and public role; 7th house = partnership — each house domain defines the structure needed",
+              "subZh": "第十宫代表事业与公众形象，第七宫代表伴侣关系——宫位领域决定所需的结构"
+            },
+            {
+              "nameEn": "Check for Saturn Return Overlap",
+              "nameZh": "确认是否叠加土星回归",
+              "subEn": "Confirm your natal Saturn sign first — only those born with natal Saturn in Aries get a Return overlaid on this transit",
+              "subZh": "先确认本命土星星座——只有本命土星在白羊座的人才会同时经历土星回归"
+            },
+            {
+              "nameEn": "Watch the Retrograde Shape",
+              "nameZh": "观察逆行节奏",
+              "subEn": "Saturn previewed Aries in 2025, retreated to Pisces, then re-entered Feb 2026 — treat the early taste as rehearsal",
+              "subZh": "土星于2025年预览白羊座后退回双鱼座，2026年2月再次入驻——将早期感受视为预演"
+            },
+            {
+              "nameEn": "Translate Pressure Into a Build",
+              "nameZh": "将压力转化为建设行动",
+              "subEn": "Name one concrete structure to construct in that house — Saturn rewards deliberate effort over reactive starts",
+              "subZh": "在该宫位命名一件具体要建立的事——土星奖励有意识的努力而非冲动行事"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of Saturn in Aries",
+          "titleZh": "关于牧羊座土星的4个常见误读",
+          "altEn": "Four common misreadings of the Saturn in Aries transit corrected",
+          "altZh": "牧羊座土星过境的四大常见误读及纠正",
+          "items": [
+            {
+              "nameEn": "\"This transit is my Saturn Return\"",
+              "nameZh": "「这次过境就是我的土星回归」",
+              "subEn": "Only true if natal Saturn is in Aries — for everyone else it is an ordinary house transit, not the 29-year milestone",
+              "subZh": "仅对本命土星在白羊座的人成立——其他人只是普通的宫位过境，并非29年里程碑"
+            },
+            {
+              "nameEn": "\"Saturn in Aries Means Bad Luck for Aries People\"",
+              "nameZh": "「牧羊座土星对白羊座人不利」",
+              "subEn": "Aries sun-sign readers feel the first-house version, but this is structuring pressure on initiative, not a sentence",
+              "subZh": "白羊座太阳的人感受第一宫版本，但这是对行动力的结构性压力，而非惩罚"
+            },
+            {
+              "nameEn": "\"The Whole Period Is One Long Hardship\"",
+              "nameZh": "「整个时期都是漫长磨难」",
+              "subEn": "Saturn moves through retrograde and direct phases — pressure pulses with distinct peaks, not flat through April 2028",
+              "subZh": "土星经历逆行和顺行阶段，压力有高峰期起伏，而非持续平压直至2028年4月"
+            },
+            {
+              "nameEn": "\"Your Own Chart Reads Differently\"",
+              "nameZh": "「自己的星盘需要特殊解读」",
+              "subEn": "The method is identical for anyone — locate the Aries house, read its domain, ask what structure it lacks",
+              "subZh": "方法对所有人都相同——找到白羊座宫位，解读其领域，问缺少什么结构"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
