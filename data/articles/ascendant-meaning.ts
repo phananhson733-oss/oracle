@@ -121,6 +121,8 @@ It tends to describe first impressions, physical bearing, and the reflexes that 
 
 export const ascendantMeaningZh: WikiArticle = {
   slug: "ascendant-meaning",
+  image: "/images/blog/ascendant-meaning.jpg",
+  image_alt: "金色弧光从平静海面的东方地平线精确升起，将深靛青夜空锚定于那唯一的发光门槛",
   title: "上升星座到底在说什么：为什么这一个度数能撑起整张星盘",
   description: "上升点就是你出生那一刻、东方地平线正在升起的那一个黄道度数，它成了第一宫的宫头，也是整张星盘其余部分围着旋转的那根轴。很多人查上升星座含义，本以为会得到又一个性格标签，结果拿到的却是一套结构：正是这一个度数，决定了每一个宫位从哪里开始。",
   authorId: "julian-thorne",
@@ -156,6 +158,9 @@ export const ascendantMeaningZh: WikiArticle = {
 
 这也是诚实占星该待的地方。上升点是"三大"之一，与太阳、月亮并列，可它又是这三者里那个光靠日历就给不了你的。一个关键的事实常被讲歪：上升的度数大约每四分钟移动一度，但上升的星座大约每两小时才换一个——只有当你出生在两个星座交界附近的那几分钟里，时间的微小误差才真正要命，平时差几分钟并不会换掉你的上升星座。把上升星座含义当成结构锚点、而不是一句讨喜的特质，能让象征与机制各归其位,这种分开,正是让一张星盘保持可读、而不至于沦为一堆松散形容词的关键。
 
+
+![三列对比：上升星座需要出生时间和地点；太阳星座只需日期；月亮星座代表内在情绪](/images/blog/ascendant-meaning-i0-zh.svg)
+
 ## 如何在星盘里识别上升点
 
 你可以用几个有意识的步骤，在自己的星盘里找出上升点、读懂上升星座含义，同样这套方法也适用于任何一张递到你手上的星盘。
@@ -165,6 +170,9 @@ export const ascendantMeaningZh: WikiArticle = {
 3. 记下落在那个点上的星座和度数——那就是你的上升星座，也是你的第一宫宫头。
 4. 从那里把宫位编号依次绕一圈，看上升点如何固定每一个人生领域从哪里开始。
 5. 把上升星座读作本能与第一印象，但要把它所设定的那些宫头，当成真正的结构回报。
+
+
+![五步流程：收集精确出生时间、绘制星盘、记录上升星座与度数、追踪宫位、阅读本能与结构](/images/blog/ascendant-meaning-i1-zh.svg)
 
 ## 常见误读
 

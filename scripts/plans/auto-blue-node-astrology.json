@@ -19,6 +19,7 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read the Blue-Node Convention in Your Own Chart",
+          "afterHeadingZh": "## 如何在自己星盘里识别蓝色节点约定",
           "titleEn": "5 Steps to Demystify the Blue Node in Your Chart",
           "titleZh": "解读星盘中蓝色节点的5个步骤",
           "altEn": "Five-step sequence for identifying the blue node as the North Node in any birth chart software",
@@ -59,6 +60,7 @@
         {
           "kind": "compare",
           "afterHeadingEn": "## the Blue-Node Convention vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 蓝色节点约定与相近概念：运作方式 + 取舍",
           "titleEn": "True Node vs Mean Node: What Changes and What Doesn't",
           "titleZh": "真实节点与平均节点：变化的与不变的",
           "altEn": "Side-by-side comparison of True Node and Mean Node showing motion type, degree stability, and interpretive impact",

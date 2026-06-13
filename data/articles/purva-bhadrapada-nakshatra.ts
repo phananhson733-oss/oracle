@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const purvaBhadrapadaNakshatraEn: WikiArticle = {
   slug: "purva-bhadrapada-nakshatra",
   image: "/images/blog/purva-bhadrapada-nakshatra.jpg",
-  image_alt: "Purva Bhadrapada nakshatra: solitary monolith at the Aquarius-Pisces threshold struck by Jupiter's golden spiritual fire under a stormy cosmic sky",
+  image_alt: "Purva Bhadrapada nakshatra: solitary monolith at Aquarius-Pisces threshold struck by Jupiter's golden spiritual fire",
   title: "Purva Bhadrapada, Jupiter's Most Volatile Spiritual Fire",
   description: "Purva Bhadrapada is the 25th nakshatra of the Vedic zodiac, a Jupiter-ruled lunar mansion that stretches from 20° Aquarius into the first 3°20' of Pisces",
   authorId: "aditi-sharma",
@@ -122,6 +122,8 @@ The nakshatra just before, Shatabhisha, sits fully in Aquarius and carries a mor
 
 export const purvaBhadrapadaNakshatraZh: WikiArticle = {
   slug: "purva-bhadrapada-nakshatra",
+  image: "/images/blog/purva-bhadrapada-nakshatra.jpg",
+  image_alt: "前吉祥床宿：木星金色神火降临双界之间的孤石，暴风星空见证变容",
   title: "普尔瓦巴德拉帕达，木星手里那团最难驯的灵性之火",
   description: "普尔瓦巴德拉帕达是吠陀黄道二十七宿里的第 25 个星宿，由木星（Jupiter）主管，横跨水瓶座末段到双鱼座头三度二十分，象征一团既能照亮、也能吞噬的灵性之火。 多数关于它的介绍写到\"充满转化力\"就停笔，反倒漏掉了更难讲的那一半：这是星盘里偏易燃的一个落点，理想主义与强度是它的骨架，而不是点缀。",
   authorId: "aditi-sharma",
@@ -157,6 +159,9 @@ export const purvaBhadrapadaNakshatraZh: WikiArticle = {
 
 这也正是占星那种象征式、非决定论读法的所在。把星盘当成一种象征语言、而非一句写死的判词，就意味着它描述的是一种被点燃的禀性，而不是一份宿命。Aja Ekapada 的风暴是一个隐喻，指向那种先于更新的转化，而木星的角色，是为这场转化赋予意义与方向。守护神那独足而立的姿态本身就富含教益：它暗示一个生命平衡在单独一个点上，专注而不动摇——而这恰恰是让这个落点既令人生畏、又格外吃力的那份特质。这样读，落点指向的是被导向的信念，而不是盲信或燃尽中的任何一个，而把这层区别读出来，正是把它读好的全部要点。
 
+
+![危宿、前吉祥床宿与后吉祥床宿的核心特质对比](/images/blog/purva-bhadrapada-nakshatra-i0-zh.svg)
+
 ## 如何在星盘里识别这个星宿
 
 你可以用几个扎实的步骤自己在星盘里读普尔瓦巴德拉帕达，无论它落着月亮、上升点还是别的行星，这套方法都管用。
@@ -166,6 +171,9 @@ export const purvaBhadrapadaNakshatraZh: WikiArticle = {
 3. 记得 Aja Ekapada 统辖风暴与更新，所以把强度框成一个转化主题，而不是一处缺陷。
 4. 留意是哪颗行星落在这里——月亮强调情感上的热忱，上升点则是一份炽热外显的身份感。
 5. 把"信念"当成关键词，去问这个人的理想主义在哪里找到了、或没找到出口。
+
+
+![出生盘中前吉祥床宿的五步解读法：从定位度数到追问信念出口](/images/blog/purva-bhadrapada-nakshatra-i1-zh.svg)
 
 ## 常见误读
 

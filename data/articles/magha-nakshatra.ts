@@ -121,6 +121,8 @@ It is the tenth of the twenty-seven nakshatras and the first to fall in Leo, occ
 
 export const maghaNakshatraZh: WikiArticle = {
   slug: "magha-nakshatra",
+  image: "/images/blog/magha-nakshatra.jpg",
+  image_alt: "广袤黑夜中一座散发着继承之光的古老王座，祖先群灵化作薄雾在其周围升腾",
   title: "玛迦的王座，是继承来的而不是挣来的",
   description: "玛迦星宿是吠陀占星二十七宿里的第十个，落在狮子座最前面的 0° 到 13°20′，主管行星是计都（南交点），守护神是 Pitrs 也就是祖先群灵——它代表的是继承而来的王者权威，而不是个人挣到的地位。狮子座大半都在张扬太阳那种凭本事赢来的王权，而这一段星空背的是一把顺着血脉与业力传下来的座椅。",
   authorId: "aditi-sharma",
@@ -168,12 +170,18 @@ export const maghaNakshatraZh: WikiArticle = {
 4. 把计都加进来的张力——一边被责任拉、一边被"放下"拉——当成解读的核心，而不是缺陷。
 5. 凡是"这一宿让你天生就是领袖"这类捷径，都只当半张图；更完整的读法是：权威是被接过来的，然后还要去面对它。
 
+
+![识别玛迦星宿的五步流程图](/images/blog/magha-nakshatra-i0-zh.svg)
+
 ## 常见误读
 
 1. **它意味着你注定要统治。** 座椅是继承来的，并不等于到手的权力；它指向的是你背着的一脉血缘，而你拿它怎么办，是完全另一个问题。
 2. **狮子座的王者星该由太阳或土星主管。** 主管它的是计都，这个意外正是重点所在——这里的权威回望祖先，而不是向上攀附地位。
 3. **它就是纯粹的自信。** 计都的疏离一直潜在底下，所以这份地位常常带着对它所授予的那份传承的矛盾心情。
 4. **读名人的盘要用不同方法。** 框架对谁都一样——先看那份继承来的体面，再读这个人怎么背着它。
+
+
+![四种常见的玛迦星宿误读及其纠正](/images/blog/magha-nakshatra-i1-zh.svg)
 
 ## 这个星宿速查表
 

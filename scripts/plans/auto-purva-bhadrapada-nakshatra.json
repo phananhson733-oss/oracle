@@ -12,13 +12,14 @@
     "purva-bhadrapada-nakshatra": {
       "hero": {
         "prompt": "A lone ancient basalt monolith rising from a dark volcanic plain beneath a vast cosmic sky poised at the threshold of two realms: on one side a precise geometric lattice of luminous Aquarian stars, on the other a softly dissolving Piscean nebula of swirling indigo mist, while a single bolt of golden spiritual fire descends from storm-wracked clouds to crown the stone pillar in an unbroken arc from zenith to earth, teal-lit tempest clouds spiraling overhead unifying sky and ground across the full breadth of the landscape; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Purva Bhadrapada nakshatra: solitary monolith at the Aquarius-Pisces threshold struck by Jupiter's golden spiritual fire under a stormy cosmic sky",
+        "altEn": "Purva Bhadrapada nakshatra: solitary monolith at Aquarius-Pisces threshold struck by Jupiter's golden spiritual fire",
         "altZh": "前吉祥床宿：木星金色神火降临双界之间的孤石，暴风星空见证变容"
       },
       "inline": [
         {
           "kind": "compare",
           "afterHeadingEn": "## Purva Bhadrapada vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 普尔瓦巴德拉帕达与相近概念：运作方式 + 取舍",
           "titleEn": "Three Neighboring Nakshatras Compared",
           "titleZh": "相邻三宿对比",
           "altEn": "Comparison of Shatabhisha, Purva Bhadrapada and Uttara Bhadrapada by ruling quality and core theme",
@@ -71,6 +72,7 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read Purva Bhadrapada in a Chart",
+          "afterHeadingZh": "## 如何在星盘里识别这个星宿",
           "titleEn": "5 Steps to Interpret Purva Bhadrapada",
           "titleZh": "解读前吉祥床宿的五个步骤",
           "altEn": "Five-step method for reading Purva Bhadrapada nakshatra in a birth chart, from locating the degree to naming where conviction flows",

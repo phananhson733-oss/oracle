@@ -122,6 +122,8 @@ No. Because the station ends in Cancer, the two are easily confused, but the sta
 
 export const punarvasuNakshatraZh: WikiArticle = {
   slug: "punarvasu-nakshatra",
+  image: "/images/blog/punarvasu-nakshatra.jpg",
+  image_alt: "远古道路在深靛蓝天空下弧向金色地平线，木星升起如黑暗后光的归来",
   title: "普纳瓦苏为何把挫折读成光的归来，而不是终点",
   description: "普纳瓦苏（Punarvasu）是吠陀占星中的第 7 个月宿，由木星主管、以天空之母神 Aditi 为守护神，其核心母题是回归、更新，以及带着比从前更多的智慧重新出发的能力。理解这个月宿，绕不开它横跨双子座末与巨蟹座初的特殊位置，想把它放进 27 月宿总览指南 这张大图里看，才不会把它单读成一句\"东山再起\"。",
   authorId: "aditi-sharma",
@@ -159,6 +161,9 @@ export const punarvasuNakshatraZh: WikiArticle = {
 
 3. **双子与巨蟹两半。** 因为这一站从双子跨进巨蟹，它的修复跑在两个声部上。双子那半贡献心智的灵活——复原有一部分通过重构、好奇与新点子发生。巨蟹那半添上情绪的深度，把复原锚在被体验到的感受里，而非抽象之中。合在一起读，这种跨座位置解释了为什么这个月宿的命主倾向于有韧性、而非只是被动反应：他们重建时，头脑与心同时在场。
 
+
+![普纳瓦苏更新、单纯重新开始与巨蟹月亮呵护的三列对比图](/images/blog/punarvasu-nakshatra-i0-zh.svg)
+
 ## 如何在星盘里识别这个月宿
 
 要定位普纳瓦苏，需要的是吠陀本命盘、而非西洋盘，因为两套系统用不同的零点参照，月亮的标注度数在两者之间会不一样。手上有一张吠陀盘后，下面是几个可实操的识别信号。
@@ -168,6 +173,9 @@ export const punarvasuNakshatraZh: WikiArticle = {
 3. **留意月亮落在哪一半。** 偏双子的落点在复原上更偏心智、更善变通；偏巨蟹的落点更偏情绪、更具滋养。这种分割是这一站给出的、最可操作的解读杠杆。
 4. **在亲历的经验里观察归来的模式。** 这一站的标记，体现为困难之后倾向于复原并再次扩展——去观察过去那些挫折在哪里作为成长回来、而非止于停滞。
 5. **轻持 Aditi 这个母题。** Aditi 的无垠暗示的是更新潜力，而非一纸定数——这个框架是看韧性的镜头，不是每次损失都会逆转的允诺。
+
+
+![在吠陀本命盘中读取普纳瓦苏落点的五步流程图](/images/blog/punarvasu-nakshatra-i1-zh.svg)
 
 ## 常见误读
 

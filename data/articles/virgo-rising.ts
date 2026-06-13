@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const virgoRisingEn: WikiArticle = {
   slug: "virgo-rising",
   image: "/images/blog/virgo-rising.jpg",
-  image_alt: "Pre-dawn indigo landscape with teal-gold constellation lines, an owl on a stone wall watching as soft gold light breaks the horizon",
+  image_alt: "Pre-dawn meadow with gold-traced field boundaries glowing under deep indigo sky, evoking Virgo rising's quiet attentive observation before speech",
   title: "Virgo Rising, Decoded: Why a Mercury-Ruled Ascendant Reads as Quietly Sharp, Not Cold",
   description: "The Virgo Ascendant is the rising sign that places Virgo on the eastern horizon at birth",
   authorId: "julian-thorne",
@@ -118,6 +118,8 @@ Yes — that is the healthier way to read it. Treat the Virgo Ascendant as a voc
 
 export const virgoRisingZh: WikiArticle = {
   slug: "virgo-rising",
+  image: "/images/blog/virgo-rising.jpg",
+  image_alt: "靛蓝天幕下黎明前的草地，金色细线勾勒每道田垄边界，唤起处女上升先观察后开口的安静敏锐本质",
   title: "处女座上升，真正发号施令的其实是那颗水星",
   description: "处女座上升盘指的是出生时处女座正好落在东方地平线上，于是把水星立为整张星盘的命主星，让人的第一印象读起来务实、善于辨别、安静地带着分析感。很多人查处女上升，期待对上一份\"谦虚完美主义者\"的性格模板，可这个上升真正的运作机制比那个标签有意思得多，而要把这套机制看全，还得去houses_life_areas",
   authorId: "julian-thorne",
@@ -151,6 +153,9 @@ export const virgoRisingZh: WikiArticle = {
 
 对比太阳星座，上升点用内在身份换来了对外的接口。你的太阳描述一个核心动机，你的上升描述别人最先走进的那道门。处女座坐在这里，那道门务实而善辨，读起来可能跟门后那个更外放或更火热的太阳很不一样；一个人内里可以热情又有戏剧感，对外却以一种谨慎、含蓄、留意细节的方式招呼世界。诚实的框架会把这两层分开：处女上升塑造的是第一印象和本能的交往风格，而星盘其余的部分填的是开场之后会发生什么、那扇门一旦打开这个人究竟感觉如何。这种分层正是审慎占星扎根的地方——Liz Greene 把星盘当作一门象征的语言、而非一份固定的剧本，Robert Hand 则把每个落座框成一片意义的场域、而非一个板上钉钉的结局。这样读，这个上升就不是关于一个人是谁的终审判决，而是一套词汇，描述他迎接世界的方式倾向于怎样先露面——分析的、有用的，也比那个标签愿意承认的更懂得社交周旋。
 
+
+![三列对比：处女上升真实机制、完美主义刻板印象与太阳星座区别](/images/blog/virgo-rising-i0-zh.svg)
+
 ## 如何在星盘里识别处女上升
 
 你可以用几个诚实的步骤，自己读一遍处女上升，而这套方法只要你懂得从命主星起步，对任何上升都成立。
@@ -160,6 +165,9 @@ export const virgoRisingZh: WikiArticle = {
 3. 留意第六宫主题的分量：日常、健康、工作与服务，往往在生活里实实在在地占着份量。
 4. 在实际接触里观察那份第一印象——一种留意的质地，一种早早发现错位的倾向，常常在开口之前就已经发生。
 5. 把星盘其余的部分读出对照来，别把那扇务实的处女之门错当成门后的整个人。
+
+
+![处女上升识别五步骤：从确认第一宫宫头到对照整张星盘](/images/blog/virgo-rising-i1-zh.svg)
 
 ## 常见误读
 

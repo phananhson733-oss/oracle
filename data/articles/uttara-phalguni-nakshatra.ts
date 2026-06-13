@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const uttaraPhalguniNakshatraEn: WikiArticle = {
   slug: "uttara-phalguni-nakshatra",
   image: "/images/blog/uttara-phalguni-nakshatra.jpg",
-  image_alt: "Uttara Phalguni nakshatra — solar warmth binding itself to committed patronage across the Leo-Virgo cusp",
+  image_alt: "Uttara Phalguni nakshatra — solar warmth descending into committed patronage across the Leo-Virgo twilight horizon",
   title: "Uttara Phalguni Nakshatra — When the Sun Learns to Become a Patron",
   description: "Uttara Phalguni is the twelfth nakshatra of the Vedic zodiac, ruled by the Sun and presided over by Aryaman, the deity of contracts, patronage",
   authorId: "aditi-sharma",
@@ -120,6 +120,8 @@ As a question about reliability, not a fixed trait. Aryaman's contracts and patr
 
 export const uttaraPhalguniNakshatraZh: WikiArticle = {
   slug: "uttara-phalguni-nakshatra",
+  image: "/images/blog/uttara-phalguni-nakshatra.jpg",
+  image_alt: "乌塔拉帕尔古尼星宿——太阳的温度在狮子-处女黄昏地平线上化为践诺式的靠山之光",
   title: "乌塔拉帕尔古尼，当太阳学会成为靠山",
   description: "乌塔拉帕尔古尼是吠陀黄道带的第十二个星宿，由太阳主管，守护神是阿耶曼（Aryaman）——掌管契约、赞助以及把温情兑换成践诺式服务的那位神祇。很多人查乌塔拉帕尔古尼，脑子里只有一个模糊印象——\"那颗慷慨的星\"，可真实的画面要锐利得多。读这一篇前，先看二十七星宿支柱页总览把它放回整张星图，会更清楚它落在哪里。",
   authorId: "aditi-sharma",
@@ -155,6 +157,9 @@ export const uttaraPhalguniNakshatraZh: WikiArticle = {
 
 这也是诚实解读这颗星的落点所在。阿耶曼掌管契约和正式款待背后的社会义务，所以这是带条件的慷慨——是靠山的给予，而不是恩主的一时心血来潮。前哈尔古尼自由地探索温情，这个星宿则问：当温情必须承重时，你愿意托付什么？Liz Greene 把这类落点当作一套象征的语言，而不是固定的判词；Robert Hand 把占星落点视为可供反思的意义、而非一纸剧本——所以两人都不会把这个星宿当成盖在某人身上的标签。这样看，把两颗星当作一对来读、而不是把它们塌缩成一个"帕尔古尼"，正是守住"自在欢愉"与"践诺式服务"之别的关键，也让你能把这个靠山原型当作镜子、而不是尺子来用。
 
+
+![前哈尔古尼自在欢愉与乌塔拉帕尔古尼践诺式服务对比](/images/blog/uttara-phalguni-nakshatra-i0-zh.svg)
+
 ## 如何在星盘里识别它
 
 你可以用几个诚实的步骤来读乌塔拉帕尔古尼，无论读自己的落点还是别人的，方法都一样。
@@ -164,6 +169,9 @@ export const uttaraPhalguniNakshatraZh: WikiArticle = {
 3. 引入阿耶曼的契约与赞助主题：你在哪里是别人按约定、而非仅凭情分依靠的那个人？
 4. 把它和任何前哈尔古尼落点做对比，将自在的享受与信守的责任区分开，而不是混作一团。
 5. 把靠山原型当成一道关于可靠的提问，而绝不是钉在人身上的固定标签。
+
+
+![在吠陀出生星盘中识读乌塔拉帕尔古尼的五步方法](/images/blog/uttara-phalguni-nakshatra-i1-zh.svg)
 
 ## 常见误读
 

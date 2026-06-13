@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const geminiRisingEn: WikiArticle = {
   slug: "gemini-rising",
   image: "/images/blog/gemini-rising.jpg",
-  image_alt: "Luminous golden threads weave across a vast indigo sky over a dark landscape, symbolising Mercury's connective intelligence in Gemini rising",
+  image_alt: "Luminous golden threads weave a celestial web across a vast indigo sky, symbolising Mercury's connective intelligence in Gemini rising",
   title: "Gemini Rising, Read Properly: How Mercury as Chart Ruler Builds Connective Depth, Not Just Speed",
   description: "The Gemini Ascendant is the rising sign that places airy, Mercury-ruled Gemini on the first house",
   authorId: "julian-thorne",
@@ -120,6 +120,8 @@ No — it is an interpretive framework. It describes a recognisable style of mee
 
 export const geminiRisingZh: WikiArticle = {
   slug: "gemini-rising",
+  image: "/images/blog/gemini-rising.jpg",
+  image_alt: "无数金色光线在靛蓝夜空中交织成天际之网，象征双子上升中水星的串联智慧",
   title: "双子座上升,真正在主持这场表达的其实是水星",
   description: "双子座上升盘指的是出生那一刻,风象、水星掌管的双子座正落在第一宫,于是整张星盘的命主星变成水星,给人的第一印象读起来好奇、健谈、擅长把不同想法迅速串到一起。大多数人查双子上升,是想要一句关于性格的盖棺定论,可更有用的看法,是把水星这颗命主星当成引擎——它解释了为什么这种气质表面上显得坐不住,底层却是在对涌进来的信息做快",
   authorId: "julian-thorne",
@@ -156,6 +158,9 @@ export const geminiRisingZh: WikiArticle = {
 
 这也正是诚实读占星的所在。Liz Greene 把星盘当成一种象征语言、而非一台固定的预报机来读,Robert Hand 也把占星框定为意义、而不是预测机器,因此没有人会把这个上升读成一句判决。这样看,双子座上升描述的是一种可辨认的、与世界相遇的风格——而第三宫,水星天然掌管的沟通、近身环境与手足之域,就成了这种风格最自然发力的生活领域。本文是一份自我理解的框架,不构成临床或心理咨询建议。
 
+
+![对比双子上升、双子太阳与土象水星在角色、表达方式和核心侧重上的差异](/images/blog/gemini-rising-i1-zh.svg)
+
 ## 如何在星盘里识别双子座上升盘
 
 你可以用几个有次序的步骤,在自己的星盘里读出双子上升,而一旦学会跟着命主星走,同一套方法适用于任何上升星座。
@@ -165,6 +170,9 @@ export const geminiRisingZh: WikiArticle = {
 3. 记下水星所在的宫位,那是这颗敏捷、爱串联的头脑最容易上手发力的生活领域。
 4. 把第三宫当作这个上升的主场来读:沟通、学习、近身的世界,以及日常的信息交换。
 5. 把对外那副气质——好奇、健谈、灵活——握成水星这个过程的表层,而不是它的全部。
+
+
+![通过追踪水星作为命主星，经由星座、宫位、第三宫与对外气质来解读双子上升的五个步骤](/images/blog/gemini-rising-i0-zh.svg)
 
 ## 常见误读
 

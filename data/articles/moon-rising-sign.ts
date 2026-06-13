@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const moonRisingSignEn: WikiArticle = {
   slug: "moon-rising-sign",
   image: "/images/blog/moon-rising-sign.jpg",
-  image_alt: "Moonlit seascape with glowing tidal currents beneath a still surface, representing inner emotional depths and outer first impressions",
+  image_alt: "Moonlit ocean with glowing tidal currents beneath a still surface, inner depths meeting outer calm",
   title: "Moon and Rising Sign: How Your Inner Tides and Outer Mask Work Together",
   description: "The moon rising sign question is really two questions, because the Moon and Ascendant are two different points in a birth chart: the Moon sign describes",
   authorId: "julian-thorne",
@@ -122,6 +122,8 @@ Neither outranks the other; they answer different questions. The rising sign sha
 
 export const moonRisingSignZh: WikiArticle = {
   slug: "moon-rising-sign",
+  image: "/images/blog/moon-rising-sign.jpg",
+  image_alt: "月光海面之下金绿色潮流涌动，象征内在情绪自我与外在初见印象并行共存",
   title: "月亮主导内在、上升塑造初见，三大星的这两颗如何配合成一个完整的你",
   description: "很多人把月亮上升星座说成一个星座，其实月亮与上升是星盘里两个不同的点：月亮代表内在的情绪自我，上升（也叫上升星座、命宫）代表外在面貌与别人初见你的第一印象。大家查月亮上升星座时，常期待找到一个单一答案，可这两者是三大星里相互独立的成员，把它们放在一起读，才能解释为什么一个人内在感受是一种样子、被人初见时又读成另一种样子",
   authorId: "julian-thorne",
@@ -162,6 +164,9 @@ export const moonRisingSignZh: WikiArticle = {
 4. 把两者一起握住，留意那道缝隙——一个更设防的上升压着一个柔软的月亮，或一个开放的上升盖着一个私密的月亮，各自讲着不同的故事。
 5. 把任何单一的"月亮上升星座"判词当成起点提示、而非结论，让两点之间的相互作用去做真正的解释。
 
+
+![在出生星盘中并排读月亮与上升的五步指南](/images/blog/moon-rising-sign-i0-zh.svg)
+
 ## 月亮与上升与相近概念：运作方式 + 取舍
 
 把月亮与上升放到它最近的几个邻居旁边会更清楚。对比太阳，差别在层级：太阳是有意识的自我感与目标，月亮是它底下的情绪潜流，上升则是给两者收边的外在风格。把其中任何一个当成全部，就是用细腻去换一个利落的标题——而这恰恰是单一月亮上升星座标签所做的那笔交易。
@@ -185,6 +190,9 @@ export const moonRisingSignZh: WikiArticle = {
 | 上升所在星座 | 外在性格、外显面貌、第一印象 | 外在面貌 | 初次接触时别人遇到的那副姿态 |
 | 太阳所在星座 | 有意识的自我感与目标 | 核心身份 | 你有意识地朝它走去的那个"我" |
 | 月亮与上升的互动 | 内在需求与外在呈现之间的距离 | 两者同时 | 感受中的自我与第一印象在哪里分岔 |
+
+
+![月亮星座与上升星座对比图，展示各位置所描述的内容](/images/blog/moon-rising-sign-i1-zh.svg)
 
 ## 关于月亮与上升的常见问题
 

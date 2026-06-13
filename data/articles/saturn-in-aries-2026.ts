@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const saturnInAries2026En: WikiArticle = {
   slug: "saturn-in-aries-2026",
   image: "/images/blog/saturn-in-aries-2026.jpg",
-  image_alt: "Volcanic mountain peak glowing with amber fire under crimson auroras in a deep indigo sky, evoking Saturn's discipline meeting Aries fire",
+  image_alt: "Planetary rings arching over a volcanic plateau at twilight, ember-lit ridgelines and cooling lava rivers below a deep indigo sky",
   title: "Saturn in Aries 2026 Explained — A Three-Year Discipline Reset, Not Your Saturn Return",
   description: "Saturn in Aries is the multi-year transit that began in 2025, returns to Aries in February 2026, and runs to around April 2028, applying Saturn's discipline",
   authorId: "marcus-orion",
@@ -123,6 +123,8 @@ Neither, in the fortune-telling sense. Saturn applied to Aries slows reactive st
 
 export const saturnInAries2026Zh: WikiArticle = {
   slug: "saturn-in-aries-2026",
+  image: "/images/blog/saturn-in-aries-2026.jpg",
+  image_alt: "暮色苍穹中巨大行星环横亘天际，火山高原上余烬燃烧的山脊与缓缓冷却的熔岩河流相映成辉",
   title: "土星行经白羊（2026—2028）——三年纪律重构，而不是你的土星回归",
   description: "2026土星白羊座指的是土星从 2026 年 2 月起正式驻留在开创火象的白羊座、把纪律、结构与限制施加到\"自我、行动力与自我主张\"这片领域、并一直持续到约 2028 年 4 月的多年行运。 更朴素的读法是：土星奖励\"搭建起来的行动\"，而不是\"被情绪推着走的冲动\"，白羊正是这堂课如今落地的地方。",
   authorId: "marcus-orion",
@@ -166,12 +168,18 @@ export const saturnInAries2026Zh: WikiArticle = {
 4. 留意逆行的形状。土星 2025 年的进入、退回双鱼、再到 2026 年的重新进入，意味着这个主题会"预演、暂停、再续上"——把早期那一口先尝到的味道当成彩排，而不是期末考。
 5. 把压力翻译成"搭建"。土星的标志性问题是"这里缺了什么结构"，所以实际的动作是给那个宫位点名一件具体要去建造的东西，而不是绷紧了等着失去什么。
 
+
+![在本命盘中标记土星行经白羊的五个步骤](/images/blog/saturn-in-aries-2026-i0-zh.svg)
+
 ## 常见误读
 
 1. **这段行运就是我的土星回归。** 只有当你的本命土星落在白羊时它才是回归；对其他所有人来说，它只是一次普通的宫位行运，吃力，但并不是那种 29 年一遇的里程碑。
 2. **土星行经白羊意味着白羊座要倒霉。** 太阳白羊的读者最直接感到的是第一宫那个版本，但这段行运是施加在"行动力"上的结构性压力，不是一纸判书；同一份要求会通过不同的宫位抵达每一个星座。
 3. **整段时间就是一场漫长的苦熬。** 这段行经会走过逆行与顺行的不同阶段，各有清晰的高峰，所以压力是一阵阵搏动的，而不是一条平直的线，2028 年 4 月的离境也给了这份功课一个明确的地平线。
 4. **读自己的行运和读别人的行运要用不同方法。** 方法对谁都一模一样——先定位白羊宫、再读它主管的领域、然后问它缺什么结构——并不存在一套专门留给你自己星盘的特殊读法。
+
+
+![土星行经白羊四种常见误读及其纠正](/images/blog/saturn-in-aries-2026-i1-zh.svg)
 
 ## 土星行经白羊速查表
 

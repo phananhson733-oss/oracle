@@ -120,6 +120,8 @@ You can plan around it rather than brace for it. Knowing the return date roughly
 
 export const marsReturnAstrologyZh: WikiArticle = {
   slug: "mars-return-astrology",
+  image: "/images/blog/mars-return-astrology.jpg",
+  image_alt: "火星完成两年轨道弧线，回归本命度数，在深靛蓝夜空中发出锈红色光芒",
   title: "火星回归如何每隔约两年重置你的行动力",
   description: "火星回归说的是行运中的火星运行回到它在你本命盘里所处的那个精确度数的时刻，从这一刻起，关于行动力、主动性、以及你为想要的东西发力的方式，重新翻开新的一页。占星师并不把这一刻当成孤立事件，而是当成一个干净的起算点：为这个时刻起一张盘，就能预览接下来要走的那一段路。",
   authorId: "marcus-orion",
@@ -156,6 +158,9 @@ export const marsReturnAstrologyZh: WikiArticle = {
 
 这里古老的文献就要紧了。古典传统通过力量、断裂与勇气来读火星，而不只是网上常见那种乐观的"重新开始"框法。Liz Greene 把星盘当成一种模式的语言、而非一纸定论，Robert Hand 则把占星当成意义、而不是一台预测机器。这样读，这张盘就是一个有结构的提示：关于你接下来会如何自我主张、包括冲突可能在哪里浮现，而不是一句顺风顺水的空话。把困难的那一半也留在视野里，正是让这套读法有用、而不只是讨好的关键。
 
+
+![火星回归、太阳回归与土星回归的并排对比，涵盖频率、范围与影响程度](/images/blog/mars-return-astrology-i0-zh.svg)
+
 ## 如何在星盘里识别火星回归
 
 你可以用几个有顺序的步骤走一遍这张盘，同样这套流程也适用于你想研究的任何一种行星回归。重点是先确定那个不变的目标点，再把日期、宫位和相位依次读出来——顺序本身就能防止你跳过机制、直接套用现成的好坏标签。
@@ -166,6 +171,9 @@ export const marsReturnAstrologyZh: WikiArticle = {
 4. 留意回归盘里火星落在哪一宫——那一宫点出本轮里冲劲与自我主张会集中的生活领域。
 5. 把回归盘里火星所成的相位读作基调：和谐的角度指向被疏导的努力，强硬的角度则标记出摩擦或冲突更可能出现的地方。
 6. 把整套解读当成对未来大约两年的规划提示，然后在下一次回归时回头看，对照实际发生了什么。
+
+
+![解读火星回归星盘的六步骤：定位本命火星、确认回归日期、绘制星盘、注意宫位、解读相位、用作规划提示](/images/blog/mars-return-astrology-i1-zh.svg)
 
 ## 常见误读
 

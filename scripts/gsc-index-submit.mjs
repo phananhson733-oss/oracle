@@ -27,9 +27,18 @@ const DEFAULT_MAX = 200; // Indexing API 默认日配额
 const todayUtc = () => new Date().toISOString().slice(0, 10);
 
 // 读 service account：优先 GOOGLE_INDEXING_SA（文件路径），回退 GOOGLE_INDEXING_SA_JSON（内联）。
+const DEFAULT_SA_PATH = path.join(
+  process.env.HOME || "",
+  ".config",
+  "gg",
+  "google-indexing-sa.json",
+);
 const loadServiceAccount = () => {
   const inline = process.env.GOOGLE_INDEXING_SA_JSON;
-  const filePath = process.env.GOOGLE_INDEXING_SA;
+  // env path > inline > conventional default path (~/.config/gg/google-indexing-sa.json)
+  // so the autopilot post-merge hook auto-finds the key after one-time setup, no env needed.
+  const filePath = process.env.GOOGLE_INDEXING_SA
+    || (fs.existsSync(DEFAULT_SA_PATH) ? DEFAULT_SA_PATH : "");
   let raw = "";
   if (inline && inline.trim()) raw = inline;
   else if (filePath && fs.existsSync(filePath)) raw = fs.readFileSync(filePath, "utf8");

@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const uranusOppositionEn: WikiArticle = {
   slug: "uranus-opposition",
   image: "/images/blog/uranus-opposition.jpg",
-  image_alt: "Two luminous orbs in perfect opposition across a deep cosmic landscape, representing the Uranus 180-degree midlife transit",
+  image_alt: "Two luminous orbs in perfect opposition across a cosmic sea, representing the Uranus 180-degree midlife transit awakening",
   title: "Uranus Opposition Explained: The Midlife Transit Behind the Age-42 Awakening",
   description: "The uranus opposition is the transit that occurs when Uranus reaches a point exactly 180 degrees from where it sat at your birth",
   authorId: "marcus-orion",
@@ -115,6 +115,8 @@ No. The chart marks a window and a theme, not an outcome. Practitioners read the
 
 export const uranusOppositionZh: WikiArticle = {
   slug: "uranus-opposition",
+  image: "/images/blog/uranus-opposition.jpg",
+  image_alt: "两颗发光天体在宇宙星海两端遥遥相对，象征天王星对分相带来的中年觉醒",
   title: "天王星对分相：40 到 42 岁那场写进星历表的中年觉醒",
   description: "中年天王星过运指的是行运天王星走到与你出生时天王星正好相隔 180 度的那个点，对多数人来说，这个对分相落在 38 到 44 岁之间。天王星绕行黄道一圈约需 84 年，走到与本命位置正对面的那一刻，恰好是这趟旅程的一半，所以它把人推到 40 到 42 岁的窗口。",
   authorId: "marcus-orion",
@@ -152,6 +154,9 @@ export const uranusOppositionZh: WikiArticle = {
 4. 把被激活的那个宫位读成一个要你关注的人生领域，而不是对那个领域里某个具体结果的预报。
 5. 把任何关于这场过运的单一戏剧化预言，都当成对一个过程的误读——它是用一到三年慢慢展开的，不是某天突然降临的。
 
+
+![从定位本命天王星到解读激活宫位，识别天王星对分相的五个步骤](/images/blog/uranus-opposition-i0-zh.svg)
+
 ## 中年天王星过运与相近概念：运作方式 + 取舍
 
 把中年天王星过运放到多数人早已背熟的那套故事旁边会更清楚，因为这两者老是被混为一谈。文化里的"中年危机"是一套关于衰退、悔恨和招摇消费的叙事；而这场过运按结构来读，说的是另一回事：那些为了合群而被搁置的生活部分，开始要求被重新清点。取舍在于，占星的读法放弃了"崩溃"的戏剧性，换来一个更可操作的整合过程。
@@ -175,6 +180,9 @@ export const uranusOppositionZh: WikiArticle = {
 | 轨道基础 | 天王星约 84 年公转的一半 | 影响铺在 38 到 44 岁一带 | 时间是一扇窗，因为行星步调忽快忽慢 |
 | 两极激活 | 本命天王星正对面的宫位被触动 | 精确点前后一到三年 | 一块被压下的人生领域要求被整合 |
 | 真实性主题 | 压力压在为合群而搁置的那一面 | 在精确对分相处见顶 | 是一份重访的邀请，不是一道照单全收的判决 |
+
+
+![三列速览天王星对分相的几何基础、时间窗口与两极整合主题](/images/blog/uranus-opposition-i1-zh.svg)
 
 ## 关于中年天王星过运的常见问题
 

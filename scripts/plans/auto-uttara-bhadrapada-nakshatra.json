@@ -11,53 +11,54 @@
   "articles": {
     "uttara-bhadrapada-nakshatra": {
       "hero": {
-        "prompt": "A vast primordial ocean at deepest night — the surface utterly still and mirror-flat, reflecting a canopy of distant constellations in absolute silence, while far below in the abyssal depths a colossal serpentine silhouette coils in patient stillness amid slow luminous bioluminescent currents, Saturn's discipline holding the immense water in perfect contained calm between surface and deep, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Uttara Bhadrapada nakshatra — a still night ocean reflecting stars, serpentine deep wisdom coiling in the abyssal depths below the calm surface",
-        "altZh": "北方吉祥星宿——静夜深海映照星空，大蛇智慧盘踞渊底，平静水面之下暗藏深流"
+        "prompt": "A vast still ocean at night under a star-filled sky, the calm surface reflecting constellations like a perfect mirror, deep below the waterline a faint golden serpentine coil barely visible in the abyssal darkness, a single ringed planet low on the horizon casting soft teal-gold light across the undisturbed water, depth suggested by gradation from luminous surface to impenetrable black below, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Still night ocean reflecting stars, golden serpentine coil in the deep — Uttara Bhadrapada nakshatra's still waters and hidden wisdom",
+        "altZh": "星空下的静谧深海，金色巨蛇轮廓隐现于深渊——乌塔拉巴德拉帕达星宿的静水与深藏的智慧"
       },
       "inline": [
         {
           "kind": "compare",
           "afterHeadingEn": "## Uttara Bhadrapada vs Adjacent Concepts: How It Works + Trade-offs",
-          "titleEn": "Purva vs Uttara Bhadrapada: Fire vs Still Depth",
-          "titleZh": "前吉祥与后吉祥星宿：火焰与静水之辨",
-          "altEn": "Comparison of Purva Bhadrapada (Jupiter fire, igniting) and Uttara Bhadrapada (Saturn depth, enduring) qualities",
-          "altZh": "前吉祥星宿（木星之火，点燃）与后吉祥星宿（土星之深，持续）特质对照",
+          "afterHeadingZh": "## 乌塔拉巴德拉帕达星宿与相近概念：运作方式 + 取舍",
+          "titleEn": "Purva vs Uttara Bhadrapada: Fire and Depth",
+          "titleZh": "普尔瓦与乌塔拉巴德拉帕达：火与深",
+          "altEn": "Comparison of Purva Bhadrapada (Jupiter fire, igniting) and Uttara Bhadrapada (Saturn depth, enduring)",
+          "altZh": "普尔瓦巴德拉帕达（木星之火）与乌塔拉巴德拉帕达（土星之深）对比",
           "columns": [
             {
               "nameEn": "Purva Bhadrapada",
-              "nameZh": "前吉祥星宿",
+              "nameZh": "普尔瓦巴德拉帕达",
               "linesEn": [
                 "Ruled by Jupiter",
-                "Deity: Ajaikapada (one-footed serpent of spiritual fire)",
-                "Volatile, igniting quality",
-                "Cathartic fire energy",
-                "Blazes and illuminates"
+                "Deity: Ajaikapada",
+                "Spiritual fire",
+                "Volatile, igniting",
+                "Blazes"
               ],
               "linesZh": [
-                "木星主宰",
-                "神：阿贾伊卡帕达（精神之火单足蛇）",
-                "易变、点燃特质",
-                "净化火焰能量",
-                "燃烧与照耀"
+                "木星主管",
+                "守护神：Ajaikapada",
+                "属灵之火",
+                "易燃、点火",
+                "燃烧"
               ]
             },
             {
               "nameEn": "Uttara Bhadrapada",
-              "nameZh": "后吉祥星宿",
+              "nameZh": "乌塔拉巴德拉帕达",
               "linesEn": [
-                "Ruled by Saturn (Shani)",
-                "Deity: Ahirbudhnya (serpent of the calm deep)",
-                "Grounded, deepening quality",
-                "Contained still-water strength",
-                "Deepens and endures"
+                "Ruled by Saturn",
+                "Deity: Ahirbudhnya",
+                "Still depth",
+                "Grounded, enduring",
+                "Deepens"
               ],
               "linesZh": [
-                "土星（商尼）主宰",
-                "神：阿希布德那（静水深处之蛇）",
-                "扎实、深沉特质",
-                "蓄积静水力量",
-                "深化与持续"
+                "土星主管",
+                "守护神：Ahirbudhnya",
+                "静谧之深",
+                "扎根、持久",
+                "向下沉"
               ]
             }
           ]
@@ -65,40 +66,41 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read Uttara Bhadrapada in Yourself",
-          "titleEn": "5 Observable Signals of Uttara Bhadrapada",
-          "titleZh": "后吉祥星宿的五种可观察特征",
-          "altEn": "Five signals of Uttara Bhadrapada: still surface, wisdom that waits, long horizon, reservoir energy, late-blooming depth",
-          "altZh": "后吉祥星宿五种特征：平静表面、等待的智慧、长远视野、蓄水能量、迟开的深度",
+          "afterHeadingZh": "## 如何在自己身上识别这一宿",
+          "titleEn": "Five Signals of Uttara Bhadrapada",
+          "titleZh": "乌塔拉巴德拉帕达的五个信号",
+          "altEn": "Five signals of Uttara Bhadrapada: still surface, wisdom that waits, Saturn's long horizon, reservoir energy, late-blooming depth",
+          "altZh": "乌塔拉巴德拉帕达的五个信号：静水深流、等待的智慧、土星的长地平线、蓄水池能量、晚熟的深度",
           "items": [
             {
               "nameEn": "Still Surface, Deep Current",
-              "nameZh": "平静表面，暗涌深流",
-              "subEn": "Steady outward composure concealing genuine interior intensity",
-              "subZh": "平静外表之下蕴藏真实的内在深度"
+              "nameZh": "静水深流",
+              "subEn": "Steady composure over genuine intensity held in check",
+              "subZh": "沉稳外表下有意收住的真实强度"
             },
             {
               "nameEn": "Wisdom That Waits",
-              "nameZh": "等待的智慧",
-              "subEn": "Insight surfaces late and whole, not early and tentative",
-              "subZh": "洞见迟来而完整，而非仓促片段"
+              "nameZh": "会等待的智慧",
+              "subEn": "Insight surfaces late and whole, never early and tentative",
+              "subZh": "洞见迟来却完整，而非早来却片面"
             },
             {
               "nameEn": "Saturn's Long Horizon",
-              "nameZh": "土星的长远视野",
-              "subEn": "Natural orientation toward what endures — long projects, slow craft",
-              "subZh": "天然倾向于持久之物——长期项目、缓慢的手艺"
+              "nameZh": "土星的长地平线",
+              "subEn": "Natural pull toward enduring work and commitments over quick wins",
+              "subZh": "天然倾向于能存续的工作与投入，而非快速胜利"
             },
             {
               "nameEn": "The Reservoir, Not the Spark",
-              "nameZh": "蓄水池而非火花",
-              "subEn": "Energy accumulates and releases under pressure, not in sudden flashes",
-              "subZh": "能量积聚后在压力下释放，而非突然爆发"
+              "nameZh": "蓄水池，不是火花",
+              "subEn": "Energy accumulates slowly and releases under pressure",
+              "subZh": "能量缓慢积聚，在压力下释放"
             },
             {
               "nameEn": "Late-Blooming Depth",
-              "nameZh": "迟开的深度",
-              "subEn": "Strongest contributions emerge with maturity, consistent with a penultimate mansion",
-              "subZh": "最强贡献随成熟而显现，与倒数第二星宿的特质一致"
+              "nameZh": "晚熟的深度",
+              "subEn": "Gifts mature with time, rarely announcing themselves early",
+              "subZh": "天赋随成熟而至，很少在早年就高调宣告"
             }
           ]
         }

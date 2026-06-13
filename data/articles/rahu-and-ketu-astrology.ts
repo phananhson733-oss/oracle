@@ -121,6 +121,8 @@ In the Vimshottari Dasha system the Rahu major period runs 18 years and the Ketu
 
 export const rahuAndKetuAstrologyZh: WikiArticle = {
   slug: "rahu-and-ketu-astrology",
+  image: "/images/blog/rahu-and-ketu-astrology.jpg",
+  image_alt: "罗睺与计都月交点化为两道对立的光芒，在深靛蓝宇宙夜空下分踞两端地平线",
   title: "罗睺与计都：吠陀占星里那条牵着灵魂的业力轴线",
   description: "罗睺与计都是吠陀占星里的一对月亮交点——罗睺是渴求世俗成就的北交点，计都是指向灵性解脱的南交点，两者合成一条贯穿星盘的业力轴线，标记着灵魂在「想要更多」与「放手解脱」之间的拉扯。它们不是有实体的星球，而是月亮轨道与太阳轨道相交的数学点位，所以吠陀传统把它们叫作影子行星。",
   authorId: "julian-thorne",
@@ -166,6 +168,9 @@ export const rahuAndKetuAstrologyZh: WikiArticle = {
 4. 留意任何激活其中一个交点的 Dasha 时段，因为这是 Jyotish 里最具分量的预测阶段之一。
 5. 把这条轴落到相关的 *黄道星座含义页* 上，让抽象的两极有了一个真实星座的质地。
 
+
+![在吠陀星盘中解读罗睺与计都的五步流程图](/images/blog/rahu-and-ketu-astrology-i0-zh.svg)
+
 ## 常见误读
 
 1. **罗睺纯属凶星，计都纯属吉星。** 没有哪个交点本身就吉或凶；罗睺的饥渴既可能驱动成长、也可能酿成过度，计都的超脱在不同星盘里既可读成智慧、也可读成逃避。
@@ -181,6 +186,9 @@ export const rahuAndKetuAstrologyZh: WikiArticle = {
 | 指向 | 难以满足的世俗欲望、企图心 | 前世熟练、超脱、moksha | 一边是成长棱边，一边是继承的根基 |
 | 宫位作用 | 放大所落宫位 | 在所落宫位倾向放手 | 一处向外伸手，一处学着松手 |
 | Dasha 时长 | 十八年大运 | 七年大运 | Jyotish 里最具分量的生命阶段之一 |
+
+
+![吠陀占星中罗睺（北交点）与计都（南交点）核心属性对比](/images/blog/rahu-and-ketu-astrology-i1-zh.svg)
 
 ## 关于罗睺与计都的常见问题
 

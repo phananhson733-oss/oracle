@@ -122,6 +122,8 @@ No. Because its final degree sits where one cycle completes and the next begins,
 
 export const revatiNakshatraZh: WikiArticle = {
   slug: "revati-nakshatra",
+  image: "/images/blog/revati-nakshatra.jpg",
+  image_alt: "黄昏时分宏大的星际河口，金色光路从深海穿越边界流向新的黎明，黄道轮盘最后一道门槛散发着引导过渡的光辉",
   title: "走到黄道尽头的瑞瓦蒂，把\"结束\"读成了一次被护送的渡口",
   description: "瑞瓦蒂星宿是吠陀占星二十七宿里的第二十七个、也是最后一个月宿，落在双鱼座的末段，由水星主管，由牧者之神普善（Pushan）守护，专管在终结与新生之间安全过渡的那一段路。它坐在黄道之轮的最边缘，一整圈在这里走完，下一圈又在这里悄悄开始。",
   authorId: "aditi-sharma",
@@ -169,6 +171,9 @@ export const revatiNakshatraZh: WikiArticle = {
 4. 守住双鱼座这层底色，让慈悲与直觉为水星式的清晰上色，而不是和它打架。
 5. 把这个落点当成"越过门槛"的象征，而不是对某一桩具体人生事件的字面预言。
 
+
+![解读出生盘中 Revati 星宿位置的五步指南](/images/blog/revati-nakshatra-i0-zh.svg)
+
 ## 常见误读
 
 1. **最后一宿一定沉重、带土星味。** 这圈的收尾由水星主管，所以它读起来是一次有人引路的横渡，而不是一道厚重的判词，那份轻盈才是重点。
@@ -184,6 +189,9 @@ export const revatiNakshatraZh: WikiArticle = {
 | 主管行星 | 水星带来沟通与搭桥 | 注入双鱼座的慈悲之中 | 清晰与连接，而非沉重终局 |
 | 守护之神 | 牧者向导普善 | 护送穿过各种过渡与渡口 | 安全横渡、滋养、护佑 |
 | 象征钥匙 | 终点与起点之间的门槛 | 接近分点的年度节点 | 在圆满里编进的重生 |
+
+
+![Revati 星宿四大核心属性：黄道位置、主星、主神与象征核心](/images/blog/revati-nakshatra-i1-zh.svg)
 
 ## 关于这个星宿的常见问题
 

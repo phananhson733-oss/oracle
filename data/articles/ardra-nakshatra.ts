@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const ardraNakshatraEn: WikiArticle = {
   slug: "ardra-nakshatra",
   image: "/images/blog/ardra-nakshatra.jpg",
-  image_alt: "Ardra nakshatra storm-to-renewal landscape with parting indigo clouds and golden dawn light",
+  image_alt: "Storm clouds parting to reveal a golden-teal horizon at the moment of renewal, symbolizing Ardra nakshatra",
   title: "Ardra Nakshatra Meaning, From Storm to Renewal in Gemini",
   description: "Ardra is the sixth nakshatra of the Vedic zodiac, ruled by Rahu and presided over by the storm-god Rudra",
   authorId: "aditi-sharma",
@@ -121,6 +121,8 @@ It is an intense placement, but intensity here is the gateway, not a curse. The 
 
 export const ardraNakshatraZh: WikiArticle = {
   slug: "ardra-nakshatra",
+  image: "/images/blog/ardra-nakshatra.jpg",
+  image_alt: "风暴乌云散开，金色与蓝绿光芒照亮大地，象征阿德拉星宿的风暴到更新",
   title: "阿德拉星宿，从风暴里长出来的那份清醒",
   description: "阿德拉星宿是吠陀黄道二十七宿里的第六宿，整个落在恒星黄道的双子座，主管行星是北交点罗睺（Rahu），守护神是手持风暴的楼陀罗（Rudra，湿婆的猛烈相）；它把情绪与心智的强度当成转化的入口，而不是要被消灭的障碍。",
   authorId: "aditi-sharma",
@@ -166,12 +168,18 @@ export const ardraNakshatraZh: WikiArticle = {
 4. 把强度读成引擎，而不是症状——钻石是在压力下形成的，这是设计，不是故障。
 5. 把放大归功于罗睺：同一颗双子座的脑子在这里跑得更热、更宽，这既是不堪重负的源头，也是洞见的源头。
 
+
+![在吠陀出生星盘中识别阿德拉星宿位置的五步流程](/images/blog/ardra-nakshatra-i0-zh.svg)
+
 ## 常见误读
 
 1. **泪滴代表悲伤。** 泪滴是楼陀罗风暴里那场带来清洗的雨，不是永久的哀愁。它标记的是一个周期里"冲刷干净"的阶段，而这个周期的目的是更新；把它只读成悲伤，就抽掉了让这个象征成立的那份转化。
 2. **罗睺主管就意味着倒霉。** 罗睺放大、强化，但不判刑。同一种放大，既会让双子座的脑子感到超载，也正是它在压力下给出非凡洞见的能力来源。
 3. **楼陀罗只会搞破坏。** 在吠陀框架里，他的猛烈消解掉停滞的东西，好让有生命力的东西冒出来。这种破坏是有功能的、是更新的前奏——它是终结一场旱情的暴风雨，而不是为乱而乱。
 4. **强度是个要修掉的毛病。** 情绪与心智的强度是入口，不是障碍。这个循环是穿过压力抵达清晰的，所以想把强度消除掉，也就一并消除了它本会带来的那次突破。
+
+
+![阿德拉星宿四种常见误读与准确解读的对比](/images/blog/ardra-nakshatra-i1-zh.svg)
 
 ## 速查表
 

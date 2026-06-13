@@ -19,6 +19,7 @@
         {
           "kind": "compare",
           "afterHeadingEn": "## the Mars-Return Cycle vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 火星回归周期与相近概念：运作方式 + 取舍",
           "titleEn": "Mars Return vs Solar Return vs Saturn Return",
           "titleZh": "火星回归 vs 太阳回归 vs 土星回归",
           "altEn": "Side-by-side comparison of Mars Return, Solar Return, and Saturn Return cycles showing frequency, scope, and stakes",
@@ -77,6 +78,7 @@
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read the Mars-Return Cycle in Your Chart",
+          "afterHeadingZh": "## 如何在星盘里识别火星回归",
           "titleEn": "6 Steps to Read Your Mars-Return Chart",
           "titleZh": "解读火星回归星盘的六个步骤",
           "altEn": "Six ordered steps for reading a Mars return chart: find natal Mars, identify return date, cast the chart, note the house, read aspects, use as planning prompt",
