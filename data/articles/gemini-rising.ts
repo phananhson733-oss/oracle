@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const geminiRisingEn: WikiArticle = {
   slug: "gemini-rising",
+  image: "/images/blog/gemini-rising.jpg",
+  image_alt: "Luminous golden threads weave across a vast indigo sky over a dark landscape, symbolising Mercury's connective intelligence in Gemini rising",
   title: "Gemini Rising, Read Properly: How Mercury as Chart Ruler Builds Connective Depth, Not Just Speed",
   description: "The Gemini Ascendant is the rising sign that places airy, Mercury-ruled Gemini on the first house",
   authorId: "julian-thorne",
@@ -44,6 +46,9 @@ Against an earth-Mercury expression such as a Virgo rising, the contrast is abou
 
 This is also where the honest reading of astrology lives. Liz Greene treated the chart as a language of symbol rather than a fixed forecast, and Robert Hand framed it as meaning rather than a predictive machine, so neither would read gemini rising as a sentence handed down. Taken that way, the Gemini Ascendant describes a recognisable style of meeting the world — and the third house, Mercury's natural domain of communication, local environment, and siblings, becomes the life area where that style does its most natural work.
 
+
+![Comparison of Gemini Rising, Gemini Sun, and Earth Mercury showing role, expression, and key focus for each](/images/blog/gemini-rising-i1-en.svg)
+
 ## How to Read the Gemini Ascendant in Your Chart
 
 You can read the Gemini Ascendant in your own chart with a few ordered steps, and the same method works for any rising sign once you follow the chart ruler.
@@ -53,6 +58,9 @@ You can read the Gemini Ascendant in your own chart with a few ordered steps, an
 3. Note Mercury's house, the life area where that quick, linking mind most readily goes to work.
 4. Read the third house as the Ascendant's home turf: communication, learning, the local world, and the day-to-day exchange of information.
 5. Hold the outward manner — curious, talkative, flexible — as the surface of that Mercury process, not the whole of it.
+
+
+![Five steps for reading the Gemini Ascendant by tracing Mercury as chart ruler through sign, house, third house, and outward manner](/images/blog/gemini-rising-i0-en.svg)
 
 ## Common Misreadings
 

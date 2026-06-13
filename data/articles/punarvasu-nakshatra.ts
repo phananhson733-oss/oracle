@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const punarvasuNakshatraEn: WikiArticle = {
   slug: "punarvasu-nakshatra",
+  image: "/images/blog/punarvasu-nakshatra.jpg",
+  image_alt: "Ancient road arcing back toward a golden horizon under deep indigo sky, Jupiter rising as the return of light after darkness",
   title: "Why Punarvasu Reads Setbacks as the Return of Light, Not the End",
   description: "Punarvasu is the 7th lunar mansion of Vedic astrology, ruled by Jupiter and governed by the goddess Aditi, whose core theme is return, renewal",
   authorId: "aditi-sharma",
@@ -45,6 +47,9 @@ It helps to set the punarvasu nakshatra against two neighbors so the renewal cla
 
 3. **The Gemini and Cancer halves.** Because the station crosses from Gemini into Cancer, its restoration runs in two registers. The Gemini portion contributes intellectual agility — the recovery happens partly through reframing, curiosity, and new ideas. The Cancer portion adds emotional depth, anchoring the recovery in felt experience rather than abstraction. Read together, the dual placement explains why Punarvasu natives tend to be resilient rather than merely reactive: they rebuild with both the mind and the heart engaged.
 
+
+![Three-column comparison of Punarvasu renewal, simple fresh start, and Cancer-Moon nurture](/images/blog/punarvasu-nakshatra-i0-en.svg)
+
 ## How to Read Punarvasu in Your Chart
 
 Locating Punarvasu requires a Vedic natal chart rather than a Western one, since the two systems use different zero-point references and the Moon's stated degree will differ between them. With a Vedic chart available, these are the practical signals to read:
@@ -54,6 +59,9 @@ Locating Punarvasu requires a Vedic natal chart rather than a Western one, since
 3. **Note which half the Moon falls in.** A Gemini-side placement leans intellectual and adaptable in its recovery; a Cancer-side placement leans emotional and nurturing. The split is the most practical interpretive lever the station offers.
 4. **Watch for the return pattern in lived experience.** The station's signature shows up as a tendency to recover and re-expand after difficulty — observe where setbacks have historically returned as growth rather than ending in stagnation.
 5. **Hold the Aditi theme lightly.** Aditi's boundlessness suggests renewal potential, not a guarantee — the frame is a lens for resilience, not a promise that every loss reverses.
+
+
+![Five-step sequence for reading Punarvasu placement in a Vedic natal chart](/images/blog/punarvasu-nakshatra-i1-en.svg)
 
 ## Common Misreadings
 

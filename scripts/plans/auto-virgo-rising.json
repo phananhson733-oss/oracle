@@ -1,0 +1,126 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "virgo-rising": {
+      "hero": {
+        "prompt": "A still pre-dawn landscape where the eastern horizon begins to glow with quiet gold, precise teal-and-gold constellation lines mapped across the deep indigo sky above, a stone path winding through ordered rows of silver-green plants into soft mist, a barn owl perched on a mossy stone wall gazing toward the brightening horizon with calm attentiveness, the whole scene conveying quiet analytical clarity and the reward of careful observation, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Pre-dawn indigo landscape with teal-gold constellation lines, an owl on a stone wall watching as soft gold light breaks the horizon",
+        "altZh": "破晓前的深靛蓝景观，精准星座连线横跨天幕，猫头鹰静栖石墙，凝视金色晨光初现的地平线"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Virgo Ascendant in a Birth Chart",
+          "titleEn": "5 Steps to Read Your Virgo Ascendant",
+          "titleZh": "解读处女座上升星座的5个步骤",
+          "altEn": "A five-step sequence showing how to read the Virgo Ascendant from confirming the 1st-house cusp to reading the full chart for contrast",
+          "altZh": "解读处女座上升星座的五步序列图，从确认第一宫到对照完整星盘",
+          "items": [
+            {
+              "nameEn": "Confirm the Ascendant",
+              "nameZh": "确认上升点",
+              "subEn": "Verify Virgo sits on the 1st-house cusp, making Mercury your chart ruler",
+              "subZh": "确认处女座位于第一宫宫头，水星成为整张星盘的主宰星"
+            },
+            {
+              "nameEn": "Locate Mercury",
+              "nameZh": "找到水星位置",
+              "subEn": "Find Mercury's sign and house — this placement modifies the whole expression",
+              "subZh": "查找水星所在的星座和宫位——这一位置会影响整体表达方式"
+            },
+            {
+              "nameEn": "Note the 6th House",
+              "nameZh": "留意第六宫主题",
+              "subEn": "Routine, health, work, and service carry real weight in daily life",
+              "subZh": "日常规律、健康、工作与服务在日常生活中具有举足轻重的地位"
+            },
+            {
+              "nameEn": "Watch the First Impression",
+              "nameZh": "观察第一印象",
+              "subEn": "A noticing quality and a tendency to spot misalignments early, before speaking",
+              "subZh": "善于察觉细节，倾向于在开口之前便发现不协调的地方"
+            },
+            {
+              "nameEn": "Read the Whole Chart",
+              "nameZh": "阅读完整星盘",
+              "subEn": "Read the rest of the chart for contrast — the Virgo doorway is not the whole person",
+              "subZh": "与星盘其他部分对照——处女座这扇门并不代表门后的整个人"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Virgo Ascendant vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Virgo Ascendant vs Common Misconceptions",
+          "titleZh": "处女座上升与常见误解的对比",
+          "altEn": "Three-column comparison of the real Virgo Ascendant versus the perfectionist stereotype and the Sun sign distinction",
+          "altZh": "处女座上升真实特质与完美主义刻板印象及太阳星座区别的三栏对比图",
+          "columns": [
+            {
+              "nameEn": "Virgo Ascendant",
+              "nameZh": "处女座上升",
+              "linesEn": [
+                "Outward mask and first impression",
+                "Mercury-ruled: analytical and communicative",
+                "Observant before talkative",
+                "Dual nature: precise AND conversational",
+                "Shapes the opening impression only"
+              ],
+              "linesZh": [
+                "外在面具与第一印象",
+                "水星主宰：分析力与沟通力兼具",
+                "先观察后开口",
+                "双重天性：精准且善于交流",
+                "仅塑造初始印象"
+              ]
+            },
+            {
+              "nameEn": "Perfectionist Stereotype",
+              "nameZh": "完美主义刻板印象",
+              "linesEn": [
+                "Meticulous and modest only",
+                "Reads as cold or reserved",
+                "Misses Mercury's communicative side",
+                "One-dimensional label",
+                "Surface-level reading"
+              ],
+              "linesZh": [
+                "仅被视为一丝不苟和谦逊",
+                "容易被解读为冷漠或保守",
+                "忽视了水星的沟通面向",
+                "单一维度的标签",
+                "流于表面的解读"
+              ]
+            },
+            {
+              "nameEn": "Sun Sign",
+              "nameZh": "太阳星座",
+              "linesEn": [
+                "Inner motive and core identity",
+                "How you feel once the door is open",
+                "Describes who you are inside",
+                "Can differ greatly from Rising",
+                "Fills in after the introduction"
+              ],
+              "linesZh": [
+                "内在动机与核心身份",
+                "门打开后展现的真实感受",
+                "描述内在自我",
+                "可能与上升星座差异显著",
+                "在初次接触后才逐渐显现"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

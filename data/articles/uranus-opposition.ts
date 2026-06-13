@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const uranusOppositionEn: WikiArticle = {
   slug: "uranus-opposition",
+  image: "/images/blog/uranus-opposition.jpg",
+  image_alt: "Two luminous orbs in perfect opposition across a deep cosmic landscape, representing the Uranus 180-degree midlife transit",
   title: "Uranus Opposition Explained: The Midlife Transit Behind the Age-42 Awakening",
   description: "The uranus opposition is the transit that occurs when Uranus reaches a point exactly 180 degrees from where it sat at your birth",
   authorId: "marcus-orion",
@@ -50,6 +52,9 @@ You can locate this transit yourself with a few honest steps, and the same proce
 4. Read the activated house as a life area asking for attention, not as a forecast of a specific outcome in that area.
 5. Treat any single dramatic prediction about the transit as a misreading of a process that unfolds gradually over one to three years.
 
+
+![Five-step guide to reading the Uranus opposition in a birth chart, from locating natal Uranus to interpreting the activated house](/images/blog/uranus-opposition-i0-en.svg)
+
 ## Common Misreadings
 
 1. **It is the same as a midlife crisis.** The cultural script predicts collapse; the transit describes a structured pattern of integration that can be deliberate rather than destructive.
@@ -65,6 +70,9 @@ You can locate this transit yourself with a few honest steps, and the same proce
 | The orbital basis | Half of Uranus's roughly 84-year orbit | Felt across the 38-to-44 band | Timing is a window because the planet's pace varies |
 | Polarity activation | The house opposite natal Uranus is engaged | One to three years around exact | A suppressed life domain asks to be integrated |
 | The authenticity theme | Pressure on whatever was set aside to conform | Peaks at the exact opposition | A demand to revisit, not a verdict to accept |
+
+
+![Three-column overview of the Uranus opposition covering its geometric basis, orbital timing window, and polarity-integration theme](/images/blog/uranus-opposition-i1-en.svg)
 
 ## Common Questions About the Uranus Opposition
 

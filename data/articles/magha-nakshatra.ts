@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const maghaNakshatraEn: WikiArticle = {
   slug: "magha-nakshatra",
+  image: "/images/blog/magha-nakshatra.jpg",
+  image_alt: "An ancient throne glowing with inherited gold in a vast night landscape, ancestor spirits rising as mist around it",
   title: "Magha Nakshatra and the Throne You Inherit Rather Than Earn",
   description: "The magha nakshatra is the tenth lunar mansion of Vedic astrology, spanning the first 13°20' of Leo, ruled by Ketu and presided over by the Pitrs",
   authorId: "aditi-sharma",
@@ -55,12 +57,18 @@ You can work with Magha placements through a few honest steps, and the method ho
 4. Hold the tension Ketu adds — a pull toward duty alongside a pull toward letting go — as the core of the reading, not a flaw.
 5. Treat any "Magha makes you a natural leader" shortcut as half the picture; the fuller read is authority received, then reckoned with.
 
+
+![Five-step sequence for reading Magha nakshatra in a birth chart](/images/blog/magha-nakshatra-i0-en.svg)
+
 ## Common Misreadings
 
 1. **Magha means you are destined to rule.** The throne is inherited, not guaranteed power; Magha points to a lineage you carry, and what you do with it is a separate question entirely.
 2. **The Sun or Saturn must rule Leo's royal star.** Ketu rules Magha, and that surprise is the whole point — authority here looks backward into ancestry rather than upward into status.
 3. **Magha is pure confidence.** Ketu's detachment runs underneath, so the standing often comes with ambivalence about the very legacy it confers.
 4. **You read Magha differently for someone famous.** The frame is identical for anyone — check the inherited dignity first, then read how the person carries it.
+
+
+![Four common misreadings of Magha nakshatra corrected with the inherited-authority framework](/images/blog/magha-nakshatra-i1-en.svg)
 
 ## Magha at a Glance
 

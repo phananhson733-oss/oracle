@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const uttaraPhalguniNakshatraEn: WikiArticle = {
   slug: "uttara-phalguni-nakshatra",
+  image: "/images/blog/uttara-phalguni-nakshatra.jpg",
+  image_alt: "Uttara Phalguni nakshatra — solar warmth binding itself to committed patronage across the Leo-Virgo cusp",
   title: "Uttara Phalguni Nakshatra — When the Sun Learns to Become a Patron",
   description: "Uttara Phalguni is the twelfth nakshatra of the Vedic zodiac, ruled by the Sun and presided over by Aryaman, the deity of contracts, patronage",
   authorId: "aditi-sharma",
@@ -43,6 +45,9 @@ The split is also literal in the sky. Uttara Phalguni spans the late degrees of 
 
 This is also where an honest reading of the uttara phalguni nakshatra lives. Aryaman governs contracts and the social obligations of formalized hospitality, so this is generosity with terms attached — a patron's giving, not a benefactor's whim. Where Purva Phalguni explores warmth freely, Uttara Phalguni asks what you will commit to once the warmth has to hold weight. Liz Greene treated such placements as a language of symbol rather than a fixed verdict, and Robert Hand framed them as meaning to reflect on rather than a script, so neither would read this nakshatra as a label stamped on a person. Taken that way, reading the two stars as a pair, rather than collapsing them into one "Phalguni," is what keeps the distinction between free pleasure and committed service intact, and it lets you hold the patronage archetype as a mirror rather than a measure.
 
+
+![Comparison of Purva Phalguni free pleasure versus Uttara Phalguni committed service](/images/blog/uttara-phalguni-nakshatra-i0-en.svg)
+
 ## How to Read Uttara Phalguni in a Chart
 
 You can work with this nakshatra honestly using a few steps, and the same method applies whether you are reading your own placement or someone else's.
@@ -52,6 +57,9 @@ You can work with this nakshatra honestly using a few steps, and the same method
 3. Bring in Aryaman's theme of contracts and patronage: where are you the one others rely on by agreement, not just affection?
 4. Contrast it with any Purva Phalguni placement to separate free enjoyment from committed duty rather than blending them.
 5. Treat the patronage archetype as a question about reliability, never as a fixed label on the person.
+
+
+![Five-step method for reading Uttara Phalguni in a Vedic birth chart](/images/blog/uttara-phalguni-nakshatra-i1-en.svg)
 
 ## Common Misreadings of Uttara Phalguni
 

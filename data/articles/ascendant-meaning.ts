@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const ascendantMeaningEn: WikiArticle = {
   slug: "ascendant-meaning",
+  image: "/images/blog/ascendant-meaning.jpg",
+  image_alt: "Golden arc of light rising precisely on the eastern horizon over a still ocean, anchoring the deep-indigo sky around one luminous threshold",
   title: "Ascendant Meaning Explained — Why the Rising Degree Anchors Your Whole Chart",
   description: "The ascendant is the exact zodiac degree rising over the eastern horizon at the moment of your birth",
   authorId: "julian-thorne",
@@ -43,6 +45,9 @@ Against the moon sign, the contrast is outward versus inward. The moon describes
 
 This is also where honest astrology lives. The ascendant is one of the "big three" alongside the sun and moon, yet it is the only one of the three that the calendar alone cannot give you. Treating the ascendant meaning as a structural anchor rather than a flattering trait keeps the symbol and the mechanics in their proper places, and that separation is what lets a chart stay readable instead of becoming a horoscope of loose adjectives.
 
+
+![Three-column comparison: Ascendant needs birth time and place; Sun Sign needs date only; Moon Sign is private and inward](/images/blog/ascendant-meaning-i0-en.svg)
+
 ## How to Read the Ascendant in Your Chart
 
 You can locate the ascendant meaning in your own chart with a few deliberate steps, and the same method works for any chart you are handed.
@@ -52,6 +57,9 @@ You can locate the ascendant meaning in your own chart with a few deliberate ste
 3. Note the sign and degree on that point — that is your rising sign and your first house cusp.
 4. Trace the house numbers around from there, watching how the ascendant fixes where each life domain begins.
 5. Read the rising sign for instinct and first impression, but treat the house cusps it sets as the structural payoff.
+
+
+![Five-step sequence: gather accurate birth time, cast the chart, note rising sign and degree, trace house cusps, read instinct and structure](/images/blog/ascendant-meaning-i1-en.svg)
 
 ## Common Misreadings
 

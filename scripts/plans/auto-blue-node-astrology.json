@@ -1,0 +1,100 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "blue-node-astrology": {
+      "hero": {
+        "prompt": "A single luminous crossing point where two sweeping orbital arcs meet high in a vast night sky — one arc rising gently from the left horizon, one descending from the right, their intersection glowing with quiet warm gold while a soft teal atmosphere halos the meeting place, the surrounding cosmos stretching unbroken in every direction, no other objects, just the one radiant node and the two curving paths converging upon it across infinite indigo space, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two orbital arcs crossing in a vast indigo night sky, their glowing intersection marking the North Node as a single luminous point",
+        "altZh": "两条轨道弧线在深邃靛蓝夜空中交汇，交叉点散发金色光芒，象征北交点所在位置"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Blue-Node Convention in Your Own Chart",
+          "titleEn": "5 Steps to Demystify the Blue Node in Your Chart",
+          "titleZh": "解读星盘中蓝色节点的5个步骤",
+          "altEn": "Five-step sequence for identifying the blue node as the North Node in any birth chart software",
+          "altZh": "识别任意星盘软件中蓝色节点即北交点的五步流程图",
+          "items": [
+            {
+              "nameEn": "Check the Legend",
+              "nameZh": "查看图例",
+              "subEn": "Find the blue symbol and confirm the chart legend labels it North Node",
+              "subZh": "找到蓝色符号，确认图例将其标注为北交点"
+            },
+            {
+              "nameEn": "Confirm the Axis",
+              "nameZh": "确认轴线",
+              "subEn": "Verify the South Node sits exactly 180° opposite — they form one axis",
+              "subZh": "确认南交点位于正对面180°处，两者构成同一条轴线"
+            },
+            {
+              "nameEn": "Note True or Mean",
+              "nameZh": "查看节点模式",
+              "subEn": "Check settings to see if your chart uses True Node or Mean Node",
+              "subZh": "查看软件设置，了解星盘使用真实节点还是平均节点"
+            },
+            {
+              "nameEn": "Cross-Check Software",
+              "nameZh": "跨软件对比",
+              "subEn": "Open same birth data in another program — color changes, placement stays",
+              "subZh": "在另一软件中打开相同数据，颜色改变而位置不变"
+            },
+            {
+              "nameEn": "Read Sign and House",
+              "nameZh": "读取星座与宫位",
+              "subEn": "Read the node by sign and house; set the display color aside for good",
+              "subZh": "按星座与宫位解读节点，彻底放下显示颜色的执念"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Blue-Node Convention vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "True Node vs Mean Node: What Changes and What Doesn't",
+          "titleZh": "真实节点与平均节点：变化的与不变的",
+          "altEn": "Side-by-side comparison of True Node and Mean Node showing motion type, degree stability, and interpretive impact",
+          "altZh": "真实节点与平均节点的对比，展示其运动方式、度数稳定性及解读影响",
+          "columns": [
+            {
+              "nameEn": "True Node",
+              "nameZh": "真实节点",
+              "linesEn": [
+                "Tracks the node's actual, slightly wobbling position",
+                "Can appear to drift or move backward over short spans",
+                "More precise degree — may shift sign near a cusp"
+              ],
+              "linesZh": [
+                "追踪节点的实际位置，略有摆动",
+                "短期内可能出现逆行或漂移",
+                "度数更精确，临近宫首时可能跨越星座"
+              ]
+            },
+            {
+              "nameEn": "Mean Node",
+              "nameZh": "平均节点",
+              "linesEn": [
+                "Uses a smoothed average of the node's orbital path",
+                "Moves steadily without any retrograde wobble",
+                "Slightly different degree — consistent and predictable"
+              ],
+              "linesZh": [
+                "使用节点轨道的平滑平均值",
+                "稳定移动，无逆行摆动",
+                "度数略有差异，但始终一致且可预测"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

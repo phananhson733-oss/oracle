@@ -1,0 +1,82 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "north-node-in-leo": {
+      "hero": {
+        "prompt": "A single luminous golden sun cresting an indigo cosmic horizon, its warm lion-gold rays flooding forward across a wide nebula plain while countless cool silver-teal starforms recede into the depths behind, the contrast between the lone radiance and the vast receding collective rendered as a sweeping atmospheric panorama — deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A single golden sun crests an indigo cosmic horizon as cool silver starforms recede into the collective dark",
+        "altZh": "单颗金色太阳从靛蓝宇宙地平线升起，银色星群消退于集体的暗处"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Leo North Node vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Leo North Node Axis vs Adjacent Concepts",
+          "altEn": "Comparison of the Leo North Node axis against the Leo Sun placement and the Fifth House",
+          "columns": [
+            {
+              "nameEn": "Leo North Node Axis",
+              "linesEn": [
+                "Directional pull between past habit and future stretch",
+                "Both poles always read together, never in isolation",
+                "Growth theme that resolves over decades"
+              ]
+            },
+            {
+              "nameEn": "Leo Sun",
+              "linesEn": [
+                "Warmth and need for recognition already native",
+                "Standing trait carried on any given day",
+                "No developmental tension — already present"
+              ]
+            },
+            {
+              "nameEn": "Fifth House",
+              "linesEn": [
+                "Leo's natural domain: creativity, romance, individual joy",
+                "Static placement, not a directional arc",
+                "Misses the past-to-future developmental pull"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Leo North Node in Yourself",
+          "titleEn": "Five Signals the Leo North Node Is Active",
+          "altEn": "Five observable signals showing the Leo North Node axis at work in everyday life",
+          "items": [
+            {
+              "nameEn": "The Instinct to Defer",
+              "subEn": "Reaching for 'what does everyone think' before naming your own preference"
+            },
+            {
+              "nameEn": "Warmth You Admire but Withhold",
+              "subEn": "Respecting open-hearted, expressive people while feeling clumsy doing it yourself"
+            },
+            {
+              "nameEn": "Discomfort of Being Looked At",
+              "subEn": "Wanting to deflect attention onto the group when a contribution is clearly yours"
+            },
+            {
+              "nameEn": "The Creative Project You Postpone",
+              "subEn": "A personal piece of expression you circle for years without finishing"
+            },
+            {
+              "nameEn": "Recurring Theme of Self-Erasure",
+              "subEn": "Disappearing into causes or collectives decade after decade"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

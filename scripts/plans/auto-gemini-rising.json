@@ -1,0 +1,88 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "gemini-rising": {
+      "hero": {
+        "prompt": "Countless luminous golden threads weave across a vast indigo night sky, each strand connecting glowing nodes scattered through a sweeping landscape of dark hills and still water reflecting the cosmic web above, the threads pulsing with teal light where they cross, suggesting a mind mapping connections faster than thought can follow; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Luminous golden threads weave across a vast indigo sky over a dark landscape, symbolising Mercury's connective intelligence in Gemini rising",
+        "altZh": "无数金色光线在靛蓝夜空中交织成网，象征双子座上升的水星连接智慧"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Gemini Ascendant in Your Chart",
+          "titleEn": "5 Steps to Read Your Gemini Ascendant",
+          "altEn": "Five steps for reading the Gemini Ascendant by tracing Mercury as chart ruler through sign, house, third house, and outward manner",
+          "items": [
+            {
+              "nameEn": "Confirm Chart Ruler",
+              "subEn": "Verify Gemini sits on the first house cusp, making Mercury the chart ruler that steers the whole expression"
+            },
+            {
+              "nameEn": "Find Mercury by Sign",
+              "subEn": "Locate natal Mercury's sign — its element reveals the flavour of the connective intelligence: air, earth, water, or fire"
+            },
+            {
+              "nameEn": "Note Mercury's House",
+              "subEn": "Identify the life area where that quick, linking mind most readily goes to work"
+            },
+            {
+              "nameEn": "Read the Third House",
+              "subEn": "Treat this as the Ascendant's home turf: communication, learning, the local world, and daily information exchange"
+            },
+            {
+              "nameEn": "Hold the Outward Manner",
+              "subEn": "Recognise the curious, talkative, flexible surface as the visible layer of the deeper Mercury process, not the whole of it"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Gemini Ascendant vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Gemini Rising vs Gemini Sun vs Earth Mercury",
+          "altEn": "Comparison of Gemini Rising, Gemini Sun, and Earth Mercury showing role, expression, and key focus for each",
+          "columns": [
+            {
+              "nameEn": "Gemini Rising",
+              "linesEn": [
+                "Packaging and first impression",
+                "Mercury as chart ruler",
+                "Connective agility — breadth over precision",
+                "Third house as natural domain",
+                "How you meet the world"
+              ]
+            },
+            {
+              "nameEn": "Gemini Sun",
+              "linesEn": [
+                "Core identity and inner character",
+                "Deeper motivations the Sun carries",
+                "Describes the whole self, not just the doorway",
+                "Can appear alongside any rising sign",
+                "Why you are, not just how you arrive"
+              ]
+            },
+            {
+              "nameEn": "Earth Mercury (e.g. Virgo Rising)",
+              "linesEn": [
+                "Same ruler, different medium",
+                "Analytical precision and method",
+                "Depth of refinement over breadth of connection",
+                "Earth standard, not a superior one",
+                "A different mode of the same planet"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const emotionJournalEn: WikiArticle = {
   slug: "emotion-journal",
+  image: "/images/blog/emotion-journal.jpg",
+  image_alt: "Nebula clouds crystallizing into distinct constellations over a twilight horizon, evoking the practice of naming feelings precisely",
   title: "Emotion Journal Habits That Name Feelings Instead of Just Logging Them",
   description: "The Affect-Labeling Practice is the habit of putting a precise word to a feeling as you write it down",
   authorId: "elena-vane",
@@ -47,6 +49,9 @@ Three tools show up in the same searches: a naming-focused emotion journal, a qu
 
 The trade-off is directional. A mood log and venting both prioritize ease and release; the naming habit prioritizes precision and pattern recognition. Which one fits depends on whether today's goal is a quick check-in or a deeper read of what a feeling really points to — they answer different questions, and a good practice can hold both modes on different days.
 
+
+![Comparison of naming-focused emotion journal, mood log, and free-form venting across depth, speed, and pattern recognition](/images/blog/emotion-journal-i0-en.svg)
+
 ## How to Read the Affect-Labeling Practice in Yourself
 
 The practice produces movement when you apply it to concrete, recent moments rather than abstract tendencies. Four signals tell you a journal entry is naming a feeling rather than just logging one.
@@ -55,6 +60,9 @@ The practice produces movement when you apply it to concrete, recent moments rat
 2. **A context attaches itself.** The feeling stops floating and lands on a who, when, or where — the review, the unanswered text, the Sunday evening.
 3. **The charge softens slightly after naming.** Many people notice a feeling loses a little grip once it has an accurate word — what Matthew Lieberman described as putting feelings into words. That small release is the point of a self-regulation diary.
 4. **Repeats become visible.** Reading back a week of entries, the same precise label appears across different situations, revealing a pattern a mood rating would have flattened.
+
+
+![Four signals that show affect labeling is working in your emotion journal: word narrows, context attaches, charge softens, repeats emerge](/images/blog/emotion-journal-i1-en.svg)
 
 ## Common Misreadings
 

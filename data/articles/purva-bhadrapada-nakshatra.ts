@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const purvaBhadrapadaNakshatraEn: WikiArticle = {
   slug: "purva-bhadrapada-nakshatra",
+  image: "/images/blog/purva-bhadrapada-nakshatra.jpg",
+  image_alt: "Purva Bhadrapada nakshatra: solitary monolith at the Aquarius-Pisces threshold struck by Jupiter's golden spiritual fire under a stormy cosmic sky",
   title: "Purva Bhadrapada, Jupiter's Most Volatile Spiritual Fire",
   description: "Purva Bhadrapada is the 25th nakshatra of the Vedic zodiac, a Jupiter-ruled lunar mansion that stretches from 20° Aquarius into the first 3°20' of Pisces",
   authorId: "aditi-sharma",
@@ -43,6 +45,9 @@ Against a generically "lucky Jupiter" reading, this placement trades comfort for
 
 This is also where the interpretive, non-deterministic reading of astrology lives. Treating the chart as a language of symbol rather than a fixed sentence means the purva bhadrapada nakshatra describes a charged disposition, not a destiny. Aja Ekapada's storm is a metaphor for transformation that precedes renewal, and Jupiter's role is to lend that transformation meaning and direction. The one-footed posture of the deity is itself instructive: it suggests a being balanced on a single point, committed and unwavering, which is the very quality that makes this placement both formidable and demanding. Read that way, the placement points toward channeled conviction rather than either blind faith or burnout, and that distinction is the whole point of reading it well.
 
+
+![Comparison of Shatabhisha, Purva Bhadrapada and Uttara Bhadrapada by ruling quality and core theme](/images/blog/purva-bhadrapada-nakshatra-i0-en.svg)
+
 ## How to Read Purva Bhadrapada in a Chart
 
 You can interpret the purva bhadrapada nakshatra yourself with a few grounded steps, and the method works whether the placement holds the Moon, Ascendant, or another planet.
@@ -52,6 +57,9 @@ You can interpret the purva bhadrapada nakshatra yourself with a few grounded st
 3. Remember Aja Ekapada governs storm and renewal, so frame intensity as a transformation theme, not a defect.
 4. Watch which planet sits here — the Moon emphasizes emotional zeal, the Ascendant a fervent outward identity.
 5. Hold conviction as the keyword and ask where this person's idealism is finding (or failing to find) an outlet.
+
+
+![Five-step method for reading Purva Bhadrapada nakshatra in a birth chart, from locating the degree to naming where conviction flows](/images/blog/purva-bhadrapada-nakshatra-i1-en.svg)
 
 ## Common Misreadings
 

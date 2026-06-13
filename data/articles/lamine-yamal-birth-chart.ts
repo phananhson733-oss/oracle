@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const lamineYamalBirthChartEn: WikiArticle = {
   slug: "lamine-yamal-birth-chart",
+  image: "/images/blog/lamine-yamal-birth-chart.jpg",
+  image_alt: "Moonlit ocean shoreline at night with Jupiter's golden glow cresting the horizon over dark Cancer tidal waters",
   title: "Lamine Yamal's Birth Chart: A Cancer Sun Catching Jupiter's 2026 Tail",
   description: "Lamine Yamal's birth chart is the natal horoscope of the footballer born July 13, 2007, led by a Cancer Sun ruled by the Moon.",
   authorId: "julian-thorne",
@@ -119,6 +121,8 @@ A Virgo rising depends on an exact birth time that is not firmly public. Treat a
 
 export const lamineYamalBirthChartZh: WikiArticle = {
   slug: "lamine-yamal-birth-chart",
+  image: "/images/blog/lamine-yamal-birth-chart.jpg",
+  image_alt: "夜晚月光下的海岸线，木星的金色光芒从地平线升起，照亮巨蟹星座的深色潮水",
   title: "亚马尔星盘里那颗巨蟹太阳，正好赶上木星 2026 的尾巴",
   description: "亚马尔的星盘，是这位 2007 年 7 月 13 日出生的足球运动员的本命盘，核心是一颗由月亮守护的巨蟹座太阳。在心理占星里，巨蟹座太阳把身份框定在情感共振、直觉与守护之需上，比\"敏感的孩子\"那种老说法精确。",
   authorId: "julian-thorne",
@@ -163,6 +167,9 @@ export const lamineYamalBirthChartZh: WikiArticle = {
 
 第二组对比让画面更锐利。把亚马尔的星盘放到一份以结果为导向的预测旁边，差别在于各自愿意宣称什么。预测点名一个冠军，成败系于此；心理读法命名的是一个方向——一颗巨蟹太阳学着信任一个时机恰好的直觉——以及一个这一年天象为它划重点的窗口。要换得这份长久的可信度，你就要放弃喊出比分的快感：一份拒绝报比分的解读，才能为你带来的下一张盘、以及读者自己的盘，保住它的分量。它也让焦点留在一个年轻球员真正能成长进去的主题上，而不是一个任何盘都给不出的比分。
 
+
+![太阳星座侧写、心理占星本命盘解读与结果导向预测三种方式的对比](/images/blog/lamine-yamal-birth-chart-i0-zh.svg)
+
 ## 如何在你的星盘里识别亚马尔星盘的读法
 
 你可以把同一套方法用到任何一颗巨蟹太阳上，无论名人还是你自己。
@@ -172,6 +179,9 @@ export const lamineYamalBirthChartZh: WikiArticle = {
 3. 留意木星在 2025–26 年行经巨蟹，扩张太阳的主题，而精确接触在这一年更早时就已发生。
 4. 在出生时间确认前，把被报告的巨蟹月亮、处女上升以及任何宫位说法，都当作暂定的。
 5. 把每一次过运读成一个还要被活出来的篇章，而不是一个已定的结果。
+
+
+![将巨蟹太阳本命盘读法运用到任何星盘的五步流程](/images/blog/lamine-yamal-birth-chart-i1-zh.svg)
 
 ## 常见误读
 

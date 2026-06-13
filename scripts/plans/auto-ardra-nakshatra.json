@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "ardra-nakshatra": {
+      "hero": {
+        "prompt": "A vast open landscape at the exact moment a Rudra-storm breaks — coiling indigo storm-clouds split across the entire sky, dark and violet on one horizon, beginning to part on the other where a hairline of deep gold dawn-light bleeds through; silver rain hangs mid-air in a luminous veil, the earth below glinting with pooled water that mirrors the gold fracture above; a single enormous teardrop-shaped rain-jewel floats at the centre of the sky, lit from within as though diamond-pressure is becoming clarity, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Ardra nakshatra storm-to-renewal landscape with parting indigo clouds and golden dawn light",
+        "altZh": "阿尔德拉星宿风暴转化为新生的景象，靛蓝云层分开，金色黎明之光破晓而出"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Ardra in Your Chart",
+          "titleEn": "5 Steps to Reading Ardra in Your Birth Chart",
+          "titleZh": "解读星盘中阿尔德拉星宿的5个步骤",
+          "altEn": "Five-step sequence for reading Ardra nakshatra placement in a Vedic birth chart",
+          "altZh": "在吠陀星盘中解读阿尔德拉星宿宫位的五步流程",
+          "items": [
+            {
+              "nameEn": "Confirm Placement",
+              "nameZh": "确认宫位",
+              "subEn": "6°40'–20°00' sidereal Gemini — all four padas within one sign",
+              "subZh": "恒星双子座6°40'–20°00'，四个帕达均在同一星座内"
+            },
+            {
+              "nameEn": "Identify Your Pada",
+              "nameZh": "确认帕达",
+              "subEn": "Each quarter shades Rahu's intensity differently across Gemini",
+              "subZh": "每个四分之一象限以不同方式调节拉胡的强度"
+            },
+            {
+              "nameEn": "Track the Cycle",
+              "nameZh": "追踪循环",
+              "subEn": "Watch for pressure periods followed by breakthrough or reframe",
+              "subZh": "观察压力期之后出现的突破或重构时刻"
+            },
+            {
+              "nameEn": "Read Intensity as Engine",
+              "nameZh": "将强度视为引擎",
+              "subEn": "The diamond forms under pressure — that is the design, not the malfunction",
+              "subZh": "钻石在压力下形成——这是设计本意，而非故障"
+            },
+            {
+              "nameEn": "Credit Rahu",
+              "nameZh": "理解拉胡放大效应",
+              "subEn": "The same amplification drives both the overwhelm and the insight",
+              "subZh": "同一放大效应既驱动了压迫感，也带来了洞见"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Ardra Nakshatra: Myth vs Reality",
+          "titleZh": "阿尔德拉星宿：误解与真相对照",
+          "altEn": "Comparison of four common Ardra nakshatra misreadings against their accurate interpretations",
+          "altZh": "阿尔德拉星宿四大常见误解与正确解读对照",
+          "columns": [
+            {
+              "nameEn": "Common Misreading",
+              "nameZh": "常见误解",
+              "linesEn": [
+                "Teardrop means permanent grief",
+                "Rahu rulership makes Ardra unlucky",
+                "Rudra is only destructive",
+                "Intensity is a problem to fix"
+              ],
+              "linesZh": [
+                "泪滴象征永久的悲伤",
+                "拉胡主宰使阿尔德拉不吉利",
+                "鲁德拉只带来破坏",
+                "强烈情绪是需要解决的问题"
+              ]
+            },
+            {
+              "nameEn": "What It Actually Means",
+              "nameZh": "真实含义",
+              "linesEn": [
+                "Cleansing rain of Rudra's storm — the washing-clean phase of renewal",
+                "Amplifies and intensifies, source of both overwhelm and insight",
+                "Dissolves the stagnant so something living can replace it",
+                "The gateway to breakthrough — intensity produces the insight"
+              ],
+              "linesZh": [
+                "鲁德拉风暴的净化之雨——更新循环中的洁净阶段",
+                "放大和强化——既是压迫感的来源，也是洞见的来源",
+                "消融停滞之物，使有生命的事物得以取而代之",
+                "突破的门户——强度本身产生洞见"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

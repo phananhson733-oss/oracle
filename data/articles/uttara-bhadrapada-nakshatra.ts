@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const uttaraBhadrapadaNakshatraEn: WikiArticle = {
   slug: "uttara-bhadrapada-nakshatra",
+  image: "/images/blog/uttara-bhadrapada-nakshatra.jpg",
+  image_alt: "Uttara Bhadrapada nakshatra — a still night ocean reflecting stars, serpentine deep wisdom coiling in the abyssal depths below the calm surface",
   title: "Why Uttara Bhadrapada Is the Nakshatra of Still Waters and Deep Wisdom",
   description: "Uttara Bhadrapada nakshatra is the twenty-sixth of the twenty-seven lunar mansions in Vedic astrology",
   authorId: "aditi-sharma",
@@ -45,6 +47,9 @@ Set against Pisces' more familiar Western reading, the contrast sharpens further
 
 A third contrast most surface treatments skip: practitioners sometimes group Uttara Bhadrapada with gentler water placements because of its calm reputation. That grouping erases Saturn entirely. The steadiness here is not soft — it is the weight of Shani applied to Pisces' depth, which is why the placement reads as quietly immovable rather than merely pleasant. Holding both Saturn and Ahirbudhnya in frame at once — as the classical attributions require — is what separates an accurate reading of Uttara Bhadrapada from one that mistakes its restraint for passivity.
 
+
+![Comparison of Purva Bhadrapada (Jupiter fire, igniting) and Uttara Bhadrapada (Saturn depth, enduring) qualities](/images/blog/uttara-bhadrapada-nakshatra-i0-en.svg)
+
 ## How to Read Uttara Bhadrapada in Yourself
 
 Uttara Bhadrapada's signature shows up in the texture of how depth is held rather than how it is displayed. Look for these observable signals, each a tendency the placement inclines toward rather than a guarantee.
@@ -54,6 +59,9 @@ Uttara Bhadrapada's signature shows up in the texture of how depth is held rathe
 3. **Saturn's long horizon.** A natural orientation toward what endures — long projects, slow craft, commitments measured in years. Quick wins hold less pull than work that compounds over time.
 4. **The reservoir, not the spark.** Energy that accumulates rather than flashes. Where a fire placement ignites, this one fills slowly and releases under pressure, often surprising those who mistook the calm for emptiness.
 5. **Late-blooming depth.** A sense that the placement's gifts arrive with maturity. Many describe their strongest contributions emerging well after the early-life phase when faster placements peak — consistent with a penultimate mansion that integrates what came before.
+
+
+![Five signals of Uttara Bhadrapada: still surface, wisdom that waits, long horizon, reservoir energy, late-blooming depth](/images/blog/uttara-bhadrapada-nakshatra-i1-en.svg)
 
 ## Common Misreadings
 

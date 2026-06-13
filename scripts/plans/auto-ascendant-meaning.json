@@ -1,0 +1,120 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "ascendant-meaning": {
+      "hero": {
+        "prompt": "A vast eastern horizon at the exact moment of first light, a single luminous golden arc rising precisely over a calm ocean's edge, the entire vault of sky arranged around that one fixed threshold degree of emergence, soft teal nebula clouds fanning outward from the rising glow, the sense that the whole celestial architecture hinges on this single point, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Golden arc of light rising precisely on the eastern horizon over a still ocean, anchoring the deep-indigo sky around one luminous threshold",
+        "altZh": "金色弧光从平静海面的东方地平线精确升起，将深靛青夜空锚定于那唯一的发光门槛"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Ascendant vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Ascendant vs Sun Sign vs Moon Sign",
+          "titleZh": "上升星座 vs 太阳星座 vs 月亮星座",
+          "altEn": "Three-column comparison: Ascendant needs birth time and place; Sun Sign needs date only; Moon Sign is private and inward",
+          "altZh": "三列对比：上升星座需要出生时间和地点；太阳星座只需日期；月亮星座代表内在情绪",
+          "columns": [
+            {
+              "nameEn": "Ascendant",
+              "nameZh": "上升星座",
+              "linesEn": [
+                "Needs date, time & place",
+                "Sets all house cusps",
+                "Outward arrival & body",
+                "Structural anchor"
+              ],
+              "linesZh": [
+                "需要日期、时间和地点",
+                "决定所有宫位",
+                "外在到来与身体",
+                "结构性锚点"
+              ]
+            },
+            {
+              "nameEn": "Sun Sign",
+              "nameZh": "太阳星座",
+              "linesEn": [
+                "Needs date only",
+                "Core identity",
+                "Inner self beneath",
+                "Calendar convenience"
+              ],
+              "linesZh": [
+                "只需日期",
+                "核心身份",
+                "内在自我",
+                "日历即可查知"
+              ]
+            },
+            {
+              "nameEn": "Moon Sign",
+              "nameZh": "月亮星座",
+              "linesEn": [
+                "Needs date & time",
+                "Private emotional weather",
+                "Inward feeling life",
+                "Hidden from first impression"
+              ],
+              "linesZh": [
+                "需要日期和时间",
+                "私人情感状态",
+                "内在情感生活",
+                "不显于第一印象"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Ascendant in Your Chart",
+          "titleEn": "How to Find Your Ascendant in 5 Steps",
+          "titleZh": "五步找到你的上升星座",
+          "altEn": "Five-step sequence: gather accurate birth time, cast the chart, note rising sign and degree, trace house cusps, read instinct and structure",
+          "altZh": "五步流程：收集精确出生时间、绘制星盘、记录上升星座与度数、追踪宫位、阅读本能与结构",
+          "items": [
+            {
+              "nameEn": "Gather Birth Time",
+              "nameZh": "获取出生时间",
+              "subEn": "To the minute if possible; near a sign boundary each minute can shift the rising sign",
+              "subZh": "尽量精确到分钟；靠近星座边界时每分钟都可能改变上升星座"
+            },
+            {
+              "nameEn": "Cast the Chart",
+              "nameZh": "绘制星盘",
+              "subEn": "Use exact time and place; the ascendant appears at the left, 9-o'clock point of the wheel",
+              "subZh": "使用精确时间和地点；上升点位于星盘左侧九点钟位置"
+            },
+            {
+              "nameEn": "Note Sign & Degree",
+              "nameZh": "记录星座与度数",
+              "subEn": "That sign and degree is your rising sign and your first house cusp",
+              "subZh": "该星座与度数即为你的上升星座和第一宫宫头"
+            },
+            {
+              "nameEn": "Trace the Houses",
+              "nameZh": "追踪宫位",
+              "subEn": "Number the house cusps around from the ascendant; watch how each life domain is assigned",
+              "subZh": "从上升点依次标记各宫位宫头；观察每个生活领域的分配"
+            },
+            {
+              "nameEn": "Read Sign & Structure",
+              "nameZh": "阅读星座与结构",
+              "subEn": "Rising sign for instinct and first impression; house cusps for structural payoff across the whole chart",
+              "subZh": "上升星座揭示本能与第一印象；宫位则是整张星盘结构意义的关键"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const saturnInAries2026En: WikiArticle = {
   slug: "saturn-in-aries-2026",
+  image: "/images/blog/saturn-in-aries-2026.jpg",
+  image_alt: "Volcanic mountain peak glowing with amber fire under crimson auroras in a deep indigo sky, evoking Saturn's discipline meeting Aries fire",
   title: "Saturn in Aries 2026 Explained — A Three-Year Discipline Reset, Not Your Saturn Return",
   description: "Saturn in Aries is the multi-year transit that began in 2025, returns to Aries in February 2026, and runs to around April 2028, applying Saturn's discipline",
   authorId: "marcus-orion",
@@ -55,12 +57,18 @@ You can map this transit yourself with a few methodical steps, and the same proc
 4. Watch the retrograde shape. Saturn's 2025 entry, retreat to Pisces, and 2026 re-entry mean the theme previews, pauses, then resumes — treat the early taste as a rehearsal, not the final exam.
 5. Translate the pressure into a build. Saturn's signature is "what structure is missing here," so the practical move is to name one concrete thing to construct in that house rather than to brace for loss.
 
+
+![Five-step sequence for mapping the Saturn in Aries transit in your natal chart](/images/blog/saturn-in-aries-2026-i0-en.svg)
+
 ## Common Misreadings
 
 1. **This transit is my Saturn Return.** It is a Return only if your natal Saturn is in Aries; for everyone else it is an ordinary house transit, demanding but not the once-in-29-years milestone.
 2. **Saturn in Aries means bad luck for Aries people.** Sun-sign Aries readers feel the first-house version most directly, but the transit is a structuring pressure on initiative, not a sentence; the same demand reaches every sign through a different house.
 3. **The whole period is one long hardship.** The passage moves through retrograde and direct phases with distinct peaks, so the pressure pulses rather than holding flat, and the April 2028 exit gives a clear horizon for the work.
 4. **You read your own transit differently from someone else's.** The method is identical for anyone — locate the Aries house, read its domain, then ask what structure it lacks — so there is no special-case reading reserved for your own chart.
+
+
+![Four common misreadings of the Saturn in Aries transit corrected](/images/blog/saturn-in-aries-2026-i1-en.svg)
 
 ## Saturn in Aries at a Glance
 
