@@ -478,7 +478,11 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
     }
 
     if (!airwallexResult.airwallexSuccess) {
-      console.error(`[CancelSubscription] provider cancel FAILED user=${req.userId} sub=${subscription.id} err=${airwallexResult.error}`);
+      logger.error('[CancelSubscription] provider cancel failed', {
+        userId: req.userId,
+        subscriptionId: subscription.id,
+        error: airwallexResult.error,
+      });
       // Do NOT mark the local row cancelled — that would hide a still-billing subscription.
       return res.status(502).json({
         error: 'Could not cancel the subscription with the payment provider. Please retry or contact support so we can stop the billing.',
@@ -986,24 +990,26 @@ async function handleInvoiceEvent(event: any): Promise<void> {
   const eventName = event.name || event.type;
 
   if (!subscriptionId) {
-    console.log(
-      `Airwallex ${eventName} without subscription_id, skipping invoice ${data.id}`,
-    );
+    logger.info('Airwallex invoice event without subscription_id, skipping', {
+      eventName,
+      invoiceId: data.id,
+    });
     return;
   }
 
   try {
     const result = await reconcileAirwallexSubscriptionById(subscriptionId);
-    console.log(
-      `Airwallex ${eventName} reconciled sub=${subscriptionId}: ${
-        result.reconciled ? result.action : `skip(${result.reason})`
-      }`,
-    );
+    logger.info('Airwallex invoice reconciled', {
+      eventName,
+      subscriptionId,
+      outcome: result.reconciled ? result.action : `skip(${result.reason})`,
+    });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
-    console.error(
-      `Airwallex invoice reconcile failed for sub=${subscriptionId}: ${msg}`,
-    );
+    logger.error('Airwallex invoice reconcile failed', {
+      subscriptionId,
+      error: msg,
+    });
   }
 }
 

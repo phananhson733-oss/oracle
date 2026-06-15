@@ -5,6 +5,7 @@
 import { Router, Request, Response } from 'express';
 import crypto from 'crypto';
 import { reconcileAllAirwallexSubscriptions } from '../services/subscriptionReconcilerDriver.js';
+import { logger } from '../utils/logger.js';
 
 const router = Router();
 
@@ -31,13 +32,16 @@ router.get('/reconcile-subscriptions', async (req: Request, res: Response) => {
   const dryRun = req.query.dryRun === 'true';
   try {
     const report = await reconcileAllAirwallexSubscriptions({ dryRun });
-    console.log(
-      `[cron reconcile] dryRun=${dryRun} scanned=${report.scanned} reconciled=${report.reconciled} skipped=${report.skipped.length}`,
-    );
+    logger.info('[cron reconcile] completed', {
+      dryRun,
+      scanned: report.scanned,
+      reconciled: report.reconciled,
+      skipped: report.skipped.length,
+    });
     return res.json({ ok: true, ...report });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
-    console.error('[cron reconcile] failed:', msg);
+    logger.error('[cron reconcile] failed', { error: msg });
     return res.status(500).json({ ok: false, error: msg });
   }
 });
