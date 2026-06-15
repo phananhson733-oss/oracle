@@ -25,6 +25,18 @@ const UUID_RE =
 const isPlainObject = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 
+// Supabase 错误对象不是原生 Error（logger 的 Error 展开只抓 name/message/stack），
+// 显式提取 message/code/details 便于远程诊断失败原因；均为错误元数据，非用户 PII（红线#3）。
+const errorFields = (
+  error: unknown,
+): { message?: unknown; code?: unknown; details?: unknown } => {
+  const e = error as
+    | { message?: unknown; code?: unknown; details?: unknown }
+    | null
+    | undefined;
+  return { message: e?.message, code: e?.code, details: e?.details };
+};
+
 const jsonBytes = (v: unknown): number =>
   Buffer.byteLength(JSON.stringify(v) ?? "", "utf8");
 
@@ -105,7 +117,11 @@ savedReadingsRouter.post(
       return res.status(201).json({ id: data.id, createdAt: data.created_at });
     } catch (error) {
       // Never log the body — input_json holds birth data (privacy red line #3).
-      logger.error("Save reading failed", { userId, toolType, error });
+      logger.error("Save reading failed", {
+        userId,
+        toolType,
+        ...errorFields(error),
+      });
       return res
         .status(500)
         .json({ error: "Failed to save reading", code: "SAVE_FAILED" });
@@ -138,7 +154,7 @@ savedReadingsRouter.get(
         })),
       });
     } catch (error) {
-      logger.error("List readings failed", { userId, error });
+      logger.error("List readings failed", { userId, ...errorFields(error) });
       return res
         .status(500)
         .json({ error: "Failed to list readings", code: "LIST_FAILED" });
@@ -186,7 +202,7 @@ savedReadingsRouter.get(
         },
       });
     } catch (error) {
-      logger.error("Get reading failed", { userId, error });
+      logger.error("Get reading failed", { userId, ...errorFields(error) });
       return res
         .status(500)
         .json({ error: "Failed to get reading", code: "GET_FAILED" });
@@ -222,7 +238,7 @@ savedReadingsRouter.delete(
       }
       return res.json({ success: true });
     } catch (error) {
-      logger.error("Delete reading failed", { userId, error });
+      logger.error("Delete reading failed", { userId, ...errorFields(error) });
       return res
         .status(500)
         .json({ error: "Failed to delete reading", code: "DELETE_FAILED" });
