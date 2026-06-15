@@ -5,6 +5,7 @@
 import { Router } from "express";
 import { performance } from "perf_hooks";
 import { resolveLang } from "../utils/lang.js";
+import { logger } from "../utils/logger.js";
 import type {
   BirthInput,
   SynastryResponse,
@@ -1089,6 +1090,17 @@ synastryRouter.post("/overview-section", authMiddleware, async (req, res) => {
         timing,
       } as SynastryOverviewSectionResponse);
     } catch (innerError) {
+      // 结构化失败日志：记录是哪个 section / promptId / 原因，避免线上"全是统一文案"无法诊断（AW-4）。
+      // 仅记非 PII 字段（section/promptId/lang/reason），绝不记 birth/姓名等敏感数据（隐私红线 #3）。
+      logger.warn("[synastry] overview-section failed", {
+        section,
+        promptId: OVERVIEW_SECTION_PROMPT_MAP[section],
+        lang,
+        reason:
+          innerError instanceof AIUnavailableError
+            ? innerError.reason
+            : (innerError as Error).message,
+      });
       // LLM / 计算失败：归还预占的额度
       await entitlementServiceV2.refundReservation(reservationId);
       throw innerError;

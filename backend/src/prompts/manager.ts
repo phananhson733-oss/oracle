@@ -804,7 +804,7 @@ registerPrompt(
     {
       meta: {
         id: "synastry-growth-task",
-        version: "2.1",
+        version: "2.2",
         scenario: "synastry",
       },
       system: (ctx) =>
@@ -821,7 +821,7 @@ registerPrompt(
 }
 Requirements:
 - task should be specific and actionable, not vague
-- evidence must cite specific synastry/composite aspects
+- evidence must cite specific synastry aspects from the provided signals (no composite chart data is supplied; do not invent composite aspects)
 - action_steps should be practical things the couple can do together
 - sweet_spots and friction_points must each include 2 items
 - Use evidence from synastry.dimension_signals, synastry.sweet_signals, synastry.friction_signals, and synastry.overlays_top (Top2 4th/7th/8th house overlays)
@@ -840,7 +840,7 @@ ${SINGLE_LANGUAGE_INSTRUCTION_EN}`
 }
 要求：
 - task 应具体可行，不要模糊
-- evidence 必须引用具体的合盘/组合盘相位
+- evidence 必须引用所提供信号中的具体合盘相位（不提供组合盘数据，不要编造组合盘相位）
 - action_steps 应该是情侣可以一起做的实际事情
 - sweet_spots 与 friction_points 各 2 条
 - 证据必须来自 synastry.dimension_signals、synastry.sweet_signals、synastry.friction_signals 与 synastry.overlays_top（Top2，来自 4/7/8 宫）
