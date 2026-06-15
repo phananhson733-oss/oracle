@@ -31,7 +31,7 @@ import { trackEvent } from "../services/analytics";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntitlement } from "../contexts/EntitlementContext";
 import * as Astro from "../services/astroService";
-import SaveReadingButton from "../components/SaveReadingButton";
+import DownloadChartButton from "../components/DownloadChartButton";
 import {
   formatTimezoneOffset,
   buildBirthCacheKey,
@@ -726,6 +726,7 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
   const { theme } = useTheme();
   const [overview, setOverview] = useState<T.NatalOverviewContent | null>(null);
   const [loading, setLoading] = useState(true);
+  const chartRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -786,9 +787,18 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           </div>
         </div>
 
-        <Section title={t.me.chart_title} className="mb-6">
+        <Section
+          title={t.me.chart_title}
+          className="mb-6"
+          action={
+            <DownloadChartButton
+              containerRef={chartRef}
+              filename={`natal-chart-${profile.birthDate}`}
+            />
+          }
+        >
           <div className="mt-4 mb-1 flex justify-center">
-            <div className="relative w-full">
+            <div ref={chartRef} className="relative w-full">
               <AstroChart
                 type="natal"
                 profile={profile}
@@ -810,17 +820,7 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
         <div>
           {overview && (
-            <Section
-              title={t.me.glance_title}
-              action={
-                <SaveReadingButton
-                  toolType="natal"
-                  title={`${t.saved?.type_natal || "Natal chart"} · ${profile.birthDate}`}
-                  inputJson={profile as unknown as Record<string, unknown>}
-                  outputJson={overview as unknown as Record<string, unknown>}
-                />
-              }
-            >
+            <Section title={t.me.glance_title}>
               <QuickGlance data={overview} />
             </Section>
           )}
