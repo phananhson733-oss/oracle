@@ -1775,6 +1775,10 @@ export const TRANSLATIONS = {
       save_done: "Saved",
       save_error: "Couldn't save. Please try again.",
       sign_in_to_save: "Sign in to save",
+      download: "Download image",
+      downloading: "Generating…",
+      download_done: "Downloaded",
+      download_error: "Couldn't generate image. Please try again.",
     },
     subscription: {
       title: "Upgrade to Pro",
@@ -3661,6 +3665,10 @@ export const TRANSLATIONS = {
       save_done: "已保存",
       save_error: "保存失败，请稍后重试。",
       sign_in_to_save: "登录后保存",
+      download: "下载图片",
+      downloading: "生成中…",
+      download_done: "已下载",
+      download_error: "图片生成失败，请稍后重试。",
     },
     subscription: {
       title: "升级到 Pro",

@@ -15,6 +15,7 @@
 | `load-sdk.ts` | 动态 `<script>`/SDK 加载器，带 Promise 缓存（`loadScript`）避免重复注入。 |
 | `nodeSign.ts` | tool-led 北交点迷你计算器的纯查表逻辑：`resolveNorthNodeSign(birthDateISO, table)` 按 YYYY-MM-DD 字符串比较定位星座（DOB 不出浏览器），并导出 `NodeSignTable`/`NodeSignIngress` 形状（由 `scripts/gen-node-sign-table.mjs` 生成的 `data/nodeSignTable.ts` 满足）。 |
 | `safetyFooter.ts` | psych-adjacent 强制安全 footer 的**单一文案来源**：结构化 `SAFETY_FOOTER_COPY`/`SAFETY_CRISIS_LINES` + `buildSafetyFooterHtml(lang)`（静态 stub 用）+ `resolveSafetyLang`/`crisisLineName`（SPA `<SafetyFooter>` 用）。纯、import-free，故 `generate-seo-pages.mjs` 可经 loadTsModule 加载；stub 与 SPA 同源不漂移（CLAUDE.md AI 安全边界 #1/#4）。 |
+| `svgChartToPng.ts` | `downloadSvgChartAsPng(svg, filename, size?)`：把自包含的星盘 `<svg>` 序列化→canvas→PNG 触发下载（纯浏览器 API，零依赖）。深色 cosmic 底；独立渲染拿不到 webfont，占星 glyph 是系统字体 Unicode 正常渲染。供 `<DownloadChartButton>` 调用。 |
 
 ## 近期变更
 

@@ -21,7 +21,8 @@
 - MobileBottomNav.tsx｜地位：导航组件｜功能：移动端（<md）固定底部 tab bar，icon + label + active 高亮，镜像顶部 6 个 nav 项与 t.nav.*/isActive 逻辑；safe-area 内边距，z-[150] 让位 consent banner（z-[200]）。
 - Breadcrumb.tsx｜地位：导航组件｜功能：面包屑导航与结构化数据输出。
 - ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式）。
-- SaveReadingButton.tsx｜地位：保存控件（#24）｜功能：natal/cycle/synastry 结果页复用的 Save 按钮，匿名点击开登录弹窗，含 saving/done 态；synastry payload 须由页面预先剥名（红线#4）。
+- SaveReadingButton.tsx｜地位：保存控件（#24）｜功能：cycle/synastry 结果页复用的 Save 按钮（natal 本命盘已改用 DownloadChartButton），匿名点击开登录弹窗，含 saving/done 态；synastry payload 须由页面预先剥名（红线#4）。
+- DownloadChartButton.tsx｜地位：星盘下载控件｜功能：把容器内的星盘 `<svg>` 导出为 PNG 下载（含 working/done/error 态），调 `utils/svgChartToPng`；MePage 本命盘用它取代保存到账户。
 - ChartMiniCalc.tsx｜地位：工具组件｜功能：tool-led 北交点迷你计算器（客户端纯查表，DOB 不出浏览器；instrument chart_start/result_shown/full_chart_cta_click 漏斗，只送分类字段）。分层互补定位：作为 #6 全盘（WikiChartCTA/BirthChartSection）的轻型上游钩子，结果区 CTA 经 `fullChartHref` prop 指向全盘（默认回退 /auth）。
 - SafetyFooter.tsx｜地位：合规组件｜功能：psych-adjacent 文章的强制安全 footer SPA 渲染（临床免责声明 + 危机热线），文案与静态 stub 同源自 `utils/safetyFooter.ts`（单一来源、绝不漂移）。因 inject-spa 是 replace 非 hydrate，JS 用户这份必须由 SPA 渲染（CLAUDE.md AI 安全边界 #1/#4）。由 `wiki/WikiArticleDetailPage` 在 `article.psychAdjacent` 时渲染。
 
