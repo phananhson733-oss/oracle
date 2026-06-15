@@ -10,7 +10,8 @@ CBT 功能的后端代理服务层。
 
 | 文件 | 职责 |
 |------|------|
-| `deepseekService.ts` | 调用后端 CBT 分析接口，返回 snake_case 报告并上抛失败 |
+| `deepseekService.ts` | 调用后端 CBT 分析接口；识别危机短路响应（原样上抛供 UI 渲染 CrisisCard），返回 snake_case 报告或对无内容上抛失败 |
+| `deepseekService.test.ts` | `analyzeCBTRecord` 单测：危机响应不被误判为失败、正常返回 content、无 content 抛错（jsdom 环境） |
 
 ## 环境变量
 
