@@ -1,14 +1,15 @@
 // INPUT: React、流程状态、主题与后端分析服务（含失败提示、重试状态与纸感映射）。
-// OUTPUT: 导出 CBT 记录向导组件（含对比度优化的填写输入与失败重试）。
+// OUTPUT: 导出 CBT 记录向导组件（含对比度优化的填写输入、失败重试与危机短路求助卡）。
 // POS: CBT 流程组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, { useState, useMemo } from 'react';
-import { CBTRecord, MoodEntry, BalancedEntry, AnalysisReport, EmojiMood, MoodImages } from './types';
+import { CBTRecord, MoodEntry, BalancedEntry, AnalysisReport, EmojiMood, MoodImages, CBTCrisisResponse, isCBTCrisisResponse } from './types';
 import { UserProfile } from '../../types';
 import { ArrowRight, ArrowLeft, Plus, X, Wand2, Sparkles, Zap, Info, Eye, CheckCircle2, Trash2, Lightbulb, Activity, Brain, Heart, Moon, Dumbbell } from 'lucide-react';
 import { analyzeCBTRecord } from '../../services/cbt/deepseekService';
 import ReportDashboard from './ReportDashboard';
+import CrisisCard from './CrisisCard';
 import { OracleLoading } from '../OracleLoading';
 import MoodIcon from './MoodIcon';
 import { useLanguage, useTheme } from '../UIComponents';
@@ -144,6 +145,7 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
   const [currentStep, setCurrentStep] = useState(0);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [crisis, setCrisis] = useState<CBTCrisisResponse | null>(null);
   const [report, setReport] = useState<AnalysisReport | null>(null);
   const [finalRecord, setFinalRecord] = useState<CBTRecord | null>(null);
   const [pendingRecord, setPendingRecord] = useState<CBTRecord | null>(null);
@@ -218,8 +220,16 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
   const submitAnalysis = async (record: CBTRecord) => {
     setIsAnalyzing(true);
     setAnalysisError(null);
+    setCrisis(null);
     try {
       const result = await analyzeCBTRecord(record, profile);
+      // 危机短路：后端命中危机关键词时返回求助响应（无分析内容）。
+      // 渲染 CrisisCard，绝不持久化或展示 LLM 分析，也绝不误判为失败。
+      if (isCBTCrisisResponse(result)) {
+        setCrisis(result);
+        setPendingRecord(null);
+        return;
+      }
       const completedRecord = { ...record, analysis: result };
       setReport(result);
       setFinalRecord(completedRecord);
@@ -600,6 +610,13 @@ const CBTWizard: React.FC<CBTWizardProps> = ({ onClose, onComplete, moodImages, 
       />
     </div>
   );
+  if (crisis) {
+    return (
+      <div className="fixed inset-0 z-[200] bg-space-950/95 flex items-center justify-center p-6 overflow-y-auto">
+        <CrisisCard crisis={crisis} onClose={() => { setCrisis(null); onClose(); }} />
+      </div>
+    );
+  }
   if (analysisError) {
     return (
       <div className="fixed inset-0 z-[200] bg-space-950/95 flex items-center justify-center p-6">

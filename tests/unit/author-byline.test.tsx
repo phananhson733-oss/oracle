@@ -47,7 +47,7 @@ describe("AuthorByline — detail variant", () => {
     expect(screen.getByText("Editorial persona")).toBeTruthy();
   });
 
-  it("作者链接强制 EN-only：即便 langPath 产出 /zh 前缀，href 仍指向 /en 作者页", () => {
+  it("ZH 文章作者名渲染为纯文本（不链接），不强制把用户切到英文界面（AW-5）", () => {
     renderInRouter(
       <AuthorByline
         persona={elena}
@@ -57,8 +57,9 @@ describe("AuthorByline — detail variant", () => {
         langPath={(p) => `/zh${p}`}
       />,
     );
-    const link = screen.getByRole("link", { name: "Elena Vane" });
-    expect(link.getAttribute("href")).toBe("/en/wiki/author/elena-vane");
+    // 作者页为 EN-only canonical；zh 文章不生成指向 /en 的强制跳转链接，改纯文本。
+    expect(screen.queryByRole("link")).toBeNull();
+    expect(screen.getByText("Elena Vane")).toBeTruthy();
   });
 
   it("无 langPath 时姓名不可点（降级为纯文本）", () => {

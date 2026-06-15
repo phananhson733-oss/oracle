@@ -128,6 +128,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, [location.pathname, language]);
 
+  // 同步 <html lang> 到当前 UI 语言：修正"中文内容 html 仍标 en"的 a11y/SEO 不准，
+  // 并启用 index.html 的 :lang(zh) 规则让 CJK 字体优先（AW-7 防御性改进）。
+  // 仅运行时改 DOM，不影响各路由预渲染的静态 lang，爬虫不受影响。
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = language;
+    }
+  }, [language]);
+
   const toggleLanguage = () => {
     const oldLang = language;
     const newLang = language === "zh" ? "en" : "zh";

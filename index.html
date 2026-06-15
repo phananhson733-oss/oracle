@@ -108,6 +108,17 @@
         letter-spacing: -0.02em;
       }
 
+      /* 中文内容：CJK 字体优先，避免汉字回退到拉丁装饰字体（Readex/Cormorant）导致乱码。
+         运行时 LanguageProvider 设置 <html lang="zh"> 后生效，不影响预渲染 SEO（AW-7 防御层）。
+         注意：这是防御性增强；若乱码仍现且 DOM 文本正确，多为浏览器字形缓存损坏，非代码 bug。 */
+      :lang(zh) {
+        font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', 'Readex Pro', sans-serif;
+      }
+      :lang(zh) h1, :lang(zh) h2, :lang(zh) h3,
+      :lang(zh) h4, :lang(zh) h5, :lang(zh) h6 {
+        font-family: 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Cormorant Garamond', serif;
+      }
+
       /* Font Loading State */
       body.loading-fonts {
         visibility: hidden;

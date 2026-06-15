@@ -12,6 +12,7 @@ import type {
   Language,
 } from "../types/api.js";
 import { logger } from "../utils/logger.js";
+import { detectDominantLang } from "../utils/lang.js";
 
 const getDeepSeekApiKey = () => process.env.DEEPSEEK_API_KEY;
 const getDeepSeekBaseUrl = () =>
@@ -1262,8 +1263,20 @@ async function generateAIContentInternal<T>(
       normalized = repaired as LocalizedContent<T>;
     }
 
-    // 写入缓存
-    if (shouldUseCache) {
+    // 输出语言校验：模型偶发返回错语言（如请求 zh 却回英文，且未自报 lang）。
+    // 此时不写缓存，避免错语言内容被缓存进正确 lang 的 key 并持续整个 TTL（AW-3）。
+    const detectedLang = detectDominantLang(normalized.content);
+    const langMismatch = detectedLang !== null && detectedLang !== lang;
+    if (langMismatch) {
+      logger.warn("[ai] output language mismatch; skipping cache", {
+        promptId: options.promptId,
+        requested: lang,
+        detected: detectedLang,
+      });
+    }
+
+    // 写入缓存（语言不匹配时跳过，防止污染缓存）
+    if (shouldUseCache && !langMismatch) {
       await cacheService.set(cacheKey, normalized, CACHE_TTL.AI_OUTPUT);
     }
 

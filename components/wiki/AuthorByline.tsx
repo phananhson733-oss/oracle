@@ -88,10 +88,12 @@ export const AuthorByline: React.FC<AuthorBylineProps> = ({
     );
   }
 
-  // detail variant — 作者页为 EN-only（canonical/stub/sitemap 皆 /en/）。byline 链接
-  // 强制 EN，避免在 zh 文章页生成指向非 canonical /zh 作者页的内部链接（SEO 契约一致）。
-  // langPath 仅作"是否可链接"的开关（消费方传入即启用链接），不参与作者页路径构造。
-  const authorHref = langPath ? `/en/wiki/author/${persona.id}` : undefined;
+  // detail variant — 作者页为 EN-only（canonical/stub/sitemap 皆 /en/）。
+  // EN 文章 byline 链接到 /en 作者页；ZH 文章渲染纯文本（不链接），既不把用户从
+  // zh 强制切到英文界面（AW-5），也不生成指向非 canonical /zh 作者页的内部链接（SEO 契约一致）。
+  // langPath 仍作"是否可链接"的总开关，仅 EN 文章才真正生成链接。
+  const authorHref =
+    langPath && lang === "en" ? `/en/wiki/author/${persona.id}` : undefined;
   return (
     <span className="flex items-center gap-3">
       <AuthorMonogram persona={persona} size="md" />
