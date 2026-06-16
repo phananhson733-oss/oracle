@@ -1,5 +1,5 @@
 // INPUT: TimelineCandle[] / TimelineMarker[]（来自 /api/transit/timeline）、useLanguage、点选回调。
-// OUTPUT: 自绘 SVG 蜡烛图组件（区间摘要语义：wick=dip..peak、body=start..end），自适应填满容器宽度。
+// OUTPUT: 自绘 SVG 蜡烛图组件（区间摘要语义：wick=dip..peak、body=start..end）；自适应但有尺寸上限——窄于容器时居中、整月不裁切、候选过多才横滚。
 // POS: 月度 K 线主视图。蜡烛体按方向红/绿着色（end≥start=涨=绿、end<start=跌=红，近平=中性灰；
 //      西方蜡烛惯例，产品方决定）；能量质量(harmony/tension)在当日卡里数值呈现。纵轴=中性能量强度，仅与自身比较。
 
@@ -24,13 +24,16 @@ const COLOR_SELECTED = "#2563EB"; // psycho-600 — selection ring
 
 const FLAT_EPS = 1.5; // |end-start| 在此内视为持平
 
-const H = 260; // plot height
+const H = 200; // plot height（#168 后偏高，回收到更紧凑的占比）
 const PAD_TOP = 16;
 const PAD_BOTTOM = 28;
 const PAD_LEFT = 26; // room for y-axis labels
 const PAD_RIGHT = 10;
-const MIN_SLOT = 20; // 低于此宽度则横滚（候选项过多时）
-const DEFAULT_WIDTH = 900;
+// 每根蜡烛的横向槽位：低于 MIN_SLOT 则横滚（候选过多，如手机看整月）；
+// 高于 MAX_SLOT 则封顶，避免宽桌面屏上蜡烛被拉得又宽又大（用户反馈"大小太大了"）。
+const MIN_SLOT = 16;
+const MAX_SLOT = 22;
+const DEFAULT_WIDTH = 720;
 
 function candleColor(c: TimelineCandle): string {
   const delta = c.end - c.start;
@@ -60,7 +63,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   const wrapRef = useRef<HTMLDivElement>(null);
   const [availWidth, setAvailWidth] = useState(DEFAULT_WIDTH);
 
-  // 自适应：测量容器宽度，蜡烛铺满可用宽度（候选过多时回退到 MIN_SLOT + 横滚）。
+  // 自适应：测量容器宽度，算每根蜡烛槽位（夹在 MIN/MAX_SLOT；过窄横滚，过宽封顶居中）。
   useEffect(() => {
     const el = wrapRef.current;
     if (!el || typeof ResizeObserver === "undefined") return;
@@ -73,8 +76,13 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   }, []);
 
   const n = Math.max(1, candles.length);
-  const slot = Math.max(MIN_SLOT, (availWidth - PAD_LEFT - PAD_RIGHT) / n);
-  const bodyW = Math.max(6, Math.min(24, slot * 0.62));
+  // 槽位夹在 [MIN_SLOT, MAX_SLOT]：太多候选→收到 MIN_SLOT 触发横滚；宽屏→封顶在 MAX_SLOT
+  // 而非铺满，于是图表比容器窄、靠 mx-auto 居中，不再被拉得过宽过大。
+  const slot = Math.min(
+    MAX_SLOT,
+    Math.max(MIN_SLOT, (availWidth - PAD_LEFT - PAD_RIGHT) / n),
+  );
+  const bodyW = Math.max(5, Math.min(12, slot * 0.62));
   const chartWidth = PAD_LEFT + PAD_RIGHT + candles.length * slot;
   const plotBottom = PAD_TOP + H;
 
@@ -109,7 +117,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               ? "月度能量强度蜡烛图"
               : "Monthly energy intensity chart"
           }
-          className="block"
+          className="block mx-auto"
         >
           {/* horizontal grid */}
           {gridLines.map((g) => (

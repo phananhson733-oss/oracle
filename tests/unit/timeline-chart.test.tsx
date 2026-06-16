@@ -58,6 +58,22 @@ describe("TimelineChart", () => {
     expect(container.querySelectorAll("g").length).toBe(1);
   });
 
+  it("keeps a full month compact: candle bodies are capped (not ballooned to fill wide screens)", () => {
+    // 回归用户反馈"大小太大了"：宽容器下槽位/蜡烛体须封顶，而非铺满拉宽。
+    const candles = Array.from({ length: 31 }, (_, i) =>
+      candle(`2026-07-${String(i + 1).padStart(2, "0")}`),
+    );
+    const { container } = render(<TimelineChart candles={candles} />);
+    // body rect = 每组第 2 个 rect（首个是命中区）。宽度须 ≤ 12（MAX bodyW），不再是旧的 ~20。
+    const bodyRects = container.querySelectorAll("g > rect:nth-of-type(2)");
+    expect(bodyRects.length).toBe(31);
+    bodyRects.forEach((r) => {
+      expect(Number(r.getAttribute("width"))).toBeLessThanOrEqual(12);
+    });
+    // 整月仍全部渲染、不裁切（31 个蜡烛组都在）。
+    expect(container.querySelectorAll("g").length).toBe(31);
+  });
+
   it("renders a marker dot when a candle has an associated marker", () => {
     const candles = [candle("2026-06-15")];
     const { container } = render(
