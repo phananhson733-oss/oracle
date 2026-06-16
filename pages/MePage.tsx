@@ -31,7 +31,7 @@ import { trackEvent } from "../services/analytics";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntitlement } from "../contexts/EntitlementContext";
 import * as Astro from "../services/astroService";
-import DownloadChartButton from "../components/DownloadChartButton";
+import ChartShareModal from "../components/ChartShareModal";
 import {
   formatTimezoneOffset,
   buildBirthCacheKey,
@@ -726,7 +726,7 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
   const { theme } = useTheme();
   const [overview, setOverview] = useState<T.NatalOverviewContent | null>(null);
   const [loading, setLoading] = useState(true);
-  const chartRef = useRef<HTMLDivElement>(null);
+  const [shareOpen, setShareOpen] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -791,14 +791,17 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           title={t.me.chart_title}
           className="mb-6"
           action={
-            <DownloadChartButton
-              containerRef={chartRef}
-              filename={`natal-chart-${profile.birthDate}`}
-            />
+            <ActionButton
+              size="sm"
+              variant="secondary"
+              onClick={() => setShareOpen(true)}
+            >
+              {t.saved?.download || "Download image"}
+            </ActionButton>
           }
         >
           <div className="mt-4 mb-1 flex justify-center">
-            <div ref={chartRef} className="relative w-full">
+            <div className="relative w-full">
               <AstroChart
                 type="natal"
                 profile={profile}
@@ -889,6 +892,13 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           <FrameworkDisclaimer />
         </div>
       </Container>
+      {shareOpen && (
+        <ChartShareModal
+          profile={profile}
+          filename={`natal-chart-${profile.birthDate}`}
+          onClose={() => setShareOpen(false)}
+        />
+      )}
     </>
   );
 };
