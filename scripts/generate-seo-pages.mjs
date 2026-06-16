@@ -808,6 +808,7 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'germany-world-cup-players-birth-chart-2026',
   'germany-world-cup-2026-astrology-team',
   'vinicius-jr-birth-chart-astrology',
+  'scotland-world-cup-2026-astrology-saturn-return',
   'ashwini-nakshatra',
   'hasta-nakshatra',
   'krittika-nakshatra',
