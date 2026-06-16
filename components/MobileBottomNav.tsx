@@ -1,28 +1,65 @@
 // INPUT: react-router-dom Link/useLocation, lucide-react icons, useTheme/useLanguage from UIComponents, useLangPath hook.
 // OUTPUT: Exports MobileBottomNav — a fixed bottom tab bar (icon + label + active highlight) shown only below md.
-// POS: Mobile primary navigation; mirrors the 6 top-nav entries + t.nav.* + isActive logic. Update components/FOLDER.md when this file changes.
+// POS: Mobile primary navigation; mirrors the 7 top-nav entries + t.nav.* + isActive logic. Update components/FOLDER.md when this file changes.
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Sparkles, Telescope, Users, MessageCircle, NotebookPen, BookOpen } from "lucide-react";
+import {
+  Sparkles,
+  Telescope,
+  Activity,
+  Users,
+  MessageCircle,
+  NotebookPen,
+  BookOpen,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useTheme, useLanguage } from "./UIComponents";
 import { useLangPath } from "../hooks/useLangPath";
 
-// Mirrors the 6 entries rendered by the desktop top nav in App.tsx.
-// Labels reuse the existing t.nav.* keys (with English fallbacks) so no new
-// i18n keys are introduced. Icons are semantically matched to each section.
+// Mirrors the 7 entries rendered by the desktop top nav in App.tsx.
+// Labels reuse the existing t.nav.* keys (with English fallbacks). Icons are
+// semantically matched: Activity (neutral pulse) for the Energy Timeline keeps
+// the "loud vs quiet, not good vs bad" framing (no up=good TrendingUp valence).
 const NAV_ITEMS: ReadonlyArray<{
   path: string;
-  labelKey: "dashboard" | "forecast" | "us" | "oracle" | "journal" | "wiki";
+  labelKey:
+    | "dashboard"
+    | "forecast"
+    | "timeline"
+    | "us"
+    | "oracle"
+    | "journal"
+    | "wiki";
   fallback: string;
   icon: LucideIcon;
 }> = [
-  { path: "/dashboard", labelKey: "dashboard", fallback: "Birth", icon: Sparkles },
-  { path: "/forecast", labelKey: "forecast", fallback: "Transit", icon: Telescope },
+  {
+    path: "/dashboard",
+    labelKey: "dashboard",
+    fallback: "Birth",
+    icon: Sparkles,
+  },
+  {
+    path: "/forecast",
+    labelKey: "forecast",
+    fallback: "Transit",
+    icon: Telescope,
+  },
+  {
+    path: "/timeline",
+    labelKey: "timeline",
+    fallback: "Timeline",
+    icon: Activity,
+  },
   { path: "/us", labelKey: "us", fallback: "Synastry", icon: Users },
   { path: "/oracle", labelKey: "oracle", fallback: "Ask", icon: MessageCircle },
-  { path: "/journal", labelKey: "journal", fallback: "Journal", icon: NotebookPen },
+  {
+    path: "/journal",
+    labelKey: "journal",
+    fallback: "Journal",
+    icon: NotebookPen,
+  },
   { path: "/wiki", labelKey: "wiki", fallback: "Wiki", icon: BookOpen },
 ];
 

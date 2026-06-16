@@ -719,12 +719,16 @@ const AppContent: React.FC = () => {
             </div>
 
             {/* Navigation Links - Permanently Top Right.
-                Single unified IA — landing reuses the same 6 entries as the
+                Single unified IA — landing reuses the same 7 entries as the
                 rest of the app. Active state highlights the current route. */}
             <div className="flex items-center gap-6 ml-auto overflow-x-auto no-scrollbar">
               {[
                 { path: "/dashboard", label: t.nav.dashboard },
                 { path: "/forecast", label: t.nav.forecast },
+                {
+                  path: "/timeline",
+                  label: t.nav.timeline || "Energy Timeline",
+                },
                 { path: "/us", label: t.nav.us },
                 { path: "/oracle", label: t.nav.oracle },
                 { path: "/journal", label: t.nav.journal },

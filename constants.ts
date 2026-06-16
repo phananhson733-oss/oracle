@@ -877,6 +877,7 @@ export const TRANSLATIONS = {
     nav: {
       dashboard: "Birth",
       forecast: "Transit",
+      timeline: "Timeline",
       us: "Synastry",
       oracle: "Ask",
       journal: "Journal",
@@ -1718,7 +1719,8 @@ export const TRANSLATIONS = {
       plans_title: "Plans",
       free_title: "Free",
       free_price: "$0",
-      free_desc: "Core charts, the wiki, and the CBT journal — explore without an account.",
+      free_desc:
+        "Core charts, the wiki, and the CBT journal — explore without an account.",
       pro_title: "Pro",
       pro_badge: "Best value",
       monthly_label: "Monthly",
@@ -1743,7 +1745,11 @@ export const TRANSLATIONS = {
         { feature: "Synastry", free: "3 (lifetime)", pro: "+1 / week" },
         { feature: "Synthetica", free: "3 / day", pro: "10 / day" },
         { feature: "Reading details", free: "2 free", pro: "Unlimited" },
-        { feature: "Psychological dimensions", free: "First 3", pro: "All unlocked" },
+        {
+          feature: "Psychological dimensions",
+          free: "First 3",
+          pro: "All unlocked",
+        },
         { feature: "Monthly CBT insights", free: "Locked", pro: "Unlocked" },
         { feature: "Bonus credits", free: "—", pro: "+100 per payment" },
       ],
@@ -1842,8 +1848,15 @@ export const TRANSLATIONS = {
       upgrade_reason_synastry: "Unlock synastry analysis",
       cancel_trigger: "Cancel subscription",
       cancel_modal_title: "Cancel Subscription",
-      cancel_intro: "We're sorry to see you go. Could you tell us why? This helps us improve.",
-      cancel_reasons: ["Doesn't meet my needs", "Too expensive", "Don't use it enough", "Found a better alternative", "Other"],
+      cancel_intro:
+        "We're sorry to see you go. Could you tell us why? This helps us improve.",
+      cancel_reasons: [
+        "Doesn't meet my needs",
+        "Too expensive",
+        "Don't use it enough",
+        "Found a better alternative",
+        "Other",
+      ],
       cancel_nevermind: "Never mind",
       cancel_continue: "Continue",
       cancel_lose_title: "You'll lose access to:",
@@ -1854,7 +1867,8 @@ export const TRANSLATIONS = {
       cancel_processing: "Cancelling...",
       cancel_confirm: "Confirm Cancel",
       cancel_success_title: "Subscription Cancelled",
-      cancel_success_desc: "Your Pro benefits will remain active until the end of your current period.",
+      cancel_success_desc:
+        "Your Pro benefits will remain active until the end of your current period.",
       cancel_got_it: "Got it",
     },
     paywall: {
@@ -2776,6 +2790,7 @@ export const TRANSLATIONS = {
     nav: {
       dashboard: "本命盘",
       forecast: "行运盘",
+      timeline: "能量轴",
       us: "合盘",
       oracle: "星象问答",
       journal: "CBT 日记",
@@ -3641,7 +3656,8 @@ export const TRANSLATIONS = {
       ],
       cta_get_started: "免费开始",
       cta_go_pro: "升级 Pro",
-      footnote: "价格以人民币显示，结账支持美元、欧元、英镑。支付由 Airwallex 安全处理。",
+      footnote:
+        "价格以人民币显示，结账支持美元、欧元、英镑。支付由 Airwallex 安全处理。",
       disclaimer: "AstrologyWiki 是教育工具，不能替代专业建议。",
     },
     saved: {
@@ -3731,8 +3747,15 @@ export const TRANSLATIONS = {
       upgrade_reason_synastry: "解锁合盘分析",
       cancel_trigger: "取消订阅",
       cancel_modal_title: "取消订阅",
-      cancel_intro: "我们很遗憾听到您想要取消。能告诉我们原因吗？这将帮助我们改进服务。",
-      cancel_reasons: ["功能不符合预期", "价格太高", "使用频率不高", "找到了更好的替代", "其他原因"],
+      cancel_intro:
+        "我们很遗憾听到您想要取消。能告诉我们原因吗？这将帮助我们改进服务。",
+      cancel_reasons: [
+        "功能不符合预期",
+        "价格太高",
+        "使用频率不高",
+        "找到了更好的替代",
+        "其他原因",
+      ],
       cancel_nevermind: "我再想想",
       cancel_continue: "继续取消",
       cancel_lose_title: "取消后您将失去：",
