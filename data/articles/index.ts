@@ -211,6 +211,7 @@ import { cancerRisingZh } from "./cancer-rising";
 import { virgoRisingZh } from "./virgo-rising";
 import { geminiRisingZh } from "./gemini-rising";
 import { moonRisingSignZh } from "./moon-rising-sign";
+import { vozinhaBirthChartEn } from "./vozinha-birth-chart";
 // All articles organized by language
 
 import {
@@ -439,6 +440,7 @@ const ARTICLES_EN: WikiArticle[] = [
   cancerRisingEn,
   virgoRisingEn,
   geminiRisingEn,
+  vozinhaBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
