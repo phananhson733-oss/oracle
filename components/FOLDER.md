@@ -22,8 +22,8 @@
 - Breadcrumb.tsx｜地位：导航组件｜功能：面包屑导航与结构化数据输出。
 - ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式）。
 - SaveReadingButton.tsx｜地位：保存控件（#24）｜功能：cycle/synastry 结果页复用的 Save 按钮（natal 本命盘已改用分享卡弹窗下载），匿名点击开登录弹窗，含 saving/done 态；synastry payload 须由页面预先剥名（红线#4）。
-- ChartShareCard.tsx｜地位：星盘分享卡布局｜功能：信息丰富的本命盘分享卡（头部出生数据 + 行星表含庙旺落陷 + 元素/模式分布 + 轮盘），自取 ExtendedNatalData，forwardRef 供截图导出；参考 Astrodienst 信息密度。
-- ChartShareModal.tsx｜地位：分享卡预览/导出弹窗｜功能：全屏预览 ChartShareCard（浅/深主题切换，嵌套 ThemeContext.Provider 强制）+ 下载 PNG（调 `utils/domToPng` 的 html-to-image 捕获）+ 关闭。MePage 本命盘"下载图片"按钮打开它。
+- ChartShareCard.tsx｜地位：星盘分享卡布局｜功能：信息丰富的星盘分享卡（`chartType` natal|transit：头部出生数据 + 行星表含庙旺落陷 + 元素/模式分布 + 轮盘），按 chartType 自取 ExtendedNatalData/getTransitPositions，forwardRef 供截图导出；参考 Astrodienst 信息密度。
+- ChartShareModal.tsx｜地位：分享卡预览/导出弹窗｜功能：全屏预览 ChartShareCard（浅/深主题切换，弹窗驱动 body 主题类让轮盘也跟随）+ 下载 PNG（调 `utils/domToPng` 的 html-to-image 捕获）+ 关闭。接 `chartType`；MePage 本命盘 / TodayPage 行运盘的"下载图片"按钮打开它。
 - ChartMiniCalc.tsx｜地位：工具组件｜功能：tool-led 北交点迷你计算器（客户端纯查表，DOB 不出浏览器；instrument chart_start/result_shown/full_chart_cta_click 漏斗，只送分类字段）。分层互补定位：作为 #6 全盘（WikiChartCTA/BirthChartSection）的轻型上游钩子，结果区 CTA 经 `fullChartHref` prop 指向全盘（默认回退 /auth）。
 - SafetyFooter.tsx｜地位：合规组件｜功能：psych-adjacent 文章的强制安全 footer SPA 渲染（临床免责声明 + 危机热线），文案与静态 stub 同源自 `utils/safetyFooter.ts`（单一来源、绝不漂移）。因 inject-spa 是 replace 非 hydrate，JS 用户这份必须由 SPA 渲染（CLAUDE.md AI 安全边界 #1/#4）。由 `wiki/WikiArticleDetailPage` 在 `article.psychAdjacent` 时渲染。
 

@@ -1,5 +1,5 @@
 // INPUT: profile（出生数据）、自取的 ExtendedNatalData（行星位置）、useTheme/useLanguage、AstroChart、庙旺落陷查表、TECH_DATA glyph。
-// OUTPUT: <ChartShareCard ref> —— 信息丰富的本命盘分享卡（头部+行星表含庙旺落陷+元素/模式分布+轮盘），供 html-to-image 截图导出。
+// OUTPUT: <ChartShareCard ref> —— 信息丰富的星盘分享卡（chartType=natal|transit：头部+行星表含庙旺落陷+元素/模式分布+轮盘），供 html-to-image 截图导出。
 // POS: 星盘分享卡布局组件（参考 Astrodienst 信息密度）。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
 import { forwardRef, useEffect, useState } from "react";
@@ -8,6 +8,7 @@ import * as Astro from "../services/astroService";
 import { AstroChart } from "./AstroChart";
 import { useTheme, useLanguage } from "./UIComponents";
 import { TECH_DATA, MAJOR_PLANETS } from "../constants";
+import { getDateInTimeZone } from "../utils/astro-helpers";
 import {
   getEssentialDignity,
   DIGNITY_LABEL,
@@ -16,6 +17,7 @@ import {
 
 interface ChartShareCardProps {
   profile: T.UserProfile;
+  chartType?: "natal" | "transit";
 }
 
 const ELEMENTS = ["Fire", "Earth", "Air", "Water"] as const;
@@ -50,24 +52,36 @@ const signMeta = (sign: string) =>
   TECH_DATA.SIGNS[sign as keyof typeof TECH_DATA.SIGNS];
 
 export const ChartShareCard = forwardRef<HTMLDivElement, ChartShareCardProps>(
-  ({ profile }, ref) => {
+  ({ profile, chartType = "natal" }, ref) => {
     const { theme } = useTheme();
     const { language } = useLanguage();
     const zh = language === "zh";
     const isDark = theme === "dark";
-    const [data, setData] = useState<T.ExtendedNatalData | null>(null);
+    const isTransit = chartType === "transit";
+    const [allPlanets, setAllPlanets] = useState<T.PlanetPosition[]>([]);
+    const [transitDate, setTransitDate] = useState("");
 
     useEffect(() => {
       let alive = true;
-      Astro.calculateExtendedNatalData(profile)
-        .then((d) => {
-          if (alive) setData(d);
-        })
-        .catch(() => {});
+      if (chartType === "transit") {
+        const date = getDateInTimeZone(profile.timezone);
+        setTransitDate(date);
+        Astro.getTransitPositions(date, profile)
+          .then((ps) => {
+            if (alive) setAllPlanets(ps);
+          })
+          .catch(() => {});
+      } else {
+        Astro.calculateExtendedNatalData(profile)
+          .then((d) => {
+            if (alive) setAllPlanets(d.planets);
+          })
+          .catch(() => {});
+      }
       return () => {
         alive = false;
       };
-    }, [profile]);
+    }, [profile, chartType]);
 
     // 主题色
     const bg = isDark ? "#0a0e17" : "#fbf7ef";
@@ -77,9 +91,7 @@ export const ChartShareCard = forwardRef<HTMLDivElement, ChartShareCardProps>(
     const muted = isDark ? "#8b94a6" : "#8a7f6b";
     const gold = isDark ? "#d4b574" : "#9f7645";
 
-    const planets = (data?.planets || []).filter((p) =>
-      MAJOR_PLANETS.includes(p.name),
-    );
+    const planets = allPlanets.filter((p) => MAJOR_PLANETS.includes(p.name));
 
     // 元素/模式分布（按行星星座统计）
     const elemCount: Record<string, number> = {
@@ -134,8 +146,27 @@ export const ChartShareCard = forwardRef<HTMLDivElement, ChartShareCardProps>(
         >
           <div>
             <div style={{ fontSize: 22, fontWeight: 700, color: gold }}>
-              {profile.name || (zh ? "本命盘" : "Natal Chart")}
+              {profile.name ||
+                (isTransit
+                  ? zh
+                    ? "行运盘"
+                    : "Transit Chart"
+                  : zh
+                    ? "本命盘"
+                    : "Natal Chart")}
             </div>
+            {isTransit && transitDate && (
+              <div
+                style={{
+                  fontSize: 13,
+                  color: gold,
+                  marginTop: 4,
+                  fontWeight: 600,
+                }}
+              >
+                {(zh ? "行运 · " : "Transit · ") + transitDate}
+              </div>
+            )}
             <div style={{ fontSize: 13, color: muted, marginTop: 4 }}>
               {birthLine1}
             </div>
@@ -305,7 +336,7 @@ export const ChartShareCard = forwardRef<HTMLDivElement, ChartShareCardProps>(
             }}
           >
             <div style={{ width: "100%" }}>
-              <AstroChart type="natal" profile={profile} scale={1} />
+              <AstroChart type={chartType} profile={profile} scale={1} />
             </div>
           </div>
         </div>
