@@ -807,6 +807,7 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'vozinha-birth-chart',
   'germany-world-cup-players-birth-chart-2026',
   'germany-world-cup-2026-astrology-team',
+  'vinicius-jr-birth-chart-astrology',
   'ashwini-nakshatra',
   'hasta-nakshatra',
   'krittika-nakshatra',

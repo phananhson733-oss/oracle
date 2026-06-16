@@ -214,6 +214,7 @@ import { moonRisingSignZh } from "./moon-rising-sign";
 import { vozinhaBirthChartEn } from "./vozinha-birth-chart";
 import { germanyWorldCupPlayersBirthChart2026En } from "./germany-world-cup-players-birth-chart-2026";
 import { germanyWorldCup2026AstrologyTeamEn } from "./germany-world-cup-2026-astrology-team";
+import { viniciusJrBirthChartAstrologyEn } from "./vinicius-jr-birth-chart-astrology";
 // All articles organized by language
 
 import {
@@ -445,6 +446,7 @@ const ARTICLES_EN: WikiArticle[] = [
   vozinhaBirthChartEn,
   germanyWorldCupPlayersBirthChart2026En,
   germanyWorldCup2026AstrologyTeamEn,
+  viniciusJrBirthChartAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
