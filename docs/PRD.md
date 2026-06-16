@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.29
+> **Version**: 2.30
 > **Last Updated**: 2026-06-17
 > **Status**: Living Document — synced with codebase
 
@@ -329,6 +329,10 @@ AI 生成的深度心理分析，每个维度独立解读：
 |------|------|------|
 | `/:lang/saturn-return-calculator` | SaturnReturnCalculator | 免费 Saturn Return 计算器（公开可索引） |
 | `/:lang/energy-timeline` | EnergyTimelineDemoPage | Energy Timeline 公开 SEO demo 页（固定示例盘 + 注册 CTA，免登录，公开可索引；设计 §13） |
+| `/:lang/moon-sign-calculator` | BirthDataCalculator(moonSign) | 免费月亮星座计算器（公开可索引，复用 /api/natal/chart） |
+| `/:lang/rising-sign-calculator` | BirthDataCalculator(rising) | 免费上升星座计算器（需出生时间，公开可索引） |
+| `/:lang/big-three-calculator` | BirthDataCalculator(bigThree) | 免费日月升计算器（Sun/Moon/Rising，公开可索引） |
+| `/:lang/birth-chart-calculator` | BirthDataCalculator(birthChart) | 免费出生星盘计算器（全位置概览，公开可索引） |
 | `/embed/saturn-return` | SaturnReturnCalculator (variant="embed") | 可嵌入 widget：宿主站点 `<iframe>` 引用，无站点 chrome，带可见 dofollow 品牌回链；`noindex,nofollow` |
 
 **嵌入 widget（T7）**：`variant="embed"` 渲染无 chrome 的计算器（跳过 `<SEO>` 头注入与 SEO 长文），底部「Powered by AstrologyWiki」回链指向 canonical 计算器页。App.tsx 在 `/embed/*` 早返回最小树绕开全站 nav/footer/paywall/analytics。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。

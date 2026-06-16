@@ -32,6 +32,12 @@ import {
 import { useLangPath, extractLangFromPath } from "./hooks/useLangPath";
 import { X } from "lucide-react";
 import * as T from "./types";
+import {
+  moonSignConfig,
+  risingSignConfig,
+  bigThreeConfig,
+  birthChartConfig,
+} from "./components/calculators/signConfigs";
 import { FREE_MODE, LOGIN_GATE_MODE } from "./constants";
 import { OracleLoading } from "./components/OracleLoading";
 import {
@@ -346,6 +352,10 @@ const TimelinePage = lazy(() => import("./pages/TimelinePage"));
 const EnergyTimelineDemoPage = lazy(
   () => import("./pages/EnergyTimelineDemoPage"),
 );
+// 计算器矩阵（D，sign 类）：单一配置驱动外壳 BirthDataCalculator + 各 slug 的 config。
+const BirthDataCalculator = lazy(
+  () => import("./components/calculators/BirthDataCalculator"),
+);
 
 const UsPage = lazy(() => import("./pages/SynastryPage"));
 
@@ -420,6 +430,14 @@ const AppContent: React.FC = () => {
   // /:lang/energy-timeline 是公开可索引 SEO demo 页（静态 stub 输出 index,follow 且在 sitemap）。
   // 运行时必须列入 isPublicRoute，否则 WRS 注入 noindex 会误伤 sitemap 里的 demo 页（设计 §13）。
   const isEnergyTimelinePath = pathWithoutLang === "/energy-timeline";
+  // 计算器矩阵（D，sign 类）公开可索引页：静态 stub 输出 index,follow 且在 sitemap，运行时必须
+  // 列入 isPublicRoute，否则 WRS 注入 noindex 会误伤收录。新增计算器 slug 须同步此表。
+  const isCalculatorPath = [
+    "/moon-sign-calculator",
+    "/rising-sign-calculator",
+    "/big-three-calculator",
+    "/birth-chart-calculator",
+  ].includes(pathWithoutLang);
   // /:lang/pricing 是公开可索引营销页：静态 stub（public/{lang}/pricing/index.html）输出
   // index,follow 且在 sitemap，运行时必须一致，否则 WRS 注入 noindex 会误伤 sitemap 里的定价页。
   const isPricingPath = pathWithoutLang === "/pricing";
@@ -442,6 +460,7 @@ const AppContent: React.FC = () => {
     isLegalPath ||
     isSaturnReturnPath ||
     isEnergyTimelinePath ||
+    isCalculatorPath ||
     isPricingPath ||
     isLandingV2LangPath;
   const shouldNoIndex = !isPublicRoute;
@@ -637,7 +656,8 @@ const AppContent: React.FC = () => {
       isWikiPath ||
       isLegalPath ||
       isSaturnReturnPath ||
-      isEnergyTimelinePath) &&
+      isEnergyTimelinePath ||
+      isCalculatorPath) &&
       !["/onboarding", "/auth"].includes(pathWithoutLang));
 
   // Landing routes are 100% public — never show a leftover login modal there.
@@ -1043,6 +1063,39 @@ const AppContent: React.FC = () => {
                 </LangGuard>
               }
             />
+            {/* Calculator matrix (D, sign-based) — one config-driven shell per slug. */}
+            <Route
+              path="/:lang/moon-sign-calculator"
+              element={
+                <LangGuard>
+                  <BirthDataCalculator config={moonSignConfig} />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/rising-sign-calculator"
+              element={
+                <LangGuard>
+                  <BirthDataCalculator config={risingSignConfig} />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/big-three-calculator"
+              element={
+                <LangGuard>
+                  <BirthDataCalculator config={bigThreeConfig} />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/birth-chart-calculator"
+              element={
+                <LangGuard>
+                  <BirthDataCalculator config={birthChartConfig} />
+                </LangGuard>
+              }
+            />
             <Route
               path="/:lang/pricing"
               element={
@@ -1057,6 +1110,10 @@ const AppContent: React.FC = () => {
               element={<LangRedirect />}
             />
             <Route path="/energy-timeline" element={<LangRedirect />} />
+            <Route path="/moon-sign-calculator" element={<LangRedirect />} />
+            <Route path="/rising-sign-calculator" element={<LangRedirect />} />
+            <Route path="/big-three-calculator" element={<LangRedirect />} />
+            <Route path="/birth-chart-calculator" element={<LangRedirect />} />
             <Route path="/pricing" element={<LangRedirect />} />
             <Route path="/wiki/*" element={<LangRedirect />} />
             <Route path="/wiki" element={<LangRedirect />} />

@@ -1428,6 +1428,115 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     });
   }
 
+  // 计算器矩阵（D，sign 类）：静态 SEO stub，与 saturn-return / energy-timeline 同模式 —
+  // 每个 = 关键词正文（≥4 个 H2，防纯 widget 的 soft-404）+ WebApplication/FAQPage JSON-LD + sitemap。
+  // EN-only（无 zh 工具页，alternates 不宣告 zh）；inject-spa 水合成 BirthDataCalculator。文案中性、非命运断言。
+  const CALCULATOR_SEO = [
+    {
+      slug: 'moon-sign-calculator',
+      title: 'Moon Sign Calculator - Free & Accurate',
+      description: 'Find your Moon sign free. Enter your birth date to discover the sign your Moon was in — the seat of your emotional instincts and inner world.',
+      sections: [
+        ['What is a Moon sign?', 'Your Moon sign is the zodiac sign the Moon occupied at the moment you were born. Where the Sun sign reflects your core identity, the Moon sign reflects your emotional instincts, what makes you feel safe, and how you process feelings. In modern psychological astrology it is one of the most personal points in your chart.'],
+        ['How to find your Moon sign', 'Enter your birth date in the calculator above. The Moon moves quickly — it changes sign roughly every two and a half days — so a birth time helps when the Moon changed signs on your birthday, but a date alone is enough for most people. No account is required.'],
+        ['What your Moon sign means', 'Your Moon sign describes your inner emotional landscape and how you instinctively seek comfort. It points to tendencies and needs, not fixed outcomes — treat it as a mirror for self-reflection rather than a prediction. Pair it with your Sun and rising for a fuller picture.'],
+        ['Using the Moon sign calculator', 'This free tool uses Swiss Ephemeris astronomy for accurate placements. For a deeper reading, explore your full birth chart and the psychological astrology articles in the AstrologyWiki wiki.'],
+      ],
+      faqs: [
+        ['What is a Moon sign?', 'Your Moon sign is the zodiac sign the Moon was in when you were born. It reflects your emotional instincts, needs, and inner world.'],
+        ['Do I need my birth time for my Moon sign?', 'Usually no — a birth date is enough. A birth time only matters if the Moon changed signs on your birthday, since the Moon moves about every 2.5 days.'],
+        ['Is the Moon sign more important than the Sun sign?', 'Neither is more important. The Sun reflects core identity and the Moon reflects emotional life; both are part of your chart.'],
+      ],
+    },
+    {
+      slug: 'rising-sign-calculator',
+      title: 'Rising Sign (Ascendant) Calculator - Free',
+      description: 'Find your rising sign (ascendant) free. Enter your birth date, exact time, and city to discover the sign rising on your eastern horizon at birth.',
+      sections: [
+        ['What is a rising sign?', 'Your rising sign, or ascendant, is the zodiac sign that was climbing over the eastern horizon at the exact moment and place you were born. It is often described as the "mask" you meet the world with — your outward style and first impressions — and it sets the layout of the houses in your chart.'],
+        ['Why birth time matters for the ascendant', 'The ascendant changes roughly every two hours, so an accurate birth time and birth city are essential to calculate it correctly. Without a known time the rising sign cannot be determined reliably, and angle-sensitive placements become approximate.'],
+        ['What your rising sign means', 'Your rising sign colours how others first experience you and how you instinctively approach new situations. It describes a tendency and a style, not a destiny. Read it alongside your Sun and Moon for the full "Big Three".'],
+        ['Using the rising sign calculator', 'Enter your birth date, exact time, and city above. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for what each rising sign expresses.'],
+      ],
+      faqs: [
+        ['What is a rising sign?', 'Your rising sign (ascendant) is the zodiac sign on the eastern horizon at your birth moment. It reflects first impressions and how you approach the world.'],
+        ['Why do I need my exact birth time?', 'The ascendant changes about every two hours, so an exact birth time and city are required to calculate it accurately.'],
+        ['What if I do not know my birth time?', 'Without a birth time the rising sign cannot be reliably determined. You can still calculate your Sun and Moon signs.'],
+      ],
+    },
+    {
+      slug: 'big-three-calculator',
+      title: 'Big Three Calculator - Sun, Moon & Rising Signs',
+      description: 'Find your Big Three free — your Sun, Moon, and rising signs in one place. Enter your birth date, time, and city for your core astrological trio.',
+      sections: [
+        ['What are the Big Three?', 'Your "Big Three" are your Sun, Moon, and rising (ascendant) signs — the three placements astrologers reach for first. Together they sketch your identity, your emotional life, and the style others first meet you with.'],
+        ['Sun vs Moon vs rising', 'The Sun is your core identity and will; the Moon is your emotional instincts and needs; the rising is your outward manner and first impressions. Most people are a blend — the three rarely sit in the same sign, which is why a one-line horoscope never quite fits.'],
+        ['How to find your Big Three', 'Enter your birth date, exact time, and city above. The Sun and Moon need only the date for most people, but the rising sign requires an accurate birth time and place.'],
+        ['Using the Big Three calculator', 'This free tool uses Swiss Ephemeris astronomy. These placements describe tendencies, not predictions. Explore the wiki to read what each sign expresses.'],
+      ],
+      faqs: [
+        ['What are the Big Three in astrology?', 'Your Big Three are your Sun, Moon, and rising signs — core identity, emotional life, and outward style.'],
+        ['Do I need my birth time for the Big Three?', 'The Sun and Moon usually need only your date, but the rising sign requires an exact birth time and city.'],
+        ['Why are my three signs different?', 'The Sun, Moon, and rising move at different speeds, so they usually fall in different signs — that mix is what makes a chart personal.'],
+      ],
+    },
+    {
+      slug: 'birth-chart-calculator',
+      title: 'Free Birth Chart Calculator - Natal Chart',
+      description: 'Free birth chart calculator. Enter your birth date, time, and city to see your natal planetary placements — Swiss Ephemeris accuracy, no sign-up.',
+      sections: [
+        ['What is a birth chart?', 'A birth chart (or natal chart) is a snapshot of where the Sun, Moon, and planets sat in the sky at the exact moment and place you were born. In modern psychological astrology it is the starting point for reading your personality patterns and developmental themes.'],
+        ['What is in your chart', 'Your chart places each planet in a zodiac sign — Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, and the outer planets — plus your ascendant and midheaven when a birth time is known. Each placement adds a layer to the picture.'],
+        ['How to read your birth chart', 'Start with your Sun, Moon, and rising, then look at the personal planets. The chart describes tendencies and potentials to work with, not a fixed fate. It is a tool for self-knowledge, not prediction.'],
+        ['Using the birth chart calculator', 'Enter your birth date above; add an exact time and city for ascendant, midheaven, and houses. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for deeper readings.'],
+      ],
+      faqs: [
+        ['What is a birth chart?', 'A birth chart is a snapshot of the Sun, Moon, and planets at the moment and place you were born — the basis for reading personality patterns in astrology.'],
+        ['Is the birth chart calculator free?', 'Yes. You can calculate your natal placements for free, with no account required.'],
+        ['Do I need my birth time?', 'A date gives you most planetary signs. An exact birth time and city are needed for your ascendant, midheaven, and house placements.'],
+      ],
+    },
+  ];
+  for (const calc of CALCULATOR_SEO) {
+    const calcUrl = `${siteUrl}/en/${calc.slug}`;
+    const calcBody = calc.sections.map((s) => `## ${s[0]}\n\n${s[1]}`).join('\n\n');
+    addUrl(calcUrl, ['calculator', calc.slug, 'v1', contentHash([calcBody])]);
+    await writeHtmlPage({
+      outputPath: path.join(publicDir, 'en', calc.slug, 'index.html'),
+      lang: 'en',
+      title: calc.title,
+      description: calc.description,
+      url: calcUrl,
+      ogType: 'website',
+      alternates: buildAlternateLinks(`/${calc.slug}`, { zh: false, en: true }),
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: calc.title,
+          description: calc.description,
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web',
+          url: calcUrl,
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          inLanguage: 'en',
+          mainEntity: calc.faqs.map((f) => ({
+            '@type': 'Question',
+            name: f[0],
+            acceptedAnswer: { '@type': 'Answer', text: f[1] },
+          })),
+        },
+      ],
+      ctaText: LANG_CONFIG.en.homeCta,
+      spaPath: `/en/${calc.slug}`,
+      contentHtml: mdToHtml(calcBody),
+    });
+  }
+
   // 文章摘要按 lang/slug 索引，供 sitemap 签名（date/title/desc/image/keywords 变 → lastmod 更新）。
   const articleSummaries = {
     en: new Map(articlesModule.getArticleSummaries('en').map((s) => [s.slug, s])),
