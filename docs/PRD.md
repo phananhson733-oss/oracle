@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.23
-> **Last Updated**: 2026-06-03
+> **Version**: 2.26
+> **Last Updated**: 2026-06-16
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -413,6 +413,47 @@ AI 生成的深度心理分析，每个维度独立解读：
 - 添加至 `sitemap.xml`
 - `isPublicRoute` 中注册（`isPricingPath`），不输出 `noindex,nofollow`；PricingPage 从 `data/pricing.ts` 首帧同步渲染价格，水合 DOM 与静态 stub 一致
 
+### 2.15 人生 K 线 / 月度 K 线 (Life K-Line / Energy Timeline)
+
+**路由**: `/timeline`（受保护路由，需登录 + 出生档案；已落地）
+
+**落地状态 (2026-06-16)**: P0 月度 K 线 MVP 已实现并通过验证 —
+后端 `backend/src/services/transit/`（纯函数评分引擎，TDD 49 单测）+ `backend/src/api/timeline.ts`（端点 7 测）+ ephemeris 瘦经度接口；前端 `pages/TimelinePage.tsx` + `components/timeline/`（蜡烛主视图 / 当日抽屉 / 安全 onboarding，vite build 通过）。人生 K 线（年级，#17/#18）与 CBT 叠加层（#23）仍为 P2/P1。
+
+将占星 transit 强度可视化为**蜡烛时间轴主视图**，用户看到自身"能量节奏"起伏，点击任意时间点获得 AI 解读。**外部命名** `Energy Timeline / Transit Candles`，"人生K线/月度K线"仅作内部代号 + 中文副标题。完整工程设计 + 落地 blocker 见 `docs/plans/2026-06-16-life-kline-design.md`（已过 5-voice autoplan 评审：3 Claude + Gemini + Codex/GPT-5 + 代码核验）。
+
+**双粒度**:
+
+| 形态 | 粒度 | 数据源 | 状态 |
+|------|------|--------|------|
+| 月度 K 线 | 日（当月/任意月） | 快速 transit 相位强度（复用 ephemeris + synthetica 权重）| P0 MVP |
+| 人生 K 线 | 年（数十年） | 外行星过本命 + progression + 个人年（后台预计算）| P2 |
+
+| 功能 | 说明 |
+|------|------|
+| **蜡烛主视图（区间摘要语义）** | 蜡烛 = `start/peak/dip/end` 区间摘要（**非金融 OHLC 涨跌**）；纵轴中性"能量强度 intensity"（**非命运分/吉凶**），仅与自身比较。每根附 `dominantPhase`（applying/exact/separating/mixed）与 `dataQuality` |
+| **和谐/张力分解** | 复用 synthetica FLOW/FUSION/FRICTION 权重；着色 harmony=psycho-500蓝 / tension=mystic-500紫（**禁 success/danger/warning token、禁红绿涨跌**）|
+| **相位 episode 化** | 连续 orb kernel（非阶跃）+ episode 聚合，消除 orb 边界尖刺；topAspects 按 episode 去重 |
+| **节点标注** | 重大 Return（Saturn/Jupiter/Chiron/Nodal Return）气泡 |
+| **点击解读** | 点某天/段 → 抽屉复用 daily/detail（月度）或 cycle（人生）|
+| **Time Travel** | 旋钮切换时段，免费限近期、付费区间旋钮上视觉预示锁 |
+| **CBT 情绪叠加层** | 登录用户把 CBT 情绪**数值**叠到时间轴做自我觉察（**竞品独家**，默认关 + 显式 consent + 反因果 banner）|
+
+**API**:
+- `GET / POST /api/transit/timeline` — 蜡烛时间序列（**无 LLM、纯计算 + 缓存**；单日缓存键 `hashInput(birth):date:tz` 含 viewer 时区锚；核心天体 mock fallback → `EPHEMERIS_UNAVAILABLE` 不缓存；专属更严 limiter + 4KB cap）
+- `GET /api/cbt/mood-points` — CBT 情绪叠加层**服务端数值投影** `{date, moodId, initialIntensity, finalIntensity}`，绝不返回 `situation/automaticThoughts/hotThought` 原文（隐私红线 #1/#3）
+
+**配额**: **P0 决策（已定）— 月度蜡烛图全免费**（任意月份）：端点零 LLM 成本、已缓存、限流，符合 §1 病毒增长/SEO/习惯钩子定位（lifekline 的传播力正来自免费可分享）。当日 AI 解读复用现有 `/api/daily/detail`（当前免费、仅限流）。**付费 enforcement 延后**为专门计费 pass：未来 lookahead / premium 逐日 AI 档 / topAspect 明细 / CBT 叠加（P1 #23）的 gated feature key 需后端 `entitlementServiceV2` + `data/pricing.ts` + `pricing-consistency.test` 同步注册（Eng F-E8），不在 K 线 MVP 内 retrofit 共享 detail 端点（避免改既有 TodayPage 行为）。免费/付费边界按设计 risk #4 需 A/B（接 page-cro）。
+
+**安全/隐私/精度（强制）**:
+- 撞 §1.3 "Empowerment over Fatalism"：高/低=活跃/沉淀期、张力=可运用的成长；禁吉凶/涨跌/will/destined；首次进入强制 onboarding（"loud vs quiet, not good vs bad"）+ 新路由加 `FrameworkDisclaimer`；**不设 `lang=zh`**（占星符号 emoji 回退）。
+- **出生时间精度降级**：`accuracy=time_unknown/approximate` 时禁用 ASC/宫位敏感项、标置信度、分享图标 "approximate birth time"（防假精确）。
+- **GDPR Art 9**：CBT×占星 = 特殊类 mental-health 推断，须显式 consent（非 ToS），上线前过法务（§`docs/PRIVACY_AUDIT.md`）。
+
+**SEO 策略**: 公开样例页静态预渲染（固定 demo 盘）**必须配关键词文本叙事**（纯 SVG 图 = soft-404，踩已知 soft-404 根因）；canonical/hreflang/sitemap；同步 `public/sitemap.xml`。
+
+**竞品定位**: 借鉴 lifekline.ai 的蜡烛可视化外壳与传播形态，**替换其八字宿命内核**为"占星 transit × CBT 情绪的个人能量时间轴"（西方占星 + 心理学自我觉察；蜡烛做诚实区间摘要而非金融预测）。
+
 ---
 
 ## 3. 商业模式 / Business Model
@@ -668,6 +709,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 | GET | `/api/cycle/list` | 周期列表 | — |
 | GET | `/api/cycle/naming` | AI 周期命名 | — |
 | GET | `/api/saturn-return` | Saturn Return 日期计算 | — |
+| GET / POST | `/api/transit/timeline` | 人生K线/月度K线能量强度时间序列（无 LLM，纯计算 + 缓存；单日键含 tz；mock fallback 不缓存；专属 limiter） | — |
+| GET | `/api/cbt/mood-points` | K线 CBT 叠加层数值投影（只返回 date+intensity，不含原文；显式 consent） | Required |
 
 **配额错误码** (适用于消耗 credits 的 AI 端点 `/api/ask`、`/api/synastry`、`/api/synastry/overview-section`)：
 

@@ -13,6 +13,7 @@
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 types 目录结构与文件清单。
 - api.ts｜地位：API 类型定义｜功能：请求/响应类型与 Ask Markdown 报告类型。
+- timeline.ts｜地位：K 线 API 类型｜功能：GET/POST /api/transit/timeline 的请求/响应 schema 与蜡烛诚实契约（区间摘要语义、dataQuality、dominantPhase、episode topAspects）。
 
 近期更新
 - 移除本命盘技术分析 AI 响应类型，仅保留真实计算数据结构。

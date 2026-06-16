@@ -22,6 +22,7 @@ import { wikiRouter } from "./api/wiki.js";
 import { syntheticaRouter } from "./api/synthetica.js";
 import { astroRouter } from "./api/astro.js";
 import { saturnReturnRouter } from "./api/saturn-return.js";
+import { transitRouter } from "./api/timeline.js";
 import { userRouter } from "./api/user.js";
 import authRouter from "./api/auth.js";
 import paymentRouter from "./api/payment.js";
@@ -182,6 +183,28 @@ const cycleNamingLimiter = rateLimit({
 });
 app.use("/api/cycle/naming", cycleNamingLimiter);
 
+// Rate limiting — /api/transit/timeline. Anonymous-friendly compute endpoint
+// where a single request fans out to ~6 Swiss Ephemeris longitude passes PER DAY
+// (up to 92 days), i.e. 30-100x the work of one natal request. 10/min/IP is
+// tighter than natal (30/min) and the global bucket (100/min) to cap that
+// amplification; a normal session loads 1-2 months (well under 10). Design B2/F-E6.
+const transitLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many timeline requests, please try again later.",
+    code: "transit_rate_limited",
+  },
+});
+app.use("/api/transit", transitLimiter);
+
+// Body size cap for /api/transit POSTs. Birth + range payloads are <1kb; 4kb
+// leaves headroom. Must come before the global `express.json()` so the per-mount
+// instance wins on `/api/transit/*` paths.
+app.use("/api/transit", express.json({ limit: "4kb" }));
+
 // Rate limiting — general API (broader)
 const apiLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
@@ -278,6 +301,7 @@ app.use("/api/wiki", wikiRouter);
 app.use("/api/synthetica", syntheticaRouter);
 app.use("/api/astro", astroRouter);
 app.use("/api/saturn-return", saturnReturnRouter);
+app.use("/api/transit", transitRouter);
 app.use("/api/user", userRouter);
 
 // Auth Routes

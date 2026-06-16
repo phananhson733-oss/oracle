@@ -24,6 +24,7 @@
 - utils｜地位：工具目录｜功能：通用辅助方法。
 
 近期更新
+- 新增 transit timeline 端点（GET/POST /api/transit/timeline，月度 K 线）：services/transit 纯函数评分引擎（intensity/rollup/aspects/time/weights，TDD）+ ephemeris 瘦经度接口 getLongitudes + 单日 tz 缓存 + 完整性门 + 10/min 限流 + 4kb body cap；natal 出生数据校验抽取为共享 api/birthInput.ts 供 timeline 复用（natal.test 守护无回归）。
 - Geo 搜索端点支持多语言参数与结构化位置过滤。
 - 报告购买改为积分消耗并接入订阅折扣定价。
 - 经典拆解 Markdown 数据源刷新并生成新的 wiki-classics-markdown 输出。

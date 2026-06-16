@@ -342,6 +342,8 @@ const TodayPage = lazy(() => import("./pages/TodayPage"));
 
 const CyclesPage = lazy(() => import("./pages/CyclesPage"));
 
+const TimelinePage = lazy(() => import("./pages/TimelinePage"));
+
 const UsPage = lazy(() => import("./pages/SynastryPage"));
 
 const AskOraclePage = lazy(() => import("./pages/OraclePage"));
@@ -884,6 +886,16 @@ const AppContent: React.FC = () => {
               element={
                 isAuthenticated && activeProfile ? (
                   <CyclesPage profile={activeProfile} />
+                ) : (
+                  <ProtectedRedirect />
+                )
+              }
+            />
+            <Route
+              path="/timeline"
+              element={
+                isAuthenticated && activeProfile ? (
+                  <TimelinePage profile={activeProfile} />
                 ) : (
                   <ProtectedRedirect />
                 )

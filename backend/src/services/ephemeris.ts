@@ -75,9 +75,7 @@ try {
     swisseph.swe_set_ephe_path(ephePath);
   }
 
-  logger.info(
-    "Swiss Ephemeris loaded successfully (NASA JPL DE431 precision)",
-  );
+  logger.info("Swiss Ephemeris loaded successfully (NASA JPL DE431 precision)");
 } catch (err) {
   logger.warn(
     "Swiss Ephemeris not available, using mock calculations; for production accuracy ensure swisseph native module is compiled",
@@ -618,6 +616,77 @@ export class SwissEphemerisService implements EphemerisService {
     });
 
     return { positions, houseCusps: houses, usedMockFallback, mockedPlanets };
+  }
+
+  // 瘦经度接口：只计算请求天体的黄道经度 + 速度，跳过 Placidus 宫位、小行星与派生点。
+  // transit timeline 逐日/逐时刻取数走这条路，避免 getPlanetPositions 无条件算全 16 体 + 宫位
+  // 的开销（性能 blocker B2）。usedMockFallback / mockedPlanets 让上游完整性门拒绝 mock 数据。
+  async getLongitudes(
+    bodies: string[],
+    date: Date,
+  ): Promise<{
+    longitudes: Record<string, number>;
+    speeds: Record<string, number>;
+    usedMockFallback: boolean;
+    mockedPlanets: string[];
+  }> {
+    const jd = dateToJulian(date);
+    if (!Number.isFinite(jd)) {
+      throw new Error(`Invalid Julian Date calculated from ${date}`);
+    }
+    const longitudes: Record<string, number> = {};
+    const speeds: Record<string, number> = {};
+    let usedMockFallback = false;
+    const mockedPlanets: string[] = [];
+    const allBodies: readonly string[] = [...PLANETS, ...ASTEROIDS];
+
+    for (const name of bodies) {
+      const planetId = PLANET_IDS[name];
+      const mockIndex = allBodies.indexOf(name);
+      let longitude = 0;
+      let speed = 0;
+      let mocked = false;
+
+      if (this.useRealEphemeris && planetId !== undefined) {
+        try {
+          const result = swisseph.swe_calc_ut(jd, planetId, SEFLG_SPEED);
+          const resultLon = result?.longitude;
+          const resultSpeed = result?.longitudeSpeed;
+          if (result?.error || !Number.isFinite(resultLon)) {
+            throw new Error(result?.error || "Invalid ephemeris data");
+          }
+          longitude = resultLon;
+          speed = Number.isFinite(resultSpeed) ? resultSpeed : 0;
+        } catch {
+          const mock = mockPlanetPosition(
+            name,
+            jd,
+            mockIndex >= 0 ? mockIndex : 0,
+          );
+          longitude = mock.lon;
+          speed = mock.speed;
+          mocked = true;
+        }
+      } else {
+        const mock = mockPlanetPosition(
+          name,
+          jd,
+          mockIndex >= 0 ? mockIndex : 0,
+        );
+        longitude = mock.lon;
+        speed = mock.speed;
+        mocked = true;
+      }
+
+      if (mocked) {
+        usedMockFallback = true;
+        mockedPlanets.push(name);
+      }
+      longitudes[name] = normalizeLongitude(longitude);
+      speeds[name] = speed;
+    }
+
+    return { longitudes, speeds, usedMockFallback, mockedPlanets };
   }
 
   calculateAspects(positions: PlanetPosition[]): Aspect[] {

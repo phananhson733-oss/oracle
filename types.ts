@@ -1226,3 +1226,68 @@ export type SyntheticaConfigUnit = {
   isRetrograde?: boolean;
   aspects?: SyntheticaAspectConfig[];
 };
+
+// === Transit Timeline (月度 K 线 / Monthly Energy Timeline) ===
+// Mirror of backend/src/types/timeline.ts — keep in sync. Candle = interval
+// summary (start/peak/dip/end), NOT financial OHLC (honesty contract, design B8).
+
+export type TimelineGranularity = "day" | "year";
+export type TimelineDataQuality = "ok" | "partial" | "approximate_time";
+export type TimelineDominantPhase =
+  | "applying"
+  | "exact"
+  | "separating"
+  | "mixed"
+  | "unknown";
+
+export interface TimelineCandleAspect {
+  episodeId: string;
+  transitBody: string;
+  natalBody: string;
+  type: "conjunction" | "opposition" | "square" | "trine" | "sextile";
+  phase: TimelineDominantPhase;
+}
+
+export interface TimelineCandle {
+  date?: string;
+  age?: number;
+  start: number;
+  peak: number;
+  dip: number;
+  end: number;
+  intensity: number;
+  harmony: number;
+  tension: number;
+  dominantPhase: TimelineDominantPhase;
+  dataQuality: TimelineDataQuality;
+  sampleCount: number;
+  topAspects: TimelineCandleAspect[];
+}
+
+export interface TimelineMarker {
+  date?: string;
+  age?: number;
+  type:
+    | "saturn-return"
+    | "jupiter-return"
+    | "nodal-return"
+    | "outer-square"
+    | "outer-opposition";
+  label: string;
+}
+
+export interface TimelineCandleContract {
+  semantics: "interval-summary";
+  smoothingVersion: string;
+  sourceVersion: string;
+}
+
+export interface TimelineResponse {
+  granularity: TimelineGranularity;
+  tz: string;
+  contract: TimelineCandleContract;
+  candles: TimelineCandle[];
+  markers: TimelineMarker[];
+  dataQuality: TimelineDataQuality;
+  accuracy: "exact" | "time_unknown" | "approximate";
+}

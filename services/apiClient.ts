@@ -36,6 +36,7 @@ import type {
   SyntheticaConfigUnit,
   SyntheticaContextFilter,
   SyntheticaReportResponse,
+  TimelineResponse,
 } from "../types";
 import { authFetch } from "./authClient";
 import { trackEvent, trackApiError } from "./analytics";
@@ -726,6 +727,57 @@ export async function fetchDailyDetail(
     }
     return res.json();
   });
+}
+
+// === Transit Timeline API (月度 K 线 / Monthly Energy Timeline) ===
+//
+// POST /transit/timeline. Birth payload in the JSON body (never URL) per 隐私红线 #1.
+// No LLM / no AI credits — pure ephemeris computation, cached per day server-side.
+// `tz` is the VIEWER's local zone so day-buckets align to the user's calendar day
+// (design B7). Errors carry a `code` (EPHEMERIS_UNAVAILABLE / RANGE_TOO_LARGE / …)
+// so the page can branch on it.
+export async function fetchTransitTimeline(
+  profile: UserProfile,
+  from: string,
+  to: string,
+  lang: "zh" | "en" = "en",
+): Promise<TimelineResponse> {
+  const birth = profileToBirthInput(profile);
+  const tz = (() => {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+    } catch {
+      return "UTC";
+    }
+  })();
+
+  const res = await fetchWithTimeout(`${API_BASE}/transit/timeline`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      birth,
+      range: { granularity: "day", from, to },
+      tz,
+      lang,
+    }),
+  });
+
+  if (!res.ok) {
+    const { message, reason, payload } = await parseErrorPayload(res);
+    const error = new Error(
+      message || "Failed to fetch timeline",
+    ) as ApiError & { code?: string };
+    error.status = res.status;
+    error.reason = reason;
+    error.payload = payload;
+    const code =
+      payload && typeof payload === "object"
+        ? (payload as { code?: string }).code
+        : undefined;
+    if (code) error.code = code;
+    throw error;
+  }
+  return res.json();
 }
 
 // === Ask API ===
