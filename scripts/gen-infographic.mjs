@@ -224,7 +224,10 @@ function renderTimeline(uid, items, title, footnote) {
   return { svg: svgDoc(uid, H, title, body, footnote), W, H };
 }
 
-// ---- kind: compare (stacked full-width cards with sparkle "vs" links) -------
+// ---- kind: compare (stacked full-width cards; gold accent bar on the LEFT) --
+// Layout unchanged from the original (name centered on top, lines below); the
+// only change is the gold accent bar moved from a top horizontal strip to a
+// left vertical stripe.
 function renderCompare(uid, columns, title, footnote) {
   const M = 46, cardW = W - 2 * M;
   let y = headerTop(title) + 8;
@@ -240,8 +243,9 @@ function renderCompare(uid, columns, title, footnote) {
   let body = '';
   cards.forEach((c, i) => {
     body += `\n  <rect x="${M}" y="${c.top}" width="${cardW}" height="${c.h.toFixed(1)}" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="${C.gold}" stroke-opacity="0.22" stroke-width="0.9"/>`;
-    body += `\n  <rect x="${M}" y="${c.top}" width="${cardW}" height="3.5" rx="1.8" fill="${C.gold}" fill-opacity="0.6"/>`;
-    body += `\n  ${sparkle(W / 2, c.top + 1.5, 3.4, C.goldHi, 0.7)}`;
+    // gold accent bar on the LEFT edge (was a horizontal strip across the top)
+    body += `\n  <rect x="${M}" y="${c.top}" width="3.5" height="${c.h.toFixed(1)}" rx="1.8" fill="${C.gold}" fill-opacity="0.6"/>`;
+    body += `\n  ${sparkle(M + 1.75, c.top + 13, 3.4, C.goldHi, 0.7)}`;
     c.nameLines.forEach((ln, j) => {
       body += `\n  <text x="${W / 2}" y="${(c.top + 29 + j * 24).toFixed(1)}" text-anchor="middle" font-family="${SERIF}" font-size="21" font-weight="700" letter-spacing="0.3" fill="${C.light}">${esc(ln)}</text>`;
     });

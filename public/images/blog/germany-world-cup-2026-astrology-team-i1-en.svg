@@ -32,8 +32,8 @@
   <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
 
   <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
-  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
-  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <rect x="46" y="99" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
   <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Founding Chart</text>
   <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
   <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Aquarius Sun, 28 Jan 1900</text>
@@ -43,8 +43,8 @@
   <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Innovation over individual stars</text>
   <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
   <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
-  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
-  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <rect x="46" y="268" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 277.6 L 48.3 280.5 L 51.1 281 L 48.3 281.5 L 47.75 284.4 L 47.2 281.5 L 44.4 281 L 47.2 280.5 Z" fill="#f6e6bf" opacity="0.7"/>
   <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Saturn in Aries (2025–28)</text>
   <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
   <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sextile to Aquarius Sun</text>
@@ -54,8 +54,8 @@
   <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Disciplined rebuilding season</text>
   <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
   <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
-  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
-  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <rect x="46" y="437" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 446.6 L 48.3 449.5 L 51.1 450 L 48.3 450.5 L 47.75 453.4 L 47.2 450.5 L 44.4 450 L 47.2 449.5 Z" fill="#f6e6bf" opacity="0.7"/>
   <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Jupiter in Leo (from June 30)</text>
   <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
   <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Opposition to Aquarius Sun</text>
