@@ -805,6 +805,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'vozinha-birth-chart',
+  'germany-world-cup-players-birth-chart-2026',
   'ashwini-nakshatra',
   'hasta-nakshatra',
   'krittika-nakshatra',

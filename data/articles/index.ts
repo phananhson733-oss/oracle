@@ -212,6 +212,7 @@ import { virgoRisingZh } from "./virgo-rising";
 import { geminiRisingZh } from "./gemini-rising";
 import { moonRisingSignZh } from "./moon-rising-sign";
 import { vozinhaBirthChartEn } from "./vozinha-birth-chart";
+import { germanyWorldCupPlayersBirthChart2026En } from "./germany-world-cup-players-birth-chart-2026";
 // All articles organized by language
 
 import {
@@ -441,6 +442,7 @@ const ARTICLES_EN: WikiArticle[] = [
   virgoRisingEn,
   geminiRisingEn,
   vozinhaBirthChartEn,
+  germanyWorldCupPlayersBirthChart2026En,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
