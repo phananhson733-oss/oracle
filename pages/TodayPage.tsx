@@ -17,6 +17,7 @@ import {
 import * as T from "../types";
 import { LOGIN_GATE_MODE } from "../constants";
 import { AstroChart } from "../components/AstroChart";
+import ChartShareModal from "../components/ChartShareModal";
 import { OracleLoading } from "../components/OracleLoading";
 import * as Astro from "../services/astroService";
 import {
@@ -147,6 +148,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
   );
   const [detailError, setDetailError] = useState<string | null>(null);
   const [viewDetail, setViewDetail] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
   const [transitData, setTransitData] = useState<{
     positions: T.PlanetPosition[];
     aspects: T.Aspect[];
@@ -835,7 +837,18 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           </LockedAccordion>
         )}
 
-        <Section title={t.today.transit_chart}>
+        <Section
+          title={t.today.transit_chart}
+          action={
+            <ActionButton
+              size="sm"
+              variant="secondary"
+              onClick={() => setShareOpen(true)}
+            >
+              {t.saved?.download || "Download image"}
+            </ActionButton>
+          }
+        >
           <div className="mt-4 flex justify-center">
             <div className="relative w-full">
               <AstroChart
@@ -1008,6 +1021,14 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         keyPointsLabel={t.detail.key_points}
         onRetry={handleTransitRetry}
       />
+      {shareOpen && (
+        <ChartShareModal
+          profile={profile}
+          chartType="transit"
+          filename={`transit-chart-${profile.birthDate}`}
+          onClose={() => setShareOpen(false)}
+        />
+      )}
     </>
   );
 };

@@ -11,6 +11,7 @@ import { ThemeContext, useTheme, useLanguage } from "./UIComponents";
 interface ChartShareModalProps {
   profile: T.UserProfile;
   filename: string;
+  chartType?: "natal" | "transit";
   onClose: () => void;
 }
 
@@ -19,6 +20,7 @@ const noop = () => {};
 const ChartShareModal: React.FC<ChartShareModalProps> = ({
   profile,
   filename,
+  chartType = "natal",
   onClose,
 }) => {
   const { theme } = useTheme();
@@ -161,7 +163,11 @@ const ChartShareModal: React.FC<ChartShareModalProps> = ({
         style={{ boxShadow: "0 12px 60px rgba(0,0,0,0.5)", borderRadius: 8 }}
       >
         <ThemeContext.Provider value={{ theme: cardTheme, toggleTheme: noop }}>
-          <ChartShareCard ref={cardRef} profile={profile} />
+          <ChartShareCard
+            ref={cardRef}
+            profile={profile}
+            chartType={chartType}
+          />
         </ThemeContext.Provider>
       </div>
     </div>
