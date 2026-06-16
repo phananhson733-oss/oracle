@@ -694,6 +694,11 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'vozinha-birth-chart',
+  'germany-world-cup-players-birth-chart-2026',
+  'germany-world-cup-2026-astrology-team',
+  'vinicius-jr-birth-chart-astrology',
+  'scotland-world-cup-2026-astrology-saturn-return',
   'moon-rising-sign',
   'gemini-rising',
   'virgo-rising',
@@ -804,11 +809,6 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
-  'vozinha-birth-chart',
-  'germany-world-cup-players-birth-chart-2026',
-  'germany-world-cup-2026-astrology-team',
-  'vinicius-jr-birth-chart-astrology',
-  'scotland-world-cup-2026-astrology-saturn-return',
   'ashwini-nakshatra',
   'hasta-nakshatra',
   'krittika-nakshatra',

@@ -216,6 +216,11 @@ import { germanyWorldCupPlayersBirthChart2026En } from "./germany-world-cup-play
 import { germanyWorldCup2026AstrologyTeamEn } from "./germany-world-cup-2026-astrology-team";
 import { viniciusJrBirthChartAstrologyEn } from "./vinicius-jr-birth-chart-astrology";
 import { scotlandWorldCup2026AstrologySaturnReturnEn } from "./scotland-world-cup-2026-astrology-saturn-return";
+import { vozinhaBirthChartZh } from "./vozinha-birth-chart";
+import { germanyWorldCupPlayersBirthChart2026Zh } from "./germany-world-cup-players-birth-chart-2026";
+import { germanyWorldCup2026AstrologyTeamZh } from "./germany-world-cup-2026-astrology-team";
+import { viniciusJrBirthChartAstrologyZh } from "./vinicius-jr-birth-chart-astrology";
+import { scotlandWorldCup2026AstrologySaturnReturnZh } from "./scotland-world-cup-2026-astrology-saturn-return";
 // All articles organized by language
 
 import {
@@ -543,6 +548,11 @@ const ARTICLES_ZH: WikiArticle[] = [
   virgoRisingZh,
   geminiRisingZh,
   moonRisingSignZh,
+  vozinhaBirthChartZh,
+  germanyWorldCupPlayersBirthChart2026Zh,
+  germanyWorldCup2026AstrologyTeamZh,
+  viniciusJrBirthChartAstrologyZh,
+  scotlandWorldCup2026AstrologySaturnReturnZh,
 ];
 
 // Get all articles for a language
