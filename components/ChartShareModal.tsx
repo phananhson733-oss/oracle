@@ -2,7 +2,7 @@
 // OUTPUT: <ChartShareModal> —— 全屏预览星盘分享卡（浅/深切换 + 下载 PNG + 关闭）。
 // POS: 星盘分享卡预览/导出弹窗。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as T from "../types";
 import { ChartShareCard } from "./ChartShareCard";
 import { downloadElementAsPng } from "../utils/domToPng";
@@ -30,6 +30,22 @@ const ChartShareModal: React.FC<ChartShareModalProps> = ({
   const [status, setStatus] = useState<"idle" | "working" | "done">("idle");
   const cardRef = useRef<HTMLDivElement>(null);
   const s = t.saved;
+
+  // 让卡片整体（含 AstroChart 轮盘）按选定主题渲染：轮盘颜色来自 body class 的 CSS 变量，
+  // 仅靠嵌套 ThemeContext 覆盖不到，故弹窗打开时直接把 body 主题类切到 cardTheme，关闭时还原。
+  const originalBodyClass = useRef("");
+  useEffect(() => {
+    originalBodyClass.current = document.body.className;
+    return () => {
+      document.body.className = originalBodyClass.current;
+    };
+  }, []);
+  useEffect(() => {
+    document.body.className =
+      cardTheme === "dark"
+        ? "dark bg-space-950 text-star-50"
+        : "light bg-paper-100 text-paper-900";
+  }, [cardTheme]);
 
   const handleDownload = async () => {
     if (!cardRef.current || status === "working") return;
