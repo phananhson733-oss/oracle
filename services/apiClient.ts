@@ -1450,6 +1450,30 @@ export async function fetchCBTRecords(userId: string) {
   return res.json();
 }
 
+// CBT 情绪叠加层（#23）：服务端数据最小化投影，仅返回 {date,intensity,moodCount}（无原文）。
+// 鉴权走同源 session cookie（与其他 CBT 调用一致；后端从 session 取 userId，防 IDOR）。
+export interface CbtMoodPoint {
+  date: string;
+  intensity: number;
+  moodCount: number;
+}
+export async function fetchCbtMoodPoints(): Promise<{
+  points: CbtMoodPoint[];
+}> {
+  const tz = (() => {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+    } catch {
+      return "UTC";
+    }
+  })();
+  const res = await fetch(
+    `${API_BASE}/cbt/mood-points?tz=${encodeURIComponent(tz)}`,
+  );
+  if (!res.ok) throw new Error("Failed to fetch mood points");
+  return res.json();
+}
+
 /** @deprecated 使用独立的 fetchCBTSomaticAnalysis/RootAnalysis/MoodAnalysis/CompetenceAnalysis 替代 */
 export async function fetchCBTAggregateAnalysis(
   profile: UserProfile,

@@ -103,4 +103,19 @@ describe("TimelineChart", () => {
     );
     expect(container.querySelector("circle")).toBeTruthy();
   });
+
+  it("renders the CBT mood overlay (teal dots) for moodPoints aligned by date", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    const { container } = render(
+      <TimelineChart
+        candles={candles}
+        moodPoints={[{ date: "2026-06-02", intensity: 70 }]}
+      />,
+    );
+    // 情绪点用 teal (#0D9488) 圆点；按 date 对齐到对应候选。
+    const teal = Array.from(container.querySelectorAll("circle")).filter(
+      (c) => (c.getAttribute("fill") || "").toUpperCase() === "#0D9488",
+    );
+    expect(teal.length).toBe(1);
+  });
 });

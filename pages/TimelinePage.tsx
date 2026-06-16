@@ -14,7 +14,16 @@ import {
 } from "../components/timeline/TimelineOnboarding";
 import { TimelineDetailDrawer } from "../components/timeline/TimelineDetailDrawer";
 import { getTimelineCopy } from "../components/timeline/copy";
-import { fetchTransitTimeline } from "../services/apiClient";
+import {
+  fetchTransitTimeline,
+  fetchCbtMoodPoints,
+  type CbtMoodPoint,
+} from "../services/apiClient";
+
+// CBT 情绪叠加层（#23）功能开关：默认关闭（dark code）。GDPR Art9 显式 consent 的措辞须先过法务，
+// 之后才翻 true 对用户暴露 mental-health × 占星推断的叠加视图（设计 §10 / 隐私红线）。
+const CBT_OVERLAY_ENABLED = false;
+const CBT_OVERLAY_CONSENT_KEY = "cbt_overlay_consent_v1";
 
 function monthRange(year: number, month: number): { from: string; to: string } {
   const first = new Date(Date.UTC(year, month, 1));
@@ -40,6 +49,41 @@ const TimelinePage: React.FC<{
   const [month, setMonth] = useState(now.getMonth()); // 0-based
   // 视图模式：month=月度日级（默认），life=人生年级（#17/#18，复用同端点 granularity:'year'）。
   const [mode, setMode] = useState<"month" | "life">("month");
+
+  // CBT 情绪叠加层（#23，feature-flag 后默认关闭）：默认关 + 首次开启走 GDPR Art9 显式 consent。
+  const [moodOn, setMoodOn] = useState(false);
+  const [moodPoints, setMoodPoints] = useState<CbtMoodPoint[]>([]);
+  const [showConsent, setShowConsent] = useState(false);
+
+  const enableMood = useCallback(() => {
+    setMoodOn(true);
+    fetchCbtMoodPoints()
+      .then((r) => setMoodPoints(r.points || []))
+      .catch(() => setMoodPoints([]));
+  }, []);
+  const toggleMood = () => {
+    if (moodOn) {
+      setMoodOn(false);
+      return;
+    }
+    let consented = false;
+    try {
+      consented = localStorage.getItem(CBT_OVERLAY_CONSENT_KEY) === "1";
+    } catch {
+      consented = false;
+    }
+    if (consented) enableMood();
+    else setShowConsent(true);
+  };
+  const grantConsent = () => {
+    try {
+      localStorage.setItem(CBT_OVERLAY_CONSENT_KEY, "1");
+    } catch {
+      // ignore storage errors
+    }
+    setShowConsent(false);
+    enableMood();
+  };
 
   const [data, setData] = useState<TimelineResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -186,6 +230,59 @@ const TimelinePage: React.FC<{
         </p>
       )}
 
+      {/* CBT 情绪叠加层（#23）：feature-flag 后默认关闭（dark）。仅月度模式可叠加；
+          首次开启走 GDPR Art9 显式 consent；开启后顶部固定反因果声明。 */}
+      {CBT_OVERLAY_ENABLED && mode === "month" && !demo && (
+        <div className="my-3">
+          <button
+            onClick={toggleMood}
+            className={`px-3 py-1.5 rounded-lg border text-sm ${
+              moodOn
+                ? "bg-teal-600 text-white border-teal-600"
+                : "border-slate-200 hover:bg-slate-50"
+            }`}
+          >
+            {language === "zh" ? "情绪叠加" : "Mood overlay"}
+            {moodOn ? " ✓" : ""}
+          </button>
+          {moodOn && (
+            <p className="mt-2 text-xs text-slate-500">
+              {language === "zh"
+                ? "你留意到的关联仅供自我觉察，并非因果关系。"
+                : "Patterns you notice are for self-reflection, not cause and effect."}
+            </p>
+          )}
+        </div>
+      )}
+
+      {showConsent && (
+        <div className="my-3 rounded-xl border border-teal-200 bg-teal-50/60 p-4 text-sm">
+          <p className="font-medium">
+            {language === "zh" ? "叠加你的情绪数据" : "Overlay your mood data"}
+          </p>
+          {/* TODO(legal): GDPR Art9 显式 consent 措辞须过法务后定稿（设计 §10）。 */}
+          <p className="mt-1 text-slate-600">
+            {language === "zh"
+              ? "这会把你的 CBT 日记情绪强度（仅数值，不含文字）叠到能量轴上，用于自我觉察。情绪与占星之间没有因果关系。是否同意为本视图处理这些与健康相关的敏感数据？"
+              : "This overlays your CBT journal mood intensity (numbers only, never your text) onto your energy timeline for self-reflection. Mood and astrology are not causally linked. Do you consent to processing this health-related sensitive data for this view?"}
+          </p>
+          <div className="mt-3 flex gap-2">
+            <button
+              onClick={grantConsent}
+              className="px-3 py-1.5 rounded-lg bg-teal-600 text-white text-sm"
+            >
+              {language === "zh" ? "我同意" : "I consent"}
+            </button>
+            <button
+              onClick={() => setShowConsent(false)}
+              className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm"
+            >
+              {language === "zh" ? "取消" : "Cancel"}
+            </button>
+          </div>
+        </div>
+      )}
+
       {loading && (
         <div className="py-16 text-center text-slate-500">{c.loading}</div>
       )}
@@ -223,6 +320,11 @@ const TimelinePage: React.FC<{
             markers={data.markers}
             selectedDate={selectedDate}
             onSelectDate={setSelectedDate}
+            moodPoints={
+              CBT_OVERLAY_ENABLED && moodOn && mode === "month"
+                ? moodPoints
+                : undefined
+            }
           />
           <TimelineLegend />
 

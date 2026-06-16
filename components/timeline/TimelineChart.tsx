@@ -7,11 +7,18 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { TimelineCandle, TimelineMarker } from "../../types";
 import { useLanguage } from "../UIComponents";
 
+export interface TimelineMoodPoint {
+  date: string;
+  intensity: number; // 0-100（CBT 情绪强度，与能量纵轴同刻度叠加）
+}
+
 interface TimelineChartProps {
   candles: TimelineCandle[];
   markers?: TimelineMarker[];
   selectedDate?: string | null;
   onSelectDate?: (date: string) => void;
+  // CBT 情绪叠加层（#23）：按 date 对齐叠到能量曲线上（仅月度日级）。自我觉察非因果。
+  moodPoints?: TimelineMoodPoint[];
 }
 
 // 蜡烛体方向着色（股票式红/绿，产品方决定）：end≥start=能量走强=绿、end<start=能量回落=红、
@@ -21,6 +28,7 @@ const COLOR_DOWN = "#EF4444"; // red-500 — energy eased through the day
 const COLOR_FLAT = "#94A3B8"; // slate-400 — roughly unchanged (doji)
 const COLOR_MA = "#A855F7"; // mystic-500 — smoothing line (distinct from red/green)
 const COLOR_SELECTED = "#2563EB"; // psycho-600 — selection ring
+const COLOR_MOOD = "#0D9488"; // teal-600 — CBT 情绪叠加层（与红/绿/紫均区分，自我觉察非因果）
 
 const FLAT_EPS = 1.5; // |end-start| 在此内视为持平
 
@@ -58,6 +66,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   markers = [],
   selectedDate,
   onSelectDate,
+  moodPoints = [],
 }) => {
   const { language } = useLanguage();
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -95,6 +104,21 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
     return ma.map((v, i) => `${xOf(i)},${yOf(v)}`).join(" ");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [candles, slot]);
+
+  // CBT 情绪叠加：把 moodPoints 按 date 对齐到对应候选的 x 位置（无匹配候选则丢弃）。
+  const moodPx = useMemo(() => {
+    const idxByDate = new Map<string, number>();
+    candles.forEach((c, i) => {
+      if (c.date) idxByDate.set(c.date, i);
+    });
+    return moodPoints
+      .map((p) => {
+        const i = idxByDate.get(p.date);
+        return i == null ? null : { x: xOf(i), y: yOf(p.intensity) };
+      })
+      .filter((p): p is { x: number; y: number } => p !== null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [moodPoints, candles, slot]);
 
   // 候选/标记的身份键：月度用日期，人生 K 线（年级）用 age（无 date）。
   const keyOf = (x: { date?: string; age?: number }): string =>
@@ -204,6 +228,31 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               </g>
             );
           })}
+
+          {/* CBT 情绪叠加层（#23）：teal 折线 + 点，按日期叠到能量曲线上。自我觉察非因果。 */}
+          {moodPx.length > 0 && (
+            <g>
+              {moodPx.length > 1 && (
+                <polyline
+                  points={moodPx.map((p) => `${p.x},${p.y}`).join(" ")}
+                  fill="none"
+                  stroke={COLOR_MOOD}
+                  strokeWidth={1.5}
+                  strokeDasharray="3 2"
+                  strokeOpacity={0.8}
+                />
+              )}
+              {moodPx.map((p, i) => (
+                <circle
+                  key={`mood-${i}`}
+                  cx={p.x}
+                  cy={p.y}
+                  r={2.5}
+                  fill={COLOR_MOOD}
+                />
+              ))}
+            </g>
+          )}
 
           {/* y-axis labels (relative scale, compared only to yourself) */}
           {gridLines.map((g) => (
