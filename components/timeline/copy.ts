@@ -42,6 +42,7 @@ export interface TimelineCopy {
   partialDataNote: string;
   steadyStretch: string;
   viewDayReading: string;
+  viewDayReadingDemo: string; // demo 模式：当日解读需登录 → 注册 CTA
   topAspectsTitle: string;
   // onboarding (safety)
   onbTitle1: string;
@@ -97,6 +98,7 @@ const EN: TimelineCopy = {
   partialDataNote: "Some data was unavailable; this view is partial.",
   steadyStretch: "A steady stretch — a natural time to consolidate.",
   viewDayReading: "View this day's reading",
+  viewDayReadingDemo: "Sign up to read this day",
   topAspectsTitle: "What's active",
   onbTitle1: "This isn't good vs bad",
   onbBody1:
@@ -146,6 +148,7 @@ const ZH: TimelineCopy = {
   partialDataNote: "部分数据不可用，本视图为局部呈现。",
   steadyStretch: "平稳的一段——适合沉淀的自然时机。",
   viewDayReading: "查看当日解读",
+  viewDayReadingDemo: "注册以查看当日解读",
   topAspectsTitle: "正在活跃",
   onbTitle1: "这不是好坏之分",
   onbBody1:

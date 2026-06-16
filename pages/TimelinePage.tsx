@@ -25,7 +25,13 @@ function monthRange(year: number, month: number): { from: string; to: string } {
   };
 }
 
-const TimelinePage: React.FC<{ profile: UserProfile }> = ({ profile }) => {
+const TimelinePage: React.FC<{
+  profile: UserProfile;
+  // demo：公开示例页（EnergyTimelineDemoPage）复用本组件展示固定示例盘。月度计算端点匿名友好，
+  // 蜡烛/当日摘要照常呈现；仅"当日 AI 解读"需登录 → 改为 onUpsell 注册 CTA。
+  demo?: boolean;
+  onUpsell?: () => void;
+}> = ({ profile, demo = false, onUpsell }) => {
   const { language } = useLanguage();
   const c = getTimelineCopy(language);
 
@@ -236,10 +242,14 @@ const TimelinePage: React.FC<{ profile: UserProfile }> = ({ profile }) => {
               )}
 
               <button
-                onClick={() => setDrawerDate(selectedCandle.date ?? null)}
+                onClick={() =>
+                  demo
+                    ? onUpsell?.()
+                    : setDrawerDate(selectedCandle.date ?? null)
+                }
                 className="mt-3 w-full rounded-lg bg-psycho-600 py-2 text-sm font-medium text-white hover:bg-psycho-700"
               >
-                {c.viewDayReading}
+                {demo ? c.viewDayReadingDemo : c.viewDayReading}
               </button>
             </div>
           )}

@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.26
+> **Version**: 2.27
 > **Last Updated**: 2026-06-16
 > **Status**: Living Document — synced with codebase
 
@@ -327,6 +327,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | 路由 | 页面 | 说明 |
 |------|------|------|
 | `/:lang/saturn-return-calculator` | SaturnReturnCalculator | 免费 Saturn Return 计算器（公开可索引） |
+| `/:lang/energy-timeline` | EnergyTimelineDemoPage | Energy Timeline 公开 SEO demo 页（固定示例盘 + 注册 CTA，免登录，公开可索引；设计 §13） |
 | `/embed/saturn-return` | SaturnReturnCalculator (variant="embed") | 可嵌入 widget：宿主站点 `<iframe>` 引用，无站点 chrome，带可见 dofollow 品牌回链；`noindex,nofollow` |
 
 **嵌入 widget（T7）**：`variant="embed"` 渲染无 chrome 的计算器（跳过 `<SEO>` 头注入与 SEO 长文），底部「Powered by AstrologyWiki」回链指向 canonical 计算器页。App.tsx 在 `/embed/*` 早返回最小树绕开全站 nav/footer/paywall/analytics。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。
@@ -415,7 +416,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 ### 2.15 人生 K 线 / 月度 K 线 (Life K-Line / Energy Timeline)
 
-**路由**: `/timeline`（受保护路由，需登录 + 出生档案；已落地）
+**路由**: `/timeline`（受保护路由，需登录 + 出生档案；已落地）｜ `/:lang/energy-timeline`（公开可索引 SEO demo 页：固定示例盘的真实时间轴 + 注册 CTA，免登录；设计 §13）
 
 **落地状态 (2026-06-16)**: P0 月度 K 线 MVP 已实现并通过验证 —
 后端 `backend/src/services/transit/`（纯函数评分引擎，TDD 49 单测）+ `backend/src/api/timeline.ts`（端点 7 测）+ ephemeris 瘦经度接口；前端 `pages/TimelinePage.tsx` + `components/timeline/`（蜡烛主视图 / 当日抽屉 / 安全 onboarding，vite build 通过）。人生 K 线（年级，#17/#18）与 CBT 叠加层（#23）仍为 P2/P1。

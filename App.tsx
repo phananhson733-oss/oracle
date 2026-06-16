@@ -343,6 +343,9 @@ const TodayPage = lazy(() => import("./pages/TodayPage"));
 const CyclesPage = lazy(() => import("./pages/CyclesPage"));
 
 const TimelinePage = lazy(() => import("./pages/TimelinePage"));
+const EnergyTimelineDemoPage = lazy(
+  () => import("./pages/EnergyTimelineDemoPage"),
+);
 
 const UsPage = lazy(() => import("./pages/SynastryPage"));
 
@@ -414,6 +417,9 @@ const AppContent: React.FC = () => {
     "/help",
   ].includes(pathWithoutLang);
   const isSaturnReturnPath = pathWithoutLang === "/saturn-return-calculator";
+  // /:lang/energy-timeline 是公开可索引 SEO demo 页（静态 stub 输出 index,follow 且在 sitemap）。
+  // 运行时必须列入 isPublicRoute，否则 WRS 注入 noindex 会误伤 sitemap 里的 demo 页（设计 §13）。
+  const isEnergyTimelinePath = pathWithoutLang === "/energy-timeline";
   // /:lang/pricing 是公开可索引营销页：静态 stub（public/{lang}/pricing/index.html）输出
   // index,follow 且在 sitemap，运行时必须一致，否则 WRS 注入 noindex 会误伤 sitemap 里的定价页。
   const isPricingPath = pathWithoutLang === "/pricing";
@@ -435,6 +441,7 @@ const AppContent: React.FC = () => {
     isWikiPath ||
     isLegalPath ||
     isSaturnReturnPath ||
+    isEnergyTimelinePath ||
     isPricingPath ||
     isLandingV2LangPath;
   const shouldNoIndex = !isPublicRoute;
@@ -626,7 +633,11 @@ const AppContent: React.FC = () => {
     isLandingV2LangPath;
   const showNav =
     isLandingRoute ||
-    ((activeProfile || isWikiPath || isLegalPath || isSaturnReturnPath) &&
+    ((activeProfile ||
+      isWikiPath ||
+      isLegalPath ||
+      isSaturnReturnPath ||
+      isEnergyTimelinePath) &&
       !["/onboarding", "/auth"].includes(pathWithoutLang));
 
   // Landing routes are 100% public — never show a leftover login modal there.
@@ -1025,6 +1036,14 @@ const AppContent: React.FC = () => {
               }
             />
             <Route
+              path="/:lang/energy-timeline"
+              element={
+                <LangGuard>
+                  <EnergyTimelineDemoPage />
+                </LangGuard>
+              }
+            />
+            <Route
               path="/:lang/pricing"
               element={
                 <LangGuard>
@@ -1037,6 +1056,7 @@ const AppContent: React.FC = () => {
               path="/saturn-return-calculator"
               element={<LangRedirect />}
             />
+            <Route path="/energy-timeline" element={<LangRedirect />} />
             <Route path="/pricing" element={<LangRedirect />} />
             <Route path="/wiki/*" element={<LangRedirect />} />
             <Route path="/wiki" element={<LangRedirect />} />

@@ -1368,6 +1368,66 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     });
   }
 
+  // Energy Timeline 公开 SEO demo 页（设计 §13）。与 Saturn Return 同模式：静态 stub 给爬虫读
+  // 关键词正文 + WebApplication/FAQPage JSON-LD，inject-spa 水合成 /en/energy-timeline 的真实示例时间轴。
+  // EN-only（无 zh 工具页，alternates 不宣告 zh）。正文必须是明文叙事（非纯 SVG 图）以避免 soft 404；
+  // 文案严守安全叙事（中性能量强度、loud vs quiet 非好坏、非预测、非医疗），与应用内 onboarding/disclaimer 同框架。
+  {
+    const timelineUrl = `${siteUrl}/en/energy-timeline`;
+    const timelineTitle = 'Energy Timeline - Free Astrology Transit Energy Chart';
+    const timelineDescription =
+      'See your astrological transit energy day by day as a candlestick timeline. A free, neutral map of your energy rhythm - loud vs quiet, not good vs bad. Not a prediction.';
+    const timelineBody = [
+      '## What is the Energy Timeline?',
+      'The Energy Timeline is a free astrology tool that turns your transits - how the moving planets relate to your birth chart - into a day-by-day candlestick chart of energy intensity. Instead of a single horoscope, you see a rhythm: stretches where a lot is moving in your sky, and quieter stretches where things settle. The height of each candle reflects how active the energy is, measured only against your own range, never compared to anyone else.',
+      '## How the transit candles work',
+      'Each candle summarises one day. The thin line (wick) shows the full range the energy moved across that day; the bar shows where it started and where it ended. We label these start, peak, low, and end - they are an interval summary, not a stock chart open/high/low/close, and they carry no buy/sell or up-is-good meaning. A green bar simply means the energy was higher at the end of the day than the start; red means it eased; grey means it stayed roughly steady.',
+      '## How to read your energy rhythm',
+      'Read height as loud vs quiet, not good vs bad. A tall candle is a day with a lot of astrological movement - it can feel intense whether the theme is flowing or challenging. A flat candle is a calmer, more consolidating stretch. Tap any day to see what is active: how much of the energy leans flowing (ease) versus friction (challenge you can grow with), and which transit is driving it. Most days are a mix of both.',
+      '## Is the Energy Timeline a prediction?',
+      'No. The Energy Timeline maps tendencies in your transits for self-reflection and timing awareness - it does not predict events, outcomes, or fate, and it is not medical, psychological, or financial advice. Astrology here is a mirror for noticing your own rhythm, in line with a psychology-grounded, empowerment-over-fatalism approach. Use it to plan when you might want to push or rest, not as a forecast of what will happen.',
+      '## Using the Energy Timeline (free)',
+      'Open the timeline above to explore a sample chart, then create your own from your birth date, time, and city to see your personal energy rhythm for any month. No payment is needed for the monthly view. For a deeper day-by-day reading, pair your timeline with the AstrologyWiki birth chart and transit tools.',
+    ].join('\n\n');
+    const timelineFaqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: 'en',
+      mainEntity: [
+        { '@type': 'Question', name: 'What is an astrology energy timeline?', acceptedAnswer: { '@type': 'Answer', text: 'It is a day-by-day candlestick chart of your transit energy intensity - how active the moving planets are relative to your birth chart. Heights are measured only against your own range, showing a rhythm of busier and quieter stretches rather than a single horoscope.' } },
+        { '@type': 'Question', name: 'Are the energy candles like a stock chart?', acceptedAnswer: { '@type': 'Answer', text: 'No. The start, peak, low, and end of each candle are an interval summary of one day energy, not a market open/high/low/close. They carry no buy/sell or up-is-good meaning - the candlestick shape is only a familiar way to show a daily range.' } },
+        { '@type': 'Question', name: 'Does a high bar mean a good day?', acceptedAnswer: { '@type': 'Answer', text: 'No. Height means loud vs quiet, not good vs bad. A tall candle is a day with a lot of astrological movement, which can feel intense whether the theme is flowing or challenging. A flat candle is a calmer, consolidating stretch.' } },
+        { '@type': 'Question', name: 'Is the Energy Timeline fortune-telling?', acceptedAnswer: { '@type': 'Answer', text: 'No. It maps tendencies in your transits for self-reflection and timing, and does not predict events, outcomes, or fate. It is not medical, psychological, or financial advice.' } },
+      ],
+    };
+    addUrl(timelineUrl, ['energy-timeline', 'v1', contentHash([timelineBody])]);
+    await writeHtmlPage({
+      outputPath: path.join(publicDir, 'en', 'energy-timeline', 'index.html'),
+      lang: 'en',
+      title: timelineTitle,
+      description: timelineDescription,
+      url: timelineUrl,
+      ogType: 'website',
+      alternates: buildAlternateLinks('/energy-timeline', { zh: false, en: true }),
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: 'Energy Timeline',
+          description: timelineDescription,
+          applicationCategory: 'LifestyleApplication',
+          operatingSystem: 'Web',
+          url: timelineUrl,
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        },
+        timelineFaqSchema,
+      ],
+      ctaText: LANG_CONFIG.en.homeCta,
+      spaPath: '/en/energy-timeline',
+      contentHtml: mdToHtml(timelineBody),
+    });
+  }
+
   // 文章摘要按 lang/slug 索引，供 sitemap 签名（date/title/desc/image/keywords 变 → lastmod 更新）。
   const articleSummaries = {
     en: new Map(articlesModule.getArticleSummaries('en').map((s) => [s.slug, s])),
