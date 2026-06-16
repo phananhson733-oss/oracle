@@ -104,7 +104,7 @@ const TimelinePage: React.FC<{ profile: UserProfile }> = ({ profile }) => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-6">
+    <div className="max-w-5xl mx-auto px-4 py-6">
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">{c.title}</h1>
         <p className="text-sm text-slate-500 mt-1">{c.subtitle}</p>
@@ -216,7 +216,9 @@ const TimelinePage: React.FC<{ profile: UserProfile }> = ({ profile }) => {
               {selectedCandle.intensity < 12 && (
                 <p className="mt-2 text-xs text-slate-500">{c.steadyStretch}</p>
               )}
-              <p className="mt-2 text-[11px] text-slate-400">{c.intervalNote}</p>
+              <p className="mt-2 text-[11px] text-slate-400">
+                {c.intervalNote}
+              </p>
 
               {selectedCandle.topAspects.length > 0 && (
                 <div className="mt-3">
@@ -259,7 +261,10 @@ const TimelinePage: React.FC<{ profile: UserProfile }> = ({ profile }) => {
   );
 };
 
-const Metric: React.FC<{ label: string; value: number }> = ({ label, value }) => (
+const Metric: React.FC<{ label: string; value: number }> = ({
+  label,
+  value,
+}) => (
   <div>
     <div className="text-slate-400">{label}</div>
     <div className="font-medium text-slate-700">{Math.round(value)}</div>

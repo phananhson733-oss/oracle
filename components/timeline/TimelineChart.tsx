@@ -1,8 +1,9 @@
 // INPUT: TimelineCandle[] / TimelineMarker[]（来自 /api/transit/timeline）、useLanguage、点选回调。
-// OUTPUT: 自绘 SVG 蜡烛图组件（区间摘要语义：wick=dip..peak、body=start..end），移动优先可横滚。
-// POS: 月度 K 线主视图。颜色走 psycho(harmony)/mystic(tension) token，禁 success/danger；纵轴=中性能量强度。
+// OUTPUT: 自绘 SVG 蜡烛图组件（区间摘要语义：wick=dip..peak、body=start..end），自适应填满容器宽度。
+// POS: 月度 K 线主视图。蜡烛体按方向红/绿着色（end≥start=涨=绿、end<start=跌=红，近平=中性灰；
+//      西方蜡烛惯例，产品方决定）；能量质量(harmony/tension)在当日卡里数值呈现。纵轴=中性能量强度，仅与自身比较。
 
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { TimelineCandle, TimelineMarker } from "../../types";
 import { useLanguage } from "../UIComponents";
 
@@ -13,35 +14,29 @@ interface TimelineChartProps {
   onSelectDate?: (date: string) => void;
 }
 
-// 设计 F-D4：harmony=psycho(蓝)、tension=mystic(紫)，同一明度档（tension 饱和度不高于
-// harmony），低强度=中性 slate（"平静期"），禁用 success/danger/warning。
-const COLOR_QUIET = "#CBD5E1"; // slate-300 — a steady, quiet stretch
-const COLOR_FLOW = "#60A5FA"; // psycho-400 — harmony-leaning
-const COLOR_FRICTION = "#C084FC"; // mystic-400 — tension-leaning
-const COLOR_MIXED = "#94A3B8"; // slate-400 — active, balanced
-const COLOR_WICK = "#CBD5E1";
-const COLOR_MA = "#A855F7"; // mystic-500 — smoothing line
-const COLOR_SELECTED = "#2563EB"; // psycho-600
+// 蜡烛体方向着色（股票式红/绿，产品方决定）：end≥start=能量走强=绿、end<start=能量回落=红、
+// 近乎持平=中性灰（doji）。"非好坏"的中性框架由 onboarding/图例/文案承载，不再靠颜色。
+const COLOR_UP = "#22C55E"; // green-500 — energy rose through the day
+const COLOR_DOWN = "#EF4444"; // red-500 — energy eased through the day
+const COLOR_FLAT = "#94A3B8"; // slate-400 — roughly unchanged (doji)
+const COLOR_MA = "#A855F7"; // mystic-500 — smoothing line (distinct from red/green)
+const COLOR_SELECTED = "#2563EB"; // psycho-600 — selection ring
 
-const QUIET_THRESHOLD = 12;
-const LEAN_DELTA = 0.15;
+const FLAT_EPS = 1.5; // |end-start| 在此内视为持平
 
-const SLOT = 26; // px per candle column
-const BODY_W = 14;
-const H = 240; // plot height
+const H = 260; // plot height
 const PAD_TOP = 16;
 const PAD_BOTTOM = 28;
-const PAD_LEFT = 8;
-const PAD_RIGHT = 8;
+const PAD_LEFT = 26; // room for y-axis labels
+const PAD_RIGHT = 10;
+const MIN_SLOT = 20; // 低于此宽度则横滚（候选项过多时）
+const DEFAULT_WIDTH = 900;
 
 function candleColor(c: TimelineCandle): string {
-  if (c.intensity < QUIET_THRESHOLD) return COLOR_QUIET;
-  const total = c.intensity || 1;
-  const hShare = c.harmony / total;
-  const tShare = c.tension / total;
-  if (hShare - tShare > LEAN_DELTA) return COLOR_FLOW;
-  if (tShare - hShare > LEAN_DELTA) return COLOR_FRICTION;
-  return COLOR_MIXED;
+  const delta = c.end - c.start;
+  if (delta > FLAT_EPS) return COLOR_UP;
+  if (delta < -FLAT_EPS) return COLOR_DOWN;
+  return COLOR_FLAT;
 }
 
 // 简单 7 点移动平均，平滑主曲线（设计 §7 MA 平滑）。
@@ -62,18 +57,36 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   onSelectDate,
 }) => {
   const { language } = useLanguage();
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [availWidth, setAvailWidth] = useState(DEFAULT_WIDTH);
 
-  const width = PAD_LEFT + PAD_RIGHT + candles.length * SLOT;
+  // 自适应：测量容器宽度，蜡烛铺满可用宽度（候选过多时回退到 MIN_SLOT + 横滚）。
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width;
+      if (w && w > 0) setAvailWidth(w);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const n = Math.max(1, candles.length);
+  const slot = Math.max(MIN_SLOT, (availWidth - PAD_LEFT - PAD_RIGHT) / n);
+  const bodyW = Math.max(6, Math.min(24, slot * 0.62));
+  const chartWidth = PAD_LEFT + PAD_RIGHT + candles.length * slot;
   const plotBottom = PAD_TOP + H;
 
-  const yOf = (v: number) => PAD_TOP + (1 - Math.max(0, Math.min(100, v)) / 100) * H;
-  const xOf = (i: number) => PAD_LEFT + i * SLOT + SLOT / 2;
+  const yOf = (v: number) =>
+    PAD_TOP + (1 - Math.max(0, Math.min(100, v)) / 100) * H;
+  const xOf = (i: number) => PAD_LEFT + i * slot + slot / 2;
 
   const maPoints = useMemo(() => {
     const ma = movingAverage(candles.map((c) => c.intensity));
     return ma.map((v, i) => `${xOf(i)},${yOf(v)}`).join(" ");
-  }, [candles]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [candles, slot]);
 
   const markerByDate = useMemo(() => {
     const m = new Map<string, TimelineMarker>();
@@ -84,12 +97,12 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   const gridLines = [0, 25, 50, 75, 100];
 
   return (
-    <div className="w-full">
-      <div ref={scrollRef} className="overflow-x-auto">
+    <div ref={wrapRef} className="w-full">
+      <div className="overflow-x-auto">
         <svg
-          width={Math.max(width, 320)}
+          width={Math.max(chartWidth, 320)}
           height={plotBottom + PAD_BOTTOM}
-          viewBox={`0 0 ${Math.max(width, 320)} ${plotBottom + PAD_BOTTOM}`}
+          viewBox={`0 0 ${Math.max(chartWidth, 320)} ${plotBottom + PAD_BOTTOM}`}
           role="img"
           aria-label={
             language === "zh"
@@ -103,7 +116,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
             <line
               key={g}
               x1={PAD_LEFT}
-              x2={width - PAD_RIGHT}
+              x2={chartWidth - PAD_RIGHT}
               y1={yOf(g)}
               y2={yOf(g)}
               stroke="#E2E8F0"
@@ -118,7 +131,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               fill="none"
               stroke={COLOR_MA}
               strokeWidth={1.5}
-              strokeOpacity={0.45}
+              strokeOpacity={0.5}
               strokeLinejoin="round"
             />
           )}
@@ -131,6 +144,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
             const bodyH = Math.max(2, yOf(top) - yOf(bot));
             const isSel = selectedDate && c.date === selectedDate;
             const mk = c.date ? markerByDate.get(c.date) : undefined;
+            const color = candleColor(c);
             return (
               <g
                 key={c.date ?? i}
@@ -139,40 +153,36 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               >
                 {/* hit area */}
                 <rect
-                  x={cx - SLOT / 2}
+                  x={cx - slot / 2}
                   y={PAD_TOP}
-                  width={SLOT}
+                  width={slot}
                   height={H}
                   fill={isSel ? "#EFF6FF" : "transparent"}
                 />
-                {/* wick: dip..peak (full intraday range) */}
+                {/* wick: dip..peak (full intraday range), body-colored for the candlestick look */}
                 <line
                   x1={cx}
                   x2={cx}
                   y1={yOf(c.peak)}
                   y2={yOf(c.dip)}
-                  stroke={COLOR_WICK}
+                  stroke={color}
+                  strokeOpacity={0.7}
                   strokeWidth={1.5}
                 />
                 {/* body: start..end interval summary */}
                 <rect
-                  x={cx - BODY_W / 2}
+                  x={cx - bodyW / 2}
                   y={bodyTop}
-                  width={BODY_W}
+                  width={bodyW}
                   height={bodyH}
                   rx={2}
-                  fill={candleColor(c)}
+                  fill={color}
                   stroke={isSel ? COLOR_SELECTED : "none"}
                   strokeWidth={isSel ? 2 : 0}
                 />
                 {/* marker dot */}
                 {mk && (
-                  <circle
-                    cx={cx}
-                    cy={yOf(c.peak) - 6}
-                    r={3}
-                    fill={COLOR_MA}
-                  >
+                  <circle cx={cx} cy={yOf(c.peak) - 6} r={3} fill={COLOR_MA}>
                     <title>{mk.label}</title>
                   </circle>
                 )}
@@ -184,7 +194,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
           {gridLines.map((g) => (
             <text
               key={`lbl-${g}`}
-              x={PAD_LEFT}
+              x={4}
               y={yOf(g) - 2}
               fontSize={9}
               fill="#94A3B8"

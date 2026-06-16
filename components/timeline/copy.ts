@@ -22,9 +22,9 @@ export interface TimelineCopy {
   comparedToYourself: string;
   legendTitle: string;
   legendIntensity: string;
-  legendFlow: string;
-  legendFriction: string;
-  legendQuiet: string;
+  legendUp: string;
+  legendDown: string;
+  legendFlat: string;
   legendWickNote: string;
   // candle / day card
   start: string;
@@ -56,24 +56,30 @@ export interface TimelineCopy {
 
 const EN: TimelineCopy = {
   title: "Energy Timeline",
-  subtitle: "Your transit energy, day by day — a rhythm to notice, not a forecast.",
+  subtitle:
+    "Your transit energy, day by day — a rhythm to notice, not a forecast.",
   loading: "Mapping your energy rhythm…",
   errorTitle: "Couldn't build this range",
   errorBody: "Something went wrong calculating your timeline.",
   retry: "Retry",
   noProfileTitle: "Add your birth details",
-  noProfileBody: "Your timeline is built from your birth chart. Add your details to see it.",
+  noProfileBody:
+    "Your timeline is built from your birth chart. Add your details to see it.",
   addBirth: "Add birth details",
   unavailableTitle: "Timeline temporarily unavailable",
-  unavailableBody: "We couldn't reach the ephemeris just now. Please try again in a moment.",
+  unavailableBody:
+    "We couldn't reach the ephemeris just now. Please try again in a moment.",
   axisLabel: "Energy",
-  comparedToYourself: "Heights are relative to your own range — not compared to anyone else.",
+  comparedToYourself:
+    "Heights are relative to your own range — not compared to anyone else.",
   legendTitle: "Reading the chart",
-  legendIntensity: "Height = how active the energy is (loud vs quiet), not good vs bad.",
-  legendFlow: "Flowing — supportive, easeful aspects lead.",
-  legendFriction: "Friction — challenging aspects lead; energy you can work with.",
-  legendQuiet: "Quiet — a steady stretch, a natural time to consolidate.",
-  legendWickNote: "The thin line shows the day's full range; the bar shows start to end.",
+  legendIntensity:
+    "Height = how active the energy is (loud vs quiet), not good vs bad.",
+  legendUp: "Green — energy built through the day",
+  legendDown: "Red — energy eased through the day",
+  legendFlat: "Grey — roughly steady",
+  legendWickNote:
+    "The thin line shows the day's full range; the bar shows start to end.",
   start: "Start",
   peak: "Peak",
   dip: "Low",
@@ -84,18 +90,23 @@ const EN: TimelineCopy = {
   phaseExact: "At peak",
   phaseSeparating: "Easing",
   phaseUnknown: "—",
-  intervalNote: "Start / peak / low / end summarise the day — they are not market open/close.",
-  approxTimeNote: "Birth time is approximate, so Moon and angle timings are less precise.",
+  intervalNote:
+    "Start / peak / low / end summarise the day — they are not market open/close.",
+  approxTimeNote:
+    "Birth time is approximate, so Moon and angle timings are less precise.",
   partialDataNote: "Some data was unavailable; this view is partial.",
   steadyStretch: "A steady stretch — a natural time to consolidate.",
   viewDayReading: "View this day's reading",
   topAspectsTitle: "What's active",
   onbTitle1: "This isn't good vs bad",
-  onbBody1: "It's loud vs quiet. A tall bar means a lot is moving; a flat one means a calmer stretch. Neither is better.",
+  onbBody1:
+    "It's loud vs quiet. A tall bar means a lot is moving; a flat one means a calmer stretch. Neither is better.",
   onbTitle2: "Two kinds of energy",
-  onbBody2: "Blue leans flowing and easeful. Purple leans friction — challenge you can grow with. Most days are a mix.",
+  onbBody2:
+    "Blue leans flowing and easeful. Purple leans friction — challenge you can grow with. Most days are a mix.",
   onbTitle3: "It's a rhythm, not a fortune",
-  onbBody3: "This maps tendencies in your transits to notice and work with. It doesn't predict events or outcomes.",
+  onbBody3:
+    "This maps tendencies in your transits to notice and work with. It doesn't predict events or outcomes.",
   onbNext: "Next",
   onbGotIt: "Got it",
 };
@@ -116,9 +127,9 @@ const ZH: TimelineCopy = {
   comparedToYourself: "高度仅相对你自己的区间，不与任何他人比较。",
   legendTitle: "如何看图",
   legendIntensity: "高度 = 能量有多活跃（热闹还是平静），不代表好坏。",
-  legendFlow: "顺流——以和谐、支持性的相位为主。",
-  legendFriction: "摩擦——以挑战性相位为主；可以运用的成长能量。",
-  legendQuiet: "平静——平稳的一段，适合沉淀的自然时机。",
+  legendUp: "绿 — 当天能量走强（末高于起）",
+  legendDown: "红 — 当天能量回落（末低于起）",
+  legendFlat: "灰 — 大致持平",
   legendWickNote: "细线表示当天的完整波动范围；柱体表示从起到末。",
   start: "起",
   peak: "高",
@@ -137,9 +148,11 @@ const ZH: TimelineCopy = {
   viewDayReading: "查看当日解读",
   topAspectsTitle: "正在活跃",
   onbTitle1: "这不是好坏之分",
-  onbBody1: "而是热闹与平静之分。柱子高，说明动得多；平缓，说明这段更安静。两者没有优劣。",
+  onbBody1:
+    "而是热闹与平静之分。柱子高，说明动得多；平缓，说明这段更安静。两者没有优劣。",
   onbTitle2: "两种能量",
-  onbBody2: "蓝色偏顺流、舒缓；紫色偏摩擦——是可以借力成长的挑战。多数日子是两者的混合。",
+  onbBody2:
+    "蓝色偏顺流、舒缓；紫色偏摩擦——是可以借力成长的挑战。多数日子是两者的混合。",
   onbTitle3: "这是节奏，不是命运",
   onbBody3: "它呈现你行运中的倾向，供你觉察与运用，并不预测具体事件或结果。",
   onbNext: "下一步",
