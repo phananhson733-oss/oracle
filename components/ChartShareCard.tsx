@@ -38,12 +38,14 @@ const DIGNITY_TONE: Record<Dignity, string> = {
   fall: "#a14b6b",
 };
 
+// U+FE0E（文本变体选择符）强制占星 Unicode 符号走文本字形，避免 HTML span 里被渲染成 emoji。
+const TEXT_VS = "\uFE0E";
 const planetGlyph = (name: string) =>
-  TECH_DATA.PLANETS[name as keyof typeof TECH_DATA.PLANETS]?.glyph ||
-  name.slice(0, 2);
+  (TECH_DATA.PLANETS[name as keyof typeof TECH_DATA.PLANETS]?.glyph ||
+    name.slice(0, 2)) + TEXT_VS;
 const signGlyph = (sign: string) =>
-  TECH_DATA.SIGNS[sign as keyof typeof TECH_DATA.SIGNS]?.glyph ||
-  sign.slice(0, 1);
+  (TECH_DATA.SIGNS[sign as keyof typeof TECH_DATA.SIGNS]?.glyph ||
+    sign.slice(0, 1)) + TEXT_VS;
 const signMeta = (sign: string) =>
   TECH_DATA.SIGNS[sign as keyof typeof TECH_DATA.SIGNS];
 
