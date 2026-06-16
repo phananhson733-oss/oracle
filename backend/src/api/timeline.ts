@@ -12,8 +12,18 @@ import {
   handleBirthInputError,
   send500,
 } from "./birthInput.js";
-import { buildMonthlyTimeline, EphemerisUnavailableError } from "../services/transit/timeline.js";
-import type { TimelineGranularity, TimelineResponse } from "../types/timeline.js";
+import {
+  buildMonthlyTimeline,
+  EphemerisUnavailableError,
+} from "../services/transit/timeline.js";
+import {
+  buildLifeTimeline,
+  MAX_LIFE_CANDLES,
+} from "../services/transit/lifeArc.js";
+import type {
+  TimelineGranularity,
+  TimelineResponse,
+} from "../types/timeline.js";
 
 export const transitRouter = Router();
 
@@ -58,15 +68,15 @@ function validateRange(body: Record<string, unknown>): RangeOk | RangeErr {
 
   const granularityRaw =
     typeof range.granularity === "string" ? range.granularity : "day";
-  if (granularityRaw !== "day") {
-    // 'year'（人生 K 线）走独立后台预计算路径（#17/#18），P0 月度端点不支持。
+  if (granularityRaw !== "day" && granularityRaw !== "year") {
     return {
       ok: false,
       status: 400,
       code: "GRANULARITY_UNSUPPORTED",
-      error: "Only day-granularity timelines are available.",
+      error: "range.granularity must be 'day' or 'year'.",
     };
   }
+  const granularity = granularityRaw as TimelineGranularity;
 
   const from = range.from;
   const to = range.to;
@@ -79,24 +89,45 @@ function validateRange(body: Record<string, unknown>): RangeOk | RangeErr {
     };
   }
 
-  const spanDays =
-    (Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) /
-    MS_PER_DAY;
-  if (spanDays < 0) {
-    return {
-      ok: false,
-      status: 400,
-      code: "INVALID_RANGE",
-      error: "range.to must not precede range.from.",
-    };
-  }
-  if (spanDays + 1 > MAX_RANGE_DAYS) {
-    return {
-      ok: false,
-      status: 400,
-      code: "RANGE_TOO_LARGE",
-      error: `Range exceeds the ${MAX_RANGE_DAYS}-day maximum.`,
-    };
+  if (granularity === "day") {
+    const spanDays =
+      (Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) /
+      MS_PER_DAY;
+    if (spanDays < 0) {
+      return {
+        ok: false,
+        status: 400,
+        code: "INVALID_RANGE",
+        error: "range.to must not precede range.from.",
+      };
+    }
+    if (spanDays + 1 > MAX_RANGE_DAYS) {
+      return {
+        ok: false,
+        status: 400,
+        code: "RANGE_TOO_LARGE",
+        error: `Range exceeds the ${MAX_RANGE_DAYS}-day maximum.`,
+      };
+    }
+  } else {
+    // year（人生 K 线）：from/to 的年份部分界定日历窗口，每根蜡烛 = 一岁。
+    const spanYears = Number(to.slice(0, 4)) - Number(from.slice(0, 4));
+    if (spanYears < 0) {
+      return {
+        ok: false,
+        status: 400,
+        code: "INVALID_RANGE",
+        error: "range.to must not precede range.from.",
+      };
+    }
+    if (spanYears + 1 > MAX_LIFE_CANDLES) {
+      return {
+        ok: false,
+        status: 400,
+        code: "RANGE_TOO_LARGE",
+        error: `Range exceeds the ${MAX_LIFE_CANDLES}-year maximum.`,
+      };
+    }
   }
 
   const tzRaw = typeof body.tz === "string" && body.tz ? body.tz : "UTC";
@@ -109,7 +140,7 @@ function validateRange(body: Record<string, unknown>): RangeOk | RangeErr {
     };
   }
 
-  return { ok: true, granularity: "day", from, to: to as string, tz: tzRaw };
+  return { ok: true, granularity, from, to: to as string, tz: tzRaw };
 }
 
 async function handleTimeline(req: Request, res: Response): Promise<void> {
@@ -144,12 +175,24 @@ async function handleTimeline(req: Request, res: Response): Promise<void> {
       return;
     }
 
-    const result = await buildMonthlyTimeline(
-      birth,
-      range.from,
-      range.to,
-      range.tz,
-    );
+    let result;
+    if (range.granularity === "year") {
+      // from/to 年份 → 相对出生年的年龄区间（人生 K 线一根蜡烛 = 一岁）。
+      const birthYear = Number(birth.date.slice(0, 4));
+      const fromAge = Math.max(0, Number(range.from.slice(0, 4)) - birthYear);
+      const toAge = Math.min(
+        MAX_LIFE_CANDLES - 1,
+        Math.max(fromAge, Number(range.to.slice(0, 4)) - birthYear),
+      );
+      result = await buildLifeTimeline(birth, fromAge, toAge, range.tz);
+    } else {
+      result = await buildMonthlyTimeline(
+        birth,
+        range.from,
+        range.to,
+        range.tz,
+      );
+    }
 
     const payload: TimelineResponse = {
       granularity: range.granularity,

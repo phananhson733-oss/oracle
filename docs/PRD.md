@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.27
-> **Last Updated**: 2026-06-16
+> **Version**: 2.28
+> **Last Updated**: 2026-06-17
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -419,7 +419,9 @@ AI 生成的深度心理分析，每个维度独立解读：
 **路由**: `/timeline`（受保护路由，需登录 + 出生档案；已落地）｜ `/:lang/energy-timeline`（公开可索引 SEO demo 页：固定示例盘的真实时间轴 + 注册 CTA，免登录；设计 §13）
 
 **落地状态 (2026-06-16)**: P0 月度 K 线 MVP 已实现并通过验证 —
-后端 `backend/src/services/transit/`（纯函数评分引擎，TDD 49 单测）+ `backend/src/api/timeline.ts`（端点 7 测）+ ephemeris 瘦经度接口；前端 `pages/TimelinePage.tsx` + `components/timeline/`（蜡烛主视图 / 当日抽屉 / 安全 onboarding，vite build 通过）。人生 K 线（年级，#17/#18）与 CBT 叠加层（#23）仍为 P2/P1。
+后端 `backend/src/services/transit/`（纯函数评分引擎，TDD）+ `backend/src/api/timeline.ts`（端点）+ ephemeris 瘦经度接口；前端 `pages/TimelinePage.tsx` + `components/timeline/`（蜡烛主视图 / 当日抽屉 / 安全 onboarding，vite build 通过）+ 公开 SEO demo 页 `/:lang/energy-timeline`。
+
+**人生 K 线（年级，#17/#18）后端引擎已落地 (2026-06-17)**：`backend/src/services/transit/lifeArc.ts` —— 复用月度强度模型，慢速外行星（Jupiter/Saturn/Uranus/Neptune/Pluto/北交点）季度采样 + 周期播种 Return 标记（Saturn/Jupiter/Nodal 返照 + Uranus 中年对冲，按已知轨道周期非暴力扫描）+ 固定参考跨度（1-90 岁）归一化（range-independent）。端点 `granularity:'year'` 已接入（`MAX_LIFE_CANDLES=100`，复用同 payload/limiter）。后端 464 测试绿。**前端年级视图待落地**（TimelineChart age 模式 + 月/年切换 + 标记气泡）。CBT 叠加层（#23）仍为 P1。
 
 将占星 transit 强度可视化为**蜡烛时间轴主视图**，用户看到自身"能量节奏"起伏，点击任意时间点获得 AI 解读。**外部命名** `Energy Timeline / Transit Candles`，"人生K线/月度K线"仅作内部代号 + 中文副标题。完整工程设计 + 落地 blocker 见 `docs/plans/2026-06-16-life-kline-design.md`（已过 5-voice autoplan 评审：3 Claude + Gemini + Codex/GPT-5 + 代码核验）。
 
@@ -441,7 +443,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | **CBT 情绪叠加层** | 登录用户把 CBT 情绪**数值**叠到时间轴做自我觉察（**竞品独家**，默认关 + 显式 consent + 反因果 banner）|
 
 **API**:
-- `GET / POST /api/transit/timeline` — 蜡烛时间序列（**无 LLM、纯计算 + 缓存**；单日缓存键 `hashInput(birth):date:tz` 含 viewer 时区锚；核心天体 mock fallback → `EPHEMERIS_UNAVAILABLE` 不缓存；专属更严 limiter + 4KB cap）
+- `GET / POST /api/transit/timeline` — 蜡烛时间序列（**无 LLM、纯计算 + 缓存**；`granularity:'day'`=月度日级 ≤92 天，`granularity:'year'`=人生年级 ≤100 岁；单日缓存键 `hashInput(birth):date:tz` 含 viewer 时区锚；核心天体 mock fallback → `EPHEMERIS_UNAVAILABLE` 不缓存；专属更严 limiter + 4KB cap）
 - `GET /api/cbt/mood-points` — CBT 情绪叠加层**服务端数值投影** `{date, moodId, initialIntensity, finalIntensity}`，绝不返回 `situation/automaticThoughts/hotThought` 原文（隐私红线 #1/#3）
 
 **配额**: **P0 决策（已定）— 月度蜡烛图全免费**（任意月份）：端点零 LLM 成本、已缓存、限流，符合 §1 病毒增长/SEO/习惯钩子定位（lifekline 的传播力正来自免费可分享）。当日 AI 解读复用现有 `/api/daily/detail`（当前免费、仅限流）。**付费 enforcement 延后**为专门计费 pass：未来 lookahead / premium 逐日 AI 档 / topAspect 明细 / CBT 叠加（P1 #23）的 gated feature key 需后端 `entitlementServiceV2` + `data/pricing.ts` + `pricing-consistency.test` 同步注册（Eng F-E8），不在 K 线 MVP 内 retrofit 共享 detail 端点（避免改既有 TodayPage 行为）。免费/付费边界按设计 risk #4 需 A/B（接 page-cro）。

@@ -55,10 +55,34 @@ describe("POST /api/transit/timeline", () => {
     expect(res.body.code).toBe("INVALID_RANGE");
   });
 
-  it("rejects year granularity (P0 month-only) with 400 GRANULARITY_UNSUPPORTED", async () => {
+  it("returns a year-granularity (life K-line) timeline with age candles + markers", async () => {
     const res = await postReq(makeApp(), {
       ...validBody,
-      range: { granularity: "year", from: "2026-06-14", to: "2026-06-16" },
+      // birth year 1990 → ages 20..24 = 5 year-candles
+      range: { granularity: "year", from: "2010-01-01", to: "2014-01-01" },
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.granularity).toBe("year");
+    expect(res.body.contract.semantics).toBe("interval-summary");
+    expect(res.body.candles).toHaveLength(5);
+    expect(typeof res.body.candles[0].age).toBe("number");
+    expect(res.body.candles[0]).toHaveProperty("intensity");
+    expect(Array.isArray(res.body.markers)).toBe(true);
+  });
+
+  it("rejects a life-arc range wider than the 100-year cap with 400 RANGE_TOO_LARGE", async () => {
+    const res = await postReq(makeApp(), {
+      ...validBody,
+      range: { granularity: "year", from: "1990-01-01", to: "2200-01-01" },
+    });
+    expect(res.status).toBe(400);
+    expect(res.body.code).toBe("RANGE_TOO_LARGE");
+  });
+
+  it("rejects an unknown granularity with 400 GRANULARITY_UNSUPPORTED", async () => {
+    const res = await postReq(makeApp(), {
+      ...validBody,
+      range: { granularity: "month", from: "2026-06-14", to: "2026-06-16" },
     });
     expect(res.status).toBe(400);
     expect(res.body.code).toBe("GRANULARITY_UNSUPPORTED");
