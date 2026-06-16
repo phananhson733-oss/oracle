@@ -96,9 +96,15 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [candles, slot]);
 
-  const markerByDate = useMemo(() => {
+  // 候选/标记的身份键：月度用日期，人生 K 线（年级）用 age（无 date）。
+  const keyOf = (x: { date?: string; age?: number }): string =>
+    x.date ?? (x.age != null ? `age-${x.age}` : "");
+  const markerByKey = useMemo(() => {
     const m = new Map<string, TimelineMarker>();
-    for (const mk of markers) if (mk.date) m.set(mk.date, mk);
+    for (const mk of markers) {
+      const k = mk.date ?? (mk.age != null ? `age-${mk.age}` : "");
+      if (k) m.set(k, mk);
+    }
     return m;
   }, [markers]);
 
@@ -150,13 +156,14 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
             const bot = Math.max(c.start, c.end);
             const bodyTop = yOf(bot);
             const bodyH = Math.max(2, yOf(top) - yOf(bot));
-            const isSel = selectedDate && c.date === selectedDate;
-            const mk = c.date ? markerByDate.get(c.date) : undefined;
+            const ckey = keyOf(c);
+            const isSel = selectedDate && ckey === selectedDate;
+            const mk = ckey ? markerByKey.get(ckey) : undefined;
             const color = candleColor(c);
             return (
               <g
-                key={c.date ?? i}
-                onClick={() => c.date && onSelectDate?.(c.date)}
+                key={ckey || i}
+                onClick={() => ckey && onSelectDate?.(ckey)}
                 style={{ cursor: onSelectDate ? "pointer" : "default" }}
               >
                 {/* hit area */}

@@ -741,6 +741,7 @@ export async function fetchTransitTimeline(
   from: string,
   to: string,
   lang: "zh" | "en" = "en",
+  granularity: "day" | "year" = "day",
 ): Promise<TimelineResponse> {
   const birth = profileToBirthInput(profile);
   const tz = (() => {
@@ -756,7 +757,7 @@ export async function fetchTransitTimeline(
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       birth,
-      range: { granularity: "day", from, to },
+      range: { granularity, from, to },
       tz,
       lang,
     }),

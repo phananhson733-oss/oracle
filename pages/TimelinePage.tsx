@@ -1,5 +1,5 @@
 // INPUT: UserProfile（活跃出生档案）；fetchTransitTimeline；timeline 组件群；useLanguage/useTheme；FrameworkDisclaimer。
-// OUTPUT: 月度能量时间轴页面（蜡烛主视图 + 选中日摘要 + 当日解读抽屉 + 安全 onboarding + 全状态）。
+// OUTPUT: 能量时间轴页面（Month/Life 双模式：月度日级 + 人生年级；蜡烛主视图 + 选中候选摘要 + 当日解读抽屉(仅月度) + 安全 onboarding + 全状态）。
 // POS: 受保护路由 /timeline 的页面（#3/#4/#5）。无吉凶/确定性叙事；纵轴=中性能量强度，仅与自身比较。
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -38,6 +38,8 @@ const TimelinePage: React.FC<{
   const now = new Date();
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth()); // 0-based
+  // 视图模式：month=月度日级（默认），life=人生年级（#17/#18，复用同端点 granularity:'year'）。
+  const [mode, setMode] = useState<"month" | "life">("month");
 
   const [data, setData] = useState<TimelineResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -51,13 +53,28 @@ const TimelinePage: React.FC<{
   }, []);
 
   const load = useCallback(() => {
-    const { from, to } = monthRange(year, month);
     setLoading(true);
     setErrorCode(null);
     setData(null);
     setSelectedDate(null);
     let cancelled = false;
-    fetchTransitTimeline(profile, from, to, language)
+    let req: ReturnType<typeof fetchTransitTimeline>;
+    if (mode === "life") {
+      // 人生 K 线：年级，from/to 年份界定年龄区间（出生年 → +89 岁，约 90 根 ≤100）。
+      const birthYear =
+        Number(profile.birthDate.slice(0, 4)) || new Date().getFullYear() - 30;
+      req = fetchTransitTimeline(
+        profile,
+        `${birthYear}-01-01`,
+        `${birthYear + 89}-12-31`,
+        language,
+        "year",
+      );
+    } else {
+      const { from, to } = monthRange(year, month);
+      req = fetchTransitTimeline(profile, from, to, language, "day");
+    }
+    req
       .then((res) => {
         if (!cancelled) setData(res);
       })
@@ -70,7 +87,7 @@ const TimelinePage: React.FC<{
     return () => {
       cancelled = true;
     };
-  }, [profile, year, month, language]);
+  }, [profile, year, month, language, mode]);
 
   useEffect(() => load(), [load]);
 
@@ -91,8 +108,10 @@ const TimelinePage: React.FC<{
     setMonth(d.getMonth());
   };
 
+  const candleKey = (cd: TimelineCandle): string =>
+    cd.date ?? (cd.age != null ? `age-${cd.age}` : "");
   const selectedCandle: TimelineCandle | undefined = useMemo(
-    () => data?.candles.find((cd) => cd.date === selectedDate),
+    () => data?.candles.find((cd) => candleKey(cd) === selectedDate),
     [data, selectedDate],
   );
 
@@ -118,22 +137,54 @@ const TimelinePage: React.FC<{
 
       <FrameworkDisclaimer />
 
-      {/* month nav */}
-      <div className="flex items-center justify-between my-4">
-        <button
-          onClick={() => changeMonth(-1)}
-          className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
-        >
-          ‹ {language === "zh" ? "上月" : "Prev"}
-        </button>
-        <span className="text-sm font-medium">{monthLabel}</span>
-        <button
-          onClick={() => changeMonth(1)}
-          className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
-        >
-          {language === "zh" ? "下月" : "Next"} ›
-        </button>
+      {/* month / life 视图切换 */}
+      <div className="my-4 inline-flex rounded-lg border border-slate-200 p-0.5 text-sm">
+        {(["month", "life"] as const).map((m) => (
+          <button
+            key={m}
+            onClick={() => setMode(m)}
+            className={`px-3 py-1 rounded-md ${
+              mode === m
+                ? "bg-psycho-600 text-white"
+                : "text-slate-600 hover:bg-slate-50"
+            }`}
+          >
+            {m === "month"
+              ? language === "zh"
+                ? "月度"
+                : "Month"
+              : language === "zh"
+                ? "人生"
+                : "Life"}
+          </button>
+        ))}
       </div>
+
+      {/* month nav（仅月度模式） */}
+      {mode === "month" && (
+        <div className="flex items-center justify-between my-4">
+          <button
+            onClick={() => changeMonth(-1)}
+            className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
+          >
+            ‹ {language === "zh" ? "上月" : "Prev"}
+          </button>
+          <span className="text-sm font-medium">{monthLabel}</span>
+          <button
+            onClick={() => changeMonth(1)}
+            className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
+          >
+            {language === "zh" ? "下月" : "Next"} ›
+          </button>
+        </div>
+      )}
+      {mode === "life" && (
+        <p className="my-4 text-sm font-medium">
+          {language === "zh"
+            ? "人生能量轴（0–89 岁，年级）"
+            : "Life timeline (ages 0–89, by year)"}
+        </p>
+      )}
 
       {loading && (
         <div className="py-16 text-center text-slate-500">{c.loading}</div>
@@ -185,14 +236,25 @@ const TimelinePage: React.FC<{
           {/* markers */}
           {data.markers.length > 0 && (
             <ul className="mt-3 flex flex-wrap gap-2">
-              {data.markers.map((m, i) => (
-                <li
-                  key={`${m.date}-${i}`}
-                  className="text-xs px-2 py-1 rounded-full bg-mystic-50 text-mystic-700 border border-mystic-200"
-                >
-                  {m.label} · {m.date}
-                </li>
-              ))}
+              {data.markers.map((m, i) => {
+                // 防御：标记必有 date（月度）或 age（年级）之一；两者皆缺则跳过（不渲染 "undefined"）。
+                const when =
+                  m.date ??
+                  (m.age != null
+                    ? language === "zh"
+                      ? `${m.age} 岁`
+                      : `Age ${m.age}`
+                    : null);
+                if (!when) return null;
+                return (
+                  <li
+                    key={`${m.date ?? m.age ?? "x"}-${i}`}
+                    className="text-xs px-2 py-1 rounded-full bg-mystic-50 text-mystic-700 border border-mystic-200"
+                  >
+                    {m.label} · {when}
+                  </li>
+                );
+              })}
             </ul>
           )}
 
@@ -200,7 +262,12 @@ const TimelinePage: React.FC<{
           {selectedCandle && (
             <div className="mt-5 rounded-xl border border-slate-200 p-4">
               <div className="flex items-center justify-between">
-                <h3 className="font-semibold">{selectedCandle.date}</h3>
+                <h3 className="font-semibold">
+                  {selectedCandle.date ??
+                    (language === "zh"
+                      ? `${selectedCandle.age} 岁`
+                      : `Age ${selectedCandle.age}`)}
+                </h3>
                 <span className="text-xs text-slate-400">
                   {phaseLabel(selectedCandle.dominantPhase)}
                 </span>
@@ -241,16 +308,19 @@ const TimelinePage: React.FC<{
                 </div>
               )}
 
-              <button
-                onClick={() =>
-                  demo
-                    ? onUpsell?.()
-                    : setDrawerDate(selectedCandle.date ?? null)
-                }
-                className="mt-3 w-full rounded-lg bg-psycho-600 py-2 text-sm font-medium text-white hover:bg-psycho-700"
-              >
-                {demo ? c.viewDayReadingDemo : c.viewDayReading}
-              </button>
+              {/* 当日 AI 解读仅月度模式（年级蜡烛无逐日详情）。 */}
+              {selectedCandle.date && (
+                <button
+                  onClick={() =>
+                    demo
+                      ? onUpsell?.()
+                      : setDrawerDate(selectedCandle.date ?? null)
+                  }
+                  className="mt-3 w-full rounded-lg bg-psycho-600 py-2 text-sm font-medium text-white hover:bg-psycho-700"
+                >
+                  {demo ? c.viewDayReadingDemo : c.viewDayReading}
+                </button>
+              )}
             </div>
           )}
         </>

@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.30
+> **Version**: 2.31
 > **Last Updated**: 2026-06-17
 > **Status**: Living Document — synced with codebase
 
@@ -426,7 +426,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 **落地状态 (2026-06-16)**: P0 月度 K 线 MVP 已实现并通过验证 —
 后端 `backend/src/services/transit/`（纯函数评分引擎，TDD）+ `backend/src/api/timeline.ts`（端点）+ ephemeris 瘦经度接口；前端 `pages/TimelinePage.tsx` + `components/timeline/`（蜡烛主视图 / 当日抽屉 / 安全 onboarding，vite build 通过）+ 公开 SEO demo 页 `/:lang/energy-timeline`。
 
-**人生 K 线（年级，#17/#18）后端引擎已落地 (2026-06-17)**：`backend/src/services/transit/lifeArc.ts` —— 复用月度强度模型，慢速外行星（Jupiter/Saturn/Uranus/Neptune/Pluto/北交点）季度采样 + 周期播种 Return 标记（Saturn/Jupiter/Nodal 返照 + Uranus 中年对冲，按已知轨道周期非暴力扫描）+ 固定参考跨度（1-90 岁）归一化（range-independent）。端点 `granularity:'year'` 已接入（`MAX_LIFE_CANDLES=100`，复用同 payload/limiter）。后端 464 测试绿。**前端年级视图待落地**（TimelineChart age 模式 + 月/年切换 + 标记气泡）。CBT 叠加层（#23）仍为 P1。
+**人生 K 线（年级，#17/#18）后端引擎已落地 (2026-06-17)**：`backend/src/services/transit/lifeArc.ts` —— 复用月度强度模型，慢速外行星（Jupiter/Saturn/Uranus/Neptune/Pluto/北交点）季度采样 + 周期播种 Return 标记（Saturn/Jupiter/Nodal 返照 + Uranus 中年对冲，按已知轨道周期非暴力扫描）+ 固定参考跨度（1-90 岁）归一化（range-independent）。端点 `granularity:'year'` 已接入（`MAX_LIFE_CANDLES=100`，复用同 payload/limiter）。后端 464 测试绿。**前端年级视图已落地 (2026-06-17)**：`/timeline` 页新增 Month/Life 切换，Life 模式拉年级时间轴（`fetchTransitTimeline` granularity:'year'），TimelineChart 泛化为按 date-或-age 键选择/匹配标记，年级蜡烛点选显示区间摘要 + topAspects（年级无逐日 AI 解读）。CBT 叠加层（#23）仍为 P1。
 
 将占星 transit 强度可视化为**蜡烛时间轴主视图**，用户看到自身"能量节奏"起伏，点击任意时间点获得 AI 解读。**外部命名** `Energy Timeline / Transit Candles`，"人生K线/月度K线"仅作内部代号 + 中文副标题。完整工程设计 + 落地 blocker 见 `docs/plans/2026-06-16-life-kline-design.md`（已过 5-voice autoplan 评审：3 Claude + Gemini + Codex/GPT-5 + 代码核验）。
 

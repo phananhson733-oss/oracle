@@ -74,6 +74,23 @@ describe("TimelineChart", () => {
     expect(container.querySelectorAll("g").length).toBe(31);
   });
 
+  it("supports year-granularity (age) candles: matches an age marker + fires onSelect with the age key", () => {
+    const onSelect = vi.fn();
+    // 人生 K 线候选：无 date，用 age 标识；marker 也按 age 匹配。
+    const ageCandle = candle("", { age: 29 }) as TimelineCandle;
+    delete (ageCandle as { date?: string }).date;
+    const { container } = render(
+      <TimelineChart
+        candles={[ageCandle]}
+        markers={[{ age: 29, type: "saturn-return", label: "Saturn Return" }]}
+        onSelectDate={onSelect}
+      />,
+    );
+    expect(container.querySelector("circle")).toBeTruthy(); // marker matched by age key
+    fireEvent.click(container.querySelector("g")!);
+    expect(onSelect).toHaveBeenCalledWith("age-29");
+  });
+
   it("renders a marker dot when a candle has an associated marker", () => {
     const candles = [candle("2026-06-15")];
     const { container } = render(
