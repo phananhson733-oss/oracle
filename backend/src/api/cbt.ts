@@ -30,6 +30,7 @@ import {
 } from "../services/crisis-detector.js";
 import { resolveLang } from "../utils/lang.js";
 import { authMiddleware, requireAuth } from "./auth.js";
+import { projectMoodPoints } from "../services/cbtMoodPoints.js";
 
 export const cbtRouter = Router();
 
@@ -564,6 +565,25 @@ cbtRouter.get("/records", authMiddleware, requireAuth, async (req, res) => {
     const filtered = records.filter((r) => r.timestamp > cutoff);
 
     res.json({ records: filtered });
+  } catch (error) {
+    res.status(500).json({ error: (error as Error).message });
+  }
+});
+
+// GET /api/cbt/mood-points — 情绪叠加层(#23)的数据最小化投影（设计 §10 / 隐私红线 #1）。
+// 仅返回按 viewer 本地日聚合的情绪强度点（{date,intensity,moodCount}），绝不下发任何 CBT 原文
+// （situation/automaticThoughts/hotThought 等留在客户端）。userId 来自 session（防 IDOR）。
+// tz 用于本地日分桶（与时间轴对齐）；遵循同一 90d 保留期。
+cbtRouter.get("/mood-points", authMiddleware, requireAuth, async (req, res) => {
+  try {
+    const userId = req.userId!;
+    const key = `cbt:records:${userId}`;
+    const records = (await cacheService.get<CBTRecord[]>(key)) || [];
+    const cutoff = Date.now() - CBT_RETENTION_TTL * 1000;
+    const tz =
+      typeof req.query.tz === "string" && req.query.tz ? req.query.tz : "UTC";
+    const points = projectMoodPoints(records, tz, cutoff);
+    res.json({ points });
   } catch (error) {
     res.status(500).json({ error: (error as Error).message });
   }

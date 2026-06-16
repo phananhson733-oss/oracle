@@ -404,3 +404,16 @@ describe("POST /api/cbt/*-analysis - crisis short-circuit on stats endpoints", (
     });
   }
 });
+
+describe("GET /api/cbt/mood-points - privacy gate", () => {
+  it("requires authentication — no anonymous access to mood data", async () => {
+    const { default: supertest } = await import("supertest");
+    const res = await supertest(makeApp()).get("/api/cbt/mood-points");
+    expect([401, 403]).toContain(res.status);
+    // never leak any CBT free text, even on the unauthorized path
+    const blob = JSON.stringify(res.body);
+    for (const leak of ["situation", "automaticThoughts", "hotThought"]) {
+      expect(blob).not.toContain(leak);
+    }
+  });
+});

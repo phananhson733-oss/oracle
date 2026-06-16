@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.28
+> **Version**: 2.29
 > **Last Updated**: 2026-06-17
 > **Status**: Living Document — synced with codebase
 
@@ -208,6 +208,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 - `POST /api/cbt/root-analysis` — 根因与资源报告（含危机检测短路）
 - `POST /api/cbt/mood-analysis` — 情绪公式统计（含危机检测短路）
 - `POST /api/cbt/competence-analysis` — CBT 能力统计
+- `GET /api/cbt/mood-points` — 情绪强度数值投影（时间轴叠加层用；仅数值无原文，详见 §4.3）【2026-06-17 落地】
 
 ### 2.7 Wiki 知识库 (Astrology Encyclopedia)
 
@@ -444,7 +445,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **API**:
 - `GET / POST /api/transit/timeline` — 蜡烛时间序列（**无 LLM、纯计算 + 缓存**；`granularity:'day'`=月度日级 ≤92 天，`granularity:'year'`=人生年级 ≤100 岁；单日缓存键 `hashInput(birth):date:tz` 含 viewer 时区锚；核心天体 mock fallback → `EPHEMERIS_UNAVAILABLE` 不缓存；专属更严 limiter + 4KB cap）
-- `GET /api/cbt/mood-points` — CBT 情绪叠加层**服务端数值投影** `{date, moodId, initialIntensity, finalIntensity}`，绝不返回 `situation/automaticThoughts/hotThought` 原文（隐私红线 #1/#3）
+- `GET /api/cbt/mood-points` — CBT 情绪叠加层**服务端数据最小化投影**：按 viewer 本地日聚合为 `{date, intensity, moodCount}`（intensity = 当日各记录 `finalIntensity ?? initialIntensity` 的均值），绝不返回 `situation/automaticThoughts/hotThought` 等原文（隐私红线 #1/#3）；需鉴权、userId 取自 session（防 IDOR）、遵 90d 保留期、tz 用于本地日分桶。**前端叠加层 UI + GDPR Art9 显式 consent 流仍待落地（consent 措辞须过法务）。**
 
 **配额**: **P0 决策（已定）— 月度蜡烛图全免费**（任意月份）：端点零 LLM 成本、已缓存、限流，符合 §1 病毒增长/SEO/习惯钩子定位（lifekline 的传播力正来自免费可分享）。当日 AI 解读复用现有 `/api/daily/detail`（当前免费、仅限流）。**付费 enforcement 延后**为专门计费 pass：未来 lookahead / premium 逐日 AI 档 / topAspect 明细 / CBT 叠加（P1 #23）的 gated feature key 需后端 `entitlementServiceV2` + `data/pricing.ts` + `pricing-consistency.test` 同步注册（Eng F-E8），不在 K 线 MVP 内 retrofit 共享 detail 端点（避免改既有 TodayPage 行为）。免费/付费边界按设计 risk #4 需 A/B（接 page-cro）。
 
