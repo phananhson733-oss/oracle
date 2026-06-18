@@ -1,0 +1,106 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "james-rodriguez-birth-chart": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of a South American twilight landscape — Colombian Andean foothills meeting a wide still sky. Most of the sky washed in cool Cancer silver-blue light, emotional, protective, and deep-water in tone, with a warm Jupiter amber-gold glow resting low on one side of the horizon, as if a benevolent planet is briefly visiting. Palette of deep indigo fading to near-black (#16112c to #0b0a1b), soft gold accents (#d4af6a), and a teal-and-gold nebula wash drifting across the upper sky. Contemplative, intense, full-bleed wide 16:9 atmosphere that fills the frame. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twilight Colombian Andean foothills under a silver-blue Cancer sky meeting low amber-gold Jupiter light on the horizon",
+        "altZh": "暮色中的哥伦比亚安第斯山麓，银蓝色巨蟹座天光与地平线低处的琥珀金木星之光相会"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The James Rodriguez Birth Chart vs a Full Natal Reading",
+          "afterHeadingZh": "## 哈梅斯·罗德里格斯星盘与相近概念：运作方式与取舍",
+          "titleEn": "Three Ways to Read the Same Chart",
+          "titleZh": "读同一张星盘的三种方式",
+          "altEn": "Comparison of the Sun-anchored Rodriguez reading against a full natal reading and a tabloid zodiac blurb",
+          "altZh": "以太阳为锚的哈梅斯解读，与完整本命解读、小报星座短讯的对照",
+          "columns": [
+            {
+              "nameEn": "Sun-anchored reading",
+              "nameZh": "以太阳为锚的解读",
+              "linesEn": [
+                "Leans on the Cancer Sun, fixed by his verified date",
+                "Refuses to invent Moon, Ascendant, or houses",
+                "Names a theme of creative devotion, not a scoreline"
+              ],
+              "linesZh": [
+                "倚重经核验日期固定的巨蟹座太阳",
+                "拒绝把月亮、上升与宫位凭空编造",
+                "标定创造性奉献的主题，而非比分"
+              ]
+            },
+            {
+              "nameEn": "Full natal reading",
+              "nameZh": "完整本命解读",
+              "linesEn": [
+                "Weighs Sun, Moon, Ascendant, and every house cusp",
+                "Needs a recorded birth time, which is not on public record",
+                "Trades reliability for breadth"
+              ],
+              "linesZh": [
+                "权衡太阳、月亮、上升与每道宫头",
+                "需要记录在案的出生时间，而他的并未公开",
+                "用可靠换广度"
+              ]
+            },
+            {
+              "nameEn": "Tabloid zodiac blurb",
+              "nameZh": "小报星座短讯",
+              "linesEn": [
+                "Flattens Cancer into a single mood",
+                "Treats the Sun as fixed temperament",
+                "Trades accuracy for catchiness"
+              ],
+              "linesZh": [
+                "把巨蟹座压扁成一种情绪",
+                "把太阳当作固定脾性",
+                "用准确换顺口"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the James Rodriguez Birth Chart in the 2026 World Cup Window",
+          "afterHeadingZh": "## 如何读出哈梅斯·罗德里格斯星盘（实操观察）",
+          "titleEn": "Jupiter Through the 2026 World Cup Window",
+          "titleZh": "木星穿过2026世界杯窗口",
+          "altEn": "Four symbolic timing beats: Jupiter in Cancer for group stage, Jupiter enters Leo, Rodriguez turns 35, World Cup final at MetLife",
+          "altZh": "四个象征时机节点：木星在巨蟹座贯穿小组赛、木星进狮子座、哈梅斯35岁生日、梅特莱夫球场决赛",
+          "items": [
+            {
+              "nameEn": "11 June — group stage opens",
+              "nameZh": "6月11日——小组赛开幕",
+              "subEn": "Jupiter in Cancer, aligning with Rodriguez's Sun sign; the tournament opens at the Estadio Azteca in Mexico City under a symbolic resonance with his Cancer Sun",
+              "subZh": "木星行经巨蟹座，与哈梅斯的太阳星座共鸣；赛事于墨西哥城阿兹特克球场开幕，象征性契合他的巨蟹座太阳"
+            },
+            {
+              "nameEn": "~30 June — Jupiter enters Leo",
+              "nameZh": "约6月30日——木星进入狮子座",
+              "subEn": "Jupiter leaves Cancer and enters Leo as the knockout stage begins; the symbolic amplification of his Sun sign passes, and the backdrop shifts",
+              "subZh": "木星离开巨蟹座进入狮子座，淘汰赛阶段随之展开；对他太阳星座的象征共鸣消散，背景基调转换"
+            },
+            {
+              "nameEn": "12 July — his 35th birthday, solar return",
+              "nameZh": "7月12日——35岁生日，太阳回归",
+              "subEn": "Rodriguez's solar return falls under Jupiter in Leo rather than Cancer; the veteran threshold and a shifted symbolic backdrop coincide",
+              "subZh": "哈梅斯的太阳回归落在木星狮子座背景下而非巨蟹座；35岁的老将门槛与象征背景的转换同时到来"
+            },
+            {
+              "nameEn": "19 July — final at MetLife Stadium",
+              "nameZh": "7月19日——梅特莱夫球场决赛",
+              "subEn": "The World Cup final in New Jersey closes the tournament window with Jupiter firmly in Leo; hold all of it as symbolic timing, not a result forecast",
+              "subZh": "新泽西州梅特莱夫球场的决赛在木星狮子座背景下落幕；把这一切握成象征时机，而非赛果预报"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
