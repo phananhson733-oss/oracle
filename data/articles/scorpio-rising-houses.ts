@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const scorpioRisingHousesEn: WikiArticle = {
   slug: "scorpio-rising-houses",
   image: "/images/placements/scorpio-rising-houses.jpg",
-  image_alt: "A scorpion constellation over a house wheel where two doorways glow with warm golden light, symbolizing Venus quietly ruling the 7th and 12th houses for Scorpio rising.",
+  image_alt:
+    "A scorpion constellation over a house wheel where two doorways glow with warm golden light, symbolizing Venus quietly ruling the 7th and 12th houses for Scorpio rising.",
   title: "Why Scorpio Rising Houses Map More Venus Than Most Astrologers Admit",
-  description: "Scorpio rising houses are the twelve life domains set when Scorpio takes the Ascendant, each governed by the planetary ruler of its cusp sign.",
+  description:
+    "Scorpio rising houses are the twelve life domains set when Scorpio takes the Ascendant, each governed by the planetary ruler of its cusp sign.",
   authorId: "marcus-orion",
   date: "2026-06-05",
   schema: "Article",
@@ -16,7 +18,7 @@ export const scorpioRisingHousesEn: WikiArticle = {
     "scorpio rising houses",
     "scorpio ascendant meaning",
     "scorpio rising personality",
-    "scorpio ascendant houses"
+    "scorpio ascendant houses",
   ],
   content: `# Why Scorpio Rising Houses Map More Venus Than Most Astrologers Admit
 
@@ -108,6 +110,8 @@ Venus governs the hidden inner life, orienting it toward balance, beauty, and re
 
 - [houses and life areas pillar page](/en/wiki/astrology-houses) — maps all twelve house domains across different rising signs; the broader context for how Venus governs both the 7th and 12th here
 - [Venus as a chart ruler and house governor](/en/wiki/astrology-houses) — how Venus shapes the sectors it governs, directly relevant to the partnership and hidden-life signatures for Scorpio rising
+- [what the ascendant means and how to find yours](/en/wiki/ascendant-meaning) — the rising-sign foundation this whole house map is built on
+- compare with [Leo rising and the houses](/en/wiki/leo-rising-houses) and [Libra rising and the houses](/en/wiki/libra-rising-houses) — how the same wheel shifts for a different ascendant
 - [Astrological sign (Wikipedia)](https://en.wikipedia.org/wiki/Astrological_sign)
 
 ## Take Action

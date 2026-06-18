@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const libraRisingHousesEn: WikiArticle = {
   slug: "libra-rising-houses",
   image: "/images/placements/libra-rising-houses.jpg",
-  image_alt: "A calm golden scale holds a coin in one pan and two rings in the other, joined underneath by one hidden glowing cord, symbolizing the shared Mars rulership linking money and partnerships for Libra rising.",
-  title: "How Libra Rising Houses Link Your Finances to Your Closest Relationships",
-  description: "Libra rising houses describes the dual-planet ruler map activated by a Libra ascendant",
+  image_alt:
+    "A calm golden scale holds a coin in one pan and two rings in the other, joined underneath by one hidden glowing cord, symbolizing the shared Mars rulership linking money and partnerships for Libra rising.",
+  title:
+    "How Libra Rising Houses Link Your Finances to Your Closest Relationships",
+  description:
+    "Libra rising houses describes the dual-planet ruler map activated by a Libra ascendant",
   authorId: "marcus-orion",
   date: "2026-06-05",
   schema: "Article",
@@ -16,7 +19,7 @@ export const libraRisingHousesEn: WikiArticle = {
     "libra rising houses",
     "libra ascendant meaning",
     "libra rising personality",
-    "libra ascendant houses"
+    "libra ascendant houses",
   ],
   content: `# How Libra Rising Houses Link Your Finances to Your Closest Relationships
 
@@ -116,6 +119,8 @@ The clearest signal is when financial stress and relationship tension arrive in 
 - [pillar page on all twelve houses and life areas](/en/wiki/astrology-houses) — the full domain map that house ruler systems like this draw from across all rising signs
 - *guide to Venus as chart ruler for Libra rising* — how chart ruler placement shapes overall chart tone and self-presentation across the life domains
 - [house ruler overview for all twelve rising signs](/en/wiki/astrology-houses) — how the house ruler map differs across each of the twelve ascendants
+- [what the ascendant means and how to find yours](/en/wiki/ascendant-meaning) — the rising-sign foundation this whole house map is built on
+- compare with [Leo rising and the houses](/en/wiki/leo-rising-houses) and [Scorpio rising and the houses](/en/wiki/scorpio-rising-houses) — how the same wheel shifts for a different ascendant
 
 ## Take Action
 
