@@ -229,6 +229,8 @@ import { messiWorldCupRecordAstrologyEn } from "./messi-world-cup-record-astrolo
 import { messiWorldCupRecordAstrologyZh } from "./messi-world-cup-record-astrology";
 import { harryKaneBirthChartEn } from "./harry-kane-birth-chart";
 import { harryKaneBirthChartZh } from "./harry-kane-birth-chart";
+import { cancerZodiacWorldCup2026En } from "./cancer-zodiac-world-cup-2026";
+import { cancerZodiacWorldCup2026Zh } from "./cancer-zodiac-world-cup-2026";
 // All articles organized by language
 
 import {
@@ -466,6 +468,7 @@ const ARTICLES_EN: WikiArticle[] = [
   erlingHaalandBirthChartEn,
   messiWorldCupRecordAstrologyEn,
   harryKaneBirthChartEn,
+  cancerZodiacWorldCup2026En,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -569,6 +572,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   erlingHaalandBirthChartZh,
   messiWorldCupRecordAstrologyZh,
   harryKaneBirthChartZh,
+  cancerZodiacWorldCup2026Zh,
 ];
 
 // Get all articles for a language
