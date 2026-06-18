@@ -9,36 +9,40 @@ import { WIKI_GENERATED_CONTENT } from './wiki-generated.js';
 // 将 loser 从 sitemap 排除。lang-aware —— elements 仅 EN 有 four-element-framework 长文，故 ZH
 // elements 不在表中、保持自指；house-5 / transit-chart 的 winner 双语都有，故 EN+ZH 都收口。
 // canonicalPath 为 lang-relative（消费端前缀 "/<lang>"）。
+// B1 升级（2026-06-18）：canonical-only 被 Google 无视——loser（如 house-8）仍被索引且有 GSC 曝光，
+// 与 winner 长文（8th-house-meaning 等）双索引蚕食。故给每个 canonical 收口的 loser 追加
+// robots: 'noindex,follow'：noindex 强制 deindex 这些薄 stub，follow 仍把链接权重传给 winner。
+// robots 经 generate-seo-pages.mjs 透传进预渲染 stub 的 <meta robots>（item.seo.robots）。
 const WIKI_SEO_OVERRIDES: Partial<Record<Language, Record<string, WikiSeoOverride>>> = {
   en: {
-    'house-5': { canonicalPath: '/wiki/5th-house', sitemap: false },
-    elements: { canonicalPath: '/wiki/four-element-framework', sitemap: false },
-    'transit-chart': { canonicalPath: '/wiki/transits', sitemap: false },
+    'house-5': { canonicalPath: '/wiki/5th-house', robots: 'noindex,follow', sitemap: false },
+    elements: { canonicalPath: '/wiki/four-element-framework', robots: 'noindex,follow', sitemap: false },
+    'transit-chart': { canonicalPath: '/wiki/transits', robots: 'noindex,follow', sitemap: false },
     // P1-1 SEO 收口（house 双索引簇 + 相位/角双 URL）：bare house-N / 相位·角 wiki stub canonical
     // 指向各自的 Article winner（slug 后缀不统一，逐一对照 sitemap + data/articles 派生，非猜测），并出 sitemap。
-    'house-1': { canonicalPath: '/wiki/1st-house-meaning', sitemap: false },
-    'house-2': { canonicalPath: '/wiki/2nd-house-astrology', sitemap: false },
-    'house-3': { canonicalPath: '/wiki/3rd-house-astrology', sitemap: false },
-    'house-4': { canonicalPath: '/wiki/4th-house-meaning', sitemap: false },
-    'house-6': { canonicalPath: '/wiki/6th-house-astrology', sitemap: false },
-    'house-7': { canonicalPath: '/wiki/7th-house-astrology', sitemap: false },
-    'house-8': { canonicalPath: '/wiki/8th-house-meaning', sitemap: false },
-    'house-9': { canonicalPath: '/wiki/9th-house-astrology', sitemap: false },
-    'house-10': { canonicalPath: '/wiki/10th-house-astrology', sitemap: false },
-    'house-11': { canonicalPath: '/wiki/11th-house', sitemap: false },
-    'house-12': { canonicalPath: '/wiki/12th-house-astrology', sitemap: false },
-    square: { canonicalPath: '/wiki/square-astrology', sitemap: false },
-    sextile: { canonicalPath: '/wiki/sextile-astrology', sitemap: false },
-    trine: { canonicalPath: '/wiki/trine-in-astrology', sitemap: false },
-    descendant: { canonicalPath: '/wiki/descendant-astrology', sitemap: false },
-    'imum-coeli': { canonicalPath: '/wiki/ic-astrology', sitemap: false },
+    'house-1': { canonicalPath: '/wiki/1st-house-meaning', robots: 'noindex,follow', sitemap: false },
+    'house-2': { canonicalPath: '/wiki/2nd-house-astrology', robots: 'noindex,follow', sitemap: false },
+    'house-3': { canonicalPath: '/wiki/3rd-house-astrology', robots: 'noindex,follow', sitemap: false },
+    'house-4': { canonicalPath: '/wiki/4th-house-meaning', robots: 'noindex,follow', sitemap: false },
+    'house-6': { canonicalPath: '/wiki/6th-house-astrology', robots: 'noindex,follow', sitemap: false },
+    'house-7': { canonicalPath: '/wiki/7th-house-astrology', robots: 'noindex,follow', sitemap: false },
+    'house-8': { canonicalPath: '/wiki/8th-house-meaning', robots: 'noindex,follow', sitemap: false },
+    'house-9': { canonicalPath: '/wiki/9th-house-astrology', robots: 'noindex,follow', sitemap: false },
+    'house-10': { canonicalPath: '/wiki/10th-house-astrology', robots: 'noindex,follow', sitemap: false },
+    'house-11': { canonicalPath: '/wiki/11th-house', robots: 'noindex,follow', sitemap: false },
+    'house-12': { canonicalPath: '/wiki/12th-house-astrology', robots: 'noindex,follow', sitemap: false },
+    square: { canonicalPath: '/wiki/square-astrology', robots: 'noindex,follow', sitemap: false },
+    sextile: { canonicalPath: '/wiki/sextile-astrology', robots: 'noindex,follow', sitemap: false },
+    trine: { canonicalPath: '/wiki/trine-in-astrology', robots: 'noindex,follow', sitemap: false },
+    descendant: { canonicalPath: '/wiki/descendant-astrology', robots: 'noindex,follow', sitemap: false },
+    'imum-coeli': { canonicalPath: '/wiki/ic-astrology', robots: 'noindex,follow', sitemap: false },
   },
   zh: {
-    'house-5': { canonicalPath: '/wiki/5th-house', sitemap: false },
-    'transit-chart': { canonicalPath: '/wiki/transits', sitemap: false },
+    'house-5': { canonicalPath: '/wiki/5th-house', robots: 'noindex,follow', sitemap: false },
+    'transit-chart': { canonicalPath: '/wiki/transits', robots: 'noindex,follow', sitemap: false },
     // P1-1 SEO 收口：ZH 仅 house-2/house-10 在 ZH_WIKI_WHITELIST 内被索引，其 ZH winner 文章存在，故收口。
-    'house-2': { canonicalPath: '/wiki/2nd-house-astrology', sitemap: false },
-    'house-10': { canonicalPath: '/wiki/10th-house-astrology', sitemap: false },
+    'house-2': { canonicalPath: '/wiki/2nd-house-astrology', robots: 'noindex,follow', sitemap: false },
+    'house-10': { canonicalPath: '/wiki/10th-house-astrology', robots: 'noindex,follow', sitemap: false },
     // zh 无 four-element-framework 文章，故 elements 保持自指 canonical + 进 sitemap；但其 en 兄弟页
     // /en/wiki/elements 已 canonical 收口，故抑制 hreflang，避免声明指向 loser 的非互惠 alternate。
     elements: { alternates: false },
