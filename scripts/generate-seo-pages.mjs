@@ -729,6 +729,8 @@ const ARTICLE_SLUGS = [
   'lionel-messi-zodiac-sign',
   'mbappe-birth-chart',
   'world-cup-2026-astrology-prediction',
+  // 6/18 WC player + Cancer-cluster (PG-WC-016~020), staggered ~20-25min apart
+  'jude-bellingham-birth-chart',
   'famous-highly-sensitive-person',
   'how-to-read-birth-chart',
   '10th-house-astrology',
