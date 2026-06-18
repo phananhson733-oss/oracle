@@ -1,0 +1,102 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "harry-kane-birth-chart": {
+      "hero": {
+        "prompt": "A wide painterly editorial illustration of a vast twilight sky over a quiet horizon. Most of the scene is held in deep indigo to near-black (#16112c fading to #0b0a1b), the indigo night still resting over the land. On one far edge of the horizon a warm Leo solar-gold dawn (#d4af6a) is just beginning to break, late, its glow cresting upward over the indigo as if a season is arriving after its time. A soft teal-and-gold nebula wash drifts through the upper sky. The light is symbolic and atmospheric, evoking Jupiter entering Leo for the July knockouts, gold cresting over indigo. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Indigo night sky with a late gold Leo dawn cresting on one horizon, symbolizing a season arriving late",
+        "altZh": "靛蓝夜空中，一抹迟来的狮子座金色晨光在一侧地平线升起，象征迟到的季节"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Kane Birth Chart in the Tournament Cycle",
+          "afterHeadingZh": "## 如何识别凯恩星盘（实操观察）",
+          "titleEn": "How to Read the Kane Birth Chart",
+          "titleZh": "如何解读凯恩星盘",
+          "altEn": "Five-step method for reading the Kane birth chart from verified facts to a symbolic season",
+          "altZh": "解读凯恩星盘的五个步骤：从可核实事实到象征性季节",
+          "items": [
+            {
+              "nameEn": "Anchor on verified facts",
+              "nameZh": "锚定可核实事实",
+              "subEn": "Birth date 28 July 1993, Sun near 5 degrees Leo",
+              "subZh": "出生日期 1993 年 7 月 28 日，太阳约狮子座 5 度"
+            },
+            {
+              "nameEn": "Note what is missing",
+              "nameZh": "标出缺失的部分",
+              "subEn": "No verified birth time, so Moon, Ascendant and houses are unknown",
+              "subZh": "无核验出生时间，月亮、上升与宫位不可考"
+            },
+            {
+              "nameEn": "Read the Leo Sun symbolically",
+              "nameZh": "象征性地读狮子座太阳",
+              "subEn": "The leader-striker archetype who performs under the spotlight",
+              "subZh": "在聚光灯下登场的队长—前锋原型"
+            },
+            {
+              "nameEn": "Map the Jupiter ingress",
+              "nameZh": "映射木星入座",
+              "subEn": "Cancer until around 30 June 2026, then Leo through 2027",
+              "subZh": "巨蟹座到约 2026 年 6 月 30 日，随后狮子座持续到 2027 年"
+            },
+            {
+              "nameEn": "Hold it as a symbolic season",
+              "nameZh": "握成一段象征性季节",
+              "subEn": "Leadership and visibility, never a forecast; results stay open",
+              "subZh": "领导力与可见度，绝不预测；赛果保持开放"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Kane Birth Chart vs a Cancer-Sun Player's Chart: How It Works + Trade-offs",
+          "afterHeadingZh": "## 凯恩星盘与相近概念：运作方式 + 取舍",
+          "titleEn": "Leo Sun vs Cancer Sun: Two Symbolic Vocabularies",
+          "titleZh": "狮子座太阳 vs 巨蟹座太阳：两套象征词汇",
+          "altEn": "Comparison of the Leo Sun and Cancer Sun frames for reading a player's chart",
+          "altZh": "解读球员星盘时狮子座太阳与巨蟹座太阳两种框架的对比",
+          "columns": [
+            {
+              "nameEn": "Leo Sun (Kane)",
+              "nameZh": "狮子座太阳（凯恩）",
+              "linesEn": [
+                "Outward and expressive, energised by being seen",
+                "Carries the captain's spotlight and the team's gaze",
+                "Jupiter enters Leo around 30 June 2026, lighting the July knockouts",
+                "His season arrives late"
+              ],
+              "linesZh": [
+                "向外、外放，靠被看见被点燃",
+                "背负队长的聚光灯与全队目光",
+                "木星约 2026 年 6 月 30 日进狮子座，点亮 7 月淘汰赛",
+                "他的季节迟到了"
+              ]
+            },
+            {
+              "nameEn": "Cancer Sun (a neighbouring lens)",
+              "nameZh": "巨蟹座太阳（相邻视角）",
+              "linesEn": [
+                "Protective and heart-led, strength from home and belonging",
+                "Foregrounds a quieter, defensive intelligence",
+                "Jupiter transits Cancer until around 30 June 2026, the group-stage weeks",
+                "Backdrop of Jupiter in its own sign for those weeks only"
+              ],
+              "linesZh": [
+                "护卫、以心为先，力量源自归属与家",
+                "凸显更安静的防守智慧",
+                "木星行经巨蟹座到约 2026 年 6 月 30 日，即小组赛数周",
+                "仅那几周享有木星在本命星座的背景"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

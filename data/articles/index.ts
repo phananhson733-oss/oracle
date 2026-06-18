@@ -227,6 +227,8 @@ import { erlingHaalandBirthChartEn } from "./erling-haaland-birth-chart";
 import { erlingHaalandBirthChartZh } from "./erling-haaland-birth-chart";
 import { messiWorldCupRecordAstrologyEn } from "./messi-world-cup-record-astrology";
 import { messiWorldCupRecordAstrologyZh } from "./messi-world-cup-record-astrology";
+import { harryKaneBirthChartEn } from "./harry-kane-birth-chart";
+import { harryKaneBirthChartZh } from "./harry-kane-birth-chart";
 // All articles organized by language
 
 import {
@@ -463,6 +465,7 @@ const ARTICLES_EN: WikiArticle[] = [
   judeBellinghamBirthChartEn,
   erlingHaalandBirthChartEn,
   messiWorldCupRecordAstrologyEn,
+  harryKaneBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -565,6 +568,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   judeBellinghamBirthChartZh,
   erlingHaalandBirthChartZh,
   messiWorldCupRecordAstrologyZh,
+  harryKaneBirthChartZh,
 ];
 
 // Get all articles for a language
