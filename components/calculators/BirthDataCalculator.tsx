@@ -18,6 +18,7 @@ import { useCityAutocomplete } from "../../hooks/useCityAutocomplete";
 import { DateSelectGroup } from "../forms/DateSelectGroup";
 import { searchCities } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
+import { EmbedCodeBox } from "./embed";
 
 export interface GeoResult {
   city: string;
@@ -55,6 +56,7 @@ export interface CalculatorCopy {
 
 export interface CalculatorConfig {
   idPrefix: string;
+  slug: string; // 公开路由 slug（用于 embed iframe 代码 + canonical 回链）
   needsTime: boolean; // 上升/宫位敏感的计算器需要出生时间
   event: string; // analytics 事件名
   copy: { en: CalculatorCopy; zh: CalculatorCopy };
@@ -443,6 +445,8 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
           )}
         </div>
       )}
+
+      <EmbedCodeBox slug={config.slug} />
     </div>
   );
 };

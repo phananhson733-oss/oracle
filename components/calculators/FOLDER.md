@@ -15,7 +15,8 @@
 
 文件清单
 - FOLDER.md｜地位：目录索引文档。
-- BirthDataCalculator.tsx｜地位：sign 类配置驱动外壳｜功能：出生日期(+可选时间/城市)表单（复用 useCityAutocomplete + DateSelectGroup）→ `config.compute(birth)` → 结果卡（headline/items/body）；匿名计算走 `fetchNatalChart(skipCache)` 不缓存明文（隐私 #2）；loading/error/result 全状态。
+- embed.tsx｜地位：计算器 embed widget 基建（#14）｜功能：`EmbedContext`/`useIsEmbed`、`EmbedWidgetShell`（`/embed/<slug>` 无 chrome 容器 + dofollow 品牌回链 + 提供 embed 上下文）、`EmbedCodeBox`（计算器全页底部「复制 iframe 代码」框，embed 上下文内自隐藏）。App.tsx 的 `/embed/<slug>` 路由用 EmbedWidgetShell 包裹各计算器；各计算器全页底部渲染 `<EmbedCodeBox slug>`。
+- BirthDataCalculator.tsx｜地位：sign 类配置驱动外壳｜功能：出生日期(+可选时间/城市)表单（复用 useCityAutocomplete + DateSelectGroup）→ `config.compute(birth)` → 结果卡（headline/items/body）；匿名计算走 `fetchNatalChart(skipCache)` 不缓存明文（隐私 #2）；loading/error/result 全状态；底部渲染 `EmbedCodeBox`（slug 取自 config）。
 - signConfigs.ts｜地位：sign 类计算器配置｜功能：moonSignConfig / risingSignConfig / bigThreeConfig / birthChartConfig —— 各实现 compute（fetch natal → 抽取 Sun/Moon/Ascendant 等 sign → 中性文案）；含 sign 中英映射；上升类 needsTime=true 缺时间报错。
 - useCalculatorTheme.ts｜地位：共享主题 hook｜功能：返回明暗 class token（cardBg/textPrimary 等，对齐 BirthDataCalculator，来源 COLOR_SYSTEM_GUIDE）。
 - astroDisplay.ts｜地位：天象显示工具（纯）｜功能：星座/行星中英名映射、座内度数「度·分」格式化、星座缩写——刻意文字名避 emoji 字形陷阱。
@@ -35,3 +36,4 @@
 - 2026-06-18 新建：D 第二批「合盘」SynastryCalculator + crossAspects 纯引擎（TDD 19 例）。客户端交叉相位（复用 /api/natal/chart，不碰付费 /api/synastry），姓名不出端。slug synastry-calculator 已进 CALCULATOR_SEO + isPublicRoute。
 - 2026-06-18 新建：D 第二批「合成盘」CompositeCalculator + compositeChart 中点引擎（TDD 9 例）+ 抽出共享 PersonBirthFields（Synastry 同步改用）。slug composite-calculator（避开 wiki 文章 composite-chart-calculator slug 冲突）已进 CALCULATOR_SEO + isPublicRoute。
 - 2026-06-18 新建：D 第二批「返照盘」SolarReturnCalculator（复用单人 PersonBirthFields + 年份）+ 新后端 `POST /api/solar-return` + 纯求解器 `backend/src/services/astro/solarReturn.ts`（生日窗口二分 Sun 经度过本命 Sun，TDD 5 例 + 路由 5 例）。slug solar-return-calculator 已进 CALCULATOR_SEO + isPublicRoute。**至此 D 计算器矩阵第二批收官**（除 Electional 显式分期）。
+- 2026-06-18 新建：#14 embed widget——新增 `embed.tsx`（EmbedWidgetShell + EmbedCodeBox + EmbedContext）。10 个计算器全部加 `/embed/<slug>` 路由（App.tsx isEmbedRoute 块，EmbedWidgetShell 包裹）+ 全页底部 `EmbedCodeBox`（复制 iframe 代码）。CalculatorConfig 加 `slug` 字段（4 sign config 已补）。embed 页 `noindex,nofollow` 不入 sitemap。TDD `tests/unit/embed-widget.test.tsx`。

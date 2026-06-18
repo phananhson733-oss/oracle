@@ -38,6 +38,12 @@ import {
   bigThreeConfig,
   birthChartConfig,
 } from "./components/calculators/signConfigs";
+// 仅在 /embed/* 早返回分支用到；懒加载使其不进主包（与其它计算器模块一致）。
+const EmbedWidgetShell = lazy(() =>
+  import("./components/calculators/embed").then((m) => ({
+    default: m.EmbedWidgetShell,
+  })),
+);
 import { FREE_MODE, LOGIN_GATE_MODE } from "./constants";
 import { OracleLoading } from "./components/OracleLoading";
 import {
@@ -719,6 +725,88 @@ const AppContent: React.FC = () => {
             <Route
               path="/embed/saturn-return"
               element={<SaturnReturnCalculator variant="embed" />}
+            />
+            {/* 计算器矩阵 embed widget：每个 slug 一个无 chrome iframe 页（EmbedWidgetShell 提供 */}
+            {/* embed 上下文 + dofollow 品牌回链）。新增计算器须同步此处 + 全页 EmbedCodeBox。 */}
+            <Route
+              path="/embed/moon-sign-calculator"
+              element={
+                <EmbedWidgetShell slug="moon-sign-calculator">
+                  <BirthDataCalculator config={moonSignConfig} />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/rising-sign-calculator"
+              element={
+                <EmbedWidgetShell slug="rising-sign-calculator">
+                  <BirthDataCalculator config={risingSignConfig} />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/big-three-calculator"
+              element={
+                <EmbedWidgetShell slug="big-three-calculator">
+                  <BirthDataCalculator config={bigThreeConfig} />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/birth-chart-calculator"
+              element={
+                <EmbedWidgetShell slug="birth-chart-calculator">
+                  <BirthDataCalculator config={birthChartConfig} />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/current-planets"
+              element={
+                <EmbedWidgetShell slug="current-planets">
+                  <CurrentPlanetsTool />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/moon-phase-calculator"
+              element={
+                <EmbedWidgetShell slug="moon-phase-calculator">
+                  <MoonPhaseTool />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/ephemeris-calculator"
+              element={
+                <EmbedWidgetShell slug="ephemeris-calculator">
+                  <EphemerisTool />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/synastry-calculator"
+              element={
+                <EmbedWidgetShell slug="synastry-calculator">
+                  <SynastryCalculator />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/composite-calculator"
+              element={
+                <EmbedWidgetShell slug="composite-calculator">
+                  <CompositeCalculator />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/solar-return-calculator"
+              element={
+                <EmbedWidgetShell slug="solar-return-calculator">
+                  <SolarReturnCalculator />
+                </EmbedWidgetShell>
+              }
             />
             <Route path="/embed/*" element={<NotFoundPage />} />
           </Routes>

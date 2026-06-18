@@ -7,6 +7,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import type { Language } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
+import { EmbedCodeBox } from "./embed";
 import { signAbbr, formatDegMin } from "./astroDisplay";
 import {
   fetchEphemeris,
@@ -244,6 +245,7 @@ export const EphemerisTool: React.FC = () => {
         </a>
         {lang === "zh" ? "。" : "."}
       </p>
+      <EmbedCodeBox slug="ephemeris-calculator" />
     </div>
   );
 };

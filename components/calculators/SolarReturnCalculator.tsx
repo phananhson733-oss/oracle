@@ -10,6 +10,7 @@ import { useLanguage } from "../UIComponents";
 import { fetchSolarReturn, type SolarReturnResponse } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { useCalculatorTheme } from "./useCalculatorTheme";
+import { EmbedCodeBox } from "./embed";
 import { planetLabel, signLabel, formatDegMin } from "./astroDisplay";
 import {
   PersonBirthFields,
@@ -226,6 +227,7 @@ export const SolarReturnCalculator: React.FC = () => {
           ? "返照盘描述太阳回归那一刻的天空，常被用作一岁的反思框架，而非对未来的预测。出生时间越准，返照时刻越精确。出生数据用于计算，不做保存。"
           : "A solar return describes the sky at the Sun's yearly return — often used as a reflective theme for the year ahead, not a prediction. A precise birth time sharpens the return moment. Birth data is used to compute and not stored."}
       </p>
+      <EmbedCodeBox slug="solar-return-calculator" />
     </div>
   );
 };

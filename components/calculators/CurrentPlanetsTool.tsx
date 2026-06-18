@@ -7,6 +7,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import type { Language } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
+import { EmbedCodeBox } from "./embed";
 import { signLabel, planetLabel, formatDegMin } from "./astroDisplay";
 import {
   fetchPositions,
@@ -159,6 +160,7 @@ export const CurrentPlanetsTool: React.FC = () => {
         </a>
         {lang === "zh" ? "。" : "."}
       </p>
+      <EmbedCodeBox slug="current-planets" />
     </div>
   );
 };

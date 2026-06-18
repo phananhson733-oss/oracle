@@ -10,6 +10,7 @@ import { useLanguage } from "../UIComponents";
 import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { useCalculatorTheme } from "./useCalculatorTheme";
+import { EmbedCodeBox } from "./embed";
 import { planetLabel, signLabel, formatDegMin } from "./astroDisplay";
 import {
   PersonBirthFields,
@@ -224,6 +225,7 @@ export const CompositeCalculator: React.FC = () => {
           ? "合成盘把两张星盘的中点合成一张，象征关系本身的样貌——它是反思的镜子，不是对关系结果的预测。名字只留在你的设备上，不会上传。想看两人之间的相位连接，可用合盘计算器。"
           : "A composite chart merges the midpoints of two charts into one, symbolising the relationship itself — a mirror for reflection, not a prediction of how it will unfold. Names stay on your device and are never uploaded. To see the aspects between two people, try the synastry calculator."}
       </p>
+      <EmbedCodeBox slug="composite-calculator" />
     </div>
   );
 };

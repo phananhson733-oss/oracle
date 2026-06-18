@@ -44,6 +44,7 @@ function findSign(positions: PlanetPosition[], name: string): string | null {
 // ── Moon Sign（无需出生时间） ─────────────────────────────────────────────────
 export const moonSignConfig: CalculatorConfig = {
   idPrefix: "moon-sign",
+  slug: "moon-sign-calculator",
   needsTime: false,
   event: "moon_sign_calculated",
   copy: {
@@ -84,6 +85,7 @@ export const moonSignConfig: CalculatorConfig = {
 // ── Rising / Ascendant（需出生时间 + 城市） ──────────────────────────────────
 export const risingSignConfig: CalculatorConfig = {
   idPrefix: "rising-sign",
+  slug: "rising-sign-calculator",
   needsTime: true,
   event: "rising_sign_calculated",
   copy: {
@@ -132,6 +134,7 @@ export const risingSignConfig: CalculatorConfig = {
 // ── Big Three（Sun / Moon / Rising） ─────────────────────────────────────────
 export const bigThreeConfig: CalculatorConfig = {
   idPrefix: "big-three",
+  slug: "big-three-calculator",
   needsTime: true,
   event: "big_three_calculated",
   copy: {
@@ -197,6 +200,7 @@ const CHART_ORDER = [
 
 export const birthChartConfig: CalculatorConfig = {
   idPrefix: "birth-chart",
+  slug: "birth-chart-calculator",
   needsTime: false,
   event: "birth_chart_calculated",
   copy: {

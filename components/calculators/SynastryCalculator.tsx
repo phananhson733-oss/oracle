@@ -10,6 +10,7 @@ import { useLanguage } from "../UIComponents";
 import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { useCalculatorTheme } from "./useCalculatorTheme";
+import { EmbedCodeBox } from "./embed";
 import { planetLabel } from "./astroDisplay";
 import {
   PersonBirthFields,
@@ -300,6 +301,7 @@ export const SynastryCalculator: React.FC = () => {
           ? "合盘描述两张星盘之间的几何连接，是自我与关系反思的镜子，而非对一段关系结果的预测。名字只留在你的设备上，不会上传。"
           : "Synastry describes the geometry between two charts — a mirror for reflection, not a prediction of how a relationship will turn out. Names stay on your device and are never uploaded."}
       </p>
+      <EmbedCodeBox slug="synastry-calculator" />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import type { Language } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
+import { EmbedCodeBox } from "./embed";
 import { signLabel, formatDegMin } from "./astroDisplay";
 import {
   fetchMoonPhase,
@@ -182,6 +183,7 @@ export const MoonPhaseTool: React.FC = () => {
         </a>
         {lang === "zh" ? "。" : "."}
       </p>
+      <EmbedCodeBox slug="moon-phase-calculator" />
     </div>
   );
 };
