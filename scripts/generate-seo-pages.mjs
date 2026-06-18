@@ -1551,6 +1551,22 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       ],
     },
     {
+      slug: 'electional-astrology',
+      title: 'Electional Astrology - Sky Timing for the Days Ahead',
+      description: 'See a free day-by-day view of the sky ahead: Moon phase, Moon sign, and the balance of supportive versus challenging aspects, as a timing reference for your own planning. Not a prediction.',
+      sections: [
+        ['What is electional astrology?', 'Electional astrology looks at the conditions of the sky over a span of days as context for planning. This free tool reads the Moon phase, the Moon sign, and the balance of supportive and challenging aspects for each upcoming day. It describes astronomy, not destiny, and never points to a single right day.'],
+        ['How the timing view works', 'Pick a start date and how many days to view. For each day the tool computes the Moon phase from the Sun and Moon, the sign the Moon occupies, and the count of harmonious and challenging aspects among the classical planets. A neutral tone label of Flowing, Mixed, or Dynamic summarises that balance.'],
+        ['Reading the day tone', 'Flowing means the sky holds more supportive aspects that day, Dynamic means more tension, and Mixed means the two are roughly even. The label only describes the aspect balance. It is not a verdict on whether a day will go well or badly, and what happens depends on you rather than on the sky.'],
+        ['Using electional timing well', 'There is no rule that any sky tone suits any task; this tool simply gives you background context alongside your own plans and priorities, never an instruction. Treat it as rhythm to notice, not direction to follow. To see how these movements touch your own chart, build your birth chart.'],
+      ],
+      faqs: [
+        ['Does electional astrology predict the future?', 'No. This tool describes the astronomical conditions of upcoming days as a reflection for planning. It does not predict outcomes or guarantee results.'],
+        ['What does the day tone mean?', 'The tone summarises how many supportive versus challenging aspects the sky holds that day: Flowing for more supportive, Dynamic for more tension, and Mixed for a rough balance. It is not a good or bad rating.'],
+        ['How many days can I view?', 'You can view seven, fourteen, or thirty days from your chosen start date, using Swiss Ephemeris astronomy for each day.'],
+      ],
+    },
+    {
       slug: 'synastry-calculator',
       title: 'Synastry Calculator - Free Relationship Compatibility',
       description: 'Free synastry calculator. Compare two birth charts to see the aspects between them, from Sun and Moon to Venus and Mars. Real astronomy, no sign-up.',

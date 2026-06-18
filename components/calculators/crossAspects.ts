@@ -114,6 +114,36 @@ export function crossAspects(
   return out.sort((x, y) => x.orb - y.orb);
 }
 
+// 单盘内行星两两相位（i<j，不自配对、每对一次）——用于「当日天空」自相位（天象工具，无出生数据）。
+// 复用 absoluteLongitude + classifyAspect；输出与 crossAspects 同形（按 orb 升序），可直接喂 summarizeAspects。
+export function selfAspects(
+  positions: PlanetPosition[],
+  bodies: string[],
+): CrossAspect[] {
+  const set = new Set(bodies);
+  const items = positions.filter((p) => set.has(p.name));
+  const out: CrossAspect[] = [];
+  for (let i = 0; i < items.length; i++) {
+    const lonA = absoluteLongitude(items[i]);
+    if (lonA == null) continue;
+    for (let j = i + 1; j < items.length; j++) {
+      const lonB = absoluteLongitude(items[j]);
+      if (lonB == null) continue;
+      const hit = classifyAspect(lonA, lonB);
+      if (hit) {
+        out.push({
+          a: items[i].name,
+          b: items[j].name,
+          aspect: hit.aspect,
+          nature: hit.nature,
+          orb: hit.orb,
+        });
+      }
+    }
+  }
+  return out.sort((x, y) => x.orb - y.orb);
+}
+
 export interface AspectSummary {
   harmonious: number;
   challenging: number;

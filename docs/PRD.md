@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.37
+> **Version**: 2.38
 > **Last Updated**: 2026-06-18
 > **Status**: Living Document — synced with codebase
 
@@ -336,11 +336,12 @@ AI 生成的深度心理分析，每个维度独立解读：
 | `/:lang/current-planets` | CurrentPlanetsTool | 当前天象盘：某 UTC 日 10 大行星 sign/度/逆行（默认今天，可选日期），复用 /api/astro/positions，无出生数据，公开可索引 |
 | `/:lang/moon-phase-calculator` | MoonPhaseTool | 月相计算器：8 相名 + 受照% + 月/日星座，复用 /api/astro/moon-phase，公开可索引 |
 | `/:lang/ephemeris-calculator` | EphemerisTool | 星历表生成器：日期范围×行星 sign/度/逆行表格，复用 /api/astro/ephemeris，公开可索引 |
+| `/:lang/electional-astrology` | ElectionalTool | 择吉/天象时机：起始日 + 天数 → 逐日天空基调（月相 / 月亮星座 / 和谐-紧张相位平衡，中性标签 Flowing/Mixed/Dynamic），复用 /api/astro/ephemeris，无出生数据，公开可索引；严格中性叙事——天象参考非预测/保证 |
 | `/:lang/synastry-calculator` | SynastryCalculator | 合盘计算器：两人出生表单→两次匿名 /api/natal/chart→**客户端**交叉相位（不碰付费 /api/synastry），姓名不出端，公开可索引 |
 | `/:lang/composite-calculator` | CompositeCalculator | 合成盘计算器：两人→**客户端**中点合成盘（10 大行星），复用 /api/natal/chart，姓名不出端，公开可索引（slug 区别于 wiki 文章 composite-chart-calculator） |
 | `/:lang/solar-return-calculator` | SolarReturnCalculator | 返照盘计算器：出生数据 + 目标年 → POST /api/solar-return（求解返照时刻）→ 返照日期/时刻 + 10 大行星落座，公开可索引（slug 区别于 saturn-return-calculator） |
 | `/embed/saturn-return` | SaturnReturnCalculator (variant="embed") | 可嵌入 widget：宿主站点 `<iframe>` 引用，无站点 chrome，带可见 dofollow 品牌回链；`noindex,nofollow` |
-| `/embed/<slug>`（10 个计算器） | EmbedWidgetShell 包裹对应计算器 | 计算器矩阵全量可嵌入 widget：moon-sign / rising-sign / big-three / birth-chart / current-planets / moon-phase-calculator / ephemeris-calculator / synastry-calculator / composite-calculator / solar-return-calculator；无站点 chrome + dofollow「Powered by AstrologyWiki」回链；`noindex,nofollow`，不入 sitemap |
+| `/embed/<slug>`（11 个计算器） | EmbedWidgetShell 包裹对应计算器 | 计算器矩阵全量可嵌入 widget：moon-sign / rising-sign / big-three / birth-chart / current-planets / moon-phase-calculator / ephemeris-calculator / electional-astrology / synastry-calculator / composite-calculator / solar-return-calculator；无站点 chrome + dofollow「Powered by AstrologyWiki」回链；`noindex,nofollow`，不入 sitemap |
 
 **嵌入 widget（T7 + 计算器矩阵）**：两种机制——SaturnReturn 用组件内 `variant="embed"`（它自渲染 SEO 长文，故需跳过）；计算器矩阵的 10 个 slug 用 `components/calculators/embed.tsx` 的 `EmbedWidgetShell` 包裹（这些计算器的 SEO 正文在静态 stub 里，组件本身已无 chrome），shell 提供 `EmbedContext` + 底部 dofollow「Powered by AstrologyWiki」回链指向 canonical 页。App.tsx 在 `/embed/*` 早返回最小树（`<SEO robots="noindex,nofollow">`）绕开全站 nav/footer/paywall/analytics。每个计算器全页底部还渲染 `EmbedCodeBox`（「复制 iframe 代码」框，在 embed 上下文内经 `EmbedContext` 自隐藏）。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。
 
