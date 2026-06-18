@@ -27,9 +27,11 @@
 - PersonBirthFields.tsx｜地位：关系类计算器共享「单人出生表单」｜功能：姓名(仅本地)/日期/可选时间/城市自动完成 → onChange 上抛 PersonState 快照；导出 PersonState/FieldsTheme/emptyPerson/personToBirth/MONTH_FALLBACK_EN；各实例独立持 useCityAutocomplete。Synastry/Composite 共用。
 - SynastryCalculator.tsx｜地位：合盘计算器（双表单）｜功能：两个 PersonBirthFields → 两次匿名 `fetchNatalChart` → 客户端 crossAspects → 中性兼容性视图（和谐/成长/融合计数 + 最紧相位）；**客户端算相位避开付费门 /api/synastry**；姓名仅本地绝不出端（隐私 #4）；路由 /:lang/synastry-calculator。
 - CompositeCalculator.tsx｜地位：合成盘计算器（双表单）｜功能：两个 PersonBirthFields → 两次匿名 `fetchNatalChart` → 客户端 compositeChart（10 大行星中点）→ 合成盘落座一览；客户端算中点不碰付费端点；姓名仅本地（隐私 #4）；路由 /:lang/composite-calculator（与 wiki 文章 composite-chart-calculator 区分，文案交叉引导）。
+- SolarReturnCalculator.tsx｜地位：返照盘计算器（单人 + 年份）｜功能：一个 PersonBirthFields + 年份选择 → `POST /api/solar-return`（后端求解返照时刻）→ 返照日期/时刻 + 10 大行星落座；出生数据 POST(PII 不进 URL)，无 LLM；路由 /:lang/solar-return-calculator（区别于 saturn-return-calculator）。
 
 近期更新
 - 2026-06-17 新建：计算器矩阵 D 第一批 sign 类（Moon Sign / Rising / Big Three / Birth Chart）。路由 `/:lang/<slug>`（+ 裸 LangRedirect + isPublicRoute 白名单 + showNav）；静态 stub 走 generate-seo-pages.mjs 的 CALCULATOR_SEO 循环（≥4 H2 关键词正文 + JSON-LD + sitemap）。
 - 2026-06-18 新建：D 第二批「天象工具集」（Current Planets / Moon Phase / Ephemeris）。后端扩 `api/astro.ts`（/positions、/moon-phase、/ephemeris，TDD）+ 纯算法 `backend/src/services/astro/skyTools.ts`。3 个新 slug 已进 CALCULATOR_SEO + isPublicRoute。
 - 2026-06-18 新建：D 第二批「合盘」SynastryCalculator + crossAspects 纯引擎（TDD 19 例）。客户端交叉相位（复用 /api/natal/chart，不碰付费 /api/synastry），姓名不出端。slug synastry-calculator 已进 CALCULATOR_SEO + isPublicRoute。
-- 2026-06-18 新建：D 第二批「合成盘」CompositeCalculator + compositeChart 中点引擎（TDD 9 例）+ 抽出共享 PersonBirthFields（Synastry 同步改用）。slug composite-calculator（避开 wiki 文章 composite-chart-calculator slug 冲突）已进 CALCULATOR_SEO + isPublicRoute。后续仍待：Solar Return（求解返照时刻，需新后端）+ Electional（研究级，AI 安全门，分期）。
+- 2026-06-18 新建：D 第二批「合成盘」CompositeCalculator + compositeChart 中点引擎（TDD 9 例）+ 抽出共享 PersonBirthFields（Synastry 同步改用）。slug composite-calculator（避开 wiki 文章 composite-chart-calculator slug 冲突）已进 CALCULATOR_SEO + isPublicRoute。
+- 2026-06-18 新建：D 第二批「返照盘」SolarReturnCalculator（复用单人 PersonBirthFields + 年份）+ 新后端 `POST /api/solar-return` + 纯求解器 `backend/src/services/astro/solarReturn.ts`（生日窗口二分 Sun 经度过本命 Sun，TDD 5 例 + 路由 5 例）。slug solar-return-calculator 已进 CALCULATOR_SEO + isPublicRoute。**至此 D 计算器矩阵第二批收官**（除 Electional 显式分期）。

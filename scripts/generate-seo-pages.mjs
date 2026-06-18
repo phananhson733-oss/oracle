@@ -1581,6 +1581,22 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Do I need birth times for a composite chart?', 'A date and city give you the planetary midpoints. A birth time sharpens the Moon and is needed for the composite angles.'],
       ],
     },
+    {
+      slug: 'solar-return-calculator',
+      title: 'Solar Return Calculator - Free Birthday Chart',
+      description: 'Free solar return calculator. Find the exact moment the Sun returns to its birth position each year and see your birthday chart. Real astronomy, no sign-up.',
+      sections: [
+        ['What is a solar return?', 'A solar return is the moment each year when the transiting Sun returns to the exact zodiac position it held at your birth. It usually falls on or within a day of your birthday. The chart cast for that moment is your solar return chart, traditionally read as the themes of the year ahead.'],
+        ['How the solar return calculator works', 'Enter your birth date, time, and city, then choose a year. The tool finds your natal Sun position on Swiss Ephemeris astronomy, solves for the exact instant the Sun returns to it that year, and shows the planetary placements at that moment.'],
+        ['Why birth time matters', 'The Sun moves about one degree per day, so a precise birth time pins the natal Sun more exactly and sharpens the return moment. Without a time the return is computed from a midday estimate and is approximate.'],
+        ['Reading your solar return chart', 'Read the solar return placements as a portrait of the year, the way you would read a birth chart for a person. It describes themes and emphases to reflect on, not fixed events. Pair it with your natal chart for context.'],
+      ],
+      faqs: [
+        ['What is a solar return chart?', 'It is the chart cast for the exact moment the Sun returns to its natal position each year, traditionally read as the themes of the coming year.'],
+        ['Is the solar return on my birthday?', 'It falls on or within about a day of your birthday, because the calendar and the solar year do not match exactly.'],
+        ['Do I need my birth time for a solar return?', 'A birth time makes the return moment more precise. Without it the chart is computed from a midday estimate and is approximate.'],
+      ],
+    },
   ];
   for (const calc of CALCULATOR_SEO) {
     const calcUrl = `${siteUrl}/en/${calc.slug}`;

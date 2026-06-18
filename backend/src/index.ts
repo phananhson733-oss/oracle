@@ -21,6 +21,7 @@ import { detailRouter } from "./api/detail.js";
 import { wikiRouter } from "./api/wiki.js";
 import { syntheticaRouter } from "./api/synthetica.js";
 import { astroRouter } from "./api/astro.js";
+import { solarReturnRouter } from "./api/solar-return.js";
 import { saturnReturnRouter } from "./api/saturn-return.js";
 import { transitRouter } from "./api/timeline.js";
 import { userRouter } from "./api/user.js";
@@ -143,6 +144,22 @@ app.use("/api/natal", natalLimiter);
 // Must come before the global `express.json()` below so the per-mount
 // instance wins on `/api/natal/*` paths.
 app.use("/api/natal", express.json({ limit: "4kb" }));
+
+// Solar Return is birth-data (POST body, PII off the URL) + ephemeris-heavy
+// (~1 natal compute + ~13 Sun samples + 1 chart per request), so it gets its
+// own tighter limiter + a 4kb body cap, mirroring /api/natal.
+const solarReturnLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many solar return requests, please try again later.",
+    code: "solar_return_rate_limited",
+  },
+});
+app.use("/api/solar-return", solarReturnLimiter);
+app.use("/api/solar-return", express.json({ limit: "4kb" }));
 
 // Rate limiting — /api/detail. Anonymous POST endpoint that feeds arbitrary
 // chartData into generateAIContent; mutating cosmetic fields can bypass the
@@ -300,6 +317,7 @@ app.use("/api/detail", detailRouter);
 app.use("/api/wiki", wikiRouter);
 app.use("/api/synthetica", syntheticaRouter);
 app.use("/api/astro", astroRouter);
+app.use("/api/solar-return", solarReturnRouter);
 app.use("/api/saturn-return", saturnReturnRouter);
 app.use("/api/transit", transitRouter);
 app.use("/api/user", userRouter);

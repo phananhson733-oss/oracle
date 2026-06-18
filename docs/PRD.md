@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.35
+> **Version**: 2.36
 > **Last Updated**: 2026-06-18
 > **Status**: Living Document — synced with codebase
 
@@ -338,6 +338,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | `/:lang/ephemeris-calculator` | EphemerisTool | 星历表生成器：日期范围×行星 sign/度/逆行表格，复用 /api/astro/ephemeris，公开可索引 |
 | `/:lang/synastry-calculator` | SynastryCalculator | 合盘计算器：两人出生表单→两次匿名 /api/natal/chart→**客户端**交叉相位（不碰付费 /api/synastry），姓名不出端，公开可索引 |
 | `/:lang/composite-calculator` | CompositeCalculator | 合成盘计算器：两人→**客户端**中点合成盘（10 大行星），复用 /api/natal/chart，姓名不出端，公开可索引（slug 区别于 wiki 文章 composite-chart-calculator） |
+| `/:lang/solar-return-calculator` | SolarReturnCalculator | 返照盘计算器：出生数据 + 目标年 → POST /api/solar-return（求解返照时刻）→ 返照日期/时刻 + 10 大行星落座，公开可索引（slug 区别于 saturn-return-calculator） |
 | `/embed/saturn-return` | SaturnReturnCalculator (variant="embed") | 可嵌入 widget：宿主站点 `<iframe>` 引用，无站点 chrome，带可见 dofollow 品牌回链；`noindex,nofollow` |
 
 **嵌入 widget（T7）**：`variant="embed"` 渲染无 chrome 的计算器（跳过 `<SEO>` 头注入与 SEO 长文），底部「Powered by AstrologyWiki」回链指向 canonical 计算器页。App.tsx 在 `/embed/*` 早返回最小树绕开全站 nav/footer/paywall/analytics。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。
@@ -956,6 +957,7 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | GET | `/api/astro/positions` | 某 UTC 日 10 大行星位置（`?date=YYYY-MM-DD`，默认今天；泛化 /today，按日缓存，复用同款完整性闸门，拒 mock→503）| — |
 | GET | `/api/astro/moon-phase` | 某 UTC 日月相（`?date=`，默认今天）：日月夹角 / 8 相名 / 受照比例 / 盈亏 + 月日星座；纯天文无 AI，拒 mock→503 | — |
 | GET | `/api/astro/ephemeris` | 星历表（`?start=&end=&step=&bodies=`）：日期范围×大行星 sign/度/逆行，行数后端裁剪（MAX 40，truncated 标记）；纯天文无 AI，拒 mock→503 | — |
+| POST | `/api/solar-return` | 返照盘：body `{ ...birth, year }`（出生数据 POST 不进 URL）→ 本命太阳经度 + 二分求返照时刻 + 该刻 10 大行星落座；20/min 限流 + 4kb cap；无 AI，拒 mock→503 | — |
 | GET | `/api/user/status` | 用户状态 | Optional |
 | GET | `/api/config` | 当前支付提供商配置 | — |
 | POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9）; 5 req/hour per IP + honeypot. 双 opt-in（`NEWSLETTER_CONFIRM_ENABLED=true` 时插 pending+token+发确认信；默认关 → 插 confirmed、不发信，dark until Resend DKIM 验证）| — |

@@ -1725,6 +1725,39 @@ export async function fetchEphemeris(params: {
   return res.json();
 }
 
+// Solar Return (birthday chart). POST because birth date/time/city is PII and must
+// not appear in the URL/logs (same policy as /api/natal/chart).
+export interface SolarReturnResponse {
+  year: number;
+  returnInstantUtc: string;
+  returnDate: string;
+  returnTimeUtc: string;
+  positions: TodayPosition[];
+}
+
+export async function fetchSolarReturn(params: {
+  date: string;
+  time?: string;
+  city: string;
+  lat: number;
+  lon: number;
+  timezone: string;
+  accuracy: string;
+  year: number;
+}): Promise<SolarReturnResponse> {
+  const res = await fetchWithTimeout(
+    `${API_BASE}/solar-return`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(params),
+    },
+    REQUEST_TIMEOUT_MS,
+  );
+  await assertOk(res, "Failed to compute solar return");
+  return res.json();
+}
+
 // === Geo API ===
 // POST (not GET): the city query is user-typed birth location (PII). Keeping it
 // in the request body avoids leaking the value into Vercel access logs, browser
