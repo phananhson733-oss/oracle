@@ -241,6 +241,8 @@ import { christianPulisicBirthChartEn } from "./christian-pulisic-birth-chart";
 import { christianPulisicBirthChartZh } from "./christian-pulisic-birth-chart";
 import { yoaneWissaBirthChartEn } from "./yoane-wissa-birth-chart";
 import { yoaneWissaBirthChartZh } from "./yoane-wissa-birth-chart";
+import { englandWorldCup2026AstrologyEn } from "./england-world-cup-2026-astrology";
+import { englandWorldCup2026AstrologyZh } from "./england-world-cup-2026-astrology";
 // All articles organized by language
 
 import {
@@ -484,6 +486,7 @@ const ARTICLES_EN: WikiArticle[] = [
   luisDiazBirthChartEn,
   christianPulisicBirthChartEn,
   yoaneWissaBirthChartEn,
+  englandWorldCup2026AstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -592,6 +595,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   luisDiazBirthChartZh,
   christianPulisicBirthChartZh,
   yoaneWissaBirthChartZh,
+  englandWorldCup2026AstrologyZh,
 ];
 
 // Get all articles for a language

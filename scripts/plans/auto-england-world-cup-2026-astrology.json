@@ -1,0 +1,118 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "england-world-cup-2026-astrology": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of an English landscape at dusk — rolling green countryside under a vast sky that transitions as a smooth gradient wash from cool Cancer silver-blue on one side to warm Leo amber-gold on the other, mirroring Jupiter's move from Cancer into Leo, with a scatter of bright stars across the upper sky like a constellation of a squad. Palette deep indigo to near-black (#16112c to #0b0a1b) with silver-blue and amber-gold accents. Expansive, transitional, anticipatory atmosphere. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces, full-bleed wide 16:9 composition that fills the entire frame",
+        "altEn": "English countryside at dusk under a vast sky washing from Cancer silver-blue to Leo amber-gold, bright stars scattered like a squad's constellation",
+        "altZh": "暮色英格兰原野，天空从巨蟹座银蓝平滑过渡到狮子座琥珀金，繁星散布如阵容星群"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## England World Cup 2026 Astrology vs Standard Zodiac Forecasting",
+          "afterHeadingZh": "## 英格兰2026世界杯占星与相近概念：运作方式与取舍",
+          "titleEn": "Three Ways to Read the Squad",
+          "titleZh": "解读阵容的三种方式",
+          "altEn": "Comparison of squad-level symbolic reading against standard zodiac forecast and full natal reading",
+          "altZh": "阵容层级象征解读与标准星座运势、完整本命盘的三方对照",
+          "columns": [
+            {
+              "nameEn": "Squad-level symbolic reading",
+              "nameZh": "阵容层级象征解读",
+              "linesEn": [
+                "Verified Sun signs plus Jupiter ingress timing",
+                "Names themes, not results",
+                "Stays openly symbolic throughout"
+              ],
+              "linesZh": [
+                "以经核验太阳星座与木星入座时机为锚",
+                "标定主题，而非比分",
+                "始终保持开放的象征立场"
+              ]
+            },
+            {
+              "nameEn": "Standard zodiac forecast",
+              "nameZh": "标准星座运势",
+              "linesEn": [
+                "Implies good things follow a transit",
+                "Gives no calendar precision",
+                "Hovers vague without anchoring dates"
+              ],
+              "linesZh": [
+                "暗示行运之后好事将至",
+                "缺乏日历层面的精准",
+                "模糊漂浮，不锚定具体日期"
+              ]
+            },
+            {
+              "nameEn": "Full natal reading",
+              "nameZh": "完整本命盘解读",
+              "linesEn": [
+                "Needs recorded birth times, not public for these players",
+                "Would weigh Moon, Ascendant, and houses",
+                "Less reliable when birth time is invented"
+              ],
+              "linesZh": [
+                "需要记录在案的出生时间，这些球员均无公开",
+                "会权衡月亮、上升与宫位",
+                "出生时间系捏造时反而更不可靠"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read England World Cup 2026 Astrology in the 2026 World Cup Window",
+          "afterHeadingZh": "## 如何识别英格兰2026世界杯占星中的象征主题（实操观察）",
+          "titleEn": "England's Jupiter Window: Cancer to Leo",
+          "titleZh": "英格兰的木星窗口：从巨蟹到狮子",
+          "altEn": "Timeline of England's Jupiter window across the 2026 World Cup: group stage Cancer backdrop, knockout rounds begin, Jupiter enters Leo, final at MetLife",
+          "altZh": "英格兰2026世界杯木星窗口时间线：小组赛巨蟹底色、淘汰赛开打、木星入狮子、大都会球场决赛",
+          "items": [
+            {
+              "labelEn": "11–27 June",
+              "labelZh": "6月11日至27日",
+              "titleEn": "Group Stage — Jupiter in Cancer",
+              "titleZh": "小组赛——木星在巨蟹座",
+              "noteEn": "Bellingham's Cancer-Sun window — a symbolic backdrop of homecoming and protective drive during the group stage",
+              "noteZh": "贝林厄姆的巨蟹座太阳窗口——小组赛期间回护与归属的象征底色"
+            },
+            {
+              "labelEn": "28 June",
+              "labelZh": "6月28日",
+              "titleEn": "Knockout Rounds Begin (Round of 32)",
+              "titleZh": "淘汰赛开打（32强赛）",
+              "noteEn": "The tournament arc shifts — group-stage themes give way to the knockout stage",
+              "noteZh": "赛事弧线转折——小组赛主题让位于淘汰赛阶段"
+            },
+            {
+              "labelEn": "~30 June",
+              "labelZh": "约6月30日",
+              "titleEn": "Jupiter Enters Leo — Kane's Leo-Sun Window",
+              "titleZh": "木星进入狮子座——凯恩的狮子座太阳窗口",
+              "noteEn": "The captain's season arrives late — Jupiter expands into Leo just as knockouts are underway",
+              "noteZh": "队长的时节姗姗来迟——木星入狮子座恰与淘汰赛相交"
+            },
+            {
+              "labelEn": "19 July",
+              "labelZh": "7月19日",
+              "titleEn": "Final at MetLife Stadium, New Jersey",
+              "titleZh": "决赛：新泽西州大都会球场",
+              "noteEn": "Jupiter still in Leo — all symbolic timing, no result predictions",
+              "noteZh": "木星仍在狮子座——所有均为象征性时机，不作任何结果预测"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

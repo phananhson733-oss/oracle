@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="英格兰的木星窗口：从巨蟹到狮子">
+  <defs>
+    <linearGradient id="englandworldcup2026astrology1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="englandworldcup2026astrology1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="englandworldcup2026astrology1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="englandworldcup2026astrology1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="englandworldcup2026astrology1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="englandworldcup2026astrology1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#englandworldcup2026astrology1zh-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#englandworldcup2026astrology1zh-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#englandworldcup2026astrology1zh-neb2)"/>
+  <circle cx="187.3" cy="125.7" r="1.28" fill="#cfc8ea" opacity="0.33"/><circle cx="183.9" cy="251.9" r="0.90" fill="#cfc8ea" opacity="0.45"/><circle cx="450.0" cy="73.0" r="1.68" fill="#cfc8ea" opacity="0.53"/><circle cx="107.2" cy="19.5" r="0.68" fill="#cfc8ea" opacity="0.26"/><circle cx="549.8" cy="313.1" r="0.50" fill="#cfc8ea" opacity="0.27"/><circle cx="564.1" cy="250.2" r="1.48" fill="#cfc8ea" opacity="0.23"/><circle cx="357.8" cy="390.3" r="1.02" fill="#cfc8ea" opacity="0.51"/><circle cx="79.0" cy="192.1" r="1.05" fill="#cfc8ea" opacity="0.33"/><circle cx="634.7" cy="32.3" r="1.59" fill="#cfc8ea" opacity="0.36"/><circle cx="463.8" cy="150.7" r="0.49" fill="#cfc8ea" opacity="0.35"/><circle cx="35.2" cy="136.3" r="1.29" fill="#cfc8ea" opacity="0.18"/><circle cx="554.8" cy="333.6" r="1.25" fill="#cfc8ea" opacity="0.21"/><circle cx="85.5" cy="321.7" r="1.59" fill="#cfc8ea" opacity="0.22"/><circle cx="638.5" cy="240.4" r="0.83" fill="#cfc8ea" opacity="0.50"/><circle cx="401.7" cy="218.3" r="0.45" fill="#cfc8ea" opacity="0.27"/><circle cx="371.3" cy="414.4" r="0.51" fill="#cfc8ea" opacity="0.31"/><circle cx="458.2" cy="248.8" r="1.62" fill="#cfc8ea" opacity="0.19"/><circle cx="475.9" cy="75.1" r="0.69" fill="#cfc8ea" opacity="0.33"/><circle cx="438.1" cy="74.9" r="0.83" fill="#cfc8ea" opacity="0.23"/><circle cx="657.1" cy="382.8" r="1.21" fill="#cfc8ea" opacity="0.40"/><circle cx="474.5" cy="342.8" r="1.52" fill="#cfc8ea" opacity="0.23"/><circle cx="145.8" cy="142.6" r="1.02" fill="#cfc8ea" opacity="0.43"/><circle cx="733.8" cy="340.2" r="0.94" fill="#cfc8ea" opacity="0.50"/><circle cx="307.6" cy="19.8" r="1.53" fill="#cfc8ea" opacity="0.35"/><circle cx="678.9" cy="182.6" r="0.87" fill="#cfc8ea" opacity="0.34"/><circle cx="557.5" cy="378.1" r="0.40" fill="#cfc8ea" opacity="0.12"/><circle cx="341.9" cy="415.5" r="0.72" fill="#cfc8ea" opacity="0.39"/><circle cx="565.5" cy="244.5" r="1.00" fill="#cfc8ea" opacity="0.23"/><circle cx="441.0" cy="45.4" r="1.11" fill="#cfc8ea" opacity="0.28"/><circle cx="399.5" cy="408.3" r="0.62" fill="#cfc8ea" opacity="0.21"/><circle cx="523.4" cy="36.6" r="1.45" fill="#cfc8ea" opacity="0.36"/><circle cx="411.2" cy="142.0" r="1.63" fill="#cfc8ea" opacity="0.19"/><circle cx="612.5" cy="97.1" r="1.15" fill="#cfc8ea" opacity="0.20"/><circle cx="25.7" cy="412.7" r="0.43" fill="#cfc8ea" opacity="0.12"/><circle cx="442.0" cy="112.3" r="1.36" fill="#cfc8ea" opacity="0.43"/><circle cx="712.9" cy="186.2" r="0.80" fill="#cfc8ea" opacity="0.47"/><circle cx="301.9" cy="284.5" r="1.44" fill="#cfc8ea" opacity="0.17"/><circle cx="54.9" cy="300.9" r="1.25" fill="#cfc8ea" opacity="0.18"/><circle cx="231.4" cy="394.4" r="1.49" fill="#cfc8ea" opacity="0.22"/><path d="M 679.2301275283098 55.7 L 679.7 58.4 L 682.4 58.92437571869232 L 679.7 59.4 L 679.2301275283098 62.1 L 678.7 59.4 L 676.0 58.92437571869232 L 678.7 58.4 Z" fill="#f6e6bf" opacity="0.6810458005173132"/><path d="M 578.8082401230931 416.6 L 579.4 419.4 L 582.2 419.9856455747504 L 579.4 420.5 L 578.8082401230931 423.4 L 578.3 420.5 L 575.4 419.9856455747504 L 578.3 419.4 Z" fill="#f6e6bf" opacity="0.5145144302165136"/><path d="M 265.40438944101334 127.5 L 265.9 130.2 L 268.6 130.74403870501556 L 265.9 131.3 L 265.40438944101334 134.0 L 264.9 131.3 L 262.2 130.74403870501556 L 264.9 130.2 Z" fill="#f6e6bf" opacity="0.6495711109368131"/><path d="M 74.85271053761244 79.7 L 75.3 82.1 L 77.8 82.59596104477532 L 75.3 83.1 L 74.85271053761244 85.5 L 74.4 83.1 L 71.9 82.59596104477532 L 74.4 82.1 Z" fill="#f6e6bf" opacity="0.716798342182301"/><path d="M 577.3884309977293 286.2 L 578.0 289.3 L 581.1 289.8660373708699 L 578.0 290.5 L 577.3884309977293 293.5 L 576.8 290.5 L 573.7 289.8660373708699 L 576.8 289.3 Z" fill="#f6e6bf" opacity="0.7945367258740589"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">英格兰的木星窗口：从巨蟹到狮子</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#englandworldcup2026astrology1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#englandworldcup2026astrology1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#englandworldcup2026astrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#englandworldcup2026astrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">6月11日至27日</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">小组赛——木星在巨蟹座</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">贝林厄姆的巨蟹座太阳窗口——小组赛期间回护与归属的象征底色</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#englandworldcup2026astrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#englandworldcup2026astrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">6月28日</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">淘汰赛开打（32强赛）</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">赛事弧线转折——小组赛主题让位于淘汰赛阶段</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#englandworldcup2026astrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#englandworldcup2026astrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">约6月30日</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">木星进入狮子座——凯恩的狮子座太阳窗口</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">队长的时节姗姗来迟——木星入狮子座恰与淘汰赛相交</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#englandworldcup2026astrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#englandworldcup2026astrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">7月19日</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">决赛：新泽西州大都会球场</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">木星仍在狮子座——所有均为象征性时机，不作任何结果预测</text>
+  <path d="M 280.025 430.4 L 280.4 432.6 L 282.6 433 L 280.4 433.4 L 280.025 435.6 L 279.6 433.4 L 277.4 433 L 279.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 430.4 L 480.4 432.6 L 482.6 433 L 480.4 433.4 L 479.975 435.6 L 479.6 433.4 L 477.4 433 L 479.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
