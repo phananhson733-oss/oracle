@@ -36,6 +36,8 @@ const WIKI_SEO_OVERRIDES: Partial<Record<Language, Record<string, WikiSeoOverrid
     trine: { canonicalPath: '/wiki/trine-in-astrology', robots: 'noindex,follow', sitemap: false },
     descendant: { canonicalPath: '/wiki/descendant-astrology', robots: 'noindex,follow', sitemap: false },
     'imum-coeli': { canonicalPath: '/wiki/ic-astrology', robots: 'noindex,follow', sitemap: false },
+    // B2 保守合并（2026-06-18）：薄 wiki-item lilith 排名蚕食富文章 black-moon-lilith → canonical 收口 + noindex。
+    lilith: { canonicalPath: '/wiki/black-moon-lilith', robots: 'noindex,follow', sitemap: false },
   },
   zh: {
     'house-5': { canonicalPath: '/wiki/5th-house', robots: 'noindex,follow', sitemap: false },
