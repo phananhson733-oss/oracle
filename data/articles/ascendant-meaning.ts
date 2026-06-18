@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const ascendantMeaningEn: WikiArticle = {
   slug: "ascendant-meaning",
   image: "/images/blog/ascendant-meaning.jpg",
-  image_alt: "Golden arc of light rising precisely on the eastern horizon over a still ocean, anchoring the deep-indigo sky around one luminous threshold",
-  title: "Ascendant Meaning Explained — Why the Rising Degree Anchors Your Whole Chart",
-  description: "The ascendant is the exact zodiac degree rising over the eastern horizon at the moment of your birth",
+  image_alt:
+    "Golden arc of light rising precisely on the eastern horizon over a still ocean, anchoring the deep-indigo sky around one luminous threshold",
+  title:
+    "Ascendant Meaning Explained — Why the Rising Degree Anchors Your Whole Chart",
+  description:
+    "The ascendant is the exact zodiac degree rising over the eastern horizon at the moment of your birth",
   authorId: "julian-thorne",
   date: "2026-06-13",
   schema: "Article",
@@ -17,7 +20,7 @@ export const ascendantMeaningEn: WikiArticle = {
     "rising sign meaning",
     "ascendant astrology",
     "what is ascendant",
-    "rising sign vs sun sign"
+    "rising sign vs sun sign",
   ],
   content: `# Ascendant Meaning Explained — Why the Rising Degree Anchors Your Whole Chart
 
@@ -106,7 +109,7 @@ It tends to describe first impressions, physical bearing, and the reflexes that 
 - [how the twelve houses map life areas](/en/wiki/astrology-houses) — the system the ascendant anchors from the first cusp
 - [rising sign vs sun sign explained](/en/wiki/how-to-read-birth-chart) — the distinction beginners most often blur
 - [how to read a birth chart for beginners](/en/wiki/how-to-read-birth-chart) — where the ascendant fits in the larger wheel
-- *why birth time accuracy matters in astrology* — the precision the ascendant meaning depends on
+- worked examples by ascendant: [Leo rising and the houses](/en/wiki/leo-rising-houses), [Libra rising and the houses](/en/wiki/libra-rising-houses), and [Scorpio rising and the houses](/en/wiki/scorpio-rising-houses) — how one rising sign sets all twelve house cusps
 
 ## Take Action
 
@@ -122,16 +125,16 @@ It tends to describe first impressions, physical bearing, and the reflexes that 
 export const ascendantMeaningZh: WikiArticle = {
   slug: "ascendant-meaning",
   image: "/images/blog/ascendant-meaning.jpg",
-  image_alt: "金色弧光从平静海面的东方地平线精确升起，将深靛青夜空锚定于那唯一的发光门槛",
+  image_alt:
+    "金色弧光从平静海面的东方地平线精确升起，将深靛青夜空锚定于那唯一的发光门槛",
   title: "上升星座到底在说什么：为什么这一个度数能撑起整张星盘",
-  description: "上升点就是你出生那一刻、东方地平线正在升起的那一个黄道度数，它成了第一宫的宫头，也是整张星盘其余部分围着旋转的那根轴。很多人查上升星座含义，本以为会得到又一个性格标签，结果拿到的却是一套结构：正是这一个度数，决定了每一个宫位从哪里开始。",
+  description:
+    "上升点就是你出生那一刻、东方地平线正在升起的那一个黄道度数，它成了第一宫的宫头，也是整张星盘其余部分围着旋转的那根轴。很多人查上升星座含义，本以为会得到又一个性格标签，结果拿到的却是一套结构：正是这一个度数，决定了每一个宫位从哪里开始。",
   authorId: "julian-thorne",
   date: "2026-06-13",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "ascendant meaning"
-  ],
+  keywords: ["ascendant meaning"],
   content: `# 上升星座到底在说什么：为什么这一个度数能撑起整张星盘
 
 ## 上升点是什么？

@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const leoRisingHousesEn: WikiArticle = {
   slug: "leo-rising-houses",
   image: "/images/placements/leo-rising-houses.jpg",
-  image_alt: "A radiant rising sun on one horizon and a heavy ringed planet on the opposite edge, in tense balance across the night sky.",
-  title: "What Leo Rising Houses Actually Reveal About Your Relationship Patterns",
-  description: "Leo rising houses is a fixed house map placing Saturn over the partnership domain and Venus over communication and career",
+  image_alt:
+    "A radiant rising sun on one horizon and a heavy ringed planet on the opposite edge, in tense balance across the night sky.",
+  title:
+    "What Leo Rising Houses Actually Reveal About Your Relationship Patterns",
+  description:
+    "Leo rising houses is a fixed house map placing Saturn over the partnership domain and Venus over communication and career",
   authorId: "marcus-orion",
   date: "2026-06-05",
   schema: "Article",
@@ -16,7 +19,7 @@ export const leoRisingHousesEn: WikiArticle = {
     "leo rising houses",
     "leo ascendant meaning",
     "leo rising personality",
-    "leo ascendant houses"
+    "leo ascendant houses",
   ],
   content: `# What Leo Rising Houses Actually Reveal About Your Relationship Patterns
 
@@ -105,6 +108,8 @@ Leo Sun places solar identity in the self-expression domain. Leo rising determin
 
 - [explainer on Saturn as a planetary ruler and how it structures the houses it governs](/en/wiki/astrology-houses) — relevant to why the 7th house carries Saturnine weight for Leo rising and how Saturn's natal placement modulates that
 - [overview of all twelve houses and their life domains](/en/wiki/astrology-houses) — full house reference for comparing rulerships across different rising signs
+- [what the ascendant means and how to find yours](/en/wiki/ascendant-meaning) — the rising-sign foundation this whole house map is built on
+- compare with [Libra rising and the houses](/en/wiki/libra-rising-houses) and [Scorpio rising and the houses](/en/wiki/scorpio-rising-houses) — how the same wheel shifts for a different ascendant
 - [Ascendant (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Ascendant_(astrology))
 
 ## Take Action
