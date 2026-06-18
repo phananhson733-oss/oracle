@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "christian-pulisic-birth-chart": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of an American autumn landscape at dusk, rolling Pennsylvania hills and open country under a vast home-soil sky, evoking precision and a host-nation homecoming. Golden-green ordered fields in the lower half of the frame; the upper sky carries a clean quicksilver Mercury sheen, cool silver-grey, exact and refined, blending seamlessly into deep indigo. Palette of deep indigo to near-black (#16112c to #0b0a1b) with golden-green and silver accents. Focused, composed, refined atmosphere under bright fading light. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces, full-bleed wide 16:9 composition that fills the entire frame",
+        "altEn": "American autumn landscape at dusk over rolling Pennsylvania hills, a quicksilver Mercury-toned sky in cool silver-grey blending into deep indigo above golden-green ordered fields",
+        "altZh": "黄昏时分宾夕法尼亚州秋日丘陵上的美国乡野，金银双色水星天空由冷银灰渐变为深靛蓝，笼罩着下方井然有序的金绿色原野"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Christian Pulisic Birth Chart vs a Full Natal Reading",
+          "afterHeadingZh": "## 克里斯蒂安·普利西奇星盘与相近概念：运作方式 + 取舍",
+          "titleEn": "Three Ways to Read the Same Chart",
+          "titleZh": "读同一张星盘的三种方式",
+          "altEn": "Comparison of the Sun-anchored Pulisic reading against a full natal reading and a tabloid zodiac blurb",
+          "altZh": "以太阳为锚的普利西奇解读，与完整本命解读、小报星座短讯的对照",
+          "columns": [
+            {
+              "nameEn": "Sun-anchored reading",
+              "nameZh": "以太阳为锚的解读",
+              "linesEn": [
+                "Leans on the Virgo Sun, fixed by a verified date",
+                "Refuses to invent the unrecorded layers",
+                "Names a theme of precision and adaptability, not a scoreline"
+              ],
+              "linesZh": [
+                "倚重出生日期能固定的处女座太阳",
+                "拒绝把未记录的部分凭空编造",
+                "标定精确与适应力的主题，而非比分"
+              ]
+            },
+            {
+              "nameEn": "Full natal reading",
+              "nameZh": "完整本命解读",
+              "linesEn": [
+                "Weighs Sun, Moon, Ascendant, every house cusp",
+                "Needs a recorded birth time, which is not public",
+                "Trades reliability for breadth"
+              ],
+              "linesZh": [
+                "权衡太阳、月亮、上升与每道宫头",
+                "需要记录在案的出生时间，而他的未公开",
+                "用可靠换广度"
+              ]
+            },
+            {
+              "nameEn": "Tabloid zodiac blurb",
+              "nameZh": "小报星座短讯",
+              "linesEn": [
+                "Flattens Virgo into a single perfectionist mood",
+                "Treats the winger-mid-forward as one fixed type",
+                "Trades accuracy for catchiness"
+              ],
+              "linesZh": [
+                "把处女座压扁成单一的完美主义情绪",
+                "把边锋–中场–前锋的灵活者套成固定类型",
+                "用准确换顺口"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read the Christian Pulisic Birth Chart in the 2026 World Cup Window",
+          "afterHeadingZh": "## 如何识别克里斯蒂安·普利西奇星盘（2026 世界杯窗口实操）",
+          "titleEn": "Reading a Virgo Sun: The Method",
+          "titleZh": "读一颗处女座太阳：方法步骤",
+          "altEn": "Four-step method for reading the Christian Pulisic birth chart: anchor the verified date, flag unknown birth time, read the Virgo arc as precision and adaptability, hold Saturn in Aries as a collective backdrop",
+          "altZh": "读普利西奇星盘的四步法：锚定核验日期、标出未知出生时间、把处女座弧读作精确与适应力、把白羊土星握作集体性背景",
+          "items": [
+            {
+              "labelEn": "Step 1",
+              "labelZh": "第一步",
+              "titleEn": "Anchor the verified date",
+              "titleZh": "锚定经核验的日期",
+              "noteEn": "18 September 1998 in Hershey, Pennsylvania fixes the Sun at roughly 25 degrees of Virgo — the one hard fact the entire reading rests on",
+              "noteZh": "1998 年 9 月 18 日宾夕法尼亚州赫尔希，将太阳固定在约处女座 25 度——整份解读赖以立足的唯一硬事实"
+            },
+            {
+              "labelEn": "Step 2",
+              "labelZh": "第二步",
+              "titleEn": "Flag the unknown birth time",
+              "titleZh": "标出未知的出生时间",
+              "noteEn": "No public birth time means the Moon sign, Ascendant, and houses are unverified — state this plainly rather than inventing the gap",
+              "noteZh": "出生时间未见公开，月亮星座、上升与宫位均无从核验——坦诚标出，而非用猜测填补空白"
+            },
+            {
+              "labelEn": "Step 3",
+              "labelZh": "第三步",
+              "titleEn": "Read the Virgo arc as precision and adaptability",
+              "titleZh": "把处女座弧读作精确与适应力",
+              "noteEn": "Virgo is a mutable earth sign ruled by Mercury: its symbolism maps to craft, positional versatility across winger, attacking midfielder, and forward — theme, not destiny",
+              "noteZh": "处女座是水星守护的变动土象星座：其象征对应工艺与跨边锋、攻击型中场、前锋的位置适应力——是主题，不是命运"
+            },
+            {
+              "labelEn": "Step 4",
+              "labelZh": "第四步",
+              "titleEn": "Hold Saturn in Aries as collective backdrop",
+              "titleZh": "把白羊土星握作集体性背景",
+              "noteEn": "Saturn transits Aries 2025–2028: a broad structural backdrop shared by everyone under this sky, not a personal marker for one player — hold it all as symbolism, keep results open",
+              "noteZh": "土星 2025–2028 年行经白羊座：一片为所有人共享的广阔结构性背景，而非某位球员的私人标记——把这一切握成象征，让赛果保持开放"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

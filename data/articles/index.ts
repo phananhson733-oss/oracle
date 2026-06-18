@@ -237,6 +237,8 @@ import { jamesRodriguezBirthChartEn } from "./james-rodriguez-birth-chart";
 import { jamesRodriguezBirthChartZh } from "./james-rodriguez-birth-chart";
 import { luisDiazBirthChartEn } from "./luis-diaz-birth-chart";
 import { luisDiazBirthChartZh } from "./luis-diaz-birth-chart";
+import { christianPulisicBirthChartEn } from "./christian-pulisic-birth-chart";
+import { christianPulisicBirthChartZh } from "./christian-pulisic-birth-chart";
 // All articles organized by language
 
 import {
@@ -478,6 +480,7 @@ const ARTICLES_EN: WikiArticle[] = [
   cancerZodiacWorldCup2026En,
   jamesRodriguezBirthChartEn,
   luisDiazBirthChartEn,
+  christianPulisicBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -584,6 +587,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   cancerZodiacWorldCup2026Zh,
   jamesRodriguezBirthChartZh,
   luisDiazBirthChartZh,
+  christianPulisicBirthChartZh,
 ];
 
 // Get all articles for a language
