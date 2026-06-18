@@ -1567,6 +1567,22 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       ],
     },
     {
+      slug: 'rodden-rating',
+      title: 'Rodden Rating - Birth Time Accuracy Calculator',
+      description: 'Find out how reliable your birth time is with the Rodden Rating system. See whether your Ascendant, houses, and Moon can be trusted, free and with no sign-up.',
+      sections: [
+        ['What is the Rodden Rating?', 'The Rodden Rating is a system created by data astrologer Lois Rodden to record how trustworthy the source of a birth time is. AA means an official birth record, A means the person or family supplied it, B means a biography, C means there is no source so caution is needed, DD means sources conflict, and X means the time is unknown. It rates the data source, not whether a chart is good or bad.'],
+        ['Why birth time accuracy matters', 'The Ascendant and the house cusps move quickly, about one degree every four minutes, so a rounded or missing time leaves them approximate. Planet signs and usually the Moon sign do not depend on an exact minute, so they stay reliable even when the time is rough. Knowing your rating tells you which parts of the chart to lean on.'],
+        ['How to use this calculator', 'Choose how you know your birth time, from a hospital record down to unknown. The tool shows the matching Rodden code, a confidence level, and a simple breakdown of whether your Ascendant, houses, and Moon to the degree can be trusted, with a short note on what to do at that level.'],
+        ['What to do with a low rating', 'A low or unknown rating does not make a chart useless. Planet signs still describe a great deal. For full house detail you can search for an original record, or ask an astrologer to attempt birth time rectification. A noon or solar chart is a common stand-in when the time is unknown.'],
+      ],
+      faqs: [
+        ['Does a low Rodden Rating mean my chart is wrong?', 'No. It only means the birth time source is less certain, so the Ascendant and houses are approximate. Planet signs and usually the Moon sign remain reliable.'],
+        ['What is the best Rodden Rating?', 'AA is the most reliable, meaning the time comes from an official birth record. A from the person or family is also strong.'],
+        ['Can I use astrology without a birth time?', 'Yes. A noon or solar chart still gives reliable planet signs and many aspects; only the Ascendant, houses, and exact Moon need caution.'],
+      ],
+    },
+    {
       slug: 'synastry-calculator',
       title: 'Synastry Calculator - Free Relationship Compatibility',
       description: 'Free synastry calculator. Compare two birth charts to see the aspects between them, from Sun and Moon to Venus and Mars. Real astronomy, no sign-up.',
