@@ -239,6 +239,8 @@ import { luisDiazBirthChartEn } from "./luis-diaz-birth-chart";
 import { luisDiazBirthChartZh } from "./luis-diaz-birth-chart";
 import { christianPulisicBirthChartEn } from "./christian-pulisic-birth-chart";
 import { christianPulisicBirthChartZh } from "./christian-pulisic-birth-chart";
+import { yoaneWissaBirthChartEn } from "./yoane-wissa-birth-chart";
+import { yoaneWissaBirthChartZh } from "./yoane-wissa-birth-chart";
 // All articles organized by language
 
 import {
@@ -481,6 +483,7 @@ const ARTICLES_EN: WikiArticle[] = [
   jamesRodriguezBirthChartEn,
   luisDiazBirthChartEn,
   christianPulisicBirthChartEn,
+  yoaneWissaBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -588,6 +591,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   jamesRodriguezBirthChartZh,
   luisDiazBirthChartZh,
   christianPulisicBirthChartZh,
+  yoaneWissaBirthChartZh,
 ];
 
 // Get all articles for a language

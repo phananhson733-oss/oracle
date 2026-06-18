@@ -730,6 +730,7 @@ const ARTICLE_SLUGS = [
   'mbappe-birth-chart',
   'world-cup-2026-astrology-prediction',
   // 6/18 WC player + Cancer-cluster (PG-WC-016~020), staggered ~20-25min apart
+  'yoane-wissa-birth-chart',
   'christian-pulisic-birth-chart',
   'luis-diaz-birth-chart',
   'james-rodriguez-birth-chart',
