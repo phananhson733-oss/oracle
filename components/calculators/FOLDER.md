@@ -22,7 +22,10 @@
 - CurrentPlanetsTool.tsx｜地位：当前天象盘（#9）｜功能：某 UTC 日 10 大行星 sign/度/逆行（默认今天，可选日期），消费 `fetchPositions`；路由 /:lang/current-planets。
 - MoonPhaseTool.tsx｜地位：月相工具（#12）｜功能：某 UTC 日 8 相名 + 受照% + 盈亏 + 月/日星座，消费 `fetchMoonPhase`；路由 /:lang/moon-phase-calculator。
 - EphemerisTool.tsx｜地位：星历表生成器（#10）｜功能：日期范围×行星的 sign/度/逆行表格（步长可选，后端裁剪+truncated 标记），消费 `fetchEphemeris`；路由 /:lang/ephemeris-calculator。
+- crossAspects.ts｜地位：合盘交叉相位纯引擎｜功能：absoluteLongitude / separation / classifyAspect（主相位 + 性质）/ crossAspects（两盘交叉相位表，按 orb 升序）/ summarizeAspects；conjunction 标 neutral 不武断好坏。
+- SynastryCalculator.tsx｜地位：合盘计算器（双表单）｜功能：两人出生表单 → 两次匿名 `fetchNatalChart` → 客户端 crossAspects → 中性兼容性视图（和谐/成长/融合计数 + 最紧相位）；**客户端算相位避开付费门 /api/synastry**；姓名仅本地显示绝不出端（隐私 #4）；路由 /:lang/synastry-calculator。
 
 近期更新
 - 2026-06-17 新建：计算器矩阵 D 第一批 sign 类（Moon Sign / Rising / Big Three / Birth Chart）。路由 `/:lang/<slug>`（+ 裸 LangRedirect + isPublicRoute 白名单 + showNav）；静态 stub 走 generate-seo-pages.mjs 的 CALCULATOR_SEO 循环（≥4 H2 关键词正文 + JSON-LD + sitemap）。
-- 2026-06-18 新建：D 第二批「天象工具集」（Current Planets / Moon Phase / Ephemeris）。后端扩 `api/astro.ts`（/positions、/moon-phase、/ephemeris，TDD）+ 纯算法 `backend/src/services/astro/skyTools.ts`。3 个新 slug 已进 CALCULATOR_SEO + isPublicRoute。后续仍待：Synastry/Composite（双表单）+ Solar Return（需求解返照时刻）+ Electional（研究级，AI 安全门，分期）。
+- 2026-06-18 新建：D 第二批「天象工具集」（Current Planets / Moon Phase / Ephemeris）。后端扩 `api/astro.ts`（/positions、/moon-phase、/ephemeris，TDD）+ 纯算法 `backend/src/services/astro/skyTools.ts`。3 个新 slug 已进 CALCULATOR_SEO + isPublicRoute。
+- 2026-06-18 新建：D 第二批「合盘」SynastryCalculator + crossAspects 纯引擎（TDD 19 例）。客户端交叉相位（复用 /api/natal/chart，不碰付费 /api/synastry），姓名不出端。slug synastry-calculator 已进 CALCULATOR_SEO + isPublicRoute。后续仍待：Composite（中点盘，与 wiki 文章 slug 冲突需 self-canonical）+ Solar Return（求解返照时刻）+ Electional（研究级，AI 安全门，分期）。

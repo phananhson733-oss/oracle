@@ -1546,6 +1546,22 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Are the positions accurate?', 'Yes. The table uses Swiss Ephemeris astronomy, the same high-precision engine used by professional astrology software.'],
       ],
     },
+    {
+      slug: 'synastry-calculator',
+      title: 'Synastry Calculator - Free Relationship Compatibility',
+      description: 'Free synastry calculator. Compare two birth charts to see the aspects between them, from Sun and Moon to Venus and Mars. Real astronomy, no sign-up.',
+      sections: [
+        ['What is synastry?', 'Synastry is the branch of astrology that compares two birth charts to study the connections between them. By measuring the aspects, the angles, between the planets of one chart and the planets of the other, it maps where two people meet with ease and where they meet friction.'],
+        ['How the synastry calculator works', 'Enter the birth date and city for two people, and a birth time if you have it to sharpen the Moon and the chart angles. The tool builds both charts on Swiss Ephemeris astronomy, then finds the major aspects between the two sets of planets, sorted by how exact each one is.'],
+        ['Reading the aspects between two charts', 'Trines and sextiles tend to describe flow and ease; squares and oppositions describe tension that can drive growth; conjunctions blend two energies together. The mix is a portrait of a connection, not a score and not a verdict on whether a relationship will last.'],
+        ['Synastry and privacy', 'This is a free tool with no account required. The names you enter stay in your browser and are never sent anywhere, only the birth dates and cities are used to compute the charts. For a deeper written reading, explore the synastry articles in the AstrologyWiki wiki.'],
+      ],
+      faqs: [
+        ['What is a synastry chart?', 'A synastry chart compares two birth charts to show the aspects between them, the angular connections between one set of planets and the other.'],
+        ['Do I need birth times for synastry?', 'A date and city are enough for the planetary aspects. A birth time sharpens the Moon and the chart angles, making the comparison more precise.'],
+        ['Is the synastry calculator free?', 'Yes. You can compare two charts for free with no account, and the names you enter never leave your device.'],
+      ],
+    },
   ];
   for (const calc of CALCULATOR_SEO) {
     const calcUrl = `${siteUrl}/en/${calc.slug}`;
