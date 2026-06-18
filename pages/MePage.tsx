@@ -816,6 +816,13 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 }}
                 loadingLabel={t.common.loading}
                 errorLabel={t.app.error}
+                onPlanetClick={() => {
+                  // 点击星盘行星字形 → 复用既有 planets 详情解读流程（含付费访问门）。
+                  if (!extendedData) return;
+                  handleDetailClick("planets", t.detail.modal_title_planets, {
+                    planets: extendedData.planets,
+                  });
+                }}
               />
             </div>
           </div>

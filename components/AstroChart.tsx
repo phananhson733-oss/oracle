@@ -1,5 +1,5 @@
 // INPUT: React、星盘数据与星体配色配置（含 1280px 画布对齐、宫头标注沿星座环排布并拉开度分间距、北交点跨盘相位补全、浅色 Unicode 对比修正）。
-// OUTPUT: 导出星盘可视化组件（含分层相位渲染、配置驱动显示与主题支持，双人盘补齐北交点相位线）。
+// OUTPUT: 导出星盘可视化组件（含分层相位渲染、配置驱动显示与主题支持，双人盘补齐北交点相位线）；可选 onPlanetClick 让行星字形可点/键盘激活 → 触发消费者的 natal 详情解读流程。
 // POS: 主应用星盘绘制组件（含浅色 glyph 描边与色值对比修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
@@ -33,6 +33,16 @@ interface AstroChartProps {
   errorLabel?: string;
   /** When provided, only show planets whose names are in this list */
   visiblePlanets?: string[];
+  /**
+   * When provided, planet glyphs become clickable + keyboard-activatable:
+   * activating one calls this with the (prefix-stripped) planet name. The
+   * natal page wires it to the existing detail flow (open the planets
+   * interpretation). Omit it (default) to keep the chart informational —
+   * transit/synastry share cards pass nothing and are unaffected.
+   * Note: planetName/isOuter are informational — current consumers open the
+   * aggregate "planets" interpretation, not a per-planet view.
+   */
+  onPlanetClick?: (planetName: string, isOuter: boolean) => void;
 }
 
 const PLANET_META: Record<string, { glyph: string; color: string }> = Object.fromEntries(
@@ -346,6 +356,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
   loadingLabel,
   errorLabel,
   visiblePlanets,
+  onPlanetClick,
 }) => {
   const { theme } = useTheme();
 
@@ -404,6 +415,29 @@ export const AstroChart: React.FC<AstroChartProps> = ({
   const handlePlanetMouseLeave = useCallback(() => {
     setHoveredPlanet(null);
   }, []);
+
+  // 行星字形可点交互 props（仅当 onPlanetClick 提供时）：点击/键盘激活 → 打开该
+  // 占位的 natal 解读。无 prop 时返回空对象，图表保持纯展示（其它消费者不受影响）。
+  const planetClickProps = useCallback(
+    (planet: { name: string }, isOuter: boolean) =>
+      onPlanetClick
+        ? {
+            role: 'button' as const,
+            tabIndex: 0,
+            className:
+              'focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-gold-500',
+            'aria-label': `${stripOuterPrefix(planet.name)}: open interpretation`,
+            onClick: () => onPlanetClick(stripOuterPrefix(planet.name), isOuter),
+            onKeyDown: (e: React.KeyboardEvent) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onPlanetClick(stripOuterPrefix(planet.name), isOuter);
+              }
+            },
+          }
+        : {},
+    [onPlanetClick],
+  );
 
   useEffect(() => {
     let mounted = true;
@@ -1107,6 +1141,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                     <g
                       key={`pos-info-${i}`}
                       style={{ cursor: 'pointer' }}
+                      {...planetClickProps(p, false)}
                       onMouseEnter={(e) => handlePlanetMouseEnter(p, false, e)}
                       onMouseMove={handlePlanetMouseMove}
                       onMouseLeave={handlePlanetMouseLeave}
@@ -1255,6 +1290,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                     <g
                       key={`outer-pos-info-${i}`}
                       style={{ cursor: 'pointer' }}
+                      {...planetClickProps(p, true)}
                       onMouseEnter={(e) => handlePlanetMouseEnter(p, true, e)}
                       onMouseMove={handlePlanetMouseMove}
                       onMouseLeave={handlePlanetMouseLeave}
@@ -1396,6 +1432,7 @@ export const AstroChart: React.FC<AstroChartProps> = ({
                     <g
                       key={`inner-pos-info-${i}`}
                       style={{ cursor: 'pointer' }}
+                      {...planetClickProps(p, false)}
                       onMouseEnter={(e) => handlePlanetMouseEnter(p, false, e)}
                       onMouseMove={handlePlanetMouseMove}
                       onMouseLeave={handlePlanetMouseLeave}

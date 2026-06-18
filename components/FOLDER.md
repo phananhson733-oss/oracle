@@ -13,7 +13,7 @@
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录组件目录架构与文件清单。
-- AstroChart.tsx｜地位：可视化组件｜功能：绘制星盘 SVG（后端数据驱动）。
+- AstroChart.tsx｜地位：可视化组件｜功能：绘制星盘 SVG（后端数据驱动）；可选 onPlanetClick prop 让行星字形可点/键盘激活 → 触发消费者的 natal 详情解读（MePage 接到既有 planets 详情流程）。
 - TechSpecsComponents.tsx｜地位：功能组件｜功能：技术参数表格与列表 UI。
 - UIComponents.tsx｜地位：基础组件库｜功能：主题/语言上下文与通用组件。
 - payment.tsx｜地位：功能弹窗｜功能：积分充值占位弹窗与订阅引导。
