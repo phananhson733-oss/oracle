@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const saturnInAries2026En: WikiArticle = {
   slug: "saturn-in-aries-2026",
   image: "/images/blog/saturn-in-aries-2026.jpg",
-  image_alt: "Planetary rings arching over a volcanic plateau at twilight, ember-lit ridgelines and cooling lava rivers below a deep indigo sky",
-  title: "Saturn in Aries 2026 Explained — A Three-Year Discipline Reset, Not Your Saturn Return",
-  description: "Saturn in Aries is the multi-year transit that began in 2025, returns to Aries in February 2026, and runs to around April 2028, applying Saturn's discipline",
+  image_alt:
+    "Planetary rings arching over a volcanic plateau at twilight, ember-lit ridgelines and cooling lava rivers below a deep indigo sky",
+  title:
+    "Saturn in Aries 2026 Explained — A Three-Year Discipline Reset, Not Your Saturn Return",
+  description:
+    "Saturn in Aries is the multi-year transit that began in 2025, returns to Aries in February 2026, and runs to around April 2028, applying Saturn's discipline",
   authorId: "marcus-orion",
   date: "2026-06-13",
   schema: "Article",
@@ -17,7 +20,7 @@ export const saturnInAries2026En: WikiArticle = {
     "saturn aries transit",
     "saturn in aries meaning",
     "saturn aries 2026 2028",
-    "saturn aries house"
+    "saturn aries house",
   ],
   content: `# Saturn in Aries 2026 Explained — A Three-Year Discipline Reset, Not Your Saturn Return
 
@@ -106,6 +109,7 @@ Neither, in the fortune-telling sense. Saturn applied to Aries slows reactive st
 ## Related Reading
 
 - [transit_events cluster on 2026 planetary transits](/en/wiki/transits) — the wider real-sky context for the year
+- [2026 astrology calendar](/en/wiki/2026-astrology-calendar) — every dated transit, retrograde, eclipse, and moon phase of the year, including Saturn's February 14 ingress into Aries
 - *transit dates for Saturn 2025-2028* — the exact ingress, retrograde, and exit windows
 - *what a Saturn Return is* — the personal cycle this transit is most often confused with
 - [how to read houses in a birth chart](/en/wiki/astrology-houses) — locating the Aries house this transit activates
@@ -124,16 +128,16 @@ Neither, in the fortune-telling sense. Saturn applied to Aries slows reactive st
 export const saturnInAries2026Zh: WikiArticle = {
   slug: "saturn-in-aries-2026",
   image: "/images/blog/saturn-in-aries-2026.jpg",
-  image_alt: "暮色苍穹中巨大行星环横亘天际，火山高原上余烬燃烧的山脊与缓缓冷却的熔岩河流相映成辉",
+  image_alt:
+    "暮色苍穹中巨大行星环横亘天际，火山高原上余烬燃烧的山脊与缓缓冷却的熔岩河流相映成辉",
   title: "土星行经白羊（2026—2028）——三年纪律重构，而不是你的土星回归",
-  description: "2026土星白羊座指的是土星从 2026 年 2 月起正式驻留在开创火象的白羊座、把纪律、结构与限制施加到\"自我、行动力与自我主张\"这片领域、并一直持续到约 2028 年 4 月的多年行运。 更朴素的读法是：土星奖励\"搭建起来的行动\"，而不是\"被情绪推着走的冲动\"，白羊正是这堂课如今落地的地方。",
+  description:
+    '2026土星白羊座指的是土星从 2026 年 2 月起正式驻留在开创火象的白羊座、把纪律、结构与限制施加到"自我、行动力与自我主张"这片领域、并一直持续到约 2028 年 4 月的多年行运。 更朴素的读法是：土星奖励"搭建起来的行动"，而不是"被情绪推着走的冲动"，白羊正是这堂课如今落地的地方。',
   authorId: "marcus-orion",
   date: "2026-06-13",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "saturn in aries 2026"
-  ],
+  keywords: ["saturn in aries 2026"],
   content: `# 土星行经白羊（2026—2028）——三年纪律重构，而不是你的土星回归
 
 ## 土星行经白羊是什么?

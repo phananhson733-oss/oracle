@@ -39,7 +39,7 @@ Every dated event for July 2026, drawn straight from the ephemeris. Times are in
 | July 27 | Saturn stations retrograde at 15° Aries | The second outer-planet turn of the month. |
 | July 30 | Full Moon in Aquarius | The month's closing lunation, opposite the Leo season just begun. |
 
-To see which house each date falls into for you, lay this table beside your own chart and read it alongside the overview of [astrological transits and how they move through your chart](/en/wiki/transits). The same date lands very differently depending on where it touches your placements.
+To see which house each date falls into for you, lay this table beside your own chart and read it alongside the overview of [astrological transits and how they move through your chart](/en/wiki/transits). The same date lands very differently depending on where it touches your placements. For the full year in one place, see the [2026 astrology calendar](/en/wiki/2026-astrology-calendar).
 
 
 ![A timeline of July 2026's eight key transit dates from Jupiter entering Leo to the July 30 Aquarius full moon.](/images/transits/july-2026-planetary-transits-i0-en.svg)

@@ -126,6 +126,7 @@ It depends entirely on the planet's speed: a Moon contact lasts hours, a Mars co
 To read transits more deeply, follow these threads:
 
 - The [natal chart transits guide](/en/wiki/natal-chart-transits) for working through your chart contact by contact
+- The [2026 astrology calendar](/en/wiki/2026-astrology-calendar) for every retrograde, eclipse, ingress, and moon phase of the year, each dated from the ephemeris
 - The [how to read a birth chart walkthrough](/en/wiki/how-to-read-birth-chart), the foundation every reading rests on
 - The *astrology aspects overview* for measuring the angles
 - A *comparison with Vedic astrology timing* for an outside view

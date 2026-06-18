@@ -1,7 +1,7 @@
 // INPUT: 受信任的 Markdown 字符串（wiki/classics 正文，来自 backend/src/data）。
 // OUTPUT: mdToHtml(md) 返回转义后的 HTML 字符串；escapeHtml(value) 工具。零依赖。
 // POS: SEO 预渲染脚本 generate-seo-pages.mjs 把正文注入静态页 <main> 时调用，让爬虫读到完整正文。
-// 维护：覆盖范围对齐前端 components/wiki/WikiClassicDetailPage.tsx 的 parseMarkdownBlocks；新增语法两端同步。
+// 维护：覆盖范围对齐前端 components/wiki/WikiArticleDetailPage.tsx 的 renderMarkdownContent（含 GFM 表格）；新增语法两端同步。
 
 // 所有文本节点先转义再包标签，杜绝构建期 HTML 注入。
 export const escapeHtml = (value) => {
@@ -42,7 +42,7 @@ export const stripInlineMarkdown = (text) => {
     .trim();
 };
 
-// 极简 Markdown→HTML：标题、段落、有序/无序列表、引用、围栏代码块、行内强调。
+// 极简 Markdown→HTML：标题、段落、有序/无序列表、引用、围栏代码块、GFM 表格、行内强调。
 // 紧凑输出（块间无空白），适合注入静态 SEO stub 的 <main>。
 export function mdToHtml(md) {
   if (md === null || md === undefined) return '';
@@ -53,6 +53,7 @@ export function mdToHtml(md) {
   let para = [];
   let list = null; // { ordered: boolean, items: string[] }
   let quote = [];
+  let table = []; // raw "| a | b |" lines while inside a GFM table block
   let pre = null; // string[] while inside a fenced code block
   let inCode = false;
 
@@ -76,10 +77,32 @@ export function mdToHtml(md) {
     if (text) out.push(`<blockquote><p>${text}</p></blockquote>`);
     quote = [];
   };
+  // GFM table: a run of "| ... |" lines whose 2nd line is a "| --- | --- |" separator.
+  // Cell parsing mirrors the SPA's renderMarkdownContent (split('|') → trim → drop empties),
+  // so the crawler stub and the human SPA render identical tables. Invalid runs (no separator)
+  // fall back to a paragraph so no content is dropped.
+  const flushTable = () => {
+    if (!table.length) return;
+    const isSep = (r) => /^\|?[\s:|-]+\|?$/.test(r) && r.includes('-');
+    if (table.length >= 2 && isSep(table[1])) {
+      const cells = (row) => row.split('|').map((c) => c.trim()).filter((c) => c);
+      const head = cells(table[0]).map((c) => `<th>${inline(c)}</th>`).join('');
+      const body = table
+        .slice(2)
+        .map((r) => `<tr>${cells(r).map((c) => `<td>${inline(c)}</td>`).join('')}</tr>`)
+        .join('');
+      out.push(`<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`);
+    } else {
+      const text = inline(table.join(' ').replace(/\s+/g, ' ').trim());
+      if (text) out.push(`<p>${text}</p>`);
+    }
+    table = [];
+  };
   const flushAll = () => {
     flushPara();
     flushList();
     flushQuote();
+    flushTable();
   };
 
   for (const rawLine of lines) {
@@ -130,10 +153,20 @@ export function mdToHtml(md) {
       continue;
     }
 
+    // GFM table row ("| a | b |"). Accumulate; flushTable validates + renders.
+    if (/^\|.*\|$/.test(line)) {
+      flushPara();
+      flushList();
+      flushQuote();
+      table.push(line);
+      continue;
+    }
+
     // Blockquote.
     if (line.startsWith('>')) {
       flushPara();
       flushList();
+      flushTable();
       quote.push(line.replace(/^>\s?/, ''));
       continue;
     }
@@ -143,6 +176,7 @@ export function mdToHtml(md) {
     if (ordered) {
       flushPara();
       flushQuote();
+      flushTable();
       if (!list || !list.ordered) {
         flushList();
         list = { ordered: true, items: [] };
@@ -156,6 +190,7 @@ export function mdToHtml(md) {
     if (unordered) {
       flushPara();
       flushQuote();
+      flushTable();
       if (!list || list.ordered) {
         flushList();
         list = { ordered: false, items: [] };
@@ -167,6 +202,7 @@ export function mdToHtml(md) {
     // Paragraph text (consecutive lines merge into one paragraph).
     flushList();
     flushQuote();
+    flushTable();
     para.push(line);
   }
 
