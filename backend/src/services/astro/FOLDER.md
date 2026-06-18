@@ -15,7 +15,11 @@
 - skyTools.test.ts｜地位：上述纯函数的单元测试（22 例，覆盖边界 + 归一 + 八相分类 + 裁剪/越界）。
 - solarReturn.ts｜地位：返照时刻求解器（纯，注入 sunLongitudeAt 便于单测）｜功能：`solveReturnInstant` —— 生日窗口内对带符号夹角二分到分钟精度求太阳回到本命经度的时刻，窗口不够自扩。供 `api/solar-return.ts` 调用。
 - solarReturn.test.ts｜地位：求解器单测（5 例，覆盖命中已知过境/漂移/窗口自扩/0-360 翻转/经度匹配）。
+- acg.ts｜地位：astrocartography 天文内核（纯）｜功能：`meanObliquityDeg`/`gmstDeg`（从 JD）、`eclipticToEquatorial`（黄道→赤道 RA/Dec）、`acgLines`（RA/Dec/GMST → MC/IC 子午线 + AC/DC 升落曲线，circumpolar 纬度自动排除）、`assembleAcgChart`（整图装配）、`normLon`。供 `api/astrocartography.ts` 调用。
+- acg.test.ts｜地位：acg 纯算法单测（14 例，对手算参照值：春分/夏至太阳、J2000 GMST/黄赤交角、equinox ACG 线几何、circumpolar 截断）。
+- acg-verify.test.ts｜地位：权威交叉校验｜功能：`eclipticToEquatorial` 对 Swiss Ephemeris `SEFLG_EQUATORIAL`（rectAscension/declination）输出，10 体取 5（含黄纬最大的月亮）须吻合 <0.1°；swisseph 不可用则跳过（纯算法仍由 acg.test.ts 守护）。
 
 近期更新
 - 2026-06-18 新建：D 计算器矩阵第二批「天象工具集」的纯算法层。配套端点 `/api/astro/positions`、`/api/astro/moon-phase`、`/api/astro/ephemeris`。
 - 2026-06-18 新增 solarReturn.ts（返照时刻求解器），配套端点 `POST /api/solar-return`（计算器 solar-return-calculator）。
+- 2026-06-18 新增 acg.ts（astrocartography 天文内核）+ acg-verify.ts 权威交叉校验，配套端点 `POST /api/astrocartography`（计算器 astrocartography）。ephemeris.ts 加 `getEclipticForBirth`（取黄经+黄纬）+ 抽出 `birthToUtcDate`。

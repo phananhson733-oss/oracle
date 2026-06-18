@@ -22,6 +22,7 @@ import { wikiRouter } from "./api/wiki.js";
 import { syntheticaRouter } from "./api/synthetica.js";
 import { astroRouter } from "./api/astro.js";
 import { solarReturnRouter } from "./api/solar-return.js";
+import { astrocartographyRouter } from "./api/astrocartography.js";
 import { saturnReturnRouter } from "./api/saturn-return.js";
 import { transitRouter } from "./api/timeline.js";
 import { userRouter } from "./api/user.js";
@@ -160,6 +161,19 @@ const solarReturnLimiter = rateLimit({
 });
 app.use("/api/solar-return", solarReturnLimiter);
 app.use("/api/solar-return", express.json({ limit: "4kb" }));
+
+const astrocartographyLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many astrocartography requests, please try again later.",
+    code: "astrocartography_rate_limited",
+  },
+});
+app.use("/api/astrocartography", astrocartographyLimiter);
+app.use("/api/astrocartography", express.json({ limit: "4kb" }));
 
 // Rate limiting — /api/detail. Anonymous POST endpoint that feeds arbitrary
 // chartData into generateAIContent; mutating cosmetic fields can bypass the
@@ -318,6 +332,7 @@ app.use("/api/wiki", wikiRouter);
 app.use("/api/synthetica", syntheticaRouter);
 app.use("/api/astro", astroRouter);
 app.use("/api/solar-return", solarReturnRouter);
+app.use("/api/astrocartography", astrocartographyRouter);
 app.use("/api/saturn-return", saturnReturnRouter);
 app.use("/api/transit", transitRouter);
 app.use("/api/user", userRouter);

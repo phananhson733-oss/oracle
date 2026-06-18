@@ -11,8 +11,18 @@ import { searchCities } from "../../services/apiClient";
 import type { CalculatorBirth, GeoResult } from "./BirthDataCalculator";
 
 export const MONTH_FALLBACK_EN = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
 export interface PersonState {
@@ -61,7 +71,17 @@ export const PersonBirthFields: React.FC<{
   th: FieldsTheme;
   monthNames: string[];
   onChange: (p: PersonState) => void;
-}> = ({ idPrefix, label, lang, th, monthNames, onChange }) => {
+  // 默认时间为可选；置 true 时（如 astrocartography 需精确时刻）标为必填，去掉「可选」提示。
+  timeRequired?: boolean;
+}> = ({
+  idPrefix,
+  label,
+  lang,
+  th,
+  monthNames,
+  onChange,
+  timeRequired = false,
+}) => {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -109,7 +129,9 @@ export const PersonBirthFields: React.FC<{
   });
 
   return (
-    <div className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-5 sm:p-6`}>
+    <div
+      className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-5 sm:p-6`}
+    >
       <h3 className={`text-lg font-bold mb-4 ${th.textPrimary}`}>{label}</h3>
 
       <div className="mb-4">
@@ -119,7 +141,11 @@ export const PersonBirthFields: React.FC<{
         >
           {lang === "zh" ? "名字" : "Name"}{" "}
           <span className={`text-xs ${th.textSecondary}`}>
-            ({lang === "zh" ? "可选，仅本地显示" : "optional, stays on your device"})
+            (
+            {lang === "zh"
+              ? "可选，仅本地显示"
+              : "optional, stays on your device"}
+            )
           </span>
         </label>
         <input
@@ -159,9 +185,13 @@ export const PersonBirthFields: React.FC<{
           className={`block text-sm font-medium mb-1.5 ${th.textPrimary}`}
         >
           {lang === "zh" ? "出生时间" : "Birth Time"}{" "}
-          <span className={`text-xs ${th.textSecondary}`}>
-            ({lang === "zh" ? "可选" : "optional"})
-          </span>
+          {timeRequired ? (
+            <span className="text-rose-500">*</span>
+          ) : (
+            <span className={`text-xs ${th.textSecondary}`}>
+              ({lang === "zh" ? "可选" : "optional"})
+            </span>
+          )}
         </label>
         <input
           id={`${idPrefix}-time`}
@@ -192,7 +222,9 @@ export const PersonBirthFields: React.FC<{
           onFocus={open}
           onBlur={() => setTimeout(close, 200)}
           placeholder={
-            lang === "zh" ? "如 北京、纽约、伦敦" : "e.g. New York, London, Tokyo"
+            lang === "zh"
+              ? "如 北京、纽约、伦敦"
+              : "e.g. New York, London, Tokyo"
           }
           autoComplete="off"
           {...inputProps}

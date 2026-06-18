@@ -1646,6 +1646,22 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Does sharing a Sun sign mean we are alike?', 'Not on its own. A shared Sun sign is one point in common out of a whole chart. It is a fun starting point, not a verdict on personality or compatibility.'],
       ],
     },
+    {
+      slug: 'astrocartography',
+      title: 'Astrocartography Map - Free Relocation Astrology Lines',
+      description: 'Free astrocartography map. See where each planet was rising, setting, culminating or at the lower meridian when you were born, drawn across a world map. Real Swiss Ephemeris astronomy, no sign-up.',
+      sections: [
+        ['What is astrocartography?', 'Astrocartography, also called relocation astrology, projects the sky at the moment of your birth onto a map of the world. For each planet it draws the places where that planet was angular at your birth: on the meridian overhead or below, and on the eastern or western horizon. It is a way to explore yourself through place rather than a forecast of any location.'],
+        ['How the astrocartography map works', 'Enter your birth date, exact birth time, and city. The tool builds your chart on Swiss Ephemeris astronomy, converts each planet to its sky coordinates, and computes four lines per planet across the globe. A birth time is essential here, because the lines shift by about fifteen degrees of longitude for every hour of birth time.'],
+        ['Reading the planetary lines', 'Each planet draws four lines. The MC line is the meridian where the planet was culminating, highest in the sky; the IC line is its opposite, the lower meridian. The AC line is the curve where the planet was rising on the eastern horizon, and the DC line is where it was setting in the west. Show or hide each planet to keep the map readable.'],
+        ['Using your astrocartography map', 'A line passing near a place simply marks where one planetary theme from your own chart is emphasised. It is a prompt for reflection and curiosity, not a prediction that anything will happen there and not a guarantee of any outcome. Treat it as one lens among many, and pair it with your full birth chart for context.'],
+      ],
+      faqs: [
+        ['Does astrocartography predict what will happen if I move?', 'No. The lines describe where each planet was angular at your birth. They are a reflective tool for exploring places, not a forecast of events and not a guarantee of any outcome.'],
+        ['Why do I need an exact birth time?', 'The angle lines depend on the precise moment of birth and shift about fifteen degrees of longitude per hour. Without an accurate time the map cannot be placed correctly.'],
+        ['What do the MC, IC, AC and DC lines mean?', 'MC is where a planet was culminating overhead, IC is the lower meridian opposite it, AC is where it was rising in the east, and DC is where it was setting in the west.'],
+      ],
+    },
   ];
   for (const calc of CALCULATOR_SEO) {
     const calcUrl = `${siteUrl}/en/${calc.slug}`;

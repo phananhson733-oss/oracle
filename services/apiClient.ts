@@ -1758,6 +1758,52 @@ export async function fetchSolarReturn(params: {
   return res.json();
 }
 
+// === Astrocartography ===
+
+export interface AcgGeoPoint {
+  lat: number;
+  lon: number;
+}
+
+export interface AcgPlanetLines {
+  name: string;
+  raDeg: number;
+  decDeg: number;
+  mcLon: number;
+  icLon: number;
+  ascending: AcgGeoPoint[];
+  descending: AcgGeoPoint[];
+}
+
+export interface AstrocartographyResponse {
+  gmstDeg: number;
+  obliquityDeg: number;
+  planets: AcgPlanetLines[];
+}
+
+// 出生数据 POST（PII 不进 URL）。ACG 需出生时间——后端无 time 会 400 TIME_REQUIRED，故此处 time 必填。
+export async function fetchAstrocartography(params: {
+  date: string;
+  time: string;
+  city: string;
+  lat: number;
+  lon: number;
+  timezone: string;
+  accuracy: string;
+}): Promise<AstrocartographyResponse> {
+  const res = await fetchWithTimeout(
+    `${API_BASE}/astrocartography`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(params),
+    },
+    REQUEST_TIMEOUT_MS,
+  );
+  await assertOk(res, "Failed to compute astrocartography");
+  return res.json();
+}
+
 // === Geo API ===
 // POST (not GET): the city query is user-typed birth location (PII). Keeping it
 // in the request body avoids leaking the value into Vercel access logs, browser

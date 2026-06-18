@@ -30,6 +30,8 @@
 - sunSign.ts｜地位：太阳星座纯引擎（#19）｜功能：sunSignFromDate（tropical 日期段 + cusp 标注，仅需出生日期）/ signElement / signModality / ZODIAC；无 IO、无 PII。
 - celebrities.ts｜地位：名人数据集（#19）｜功能：CELEBRITIES（60 位公众人物，仅公开出生日期，全部取星座中段无歧义）+ celebritiesBySign + FIELD_LABELS；一致性由 tests/unit/sunSign.test.ts 守护。
 - CelebrityTwinsTool.tsx｜地位：名人星座配对计算器（#19，趣味/教育）｜功能：出生月/日 → 太阳星座 → 同星座名人 + 同元素名人；cusp 日引导到完整星盘；纯客户端、无后端、无 PII；中性叙事；路由 /:lang/celebrity-twins。
+- acgMap.ts｜地位：占星地图渲染纯工具（#20）｜功能：等距投影 projectLon/projectLat、反子午线 seam 分段 splitSeam、世界城市锚点 WORLD_CITIES、行星顺序/颜色/缩写（颜色仅识别非吉凶）；无 IO，由 tests/unit/acgMap.test.ts 守护。
+- AstrocartographyTool.tsx｜地位：占星地图计算器（#20，地图）｜功能：出生数据（需时间）→ POST /api/astrocartography → 等距世界地图 SVG 叠加 10 大行星 MC/IC/AC/DC 角线 + 城市锚点 + 行星开关 + 图例；出生数据 POST 不进 URL；中性叙事（线是探索邀请非预测）；路由 /:lang/astrocartography。
 - crossAspects.ts｜地位：合盘交叉相位纯引擎｜功能：absoluteLongitude / separation / classifyAspect（主相位 + 性质）/ crossAspects（两盘交叉相位表，按 orb 升序）/ selfAspects（单盘内两两相位，供天象「当日天空」用）/ summarizeAspects；conjunction 标 neutral 不武断好坏。
 - compositeChart.ts｜地位：合成盘中点纯引擎｜功能：midpointLongitude（圆上近中点/短弧）/ compositeChart（两盘逐行星中点→合成盘落座，仅两盘都有的请求行星，保持顺序）；复用 crossAspects.absoluteLongitude。
 - PersonBirthFields.tsx｜地位：关系类计算器共享「单人出生表单」｜功能：姓名(仅本地)/日期/可选时间/城市自动完成 → onChange 上抛 PersonState 快照；导出 PersonState/FieldsTheme/emptyPerson/personToBirth/MONTH_FALLBACK_EN；各实例独立持 useCityAutocomplete。Synastry/Composite 共用。
@@ -47,3 +49,4 @@
 - 2026-06-18 新建：#11 Electional 择吉天象时机——新增 `electional.ts`（纯算法）+ `ElectionalTool.tsx`，复用 `fetchEphemeris` + crossAspects 新增 `selfAspects`。route /:lang/electional-astrology + /embed/electional-astrology + CALCULATOR_SEO + isPublicRoute。严格中性叙事（无吉日/幸运日，Flowing/Mixed/Dynamic 仅描述相位平衡）。TDD `tests/unit/electional.test.ts`（8 例）。
 - 2026-06-18 新建：#21 Rodden Rating——新增 `rodden.ts`（分级纯算法）+ `RoddenRatingTool.tsx`（教育工具，出生时间来源→数据可信度，无后端/无 PII）。route /:lang/rodden-rating + /embed/rodden-rating + CALCULATOR_SEO + isPublicRoute。TDD `tests/unit/rodden.test.ts`。
 - 2026-06-18 新建：#19 名人星座配对——新增 `sunSign.ts`（太阳星座日期段引擎，cusp 标注）+ `celebrities.ts`（60 位名人公开出生日期数据集，全取中段无歧义）+ `CelebrityTwinsTool.tsx`（出生月日→太阳星座→同星座/同元素名人，纯客户端无 PII）。route /:lang/celebrity-twins + /embed/celebrity-twins + CALCULATOR_SEO + isPublicRoute。TDD `tests/unit/sunSign.test.ts`（含数据集一致性守护：每位名人 stored sign 必须等于引擎计算且不在 cusp）。计算器矩阵 13→14 个公开计算器。
+- 2026-06-18 新建：#20 占星地图 Astrocartography——新增 `acgMap.ts`（等距投影/seam 分段/城市锚点/行星色，纯）+ `AstrocartographyTool.tsx`（世界地图 SVG 叠加 10 大行星 MC/IC/AC/DC 角线 + 城市 + 行星开关）。后端新增 `services/astro/acg.ts` 天文内核 + `api/astrocartography.ts`（POST，需出生时间，拒 mock→503）+ ephemeris `getEclipticForBirth`/抽出 `birthToUtcDate`。route /:lang/astrocartography + /embed/astrocartography + CALCULATOR_SEO + isPublicRoute。TDD：acg.test(14)+acg-verify(对 Swiss Ephemeris 赤道输出)+astrocartography.test(4)+acgMap.test(5)。计算器矩阵 14→15 个公开计算器。

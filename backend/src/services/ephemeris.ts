@@ -106,6 +106,102 @@ function dateToJulian(date: Date): number {
   );
 }
 
+// 出生地方时 → UTC Date。时区偏移优先用 Intl（IANA 时区名），失败回退数字偏移解析。
+// 由 calculateNatalChartRaw 与 getEclipticForBirth 共用（出生 UTC 时刻的唯一真源）。
+export function birthToUtcDate(birth: BirthInput): Date {
+  const timeStr = birth.time || "12:00";
+  const [hours, minutes] = timeStr.split(":").map(Number);
+  const [year, month, day] = birth.date.split("-").map(Number);
+
+  // 获取时区偏移（分钟）
+  let tzOffsetMinutes = 0;
+  if (birth.timezone) {
+    try {
+      // 使用 Intl API 获取准确的时区偏移
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: birth.timezone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      });
+
+      // 使用目标日期 12:00 UTC 作为参考点计算偏移
+      const refDate = new Date(Date.UTC(year, month - 1, day, 12, 0, 0));
+      const parts = formatter.formatToParts(refDate);
+      const tzHour = parseInt(
+        parts.find((p) => p.type === "hour")?.value || "12",
+      );
+      const tzMinute = parseInt(
+        parts.find((p) => p.type === "minute")?.value || "0",
+      );
+
+      // 偏移 = 时区本地时间 - UTC 时间 (12:00)
+      tzOffsetMinutes = (tzHour - 12) * 60 + tzMinute;
+
+      // 处理跨日情况
+      const tzDay = parseInt(
+        parts.find((p) => p.type === "day")?.value || String(day),
+      );
+      if (tzDay > day) tzOffsetMinutes += 24 * 60;
+      else if (tzDay < day) tzOffsetMinutes -= 24 * 60;
+    } catch {
+      // 处理数字格式的时区 (如 "+08:00", "GMT+8", "8")
+      const match = birth.timezone.match(/([+-]?)(\d{1,2})(?::(\d{2}))?/);
+      if (match) {
+        const sign = match[1] === "-" ? -1 : 1;
+        const offsetHours = parseInt(match[2]);
+        const offsetMins = parseInt(match[3] || "0");
+        tzOffsetMinutes = sign * (offsetHours * 60 + offsetMins);
+      }
+    }
+  }
+
+  // 计算 UTC 时间（分钟精度）
+  const localTotalMinutes = hours * 60 + minutes;
+  const utcTotalMinutes = localTotalMinutes - tzOffsetMinutes;
+
+  // 处理日期跨越
+  let utcDay = day;
+  let utcMonth = month;
+  let utcYear = year;
+  let adjustedUtcMinutes = utcTotalMinutes;
+
+  if (utcTotalMinutes < 0) {
+    adjustedUtcMinutes = utcTotalMinutes + 24 * 60;
+    utcDay -= 1;
+    if (utcDay < 1) {
+      utcMonth -= 1;
+      if (utcMonth < 1) {
+        utcMonth = 12;
+        utcYear -= 1;
+      }
+      utcDay = new Date(utcYear, utcMonth, 0).getDate();
+    }
+  } else if (utcTotalMinutes >= 24 * 60) {
+    adjustedUtcMinutes = utcTotalMinutes - 24 * 60;
+    utcDay += 1;
+    const daysInMonth = new Date(utcYear, utcMonth, 0).getDate();
+    if (utcDay > daysInMonth) {
+      utcDay = 1;
+      utcMonth += 1;
+      if (utcMonth > 12) {
+        utcMonth = 1;
+        utcYear += 1;
+      }
+    }
+  }
+
+  const utcHours = Math.floor(adjustedUtcMinutes / 60);
+  const utcMinutes = adjustedUtcMinutes % 60;
+
+  return new Date(
+    Date.UTC(utcYear, utcMonth - 1, utcDay, utcHours, utcMinutes, 0),
+  );
+}
+
 function degreeToSign(degree: number): {
   sign: string;
   degree: number;
@@ -689,104 +785,82 @@ export class SwissEphemerisService implements EphemerisService {
     return { longitudes, speeds, usedMockFallback, mockedPlanets };
   }
 
+  // 给定出生数据，取出生 UTC 时刻各天体的黄经+黄纬（β 用于精确赤道转换，月亮尤甚）+ JD。
+  // astrocartography 端点用：黄道→赤道 + GMST 派生角线。任一天体 mock 兜底则标 usedMockFallback。
+  async getEclipticForBirth(
+    birth: BirthInput,
+    bodies: string[],
+  ): Promise<{
+    ecliptic: Record<string, { lon: number; lat: number }>;
+    jd: number;
+    usedMockFallback: boolean;
+    mockedPlanets: string[];
+  }> {
+    const date = birthToUtcDate(birth);
+    const jd = dateToJulian(date);
+    if (!Number.isFinite(jd)) {
+      throw new Error(`Invalid Julian Date from birth date ${birth.date}`);
+    }
+    const ecliptic: Record<string, { lon: number; lat: number }> = {};
+    let usedMockFallback = false;
+    const mockedPlanets: string[] = [];
+    const allBodies: readonly string[] = [...PLANETS, ...ASTEROIDS];
+
+    for (const name of bodies) {
+      const planetId = PLANET_IDS[name];
+      const mockIndex = allBodies.indexOf(name);
+      let lon = 0;
+      let lat = 0;
+      let mocked = false;
+
+      if (this.useRealEphemeris && planetId !== undefined) {
+        try {
+          const result = swisseph.swe_calc_ut(jd, planetId, SEFLG_SPEED);
+          const resultLon = result?.longitude;
+          const resultLat = result?.latitude;
+          if (result?.error || !Number.isFinite(resultLon)) {
+            throw new Error(result?.error || "Invalid ephemeris data");
+          }
+          lon = resultLon;
+          lat = Number.isFinite(resultLat) ? resultLat : 0;
+        } catch {
+          const mock = mockPlanetPosition(
+            name,
+            jd,
+            mockIndex >= 0 ? mockIndex : 0,
+          );
+          lon = mock.lon;
+          lat = 0;
+          mocked = true;
+        }
+      } else {
+        const mock = mockPlanetPosition(
+          name,
+          jd,
+          mockIndex >= 0 ? mockIndex : 0,
+        );
+        lon = mock.lon;
+        lat = 0;
+        mocked = true;
+      }
+
+      if (mocked) {
+        usedMockFallback = true;
+        mockedPlanets.push(name);
+      }
+      ecliptic[name] = { lon: normalizeLongitude(lon), lat };
+    }
+
+    return { ecliptic, jd, usedMockFallback, mockedPlanets };
+  }
+
   calculateAspects(positions: PlanetPosition[]): Aspect[] {
     return calculateAspectsBetween(positions);
   }
 
   private async calculateNatalChartRaw(birth: BirthInput): Promise<NatalChart> {
-    // 将出生时间转换为 UTC
-    const timeStr = birth.time || "12:00";
-    const [hours, minutes] = timeStr.split(":").map(Number);
-    const [year, month, day] = birth.date.split("-").map(Number);
-
-    // 获取时区偏移（分钟）
-    let tzOffsetMinutes = 0;
-    if (birth.timezone) {
-      try {
-        // 使用 Intl API 获取准确的时区偏移
-        const formatter = new Intl.DateTimeFormat("en-US", {
-          timeZone: birth.timezone,
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: false,
-        });
-
-        // 使用目标日期 12:00 UTC 作为参考点计算偏移
-        const refDate = new Date(Date.UTC(year, month - 1, day, 12, 0, 0));
-        const parts = formatter.formatToParts(refDate);
-        const tzHour = parseInt(
-          parts.find((p) => p.type === "hour")?.value || "12",
-        );
-        const tzMinute = parseInt(
-          parts.find((p) => p.type === "minute")?.value || "0",
-        );
-
-        // 偏移 = 时区本地时间 - UTC 时间 (12:00)
-        tzOffsetMinutes = (tzHour - 12) * 60 + tzMinute;
-
-        // 处理跨日情况
-        const tzDay = parseInt(
-          parts.find((p) => p.type === "day")?.value || String(day),
-        );
-        if (tzDay > day) tzOffsetMinutes += 24 * 60;
-        else if (tzDay < day) tzOffsetMinutes -= 24 * 60;
-      } catch {
-        // 处理数字格式的时区 (如 "+08:00", "GMT+8", "8")
-        const match = birth.timezone.match(/([+-]?)(\d{1,2})(?::(\d{2}))?/);
-        if (match) {
-          const sign = match[1] === "-" ? -1 : 1;
-          const offsetHours = parseInt(match[2]);
-          const offsetMins = parseInt(match[3] || "0");
-          tzOffsetMinutes = sign * (offsetHours * 60 + offsetMins);
-        }
-      }
-    }
-
-    // 计算 UTC 时间（分钟精度）
-    const localTotalMinutes = hours * 60 + minutes;
-    const utcTotalMinutes = localTotalMinutes - tzOffsetMinutes;
-
-    // 处理日期跨越
-    let utcDay = day;
-    let utcMonth = month;
-    let utcYear = year;
-    let adjustedUtcMinutes = utcTotalMinutes;
-
-    if (utcTotalMinutes < 0) {
-      adjustedUtcMinutes = utcTotalMinutes + 24 * 60;
-      utcDay -= 1;
-      if (utcDay < 1) {
-        utcMonth -= 1;
-        if (utcMonth < 1) {
-          utcMonth = 12;
-          utcYear -= 1;
-        }
-        utcDay = new Date(utcYear, utcMonth, 0).getDate();
-      }
-    } else if (utcTotalMinutes >= 24 * 60) {
-      adjustedUtcMinutes = utcTotalMinutes - 24 * 60;
-      utcDay += 1;
-      const daysInMonth = new Date(utcYear, utcMonth, 0).getDate();
-      if (utcDay > daysInMonth) {
-        utcDay = 1;
-        utcMonth += 1;
-        if (utcMonth > 12) {
-          utcMonth = 1;
-          utcYear += 1;
-        }
-      }
-    }
-
-    const utcHours = Math.floor(adjustedUtcMinutes / 60);
-    const utcMinutes = adjustedUtcMinutes % 60;
-
-    // 创建 UTC Date 对象
-    const birthDateUTC = new Date(
-      Date.UTC(utcYear, utcMonth - 1, utcDay, utcHours, utcMinutes, 0),
-    );
+    // 出生地方时 → UTC（共享 birthToUtcDate，避免 tz 逻辑重复/漂移）。
+    const birthDateUTC = birthToUtcDate(birth);
 
     const lat = birth.lat ?? DEFAULT_LAT;
     const lon = birth.lon ?? DEFAULT_LON;

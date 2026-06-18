@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.40
+> **Version**: 2.41
 > **Last Updated**: 2026-06-18
 > **Status**: Living Document — synced with codebase
 
@@ -339,13 +339,14 @@ AI 生成的深度心理分析，每个维度独立解读：
 | `/:lang/electional-astrology` | ElectionalTool | 择吉/天象时机：起始日 + 天数 → 逐日天空基调（月相 / 月亮星座 / 和谐-紧张相位平衡，中性标签 Flowing/Mixed/Dynamic），复用 /api/astro/ephemeris，无出生数据，公开可索引；严格中性叙事——天象参考非预测/保证 |
 | `/:lang/rodden-rating` | RoddenRatingTool | Rodden 出生时间可信度计算器：选择出生时间来源 → Rodden 码（AA/A/B/C/DD/X）+ 信心档 + 上升天顶/宫位/月亮到度的可信度 + 建议；纯客户端教育工具，无后端、无出生数据存储、无 PII，公开可索引 |
 | `/:lang/celebrity-twins` | CelebrityTwinsTool | 名人星座配对：出生月日 → 太阳星座（标准 tropical 日期段 + cusp 标注）→ 同星座/同元素名人（公开出生日期数据集，取中段无歧义）；纯客户端，无后端、无 PII、无出生数据存储，公开可索引；中性叙事——趣味/教育非命运断言 |
+| `/:lang/astrocartography` | AstrocartographyTool | 占星地图（迁移占星）：出生数据（需出生时间）→ POST /api/astrocartography → 世界地图（等距投影）叠加 10 大行星 MC/IC/AC/DC 角线 + 城市锚点 + 行星开关；天文走 Swiss Ephemeris（拒 mock→503），无 LLM，公开可索引；中性叙事——线是探索地点的邀请非预测 |
 | `/:lang/synastry-calculator` | SynastryCalculator | 合盘计算器：两人出生表单→两次匿名 /api/natal/chart→**客户端**交叉相位（不碰付费 /api/synastry），姓名不出端，公开可索引 |
 | `/:lang/composite-calculator` | CompositeCalculator | 合成盘计算器：两人→**客户端**中点合成盘（10 大行星），复用 /api/natal/chart，姓名不出端，公开可索引（slug 区别于 wiki 文章 composite-chart-calculator） |
 | `/:lang/solar-return-calculator` | SolarReturnCalculator | 返照盘计算器：出生数据 + 目标年 → POST /api/solar-return（求解返照时刻）→ 返照日期/时刻 + 10 大行星落座，公开可索引（slug 区别于 saturn-return-calculator） |
 | `/embed/saturn-return` | SaturnReturnCalculator (variant="embed") | 可嵌入 widget：宿主站点 `<iframe>` 引用，无站点 chrome，带可见 dofollow 品牌回链；`noindex,nofollow` |
-| `/embed/<slug>`（13 个计算器） | EmbedWidgetShell 包裹对应计算器 | 计算器矩阵全量可嵌入 widget：moon-sign / rising-sign / big-three / birth-chart / current-planets / moon-phase-calculator / ephemeris-calculator / electional-astrology / rodden-rating / celebrity-twins / synastry-calculator / composite-calculator / solar-return-calculator；无站点 chrome + dofollow「Powered by AstrologyWiki」回链；`noindex,nofollow`，不入 sitemap |
+| `/embed/<slug>`（14 个计算器） | EmbedWidgetShell 包裹对应计算器 | 计算器矩阵全量可嵌入 widget：moon-sign / rising-sign / big-three / birth-chart / current-planets / moon-phase-calculator / ephemeris-calculator / electional-astrology / rodden-rating / celebrity-twins / astrocartography / synastry-calculator / composite-calculator / solar-return-calculator；无站点 chrome + dofollow「Powered by AstrologyWiki」回链；`noindex,nofollow`，不入 sitemap |
 
-**嵌入 widget（T7 + 计算器矩阵）**：两种机制——SaturnReturn 用组件内 `variant="embed"`（它自渲染 SEO 长文，故需跳过）；计算器矩阵的 13 个 slug 用 `components/calculators/embed.tsx` 的 `EmbedWidgetShell` 包裹（这些计算器的 SEO 正文在静态 stub 里，组件本身已无 chrome），shell 提供 `EmbedContext` + 底部 dofollow「Powered by AstrologyWiki」回链指向 canonical 页。App.tsx 在 `/embed/*` 早返回最小树（`<SEO robots="noindex,nofollow">`）绕开全站 nav/footer/paywall/analytics。每个计算器全页底部还渲染 `EmbedCodeBox`（「复制 iframe 代码」框，在 embed 上下文内经 `EmbedContext` 自隐藏）。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。
+**嵌入 widget（T7 + 计算器矩阵）**：两种机制——SaturnReturn 用组件内 `variant="embed"`（它自渲染 SEO 长文，故需跳过）；计算器矩阵的 14 个 slug 用 `components/calculators/embed.tsx` 的 `EmbedWidgetShell` 包裹（这些计算器的 SEO 正文在静态 stub 里，组件本身已无 chrome），shell 提供 `EmbedContext` + 底部 dofollow「Powered by AstrologyWiki」回链指向 canonical 页。App.tsx 在 `/embed/*` 早返回最小树（`<SEO robots="noindex,nofollow">`）绕开全站 nav/footer/paywall/analytics。每个计算器全页底部还渲染 `EmbedCodeBox`（「复制 iframe 代码」框，在 embed 上下文内经 `EmbedContext` 自隐藏）。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。
 
 **功能说明**：
 - 用户输入出生日期（必填）、出生时间（可选）、出生城市（可选）
@@ -962,6 +963,7 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | GET | `/api/astro/moon-phase` | 某 UTC 日月相（`?date=`，默认今天）：日月夹角 / 8 相名 / 受照比例 / 盈亏 + 月日星座；纯天文无 AI，拒 mock→503 | — |
 | GET | `/api/astro/ephemeris` | 星历表（`?start=&end=&step=&bodies=`）：日期范围×大行星 sign/度/逆行，行数后端裁剪（MAX 40，truncated 标记）；纯天文无 AI，拒 mock→503 | — |
 | POST | `/api/solar-return` | 返照盘：body `{ ...birth, year }`（出生数据 POST 不进 URL）→ 本命太阳经度 + 二分求返照时刻 + 该刻 10 大行星落座；20/min 限流 + 4kb cap；无 AI，拒 mock→503 | — |
+| POST | `/api/astrocartography` | 占星地图：body `{ ...birth }`（需出生时间，PII 不进 URL）→ 出生 UTC 黄道(lon+lat) → 黄赤转换 + GMST → 10 大行星 MC/IC 子午线 + AC/DC 升落曲线（经纬度几何）；20/min 限流 + 4kb cap；无 AI，拒 mock→503 | — |
 | GET | `/api/user/status` | 用户状态 | Optional |
 | GET | `/api/config` | 当前支付提供商配置 | — |
 | POST | `/api/newsletter` | Email signup with honeypot anti-bot（Landing v2 模块 9）; 5 req/hour per IP + honeypot. 双 opt-in（`NEWSLETTER_CONFIRM_ENABLED=true` 时插 pending+token+发确认信；默认关 → 插 confirmed、不发信，dark until Resend DKIM 验证）| — |
