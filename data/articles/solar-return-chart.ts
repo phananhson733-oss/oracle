@@ -4,10 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const solarReturnChartEn: WikiArticle = {
   slug: "solar-return-chart",
-  image: "/images/charts/solar-return-chart.jpg",
-  image_alt: "Two faintly overlapping skies over a still lake, with five glowing accents marking where the lasting and annual charts meet.",
   title: "What a Solar Return Chart Really Reveals About the Year Ahead",
-  description: "Solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, and critical degree positions are the five reading layers that",
+  description: "Solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet",
   authorId: "marcus-orion",
   date: "2026-06-03",
   schema: "Article",
@@ -46,7 +44,8 @@ A solar return chart sits next to *guide to transit cycles for predictive astrol
 The location detail is what most write-ups skip: the return is cast for wherever you physically are at the moment of return, not your birthplace. Travel on your birthday and the ascendant shifts, sometimes dramatically.
 
 
-![Reading the return wheel alone versus overlaying it on the natal chart](/images/charts/solar-return-chart-i1-en.svg)
+![Comparison of solar returns, transits, and secondary progressions as three predictive astrology techniques](/images/blog/solar-return-chart-i0-en.svg)
+
 ## How to Read solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions in Your Chart
 
 When you sit down with a return wheel, work through the five layers in order rather than scanning the whole chart at once:
@@ -60,7 +59,8 @@ When you sit down with a return wheel, work through the five layers in order rat
 Skip step two and you may misread which themes actually matter, since the return looks dramatic on its own no matter what year it represents.
 
 
-![The five solar return reading layers in working order, from return Ascendant to critical degrees](/images/charts/solar-return-chart-i0-en.svg)
+![Five sequential reading layers of a solar return chart: ascendant, natal overlay, sun house, ascendant ruler, critical degrees](/images/blog/solar-return-chart-i1-en.svg)
+
 ## Common Misreadings
 
 Most practitioners get the same things wrong about the solar return chart, and each misreading flattens its usefulness:
@@ -126,12 +126,10 @@ Calculate your free birth chart to map your solar return ascendant and house ove
 
 export const solarReturnChartZh: WikiArticle = {
   slug: "solar-return-chart",
-  image: "/images/charts/solar-return-chart.jpg",
-  image_alt: "静湖上方两片微微重叠的夜空，五处发光的亮点标出本命与流年两盘交汇的关键之处。",
-  title: "读懂太阳回归盘这一年的主题线索",
-  description: "solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions（太阳回归五项重点）是用生日回归时刻看一年主题的读盘组合。",
+  title: "太阳回归盘真正揭示的年度图景",
+  description: "太阳回归盘是每年太阳精确回到出生度数那一刻所起的星盘，呈现的是当年的象征性主题轮廓，而非必然发生的事件清单。这张盘由五个解读层构成：回归上升点、与本命盘的叠加、太阳所在宫位、上升主星、关键度数位置，五层合起来才能把年度快照转变为可用的前瞻地图。",
   authorId: "marcus-orion",
-  date: "2026-06-06",
+  date: "2026-06-18",
   schema: "Article",
   lang: "zh",
   keywords: [
@@ -141,103 +139,111 @@ export const solarReturnChartZh: WikiArticle = {
     "solar chart",
     "solar return chart calculator"
   ],
-  content: `# 读懂太阳回归盘这一年的主题线索
+  content: `# 太阳回归盘真正揭示的年度图景
 
-## solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions 是什么？
+## 太阳回归盘 是什么？
 
-solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions（太阳回归五项重点）是用生日回归时刻看一年主题的读盘组合。它连接 *占星行运工具总览 pillar 页*，焦点更窄：看这一年哪些本命主题被推到台前。太阳回归盘通常是**年度主题星盘**。
+**太阳回归盘是每年太阳精确回到出生度数那一刻所起的星盘**，呈现的是当年的象征性主题轮廓，而非必然发生的事件清单。这张盘由五个解读层构成：回归上升点、与本命盘的叠加、太阳所在宫位、上升主星、关键度数位置，五层合起来才能把年度快照转变为可用的前瞻地图。
 
-- 回归上升说明这一年面对外界的基本姿态
-- 本命叠盘只抓关键合相，避免把年度盘孤立看
-- 太阳落宫和上升主星合看，能定位生活重心
-
-计算时以太阳回到本命太阳度分的当刻为准，地点取你当时所在城市；生日当天旅行，回归上升可能随之改变。传统占星教学会先读回归盘本身，再叠回本命盘。
+- 以回归发生时你实际所在的地点起盘，而非出生地
+- 作为年度主题的象征性画像来阅读，而非必然会发生的事件清单
+- 与本命盘叠加使用时最具参考价值，单独解读会失去关键的激活层
 
 ## 为什么了解它能帮助自我觉察
 
-理解太阳回归盘，关键不是把它当成一张单独的年度答案表，而是把它看成「今年哪些本命议题被点到」。很多读者搜年度回归星盘时，真正卡住的不是不会看宫位，而是读完一堆年度描述后，仍然不知道哪些内容和自己有关。英文圈占星社群中常见的反馈也是：只看回归盘本身，信息会很热闹，却少了本命盘这一层互动。
+丹·鲁德雅（Dane Rudhyar）将这张盘定性为"主题画像"而非"事件预言"，这个区分奠定了以人为中心的预测占星基础。最常见的误用，是把太阳回归盘当作独立的年度预测工具来读——这样做会切断它与[本命盘解读主题页](/zh/wiki/how-to-read-birth-chart)之间的交互层，而那个层才是让它具有预测价值的核心。没有叠加，这张盘只是一张泛化的快照，当年真正被激活的本命主题会因此隐形。
 
-这会带来一个现实问题：同样是太阳落第十宫，有人会联想到职场曝光，有人会联想到责任位置，但若本命盘里对应领域并不活跃，就容易读成泛泛的年度标签。把生日回归星盘放回出生盘，可以让你把注意力从「今年会怎样」移到「我原本的哪些主题在今年被推到前面」。
+丽兹·格林（Liz Greene）进一步确立了将年度周期解读为"本命模式激活"的心理占星框架：它告诉你今年哪些本命主题被唤醒，而不是哪些事件被写入命运。这个区别改变了人们使用年度星盘的方式——与其等待预言中的事件，不如开始追踪本命盘里哪些部分正在被点亮，注意力由此有了方向。当回归盘变成聚焦工具而非算命游戏，自我觉察实践才得以真正展开。
 
-## solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions 与相近概念：运作方式 + 取舍
+## 太阳回归盘 与相近概念：运作方式 + 取舍
 
-把太阳回归盘放进占星工具箱里看，它介于本命盘的长期结构与行运的即时变化之间。几个相近概念的差别，主要在运作方式和取舍：
+它与*行运周期预测占星指南*、二次推运并列于预测占星的工具箱，罗伯特·汉德（Robert Hand）对太阳回归盘的现代技术解读做了系统化整理。三种技术各有所长，取舍也各有不同：
 
-1. **本命盘。** 本命盘描述长期性格和生活结构，回归盘描述某一年被点到的主题。要得到年度聚焦，就要牺牲一部分人生全景；要保留人生全景，就会少掉这一年的优先级。
-2. **行运。** 行运按天、按月追踪天空行星与本命点的互动，适合看阶段变化。要得到细密时间线，就要牺牲单张年度图的简洁；要得到年度轮廓，就要放下每天都解释的冲动。
-3. **独立年度盘。** 单看太阳返照盘很快，但容易把每个人都读成同一种年度模板。要得到贴合本命的判断，就要牺牲快速套话，改用 [本命盘相位基础指南](/zh/wiki/how-to-read-birth-chart) 和 *太阳返照盘计算器使用指南* 里的合相思路，只抓回归盘贴近本命点的位置。
+1. **回归盘 vs 行运**。行运追踪行星每日相对于本命盘的移动，能精确指向特定的激活周次。为了获得这种精度，你放弃的是它所提供的全年整体主题框架。行运是望远镜的焦点，回归盘是观测台的全景窗。
+2. **回归盘 vs 二次推运**。推运在数年间缓慢演进，描绘内在心理的发展弧线。为了获得那种内部轨迹，你失去的是回归盘清晰界定的十二个月窗口。推运告诉你你正在成为谁，回归盘告诉你今年走进了哪个房间。
+3. **单独解读 vs 与本命盘叠加解读**。单独读这张盘可以得到一张干净的图像，但你会失去显示哪些本命潜能真正被激活的交互信号。霍华德·萨斯波塔斯（Howard Sasportas）的工作表明：叠加才是把描述转化为预测的机制。
 
-
-![单独读回归盘与叠回本命盘的差别对照](/images/charts/solar-return-chart-i1-zh.svg)
-## 如何在你的星盘里识别 solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions
-
-看太阳回归盘时，先把盘面拉回日常生活，再逐项核对：
-
-1. 确认回归当刻所在地，别套用出生地。
-2. 看回归上升，记录你开局的应对姿态。
-3. 看太阳落宫，标出职场或家庭重心。
-4. 看上升主星和临界度数，追踪突出点。
-5. 叠回本命盘，只记贴近本命点的合相。
+还有一个细节常被文章略过：这张盘依据回归时刻你实际所在的地点起盘，而不是出生地。生日当天的旅行会改变上升点，有时变化相当显著。
 
 
-![太阳回归盘的五个解读层次，从回归上升到临界度数](/images/charts/solar-return-chart-i0-zh.svg)
+![太阳回归盘、行运与二次推运三种预测技术对比](/images/blog/solar-return-chart-i0-zh.svg)
+
+## 如何在你的星盘里识别 太阳回归盘
+
+拿到回归盘之后，按顺序逐层解读，而不是一次性扫视整张盘：
+
+1. **先看回归上升点**。它设定全年的可见基调——你如何呈现自己，别人在你开口之前如何回应你。
+2. **与本命盘叠加**。只看合相：哪些回归行星落在本命点约三度之内。那些位置是当年的热点区域。
+3. **找到太阳在回归盘中的宫位**。无论本命太阳在哪个宫，这里的宫位才显示今年生命能量集中在哪里。
+4. **确认上升主星**。统治回归上升点的行星成为当年的主角——它的宫位和星座描述年度故事在现实中如何展开。
+5. **扫描关键度数**。落在基本星座 0°、13°、26°（固定和变动星座有对应度数）的行星，往往标记当年的压力节点。
+
+跳过第二步，你可能误判哪些主题真正重要——这张盘在任何年份看起来都可以很戏剧化，叠加才能让你分辨哪些是真正被激活的。
+
+
+![太阳回归盘五层解读步骤：上升点、本命叠加、太阳宫位、上升主星、关键度数](/images/blog/solar-return-chart-i1-zh.svg)
+
 ## 常见误读
 
-1. **误读：太阳回归盘可以单独读成年度答案表。** 实际：它说明本命盘哪些主题被推到台前，不能脱离出生盘。
-2. **误读：生日当天在哪里无所谓。** 实际：回归时刻所在地会改动上升和宫位，旅行者尤其要核对。
-3. **误读：叠盘要看所有相位。** 实际：先抓合相，信息更清楚；相位太多会把主线冲散。
-4. **误读：临界度数会直接代表大事。** 实际：它只是提醒你复核本命点与宫位，不是单独下判断的凭据。
+1. **把它作为独立预测工具。** 这张盘看起来像一张完整的图画，所以人们忘记了它只有叠加在本命盘上才具备预测效力。第七宫沉重的回归盘只是描述，直到你核查当年的本命激活是否也指向关系领域，它才成为预测。
+2. **使用出生地起盘。** 决定上升点的地点是回归时刻你实际所在的地方，而非出生城市。生日旅行的读者往往会拿到一张与软件默认产出相差数小时的盘。
+3. **将关键度数视为必然危机。** 关键度数标记的是能量聚集之处，而非降临的事件类型。同一个度数，在不同的本命背景下，可能呈现为突破，也可能呈现为压力，取决于本命盘的上下文。
+4. **读回归太阳的星座而非宫位。** 星座由生日固定，不会告诉你任何新信息。宫位才是逐年变动的那个维度，它指向你的注意力今年实际流向何处。
 
-## solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions 年度读盘速览
+## 太阳回归盘速查一览
 
-| 属性 | 运作方式 | 能量中心 | 如何观察应用 |
+| 解读层 | 运作方式 | 本命盘锚点 | 观察方式 |
 | --- | --- | --- | --- |
-| 回归上升 | 按回归当刻地点生成一年外在姿态 | 回归地点与上升主星 | 对照新计划、会面、公开表达时的起手方式 |
-| 本命叠盘 | 把回归盘放回出生盘，只抓贴近合相 | 本命太阳与本命宫位 | 看哪些旧主题在今年反复出现 |
-| 太阳落宫 | 标出太阳年度聚焦领域 | 回归宫位 | 记录时间和注意力自然投向哪里 |
-| 上升主星 | 说明开局行动会被哪类事务带动 | 回归宫位与相位 | 观察决策常被哪件事牵引 |
-| 临界度数 | 提醒某点靠近宫头或星座交界 | 本命点与宫头 | 先复核出生时间，再下结论 |
+| 回归上升点 | 设定全年可见基调，相当于年度上升星座 | 回归上升落入本命哪个宫 | 注意生日起始后陌生人如何描述你 |
+| 本命盘叠加（仅合相） | 揭示今年哪些本命点被激活 | 与回归行星约3度内的本命行星 | 追踪头一个月反复出现的生活主题 |
+| 太阳在回归盘的宫位 | 显示生命能量集中之处 | 该回归盘度数落入的本命宫 | 观察哪个生活领域吸引了最多注意 |
+| 上升主星 | 指向主导当年故事的行星 | 回归上升主星所在的本命宫 | 追踪该行星全年所在的宫位以把握主线 |
+| 关键度数 | 标记压力点与转折时机 | 关键度数行星的本命相位 | 留意靠近基本星座0°、13°、26°的日期 |
 
-## 年度回归星盘读者常问问题
+## 常见问题
 
-**太阳回归盘要用出生地还是当时所在地？**
+**应该用出生地还是当前所在地起盘？**
 
-用太阳回到本命太阳度分那一刻的所在地。出生地只适用于你当时也在那里，地点不同，上升和宫位会变。
+用回归时刻你实际所在的地点。生日当天旅行确实会改变回归上升点，这也是为什么有些实践者会刻意异地迎接生日——以此设定当年的基调。
 
-**太阳返照盘和本命盘叠盘怎么读？**
+**回归盘能覆盖本命盘吗？**
 
-先读回归盘本身，再叠回出生盘看贴近合相。这样能看今年哪些本命主题被触发，而不是把每条相位都讲一遍。
+不能。它描述今年哪些本命主题被激活，而不是引入本命盘中原本不存在的主题。把它理解为当年在本命潜能上叠加的一个过滤层，而不是替代品。
 
-**计算器生成结果够不够？**
+**这张盘效力持续多长时间？**
 
-计算器能给出盘面，但不会自动判断哪些位置有分量。你还要核对地点、太阳落宫、上升主星和本命合相。
+大约覆盖两次回归之间的十二个月。某些传统认为回归前数周已有影子期，但核心解读窗口是整整一年。
 
-**临界度数要怎么处理？**
+**为什么我的回归盘看起来很戏剧化，但生活却波澜不惊？**
 
-把它当成复核提醒，而不是单独结论。出生时间不稳时，临界度数和宫头附近的判断要收窄。
+这张盘在纸上可以非常强烈，但不一定产生强烈的事件。检验方法是本命叠加：如果戏剧性的位置没有连接到活跃的本命点，这一年往往只是该盘主题的平静版本。
 
 ## 自我觉察小提示
 
-1. 回想近期职场沟通，哪个本命主题反复出现？
-2. 家庭聚会里，你更像回归上升的哪种姿态？
-3. 通勤路上想一想，今年注意力落在哪个宫位？
+1. 回想某个意外事件占据中心的年份——去年的回归盘里，那个生活领域对应哪个宫位？
+2. 当你发现自己用主题而非事件来描述一个年份时，那种视角正是回归盘的视角。
+3. 若某年你读完回归盘却感觉"对不上"，回想当时是单独在读，还是对照着本命叠加在读？
 
 ## 延伸阅读
 
-- *次限推运入门指南*：适合把年度主题放进更长时间线里比较。
-- *太阳弧推运对照表*：适合查看同一年是否有清晰的本命点移动线索。
+- *二次推运解读指南* — 与回归盘外显视角互补的内在发展技术
+- *迁居占星概述* — 与回归盘密切相关，因为回归上升点跟随你的实际位置而非出生地
+- *主要预测占星技术比较* — 将这张盘放入更广泛的预测工具箱中定位
+- [本命盘宫位解读指南](/zh/wiki/astrology-houses) — 每次年度叠加都需要用到的宫位框架
 
 ## 下一步行动
 
-先核对出生时间、出生地点和太阳回归当刻所在城市。
-
-你会得到本命盘基础结构，再把年度回归星盘叠回去，看上升、太阳落宫和合相如何落在你的生活领域。
-
-当年度主题回到本命结构里，它会变成可回顾的选择线索：[生成你的星盘，读懂太阳回归这一年](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)
+计算你的免费本命盘，以此建立太阳回归盘的上升点与宫位叠加的参照基础。没有本命盘作为锚点，年度主题便会脱离它本应激活的本命潜能而飘移，一整年的自我觉察实践也会失去坐标。从[免费本命盘计算与解读指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)开始，下次起回归盘时，把它开在旁边一起阅读。
 
 ## 参考来源
 
-- 传统占星教学 — 将生日回归时刻的星盘用于年度主题阅读，并强调与本命盘互动。
-- 英文圈占星社群讨论 — 常把单盘误读与本命叠盘遗漏作为太阳回归读法的主要摩擦。
+- 丹·鲁德雅（Dane Rudhyar）——开创了以人为中心的预测占星方法，主张将回归盘视为主题画像而非事件预言
+- 丽兹·格林（Liz Greene）——建立了将年度周期解读为本命模式激活的心理占星框架
+- 罗伯特·汉德（Robert Hand）——系统化了现代预测实践中太阳回归盘的技术解读方法
+- 霍华德·萨斯波塔斯（Howard Sasportas）——深化了本命潜能如何通过回归盘激活而浮现的深层心理读法
+
+---
+
+*本文内容仅供象征性参考与个人反思，不构成临床解读或心理健康建议。*
 `,
 };
