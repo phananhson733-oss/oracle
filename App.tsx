@@ -370,6 +370,10 @@ const EphemerisTool = lazy(
 const SynastryCalculator = lazy(
   () => import("./components/calculators/SynastryCalculator"),
 );
+// 计算器矩阵（D，合成盘）：双表单 + 客户端中点合成盘，复用 /api/natal/chart。
+const CompositeCalculator = lazy(
+  () => import("./components/calculators/CompositeCalculator"),
+);
 
 const UsPage = lazy(() => import("./pages/SynastryPage"));
 
@@ -455,6 +459,7 @@ const AppContent: React.FC = () => {
     "/moon-phase-calculator",
     "/ephemeris-calculator",
     "/synastry-calculator",
+    "/composite-calculator",
   ].includes(pathWithoutLang);
   // /:lang/pricing 是公开可索引营销页：静态 stub（public/{lang}/pricing/index.html）输出
   // index,follow 且在 sitemap，运行时必须一致，否则 WRS 注入 noindex 会误伤 sitemap 里的定价页。
@@ -1148,6 +1153,14 @@ const AppContent: React.FC = () => {
               }
             />
             <Route
+              path="/:lang/composite-calculator"
+              element={
+                <LangGuard>
+                  <CompositeCalculator />
+                </LangGuard>
+              }
+            />
+            <Route
               path="/:lang/pricing"
               element={
                 <LangGuard>
@@ -1169,6 +1182,7 @@ const AppContent: React.FC = () => {
             <Route path="/moon-phase-calculator" element={<LangRedirect />} />
             <Route path="/ephemeris-calculator" element={<LangRedirect />} />
             <Route path="/synastry-calculator" element={<LangRedirect />} />
+            <Route path="/composite-calculator" element={<LangRedirect />} />
             <Route path="/pricing" element={<LangRedirect />} />
             <Route path="/wiki/*" element={<LangRedirect />} />
             <Route path="/wiki" element={<LangRedirect />} />

@@ -1563,6 +1563,22 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Is the synastry calculator free?', 'Yes. You can compare two charts for free with no account, and the names you enter never leave your device.'],
       ],
     },
+    {
+      slug: 'composite-calculator',
+      title: 'Composite Chart Calculator - Free Relationship Chart',
+      description: 'Free composite chart calculator. Merge two birth charts into one midpoint chart that represents the relationship itself. Real astronomy, no sign-up.',
+      sections: [
+        ['What is a composite chart?', 'A composite chart is a single chart built from the midpoints between the planets of two birth charts. Where synastry compares two separate charts, a composite merges them into one symbolic chart that represents the relationship itself, treated as a third entity.'],
+        ['How the composite calculator works', 'Enter the birth date and city for two people, and a birth time if you have it. The tool builds both charts on Swiss Ephemeris astronomy, then places each composite planet at the midpoint of the two original positions and shows the sign and degree for each.'],
+        ['Reading your composite chart', 'Read the composite Sun, Moon, and planets the way you would read a birth chart, but as a portrait of the partnership rather than a person. It describes the character and themes of a connection, not a forecast of whether it will last.'],
+        ['Composite vs synastry', 'Synastry studies the aspects between two charts; the composite condenses both into one relationship chart. Many astrologers use them together. For the aspect view, try the synastry calculator, and see the AstrologyWiki wiki for a deeper written guide.'],
+      ],
+      faqs: [
+        ['What is a composite chart?', 'A composite chart is a single chart made from the midpoints of two birth charts, representing the relationship itself rather than either individual.'],
+        ['How is a composite chart different from synastry?', 'Synastry compares the aspects between two separate charts; a composite merges them into one chart that symbolises the partnership.'],
+        ['Do I need birth times for a composite chart?', 'A date and city give you the planetary midpoints. A birth time sharpens the Moon and is needed for the composite angles.'],
+      ],
+    },
   ];
   for (const calc of CALCULATOR_SEO) {
     const calcUrl = `${siteUrl}/en/${calc.slug}`;

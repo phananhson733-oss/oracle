@@ -23,9 +23,13 @@
 - MoonPhaseTool.tsx｜地位：月相工具（#12）｜功能：某 UTC 日 8 相名 + 受照% + 盈亏 + 月/日星座，消费 `fetchMoonPhase`；路由 /:lang/moon-phase-calculator。
 - EphemerisTool.tsx｜地位：星历表生成器（#10）｜功能：日期范围×行星的 sign/度/逆行表格（步长可选，后端裁剪+truncated 标记），消费 `fetchEphemeris`；路由 /:lang/ephemeris-calculator。
 - crossAspects.ts｜地位：合盘交叉相位纯引擎｜功能：absoluteLongitude / separation / classifyAspect（主相位 + 性质）/ crossAspects（两盘交叉相位表，按 orb 升序）/ summarizeAspects；conjunction 标 neutral 不武断好坏。
-- SynastryCalculator.tsx｜地位：合盘计算器（双表单）｜功能：两人出生表单 → 两次匿名 `fetchNatalChart` → 客户端 crossAspects → 中性兼容性视图（和谐/成长/融合计数 + 最紧相位）；**客户端算相位避开付费门 /api/synastry**；姓名仅本地显示绝不出端（隐私 #4）；路由 /:lang/synastry-calculator。
+- compositeChart.ts｜地位：合成盘中点纯引擎｜功能：midpointLongitude（圆上近中点/短弧）/ compositeChart（两盘逐行星中点→合成盘落座，仅两盘都有的请求行星，保持顺序）；复用 crossAspects.absoluteLongitude。
+- PersonBirthFields.tsx｜地位：关系类计算器共享「单人出生表单」｜功能：姓名(仅本地)/日期/可选时间/城市自动完成 → onChange 上抛 PersonState 快照；导出 PersonState/FieldsTheme/emptyPerson/personToBirth/MONTH_FALLBACK_EN；各实例独立持 useCityAutocomplete。Synastry/Composite 共用。
+- SynastryCalculator.tsx｜地位：合盘计算器（双表单）｜功能：两个 PersonBirthFields → 两次匿名 `fetchNatalChart` → 客户端 crossAspects → 中性兼容性视图（和谐/成长/融合计数 + 最紧相位）；**客户端算相位避开付费门 /api/synastry**；姓名仅本地绝不出端（隐私 #4）；路由 /:lang/synastry-calculator。
+- CompositeCalculator.tsx｜地位：合成盘计算器（双表单）｜功能：两个 PersonBirthFields → 两次匿名 `fetchNatalChart` → 客户端 compositeChart（10 大行星中点）→ 合成盘落座一览；客户端算中点不碰付费端点；姓名仅本地（隐私 #4）；路由 /:lang/composite-calculator（与 wiki 文章 composite-chart-calculator 区分，文案交叉引导）。
 
 近期更新
 - 2026-06-17 新建：计算器矩阵 D 第一批 sign 类（Moon Sign / Rising / Big Three / Birth Chart）。路由 `/:lang/<slug>`（+ 裸 LangRedirect + isPublicRoute 白名单 + showNav）；静态 stub 走 generate-seo-pages.mjs 的 CALCULATOR_SEO 循环（≥4 H2 关键词正文 + JSON-LD + sitemap）。
 - 2026-06-18 新建：D 第二批「天象工具集」（Current Planets / Moon Phase / Ephemeris）。后端扩 `api/astro.ts`（/positions、/moon-phase、/ephemeris，TDD）+ 纯算法 `backend/src/services/astro/skyTools.ts`。3 个新 slug 已进 CALCULATOR_SEO + isPublicRoute。
-- 2026-06-18 新建：D 第二批「合盘」SynastryCalculator + crossAspects 纯引擎（TDD 19 例）。客户端交叉相位（复用 /api/natal/chart，不碰付费 /api/synastry），姓名不出端。slug synastry-calculator 已进 CALCULATOR_SEO + isPublicRoute。后续仍待：Composite（中点盘，与 wiki 文章 slug 冲突需 self-canonical）+ Solar Return（求解返照时刻）+ Electional（研究级，AI 安全门，分期）。
+- 2026-06-18 新建：D 第二批「合盘」SynastryCalculator + crossAspects 纯引擎（TDD 19 例）。客户端交叉相位（复用 /api/natal/chart，不碰付费 /api/synastry），姓名不出端。slug synastry-calculator 已进 CALCULATOR_SEO + isPublicRoute。
+- 2026-06-18 新建：D 第二批「合成盘」CompositeCalculator + compositeChart 中点引擎（TDD 9 例）+ 抽出共享 PersonBirthFields（Synastry 同步改用）。slug composite-calculator（避开 wiki 文章 composite-chart-calculator slug 冲突）已进 CALCULATOR_SEO + isPublicRoute。后续仍待：Solar Return（求解返照时刻，需新后端）+ Electional（研究级，AI 安全门，分期）。

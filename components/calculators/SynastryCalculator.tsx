@@ -1,5 +1,5 @@
-// INPUT: React、useLanguage（UIComponents）、useCityAutocomplete、DateSelectGroup、services/apiClient
-//        （fetchNatalChart/searchCities）、useCalculatorTheme、astroDisplay、crossAspects（纯引擎）、analytics。
+// INPUT: React、useLanguage（UIComponents）、services/apiClient（fetchNatalChart）、analytics、useCalculatorTheme、
+//        astroDisplay（planetLabel）、PersonBirthFields（共享双人表单）、crossAspects（纯引擎）。
 // OUTPUT: 合盘（Synastry）计算器——两人出生表单 → 两次匿名 natal → 客户端交叉相位 → 中性兼容性视图。
 // POS: 计算器矩阵（D）Synastry，路由 /:lang/synastry-calculator。**客户端算相位**（避开付费门 /api/synastry）；
 //      姓名仅本地显示绝不出端（隐私 #4）；中性非宿命叙事（AI 安全）。若更新此文件，务必更新 calculators/FOLDER.md。
@@ -7,13 +7,18 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Language, PlanetPosition } from "../../types";
 import { useLanguage } from "../UIComponents";
-import { useCityAutocomplete } from "../../hooks/useCityAutocomplete";
-import { DateSelectGroup } from "../forms/DateSelectGroup";
-import { searchCities, fetchNatalChart } from "../../services/apiClient";
+import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { useCalculatorTheme } from "./useCalculatorTheme";
 import { planetLabel } from "./astroDisplay";
-import type { CalculatorBirth, GeoResult } from "./BirthDataCalculator";
+import {
+  PersonBirthFields,
+  emptyPerson,
+  personToBirth,
+  MONTH_FALLBACK_EN,
+  type PersonState,
+  type FieldsTheme,
+} from "./PersonBirthFields";
 import {
   crossAspects,
   summarizeAspects,
@@ -33,11 +38,6 @@ const SYNASTRY_BODIES = [
 
 const MAX_ASPECTS_SHOWN = 14;
 
-const MONTH_FALLBACK_EN = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-];
-
 const ASPECT_ZH: Record<string, string> = {
   conjunction: "合相",
   sextile: "六分相",
@@ -53,209 +53,6 @@ const NATURE_COLOR: Record<string, string> = {
   harmonious: "text-emerald-400",
   challenging: "text-amber-400",
   neutral: "text-gold-500",
-};
-
-interface PersonState {
-  name: string;
-  date: string;
-  time: string;
-  city: GeoResult | null;
-}
-
-const emptyPerson = (): PersonState => ({
-  name: "",
-  date: "",
-  time: "",
-  city: null,
-});
-
-interface FieldsTheme {
-  textPrimary: string;
-  textSecondary: string;
-  inputBg: string;
-  inputText: string;
-  inputBorder: string;
-  cardBg: string;
-  cardBorder: string;
-}
-
-// 单人出生字段（姓名仅本地 + 日期 + 可选时间 + 城市自动完成）。各实例独立持 useCityAutocomplete。
-const PersonBirthFields: React.FC<{
-  idPrefix: string;
-  label: string;
-  lang: Language;
-  th: FieldsTheme;
-  monthNames: string[];
-  onChange: (p: PersonState) => void;
-}> = ({ idPrefix, label, lang, th, monthNames, onChange }) => {
-  const [name, setName] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [cityQuery, setCityQuery] = useState("");
-  const [selectedCity, setSelectedCity] = useState<GeoResult | null>(null);
-
-  // 任一字段变化即把快照上抛父组件（提交时父组件读取）。
-  useEffect(() => {
-    onChange({ name, date, time, city: selectedCity });
-  }, [name, date, time, selectedCity, onChange]);
-
-  const citySearch = useCallback(
-    async (q: string): Promise<readonly GeoResult[]> => {
-      try {
-        const res = await searchCities(q, 5, lang);
-        return (res?.cities as GeoResult[] | undefined) ?? [];
-      } catch {
-        return [];
-      }
-    },
-    [lang],
-  );
-  const handleCitySelect = useCallback((city: GeoResult) => {
-    setSelectedCity(city);
-    setCityQuery(
-      city.admin1
-        ? `${city.city}, ${city.admin1}, ${city.country}`
-        : `${city.city}, ${city.country}`,
-    );
-  }, []);
-  const {
-    suggestions,
-    isOpen,
-    open,
-    close,
-    selectIndex,
-    inputProps,
-    listboxProps,
-    getOptionProps,
-  } = useCityAutocomplete<GeoResult>({
-    query: cityQuery,
-    search: citySearch,
-    onSelect: handleCitySelect,
-    minLength: 2,
-    idPrefix: `${idPrefix}-city`,
-  });
-
-  return (
-    <div className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-5 sm:p-6`}>
-      <h3 className={`text-lg font-bold mb-4 ${th.textPrimary}`}>{label}</h3>
-
-      <div className="mb-4">
-        <label
-          htmlFor={`${idPrefix}-name`}
-          className={`block text-sm font-medium mb-1.5 ${th.textPrimary}`}
-        >
-          {lang === "zh" ? "名字" : "Name"}{" "}
-          <span className={`text-xs ${th.textSecondary}`}>
-            ({lang === "zh" ? "可选，仅本地显示" : "optional, stays on your device"})
-          </span>
-        </label>
-        <input
-          id={`${idPrefix}-name`}
-          type="text"
-          value={name}
-          maxLength={40}
-          onChange={(e) => setName(e.target.value)}
-          placeholder={lang === "zh" ? "如 Alex" : "e.g. Alex"}
-          className={`w-full px-4 py-3 rounded-lg border ${th.inputBorder} ${th.inputBg} ${th.inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
-        />
-      </div>
-
-      <div className="mb-4">
-        <label
-          className={`block text-sm font-medium mb-1.5 ${th.textPrimary}`}
-          htmlFor={`${idPrefix}-date-month`}
-        >
-          {lang === "zh" ? "出生日期" : "Birth Date"}{" "}
-          <span className="text-red-400">*</span>
-        </label>
-        <DateSelectGroup
-          value={date}
-          onChange={setDate}
-          idPrefix={idPrefix}
-          required
-          monthNames={monthNames}
-          className="grid grid-cols-[1.4fr_1fr_1fr] gap-2"
-          selectClassName={`w-full px-4 py-3 rounded-lg border ${th.inputBorder} ${th.inputBg} ${th.inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
-          labels={{ groupLabel: lang === "zh" ? "出生日期" : "Birth Date" }}
-        />
-      </div>
-
-      <div className="mb-4">
-        <label
-          htmlFor={`${idPrefix}-time`}
-          className={`block text-sm font-medium mb-1.5 ${th.textPrimary}`}
-        >
-          {lang === "zh" ? "出生时间" : "Birth Time"}{" "}
-          <span className={`text-xs ${th.textSecondary}`}>
-            ({lang === "zh" ? "可选" : "optional"})
-          </span>
-        </label>
-        <input
-          id={`${idPrefix}-time`}
-          type="time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-          className={`w-full px-4 py-3 rounded-lg border ${th.inputBorder} ${th.inputBg} ${th.inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
-        />
-      </div>
-
-      <div className="relative">
-        <label
-          htmlFor={`${idPrefix}-city`}
-          className={`block text-sm font-medium mb-1.5 ${th.textPrimary}`}
-        >
-          {lang === "zh" ? "出生城市" : "Birth City"}{" "}
-          <span className="text-red-400">*</span>
-        </label>
-        <input
-          id={`${idPrefix}-city`}
-          type="text"
-          value={cityQuery}
-          onChange={(e) => {
-            setCityQuery(e.target.value);
-            setSelectedCity(null);
-            open();
-          }}
-          onFocus={open}
-          onBlur={() => setTimeout(close, 200)}
-          placeholder={
-            lang === "zh" ? "如 北京、纽约、伦敦" : "e.g. New York, London, Tokyo"
-          }
-          autoComplete="off"
-          {...inputProps}
-          className={`w-full px-4 py-3 rounded-lg border ${th.inputBorder} ${th.inputBg} ${th.inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
-        />
-        {isOpen && suggestions.length > 0 && (
-          <ul
-            {...listboxProps}
-            className={`absolute z-10 w-full mt-1 ${th.cardBg} border ${th.cardBorder} rounded-lg shadow-lg max-h-48 overflow-y-auto`}
-          >
-            {suggestions.map((city, i) => {
-              const optionProps = getOptionProps(i);
-              const isActive = optionProps["aria-selected"];
-              return (
-                <li
-                  key={`${city.city}-${city.lat}-${city.lon}`}
-                  {...optionProps}
-                  className={`px-4 py-2.5 cursor-pointer ${
-                    isActive ? "bg-gold-500/20" : "hover:bg-gold-500/10"
-                  } ${th.textPrimary} min-h-[44px] flex items-center`}
-                  onMouseDown={(ev) => {
-                    ev.preventDefault();
-                    selectIndex(i);
-                  }}
-                >
-                  {city.admin1
-                    ? `${city.city}, ${city.admin1}, ${city.country}`
-                    : `${city.city}, ${city.country}`}
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
-    </div>
-  );
 };
 
 type State = "idle" | "loading" | "result" | "error";
@@ -287,23 +84,10 @@ export const SynastryCalculator: React.FC = () => {
     personB.current = p;
   }, []);
 
-  const toBirth = (p: PersonState): CalculatorBirth | null => {
-    if (!p.date || !p.city) return null;
-    return {
-      birthDate: p.date,
-      birthTime: p.time || undefined,
-      birthCity: p.city.city,
-      lat: p.city.lat,
-      lon: p.city.lon,
-      timezone: p.city.timezone,
-      accuracyLevel: p.time ? "exact" : "time_unknown",
-    };
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const birthA = toBirth(personA.current);
-    const birthB = toBirth(personB.current);
+    const birthA = personToBirth(personA.current);
+    const birthB = personToBirth(personB.current);
     if (!birthA || !birthB) {
       setErrorMessage(
         lang === "zh"
@@ -420,11 +204,7 @@ export const SynastryCalculator: React.FC = () => {
       )}
 
       {state === "result" && (
-        <div
-          ref={resultRef}
-          tabIndex={-1}
-          className="mt-8 outline-none"
-        >
+        <div ref={resultRef} tabIndex={-1} className="mt-8 outline-none">
           <div
             className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-6 sm:p-8 mb-6`}
           >

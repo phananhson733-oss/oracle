@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.34
+> **Version**: 2.35
 > **Last Updated**: 2026-06-18
 > **Status**: Living Document — synced with codebase
 
@@ -337,6 +337,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | `/:lang/moon-phase-calculator` | MoonPhaseTool | 月相计算器：8 相名 + 受照% + 月/日星座，复用 /api/astro/moon-phase，公开可索引 |
 | `/:lang/ephemeris-calculator` | EphemerisTool | 星历表生成器：日期范围×行星 sign/度/逆行表格，复用 /api/astro/ephemeris，公开可索引 |
 | `/:lang/synastry-calculator` | SynastryCalculator | 合盘计算器：两人出生表单→两次匿名 /api/natal/chart→**客户端**交叉相位（不碰付费 /api/synastry），姓名不出端，公开可索引 |
+| `/:lang/composite-calculator` | CompositeCalculator | 合成盘计算器：两人→**客户端**中点合成盘（10 大行星），复用 /api/natal/chart，姓名不出端，公开可索引（slug 区别于 wiki 文章 composite-chart-calculator） |
 | `/embed/saturn-return` | SaturnReturnCalculator (variant="embed") | 可嵌入 widget：宿主站点 `<iframe>` 引用，无站点 chrome，带可见 dofollow 品牌回链；`noindex,nofollow` |
 
 **嵌入 widget（T7）**：`variant="embed"` 渲染无 chrome 的计算器（跳过 `<SEO>` 头注入与 SEO 长文），底部「Powered by AstrologyWiki」回链指向 canonical 计算器页。App.tsx 在 `/embed/*` 早返回最小树绕开全站 nav/footer/paywall/analytics。用于反向链接获取（合规外链形态：回链可见 + 品牌化 + 自然锚文本）。
