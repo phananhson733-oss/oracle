@@ -144,9 +144,19 @@
     </style>
   <script>
     if ('fonts' in document) {
-      document.fonts.ready.then(() => {
-        document.body.classList.add('fonts-loaded');
-        document.body.classList.remove('loading-fonts');
+      document.fonts.ready.then(function () {
+        // This <head> script's callback can resolve BEFORE <body> is parsed when
+        // the fonts are already cached (fonts.ready settles on the next microtask).
+        // Guard document.body so we never throw "Cannot read properties of null
+        // (reading 'classList')"; if body isn't ready yet, defer the class swap to
+        // DOMContentLoaded so the loading-fonts -> fonts-loaded transition still runs.
+        var swap = function () {
+          if (!document.body) return;
+          document.body.classList.add('fonts-loaded');
+          document.body.classList.remove('loading-fonts');
+        };
+        if (document.body) swap();
+        else document.addEventListener('DOMContentLoaded', swap, { once: true });
       });
     }
   </script>
