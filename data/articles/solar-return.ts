@@ -5,18 +5,22 @@ import type { WikiArticle } from "../../types";
 export const solarReturnEn: WikiArticle = {
   slug: "solar-return",
   image: "/images/charts/solar-return.jpg",
-  image_alt: "A warm-gold sun returning to one marked point, casting a translucent overlay of light across a familiar constellation at dawn.",
+  image_alt:
+    "A warm-gold sun returning to one marked point, casting a translucent overlay of light across a familiar constellation at dawn.",
   title: "What a Solar Return Really Highlights in Your Year Ahead",
-  description: "Solar return is an annual astrological chart cast for the exact moment each year when the Sun returns to the precise zodiac position it held at your birth.",
+  description:
+    "Solar return is an annual astrological chart cast for the exact moment each year when the Sun returns to the precise zodiac position it held at your birth.",
   authorId: "marcus-orion",
   date: "2026-06-05",
   schema: "Article",
   lang: "en",
   keywords: [
     "solar return",
+    "solar return chart",
     "how to read solar return chart",
+    "how to interpret solar return chart",
     "solar return meaning",
-    "what is a solar return"
+    "what is a solar return",
   ],
   content: `# What a Solar Return Really Highlights in Your Year Ahead
 

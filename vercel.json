@@ -56,6 +56,11 @@
       "permanent": true
     },
     {
+      "source": "/en/wiki/solar-return-chart",
+      "destination": "/en/wiki/solar-return",
+      "statusCode": 301
+    },
+    {
       "source": "/wiki/(.*)",
       "destination": "/en/wiki/$1",
       "statusCode": 301

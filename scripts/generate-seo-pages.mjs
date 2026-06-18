@@ -855,7 +855,6 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'what-to-do-on-a-full-moon-spiritually',
   'full-moon-energy',
   'what-is-a-full-moon-ritual',
-  'solar-return-chart',
   'aura-colors-guide',
   'blue-aura-meaning',
   'yellow-aura-meaning',
