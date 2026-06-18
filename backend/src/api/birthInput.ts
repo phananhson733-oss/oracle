@@ -24,7 +24,11 @@ import {
 // `message` is generic on purpose — landing page client maps by code, not text.
 
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
-const TIME_REGEX = /^\d{2}:\d{2}(:\d{2})?$/;
+// HH 00-23 / MM 00-59 / optional SS 00-59. Range-checked so a direct POST cannot
+// smuggle impossible times (e.g. "99:99", "24:00") past the widget's native
+// type=time guard and have birthToUtcDate normalize them into a silently-wrong
+// UTC instant (shared by every birth endpoint).
+const TIME_REGEX = /^([01]\d|2[0-3]):[0-5]\d(:[0-5]\d)?$/;
 // Conservative IANA timezone pattern: Region[/Area[/Subarea]] with letters,
 // digits and `_+-`. Matches "America/New_York", "Etc/GMT+8", "UTC", "Asia/Ho_Chi_Minh".
 const IANA_TZ_REGEX = /^[A-Za-z][A-Za-z0-9_+-]*(?:\/[A-Za-z0-9_+-]+){0,2}$/;

@@ -141,12 +141,24 @@ export function birthToUtcDate(birth: BirthInput): Date {
       // 偏移 = 时区本地时间 - UTC 时间 (12:00)
       tzOffsetMinutes = (tzHour - 12) * 60 + tzMinute;
 
-      // 处理跨日情况
+      // 处理跨日情况：比较「完整日期」(年/月/日) 而非仅「日」。
+      // 仅比 day 在月末/年末会判错——例如 UTC+14 在 12-31 12:00 UTC 的本地日是次年 01-01，
+      // tzDay(1) < day(31) 会被误判为「前一天」而非「后一天」，使偏移算错约两天。
+      const tzYear = parseInt(
+        parts.find((p) => p.type === "year")?.value || String(year),
+      );
+      const tzMonth = parseInt(
+        parts.find((p) => p.type === "month")?.value || String(month),
+      );
       const tzDay = parseInt(
         parts.find((p) => p.type === "day")?.value || String(day),
       );
-      if (tzDay > day) tzOffsetMinutes += 24 * 60;
-      else if (tzDay < day) tzOffsetMinutes -= 24 * 60;
+      const dayDelta = Math.round(
+        (Date.UTC(tzYear, tzMonth - 1, tzDay) -
+          Date.UTC(year, month - 1, day)) /
+          86400000,
+      );
+      tzOffsetMinutes += dayDelta * 24 * 60;
     } catch {
       // 处理数字格式的时区 (如 "+08:00", "GMT+8", "8")
       const match = birth.timezone.match(/([+-]?)(\d{1,2})(?::(\d{2}))?/);
