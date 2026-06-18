@@ -694,6 +694,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'solar-return-chart',
   'vozinha-birth-chart',
   'germany-world-cup-players-birth-chart-2026',
   'germany-world-cup-2026-astrology-team',
