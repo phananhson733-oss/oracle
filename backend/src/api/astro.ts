@@ -1,11 +1,10 @@
-// INPUT: Astro events + today's universal planetary positions API routes.
-// OUTPUT: Curated astrological events for a given date, and day-cached "Today's Sky" snapshot
-//         (10 major planets, sign + degree-within-sign + retrograde flag, no auth, no LLM).
-//         /today is hardened with in-process single-flight dedup (one ephemeris compute per
-//         cacheKey across concurrent requests) and integrity validation that refuses to cache
-//         or serve degraded payloads — returns 503 EPHEMERIS_DEGRADED instead, so the next
-//         request can retry against the live ephemeris.
-// POS: Astro endpoints; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: Astro events + universal sky-tool API routes; ephemeris service + services/astro/skyTools 纯函数。
+// OUTPUT: Curated astrological events for a date, day-cached "Today's Sky" snapshot, and the
+//         date-parameterized sky tools — /positions (10 majors at any UTC day), /moon-phase
+//         (8-phase + illumination), /ephemeris (daily sign/degree/retro table, capped). All
+//         anonymous, no LLM, no location; every tool shares /today's integrity gate (refuses
+//         to cache or serve mock-sourced data → 503 EPHEMERIS_DEGRADED).
+// POS: Astro endpoints; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md 与 services/astro/skyTools.ts。
 
 import { Router, Request, Response } from "express";
 import { createHash } from "node:crypto";
@@ -13,6 +12,11 @@ import { loadAstroEvents } from "../data/astro-events.js";
 import { ephemerisService } from "../services/ephemeris.js";
 import { cacheService } from "../cache/redis.js";
 import { PLANETS, SIGNS } from "../data/sources.js";
+import {
+  moonPhase,
+  longitudeToSign,
+  enumerateDates,
+} from "../services/astro/skyTools.js";
 import { logger } from "../utils/logger.js";
 
 export const astroRouter = Router();
@@ -131,7 +135,12 @@ const isValidPayload = (
   return seenNames.size === MAJOR_PLANETS.size;
 };
 
-const computeTodaySky = async (dateKey: string): Promise<TodaySkyPayload> => {
+// Core compute shared by /today and /positions: the 10 major planets at a given
+// UTC calendar day (anchored 00:00 UTC), filtered + degree-combined, plus a
+// majors-only mock-fallback flag. Returns no `date` so callers wrap it.
+const buildMajorPositions = async (
+  dateKey: string,
+): Promise<{ positions: TodayPosition[]; usedMockFallback: boolean }> => {
   // Universal positions: anchor to start-of-day UTC (00:00 UTC) so the snapshot
   // is stable for the whole calendar day. lat=0, lon=0 (no location).
   const utcMidnight = new Date(`${dateKey}T00:00:00Z`);
@@ -172,7 +181,12 @@ const computeTodaySky = async (dateKey: string): Promise<TodaySkyPayload> => {
       };
     });
 
-  return { date: dateKey, positions: majors, usedMockFallback };
+  return { positions: majors, usedMockFallback };
+};
+
+const computeTodaySky = async (dateKey: string): Promise<TodaySkyPayload> => {
+  const built = await buildMajorPositions(dateKey);
+  return { date: dateKey, ...built };
 };
 
 // Shared response helper: applies Cache-Control + weak ETag, and short-circuits
@@ -293,6 +307,338 @@ astroRouter.get("/today", async (req: Request, res: Response) => {
     logger.error("Get today sky error", { error });
     res.status(500).json({
       error: "Failed to compute today's sky",
+      code: "EPHEMERIS_UNAVAILABLE",
+    });
+  }
+});
+
+// ── Shared helpers for the date-parameterized sky tools ──────────────────────
+const DATE_PARAM = /^\d{4}-\d{2}-\d{2}$/;
+const todayKeyUtc = (now: Date): string => now.toISOString().slice(0, 10);
+const isValidDateKey = (v: string): boolean =>
+  DATE_PARAM.test(v) && !Number.isNaN(new Date(`${v}T00:00:00Z`).getTime());
+// Positions/phase for a fixed past/future calendar day are immutable → cache a
+// week. "Today" expires at the next UTC midnight so the key advances with the day.
+const dayDeterministicTtl = (dateKey: string, now: Date): number =>
+  dateKey === todayKeyUtc(now) ? secondsUntilNextUtcMidnight(now) : 604_800;
+
+// === GET /api/astro/positions?date=YYYY-MM-DD ===
+// Generalizes /today to any UTC calendar day: the 10 major planets (sign, degree,
+// retrograde) at 00:00 UTC of `date` (defaults to today). No auth, no LLM. Same
+// integrity gate as /today — refuses to cache or serve mock-sourced data (503).
+const SKY_CACHE_CONTROL = "public, max-age=300, stale-while-revalidate=86400";
+
+astroRouter.get("/positions", async (req: Request, res: Response) => {
+  try {
+    const now = new Date();
+    const raw = req.query.date;
+    let dateKey: string;
+    if (raw === undefined) {
+      dateKey = todayKeyUtc(now);
+    } else if (typeof raw === "string" && isValidDateKey(raw)) {
+      dateKey = raw;
+    } else {
+      res.status(400).json({
+        error: "Invalid date; expected YYYY-MM-DD",
+        code: "INVALID_DATE",
+      });
+      return;
+    }
+
+    const cacheKey = `astro:positions:${dateKey}`;
+    const cached = await cacheService.get<TodaySkyPayload>(cacheKey);
+    if (cached && isValidPayload(cached) && cached.usedMockFallback !== true) {
+      const { usedMockFallback: _drop, ...clientPayload } = cached;
+      void _drop;
+      sendWithCaching(req, res, clientPayload, SKY_CACHE_CONTROL);
+      return;
+    }
+
+    const payload: TodaySkyPayload = {
+      date: dateKey,
+      ...(await buildMajorPositions(dateKey)),
+    };
+    if (payload.usedMockFallback === true || !isValidPayload(payload)) {
+      res.status(503).json({
+        error: "Sky data is currently degraded; try again shortly.",
+        code: "EPHEMERIS_DEGRADED",
+      });
+      return;
+    }
+    await cacheService.set(
+      cacheKey,
+      payload,
+      dayDeterministicTtl(dateKey, now),
+    );
+    const { usedMockFallback: _omit, ...clientPayload } = payload;
+    void _omit;
+    sendWithCaching(req, res, clientPayload, SKY_CACHE_CONTROL);
+  } catch (error) {
+    logger.error("Get positions error", { error });
+    res.status(500).json({
+      error: "Failed to compute planetary positions",
+      code: "EPHEMERIS_UNAVAILABLE",
+    });
+  }
+});
+
+// === GET /api/astro/moon-phase?date=YYYY-MM-DD ===
+// Moon phase for a UTC calendar day (defaults to today): elongation angle, 8-phase
+// name, illuminated fraction, waxing/waning, plus Moon & Sun sign placements.
+// Derived from Sun/Moon ecliptic longitudes — no location, no auth, no LLM.
+interface MoonPhasePayload {
+  date: string;
+  angle: number;
+  phase: string;
+  illumination: number;
+  waxing: boolean;
+  moon: { sign: string; degree: number };
+  sun: { sign: string; degree: number };
+}
+
+const isValidMoonPhase = (p: MoonPhasePayload | null | undefined): boolean =>
+  !!p &&
+  typeof p.date === "string" &&
+  typeof p.phase === "string" &&
+  Number.isFinite(p.angle) &&
+  Number.isFinite(p.illumination) &&
+  typeof p.waxing === "boolean" &&
+  !!p.moon &&
+  !!p.sun;
+
+astroRouter.get("/moon-phase", async (req: Request, res: Response) => {
+  try {
+    const now = new Date();
+    const raw = req.query.date;
+    let dateKey: string;
+    if (raw === undefined) {
+      dateKey = todayKeyUtc(now);
+    } else if (typeof raw === "string" && isValidDateKey(raw)) {
+      dateKey = raw;
+    } else {
+      res.status(400).json({
+        error: "Invalid date; expected YYYY-MM-DD",
+        code: "INVALID_DATE",
+      });
+      return;
+    }
+
+    const cacheKey = `astro:moonphase:${dateKey}`;
+    const cached = await cacheService.get<MoonPhasePayload>(cacheKey);
+    if (cached && isValidMoonPhase(cached)) {
+      sendWithCaching(req, res, cached, SKY_CACHE_CONTROL);
+      return;
+    }
+
+    const instant = new Date(`${dateKey}T00:00:00Z`);
+    const { longitudes, usedMockFallback } =
+      await ephemerisService.getLongitudes(["Sun", "Moon"], instant);
+    const sunLon = longitudes["Sun"];
+    const moonLon = longitudes["Moon"];
+    // Only Sun & Moon were requested, so any mock fallback means a body we need
+    // was fictitious — refuse to serve it (same philosophy as /today).
+    if (
+      usedMockFallback === true ||
+      !Number.isFinite(sunLon) ||
+      !Number.isFinite(moonLon)
+    ) {
+      res.status(503).json({
+        error: "Sky data is currently degraded; try again shortly.",
+        code: "EPHEMERIS_DEGRADED",
+      });
+      return;
+    }
+
+    const phase = moonPhase(sunLon, moonLon);
+    const payload: MoonPhasePayload = {
+      date: dateKey,
+      angle: phase.angle,
+      phase: phase.phase,
+      illumination: phase.illumination,
+      waxing: phase.waxing,
+      moon: longitudeToSign(moonLon),
+      sun: longitudeToSign(sunLon),
+    };
+    await cacheService.set(
+      cacheKey,
+      payload,
+      dayDeterministicTtl(dateKey, now),
+    );
+    sendWithCaching(req, res, payload, SKY_CACHE_CONTROL);
+  } catch (error) {
+    logger.error("Get moon phase error", { error });
+    res.status(500).json({
+      error: "Failed to compute moon phase",
+      code: "EPHEMERIS_UNAVAILABLE",
+    });
+  }
+});
+
+// === GET /api/astro/ephemeris?start=YYYY-MM-DD&end=YYYY-MM-DD&step=N&bodies=Sun,Moon ===
+// A daily ephemeris table: each requested major planet's sign/degree/retrograde
+// across an inclusive date range (00:00 UTC anchors), stepped by `step` days.
+// Range is capped at MAX_EPHEMERIS_ROWS rows (truncation flagged, not silent).
+// No location, no auth, no LLM. Refuses mock-sourced data (503).
+const MAX_EPHEMERIS_ROWS = 40;
+const EPHEMERIS_CACHE_CONTROL =
+  "public, max-age=600, stale-while-revalidate=86400";
+
+interface EphemerisRow {
+  date: string;
+  positions: Array<{
+    name: string;
+    sign: string;
+    degree: number;
+    retrograde: boolean;
+  }>;
+}
+interface EphemerisPayload {
+  start: string;
+  end: string;
+  step: number;
+  bodies: string[];
+  rows: EphemerisRow[];
+  truncated: boolean;
+}
+
+astroRouter.get("/ephemeris", async (req: Request, res: Response) => {
+  try {
+    const startRaw = req.query.start;
+    const endRaw = req.query.end;
+    if (
+      typeof startRaw !== "string" ||
+      typeof endRaw !== "string" ||
+      !isValidDateKey(startRaw) ||
+      !isValidDateKey(endRaw)
+    ) {
+      res.status(400).json({
+        error: "start and end must be YYYY-MM-DD",
+        code: "INVALID_RANGE",
+      });
+      return;
+    }
+
+    const stepNum = Number(req.query.step);
+    const step =
+      Number.isFinite(stepNum) && stepNum >= 1 ? Math.floor(stepNum) : 1;
+
+    let bodies: string[];
+    const bodiesRaw = req.query.bodies;
+    if (bodiesRaw === undefined) {
+      bodies = [...PLANETS];
+    } else if (typeof bodiesRaw === "string") {
+      const requested = bodiesRaw
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+      const invalid = requested.filter((b) => !MAJOR_PLANETS.has(b));
+      if (requested.length === 0 || invalid.length > 0) {
+        res.status(400).json({
+          error: `bodies must be a comma-separated subset of: ${PLANETS.join(", ")}`,
+          code: "INVALID_BODIES",
+        });
+        return;
+      }
+      // Preserve canonical PLANETS order regardless of request order.
+      bodies = PLANETS.filter((p) => requested.includes(p));
+    } else {
+      res.status(400).json({
+        error: "bodies must be a comma-separated string",
+        code: "INVALID_BODIES",
+      });
+      return;
+    }
+
+    // Enumerate at most cap+1 keys: enough to detect "more than cap" for the
+    // truncated flag without allocating a multi-year date list for adversarial
+    // wide ranges (e.g. 1800..2100 step 1 ≈ 109k days).
+    const allKeys = enumerateDates(
+      startRaw,
+      endRaw,
+      step,
+      MAX_EPHEMERIS_ROWS + 1,
+    );
+    if (allKeys.length === 0) {
+      res.status(400).json({
+        error: "start must be on or before end",
+        code: "INVALID_RANGE",
+      });
+      return;
+    }
+    const truncated = allKeys.length > MAX_EPHEMERIS_ROWS;
+    const keys = allKeys.slice(0, MAX_EPHEMERIS_ROWS);
+    if (truncated) {
+      // Exact dropped count is not enumerated (bounded alloc); the client-facing
+      // `truncated` flag + UI message already signal the cap (no silent truncation).
+      logger.warn("ephemeris range truncated", {
+        cap: MAX_EPHEMERIS_ROWS,
+      });
+    }
+
+    const cacheKey = `astro:ephem:${startRaw}:${endRaw}:${step}:${bodies.join(",")}`;
+    const cached = await cacheService.get<EphemerisPayload>(cacheKey);
+    if (cached && Array.isArray(cached.rows)) {
+      sendWithCaching(req, res, cached, EPHEMERIS_CACHE_CONTROL);
+      return;
+    }
+
+    const rows: EphemerisRow[] = await Promise.all(
+      keys.map(async (key): Promise<EphemerisRow> => {
+        const instant = new Date(`${key}T00:00:00Z`);
+        const { longitudes, speeds, usedMockFallback } =
+          await ephemerisService.getLongitudes(bodies, instant);
+        // We requested only majors; any mock fallback means a needed body was
+        // fictitious. Refuse the whole table rather than serve mixed real/fake.
+        if (usedMockFallback === true) {
+          throw Object.assign(new Error("Ephemeris used mock fallback"), {
+            code: "EPHEMERIS_DEGRADED",
+          });
+        }
+        const positions = bodies.map((name) => {
+          const lon = longitudes[name];
+          const placement = longitudeToSign(lon);
+          return {
+            name,
+            sign: placement.sign,
+            degree: placement.degree,
+            retrograde: (speeds[name] ?? 0) < 0,
+          };
+        });
+        if (positions.some((p) => !Number.isFinite(p.degree))) {
+          throw Object.assign(
+            new Error("Ephemeris produced non-finite degree"),
+            {
+              code: "EPHEMERIS_DEGRADED",
+            },
+          );
+        }
+        return { date: key, positions };
+      }),
+    );
+
+    const payload: EphemerisPayload = {
+      start: startRaw,
+      end: endRaw,
+      step,
+      bodies,
+      rows,
+      truncated,
+    };
+    await cacheService.set(cacheKey, payload, 604_800);
+    sendWithCaching(req, res, payload, EPHEMERIS_CACHE_CONTROL);
+  } catch (error) {
+    const code = (error as { code?: string })?.code;
+    if (code === "EPHEMERIS_DEGRADED") {
+      logger.error("Ephemeris degraded payload rejected", { error });
+      res.status(503).json({
+        error: "Sky data is currently degraded; try again shortly.",
+        code: "EPHEMERIS_DEGRADED",
+      });
+      return;
+    }
+    logger.error("Get ephemeris error", { error });
+    res.status(500).json({
+      error: "Failed to compute ephemeris",
       code: "EPHEMERIS_UNAVAILABLE",
     });
   }

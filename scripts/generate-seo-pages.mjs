@@ -1496,6 +1496,54 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Do I need my birth time?', 'A date gives you most planetary signs. An exact birth time and city are needed for your ascendant, midheaven, and house placements.'],
       ],
     },
+    {
+      slug: 'current-planets',
+      title: 'Current Planets - Where the Planets Are Right Now',
+      description: 'See where the planets are right now by sign and degree. A free, live snapshot of the current sky on real Swiss Ephemeris astronomy, no sign-up.',
+      sections: [
+        ['What are the current planet positions?', 'The current planets are where the Sun, Moon, and planets sit in the zodiac at this moment. This free tool shows each planet by sign and degree, updated for the current day, so you can see the sky as astrologers read it right now.'],
+        ['How to read the current sky', 'Each row shows a planet, the sign it occupies, and the degree within that sign. Planets marked Rx are retrograde, meaning they appear to move backward from Earth. Sign positions are geocentric, so they are the same wherever you live.'],
+        ['Why the current planets matter', 'The slow outer planets set the broad mood while the faster Moon, Mercury, Venus, and Mars shift the day to day texture. These positions describe the present sky as a tendency to reflect on, not a fixed prediction of events.'],
+        ['Using the current planets tool', 'Pick any date to see the sky for that day, or leave it on today. This free tool uses Swiss Ephemeris astronomy. To see how the current sky meets your own chart, build your birth chart in the AstrologyWiki calculators.'],
+      ],
+      faqs: [
+        ['Where are the planets right now?', 'This tool shows the current position of each planet by zodiac sign and degree, computed for today on real Swiss Ephemeris astronomy.'],
+        ['What does Rx mean?', 'Rx marks a planet that is retrograde, appearing to move backward from Earth. It is an optical effect of orbital motion, not a planet actually reversing.'],
+        ['Do current planet positions depend on my location?', 'No. Planetary sign positions are geocentric, so they are the same everywhere. Only the ascendant and houses depend on your location and time.'],
+      ],
+    },
+    {
+      slug: 'moon-phase-calculator',
+      title: 'Moon Phase Calculator - Phase for Any Date',
+      description: 'Find the Moon phase for any date, from new and full to quarter, crescent, and gibbous, with illumination percent and the Moon sign. Free, accurate astronomy.',
+      sections: [
+        ['What is a moon phase?', 'A moon phase is the shape of the lit part of the Moon as seen from Earth, set by the angle between the Sun and Moon. The cycle runs from new Moon through waxing crescent, first quarter, waxing gibbous, full Moon, and back through the waning phases over about 29.5 days.'],
+        ['How the moon phase is calculated', 'This calculator measures the angular distance between the Sun and Moon for the date you choose, then maps it to one of the eight phases and an illumination percentage. The numbers come from Swiss Ephemeris astronomy, so they match what you see in the sky.'],
+        ['Moon phase and the Moon sign', 'Alongside the phase, the tool shows the zodiac sign and degree the Moon occupies that day. The phase describes the light; the sign describes the Moon position in the zodiac. Together they give a fuller picture of the lunar day.'],
+        ['Using the moon phase calculator', 'Pick any date to see its phase, illumination, and Moon sign, past, present, or future. The phase is a description of the sky, not a forecast. For your personal Moon, try the Moon sign calculator.'],
+      ],
+      faqs: [
+        ['What moon phase is it today?', 'Leave the date on today and the calculator shows the current phase, illumination percent, and the Moon sign on real astronomy.'],
+        ['What are the eight moon phases?', 'New Moon, waxing crescent, first quarter, waxing gibbous, full Moon, waning gibbous, last quarter, and waning crescent. The cycle repeats about every 29.5 days.'],
+        ['What does illumination percent mean?', 'It is the share of the visible Moon disc that is lit by the Sun, from zero at new Moon to fifty percent at the quarters and one hundred at full Moon.'],
+      ],
+    },
+    {
+      slug: 'ephemeris-calculator',
+      title: 'Ephemeris Calculator - Daily Planet Positions',
+      description: 'Generate a free ephemeris table of planet positions across any date range, with sign, degree, and retrograde for each day. Swiss Ephemeris accuracy, no sign-up.',
+      sections: [
+        ['What is an ephemeris?', 'An ephemeris is a table that lists where each planet sits in the zodiac on a series of dates. Astronomers and astrologers have used ephemerides for centuries to track when planets change sign, turn retrograde, or form aspects. This free tool builds one for any range you choose.'],
+        ['How to use the ephemeris calculator', 'Choose a start date, an end date, and an interval of daily, weekly, or monthly. The table then shows every major planet by sign and degree for each step, with a small R marking retrograde motion. Positions are computed for 00:00 UTC of each date.'],
+        ['Reading sign changes and retrogrades', 'Scanning down a column shows when a planet moves from one sign to the next or slows to a retrograde station. These shifts are the backbone of transit work. The table reports astronomy as fact and does not predict outcomes.'],
+        ['Ephemeris accuracy and limits', 'Positions use Swiss Ephemeris, the same engine professional software relies on. Very large ranges are capped to keep the table readable, so narrow the dates or widen the interval to cover a longer span. For your own chart, use the birth chart calculator.'],
+      ],
+      faqs: [
+        ['What is an ephemeris used for?', 'An ephemeris tracks planet positions over time, so you can see when planets change sign, turn retrograde, or form aspects, which is the basis of transit astrology.'],
+        ['Can I generate an ephemeris for any year?', 'Yes, within a broad range. Pick a start and end date; very long spans are capped for readability, so use a weekly or monthly interval to cover more time.'],
+        ['Are the positions accurate?', 'Yes. The table uses Swiss Ephemeris astronomy, the same high-precision engine used by professional astrology software.'],
+      ],
+    },
   ];
   for (const calc of CALCULATOR_SEO) {
     const calcUrl = `${siteUrl}/en/${calc.slug}`;

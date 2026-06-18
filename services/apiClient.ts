@@ -1645,6 +1645,86 @@ export async function fetchTodaySky(): Promise<TodaySkyResponse> {
   return res.json();
 }
 
+// Sky tools (calculator matrix D). Query params are astronomical (a date / range),
+// never PII, so GET with query string is fine — unlike birth-location lookups.
+export interface PositionsResponse {
+  date: string;
+  positions: TodayPosition[];
+}
+
+// 10 major planets at 00:00 UTC of `date` (defaults to today). Generalizes /today.
+export async function fetchPositions(
+  date?: string,
+): Promise<PositionsResponse> {
+  const qs = date ? `?date=${encodeURIComponent(date)}` : "";
+  const res = await fetchWithTimeout(
+    `${API_BASE}/astro/positions${qs}`,
+    {},
+    REQUEST_TIMEOUT_MS,
+  );
+  await assertOk(res, "Failed to fetch planetary positions");
+  return res.json();
+}
+
+export interface MoonPhaseResponse {
+  date: string;
+  angle: number;
+  phase: string;
+  illumination: number;
+  waxing: boolean;
+  moon: { sign: string; degree: number };
+  sun: { sign: string; degree: number };
+}
+
+// Moon phase for a UTC day (defaults to today): elongation, 8-phase name, illumination.
+export async function fetchMoonPhase(
+  date?: string,
+): Promise<MoonPhaseResponse> {
+  const qs = date ? `?date=${encodeURIComponent(date)}` : "";
+  const res = await fetchWithTimeout(
+    `${API_BASE}/astro/moon-phase${qs}`,
+    {},
+    REQUEST_TIMEOUT_MS,
+  );
+  await assertOk(res, "Failed to fetch moon phase");
+  return res.json();
+}
+
+export interface EphemerisRow {
+  date: string;
+  positions: TodayPosition[];
+}
+
+export interface EphemerisResponse {
+  start: string;
+  end: string;
+  step: number;
+  bodies: string[];
+  rows: EphemerisRow[];
+  truncated: boolean;
+}
+
+// Daily ephemeris table over [start, end] stepped by `step` days (backend caps rows).
+export async function fetchEphemeris(params: {
+  start: string;
+  end: string;
+  step?: number;
+  bodies?: string[];
+}): Promise<EphemerisResponse> {
+  const qs = new URLSearchParams({ start: params.start, end: params.end });
+  if (params.step) qs.set("step", String(params.step));
+  if (params.bodies && params.bodies.length > 0) {
+    qs.set("bodies", params.bodies.join(","));
+  }
+  const res = await fetchWithTimeout(
+    `${API_BASE}/astro/ephemeris?${qs.toString()}`,
+    {},
+    REQUEST_TIMEOUT_MS,
+  );
+  await assertOk(res, "Failed to fetch ephemeris");
+  return res.json();
+}
+
 // === Geo API ===
 // POST (not GET): the city query is user-typed birth location (PII). Keeping it
 // in the request body avoids leaking the value into Vercel access logs, browser

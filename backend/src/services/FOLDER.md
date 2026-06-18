@@ -16,6 +16,7 @@
 - ai.ts｜地位：AI 服务｜功能：DeepSeek 调用、缓存与 Markdown/JSON 解析。
 - ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。
 - transit/｜地位：子目录｜功能：transit timeline（月度/人生 K 线）纯函数评分与聚合引擎（intensity/rollup/weights），详见 transit/FOLDER.md。
+- astro/｜地位：子目录｜功能：天象 sky 工具纯算法（月相 / 黄经→星座 / 日期范围枚举），供 api/astro.ts 的 /positions、/moon-phase、/ephemeris 端点调用，详见 astro/FOLDER.md。
 - cbtMoodPoints.ts｜地位：CBT 情绪叠加层投影（纯，#23）｜功能：projectMoodPoints —— 把 CBT 记录按 viewer 本地日聚合成 `{date,intensity,moodCount}`，输入类型仅含 timestamp+强度数值（结构性数据最小化），绝不触碰任何自由文本（隐私红线 #1，设计 §10）。供 `GET /api/cbt/mood-points` 调用。
 - cbtMoodPoints.test.ts｜地位：投影单测｜功能：锁隐私不变量（仅出 date/intensity/moodCount）、final/initial 取舍、按日均值聚合、TTL 过滤、viewer tz 分日、排序。
 - ephemeris.test.ts｜地位：星历服务测试｜功能：验证本命缓存键的确定性、字段敏感性与敏感字段脱敏。

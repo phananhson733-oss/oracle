@@ -356,6 +356,16 @@ const EnergyTimelineDemoPage = lazy(
 const BirthDataCalculator = lazy(
   () => import("./components/calculators/BirthDataCalculator"),
 );
+// 计算器矩阵（D，天象工具类）：无出生数据的纯天文工具，复用 /api/astro/*。
+const CurrentPlanetsTool = lazy(
+  () => import("./components/calculators/CurrentPlanetsTool"),
+);
+const MoonPhaseTool = lazy(
+  () => import("./components/calculators/MoonPhaseTool"),
+);
+const EphemerisTool = lazy(
+  () => import("./components/calculators/EphemerisTool"),
+);
 
 const UsPage = lazy(() => import("./pages/SynastryPage"));
 
@@ -437,6 +447,9 @@ const AppContent: React.FC = () => {
     "/rising-sign-calculator",
     "/big-three-calculator",
     "/birth-chart-calculator",
+    "/current-planets",
+    "/moon-phase-calculator",
+    "/ephemeris-calculator",
   ].includes(pathWithoutLang);
   // /:lang/pricing 是公开可索引营销页：静态 stub（public/{lang}/pricing/index.html）输出
   // index,follow 且在 sitemap，运行时必须一致，否则 WRS 注入 noindex 会误伤 sitemap 里的定价页。
@@ -1096,6 +1109,31 @@ const AppContent: React.FC = () => {
                 </LangGuard>
               }
             />
+            {/* Calculator matrix (D, astronomy tools) — no birth data, reuse /api/astro/*. */}
+            <Route
+              path="/:lang/current-planets"
+              element={
+                <LangGuard>
+                  <CurrentPlanetsTool />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/moon-phase-calculator"
+              element={
+                <LangGuard>
+                  <MoonPhaseTool />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/ephemeris-calculator"
+              element={
+                <LangGuard>
+                  <EphemerisTool />
+                </LangGuard>
+              }
+            />
             <Route
               path="/:lang/pricing"
               element={
@@ -1114,6 +1152,9 @@ const AppContent: React.FC = () => {
             <Route path="/rising-sign-calculator" element={<LangRedirect />} />
             <Route path="/big-three-calculator" element={<LangRedirect />} />
             <Route path="/birth-chart-calculator" element={<LangRedirect />} />
+            <Route path="/current-planets" element={<LangRedirect />} />
+            <Route path="/moon-phase-calculator" element={<LangRedirect />} />
+            <Route path="/ephemeris-calculator" element={<LangRedirect />} />
             <Route path="/pricing" element={<LangRedirect />} />
             <Route path="/wiki/*" element={<LangRedirect />} />
             <Route path="/wiki" element={<LangRedirect />} />
