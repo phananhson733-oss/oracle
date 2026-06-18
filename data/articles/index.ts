@@ -28,6 +28,8 @@ import {
 
 // v8 aura batch (2026-05-22) — EN-only, sourced from gengrowth-flow-mvp _staging/
 import { auraColorsPillarEn } from "./aura-colors-pillar";
+// A2 linkable asset (2026-06-18) — EN-only, data computed via backend/_astro-calendar-2026.mjs
+import { astrologyCalendar2026En } from "./2026-astrology-calendar";
 import { blueAuraMeaningEn } from "./blue-aura-meaning";
 import { yellowAuraMeaningEn } from "./yellow-aura-meaning";
 import { purpleAuraMeaningEn } from "./purple-aura-meaning";
@@ -343,6 +345,7 @@ const ARTICLES_EN: WikiArticle[] = [
   bestAstrologyAppsEn,
   howToReadBirthChartEn,
   auraColorsPillarEn,
+  astrologyCalendar2026En,
   blueAuraMeaningEn,
   yellowAuraMeaningEn,
   purpleAuraMeaningEn,

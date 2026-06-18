@@ -175,3 +175,34 @@ describe("mdToHtml — 边界", () => {
     );
   });
 });
+
+describe("mdToHtml — GFM 表格", () => {
+  it("渲染表头 + 数据行，跳过分隔行", () => {
+    const md = "| A | B |\n| --- | --- |\n| 1 | 2 |\n| 3 | 4 |";
+    expect(mdToHtml(md)).toBe(
+      "<table><thead><tr><th>A</th><th>B</th></tr></thead>" +
+        "<tbody><tr><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td></tr></tbody></table>",
+    );
+  });
+
+  it("单元格处理行内链接与强调", () => {
+    const md =
+      "| Date | Link |\n| --- | --- |\n| **Feb 17** | [doc](/en/wiki/x) |";
+    expect(mdToHtml(md)).toBe(
+      "<table><thead><tr><th>Date</th><th>Link</th></tr></thead>" +
+        '<tbody><tr><td><strong>Feb 17</strong></td><td><a href="/en/wiki/x">doc</a></td></tr></tbody></table>',
+    );
+  });
+
+  it("缺分隔行 → 退化为段落，不丢内容", () => {
+    const md = "| just | pipes |\n| more | text |";
+    expect(mdToHtml(md)).toBe("<p>| just | pipes | | more | text |</p>");
+  });
+
+  it("表格与其它块共存", () => {
+    const md = "## T\n\n| A |\n| --- |\n| x |\n\ndone";
+    expect(mdToHtml(md)).toBe(
+      "<h2>T</h2><table><thead><tr><th>A</th></tr></thead><tbody><tr><td>x</td></tr></tbody></table><p>done</p>",
+    );
+  });
+});

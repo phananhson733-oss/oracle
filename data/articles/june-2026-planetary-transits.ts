@@ -110,7 +110,7 @@ Three placements, and most of the month's meaning resolves into specifics you ca
 
 Two June dates deserve a closer read on their own. The [Capricorn full moon that closes June](/en/wiki/full-moon-june-2026) caps a six-month arc that began at the start of the year, and as the [2026 World Cup opens under Jupiter in Cancer](/en/wiki/world-cup-2026-astrology-prediction), the same theme of belonging, home, and collective feeling runs quietly underneath the tournament's noise.
 
-None of this is a prediction, and none of it decides your month for you. It's a way of paying attention — a vocabulary for noticing shifts in pace and priority that you can check against your own experience and keep or discard. To build the one skill that makes every monthly forecast like this one legible, learn to read your own chart: start with [how to read a birth chart](/en/wiki/how-to-read-birth-chart) and you'll have the map you need for June and every month after.
+None of this is a prediction, and none of it decides your month for you. It's a way of paying attention — a vocabulary for noticing shifts in pace and priority that you can check against your own experience and keep or discard. To build the one skill that makes every monthly forecast like this one legible, learn to read your own chart: start with [how to read a birth chart](/en/wiki/how-to-read-birth-chart) and you'll have the map you need for June and every month after. For the whole year at a glance — every ingress, retrograde, eclipse, and moon phase — see the [2026 astrology calendar](/en/wiki/2026-astrology-calendar).
 
 ## Questions People Ask About June 2026 Planetary Transits
 
