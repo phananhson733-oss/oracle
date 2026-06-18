@@ -225,6 +225,8 @@ import { judeBellinghamBirthChartEn } from "./jude-bellingham-birth-chart";
 import { judeBellinghamBirthChartZh } from "./jude-bellingham-birth-chart";
 import { erlingHaalandBirthChartEn } from "./erling-haaland-birth-chart";
 import { erlingHaalandBirthChartZh } from "./erling-haaland-birth-chart";
+import { messiWorldCupRecordAstrologyEn } from "./messi-world-cup-record-astrology";
+import { messiWorldCupRecordAstrologyZh } from "./messi-world-cup-record-astrology";
 // All articles organized by language
 
 import {
@@ -460,6 +462,7 @@ const ARTICLES_EN: WikiArticle[] = [
   scotlandWorldCup2026AstrologySaturnReturnEn,
   judeBellinghamBirthChartEn,
   erlingHaalandBirthChartEn,
+  messiWorldCupRecordAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -561,6 +564,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   scotlandWorldCup2026AstrologySaturnReturnZh,
   judeBellinghamBirthChartZh,
   erlingHaalandBirthChartZh,
+  messiWorldCupRecordAstrologyZh,
 ];
 
 // Get all articles for a language

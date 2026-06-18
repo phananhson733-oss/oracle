@@ -1,0 +1,112 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "messi-world-cup-record-astrology": {
+      "hero": {
+        "prompt": "A vast Argentine pampas at deep twilight, an endless flat plain stretching to a far horizon. A long, slender silver Saturn-toned path of pale light recedes across the grassland, narrowing toward a distant warm Cancer amber-gold glow rising on the far edge of the world, as if a sixteen-year arc of patience is finally reaching its light. Deep indigo to near-black sky fading from #16112c to #0b0a1b, soft gold accents in #d4af6a, a teal-and-gold nebula wash drifting high above the plain. Painterly reverent editorial illustration, full-bleed wide 16:9 that fills the frame. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A silver path crosses a vast twilight pampas toward a distant amber-gold horizon glow, evoking Saturn's long arc reaching its light",
+        "altZh": "一条银色小径穿过暮色中辽阔的潘帕斯草原，伸向远方琥珀金色的地平线微光，象征土星漫长之弧终于抵达光亮"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Messi's World Cup Record Through Astrology",
+          "afterHeadingZh": "## 如何识别梅西的世界杯占星（实操观察）",
+          "titleEn": "How to Read the Record Through Astrology",
+          "titleZh": "如何用占星读这段战绩",
+          "altEn": "Five-step sequence for reading a long-delayed achievement: anchor facts, read the Cancer Sun, treat the 16-year arc as Saturn-paced, frame the 2022 win, hold the archetype open",
+          "altZh": "用占星读迟来成就的五步顺序：先锚定事实、象征性理解巨蟹太阳、把十六年长弧当作土星节奏、框定 2022 夺冠、让原型保持开放",
+          "items": [
+            {
+              "nameEn": "Anchor the facts",
+              "nameZh": "锚定事实",
+              "subEn": "Cancer Sun from a 24 June 1987 Rosario birth; five World Cups 2006-2022",
+              "subZh": "1987 年 6 月 24 日罗萨里奥出生的巨蟹太阳；2006-2022 五届世界杯"
+            },
+            {
+              "nameEn": "Read the Cancer Sun",
+              "nameZh": "读巨蟹太阳",
+              "subEn": "Symbolic devotion to nation and family, why the national shirt mattered most",
+              "subZh": "对家国与家庭的象征性深情，国家队球衣为何最重"
+            },
+            {
+              "nameEn": "Treat the arc as Saturn-paced",
+              "nameZh": "长弧当作土星节奏",
+              "subEn": "A 16-year apprenticeship, more than half of Saturn's ~29.4-year cycle",
+              "subZh": "十六年修行，超过土星约 29.4 年周期的半圈"
+            },
+            {
+              "nameEn": "Frame the 2022 win",
+              "nameZh": "框定 2022 夺冠",
+              "subEn": "A threshold reached well after his first Saturn return of ~2016-17",
+              "subZh": "在约 2016-17 年首次土星回归之后多年才抵达的门槛"
+            },
+            {
+              "nameEn": "Hold the archetype open",
+              "nameZh": "让原型保持开放",
+              "subEn": "A season of meaning, not a fixed outcome; leave the future open",
+              "subZh": "一个有意义的季节，而非固定结局；让未来保持开放"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Messi's World Cup Astrology vs a Single-Match Horoscope: How It Works and Trade-offs",
+          "afterHeadingZh": "## 梅西的世界杯占星与相近概念：单场运势的对比与取舍",
+          "titleEn": "Three Lenses Compared",
+          "titleZh": "三种视角对比",
+          "altEn": "Comparison of the career-arc reading, a single-match horoscope, and a literal natal transit calculation, showing what each claims and gives up",
+          "altZh": "生涯长弧读法、单场赛事运势与逐字逐度本命行运推算的对比，呈现各自断言什么、放弃什么",
+          "columns": [
+            {
+              "nameEn": "Career-arc reading",
+              "nameZh": "生涯长弧读法",
+              "linesEn": [
+                "Frames a 16-year wait, durable view",
+                "Cannot tell you which game turns",
+                "Describes a life's competitive passage"
+              ],
+              "linesZh": [
+                "框定十六年等待，视野耐久",
+                "无法告诉你哪场球翻盘",
+                "描述一生的竞技历程"
+              ]
+            },
+            {
+              "nameEn": "Single-match horoscope",
+              "nameZh": "单场赛事运势",
+              "linesEn": [
+                "Thrill of a fixture-by-fixture call",
+                "Close-up on a lineup or scoreline",
+                "Gives up the long, archetypal view"
+              ],
+              "linesZh": [
+                "逐场预判的刺激",
+                "贴近首发名单或比分的特写",
+                "放弃漫长而原型化的视野"
+              ]
+            },
+            {
+              "nameEn": "Literal natal transit",
+              "nameZh": "逐度本命行运",
+              "linesEn": [
+                "Promises degree-level precision",
+                "Needs a verified birth time Messi lacks",
+                "Risks inventing Moon, Ascendant, houses"
+              ],
+              "linesZh": [
+                "许诺度数级精度",
+                "需要梅西所缺的经核实出生时间",
+                "有编造月亮、上升、宫位的风险"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
