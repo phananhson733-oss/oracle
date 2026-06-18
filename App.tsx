@@ -380,6 +380,10 @@ const ElectionalTool = lazy(
 const RoddenRatingTool = lazy(
   () => import("./components/calculators/RoddenRatingTool"),
 );
+// 计算器矩阵（D，趣味/教育）：出生月日 → 太阳星座 → 同星座/同元素名人（纯客户端，仅公开出生日期，无 PII）。
+const CelebrityTwinsTool = lazy(
+  () => import("./components/calculators/CelebrityTwinsTool"),
+);
 // 计算器矩阵（D，合盘）：双表单 + 客户端交叉相位，复用 /api/natal/chart（不碰付费 /api/synastry）。
 const SynastryCalculator = lazy(
   () => import("./components/calculators/SynastryCalculator"),
@@ -478,6 +482,7 @@ const AppContent: React.FC = () => {
     "/ephemeris-calculator",
     "/electional-astrology",
     "/rodden-rating",
+    "/celebrity-twins",
     "/synastry-calculator",
     "/composite-calculator",
     "/solar-return-calculator",
@@ -807,6 +812,14 @@ const AppContent: React.FC = () => {
               element={
                 <EmbedWidgetShell slug="rodden-rating">
                   <RoddenRatingTool />
+                </EmbedWidgetShell>
+              }
+            />
+            <Route
+              path="/embed/celebrity-twins"
+              element={
+                <EmbedWidgetShell slug="celebrity-twins">
+                  <CelebrityTwinsTool />
                 </EmbedWidgetShell>
               }
             />
@@ -1280,6 +1293,14 @@ const AppContent: React.FC = () => {
               }
             />
             <Route
+              path="/:lang/celebrity-twins"
+              element={
+                <LangGuard>
+                  <CelebrityTwinsTool />
+                </LangGuard>
+              }
+            />
+            <Route
               path="/:lang/synastry-calculator"
               element={
                 <LangGuard>
@@ -1326,6 +1347,7 @@ const AppContent: React.FC = () => {
             <Route path="/ephemeris-calculator" element={<LangRedirect />} />
             <Route path="/electional-astrology" element={<LangRedirect />} />
             <Route path="/rodden-rating" element={<LangRedirect />} />
+            <Route path="/celebrity-twins" element={<LangRedirect />} />
             <Route path="/synastry-calculator" element={<LangRedirect />} />
             <Route path="/composite-calculator" element={<LangRedirect />} />
             <Route path="/solar-return-calculator" element={<LangRedirect />} />

@@ -1630,6 +1630,22 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Do I need my birth time for a solar return?', 'A birth time makes the return moment more precise. Without it the chart is computed from a midday estimate and is approximate.'],
       ],
     },
+    {
+      slug: 'celebrity-twins',
+      title: 'Celebrity Astro Twins - Which Famous People Share Your Sun Sign',
+      description: 'Find out which famous figures share your Sun sign. Enter your birth month and day to see your celebrity astro twins, grouped by zodiac sign and element. Free, no sign-up.',
+      sections: [
+        ['What are celebrity astro twins?', 'Celebrity astro twins are well known people who share your Sun sign, the zodiac sign the Sun was passing through on the day you were born. Because the Sun sign depends only on the date, you can find your matches from a birthday alone. This free tool lines you up with famous figures across the arts, science, sport and history who were born under the same sign.'],
+        ['How the celebrity twins matcher works', 'Choose your birth month and day. The tool reads the tropical Sun sign for that date and lists famous people who share it, drawn from a curated set of public birth dates. It also groups figures who share your element, so you can see the wider family of signs that carry a similar temperament. No birth time and no account are needed.'],
+        ['Sun signs, elements and modalities', 'Every Sun sign belongs to one of four elements, fire, earth, air or water, and to one of three modalities, cardinal, fixed or mutable. These groupings describe a broad style rather than fixed traits. Sharing a sign or an element with someone is a point of common flavour, not a rule about character or destiny.'],
+        ['A note on cusps and birth times', 'The date when the Sun moves from one sign to the next drifts by about a day from year to year. If your birthday sits right on a boundary, your Sun could be in the neighbouring sign, and only a full birth chart with your birth time can settle it. For most dates the Sun sign read from the date is reliable. To check, build your full chart with the birth chart calculator.'],
+      ],
+      faqs: [
+        ['Can I find my celebrity twins without a birth time?', 'Yes. Your Sun sign depends only on your birth date, so the month and day are enough to match you with famous people who share it. A birth time is only needed near a sign boundary or for the rest of the chart.'],
+        ['How are the celebrity birth dates chosen?', 'The figures are drawn from widely documented public birth dates, and each one is placed at a date that sits clearly within a single sign, so the match does not depend on a birth time.'],
+        ['Does sharing a Sun sign mean we are alike?', 'Not on its own. A shared Sun sign is one point in common out of a whole chart. It is a fun starting point, not a verdict on personality or compatibility.'],
+      ],
+    },
   ];
   for (const calc of CALCULATOR_SEO) {
     const calcUrl = `${siteUrl}/en/${calc.slug}`;

@@ -27,6 +27,9 @@
 - ElectionalTool.tsx｜地位：择吉天象时机计算器（#11）｜功能：起始日 + 天数 → 复用 `fetchEphemeris` 取范围星历 → 逐日 selfAspects 自相位 + 月相 + 月座 + 中性基调；严格中性叙事（天象参考非预测/保证）；路由 /:lang/electional-astrology。
 - rodden.ts｜地位：Rodden 出生时间可信度分级纯数据+函数｜功能：BIRTH_TIME_SOURCES（来源选项+双语标签）/ classifyRodden（来源 → Rodden 码 + 信心档 + angles/houses/moonExact 可信标志）；无 IO、无 PII。
 - RoddenRatingTool.tsx｜地位：Rodden 可信度计算器（#21，教育）｜功能：选择出生时间来源 → Rodden 码 + 信心档 + 上升天顶/宫位/月亮到度可信度 + 建议；纯客户端、无后端、无出生数据存储；路由 /:lang/rodden-rating。
+- sunSign.ts｜地位：太阳星座纯引擎（#19）｜功能：sunSignFromDate（tropical 日期段 + cusp 标注，仅需出生日期）/ signElement / signModality / ZODIAC；无 IO、无 PII。
+- celebrities.ts｜地位：名人数据集（#19）｜功能：CELEBRITIES（60 位公众人物，仅公开出生日期，全部取星座中段无歧义）+ celebritiesBySign + FIELD_LABELS；一致性由 tests/unit/sunSign.test.ts 守护。
+- CelebrityTwinsTool.tsx｜地位：名人星座配对计算器（#19，趣味/教育）｜功能：出生月/日 → 太阳星座 → 同星座名人 + 同元素名人；cusp 日引导到完整星盘；纯客户端、无后端、无 PII；中性叙事；路由 /:lang/celebrity-twins。
 - crossAspects.ts｜地位：合盘交叉相位纯引擎｜功能：absoluteLongitude / separation / classifyAspect（主相位 + 性质）/ crossAspects（两盘交叉相位表，按 orb 升序）/ selfAspects（单盘内两两相位，供天象「当日天空」用）/ summarizeAspects；conjunction 标 neutral 不武断好坏。
 - compositeChart.ts｜地位：合成盘中点纯引擎｜功能：midpointLongitude（圆上近中点/短弧）/ compositeChart（两盘逐行星中点→合成盘落座，仅两盘都有的请求行星，保持顺序）；复用 crossAspects.absoluteLongitude。
 - PersonBirthFields.tsx｜地位：关系类计算器共享「单人出生表单」｜功能：姓名(仅本地)/日期/可选时间/城市自动完成 → onChange 上抛 PersonState 快照；导出 PersonState/FieldsTheme/emptyPerson/personToBirth/MONTH_FALLBACK_EN；各实例独立持 useCityAutocomplete。Synastry/Composite 共用。
@@ -43,3 +46,4 @@
 - 2026-06-18 新建：#14 embed widget——新增 `embed.tsx`（EmbedWidgetShell + EmbedCodeBox + EmbedContext）。10 个计算器全部加 `/embed/<slug>` 路由（App.tsx isEmbedRoute 块，EmbedWidgetShell 包裹）+ 全页底部 `EmbedCodeBox`（复制 iframe 代码）。CalculatorConfig 加 `slug` 字段（4 sign config 已补）。embed 页 `noindex,nofollow` 不入 sitemap。TDD `tests/unit/embed-widget.test.tsx`。
 - 2026-06-18 新建：#11 Electional 择吉天象时机——新增 `electional.ts`（纯算法）+ `ElectionalTool.tsx`，复用 `fetchEphemeris` + crossAspects 新增 `selfAspects`。route /:lang/electional-astrology + /embed/electional-astrology + CALCULATOR_SEO + isPublicRoute。严格中性叙事（无吉日/幸运日，Flowing/Mixed/Dynamic 仅描述相位平衡）。TDD `tests/unit/electional.test.ts`（8 例）。
 - 2026-06-18 新建：#21 Rodden Rating——新增 `rodden.ts`（分级纯算法）+ `RoddenRatingTool.tsx`（教育工具，出生时间来源→数据可信度，无后端/无 PII）。route /:lang/rodden-rating + /embed/rodden-rating + CALCULATOR_SEO + isPublicRoute。TDD `tests/unit/rodden.test.ts`。
+- 2026-06-18 新建：#19 名人星座配对——新增 `sunSign.ts`（太阳星座日期段引擎，cusp 标注）+ `celebrities.ts`（60 位名人公开出生日期数据集，全取中段无歧义）+ `CelebrityTwinsTool.tsx`（出生月日→太阳星座→同星座/同元素名人，纯客户端无 PII）。route /:lang/celebrity-twins + /embed/celebrity-twins + CALCULATOR_SEO + isPublicRoute。TDD `tests/unit/sunSign.test.ts`（含数据集一致性守护：每位名人 stored sign 必须等于引擎计算且不在 cusp）。计算器矩阵 13→14 个公开计算器。
