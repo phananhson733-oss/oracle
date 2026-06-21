@@ -1,0 +1,116 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "toy-story-5-zodiac-signs": {
+      "hero": {
+        "prompt": "A whimsical painterly editorial illustration of a cozy child’s playroom at twilight — generic, original toy silhouettes (a small rocket, a toy horse, a sheriff hat, a glowing tablet) arranged on a wooden floor beneath a window where a starry night sky forms faint zodiac constellations. Warm lamp-gold light meeting deep indigo night (#16112c to #0b0a1b), playful and nostalgic. IMPORTANT: do NOT depict any real or recognizable copyrighted film characters (no Woody, no Buzz Lightyear) — only generic, original toys. ONE single continuous scene, no split screen / diptych, no diagram, no text/letters/numerals, no human faces, full-bleed wide 16:9.",
+        "altEn": "A cozy twilight playroom with generic original toys on a wooden floor beneath a window of faint zodiac constellations",
+        "altZh": "暮色中温馨的儿童游戏室，原创通用玩具置于木地板上，窗外是隐约的星座夜空"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Toy Story 5 Zodiac Signs vs Real Birth-Chart Astrology",
+          "afterHeadingZh": "## 玩具总动员5星座与相近概念（真实出生星盘占星）：运作方式与取舍",
+          "titleEn": "Three Ways to Read a Sign",
+          "titleZh": "解读星座的三种方式",
+          "altEn": "Comparison of fictional-character archetype reading against a real birth chart and a daily horoscope",
+          "altZh": "虚构角色原型解读与真实出生星盘、每日星座运势的三方对照",
+          "columns": [
+            {
+              "nameEn": "Character-archetype read",
+              "nameZh": "角色原型解读",
+              "linesEn": [
+                "Matches a toy to a sign by traits",
+                "Instant, shareable fun",
+                "No factual grounding, openly symbolic"
+              ],
+              "linesZh": [
+                "按特质把玩具对应到星座",
+                "即时、可分享的乐趣",
+                "无事实根基，公开象征"
+              ]
+            },
+            {
+              "nameEn": "Real birth chart",
+              "nameZh": "真实出生星盘",
+              "linesEn": [
+                "Needs verified date, time, place",
+                "Builds Sun, Moon, Ascendant",
+                "Precise and falsifiable"
+              ],
+              "linesZh": [
+                "需经核验的日期、时间、地点",
+                "推算太阳、月亮与上升",
+                "精确且可证伪"
+              ]
+            },
+            {
+              "nameEn": "Daily horoscope",
+              "nameZh": "每日星座运势",
+              "linesEn": [
+                "Speaks to a shared Sun sign",
+                "Reasons forward to advice",
+                "Opposite direction from this game"
+              ],
+              "linesZh": [
+                "面向共享太阳星座的人群",
+                "向前推理给出建议",
+                "推理方向与此游戏相反"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Toy Story 5 Zodiac Signs in the Characters",
+          "afterHeadingZh": "## 如何在角色身上读出玩具总动员5星座（实操观察）",
+          "titleEn": "Five Steps to a Playful Pick",
+          "titleZh": "趣味挑选的五个步骤",
+          "altEn": "Five ordered steps to match a Toy Story 5 character to a zodiac archetype",
+          "altZh": "把玩具总动员5角色匹配到星座原型的五个有序步骤",
+          "items": [
+            {
+              "nameEn": "Start from on-screen traits",
+              "nameZh": "从银幕特质出发",
+              "subEn": "Name the trait before the sign",
+              "subZh": "先说出特质，再说星座"
+            },
+            {
+              "nameEn": "Pick the fitting archetype",
+              "nameZh": "挑出契合的原型",
+              "subEn": "Loyalty reads earth; courage reads fire",
+              "subZh": "忠诚读作土象，勇气读作火象"
+            },
+            {
+              "nameEn": "Use the cast's setup",
+              "nameZh": "用角色的设定",
+              "subEn": "Match new toys, not guesswork",
+              "subZh": "对应新玩具，而非凭空猜测"
+            },
+            {
+              "nameEn": "Keep one sign, stay honest",
+              "nameZh": "至多一个星座，保持诚实",
+              "subEn": "Say it is a playful pick, not a chart",
+              "subZh": "坦白这是趣味挑选，而非星盘"
+            },
+            {
+              "nameEn": "Re-check against the writing",
+              "nameZh": "回到创作复核",
+              "subEn": "Behavior is the tiebreaker, not a birthday",
+              "subZh": "行为是决胜依据，而非生日"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

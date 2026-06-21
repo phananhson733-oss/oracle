@@ -249,6 +249,8 @@ import { matheusCunhaBirthChartEn } from "./matheus-cunha-birth-chart";
 import { matheusCunhaBirthChartZh } from "./matheus-cunha-birth-chart";
 import { chironInTaurus2026AstrologyEn } from "./chiron-in-taurus-2026-astrology";
 import { chironInTaurus2026AstrologyZh } from "./chiron-in-taurus-2026-astrology";
+import { toyStory5ZodiacSignsEn } from "./toy-story-5-zodiac-signs";
+import { toyStory5ZodiacSignsZh } from "./toy-story-5-zodiac-signs";
 // All articles organized by language
 
 import {
@@ -496,6 +498,7 @@ const ARTICLES_EN: WikiArticle[] = [
   spainWorldCup2026AstrologyEn,
   matheusCunhaBirthChartEn,
   chironInTaurus2026AstrologyEn,
+  toyStory5ZodiacSignsEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -608,6 +611,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   spainWorldCup2026AstrologyZh,
   matheusCunhaBirthChartZh,
   chironInTaurus2026AstrologyZh,
+  toyStory5ZodiacSignsZh,
 ];
 
 // Get all articles for a language
