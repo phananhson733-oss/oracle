@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const matheusCunhaBirthChartEn: WikiArticle = {
   slug: "matheus-cunha-birth-chart",
+  image: "/images/blog/matheus-cunha-birth-chart.jpg",
+  image_alt: "Dusk over a palm-lined northeastern Brazilian shore near Joao Pessoa, the sky washing from Gemini lilac-silver into deep indigo with faint twin stars overhead",
   title: "What the Matheus Cunha Birth Chart Says About a Gemini Sun Forward",
   description: "The Matheus Cunha birth chart centers on a Gemini Sun for Matheus Santos Carneiro da Cunha, born May 27, 1999, in João Pessoa, Brazil.",
   authorId: "aditi-sharma",
@@ -121,6 +123,8 @@ Generate your free birth chart to see your own Sun placement, ruling planet, and
 
 export const matheusCunhaBirthChartZh: WikiArticle = {
   slug: "matheus-cunha-birth-chart",
+  image: "/images/blog/matheus-cunha-birth-chart.jpg",
+  image_alt: "若昂佩索阿附近巴西东北部棕榈海岸的黄昏，天空由双子座淡紫银渐变为深靛蓝，高空浮现一对淡淡的双子星",
   title: "马特乌斯·库尼亚星盘：一个双子座太阳前锋的太阳星座解读",
   description: "马特乌斯·库尼亚星盘的核心，是马特乌斯·桑托斯·卡内罗·达·库尼亚（1999年5月27日生于巴西若昂佩索阿）的一个双子座太阳定位，它也是更宏观的pillar page on World Cup 2026 player and team birth charts里梳理的众多人物之一。",
   authorId: "aditi-sharma",
