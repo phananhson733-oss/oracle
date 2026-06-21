@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 493" role="img" aria-label="Chiron's Taurus Arc: 2026 to 2034">
+  <defs>
+    <linearGradient id="chironintaurus2026astrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="chironintaurus2026astrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="chironintaurus2026astrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chironintaurus2026astrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chironintaurus2026astrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chironintaurus2026astrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="490" rx="22" fill="url(#chironintaurus2026astrology1en-panel)"/>
+  <ellipse cx="198" cy="118" rx="380" ry="168" fill="url(#chironintaurus2026astrology1en-neb1)"/>
+  <ellipse cx="623" cy="394" rx="334" ry="158" fill="url(#chironintaurus2026astrology1en-neb2)"/>
+  <circle cx="179.0" cy="377.8" r="1.53" fill="#cfc8ea" opacity="0.25"/><circle cx="636.8" cy="57.2" r="0.93" fill="#cfc8ea" opacity="0.24"/><circle cx="49.1" cy="65.6" r="0.48" fill="#cfc8ea" opacity="0.28"/><circle cx="170.7" cy="157.0" r="1.32" fill="#cfc8ea" opacity="0.41"/><circle cx="14.8" cy="329.1" r="0.48" fill="#cfc8ea" opacity="0.24"/><circle cx="328.6" cy="126.0" r="1.17" fill="#cfc8ea" opacity="0.27"/><circle cx="62.2" cy="246.9" r="0.43" fill="#cfc8ea" opacity="0.48"/><circle cx="111.9" cy="136.5" r="0.96" fill="#cfc8ea" opacity="0.49"/><circle cx="668.3" cy="81.8" r="0.58" fill="#cfc8ea" opacity="0.30"/><circle cx="569.9" cy="260.5" r="1.23" fill="#cfc8ea" opacity="0.27"/><circle cx="712.4" cy="443.0" r="0.68" fill="#cfc8ea" opacity="0.14"/><circle cx="679.0" cy="97.9" r="1.33" fill="#cfc8ea" opacity="0.50"/><circle cx="365.7" cy="43.3" r="0.81" fill="#cfc8ea" opacity="0.30"/><circle cx="379.6" cy="474.4" r="1.22" fill="#cfc8ea" opacity="0.26"/><circle cx="339.0" cy="466.7" r="0.91" fill="#cfc8ea" opacity="0.42"/><circle cx="571.8" cy="320.1" r="0.61" fill="#cfc8ea" opacity="0.33"/><circle cx="179.9" cy="235.3" r="1.37" fill="#cfc8ea" opacity="0.49"/><circle cx="353.6" cy="417.5" r="0.94" fill="#cfc8ea" opacity="0.20"/><circle cx="705.7" cy="215.8" r="1.31" fill="#cfc8ea" opacity="0.37"/><circle cx="129.2" cy="348.9" r="0.84" fill="#cfc8ea" opacity="0.21"/><circle cx="711.2" cy="455.3" r="1.24" fill="#cfc8ea" opacity="0.17"/><circle cx="636.9" cy="445.4" r="1.01" fill="#cfc8ea" opacity="0.52"/><circle cx="323.1" cy="31.5" r="1.57" fill="#cfc8ea" opacity="0.31"/><circle cx="443.4" cy="27.3" r="0.76" fill="#cfc8ea" opacity="0.52"/><circle cx="23.2" cy="276.6" r="0.85" fill="#cfc8ea" opacity="0.34"/><circle cx="722.5" cy="231.0" r="0.56" fill="#cfc8ea" opacity="0.17"/><circle cx="115.9" cy="384.6" r="1.15" fill="#cfc8ea" opacity="0.15"/><circle cx="281.6" cy="416.7" r="1.05" fill="#cfc8ea" opacity="0.17"/><circle cx="341.2" cy="123.4" r="1.29" fill="#cfc8ea" opacity="0.29"/><circle cx="260.0" cy="348.1" r="1.31" fill="#cfc8ea" opacity="0.14"/><circle cx="702.6" cy="311.8" r="0.49" fill="#cfc8ea" opacity="0.34"/><circle cx="393.2" cy="14.1" r="0.57" fill="#cfc8ea" opacity="0.41"/><circle cx="296.5" cy="88.0" r="0.86" fill="#cfc8ea" opacity="0.26"/><circle cx="241.9" cy="181.0" r="0.75" fill="#cfc8ea" opacity="0.20"/><circle cx="176.1" cy="235.2" r="1.12" fill="#cfc8ea" opacity="0.25"/><circle cx="680.5" cy="78.3" r="1.68" fill="#cfc8ea" opacity="0.35"/><circle cx="465.7" cy="307.2" r="1.55" fill="#cfc8ea" opacity="0.54"/><circle cx="437.9" cy="168.4" r="0.49" fill="#cfc8ea" opacity="0.31"/><circle cx="722.0" cy="381.2" r="1.03" fill="#cfc8ea" opacity="0.28"/><circle cx="177.7" cy="166.2" r="1.47" fill="#cfc8ea" opacity="0.31"/><circle cx="89.3" cy="267.6" r="1.07" fill="#cfc8ea" opacity="0.34"/><circle cx="174.4" cy="94.1" r="1.51" fill="#cfc8ea" opacity="0.19"/><path d="M 215.9606684911996 194.8 L 216.4 197.2 L 218.8 197.6863683979027 L 216.4 198.1 L 215.9606684911996 200.6 L 215.5 198.1 L 213.1 197.6863683979027 L 215.5 197.2 Z" fill="#f6e6bf" opacity="0.5056941218674182"/><path d="M 450.42612857557833 258.2 L 451.0 261.0 L 453.7 261.5261101243086 L 451.0 262.1 L 450.42612857557833 264.8 L 449.9 262.1 L 447.1 261.5261101243086 L 449.9 261.0 Z" fill="#f6e6bf" opacity="0.5325535698793828"/><path d="M 20.183261724188924 472.5 L 20.8 475.6 L 23.8 476.1761085256003 L 20.8 476.8 L 20.183261724188924 479.8 L 19.6 476.8 L 16.6 476.1761085256003 L 19.6 475.6 Z" fill="#f6e6bf" opacity="0.5909030323848128"/><path d="M 115.00975310243666 310.8 L 115.5 313.2 L 117.9 313.65693364152685 L 115.5 314.1 L 115.00975310243666 316.5 L 114.6 314.1 L 112.2 313.65693364152685 L 114.6 313.2 Z" fill="#f6e6bf" opacity="0.5641727757640183"/><path d="M 405.2348931003362 332.3 L 405.6 334.4 L 407.7 334.83423684118316 L 405.6 335.2 L 405.2348931003362 337.3 L 404.8 335.2 L 402.7 334.83423684118316 L 404.8 334.4 Z" fill="#f6e6bf" opacity="0.6804215911775827"/><path d="M 14.8 329.1 L 571.8 320.1 L 711.2 455.3 L 176.1 235.2 L 722.0 381.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="490" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="479" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 473.8 L 16.5 476.5 L 19.2 477 L 16.5 477.5 L 16 480.2 L 15.5 477.5 L 12.8 477 L 15.5 476.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 473.8 L 744.5 476.5 L 747.2 477 L 744.5 477.5 L 744 480.2 L 743.5 477.5 L 740.8 477 L 743.5 476.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Chiron's Taurus Arc: 2026 to 2034</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#chironintaurus2026astrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#chironintaurus2026astrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="393" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#chironintaurus2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#chironintaurus2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">June 19, 2026</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">First Ingress into Taurus</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">A brief first passage begins — a preview of the worth-and-body theme, not the full</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">chapter</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#chironintaurus2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#chironintaurus2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Sept 17, 2026</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Retrograde Back into Aries</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Through April 14, 2027 — a deliberate revisiting of the prior identity question,</text>
+  <text x="132" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">not a setback</text>
+  <circle cx="92" cy="311" r="13.0" fill="url(#chironintaurus2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="311" r="8" fill="url(#chironintaurus2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="308.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 307.0 L 92.6 310.4 L 96.0 311 L 92.6 311.6 L 92 315.0 L 91.4 311.6 L 88.0 311 L 91.4 310.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="316.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">April 2027</text>
+  <text x="132" y="339.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Re-enters Taurus for the Long Stay</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">The long Taurus chapter begins in earnest after the retrograde resolves</text>
+  <circle cx="92" cy="393" r="13.0" fill="url(#chironintaurus2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="393" r="8" fill="url(#chironintaurus2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="390.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 389.0 L 92.6 392.4 L 96.0 393 L 92.6 393.6 L 92 397.0 L 91.4 393.6 L 88.0 393 L 91.4 392.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="398.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">~May 2034</text>
+  <text x="132" y="421.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Long Passage Ends</text>
+  <text x="132" y="444.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">About seven to eight years in Taurus — its first time there since the late 1970s</text>
+  <path d="M 202.22749999999988 464.4 L 202.6 466.6 L 204.8 467 L 202.6 467.4 L 202.22749999999988 469.6 L 201.8 467.4 L 199.6 467 L 201.8 466.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="471" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 464.4 L 558.2 466.6 L 560.4 467 L 558.2 467.4 L 557.7725000000002 469.6 L 557.4 467.4 L 555.2 467 L 557.4 466.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,118 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "chiron-in-taurus-2026-astrology": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of a verdant Taurus earth scene at dawn — a lush green valley with fertile soil and a lone budding tree, a soft silver crescent and a single bright wound-of-light star low on a green-gold horizon, dew and grounded stillness. Earthy emerald-and-bronze palette over deep indigo (#16112c to #0b0a1b) with soft gold accents. Healing, embodied, quietly hopeful mood (the wounded-healer learning steadiness). ONE single continuous landscape, no split screen / diptych, no diagram, no chart wheel, no text/letters/numerals, no human faces, full-bleed wide 16:9.",
+        "altEn": "Verdant Taurus valley at dawn with a lone budding tree, silver crescent and a single bright wound-of-light star low on a green-gold horizon",
+        "altZh": "黎明时分葱郁的金牛座山谷，一棵孤独的初芽之树，银色月牙与一颗明亮的伤痕之光低悬于绿金色地平线"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Chiron in Taurus 2026 vs Chiron in Aries: Where the Themes Differ",
+          "afterHeadingZh": "## 凯龙星入金牛座2026 与相近概念凯龙星在牡羊座：运作方式与取舍",
+          "titleEn": "Taurus vs Aries: What Chiron Asks",
+          "titleZh": "金牛座对牡羊座：凯龙星的提问",
+          "altEn": "Comparison of Chiron in Taurus, Chiron in Aries, and the retrograde return between them",
+          "altZh": "凯龙星在金牛座、凯龙星在牡羊座，以及两者之间逆行回返的三方对照",
+          "columns": [
+            {
+              "nameEn": "Chiron in Taurus",
+              "nameZh": "凯龙星在金牛座",
+              "linesEn": [
+                "Works on worth, body, security",
+                "Slow, embodied, more grounded",
+                "Trades urgency for rootedness"
+              ],
+              "linesZh": [
+                "处理价值、身体与安全感",
+                "缓慢、扎根于身体、更接地",
+                "以紧迫换取扎根感"
+              ]
+            },
+            {
+              "nameEn": "Chiron in Aries",
+              "nameZh": "凯龙星在牡羊座",
+              "linesEn": [
+                "Works on identity and self-assertion",
+                "Confrontational, surfaces in initiative",
+                "Trades steadiness for self-clarity"
+              ],
+              "linesZh": [
+                "处理身份认同与自我主张",
+                "对峙式，浮现于主动出击",
+                "以稳定换取自我清晰"
+              ]
+            },
+            {
+              "nameEn": "Retrograde return",
+              "nameZh": "逆行回返",
+              "linesEn": [
+                "Sept 2026 to April 2027 back in Aries",
+                "Revisits the identity question",
+                "Both registers felt in sequence"
+              ],
+              "linesZh": [
+                "2026年9月至2027年4月退回牡羊座",
+                "重访身份认同的提问",
+                "两种音域按次序先后体会"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read Chiron in Taurus 2026 in Your Timing",
+          "afterHeadingZh": "## 如何在自己星盘里识别凯龙星入金牛座2026（实操观察）",
+          "titleEn": "Chiron's Taurus Arc: 2026 to 2034",
+          "titleZh": "凯龙星的金牛座弧线：2026 至 2034",
+          "altEn": "Timeline of Chiron's Taurus arc: ingress June 2026, retrograde to Aries September 2026, re-enter Taurus April 2027, long stay through about May 2034",
+          "altZh": "凯龙星金牛座弧线时间线：2026年6月入座、2026年9月逆行退回牡羊座、2027年4月重新进入金牛座、长期停留至约2034年5月",
+          "items": [
+            {
+              "labelEn": "June 19, 2026",
+              "labelZh": "2026年6月19日",
+              "titleEn": "First Ingress into Taurus",
+              "titleZh": "首次进入金牛座",
+              "noteEn": "A brief first passage begins — a preview of the worth-and-body theme, not the full chapter",
+              "noteZh": "短暂的首次经过开始——价值与身体主题的预演，而非完整篇章"
+            },
+            {
+              "labelEn": "Sept 17, 2026",
+              "labelZh": "2026年9月17日",
+              "titleEn": "Retrograde Back into Aries",
+              "titleZh": "逆行退回牡羊座",
+              "noteEn": "Through April 14, 2027 — a deliberate revisiting of the prior identity question, not a setback",
+              "noteZh": "持续至2027年4月14日——对此前身份认同问题的有意重访，而非倒退"
+            },
+            {
+              "labelEn": "April 2027",
+              "labelZh": "2027年4月",
+              "titleEn": "Re-enters Taurus for the Long Stay",
+              "titleZh": "重新进入金牛座长期停留",
+              "noteEn": "The long Taurus chapter begins in earnest after the retrograde resolves",
+              "noteZh": "逆行结束后，金牛座的长篇章才真正展开"
+            },
+            {
+              "labelEn": "~May 2034",
+              "labelZh": "约2034年5月",
+              "titleEn": "Long Passage Ends",
+              "titleZh": "长期经过结束",
+              "noteEn": "About seven to eight years in Taurus — its first time there since the late 1970s",
+              "noteZh": "在金牛座约停留七到八年——自1970年代末以来的首次"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
