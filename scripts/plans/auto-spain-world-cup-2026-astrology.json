@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "spain-world-cup-2026-astrology": {
+      "hero": {
+        "prompt": "A vast nocturnal panoramic landscape where massive ancient stone ramparts rise on the left horizon under a cold earthen glow, while a luminous Cancer moon floods the right sky with cascading silver-gold tidal light, both celestial forces arching toward each other across one unbroken dark firmament above a still mirrored lake that reflects their opposition in rippling gold and teal, conveying the tension between disciplined institutional structure and expansive emotional flow pressing toward a moment of crisis and release, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Indigo night landscape where ancient stone ramparts and a luminous moon face each other across a still tidal lake",
+        "altZh": "深靛蓝夜空下，古石城墙与明亮月光遥遥相对，倒映在平静湖面之上"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Crisis Before Breakthrough vs. Inherited Dominance: What Spain's 2026 Chart Shows",
+          "titleEn": "Two Readings of Spain's Jupiter-Cancer Square",
+          "titleZh": "西班牙木星-巨蟹刑位的两种解读",
+          "altEn": "Compare chart: inherited dominance reading vs crisis-before-breakthrough reality for Spain 2026",
+          "altZh": "比较图：西班牙2026年图表中「继承主导」与「危机前突破」两种解读",
+          "columns": [
+            {
+              "nameEn": "Inherited Dominance Reading",
+              "nameZh": "继承主导解读",
+              "linesEn": [
+                "Jupiter in Cancer is broadly favorable",
+                "Cancer brings emotional cohesion and fluid creativity",
+                "Spain should thrive on past championship success",
+                "The Cape Verde draw signals a fundamentally broken chart"
+              ],
+              "linesZh": [
+                "木星位于巨蟹座，整体利好",
+                "巨蟹座带来情感凝聚力与流动创造力",
+                "西班牙应凭历届冠军积淀蓬勃发挥",
+                "与佛得角0-0暗示图表从根本上崩溃"
+              ]
+            },
+            {
+              "nameEn": "Crisis-Before-Breakthrough Reality",
+              "nameZh": "危机前突破的现实",
+              "linesEn": [
+                "Jupiter in Cancer squares Spain's Capricorn natal axis",
+                "Expansion routes through friction, not smooth flow",
+                "Releasing Capricorn control activates Cancer's earned breakthrough",
+                "Group-stage stall is the pattern in its correct early phase"
+              ],
+              "linesZh": [
+                "木星在巨蟹座刑西班牙摩羯座本命轴",
+                "扩张通过摩擦而非顺畅流动实现",
+                "放开摩羯座的控制欲才能激活巨蟹座的突破",
+                "小组赛停滞是模式在正确早期阶段的体现"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Spain's Chart Pressure in the June 22 Match",
+          "titleEn": "Five Chart Indicators to Watch on June 22",
+          "titleZh": "6月22日比赛中需关注的五大图表信号",
+          "altEn": "Sequence: five astrological chart indicators for Spain vs Saudi Arabia June 22 must-win match",
+          "altZh": "序列图：西班牙对阵沙特阿拉伯6月22日生死战的五大占星图表信号",
+          "items": [
+            {
+              "nameEn": "Urgency Activates",
+              "nameZh": "紧迫感激活",
+              "subEn": "Whether existential necessity releases Capricorn's peak expression rather than contracting it",
+              "subZh": "生死攸关的压力能否激发摩羯座的最高表达，而非令其收缩"
+            },
+            {
+              "nameEn": "Possession Is Earned",
+              "nameZh": "控球权靠赢得",
+              "subEn": "Whether each passing sequence carries genuine intentionality rather than inherited assumption",
+              "subZh": "每一次传球组合是否带有真实意图，而非依赖惯性假设"
+            },
+            {
+              "nameEn": "Finishing Urgency Arrives",
+              "nameZh": "把握机会的紧迫感出现",
+              "subEn": "Whether possession control and finishing urgency appear together as the Cancer-Capricorn square integrates",
+              "subZh": "控球与把握机会的紧迫感是否同时出现，标志巨蟹-摩羯刑位整合"
+            },
+            {
+              "nameEn": "Unscripted Risk Accepted",
+              "nameZh": "接受即兴冒险",
+              "subEn": "Whether La Roja takes Cancer's responsive through-balls rather than managed possession passes",
+              "subZh": "红衣军团是否敢于发出巨蟹座式即兴直塞球，而非依赖管控式传球"
+            },
+            {
+              "nameEn": "Second Half Authenticity",
+              "nameZh": "下半场展现真实能量",
+              "subEn": "Whether the chart's authentic Capricorn energy emerges when necessity can no longer be held at arm's length",
+              "subZh": "当压力无法再被拒于门外时，摩羯座主导图表的真实能量是否在下半场显现"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
