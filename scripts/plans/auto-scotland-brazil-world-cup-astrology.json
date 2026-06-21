@@ -1,0 +1,118 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "scotland-brazil-world-cup-astrology": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of a single twilight sky over a vast open stadium bowl — the heavens blend in one continuous gradient from cool Scottish thistle-blue and misty highland silver into warm Brazilian amber-gold and emerald, late-Cancer-to-Leo light, bright stars scattered above. Deep indigo-to-near-black palette (#16112c to #0b0a1b). Anticipatory, high-stakes, unifying mood. ONE single continuous scene, absolutely NO split screen / diptych / two-panel / versus layout, no diagram, no flags, no text/letters/numerals, no human faces, full-bleed wide 16:9.",
+        "altEn": "Twilight sky over a vast stadium bowl, heavens blending from Scottish thistle-blue to Brazilian amber-gold, bright stars scattered above",
+        "altZh": "辽阔球场上空的暮色天幕，从苏格兰蓟蓝渐变到巴西琥珀金，繁星散布其上"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Scotland Brazil Astrology vs a Straight Match Prediction",
+          "afterHeadingZh": "## 苏格兰巴西占星与相近概念：与一则直白赛果预测的运作方式 + 取舍",
+          "titleEn": "Two Ways to Read June 24",
+          "titleZh": "解读6月24日的两种方式",
+          "altEn": "Comparison of the symbolic fixture reading against a straight match prediction for the June 24 Group C decider",
+          "altZh": "象征性赛事解读与直白赛果预测就6月24日C组生死战的对照",
+          "columns": [
+            {
+              "nameEn": "Symbolic fixture reading",
+              "nameZh": "象征性赛事解读",
+              "linesEn": [
+                "Anchors to verified June 24 facts",
+                "Names themes, not the winner",
+                "Leaves the outcome openly undecided"
+              ],
+              "linesZh": [
+                "锚定经核验的6月24日事实",
+                "标定主题，而非赢家",
+                "让结局公开地保持未定"
+              ]
+            },
+            {
+              "nameEn": "Straight match prediction",
+              "nameZh": "直白赛果预测",
+              "linesEn": [
+                "Names a likely winner or scoreline",
+                "Lives or dies on the result",
+                "Offers false comfort of a forecast"
+              ],
+              "linesZh": [
+                "点名大概率赢家或比分",
+                "成败全系于赛果",
+                "提供预报式的虚假安慰"
+              ]
+            },
+            {
+              "nameEn": "Full player chart reading",
+              "nameZh": "完整球员星盘解读",
+              "linesEn": [
+                "Needs a recorded birth time, not public",
+                "Would weigh Moon and Ascendant",
+                "Invents data this method refuses"
+              ],
+              "linesZh": [
+                "需要记录在案的出生时间，并不公开",
+                "会权衡月亮与上升",
+                "捏造本方法拒绝使用的数据"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read Scotland Brazil World Cup Astrology in the June 24 Window",
+          "afterHeadingZh": "## 如何在6月24日窗口里读出苏格兰巴西世界杯占星的主题",
+          "titleEn": "Scotland's Group C Window",
+          "titleZh": "苏格兰的C组窗口",
+          "altEn": "Timeline of Scotland's Group C campaign: June 14 Haiti win, June 19 Morocco loss and Chiron ingress, June 24 Brazil decider, June 30 Jupiter enters Leo",
+          "altZh": "苏格兰C组征程时间线：6月14日胜海地、6月19日负摩洛哥与凯龙入金牛、6月24日巴西生死战、6月30日木星入狮子",
+          "items": [
+            {
+              "labelEn": "14 June",
+              "labelZh": "6月14日",
+              "titleEn": "Scotland 1–0 Haiti at Foxborough",
+              "titleZh": "苏格兰在福克斯堡1比0胜海地",
+              "noteEn": "Opening win keeps the Round of 32 within reach",
+              "noteZh": "首胜让32强席位仍在可及范围内"
+            },
+            {
+              "labelEn": "19 June",
+              "labelZh": "6月19日",
+              "titleEn": "Scotland 0–1 Morocco; Chiron Enters Taurus",
+              "titleZh": "苏格兰0比1负摩洛哥；凯龙入金牛座",
+              "noteEn": "Loss and the slow self-worth theme arrive the same week",
+              "noteZh": "失利与自我价值的缓慢主题在同一周到来"
+            },
+            {
+              "labelEn": "24 June",
+              "labelZh": "6月24日",
+              "titleEn": "Brazil Decider at Hard Rock Stadium, Miami",
+              "titleZh": "巴西生死战：迈阿密硬石球场",
+              "noteEn": "Scotland must win to guarantee a Round of 32 place",
+              "noteZh": "苏格兰须取胜才能稳获32强席位"
+            },
+            {
+              "labelEn": "~30 June",
+              "labelZh": "约6月30日",
+              "titleEn": "Jupiter Enters Leo",
+              "titleZh": "木星进入狮子座",
+              "noteEn": "Late-Cancer belonging theme shifts toward Leo's spotlight",
+              "noteZh": "巨蟹座末度的归属主题转向狮子座的聚光灯"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
