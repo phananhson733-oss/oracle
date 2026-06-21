@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const chironInTaurus2026AstrologyEn: WikiArticle = {
   slug: "chiron-in-taurus-2026-astrology",
+  image: "/images/blog/chiron-in-taurus-2026-astrology.jpg",
+  image_alt: "Verdant Taurus valley at dawn with a lone budding tree, silver crescent and a single bright wound-of-light star low on a green-gold horizon",
   title: "What Chiron in Taurus 2026 Asks of Your Sense of Worth",
   description: "Chiron in Taurus 2026 is the transit that begins when the comet-like body Chiron first enters the sign Taurus on June 19, 2026",
   authorId: "julian-thorne",
@@ -118,6 +120,8 @@ It is the first Taurus passage since the late 1970s and early 1980s. Chiron's ec
 
 export const chironInTaurus2026AstrologyZh: WikiArticle = {
   slug: "chiron-in-taurus-2026-astrology",
+  image: "/images/blog/chiron-in-taurus-2026-astrology.jpg",
+  image_alt: "黎明时分葱郁的金牛座山谷，一棵孤独的初芽之树，银色月牙与一颗明亮的伤痕之光低悬于绿金色地平线",
   title: "凯龙星入金牛座2026，对你的\"价值感\"提出了什么问题",
   description: "凯龙星入金牛座2026占星，是当彗星状天体凯龙星于2026年6月19日首次进入金牛座时开启的一段行运，围绕自我价值、身体与物质安全感展开、长达数年的象征性篇章。理解凯龙星入金牛座2026占星，要先从历法本身读起，因为这次入座并不是干净利落的一刀切，而是层层叠叠的，读懂它意味着把整段次序一并纳入视野，而不是死盯某一个日期",
   authorId: "julian-thorne",
