@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="Reading a Gemini Sun Chart, Step by Step">
+  <defs>
+    <linearGradient id="matheuscunhabirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="matheuscunhabirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="matheuscunhabirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="matheuscunhabirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="matheuscunhabirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="matheuscunhabirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#matheuscunhabirthchart1en-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#matheuscunhabirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#matheuscunhabirthchart1en-neb2)"/>
+  <circle cx="260.8" cy="364.4" r="0.88" fill="#cfc8ea" opacity="0.24"/><circle cx="238.5" cy="297.4" r="0.64" fill="#cfc8ea" opacity="0.33"/><circle cx="357.7" cy="202.6" r="1.07" fill="#cfc8ea" opacity="0.13"/><circle cx="712.0" cy="172.5" r="1.15" fill="#cfc8ea" opacity="0.38"/><circle cx="250.4" cy="87.7" r="0.72" fill="#cfc8ea" opacity="0.17"/><circle cx="657.3" cy="248.4" r="1.02" fill="#cfc8ea" opacity="0.42"/><circle cx="30.6" cy="290.6" r="0.73" fill="#cfc8ea" opacity="0.51"/><circle cx="192.5" cy="426.7" r="0.84" fill="#cfc8ea" opacity="0.26"/><circle cx="451.3" cy="180.7" r="1.16" fill="#cfc8ea" opacity="0.27"/><circle cx="662.6" cy="47.7" r="1.40" fill="#cfc8ea" opacity="0.39"/><circle cx="638.9" cy="187.8" r="1.03" fill="#cfc8ea" opacity="0.53"/><circle cx="512.4" cy="35.2" r="0.67" fill="#cfc8ea" opacity="0.31"/><circle cx="506.0" cy="177.9" r="1.42" fill="#cfc8ea" opacity="0.13"/><circle cx="252.8" cy="157.6" r="1.48" fill="#cfc8ea" opacity="0.13"/><circle cx="301.8" cy="107.3" r="1.45" fill="#cfc8ea" opacity="0.26"/><circle cx="439.7" cy="90.5" r="1.50" fill="#cfc8ea" opacity="0.35"/><circle cx="363.6" cy="419.0" r="1.14" fill="#cfc8ea" opacity="0.42"/><circle cx="640.9" cy="104.4" r="1.25" fill="#cfc8ea" opacity="0.38"/><circle cx="467.1" cy="432.4" r="1.65" fill="#cfc8ea" opacity="0.47"/><circle cx="475.2" cy="40.6" r="1.03" fill="#cfc8ea" opacity="0.42"/><circle cx="342.3" cy="28.0" r="1.49" fill="#cfc8ea" opacity="0.50"/><circle cx="598.7" cy="220.0" r="1.17" fill="#cfc8ea" opacity="0.52"/><circle cx="469.2" cy="331.5" r="0.46" fill="#cfc8ea" opacity="0.15"/><circle cx="198.1" cy="41.8" r="1.35" fill="#cfc8ea" opacity="0.30"/><circle cx="580.5" cy="236.6" r="1.66" fill="#cfc8ea" opacity="0.16"/><circle cx="683.9" cy="332.0" r="1.39" fill="#cfc8ea" opacity="0.42"/><circle cx="334.7" cy="247.7" r="1.50" fill="#cfc8ea" opacity="0.15"/><circle cx="281.7" cy="356.8" r="1.05" fill="#cfc8ea" opacity="0.37"/><circle cx="531.1" cy="246.3" r="0.78" fill="#cfc8ea" opacity="0.14"/><circle cx="505.1" cy="358.3" r="1.35" fill="#cfc8ea" opacity="0.20"/><circle cx="73.8" cy="349.5" r="1.67" fill="#cfc8ea" opacity="0.30"/><circle cx="680.3" cy="278.1" r="1.60" fill="#cfc8ea" opacity="0.34"/><circle cx="76.2" cy="289.6" r="0.82" fill="#cfc8ea" opacity="0.35"/><circle cx="122.4" cy="284.2" r="1.26" fill="#cfc8ea" opacity="0.15"/><circle cx="67.5" cy="186.2" r="1.33" fill="#cfc8ea" opacity="0.26"/><circle cx="656.5" cy="424.4" r="1.48" fill="#cfc8ea" opacity="0.30"/><circle cx="339.7" cy="136.8" r="1.52" fill="#cfc8ea" opacity="0.37"/><circle cx="671.0" cy="56.7" r="0.90" fill="#cfc8ea" opacity="0.13"/><path d="M 718.2968308515847 260.5 L 718.8 263.3 L 721.7 263.8739141386468 L 718.8 264.4 L 718.2968308515847 267.2 L 717.8 264.4 L 714.9 263.8739141386468 L 717.8 263.3 Z" fill="#f6e6bf" opacity="0.6117628506617621"/><path d="M 88.35873819515109 352.8 L 88.8 355.2 L 91.3 355.70616387040354 L 88.8 356.2 L 88.35873819515109 358.7 L 87.9 356.2 L 85.4 355.70616387040354 L 87.9 355.2 Z" fill="#f6e6bf" opacity="0.5027605520794168"/><path d="M 692.4827963747084 209.5 L 693.0 212.0 L 695.4 212.472006771015 L 693.0 212.9 L 692.4827963747084 215.4 L 692.0 212.9 L 689.6 212.472006771015 L 692.0 212.0 Z" fill="#f6e6bf" opacity="0.7357587901176885"/><path d="M 188.1502504311502 289.5 L 188.7 292.6 L 191.8 293.2160941103939 L 188.7 293.8 L 188.1502504311502 296.9 L 187.6 293.8 L 184.5 293.2160941103939 L 187.6 292.6 Z" fill="#f6e6bf" opacity="0.5848926536971704"/><path d="M 52.92336957529187 67.5 L 53.5 70.5 L 56.5 71.05098258447833 L 53.5 71.6 L 52.92336957529187 74.6 L 52.3 71.6 L 49.3 71.05098258447833 L 52.3 70.5 Z" fill="#f6e6bf" opacity="0.6320559445070103"/><path d="M 357.7 202.6 L 250.4 87.7 L 657.3 248.4 L 192.5 426.7 L 662.6 47.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Reading a Gemini Sun Chart, Step by Step</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#matheuscunhabirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#matheuscunhabirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="355" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#matheuscunhabirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#matheuscunhabirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Mercury as the Sun-sign ruler</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The Sun in Gemini means Mercury rules and frames the core expression; a</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sun-sign read works from the sign alone, no birth time required</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#matheuscunhabirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#matheuscunhabirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Jupiter's transit vs the Sun sign</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">In a solar-chart technique Cancer is the second sign from a Gemini Sun, so</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Jupiter through Cancer touches a resource theme — symbolic timing, not a birth…</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#matheuscunhabirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#matheuscunhabirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Mutable stellium density</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">When planets cluster in Gemini, Virgo, Sagittarius, or Pisces alongside the</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sun, adaptability becomes a defining feature across communication, relations…</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#matheuscunhabirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#matheuscunhabirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Aspect patterns to Mercury</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Hard aspects (squares, oppositions) can add friction to decision speed under</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">pressure; easy aspects (trines, sextiles) support rapid-fire tactical switch…</text>
+  <path d="M 202.22749999999988 416.4 L 202.6 418.6 L 204.8 419 L 202.6 419.4 L 202.22749999999988 421.6 L 201.8 419.4 L 199.6 419 L 201.8 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 416.4 L 558.2 418.6 L 560.4 419 L 558.2 419.4 L 557.7725000000002 421.6 L 557.4 419.4 L 555.2 419 L 557.4 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

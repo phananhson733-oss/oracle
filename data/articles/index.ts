@@ -245,6 +245,8 @@ import { englandWorldCup2026AstrologyEn } from "./england-world-cup-2026-astrolo
 import { englandWorldCup2026AstrologyZh } from "./england-world-cup-2026-astrology";
 import { spainWorldCup2026AstrologyEn } from "./spain-world-cup-2026-astrology";
 import { spainWorldCup2026AstrologyZh } from "./spain-world-cup-2026-astrology";
+import { matheusCunhaBirthChartEn } from "./matheus-cunha-birth-chart";
+import { matheusCunhaBirthChartZh } from "./matheus-cunha-birth-chart";
 // All articles organized by language
 
 import {
@@ -490,6 +492,7 @@ const ARTICLES_EN: WikiArticle[] = [
   yoaneWissaBirthChartEn,
   englandWorldCup2026AstrologyEn,
   spainWorldCup2026AstrologyEn,
+  matheusCunhaBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
@@ -600,6 +603,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   yoaneWissaBirthChartZh,
   englandWorldCup2026AstrologyZh,
   spainWorldCup2026AstrologyZh,
+  matheusCunhaBirthChartZh,
 ];
 
 // Get all articles for a language
