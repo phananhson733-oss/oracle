@@ -256,6 +256,7 @@ import { scotlandBrazilWorldCupAstrologyZh } from "./scotland-brazil-world-cup-a
 import { nikoBirthChartEn } from "./niko-birth-chart";
 import { princeWilliamBirthChartEn } from "./prince-william-birth-chart";
 import { moSalahBirthChartEn } from "./mo-salah-birth-chart";
+import { jeremyDokuBirthChartEn } from "./jeremy-doku-birth-chart";
 // All articles organized by language
 
 import {
@@ -508,6 +509,7 @@ const ARTICLES_EN: WikiArticle[] = [
   nikoBirthChartEn,
   princeWilliamBirthChartEn,
   moSalahBirthChartEn,
+  jeremyDokuBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

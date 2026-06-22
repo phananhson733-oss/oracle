@@ -1,0 +1,108 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jeremy-doku-birth-chart": {
+      "hero": {
+        "prompt": "A lone silver comet arc curves silently across a vast deep indigo night sky, trailing quicksilver light that dissolves into the darkness, while from the horizon below a warm diffuse golden corona blooms upward like a rising theatrical sun — two expressions of a single sky unified in one panoramic nocturnal landscape, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Atmospheric night sky with silver comet arc and golden horizon glow representing Gemini Sun and Leo Rising duality",
+        "altZh": "银色彗星弧线与金色地平线光辉共绘的夜空，象征双子太阳与狮子上升的双重能量"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Gemini Sun vs Leo Rising: Which Side Drove the Exit",
+          "titleEn": "Leo Rising vs Gemini Sun: How Each Placement Actually Works",
+          "titleZh": "狮子座上升 vs 双子座太阳：两个位置各自如何运作",
+          "altEn": "Side-by-side comparison of Leo Rising and Gemini Sun roles in Jeremy Doku's birth chart decision-making",
+          "altZh": "杰里米·多库星盘中狮子座上升与双子座太阳在决策中各自角色的对比图",
+          "columns": [
+            {
+              "nameEn": "Leo Rising",
+              "nameZh": "狮子座上升",
+              "linesEn": [
+                "Shapes first impressions as warm, watchable performance",
+                "Wants the gesture to land and the moment to look good",
+                "The entrance and the mask the crowd meets first",
+                "Sacrifices privacy for magnetic stage presence",
+                "Made the choice visible — not the force that made it"
+              ],
+              "linesZh": [
+                "将第一印象塑造为温暖、引人注目的表演",
+                "希望姿态落地、时刻看起来精彩",
+                "公众最先遇到的入场姿态与面具",
+                "为了舞台吸引力牺牲隐私",
+                "让选择变得可见——但并非做出选择的力量"
+              ]
+            },
+            {
+              "nameEn": "Gemini Sun",
+              "nameZh": "双子座太阳",
+              "linesEn": [
+                "Drives identity through curiosity and immediate connection",
+                "Prioritizes the live, embodied moment over abstract narrative",
+                "The real steering force behind the exit decision",
+                "Sacrifices the clean story for authentic presence in the room",
+                "Chose the delivery room — not a contradiction, but the core value"
+              ],
+              "linesZh": [
+                "通过好奇心与即时联结驱动身份认同",
+                "将活生生的当下时刻置于抽象叙事之上",
+                "退出决定背后真正的主导力量",
+                "为了真实临场感牺牲整洁叙事",
+                "选择产房——不是矛盾，而是核心价值的体现"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Gemini Sun and Anaretic Mars in a Chart",
+          "titleEn": "Five Observable Signals from Doku's Chart",
+          "titleZh": "多库星盘中五个可观察的信号",
+          "altEn": "Five observable behavioral signals derived from Jeremy Doku's Gemini Sun and anaretic Mars at 29 degrees",
+          "altZh": "源自杰里米·多库双子太阳与29度火星的五个可观察行为信号",
+          "items": [
+            {
+              "nameEn": "Restless, Improvised Movement",
+              "nameZh": "躁动的即兴移动",
+              "subEn": "Changes direction mid-thought, favoring the unexpected option over the rehearsed one",
+              "subZh": "中途改变方向，偏好出乎意料而非预设方案"
+            },
+            {
+              "nameEn": "Words as a Working Tool",
+              "nameZh": "语言作为工作工具",
+              "subEn": "Processes out loud — quick interview answer and quick on-field decision come from the same instinct",
+              "subZh": "大声处理思维——快速采访回答与快速场上决策来自同一本能"
+            },
+            {
+              "nameEn": "The Anaretic Urgency",
+              "nameZh": "29度的紧迫感",
+              "subEn": "Mars at 29° surfaces as all-or-nothing timing: act on the moment now, not deferred",
+              "subZh": "火星位于29度，呈现全有或全无的时机感：必须立即行动，不得推迟"
+            },
+            {
+              "nameEn": "Presence Over Posture",
+              "nameZh": "临场感胜于姿态",
+              "subEn": "Picks the live, embodied moment over the version that photographs well later",
+              "subZh": "选择活生生的当下，而非事后看起来好看的姿态"
+            },
+            {
+              "nameEn": "Audience Awareness That Sharpens",
+              "nameZh": "锐化而非软化的观众意识",
+              "subEn": "Leo Rising rarely forgets being watched — focuses the Gemini instinct rather than dulling it",
+              "subZh": "狮子上升几乎不会忘记自己被注视——聚焦双子本能而非削弱它"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
