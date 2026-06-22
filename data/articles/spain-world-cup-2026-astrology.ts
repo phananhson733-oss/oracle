@@ -4,8 +4,6 @@ import type { WikiArticle } from "../../types";
 
 export const spainWorldCup2026AstrologyEn: WikiArticle = {
   slug: "spain-world-cup-2026-astrology",
-  image: "/images/blog/spain-world-cup-2026-astrology.jpg",
-  image_alt: "Castilian plains and distant Pyrenees at dusk under a vast sky washing from cool Cancer silver-blue to earthy Capricorn ochre-bronze, bright stars scattered above",
   title: "What Spain World Cup 2026 Astrology Says About La Roja's Defining Crisis",
   description: "Spain World Cup 2026 astrology — 2026 outlook snapshot: Spain opened Group H on June 15 with a 0-0 draw against Cape Verde.",
   authorId: "julian-thorne",
@@ -47,9 +45,6 @@ In *Saturn: A New Look at an Old Devil* (1976), Liz Greene established that Satu
 
 Spain's *comparison of 2010 vs 2026 World Cup transit patterns* places this in historical context. The 2010 transit picture was fundamentally different: Jupiter and Uranus conjoined in Pisces-Aries while Saturn in Libra opposed Uranus, and Pluto had just entered Capricorn — no Jupiter-Cancer opposition. Yet Spain's 2010 group stage opened with a 0-1 loss to Switzerland before the team regrouped and won the title. The 2026 transit structure differs in planetary cause, but the pattern of early-group compression preceding potential release is worth tracking as a phase parallel, not a mirror.
 
-
-![Comparison of the crisis-before-breakthrough symbolic reading against the inherited-dominance assumption and a full natal reading](/images/blog/spain-world-cup-2026-astrology-i0-en.svg)
-
 ## How to Read Spain's Chart Pressure in the June 21 Match
 
 Distinguishing a genuine crisis-before-breakthrough pattern from a transit reversal in spain world cup 2026 astrology requires watching specific observable signals. In the Group H high-pressure second match against Saudi Arabia on June 21, these are the chart indicators that matter:
@@ -61,7 +56,7 @@ Distinguishing a genuine crisis-before-breakthrough pattern from a transit rever
 5. **Whether the second half carries more of the chart's authentic energy.** Capricorn-associated charts under opposition pressure often produce cautious first halves in high-necessity matches. The chart's real expression tends to arrive when necessity can no longer be held at arm's length.
 
 
-![Timeline of Spain's Group H window: June 15 Cape Verde draw, June 21 Saudi Arabia high-pressure match under Jupiter in late Cancer, June 27 Uruguay](/images/blog/spain-world-cup-2026-astrology-i1-en.svg)
+![Five observable signals for Spain's Jupiter-Cancer opposition pressure in the June 21 World Cup match against Saudi Arabia](/images/blog/spain-world-cup-2026-astrology-i0-en.svg)
 
 ## Common Misreadings of Spain's 2026 Astrological Position
 
@@ -72,6 +67,9 @@ Several assumptions about spain world cup 2026 astrology circulate in ways that 
 3. **"The Cape Verde draw reveals a fundamentally broken chart."** A group-stage stall at the moment when the chart shows an inflection point ahead is structurally consistent with crisis-before-breakthrough. The result is the pattern in its correct early phase.
 4. **"Astrology tells us whether Spain will win the tournament."** Mundane astrology maps patterns and pressures; it does not produce fixed outcomes. What it identifies is where the chart's energy is compressed and where it may release — the actual result belongs to the players, coaches, and the match itself.
 
+
+![Four common misreadings of Spain's 2026 World Cup astrology corrected against what the chart actually shows](/images/blog/spain-world-cup-2026-astrology-i1-en.svg)
+
 ## Spain 2026 World Cup Astrology Quick Reference
 
 | Property | How It Works | Energy Center | How to Observe |
@@ -80,6 +78,9 @@ Several assumptions about spain world cup 2026 astrology circulate in ways that 
 | Jupiter-Cancer opposition (~27° Cancer) | Cancer expansion opposes Capricorn structure; growth arrives through direct confrontation rather than smooth flow | Cancer-Capricorn cardinal opposition axis | Stalled finishing despite intact possession; visible in the June 15 draw |
 | Crisis-before-breakthrough pattern | Group-stage compression echoes Spain's 2010 opening (0-1 vs Switzerland before title run); planetary causes differ but phase pattern recurs | Capricorn resistance before Cardinal release | Track whether urgency activates against Saudi Arabia rather than contracting |
 | June 21 inflection point | Jupiter in late Cancer (~27°), the polarity symbolically opposite Capricorn; Capricorn-associated charts historically peak under genuine existential necessity | Cardinal axis earned-authority expression | Whether Spain's play shifts from managed performance to earned urgency |
+
+
+![Spain 2026 World Cup astrology quick reference: RFEF chart, Jupiter opposition, crisis pattern, June 21 inflection](/images/blog/spain-world-cup-2026-astrology-i2-en.svg)
 
 ## Common Questions About Spain's 2026 World Cup Astrology
 
@@ -124,8 +125,6 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 
 export const spainWorldCup2026AstrologyZh: WikiArticle = {
   slug: "spain-world-cup-2026-astrology",
-  image: "/images/blog/spain-world-cup-2026-astrology.jpg",
-  image_alt: "暮色中的卡斯蒂利亚平原与远处比利牛斯山，天空从巨蟹座银蓝平滑过渡到摩羯座赭铜色，繁星散布上空",
   title: "西班牙2026世界杯占星：斗牛士军团的危机与突破图景",
   description: "西班牙2026世界杯占星，是一套以西班牙足协奠基日期为结构锚点、结合木星约27度巨蟹座对相位本届赛事窗口进行象征性解读的参考框架。 西班牙于6月15日在 H",
   authorId: "julian-thorne",
@@ -169,9 +168,6 @@ Liz Greene 在其著作中确立了一个观点：土星所守护的能量——
 
 西班牙的*comparison of 2010 vs 2026 World Cup transit patterns*能把这一切放进历史语境。2010年的行运图景根本不同：木星与天王星在双鱼-牡羊交界合相，土星在天秤座对冲天王星，冥王星刚进入摩羯座——并没有木星巨蟹座的对冲。然而西班牙2010年的小组赛以0比1负于瑞士开局，球队随后重整旗鼓夺得冠军。2026年的行运结构在行星成因上不同，但"小组赛早期压缩先于可能释放"的这一模式，值得当作一个阶段性的平行参照来追踪，而非镜像复制。
 
-
-![危机先于突破象征解读、承袭统治假设与完整本命盘三方对照](/images/blog/spain-world-cup-2026-astrology-i0-zh.svg)
-
 ## 如何识别6月21日比赛中西班牙的星盘压力（实操观察）
 
 要在西班牙2026世界杯占星里区分一个真正的"危机先于突破"模式与一次行运反转，需要观察一些具体可见的信号。在6月21日 H 组对阵沙特阿拉伯的高压第二场比赛中，下面这些才是真正要紧的星盘指标：
@@ -183,7 +179,7 @@ Liz Greene 在其著作中确立了一个观点：土星所守护的能量——
 5. **看下半场是否承载更多星盘的本真能量。** 带摩羯座关联的星盘在对冲压力下，于高必要性的比赛中常常打出谨慎的上半场。星盘真正的表达，往往在必要性再也无法被拒之于臂长之外时才到来。
 
 
-![西班牙 H 组窗口时间线：6月15日战平佛得角、6月21日木星晚段巨蟹下对阵沙特高压比赛、6月27日对阵乌拉圭](/images/blog/spain-world-cup-2026-astrology-i1-zh.svg)
+![西班牙6月21日世界杯比赛中木星巨蟹对冲压力的五个可观察信号](/images/blog/spain-world-cup-2026-astrology-i0-zh.svg)
 
 ## 常见误读：西班牙2026占星位置的几种流传偏差
 
@@ -194,6 +190,9 @@ Liz Greene 在其著作中确立了一个观点：土星所守护的能量——
 3. **"对阵佛得角的平局暴露了一张根本破损的星盘。"** 在星盘显示前方有一个拐点的时刻出现小组赛停滞，这与"危机先于突破"在结构上是一致的。这个结果正是该模式处于它正确的早期阶段。
 4. **"占星能告诉我们西班牙会不会赢得本届赛事。"** 世俗占星描摹的是模式与压力；它绝不产生固定的结果。它所标识的，是星盘的能量在哪里被压缩、又可能在哪里释放——真正的结果属于球员、教练，以及比赛本身。
 
+
+![西班牙2026世界杯占星四种常见误读与星盘实际揭示的对比纠正](/images/blog/spain-world-cup-2026-astrology-i1-zh.svg)
+
 ## 斗牛士军团2026星盘速览
 
 | 属性 | 如何作用 | 能量中心 | 如何观察 |
@@ -202,6 +201,9 @@ Liz Greene 在其著作中确立了一个观点：土星所守护的能量——
 | 木星巨蟹座对冲（约27度巨蟹座）| 巨蟹座扩张对冲摩羯座结构；成长通过直接对峙到来，而非平滑流动 | 巨蟹-摩羯基本宫对冲轴 | 控球完好却终结停滞；在6月15日平局中可见 |
 | 危机先于突破模式 | 小组赛压缩呼应西班牙2010年开局（0比1负瑞士后夺冠之路）；行星成因不同但阶段模式重现 | 摩羯座抵抗先于基本宫释放 | 追踪对阵沙特时紧迫感是被激活还是收缩 |
 | 6月21日拐点 | 木星位于晚段巨蟹座（约27度），即与摩羯座象征性对立的一极；带摩羯座关联的星盘历史上在真正存亡攸关的必要性下达到峰值 | 基本宫轴"赢来权威"的表达 | 西班牙的发挥是否从受管理的表现转向赢来的紧迫感 |
+
+
+![西班牙2026世界杯占星速览：足协星盘、木星对冲、危机模式、6月21日拐点](/images/blog/spain-world-cup-2026-astrology-i2-zh.svg)
 
 ## 关于西班牙2026星盘的常见问题
 

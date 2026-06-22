@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,96 +11,135 @@
   "articles": {
     "spain-world-cup-2026-astrology": {
       "hero": {
-        "prompt": "A painterly editorial illustration of a Spanish landscape at dusk — sweeping Castilian plains and distant Pyrenees under a vast sky that washes as a smooth gradient from cool Cancer silver-blue on one side toward earthy Capricorn ochre-bronze on the other, a scatter of bright stars above. Deep indigo-to-near-black palette (#16112c to #0b0a1b) with silver-blue and ochre-gold accents. Disciplined yet tense, anticipatory mood. ONE single continuous landscape, NO split screen / diptych / two panels, no diagram, no chart wheel, no framed card, no text or letters or numerals, no human faces, full-bleed wide 16:9.",
-        "altEn": "Castilian plains and distant Pyrenees at dusk under a vast sky washing from cool Cancer silver-blue to earthy Capricorn ochre-bronze, bright stars scattered above",
-        "altZh": "暮色中的卡斯蒂利亚平原与远处比利牛斯山，天空从巨蟹座银蓝平滑过渡到摩羯座赭铜色，繁星散布上空"
+        "prompt": "A vast twilight landscape where a luminous crescent moon ascends over a boundless dark ocean on the left horizon, its watery light streaming in fluid arcs across the sky toward a distant snow-capped mountain range on the right horizon, the two glowing presences locked in a dynamic sky-spanning opposition, golden ribbons of tension threading between sea and stone, charged atmosphere of compressed energy on the verge of imminent release, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Spain 2026 World Cup astrology — crescent moon over ocean opposing mountain ridge, Jupiter-Cancer opposition tension at twilight",
+        "altZh": "西班牙2026世界杯占星——弯月悬于大洋之上与远山山脊对峙，木星巨蟹座对冲张力的黄昏图景"
       },
       "inline": [
         {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Spain's Chart Pressure in the June 21 Match",
+          "afterHeadingZh": "## 如何识别6月21日比赛中西班牙的星盘压力（实操观察）",
+          "titleEn": "5 Signals to Watch: Spain June 21 Chart Pressure",
+          "titleZh": "观察西班牙6月21日星盘压力的5个信号",
+          "altEn": "Five observable signals for Spain's Jupiter-Cancer opposition pressure in the June 21 World Cup match against Saudi Arabia",
+          "altZh": "西班牙6月21日世界杯比赛中木星巨蟹对冲压力的五个可观察信号",
+          "items": [
+            {
+              "nameEn": "Urgency Activates",
+              "nameZh": "紧迫感被激活",
+              "subEn": "Does match pressure make Spain more urgent or more cautious? Activation signals the opposition beginning to resolve.",
+              "subZh": "比赛压力让西班牙变得更紧迫还是更谨慎？紧迫感的激活意味着对冲开始消解。"
+            },
+            {
+              "nameEn": "Earned Possession",
+              "nameZh": "赢来的控球",
+              "subEn": "Does every passing sequence carry genuine intentionality — earned, not inherited? Inherited possession looks labored under transit pressure.",
+              "subZh": "每一脚传递都带着真实意图吗——赢来的而非承袭来的？承袭来的控球在行运压力下显得吃力。"
+            },
+            {
+              "nameEn": "Finishing and Discipline Together",
+              "nameZh": "终结与纪律并至",
+              "subEn": "June 15 showed possession intact but finishing absent. Both arriving together signals Cancer-Capricorn opposition integrating.",
+              "subZh": "6月15日呈现控球完好、终结缺席。两者同时出现意味着巨蟹-摩羯对冲正在整合。"
+            },
+            {
+              "nameEn": "Unscripted Risk Rewarded",
+              "nameZh": "不照剧本的冒险得到回报",
+              "subEn": "Does La Roja take the trusting through ball over the managed pass? Paid-off responsive risk signals the transit entering resolution phase.",
+              "subZh": "斗牛士军团选择相信时机的直塞而非受控传递吗？见效的回应式冒险意味着行运进入消解阶段。"
+            },
+            {
+              "nameEn": "Second Half Authentic Energy",
+              "nameZh": "下半场承载本真能量",
+              "subEn": "Capricorn-associated charts under opposition often produce cautious first halves. The chart's real expression arrives when necessity can no longer be deferred.",
+              "subZh": "带摩羯座关联的星盘在对冲压力下常打出谨慎的上半场。当必要性再也无法被拒之门外时，星盘的真正表达才到来。"
+            }
+          ]
+        },
+        {
           "kind": "compare",
-          "afterHeadingEn": "## Crisis Before Breakthrough vs. Inherited Dominance: What Spain's 2026 Chart Shows",
-          "afterHeadingZh": "## 危机先于突破与相近概念\"承袭而来的统治\"：西班牙2026星盘揭示了什么",
-          "titleEn": "Three Ways to Read Spain's 2026 Chart",
-          "titleZh": "解读西班牙2026星盘的三种方式",
-          "altEn": "Comparison of the crisis-before-breakthrough symbolic reading against the inherited-dominance assumption and a full natal reading",
-          "altZh": "危机先于突破象征解读、承袭统治假设与完整本命盘三方对照",
+          "afterHeadingEn": "## Common Misreadings of Spain's 2026 Astrological Position",
+          "afterHeadingZh": "## 常见误读：西班牙2026占星位置的几种流传偏差",
+          "titleEn": "4 Misreadings Corrected: Spain 2026 World Cup Astrology",
+          "titleZh": "四种误读的纠正：西班牙2026世界杯占星",
+          "altEn": "Four common misreadings of Spain's 2026 World Cup astrology corrected against what the chart actually shows",
+          "altZh": "西班牙2026世界杯占星四种常见误读与星盘实际揭示的对比纠正",
           "columns": [
             {
-              "nameEn": "Crisis-before-breakthrough reading",
-              "nameZh": "危机先于突破解读",
+              "nameEn": "Common Myth",
+              "nameZh": "常见误读",
               "linesEn": [
-                "Jupiter-Cancer opposes Capricorn symbolic axis",
-                "Compression first, breakthrough only if earned",
-                "Stays openly symbolic, names no result"
+                "Legacy chart guarantees astrological favor",
+                "Jupiter in Cancer is a straightforward positive transit for Spain",
+                "The Cape Verde draw reveals a fundamentally broken chart",
+                "Astrology tells us whether Spain will win the tournament"
               ],
               "linesZh": [
-                "木星巨蟹座对冲摩羯象征轴线",
-                "先压缩，赢来才会突破",
-                "始终保持象征立场，不断言比分"
+                "传奇星盘必然带来占星上的偏爱",
+                "木星在巨蟹座对西班牙是直截了当的正面行运",
+                "对阵佛得角的平局暴露了一张根本破损的星盘",
+                "占星能告诉我们西班牙会不会赢得本届赛事"
               ]
             },
             {
-              "nameEn": "Inherited-dominance assumption",
-              "nameZh": "承袭统治假设",
+              "nameEn": "What the Chart Actually Shows",
+              "nameZh": "星盘实际揭示",
               "linesEn": [
-                "Treats past titles as planetary credit",
-                "Assumes Jupiter in Cancer simply favors Spain",
-                "Ignores the opposition routing growth through tension"
+                "Past transits belong to past cycles — the present sky tests the structure regardless",
+                "Jupiter's effect depends on its chart relationship: opposition produces growth through confrontation",
+                "Group-stage stall at an inflection point is consistent with crisis-before-breakthrough",
+                "Mundane astrology maps pressures; it does not produce fixed outcomes"
               ],
               "linesZh": [
-                "把过往冠军当作行星层面信用",
-                "假定木星巨蟹直接利好西班牙",
-                "忽略对冲把成长导向张力"
-              ]
-            },
-            {
-              "nameEn": "Full natal reading",
-              "nameZh": "完整本命盘解读",
-              "linesEn": [
-                "Needs a verified RFEF founding time",
-                "Would weigh Moon, Ascendant, and houses",
-                "Less reliable when founding time is uncertain"
-              ],
-              "linesZh": [
-                "需要经核验的足协奠基时间",
-                "会权衡月亮、上升与宫位",
-                "奠基时间不确定时反而更不可靠"
+                "过去的行运属于过去的周期——当下的天空无论如何都会检验那座结构",
+                "木星的效果取决于它与本命盘的关系：对冲通过对峙带来成长",
+                "在拐点前的小组赛停滞与危机先于突破在结构上一致",
+                "世俗占星描摹的是压力；它绝不产生固定的结果"
               ]
             }
           ]
         },
         {
           "kind": "timeline",
-          "afterHeadingEn": "## How to Read Spain's Chart Pressure in the June 21 Match",
-          "afterHeadingZh": "## 如何识别6月21日比赛中西班牙的星盘压力（实操观察）",
-          "titleEn": "Spain's Group H Window: June 15 to 27",
-          "titleZh": "西班牙的 H 组窗口：6月15日至27日",
-          "altEn": "Timeline of Spain's Group H window: June 15 Cape Verde draw, June 21 Saudi Arabia high-pressure match under Jupiter in late Cancer, June 27 Uruguay",
-          "altZh": "西班牙 H 组窗口时间线：6月15日战平佛得角、6月21日木星晚段巨蟹下对阵沙特高压比赛、6月27日对阵乌拉圭",
+          "afterHeadingEn": "## Spain 2026 World Cup Astrology Quick Reference",
+          "afterHeadingZh": "## 斗牛士军团2026星盘速览",
+          "titleEn": "Spain 2026 Astrology: 4 Chart Factors Quick Reference",
+          "titleZh": "西班牙2026占星：4个星盘因素速览",
+          "altEn": "Spain 2026 World Cup astrology quick reference: RFEF chart, Jupiter opposition, crisis pattern, June 21 inflection",
+          "altZh": "西班牙2026世界杯占星速览：足协星盘、木星对冲、危机模式、6月21日拐点",
           "items": [
             {
-              "labelEn": "15 June",
-              "labelZh": "6月15日",
-              "titleEn": "Cape Verde — 0-0 Draw",
-              "titleZh": "佛得角——0比0平局",
-              "noteEn": "Group H opener: possession intact but finishing absent — compressed Jupiter-Cancer opposition energy",
-              "noteZh": "H 组首战：控球完好却终结缺席——被压缩的木星巨蟹座对冲能量"
+              "labelEn": "Foundation",
+              "labelZh": "奠基",
+              "titleEn": "RFEF Cardinal Chart (1913)",
+              "titleZh": "西班牙足协基本宫星盘（1913年）",
+              "noteEn": "Sun ≈ 5° Libra; Capricorn symbolic values shape Spain's playing identity in mundane practice",
+              "noteZh": "太阳约5度天秤座；摩羯座象征价值塑造世俗实践中的打法身份"
             },
             {
-              "labelEn": "21 June",
-              "labelZh": "6月21日",
-              "titleEn": "Saudi Arabia — High-Pressure Match",
-              "titleZh": "沙特阿拉伯——高压比赛",
-              "noteEn": "Jupiter in late Cancer (~27°): the inflection point — watch whether urgency activates or contracts",
-              "noteZh": "木星位于晚段巨蟹座（约27度）：拐点——观察紧迫感是被激活还是收缩"
+              "labelEn": "Current Transit",
+              "labelZh": "当前行运",
+              "titleEn": "Jupiter-Cancer Opposition (~27°)",
+              "titleZh": "木星巨蟹座对冲（约27度）",
+              "noteEn": "Cancer expansion opposes Capricorn structure; growth arrives through confrontation, not smooth flow",
+              "noteZh": "巨蟹座扩张对冲摩羯座结构；成长通过对峙而非平滑流动到来"
             },
             {
-              "labelEn": "27 June",
-              "labelZh": "6月27日",
-              "titleEn": "Uruguay — Group H Closer",
-              "titleZh": "乌拉圭——H 组收官",
-              "noteEn": "Group-stage close — track whether the opposition begins resolving into earned urgency",
-              "noteZh": "小组赛收尾——追踪这组对冲是否开始消解为赢来的紧迫感"
+              "labelEn": "Phase Pattern",
+              "labelZh": "阶段模式",
+              "titleEn": "Crisis-Before-Breakthrough",
+              "titleZh": "危机先于突破",
+              "noteEn": "Group-stage compression echoes 2010 opening: 0-1 vs Switzerland before the title run",
+              "noteZh": "小组赛压缩呼应2010年开局：0比1负瑞士后夺冠之路"
+            },
+            {
+              "labelEn": "Inflection Point",
+              "labelZh": "拐点",
+              "titleEn": "June 21 High-Pressure Match",
+              "titleZh": "6月21日高压比赛",
+              "noteEn": "Jupiter at ~27° Cancer; Capricorn-associated charts peak under genuine existential necessity",
+              "noteZh": "木星约27度巨蟹座；带摩羯座关联的星盘在真正存亡攸关的必要性下达到峰值"
             }
           ]
         }
