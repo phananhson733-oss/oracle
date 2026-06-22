@@ -882,6 +882,7 @@ export const TRANSLATIONS = {
       oracle: "Ask",
       journal: "Journal",
       wiki: "Wiki",
+      tools: "Tools",
       settings: "Settings",
     },
     wiki: {
@@ -2795,6 +2796,7 @@ export const TRANSLATIONS = {
       oracle: "星象问答",
       journal: "CBT 日记",
       wiki: "百科",
+      tools: "工具",
       settings: "设置",
     },
     wiki: {

@@ -8,6 +8,7 @@ import { useTheme, useLanguage } from "./UIComponents";
 import { useLangPath } from "../hooks/useLangPath";
 
 const FOOTER_LINKS = [
+  { to: "/tools", en: "Tools", zh: "工具" },
   { to: "/privacy", en: "Privacy Policy", zh: "隐私政策" },
   { to: "/terms", en: "Terms of Service", zh: "服务条款" },
   { to: "/cookies", en: "Cookies", zh: "Cookie 政策" },

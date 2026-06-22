@@ -400,6 +400,8 @@ const CompositeCalculator = lazy(
 const SolarReturnCalculator = lazy(
   () => import("./components/calculators/SolarReturnCalculator"),
 );
+// Tools hub（/:lang/tools）：计算器矩阵统一发现入口（hub-and-spoke 内链中枢），纯客户端渲染。
+const ToolsHubPage = lazy(() => import("./components/tools/ToolsHubPage"));
 
 const UsPage = lazy(() => import("./pages/SynastryPage"));
 
@@ -492,6 +494,9 @@ const AppContent: React.FC = () => {
     "/composite-calculator",
     "/solar-return-calculator",
   ].includes(pathWithoutLang);
+  // /:lang/tools 是公开可索引的工具中心 hub：静态 stub 输出 index,follow 且在 sitemap，
+  // 运行时必须列入 isPublicRoute，否则 WRS 注入 noindex 会误伤收录。
+  const isToolsHubPath = pathWithoutLang === "/tools";
   // /:lang/pricing 是公开可索引营销页：静态 stub（public/{lang}/pricing/index.html）输出
   // index,follow 且在 sitemap，运行时必须一致，否则 WRS 注入 noindex 会误伤 sitemap 里的定价页。
   const isPricingPath = pathWithoutLang === "/pricing";
@@ -515,6 +520,7 @@ const AppContent: React.FC = () => {
     isSaturnReturnPath ||
     isEnergyTimelinePath ||
     isCalculatorPath ||
+    isToolsHubPath ||
     isPricingPath ||
     isLandingV2LangPath;
   const shouldNoIndex = !isPublicRoute;
@@ -711,7 +717,8 @@ const AppContent: React.FC = () => {
       isLegalPath ||
       isSaturnReturnPath ||
       isEnergyTimelinePath ||
-      isCalculatorPath) &&
+      isCalculatorPath ||
+      isToolsHubPath) &&
       !["/onboarding", "/auth"].includes(pathWithoutLang));
 
   // Landing routes are 100% public — never show a leftover login modal there.
@@ -932,6 +939,7 @@ const AppContent: React.FC = () => {
                 { path: "/oracle", label: t.nav.oracle },
                 { path: "/journal", label: t.nav.journal },
                 { path: langPath("/wiki"), label: t.nav.wiki },
+                { path: langPath("/tools"), label: t.nav.tools || "Tools" },
               ].map((link) => {
                 const isActive = isWikiPath
                   ? link.path === langPath("/wiki")
@@ -1345,6 +1353,15 @@ const AppContent: React.FC = () => {
                 </LangGuard>
               }
             />
+            {/* Tools hub — 计算器矩阵统一发现入口（hub-and-spoke 内链中枢）。 */}
+            <Route
+              path="/:lang/tools"
+              element={
+                <LangGuard>
+                  <ToolsHubPage />
+                </LangGuard>
+              }
+            />
             <Route
               path="/:lang/pricing"
               element={
@@ -1373,6 +1390,7 @@ const AppContent: React.FC = () => {
             <Route path="/synastry-calculator" element={<LangRedirect />} />
             <Route path="/composite-calculator" element={<LangRedirect />} />
             <Route path="/solar-return-calculator" element={<LangRedirect />} />
+            <Route path="/tools" element={<LangRedirect />} />
             <Route path="/pricing" element={<LangRedirect />} />
             <Route path="/wiki/*" element={<LangRedirect />} />
             <Route path="/wiki" element={<LangRedirect />} />

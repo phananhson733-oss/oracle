@@ -31,8 +31,12 @@
 - auth｜地位：认证组件目录｜功能：登录/升级订阅、支付成功页与用户菜单。
 - cbt｜地位：CBT 组件目录｜功能：CBT 日记子模块 UI。
 - wiki｜地位：Wiki 组件目录｜功能：心理占星百科页面与详情组件。
+- calculators｜地位：计算器矩阵目录｜功能：SEO 计算器矩阵（D）配置驱动外壳 + 各 slug 配置 + embed 基建。
+- timeline｜地位：能量时间轴目录｜功能：Energy Timeline 蜡烛主视图 / 当日抽屉 / 安全 onboarding。
+- tools｜地位：工具中心目录｜功能：/:lang/tools hub（工具目录数据 + hub 页，计算器矩阵统一发现入口）。
 
 近期更新
+- 新增 tools 工具中心 hub（/:lang/tools）：astro.com 风格 5 分类聚合发现页，复用 ToolsGridSection 卡片范式；nav/footer 加 Tools 入口，生成器输出 /en/tools 静态 stub（CollectionPage/ItemList/FAQPage + 16 工具可索引内链 + sitemap）。顺手补 calculators/timeline 子目录索引漂移。
 - 新增 MobileBottomNav（移动端固定底部 tab bar，复用顶部 6 项 + t.nav.* + isActive，safe-area + z-[150] 让位 consent banner）；ConsentBanner 的 analytics/marketing toggle 补可访问名（htmlFor 关联可见文字 + aria-label en/zh + role=switch），不改持久化逻辑。
 - 新增 SafetyFooter（psych-adjacent 强制安全 footer 的 SPA 渲染），并由 WikiArticleDetailPage 在 article.embeddedTool/psychAdjacent 时挂载 ChartMiniCalc + SafetyFooter（embeddedTool 在场时抑制底部 WikiChartCTA，避免重复 CTA）。
 - 支付成功页增加 PayPal 订阅确认兜底，同步登录/订阅状态并默认返回个人信息页，避免订阅后回到 onboarding。

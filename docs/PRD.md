@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.41
-> **Last Updated**: 2026-06-18
+> **Version**: 2.42
+> **Last Updated**: 2026-06-22
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -327,6 +327,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | 路由 | 页面 | 说明 |
 |------|------|------|
+| `/:lang/tools` | ToolsHubPage | 工具中心 hub：计算器矩阵统一发现入口（astro.com 风格 5 分类聚合——核心星座 / 星盘天文 / 时机预测 / 关系合盘 / 地点探索，覆盖全部 16 个公开工具），公开可索引；双渲染（静态 stub `public/en/tools/index.html` 含 CollectionPage/ItemList/FAQPage JSON-LD + 16 工具可索引内链 + 进 sitemap，SPA 水合 ToolsHubPage）；hub-and-spoke 内链中枢（hub→spoke 由 stub 正文内链，spoke→hub 由全局 Footer 的 Tools 链接）；nav 与 footer 加 Tools 入口；中性叙事 |
 | `/:lang/saturn-return-calculator` | SaturnReturnCalculator | 免费 Saturn Return 计算器（公开可索引） |
 | `/:lang/energy-timeline` | EnergyTimelineDemoPage | Energy Timeline 公开 SEO demo 页（固定示例盘 + 注册 CTA，免登录，公开可索引；设计 §13） |
 | `/:lang/moon-sign-calculator` | BirthDataCalculator(moonSign) | 免费月亮星座计算器（公开可索引，复用 /api/natal/chart） |

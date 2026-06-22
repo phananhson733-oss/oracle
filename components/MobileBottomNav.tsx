@@ -1,6 +1,6 @@
 // INPUT: react-router-dom Link/useLocation, lucide-react icons, useTheme/useLanguage from UIComponents, useLangPath hook.
 // OUTPUT: Exports MobileBottomNav — a fixed bottom tab bar (icon + label + active highlight) shown only below md.
-// POS: Mobile primary navigation; mirrors the 7 top-nav entries + t.nav.* + isActive logic. Update components/FOLDER.md when this file changes.
+// POS: Mobile primary navigation; mirrors the 8 top-nav entries + t.nav.* + isActive logic. Update components/FOLDER.md when this file changes.
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -12,12 +12,13 @@ import {
   MessageCircle,
   NotebookPen,
   BookOpen,
+  Wrench,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useTheme, useLanguage } from "./UIComponents";
 import { useLangPath } from "../hooks/useLangPath";
 
-// Mirrors the 7 entries rendered by the desktop top nav in App.tsx.
+// Mirrors the 8 entries rendered by the desktop top nav in App.tsx.
 // Labels reuse the existing t.nav.* keys (with English fallbacks). Icons are
 // semantically matched: Activity (neutral pulse) for the Energy Timeline keeps
 // the "loud vs quiet, not good vs bad" framing (no up=good TrendingUp valence).
@@ -30,7 +31,8 @@ const NAV_ITEMS: ReadonlyArray<{
     | "us"
     | "oracle"
     | "journal"
-    | "wiki";
+    | "wiki"
+    | "tools";
   fallback: string;
   icon: LucideIcon;
 }> = [
@@ -61,6 +63,7 @@ const NAV_ITEMS: ReadonlyArray<{
     icon: NotebookPen,
   },
   { path: "/wiki", labelKey: "wiki", fallback: "Wiki", icon: BookOpen },
+  { path: "/tools", labelKey: "tools", fallback: "Tools", icon: Wrench },
 ];
 
 export const MobileBottomNav: React.FC = () => {
@@ -74,6 +77,7 @@ export const MobileBottomNav: React.FC = () => {
   // active match is "starts with the lang-prefixed /wiki"; every other entry is
   // an exact pathname match — identical semantics to the desktop nav in App.tsx.
   const wikiHref = langPath("/wiki");
+  const toolsHref = langPath("/tools");
   const isWikiPath =
     location.pathname === wikiHref ||
     location.pathname.startsWith(`${wikiHref}/`) ||
@@ -95,11 +99,18 @@ export const MobileBottomNav: React.FC = () => {
     >
       <ul className="flex items-stretch justify-around">
         {NAV_ITEMS.map((item) => {
-          const to = item.path === "/wiki" ? wikiHref : item.path;
+          const to =
+            item.path === "/wiki"
+              ? wikiHref
+              : item.path === "/tools"
+                ? toolsHref
+                : item.path;
           const isActive =
             item.path === "/wiki"
               ? isWikiPath
-              : location.pathname === item.path;
+              : item.path === "/tools"
+                ? location.pathname === toolsHref
+                : location.pathname === item.path;
           const Icon = item.icon;
           const label = t.nav?.[item.labelKey] || item.fallback;
           return (

@@ -14,6 +14,7 @@ const PUBLIC_PREFIXED_PATHS = [
   '/about',
   '/help',
   '/pricing',
+  '/tools',
 ] as const;
 
 /** Supported language codes for URL prefix validation. */

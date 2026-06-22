@@ -1715,6 +1715,124 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     });
   }
 
+  // Tools hub (/en/tools) — 计算器矩阵统一发现入口（hub-and-spoke 内链中枢）。静态正文按主题分组，
+  // 列出到每个工具的可索引内链，把链接权重分发给 15 个 spoke 页。工具标题/描述复用 CALCULATOR_SEO，
+  // 仅分类、引导文案与 energy-timeline 条目在此内联。EN-only（与计算器 stub 一致）。
+  {
+    const calcBySlug = new Map(CALCULATOR_SEO.map((c) => [c.slug, c]));
+    const HUB_EXTRA = {
+      'energy-timeline': {
+        title: 'Energy Timeline',
+        description: 'View a month-by-month curve of how active your transits are, with the themes behind each peak.',
+      },
+      'saturn-return-calculator': {
+        title: 'Saturn Return Calculator',
+        description: 'Find when Saturn returns to its birth position — the timing of a major life-cycle chapter.',
+      },
+    };
+    const hubMeta = (slug) => {
+      const m = calcBySlug.get(slug) || HUB_EXTRA[slug];
+      if (!m) throw new Error(`tools hub: no metadata for slug ${slug} (add to CALCULATOR_SEO or HUB_EXTRA)`);
+      return m;
+    };
+    const hubLabel = (slug) => {
+      const m = hubMeta(slug);
+      return m ? String(m.title).split(' - ')[0].split(' (')[0] : slug;
+    };
+    const HUB_CATEGORIES = [
+      {
+        heading: 'Your Core Signs',
+        intro: 'The placements most readings start from — the signs that describe who you are.',
+        slugs: ['birth-chart-calculator', 'big-three-calculator', 'moon-sign-calculator', 'rising-sign-calculator'],
+      },
+      {
+        heading: 'Charts & Astronomy',
+        intro: 'Live planetary data and astronomer-grade tools, powered by Swiss Ephemeris.',
+        slugs: ['current-planets', 'ephemeris-calculator', 'moon-phase-calculator', 'rodden-rating'],
+      },
+      {
+        heading: 'Timing & Forecast',
+        intro: 'How the sky shifts across your days and the year ahead.',
+        slugs: ['energy-timeline', 'electional-astrology', 'solar-return-calculator', 'saturn-return-calculator'],
+      },
+      {
+        heading: 'Relationships',
+        intro: 'Compare two charts and explore the connection between them.',
+        slugs: ['synastry-calculator', 'composite-calculator'],
+      },
+      {
+        heading: 'Places & Discovery',
+        intro: 'Explore your chart on the world map and among familiar faces.',
+        slugs: ['astrocartography', 'celebrity-twins'],
+      },
+    ];
+    const toolsHubIntro = 'A full set of free astrology calculators and chart tools, powered by Swiss Ephemeris astronomy. No account needed — browse by theme and pick one to explore.';
+    const toolsHubBody = [
+      toolsHubIntro,
+      ...HUB_CATEGORIES.map((cat) => {
+        const items = cat.slugs
+          .map((slug) => {
+            const m = hubMeta(slug);
+            const desc = m ? stripInlineMarkdown(m.description) : '';
+            return `- [${hubLabel(slug)}](/en/${slug})${desc ? ` — ${desc}` : ''}`;
+          })
+          .join('\n');
+        return `## ${cat.heading}\n\n${cat.intro}\n\n${items}`;
+      }),
+    ].join('\n\n');
+    const toolsHubFaqs = [
+      ['Are these astrology tools free?', 'Yes. Every calculator and chart tool here is free to use, and no account is required.'],
+      ['Do I need my exact birth time?', 'Some tools such as the rising sign, birth chart, astrocartography and solar return need an accurate birth time and city. Others such as the Moon sign, current planets and moon phase work from a date alone.'],
+      ['How accurate are the calculations?', 'All placements are computed with Swiss Ephemeris astronomy, the same data professional astrology software relies on.'],
+    ];
+    const toolsHubTitle = 'Free Astrology Tools & Calculators';
+    const toolsHubDescription = 'A full set of free astrology calculators — birth chart, Moon and rising signs, synastry, astrocartography, solar return and more. Powered by Swiss Ephemeris. No account needed.';
+    const toolsHubUrl = `${siteUrl}/en/tools`;
+    const hubAllSlugs = HUB_CATEGORIES.flatMap((c) => c.slugs);
+    addUrl(toolsHubUrl, ['tools-hub', 'v1', contentHash([toolsHubBody])]);
+    await writeHtmlPage({
+      outputPath: path.join(publicDir, 'en', 'tools', 'index.html'),
+      lang: 'en',
+      title: toolsHubTitle,
+      description: toolsHubDescription,
+      url: toolsHubUrl,
+      ogType: 'website',
+      alternates: buildAlternateLinks('/tools', { zh: false, en: true }),
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: toolsHubTitle,
+          description: toolsHubDescription,
+          url: toolsHubUrl,
+          inLanguage: 'en',
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: hubAllSlugs.map((slug, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              url: `${siteUrl}/en/${slug}`,
+              name: hubLabel(slug),
+            })),
+          },
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          inLanguage: 'en',
+          mainEntity: toolsHubFaqs.map((f) => ({
+            '@type': 'Question',
+            name: f[0],
+            acceptedAnswer: { '@type': 'Answer', text: f[1] },
+          })),
+        },
+      ],
+      ctaText: LANG_CONFIG.en.homeCta,
+      spaPath: '/en/tools',
+      contentHtml: mdToHtml(toolsHubBody),
+    });
+  }
+
   // 文章摘要按 lang/slug 索引，供 sitemap 签名（date/title/desc/image/keywords 变 → lastmod 更新）。
   const articleSummaries = {
     en: new Map(articlesModule.getArticleSummaries('en').map((s) => [s.slug, s])),
