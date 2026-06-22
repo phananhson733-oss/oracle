@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 527" role="img" aria-label="Spain 2026 Astrology: 4 Chart Factors Quick Reference">
+  <defs>
+    <linearGradient id="spainworldcup2026astrology2en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="spainworldcup2026astrology2en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="spainworldcup2026astrology2en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spainworldcup2026astrology2en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spainworldcup2026astrology2en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spainworldcup2026astrology2en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="url(#spainworldcup2026astrology2en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="179" fill="url(#spainworldcup2026astrology2en-neb1)"/>
+  <ellipse cx="623" cy="422" rx="334" ry="169" fill="url(#spainworldcup2026astrology2en-neb2)"/>
+  <circle cx="677.1" cy="274.8" r="0.54" fill="#cfc8ea" opacity="0.36"/><circle cx="117.3" cy="114.1" r="1.18" fill="#cfc8ea" opacity="0.19"/><circle cx="70.2" cy="83.0" r="1.46" fill="#cfc8ea" opacity="0.26"/><circle cx="267.9" cy="422.0" r="1.56" fill="#cfc8ea" opacity="0.21"/><circle cx="730.0" cy="334.3" r="0.51" fill="#cfc8ea" opacity="0.35"/><circle cx="327.7" cy="156.1" r="1.42" fill="#cfc8ea" opacity="0.34"/><circle cx="85.3" cy="139.0" r="0.42" fill="#cfc8ea" opacity="0.34"/><circle cx="647.8" cy="403.4" r="0.82" fill="#cfc8ea" opacity="0.29"/><circle cx="516.3" cy="153.5" r="0.86" fill="#cfc8ea" opacity="0.25"/><circle cx="185.2" cy="383.0" r="0.96" fill="#cfc8ea" opacity="0.18"/><circle cx="614.7" cy="218.8" r="1.22" fill="#cfc8ea" opacity="0.25"/><circle cx="235.1" cy="439.2" r="0.54" fill="#cfc8ea" opacity="0.15"/><circle cx="270.8" cy="199.4" r="1.66" fill="#cfc8ea" opacity="0.18"/><circle cx="506.4" cy="292.5" r="1.21" fill="#cfc8ea" opacity="0.54"/><circle cx="597.1" cy="132.4" r="1.51" fill="#cfc8ea" opacity="0.32"/><circle cx="567.7" cy="99.6" r="1.57" fill="#cfc8ea" opacity="0.42"/><circle cx="271.5" cy="274.3" r="1.28" fill="#cfc8ea" opacity="0.23"/><circle cx="353.7" cy="307.4" r="0.50" fill="#cfc8ea" opacity="0.24"/><circle cx="208.3" cy="34.1" r="1.20" fill="#cfc8ea" opacity="0.26"/><circle cx="248.5" cy="318.3" r="1.57" fill="#cfc8ea" opacity="0.34"/><circle cx="608.4" cy="83.2" r="0.93" fill="#cfc8ea" opacity="0.35"/><circle cx="246.8" cy="304.2" r="1.21" fill="#cfc8ea" opacity="0.52"/><circle cx="96.6" cy="153.7" r="0.68" fill="#cfc8ea" opacity="0.49"/><circle cx="111.6" cy="53.9" r="1.38" fill="#cfc8ea" opacity="0.19"/><circle cx="474.9" cy="347.0" r="0.89" fill="#cfc8ea" opacity="0.18"/><circle cx="65.5" cy="12.0" r="0.96" fill="#cfc8ea" opacity="0.16"/><circle cx="699.7" cy="493.8" r="1.24" fill="#cfc8ea" opacity="0.36"/><circle cx="487.5" cy="452.2" r="1.54" fill="#cfc8ea" opacity="0.15"/><circle cx="721.4" cy="442.5" r="1.67" fill="#cfc8ea" opacity="0.49"/><circle cx="669.7" cy="504.2" r="0.50" fill="#cfc8ea" opacity="0.22"/><circle cx="687.7" cy="63.3" r="0.78" fill="#cfc8ea" opacity="0.17"/><circle cx="420.3" cy="455.4" r="0.61" fill="#cfc8ea" opacity="0.42"/><circle cx="342.0" cy="251.3" r="1.51" fill="#cfc8ea" opacity="0.20"/><circle cx="49.9" cy="95.1" r="0.97" fill="#cfc8ea" opacity="0.12"/><circle cx="387.3" cy="367.8" r="0.83" fill="#cfc8ea" opacity="0.47"/><circle cx="45.1" cy="116.2" r="0.88" fill="#cfc8ea" opacity="0.15"/><circle cx="570.0" cy="438.3" r="1.69" fill="#cfc8ea" opacity="0.38"/><circle cx="26.0" cy="211.0" r="1.59" fill="#cfc8ea" opacity="0.39"/><circle cx="30.7" cy="403.6" r="1.52" fill="#cfc8ea" opacity="0.51"/><circle cx="157.7" cy="342.2" r="1.36" fill="#cfc8ea" opacity="0.16"/><circle cx="262.8" cy="37.0" r="1.21" fill="#cfc8ea" opacity="0.39"/><circle cx="691.2" cy="210.5" r="1.05" fill="#cfc8ea" opacity="0.18"/><circle cx="524.3" cy="200.8" r="1.22" fill="#cfc8ea" opacity="0.31"/><circle cx="551.5" cy="490.1" r="1.07" fill="#cfc8ea" opacity="0.25"/><circle cx="297.5" cy="404.2" r="0.78" fill="#cfc8ea" opacity="0.54"/><path d="M 458.9728090725839 492.2 L 459.5 495.2 L 462.6 495.7810912884306 L 459.5 496.4 L 458.9728090725839 499.4 L 458.4 496.4 L 455.4 495.7810912884306 L 458.4 495.2 Z" fill="#f6e6bf" opacity="0.581653430336155"/><path d="M 372.6003174073994 429.3 L 373.2 432.3 L 376.3 432.93382944515906 L 373.2 433.5 L 372.6003174073994 436.6 L 372.0 433.5 L 368.9 432.93382944515906 L 372.0 432.3 Z" fill="#f6e6bf" opacity="0.7828511926578358"/><path d="M 385.53080032393336 287.3 L 386.0 289.9 L 388.7 290.4149354759138 L 386.0 290.9 L 385.53080032393336 293.6 L 385.0 290.9 L 382.4 290.4149354759138 L 385.0 289.9 Z" fill="#f6e6bf" opacity="0.7248200385132805"/><path d="M 368.90214959159493 119.7 L 369.4 122.1 L 371.8 122.57803634717129 L 369.4 123.0 L 368.90214959159493 125.5 L 368.4 123.0 L 366.0 122.57803634717129 L 368.4 122.1 Z" fill="#f6e6bf" opacity="0.6137785681756214"/><path d="M 117.95134755596519 215.1 L 118.5 218.1 L 121.6 218.70520674879663 L 118.5 219.3 L 117.95134755596519 222.4 L 117.4 219.3 L 114.3 218.70520674879663 L 117.4 218.1 Z" fill="#f6e6bf" opacity="0.5992570732021705"/>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="513" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 507.8 L 16.5 510.5 L 19.2 511 L 16.5 511.5 L 16 514.2 L 15.5 511.5 L 12.8 511 L 15.5 510.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 507.8 L 744.5 510.5 L 747.2 511 L 744.5 511.5 L 744 514.2 L 743.5 511.5 L 740.8 511 L 743.5 510.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Spain 2026 Astrology: 4 Chart Factors Quick Reference</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#spainworldcup2026astrology2en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#spainworldcup2026astrology2en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="410" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#spainworldcup2026astrology2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#spainworldcup2026astrology2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Foundation</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">RFEF Cardinal Chart (1913)</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Sun ≈ 5° Libra; Capricorn symbolic values shape Spain's playing identity in</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">mundane practice</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#spainworldcup2026astrology2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#spainworldcup2026astrology2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Current Transit</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Jupiter-Cancer Opposition (~27°)</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Cancer expansion opposes Capricorn structure; growth arrives through</text>
+  <text x="132" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">confrontation, not smooth flow</text>
+  <circle cx="92" cy="311" r="13.0" fill="url(#spainworldcup2026astrology2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="311" r="8" fill="url(#spainworldcup2026astrology2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="308.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 307.0 L 92.6 310.4 L 96.0 311 L 92.6 311.6 L 92 315.0 L 91.4 311.6 L 88.0 311 L 91.4 310.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="316.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Phase Pattern</text>
+  <text x="132" y="339.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Crisis-Before-Breakthrough</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Group-stage compression echoes 2010 opening: 0-1 vs Switzerland before the title</text>
+  <text x="132" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">run</text>
+  <circle cx="92" cy="410" r="13.0" fill="url(#spainworldcup2026astrology2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="410" r="8" fill="url(#spainworldcup2026astrology2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="407.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 406.0 L 92.6 409.4 L 96.0 410 L 92.6 410.6 L 92 414.0 L 91.4 410.6 L 88.0 410 L 91.4 409.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="415.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Inflection Point</text>
+  <text x="132" y="438.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">June 21 High-Pressure Match</text>
+  <text x="132" y="461.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Jupiter at ~27° Cancer; Capricorn-associated charts peak under genuine</text>
+  <text x="132" y="478.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">existential necessity</text>
+  <path d="M 202.22749999999988 498.4 L 202.6 500.6 L 204.8 501 L 202.6 501.4 L 202.22749999999988 503.6 L 201.8 501.4 L 199.6 501 L 201.8 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="505" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 498.4 L 558.2 500.6 L 560.4 501 L 558.2 501.4 L 557.7725000000002 503.6 L 557.4 501.4 L 555.2 501 L 557.4 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
