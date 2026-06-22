@@ -176,13 +176,13 @@ const TimelinePage: React.FC<{
     <div className="max-w-5xl mx-auto px-4 py-6">
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">{c.title}</h1>
-        <p className="text-sm text-slate-500 mt-1">{c.subtitle}</p>
+        <p className="text-sm text-paper-500 dark:text-star-400 mt-1">{c.subtitle}</p>
       </header>
 
       <FrameworkDisclaimer />
 
       {/* month / life 视图切换 */}
-      <div className="my-4 inline-flex rounded-lg border border-slate-200 p-0.5 text-sm">
+      <div className="my-4 inline-flex rounded-lg border border-paper-300 dark:border-gold-500/20 p-0.5 text-sm">
         {(["month", "life"] as const).map((m) => (
           <button
             key={m}
@@ -190,7 +190,7 @@ const TimelinePage: React.FC<{
             className={`px-3 py-1 rounded-md ${
               mode === m
                 ? "bg-psycho-600 text-white"
-                : "text-slate-600 hover:bg-slate-50"
+                : "text-paper-600 dark:text-star-200 hover:bg-paper-200/50 dark:hover:bg-space-800/50"
             }`}
           >
             {m === "month"
@@ -209,14 +209,14 @@ const TimelinePage: React.FC<{
         <div className="flex items-center justify-between my-4">
           <button
             onClick={() => changeMonth(-1)}
-            className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
+            className="px-3 py-1.5 rounded-lg border border-paper-300 dark:border-gold-500/20 text-sm hover:bg-paper-200/50 dark:hover:bg-space-800/50"
           >
             ‹ {language === "zh" ? "上月" : "Prev"}
           </button>
           <span className="text-sm font-medium">{monthLabel}</span>
           <button
             onClick={() => changeMonth(1)}
-            className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
+            className="px-3 py-1.5 rounded-lg border border-paper-300 dark:border-gold-500/20 text-sm hover:bg-paper-200/50 dark:hover:bg-space-800/50"
           >
             {language === "zh" ? "下月" : "Next"} ›
           </button>
@@ -239,14 +239,14 @@ const TimelinePage: React.FC<{
             className={`px-3 py-1.5 rounded-lg border text-sm ${
               moodOn
                 ? "bg-teal-600 text-white border-teal-600"
-                : "border-slate-200 hover:bg-slate-50"
+                : "border-paper-300 dark:border-gold-500/20 hover:bg-paper-200/50 dark:hover:bg-space-800/50"
             }`}
           >
             {language === "zh" ? "情绪叠加" : "Mood overlay"}
             {moodOn ? " ✓" : ""}
           </button>
           {moodOn && (
-            <p className="mt-2 text-xs text-slate-500">
+            <p className="mt-2 text-xs text-paper-500 dark:text-star-400">
               {language === "zh"
                 ? "你留意到的关联仅供自我觉察，并非因果关系。"
                 : "Patterns you notice are for self-reflection, not cause and effect."}
@@ -261,7 +261,7 @@ const TimelinePage: React.FC<{
             {language === "zh" ? "叠加你的情绪数据" : "Overlay your mood data"}
           </p>
           {/* TODO(legal): GDPR Art9 显式 consent 措辞须过法务后定稿（设计 §10）。 */}
-          <p className="mt-1 text-slate-600">
+          <p className="mt-1 text-paper-600 dark:text-star-200">
             {language === "zh"
               ? "这会把你的 CBT 日记情绪强度（仅数值，不含文字）叠到能量轴上，用于自我觉察。情绪与占星之间没有因果关系。是否同意为本视图处理这些与健康相关的敏感数据？"
               : "This overlays your CBT journal mood intensity (numbers only, never your text) onto your energy timeline for self-reflection. Mood and astrology are not causally linked. Do you consent to processing this health-related sensitive data for this view?"}
@@ -275,7 +275,7 @@ const TimelinePage: React.FC<{
             </button>
             <button
               onClick={() => setShowConsent(false)}
-              className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm"
+              className="px-3 py-1.5 rounded-lg border border-paper-300 dark:border-gold-500/20 text-sm"
             >
               {language === "zh" ? "取消" : "Cancel"}
             </button>
@@ -284,13 +284,13 @@ const TimelinePage: React.FC<{
       )}
 
       {loading && (
-        <div className="py-16 text-center text-slate-500">{c.loading}</div>
+        <div className="py-16 text-center text-paper-500 dark:text-star-400">{c.loading}</div>
       )}
 
       {!loading && errorCode === "EPHEMERIS_UNAVAILABLE" && (
         <div className="py-12 text-center">
           <p className="font-medium">{c.unavailableTitle}</p>
-          <p className="text-sm text-slate-500 mt-1">{c.unavailableBody}</p>
+          <p className="text-sm text-paper-500 dark:text-star-400 mt-1">{c.unavailableBody}</p>
           <button
             onClick={load}
             className="mt-4 px-4 py-2 rounded-lg bg-psycho-600 text-white text-sm"
@@ -303,7 +303,7 @@ const TimelinePage: React.FC<{
       {!loading && errorCode && errorCode !== "EPHEMERIS_UNAVAILABLE" && (
         <div className="py-12 text-center">
           <p className="font-medium">{c.errorTitle}</p>
-          <p className="text-sm text-slate-500 mt-1">{c.errorBody}</p>
+          <p className="text-sm text-paper-500 dark:text-star-400 mt-1">{c.errorBody}</p>
           <button
             onClick={load}
             className="mt-4 px-4 py-2 rounded-lg bg-psycho-600 text-white text-sm"
@@ -362,7 +362,7 @@ const TimelinePage: React.FC<{
 
           {/* selected day summary */}
           {selectedCandle && (
-            <div className="mt-5 rounded-xl border border-slate-200 p-4">
+            <div className="mt-5 rounded-xl border border-paper-300 dark:border-gold-500/20 p-4">
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold">
                   {selectedCandle.date ??
@@ -370,7 +370,7 @@ const TimelinePage: React.FC<{
                       ? `${selectedCandle.age} 岁`
                       : `Age ${selectedCandle.age}`)}
                 </h3>
-                <span className="text-xs text-slate-400">
+                <span className="text-xs text-paper-400 dark:text-star-500">
                   {phaseLabel(selectedCandle.dominantPhase)}
                 </span>
               </div>
@@ -389,18 +389,18 @@ const TimelinePage: React.FC<{
                 </span>
               </div>
               {selectedCandle.intensity < 12 && (
-                <p className="mt-2 text-xs text-slate-500">{c.steadyStretch}</p>
+                <p className="mt-2 text-xs text-paper-500 dark:text-star-400">{c.steadyStretch}</p>
               )}
-              <p className="mt-2 text-[11px] text-slate-400">
+              <p className="mt-2 text-[11px] text-paper-400 dark:text-star-500">
                 {c.intervalNote}
               </p>
 
               {selectedCandle.topAspects.length > 0 && (
                 <div className="mt-3">
-                  <p className="text-xs font-medium text-slate-500">
+                  <p className="text-xs font-medium text-paper-500 dark:text-star-400">
                     {c.topAspectsTitle}
                   </p>
-                  <ul className="mt-1 space-y-0.5 text-xs text-slate-600">
+                  <ul className="mt-1 space-y-0.5 text-xs text-paper-600 dark:text-star-200">
                     {selectedCandle.topAspects.map((a) => (
                       <li key={a.episodeId}>
                         {a.transitBody} → {a.natalBody} ({a.type})
@@ -448,8 +448,8 @@ const Metric: React.FC<{ label: string; value: number }> = ({
   value,
 }) => (
   <div>
-    <div className="text-slate-400">{label}</div>
-    <div className="font-medium text-slate-700">{Math.round(value)}</div>
+    <div className="text-paper-400 dark:text-star-500">{label}</div>
+    <div className="font-medium text-paper-700 dark:text-star-100">{Math.round(value)}</div>
   </div>
 );
 

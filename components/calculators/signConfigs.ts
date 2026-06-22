@@ -1,33 +1,21 @@
-// INPUT: BirthDataCalculator 的 CalculatorConfig/CalculatorBirth 类型、services/apiClient（fetchNatalChart）、types（NatalFacts/PlanetPosition）。
-// OUTPUT: sign 类计算器的配置（Moon Sign / Rising / Big Three / Birth Chart）——各自实现 compute（fetch natal → 抽取 → 展示结果）。
+// INPUT: BirthDataCalculator 的 CalculatorConfig/Birth/Result/Placement/Funnel + birthToPrefill、services/apiClient（fetchNatalChart）、
+//        astroDisplay（planetLabel/signLabel）、types（NatalFacts/PlanetPosition）。
+// OUTPUT: sign 类计算器的配置（Moon Sign / Rising / Big Three / Birth Chart）——compute 把 /api/natal/chart 已返回的
+//         度数/宫位/逆行/元素三模态全部转成富结果 + 导流 prefill + wiki 内链（零额外计算，无 AI）。
 // POS: 计算器矩阵（D）的 sign 类配置层。全部复用 /api/natal/chart（匿名 skipCache，隐私 #2），不新增后端。
-//      结果文案中性、非命运断言；深度解读引导到 wiki。若更新此文件，务必更新 calculators/FOLDER.md。
+//      结果中性非命运断言；深度解读导向 onboarding 真实产品 + wiki。若更新此文件，务必更新 calculators/FOLDER.md。
 
 import type { NatalFacts, PlanetPosition, Language } from "../../types";
 import { fetchNatalChart } from "../../services/apiClient";
-import type {
-  CalculatorConfig,
-  CalculatorBirth,
-  CalculatorResult,
+import { planetLabel, signLabel } from "./astroDisplay";
+import {
+  birthToPrefill,
+  type CalculatorConfig,
+  type CalculatorBirth,
+  type CalculatorResult,
+  type CalculatorPlacement,
+  type CalculatorFunnel,
 } from "./BirthDataCalculator";
-
-const SIGN_ZH: Record<string, string> = {
-  Aries: "白羊",
-  Taurus: "金牛",
-  Gemini: "双子",
-  Cancer: "巨蟹",
-  Leo: "狮子",
-  Virgo: "处女",
-  Libra: "天秤",
-  Scorpio: "天蝎",
-  Sagittarius: "射手",
-  Capricorn: "摩羯",
-  Aquarius: "水瓶",
-  Pisces: "双鱼",
-};
-
-const signLabel = (sign: string, lang: Language): string =>
-  lang === "zh" ? `${SIGN_ZH[sign] ?? sign}座` : sign;
 
 // fetchNatalChart 接收 UserProfile|SynastryProfile（私有联合类型）；计算器只填它读取的字段。
 async function natal(birth: CalculatorBirth): Promise<NatalFacts> {
@@ -37,8 +25,62 @@ async function natal(birth: CalculatorBirth): Promise<NatalFacts> {
   );
 }
 
-function findSign(positions: PlanetPosition[], name: string): string | null {
-  return positions.find((p) => p.name === name)?.sign ?? null;
+function findPos(
+  positions: PlanetPosition[],
+  name: string,
+): PlanetPosition | undefined {
+  return positions.find((p) => p.name === name);
+}
+
+const ANGLE_ZH: Record<string, string> = {
+  Ascendant: "上升",
+  Midheaven: "天顶",
+  Descendant: "下降",
+  IC: "天底",
+};
+
+const bodyLabel = (name: string, lang: Language): string =>
+  lang === "zh" ? (ANGLE_ZH[name] ?? planetLabel(name, "zh")) : name;
+
+const signHref = (sign: string): string => `/wiki/${sign.toLowerCase()}`;
+
+function toPlacement(pos: PlanetPosition, lang: Language): CalculatorPlacement {
+  return {
+    planet: pos.name,
+    sign: pos.sign,
+    label: bodyLabel(pos.name, lang),
+    value: signLabel(pos.sign, lang),
+    degree: pos.degree,
+    minute: pos.minute,
+    house: pos.house,
+    retrograde: pos.isRetrograde,
+    href: signHref(pos.sign),
+  };
+}
+
+function dominanceOf(chart: NatalFacts) {
+  return {
+    elements: chart.dominance.elements,
+    modalities: chart.dominance.modalities,
+  };
+}
+
+// 出生数据 → onboarding 真实产品的导流 CTA（复用 prefill envelope）。
+function onboardingFunnel(
+  birth: CalculatorBirth,
+  lang: Language,
+  sign: string,
+  label: { en: string; zh: string },
+  secondaryLinks: CalculatorFunnel["secondaryLinks"],
+  note?: { en: string; zh: string },
+): CalculatorFunnel {
+  return {
+    label: lang === "zh" ? label.zh : label.en,
+    prefill: birthToPrefill(birth),
+    secondaryLinks,
+    note: note ? (lang === "zh" ? note.zh : note.en) : undefined,
+    sign,
+  };
 }
 
 // ── Moon Sign（无需出生时间） ─────────────────────────────────────────────────
@@ -61,23 +103,38 @@ export const moonSignConfig: CalculatorConfig = {
   },
   compute: async (birth, lang): Promise<CalculatorResult> => {
     const chart = await natal(birth);
-    const sign = findSign(chart.positions, "Moon");
-    if (!sign) {
+    const moon = findPos(chart.positions, "Moon");
+    if (!moon) {
       throw new Error(
-        lang === "zh"
-          ? "无法计算月亮星座"
-          : "Could not determine your Moon sign",
+        lang === "zh" ? "无法计算月亮星座" : "Could not determine your Moon sign",
       );
     }
     return {
       headline:
         lang === "zh"
-          ? `你的月亮在${signLabel(sign, lang)}`
-          : `Your Moon is in ${sign}`,
+          ? `你的月亮在${signLabel(moon.sign, lang)}`
+          : `Your Moon is in ${moon.sign}`,
+      heroGlyph: { planet: "Moon", sign: moon.sign },
+      placements: [toPlacement(moon, lang)],
+      dominance: dominanceOf(chart),
       body:
         lang === "zh"
-          ? "月亮星座描述你的情绪本能、安全感来源与照顾自己和他人的方式。它是倾向的写照，不是命运。想深入了解可查阅百科里的对应词条。"
-          : "Your Moon sign describes your emotional instincts, what makes you feel safe, and how you nurture yourself and others. It points to tendencies, not destiny. Explore the wiki for a deeper reading.",
+          ? "月亮星座描述你的情绪本能、安全感来源与照顾自己和他人的方式——这是倾向的写照，不是命运。下方是你整张星盘的元素平衡。"
+          : "Your Moon sign describes your emotional instincts, what makes you feel safe, and how you nurture yourself and others — tendencies, not destiny. Below is the element balance of your whole chart.",
+      funnel: onboardingFunnel(
+        birth,
+        lang,
+        moon.sign,
+        {
+          en: "Get your full birth chart reading",
+          zh: "查看完整出生星盘解读",
+        },
+        [{ label: lang === "zh" ? "了解月亮" : "Learn about the Moon", href: "/wiki/moon" }],
+        {
+          en: "Your Moon is one piece of the picture. See every placement, house, and aspect in your full chart.",
+          zh: "月亮只是其中一块。在完整星盘里看到每个落座、宫位与相位。",
+        },
+      ),
     };
   },
 };
@@ -101,7 +158,6 @@ export const risingSignConfig: CalculatorConfig = {
     },
   },
   compute: async (birth, lang): Promise<CalculatorResult> => {
-    // 城市/坐标由外壳保证（city 必填）；上升另需精确出生时间。
     if (!birth.birthTime) {
       throw new Error(
         lang === "zh"
@@ -110,23 +166,38 @@ export const risingSignConfig: CalculatorConfig = {
       );
     }
     const chart = await natal(birth);
-    const sign = findSign(chart.positions, "Ascendant");
-    if (!sign) {
+    const asc = findPos(chart.positions, "Ascendant");
+    if (!asc) {
       throw new Error(
-        lang === "zh"
-          ? "无法计算上升星座"
-          : "Could not determine your rising sign",
+        lang === "zh" ? "无法计算上升星座" : "Could not determine your rising sign",
       );
     }
+    const sun = findPos(chart.positions, "Sun");
+    const moon = findPos(chart.positions, "Moon");
+    const placements = [asc, sun, moon]
+      .filter((p): p is PlanetPosition => !!p)
+      .map((p) => toPlacement(p, lang));
     return {
       headline:
         lang === "zh"
-          ? `你的上升星座是${signLabel(sign, lang)}`
-          : `Your rising sign is ${sign}`,
+          ? `你的上升星座是${signLabel(asc.sign, lang)}`
+          : `Your rising sign is ${asc.sign}`,
+      heroGlyph: { planet: "Ascendant", sign: asc.sign },
+      placements,
       body:
         lang === "zh"
-          ? "上升星座是你出生那一刻东方地平线升起的星座，常描述第一印象与你接近世界的方式。它对出生时间敏感，所以准确的时间很重要。"
-          : "Your rising sign is the zodiac sign on the eastern horizon at your birth moment, often describing first impressions and how you approach the world. It is sensitive to birth time, so accuracy matters.",
+          ? "上升星座是你出生那一刻东方地平线升起的星座，常描述第一印象与你接近世界的方式。它对出生时间高度敏感，所以准确时间很重要。"
+          : "Your rising sign is the zodiac sign on the eastern horizon at your birth moment — often describing first impressions and how you approach the world. It is sensitive to birth time, so accuracy matters.",
+      funnel: onboardingFunnel(
+        birth,
+        lang,
+        asc.sign,
+        { en: "See your full birth chart", zh: "查看完整出生星盘" },
+        [
+          { label: lang === "zh" ? "上升是什么" : "What the Ascendant means", href: "/wiki/ascendant" },
+          { label: lang === "zh" ? `了解${signLabel(asc.sign, lang)}` : `Read about ${asc.sign}`, href: signHref(asc.sign) },
+        ],
+      ),
     };
   },
 };
@@ -151,33 +222,40 @@ export const bigThreeConfig: CalculatorConfig = {
   },
   compute: async (birth, lang): Promise<CalculatorResult> => {
     const chart = await natal(birth);
-    const sun = findSign(chart.positions, "Sun");
-    const moon = findSign(chart.positions, "Moon");
-    const rising = findSign(chart.positions, "Ascendant");
+    const sun = findPos(chart.positions, "Sun");
+    const moon = findPos(chart.positions, "Moon");
+    const asc = findPos(chart.positions, "Ascendant");
     if (!sun || !moon) {
-      throw new Error(
-        lang === "zh" ? "无法计算" : "Could not compute your chart",
-      );
+      throw new Error(lang === "zh" ? "无法计算" : "Could not compute your chart");
     }
-    const items = [
-      { label: lang === "zh" ? "太阳" : "Sun", value: signLabel(sun, lang) },
-      { label: lang === "zh" ? "月亮" : "Moon", value: signLabel(moon, lang) },
-      {
-        label: lang === "zh" ? "上升" : "Rising",
-        value: rising
-          ? signLabel(rising, lang)
-          : lang === "zh"
-            ? "需出生时间"
-            : "needs birth time",
-      },
-    ];
+    const placements = [sun, moon, asc]
+      .filter((p): p is PlanetPosition => !!p)
+      .map((p) => toPlacement(p, lang));
     return {
       headline: lang === "zh" ? "你的日月升" : "Your Big Three",
-      items,
-      body:
-        lang === "zh"
-          ? "太阳=核心身份与意志，月亮=情绪与本能，上升=他人初见的你。上升依赖精确出生时间。这是倾向的描述，不是预测。"
-          : "Sun = core identity and will, Moon = emotion and instinct, Rising = how others first meet you. Rising needs an exact birth time. These describe tendencies, not predictions.",
+      placements,
+      dominance: dominanceOf(chart),
+      body: asc
+        ? lang === "zh"
+          ? "太阳=核心身份与意志，月亮=情绪与本能，上升=他人初见的你。这是倾向的描述，不是预测。"
+          : "Sun = core identity and will, Moon = emotion and instinct, Rising = how others first meet you. These describe tendencies, not predictions."
+        : lang === "zh"
+          ? "已找到太阳与月亮。上升依赖精确出生时间——填入出生时间即可解锁你的上升星座。"
+          : "Found your Sun and Moon. Rising needs an exact birth time — add yours to unlock your Ascendant.",
+      funnel: onboardingFunnel(
+        birth,
+        lang,
+        sun.sign,
+        {
+          en: "See your full chart and personalized reading",
+          zh: "查看完整星盘与个性化解读",
+        },
+        [
+          { label: lang === "zh" ? "太阳" : "Sun", href: "/wiki/sun" },
+          { label: lang === "zh" ? "月亮" : "Moon", href: "/wiki/moon" },
+          { label: lang === "zh" ? "上升" : "Ascendant", href: "/wiki/ascendant" },
+        ],
+      ),
     };
   },
 };
@@ -217,23 +295,43 @@ export const birthChartConfig: CalculatorConfig = {
   },
   compute: async (birth, lang): Promise<CalculatorResult> => {
     const chart = await natal(birth);
-    const byName = new Map(chart.positions.map((p) => [p.name, p.sign]));
-    const items = CHART_ORDER.filter((n) => byName.has(n)).map((n) => ({
-      label: n,
-      value: signLabel(byName.get(n) as string, lang),
-    }));
-    if (items.length === 0) {
+    const byName = new Map(chart.positions.map((p) => [p.name, p]));
+    const placements = CHART_ORDER.filter((n) => byName.has(n)).map((n) =>
+      toPlacement(byName.get(n) as PlanetPosition, lang),
+    );
+    if (placements.length === 0) {
       throw new Error(
         lang === "zh" ? "无法计算星盘" : "Could not compute your chart",
       );
     }
+    const sun = byName.get("Sun");
     return {
       headline: lang === "zh" ? "你的出生星盘" : "Your Birth Chart",
-      items,
+      placements,
+      dominance: dominanceOf(chart),
       body:
         lang === "zh"
-          ? "每个行星落入的星座是阅读你人格模式的起点。上升与天顶依赖精确出生时间。深度解读见百科。"
-          : "Each planet's sign placement is the starting point for reading your personality patterns. Ascendant and Midheaven need an exact birth time. See the wiki for deeper readings.",
+          ? "每个行星落入的星座（带度数与逆行标记）是阅读你人格模式的起点。上升与天顶依赖精确出生时间。点开任一星座可深入阅读。"
+          : "Each planet's sign placement — with its degree and retrograde marker — is the starting point for reading your personality patterns. Ascendant and Midheaven need an exact birth time. Tap any sign to read deeper.",
+      funnel: onboardingFunnel(
+        birth,
+        lang,
+        sun?.sign ?? "",
+        {
+          en: "Get your full reading — houses, aspects & a personalized interpretation",
+          zh: "获取完整解读——宫位、相位与个性化分析",
+        },
+        [
+          {
+            label: lang === "zh" ? "如何读懂出生星盘" : "How to read your chart",
+            href: "/wiki/how-to-read-birth-chart",
+          },
+        ],
+        {
+          en: "This is your placement snapshot. Save it to unlock house-by-house and aspect-by-aspect interpretation.",
+          zh: "这是你的落座快照。保存后即可解锁逐宫位、逐相位的深度解读。",
+        },
+      ),
     };
   },
 };

@@ -24,7 +24,7 @@ export const TimelineLegend: React.FC = () => {
   const { language } = useLanguage();
   const c = getTimelineCopy(language);
   return (
-    <div className="mt-3 text-xs text-slate-500 space-y-2">
+    <div className="mt-3 text-xs text-paper-500 dark:text-star-400 space-y-2">
       <p>{c.legendIntensity}</p>
       <div className="flex flex-wrap gap-x-4 gap-y-1.5">
         <Swatch color="#22C55E" label={c.legendUp} />
@@ -32,7 +32,9 @@ export const TimelineLegend: React.FC = () => {
         <Swatch color="#94A3B8" label={c.legendFlat} />
       </div>
       <p>{c.legendWickNote}</p>
-      <p className="text-slate-400">{c.comparedToYourself}</p>
+      <p className="text-paper-400 dark:text-star-500">
+        {c.comparedToYourself}
+      </p>
     </div>
   );
 };

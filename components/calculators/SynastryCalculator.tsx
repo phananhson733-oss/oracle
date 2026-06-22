@@ -1,17 +1,23 @@
 // INPUT: React、useLanguage（UIComponents）、services/apiClient（fetchNatalChart）、analytics、useCalculatorTheme、
-//        astroDisplay（planetLabel）、PersonBirthFields（共享双人表单）、crossAspects（纯引擎）。
-// OUTPUT: 合盘（Synastry）计算器——两人出生表单 → 两次匿名 natal → 客户端交叉相位 → 中性兼容性视图。
+//        astroDisplay（planetLabel/signLabel）、PersonBirthFields（共享双人表单）、crossAspects（纯引擎）、
+//        共享原语 ToolPageShell / ToolResultCard / GlyphBadge / ToolFunnelCTA。
+// OUTPUT: 合盘（Synastry）计算器——两人出生表单 → 两次匿名 natal → 客户端交叉相位 → 品牌化中性兼容性视图 + 导流 CTA。
 // POS: 计算器矩阵（D）Synastry，路由 /:lang/synastry-calculator。**客户端算相位**（避开付费门 /api/synastry）；
 //      姓名仅本地显示绝不出端（隐私 #4）；中性非宿命叙事（AI 安全）。若更新此文件，务必更新 calculators/FOLDER.md。
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import type { Language, PlanetPosition } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { fetchNatalChart } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { useCalculatorTheme } from "./useCalculatorTheme";
-import { EmbedCodeBox } from "./embed";
-import { planetLabel } from "./astroDisplay";
+import { planetLabel, signLabel } from "./astroDisplay";
 import {
   PersonBirthFields,
   emptyPerson,
@@ -24,7 +30,12 @@ import {
   crossAspects,
   summarizeAspects,
   type CrossAspect,
+  type AspectNature,
 } from "./crossAspects";
+import { ToolPageShell } from "./ToolPageShell";
+import { ToolResultCard } from "./ToolResultCard";
+import { GlyphBadge } from "./GlyphBadge";
+import { ToolFunnelCTA } from "./ToolFunnelCTA";
 
 // 个人/社会行星——合盘中真正承载关系动力的 7 颗（外行星交叉相位偏世代噪音，略去）。
 const SYNASTRY_BODIES = [
@@ -50,13 +61,63 @@ const ASPECT_ZH: Record<string, string> = {
 const aspectLabel = (aspect: string, lang: Language): string =>
   lang === "zh" ? (ASPECT_ZH[aspect] ?? aspect) : aspect;
 
-const NATURE_COLOR: Record<string, string> = {
-  harmonious: "text-emerald-400",
-  challenging: "text-amber-400",
-  neutral: "text-gold-500",
+const NATURE_COLOR: Record<AspectNature, string> = {
+  harmonious: "text-emerald-500 dark:text-emerald-400",
+  challenging: "text-amber-500 dark:text-amber-400",
+  neutral: "text-accent",
+};
+
+// 按性质的中性、非宿命化"含义"——刻意是通用的（不按行星对），保持轻量、无 AI。
+const NATURE_MEANING: Record<AspectNature, { en: string; zh: string }> = {
+  harmonious: {
+    en: "flows easily — natural support",
+    zh: "顺畅流动——自然的支持",
+  },
+  challenging: {
+    en: "friction that can mature into growth",
+    zh: "摩擦，可以磨炼为成长",
+  },
+  neutral: {
+    en: "fused energies, hard to separate",
+    zh: "能量融合，难以分割",
+  },
 };
 
 type State = "idle" | "loading" | "result" | "error";
+
+// 单个落座行（个人 Big Three 用）。
+interface BigThree {
+  sun?: PlanetPosition;
+  moon?: PlanetPosition;
+  asc?: PlanetPosition;
+}
+
+const findPos = (
+  positions: PlanetPosition[],
+  name: string,
+): PlanetPosition | undefined => positions.find((p) => p.name === name);
+
+const bigThreeOf = (positions: PlanetPosition[]): BigThree => ({
+  sun: findPos(positions, "Sun"),
+  moon: findPos(positions, "Moon"),
+  asc: findPos(positions, "Ascendant"),
+});
+
+// 和谐:成长 比值 → 一行"连接质感"标签（中性、描述性）。
+const connectionTexture = (
+  harmonious: number,
+  challenging: number,
+  lang: Language,
+): string | null => {
+  if (harmonious === 0 && challenging === 0) return null;
+  if (challenging === 0)
+    return lang === "zh" ? "几乎全是顺流" : "Mostly easeful";
+  if (harmonious === 0) return lang === "zh" ? "偏向成长课题" : "Growth-heavy";
+  const ratio = harmonious / challenging;
+  if (ratio >= 1.6) return lang === "zh" ? "多为顺流" : "Mostly easeful";
+  if (ratio <= 0.62) return lang === "zh" ? "偏向成长课题" : "Growth-heavy";
+  return lang === "zh" ? "顺流与成长并存" : "Balanced";
+};
 
 export const SynastryCalculator: React.FC = () => {
   const { language } = useLanguage();
@@ -70,11 +131,10 @@ export const SynastryCalculator: React.FC = () => {
   const [state, setState] = useState<State>("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [aspects, setAspects] = useState<CrossAspect[]>([]);
+  // 落座只用于客户端富结果（Big Three 头部）；与姓名一样绝不回传。
+  const [bigA, setBigA] = useState<BigThree>({});
+  const [bigB, setBigB] = useState<BigThree>({});
   const resultRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
-  }, []);
 
   const monthNames = useMemo<string[]>(() => MONTH_FALLBACK_EN.slice(), []);
 
@@ -118,6 +178,8 @@ export const SynastryCalculator: React.FC = () => {
       const posB = (chartB.positions ?? []) as PlanetPosition[];
       const found = crossAspects(posA, posB, SYNASTRY_BODIES);
       setAspects(found);
+      setBigA(bigThreeOf(posA));
+      setBigB(bigThreeOf(posB));
       setState("result");
       trackEvent("synastry_calculated", {
         has_time_a: !!personA.current.time,
@@ -126,7 +188,10 @@ export const SynastryCalculator: React.FC = () => {
       });
       setTimeout(() => {
         resultRef.current?.focus();
-        resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        resultRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }, 100);
     } catch {
       setErrorMessage(
@@ -140,6 +205,10 @@ export const SynastryCalculator: React.FC = () => {
 
   const summary = useMemo(() => summarizeAspects(aspects), [aspects]);
   const shown = aspects.slice(0, MAX_ASPECTS_SHOWN);
+  const texture = useMemo(
+    () => connectionTexture(summary.harmonious, summary.challenging, lang),
+    [summary.harmonious, summary.challenging, lang],
+  );
 
   const fieldsTheme: FieldsTheme = {
     textPrimary: th.textPrimary,
@@ -151,21 +220,71 @@ export const SynastryCalculator: React.FC = () => {
     cardBorder: th.cardBorder,
   };
 
-  return (
-    <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
-      <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${th.textPrimary}`}>
-          {lang === "zh" ? "合盘计算器" : "Synastry Calculator"}
-        </h1>
-        <p className={`text-lg ${th.textSecondary}`}>
-          {lang === "zh"
-            ? "对比两个人的星盘，看见彼此间的相位连接——基于真实天文，不做命运断言。"
-            : "Compare two charts to see the aspects between them — real astronomy, no destiny claims."}
+  // 单人 Big Three 三连徽章（profile vs profile 头部的一列）。
+  const renderBigThree = (label: string, b: BigThree) => {
+    const rows: Array<{ planet: string; pos?: PlanetPosition }> = [
+      { planet: "Sun", pos: b.sun },
+      { planet: "Moon", pos: b.moon },
+      { planet: "Ascendant", pos: b.asc },
+    ];
+    return (
+      <div className="flex-1">
+        <p className="mb-3 truncate font-serif text-base font-semibold text-paper-900 dark:text-star-50">
+          {label}
         </p>
+        <ul className="space-y-2.5">
+          {rows.map(({ planet, pos }) => (
+            <li key={planet} className="flex items-center gap-2.5">
+              <GlyphBadge planet={planet} sign={pos?.sign} size="sm" />
+              <span className="min-w-0 flex-1 text-xs text-paper-600 dark:text-star-200">
+                {planetLabel(planet, lang)}
+              </span>
+              <span className="text-sm font-medium text-paper-900 dark:text-star-50">
+                {pos ? (
+                  signLabel(pos.sign, lang)
+                ) : (
+                  <span className="font-mono text-xs text-paper-500 dark:text-star-400">
+                    {lang === "zh" ? "需时间" : "needs time"}
+                  </span>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
+    );
+  };
 
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+  const countTile = (
+    value: number,
+    color: string,
+    caption: string,
+  ): React.ReactNode => (
+    <div className="text-center">
+      <div className={`font-serif text-3xl font-bold ${color}`}>{value}</div>
+      <div className="mt-1 text-xs text-paper-600 dark:text-star-200">
+        {caption}
+      </div>
+    </div>
+  );
+
+  return (
+    <ToolPageShell
+      title={lang === "zh" ? "合盘计算器" : "Synastry Calculator"}
+      subtitle={
+        lang === "zh"
+          ? "对比两个人的星盘，看见彼此间的相位连接——基于真实天文，不做命运断言。"
+          : "Compare two charts to see the aspects between them — real astronomy, no destiny claims."
+      }
+      slug="synastry-calculator"
+      maxWidth="3xl"
+    >
+      <form
+        onSubmit={handleSubmit}
+        className={`${th.cardBg} border ${th.cardBorder} mb-8 rounded-2xl p-6 transition-all duration-300 ease-in-out sm:p-8`}
+        noValidate
+      >
+        <div className="mb-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
           <PersonBirthFields
             idPrefix="syn-a"
             label={lang === "zh" ? "第一个人" : "Person A"}
@@ -186,7 +305,7 @@ export const SynastryCalculator: React.FC = () => {
         <button
           type="submit"
           disabled={state === "loading"}
-          className="w-full rounded-lg bg-gold-500 py-3 font-semibold text-space-950 hover:bg-gold-400 disabled:opacity-60 min-h-[44px]"
+          className="min-h-[44px] w-full rounded-xl bg-gradient-primary py-3 font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 motion-reduce:transition-none"
         >
           {state === "loading"
             ? lang === "zh"
@@ -199,85 +318,129 @@ export const SynastryCalculator: React.FC = () => {
       </form>
 
       {state === "error" && (
-        <div className="mt-8 rounded-lg border border-red-400/40 bg-red-500/10 p-4 text-center">
+        <div className="mb-8 rounded-2xl border border-red-400/40 bg-red-500/10 p-4 text-center">
           <p className={th.textPrimary}>{errorMessage}</p>
         </div>
       )}
 
       {state === "result" && (
-        <div ref={resultRef} tabIndex={-1} className="mt-8 outline-none">
-          <div
-            className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-6 sm:p-8 mb-6`}
-          >
-            <h2 className={`text-2xl font-bold mb-1 ${th.textPrimary}`}>
-              {labelA} &amp; {labelB}
-            </h2>
-            <p className={`text-sm mb-5 ${th.textSecondary}`}>
-              {lang === "zh"
-                ? `在 7 颗个人/社会行星间找到 ${summary.total} 个主相位连接。`
-                : `${summary.total} major aspects across 7 personal & social planets.`}
-            </p>
-            <div className="grid grid-cols-3 gap-3">
-              <div className={`rounded-lg border ${th.cardBorder} p-3 text-center`}>
-                <div className="text-2xl font-bold text-emerald-400">
-                  {summary.harmonious}
-                </div>
-                <div className={`text-xs ${th.textSecondary}`}>
-                  {lang === "zh" ? "和谐（拱/六分）" : "ease (trine/sextile)"}
-                </div>
-              </div>
-              <div className={`rounded-lg border ${th.cardBorder} p-3 text-center`}>
-                <div className="text-2xl font-bold text-amber-400">
-                  {summary.challenging}
-                </div>
-                <div className={`text-xs ${th.textSecondary}`}>
-                  {lang === "zh" ? "成长（刑/冲）" : "growth (square/opp)"}
-                </div>
-              </div>
-              <div className={`rounded-lg border ${th.cardBorder} p-3 text-center`}>
-                <div className="text-2xl font-bold text-gold-500">
-                  {summary.neutral}
-                </div>
-                <div className={`text-xs ${th.textSecondary}`}>
-                  {lang === "zh" ? "融合（合相）" : "blend (conjunction)"}
-                </div>
-              </div>
-            </div>
+        <ToolResultCard
+          innerRef={resultRef}
+          tabIndex={-1}
+          headline={`${labelA} & ${labelB}`}
+          sub={
+            lang === "zh"
+              ? `在 7 颗个人/社会行星间找到 ${summary.total} 个主相位连接。`
+              : `${summary.total} major aspects across 7 personal & social planets.`
+          }
+          footer={
+            <ToolFunnelCTA
+              tool="synastry-calculator"
+              label={
+                lang === "zh"
+                  ? "获取深入的合盘解读"
+                  : "Get your in-depth synastry reading"
+              }
+              href="/us"
+              note={
+                lang === "zh"
+                  ? "这些相位呈现的是几何结构。完整解读会诠释每个连接对你们俩意味着什么。"
+                  : "These aspects show the geometry. The full reading interprets what each connection means for you two."
+              }
+              secondaryLinks={[
+                {
+                  label:
+                    lang === "zh"
+                      ? "组合盘计算器"
+                      : "Composite chart calculator",
+                  href: "/composite-calculator",
+                },
+              ]}
+            />
+          }
+        >
+          {/* Big Three：profile vs profile（仅展示用，落座不出端） */}
+          <div className="flex items-start gap-4 sm:gap-8">
+            {renderBigThree(labelA, bigA)}
+            <div
+              aria-hidden="true"
+              className="w-px self-stretch bg-paper-200/70 dark:bg-gold-500/10"
+            />
+            {renderBigThree(labelB, bigB)}
           </div>
 
+          {/* 性质计数：单层扁平卡，无逐格边框（语义色保留） */}
+          <div className="mt-6 grid grid-cols-3 gap-3 rounded-xl bg-paper-100/60 p-4 dark:bg-space-800/40">
+            {countTile(
+              summary.harmonious,
+              "text-emerald-500 dark:text-emerald-400",
+              lang === "zh" ? "和谐（拱/六分）" : "ease (trine/sextile)",
+            )}
+            {countTile(
+              summary.challenging,
+              "text-amber-500 dark:text-amber-400",
+              lang === "zh" ? "成长（刑/冲）" : "growth (square/opp)",
+            )}
+            {countTile(
+              summary.neutral,
+              "text-accent",
+              lang === "zh" ? "融合（合相）" : "blend (conjunction)",
+            )}
+          </div>
+
+          {texture && (
+            <p className="mt-4 text-center text-sm text-paper-600 dark:text-star-200">
+              <span className="text-paper-500 dark:text-star-400">
+                {lang === "zh" ? "连接质感：" : "Connection texture: "}
+              </span>
+              <span className="font-medium text-paper-900 dark:text-star-50">
+                {texture}
+              </span>
+            </p>
+          )}
+
+          {/* 最紧密的相位：字形 A + 相位名 + 字形 B + 中性含义 */}
           {shown.length > 0 ? (
-            <div
-              className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-5 sm:p-7`}
-            >
-              <h3 className={`text-lg font-bold mb-1 ${th.textPrimary}`}>
+            <div className="mt-8">
+              <h3 className="font-serif text-lg font-bold text-paper-900 dark:text-star-50">
                 {lang === "zh" ? "最紧密的相位" : "Tightest aspects"}
               </h3>
-              <p className={`text-xs mb-4 ${th.textSecondary}`}>
+              <p className="mt-1 text-xs leading-relaxed text-paper-600 dark:text-star-200">
                 {lang === "zh"
                   ? "按容许度排序（越小越精确）。这些是连接的描述，不是结果的预测。"
                   : "Sorted by orb (smaller = more exact). These describe connections, not outcomes."}
               </p>
-              <ul className="space-y-2">
+              <ul className="mt-4 divide-y divide-paper-200/70 dark:divide-gold-500/10">
                 {shown.map((a, i) => (
-                  <li
-                    key={`${a.a}-${a.b}-${a.aspect}-${i}`}
-                    className={`flex items-center justify-between rounded-lg border ${th.cardBorder} px-4 py-2.5`}
-                  >
-                    <span className={`text-sm ${th.textPrimary}`}>
-                      {labelA} {planetLabel(a.a, lang)}{" "}
-                      <span className={NATURE_COLOR[a.nature] ?? th.textSecondary}>
+                  <li key={`${a.a}-${a.b}-${a.aspect}-${i}`} className="py-3">
+                    <div className="flex items-center gap-2">
+                      <GlyphBadge planet={a.a} size="sm" />
+                      <span className="text-xs text-paper-600 dark:text-star-200">
+                        {labelA} {planetLabel(a.a, lang)}
+                      </span>
+                      <span
+                        className={`text-sm font-semibold ${NATURE_COLOR[a.nature]}`}
+                      >
                         {aspectLabel(a.aspect, lang)}
-                      </span>{" "}
-                      {labelB} {planetLabel(a.b, lang)}
-                    </span>
-                    <span className={`text-xs ${th.textSecondary}`}>
-                      {a.orb.toFixed(1)}°
-                    </span>
+                      </span>
+                      <span className="text-xs text-paper-600 dark:text-star-200">
+                        {labelB} {planetLabel(a.b, lang)}
+                      </span>
+                      <GlyphBadge planet={a.b} size="sm" />
+                      <span className="ml-auto font-mono text-xs text-paper-500 dark:text-star-400">
+                        {a.orb.toFixed(1)}°
+                      </span>
+                    </div>
+                    <p className="mt-1 pl-[42px] text-xs text-paper-500 dark:text-star-400">
+                      {lang === "zh"
+                        ? NATURE_MEANING[a.nature].zh
+                        : NATURE_MEANING[a.nature].en}
+                    </p>
                   </li>
                 ))}
               </ul>
               {aspects.length > MAX_ASPECTS_SHOWN && (
-                <p className={`mt-3 text-xs ${th.textSecondary}`}>
+                <p className="mt-3 text-xs text-paper-500 dark:text-star-400">
                   {lang === "zh"
                     ? `另有 ${aspects.length - MAX_ASPECTS_SHOWN} 个较宽的相位未列出。`
                     : `${aspects.length - MAX_ASPECTS_SHOWN} wider aspects not shown.`}
@@ -285,24 +448,21 @@ export const SynastryCalculator: React.FC = () => {
               )}
             </div>
           ) : (
-            <div
-              className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-6 text-center ${th.textSecondary}`}
-            >
+            <p className="mt-8 text-sm leading-relaxed text-paper-600 dark:text-star-200">
               {lang === "zh"
                 ? "在主相位容许度内没有找到紧密连接。这本身也是一种关系语言。"
                 : "No tight major-aspect connections were found — which is its own kind of relationship language."}
-            </div>
+            </p>
           )}
-        </div>
+        </ToolResultCard>
       )}
 
-      <p className={`mt-8 text-sm leading-relaxed ${th.textSecondary}`}>
+      <p className="mt-8 text-sm leading-relaxed text-paper-600 dark:text-star-200">
         {lang === "zh"
           ? "合盘描述两张星盘之间的几何连接，是自我与关系反思的镜子，而非对一段关系结果的预测。名字只留在你的设备上，不会上传。"
           : "Synastry describes the geometry between two charts — a mirror for reflection, not a prediction of how a relationship will turn out. Names stay on your device and are never uploaded."}
       </p>
-      <EmbedCodeBox slug="synastry-calculator" />
-    </div>
+    </ToolPageShell>
   );
 };
 

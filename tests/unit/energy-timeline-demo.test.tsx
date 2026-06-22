@@ -5,6 +5,7 @@
 
 import { describe, it, expect, vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 
 const openLoginModal = vi.fn();
 vi.mock("../../contexts/AuthContext", () => ({
@@ -26,7 +27,11 @@ import EnergyTimelineDemoPage, {
 
 describe("EnergyTimelineDemoPage", () => {
   it("renders the sample badge + a sign-up CTA and embeds the timeline in demo mode", () => {
-    const { getByText, getByTestId } = render(<EnergyTimelineDemoPage />);
+    const { getByText, getByTestId } = render(
+      <MemoryRouter>
+        <EnergyTimelineDemoPage />
+      </MemoryRouter>,
+    );
     expect(getByText(/Sample chart/i)).toBeTruthy();
     expect(getByTestId("timeline-body")).toBeTruthy();
     expect(captured.demo).toBe(true);
@@ -35,7 +40,11 @@ describe("EnergyTimelineDemoPage", () => {
 
   it("opens the login modal when the create-your-own CTA is clicked", () => {
     openLoginModal.mockClear();
-    const { getByText } = render(<EnergyTimelineDemoPage />);
+    const { getByText } = render(
+      <MemoryRouter>
+        <EnergyTimelineDemoPage />
+      </MemoryRouter>,
+    );
     fireEvent.click(getByText(/Create your own timeline/i));
     expect(openLoginModal).toHaveBeenCalledTimes(1);
   });

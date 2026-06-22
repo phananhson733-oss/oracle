@@ -11,7 +11,8 @@
   - **天象工具类**（无出生数据）：纯天文工具，复用 `/api/astro/*`（today/positions/moon-phase/ephemeris），无 LLM、无位置、无 PII。
 - 双渲染：静态 SEO stub（`scripts/generate-seo-pages.mjs` 的 `CALCULATOR_SEO` 循环）给爬虫读关键词正文 + WebApplication/FAQPage JSON-LD + sitemap；inject-spa 水合成本目录的交互组件。
 - 新公开路由必须加进 `App.tsx` 的 `isPublicRoute` 白名单（否则运行时 noindex 杀收录）。
-- 显示刻意用行星/星座**文字名**而非占星 Unicode 符号——运行时 zh locale 会把 ☉♀☿ 字形回退成彩色 emoji（见 memory）。
+- 字形显示走 `<GlyphBadge>` 签名原语：占星 Unicode 字形作为 **TEXT**（`font-variant-emoji:text`）渲染在圆角对比底板上，且全站永不在运行时设 `document.lang=zh`（否则 macOS Chrome locale 回退成彩色 emoji，见 memory）。GlyphBadge 为装饰性（aria-hidden），语义由相邻文字标签承载——EN/ZH、明/暗均验证为文字字形非 emoji。
+- 共享呈现原语（GlyphBadge / ToolPageShell / ToolResultCard / ToolFunnelCTA / ElementBalanceBar）统一所有工具的视觉语言、导流内链与免费数据增强；新工具应复用而非自搓布局。
 
 文件清单
 - FOLDER.md｜地位：目录索引文档。
@@ -19,6 +20,11 @@
 - BirthDataCalculator.tsx｜地位：sign 类配置驱动外壳｜功能：出生日期(+可选时间/城市)表单（复用 useCityAutocomplete + DateSelectGroup）→ `config.compute(birth)` → 结果卡（headline/items/body）；匿名计算走 `fetchNatalChart(skipCache)` 不缓存明文（隐私 #2）；loading/error/result 全状态；底部渲染 `EmbedCodeBox`（slug 取自 config）。
 - signConfigs.ts｜地位：sign 类计算器配置｜功能：moonSignConfig / risingSignConfig / bigThreeConfig / birthChartConfig —— 各实现 compute（fetch natal → 抽取 Sun/Moon/Ascendant 等 sign → 中性文案）；含 sign 中英映射；上升类 needsTime=true 缺时间报错。
 - useCalculatorTheme.ts｜地位：共享主题 hook｜功能：返回明暗 class token（cardBg/textPrimary 等，对齐 BirthDataCalculator，来源 COLOR_SYSTEM_GUIDE）。
+- GlyphBadge.tsx｜地位：**签名原语**｜功能：`<GlyphBadge planet|sign|glyph tone size>` —— 把行星/星座/角度字形（取自 shared/astro-glyphs 的 planetGlyph/getZodiacGlyph/glyphFor）渲染为带对比圆角底板的徽章；TEXT + font-variant-emoji:text + 装饰性 aria-hidden，统一全工具星象视觉语言。
+- ToolPageShell.tsx｜地位：共享页壳原语｜功能：`<ToolPageShell title subtitle slug heroGlyph? maxWidth?>` —— 居中衬线 h1(Cormorant)+副标题 + 可选 hero 字形 + 内容槽 + 自动 EmbedCodeBox(slug)；消除各工具手搓 ~30 行布局/header。
+- ToolResultCard.tsx｜地位：共享结果原语｜功能：`<ToolResultCard hero? headline sub? footer?>` 扁平结果卡（rounded-2xl/单层细边/衬线标题/统一过渡/hover）+ `<PlacementList>`/`<PlacementRow>`（字形+标签+等宽值+逆行+可选 wiki 深链）；禁嵌套卡/禁左色条。
+- ToolFunnelCTA.tsx｜地位：共享导流原语｜功能：`<ToolFunnelCTA tool label href? prefill? secondaryLinks? note? sign?>` —— 金渐变主 CTA 导向真实功能（/onboarding 带 prefill envelope · /us · /timeline · /birth-chart-calculator）+ 次级 wiki 文字链；点击 fire trackChartFunnel（仅 categorical sign，隐私红线 #1）。
+- ElementBalanceBar.tsx｜地位：共享综合视觉原语｜功能：`<ElementBalanceBar elements modalities? lang>` —— 火土风水/基本固定变动分布条；数据来自 /api/natal/chart 的 dominance（零额外计算、无 AI）。
 - astroDisplay.ts｜地位：天象显示工具（纯）｜功能：星座/行星中英名映射、座内度数「度·分」格式化、星座缩写——刻意文字名避 emoji 字形陷阱。
 - CurrentPlanetsTool.tsx｜地位：当前天象盘（#9）｜功能：某 UTC 日 10 大行星 sign/度/逆行（默认今天，可选日期），消费 `fetchPositions`；路由 /:lang/current-planets。
 - MoonPhaseTool.tsx｜地位：月相工具（#12）｜功能：某 UTC 日 8 相名 + 受照% + 盈亏 + 月/日星座，消费 `fetchMoonPhase`；路由 /:lang/moon-phase-calculator。
@@ -50,3 +56,4 @@
 - 2026-06-18 新建：#21 Rodden Rating——新增 `rodden.ts`（分级纯算法）+ `RoddenRatingTool.tsx`（教育工具，出生时间来源→数据可信度，无后端/无 PII）。route /:lang/rodden-rating + /embed/rodden-rating + CALCULATOR_SEO + isPublicRoute。TDD `tests/unit/rodden.test.ts`。
 - 2026-06-18 新建：#19 名人星座配对——新增 `sunSign.ts`（太阳星座日期段引擎，cusp 标注）+ `celebrities.ts`（60 位名人公开出生日期数据集，全取中段无歧义）+ `CelebrityTwinsTool.tsx`（出生月日→太阳星座→同星座/同元素名人，纯客户端无 PII）。route /:lang/celebrity-twins + /embed/celebrity-twins + CALCULATOR_SEO + isPublicRoute。TDD `tests/unit/sunSign.test.ts`（含数据集一致性守护：每位名人 stored sign 必须等于引擎计算且不在 cusp）。计算器矩阵 13→14 个公开计算器。
 - 2026-06-18 新建：#20 占星地图 Astrocartography——新增 `acgMap.ts`（等距投影/seam 分段/城市锚点/行星色，纯）+ `AstrocartographyTool.tsx`（世界地图 SVG 叠加 10 大行星 MC/IC/AC/DC 角线 + 城市 + 行星开关）。后端新增 `services/astro/acg.ts` 天文内核 + `api/astrocartography.ts`（POST，需出生时间，拒 mock→503）+ ephemeris `getEclipticForBirth`/抽出 `birthToUtcDate`。route /:lang/astrocartography + /embed/astrocartography + CALCULATOR_SEO + isPublicRoute。TDD：acg.test(14)+acg-verify(对 Swiss Ephemeris 赤道输出)+astrocartography.test(4)+acgMap.test(5)。计算器矩阵 14→15 个公开计算器。
+- 2026-06-22 新建+重构：**tools-polish 一致性/导流/美化批次**。新增 5 个共享原语（GlyphBadge / ToolPageShell / ToolResultCard+PlacementList/Row / ToolFunnelCTA / ElementBalanceBar）+ 扩 `shared/astro-glyphs.ts`（planetGlyph/glyphFor + 外行星/角度字形，TDD `astroGlyphs.test.ts`）。全部 16 个工具（含 components/SaturnReturnCalculator + pages/EnergyTimelineDemoPage）改用原语：GlyphBadge 字形徽章、扁平结果卡、ToolFunnelCTA 导流到真实功能（sign 类→/onboarding 带 prefill envelope；天象类→/birth-chart-calculator；合盘/组合盘→/us；择吉→/timeline；土星回归从 /auth 改指 /birth-chart-calculator）、用已 fetch 的免费数据增强结果（度数/逆行/宫位/元素三模态平衡/星历 ingress·station/月相 SVG 盘/城市轨迹/合盘双方日月升等，**零 AI token**）。signConfigs 富化 placements（CalculatorResult 加 placements/dominance/heroGlyph/funnel）。无新路由/端点/schema（不触 PRD）。浏览器验收 EN暗/EN亮/ZH 三态字形均为文字非 emoji。`calculator-configs.test.ts` 同步到新 placements 契约。

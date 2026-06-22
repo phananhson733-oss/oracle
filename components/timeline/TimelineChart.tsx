@@ -5,7 +5,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { TimelineCandle, TimelineMarker } from "../../types";
-import { useLanguage } from "../UIComponents";
+import { useLanguage, useTheme } from "../UIComponents";
 
 export interface TimelineMoodPoint {
   date: string;
@@ -69,6 +69,13 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   moodPoints = [],
 }) => {
   const { language } = useLanguage();
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  // Theme-aware chart chrome (grid / axis labels / selection wash); candle
+  // hues stay semantic across themes.
+  const gridStroke = isDark ? "#24314255" : "#E2E8F0";
+  const labelFill = isDark ? "#7E8796" : "#94A3B8";
+  const selWash = isDark ? "#1E293B66" : "#EFF6FF";
   const wrapRef = useRef<HTMLDivElement>(null);
   const [availWidth, setAvailWidth] = useState(DEFAULT_WIDTH);
 
@@ -157,7 +164,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               x2={chartWidth - PAD_RIGHT}
               y1={yOf(g)}
               y2={yOf(g)}
-              stroke="#E2E8F0"
+              stroke={gridStroke}
               strokeWidth={1}
             />
           ))}
@@ -196,7 +203,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
                   y={PAD_TOP}
                   width={slot}
                   height={H}
-                  fill={isSel ? "#EFF6FF" : "transparent"}
+                  fill={isSel ? selWash : "transparent"}
                 />
                 {/* wick: dip..peak (full intraday range), body-colored for the candlestick look */}
                 <line
@@ -261,7 +268,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               x={4}
               y={yOf(g) - 2}
               fontSize={9}
-              fill="#94A3B8"
+              fill={labelFill}
             >
               {g}
             </text>

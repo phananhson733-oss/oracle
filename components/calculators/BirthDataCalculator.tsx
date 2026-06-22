@@ -1,8 +1,9 @@
-// INPUT: CalculatorConfig（每个计算器的 compute/copy/needsTime）、useLanguage/useTheme、useCityAutocomplete、
-//        DateSelectGroup、services/apiClient（searchCities）、services/analytics（trackEvent）。
-// OUTPUT: 配置驱动的出生数据计算器外壳——出生日期(+可选时间/城市)表单 → config.compute(birth) → 结果卡。
+// INPUT: CalculatorConfig（每个计算器的 compute/copy/needsTime）、useLanguage、useCalculatorTheme、useCityAutocomplete、
+//        DateSelectGroup、services/apiClient（searchCities）、services/analytics（trackEvent）、
+//        共享原语 ToolPageShell / ToolResultCard / PlacementList / ElementBalanceBar / ToolFunnelCTA / GlyphBadge。
+// OUTPUT: 配置驱动的出生数据计算器外壳——出生日期(+可选时间/城市)表单 → config.compute(birth) → 品牌化富结果卡 + 导流 CTA。
 //         所有 sign 类计算器(Moon Sign / Rising / Big Three / Birth Chart …)复用此壳，仅传不同 config。
-// POS: 计算器矩阵(#9-14 / D)共享脚手架。匿名计算(fetchNatalChart skipCache→不缓存明文出生数据，隐私红线 #2)。
+// POS: 计算器矩阵(D)共享脚手架。匿名计算(fetchNatalChart skipCache→不缓存明文出生数据，隐私红线 #2)。
 //      静态 SEO 正文在 scripts/generate-seo-pages.mjs 的 stub 里，本组件水合后接管交互。若更新此文件，务必更新 calculators/FOLDER.md。
 
 import React, {
@@ -13,12 +14,19 @@ import React, {
   useState,
 } from "react";
 import type { Language } from "../../types";
-import { useLanguage, useTheme } from "../UIComponents";
+import { useLanguage } from "../UIComponents";
+import { useCalculatorTheme } from "./useCalculatorTheme";
 import { useCityAutocomplete } from "../../hooks/useCityAutocomplete";
 import { DateSelectGroup } from "../forms/DateSelectGroup";
 import { searchCities } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
-import { EmbedCodeBox } from "./embed";
+import { ToolPageShell } from "./ToolPageShell";
+import { ToolResultCard, PlacementList, PlacementRow } from "./ToolResultCard";
+import { GlyphBadge } from "./GlyphBadge";
+import { ElementBalanceBar } from "./ElementBalanceBar";
+import type { ElementCounts, ModalityCounts } from "./ElementBalanceBar";
+import { ToolFunnelCTA } from "./ToolFunnelCTA";
+import type { OnboardingPrefill, FunnelSecondaryLink } from "./ToolFunnelCTA";
 
 export interface GeoResult {
   city: string;
@@ -41,10 +49,37 @@ export interface CalculatorBirth {
   accuracyLevel: "exact" | "time_unknown";
 }
 
+// 富结果里的单条行星/角度落座（外壳渲染为 PlacementRow：字形 + 标签 + 度数 + 逆行 + wiki 链接）。
+export interface CalculatorPlacement {
+  planet?: string; // 字形 + 默认标签（英文体名，如 "Sun" / "Ascendant"）
+  sign: string; // 英文星座名（用于字形）
+  label: string; // 本地化标签
+  value: string; // 本地化星座展示值
+  degree?: number;
+  minute?: number;
+  house?: number;
+  retrograde?: boolean;
+  href?: string; // wiki 深链（裸路径，shell 内 langPath）
+}
+
+// 结果区导流配置（外壳渲染为 ToolFunnelCTA）。
+export interface CalculatorFunnel {
+  label: string;
+  href?: string;
+  prefill?: OnboardingPrefill;
+  secondaryLinks?: FunnelSecondaryLink[];
+  note?: string;
+  sign?: string; // categorical sign，仅供 analytics（隐私安全）
+}
+
 // compute 的返回：展示就绪的结果（外壳不懂占星，只渲染）。
 export interface CalculatorResult {
   headline: string; // 主结论，如 "Your Moon is in Cancer"
-  items?: Array<{ label: string; value: string }>; // 可选明细行（Big Three 用）
+  items?: Array<{ label: string; value: string }>; // 旧版简单明细行（向后兼容）
+  placements?: CalculatorPlacement[]; // 富落座行（优先于 items 渲染）
+  dominance?: { elements: ElementCounts; modalities?: ModalityCounts };
+  heroGlyph?: { planet?: string; sign?: string }; // 单一落座工具的 hero 字形
+  funnel?: CalculatorFunnel; // 导流 CTA
   body?: string; // 一段中性解读
 }
 
@@ -65,6 +100,19 @@ export interface CalculatorConfig {
     birth: CalculatorBirth,
     lang: Language,
   ) => Promise<CalculatorResult>;
+}
+
+// 把计算器内部出生数据映射为 onboarding prefill envelope（与 BirthChartSection 一致）。
+export function birthToPrefill(birth: CalculatorBirth): OnboardingPrefill {
+  return {
+    birthDate: birth.birthDate,
+    birthTime: birth.birthTime,
+    birthCity: birth.birthCity,
+    lat: birth.lat,
+    lon: birth.lon,
+    timezone: birth.timezone,
+    accuracyLevel: birth.accuracyLevel,
+  };
 }
 
 const MONTH_FALLBACK_EN = [
@@ -88,14 +136,19 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
   config,
 }) => {
   const { t, language } = useLanguage();
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const th = useCalculatorTheme();
+  const {
+    isDark,
+    cardBg,
+    cardBorder,
+    textPrimary,
+    textSecondary,
+    inputBg,
+    inputText,
+    inputBorder,
+  } = th;
   const lang: Language = language === "zh" ? "zh" : "en";
   const c = config.copy[lang];
-
-  useEffect(() => {
-    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
-  }, []);
 
   const [birthDate, setBirthDate] = useState("");
   const [birthTime, setBirthTime] = useState("");
@@ -250,27 +303,22 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
     }
   };
 
-  const cardBg = isDark ? "bg-space-900/60" : "bg-white";
-  const cardBorder = isDark ? "border-gold-500/20" : "border-paper-300";
-  const textPrimary = isDark ? "text-star-50" : "text-paper-900";
-  const textSecondary = isDark ? "text-star-200" : "text-paper-600";
-  const inputBg = isDark ? "bg-space-800" : "bg-paper-50";
-  const inputText = isDark ? "text-star-50" : "text-paper-900";
-  const inputBorder = isDark ? "border-gold-500/20" : "border-paper-300";
   const optional = lang === "zh" ? "可选" : "optional";
 
-  return (
-    <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
-      <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${textPrimary}`}>
-          {c.title}
-        </h1>
-        <p className={`text-lg ${textSecondary}`}>{c.subtitle}</p>
-      </div>
+  const formatDetail = (p: CalculatorPlacement): string | undefined => {
+    if (p.degree === undefined) return undefined;
+    const deg = Math.floor(p.degree);
+    const min =
+      p.minute !== undefined ? p.minute : Math.round((p.degree - deg) * 60);
+    const base = `${deg}°${String(min).padStart(2, "0")}'`;
+    return p.house ? `${base} · H${p.house}` : base;
+  };
 
+  return (
+    <ToolPageShell title={c.title} subtitle={c.subtitle} slug={config.slug}>
       <form
         onSubmit={handleSubmit}
-        className={`${cardBg} border ${cardBorder} rounded-xl p-6 sm:p-8 mb-8`}
+        className={`${cardBg} border ${cardBorder} rounded-2xl p-6 sm:p-8 mb-8 transition-all duration-300 ease-in-out`}
         noValidate
       >
         <div className="mb-5">
@@ -396,7 +444,7 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
         <button
           type="submit"
           disabled={state === "loading"}
-          className="w-full rounded-lg bg-gold-500 py-3 font-semibold text-space-950 hover:bg-gold-400 disabled:opacity-60 min-h-[44px]"
+          className="w-full rounded-xl bg-gradient-primary py-3 font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 min-h-[44px] motion-reduce:transition-none"
         >
           {state === "loading"
             ? lang === "zh"
@@ -407,27 +455,59 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
       </form>
 
       {state === "error" && (
-        <div className="mb-8 rounded-lg border border-red-400/40 bg-red-500/10 p-4 text-center">
+        <div className="mb-8 rounded-2xl border border-red-400/40 bg-red-500/10 p-4 text-center">
           <p className={textPrimary}>{errorMessage}</p>
         </div>
       )}
 
       {state === "result" && result && (
-        <div
-          ref={resultRef}
+        <ToolResultCard
+          innerRef={resultRef}
           tabIndex={-1}
-          className={`${cardBg} border ${cardBorder} rounded-xl p-6 sm:p-8 outline-none`}
+          hero={
+            result.heroGlyph ? (
+              <GlyphBadge
+                planet={result.heroGlyph.planet}
+                sign={result.heroGlyph.sign}
+                size="hero"
+              />
+            ) : undefined
+          }
+          headline={result.headline}
+          footer={
+            result.funnel ? (
+              <ToolFunnelCTA
+                tool={config.slug}
+                label={result.funnel.label}
+                href={result.funnel.href}
+                prefill={result.funnel.prefill}
+                secondaryLinks={result.funnel.secondaryLinks}
+                note={result.funnel.note}
+                sign={result.funnel.sign}
+              />
+            ) : undefined
+          }
         >
-          <h2 className={`text-2xl font-bold mb-3 ${textPrimary}`}>
-            {result.headline}
-          </h2>
-          {result.items && result.items.length > 0 && (
-            <ul className="mb-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {result.placements && result.placements.length > 0 ? (
+            <PlacementList>
+              {result.placements.map((p) => (
+                <PlacementRow
+                  key={p.label}
+                  planet={p.planet}
+                  sign={p.sign}
+                  label={p.label}
+                  value={p.value}
+                  detail={formatDetail(p)}
+                  retrograde={p.retrograde}
+                  retrogradeLabel={lang === "zh" ? "逆" : "Rx"}
+                  href={p.href}
+                />
+              ))}
+            </PlacementList>
+          ) : result.items && result.items.length > 0 ? (
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               {result.items.map((it) => (
-                <li
-                  key={it.label}
-                  className={`rounded-lg border ${cardBorder} p-3 text-center`}
-                >
+                <div key={it.label} className="text-center">
                   <div
                     className={`text-xs uppercase tracking-wide ${textSecondary}`}
                   >
@@ -436,18 +516,28 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
                   <div className={`mt-1 font-semibold ${textPrimary}`}>
                     {it.value}
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
-          )}
-          {result.body && (
-            <p className={`leading-relaxed ${textSecondary}`}>{result.body}</p>
-          )}
-        </div>
-      )}
+            </div>
+          ) : null}
 
-      <EmbedCodeBox slug={config.slug} />
-    </div>
+          {result.dominance && (
+            <ElementBalanceBar
+              elements={result.dominance.elements}
+              modalities={result.dominance.modalities}
+              lang={lang}
+              className="mt-6"
+            />
+          )}
+
+          {result.body && (
+            <p className={`mt-6 leading-relaxed ${textSecondary}`}>
+              {result.body}
+            </p>
+          )}
+        </ToolResultCard>
+      )}
+    </ToolPageShell>
   );
 };
 

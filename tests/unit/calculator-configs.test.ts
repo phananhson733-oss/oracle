@@ -80,7 +80,7 @@ describe("calculator configs — compute extraction", () => {
     expect(r.headline).toContain("Leo");
   });
 
-  it("big three: returns Sun / Moon / Rising as items", async () => {
+  it("big three: returns Sun / Moon / Rising as enriched placements", async () => {
     fetchNatalChart.mockResolvedValue(
       chartWith([
         { name: "Sun", sign: "Gemini" },
@@ -89,7 +89,7 @@ describe("calculator configs — compute extraction", () => {
       ]),
     );
     const r = await bigThreeConfig.compute(withTime, "en");
-    expect((r.items ?? []).map((i) => i.value)).toEqual([
+    expect((r.placements ?? []).map((p) => p.value)).toEqual([
       "Gemini",
       "Cancer",
       "Leo",
@@ -104,6 +104,16 @@ describe("calculator configs — compute extraction", () => {
       ]),
     );
     const r = await birthChartConfig.compute(dateOnly, "en");
-    expect((r.items ?? []).map((i) => i.label)).toEqual(["Sun", "Moon"]);
+    expect((r.placements ?? []).map((p) => p.label)).toEqual(["Sun", "Moon"]);
+  });
+
+  it("birth chart: enriches placements with funnel prefill + wiki deep-link (no AI)", async () => {
+    fetchNatalChart.mockResolvedValue(
+      chartWith([{ name: "Sun", sign: "Gemini" }]),
+    );
+    const r = await birthChartConfig.compute(dateOnly, "en");
+    expect(r.funnel?.prefill?.birthDate).toBe("1990-06-15");
+    expect(r.placements?.[0].href).toBe("/wiki/gemini");
+    expect(r.dominance).toBeTruthy();
   });
 });

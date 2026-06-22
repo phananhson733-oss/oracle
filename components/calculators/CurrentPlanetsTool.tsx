@@ -1,14 +1,24 @@
-// INPUT: React、useLanguage（UIComponents）、useCalculatorTheme、astroDisplay、services/apiClient（fetchPositions）。
-// OUTPUT: 当前天象盘工具——展示某 UTC 日 10 大行星的星座/度数/逆行（默认今天，可选日期）。
+// INPUT: React、useLanguage（UIComponents）、useCalculatorTheme、astroDisplay、sunSign（signElement/signModality）、
+//        services/apiClient（fetchPositions）、共享原语 ToolPageShell / ToolResultCard / PlacementList / PlacementRow /
+//        ElementBalanceBar / ToolFunnelCTA。
+// OUTPUT: 当前天象盘工具——展示某 UTC 日 10 大行星的星座/度数/逆行（默认今天，可选日期），
+//         附客户端算出的元素/模态平衡条 + 逆行计数 chip + 导流到出生星盘的品牌 CTA。
 // POS: 计算器矩阵（D）天象工具之一，路由 /:lang/current-planets。纯事实天象（无 LLM、无出生数据、无位置）；
+//      元素/模态分布由本地 signElement/signModality 现算（零额外请求、无 AI）。
 //      静态 SEO 正文在 scripts/generate-seo-pages.mjs。若更新此文件，务必更新 calculators/FOLDER.md。
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import type { Language } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
-import { EmbedCodeBox } from "./embed";
 import { signLabel, planetLabel, formatDegMin } from "./astroDisplay";
+import { signElement, signModality } from "./sunSign";
+import type { ZodiacSign, Element, Modality } from "./sunSign";
+import { ToolPageShell } from "./ToolPageShell";
+import { ToolResultCard, PlacementList, PlacementRow } from "./ToolResultCard";
+import { ElementBalanceBar } from "./ElementBalanceBar";
+import type { ElementCounts, ModalityCounts } from "./ElementBalanceBar";
+import { ToolFunnelCTA } from "./ToolFunnelCTA";
 import {
   fetchPositions,
   type PositionsResponse,
@@ -16,6 +26,45 @@ import {
 } from "../../services/apiClient";
 
 const todayIso = (): string => new Date().toISOString().slice(0, 10);
+
+interface SkyShape {
+  elements: ElementCounts;
+  modalities: ModalityCounts;
+  retrogrades: number;
+}
+
+// 客户端从 10 个落座现算元素/模态分布 + 逆行计数（零额外请求、无 AI）。
+// sign 是后端给的英文星座名；非 12 星座则跳过（防御性，正常不会发生）。
+const VALID_SIGNS = new Set<string>([
+  "Aries",
+  "Taurus",
+  "Gemini",
+  "Cancer",
+  "Leo",
+  "Virgo",
+  "Libra",
+  "Scorpio",
+  "Sagittarius",
+  "Capricorn",
+  "Aquarius",
+  "Pisces",
+]);
+
+const computeSkyShape = (positions: readonly TodayPosition[]): SkyShape => {
+  const elements: ElementCounts = { fire: 0, earth: 0, air: 0, water: 0 };
+  const modalities: ModalityCounts = { cardinal: 0, fixed: 0, mutable: 0 };
+  let retrogrades = 0;
+  for (const p of positions) {
+    if (p.retrograde) retrogrades += 1;
+    if (!VALID_SIGNS.has(p.sign)) continue;
+    const sign = p.sign as ZodiacSign;
+    const el: Element = signElement(sign);
+    const mod: Modality = signModality(sign);
+    elements[el] += 1;
+    modalities[mod] += 1;
+  }
+  return { elements, modalities, retrogrades };
+};
 
 export const CurrentPlanetsTool: React.FC = () => {
   const { language } = useLanguage();
@@ -26,10 +75,6 @@ export const CurrentPlanetsTool: React.FC = () => {
   const [data, setData] = useState<PositionsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
-  }, []);
 
   const load = useCallback(
     async (d: string) => {
@@ -57,21 +102,31 @@ export const CurrentPlanetsTool: React.FC = () => {
 
   const isToday = date === todayIso();
 
-  return (
-    <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
-      <div className="text-center mb-8">
-        <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${th.textPrimary}`}>
-          {lang === "zh" ? "当前天象盘" : "Current Planets"}
-        </h1>
-        <p className={`text-lg ${th.textSecondary}`}>
-          {lang === "zh"
-            ? "此刻天空中每颗行星所在的星座与度数——基于 Swiss Ephemeris 真实天文数据。"
-            : "Where every planet sits in the sky right now — by sign and degree, on real Swiss Ephemeris astronomy."}
-        </p>
-      </div>
+  const shape = useMemo<SkyShape | null>(
+    () => (data ? computeSkyShape(data.positions) : null),
+    [data],
+  );
 
+  const headline = isToday
+    ? lang === "zh"
+      ? "今日天空"
+      : "Today's Sky"
+    : lang === "zh"
+      ? `${data?.date ?? date} 的天空`
+      : `Sky on ${data?.date ?? date}`;
+
+  return (
+    <ToolPageShell
+      title={lang === "zh" ? "当前天象盘" : "Current Planets"}
+      subtitle={
+        lang === "zh"
+          ? "此刻天空中每颗行星所在的星座与度数——基于 Swiss Ephemeris 真实天文数据。"
+          : "Where every planet sits in the sky right now — by sign and degree, on real Swiss Ephemeris astronomy."
+      }
+      slug="current-planets"
+    >
       <div
-        className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-6 sm:p-8 mb-8`}
+        className={`${th.cardBg} border ${th.cardBorder} rounded-2xl p-6 sm:p-8 mb-8 transition-all duration-300 ease-in-out`}
       >
         <label
           htmlFor="current-planets-date"
@@ -102,66 +157,90 @@ export const CurrentPlanetsTool: React.FC = () => {
       )}
 
       {error && !loading && (
-        <div className="mb-8 rounded-lg border border-red-400/40 bg-red-500/10 p-4 text-center">
+        <div className="mb-8 rounded-2xl border border-red-400/40 bg-red-500/10 p-4 text-center">
           <p className={th.textPrimary}>{error}</p>
         </div>
       )}
 
       {data && !loading && !error && (
-        <div
-          className={`${th.cardBg} border ${th.cardBorder} rounded-xl p-5 sm:p-7`}
+        <ToolResultCard
+          headline={headline}
+          sub={
+            lang === "zh"
+              ? "Rx 标记表示该行星在逆行。点任意一行可查看该星座词条。"
+              : "An Rx tag means the planet is retrograde. Tap any row to read the sign's wiki entry."
+          }
         >
-          <h2 className={`text-xl font-bold mb-1 ${th.textPrimary}`}>
-            {isToday
-              ? lang === "zh"
-                ? "今日天空"
-                : "Today's Sky"
-              : lang === "zh"
-                ? `${data.date} 的天空`
-                : `Sky on ${data.date}`}
-          </h2>
-          <p className={`text-xs mb-4 ${th.textSecondary}`}>
-            {lang === "zh"
-              ? "Rx 标记表示该行星在逆行。"
-              : "An Rx tag means the planet is retrograde."}
-          </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          {shape && (
+            <div className="mb-6">
+              <ElementBalanceBar
+                elements={shape.elements}
+                modalities={shape.modalities}
+                lang={lang}
+              />
+              <div className="mt-4 flex items-center gap-2 border-t border-paper-300/50 pt-4 dark:border-gold-500/10">
+                <span className="rounded-md bg-mystic-500/15 px-2 py-0.5 font-mono text-xs font-semibold uppercase text-mystic-400">
+                  {shape.retrogrades} Rx
+                </span>
+                <span className={`text-xs ${th.textSecondary}`}>
+                  {shape.retrogrades === 0
+                    ? lang === "zh"
+                      ? "今天没有行星逆行——天空在直行。"
+                      : "No planets retrograde — the sky is direct."
+                    : lang === "zh"
+                      ? `${shape.retrogrades} 颗行星正在逆行。`
+                      : `${shape.retrogrades} planet${shape.retrogrades > 1 ? "s" : ""} currently retrograde.`}
+                </span>
+              </div>
+            </div>
+          )}
+
+          <PlacementList>
             {data.positions.map((p: TodayPosition) => (
-              <li
+              <PlacementRow
                 key={p.name}
-                className={`flex items-center justify-between rounded-lg border ${th.cardBorder} px-4 py-3`}
-              >
-                <span className={`font-medium ${th.textPrimary}`}>
-                  {planetLabel(p.name, lang)}
-                </span>
-                <span className={`text-sm ${th.textSecondary}`}>
-                  {signLabel(p.sign, lang)} {formatDegMin(p.degree)}
-                  {p.retrograde && (
-                    <span className="ml-2 rounded bg-gold-500/20 px-1.5 py-0.5 text-[11px] font-semibold text-gold-500">
-                      Rx
-                    </span>
-                  )}
-                </span>
-              </li>
+                planet={p.name}
+                sign={p.sign}
+                label={planetLabel(p.name, lang)}
+                value={signLabel(p.sign, lang)}
+                detail={formatDegMin(p.degree)}
+                retrograde={p.retrograde}
+                retrogradeLabel={lang === "zh" ? "逆" : "Rx"}
+                href={
+                  VALID_SIGNS.has(p.sign)
+                    ? `/wiki/${p.sign.toLowerCase()}`
+                    : undefined
+                }
+              />
             ))}
-          </ul>
-        </div>
+          </PlacementList>
+        </ToolResultCard>
       )}
 
-      <p className={`mt-8 text-sm leading-relaxed ${th.textSecondary}`}>
-        {lang === "zh"
-          ? "这是一份中性的天文快照，描述行星此刻的位置，而非对未来的预测。想了解这些位置如何映射到你的本命盘，可以生成你的"
-          : "This is a neutral astronomical snapshot describing where the planets are — not a prediction about the future. To see how today's sky relates to your own chart, build your "}
-        <a
-          href={`/${language}/birth-chart-calculator`}
-          className="text-gold-500 underline hover:text-gold-400"
-        >
-          {lang === "zh" ? "出生星盘" : "birth chart"}
-        </a>
-        {lang === "zh" ? "。" : "."}
-      </p>
-      <EmbedCodeBox slug="current-planets" />
-    </div>
+      {data && !loading && !error && (
+        <ToolFunnelCTA
+          tool="current-planets"
+          label={
+            lang === "zh"
+              ? "看看今日天空如何照进你的星盘——免费生成出生星盘"
+              : "See how today's sky hits YOUR chart — build your free birth chart"
+          }
+          href="/birth-chart-calculator"
+          note={
+            lang === "zh"
+              ? "这是一份中性的天文快照，描述行星此刻的位置，而非对未来的预测。想知道这些位置如何映射到你的本命盘，从你的出生星盘开始。"
+              : "This is a neutral astronomical snapshot of where the planets are — not a prediction about the future. To see how these positions map onto your own chart, start with your birth chart."
+          }
+          secondaryLinks={[
+            {
+              label: lang === "zh" ? "了解行运的含义" : "What transits mean",
+              href: "/wiki/transits",
+            },
+          ]}
+          className="mt-8"
+        />
+      )}
+    </ToolPageShell>
   );
 };
 

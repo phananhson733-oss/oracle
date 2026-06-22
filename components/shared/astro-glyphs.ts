@@ -59,3 +59,37 @@ export const formatSignHouse = (value?: string) => {
 
 /** Reusable Tailwind class string for small detail labels. */
 export const DETAIL_LABEL_CLASS = "text-xs uppercase tracking-widest opacity-80";
+
+/**
+ * Outer planets, chart angles, and points not covered by PLANET_GLYPHS above.
+ * Angles use short text labels (Asc/MC) rather than Unicode — they read clean on
+ * a GlyphBadge backplate and avoid any locale font-fallback surprises.
+ */
+export const EXTRA_BODY_GLYPHS: Record<string, string> = {
+  jupiter: '\u2643',
+  uranus: '\u2645',
+  neptune: '\u2646',
+  ascendant: 'Asc',
+  midheaven: 'MC',
+  mc: 'MC',
+  descendant: 'Dsc',
+  dc: 'Dsc',
+  ic: 'IC',
+  south_node: '\u260b',
+};
+
+/**
+ * Resolve a planet / angle / point name (any case, spaces tolerated) to its
+ * glyph. Returns '' for unknown bodies. Pairs with getZodiacGlyph for signs.
+ */
+export const planetGlyph = (name: string): string => {
+  const key = name.trim().toLowerCase().replace(/\s+/g, '_');
+  return PLANET_GLYPHS[key] ?? EXTRA_BODY_GLYPHS[key] ?? '';
+};
+
+/**
+ * Combined resolver: try planet/angle glyph first, then fall back to a zodiac
+ * sign glyph. Returns '' when the token is neither. Used by <GlyphBadge>.
+ */
+export const glyphFor = (value: string): string =>
+  planetGlyph(value) || getZodiacGlyph(value);

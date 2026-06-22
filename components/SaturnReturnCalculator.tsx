@@ -1,6 +1,8 @@
-// INPUT: i18n, theme, /api/saturn-return endpoint, shared useCityAutocomplete hook,
-//        shared <DateSelectGroup> primitive for locale-stable Month/Day/Year selection.
-// OUTPUT: Public Saturn Return calculator with city autocomplete + result card + SEO content.
+// INPUT: i18n, useCalculatorTheme, /api/saturn-return endpoint, shared useCityAutocomplete hook,
+//        shared <DateSelectGroup> primitive for locale-stable Month/Day/Year selection,
+//        calculator-matrix primitives (GlyphBadge / ToolFunnelCTA).
+// OUTPUT: Public Saturn Return calculator with city autocomplete + branded result card
+//         (Saturn glyph badge, mono dates/degree, client-side lifetime timeline) + SEO content.
 //         Birth date is captured via three <select>s (not native <input type="date">) so
 //         placeholder text never leaks the visitor's OS locale on an English page.
 //         variant="embed" (T7): drops <SEO> head + SEO essay, renders a chrome-free widget
@@ -15,7 +17,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { useLanguage, useTheme } from "./UIComponents";
+import { useLanguage } from "./UIComponents";
 import { SEO } from "./SEO";
 import { searchCities } from "../services/apiClient";
 import { trackEvent } from "../services/analytics";
@@ -24,6 +26,9 @@ import {
   DateSelectGroup,
   DEFAULT_MONTH_NAMES_EN,
 } from "./forms/DateSelectGroup";
+import { useCalculatorTheme } from "./calculators/useCalculatorTheme";
+import { GlyphBadge } from "./calculators/GlyphBadge";
+import { ToolFunnelCTA } from "./calculators/ToolFunnelCTA";
 
 interface GeoResult {
   city: string;
@@ -39,6 +44,10 @@ interface NatalSaturnInfo {
   degree: number;
   minute: number;
   longitude: number;
+  // Forward-compatible: the underlying chart position carries isRetrograde,
+  // so render the Rx marker only when the API actually sends it. Current
+  // /api/saturn-return omits it (no backend change here).
+  retrograde?: boolean;
 }
 
 interface SaturnReturnPeriod {
@@ -56,6 +65,10 @@ interface SaturnReturnResult {
 }
 
 type CalculatorState = "idle" | "loading" | "result" | "error";
+
+// Saturn's orbital period (years) — used only as a fallback span for the
+// client-side lifetime timeline when no return dates are present.
+const SATURN_CYCLE_YEARS = 29.5;
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
@@ -104,9 +117,19 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
   variant = "full",
 }) => {
   const { t, language } = useLanguage();
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const th = useCalculatorTheme();
+  const {
+    isDark,
+    cardBg,
+    cardBorder,
+    textPrimary,
+    textSecondary,
+    inputBg,
+    inputBorder,
+    inputText,
+  } = th;
   const isEmbed = variant === "embed";
+  const isZh = language === "zh";
   const sr = t.saturn_return;
 
   // SEO entry point: incoming visitors expect to land at the page top, not
@@ -287,7 +310,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
 
   const formatDate = (dateStr: string): string => {
     const date = new Date(dateStr + "T00:00:00Z");
-    return date.toLocaleDateString("en-US", {
+    return date.toLocaleDateString(isZh ? "zh-CN" : "en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -295,13 +318,54 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
     });
   };
 
-  const cardBg = isDark ? "bg-space-900/60" : "bg-white";
-  const cardBorder = isDark ? "border-gold-500/20" : "border-paper-300";
-  const textPrimary = isDark ? "text-star-50" : "text-paper-900";
-  const textSecondary = isDark ? "text-star-200" : "text-paper-600";
-  const inputBg = isDark ? "bg-space-800" : "bg-paper-50";
-  const inputBorder = isDark ? "border-space-600" : "border-paper-300";
-  const inputText = isDark ? "text-star-50" : "text-paper-900";
+  // 单纯日期算术（无 AI、无后端）：从 birthDate 与已返回的 exactDate 推出当前年龄
+  // 与 "you are here" 在生命周期时间轴上的相对位置。所有锚点 = 出生 + 各次回归。
+  const timeline = useMemo(() => {
+    if (!result || !birthDate) return null;
+    const birth = new Date(`${birthDate}T00:00:00Z`);
+    if (Number.isNaN(birth.getTime())) return null;
+    const now = new Date();
+    const yearsBetween = (a: Date, b: Date): number =>
+      (b.getTime() - a.getTime()) / (365.2425 * 24 * 3600 * 1000);
+
+    const ageNow = Math.max(0, Math.floor(yearsBetween(birth, now)));
+
+    // 锚点：出生(0) + 每次回归 exactDate 对应的年龄。
+    const anchors = result.returns.map((ret) => ({
+      returnNumber: ret.returnNumber,
+      age: Math.round(
+        yearsBetween(birth, new Date(`${ret.exactDate}T00:00:00Z`)),
+      ),
+    }));
+    const lastAge = anchors.length
+      ? anchors[anchors.length - 1].age
+      : Math.round(SATURN_CYCLE_YEARS * 3);
+    const spanMax = Math.max(lastAge, ageNow, 1);
+
+    // 找到下一次（或正在进行的）回归，给一句以年龄为锚的导语。
+    const upcoming = result.returns.find(
+      (ret) => new Date(`${ret.endDate}T00:00:00Z`) >= now,
+    );
+    const inProgress = result.returns.find((ret) => {
+      const s = new Date(`${ret.startDate}T00:00:00Z`);
+      const e = new Date(`${ret.endDate}T00:00:00Z`);
+      return now >= s && now <= e;
+    });
+
+    return {
+      ageNow,
+      youArePct: Math.min(100, Math.max(0, (ageNow / spanMax) * 100)),
+      anchors: anchors.map((a) => ({
+        ...a,
+        pct: Math.min(100, Math.max(0, (a.age / spanMax) * 100)),
+      })),
+      upcoming,
+      inProgress,
+    };
+  }, [result, birthDate]);
+
+  const ordinal = (n: number): string =>
+    isZh ? `第 ${n} 次` : n === 1 ? "1st" : n === 2 ? "2nd" : `${n}th`;
 
   // EN-only 工具页：canonical 恒指 /en（仅 /en 有预渲染静态 stub + 进 sitemap）。
   // 若用户/爬虫到达 /zh/saturn-return-calculator（SPA 可路由），canonical 收口到 /en，避免
@@ -365,7 +429,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
         {/* Calculator Form */}
         <form
           onSubmit={handleSubmit}
-          className={`${cardBg} border ${cardBorder} rounded-xl p-6 sm:p-8 mb-8`}
+          className={`${cardBg} border ${cardBorder} rounded-2xl p-6 sm:p-8 mb-8 transition-all duration-300 ease-in-out`}
           noValidate
         >
           {/* Birth Date — three locale-stable selects (Month / Day / Year).
@@ -501,7 +565,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
           <button
             type="submit"
             disabled={state === "loading"}
-            className="w-full py-3.5 px-6 rounded-lg bg-gold-500 hover:bg-gold-400 text-space-950 font-semibold text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
+            className="w-full rounded-xl bg-gradient-primary py-3.5 px-6 text-lg font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:scale-[1.01] hover:opacity-95 disabled:opacity-60 disabled:cursor-not-allowed min-h-[44px] motion-reduce:transition-none"
           >
             {state === "loading" ? (
               <span className="flex items-center justify-center gap-2">
@@ -519,81 +583,197 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
           <div
             ref={resultRef}
             tabIndex={-1}
-            className={`${cardBg} border ${cardBorder} rounded-xl p-6 sm:p-8 mb-8 focus:outline-none`}
+            className={`${cardBg} border ${cardBorder} rounded-2xl p-6 sm:p-8 mb-8 outline-none transition-all duration-300 ease-in-out hover:shadow-xl motion-reduce:transition-none`}
             aria-live="polite"
           >
-            <h2 className={`text-2xl font-bold mb-4 ${textPrimary}`}>
-              Your Saturn Return
+            <h2
+              className={`font-serif text-2xl font-bold leading-tight tracking-tight mb-4 ${textPrimary}`}
+            >
+              {isZh ? "你的土星回归" : "Your Saturn Return"}
             </h2>
 
-            {/* Natal Saturn */}
-            <div
-              className={`mb-6 p-4 rounded-lg ${isDark ? "bg-space-800/50" : "bg-paper-100"}`}
-            >
-              <p className={`text-sm ${textSecondary} mb-1`}>
-                Your Natal Saturn
-              </p>
-              <p className={`text-xl font-semibold ${textPrimary}`}>
-                Saturn in {result.natalSaturn.sign} at{" "}
-                {result.natalSaturn.degree}
-                &deg;{result.natalSaturn.minute}&prime;
-              </p>
+            {/* Natal Saturn — signature glyph (mystic accent) + mono degree */}
+            <div className="mb-6 flex items-center gap-3">
+              <GlyphBadge
+                planet="Saturn"
+                sign={result.natalSaturn.sign}
+                tone="mystic"
+                size="hero"
+              />
+              <div className="min-w-0">
+                <p className={`text-sm ${textSecondary}`}>
+                  {isZh ? "你的本命土星" : "Your Natal Saturn"}
+                </p>
+                <p
+                  className={`text-xl font-semibold ${textPrimary} flex flex-wrap items-baseline gap-x-2`}
+                >
+                  <span>
+                    {isZh
+                      ? `土星落在${result.natalSaturn.sign}`
+                      : `Saturn in ${result.natalSaturn.sign}`}
+                  </span>
+                  <span className="font-mono text-base text-paper-500 dark:text-star-400">
+                    {result.natalSaturn.degree}&deg;
+                    {String(result.natalSaturn.minute).padStart(2, "0")}&prime;
+                  </span>
+                  {result.natalSaturn.retrograde && (
+                    <span className="rounded-md bg-mystic-500/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase text-mystic-400">
+                      {isZh ? "逆" : "Rx"}
+                    </span>
+                  )}
+                </p>
+              </div>
             </div>
+
+            {/* You-are-here + lifetime timeline (client-side date math, no AI) */}
+            {timeline && (
+              <div className="mb-6">
+                <p className={`text-sm ${textSecondary} mb-3`}>
+                  {timeline.inProgress
+                    ? isZh
+                      ? `你正处在第 ${timeline.inProgress.returnNumber} 次土星回归之中（约 ${timeline.ageNow} 岁）。`
+                      : `You are currently in your ${ordinal(timeline.inProgress.returnNumber)} Saturn Return (around age ${timeline.ageNow}).`
+                    : timeline.upcoming
+                      ? isZh
+                        ? `你现在约 ${timeline.ageNow} 岁——下一次土星回归是第 ${timeline.upcoming.returnNumber} 次。`
+                        : `You are around age ${timeline.ageNow} — your next milestone is the ${ordinal(timeline.upcoming.returnNumber)} Saturn Return.`
+                      : isZh
+                        ? `你现在约 ${timeline.ageNow} 岁，已走过全部已知的土星回归。`
+                        : `You are around age ${timeline.ageNow}, past every Saturn Return shown here.`}
+                </p>
+                <div
+                  className="relative h-2 rounded-full bg-paper-200 dark:bg-space-800"
+                  role="img"
+                  aria-label={
+                    isZh
+                      ? `生命周期时间轴：当前约 ${timeline.ageNow} 岁`
+                      : `Lifetime timeline: currently around age ${timeline.ageNow}`
+                  }
+                >
+                  {/* progress fill up to "you are here" */}
+                  <div
+                    className="absolute left-0 top-0 h-2 rounded-full bg-gradient-primary"
+                    style={{ width: `${timeline.youArePct}%` }}
+                  />
+                  {/* return anchors */}
+                  {timeline.anchors.map((a) => (
+                    <span
+                      key={a.returnNumber}
+                      className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-paper-50 bg-mystic-500 dark:border-space-950"
+                      style={{ left: `${a.pct}%` }}
+                      title={`${ordinal(a.returnNumber)} · ${isZh ? "约" : "age"} ${a.age}`}
+                    />
+                  ))}
+                  {/* you-are-here marker */}
+                  <span
+                    className="absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-paper-50 bg-accent shadow-glow dark:border-space-950"
+                    style={{ left: `${timeline.youArePct}%` }}
+                  />
+                </div>
+                <div
+                  className={`mt-2 flex justify-between font-mono text-xs ${textSecondary}`}
+                >
+                  <span>{isZh ? "出生" : "Birth"}</span>
+                  <span className="text-accent">
+                    {isZh ? "你在这里" : "you are here"}
+                  </span>
+                  {timeline.anchors.length > 0 && (
+                    <span>
+                      {ordinal(
+                        timeline.anchors[timeline.anchors.length - 1]
+                          .returnNumber,
+                      )}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
 
             {result.approximate && (
               <p className={`text-sm ${textSecondary} mb-4 italic`}>
-                Note: Dates are approximate because birth time was not provided.
-                The exact dates may vary by a few days.
+                {isZh
+                  ? "注意：未提供出生时间，日期为近似值，可能相差几天。"
+                  : "Note: Dates are approximate because birth time was not provided. The exact dates may vary by a few days."}
               </p>
             )}
 
-            {/* Return Periods */}
-            {result.returns.map((ret: SaturnReturnPeriod) => (
-              <div
-                key={ret.returnNumber}
-                className={`mb-6 p-5 rounded-lg border ${cardBorder} ${isDark ? "bg-space-800/30" : "bg-paper-50"}`}
-              >
-                <h3 className={`text-lg font-semibold mb-2 ${textPrimary}`}>
-                  {ret.returnNumber === 1
-                    ? "1st"
-                    : ret.returnNumber === 2
-                      ? "2nd"
-                      : "3rd"}{" "}
-                  Saturn Return
-                </h3>
-                <div className={`space-y-1 mb-3 ${textSecondary}`}>
-                  <p>
-                    <span className="font-medium">Begins:</span>{" "}
-                    {formatDate(ret.startDate)}
-                  </p>
-                  <p>
-                    <span className="font-medium">Exact:</span>{" "}
-                    {formatDate(ret.exactDate)}
-                  </p>
-                  <p>
-                    <span className="font-medium">Ends:</span>{" "}
-                    {formatDate(ret.endDate)}
+            {/* Return Periods — flat rows, mono dates, no nested cards */}
+            <div className="divide-y divide-paper-200/70 dark:divide-gold-500/10">
+              {result.returns.map((ret: SaturnReturnPeriod) => (
+                <div key={ret.returnNumber} className="py-5 first:pt-0">
+                  <h3 className={`text-lg font-semibold mb-2 ${textPrimary}`}>
+                    {isZh
+                      ? `${ordinal(ret.returnNumber)}土星回归`
+                      : `${ordinal(ret.returnNumber)} Saturn Return`}
+                  </h3>
+                  <dl
+                    className={`grid grid-cols-1 gap-y-1 mb-3 text-sm sm:grid-cols-3 ${textSecondary}`}
+                  >
+                    <div>
+                      <dt className="font-medium">
+                        {isZh ? "起始" : "Begins"}
+                      </dt>
+                      <dd className="font-mono">{formatDate(ret.startDate)}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-medium">{isZh ? "正合" : "Exact"}</dt>
+                      <dd className="font-mono">{formatDate(ret.exactDate)}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-medium">{isZh ? "结束" : "Ends"}</dt>
+                      <dd className="font-mono">{formatDate(ret.endDate)}</dd>
+                    </div>
+                  </dl>
+                  {/* Static per-sign interpretation template (not AI). */}
+                  <p className={`text-sm leading-relaxed ${textPrimary}`}>
+                    {ret.interpretation}
                   </p>
                 </div>
-                <p className={`text-sm leading-relaxed ${textPrimary}`}>
-                  {ret.interpretation}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 mt-6">
+            {/* Primary funnel → free birth chart; signup kept as tertiary inline. */}
+            <ToolFunnelCTA
+              tool="saturn-return-calculator"
+              label={
+                isZh ? "查看你的完整出生星盘" : "See your full birth chart"
+              }
+              href="/birth-chart-calculator"
+              sign={result.natalSaturn.sign}
+              note={
+                isZh
+                  ? "土星回归只是你星盘故事的一章。免费查看完整出生星盘——每个落座、宫位与相位。"
+                  : "Your Saturn Return is one chapter of your chart's story. See your full birth chart free — every placement, house, and aspect."
+              }
+              secondaryLinks={[
+                {
+                  label: isZh ? "土星的意义" : "What Saturn means",
+                  href: "/wiki/saturn",
+                },
+              ]}
+              className="mt-6"
+            />
+
+            <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <button
                 onClick={handleShare}
-                className={`flex-1 py-3 px-4 rounded-lg border ${cardBorder} ${textPrimary} hover:bg-gold-500/10 transition-colors font-medium min-h-[44px]`}
+                className={`text-sm font-medium text-accent underline-offset-4 transition-colors hover:underline`}
               >
-                {shareToast ? "Link Copied!" : "Share Your Result"}
+                {shareToast
+                  ? isZh
+                    ? "链接已复制！"
+                    : "Link Copied!"
+                  : isZh
+                    ? "分享你的结果"
+                    : "Share your result"}
               </button>
               <a
                 href={`/${language}/auth`}
-                className="flex-1 py-3 px-4 rounded-lg bg-gold-500 hover:bg-gold-400 text-space-950 font-semibold text-center transition-colors min-h-[44px] flex items-center justify-center"
+                className={`text-sm ${textSecondary} underline-offset-4 transition-colors hover:underline`}
               >
-                Get Your Full Natal Chart
+                {isZh
+                  ? "或创建账号保存解读"
+                  : "Or create an account to save your reading"}
               </a>
             </div>
           </div>
@@ -602,7 +782,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
         {/* Error State */}
         {state === "error" && (
           <div
-            className={`${cardBg} border border-red-400/30 rounded-xl p-6 mb-8`}
+            className={`${cardBg} border border-red-400/30 rounded-2xl p-6 mb-8`}
             role="alert"
           >
             <p className="text-red-400 font-medium mb-2">
