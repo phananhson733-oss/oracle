@@ -4,8 +4,10 @@ import type { WikiArticle } from "../../types";
 
 export const nikoBirthChartEn: WikiArticle = {
   slug: "niko-birth-chart",
+  image: "/images/blog/niko-birth-chart.jpg",
+  image_alt: "NiKo birth chart — Aquarius breakthrough moment as cosmic starlight converges on a solitary glowing summit after years of isolation",
   title: "Why the NiKo Birth Chart Made the Cologne Major Inevitable",
-  description: "The NiKo birth chart is an Aquarius-dominant natal map for CS2 player Nikola Kovač, born February 16",
+  description: "The NiKo birth chart is an Aquarius-dominant natal map for CS2 player Nikola Kovač, born February 16, 1997 — a horoscope that traditional astrologers associate with exceptional individual output followed by delayed collective breakthrough.",
   authorId: "julian-thorne",
   date: "2026-06-22",
   schema: "Article",
