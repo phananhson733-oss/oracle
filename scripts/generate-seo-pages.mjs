@@ -826,6 +826,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'niko-birth-chart',
   '2026-astrology-calendar',
   'ashwini-nakshatra',
   'hasta-nakshatra',
