@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 409" role="img" aria-label="4 Signals of a Gemini Chart Pattern">
+  <defs>
+    <linearGradient id="mosalahbirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mosalahbirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mosalahbirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="406" rx="22" fill="url(#mosalahbirthchart0en-panel)"/>
+  <ellipse cx="198" cy="98" rx="380" ry="139" fill="url(#mosalahbirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="327" rx="334" ry="131" fill="url(#mosalahbirthchart0en-neb2)"/>
+  <circle cx="342.1" cy="57.1" r="1.02" fill="#cfc8ea" opacity="0.23"/><circle cx="596.8" cy="289.7" r="0.75" fill="#cfc8ea" opacity="0.21"/><circle cx="609.9" cy="139.9" r="1.11" fill="#cfc8ea" opacity="0.16"/><circle cx="487.7" cy="30.4" r="1.62" fill="#cfc8ea" opacity="0.28"/><circle cx="176.7" cy="381.5" r="1.14" fill="#cfc8ea" opacity="0.28"/><circle cx="194.5" cy="296.4" r="1.32" fill="#cfc8ea" opacity="0.28"/><circle cx="497.3" cy="55.1" r="1.06" fill="#cfc8ea" opacity="0.31"/><circle cx="370.9" cy="42.7" r="1.04" fill="#cfc8ea" opacity="0.48"/><circle cx="196.2" cy="315.4" r="1.69" fill="#cfc8ea" opacity="0.21"/><circle cx="62.2" cy="347.5" r="1.14" fill="#cfc8ea" opacity="0.36"/><circle cx="636.4" cy="312.7" r="1.50" fill="#cfc8ea" opacity="0.17"/><circle cx="360.6" cy="205.8" r="1.05" fill="#cfc8ea" opacity="0.37"/><circle cx="597.7" cy="293.1" r="1.51" fill="#cfc8ea" opacity="0.17"/><circle cx="440.6" cy="82.9" r="0.54" fill="#cfc8ea" opacity="0.30"/><circle cx="521.0" cy="36.7" r="0.65" fill="#cfc8ea" opacity="0.16"/><circle cx="663.8" cy="211.9" r="1.63" fill="#cfc8ea" opacity="0.46"/><circle cx="655.8" cy="57.3" r="0.93" fill="#cfc8ea" opacity="0.19"/><circle cx="354.2" cy="237.0" r="1.30" fill="#cfc8ea" opacity="0.29"/><circle cx="652.4" cy="44.8" r="0.72" fill="#cfc8ea" opacity="0.16"/><circle cx="19.1" cy="349.2" r="0.76" fill="#cfc8ea" opacity="0.16"/><circle cx="372.2" cy="287.7" r="0.70" fill="#cfc8ea" opacity="0.50"/><circle cx="234.6" cy="344.0" r="1.22" fill="#cfc8ea" opacity="0.49"/><circle cx="339.2" cy="149.5" r="1.24" fill="#cfc8ea" opacity="0.18"/><circle cx="240.9" cy="249.3" r="0.72" fill="#cfc8ea" opacity="0.48"/><circle cx="409.7" cy="70.4" r="1.06" fill="#cfc8ea" opacity="0.54"/><circle cx="282.1" cy="392.6" r="1.60" fill="#cfc8ea" opacity="0.15"/><circle cx="435.1" cy="195.8" r="0.98" fill="#cfc8ea" opacity="0.22"/><circle cx="346.8" cy="128.9" r="0.98" fill="#cfc8ea" opacity="0.54"/><circle cx="229.7" cy="55.5" r="1.51" fill="#cfc8ea" opacity="0.53"/><circle cx="330.7" cy="177.8" r="1.29" fill="#cfc8ea" opacity="0.36"/><circle cx="721.0" cy="292.7" r="1.60" fill="#cfc8ea" opacity="0.15"/><circle cx="470.7" cy="250.7" r="0.59" fill="#cfc8ea" opacity="0.36"/><circle cx="425.4" cy="71.0" r="1.02" fill="#cfc8ea" opacity="0.41"/><circle cx="534.5" cy="206.6" r="1.16" fill="#cfc8ea" opacity="0.14"/><circle cx="222.5" cy="29.0" r="1.15" fill="#cfc8ea" opacity="0.15"/><path d="M 623.1355516742915 193.1 L 623.6 195.7 L 626.1 196.1306307129562 L 623.6 196.6 L 623.1355516742915 199.1 L 622.7 196.6 L 620.1 196.1306307129562 L 622.7 195.7 Z" fill="#f6e6bf" opacity="0.5239718699362129"/><path d="M 131.57234567962587 370.6 L 132.0 372.9 L 134.3 373.3070027278736 L 132.0 373.7 L 131.57234567962587 376.0 L 131.1 373.7 L 128.9 373.3070027278736 L 131.1 372.9 Z" fill="#f6e6bf" opacity="0.7120204054284841"/><path d="M 589.0967407505959 367.3 L 589.5 369.6 L 591.9 370.01276914589107 L 589.5 370.5 L 589.0967407505959 372.8 L 588.7 370.5 L 586.3 370.01276914589107 L 588.7 369.6 Z" fill="#f6e6bf" opacity="0.5106550223659724"/><path d="M 554.5358452703804 269.2 L 555.0 271.9 L 557.7 272.3819347983226 L 555.0 272.9 L 554.5358452703804 275.6 L 554.0 272.9 L 551.3 272.3819347983226 L 554.0 271.9 Z" fill="#f6e6bf" opacity="0.5392486369702965"/><path d="M 36.076722456142306 149.9 L 36.6 152.8 L 39.5 153.37052981555462 L 36.6 153.9 L 36.076722456142306 156.8 L 35.5 153.9 L 32.6 153.37052981555462 L 35.5 152.8 Z" fill="#f6e6bf" opacity="0.679585283016786"/><path d="M 497.3 55.1 L 196.2 315.4 L 360.6 205.8 L 652.4 44.8 L 721.0 292.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="406" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="395" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 389.8 L 16.5 392.5 L 19.2 393 L 16.5 393.5 L 16 396.2 L 15.5 393.5 L 12.8 393 L 15.5 392.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 389.8 L 744.5 392.5 L 747.2 393 L 744.5 393.5 L 744 396.2 L 743.5 393.5 L 740.8 393 L 743.5 392.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">4 Signals of a Gemini Chart Pattern</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mosalahbirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mosalahbirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="337" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#mosalahbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#mosalahbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Sun in Gemini</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">May 21–June 20; quick thinking and a gift for connecting people or ideas</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#mosalahbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#mosalahbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Third-House or Mercury Emphasis</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Traditionally linked to communication, movement, and the role of the link in a</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">team</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#mosalahbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#mosalahbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Jupiter Transiting Second House</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Classical technique associates this with legacy and lasting value over quick</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">wins</text>
+  <circle cx="76" cy="337" r="20.0" fill="url(#mosalahbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="337" r="15" fill="url(#mosalahbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="332.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="341.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="333.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Birthday Transit on Match Day</text>
+  <text x="116" y="355.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Activates the natal Sun — a window when the chart's core theme comes forward</text>
+  <path d="M 202.22749999999988 380.4 L 202.6 382.6 L 204.8 383 L 202.6 383.4 L 202.22749999999988 385.6 L 201.8 383.4 L 199.6 383 L 201.8 382.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="387" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 380.4 L 558.2 382.6 L 560.4 383 L 558.2 383.4 L 557.7725000000002 385.6 L 557.4 383.4 L 555.2 383 L 557.4 382.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
