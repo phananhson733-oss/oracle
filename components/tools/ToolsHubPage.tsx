@@ -13,7 +13,9 @@ import {
   type ToolIconKey,
 } from "./toolsCatalog";
 
-const ICON_CLASS = "w-6 h-6 stroke-accent";
+// text-accent sets `color` so the few currentColor fills (phase, composite)
+// render in the gold accent like the stroked glyphs, not the inherited text color.
+const ICON_CLASS = "w-6 h-6 stroke-accent text-accent";
 
 // Minimal monochrome stroke glyphs — one per tool family. Per "AI Slop Lock-out"
 // (COLOR_SYSTEM_GUIDE.md): NO icon-in-colored-circle, NO gradients, NO emojis.
@@ -192,7 +194,7 @@ const ToolsHubPage: React.FC = () => {
                     })
                   }
                   aria-label={`${zh ? tool.title.zh : tool.title.en} — ${openLabel}`}
-                  className={`group rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-100 dark:bg-space-900/40 p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-xl block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                  className={`group rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-100 dark:bg-space-900/40 p-6 shadow-sm dark:shadow-none transition-all duration-300 hover:border-accent/40 hover:shadow-xl block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                     isDark
                       ? "focus-visible:ring-offset-space-950"
                       : "focus-visible:ring-offset-paper-100"

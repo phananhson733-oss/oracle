@@ -3,6 +3,7 @@
 // POS: Tools hub 的数据契约；新增/移除公开工具或改路由 allowlist 时必须同步本测试。
 
 import { describe, it, expect } from "vitest";
+import { readFileSync } from "node:fs";
 import {
   TOOL_CATEGORIES,
   TOOLS,
@@ -98,10 +99,45 @@ describe("tools catalog content", () => {
     }
   });
 
-  it("blurbs avoid deterministic fate language (AI safety red line)", () => {
-    const banned = /\b(will|destined|guaranteed|must|always|never|lucky|best place)\b/i;
+  it("titles, blurbs, and category copy avoid deterministic fate language (EN + ZH, AI safety red line)", () => {
+    const bannedEn = /\b(will|destined|guaranteed|must|always|never|lucky|best place)\b/i;
+    const bannedZh = /(一定|必然|注定|保证|肯定会|绝对|永远|从不|好运|命中注定)/;
+    const check = (label: string, en: string, zh: string) => {
+      expect(bannedEn.test(en), `${label} (en) uses fate language: "${en}"`).toBe(false);
+      expect(bannedZh.test(zh), `${label} (zh) uses fate language: "${zh}"`).toBe(false);
+    };
     for (const t of TOOLS) {
-      expect(banned.test(t.blurb.en), `${t.slug} blurb uses fate language: "${t.blurb.en}"`).toBe(false);
+      check(`${t.slug} title`, t.title.en, t.title.zh);
+      check(`${t.slug} blurb`, t.blurb.en, t.blurb.zh);
     }
+    for (const c of TOOL_CATEGORIES) {
+      check(`${c.id} title`, c.title.en, c.title.zh);
+      check(`${c.id} intro`, c.intro.en, c.intro.zh);
+    }
+  });
+});
+
+// The stub generator (scripts/generate-seo-pages.mjs) hand-mirrors the tool list
+// in its HUB_CATEGORIES block (a .mjs cannot import this .ts). This guard fails
+// loudly if the two drift — e.g. a tool added to the catalog but not the stub,
+// which would silently drop it from the crawlable internal-link mesh + sitemap.
+describe("generator hub catalog stays in sync with toolsCatalog", () => {
+  it("HUB_CATEGORIES slug set in generate-seo-pages.mjs equals TOOLS slug set", () => {
+    const gen = readFileSync(
+      new URL("../../scripts/generate-seo-pages.mjs", import.meta.url),
+      "utf8",
+    );
+    const start = gen.indexOf("const HUB_CATEGORIES");
+    expect(start, "HUB_CATEGORIES block not found in generator").toBeGreaterThan(-1);
+    const block = gen.slice(start, gen.indexOf("];", start));
+    const genSlugs = new Set<string>();
+    for (const arr of block.matchAll(/slugs:\s*\[([^\]]*)\]/g)) {
+      for (const s of arr[1].matchAll(/'([^']+)'/g)) genSlugs.add(s[1]);
+    }
+    const catalogSlugs = new Set(TOOLS.map((t) => t.slug));
+    const onlyInGenerator = [...genSlugs].filter((s) => !catalogSlugs.has(s));
+    const onlyInCatalog = [...catalogSlugs].filter((s) => !genSlugs.has(s));
+    expect(onlyInGenerator, "slugs in generator HUB_CATEGORIES but not in toolsCatalog").toEqual([]);
+    expect(onlyInCatalog, "slugs in toolsCatalog but not in generator HUB_CATEGORIES").toEqual([]);
   });
 });
