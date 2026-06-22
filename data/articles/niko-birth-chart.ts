@@ -35,7 +35,7 @@ Aquarius is a fixed air sign — meaning it holds its core orientation long afte
 
 ## Why It Matters for Self-Awareness
 
-Understanding the NiKo birth chart matters because the Aquarius stereotype — cold, remote, more interested in ideas than in people — is almost the inverse of what the sign produces when it is asked to hold a vision through a long unresolved arc. CS2 fans who searched this chart after IEM Cologne Major 2026 were trying to make sense of a dramatic reversal: one of the game's most celebrated individual players finally lifted his first Major trophy after years of near-miss mythology. Aquarius symbolism does not cause that win; it gives fans a language for why the visible timeline lagged behind the level of vision and performance they already recognized.
+Understanding the NiKo birth chart matters because the Aquarius stereotype — cold, remote, more interested in ideas than in people — is almost the inverse of what the sign produces when it is asked to hold a vision through a long competitive arc. CS2 fans reading this chart after IEM Cologne Major 2026 are trying to make sense of a dramatic reversal: one of the game's most celebrated individual players finally lifted his first Major trophy after years of near-miss mythology. Aquarius symbolism does not cause that win; it gives fans a language for why the visible timeline lagged behind the level of vision and performance they already recognized.
 
 The long Major wait is not a contradiction of the Aquarius archetype. It is a useful symbolic expression of it, not a deterministic explanation of match outcomes. Aquarius Sun placements frequently carry a sense of operating ahead of the available context, and the breakthrough, when it arrives, tends to feel both sudden to observers and quietly overdue to the chart holder. Building on the person-centered chart reading tradition that Liz Greene helped establish, this reading treats the Aquarius Sun not as a fixed personality type but as a developmental arc — one that cannot be rushed from the outside. The *guide to fixed sign endurance in long-form competitive arcs* offers a fuller treatment of how fixed air energy reads across extended time horizons.
 
@@ -43,7 +43,7 @@ The long Major wait is not a contradiction of the Aquarius archetype. It is a us
 
 The NiKo birth chart draws comparison with Capricorn because both signs carry associations with long-term ambition and elite standards — but the way each sign produces a collective result differs in ways that matter for reading either one accurately. Two patterns define the contrast:
 
-1. **Capricorn climbs incrementally.** The sign operates through disciplined, rung-by-rung accumulation — each position secured before the next is attempted. To get Capricorn's tournament consistency, you accept predictability as the cost: the chart tends to produce a player who peaks through preparation rather than through a sudden context shift. What you gain in reliability, you trade in the capacity for the unexpected collective breakthrough.
+1. **Capricorn climbs incrementally.** As cardinal earth, the sign operates through disciplined, rung-by-rung accumulation — each position secured before the next is attempted. To get Capricorn's tournament consistency, you accept predictability as the cost: the chart tends to produce a player who peaks through preparation rather than through a sudden context shift. What you gain in reliability, you trade in the capacity for the unexpected collective breakthrough.
 
 2. **Aquarius breaks through laterally.** The pattern is not vertical but structural — a sustained period of operating at a level the surrounding team cannot fully absorb, followed by a moment when the individual's vision becomes legible to the collective. To read NiKo through this lens, you accept the isolation that precedes resolution: years of being discussed as an elite player while the Major story stays open. The NiKo birth chart follows this pattern symbolically. The IEM Cologne Major 2026 win is the public moment when the long-held standard finally met the collective result.
 
@@ -89,9 +89,9 @@ From a public-date astrology perspective, the wait maps cleanly onto the Aquariu
 
 No. Houses, rising sign, and several fast-moving placements require an exact birth time and location. Without that confirmation, this article treats the NiKo birth chart as a limited public-date reading centered on the Aquarius Sun and the visible career timeline.
 
-**Why did searches for NiKo's birth chart rise after IEM Cologne Major 2026?**
+**Why do fans search for NiKo's birth chart after IEM Cologne Major 2026?**
 
-IEM Cologne Major 2026 made the Aquarius breakthrough arc legible to a community with no prior connection between esports performance and natal chart reading. When a famous player resolves a long-running competitive story on a major stage, astrology-curious fans often search for a symbolic frame that makes the timing feel readable.
+IEM Cologne Major 2026 made the Aquarius breakthrough arc easy to map onto a public esports story. When a famous player resolves a long-running competitive narrative on a major stage, astrology-curious fans may search for a symbolic frame that makes the timing feel readable.
 
 ## Reflection Prompts
 
