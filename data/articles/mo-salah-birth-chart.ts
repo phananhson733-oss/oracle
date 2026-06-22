@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const moSalahBirthChartEn: WikiArticle = {
   slug: "mo-salah-birth-chart",
+  image: "/images/blog/mo-salah-birth-chart.jpg",
+  image_alt: "Twin rivers of gold light converging at the horizon over an Egyptian desert night sky — Mo Salah Gemini birth chart illustration",
   title: "Reading the Mo Salah Birth Chart Before His Final World Cup",
   description: "Mohamed Salah's birth chart is the snapshot of the sky at the moment he was born on June 15, 1992, in Nagrig, Egypt — a Gemini Sun map that astrologers read as a chart built around versatile, two-way play rather than one-note finishing.",
   authorId: "aditi-sharma",
@@ -55,6 +57,9 @@ You can spot the pattern that defines the Mo Salah birth chart in any chart thro
 3. Jupiter transiting the second house, which classical technique associates with themes of legacy and lasting value over quick wins.
 4. A birthday transit that activates the natal Sun, as Salah's June 15 does on match day, often described as a window when the chart's core theme comes forward.
 
+
+![Four sequential signals that identify a Gemini birth chart pattern like Mo Salah's](/images/blog/mo-salah-birth-chart-i0-en.svg)
+
 ## Common Misreadings
 
 Most quick takes on Mohamed Salah's chart get stuck on the same few errors. Each one reads a tendency as a fixed promise:
@@ -62,6 +67,9 @@ Most quick takes on Mohamed Salah's chart get stuck on the same few errors. Each
 1. **"Gemini means goals."** The misread treats versatility as scoring output. In practice the Gemini archetype is the communicator, which is why scoring the go-ahead goal and assisting another in the same New Zealand match fits the chart better than a one-note hat-trick would.
 2. **"The Sun is the whole story."** The Sun is one voice among many; the Moon, houses, and transits carry just as much weight.
 3. **"A birthday on match day guarantees a result."** A natal activation is a window of emphasis, not a scripted outcome — the chart describes a tendency, never a guaranteed score.
+
+
+![Three common misreadings of Mo Salah's Gemini birth chart explained](/images/blog/mo-salah-birth-chart-i1-en.svg)
 
 ## Mohamed Salah's Chart at a Glance
 

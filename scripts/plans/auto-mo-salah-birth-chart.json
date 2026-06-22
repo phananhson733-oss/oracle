@@ -11,76 +11,70 @@
   "articles": {
     "mo-salah-birth-chart": {
       "hero": {
-        "prompt": "A vast Egyptian night plain stretching to a distant horizon under an immense open sky, two twin luminous orbs hovering low — one a cool silver-teal, one a warm burnished gold — linked by a long graceful arc of flowing golden light that sweeps across the full breadth of the scene like a perfect assist, the arc mirroring the dark ribbon of the Nile curving far below, star-trails spiraling outward from each orb into the teal-and-gold nebula wash above, the sandy earth catching faint starlight, the whole landscape breathing with mutable air energy and the quiet electricity of connection over conquest, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Twin luminous orbs connected by a golden arc over an Egyptian night landscape, symbolising Mo Salah's Gemini Sun chart",
-        "altZh": "两颗发光星球以金色弧线相连，悬于埃及夜空之上，象征萨拉赫的双子座太阳星盘"
+        "prompt": "A vast Egyptian desert at deep night, twin rivers of luminous gold-teal starlight flowing from opposite dunes across dark undulating sand, converging at the horizon into a single brilliant star rising above distant low hills — one continuous unbroken landscape where two streams of light meet and become one, evoking the Gemini communicator who both creates and finishes, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twin rivers of gold light converging at the horizon over an Egyptian desert night sky — Mo Salah Gemini birth chart illustration",
+        "altZh": "金色光流在埃及沙漠夜空交汇——萨拉赫双子座星盘占星插图"
       },
       "inline": [
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read a Gemini Signature in a Birth Chart",
-          "titleEn": "Four Signals of a Gemini Signature",
-          "altEn": "Four-step sequence showing how to identify a Gemini signature in a birth chart",
+          "titleEn": "4 Signals of a Gemini Chart Pattern",
+          "titleZh": "双子座星盘的四个识别信号",
+          "altEn": "Four sequential signals that identify a Gemini birth chart pattern like Mo Salah's",
+          "altZh": "识别双子座星盘特征的四个信号",
           "items": [
             {
               "nameEn": "Sun in Gemini",
-              "nameZh": "双子座太阳",
+              "nameZh": "太阳在双子座",
               "subEn": "May 21–June 20; quick thinking and a gift for connecting people or ideas",
-              "subZh": "5月21日至6月20日；思维敏捷，善于连接人与想法"
+              "subZh": "5月21日至6月20日；善于快速思维与连接他人及想法"
             },
             {
               "nameEn": "Third-House or Mercury Emphasis",
               "nameZh": "第三宫或水星强调",
               "subEn": "Traditionally linked to communication, movement, and the role of the link in a team",
-              "subZh": "传统上与沟通、运动及团队中枢角色相关"
+              "subZh": "传统上与沟通、运动和团队中的连接角色相关"
             },
             {
-              "nameEn": "Jupiter Transiting the Second House",
+              "nameEn": "Jupiter Transiting Second House",
               "nameZh": "木星过境第二宫",
-              "subEn": "Classical technique associates this with themes of legacy and lasting value over quick wins",
-              "subZh": "古典技法将此与遗产和持久价值主题相关联，而非短暂胜利"
+              "subEn": "Classical technique associates this with legacy and lasting value over quick wins",
+              "subZh": "古典技法将此与遗产和持久价值而非短期收益相关联"
             },
             {
-              "nameEn": "Birthday Transit Activating the Natal Sun",
-              "nameZh": "生日过境激活本命太阳",
-              "subEn": "A window when the chart's core theme comes forward — as with Salah's June 15 match day",
-              "subZh": "星盘核心主题浮现的窗口期——如萨拉赫6月15日的比赛日"
+              "nameEn": "Birthday Transit on Match Day",
+              "nameZh": "比赛日的生日过境",
+              "subEn": "Activates the natal Sun — a window when the chart's core theme comes forward",
+              "subZh": "激活本命太阳——星盘核心主题浮现的窗口期"
             }
           ]
         },
         {
-          "kind": "compare",
+          "kind": "sequence",
           "afterHeadingEn": "## Common Misreadings",
-          "titleEn": "Common Misreadings vs What the Chart Actually Says",
-          "altEn": "Two-column comparison of three common misreadings of Mo Salah's birth chart against their accurate interpretations",
-          "columns": [
+          "titleEn": "3 Common Misreadings of Salah's Chart",
+          "titleZh": "萨拉赫星盘的三个常见误读",
+          "altEn": "Three common misreadings of Mo Salah's Gemini birth chart explained",
+          "altZh": "解读萨拉赫双子座星盘时三种常见的错误",
+          "items": [
             {
-              "nameEn": "The Misread",
-              "nameZh": "常见误读",
-              "linesEn": [
-                "\"Gemini means goals\" — treats versatility as pure scoring output",
-                "\"The Sun is the whole story\" — ignores Moon, houses, and transits",
-                "\"Birthday on match day guarantees a result\" — treats a window of emphasis as a scripted outcome"
-              ],
-              "linesZh": [
-                "「双子座意味着进球」——将多才多艺误解为单纯的射门能力",
-                "「太阳就是全部」——忽略月亮、宫位与过境",
-                "「生日当天必有好结果」——把强调窗口期当成确定性预言"
-              ]
+              "nameEn": "\"Gemini means goals\"",
+              "nameZh": "「双子意味着进球」",
+              "subEn": "Treats versatility as scoring output; Gemini is the communicator, not the one-note striker",
+              "subZh": "将多才多艺误解为进球能力；双子原型是沟通者而非单一的射手"
             },
             {
-              "nameEn": "What the Chart Actually Says",
-              "nameZh": "星盘真正的含义",
-              "linesEn": [
-                "Gemini is the communicator archetype; the decisive assist fits the chart better than a hat-trick",
-                "Moon, houses, and transits carry equal weight; the full chart explains why a winger becomes a creator at 34",
-                "A natal activation is a window of tendency, never a guaranteed scoreline"
-              ],
-              "linesZh": [
-                "双子座是传播者原型；关键助攻比帽子戏法更符合星盘逻辑",
-                "月亮、宫位与过境同等重要；完整星盘才能解释为何边锋在34岁转型为组织者",
-                "本命激活是一个倾向窗口，绝非确定性的比分预测"
-              ]
+              "nameEn": "\"The Sun is the whole story\"",
+              "nameZh": "「太阳就是全部」",
+              "subEn": "The Sun is one voice among many; Moon, houses, and transits carry equal weight",
+              "subZh": "太阳只是众多因素之一；月亮、宫位和过境同等重要"
+            },
+            {
+              "nameEn": "\"A birthday on match day guarantees a result\"",
+              "nameZh": "「生日碰上比赛日必有佳绩」",
+              "subEn": "A natal activation is a window of emphasis, not a scripted outcome",
+              "subZh": "本命激活是强调的窗口期，而非预定的结果"
             }
           ]
         }

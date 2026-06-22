@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 331" role="img" aria-label="3 Common Misreadings of Salah's Chart">
+  <defs>
+    <linearGradient id="mosalahbirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mosalahbirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mosalahbirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="328" rx="22" fill="url(#mosalahbirthchart1en-panel)"/>
+  <ellipse cx="198" cy="79" rx="380" ry="113" fill="url(#mosalahbirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="265" rx="334" ry="106" fill="url(#mosalahbirthchart1en-neb2)"/>
+  <circle cx="618.4" cy="155.4" r="1.66" fill="#cfc8ea" opacity="0.26"/><circle cx="412.9" cy="117.5" r="1.06" fill="#cfc8ea" opacity="0.25"/><circle cx="14.4" cy="108.7" r="1.20" fill="#cfc8ea" opacity="0.48"/><circle cx="434.0" cy="31.4" r="0.41" fill="#cfc8ea" opacity="0.24"/><circle cx="119.6" cy="91.8" r="0.53" fill="#cfc8ea" opacity="0.33"/><circle cx="391.1" cy="142.8" r="1.45" fill="#cfc8ea" opacity="0.35"/><circle cx="222.9" cy="147.3" r="0.96" fill="#cfc8ea" opacity="0.17"/><circle cx="222.1" cy="288.8" r="1.39" fill="#cfc8ea" opacity="0.32"/><circle cx="170.0" cy="165.5" r="0.98" fill="#cfc8ea" opacity="0.31"/><circle cx="586.0" cy="58.2" r="0.87" fill="#cfc8ea" opacity="0.52"/><circle cx="505.5" cy="22.4" r="0.87" fill="#cfc8ea" opacity="0.18"/><circle cx="696.4" cy="161.4" r="1.45" fill="#cfc8ea" opacity="0.15"/><circle cx="621.3" cy="40.8" r="0.97" fill="#cfc8ea" opacity="0.22"/><circle cx="592.5" cy="56.9" r="0.51" fill="#cfc8ea" opacity="0.14"/><circle cx="293.6" cy="163.9" r="1.26" fill="#cfc8ea" opacity="0.39"/><circle cx="55.3" cy="224.6" r="1.25" fill="#cfc8ea" opacity="0.29"/><circle cx="55.4" cy="231.7" r="0.46" fill="#cfc8ea" opacity="0.17"/><circle cx="64.4" cy="31.3" r="1.58" fill="#cfc8ea" opacity="0.41"/><circle cx="229.3" cy="308.6" r="1.65" fill="#cfc8ea" opacity="0.23"/><circle cx="175.4" cy="114.4" r="1.19" fill="#cfc8ea" opacity="0.27"/><circle cx="250.3" cy="135.1" r="1.36" fill="#cfc8ea" opacity="0.33"/><circle cx="94.1" cy="252.0" r="1.09" fill="#cfc8ea" opacity="0.26"/><circle cx="295.4" cy="253.2" r="0.77" fill="#cfc8ea" opacity="0.26"/><circle cx="304.2" cy="117.2" r="1.42" fill="#cfc8ea" opacity="0.32"/><circle cx="359.0" cy="304.8" r="1.35" fill="#cfc8ea" opacity="0.17"/><circle cx="374.7" cy="210.5" r="1.52" fill="#cfc8ea" opacity="0.52"/><circle cx="270.2" cy="159.8" r="1.11" fill="#cfc8ea" opacity="0.45"/><circle cx="41.9" cy="177.9" r="0.88" fill="#cfc8ea" opacity="0.28"/><path d="M 546.8497607205063 296.8 L 547.3 299.0 L 549.5 299.4446399095468 L 547.3 299.9 L 546.8497607205063 302.1 L 546.4 299.9 L 544.2 299.4446399095468 L 546.4 299.0 Z" fill="#f6e6bf" opacity="0.7641575797460973"/><path d="M 419.4266951996833 109.9 L 420.0 113.1 L 423.3 113.75889469543472 L 420.0 114.4 L 419.4266951996833 117.6 L 418.8 114.4 L 415.6 113.75889469543472 L 418.8 113.1 Z" fill="#f6e6bf" opacity="0.7554775660857558"/><path d="M 177.39586388505995 149.3 L 178.0 152.5 L 181.1 153.0931337713264 L 178.0 153.7 L 177.39586388505995 156.8 L 176.8 153.7 L 173.6 153.0931337713264 L 176.8 152.5 Z" fill="#f6e6bf" opacity="0.560620726365596"/><path d="M 223.1744477916509 82.8 L 223.6 85.0 L 225.8 85.40806074859574 L 223.6 85.8 L 223.1744477916509 88.0 L 222.8 85.8 L 220.6 85.40806074859574 L 222.8 85.0 Z" fill="#f6e6bf" opacity="0.7711468283087015"/><path d="M 611.0451980028301 212.5 L 611.5 215.0 L 614.0 215.47133648348972 L 611.5 215.9 L 611.0451980028301 218.5 L 610.6 215.9 L 608.1 215.47133648348972 L 610.6 215.0 Z" fill="#f6e6bf" opacity="0.7150837640278042"/><path d="M 412.9 117.5 L 14.4 108.7 L 505.5 22.4 L 592.5 56.9 L 374.7 210.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="328" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="317" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 311.8 L 16.5 314.5 L 19.2 315 L 16.5 315.5 L 16 318.2 L 15.5 315.5 L 12.8 315 L 15.5 314.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 311.8 L 744.5 314.5 L 747.2 315 L 744.5 315.5 L 744 318.2 L 743.5 315.5 L 740.8 315 L 743.5 314.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">3 Common Misreadings of Salah's Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mosalahbirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mosalahbirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="259" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#mosalahbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#mosalahbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">&quot;Gemini means goals&quot;</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Treats versatility as scoring output; Gemini is the communicator, not the</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">one-note striker</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#mosalahbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#mosalahbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">&quot;The Sun is the whole story&quot;</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The Sun is one voice among many; Moon, houses, and transits carry equal weight</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#mosalahbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#mosalahbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">&quot;A birthday on match day guarantees a result&quot;</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A natal activation is a window of emphasis, not a scripted outcome</text>
+  <path d="M 202.22749999999988 302.4 L 202.6 304.6 L 204.8 305 L 202.6 305.4 L 202.22749999999988 307.6 L 201.8 305.4 L 199.6 305 L 201.8 304.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="309" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 302.4 L 558.2 304.6 L 560.4 305 L 558.2 305.4 L 557.7725000000002 307.6 L 557.4 305.4 L 555.2 305 L 557.4 304.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
