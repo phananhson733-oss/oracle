@@ -254,6 +254,7 @@ import { toyStory5ZodiacSignsZh } from "./toy-story-5-zodiac-signs";
 import { scotlandBrazilWorldCupAstrologyEn } from "./scotland-brazil-world-cup-astrology";
 import { scotlandBrazilWorldCupAstrologyZh } from "./scotland-brazil-world-cup-astrology";
 import { nikoBirthChartEn } from "./niko-birth-chart";
+import { princeWilliamBirthChartEn } from "./prince-william-birth-chart";
 // All articles organized by language
 
 import {
@@ -504,6 +505,7 @@ const ARTICLES_EN: WikiArticle[] = [
   toyStory5ZodiacSignsEn,
   scotlandBrazilWorldCupAstrologyEn,
   nikoBirthChartEn,
+  princeWilliamBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

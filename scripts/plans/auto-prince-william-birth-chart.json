@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "prince-william-birth-chart": {
+      "hero": {
+        "prompt": "A sweeping ocean vista at the summer solstice twilight — the sea surface shimmers in molten gold where the last light grazes the water, while deep indigo depths fall away unseen beneath, a luminous Cancer moon rising slowly above the horizon line where sky and ocean meet, warm amber dissolving upward into deep cosmic darkness where faint stars emerge, a single unbroken seascape holding radiant public surface and hidden private depth in one continuous frame, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twilight ocean horizon at the summer solstice — gold warmth on the surface, a Cancer moon rising above indigo depths"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sagittarius Rising vs. Cancer Moon: Public Face and Private Interior",
+          "titleEn": "Public Face vs. Private Interior",
+          "altEn": "Comparison of Sagittarius Rising public image and Cancer Moon private interior in Prince William's birth chart",
+          "columns": [
+            {
+              "nameEn": "Sagittarius Rising",
+              "linesEn": [
+                "Public interface layer for the Cancer interior",
+                "Reads as expansive, idealistic, and socially at ease",
+                "Neptune on the Ascendant softens it into something impressionistic",
+                "Observers fill in the gaps with their own projections",
+                "Warm and approachable — genuine, but filtered"
+              ]
+            },
+            {
+              "nameEn": "Cancer Moon",
+              "linesEn": [
+                "Unguarded emotional interior behind the Rising",
+                "Needs security, belonging, and privacy to function",
+                "Processes internally and protects what it processes",
+                "Emotionally self-contained — not unavailable",
+                "Deep privacy is what this placement naturally generates"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Placement in Your Own Chart",
+          "titleEn": "Five Patterns to Watch in Your Own Chart",
+          "altEn": "Five-step sequence showing how Cancer and Sagittarius placements appear in any birth chart reading",
+          "items": [
+            {
+              "nameEn": "Sun-Moon in the Same Sign",
+              "subEn": "Reads as self-contained; no internal gap between conscious identity and emotional instinct"
+            },
+            {
+              "nameEn": "Cancer Moon Under Pressure",
+              "subEn": "Emotional reflex is to withdraw quietly rather than react visibly — the calm reflects choice, not absence of feeling"
+            },
+            {
+              "nameEn": "Sagittarius Rising in Public",
+              "subEn": "First impression runs warm, confident, and socially at ease; expect a real gap with the more guarded emotional interior"
+            },
+            {
+              "nameEn": "Neptune Conjunct Ascendant",
+              "subEn": "Absorbs the room's emotional register and reflects something idealized back; reads differently to different observers"
+            },
+            {
+              "nameEn": "The 2026 Triple Alignment",
+              "subEn": "Birthday, Father's Day, and the summer solstice all converge on June 21, 2026, concentrating Cancer Season energy"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
