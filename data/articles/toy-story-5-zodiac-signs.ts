@@ -4,10 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const toyStory5ZodiacSignsEn: WikiArticle = {
   slug: "toy-story-5-zodiac-signs",
-  image: "/images/blog/toy-story-5-zodiac-signs.jpg",
-  image_alt: "A cozy twilight playroom with generic original toys on a wooden floor beneath a window of faint zodiac constellations",
   title: "What the Toy Story 5 Zodiac Signs Say About Woody, Buzz, and the New Cast",
-  description: "Toy story 5 zodiac signs are a for-fun way of matching each character in the 2026 Pixar film to a zodiac archetype based on their established personality",
+  description: "Toy story 5 zodiac signs are a for-fun way of matching each character in the 2026 Pixar film to a zodiac archetype based on their established personality, not a claim about any real birth chart.",
   authorId: "elena-vane",
   date: "2026-06-21",
   schema: "Article",
@@ -23,7 +21,7 @@ export const toyStory5ZodiacSignsEn: WikiArticle = {
 
 ## What Are Toy Story 5 Zodiac Signs?
 
-Toy story 5 zodiac signs are **a for-fun way of matching each character in the 2026 Pixar film to a zodiac archetype based on their established personality**, not a claim about any real birth chart. The film reached US theaters on June 19, 2026, after its Los Angeles premiere on June 9, and it brings back Woody, Buzz Lightyear, and Jessie while introducing a new cast around the toys-versus-technology story. Reading the characters this way works best as a character study, the same playful lens you might bring to the broader *guide to the twelve zodiac signs and their personalities*.
+Toy story 5 zodiac signs are **a for-fun way of matching each character in the 2026 Pixar film to a zodiac archetype based on their established personality**, not a claim about any real birth chart. The film reached US theaters on June 19, 2026, after its Los Angeles premiere on June 9, and it brings back Woody, Buzz Lightyear, and Jessie while introducing a new cast around the toys-versus-technology story. Reading the characters this way works best as a character study, the same playful lens you might bring to a broader [zodiac archetype mapping applied to public figures](/en/wiki/best-soccer-players-zodiac-sign).
 
 - Maps each toy to a sign by its traits, never by an invented birthday or birth time
 - Covers returning favorites and new faces like Smarty Pants, Lily the tablet, Atlas, and Snappy
@@ -45,9 +43,6 @@ The trade-off runs the other way too. Character-archetype reading gets you insta
 
 A third contrast is with daily horoscope content. A horoscope speaks to people who share a Sun sign; this piece does the reverse, taking a personality we already know and reaching backward for the sign that fits. The direction of reasoning is flipped, which is why it stays squarely in the realm of play.
 
-
-![Comparison of fictional-character archetype reading against a real birth chart and a daily horoscope](/images/blog/toy-story-5-zodiac-signs-i0-en.svg)
-
 ## How to Read Toy Story 5 Zodiac Signs in the Characters
 
 Matching toy story 5 zodiac signs to the cast works cleanly when you follow a few ordered steps, and the same method works for any film you want to read this way.
@@ -57,9 +52,6 @@ Matching toy story 5 zodiac signs to the cast works cleanly when you follow a fe
 3. Use the new cast's setup, not guesswork. Lily is the tech-tablet antagonist who pulls Bonnie's attention; Atlas is a GPS hippo toy; Snappy is an excitable camera toy. Match each to the sign its behavior suggests.
 4. Keep one sign per character at most, and say openly that it is a playful pick rather than a chart.
 5. Re-check against the writing. If a friend disagrees, the tiebreaker is always the character's behavior in the film, not an invented birthday.
-
-
-![Five ordered steps to match a Toy Story 5 character to a zodiac archetype](/images/blog/toy-story-5-zodiac-signs-i1-en.svg)
 
 ## Common Misreadings
 
@@ -103,8 +95,8 @@ Yes, and that is part of the fun. Because this game rests on personality reading
 
 ## Related Reading
 
-- *Leo personality traits explainer* — useful if you want to compare a bold, stage-loving archetype against the brave register Buzz brings to the cast
-- *pillar page on zodiac signs in movies and pop culture* — a wider look at how fans map astrology archetypes onto fictional characters for fun
+- [the Leo zodiac archetype through a nodal lens](/en/wiki/north-node-in-leo) — useful for comparing a bold, stage-loving register against the brave one Buzz brings to the cast
+- [zodiac signs mapped to entire teams as another pop-culture lens](/en/wiki/zodiac-signs-as-world-cup-2026-teams) — a wider look at how fans map astrology archetypes onto fictional or collective groups for fun
 - [Toy Story 5 (Wikipedia)](https://en.wikipedia.org/wiki/Toy_Story_5)
 
 ## Take Action
@@ -119,8 +111,6 @@ Pick the Toy Story 5 character whose personality feels closest to yours, then ge
 
 export const toyStory5ZodiacSignsZh: WikiArticle = {
   slug: "toy-story-5-zodiac-signs",
-  image: "/images/blog/toy-story-5-zodiac-signs.jpg",
-  image_alt: "暮色中温馨的儿童游戏室，原创通用玩具置于木地板上，窗外是隐约的星座夜空",
   title: "玩具总动员5星座：胡迪、巴斯与新角色背后的趣味星座解读",
   description: "玩具总动员5星座，是一种把这部2026年皮克斯电影里的每个角色，按其已确立的性格匹配到某个星座原型的趣味玩法，而不是对任何真实出生星盘的断言。 这部影片在洛杉矶于6月9日首映后，于2026年6月19日登陆美国院线，胡迪、巴斯光年与翠丝悉数回归，并围绕\"玩具对抗科技\"的主线引入了一批新角色。",
   authorId: "elena-vane",
@@ -138,7 +128,7 @@ export const toyStory5ZodiacSignsZh: WikiArticle = {
 
 ## 玩具总动员5星座是什么？
 
-玩具总动员5星座，**是一种把这部2026年皮克斯电影里的每个角色，按其已确立的性格匹配到某个星座原型的趣味玩法，而不是对任何真实出生星盘的断言。** 这部影片在洛杉矶于6月9日首映后，于2026年6月19日登陆美国院线，胡迪、巴斯光年与翠丝悉数回归，并围绕"玩具对抗科技"的主线引入了一批新角色。用这种方式读这些角色，最适合当作一次性格观察练习，就像你看待*guide to the twelve zodiac signs and their personalities*时那种轻松的视角。
+玩具总动员5星座，**是一种把这部2026年皮克斯电影里的每个角色，按其已确立的性格匹配到某个星座原型的趣味玩法，而不是对任何真实出生星盘的断言。** 这部影片在洛杉矶于6月9日首映后，于2026年6月19日登陆美国院线，胡迪、巴斯光年与翠丝悉数回归，并围绕"玩具对抗科技"的主线引入了一批新角色。用这种方式读这些角色，最适合当作一次性格观察练习，就像你看待这份[把星座原型映射到公众人物的对照](/zh/wiki/best-soccer-players-zodiac-sign)时那种轻松的视角。
 
 - 按性格特质把每个玩具对应到一个星座，绝不依据任何虚构的生日或出生时间
 - 既覆盖回归的老面孔，也覆盖新角色，比如聪明裤、平板"莉莉"、阿特拉斯和咔嚓
@@ -160,9 +150,6 @@ export const toyStory5ZodiacSignsZh: WikiArticle = {
 
 第三重对比，是与每日星座运势内容的区别。星座运势面向共享同一太阳星座的人群；而这个游戏做的恰好相反，它拿一个我们早已熟悉的性格，反过来去找最契合的那个星座。推理的方向是反的，这正是它牢牢停留在游戏领域的原因。
 
-
-![虚构角色原型解读与真实出生星盘、每日星座运势的三方对照](/images/blog/toy-story-5-zodiac-signs-i0-zh.svg)
-
 ## 如何在角色身上读出玩具总动员5星座（实操观察）
 
 把玩具总动员5星座对应到角色上，只要按几个有顺序的步骤来就很顺；同样的方法对任何你想这样读的影片都适用。
@@ -172,9 +159,6 @@ export const toyStory5ZodiacSignsZh: WikiArticle = {
 3. 用新角色的设定，而不是凭空猜测。莉莉是抢走邦妮注意力的科技平板反派；阿特拉斯是一只GPS河马玩具；咔嚓是一只兴奋好动的相机玩具。把每一个对应到其行为所暗示的星座。
 4. 每个角色至多保留一个星座，并坦白说明这是趣味挑选，而非一张星盘。
 5. 回到创作本身去复核。如果朋友不同意，决胜的依据永远是角色在片中的行为，而不是一个虚构的生日。
-
-
-![把玩具总动员5角色匹配到星座原型的五个有序步骤](/images/blog/toy-story-5-zodiac-signs-i1-zh.svg)
 
 ## 常见误读
 
@@ -218,8 +202,8 @@ export const toyStory5ZodiacSignsZh: WikiArticle = {
 
 ## 延伸阅读
 
-- *Leo personality traits explainer* —— 如果你想拿一个大胆、爱舞台的原型，去对照巴斯带给这群角色的那股勇敢气质，这篇很有用
-- *pillar page on zodiac signs in movies and pop culture* —— 更宏观地看看粉丝如何为了好玩，把占星原型映射到虚构角色身上
+- [从交点视角看狮子座原型](/zh/wiki/north-node-in-leo) —— 如果你想拿一个大胆、爱舞台的原型，去对照巴斯带给这群角色的那股勇敢气质，这条线索很有用
+- [星座对应整支球队的另一种流行文化映射](/zh/wiki/zodiac-signs-as-world-cup-2026-teams) —— 更宏观地看看粉丝如何为了好玩，把占星原型映射到虚构或集体的角色身上
 - [Toy Story 5（维基百科）](https://zh.wikipedia.org/wiki/Toy_Story_5)
 
 ## 下一步行动
