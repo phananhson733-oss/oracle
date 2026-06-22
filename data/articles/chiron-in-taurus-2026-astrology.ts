@@ -4,10 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const chironInTaurus2026AstrologyEn: WikiArticle = {
   slug: "chiron-in-taurus-2026-astrology",
-  image: "/images/blog/chiron-in-taurus-2026-astrology.jpg",
-  image_alt: "Verdant Taurus valley at dawn with a lone budding tree, silver crescent and a single bright wound-of-light star low on a green-gold horizon",
   title: "What Chiron in Taurus 2026 Asks of Your Sense of Worth",
-  description: "Chiron in Taurus 2026 is the transit that begins when the comet-like body Chiron first enters the sign Taurus on June 19, 2026",
+  description: "Chiron in Taurus 2026 is the transit that begins when the comet-like body Chiron first enters the sign Taurus on June 19, 2026, opening a years-long symbolic chapter around self-worth, the body, and material security.",
   authorId: "julian-thorne",
   date: "2026-06-21",
   schema: "Article",
@@ -44,7 +42,7 @@ Setting chiron in taurus 2026 astrology against the Chiron in Aries that precede
 Taurus inverts that emphasis. The way it functions is slower and more embodied, turning the work toward worth rather than identity, toward the body and material ground rather than the assertive spark. The trade-off runs the other direction: to get the rootedness Taurus offers, you sacrifice urgency, because the Taurus passage asks a person to stay with a tender question about enough-ness long enough for it to settle, rather than acting it out quickly. The retrograde back into Aries from September 2026 to April 2027 is why the contrast matters in practice; the theme genuinely returns to identity for a stretch before the long Taurus chapter resumes, so a reader feels both registers in sequence rather than choosing between them.
 
 
-![Comparison of Chiron in Taurus, Chiron in Aries, and the retrograde return between them](/images/blog/chiron-in-taurus-2026-astrology-i0-en.svg)
+![Side-by-side comparison of Chiron in Aries and Chiron in Taurus: wound focus, energy style, and trade-offs](/images/blog/chiron-in-taurus-2026-astrology-i2-en.svg)
 
 ## How to Read Chiron in Taurus 2026 in Your Timing
 
@@ -58,7 +56,7 @@ Working with chiron in taurus 2026 astrology in your own chart is a matter of a 
 6. Hold the whole arc as a reflective prompt across years, then revisit it as Chiron moves through Taurus to see what has actually shifted.
 
 
-![Timeline of Chiron's Taurus arc: ingress June 2026, retrograde to Aries September 2026, re-enter Taurus April 2027, long stay through about May 2034](/images/blog/chiron-in-taurus-2026-astrology-i1-en.svg)
+![Six-step sequence for reading Chiron in Taurus 2026 in a birth chart, from marking ingress dates to holding the long arc](/images/blog/chiron-in-taurus-2026-astrology-i1-en.svg)
 
 ## Common Misreadings
 
@@ -75,6 +73,9 @@ Working with chiron in taurus 2026 astrology in your own chart is a matter of a 
 | Retrograde phase | Chiron retreats into Aries | Natal Aries house | Active September 17, 2026 to April 14, 2027 |
 | Long passage | Chiron re-enters Taurus for the long stay | Natal Taurus house and early-Taurus planets | Runs from April 2027 through about May 2034 |
 | Core theme | Worth, body, and security come into focus | Whichever house holds Taurus | Notice where questions of enough-ness recur |
+
+
+![Timeline of Chiron in Taurus 2026 phases: first ingress June 2026, Aries retrograde, and long Taurus stay through May 2034](/images/blog/chiron-in-taurus-2026-astrology-i0-en.svg)
 
 ## Common Questions About Chiron in Taurus 2026
 
@@ -120,10 +121,8 @@ It is the first Taurus passage since the late 1970s and early 1980s. Chiron's ec
 
 export const chironInTaurus2026AstrologyZh: WikiArticle = {
   slug: "chiron-in-taurus-2026-astrology",
-  image: "/images/blog/chiron-in-taurus-2026-astrology.jpg",
-  image_alt: "黎明时分葱郁的金牛座山谷，一棵孤独的初芽之树，银色月牙与一颗明亮的伤痕之光低悬于绿金色地平线",
   title: "凯龙星入金牛座2026，对你的\"价值感\"提出了什么问题",
-  description: "凯龙星入金牛座2026占星，是当彗星状天体凯龙星于2026年6月19日首次进入金牛座时开启的一段行运，围绕自我价值、身体与物质安全感展开、长达数年的象征性篇章。理解凯龙星入金牛座2026占星，要先从历法本身读起，因为这次入座并不是干净利落的一刀切，而是层层叠叠的，读懂它意味着把整段次序一并纳入视野，而不是死盯某一个日期",
+  description: "凯龙星入金牛座2026占星，是当彗星状天体凯龙星于2026年6月19日首次进入金牛座时开启的一段行运，围绕自我价值、身体与物质安全感展开、长达数年的象征性篇章。",
   authorId: "julian-thorne",
   date: "2026-06-21",
   schema: "Article",
@@ -160,7 +159,7 @@ export const chironInTaurus2026AstrologyZh: WikiArticle = {
 金牛座则把重心倒了过来。它运作的方式更慢、更扎根于身体，把工作从身份转向价值，从那股主张性的火花转向身体与物质的地基。取舍的方向也反了过来：要换取金牛座给你的扎根感，你就得牺牲紧迫性，因为金牛座的经过要求一个人与"够不够"这道柔软的提问长久相处，直到它沉淀下来，而不是急着把它演出来。从2026年9月到2027年4月逆行退回牡羊座，正是这组对比在实践中之所以重要的原因；主题确实有一段时间真切地回到身份认同，之后金牛座的长篇章才接续上来，于是读者是按次序先后体会到两种音域，而不是在两者之间二选一。
 
 
-![凯龙星在金牛座、凯龙星在牡羊座，以及两者之间逆行回返的三方对照](/images/blog/chiron-in-taurus-2026-astrology-i0-zh.svg)
+![凯龙星在牡羊座与金牛座的并排对比：伤口焦点、能量风格与各自取舍](/images/blog/chiron-in-taurus-2026-astrology-i2-zh.svg)
 
 ## 如何在自己星盘里识别凯龙星入金牛座2026（实操观察）
 
@@ -174,7 +173,7 @@ export const chironInTaurus2026AstrologyZh: WikiArticle = {
 6. 把整段弧线当作一道跨越数年的反思提示来持守，之后随着凯龙星行经金牛座再回头看看，究竟有什么真的发生了位移。
 
 
-![凯龙星金牛座弧线时间线：2026年6月入座、2026年9月逆行退回牡羊座、2027年4月重新进入金牛座、长期停留至约2034年5月](/images/blog/chiron-in-taurus-2026-astrology-i1-zh.svg)
+![在本命盘中识别凯龙星入金牛座2026的六步流程，从标记入座日期到持守长期弧线](/images/blog/chiron-in-taurus-2026-astrology-i1-zh.svg)
 
 ## 常见误读
 
@@ -191,6 +190,9 @@ export const chironInTaurus2026AstrologyZh: WikiArticle = {
 | 逆行阶段 | 凯龙星退回牡羊座 | 本命牡羊座所在宫位 | 活跃于2026年9月17日至2027年4月14日 |
 | 长期经过 | 凯龙星重新进入金牛座长期停留 | 本命金牛座宫位与落在金牛座早度数的行星 | 从2027年4月延续到约2034年5月 |
 | 核心主题 | 价值、身体与安全感进入聚焦 | 容纳金牛座的那个宫位 | 留意"够不够"的提问在哪里反复出现 |
+
+
+![凯龙星入金牛座2026阶段时间轴：2026年6月首次入座、逆行牡羊座及至2034年5月的长期停留](/images/blog/chiron-in-taurus-2026-astrology-i0-zh.svg)
 
 ## 关于凯龙星入金牛座2026的常见问题
 
