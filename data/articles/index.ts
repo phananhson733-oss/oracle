@@ -253,6 +253,7 @@ import { toyStory5ZodiacSignsEn } from "./toy-story-5-zodiac-signs";
 import { toyStory5ZodiacSignsZh } from "./toy-story-5-zodiac-signs";
 import { scotlandBrazilWorldCupAstrologyEn } from "./scotland-brazil-world-cup-astrology";
 import { scotlandBrazilWorldCupAstrologyZh } from "./scotland-brazil-world-cup-astrology";
+import { nikoBirthChartEn } from "./niko-birth-chart";
 // All articles organized by language
 
 import {
@@ -502,6 +503,7 @@ const ARTICLES_EN: WikiArticle[] = [
   chironInTaurus2026AstrologyEn,
   toyStory5ZodiacSignsEn,
   scotlandBrazilWorldCupAstrologyEn,
+  nikoBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
