@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const spainWorldCup2026AstrologyEn: WikiArticle = {
   slug: "spain-world-cup-2026-astrology",
+  image: "/images/blog/spain-world-cup-2026-astrology.jpg",
+  image_alt: "Spain 2026 World Cup astrology — crescent moon over ocean opposing mountain ridge, Jupiter-Cancer opposition tension at twilight",
   title: "What Spain World Cup 2026 Astrology Says About La Roja's Defining Crisis",
   description: "Spain World Cup 2026 astrology — 2026 outlook snapshot: Spain opened Group H on June 15 with a 0-0 draw against Cape Verde.",
   authorId: "julian-thorne",
@@ -125,8 +127,10 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 
 export const spainWorldCup2026AstrologyZh: WikiArticle = {
   slug: "spain-world-cup-2026-astrology",
+  image: "/images/blog/spain-world-cup-2026-astrology.jpg",
+  image_alt: "西班牙2026世界杯占星——弯月悬于大洋之上与远山山脊对峙，木星巨蟹座对冲张力的黄昏图景",
   title: "西班牙2026世界杯占星：斗牛士军团的危机与突破图景",
-  description: "西班牙2026世界杯占星，是一套以西班牙足协奠基日期为结构锚点、结合木星约27度巨蟹座对相位本届赛事窗口进行象征性解读的参考框架。 西班牙于6月15日在 H",
+  description: "西班牙2026世界杯占星，是一套以西班牙足协奠基日期为结构锚点、结合木星约27度巨蟹座对相位本届赛事窗口进行象征性解读的参考框架。",
   authorId: "julian-thorne",
   date: "2026-06-21",
   schema: "Article",
