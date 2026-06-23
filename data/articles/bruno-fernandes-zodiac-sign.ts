@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const brunoFernandesZodiacSignEn: WikiArticle = {
   slug: "bruno-fernandes-zodiac-sign",
   title: "Why the Bruno Fernandes Zodiac Sign Points to Precision, Not Temper",
-  description: "Bruno Fernandes zodiac sign is Virgo — a Virgo Sun born on 8 September 1994 in Maia, Portugal, with Mars in Cancer on the same date (both fixed by the birth date alone).",
+  description: "Bruno Fernandes zodiac sign is Virgo — a Virgo Sun born on 8 September 1994 in Maia, Portugal.",
   authorId: "marcus-orion",
   date: "2026-06-23",
   schema: "Article",
@@ -21,7 +21,7 @@ export const brunoFernandesZodiacSignEn: WikiArticle = {
 
 ## What Is Bruno Fernandes's Zodiac Sign?
 
-Bruno Fernandes zodiac sign is Virgo — a Virgo Sun born on 8 September 1994 in Maia, Portugal, with Mars in Cancer on the same date (both fixed by the birth date alone). Chart sites also commonly list a Libra Moon and a Scorpio rising, but Fernandes has never made his birth time public, so those two placements come from an estimated noon chart and can't be confirmed. In plain terms, his core identity runs on craft, accuracy, and high personal standards, while the commonly cited Moon and rising shape how he handles feeling and how strangers first read him. This three-layer setup sits inside a broader [World Cup 2026 astrology prediction hub](/en/wiki/world-cup-2026-astrology-prediction) that maps the same method across other squads. Read together, the layers explain why his on-pitch frustration usually signals a standards problem rather than a hot temper. The short version most fans want: **a Virgo Sun with Mars in Cancer, plus a commonly cited (though unconfirmed) Libra Moon and Scorpio rising**.
+Bruno Fernandes zodiac sign is Virgo — a Virgo Sun born on 8 September 1994 in Maia, Portugal. Chart sites also commonly list a Libra Moon and a Scorpio rising, but Fernandes has never made his birth time public, so those two placements come from an estimated noon chart and can't be confirmed. In plain terms, his core identity runs on craft, accuracy, and high personal standards, while the commonly cited Moon and rising shape how he handles feeling and how strangers first read him. This three-layer setup sits inside a broader [World Cup 2026 astrology prediction hub](/en/wiki/world-cup-2026-astrology-prediction) that maps the same method across other squads. Read together, the layers explain why his on-pitch frustration usually signals a standards problem rather than a hot temper. The short version most fans want: **a Virgo Sun, plus a commonly cited (though unconfirmed) Libra Moon and Scorpio rising**.
 
 - Leads with exacting standards and refined function over individual spectacle
 - Built on a Virgo Sun, with a commonly cited (unconfirmed) Libra Moon softening the social edges
@@ -52,7 +52,7 @@ You do not need the birth chart open to spot the Virgo pattern. It shows up in o
 1. **Frustration aimed at the play, not the person.** His sharpest reactions tend to follow a technical error — a loose touch, a mistimed run — rather than a personal slight or a referee's call.
 2. **Instant self-correction.** Watch him right after his own misplaced pass; the same critical lens turns inward fast, often with a raised hand to claim the mistake before anyone else can.
 3. **Diplomacy once the whistle goes.** Post-match, the Libra Moon takes over and he reaches for fairness and measured words, a sharp contrast to the in-game heat.
-4. **Protective, not aggressive, drive.** With Mars in Cancer, his competitive push reads as covering for teammates and shielding the group rather than chasing solo glory.
+4. **Protective, not aggressive, drive.** His competitive push reads as covering for teammates and shielding the group rather than chasing solo glory — service over spectacle, the Virgo way.
 5. **Standards stated out loud.** He names what the team should have done, which is Virgo's service-via-craft instinct showing up as leadership rather than ego.
 
 ## Common Misreadings
@@ -70,14 +70,14 @@ Most quick takes on the Bruno Fernandes zodiac sign stop at the surface and get 
 | --- | --- | --- | --- |
 | Virgo Sun | Identity built through craft and exacting standards | Earth; service and refinement | Frustration tied to technical errors, fast self-correction |
 | Libra Moon (attributed, unconfirmed) | Regulates feeling through fairness and balance | Air; relationship and diplomacy | Measured, even-handed post-match interviews |
-| Mars in Cancer | Competitive drive routed through protecting the group | Water; team and home instinct | Covering for teammates over chasing solo moments |
+| Sun–Moon–Rising blend | Combines an exacting Virgo identity with a measured, guarded surface | Earth–Air–Water mix | Standards-driven reactions wrapped in a composed, hard-to-read presence |
 | Scorpio Ascendant (attributed, unconfirmed) | First impression of guarded intensity | Water; depth and control | The brooding surface that gets misread as volatility |
 
 ## Questions People Ask About His Zodiac Sign
 
 **What is the Bruno Fernandes zodiac sign?**
 
-He is a Virgo Sun, born on 8 September 1994, with Mars in Cancer (both set by his birth date). Chart sites also commonly cite a Libra Moon and a Scorpio rising, but those are unconfirmed because he has never made his birth time public. The Virgo Sun is the part most responsible for his standards-driven reactions on the pitch.
+He is a Virgo Sun, born on 8 September 1994. Chart sites also commonly cite a Libra Moon and a Scorpio rising, but those are unconfirmed because he has never made his birth time public. The Virgo Sun is the part most responsible for his standards-driven reactions on the pitch.
 
 **Is Bruno Fernandes's frustration a sign of a fiery temperament?**
 
@@ -87,9 +87,9 @@ Not in the astrological read. His earth-sign Virgo points to perfectionism over 
 
 His Libra Moon governs the diplomatic, fairness-seeking public side, while the Virgo Sun drives the in-game quality control. The two layers handle different settings, so both can be real at the same time.
 
-**What does Mars in Cancer say about his competitiveness?**
+**Does his zodiac sign explain his on-pitch frustration?**
 
-Mars in Cancer routes his drive through protecting the team rather than individual aggression. It often looks like covering for teammates and defending the group instead of chasing personal stats.
+In the astrological read, yes — his Virgo Sun ties his sharpest reactions to missed technical standards rather than a hot temper, so the frustration usually tracks a precision lapse instead of a personal slight.
 
 ## Reflection Prompts
 
@@ -101,7 +101,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
-- [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — the Cancer-sign themes behind his protective Mars in Cancer.
+- [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — the Cancer-sign themes that run through the World Cup field.
 - [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — another World Cup attacker read through his chart.
 - [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — the headline 2026 transit shaping the squad through the tournament.
 - [Bruno Fernandes (Wikipedia)](https://en.wikipedia.org/wiki/Bruno_Fernandes) — background on the player behind the chart.
