@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 523" role="img" aria-label="Five Virgo Tells in Bruno Fernandes's Game">
+  <defs>
+    <linearGradient id="brunofernandeszodiacsign0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="brunofernandeszodiacsign0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="brunofernandeszodiacsign0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="brunofernandeszodiacsign0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="brunofernandeszodiacsign0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="brunofernandeszodiacsign0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="url(#brunofernandeszodiacsign0en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="178" fill="url(#brunofernandeszodiacsign0en-neb1)"/>
+  <ellipse cx="623" cy="418" rx="334" ry="167" fill="url(#brunofernandeszodiacsign0en-neb2)"/>
+  <circle cx="690.6" cy="371.0" r="1.47" fill="#cfc8ea" opacity="0.45"/><circle cx="353.8" cy="32.8" r="1.54" fill="#cfc8ea" opacity="0.15"/><circle cx="471.0" cy="192.5" r="0.63" fill="#cfc8ea" opacity="0.28"/><circle cx="496.9" cy="247.6" r="1.10" fill="#cfc8ea" opacity="0.40"/><circle cx="46.6" cy="178.0" r="1.52" fill="#cfc8ea" opacity="0.24"/><circle cx="435.4" cy="458.0" r="0.74" fill="#cfc8ea" opacity="0.45"/><circle cx="567.4" cy="190.3" r="0.76" fill="#cfc8ea" opacity="0.14"/><circle cx="705.2" cy="304.5" r="0.73" fill="#cfc8ea" opacity="0.15"/><circle cx="573.0" cy="365.8" r="0.98" fill="#cfc8ea" opacity="0.16"/><circle cx="158.9" cy="55.2" r="1.53" fill="#cfc8ea" opacity="0.39"/><circle cx="185.5" cy="94.2" r="1.35" fill="#cfc8ea" opacity="0.29"/><circle cx="180.5" cy="113.8" r="0.98" fill="#cfc8ea" opacity="0.22"/><circle cx="405.6" cy="47.1" r="1.24" fill="#cfc8ea" opacity="0.13"/><circle cx="162.5" cy="94.1" r="0.87" fill="#cfc8ea" opacity="0.41"/><circle cx="479.4" cy="65.0" r="1.41" fill="#cfc8ea" opacity="0.48"/><circle cx="558.2" cy="263.5" r="1.38" fill="#cfc8ea" opacity="0.17"/><circle cx="577.3" cy="174.5" r="0.75" fill="#cfc8ea" opacity="0.23"/><circle cx="331.7" cy="447.0" r="1.02" fill="#cfc8ea" opacity="0.14"/><circle cx="234.1" cy="502.7" r="0.43" fill="#cfc8ea" opacity="0.23"/><circle cx="304.0" cy="151.0" r="1.31" fill="#cfc8ea" opacity="0.40"/><circle cx="28.3" cy="467.8" r="0.88" fill="#cfc8ea" opacity="0.20"/><circle cx="666.5" cy="296.8" r="1.28" fill="#cfc8ea" opacity="0.22"/><circle cx="98.5" cy="289.1" r="0.41" fill="#cfc8ea" opacity="0.50"/><circle cx="195.4" cy="317.4" r="1.01" fill="#cfc8ea" opacity="0.42"/><circle cx="657.1" cy="253.1" r="0.67" fill="#cfc8ea" opacity="0.15"/><circle cx="433.7" cy="438.7" r="1.49" fill="#cfc8ea" opacity="0.45"/><circle cx="350.0" cy="147.9" r="1.16" fill="#cfc8ea" opacity="0.29"/><circle cx="493.7" cy="142.9" r="0.83" fill="#cfc8ea" opacity="0.38"/><circle cx="481.2" cy="42.4" r="0.41" fill="#cfc8ea" opacity="0.21"/><circle cx="674.2" cy="480.8" r="1.12" fill="#cfc8ea" opacity="0.25"/><circle cx="160.2" cy="27.9" r="0.50" fill="#cfc8ea" opacity="0.21"/><circle cx="119.9" cy="486.7" r="0.91" fill="#cfc8ea" opacity="0.32"/><circle cx="264.7" cy="303.6" r="1.70" fill="#cfc8ea" opacity="0.19"/><circle cx="602.8" cy="335.8" r="1.29" fill="#cfc8ea" opacity="0.52"/><circle cx="628.3" cy="494.4" r="0.93" fill="#cfc8ea" opacity="0.18"/><circle cx="238.6" cy="18.7" r="1.06" fill="#cfc8ea" opacity="0.53"/><circle cx="579.1" cy="487.3" r="1.24" fill="#cfc8ea" opacity="0.24"/><circle cx="697.3" cy="58.2" r="0.88" fill="#cfc8ea" opacity="0.28"/><circle cx="46.1" cy="281.4" r="1.21" fill="#cfc8ea" opacity="0.48"/><circle cx="117.8" cy="66.7" r="1.04" fill="#cfc8ea" opacity="0.24"/><circle cx="301.9" cy="499.5" r="0.58" fill="#cfc8ea" opacity="0.17"/><circle cx="439.6" cy="182.8" r="1.11" fill="#cfc8ea" opacity="0.37"/><circle cx="221.7" cy="237.7" r="1.15" fill="#cfc8ea" opacity="0.40"/><circle cx="547.6" cy="489.4" r="0.54" fill="#cfc8ea" opacity="0.28"/><path d="M 382.8468520324677 446.3 L 383.3 448.8 L 385.9 449.3258648980409 L 383.3 449.8 L 382.8468520324677 452.4 L 382.4 449.8 L 379.8 449.3258648980409 L 382.4 448.8 Z" fill="#f6e6bf" opacity="0.7242971300613135"/><path d="M 140.33196466229856 132.4 L 140.9 135.4 L 143.9 135.9393041031435 L 140.9 136.5 L 140.33196466229856 139.5 L 139.8 136.5 L 136.8 135.9393041031435 L 139.8 135.4 Z" fill="#f6e6bf" opacity="0.6940954713616521"/><path d="M 586.9671135079116 347.4 L 587.4 349.8 L 589.7 350.2119150534272 L 587.4 350.7 L 586.9671135079116 353.0 L 586.5 350.7 L 584.2 350.2119150534272 L 586.5 349.8 Z" fill="#f6e6bf" opacity="0.5410541338380426"/><path d="M 508.4851076360792 327.5 L 509.0 330.1 L 511.6 330.6133067710325 L 509.0 331.1 L 508.4851076360792 333.7 L 508.0 331.1 L 505.4 330.6133067710325 L 508.0 330.1 Z" fill="#f6e6bf" opacity="0.5398522776085883"/><path d="M 217.91523438505828 200.1 L 218.5 203.3 L 221.8 203.95779576711357 L 218.5 204.6 L 217.91523438505828 207.8 L 217.3 204.6 L 214.1 203.95779576711357 L 217.3 203.3 Z" fill="#f6e6bf" opacity="0.5317183639388532"/><path d="M 353.8 32.8 L 435.4 458.0 L 180.5 113.8 L 628.3 494.4 L 301.9 499.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="509" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 503.8 L 16.5 506.5 L 19.2 507 L 16.5 507.5 L 16 510.2 L 15.5 507.5 L 12.8 507 L 15.5 506.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 503.8 L 744.5 506.5 L 747.2 507 L 744.5 507.5 L 744 510.2 L 743.5 507.5 L 740.8 507 L 743.5 506.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Virgo Tells in Bruno Fernandes's Game</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#brunofernandeszodiacsign0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#brunofernandeszodiacsign0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="433" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#brunofernandeszodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#brunofernandeszodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Frustration at the Play</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sharpest reactions follow technical errors — loose touch, mistimed run — not</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">personal slights</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#brunofernandeszodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#brunofernandeszodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Instant Self-Correction</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">After his own misplaced pass the critical lens turns inward fast, often with a</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">raised hand to claim the mistake</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#brunofernandeszodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#brunofernandeszodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Diplomacy After the Whistle</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Post-match the Libra Moon takes over — fairness and measured words, a sharp</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">contrast to in-game heat</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#brunofernandeszodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#brunofernandeszodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Protective Drive</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Mars in Cancer routes competitive push through covering teammates and</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">shielding the group, not chasing solo glory</text>
+  <circle cx="76" cy="433" r="20.0" fill="url(#brunofernandeszodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="433" r="15" fill="url(#brunofernandeszodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="428.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="437.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="429.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Standards Stated Out Loud</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">He names what the team should have done — Virgo's service-via-craft instinct</text>
+  <text x="116" y="469.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">showing up as leadership, not ego</text>
+  <path d="M 202.22749999999988 494.4 L 202.6 496.6 L 204.8 497 L 202.6 497.4 L 202.22749999999988 499.6 L 201.8 497.4 L 199.6 497 L 201.8 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="501" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 494.4 L 558.2 496.6 L 560.4 497 L 558.2 497.4 L 557.7725000000002 499.6 L 557.4 497.4 L 555.2 497 L 557.4 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
