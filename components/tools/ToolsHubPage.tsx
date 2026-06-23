@@ -1,5 +1,5 @@
 // INPUT: React、react-router-dom（Link）、useLanguage/useTheme（UIComponents）、toolsCatalog（TOOL_CATEGORIES/TOOLS/toolsByCategory）、analytics（trackEvent）。
-// OUTPUT: /:lang/tools 工具中心页——intro + 5 个分类 section，每个 section 一句话引导 + 工具卡片网格（语言前缀内链到各计算器）。
+// OUTPUT: /:lang/tools 工具中心页——intro + 5 个分类 section，每个 section 一句话引导 + 工具卡片网格（英文文案；语言前缀内链到各计算器）。
 // POS: 计算器矩阵的统一发现入口（hub-and-spoke 内链中枢）；路由 /:lang/tools，静态 stub 由 generate-seo-pages.mjs 输出。
 //      文案中性、非命运断言（撞 AI 安全红线 NO_FATE_CERTAINTY）。卡片范式对齐 pages/landing/ToolsGridSection.tsx。若更新此文件，务必更新 tools/FOLDER.md。
 
@@ -132,34 +132,25 @@ const ToolsHubPage: React.FC = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
   const isDark = theme === "dark";
-  const zh = language === "zh";
-  const openLabel = zh ? "打开" : "Open";
+  const openLabel = "Open";
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-      <header className="max-w-2xl">
-        <p
-          className={`mb-3 text-xs uppercase tracking-[0.18em] ${
-            isDark ? "text-star-400" : "text-paper-600"
-          }`}
-        >
-          {zh ? "免费工具" : "Free Tools"}
-        </p>
+      <header className="max-w-3xl">
         <h1
           className={`font-serif text-3xl md:text-4xl leading-tight ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
-          {zh ? "占星工具中心" : "Astrology Tools"}
+          Astrology Tools
         </h1>
         <p
           className={`mt-4 text-base md:text-lg leading-relaxed ${
-            isDark ? "text-star-200" : "text-paper-700"
+            isDark ? "text-star-300/70" : "text-paper-600/70"
           }`}
         >
-          {zh
-            ? "一整套免费的占星计算器与图表工具，由 Swiss Ephemeris 天文数据驱动。无需注册，按主题浏览，挑一个开始探索。"
-            : "A full set of free astrology calculators and chart tools, powered by Swiss Ephemeris astronomy. No account needed — browse by theme and pick one to explore."}
+          A full set of free astrology calculators and chart tools, powered by
+          Swiss Ephemeris astronomy.
         </p>
       </header>
 
@@ -172,14 +163,14 @@ const ToolsHubPage: React.FC = () => {
                 isDark ? "text-star-50" : "text-paper-900"
               }`}
             >
-              {zh ? category.title.zh : category.title.en}
+              {category.title.en}
             </h2>
             <p
               className={`mt-2 max-w-2xl text-sm md:text-base leading-relaxed ${
-                isDark ? "text-star-300" : "text-paper-600"
+                isDark ? "text-star-300/70" : "text-paper-600/70"
               }`}
             >
-              {zh ? category.intro.zh : category.intro.en}
+              {category.intro.en}
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -193,11 +184,11 @@ const ToolsHubPage: React.FC = () => {
                       location: "tools_hub",
                     })
                   }
-                  aria-label={`${zh ? tool.title.zh : tool.title.en} — ${openLabel}`}
-                  className={`group rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-100 dark:bg-space-900/40 p-6 shadow-sm dark:shadow-none transition-all duration-300 hover:border-accent/40 hover:shadow-xl block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                  aria-label={`${tool.title.en} — ${openLabel}`}
+                  className={`group flex h-full flex-col rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                     isDark
-                      ? "focus-visible:ring-offset-space-950"
-                      : "focus-visible:ring-offset-paper-100"
+                      ? "border-gold-500/15 bg-gradient-to-b from-space-900/60 to-space-900/20 shadow-none hover:border-accent/40 focus-visible:ring-offset-space-950"
+                      : "border-paper-300 bg-gradient-to-b from-white to-paper-100 hover:border-accent/40 focus-visible:ring-offset-paper-100"
                   }`}
                 >
                   <ToolIcon icon={tool.icon} />
@@ -206,16 +197,23 @@ const ToolsHubPage: React.FC = () => {
                       isDark ? "text-star-50" : "text-paper-900"
                     }`}
                   >
-                    {zh ? tool.title.zh : tool.title.en}
+                    {tool.title.en}
                   </h3>
                   <p className="text-sm mt-2 leading-relaxed text-paper-700 dark:text-star-200">
-                    {zh ? tool.blurb.zh : tool.blurb.en}
+                    {tool.blurb.en}
                   </p>
                   <span
                     aria-hidden="true"
-                    className="mt-4 text-sm text-accent block"
+                    className={`mt-auto flex w-full items-center justify-center gap-1.5 rounded-xl border px-4 py-2.5 text-sm font-medium text-accent transition-colors duration-300 ${
+                      isDark
+                        ? "border-gold-500/20 bg-space-800/40 group-hover:border-accent/50 group-hover:bg-accent/10"
+                        : "border-paper-300 bg-paper-200/50 group-hover:border-accent/50 group-hover:bg-accent/10"
+                    }`}
                   >
-                    {openLabel} <span className="ml-1">→</span>
+                    {openLabel}
+                    <span className="ml-0.5 transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
                   </span>
                 </Link>
               ))}
@@ -229,24 +227,12 @@ const ToolsHubPage: React.FC = () => {
           isDark ? "text-star-300" : "text-paper-600"
         }`}
       >
-        {zh ? (
-          <>
-            想更深入地了解每个概念？浏览{" "}
-            <Link to={`/${language}/wiki`} className="text-accent underline">
-              占星百科
-            </Link>{" "}
-            里的心理学导向文章。
-          </>
-        ) : (
-          <>
-            Want the ideas behind the tools? Browse the psychology-grounded
-            articles in the{" "}
-            <Link to={`/${language}/wiki`} className="text-accent underline">
-              AstrologyWiki
-            </Link>
-            .
-          </>
-        )}
+        Want the ideas behind the tools? Browse the psychology-grounded articles
+        in the{" "}
+        <Link to={`/${language}/wiki`} className="text-accent underline">
+          AstrologyWiki
+        </Link>
+        .
       </p>
     </div>
   );

@@ -13,7 +13,7 @@
 文件清单
 - FOLDER.md｜地位：目录索引文档。
 - toolsCatalog.ts｜地位：工具目录单一数据源｜功能：`TOOL_CATEGORIES`（5 分类 en/zh title+intro）+ `TOOLS`（16 工具 en/zh title+blurb、destination slug、图标 key、所属分类）+ `toolsByCategory(id)`。纯数据无运行时依赖；ToolsHubPage 与 SEO stub 生成器共同对标的工具清单。
-- ToolsHubPage.tsx｜地位：hub 页组件（路由 /:lang/tools）｜功能：intro + 5 分类 section（每类引导文案 + 卡片网格），卡片语言前缀内链到各计算器（`/${language}/${slug}`），含 16 个单色描边图标；卡片范式对齐 `pages/landing/ToolsGridSection.tsx`；trackEvent 仅送 slug+location（无 PII）。
+- ToolsHubPage.tsx｜地位：hub 页组件（路由 /:lang/tools）｜功能：intro + 5 分类 section（每类引导文案 + 卡片网格，渲染英文文案面向欧美用户），卡片语言前缀内链到各计算器（`/${language}/${slug}`），含 16 个单色描边图标；卡片范式对齐 `pages/landing/ToolsGridSection.tsx`；trackEvent 仅送 slug+location（无 PII）。
 
 约束
 - 新增/移除公开工具须同步：本目录 `toolsCatalog.ts` + `tests/unit/toolsCatalog.test.ts`（守恒断言）+ `scripts/generate-seo-pages.mjs`（stub 内链）+ `App.tsx` 的 `isCalculatorPath`/路由。
