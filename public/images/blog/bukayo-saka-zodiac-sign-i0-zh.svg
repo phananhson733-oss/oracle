@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 701" role="img" aria-label="萨卡的三大星盘位置">
+  <defs>
+    <linearGradient id="bukayosakazodiacsign0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="bukayosakazodiacsign0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="bukayosakazodiacsign0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bukayosakazodiacsign0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bukayosakazodiacsign0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bukayosakazodiacsign0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="url(#bukayosakazodiacsign0zh-panel)"/>
+  <ellipse cx="198" cy="168" rx="380" ry="238" fill="url(#bukayosakazodiacsign0zh-neb1)"/>
+  <ellipse cx="623" cy="561" rx="334" ry="224" fill="url(#bukayosakazodiacsign0zh-neb2)"/>
+  <circle cx="44.3" cy="128.0" r="1.15" fill="#cfc8ea" opacity="0.26"/><circle cx="621.3" cy="453.1" r="0.85" fill="#cfc8ea" opacity="0.53"/><circle cx="649.2" cy="638.5" r="0.82" fill="#cfc8ea" opacity="0.35"/><circle cx="414.8" cy="120.2" r="0.81" fill="#cfc8ea" opacity="0.19"/><circle cx="222.3" cy="140.4" r="0.55" fill="#cfc8ea" opacity="0.19"/><circle cx="220.4" cy="413.7" r="0.68" fill="#cfc8ea" opacity="0.25"/><circle cx="499.8" cy="402.8" r="0.95" fill="#cfc8ea" opacity="0.16"/><circle cx="245.3" cy="549.7" r="1.34" fill="#cfc8ea" opacity="0.50"/><circle cx="613.1" cy="116.6" r="0.49" fill="#cfc8ea" opacity="0.40"/><circle cx="655.6" cy="680.3" r="0.63" fill="#cfc8ea" opacity="0.31"/><circle cx="65.2" cy="134.5" r="1.36" fill="#cfc8ea" opacity="0.51"/><circle cx="122.7" cy="66.4" r="1.39" fill="#cfc8ea" opacity="0.42"/><circle cx="593.4" cy="341.3" r="0.84" fill="#cfc8ea" opacity="0.17"/><circle cx="666.0" cy="435.9" r="1.58" fill="#cfc8ea" opacity="0.39"/><circle cx="414.6" cy="160.4" r="1.19" fill="#cfc8ea" opacity="0.29"/><circle cx="308.6" cy="599.8" r="1.08" fill="#cfc8ea" opacity="0.26"/><circle cx="284.7" cy="322.6" r="1.64" fill="#cfc8ea" opacity="0.22"/><circle cx="204.6" cy="163.8" r="0.87" fill="#cfc8ea" opacity="0.46"/><circle cx="109.5" cy="515.4" r="0.43" fill="#cfc8ea" opacity="0.35"/><circle cx="464.3" cy="602.3" r="0.94" fill="#cfc8ea" opacity="0.26"/><circle cx="315.4" cy="493.8" r="0.46" fill="#cfc8ea" opacity="0.18"/><circle cx="104.1" cy="258.2" r="1.68" fill="#cfc8ea" opacity="0.47"/><circle cx="314.6" cy="96.3" r="0.98" fill="#cfc8ea" opacity="0.16"/><circle cx="737.7" cy="323.0" r="0.55" fill="#cfc8ea" opacity="0.25"/><circle cx="681.0" cy="238.5" r="1.44" fill="#cfc8ea" opacity="0.51"/><circle cx="286.7" cy="153.5" r="1.07" fill="#cfc8ea" opacity="0.31"/><circle cx="273.2" cy="75.5" r="1.68" fill="#cfc8ea" opacity="0.20"/><circle cx="179.6" cy="539.5" r="1.03" fill="#cfc8ea" opacity="0.48"/><circle cx="47.2" cy="201.4" r="0.61" fill="#cfc8ea" opacity="0.47"/><circle cx="207.4" cy="141.4" r="1.50" fill="#cfc8ea" opacity="0.13"/><circle cx="407.2" cy="670.0" r="0.96" fill="#cfc8ea" opacity="0.24"/><circle cx="690.1" cy="47.6" r="0.43" fill="#cfc8ea" opacity="0.44"/><circle cx="706.5" cy="97.6" r="1.20" fill="#cfc8ea" opacity="0.15"/><circle cx="256.5" cy="89.4" r="1.50" fill="#cfc8ea" opacity="0.47"/><circle cx="311.8" cy="162.2" r="0.47" fill="#cfc8ea" opacity="0.13"/><circle cx="589.5" cy="85.2" r="0.51" fill="#cfc8ea" opacity="0.51"/><circle cx="292.8" cy="321.7" r="0.95" fill="#cfc8ea" opacity="0.37"/><circle cx="82.7" cy="275.0" r="0.90" fill="#cfc8ea" opacity="0.31"/><circle cx="443.1" cy="497.2" r="0.61" fill="#cfc8ea" opacity="0.14"/><circle cx="364.8" cy="342.6" r="1.66" fill="#cfc8ea" opacity="0.18"/><circle cx="120.4" cy="260.9" r="0.49" fill="#cfc8ea" opacity="0.43"/><circle cx="290.0" cy="242.7" r="1.50" fill="#cfc8ea" opacity="0.45"/><circle cx="286.5" cy="259.1" r="1.49" fill="#cfc8ea" opacity="0.16"/><circle cx="641.3" cy="489.2" r="0.98" fill="#cfc8ea" opacity="0.50"/><circle cx="580.0" cy="598.1" r="1.53" fill="#cfc8ea" opacity="0.25"/><circle cx="159.0" cy="560.8" r="1.45" fill="#cfc8ea" opacity="0.35"/><circle cx="701.0" cy="677.6" r="0.88" fill="#cfc8ea" opacity="0.44"/><circle cx="577.1" cy="331.9" r="1.09" fill="#cfc8ea" opacity="0.36"/><circle cx="578.5" cy="140.1" r="1.49" fill="#cfc8ea" opacity="0.36"/><circle cx="420.0" cy="335.8" r="1.47" fill="#cfc8ea" opacity="0.20"/><circle cx="652.0" cy="387.8" r="0.70" fill="#cfc8ea" opacity="0.53"/><circle cx="647.6" cy="686.9" r="0.97" fill="#cfc8ea" opacity="0.47"/><circle cx="526.1" cy="211.3" r="1.01" fill="#cfc8ea" opacity="0.17"/><circle cx="418.3" cy="440.5" r="0.84" fill="#cfc8ea" opacity="0.46"/><circle cx="74.2" cy="194.9" r="1.24" fill="#cfc8ea" opacity="0.42"/><circle cx="725.6" cy="451.0" r="0.48" fill="#cfc8ea" opacity="0.15"/><circle cx="466.0" cy="39.3" r="1.62" fill="#cfc8ea" opacity="0.44"/><circle cx="537.6" cy="237.1" r="0.71" fill="#cfc8ea" opacity="0.24"/><circle cx="182.5" cy="676.0" r="0.59" fill="#cfc8ea" opacity="0.50"/><path d="M 730.7861390188336 412.0 L 731.3 414.6 L 733.9 415.12631178530864 L 731.3 415.6 L 730.7861390188336 418.2 L 730.3 415.6 L 727.7 415.12631178530864 L 730.3 414.6 Z" fill="#f6e6bf" opacity="0.6004827227210626"/><path d="M 197.65460908412933 529.9 L 198.3 533.0 L 201.4 533.5811862943228 L 198.3 534.2 L 197.65460908412933 537.3 L 197.1 534.2 L 193.9 533.5811862943228 L 197.1 533.0 Z" fill="#f6e6bf" opacity="0.7285460262326524"/><path d="M 610.8616553470492 15.3 L 611.4 17.9 L 613.9 18.367133387131616 L 611.4 18.9 L 610.8616553470492 21.5 L 610.4 18.9 L 607.8 18.367133387131616 L 610.4 17.9 Z" fill="#f6e6bf" opacity="0.5471601979574189"/><path d="M 499.6964604705572 660.8 L 500.1 663.2 L 502.5 663.6319594697561 L 500.1 664.1 L 499.6964604705572 666.5 L 499.2 664.1 L 496.9 663.6319594697561 L 499.2 663.2 Z" fill="#f6e6bf" opacity="0.5323983837617561"/><path d="M 721.071467615664 433.3 L 721.5 435.6 L 723.7 436.0028448801022 L 721.5 436.4 L 721.071467615664 438.7 L 720.6 436.4 L 718.4 436.0028448801022 L 720.6 435.6 Z" fill="#f6e6bf" opacity="0.7686081893509253"/><path d="M 621.3 453.1 L 499.8 402.8 L 315.4 493.8 L 104.1 258.2 L 207.4 141.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="687" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 681.8 L 16.5 684.5 L 19.2 685 L 16.5 685.5 L 16 688.2 L 15.5 685.5 L 12.8 685 L 15.5 684.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 681.8 L 744.5 684.5 L 747.2 685 L 744.5 685.5 L 744 688.2 L 743.5 685.5 L 740.8 685 L 743.5 684.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">萨卡的三大星盘位置</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#bukayosakazodiacsign0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#bukayosakazodiacsign0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">处女座太阳</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">以技艺和精准为身份核心</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">冷静、有条不紊的决策方式</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">无私回传优先于贪心射门</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">每场比赛保持稳定输出</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">白羊座月亮</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">即时的战斗性情绪反应</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">失误后立即重新索要球权</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">重压下愈战愈勇而非退缩</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">从重大挫折中迅速复原</text>
+  <path d="M 380 477.5 L 380.7 481.3 L 384.5 482 L 380.7 482.7 L 380 486.5 L 379.3 482.7 L 375.5 482 L 379.3 481.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="495" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="495" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 504.6 L 48.3 507.5 L 51.1 508 L 48.3 508.5 L 47.75 511.4 L 47.2 508.5 L 44.4 508 L 47.2 507.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">射手座火星</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">宽角度的冒险欲望</text>
+  <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">远射与刁钻角度射门</text>
+  <path d="M 70 611.8 L 70.5 614.5 L 73.2 615 L 70.5 615.5 L 70 618.2 L 69.5 615.5 L 66.8 615 L 69.5 614.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">大胆突破保守限制的奔跑</text>
+  <path d="M 70 640.8 L 70.5 643.5 L 73.2 644 L 70.5 644.5 L 70 647.2 L 69.5 644.5 L 66.8 644 L 69.5 643.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">经过计算的大胆选择而非随意出脚</text>
+  <path d="M 280.025 672.4 L 280.4 674.6 L 282.6 675 L 280.4 675.4 L 280.025 677.6 L 279.6 675.4 L 277.4 675 L 279.6 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="679" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 672.4 L 480.4 674.6 L 482.6 675 L 480.4 675.4 L 479.975 677.6 L 479.6 675.4 L 477.4 675 L 479.6 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

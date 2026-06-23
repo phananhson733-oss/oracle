@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="球场上萨卡星盘的五个体现">
+  <defs>
+    <linearGradient id="bukayosakazodiacsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="bukayosakazodiacsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="bukayosakazodiacsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bukayosakazodiacsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bukayosakazodiacsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bukayosakazodiacsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#bukayosakazodiacsign1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#bukayosakazodiacsign1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#bukayosakazodiacsign1zh-neb2)"/>
+  <circle cx="320.6" cy="225.2" r="0.49" fill="#cfc8ea" opacity="0.29"/><circle cx="437.3" cy="124.0" r="1.16" fill="#cfc8ea" opacity="0.14"/><circle cx="53.7" cy="383.4" r="0.90" fill="#cfc8ea" opacity="0.25"/><circle cx="361.1" cy="83.7" r="0.89" fill="#cfc8ea" opacity="0.15"/><circle cx="165.2" cy="212.3" r="1.25" fill="#cfc8ea" opacity="0.24"/><circle cx="417.1" cy="126.8" r="0.81" fill="#cfc8ea" opacity="0.32"/><circle cx="225.4" cy="382.6" r="0.85" fill="#cfc8ea" opacity="0.44"/><circle cx="96.4" cy="263.9" r="1.69" fill="#cfc8ea" opacity="0.34"/><circle cx="587.0" cy="366.3" r="1.08" fill="#cfc8ea" opacity="0.50"/><circle cx="443.4" cy="120.9" r="1.66" fill="#cfc8ea" opacity="0.47"/><circle cx="670.3" cy="189.5" r="0.74" fill="#cfc8ea" opacity="0.52"/><circle cx="458.6" cy="38.0" r="0.48" fill="#cfc8ea" opacity="0.19"/><circle cx="617.1" cy="359.6" r="1.60" fill="#cfc8ea" opacity="0.22"/><circle cx="82.0" cy="252.6" r="1.55" fill="#cfc8ea" opacity="0.23"/><circle cx="187.2" cy="277.7" r="0.50" fill="#cfc8ea" opacity="0.52"/><circle cx="436.1" cy="29.1" r="0.71" fill="#cfc8ea" opacity="0.51"/><circle cx="420.4" cy="35.3" r="1.16" fill="#cfc8ea" opacity="0.20"/><circle cx="650.8" cy="299.4" r="1.15" fill="#cfc8ea" opacity="0.17"/><circle cx="422.4" cy="267.5" r="1.36" fill="#cfc8ea" opacity="0.42"/><circle cx="620.7" cy="146.8" r="1.37" fill="#cfc8ea" opacity="0.37"/><circle cx="193.4" cy="174.2" r="1.12" fill="#cfc8ea" opacity="0.42"/><circle cx="699.6" cy="127.7" r="1.54" fill="#cfc8ea" opacity="0.24"/><circle cx="270.8" cy="238.2" r="0.51" fill="#cfc8ea" opacity="0.24"/><circle cx="64.9" cy="87.9" r="1.25" fill="#cfc8ea" opacity="0.51"/><circle cx="630.2" cy="67.9" r="0.43" fill="#cfc8ea" opacity="0.15"/><circle cx="379.3" cy="366.5" r="0.99" fill="#cfc8ea" opacity="0.26"/><circle cx="108.3" cy="51.9" r="0.51" fill="#cfc8ea" opacity="0.43"/><circle cx="610.6" cy="18.6" r="0.94" fill="#cfc8ea" opacity="0.23"/><circle cx="366.2" cy="56.5" r="1.04" fill="#cfc8ea" opacity="0.43"/><circle cx="131.0" cy="287.6" r="0.42" fill="#cfc8ea" opacity="0.40"/><circle cx="317.6" cy="194.0" r="1.43" fill="#cfc8ea" opacity="0.30"/><circle cx="160.6" cy="114.3" r="1.11" fill="#cfc8ea" opacity="0.35"/><circle cx="717.8" cy="118.5" r="1.55" fill="#cfc8ea" opacity="0.51"/><circle cx="652.7" cy="208.6" r="1.43" fill="#cfc8ea" opacity="0.22"/><circle cx="99.5" cy="381.1" r="1.42" fill="#cfc8ea" opacity="0.34"/><circle cx="711.2" cy="191.4" r="1.47" fill="#cfc8ea" opacity="0.51"/><circle cx="247.5" cy="13.3" r="1.10" fill="#cfc8ea" opacity="0.37"/><path d="M 245.83918656222522 293.9 L 246.3 296.1 L 248.5 296.5375531986356 L 246.3 297.0 L 245.83918656222522 299.2 L 245.4 297.0 L 243.2 296.5375531986356 L 245.4 296.1 Z" fill="#f6e6bf" opacity="0.7139510122593492"/><path d="M 451.59002790413797 300.2 L 452.0 302.3 L 454.2 302.75978144351393 L 452.0 303.2 L 451.59002790413797 305.3 L 451.2 303.2 L 449.0 302.75978144351393 L 451.2 302.3 Z" fill="#f6e6bf" opacity="0.5634324398357421"/><path d="M 629.310832677409 358.6 L 629.9 361.5 L 632.7 362.0440091434866 L 629.9 362.6 L 629.310832677409 365.5 L 628.8 362.6 L 625.9 362.0440091434866 L 628.8 361.5 Z" fill="#f6e6bf" opacity="0.7532333205919712"/><path d="M 170.76974930427969 123.2 L 171.2 125.3 L 173.3 125.71891085337847 L 171.2 126.1 L 170.76974930427969 128.2 L 170.4 126.1 L 168.3 125.71891085337847 L 170.4 125.3 Z" fill="#f6e6bf" opacity="0.5532529989723116"/><path d="M 61.94839666597545 123.9 L 62.4 126.4 L 64.8 126.83139614388347 L 62.4 127.3 L 61.94839666597545 129.7 L 61.5 127.3 L 59.1 126.83139614388347 L 61.5 126.4 Z" fill="#f6e6bf" opacity="0.602466976037249"/><path d="M 417.1 126.8 L 420.4 35.3 L 317.6 194.0 L 160.6 114.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">球场上萨卡星盘的五个体现</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#bukayosakazodiacsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#bukayosakazodiacsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#bukayosakazodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#bukayosakazodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">回传而非猛射</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">突破后选择精准回传而非猛射——处女座精确性优先于蛮力</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#bukayosakazodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#bukayosakazodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">失误后立刻要球</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">丢球数秒内重新索球——白羊座月亮的即时复原反应</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#bukayosakazodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#bukayosakazodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">宽角度射门</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">在他人选择回传时发动远射或刁钻角度射门——射手座火星的体现</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#bukayosakazodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#bukayosakazodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">疲劳中的冷静重复</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">比赛末段在同一路线干净利落地重复相同动作——技艺优先于即兴发挥</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#bukayosakazodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#bukayosakazodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">战斗性的第一步</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">加速呈现为进攻性而非炫技——月亮之火发动，而非太阳之火</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
