@@ -1,0 +1,67 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "luka-modric-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Virgo Sun vs Leo Sun: Why Modric Reads as Quiet, Not Flashy",
+          "titleEn": "Virgo Sun vs Leo Sun",
+          "altEn": "Side-by-side comparison of Virgo Sun quiet precision and service versus Leo Sun visible impact and spotlight leadership",
+          "columns": [
+            {
+              "nameEn": "Virgo Sun",
+              "linesEn": [
+                "Organized around quiet function and refinement",
+                "The perfect first touch, the pass before the assist",
+                "Gives up the spotlight for precision and repeatability",
+                "Rewards arrive late: longevity, trust, durability"
+              ]
+            },
+            {
+              "nameEn": "Leo Sun",
+              "linesEn": [
+                "Organized around visible impact and being seen",
+                "The decisive goal, the roar, the camera moment",
+                "Sacrifices patient behind-the-scenes detail work",
+                "Magnetism and credit — but can burn brighter and shorter"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Modrić's Birth Chart at a Glance",
+          "titleEn": "Modrić's Birth Chart at a Glance",
+          "altEn": "Four-step sequence of Luka Modric's birth chart placements: Virgo Sun, Cancer Moon, Scorpio Rising, and the Virgo-Scorpio axis",
+          "items": [
+            {
+              "nameEn": "Virgo Sun",
+              "subEn": "Drives refinement of craft and function over spectacle — the perfect simple pass, fixing what others overlook"
+            },
+            {
+              "nameEn": "Cancer Moon",
+              "subEn": "Anchors emotional life in loyalty and belonging — deep attachment to country and club, playing for something larger"
+            },
+            {
+              "nameEn": "Scorpio Rising (attributed, unconfirmed)",
+              "subEn": "Filters outward presentation into stillness and control — the unreadable face in peak-pressure moments"
+            },
+            {
+              "nameEn": "Virgo–Scorpio Axis",
+              "subEn": "Builds legacy through consistency, not theatrical peaks — peaking later, standing that compounds over years"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

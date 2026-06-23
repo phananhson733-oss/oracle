@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 274" role="img" aria-label="">
+  <defs>
+    <linearGradient id="lukamodriczodiacsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="lukamodriczodiacsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="lukamodriczodiacsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lukamodriczodiacsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lukamodriczodiacsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lukamodriczodiacsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="url(#lukamodriczodiacsign1zh-panel)"/>
+  <ellipse cx="198" cy="66" rx="380" ry="93" fill="url(#lukamodriczodiacsign1zh-neb1)"/>
+  <ellipse cx="623" cy="219" rx="334" ry="88" fill="url(#lukamodriczodiacsign1zh-neb2)"/>
+  <circle cx="113.5" cy="43.6" r="1.35" fill="#cfc8ea" opacity="0.46"/><circle cx="706.4" cy="210.3" r="1.11" fill="#cfc8ea" opacity="0.53"/><circle cx="501.1" cy="18.4" r="1.38" fill="#cfc8ea" opacity="0.47"/><circle cx="257.2" cy="245.2" r="1.50" fill="#cfc8ea" opacity="0.24"/><circle cx="744.9" cy="68.2" r="1.33" fill="#cfc8ea" opacity="0.28"/><circle cx="141.0" cy="97.9" r="0.51" fill="#cfc8ea" opacity="0.54"/><circle cx="669.4" cy="116.4" r="1.19" fill="#cfc8ea" opacity="0.14"/><circle cx="646.2" cy="63.6" r="1.06" fill="#cfc8ea" opacity="0.15"/><circle cx="600.2" cy="239.7" r="0.56" fill="#cfc8ea" opacity="0.17"/><circle cx="465.9" cy="38.6" r="1.31" fill="#cfc8ea" opacity="0.19"/><circle cx="49.3" cy="59.7" r="1.38" fill="#cfc8ea" opacity="0.24"/><circle cx="49.8" cy="141.9" r="0.70" fill="#cfc8ea" opacity="0.25"/><circle cx="164.2" cy="95.7" r="1.22" fill="#cfc8ea" opacity="0.53"/><circle cx="333.6" cy="218.4" r="0.41" fill="#cfc8ea" opacity="0.23"/><circle cx="732.6" cy="29.6" r="0.82" fill="#cfc8ea" opacity="0.35"/><circle cx="387.4" cy="20.3" r="1.44" fill="#cfc8ea" opacity="0.52"/><circle cx="112.2" cy="69.9" r="0.84" fill="#cfc8ea" opacity="0.14"/><circle cx="336.7" cy="182.4" r="0.93" fill="#cfc8ea" opacity="0.47"/><circle cx="642.6" cy="70.5" r="0.81" fill="#cfc8ea" opacity="0.18"/><circle cx="384.8" cy="157.8" r="1.52" fill="#cfc8ea" opacity="0.23"/><circle cx="493.9" cy="35.7" r="1.36" fill="#cfc8ea" opacity="0.36"/><circle cx="34.2" cy="256.3" r="1.48" fill="#cfc8ea" opacity="0.36"/><circle cx="742.8" cy="255.1" r="1.25" fill="#cfc8ea" opacity="0.23"/><path d="M 665.6638286393136 167.0 L 666.3 170.2 L 669.5 170.866677287966 L 666.3 171.5 L 665.6638286393136 174.8 L 665.0 171.5 L 661.8 170.866677287966 L 665.0 170.2 Z" fill="#f6e6bf" opacity="0.5194275356363505"/><path d="M 233.36985134147108 101.5 L 233.8 104.0 L 236.3 104.44610578007996 L 233.8 104.9 L 233.36985134147108 107.3 L 232.9 104.9 L 230.5 104.44610578007996 L 232.9 104.0 Z" fill="#f6e6bf" opacity="0.699600005755201"/><path d="M 186.8374977838248 46.8 L 187.3 49.3 L 189.9 49.770057529211044 L 187.3 50.3 L 186.8374977838248 52.8 L 186.4 50.3 L 183.8 49.770057529211044 L 186.4 49.3 Z" fill="#f6e6bf" opacity="0.5829454084392637"/><path d="M 687.7080242987722 76.0 L 688.3 79.3 L 691.6 79.89400538615882 L 688.3 80.5 L 687.7080242987722 83.8 L 687.1 80.5 L 683.8 79.89400538615882 L 687.1 79.3 Z" fill="#f6e6bf" opacity="0.7342460532207042"/><path d="M 701.6730717401952 121.5 L 702.1 123.6 L 704.2 124.02276759967208 L 702.1 124.4 L 701.6730717401952 126.6 L 701.3 124.4 L 699.1 124.02276759967208 L 701.3 123.6 Z" fill="#f6e6bf" opacity="0.7995308164041489"/>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="260" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 254.8 L 16.5 257.5 L 19.2 258 L 16.5 258.5 L 16 261.2 L 15.5 258.5 L 12.8 258 L 15.5 257.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 254.8 L 744.5 257.5 L 747.2 258 L 744.5 258.5 L 744 261.2 L 743.5 258.5 L 740.8 258 L 743.5 257.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#lukamodriczodiacsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#lukamodriczodiacsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="220" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#lukamodriczodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#lukamodriczodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#lukamodriczodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#lukamodriczodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#lukamodriczodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#lukamodriczodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#lukamodriczodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#lukamodriczodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 245.4 L 280.4 247.6 L 282.6 248 L 280.4 248.4 L 280.025 250.6 L 279.6 248.4 L 277.4 248 L 279.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="252" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 245.4 L 480.4 247.6 L 482.6 248 L 480.4 248.4 L 479.975 250.6 L 479.6 248.4 L 477.4 248 L 479.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
