@@ -4,6 +4,7 @@
 import express from "express";
 import Redis from "ioredis";
 import { goRedirects, type GoRedirectRegistry } from "../data/goRedirects.js";
+import { isSupabaseConfigured, supabase } from "../db/supabase.js";
 
 const SITE_ORIGIN = "https://www.astrologywiki.com";
 const ALLOWED_HOSTS = new Set(["astrologywiki.com", "www.astrologywiki.com"]);
@@ -91,6 +92,17 @@ const getRedisClient = async (): Promise<Redis | null> => {
 };
 
 const getStoredRedirect = async (code: string): Promise<string | null> => {
+  if (!canUseMemoryStore() && isSupabaseConfigured()) {
+    const { data, error } = await supabase
+      .from("link_redirects")
+      .select("destination_url")
+      .eq("code", code)
+      .maybeSingle();
+    if (!error && typeof data?.destination_url === "string") {
+      return normalizeDestination(data.destination_url);
+    }
+  }
+
   const client = await getRedisClient();
   if (client) {
     return client.get(`${REDIRECT_KEY_PREFIX}${code}`);
@@ -102,6 +114,16 @@ const setStoredRedirect = async (
   code: string,
   destination: string,
 ): Promise<boolean> => {
+  if (!canUseMemoryStore() && isSupabaseConfigured()) {
+    const { error } = await supabase.from("link_redirects").insert({
+      code,
+      destination_url: destination,
+    });
+    if (!error) {
+      return true;
+    }
+  }
+
   const client = await getRedisClient();
   if (client) {
     await client.set(`${REDIRECT_KEY_PREFIX}${code}`, destination);

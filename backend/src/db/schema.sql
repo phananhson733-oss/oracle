@@ -210,6 +210,17 @@ CREATE TABLE IF NOT EXISTS refresh_tokens (
 );
 
 -- ============================================
+-- Link Redirects Table
+-- ============================================
+CREATE TABLE IF NOT EXISTS link_redirects (
+  code VARCHAR(80) PRIMARY KEY,
+  destination_url TEXT NOT NULL,
+  redirect_status INTEGER NOT NULL DEFAULT 302 CHECK (redirect_status = 302),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- ============================================
 -- Indexes
 -- ============================================
 CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
@@ -227,6 +238,7 @@ CREATE INDEX IF NOT EXISTS idx_reports_user_id ON reports(user_id);
 CREATE INDEX IF NOT EXISTS idx_reports_type ON reports(report_type);
 CREATE INDEX IF NOT EXISTS idx_free_usage_fingerprint ON free_usage(device_fingerprint);
 CREATE INDEX IF NOT EXISTS idx_free_usage_user ON free_usage(user_id);
+CREATE INDEX IF NOT EXISTS idx_link_redirects_created_at ON link_redirects(created_at);
 
 -- ============================================
 -- Updated_at Trigger Function
@@ -255,6 +267,12 @@ CREATE TRIGGER update_subscriptions_updated_at
 DROP TRIGGER IF EXISTS update_free_usage_updated_at ON free_usage;
 CREATE TRIGGER update_free_usage_updated_at
     BEFORE UPDATE ON free_usage
+    FOR EACH ROW
+    EXECUTE FUNCTION update_updated_at_column();
+
+DROP TRIGGER IF EXISTS update_link_redirects_updated_at ON link_redirects;
+CREATE TRIGGER update_link_redirects_updated_at
+    BEFORE UPDATE ON link_redirects
     FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
 
