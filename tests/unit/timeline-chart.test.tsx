@@ -115,23 +115,41 @@ describe("TimelineChart", () => {
     expect(maxWick).toBeLessThan(200);
   });
 
-  it("clamps body height so aggregate (year/long-range) candles stay visually uniform", () => {
-    // 年/长程聚合的 start..end 跨度大→body 很长贯穿图；clamp 后 body 收敛、与月度观感统一（用户反馈）。
-    const extreme = [
-      candle("2026-06-01"), // 普通短 body 作参照
-      { ...candle("2026-06-02"), start: 5, end: 95, peak: 100, dip: 0 }, // 极端长 body
-    ];
-    const { container } = render(<TimelineChart candles={extreme} />);
-    const bodyHeights = Array.from(container.querySelectorAll("rect"))
-      .filter((r) =>
-        ["#10B981", "#EF4444", "#94A3B8"].includes(
-          (r.getAttribute("fill") || "").toUpperCase(),
-        ),
-      )
-      .map((r) => Number(r.getAttribute("height")));
-    const maxBody = Math.max(...bodyHeights);
-    // H_DESKTOP=440, maxBodyExtent=0.4*440=176；clamp 后即使满量程 start..end 也 <= ~176。
-    expect(maxBody).toBeLessThanOrEqual(180);
+  it("clamps body height by granularity — long-range tightest, month relaxed (user baseline)", () => {
+    const bodyMax = (utils: ReturnType<typeof render>) =>
+      Math.max(
+        ...Array.from(utils.container.querySelectorAll("rect"))
+          .filter((r) =>
+            ["#10B981", "#EF4444"].includes(
+              (r.getAttribute("fill") || "").toUpperCase(),
+            ),
+          )
+          .map((r) => Number(r.getAttribute("height"))),
+      );
+
+    // 长程（age 年级聚合）：start..end 跨度大→body 收得最紧（maxBodyExtent≈0.18×440=79）。
+    const longRange = Array.from({ length: 30 }, (_, i) => ({
+      ...candle("2026-06-01"),
+      date: undefined,
+      age: i + 1,
+      start: 5,
+      end: 95,
+      peak: 100,
+      dip: 0,
+    }));
+    expect(
+      bodyMax(render(<TimelineChart candles={longRange} />)),
+    ).toBeLessThanOrEqual(92);
+
+    // 月度（>14 根日级蜡烛）：放松，长 body 不被过度 clamp（maxBodyExtent=0.5×440=220）——保持月度合理观感。
+    const month = Array.from({ length: 28 }, (_, i) => ({
+      ...candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
+      start: 5,
+      end: 95,
+    }));
+    expect(bodyMax(render(<TimelineChart candles={month} />))).toBeGreaterThan(
+      92,
+    );
   });
 
   it("keeps a full month compact: candle bodies are capped (not ballooned to fill wide screens)", () => {

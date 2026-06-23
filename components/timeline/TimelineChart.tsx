@@ -127,9 +127,12 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   const plotBottom = PAD_TOP + H;
   // wick 视觉延伸上限：月/年聚合的 peak-dip 可跨满量程，限制单端延伸避免一根影线贯穿全图。
   const maxWickExtent = H * 0.16;
-  // body 视觉高度上限：聚合视图(年/长程)的 start..end 跨度大→body 很长，clamp 让观感与月度统一
-  // （中心锚定，保留能量高低位置；精确起末在 hover 卡）。月度日级 body 通常更短、不受影响。
-  const maxBodyExtent = H * 0.4;
+  // body 视觉高度上限——**按粒度差异化**（用户基准：月度单条蜡烛高度合理）：
+  // 月度(日级)body 本就短→放松(0.5)保持现状；年/长程(聚合)start..end 跨度大→收紧到接近月度观感。
+  // 中心锚定，保留能量高低位置；精确起末在 hover 卡。
+  const isLongRange = candles.some((c) => c.age != null);
+  const isYearGrid = !isLongRange && n <= 14;
+  const maxBodyExtent = H * (isLongRange ? 0.18 : isYearGrid ? 0.24 : 0.5);
 
   const yOf = (v: number) =>
     PAD_TOP + (1 - Math.max(0, Math.min(100, v)) / 100) * H;
