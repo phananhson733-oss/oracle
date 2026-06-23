@@ -204,7 +204,9 @@ const TimelinePage: React.FC<{
     <div className="max-w-5xl mx-auto px-4 py-6">
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">{c.title}</h1>
-        <p className="text-sm text-paper-500 dark:text-star-400 mt-1">{c.subtitle}</p>
+        <p className="text-sm text-paper-500 dark:text-star-400 mt-1">
+          {c.subtitle}
+        </p>
       </header>
 
       <FrameworkDisclaimer />
@@ -326,13 +328,17 @@ const TimelinePage: React.FC<{
       )}
 
       {loading && (
-        <div className="py-16 text-center text-paper-500 dark:text-star-400">{c.loading}</div>
+        <div className="py-16 text-center text-paper-500 dark:text-star-400">
+          {c.loading}
+        </div>
       )}
 
       {!loading && errorCode === "EPHEMERIS_UNAVAILABLE" && (
         <div className="py-12 text-center">
           <p className="font-medium">{c.unavailableTitle}</p>
-          <p className="text-sm text-paper-500 dark:text-star-400 mt-1">{c.unavailableBody}</p>
+          <p className="text-sm text-paper-500 dark:text-star-400 mt-1">
+            {c.unavailableBody}
+          </p>
           <button
             onClick={load}
             className="mt-4 px-4 py-2 rounded-lg bg-psycho-600 text-white text-sm"
@@ -345,7 +351,9 @@ const TimelinePage: React.FC<{
       {!loading && errorCode && errorCode !== "EPHEMERIS_UNAVAILABLE" && (
         <div className="py-12 text-center">
           <p className="font-medium">{c.errorTitle}</p>
-          <p className="text-sm text-paper-500 dark:text-star-400 mt-1">{c.errorBody}</p>
+          <p className="text-sm text-paper-500 dark:text-star-400 mt-1">
+            {c.errorBody}
+          </p>
           <button
             onClick={load}
             className="mt-4 px-4 py-2 rounded-lg bg-psycho-600 text-white text-sm"
@@ -357,51 +365,55 @@ const TimelinePage: React.FC<{
 
       {!loading && !errorCode && data && (
         <>
-          <TimelineChart
-            candles={data.candles}
-            markers={data.markers}
-            selectedDate={selectedDate}
-            onSelectDate={setSelectedDate}
-            nowKey={nowKey}
-            showTrend={showTrend}
-            zoomFactor={zoomFactor}
-            moodPoints={
-              CBT_OVERLAY_ENABLED && moodOn && mode === "month"
-                ? moodPoints
-                : undefined
-            }
-          />
-          <TimelineLegend />
-          {/* B6：趋势线显示开关 */}
-          <button
-            onClick={() => setShowTrend((v) => !v)}
-            aria-pressed={showTrend}
-            className="mt-2 text-xs text-slate-500 hover:text-slate-700"
-          >
-            {showTrend ? "☑" : "☐"} {c.trendToggle}
-          </button>
-          {/* B6：横向缩放（平移=容器横滚） */}
-          <div className="ml-3 inline-flex items-center gap-1.5 text-xs text-slate-500">
+          {/* 图表卡片：白卡 + 边框 + 阴影，在米色页面背景上拉开对比（用户反馈对比度不够看不清）。 */}
+          <div className="rounded-2xl border border-paper-300/50 bg-paper-50 p-4 shadow-sm dark:border-gold-500/15 dark:bg-space-900/60 sm:p-5">
+            <TimelineChart
+              candles={data.candles}
+              markers={data.markers}
+              selectedDate={selectedDate}
+              onSelectDate={setSelectedDate}
+              nowKey={nowKey}
+              showTrend={showTrend}
+              zoomFactor={zoomFactor}
+              moodPoints={
+                CBT_OVERLAY_ENABLED && moodOn && mode === "month"
+                  ? moodPoints
+                  : undefined
+              }
+            />
+            <TimelineLegend />
+            {/* B6：趋势线显示开关 */}
             <button
-              type="button"
-              aria-label="zoom out"
-              onClick={() => setZoomFactor((z) => Math.max(1, z - 0.5))}
-              className="rounded border border-slate-200 px-2 leading-5 hover:bg-slate-50"
+              onClick={() => setShowTrend((v) => !v)}
+              aria-pressed={showTrend}
+              className="mt-2 text-xs text-slate-500 hover:text-slate-700"
             >
-              −
+              {showTrend ? "☑" : "☐"} {c.trendToggle}
             </button>
-            <span className="tabular-nums">
-              {Math.round(zoomFactor * 100)}%
-            </span>
-            <button
-              type="button"
-              aria-label="zoom in"
-              onClick={() => setZoomFactor((z) => Math.min(3, z + 0.5))}
-              className="rounded border border-slate-200 px-2 leading-5 hover:bg-slate-50"
-            >
-              +
-            </button>
+            {/* B6：横向缩放（平移=容器横滚） */}
+            <div className="ml-3 inline-flex items-center gap-1.5 text-xs text-slate-500">
+              <button
+                type="button"
+                aria-label="zoom out"
+                onClick={() => setZoomFactor((z) => Math.max(1, z - 0.5))}
+                className="rounded border border-slate-200 px-2 leading-5 hover:bg-slate-50"
+              >
+                −
+              </button>
+              <span className="tabular-nums">
+                {Math.round(zoomFactor * 100)}%
+              </span>
+              <button
+                type="button"
+                aria-label="zoom in"
+                onClick={() => setZoomFactor((z) => Math.min(3, z + 0.5))}
+                className="rounded border border-slate-200 px-2 leading-5 hover:bg-slate-50"
+              >
+                +
+              </button>
+            </div>
           </div>
+          {/* /图表卡片 */}
           <TimelineAtAGlance candles={data.candles} />
           <TimelineReport
             candles={data.candles}
@@ -493,7 +505,9 @@ const TimelinePage: React.FC<{
                 }
               </div>
               {selectedCandle.intensity < 12 && (
-                <p className="mt-2 text-xs text-paper-500 dark:text-star-400">{c.steadyStretch}</p>
+                <p className="mt-2 text-xs text-paper-500 dark:text-star-400">
+                  {c.steadyStretch}
+                </p>
               )}
               <p className="mt-2 text-[11px] text-paper-400 dark:text-star-500">
                 {c.intervalNote}
@@ -558,7 +572,9 @@ const Metric: React.FC<{ label: string; value: number }> = ({
 }) => (
   <div>
     <div className="text-paper-400 dark:text-star-500">{label}</div>
-    <div className="font-medium text-paper-700 dark:text-star-100">{Math.round(value)}</div>
+    <div className="font-medium text-paper-700 dark:text-star-100">
+      {Math.round(value)}
+    </div>
   </div>
 );
 

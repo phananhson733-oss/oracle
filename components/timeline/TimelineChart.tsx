@@ -1,8 +1,8 @@
 // INPUT: TimelineCandle[] / TimelineMarker[]（来自 /api/transit/timeline）、useLanguage、点选回调。
-// OUTPUT: 自绘 SVG 蜡烛图组件（区间摘要语义：wick=dip..peak、body=start..end）；自适应但有尺寸上限——窄于容器时居中、整月不裁切、候选过多才横滚。
-//         A3 响应式图高(mobile/desktop)；A10 nowKey→「You are here」竖线+点+aria；A8 nowKey 后仅显示前 5 个未来 marker；A12 色盲形状(升=实心/降=空心描边/平=细条，不只靠红绿)。
-// POS: 月度 K 线主视图。蜡烛体按方向红/绿着色（end≥start=涨=绿、end<start=跌=红，近平=中性灰；色盲冗余=A12 形状编码；
-//      西方蜡烛惯例，产品方决定）；能量质量(harmony/tension)在当日卡里数值呈现。纵轴=中性能量强度，仅与自身比较。
+// OUTPUT: 自绘 SVG 蜡烛图组件（区间摘要语义：wick=dip..peak、body=start..end）；**fit 一页**（蜡烛多则自动变窄填满容器、不横滚，zoom>1 才横滚平移）。
+//         A3 响应式图高(mobile/desktop)；A10 nowKey→「You are here」竖线+点+aria；A8 nowKey 后仅显示前 5 个未来 marker；**hover→浮动解读卡**（活跃度/起末/区间/倾向，中性文案）。
+// POS: 月度/年/长程 K 线主视图。蜡烛体按方向**实心**红/绿着色（涨=绿、跌=红、近平=中性灰；参考竞品/oracle_CN 实心惯例，产品方决定；
+//      色盲冗余由 grey-flat + 趋势线 + hover 数值承载，原 A12 空心编码已按用户要求改实心）；能量质量在 hover 卡/当日卡呈现。纵轴=中性能量强度，仅与自身比较。
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { TimelineCandle, TimelineMarker } from "../../types";
@@ -48,9 +48,7 @@ const PAD_TOP = 16;
 const PAD_BOTTOM = 28;
 const PAD_LEFT = 26; // room for y-axis labels
 const PAD_RIGHT = 10;
-// 每根蜡烛的横向槽位：低于 MIN_SLOT 则横滚（候选过多，如手机看整月）；
-// 高于 MAX_SLOT 则封顶，避免宽桌面屏上蜡烛被拉得又宽又大（用户反馈"大小太大了"）。
-const MIN_SLOT = 16;
+// 蜡烛横向槽位上限：fit 一页（蜡烛多则自动变窄填满容器，不再因过多候选横滚）；封顶防少蜡烛在宽屏过大。
 const MAX_SLOT = 22;
 const DEFAULT_WIDTH = 720;
 
@@ -92,6 +90,8 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   const selWash = isDark ? "#1E293B66" : "#EFF6FF";
   const wrapRef = useRef<HTMLDivElement>(null);
   const [availWidth, setAvailWidth] = useState(DEFAULT_WIDTH);
+  // hover 解读：悬停蜡烛下标（null=无），渲染浮动数值卡（竞品式 hover tooltip）。
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   // 自适应：测量容器宽度，算每根蜡烛槽位（夹在 MIN/MAX_SLOT；过窄横滚，过宽封顶居中）。
   useEffect(() => {
@@ -113,11 +113,10 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   // 少蜡烛视图（年内 12 月 / 人生年级）放宽槽位与蜡烛体上限，避免在宽屏上挤在中间显得空旷瘦长。
   const fewCandles = n <= 16;
   const maxSlot = fewCandles ? 52 : MAX_SLOT;
+  // fit 一页：slot = 可用宽/N（**不设下限**，蜡烛多则自动变窄填满容器、不横滚）；封顶 maxSlot 防少蜡烛过宽。
+  // zoom>1 时 slot 放大 → chartWidth 超容器 → 保留横滚平移。
   const slot =
-    Math.min(
-      maxSlot,
-      Math.max(MIN_SLOT, (availWidth - PAD_LEFT - PAD_RIGHT) / n),
-    ) * zoom;
+    Math.min(maxSlot, (availWidth - PAD_LEFT - PAD_RIGHT) / n) * zoom;
   const bodyW = Math.max(
     5,
     Math.min((fewCandles ? 22 : 12) * zoom, slot * 0.62),
@@ -245,13 +244,12 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
             const isSel = selectedDate && ckey === selectedDate;
             const mk = ckey ? markerByKey.get(ckey) : undefined;
             const color = candleColor(c);
-            const delta = c.end - c.start;
-            // A12 色盲形状编码：升=实心、降=空心(描边)、平=细灰条——不只靠红/绿（8% 男性读不了）。
-            const hollow = delta < -FLAT_EPS; // 降 = 空心
             return (
               <g
                 key={ckey || i}
                 onClick={() => ckey && onSelectDate?.(ckey)}
+                onMouseEnter={() => setHoveredIdx(i)}
+                onMouseLeave={() => setHoveredIdx((h) => (h === i ? null : h))}
                 style={{ cursor: onSelectDate ? "pointer" : "default" }}
               >
                 {/* hit area */}
@@ -279,9 +277,9 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
                   width={bodyW}
                   height={bodyH}
                   rx={2}
-                  fill={hollow ? "#FFFFFF" : color}
-                  stroke={isSel ? COLOR_SELECTED : hollow ? color : "none"}
-                  strokeWidth={isSel ? 2 : hollow ? 1.5 : 0}
+                  fill={color}
+                  stroke={isSel ? COLOR_SELECTED : "none"}
+                  strokeWidth={isSel ? 2 : 0}
                 />
                 {/* marker dot — A8：仅显示 visibleMarkerKeys（nowIdx 后的前 5 个未来 marker） */}
                 {mk && visibleMarkerKeys.has(ckey) && (
@@ -367,6 +365,93 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               {g}
             </text>
           ))}
+
+          {/* hover 解读卡：悬停蜡烛浮动数值卡——日期/年龄 + 活跃度 + 起末 + 区间 + 倾向。
+              中性占星文案（活跃度/倾向，非吉凶命运断言）。点蜡烛仍打开 detail drawer 看深度解读。 */}
+          {hoveredIdx != null &&
+            candles[hoveredIdx] &&
+            (() => {
+              const c = candles[hoveredIdx];
+              const zh = language === "zh";
+              const r = (v: number) => Math.round(v);
+              const cx = xOf(hoveredIdx);
+              const tw = 168;
+              const th = 98;
+              const tx =
+                cx + 12 + tw <= chartWidth - PAD_RIGHT
+                  ? cx + 12
+                  : Math.max(PAD_LEFT, cx - 12 - tw);
+              const ty = PAD_TOP + 6;
+              const act =
+                c.intensity >= 66
+                  ? zh
+                    ? "强烈"
+                    : "Intense"
+                  : c.intensity >= 33
+                    ? zh
+                      ? "活跃"
+                      : "Active"
+                    : zh
+                      ? "平静"
+                      : "Quiet";
+              const hd = c.harmony - c.tension;
+              const lean =
+                hd > 3
+                  ? zh
+                    ? "顺流"
+                    : "Flow"
+                  : hd < -3
+                    ? zh
+                      ? "摩擦"
+                      : "Friction"
+                    : zh
+                      ? "平衡"
+                      : "Mixed";
+              const title =
+                c.date ??
+                (c.age != null ? (zh ? `${c.age} 岁` : `Age ${c.age}`) : "");
+              const lines = [
+                `${zh ? "活跃度" : "Activity"} ${act} · ${r(c.intensity)}`,
+                `${zh ? "起" : "Start"} ${r(c.start)} → ${zh ? "末" : "End"} ${r(c.end)}`,
+                `${zh ? "区间" : "Range"} ${r(c.dip)}–${r(c.peak)}`,
+                `${zh ? "倾向" : "Leans"} ${lean}`,
+              ];
+              return (
+                <g pointerEvents="none">
+                  <rect
+                    x={tx}
+                    y={ty}
+                    width={tw}
+                    height={th}
+                    rx={8}
+                    fill={isDark ? "#0F172A" : "#FFFFFF"}
+                    stroke={isDark ? "#334155" : "#E2E8F0"}
+                    strokeWidth={1}
+                    opacity={0.98}
+                  />
+                  <text
+                    x={tx + 12}
+                    y={ty + 22}
+                    fontSize={12}
+                    fontWeight={700}
+                    fill={isDark ? "#F1F5F9" : "#0F172A"}
+                  >
+                    {title}
+                  </text>
+                  {lines.map((ln, k) => (
+                    <text
+                      key={k}
+                      x={tx + 12}
+                      y={ty + 41 + k * 15}
+                      fontSize={10.5}
+                      fill={isDark ? "#CBD5E1" : "#475569"}
+                    >
+                      {ln}
+                    </text>
+                  ))}
+                </g>
+              );
+            })()}
         </svg>
       </div>
     </div>

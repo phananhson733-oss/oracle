@@ -178,16 +178,41 @@ describe("TimelineChart", () => {
 });
 
 describe("TimelineChart — Phase A geometry/a11y (A3/A8/A10/A12)", () => {
-  it("A12: down candle is hollow (white body fill), up candle stays solid — colorblind shape coding", () => {
+  it("candles are solid-filled by direction (实心红绿，竞品式) — no hollow white body", () => {
     const candles = [
-      candle("2026-06-01"), // default up (start 40 → end 50)
+      candle("2026-06-01"), // up (start 40 → end 50)
       candle("2026-06-02", { start: 60, end: 40 }), // down
     ];
     const { container } = render(<TimelineChart candles={candles} />);
-    const whiteBodies = Array.from(container.querySelectorAll("rect")).filter(
-      (r) => (r.getAttribute("fill") || "").toUpperCase() === "#FFFFFF",
+    const fills = Array.from(container.querySelectorAll("rect")).map((r) =>
+      (r.getAttribute("fill") || "").toUpperCase(),
     );
-    expect(whiteBodies.length).toBe(1); // exactly the single down candle is hollow
+    expect(fills).not.toContain("#FFFFFF"); // 空心白底已移除（按用户要求实心化）
+    expect(fills).toContain("#10B981"); // 涨 = 实心 emerald
+    expect(fills).toContain("#EF4444"); // 跌 = 实心红
+  });
+
+  it("shows a hover read-out card (activity + range) when hovering a candle", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    const { container } = render(<TimelineChart candles={candles} />);
+    const firstGroup = container.querySelector("g");
+    fireEvent.mouseEnter(firstGroup!);
+    // 浮动解读卡：含活跃度 + 区间（中性数值文案，非吉凶命运断言）
+    expect(container.textContent).toMatch(/Activity/);
+    expect(container.textContent).toMatch(/Range/);
+    fireEvent.mouseLeave(firstGroup!);
+  });
+
+  it("fits all candles within the container width (no horizontal scroll at zoom 1)", () => {
+    // 长程 90 根：fit 一页——chartWidth 不超过容器宽（svg width <= DEFAULT_WIDTH 720）。
+    const many = Array.from({ length: 90 }, (_, i) => ({
+      ...candle("2026-06-01"),
+      date: undefined,
+      age: i + 1,
+    }));
+    const { container } = render(<TimelineChart candles={many} />);
+    const svg = container.querySelector("svg")!;
+    expect(Number(svg.getAttribute("width"))).toBeLessThanOrEqual(720);
   });
 
   it("A10: 'You are here' indicator carries an aria-label only when nowKey is in view", () => {
