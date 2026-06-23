@@ -84,6 +84,47 @@ describe("scoreDomains — B1 spike domain activation (house→domain, qualitati
     expect(r.domains.every((d) => d.activation === "quiet")).toBe(true);
     expect(r.confidence).toBe("full");
   });
+
+  it("CALIBRATION: every house 1-12 maps to a domain — no triggered natal point is silently dropped", () => {
+    // 落地校准：1/3/4/11 宫此前被静默丢弃（domainOfAspect→null），confidence 却报 full，不诚实。
+    // 补全后全 12 宫各归一域：单个被触发本命点 → 恰一个域激活、confidence full。
+    for (let h = 1; h <= 12; h++) {
+      const r = scoreDomains([aspect("X", "trine", 1)], () => h);
+      const active = r.domains.filter((d) => d.activation !== "quiet");
+      expect(
+        active,
+        `house ${h} should map to exactly one domain`,
+      ).toHaveLength(1);
+      expect(r.confidence).toBe("full");
+    }
+  });
+
+  it("CALIBRATION: a representative natal chart spreads activation across multiple domains", () => {
+    // 常见行星分布（太阳10/月亮4/金星7/水星3/火星6/木星2）——含此前被丢弃的 4/3 宫。
+    const houses: Record<string, number> = {
+      Sun: 10,
+      Moon: 4,
+      Venus: 7,
+      Mercury: 3,
+      Mars: 6,
+      Jupiter: 2,
+    };
+    const r = scoreDomains(
+      [
+        aspect("Sun", "trine", 1),
+        aspect("Moon", "square", 2),
+        aspect("Venus", "sextile", 1.5),
+        aspect("Mercury", "trine", 2),
+        aspect("Mars", "conjunction", 0.5),
+        aspect("Jupiter", "square", 3),
+      ],
+      (b) => houses[b],
+    );
+    const active = r.domains.filter((d) => d.activation !== "quiet");
+    // 多域激活（非全 quiet、非单域垄断），落地体验合理。
+    expect(active.length).toBeGreaterThanOrEqual(3);
+    expect(r.confidence).toBe("full");
+  });
 });
 
 describe("B1 house plumbing — natalHouseMap + const gate", () => {
@@ -109,9 +150,9 @@ describe("B1 house plumbing — natalHouseMap + const gate", () => {
     expect(r.confidence).toBe("full");
   });
 
-  it("ships behind a const gate (OFF until wired + calibrated)", () => {
-    // 翻这个开关必须是有意识的决定（接线 + 公开盘校准完成后）。
-    expect(DOMAINS_ENABLED).toBe(false);
+  it("ships ENABLED (B1 域引擎已落地：接线完成 + 全 12 宫映射校准)", () => {
+    // 翻这个开关是有意识的落地决定（DOMAINS_ENABLED OFF→ON，2026-06-23）。回退须同步本断言。
+    expect(DOMAINS_ENABLED).toBe(true);
   });
 
   it("aggregateDomainScores derives range-level activation from per-day repAspects + natal", () => {

@@ -1,6 +1,6 @@
 // INPUT: ScoredAspectInput[]（带 orb→aspectStrength，禁用 topAspects 摘要）+ natalHouseOf(natalBody)→宫位（plumb 自 PlanetPosition.house）。
 // OUTPUT: scoreDomains → 6 域定性 activation（quiet/active/intense + flow/friction lean），self-relative、零 LLM、确定性、可缓存。
-// POS: B1 可行性 spike（§5 冲突2，待用户签字纳入）。⚠️ 现状 library + tests only：未接线、未进 PRD/schema/缓存。
+// POS: B1 域引擎（**已落地上线** 2026-06-23）。接 buildMonthlyTimeline/buildYearOfMonthsTimeline（DOMAINS_ENABLED ON）→ 响应 domainScores → TimelineDomains deep card。
 //      诚实契约：主=被触发本命点所在宫位→域；Node→growth；aspect type 只拆 flow/friction 通道；transit 星不决定域。
 //      输出**禁 "/100" 禁 "Score"**——只给定性 activation（对齐 blocker #2）。出生时间未知(house=undefined 且非 Node)→该相位降为 low-confidence，不强行归域。
 
@@ -19,10 +19,11 @@ import type {
 export type { Domain, Activation, Lean, DomainActivation, DomainScore };
 
 // domain 映射独立版本——别和 intensity 的 TIMELINE_ALGO_VERSION 绑死，否则调映射会无谓失效全部日缓存。
-export const DOMAIN_ALGO_VERSION = "domains-v0-spike";
+// v1：落地（全 12 宫映射校准）。升版本作废 v0-spike 缓存，避免旧 spike 输出污染。
+export const DOMAIN_ALGO_VERSION = "domains-v1";
 
-// const gate：domains 引擎默认关闭（behind gate，plan 要求）。接线 + 公开盘校准完成前不上线。
-export const DOMAINS_ENABLED = false;
+// const gate：domains 引擎**已落地上线**（2026-06-23，接线 + 全 12 宫映射校准完成）。
+export const DOMAINS_ENABLED = true;
 
 export const DOMAINS: readonly Domain[] = [
   "career",
@@ -33,16 +34,20 @@ export const DOMAINS: readonly Domain[] = [
   "growth",
 ];
 
-// 宫位→域（Codex/Eng 共识，诚实优先）。未列宫位(1/3/4/11)无清晰单一域映射，spike 阶段不强归。
+// 宫位→域（占星共识，**全 12 宫覆盖**——落地校准，不静默丢弃任何被触发的本命宫位）。
 const HOUSE_DOMAIN: Record<number, Domain> = {
-  10: "career", // + MC 同义
-  7: "relationships",
-  2: "money",
-  8: "money",
-  5: "creativity",
-  6: "wellness",
-  9: "growth",
-  12: "growth",
+  1: "wellness", // 自我/身体/活力
+  2: "money", // 收入/价值
+  3: "growth", // 心智/学习/沟通
+  4: "relationships", // 家庭/根基
+  5: "creativity", // 创造/恋爱/玩乐
+  6: "wellness", // 健康/日常
+  7: "relationships", // 一对一伙伴（+ DSC 同义）
+  8: "money", // 共有资源/转化
+  9: "growth", // 哲学/远行/高等学习
+  10: "career", // 事业/公众（+ MC 同义）
+  11: "relationships", // 朋友/社群
+  12: "growth", // 灵性/潜意识/退省
 };
 
 // 交点 → growth（无论宫位），与 9/12 同归内在成长。

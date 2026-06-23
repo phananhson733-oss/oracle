@@ -30,6 +30,26 @@ describe("buildMonthlyTimeline", () => {
     expect(r.candles[2].date).toBe("2026-06-16");
   });
 
+  it("attaches B1 domainScores end-to-end now that DOMAINS_ENABLED is live", async () => {
+    const r = await buildMonthlyTimeline(
+      birth,
+      "2026-06-01",
+      "2026-06-30",
+      "UTC",
+    );
+    // 落地后：响应携带 6 域定性 activation（v1）。
+    expect(r.domainScores).toBeDefined();
+    expect(r.domainScores!.domains).toHaveLength(6);
+    expect(r.domainScores!.version).toBe("domains-v1");
+    for (const d of r.domainScores!.domains) {
+      expect(["quiet", "active", "intense"]).toContain(d.activation);
+    }
+    // exact birth time → houses known → full confidence
+    expect(r.domainScores!.confidence).toBe("full");
+    // qualitative contract preserved through the orchestrator (no numeric score leak)
+    expect(JSON.stringify(r.domainScores)).not.toMatch(/\/100|"score"/i);
+  });
+
   it("keeps every candle field within the 0-100 relative scale", async () => {
     const r = await buildMonthlyTimeline(
       birth,
