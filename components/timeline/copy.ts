@@ -46,6 +46,15 @@ export interface TimelineCopy {
   viewDayReading: string;
   viewDayReadingDemo: string; // demo 模式：当日解读需登录 → 注册 CTA
   topAspectsTitle: string;
+  // B：CN 式多 tab 详情抽屉（点蜡烛弹出；中性英文/中文，全模式可用）
+  detailTabOverview: string;
+  detailTabReading: string;
+  detailPrevLabel: string; // 上一期值
+  detailNowLabel: string; // 本期值
+  detailRangeLabel: string; // 本期波动区间
+  detailLeansLabel: string; // 顺流/摩擦倾向
+  detailNoAspects: string; // 无主要相位的平静段
+  detailClose: string;
   // view mode + legal（Phase A：A9 去寿命化、A1 页底法务免责）
   monthModeLabel: string;
   yearModeLabel: string;
@@ -72,6 +81,14 @@ export interface TimelineCopy {
   keyYearsTitle: string;
   noUpcoming: string;
   reportSafetyNote: string;
+  // C：里程碑时间轴 + 当前期 hero（参考 oracle_CN，零 LLM、中性、反宿命）
+  milestonesTitle: string;
+  milestonesNote: string;
+  markerSaturnReturn: string;
+  markerJupiterReturn: string;
+  markerNodalReturn: string;
+  markerOuterSquare: string;
+  markerOuterOpposition: string;
   // B1 deep card（域 activation 呈现；定性非 score）
   domainsTitle: string;
   domainsCaption: string;
@@ -136,11 +153,11 @@ const EN: TimelineCopy = {
   legendTitle: "Reading the chart",
   legendIntensity:
     "Height = how active the energy is (loud vs quiet), not good vs bad.",
-  legendUp: "Green — energy built through the day",
-  legendDown: "Red — energy eased through the day",
-  legendFlat: "Grey — roughly steady",
+  legendUp: "Green — energy rose vs the previous period",
+  legendDown: "Red — energy eased vs the previous period",
+  legendFlat: "Grey — roughly unchanged",
   legendWickNote:
-    "The thin line shows the day's full range; the bar shows start to end.",
+    "The thin line is the period's full range; the bar is the change from the previous period.",
   legendTrend:
     "The purple line is a 7-day trend — the overall drift, not any single day.",
   trendToggle: "Trend line",
@@ -155,7 +172,7 @@ const EN: TimelineCopy = {
   phaseSeparating: "Easing",
   phaseUnknown: "—",
   intervalNote:
-    "Start / peak / low / end summarise the day — they are not market open/close.",
+    "The candles trace how your energy shifts between periods — a relative, descriptive view, not a market forecast or a prediction. Start / peak / low / end summarise each period.",
   approxTimeNote:
     "Birth time is approximate, so Moon and angle timings are less precise.",
   partialDataNote: "Some data was unavailable; this view is partial.",
@@ -163,6 +180,14 @@ const EN: TimelineCopy = {
   viewDayReading: "View this day's reading",
   viewDayReadingDemo: "Sign up to read this day",
   topAspectsTitle: "What's active",
+  detailTabOverview: "Overview",
+  detailTabReading: "Reading",
+  detailPrevLabel: "Prev",
+  detailNowLabel: "Now",
+  detailRangeLabel: "Range",
+  detailLeansLabel: "Leans",
+  detailNoAspects: "A quieter stretch — no major aspects in focus.",
+  detailClose: "Close",
   monthModeLabel: "Month",
   yearModeLabel: "Year",
   lifeModeLabel: "Long-range",
@@ -191,6 +216,18 @@ const EN: TimelineCopy = {
   noUpcoming: "No major cycle markers in this range.",
   reportSafetyNote:
     "These are tendencies to reflect on, not predictions, and not medical, psychological, or financial advice.",
+  milestonesTitle: "Life milestones",
+  milestonesNote:
+    "Cycle timings are astronomical; how they land is yours to shape — not a forecast.",
+  markerSaturnReturn:
+    "Saturn comes home — a season for restructuring and taking ownership.",
+  markerJupiterReturn: "Jupiter returns — a window that often feels expansive.",
+  markerNodalReturn:
+    "A nodal return — themes of direction and what you're growing toward.",
+  markerOuterSquare:
+    "An outer-planet square — friction that can prompt an adjustment.",
+  markerOuterOpposition:
+    "An outer-planet opposition — finding balance between two pulls.",
   domainsTitle: "Life areas in focus",
   domainsCaption:
     "Where your transits lean most active right now — compared to your own chart, not anyone else's. A tendency to notice, not a score.",
@@ -251,10 +288,10 @@ const ZH: TimelineCopy = {
   comparedToYourself: "高度仅相对你自己的区间，不与任何他人比较。",
   legendTitle: "如何看图",
   legendIntensity: "高度 = 能量有多活跃（热闹还是平静），不代表好坏。",
-  legendUp: "绿 — 当天能量走强（末高于起）",
-  legendDown: "红 — 当天能量回落（末低于起）",
-  legendFlat: "灰 — 大致持平",
-  legendWickNote: "细线表示当天的完整波动范围；柱体表示从起到末。",
+  legendUp: "绿 — 能量较上期走强",
+  legendDown: "红 — 能量较上期回落",
+  legendFlat: "灰 — 较上期大致持平",
+  legendWickNote: "细线表示本期的完整波动范围；柱体表示较上一期的变化。",
   legendTrend: "紫线是 7 日趋势——整体走向，而非任何单独一天。",
   trendToggle: "趋势线",
   start: "起",
@@ -267,13 +304,22 @@ const ZH: TimelineCopy = {
   phaseExact: "正盛",
   phaseSeparating: "渐弱",
   phaseUnknown: "—",
-  intervalNote: "起/高/低/末是对当天的概括，不是金融市场的开盘/收盘。",
+  intervalNote:
+    "蜡烛描绘的是能量在相邻周期间的变化——相对、描述性，不是市场行情，也不是预测。起/高/低/末是对该周期的概括。",
   approxTimeNote: "出生时间为近似值，月亮与四轴的时机精度会下降。",
   partialDataNote: "部分数据不可用，本视图为局部呈现。",
   steadyStretch: "平稳的一段——适合沉淀的自然时机。",
   viewDayReading: "查看当日解读",
   viewDayReadingDemo: "注册以查看当日解读",
   topAspectsTitle: "正在活跃",
+  detailTabOverview: "概览",
+  detailTabReading: "解读",
+  detailPrevLabel: "上期",
+  detailNowLabel: "本期",
+  detailRangeLabel: "区间",
+  detailLeansLabel: "倾向",
+  detailNoAspects: "较平静的一段——没有主要相位在聚焦。",
+  detailClose: "关闭",
   monthModeLabel: "月度",
   yearModeLabel: "年度",
   lifeModeLabel: "长程",
@@ -299,6 +345,13 @@ const ZH: TimelineCopy = {
   noUpcoming: "这段区间内没有主要周期标记。",
   reportSafetyNote:
     "这些是供你觉察的倾向，并非预测，也不构成医疗、心理或金融建议。",
+  milestonesTitle: "人生里程碑",
+  milestonesNote: "周期时点来自天文，如何度过由你塑造——这不是预测。",
+  markerSaturnReturn: "土星回归——重整结构、为自己负责的一段。",
+  markerJupiterReturn: "木星回归——往往感觉开阔、想往外走的一段。",
+  markerNodalReturn: "交点回归——关于方向与成长指向的主题。",
+  markerOuterSquare: "外行星刑相位——可能带来需要调整的张力。",
+  markerOuterOpposition: "外行星冲相位——在两股拉力间寻找平衡。",
   domainsTitle: "受关注的生活领域",
   domainsCaption:
     "你的行运眼下最活跃的方向——只与你自己的盘比较，不与他人。是值得留意的倾向，不是评分。",

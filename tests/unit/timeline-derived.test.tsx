@@ -10,10 +10,12 @@ import {
   atAGlance,
   currentCandle,
   upcomingMarkers,
+  buildOhlcSeries,
 } from "../../components/timeline/derived";
 import { TimelineAtAGlance } from "../../components/timeline/TimelineAtAGlance";
 import { TimelineReport } from "../../components/timeline/TimelineReport";
 import { TimelineDomains } from "../../components/timeline/TimelineDomains";
+import { TimelineMilestones } from "../../components/timeline/TimelineMilestones";
 import { TimelineShareCard } from "../../components/timeline/TimelineShareCard";
 import type { TimelineCandle, TimelineMarker, DomainScore } from "../../types";
 
@@ -67,6 +69,79 @@ describe("derived.atAGlance — A11 derived picks", () => {
   });
   it("returns nulls for an empty set", () => {
     expect(atAGlance([]).peak).toBeNull();
+  });
+});
+
+describe("derived.buildOhlcSeries — 连续 OHLC 游走 (参考 oracle_CN)", () => {
+  it("links open[i] to the previous close (intensity) for a continuous walk", () => {
+    const cs = [
+      candle("2026-06-01", { intensity: 50, start: 42 }),
+      candle("2026-06-02", { intensity: 58 }),
+      candle("2026-06-03", { intensity: 44 }),
+    ];
+    const bars = buildOhlcSeries(cs);
+    // 首根=doji：open=close=intensity（无前序周期，零变化；忽略 start）。
+    expect(bars[0].open).toBe(50);
+    expect(bars[0].close).toBe(50);
+    expect(bars[0].dir).toBe("flat");
+    // 其后 open=上一根 close（连续）。
+    expect(bars[1].open).toBe(50);
+    expect(bars[1].close).toBe(58);
+    expect(bars[2].open).toBe(58);
+    expect(bars[2].close).toBe(44);
+  });
+
+  it("first/single candle is a doji (no runaway body) and tolerates non-finite input", () => {
+    // 单根：open=close → flat、body 为 0（不退回 start..intensity 的高 body）。
+    const single = buildOhlcSeries([
+      candle("2026-06-01", { intensity: 90, start: 5 }),
+    ]);
+    expect(single).toHaveLength(1);
+    expect(single[0].open).toBe(90);
+    expect(single[0].dir).toBe("flat");
+    // 空集 → 空数组（不崩）。
+    expect(buildOhlcSeries([])).toEqual([]);
+    // 非有限值（partial data）被兜底为有限坐标，dir 不为基于 NaN 的误判。
+    const bad = buildOhlcSeries([
+      candle("2026-06-01", { intensity: Number.NaN, peak: Number.NaN }),
+      candle("2026-06-02", { intensity: 60 }),
+    ]);
+    bad.forEach((b) => {
+      expect(Number.isFinite(b.open)).toBe(true);
+      expect(Number.isFinite(b.close)).toBe(true);
+      expect(Number.isFinite(b.high)).toBe(true);
+      expect(Number.isFinite(b.low)).toBe(true);
+    });
+  });
+
+  it("colors direction by period-over-period change (up/down/flat with eps)", () => {
+    const cs = [
+      candle("2026-06-01", { intensity: 50, start: 50 }), // open50→close50 = flat
+      candle("2026-06-02", { intensity: 70 }), // 50→70 = up
+      candle("2026-06-03", { intensity: 55 }), // 70→55 = down
+      candle("2026-06-04", { intensity: 56 }), // 55→56 = within eps → flat
+    ];
+    const bars = buildOhlcSeries(cs);
+    expect(bars[0].dir).toBe("flat");
+    expect(bars[1].dir).toBe("up");
+    expect(bars[2].dir).toBe("down");
+    expect(bars[3].dir).toBe("flat");
+  });
+
+  it("high/low envelope open/close with peak/dip (wick = period range)", () => {
+    const cs = [
+      candle("2026-06-01", { intensity: 50, start: 50, peak: 80, dip: 20 }),
+      candle("2026-06-02", { intensity: 60, peak: 95, dip: 5 }),
+    ];
+    const bars = buildOhlcSeries(cs);
+    // bar1: open=50, close=60, peak=95, dip=5 → high=95, low=5。
+    expect(bars[1].high).toBe(95);
+    expect(bars[1].low).toBe(5);
+    // high≥max(open,close)、low≤min(open,close) 恒成立。
+    bars.forEach((b) => {
+      expect(b.high).toBeGreaterThanOrEqual(Math.max(b.open, b.close));
+      expect(b.low).toBeLessThanOrEqual(Math.min(b.open, b.close));
+    });
   });
 });
 
@@ -185,6 +260,32 @@ describe("TimelineDomains — B1 deep card (qualitative, neutral, gated)", () =>
       <TimelineDomains domainScores={{ ...score, confidence: "reduced" }} />,
     );
     expect(getByText(/approximate/i)).toBeTruthy();
+  });
+});
+
+describe("TimelineMilestones — C 竖向里程碑时间轴", () => {
+  const markers: TimelineMarker[] = [
+    { age: 29, type: "saturn-return", label: "Saturn Return" },
+    { age: 41, type: "outer-opposition", label: "Uranus Opposition" },
+  ];
+
+  it("renders the milestone title, each marker label + a neutral description, and the anti-fate note", () => {
+    const { getByText, container } = render(
+      <TimelineMilestones markers={markers} nowKey="age-29" />,
+    );
+    expect(getByText(/life milestones/i)).toBeTruthy();
+    expect(getByText(/saturn return/i)).toBeTruthy();
+    expect(getByText(/uranus opposition/i)).toBeTruthy();
+    // 中性周期描述（土星回归）+ 反宿命 note
+    expect(getByText(/restructuring and taking ownership/i)).toBeTruthy();
+    expect(getByText(/how they land is yours to shape/i)).toBeTruthy();
+    // 无红/绿（§9.4）
+    expect(container.innerHTML).not.toMatch(/bg-(green|red|emerald|rose)-/);
+  });
+
+  it("renders nothing when there are no markers", () => {
+    const { container } = render(<TimelineMilestones markers={[]} />);
+    expect(container.querySelector("section")).toBeNull();
   });
 });
 

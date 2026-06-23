@@ -1,6 +1,8 @@
 // INPUT: TimelineCandle[]（来自 /api/transit/timeline）。
-// OUTPUT: 纯派生函数——energyBand(intensity)→5 档中性能量等级（A4）、atAGlance(candles)→派生概览四格（A11）。
-// POS: 月度 K 线派生呈现层（A4/A11）。零 LLM、确定性、可缓存；标签中性（非 Momentum/Score），配色中性（非红绿）由消费方承载。
+// OUTPUT: 纯派生函数——energyBand(intensity)→5 档中性能量等级（A4）、atAGlance(candles)→派生概览四格（A11）、
+//         buildOhlcSeries(candles)→连续 OHLC 游走（真 K 线观感，参考 oracle_CN；后端契约不变）。
+// POS: 月度/长程 K 线派生呈现层（A4/A11 + OHLC 渲染）。零 LLM、确定性、可缓存；标签中性（非 Momentum/Score）；
+//      OHLC dir 仅着色用、描述性非预测，安全框架由 onboarding/图例/disclaimer 承载。
 //      文案全部来自 copy.ts 的固定安全串（authored-safe），故无需运行时 output-guard；未来动态/LLM 文案接入时才过 guardGeneratedCopy。
 
 import type { TimelineCandle, TimelineMarker } from "../../types";
@@ -8,6 +10,43 @@ import type { TimelineCandle, TimelineMarker } from "../../types";
 // 候选/标记身份键：月度=date，长程=age-N（与 TimelineChart.keyOf 同构）。
 export function candleKey(x: { date?: string; age?: number }): string {
   return x.date ?? (x.age != null ? `age-${x.age}` : "");
+}
+
+// 连续 OHLC 游走（参考 oracle_CN 真 K 线惯例，纯前端派生——后端仍返回 interval-summary 契约不变）：
+// close=本根代表强度 intensity，open=上一根 close（首根=doji，open=close）。这样相邻蜡烛**连续**，
+// body=open..close=「跨周期能量变化」（天然短而均匀，不再需要按粒度 clamp body 高度的魔法数）；
+// high/low 收纳 peak/dip 与 open/close 的极值，wick=本期波动范围。
+// dir 仅用于着色，且是**描述性**（这期比上期更活跃/更平静），非预测/动量/命运断言——
+// 安全框架仍由 onboarding/图例/disclaimer 承载（详见 copy.ts changeNote）。
+export type OhlcDir = "up" | "down" | "flat";
+export interface OhlcBar {
+  open: number;
+  close: number;
+  high: number;
+  low: number;
+  dir: OhlcDir;
+}
+
+// |close-open| 在此内视为持平（doji），与 TimelineChart 着色阈值同源。
+export const OHLC_FLAT_EPS = 1.5;
+
+// 非有限值（partial data 的 NaN/undefined）兜底，避免污染下游 yOf → "NaN" SVG 坐标。
+const fin = (v: number, fallback: number): number =>
+  Number.isFinite(v) ? v : fallback;
+
+export function buildOhlcSeries(candles: TimelineCandle[]): OhlcBar[] {
+  return candles.map((c, i) => {
+    const close = fin(c.intensity, 0);
+    // 首根无前序周期 → **doji**（open=close，零变化）：没有"上一期"可比，body 自然为 0，
+    // 也避免首根 start 与 intensity 大幅分离时画出失控的高 body。其余 open=上一根 close（连续性）。
+    const open = i === 0 ? close : fin(candles[i - 1].intensity, close);
+    const high = Math.max(open, close, fin(c.peak, close));
+    const low = Math.min(open, close, fin(c.dip, close));
+    const delta = close - open;
+    const dir: OhlcDir =
+      delta > OHLC_FLAT_EPS ? "up" : delta < -OHLC_FLAT_EPS ? "down" : "flat";
+    return { open, close, high, low, dir };
+  });
 }
 
 // A4：能量「活跃度」5 档（Activity/Energy level，不是 Momentum Score）。

@@ -115,41 +115,26 @@ describe("TimelineChart", () => {
     expect(maxWick).toBeLessThan(200);
   });
 
-  it("clamps body height by granularity — long-range tightest, month relaxed (user baseline)", () => {
-    const bodyMax = (utils: ReturnType<typeof render>) =>
-      Math.max(
-        ...Array.from(utils.container.querySelectorAll("rect"))
-          .filter((r) =>
-            ["#10B981", "#EF4444"].includes(
-              (r.getAttribute("fill") || "").toUpperCase(),
-            ),
-          )
-          .map((r) => Number(r.getAttribute("height"))),
-      );
-
-    // 长程（age 年级聚合）：start..end 跨度大→body 收得最紧（maxBodyExtent≈0.18×440=79）。
-    const longRange = Array.from({ length: 30 }, (_, i) => ({
-      ...candle("2026-06-01"),
-      date: undefined,
-      age: i + 1,
-      start: 5,
-      end: 95,
+  it("body tracks period-over-period change, staying short even when intra-period range is wide (continuous OHLC walk)", () => {
+    // 连续 OHLC 游走根治"蜡烛过长"：body=open..close=跨周期 intensity 变化。
+    // 平滑 intensity 序列(步长~4)+极宽 peak/dip(0..100)：body 应保持很短（≈Δ×H/100），
+    // 不再随聚合的 start..end / peak..dip 跨度暴涨（旧模型会铺满半屏）。
+    const smooth = [50, 54, 52, 56, 53, 57, 55].map((v, i) => ({
+      ...candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
+      intensity: v,
+      start: v, // 首根 open=start=intensity → 不产生人为长 body
+      end: v,
       peak: 100,
       dip: 0,
     }));
-    expect(
-      bodyMax(render(<TimelineChart candles={longRange} />)),
-    ).toBeLessThanOrEqual(92);
-
-    // 月度（>14 根日级蜡烛）：放松，长 body 不被过度 clamp（maxBodyExtent=0.5×440=220）——保持月度合理观感。
-    const month = Array.from({ length: 28 }, (_, i) => ({
-      ...candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
-      start: 5,
-      end: 95,
-    }));
-    expect(bodyMax(render(<TimelineChart candles={month} />))).toBeGreaterThan(
-      92,
+    const { container } = render(<TimelineChart candles={smooth} />);
+    const bodyH = Math.max(
+      ...Array.from(container.querySelectorAll("g > rect:nth-of-type(2)")).map(
+        (r) => Number(r.getAttribute("height")),
+      ),
     );
+    // 步长~4 点 → body 像素高度 ≈4/100×440≈18；远小于满量程 peak-dip(≈395)。
+    expect(bodyH).toBeLessThan(60);
   });
 
   it("keeps a full month compact: candle bodies are capped (not ballooned to fill wide screens)", () => {
@@ -215,18 +200,20 @@ describe("TimelineChart", () => {
 });
 
 describe("TimelineChart — Phase A geometry/a11y (A3/A8/A10/A12)", () => {
-  it("candles are solid-filled by direction (实心红绿，竞品式) — no hollow white body", () => {
+  it("candles are solid-filled by OHLC direction (实心红绿，连续游走) — no hollow white body", () => {
+    // 连续 OHLC 游走：着色按**跨周期** intensity 变化（close=本根、open=上一根 close），非桶内 start/end。
     const candles = [
-      candle("2026-06-01"), // up (start 40 → end 50)
-      candle("2026-06-02", { start: 60, end: 40 }), // down
+      candle("2026-06-01", { intensity: 40 }),
+      candle("2026-06-02", { intensity: 60 }), // open40→close60 = up 绿
+      candle("2026-06-03", { intensity: 40 }), // open60→close40 = down 红
     ];
     const { container } = render(<TimelineChart candles={candles} />);
     const fills = Array.from(container.querySelectorAll("rect")).map((r) =>
       (r.getAttribute("fill") || "").toUpperCase(),
     );
-    expect(fills).not.toContain("#FFFFFF"); // 空心白底已移除（按用户要求实心化）
-    expect(fills).toContain("#10B981"); // 涨 = 实心 emerald
-    expect(fills).toContain("#EF4444"); // 跌 = 实心红
+    expect(fills).not.toContain("#FFFFFF"); // 空心白底已移除（实心化）
+    expect(fills).toContain("#10B981"); // 升 = 实心 emerald
+    expect(fills).toContain("#EF4444"); // 降 = 实心红
   });
 
   it("shows a hover read-out card (activity + range) when hovering a candle", () => {

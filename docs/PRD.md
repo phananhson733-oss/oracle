@@ -442,6 +442,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **优化轮 Phase A + B5' + B1 引擎已落地 (2026-06-22)**：呈现/内容层优化按 `docs/plans/2026-06-22-life-kline-optimization.md` 落成叠加 PR 链——Phase A（A-copy 法务免责/趋势图例/去寿命化文案 ｜ A-geometry 响应图高/未来 marker 上限/「You are here」aria 指示/**A12 色盲形状编码**[升=实心/降=空心/平=条] ｜ A-derived **Activity 5 档**[非 Momentum Score]/Flow-Friction/**At-a-Glance 派生四格**）+ B5' 报告骨架（Current-Phase 卡 + 未来转折点 + 每子面安全 frame）。**B1 域 activation 引擎**（`backend/src/services/transit/domains.ts`：被触发本命点**宫位**→6 域[career/relationships/money/creativity/wellness/growth]**定性 activation**[quiet/active/intense + flow/friction lean]，**禁数值 "/100" / "Score"**，出生时间未知降 confidence）已**落地上线**（2026-06-23）——`buildMonthlyTimeline` / `buildYearOfMonthsTimeline` 响应携带**可选 `domainScores`**（`{domains, confidence, version}`），`DOMAINS_ENABLED` **ON**，house→域映射**全 12 宫覆盖校准**（补全 1→wellness / 3→growth / 4→relationships / 11→relationships，不静默丢弃任何被触发宫位），`DOMAIN_ALGO_VERSION="domains-v1"`，`TimelineDomains` deep card 消费（中性配色定性呈现）。蜡烛 green/red 经签字**保留** + `COLOR_SYSTEM_GUIDE §3` doc-bless（A12 形状冗余已让方向不只靠色，非 success/danger 状态语义）。
 
+**oracle_CN 呈现移植已落地 (2026-06-23)**：参考内部 oracle_CN（微信小程序）K 线**呈现层**移植到 web（**纯前端，后端 interval-summary 契约不变**；oracle_CN 的 seededRandom 伪数据/干支/吉凶宿命内核**不移植**，撞真实数据默认 + AI 安全红线）——① **连续 OHLC 游走**（`components/timeline/derived.ts::buildOhlcSeries`：`close=本根 intensity、open=上一根 close`，body=跨周期能量变化、天然短而均匀，**删除原按粒度 clamp body 高度的魔法数**；着色**描述性非预测**：这期比上期更活跃=绿/更平静=红/近平=灰）根治"年/长程蜡烛过长"反馈；② **CN 式多 tab 详情抽屉** `TimelineDetailSheet`（概览=OHLC 三格 + flow/friction lean + 通道分量｜正在活跃=真实 topAspects｜当日解读=月度+非 demo 复用 `daily/detail`）替代页内 selected-candle 摘要 + 删除 `TimelineDetailDrawer`；③ **人生里程碑竖向时间轴** `TimelineMilestones`（土星/木星/交点回归 + 外行星刑/冲，中性一句话 + 反宿命 note）+ `TimelineReport` Current-Phase **hero 定性环**（5 档填充、不显数值 + flow/friction lean）。全程中性英文/中文、零 LLM、无吉凶/命运/医疗断言；fit-一页（不横滚）保留。生产数据视觉 QA（month + life）通过。**6 段 LLM 人生叙事**（overview/past/present/future/milestone/letter）作为后续单独单元（需 prompt 注册 + 本节同步 + AI 安全过审），不在本轮。
+
 将占星 transit 强度可视化为**蜡烛时间轴主视图**，用户看到自身"能量节奏"起伏，点击任意时间点获得 AI 解读。**外部命名** `Energy Timeline / Transit Candles`，"人生K线/月度K线"仅作内部代号 + 中文副标题。完整工程设计 + 落地 blocker 见 `docs/plans/2026-06-16-life-kline-design.md`（已过 5-voice autoplan 评审：3 Claude + Gemini + Codex/GPT-5 + 代码核验）。
 
 **双粒度**:
@@ -453,7 +455,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 | 功能 | 说明 |
 |------|------|
-| **蜡烛主视图（区间摘要语义）** | 蜡烛 = `start/peak/dip/end` 区间摘要（**非金融 OHLC 涨跌**）；纵轴中性"能量强度 intensity"（**非命运分/吉凶**），仅与自身比较。每根附 `dominantPhase`（applying/exact/separating/mixed）与 `dataQuality` |
+| **蜡烛主视图（区间摘要契约 / 连续 OHLC 渲染）** | 后端契约仍是 `start/peak/dip/end` 区间摘要（**非金融 OHLC 涨跌**）；**前端自 2026-06-23 起渲染为连续 OHLC 游走**（`close=intensity、open=上一根 close`，body=跨周期变化），属**描述性非预测**呈现（参考 oracle_CN 真 K 线观感），仍非命运/吉凶。纵轴中性"能量强度 intensity"，仅与自身比较。每根附 `dominantPhase`（applying/exact/separating/mixed）与 `dataQuality` |
 | **和谐/张力分解** | 复用 synthetica FLOW/FUSION/FRICTION 权重；着色 harmony=psycho-500蓝 / tension=mystic-500紫（**禁 success/danger/warning token、禁红绿涨跌**）|
 | **相位 episode 化** | 连续 orb kernel（非阶跃）+ episode 聚合，消除 orb 边界尖刺；topAspects 按 episode 去重 |
 | **节点标注** | 重大 Return（Saturn/Jupiter/Chiron/Nodal Return）气泡 |

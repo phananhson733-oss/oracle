@@ -1,12 +1,13 @@
-// INPUT: TimelineCandle[] / TimelineMarker[]（来自 /api/transit/timeline）、useLanguage、点选回调。
-// OUTPUT: 自绘 SVG 蜡烛图组件（区间摘要语义：wick=dip..peak、body=start..end）；**fit 一页**（蜡烛多则自动变窄填满容器、不横滚，zoom>1 才横滚平移）。
-//         A3 响应式图高(mobile/desktop)；A10 nowKey→「You are here」竖线+点+aria；A8 nowKey 后仅显示前 5 个未来 marker；**hover→浮动解读卡**（活跃度/起末/区间/倾向，中性文案）。
-// POS: 月度/年/长程 K 线主视图。蜡烛体按方向**实心**红/绿着色（涨=绿、跌=红、近平=中性灰；参考竞品/oracle_CN 实心惯例，产品方决定；
-//      色盲冗余由 grey-flat + 趋势线 + hover 数值承载，原 A12 空心编码已按用户要求改实心）；能量质量在 hover 卡/当日卡呈现。纵轴=中性能量强度，仅与自身比较。
+// INPUT: TimelineCandle[] / TimelineMarker[]（来自 /api/transit/timeline）、useLanguage、点选回调；buildOhlcSeries（派生连续 OHLC）。
+// OUTPUT: 自绘 SVG 蜡烛图组件（**连续 OHLC 游走**：close=本根强度、open=上一根 close → body=跨周期能量变化、wick=本期波动范围；参考 oracle_CN 真 K 线观感）；**fit 一页**（蜡烛多则自动变窄填满容器、不横滚，zoom>1 才横滚平移）。
+//         A3 响应式图高(mobile/desktop)；A10 nowKey→「You are here」竖线+点+aria；A8 nowKey 后仅显示前 5 个未来 marker；**hover→浮动解读卡**（活跃度/跨期变化/区间/倾向，中性文案）。
+// POS: 月度/年/长程 K 线主视图。蜡烛体按方向**实心**红/绿着色（这期比上期更活跃=绿、更平静=红、近平=中性灰；描述性非预测/命运）；
+//      body 因连续游走天然短而均匀（不再用按粒度 clamp 的魔法数）；色盲冗余由 grey-flat + 趋势线 + hover 数值承载。纵轴=中性能量强度，仅与自身比较。
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { TimelineCandle, TimelineMarker } from "../../types";
 import { useLanguage, useTheme } from "../UIComponents";
+import { buildOhlcSeries, type OhlcDir } from "./derived";
 
 export interface TimelineMoodPoint {
   date: string;
@@ -29,16 +30,14 @@ interface TimelineChartProps {
   zoomFactor?: number;
 }
 
-// 蜡烛体方向着色（股票式红/绿，产品方决定）：end≥start=能量走强=绿、end<start=能量回落=红、
-// 近乎持平=中性灰（doji）。"非好坏"的中性框架由 onboarding/图例/文案承载，不再靠颜色。
-const COLOR_UP = "#10B981"; // emerald-500 — energy rose through the day（更沉稳，参考 oracle_CN）
-const COLOR_DOWN = "#EF4444"; // red-500 — energy eased through the day
-const COLOR_FLAT = "#94A3B8"; // slate-400 — roughly unchanged (doji)
+// 蜡烛体方向着色（连续 OHLC 游走，参考 oracle_CN）：close≥open=这期比上期更活跃=绿、
+// close<open=更平静=红、近乎持平=中性灰（doji）。描述性非预测；"非好坏"的中性框架由 onboarding/图例/文案承载。
+const COLOR_UP = "#10B981"; // emerald-500 — 能量较上期走强（更沉稳，参考 oracle_CN）
+const COLOR_DOWN = "#EF4444"; // red-500 — 能量较上期回落
+const COLOR_FLAT = "#94A3B8"; // slate-400 — 与上期大致持平 (doji)
 const COLOR_MA = "#A855F7"; // mystic-500 — smoothing line (distinct from red/green)
 const COLOR_SELECTED = "#2563EB"; // psycho-600 — selection ring
 const COLOR_MOOD = "#0D9488"; // teal-600 — CBT 情绪叠加层（与红/绿/紫均区分，自我觉察非因果）
-
-const FLAT_EPS = 1.5; // |end-start| 在此内视为持平
 
 // A3：响应式图高——窄屏(mobile)更矮、宽屏(desktop)更高（总高 = H + PAD_TOP + PAD_BOTTOM）。
 const H_MOBILE = 300; // 总 ~344，落在 280-360
@@ -52,10 +51,10 @@ const PAD_RIGHT = 10;
 const MAX_SLOT = 22;
 const DEFAULT_WIDTH = 720;
 
-function candleColor(c: TimelineCandle): string {
-  const delta = c.end - c.start;
-  if (delta > FLAT_EPS) return COLOR_UP;
-  if (delta < -FLAT_EPS) return COLOR_DOWN;
+// OHLC 方向 → 颜色（连续游走着色，描述性非预测）。
+function colorOf(dir: OhlcDir): string {
+  if (dir === "up") return COLOR_UP;
+  if (dir === "down") return COLOR_DOWN;
   return COLOR_FLAT;
 }
 
@@ -127,12 +126,9 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   const plotBottom = PAD_TOP + H;
   // wick 视觉延伸上限：月/年聚合的 peak-dip 可跨满量程，限制单端延伸避免一根影线贯穿全图。
   const maxWickExtent = H * 0.16;
-  // body 视觉高度上限——**按粒度差异化**（用户基准：月度单条蜡烛高度合理）：
-  // 月度(日级)body 本就短→放松(0.5)保持现状；年/长程(聚合)start..end 跨度大→收紧到接近月度观感。
-  // 中心锚定，保留能量高低位置；精确起末在 hover 卡。
-  const isLongRange = candles.some((c) => c.age != null);
-  const isYearGrid = !isLongRange && n <= 14;
-  const maxBodyExtent = H * (isLongRange ? 0.18 : isYearGrid ? 0.24 : 0.5);
+  // 连续 OHLC 游走：body=open..close=跨周期变化，天然短而均匀——**不再需要按粒度 clamp body 的魔法数**
+  // （旧 maxBodyExtent / isLongRange / isYearGrid 已删）。详见 derived.buildOhlcSeries。
+  const bars = useMemo(() => buildOhlcSeries(candles), [candles]);
 
   const yOf = (v: number) =>
     PAD_TOP + (1 - Math.max(0, Math.min(100, v)) / 100) * H;
@@ -239,25 +235,22 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
 
           {candles.map((c, i) => {
             const cx = xOf(i);
-            const top = Math.min(c.start, c.end);
-            const bot = Math.max(c.start, c.end);
-            // body 中心锚定 + 高度 clamp：中心=区间能量中点（保留高低位置），高度封顶 maxBodyExtent
-            // → 年/长程的长 body 收敛、与月度观感统一；月度短 body 不受影响（精确起末在 hover 卡）。
-            const bodyCenterY = (yOf(top) + yOf(bot)) / 2;
-            const bodyHalf = Math.min(
-              (yOf(top) - yOf(bot)) / 2,
-              maxBodyExtent / 2,
+            const bar = bars[i];
+            // 连续 OHLC 游走：body=open..close=跨周期能量变化（天然短而均匀，无需 clamp）。
+            // 顶=较高值、底=较低值（yOf 反向：值大→y 小）。
+            const bodyTop = yOf(Math.max(bar.open, bar.close));
+            const bodyH = Math.max(
+              2,
+              yOf(Math.min(bar.open, bar.close)) - bodyTop,
             );
-            const bodyTop = bodyCenterY - bodyHalf;
-            const bodyH = Math.max(2, bodyHalf * 2);
             const bodyBot = bodyTop + bodyH;
-            // wick clamp：从 body 端最多延伸 maxWickExtent，极端 peak/dip 不贯穿全图。
-            const wickTopY = Math.max(yOf(c.peak), bodyTop - maxWickExtent);
-            const wickBotY = Math.min(yOf(c.dip), bodyBot + maxWickExtent);
+            // wick=本期波动范围 low..high；保留单端 clamp，极端 peak/dip 不贯穿全图。
+            const wickTopY = Math.max(yOf(bar.high), bodyTop - maxWickExtent);
+            const wickBotY = Math.min(yOf(bar.low), bodyBot + maxWickExtent);
             const ckey = keyOf(c);
             const isSel = selectedDate && ckey === selectedDate;
             const mk = ckey ? markerByKey.get(ckey) : undefined;
-            const color = candleColor(c);
+            const color = colorOf(bar.dir);
             return (
               <g
                 key={ckey || i}
@@ -274,7 +267,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
                   height={H}
                   fill={isSel ? selWash : "transparent"}
                 />
-                {/* wick: dip..peak（区间波动范围）；clamp 单端延伸避免聚合极值贯穿全图 */}
+                {/* wick: low..high（本期波动范围）；clamp 单端延伸避免聚合极值贯穿全图 */}
                 <line
                   x1={cx}
                   x2={cx}
@@ -284,7 +277,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
                   strokeOpacity={0.4}
                   strokeWidth={1.2}
                 />
-                {/* body: start..end interval summary */}
+                {/* body: open..close（跨周期能量变化，连续游走） */}
                 <rect
                   x={cx - bodyW / 2}
                   y={bodyTop}
@@ -380,12 +373,13 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
             </text>
           ))}
 
-          {/* hover 解读卡：悬停蜡烛浮动数值卡——日期/年龄 + 活跃度 + 起末 + 区间 + 倾向。
-              中性占星文案（活跃度/倾向，非吉凶命运断言）。点蜡烛仍打开 detail drawer 看深度解读。 */}
+          {/* hover 解读卡：悬停蜡烛浮动数值卡——日期/年龄 + 活跃度 + 跨期变化 + 区间 + 倾向。
+              中性占星文案（活跃度/倾向，描述性非预测/命运）。点蜡烛仍打开 detail drawer 看深度解读。 */}
           {hoveredIdx != null &&
             candles[hoveredIdx] &&
             (() => {
               const c = candles[hoveredIdx];
+              const bar = bars[hoveredIdx];
               const zh = language === "zh";
               const r = (v: number) => Math.round(v);
               const cx = xOf(hoveredIdx);
@@ -425,9 +419,10 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
                 c.date ??
                 (c.age != null ? (zh ? `${c.age} 岁` : `Age ${c.age}`) : "");
               const lines = [
-                `${zh ? "活跃度" : "Activity"} ${act} · ${r(c.intensity)}`,
-                `${zh ? "起" : "Start"} ${r(c.start)} → ${zh ? "末" : "End"} ${r(c.end)}`,
-                `${zh ? "区间" : "Range"} ${r(c.dip)}–${r(c.peak)}`,
+                `${zh ? "活跃度" : "Activity"} ${act} · ${r(bar.close)}`,
+                // 跨周期变化（上一根 close → 本根 close），描述性非预测。
+                `${zh ? "较上期" : "Prev"} ${r(bar.open)} → ${zh ? "本期" : "Now"} ${r(bar.close)}`,
+                `${zh ? "区间" : "Range"} ${r(bar.low)}–${r(bar.high)}`,
                 `${zh ? "倾向" : "Leans"} ${lean}`,
               ];
               return (
