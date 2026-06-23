@@ -1,0 +1,92 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "cancer-season-2026-astrology": {
+      "hero": {
+        "prompt": "vast moonlit ocean bay at the precise moment of high tide, three ancient luminous orbs hovering low above the horizon — one warm gold drifting left toward the edge of the sky, one pale quicksilver orb curling slightly backward, one stern ringed sphere suspended above them — all three reflected in the still silver water below, soft sea-foam curling at the dark shoreline, the full tide pushing gently inland, an atmosphere of imminent change held in suspended stillness, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit ocean bay at high tide with three luminous orbs on the indigo horizon, evoking Cancer season 2026 transit convergence",
+        "altZh": "月光照耀的海湾在涨潮时分，三颗发光星体悬于靛蓝地平线，唤起2026年巨蟹座季节的行星汇聚"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Cancer Season vs Jupiter's Year in Cancer: What Actually Differs",
+          "titleEn": "Three Transits That Define Cancer Season 2026",
+          "titleZh": "定义2026年巨蟹座季节的三次行星运行",
+          "altEn": "Sequence of three Cancer season 2026 transits: Sun's month, Jupiter's year ending June 30, Mercury retrograde and Saturn square",
+          "altZh": "2026年巨蟹座季节三次行星运行序列图",
+          "items": [
+            {
+              "nameEn": "The Sun's Month",
+              "nameZh": "太阳的月份",
+              "subEn": "Annual 30-day passage through Cancer (June 21–July 22); raises emotional and domestic awareness for every sign each year",
+              "subZh": "每年30天穿越巨蟹座（6月21日至7月22日），为所有星座带来情感与家庭意识的提升"
+            },
+            {
+              "nameEn": "Jupiter's Year Ends — June 30",
+              "nameZh": "木星年结束——6月30日",
+              "subEn": "Jupiter spent the past year (since June 2025) deepening Cancer themes but leaves for Leo on June 30, a roughly once-a-decade closing moment",
+              "subZh": "木星自2025年6月起深化巨蟹座主题，但在6月30日离开进入狮子座，约十年一遇的收尾时刻"
+            },
+            {
+              "nameEn": "Mercury Retrograde + Saturn Square",
+              "nameZh": "水星逆行与土星四分",
+              "subEn": "Mercury retrograde in Cancer (June 29–July 23) resurfaces old conversations; Sun squares Saturn in Aries (~July 6) sets duty against rest",
+              "subZh": "水星在巨蟹座逆行（6月29日至7月23日）使旧话题重浮；太阳四分白羊座土星（约7月6日）让责任与休息相互拉锯"
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Cancer Season 2026 at a Glance",
+          "titleEn": "Cancer Season 2026 Transit Timeline",
+          "titleZh": "2026年巨蟹座季节行星运行时间线",
+          "altEn": "Cancer season 2026 timeline: Sun in Cancer June 21, Jupiter to Leo June 30, Mercury retrograde June 29–July 23, Saturn square July 6",
+          "altZh": "2026年巨蟹座季节时间线：太阳入巨蟹6月21日，木星入狮子6月30日，水星逆行6月29日至7月23日，土星四分7月6日",
+          "items": [
+            {
+              "labelEn": "Jun 21",
+              "labelZh": "6月21日",
+              "titleEn": "Sun Enters Cancer",
+              "titleZh": "太阳进入巨蟹座",
+              "noteEn": "Season opens; 30-day emotional and domestic spotlight begins, pulling all signs toward home, comfort, and family",
+              "noteZh": "季节开启，为期30天的情感与家庭聚焦展开，所有星座被吸引向家庭、舒适与亲密"
+            },
+            {
+              "labelEn": "Jun 29–30",
+              "labelZh": "6月29–30日",
+              "titleEn": "Mercury Retrograde + Jupiter Leaves",
+              "titleZh": "水星逆行与木星离开",
+              "noteEn": "Mercury turns retrograde in Cancer (Jun 29), reopening unfinished emotional conversations; Jupiter moves to Leo (Jun 30), closing its year-long Cancer chapter",
+              "noteZh": "水星在巨蟹座开始逆行（6月29日），重启未完的情感对话；木星进入狮子座（6月30日），结束长达一年的巨蟹座篇章"
+            },
+            {
+              "labelEn": "~Jul 6",
+              "labelZh": "约7月6日",
+              "titleEn": "Sun Square Saturn in Aries",
+              "titleZh": "太阳四分白羊座土星",
+              "noteEn": "An exact square sets emotional need against obligation — friction that prompts sustainable boundary-setting, not failure",
+              "noteZh": "精确四分相使情感需求与责任相对，这是促使建立可持续边界的摩擦，而非失败"
+            },
+            {
+              "labelEn": "Jul 22–23",
+              "labelZh": "7月22–23日",
+              "titleEn": "Season Closes; Mercury Direct",
+              "titleZh": "季节结束，水星恢复顺行",
+              "noteEn": "Sun enters Leo around July 22; Mercury stations direct around July 23, easing the looping conversations and emotional circling",
+              "noteZh": "太阳约于7月22日进入狮子座；水星约在7月23日恢复顺行，情感循环与沟通绕圈逐渐平息"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
