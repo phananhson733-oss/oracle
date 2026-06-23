@@ -31,7 +31,7 @@ Bruno Fernandes zodiac sign is Virgo — a Virgo Sun born on 8 September 1994 in
 
 Understanding the Bruno Fernandes zodiac sign matters because the public read of him gets the cause backwards, and that misread shapes how fans, pundits, and even teammates judge his leadership. According to the Pew Research Center, about 29% of U.S. adults say they believe in astrology, so these player charts get shared and argued over far beyond niche forums. In my own data-driven analysis of chart structures, the same problem shows up again and again: a visible behavior gets pinned to the loudest-looking placement instead of the one actually driving it. That is the same person-centered approach Dane Rudhyar brought to reading a chart as a developing whole rather than a fixed label.
 
-The stakes here are practical, not abstract. Fernandes captains Manchester United and is Portugal's vice-captain, behind Cristiano Ronaldo — so when his frustration is filed under "bad temperament," it feeds debates about how he leads. Read accurately, the picture changes from a control problem into a standards problem — which is coached differently and judged more fairly. The confusion tends to cluster in three spots:
+The stakes here are practical, not abstract. Fernandes captains Manchester United, and for Portugal he plays under captain Cristiano Ronaldo — so when his frustration is filed under "bad temperament," it feeds debates about how he leads. Read accurately, the picture changes from a control problem into a standards problem — which is coached differently and judged more fairly. The confusion tends to cluster in three spots:
 
 1. **The temper misread.** Fans see arm-waving and clipped body language and file it under fire-sign heat, when the source is a Virgo standard a teammate just fell short of.
 2. **The spectacle assumption.** Virgo values refined function over flash, so his worth to Portugal shows up in service and accuracy — easy to undervalue if you only score highlight-reel moments.
@@ -55,9 +55,6 @@ You do not need the birth chart open to spot the Virgo pattern. It shows up in o
 4. **Protective, not aggressive, drive.** With Mars in Cancer, his competitive push reads as covering for teammates and shielding the group rather than chasing solo glory.
 5. **Standards stated out loud.** He names what the team should have done, which is Virgo's service-via-craft instinct showing up as leadership rather than ego.
 
-
-![Sequence showing five observable Virgo patterns in Bruno Fernandes's on-pitch behaviour](/images/blog/bruno-fernandes-zodiac-sign-i0-en.svg)
-
 ## Common Misreadings
 
 Most quick takes on the Bruno Fernandes zodiac sign stop at the surface and get the driver wrong. Four misreads come up the most, and each one inverts cause and effect:
@@ -67,9 +64,6 @@ Most quick takes on the Bruno Fernandes zodiac sign stop at the surface and get 
 3. **Misread: his on-pitch frustration and his calm interviews contradict each other. Actual:** the Libra Moon handles the public, fairness-seeking side while the Virgo Sun handles the in-game standard, so both can be true at once.
 4. **Misread: a demanding captain is a divisive one. Actual:** holding teammates to a high, consistent standard is Virgo's way of serving the group, which is different from undermining it.
 
-
-![Two-column comparison of common misreadings of Bruno Fernandes versus accurate chart interpretations](/images/blog/bruno-fernandes-zodiac-sign-i1-en.svg)
-
 ## Bruno Fernandes's Birth Chart at a Glance
 
 | Placement | How It Works | Element / House Focus | How to Observe |
@@ -78,9 +72,6 @@ Most quick takes on the Bruno Fernandes zodiac sign stop at the surface and get 
 | Libra Moon (attributed, unconfirmed) | Regulates feeling through fairness and balance | Air; relationship and diplomacy | Measured, even-handed post-match interviews |
 | Mars in Cancer | Competitive drive routed through protecting the group | Water; team and home instinct | Covering for teammates over chasing solo moments |
 | Scorpio Ascendant (attributed, unconfirmed) | First impression of guarded intensity | Water; depth and control | The brooding surface that gets misread as volatility |
-
-
-![Four-placement overview of Bruno Fernandes's birth chart: Virgo Sun, Libra Moon, Mars in Cancer, Scorpio Ascendant](/images/blog/bruno-fernandes-zodiac-sign-i2-en.svg)
 
 ## Questions People Ask About His Zodiac Sign
 
