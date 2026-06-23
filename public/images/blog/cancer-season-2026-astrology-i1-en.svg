@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 527" role="img" aria-label="Cancer Season 2026 Transit Timeline">
+  <defs>
+    <linearGradient id="cancerseason2026astrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="cancerseason2026astrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="cancerseason2026astrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cancerseason2026astrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cancerseason2026astrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cancerseason2026astrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="url(#cancerseason2026astrology1en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="179" fill="url(#cancerseason2026astrology1en-neb1)"/>
+  <ellipse cx="623" cy="422" rx="334" ry="169" fill="url(#cancerseason2026astrology1en-neb2)"/>
+  <circle cx="145.7" cy="91.0" r="0.55" fill="#cfc8ea" opacity="0.32"/><circle cx="73.1" cy="120.6" r="0.74" fill="#cfc8ea" opacity="0.19"/><circle cx="664.1" cy="268.8" r="1.15" fill="#cfc8ea" opacity="0.27"/><circle cx="645.9" cy="389.0" r="1.11" fill="#cfc8ea" opacity="0.27"/><circle cx="564.5" cy="457.6" r="1.26" fill="#cfc8ea" opacity="0.35"/><circle cx="34.4" cy="195.9" r="0.58" fill="#cfc8ea" opacity="0.41"/><circle cx="614.7" cy="99.0" r="0.55" fill="#cfc8ea" opacity="0.35"/><circle cx="474.2" cy="102.1" r="1.38" fill="#cfc8ea" opacity="0.54"/><circle cx="328.3" cy="408.2" r="0.61" fill="#cfc8ea" opacity="0.24"/><circle cx="96.5" cy="395.8" r="1.62" fill="#cfc8ea" opacity="0.36"/><circle cx="98.9" cy="387.5" r="1.61" fill="#cfc8ea" opacity="0.13"/><circle cx="612.4" cy="204.0" r="0.80" fill="#cfc8ea" opacity="0.35"/><circle cx="21.9" cy="196.9" r="1.15" fill="#cfc8ea" opacity="0.16"/><circle cx="79.1" cy="328.6" r="1.20" fill="#cfc8ea" opacity="0.36"/><circle cx="599.9" cy="398.2" r="1.62" fill="#cfc8ea" opacity="0.38"/><circle cx="544.4" cy="238.5" r="0.98" fill="#cfc8ea" opacity="0.19"/><circle cx="336.6" cy="475.3" r="1.55" fill="#cfc8ea" opacity="0.30"/><circle cx="738.4" cy="425.3" r="1.25" fill="#cfc8ea" opacity="0.30"/><circle cx="419.0" cy="430.6" r="0.76" fill="#cfc8ea" opacity="0.32"/><circle cx="142.6" cy="443.6" r="0.55" fill="#cfc8ea" opacity="0.37"/><circle cx="502.2" cy="225.8" r="0.95" fill="#cfc8ea" opacity="0.29"/><circle cx="57.4" cy="283.8" r="0.63" fill="#cfc8ea" opacity="0.39"/><circle cx="545.1" cy="322.2" r="0.43" fill="#cfc8ea" opacity="0.37"/><circle cx="267.0" cy="21.8" r="1.52" fill="#cfc8ea" opacity="0.25"/><circle cx="51.5" cy="414.6" r="1.01" fill="#cfc8ea" opacity="0.40"/><circle cx="676.5" cy="151.7" r="1.12" fill="#cfc8ea" opacity="0.34"/><circle cx="546.0" cy="87.4" r="1.32" fill="#cfc8ea" opacity="0.14"/><circle cx="526.0" cy="108.6" r="1.27" fill="#cfc8ea" opacity="0.24"/><circle cx="709.1" cy="449.8" r="0.98" fill="#cfc8ea" opacity="0.52"/><circle cx="182.2" cy="274.0" r="0.97" fill="#cfc8ea" opacity="0.51"/><circle cx="501.2" cy="157.5" r="1.64" fill="#cfc8ea" opacity="0.38"/><circle cx="233.2" cy="192.3" r="0.41" fill="#cfc8ea" opacity="0.45"/><circle cx="228.7" cy="309.5" r="0.60" fill="#cfc8ea" opacity="0.16"/><circle cx="194.4" cy="501.7" r="1.64" fill="#cfc8ea" opacity="0.49"/><circle cx="154.5" cy="315.3" r="1.61" fill="#cfc8ea" opacity="0.17"/><circle cx="688.3" cy="505.7" r="1.36" fill="#cfc8ea" opacity="0.19"/><circle cx="360.3" cy="207.8" r="1.47" fill="#cfc8ea" opacity="0.19"/><circle cx="452.7" cy="171.6" r="0.98" fill="#cfc8ea" opacity="0.49"/><circle cx="635.0" cy="69.8" r="1.07" fill="#cfc8ea" opacity="0.26"/><circle cx="467.3" cy="400.7" r="1.34" fill="#cfc8ea" opacity="0.21"/><circle cx="534.0" cy="350.9" r="0.49" fill="#cfc8ea" opacity="0.30"/><circle cx="222.5" cy="399.9" r="0.56" fill="#cfc8ea" opacity="0.38"/><circle cx="294.4" cy="318.8" r="0.67" fill="#cfc8ea" opacity="0.12"/><circle cx="613.3" cy="445.7" r="0.50" fill="#cfc8ea" opacity="0.30"/><circle cx="544.8" cy="446.0" r="1.55" fill="#cfc8ea" opacity="0.53"/><path d="M 90.50100358016789 495.6 L 91.0 498.0 L 93.4 498.4973074593581 L 91.0 499.0 L 90.50100358016789 501.4 L 90.0 499.0 L 87.6 498.4973074593581 L 90.0 498.0 Z" fill="#f6e6bf" opacity="0.6324096184223891"/><path d="M 721.9778033290058 462.5 L 722.5 465.2 L 725.1 465.6660784869455 L 722.5 466.2 L 721.9778033290058 468.8 L 721.5 466.2 L 718.8 465.6660784869455 L 721.5 465.2 Z" fill="#f6e6bf" opacity="0.6008042591623962"/><path d="M 210.86783528514206 489.4 L 211.5 492.7 L 214.9 493.38647963898256 L 211.5 494.0 L 210.86783528514206 497.4 L 210.2 494.0 L 206.9 493.38647963898256 L 210.2 492.7 Z" fill="#f6e6bf" opacity="0.5041794577613473"/><path d="M 459.47478559054434 362.0 L 459.9 364.1 L 461.9 364.494436732959 L 459.9 364.9 L 459.47478559054434 367.0 L 459.1 364.9 L 457.0 364.494436732959 L 459.1 364.1 Z" fill="#f6e6bf" opacity="0.6516261861659587"/><path d="M 375.9918362367898 175.0 L 376.4 177.4 L 378.8 177.86771137127653 L 376.4 178.3 L 375.9918362367898 180.7 L 375.5 178.3 L 373.2 177.86771137127653 L 375.5 177.4 Z" fill="#f6e6bf" opacity="0.66348991766572"/><path d="M 664.1 268.8 L 474.2 102.1 L 336.6 475.3 L 360.3 207.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="513" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 507.8 L 16.5 510.5 L 19.2 511 L 16.5 511.5 L 16 514.2 L 15.5 511.5 L 12.8 511 L 15.5 510.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 507.8 L 744.5 510.5 L 747.2 511 L 744.5 511.5 L 744 514.2 L 743.5 511.5 L 740.8 511 L 743.5 510.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Cancer Season 2026 Transit Timeline</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#cancerseason2026astrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#cancerseason2026astrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="410" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#cancerseason2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#cancerseason2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 21</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Sun Enters Cancer</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Season opens; 30-day emotional and domestic spotlight begins, pulling all signs</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">toward home, comfort, and family</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#cancerseason2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#cancerseason2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 29–30</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Mercury Retrograde + Jupiter Leaves</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Mercury turns retrograde in Cancer (Jun 29), reopening unfinished emotional</text>
+  <text x="132" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">conversations; Jupiter moves to Leo (Jun 30), closing its year-long Cancer chapter</text>
+  <circle cx="92" cy="311" r="13.0" fill="url(#cancerseason2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="311" r="8" fill="url(#cancerseason2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="308.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 307.0 L 92.6 310.4 L 96.0 311 L 92.6 311.6 L 92 315.0 L 91.4 311.6 L 88.0 311 L 91.4 310.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="316.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">~Jul 6</text>
+  <text x="132" y="339.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Sun Square Saturn in Aries</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">An exact square sets emotional need against obligation — friction that prompts</text>
+  <text x="132" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">sustainable boundary-setting, not failure</text>
+  <circle cx="92" cy="410" r="13.0" fill="url(#cancerseason2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="410" r="8" fill="url(#cancerseason2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="407.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 406.0 L 92.6 409.4 L 96.0 410 L 92.6 410.6 L 92 414.0 L 91.4 410.6 L 88.0 410 L 91.4 409.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="415.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jul 22–23</text>
+  <text x="132" y="438.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Season Closes; Mercury Direct</text>
+  <text x="132" y="461.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Sun enters Leo around July 22; Mercury stations direct around July 23, easing the</text>
+  <text x="132" y="478.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">looping conversations and emotional circling</text>
+  <path d="M 202.22749999999988 498.4 L 202.6 500.6 L 204.8 501 L 202.6 501.4 L 202.22749999999988 503.6 L 201.8 501.4 L 199.6 501 L 201.8 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="505" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 498.4 L 558.2 500.6 L 560.4 501 L 558.2 501.4 L 557.7725000000002 503.6 L 557.4 501.4 L 555.2 501 L 557.4 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
