@@ -1,0 +1,98 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "father-s-day-astrology-2026": {
+      "hero": {
+        "prompt": "A vast summer solstice seascape at twilight, a radiant golden sun disk descending into a calm indigo sea at the horizon, its solstice light casting long warm reflections across ancestral coastal waters, while two smaller glowing orbs — one amber, one soft pearl — linger together in the deepening violet sky above low sea cliffs, evoking home, family warmth, and the father archetype crossing into the emotional depths of the ocean, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Sun descending into indigo sea at summer solstice with Jupiter and Venus glowing above calm coastal waters",
+        "altZh": "夏至时分金色太阳沉入靛蓝大海，木星与金星在宁静海岸上空轻轻发光"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Father's Day Astrology 2026 vs a Regular Cancer Season Opening",
+          "titleEn": "Normal Cancer Ingress vs Father's Day 2026",
+          "titleZh": "普通巨蟹入境 vs 2026 父亲节",
+          "altEn": "Comparison of a normal Cancer season ingress and the amplified 2026 Father's Day sky alignment",
+          "altZh": "普通巨蟹季入境与2026父亲节强化天象的对比图",
+          "columns": [
+            {
+              "nameEn": "Normal Cancer Ingress",
+              "nameZh": "普通巨蟹入境",
+              "linesEn": [
+                "Quiet seasonal turn",
+                "Single-note clarity",
+                "Home and nurturing focus",
+                "Easy, one-line read"
+              ],
+              "linesZh": [
+                "宁静的季节转变",
+                "单一清晰的基调",
+                "家庭与养育主题",
+                "简单直接的解读"
+              ]
+            },
+            {
+              "nameEn": "Father's Day 2026",
+              "nameZh": "2026 父亲节",
+              "linesEn": [
+                "Sun ingress lands on Father's Day weekend",
+                "Jupiter and Venus also in Cancer",
+                "Emotional warmth and generosity",
+                "Complex, multi-theme depth"
+              ],
+              "linesZh": [
+                "太阳入境恰逢父亲节周末",
+                "木星与金星同在巨蟹座",
+                "情感温暖与慷慨丰盛",
+                "复杂的多主题深度"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The 2026 Father's Day Sky at a Glance",
+          "titleEn": "Key Sky Factors for Father's Day 2026",
+          "titleZh": "2026 父亲节天象关键要素",
+          "altEn": "Four key astrological factors shaping Father's Day 2026: Sun in Cancer, father archetype, Jupiter-Venus, solstice",
+          "altZh": "塑造2026年父亲节的四大占星要素：太阳入巨蟹、父亲原型、木金合相、夏至时机",
+          "items": [
+            {
+              "nameEn": "Sun Enters Cancer",
+              "nameZh": "太阳入巨蟹",
+              "subEn": "Starts Cancer season, shifting the collective mood toward home and family",
+              "subZh": "开启巨蟹季，将集体情绪转向家庭与归属"
+            },
+            {
+              "nameEn": "Father Archetype",
+              "nameZh": "父亲原型",
+              "subEn": "The Sun symbolizes the father or central authority figure in Western astrology",
+              "subZh": "西方占星中太阳象征父亲或核心权威人物"
+            },
+            {
+              "nameEn": "Jupiter–Venus in Cancer",
+              "nameZh": "木金同在巨蟹",
+              "subEn": "Two warm planets add emotional abundance and sentimental depth to the season",
+              "subZh": "两颗温暖行星为当季增添情感丰盛与柔情深度"
+            },
+            {
+              "nameEn": "Solstice Timing",
+              "nameZh": "夏至时机",
+              "subEn": "The longest day frames the exact ingress moment as the seasonal hinge",
+              "subZh": "一年中最长的白昼为精确入境时刻赋予季节转折意义"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

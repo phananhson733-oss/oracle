@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="2026 父亲节天象关键要素">
+  <defs>
+    <linearGradient id="fathersdayastrology20261zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="fathersdayastrology20261zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="fathersdayastrology20261zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fathersdayastrology20261zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fathersdayastrology20261zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fathersdayastrology20261zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#fathersdayastrology20261zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#fathersdayastrology20261zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#fathersdayastrology20261zh-neb2)"/>
+  <circle cx="407.8" cy="67.8" r="1.09" fill="#cfc8ea" opacity="0.17"/><circle cx="351.1" cy="116.8" r="0.73" fill="#cfc8ea" opacity="0.16"/><circle cx="592.0" cy="224.5" r="1.44" fill="#cfc8ea" opacity="0.23"/><circle cx="59.5" cy="305.9" r="1.28" fill="#cfc8ea" opacity="0.19"/><circle cx="94.9" cy="129.5" r="1.62" fill="#cfc8ea" opacity="0.22"/><circle cx="373.2" cy="200.7" r="1.17" fill="#cfc8ea" opacity="0.40"/><circle cx="18.3" cy="239.2" r="0.68" fill="#cfc8ea" opacity="0.34"/><circle cx="395.9" cy="135.1" r="1.58" fill="#cfc8ea" opacity="0.41"/><circle cx="534.4" cy="219.2" r="0.91" fill="#cfc8ea" opacity="0.29"/><circle cx="711.1" cy="255.7" r="1.03" fill="#cfc8ea" opacity="0.33"/><circle cx="327.0" cy="38.8" r="0.74" fill="#cfc8ea" opacity="0.43"/><circle cx="526.4" cy="267.2" r="1.17" fill="#cfc8ea" opacity="0.30"/><circle cx="241.5" cy="305.5" r="1.44" fill="#cfc8ea" opacity="0.32"/><circle cx="153.2" cy="270.0" r="0.76" fill="#cfc8ea" opacity="0.47"/><circle cx="699.7" cy="330.3" r="0.79" fill="#cfc8ea" opacity="0.35"/><circle cx="197.7" cy="271.7" r="0.91" fill="#cfc8ea" opacity="0.18"/><circle cx="377.7" cy="262.7" r="0.95" fill="#cfc8ea" opacity="0.20"/><circle cx="383.9" cy="313.8" r="1.13" fill="#cfc8ea" opacity="0.47"/><circle cx="256.6" cy="231.5" r="1.05" fill="#cfc8ea" opacity="0.45"/><circle cx="506.2" cy="343.8" r="1.21" fill="#cfc8ea" opacity="0.16"/><circle cx="198.7" cy="244.9" r="1.60" fill="#cfc8ea" opacity="0.19"/><circle cx="454.1" cy="170.9" r="0.59" fill="#cfc8ea" opacity="0.32"/><circle cx="661.9" cy="150.5" r="1.56" fill="#cfc8ea" opacity="0.28"/><circle cx="161.3" cy="25.1" r="0.55" fill="#cfc8ea" opacity="0.48"/><circle cx="669.2" cy="269.5" r="0.94" fill="#cfc8ea" opacity="0.17"/><circle cx="681.3" cy="24.3" r="1.54" fill="#cfc8ea" opacity="0.36"/><circle cx="111.9" cy="221.9" r="1.05" fill="#cfc8ea" opacity="0.27"/><circle cx="560.2" cy="121.2" r="1.12" fill="#cfc8ea" opacity="0.44"/><circle cx="383.6" cy="16.3" r="0.55" fill="#cfc8ea" opacity="0.37"/><circle cx="623.6" cy="44.5" r="1.66" fill="#cfc8ea" opacity="0.52"/><circle cx="105.1" cy="239.1" r="1.25" fill="#cfc8ea" opacity="0.51"/><path d="M 732.3917877040803 289.9 L 732.9 292.3 L 735.3 292.7892011052463 L 732.9 293.3 L 732.3917877040803 295.7 L 731.9 293.3 L 729.5 292.7892011052463 L 731.9 292.3 Z" fill="#f6e6bf" opacity="0.632923536025919"/><path d="M 306.28741489723325 241.2 L 306.9 244.3 L 310.0 244.85585025255568 L 306.9 245.4 L 306.28741489723325 248.5 L 305.7 245.4 L 302.6 244.85585025255568 L 305.7 244.3 Z" fill="#f6e6bf" opacity="0.618711196933873"/><path d="M 321.50943891331553 302.4 L 322.0 304.8 L 324.4 305.2902629340533 L 322.0 305.8 L 321.50943891331553 308.2 L 321.0 305.8 L 318.6 305.2902629340533 L 321.0 304.8 Z" fill="#f6e6bf" opacity="0.7493018856504932"/><path d="M 724.6662105061114 277.9 L 725.2 280.7 L 728.0 281.23290989291854 L 725.2 281.8 L 724.6662105061114 284.5 L 724.1 281.8 L 721.4 281.23290989291854 L 724.1 280.7 Z" fill="#f6e6bf" opacity="0.5820708186598494"/><path d="M 259.27376475557685 352.9 L 259.9 356.1 L 263.1 356.6955425424967 L 259.9 357.3 L 259.27376475557685 360.5 L 258.7 357.3 L 255.4 356.6955425424967 L 258.7 356.1 Z" fill="#f6e6bf" opacity="0.6819138881051913"/><path d="M 59.5 305.9 L 395.9 135.1 L 534.4 219.2 L 153.2 270.0 L 383.9 313.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">2026 父亲节天象关键要素</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#fathersdayastrology20261zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#fathersdayastrology20261zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#fathersdayastrology20261zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#fathersdayastrology20261zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">太阳入巨蟹</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">开启巨蟹季，将集体情绪转向家庭与归属</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#fathersdayastrology20261zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#fathersdayastrology20261zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">父亲原型</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">西方占星中太阳象征父亲或核心权威人物</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#fathersdayastrology20261zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#fathersdayastrology20261zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">木金同在巨蟹</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">两颗温暖行星为当季增添情感丰盛与柔情深度</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#fathersdayastrology20261zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#fathersdayastrology20261zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">夏至时机</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">一年中最长的白昼为精确入境时刻赋予季节转折意义</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
