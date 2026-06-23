@@ -1,5 +1,5 @@
-// INPUT: Express 服务器配置（含环境变量加载与统一响应中间件）。
-// OUTPUT: 启动 HTTP 服务（含百科与支付等 API 路由）。
+// INPUT: Express 服务器配置（含环境变量加载、短链跳转与统一响应中间件）。
+// OUTPUT: 启动 HTTP 服务（含 /go 短链跳转、百科与支付等 API 路由）。
 // POS: 后端入口文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import path from "path";
@@ -38,6 +38,7 @@ import gmRouter from "./api/gm.js";
 import cronRouter from "./api/cron.js";
 import { newsletterRouter } from "./api/newsletter.js";
 import { savedReadingsRouter } from "./api/savedReadings.js";
+import { goRedirectRouter } from "./api/goRedirect.js";
 import { apiResponseMiddleware } from "./utils/apiResponse.js";
 
 import { initMonitoring, captureError } from "./observability/monitoring.js";
@@ -318,6 +319,10 @@ app.use(
 );
 
 app.use(apiResponseMiddleware);
+
+// Public short-link redirects. Mounted outside /api so Vercel can route
+// /go/:code directly here before the SPA fallback.
+app.use("/go", goRedirectRouter);
 
 // API Routes
 app.use("/api/natal", natalRouter);

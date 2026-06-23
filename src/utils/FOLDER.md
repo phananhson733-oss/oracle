@@ -1,4 +1,4 @@
-<!-- INPUT: Frontend utility helpers (performance monitoring and shared utilities). -->
+<!-- INPUT: Frontend utility helpers (performance monitoring, short-link redirects, and shared utilities). -->
 <!-- OUTPUT: src/utils directory index and update log. -->
 <!-- POS: src/utils directory index; update this header when files change. -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -8,11 +8,13 @@
 
 架构概要
 - 收口前端运行时工具函数与性能监控。
-- 提供 Core Web Vitals 上报与性能测量工具。
+- 提供 Core Web Vitals 上报、性能测量与短链跳转解析工具。
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 utils 目录结构与更新记录。
+- goRedirects.ts｜地位：短链跳转解析工具｜功能：校验 `/go/:code` 与 `to` 回退目标，仅允许跳转到 AstrologyWiki 自有域名。
 - performance.ts｜地位：性能监控工具｜功能：Web Vitals 采集与性能测量。
 
 近期更新
+- 新增 goRedirects resolver，支持 `/go/:code?to=...` 同站短链跳转并防止开放跳转。
 - Web Vitals 上报与分析追踪对齐，提供统一上报入口。

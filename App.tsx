@@ -1,6 +1,6 @@
-// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、付费墙回调与分析追踪）。
-// OUTPUT: 导出主应用组件（含合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅与核心功能事件）。
-// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、短链跳转、付费墙回调与分析追踪）。
+// OUTPUT: 导出主应用组件（含 /go 短链跳转、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅与核心功能事件）。
+// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, {
@@ -88,6 +88,8 @@ import { ConsentBanner } from "./components/ConsentBanner";
 import { MobileBottomNav } from "./components/MobileBottomNav";
 import { Footer } from "./components/Footer";
 import { useAnalyticsTracking } from "./hooks/useAnalytics";
+import { goRedirects } from "./data/goRedirects";
+import { resolveGoRedirect } from "./src/utils/goRedirects";
 
 // Global SEO schemas (Organization + WebSite). Single script tag that owns
 // the brand-level structured data for the entire SPA. Page-level <SEO>
@@ -231,6 +233,27 @@ const LangGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     );
   }
   return <>{children}</>;
+};
+
+const GoRedirectPage: React.FC = () => {
+  const { code } = useParams<{ code: string }>();
+  const location = useLocation();
+  const destination = resolveGoRedirect({
+    code,
+    inlineDestination: new URLSearchParams(location.search).get("to"),
+    registry: goRedirects,
+  });
+
+  useEffect(() => {
+    if (!destination || typeof window === "undefined") return;
+    window.location.replace(destination);
+  }, [destination]);
+
+  if (!destination) {
+    return <NotFoundPage />;
+  }
+
+  return <OracleLoading />;
 };
 
 const NotFoundPage: React.FC = () => {
@@ -1022,6 +1045,7 @@ const AppContent: React.FC = () => {
                 AuthContext gating is handled inside LandingPageV2 sections
                 where it matters (e.g., BirthChart CTA). */}
             <Route path="/" element={<LandingPageV2 />} />
+            <Route path="/go/:code" element={<GoRedirectPage />} />
             <Route path="/landing-v2" element={<LandingPageV2 />} />
             {/* SPA/static parity route for /landing-v2/{en,zh}/.
                 MUST be registered before the /:lang/* catch-all so React
