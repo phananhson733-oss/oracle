@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,112 +11,10 @@
   "articles": {
     "cristiano-ronaldo-zodiac-sign": {
       "hero": {
-        "prompt": "A luminous stream of silver-aqua light — the shape of flowing water — pours across a vast nocturnal plain toward a distant ridge rimmed in amber-gold firelight, the two glowing forms sharing one unbroken horizon under a star-dusted sky, the cool aquamarine flow and the warm golden ridge occupying the same sweeping landscape in quiet tension, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Silver aqua water-light flows toward amber-gold ridge under deep indigo sky, Aquarius legacy meeting Saturn discipline",
-        "altZh": "银蓝水流在靛蓝夜空下涌向琥珀金山脊，象征水瓶座太阳的传承感与土星纪律相遇"
-      },
-      "inline": [
-        {
-          "kind": "compare",
-          "afterHeadingEn": "## Cristiano Ronaldo's Zodiac Sign vs Adjacent Concepts: How It Works + Trade-offs",
-          "afterHeadingZh": "## C罗星座与相近概念：运作方式 + 取舍",
-          "titleEn": "Three Ways to Read an Aquarius Sun",
-          "titleZh": "读水瓶座太阳的三种方式",
-          "altEn": "Comparison of flat sun-sign label vs structural reading vs results prediction for Cristiano Ronaldo zodiac sign",
-          "altZh": "平面太阳星座标签、结构式解读与结果预测三种方式对比图",
-          "columns": [
-            {
-              "nameEn": "Flat Sun-Sign Label",
-              "nameZh": "平面太阳星座标签",
-              "linesEn": [
-                "One-word trait: quirky, aloof",
-                "No ruler or timing signal",
-                "Fixed character verdict",
-                "Comfortable but shallow"
-              ],
-              "linesZh": [
-                "单词特质：古怪、疏离",
-                "无守护星或时机信号",
-                "固定性格判词",
-                "安慰但浅层"
-              ]
-            },
-            {
-              "nameEn": "Structural Reading (This Method)",
-              "nameZh": "结构式解读（本文方法）",
-              "linesEn": [
-                "Sun + Saturn ruler structure",
-                "Legacy and discipline wired together",
-                "Saturn transits as timing signal",
-                "Pressure pattern, not a destiny"
-              ],
-              "linesZh": [
-                "太阳+土星守护星结构",
-                "传承与纪律相互接线",
-                "土星过运作为时机信号",
-                "描述压力模式，非定数"
-              ]
-            },
-            {
-              "nameEn": "Results-Driven Prediction",
-              "nameZh": "以结果为导向的预测",
-              "linesEn": [
-                "Names a champion or outcome",
-                "Stands or falls on the result",
-                "Loses credibility after the score",
-                "No chart can supply a scoreline"
-              ],
-              "linesZh": [
-                "点名冠军或结果",
-                "成败系于最终比分",
-                "结果出来后失去可信度",
-                "没有哪张盘能供给比分"
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "sequence",
-          "afterHeadingEn": "## How to Read Cristiano Ronaldo's Zodiac Sign in Your Chart",
-          "afterHeadingZh": "## 如何在星盘里识别 C罗星座",
-          "titleEn": "5 Steps to Read an Aquarius Sun the Structural Way",
-          "titleZh": "结构式读水瓶太阳的五步法",
-          "altEn": "Five-step method for reading an Aquarius Sun through natal placement and Saturn transits",
-          "altZh": "通过本命落点与土星过运读水瓶座太阳的五步方法图",
-          "items": [
-            {
-              "nameEn": "Find the Sun in Aquarius",
-              "nameZh": "找到水瓶座的太阳",
-              "subEn": "Read it as a legacy-and-individuality theme, not a slogan",
-              "subZh": "把它读成传承与个体性主题，而非口号"
-            },
-            {
-              "nameEn": "Check Saturn",
-              "nameZh": "检查土星",
-              "subEn": "Traditional ruler of Aquarius; its transits time seasons of pressure",
-              "subZh": "水瓶传统守护星，其过运为压力季节标定时机"
-            },
-            {
-              "nameEn": "Note Saturn in Aries 2025-26",
-              "nameZh": "留意2025-26年土星在白羊",
-              "subEn": "Moving over natal Mars and Venus in Aries as a backdrop of consolidation",
-              "subZh": "经过本命火星与金星，形成巩固的背景"
-            },
-            {
-              "nameEn": "Treat Moon Degree as Provisional",
-              "nameZh": "把月亮度数当作暂定",
-              "subEn": "Exact degree and houses depend on a birth time not firmly confirmed",
-              "subZh": "精确度数与宫位取决于未确认的出生时间"
-            },
-            {
-              "nameEn": "Read Each Transit as a Chapter",
-              "nameZh": "把每次过运读成一个章节",
-              "subEn": "A season still to be lived, not a fixed outcome",
-              "subZh": "仍要被活过的季节，而非固定结局"
-            }
-          ]
-        }
-      ]
+        "prompt": "An atmospheric painterly editorial scene evoking the theme of \"Cristiano Ronaldo\": a serene natural landscape — a still lake, open plain, or misty horizon — under a vast night sky, the subject suggested through soft glowing celestial forms woven into the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An atmospheric celestial landscape evoking Cristiano Ronaldo.",
+        "altZh": "一幅氛围式星空风景，意象呼应「Cristiano Ronaldo」。"
+      }
     }
   }
 }

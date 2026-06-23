@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const argentinaWorldCup2026AstrologyEn: WikiArticle = {
   slug: "argentina-world-cup-2026-astrology",
   image: "/images/blog/argentina-world-cup-2026-astrology.jpg",
-  image_alt: "Argentina's Cancer national chart under Jupiter and Saturn transits — two opposing glowing forces across one twilight pampas sky",
+  image_alt: "An atmospheric celestial landscape evoking Argentina.",
   title: "Argentina's World Cup 2026 Astrology: A Cancer Nation Under Jupiter and Saturn",
   description: "Argentina's World Cup 2026 astrology is a mundane reading of the country's 1816 national chart against the year's transits, led by a Cancer Sun.",
   authorId: "aditi-sharma",
@@ -122,7 +122,7 @@ This reading uses the Western tropical national chart. A Vedic mundane reading w
 export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
   slug: "argentina-world-cup-2026-astrology",
   image: "/images/blog/argentina-world-cup-2026-astrology.jpg",
-  image_alt: "阿根廷巨蟹国家盘同时承受木星扩张与土星考验——两道对立光芒横跨南美草原暮空",
+  image_alt: "一幅氛围式星空风景，意象呼应「Argentina」。",
   title: "阿根廷世界杯占星：一颗巨蟹太阳同时被木星抬升、被土星考验",
   description: "阿根廷世界杯占星，是用阿根廷1816年国家星盘去读这一年过运、以巨蟹座太阳为主轴的国运解读。国运占星（mundane）读的是国家与事件，用的是国家盘而非个人盘，所以问题不是某个球员状态好坏，而是2026年的天象替这支卫冕队点亮了哪些集体主题。这套读法不替奖杯下注，它只标定一张国家盘里的主题何时被天象激活。",
   authorId: "aditi-sharma",

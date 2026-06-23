@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const lionelMessiZodiacSignEn: WikiArticle = {
   slug: "lionel-messi-zodiac-sign",
   image: "/images/blog/lionel-messi-zodiac-sign.jpg",
-  image_alt: "Moonlit shoreline leading to a gold-lit mountain peak, evoking Cancer Sun's arc from security toward mastery",
+  image_alt: "An atmospheric celestial landscape evoking Lionel Messi.",
   title: "Lionel Messi's Zodiac Sign: Reading a Cancer Sun's 2026 World Cup Timing",
   description: "Lionel Messi's zodiac sign is Cancer, set by his June 24, 1987 birth date and ruled by the Moon.",
   authorId: "julian-thorne",
@@ -122,7 +122,7 @@ It pairs a security-seeking Cancer Sun with a mastery-seeking Capricorn point, f
 export const lionelMessiZodiacSignZh: WikiArticle = {
   slug: "lionel-messi-zodiac-sign",
   image: "/images/blog/lionel-messi-zodiac-sign.jpg",
-  image_alt: "月光海岸延伸至金光山峰，象征巨蟹太阳从安全感走向赢得权威的成长弧线",
+  image_alt: "一幅氛围式星空风景，意象呼应「Lionel Messi」。",
   title: "梅西的星座：读一颗巨蟹座太阳在 2026 世界杯的时机",
   description: "梅西的星座是巨蟹座，由 1987 年 6 月 24 日的出生日期确定，守护星是月亮。在心理占星里，巨蟹座太阳把身份框定在安全感、归属与\"守护重要之物\"的安静劳作上，这比\"情绪化、忠诚\"的老标签更有用作起点。",
   authorId: "julian-thorne",

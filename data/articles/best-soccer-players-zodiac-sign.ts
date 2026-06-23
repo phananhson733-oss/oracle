@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const bestSoccerPlayersZodiacSignEn: WikiArticle = {
   slug: "best-soccer-players-zodiac-sign",
   image: "/images/blog/best-soccer-players-zodiac-sign.jpg",
-  image_alt: "Soccer pitch glowing under a starry indigo sky, earthly calendar grid and celestial constellations diverging across the horizon",
+  image_alt: "An atmospheric celestial landscape evoking Best Soccer Players.",
   title: "Best Soccer Players' Zodiac Sign: What the Birth-Date Data Actually Shows",
   description: "The best-player zodiac question is the search for a single zodiac sign that produces the best soccer players",
   authorId: "marcus-orion",
@@ -122,7 +122,7 @@ Yes — as symbolism, not statistics. Read the sign for fun and personality, but
 export const bestSoccerPlayersZodiacSignZh: WikiArticle = {
   slug: "best-soccer-players-zodiac-sign",
   image: "/images/blog/best-soccer-players-zodiac-sign.jpg",
-  image_alt: "深蓝夜空下光格球场与星座图案在地平线上各行其道的全景夜景",
+  image_alt: "一幅氛围式星空风景，意象呼应「Best Soccer Players」。",
   title: "足球运动员星座背后，真正在说话的其实是日历",
   description: "顶尖球员星座论说的是球员生日扎堆是真的，但星座导致出色不是真的。很多人查足球运动员星座，期待找出一个专出好球员的星座，可精英队里的生日规律来自日历，而不是星空。把它当成一道数据题、而不是一份运势来读，2026 世界杯占星主题支柱页这一类内容才能既保留星座的趣味、又不把数字读歪。",
   authorId: "marcus-orion",

@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,

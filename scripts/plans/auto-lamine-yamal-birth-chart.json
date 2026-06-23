@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,106 +11,10 @@
   "articles": {
     "lamine-yamal-birth-chart": {
       "hero": {
-        "prompt": "A vast midnight ocean shoreline where a full moon hangs high over dark Cancer waters and a second great orb of amber-gold light crests the far horizon — Jupiter's radiance spreading across slow tidal swells and catching sea-cliff edges in teal-gold shimmer, seafoam glowing at the base of dark rocks, the sky layered with stars, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Moonlit ocean shoreline at night with Jupiter's golden glow cresting the horizon over dark Cancer tidal waters",
-        "altZh": "夜晚月光下的海岸线，木星的金色光芒从地平线升起，照亮巨蟹星座的深色潮水"
-      },
-      "inline": [
-        {
-          "kind": "compare",
-          "afterHeadingEn": "## Lamine Yamal's Birth Chart vs Adjacent Concepts: How It Works + Trade-offs",
-          "afterHeadingZh": "## 亚马尔的星盘与相近概念：运作方式 + 取舍",
-          "titleEn": "Three Approaches to a Birth Chart",
-          "titleZh": "三种读盘方式的对比",
-          "altEn": "Comparison of sun-sign profile, psychological birth chart reading, and results-driven forecast approaches",
-          "altZh": "太阳星座侧写、心理占星本命盘解读与结果导向预测三种方式的对比",
-          "columns": [
-            {
-              "nameEn": "Sun-Sign Profile",
-              "nameZh": "太阳星座侧写",
-              "linesEn": [
-                "Labels mood and personality",
-                "Stops at adjectives",
-                "No growth arc or timing"
-              ],
-              "linesZh": [
-                "标注情绪与性格",
-                "止步于形容词",
-                "不涉及成长弧线或时机"
-              ]
-            },
-            {
-              "nameEn": "Psychological Chart Reading",
-              "nameZh": "心理占星本命盘解读",
-              "linesEn": [
-                "Reads a growth direction",
-                "Explains how Cancer Sun works",
-                "Tracks transits as timing activators"
-              ],
-              "linesZh": [
-                "读出成长方向",
-                "解释巨蟹太阳如何运作",
-                "把过运读作时机激活器"
-              ]
-            },
-            {
-              "nameEn": "Results-Driven Forecast",
-              "nameZh": "结果导向预测",
-              "linesEn": [
-                "Names a winner",
-                "Stands or falls on verdict",
-                "Sacrifices long-term credibility"
-              ],
-              "linesZh": [
-                "点名冠军",
-                "成败系于判词",
-                "以长期可信度换取快感"
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "sequence",
-          "afterHeadingEn": "## How to Read Lamine Yamal's Birth Chart in Your Chart",
-          "afterHeadingZh": "## 如何在你的星盘里识别亚马尔星盘的读法",
-          "titleEn": "Five Steps to Apply the Cancer Sun Method",
-          "titleZh": "五步运用巨蟹太阳读法",
-          "altEn": "Five-step sequence for applying the Cancer Sun birth chart method to any natal chart",
-          "altZh": "将巨蟹太阳本命盘读法运用到任何星盘的五步流程",
-          "items": [
-            {
-              "nameEn": "Locate the Cancer Sun",
-              "nameZh": "找到巨蟹座太阳",
-              "subEn": "Read it as an instinct-and-belonging theme, not a fixed mood",
-              "subZh": "把它读成直觉与归属的主题，而不是固定的情绪"
-            },
-            {
-              "nameEn": "Check the Moon",
-              "nameZh": "检查月亮",
-              "subEn": "Cancer's ruler — its sign and house colour how that instinct is sought and shown",
-              "subZh": "巨蟹的守护星——它的星座与宫位影响这份直觉如何被寻求与显现"
-            },
-            {
-              "nameEn": "Note Jupiter in Cancer 2025-26",
-              "nameZh": "留意木星 2025-26 年行经巨蟹",
-              "subEn": "A twelve-year expansion of the Sun's themes; the exact contact fell earlier in 2026",
-              "subZh": "十二年一次的太阳主题扩张，精确接触在 2026 年更早时就已发生"
-            },
-            {
-              "nameEn": "Treat Unconfirmed Placements as Provisional",
-              "nameZh": "把未确认落点视为暂定",
-              "subEn": "Cancer Moon, Virgo rising, and house claims all require a confirmed birth time",
-              "subZh": "巨蟹月亮、处女上升以及宫位说法，都依赖经确认的出生时间"
-            },
-            {
-              "nameEn": "Read Each Transit as a Chapter",
-              "nameZh": "把每次过运读成一个篇章",
-              "subEn": "A chapter still to be lived, not a fixed outcome",
-              "subZh": "一个还要被活出来的篇章——而不是一个已定的结果"
-            }
-          ]
-        }
-      ]
+        "prompt": "An atmospheric painterly editorial scene evoking the theme of \"Lamine Yamal\": a serene natural landscape — a still lake, open plain, or misty horizon — under a vast night sky, the subject suggested through soft glowing celestial forms woven into the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An atmospheric celestial landscape evoking Lamine Yamal.",
+        "altZh": "一幅氛围式星空风景，意象呼应「Lamine Yamal」。"
+      }
     }
   }
 }

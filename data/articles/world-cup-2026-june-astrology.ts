@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const worldCup2026JuneAstrologyEn: WikiArticle = {
   slug: "world-cup-2026-june-astrology",
   image: "/images/blog/world-cup-2026-june-astrology.jpg",
-  image_alt: "June 2026 tournament sky — Jupiter in Cancer warmth arcing toward Leo spotlight, Saturn in Aries steadying the whole month",
+  image_alt: "An atmospheric celestial landscape evoking Reading World Cup 2026 June Astrology Over the Opening Rounds.",
   title: "Reading World Cup 2026 June Astrology Over the Opening Rounds",
   description: "The June 2026 tournament sky is the set of transits and lunations overhead during the World Cup's opening month, led by Jupiter exalted in Cancer.",
   authorId: "elena-vane",
@@ -121,7 +121,7 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 export const worldCup2026JuneAstrologyZh: WikiArticle = {
   slug: "world-cup-2026-june-astrology",
   image: "/images/blog/world-cup-2026-june-astrology.jpg",
-  image_alt: "2026年6月赛事天象——木星巨蟹的集体暖意弧向狮子座高光，土星白羊贯穿全月稳住底色",
+  image_alt: "一幅氛围式星空风景，意象呼应「Reading World Cup 2026 June Astrology Over the Opening Rounds」。",
   title: "2026世界杯六月占星：读开赛初的那片天空",
   description: "2026年6月赛事天象，指的是世界杯开赛首月头顶的过运与朔望，由旺相于巨蟹座的木星领衔。所谓2026世界杯6月占星日历，是去读小组赛期间真实的行星日历，而不是去猜哪支球队夺冠。它不是哪个赛果模型，而是一段时间窗口的描述：哪几天天空偏暖、哪几天底色偏紧、哪两次月相分别标记重启与收束。",
   authorId: "elena-vane",

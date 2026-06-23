@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,106 +11,10 @@
   "articles": {
     "lionel-messi-zodiac-sign": {
       "hero": {
-        "prompt": "A moonlit shoreline at night where silver-white tide foam recedes toward a horizon dominated by a distant snow-capped mountain peak bathed in warm gold light, the crescent moon high above casting a soft silver path across still dark water, the unbroken sweep from sea to summit evoking the arc from private care toward earned authority, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Moonlit shoreline leading to a gold-lit mountain peak, evoking Cancer Sun's arc from security toward mastery",
-        "altZh": "月光海岸延伸至金光山峰，象征巨蟹太阳从安全感走向赢得权威的成长弧线"
-      },
-      "inline": [
-        {
-          "kind": "sequence",
-          "afterHeadingEn": "## How to Read Lionel Messi's Zodiac Sign in Your Chart",
-          "afterHeadingZh": "## 如何在你的星盘里识别梅西星座的读法",
-          "titleEn": "Five Steps to Read a Cancer Sun Chart",
-          "titleZh": "解读巨蟹太阳星盘的五个步骤",
-          "altEn": "Five-step guide to reading a Cancer Sun chart the way Messi's zodiac sign is read",
-          "altZh": "像读梅西星座那样解读巨蟹太阳的五个步骤",
-          "items": [
-            {
-              "nameEn": "Locate the Cancer Sun",
-              "nameZh": "找到巨蟹太阳",
-              "subEn": "Read it as a security-and-belonging theme, not a fixed mood",
-              "subZh": "把它读成安全与归属的主题，而非固定情绪"
-            },
-            {
-              "nameEn": "Check the Moon",
-              "nameZh": "检查月亮",
-              "subEn": "Cancer's ruler; its sign and house color how that security is sought",
-              "subZh": "巨蟹守护星；它的星座与宫位影响安全感如何被寻求"
-            },
-            {
-              "nameEn": "Note the Cancer-Capricorn Axis",
-              "nameZh": "留意巨蟹—摩羯轴线",
-              "subEn": "If Capricorn rising is confirmed, the pull between private safety and public mastery",
-              "subZh": "若摩羯上升被确认，则是私人安全与公共掌控之间的拉扯"
-            },
-            {
-              "nameEn": "Track Jupiter Through Cancer",
-              "nameZh": "追踪木星行经巨蟹",
-              "subEn": "A same-sign backdrop until June 30, 2026 — not an exact degree contact",
-              "subZh": "直至 2026 年 6 月 30 日的同星座背景，而非精确度数接触"
-            },
-            {
-              "nameEn": "Treat Rising Signs as Provisional",
-              "nameZh": "上升星座视为暂定",
-              "subEn": "Until a confirmed birth time, any rising-sign claim stays speculative",
-              "subZh": "在出生时间确认前，任何上升星座的说法均保持推测性"
-            }
-          ]
-        },
-        {
-          "kind": "compare",
-          "afterHeadingEn": "## Lionel Messi's Zodiac Sign at a Glance",
-          "afterHeadingZh": "## 梅西星座一览",
-          "titleEn": "Cancer Sun, Cancer-Capricorn Axis, and Jupiter in Cancer",
-          "titleZh": "巨蟹太阳、巨蟹—摩羯轴线与木星在巨蟹",
-          "altEn": "Comparison of Cancer Sun, Cancer-Capricorn axis, and Jupiter in Cancer in Messi's chart",
-          "altZh": "梅西星盘中巨蟹太阳、巨蟹—摩羯轴线与木星在巨蟹的对比",
-          "columns": [
-            {
-              "nameEn": "Cancer Sun",
-              "nameZh": "巨蟹太阳",
-              "linesEn": [
-                "Fixed by June 24, 1987 birth date",
-                "Ties identity to security and belonging",
-                "Moon rules the sign, coloring expression"
-              ],
-              "linesZh": [
-                "由 1987 年 6 月 24 日出生日期固定",
-                "把身份系于安全与归属",
-                "月亮主管此星座，影响表达方式"
-              ]
-            },
-            {
-              "nameEn": "Cancer-Capricorn Axis",
-              "nameZh": "巨蟹—摩羯轴线",
-              "linesEn": [
-                "Pairs security-seeking Sun with reported Capricorn rising",
-                "Growth arc: private care toward earned authority",
-                "Provisional until birth time is firmly confirmed"
-              ],
-              "linesZh": [
-                "把寻求安全的太阳与被报告的摩羯上升配对",
-                "成长弧线：从私人关怀走向赢得的权威",
-                "出生时间牢固确认前保持暂定"
-              ]
-            },
-            {
-              "nameEn": "Jupiter in Cancer (to Jun 30)",
-              "nameZh": "木星在巨蟹（至 6/30）",
-              "linesEn": [
-                "Transiting Jupiter in Cancer through June 30, 2026",
-                "Same-sign backdrop, not an exact natal contact",
-                "Broad emphasis on belonging and team identity"
-              ],
-              "linesZh": [
-                "过运木星行经巨蟹直至 2026 年 6 月 30 日",
-                "同星座背景，非精确本命接触",
-                "对归属与团队身份的宽泛强调"
-              ]
-            }
-          ]
-        }
-      ]
+        "prompt": "An atmospheric painterly editorial scene evoking the theme of \"Lionel Messi\": a serene natural landscape — a still lake, open plain, or misty horizon — under a vast night sky, the subject suggested through soft glowing celestial forms woven into the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An atmospheric celestial landscape evoking Lionel Messi.",
+        "altZh": "一幅氛围式星空风景，意象呼应「Lionel Messi」。"
+      }
     }
   }
 }

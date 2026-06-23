@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const zodiacSignsAsWorldCup2026TeamsEn: WikiArticle = {
   slug: "zodiac-signs-as-world-cup-2026-teams",
   image: "/images/blog/zodiac-signs-as-world-cup-2026-teams.jpg",
-  image_alt: "Four elemental glows — fire, earth, air, water — flowing across one nocturnal plain under a starlit indigo sky",
+  image_alt: "An atmospheric celestial landscape evoking Reading Zodiac Signs as World Cup 2026 Teams Through the Elements.",
   title: "Reading Zodiac Signs as World Cup 2026 Teams Through the Elements",
   description: "The Zodiac-Team lens is a playful way of mapping the twelve zodiac signs onto national playing styles by element.",
   authorId: "elena-vane",
@@ -121,7 +121,7 @@ Yes, and it is the most useful part. Read your Sun's element and modality as a p
 export const zodiacSignsAsWorldCup2026TeamsZh: WikiArticle = {
   slug: "zodiac-signs-as-world-cup-2026-teams",
   image: "/images/blog/zodiac-signs-as-world-cup-2026-teams.jpg",
-  image_alt: "火、土、风、水四种元素光芒在星空下广阔夜景中共存流淌",
+  image_alt: "一幅氛围式星空风景，意象呼应「Reading Zodiac Signs as World Cup 2026 Teams Through the Elements」。",
   title: "用星座看世界杯球队，把四元素读成踢球风格",
   description: "星座球队透镜是一种按元素把十二星座对应世界杯球队踢球风格的趣味方式。它是球迷用占星语言聊\"这支队是什么脾气\"的一种说法，而不是说比赛结果写在星星里。用星座看世界杯球队，就是把火、土、风、水四元素翻译成一眼能认出的风格：火象偏爱扑上去搏一下的对攻，土象稳着守、慢慢磨，风象在中场倒脚找空间，水象凭感觉随势头起落。",
   authorId: "elena-vane",

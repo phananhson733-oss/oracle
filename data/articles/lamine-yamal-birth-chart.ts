@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const lamineYamalBirthChartEn: WikiArticle = {
   slug: "lamine-yamal-birth-chart",
   image: "/images/blog/lamine-yamal-birth-chart.jpg",
-  image_alt: "Moonlit ocean shoreline at night with Jupiter's golden glow cresting the horizon over dark Cancer tidal waters",
+  image_alt: "An atmospheric celestial landscape evoking Lamine Yamal.",
   title: "Lamine Yamal's Birth Chart: A Cancer Sun Catching Jupiter's 2026 Tail",
   description: "Lamine Yamal's birth chart is the natal horoscope of the footballer born July 13, 2007, led by a Cancer Sun ruled by the Moon.",
   authorId: "julian-thorne",
@@ -122,7 +122,7 @@ A Virgo rising depends on an exact birth time that is not firmly public. Treat a
 export const lamineYamalBirthChartZh: WikiArticle = {
   slug: "lamine-yamal-birth-chart",
   image: "/images/blog/lamine-yamal-birth-chart.jpg",
-  image_alt: "夜晚月光下的海岸线，木星的金色光芒从地平线升起，照亮巨蟹星座的深色潮水",
+  image_alt: "一幅氛围式星空风景，意象呼应「Lamine Yamal」。",
   title: "亚马尔星盘里那颗巨蟹太阳，正好赶上木星 2026 的尾巴",
   description: "亚马尔的星盘，是这位 2007 年 7 月 13 日出生的足球运动员的本命盘，核心是一颗由月亮守护的巨蟹座太阳。在心理占星里，巨蟹座太阳把身份框定在情感共振、直觉与守护之需上，比\"敏感的孩子\"那种老说法精确。",
   authorId: "julian-thorne",
