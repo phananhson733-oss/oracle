@@ -1,15 +1,13 @@
-// Article: What the Jeremy Doku Birth Chart Reveals About His World Cup Exit
+// Article: What the Jeremy Doku Birth Chart Reveals About His World Cup Paternity Choice
 // Generated from flow-mvp _staging/ by tools/scripts/gg-md-to-oracle-ts.mjs.
 import type { WikiArticle } from "../../types";
 
 export const jeremyDokuBirthChartEn: WikiArticle = {
   slug: "jeremy-doku-birth-chart",
-  image: "/images/blog/jeremy-doku-birth-chart.jpg",
-  image_alt: "Atmospheric night sky with silver comet arc and golden horizon glow representing Gemini Sun and Leo Rising duality",
-  title: "What the Jeremy Doku Birth Chart Reveals About His World Cup Exit",
+  title: "What the Jeremy Doku Birth Chart Reveals About His World Cup Paternity Choice",
   description: "Jeremy Doku's birth chart is the snapshot of the sky at the moment he was born on May 27, 2002, in Antwerp, Belgium, read most often as a Gemini Sun, Leo Rising portrait of a present-tense competitor.",
   authorId: "julian-thorne",
-  date: "2026-06-22",
+  date: "2026-06-23",
   schema: "Article",
   lang: "en",
   keywords: [
@@ -19,7 +17,7 @@ export const jeremyDokuBirthChartEn: WikiArticle = {
     "doku gemini",
     "jeremy doku belgium world cup 2026"
   ],
-  content: `# What the Jeremy Doku Birth Chart Reveals About His World Cup Exit
+  content: `# What the Jeremy Doku Birth Chart Reveals About His World Cup Paternity Choice
 
 ## What Is Jeremy Doku's Birth Chart?
 
@@ -31,15 +29,15 @@ Jeremy Doku's birth chart is the snapshot of the sky at the moment he was born o
 
 ## Why It Matters for Self-Awareness
 
-When Doku temporarily left the Belgium camp in June 2026 to be present for the birth of his child, the reaction split football fans down the middle, and the Jeremy Doku birth chart explains why the two camps keep talking past each other. Most of the argument confuses professional loyalty with personal obligation — as if showing up for a tournament and showing up for a birth were the same kind of duty competing for the same hours, when the chart suggests they were never ranked the same way to begin with. The friction shows up in a few recurring ways:
+When Doku announced he would leave the Belgium camp to be present for the birth of his first child, the reaction split football fans down the middle, and the Jeremy Doku birth chart explains why the two camps keep talking past each other. Most of the argument confuses professional loyalty with personal obligation — as if showing up for a tournament and showing up for a birth were the same kind of duty competing for the same hours, when the chart suggests they were never ranked the same way to begin with. The friction shows up in a few recurring ways:
 
-1. **The loyalty-versus-love framing.** One side reads the exit as abandoning the team; the other reads staying as abandoning his family. It is a clean Gemini paradox — two true things held at once, with no tidy way to collapse them into a single verdict.
-2. **The "just an umbilical cord" jab.** A French L'Équipe presenter's quip that he left only to cut a cord went viral over Father's Day weekend. It reduced a values choice to a logistical errand, which is exactly the kind of flattening that makes fans argue about the wrong thing.
+1. **The loyalty-versus-love framing.** One side reads the plan as abandoning the team; the other reads staying as abandoning his family. It is a clean Gemini paradox — two true things held at once, with no tidy way to collapse them into a single verdict.
+2. **The "just an umbilical cord" jab.** A French L'Équipe presenter's on-air quip that he would skip the tournament just to cut an umbilical cord went viral over Father's Day weekend and saw her suspended. It reduced a values choice to a logistical errand, which is exactly the kind of flattening that makes fans argue about the wrong thing.
 3. **The hidden question underneath.** Fans aren't really debating scheduling; they're asking whether immediate, lived presence can ever outrank narrative glory — and most people genuinely don't know which they'd pick.
 
 In twelve years of integrating psychological frameworks with evolutionary astrology, I've found that a choice like this rarely reflects indecision. It usually reflects a chart whose core value system was never actually in conflict, even when everyone watching assumed it had to be.
 
-## Gemini Sun vs Leo Rising: Which Side Drove the Exit
+## Gemini Sun vs Leo Rising: Which Side Drives the Decision
 
 The easiest mix-up in the Jeremy Doku birth chart is treating his Leo Rising as the engine when the Gemini Sun is actually steering, read in the integrated lineage Robert Hand and Liz Greene helped establish, where no single placement is the whole person.
 
@@ -47,14 +45,11 @@ The easiest mix-up in the Jeremy Doku birth chart is treating his Leo Rising as 
 
 Leo Rising functions as performance: it wants the gesture to land, the crowd to feel it, the moment to look good. To get that magnetic stage presence, you sacrifice some privacy — a Leo Rising is read in public, which is part of why the umbilical-cord jab stung in such a public way and traveled so fast. It is the entrance and the mask, the layer most people meet first, much like the contrast mapped in [comparison of Sun sign and rising sign roles](/en/wiki/how-to-read-birth-chart).
 
-The Gemini Sun functions differently. It prioritizes the immediate, lived connection in the room he is standing in over the abstract story other people want to tell about him. To get that authenticity of presence, you sacrifice the clean narrative — choosing the delivery room over the tournament looks inconsistent only if you expected the Leo mask to be the whole man.
+The Gemini Sun functions differently. It prioritizes the immediate, lived connection in the room he is standing in over the abstract story other people want to tell about him. To get that authenticity of presence, you sacrifice the clean narrative — planning to choose the delivery room over a tournament match looks inconsistent only if you expected the Leo mask to be the whole man.
 
 ### Where the Trade-Off Shows Up
 
-Read together, the exit is not a Leo ego move and not a betrayal of duty; it is the Gemini Sun doing the thing it values most while the Leo Rising simply made the choice visible. The timing sharpened the effect. According to NASA, the June solstice falls around June 21 each year, the same window the tropical zodiac marks the Sun's shift out of Gemini and into Cancer, a sign associated with home, family, and roots. Doku's exit landing on Father's Day weekend, right as that seasonal turn toward home themes arrived, is why the moment felt so on-cue to readers tracking the *guide to 2026 transit events and the Sun's move into Cancer*.
-
-
-![Side-by-side comparison of Leo Rising and Gemini Sun roles in Jeremy Doku's birth chart decision-making](/images/blog/jeremy-doku-birth-chart-i0-en.svg)
+Read together, the decision is not a Leo ego move and not a betrayal of duty; it is the Gemini Sun doing the thing it values most while the Leo Rising simply made the choice visible. The timing sharpened the effect. According to NASA, the June solstice falls around June 21 each year, the same window the tropical zodiac marks the Sun's shift out of Gemini and into Cancer, a sign associated with home, family, and roots. The controversy landing on Father's Day weekend, right as that seasonal turn toward home themes arrived, is why the moment felt so on-cue to readers tracking the *guide to 2026 transit events and the Sun's move into Cancer*.
 
 ## How to Read a Gemini Sun and Anaretic Mars in a Chart
 
@@ -65,9 +60,6 @@ Reading his chart in real life means watching for a few observable signals rathe
 3. **The anaretic urgency.** Mars at 29° can surface as all-or-nothing timing — a sense that a moment has to be acted on now, not deferred, which reads as both his best bursts and his most impatient ones.
 4. **Presence over posture.** When forced to choose, this signature tends to pick the live, embodied moment over the version that photographs well later.
 5. **Audience awareness that sharpens, not softens.** The Leo Rising means he rarely forgets he is being watched, which tends to focus the Gemini instinct rather than dull it.
-
-
-![Five observable behavioral signals derived from Jeremy Doku's Gemini Sun and anaretic Mars at 29 degrees](/images/blog/jeremy-doku-birth-chart-i1-en.svg)
 
 ## Common Misreadings
 
@@ -85,7 +77,7 @@ Popular write-ups tend to flatten his chart into a one-line verdict, and the sam
 | Gemini Sun | Drives identity through curiosity and immediate connection | Mutable Air, traditionally linked to themes of communication and the natal 3rd house | Quick speech, improvised play, present-tense choices |
 | Leo Rising | Shapes first impressions as warm, watchable performance | Fixed Fire, tied to 1st-house self-presentation | Stage presence, comfort being watched on the pitch |
 | Mars at 29° Gemini | Channels drive at a critical, all-or-nothing threshold | Anaretic degree of an Air sign, action expressed through words and quick decisions | Decisive bursts, urgency to act in the moment |
-| Late-June Sun–Cancer timing | Backdrops the exit with a seasonal turn toward home themes | Cardinal Water season around the solstice | Family-first choices clustering near Father's Day weekend |
+| Late-June Sun–Cancer timing | Backdrops the decision with a seasonal turn toward home themes | Cardinal Water season around the solstice | Family-first choices clustering near Father's Day weekend |
 
 ## Common Questions About Jeremy Doku's Birth Chart
 
