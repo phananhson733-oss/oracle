@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const matheusCunhaBirthChartEn: WikiArticle = {
   slug: "matheus-cunha-birth-chart",
   image: "/images/blog/matheus-cunha-birth-chart.jpg",
-  image_alt: "Dusk over a palm-lined northeastern Brazilian shore near Joao Pessoa, the sky washing from Gemini lilac-silver into deep indigo with faint twin stars overhead",
+  image_alt: "Matheus Cunha Gemini Sun birth chart — twin golden currents weaving through a deep indigo coastal starfield at dusk",
   title: "What the Matheus Cunha Birth Chart Says About a Gemini Sun Forward",
   description: "The Matheus Cunha birth chart centers on a Gemini Sun for Matheus Santos Carneiro da Cunha, born May 27, 1999, in João Pessoa, Brazil.",
   authorId: "aditi-sharma",
@@ -48,7 +48,7 @@ Both signs share mutable modality, meaning both are comfortable with change and 
 This trade-off has observable consequences on the pitch. Sagittarius Sun attackers often describe a restlessness in possession-heavy, tight-space systems where the field never fully opens — the big vision has nowhere to go. Gemini Suns are satisfied by constant micro-variation within tight structure; they find the seam inside congestion rather than waiting for territory to open. That distinction also matters for the [transit events cluster covering Jupiter in Cancer 2026](/en/wiki/9th-house-astrology): in a solar-chart technique, Cancer is the second sign from a Gemini Sun, not from a Sagittarius Sun, so the resource theme this cycle highlights sits on one side of the mutable axis.
 
 
-![Comparison of a Gemini Sun sign-based read, a Sagittarius Sun contrast, and what a full natal read of Cunha would require](/images/blog/matheus-cunha-birth-chart-i0-en.svg)
+![Three-column comparison: Gemini Sun short-range scanning, Sagittarius Sun macro-vision, and what a full natal read would require](/images/blog/matheus-cunha-birth-chart-i0-en.svg)
 
 ## How to Read a Gemini Sun Birth Chart in Your Analysis
 
@@ -61,7 +61,7 @@ Reading the Matheus Cunha birth chart — or any Gemini Sun chart — means movi
 5. **Moon sign as the emotional pressure regulator (general technique).** In any chart with a verified birth time, the Moon sign reveals how the person processes intensity. A Water Moon adds instinctive responsiveness; a Fire Moon accelerates the response. For Cunha this stays hypothetical — his birth time is unknown, so any Moon sign would be guesswork.
 
 
-![Four sign-based steps for reading a Gemini Sun chart: Mercury as ruler, Jupiter transit, mutable stellium density, aspects to Mercury](/images/blog/matheus-cunha-birth-chart-i1-en.svg)
+![Four-step sequence for reading a Gemini Sun chart: Mercury rulership, Jupiter transit, mutable stellium density, aspect patterns to Mercury](/images/blog/matheus-cunha-birth-chart-i1-en.svg)
 
 ## Common Misreadings About Cunha's Gemini Sun
 
@@ -124,7 +124,7 @@ Generate your free birth chart to see your own Sun placement, ruling planet, and
 export const matheusCunhaBirthChartZh: WikiArticle = {
   slug: "matheus-cunha-birth-chart",
   image: "/images/blog/matheus-cunha-birth-chart.jpg",
-  image_alt: "若昂佩索阿附近巴西东北部棕榈海岸的黄昏，天空由双子座淡紫银渐变为深靛蓝，高空浮现一对淡淡的双子星",
+  image_alt: "马特乌斯·库尼亚双子座太阳星盘——黄昏深靛蓝星野中两道金色光流在海岸星景间交织流动",
   title: "马特乌斯·库尼亚星盘：一个双子座太阳前锋的太阳星座解读",
   description: "马特乌斯·库尼亚星盘的核心，是马特乌斯·桑托斯·卡内罗·达·库尼亚（1999年5月27日生于巴西若昂佩索阿）的一个双子座太阳定位，它也是更宏观的pillar page on World Cup 2026 player and team birth charts里梳理的众多人物之一。",
   authorId: "aditi-sharma",
@@ -165,7 +165,7 @@ export const matheusCunhaBirthChartZh: WikiArticle = {
 这种取舍在球场上有可观察的后果。射手座太阳的攻击手常常在控球密集、空间逼仄、球场始终无法完全打开的体系里描述出一种焦躁——宏大的视野无处释放。双子座太阳则被紧密结构内部不断的微变化所满足；他们在拥堵中找到缝隙，而不是等待空间打开。这一区别对[transit events cluster covering Jupiter in Cancer 2026](/zh/wiki/9th-house-astrology)同样重要：在太阳星座技法里，巨蟹座是从双子座太阳数起的第二个星座，而非从射手座太阳数起，所以本轮周期所凸显的资源主题，落在变动轴线上专属于一侧。
 
 
-![双子座太阳的太阳星座解读、射手座太阳的对照，以及完整本命解读库尼亚所需条件的对比](/images/blog/matheus-cunha-birth-chart-i0-zh.svg)
+![三列对比：双子座太阳的近身扫描、射手座太阳的宏观视野、以及完整本命解读所需条件](/images/blog/matheus-cunha-birth-chart-i0-zh.svg)
 
 ## 如何识别双子座太阳星盘中的信号（实操观察）
 
@@ -178,7 +178,7 @@ export const matheusCunhaBirthChartZh: WikiArticle = {
 5. **月亮星座作为情绪压力的调节器（通用技法）。** 在任何一张有经核验出生时间的星盘里，月亮星座揭示这个人如何处理强度。水象月亮增添本能的反应力；火象月亮则加速反应。但就库尼亚而言这只能停留在假设——他的出生时间未知，任何月亮星座都只是臆测。
 
 
-![研读双子座太阳星盘的四个基于星座的步骤：水星作为守护星、木星行运、变动星群密度、与水星的相位](/images/blog/matheus-cunha-birth-chart-i1-zh.svg)
+![解读双子座太阳星盘的四步信号：水星守护、木星行运、变动星群密度、与水星的相位模式](/images/blog/matheus-cunha-birth-chart-i1-zh.svg)
 
 ## 常见误读：关于库尼亚双子座太阳的纠正
 

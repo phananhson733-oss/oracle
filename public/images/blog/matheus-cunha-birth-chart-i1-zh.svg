@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="逐步研读一张双子座太阳星盘">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="解读双子座太阳星盘的4个关键信号">
   <defs>
     <linearGradient id="matheuscunhabirthchart1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
       <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
@@ -26,7 +26,7 @@
   <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
   <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
   <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
-  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">逐步研读一张双子座太阳星盘</text>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">解读双子座太阳星盘的4个关键信号</text>
   <line x1="230" y1="67" x2="368" y2="67" stroke="url(#matheuscunhabirthchart1zh-rule)" stroke-width="1"/>
   <line x1="392" y1="67" x2="530" y2="67" stroke="url(#matheuscunhabirthchart1zh-rule)" stroke-width="1"/>
   <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
@@ -37,28 +37,28 @@
     <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
   <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">水星作为太阳星座守护星</text>
   <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">太阳在双子座意味着水星主管并框定核心表达；太阳星座层级的解读单凭星座本身即可</text>
-  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">进行，无需出生时间</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">，无需出生时间</text>
   <circle cx="76" cy="199" r="20.0" fill="url(#matheuscunhabirthchart1zh-glow)" opacity="0.5"/>
     <circle cx="76" cy="199" r="15" fill="url(#matheuscunhabirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
     <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
     <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
-  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">木星行运相对太阳星座</text>
-  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">在太阳星座技法里巨蟹座是从双子座太阳数起的第二个星座，故木星行经巨蟹座触及一</text>
-  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">个资源主题——象征性时机，而非出生时间意义的宫位</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">木星行运相对太阳星座的关系</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">在太阳星座技法里，巨蟹座是从双子座太阳数起的第二个星座，木星行经巨蟹座触及资</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">源与势能主题——象征性时机，而非宫位</text>
   <circle cx="76" cy="277" r="20.0" fill="url(#matheuscunhabirthchart1zh-glow)" opacity="0.5"/>
     <circle cx="76" cy="277" r="15" fill="url(#matheuscunhabirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
     <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
     <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
   <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">变动星群密度</text>
-  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">当多颗行星与太阳一同聚集在双子、处女、射手或双鱼座，适应力便成为贯穿沟通、关</text>
-  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">系与职业的定义性特征</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">当多颗行星与太阳聚集在双子、处女、射手或双鱼座，适应力便成为贯穿所有生活领域</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">的定义性特征</text>
   <circle cx="76" cy="355" r="20.0" fill="url(#matheuscunhabirthchart1zh-glow)" opacity="0.5"/>
     <circle cx="76" cy="355" r="15" fill="url(#matheuscunhabirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
     <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
     <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
   <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">与水星形成的相位模式</text>
-  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">硬相位（刑、对分）会在压力下给决策速度添摩擦；柔和相位（三分、六分）则支持快</text>
-  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">速的战术切换</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">硬相位（刑、对分）在压力下给决策速度添摩擦；三分相与六分相支持快速战术切换——</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">双子座太阳最佳产出的核心特征</text>
   <path d="M 280.025 416.4 L 280.4 418.6 L 282.6 419 L 280.4 419.4 L 280.025 421.6 L 279.6 419.4 L 277.4 419 L 279.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
   <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
   <path d="M 479.975 416.4 L 480.4 418.6 L 482.6 419 L 480.4 419.4 L 479.975 421.6 L 479.6 419.4 L 477.4 419 L 479.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
