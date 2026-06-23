@@ -1493,6 +1493,7 @@ const AppContent: React.FC = () => {
               }
             />
             <Route path="/color-demo" element={<ColorSystemDemo />} />
+            <Route path="/:code" element={<GoRedirectPage />} />
             {/* Catch-all: /:lang/* SPA routes strip prefix and redirect */}
             <Route path="/:lang/*" element={<LangStripRedirect />} />
             <Route path="*" element={<NotFoundPage />} />

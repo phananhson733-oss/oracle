@@ -65,7 +65,7 @@ describe("/go short-link redirects", () => {
     expect(created.body).toMatchObject({
       code: "act-backlink-theglobalhues-20260623",
       short_url:
-        "https://www.astrologywiki.com/go/act-backlink-theglobalhues-20260623",
+        "https://www.astrologywiki.com/act-backlink-theglobalhues-20260623",
       destination_url: destination,
     });
 

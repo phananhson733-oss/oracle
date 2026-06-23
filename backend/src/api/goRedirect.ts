@@ -1,5 +1,5 @@
 // INPUT: /go/:code requests with optional to= destination, registered redirect submissions, and published redirect registry.
-// OUTPUT: 302 redirect to safe AstrologyWiki destinations, registry submission JSON, or 404/4xx for invalid links.
+// OUTPUT: 302 redirect to safe AstrologyWiki destinations, root short-link submission JSON, or 404/4xx for invalid links.
 // POS: Public short-link redirect route for link-attribution tools.
 import express from "express";
 import Redis from "ioredis";
@@ -223,7 +223,7 @@ goRedirectRegistrationRouter.post("/", async (req, res) => {
   res.status(existing ? 200 : 201).json({
     success: true,
     code,
-    short_url: `${SITE_ORIGIN}/go/${code}`,
+    short_url: `${SITE_ORIGIN}/${code}`,
     destination_url: destination,
     redirect_status: 302,
   });

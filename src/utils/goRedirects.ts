@@ -1,6 +1,6 @@
-// INPUT: Short-link code, optional inline destination, and published redirect registry.
+// INPUT: Short-link code from /go/:code or /:code, optional inline destination, and published redirect registry.
 // OUTPUT: Safe AstrologyWiki destination URL or null.
-// POS: Shared resolver for /go/:code short-link routing.
+// POS: Shared resolver for owned short-link routing.
 
 export type GoRedirectRegistry = Record<string, string>;
 
