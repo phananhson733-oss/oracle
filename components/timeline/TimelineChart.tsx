@@ -31,7 +31,7 @@ interface TimelineChartProps {
 
 // 蜡烛体方向着色（股票式红/绿，产品方决定）：end≥start=能量走强=绿、end<start=能量回落=红、
 // 近乎持平=中性灰（doji）。"非好坏"的中性框架由 onboarding/图例/文案承载，不再靠颜色。
-const COLOR_UP = "#22C55E"; // green-500 — energy rose through the day
+const COLOR_UP = "#10B981"; // emerald-500 — energy rose through the day（更沉稳，参考 oracle_CN）
 const COLOR_DOWN = "#EF4444"; // red-500 — energy eased through the day
 const COLOR_FLAT = "#94A3B8"; // slate-400 — roughly unchanged (doji)
 const COLOR_MA = "#A855F7"; // mystic-500 — smoothing line (distinct from red/green)
@@ -110,16 +110,24 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
   // 而非铺满，于是图表比容器窄、靠 mx-auto 居中，不再被拉得过宽过大。
   // B6：缩放系数夹在 [1,3]；放大后槽位/蜡烛体可超出基础 MAX_SLOT 上限（配合容器横滚平移）。
   const zoom = Math.min(3, Math.max(1, zoomFactor));
+  // 少蜡烛视图（年内 12 月 / 人生年级）放宽槽位与蜡烛体上限，避免在宽屏上挤在中间显得空旷瘦长。
+  const fewCandles = n <= 16;
+  const maxSlot = fewCandles ? 52 : MAX_SLOT;
   const slot =
     Math.min(
-      MAX_SLOT,
+      maxSlot,
       Math.max(MIN_SLOT, (availWidth - PAD_LEFT - PAD_RIGHT) / n),
     ) * zoom;
-  const bodyW = Math.max(5, Math.min(12 * zoom, slot * 0.62));
+  const bodyW = Math.max(
+    5,
+    Math.min((fewCandles ? 22 : 12) * zoom, slot * 0.62),
+  );
   const chartWidth = PAD_LEFT + PAD_RIGHT + candles.length * slot;
   // A3：按容器宽切换图高（窄屏更矮）。
   const H = availWidth < H_BREAKPOINT ? H_MOBILE : H_DESKTOP;
   const plotBottom = PAD_TOP + H;
+  // wick 视觉延伸上限：月/年聚合的 peak-dip 可跨满量程，限制单端延伸避免一根影线贯穿全图。
+  const maxWickExtent = H * 0.16;
 
   const yOf = (v: number) =>
     PAD_TOP + (1 - Math.max(0, Math.min(100, v)) / 100) * H;
@@ -207,6 +215,8 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
               y2={yOf(g)}
               stroke={gridStroke}
               strokeWidth={1}
+              strokeDasharray="2 5"
+              strokeOpacity={0.7}
             />
           ))}
 
@@ -228,6 +238,9 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
             const bot = Math.max(c.start, c.end);
             const bodyTop = yOf(bot);
             const bodyH = Math.max(2, yOf(top) - yOf(bot));
+            // wick clamp：从 body 端最多延伸 maxWickExtent，极端 peak/dip 不贯穿全图。
+            const wickTopY = Math.max(yOf(c.peak), bodyTop - maxWickExtent);
+            const wickBotY = Math.min(yOf(c.dip), yOf(top) + maxWickExtent);
             const ckey = keyOf(c);
             const isSel = selectedDate && ckey === selectedDate;
             const mk = ckey ? markerByKey.get(ckey) : undefined;
@@ -249,15 +262,15 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
                   height={H}
                   fill={isSel ? selWash : "transparent"}
                 />
-                {/* wick: dip..peak (full intraday range), body-colored for the candlestick look */}
+                {/* wick: dip..peak（区间波动范围）；clamp 单端延伸避免聚合极值贯穿全图 */}
                 <line
                   x1={cx}
                   x2={cx}
-                  y1={yOf(c.peak)}
-                  y2={yOf(c.dip)}
+                  y1={wickTopY}
+                  y2={wickBotY}
                   stroke={color}
-                  strokeOpacity={0.7}
-                  strokeWidth={1.5}
+                  strokeOpacity={0.4}
+                  strokeWidth={1.2}
                 />
                 {/* body: start..end interval summary */}
                 <rect
@@ -272,7 +285,7 @@ export const TimelineChart: React.FC<TimelineChartProps> = ({
                 />
                 {/* marker dot — A8：仅显示 visibleMarkerKeys（nowIdx 后的前 5 个未来 marker） */}
                 {mk && visibleMarkerKeys.has(ckey) && (
-                  <circle cx={cx} cy={yOf(c.peak) - 6} r={3} fill={COLOR_MA}>
+                  <circle cx={cx} cy={wickTopY - 6} r={3} fill={COLOR_MA}>
                     <title>{mk.label}</title>
                   </circle>
                 )}

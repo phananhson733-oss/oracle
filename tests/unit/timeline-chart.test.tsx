@@ -67,7 +67,8 @@ describe("TimelineChart", () => {
   });
 
   it("B6: zoomFactor widens candles beyond the default cap (and clamps at 3x)", () => {
-    const candles = Array.from({ length: 10 }, (_, i) =>
+    // 24 根（月视图量级，避开 sparse 加宽）测 zoom：默认 cap 12、zoom 放大、3x clamp。
+    const candles = Array.from({ length: 24 }, (_, i) =>
       candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
     );
     const bodyW = (zoom?: number) => {
@@ -83,6 +84,35 @@ describe("TimelineChart", () => {
     expect(bodyW(1)).toBeLessThanOrEqual(12); // default cap
     expect(bodyW(2)).toBeGreaterThan(12); // 2x widens past it
     expect(bodyW(99)).toEqual(bodyW(3)); // clamped at 3x
+  });
+
+  it("widens candles on sparse views (year/long-range) so they don't look thin on wide screens", () => {
+    // 12 月（year 视图）在宽屏上若按月视图 cap 12 会瘦长空旷；sparse 加宽让蜡烛更醒目。
+    const few = Array.from({ length: 12 }, (_, i) =>
+      candle(`2026-${String(i + 1).padStart(2, "0")}-01`),
+    );
+    const { container } = render(<TimelineChart candles={few} />);
+    const bodyW = Math.max(
+      ...Array.from(container.querySelectorAll("g > rect:nth-of-type(2)")).map(
+        (r) => Number(r.getAttribute("width")),
+      ),
+    );
+    expect(bodyW).toBeGreaterThan(12); // sparse 视图加宽超过密集月视图的 cap 12
+  });
+
+  it("clamps the wick so an extreme peak/dip never spans the whole chart", () => {
+    // 月/年聚合的单根蜡烛可能 peak~100 dip~0；wick 不应贯穿全图（用户反馈"中间那根过长"）。
+    const extreme = [
+      candle("2026-06-01"), // 普通蜡烛作参照
+      { ...candle("2026-06-02"), start: 48, end: 52, peak: 100, dip: 0 },
+    ];
+    const { container } = render(<TimelineChart candles={extreme} />);
+    const wicks = Array.from(container.querySelectorAll("g > line")).map((l) =>
+      Math.abs(Number(l.getAttribute("y2")) - Number(l.getAttribute("y1"))),
+    );
+    const maxWick = Math.max(...wicks);
+    // 全图绘图高度（H_DESKTOP=440）；clamp 后 wick 远小于满量程（body 4px + 2×16%H ≈ 145）。
+    expect(maxWick).toBeLessThan(200);
   });
 
   it("keeps a full month compact: candle bodies are capped (not ballooned to fill wide screens)", () => {
