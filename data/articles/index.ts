@@ -262,6 +262,7 @@ import { bukayoSakaZodiacSignEn } from "./bukayo-saka-zodiac-sign";
 import { lukaModricZodiacSignEn } from "./luka-modric-zodiac-sign";
 import { brunoFernandesZodiacSignEn } from "./bruno-fernandes-zodiac-sign";
 import { cancerSeason2026AstrologyEn } from "./cancer-season-2026-astrology";
+import { rhaenyraTargaryenZodiacSignEn } from "./rhaenyra-targaryen-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -520,6 +521,7 @@ const ARTICLES_EN: WikiArticle[] = [
   lukaModricZodiacSignEn,
   brunoFernandesZodiacSignEn,
   cancerSeason2026AstrologyEn,
+  rhaenyraTargaryenZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

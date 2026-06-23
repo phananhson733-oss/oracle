@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "rhaenyra-targaryen-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Scorpio vs Taurus: Which Fixed Sign Actually Fits Rhaenyra",
+          "titleEn": "Scorpio vs Taurus: The Fixed-Sign Showdown",
+          "altEn": "Side-by-side comparison of Scorpio and Taurus fixed signs mapping each to Rhaenyra Targaryen's on-screen behavior",
+          "columns": [
+            {
+              "nameEn": "Scorpio",
+              "linesEn": [
+                "Filters through power dynamics and emotional control",
+                "Controls the loyalty of people, not the land itself",
+                "Rules through strategy, secrecy, and survival-at-any-cost",
+                "Transforms most after grief and treachery"
+              ]
+            },
+            {
+              "nameEn": "Taurus",
+              "linesEn": [
+                "Filters through territory and resources",
+                "Claims birthright and digs in with grounded endurance",
+                "Offers immovable stubbornness about property and crown",
+                "Story becomes controlling resources, not people"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Rhaenyra Targaryen Zodiac Sign in Her Arc",
+          "titleEn": "Five Scorpio Signals in Rhaenyra's Behavior",
+          "altEn": "Five behavioral patterns that reveal Rhaenyra Targaryen's Scorpio zodiac profile across House of the Dragon seasons",
+          "items": [
+            {
+              "nameEn": "Plans for Betrayal",
+              "subEn": "Reads threats early and positions herself quietly — classic fixed-water survival instinct before the blow lands"
+            },
+            {
+              "nameEn": "Weaponizes Loyalty",
+              "subEn": "Tests who is truly with her, then uses those bonds as leverage rather than resorting to open force"
+            },
+            {
+              "nameEn": "Transforms Through Loss",
+              "subEn": "Every major shift in her follows grief or treachery — Scorpio growth through crisis, never through triumph"
+            },
+            {
+              "nameEn": "Keeps Intentions Submerged",
+              "subEn": "What she says in council rarely matches the full calculation underneath — the surface conceals the depth"
+            },
+            {
+              "nameEn": "Holds the Long Grudge",
+              "subEn": "Slights from years earlier still steer her decisions — a hallmark of Scorpio's unforgiving deep memory"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
