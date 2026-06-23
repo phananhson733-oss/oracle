@@ -103,6 +103,7 @@ export interface TimelineCopy {
   genderPreferNot: string;
   prefsSave: string;
   prefsSkip: string;
+  prefsExpandCta: string;
   // onboarding (safety)
   onbTitle1: string;
   onbBody1: string;
@@ -220,6 +221,7 @@ const EN: TimelineCopy = {
   genderPreferNot: "Prefer not to say",
   prefsSave: "Save",
   prefsSkip: "Skip",
+  prefsExpandCta: "Make it yours — add a nickname or gender (optional)",
   onbTitle1: "This isn't good vs bad",
   onbBody1:
     "It's loud vs quiet. A tall bar means a lot is moving; a flat one means a calmer stretch. Neither is better.",
@@ -326,6 +328,7 @@ const ZH: TimelineCopy = {
   genderPreferNot: "不愿透露",
   prefsSave: "保存",
   prefsSkip: "跳过",
+  prefsExpandCta: "让解读更贴合你 — 补充昵称或性别（可选）",
   onbTitle1: "这不是好坏之分",
   onbBody1:
     "而是热闹与平静之分。柱子高，说明动得多；平缓，说明这段更安静。两者没有优劣。",

@@ -20,6 +20,8 @@ export const TimelineOptionalPrefs: React.FC<{
   const c = getTimelineCopy(language);
   const [gender, setGender] = useState<Gender>("prefer_not_to_say");
   const [nickname, setNickname] = useState("");
+  // 默认折叠：登录用户不该被表单"挡着要填"——只显示低调可选入口，点开才展开表单（用户反馈）。
+  const [expanded, setExpanded] = useState(false);
 
   const genderOptions: Array<{ value: Gender; label: string }> = [
     { value: "female", label: c.genderFemale },
@@ -27,6 +29,21 @@ export const TimelineOptionalPrefs: React.FC<{
     { value: "nonbinary", label: c.genderNonbinary },
     { value: "prefer_not_to_say", label: c.genderPreferNot },
   ];
+
+  // 折叠态（默认）：一行低调可选入口，不打扰已登录用户。
+  if (!expanded) {
+    return (
+      <div className="mt-5">
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          className="text-xs text-slate-400 underline-offset-2 hover:text-slate-600 hover:underline"
+        >
+          {c.prefsExpandCta}
+        </button>
+      </div>
+    );
+  }
 
   return (
     <section
