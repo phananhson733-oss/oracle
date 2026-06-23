@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.44
+> **Version**: 2.45
 > **Last Updated**: 2026-06-23
 > **Status**: Living Document — synced with codebase
 
@@ -385,7 +385,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | 6 | CBT Journal Showcase | 左截图右 3 行 bullets + CTA "Start your first entry — Free trial" |
 | 7 | Wiki Hub | 6-8 篇 featured 文章 + 4 个分类胶囊（Planets / Signs / Houses / Aspects）+ `<head>` 内 ItemList JSON-LD 指向全部 119 wiki URL |
 | 8 | Social Proof (metric) | "**119** articles · **N** charts cast · **N** journal entries this month"；不使用假证言 |
-| 9 | Newsletter Signup | 邮箱单字段 + honeypot 反垃圾，调用 `POST /api/newsletter` |
+| 9 | Newsletter Signup | 邮箱单字段 + honeypot 反垃圾，调用 `POST /api/newsletter`；后端由 Vercel Cron 自动生成并群发「世俗天象 + 心理学视角」**周报 + 月报**（内容/投递分离，per-cadence 水位独立去重，见 §4.4 newsletter_issues / §4.7 Cron） |
 | 10 | Footer | 复用 `components/Footer.tsx` |
 
 **SEO 策略**：
@@ -1043,9 +1043,27 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | confirm_token | TEXT | 32 随机字节 hex（64 字符），confirm + 一键退订的 bearer 密钥（部分唯一索引） |
 | confirmed_at | TIMESTAMPTZ | 确认时间 |
 | unsubscribed_at | TIMESTAMPTZ | 退订时间 |
+| last_weekly_sent_at | TIMESTAMPTZ | 周报投递水位（via migration 010）；周发送只取 `IS NULL OR < 本周一` 的 confirmed 行 |
+| last_monthly_sent_at | TIMESTAMPTZ | 月报投递水位（via migration 010）；月发送只取 `IS NULL OR < 本月 1 号` 的 confirmed 行；与周报水位互不干扰 |
 | created_at | TIMESTAMPTZ | 创建时间 |
 
-> RLS（007 起）：service-role only，无用户直接访问。双 opt-in 由 `NEWSLETTER_CONFIRM_ENABLED` 开关 dark-launch（默认关 → 单 opt-in 行为；开 → pending+token+确认信，须先验证 Resend SPF/DKIM）。token 仅 service-role 可见、不进日志。
+> RLS（007 起）：service-role only，无用户直接访问。双 opt-in 由 `NEWSLETTER_CONFIRM_ENABLED` 开关 dark-launch（默认关 → 单 opt-in 行为；开 → pending+token+确认信，须先验证 Resend SPF/DKIM）。token 仅 service-role 可见、不进日志。周发送对历史单 opt-in 行（`confirm_token` 为 NULL）在发信前回填 token，保证每封邮件都带可用一键退订链接。
+
+**newsletter_issues** — 周报/月报内容（via migration 010，#23 周报自动推送）
+| Column | Type | 说明 |
+|--------|------|------|
+| id | UUID | 主键 |
+| slug | TEXT | 周期标识：周报 `2026-W26`（ISO 周）/ 月报 `2026-06`（年-月），UNIQUE — 每周期仅生成一次 issue（幂等键） |
+| cadence | TEXT | `weekly` / `monthly`（CHECK，默认 weekly） |
+| lang | TEXT | 语言（默认 `en`，v1 仅英文） |
+| subject | TEXT | 邮件主题 |
+| hero_image_url | TEXT | 可空 — 头图经 gemini-web 离线生成后回填；为空时邮件纯文本渲染 |
+| content | JSONB | 富正文：`{ overview_title, overview, sky_events[], moon_moments[], lens, practice, reflection, featured }`（v2.0 富 shape，取代 v1.0 单星象列） |
+| status | TEXT | `draft` / `ready` / `sent`（CHECK；生成即 `ready`，可人工预审后发送） |
+| created_at | TIMESTAMPTZ | 创建时间 |
+| sent_at | TIMESTAMPTZ | 首次发送时间 |
+
+> RLS：service-role only。内容/投递分离：每个周期（ISO 周 / 月）由 cron 用 `newsletterSky.buildPeriodSky`（按日采样真实星历，算出该周期 dated 天象事件：入座/逆行停滞/紧密相位 + 新满月，无订阅者出生数据）喂给 AI 生成一次富 issue（`status='ready'` 可预审），复用给全部 confirmed 订阅者。AI 只解读后端给的真实 dated 事件，绝不编日期。周报与月报用各自水位列独立去重，可单独或同时启用。
 
 **subscriptions** — 订阅管理
 | Column | Type | 说明 |
@@ -1148,13 +1166,13 @@ users (1) ──┬─→ (1) subscriptions
 
 #### 架构概览
 
-Prompt 系统采用集中注册式架构，所有模板在 `manager.ts` 中统一注册和管理；全部 51 个模板均经 `withSafety()` 包装注入 AI 安全护栏。
+Prompt 系统采用集中注册式架构，所有模板在 `manager.ts` 中统一注册和管理；全部 53 个模板均经 `withSafety()` 包装注入 AI 安全护栏。
 
 **核心文件**:
 - `backend/src/prompts/common.ts` — 类型定义 + 工具函数 + 安全常量
 - `backend/src/prompts/manager.ts` — 注册表 + 全部模板 + `withSafety` helper (~2600 行)
 
-#### AI 安全护栏（覆盖全 51 个 prompt）
+#### AI 安全护栏（覆盖全 53 个 prompt）
 
 所有 prompt 通过 `withSafety(template, { noFate?, cbtFooter? })` 包装注入：
 
@@ -1166,7 +1184,7 @@ Prompt 系统采用集中注册式架构，所有模板在 `manager.ts` 中统�
 
 **与危机检测的关系**：CBT 5 个分析端点先经关键词短路（`detectCrisis()`），命中即返回 helpline 不走 prompt；未命中才走 `withSafety` 包装的 prompt 路径——两层非重叠纵深防御。
 
-#### Prompt 模板清单（全部 51 个，2026-05-18 集体 minor version bump）
+#### Prompt 模板清单（全部 53 个；2026-05-18 集体 minor version bump，2026-06-23 新增 newsletter-weekly + newsletter-monthly）
 
 | 模块 | 模板数 | 当前版本 | 主要模板 | 安全注入 |
 |------|--------|----------|----------|----------|
@@ -1178,6 +1196,7 @@ Prompt 系统采用集中注册式架构，所有模板在 `manager.ts` 中统�
 | **Wiki** | 3 | bumped minor | wiki-home, wiki-classics-master, synthetica-analysis | SAFETY |
 | **Detail** | 19 | bumped minor | detail-{type}-{context} 组合 | SAFETY + (NO_FATE for transit/synastry/composite contexts) |
 | **Cycle** | 1 | 2.3 | cycle-naming | SAFETY + NO_FATE |
+| **Newsletter** | 2 | 2.0 | newsletter-weekly / newsletter-monthly（富周报/月报，英文，叙述后端预算的 dated 天象时间线；JSON：subject_line / overview_title / overview / sky_events[] / moon_moments[] / lens / practice / reflection / featured） | SAFETY + NO_FATE |
 
 **部署影响**：全量 version bump 一次性失效所有 LLM 输出缓存（`ai:{promptId}:v{version}:{inputHash}`），首日 cache 命中率 ~0%，24h 自然回填；预计每次调用 system token 增加 60–150（~3-5% 成本上浮）。
 
@@ -1241,6 +1260,14 @@ JWT Token 结构:
 | `CRON_SECRET` | Cron endpoint 鉴权 | All | 必填 |
 | `SENTRY_DSN` | 错误监控（Sentry）；未设则不加载 SDK、不初始化（生产 no-op，非 mock） | All | 选填 |
 | 其余 | OAuth secrets / 支付 secrets / 邮件 secrets | All | 详见 backend/.env.example |
+
+**Cron 定时任务**（`vercel.json` → `crons`；均经 `CRON_SECRET` Bearer 鉴权，恒定时间比较）：
+
+| Path | Schedule (UTC) | 说明 |
+|------|----------------|------|
+| `/api/cron/reconcile-subscriptions` | `0 3 * * *`（每日 03:00） | Airwallex 订阅服务端对账（回填 + 兜底 webhook 漏接） |
+| `/api/cron/send-weekly-newsletter` | `0 14 * * 1`（每周一 14:00） | 周报：生成本周 issue（若无）+ 群发本周未发的 confirmed 订阅者；支持 `?dryRun=true` 预演与 `?limit=N` 分批 |
+| `/api/cron/send-monthly-newsletter` | `0 14 1 * *`（每月 1 号 14:00） | 月报：同构周报，cadence=monthly，用 `last_monthly_sent_at` 水位独立去重 |
 
 **Vercel 路由配置**:
 - `/api/*` → `backend/src/index.ts` (Serverless Function)

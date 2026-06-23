@@ -295,7 +295,7 @@ UI 规范的唯一来源是 [`COLOR_SYSTEM_GUIDE.md`](./COLOR_SYSTEM_GUIDE.md)�
 
 ## Prompt 架构规范
 
-后端 Prompt 系统采用集中注册式架构，共 **51 个模板** 注册在 `manager.ts`。
+后端 Prompt 系统采用集中注册式架构，共 **53 个模板** 注册在 `manager.ts`。
 
 **核心文件**：
 - `backend/src/prompts/common.ts` — 类型（`PromptMeta` / `PromptSystem` / `PromptTemplate`）+ 工具函数（`formatLang`、`resolveSynastryLang`、`resolveSynastryName`、`resolveRelationshipType`、`formatSynastryContextBlock`）+ 常量（`SINGLE_LANGUAGE_INSTRUCTION` / `_EN`、`DETAIL_INTERPRETATION_FORMAT_ZH/EN`、`DETAIL_OUTPUT_INSTRUCTION`）

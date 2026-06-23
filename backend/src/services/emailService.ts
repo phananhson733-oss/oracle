@@ -1,6 +1,27 @@
+// INPUT: resend SDK + RESEND_CONFIG（API key / FROM）+ logger。
+// OUTPUT: emailService 单例 + WeeklyIssueEmail 类型 —— 验证码 / newsletter 双 opt-in 确认 / 周报 / 支付收据 / 失败 / 取消通知，统一暗黑金品牌模板，动态字段经 escapeHtml，周报与确认信带 RFC 8058 List-Unsubscribe 头。
+// POS: 邮件发送服务；若更新此文件，务必更新本头注释与所属 services/FOLDER.md。
+
 import { Resend } from 'resend';
 import { RESEND_CONFIG } from '../config/auth.js';
 import { logger } from "../utils/logger.js";
+
+// Shape the weekly send needs from a newsletter_issues row. AI-generated text
+// fields (subject/transit/lens/reflection) are escaped before they enter the
+// HTML — they are model output and must never be trusted as markup.
+// heroImageUrl is optional: when absent the email renders text-only.
+export interface WeeklyIssueEmail {
+  subject: string;
+  heroImageUrl?: string | null;
+  overviewTitle: string;
+  overview: string;
+  skyEvents: Array<{ dateLabel: string; title: string; guidance: string }>;
+  moonMoments: Array<{ dateLabel: string; phase: string; note: string }>;
+  lens: string;
+  practice: string;
+  reflection: string;
+  featured: { title: string; blurb: string };
+}
 
 class EmailService {
   private resend: Resend | null = null;
@@ -64,6 +85,109 @@ class EmailService {
       <p style="color:#666680;font-size:12px;margin:12px 0 0;"><a href="${safeUnsub}" style="color:#666680;">Unsubscribe</a></p>
       `,
       ),
+      headers: {
+        "List-Unsubscribe": `<${unsubscribeUrl}>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
+    });
+  }
+
+  // Build the rich newsletter email HTML (pure; reused by the send path and the
+  // preview script). All AI-generated fields are escaped before entering the HTML.
+  // Renders overview -> dated sky-events timeline -> optional moon moments -> the
+  // psychology lens -> a practice + reflection pair -> a featured-read card.
+  buildNewsletterHtml(
+    issue: WeeklyIssueEmail,
+    unsubscribeUrl: string,
+    subtitle = "Your week ahead",
+  ): string {
+    const esc = (s: string): string => this.escapeHtml(s ?? "");
+    const safeUnsub = esc(unsubscribeUrl);
+
+    const heroOk =
+      typeof issue.heroImageUrl === "string" &&
+      /^https:\/\//.test(issue.heroImageUrl);
+    const heroBlock = heroOk
+      ? `<img src="${esc(issue.heroImageUrl as string)}" alt="" width="100%" style="display:block;border-radius:12px;margin:0 0 24px;max-width:100%;height:auto;">`
+      : "";
+
+    const eyebrow = (label: string): string =>
+      `<p style="color:#d4af37;font-size:11px;letter-spacing:0.6px;text-transform:uppercase;margin:0 0 8px;">${label}</p>`;
+
+    const skyRows = (issue.skyEvents ?? [])
+      .map(
+        (e) => `
+        <div style="padding:14px 0;border-bottom:1px solid rgba(212,175,55,0.12);">
+          <div style="margin:0 0 6px;">
+            <span style="display:inline-block;background:#0f0f1a;color:#d4af37;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-right:8px;">${esc(e.dateLabel)}</span>
+            <span style="color:#e0e0f0;font-size:14px;font-weight:600;">${esc(e.title)}</span>
+          </div>
+          <p style="color:#a0a0b8;font-size:13px;line-height:1.6;margin:0;">${esc(e.guidance)}</p>
+        </div>`,
+      )
+      .join("");
+    const skyBlock = skyRows
+      ? `${eyebrow("The sky ahead")}<div style="margin:0 0 24px;">${skyRows}</div>`
+      : "";
+
+    const moonRows = (issue.moonMoments ?? [])
+      .map(
+        (m) => `
+          <p style="color:#d4af37;font-size:13px;font-weight:700;margin:0 0 4px;">${esc(m.dateLabel)} &middot; ${esc(m.phase)}</p>
+          <p style="color:#e0e0f0;font-size:13px;line-height:1.6;font-style:italic;margin:0 0 14px;">${esc(m.note)}</p>`,
+      )
+      .join("");
+    const moonBlock = moonRows
+      ? `<div style="background:#0f0f1a;border-left:3px solid #d4af37;border-radius:12px;padding:16px 18px;margin:0 0 24px;">${moonRows}</div>`
+      : "";
+
+    const featuredBlock = issue.featured
+      ? `<div style="background:#0f0f1a;border-radius:12px;padding:18px;margin:0 0 24px;">
+          ${eyebrow("Explore on AstrologyWiki")}
+          <p style="color:#e0e0f0;font-size:15px;font-weight:600;margin:0 0 4px;">${esc(issue.featured.title)}</p>
+          <p style="color:#a0a0b8;font-size:13px;line-height:1.6;margin:0;">${esc(issue.featured.blurb)}</p>
+        </div>`
+      : "";
+
+    return this.buildBaseTemplate(
+      esc(issue.overviewTitle),
+      esc(subtitle),
+      `
+        ${heroBlock}
+        <div style="text-align:left;">
+          <p style="color:#e0e0f0;font-size:15px;line-height:1.7;margin:0 0 24px;">${esc(issue.overview)}</p>
+          ${skyBlock}
+          ${moonBlock}
+          <div style="background:#0f0f1a;border-radius:12px;padding:20px;margin:0 0 24px;">
+            ${eyebrow("The psychology lens")}
+            <p style="color:#e0e0f0;font-size:14px;line-height:1.7;margin:0;">${esc(issue.lens)}</p>
+          </div>
+          ${eyebrow("Try this")}
+          <p style="color:#a0a0b8;font-size:14px;line-height:1.7;margin:0 0 18px;">${esc(issue.practice)}</p>
+          ${eyebrow("Sit with this")}
+          <p style="color:#a0a0b8;font-size:14px;line-height:1.7;font-style:italic;margin:0 0 24px;">${esc(issue.reflection)}</p>
+          ${featuredBlock}
+        </div>
+        <a href="https://www.astrologywiki.com/en/" style="display:inline-block;background:#d4af37;color:#0f0f1a;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;">Open AstrologyWiki</a>
+        <p style="color:#666680;font-size:12px;margin:28px 0 0;">You're receiving this because you subscribed to AstrologyWiki. <a href="${safeUnsub}" style="color:#666680;">Unsubscribe</a></p>
+        `,
+      600,
+    );
+  }
+
+  // Weekly/monthly newsletter send (general issue, reused for every subscriber).
+  // The per-subscriber unsubscribe URL carries a high-entropy token;
+  // List-Unsubscribe headers (RFC 8058) enable one-click unsubscribe.
+  async sendWeeklyNewsletter(
+    email: string,
+    issue: WeeklyIssueEmail,
+    unsubscribeUrl: string,
+    subtitle = "Your week ahead",
+  ): Promise<void> {
+    await this.send({
+      to: email,
+      subject: issue.subject,
+      html: this.buildNewsletterHtml(issue, unsubscribeUrl, subtitle),
       headers: {
         "List-Unsubscribe": `<${unsubscribeUrl}>`,
         "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
@@ -168,7 +292,7 @@ class EmailService {
   }
 
   private escapeHtml(str: string): string {
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
   private buildTemplate(code: string): string {
@@ -187,7 +311,12 @@ class EmailService {
     );
   }
 
-  private buildBaseTemplate(title: string, subtitle: string, content: string): string {
+  private buildBaseTemplate(
+    title: string,
+    subtitle: string,
+    content: string,
+    maxWidth = 480,
+  ): string {
     return `
 <!DOCTYPE html>
 <html>
@@ -195,7 +324,7 @@ class EmailService {
 <body style="margin:0;padding:0;background:#0f0f1a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#0f0f1a;padding:40px 20px;">
     <tr><td align="center">
-      <table width="480" cellpadding="0" cellspacing="0" style="max-width:480px;width:100%;background:#1a1a2e;border-radius:16px;border:1px solid rgba(212,175,55,0.2);">
+      <table width="${maxWidth}" cellpadding="0" cellspacing="0" style="max-width:${maxWidth}px;width:100%;background:#1a1a2e;border-radius:16px;border:1px solid rgba(212,175,55,0.2);">
         <tr><td style="padding:40px 32px;text-align:center;">
           <h1 style="color:#d4af37;font-size:24px;margin:0 0 4px;">AstrologyWiki</h1>
           <p style="color:#e0e0f0;font-size:16px;font-weight:600;margin:0 0 4px;">${title}</p>

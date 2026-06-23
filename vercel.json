@@ -115,6 +115,14 @@
     {
       "path": "/api/cron/reconcile-subscriptions",
       "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/send-weekly-newsletter",
+      "schedule": "0 14 * * 1"
+    },
+    {
+      "path": "/api/cron/send-monthly-newsletter",
+      "schedule": "0 14 1 * *"
     }
   ]
 }

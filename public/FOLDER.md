@@ -25,6 +25,7 @@
 - en｜地位：SEO 静态页目录｜功能：英文静态索引页面（构建期生成）。
 - zh｜地位：SEO 静态页目录｜功能：中文静态索引页面（构建期生成）。
 - og｜地位：OG 图资源目录｜功能：构建期为每篇文章生成的 1200×630 分享图（PNG/WebP，按语言）。
+- newsletter｜地位：周报 hero 图床｜功能：周报头图 `<ISO周slug>.png`（gemini-web 离线生成，best-effort），线上 `/newsletter/<slug>.png`；详见 newsletter/FOLDER.md。
 
 近期更新
 - 新增 og/articles 构建期 OG 图（scripts/generate-og-images.mjs，satori+resvg+sharp）；文章 og:image 指向 /og/articles/&lt;slug&gt;.png（zh 为 .zh.png）。

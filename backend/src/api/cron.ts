@@ -1,10 +1,13 @@
 // INPUT: subscriptionReconcilerDriver(reconcileAllAirwallexSubscriptions)；CRON_SECRET 环境变量。
 // OUTPUT: GET /api/cron/reconcile-subscriptions —— Vercel Cron 触发的服务端对账（首次回填存量受害者 + 持续兜底 webhook 漏接）。
+//         GET /api/cron/send-weekly-newsletter / send-monthly-newsletter —— Vercel Cron 触发的周报/月报：
+//           生成本周期 issue（若无）+ 发送给本周期未发的已确认订阅者（per-cadence 水位独立去重）。
 // POS: 定时对账入口，跑在 Vercel 允许的 IP（大陆本地直连 Airwallex 生产 API 会被边缘 403 拦）。
 //      若更新此文件，务必更新本头注释与所属 FOLDER.md。
 import { Router, Request, Response } from 'express';
 import crypto from 'crypto';
 import { reconcileAllAirwallexSubscriptions } from '../services/subscriptionReconcilerDriver.js';
+import { runWeeklyNewsletter, runMonthlyNewsletter } from '../services/newsletterWeekly.js';
 import { logger } from '../utils/logger.js';
 
 const router = Router();
@@ -43,6 +46,69 @@ router.get('/reconcile-subscriptions', async (req: Request, res: Response) => {
     const msg = err instanceof Error ? err.message : String(err);
     logger.error('[cron reconcile] failed', { error: msg });
     return res.status(500).json({ ok: false, error: msg });
+  }
+});
+
+// GET /api/cron/send-weekly-newsletter
+// - 定时调用（无 query）→ 生成本周 issue（若未生成）并发送给所有「已确认且本周未发」的订阅者。
+// - 手动 ?dryRun=true → 只生成/读取 issue 并返回应发人数，不实际发送。
+// - 可选 ?limit=N → 限制单次发送量（默认 500，超出部分靠 last_sent_at 水位下次续发）。
+router.get('/send-weekly-newsletter', async (req: Request, res: Response) => {
+  if (!isAuthorized(req)) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  const dryRun = req.query.dryRun === 'true';
+  const limitRaw = Number(req.query.limit);
+  const limit =
+    Number.isFinite(limitRaw) && limitRaw > 0 ? Math.floor(limitRaw) : undefined;
+  try {
+    const report = await runWeeklyNewsletter({ now: new Date(), dryRun, limit });
+    logger.info('[cron newsletter] completed', {
+      dryRun,
+      issueSlug: report.issueSlug,
+      generated: report.generated,
+      totalSendable: report.totalSendable,
+      sent: report.sent,
+      failed: report.failed,
+      reason: report.reason,
+    });
+    return res.json({ ok: true, ...report });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error('[cron newsletter] failed', { error: msg });
+    return res.status(500).json({ ok: false, error: 'internal_error' });
+  }
+});
+
+// GET /api/cron/send-monthly-newsletter
+// 与周报同构，cadence=monthly：按 YYYY-MM 取/生成 issue，用 last_monthly_sent_at 水位去重。
+// 与周报水位互不干扰 —— 同一订阅者既可收周报也可收月报。?dryRun / ?limit 同义。
+router.get('/send-monthly-newsletter', async (req: Request, res: Response) => {
+  if (!isAuthorized(req)) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  const dryRun = req.query.dryRun === 'true';
+  const limitRaw = Number(req.query.limit);
+  const limit =
+    Number.isFinite(limitRaw) && limitRaw > 0 ? Math.floor(limitRaw) : undefined;
+  try {
+    const report = await runMonthlyNewsletter({ now: new Date(), dryRun, limit });
+    logger.info('[cron newsletter monthly] completed', {
+      dryRun,
+      issueSlug: report.issueSlug,
+      generated: report.generated,
+      totalSendable: report.totalSendable,
+      sent: report.sent,
+      failed: report.failed,
+      reason: report.reason,
+    });
+    return res.json({ ok: true, ...report });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.error('[cron newsletter monthly] failed', { error: msg });
+    return res.status(500).json({ ok: false, error: 'internal_error' });
   }
 });
 
