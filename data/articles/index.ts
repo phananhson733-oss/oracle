@@ -257,6 +257,7 @@ import { nikoBirthChartEn } from "./niko-birth-chart";
 import { princeWilliamBirthChartEn } from "./prince-william-birth-chart";
 import { moSalahBirthChartEn } from "./mo-salah-birth-chart";
 import { jeremyDokuBirthChartEn } from "./jeremy-doku-birth-chart";
+import { fatherSDayAstrology2026En } from "./father-s-day-astrology-2026";
 // All articles organized by language
 
 import {
@@ -510,6 +511,7 @@ const ARTICLES_EN: WikiArticle[] = [
   princeWilliamBirthChartEn,
   moSalahBirthChartEn,
   jeremyDokuBirthChartEn,
+  fatherSDayAstrology2026En,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
