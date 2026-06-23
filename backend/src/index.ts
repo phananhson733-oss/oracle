@@ -1,5 +1,5 @@
-// INPUT: Express 服务器配置（含环境变量加载、短链跳转与统一响应中间件）。
-// OUTPUT: 启动 HTTP 服务（含 /go 短链跳转、百科与支付等 API 路由）。
+// INPUT: Express 服务器配置（含环境变量加载、短链登记/跳转与统一响应中间件）。
+// OUTPUT: 启动 HTTP 服务（含 /go 短链登记/跳转、百科与支付等 API 路由）。
 // POS: 后端入口文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import path from "path";
@@ -38,7 +38,10 @@ import gmRouter from "./api/gm.js";
 import cronRouter from "./api/cron.js";
 import { newsletterRouter } from "./api/newsletter.js";
 import { savedReadingsRouter } from "./api/savedReadings.js";
-import { goRedirectRouter } from "./api/goRedirect.js";
+import {
+  goRedirectRegistrationRouter,
+  goRedirectRouter,
+} from "./api/goRedirect.js";
 import { apiResponseMiddleware } from "./utils/apiResponse.js";
 
 import { initMonitoring, captureError } from "./observability/monitoring.js";
@@ -84,6 +87,39 @@ if (process.env.NODE_ENV !== "production") {
   ALLOWED_ORIGINS.push(/^http:\/\/localhost(:\d+)?$/);
 }
 
+const isAllowedOrigin = (origin: string) =>
+  ALLOWED_ORIGINS.some((o) =>
+    o instanceof RegExp ? o.test(origin) : o === origin,
+  );
+
+const linkAttributionLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many link-attribution requests, please try again later.",
+    code: "link_attribution_rate_limited",
+  },
+});
+
+app.use(
+  "/api/link-attribution/redirects",
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || origin === "null" || isAllowedOrigin(origin)) {
+        callback(null, true);
+        return;
+      }
+      callback(new Error("Not allowed by CORS"));
+    },
+    credentials: false,
+  }),
+  linkAttributionLimiter,
+  express.json({ limit: "4kb" }),
+  goRedirectRegistrationRouter,
+);
+
 // Vercel preview deployments are same-origin (frontend + backend share the
 // `oracle-<hash>.vercel.app` hostname per vercel.json `rewrites`), so they
 // don't need to appear in this allowlist. If you see a CORS rejection log
@@ -96,9 +132,7 @@ app.use(
     origin: (origin, callback) => {
       // Allow requests with no origin (server-to-server, curl, health checks)
       if (!origin) return callback(null, true);
-      const allowed = ALLOWED_ORIGINS.some((o) =>
-        o instanceof RegExp ? o.test(origin) : o === origin,
-      );
+      const allowed = isAllowedOrigin(origin);
       if (allowed) return callback(null, true);
       // Log rejected origins to aid diagnosis of misconfigured deploys (#39).
       // Origin is the browser-sent value, not user-controlled content, so it's

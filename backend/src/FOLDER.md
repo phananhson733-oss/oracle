@@ -1,5 +1,5 @@
-<!-- INPUT: 后端 src 目录结构与职责索引（含短链跳转、经典拆解数据刷新、报告积分购买与地理搜索优化更新）。 -->
-<!-- OUTPUT: src 架构摘要与文件清单（含短链跳转、经典拆解数据刷新、报告积分购买与地理搜索记录）。 -->
+<!-- INPUT: 后端 src 目录结构与职责索引（含短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索优化更新）。 -->
+<!-- OUTPUT: src 架构摘要与文件清单（含短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索记录）。 -->
 <!-- POS: 后端源码目录索引；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -8,7 +8,7 @@
 架构概要
 - 存放后端 API 路由、服务与类型定义。
 - prompts 管理 AI 指令，services 提供业务能力。
-- 入口 index.ts 负责挂载短链跳转、API 路由与中间件。
+- 入口 index.ts 负责挂载短链登记/跳转、API 路由与中间件。
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 src 目录结构与文件清单。
@@ -24,7 +24,7 @@
 - utils｜地位：工具目录｜功能：通用辅助方法。
 
 近期更新
-- 新增 `/go/:code` 短链跳转路由，支持同站 `to` 回退目标并拒绝外部跳转。
+- 新增 `/go/:code` 短链跳转路由与 `/api/link-attribution/redirects` 登记接口，支持同站安全目标、动态 registry 与旧 `to` 回退目标，并拒绝外部跳转。
 - 新增天象工具端点（GET /api/astro/positions、/moon-phase、/ephemeris）+ 返照盘端点（POST /api/solar-return，20/min 限流 + 4kb cap，复用 birthInput 校验机）：纯算法在 services/astro（skyTools / solarReturn，TDD），计算器矩阵 D 第二批。
 - 新增 transit timeline 端点（GET/POST /api/transit/timeline，月度 K 线）：services/transit 纯函数评分引擎（intensity/rollup/aspects/time/weights，TDD）+ ephemeris 瘦经度接口 getLongitudes + 单日 tz 缓存 + 完整性门 + 10/min 限流 + 4kb body cap；natal 出生数据校验抽取为共享 api/birthInput.ts 供 timeline 复用（natal.test 守护无回归）。
 - Geo 搜索端点支持多语言参数与结构化位置过滤。

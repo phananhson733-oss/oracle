@@ -1,12 +1,22 @@
-// INPUT: /go/:code requests with optional to= destination and published redirect registry.
-// OUTPUT: 302 redirect to safe AstrologyWiki destinations, or 404 for invalid/unknown links.
+// INPUT: /go/:code requests with optional to= destination, registered redirect submissions, and published redirect registry.
+// OUTPUT: 302 redirect to safe AstrologyWiki destinations, registry submission JSON, or 404/4xx for invalid links.
 // POS: Public short-link redirect route for link-attribution tools.
 import express from "express";
+import Redis from "ioredis";
 import { goRedirects, type GoRedirectRegistry } from "../data/goRedirects.js";
 
 const SITE_ORIGIN = "https://www.astrologywiki.com";
 const ALLOWED_HOSTS = new Set(["astrologywiki.com", "www.astrologywiki.com"]);
 const CODE_PATTERN = /^[a-z0-9][a-z0-9-]{0,79}$/;
+const REDIRECT_KEY_PREFIX = "go_redirect:";
+
+const memoryRedirects = new Map<string, string>();
+let redisClient: Redis | null | undefined;
+
+const normalizeCode = (rawCode: unknown): string | null => {
+  const value = String(rawCode || "").trim().toLowerCase();
+  return CODE_PATTERN.test(value) ? value : null;
+};
 
 const normalizeDestination = (rawDestination: string): string | null => {
   const value = rawDestination.trim();
@@ -52,15 +62,84 @@ export const resolveGoRedirect = ({
   return null;
 };
 
+const canUseMemoryStore = () =>
+  process.env.NODE_ENV === "test" ||
+  process.env.LINK_ATTRIBUTION_MEMORY_STORE === "true";
+
+const getRedisClient = async (): Promise<Redis | null> => {
+  if (canUseMemoryStore()) return null;
+  const redisUrl = process.env.REDIS_URL?.trim();
+  if (!redisUrl) return null;
+  if (redisClient) return redisClient;
+  if (redisClient === null) return null;
+
+  const client = new Redis(redisUrl, {
+    maxRetriesPerRequest: 1,
+    connectTimeout: 2000,
+    lazyConnect: true,
+  });
+
+  try {
+    await client.connect();
+    redisClient = client;
+    return client;
+  } catch {
+    redisClient = null;
+    client.disconnect();
+    return null;
+  }
+};
+
+const getStoredRedirect = async (code: string): Promise<string | null> => {
+  const client = await getRedisClient();
+  if (client) {
+    return client.get(`${REDIRECT_KEY_PREFIX}${code}`);
+  }
+  return memoryRedirects.get(code) || null;
+};
+
+const setStoredRedirect = async (
+  code: string,
+  destination: string,
+): Promise<boolean> => {
+  const client = await getRedisClient();
+  if (client) {
+    await client.set(`${REDIRECT_KEY_PREFIX}${code}`, destination);
+    return true;
+  }
+  if (!canUseMemoryStore()) {
+    return false;
+  }
+  memoryRedirects.set(code, destination);
+  return true;
+};
+
+export const resetGoRedirectStoreForTests = (): void => {
+  memoryRedirects.clear();
+};
+
 export const goRedirectRouter = express.Router();
 
-goRedirectRouter.get("/:code", (req, res) => {
-  const destination = resolveGoRedirect({
+goRedirectRouter.get("/:code", async (req, res) => {
+  const code = normalizeCode(req.params.code);
+  if (!code) {
+    res.status(404).send("Short link not found");
+    return;
+  }
+
+  const registeredDestination = resolveGoRedirect({
+    code,
+    inlineDestination: null,
+    registry: goRedirects,
+  });
+  const storedDestination = registeredDestination || (await getStoredRedirect(code));
+  const inlineDestination = resolveGoRedirect({
     code: req.params.code,
     inlineDestination:
       typeof req.query.to === "string" ? req.query.to : undefined,
-    registry: goRedirects,
+    registry: {},
   });
+  const destination = storedDestination || inlineDestination;
 
   if (!destination) {
     res.status(404).send("Short link not found");
@@ -68,4 +147,62 @@ goRedirectRouter.get("/:code", (req, res) => {
   }
 
   res.redirect(302, destination);
+});
+
+export const goRedirectRegistrationRouter = express.Router();
+
+goRedirectRegistrationRouter.post("/", async (req, res) => {
+  const code = normalizeCode(req.body?.code);
+  const destination = normalizeDestination(
+    req.body?.destination_url || req.body?.destinationUrl || "",
+  );
+
+  if (!code) {
+    res.status(400).json({
+      success: false,
+      error: "Invalid short-link code.",
+      code: "invalid_code",
+    });
+    return;
+  }
+
+  if (!destination) {
+    res.status(400).json({
+      success: false,
+      error: "Destination must be an AstrologyWiki URL.",
+      code: "invalid_destination",
+    });
+    return;
+  }
+
+  const existing =
+    resolveGoRedirect({ code, inlineDestination: null, registry: goRedirects }) ||
+    (await getStoredRedirect(code));
+
+  if (existing && existing !== destination) {
+    res.status(409).json({
+      success: false,
+      error: "Short-link code already points to a different destination.",
+      code: "code_conflict",
+    });
+    return;
+  }
+
+  const stored = existing || (await setStoredRedirect(code, destination));
+  if (!stored) {
+    res.status(503).json({
+      success: false,
+      error: "Short-link storage is not configured.",
+      code: "storage_unconfigured",
+    });
+    return;
+  }
+
+  res.status(existing ? 200 : 201).json({
+    success: true,
+    code,
+    short_url: `${SITE_ORIGIN}/go/${code}`,
+    destination_url: destination,
+    redirect_status: 302,
+  });
 });
