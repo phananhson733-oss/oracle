@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,106 +11,10 @@
   "articles": {
     "best-soccer-players-zodiac-sign": {
       "hero": {
-        "prompt": "A vast indigo night landscape: in the foreground, a luminous soccer pitch glows with geometric gold light, its grid lines radiating like a calendar — orderly, measurable, earthbound; high above, a sweeping star-canopy traces soft constellation shapes in pale teal and gold, yet the earthly grid and the celestial patterns diverge across the open horizon, two systems of meaning lit but uncoupled in one seamless panoramic sky; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Soccer pitch glowing under a starry indigo sky, earthly calendar grid and celestial constellations diverging across the horizon",
-        "altZh": "深蓝夜空下光格球场与星座图案在地平线上各行其道的全景夜景"
-      },
-      "inline": [
-        {
-          "kind": "sequence",
-          "afterHeadingEn": "## How to Read the Best-Sign Theory in the Data",
-          "afterHeadingZh": "## 如何在数据里识别顶尖球员星座论",
-          "titleEn": "5 Steps to Test Any Best-Sign Claim",
-          "titleZh": "验证顶尖球员星座论的五步法",
-          "altEn": "Five-step sequence for testing zodiac sign claims against birth-date data and youth selection cutoffs",
-          "altZh": "用生日数据和青训截止日检验足球运动员星座说法的五步流程",
-          "items": [
-            {
-              "nameEn": "Find the Cutoff Date",
-              "nameZh": "找到截止日",
-              "subEn": "Locate the youth selection cutoff for the league or country — often January 1 in football",
-              "subZh": "找到该联赛或国家的青训选材截止日，足球里常是 1 月 1 日"
-            },
-            {
-              "nameEn": "Expect Overrepresentation",
-              "nameZh": "预期高估现象",
-              "subEn": "Births just after the cutoff will be overrepresented among elite players, regardless of sign",
-              "subZh": "刚过截止日出生的人在精英球员里被高估，与星座无关"
-            },
-            {
-              "nameEn": "Use Signs as Labels Only",
-              "nameZh": "星座只当标签",
-              "subEn": "Translate those months into zodiac signs as a label, never as a cause of talent",
-              "subZh": "把这些月份翻成星座只当标签，绝不当成天赋的成因"
-            },
-            {
-              "nameEn": "Watch the Cutoff Move",
-              "nameZh": "观察截止日变化",
-              "subEn": "Notice that the best sign changes when the cutoff changes — which rules astrology out",
-              "subZh": "留意截止日一变，占优的星座就跟着变，这一点把星座排除在外"
-            },
-            {
-              "nameEn": "Treat Claims as Calendar Artifacts",
-              "nameZh": "把星座论当日历产物",
-              "subEn": "Treat any single-sign claim about elite players as a calendar artifact, not a forecast",
-              "subZh": "把任何单一星座论都当作日历产物，而不是一份预言"
-            }
-          ]
-        },
-        {
-          "kind": "compare",
-          "afterHeadingEn": "## the Best-Sign Theory at a Glance",
-          "afterHeadingZh": "## 顶尖球员星座论速查表",
-          "titleEn": "Three Layers of the Birth-Month Pattern",
-          "titleZh": "出生月份规律的三个层次",
-          "altEn": "Comparison of Relative Age Effect, cutoff dependence, and zodiac-as-label across elite soccer birth-date data",
-          "altZh": "精英足球出生日期数据中相对年龄效应、截止日依赖和星座标签三个层次的对比",
-          "columns": [
-            {
-              "nameEn": "Relative Age Effect",
-              "nameZh": "相对年龄效应",
-              "linesEn": [
-                "Older-in-cohort children selected more often",
-                "Births cluster just after the age-group cutoff",
-                "More elite players born early in the selection year"
-              ],
-              "linesZh": [
-                "同组里偏大的孩子更常被选中",
-                "生日集中在年龄段截止日之后",
-                "更多精英球员生于选材年度前段"
-              ]
-            },
-            {
-              "nameEn": "Cutoff Dependence",
-              "nameZh": "截止日依赖",
-              "linesEn": [
-                "Lucky months shift when the cutoff date moves",
-                "Favored quarter follows the cutoff, not the stars",
-                "Cutoff change rules out any star-based cause"
-              ],
-              "linesZh": [
-                "走运月份随截止日移动",
-                "受青睐季度跟着截止日走，不是跟着星空",
-                "截止日变动排除了星空成因"
-              ]
-            },
-            {
-              "nameEn": "Zodiac as Label",
-              "nameZh": "星座作为标签",
-              "linesEn": [
-                "Maps a birth month onto a sign — not a cause",
-                "A sign looks lucky only because of the calendar",
-                "Pattern vanishes when corrected for age bands"
-              ],
-              "linesZh": [
-                "把出生月份映射成星座，而非成因",
-                "某星座显得走运只是因为日历",
-                "校正年龄段后规律就消失"
-              ]
-            }
-          ]
-        }
-      ]
+        "prompt": "An atmospheric painterly editorial scene evoking the theme of \"Best Soccer Players\": a serene natural landscape — a still lake, open plain, or misty horizon — under a vast night sky, the subject suggested through soft glowing celestial forms woven into the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An atmospheric celestial landscape evoking Best Soccer Players.",
+        "altZh": "一幅氛围式星空风景，意象呼应「Best Soccer Players」。"
+      }
     }
   }
 }

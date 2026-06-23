@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const cristianoRonaldoZodiacSignEn: WikiArticle = {
   slug: "cristiano-ronaldo-zodiac-sign",
   image: "/images/blog/cristiano-ronaldo-zodiac-sign.jpg",
-  image_alt: "Silver aqua water-light flows toward amber-gold ridge under deep indigo sky, Aquarius legacy meeting Saturn discipline",
+  image_alt: "An atmospheric celestial landscape evoking Cristiano Ronaldo.",
   title: "Cristiano Ronaldo's Zodiac Sign: An Aquarius Sun Under Saturn in Aries",
   description: "Cristiano Ronaldo's zodiac sign is Aquarius, set by his February 5, 1985 birth date and traditionally ruled by Saturn.",
   authorId: "marcus-orion",
@@ -122,7 +122,7 @@ The Moon's sign is widely reported as Aries, but its exact degree and house depe
 export const cristianoRonaldoZodiacSignZh: WikiArticle = {
   slug: "cristiano-ronaldo-zodiac-sign",
   image: "/images/blog/cristiano-ronaldo-zodiac-sign.jpg",
-  image_alt: "银蓝水流在靛蓝夜空下涌向琥珀金山脊，象征水瓶座太阳的传承感与土星纪律相遇",
+  image_alt: "一幅氛围式星空风景，意象呼应「Cristiano Ronaldo」。",
   title: "C罗星座是一颗水瓶座太阳：在土星行经白羊的一年里读它",
   description: "C罗星座是水瓶座太阳，守护星为土星，由 1985 年 2 月 5 日的出生日期确定。一颗水瓶座太阳把身份框定在个体性、长线目标和\"做出能熬过当下的东西\"上，这比常见的\"叛逆者\"标签更精确地交代了起点。",
   authorId: "marcus-orion",

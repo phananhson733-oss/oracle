@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,96 +11,10 @@
   "articles": {
     "argentina-world-cup-2026-astrology": {
       "hero": {
-        "prompt": "Wide southern pampas at deep twilight, an immense flat horizon stretching to infinity, a warm amber-gold atmospheric luminosity swelling on one side of the sky — Jupiter's tide in Cancer — while a cold silver-blue aura emanates from the opposite arc — Saturn's square in Aries — both currents bleeding into one unbroken indigo canopy above the endless plain, two opposing glowing forces held in quiet tension across a single seamless sky, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Argentina's Cancer national chart under Jupiter and Saturn transits — two opposing glowing forces across one twilight pampas sky",
-        "altZh": "阿根廷巨蟹国家盘同时承受木星扩张与土星考验——两道对立光芒横跨南美草原暮空"
-      },
-      "inline": [
-        {
-          "kind": "sequence",
-          "afterHeadingEn": "## How to Read Argentina's World Cup 2026 Astrology in the National Chart",
-          "afterHeadingZh": "## 如何在国家星盘里读出阿根廷世界杯占星",
-          "titleEn": "5 Steps to Read a National Chart Transit",
-          "titleZh": "国运星盘过运五步读法",
-          "altEn": "Five-step method for reading Argentina's World Cup 2026 astrology transits in the national chart",
-          "altZh": "在国家星盘里读阿根廷世界杯占星过运的五步方法",
-          "items": [
-            {
-              "nameEn": "Locate the National Sun",
-              "nameZh": "找到国家太阳",
-              "subEn": "Cancer Sun in Argentina's 1816 independence chart — read as collective identity",
-              "subZh": "阿根廷1816年独立星盘里的巨蟹太阳——读作集体身份"
-            },
-            {
-              "nameEn": "Track Jupiter in Cancer",
-              "nameZh": "追踪木星行经巨蟹",
-              "subEn": "Same-sign emphasis on the national Sun across 2025–26; exact contact earlier in the year",
-              "subZh": "2025—26年与国家太阳同星座强调；精确接触落在这一年更早时候"
-            },
-            {
-              "nameEn": "Track Saturn in Aries",
-              "nameZh": "追踪土星行经白羊",
-              "subEn": "Applying hard square to the Cancer Sun — a season of testing, not a single date",
-              "subZh": "对巨蟹太阳形成逼近中的硬四分——是一段考验期，而非某个单一日期"
-            },
-            {
-              "nameEn": "Hold Both Transits Together",
-              "nameZh": "同时握住两个过运",
-              "subEn": "Expansion and pressure on the same point — not one verdict",
-              "subZh": "同一落点上的扩张与压力——而不是某一句判词"
-            },
-            {
-              "nameEn": "Read Each as a Chapter",
-              "nameZh": "把每个过运读成一章",
-              "subEn": "A theme the nation still has to play, not a fixed outcome",
-              "subZh": "这个国度还要去打的一章，而不是写死的结局"
-            }
-          ]
-        },
-        {
-          "kind": "compare",
-          "afterHeadingEn": "## Argentina's World Cup 2026 Astrology at a Glance",
-          "afterHeadingZh": "## 阿根廷世界杯占星速查表",
-          "titleEn": "Jupiter vs Saturn: Two Transits on One National Cancer Sun",
-          "titleZh": "木星 vs 土星：同时拉扯一颗国家巨蟹太阳的两个过运",
-          "altEn": "Comparison of Jupiter in Cancer and Saturn in Aries transits on Argentina's national Cancer Sun for 2026",
-          "altZh": "木星在巨蟹与土星在白羊对阿根廷2026年国家巨蟹太阳的过运对比",
-          "columns": [
-            {
-              "nameEn": "Jupiter in Cancer (2025–26)",
-              "nameZh": "木星在巨蟹（2025—26）",
-              "linesEn": [
-                "Same-sign emphasis on national Cancer Sun",
-                "Exact contact earlier in 2026; separating by tournament",
-                "Enters Leo on June 30, 2026",
-                "Reads as proud, cohesive national identity expanding"
-              ],
-              "linesZh": [
-                "与国家巨蟹太阳同星座强调",
-                "精确接触在赛前完成；赛时为分离态",
-                "2026年6月30日入狮子",
-                "读作骄傲、凝聚的国族身份扩张"
-              ]
-            },
-            {
-              "nameEn": "Saturn in Aries (2025–28)",
-              "nameZh": "土星在白羊（2025—28）",
-              "linesEn": [
-                "Hard square applying to national Cancer Sun",
-                "Exact square after 2026; weight gathering throughout",
-                "Marks testing and consolidation over time",
-                "Reads as burden of defending title and generational handover"
-              ],
-              "linesZh": [
-                "对国家巨蟹太阳形成逼近中的硬四分",
-                "精确四分在2026之后；分量持续累积",
-                "标定随时间积累的考验与巩固",
-                "读作卫冕头衔与交代一代人的负重"
-              ]
-            }
-          ]
-        }
-      ]
+        "prompt": "An atmospheric painterly editorial scene evoking the theme of \"Argentina\": a serene natural landscape — a still lake, open plain, or misty horizon — under a vast night sky, the subject suggested through soft glowing celestial forms woven into the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An atmospheric celestial landscape evoking Argentina.",
+        "altZh": "一幅氛围式星空风景，意象呼应「Argentina」。"
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,104 +11,10 @@
   "articles": {
     "world-cup-2026-june-astrology": {
       "hero": {
-        "prompt": "A vast nocturnal bay where warm golden light ripples outward from the near shore under a canopy of deep stars, the collective glow of the near horizon slowly giving way to a single luminous spotlight cresting at the far shore, while one steady cold brilliant point of light anchors the midsky — an arc from communal warmth to individual flair under a steadying celestial presence, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "June 2026 tournament sky — Jupiter in Cancer warmth arcing toward Leo spotlight, Saturn in Aries steadying the whole month",
-        "altZh": "2026年6月赛事天象——木星巨蟹的集体暖意弧向狮子座高光，土星白羊贯穿全月稳住底色"
-      },
-      "inline": [
-        {
-          "kind": "sequence",
-          "afterHeadingEn": "## How to Read the June 2026 Tournament Sky in Your Timing",
-          "afterHeadingZh": "## 如何在你自己的时机里识别2026年6月赛事天象",
-          "titleEn": "5 Steps to Read the June 2026 Sky",
-          "titleZh": "读懂2026年6月赛事天象的5步",
-          "altEn": "Five-step sequence for reading June 2026 transits: Jupiter Cancer, Leo shift, Saturn Aries, New Moon, Full Moon",
-          "altZh": "解读2026年6月行星过运的五个步骤：巨蟹木星、狮子换座、白羊土星、新月、满月",
-          "items": [
-            {
-              "nameEn": "Note Jupiter in Cancer",
-              "nameZh": "记住木星旺相于巨蟹座",
-              "subEn": "Warm, belonging-centered backdrop through June 30",
-              "subZh": "至6月30日，偏暖的归属背景"
-            },
-            {
-              "nameEn": "Watch Jupiter Enter Leo",
-              "nameZh": "盯住木星进入狮子座",
-              "subEn": "Late-June shift toward visibility and individual flair",
-              "subZh": "六月下旬，基调转向可见度与个人发挥"
-            },
-            {
-              "nameEn": "Track Saturn in Aries",
-              "nameZh": "追踪白羊座土星",
-              "subEn": "Steadying test of patience and nerve all month",
-              "subZh": "整月对耐心与胆识的稳定考验"
-            },
-            {
-              "nameEn": "Use the Two Moons",
-              "nameZh": "用好两次月相",
-              "subEn": "New Moon as reset; Full Moon as culmination",
-              "subZh": "新月为重启点，满月为收束点"
-            },
-            {
-              "nameEn": "Read Mood, Not Outcome",
-              "nameZh": "读成情绪而非定数",
-              "subEn": "Each window is a mood to meet, not a fixed result to await",
-              "subZh": "每个窗口是待你迎接的气氛，不是枯等的固定结局"
-            }
-          ]
-        },
-        {
-          "kind": "timeline",
-          "afterHeadingEn": "## the June 2026 Tournament Sky at a Glance",
-          "afterHeadingZh": "## 2026年6月赛事天象一览",
-          "titleEn": "June 2026 Planetary Arc",
-          "titleZh": "2026年6月行星弧线",
-          "altEn": "Timeline of June 2026 planetary transits: Saturn all month, Jupiter Cancer group stage, New Moon, Full Moon, Jupiter Leo",
-          "altZh": "2026年6月行星过运时间线：土星贯穿全月、巨蟹木星覆盖小组赛、新月、满月、木星入狮子",
-          "items": [
-            {
-              "labelEn": "All of June",
-              "labelZh": "贯穿6月",
-              "titleEn": "Saturn in Aries",
-              "titleZh": "土星在白羊座",
-              "noteEn": "Steadying undertone — tests patience and nerve across the entire opening month",
-              "noteZh": "稳住阵脚的底色，整个开赛首月考验耐心与胆识"
-            },
-            {
-              "labelEn": "Group Stage → Jun 30",
-              "labelZh": "小组赛至6月30日",
-              "titleEn": "Jupiter Exalted in Cancer",
-              "titleZh": "木星旺相于巨蟹座",
-              "noteEn": "Collective warmth and home-soil themes lift the opening rounds",
-              "noteZh": "集体暖意与主场归属感烘托开赛几轮"
-            },
-            {
-              "labelEn": "Mid-June",
-              "labelZh": "六月中旬",
-              "titleEn": "New Moon",
-              "titleZh": "新月",
-              "noteEn": "Reset window — a good moment to begin or recommit mid-tournament",
-              "noteZh": "重启窗口，适合开始或重新投入"
-            },
-            {
-              "labelEn": "Late June",
-              "labelZh": "六月下旬",
-              "titleEn": "Full Moon",
-              "titleZh": "满月",
-              "noteEn": "Culmination — energy peaks around the first knockout window",
-              "noteZh": "收束高点，势头在淘汰赛开端前后达到顶峰"
-            },
-            {
-              "labelEn": "From Jun 30",
-              "labelZh": "自6月30日起",
-              "titleEn": "Jupiter Enters Leo",
-              "titleZh": "木星进入狮子座",
-              "noteEn": "Spotlight shifts — individual flair and standout stories take center stage",
-              "noteZh": "基调转向高光，个人发挥与突出故事走到台前"
-            }
-          ]
-        }
-      ]
+        "prompt": "An atmospheric painterly editorial scene evoking the theme of \"Reading World Cup 2026 June Astrology Over the Opening Rounds\": a serene natural landscape — a still lake, open plain, or misty horizon — under a vast night sky, the subject suggested through soft glowing celestial forms woven into the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An atmospheric celestial landscape evoking Reading World Cup 2026 June Astrology Over the Opening Rounds.",
+        "altZh": "一幅氛围式星空风景，意象呼应「Reading World Cup 2026 June Astrology Over the Opening Rounds」。"
+      }
     }
   }
 }

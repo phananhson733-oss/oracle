@@ -2,7 +2,7 @@
   "imagesDir": "public/images/blog",
   "urlBase": "/images/blog",
   "articlesDir": "data/articles",
-  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
   "optimize": {
     "heroWidth": 1200,
     "heroHeight": 675,
@@ -11,106 +11,10 @@
   "articles": {
     "zodiac-signs-as-world-cup-2026-teams": {
       "hero": {
-        "prompt": "A vast dark plain under a star-filled indigo sky where four elemental glows coexist in one continuous landscape — a leaping flame-orange surge racing toward the left horizon, a slow amber earth-glow anchoring the center ground, a silver-blue wind-current weaving overhead, a deep teal ripple rolling from the right edge — all merging into a single sweeping nocturnal panorama, no architecture, no figures, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Four elemental glows — fire, earth, air, water — flowing across one nocturnal plain under a starlit indigo sky",
-        "altZh": "火、土、风、水四种元素光芒在星空下广阔夜景中共存流淌"
-      },
-      "inline": [
-        {
-          "kind": "sequence",
-          "afterHeadingEn": "## How to Read the Zodiac-Team Lens in Your Chart",
-          "afterHeadingZh": "## 如何在你自己身上识别星座球队透镜",
-          "titleEn": "5 Steps to Read Your Sign as a Playing Style",
-          "titleZh": "把你的星座读成踢球风格：5个步骤",
-          "altEn": "Five-step sequence for reading your zodiac sign as a World Cup 2026 playing style through element and modality",
-          "altZh": "通过元素与模态把你的星座读成世界杯踢球风格的五步流程",
-          "items": [
-            {
-              "nameEn": "Find Your Element",
-              "nameZh": "找出你的元素",
-              "subEn": "Identify your Sun sign and its element — fire, earth, air, or water",
-              "subZh": "找出你的太阳星座和对应元素——火、土、风还是水"
-            },
-            {
-              "nameEn": "Read the Element as a Style",
-              "nameZh": "把元素读成风格",
-              "subEn": "Fire = attack and flair, earth = structure and stamina, air = passing and tactics, water = intuition and flow",
-              "subZh": "火=进攻与灵光，土=结构与耐力，风=传球与战术，水=直觉与流动"
-            },
-            {
-              "nameEn": "Add Your Modality",
-              "nameZh": "加上你的模态",
-              "subEn": "Cardinal signs start moves, fixed signs hold shape, mutable signs adapt mid-play",
-              "subZh": "基本星座发起进攻，固定星座守住阵型，变动星座中途应变"
-            },
-            {
-              "nameEn": "Match to a Style, Not a Nation",
-              "nameZh": "对应风格，而非某国",
-              "subEn": "Match yourself to a style of team rather than a forecast for any particular nation",
-              "subZh": "把自己对应到一种球队风格，而不是给哪个国家做预测"
-            },
-            {
-              "nameEn": "Keep It Light",
-              "nameZh": "放轻松",
-              "subEn": "These zodiac signs as World Cup 2026 teams are a metaphor for temperament, not a scouting report",
-              "subZh": "用星座看世界杯球队是气质的比喻，不是球探报告"
-            }
-          ]
-        },
-        {
-          "kind": "compare",
-          "afterHeadingEn": "## The Zodiac-Team Lens at a Glance",
-          "afterHeadingZh": "## 星座球队透镜一览表",
-          "titleEn": "Fire, Earth and Water Playing Styles",
-          "titleZh": "火、土与水元素踢球风格对比",
-          "altEn": "Comparison of fire, earth, and water zodiac elements as World Cup 2026 playing styles with representative signs and traits",
-          "altZh": "火、土、水三种星座元素作为世界杯踢球风格的对比，含代表星座与特征",
-          "columns": [
-            {
-              "nameEn": "Fire Signs",
-              "nameZh": "火象星座",
-              "linesEn": [
-                "Aries · Leo · Sagittarius",
-                "Attack, risk, flair",
-                "Chases the opening, entertains"
-              ],
-              "linesZh": [
-                "白羊 · 狮子 · 射手",
-                "进攻、冒险与灵光",
-                "扑向空当、踢得好看"
-              ]
-            },
-            {
-              "nameEn": "Earth Signs",
-              "nameZh": "土象星座",
-              "linesEn": [
-                "Taurus · Virgo · Capricorn",
-                "Structure, stamina",
-                "Holds shape, grinds results"
-              ],
-              "linesZh": [
-                "金牛 · 处女 · 摩羯",
-                "结构与耐力",
-                "守住阵型、磨出结果"
-              ]
-            },
-            {
-              "nameEn": "Water Signs",
-              "nameZh": "水象星座",
-              "linesEn": [
-                "Cancer · Scorpio · Pisces",
-                "Intuition, flow",
-                "Reads the moment, shifts with feeling"
-              ],
-              "linesZh": [
-                "巨蟹 · 天蝎 · 双鱼",
-                "直觉与流动",
-                "读得懂当下、随感觉切换"
-              ]
-            }
-          ]
-        }
-      ]
+        "prompt": "An atmospheric painterly editorial scene evoking the theme of \"Reading Zodiac Signs as World Cup 2026 Teams Through the Elements\": a serene natural landscape — a still lake, open plain, or misty horizon — under a vast night sky, the subject suggested through soft glowing celestial forms woven into the scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An atmospheric celestial landscape evoking Reading Zodiac Signs as World Cup 2026 Teams Through the Elements.",
+        "altZh": "一幅氛围式星空风景，意象呼应「Reading Zodiac Signs as World Cup 2026 Teams Through the Elements」。"
+      }
     }
   }
 }

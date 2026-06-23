@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const solarReturnChartEn: WikiArticle = {
   slug: "solar-return-chart",
+  image: "/images/blog/solar-return-chart.jpg",
+  image_alt: "A golden sun returning to its exact annual horizon point over an indigo plain, evoking the solar return chart cycle",
   title: "What a Solar Return Chart Really Reveals About the Year Ahead",
   description: "Solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet",
   authorId: "marcus-orion",
@@ -126,6 +128,8 @@ Calculate your free birth chart to map your solar return ascendant and house ove
 
 export const solarReturnChartZh: WikiArticle = {
   slug: "solar-return-chart",
+  image: "/images/blog/solar-return-chart.jpg",
+  image_alt: "一轮金色太阳归返其年度精确位置，映照于靛蓝静水之上，象征太阳回归盘的年度周期",
   title: "太阳回归盘真正揭示的年度图景",
   description: "太阳回归盘是每年太阳精确回到出生度数那一刻所起的星盘，呈现的是当年的象征性主题轮廓，而非必然发生的事件清单。这张盘由五个解读层构成：回归上升点、与本命盘的叠加、太阳所在宫位、上升主星、关键度数位置，五层合起来才能把年度快照转变为可用的前瞻地图。",
   authorId: "marcus-orion",

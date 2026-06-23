@@ -10,6 +10,11 @@
   },
   "articles": {
     "solar-return-chart": {
+      "hero": {
+        "prompt": "a single golden sun hovering at the precise point on the horizon where it paused exactly one year before, the moment of its annual return; a vast indigo plain below where still dark water mirrors the orb's warm glow, teal auroras arcing across the sky like memory-filaments tracing the sun's year-long path back to this exact spot, distant mountain silhouettes framing the scene in quiet grandeur, the landscape utterly still in the moment of celestial reunion, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A golden sun returning to its exact annual horizon point over an indigo plain, evoking the solar return chart cycle",
+        "altZh": "一轮金色太阳归返其年度精确位置，映照于靛蓝静水之上，象征太阳回归盘的年度周期"
+      },
       "inline": [
         {
           "kind": "compare",

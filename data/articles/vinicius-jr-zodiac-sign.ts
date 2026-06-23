@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const viniciusJrZodiacSignEn: WikiArticle = {
   slug: "vinicius-jr-zodiac-sign",
   image: "/images/blog/vinicius-jr-zodiac-sign.jpg",
-  image_alt: "A nocturnal seascape where warm amber light meets a teal arc over open plains, symbolising Cancer Sun and Sagittarius Moon in tension",
+  image_alt: "An atmospheric celestial landscape evoking Vinicius Jr.",
   title: "Vinicius Jr's Zodiac Sign: A Cancer Sun With a Sagittarius Moon",
   description: "Vinicius Jr's zodiac sign is Cancer in Western astrology, set by his July 12, 2000 birth date and ruled by the Moon.",
   authorId: "aditi-sharma",
@@ -122,7 +122,7 @@ Jupiter spends 2025-26 in Cancer, lighting his Sun's sign and ruling his Moon, w
 export const viniciusJrZodiacSignZh: WikiArticle = {
   slug: "vinicius-jr-zodiac-sign",
   image: "/images/blog/vinicius-jr-zodiac-sign.jpg",
-  image_alt: "夜晚海岸线上，温暖琥珀色光芒与蓝绿色弧光交相辉映，象征维尼修斯星盘中巨蟹太阳与射手月亮的张力",
+  image_alt: "一幅氛围式星空风景，意象呼应「Vinicius Jr」。",
   title: "维尼修斯星座为什么踢出和梅西不一样的味道，答案在那颗射手月亮",
   description: "维尼修斯星座是巨蟹座，守护星是月亮，由 2000 年 7 月 12 日的出生日期确定。巨蟹座太阳把身份框定在感受、归属与\"护住重要之物\"的本能上，而他那颗射手座月亮又添了一股不安分、想往外冲的情绪劲——这一组配对，远比一个词的标签耐读。",
   authorId: "aditi-sharma",
