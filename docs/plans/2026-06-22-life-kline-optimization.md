@@ -117,7 +117,7 @@
 
 > ① ③ ④ 共识=**维持已锁决策**（新 PRD 的反向推动被否），用户确认即可；② 是真正的范围决策。
 >
-> **✅ 用户已拍板 (2026-06-22)**：① 维持 Energy Timeline（Life K-Line 仅分享/营销）｜② **先做 B1 可行性 spike 再定纳入**（成则进 Phase B、败则降级 activated theme badges）｜③ 采纳共识（start/peak/dip/end + Activity 命名）｜④ 采纳共识（图表免费只 gate 净新面，排最后 + 先 fake-door 验 WTP）。
+> **✅ 用户已拍板 (2026-06-22)**：① 维持 Energy Timeline（Life K-Line 仅分享/营销）｜② **B1 spike 已建 (#214) + 用户签字纳入 (2026-06-22)** → 进 Phase B 全引擎（house 透传 + 公开盘校准映射表 + const gate + 缓存版本 + PRD §2.15/设计 §6 schema + 接线 B5 deep card）｜③ 采纳共识（start/peak/dip/end + Activity 命名）｜④ 采纳共识（图表免费只 gate 净新面，排最后 + 先 fake-door 验 WTP）。
 
 | # | 冲突 | 共识解（推荐） | 性质 |
 |---|---|---|---|

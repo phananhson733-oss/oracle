@@ -14,6 +14,7 @@ import {
 } from "./birthInput.js";
 import {
   buildMonthlyTimeline,
+  buildYearOfMonthsTimeline,
   EphemerisUnavailableError,
 } from "../services/transit/timeline.js";
 import {
@@ -31,6 +32,8 @@ const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 // 单请求最多 92 天（~3 个月）。月度 K 线视图一次只取一个月；上限挡住放大计算量的滥用
 // （每天 ~6 次瘦经度计算，是 natal 的数十倍；配合更严限流，见 index.ts）。设计 F-E6 / B2。
 const MAX_RANGE_DAYS = 92;
+// B2 月内·12 月粒度：一次最多覆盖 12 个日历月（builder 逐日取数但共享日缓存）。
+const MAX_MONTH_CANDLES = 12;
 const MS_PER_DAY = 86_400_000;
 
 function isValidDate(value: unknown): value is string {
@@ -68,12 +71,16 @@ function validateRange(body: Record<string, unknown>): RangeOk | RangeErr {
 
   const granularityRaw =
     typeof range.granularity === "string" ? range.granularity : "day";
-  if (granularityRaw !== "day" && granularityRaw !== "year") {
+  if (
+    granularityRaw !== "day" &&
+    granularityRaw !== "month" &&
+    granularityRaw !== "year"
+  ) {
     return {
       ok: false,
       status: 400,
       code: "GRANULARITY_UNSUPPORTED",
-      error: "range.granularity must be 'day' or 'year'.",
+      error: "range.granularity must be 'day', 'month', or 'year'.",
     };
   }
   const granularity = granularityRaw as TimelineGranularity;
@@ -107,6 +114,27 @@ function validateRange(body: Record<string, unknown>): RangeOk | RangeErr {
         status: 400,
         code: "RANGE_TOO_LARGE",
         error: `Range exceeds the ${MAX_RANGE_DAYS}-day maximum.`,
+      };
+    }
+  } else if (granularity === "month") {
+    // month（月内·12 月粒度）：from/to 界定日历窗口，每根蜡烛 = 一个日历月。
+    const spanMonths =
+      (Number(to.slice(0, 4)) - Number(from.slice(0, 4))) * 12 +
+      (Number(to.slice(5, 7)) - Number(from.slice(5, 7)));
+    if (spanMonths < 0) {
+      return {
+        ok: false,
+        status: 400,
+        code: "INVALID_RANGE",
+        error: "range.to must not precede range.from.",
+      };
+    }
+    if (spanMonths + 1 > MAX_MONTH_CANDLES) {
+      return {
+        ok: false,
+        status: 400,
+        code: "RANGE_TOO_LARGE",
+        error: `Range exceeds the ${MAX_MONTH_CANDLES}-month maximum.`,
       };
     }
   } else {
@@ -185,6 +213,14 @@ async function handleTimeline(req: Request, res: Response): Promise<void> {
         Math.max(fromAge, Number(range.to.slice(0, 4)) - birthYear),
       );
       result = await buildLifeTimeline(birth, fromAge, toAge, range.tz);
+    } else if (range.granularity === "month") {
+      // B2 月内·12 月粒度：一根蜡烛 = 一个日历月（复用日缓存）。
+      result = await buildYearOfMonthsTimeline(
+        birth,
+        range.from,
+        range.to,
+        range.tz,
+      );
     } else {
       result = await buildMonthlyTimeline(
         birth,
@@ -202,6 +238,9 @@ async function handleTimeline(req: Request, res: Response): Promise<void> {
       markers: result.markers,
       dataQuality: result.dataQuality,
       accuracy: result.accuracy,
+      // B1：gate OFF 时恒 undefined（向后兼容）；life 结果暂无 domains（in 守卫）。
+      // B1：gate OFF 时恒 undefined → 不进响应（向后兼容）。
+      domainScores: result.domainScores,
     };
     res.json(payload);
   } catch (error) {

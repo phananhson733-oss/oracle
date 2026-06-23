@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.42
-> **Last Updated**: 2026-06-22
+> **Version**: 2.43
+> **Last Updated**: 2026-06-23
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -439,6 +439,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 后端 `backend/src/services/transit/`（纯函数评分引擎，TDD）+ `backend/src/api/timeline.ts`（端点）+ ephemeris 瘦经度接口；前端 `pages/TimelinePage.tsx` + `components/timeline/`（蜡烛主视图 / 当日抽屉 / 安全 onboarding，vite build 通过）+ 公开 SEO demo 页 `/:lang/energy-timeline`。
 
 **人生 K 线（年级，#17/#18）后端引擎已落地 (2026-06-17)**：`backend/src/services/transit/lifeArc.ts` —— 复用月度强度模型，慢速外行星（Jupiter/Saturn/Uranus/Neptune/Pluto/北交点）季度采样 + 周期播种 Return 标记（Saturn/Jupiter/Nodal 返照 + Uranus 中年对冲，按已知轨道周期非暴力扫描）+ 固定参考跨度（1-90 岁）归一化（range-independent）。端点 `granularity:'year'` 已接入（`MAX_LIFE_CANDLES=100`，复用同 payload/limiter）。后端 464 测试绿。**前端年级视图已落地 (2026-06-17)**：`/timeline` 页新增 Month/Life 切换，Life 模式拉年级时间轴（`fetchTransitTimeline` granularity:'year'），TimelineChart 泛化为按 date-或-age 键选择/匹配标记，年级蜡烛点选显示区间摘要 + topAspects（年级无逐日 AI 解读）。**CBT 情绪叠加层（#23）前端已落地于 feature flag `CBT_OVERLAY_ENABLED` 之后（默认关闭，dark code）(2026-06-17)**：月度模式可叠加 CBT 情绪强度（`fetchCbtMoodPoints` → teal 点/线，仅数值无原文）+ 首次开启走 GDPR Art9 显式 consent + 反因果声明。**consent 措辞须过法务后才翻 flag 对用户暴露**（设计 §10 / 隐私红线）。
+
+**优化轮 Phase A + B5' + B1 引擎已落地 (2026-06-22)**：呈现/内容层优化按 `docs/plans/2026-06-22-life-kline-optimization.md` 落成叠加 PR 链——Phase A（A-copy 法务免责/趋势图例/去寿命化文案 ｜ A-geometry 响应图高/未来 marker 上限/「You are here」aria 指示/**A12 色盲形状编码**[升=实心/降=空心/平=条] ｜ A-derived **Activity 5 档**[非 Momentum Score]/Flow-Friction/**At-a-Glance 派生四格**）+ B5' 报告骨架（Current-Phase 卡 + 未来转折点 + 每子面安全 frame）。**B1 域 activation 引擎**（`backend/src/services/transit/domains.ts`：被触发本命点**宫位**→6 域[career/relationships/money/creativity/wellness/growth]**定性 activation**[quiet/active/intense + flow/friction lean]，**禁数值 "/100" / "Score"**，出生时间未知降 confidence）已**用户签字纳入**并接线——`buildMonthlyTimeline` 响应新增**可选 `domainScores`**（`{domains, confidence, version}`），**behind `DOMAINS_ENABLED` const gate（默认 OFF）**，待公开盘校准 house→域映射表 + B5 deep card 消费后才翻 flag 上线。蜡烛 green/red 经签字**保留** + `COLOR_SYSTEM_GUIDE §3` doc-bless（A12 形状冗余已让方向不只靠色，非 success/danger 状态语义）。
 
 将占星 transit 强度可视化为**蜡烛时间轴主视图**，用户看到自身"能量节奏"起伏，点击任意时间点获得 AI 解读。**外部命名** `Energy Timeline / Transit Candles`，"人生K线/月度K线"仅作内部代号 + 中文副标题。完整工程设计 + 落地 blocker 见 `docs/plans/2026-06-16-life-kline-design.md`（已过 5-voice autoplan 评审：3 Claude + Gemini + Codex/GPT-5 + 代码核验）。
 

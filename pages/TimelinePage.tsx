@@ -1,5 +1,5 @@
 // INPUT: UserProfile（活跃出生档案）；fetchTransitTimeline；timeline 组件群；useLanguage/useTheme；FrameworkDisclaimer。
-// OUTPUT: 能量时间轴页面（Month/Life 双模式：月度日级 + 人生年级；蜡烛主视图 + 选中候选摘要 + 当日解读抽屉(仅月度) + 安全 onboarding + 全状态）。
+// OUTPUT: 能量时间轴页面（Month/Long-range 双模式：月度日级 + 长程年级；蜡烛主视图 + 选中候选摘要 + 当日解读抽屉(仅月度) + 安全 onboarding + 页底法务免责 + 全状态）。
 // POS: 受保护路由 /timeline 的页面（#3/#4/#5）。无吉凶/确定性叙事；纵轴=中性能量强度，仅与自身比较。
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -7,6 +7,12 @@ import type { UserProfile, TimelineResponse, TimelineCandle } from "../types";
 import { useLanguage } from "../components/UIComponents";
 import { FrameworkDisclaimer } from "../components/shared/FrameworkDisclaimer";
 import { TimelineChart } from "../components/timeline/TimelineChart";
+import { TimelineAtAGlance } from "../components/timeline/TimelineAtAGlance";
+import { energyBand } from "../components/timeline/derived";
+import { TimelineReport } from "../components/timeline/TimelineReport";
+import { TimelineDomains } from "../components/timeline/TimelineDomains";
+import { TimelineShareCard } from "../components/timeline/TimelineShareCard";
+import { TimelineOptionalPrefs } from "../components/timeline/TimelineOptionalPrefs";
 import { TimelineLegend } from "../components/timeline/TimelineLegend";
 import {
   TimelineOnboarding,
@@ -47,8 +53,13 @@ const TimelinePage: React.FC<{
   const now = new Date();
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth()); // 0-based
-  // 视图模式：month=月度日级（默认），life=人生年级（#17/#18，复用同端点 granularity:'year'）。
-  const [mode, setMode] = useState<"month" | "life">("month");
+  // 视图模式：month=月度日级（默认），year=年度月级（B2，granularity:'month'），life=人生年级（granularity:'year'）。
+  const [mode, setMode] = useState<"month" | "year" | "life">("month");
+  // B6：趋势线（MA）显示开关（默认开）+ 横向缩放系数（1=适配，最高 3×）。
+  const [showTrend, setShowTrend] = useState(true);
+  const [zoomFactor, setZoomFactor] = useState(1);
+  // B4'：post-chart 可选偏好（会话内填过/跳过即收起；持久化到档案是 follow-up）。
+  const [prefsDone, setPrefsDone] = useState(false);
 
   // CBT 情绪叠加层（#23，feature-flag 后默认关闭）：默认关 + 首次开启走 GDPR Art9 显式 consent。
   const [moodOn, setMoodOn] = useState(false);
@@ -114,6 +125,15 @@ const TimelinePage: React.FC<{
         language,
         "year",
       );
+    } else if (mode === "year") {
+      // B2 年度月级：当前年的 12 个日历月（granularity:'month'）。
+      req = fetchTransitTimeline(
+        profile,
+        `${year}-01-01`,
+        `${year}-12-31`,
+        language,
+        "month",
+      );
     } else {
       const { from, to } = monthRange(year, month);
       req = fetchTransitTimeline(profile, from, to, language, "day");
@@ -172,6 +192,14 @@ const TimelinePage: React.FC<{
     }
   };
 
+  // A8/A10：当前时点候选 key（月度=今日 YYYY-MM-DD、长程=age-当前年龄），传给图表做 You-are-here + 未来 marker 筛选。
+  const nowKey =
+    mode === "month"
+      ? `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`
+      : mode === "year"
+        ? `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-01`
+        : `age-${now.getFullYear() - (Number(profile.birthDate.slice(0, 4)) || now.getFullYear() - 30)}`;
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-6">
       <header className="mb-4">
@@ -181,9 +209,9 @@ const TimelinePage: React.FC<{
 
       <FrameworkDisclaimer />
 
-      {/* month / life 视图切换 */}
+      {/* month / year / life 视图切换（缩放级别：一月 → 一年 → 一生） */}
       <div className="my-4 inline-flex rounded-lg border border-paper-300 dark:border-gold-500/20 p-0.5 text-sm">
-        {(["month", "life"] as const).map((m) => (
+        {(["month", "year", "life"] as const).map((m) => (
           <button
             key={m}
             onClick={() => setMode(m)}
@@ -194,12 +222,10 @@ const TimelinePage: React.FC<{
             }`}
           >
             {m === "month"
-              ? language === "zh"
-                ? "月度"
-                : "Month"
-              : language === "zh"
-                ? "人生"
-                : "Life"}
+              ? c.monthModeLabel
+              : m === "year"
+                ? c.yearModeLabel
+                : c.lifeModeLabel}
           </button>
         ))}
       </div>
@@ -222,12 +248,28 @@ const TimelinePage: React.FC<{
           </button>
         </div>
       )}
+      {mode === "year" && (
+        <div className="my-4">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => changeMonth(-12)}
+              className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
+            >
+              ‹ {year - 1}
+            </button>
+            <span className="text-sm font-medium">{year}</span>
+            <button
+              onClick={() => changeMonth(12)}
+              className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
+            >
+              {year + 1} ›
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-slate-400">{c.yearViewTitle}</p>
+        </div>
+      )}
       {mode === "life" && (
-        <p className="my-4 text-sm font-medium">
-          {language === "zh"
-            ? "人生能量轴（0–89 岁，年级）"
-            : "Life timeline (ages 0–89, by year)"}
-        </p>
+        <p className="my-4 text-sm font-medium">{c.lifeViewTitle}</p>
       )}
 
       {/* CBT 情绪叠加层（#23）：feature-flag 后默认关闭（dark）。仅月度模式可叠加；
@@ -320,6 +362,9 @@ const TimelinePage: React.FC<{
             markers={data.markers}
             selectedDate={selectedDate}
             onSelectDate={setSelectedDate}
+            nowKey={nowKey}
+            showTrend={showTrend}
+            zoomFactor={zoomFactor}
             moodPoints={
               CBT_OVERLAY_ENABLED && moodOn && mode === "month"
                 ? moodPoints
@@ -327,6 +372,52 @@ const TimelinePage: React.FC<{
             }
           />
           <TimelineLegend />
+          {/* B6：趋势线显示开关 */}
+          <button
+            onClick={() => setShowTrend((v) => !v)}
+            aria-pressed={showTrend}
+            className="mt-2 text-xs text-slate-500 hover:text-slate-700"
+          >
+            {showTrend ? "☑" : "☐"} {c.trendToggle}
+          </button>
+          {/* B6：横向缩放（平移=容器横滚） */}
+          <div className="ml-3 inline-flex items-center gap-1.5 text-xs text-slate-500">
+            <button
+              type="button"
+              aria-label="zoom out"
+              onClick={() => setZoomFactor((z) => Math.max(1, z - 0.5))}
+              className="rounded border border-slate-200 px-2 leading-5 hover:bg-slate-50"
+            >
+              −
+            </button>
+            <span className="tabular-nums">
+              {Math.round(zoomFactor * 100)}%
+            </span>
+            <button
+              type="button"
+              aria-label="zoom in"
+              onClick={() => setZoomFactor((z) => Math.min(3, z + 0.5))}
+              className="rounded border border-slate-200 px-2 leading-5 hover:bg-slate-50"
+            >
+              +
+            </button>
+          </div>
+          <TimelineAtAGlance candles={data.candles} />
+          <TimelineReport
+            candles={data.candles}
+            markers={data.markers}
+            nowKey={nowKey}
+          />
+          <TimelineDomains domainScores={data.domainScores} />
+          <TimelineShareCard
+            candles={data.candles}
+            markers={data.markers}
+            nowKey={nowKey}
+            onCreateYours={demo ? onUpsell : undefined}
+          />
+          {!demo && !prefsDone && (
+            <TimelineOptionalPrefs onSave={() => setPrefsDone(true)} />
+          )}
 
           {data.accuracy !== "exact" && (
             <p className="mt-2 text-xs text-amber-600">{c.approxTimeNote}</p>
@@ -388,6 +479,19 @@ const TimelinePage: React.FC<{
                   {c.tension}: {Math.round(selectedCandle.tension)}
                 </span>
               </div>
+              {/* A4：能量活跃度 5 档（Activity level，绝不叫 Momentum/Score） */}
+              <div className="mt-2 text-xs text-slate-500">
+                {c.energyLevelLabel}:{" "}
+                {
+                  {
+                    veryQuiet: c.bandVeryQuiet,
+                    quiet: c.bandQuiet,
+                    moderate: c.bandModerate,
+                    busy: c.bandBusy,
+                    veryBusy: c.bandVeryBusy,
+                  }[energyBand(selectedCandle.intensity)]
+                }
+              </div>
               {selectedCandle.intensity < 12 && (
                 <p className="mt-2 text-xs text-paper-500 dark:text-star-400">{c.steadyStretch}</p>
               )}
@@ -427,6 +531,11 @@ const TimelinePage: React.FC<{
           )}
         </>
       )}
+
+      {/* A1: 页底法务免责（R-89）—— 与顶部 FrameworkDisclaimer（方法论/安全框架）互补 */}
+      <p className="mt-8 pt-4 border-t border-slate-100 text-[11px] leading-relaxed text-slate-400">
+        {c.legalFooter}
+      </p>
 
       {drawerDate && (
         <TimelineDetailDrawer

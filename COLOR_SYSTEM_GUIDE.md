@@ -158,6 +158,8 @@ const TRANSITION = "transition-all duration-300 ease-in-out";
 | 错误 | 红色 | `danger` | 失败、危险操作 |
 | 信息 | 蓝色 | `info` | 提示、帮助信息 |
 
+> **例外（已 bless · 2026-06-22）— Energy Timeline 蜡烛方向色**：能量时间轴蜡烛体用绿(走强)/红(回落)/灰(持平) 是**西方蜡烛图的领域惯例**，表示「当天能量方向」，**不是** success/danger 的状态语义（无好坏判断——绿不代表"好"、红不代表"危险"，对齐 Empowerment-over-Fatalism）。为不让色盲用户(约 8% 男性)只能靠红绿辨方向，已加 **A12 形状冗余编码**（升=实心 / 降=空心描边 / 平=细条），方向不再依赖颜色。故此处 green/red 允许豁免本表的 success/danger 约束。**仅蜡烛体适用**；派生面板(At-a-Glance 等)仍须中性配色(slate + psycho/mystic)，禁继承红绿。
+
 ### 4. 对比度要求（WCAG AA）
 
 | 元素类型 | 最低对比度 | 检测方法 |

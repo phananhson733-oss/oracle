@@ -7,7 +7,28 @@ import type { BirthInput, Language, AccuracyLevel, Aspect } from "./api.js";
 // 复用星历相位类型，避免与 services 层耦合（结构同构、可赋值）。
 export type TimelineAspectType = Aspect["type"];
 
-export type TimelineGranularity = "day" | "year";
+export type TimelineGranularity = "day" | "month" | "year";
+
+// B1 域 activation（house→6 域定性，禁数值 score）。引擎在 services/transit/domains.ts。
+export type Domain =
+  | "career"
+  | "relationships"
+  | "money"
+  | "creativity"
+  | "wellness"
+  | "growth";
+export type Activation = "quiet" | "active" | "intense";
+export type Lean = "flow" | "friction" | "mixed" | "neutral";
+export interface DomainActivation {
+  domain: Domain;
+  activation: Activation;
+  lean: Lean;
+}
+export interface DomainScore {
+  domains: DomainActivation[];
+  confidence: "full" | "reduced";
+  version: string;
+}
 
 // 数据质量分级：ok=全部核心天体真实；partial=部分派生点降级（已从权重剔除）；
 // approximate_time=出生时间未知/近似，ASC/宫位敏感项已降级（设计 B9）。
@@ -90,4 +111,6 @@ export interface TimelineResponse {
   markers: TimelineMarker[];
   dataQuality: DataQuality; // 整体（取最差的逐根质量）
   accuracy: AccuracyLevel;
+  // B1（DOMAINS_ENABLED gate OFF 时 undefined）：6 域定性 activation，供 deep card 消费。
+  domainScores?: DomainScore;
 }

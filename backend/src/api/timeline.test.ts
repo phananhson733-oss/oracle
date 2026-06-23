@@ -82,10 +82,34 @@ describe("POST /api/transit/timeline", () => {
   it("rejects an unknown granularity with 400 GRANULARITY_UNSUPPORTED", async () => {
     const res = await postReq(makeApp(), {
       ...validBody,
-      range: { granularity: "month", from: "2026-06-14", to: "2026-06-16" },
+      range: { granularity: "week", from: "2026-06-14", to: "2026-06-16" },
     });
     expect(res.status).toBe(400);
     expect(res.body.code).toBe("GRANULARITY_UNSUPPORTED");
+  });
+
+  it("returns a month-of-year (B2) timeline with one candle per calendar month", async () => {
+    const res = await postReq(makeApp(), {
+      ...validBody,
+      // Jan 10 → Feb 20 spans two calendar months → two month-candles.
+      range: { granularity: "month", from: "2026-01-10", to: "2026-02-20" },
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.granularity).toBe("month");
+    expect(res.body.contract.semantics).toBe("interval-summary");
+    expect(res.body.candles).toHaveLength(2);
+    expect(res.body.candles[0].date).toBe("2026-01-01");
+    expect(res.body.candles[1].date).toBe("2026-02-01");
+    expect(res.body.candles[0]).toHaveProperty("intensity");
+  });
+
+  it("rejects a month range wider than the 12-month cap with 400 RANGE_TOO_LARGE", async () => {
+    const res = await postReq(makeApp(), {
+      ...validBody,
+      range: { granularity: "month", from: "2026-01-01", to: "2027-06-01" }, // 17 months
+    });
+    expect(res.status).toBe(400);
+    expect(res.body.code).toBe("RANGE_TOO_LARGE");
   });
 
   it("rejects a range wider than the 92-day cap with 400 RANGE_TOO_LARGE", async () => {

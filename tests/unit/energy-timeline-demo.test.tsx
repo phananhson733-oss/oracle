@@ -91,6 +91,43 @@ describe("Energy Timeline canonical H1 ↔ static stub (no SPA-vs-stub drift, A0
     }
   });
 
+  // Phase A · PR A-copy 文案契约（A9 去寿命化 / A1 法务免责 / A2 趋势线图例）
+  it("A9: long-range view title is de-lifespan'd (no 'ages N' / lifespan framing)", () => {
+    for (const lang of ["en", "zh"] as const) {
+      const title = getTimelineCopy(lang).lifeViewTitle;
+      expect(title).not.toMatch(/ages?\s*\d|lifespan|0\s*[-–]\s*89|岁|寿命/i);
+    }
+    expect(getTimelineCopy("en").lifeViewTitle.toLowerCase()).toContain(
+      "long-range",
+    );
+    expect(getTimelineCopy("en").lifeModeLabel).toBe("Long-range");
+  });
+
+  it("A1: legal footer disclaims advice + prediction (EN + ZH)", () => {
+    expect(getTimelineCopy("en").legalFooter.toLowerCase()).toMatch(
+      /not\b.*\badvice/,
+    );
+    expect(getTimelineCopy("zh").legalFooter).toContain("不构成");
+  });
+
+  it("A2: legend explains the trend line", () => {
+    expect(getTimelineCopy("en").legendTrend.toLowerCase()).toContain("trend");
+    expect(getTimelineCopy("zh").legendTrend).toContain("趋势");
+  });
+
+  it("B2: year view labels exist and frame it as months-in-a-year (no lifespan)", () => {
+    expect(getTimelineCopy("en").yearModeLabel).toBe("Year");
+    expect(getTimelineCopy("zh").yearModeLabel).toBe("年度");
+    expect(getTimelineCopy("en").yearViewTitle.toLowerCase()).toContain(
+      "month",
+    );
+    for (const lang of ["en", "zh"] as const) {
+      expect(getTimelineCopy(lang).yearViewTitle).not.toMatch(
+        /ages?\s*\d|lifespan|岁|寿命/i,
+      );
+    }
+  });
+
   it("generated stub HTML (when built) renders an H1/title under the canonical", () => {
     const stubPath = join(
       process.cwd(),

@@ -741,7 +741,7 @@ export async function fetchTransitTimeline(
   from: string,
   to: string,
   lang: "zh" | "en" = "en",
-  granularity: "day" | "year" = "day",
+  granularity: "day" | "month" | "year" = "day",
 ): Promise<TimelineResponse> {
   const birth = profileToBirthInput(profile);
   const tz = (() => {

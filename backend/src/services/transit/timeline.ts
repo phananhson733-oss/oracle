@@ -1,5 +1,5 @@
 // INPUT: ../ephemeris.js（瘦经度 + 本命盘）、../../cache（redis + hashInput）、本目录纯函数（aspects/rollup/intensity/time/weights）、类型。
-// OUTPUT: buildMonthlyTimeline 编排（逐日 transit 强度 → 蜡烛 + episode topAspects + markers）+ EphemerisUnavailableError。
+// OUTPUT: buildMonthlyTimeline（逐日蜡烛）+ buildYearOfMonthsTimeline（B2 月内·12 月粒度，复用共享日缓存逐月分桶）+ 可选 domainScores（B1，gated）+ EphemerisUnavailableError。
 // POS: transit timeline 后端编排层（#2）。无 LLM；纯计算 + 单日 tz 缓存 + 完整性门。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
 import type { BirthInput, NatalChart } from "../../types/api.js";
@@ -28,6 +28,11 @@ import {
   normalizeToBaseline,
   type ScoredAspectInput,
 } from "./intensity.js";
+import {
+  aggregateDomainScores,
+  DOMAINS_ENABLED,
+  type DomainScore,
+} from "./domains.js";
 import { TIMELINE_ALGO_VERSION, TRANSIT_TIMELINE_BODIES } from "./weights.js";
 import {
   enumerateDays,
@@ -50,6 +55,9 @@ export interface MonthlyTimelineResult {
   markers: TimelineMarker[];
   dataQuality: DataQuality;
   accuracy: BirthInput["accuracy"];
+  // B1（behind DOMAINS_ENABLED gate，默认 OFF）：从 cached repAspects + 本命宫位派生的 6 域定性 activation。
+  // gate OFF 时恒 undefined → 不进响应 → 零行为变更。
+  domainScores?: DomainScore;
 }
 
 const TIMELINE_CONTRACT: TimelineCandleContract = {
@@ -412,11 +420,153 @@ export async function buildMonthlyTimeline(
       ? "partial"
       : "ok";
 
+  // B1（behind DOMAINS_ENABLED gate）：从各日 cached repAspects + 本命宫位派生区间 domain activation。
+  // CachedDay 形状不变（不另存）；gate OFF 时 undefined，不进响应。
+  const domainScores = DOMAINS_ENABLED
+    ? aggregateDomainScores(
+        dayResults.map((d) => d.repAspects),
+        natal.positions,
+      )
+    : undefined;
+
   return {
     contract: TIMELINE_CONTRACT,
     candles,
     markers,
     dataQuality,
     accuracy: birth.accuracy,
+    ...(domainScores ? { domainScores } : {}),
+  };
+}
+
+// B2：把一年聚成 12 个月度蜡烛（month-of-year 粒度）。复用 getOrComputeDay 共享日缓存
+// （月视图与日视图共用同一日计算 = 免费 perf）+ 按日历月分桶 + 逐日代表强度归一后 summarizeBucket。
+// 与 buildMonthlyTimeline 同 payload/契约，只是蜡烛 = 月而非日。
+export async function buildYearOfMonthsTimeline(
+  birth: BirthInput,
+  from: string,
+  to: string,
+  tz: string,
+): Promise<MonthlyTimelineResult> {
+  const natal = await ephemerisService.calculateNatalChart(birth);
+  const timeKnown = birth.accuracy === "exact" && Boolean(birth.time);
+  const natalLons = buildNatalLongitudes(natal, timeKnown);
+
+  const baselineYear = Number(from.slice(0, 4));
+  const baseline = await computeChartBaseline(birth, natalLons, baselineYear);
+
+  const days = enumerateDays(from, to);
+  const dayResults = await Promise.all(
+    days.map((d) => getOrComputeDay(birth, natalLons, d, tz)),
+  );
+
+  const occurrences: AspectOccurrence[] = [];
+  for (const day of dayResults) {
+    for (const a of day.repAspects) occurrences.push({ date: day.date, ...a });
+  }
+  const episodes = aggregateEpisodes(occurrences);
+
+  // 按日历月（YYYY-MM）分桶；日已按序，桶内保持时间序。
+  const byMonth = new Map<string, CachedDay[]>();
+  for (const day of dayResults) {
+    const ym = day.date.slice(0, 7);
+    const arr = byMonth.get(ym);
+    if (arr) arr.push(day);
+    else byMonth.set(ym, [day]);
+  }
+
+  const candles = [...byMonth.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([ym, monthDays]) =>
+      buildMonthCandle(ym, monthDays, episodes, timeKnown, baseline),
+    );
+
+  const markers = buildMarkers(episodes);
+  const hasPartial = dayResults.some((d) => d.dataQuality === "partial");
+  const dataQuality: DataQuality = !timeKnown
+    ? "approximate_time"
+    : hasPartial
+      ? "partial"
+      : "ok";
+
+  const domainScores = DOMAINS_ENABLED
+    ? aggregateDomainScores(
+        dayResults.map((d) => d.repAspects),
+        natal.positions,
+      )
+    : undefined;
+
+  return {
+    contract: TIMELINE_CONTRACT,
+    candles,
+    markers,
+    dataQuality,
+    accuracy: birth.accuracy,
+    ...(domainScores ? { domainScores } : {}),
+  };
+}
+
+// 单个月度蜡烛：逐日代表强度归一 → summarizeBucket（月内 start/peak/dip/end）+ 按月聚合 harmony/tension 通道。
+function buildMonthCandle(
+  ym: string,
+  monthDays: CachedDay[],
+  episodes: Episode[],
+  timeKnown: boolean,
+  baseline: ChartBaseline,
+): TimelineCandle {
+  const dailyIntensities = monthDays.map((d) =>
+    normalizeToBaseline(
+      d.repHarmonyRaw + d.repTensionRaw + d.repNeutralRaw,
+      baseline.lo,
+      baseline.hi,
+    ),
+  );
+  const bucket = summarizeBucket(dailyIntensities);
+  const intensity =
+    dailyIntensities.reduce((a, b) => a + b, 0) / dailyIntensities.length;
+
+  const sumH = monthDays.reduce((s, d) => s + d.repHarmonyRaw, 0);
+  const sumT = monthDays.reduce((s, d) => s + d.repTensionRaw, 0);
+  const sumAll =
+    sumH + sumT + monthDays.reduce((s, d) => s + d.repNeutralRaw, 0);
+  const harmonyShare = sumAll > 0 ? sumH / sumAll : 0;
+  const tensionShare = sumAll > 0 ? sumT / sumAll : 0;
+
+  // 区间与该月有交叠的 episode（YYYY-MM-DD 字符串可字典序比较；用宽上界 ym-31）。
+  const monthStart = `${ym}-01`;
+  const monthEnd = `${ym}-31`;
+  const active = episodes
+    .filter((e) => e.startDate <= monthEnd && monthStart <= e.endDate)
+    .sort((a, b) => a.minOrb - b.minOrb);
+  const topAspects = active.slice(0, TOP_ASPECTS_PER_CANDLE).map((e) => ({
+    episodeId: e.episodeId,
+    transitBody: e.transitBody,
+    natalBody: e.natalBody,
+    type: e.type,
+    phase: phaseRelativeToPeak(`${ym}-15`, e.peakDate),
+  }));
+  const dominantPhase: DominantPhase =
+    active.length > 0
+      ? phaseRelativeToPeak(`${ym}-15`, active[0].peakDate)
+      : "unknown";
+
+  const hasPartial = monthDays.some((d) => d.dataQuality === "partial");
+  return {
+    date: monthStart,
+    start: bucket.start,
+    peak: bucket.peak,
+    dip: bucket.dip,
+    end: bucket.end,
+    intensity,
+    harmony: intensity * harmonyShare,
+    tension: intensity * tensionShare,
+    dominantPhase,
+    dataQuality: timeKnown
+      ? hasPartial
+        ? "partial"
+        : "ok"
+      : "approximate_time",
+    sampleCount: monthDays.length,
+    topAspects,
   };
 }

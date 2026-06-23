@@ -4,7 +4,7 @@
 // POS: 月度 K 线主图渲染契约；TimelineChart 组件变更需同步本测试。
 
 import { describe, it, expect, vi } from "vitest";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, within } from "@testing-library/react";
 import { TimelineChart } from "../../components/timeline/TimelineChart";
 import type { TimelineCandle } from "../../types";
 
@@ -56,6 +56,33 @@ describe("TimelineChart", () => {
     );
     expect(container.querySelector("polyline")).toBeNull();
     expect(container.querySelectorAll("g").length).toBe(1);
+  });
+
+  it("B6: hides the trend (MA) polyline when showTrend is false", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    const on = render(<TimelineChart candles={candles} showTrend />);
+    expect(on.container.querySelector("polyline")).toBeTruthy(); // default shows trend
+    const off = render(<TimelineChart candles={candles} showTrend={false} />);
+    expect(off.container.querySelector("polyline")).toBeNull();
+  });
+
+  it("B6: zoomFactor widens candles beyond the default cap (and clamps at 3x)", () => {
+    const candles = Array.from({ length: 10 }, (_, i) =>
+      candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
+    );
+    const bodyW = (zoom?: number) => {
+      const { container } = render(
+        <TimelineChart candles={candles} zoomFactor={zoom} />,
+      );
+      return Math.max(
+        ...Array.from(
+          container.querySelectorAll("g > rect:nth-of-type(2)"),
+        ).map((r) => Number(r.getAttribute("width"))),
+      );
+    };
+    expect(bodyW(1)).toBeLessThanOrEqual(12); // default cap
+    expect(bodyW(2)).toBeGreaterThan(12); // 2x widens past it
+    expect(bodyW(99)).toEqual(bodyW(3)); // clamped at 3x
   });
 
   it("keeps a full month compact: candle bodies are capped (not ballooned to fill wide screens)", () => {
@@ -117,5 +144,62 @@ describe("TimelineChart", () => {
       (c) => (c.getAttribute("fill") || "").toUpperCase() === "#0D9488",
     );
     expect(teal.length).toBe(1);
+  });
+});
+
+describe("TimelineChart — Phase A geometry/a11y (A3/A8/A10/A12)", () => {
+  it("A12: down candle is hollow (white body fill), up candle stays solid — colorblind shape coding", () => {
+    const candles = [
+      candle("2026-06-01"), // default up (start 40 → end 50)
+      candle("2026-06-02", { start: 60, end: 40 }), // down
+    ];
+    const { container } = render(<TimelineChart candles={candles} />);
+    const whiteBodies = Array.from(container.querySelectorAll("rect")).filter(
+      (r) => (r.getAttribute("fill") || "").toUpperCase() === "#FFFFFF",
+    );
+    expect(whiteBodies.length).toBe(1); // exactly the single down candle is hollow
+  });
+
+  it("A10: 'You are here' indicator carries an aria-label only when nowKey is in view", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    // scope queries to each render's container (both mount into document.body)
+    const inView = render(
+      <TimelineChart candles={candles} nowKey="2026-06-02" />,
+    );
+    expect(
+      within(inView.container).queryByLabelText(/you are here/i),
+    ).toBeTruthy();
+    inView.unmount();
+
+    const outOfView = render(
+      <TimelineChart candles={candles} nowKey="2099-01-01" />,
+    );
+    expect(
+      within(outOfView.container).queryByLabelText(/you are here/i),
+    ).toBeNull();
+  });
+
+  it("A8: future markers are capped at 5 once nowKey is in view", () => {
+    const candles = Array.from({ length: 12 }, (_, i) =>
+      candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
+    );
+    const markers = candles.map((c) => ({
+      date: c.date,
+      type: "saturn-return" as const,
+      label: `m-${c.date}`,
+    }));
+    const { container } = render(
+      <TimelineChart candles={candles} markers={markers} nowKey="2026-06-01" />,
+    );
+    // marker dots are the only <title> nodes; 11 future markers → capped at 5
+    expect(container.querySelectorAll("title").length).toBe(5);
+  });
+
+  it("A3: desktop default plot height (jsdom lacks ResizeObserver → 720px → tall band)", () => {
+    const { container } = render(
+      <TimelineChart candles={[candle("2026-06-01")]} />,
+    );
+    const h = Number(container.querySelector("svg")?.getAttribute("height"));
+    expect(h).toBeGreaterThan(400); // H_DESKTOP(440) + pads → ~484
   });
 });

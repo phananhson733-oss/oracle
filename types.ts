@@ -1231,7 +1231,28 @@ export type SyntheticaConfigUnit = {
 // Mirror of backend/src/types/timeline.ts — keep in sync. Candle = interval
 // summary (start/peak/dip/end), NOT financial OHLC (honesty contract, design B8).
 
-export type TimelineGranularity = "day" | "year";
+export type TimelineGranularity = "day" | "month" | "year";
+
+// B1 域 activation（与后端 services/transit/domains.ts 同构；DOMAINS_ENABLED gate OFF 时响应无此字段）。
+export type TimelineDomainKey =
+  | "career"
+  | "relationships"
+  | "money"
+  | "creativity"
+  | "wellness"
+  | "growth";
+export type DomainActivationLevel = "quiet" | "active" | "intense";
+export type DomainLean = "flow" | "friction" | "mixed" | "neutral";
+export interface DomainActivation {
+  domain: TimelineDomainKey;
+  activation: DomainActivationLevel;
+  lean: DomainLean;
+}
+export interface DomainScore {
+  domains: DomainActivation[];
+  confidence: "full" | "reduced";
+  version: string;
+}
 export type TimelineDataQuality = "ok" | "partial" | "approximate_time";
 export type TimelineDominantPhase =
   | "applying"
@@ -1290,4 +1311,5 @@ export interface TimelineResponse {
   markers: TimelineMarker[];
   dataQuality: TimelineDataQuality;
   accuracy: "exact" | "time_unknown" | "approximate";
+  domainScores?: DomainScore; // B1（gate OFF 时缺省）
 }

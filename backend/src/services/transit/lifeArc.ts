@@ -11,6 +11,7 @@ import type {
   TimelineMarkerType,
   TimelineCandleContract,
   DataQuality,
+  DomainScore,
 } from "../../types/timeline.js";
 import { ephemerisService } from "../ephemeris.js";
 import { cacheService } from "../../cache/redis.js";
@@ -190,6 +191,8 @@ export interface LifeTimelineResult {
   markers: TimelineMarker[];
   dataQuality: DataQuality;
   accuracy: BirthInput["accuracy"];
+  // B1：与 MonthlyTimelineResult 同构（life 暂不派生 domains → 恒 undefined）。
+  domainScores?: DomainScore;
 }
 
 function natalLongitudes(natal: NatalChart): Record<string, number> {
