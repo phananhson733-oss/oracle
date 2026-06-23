@@ -826,6 +826,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'bruno-fernandes-zodiac-sign',
   'luka-modric-zodiac-sign',
   'bukayo-saka-zodiac-sign',
   'father-s-day-astrology-2026',
