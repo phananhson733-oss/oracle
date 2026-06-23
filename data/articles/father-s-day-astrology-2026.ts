@@ -21,11 +21,11 @@ export const fatherSDayAstrology2026En: WikiArticle = {
 
 ## What Is Father's Day Astrology 2026?
 
-Father's Day astrology 2026 is the cluster of sky events around the June 21 solstice, when the Sun moves into Cancer and opens Cancer season. The ingress, exact at 4:24 AM EDT, lands on the same weekend many U.S. households celebrate fathers. In traditional Western astrology the Sun stands for the father or central authority figure, while Cancer rules home, family, and ancestral roots — a pairing you can place on the wider [2026 planetary transit calendar](/en/wiki/june-2026-planetary-transits) alongside the year's other ingresses. A close Jupiter–Venus meeting in Cancer layers in warmth and a sense of emotional abundance, so the symbolism of the father points straight at the themes of home. Put simply, the day reads as **the Sun lighting the father archetype as Cancer season opens**.
+Father's Day astrology 2026 is the cluster of sky events around the June 21 solstice, when the Sun moves into Cancer and opens Cancer season. The ingress, exact at 4:24 AM EDT, lands on the same weekend many U.S. households celebrate fathers. In traditional Western astrology the Sun stands for the father or central authority figure, while Cancer rules home, family, and ancestral roots — a pairing you can place on the wider [2026 planetary transit calendar](/en/wiki/june-2026-planetary-transits) alongside the year's other ingresses. Jupiter, generous and expansive, is finishing a year-long transit through Cancer that layers in warmth and a sense of emotional abundance, so the symbolism of the father points straight at the themes of home. Put simply, the day reads as **the Sun lighting the father archetype as Cancer season opens**.
 
 - Centers on the Sun's exact move into Cancer at the June solstice
 - Ties the father symbol to home, memory, and family roots
-- Carries extra warmth from Jupiter and Venus traveling through Cancer
+- Carries extra warmth from Jupiter finishing its year-long transit through Cancer
 
 ## Why It Matters for Self-Awareness
 
@@ -47,7 +47,7 @@ In an ordinary year the ingress is a quiet seasonal turn. The way it works is si
 
 ### What 2026 stacks on top
 
-The 2026 version is louder. That same Sun crossing lands on Father's Day weekend and arrives with Jupiter and Venus already sitting in Cancer, which amplifies the emotional tone considerably. The reading gains warmth, generosity, and a sentimental pull — but it also gains complexity, with several themes asking for attention at once.
+The 2026 version is louder. That same Sun crossing lands on Father's Day weekend while Jupiter is still finishing its year in Cancer — it moves on to Leo June 29 — which amplifies the emotional tone considerably. The reading gains warmth, generosity, and a sentimental pull — but it also gains complexity, with several themes asking for attention at once.
 
 Here the trade-off is real and worth naming plainly. To get the headline emotional charge of 2026, you sacrifice the clean, single-note clarity of a plain ingress: more planets in the mix means more meanings layered together. A quiet ingress hands you simplicity about one thing — the seasonal shift. This richer alignment hands you intensity and depth, but you lose that easy, one-line read.
 
@@ -68,7 +68,7 @@ A handful of shortcuts get this alignment wrong, usually by flattening it into s
 
 1. **"It's just a gift-guide gimmick."** The date is anchored to a genuine solar ingress at the solstice, not a holiday cooked up purely to move retail products.
 2. **"The Sun in Cancer predicts how my dad will behave."** Astrology here describes themes and tendencies around the father archetype — it does not lock in fixed outcomes for any real person.
-3. **"More planets means a bigger deal for everyone, equally."** The Jupiter–Venus warmth colors the whole season broadly, but how strongly it touches you depends on your own chart, not a one-size verdict.
+3. **"More planets means a bigger deal for everyone, equally."** The Jupiter-in-Cancer warmth colors the whole season broadly, but how strongly it touches you depends on your own chart, not a one-size verdict.
 
 Each of these is the kind of half-read that sends people away thinking there's nothing here, when the actual alignment is more specific and more personal.
 
@@ -78,7 +78,7 @@ Each of these is the kind of half-read that sends people away thinking there's n
 | --- | --- | --- | --- |
 | Sun enters Cancer | The Sun crosses into Cancer and starts Cancer season | Natal 4th house and Moon | Notice a clear shift toward home and family that weekend |
 | Father archetype | The Sun symbolizes the father or central authority figure | Natal Sun and 10th house | Reflect on your relationship with your own father |
-| Jupiter–Venus in Cancer | Two warm planets add emotional abundance to the season | Natal Cancer placements | Feel more tender, generous, and sentimental than usual |
+| Jupiter in Cancer | A benefic planet finishing a year-long transit adds emotional abundance | Natal Cancer placements | Feel more tender, generous, and sentimental than usual |
 | Solstice timing | The longest day frames the exact ingress moment | Natal June chart degrees | Mark June 21 as the seasonal hinge to track |
 
 ## Questions People Ask About Father's Day Astrology 2026
@@ -93,7 +93,7 @@ In traditional Western astrology the Sun symbolizes vitality, authority, and the
 
 **What makes 2026 feel more emotionally charged than other years?**
 
-Jupiter and Venus both travel through Cancer in 2026, adding warmth and abundance to an already tender season. According to NASA, Jupiter takes about 12 years to orbit the Sun, which is why astrologers treat its visit to Cancer as a roughly once-in-12-years emphasis.
+Jupiter spends much of 2026 in Cancer, finishing its year-long visit there on June 29, which adds warmth and abundance to an already tender season. According to NASA, Jupiter takes about 12 years to orbit the Sun, which is why astrologers treat its visit to Cancer as a roughly once-in-12-years emphasis.
 
 **Does this transit predict what will happen with my dad?**
 
@@ -110,7 +110,7 @@ This is not a clinical interpretation or mental health advice.
 ## Related Reading
 
 - [Cancer season themes](/en/wiki/cancer) — unpacks the home-and-family mood that opens on this exact date.
-- [Venus through the signs](/en/wiki/venus) — explains the warmth this pairing adds across 2026.
+- [How transits work](/en/wiki/transits) — explains how a planet moving through a sign colors a whole season.
 - [Reading natal chart transits](/en/wiki/natal-chart-transits) — shows where this Cancer emphasis actually lands in your own chart.
 
 ## Take Action
