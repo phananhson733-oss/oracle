@@ -115,6 +115,25 @@ describe("TimelineChart", () => {
     expect(maxWick).toBeLessThan(200);
   });
 
+  it("clamps body height so aggregate (year/long-range) candles stay visually uniform", () => {
+    // 年/长程聚合的 start..end 跨度大→body 很长贯穿图；clamp 后 body 收敛、与月度观感统一（用户反馈）。
+    const extreme = [
+      candle("2026-06-01"), // 普通短 body 作参照
+      { ...candle("2026-06-02"), start: 5, end: 95, peak: 100, dip: 0 }, // 极端长 body
+    ];
+    const { container } = render(<TimelineChart candles={extreme} />);
+    const bodyHeights = Array.from(container.querySelectorAll("rect"))
+      .filter((r) =>
+        ["#10B981", "#EF4444", "#94A3B8"].includes(
+          (r.getAttribute("fill") || "").toUpperCase(),
+        ),
+      )
+      .map((r) => Number(r.getAttribute("height")));
+    const maxBody = Math.max(...bodyHeights);
+    // H_DESKTOP=440, maxBodyExtent=0.4*440=176；clamp 后即使满量程 start..end 也 <= ~176。
+    expect(maxBody).toBeLessThanOrEqual(180);
+  });
+
   it("keeps a full month compact: candle bodies are capped (not ballooned to fill wide screens)", () => {
     // 回归用户反馈"大小太大了"：宽容器下槽位/蜡烛体须封顶，而非铺满拉宽。
     const candles = Array.from({ length: 31 }, (_, i) =>
