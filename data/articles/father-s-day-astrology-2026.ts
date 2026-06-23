@@ -4,10 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const fatherSDayAstrology2026En: WikiArticle = {
   slug: "father-s-day-astrology-2026",
-  image: "/images/blog/father-s-day-astrology-2026.jpg",
-  image_alt: "Sun descending into indigo sea at summer solstice with Jupiter and Venus glowing above calm coastal waters",
   title: "What Father's Day Astrology 2026 Says About Home and Roots",
-  description: "Father's Day astrology 2026 is the cluster of sky events around June 21, 2026, when the Sun moves into Cancer at 4:24 AM EDT and opens Cancer season on the same weekend many U.S.",
+  description: "Father's Day astrology 2026 is the cluster of sky events around the June 21 solstice, when the Sun moves into Cancer and opens Cancer season.",
   authorId: "elena-vane",
   date: "2026-06-23",
   schema: "Article",
@@ -23,7 +21,7 @@ export const fatherSDayAstrology2026En: WikiArticle = {
 
 ## What Is Father's Day Astrology 2026?
 
-Father's Day astrology 2026 is the cluster of sky events around June 21, 2026, when the Sun moves into Cancer at 4:24 AM EDT and opens Cancer season on the same weekend many U.S. households celebrate fathers. In traditional Western astrology the Sun stands for the father or central authority figure, while Cancer rules home, family, and ancestral roots — a pairing you can place on the wider [2026 planetary transit calendar](/en/wiki/june-2026-planetary-transits) alongside the year's other ingresses. A close Jupiter–Venus meeting in Cancer layers in warmth and a sense of emotional abundance, so the symbolism of the father points straight at the themes of home. Put simply, the day reads as **the Sun lighting the father archetype as Cancer season opens**.
+Father's Day astrology 2026 is the cluster of sky events around the June 21 solstice, when the Sun moves into Cancer and opens Cancer season. The ingress, exact at 4:24 AM EDT, lands on the same weekend many U.S. households celebrate fathers. In traditional Western astrology the Sun stands for the father or central authority figure, while Cancer rules home, family, and ancestral roots — a pairing you can place on the wider [2026 planetary transit calendar](/en/wiki/june-2026-planetary-transits) alongside the year's other ingresses. A close Jupiter–Venus meeting in Cancer layers in warmth and a sense of emotional abundance, so the symbolism of the father points straight at the themes of home. Put simply, the day reads as **the Sun lighting the father archetype as Cancer season opens**.
 
 - Centers on the Sun's exact move into Cancer at the June solstice
 - Ties the father symbol to home, memory, and family roots
@@ -52,9 +50,6 @@ In an ordinary year the ingress is a quiet seasonal turn. The way it works is si
 The 2026 version is louder. That same Sun crossing lands on Father's Day weekend and arrives with Jupiter and Venus already sitting in Cancer, which amplifies the emotional tone considerably. The reading gains warmth, generosity, and a sentimental pull — but it also gains complexity, with several themes asking for attention at once.
 
 Here the trade-off is real and worth naming plainly. To get the headline emotional charge of 2026, you sacrifice the clean, single-note clarity of a plain ingress: more planets in the mix means more meanings layered together. A quiet ingress hands you simplicity about one thing — the seasonal shift. This richer alignment hands you intensity and depth, but you lose that easy, one-line read.
-
-
-![Comparison of a normal Cancer season ingress and the amplified 2026 Father's Day sky alignment](/images/blog/father-s-day-astrology-2026-i0-en.svg)
 
 ## How to Read This Transit in Your Timing
 
@@ -85,9 +80,6 @@ Each of these is the kind of half-read that sends people away thinking there's n
 | Father archetype | The Sun symbolizes the father or central authority figure | Natal Sun and 10th house | Reflect on your relationship with your own father |
 | Jupiter–Venus in Cancer | Two warm planets add emotional abundance to the season | Natal Cancer placements | Feel more tender, generous, and sentimental than usual |
 | Solstice timing | The longest day frames the exact ingress moment | Natal June chart degrees | Mark June 21 as the seasonal hinge to track |
-
-
-![Four key astrological factors shaping Father's Day 2026: Sun in Cancer, father archetype, Jupiter-Venus, solstice](/images/blog/father-s-day-astrology-2026-i1-en.svg)
 
 ## Questions People Ask About Father's Day Astrology 2026
 
