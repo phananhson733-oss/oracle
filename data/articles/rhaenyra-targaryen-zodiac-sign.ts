@@ -43,12 +43,9 @@ Fans and astrology writers don't actually agree on her sign — Sagittarius, Tau
 
 1. **How Taurus works.** Taurus filters everything through territory and resources. It claims what is rightfully hers and digs in. Reading Rhaenyra as Taurus highlights her birthright, her patience, and her refusal to surrender the crown. To get that grounded, immovable endurance, you sacrifice the psychological edge — Taurus does not explain her appetite for leverage over people.
 2. **How Scorpio works.** Scorpio filters through power dynamics and emotional control. It is less interested in owning the land than in owning the loyalty of everyone standing on it. To get that precision about manipulation, secrecy, and survival-at-any-cost, you give up the simpler "she just wants her property back" reading.
-3. **The trade-off in one line.** Choosing Taurus gets you a story about controlling resources; choosing Scorpio gets you a story about controlling people. Rhaenyra spends both seasons doing the second far more than the first.
+3. **The trade-off in one line.** Choosing Taurus gets you a story about controlling resources; choosing Scorpio gets you a story about controlling people. Across the series, Rhaenyra does the second far more than the first.
 
 Because both are fixed signs, this is a debate about focus, not about elements. That is why the popular Aries and Leo guesses, for all their screen-logic, argue the wrong axis.
-
-
-![Side-by-side comparison of Scorpio and Taurus fixed signs mapping each to Rhaenyra Targaryen's on-screen behavior](/images/blog/rhaenyra-targaryen-zodiac-sign-i0-en.svg)
 
 ## How to Read the Rhaenyra Targaryen Zodiac Sign in Her Arc
 
@@ -61,9 +58,6 @@ The Rhaenyra Targaryen zodiac sign becomes clearer once you stop watching for dr
 5. **She holds the long grudge.** Slights from years earlier still steer her decisions, a hallmark of the sign's deep memory.
 
 Spot two or three of these in a scene and you are watching Scorpio behavior, regardless of how much fire is on the screen. None of these signals depends on her dragons or her title; strip those away and the same calculating, self-protective pattern remains, which is exactly why the water read holds up.
-
-
-![Five behavioral patterns that reveal Rhaenyra Targaryen's Scorpio zodiac profile across House of the Dragon seasons](/images/blog/rhaenyra-targaryen-zodiac-sign-i1-en.svg)
 
 ## Common Misreadings
 
@@ -102,7 +96,7 @@ You match repeated behavior to a sign's core themes instead of using a birth dat
 
 **Does the show ever confirm her sign?**
 
-No. Canon records only that she was born in 97 AC — no month, no day — and Westeros has no zodiac, so every reading is interpretive, built from how she acts across both seasons rather than from a birth date.
+No. Canon records only that she was born in 97 AC — no month, no day — and Westeros has no zodiac, so every reading is interpretive, built from how she acts across the series rather than from a birth date.
 
 ## Reflection Prompts
 
