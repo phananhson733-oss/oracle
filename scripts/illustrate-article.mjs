@@ -24,6 +24,7 @@
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 
 const args = process.argv.slice(2);
 const getArg = (name) => {
@@ -56,8 +57,39 @@ fs.mkdirSync(imagesDir, { recursive: true });
 const log = (...m) => console.log(...m);
 const sh = (file, argv) => execFileSync(file, argv, { stdio: ['ignore', 'pipe', 'pipe'] }).toString();
 
-// Generate a raster image via the gemini-web skill (Google session). Retries.
-function generate(prompt, outPng, retries = 3) {
+// ── Hero image generation ───────────────────────────────────────────────────
+// Primary: FLUX.1-schnell run locally via mflux (MLX, Apple-Silicon native — no
+// network, no rate limits, no dead web sessions). Fallback: the gemini-web skill.
+// Switch providers with GG_HERO_PROVIDER=flux|gemini (default flux). If the FLUX
+// model isn't present yet, we silently skip it and use gemini — so this is a
+// no-regression change until the model finishes downloading.
+const HERO_PROVIDER = process.env.GG_HERO_PROVIDER || 'flux';
+const FLUX_MODEL = process.env.GG_FLUX_MODEL_PATH || path.join(os.homedir(), 'flux-schnell-4bit');
+const FLUX_STEPS = process.env.GG_FLUX_STEPS || '4';
+const FLUX_SEED = process.env.GG_FLUX_SEED || '';
+// mflux is a `uv tool` — its bin dir is often absent from a cron PATH, so prefer
+// the absolute path and fall back to the bare name if the user relocated it.
+function mfluxBin() {
+  if (process.env.GG_MFLUX_BIN) return process.env.GG_MFLUX_BIN;
+  const local = path.join(os.homedir(), '.local', 'bin', 'mflux-generate');
+  return fs.existsSync(local) ? local : 'mflux-generate';
+}
+function fluxReady() {
+  // A complete madroid-format 4-bit model has these shards; cheapest integrity gate.
+  return ['config.json', 'transformer/3.safetensors', 'vae/0.safetensors']
+    .every((f) => { try { return fs.statSync(path.join(FLUX_MODEL, f)).size > 1000; } catch { return false; } });
+}
+function generateFlux(prompt, outPng) {
+  // schnell is CFG-distilled: 4 steps is plenty. 1280×720 (16:9, ÷16) feeds the
+  // 1200×675 optimize() crop with margin. mflux writes a PNG at --output.
+  try { fs.rmSync(outPng, { force: true }); } catch { /* ignore */ }
+  const argv = ['-m', FLUX_MODEL, '--base-model', 'schnell', '--prompt', prompt,
+    '--steps', FLUX_STEPS, '--width', '1280', '--height', '720', '--output', outPng];
+  if (FLUX_SEED) argv.push('--seed', FLUX_SEED);
+  try { sh(mfluxBin(), argv); } catch { /* size check below */ }
+  return fs.existsSync(outPng) && fs.statSync(outPng).size > 20000;
+}
+function generateGemini(prompt, outPng, retries = 3) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       sh('bun', [geminiSkill, '--prompt', prompt, '--image', outPng]);
@@ -65,9 +97,19 @@ function generate(prompt, outPng, retries = 3) {
       // skill exits non-zero on "no image returned"; fall through to size check
     }
     if (fs.existsSync(outPng) && fs.statSync(outPng).size > 20000) return true;
-    log(`   ⚠️  gen attempt ${attempt}/${retries} produced no image; retrying`);
+    log(`   ⚠️  gemini gen attempt ${attempt}/${retries} produced no image; retrying`);
   }
   return false;
+}
+function generate(prompt, outPng, retries = 3) {
+  if (HERO_PROVIDER === 'flux' && fluxReady()) {
+    log('   hero: generating via FLUX.1-schnell (local mflux)…');
+    if (generateFlux(prompt, outPng)) return true;
+    log('   ⚠️  FLUX produced no image → falling back to gemini-web');
+  } else if (HERO_PROVIDER === 'flux') {
+    log('   hero: FLUX model not present → using gemini-web');
+  }
+  return generateGemini(prompt, outPng, retries);
 }
 
 // Normalize to a standard, scrape-safe ratio (default 1200×675 = 16:9) via macOS
@@ -168,7 +210,6 @@ for (const slug of slugs) {
       } else if (dryRun) {
         log('   hero: [dry-run] skip gen');
       } else {
-        log('   hero: generating via gemini-web…');
         if (!generate(prompt, rasterSrc)) { failures.push(`${slug}: hero generation failed`); ok = false; }
       }
     }
