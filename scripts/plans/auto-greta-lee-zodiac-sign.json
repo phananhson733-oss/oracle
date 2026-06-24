@@ -1,0 +1,97 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "greta-lee-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sun Sign vs Rising Sign: Why One Holds and One Wobbles",
+          "titleEn": "Sun Sign vs. Rising Sign: What Holds and What Wobbles",
+          "titleZh": "太阳星座与上升星座：哪个站得住，哪个摇摇欲坠",
+          "altEn": "Comparison of confirmed Pisces Sun sign versus unconfirmed Rising sign in Greta Lee's birth chart",
+          "altZh": "格蕾塔·李星盘中已确认的双鱼太阳与未确认上升星座的对比",
+          "columns": [
+            {
+              "nameEn": "Sun Sign (Pisces)",
+              "nameZh": "太阳星座（双鱼座）",
+              "linesEn": [
+                "Fixed by birth date alone",
+                "No birth time needed",
+                "Confirmed: Pisces",
+                "Marks core identity and motivation",
+                "Nearly every source agrees"
+              ],
+              "linesZh": [
+                "仅凭出生日期即可确定",
+                "无需出生时间",
+                "已确认：双鱼座",
+                "代表核心身份与人生动力",
+                "几乎所有来源一致认可"
+              ]
+            },
+            {
+              "nameEn": "Rising Sign (Ascendant)",
+              "nameZh": "上升星座（上升点）",
+              "linesEn": [
+                "Requires exact birth hour",
+                "Changes every ~2 hours",
+                "Unconfirmed for Greta Lee",
+                "Sets house structure and first impression",
+                "Any published value is a best guess"
+              ],
+              "linesZh": [
+                "需要精确的出生时刻",
+                "约每两小时变换一次",
+                "格蕾塔·李的上升未获证实",
+                "决定宫位结构与第一印象",
+                "任何已发布的数值都只是猜测"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Pisces Sun in Greta Lee's Screen Presence",
+          "titleEn": "4 Signals of Pisces Sun in Greta Lee's Screen Presence",
+          "titleZh": "格蕾塔·李银幕表现中双鱼太阳的四个信号",
+          "altEn": "Four Pisces Sun traits in Greta Lee's acting: role absorption, comfort with ambiguity, emotional permeability, shape-shifting range",
+          "altZh": "格蕾塔·李表演中可见的四种双鱼太阳特质：角色融入、拥抱模糊、情感渗透、多元表现力",
+          "items": [
+            {
+              "nameEn": "Role Absorption",
+              "nameZh": "角色融入",
+              "subEn": "Disappears into characters, adapting tone and rhythm to the story rather than carrying a fixed personal style across every part",
+              "subZh": "融入角色，根据故事调整语调与节奏，而非将固定的个人风格带入每个作品"
+            },
+            {
+              "nameEn": "Comfort with Ambiguity",
+              "nameZh": "拥抱模糊",
+              "subEn": "Gravitates toward layered, morally blurred characters and looks at home in roles that resist a clean read",
+              "subZh": "倾向于层次丰富、道德模糊的角色，在无法简单定性的角色中游刃有余"
+            },
+            {
+              "nameEn": "Emotional Permeability",
+              "nameZh": "情感渗透",
+              "subEn": "Registers other people's feelings in real time — a Neptune-ruled trait that reads as quiet receptivity rather than big declarative acting",
+              "subZh": "实时感应他人情绪——海王星主宰的特质，表现为静默的感受力而非宣示性的表演"
+            },
+            {
+              "nameEn": "Shape-Shifting Range",
+              "nameZh": "变色龙式多元表现力",
+              "subEn": "The chameleon quality reviewers describe lines up with the dissolving, boundary-blurring character astrologers link to Neptune",
+              "subZh": "评论者描述的变色龙特质，与占星学家将海王星和消融、模糊边界相关联的理论高度吻合"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
