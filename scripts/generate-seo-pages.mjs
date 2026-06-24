@@ -694,6 +694,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'bruno-fernandes-zodiac-sign',
   'luka-modric-zodiac-sign',
   'bukayo-saka-zodiac-sign',
   'solar-return-chart',
@@ -830,7 +831,6 @@ const ARTICLE_SLUGS = [
 const ARTICLE_SLUGS_EN_ONLY = [
   'rhaenyra-targaryen-zodiac-sign',
   'cancer-season-2026-astrology',
-  'bruno-fernandes-zodiac-sign',
   'father-s-day-astrology-2026',
   'jeremy-doku-birth-chart',
   'mo-salah-birth-chart',
