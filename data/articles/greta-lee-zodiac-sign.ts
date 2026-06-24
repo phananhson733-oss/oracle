@@ -111,10 +111,9 @@ It is linked to adaptability and an ease with ambiguous, layered roles. The Nept
 
 ## Related Reading
 
-- [explainer on the Pisces Sun sign](/en/wiki/12th-house-astrology) — goes deeper on the placement at the center of this page
-- [profile of Neptune as a ruling planet](/en/wiki/12th-house-astrology) — why Pisces' ruler shapes the chameleon quality described here
-- [overview of rising sign profiles](/en/wiki/how-to-read-birth-chart) — what an Ascendant adds once a birth time is finally confirmed
-- *companion piece on another trending celebrity's zodiac sign* — the same approach applied across the current pop-culture batch
+- [primer on Pisces' Neptune-ruled symbolism](/en/wiki/neptune-in-pisces) — a closer match for the imagination and permeability discussed here
+- [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — how Sun, Moon, and rising fit together once you move beyond a Sun-only read
+- [another celebrity zodiac-sign case study](/en/wiki/lionel-messi-zodiac-sign) — the same identity-versus-chart-structure method applied to a different public figure
 - [Greta Lee (Wikipedia)](https://en.wikipedia.org/wiki/Greta_Lee)
 - [Pisces (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Pisces_(astrology))
 
