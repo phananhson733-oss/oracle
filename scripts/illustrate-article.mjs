@@ -75,9 +75,11 @@ function mfluxBin() {
   return fs.existsSync(local) ? local : 'mflux-generate';
 }
 function fluxReady() {
-  // A complete madroid-format 4-bit model has these shards; cheapest integrity gate.
-  return ['config.json', 'transformer/3.safetensors', 'vae/0.safetensors']
-    .every((f) => { try { return fs.statSync(path.join(FLUX_MODEL, f)).size > 1000; } catch { return false; } });
+  // Cheapest integrity gate: the essential shards of an mflux 4-bit model. NOTE the
+  // current mflux-quantized format ships NO config.json (metadata lives in the
+  // safetensors headers), so we gate on the actual weight shards, not config.json.
+  return ['transformer/3.safetensors', 'vae/0.safetensors', 'text_encoder_2/0.safetensors']
+    .every((f) => { try { return fs.statSync(path.join(FLUX_MODEL, f)).size > 100000; } catch { return false; } });
 }
 function generateFlux(prompt, outPng) {
   // schnell is CFG-distilled: 4 steps is plenty. 1280×720 (16:9, ÷16) feeds the
