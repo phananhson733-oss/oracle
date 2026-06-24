@@ -114,6 +114,37 @@ export function periodRange(cadence: Cadence, date: Date): string {
   return cadence === "weekly" ? isoWeekRange(date) : monthRange(date);
 }
 
+// Compact period label for the email SUBJECT line (Co-Star style: lead with the
+// dates so the inbox preview is time-anchored). Weekly: "Jun 22–28" within a
+// month, "Jun 29–Jul 5" across the boundary; monthly: "June 2026".
+export function shortPeriodLabel(cadence: Cadence, date: Date): string {
+  if (cadence === "monthly") {
+    return monthStart(date).toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    });
+  }
+  const monday = isoWeekStart(date);
+  const sunday = new Date(monday);
+  sunday.setUTCDate(monday.getUTCDate() + 6);
+  const mon = (d: Date): string =>
+    d.toLocaleDateString("en-US", { month: "short", timeZone: "UTC" });
+  return mon(monday) === mon(sunday)
+    ? `${mon(monday)} ${monday.getUTCDate()}–${sunday.getUTCDate()}`
+    : `${mon(monday)} ${monday.getUTCDate()}–${mon(sunday)} ${sunday.getUTCDate()}`;
+}
+
+// The inbox subject: dates first, then the issue's evocative line —
+// "Jun 22–28 · Tenderness meets structure".
+export function buildEmailSubject(
+  cadence: Cadence,
+  date: Date,
+  base: string,
+): string {
+  return `${shortPeriodLabel(cadence, date)} · ${base}`;
+}
+
 function watermarkColumn(cadence: Cadence): string {
   return cadence === "weekly" ? "last_weekly_sent_at" : "last_monthly_sent_at";
 }
@@ -525,6 +556,9 @@ export async function runNewsletter(
   }
 
   const issueEmail = toIssueEmail(issue);
+  // Inbox subject leads with the period dates (Co-Star style), then the issue's
+  // evocative line: "Jun 22–28 · Tenderness meets structure".
+  issueEmail.subject = buildEmailSubject(cadence, now, issueEmail.subject);
   const subtitle = `${subtitleFor(cadence)} · ${periodRange(cadence, now)}`;
   const nowIso = now.toISOString();
 

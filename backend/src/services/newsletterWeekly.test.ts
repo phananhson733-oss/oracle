@@ -147,6 +147,8 @@ import {
   periodStart,
   periodEnd,
   periodRange,
+  shortPeriodLabel,
+  buildEmailSubject,
   buildMundaneSkySummary,
   getOrCreateIssue,
   getOrCreateWeeklyIssue,
@@ -264,6 +266,35 @@ describe("month + period dispatch", () => {
       "2026-06-28T00:00:00.000Z",
     );
     expect(periodRange("monthly", d)).toBe("June 2026");
+  });
+});
+
+describe("shortPeriodLabel / buildEmailSubject", () => {
+  it("weekly: compact same-month range", () => {
+    // ISO week of 2026-06-23 is Mon Jun 22 – Sun Jun 28.
+    expect(shortPeriodLabel("weekly", new Date("2026-06-23T12:00:00Z"))).toBe(
+      "Jun 22–28",
+    );
+  });
+  it("weekly: spells both months across a boundary", () => {
+    // ISO week of 2026-07-01 is Mon Jun 29 – Sun Jul 5.
+    expect(shortPeriodLabel("weekly", new Date("2026-07-01T12:00:00Z"))).toBe(
+      "Jun 29–Jul 5",
+    );
+  });
+  it("monthly: month + year", () => {
+    expect(shortPeriodLabel("monthly", new Date("2026-06-23T12:00:00Z"))).toBe(
+      "June 2026",
+    );
+  });
+  it("buildEmailSubject leads with the dates, then the base line", () => {
+    expect(
+      buildEmailSubject(
+        "weekly",
+        new Date("2026-06-23T12:00:00Z"),
+        "Soft week",
+      ),
+    ).toBe("Jun 22–28 · Soft week");
   });
 });
 
@@ -432,9 +463,12 @@ describe("runNewsletter", () => {
     expect(String(s2Call?.[2])).toContain("/unsubscribe/existingtok");
     expect(String(s2Call?.[3]).startsWith("Your week ahead")).toBe(true);
     const emailArg = s2Call?.[1] as {
+      subject: string;
       overviewTitle: string;
       skyEvents: unknown[];
     };
+    // Subject leads with the week's dates (now = 2026-06-23 → Jun 22–28).
+    expect(emailArg.subject).toBe("Jun 22–28 · A softer week, then a spark");
     expect(emailArg.overviewTitle).toBe("Let tenderness lead");
     expect(emailArg.skyEvents.length).toBe(2);
 
