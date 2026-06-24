@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="天秤座太阳 vs 天秤座星群：两种截然不同的解读">
+  <defs>
+    <linearGradient id="sharonosbournezodiacsign0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="sharonosbournezodiacsign0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="sharonosbournezodiacsign0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sharonosbournezodiacsign0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sharonosbournezodiacsign0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sharonosbournezodiacsign0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#sharonosbournezodiacsign0zh-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#sharonosbournezodiacsign0zh-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#sharonosbournezodiacsign0zh-neb2)"/>
+  <circle cx="482.6" cy="23.8" r="0.98" fill="#cfc8ea" opacity="0.23"/><circle cx="705.1" cy="49.0" r="0.50" fill="#cfc8ea" opacity="0.12"/><circle cx="731.4" cy="380.3" r="1.36" fill="#cfc8ea" opacity="0.22"/><circle cx="368.0" cy="365.7" r="1.19" fill="#cfc8ea" opacity="0.44"/><circle cx="484.7" cy="394.3" r="1.06" fill="#cfc8ea" opacity="0.13"/><circle cx="323.8" cy="365.8" r="0.82" fill="#cfc8ea" opacity="0.38"/><circle cx="141.2" cy="260.0" r="0.67" fill="#cfc8ea" opacity="0.37"/><circle cx="491.4" cy="84.9" r="0.46" fill="#cfc8ea" opacity="0.34"/><circle cx="455.4" cy="60.5" r="1.57" fill="#cfc8ea" opacity="0.38"/><circle cx="324.1" cy="433.3" r="0.61" fill="#cfc8ea" opacity="0.18"/><circle cx="464.7" cy="268.1" r="1.53" fill="#cfc8ea" opacity="0.48"/><circle cx="225.2" cy="301.1" r="1.39" fill="#cfc8ea" opacity="0.41"/><circle cx="673.2" cy="164.3" r="0.72" fill="#cfc8ea" opacity="0.45"/><circle cx="507.2" cy="98.8" r="0.83" fill="#cfc8ea" opacity="0.20"/><circle cx="587.6" cy="75.5" r="1.41" fill="#cfc8ea" opacity="0.19"/><circle cx="249.4" cy="134.4" r="1.20" fill="#cfc8ea" opacity="0.38"/><circle cx="15.3" cy="89.6" r="1.00" fill="#cfc8ea" opacity="0.43"/><circle cx="172.8" cy="278.2" r="1.23" fill="#cfc8ea" opacity="0.46"/><circle cx="398.7" cy="84.0" r="0.83" fill="#cfc8ea" opacity="0.32"/><circle cx="62.5" cy="384.0" r="1.67" fill="#cfc8ea" opacity="0.47"/><circle cx="613.1" cy="128.0" r="1.10" fill="#cfc8ea" opacity="0.51"/><circle cx="569.2" cy="196.4" r="1.29" fill="#cfc8ea" opacity="0.21"/><circle cx="178.0" cy="128.2" r="0.83" fill="#cfc8ea" opacity="0.25"/><circle cx="73.2" cy="18.3" r="1.51" fill="#cfc8ea" opacity="0.38"/><circle cx="481.6" cy="358.8" r="0.58" fill="#cfc8ea" opacity="0.49"/><circle cx="340.1" cy="283.9" r="1.14" fill="#cfc8ea" opacity="0.24"/><circle cx="86.7" cy="233.1" r="0.65" fill="#cfc8ea" opacity="0.42"/><circle cx="605.4" cy="317.0" r="0.52" fill="#cfc8ea" opacity="0.23"/><circle cx="79.0" cy="268.9" r="1.38" fill="#cfc8ea" opacity="0.37"/><circle cx="678.4" cy="260.3" r="1.03" fill="#cfc8ea" opacity="0.42"/><circle cx="45.5" cy="110.6" r="1.10" fill="#cfc8ea" opacity="0.23"/><circle cx="266.3" cy="25.4" r="0.72" fill="#cfc8ea" opacity="0.30"/><circle cx="360.2" cy="410.5" r="1.24" fill="#cfc8ea" opacity="0.24"/><circle cx="280.0" cy="254.2" r="0.63" fill="#cfc8ea" opacity="0.42"/><circle cx="473.7" cy="426.3" r="0.77" fill="#cfc8ea" opacity="0.44"/><circle cx="725.4" cy="451.4" r="1.37" fill="#cfc8ea" opacity="0.32"/><circle cx="247.4" cy="323.6" r="1.60" fill="#cfc8ea" opacity="0.45"/><circle cx="119.4" cy="478.0" r="1.34" fill="#cfc8ea" opacity="0.37"/><circle cx="127.9" cy="366.8" r="1.49" fill="#cfc8ea" opacity="0.33"/><circle cx="116.0" cy="273.6" r="0.84" fill="#cfc8ea" opacity="0.29"/><circle cx="152.4" cy="485.7" r="1.02" fill="#cfc8ea" opacity="0.37"/><circle cx="716.4" cy="361.9" r="0.59" fill="#cfc8ea" opacity="0.42"/><path d="M 708.5963463187218 43.6 L 709.0 45.7 L 711.1 46.1105575945694 L 709.0 46.5 L 708.5963463187218 48.6 L 708.2 46.5 L 706.1 46.1105575945694 L 708.2 45.7 Z" fill="#f6e6bf" opacity="0.6937818056670949"/><path d="M 333.64681547135115 92.8 L 334.1 95.3 L 336.6 95.80696308263578 L 334.1 96.3 L 333.64681547135115 98.8 L 333.2 96.3 L 330.7 95.80696308263578 L 333.2 95.3 Z" fill="#f6e6bf" opacity="0.7888637417694553"/><path d="M 478.49644546210766 247.4 L 479.1 250.7 L 482.4 251.33055221964605 L 479.1 252.0 L 478.49644546210766 255.2 L 477.9 252.0 L 474.6 251.33055221964605 L 477.9 250.7 Z" fill="#f6e6bf" opacity="0.7197982457233593"/><path d="M 369.76690796762705 215.7 L 370.3 218.6 L 373.1 219.09971408755518 L 370.3 219.6 L 369.76690796762705 222.5 L 369.2 219.6 L 366.4 219.09971408755518 L 369.2 218.6 Z" fill="#f6e6bf" opacity="0.7021005257731303"/><path d="M 133.65186563134193 310.5 L 134.2 313.3 L 137.0 313.80949105811305 L 134.2 314.3 L 133.65186563134193 317.2 L 133.1 314.3 L 130.3 313.80949105811305 L 133.1 313.3 Z" fill="#f6e6bf" opacity="0.5600180136738345"/><path d="M 323.8 365.8 L 491.4 84.9 L 613.1 128.0 L 178.0 128.2 L 481.6 358.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">天秤座太阳 vs 天秤座星群：两种截然不同的解读</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#sharonosbournezodiacsign0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#sharonosbournezodiacsign0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">单独天秤座太阳</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">通过公平与外交过滤身份认同</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">本能地权衡双方、化解紧张</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">以魅力为先的调解型存在</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">无法解释争强好胜的一面</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">天秤座星群（太阳、土星、海王星、水星）</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">集中外交驱动力，并以土星判断力将其强化</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">水星将措辞磨砺为精准、有时犀利的裁断</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">海王星增添媒体光彩与形象本能</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">外交官-斗士矛盾在星盘层面得到解决</text>
+  <path d="M 280.025 474.4 L 280.4 476.6 L 282.6 477 L 280.4 477.4 L 280.025 479.6 L 279.6 477.4 L 277.4 477 L 279.6 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 474.4 L 480.4 476.6 L 482.6 477 L 480.4 477.4 L 479.975 479.6 L 479.6 477.4 L 477.4 477 L 479.6 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

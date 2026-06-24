@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "sharon-osbourne-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Libra Sun Alone vs a Libra Stellium: What Actually Changes",
+          "titleEn": "Libra Sun vs Libra Stellium: Two Very Different Readings",
+          "titleZh": "天秤座太阳 vs 天秤座星群：两种截然不同的解读",
+          "altEn": "Comparison chart showing Libra Sun alone versus a four-planet Libra stellium and how stacked placements change the reading",
+          "altZh": "天秤座单太阳与四星群对比图，展示叠加行星如何改变星盘解读",
+          "columns": [
+            {
+              "nameEn": "Libra Sun Alone",
+              "nameZh": "单独天秤座太阳",
+              "linesEn": [
+                "Filters identity through fairness and diplomacy",
+                "Instinct to weigh both sides and smooth tension",
+                "Charm-first, mediating presence",
+                "Leaves the combative streak unexplained"
+              ],
+              "linesZh": [
+                "通过公平与外交过滤身份认同",
+                "本能地权衡双方、化解紧张",
+                "以魅力为先的调解型存在",
+                "无法解释争强好胜的一面"
+              ]
+            },
+            {
+              "nameEn": "Libra Stellium (Sun, Saturn, Neptune, Mercury)",
+              "nameZh": "天秤座星群（太阳、土星、海王星、水星）",
+              "linesEn": [
+                "Concentrates diplomatic drive and hardens it with Saturn's judgment",
+                "Mercury sharpens wording into precise, sometimes cutting verdicts",
+                "Neptune adds media polish and image instinct",
+                "Diplomat-brawler contradiction resolves at the chart level"
+              ],
+              "linesZh": [
+                "集中外交驱动力，并以土星判断力将其强化",
+                "水星将措辞磨砺为精准、有时犀利的裁断",
+                "海王星增添媒体光彩与形象本能",
+                "外交官-斗士矛盾在星盘层面得到解决"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Spot a Libra Stellium Like Sharon Osbourne's in Your Chart",
+          "titleEn": "5 Steps to Read a Libra Stellium in Your Own Chart",
+          "titleZh": "在自己星盘中识别天秤座星群的5个步骤",
+          "altEn": "Five-step sequence for identifying a Libra stellium in a birth chart using the pattern from Sharon Osbourne's placements",
+          "altZh": "借助莎朗·奥斯本星盘模式，在出生星盘中识别天秤座星群的五步流程",
+          "items": [
+            {
+              "nameEn": "Count Planets in One Sign",
+              "nameZh": "计算同一星座中的行星数",
+              "subEn": "Three or more personal planets stacked together marks a stellium worth reading first",
+              "subZh": "三颗或以上个人行星叠加即构成需优先解读的星群"
+            },
+            {
+              "nameEn": "Check Whether Saturn Sits Inside the Cluster",
+              "nameZh": "检查土星是否位于星群之内",
+              "subEn": "Saturn adds discipline and willingness to confront, sharpening an otherwise gentle sign",
+              "subZh": "土星增添纪律性与对抗意愿，使原本温和的星座变得锐利"
+            },
+            {
+              "nameEn": "Read Mercury, Not Just the Sun",
+              "nameZh": "解读水星，而不仅仅是太阳",
+              "subEn": "Mercury inside a Libra stellium points to precise wording that can land as combative beside Saturn",
+              "subZh": "天秤座星群中的水星指向精准措辞，在土星旁边可能显得咄咄逼人"
+            },
+            {
+              "nameEn": "Notice Where Venus Falls",
+              "nameZh": "留意金星所在星座",
+              "subEn": "Venus in Scorpio turns balanced affection into intense, all-or-nothing loyalty rather than detached fairness",
+              "subZh": "金星在天蝎座将均衡的爱转化为强烈的全有或全无忠诚，而非超然的公正"
+            },
+            {
+              "nameEn": "Hold the Rising Sign Loosely When Sources Disagree",
+              "nameZh": "来源不一致时宽松看待上升星座",
+              "subEn": "Reputable sites split between Cancer and Sagittarius Ascendant — treat as unsettled, not confirmed",
+              "subZh": "权威网站在巨蟹座与射手座上升之间存在分歧——视为未定，而非确定"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
