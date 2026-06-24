@@ -14,6 +14,7 @@ import { JWT_CONFIG, SUBSCRIPTION_BENEFITS } from "../config/auth.js";
 import { airwallexService } from "./airwallexService.js";
 import { cacheService } from "../cache/redis.js";
 import { logger } from "../utils/logger.js";
+import { enrollAccountSubscriber } from "./newsletterEnroll.js";
 
 // Canonicalize an email for identity comparison: trim whitespace, lowercase.
 // Used for users.email storage AND trial_claims hashing — both MUST agree.
@@ -104,6 +105,19 @@ class UserService {
 
     if (!data) {
       throw new Error("Failed to create user: no row returned");
+    }
+
+    // Opt-out newsletter model: every registered account becomes a confirmed
+    // recipient by default (one-click unsubscribe in each issue). Enroll ONLY a
+    // provider-verified email here (OAuth) — an unverified email-signup must not
+    // receive mail until it verifies (the /verify-code path enrolls after the
+    // code clears; /register stays direct/unverified and is never auto-enrolled),
+    // so we never send to a typo or someone else's address and hurt the sending
+    // domain. Best-effort: enrollAccountSubscriber never throws and leaves an
+    // already-subscribed or unsubscribed row untouched. Awaited (not
+    // fire-and-forget) so it completes before a serverless function suspends.
+    if (input.provider !== "email") {
+      await enrollAccountSubscriber(normalizedEmail);
     }
 
     // The RPC returns a `users` row; cast through unknown to satisfy the
@@ -523,9 +537,7 @@ class UserService {
     // Must be in the export for GDPR Art. 20 / CCPA data portability.
     const { data: savedReadings } = await supabase
       .from("saved_readings")
-      .select(
-        "id, tool_type, title, input_json, output_json, lang, created_at",
-      )
+      .select("id, tool_type, title, input_json, output_json, lang, created_at")
       .eq("user_id", userId);
 
     return {

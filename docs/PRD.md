@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.45
-> **Last Updated**: 2026-06-23
+> **Version**: 2.46
+> **Last Updated**: 2026-06-24
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -385,7 +385,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 | 6 | CBT Journal Showcase | 左截图右 3 行 bullets + CTA "Start your first entry — Free trial" |
 | 7 | Wiki Hub | 6-8 篇 featured 文章 + 4 个分类胶囊（Planets / Signs / Houses / Aspects）+ `<head>` 内 ItemList JSON-LD 指向全部 119 wiki URL |
 | 8 | Social Proof (metric) | "**119** articles · **N** charts cast · **N** journal entries this month"；不使用假证言 |
-| 9 | Newsletter Signup | 邮箱单字段 + honeypot 反垃圾，调用 `POST /api/newsletter`；后端由 Vercel Cron 自动生成并群发「世俗天象 + 心理学视角」**周报 + 月报**（内容/投递分离，per-cadence 水位独立去重，见 §4.4 newsletter_issues / §4.7 Cron） |
+| 9 | Newsletter Signup | 邮箱单字段 + honeypot 反垃圾，调用 `POST /api/newsletter`；后端由 Vercel Cron 自动生成并群发「世俗天象 + 心理学视角」**周报 + 月报**（内容/投递分离，per-cadence 水位独立去重，见 §4.4 newsletter_issues / §4.7 Cron）；**注册账号默认 opt-out 纳入推送**（已验证邮箱 OAuth/verify-code → confirmed，source='account'，靠一键退订兜底） |
 | 10 | Footer | 复用 `components/Footer.tsx` |
 
 **SEO 策略**：
@@ -1035,7 +1035,7 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 
 > RLS：用户仅能 SELECT 自己的行（`auth.uid()::text = user_id::text`）+ service-role 管理全部。API 用 service-role client，按会话 `user_id` 过滤实现隔离。账号删除经 `userService.deleteUser` 显式清理 + FK CASCADE 双重保证。synastry `nameA/nameB` 入库前剥除（红线#4）。
 
-**newsletter_subscribers** — 邮件订阅（via migration 007，双 opt-in 列 via migration 008，#23）
+**newsletter_subscribers** — 邮件订阅（via migration 007，双 opt-in 列 via migration 008，#23）。**opt-out 推送模型**：注册账号经 `enrollAccountSubscriber` 自动以 `source='account'`/`status='confirmed'` 入库（仅已验证邮箱），与 landing 表单(`source='landing_v2'`)合流为统一发送名单；去重靠 unique `lower(email)`，已退订行不重激活
 | Column | Type | 说明 |
 |--------|------|------|
 | id | UUID | 主键 |

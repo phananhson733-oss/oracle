@@ -12,6 +12,7 @@ import {
 } from "../config/auth.js";
 import { cacheService } from "../cache/redis.js";
 import { emailService } from "../services/emailService.js";
+import { enrollAccountSubscriber } from "../services/newsletterEnroll.js";
 import { logger } from "../utils/logger.js";
 import { logDsarEvent } from "../utils/dsarAudit.js";
 
@@ -296,11 +297,9 @@ router.post("/send-code", async (req: Request, res: Response) => {
     if (existingUser) {
       await cacheService.set(cooldownKey, true, 60);
       await cacheService.set(dailyKey, dailyCount + 1, 86400);
-      return res
-        .status(409)
-        .json({
-          error: "This email is already registered. Please sign in instead.",
-        });
+      return res.status(409).json({
+        error: "This email is already registered. Please sign in instead.",
+      });
     }
 
     // Generate 6-digit code
@@ -423,6 +422,11 @@ router.post("/verify-code", async (req: Request, res: Response) => {
 
     // Mark email as verified since code was validated
     await userService.verifyEmail(user.id);
+
+    // Opt-out newsletter model: the email is now verified (the code cleared), so
+    // enroll it as a confirmed recipient. Best-effort + dedup/unsubscribe-safe
+    // (createUser only auto-enrolls OAuth; this is the verified-email path).
+    await enrollAccountSubscriber(normalizedEmail);
 
     // Generate tokens
     const tokens = userService.generateTokens(user);
