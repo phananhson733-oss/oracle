@@ -15,11 +15,13 @@ const issueUpdates: Array<{ id: unknown; payload: Record<string, unknown> }> =
   [];
 let insertError: unknown = null;
 let insertedCounter = 0;
-// Simulate a parallel run having already claimed these subscriber ids: their
-// conditional watermark UPDATE returns no rows (claim lost).
+// Simulate a parallel run having already claimed these subscriber ids: the
+// claim RPC returns false (claim lost) for them.
 let raceClaimedIds = new Set<unknown>();
 // Simulate the issue store being unavailable (e.g. table missing pre-migration).
 let issueSelectError: unknown = null;
+// Records claim_newsletter_recipient RPC calls (the atomic send-claim).
+const rpcCalls: Array<{ name: string; params: Record<string, unknown> }> = [];
 
 type BuilderState = {
   table: string;
@@ -115,7 +117,17 @@ const mockGetPositions = vi.fn(
 const mockCalcAspects = vi.fn((..._a: unknown[]): unknown[] => []);
 
 vi.mock("../db/supabase.js", () => ({
-  supabase: { from: (t: string) => makeBuilder(t) },
+  supabase: {
+    from: (t: string) => makeBuilder(t),
+    // Atomic send-claim: returns true unless a parallel run already claimed it.
+    rpc: (name: string, params: Record<string, unknown>) => {
+      rpcCalls.push({ name, params });
+      const won =
+        name === "claim_newsletter_recipient" &&
+        !raceClaimedIds.has(params.p_id);
+      return Promise.resolve({ data: won, error: null });
+    },
+  },
   isSupabaseConfigured: () => supaConfigured,
 }));
 vi.mock("../config/auth.js", () => ({
@@ -215,6 +227,7 @@ beforeEach(() => {
   insertedCounter = 0;
   raceClaimedIds = new Set<unknown>();
   issueSelectError = null;
+  rpcCalls.length = 0;
   mockSend.mockReset();
   mockSend.mockResolvedValue(undefined);
   mockGenerate.mockReset();
@@ -449,14 +462,15 @@ describe("runNewsletter", () => {
       /^[0-9a-f]{64}$/,
     );
 
+    // The watermark advance now happens INSIDE the claim RPC (PostgREST can't
+    // run an .or() filter on an UPDATE), so assert the per-subscriber weekly
+    // claim fired rather than a builder update.
     expect(
-      subUpdates
-        .filter((u) => "last_weekly_sent_at" in u.payload)
-        .map((u) => u.id),
+      rpcCalls
+        .filter((c) => c.name === "claim_newsletter_recipient")
+        .map((c) => c.params.p_id),
     ).toEqual(expect.arrayContaining(["s1", "s2"]));
-    expect(subUpdates.some((u) => "last_monthly_sent_at" in u.payload)).toBe(
-      false,
-    );
+    expect(rpcCalls.every((c) => c.params.p_cadence === "weekly")).toBe(true);
 
     // the email gets the rich view model + the week subtitle with the range.
     const s2Call = mockSend.mock.calls.find((c) => c[0] === "b@x.com");
@@ -482,12 +496,15 @@ describe("runNewsletter", () => {
     expect(report.cadence).toBe("monthly");
     expect(report.issueSlug).toBe("2026-06");
     expect(report.sent).toBe(1);
-    expect(subUpdates.some((u) => "last_monthly_sent_at" in u.payload)).toBe(
-      true,
-    );
-    expect(subUpdates.some((u) => "last_weekly_sent_at" in u.payload)).toBe(
-      false,
-    );
+    // The monthly claim RPC fired (watermark advance lives in the RPC).
+    expect(
+      rpcCalls.some(
+        (c) =>
+          c.name === "claim_newsletter_recipient" &&
+          c.params.p_cadence === "monthly",
+      ),
+    ).toBe(true);
+    expect(rpcCalls.every((c) => c.params.p_cadence !== "weekly")).toBe(true);
     expect(
       String(mockSend.mock.calls[0][3]).startsWith("Your month ahead"),
     ).toBe(true);
@@ -506,22 +523,25 @@ describe("runNewsletter", () => {
     expect(report.sent).toBe(1);
     expect(report.failed).toBe(1);
 
-    // s1's send failed: claim-then-send wrote the watermark, then rolled it back
-    // to null so the next run retries this subscriber.
-    const s1Wm = subUpdates.filter(
+    // Both rows were claimed via the RPC (watermark advanced inside it).
+    expect(
+      rpcCalls
+        .filter((c) => c.name === "claim_newsletter_recipient")
+        .map((c) => c.params.p_id),
+    ).toEqual(expect.arrayContaining(["s1", "s2"]));
+
+    // s1's send failed → its watermark is rolled back to null (a builder update)
+    // so the next run retries it. s2 succeeded → no rollback for it.
+    const s1Rollback = subUpdates.filter(
       (u) => u.id === "s1" && "last_weekly_sent_at" in u.payload,
     );
-    expect(s1Wm.length).toBeGreaterThan(0);
-    expect(s1Wm[s1Wm.length - 1].payload.last_weekly_sent_at).toBeNull();
-
-    // s2 succeeded: its watermark holds the run timestamp.
-    const s2Wm = subUpdates.filter(
-      (u) => u.id === "s2" && "last_weekly_sent_at" in u.payload,
-    );
-    expect(s2Wm.length).toBeGreaterThan(0);
-    expect(s2Wm[s2Wm.length - 1].payload.last_weekly_sent_at).toBe(
-      now.toISOString(),
-    );
+    expect(s1Rollback.length).toBe(1);
+    expect(s1Rollback[0].payload.last_weekly_sent_at).toBeNull();
+    expect(
+      subUpdates.some(
+        (u) => u.id === "s2" && "last_weekly_sent_at" in u.payload,
+      ),
+    ).toBe(false);
 
     // A partial failure must NOT flip the issue to 'sent'.
     expect(issueUpdates.some((u) => u.payload.status === "sent")).toBe(false);

@@ -564,20 +564,25 @@ export async function runNewsletter(
 
   for (const sub of subscribers) {
     // CLAIM-THEN-SEND: atomically advance this subscriber's cadence watermark
-    // BEFORE sending, conditioned on the row still being due. Only the
-    // invocation whose conditional UPDATE actually matches a row proceeds to
-    // send, so two overlapping runs (a Vercel cron retry, or a manual trigger
-    // racing the schedule) can never both mail the same subscriber. On a send
-    // failure the watermark is rolled back so the next run retries — at-least-
-    // once on genuine failures, at-most-once under a race.
-    const claim = await supabase
-      .from("newsletter_subscribers")
-      .update({ [wmCol]: nowIso })
-      .eq("id", sub.id)
-      .or(`${wmCol}.is.null,${wmCol}.lt.${periodStartIso}`)
-      .select("id");
-    if (!claim.data || (claim.data as unknown[]).length === 0) {
-      // Another invocation already claimed this subscriber this period.
+    // BEFORE sending, conditioned on the row still being due, so two overlapping
+    // runs (a Vercel cron retry, or a manual trigger racing the schedule) can
+    // never both mail the same subscriber. On a send failure the watermark is
+    // rolled back so the next run retries — at-least-once on genuine failures,
+    // at-most-once under a race.
+    //
+    // The claim goes through an RPC, NOT a filtered UPDATE: PostgREST rejects an
+    // `.or()` filter on a mutation (PATCH) with 42703 "column does not exist" for
+    // ANY column, so the old `.update().or().select()` matched zero rows and the
+    // newsletter sent nothing. claim_newsletter_recipient (migration 011) does
+    // the conditional "IS NULL OR < period_start" update in SQL and returns true
+    // only when this caller won the row.
+    const claim = await supabase.rpc("claim_newsletter_recipient", {
+      p_id: sub.id,
+      p_cadence: cadence,
+      p_period_start: periodStartIso,
+    });
+    if (claim.error || claim.data !== true) {
+      // Claim lost to a parallel run, or errored — never send an unclaimed row.
       continue;
     }
 
