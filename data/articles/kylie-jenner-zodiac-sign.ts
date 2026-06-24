@@ -15,7 +15,7 @@ export const kylieJennerZodiacSignEn: WikiArticle = {
     "kylie jenner birth chart",
     "kylie jenner astrology",
     "kylie jenner leo",
-    "kylie jenner pregnant astrology"
+    "kylie jenner rising sign"
   ],
   content: `# What Kylie Jenner's Zodiac Sign Reveals About Her Empire-Building
 
