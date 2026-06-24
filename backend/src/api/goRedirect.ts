@@ -9,6 +9,7 @@ import { isSupabaseConfigured, supabase } from "../db/supabase.js";
 const SITE_ORIGIN = "https://www.astrologywiki.com";
 const ALLOWED_HOSTS = new Set(["astrologywiki.com", "www.astrologywiki.com"]);
 const CODE_PATTERN = /^[a-z0-9][a-z0-9-]{0,79}$/;
+const ROOT_CODE_PATH_PATTERN = /^[a-z0-9]*[0-9][a-z0-9-]*$/;
 const REDIRECT_KEY_PREFIX = "go_redirect:";
 
 const memoryRedirects = new Map<string, string>();
@@ -142,7 +143,7 @@ export const resetGoRedirectStoreForTests = (): void => {
 
 export const goRedirectRouter = express.Router();
 
-goRedirectRouter.get("/:code", async (req, res) => {
+const redirectByCode: express.RequestHandler = async (req, res) => {
   const code = normalizeCode(req.params.code);
   if (!code) {
     res.status(404).send("Short link not found");
@@ -169,6 +170,19 @@ goRedirectRouter.get("/:code", async (req, res) => {
   }
 
   res.redirect(302, destination);
+};
+
+goRedirectRouter.get("/:code", redirectByCode);
+
+export const goRedirectRootRouter = express.Router();
+
+goRedirectRootRouter.get("/:code", (req, res, next) => {
+  const code = String(req.params.code || "").trim().toLowerCase();
+  if (!ROOT_CODE_PATH_PATTERN.test(code)) {
+    next();
+    return;
+  }
+  void redirectByCode(req, res, next);
 });
 
 export const goRedirectRegistrationRouter = express.Router();

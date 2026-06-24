@@ -6,6 +6,7 @@ import request from "supertest";
 import { beforeEach, describe, expect, it } from "vitest";
 import {
   goRedirectRegistrationRouter,
+  goRedirectRootRouter,
   goRedirectRouter,
   resetGoRedirectStoreForTests,
 } from "./goRedirect.js";
@@ -15,6 +16,7 @@ const createApp = () => {
   app.use(express.json());
   app.use("/api/link-attribution/redirects", goRedirectRegistrationRouter);
   app.use("/go", goRedirectRouter);
+  app.use("/", goRedirectRootRouter);
   return app;
 };
 
@@ -72,6 +74,26 @@ describe("/go short-link redirects", () => {
     const redirected = await request(createApp()).get(
       "/go/act-backlink-theglobalhues-20260623",
     );
+
+    expect(redirected.status).toBe(302);
+    expect(redirected.headers.location).toBe(destination);
+  });
+
+  it("redirects root short-code paths through the same registered mapping store", async () => {
+    const destination =
+      "https://www.astrologywiki.com/?utm_source=abc.com&utm_medium=backlink";
+    const app = createApp();
+
+    const created = await request(app)
+      .post("/api/link-attribution/redirects")
+      .send({
+        code: "rqn4ytkshm5f",
+        destination_url: destination,
+      });
+
+    expect(created.status).toBe(201);
+
+    const redirected = await request(app).get("/rqn4ytkshm5f");
 
     expect(redirected.status).toBe(302);
     expect(redirected.headers.location).toBe(destination);
