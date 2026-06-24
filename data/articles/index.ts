@@ -264,6 +264,7 @@ import { brunoFernandesZodiacSignEn } from "./bruno-fernandes-zodiac-sign";
 import { cancerSeason2026AstrologyEn } from "./cancer-season-2026-astrology";
 import { rhaenyraTargaryenZodiacSignEn } from "./rhaenyra-targaryen-zodiac-sign";
 import { bukayoSakaZodiacSignZh } from "./bukayo-saka-zodiac-sign";
+import { lukaModricZodiacSignZh } from "./luka-modric-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -638,6 +639,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   toyStory5ZodiacSignsZh,
   scotlandBrazilWorldCupAstrologyZh,
   bukayoSakaZodiacSignZh,
+  lukaModricZodiacSignZh,
 ];
 
 // Get all articles for a language
