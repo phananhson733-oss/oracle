@@ -130,6 +130,23 @@ export interface TimelineCopy {
   onbBody3: string;
   onbNext: string;
   onbGotIt: string;
+  // 人生能量叙事（6 章 LLM；按需生成 + LLM 数据告知 + 反宿命 disclaimer）
+  narrativeTitle: string;
+  narrativeIntro: string;
+  narrativeLlmNotice: string;
+  narrativeGenerate: string;
+  narrativeLoading: string;
+  narrativeError: string;
+  narrativeLoginRequired: string;
+  narrativeUpsellBody: string;
+  narrativeUpsellCta: string;
+  narrativeDisclaimer: string;
+  chOverview: string;
+  chPast: string;
+  chPresent: string;
+  chFuture: string;
+  chMilestone: string;
+  chLetter: string;
 }
 
 const EN: TimelineCopy = {
@@ -270,6 +287,28 @@ const EN: TimelineCopy = {
     "This maps tendencies in your transits to notice and work with. It doesn't predict events or outcomes.",
   onbNext: "Next",
   onbGotIt: "Got it",
+  narrativeTitle: "Your life story",
+  narrativeIntro:
+    "Six chapters drawn from your real birth chart and life-energy rhythm — a reflection to grow with, not a forecast.",
+  narrativeLlmNotice:
+    "When you generate this, a privacy-filtered summary of your chart and life-energy rhythm is sent to our AI to write the six chapters — your name, birth city, coordinates, and birth date are not sent. It's a reflection on energy patterns, not a prediction or diagnosis.",
+  narrativeGenerate: "Write my life story",
+  narrativeLoading:
+    "Composing your six chapters… this can take up to a minute.",
+  narrativeError: "Couldn't write your story just now. Please try again.",
+  narrativeLoginRequired:
+    "Your session expired. Please sign in again to generate your life story.",
+  narrativeUpsellBody:
+    "Sign up to unlock your full life story — six chapters written from your own chart and life-energy rhythm.",
+  narrativeUpsellCta: "Sign up to generate",
+  narrativeDisclaimer:
+    "A reflection on astrological energy patterns — not a prediction, diagnosis, or guarantee. The story is yours to shape.",
+  chOverview: "Overview",
+  chPast: "Looking back",
+  chPresent: "Where you are now",
+  chFuture: "The years ahead",
+  chMilestone: "Cycle milestones",
+  chLetter: "A letter to future you",
 };
 
 const ZH: TimelineCopy = {
@@ -392,6 +431,26 @@ const ZH: TimelineCopy = {
   onbBody3: "它呈现你行运中的倾向，供你觉察与运用，并不预测具体事件或结果。",
   onbNext: "下一步",
   onbGotIt: "明白了",
+  narrativeTitle: "你的人生故事",
+  narrativeIntro:
+    "源自你真实本命盘与人生能量节奏的六章——一份可以借力成长的反思，而非预测。",
+  narrativeLlmNotice:
+    "生成时，会把你星盘与人生能量节奏的脱敏摘要发送给我们的 AI 来撰写这六章——你的姓名、出生城市、经纬度与出生日期不会被发送。这是对能量模式的反思，不是预测或诊断。",
+  narrativeGenerate: "生成我的人生故事",
+  narrativeLoading: "正在撰写你的六章……可能需要约一分钟。",
+  narrativeError: "暂时没能写出你的故事，请重试。",
+  narrativeLoginRequired: "登录状态已过期，请重新登录以生成你的人生故事。",
+  narrativeUpsellBody:
+    "注册以解锁完整的人生故事——基于你自己的星盘与能量节奏写成的六章。",
+  narrativeUpsellCta: "注册以生成",
+  narrativeDisclaimer:
+    "对占星能量模式的反思——不是预测、诊断或保证。故事如何展开，由你塑造。",
+  chOverview: "总览",
+  chPast: "回望",
+  chPresent: "当下位置",
+  chFuture: "未来岁月",
+  chMilestone: "周期里程碑",
+  chLetter: "给未来你的信",
 };
 
 export function getTimelineCopy(language: Language): TimelineCopy {

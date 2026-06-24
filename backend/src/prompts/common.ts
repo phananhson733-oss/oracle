@@ -14,7 +14,14 @@
 export interface PromptMeta {
   id: string;
   version: string;
-  scenario: "natal" | "daily" | "ask" | "synastry" | "wiki" | "newsletter";
+  scenario:
+    | "natal"
+    | "daily"
+    | "ask"
+    | "synastry"
+    | "wiki"
+    | "newsletter"
+    | "transit";
 }
 
 export type PromptSystem =

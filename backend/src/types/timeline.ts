@@ -2,7 +2,13 @@
 // OUTPUT: transit timeline（月度/人生 K 线）的 API 请求/响应 schema 类型与蜡烛诚实契约。
 // POS: GET/POST /api/transit/timeline 的数据契约（#1 设计 → #2 实现 → #3 前端共用）。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
-import type { BirthInput, Language, AccuracyLevel, Aspect } from "./api.js";
+import type {
+  BirthInput,
+  Language,
+  AccuracyLevel,
+  Aspect,
+  AIContentMeta,
+} from "./api.js";
 
 // 复用星历相位类型，避免与 services 层耦合（结构同构、可赋值）。
 export type TimelineAspectType = Aspect["type"];
@@ -113,4 +119,28 @@ export interface TimelineResponse {
   accuracy: AccuracyLevel;
   // B1（DOMAINS_ENABLED gate OFF 时 undefined）：6 域定性 activation，供 deep card 消费。
   domainScores?: DomainScore;
+}
+
+// === 人生能量叙事（timeline-life-narrative）===
+// LLM 基于真实人生 K 线派生 context 输出的六章纯文本。绝不预言具体事件、绝不宿命化（见 prompts/manager.ts）。
+export interface LifeNarrativeContent {
+  overview: string; // 人生能量总览（big3 + 元素 + 弧线形状）
+  past: string; // 往昔回溯（按能量带质地，非具体事件）
+  present: string; // 当下定位（当前档位 + 真实行运）
+  future: string; // 未来约三十年（潜在时期，非固定结局）
+  milestone: string; // 周期节点（土星/木星/交点回归、天王星对分）
+  letter: string; // 给未来自己的信
+}
+
+export interface TimelineNarrativeRequest {
+  birth: BirthInput;
+  tz?: string;
+  lang?: Language;
+}
+
+export interface TimelineNarrativeResponse {
+  lang: Language;
+  content: LifeNarrativeContent;
+  meta: AIContentMeta;
+  currentAge: number;
 }

@@ -13,6 +13,7 @@ import type {
 } from "../types/api.js";
 import { logger } from "../utils/logger.js";
 import { detectDominantLang } from "../utils/lang.js";
+import { isLifeNarrativeContent } from "./transit/narrativeContext.js";
 
 const getDeepSeekApiKey = () => process.env.DEEPSEEK_API_KEY;
 const getDeepSeekBaseUrl = () =>
@@ -1261,6 +1262,15 @@ async function generateAIContentInternal<T>(
         throw new Error("Invalid JSON response from DeepSeek");
       }
       normalized = repaired as LocalizedContent<T>;
+    }
+
+    // 人生叙事六章结构校验：模型偶发返回缺键/空串/非串。畸形则抛错（→ AIUnavailableError → 503），
+    // 且因抛在写缓存之前，坏输出绝不入缓存（否则会整个 TTL 持续渲染成空手风琴）。
+    if (
+      options.promptId === "timeline-life-narrative" &&
+      !isLifeNarrativeContent(normalized.content)
+    ) {
+      throw new Error("Invalid life-narrative shape from DeepSeek");
     }
 
     // 输出语言校验：模型偶发返回错语言（如请求 zh 却回英文，且未自报 lang）。

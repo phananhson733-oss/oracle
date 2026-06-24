@@ -25,6 +25,7 @@ import { solarReturnRouter } from "./api/solar-return.js";
 import { astrocartographyRouter } from "./api/astrocartography.js";
 import { saturnReturnRouter } from "./api/saturn-return.js";
 import { transitRouter } from "./api/timeline.js";
+import { timelineNarrativeRouter } from "./api/timelineNarrative.js";
 import { userRouter } from "./api/user.js";
 import authRouter from "./api/auth.js";
 import paymentRouter from "./api/payment.js";
@@ -271,6 +272,22 @@ app.use("/api/transit", transitLimiter);
 // instance wins on `/api/transit/*` paths.
 app.use("/api/transit", express.json({ limit: "4kb" }));
 
+// Rate limiting — /api/transit/narrative. LLM-backed (one DeepSeek call + a full
+// life-arc ephemeris pass), so it is far costlier than the pure-compute /timeline.
+// Tighter than the generic transit bucket (10/min): a normal user generates their
+// narrative once. Login is also required (see the handler), capping anonymous abuse.
+const narrativeLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 6,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    error: "Too many narrative requests, please try again later.",
+    code: "narrative_rate_limited",
+  },
+});
+app.use("/api/transit/narrative", narrativeLimiter);
+
 // Rate limiting — general API (broader)
 const apiLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
@@ -373,6 +390,8 @@ app.use("/api/astro", astroRouter);
 app.use("/api/solar-return", solarReturnRouter);
 app.use("/api/astrocartography", astrocartographyRouter);
 app.use("/api/saturn-return", saturnReturnRouter);
+// 更具体的 /narrative（LLM）先挂，再挂纯计算的 transit 通配。
+app.use("/api/transit/narrative", timelineNarrativeRouter);
 app.use("/api/transit", transitRouter);
 app.use("/api/user", userRouter);
 

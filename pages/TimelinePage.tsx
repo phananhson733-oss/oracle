@@ -12,6 +12,7 @@ import { buildOhlcSeries } from "../components/timeline/derived";
 import { TimelineReport } from "../components/timeline/TimelineReport";
 import { TimelineDomains } from "../components/timeline/TimelineDomains";
 import { TimelineMilestones } from "../components/timeline/TimelineMilestones";
+import { TimelineLifeNarrative } from "../components/timeline/TimelineLifeNarrative";
 import { TimelineShareCard } from "../components/timeline/TimelineShareCard";
 import { TimelineOptionalPrefs } from "../components/timeline/TimelineOptionalPrefs";
 import { TimelineLegend } from "../components/timeline/TimelineLegend";
@@ -435,6 +436,16 @@ const TimelinePage: React.FC<{
 
           {/* 人生里程碑竖向时间轴（C，参考 oracle_CN）：节点+连接线+周期名+中性一句话 */}
           <TimelineMilestones markers={data.markers} nowKey={nowKey} />
+
+          {/* 人生能量叙事（6 章 LLM，按需生成）：仅 life 模式（整生命弧才有意义）。
+              受保护 /timeline 已登录 → 真生成；公开 demo → upsell。 */}
+          {mode === "life" && (
+            <TimelineLifeNarrative
+              profile={profile}
+              demo={demo}
+              onUpsell={onUpsell}
+            />
+          )}
 
           {/* 选中蜡烛 → CN 式多 tab 详情抽屉（概览 / 正在活跃 / 当日解读）；见页底渲染。 */}
         </>

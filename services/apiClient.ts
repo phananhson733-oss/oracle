@@ -37,6 +37,7 @@ import type {
   SyntheticaContextFilter,
   SyntheticaReportResponse,
   TimelineResponse,
+  LifeNarrativeResult,
 } from "../types";
 import { authFetch } from "./authClient";
 import { trackEvent, trackApiError } from "./analytics";
@@ -767,6 +768,43 @@ export async function fetchTransitTimeline(
     const { message, reason, payload } = await parseErrorPayload(res);
     const error = new Error(
       message || "Failed to fetch timeline",
+    ) as ApiError & { code?: string };
+    error.status = res.status;
+    error.reason = reason;
+    error.payload = payload;
+    const code =
+      payload && typeof payload === "object"
+        ? (payload as { code?: string }).code
+        : undefined;
+    if (code) error.code = code;
+    throw error;
+  }
+  return res.json();
+}
+
+// 人生能量叙事（LLM，登录后可用）。authFetch 带登录 token → 后端 req.userId 满足登录 gate。
+// 无客户端超时（LLM 慢，~30-60s），与 fetchAskAnswer 同。错误透传 code（如 LOGIN_REQUIRED）。
+export async function fetchLifeNarrative(
+  profile: UserProfile,
+  lang: "zh" | "en" = "en",
+): Promise<LifeNarrativeResult> {
+  const birth = profileToBirthInput(profile);
+  const tz = (() => {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+    } catch {
+      return "UTC";
+    }
+  })();
+  const res = await authFetch(`${API_BASE}/transit/narrative`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ birth, tz, lang }),
+  });
+  if (!res.ok) {
+    const { message, reason, payload } = await parseErrorPayload(res);
+    const error = new Error(
+      message || "Failed to fetch life narrative",
     ) as ApiError & { code?: string };
     error.status = res.status;
     error.reason = reason;

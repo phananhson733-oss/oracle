@@ -1313,3 +1313,21 @@ export interface TimelineResponse {
   accuracy: "exact" | "time_unknown" | "approximate";
   domainScores?: DomainScore; // B1（gate OFF 时缺省）
 }
+
+// 人生能量叙事（timeline-life-narrative）：LLM 基于真实人生 K 线输出的六章纯文本。
+// 绝不预言具体事件、绝不宿命化（后端 prompt 内嵌安全护栏）。
+export interface LifeNarrativeContent {
+  overview: string;
+  past: string;
+  present: string;
+  future: string;
+  milestone: string;
+  letter: string;
+}
+
+export interface LifeNarrativeResult {
+  lang: "zh" | "en";
+  content: LifeNarrativeContent;
+  meta?: AIContentMeta;
+  currentAge: number;
+}

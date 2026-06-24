@@ -17,8 +17,10 @@
 - common.ts｜地位：共享模块｜功能：类型定义、共享常量（语言指令、格式要求、AI 安全护栏 SAFETY_INSTRUCTION/CBT_DISCLAIMER_FOOTER/NO_FATE_CERTAINTY_REMINDER 双语版本）与工具函数（语言解析、上下文格式化、resolveSafetyInstruction/resolveCbtDisclaimer/resolveNoFateReminder）。
 - manager.ts｜地位：Prompt 管理器｜功能：注册 Prompt、构建缓存 key、分类逻辑与 withSafety 安全护栏包装器（在所有 51 个 registerPrompt 调用前注入安全前缀）。
 - safety.test.ts｜地位：安全护栏测试｜功能：覆盖 8 个家族的 SAFETY_INSTRUCTION 注入、NO_FATE_CERTAINTY_REMINDER 应用矩阵、CBT_DISCLAIMER_FOOTER 输出以及中英语言切换。
+- timeline-narrative.test.ts｜地位：人生叙事 prompt 回归测试｜功能：timeline-life-narrative 的注册/版本(1.0)/scenario(transit)/SAFETY+NO_FATE 双语注入/六章结构/buildCacheKey/user context 透传（7 测）。
 
 近期更新
+- 2026-06-24 新增 timeline-life-narrative（scenario=transit，v1.0）：人生能量叙事六章（overview/past/present/future/milestone/letter），英文/中文双语，基于真实人生 K 线派生 context，withSafety(noFate)，绝不预言具体事件。common.ts 的 PromptMeta scenario union 加 "transit"。配套 timeline-narrative.test.ts。
 - 新增 AI 安全护栏：全部 51 个 prompt 模板版本号小幅递增，system 前置 SAFETY_INSTRUCTION；daily/ask/synastry/cycle/detail（transit/synastry/composite）追加 NO_FATE_CERTAINTY_REMINDER；6 个 cbt-* user 末尾追加 CBT_DISCLAIMER_FOOTER。配套 safety.test.ts 与 common.ts 双语 resolver。
 - CBT 分析 Prompt 补充日常建议的情境绑定与数组格式约束，修正执行建议输出。
 - CBT 聚合分析 Prompt 拆分为 4 个独立 Prompt：cbt-somatic-analysis、cbt-root-analysis、cbt-mood-analysis、cbt-competence-analysis。
