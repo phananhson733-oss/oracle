@@ -11,9 +11,15 @@ const ALLOWED_HOSTS = new Set(["astrologywiki.com", "www.astrologywiki.com"]);
 const CODE_PATTERN = /^[a-z0-9][a-z0-9-]{0,79}$/;
 const ROOT_CODE_PATH_PATTERN = /^[a-z0-9]*[0-9][a-z0-9-]*$/;
 const REDIRECT_KEY_PREFIX = "go_redirect:";
+const REDIRECT_DESTINATION_KEY_PREFIX = "go_redirect_destination:";
 
 const memoryRedirects = new Map<string, string>();
 let redisClient: Redis | null | undefined;
+
+type StoredRedirectRecord = {
+  code: string;
+  destination: string;
+};
 
 const normalizeCode = (rawCode: unknown): string | null => {
   const value = String(rawCode || "").trim().toLowerCase();
@@ -111,6 +117,57 @@ const getStoredRedirect = async (code: string): Promise<string | null> => {
   return memoryRedirects.get(code) || null;
 };
 
+const findRegistryRedirectByDestination = (
+  destination: string,
+): StoredRedirectRecord | null => {
+  for (const [code, value] of Object.entries(goRedirects)) {
+    const normalized = normalizeDestination(value);
+    if (normalized === destination) {
+      return { code, destination: normalized };
+    }
+  }
+  return null;
+};
+
+const getStoredRedirectByDestination = async (
+  destination: string,
+): Promise<StoredRedirectRecord | null> => {
+  if (!canUseMemoryStore() && isSupabaseConfigured()) {
+    const { data, error } = await supabase
+      .from("link_redirects")
+      .select("code,destination_url")
+      .eq("destination_url", destination)
+      .order("created_at", { ascending: true })
+      .limit(1)
+      .maybeSingle();
+    const normalized = normalizeDestination(data?.destination_url || "");
+    if (!error && typeof data?.code === "string" && normalized) {
+      return { code: data.code, destination: normalized };
+    }
+  }
+
+  const client = await getRedisClient();
+  if (client) {
+    const code = await client.get(
+      `${REDIRECT_DESTINATION_KEY_PREFIX}${Buffer.from(destination).toString("base64url")}`,
+    );
+    if (code) {
+      const storedDestination = await getStoredRedirect(code);
+      if (storedDestination === destination) {
+        return { code, destination };
+      }
+    }
+  }
+
+  for (const [code, storedDestination] of memoryRedirects) {
+    const normalized = normalizeDestination(storedDestination);
+    if (normalized === destination) {
+      return { code, destination: normalized };
+    }
+  }
+  return null;
+};
+
 const setStoredRedirect = async (
   code: string,
   destination: string,
@@ -128,6 +185,10 @@ const setStoredRedirect = async (
   const client = await getRedisClient();
   if (client) {
     await client.set(`${REDIRECT_KEY_PREFIX}${code}`, destination);
+    await client.set(
+      `${REDIRECT_DESTINATION_KEY_PREFIX}${Buffer.from(destination).toString("base64url")}`,
+      code,
+    );
     return true;
   }
   if (!canUseMemoryStore()) {
@@ -211,11 +272,11 @@ goRedirectRegistrationRouter.post("/", async (req, res) => {
     return;
   }
 
-  const existing =
+  const existingByCode =
     resolveGoRedirect({ code, inlineDestination: null, registry: goRedirects }) ||
     (await getStoredRedirect(code));
 
-  if (existing && existing !== destination) {
+  if (existingByCode && existingByCode !== destination) {
     res.status(409).json({
       success: false,
       error: "Short-link code already points to a different destination.",
@@ -224,7 +285,12 @@ goRedirectRegistrationRouter.post("/", async (req, res) => {
     return;
   }
 
-  const stored = existing || (await setStoredRedirect(code, destination));
+  const existingByDestination =
+    findRegistryRedirectByDestination(destination) ||
+    (await getStoredRedirectByDestination(destination));
+  const responseCode = existingByDestination?.code || code;
+  const existingDestination = existingByCode || existingByDestination?.destination;
+  const stored = existingDestination || (await setStoredRedirect(code, destination));
   if (!stored) {
     res.status(503).json({
       success: false,
@@ -234,10 +300,10 @@ goRedirectRegistrationRouter.post("/", async (req, res) => {
     return;
   }
 
-  res.status(existing ? 200 : 201).json({
+  res.status(existingDestination ? 200 : 201).json({
     success: true,
-    code,
-    short_url: `${SITE_ORIGIN}/${code}`,
+    code: responseCode,
+    short_url: `${SITE_ORIGIN}/${responseCode}`,
     destination_url: destination,
     redirect_status: 302,
   });

@@ -25,7 +25,7 @@
 - utils｜地位：工具目录｜功能：通用辅助方法。
 
 近期更新
-- 新增 `/go/:code` 与根路径短链跳转路由及 `/api/link-attribution/redirects` 登记接口，支持同站安全目标、Supabase/Redis 动态 registry 与旧 `to` 回退目标，并拒绝外部跳转。
+- 新增 `/go/:code` 与根路径短链跳转路由及 `/api/link-attribution/redirects` 登记接口，支持同站安全目标、Supabase/Redis 动态 registry、相同 destination 复用已有短链与旧 `to` 回退目标，并拒绝外部跳转。
 - 新增天象工具端点（GET /api/astro/positions、/moon-phase、/ephemeris）+ 返照盘端点（POST /api/solar-return，20/min 限流 + 4kb cap，复用 birthInput 校验机）：纯算法在 services/astro（skyTools / solarReturn，TDD），计算器矩阵 D 第二批。
 - 新增 transit timeline 端点（GET/POST /api/transit/timeline，月度 K 线）：services/transit 纯函数评分引擎（intensity/rollup/aspects/time/weights，TDD）+ ephemeris 瘦经度接口 getLongitudes + 单日 tz 缓存 + 完整性门 + 10/min 限流 + 4kb body cap；natal 出生数据校验抽取为共享 api/birthInput.ts 供 timeline 复用（natal.test 守护无回归）。
 - Geo 搜索端点支持多语言参数与结构化位置过滤。

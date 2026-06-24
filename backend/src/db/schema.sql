@@ -239,6 +239,7 @@ CREATE INDEX IF NOT EXISTS idx_reports_type ON reports(report_type);
 CREATE INDEX IF NOT EXISTS idx_free_usage_fingerprint ON free_usage(device_fingerprint);
 CREATE INDEX IF NOT EXISTS idx_free_usage_user ON free_usage(user_id);
 CREATE INDEX IF NOT EXISTS idx_link_redirects_created_at ON link_redirects(created_at);
+CREATE INDEX IF NOT EXISTS idx_link_redirects_destination_url ON link_redirects(destination_url);
 
 -- ============================================
 -- Updated_at Trigger Function

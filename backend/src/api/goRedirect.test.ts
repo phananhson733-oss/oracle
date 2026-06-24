@@ -127,4 +127,40 @@ describe("/go short-link redirects", () => {
 
     expect(res.status).toBe(409);
   });
+
+  it("reuses an existing short link when the same destination is submitted with a new code", async () => {
+    const destination =
+      "https://www.astrologywiki.com/?utm_source=maximum.fm&utm_medium=backlink";
+    const app = createApp();
+
+    const legacy = await request(app)
+      .post("/api/link-attribution/redirects")
+      .send({
+        code: "rre3nynojk3o",
+        destination_url: destination,
+      });
+
+    expect(legacy.status).toBe(201);
+
+    const duplicateDestination = await request(app)
+      .post("/api/link-attribution/redirects")
+      .send({
+        code: "q1deterministic",
+        destination_url: destination,
+      });
+
+    expect(duplicateDestination.status).toBe(200);
+    expect(duplicateDestination.body).toMatchObject({
+      code: "rre3nynojk3o",
+      short_url: "https://www.astrologywiki.com/rre3nynojk3o",
+      destination_url: destination,
+    });
+
+    const oldLink = await request(app).get("/rre3nynojk3o");
+    const newLink = await request(app).get("/q1deterministic");
+
+    expect(oldLink.status).toBe(302);
+    expect(oldLink.headers.location).toBe(destination);
+    expect(newLink.status).toBe(404);
+  });
 });

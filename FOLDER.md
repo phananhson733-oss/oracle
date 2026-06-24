@@ -47,7 +47,7 @@
 - services｜地位：服务目录｜功能：主应用服务层。
 
 近期更新
-- 新增 `/go/:code` 与根路径短链跳转入口及 link-attribution 短链登记接口，支持同站安全跳转、动态 code registry 与旧 `to` 回退链接。
+- 新增 `/go/:code` 与根路径短链跳转入口及 link-attribution 短链登记接口，支持同站安全跳转、动态 code registry、相同 destination 复用已有短链与旧 `to` 回退链接。
 - 支付成功页路由加入放行清单，避免无档案状态被重定向，订阅后可顺利进入个人信息页。
 - 支付成功回调增加 PayPal 查询参数转 hash 路由处理，避免跳回首页。
 - 移除 Tailwind CDN，改为 Tailwind/PostCSS 本地构建并新增样式配置与入口文件。
