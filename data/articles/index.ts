@@ -266,6 +266,7 @@ import { rhaenyraTargaryenZodiacSignEn } from "./rhaenyra-targaryen-zodiac-sign"
 import { bukayoSakaZodiacSignZh } from "./bukayo-saka-zodiac-sign";
 import { lukaModricZodiacSignZh } from "./luka-modric-zodiac-sign";
 import { brunoFernandesZodiacSignZh } from "./bruno-fernandes-zodiac-sign";
+import { rhaenyraTargaryenZodiacSignZh } from "./rhaenyra-targaryen-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -642,6 +643,7 @@ const ARTICLES_ZH: WikiArticle[] = [
   bukayoSakaZodiacSignZh,
   lukaModricZodiacSignZh,
   brunoFernandesZodiacSignZh,
+  rhaenyraTargaryenZodiacSignZh,
 ];
 
 // Get all articles for a language

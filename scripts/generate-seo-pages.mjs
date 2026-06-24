@@ -694,6 +694,7 @@ const ZH_WIKI_WHITELIST = new Set([
 
 // Featured article slugs — generate static HTML (full body) + sitemap entry.
 const ARTICLE_SLUGS = [
+  'rhaenyra-targaryen-zodiac-sign',
   'bruno-fernandes-zodiac-sign',
   'luka-modric-zodiac-sign',
   'bukayo-saka-zodiac-sign',
@@ -829,7 +830,6 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
-  'rhaenyra-targaryen-zodiac-sign',
   'cancer-season-2026-astrology',
   'father-s-day-astrology-2026',
   'jeremy-doku-birth-chart',
