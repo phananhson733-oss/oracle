@@ -833,6 +833,7 @@ const ARTICLE_SLUGS = [
 const ARTICLE_SLUGS_EN_ONLY = [
   'kylie-jenner-zodiac-sign',
   'greta-lee-zodiac-sign',
+  'sharon-osbourne-zodiac-sign',
   'father-s-day-astrology-2026',
   'jeremy-doku-birth-chart',
   'mo-salah-birth-chart',
