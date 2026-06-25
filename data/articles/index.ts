@@ -273,6 +273,7 @@ import { gretaLeeZodiacSignEn } from "./greta-lee-zodiac-sign";
 import { sharonOsbourneZodiacSignEn } from "./sharon-osbourne-zodiac-sign";
 import { thomasParteyZodiacSignEn } from "./thomas-partey-zodiac-sign";
 import { marcusRashfordZodiacSignEn } from "./marcus-rashford-zodiac-sign";
+import { mariahCareyZodiacSignEn } from "./mariah-carey-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -537,6 +538,7 @@ const ARTICLES_EN: WikiArticle[] = [
   sharonOsbourneZodiacSignEn,
   thomasParteyZodiacSignEn,
   marcusRashfordZodiacSignEn,
+  mariahCareyZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

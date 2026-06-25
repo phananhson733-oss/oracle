@@ -1,0 +1,66 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mariah-carey-zodiac-sign": {
+      "hero": {
+        "prompt": "A wide volcanic highland landscape under a deep indigo night sky, where rivers of softly glowing gold-and-amber lava wind silently down dark basalt slopes and pour into a vast obsidian-still lake, the lava's warm light reflected perfectly in the water's mirror surface as fire turns inward into its own stillness, teal veins of bioluminescent light tracing through the ancient rock, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Volcanic lava rivers flowing silently into a dark still lake, fire reflected in water under an indigo night sky",
+        "altZh": "火山熔岩静静流入黑色湖面，火焰倒映于水中，靛蓝夜空之下"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Aries Sun vs Cancer Moon: Why the Fire Stays Private",
+          "titleEn": "The Two Layers Behind Mariah Carey's Zodiac Sign",
+          "altEn": "Three-step sequence showing Aries Sun drive, Cancer Moon filter, and the resulting trade-off",
+          "items": [
+            {
+              "nameEn": "The Aries Sun",
+              "subEn": "Raw forward drive: asserting a distinct, competitive identity in public"
+            },
+            {
+              "nameEn": "The Cancer Moon",
+              "subEn": "Routes that fire into private, self-protective processing and guarded perfectionism"
+            },
+            {
+              "nameEn": "The Trade-off",
+              "subEn": "Water Moon composure costs the legibility of plain Aries fire — the public reads \"diva\""
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Common Misreadings vs. What the Chart Actually Shows",
+          "altEn": "Two-column comparison correcting three common misreadings of Mariah Carey's Aries zodiac sign",
+          "columns": [
+            {
+              "nameEn": "The Misread",
+              "linesEn": [
+                "She's a diva purely because she's an Aries",
+                "Aries means she's openly combative",
+                "Her Sun sign tells you everything"
+              ]
+            },
+            {
+              "nameEn": "What the Chart Shows",
+              "linesEn": [
+                "The guardedness comes from the private Cancer Moon, not the Sun alone",
+                "Her fire channels into behind-the-scenes perfectionism, not public fights",
+                "The Cancer Moon modulates the Aries drive in ways the Sun alone cannot show"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
