@@ -53,42 +53,42 @@ export interface ToolEntry {
 export const TOOL_CATEGORIES: ToolCategory[] = [
   {
     id: "core-signs",
-    title: { en: "Your Core Signs", zh: "你的核心星座" },
+    title: { en: "Core chart placements", zh: "核心星盘位置" },
     intro: {
-      en: "The placements most readings start from — the signs that describe who you are.",
-      zh: "多数解读的起点——描述你是谁的核心星位。",
+      en: "The placements most readings start from: Sun, Moon, rising sign, and the full natal chart context around them.",
+      zh: "多数解读从这里开始：太阳、月亮、上升，以及围绕它们展开的完整本命盘语境。",
     },
   },
   {
     id: "charts-astronomy",
-    title: { en: "Charts & Astronomy", zh: "星盘与天文数据" },
+    title: { en: "Charts and sky data", zh: "星盘与天空数据" },
     intro: {
-      en: "Live planetary data and astronomer-grade tools, powered by Swiss Ephemeris.",
-      zh: "由 Swiss Ephemeris 驱动的实时行星数据与天文级工具。",
+      en: "Planetary positions, moon phases, ephemeris tables, and source-quality checks powered by Swiss Ephemeris.",
+      zh: "由 Swiss Ephemeris 支撑的行星位置、月相、星历表与出生时间可信度工具。",
     },
   },
   {
     id: "timing-forecast",
-    title: { en: "Timing & Forecast", zh: "时机与预测" },
+    title: { en: "Timing and cycles", zh: "时机与周期" },
     intro: {
-      en: "How the sky shifts across your days and the year ahead.",
-      zh: "天象如何在你的日子与未来一年里流转。",
+      en: "Explore transits, returns, and day-by-day sky patterns as timing language rather than fixed outcomes.",
+      zh: "把行运、返照与逐日天象作为时机语言来阅读，而不是固定结果。",
     },
   },
   {
     id: "relationships",
-    title: { en: "Relationships", zh: "关系合盘" },
+    title: { en: "Relationship charts", zh: "关系星盘" },
     intro: {
-      en: "Compare two charts and explore the connection between them.",
-      zh: "比较两张星盘，探索彼此之间的联系。",
+      en: "Compare two charts and examine attraction, friction, support, and the shared pattern between them.",
+      zh: "比较两张星盘，观察吸引、摩擦、支持与两人之间形成的关系模式。",
     },
   },
   {
     id: "places-discovery",
-    title: { en: "Places & Discovery", zh: "地点与探索" },
+    title: { en: "Place and discovery", zh: "地点与探索" },
     intro: {
-      en: "Explore your chart on the world map and among familiar faces.",
-      zh: "在世界地图上、在熟悉的面孔之间探索你的星盘。",
+      en: "Use maps and reference datasets to place chart symbolism in a wider world context.",
+      zh: "通过地图与参考数据集，把星盘象征放进更广阔的世界语境里观察。",
     },
   },
 ];

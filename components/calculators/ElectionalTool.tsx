@@ -6,7 +6,7 @@
 //      严格中性叙事——描述天象条件供规划参考，绝不预测吉凶或保证结果。若更新此文件，务必更新 calculators/FOLDER.md。
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import type { Language } from "../../types";
+import type { Language, PlanetPosition } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
 import { signLabel } from "./astroDisplay";
@@ -37,6 +37,16 @@ const ASPECT_BODIES = [
   "Jupiter",
   "Saturn",
 ];
+
+const toPlanetPositions = (
+  positions: readonly TodayPosition[],
+): PlanetPosition[] =>
+  positions.map((p) => ({
+    name: p.name,
+    sign: p.sign,
+    degree: p.degree,
+    isRetrograde: p.retrograde,
+  }));
 
 const todayIso = (): string => new Date().toISOString().slice(0, 10);
 const addDays = (iso: string, n: number): string => {
@@ -194,15 +204,18 @@ export const ElectionalTool: React.FC = () => {
 
   const computeRow = useCallback(
     (date: string, positions: TodayPosition[]): DayRow => {
-      const moon = positions.find((p) => p.name === "Moon");
-      const sun = positions.find((p) => p.name === "Sun");
+      const planetPositions = toPlanetPositions(positions);
+      const moon = planetPositions.find((p) => p.name === "Moon");
+      const sun = planetPositions.find((p) => p.name === "Sun");
       const moonLon = moon ? absoluteLongitude(moon) : null;
       const sunLon = sun ? absoluteLongitude(sun) : null;
       const phase =
         moonLon != null && sunLon != null
           ? moonPhaseLabel(moonLon - sunLon)
           : null;
-      const summary = summarizeAspects(selfAspects(positions, ASPECT_BODIES));
+      const summary = summarizeAspects(
+        selfAspects(planetPositions, ASPECT_BODIES),
+      );
       return {
         date,
         moonSign: moon?.sign ?? null,
@@ -259,7 +272,7 @@ export const ElectionalTool: React.FC = () => {
           : "See the sky's conditions over the days ahead — Moon phase, Moon sign, and the balance of supportive vs challenging aspects — as a reflection for your own timing, not a prediction or guarantee."
       }
       slug="electional-astrology"
-      maxWidth="3xl"
+      maxWidth="6xl"
     >
       <div
         className={`${th.cardBg} border ${th.cardBorder} mb-8 rounded-2xl p-6 transition-all duration-300 ease-in-out sm:p-8 motion-reduce:transition-none`}

@@ -314,7 +314,7 @@ export const AstrocartographyTool: React.FC = () => {
           : "See where each planet sat on the horizon and meridian at your birth, mapped across the world — an invitation to explore places, not a prediction."
       }
       slug="astrocartography"
-      maxWidth="3xl"
+      maxWidth="6xl"
     >
       <form
         onSubmit={handleSubmit}

@@ -206,7 +206,7 @@ export const CompositeCalculator: React.FC = () => {
           : "Build the midpoint chart that represents the relationship itself — from two charts, on real astronomy."
       }
       slug="composite-calculator"
-      maxWidth="3xl"
+      maxWidth="6xl"
     >
       <form
         onSubmit={handleSubmit}

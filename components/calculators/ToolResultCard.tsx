@@ -37,12 +37,12 @@ export const ToolResultCard: React.FC<{
   <div
     ref={innerRef}
     tabIndex={tabIndex}
-    className={`rounded-2xl border border-paper-300 bg-white p-6 outline-none transition-all duration-300 ease-in-out hover:shadow-xl sm:p-8 dark:border-gold-500/20 dark:bg-space-900/60 motion-reduce:transition-none ${className}`}
+    className={`rounded-2xl border border-paper-300/80 bg-paper-100/90 p-6 outline-none transition-all duration-300 ease-in-out hover:border-accent/35 hover:shadow-xl sm:p-8 dark:border-gold-500/20 dark:bg-space-900/60 dark:hover:border-accent/35 motion-reduce:transition-none ${className}`}
   >
     {hero && <div className="mb-4 flex justify-center">{hero}</div>}
     {headline && (
       <h2
-        className={`font-serif text-2xl font-bold leading-tight tracking-tight text-paper-900 dark:text-star-50 ${
+        className={`font-serif text-2xl font-semibold leading-tight tracking-normal text-paper-900 dark:text-star-50 ${
           hero ? "text-center" : ""
         }`}
       >

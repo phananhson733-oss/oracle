@@ -29,6 +29,7 @@ import {
 import { useCalculatorTheme } from "./calculators/useCalculatorTheme";
 import { GlyphBadge } from "./calculators/GlyphBadge";
 import { ToolFunnelCTA } from "./calculators/ToolFunnelCTA";
+import { ToolSeoLandingSections } from "./calculators/ToolSeoLandingSections";
 
 interface GeoResult {
   city: string;
@@ -414,7 +415,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
         />
       )}
 
-      <div className="max-w-2xl mx-auto">
+      <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${textPrimary}`}>
@@ -798,114 +799,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
         )}
 
         {/* SEO 长文仅 full 态展示；嵌入态用品牌回链替代（避免把整篇长文塞进宿主 iframe）。 */}
-        {!isEmbed && (
-          <article
-            className={`prose ${isDark ? "prose-invert" : ""} max-w-none`}
-          >
-            <h2 className={`text-2xl font-bold mb-4 ${textPrimary}`}>
-              What is a Saturn Return?
-            </h2>
-            <div className={`space-y-4 ${textSecondary} leading-relaxed`}>
-              <p>
-                A Saturn Return is one of the most significant astrological
-                transits you will experience in your lifetime. It occurs when
-                the planet Saturn completes its orbit around the Sun and returns
-                to the exact zodiacal position it occupied at the moment of your
-                birth. This cycle takes approximately 29.5 years, meaning your
-                first Saturn Return happens between ages 27 and 30.
-              </p>
-              <p>
-                In astrology, Saturn is known as the taskmaster of the zodiac.
-                It governs structure, discipline, responsibility, and the
-                passage of time. When Saturn returns to your natal position, it
-                brings a period of profound self-examination and life
-                restructuring. Many people experience major life changes during
-                their Saturn Return, including career shifts, relationship
-                changes, and a deeper understanding of their life purpose.
-              </p>
-              <p>
-                Your first Saturn Return (ages 27-30) marks the transition from
-                youth to true adulthood. The structures, beliefs, and
-                relationships that are not built on solid foundations tend to
-                dissolve during this period. While it can feel challenging, the
-                Saturn Return is ultimately about growth. It pushes you to align
-                your external life with your authentic self.
-              </p>
-              <p>
-                The second Saturn Return (ages 56-60) is a time of mature
-                reflection and legacy building. Having lived through one full
-                Saturn cycle, you have the wisdom to evaluate what truly
-                matters. Many people use this period to simplify their lives,
-                focus on meaningful work, and prepare for the next chapter.
-              </p>
-              <p>
-                The third Saturn Return (ages 84-90) is rare and represents the
-                completion of a full life cycle. Those who reach this milestone
-                often experience a profound sense of peace and acceptance,
-                having integrated all the lessons Saturn has taught them.
-              </p>
-
-              <h3 className={`text-xl font-semibold mt-6 mb-3 ${textPrimary}`}>
-                How Does the Saturn Return Calculator Work?
-              </h3>
-              <p>
-                Our calculator uses the Swiss Ephemeris, the same high-precision
-                astronomical engine used by professional astrologers worldwide,
-                to determine the exact position of Saturn at the time of your
-                birth. It then calculates when transiting Saturn will return to
-                that exact degree, giving you precise dates for your Saturn
-                Return periods.
-              </p>
-              <p>
-                For the most accurate results, enter your exact birth time and
-                city. If you don't know your birth time, the calculator will
-                still provide approximate dates, as Saturn moves slowly enough
-                that the degree difference within a single day is minimal.
-              </p>
-
-              <h3 className={`text-xl font-semibold mt-6 mb-3 ${textPrimary}`}>
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className={`font-medium ${textPrimary}`}>
-                    How long does a Saturn Return last?
-                  </h4>
-                  <p>
-                    A Saturn Return typically lasts about 2-3 years from start
-                    to finish. The most intense period is when Saturn is within
-                    2 degrees of your natal Saturn position, which lasts several
-                    months.
-                  </p>
-                </div>
-                <div>
-                  <h4 className={`font-medium ${textPrimary}`}>
-                    Is the Saturn Return always difficult?
-                  </h4>
-                  <p>
-                    Not necessarily. While Saturn Returns can bring challenges,
-                    they are ultimately about growth and maturation. People who
-                    have already been building solid foundations in their lives
-                    often experience their Saturn Return as a period of reward
-                    and recognition rather than crisis.
-                  </p>
-                </div>
-                <div>
-                  <h4 className={`font-medium ${textPrimary}`}>
-                    Do I need my exact birth time?
-                  </h4>
-                  <p>
-                    For Saturn Return dates, exact birth time is helpful but not
-                    essential. Saturn moves about 0.03 degrees per day, so even
-                    without birth time, the calculated dates will be very close
-                    to accurate. Birth time matters more for determining which
-                    house your Saturn Return activates.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-        )}
+        {!isEmbed && <ToolSeoLandingSections slug="saturn-return-calculator" />}
 
         {/* 嵌入态品牌回链（可见、dofollow，回站点 canonical 计算器页）。合规外链形态。 */}
         {isEmbed && (

@@ -186,7 +186,7 @@ export const EphemerisTool: React.FC = () => {
 
   return (
     <ToolPageShell
-      maxWidth="3xl"
+      maxWidth="6xl"
       slug="ephemeris-calculator"
       title={lang === "zh" ? "星历表生成器" : "Ephemeris Calculator"}
       subtitle={

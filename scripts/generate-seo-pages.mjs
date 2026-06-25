@@ -1757,32 +1757,32 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     };
     const HUB_CATEGORIES = [
       {
-        heading: 'Your Core Signs',
-        intro: 'The placements most readings start from — the signs that describe who you are.',
+        heading: 'Core chart placements',
+        intro: 'The placements most readings start from: Sun, Moon, rising sign, and the full natal chart context around them.',
         slugs: ['birth-chart-calculator', 'big-three-calculator', 'moon-sign-calculator', 'rising-sign-calculator'],
       },
       {
-        heading: 'Charts & Astronomy',
-        intro: 'Live planetary data and astronomer-grade tools, powered by Swiss Ephemeris.',
+        heading: 'Charts and sky data',
+        intro: 'Planetary positions, moon phases, ephemeris tables, and source-quality checks powered by Swiss Ephemeris.',
         slugs: ['current-planets', 'ephemeris-calculator', 'moon-phase-calculator', 'rodden-rating'],
       },
       {
-        heading: 'Timing & Forecast',
-        intro: 'How the sky shifts across your days and the year ahead.',
+        heading: 'Timing and cycles',
+        intro: 'Explore transits, returns, and day-by-day sky patterns as timing language rather than fixed outcomes.',
         slugs: ['energy-timeline', 'electional-astrology', 'solar-return-calculator', 'saturn-return-calculator'],
       },
       {
-        heading: 'Relationships',
-        intro: 'Compare two charts and explore the connection between them.',
+        heading: 'Relationship charts',
+        intro: 'Compare two charts and examine attraction, friction, support, and the shared pattern between them.',
         slugs: ['synastry-calculator', 'composite-calculator'],
       },
       {
-        heading: 'Places & Discovery',
-        intro: 'Explore your chart on the world map and among familiar faces.',
+        heading: 'Place and discovery',
+        intro: 'Use maps and reference datasets to place chart symbolism in a wider world context.',
         slugs: ['astrocartography', 'celebrity-twins'],
       },
     ];
-    const toolsHubIntro = 'A full set of free astrology calculators and chart tools, powered by Swiss Ephemeris astronomy. No account needed — browse by theme and pick one to explore.';
+    const toolsHubIntro = 'A focused set of free astrology calculators and chart tools for birth charts, current planets, timing cycles, relationship charts, and place-based exploration. Powered by Swiss Ephemeris astronomy.';
     const toolsHubBody = [
       toolsHubIntro,
       ...HUB_CATEGORIES.map((cat) => {
@@ -1802,7 +1802,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       ['How accurate are the calculations?', 'All placements are computed with Swiss Ephemeris astronomy, the same data professional astrology software relies on.'],
     ];
     const toolsHubTitle = 'Free Astrology Tools & Calculators';
-    const toolsHubDescription = 'A full set of free astrology calculators — birth chart, Moon and rising signs, synastry, astrocartography, solar return and more. Powered by Swiss Ephemeris. No account needed.';
+    const toolsHubDescription = 'A focused set of free astrology calculators — birth chart, Moon and rising signs, synastry, astrocartography, solar return and more. Powered by Swiss Ephemeris.';
     const toolsHubUrl = `${siteUrl}/en/tools`;
     const hubAllSlugs = HUB_CATEGORIES.flatMap((c) => c.slugs);
     addUrl(toolsHubUrl, ['tools-hub', 'v1', contentHash([toolsHubBody])]);

@@ -87,6 +87,7 @@ const ALLOWED_ORIGINS: (string | RegExp)[] = [
 ];
 if (process.env.NODE_ENV !== "production") {
   ALLOWED_ORIGINS.push(/^http:\/\/localhost(:\d+)?$/);
+  ALLOWED_ORIGINS.push(/^http:\/\/127\.0\.0\.1(:\d+)?$/);
 }
 
 const isAllowedOrigin = (origin: string) =>

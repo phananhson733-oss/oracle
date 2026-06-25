@@ -197,7 +197,7 @@ const TimelinePage: React.FC<{
         : `age-${now.getFullYear() - (Number(profile.birthDate.slice(0, 4)) || now.getFullYear() - 30)}`;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">{c.title}</h1>
         <p className="text-sm text-paper-500 dark:text-star-400 mt-1">

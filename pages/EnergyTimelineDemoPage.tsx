@@ -9,6 +9,7 @@ import type { UserProfile } from "../types";
 import { useLanguage } from "../components/UIComponents";
 import { useLangPath } from "../hooks/useLangPath";
 import { useAuth } from "../contexts/AuthContext";
+import { ToolSeoLandingSections } from "../components/calculators/ToolSeoLandingSections";
 import TimelinePage from "./TimelinePage";
 
 // 固定示例盘（中性、非真实在世人物）：用于公开 demo，让访客/爬虫看到一张真实的时间轴而非空态。
@@ -50,7 +51,7 @@ const EnergyTimelineDemoPage: React.FC = () => {
   const d = DEMO_COPY[language === "zh" ? "zh" : "en"];
 
   return (
-    <div className="max-w-5xl mx-auto px-4">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6">
       <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-paper-300 bg-white p-5 transition-all duration-300 ease-in-out dark:border-gold-500/20 dark:bg-space-900/60 sm:flex-row sm:items-center sm:justify-between motion-reduce:transition-none">
         <div>
           <span className="inline-block rounded-full bg-accent/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-accent">
@@ -90,6 +91,8 @@ const EnergyTimelineDemoPage: React.FC = () => {
         demo
         onUpsell={() => openLoginModal?.()}
       />
+
+      <ToolSeoLandingSections slug="energy-timeline" />
     </div>
   );
 };

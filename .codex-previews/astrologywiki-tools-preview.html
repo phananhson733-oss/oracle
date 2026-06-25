@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AstrologyWiki 工具｜出生星盘、今日行运、合盘与土星回归</title>
+  <meta name="description" content="使用 AstrologyWiki 免费绘制出生星盘、查看今日行运、比较关系合盘并计算土星回归。基于真实天文数据，以心理占星语言帮助你理解倾向、时机与模式。">
+  <style>
+    :root {
+      --aw-bg: #f7f0e4;
+      --aw-bg-soft: #fbf7ef;
+      --aw-surface: #fffaf1;
+      --aw-surface-muted: #efe3d1;
+      --aw-ink: #17172a;
+      --aw-ink-soft: #312f46;
+      --aw-muted: #746d7e;
+      --aw-muted-2: #9a8f9b;
+      --aw-line: #d8c9b3;
+      --aw-line-strong: #bfae91;
+      --aw-gold: #a97932;
+      --aw-gold-soft: #c6a365;
+      --aw-gold-faint: #ead8b5;
+      --aw-indigo: #1e2340;
+      --aw-indigo-2: #2c2d52;
+      --aw-plum: #4a3549;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+      --font-display: "Noto Serif SC", "Songti SC", Georgia, serif;
+      --font-body: "Inter", "Noto Sans SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-logo: "Cormorant Garamond", Georgia, serif;
+      --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--aw-bg);
+      color: var(--aw-ink);
+      font-family: var(--font-body);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--aw-bg);
+      color: var(--aw-ink);
+    }
+
+    body::before {
+      background-image: radial-gradient(circle at 1px 1px, rgba(23, 23, 42, 0.07) 1px, transparent 0);
+      background-size: 18px 18px;
+      content: "";
+      inset: 0;
+      opacity: 0.18;
+      pointer-events: none;
+      position: fixed;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      border-radius: var(--radius-sm);
+      outline: 3px solid rgba(169, 121, 50, 0.22);
+      outline-offset: 4px;
+    }
+
+    .aw-container {
+      margin-inline: auto;
+      width: min(100% - 48px, 1180px);
+    }
+
+    .aw-header {
+      background: rgba(247, 240, 228, 0.9);
+      border-bottom: 1px solid rgba(216, 201, 179, 0.75);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .aw-header__inner {
+      align-items: center;
+      display: flex;
+      gap: 28px;
+      height: 84px;
+      justify-content: space-between;
+    }
+
+    .aw-brand {
+      min-width: 220px;
+    }
+
+    .aw-brand__name {
+      color: var(--aw-ink);
+      display: block;
+      font-family: var(--font-logo);
+      font-size: 27px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .aw-brand__tag {
+      color: var(--aw-muted);
+      display: block;
+      font-size: 12px;
+      line-height: 1.7;
+      margin-top: 3px;
+    }
+
+    .aw-nav {
+      align-items: center;
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+    }
+
+    .aw-nav a {
+      color: var(--aw-muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .aw-nav a[aria-current="page"],
+    .aw-nav a:hover {
+      color: var(--aw-ink);
+    }
+
+    .aw-btn {
+      align-items: center;
+      border: 1px solid var(--aw-line-strong);
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 600;
+      gap: 10px;
+      height: 46px;
+      justify-content: center;
+      min-width: 154px;
+      padding: 0 22px;
+      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+      white-space: nowrap;
+    }
+
+    .aw-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .aw-btn--primary {
+      background: var(--aw-indigo);
+      border-color: var(--aw-indigo);
+      color: var(--aw-bg-soft);
+    }
+
+    .aw-btn--primary:hover {
+      background: #111426;
+      border-color: #111426;
+    }
+
+    .aw-btn--secondary {
+      background: rgba(255, 250, 241, 0.64);
+      color: var(--aw-ink);
+    }
+
+    .aw-btn--secondary:hover {
+      background: var(--aw-surface);
+      border-color: var(--aw-gold);
+    }
+
+    .aw-hero {
+      padding: 86px 0 96px;
+    }
+
+    .aw-hero__grid {
+      align-items: center;
+      display: grid;
+      gap: 70px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
+    }
+
+    .aw-kicker {
+      color: var(--aw-gold);
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.2;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    .aw-h1,
+    .aw-h2,
+    .aw-h3 {
+      color: var(--aw-ink);
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0;
+      margin: 0;
+    }
+
+    .aw-h1 {
+      font-size: 84px;
+      line-height: 0.98;
+      max-width: 640px;
+    }
+
+    .aw-h2 {
+      font-size: 56px;
+      line-height: 1.08;
+    }
+
+    .aw-h3 {
+      font-size: 31px;
+      line-height: 1.18;
+    }
+
+    .aw-body-lg {
+      color: var(--aw-ink-soft);
+      font-size: 20px;
+      line-height: 1.7;
+      margin: 26px 0 0;
+      max-width: 600px;
+    }
+
+    .aw-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .aw-microcopy {
+      color: var(--aw-muted);
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 22px 0 0;
+    }
+
+    .aw-chart-panel {
+      align-items: center;
+      background: rgba(251, 247, 239, 0.74);
+      border: 1px solid var(--aw-line);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+      min-height: 520px;
+      padding: 22px;
+    }
+
+    .aw-chart {
+      aspect-ratio: 1;
+      display: block;
+      max-width: 440px;
+      width: min(100%, 440px);
+    }
+
+    .aw-chart-caption {
+      color: var(--aw-muted);
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 0;
+      text-align: center;
+    }
+
+    .aw-section {
+      padding-bottom: 120px;
+    }
+
+    .aw-section--soft {
+      background: var(--aw-bg-soft);
+      padding: 104px 0 112px;
+    }
+
+    .aw-section-heading {
+      margin-bottom: 30px;
+    }
+
+    .aw-section-label {
+      align-items: center;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: max-content minmax(0, 1fr);
+      margin-bottom: 28px;
+    }
+
+    .aw-section-label span {
+      color: var(--aw-gold);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .aw-section-label::after {
+      background: var(--aw-line);
+      content: "";
+      height: 1px;
+      width: 100%;
+    }
+
+    .aw-section-intro {
+      color: var(--aw-ink-soft);
+      font-size: 17px;
+      line-height: 1.72;
+      margin: 18px 0 0;
+      max-width: 760px;
+    }
+
+    .aw-tool-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 30px;
+    }
+
+    .aw-tool-card {
+      background: var(--aw-surface);
+      border: 1px solid var(--aw-line);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      min-height: 320px;
+      padding: 28px;
+      transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .aw-tool-card:hover {
+      background: #fffdf7;
+      border-color: var(--aw-line-strong);
+      transform: translateY(-2px);
+    }
+
+    .aw-number {
+      color: var(--aw-gold);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .aw-tool-card h3 {
+      margin-top: 22px;
+    }
+
+    .aw-card-copy {
+      color: var(--aw-ink-soft);
+      font-size: 15px;
+      line-height: 1.68;
+      margin: 16px 0 0;
+    }
+
+    .aw-card-rule {
+      background: linear-gradient(90deg, var(--aw-gold), transparent);
+      height: 1px;
+      margin: auto 0 18px;
+      opacity: 0.56;
+      width: 100%;
+    }
+
+    .aw-card-link {
+      color: var(--aw-ink);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .aw-philosophy {
+      align-items: center;
+      display: grid;
+      gap: 80px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+    }
+
+    .aw-philosophy .aw-h2 {
+      max-width: 540px;
+    }
+
+    .aw-philosophy__body {
+      color: var(--aw-ink-soft);
+      font-size: 18px;
+      line-height: 1.72;
+      margin: 0 0 24px;
+    }
+
+    .aw-principles {
+      display: grid;
+      gap: 18px;
+    }
+
+    .aw-principle {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 20px 1fr;
+    }
+
+    .aw-principle__mark {
+      color: var(--aw-gold);
+      font-family: var(--font-display);
+      font-size: 16px;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .aw-principle strong {
+      color: var(--aw-ink);
+      display: block;
+      font-size: 15px;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .aw-principle span:last-child {
+      color: var(--aw-muted);
+      display: block;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .aw-index-grid,
+    .aw-guide-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 34px;
+    }
+
+    .aw-index-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .aw-guide-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .aw-editorial-card {
+      border-top: 1px solid var(--aw-line);
+      padding-top: 22px;
+    }
+
+    .aw-editorial-card h3 {
+      margin-bottom: 14px;
+    }
+
+    .aw-editorial-card__links {
+      color: var(--aw-gold);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.58;
+      margin: 0 0 10px;
+    }
+
+    .aw-editorial-card__copy {
+      color: var(--aw-muted);
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .aw-guide-meta {
+      color: var(--aw-gold);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+
+    .aw-guide-card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .aw-trust {
+      padding-bottom: 106px;
+    }
+
+    .aw-trust__grid {
+      border-bottom: 1px solid var(--aw-line);
+      border-top: 1px solid var(--aw-line);
+      display: grid;
+      gap: 34px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      padding: 24px 0;
+    }
+
+    .aw-trust__item span {
+      color: var(--aw-gold);
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .aw-trust__item strong {
+      color: var(--aw-ink);
+      display: block;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .aw-final {
+      padding-bottom: 110px;
+    }
+
+    .aw-final__panel {
+      align-items: center;
+      background: var(--aw-ink);
+      border: 1px solid rgba(198, 163, 101, 0.5);
+      border-radius: var(--radius-md);
+      color: var(--aw-bg-soft);
+      display: grid;
+      gap: 70px;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      min-height: 350px;
+      overflow: hidden;
+      padding: 52px 58px;
+    }
+
+    .aw-final .aw-h2 {
+      color: var(--aw-bg-soft);
+    }
+
+    .aw-final p {
+      color: var(--aw-gold-faint);
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 20px 0 0;
+      max-width: 560px;
+    }
+
+    .aw-final .aw-btn--secondary {
+      background: var(--aw-bg-soft);
+      border-color: var(--aw-gold-soft);
+    }
+
+    .aw-final__link {
+      color: var(--aw-gold-faint);
+      font-size: 14px;
+      font-weight: 600;
+      padding-inline: 4px;
+    }
+
+    .aw-final__chart {
+      opacity: 0.55;
+      width: 250px;
+    }
+
+    .aw-footer {
+      background: var(--aw-bg-soft);
+      padding: 64px 0 42px;
+    }
+
+    .aw-footer__grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-bottom: 42px;
+    }
+
+    .aw-footer h2 {
+      color: var(--aw-gold);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.4;
+      margin: 0 0 18px;
+    }
+
+    .aw-footer ul {
+      color: var(--aw-muted);
+      display: grid;
+      font-size: 14px;
+      gap: 10px;
+      line-height: 1.5;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .aw-footer__bottom {
+      border-top: 1px solid var(--aw-line);
+      color: var(--aw-muted);
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
+      padding-top: 32px;
+    }
+
+    @media (max-width: 1100px) {
+      .aw-nav {
+        display: none;
+      }
+
+      .aw-hero__grid,
+      .aw-philosophy,
+      .aw-final__panel {
+        grid-template-columns: 1fr;
+      }
+
+      .aw-chart-panel {
+        min-height: auto;
+      }
+
+      .aw-tool-grid,
+      .aw-index-grid,
+      .aw-trust__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .aw-container {
+        width: min(100% - 32px, 100%);
+      }
+
+      .aw-header__inner {
+        height: 72px;
+      }
+
+      .aw-brand__name {
+        font-size: 23px;
+      }
+
+      .aw-header .aw-btn {
+        display: none;
+      }
+
+      .aw-hero {
+        padding: 58px 0 76px;
+      }
+
+      .aw-h1 {
+        font-size: 50px;
+        line-height: 1;
+      }
+
+      .aw-h2 {
+        font-size: 38px;
+        line-height: 1.12;
+      }
+
+      .aw-h3 {
+        font-size: 27px;
+      }
+
+      .aw-body-lg {
+        font-size: 17px;
+      }
+
+      .aw-tool-grid,
+      .aw-index-grid,
+      .aw-guide-grid,
+      .aw-trust__grid,
+      .aw-footer__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .aw-section {
+        padding-bottom: 84px;
+      }
+
+      .aw-section--soft {
+        padding: 78px 0 84px;
+      }
+
+      .aw-tool-card {
+        min-height: 0;
+      }
+
+      .aw-final__panel {
+        gap: 34px;
+        padding: 34px 26px;
+      }
+
+      .aw-final__chart {
+        justify-self: center;
+        width: 220px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="aw-header">
+    <div class="aw-container aw-header__inner">
+      <a class="aw-brand" href="/zh" aria-label="AstrologyWiki 首页">
+        <span class="aw-brand__name">AstrologyWiki</span>
+        <span class="aw-brand__tag">占星 · 心理学 · 自我理解</span>
+      </a>
+      <nav class="aw-nav" aria-label="主导航">
+        <a href="/zh/tools" aria-current="page">工具</a>
+        <a href="/zh/basics">星盘基础</a>
+        <a href="/zh/planets">行星</a>
+        <a href="/zh/houses">宫位</a>
+        <a href="/zh/aspects">相位</a>
+        <a href="/zh/classics">经典</a>
+      </nav>
+      <a class="aw-btn aw-btn--primary" href="/zh/tools/birth-chart">绘制星盘</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="aw-hero">
+      <div class="aw-container aw-hero__grid">
+        <div>
+          <span class="aw-kicker">现代占星图谱</span>
+          <h1 class="aw-h1">安静地阅读你的星图。</h1>
+          <p class="aw-body-lg">从出生星盘、今日行运到关系合盘，AstrologyWiki 用真实天文数据与心理占星语言，帮助你理解倾向、时机与内在模式。</p>
+          <div class="aw-cta-row">
+            <a class="aw-btn aw-btn--primary" href="/zh/tools/birth-chart">绘制出生星盘</a>
+            <a class="aw-btn aw-btn--secondary" href="/zh/wiki">浏览占星百科</a>
+          </div>
+          <p class="aw-microcopy">基于真实天文计算 · 免费使用 · 无需注册 · 不做宿命论预测</p>
+        </div>
+        <figure class="aw-chart-panel">
+          <svg class="aw-chart" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="230" cy="230" r="207" stroke="#EAD8B5" stroke-width="1"/>
+            <circle cx="230" cy="230" r="180" stroke="#BFAE91" stroke-width="1" opacity="0.72"/>
+            <circle cx="230" cy="230" r="132" stroke="#A97932" stroke-width="1" opacity="0.65"/>
+            <circle cx="230" cy="230" r="74" stroke="#1E2340" stroke-width="1" opacity="0.35"/>
+            <g stroke="#BFAE91" stroke-width="1" opacity="0.62">
+              <line x1="230" y1="23" x2="230" y2="437"/>
+              <line x1="230" y1="23" x2="230" y2="437" transform="rotate(30 230 230)"/>
+              <line x1="230" y1="23" x2="230" y2="437" transform="rotate(60 230 230)"/>
+              <line x1="230" y1="23" x2="230" y2="437" transform="rotate(90 230 230)"/>
+              <line x1="230" y1="23" x2="230" y2="437" transform="rotate(120 230 230)"/>
+              <line x1="230" y1="23" x2="230" y2="437" transform="rotate(150 230 230)"/>
+            </g>
+            <g stroke="#A97932" stroke-width="1.2" opacity="0.74">
+              <path d="M230 156 L304 208 L271 310 L168 302 L149 198 Z"/>
+              <path d="M304 208 L168 302"/>
+              <path d="M271 310 L149 198"/>
+              <path d="M230 156 L271 310"/>
+            </g>
+            <g fill="#1E2340" opacity="0.88">
+              <circle cx="230" cy="156" r="5"/>
+              <circle cx="304" cy="208" r="4"/>
+              <circle cx="271" cy="310" r="5"/>
+              <circle cx="168" cy="302" r="4"/>
+              <circle cx="149" cy="198" r="5"/>
+              <circle cx="342" cy="274" r="3"/>
+              <circle cx="111" cy="252" r="3"/>
+            </g>
+            <g fill="#A97932">
+              <circle cx="230" cy="23" r="3"/>
+              <circle cx="333.5" cy="50.6" r="3"/>
+              <circle cx="409.4" cy="126.5" r="3"/>
+              <circle cx="437" cy="230" r="3"/>
+              <circle cx="409.4" cy="333.5" r="3"/>
+              <circle cx="333.5" cy="409.4" r="3"/>
+              <circle cx="230" cy="437" r="3"/>
+              <circle cx="126.5" cy="409.4" r="3"/>
+              <circle cx="50.6" cy="333.5" r="3"/>
+              <circle cx="23" cy="230" r="3"/>
+              <circle cx="50.6" cy="126.5" r="3"/>
+              <circle cx="126.5" cy="50.6" r="3"/>
+            </g>
+          </svg>
+          <figcaption class="aw-chart-caption">A map of tendencies, timing, and patterns — not a fixed fate.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="aw-section">
+      <div class="aw-container">
+        <div class="aw-section-heading">
+          <div class="aw-section-label"><span>THE TOOLS</span></div>
+          <h2 class="aw-h2">从这里开始。</h2>
+          <p class="aw-section-intro">选择一个入口：绘制你的出生星盘，查看今日天空如何触动你的本命位置，比较两张星盘，或追踪土星回归这样的生命周期节点。</p>
+        </div>
+        <div class="aw-tool-grid">
+          <article class="aw-tool-card">
+            <span class="aw-number">n° 01</span>
+            <h3 class="aw-h3">出生星盘</h3>
+            <p class="aw-card-copy">查看行星、星座、宫位、相位与元素结构，建立你的个人星图。</p>
+            <span class="aw-card-rule"></span>
+            <a class="aw-card-link" href="/zh/tools/birth-chart">绘制星盘 →</a>
+          </article>
+          <article class="aw-tool-card">
+            <span class="aw-number">n° 02</span>
+            <h3 class="aw-h3">今日星空</h3>
+            <p class="aw-card-copy">把此刻的行运行星叠加到你的本命星盘，观察当下的心理天气。</p>
+            <span class="aw-card-rule"></span>
+            <a class="aw-card-link" href="/zh/tools/todays-sky">查看今日行运 →</a>
+          </article>
+          <article class="aw-tool-card">
+            <span class="aw-number">n° 03</span>
+            <h3 class="aw-h3">关系合盘</h3>
+            <p class="aw-card-copy">比较两张星盘中的吸引、摩擦、互补与长期模式。</p>
+            <span class="aw-card-rule"></span>
+            <a class="aw-card-link" href="/zh/tools/synastry">比较两张星盘 →</a>
+          </article>
+          <article class="aw-tool-card">
+            <span class="aw-number">n° 04</span>
+            <h3 class="aw-h3">土星回归</h3>
+            <p class="aw-card-copy">追踪土星回到出生位置的周期，理解责任、边界与成熟主题。</p>
+            <span class="aw-card-rule"></span>
+            <a class="aw-card-link" href="/zh/tools/saturn-return">计算土星回归 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="aw-section">
+      <div class="aw-container aw-philosophy">
+        <h2 class="aw-h2">星盘是一张地图，不是一句判决。</h2>
+        <div>
+          <p class="aw-philosophy__body">AstrologyWiki 把占星符号当作理解经验的语言：它描述倾向、张力、时机与反复出现的模式，而不是替你决定命运。</p>
+          <div class="aw-principles">
+            <div class="aw-principle"><span class="aw-principle__mark">✦</span><span><strong>真实天文计算</strong><span>行星位置与宫位基于严谨的天文数据。</span></span></div>
+            <div class="aw-principle"><span class="aw-principle__mark">✦</span><span><strong>心理占星语言</strong><span>解释聚焦性格、关系、选择与成长主题。</span></span></div>
+            <div class="aw-principle"><span class="aw-principle__mark">✦</span><span><strong>反宿命论</strong><span>不制造恐惧，不用“注定”“必然”“灾难”作为叙事。</span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="aw-section--soft">
+      <div class="aw-container">
+        <div class="aw-section-heading">
+          <div class="aw-section-label"><span>THE LANGUAGE OF THE CHART</span></div>
+          <h2 class="aw-h2">学会阅读星盘的语言。</h2>
+        </div>
+        <div class="aw-index-grid">
+          <article class="aw-editorial-card"><h3 class="aw-h3">行星</h3><p class="aw-editorial-card__links">太阳、月亮、水星、金星、火星……</p><p class="aw-editorial-card__copy">行星描述心理功能：意志、需求、思考、关系、行动。</p></article>
+          <article class="aw-editorial-card"><h3 class="aw-h3">星座</h3><p class="aw-editorial-card__links">白羊、金牛、双子、巨蟹、狮子……</p><p class="aw-editorial-card__copy">星座像语气与风格，说明能量如何被表达。</p></article>
+          <article class="aw-editorial-card"><h3 class="aw-h3">宫位</h3><p class="aw-editorial-card__links">第一宫、第二宫、第三宫、第四宫……</p><p class="aw-editorial-card__copy">宫位指向生活领域：身体、资源、亲密、事业与社群。</p></article>
+          <article class="aw-editorial-card"><h3 class="aw-h3">相位</h3><p class="aw-editorial-card__links">合相、对分、三分、四分、六分……</p><p class="aw-editorial-card__copy">相位描述心理功能之间的流动、摩擦与整合方式。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="aw-section--soft" style="background: var(--aw-bg);">
+      <div class="aw-container">
+        <div class="aw-section-heading">
+          <div class="aw-section-label"><span>FEATURED GUIDES</span></div>
+          <h2 class="aw-h2">慢慢读，逐步理解。</h2>
+        </div>
+        <div class="aw-guide-grid">
+          <article class="aw-editorial-card aw-guide-card"><p class="aw-guide-meta">基础 · 8 min read</p><h3 class="aw-h3">行运行星如何触动本命星盘</h3><p class="aw-editorial-card__copy">把“此刻的天空”放回个人星图，观察事件、情绪与选择的节奏。</p><p><a class="aw-card-link" href="/zh/guides/transits">阅读指南 →</a></p></article>
+          <article class="aw-editorial-card aw-guide-card"><p class="aw-guide-meta">进阶 · 10 min read</p><h3 class="aw-h3">四元素作为气质模型</h3><p class="aw-editorial-card__copy">火、土、风、水不是标签，而是感知、行动与恢复能量的不同方式。</p><p><a class="aw-card-link" href="/zh/guides/elements">阅读指南 →</a></p></article>
+          <article class="aw-editorial-card aw-guide-card"><p class="aw-guide-meta">专题 · 7 min read</p><h3 class="aw-h3">第五宫：创造力与自我表达</h3><p class="aw-editorial-card__copy">理解玩耍、浪漫、作品与被看见的心理需求。</p><p><a class="aw-card-link" href="/zh/guides/fifth-house">阅读指南 →</a></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="aw-trust">
+      <div class="aw-container aw-trust__grid">
+        <div class="aw-trust__item"><span>01</span><strong>真实天文数据</strong></div>
+        <div class="aw-trust__item"><span>02</span><strong>无需注册</strong></div>
+        <div class="aw-trust__item"><span>03</span><strong>非宿命论解释</strong></div>
+        <div class="aw-trust__item"><span>04</span><strong>面向学习与自我理解</strong></div>
+      </div>
+    </section>
+
+    <section class="aw-final">
+      <div class="aw-container aw-final__panel">
+        <div>
+          <h2 class="aw-h2">从你的出生星盘开始。</h2>
+          <p>输入出生日期、时间与地点，生成一张可以反复阅读的星图。之后，再查看今日天空、关系合盘和重要生命周期节点。</p>
+          <div class="aw-cta-row">
+            <a class="aw-btn aw-btn--secondary" href="/zh/tools/birth-chart">绘制出生星盘</a>
+            <a class="aw-final__link" href="/zh/wiki">先浏览百科 →</a>
+          </div>
+        </div>
+        <svg class="aw-final__chart" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="230" cy="230" r="180" stroke="#BFAE91" stroke-width="1" opacity="0.72"/>
+          <circle cx="230" cy="230" r="132" stroke="#A97932" stroke-width="1" opacity="0.65"/>
+          <circle cx="230" cy="230" r="74" stroke="#FBF7EF" stroke-width="1" opacity="0.35"/>
+          <g stroke="#BFAE91" stroke-width="1" opacity="0.5"><line x1="230" y1="50" x2="230" y2="410"/><line x1="230" y1="50" x2="230" y2="410" transform="rotate(30 230 230)"/><line x1="230" y1="50" x2="230" y2="410" transform="rotate(60 230 230)"/><line x1="230" y1="50" x2="230" y2="410" transform="rotate(90 230 230)"/><line x1="230" y1="50" x2="230" y2="410" transform="rotate(120 230 230)"/><line x1="230" y1="50" x2="230" y2="410" transform="rotate(150 230 230)"/></g>
+          <path d="M230 156 L304 208 L271 310 L168 302 L149 198 Z M304 208 L168 302 M271 310 L149 198 M230 156 L271 310" stroke="#A97932" stroke-width="1.2" opacity="0.74"/>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <footer class="aw-footer">
+    <div class="aw-container">
+      <div class="aw-footer__grid">
+        <section><h2>01 工具</h2><ul><li><a href="/zh/tools/birth-chart">出生星盘</a></li><li><a href="/zh/tools/todays-sky">今日星空</a></li><li><a href="/zh/tools/synastry">关系合盘</a></li><li><a href="/zh/tools/saturn-return">土星回归</a></li></ul></section>
+        <section><h2>02 百科</h2><ul><li><a href="/zh/planets">行星</a></li><li><a href="/zh/signs">星座</a></li><li><a href="/zh/houses">宫位</a></li><li><a href="/zh/aspects">相位</a></li></ul></section>
+        <section><h2>03 阅读</h2><ul><li><a href="/zh/guides">精选指南</a></li><li><a href="/zh/classics">占星经典</a></li><li><a href="/zh/psychological-astrology">心理占星</a></li></ul></section>
+        <section><h2>04 关于</h2><ul><li><a href="/zh/about">关于 AstrologyWiki</a></li><li><a href="/zh/privacy">隐私</a></li><li><a href="/zh/contact">联系</a></li></ul></section>
+      </div>
+      <p class="aw-footer__bottom">AstrologyWiki · Astrology · Psychology · Self-Knowledge</p>
+    </div>
+  </footer>
+</body>
+</html>
