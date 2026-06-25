@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "emma-watson-zodiac-sign": {
+      "hero": {
+        "prompt": "A wide sweeping highland plateau at dawn, volcanic peaks glowing with deep cardinal-fire light on the horizon while precise geometric terraces carved into the ancient earth step down toward a mist-filled valley below, stars and a faint archer constellation still visible in the upper indigo sky, the controlled land forms standing in quiet dialogue with the raw burning horizon, one continuous panoramic scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Volcanic highland at dawn with geometric terraces under a starry indigo sky, illustrating Aries fire channeled through Virgo precision",
+        "altZh": "黎明时分的火山高原，几何梯田在靛蓝星空下静静延伸，象征白羊座之火经由处女座精准筛滤"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Emma Watson's Chart at a Glance",
+          "titleEn": "Emma Watson's Three Core Chart Placements",
+          "titleZh": "艾玛·沃特森星盘三大核心配置",
+          "altEn": "Comparison of Aries Sun, Virgo Rising, and Sagittarius Moon in Emma Watson's birth chart",
+          "altZh": "艾玛·沃特森星盘中白羊座太阳、处女座上升和射手座月亮的对比",
+          "columns": [
+            {
+              "nameEn": "Aries Sun",
+              "nameZh": "白羊座太阳",
+              "linesEn": [
+                "Drives conviction and initiative",
+                "Fire element, natural 1st house",
+                "Notice firm stances and long-term follow-through"
+              ],
+              "linesZh": [
+                "驱动信念与主动性",
+                "火象星座，自然第一宫",
+                "注意坚定立场与长期坚持"
+              ]
+            },
+            {
+              "nameEn": "Virgo Rising",
+              "nameZh": "处女座上升",
+              "linesEn": [
+                "Filters drive into precise, measured presentation",
+                "Earth element, 1st-house Ascendant",
+                "Watch for composure, accuracy, and careful wording"
+              ],
+              "linesZh": [
+                "将驱动力过滤为精准从容的表达",
+                "土象星座，第一宫上升点",
+                "注意冷静、准确与谨慎措辞"
+              ]
+            },
+            {
+              "nameEn": "Sagittarius Moon",
+              "nameZh": "射手座月亮",
+              "linesEn": [
+                "Pulls emotion toward global causes and study",
+                "Fire element, natural 9th house",
+                "Track sustained interest in education and big-picture issues"
+              ],
+              "linesZh": [
+                "情感倾向全球议题与持续求知",
+                "火象星座，自然第九宫",
+                "关注对教育与宏观议题的持久热情"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Aries-Virgo Blend in a Chart",
+          "titleEn": "5 Observable Clues in the Aries-Virgo Blend",
+          "titleZh": "解读白羊—处女组合的5个观察线索",
+          "altEn": "Five sequential clues for reading an Aries Sun with Virgo Rising in a birth chart",
+          "altZh": "解读白羊座太阳与处女座上升组合的五个递进线索",
+          "items": [
+            {
+              "nameEn": "Cool Opening Impression",
+              "nameZh": "冷静的第一印象",
+              "subEn": "Virgo Rising shows up first as composure and precision, even when Aries drive is intense underneath.",
+              "subZh": "处女座上升首先呈现为从容与精准，即便内在白羊座动力十分强烈。"
+            },
+            {
+              "nameEn": "Conviction Under Pressure",
+              "nameZh": "压力下显现的信念",
+              "subEn": "Aries energy reveals itself in stance and follow-through, not in volume — watch what she commits to.",
+              "subZh": "白羊座能量体现在立场与坚持上，而非音量——关注她的承诺与坚守。"
+            },
+            {
+              "nameEn": "Detail as the Tell",
+              "nameZh": "细节是关键信号",
+              "subEn": "A Virgo Ascendant tends toward accuracy and careful phrasing over off-the-cuff reaction.",
+              "subZh": "处女座上升倾向于准确与谨慎措辞，而非即兴反应。"
+            },
+            {
+              "nameEn": "Causes Point to the Moon",
+              "nameZh": "社会议题指向月亮",
+              "subEn": "A Sagittarius Moon reads as a steady draw toward global issues, education, and meaning.",
+              "subZh": "射手座月亮体现为对全球议题、教育与意义的持续吸引。"
+            },
+            {
+              "nameEn": "Restraint, Not Absence",
+              "nameZh": "克制而非缺席",
+              "subEn": "Calm here is drive being managed — exactly what a Sun-only read keeps missing.",
+              "subZh": "此处的冷静是被驾驭的驱动力，正是仅读太阳星座时容易忽略的部分。"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
