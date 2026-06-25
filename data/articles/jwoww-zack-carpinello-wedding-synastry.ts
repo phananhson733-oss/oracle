@@ -33,6 +33,8 @@ Understanding this wedding astrology matters because most entertainment coverage
 
 The friction is that “surprise wedding” can sound like a production trick unless the chart symbolism is considered. Pisces often carries a taste for emotional atmosphere, concealment, and reveal; Sagittarius often favors speed, scale, and bold public gestures. Together, those signs can make a conventional announcement feel too small. For readers comparing this story with their own relationship patterns, the self-awareness point is not “copy the stunt.” It is to notice whether a couple’s shared style leans private, theatrical, spontaneous, ceremonial, or some blend of those patterns.
 
+The technical compatibility point is that Pisces and Sagittarius form a mutable square by sign. That does not make the relationship doomed; it means both signs can adapt quickly while still pulling in different directions. Pisces moves through feeling and atmosphere, while Sagittarius moves through belief, adventure, and declaration. The wedding reveal works symbolically because it uses both sides of that square: hidden buildup plus a public leap.
+
 ## Double-Jupiter Sign-Ruler Reading vs Wedding Logistics: What Changes
 
 This limited compatibility reading differs from a wedding-logistics recap because it asks how the public event functions symbolically, not only how it was staged. A recap says the wedding was hidden inside a movie-screening setup; the astrology reading asks why a Pisces-Sagittarius pair might be drawn to a reveal that feels cinematic, audacious, and bigger than a standard announcement. To get clean factual coverage, you sacrifice symbolic depth; to get an astrological reading, you sacrifice certainty about private motives and stay with public patterns.
@@ -83,7 +85,7 @@ This JWoww and Zack wedding astrology reading is easy to flatten if it turns int
 
 **What are JWoww and Zack Carpinello’s zodiac signs?**
 
-JWoww was born on February 27, 1985, making her a Pisces Sun. Zack Carpinello was born on December 20, 1994, making him a Sagittarius Sun.
+JWoww’s public birthday is February 27, making her a Pisces Sun. Zack Carpinello’s public birthday references cluster around December 20-21; either date keeps the Sun in Sagittarius for this limited reading.
 
 **Does Pisces and Sagittarius compatibility work in astrology?**
 
@@ -122,5 +124,8 @@ Start by entering accurate birth data and checking which chart factors are confi
 
 - Dane Rudhyar — shaped the psychological, person-centered approach to reading astrological symbolism
 - Robert Hand — helped define modern relationship astrology as an interpretive practice focused on chart patterns and lived dynamics
+- Public biography profiles — vary on JWoww’s birth year, while preserving the February 27 Pisces Sun used here
+- People — reported the June 24, 2026 surprise wedding details and family-centered ceremony
+- E! News — reported public birthday-celebration context around Zack Carpinello’s late-December birthday
 `,
 };
