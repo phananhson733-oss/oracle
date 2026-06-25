@@ -271,6 +271,7 @@ import { cancerSeason2026AstrologyZh } from "./cancer-season-2026-astrology";
 import { kylieJennerZodiacSignEn } from "./kylie-jenner-zodiac-sign";
 import { gretaLeeZodiacSignEn } from "./greta-lee-zodiac-sign";
 import { sharonOsbourneZodiacSignEn } from "./sharon-osbourne-zodiac-sign";
+import { thomasParteyZodiacSignEn } from "./thomas-partey-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -533,6 +534,7 @@ const ARTICLES_EN: WikiArticle[] = [
   kylieJennerZodiacSignEn,
   gretaLeeZodiacSignEn,
   sharonOsbourneZodiacSignEn,
+  thomasParteyZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

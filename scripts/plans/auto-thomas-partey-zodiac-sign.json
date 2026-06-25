@@ -1,0 +1,98 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "thomas-partey-zodiac-sign": {
+      "hero": {
+        "prompt": "Twin luminous streams of golden starlight spiraling together above a sweeping twilight plain, evoking fluid dialogue between two celestial currents across a single open sky, mercury-quick and intertwined yet never the same twice, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twin streams of golden starlight sweep a twilight sky evoking Thomas Partey's adaptable Gemini Sun and Mercury-ruled versatility",
+        "altZh": "双道金色星光横贯暮色天空，象征托马斯·帕特双子座太阳与水星主宰的适应性"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sun Sign vs Rising Sign: What's Confirmed and What Isn't",
+          "titleEn": "Sun Sign vs Rising Sign: Confirmed vs Theoretical",
+          "titleZh": "太阳星座与上升星座：已证实与推测的对比",
+          "altEn": "Comparison of Sun sign versus Rising sign showing confirmed versus theoretical placements in Partey's birth chart",
+          "altZh": "太阳星座与上升星座对比图，展示帕特星盘中已证实与推测位置的区别",
+          "columns": [
+            {
+              "nameEn": "Sun Sign",
+              "nameZh": "太阳星座",
+              "linesEn": [
+                "Confirmed by birth date alone",
+                "Gemini — mutable air, Mercury-ruled",
+                "Consistent across all sources",
+                "Foundation for honest chart reading"
+              ],
+              "linesZh": [
+                "仅由出生日期确定",
+                "双子座——风相变动星座，水星主宰",
+                "所有资料来源一致",
+                "诚实星盘解读的基础"
+              ]
+            },
+            {
+              "nameEn": "Rising Sign",
+              "nameZh": "上升星座",
+              "linesEn": [
+                "Requires exact birth time and location",
+                "Unconfirmed for Partey",
+                "Shifts roughly every two minutes",
+                "Houses remain theoretical"
+              ],
+              "linesZh": [
+                "需要精确出生时间与地点",
+                "帕特的上升星座未获证实",
+                "每约两分钟变换一次",
+                "宫位分析仅为推测"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Thomas Partey's Gemini Sun in His Chart",
+          "titleEn": "Four Steps to an Honest Gemini Sun Reading",
+          "titleZh": "诚实解读双子座太阳的四步方法",
+          "altEn": "Four-step sequence for reading Thomas Partey's Gemini Sun honestly in his birth chart",
+          "altZh": "诚实解读托马斯·帕特双子座太阳星座的四步流程图",
+          "items": [
+            {
+              "nameEn": "Start with the Sun",
+              "nameZh": "从太阳入手",
+              "subEn": "Anchor on Gemini's mutable, Mercury-ruled nature as the only confirmed layer",
+              "subZh": "以双子座变动、水星主宰的特质为唯一已证实的基础"
+            },
+            {
+              "nameEn": "Map to Function",
+              "nameZh": "映射到实际表现",
+              "subEn": "Read adaptability as a pattern of observable roles, not a destined outcome",
+              "subZh": "将适应性理解为可观察的角色模式，而非命中注定的结果"
+            },
+            {
+              "nameEn": "Flag Timed Placements",
+              "nameZh": "标注依赖时间的位置",
+              "subEn": "Treat every listed Ascendant or house placement as provisional until birth time is confirmed",
+              "subZh": "在出生时间得到证实前，将所有上升星座或宫位标注为推测"
+            },
+            {
+              "nameEn": "Watch the Range",
+              "nameZh": "观察范围而非单一定位",
+              "subEn": "Versatility across midfield roles, not one fixed position, is the chart's honest takeaway",
+              "subZh": "跨越多个中场角色的多面性才是星盘的诚实结论，而非单一固定位置"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
