@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const cancerSeason2026AstrologyEn: WikiArticle = {
   slug: "cancer-season-2026-astrology",
+  image: "/images/blog/cancer-season-2026-astrology.jpg",
+  image_alt: "Moonlit high-tide shoreline, warm gold light ebbing at the horizon as silver mist rolls in over Cancer-season 2026 waters",
   title: "Why Cancer Season 2026 Astrology Raises the Emotional Stakes for Every Sign",
   description: "Cancer season 2026 astrology is the stretch of about thirty days — roughly June 21 to July 22, 2026 — when the Sun moves through Cancer and turns attention toward home, family, and emotional safety.",
   authorId: "elena-vane",
@@ -45,6 +47,9 @@ People keep blending two different things, and cancer season 2026 astrology only
 
 If you remember one thing, let it be this: the thing that makes June–July 2026 distinct is not Jupiter amplifying the whole month — Jupiter is leaving — but the cluster of a Jupiter handoff, a Mercury retrograde, and a Saturn square landing in the same few weeks.
 
+
+![Timeline of five key astrological events in Cancer season 2026: Sun ingress, Mercury retrograde, Jupiter exit, Saturn square, season close](/images/blog/cancer-season-2026-astrology-i0-en.svg)
+
 ## How to Read This Transit in Your Timing
 
 You can read cancer season 2026 astrology in your own timing by watching for a handful of concrete signals rather than waiting for one dramatic event to announce it. The shift is usually quiet and cumulative — a change in what you want to do with your evenings more than a thunderclap. Watch for these:
@@ -57,6 +62,9 @@ You can read cancer season 2026 astrology in your own timing by watching for a h
 
 None of these are commands or guarantees; they are patterns many people with strong Cancer placements describe during cancer season 2026 astrology. They tend to peak near the season's start in late June 2026 and ease as the Sun approaches Leo in late July, with Jupiter's own move into Leo on June 30 shifting the tone soon after the opening. The point is not to brace for impact but to recognize the texture early, so a quiet evening at home reads as a need being met rather than a sign of withdrawal. When you can see the pattern coming, you can plan around it — protecting rest, softening your calendar, and leaving room for the conversations that want to resurface.
 
+
+![Five observable signals of Cancer season 2026: home pull, family on the mind, thinner skin, looping conversations, duty-rest tension](/images/blog/cancer-season-2026-astrology-i1-en.svg)
+
 ## Common Misreadings
 
 The popular take on cancer season 2026 astrology flattens it into "everyone gets moody," which leaves searchers more confused than when they started. The flattening hides the part that actually helps, because it never explains why this particular year carries more weight than the last. Four misreadings come up the most:
@@ -67,6 +75,9 @@ The popular take on cancer season 2026 astrology flattens it into "everyone gets
 4. **Misread: only Cancers feel it. Actual:** the Sun and Jupiter touch every chart, so all twelve signs feel the pull — they simply feel it in different houses and life areas.
 
 Each correction points back to the same idea: the season is asking for attention to emotional and domestic life, not signaling that you are coming undone. The reason these misreadings stick is that the popular coverage stops at "Cancer season is emotional" and never adds the 2026-specific transit cluster, so readers are left matching a generic description against a year that is anything but generic.
+
+
+![Four common misreadings of Cancer season 2026 compared to what the transits actually mean](/images/blog/cancer-season-2026-astrology-i2-en.svg)
 
 ## Cancer Season 2026 at a Glance
 
@@ -129,6 +140,8 @@ This season works best as a mirror you hold up to your own patterns, not a forec
 
 export const cancerSeason2026AstrologyZh: WikiArticle = {
   slug: "cancer-season-2026-astrology",
+  image: "/images/blog/cancer-season-2026-astrology.jpg",
+  image_alt: "月光下午夜涨潮的海岸，温暖金光在地平线消散，银色薄雾漫入，映照2026年巨蟹座星季的情绪高涨时刻",
   title: "2026 巨蟹座星季：为什么这一个月把每个星座的情绪都推到台前",
   description: "2026 巨蟹座星季，是太阳行经巨蟹座的那大约三十天——大致从 2026 年 6 月 21 日到 7 月 22 日——把注意力转向家、家人与情感上的安全感。它是 行运总览支柱指南 中反复登场的节点之一。用最朴素的话说，它是太阳每年在巨蟹座停留的那一个月，而今年的开端恰好叠加了一组罕见行运。",
   authorId: "elena-vane",
@@ -170,6 +183,9 @@ export const cancerSeason2026AstrologyZh: WikiArticle = {
 
 如果只记住一件事，那就是：让 2026 年六七月与众不同的，不是木星放大整个月——木星正在离开——而是木星交棒、水星逆行、土星刑相位这三者落在同样几周里的密集叠加。
 
+
+![2026年巨蟹座星季五个关键行运时间轴：太阳入境、水星逆行、木星离境、土星刑相位、星季收尾](/images/blog/cancer-season-2026-astrology-i0-zh.svg)
+
 ## 如何在你的星盘里识别 2026 巨蟹座星季
 
 你可以靠留意几个具体信号、而不是等一桩戏剧性事件来宣告它，从而在自己的节奏里识别 2026 巨蟹座星季在你这张盘里正在发生的变化。这种转变通常安静而累积——更多体现在你想怎么度过夜晚，而非一声惊雷。可以留意这些：
@@ -182,6 +198,9 @@ export const cancerSeason2026AstrologyZh: WikiArticle = {
 
 这些都不是命令，也不是必然；它们是许多巨蟹座能量较强的人在这个星季里描述的模式。它们往往在 6 月下旬开季时达到高峰，并随太阳在 7 月下旬接近狮子座而缓和，而木星于 6 月 30 日自己转入狮子座，也会在开场之后不久改变整体基调。重点不是绷紧身子准备挨打，而是早点认出这股质地，好让一个安静的居家夜晚被读成"一个需求被满足了"，而不是退缩的征兆。当你能预见这个模式，就能围着它安排：守护休息、把日程调软，并为那些想浮回来的对话留出空间。
 
+
+![2026年巨蟹座星季的五种可观察迹象：被家牵引、家人浮上心头、皮肤变薄、打转的对话、责任与休息的拉扯](/images/blog/cancer-season-2026-astrology-i1-zh.svg)
+
 ## 常见误读
 
 关于 2026 巨蟹座星季的流行说法，常被压扁成"大家都会变得情绪化"，结果让搜索的人比开始时更迷糊。这种压扁恰好藏起了真正有用的部分，因为它从不解释为什么今年比去年更有分量。最常见的有四种误读：
@@ -192,6 +211,9 @@ export const cancerSeason2026AstrologyZh: WikiArticle = {
 4. **误读：只有巨蟹座感受得到。实情：** 太阳与木星触及每一张盘，十二星座都会被牵引——只是落在不同的宫位与生活领域。
 
 每一处更正都指回同一个念头：这个星季要的是关注情感与家庭生活，而不是在暗示你正在崩解。这些误读之所以顽固，是因为流行报道停在"巨蟹座星季很情绪化"，从不补上 2026 年特有的行运叠加，于是读者只能拿一段笼统描述，去套一个一点都不笼统的年份。
+
+
+![2026年巨蟹座星季四种常见误读与行运实际含义的对照](/images/blog/cancer-season-2026-astrology-i2-zh.svg)
 
 ## 2026 巨蟹座星季速查一览
 

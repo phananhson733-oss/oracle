@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const gretaLeeZodiacSignEn: WikiArticle = {
   slug: "greta-lee-zodiac-sign",
+  image: "/images/blog/greta-lee-zodiac-sign.jpg",
+  image_alt: "Greta Lee zodiac sign Pisces Sun glowing steadily over a twilight ocean while rising sign dissolves into haze",
   title: "Why Greta Lee's Zodiac Sign Is Easier to Confirm Than Her Birth Chart",
   description: "Greta Lee's zodiac sign is Pisces, the placement her early-March birthday fixes regardless of the birth time that has never been made public.",
   authorId: "marcus-orion",

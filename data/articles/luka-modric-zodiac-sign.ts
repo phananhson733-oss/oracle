@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const lukaModricZodiacSignEn: WikiArticle = {
   slug: "luka-modric-zodiac-sign",
+  image: "/images/blog/luka-modric-zodiac-sign.jpg",
+  image_alt: "Lone lighthouse on dark cliffs, golden beam over an indigo sea — Modrić's Virgo precision and Scorpio composure in one scene",
   title: "What the Luka Modric Zodiac Sign Reveals About Croatia's Quiet Genius at 40",
   description: "Luka Modric's zodiac sign is Virgo, anchored by a Sun in Virgo and a Moon in Cancer.",
   authorId: "elena-vane",
@@ -47,6 +49,9 @@ The easiest mix-up around the Luka Modric zodiac sign is Virgo versus Leo, becau
 
 For Modrić specifically, that trade-off is the whole point. He chose — season after season — to be the player the system runs through rather than the one who ends up on the poster, and the reward arrives late: trust, durability, and a legacy measured in tournaments instead of viral clips. A Leo chart might have burned brighter and shorter. The Virgo read explains why he's still indispensable at an age when most playmakers have long since slowed down.
 
+
+![Side-by-side comparison of Leo Sun and Virgo Sun traits showing how Modrić's Virgo chart differs from Leo showmanship](/images/blog/luka-modric-zodiac-sign-i0-en.svg)
+
 ## How to Read Modrić's Chart Across Sun, Moon, and Rising
 
 You don't need to know Modrić to recognize this pattern — the Luka Modric zodiac sign shows up as a set of observable habits in any chart. As the 2026 tournament unfolds and the [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) backdrop builds, these are the cues that separate a Virgo–Scorpio competitor from a flashier one:
@@ -76,6 +81,9 @@ Strip those four away and the same portrait appears every time — a player whos
 | Cancer Moon | Anchors emotional life in loyalty and belonging | Water element, ruled by the Moon | Deep attachment to country and club; playing for something larger |
 | Scorpio Rising (attributed, unconfirmed) | Filters outward presentation into stillness and control | Water element, ruled by Mars and Pluto | The unreadable face in peak-pressure moments |
 | Virgo–Scorpio axis | Builds legacy through consistency, not theatrical peaks | Earth–Water blend | Peaking later than expected; standing that compounds over years |
+
+
+![Four placements in Luka Modrić's birth chart — Virgo Sun, Cancer Moon, Scorpio Rising, Virgo–Scorpio axis — each with its core energy](/images/blog/luka-modric-zodiac-sign-i1-en.svg)
 
 ## Common Questions About Modrić's Chart
 
@@ -123,6 +131,8 @@ Generate your free birth chart to explore the Luka Modric zodiac sign and see ho
 
 export const lukaModricZodiacSignZh: WikiArticle = {
   slug: "luka-modric-zodiac-sign",
+  image: "/images/blog/luka-modric-zodiac-sign.jpg",
+  image_alt: "暮色中孤独的灯塔立于深色礁石，金色光束扫过靛蓝海面，象征莫德里奇处女座的精准与天蝎座的沉着",
   title: "莫德里奇的星座：处女座如何解释这位 40 岁克罗地亚队长的安静天赋",
   description: "卢卡·莫德里奇（Luka Modrić）出生于 1985 年 9 月 9 日，正落在处女座的季节里。读他这张盘的占星师通常会把它概括成一个处女座太阳，配上一个巨蟹座月亮；上升则最常被归到天蝎座——但由于他的出生时间从未公开，这个上升始终无法核实，也有资料把它写成巨蟹或天秤。",
   authorId: "elena-vane",
@@ -166,6 +176,9 @@ export const lukaModricZodiacSignZh: WikiArticle = {
 
 对他而言，这个取舍就是全部要点。他一季又一季地选择去做系统所经过的那个人，而不是登上海报的那个人，而回报来得很晚：信任、耐用，以及一份用大赛而非爆款片段来衡量的传承。一张狮子座的盘也许烧得更亮、却更短。这层解读说明了为什么在大多数组织核心早已慢下来的年纪，他依然不可或缺。
 
+
+![狮子座太阳与处女座太阳特质的并排对比，展示莫德里奇处女座星盘与狮子座表演风格的区别](/images/blog/luka-modric-zodiac-sign-i0-zh.svg)
+
 ## 如何在你的星盘里识别 莫德里奇的星座
 
 你不必认识莫德里奇，也能认出这套模式——它会以一组可观察的习惯，出现在任何一张盘里。当 2026 年的大赛逐步展开、[凯龙金牛2026行运](/zh/wiki/chiron-in-taurus-2026-astrology) 的背景慢慢累积，下面这些线索能把一个处女—天蝎型的竞争者，和一个更张扬的人区分开来：
@@ -195,6 +208,9 @@ export const lukaModricZodiacSignZh: WikiArticle = {
 | 巨蟹座月亮 | 把情感生活锚定在忠诚与归属上 | 水象，月亮守护 | 对国家与俱乐部的深度依附；为更大的东西而踢 |
 | 天蝎座上升（归属，未证实） | 把对外的呈现过滤成静止与控制 | 水象，火星与冥王星守护 | 高压时刻那张读不出的脸 |
 | 处女—天蝎轴线 | 靠持续而非戏剧化高峰建立传承 | 土—水混合 | 比预期更晚到达巅峰；声望逐年累积 |
+
+
+![卢卡·莫德里奇出生星盘四大配置——处女座太阳、巨蟹座月亮、天蝎座上升、处女—天蝎轴线——各自的核心能量](/images/blog/luka-modric-zodiac-sign-i1-zh.svg)
 
 ## 常见问题
 

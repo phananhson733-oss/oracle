@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const sharonOsbourneZodiacSignEn: WikiArticle = {
   slug: "sharon-osbourne-zodiac-sign",
+  image: "/images/blog/sharon-osbourne-zodiac-sign.jpg",
+  image_alt: "Sharon Osbourne's Libra stellium — four planets clustered in one sign — glowing over an indigo sea in a painterly illustration",
   title: "What Sharon Osbourne's Zodiac Sign Really Says Beyond Libra",
   description: "The Sharon Osbourne zodiac sign is Libra, yet reading it as a single Sun sign misses the bigger pattern in her chart.",
   authorId: "marcus-orion",

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const bukayoSakaZodiacSignEn: WikiArticle = {
   slug: "bukayo-saka-zodiac-sign",
+  image: "/images/blog/bukayo-saka-zodiac-sign.jpg",
+  image_alt: "Glowing crystal on dark plain with fiery arc across a starfield sky — Virgo precision meets Aries fire",
   title: "What Bukayo Saka's Zodiac Sign Says About a Precise, Fearless Winger",
   description: "The Bukayo Saka zodiac sign is Virgo, anchored by a Sun in the sign of craft and exactness.",
   authorId: "marcus-orion",
@@ -136,6 +138,8 @@ This is not a clinical interpretation or mental health advice — it's a symboli
 
 export const bukayoSakaZodiacSignZh: WikiArticle = {
   slug: "bukayo-saka-zodiac-sign",
+  image: "/images/blog/bukayo-saka-zodiac-sign.jpg",
+  image_alt: "黑暗平原上的发光水晶与掠过星空的炽热弧线——处女精准与白羊之火交汇",
   title: "萨卡的星座：一名精准又无畏边锋的盘面密码",
   description: "萨卡的星座是处女座，太阳落在这个讲究手艺与精确的星座上。布卡约·萨卡生于 2001 年 9 月 5 日，从占星角度看，他是一个处女座太阳，配上白羊座月亮与射手座火星——这组配置本身就把故事讲完了：一颗细致入微的内核，外面裹着一股好斗的本能。",
   authorId: "marcus-orion",
