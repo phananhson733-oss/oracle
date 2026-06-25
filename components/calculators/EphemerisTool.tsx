@@ -98,7 +98,9 @@ const deriveEvents = (rows: readonly EphemerisRow[]): SkyEvent[] => {
       prevRetro.set(p.name, p.retrograde);
     }
   }
-  return events.sort((a, b) => a.date.localeCompare(b.date)).slice(0, MAX_EVENTS);
+  return events
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, MAX_EVENTS);
 };
 
 const eventLabel = (e: SkyEvent, lang: Language): string => {
@@ -139,7 +141,10 @@ export const EphemerisTool: React.FC = () => {
       const res = await fetchEphemeris({ start, end, step });
       setData(res);
       // Categorical only — never the dates themselves (analytics privacy line).
-      trackEvent("ephemeris_generated", { step, range_days: dayCount(start, end) });
+      trackEvent("ephemeris_generated", {
+        step,
+        range_days: dayCount(start, end),
+      });
     } catch {
       setError(
         lang === "zh"
@@ -181,12 +186,14 @@ export const EphemerisTool: React.FC = () => {
   const inputClass = `w-full px-4 py-3 rounded-lg border ${th.inputBorder} ${th.inputBg} ${th.inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`;
   const labelClass = `block text-sm font-medium mb-1.5 ${th.textPrimary}`;
   const headCellClass = `px-3 py-2.5 text-left text-sm font-semibold ${th.textPrimary} whitespace-nowrap`;
-  const rowHover = th.isDark ? "hover:bg-space-800/50" : "hover:bg-paper-100/70";
+  const rowHover = th.isDark
+    ? "hover:bg-space-800/50"
+    : "hover:bg-paper-100/70";
   const headBg = th.isDark ? "bg-space-800" : "bg-paper-100";
 
   return (
     <ToolPageShell
-      maxWidth="6xl"
+      maxWidth="7xl"
       slug="ephemeris-calculator"
       title={lang === "zh" ? "星历表生成器" : "Ephemeris Calculator"}
       subtitle={
@@ -273,9 +280,7 @@ export const EphemerisTool: React.FC = () => {
               <h2
                 className={`mb-3 text-sm font-semibold uppercase tracking-wide ${th.textSecondary}`}
               >
-                {lang === "zh"
-                  ? "本区间天象事件"
-                  : "Sky events in this range"}
+                {lang === "zh" ? "本区间天象事件" : "Sky events in this range"}
               </h2>
               <ul className="flex flex-wrap gap-2">
                 {events.map((e) => {

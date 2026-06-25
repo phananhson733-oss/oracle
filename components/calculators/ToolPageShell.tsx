@@ -1,5 +1,5 @@
 // INPUT: React、GlyphBadge、embed（EmbedCodeBox）、ToolSeoLandingSections。
-// OUTPUT: <ToolPageShell> — 计算器矩阵统一页壳：宽版内容区 + atlas-style 页头 + 返回工具中心入口 + 可选 hero 字形 + 内容槽 + 单工具 SEO 内容 + EmbedCodeBox。
+// OUTPUT: <ToolPageShell> — 计算器矩阵统一页壳：更宽内容区 + atlas-style 页头 + 返回工具中心入口 + 自动工具编号提示 + 可选 hero 字形 + 内容槽 + 单工具 SEO 内容 + EmbedCodeBox。
 // POS: 计算器矩阵（D）共享布局原语。统一 max-w / 衬线标题（Cormorant）/ 间距，消除各工具手搓 ~30 行布局。
 //      标题用 font-serif 修正此前 font-bold(Readex) 偏差。slug 存在时自动渲染各工具自己的落地页说明区。若更新此文件，务必更新 calculators/FOLDER.md。
 
@@ -10,6 +10,7 @@ import { GlyphBadge } from "./GlyphBadge";
 import type { GlyphSize, GlyphTone } from "./GlyphBadge";
 import { EmbedCodeBox } from "./embed";
 import { ToolSeoLandingSections } from "./ToolSeoLandingSections";
+import { TOOLS } from "../tools/toolsCatalog";
 
 interface HeroGlyph {
   planet?: string;
@@ -24,7 +25,7 @@ export const ToolPageShell: React.FC<{
   subtitle?: ReactNode;
   /** Public slug → renders the embed code box footer. Omit to hide it. */
   slug?: string;
-  maxWidth?: "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
+  maxWidth?: "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl";
   heroGlyph?: HeroGlyph;
   /** Extra header content (e.g. a small note) below the subtitle. */
   headerExtra?: ReactNode;
@@ -35,7 +36,7 @@ export const ToolPageShell: React.FC<{
   title,
   subtitle,
   slug,
-  maxWidth = "6xl",
+  maxWidth = "7xl",
   heroGlyph,
   headerExtra,
   children,
@@ -57,8 +58,10 @@ export const ToolPageShell: React.FC<{
         : maxWidth === "4xl"
           ? "max-w-4xl"
           : maxWidth === "5xl"
-          ? "max-w-5xl"
-            : "max-w-6xl";
+            ? "max-w-5xl"
+            : maxWidth === "6xl"
+              ? "max-w-6xl"
+              : "max-w-[88rem]";
   const textPrimary = isDark ? "text-star-50" : "text-paper-900";
   const textSecondary = isDark ? "text-star-200" : "text-paper-600";
   const textMuted = isDark ? "text-star-300" : "text-paper-500";
@@ -66,7 +69,17 @@ export const ToolPageShell: React.FC<{
     ? "border-gold-500/15 bg-space-900/45"
     : "border-paper-300/80 bg-paper-100/80";
   const backLabel = language === "zh" ? "工具中心" : "Tools hub";
-  const kicker = language === "zh" ? "占星工具" : "Astrology tool";
+  const toolIndex = slug
+    ? TOOLS.findIndex((tool) => tool.slug === slug) + 1
+    : 0;
+  const kicker =
+    toolIndex > 0
+      ? language === "zh"
+        ? `第 ${String(toolIndex).padStart(2, "0")} 个工具 · 免费使用`
+        : `Tool n° ${String(toolIndex).padStart(2, "0")} · Free to use`
+      : language === "zh"
+        ? "占星工具"
+        : "Astrology tool";
   const helper =
     language === "zh"
       ? "输入只用于当前计算；工具结果以自我观察和学习为目的。"
@@ -74,9 +87,7 @@ export const ToolPageShell: React.FC<{
 
   return (
     <div className={`mx-auto px-4 py-8 sm:px-6 sm:py-12 ${widthClass}`}>
-      <header
-        className={`mb-8 rounded-2xl border p-6 sm:p-8 ${shellTone}`}
-      >
+      <header className={`mb-8 rounded-2xl border p-6 sm:p-8 ${shellTone}`}>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl">
             <a
@@ -95,7 +106,9 @@ export const ToolPageShell: React.FC<{
               {title}
             </h1>
             {subtitle && (
-              <p className={`mt-3 text-base leading-relaxed sm:text-lg ${textSecondary}`}>
+              <p
+                className={`mt-3 text-base leading-relaxed sm:text-lg ${textSecondary}`}
+              >
                 {subtitle}
               </p>
             )}

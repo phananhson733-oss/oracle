@@ -51,7 +51,7 @@ const EnergyTimelineDemoPage: React.FC = () => {
   const d = DEMO_COPY[language === "zh" ? "zh" : "en"];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
       <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-paper-300 bg-white p-5 transition-all duration-300 ease-in-out dark:border-gold-500/20 dark:bg-space-900/60 sm:flex-row sm:items-center sm:justify-between motion-reduce:transition-none">
         <div>
           <span className="inline-block rounded-full bg-accent/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-accent">

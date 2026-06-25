@@ -272,7 +272,7 @@ export const ElectionalTool: React.FC = () => {
           : "See the sky's conditions over the days ahead — Moon phase, Moon sign, and the balance of supportive vs challenging aspects — as a reflection for your own timing, not a prediction or guarantee."
       }
       slug="electional-astrology"
-      maxWidth="6xl"
+      maxWidth="7xl"
     >
       <div
         className={`${th.cardBg} border ${th.cardBorder} mb-8 rounded-2xl p-6 transition-all duration-300 ease-in-out sm:p-8 motion-reduce:transition-none`}

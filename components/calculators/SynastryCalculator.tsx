@@ -277,7 +277,7 @@ export const SynastryCalculator: React.FC = () => {
           : "Compare two charts to see the aspects between them — real astronomy, no destiny claims."
       }
       slug="synastry-calculator"
-      maxWidth="6xl"
+      maxWidth="7xl"
     >
       <form
         onSubmit={handleSubmit}

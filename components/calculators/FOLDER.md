@@ -1,11 +1,13 @@
 <!-- INPUT: hooks/useCityAutocomplete、components/forms/DateSelectGroup、services/apiClient（fetchNatalChart/searchCities）、services/analytics、types。 -->
 <!-- OUTPUT: 计算器矩阵（D）——配置驱动的出生数据计算器外壳 + 各 sign 类 slug 的配置。 -->
 <!-- POS: components/calculators 子目录索引；若更新此目录文件，务必更新本 FOLDER.md 与各文件头注释。 -->
+
 一旦我所属的文件夹有所变化，请更新我。
 
 # 文件夹：components/calculators
 
 架构概要
+
 - SEO 计算器矩阵（D）两类：
   - **sign 类**（出生数据）：一个配置驱动外壳承载所有计算器，复用现有 `/api/natal/chart`，不新增后端。
   - **天象工具类**（无出生数据）：纯天文工具，复用 `/api/astro/*`（today/positions/moon-phase/ephemeris），无 LLM、无位置、无 PII。
@@ -15,14 +17,15 @@
 - 共享呈现原语（GlyphBadge / ToolPageShell / ToolSeoLandingSections / ToolResultCard / ToolFunnelCTA / ElementBalanceBar）统一所有工具的视觉语言、导流内链、可见 SEO 落地页正文与免费数据增强；新工具应复用而非自搓布局。
 
 文件清单
+
 - FOLDER.md｜地位：目录索引文档。
 - embed.tsx｜地位：计算器 embed widget 基建（#14）｜功能：`EmbedContext`/`useIsEmbed`、`EmbedWidgetShell`（`/embed/<slug>` 无 chrome 容器 + dofollow 品牌回链 + 提供 embed 上下文）、`EmbedCodeBox`（计算器全页底部「复制 iframe 代码」框，embed 上下文内自隐藏）。App.tsx 的 `/embed/<slug>` 路由用 EmbedWidgetShell 包裹各计算器；各计算器全页底部渲染 `<EmbedCodeBox slug>`。
 - BirthDataCalculator.tsx｜地位：sign 类配置驱动外壳｜功能：出生日期(+可选时间/城市)表单（复用 useCityAutocomplete + DateSelectGroup）→ `config.compute(birth)` → 结果卡（headline/items/body）；匿名计算走 `fetchNatalChart(skipCache)` 不缓存明文（隐私 #2）；loading/error/result 全状态；底部渲染 `EmbedCodeBox`（slug 取自 config）。
 - signConfigs.ts｜地位：sign 类计算器配置｜功能：moonSignConfig / risingSignConfig / bigThreeConfig / birthChartConfig —— 各实现 compute（fetch natal → 抽取 Sun/Moon/Ascendant 等 sign → 中性文案）；含 sign 中英映射；上升类 needsTime=true 缺时间报错。
 - useCalculatorTheme.ts｜地位：共享主题 hook｜功能：返回明暗 class token（cardBg/textPrimary 等，对齐 BirthDataCalculator，来源 COLOR_SYSTEM_GUIDE）。
 - GlyphBadge.tsx｜地位：**签名原语**｜功能：`<GlyphBadge planet|sign|glyph tone size>` —— 把行星/星座/角度字形（取自 shared/astro-glyphs 的 planetGlyph/getZodiacGlyph/glyphFor）渲染为带对比圆角底板的徽章；TEXT + font-variant-emoji:text + 装饰性 aria-hidden，统一全工具星象视觉语言。
-- ToolPageShell.tsx｜地位：共享页壳原语｜功能：`<ToolPageShell title subtitle slug heroGlyph? maxWidth?>` —— 宽版默认内容区（max-w-6xl）+ atlas-style 页头（返回 /tools、工具类型标签、标题/副标题、输入用途提示、可选 hero 字形）+ 内容槽 + 自动单工具 SEO 正文（ToolSeoLandingSections）+ EmbedCodeBox(slug)；消除各工具手搓 ~30 行布局/header。
-- ToolSeoLandingSections.tsx｜地位：单工具页可见落地页正文渲染原语｜功能：根据 slug 渲染 summary / When to use / explainer sections / FAQ；采用扁平 editorial 布局（顶部分隔、编号 use cases、说明区 top rule、FAQ ruled list）；embed 上下文自动隐藏，避免 iframe 长文污染宿主页。
+- ToolPageShell.tsx｜地位：共享页壳原语｜功能：`<ToolPageShell title subtitle slug heroGlyph? maxWidth?>` —— 宽版默认内容区（max-w-[88rem]，可降到 2xl-6xl）+ atlas-style 页头（返回 /tools、自动工具编号/免费提示、标题/副标题、输入用途提示、可选 hero 字形）+ 内容槽 + 自动单工具 SEO 正文（ToolSeoLandingSections）+ EmbedCodeBox(slug)；消除各工具手搓 ~30 行布局/header。
+- ToolSeoLandingSections.tsx｜地位：单工具页可见落地页正文渲染原语｜功能：根据 slug 渲染 summary / When to use / explainer sections / FAQ / related tools；中文优先使用 `ZH_TOOL_GUIDES` 的单工具专属内容，缺失才回退分类文案；采用扁平 editorial 布局（顶部分隔、编号 use cases、说明区 top rule、FAQ ruled list、同类工具内链）；embed 上下文自动隐藏，避免 iframe 长文污染宿主页。
 - toolSeoContent.ts｜地位：单工具页 SEO 正文数据源｜功能：维护各公开工具的 summary、use cases、解释段落与 FAQ；SPA 水合后可见，避免只有静态 stub 对爬虫有正文、人类用户看不到。
 - ToolResultCard.tsx｜地位：共享结果原语｜功能：`<ToolResultCard hero? headline sub? footer?>` 扁平结果卡（paper 背景/rounded-2xl/单层细边/衬线标题/统一过渡/hover border）+ `<PlacementList>`/`<PlacementRow>`（字形+标签+等宽值+逆行+可选 wiki 深链）；禁嵌套卡/禁左色条。
 - ToolFunnelCTA.tsx｜地位：共享导流原语｜功能：`<ToolFunnelCTA tool label href? prefill? secondaryLinks? note? sign?>` —— 金渐变主 CTA 导向真实功能（/onboarding 带 prefill envelope · /us · /timeline · /birth-chart-calculator）+ 次级 wiki 文字链；点击 fire trackChartFunnel（仅 categorical sign，隐私红线 #1）。
@@ -48,6 +51,7 @@
 - SolarReturnCalculator.tsx｜地位：返照盘计算器（单人 + 年份）｜功能：一个 PersonBirthFields + 年份选择 → `POST /api/solar-return`（后端求解返照时刻）→ 返照日期/时刻 + 10 大行星落座；出生数据 POST(PII 不进 URL)，无 LLM；路由 /:lang/solar-return-calculator（区别于 saturn-return-calculator）。
 
 近期更新
+
 - 2026-06-17 新建：计算器矩阵 D 第一批 sign 类（Moon Sign / Rising / Big Three / Birth Chart）。路由 `/:lang/<slug>`（+ 裸 LangRedirect + isPublicRoute 白名单 + showNav）；静态 stub 走 generate-seo-pages.mjs 的 CALCULATOR_SEO 循环（≥4 H2 关键词正文 + JSON-LD + sitemap）。
 - 2026-06-18 新建：D 第二批「天象工具集」（Current Planets / Moon Phase / Ephemeris）。后端扩 `api/astro.ts`（/positions、/moon-phase、/ephemeris，TDD）+ 纯算法 `backend/src/services/astro/skyTools.ts`。3 个新 slug 已进 CALCULATOR_SEO + isPublicRoute。
 - 2026-06-18 新建：D 第二批「合盘」SynastryCalculator + crossAspects 纯引擎（TDD 19 例）。客户端交叉相位（复用 /api/natal/chart，不碰付费 /api/synastry），姓名不出端。slug synastry-calculator 已进 CALCULATOR_SEO + isPublicRoute。
@@ -62,3 +66,4 @@
 - 2026-06-25 更新：单工具页落地化修正。`ToolPageShell` 默认扩到 max-w-6xl，原 maxWidth="3xl" 的星历/择时/合盘/占星地图/合盘对比改为 6xl；新增 `ToolSeoLandingSections` + `toolSeoContent`，让每个工具页在交互计算器下方显示自己的 summary、使用场景、What/How/FAQ 正文（embed 自动隐藏）。Saturn Return 与 Energy Timeline 两个非 ToolPageShell 工具同步接入 max-w-6xl 宽容器/可见工具说明。
 - 2026-06-25 更新：正式 /tools 与单工具页 UI 优化。ToolsHubPage 改为 atlas-style 多语言工具图谱（星盘轮 SVG、可信说明条、Synthetica featured、`n°` 编号工具卡）；`ToolPageShell` 改为带返回工具中心和输入用途提示的统一页头；`ToolSeoLandingSections` 改为更扁平的 editorial 正文区；`ToolResultCard` light 背景从纯白收敛到 paper 色系并补 hover border。
 - 2026-06-25 更新：单工具页可见文案去重。`ToolSeoLandingSections` 的说明区大标题从 `How to use …` 收敛为 `About …`/`关于…`，并清理 `toolSeoContent` 中 Moon/Rising/Birth Chart/Composite/Saturn Return 的 section 与 FAQ 重复标题；`tool-page-shell.test.tsx` 增加同页可见标题去重守卫，防止后续工具复制 FAQ 问题。
+- 2026-06-25 更新：单工具页宽度与落地内容再修正。`ToolPageShell` 默认扩到 max-w-[88rem]，页头按 `TOOLS` 自动显示 `Tool n° XX · Free to use`/`第 XX 个工具 · 免费使用`；星历/择时/合盘/组合盘/占星地图的显式 `maxWidth` 同步升到 7xl；`ToolSeoLandingSections` 新增 16 个 slug 级中文 `ZH_TOOL_GUIDES`（每个工具自己的 summary/使用场景/What/How/FAQ）与同类工具内链，避免中文页只显示分类通用文案。

@@ -415,7 +415,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
         />
       )}
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-[88rem]">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${textPrimary}`}>

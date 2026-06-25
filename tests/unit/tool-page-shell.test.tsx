@@ -30,7 +30,7 @@ describe("ToolPageShell", () => {
       </ToolPageShell>,
     );
 
-    expect(container.firstElementChild?.className).toContain("max-w-6xl");
+    expect(container.firstElementChild?.className).toContain("max-w-[88rem]");
   });
 
   it("renders tool-specific landing sections for calculator pages", () => {
