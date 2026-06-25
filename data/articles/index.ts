@@ -276,6 +276,7 @@ import { marcusRashfordZodiacSignEn } from "./marcus-rashford-zodiac-sign";
 import { mariahCareyZodiacSignEn } from "./mariah-carey-zodiac-sign";
 import { emmaWatsonZodiacSignEn } from "./emma-watson-zodiac-sign";
 import { folarinBalogunBirthChartEn } from "./folarin-balogun-birth-chart";
+import { jwowwZackCarpinelloWeddingSynastryEn } from "./jwoww-zack-carpinello-wedding-synastry";
 // All articles organized by language
 
 import {
@@ -543,6 +544,7 @@ const ARTICLES_EN: WikiArticle[] = [
   mariahCareyZodiacSignEn,
   emmaWatsonZodiacSignEn,
   folarinBalogunBirthChartEn,
+  jwowwZackCarpinelloWeddingSynastryEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
