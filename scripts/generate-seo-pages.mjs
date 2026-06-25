@@ -832,6 +832,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'darwin-nunez-zodiac-sign',
+  'folarin-balogun-birth-chart',
   'emma-watson-zodiac-sign',
   'mariah-carey-zodiac-sign',
   'marcus-rashford-zodiac-sign',
