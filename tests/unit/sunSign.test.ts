@@ -110,4 +110,38 @@ describe("celebrities dataset", () => {
       expect(c.birthDay).toBeLessThanOrEqual(31);
     }
   });
+
+  it("includes Lei Jun with a public chart dossier but no time-dependent angles", () => {
+    const leiJun = CELEBRITIES.find((c) => c.name === "Lei Jun");
+    expect(leiJun).toBeTruthy();
+    expect(leiJun?.sign).toBe("Sagittarius");
+    expect(celebritiesBySign("Sagittarius").map((c) => c.name)).toContain(
+      "Lei Jun",
+    );
+    expect(leiJun?.knownFor?.en).toContain("Xiaomi");
+    expect(leiJun?.chart?.time.en).toBe("Unknown");
+    expect(leiJun?.chart?.planets.find((p) => p.name === "Sun")).toMatchObject({
+      sign: "Sagittarius",
+      degree: 24,
+      minute: 2,
+    });
+    expect(leiJun?.chart?.planets.find((p) => p.name === "Moon")).toMatchObject(
+      {
+        sign: "Pisces",
+        degree: 25,
+        minute: 31,
+      },
+    );
+    expect(leiJun?.chart?.points.map((p) => p.name)).toEqual([
+      "North Node",
+      "Chiron",
+    ]);
+    expect(
+      leiJun?.chart?.planets.some((p) =>
+        ["Ascendant", "Midheaven"].includes(p.name),
+      ),
+    ).toBe(false);
+    expect(leiJun?.chart?.aspects.length).toBeGreaterThanOrEqual(10);
+    expect(leiJun?.chart?.patterns.map((p) => p.name)).toContain("T-Square");
+  });
 });

@@ -1,8 +1,9 @@
 // INPUT: React、useLanguage（UIComponents）、useCalculatorTheme、共享原语 ToolPageShell / ToolResultCard / GlyphBadge /
 //        ToolFunnelCTA、sunSign（sunSignFromDate/signElement/signModality）、celebrities（celebritiesBySign/CELEBRITIES/FIELD_LABELS）。
-// OUTPUT: Celebrity Astro Twins 计算器——出生月/日 → 太阳星座 → 同星座名人 + 同元素名人；结果区品牌化导流到完整星盘。
+// OUTPUT: Celebrity Astro Twins 计算器——出生月/日 → 太阳星座 → 同星座名人 + 点击查看名人星盘资料；结果区品牌化导流到完整星盘。
 // POS: 计算器矩阵（D）名人配对工具，路由 /:lang/celebrity-twins。纯客户端（无后端、无 AI、无 PII、无出生数据存储）；
-//      仅用出生日期判定太阳星座，名人仅用公开出生日期。文案中性、非命运断言。若更新此文件，务必更新 calculators/FOLDER.md。
+//      仅用出生日期判定太阳星座，名人默认只用公开出生日期；逐人可选 chart dossier 只展示结构化数据。
+//      文案中性、非命运断言。若更新此文件，务必更新 calculators/FOLDER.md。
 
 import React, { useEffect, useMemo, useState } from "react";
 import type { Language } from "../../types";
@@ -25,7 +26,11 @@ import {
   CELEBRITIES,
   FIELD_LABELS,
   type Celebrity,
+  type CelebrityAspectData,
+  type CelebrityChartDossier,
+  type CelebrityPlacement,
 } from "./celebrities";
+import { planetLabel, signLabel } from "./astroDisplay";
 
 const SIGN_LABEL: Record<ZodiacSign, { en: string; zh: string }> = {
   Aries: { en: "Aries", zh: "白羊座" },
@@ -156,11 +161,38 @@ const MONTH_ABBR_EN = [
 
 const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
+const ASPECT_LABEL: Record<
+  CelebrityAspectData["type"],
+  { en: string; zh: string }
+> = {
+  conjunction: { en: "Conjunction", zh: "合相" },
+  opposition: { en: "Opposition", zh: "冲相" },
+  square: { en: "Square", zh: "刑相" },
+  trine: { en: "Trine", zh: "拱相" },
+  sextile: { en: "Sextile", zh: "六合" },
+};
+
+const ASPECT_SYMBOL: Record<CelebrityAspectData["type"], string> = {
+  conjunction: "☌",
+  opposition: "☍",
+  square: "□",
+  trine: "△",
+  sextile: "⚹",
+};
+
 function formatBirthday(c: Celebrity, lang: Language): string {
   if (lang === "zh") {
     return `${c.birthYear}年${c.birthMonth}月${c.birthDay}日`;
   }
   return `${MONTH_ABBR_EN[c.birthMonth - 1]} ${c.birthDay}, ${c.birthYear}`;
+}
+
+function formatDegMin(degree: number, minute: number): string {
+  return `${degree}° ${String(minute).padStart(2, "0")}′`;
+}
+
+function knownFor(c: Celebrity, lang: Language): string {
+  return c.knownFor?.[lang] ?? FIELD_LABELS[c.field][lang];
 }
 
 // 元素/落座小药丸——mystic accent，承担 60/30/10 中的 10%；纯文字、无嵌套卡。
@@ -176,6 +208,356 @@ const Chip: React.FC<{ children: React.ReactNode; title?: string }> = ({
   </span>
 );
 
+const DATA_LABELS = {
+  en: {
+    details: "Celebrity chart details",
+    dateOnlyDetails: "Celebrity date details",
+    birthDetails: "Birth details",
+    born: "Born",
+    time: "Time",
+    place: "Place",
+    timezone: "Timezone",
+    field: "Field",
+    dataLevel: "Data level",
+    dateOnly: "Date only",
+    publicChart: "Public chart dossier",
+    element: "Element",
+    modality: "Modality",
+    sun: "Sun",
+    moon: "Moon",
+    chartLimits: "Chart data limits",
+    chartLimitsBody:
+      "This person only has a public date in the local dataset. Moon sign, Ascendant, houses, and aspects are not shown unless a reliable chart dossier is attached.",
+    planetPositions: "Planets",
+    beyondPlanets: "Beyond the planets",
+    aspects: "Aspects · by strength",
+    chartPatterns: "Chart patterns",
+    chartSignature: "Chart signature",
+    byElement: "By element",
+    byModality: "By modality",
+    sameSignContext: "Same Sun-sign context",
+    viewChart: "View chart data",
+    viewDate: "View date details",
+    selected: "Selected",
+    retrograde: "Rx",
+    sourceNote: "Data note",
+  },
+  zh: {
+    details: "名人星盘资料",
+    dateOnlyDetails: "名人日期资料",
+    birthDetails: "出生资料",
+    born: "出生",
+    time: "时间",
+    place: "地点",
+    timezone: "时区",
+    field: "领域",
+    dataLevel: "数据层级",
+    dateOnly: "仅出生日期",
+    publicChart: "公开星盘 dossier",
+    element: "元素",
+    modality: "三模态",
+    sun: "太阳",
+    moon: "月亮",
+    chartLimits: "星盘数据边界",
+    chartLimitsBody:
+      "本地数据集目前只记录这位名人的公开出生日期。若没有可靠星盘 dossier，就不展示月亮、上升、宫位和相位，避免伪造精度。",
+    planetPositions: "行星落座",
+    beyondPlanets: "行星之外",
+    aspects: "主要相位 · 按容许度",
+    chartPatterns: "图形结构",
+    chartSignature: "星盘签名",
+    byElement: "元素分布",
+    byModality: "三模态分布",
+    sameSignContext: "同太阳星座参考",
+    viewChart: "查看星盘数据",
+    viewDate: "查看日期资料",
+    selected: "已选中",
+    retrograde: "逆",
+    sourceNote: "数据说明",
+  },
+} as const;
+
+const DataRows: React.FC<{
+  rows: Array<{ label: string; value: React.ReactNode }>;
+}> = ({ rows }) => (
+  <div className="divide-y divide-paper-200/70 dark:divide-gold-500/10">
+    {rows.map((row) => (
+      <div
+        key={row.label}
+        className="grid grid-cols-[7rem_minmax(0,1fr)] gap-4 py-3 text-sm"
+      >
+        <span className="text-paper-500 dark:text-star-400">{row.label}</span>
+        <span className="min-w-0 break-words font-medium text-paper-900 dark:text-star-50">
+          {row.value}
+        </span>
+      </div>
+    ))}
+  </div>
+);
+
+const DetailBlock: React.FC<{
+  title: string;
+  children: React.ReactNode;
+}> = ({ title, children }) => (
+  <div className="border-t border-paper-300/70 pt-5 dark:border-gold-500/15">
+    <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-paper-500 dark:text-star-400">
+      {title}
+    </h3>
+    {children}
+  </div>
+);
+
+const PlacementRows: React.FC<{
+  placements: readonly CelebrityPlacement[];
+  lang: Language;
+}> = ({ placements, lang }) => (
+  <div className="divide-y divide-paper-200/70 dark:divide-gold-500/10">
+    {placements.map((placement) => (
+      <div
+        key={`${placement.name}-${placement.sign}`}
+        className="grid grid-cols-[minmax(0,1fr)_minmax(7rem,0.8fr)_4.5rem] items-center gap-3 py-3 text-sm"
+      >
+        <div className="flex min-w-0 items-center gap-3">
+          <GlyphBadge planet={placement.name} sign={placement.sign} size="sm" />
+          <span className="truncate font-medium text-paper-900 dark:text-star-50">
+            {planetLabel(placement.name, lang)}
+          </span>
+        </div>
+        <div className="flex min-w-0 items-center gap-2">
+          <GlyphBadge sign={placement.sign} size="sm" />
+          <span className="truncate text-paper-700 dark:text-star-100">
+            {signLabel(placement.sign, lang)}
+          </span>
+        </div>
+        <div className="text-right font-mono text-xs text-paper-600 dark:text-star-300">
+          {formatDegMin(placement.degree, placement.minute)}
+          {placement.isRetrograde && (
+            <span className="ml-1 rounded-md bg-mystic-500/15 px-1.5 py-0.5 text-[10px] font-semibold text-mystic-400">
+              {DATA_LABELS[lang].retrograde}
+            </span>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+const AspectRows: React.FC<{
+  aspects: readonly CelebrityAspectData[];
+  lang: Language;
+}> = ({ aspects, lang }) => (
+  <div className="divide-y divide-paper-200/70 dark:divide-gold-500/10">
+    {aspects.map((aspect) => (
+      <div
+        key={`${aspect.planet1}-${aspect.planet2}-${aspect.type}`}
+        className="grid grid-cols-[minmax(0,1fr)_5rem] gap-4 py-3 text-sm"
+      >
+        <div className="min-w-0">
+          <div className="truncate font-medium text-paper-900 dark:text-star-50">
+            {planetLabel(aspect.planet1, lang)}{" "}
+            <span className="font-mono text-accent">
+              {ASPECT_SYMBOL[aspect.type]}
+            </span>{" "}
+            {planetLabel(aspect.planet2, lang)}
+          </div>
+          <div className="mt-0.5 text-xs text-paper-500 dark:text-star-400">
+            {ASPECT_LABEL[aspect.type][lang]}
+          </div>
+        </div>
+        <div className="text-right font-mono text-xs text-paper-700 dark:text-star-100">
+          {formatDegMin(aspect.degree, aspect.minute)}
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+const SignatureCounts: React.FC<{
+  title: string;
+  counts: Record<string, number>;
+}> = ({ title, counts }) => (
+  <div>
+    <div className="mb-2 text-xs font-semibold uppercase tracking-widest text-paper-500 dark:text-star-400">
+      {title}
+    </div>
+    <div className="grid grid-cols-2 gap-x-5 gap-y-2 sm:grid-cols-4">
+      {Object.entries(counts).map(([label, value]) => (
+        <div
+          key={label}
+          className="flex items-baseline justify-between border-b border-paper-200/70 pb-2 dark:border-gold-500/10"
+        >
+          <span className="text-sm text-paper-700 dark:text-star-100">
+            {label}
+          </span>
+          <span className="font-mono text-sm font-semibold text-paper-900 dark:text-star-50">
+            {value}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const CelebrityDetailPanel: React.FC<{
+  celebrity: Celebrity;
+  sameSign: readonly Celebrity[];
+  lang: Language;
+}> = ({ celebrity, sameSign, lang }) => {
+  const t = DATA_LABELS[lang];
+  const chart: CelebrityChartDossier | undefined = celebrity.chart;
+  const moon = chart?.planets.find((placement) => placement.name === "Moon");
+  const related = sameSign
+    .filter((item) => item.name !== celebrity.name)
+    .slice(0, 4);
+  const title = chart ? t.details : t.dateOnlyDetails;
+  const notInDataset = lang === "zh" ? "未收录" : "Not in dataset";
+
+  return (
+    <ToolResultCard
+      headline={`${celebrity.name} · ${title}`}
+      sub={`${knownFor(celebrity, lang)} · ${formatBirthday(celebrity, lang)}`}
+    >
+      <div className="grid gap-8 xl:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)]">
+        <div className="space-y-6">
+          <div className="flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-2 rounded-md bg-accent/12 px-2.5 py-1 text-xs font-semibold text-accent">
+              <GlyphBadge sign={celebrity.sign} size="sm" />
+              {t.sun}: {SIGN_LABEL[celebrity.sign][lang]}
+            </span>
+            <span className="rounded-md bg-paper-200/70 px-2.5 py-1 font-mono text-xs text-paper-700 dark:bg-space-800/70 dark:text-star-200">
+              {chart ? t.publicChart : t.dateOnly}
+            </span>
+            {moon && (
+              <span className="inline-flex items-center gap-2 rounded-md bg-mystic-500/10 px-2.5 py-1 text-xs font-semibold text-mystic-500">
+                <GlyphBadge planet="Moon" sign={moon.sign} size="sm" />
+                {t.moon}: {signLabel(moon.sign, lang)}
+              </span>
+            )}
+          </div>
+
+          <DetailBlock title={t.birthDetails}>
+            <DataRows
+              rows={[
+                { label: t.born, value: formatBirthday(celebrity, lang) },
+                { label: t.time, value: chart?.time[lang] ?? notInDataset },
+                { label: t.place, value: chart?.place[lang] ?? notInDataset },
+                { label: t.timezone, value: chart?.timezone ?? notInDataset },
+                { label: t.field, value: knownFor(celebrity, lang) },
+              ]}
+            />
+          </DetailBlock>
+
+          <DetailBlock title={t.sameSignContext}>
+            <div className="flex flex-wrap gap-2">
+              {related.map((item) => (
+                <span
+                  key={item.name}
+                  className="rounded-md bg-paper-200/70 px-2.5 py-1 text-xs text-paper-700 dark:bg-space-800/70 dark:text-star-200"
+                >
+                  {item.name}
+                </span>
+              ))}
+            </div>
+          </DetailBlock>
+        </div>
+
+        {chart ? (
+          <div className="space-y-7">
+            <DetailBlock title={t.sourceNote}>
+              <p className="text-sm leading-relaxed text-paper-600 dark:text-star-200">
+                {chart.sourceNote[lang]}
+              </p>
+            </DetailBlock>
+
+            <DetailBlock title={t.planetPositions}>
+              <PlacementRows placements={chart.planets} lang={lang} />
+            </DetailBlock>
+
+            {chart.points.length > 0 && (
+              <DetailBlock title={t.beyondPlanets}>
+                <PlacementRows placements={chart.points} lang={lang} />
+              </DetailBlock>
+            )}
+
+            <DetailBlock title={t.aspects}>
+              <AspectRows aspects={chart.aspects.slice(0, 12)} lang={lang} />
+            </DetailBlock>
+
+            <DetailBlock title={t.chartPatterns}>
+              <div className="divide-y divide-paper-200/70 dark:divide-gold-500/10">
+                {chart.patterns.map((pattern, index) => (
+                  <div
+                    key={`${pattern.name}-${pattern.focus ?? index}`}
+                    className="grid gap-2 py-3 text-sm sm:grid-cols-[3rem_minmax(0,0.6fr)_minmax(0,1fr)]"
+                  >
+                    <span className="font-mono text-xs text-accent">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div className="font-medium text-paper-900 dark:text-star-50">
+                      {pattern.name}
+                      {pattern.mode ? ` · ${pattern.mode}` : ""}
+                      {pattern.focus ? ` · Focus: ${pattern.focus}` : ""}
+                    </div>
+                    <div className="text-paper-600 dark:text-star-200">
+                      {pattern.bodies
+                        .map((body) => planetLabel(body, lang))
+                        .join(" · ")}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </DetailBlock>
+
+            <DetailBlock title={t.chartSignature}>
+              <div className="space-y-5">
+                <SignatureCounts
+                  title={t.byElement}
+                  counts={chart.signature.elements}
+                />
+                <SignatureCounts
+                  title={t.byModality}
+                  counts={chart.signature.modalities}
+                />
+                <div className="grid gap-2 text-sm text-paper-700 dark:text-star-100 sm:grid-cols-2">
+                  {chart.signature.shape && (
+                    <div>{chart.signature.shape[lang]}</div>
+                  )}
+                  {chart.signature.commonAspect && (
+                    <div>{chart.signature.commonAspect[lang]}</div>
+                  )}
+                </div>
+              </div>
+            </DetailBlock>
+          </div>
+        ) : (
+          <div className="space-y-7">
+            <DetailBlock title={t.dataLevel}>
+              <DataRows
+                rows={[
+                  { label: t.sun, value: SIGN_LABEL[celebrity.sign][lang] },
+                  {
+                    label: t.element,
+                    value: ELEMENT_LABEL[signElement(celebrity.sign)][lang],
+                  },
+                  {
+                    label: t.modality,
+                    value: MODALITY_LABEL[signModality(celebrity.sign)][lang],
+                  },
+                ]}
+              />
+            </DetailBlock>
+            <DetailBlock title={t.chartLimits}>
+              <p className="text-sm leading-relaxed text-paper-600 dark:text-star-200">
+                {t.chartLimitsBody}
+              </p>
+            </DetailBlock>
+          </div>
+        )}
+      </div>
+    </ToolResultCard>
+  );
+};
+
 export const CelebrityTwinsTool: React.FC = () => {
   const { language } = useLanguage();
   const lang: Language = language === "zh" ? "zh" : "en";
@@ -183,6 +565,7 @@ export const CelebrityTwinsTool: React.FC = () => {
 
   const [month, setMonth] = useState<number | "">("");
   const [day, setDay] = useState<number | "">("");
+  const [selectedName, setSelectedName] = useState<string | null>(null);
 
   // 选定月份后把超出当月天数的日期回正。
   useEffect(() => {
@@ -208,33 +591,58 @@ export const CelebrityTwinsTool: React.FC = () => {
     return Array.from({ length: max }, (_, i) => i + 1);
   }, [month]);
 
+  const selectedCelebrity = useMemo(() => {
+    if (!result) return null;
+    const pool = [...result.twins, ...result.elementMates];
+    return (
+      pool.find((celebrity) => celebrity.name === selectedName) ??
+      result.twins[0] ??
+      null
+    );
+  }, [result, selectedName]);
+
   const renderCeleb = (c: Celebrity) => {
     const elementLabel = ELEMENT_LABEL[signElement(c.sign)][lang];
+    const selected = selectedCelebrity?.name === c.name;
     return (
-      <li
-        key={c.name}
-        className={`flex items-center justify-between gap-3 py-3 ${th.textPrimary}`}
-      >
-        <div className="min-w-0">
-          <div className="truncate font-medium" title={c.name}>
-            {c.name}
+      <li key={c.name}>
+        <button
+          type="button"
+          aria-pressed={selected}
+          onClick={() => setSelectedName(c.name)}
+          className={`flex w-full items-center justify-between gap-3 rounded-lg py-3 text-left transition-colors duration-300 ease-in-out hover:bg-paper-200/50 dark:hover:bg-space-800/45 ${
+            selected ? "bg-accent/10" : ""
+          } ${th.textPrimary}`}
+        >
+          <div className="min-w-0 pl-2">
+            <div className="truncate font-medium" title={c.name}>
+              {c.name}
+            </div>
+            <div className={`text-xs ${th.textSecondary}`}>
+              {knownFor(c, lang)} · {formatBirthday(c, lang)}
+            </div>
           </div>
-          <div className={`text-xs ${th.textSecondary}`}>
-            {FIELD_LABELS[c.field][lang]} · {formatBirthday(c, lang)}
-          </div>
-        </div>
-        <span className="flex shrink-0 items-center gap-2">
-          <Chip title={`${elementLabel}${lang === "zh" ? "星座" : " element"}`}>
-            {elementLabel}
-          </Chip>
-          <Chip>{SIGN_LABEL[c.sign][lang]}</Chip>
-        </span>
+          <span className="flex shrink-0 flex-col items-end gap-2 pr-2 sm:flex-row sm:items-center">
+            <span className="hidden text-xs font-semibold text-accent sm:inline">
+              {selected
+                ? DATA_LABELS[lang].selected
+                : c.chart
+                  ? DATA_LABELS[lang].viewChart
+                  : DATA_LABELS[lang].viewDate}
+            </span>
+            <Chip
+              title={`${elementLabel}${lang === "zh" ? "星座" : " element"}`}
+            >
+              {elementLabel}
+            </Chip>
+            <Chip>{SIGN_LABEL[c.sign][lang]}</Chip>
+          </span>
+        </button>
       </li>
     );
   };
 
-  const title =
-    lang === "zh" ? "名人星座配对" : "Celebrity Astro Twins";
+  const title = lang === "zh" ? "名人星座配对" : "Celebrity Astro Twins";
   const subtitle =
     lang === "zh"
       ? "输入你的出生月日，看看哪些名人和你同一个太阳星座——只用公开的出生日期，无需出生时间。"
@@ -302,9 +710,7 @@ export const CelebrityTwinsTool: React.FC = () => {
           aria-atomic="true"
         >
           <ToolResultCard
-            hero={
-              <GlyphBadge sign={result.sign} tone="mystic" size="hero" />
-            }
+            hero={<GlyphBadge sign={result.sign} tone="mystic" size="hero" />}
             headline={
               <span className="font-serif">
                 {SIGN_LABEL[result.sign][lang]}
@@ -386,6 +792,14 @@ export const CelebrityTwinsTool: React.FC = () => {
               {result.twins.map(renderCeleb)}
             </ul>
           </ToolResultCard>
+
+          {selectedCelebrity && (
+            <CelebrityDetailPanel
+              celebrity={selectedCelebrity}
+              sameSign={result.twins}
+              lang={lang}
+            />
+          )}
 
           {result.elementMates.length > 0 && (
             <ToolResultCard

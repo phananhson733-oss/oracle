@@ -31,6 +31,10 @@ export const PLANET_ZH: Record<string, string> = {
   Uranus: "天王星",
   Neptune: "海王星",
   Pluto: "冥王星",
+  "North Node": "北交点",
+  Chiron: "凯龙星",
+  Ascendant: "上升",
+  Midheaven: "天顶",
 };
 
 export const SIGN_ABBR: Record<string, string> = {

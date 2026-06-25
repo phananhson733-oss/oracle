@@ -1,8 +1,9 @@
 // INPUT: sunSign（ZodiacSign 类型）。
-// OUTPUT: 名人数据集（CELEBRITIES）+ 分组助手（celebritiesBySign）+ 职业标签（FIELD_LABELS）。
+// OUTPUT: 名人数据集（CELEBRITIES）+ 可选 chart dossier + 分组助手（celebritiesBySign）+ 职业标签（FIELD_LABELS）。
 // POS: Celebrity Astro Twins 计算器（#19）的数据层。仅记录公开、被广泛记载的出生「日期」（不含出生时间——
 //      故只断言太阳星座，不碰上升/宫位精度，见 [[feedback_html_lang_zh_breaks_astro_glyphs]] 无关）。
 //      所有日期取星座中段以保证不依赖出生时间即无歧义；一致性由 tests/unit/sunSign.test.ts 守护。
+//      `chart` 为逐人可选的公开数据补充；未知出生时间时不得填上升/宫位/宫主星，避免伪造精度。
 //      若更新此文件，务必更新 calculators/FOLDER.md，并确保新条目的 sign 与 sunSignFromDate 一致。
 
 import type { ZodiacSign } from "./sunSign";
@@ -37,10 +38,70 @@ export const FIELD_LABELS: Record<Field, { en: string; zh: string }> = {
 export interface Celebrity {
   name: string;
   field: Field;
+  knownFor?: {
+    en: string;
+    zh: string;
+  };
   birthMonth: number; // 1-12
   birthDay: number; // 1-31
   birthYear: number;
   sign: ZodiacSign;
+  chart?: CelebrityChartDossier;
+}
+
+export interface CelebrityPlacement {
+  name: string;
+  sign: ZodiacSign;
+  degree: number; // 0-29
+  minute: number; // 0-59
+  isRetrograde?: boolean;
+}
+
+export interface CelebrityAspectData {
+  planet1: string;
+  planet2: string;
+  type: "conjunction" | "opposition" | "square" | "trine" | "sextile";
+  degree: number;
+  minute: number;
+}
+
+export interface CelebrityChartPattern {
+  name: string;
+  mode?: string;
+  focus?: string;
+  bodies: string[];
+}
+
+export interface CelebrityChartDossier {
+  sourceNote: {
+    en: string;
+    zh: string;
+  };
+  time: {
+    en: string;
+    zh: string;
+  };
+  place: {
+    en: string;
+    zh: string;
+  };
+  timezone: string;
+  planets: CelebrityPlacement[];
+  points: CelebrityPlacement[];
+  aspects: CelebrityAspectData[];
+  patterns: CelebrityChartPattern[];
+  signature: {
+    elements: Record<"Fire" | "Earth" | "Air" | "Water", number>;
+    modalities: Record<"Cardinal" | "Fixed" | "Mutable", number>;
+    shape?: {
+      en: string;
+      zh: string;
+    };
+    commonAspect?: {
+      en: string;
+      zh: string;
+    };
+  };
 }
 
 // 公开、被广泛记载的出生日期。全部取星座中段（不依赖出生时间即太阳星座无歧义）。
@@ -421,6 +482,178 @@ export const CELEBRITIES: ReadonlyArray<Celebrity> = [
     birthDay: 30,
     birthYear: 1835,
     sign: "Sagittarius",
+  },
+  {
+    name: "Lei Jun",
+    field: "entrepreneur",
+    knownFor: {
+      en: "Entrepreneur; Xiaomi, Kingsoft, Shunwei Capital",
+      zh: "企业家；小米、金山软件、顺为资本",
+    },
+    birthMonth: 12,
+    birthDay: 16,
+    birthYear: 1969,
+    sign: "Sagittarius",
+    chart: {
+      sourceNote: {
+        en: "Public chart data with unknown birth time. Angles, houses, and house rulers are intentionally omitted.",
+        zh: "公开星盘资料，出生时间未知；因此不展示上升、宫位与宫主星。",
+      },
+      time: { en: "Unknown", zh: "未知" },
+      place: {
+        en: "Xiantao, Hubei, China",
+        zh: "中国湖北仙桃",
+      },
+      timezone: "UTC +8:00",
+      planets: [
+        {
+          name: "Sun",
+          sign: "Sagittarius",
+          degree: 24,
+          minute: 2,
+        },
+        { name: "Moon", sign: "Pisces", degree: 25, minute: 31 },
+        { name: "Mercury", sign: "Capricorn", degree: 10, minute: 3 },
+        { name: "Venus", sign: "Sagittarius", degree: 14, minute: 32 },
+        { name: "Mars", sign: "Pisces", degree: 0, minute: 25 },
+        { name: "Jupiter", sign: "Libra", degree: 29, minute: 55 },
+        {
+          name: "Saturn",
+          sign: "Taurus",
+          degree: 2,
+          minute: 23,
+          isRetrograde: true,
+        },
+        { name: "Uranus", sign: "Libra", degree: 8, minute: 25 },
+        { name: "Neptune", sign: "Scorpio", degree: 29, minute: 22 },
+        { name: "Pluto", sign: "Virgo", degree: 27, minute: 20 },
+      ],
+      points: [
+        {
+          name: "North Node",
+          sign: "Pisces",
+          degree: 16,
+          minute: 8,
+          isRetrograde: true,
+        },
+        { name: "Chiron", sign: "Aries", degree: 2, minute: 22 },
+      ],
+      aspects: [
+        {
+          planet1: "Sun",
+          planet2: "Moon",
+          type: "square",
+          degree: 1,
+          minute: 29,
+        },
+        {
+          planet1: "Mars",
+          planet2: "Jupiter",
+          type: "trine",
+          degree: 0,
+          minute: 30,
+        },
+        {
+          planet1: "Moon",
+          planet2: "Pluto",
+          type: "opposition",
+          degree: 1,
+          minute: 49,
+        },
+        {
+          planet1: "Mars",
+          planet2: "Neptune",
+          type: "square",
+          degree: 1,
+          minute: 3,
+        },
+        {
+          planet1: "Mercury",
+          planet2: "Uranus",
+          type: "square",
+          degree: 1,
+          minute: 37,
+        },
+        {
+          planet1: "Mars",
+          planet2: "Saturn",
+          type: "sextile",
+          degree: 1,
+          minute: 57,
+        },
+        {
+          planet1: "Moon",
+          planet2: "Neptune",
+          type: "trine",
+          degree: 3,
+          minute: 51,
+        },
+        {
+          planet1: "Jupiter",
+          planet2: "Saturn",
+          type: "opposition",
+          degree: 2,
+          minute: 28,
+        },
+        {
+          planet1: "Venus",
+          planet2: "North Node",
+          type: "square",
+          degree: 1,
+          minute: 36,
+        },
+        {
+          planet1: "Neptune",
+          planet2: "Pluto",
+          type: "sextile",
+          degree: 2,
+          minute: 2,
+        },
+        {
+          planet1: "Neptune",
+          planet2: "Chiron",
+          type: "trine",
+          degree: 3,
+          minute: 1,
+        },
+        {
+          planet1: "Moon",
+          planet2: "Chiron",
+          type: "conjunction",
+          degree: 6,
+          minute: 51,
+        },
+      ],
+      patterns: [
+        {
+          name: "T-Square",
+          mode: "Mutable",
+          bodies: ["Moon", "Pluto", "Sun"],
+        },
+        {
+          name: "Wedge",
+          focus: "Neptune",
+          bodies: ["Chiron", "Moon", "Neptune", "Pluto"],
+        },
+        {
+          name: "Wedge",
+          focus: "Mars",
+          bodies: ["Jupiter", "Mars", "Saturn"],
+        },
+      ],
+      signature: {
+        elements: { Fire: 3, Earth: 1, Air: 1, Water: 3 },
+        modalities: { Cardinal: 2, Fixed: 0, Mutable: 6 },
+        shape: {
+          en: "Locomotive shape",
+          zh: "Locomotive 盘型",
+        },
+        commonAspect: {
+          en: "Square is the most frequent major aspect",
+          zh: "刑相是出现最多的主要相位",
+        },
+      },
+    },
   },
 
   // Capricorn (Dec 22 – Jan 19)
