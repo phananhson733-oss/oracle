@@ -1,5 +1,5 @@
 // INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、短链跳转、付费墙回调与分析追踪）。
-// OUTPUT: 导出主应用组件（含 /go 短链跳转、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅与核心功能事件）。
+// OUTPUT: 导出主应用组件（含 /go 短链跳转、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅与核心功能事件）。
 // POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -508,11 +508,13 @@ const AppContent: React.FC = () => {
     "/birth-chart-calculator",
     "/current-planets",
     "/moon-phase-calculator",
+    "/moon-phase-today",
     "/ephemeris-calculator",
     "/electional-astrology",
     "/rodden-rating",
     "/celebrity-twins",
     "/astrocartography",
+    "/astrocartography-map-generator",
     "/synastry-calculator",
     "/composite-calculator",
     "/solar-return-calculator",
@@ -1314,6 +1316,14 @@ const AppContent: React.FC = () => {
               }
             />
             <Route
+              path="/:lang/moon-phase-today"
+              element={
+                <LangGuard>
+                  <MoonPhaseTool variant="today" />
+                </LangGuard>
+              }
+            />
+            <Route
               path="/:lang/ephemeris-calculator"
               element={
                 <LangGuard>
@@ -1350,6 +1360,14 @@ const AppContent: React.FC = () => {
               element={
                 <LangGuard>
                   <AstrocartographyTool />
+                </LangGuard>
+              }
+            />
+            <Route
+              path="/:lang/astrocartography-map-generator"
+              element={
+                <LangGuard>
+                  <AstrocartographyTool variant="generator" />
                 </LangGuard>
               }
             />
@@ -1406,11 +1424,16 @@ const AppContent: React.FC = () => {
             <Route path="/birth-chart-calculator" element={<LangRedirect />} />
             <Route path="/current-planets" element={<LangRedirect />} />
             <Route path="/moon-phase-calculator" element={<LangRedirect />} />
+            <Route path="/moon-phase-today" element={<LangRedirect />} />
             <Route path="/ephemeris-calculator" element={<LangRedirect />} />
             <Route path="/electional-astrology" element={<LangRedirect />} />
             <Route path="/rodden-rating" element={<LangRedirect />} />
             <Route path="/celebrity-twins" element={<LangRedirect />} />
             <Route path="/astrocartography" element={<LangRedirect />} />
+            <Route
+              path="/astrocartography-map-generator"
+              element={<LangRedirect />}
+            />
             <Route path="/synastry-calculator" element={<LangRedirect />} />
             <Route path="/composite-calculator" element={<LangRedirect />} />
             <Route path="/solar-return-calculator" element={<LangRedirect />} />

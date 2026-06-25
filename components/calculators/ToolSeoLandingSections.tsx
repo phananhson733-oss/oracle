@@ -1,5 +1,5 @@
 // INPUT: useTheme/useLanguage, embed context, toolSeoContent map.
-// OUTPUT: Human-visible landing content for individual calculator pages: summary, use cases, non-duplicative explainer sections, FAQ, and related-tool links in a flatter editorial layout.
+// OUTPUT: Human-visible landing content for individual calculator pages and SEO aliases: summary, use cases, non-duplicative explainer sections, FAQ, markdown-style internal links, and related-tool links in a flatter editorial layout.
 // POS: Rendered by ToolPageShell below each interactive tool. Keeps hydrated SPA pages aligned with static SEO stubs.
 
 import React from "react";
@@ -35,6 +35,35 @@ const COPY = {
     relatedIntro: "继续查看同一类问题下更接近的计算器。",
   },
 } as const;
+
+const INTERNAL_LINK_RE = /\[([^\]]+)\]\((\/[^)\s]+)\)/g;
+
+const normalizeInternalHref = (href: string, language: "en" | "zh") => {
+  if (/^\/(en|zh)(\/|$)/.test(href)) return href;
+  return `/${language}${href}`;
+};
+
+const renderInlineText = (text: string, language: "en" | "zh") => {
+  const nodes: React.ReactNode[] = [];
+  let lastIndex = 0;
+  for (const match of text.matchAll(INTERNAL_LINK_RE)) {
+    const [raw, label, href] = match;
+    const index = match.index ?? 0;
+    if (index > lastIndex) nodes.push(text.slice(lastIndex, index));
+    nodes.push(
+      <a
+        key={`${href}-${index}`}
+        href={normalizeInternalHref(href, language)}
+        className="font-semibold text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline"
+      >
+        {label}
+      </a>,
+    );
+    lastIndex = index + raw.length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+};
 
 const ZH_CATEGORY_GUIDES: Record<
   ToolCategoryId,
@@ -976,11 +1005,19 @@ export const ToolSeoLandingSections: React.FC<ToolSeoLandingSectionsProps> = ({
     ? "border-gold-500/15 bg-space-900/45"
     : "border-paper-300/80 bg-paper-100/70";
   const overviewBadge = `${content.title} ${copy.guideSuffix}`;
-  const guideHeading =
+  const display = content.display;
+  const showUseCases = display?.showUseCases ?? content.useCases.length > 0;
+  const defaultGuideHeading =
     language === "zh"
       ? `${copy.guideHeadingPrefix}${content.title}`
       : `${copy.guideHeadingPrefix} ${content.title}`;
-  const faqHeading = `${content.title} ${copy.faqSuffix}`;
+  const guideHeading =
+    display?.guideHeading === null
+      ? null
+      : (display?.guideHeading ?? defaultGuideHeading);
+  const faqHeading =
+    display?.faqHeading ?? `${content.title} ${copy.faqSuffix}`;
+  const sectionHeadingLevel = display?.sectionHeadingLevel ?? "h3";
   const currentTool = TOOLS.find((item) => item.slug === slug);
   const relatedTools = currentTool
     ? toolsByCategory(currentTool.category)
@@ -998,55 +1035,74 @@ export const ToolSeoLandingSections: React.FC<ToolSeoLandingSectionsProps> = ({
           {overviewBadge}
         </p>
         <p className={`text-base leading-relaxed md:text-lg ${textSecondary}`}>
-          {content.summary}
+          {renderInlineText(content.summary, language)}
         </p>
       </section>
 
-      <section
-        aria-labelledby={`${slug}-when-to-use`}
-        className={`rounded-2xl border p-6 transition-all duration-300 ease-in-out sm:p-8 ${panelTone}`}
-      >
-        <h2
-          id={`${slug}-when-to-use`}
-          className={`font-serif text-2xl leading-tight ${textPrimary}`}
+      {showUseCases && (
+        <section
+          aria-labelledby={`${slug}-when-to-use`}
+          className={`rounded-2xl border p-6 transition-all duration-300 ease-in-out sm:p-8 ${panelTone}`}
         >
-          {copy.whenPrefix} {content.title}?
-        </h2>
-        <ul
-          className={`mt-5 grid gap-4 text-sm leading-relaxed md:grid-cols-3 ${textSecondary}`}
-        >
-          {content.useCases.map((item, index) => (
-            <li key={item} className="flex gap-3">
-              <span className="font-mono text-xs font-semibold text-accent">
-                0{index + 1}
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+          <h2
+            id={`${slug}-when-to-use`}
+            className={`font-serif text-2xl leading-tight ${textPrimary}`}
+          >
+            {copy.whenPrefix} {content.title}?
+          </h2>
+          <ul
+            className={`mt-5 grid gap-4 text-sm leading-relaxed md:grid-cols-3 ${textSecondary}`}
+          >
+            {content.useCases.map((item, index) => (
+              <li key={item} className="flex gap-3">
+                <span className="font-mono text-xs font-semibold text-accent">
+                  0{index + 1}
+                </span>
+                <span>{renderInlineText(item, language)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
-      <section aria-labelledby={`${slug}-guide`}>
-        <h2
-          id={`${slug}-guide`}
-          className={`font-serif text-2xl leading-tight ${textPrimary}`}
+      <section aria-labelledby={guideHeading ? `${slug}-guide` : undefined}>
+        {guideHeading && (
+          <h2
+            id={`${slug}-guide`}
+            className={`font-serif text-2xl leading-tight ${textPrimary}`}
+          >
+            {guideHeading}
+          </h2>
+        )}
+        <div
+          className={`grid gap-x-8 gap-y-7 lg:grid-cols-2 ${
+            guideHeading ? "mt-5" : ""
+          }`}
         >
-          {guideHeading}
-        </h2>
-        <div className="mt-5 grid gap-x-8 gap-y-7 lg:grid-cols-2">
-          {content.sections.map((section) => (
-            <article
-              key={section.heading}
-              className={`border-t pt-5 ${ruleTone}`}
-            >
-              <h3 className={`font-serif text-xl leading-tight ${textPrimary}`}>
-                {section.heading}
-              </h3>
+          {content.sections.map((section) => {
+            const headingClass =
+              sectionHeadingLevel === "h2"
+                ? `font-serif text-2xl leading-tight ${textPrimary}`
+                : `font-serif text-xl leading-tight ${textPrimary}`;
+            const body = (
               <p className={`mt-3 text-sm leading-relaxed ${textSecondary}`}>
-                {section.body}
+                {renderInlineText(section.body, language)}
               </p>
-            </article>
-          ))}
+            );
+            return (
+              <article
+                key={section.heading}
+                className={`border-t pt-5 ${ruleTone}`}
+              >
+                {sectionHeadingLevel === "h2" ? (
+                  <h2 className={headingClass}>{section.heading}</h2>
+                ) : (
+                  <h3 className={headingClass}>{section.heading}</h3>
+                )}
+                {body}
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -1085,7 +1141,7 @@ export const ToolSeoLandingSections: React.FC<ToolSeoLandingSectionsProps> = ({
                 </span>
               </summary>
               <p className={`mt-3 text-sm leading-relaxed ${textSecondary}`}>
-                {faq.body}
+                {renderInlineText(faq.body, language)}
               </p>
             </details>
           ))}

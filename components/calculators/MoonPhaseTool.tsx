@@ -1,6 +1,7 @@
 // INPUT: React、useLanguage（UIComponents）、useCalculatorTheme、astroDisplay（signLabel/formatDegMin）、
 //        services/apiClient（fetchMoonPhase）、共享原语 ToolPageShell / ToolResultCard / PlacementList / PlacementRow / GlyphBadge / ToolFunnelCTA。
 // OUTPUT: 月相工具——某 UTC 日的月相名/受照比例/盈亏 + 月亮与太阳所在星座（默认今天，可选日期）；
+//         支持 today SEO 别名页复用同一计算逻辑并固定今天。
 //         含客户端 SVG 月面 hero（按受照比例+盈亏渲染明暗）、8 相周期带、静态中性相位释义、导流 CTA。
 // POS: 计算器矩阵（D）天象工具之一，路由 /:lang/moon-phase-calculator。纯事实天象（无 LLM、无出生数据）；
 //      静态 SEO 正文在 scripts/generate-seo-pages.mjs。若更新此文件，务必更新 calculators/FOLDER.md。
@@ -99,6 +100,23 @@ const cycleDay = (angle: number): number | null => {
   return Math.max(0, Math.min(Math.round(SYNODIC_DAYS), day));
 };
 
+const daysUntilAngle = (angle: number, target: number): number | null => {
+  if (!Number.isFinite(angle)) return null;
+  const norm = ((angle % 360) + 360) % 360;
+  let delta = (target - norm + 360) % 360;
+  if (delta < 0.0001) delta = 360;
+  return (delta / 360) * SYNODIC_DAYS;
+};
+
+const formatDaysUntil = (days: number | null, lang: Language): string => {
+  if (days === null) return lang === "zh" ? "暂不可用" : "unavailable";
+  if (days < 1) return lang === "zh" ? "少于 1 天" : "less than 1 day";
+  const rounded = Math.round(days);
+  return lang === "zh"
+    ? `约 ${rounded} 天`
+    : `about ${rounded} ${rounded === 1 ? "day" : "days"}`;
+};
+
 /**
  * Client-rendered moon disc, shaded by illumination + waxing flag. Pure SVG, no
  * asset, no fetch. The lit limb sits on the correct side (waxing → right-lit).
@@ -187,12 +205,15 @@ const PhaseStrip: React.FC<{ currentIndex: number; lang: Language }> = ({
   </ol>
 );
 
-export const MoonPhaseTool: React.FC = () => {
+export const MoonPhaseTool: React.FC<{
+  variant?: "calculator" | "today";
+}> = ({ variant = "calculator" }) => {
   const { language } = useLanguage();
   const lang: Language = language === "zh" ? "zh" : "en";
   const th = useCalculatorTheme();
+  const isTodayVariant = variant === "today";
 
-  const [date, setDate] = useState<string>(todayIso());
+  const [date, setDate] = useState<string>(() => todayIso());
   const [data, setData] = useState<MoonPhaseResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -221,9 +242,15 @@ export const MoonPhaseTool: React.FC = () => {
     void load(date);
   }, [date, load]);
 
+  useEffect(() => {
+    if (isTodayVariant) setDate(todayIso());
+  }, [isTodayVariant]);
+
   const pct = data ? Math.round(data.illumination * 100) : 0;
   const idx = data ? phaseIndex(data.phase) : -1;
   const day = data ? cycleDay(data.angle) : null;
+  const nextFull = data ? daysUntilAngle(data.angle, 180) : null;
+  const nextNew = data ? daysUntilAngle(data.angle, 0) : null;
   const meaning = useMemo(
     () => (data ? PHASE_MEANING[data.phase] : undefined),
     [data],
@@ -235,40 +262,70 @@ export const MoonPhaseTool: React.FC = () => {
       : `${pct}% illuminated · ${data.waxing ? "waxing" : "waning"}`
     : "";
 
+  const breadcrumbs = isTodayVariant
+    ? [
+        {
+          name: lang === "zh" ? "工具" : "Tools",
+          path: `/${lang}/tools`,
+        },
+        {
+          name: lang === "zh" ? "月相" : "Moon Phase",
+          path: `/${lang}/moon-phase-calculator`,
+        },
+        { name: lang === "zh" ? "今天" : "Today" },
+      ]
+    : undefined;
+
   return (
     <ToolPageShell
-      title={lang === "zh" ? "月相计算器" : "Moon Phase Calculator"}
+      title={
+        isTodayVariant
+          ? lang === "zh"
+            ? "今天是什么月相？"
+            : "What Moon Phase Is It Today?"
+          : lang === "zh"
+            ? "月相计算器"
+            : "Moon Phase Calculator"
+      }
       subtitle={
-        lang === "zh"
-          ? "查询任意一天的月相、受照比例与月亮所在星座——基于真实天文数据。"
-          : "Find the Moon's phase, illumination, and sign for any day — on real astronomy."
+        isTodayVariant
+          ? lang === "zh"
+            ? "查看今天的月相、受照比例，以及距离下一次满月和新月的大致天数。"
+            : "See today's exact moon phase, illumination percentage, and the approximate days until the next full Moon and new Moon."
+          : lang === "zh"
+            ? "查询任意一天的月相、受照比例与月亮所在星座——基于真实天文数据。"
+            : "Find the Moon's phase, illumination, and sign for any day — on real astronomy."
       }
       slug="moon-phase-calculator"
+      landingSlug={isTodayVariant ? "moon-phase-today" : undefined}
+      breadcrumbs={breadcrumbs}
     >
-      <div
-        className={`${th.cardBg} border ${th.cardBorder} mb-8 rounded-2xl p-6 transition-all duration-300 ease-in-out sm:p-8`}
-      >
-        <label
-          htmlFor="moon-phase-date"
-          className={`mb-1.5 block text-sm font-medium ${th.textPrimary}`}
+      {!isTodayVariant && (
+        <div
+          className={`${th.cardBg} border ${th.cardBorder} mb-8 rounded-2xl p-6 transition-all duration-300 ease-in-out sm:p-8`}
         >
-          {lang === "zh" ? "选择日期" : "Pick a date"}
-        </label>
-        <input
-          id="moon-phase-date"
-          type="date"
-          value={date}
-          max="2100-12-31"
-          min="1800-01-01"
-          onChange={(e) => setDate(e.target.value || todayIso())}
-          className={`w-full rounded-lg border px-4 py-3 sm:w-auto ${th.inputBorder} ${th.inputBg} ${th.inputText} min-h-[44px] focus:outline-none focus:ring-2 focus:ring-gold-500/50`}
-        />
-        <p className={`mt-2 text-xs ${th.textSecondary}`}>
-          {lang === "zh"
-            ? "月相按当日 00:00 UTC 计算。"
-            : "Phase is computed for 00:00 UTC of the chosen day."}
-        </p>
-      </div>
+          <label
+            htmlFor="moon-phase-date"
+            className={`mb-1.5 block text-sm font-medium ${th.textPrimary}`}
+          >
+            {lang === "zh" ? "选择日期" : "Pick a date"}
+          </label>
+          <input
+            id="moon-phase-date"
+            type="date"
+            value={date}
+            max="2100-12-31"
+            min="1800-01-01"
+            onChange={(e) => setDate(e.target.value || todayIso())}
+            className={`w-full rounded-lg border px-4 py-3 sm:w-auto ${th.inputBorder} ${th.inputBg} ${th.inputText} min-h-[44px] focus:outline-none focus:ring-2 focus:ring-gold-500/50`}
+          />
+          <p className={`mt-2 text-xs ${th.textSecondary}`}>
+            {lang === "zh"
+              ? "月相按当日 00:00 UTC 计算。"
+              : "Phase is computed for 00:00 UTC of the chosen day."}
+          </p>
+        </div>
+      )}
 
       {loading && (
         <div className={`py-8 text-center ${th.textSecondary}`}>
@@ -344,14 +401,30 @@ export const MoonPhaseTool: React.FC = () => {
               value={signLabel(data.sun.sign, lang)}
               detail={formatDegMin(data.sun.degree)}
             />
+            {isTodayVariant && (
+              <>
+                <PlacementRow
+                  planet="Moon"
+                  tone="gold"
+                  label={lang === "zh" ? "下一次满月" : "Next Full Moon"}
+                  value={formatDaysUntil(nextFull, lang)}
+                  detail={lang === "zh" ? "约数" : "approx."}
+                />
+                <PlacementRow
+                  planet="Moon"
+                  tone="auto"
+                  label={lang === "zh" ? "下一次新月" : "Next New Moon"}
+                  value={formatDaysUntil(nextNew, lang)}
+                  detail={lang === "zh" ? "约数" : "approx."}
+                />
+              </>
+            )}
           </PlacementList>
 
           <PhaseStrip currentIndex={idx} lang={lang} />
 
           {meaning && (
-            <p
-              className={`mt-6 text-sm leading-relaxed ${th.textSecondary}`}
-            >
+            <p className={`mt-6 text-sm leading-relaxed ${th.textSecondary}`}>
               {lang === "zh" ? meaning.zh : meaning.en}
             </p>
           )}

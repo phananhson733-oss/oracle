@@ -14,7 +14,7 @@
 文件清单
 - .gitignore｜地位：版本控制配置｜功能：声明 Git 忽略规则。
 - AGENTS.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明、语言规则与 UI 规范入口。
-- App.tsx｜地位：主应用入口组件｜功能：组合路由与页面（含 `/go/:code` 与根路径短链跳转、积分入口/使用情况页、地名输入建议、迁移提示与设置页 GM 测试/开发会话指令）。
+- App.tsx｜地位：主应用入口组件｜功能：组合路由与页面（含 `/go/:code` 与根路径短链跳转、tools SEO alias 路由、积分入口/使用情况页、地名输入建议、迁移提示与设置页 GM 测试/开发会话指令）。
 - CLAUDE.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明与 UI 规范入口（Claude 入口）。
 - FOLDER.md｜地位：目录索引文档｜功能：记录根目录架构与文件清单。
 - README.md｜地位：主说明文档｜功能：项目说明与运行方式（含 UI 规范门槛）。
@@ -47,6 +47,7 @@
 - services｜地位：服务目录｜功能：主应用服务层。
 
 近期更新
+- 新增 tools SEO alias 路由 `/moon-phase-today` 与 `/astrocartography-map-generator`，裸路径自动重定向到语言前缀版本，且加入公开可索引白名单以避免运行时 noindex。
 - 新增 `/go/:code` 与根路径短链跳转入口及 link-attribution 短链登记接口，支持同站安全跳转、动态 code registry、相同 destination 复用已有短链与旧 `to` 回退链接。
 - 支付成功页路由加入放行清单，避免无档案状态被重定向，订阅后可顺利进入个人信息页。
 - 支付成功回调增加 PayPal 查询参数转 hash 路由处理，避免跳回首页。

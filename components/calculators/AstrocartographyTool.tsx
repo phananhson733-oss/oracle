@@ -3,6 +3,7 @@
 //        共享原语 ToolPageShell / ToolResultCard / GlyphBadge / ToolFunnelCTA。
 // OUTPUT: Astrocartography 计算器——出生数据（需时间）→ /api/astrocartography → 等距世界地图叠加各行星 MC/IC/AC/DC 角线
 //         + 纯客户端几何排出「最贴近主要城市的角线」榜单 + 导流 CTA。
+//         支持 map-generator SEO 别名页复用同一表单与地图结果。
 // POS: 计算器矩阵（D）占星地图，路由 /:lang/astrocartography。出生数据 POST（PII 不进 URL），无 LLM；
 //      中性叙事——线只标"出生时该行星位于地平/中天之处"，是探索的邀请而非预测。若更新此文件，务必更新 calculators/FOLDER.md。
 
@@ -93,10 +94,13 @@ const nearestForPlanet = (
   return candidates.reduce((a, b) => (b.orb < a.orb ? b : a));
 };
 
-export const AstrocartographyTool: React.FC = () => {
+export const AstrocartographyTool: React.FC<{
+  variant?: "map" | "generator";
+}> = ({ variant = "map" }) => {
   const { language } = useLanguage();
   const lang: Language = language === "zh" ? "zh" : "en";
   const th = useCalculatorTheme();
+  const isGeneratorVariant = variant === "generator";
 
   const person = useRef<PersonState>(emptyPerson());
   const [state, setState] = useState<State>("idle");
@@ -303,17 +307,45 @@ export const AstrocartographyTool: React.FC = () => {
     );
   };
 
+  const breadcrumbs = isGeneratorVariant
+    ? [
+        {
+          name: lang === "zh" ? "工具" : "Tools",
+          path: `/${lang}/tools`,
+        },
+        {
+          name: lang === "zh" ? "地缘占星" : "Astrocartography",
+          path: `/${lang}/astrocartography`,
+        },
+        { name: lang === "zh" ? "地图生成器" : "Map Generator" },
+      ]
+    : undefined;
+
   return (
     <ToolPageShell
       title={
-        lang === "zh" ? "占星地图（Astrocartography）" : "Astrocartography Map"
+        isGeneratorVariant
+          ? lang === "zh"
+            ? "占星地图生成器"
+            : "Astrocartography Map Generator"
+          : lang === "zh"
+            ? "占星地图（Astrocartography）"
+            : "Astrocartography Map"
       }
       subtitle={
-        lang === "zh"
-          ? "看你出生那一刻，每颗行星在地平线与中天的位置投影到世界地图上的角线——一份探索地点的邀请，而非预测。"
-          : "See where each planet sat on the horizon and meridian at your birth, mapped across the world — an invitation to explore places, not a prediction."
+        isGeneratorVariant
+          ? lang === "zh"
+            ? "输入出生信息，生成一张世界地图，查看每颗行星的影响在哪些地点更突出。"
+            : "Enter your birth details to generate a world map showing where each planet's influence is strongest."
+          : lang === "zh"
+            ? "看你出生那一刻，每颗行星在地平线与中天的位置投影到世界地图上的角线——一份探索地点的邀请，而非预测。"
+            : "See where each planet sat on the horizon and meridian at your birth, mapped across the world — an invitation to explore places, not a prediction."
       }
       slug="astrocartography"
+      landingSlug={
+        isGeneratorVariant ? "astrocartography-map-generator" : undefined
+      }
+      breadcrumbs={breadcrumbs}
       maxWidth="7xl"
     >
       <form
@@ -347,9 +379,13 @@ export const AstrocartographyTool: React.FC = () => {
             ? lang === "zh"
               ? "绘制中…"
               : "Mapping…"
-            : lang === "zh"
-              ? "绘制我的占星地图"
-              : "Map my astrocartography"}
+            : isGeneratorVariant
+              ? lang === "zh"
+                ? "生成我的地图"
+                : "Generate My Map"
+              : lang === "zh"
+                ? "绘制我的占星地图"
+                : "Map my astrocartography"}
         </button>
       </form>
 
@@ -563,28 +599,30 @@ export const AstrocartographyTool: React.FC = () => {
         </div>
       )}
 
-      <div className="mt-10 space-y-4">
-        <div>
-          <h2 className={`mb-2 text-lg font-semibold ${th.textPrimary}`}>
-            {lang === "zh" ? "占星地图是什么？" : "What is astrocartography?"}
-          </h2>
-          <p className={`text-sm leading-relaxed ${th.textSecondary}`}>
-            {lang === "zh"
-              ? "占星地图（也叫迁移占星）把你出生那一刻的天空投影到世界地图上。对每颗行星，它画出四条角线：在地图上的某条经线上，该行星当时正位于中天（MC）或下中天（IC）；在某条弯曲的线上，它正从地平线升起（AC）或落下（DC）。这是一种以地点为线索探索自我的方式。"
-              : "Astrocartography, also called relocation astrology, projects the sky at the moment of your birth onto a world map. For each planet it draws four angle lines: the meridians where that planet was culminating (MC) or at the lower meridian (IC), and the curves where it was rising (AC) or setting (DC). It is a way to explore yourself through place."}
-          </p>
+      {!isGeneratorVariant && (
+        <div className="mt-10 space-y-4">
+          <div>
+            <h2 className={`mb-2 text-lg font-semibold ${th.textPrimary}`}>
+              {lang === "zh" ? "占星地图是什么？" : "What is astrocartography?"}
+            </h2>
+            <p className={`text-sm leading-relaxed ${th.textSecondary}`}>
+              {lang === "zh"
+                ? "占星地图（也叫迁移占星）把你出生那一刻的天空投影到世界地图上。对每颗行星，它画出四条角线：在地图上的某条经线上，该行星当时正位于中天（MC）或下中天（IC）；在某条弯曲的线上，它正从地平线升起（AC）或落下（DC）。这是一种以地点为线索探索自我的方式。"
+                : "Astrocartography, also called relocation astrology, projects the sky at the moment of your birth onto a world map. For each planet it draws four angle lines: the meridians where that planet was culminating (MC) or at the lower meridian (IC), and the curves where it was rising (AC) or setting (DC). It is a way to explore yourself through place."}
+            </p>
+          </div>
+          <div>
+            <h2 className={`mb-2 text-lg font-semibold ${th.textPrimary}`}>
+              {lang === "zh" ? "怎么读这张地图" : "How to read the map"}
+            </h2>
+            <p className={`text-sm leading-relaxed ${th.textSecondary}`}>
+              {lang === "zh"
+                ? "每颗行星一种颜色，用上方的开关显示或隐藏。城市标记帮你定位线经过之处。线本身只描述天文几何——出生时行星相对地平线与子午线的位置——它是一个反思与探索的起点，不预测某地会发生什么，也不保证任何结果。落在你出生地附近的线，反映的就是你本命盘里本就突出的主题。"
+                : "Each planet has a colour you can show or hide with the toggles above. The city markers help you place where a line runs. The lines describe astronomy only — where a planet sat relative to the horizon and meridian at birth. They are a starting point for reflection and exploration, not a forecast of what will happen in any place and not a guarantee of any outcome. A line near your birthplace simply reflects a theme already prominent in your own chart."}
+            </p>
+          </div>
         </div>
-        <div>
-          <h2 className={`mb-2 text-lg font-semibold ${th.textPrimary}`}>
-            {lang === "zh" ? "怎么读这张地图" : "How to read the map"}
-          </h2>
-          <p className={`text-sm leading-relaxed ${th.textSecondary}`}>
-            {lang === "zh"
-              ? "每颗行星一种颜色，用上方的开关显示或隐藏。城市标记帮你定位线经过之处。线本身只描述天文几何——出生时行星相对地平线与子午线的位置——它是一个反思与探索的起点，不预测某地会发生什么，也不保证任何结果。落在你出生地附近的线，反映的就是你本命盘里本就突出的主题。"
-              : "Each planet has a colour you can show or hide with the toggles above. The city markers help you place where a line runs. The lines describe astronomy only — where a planet sat relative to the horizon and meridian at birth. They are a starting point for reflection and exploration, not a forecast of what will happen in any place and not a guarantee of any outcome. A line near your birthplace simply reflects a theme already prominent in your own chart."}
-          </p>
-        </div>
-      </div>
+      )}
     </ToolPageShell>
   );
 };

@@ -14,6 +14,12 @@ export interface ToolSeoContent {
   useCases: string[];
   sections: ToolSeoSection[];
   faqs: ToolSeoSection[];
+  display?: {
+    showUseCases?: boolean;
+    guideHeading?: string | null;
+    sectionHeadingLevel?: "h2" | "h3";
+    faqHeading?: string;
+  };
 }
 
 export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
@@ -268,6 +274,51 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
         body: "It is the share of the visible Moon disc that is lit by the Sun, from zero at new Moon to fifty percent at the quarters and one hundred at full Moon.",
       },
     ],
+  },
+  "moon-phase-today": {
+    title: "Moon Phase Today",
+    summary:
+      "See today's exact moon phase, illumination percentage, and the approximate days until the next full Moon and new Moon. The live result above updates from the same astronomy engine as the calculator.",
+    useCases: [],
+    sections: [
+      {
+        heading: "Why the Moon's Phase Changes Every Day",
+        body: "The Moon's phase changes because the Sun-Moon angle changes as the Moon orbits Earth. Each day the lit shape shifts a little, moving through a 29.5-day lunar cycle. The live result above computes today's phase and illumination from that angle rather than using fixed calendar text.",
+      },
+      {
+        heading: "The 8 Moon Phases at a Glance",
+        body: "The cycle moves through New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, and Waning Crescent. The phase strip in the tool highlights where today sits in that sequence, while the illumination percentage shows how much of the visible Moon is sunlit.",
+      },
+      {
+        heading: "Need a Different Date Instead of Today?",
+        body: "This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to [check a different date](/en/moon-phase-calculator). If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your [natal moon sign](/en/birth-chart-calculator).",
+      },
+    ],
+    faqs: [
+      {
+        heading: "What moon phase is it today?",
+        body: "Today's live moon phase, illumination percentage, and the approximate timing of the next full Moon and new Moon are shown in the result area above. The value is calculated dynamically, not written as a fixed answer.",
+      },
+      {
+        heading: "How often does the moon's phase change?",
+        body: "The Moon's phase changes continuously as the Sun-Moon angle shifts. The named phases are milestones in a full lunar cycle of about 29.5 days.",
+      },
+      {
+        heading:
+          "What's the difference between this page and the Moon Phase Calculator?",
+        body: "This page defaults to today and keeps the focus on the current sky. The Moon Phase Calculator lets you choose a different date in the past or future.",
+      },
+      {
+        heading: "Where can I check the moon phase for a different date?",
+        body: "Use the [moon phase calculator](/en/moon-phase-calculator) when you need a specific date instead of today.",
+      },
+    ],
+    display: {
+      showUseCases: false,
+      guideHeading: null,
+      sectionHeadingLevel: "h2",
+      faqHeading: "Frequently Asked Questions",
+    },
   },
   "ephemeris-calculator": {
     title: "Ephemeris Calculator",
@@ -604,6 +655,56 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
         body: "MC is where a planet was culminating overhead, IC is the lower meridian opposite it, AC is where it was rising in the east, and DC is where it was setting in the west.",
       },
     ],
+  },
+  "astrocartography-map-generator": {
+    title: "Astrocartography Map Generator",
+    summary:
+      "Enter your birth details to generate a world map showing where each planet's influence is strongest through AC, DC, MC, and IC lines.",
+    useCases: [],
+    sections: [
+      {
+        heading: "What Your Astrocartography Map Shows",
+        body: "Your generated map projects your birth chart onto the world. It marks the places where each planet was rising, setting, culminating, or sitting at the lower meridian at your birth. If you want the background before using the map, start with the [full astrocartography guide](/en/astrocartography).",
+      },
+      {
+        heading: "The Four Line Types, Briefly",
+        body: "AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for [how to interpret your astrocartography lines](/en/blog/astrocartography-interpretation).",
+      },
+      {
+        heading: "What Each Planet Represents on Your Map",
+        body: "Each planet points to a different chart theme: the Sun to identity and visibility, the Moon to belonging and emotional rhythm, Venus to ease and attraction, Mars to drive, Jupiter to growth, Saturn to structure, and the outer planets to slower collective themes. For context, generate an [accurate birth chart](/en/birth-chart-calculator) before treating any single line as the whole story.",
+      },
+      {
+        heading:
+          "Astrocartography Map Generator vs. the Full Astrocartography Guide",
+        body: "The generator gives you the interactive map and lets you inspect which lines run near a place. The [full astrocartography guide](/en/astrocartography) explains how astrocartography works in more depth, while [the full interpretation guide](/en/blog/astrocartography-interpretation) helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.",
+      },
+    ],
+    faqs: [
+      {
+        heading: "Is this astrocartography map generator free?",
+        body: "Yes. You can generate the map for free using your birth date, exact birth time, and birthplace.",
+      },
+      {
+        heading: "Do I need my exact birth time to generate an accurate map?",
+        body: "Yes. Astrocartography lines are angle-based and shift quickly with birth time. An inaccurate or missing time can move lines far enough to change the map meaning.",
+      },
+      {
+        heading:
+          "What's the difference between this tool and the main Astrocartography page?",
+        body: "This page is a focused map-generation entry point. The main astrocartography page includes the broader guide to how astrocartography works and how to read the map in context.",
+      },
+      {
+        heading: "Can I download or share my generated map?",
+        body: "A built-in download or share action is not currently available. The map is generated for the current browser session, so use a personal screenshot if you need a quick reference.",
+      },
+    ],
+    display: {
+      showUseCases: false,
+      guideHeading: null,
+      sectionHeadingLevel: "h2",
+      faqHeading: "Frequently Asked Questions",
+    },
   },
   "saturn-return-calculator": {
     title: "Saturn Return Calculator",

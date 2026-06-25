@@ -251,8 +251,8 @@ const buildHead = ({
   return headParts.join('\n');
 };
 
-const buildBody = ({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt }) => {
-  const safeTitle = escapeHtml(title);
+const buildBody = ({ lang, title, heading, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt }) => {
+  const safeTitle = escapeHtml(heading || title);
   const safeDescription = escapeHtml(description);
   const safeCta = escapeHtml(ctaText);
   const safeSpaPath = escapeHtml(spaPath);
@@ -298,14 +298,14 @@ ${bootstrapScript}<main>
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, description, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, heading, description, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
 ${buildHead({ lang, title, description, url, canonical, robots, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
-${buildBody({ lang, title, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt })}
+${buildBody({ lang, title, heading, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt })}
   </body>
 </html>
 `;
@@ -1563,6 +1563,30 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       ],
     },
     {
+      slug: 'moon-phase-today',
+      title: 'Moon Phase Today – What Moon Phase Is It Right Now? | AstrologyWiki',
+      heading: 'What Moon Phase Is It Today?',
+      description: "See today's exact moon phase and illumination percentage, updated daily. Plus a quick guide to all 8 moon phases.",
+      includeFaqInBody: true,
+      breadcrumbs: [
+        { name: 'Home', url: `${siteUrl}/en/` },
+        { name: 'Tools', url: `${siteUrl}/en/tools` },
+        { name: 'Moon Phase', url: `${siteUrl}/en/moon-phase-calculator` },
+        { name: 'Today', url: `${siteUrl}/en/moon-phase-today` },
+      ],
+      sections: [
+        ["Why the Moon's Phase Changes Every Day", "The Moon's phase changes because the Sun-Moon angle changes as the Moon orbits Earth. Each day the lit shape shifts a little, moving through a 29.5-day lunar cycle. The live tool computes today's phase and illumination from that angle rather than using fixed calendar text."],
+        ['The 8 Moon Phases at a Glance', 'The cycle moves through New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, and Waning Crescent. The page highlights where today sits in that sequence, while the illumination percentage shows how much of the visible Moon is sunlit.'],
+        ['Need a Different Date Instead of Today?', 'This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to [check a different date](/en/moon-phase-calculator). If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your [natal moon sign](/en/birth-chart-calculator).'],
+      ],
+      faqs: [
+        ['What moon phase is it today?', "Today's live moon phase, illumination percentage, and the approximate timing of the next full Moon and new Moon are shown in the result area above. The value is calculated dynamically, not written as a fixed answer."],
+        ["How often does the moon's phase change?", "The Moon's phase changes continuously as the Sun-Moon angle shifts. The named phases are milestones in a full lunar cycle of about 29.5 days."],
+        ["What's the difference between this page and the Moon Phase Calculator?", 'This page defaults to today and keeps the focus on the current sky. The Moon Phase Calculator lets you choose a different date in the past or future.'],
+        ['Where can I check the moon phase for a different date?', 'Use the [moon phase calculator](/en/moon-phase-calculator) when you need a specific date instead of today.'],
+      ],
+    },
+    {
       slug: 'ephemeris-calculator',
       title: 'Ephemeris Calculator - Daily Planet Positions',
       description: 'Generate a free ephemeris table of planet positions across any date range, with sign, degree, and retrograde for each day. Swiss Ephemeris accuracy, no sign-up.',
@@ -1690,15 +1714,45 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['What do the MC, IC, AC and DC lines mean?', 'MC is where a planet was culminating overhead, IC is the lower meridian opposite it, AC is where it was rising in the east, and DC is where it was setting in the west.'],
       ],
     },
+    {
+      slug: 'astrocartography-map-generator',
+      title: 'Astrocartography Map Generator – Free Relocation Astrology Tool | AstrologyWiki',
+      heading: 'Astrocartography Map Generator',
+      description: 'Generate your personal astrocartography map free. Enter your birth date, time, and location to see which planetary lines run through any place on Earth.',
+      includeFaqInBody: true,
+      breadcrumbs: [
+        { name: 'Home', url: `${siteUrl}/en/` },
+        { name: 'Tools', url: `${siteUrl}/en/tools` },
+        { name: 'Astrocartography', url: `${siteUrl}/en/astrocartography` },
+        { name: 'Map Generator', url: `${siteUrl}/en/astrocartography-map-generator` },
+      ],
+      sections: [
+        ['What Your Astrocartography Map Shows', 'Your generated map projects your birth chart onto the world. It marks the places where each planet was rising, setting, culminating, or sitting at the lower meridian at your birth. If you want the background before using the map, start with the [full astrocartography guide](/en/astrocartography).'],
+        ['The Four Line Types, Briefly', 'AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for [how to interpret your astrocartography lines](/en/blog/astrocartography-interpretation).'],
+        ['What Each Planet Represents on Your Map', 'Each planet points to a different chart theme: the Sun to identity and visibility, the Moon to belonging and emotional rhythm, Venus to ease and attraction, Mars to drive, Jupiter to growth, Saturn to structure, and the outer planets to slower collective themes. For context, generate an [accurate birth chart](/en/birth-chart-calculator) before treating any single line as the whole story.'],
+        ['Astrocartography Map Generator vs. the Full Astrocartography Guide', 'The generator gives you the interactive map and lets you inspect which lines run near a place. The [full astrocartography guide](/en/astrocartography) explains how astrocartography works in more depth, while [the full interpretation guide](/en/blog/astrocartography-interpretation) helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.'],
+      ],
+      faqs: [
+        ['Is this astrocartography map generator free?', 'Yes. You can generate the map for free using your birth date, exact birth time, and birthplace.'],
+        ['Do I need my exact birth time to generate an accurate map?', 'Yes. Astrocartography lines are angle-based and shift quickly with birth time. An inaccurate or missing time can move lines far enough to change the map meaning.'],
+        ["What's the difference between this tool and the main Astrocartography page?", 'This page is a focused map-generation entry point. The main astrocartography page includes the broader guide to how astrocartography works and how to read the map in context.'],
+        ['Can I download or share my generated map?', 'A built-in download or share action is not currently available. The map is generated for the current browser session, so use a personal screenshot if you need a quick reference.'],
+      ],
+    },
   ];
   for (const calc of CALCULATOR_SEO) {
     const calcUrl = `${siteUrl}/en/${calc.slug}`;
-    const calcBody = calc.sections.map((s) => `## ${s[0]}\n\n${s[1]}`).join('\n\n');
+    const sectionBody = calc.sections.map((s) => `## ${s[0]}\n\n${s[1]}`).join('\n\n');
+    const faqBody = calc.includeFaqInBody
+      ? `## Frequently Asked Questions\n\n${calc.faqs.map((f) => `### ${f[0]}\n\n${f[1]}`).join('\n\n')}`
+      : '';
+    const calcBody = [sectionBody, faqBody].filter(Boolean).join('\n\n');
     addUrl(calcUrl, ['calculator', calc.slug, 'v1', contentHash([calcBody])]);
     await writeHtmlPage({
       outputPath: path.join(publicDir, 'en', calc.slug, 'index.html'),
       lang: 'en',
       title: calc.title,
+      heading: calc.heading,
       description: calc.description,
       url: calcUrl,
       ogType: 'website',
@@ -1724,6 +1778,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
             acceptedAnswer: { '@type': 'Answer', text: f[1] },
           })),
         },
+        ...(calc.breadcrumbs ? [buildBreadcrumb('en', calc.breadcrumbs)] : []),
       ],
       ctaText: LANG_CONFIG.en.homeCta,
       spaPath: `/en/${calc.slug}`,

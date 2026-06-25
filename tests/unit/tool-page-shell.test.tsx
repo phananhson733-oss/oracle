@@ -64,6 +64,39 @@ describe("ToolPageShell", () => {
     ).toBeTruthy();
   });
 
+  it("renders SEO alias landing sections with visible H2s and internal links", () => {
+    render(
+      <ToolPageShell
+        title="Astrocartography Map Generator"
+        slug="astrocartography"
+        landingSlug="astrocartography-map-generator"
+      >
+        <div>calculator body</div>
+      </ToolPageShell>,
+    );
+
+    expect(
+      screen.getByRole("heading", {
+        name: "What Your Astrocartography Map Shows",
+        level: 2,
+      }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("heading", {
+        name: "Frequently Asked Questions",
+        level: 2,
+      }),
+    ).toBeTruthy();
+    expect(
+      screen.getByText(/Is this astrocartography map generator free/i),
+    ).toBeTruthy();
+
+    const guideLink = screen.getAllByRole("link", {
+      name: /full astrocartography guide/i,
+    })[0] as HTMLAnchorElement;
+    expect(guideLink.getAttribute("href")).toBe("/en/astrocartography");
+  });
+
   it("has landing content for every public tool slug", () => {
     for (const tool of TOOLS) {
       expect(TOOL_SEO_CONTENT[tool.slug], tool.slug).toBeDefined();
@@ -84,6 +117,18 @@ describe("ToolPageShell", () => {
         `${tool.slug} faqs`,
       ).toBeGreaterThanOrEqual(3);
     }
+  });
+
+  it("has landing content for SEO alias tool pages", () => {
+    expect(TOOL_SEO_CONTENT["astrocartography-map-generator"].title).toBe(
+      "Astrocartography Map Generator",
+    );
+    expect(TOOL_SEO_CONTENT["moon-phase-today"].title).toBe("Moon Phase Today");
+    expect(
+      TOOL_SEO_CONTENT["moon-phase-today"].sections.map(
+        (section) => section.heading,
+      ),
+    ).toContain("Need a Different Date Instead of Today?");
   });
 
   it("keeps tool landing copy specific instead of sharing one generic template", () => {
