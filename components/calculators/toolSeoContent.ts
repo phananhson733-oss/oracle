@@ -46,12 +46,12 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
     ],
     faqs: [
       {
-        heading: "What is a Moon sign?",
-        body: "Your Moon sign is the zodiac sign the Moon was in when you were born. It reflects your emotional instincts, needs, and inner world.",
+        heading: "Can I calculate my Moon sign without a birth time?",
+        body: "Yes, for most birthdays a date is enough. Add a birth time if the Moon changed signs on your birthday or if you want the most precise result.",
       },
       {
-        heading: "Do I need my birth time for my Moon sign?",
-        body: "Usually no. A birth date is enough. A birth time only matters if the Moon changed signs on your birthday, since the Moon moves about every 2.5 days.",
+        heading: "What if the Moon changed signs on my birthday?",
+        body: "Use your birth time and birthplace when possible. If those are missing, treat the result as approximate and compare both possible Moon signs.",
       },
       {
         heading: "Is the Moon sign more important than the Sun sign?",
@@ -88,8 +88,8 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
     ],
     faqs: [
       {
-        heading: "What is a rising sign?",
-        body: "Your rising sign, or ascendant, is the zodiac sign on the eastern horizon at your birth moment. It reflects first impressions and how you approach the world.",
+        heading: "Can my rising sign change within the same day?",
+        body: "Yes. The ascendant changes about every two hours, so people born on the same date can have different rising signs.",
       },
       {
         heading: "Why do I need my exact birth time?",
@@ -172,8 +172,8 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
     ],
     faqs: [
       {
-        heading: "What is a birth chart?",
-        body: "A birth chart is a snapshot of the Sun, Moon, and planets at the moment and place you were born, the basis for reading personality patterns in astrology.",
+        heading: "What information does the birth chart calculator show?",
+        body: "It shows the major planets by zodiac sign and degree, plus angles and house-sensitive points when a birth time and city are available.",
       },
       {
         heading: "Is the birth chart calculator free?",
@@ -466,8 +466,8 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
     ],
     faqs: [
       {
-        heading: "What is a composite chart?",
-        body: "A composite chart is a single chart made from the midpoints of two birth charts, representing the relationship itself rather than either individual.",
+        heading: "What does this calculator output?",
+        body: "It outputs a midpoint chart for the relationship, listing composite planet positions by sign and degree when both source charts have the needed placements.",
       },
       {
         heading: "How is a composite chart different from synastry?",
@@ -638,20 +638,20 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
     ],
     faqs: [
       {
-        heading: "What is a Saturn Return?",
-        body: "A Saturn Return is when the planet Saturn returns to the position it held at your birth, roughly every 29.5 years. It usually marks a transition between major life chapters.",
+        heading: "Can I calculate my Saturn Return without a birth time?",
+        body: "Yes. Saturn moves slowly enough that a date-based window is still useful. An exact birth time mainly helps place Saturn in houses for a fuller chart reading.",
       },
       {
-        heading: "When is my Saturn Return?",
-        body: "Your first Saturn Return usually begins between ages 27 and 30. Enter your birth date in the Saturn Return Calculator to get your personal Saturn Return dates.",
+        heading: "How many Saturn Returns are included?",
+        body: "The calculator focuses on the first, second, and third Saturn Returns, which usually fall around ages 27-30, 56-60, and 85-90.",
       },
       {
-        heading: "How long does a Saturn Return last?",
-        body: "A Saturn Return unfolds over about two to three years as Saturn crosses its birth position, with the strongest effect in the year it is exactly conjunct its natal point.",
+        heading: "Why does a Saturn Return cover a date range?",
+        body: "Saturn can pass the same area more than once because of retrograde motion, so the return is better shown as a window rather than one isolated day.",
       },
       {
-        heading: "Do I need my exact birth time?",
-        body: "Exact birth time helps place Saturn in the houses, but Saturn moves slowly enough that date-based Saturn Return windows remain useful when the time is unknown.",
+        heading: "How should I use Saturn Return dates?",
+        body: "Use the dates as timing context for reflection and planning, then pair them with your full birth chart for more detail. They are not fixed predictions.",
       },
     ],
   },

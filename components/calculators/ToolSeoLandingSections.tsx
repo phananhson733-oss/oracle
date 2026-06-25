@@ -1,5 +1,5 @@
 // INPUT: useTheme/useLanguage, embed context, toolSeoContent map.
-// OUTPUT: Human-visible landing content for individual calculator pages: summary, use cases, explainer sections, FAQ in a flatter editorial layout.
+// OUTPUT: Human-visible landing content for individual calculator pages: summary, use cases, non-duplicative explainer sections, FAQ in a flatter editorial layout.
 // POS: Rendered by ToolPageShell below each interactive tool. Keeps hydrated SPA pages aligned with static SEO stubs.
 
 import React from "react";
@@ -18,7 +18,7 @@ const COPY = {
   en: {
     whenPrefix: "When to use",
     guideSuffix: "guide",
-    guideHeadingPrefix: "How to use",
+    guideHeadingPrefix: "About",
     faqSuffix: "FAQ",
     faqIntro:
       "Quick answers for the questions people usually have before using this calculator.",
@@ -26,7 +26,7 @@ const COPY = {
   zh: {
     whenPrefix: "什么时候适合使用",
     guideSuffix: "工具说明",
-    guideHeadingPrefix: "如何使用",
+    guideHeadingPrefix: "关于",
     faqSuffix: "常见问题",
     faqIntro: "使用这个计算器前，用户最常见的问题集中在这里。",
   },
@@ -296,7 +296,10 @@ export const ToolSeoLandingSections: React.FC<ToolSeoLandingSectionsProps> = ({
     ? "border-gold-500/15 bg-space-900/45"
     : "border-paper-300/80 bg-paper-100/70";
   const overviewBadge = `${content.title} ${copy.guideSuffix}`;
-  const guideHeading = `${copy.guideHeadingPrefix} ${content.title}`;
+  const guideHeading =
+    language === "zh"
+      ? `${copy.guideHeadingPrefix}${content.title}`
+      : `${copy.guideHeadingPrefix} ${content.title}`;
   const faqHeading = `${content.title} ${copy.faqSuffix}`;
 
   return (

@@ -1368,10 +1368,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       '@type': 'FAQPage',
       inLanguage: 'en',
       mainEntity: [
-        { '@type': 'Question', name: 'What is a Saturn Return?', acceptedAnswer: { '@type': 'Answer', text: 'A Saturn Return is when the planet Saturn returns to the position it held at your birth, roughly every 29.5 years — typically at ages 27-30, 56-60, and 85-90. It marks a transition between major life chapters.' } },
-        { '@type': 'Question', name: 'When is my Saturn Return?', acceptedAnswer: { '@type': 'Answer', text: 'Your first Saturn Return usually begins between ages 27 and 30. Enter your birth date in the Saturn Return Calculator to get your exact Saturn Return dates.' } },
-        { '@type': 'Question', name: 'How long does a Saturn Return last?', acceptedAnswer: { '@type': 'Answer', text: 'A Saturn Return unfolds over about two to three years as Saturn crosses its birth position, with the strongest effect in the year it is exactly conjunct its natal point.' } },
-        { '@type': 'Question', name: 'What does the Saturn Return mean?', acceptedAnswer: { '@type': 'Answer', text: 'It is associated with maturity, responsibility, and realigning your life with your values. It is a developmental checkpoint, not a fixed prediction of fate.' } },
+        { '@type': 'Question', name: 'Can I calculate my Saturn Return without a birth time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Saturn moves slowly enough that a date-based window is still useful. An exact birth time mainly helps place Saturn in houses for a fuller chart reading.' } },
+        { '@type': 'Question', name: 'How many Saturn Returns are included?', acceptedAnswer: { '@type': 'Answer', text: 'The calculator focuses on the first, second, and third Saturn Returns, which usually fall around ages 27-30, 56-60, and 85-90.' } },
+        { '@type': 'Question', name: 'Why does a Saturn Return cover a date range?', acceptedAnswer: { '@type': 'Answer', text: 'Saturn can pass the same area more than once because of retrograde motion, so the return is better shown as a window rather than one isolated day.' } },
+        { '@type': 'Question', name: 'How should I use Saturn Return dates?', acceptedAnswer: { '@type': 'Answer', text: 'Use the dates as timing context for reflection and planning, then pair them with your full birth chart for more detail. They are not fixed predictions.' } },
       ],
     };
     addUrl(saturnUrl, ['saturn-return-calculator', 'v2', contentHash([saturnBody])]);
@@ -1477,8 +1477,8 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Using the Moon sign calculator', 'This free tool uses Swiss Ephemeris astronomy for accurate placements. For a deeper reading, explore your full birth chart and the psychological astrology articles in the AstrologyWiki wiki.'],
       ],
       faqs: [
-        ['What is a Moon sign?', 'Your Moon sign is the zodiac sign the Moon was in when you were born. It reflects your emotional instincts, needs, and inner world.'],
-        ['Do I need my birth time for my Moon sign?', 'Usually no — a birth date is enough. A birth time only matters if the Moon changed signs on your birthday, since the Moon moves about every 2.5 days.'],
+        ['Can I calculate my Moon sign without a birth time?', 'Yes, for most birthdays a date is enough. Add a birth time if the Moon changed signs on your birthday or if you want the most precise result.'],
+        ['What if the Moon changed signs on my birthday?', 'Use your birth time and birthplace when possible. If those are missing, treat the result as approximate and compare both possible Moon signs.'],
         ['Is the Moon sign more important than the Sun sign?', 'Neither is more important. The Sun reflects core identity and the Moon reflects emotional life; both are part of your chart.'],
       ],
     },
@@ -1493,7 +1493,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Using the rising sign calculator', 'Enter your birth date, exact time, and city above. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for what each rising sign expresses.'],
       ],
       faqs: [
-        ['What is a rising sign?', 'Your rising sign (ascendant) is the zodiac sign on the eastern horizon at your birth moment. It reflects first impressions and how you approach the world.'],
+        ['Can my rising sign change within the same day?', 'Yes. The ascendant changes about every two hours, so people born on the same date can have different rising signs.'],
         ['Why do I need my exact birth time?', 'The ascendant changes about every two hours, so an exact birth time and city are required to calculate it accurately.'],
         ['What if I do not know my birth time?', 'Without a birth time the rising sign cannot be reliably determined. You can still calculate your Sun and Moon signs.'],
       ],
@@ -1525,7 +1525,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Using the birth chart calculator', 'Enter your birth date above; add an exact time and city for ascendant, midheaven, and houses. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for deeper readings.'],
       ],
       faqs: [
-        ['What is a birth chart?', 'A birth chart is a snapshot of the Sun, Moon, and planets at the moment and place you were born — the basis for reading personality patterns in astrology.'],
+        ['What information does the birth chart calculator show?', 'It shows the major planets by zodiac sign and degree, plus angles and house-sensitive points when a birth time and city are available.'],
         ['Is the birth chart calculator free?', 'Yes. You can calculate your natal placements for free, with no account required.'],
         ['Do I need my birth time?', 'A date gives you most planetary signs. An exact birth time and city are needed for your ascendant, midheaven, and house placements.'],
       ],
@@ -1637,7 +1637,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         ['Composite vs synastry', 'Synastry studies the aspects between two charts; the composite condenses both into one relationship chart. Many astrologers use them together. For the aspect view, try the synastry calculator, and see the AstrologyWiki wiki for a deeper written guide.'],
       ],
       faqs: [
-        ['What is a composite chart?', 'A composite chart is a single chart made from the midpoints of two birth charts, representing the relationship itself rather than either individual.'],
+        ['What does this calculator output?', 'It outputs a midpoint chart for the relationship, listing composite planet positions by sign and degree when both source charts have the needed placements.'],
         ['How is a composite chart different from synastry?', 'Synastry compares the aspects between two separate charts; a composite merges them into one chart that symbolises the partnership.'],
         ['Do I need birth times for a composite chart?', 'A date and city give you the planetary midpoints. A birth time sharpens the Moon and is needed for the composite angles.'],
       ],

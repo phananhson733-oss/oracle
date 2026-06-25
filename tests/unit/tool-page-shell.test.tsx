@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // INPUT: ToolPageShell + per-tool SEO content map.
-// OUTPUT: Guards individual calculator pages: wide content shell + visible tool-specific landing sections.
-// POS: Regression test for /:lang/<tool> pages so SEO copy is visible in the hydrated SPA, not only in static stubs.
+// OUTPUT: Guards individual calculator pages: wide content shell + visible, non-duplicative tool-specific landing sections.
+// POS: Regression test for /:lang/<tool> pages so SEO copy is visible in the hydrated SPA, not only in static stubs, without repeated guide/FAQ headings.
 
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
@@ -11,6 +11,12 @@ import { TOOLS } from "../../components/tools/toolsCatalog";
 
 const uniqueValues = (values: string[]) =>
   new Set(values.map((value) => value.trim()));
+
+const normalizeHeading = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 
 describe("ToolPageShell", () => {
   beforeEach(() => {
@@ -41,7 +47,7 @@ describe("ToolPageShell", () => {
     ).toBeTruthy();
     expect(
       screen.getByRole("heading", {
-        name: /How to use Moon Sign Calculator/i,
+        name: /About Moon Sign Calculator/i,
       }),
     ).toBeTruthy();
     expect(
@@ -51,7 +57,7 @@ describe("ToolPageShell", () => {
       screen.getByRole("heading", { name: /Moon Sign Calculator FAQ/i }),
     ).toBeTruthy();
     expect(
-      screen.getByText(/Do I need my birth time for my Moon sign/i),
+      screen.getByText(/Can I calculate my Moon sign without a birth time/i),
     ).toBeTruthy();
   });
 
@@ -95,5 +101,24 @@ describe("ToolPageShell", () => {
     expect(uniqueValues(content.map((item) => item.faqs[0].heading)).size).toBe(
       TOOLS.length,
     );
+  });
+
+  it("does not repeat visible guide or FAQ headings within a tool page", () => {
+    for (const tool of TOOLS) {
+      const content = TOOL_SEO_CONTENT[tool.slug];
+      const headings = [
+        `When to use ${content.title}?`,
+        `About ${content.title}`,
+        ...content.sections.map((section) => section.heading),
+        `${content.title} FAQ`,
+        ...content.faqs.map((faq) => faq.heading),
+      ].map(normalizeHeading);
+
+      const duplicates = headings.filter(
+        (heading, index) => headings.indexOf(heading) !== index,
+      );
+
+      expect(duplicates, `${tool.slug} duplicate headings`).toEqual([]);
+    }
   });
 });
