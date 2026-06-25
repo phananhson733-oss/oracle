@@ -831,6 +831,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'darwin-nunez-zodiac-sign',
   'emma-watson-zodiac-sign',
   'mariah-carey-zodiac-sign',
   'marcus-rashford-zodiac-sign',
