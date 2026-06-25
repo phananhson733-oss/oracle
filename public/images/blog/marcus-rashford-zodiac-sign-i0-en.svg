@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="Marcus Rashford's Chart Placements at a Glance">
+  <defs>
+    <linearGradient id="marcusrashfordzodiacsign0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="marcusrashfordzodiacsign0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="marcusrashfordzodiacsign0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#marcusrashfordzodiacsign0en-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#marcusrashfordzodiacsign0en-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#marcusrashfordzodiacsign0en-neb2)"/>
+  <circle cx="24.3" cy="216.5" r="0.63" fill="#cfc8ea" opacity="0.31"/><circle cx="135.7" cy="327.8" r="0.69" fill="#cfc8ea" opacity="0.52"/><circle cx="483.0" cy="216.9" r="1.65" fill="#cfc8ea" opacity="0.13"/><circle cx="385.4" cy="218.4" r="0.66" fill="#cfc8ea" opacity="0.37"/><circle cx="329.4" cy="252.3" r="0.88" fill="#cfc8ea" opacity="0.25"/><circle cx="324.3" cy="379.2" r="1.08" fill="#cfc8ea" opacity="0.16"/><circle cx="79.5" cy="366.6" r="0.85" fill="#cfc8ea" opacity="0.54"/><circle cx="515.4" cy="413.1" r="1.50" fill="#cfc8ea" opacity="0.52"/><circle cx="206.4" cy="393.8" r="0.86" fill="#cfc8ea" opacity="0.27"/><circle cx="224.4" cy="162.4" r="1.52" fill="#cfc8ea" opacity="0.39"/><circle cx="64.4" cy="294.0" r="1.19" fill="#cfc8ea" opacity="0.26"/><circle cx="337.4" cy="214.0" r="1.59" fill="#cfc8ea" opacity="0.34"/><circle cx="524.2" cy="358.0" r="0.44" fill="#cfc8ea" opacity="0.14"/><circle cx="680.7" cy="261.6" r="1.59" fill="#cfc8ea" opacity="0.12"/><circle cx="655.4" cy="17.8" r="0.65" fill="#cfc8ea" opacity="0.16"/><circle cx="706.6" cy="83.2" r="1.25" fill="#cfc8ea" opacity="0.17"/><circle cx="378.6" cy="221.8" r="1.06" fill="#cfc8ea" opacity="0.13"/><circle cx="447.1" cy="58.0" r="0.67" fill="#cfc8ea" opacity="0.27"/><circle cx="695.4" cy="311.8" r="1.63" fill="#cfc8ea" opacity="0.43"/><circle cx="215.0" cy="414.9" r="1.37" fill="#cfc8ea" opacity="0.21"/><circle cx="122.1" cy="301.0" r="0.69" fill="#cfc8ea" opacity="0.39"/><circle cx="105.1" cy="72.9" r="1.59" fill="#cfc8ea" opacity="0.29"/><circle cx="101.4" cy="279.3" r="1.48" fill="#cfc8ea" opacity="0.54"/><circle cx="468.0" cy="394.5" r="0.81" fill="#cfc8ea" opacity="0.40"/><circle cx="510.9" cy="171.0" r="0.48" fill="#cfc8ea" opacity="0.41"/><circle cx="582.1" cy="140.5" r="0.95" fill="#cfc8ea" opacity="0.26"/><circle cx="464.2" cy="320.1" r="1.17" fill="#cfc8ea" opacity="0.27"/><circle cx="422.2" cy="348.3" r="0.63" fill="#cfc8ea" opacity="0.37"/><circle cx="239.3" cy="201.5" r="1.13" fill="#cfc8ea" opacity="0.27"/><circle cx="142.8" cy="337.9" r="1.10" fill="#cfc8ea" opacity="0.53"/><circle cx="633.3" cy="24.8" r="0.92" fill="#cfc8ea" opacity="0.18"/><circle cx="679.7" cy="37.7" r="0.93" fill="#cfc8ea" opacity="0.35"/><circle cx="193.9" cy="245.3" r="1.43" fill="#cfc8ea" opacity="0.51"/><circle cx="538.5" cy="336.4" r="0.88" fill="#cfc8ea" opacity="0.48"/><circle cx="503.7" cy="422.6" r="0.76" fill="#cfc8ea" opacity="0.24"/><circle cx="547.1" cy="194.3" r="0.98" fill="#cfc8ea" opacity="0.16"/><circle cx="138.4" cy="328.8" r="1.03" fill="#cfc8ea" opacity="0.47"/><circle cx="61.5" cy="101.7" r="1.02" fill="#cfc8ea" opacity="0.24"/><path d="M 635.7155132275075 322.0 L 636.3 325.3 L 639.6 325.89795736409724 L 636.3 326.5 L 635.7155132275075 329.8 L 635.1 326.5 L 631.9 325.89795736409724 L 635.1 325.3 Z" fill="#f6e6bf" opacity="0.7486304599326103"/><path d="M 470.12572093866765 168.0 L 470.7 171.2 L 473.9 171.80867808219045 L 470.7 172.4 L 470.12572093866765 175.6 L 469.5 172.4 L 466.3 171.80867808219045 L 469.5 171.2 Z" fill="#f6e6bf" opacity="0.5813534545246511"/><path d="M 88.10363606922328 238.4 L 88.6 240.8 L 90.9 241.22238816693425 L 88.6 241.7 L 88.10363606922328 244.1 L 87.7 241.7 L 85.3 241.22238816693425 L 87.7 240.8 Z" fill="#f6e6bf" opacity="0.7041370274033397"/><path d="M 395.4310178812593 328.2 L 396.0 331.3 L 399.1 331.84581297729164 L 396.0 332.4 L 395.4310178812593 335.5 L 394.8 332.4 L 391.8 331.84581297729164 L 394.8 331.3 Z" fill="#f6e6bf" opacity="0.5001518548000604"/><path d="M 590.9536820333451 307.0 L 591.5 309.8 L 594.3 310.3930821996182 L 591.5 310.9 L 590.9536820333451 313.8 L 590.4 310.9 L 587.6 310.3930821996182 L 590.4 309.8 Z" fill="#f6e6bf" opacity="0.6961931094061583"/><path d="M 329.4 252.3 L 337.4 214.0 L 680.7 261.6 L 706.6 83.2 L 422.2 348.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Marcus Rashford's Chart Placements at a Glance</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#marcusrashfordzodiacsign0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#marcusrashfordzodiacsign0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="355" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#marcusrashfordzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#marcusrashfordzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Scorpio Sun</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Core identity aimed at depth, control, and renewal; calm public surface over an</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">intense private core</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#marcusrashfordzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#marcusrashfordzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Scorpio Moon (often cited)</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Private emotional reality: feelings processed inwardly, shown only to those</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">closest</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#marcusrashfordzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#marcusrashfordzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Capricorn Rising (disputed)</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Disciplined, reputation-aware public conduct; birth time unverified so this</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">placement remains uncertain</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#marcusrashfordzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#marcusrashfordzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Mars in Sagittarius</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Outspoken conviction on chosen causes; blunt candor that contrasts the guarded</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Scorpio manner</text>
+  <path d="M 202.22749999999988 416.4 L 202.6 418.6 L 204.8 419 L 202.6 419.4 L 202.22749999999988 421.6 L 201.8 419.4 L 199.6 419 L 201.8 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 416.4 L 558.2 418.6 L 560.4 419 L 558.2 419.4 L 557.7725000000002 421.6 L 557.4 419.4 L 555.2 419 L 557.4 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
