@@ -21,7 +21,7 @@ export const folarinBalogunBirthChartEn: WikiArticle = {
 
 ## What Is the Folarin Balogun Birth Chart?
 
-Folarin Balogun birth chart is a symbolic reading of the U.S. striker's known birth date, July 3, 2001, with his birth time left unconfirmed. In plain terms, it reads his Cancer Sun as the clearest verified placement, while holding the Moon, Ascendant, and houses with caution because the exact birth time is not public. In the broader *pillar page on World Cup player astrology*, this kind of chart is best used as a reflective lens, not a prediction engine. Balogun's chart is **a Cancer Sun profile shaped by loyalty, protection, and identity choice**.
+Folarin Balogun birth chart is a symbolic reading of the U.S. striker's known birth date, July 3, 2001, with his birth time left unconfirmed. In plain terms, it reads his Cancer Sun as the clearest verified placement, while holding the Moon, Ascendant, and houses with caution because the exact birth time is not public. In the broader [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) frame, this kind of chart is best used as a reflective lens, not a prediction engine. Balogun's chart is **a Cancer Sun profile shaped by loyalty, protection, and identity choice**.
 
 - Centers the known Cancer Sun rather than guessing an unverified rising sign
 - Frames his USA decision as identity-rooted loyalty, not simple career math
@@ -31,7 +31,7 @@ Folarin Balogun birth chart is a symbolic reading of the U.S. striker's known bi
 
 Understanding folarin balogun birth chart matters because most search results flatten him into goals, transfers, nationality, and stats. That misses the harder human question: why would a player eligible for England, Nigeria, and the United States choose the path that felt less obvious from the outside? A Cancer Sun reading does not prove motive, but it gives a useful language for emotionally anchored ambition: the kind that asks where a person belongs before asking where the easiest opportunity sits.
 
-That distinction also matters for fans using *guide to Sun signs in athlete astrology* to read World Cup 2026 storylines. A thin reading says "Balogun picked the U.S. because it helped his career." A better reading asks how loyalty, family story, national identity, and team role may interact. For self-awareness, the point is not to copy his choice; it is to notice where a public decision reveals the tension between recognition and belonging.
+That distinction also matters for fans using [zodiac signs as World Cup 2026 teams](/en/wiki/zodiac-signs-as-world-cup-2026-teams) to read tournament storylines. A thin reading says "Balogun picked the U.S. because it helped his career." A better reading asks how loyalty, family story, national identity, and team role may interact. For self-awareness, the point is not to copy his choice; it is to notice where a public decision reveals the tension between recognition and belonging.
 
 It can also help readers examine their own choices without turning a footballer's life into a moral lesson. Cancer symbolism often raises questions about what we protect, who we feel responsible to, and when emotional truth becomes more important than outside applause. In Balogun's case, the public facts are limited, but the pattern is still useful: identity is not always the same thing as convenience. Sometimes the more revealing path is the one that explains who a person is willing to stand with when everyone is watching.
 
@@ -99,9 +99,9 @@ Balogun's chart gives one player-level case study inside a larger team story. Fo
 ## Related Reading
 
 - [guide to birth chart basics](/en/wiki/how-to-read-birth-chart) — Helpful for separating confirmed placements from birth-time-dependent details.
-- *comparison of Cancer and Capricorn polarity* — Useful for reading protection, ambition, and public responsibility together.
-- *overview of astrology for World Cup teams* — Places player charts inside national-team symbolism and tournament pressure.
-- *guide to transits in athlete astrology* — Explains how current timing differs from natal chart interpretation.
+- [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — Useful for reading Cancer symbolism in tournament pressure.
+- [world cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — Places player charts inside national-team symbolism and tournament pressure.
+- [transits](/en/wiki/transits) — Explains how current timing differs from natal chart interpretation.
 - [Folarin Balogun (Wikipedia)](https://en.wikipedia.org/wiki/Folarin_Balogun)
 
 ## Take Action
