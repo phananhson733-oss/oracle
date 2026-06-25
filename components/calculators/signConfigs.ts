@@ -8,6 +8,7 @@
 import type { NatalFacts, PlanetPosition, Language } from "../../types";
 import { fetchNatalChart } from "../../services/apiClient";
 import { planetLabel, signLabel } from "./astroDisplay";
+import { absoluteLongitude } from "./crossAspects";
 import {
   birthToPrefill,
   type CalculatorConfig,
@@ -15,6 +16,12 @@ import {
   type CalculatorResult,
   type CalculatorPlacement,
   type CalculatorFunnel,
+  type BirthChartAspectDatum,
+  type BirthChartDetails,
+  type BirthChartHouseDatum,
+  type BirthChartMoonPhaseDatum,
+  type BirthChartSignatureDatum,
+  type BirthChartWheelPoint,
 } from "./BirthDataCalculator";
 
 // fetchNatalChart 接收 UserProfile|SynastryProfile（私有联合类型）；计算器只填它读取的字段。
@@ -62,6 +69,353 @@ function dominanceOf(chart: NatalFacts) {
   return {
     elements: chart.dominance.elements,
     modalities: chart.dominance.modalities,
+  };
+}
+
+const SIGN_ORDER = [
+  "Aries",
+  "Taurus",
+  "Gemini",
+  "Cancer",
+  "Leo",
+  "Virgo",
+  "Libra",
+  "Scorpio",
+  "Sagittarius",
+  "Capricorn",
+  "Aquarius",
+  "Pisces",
+];
+
+const PLANET_ORDER = [
+  "Sun",
+  "Moon",
+  "Mercury",
+  "Venus",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+  "Pluto",
+];
+
+const POINT_ORDER = [
+  "Ascendant",
+  "Midheaven",
+  "Descendant",
+  "IC",
+  "North Node",
+  "South Node",
+  "Chiron",
+];
+
+const ASPECT_LABELS: Record<string, { en: string; zh: string }> = {
+  conjunction: { en: "Conjunction", zh: "合相" },
+  opposition: { en: "Opposition", zh: "对冲" },
+  square: { en: "Square", zh: "四分相" },
+  trine: { en: "Trine", zh: "三分相" },
+  sextile: { en: "Sextile", zh: "六合相" },
+};
+
+const MOON_PHASE_LABELS = [
+  { en: "New Moon", zh: "新月" },
+  { en: "Waxing Crescent", zh: "蛾眉月" },
+  { en: "First Quarter", zh: "上弦月" },
+  { en: "Waxing Gibbous", zh: "盈凸月" },
+  { en: "Full Moon", zh: "满月" },
+  { en: "Waning Gibbous", zh: "亏凸月" },
+  { en: "Last Quarter", zh: "下弦月" },
+  { en: "Waning Crescent", zh: "残月" },
+];
+
+const ROMAN_HOUSES = [
+  "I",
+  "II",
+  "III",
+  "IV",
+  "V",
+  "VI",
+  "VII",
+  "VIII",
+  "IX",
+  "X",
+  "XI",
+  "XII",
+];
+
+function normalizeLongitude(value: number): number {
+  return ((value % 360) + 360) % 360;
+}
+
+function signAtLongitude(longitude: number): {
+  sign: string;
+  degree: number;
+  minute: number;
+} {
+  const lon = normalizeLongitude(longitude);
+  const signIndex = Math.min(11, Math.floor(lon / 30));
+  const rawDegree = lon - signIndex * 30;
+  let degree = Math.floor(rawDegree);
+  let minute = Math.round((rawDegree - degree) * 60);
+  if (minute >= 60) {
+    degree += 1;
+    minute = 0;
+  }
+  if (degree >= 30) {
+    return {
+      sign: SIGN_ORDER[(signIndex + 1) % 12],
+      degree: 0,
+      minute,
+    };
+  }
+  return { sign: SIGN_ORDER[signIndex], degree, minute };
+}
+
+function toWheelPoint(
+  pos: PlanetPosition,
+  lang: Language,
+): BirthChartWheelPoint | null {
+  const longitude = absoluteLongitude(pos);
+  if (longitude == null) return null;
+  return {
+    ...toPlacement(pos, lang),
+    name: pos.name,
+    longitude,
+  };
+}
+
+function pointFromLongitude(
+  name: string,
+  longitude: number,
+  lang: Language,
+  house?: number,
+): BirthChartWheelPoint {
+  const at = signAtLongitude(longitude);
+  return {
+    name,
+    planet: undefined,
+    sign: at.sign,
+    label: name,
+    value: signLabel(at.sign, lang),
+    degree: at.degree,
+    minute: at.minute,
+    house,
+    retrograde: false,
+    href: signHref(at.sign),
+    longitude: normalizeLongitude(longitude),
+  };
+}
+
+function buildMoonPhase(
+  sun?: BirthChartWheelPoint,
+  moon?: BirthChartWheelPoint,
+  lang?: Language,
+): BirthChartMoonPhaseDatum | undefined {
+  if (!sun || !moon || !lang) return undefined;
+  const angle = normalizeLongitude(moon.longitude - sun.longitude);
+  const phaseIndex = Math.floor(((angle + 22.5) % 360) / 45);
+  const phase = MOON_PHASE_LABELS[phaseIndex] ?? MOON_PHASE_LABELS[0];
+  const illumination = ((1 - Math.cos((angle * Math.PI) / 180)) / 2) * 100;
+  const age = (angle / 360) * 29.530588;
+  return {
+    name: phase.en,
+    label: lang === "zh" ? phase.zh : phase.en,
+    angle: Number(angle.toFixed(2)),
+    age: Number(age.toFixed(2)),
+    illumination: Number(illumination.toFixed(1)),
+  };
+}
+
+function buildAspects(
+  chart: NatalFacts,
+  lang: Language,
+): BirthChartAspectDatum[] {
+  return chart.aspects
+    .map((aspect) => ({
+      planet1: aspect.planet1,
+      planet2: aspect.planet2,
+      planet1Label: bodyLabel(aspect.planet1, lang),
+      planet2Label: bodyLabel(aspect.planet2, lang),
+      type: aspect.type,
+      typeLabel:
+        ASPECT_LABELS[aspect.type]?.[lang] ??
+        (lang === "zh" ? aspect.type : aspect.type),
+      orb: aspect.orb,
+      isApplying: aspect.isApplying,
+    }))
+    .sort((a, b) => a.orb - b.orb);
+}
+
+function buildHouses(
+  chart: NatalFacts,
+  wheelPoints: BirthChartWheelPoint[],
+  lang: Language,
+): BirthChartHouseDatum[] {
+  const cusps = Array.isArray(chart.houseCusps)
+    ? chart.houseCusps.filter((n) => Number.isFinite(n))
+    : [];
+  if (cusps.length !== 12) return [];
+  return cusps.map((longitude, index) => {
+    const number = index + 1;
+    const title =
+      lang === "zh"
+        ? `第 ${ROMAN_HOUSES[index]} 宫`
+        : `House ${ROMAN_HOUSES[index]}`;
+    return {
+      number,
+      title,
+      cusp: pointFromLongitude(title, longitude, lang, number),
+      occupants: wheelPoints.filter((p) => p.house === number),
+    };
+  });
+}
+
+function topEntry(
+  counts: Map<string, number>,
+): { key: string; value: number } | null {
+  let best: { key: string; value: number } | null = null;
+  counts.forEach((value, key) => {
+    if (!best || value > best.value) best = { key, value };
+  });
+  return best;
+}
+
+function buildSignature(
+  wheelPoints: BirthChartWheelPoint[],
+  houses: BirthChartHouseDatum[],
+  aspects: BirthChartAspectDatum[],
+  chart: NatalFacts,
+  lang: Language,
+): BirthChartSignatureDatum[] {
+  const out: BirthChartSignatureDatum[] = [];
+  const elementEntries = Object.entries(chart.dominance.elements).sort(
+    (a, b) => b[1] - a[1],
+  );
+  const modalityEntries = Object.entries(chart.dominance.modalities).sort(
+    (a, b) => b[1] - a[1],
+  );
+  const elementLabel: Record<string, { en: string; zh: string }> = {
+    fire: { en: "Fire", zh: "火" },
+    earth: { en: "Earth", zh: "土" },
+    air: { en: "Air", zh: "风" },
+    water: { en: "Water", zh: "水" },
+  };
+  const modalityLabel: Record<string, { en: string; zh: string }> = {
+    cardinal: { en: "Cardinal", zh: "基本" },
+    fixed: { en: "Fixed", zh: "固定" },
+    mutable: { en: "Mutable", zh: "变动" },
+  };
+  if (elementEntries[0]) {
+    out.push({
+      label: lang === "zh" ? "最高元素计数" : "Highest element count",
+      value: `${elementLabel[elementEntries[0][0]]?.[lang] ?? elementEntries[0][0]} · ${elementEntries[0][1]}`,
+    });
+  }
+  if (modalityEntries[0]) {
+    out.push({
+      label: lang === "zh" ? "最高三模态计数" : "Highest modality count",
+      value: `${modalityLabel[modalityEntries[0][0]]?.[lang] ?? modalityEntries[0][0]} · ${modalityEntries[0][1]}`,
+    });
+  }
+  const signCounts = new Map<string, number>();
+  PLANET_ORDER.map((name) => wheelPoints.find((p) => p.name === name))
+    .filter((p): p is BirthChartWheelPoint => !!p)
+    .forEach((p) => signCounts.set(p.sign, (signCounts.get(p.sign) ?? 0) + 1));
+  const topSign = topEntry(signCounts);
+  if (topSign) {
+    out.push({
+      label: lang === "zh" ? "星体最多星座" : "Most occupied sign",
+      value: `${signLabel(topSign.key, lang)} · ${topSign.value}`,
+    });
+  }
+  const topHouse = houses
+    .map((house) => ({
+      title: house.title,
+      value: house.occupants.length,
+    }))
+    .sort((a, b) => b.value - a.value)[0];
+  if (topHouse && topHouse.value > 0) {
+    out.push({
+      label: lang === "zh" ? "星体最多宫位" : "Most occupied house",
+      value: `${topHouse.title} · ${topHouse.value}`,
+    });
+  }
+  const aspectCounts = new Map<string, number>();
+  aspects.forEach((aspect) => {
+    aspectCounts.set(
+      aspect.planet1Label,
+      (aspectCounts.get(aspect.planet1Label) ?? 0) + 1,
+    );
+    aspectCounts.set(
+      aspect.planet2Label,
+      (aspectCounts.get(aspect.planet2Label) ?? 0) + 1,
+    );
+  });
+  const aspectHub = topEntry(aspectCounts);
+  if (aspectHub) {
+    out.push({
+      label: lang === "zh" ? "相位连接最多星体" : "Most aspected body",
+      value: `${aspectHub.key} · ${aspectHub.value}`,
+    });
+  }
+  if (aspects[0]) {
+    out.push({
+      label: lang === "zh" ? "最紧相位" : "Tightest aspect",
+      value: `${aspects[0].planet1Label} ${aspects[0].typeLabel} ${aspects[0].planet2Label} · ${aspects[0].orb.toFixed(2)}°`,
+    });
+  }
+  return out;
+}
+
+function buildBirthChartDetails(
+  birth: CalculatorBirth,
+  chart: NatalFacts,
+  lang: Language,
+): BirthChartDetails {
+  const byName = new Map(chart.positions.map((p) => [p.name, p]));
+  const wheelPoints = [...PLANET_ORDER, ...POINT_ORDER]
+    .map((name) => byName.get(name))
+    .filter((p): p is PlanetPosition => !!p)
+    .map((p) => toWheelPoint(p, lang))
+    .filter((p): p is BirthChartWheelPoint => !!p);
+  const byWheelName = new Map(wheelPoints.map((p) => [p.name, p]));
+  const planets = PLANET_ORDER.map((name) => byWheelName.get(name)).filter(
+    (p): p is BirthChartWheelPoint => !!p,
+  );
+  const points = POINT_ORDER.map((name) => byWheelName.get(name)).filter(
+    (p): p is BirthChartWheelPoint => !!p,
+  );
+  const core = ["Sun", "Moon", "Ascendant"]
+    .map((name) => byWheelName.get(name))
+    .filter((p): p is BirthChartWheelPoint => !!p)
+    .map((p) =>
+      p.name === "Ascendant"
+        ? { ...p, label: lang === "zh" ? "上升" : "Rising" }
+        : p,
+    );
+  const aspects = buildAspects(chart, lang);
+  const houses = buildHouses(chart, wheelPoints, lang);
+  return {
+    birth: {
+      date: birth.birthDate,
+      time: birth.birthTime,
+      city: birth.birthCity,
+      timezone: birth.timezone,
+      lat: birth.lat,
+      lon: birth.lon,
+      houseSystem: chart.houseCusps?.length === 12 ? "Placidus" : "No houses",
+      zodiac: "Tropical",
+    },
+    core,
+    planets,
+    points,
+    wheelPoints,
+    aspects,
+    houses,
+    moonPhase: buildMoonPhase(byWheelName.get("Sun"), byWheelName.get("Moon"), lang),
+    signature: buildSignature(wheelPoints, houses, aspects, chart, lang),
+    houseCusps: chart.houseCusps ?? [],
   };
 }
 
@@ -261,20 +615,7 @@ export const bigThreeConfig: CalculatorConfig = {
 };
 
 // ── Birth Chart（全位置概览） ─────────────────────────────────────────────────
-const CHART_ORDER = [
-  "Sun",
-  "Moon",
-  "Mercury",
-  "Venus",
-  "Mars",
-  "Jupiter",
-  "Saturn",
-  "Uranus",
-  "Neptune",
-  "Pluto",
-  "Ascendant",
-  "Midheaven",
-];
+const CHART_ORDER = [...PLANET_ORDER, "Ascendant", "Midheaven"];
 
 export const birthChartConfig: CalculatorConfig = {
   idPrefix: "birth-chart",
@@ -305,31 +646,29 @@ export const birthChartConfig: CalculatorConfig = {
       );
     }
     const sun = byName.get("Sun");
+    const birthChart = buildBirthChartDetails(birth, chart, lang);
     return {
       headline: lang === "zh" ? "你的出生星盘" : "Your Birth Chart",
       placements,
       dominance: dominanceOf(chart),
-      body:
-        lang === "zh"
-          ? "每个行星落入的星座（带度数与逆行标记）是阅读你人格模式的起点。上升与天顶依赖精确出生时间。点开任一星座可深入阅读。"
-          : "Each planet's sign placement — with its degree and retrograde marker — is the starting point for reading your personality patterns. Ascendant and Midheaven need an exact birth time. Tap any sign to read deeper.",
+      birthChart,
       funnel: onboardingFunnel(
         birth,
         lang,
         sun?.sign ?? "",
         {
-          en: "Get your full reading — houses, aspects & a personalized interpretation",
-          zh: "获取完整解读——宫位、相位与个性化分析",
+          en: "Save this chart data",
+          zh: "保存这份星盘数据",
         },
         [
           {
-            label: lang === "zh" ? "如何读懂出生星盘" : "How to read your chart",
+            label: lang === "zh" ? "出生星盘资料页" : "Birth chart reference",
             href: "/wiki/how-to-read-birth-chart",
           },
         ],
         {
-          en: "This is your placement snapshot. Save it to unlock house-by-house and aspect-by-aspect interpretation.",
-          zh: "这是你的落座快照。保存后即可解锁逐宫位、逐相位的深度解读。",
+          en: "The calculator result above is data only: placements, aspects, houses, and counts.",
+          zh: "上方结果只展示数据：落座、相位、宫位与计数。",
         },
       ),
     };

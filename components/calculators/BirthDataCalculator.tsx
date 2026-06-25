@@ -1,7 +1,8 @@
 // INPUT: CalculatorConfig（每个计算器的 compute/copy/needsTime）、useLanguage、useCalculatorTheme、useCityAutocomplete、
 //        DateSelectGroup、services/apiClient（searchCities）、services/analytics（trackEvent）、
 //        共享原语 ToolPageShell / ToolResultCard / PlacementList / ElementBalanceBar / ToolFunnelCTA / GlyphBadge。
-// OUTPUT: 配置驱动的出生数据计算器外壳——出生日期(+可选时间/城市)表单 → config.compute(birth) → 品牌化富结果卡 + 导流 CTA。
+// OUTPUT: 配置驱动的出生数据计算器外壳——出生日期(+可选时间/城市)表单 → config.compute(birth)
+//         → 品牌化富结果卡；Birth Chart 可切到专用数据结果页（轮盘/行星/相位/宫位，数据展示，无 AI 解读）。
 //         所有 sign 类计算器(Moon Sign / Rising / Big Three / Birth Chart …)复用此壳，仅传不同 config。
 // POS: 计算器矩阵(D)共享脚手架。匿名计算(fetchNatalChart skipCache→不缓存明文出生数据，隐私红线 #2)。
 //      静态 SEO 正文在 scripts/generate-seo-pages.mjs 的 stub 里，本组件水合后接管交互。若更新此文件，务必更新 calculators/FOLDER.md。
@@ -27,6 +28,7 @@ import { ElementBalanceBar } from "./ElementBalanceBar";
 import type { ElementCounts, ModalityCounts } from "./ElementBalanceBar";
 import { ToolFunnelCTA } from "./ToolFunnelCTA";
 import type { OnboardingPrefill, FunnelSecondaryLink } from "./ToolFunnelCTA";
+import { BirthChartResultView } from "./BirthChartResultView";
 
 export interface GeoResult {
   city: string;
@@ -72,6 +74,64 @@ export interface CalculatorFunnel {
   sign?: string; // categorical sign，仅供 analytics（隐私安全）
 }
 
+export interface BirthChartWheelPoint extends CalculatorPlacement {
+  name: string;
+  longitude: number;
+}
+
+export interface BirthChartAspectDatum {
+  planet1: string;
+  planet2: string;
+  planet1Label: string;
+  planet2Label: string;
+  type: string;
+  typeLabel: string;
+  orb: number;
+  isApplying: boolean;
+}
+
+export interface BirthChartHouseDatum {
+  number: number;
+  title: string;
+  cusp?: BirthChartWheelPoint;
+  occupants: BirthChartWheelPoint[];
+}
+
+export interface BirthChartMoonPhaseDatum {
+  name: string;
+  label: string;
+  angle: number;
+  age: number;
+  illumination: number;
+}
+
+export interface BirthChartSignatureDatum {
+  label: string;
+  value: string;
+}
+
+export interface BirthChartDetails {
+  birth: {
+    date: string;
+    time?: string;
+    city: string;
+    timezone: string;
+    lat: number;
+    lon: number;
+    houseSystem: string;
+    zodiac: string;
+  };
+  core: BirthChartWheelPoint[];
+  planets: BirthChartWheelPoint[];
+  points: BirthChartWheelPoint[];
+  wheelPoints: BirthChartWheelPoint[];
+  aspects: BirthChartAspectDatum[];
+  houses: BirthChartHouseDatum[];
+  moonPhase?: BirthChartMoonPhaseDatum;
+  signature: BirthChartSignatureDatum[];
+  houseCusps: number[];
+}
+
 // compute 的返回：展示就绪的结果（外壳不懂占星，只渲染）。
 export interface CalculatorResult {
   headline: string; // 主结论，如 "Your Moon is in Cancer"
@@ -81,6 +141,7 @@ export interface CalculatorResult {
   heroGlyph?: { planet?: string; sign?: string }; // 单一落座工具的 hero 字形
   funnel?: CalculatorFunnel; // 导流 CTA
   body?: string; // 一段中性解读
+  birthChart?: BirthChartDetails; // Birth Chart 专用数据结果页（仅结构化数据，无 AI 解读）
 }
 
 export interface CalculatorCopy {
@@ -460,7 +521,15 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
         </div>
       )}
 
-      {state === "result" && result && (
+      {state === "result" && result?.birthChart ? (
+        <BirthChartResultView
+          innerRef={resultRef}
+          tabIndex={-1}
+          result={result}
+          lang={lang}
+          tool={config.slug}
+        />
+      ) : state === "result" && result ? (
         <ToolResultCard
           innerRef={resultRef}
           tabIndex={-1}
@@ -536,7 +605,7 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
             </p>
           )}
         </ToolResultCard>
-      )}
+      ) : null}
     </ToolPageShell>
   );
 };

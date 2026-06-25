@@ -1352,15 +1352,15 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     const saturnDescription =
       'Calculate when your Saturn Return happens. Enter your birth date to discover your Saturn Return dates, meaning, and how this major life transit affects you.';
     const saturnBody = [
-      '## What is a Saturn Return?',
+      '## Saturn Return cycle basics',
       'A Saturn Return is the moment the planet Saturn comes back to the exact position it held in the sky when you were born. Because Saturn takes about 29.5 years to orbit the Sun, this homecoming happens at roughly ages 27-30, 56-60, and 85-90. Astrologers treat it as a threshold between life chapters — the end of one structure and the building of the next.',
-      '## When is my Saturn Return?',
+      '## Personal return window',
       'Your first Saturn Return usually begins between ages 27 and 30. Enter your birth date in the calculator above to get your personal Saturn Return dates, including when Saturn first enters its return and when it finishes. The exact timing depends on the year you were born, because Saturn does not move at a perfectly even pace.',
-      '## How long does a Saturn Return last?',
+      '## Return duration and retrogrades',
       'A Saturn Return is not a single day — it is a transit that unfolds over roughly two to three years as Saturn moves across its birth position, often retrograding back and forth. Most people feel it most strongly in the year Saturn is exactly conjunct its natal point.',
-      '## What does the Saturn Return mean?',
+      '## Saturn Return themes',
       'In modern psychological astrology, the Saturn Return is associated with maturity, responsibility, and realigning your life with your real values. It is not a prediction of fate. It tends to surface questions about career, relationships, and identity — a developmental checkpoint where you decide what to keep building and what to let go. Treat it as a tendency and an invitation, not a guarantee.',
-      '## Using the Saturn Return Calculator',
+      '## Calculator results and next steps',
       'This free calculator uses your birth date to estimate your Saturn Return window. No account or birth time is required. For a deeper reading, pair your Saturn Return dates with your full birth chart and the psychological astrology articles in the AstrologyWiki wiki.',
     ].join('\n\n');
     const saturnFaqSchema = {
@@ -1412,15 +1412,15 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     const timelineDescription =
       'See your astrological transit energy day by day as a candlestick timeline. A free, neutral map of your energy rhythm - loud vs quiet, not good vs bad. Not a prediction.';
     const timelineBody = [
-      '## What is the Energy Timeline?',
+      '## Transit energy timeline basics',
       'The Energy Timeline is a free astrology tool that turns your transits - how the moving planets relate to your birth chart - into a day-by-day candlestick chart of energy intensity. Instead of a single horoscope, you see a rhythm: stretches where a lot is moving in your sky, and quieter stretches where things settle. The height of each candle reflects how active the energy is, measured only against your own range, never compared to anyone else.',
-      '## How the transit candles work',
+      '## Daily candle structure',
       'Each candle summarises one day. The thin line (wick) shows the full range the energy moved across that day; the bar shows where it started and where it ended. We label these start, peak, low, and end - they are an interval summary, not a stock chart open/high/low/close, and they carry no buy/sell or up-is-good meaning. A green bar simply means the energy was higher at the end of the day than the start; red means it eased; grey means it stayed roughly steady.',
-      '## How to read your energy rhythm',
+      '## Loud versus quiet rhythm',
       'Read height as loud vs quiet, not good vs bad. A tall candle is a day with a lot of astrological movement - it can feel intense whether the theme is flowing or challenging. A flat candle is a calmer, more consolidating stretch. Tap any day to see what is active: how much of the energy leans flowing (ease) versus friction (challenge you can grow with), and which transit is driving it. Most days are a mix of both.',
-      '## Is the Energy Timeline a prediction?',
+      '## Not a prediction',
       'No. The Energy Timeline maps tendencies in your transits for self-reflection and timing awareness - it does not predict events, outcomes, or fate, and it is not medical, psychological, or financial advice. Astrology here is a mirror for noticing your own rhythm, in line with a psychology-grounded, empowerment-over-fatalism approach. Use it to plan when you might want to push or rest, not as a forecast of what will happen.',
-      '## Using the Energy Timeline (free)',
+      '## Timeline demo and next steps',
       'Open the timeline above to explore a sample chart, then create your own from your birth date, time, and city to see your personal energy rhythm for any month. No payment is needed for the monthly view. For a deeper day-by-day reading, pair your timeline with the AstrologyWiki birth chart and transit tools.',
     ].join('\n\n');
     const timelineFaqSchema = {
@@ -1471,10 +1471,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Moon Sign Calculator - Free & Accurate',
       description: 'Find your Moon sign free. Enter your birth date to discover the sign your Moon was in — the seat of your emotional instincts and inner world.',
       sections: [
-        ['What is a Moon sign?', 'Your Moon sign is the zodiac sign the Moon occupied at the moment you were born. Where the Sun sign reflects your core identity, the Moon sign reflects your emotional instincts, what makes you feel safe, and how you process feelings. In modern psychological astrology it is one of the most personal points in your chart.'],
-        ['How to find your Moon sign', 'Enter your birth date in the calculator above. The Moon moves quickly — it changes sign roughly every two and a half days — so a birth time helps when the Moon changed signs on your birthday, but a date alone is enough for most people. No account is required.'],
-        ['What your Moon sign means', 'Your Moon sign describes your inner emotional landscape and how you instinctively seek comfort. It points to tendencies and needs, not fixed outcomes — treat it as a mirror for self-reflection rather than a prediction. Pair it with your Sun and rising for a fuller picture.'],
-        ['Using the Moon sign calculator', 'This free tool uses Swiss Ephemeris astronomy for accurate placements. For a deeper reading, explore your full birth chart and the psychological astrology articles in the AstrologyWiki wiki.'],
+        ['Moon placement basics', 'Your Moon sign is the zodiac sign the Moon occupied at the moment you were born. Where the Sun sign reflects your core identity, the Moon sign reflects your emotional instincts, what makes you feel safe, and how you process feelings. In modern psychological astrology it is one of the most personal points in your chart.'],
+        ['Finding the Moon placement', 'Enter your birth date in the calculator above. The Moon moves quickly — it changes sign roughly every two and a half days — so a birth time helps when the Moon changed signs on your birthday, but a date alone is enough for most people. No account is required.'],
+        ['Emotional meaning in the chart', 'Your Moon sign describes your inner emotional landscape and how you instinctively seek comfort. It points to tendencies and needs, not fixed outcomes — treat it as a mirror for self-reflection rather than a prediction. Pair it with your Sun and rising for a fuller picture.'],
+        ['Calculator accuracy and next steps', 'This free tool uses Swiss Ephemeris astronomy for accurate placements. For a deeper reading, explore your full birth chart and the psychological astrology articles in the AstrologyWiki wiki.'],
       ],
       faqs: [
         ['Can I calculate my Moon sign without a birth time?', 'Yes, for most birthdays a date is enough. Add a birth time if the Moon changed signs on your birthday or if you want the most precise result.'],
@@ -1487,10 +1487,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Rising Sign (Ascendant) Calculator - Free',
       description: 'Find your rising sign (ascendant) free. Enter your birth date, exact time, and city to discover the sign rising on your eastern horizon at birth.',
       sections: [
-        ['What is a rising sign?', 'Your rising sign, or ascendant, is the zodiac sign that was climbing over the eastern horizon at the exact moment and place you were born. It is often described as the "mask" you meet the world with — your outward style and first impressions — and it sets the layout of the houses in your chart.'],
-        ['Why birth time matters for the ascendant', 'The ascendant changes roughly every two hours, so an accurate birth time and birth city are essential to calculate it correctly. Without a known time the rising sign cannot be determined reliably, and angle-sensitive placements become approximate.'],
-        ['What your rising sign means', 'Your rising sign colours how others first experience you and how you instinctively approach new situations. It describes a tendency and a style, not a destiny. Read it alongside your Sun and Moon for the full "Big Three".'],
-        ['Using the rising sign calculator', 'Enter your birth date, exact time, and city above. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for what each rising sign expresses.'],
+        ['Ascendant placement basics', 'Your rising sign, or ascendant, is the zodiac sign that was climbing over the eastern horizon at the exact moment and place you were born. It is often described as the "mask" you meet the world with — your outward style and first impressions — and it sets the layout of the houses in your chart.'],
+        ['Birth time sensitivity', 'The ascendant changes roughly every two hours, so an accurate birth time and birth city are essential to calculate it correctly. Without a known time the rising sign cannot be determined reliably, and angle-sensitive placements become approximate.'],
+        ['Rising sign meaning in context', 'Your rising sign colours how others first experience you and how you instinctively approach new situations. It describes a tendency and a style, not a destiny. Read it alongside your Sun and Moon for the full "Big Three".'],
+        ['Calculator inputs and next steps', 'Enter your birth date, exact time, and city above. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for what each rising sign expresses.'],
       ],
       faqs: [
         ['Can my rising sign change within the same day?', 'Yes. The ascendant changes about every two hours, so people born on the same date can have different rising signs.'],
@@ -1503,10 +1503,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Big Three Calculator - Sun, Moon & Rising Signs',
       description: 'Find your Big Three free — your Sun, Moon, and rising signs in one place. Enter your birth date, time, and city for your core astrological trio.',
       sections: [
-        ['What are the Big Three?', 'Your "Big Three" are your Sun, Moon, and rising (ascendant) signs — the three placements astrologers reach for first. Together they sketch your identity, your emotional life, and the style others first meet you with.'],
-        ['Sun vs Moon vs rising', 'The Sun is your core identity and will; the Moon is your emotional instincts and needs; the rising is your outward manner and first impressions. Most people are a blend — the three rarely sit in the same sign, which is why a one-line horoscope never quite fits.'],
-        ['How to find your Big Three', 'Enter your birth date, exact time, and city above. The Sun and Moon need only the date for most people, but the rising sign requires an accurate birth time and place.'],
-        ['Using the Big Three calculator', 'This free tool uses Swiss Ephemeris astronomy. These placements describe tendencies, not predictions. Explore the wiki to read what each sign expresses.'],
+        ['Core trio at a glance', 'Your "Big Three" are your Sun, Moon, and rising (ascendant) signs — the three placements astrologers reach for first. Together they sketch your identity, your emotional life, and the style others first meet you with.'],
+        ['Sun, Moon, and rising roles', 'The Sun is your core identity and will; the Moon is your emotional instincts and needs; the rising is your outward manner and first impressions. Most people are a blend — the three rarely sit in the same sign, which is why a one-line horoscope never quite fits.'],
+        ['Required birth details', 'Enter your birth date, exact time, and city above. The Sun and Moon need only the date for most people, but the rising sign requires an accurate birth time and place.'],
+        ['Calculator accuracy and next steps', 'This free tool uses Swiss Ephemeris astronomy. These placements describe tendencies, not predictions. Explore the wiki to read what each sign expresses.'],
       ],
       faqs: [
         ['What are the Big Three in astrology?', 'Your Big Three are your Sun, Moon, and rising signs — core identity, emotional life, and outward style.'],
@@ -1519,10 +1519,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Free Birth Chart Calculator - Natal Chart',
       description: 'Free birth chart calculator. Enter your birth date, time, and city to see your natal planetary placements — Swiss Ephemeris accuracy, no sign-up.',
       sections: [
-        ['What is a birth chart?', 'A birth chart (or natal chart) is a snapshot of where the Sun, Moon, and planets sat in the sky at the exact moment and place you were born. In modern psychological astrology it is the starting point for reading your personality patterns and developmental themes.'],
-        ['What is in your chart', 'Your chart places each planet in a zodiac sign — Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, and the outer planets — plus your ascendant and midheaven when a birth time is known. Each placement adds a layer to the picture.'],
-        ['How to read your birth chart', 'Start with your Sun, Moon, and rising, then look at the personal planets. The chart describes tendencies and potentials to work with, not a fixed fate. It is a tool for self-knowledge, not prediction.'],
-        ['Using the birth chart calculator', 'Enter your birth date above; add an exact time and city for ascendant, midheaven, and houses. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for deeper readings.'],
+        ['Natal chart foundation', 'A birth chart (or natal chart) is a snapshot of where the Sun, Moon, and planets sat in the sky at the exact moment and place you were born. In modern psychological astrology it is the starting point for reading your personality patterns and developmental themes.'],
+        ['Planet and angle inventory', 'Your chart places each planet in a zodiac sign — Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, and the outer planets — plus your ascendant and midheaven when a birth time is known. Each placement adds a layer to the picture.'],
+        ['First reading path', 'Start with your Sun, Moon, and rising, then look at the personal planets. The chart describes tendencies and potentials to work with, not a fixed fate. It is a tool for self-knowledge, not prediction.'],
+        ['Calculator inputs and next steps', 'Enter your birth date above; add an exact time and city for ascendant, midheaven, and houses. This free tool uses Swiss Ephemeris astronomy. Explore the wiki for deeper readings.'],
       ],
       faqs: [
         ['What information does the birth chart calculator show?', 'It shows the major planets by zodiac sign and degree, plus angles and house-sensitive points when a birth time and city are available.'],
@@ -1535,10 +1535,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Current Planets - Where the Planets Are Right Now',
       description: 'See where the planets are right now by sign and degree. A free, live snapshot of the current sky on real Swiss Ephemeris astronomy, no sign-up.',
       sections: [
-        ['What are the current planet positions?', 'The current planets are where the Sun, Moon, and planets sit in the zodiac at this moment. This free tool shows each planet by sign and degree, updated for the current day, so you can see the sky as astrologers read it right now.'],
-        ['How to read the current sky', 'Each row shows a planet, the sign it occupies, and the degree within that sign. Planets marked Rx are retrograde, meaning they appear to move backward from Earth. Sign positions are geocentric, so they are the same wherever you live.'],
-        ['Why the current planets matter', 'The slow outer planets set the broad mood while the faster Moon, Mercury, Venus, and Mars shift the day to day texture. These positions describe the present sky as a tendency to reflect on, not a fixed prediction of events.'],
-        ['Using the current planets tool', 'Pick any date to see the sky for that day, or leave it on today. This free tool uses Swiss Ephemeris astronomy. To see how the current sky meets your own chart, build your birth chart in the AstrologyWiki calculators.'],
+        ['Live sky position snapshot', 'The current planets are where the Sun, Moon, and planets sit in the zodiac at this moment. This free tool shows each planet by sign and degree, updated for the current day, so you can see the sky as astrologers read it right now.'],
+        ['Planet rows and retrograde marks', 'Each row shows a planet, the sign it occupies, and the degree within that sign. Planets marked Rx are retrograde, meaning they appear to move backward from Earth. Sign positions are geocentric, so they are the same wherever you live.'],
+        ['Current sky in context', 'The slow outer planets set the broad mood while the faster Moon, Mercury, Venus, and Mars shift the day to day texture. These positions describe the present sky as a tendency to reflect on, not a fixed prediction of events.'],
+        ['Date controls and chart pairing', 'Pick any date to see the sky for that day, or leave it on today. This free tool uses Swiss Ephemeris astronomy. To see how the current sky meets your own chart, build your birth chart in the AstrologyWiki calculators.'],
       ],
       faqs: [
         ['Where are the planets right now?', 'This tool shows the current position of each planet by zodiac sign and degree, computed for today on real Swiss Ephemeris astronomy.'],
@@ -1551,10 +1551,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Moon Phase Calculator - Phase for Any Date',
       description: 'Find the Moon phase for any date, from new and full to quarter, crescent, and gibbous, with illumination percent and the Moon sign. Free, accurate astronomy.',
       sections: [
-        ['What is a moon phase?', 'A moon phase is the shape of the lit part of the Moon as seen from Earth, set by the angle between the Sun and Moon. The cycle runs from new Moon through waxing crescent, first quarter, waxing gibbous, full Moon, and back through the waning phases over about 29.5 days.'],
-        ['How the moon phase is calculated', 'This calculator measures the angular distance between the Sun and Moon for the date you choose, then maps it to one of the eight phases and an illumination percentage. The numbers come from Swiss Ephemeris astronomy, so they match what you see in the sky.'],
-        ['Moon phase and the Moon sign', 'Alongside the phase, the tool shows the zodiac sign and degree the Moon occupies that day. The phase describes the light; the sign describes the Moon position in the zodiac. Together they give a fuller picture of the lunar day.'],
-        ['Using the moon phase calculator', 'Pick any date to see its phase, illumination, and Moon sign, past, present, or future. The phase is a description of the sky, not a forecast. For your personal Moon, try the Moon sign calculator.'],
+        ['Lunar phase basics', 'A moon phase is the shape of the lit part of the Moon as seen from Earth, set by the angle between the Sun and Moon. The cycle runs from new Moon through waxing crescent, first quarter, waxing gibbous, full Moon, and back through the waning phases over about 29.5 days.'],
+        ['Phase calculation method', 'This calculator measures the angular distance between the Sun and Moon for the date you choose, then maps it to one of the eight phases and an illumination percentage. The numbers come from Swiss Ephemeris astronomy, so they match what you see in the sky.'],
+        ['Phase and Moon sign together', 'Alongside the phase, the tool shows the zodiac sign and degree the Moon occupies that day. The phase describes the light; the sign describes the Moon position in the zodiac. Together they give a fuller picture of the lunar day.'],
+        ['Date lookup and next steps', 'Pick any date to see its phase, illumination, and Moon sign, past, present, or future. The phase is a description of the sky, not a forecast. For your personal Moon, try the Moon sign calculator.'],
       ],
       faqs: [
         ['What moon phase is it today?', 'Leave the date on today and the calculator shows the current phase, illumination percent, and the Moon sign on real astronomy.'],
@@ -1567,9 +1567,9 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Ephemeris Calculator - Daily Planet Positions',
       description: 'Generate a free ephemeris table of planet positions across any date range, with sign, degree, and retrograde for each day. Swiss Ephemeris accuracy, no sign-up.',
       sections: [
-        ['What is an ephemeris?', 'An ephemeris is a table that lists where each planet sits in the zodiac on a series of dates. Astronomers and astrologers have used ephemerides for centuries to track when planets change sign, turn retrograde, or form aspects. This free tool builds one for any range you choose.'],
-        ['How to use the ephemeris calculator', 'Choose a start date, an end date, and an interval of daily, weekly, or monthly. The table then shows every major planet by sign and degree for each step, with a small R marking retrograde motion. Positions are computed for 00:00 UTC of each date.'],
-        ['Reading sign changes and retrogrades', 'Scanning down a column shows when a planet moves from one sign to the next or slows to a retrograde station. These shifts are the backbone of transit work. The table reports astronomy as fact and does not predict outcomes.'],
+        ['Ephemeris table basics', 'An ephemeris is a table that lists where each planet sits in the zodiac on a series of dates. Astronomers and astrologers have used ephemerides for centuries to track when planets change sign, turn retrograde, or form aspects. This free tool builds one for any range you choose.'],
+        ['Range and interval controls', 'Choose a start date, an end date, and an interval of daily, weekly, or monthly. The table then shows every major planet by sign and degree for each step, with a small R marking retrograde motion. Positions are computed for 00:00 UTC of each date.'],
+        ['Sign changes and retrogrades', 'Scanning down a column shows when a planet moves from one sign to the next or slows to a retrograde station. These shifts are the backbone of transit work. The table reports astronomy as fact and does not predict outcomes.'],
         ['Ephemeris accuracy and limits', 'Positions use Swiss Ephemeris, the same engine professional software relies on. Very large ranges are capped to keep the table readable, so narrow the dates or widen the interval to cover a longer span. For your own chart, use the birth chart calculator.'],
       ],
       faqs: [
@@ -1583,10 +1583,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Electional Astrology - Sky Timing for the Days Ahead',
       description: 'See a free day-by-day view of the sky ahead: Moon phase, Moon sign, and the balance of supportive versus challenging aspects, as a timing reference for your own planning. Not a prediction.',
       sections: [
-        ['What is electional astrology?', 'Electional astrology looks at the conditions of the sky over a span of days as context for planning. This free tool reads the Moon phase, the Moon sign, and the balance of supportive and challenging aspects for each upcoming day. It describes astronomy, not destiny, and never points to a single right day.'],
-        ['How the timing view works', 'Pick a start date and how many days to view. For each day the tool computes the Moon phase from the Sun and Moon, the sign the Moon occupies, and the count of harmonious and challenging aspects among the classical planets. A neutral tone label of Flowing, Mixed, or Dynamic summarises that balance.'],
-        ['Reading the day tone', 'Flowing means the sky holds more supportive aspects that day, Dynamic means more tension, and Mixed means the two are roughly even. The label only describes the aspect balance. It is not a verdict on whether a day will go well or badly, and what happens depends on you rather than on the sky.'],
-        ['Using electional timing well', 'There is no rule that any sky tone suits any task; this tool simply gives you background context alongside your own plans and priorities, never an instruction. Treat it as rhythm to notice, not direction to follow. To see how these movements touch your own chart, build your birth chart.'],
+        ['Timing context, not certainty', 'Electional astrology looks at the conditions of the sky over a span of days as context for planning. This free tool reads the Moon phase, the Moon sign, and the balance of supportive and challenging aspects for each upcoming day. It describes astronomy, not destiny, and never points to a single right day.'],
+        ['Daily timing view', 'Pick a start date and how many days to view. For each day the tool computes the Moon phase from the Sun and Moon, the sign the Moon occupies, and the count of harmonious and challenging aspects among the classical planets. A neutral tone label of Flowing, Mixed, or Dynamic summarises that balance.'],
+        ['Day tone labels', 'Flowing means the sky holds more supportive aspects that day, Dynamic means more tension, and Mixed means the two are roughly even. The label only describes the aspect balance. It is not a verdict on whether a day will go well or badly, and what happens depends on you rather than on the sky.'],
+        ['Planning with sky rhythm', 'There is no rule that any sky tone suits any task; this tool simply gives you background context alongside your own plans and priorities, never an instruction. Treat it as rhythm to notice, not direction to follow. To see how these movements touch your own chart, build your birth chart.'],
       ],
       faqs: [
         ['Does electional astrology predict the future?', 'No. This tool describes the astronomical conditions of upcoming days as a reflection for planning. It does not predict outcomes or guarantee results.'],
@@ -1599,10 +1599,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Rodden Rating - Birth Time Accuracy Calculator',
       description: 'Find out how reliable your birth time is with the Rodden Rating system. See whether your Ascendant, houses, and Moon can be trusted, free and with no sign-up.',
       sections: [
-        ['What is the Rodden Rating?', 'The Rodden Rating is a system created by data astrologer Lois Rodden to record how trustworthy the source of a birth time is. AA means an official birth record, A means the person or family supplied it, B means a biography, C means there is no source so caution is needed, DD means sources conflict, and X means the time is unknown. It rates the data source, not whether a chart is good or bad.'],
-        ['Why birth time accuracy matters', 'The Ascendant and the house cusps move quickly, about one degree every four minutes, so a rounded or missing time leaves them approximate. Planet signs and usually the Moon sign do not depend on an exact minute, so they stay reliable even when the time is rough. Knowing your rating tells you which parts of the chart to lean on.'],
-        ['How to use this calculator', 'Choose how you know your birth time, from a hospital record down to unknown. The tool shows the matching Rodden code, a confidence level, and a simple breakdown of whether your Ascendant, houses, and Moon to the degree can be trusted, with a short note on what to do at that level.'],
-        ['What to do with a low rating', 'A low or unknown rating does not make a chart useless. Planet signs still describe a great deal. For full house detail you can search for an original record, or ask an astrologer to attempt birth time rectification. A noon or solar chart is a common stand-in when the time is unknown.'],
+        ['Rodden Rating scale', 'The Rodden Rating is a system created by data astrologer Lois Rodden to record how trustworthy the source of a birth time is. AA means an official birth record, A means the person or family supplied it, B means a biography, C means there is no source so caution is needed, DD means sources conflict, and X means the time is unknown. It rates the data source, not whether a chart is good or bad.'],
+        ['Fast-moving angles and houses', 'The Ascendant and the house cusps move quickly, about one degree every four minutes, so a rounded or missing time leaves them approximate. Planet signs and usually the Moon sign do not depend on an exact minute, so they stay reliable even when the time is rough. Knowing your rating tells you which parts of the chart to lean on.'],
+        ['Source selection workflow', 'Choose how you know your birth time, from a hospital record down to unknown. The tool shows the matching Rodden code, a confidence level, and a simple breakdown of whether your Ascendant, houses, and Moon to the degree can be trusted, with a short note on what to do at that level.'],
+        ['Low-rating next steps', 'A low or unknown rating does not make a chart useless. Planet signs still describe a great deal. For full house detail you can search for an original record, or ask an astrologer to attempt birth time rectification. A noon or solar chart is a common stand-in when the time is unknown.'],
       ],
       faqs: [
         ['Does a low Rodden Rating mean my chart is wrong?', 'No. It only means the birth time source is less certain, so the Ascendant and houses are approximate. Planet signs and usually the Moon sign remain reliable.'],
@@ -1615,9 +1615,9 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Synastry Calculator - Free Relationship Compatibility',
       description: 'Free synastry calculator. Compare two birth charts to see the aspects between them, from Sun and Moon to Venus and Mars. Real astronomy, no sign-up.',
       sections: [
-        ['What is synastry?', 'Synastry is the branch of astrology that compares two birth charts to study the connections between them. By measuring the aspects, the angles, between the planets of one chart and the planets of the other, it maps where two people meet with ease and where they meet friction.'],
-        ['How the synastry calculator works', 'Enter the birth date and city for two people, and a birth time if you have it to sharpen the Moon and the chart angles. The tool builds both charts on Swiss Ephemeris astronomy, then finds the major aspects between the two sets of planets, sorted by how exact each one is.'],
-        ['Reading the aspects between two charts', 'Trines and sextiles tend to describe flow and ease; squares and oppositions describe tension that can drive growth; conjunctions blend two energies together. The mix is a portrait of a connection, not a score and not a verdict on whether a relationship will last.'],
+        ['Chart comparison lens', 'Synastry is the branch of astrology that compares two birth charts to study the connections between them. By measuring the aspects, the angles, between the planets of one chart and the planets of the other, it maps where two people meet with ease and where they meet friction.'],
+        ['Two-chart calculation flow', 'Enter the birth date and city for two people, and a birth time if you have it to sharpen the Moon and the chart angles. The tool builds both charts on Swiss Ephemeris astronomy, then finds the major aspects between the two sets of planets, sorted by how exact each one is.'],
+        ['Cross-chart aspect patterns', 'Trines and sextiles tend to describe flow and ease; squares and oppositions describe tension that can drive growth; conjunctions blend two energies together. The mix is a portrait of a connection, not a score and not a verdict on whether a relationship will last.'],
         ['Synastry and privacy', 'This is a free tool with no account required. The names you enter stay in your browser and are never sent anywhere, only the birth dates and cities are used to compute the charts. For a deeper written reading, explore the synastry articles in the AstrologyWiki wiki.'],
       ],
       faqs: [
@@ -1631,10 +1631,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Composite Chart Calculator - Free Relationship Chart',
       description: 'Free composite chart calculator. Merge two birth charts into one midpoint chart that represents the relationship itself. Real astronomy, no sign-up.',
       sections: [
-        ['What is a composite chart?', 'A composite chart is a single chart built from the midpoints between the planets of two birth charts. Where synastry compares two separate charts, a composite merges them into one symbolic chart that represents the relationship itself, treated as a third entity.'],
-        ['How the composite calculator works', 'Enter the birth date and city for two people, and a birth time if you have it. The tool builds both charts on Swiss Ephemeris astronomy, then places each composite planet at the midpoint of the two original positions and shows the sign and degree for each.'],
-        ['Reading your composite chart', 'Read the composite Sun, Moon, and planets the way you would read a birth chart, but as a portrait of the partnership rather than a person. It describes the character and themes of a connection, not a forecast of whether it will last.'],
-        ['Composite vs synastry', 'Synastry studies the aspects between two charts; the composite condenses both into one relationship chart. Many astrologers use them together. For the aspect view, try the synastry calculator, and see the AstrologyWiki wiki for a deeper written guide.'],
+        ['Midpoint relationship chart', 'A composite chart is a single chart built from the midpoints between the planets of two birth charts. Where synastry compares two separate charts, a composite merges them into one symbolic chart that represents the relationship itself, treated as a third entity.'],
+        ['Composite calculation flow', 'Enter the birth date and city for two people, and a birth time if you have it. The tool builds both charts on Swiss Ephemeris astronomy, then places each composite planet at the midpoint of the two original positions and shows the sign and degree for each.'],
+        ['Partnership chart reading', 'Read the composite Sun, Moon, and planets the way you would read a birth chart, but as a portrait of the partnership rather than a person. It describes the character and themes of a connection, not a forecast of whether it will last.'],
+        ['Composite and synastry roles', 'Synastry studies the aspects between two charts; the composite condenses both into one relationship chart. Many astrologers use them together. For the aspect view, try the synastry calculator, and see the AstrologyWiki wiki for a deeper written guide.'],
       ],
       faqs: [
         ['What does this calculator output?', 'It outputs a midpoint chart for the relationship, listing composite planet positions by sign and degree when both source charts have the needed placements.'],
@@ -1647,10 +1647,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Solar Return Calculator - Free Birthday Chart',
       description: 'Free solar return calculator. Find the exact moment the Sun returns to its birth position each year and see your birthday chart. Real astronomy, no sign-up.',
       sections: [
-        ['What is a solar return?', 'A solar return is the moment each year when the transiting Sun returns to the exact zodiac position it held at your birth. It usually falls on or within a day of your birthday. The chart cast for that moment is your solar return chart, traditionally read as the themes of the year ahead.'],
-        ['How the solar return calculator works', 'Enter your birth date, time, and city, then choose a year. The tool finds your natal Sun position on Swiss Ephemeris astronomy, solves for the exact instant the Sun returns to it that year, and shows the planetary placements at that moment.'],
-        ['Why birth time matters', 'The Sun moves about one degree per day, so a precise birth time pins the natal Sun more exactly and sharpens the return moment. Without a time the return is computed from a midday estimate and is approximate.'],
-        ['Reading your solar return chart', 'Read the solar return placements as a portrait of the year, the way you would read a birth chart for a person. It describes themes and emphases to reflect on, not fixed events. Pair it with your natal chart for context.'],
+        ['Annual solar return moment', 'A solar return is the moment each year when the transiting Sun returns to the exact zodiac position it held at your birth. It usually falls on or within a day of your birthday. The chart cast for that moment is your solar return chart, traditionally read as the themes of the year ahead.'],
+        ['Return calculation flow', 'Enter your birth date, time, and city, then choose a year. The tool finds your natal Sun position on Swiss Ephemeris astronomy, solves for the exact instant the Sun returns to it that year, and shows the planetary placements at that moment.'],
+        ['Birth time precision', 'The Sun moves about one degree per day, so a precise birth time pins the natal Sun more exactly and sharpens the return moment. Without a time the return is computed from a midday estimate and is approximate.'],
+        ['Annual chart reading context', 'Read the solar return placements as a portrait of the year, the way you would read a birth chart for a person. It describes themes and emphases to reflect on, not fixed events. Pair it with your natal chart for context.'],
       ],
       faqs: [
         ['What is a solar return chart?', 'It is the chart cast for the exact moment the Sun returns to its natal position each year, traditionally read as the themes of the coming year.'],
@@ -1663,10 +1663,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Celebrity Astro Twins - Which Famous People Share Your Sun Sign',
       description: 'Find out which famous figures share your Sun sign. Enter your birth month and day to see your celebrity astro twins, grouped by zodiac sign and element. Free, no sign-up.',
       sections: [
-        ['What are celebrity astro twins?', 'Celebrity astro twins are well known people who share your Sun sign, the zodiac sign the Sun was passing through on the day you were born. Because the Sun sign depends only on the date, you can find your matches from a birthday alone. This free tool lines you up with famous figures across the arts, science, sport and history who were born under the same sign.'],
-        ['How the celebrity twins matcher works', 'Choose your birth month and day. The tool reads the tropical Sun sign for that date and lists famous people who share it, drawn from a curated set of public birth dates. It also groups figures who share your element, so you can see the wider family of signs that carry a similar temperament. No birth time and no account are needed.'],
+        ['Shared Sun-sign reference', 'Celebrity astro twins are well known people who share your Sun sign, the zodiac sign the Sun was passing through on the day you were born. Because the Sun sign depends only on the date, you can find your matches from a birthday alone. This free tool lines you up with famous figures across the arts, science, sport and history who were born under the same sign.'],
+        ['Celebrity matching method', 'Choose your birth month and day. The tool reads the tropical Sun sign for that date and lists famous people who share it, drawn from a curated set of public birth dates. It also groups figures who share your element, so you can see the wider family of signs that carry a similar temperament. No birth time and no account are needed.'],
         ['Sun signs, elements and modalities', 'Every Sun sign belongs to one of four elements, fire, earth, air or water, and to one of three modalities, cardinal, fixed or mutable. These groupings describe a broad style rather than fixed traits. Sharing a sign or an element with someone is a point of common flavour, not a rule about character or destiny.'],
-        ['A note on cusps and birth times', 'The date when the Sun moves from one sign to the next drifts by about a day from year to year. If your birthday sits right on a boundary, your Sun could be in the neighbouring sign, and only a full birth chart with your birth time can settle it. For most dates the Sun sign read from the date is reliable. To check, build your full chart with the birth chart calculator.'],
+        ['Cusp boundaries and birth time', 'The date when the Sun moves from one sign to the next drifts by about a day from year to year. If your birthday sits right on a boundary, your Sun could be in the neighbouring sign, and only a full birth chart with your birth time can settle it. For most dates the Sun sign read from the date is reliable. To check, build your full chart with the birth chart calculator.'],
       ],
       faqs: [
         ['Can I find my celebrity twins without a birth time?', 'Yes. Your Sun sign depends only on your birth date, so the month and day are enough to match you with famous people who share it. A birth time is only needed near a sign boundary or for the rest of the chart.'],
@@ -1679,10 +1679,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: 'Astrocartography Map - Free Relocation Astrology Lines',
       description: 'Free astrocartography map. See where each planet was rising, setting, culminating or at the lower meridian when you were born, drawn across a world map. Real Swiss Ephemeris astronomy, no sign-up.',
       sections: [
-        ['What is astrocartography?', 'Astrocartography, also called relocation astrology, projects the sky at the moment of your birth onto a map of the world. For each planet it draws the places where that planet was angular at your birth: on the meridian overhead or below, and on the eastern or western horizon. It is a way to explore yourself through place rather than a forecast of any location.'],
-        ['How the astrocartography map works', 'Enter your birth date, exact birth time, and city. The tool builds your chart on Swiss Ephemeris astronomy, converts each planet to its sky coordinates, and computes four lines per planet across the globe. A birth time is essential here, because the lines shift by about fifteen degrees of longitude for every hour of birth time.'],
-        ['Reading the planetary lines', 'Each planet draws four lines. The MC line is the meridian where the planet was culminating, highest in the sky; the IC line is its opposite, the lower meridian. The AC line is the curve where the planet was rising on the eastern horizon, and the DC line is where it was setting in the west. Show or hide each planet to keep the map readable.'],
-        ['Using your astrocartography map', 'A line passing near a place simply marks where one planetary theme from your own chart is emphasised. It is a prompt for reflection and curiosity, not a prediction that anything will happen there and not a guarantee of any outcome. Treat it as one lens among many, and pair it with your full birth chart for context.'],
+        ['Relocation map lens', 'Astrocartography, also called relocation astrology, projects the sky at the moment of your birth onto a map of the world. For each planet it draws the places where that planet was angular at your birth: on the meridian overhead or below, and on the eastern or western horizon. It is a way to explore yourself through place rather than a forecast of any location.'],
+        ['Map calculation flow', 'Enter your birth date, exact birth time, and city. The tool builds your chart on Swiss Ephemeris astronomy, converts each planet to its sky coordinates, and computes four lines per planet across the globe. A birth time is essential here, because the lines shift by about fifteen degrees of longitude for every hour of birth time.'],
+        ['Planetary angle lines', 'Each planet draws four lines. The MC line is the meridian where the planet was culminating, highest in the sky; the IC line is its opposite, the lower meridian. The AC line is the curve where the planet was rising on the eastern horizon, and the DC line is where it was setting in the west. Show or hide each planet to keep the map readable.'],
+        ['Map interpretation boundaries', 'A line passing near a place simply marks where one planetary theme from your own chart is emphasised. It is a prompt for reflection and curiosity, not a prediction that anything will happen there and not a guarantee of any outcome. Treat it as one lens among many, and pair it with your full birth chart for context.'],
       ],
       faqs: [
         ['Does astrocartography predict what will happen if I move?', 'No. The lines describe where each planet was angular at your birth. They are a reflective tool for exploring places, not a forecast of events and not a guarantee of any outcome.'],

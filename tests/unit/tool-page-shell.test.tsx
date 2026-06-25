@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // INPUT: ToolPageShell + per-tool SEO content map.
-// OUTPUT: Guards individual calculator pages: wide content shell + visible, non-duplicative tool-specific landing sections.
-// POS: Regression test for /:lang/<tool> pages so SEO copy is visible in the hydrated SPA, not only in static stubs, without repeated guide/FAQ headings.
+// OUTPUT: Guards individual calculator pages: wide content shell + visible, non-duplicative, non-FAQ-like tool-specific landing sections.
+// POS: Regression test for /:lang/<tool> pages so SEO copy is visible in the hydrated SPA, not only in static stubs, without repeated or question-template guide/FAQ headings.
 
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
@@ -17,6 +17,9 @@ const normalizeHeading = (value: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
+
+const FAQ_STYLE_SECTION_HEADING =
+  /^(what|when|why|how|using|reading|is|are|does|do|can|where)\b/i;
 
 describe("ToolPageShell", () => {
   beforeEach(() => {
@@ -51,7 +54,7 @@ describe("ToolPageShell", () => {
       }),
     ).toBeTruthy();
     expect(
-      screen.getByRole("heading", { name: /What is a Moon sign/i }),
+      screen.getByRole("heading", { name: /Moon placement basics/i }),
     ).toBeTruthy();
     expect(
       screen.getByRole("heading", { name: /Moon Sign Calculator FAQ/i }),
@@ -119,6 +122,19 @@ describe("ToolPageShell", () => {
       );
 
       expect(duplicates, `${tool.slug} duplicate headings`).toEqual([]);
+    }
+  });
+
+  it("keeps explainer section headings distinct from FAQ-style questions", () => {
+    for (const tool of TOOLS) {
+      const content = TOOL_SEO_CONTENT[tool.slug];
+
+      for (const section of content.sections) {
+        expect(
+          FAQ_STYLE_SECTION_HEADING.test(section.heading),
+          `${tool.slug} section heading reads like FAQ: ${section.heading}`,
+        ).toBe(false);
+      }
     }
   });
 });
