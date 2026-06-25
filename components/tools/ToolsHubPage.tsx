@@ -1,6 +1,7 @@
 // INPUT: React、react-router-dom（Link）、useLanguage/useTheme（UIComponents）、toolsCatalog（TOOL_CATEGORIES/TOOLS/toolsByCategory）、analytics（trackEvent）。
-// OUTPUT: /:lang/tools 工具中心页——intro + 5 个分类 section，每个 section 一句话引导 + 工具卡片网格（英文文案；语言前缀内链到各计算器）。
+// OUTPUT: /:lang/tools 工具中心页——intro + featured「引导式解读」(Synthetica) 入口 + 5 个分类 section（每个一句话引导 + 工具卡片网格）。英文文案、语言前缀内链。
 // POS: 计算器矩阵的统一发现入口（hub-and-spoke 内链中枢）；路由 /:lang/tools，静态 stub 由 generate-seo-pages.mjs 输出。
+//      featured Synthetica 是带每日配额的 AI 解读、入口指向 /wiki?tab=tools，刻意不进 toolsCatalog（catalog 与可爬取计算器路由 1:1）。
 //      文案中性、非命运断言（撞 AI 安全红线 NO_FATE_CERTAINTY）。卡片范式对齐 pages/landing/ToolsGridSection.tsx。若更新此文件，务必更新 tools/FOLDER.md。
 
 import React from "react";
@@ -154,7 +155,98 @@ const ToolsHubPage: React.FC = () => {
         </p>
       </header>
 
-      <div className="mt-12 space-y-14">
+      {/* Featured guided reading (Synthetica) — the one entry here that is an
+          AI-generated interpretation rather than a free calculator, so it carries
+          a daily usage limit. Kept out of toolsCatalog (which mirrors crawlable
+          calculator routes 1:1) and surfaced as a featured card linking to the
+          existing /wiki?tab=tools page. Copy stays neutral, no fate certainty. */}
+      <section aria-labelledby="featured-synthetica" className="mt-12">
+        <h2
+          id="featured-synthetica"
+          className={`font-serif text-xl md:text-2xl ${
+            isDark ? "text-star-50" : "text-paper-900"
+          }`}
+        >
+          Guided Reading
+        </h2>
+        <p
+          className={`mt-2 max-w-2xl text-sm md:text-base leading-relaxed ${
+            isDark ? "text-star-300/70" : "text-paper-600/70"
+          }`}
+        >
+          A step-by-step reading you build yourself — the one tool here that
+          writes a personalised interpretation, so it has a daily limit.
+        </p>
+
+        <Link
+          to={`/${language}/wiki?tab=tools`}
+          onClick={() =>
+            trackEvent("tools_hub_card_clicked", {
+              tool: "synthetica",
+              location: "tools_hub_featured",
+            })
+          }
+          aria-label={`Synthetica — guided reading, ${openLabel}`}
+          className={`group mt-6 flex flex-col gap-5 rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:flex-row sm:items-center sm:gap-6 sm:p-7 ${
+            isDark
+              ? "border-accent/25 bg-gradient-to-b from-space-900/60 to-space-900/20 shadow-none hover:border-accent/50 focus-visible:ring-offset-space-950"
+              : "border-accent/30 bg-gradient-to-b from-white to-paper-100 hover:border-accent/50 focus-visible:ring-offset-paper-100"
+          }`}
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-8 w-8 shrink-0 stroke-accent text-accent"
+            fill="none"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 3l1.9 5.3L19 10l-5.1 1.7L12 17l-1.9-5.3L5 10l5.1-1.7Z" />
+            <path d="M18.5 15.5l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6Z" />
+          </svg>
+
+          <div className="flex-1">
+            <h3
+              className={`font-serif text-lg ${
+                isDark ? "text-star-50" : "text-paper-900"
+              }`}
+            >
+              Synthetica
+            </h3>
+            <p className="text-sm mt-2 leading-relaxed text-paper-700 dark:text-star-200">
+              Build a focused, psychology-grounded reading step by step — choose
+              a theme, then a planet, sign, house, and aspect, and get a written
+              interpretation of what that combination can point toward.
+            </p>
+            <span
+              className={`mt-3 inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium text-accent ${
+                isDark
+                  ? "border-gold-500/25 bg-space-800/40"
+                  : "border-accent/25 bg-accent/5"
+              }`}
+            >
+              3 free readings a day · more with Pro
+            </span>
+          </div>
+
+          <span
+            aria-hidden="true"
+            className={`flex items-center justify-center gap-1.5 rounded-xl border px-4 py-2.5 text-sm font-medium text-accent transition-colors duration-300 sm:shrink-0 ${
+              isDark
+                ? "border-gold-500/20 bg-space-800/40 group-hover:border-accent/50 group-hover:bg-accent/10"
+                : "border-paper-300 bg-paper-200/50 group-hover:border-accent/50 group-hover:bg-accent/10"
+            }`}
+          >
+            {openLabel}
+            <span className="ml-0.5 transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </span>
+        </Link>
+      </section>
+
+      <div className="mt-14 space-y-14">
         {TOOL_CATEGORIES.map((category) => (
           <section key={category.id} aria-labelledby={`cat-${category.id}`}>
             <h2

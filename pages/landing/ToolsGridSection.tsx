@@ -111,19 +111,15 @@ const ToolsGridSection: React.FC = () => {
 
   const tools: ReadonlyArray<ToolDef> = [
     {
-      // Was: "Saturn Return Calculator" → /:lang/saturn-return-calculator (standalone).
-      // Re-routed to the Wiki "tools" tab which renders WikiSyntheticaPage —
-      // a guided chart-inquiry builder (goal → planet → sign → house → aspect
-      // → AI-synthesised focused reading). Keep the title aligned with the
-      // destination's branded label ("Synthetica") so users don't lose context
-      // on arrival. The standalone Saturn Return page stays mounted for direct
-      // SEO entries.
+      // Synthetica (guided chart-inquiry → AI-synthesised focused reading) is now
+      // featured at the top of the unified /tools hub. This card funnels there so
+      // /tools is the single tools entry point (the wiki "tools" tab was merged out).
       key: "synthetica",
       title: landing.tools_synthetica_title || "Synthetica",
       desc:
         landing.tools_synthetica_desc ||
         "Guided chart inquiry — goal · planet · sign · house · aspect → a focused, psychology-grounded reading.",
-      destination: `/${language}/wiki?tab=tools`,
+      destination: `/${language}/tools`,
       Icon: SaturnIcon,
     },
     {

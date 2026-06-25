@@ -15,10 +15,13 @@ import { useAuth } from "../../contexts/AuthContext";
 import { LOGIN_GATE_MODE } from "../../constants";
 import { useLangPath } from "../../hooks/useLangPath";
 
-// Visible tabs shown in the tab bar
-const TAB_VALUES = ["home", "library", "classics", "tools"] as const;
-// Full tab type includes hidden tabs reachable via direct URL (e.g. /wiki?tab=articles)
-type WikiTab = (typeof TAB_VALUES)[number] | "articles";
+// Visible tabs shown in the tab bar. "tools" (Synthetica) was merged out of the
+// wiki tab bar — the /tools hub is now the single tools entry point. The
+// ?tab=tools URL still resolves (so the hub's featured card + any inbound links
+// keep working), but it renders standalone without the wiki tab shell.
+const TAB_VALUES = ["home", "library", "classics"] as const;
+// Full tab type includes hidden tabs reachable via direct URL (e.g. /wiki?tab=articles, ?tab=tools)
+type WikiTab = (typeof TAB_VALUES)[number] | "tools" | "articles";
 
 const resolveTab = (search: string): WikiTab => {
   const params = new URLSearchParams(search);
@@ -41,11 +44,10 @@ const WikiHubPage: React.FC = () => {
     () => resolveTab(location.search),
     [location.search],
   );
-  // Reset scroll on tab change. When a landing CTA (e.g. ToolsGrid Synthetica
-  // card) navigates from a scrolled-down landing position into /wiki?tab=tools,
-  // React Router preserves scrollY by default, so the user lands mid-page with
-  // the tab header above the fold. Mirror the explicit scrollTo(0,0) pattern
-  // WikiDetailPage / WikiArticleDetailPage already use.
+  // Reset scroll on tab change. When the /tools hub's featured Synthetica card
+  // navigates from a scrolled-down position into /wiki?tab=tools, React Router
+  // preserves scrollY by default, so the user would land mid-page. Mirror the
+  // explicit scrollTo(0,0) pattern WikiDetailPage / WikiArticleDetailPage use.
   useEffect(() => {
     if (typeof window === "undefined") return;
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -89,8 +91,9 @@ const WikiHubPage: React.FC = () => {
         type="website"
       />
       <div className="space-y-10">
-        {/* Only show visible tabs - articles tab is hidden but route still works */}
-        {activeTab !== "articles" && (
+        {/* Only show visible tabs. "articles" and "tools" (Synthetica) are hidden:
+            their URLs still resolve but render standalone without the tab shell. */}
+        {activeTab !== "articles" && activeTab !== "tools" && (
           <div className="flex items-center justify-end gap-3">
             {TAB_VALUES.map((tab) => (
               <ActionButton
@@ -104,9 +107,7 @@ const WikiHubPage: React.FC = () => {
                   ? t.wiki.tab_home
                   : tab === "library"
                     ? t.wiki.tab_library
-                    : tab === "classics"
-                      ? t.wiki.tab_classics
-                      : t.wiki.tab_tools}
+                    : t.wiki.tab_classics}
               </ActionButton>
             ))}
           </div>

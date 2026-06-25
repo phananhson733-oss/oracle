@@ -18,7 +18,7 @@
 | `WikiDetailPage.tsx` | Wiki 详情页，包含核心解读、能量地图与关联条目 |
 | `WikiClassicsPage.tsx` | Wiki 经典书籍页，呈现书架列表 |
 | `WikiClassicDetailPage.tsx` | Wiki 经典书籍详情页，展示长文解读 |
-| `WikiSyntheticaPage.tsx` | Wiki 工具页，提供 Synthetica 洞察生成与结果展示 |
+| `WikiSyntheticaPage.tsx` | Synthetica 洞察生成与结果展示。已从 wiki tab 栏移除（入口合并入 /tools hub）；`?tab=tools` URL 仍可达但裸页渲染（不套 wiki tab 外壳） |
 | `RelatedArticles.tsx` | 相关文章组件，基于星象关联展示相关内容 |
 | `AuthorByline.tsx` | 文章署名组件（detail/card 两 variant）+ AuthorMonogram CSS 头像 |
 | `AuthorPage.tsx` | 编辑作者档案页 `/:lang/wiki/author/:authorId`（EN-only，ProfilePage/Person JSON-LD） |
