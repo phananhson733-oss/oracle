@@ -14,11 +14,22 @@ vi.mock("../../services/apiClient", () => ({
 const { moonSignConfig, risingSignConfig, bigThreeConfig, birthChartConfig } =
   await import("../../components/calculators/signConfigs");
 
-const pos = (name: string, sign: string) => ({
+const pos = (
+  name: string,
+  sign: string,
+  extra: Partial<{
+    degree: number;
+    minute: number;
+    house: number;
+    isRetrograde: boolean;
+  }> = {},
+) => ({
   name,
   sign,
-  degree: 10,
-  isRetrograde: false,
+  degree: extra.degree ?? 10,
+  minute: extra.minute,
+  house: extra.house,
+  isRetrograde: extra.isRetrograde ?? false,
 });
 const chartWith = (positions: Array<{ name: string; sign: string }>) => ({
   positions: positions.map((p) => pos(p.name, p.sign)),
@@ -115,5 +126,76 @@ describe("calculator configs — compute extraction", () => {
     expect(r.funnel?.prefill?.birthDate).toBe("1990-06-15");
     expect(r.placements?.[0].href).toBe("/wiki/gemini");
     expect(r.dominance).toBeTruthy();
+  });
+
+  it("birth chart: exposes existing technical birth-chart data without AI content", async () => {
+    fetchNatalChart.mockResolvedValue({
+      positions: [
+        pos("Sun", "Gemini", { degree: 23, minute: 46, house: 10 }),
+        pos("Moon", "Pisces", { degree: 10, minute: 22, house: 7 }),
+        pos("Mercury", "Gemini", { degree: 5, minute: 3, house: 9 }),
+        pos("Venus", "Taurus", { degree: 18, minute: 20, house: 9 }),
+        pos("Mars", "Aries", { degree: 10, minute: 46, house: 8 }),
+        pos("Jupiter", "Cancer", { degree: 15, minute: 48, house: 11 }),
+        pos("Saturn", "Capricorn", {
+          degree: 24,
+          minute: 3,
+          house: 5,
+          isRetrograde: true,
+        }),
+        pos("Uranus", "Capricorn", {
+          degree: 8,
+          minute: 10,
+          house: 4,
+          isRetrograde: true,
+        }),
+        pos("Neptune", "Capricorn", {
+          degree: 13,
+          minute: 43,
+          house: 5,
+          isRetrograde: true,
+        }),
+        pos("Pluto", "Scorpio", {
+          degree: 15,
+          minute: 24,
+          house: 3,
+          isRetrograde: true,
+        }),
+        pos("Ascendant", "Virgo", { degree: 9, minute: 41, house: 1 }),
+        pos("Descendant", "Pisces", { degree: 9, minute: 41, house: 7 }),
+        pos("Midheaven", "Gemini", { degree: 6, minute: 24, house: 10 }),
+        pos("IC", "Sagittarius", { degree: 6, minute: 24, house: 3 }),
+        pos("North Node", "Aquarius", { degree: 8, minute: 6, house: 5 }),
+        pos("Chiron", "Leo", { degree: 26, minute: 0, house: 12 }),
+      ],
+      aspects: [
+        {
+          planet1: "Sun",
+          planet2: "Moon",
+          type: "square",
+          orb: 5.32,
+          isApplying: false,
+        },
+      ],
+      dominance: {
+        elements: { fire: 1, earth: 4, air: 2, water: 3 },
+        modalities: { cardinal: 5, fixed: 2, mutable: 3 },
+      },
+      houseCusps: [159, 183, 213, 246, 279, 303, 339, 3, 33, 66, 99, 123],
+    });
+    const r = await birthChartConfig.compute(withTime, "en");
+
+    expect(r.body).toBeUndefined();
+    expect(r.birthChart?.profile.birthTime).toBe("08:00");
+    expect(r.birthChart?.technical.planets.map((p) => p.name)).toContain(
+      "Ascendant",
+    );
+    expect(r.birthChart?.technical.asteroids.map((p) => p.name)).toEqual([
+      "Chiron",
+      "North Node",
+    ]);
+    expect(r.birthChart?.technical.elements.Air.Mutable).toContain("Sun");
+    expect(r.birthChart?.technical.aspects.length).toBeGreaterThan(0);
+    expect(r.birthChart?.technical.houseRulers).toHaveLength(12);
   });
 });

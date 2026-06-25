@@ -5,7 +5,14 @@
 // POS: 计算器矩阵（D）的 sign 类配置层。全部复用 /api/natal/chart（匿名 skipCache，隐私 #2），不新增后端。
 //      结果中性非命运断言；深度解读导向 onboarding 真实产品 + wiki。若更新此文件，务必更新 calculators/FOLDER.md。
 
-import type { NatalFacts, PlanetPosition, Language } from "../../types";
+import type {
+  Aspect,
+  ExtendedNatalData,
+  NatalFacts,
+  PlanetPosition,
+  Language,
+  UserProfile,
+} from "../../types";
 import { fetchNatalChart } from "../../services/apiClient";
 import { planetLabel, signLabel } from "./astroDisplay";
 import { absoluteLongitude } from "./crossAspects";
@@ -100,6 +107,52 @@ const PLANET_ORDER = [
   "Pluto",
 ];
 
+const MAJOR_BODIES = [
+  "Sun",
+  "Moon",
+  "Mercury",
+  "Venus",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+  "Pluto",
+  "Ascendant",
+  "Descendant",
+  "Midheaven",
+  "IC",
+] as const;
+
+const ASPECT_BODIES = [...MAJOR_BODIES, "North Node"] as const;
+
+const ELEMENT_BODIES = [
+  "Sun",
+  "Moon",
+  "Mercury",
+  "Venus",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+  "Pluto",
+] as const;
+
+const MINOR_BODIES = [
+  "Chiron",
+  "Ceres",
+  "Pallas",
+  "Juno",
+  "Vesta",
+  "North Node",
+  "South Node",
+  "Lilith",
+  "Fortune",
+  "Vertex",
+  "East Point",
+] as const;
+
 const POINT_ORDER = [
   "Ascendant",
   "Midheaven",
@@ -109,6 +162,62 @@ const POINT_ORDER = [
   "South Node",
   "Chiron",
 ];
+
+const ELEMENT_BY_SIGN: Record<string, "Fire" | "Earth" | "Air" | "Water"> = {
+  Aries: "Fire",
+  Leo: "Fire",
+  Sagittarius: "Fire",
+  Taurus: "Earth",
+  Virgo: "Earth",
+  Capricorn: "Earth",
+  Gemini: "Air",
+  Libra: "Air",
+  Aquarius: "Air",
+  Cancer: "Water",
+  Scorpio: "Water",
+  Pisces: "Water",
+};
+
+const MODALITY_BY_SIGN: Record<string, "Cardinal" | "Fixed" | "Mutable"> = {
+  Aries: "Cardinal",
+  Cancer: "Cardinal",
+  Libra: "Cardinal",
+  Capricorn: "Cardinal",
+  Taurus: "Fixed",
+  Leo: "Fixed",
+  Scorpio: "Fixed",
+  Aquarius: "Fixed",
+  Gemini: "Mutable",
+  Virgo: "Mutable",
+  Sagittarius: "Mutable",
+  Pisces: "Mutable",
+};
+
+const MODERN_RULERS: Record<string, string> = {
+  Aries: "Mars",
+  Taurus: "Venus",
+  Gemini: "Mercury",
+  Cancer: "Moon",
+  Leo: "Sun",
+  Virgo: "Mercury",
+  Libra: "Venus",
+  Scorpio: "Pluto",
+  Sagittarius: "Jupiter",
+  Capricorn: "Saturn",
+  Aquarius: "Uranus",
+  Pisces: "Neptune",
+};
+
+const TECH_ASPECT_TYPES: Record<
+  Aspect["type"],
+  { angle: number; orb: number }
+> = {
+  conjunction: { angle: 0, orb: 8 },
+  opposition: { angle: 180, orb: 8 },
+  square: { angle: 90, orb: 7 },
+  trine: { angle: 120, orb: 7 },
+  sextile: { angle: 60, orb: 5 },
+};
 
 const ASPECT_LABELS: Record<string, { en: string; zh: string }> = {
   conjunction: { en: "Conjunction", zh: "合相" },
@@ -368,6 +477,114 @@ function buildSignature(
   return out;
 }
 
+function calculateTechnicalAspects(positions: PlanetPosition[]): Aspect[] {
+  const aspects: Aspect[] = [];
+  for (let i = 0; i < positions.length; i++) {
+    for (let j = i + 1; j < positions.length; j++) {
+      const lonA = absoluteLongitude(positions[i]);
+      const lonB = absoluteLongitude(positions[j]);
+      if (lonA == null || lonB == null) continue;
+      const diff = Math.abs(lonA - lonB);
+      const angle = diff > 180 ? 360 - diff : diff;
+      for (const [type, config] of Object.entries(TECH_ASPECT_TYPES) as Array<
+        [Aspect["type"], { angle: number; orb: number }]
+      >) {
+        const orb = Math.abs(angle - config.angle);
+        if (orb <= config.orb) {
+          aspects.push({
+            planet1: positions[i].name,
+            planet2: positions[j].name,
+            type,
+            orb: Math.round(orb * 100) / 100,
+            isApplying: false,
+          });
+          break;
+        }
+      }
+    }
+  }
+  return aspects.sort((a, b) => a.orb - b.orb);
+}
+
+function buildHouseRulers(
+  positions: PlanetPosition[],
+): ExtendedNatalData["houseRulers"] {
+  const ascendant = positions.find(
+    (p) => p.name === "Ascendant" || p.name === "Rising",
+  );
+  const ascSign = ascendant?.sign;
+  const startIndex = ascSign ? SIGN_ORDER.indexOf(ascSign) : -1;
+  const houseSigns =
+    startIndex >= 0
+      ? Array.from(
+          { length: 12 },
+          (_, i) => SIGN_ORDER[(startIndex + i) % SIGN_ORDER.length],
+        )
+      : [...SIGN_ORDER];
+
+  return houseSigns.map((sign, index) => {
+    const ruler = MODERN_RULERS[sign] || "Unknown";
+    const rulerPos = positions.find((p) => p.name === ruler);
+    return {
+      house: index + 1,
+      sign,
+      ruler,
+      fliesTo: rulerPos?.house ?? 0,
+      fliesToSign: rulerPos?.sign,
+    };
+  });
+}
+
+function buildTechnicalData(chart: NatalFacts): ExtendedNatalData {
+  const positionsByName = new Map(
+    chart.positions.map((pos) => [pos.name, pos]),
+  );
+  const planets = MAJOR_BODIES.map((name) => positionsByName.get(name)).filter(
+    (pos): pos is PlanetPosition => !!pos,
+  );
+  const asteroids = MINOR_BODIES.map((name) =>
+    positionsByName.get(name),
+  ).filter((pos): pos is PlanetPosition => !!pos);
+  const elements: ExtendedNatalData["elements"] = {};
+
+  ELEMENT_BODIES.forEach((planetName) => {
+    const planet = positionsByName.get(planetName);
+    if (!planet) return;
+    const element = ELEMENT_BY_SIGN[planet.sign];
+    const modality = MODALITY_BY_SIGN[planet.sign];
+    if (!element || !modality) return;
+    elements[element] = elements[element] || {};
+    elements[element][modality] = elements[element][modality] || [];
+    elements[element][modality].push(planet.name);
+  });
+
+  const aspectPositions = ASPECT_BODIES.map((name) =>
+    positionsByName.get(name),
+  ).filter((pos): pos is PlanetPosition => !!pos);
+
+  return {
+    elements,
+    planets,
+    asteroids,
+    houseRulers: buildHouseRulers(chart.positions),
+    aspects: calculateTechnicalAspects(aspectPositions),
+  };
+}
+
+function buildChartProfile(birth: CalculatorBirth): UserProfile {
+  return {
+    userId: "tool-birth-chart",
+    birthDate: birth.birthDate,
+    birthTime: birth.birthTime,
+    birthCity: birth.birthCity,
+    lat: birth.lat,
+    lon: birth.lon,
+    timezone: birth.timezone,
+    accuracyLevel: birth.accuracyLevel,
+    focusTags: [],
+  };
+}
+
 function buildBirthChartDetails(
   birth: CalculatorBirth,
   chart: NatalFacts,
@@ -407,13 +624,19 @@ function buildBirthChartDetails(
       houseSystem: chart.houseCusps?.length === 12 ? "Placidus" : "No houses",
       zodiac: "Tropical",
     },
+    profile: buildChartProfile(birth),
+    technical: buildTechnicalData(chart),
     core,
     planets,
     points,
     wheelPoints,
     aspects,
     houses,
-    moonPhase: buildMoonPhase(byWheelName.get("Sun"), byWheelName.get("Moon"), lang),
+    moonPhase: buildMoonPhase(
+      byWheelName.get("Sun"),
+      byWheelName.get("Moon"),
+      lang,
+    ),
     signature: buildSignature(wheelPoints, houses, aspects, chart, lang),
     houseCusps: chart.houseCusps ?? [],
   };
@@ -460,7 +683,9 @@ export const moonSignConfig: CalculatorConfig = {
     const moon = findPos(chart.positions, "Moon");
     if (!moon) {
       throw new Error(
-        lang === "zh" ? "无法计算月亮星座" : "Could not determine your Moon sign",
+        lang === "zh"
+          ? "无法计算月亮星座"
+          : "Could not determine your Moon sign",
       );
     }
     return {
@@ -483,7 +708,12 @@ export const moonSignConfig: CalculatorConfig = {
           en: "Get your full birth chart reading",
           zh: "查看完整出生星盘解读",
         },
-        [{ label: lang === "zh" ? "了解月亮" : "Learn about the Moon", href: "/wiki/moon" }],
+        [
+          {
+            label: lang === "zh" ? "了解月亮" : "Learn about the Moon",
+            href: "/wiki/moon",
+          },
+        ],
         {
           en: "Your Moon is one piece of the picture. See every placement, house, and aspect in your full chart.",
           zh: "月亮只是其中一块。在完整星盘里看到每个落座、宫位与相位。",
@@ -523,7 +753,9 @@ export const risingSignConfig: CalculatorConfig = {
     const asc = findPos(chart.positions, "Ascendant");
     if (!asc) {
       throw new Error(
-        lang === "zh" ? "无法计算上升星座" : "Could not determine your rising sign",
+        lang === "zh"
+          ? "无法计算上升星座"
+          : "Could not determine your rising sign",
       );
     }
     const sun = findPos(chart.positions, "Sun");
@@ -548,8 +780,17 @@ export const risingSignConfig: CalculatorConfig = {
         asc.sign,
         { en: "See your full birth chart", zh: "查看完整出生星盘" },
         [
-          { label: lang === "zh" ? "上升是什么" : "What the Ascendant means", href: "/wiki/ascendant" },
-          { label: lang === "zh" ? `了解${signLabel(asc.sign, lang)}` : `Read about ${asc.sign}`, href: signHref(asc.sign) },
+          {
+            label: lang === "zh" ? "上升是什么" : "What the Ascendant means",
+            href: "/wiki/ascendant",
+          },
+          {
+            label:
+              lang === "zh"
+                ? `了解${signLabel(asc.sign, lang)}`
+                : `Read about ${asc.sign}`,
+            href: signHref(asc.sign),
+          },
         ],
       ),
     };
@@ -580,7 +821,9 @@ export const bigThreeConfig: CalculatorConfig = {
     const moon = findPos(chart.positions, "Moon");
     const asc = findPos(chart.positions, "Ascendant");
     if (!sun || !moon) {
-      throw new Error(lang === "zh" ? "无法计算" : "Could not compute your chart");
+      throw new Error(
+        lang === "zh" ? "无法计算" : "Could not compute your chart",
+      );
     }
     const placements = [sun, moon, asc]
       .filter((p): p is PlanetPosition => !!p)
@@ -607,7 +850,10 @@ export const bigThreeConfig: CalculatorConfig = {
         [
           { label: lang === "zh" ? "太阳" : "Sun", href: "/wiki/sun" },
           { label: lang === "zh" ? "月亮" : "Moon", href: "/wiki/moon" },
-          { label: lang === "zh" ? "上升" : "Ascendant", href: "/wiki/ascendant" },
+          {
+            label: lang === "zh" ? "上升" : "Ascendant",
+            href: "/wiki/ascendant",
+          },
         ],
       ),
     };

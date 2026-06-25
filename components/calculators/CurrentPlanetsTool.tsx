@@ -1,13 +1,18 @@
 // INPUT: React、useLanguage（UIComponents）、useCalculatorTheme、astroDisplay、sunSign（signElement/signModality）、
-//        services/apiClient（fetchPositions）、共享原语 ToolPageShell / ToolResultCard / PlacementList / PlacementRow /
-//        ElementBalanceBar / ToolFunnelCTA。
+//        services/apiClient（fetchPositions/fetchNatalChart）、PersonBirthFields、transitData、共享工具页原语。
 // OUTPUT: 当前天象盘工具——展示某 UTC 日 10 大行星的星座/度数/逆行（默认今天，可选日期），
-//         附客户端算出的元素/模态平衡条 + 逆行计数 chip + 导流到出生星盘的品牌 CTA。
-// POS: 计算器矩阵（D）天象工具之一，路由 /:lang/current-planets。纯事实天象（无 LLM、无出生数据、无位置）；
-//      元素/模态分布由本地 signElement/signModality 现算（零额外请求、无 AI）。
+//         并可选输入出生资料，在客户端生成 Transit×Natal 相位矩阵与短/长期行运列表。
+// POS: 计算器矩阵（D）天象工具之一，路由 /:lang/current-planets。Current sky 无出生数据；
+//      个性化行运仅用 natal POST + sky positions 前端算相位，无 LLM。
 //      静态 SEO 正文在 scripts/generate-seo-pages.mjs。若更新此文件，务必更新 calculators/FOLDER.md。
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import type { Language } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
@@ -20,10 +25,22 @@ import { ElementBalanceBar } from "./ElementBalanceBar";
 import type { ElementCounts, ModalityCounts } from "./ElementBalanceBar";
 import { ToolFunnelCTA } from "./ToolFunnelCTA";
 import {
+  fetchNatalChart,
   fetchPositions,
   type PositionsResponse,
   type TodayPosition,
 } from "../../services/apiClient";
+import { trackEvent } from "../../services/analytics";
+import {
+  PersonBirthFields,
+  emptyPerson,
+  personToBirth,
+  MONTH_FALLBACK_EN,
+  type FieldsTheme,
+  type PersonState,
+} from "./PersonBirthFields";
+import { buildTransitResultData, type TransitResultData } from "./transitData";
+import { TransitResultView } from "./TransitResultView";
 
 const todayIso = (): string => new Date().toISOString().slice(0, 10);
 
@@ -71,10 +88,19 @@ export const CurrentPlanetsTool: React.FC = () => {
   const lang: Language = language === "zh" ? "zh" : "en";
   const th = useCalculatorTheme();
 
+  const person = useRef<PersonState>(emptyPerson());
+  const transitRef = useRef<HTMLDivElement>(null);
   const [date, setDate] = useState<string>(todayIso());
   const [data, setData] = useState<PositionsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [transitState, setTransitState] = useState<
+    "idle" | "loading" | "result" | "error"
+  >("idle");
+  const [transitError, setTransitError] = useState("");
+  const [transitResult, setTransitResult] = useState<TransitResultData | null>(
+    null,
+  );
 
   const load = useCallback(
     async (d: string) => {
@@ -106,6 +132,76 @@ export const CurrentPlanetsTool: React.FC = () => {
     () => (data ? computeSkyShape(data.positions) : null),
     [data],
   );
+  const monthNames = useMemo<string[]>(() => MONTH_FALLBACK_EN.slice(), []);
+
+  const onPersonChange = useCallback((p: PersonState) => {
+    person.current = p;
+  }, []);
+
+  const fieldsTheme: FieldsTheme = {
+    textPrimary: th.textPrimary,
+    textSecondary: th.textSecondary,
+    inputBg: th.inputBg,
+    inputText: th.inputText,
+    inputBorder: th.inputBorder,
+    cardBg: th.cardBg,
+    cardBorder: th.cardBorder,
+  };
+
+  const handleTransitSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const birth = personToBirth(person.current);
+    if (!birth) {
+      setTransitError(
+        lang === "zh"
+          ? "请填写出生日期并从下拉中选择城市。"
+          : "Please enter a birth date and pick a city.",
+      );
+      setTransitState("error");
+      return;
+    }
+    setTransitState("loading");
+    setTransitError("");
+    try {
+      const [chart, sky] = await Promise.all([
+        fetchNatalChart(
+          birth as unknown as Parameters<typeof fetchNatalChart>[0],
+          { skipCache: true },
+        ),
+        data?.date === date && data.positions.length > 0
+          ? Promise.resolve(data)
+          : fetchPositions(date || undefined),
+      ]);
+      const nextResult = buildTransitResultData({
+        label: person.current.name || (lang === "zh" ? "我的星盘" : "My chart"),
+        birth,
+        date: sky.date,
+        natalChart: chart,
+        skyPositions: sky.positions,
+      });
+      setTransitResult(nextResult);
+      setTransitState("result");
+      trackEvent("current_planets_transits_calculated", {
+        has_time: !!person.current.time,
+        aspect_count: nextResult.aspects.length,
+        transit_date: sky.date,
+      });
+      setTimeout(() => {
+        transitRef.current?.focus();
+        transitRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    } catch {
+      setTransitError(
+        lang === "zh"
+          ? "出了点问题，请检查出生信息后重试。"
+          : "Something went wrong. Check the birth details and try again.",
+      );
+      setTransitState("error");
+    }
+  };
 
   const headline = isToday
     ? lang === "zh"
@@ -239,6 +335,71 @@ export const CurrentPlanetsTool: React.FC = () => {
           ]}
           className="mt-8"
         />
+      )}
+
+      <section
+        className={`${th.cardBg} mt-8 rounded-2xl border ${th.cardBorder} p-6 transition-all duration-300 ease-in-out sm:p-8`}
+      >
+        <div className="mb-6 grid gap-3 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:items-end">
+          <div>
+            <div className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-accent">
+              {lang === "zh"
+                ? "Personal transit overlay"
+                : "Personal transit overlay"}
+            </div>
+            <h2 className="font-serif text-2xl font-semibold tracking-normal text-paper-900 dark:text-star-50">
+              {lang === "zh"
+                ? "把当天星空叠到你的出生盘"
+                : "Place this sky on your birth chart"}
+            </h2>
+          </div>
+          <p className="text-sm leading-relaxed text-paper-600 dark:text-star-200">
+            {lang === "zh"
+              ? "可选输入出生资料，工具会用当天行星位置与本命盘计算 Transit × Natal 相位矩阵；只展示数据，不生成 AI 解读。"
+              : "Optionally enter birth data to calculate a Transit × Natal aspect matrix for the selected date. This shows data only, with no AI interpretation."}
+          </p>
+        </div>
+
+        <form onSubmit={handleTransitSubmit} noValidate>
+          <PersonBirthFields
+            idPrefix="transits"
+            label={lang === "zh" ? "出生资料" : "Birth data"}
+            lang={lang}
+            th={fieldsTheme}
+            monthNames={monthNames}
+            onChange={onPersonChange}
+          />
+          <button
+            type="submit"
+            disabled={transitState === "loading"}
+            className="mt-5 min-h-[44px] w-full rounded-xl bg-gradient-primary py-3 font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 motion-reduce:transition-none"
+          >
+            {transitState === "loading"
+              ? lang === "zh"
+                ? "计算行运中…"
+                : "Calculating transits…"
+              : lang === "zh"
+                ? "计算我的行运"
+                : "Calculate my transits"}
+          </button>
+        </form>
+      </section>
+
+      {transitState === "error" && (
+        <div className="mt-8 rounded-2xl border border-red-400/40 bg-red-500/10 p-4 text-center">
+          <p className={th.textPrimary}>{transitError}</p>
+        </div>
+      )}
+
+      {transitState === "result" && transitResult && (
+        <div className="mt-8">
+          <TransitResultView
+            result={transitResult}
+            lang={lang}
+            innerRef={transitRef}
+            tabIndex={-1}
+          />
+        </div>
       )}
     </ToolPageShell>
   );

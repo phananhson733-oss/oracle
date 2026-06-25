@@ -14,7 +14,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import type { Language } from "../../types";
+import type { ExtendedNatalData, Language, UserProfile } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
 import { useCityAutocomplete } from "../../hooks/useCityAutocomplete";
@@ -121,6 +121,8 @@ export interface BirthChartDetails {
     houseSystem: string;
     zodiac: string;
   };
+  profile: UserProfile;
+  technical: ExtendedNatalData;
   core: BirthChartWheelPoint[];
   planets: BirthChartWheelPoint[];
   points: BirthChartWheelPoint[];
