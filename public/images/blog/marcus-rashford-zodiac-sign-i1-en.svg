@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 505" role="img" aria-label="Five Signals of a Double Scorpio Chart">
+  <defs>
+    <linearGradient id="marcusrashfordzodiacsign1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="marcusrashfordzodiacsign1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="marcusrashfordzodiacsign1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="url(#marcusrashfordzodiacsign1en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="172" fill="url(#marcusrashfordzodiacsign1en-neb1)"/>
+  <ellipse cx="623" cy="404" rx="334" ry="162" fill="url(#marcusrashfordzodiacsign1en-neb2)"/>
+  <circle cx="300.6" cy="413.9" r="1.27" fill="#cfc8ea" opacity="0.34"/><circle cx="687.7" cy="191.1" r="1.00" fill="#cfc8ea" opacity="0.13"/><circle cx="623.6" cy="237.7" r="0.44" fill="#cfc8ea" opacity="0.45"/><circle cx="331.6" cy="255.3" r="0.74" fill="#cfc8ea" opacity="0.33"/><circle cx="272.2" cy="431.0" r="1.58" fill="#cfc8ea" opacity="0.31"/><circle cx="520.9" cy="281.1" r="1.20" fill="#cfc8ea" opacity="0.24"/><circle cx="541.2" cy="94.4" r="0.75" fill="#cfc8ea" opacity="0.40"/><circle cx="366.6" cy="384.6" r="0.55" fill="#cfc8ea" opacity="0.36"/><circle cx="180.3" cy="309.6" r="1.45" fill="#cfc8ea" opacity="0.36"/><circle cx="12.1" cy="318.0" r="1.25" fill="#cfc8ea" opacity="0.13"/><circle cx="669.5" cy="455.9" r="0.56" fill="#cfc8ea" opacity="0.27"/><circle cx="673.3" cy="234.6" r="0.68" fill="#cfc8ea" opacity="0.53"/><circle cx="547.8" cy="101.2" r="1.20" fill="#cfc8ea" opacity="0.19"/><circle cx="96.6" cy="278.9" r="1.56" fill="#cfc8ea" opacity="0.39"/><circle cx="428.1" cy="225.7" r="1.26" fill="#cfc8ea" opacity="0.39"/><circle cx="98.1" cy="176.7" r="0.88" fill="#cfc8ea" opacity="0.42"/><circle cx="514.3" cy="58.4" r="0.58" fill="#cfc8ea" opacity="0.53"/><circle cx="157.3" cy="294.7" r="0.96" fill="#cfc8ea" opacity="0.39"/><circle cx="272.3" cy="297.3" r="1.26" fill="#cfc8ea" opacity="0.50"/><circle cx="371.3" cy="211.4" r="0.50" fill="#cfc8ea" opacity="0.32"/><circle cx="736.1" cy="190.6" r="1.35" fill="#cfc8ea" opacity="0.22"/><circle cx="700.6" cy="42.7" r="1.45" fill="#cfc8ea" opacity="0.49"/><circle cx="57.6" cy="42.5" r="1.01" fill="#cfc8ea" opacity="0.19"/><circle cx="531.2" cy="317.4" r="1.51" fill="#cfc8ea" opacity="0.24"/><circle cx="460.2" cy="98.4" r="0.77" fill="#cfc8ea" opacity="0.46"/><circle cx="674.7" cy="475.2" r="0.87" fill="#cfc8ea" opacity="0.21"/><circle cx="299.2" cy="365.9" r="1.31" fill="#cfc8ea" opacity="0.50"/><circle cx="117.3" cy="29.2" r="0.54" fill="#cfc8ea" opacity="0.54"/><circle cx="558.3" cy="146.3" r="1.56" fill="#cfc8ea" opacity="0.23"/><circle cx="66.4" cy="135.5" r="1.32" fill="#cfc8ea" opacity="0.38"/><circle cx="543.8" cy="254.1" r="1.38" fill="#cfc8ea" opacity="0.25"/><circle cx="150.2" cy="136.4" r="1.61" fill="#cfc8ea" opacity="0.26"/><circle cx="205.3" cy="343.1" r="0.47" fill="#cfc8ea" opacity="0.45"/><circle cx="198.7" cy="77.8" r="0.82" fill="#cfc8ea" opacity="0.23"/><circle cx="291.3" cy="327.4" r="0.41" fill="#cfc8ea" opacity="0.45"/><circle cx="668.9" cy="379.3" r="0.63" fill="#cfc8ea" opacity="0.17"/><circle cx="93.2" cy="155.4" r="1.19" fill="#cfc8ea" opacity="0.48"/><circle cx="223.2" cy="263.2" r="0.70" fill="#cfc8ea" opacity="0.35"/><circle cx="732.2" cy="81.5" r="1.66" fill="#cfc8ea" opacity="0.38"/><circle cx="401.1" cy="123.5" r="1.07" fill="#cfc8ea" opacity="0.22"/><circle cx="232.2" cy="192.8" r="1.35" fill="#cfc8ea" opacity="0.26"/><circle cx="259.6" cy="245.0" r="0.58" fill="#cfc8ea" opacity="0.36"/><circle cx="592.9" cy="161.9" r="1.66" fill="#cfc8ea" opacity="0.44"/><path d="M 646.3303666207939 452.1 L 646.8 454.7 L 649.5 455.1968001672067 L 646.8 455.7 L 646.3303666207939 458.3 L 645.8 455.7 L 643.2 455.1968001672067 L 645.8 454.7 Z" fill="#f6e6bf" opacity="0.61255287444219"/><path d="M 365.8071014005691 292.6 L 366.2 294.9 L 368.5 295.2965097683482 L 366.2 295.7 L 365.8071014005691 298.0 L 365.4 295.7 L 363.1 295.2965097683482 L 365.4 294.9 Z" fill="#f6e6bf" opacity="0.7074600232765078"/><path d="M 661.6503898445517 91.2 L 662.2 94.1 L 665.1 94.60086966725066 L 662.2 95.1 L 661.6503898445517 98.0 L 661.1 95.1 L 658.2 94.60086966725066 L 661.1 94.1 Z" fill="#f6e6bf" opacity="0.645214279461652"/><path d="M 426.9348836708814 161.6 L 427.6 164.8 L 430.8 165.42113269632682 L 427.6 166.0 L 426.9348836708814 169.3 L 426.3 166.0 L 423.1 165.42113269632682 L 426.3 164.8 Z" fill="#f6e6bf" opacity="0.5686479937285185"/><path d="M 677.4640859160572 88.9 L 678.0 91.7 L 680.8 92.27708211401477 L 678.0 92.8 L 677.4640859160572 95.7 L 676.9 92.8 L 674.1 92.27708211401477 L 676.9 91.7 Z" fill="#f6e6bf" opacity="0.6957823443226516"/><path d="M 623.6 237.7 L 547.8 101.2 L 514.3 58.4 L 157.3 294.7 L 700.6 42.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="491" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 485.8 L 16.5 488.5 L 19.2 489 L 16.5 489.5 L 16 492.2 L 15.5 489.5 L 12.8 489 L 15.5 488.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 485.8 L 744.5 488.5 L 747.2 489 L 744.5 489.5 L 744 492.2 L 743.5 489.5 L 740.8 489 L 743.5 488.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signals of a Double Scorpio Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#marcusrashfordzodiacsign1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#marcusrashfordzodiacsign1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="415" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#marcusrashfordzodiacsign1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#marcusrashfordzodiacsign1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Calm Surface, Strong Undercurrent</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Measured public presence conceals far more depth than outwardly shows</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#marcusrashfordzodiacsign1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#marcusrashfordzodiacsign1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Selective, Total Commitment</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Energy goes all-in on a few people or causes and stays deliberately private</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">about the rest</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#marcusrashfordzodiacsign1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#marcusrashfordzodiacsign1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Emotion Processed, Not Performed</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Big feelings worked through internally; composure is intensity kept beneath</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">the surface</text>
+  <circle cx="76" cy="337" r="20.0" fill="url(#marcusrashfordzodiacsign1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="337" r="15" fill="url(#marcusrashfordzodiacsign1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="332.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="341.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="333.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Outspoken Exception on Principle</text>
+  <text x="116" y="355.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A Mars in Sagittarius streak shows when a cause earns real conviction —</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">guardedness gives way to blunt candor</text>
+  <circle cx="76" cy="415" r="20.0" fill="url(#marcusrashfordzodiacsign1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="415" r="15" fill="url(#marcusrashfordzodiacsign1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="410.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="419.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="411.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Reputation-Aware Filter</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A Capricorn Rising (if present) keeps public conduct disciplined and</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">image-conscious</text>
+  <path d="M 202.22749999999988 476.4 L 202.6 478.6 L 204.8 479 L 202.6 479.4 L 202.22749999999988 481.6 L 201.8 479.4 L 199.6 479 L 201.8 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="483" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 476.4 L 558.2 478.6 L 560.4 479 L 558.2 479.4 L 557.7725000000002 481.6 L 557.4 479.4 L 555.2 479 L 557.4 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,96 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "marcus-rashford-zodiac-sign": {
+      "hero": {
+        "prompt": "A vast midnight landscape: a scorpion-shaped constellation blazes cold silver-gold in a deep indigo sky, its perfect reflection shimmering on a flat obsidian lake below — beneath the water's mirror surface warm amber and teal bioluminescence pulses from unseen depths, the contrast of serene exterior and burning interior stretching unbroken horizon to horizon, low mist threading through dark silhouetted reeds, a profound stillness masking immense latent power; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Marcus Rashford zodiac sign — double Scorpio: calm surface concealing intense depths, deep indigo and gold illustration",
+        "altZh": "马库斯·拉什福德星座——双天蝎：平静表面下深邃强度的深蓝金色插画"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Marcus Rashford's Chart Placements at a Glance",
+          "titleEn": "Marcus Rashford's Chart Placements at a Glance",
+          "titleZh": "马库斯·拉什福德的星盘配置概览",
+          "altEn": "Marcus Rashford astrology placements: Scorpio Sun, Scorpio Moon, Capricorn Rising, Mars in Sagittarius",
+          "altZh": "拉什福德占星配置：天蝎太阳、天蝎月亮、摩羯座上升、射手座火星",
+          "items": [
+            {
+              "nameEn": "Scorpio Sun",
+              "nameZh": "天蝎太阳",
+              "subEn": "Core identity aimed at depth, control, and renewal; calm public surface over an intense private core",
+              "subZh": "核心身份指向深度、控制与更新；平静的公众表面下隐藏着强烈的私人内核"
+            },
+            {
+              "nameEn": "Scorpio Moon (often cited)",
+              "nameZh": "天蝎月亮（常被引用）",
+              "subEn": "Private emotional reality: feelings processed inwardly, shown only to those closest",
+              "subZh": "私人情感现实：情绪在内心处理，只向最亲近的人展示"
+            },
+            {
+              "nameEn": "Capricorn Rising (disputed)",
+              "nameZh": "摩羯座上升（存疑）",
+              "subEn": "Disciplined, reputation-aware public conduct; birth time unverified so this placement remains uncertain",
+              "subZh": "自律、注重声誉的公众行为；出生时间未经证实，该配置仍存疑"
+            },
+            {
+              "nameEn": "Mars in Sagittarius",
+              "nameZh": "射手座火星",
+              "subEn": "Outspoken conviction on chosen causes; blunt candor that contrasts the guarded Scorpio manner",
+              "subZh": "对所选事业的直言信念；与天蝎谨慎风格形成对比的坦率直接"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Double Scorpio Placement in a Chart",
+          "titleEn": "Five Signals of a Double Scorpio Chart",
+          "titleZh": "双天蝎星盘的五个信号",
+          "altEn": "Five behavioral signals of a double Scorpio astrology placement in sequence, deep indigo illustration",
+          "altZh": "双天蝎占星配置的五个行为信号序列图",
+          "items": [
+            {
+              "nameEn": "Calm Surface, Strong Undercurrent",
+              "nameZh": "平静表面，强劲暗流",
+              "subEn": "Measured public presence conceals far more depth than outwardly shows",
+              "subZh": "沉稳的公众形象掩盖了远超表面的深度"
+            },
+            {
+              "nameEn": "Selective, Total Commitment",
+              "nameZh": "选择性的全情投入",
+              "subEn": "Energy goes all-in on a few people or causes and stays deliberately private about the rest",
+              "subZh": "精力全情投入少数人或事业，对其余事物刻意保持私密"
+            },
+            {
+              "nameEn": "Emotion Processed, Not Performed",
+              "nameZh": "情感内化，而非外显",
+              "subEn": "Big feelings worked through internally; composure is intensity kept beneath the surface",
+              "subZh": "强烈情感在内心消化；表面冷静实为压制在内的强度"
+            },
+            {
+              "nameEn": "Outspoken Exception on Principle",
+              "nameZh": "原则性的例外发声",
+              "subEn": "A Mars in Sagittarius streak shows when a cause earns real conviction — guardedness gives way to blunt candor",
+              "subZh": "射手座火星在真正信服的事业上爆发——谨慎让位于直接的坦诚"
+            },
+            {
+              "nameEn": "Reputation-Aware Filter",
+              "nameZh": "声誉意识过滤器",
+              "subEn": "A Capricorn Rising (if present) keeps public conduct disciplined and image-conscious",
+              "subZh": "摩羯座上升（如果存在）使公众行为保持纪律性和形象意识"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
