@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="诚实解读双子座太阳的四步方法">
+  <defs>
+    <linearGradient id="thomasparteyzodiacsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="thomasparteyzodiacsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="thomasparteyzodiacsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="thomasparteyzodiacsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="thomasparteyzodiacsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="thomasparteyzodiacsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#thomasparteyzodiacsign1zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#thomasparteyzodiacsign1zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#thomasparteyzodiacsign1zh-neb2)"/>
+  <circle cx="453.8" cy="203.0" r="1.57" fill="#cfc8ea" opacity="0.14"/><circle cx="274.2" cy="316.2" r="0.65" fill="#cfc8ea" opacity="0.27"/><circle cx="145.4" cy="357.2" r="1.07" fill="#cfc8ea" opacity="0.46"/><circle cx="28.1" cy="268.8" r="1.56" fill="#cfc8ea" opacity="0.47"/><circle cx="236.1" cy="167.0" r="1.69" fill="#cfc8ea" opacity="0.22"/><circle cx="631.5" cy="117.0" r="1.38" fill="#cfc8ea" opacity="0.21"/><circle cx="702.4" cy="249.0" r="0.58" fill="#cfc8ea" opacity="0.24"/><circle cx="386.2" cy="202.3" r="0.99" fill="#cfc8ea" opacity="0.23"/><circle cx="345.6" cy="62.9" r="1.36" fill="#cfc8ea" opacity="0.46"/><circle cx="464.1" cy="305.3" r="1.65" fill="#cfc8ea" opacity="0.50"/><circle cx="473.5" cy="112.7" r="1.21" fill="#cfc8ea" opacity="0.28"/><circle cx="129.8" cy="232.8" r="1.28" fill="#cfc8ea" opacity="0.47"/><circle cx="635.3" cy="113.4" r="0.45" fill="#cfc8ea" opacity="0.21"/><circle cx="274.4" cy="278.8" r="1.55" fill="#cfc8ea" opacity="0.13"/><circle cx="240.1" cy="186.5" r="0.91" fill="#cfc8ea" opacity="0.42"/><circle cx="446.2" cy="342.8" r="0.92" fill="#cfc8ea" opacity="0.46"/><circle cx="373.6" cy="190.7" r="1.63" fill="#cfc8ea" opacity="0.31"/><circle cx="156.7" cy="177.0" r="1.14" fill="#cfc8ea" opacity="0.17"/><circle cx="138.6" cy="245.1" r="0.91" fill="#cfc8ea" opacity="0.48"/><circle cx="453.8" cy="195.0" r="1.42" fill="#cfc8ea" opacity="0.47"/><circle cx="524.0" cy="32.7" r="0.71" fill="#cfc8ea" opacity="0.51"/><circle cx="723.3" cy="296.4" r="1.47" fill="#cfc8ea" opacity="0.14"/><circle cx="124.1" cy="46.9" r="1.67" fill="#cfc8ea" opacity="0.47"/><circle cx="668.1" cy="160.5" r="1.55" fill="#cfc8ea" opacity="0.39"/><circle cx="532.4" cy="321.7" r="1.13" fill="#cfc8ea" opacity="0.51"/><circle cx="247.4" cy="46.0" r="1.01" fill="#cfc8ea" opacity="0.48"/><circle cx="443.8" cy="14.7" r="1.67" fill="#cfc8ea" opacity="0.14"/><circle cx="713.2" cy="199.7" r="1.55" fill="#cfc8ea" opacity="0.27"/><circle cx="119.9" cy="246.0" r="0.43" fill="#cfc8ea" opacity="0.16"/><circle cx="317.0" cy="333.2" r="1.33" fill="#cfc8ea" opacity="0.20"/><circle cx="198.3" cy="80.3" r="1.52" fill="#cfc8ea" opacity="0.44"/><path d="M 352.18935006298125 177.0 L 352.6 179.3 L 354.9 179.75689353281632 L 352.6 180.2 L 352.18935006298125 182.5 L 351.8 180.2 L 349.5 179.75689353281632 L 351.8 179.3 Z" fill="#f6e6bf" opacity="0.770783691573888"/><path d="M 731.9574673939496 274.0 L 732.5 276.6 L 735.1 277.1437258119695 L 732.5 277.6 L 731.9574673939496 280.2 L 731.5 277.6 L 728.9 277.1437258119695 L 731.5 276.6 Z" fill="#f6e6bf" opacity="0.655022106692195"/><path d="M 362.9216481242329 76.0 L 363.3 78.1 L 365.5 78.54602771671489 L 363.3 79.0 L 362.9216481242329 81.1 L 362.5 79.0 L 360.3 78.54602771671489 L 362.5 78.1 Z" fill="#f6e6bf" opacity="0.5675026315264404"/><path d="M 716.2436411399394 50.6 L 716.7 52.7 L 718.8 53.15652466705069 L 716.7 53.6 L 716.2436411399394 55.7 L 715.8 53.6 L 713.7 53.15652466705069 L 715.8 52.7 Z" fill="#f6e6bf" opacity="0.6386728206649422"/><path d="M 616.934163833037 150.2 L 617.5 153.2 L 620.5 153.75896457443014 L 617.5 154.3 L 616.934163833037 157.3 L 616.4 154.3 L 613.4 153.75896457443014 L 616.4 153.2 Z" fill="#f6e6bf" opacity="0.5534537241794169"/><path d="M 274.2 316.2 L 631.5 117.0 L 453.8 195.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">诚实解读双子座太阳的四步方法</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#thomasparteyzodiacsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#thomasparteyzodiacsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#thomasparteyzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#thomasparteyzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">从太阳入手</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">以双子座变动、水星主宰的特质为唯一已证实的基础</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#thomasparteyzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#thomasparteyzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">映射到实际表现</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">将适应性理解为可观察的角色模式，而非命中注定的结果</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#thomasparteyzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#thomasparteyzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">标注依赖时间的位置</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">在出生时间得到证实前，将所有上升星座或宫位标注为推测</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#thomasparteyzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#thomasparteyzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">观察范围而非单一定位</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">跨越多个中场角色的多面性才是星盘的诚实结论，而非单一固定位置</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
