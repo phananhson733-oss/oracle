@@ -168,7 +168,7 @@ class EmailService {
           <p style="color:#a0a0b8;font-size:14px;line-height:1.7;font-style:italic;margin:0 0 24px;">${esc(issue.reflection)}</p>
           ${featuredBlock}
         </div>
-        <a href="https://www.astrologywiki.com/en/" style="display:inline-block;background:#d4af37;color:#0f0f1a;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;">Open AstrologyWiki</a>
+        <a href="https://www.astrologywiki.com" style="display:inline-block;background:#d4af37;color:#0f0f1a;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;">Open AstrologyWiki</a>
         <p style="color:#666680;font-size:12px;margin:28px 0 0;">You're receiving this because you subscribed to AstrologyWiki. <a href="${safeUnsub}" style="color:#666680;">Unsubscribe</a></p>
         `,
       600,
