@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const kylieJennerZodiacSignEn: WikiArticle = {
   slug: "kylie-jenner-zodiac-sign",
+  image: "/images/blog/kylie-jenner-zodiac-sign.jpg",
+  image_alt: "Leo Sun fire rising over ancient Capricorn mountain peaks — visibility and structured ambition in Kylie Jenner's birth chart",
   title: "What Kylie Jenner's Zodiac Sign Reveals About Her Empire-Building",
   description: "Kylie Jenner's zodiac sign is a Leo Sun paired with a widely cited Capricorn rising sign.",
   authorId: "marcus-orion",

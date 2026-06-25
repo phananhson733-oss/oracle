@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const brunoFernandesZodiacSignEn: WikiArticle = {
   slug: "bruno-fernandes-zodiac-sign",
+  image: "/images/blog/bruno-fernandes-zodiac-sign.jpg",
+  image_alt: "Precise golden earth ridges glow under a brooding indigo nebula sky — Virgo precision beneath Scorpio intensity",
   title: "Why the Bruno Fernandes Zodiac Sign Points to Precision, Not Temper",
   description: "Bruno Fernandes zodiac sign is Virgo — a Virgo Sun born on 8 September 1994 in Maia, Portugal.",
   authorId: "marcus-orion",
@@ -45,6 +47,9 @@ Picture a familiar moment: he plays a perfect through-ball, the striker takes a 
 
 There is a real trade-off baked into this pairing. To get that magnetic, hard-to-read Scorpio presence, he sacrifices being easily understood — the same look that reads as "leader with edge" also reads as "volatile" on a bad night. To get Virgo's relentless quality control, he sacrifices the calm, unbothered body language that keeps pundits from calling a player emotional. Choosing standards-driven reactions over a composed surface buys accuracy but costs him the benefit of the doubt.
 
+
+![Virgo Sun core driver versus Scorpio Rising surface impression in Bruno Fernandes's chart](/images/blog/bruno-fernandes-zodiac-sign-i1-en.svg)
+
 ## How to Read His Virgo Placements in His Game
 
 You do not need the birth chart open to spot the Virgo pattern. It shows up in observable habits, and once you know the tells, the "temper" story falls apart:
@@ -54,6 +59,9 @@ You do not need the birth chart open to spot the Virgo pattern. It shows up in o
 3. **Diplomacy once the whistle goes.** Post-match, the Libra Moon takes over and he reaches for fairness and measured words, a sharp contrast to the in-game heat.
 4. **Protective, not aggressive, drive.** His competitive push reads as covering for teammates and shielding the group rather than chasing solo glory — service over spectacle, the Virgo way.
 5. **Standards stated out loud.** He names what the team should have done, which is Virgo's service-via-craft instinct showing up as leadership rather than ego.
+
+
+![Five observable Virgo patterns in Bruno Fernandes's on-pitch behaviour](/images/blog/bruno-fernandes-zodiac-sign-i0-en.svg)
 
 ## Common Misreadings
 
@@ -119,6 +127,8 @@ Generate your free birth chart to explore the Bruno Fernandes zodiac sign, and r
 
 export const brunoFernandesZodiacSignZh: WikiArticle = {
   slug: "bruno-fernandes-zodiac-sign",
+  image: "/images/blog/bruno-fernandes-zodiac-sign.jpg",
+  image_alt: "精确的金色地脊在阴郁靛蓝星云天空下发光——天蝎强度之下的处女座精准",
   title: "布鲁诺·费尔南德斯的星座：为什么它指向精准，而非火爆脾气",
   description: "简单说，他的太阳落在处女座，外加常被引用、却未经证实的天秤座月亮与天蝎座上升。布鲁诺·费尔南德斯的星座核心是处女座——出生于 1994 年 9 月 8 日，葡萄牙马亚。多数星盘网站还会标注天秤座月亮和天蝎座上升，但他从未公开出生时辰，这两个位置来自以正午为基准的估算盘，无法确认。",
   authorId: "marcus-orion",
@@ -160,6 +170,9 @@ export const brunoFernandesZodiacSignZh: WikiArticle = {
 
 这一对配置里嵌着真实的取舍。要换取那种磁性、难以读懂的天蝎气场，他牺牲了"容易被理解"——同一张脸在状态好时读作"带锋芒的领袖"，在糟糕的夜里就读作"易怒"。要换取处女座不知疲倦的质量把控，他牺牲了那种让评论员不会喊"这球员太情绪化"的从容肢体语言。选择标准驱动的反应而非平静的表层，买到了精度，却赔上了别人对他的善意推定。
 
+
+![布鲁诺·费尔南德斯盘面中处女座太阳内核驱动与天蝎座上升表层印象对比](/images/blog/bruno-fernandes-zodiac-sign-i1-zh.svg)
+
 ## 如何在你的星盘里识别 布鲁诺·费尔南德斯的星座
 
 你不必打开整张星盘，也能在生活里认出布鲁诺·费尔南德斯的星座这套处女座模式。它藏在可观察的习惯里，一旦你知道这些信号，"坏脾气"那套说法就散了：
@@ -169,6 +182,9 @@ export const brunoFernandesZodiacSignZh: WikiArticle = {
 3. **哨声一响就外交。** 赛后，天秤座月亮接管，他伸手去够公允与有分寸的措辞，与场上的火气形成尖锐对比。
 4. **保护性的、而非攻击性的驱力。** 他的好胜读起来像在为队友兜底、为团队遮挡，而非追逐个人荣耀——服务先于表演，这就是处女座的方式。
 5. **把标准说出口。** 他会指明球队本该怎么做，这是处女座"以工艺服务"的本能，以领导力而非自我的形式现身。
+
+
+![布鲁诺·费尔南德斯场上五个可观察的处女座行为模式](/images/blog/bruno-fernandes-zodiac-sign-i0-zh.svg)
 
 ## 常见误读
 

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const rhaenyraTargaryenZodiacSignEn: WikiArticle = {
   slug: "rhaenyra-targaryen-zodiac-sign",
+  image: "/images/blog/rhaenyra-targaryen-zodiac-sign.jpg",
+  image_alt: "Ember-gold flame burning beneath a still midnight sea, fire contained within dark water — Rhaenyra Targaryen as Scorpio",
   title: "Why the Rhaenyra Targaryen Zodiac Sign Reads as Scorpio, Not Fire",
   description: "The Rhaenyra Targaryen zodiac sign is the astrological profile fans assign to House of the Dragon's heir based on how she behaves on screen, not a canon birth date.",
   authorId: "elena-vane",
@@ -47,6 +49,9 @@ Fans and astrology writers don't actually agree on her sign — Sagittarius, Tau
 
 Because both are fixed signs, this is a debate about focus, not about elements. That is why the popular Aries and Leo guesses, for all their screen-logic, argue the wrong axis.
 
+
+![Scorpio versus Taurus comparison showing which fixed sign fits Rhaenyra Targaryen's behavioral patterns](/images/blog/rhaenyra-targaryen-zodiac-sign-i0-en.svg)
+
 ## How to Read the Rhaenyra Targaryen Zodiac Sign in Her Arc
 
 The Rhaenyra Targaryen zodiac sign becomes clearer once you stop watching for dragons and start watching for behavior. A few repeatable signals give the Scorpio read away:
@@ -58,6 +63,9 @@ The Rhaenyra Targaryen zodiac sign becomes clearer once you stop watching for dr
 5. **She holds the long grudge.** Slights from years earlier still steer her decisions, a hallmark of the sign's deep memory.
 
 Spot two or three of these in a scene and you are watching Scorpio behavior, regardless of how much fire is on the screen. None of these signals depends on her dragons or her title; strip those away and the same calculating, self-protective pattern remains, which is exactly why the water read holds up.
+
+
+![Five repeatable Scorpio behavioral signals that identify Rhaenyra Targaryen's zodiac sign across her arc](/images/blog/rhaenyra-targaryen-zodiac-sign-i1-en.svg)
 
 ## Common Misreadings
 
@@ -125,6 +133,8 @@ Map the same Scorpio patterns onto your own placements: generate your free birth
 
 export const rhaenyraTargaryenZodiacSignZh: WikiArticle = {
   slug: "rhaenyra-targaryen-zodiac-sign",
+  image: "/images/blog/rhaenyra-targaryen-zodiac-sign.jpg",
+  image_alt: "暗夜静海之下，一簇烬金火焰沉入深处，火被水所掌控——象征雷妮拉的天蝎星座",
   title: "为什么雷妮拉的星座读起来像天蝎，而非火象",
   description: "所谓雷妮拉的星座，是观众依据《龙之家族》这位继承人在荧幕上的行为为她指认的占星画像，而不是某个正史里写下的出生日期。因为她是虚构人物，这份画像本质上是一种从行为推导出来、而非来自生日的天蝎解读。当你把她的选择与黄道十二宫一一对照，它们落在固定水象上：对权力的执念、对背叛的长久记忆，以及只在危机里才到来的成长。",
   authorId: "elena-vane",
@@ -168,6 +178,9 @@ export const rhaenyraTargaryenZodiacSignZh: WikiArticle = {
 
 因为两者都是固定星座，这场争论关乎焦点，而非元素。这也正是流行的白羊、狮子猜测尽管有荧幕逻辑撑腰，却争错了那条轴线的原因。
 
+
+![天蝎与金牛对比图，呈现哪个固定星座最贴合雷妮拉的行为模式](/images/blog/rhaenyra-targaryen-zodiac-sign-i0-zh.svg)
+
 ## 如何在自己身上识别雷妮拉的星座
 
 一旦你不再盯着巨龙、转而留意行为，雷妮拉的星座这个解读就会清晰起来。几个可重复出现的信号，把天蝎读法暴露无遗，你也能在自己身上对照检视：
@@ -179,6 +192,9 @@ export const rhaenyraTargaryenZodiacSignZh: WikiArticle = {
 5. **记仇记得很久。** 多年前的轻慢，仍在左右她今天的决定，这是该星座深邃记忆的标志。
 
 在一场戏里捕捉到其中两三条，无论荧幕上有多少火光，你看到的就是天蝎式的举动。这些信号没有一条依赖她的龙或她的头衔；把那些剥离，同一套精于算计、自我保护的模式依然成立——这恰恰是水象读法立得住脚的原因。
+
+
+![从雷妮拉角色弧线中辨认天蝎星座的五个可重复行为信号](/images/blog/rhaenyra-targaryen-zodiac-sign-i1-zh.svg)
 
 ## 常见误读
 

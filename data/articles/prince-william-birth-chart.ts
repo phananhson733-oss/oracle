@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const princeWilliamBirthChartEn: WikiArticle = {
   slug: "prince-william-birth-chart",
+  image: "/images/blog/prince-william-birth-chart.jpg",
+  image_alt: "Moonlit ocean at twilight, crescent moon rising over dark indigo waves, warm golden mist on the surface, private depths below",
   title: "What Prince William's Birth Chart Reveals About His Private Cancer Heart",
   description: "Prince William's birth chart is a Cancer-dominant natal map set for June 21, 1982, at 9:03 PM in London, featuring a Cancer Sun, Cancer Moon, and Sagittarius Rising with Neptune conjunct the Ascendant.",
   authorId: "elena-vane",
@@ -42,6 +44,9 @@ The Sagittarius Rising with Neptune conjunct the Ascendant is the public image l
 
 The Cancer Moon sits behind all of that. Where the Rising describes the public interface, the Moon describes the unguarded interior — the emotional reflex that operates when no performance is happening. Cancer Moon needs security, belonging, and privacy to function well. It processes internally and protects what it processes. To get the depth and self-sufficiency that come from a unified Cancer Sun-Moon lens, you give up the visible internal contrast that usually signals emotional complexity to outside observers. The chart is not emotionally unavailable — it is emotionally self-contained, which is a different thing, and easy to mistake for the former.
 
+
+![Comparison of Sagittarius Rising public image versus Cancer Moon private interior in Prince William's birth chart](/images/blog/prince-william-birth-chart-i0-en.svg)
+
 ## How to Read This Placement in Your Own Chart
 
 Reading the structure of prince william birth chart is more useful when you know what each placement looks like in practice. These patterns appear across many charts, not just his:
@@ -51,6 +56,9 @@ Reading the structure of prince william birth chart is more useful when you know
 3. **Sagittarius Rising in public contexts.** The first impression runs warm, confident, and at ease across broad social situations. Expect a real gap between that surface and the more guarded emotional interior. The Rising communicates something genuine — it's just not the whole picture.
 4. **Neptune conjunct Ascendant.** The person absorbs the emotional register of a room and reflects back something slightly idealized. They tend to read differently to different observers because the public image is impressionistic rather than sharp. That quality belongs to Neptune, not to evasion.
 5. **The 2026 triple alignment.** When birthday, Father's Day, and the summer solstice converge on June 21, 2026, Cancer Season energy concentrates in an unusual way. For any chart with strong Cancer placements, the solstice often surfaces themes that have been quietly processed through the year rather than shown outward.
+
+
+![Five astrological placement patterns from Prince William's Cancer Sun Cancer Moon Sagittarius Rising natal chart](/images/blog/prince-william-birth-chart-i1-en.svg)
 
 ## Common Misreadings
 
