@@ -281,6 +281,7 @@ import { rickyGervaisZodiacSignEn } from "./ricky-gervais-zodiac-sign";
 import { reeseWitherspoonOliverHaarmannCompatibilityAstrologyEn } from "./reese-witherspoon-oliver-haarmann-compatibility-astrology";
 import { jwowwZackCarpinelloWeddingSynastryEn } from "./jwoww-zack-carpinello-wedding-synastry";
 import { jordanVsArgentinaEn } from "./jordan-vs-argentina";
+import { colombiaVsPortugalEn } from "./colombia-vs-portugal";
 // All articles organized by language
 
 import {
@@ -553,6 +554,7 @@ const ARTICLES_EN: WikiArticle[] = [
   reeseWitherspoonOliverHaarmannCompatibilityAstrologyEn,
   jwowwZackCarpinelloWeddingSynastryEn,
   jordanVsArgentinaEn,
+  colombiaVsPortugalEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
