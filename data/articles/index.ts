@@ -283,6 +283,7 @@ import { jwowwZackCarpinelloWeddingSynastryEn } from "./jwoww-zack-carpinello-we
 import { jordanVsArgentinaEn } from "./jordan-vs-argentina";
 import { colombiaVsPortugalEn } from "./colombia-vs-portugal";
 import { taylorSwiftAndTravisKelceEn } from "./taylor-swift-and-travis-kelce";
+import { harryStylesAndZoKravitzEn } from "./harry-styles-and-zo-kravitz";
 // All articles organized by language
 
 import {
@@ -557,6 +558,7 @@ const ARTICLES_EN: WikiArticle[] = [
   jordanVsArgentinaEn,
   colombiaVsPortugalEn,
   taylorSwiftAndTravisKelceEn,
+  harryStylesAndZoKravitzEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
