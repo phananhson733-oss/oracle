@@ -282,6 +282,7 @@ import { reeseWitherspoonOliverHaarmannCompatibilityAstrologyEn } from "./reese-
 import { jwowwZackCarpinelloWeddingSynastryEn } from "./jwoww-zack-carpinello-wedding-synastry";
 import { jordanVsArgentinaEn } from "./jordan-vs-argentina";
 import { colombiaVsPortugalEn } from "./colombia-vs-portugal";
+import { taylorSwiftAndTravisKelceEn } from "./taylor-swift-and-travis-kelce";
 // All articles organized by language
 
 import {
@@ -555,6 +556,7 @@ const ARTICLES_EN: WikiArticle[] = [
   jwowwZackCarpinelloWeddingSynastryEn,
   jordanVsArgentinaEn,
   colombiaVsPortugalEn,
+  taylorSwiftAndTravisKelceEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
