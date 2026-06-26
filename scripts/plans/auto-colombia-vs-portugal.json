@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "colombia-vs-portugal": {
+      "hero": {
+        "prompt": "Two luminous celestial presences drifting toward each other across a vast night sky — one a dynamic swirling golden burst embodying expressive Mercurial energy, the other a slow-burning silver-indigo arc carrying patient Saturnian calm — converging beneath a great protective Jupiter glow in a Cancer sky, a single seamless cosmic landscape of two contrasting temperaments meeting under shared stars, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two glowing celestial presences converge beneath Jupiter in Cancer, symbolizing Colombia and Portugal's contrasting temperaments",
+        "altZh": "两股发光的天体气场在巨蟹座木星下交汇，象征哥伦比亚与葡萄牙对立的气质"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Colombia vs Portugal Astrological Matchup at a Glance",
+          "titleEn": "Colombia vs Portugal: Symbolic Contrast at a Glance",
+          "titleZh": "哥伦比亚 vs 葡萄牙：象征对比一览",
+          "altEn": "Side-by-side symbolic comparison of Colombia, Portugal, and the Jupiter-in-Cancer transit for June 27, 2026",
+          "altZh": "2026年6月27日哥伦比亚、葡萄牙与巨蟹座木星过境的象征对比图",
+          "columns": [
+            {
+              "nameEn": "Colombia",
+              "nameZh": "哥伦比亚",
+              "linesEn": [
+                "Mercurial / expressive energy",
+                "Quick, improvisational style",
+                "Flair-led attacking moves",
+                "Archetype: spontaneous challenger"
+              ],
+              "linesZh": [
+                "墨丘利 / 表达型能量",
+                "快速、即兴风格",
+                "闪耀创意的进攻",
+                "原型：即兴的挑战者"
+              ]
+            },
+            {
+              "nameEn": "Portugal",
+              "nameZh": "葡萄牙",
+              "linesEn": [
+                "Saturnian / composed energy",
+                "Patient, experience-weighted",
+                "Deliberate tempo control",
+                "Archetype: veteran closing a chapter"
+              ],
+              "linesZh": [
+                "土星 / 沉稳型能量",
+                "耐心、经验导向",
+                "刻意掌控节奏",
+                "原型：封章的老将"
+              ]
+            },
+            {
+              "nameEn": "Jupiter in Cancer",
+              "nameZh": "巨蟹座木星",
+              "linesEn": [
+                "Shared emotional backdrop",
+                "June 27, 2026 transit",
+                "Belonging & home-crowd intensity",
+                "Both sides under the same sky"
+              ],
+              "linesZh": [
+                "共同的情感背景",
+                "2026年6月27日过境",
+                "归属感与主场氛围",
+                "两队同在一片星空下"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Colombia vs Portugal Matchup in the Chart",
+          "titleEn": "4 Steps to Reading the Symbolic Matchup",
+          "titleZh": "解读象征性对决的4个步骤",
+          "altEn": "Four-step guide to reading the Colombia vs Portugal astrological matchup as the match unfolds",
+          "altZh": "解读哥伦比亚与葡萄牙星象对决的四步指南",
+          "items": [
+            {
+              "nameEn": "Start with National Temperaments",
+              "nameZh": "从国家气质入手",
+              "subEn": "Notice Colombia's spontaneity and Portugal's controlled calm before focusing on individual players",
+              "subZh": "先感受哥伦比亚的即兴性与葡萄牙的沉稳控制，而非球员个人"
+            },
+            {
+              "nameEn": "Place the Day's Transit Over Both",
+              "nameZh": "将当日星象覆盖两队",
+              "subEn": "Jupiter in Cancer frames the shared mood — emotional stakes, belonging, and protective home-crowd intensity",
+              "subZh": "巨蟹座木星塑造共同氛围——情感张力、归属感与保护性主场强度"
+            },
+            {
+              "nameEn": "Read Players as Living Symbols",
+              "nameZh": "将球员视为活的象征",
+              "subEn": "Treat Díaz's directness and Ronaldo's farewell arc as natal themes — drive, legacy, timing — not performance stats",
+              "subZh": "将迪亚斯的直接与罗纳尔多的告别弧线视为本命主题——驱动力、遗产、时机——而非数据"
+            },
+            {
+              "nameEn": "Watch the Narrative Arc",
+              "nameZh": "关注叙事弧线",
+              "subEn": "Ask which story the night seems to serve: the ascendant challenger or the veteran closing a chapter",
+              "subZh": "思考这个夜晚服务于哪个故事：崛起的挑战者，还是正在封章的老将"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
