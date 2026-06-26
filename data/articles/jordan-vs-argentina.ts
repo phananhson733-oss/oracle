@@ -4,8 +4,6 @@ import type { WikiArticle } from "../../types";
 
 export const jordanVsArgentinaEn: WikiArticle = {
   slug: "jordan-vs-argentina",
-  image: "/images/blog/jordan-vs-argentina.jpg",
-  image_alt: "Crescent moon rising over desert dunes beside an ancient crown of stars in one indigo sky — Jordan vs Argentina founding-chart contrast",
   title: "What the Jordan vs Argentina National-Chart Contrast Reveals About Group J",
   description: "The Jordan vs Argentina national-chart contrast is a side-by-side reading of two nations' founding charts, used to frame their Group J meeting as symbolism rather than a scoreline.",
   authorId: "marcus-orion",
@@ -24,7 +22,7 @@ export const jordanVsArgentinaEn: WikiArticle = {
 
 ## What Is the Jordan vs Argentina National-Chart Contrast?
 
-The Jordan vs Argentina national-chart contrast is **a side-by-side reading of two nations' founding charts**, used to frame their Group J meeting as symbolism rather than a scoreline. It sets Jordan's debut-nation chart against Argentina's defending-champion chart, then asks what archetype each one carries into the same match. Astrologers treat a country's founding moment as a symbolic snapshot of its temperament, building on the cyclic approach Dane Rudhyar established, so this sits inside the broader *pillar page on World Cup 2026 astrology* that maps every fixture's chart story. The frame reads the closing Group J game as a cultural ritual, not a prediction. It can surface the symbolic stakes fans feel beneath the standings, but it cannot decide who wins.
+The Jordan vs Argentina national-chart contrast is **a side-by-side reading of two nations' founding charts**, used to frame their Group J meeting as symbolism rather than a scoreline. It sets Jordan's debut-nation chart against Argentina's defending-champion chart, then asks what archetype each one carries into the same match. Astrologers treat a country's founding moment as a symbolic snapshot of its temperament, building on the cyclic approach Dane Rudhyar established, so this sits inside the broader [World Cup 2026 astrology prediction hub](/en/wiki/world-cup-2026-astrology-prediction) that maps every fixture's chart story. The frame reads the closing Group J game as a cultural ritual, not a prediction. It can surface the symbolic stakes fans feel beneath the standings, but it cannot decide who wins.
 
 - Pairs an underdog debutant's chart against a title-holder's chart in one fixture
 - Leans on founding-chart symbolism, not player birth data or live form
@@ -36,7 +34,7 @@ Understanding the Jordan vs Argentina contrast matters because every top result 
 
 1. **The forecast trap.** Prediction pages reduce a debutant-versus-champion meeting to a win probability, flattening the cultural weight of Jordan's first appearance at a World Cup into a percentage.
 2. **The standings tunnel.** Schedule and table pages answer "when, where, and what's the score," but never "what does this meeting mean," which is the question that sends people looking for a chart-based reading.
-3. **The lopsided framing.** Most coverage treats the result as settled before kickoff, so the underdog's symbolic stakes disappear — exactly the angle a *guide to underdog charts in tournament astrology* is built to restore.
+3. **The lopsided framing.** Most coverage treats the result as settled before kickoff, so the underdog's symbolic stakes disappear — exactly the context a companion reading like [Argentina World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) fills in for the title-holder's side.
 
 For a fan, the payoff is small but real. Picture someone in the United States tuning into Group J's closing match with no stake in the standings: a prediction tells them Argentina is heavily favoured and that's that. The contrast gives them a reason to care anyway — a way to name why a debutant nation's first meeting with the reigning champion can feel enormous, without pretending the chart decides the ninety minutes.
 
@@ -56,9 +54,6 @@ The contrast runs in the opposite direction. It reads each country's founding ch
 
 Used side by side, they answer separate questions about the same ninety minutes. The prediction estimates what is likely to happen; the contrast describes what the meeting means to the people watching. One stays silent on significance, the other silent on outcome. Fans who feel cheated by chart readings usually wanted a prediction; fans bored by odds usually wanted the contrast. Knowing which you came for keeps you from blaming either tool for failing at the other's job.
 
-
-![Side-by-side comparison of match prediction and national-chart contrast approaches for Jordan vs Argentina](/images/blog/jordan-vs-argentina-i0-en.svg)
-
 ## How to Read This Fixture in Your Timing
 
 You don't need an ephemeris to read Jordan vs Argentina symbolically. The contrast becomes legible through a handful of observable signals, most of which you can catch in the coverage itself:
@@ -70,9 +65,6 @@ You don't need an ephemeris to read Jordan vs Argentina symbolically. The contra
 5. **Separate ritual from result.** Treat the symbolism as the meaning of the night and let the scoreboard stand on its own, so neither one has to do the other's work.
 
 None of these tell you who scores. They let you watch the same broadcast everyone else does and read a second layer running underneath it — the one that makes a so-called formality worth showing up for.
-
-
-![Five-step guide to reading the Jordan vs Argentina fixture through national founding-chart symbolism](/images/blog/jordan-vs-argentina-i1-en.svg)
 
 ## Common Misreadings
 
@@ -118,8 +110,8 @@ No. This practice compares national founding charts, not individual squad member
 
 ## Related Reading
 
-- *cluster page on 2026 transit events* — connects this fixture to the wider Jupiter-in-Cancer calendar.
-- *explainer on national founding charts* — unpacks how mundane astrology reads a country's birth moment.
+- [June 2026 World Cup astrology calendar](/en/wiki/world-cup-2026-june-astrology) — connects this fixture to the wider Jupiter-in-Cancer month.
+- [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — another 2026 sky event shaping the tournament's symbolic backdrop.
 - [2026 FIFA World Cup Group J (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_J) — the schedule and table context behind the contrast.
 
 ## Take Action
