@@ -40,7 +40,7 @@ Understanding the Harry Styles and Zoë Kravitz pairing through this sextile mat
 2. **Autonomy reads as distance.** Two self-directed people who don't fuse can look "unconventional" from the outside, even when the air-fire sextile is exactly what keeps them in step.
 3. **The lens gets mistaken for a forecast.** Searchers want to know whether it "works," but the sextile describes a tendency in how two identities relate, not a guaranteed result.
 
-According to the Pew Research Center, around 29% of U.S. adults say they believe in astrology, so a celebrity synastry headline meets a wide audience that is both genuinely curious and easily handed an oversimplified score. Reading the pair through elements gives that curiosity something sturdier to stand on — a way to ask *how* the chemistry runs rather than just *how high* it ranks.
+Astrology draws a wide mainstream audience — surveys consistently put the share of U.S. adults who say they believe in it at roughly one in four — so a celebrity synastry headline meets readers who are both genuinely curious and easily handed an oversimplified score. Reading the pair through elements gives that curiosity something sturdier to stand on — a way to ask *how* the chemistry runs rather than just *how high* it ranks.
 
 ## The Air-Fire Sextile vs a Compatibility Percentage
 
