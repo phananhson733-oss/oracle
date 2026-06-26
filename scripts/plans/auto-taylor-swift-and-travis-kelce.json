@@ -1,0 +1,78 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "taylor-swift-and-travis-kelce": {
+      "hero": {
+        "prompt": "Two glowing celestial orbs suspended above a misty twilight horizon — one pulsing warm amber-gold, the other cool iridescent silver — drifting close in a shared sky, soft arcs of teal light bridging the space between them across an unbroken starfield, rolling plains below dissolving into distant mountains, atmospheric haze catching the dual glow, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two glowing celestial orbs — gold and silver — bridged by teal arcs of light above a misty plain, symbolizing synastry chart alignment",
+        "altZh": "两颗发光天体——金色与银色——在朦胧暮色平原上空以蓝绿光弧相连，象征星盘合盘契合"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Full Synastry vs Sun-Sign Compatibility: What Actually Differs",
+          "titleEn": "Sun-Sign Read vs Full Synastry: What You Gain and Give Up",
+          "altEn": "Comparison of Sun-sign compatibility versus full synastry chart reading for Taylor Swift and Travis Kelce",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Only",
+              "linesEn": [
+                "Compares only Sun placements",
+                "Sagittarius vs Libra quick verdict",
+                "Fast, archetype-level headline",
+                "Misses Moon, Venus, and Mars detail",
+                "One-line yes-or-no answer"
+              ]
+            },
+            {
+              "nameEn": "Full Synastry",
+              "linesEn": [
+                "Overlays both complete birth charts",
+                "Reads aspects by specific degree",
+                "Includes Moon, Venus, and Mars contacts",
+                "Treats compatibility as a spectrum",
+                "Surfaces both ease and friction"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Swift–Kelce Synastry Chart in Practice",
+          "titleEn": "Five Steps to Read Any Synastry Chart",
+          "altEn": "Five-step sequence for reading a synastry chart: Moon contacts, Venus, Mars, composite midpoints, birth-time caveat",
+          "items": [
+            {
+              "nameEn": "Find Moon Contacts First",
+              "subEn": "Reveals emotional cadence — whether the two partners soothe or unsettle each other in daily life"
+            },
+            {
+              "nameEn": "Check Venus for Affection Style",
+              "subEn": "Shows shared taste, public warmth, and how each person gives and receives care"
+            },
+            {
+              "nameEn": "Read Mars for Drive and Conflict",
+              "subEn": "Reveals pace — quick spark vs slow burn — and how friction tends to resolve"
+            },
+            {
+              "nameEn": "Note the Composite Midpoints",
+              "subEn": "Blends both charts into one to describe what the pair produces together as a unit"
+            },
+            {
+              "nameEn": "Hold the Birth-Time Caveat",
+              "subEn": "Ascendants and house overlays need accurate birth times; public-data readings stay approximate"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
