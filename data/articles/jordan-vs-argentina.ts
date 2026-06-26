@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const jordanVsArgentinaEn: WikiArticle = {
   slug: "jordan-vs-argentina",
+  image: "/images/blog/jordan-vs-argentina.jpg",
+  image_alt: "Crescent moon rising over desert dunes beside an ancient crown of stars in one indigo sky — Jordan vs Argentina founding-chart contrast",
   title: "What the Jordan vs Argentina National-Chart Contrast Reveals About Group J",
   description: "The Jordan vs Argentina national-chart contrast is a side-by-side reading of two nations' founding charts, used to frame their Group J meeting as symbolism rather than a scoreline.",
   authorId: "marcus-orion",
@@ -54,6 +56,8 @@ The contrast runs in the opposite direction. It reads each country's founding ch
 
 Used side by side, they answer separate questions about the same ninety minutes. The prediction estimates what is likely to happen; the contrast describes what the meeting means to the people watching. One stays silent on significance, the other silent on outcome. Fans who feel cheated by chart readings usually wanted a prediction; fans bored by odds usually wanted the contrast. Knowing which you came for keeps you from blaming either tool for failing at the other's job.
 
+![Side-by-side comparison of match prediction and national-chart contrast approaches for Jordan vs Argentina](/images/blog/jordan-vs-argentina-i0-en.svg)
+
 ## How to Read This Fixture in Your Timing
 
 You don't need an ephemeris to read Jordan vs Argentina symbolically. The contrast becomes legible through a handful of observable signals, most of which you can catch in the coverage itself:
@@ -65,6 +69,8 @@ You don't need an ephemeris to read Jordan vs Argentina symbolically. The contra
 5. **Separate ritual from result.** Treat the symbolism as the meaning of the night and let the scoreboard stand on its own, so neither one has to do the other's work.
 
 None of these tell you who scores. They let you watch the same broadcast everyone else does and read a second layer running underneath it — the one that makes a so-called formality worth showing up for.
+
+![Five-step guide to reading the Jordan vs Argentina fixture through national founding-chart symbolism](/images/blog/jordan-vs-argentina-i1-en.svg)
 
 ## Common Misreadings
 
