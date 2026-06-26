@@ -832,6 +832,8 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'ricky-gervais-zodiac-sign',
+  'reese-witherspoon-oliver-haarmann-compatibility-astrology',
+  'jwoww-zack-carpinello-wedding-synastry',
   'darwin-nunez-zodiac-sign',
   'folarin-balogun-birth-chart',
   'emma-watson-zodiac-sign',
