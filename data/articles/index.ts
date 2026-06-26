@@ -277,6 +277,7 @@ import { mariahCareyZodiacSignEn } from "./mariah-carey-zodiac-sign";
 import { emmaWatsonZodiacSignEn } from "./emma-watson-zodiac-sign";
 import { darwinNunezZodiacSignEn } from "./darwin-nunez-zodiac-sign";
 import { folarinBalogunBirthChartEn } from "./folarin-balogun-birth-chart";
+import { reeseWitherspoonOliverHaarmannCompatibilityAstrologyEn } from "./reese-witherspoon-oliver-haarmann-compatibility-astrology";
 import { jwowwZackCarpinelloWeddingSynastryEn } from "./jwoww-zack-carpinello-wedding-synastry";
 // All articles organized by language
 
@@ -546,6 +547,7 @@ const ARTICLES_EN: WikiArticle[] = [
   emmaWatsonZodiacSignEn,
   darwinNunezZodiacSignEn,
   folarinBalogunBirthChartEn,
+  reeseWitherspoonOliverHaarmannCompatibilityAstrologyEn,
   jwowwZackCarpinelloWeddingSynastryEn,
 ];
 
