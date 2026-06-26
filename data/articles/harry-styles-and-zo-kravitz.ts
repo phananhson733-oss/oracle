@@ -7,7 +7,7 @@ export const harryStylesAndZoKravitzEn: WikiArticle = {
   image: "/images/blog/harry-styles-and-zo-kravitz.jpg",
   image_alt: "Silver-blue aurora and amber-gold fire trail arcing together at a sextile angle across a deep indigo night sky",
   title: "What the Harry Styles and Zoë Kravitz Air-Fire Sextile Really Shows",
-  description: "The Aquarius–Sagittarius air-fire sextile is a flowing 60-degree angle between an air sign and a fire sign that lets two independent styles move together without grinding against each other.",
+  description: "The Aquarius–Sagittarius air-fire sextile is a harmonious 60-degree angle between an air sign and a fire sign that lets two independent styles move together without grinding against each other.",
   authorId: "marcus-orion",
   date: "2026-06-26",
   schema: "Article",
@@ -24,7 +24,7 @@ export const harryStylesAndZoKravitzEn: WikiArticle = {
 
 ## What Is the Aquarius–Sagittarius Air-Fire Sextile?
 
-The Aquarius–Sagittarius air-fire sextile is a flowing 60-degree angle between an air sign and a fire sign that lets two independent styles move together without grinding against each other. Air observes, steps back, and runs on ideas; fire pushes forward and runs on momentum. When the two sit a sextile apart, the contact reads as easy rather than effortful, and the pairing comes through as **an air-fire sextile linking Aquarius detachment with Sagittarius drive**.
+The Aquarius–Sagittarius air-fire sextile is a harmonious 60-degree angle between an air sign and a fire sign that lets two independent styles move together without grinding against each other. Air observes, steps back, and runs on ideas; fire pushes forward and runs on momentum. When the two sit a sextile apart, the contact reads as easy rather than effortful, and the pairing comes through as **an air-fire sextile linking Aquarius detachment with Sagittarius drive**.
 
 - Pairs cool, idea-led distance (air) with restless forward motion (fire)
 - Sits inside elemental compatibility synastry, not Sun-sign scoring
@@ -72,7 +72,7 @@ Used this way, the sextile becomes a starting lens rather than a finish line. It
 
 The same sextile gets flattened in predictable ways online, usually by content chasing a fast verdict. Here is where the popular takes go wrong, each paired with the more accurate read:
 
-1. **"Air and fire just clash."** Misread. Within the same modality they form a supportive sextile; the clash story confuses signs that square with ones that sextile.
+1. **"Air and fire just clash."** Misread. Two signs apart, an air sign and a fire sign of the same polarity form a supportive sextile, not a clash; the clash story confuses the signs that square (90°) with the ones that sextile (60°).
 2. **"The percentage is the compatibility."** Misread. A score is one summary among many, while synastry depth comes from full charts, not a Sun-sign headline.
 3. **"Unconventional means unstable."** Misread. An autonomy-tolerant bond can look offbeat from the outside while functioning smoothly on the inside.
 4. **"A sextile guarantees it works."** Misread. The sextile describes an easy tendency, not a fixed outcome — treat it as symbolic reflection, never a relationship verdict.
@@ -85,7 +85,7 @@ The same sextile gets flattened in predictable ways online, usually by content c
 
 | Property | How It Works | Ruling Elements | How to Observe |
 |---|---|---|---|
-| Angle | A flowing ~60° aspect between same-polarity signs | Air (Aquarius) + Fire (Sagittarius) | Placements about two signs apart |
+| Angle | A harmonious ~60° aspect between same-polarity signs | Air (Aquarius) + Fire (Sagittarius) | Placements about two signs apart |
 | Air side (Aquarius) | Brings detached observation and ideas | Air, fixed modality | One partner reads cool, concept-driven, independent |
 | Fire side (Sagittarius) | Supplies momentum and direction | Fire, mutable modality | Other partner reads candid, restless, forward-moving |
 | Core chemistry | Independence that stays in sync without merging | Air feeds fire, fire steers air | Comfortable space; both recharge after time apart |
