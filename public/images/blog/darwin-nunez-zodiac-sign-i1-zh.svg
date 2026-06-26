@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="努涅斯出生星盘速览">
+  <defs>
+    <linearGradient id="darwinnunezzodiacsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="darwinnunezzodiacsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="darwinnunezzodiacsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="darwinnunezzodiacsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="darwinnunezzodiacsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="darwinnunezzodiacsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#darwinnunezzodiacsign1zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#darwinnunezzodiacsign1zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#darwinnunezzodiacsign1zh-neb2)"/>
+  <circle cx="718.5" cy="268.3" r="1.02" fill="#cfc8ea" opacity="0.48"/><circle cx="145.5" cy="500.0" r="1.61" fill="#cfc8ea" opacity="0.37"/><circle cx="689.4" cy="495.1" r="1.18" fill="#cfc8ea" opacity="0.22"/><circle cx="574.5" cy="356.7" r="1.58" fill="#cfc8ea" opacity="0.22"/><circle cx="156.7" cy="438.0" r="0.59" fill="#cfc8ea" opacity="0.26"/><circle cx="238.4" cy="40.8" r="1.18" fill="#cfc8ea" opacity="0.27"/><circle cx="115.0" cy="581.7" r="1.12" fill="#cfc8ea" opacity="0.35"/><circle cx="149.8" cy="272.5" r="1.04" fill="#cfc8ea" opacity="0.38"/><circle cx="318.2" cy="50.4" r="1.08" fill="#cfc8ea" opacity="0.35"/><circle cx="683.0" cy="239.4" r="0.74" fill="#cfc8ea" opacity="0.49"/><circle cx="39.8" cy="199.9" r="0.71" fill="#cfc8ea" opacity="0.29"/><circle cx="55.8" cy="33.8" r="0.61" fill="#cfc8ea" opacity="0.49"/><circle cx="720.8" cy="34.4" r="1.48" fill="#cfc8ea" opacity="0.38"/><circle cx="95.1" cy="428.1" r="1.31" fill="#cfc8ea" opacity="0.39"/><circle cx="611.6" cy="74.1" r="1.35" fill="#cfc8ea" opacity="0.47"/><circle cx="205.5" cy="76.3" r="1.53" fill="#cfc8ea" opacity="0.48"/><circle cx="662.9" cy="257.2" r="1.57" fill="#cfc8ea" opacity="0.29"/><circle cx="496.0" cy="82.7" r="1.63" fill="#cfc8ea" opacity="0.38"/><circle cx="551.7" cy="111.7" r="1.21" fill="#cfc8ea" opacity="0.46"/><circle cx="86.4" cy="164.0" r="1.36" fill="#cfc8ea" opacity="0.45"/><circle cx="152.5" cy="558.8" r="0.94" fill="#cfc8ea" opacity="0.46"/><circle cx="333.0" cy="400.7" r="1.23" fill="#cfc8ea" opacity="0.44"/><circle cx="545.3" cy="570.7" r="1.69" fill="#cfc8ea" opacity="0.23"/><circle cx="622.3" cy="338.8" r="0.79" fill="#cfc8ea" opacity="0.17"/><circle cx="586.7" cy="72.7" r="1.59" fill="#cfc8ea" opacity="0.33"/><circle cx="367.7" cy="458.2" r="1.02" fill="#cfc8ea" opacity="0.39"/><circle cx="109.4" cy="447.2" r="1.18" fill="#cfc8ea" opacity="0.19"/><circle cx="740.6" cy="85.0" r="1.63" fill="#cfc8ea" opacity="0.22"/><circle cx="225.7" cy="408.7" r="0.93" fill="#cfc8ea" opacity="0.47"/><circle cx="136.2" cy="416.4" r="0.96" fill="#cfc8ea" opacity="0.28"/><circle cx="737.1" cy="212.0" r="0.89" fill="#cfc8ea" opacity="0.47"/><circle cx="661.7" cy="584.8" r="1.64" fill="#cfc8ea" opacity="0.27"/><circle cx="295.9" cy="135.0" r="1.37" fill="#cfc8ea" opacity="0.28"/><circle cx="400.6" cy="210.2" r="1.62" fill="#cfc8ea" opacity="0.27"/><circle cx="334.8" cy="236.1" r="1.02" fill="#cfc8ea" opacity="0.44"/><circle cx="560.7" cy="338.9" r="1.50" fill="#cfc8ea" opacity="0.17"/><circle cx="206.6" cy="590.4" r="0.61" fill="#cfc8ea" opacity="0.52"/><circle cx="702.6" cy="585.0" r="0.89" fill="#cfc8ea" opacity="0.42"/><circle cx="215.0" cy="559.4" r="0.91" fill="#cfc8ea" opacity="0.51"/><circle cx="362.6" cy="534.5" r="0.43" fill="#cfc8ea" opacity="0.16"/><circle cx="290.5" cy="136.0" r="1.15" fill="#cfc8ea" opacity="0.29"/><circle cx="448.6" cy="518.5" r="0.81" fill="#cfc8ea" opacity="0.24"/><circle cx="459.8" cy="129.4" r="1.54" fill="#cfc8ea" opacity="0.37"/><circle cx="727.8" cy="109.9" r="1.46" fill="#cfc8ea" opacity="0.14"/><circle cx="489.1" cy="125.6" r="1.22" fill="#cfc8ea" opacity="0.45"/><circle cx="363.0" cy="549.9" r="1.04" fill="#cfc8ea" opacity="0.36"/><circle cx="136.8" cy="276.6" r="1.41" fill="#cfc8ea" opacity="0.25"/><circle cx="319.1" cy="141.2" r="1.10" fill="#cfc8ea" opacity="0.29"/><circle cx="513.6" cy="587.7" r="1.04" fill="#cfc8ea" opacity="0.47"/><circle cx="596.2" cy="447.0" r="1.00" fill="#cfc8ea" opacity="0.13"/><circle cx="627.5" cy="229.8" r="1.59" fill="#cfc8ea" opacity="0.18"/><circle cx="77.8" cy="157.5" r="0.57" fill="#cfc8ea" opacity="0.38"/><path d="M 569.9466817192733 338.7 L 570.6 342.0 L 573.9 342.61580630997196 L 570.6 343.2 L 569.9466817192733 346.5 L 569.3 343.2 L 566.0 342.61580630997196 L 569.3 342.0 Z" fill="#f6e6bf" opacity="0.7118190048495308"/><path d="M 258.3452717401087 42.1 L 258.9 45.1 L 261.9 45.63489503460005 L 258.9 46.2 L 258.3452717401087 49.2 L 257.8 46.2 L 254.8 45.63489503460005 L 257.8 45.1 Z" fill="#f6e6bf" opacity="0.6246972599299625"/><path d="M 446.50355860218406 497.1 L 447.0 499.5 L 449.3 499.97735412651673 L 447.0 500.4 L 446.50355860218406 502.8 L 446.0 500.4 L 443.7 499.97735412651673 L 446.0 499.5 Z" fill="#f6e6bf" opacity="0.6735432747984305"/><path d="M 477.80497850850224 306.1 L 478.4 309.4 L 481.7 309.9858220783062 L 478.4 310.6 L 477.80497850850224 313.9 L 477.2 310.6 L 473.9 309.9858220783062 L 477.2 309.4 Z" fill="#f6e6bf" opacity="0.6579190029995516"/><path d="M 499.6060816757381 198.4 L 500.1 201.0 L 502.8 201.51902777561918 L 500.1 202.0 L 499.6060816757381 204.7 L 499.1 202.0 L 496.4 201.51902777561918 L 499.1 201.0 Z" fill="#f6e6bf" opacity="0.6646800229558721"/><path d="M 205.5 76.3 L 496.0 82.7 L 551.7 111.7 L 333.0 400.7 L 334.8 236.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">努涅斯出生星盘速览</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#darwinnunezzodiacsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#darwinnunezzodiacsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">巨蟹座太阳</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">通过保护与归属感表达自我认同</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">开创水象：当领地值得捍卫时迅速行动</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">观察：比赛紧张时他如何抢占进攻空间</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 277.6 L 48.3 280.5 L 51.1 281 L 48.3 281.5 L 47.75 284.4 L 47.2 281.5 L 44.4 281 L 47.2 280.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">可能的天蝎座月亮</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">可能将情感集中为持久力与竞争执念</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">固定水象：吸收压力并转化为持续力量</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">观察：对抗、错失或阻力后他的反应方式</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 446.6 L 48.3 449.5 L 51.1 450 L 48.3 450.5 L 47.75 453.4 L 47.2 450.5 L 44.4 450 L 47.2 449.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">狮子座金星</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">增添风采、视觉戏剧性和对精彩完成的渴望</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">火象元素：决定性时刻渴望被看见</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">观察：戏剧性进球、大胆庆祝和高风险射门</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

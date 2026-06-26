@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const jwowwZackCarpinelloWeddingSynastryEn: WikiArticle = {
   slug: "jwoww-zack-carpinello-wedding-synastry",
+  image: "/images/blog/jwoww-zack-carpinello-wedding-synastry.jpg",
+  image_alt: "JWoww and Zack Carpinello wedding synastry: Pisces mist parting to reveal a golden horizon in a night seascape",
   title: "JWoww Zack Carpinello Wedding Synastry: A Limited Sun-Sign Reading",
   description: "JWoww Zack Carpinello wedding synastry is best read as a limited birth-date compatibility lens, not a full synastry chart.",
   authorId: "marcus-orion",
@@ -45,6 +47,9 @@ This limited compatibility reading differs from a wedding-logistics recap becaus
 
 3. **The late-December cusp explains the contrast.** Pisces tends to work through atmosphere and emotional timing. A Sagittarius Sun would add bold movement and open declaration; a Capricorn Sun would add formality, planning, and public commitment. Choosing this lens gets you a richer contrast between secrecy and spectacle, but you lose the simple clarity of “they planned a surprise and it worked.”
 
+
+![Three lenses comparing wedding logistics, Jupiter symbolism, and late-December cusp for JWoww and Zack Carpinello synastry](/images/blog/jwoww-zack-carpinello-wedding-synastry-i0-en.svg)
+
 ## How to Read the Wedding Astrology in Their Public Charts
 
 Because the available data is birth-date based, the most responsible reading stays with Sun signs, sign rulers, and visible event symbolism. The useful question is not whether astrology can prove why the wedding happened, but whether the public chart factors echo the public style of the reveal.
@@ -80,6 +85,9 @@ This JWoww and Zack wedding astrology reading is easy to flatten if it turns int
 | Conditional Jupiter thread | Links both Sun signs only if Zack is confirmed Sagittarius | Jupiter as possible shared traditional sign ruler, not chart ruler | Watch whether private plans become public events with high emotional volume |
 | Unknown birth times | Prevents confirmed Ascendant, house, and angle analysis | Unconfirmed chart angles | Avoid claims about houses, rising signs, or exact relationship timing |
 | Wedding misdirection | Turns a conventional ceremony into a reveal built around suspense | Pisces secrecy with Sagittarius-style theater or Capricorn-style formalization | Compare the setup to a scene change rather than a formal announcement |
+
+
+![Five synastry factors for JWoww and Zack Carpinello: Pisces Sun, late-December Sun, conditional Jupiter thread, unknown birth times, wedding misdirection](/images/blog/jwoww-zack-carpinello-wedding-synastry-i1-en.svg)
 
 ## Questions About JWoww and Zack Carpinello's Wedding Astrology
 

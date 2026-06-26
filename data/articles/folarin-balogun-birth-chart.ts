@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const folarinBalogunBirthChartEn: WikiArticle = {
   slug: "folarin-balogun-birth-chart",
+  image: "/images/blog/folarin-balogun-birth-chart.jpg",
+  image_alt: "Moonlit tidal bay with silvered waves and gold horizon glow evoking Cancer's water, belonging, and homeland themes in Folarin Balogun's birth chart",
   title: "Folarin Balogun Birth Chart and the Loyalty Behind His Game",
   description: "Folarin Balogun birth chart is a symbolic reading of the U.S. striker's known birth date, July 3, 2001, with his birth time left unconfirmed.",
   authorId: "marcus-orion",
@@ -53,6 +55,9 @@ Use these signals when reading folarin balogun birth chart, while keeping the un
 4. **Read intensity as protective.** On-field edge can be seen as defending the team role, not only chasing individual praise.
 5. **Compare timing separately.** Transits and progressions may describe periods of pressure, but they should not replace the natal Cancer-Sun foundation.
 
+
+![Five-step sequence for reading Folarin Balogun's Cancer Sun birth chart responsibly without an unconfirmed birth time](/images/blog/folarin-balogun-birth-chart-i0-en.svg)
+
 ## Common Misreadings
 
 The most common errors come from treating Balogun as either a biography entry or a horoscope stereotype. A cleaner reading needs both football context and chart discipline:
@@ -61,6 +66,9 @@ The most common errors come from treating Balogun as either a biography entry or
 2. **Misreading: the USA choice was only opportunism.** Actual: folarin balogun birth chart makes room for loyalty as a serious motive, even when career logic is also present.
 3. **Misreading: birth time can be guessed from personality.** Actual: public behavior cannot confirm an Ascendant, so the responsible reading stays with the known Sun placement.
 4. **Misreading: astrology should predict his World Cup results.** Actual: this chart is better for reading themes around identity, pressure, and team belonging, not forecasting scorelines.
+
+
+![Four common misreadings of Balogun's Cancer Sun chart compared with accurate chart interpretations](/images/blog/folarin-balogun-birth-chart-i1-en.svg)
 
 ## Balogun's Cancer-Sun Chart Quick Reference
 
