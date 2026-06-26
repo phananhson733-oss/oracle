@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const darwinNunezZodiacSignEn: WikiArticle = {
   slug: "darwin-nunez-zodiac-sign",
+  image: "/images/blog/darwin-nunez-zodiac-sign.jpg",
+  image_alt: "Dark coastline at night, a single luminous wave cresting in teal-gold light — Darwin Núñez's Cancer intensity and Venus in Leo flair",
   title: "Why Darwin Nunez Zodiac Sign Explains His Fierce Game",
   description: "Darwin Núñez astrology shows a Cancer Sun, possible Scorpio Moon emphasis, and Venus in Leo style.",
   authorId: "marcus-orion",
@@ -67,6 +69,9 @@ To read his soccer chart in context, focus on repeated patterns rather than isol
 
 The safest method is pattern recognition across matches. If a reading depends on one viral clip, it is probably too thin. If the same themes keep appearing across different opponents, stadiums, and pressure levels, the symbolism becomes more useful as a descriptive lens.
 
+
+![Five-step sequence for reading Darwin Núñez's Cancer-Scorpio-Leo chart through match observation](/images/blog/darwin-nunez-zodiac-sign-i0-en.svg)
+
 ## Common Misreadings
 
 His Cancer Sun and possible Scorpio Moon emphasis are easy to misread when astrology sites treat signs as one-word stereotypes. The stronger reading comes from correcting a few common mistakes:
@@ -89,6 +94,9 @@ Another mistake is treating astrology as a shortcut around football analysis. Th
 | Possible Scorpio Moon | May concentrate feeling into persistence, pressure, and competitive fixation | Water element / fixed Scorpio symbolism | Notice how he responds after contact, misses, or defensive resistance |
 | Venus in Leo | Adds flair, visual drama, and a hunger for memorable finishes | Fire element / Leo performance symbolism | Look for theatrical goals, bold celebrations, and high-risk finishing choices |
 | Unknown Ascendant | Birth time is not public, so angles and houses remain unconfirmed | Unconfirmed house axis | Avoid readings that claim his rising sign without a timed source |
+
+
+![Comparison of Cancer Sun, Possible Scorpio Moon, and Venus in Leo in Darwin Núñez's birth chart](/images/blog/darwin-nunez-zodiac-sign-i1-en.svg)
 
 ## Nunez Astrology Questions
 
