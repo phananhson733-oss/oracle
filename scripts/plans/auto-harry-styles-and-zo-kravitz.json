@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "harry-styles-and-zo-kravitz": {
+      "hero": {
+        "prompt": "Two luminous energy ribbons drift across a wide open night sky — a cool silver-blue aurora arc flowing left and a warm amber-gold fire trail sweeping right — bending toward each other at a harmonious 120-degree angle without merging, each quietly feeding the other's glow across a vast cosmic landscape, stars and nebula mist surrounding both forms, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Silver-blue aurora and amber-gold fire trail arcing together at a trine angle across a deep indigo night sky",
+        "altZh": "银蓝色极光与琥珀金火焰轨迹在深靛蓝夜空中以三分相角度相互交汇辉映"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Air-Fire Trine in a Synastry Chart",
+          "titleEn": "5 Steps to Spot the Air-Fire Trine",
+          "altEn": "Five-step sequence for identifying the Aquarius–Sagittarius air-fire trine in a synastry chart",
+          "items": [
+            {
+              "nameEn": "Find the Elements First",
+              "subEn": "Confirm one partner leads with an air sign (Aquarius) and the other with a fire sign (Sagittarius)"
+            },
+            {
+              "nameEn": "Check the Angle",
+              "subEn": "A trine sits roughly 120 degrees apart — two placements about four signs apart, give or take a few degrees"
+            },
+            {
+              "nameEn": "Watch How Distance Feels",
+              "subEn": "Air-fire trines often read as comfortable space, with partners lighting up around each other's plans"
+            },
+            {
+              "nameEn": "Notice the Recharge Pattern",
+              "subEn": "Each person tends to return energized after time apart, rather than anxious about the separation"
+            },
+            {
+              "nameEn": "Look Past the Sun",
+              "subEn": "Let a Sun-sign trine open the read; Moon, Venus, and Mars contacts are where real relating happens"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Air-Fire Trine vs a Compatibility Percentage",
+          "titleEn": "Air-Fire Trine vs Compatibility Percentage",
+          "altEn": "Side-by-side comparison of reading the air-fire trine versus relying on a compatibility percentage score",
+          "columns": [
+            {
+              "nameEn": "Air-Fire Trine",
+              "linesEn": [
+                "Describes how two elements actually interact",
+                "Keeps the texture of why chemistry feels the way it does",
+                "Shows shared autonomy as the source of sync",
+                "Invites understanding of one couple's specific dynamic"
+              ]
+            },
+            {
+              "nameEn": "Compatibility Percentage",
+              "linesEn": [
+                "Compresses many chart factors into one figure",
+                "Sacrifices texture to deliver a quick ranking",
+                "Labels ease or tension without explaining why",
+                "Invites comparison shopping across couples"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "5 Common Misreadings of the Air-Fire Trine",
+          "altEn": "Five common misreadings of the Aquarius–Sagittarius air-fire trine paired with the accurate interpretation",
+          "items": [
+            {
+              "nameEn": "Air and fire just clash",
+              "subEn": "Misread — within the same polarity they form a supportive trine, not a clash"
+            },
+            {
+              "nameEn": "The percentage is the compatibility",
+              "subEn": "Misread — a score is one summary among many; synastry depth comes from full charts, not a Sun-sign headline"
+            },
+            {
+              "nameEn": "Unconventional means unstable",
+              "subEn": "Misread — an autonomy-tolerant bond can look offbeat from the outside while functioning smoothly inside"
+            },
+            {
+              "nameEn": "A trine guarantees it works",
+              "subEn": "Misread — the trine describes an easy tendency, not a fixed outcome; treat it as symbolic reflection"
+            },
+            {
+              "nameEn": "Air-fire couples never go deep",
+              "subEn": "Misread — ease at the Sun level says nothing about Moon and Venus, where emotional depth actually shows up"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
