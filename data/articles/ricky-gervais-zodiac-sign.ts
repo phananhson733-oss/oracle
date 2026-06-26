@@ -29,7 +29,7 @@ ricky gervais zodiac sign is Cancer, based on the June 25, 1961 birth date used 
 - Links his satire to a protective shell around vulnerability
 - Requires caution because his birth time, Ascendant, and houses are unconfirmed
 
-In a ricky gervais birth chart reading, Cancer does not mean soft-spoken or sentimental on the surface. It points to a solar style that protects tenderness by controlling the emotional room first. For broader context, this belongs with a *pillar guide to celebrity zodiac signs*, where public persona is read as a pattern, not a fixed verdict. His Cancer Sun can explain why combative comedy and unexpectedly tender storytelling can sit inside the same public image.
+In a ricky gervais birth chart reading, Cancer does not mean soft-spoken or sentimental on the surface. It points to a solar style that protects tenderness by controlling the emotional room first. For broader context, start with [how to read a birth chart](/en/wiki/how-to-read-birth-chart), where public persona is read as a pattern, not a fixed verdict. His Cancer Sun can explain why combative comedy and unexpectedly tender storytelling can sit inside the same public image.
 
 ## Why It Matters for Self-Awareness
 
@@ -37,7 +37,7 @@ Understanding ricky gervais zodiac sign matters because many short astrology pag
 
 That matters for self-awareness because celebrity astrology is most useful when it makes a pattern readable without reducing a person to a slogan. A reader looking at Gervais may recognize the same split in ordinary life: the joke that arrives before the honest sentence, the hard boundary that hides attachment, or the argument that starts because something tender has been touched. In psychological astrology, the Sun is not just a label; it describes the style through which a person builds identity and purpose. That view, often associated with the person-centered lineage of Dane Rudhyar and later psychological astrologers such as Howard Sasportas, helps separate symbol from stereotype. A Cancer Sun may show care indirectly, through loyalty to a private circle, defense of the vulnerable, attachment to memory, or a hard line around what feels emotionally fake.
 
-The useful nuance is that Cancer does not always perform softness in a socially agreeable way. Sometimes the shell is funny. Sometimes it is combative. Sometimes it is a refusal to let the audience relax into easy sentiment. In Gervais’s case, the public edge and the tender material are not opposites; they read more like two parts of the same Cancer pattern. The joke protects the feeling, and the feeling gives the joke weight. This is where a spoke such as *guide to Cancer Sun traits in public figures* helps: it lets the reader compare the sign’s protective style across different kinds of fame.
+The useful nuance is that Cancer does not always perform softness in a socially agreeable way. Sometimes the shell is funny. Sometimes it is combative. Sometimes it is a refusal to let the audience relax into easy sentiment. In Gervais’s case, the public edge and the tender material are not opposites; they read more like two parts of the same Cancer pattern. The joke protects the feeling, and the feeling gives the joke weight. This is where a broader [elements in astrology](/en/wiki/elements) lens helps: it lets the reader compare water-sign protection across different kinds of fame.
 
 ## Cancer Sun vs Unknown Rising: What Actually Changes
 
@@ -107,17 +107,17 @@ No. A stronger reading sees Cancer as a shell-and-softness pattern, where emotio
 
 ## Related Reading
 
-- *guide to reading celebrity birth charts* — Useful for separating confirmed placements from guesses based on public behavior.
-- *Cancer zodiac sign personality profile* — Helps place Gervais's Cancer Sun inside the wider sign tradition.
-- [rising sign profiles and first impressions](/en/wiki/how-to-read-birth-chart) — Relevant because his Ascendant is unconfirmed and should not be overclaimed.
-- *synastry compatibility basics* — Connects celebrity sign curiosity to the larger question of how charts compare.
+- [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — Useful for separating confirmed placements from guesses based on public behavior.
+- [elements in astrology](/en/wiki/elements) — Helps place Gervais's Cancer Sun inside the wider water-sign tradition.
+- [moon rising sign](/en/wiki/moon-rising-sign) — Relevant because his Ascendant is unconfirmed and should not be overclaimed.
+- [synastry chart compatibility](/en/wiki/synastry-chart-compatibility) — Connects celebrity sign curiosity to the larger question of how charts compare.
 - [Ricky Gervais (Wikipedia)](https://en.wikipedia.org/wiki/Ricky_Gervais)
 
 ## Take Action
 
 Start by comparing a known Sun sign with the rest of a chart so the symbol has context, not just a celebrity label. The output is a map of planets, signs, and houses that shows which placements are confirmed and which need a birth time. That kind of distinction can turn a quick pop-culture search into a cleaner self-awareness question. This is not a clinical interpretation or mental health advice.
 
-[Generate your free birth chart to explore ricky gervais zodiac sign.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+[Learn how to read your birth chart before comparing celebrity placements.](/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 
