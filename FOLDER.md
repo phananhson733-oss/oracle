@@ -22,7 +22,7 @@
 - PULL_REQUEST_TEMPLATE.md｜地位：PR 模板｜功能：PR 清单与 UI 规范符合说明。
 - constants.ts｜地位：全局常量库｜功能：存放文案、提示词与问答问题库数据。
 - index.css｜地位：全局样式入口｜功能：注入 Tailwind 基础/组件/工具样式。
-- index.html｜地位：HTML 宿主文件｜功能：页面壳、字体加载与导入映射。
+- index.html｜地位：HTML 宿主文件｜功能：页面壳、字体加载、导入映射与首字节 brand 结构化数据（Organization + WebSite JSON-LD）。
 - index.tsx｜地位：渲染入口｜功能：挂载 React 应用并引入全局样式。
 - metadata.json｜地位：应用元数据｜功能：AI Studio 元信息配置。
 - package.json｜地位：依赖清单｜功能：npm 脚本与依赖配置（含 Tailwind/PostCSS）。
@@ -47,6 +47,7 @@
 - services｜地位：服务目录｜功能：主应用服务层。
 
 近期更新
+- 首页 `index.html` 的 `<head>` 现携带静态 brand 结构化数据（Organization + WebSite JSON-LD，带 `data-astro-global-schema` 标记），值与 `App.tsx` `<GlobalSchema />` 英文输出一致，把品牌实体提前到首字节、不依赖 WRS 执行 JS；同步修正 `og:url` 尾斜杠与 canonical 对齐。`scripts/generate-seo-pages.mjs` 的 landing-v2 `Organization.logo` 统一为 `/logo.png`（消除站内同一实体两个 logo URL 的消歧噪音）。契约守护见 `tests/unit/homepage-brand-schema.test.ts`。
 - 新增 tools SEO alias 路由 `/moon-phase-today` 与 `/astrocartography-map-generator`，裸路径自动重定向到语言前缀版本，且加入公开可索引白名单以避免运行时 noindex。
 - 新增 `/go/:code` 与根路径短链跳转入口及 link-attribution 短链登记接口，支持同站安全跳转、动态 code registry、相同 destination 复用已有短链与旧 `to` 回退链接。
 - 支付成功页路由加入放行清单，避免无档案状态被重定向，订阅后可顺利进入个人信息页。
