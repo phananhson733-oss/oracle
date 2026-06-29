@@ -1,5 +1,5 @@
 <!-- INPUT: 字体加载、主题色变量与 SEO 元信息（含图标与问答动画）。 -->
-<!-- OUTPUT: 提供 HTML 宿主、主题色变量与 root 容器（含字体加载控制）。 -->
+<!-- OUTPUT: 提供 HTML 宿主、主题色变量与 root 容器（含字体加载控制）+ 首字节静态 brand 结构化数据（Organization + WebSite JSON-LD）。 -->
 <!-- POS: 主应用页面壳。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。 -->
 
@@ -22,12 +22,49 @@
     <meta property="og:title" content="AstrologyWiki — Free Birth Chart, Today's Sky &amp; Synastry Calculator" />
     <meta property="og:description" content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up." />
     <meta property="og:image" content="https://www.astrologywiki.com/og-image.png" />
-    <meta property="og:url" content="https://www.astrologywiki.com" />
+    <meta property="og:url" content="https://www.astrologywiki.com/" />
     <meta property="og:site_name" content="AstrologyWiki" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AstrologyWiki — Free Birth Chart, Today's Sky &amp; Synastry Calculator" />
     <meta name="twitter:description" content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up." />
     <meta name="twitter:image" content="https://www.astrologywiki.com/og-image.png" />
+    <!-- P0: 首字节 brand 结构化数据（Organization + WebSite）。值与 App.tsx <GlobalSchema /> 的英文输出一致，
+         把品牌实体提前到首字节、不依赖 WRS 执行 JS（兑现 pages/landing/LandingPage.tsx 的 first-byte parity TODO）。
+         data-astro-global-schema 属性是承重的：GlobalSchema 据此 dedup 跳过运行时再注入（App.tsx），且 SEO.tsx
+         的 JSON-LD 去重据此豁免、绝不剥离本块——任何 JSON 语法错误会让两处去重静默失效并产生重复，改动后须跑
+         tests/unit/homepage-brand-schema.test.ts。inLanguage 固定为 "en"（根 "/" 是规范英文主页），勿在此
+         "本地化"或删除 WebSite；中文 landing 由 /landing-v2/zh/ 自带的 stub 负责。 -->
+    <script type="application/ld+json" data-astro-global-schema="true">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AstrologyWiki",
+        "url": "https://www.astrologywiki.com/",
+        "logo": "https://www.astrologywiki.com/logo.png",
+        "sameAs": [
+          "https://twitter.com/astrologywiki",
+          "https://www.instagram.com/astrologywiki",
+          "https://www.youtube.com/@astrologywiki"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AstrologyWiki",
+        "url": "https://www.astrologywiki.com/",
+        "inLanguage": "en",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.astrologywiki.com/en/wiki?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+    </script>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/icon-192.png" />

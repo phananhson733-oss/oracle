@@ -506,7 +506,7 @@ const buildLandingV2OrganizationSchema = () => ({
   '@type': 'Organization',
   name: 'AstrologyWiki',
   url: `${siteUrl}/`,
-  logo: `${siteUrl}/icon-192.png`,
+  logo: `${siteUrl}/logo.png`,
 });
 
 // FAQPage schema — captures highest-intent informational queries so they can
