@@ -14,7 +14,10 @@
 //
 // What it does (per stub):
 //   1. Locate <main>…</main>; wrap it in <div id="root">…</div> so React
-//      mounts on top of the static content and replaces it.
+//      mounts on top of the static content and replaces it. Also tag the
+//      <main> with data-seo-stub and drop a pre-hydration loading overlay
+//      inside #root; both are scoped to data-seo-stub* and both disappear
+//      the moment React mounts (createRoot replaces #root's children).
 //   2. Strip the stub template's inline <style> blocks from <head>. They
 //      contain bare-selector rules (`main { max-width: 780px }`,
 //      `a { color: ... }`, `body { ... }`) intended only for the static
@@ -122,6 +125,42 @@ const findStubs = (dir, out = []) => {
 // some JSON-LD or article body that incidentally mentions "/assets/index-").
 const INJECTED_MARKER = '<!-- spa-injected -->';
 
+// Scoped fallback styling for the brief pre-hydration view. Every rule is
+// namespaced under [data-seo-stub] - the attribute injectInto adds to the
+// stub's <main>. React replaces #root's children on mount, so that <main>
+// (these rules' only targets) disappears and the live SPA is never matched.
+// This restores a presentable dark-theme layout for the moment before
+// /assets/index-*.js hydrates, replacing the unstyled raw text that was left
+// visible after step 2 strips the stub template's own <style>.
+const STUB_FALLBACK_STYLE = `<style data-seo-stub-style>
+    [data-seo-stub]{max-width:680px;margin:0 auto;padding:88px 24px 64px;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#e9e7fb;line-height:1.65;-webkit-font-smoothing:antialiased}
+    [data-seo-stub] h1{margin:0 0 14px;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-.02em;color:#f4f3ff}
+    [data-seo-stub] p{margin:0 0 12px;font-size:1.05rem;color:#bdb9e4}
+    [data-seo-stub] .meta{margin-top:22px;font-size:.85rem;color:#8b88b8}
+    [data-seo-stub] .cta{display:inline-block;margin-top:22px;padding:11px 22px;border-radius:9999px;background:linear-gradient(135deg,#7c6cf0,#a06cf0);color:#fff;font-weight:600;text-decoration:none}
+    [data-seo-stub] .hero img{max-width:100%;height:auto;margin:8px 0 4px;border-radius:14px}
+    [data-seo-stub] article.content{margin-top:20px}
+    [data-seo-stub] article.content h2{margin:1.8rem 0 .6rem;font-size:1.4rem;color:#f4f3ff}
+    [data-seo-stub] article.content h3{margin:1.5rem 0 .5rem;font-size:1.15rem;color:#c9c5ef}
+    [data-seo-stub] article.content blockquote{margin:1rem 0;padding-left:1rem;border-left:3px solid rgba(160,108,240,.45);color:#bdb9e4}
+    [data-seo-stub] article.content li{line-height:1.65;color:#bdb9e4}
+    [data-seo-stub] .safety-footer{margin-top:2.2rem;padding:1rem 1.1rem;border:1px solid rgba(160,108,240,.25);border-radius:12px;background:rgba(124,108,240,.08);font-size:.88rem;color:#bdb9e4}
+    [data-seo-stub-loader]{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#050506;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    [data-seo-stub-loader] .seo-stub-spinner{width:34px;height:34px;border-radius:9999px;border:2.5px solid rgba(160,108,240,.22);border-top-color:#a06cf0;animation:seo-stub-spin .8s linear infinite}
+    [data-seo-stub-loader] .seo-stub-loading-text{margin:0;font-size:.88rem;letter-spacing:.06em;color:#8b88b8}
+    @keyframes seo-stub-spin{to{transform:rotate(360deg)}}
+  </style>`;
+
+// Pre-hydration loading overlay. Sits inside #root, above the now-styled but
+// content-mismatched stub <main>, so a real visitor sees a neutral dark
+// loading state instead of the SEO copy flashing before /assets/index-*.js
+// mounts. createRoot().render() replaces #root's children on mount (see
+// index.html), so this overlay and the stub <main> are removed together with
+// zero residue, and it can never match the live SPA. Crawlers still read the
+// <main> text straight from the raw DOM regardless of this visual overlay.
+const STUB_LOADER_HTML =
+  '<div data-seo-stub-loader aria-hidden="true"><div class="seo-stub-spinner"></div><p class="seo-stub-loading-text">Loading...</p></div>';
+
 const injectInto = (html, payload) => {
   if (html.includes(INJECTED_MARKER)) {
     return { html, status: 'already-injected' };
@@ -133,10 +172,13 @@ const injectInto = (html, payload) => {
     return { html, status: 'no-head-close' };
   }
   let next = html;
-  // 1. Wrap <main>…</main> in <div id="root"> so React mounts here.
-  //    class mirrors dist/index.html (relative z-10) for layout parity.
-  next = next.replace(/(<main\b)/, '<div id="root" class="relative z-10">$1');
-  next = next.replace(/(<\/main>)/, '$1</div>');
+  // 1. Wrap <main>…</main> in <div id="root"> so React mounts here (class
+  //    mirrors dist/index.html `relative z-10` for layout parity), tag the
+  //    <main> with data-seo-stub, and drop the loading overlay inside #root
+  //    right after </main>. createRoot().render() replaces #root's children
+  //    on mount, removing the stub <main> and the overlay in one step.
+  next = next.replace(/<main\b([^>]*)>/, '<div id="root" class="relative z-10"><main$1 data-seo-stub>');
+  next = next.replace(/(<\/main>)/, `$1${STUB_LOADER_HTML}</div>`);
   // 2. Strip the stub template's inline <style> from <head>. Those rules
   //    use bare element selectors (e.g. `main { max-width: 780px }`,
   //    `a { color: ... }`, `body { ... }`) intended only for the static
@@ -150,9 +192,11 @@ const injectInto = (html, payload) => {
     /<head>([\s\S]*?)<\/head>/,
     (_m, head) => `<head>${head.replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '')}</head>`,
   );
-  // 3. Inject SPA shell's inline <style>, font-loading <script>, and
-  //    asset tags just before </head>. Marker comment makes idempotent.
-  next = next.replace(/<\/head>/, `\n${INJECTED_MARKER}\n${payload}  </head>`);
+  // 3. Inject the scoped [data-seo-stub] fallback <style> (presentable
+  //    pre-hydration view), then the SPA shell's inline <style>, font-
+  //    loading <script>, and asset tags just before </head>. Marker
+  //    comment makes idempotent.
+  next = next.replace(/<\/head>/, `\n${INJECTED_MARKER}\n${STUB_FALLBACK_STYLE}\n${payload}  </head>`);
   return { html: next, status: 'injected' };
 };
 
@@ -210,4 +254,11 @@ const main = () => {
   }
 };
 
-main();
+// Run the build step only when invoked directly
+// (`node scripts/inject-spa-into-stubs.mjs`). When imported by a test
+// harness, expose injectInto et al. without executing main()'s dist/ I/O.
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main();
+}
+
+export { injectInto, extractSpaAssets, STUB_FALLBACK_STYLE, STUB_LOADER_HTML };
