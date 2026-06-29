@@ -13,6 +13,10 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
 const publicDir = path.join(rootDir, 'public');
 const siteUrl = (process.env.SITE_URL || 'https://www.astrologywiki.com').replace(/\/$/, '');
+// L2 cutover (2026-05-19): canonical home is root '/' (EN-only); /en/ /zh/ are NOT routes —
+// they 301 server-side (vercel.json). Structured-data 'Home' must point at the live 200 home,
+// language-matched: en -> '/', zh -> '/landing-v2/zh/' (the indexable zh landing).
+const langHomeUrl = (lang) => (lang === 'zh' ? `${siteUrl}/landing-v2/zh/` : `${siteUrl}/`);
 const ogImageUrl = `${siteUrl}/og-image.png`;
 const today = new Date().toISOString().split('T')[0];
 // T1: sitemap lastmod 只在内容真实变更时改 today，否则保留旧值。manifest 记录每个 URL 的内容签名与 lastmod，随仓库提交。
@@ -368,14 +372,6 @@ const buildBreadcrumb = (lang, items) => ({
   })),
 });
 
-const buildWebSiteSchema = (lang, config) => ({
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: config.name,
-  url: `${siteUrl}/${lang}/`,
-  inLanguage: lang,
-});
-
 const buildItemListSchema = (lang, pathSuffix, items) => ({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -645,7 +641,7 @@ ${headParts.join('\n')}
       <div class="sections">
 ${sectionsHtml}
       </div>
-      <p class="footer-note">AstrologyWiki · ${lang.toUpperCase()} · <a href="/${lang}/">Open the interactive app</a></p>
+      <p class="footer-note">AstrologyWiki · ${lang.toUpperCase()} · <a href="/">Open the interactive app</a></p>
     </main>
     <script>
       (function () {
@@ -1099,10 +1095,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
             description: copy.description,
             url,
             inLanguage: lang,
-            isPartOf: { '@type': 'WebSite', name: 'AstrologyWiki', url: `${siteUrl}/${lang}/` },
+            isPartOf: { '@type': 'WebSite', name: 'AstrologyWiki', url: langHomeUrl(lang) },
           },
           buildBreadcrumb(lang, [
-            { name: LANG_CONFIG[lang].breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: LANG_CONFIG[lang].breadcrumbHome, url: langHomeUrl(lang) },
             { name: copy.title, url },
           ]),
         ],
@@ -1138,30 +1134,15 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     }));
     const classics = classicsByLang[lang] || [];
 
-    const homePath = `/${lang}/`;
     const wikiPath = `/${lang}/wiki`;
     const classicsPath = `/${lang}/wiki/classics`;
 
-    addUrl(`${siteUrl}${homePath}`, ['home', lang, config.homeTitle, config.homeDescription, config.homeCta]);
     // Only add wiki hub for all langs; classics hub only for en
     if (lang === 'en') {
       // hub 的 lastmod 在 hub 文案变或条目集合变（新增/删除条目）时更新。
       addUrl(`${siteUrl}${wikiPath}`, ['wiki-hub', lang, config.wikiTitle, config.wikiDescription, ...wikiItems.map((i) => i.id)]);
       addUrl(`${siteUrl}${classicsPath}`, ['classics-hub', lang, config.classicsTitle, config.classicsDescription, ...classics.map((c) => c.id)]);
     }
-
-    await writeHtmlPage({
-      outputPath: path.join(langRoot, 'index.html'),
-      lang,
-      title: config.homeTitle,
-      description: config.homeDescription,
-      url: `${siteUrl}${homePath}`,
-      ogType: 'website',
-      alternates: buildAlternateLinks('/'),
-      schema: buildWebSiteSchema(lang, config),
-      ctaText: config.homeCta,
-      spaPath: '/',
-    });
 
     // Only generate wiki hub and classics hub for en
     if (lang === 'en') {
@@ -1177,7 +1158,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildItemListSchema(lang, '/wiki', wikiItems),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
             { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
           ]),
         ],
@@ -1197,7 +1178,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildItemListSchema(lang, '/wiki/classics', classics),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
             { name: config.breadcrumbClassics, url: `${siteUrl}${classicsPath}` },
           ]),
         ],
@@ -1242,7 +1223,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
               mainEntity: buildPersonSchema(persona, lang, siteUrl),
             },
             buildBreadcrumb(lang, [
-              { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+              { name: config.breadcrumbHome, url: langHomeUrl(lang) },
               { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
               { name: persona.name, url: authorPageUrl },
             ]),
@@ -1288,7 +1269,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildDefinedTermSchema(lang, item, itemUrl),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
             { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
             { name: item.title, url: itemUrl },
           ]),
@@ -1328,7 +1309,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildBookSchema(lang, classicDetail, classicUrl),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
             { name: config.breadcrumbClassics, url: `${siteUrl}${classicsPath}` },
             { name: classicDetail.title, url: classicUrl },
           ]),
@@ -2003,7 +1984,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       schema: [
         buildArticleSchema(lang, article, url, editorialOrgSchema, ogImage),
         buildBreadcrumb(lang, [
-          { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
+          { name: config.breadcrumbHome, url: langHomeUrl(lang) },
           { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
           { name: article.title, url },
         ]),
