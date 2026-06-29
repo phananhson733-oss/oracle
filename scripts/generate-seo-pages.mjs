@@ -374,11 +374,6 @@ const buildWebSiteSchema = (lang, config) => ({
   name: config.name,
   url: `${siteUrl}/${lang}/`,
   inLanguage: lang,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 });
 
 const buildItemListSchema = (lang, pathSuffix, items) => ({
@@ -462,11 +457,6 @@ const buildLandingV2WebSiteSchema = (lang, url) => ({
   name: 'AstrologyWiki',
   url,
   inLanguage: lang,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 });
 
 const buildLandingV2SoftwareAppSchema = (lang, description) => ({
@@ -507,6 +497,11 @@ const buildLandingV2OrganizationSchema = () => ({
   name: 'AstrologyWiki',
   url: `${siteUrl}/`,
   logo: `${siteUrl}/logo.png`,
+  sameAs: [
+    'https://twitter.com/astrologywiki',
+    'https://www.instagram.com/astrologywiki',
+    'https://www.youtube.com/@astrologywiki',
+  ],
 });
 
 // FAQPage schema — captures highest-intent informational queries so they can

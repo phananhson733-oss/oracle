@@ -59,19 +59,16 @@ describe("index.html 首字节 brand JSON-LD 契约", () => {
     expect(org!.sameAs).toHaveLength(3);
   });
 
-  it("WebSite 字段与 GlobalSchema EN 输出一致（inLanguage:en + SearchAction EntryPoint）", () => {
+  it("WebSite 字段与 GlobalSchema EN 输出一致（name/url/inLanguage:en，无 SearchAction）", () => {
     const site = findType("WebSite");
     expect(site).toBeTruthy();
     expect(site!.name).toBe("AstrologyWiki");
     expect(site!.url).toBe(`${SITE}/`);
     // 根 "/" 是规范英文主页，inLanguage 固定 en；勿在此本地化。
     expect(site!.inLanguage).toBe("en");
-    const action = site!.potentialAction;
-    expect(action?.["@type"]).toBe("SearchAction");
-    // EntryPoint 对象形式是 Google 当前文档/推荐形态（非裸字符串 target）。
-    expect(action?.target?.["@type"]).toBe("EntryPoint");
-    expect(typeof action?.target?.urlTemplate).toBe("string");
-    expect(action?.target?.urlTemplate).toContain("{search_term_string}");
+    // SearchAction 已三处移除：/en/wiki 不消费 ?q=（WikiHubPage 只读 tab/section，非真搜索端点），
+    // 且 Google 2024 末废弃 Sitelinks Searchbox，声明无效动作无收益。三处 brand schema 须保持一致。
+    expect(site!.potentialAction).toBeUndefined();
   });
 
   it("og:url 带尾斜杠且与 canonical 完全一致", () => {
