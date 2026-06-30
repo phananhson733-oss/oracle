@@ -57,7 +57,7 @@ Putting the astrology of Morocco's 2026 World Cup run into practice means lookin
 2. **Find the captain's natal Sun and Mars.** These often track leadership style and how a side tends to respond under pressure.
 3. **Note who has standout 2026 transits.** A player with Jupiter crossing a key natal point is the symbolic one to watch during the window.
 4. **Compare squad elements.** A roster stacked with fire and air placements reads differently from a water-heavy, defensive group.
-5. **Anchor everything to the tournament window.** Only late-June and July 2026 timing matters; transits that fall outside it can be set aside.
+5. **Anchor everything to the tournament window.** The tournament window — Morocco's group stage opens June 13 and the event runs into July 2026 — is what matters; transits that fall outside it can be set aside.
 
 Taken together, these signals sketch a tone rather than a result. If most of them point the same way, the symbolic read is simply more coherent — not more certain.
 
