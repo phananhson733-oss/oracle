@@ -15,8 +15,7 @@ export const benSheltonZodiacSignEn: WikiArticle = {
     "ben shelton zodiac sign meaning",
     "ben shelton zodiac sign astrology",
     "ben shelton zodiac sign birth chart",
-    "ben shelton zodiac sign interpretation",
-    "emma watson zodiac sign"
+    "ben shelton zodiac sign interpretation"
   ],
   content: `# Reading the Ben Shelton Zodiac Sign Beyond a Single Sun Sign
 
