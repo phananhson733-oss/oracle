@@ -285,6 +285,7 @@ import { colombiaVsPortugalEn } from "./colombia-vs-portugal";
 import { taylorSwiftAndTravisKelceEn } from "./taylor-swift-and-travis-kelce";
 import { harryStylesAndZoKravitzEn } from "./harry-styles-and-zo-kravitz";
 import { serenaWilliamsBirthChartEn } from "./serena-williams-birth-chart";
+import { jannikSinnerZodiacSignEn } from "./jannik-sinner-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -561,6 +562,7 @@ const ARTICLES_EN: WikiArticle[] = [
   taylorSwiftAndTravisKelceEn,
   harryStylesAndZoKravitzEn,
   serenaWilliamsBirthChartEn,
+  jannikSinnerZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
