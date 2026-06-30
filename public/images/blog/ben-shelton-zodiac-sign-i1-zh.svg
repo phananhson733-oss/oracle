@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="本·谢尔顿出生图的四个解读层次">
+  <defs>
+    <linearGradient id="bensheltonzodiacsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="bensheltonzodiacsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="bensheltonzodiacsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bensheltonzodiacsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bensheltonzodiacsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bensheltonzodiacsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#bensheltonzodiacsign1zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#bensheltonzodiacsign1zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#bensheltonzodiacsign1zh-neb2)"/>
+  <circle cx="746.5" cy="79.1" r="0.87" fill="#cfc8ea" opacity="0.50"/><circle cx="48.2" cy="156.3" r="1.25" fill="#cfc8ea" opacity="0.47"/><circle cx="247.5" cy="74.2" r="1.68" fill="#cfc8ea" opacity="0.19"/><circle cx="652.5" cy="340.2" r="0.52" fill="#cfc8ea" opacity="0.53"/><circle cx="188.9" cy="114.0" r="1.40" fill="#cfc8ea" opacity="0.39"/><circle cx="327.9" cy="256.3" r="0.94" fill="#cfc8ea" opacity="0.36"/><circle cx="379.9" cy="206.2" r="0.98" fill="#cfc8ea" opacity="0.32"/><circle cx="657.5" cy="241.7" r="1.52" fill="#cfc8ea" opacity="0.26"/><circle cx="15.9" cy="281.2" r="1.09" fill="#cfc8ea" opacity="0.53"/><circle cx="166.4" cy="186.8" r="1.44" fill="#cfc8ea" opacity="0.38"/><circle cx="235.8" cy="173.3" r="0.67" fill="#cfc8ea" opacity="0.31"/><circle cx="429.4" cy="257.5" r="1.36" fill="#cfc8ea" opacity="0.19"/><circle cx="124.9" cy="43.1" r="1.67" fill="#cfc8ea" opacity="0.37"/><circle cx="335.4" cy="227.2" r="1.65" fill="#cfc8ea" opacity="0.15"/><circle cx="498.4" cy="140.6" r="1.67" fill="#cfc8ea" opacity="0.15"/><circle cx="82.5" cy="194.5" r="0.62" fill="#cfc8ea" opacity="0.30"/><circle cx="746.5" cy="351.3" r="1.54" fill="#cfc8ea" opacity="0.19"/><circle cx="39.4" cy="215.6" r="0.50" fill="#cfc8ea" opacity="0.20"/><circle cx="691.8" cy="124.7" r="1.24" fill="#cfc8ea" opacity="0.26"/><circle cx="338.0" cy="77.8" r="1.03" fill="#cfc8ea" opacity="0.28"/><circle cx="258.6" cy="195.3" r="0.65" fill="#cfc8ea" opacity="0.43"/><circle cx="170.9" cy="18.7" r="1.47" fill="#cfc8ea" opacity="0.32"/><circle cx="285.1" cy="337.6" r="0.61" fill="#cfc8ea" opacity="0.18"/><circle cx="495.8" cy="69.6" r="1.18" fill="#cfc8ea" opacity="0.12"/><circle cx="217.9" cy="121.3" r="0.44" fill="#cfc8ea" opacity="0.53"/><circle cx="624.7" cy="194.4" r="1.07" fill="#cfc8ea" opacity="0.19"/><circle cx="673.2" cy="117.4" r="0.76" fill="#cfc8ea" opacity="0.51"/><circle cx="475.0" cy="168.1" r="0.41" fill="#cfc8ea" opacity="0.52"/><circle cx="184.8" cy="251.3" r="0.61" fill="#cfc8ea" opacity="0.34"/><circle cx="144.6" cy="297.2" r="1.65" fill="#cfc8ea" opacity="0.24"/><circle cx="635.8" cy="118.8" r="0.75" fill="#cfc8ea" opacity="0.42"/><path d="M 38.56707347929478 146.5 L 39.0 149.0 L 41.5 149.46017794287764 L 39.0 149.9 L 38.56707347929478 152.4 L 38.1 149.9 L 35.6 149.46017794287764 L 38.1 149.0 Z" fill="#f6e6bf" opacity="0.7491825484437868"/><path d="M 628.1722542122006 208.0 L 628.8 211.2 L 631.9 211.75895108352415 L 628.8 212.4 L 628.1722542122006 215.5 L 627.6 212.4 L 624.4 211.75895108352415 L 627.6 211.2 Z" fill="#f6e6bf" opacity="0.7659334938740358"/><path d="M 63.832199573516846 173.0 L 64.5 176.3 L 67.8 176.9521213786211 L 64.5 177.6 L 63.832199573516846 180.9 L 63.2 177.6 L 59.8 176.9521213786211 L 63.2 176.3 Z" fill="#f6e6bf" opacity="0.5310427768854424"/><path d="M 377.6112692281604 30.6 L 378.1 33.3 L 380.8 33.79460621136241 L 378.1 34.3 L 377.6112692281604 37.0 L 377.1 34.3 L 374.5 33.79460621136241 L 377.1 33.3 Z" fill="#f6e6bf" opacity="0.5551801772555336"/><path d="M 635.6897591203451 308.8 L 636.1 311.2 L 638.6 311.6844237034675 L 636.1 312.1 L 635.6897591203451 314.6 L 635.2 312.1 L 632.8 311.6844237034675 L 635.2 311.2 Z" fill="#f6e6bf" opacity="0.6707481865538284"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">本·谢尔顿出生图的四个解读层次</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#bensheltonzodiacsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#bensheltonzodiacsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#bensheltonzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#bensheltonzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">天秤座太阳（2002年10月9日）</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">将核心身份锚定于平衡与沉着；金星主宰的风元素，带有第七宫的关系主题</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#bensheltonzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#bensheltonzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">月亮星座</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">增添情感与本能层面；与其元素及第四宫的私密生活主题相连</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#bensheltonzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#bensheltonzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">上升星座</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">塑造第一印象与外在风格；由出生时间决定，受第一宫呈现方式主题影响</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#bensheltonzodiacsign1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#bensheltonzodiacsign1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">主导相位</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">揭示反复出现的张力或优势，体现相关行星所属元素的性质</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
