@@ -32,7 +32,7 @@ It is best understood as a storytelling and reflection tool. The framework does 
 
 ## Why It Matters for Self-Awareness
 
-Understanding how astrology frames the 2026 World Cup in Morocco matters because the search results pull fans in several directions at once, and most can't tell which page answers their real question. The confusion shows up in a few ways:
+Understanding how astrology frames Morocco's run at the 2026 World Cup matters because the search results pull fans in several directions at once, and most can't tell which page answers their real question. The confusion shows up in a few ways:
 
 1. **Definitions blur with tools.** Some pages explain the idea while others push chart generators, so newcomers can't separate the concept from a product.
 2. **Broad advice crowds the topic.** General horoscope columns rank for the same terms, burying anything specific to the tournament.
