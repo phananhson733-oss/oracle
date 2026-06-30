@@ -286,6 +286,7 @@ import { taylorSwiftAndTravisKelceEn } from "./taylor-swift-and-travis-kelce";
 import { harryStylesAndZoKravitzEn } from "./harry-styles-and-zo-kravitz";
 import { serenaWilliamsBirthChartEn } from "./serena-williams-birth-chart";
 import { jannikSinnerZodiacSignEn } from "./jannik-sinner-zodiac-sign";
+import { teyanaTaylorBirthChartEn } from "./teyana-taylor-birth-chart";
 // All articles organized by language
 
 import {
@@ -563,6 +564,7 @@ const ARTICLES_EN: WikiArticle[] = [
   harryStylesAndZoKravitzEn,
   serenaWilliamsBirthChartEn,
   jannikSinnerZodiacSignEn,
+  teyanaTaylorBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

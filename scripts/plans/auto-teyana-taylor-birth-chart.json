@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "teyana-taylor-birth-chart": {
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Sun Sign Reading vs a Full Birth Chart: What Actually Differs",
+          "titleEn": "Sun-Sign Reading vs Full Birth Chart",
+          "titleZh": "太阳星座解读与完整星盘的区别",
+          "altEn": "Comparison of sun-sign reading and full birth chart for Teyana Taylor's astrology",
+          "altZh": "蒂亚纳·泰勒太阳星座解读与完整星盘对比示意",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Reading",
+              "nameZh": "太阳星座解读",
+              "linesEn": [
+                "Uses only the birth date",
+                "No birth time required",
+                "Sagittarius confirmed from December 10, 1990",
+                "Wide reach, sacrifices depth"
+              ],
+              "linesZh": [
+                "仅需出生日期",
+                "无需出生时间",
+                "射手座确认于1990年12月10日",
+                "覆盖广泛，深度有限"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "nameZh": "完整星盘",
+              "linesEn": [
+                "Needs date, exact time, and place",
+                "Maps Moon, rising sign, and twelve houses",
+                "Birth time unverified for Teyana Taylor",
+                "Greater detail, availability limited"
+              ],
+              "linesZh": [
+                "需要日期、精确时间和地点",
+                "绘制月亮、上升星座与十二宫位",
+                "蒂亚纳·泰勒出生时间未经证实",
+                "细节更丰富，但适用性受限"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Teyana Taylor's Birth Chart Without Overreaching",
+          "titleEn": "5 Steps to Read the Chart Honestly",
+          "titleZh": "诚实解读星盘的五个步骤",
+          "altEn": "Five-step sequence for reading Teyana Taylor's birth chart without overreaching",
+          "altZh": "解读蒂亚纳·泰勒星盘不过度解读的五个步骤",
+          "items": [
+            {
+              "nameEn": "Verify the Sun Sign",
+              "nameZh": "核实太阳星座",
+              "subEn": "December 10 is firmly Sagittarius — build the read on fire-sign candor and big creative swings",
+              "subZh": "12月10日确属射手座——以火象坦率与大创意为解读基础"
+            },
+            {
+              "nameEn": "Flag Birth-Time Gaps",
+              "nameZh": "标注出生时间缺口",
+              "subEn": "If a page states her rising sign as settled fact, treat it as an educated guess until a time is verified",
+              "subZh": "若某页面将上升星座列为确定事实，在出生时间证实前应视为推测"
+            },
+            {
+              "nameEn": "Match Placements Loosely",
+              "nameZh": "宽松对应星盘配置",
+              "subEn": "Her genre-crossing work fits a mutable, expressive signature — note the resonance without calling it proof",
+              "subZh": "她的跨界创作契合变动表达型特质——点到即止，不作证明"
+            },
+            {
+              "nameEn": "Separate Artist from Chart",
+              "nameZh": "区分艺术家与星盘",
+              "subEn": "A reading describes tendencies and style, not the private person behind the public persona",
+              "subZh": "解读描述的是倾向与风格，而非公众形象背后的私人面貌"
+            },
+            {
+              "nameEn": "Date the News Hook",
+              "nameZh": "核查资讯写作时间",
+              "subEn": "Celebrity chart takes spike around award nominations — check when a claim was written before trusting it",
+              "subZh": "明星星盘热度在颁奖季飙升——信任任何说法前先核查其写作时间"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
