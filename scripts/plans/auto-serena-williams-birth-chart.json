@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "serena-williams-birth-chart": {
+      "hero": {
+        "prompt": "Two luminous presences drifting in gentle counterpoint across one vast nocturnal landscape — a warm golden atmospheric shimmer moving through high open air currents on one horizon representing poise and social grace, while a cool silver-green earthen radiance rests over precisely carved terraced hills below representing routine and exacting precision, both sharing the same continuous indigo twilight valley without meeting or parting, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Atmospheric night landscape with warm golden air currents and cool silver-green earthen terraces under a deep indigo sky",
+        "altZh": "在深靛蓝夜空下，温暖金色气流与银绿色大地梯田交相辉映的大气景观"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Libra Sun vs Virgo Moon: Two Engines in One Chart",
+          "titleEn": "Libra Sun vs Virgo Moon: Two Engines in One Chart",
+          "titleZh": "天秤座太阳 vs 处女座月亮：星盘中的两大引擎",
+          "altEn": "Comparison of Libra Sun as public air-element engine and Virgo Moon as private earth-element engine",
+          "altZh": "天秤座太阳（公众风象引擎）与处女座月亮（私人土象引擎）的对比图",
+          "columns": [
+            {
+              "nameEn": "Libra Sun",
+              "nameZh": "天秤座太阳",
+              "linesEn": [
+                "Air element — Public Engine",
+                "Seeks balance and projects fairness",
+                "Composed, diplomatic public presence",
+                "Trade-off: strain and wanting kept backstage"
+              ],
+              "linesZh": [
+                "风象元素——公众引擎",
+                "追求平衡，展现公正",
+                "沉稳、外交化的公众形象",
+                "代价：内在张力与渴望隐于幕后"
+              ]
+            },
+            {
+              "nameEn": "Virgo Moon",
+              "nameZh": "处女座月亮",
+              "linesEn": [
+                "Earth element — Private Engine",
+                "Runs on routine and self-correction",
+                "Relentless precision, high inner standard",
+                "Trade-off: ease and rest sacrificed"
+              ],
+              "linesZh": [
+                "土象元素——私人引擎",
+                "依靠日常习惯与自我修正运转",
+                "无休止的精确，极高的内在标准",
+                "代价：牺牲从容与休息"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Configuration in a Natal Chart",
+          "titleEn": "How to Read This Configuration in a Natal Chart",
+          "titleZh": "如何解读星盘中的这一配置",
+          "altEn": "Five-step guide to reading a Libra Sun Virgo Moon natal chart configuration",
+          "altZh": "解读天秤座太阳处女座月亮星盘配置的五步指南",
+          "items": [
+            {
+              "nameEn": "Find the Sun Sign",
+              "nameZh": "确定太阳星座",
+              "subEn": "A Libra Sun shows instinctive diplomacy and a strong pull toward keeping situations fair",
+              "subZh": "天秤座太阳体现本能的外交倾向和对公正的强烈追求"
+            },
+            {
+              "nameEn": "Check the Moon",
+              "nameZh": "查看月亮星座",
+              "subEn": "A Virgo Moon reads as routine, list-making, and a reflex toward self-correction under stress",
+              "subZh": "处女座月亮表现为日常化、列清单，以及压力下的自我修正反射"
+            },
+            {
+              "nameEn": "Treat the Rising as Unsettled",
+              "nameZh": "将上升星座视为未定",
+              "subEn": "Cross-check at least two sources and an exact birth time before trusting any single listing",
+              "subZh": "在信任任何单一来源前，核对至少两个来源及精确出生时间"
+            },
+            {
+              "nameEn": "Look for the Air–Earth Split",
+              "nameZh": "寻找风土元素的张力",
+              "subEn": "Sun in Air + Moon in Earth often surfaces as a polished social exterior over a demanding inner standard",
+              "subZh": "太阳在风象加月亮在土象，通常表现为光鲜社交外表下严苛的内在标准"
+            },
+            {
+              "nameEn": "Watch Behavior Under Pressure",
+              "nameZh": "观察压力下的行为",
+              "subEn": "This configuration stays composed and gracious in public while privately raising the bar again",
+              "subZh": "这一配置在公开场合保持沉稳优雅，同时在私下不断提高标准"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
