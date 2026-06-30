@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "morocco-world-cup-2026-astrology": {
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Astrology Behind a 2026 Squad",
+          "titleEn": "5 Steps to Read a Squad's 2026 Astrology",
+          "titleZh": "解读2026年球队占星的5个步骤",
+          "altEn": "Five-step sequence for reading Morocco World Cup 2026 astrology: national chart, captain Mars, Jupiter transits, squad elements, tournament window",
+          "altZh": "解读2026年世界杯占星的五步顺序：国家星盘、队长火星、木星过境、球队元素、赛事窗口",
+          "items": [
+            {
+              "nameEn": "Check the national chart first",
+              "nameZh": "首先查阅国家星盘",
+              "subEn": "Look up the country's founding date to frame the team's collective tone",
+              "subZh": "查找建国日期，确定球队整体基调"
+            },
+            {
+              "nameEn": "Find the captain's natal Sun and Mars",
+              "nameZh": "找到队长的本命太阳和火星",
+              "subEn": "These track leadership style and how the side responds under pressure",
+              "subZh": "追踪领导风格及球队在压力下的反应方式"
+            },
+            {
+              "nameEn": "Note who has standout 2026 transits",
+              "nameZh": "记录谁有突出的2026年过境相位",
+              "subEn": "A player with Jupiter crossing a key natal point is the symbolic one to watch",
+              "subZh": "木星经过本命关键点的球员是象征性的重点观察对象"
+            },
+            {
+              "nameEn": "Compare squad elements",
+              "nameZh": "比较球队元素构成",
+              "subEn": "A fire-and-air roster reads differently from a water-heavy defensive group",
+              "subZh": "火象与风象阵容和以水象为主的防守型阵容读法截然不同"
+            },
+            {
+              "nameEn": "Anchor everything to the tournament window",
+              "nameZh": "将一切锚定于赛事时间窗口",
+              "subEn": "The June 13-July 2026 tournament window matters; outside transits set aside",
+              "subZh": "只有2026年6月下旬至7月的时机才重要，窗口外的过境可忽略"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Morocco World Cup 2026 Astrology vs General Football Astrology: What Actually Differs",
+          "titleEn": "Morocco WC 2026 Astrology vs General Football Astrology",
+          "titleZh": "摩洛哥2026年世界杯占星与通用足球占星的比较",
+          "altEn": "Comparison of Morocco World Cup 2026 astrology approach versus general football astrology: scope, timing, and trade-offs",
+          "altZh": "摩洛哥2026年世界杯占星方法与通用足球占星的比较：范围、时机与权衡",
+          "columns": [
+            {
+              "nameEn": "Morocco WC 2026 Approach",
+              "nameZh": "摩洛哥2026年世界杯方法",
+              "linesEn": [
+                "Ties player charts to the national founding chart",
+                "Uses dated 2026 transit timing",
+                "Specific to the June–July 2026 window",
+                "Sharp and relevant, but non-transferable to other fixtures"
+              ],
+              "linesZh": [
+                "将球员星盘与国家建国星盘相结合",
+                "使用有明确日期的2026年过境时机",
+                "专属于2026年6月至7月的时间窗口",
+                "精准且相关，但无法迁移到其他赛事"
+              ]
+            },
+            {
+              "nameEn": "General Football Astrology",
+              "nameZh": "通用足球占星",
+              "linesEn": [
+                "Reads any match through broad sign traits",
+                "Not tied to a specific event or date",
+                "Works for any fixture at any time",
+                "Flexible but lacks event-specific precision"
+              ],
+              "linesZh": [
+                "通过宽泛的星座特征解读任意比赛",
+                "不绑定于特定赛事或日期",
+                "适用于任何时间的任何比赛",
+                "灵活但缺乏赛事专属精准度"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
