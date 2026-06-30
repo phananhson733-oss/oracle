@@ -17,8 +17,7 @@ export const serenaWilliamsBirthChartEn: WikiArticle = {
     "serena williams birth chart meaning",
     "serena williams birth chart astrology",
     "serena williams birth chart zodiac",
-    "serena williams birth chart interpretation",
-    "emma watson zodiac sign"
+    "serena williams birth chart interpretation"
   ],
   content: `# What the Serena Williams Birth Chart Says About a Champion's Discipline
 
