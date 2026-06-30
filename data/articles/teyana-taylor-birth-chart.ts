@@ -15,8 +15,7 @@ export const teyanaTaylorBirthChartEn: WikiArticle = {
     "teyana taylor birth chart meaning",
     "teyana taylor birth chart astrology",
     "teyana taylor birth chart zodiac",
-    "teyana taylor birth chart interpretation",
-    "emma watson zodiac sign"
+    "teyana taylor birth chart interpretation"
   ],
   content: `# What the Teyana Taylor Birth Chart Reveals About Her Public Fire
 
