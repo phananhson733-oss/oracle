@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const moroccoWorldCup2026AstrologyEn: WikiArticle = {
   slug: "morocco-world-cup-2026-astrology",
+  image: "/images/blog/morocco-world-cup-2026-astrology.jpg",
+  image_alt: "Tiered luminous orbs arcing across a nocturnal landscape, overlapping halos on dark terrain — Morocco World Cup 2026 astrology",
   title: "What Morocco World Cup 2026 Astrology Actually Tells Fans",
   description: "Morocco World Cup 2026 Astrology is a way of reading the tournament through birth charts and national charts instead of form tables or betting odds.",
   authorId: "marcus-orion",

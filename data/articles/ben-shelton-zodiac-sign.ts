@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const benSheltonZodiacSignEn: WikiArticle = {
   slug: "ben-shelton-zodiac-sign",
+  image: "/images/blog/ben-shelton-zodiac-sign.jpg",
+  image_alt: "Atmospheric night-sky landscape representing Ben Shelton zodiac sign layers beyond a single Sun-sign label",
   title: "Reading the Ben Shelton Zodiac Sign Beyond a Single Sun Sign",
   description: "Ben Shelton zodiac sign is the phrase fans search when they want to read a public figure's astrology against the personality they watch on court.",
   authorId: "marcus-orion",

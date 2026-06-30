@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const teyanaTaylorBirthChartEn: WikiArticle = {
   slug: "teyana-taylor-birth-chart",
+  image: "/images/blog/teyana-taylor-birth-chart.jpg",
+  image_alt: "Blazing arc of fire streaming across an open plain at twilight, golden light fanning across an indigo sky — Teyana Taylor birth chart",
   title: "What the Teyana Taylor Birth Chart Reveals About Her Public Fire",
   description: "The Teyana Taylor birth chart is a map of where the Sun, Moon, and planets sat at the exact moment the singer, dancer, and actress was born on December 10, 1990.",
   authorId: "marcus-orion",

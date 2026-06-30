@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const jannikSinnerZodiacSignEn: WikiArticle = {
   slug: "jannik-sinner-zodiac-sign",
+  image: "/images/blog/jannik-sinner-zodiac-sign.jpg",
+  image_alt: "Painterly alpine twilight, glowing golden sun over mountain peaks and still lake, evoking Leo's steady fire",
   title: "What the Jannik Sinner Zodiac Sign Says About His Competitive Fire",
   description: "Jannik Sinner's zodiac sign is Leo, the fixed fire sign that runs from roughly July 23 to August 22.",
   authorId: "marcus-orion",

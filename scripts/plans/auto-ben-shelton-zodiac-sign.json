@@ -10,78 +10,113 @@
   },
   "articles": {
     "ben-shelton-zodiac-sign": {
+      "hero": {
+        "prompt": "Twin volcanic islands perfectly mirrored across a glassy equatorial sea under a deep cosmic night sky; teal and gold aurora bands arc between them at multiple atmospheric heights, each luminous band a different celestial shade suggesting hidden depth and layered complexity beyond a single visible surface; the calm water below reflects only the brightest layer while deeper glows pulse softly beneath, embodying the idea that one Sun-sign label reveals multiple hidden chart dimensions; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Atmospheric night-sky landscape representing Ben Shelton zodiac sign layers beyond a single Sun-sign label",
+        "altZh": "夜空大气景观，象征本·谢尔顿星座多层次解读，超越单一太阳星座标签"
+      },
       "inline": [
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read a Celebrity Zodiac Sign in a Birth Chart",
-          "titleEn": "5 Steps for Reading a Celebrity Birth Chart",
-          "titleZh": "解读名人出生图的五个步骤",
+          "titleEn": "Five Steps to Read a Celebrity Zodiac Sign",
+          "titleZh": "解读名人星座的五个步骤",
           "altEn": "Five-step guide to reading a celebrity zodiac sign birth chart: date, sun layer, stelliums, behavior, tendencies",
-          "altZh": "解读名人星座出生图五步骤：确认日期、区分太阳、寻找相位、对照行为、解读倾向",
+          "altZh": "五步解读名人星盘：日期、太阳层、星群、行为、倾向",
           "items": [
             {
               "nameEn": "Confirm the Date",
-              "nameZh": "确认日期",
-              "subEn": "Start with a publicly reported birth date and flag disagreements rather than filling gaps with guesses",
-              "subZh": "以公开报道的出生日期为起点，标注不一致之处，不以猜测填补空白"
+              "nameZh": "确认出生日期",
+              "subEn": "Begin with a publicly reported birth date; note source disagreements plainly rather than filling gaps with guesses",
+              "subZh": "以公开报道的出生日期为起点，如有分歧如实标注而非推测填补"
             },
             {
               "nameEn": "Separate the Sun",
-              "nameZh": "区分太阳星座",
-              "subEn": "Treat the Sun sign as one chapter, then ask what the Moon and Rising might add or complicate",
-              "subZh": "将太阳星座视为一章，再追问月亮与上升星座带来何种补充或矛盾"
+              "nameZh": "分离太阳星座",
+              "subEn": "Treat the Sun sign as one chapter, not the whole book; ask what the Moon and Rising add or complicate",
+              "subZh": "将太阳星座视为一个章节而非全书，探究月亮与上升如何补充或修正"
             },
             {
               "nameEn": "Find Stelliums and Tight Aspects",
-              "nameZh": "寻找聚星与紧密相位",
+              "nameZh": "寻找星群与紧密相位",
               "subEn": "A cluster of planets in one sign or a close aspect often says more about visible character than the Sun alone",
-              "subZh": "某星座中的行星聚集或紧密相位，往往比太阳单独更能揭示外显性格"
+              "subZh": "某星座中的行星聚集或紧密相位往往比太阳星座更能揭示公众性格"
             },
             {
-              "nameEn": "Match Observable Behavior",
+              "nameEn": "Match to Observable Behavior",
               "nameZh": "对照可观察行为",
-              "subEn": "Compare placements against documented conduct on court and in interviews; hold interpretations loosely if nothing lines up",
-              "subZh": "将星盘配置与赛场及采访中有据可查的行为对照，若无对应则保持宽松解读"
+              "subEn": "Compare placement themes against documented on-court conduct and interviews; hold interpretations loosely if nothing aligns",
+              "subZh": "将星盘主题与有据可查的场内行为及采访交叉核验，若无对应则保持开放态度"
             },
             {
               "nameEn": "Read Tendencies, Not Outcomes",
-              "nameZh": "解读倾向而非结果",
-              "subEn": "Frame every placement as something that may surface under the right conditions, never as a fated result",
-              "subZh": "将每个配置理解为在特定条件下可能显现的倾向，而非命中注定的结果"
+              "nameZh": "解读倾向而非命运",
+              "subEn": "Frame every placement as something that may surface under the right conditions, never as a fated or guaranteed result",
+              "subZh": "将每个配置理解为在适当条件下可能显现的倾向，而非注定或保证的结果"
             }
           ]
         },
         {
-          "kind": "sequence",
+          "kind": "compare",
           "afterHeadingEn": "## Ben Shelton's Zodiac Sign at a Glance",
-          "titleEn": "Four Layers of Ben Shelton's Birth Chart",
-          "titleZh": "本·谢尔顿出生图的四个解读层次",
+          "titleEn": "Four Layers of Ben Shelton's Zodiac Reading",
+          "titleZh": "本·谢尔顿星座解读的四个层次",
           "altEn": "Four layered readings of Ben Shelton zodiac sign: Libra Sun, Moon sign, Rising sign, and dominant aspect",
-          "altZh": "本·谢尔顿星座的四层解读：天秤座太阳、月亮星座、上升星座与主导相位",
-          "items": [
+          "altZh": "本·谢尔顿星座四层解读：天秤座太阳、月亮星座、上升星座与主要相位",
+          "columns": [
             {
-              "nameEn": "Libra Sun (Oct 9, 2002)",
-              "nameZh": "天秤座太阳（2002年10月9日）",
-              "subEn": "Anchors core identity in balance and poise; air element, Venus-ruled, with 7th-house themes of relating",
-              "subZh": "将核心身份锚定于平衡与沉着；金星主宰的风元素，带有第七宫的关系主题"
+              "nameEn": "Libra Sun",
+              "nameZh": "天秤座太阳",
+              "linesEn": [
+                "Born Oct 9, 2002",
+                "Anchors identity in balance, poise, partnership",
+                "Air element, ruled by Venus",
+                "7th-house themes of relating",
+                "Observe composed, opponent-reading court style"
+              ],
+              "linesZh": [
+                "生于2002年10月9日",
+                "核心身份：平衡、从容、合作",
+                "风象元素，金星主宰",
+                "第七宫人际关系主题",
+                "观察场上沉稳、善读对手的风格"
+              ]
             },
             {
-              "nameEn": "Moon Sign",
-              "nameZh": "月亮星座",
-              "subEn": "Adds the emotional and instinctive layer; tied to its element and the 4th-house theme of private life",
-              "subZh": "增添情感与本能层面；与其元素及第四宫的私密生活主题相连"
-            },
-            {
-              "nameEn": "Rising Sign",
-              "nameZh": "上升星座",
-              "subEn": "Shapes first impressions and outward style; set by birth time, colored by the 1st-house theme of approach",
-              "subZh": "塑造第一印象与外在风格；由出生时间决定，受第一宫呈现方式主题影响"
+              "nameEn": "Moon & Rising",
+              "nameZh": "月亮与上升",
+              "linesEn": [
+                "Moon: emotional and instinctive layer",
+                "Tied to 4th-house private life themes",
+                "Watch reactions under pressure",
+                "Rising: shapes first impressions and outward style",
+                "Set by birth time — unconfirmed for Shelton"
+              ],
+              "linesZh": [
+                "月亮：情感与本能层",
+                "与第四宫私生活主题相关",
+                "观察压力下的即时反应",
+                "上升：塑造第一印象与外在风格",
+                "由出生时间决定——谢尔顿时间尚未公开确认"
+              ]
             },
             {
               "nameEn": "Dominant Aspect",
-              "nameZh": "主导相位",
-              "subEn": "Highlights a recurring tension or strength; reflects the elements of the planets involved",
-              "subZh": "揭示反复出现的张力或优势，体现相关行星所属元素的性质"
+              "nameZh": "主要相位",
+              "linesEn": [
+                "Highlights recurring tension or strength",
+                "Reflects elements of the planets involved",
+                "Look for patterns repeating across seasons",
+                "Often more revealing than the Sun alone",
+                "Requires verified birth time to identify"
+              ],
+              "linesZh": [
+                "揭示反复出现的张力或优势",
+                "反映相关行星的元素特质",
+                "寻找跨赛季重复出现的模式",
+                "往往比太阳星座更具洞察力",
+                "需要经过验证的出生时间才能确认"
+              ]
             }
           ]
         }
