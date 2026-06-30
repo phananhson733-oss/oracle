@@ -1,0 +1,91 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "ben-shelton-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Celebrity Zodiac Sign in a Birth Chart",
+          "titleEn": "5 Steps for Reading a Celebrity Birth Chart",
+          "titleZh": "解读名人出生图的五个步骤",
+          "altEn": "Five-step guide to reading a celebrity zodiac sign birth chart: date, sun layer, stelliums, behavior, tendencies",
+          "altZh": "解读名人星座出生图五步骤：确认日期、区分太阳、寻找相位、对照行为、解读倾向",
+          "items": [
+            {
+              "nameEn": "Confirm the Date",
+              "nameZh": "确认日期",
+              "subEn": "Start with a publicly reported birth date and flag disagreements rather than filling gaps with guesses",
+              "subZh": "以公开报道的出生日期为起点，标注不一致之处，不以猜测填补空白"
+            },
+            {
+              "nameEn": "Separate the Sun",
+              "nameZh": "区分太阳星座",
+              "subEn": "Treat the Sun sign as one chapter, then ask what the Moon and Rising might add or complicate",
+              "subZh": "将太阳星座视为一章，再追问月亮与上升星座带来何种补充或矛盾"
+            },
+            {
+              "nameEn": "Find Stelliums and Tight Aspects",
+              "nameZh": "寻找聚星与紧密相位",
+              "subEn": "A cluster of planets in one sign or a close aspect often says more about visible character than the Sun alone",
+              "subZh": "某星座中的行星聚集或紧密相位，往往比太阳单独更能揭示外显性格"
+            },
+            {
+              "nameEn": "Match Observable Behavior",
+              "nameZh": "对照可观察行为",
+              "subEn": "Compare placements against documented conduct on court and in interviews; hold interpretations loosely if nothing lines up",
+              "subZh": "将星盘配置与赛场及采访中有据可查的行为对照，若无对应则保持宽松解读"
+            },
+            {
+              "nameEn": "Read Tendencies, Not Outcomes",
+              "nameZh": "解读倾向而非结果",
+              "subEn": "Frame every placement as something that may surface under the right conditions, never as a fated result",
+              "subZh": "将每个配置理解为在特定条件下可能显现的倾向，而非命中注定的结果"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Ben Shelton's Zodiac Sign at a Glance",
+          "titleEn": "Four Layers of Ben Shelton's Birth Chart",
+          "titleZh": "本·谢尔顿出生图的四个解读层次",
+          "altEn": "Four layered readings of Ben Shelton zodiac sign: Libra Sun, Moon sign, Rising sign, and dominant aspect",
+          "altZh": "本·谢尔顿星座的四层解读：天秤座太阳、月亮星座、上升星座与主导相位",
+          "items": [
+            {
+              "nameEn": "Libra Sun (Oct 9, 2002)",
+              "nameZh": "天秤座太阳（2002年10月9日）",
+              "subEn": "Anchors core identity in balance and poise; air element, Venus-ruled, with 7th-house themes of relating",
+              "subZh": "将核心身份锚定于平衡与沉着；金星主宰的风元素，带有第七宫的关系主题"
+            },
+            {
+              "nameEn": "Moon Sign",
+              "nameZh": "月亮星座",
+              "subEn": "Adds the emotional and instinctive layer; tied to its element and the 4th-house theme of private life",
+              "subZh": "增添情感与本能层面；与其元素及第四宫的私密生活主题相连"
+            },
+            {
+              "nameEn": "Rising Sign",
+              "nameZh": "上升星座",
+              "subEn": "Shapes first impressions and outward style; set by birth time, colored by the 1st-house theme of approach",
+              "subZh": "塑造第一印象与外在风格；由出生时间决定，受第一宫呈现方式主题影响"
+            },
+            {
+              "nameEn": "Dominant Aspect",
+              "nameZh": "主导相位",
+              "subEn": "Highlights a recurring tension or strength; reflects the elements of the planets involved",
+              "subZh": "揭示反复出现的张力或优势，体现相关行星所属元素的性质"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
