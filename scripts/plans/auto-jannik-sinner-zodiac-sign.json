@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jannik-sinner-zodiac-sign": {
+      "hero": {
+        "prompt": "A majestic alpine twilight landscape, a single radiant golden sun resting low on a sweeping mountain horizon, its steady warm light casting long gold reflections across a still glacial lake below, the vast sky arching from amber near the horizon to deep indigo overhead, towering snow-capped peaks silhouetted against the luminous glow, the scene exuding quiet intensity and fixed-fire composure, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Painterly alpine twilight, glowing golden sun over mountain peaks and still lake, evoking Leo's steady fire",
+        "altZh": "水彩风格高山黄昏，金色太阳低悬于山峰与静湖之上，象征狮子座的稳定火焰"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Leo Placement in a Chart",
+          "titleEn": "5 Steps to Read Jannik Sinner's Leo Sun Placement",
+          "titleZh": "解读杨尼克·辛纳狮子座太阳星位的5个步骤",
+          "altEn": "Five-step sequence for reading a Leo Sun placement in an astrology chart",
+          "altZh": "逐步解读占星图中狮子座太阳星位的五步图解",
+          "items": [
+            {
+              "nameEn": "Find the Sun's Sign and House",
+              "nameZh": "找到太阳所在的星座和宫位",
+              "subEn": "Locate the Sun in Leo, then see which house it sits in to gauge where the spotlight tends to land",
+              "subZh": "找出狮子座中的太阳，再看它所在的宫位，判断聚光灯倾向于落在哪里"
+            },
+            {
+              "nameEn": "Check the Rising Sign",
+              "nameZh": "查看上升星座",
+              "subEn": "A Leo Sun paired with a more reserved rising can explain the quiet-assassin contrast that fans keep noticing",
+              "subZh": "狮子座太阳与更内敛的上升星座搭配，可解释粉丝注意到的「沉默刺客」反差"
+            },
+            {
+              "nameEn": "Watch Fixed-Sign Behavior",
+              "nameZh": "观察固定星座的行为特质",
+              "subEn": "Sticking with one game plan under pressure, point after point, is classic fixed-fire stamina",
+              "subZh": "在压力下坚守同一战术，一分接一分，这是固定火象星座耐力的典型表现"
+            },
+            {
+              "nameEn": "Separate Persona from Placement",
+              "nameZh": "区分人格面具与星座星位",
+              "subEn": "Notice when 'Leo means dramatic' is a borrowed stereotype versus a pattern you can actually observe",
+              "subZh": "分辨「狮子座意味着戏剧化」是借来的刻板印象，还是你真正能观察到的规律"
+            },
+            {
+              "nameEn": "Compare Against Other Leo Athletes",
+              "nameZh": "与其他狮子座运动员对比",
+              "subEn": "Lining up several charts shows what is genuinely Leo and what is just personal style",
+              "subZh": "对比多张星盘，可以看出哪些特质真正属于狮子座，哪些只是个人风格"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Jannik Sinner's Zodiac Sign at a Glance",
+          "titleEn": "Jannik Sinner's Leo Placement: Key Astrological Factors",
+          "titleZh": "杨尼克·辛纳的狮子座星位：核心占星要素",
+          "altEn": "Three-column comparison of Leo Sun sign, Fixed modality, and Fire element in Sinner's chart",
+          "altZh": "辛纳星盘中狮子太阳、固定模式与火象元素的三列对比图",
+          "columns": [
+            {
+              "nameEn": "Sun Sign: Leo",
+              "nameZh": "太阳星座：狮子座",
+              "linesEn": [
+                "Sets the core identity theme of performing and leading",
+                "Ruled by the Sun, tied to visibility and identity",
+                "Composure and drive when the stakes peak"
+              ],
+              "linesZh": [
+                "构建表演与领导的核心身份主题",
+                "由太阳主宰，与能见度和身份认同紧密相连",
+                "在关键时刻展现沉稳与驱动力"
+              ]
+            },
+            {
+              "nameEn": "Modality: Fixed",
+              "nameZh": "宫位模式：固定星座",
+              "linesEn": [
+                "Holds a single plan steadily over time",
+                "Fifth-house themes of performance and self-expression",
+                "Sticking to one game plan point after point"
+              ],
+              "linesZh": [
+                "长期稳定地坚守同一计划",
+                "第五宫的表演与自我表达主题",
+                "一分接一分贯彻同一战术"
+              ]
+            },
+            {
+              "nameEn": "Element: Fire",
+              "nameZh": "元素：火象",
+              "linesEn": [
+                "Fuels confidence and self-expression",
+                "Sun-ruled vitality and visible energy",
+                "Energy that lifts visibly on the big stage"
+              ],
+              "linesZh": [
+                "驱动自信心与自我表达",
+                "由太阳主宰的活力与可见能量",
+                "在大舞台上明显提升的能量感"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
