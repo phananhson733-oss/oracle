@@ -22,7 +22,7 @@ export const moroccoWorldCup2026AstrologyEn: WikiArticle = {
 
 ## What Is Morocco World Cup 2026 Astrology?
 
-Morocco World Cup 2026 Astrology is a way of reading the tournament through birth charts and national charts instead of form tables or betting odds. At its core, it treats astrological symbolism as **an interpretive lens that maps players and teams onto chart patterns**. The approach looks at three things together: a player's natal placements, a country's national chart, and the timing of major 2026 transits such as Jupiter's shift from Cancer into Leo at the end of June 2026.
+Morocco World Cup 2026 Astrology is a way of reading the tournament through birth charts and national charts instead of form tables or betting odds. At its core, it treats astrological symbolism as **an interpretive lens that maps players and teams onto chart patterns**. The approach looks at three things together: a player's natal placements, a country's national chart, and the timing of major 2026 transits such as Jupiter's transit through Cancer during the mid-June group stage and on into Leo from June 30, spanning the full June–July 2026 tournament rather than any single week.
 
 - Reads squads and fixtures as symbolic stories, not fixed outcomes
 - Combines individual birth charts with each nation's founding chart
