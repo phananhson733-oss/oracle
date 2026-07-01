@@ -115,8 +115,8 @@ It is only as accurate as the birth data behind it, and honest about its limits.
 ## Related Reading
 
 - [rising sign profiles hub](/en/wiki/ascendant-meaning) — helpful for understanding why his debated Ascendant is so hard to pin down.
-- [companion reading of another athlete's birth chart](/en/wiki/how-to-read-birth-chart) — compares how drive shows up across two very different sports figures.
-- [explainer on stelliums in a natal chart](/en/wiki/how-to-read-birth-chart) — unpacks the planet clusters this portrait keeps pointing back to.
+- [companion reading of Serena Williams's birth chart](/en/wiki/serena-williams-birth-chart) — compares how drive shows up across two very different sports figures.
+- [how planet clusters work in a birth chart](/en/wiki/how-to-read-birth-chart) — unpacks the planet clusters this portrait keeps pointing back to.
 - [LeBron James (Wikipedia)](https://en.wikipedia.org/wiki/LeBron_James)
 
 ## Take Action
