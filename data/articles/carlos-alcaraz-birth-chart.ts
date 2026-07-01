@@ -31,13 +31,13 @@ Carlos Alcaraz's Taurus Sun–Midheaven conjunction is a reading in which his Ta
 
 ## Why It Matters for Self-Awareness
 
-Understanding the Carlos Alcaraz Birth Chart matters because it models something you can apply to your own chart: how one dominant placement can organize an entire identity. When the Sun meets the Midheaven, the part of you that feels most like "you" and the part the world actually sees line up on the same axis. For a public figure, that reads as someone whose private drive and public role are hard to pull apart — the same patient, repeat-the-basics steadiness shows up on court, in interviews, and in how he handles pressure. Building on the person-centered reading Dane Rudhyar established, astrologers treat this less as a fixed verdict and more as a lens for noticing where your sense of self and your reputation reinforce each other.
+Understanding Alcaraz's birth chart matters because it models something you can apply to your own chart: how one dominant placement can organize an entire identity. When the Sun meets the Midheaven, the part of you that feels most like "you" and the part the world actually sees line up on the same axis. For a public figure, that reads as someone whose private drive and public role are hard to pull apart — the same patient, repeat-the-basics steadiness shows up on court, in interviews, and in how he handles pressure. Building on the person-centered reading Dane Rudhyar established, astrologers treat this less as a fixed verdict and more as a lens for noticing where your sense of self and your reputation reinforce each other.
 
-The everyday value is simple. Most people carry a gap between who they feel they are and how others describe them, and that gap can quietly shape decisions. A chart that places the Sun on the career angle — as this provisional reading of Alcaraz's does — is a vivid illustration of near-total overlap, which makes it a useful reference point when you look at your own placements and ask how wide your gap really runs. You do not have to be famous for the question to matter — the pattern gives you a concrete way to reflect on identity, image, and the drive that connects them. Try it as a quick exercise: name the trait people most associate with you, then ask whether it also sits at the center of how you see yourself. Where the two match, you have your own version of a Sun-on-the-Midheaven overlap; where they drift apart, you have found the gap worth watching. The Carlos Alcaraz Birth Chart is useful here precisely because it shows the aligned end of that spectrum so clearly.
+The everyday value is simple. Most people carry a gap between who they feel they are and how others describe them, and that gap can quietly shape decisions. A chart that places the Sun on the career angle — as this provisional reading of Alcaraz's does — is a vivid illustration of near-total overlap, which makes it a useful reference point when you look at your own placements and ask how wide your gap really runs. You do not have to be famous for the question to matter — the pattern gives you a concrete way to reflect on identity, image, and the drive that connects them. Try it as a quick exercise: name the trait people most associate with you, then ask whether it also sits at the center of how you see yourself. Where the two match, you have your own version of a Sun-on-the-Midheaven overlap; where they drift apart, you have found the gap worth watching. His birth chart is useful here precisely because it shows the aligned end of that spectrum so clearly.
 
 ## Taurus Sun Sign vs the Sun–Midheaven Conjunction: What Actually Differs
 
-A plain Taurus Sun and Alcaraz's Sun–Midheaven conjunction are not the same reading, and mixing them up is the single most common error in a Carlos Alcaraz Birth Chart write-up. Here is how each one works and where the trade-off sits:
+A plain Taurus Sun and Alcaraz's Sun–Midheaven conjunction are not the same reading, and mixing them up is the single most common error in an Alcaraz birth-chart write-up. Here is how each one works and where the trade-off sits:
 
 1. **A Taurus Sun on its own.** How it works: it describes tone — steady, patient, sensory, slow to rush. Read alone, it tells you the flavor of someone's core drive but says nothing about where that drive is pointed.
 2. **The Sun on the Midheaven.** How it works: the same Taurus tone gets pinned to the career-and-reputation angle, so the personality reads directly as a public identity. To get this specificity about his public role, you sacrifice the tidy simplicity of a one-word "Taurus" label.
@@ -50,7 +50,7 @@ The takeaway is that the Sun sign sets the mood while the Midheaven contact deci
 
 ## How to Read Alcaraz's Sun–Midheaven Conjunction in a Chart
 
-Spotting this pattern in any Carlos Alcaraz Birth Chart layout comes down to a few observable signals, the same career-axis reading that astrologers like Howard Sasportas placed at the center of house-based work:
+Spotting this pattern in any birth-chart layout comes down to a few observable signals, the same career-axis reading that astrologers like Howard Sasportas placed at the center of house-based work:
 
 1. Find the Midheaven (the cusp at the top of the wheel) and check whether the Sun sits within a few degrees of it.
 2. Look for the Sun in Taurus specifically — earthy, fixed, and built for endurance rather than quick bursts.
@@ -89,7 +89,7 @@ He is a Taurus Sun, born on May 5, 2003. Some readings place that Taurus Sun nea
 
 **Why do sources disagree about his Moon?**
 
-A reliable Moon reading needs an accurate birth time, and Alcaraz's is not firmly public. That gap is why some Carlos Alcaraz Birth Chart breakdowns list a Cancer Moon while others argue Gemini.
+A reliable Moon reading needs an accurate birth time, and Alcaraz's is not firmly public. That gap is why some Alcaraz birth-chart breakdowns list a Cancer Moon while others argue Gemini.
 
 **Does his chart predict tennis results?**
 
@@ -113,7 +113,7 @@ Most Western write-ups use the tropical zodiac, which is where the Taurus Sun–
 
 ## Take Action
 
-Curious how your own Sun lines up with your public image? [Generate your free birth chart to explore Carlos Alcaraz Birth Chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and see where your identity and reputation meet on the wheel. That gives you a single, readable map of your own angles — and a clearer sense of how the story others see connects to the one you quietly tell yourself.
+Curious how your own Sun lines up with your public image? [Generate your free birth chart to explore Carlos Alcaraz's chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and see where your identity and reputation meet on the wheel. That gives you a single, readable map of your own angles — and a clearer sense of how the story others see connects to the one you quietly tell yourself.
 
 This is not a clinical interpretation or mental health advice.
 
