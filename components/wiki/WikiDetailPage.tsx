@@ -315,11 +315,34 @@ const WikiDetailPage: React.FC = () => {
       try {
         const detail = await fetchWikiItem(id, language);
         if (!mounted) return;
+        // Successful load → clear any stale-bundle reload guard for this id so a
+        // future genuine 404 can self-heal again.
+        if (typeof window !== "undefined") {
+          window.sessionStorage.removeItem(`wiki-item-reload:${id}`);
+        }
         setItem(detail.item);
         window.scrollTo(0, 0);
       } catch (err) {
         if (!mounted) return;
-        if (!hasContent) setError(err?.message || t.app.error);
+        if (!hasContent) {
+          // Stale-bundle self-heal: a 404 here almost always means this JS bundle
+          // was loaded before `id` was published. `isArticleSlug` is compiled into
+          // the bundle, so a stale bundle doesn't recognize the new slug and falls
+          // through to the core-item API, which never serves articles → 404. Hard-
+          // reload ONCE to pick up the fresh bundle (which then routes the slug to
+          // WikiArticleDetailPage). sessionStorage guards against a reload loop for
+          // a genuinely-missing slug; it is cleared on any successful load (above).
+          const reloadKey = `wiki-item-reload:${id}`;
+          if (
+            typeof window !== "undefined" &&
+            !window.sessionStorage.getItem(reloadKey)
+          ) {
+            window.sessionStorage.setItem(reloadKey, "1");
+            window.location.reload();
+            return;
+          }
+          setError(err?.message || t.app.error);
+        }
       } finally {
         if (mounted) setLoading(false);
       }
