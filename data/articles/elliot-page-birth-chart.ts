@@ -26,10 +26,10 @@ export const elliotPageBirthChartEn: WikiArticle = {
 The Elliot Page birth chart is **a symbolic map of the sky at his exact moment of birth**, read here as cultural narrative rather than verified biography.
 
 - Plots the Sun, Moon, and planets across twelve signs and houses to sketch tendencies, not fixed facts
-- Commonly anchored by a Pisces Sun, tied to themes of empathy, imagination, and a fluid sense of self
+- Commonly anchored by a Pisces Sun, tied to themes of empathy, imagination, and a rich inner life
 - Framed as a reading of his public arc as actor and advocate, never as private biographical proof
 
-Like any natal chart, it turns a birth moment into a set of themes an astrologer can interpret. Page is widely listed with a late-February birth date, which places the Sun in Pisces — a sign linked to sensitivity and a shape-shifting identity. Approached this way, the chart becomes a story to read rather than a verdict to confirm. For anyone new to natal work, the broader [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart) shows how these pieces connect before any single placement gets interpreted in isolation.
+Like any natal chart, it turns a birth moment into a set of themes an astrologer can interpret. Page is widely listed with a late-February birth date, which places the Sun in Pisces — a sign linked to sensitivity and a fluid, imaginative temperament. Approached this way, the chart becomes a story to read rather than a verdict to confirm. For anyone new to natal work, the broader [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart) shows how these pieces connect before any single placement gets interpreted in isolation.
 
 ## Why It Matters for Self-Awareness
 
@@ -117,14 +117,14 @@ Structurally, no — every chart uses the same signs, planets, and houses. The d
 
 ## Related Reading
 
-- [profile of another trending celebrity birth chart](/en/wiki/how-to-read-birth-chart) — compare how the same symbolic method reads a different public figure.
-- [explainer on the Pisces Sun sign](/en/wiki/12th-house-astrology) — go deeper on the placement most often tied to this chart.
+- [companion reading of Teyana Taylor's birth chart](/en/wiki/teyana-taylor-birth-chart) — compare how the same symbolic method reads a different public performer.
+- [the 12th house that Pisces traditionally rules](/en/wiki/12th-house-astrology) — go deeper on the house tied to Pisces, the sign most often linked to this chart.
 - [overview of synastry and compatibility charts](/en/wiki/synastry-chart-compatibility) — see how two charts get read together rather than one alone.
 - [Elliot Page (Wikipedia)](https://en.wikipedia.org/wiki/Elliot_Page)
 
 ## Take Action
 
-Ready to move from reading a celebrity's chart to reading your own? [Generate your free birth chart to explore Elliot Page birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising in one place — the same structure used here — so you can start spotting the quiet patterns that shape how you show up in the world.
+Ready to move from reading a celebrity's chart to reading your own? [Learn how to read your own birth chart step by step](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising in one place — the same structure used here — so you can start spotting the quiet patterns that shape how you show up in the world.
 
 ## Sources
 
