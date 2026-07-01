@@ -1,0 +1,96 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "elliot-page-birth-chart": {
+      "hero": {
+        "prompt": "A vast misty shoreline at twilight where an indigo ocean dissolves seamlessly into a star-strewn sky at the horizon, a single golden trail of light from an unseen sun streaming across the still water and fading into the depths below, the reflection of stars in the sea mirroring the heavens above in a fluid double-world that makes the boundary between surface radiance and hidden depth impossible to find, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Atmospheric Pisces coastline at twilight with glowing teal sea and starry indigo sky for Elliot Page birth chart",
+        "altZh": "黄昏时分双鱼座海岸，发光的青绿色大海与星光点点的靛蓝夜空，象征埃利奥特·佩奇出生星盘主题"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Chart as a Story",
+          "titleEn": "5 Steps to Read a Birth Chart as Narrative",
+          "titleZh": "将出生星盘作为故事解读的5个步骤",
+          "altEn": "Five-step sequence for reading a birth chart as a story: Sun-Moon pair, cluster, angles, aspect, theme",
+          "altZh": "将出生星盘作为叙事解读的五步骤流程图",
+          "items": [
+            {
+              "nameEn": "Start with the Sun–Moon Pair",
+              "nameZh": "从日月组合开始",
+              "subEn": "Shows the pull between how someone shines publicly and what they quietly need",
+              "subZh": "揭示公开形象与内心需求之间的张力"
+            },
+            {
+              "nameEn": "Find the Loudest Cluster",
+              "nameZh": "找出最强星群",
+              "subEn": "A stellium of three or more planets marks the chart's center of gravity",
+              "subZh": "三颗或更多行星的合相标志着星盘的重心所在"
+            },
+            {
+              "nameEn": "Read the Angles",
+              "nameZh": "解读轴点",
+              "subEn": "Rising sign and its ruler describe the public entrance and first impression",
+              "subZh": "上升星座及其主星描绘公众印象与初见形象"
+            },
+            {
+              "nameEn": "Trace One Major Aspect",
+              "nameZh": "追踪一个主要相位",
+              "subEn": "A tight square or opposition names the core friction better than a long list of signs",
+              "subZh": "单一紧密的刑或冲往往比罗列许多位置更能点出核心张力"
+            },
+            {
+              "nameEn": "Name the Theme, Then Stop",
+              "nameZh": "命名主题，然后停下",
+              "subEn": "Sum the pattern in one honest sentence and resist turning it into a claim about private life",
+              "subZh": "用一句诚实的话概括规律，不要将其转化为对他人私生活的断言"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of Celebrity Birth Charts",
+          "titleZh": "名人出生星盘的4种常见误读",
+          "altEn": "Four common misreadings of birth charts: Sun sign as identity, chart as biography, predictions, single placement",
+          "altZh": "出生星盘四大常见误读：太阳星座即身份、星盘证明传记等",
+          "items": [
+            {
+              "nameEn": "The Sun Sign Is the Person",
+              "nameZh": "太阳星座就是这个人",
+              "subEn": "A Pisces Sun is one thread, not a full identity — Moon, rising, and aspects reshape it completely",
+              "subZh": "双鱼太阳只是一条线索，而非完整身份——月亮、上升和相位会彻底改变其含义"
+            },
+            {
+              "nameEn": "The Chart Proves Biography",
+              "nameZh": "星盘证明传记事实",
+              "subEn": "A natal chart describes symbolic tendencies, not documented events or private history",
+              "subZh": "本命盘描述象征性倾向，而非记录事件或个人隐私"
+            },
+            {
+              "nameEn": "Placements Predict the Future",
+              "nameZh": "行星位置预测未来",
+              "subEn": "The reading maps patterns and themes, not fixed outcomes — nothing dictates what a person must do",
+              "subZh": "解盘只描绘模式与主题，而非固定结果——没有任何位置能决定一个人必须做什么"
+            },
+            {
+              "nameEn": "One Placement Decodes Identity",
+              "nameZh": "一个位置解码身份",
+              "subEn": "No single symbol explains a person's identity — reducing the chart to one label misses the fuller picture",
+              "subZh": "没有任何单一符号能解释一个人的身份——将星盘简化为单一标签会错失全貌"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
