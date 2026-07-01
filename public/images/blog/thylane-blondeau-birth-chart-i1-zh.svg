@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="四种常见星盘误读">
+  <defs>
+    <linearGradient id="thylaneblondeaubirthchart1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="thylaneblondeaubirthchart1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="thylaneblondeaubirthchart1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="thylaneblondeaubirthchart1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="thylaneblondeaubirthchart1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="thylaneblondeaubirthchart1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#thylaneblondeaubirthchart1zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#thylaneblondeaubirthchart1zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#thylaneblondeaubirthchart1zh-neb2)"/>
+  <circle cx="27.5" cy="138.5" r="0.41" fill="#cfc8ea" opacity="0.19"/><circle cx="280.9" cy="223.9" r="1.28" fill="#cfc8ea" opacity="0.32"/><circle cx="154.4" cy="170.7" r="0.42" fill="#cfc8ea" opacity="0.18"/><circle cx="418.4" cy="187.5" r="0.74" fill="#cfc8ea" opacity="0.31"/><circle cx="246.7" cy="351.8" r="1.53" fill="#cfc8ea" opacity="0.41"/><circle cx="319.3" cy="178.2" r="0.82" fill="#cfc8ea" opacity="0.35"/><circle cx="310.3" cy="302.5" r="0.91" fill="#cfc8ea" opacity="0.19"/><circle cx="612.6" cy="206.2" r="1.02" fill="#cfc8ea" opacity="0.17"/><circle cx="317.0" cy="321.4" r="0.56" fill="#cfc8ea" opacity="0.14"/><circle cx="334.4" cy="188.2" r="0.71" fill="#cfc8ea" opacity="0.44"/><circle cx="237.9" cy="251.7" r="1.19" fill="#cfc8ea" opacity="0.29"/><circle cx="694.9" cy="289.3" r="1.67" fill="#cfc8ea" opacity="0.34"/><circle cx="337.8" cy="233.6" r="0.93" fill="#cfc8ea" opacity="0.52"/><circle cx="218.9" cy="31.1" r="1.43" fill="#cfc8ea" opacity="0.41"/><circle cx="529.3" cy="110.0" r="1.18" fill="#cfc8ea" opacity="0.20"/><circle cx="128.4" cy="166.0" r="1.34" fill="#cfc8ea" opacity="0.32"/><circle cx="610.2" cy="149.2" r="1.26" fill="#cfc8ea" opacity="0.12"/><circle cx="489.7" cy="220.6" r="1.55" fill="#cfc8ea" opacity="0.22"/><circle cx="736.7" cy="124.5" r="1.26" fill="#cfc8ea" opacity="0.53"/><circle cx="56.1" cy="283.8" r="0.91" fill="#cfc8ea" opacity="0.29"/><circle cx="13.0" cy="233.6" r="0.67" fill="#cfc8ea" opacity="0.30"/><circle cx="22.7" cy="247.9" r="0.43" fill="#cfc8ea" opacity="0.45"/><circle cx="393.9" cy="46.7" r="0.88" fill="#cfc8ea" opacity="0.52"/><circle cx="494.5" cy="113.1" r="1.12" fill="#cfc8ea" opacity="0.20"/><circle cx="385.5" cy="147.2" r="1.66" fill="#cfc8ea" opacity="0.18"/><circle cx="401.0" cy="70.2" r="1.48" fill="#cfc8ea" opacity="0.40"/><circle cx="507.4" cy="153.3" r="0.84" fill="#cfc8ea" opacity="0.51"/><circle cx="695.5" cy="106.6" r="1.06" fill="#cfc8ea" opacity="0.53"/><circle cx="184.4" cy="198.7" r="1.59" fill="#cfc8ea" opacity="0.16"/><circle cx="465.2" cy="360.9" r="0.42" fill="#cfc8ea" opacity="0.48"/><circle cx="651.2" cy="126.7" r="1.37" fill="#cfc8ea" opacity="0.13"/><path d="M 707.6499477569014 76.2 L 708.1 78.6 L 710.4 78.99437015736476 L 708.1 79.4 L 707.6499477569014 81.8 L 707.2 79.4 L 704.9 78.99437015736476 L 707.2 78.6 Z" fill="#f6e6bf" opacity="0.7782356304116547"/><path d="M 340.0360794235021 290.3 L 340.6 293.4 L 343.8 294.05654082400724 L 340.6 294.7 L 340.0360794235021 297.8 L 339.4 294.7 L 336.2 294.05654082400724 L 339.4 293.4 Z" fill="#f6e6bf" opacity="0.7028126452118159"/><path d="M 232.19559077359736 182.6 L 232.6 184.9 L 234.9 185.35785398306325 L 232.6 185.8 L 232.19559077359736 188.1 L 231.8 185.8 L 229.5 185.35785398306325 L 231.8 184.9 Z" fill="#f6e6bf" opacity="0.7145396600477397"/><path d="M 497.5995568651706 193.9 L 498.1 196.5 L 500.7 197.04358022054657 L 498.1 197.5 L 497.5995568651706 200.2 L 497.1 197.5 L 494.5 197.04358022054657 L 497.1 196.5 Z" fill="#f6e6bf" opacity="0.5911023886874318"/><path d="M 196.42349001206458 320.6 L 196.9 323.2 L 199.5 323.7274540201761 L 196.9 324.2 L 196.42349001206458 326.8 L 195.9 324.2 L 193.3 323.7274540201761 L 195.9 323.2 Z" fill="#f6e6bf" opacity="0.6427362122572958"/><path d="M 154.4 170.7 L 610.2 149.2 L 385.5 147.2 L 651.2 126.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">四种常见星盘误读</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#thylaneblondeaubirthchart1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#thylaneblondeaubirthchart1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#thylaneblondeaubirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#thylaneblondeaubirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">星盘证明了她的本质</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">星盘是象征地图，不是传记证明，将其等同于事实是越界</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#thylaneblondeaubirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#thylaneblondeaubirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">太阳星座解释了她的整个职业生涯</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">单一星位无法承载整个人生，将她简化为一个星座会忽略其他所有符号</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#thylaneblondeaubirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#thylaneblondeaubirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">我们已经知道她的上升星座</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">上升星座需要经过核实的出生时间，没有则一切宫位解读都是猜测</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#thylaneblondeaubirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#thylaneblondeaubirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">占星能裁决关于她的争议</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">占星最多提供讨论公众形象的共同词汇，而非裁决内心生活的工具</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

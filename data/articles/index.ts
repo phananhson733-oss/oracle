@@ -295,6 +295,7 @@ import { cardiBBirthChartEn } from "./cardi-b-birth-chart";
 import { prideMonthAstrologyEn } from "./pride-month-astrology";
 import { totalSolarEclipse2026En } from "./total-solar-eclipse-2026";
 import { mayaJointBirthChartEn } from "./maya-joint-birth-chart";
+import { thylaneBlondeauBirthChartEn } from "./thylane-blondeau-birth-chart";
 // All articles organized by language
 
 import {
@@ -581,6 +582,7 @@ const ARTICLES_EN: WikiArticle[] = [
   prideMonthAstrologyEn,
   totalSolarEclipse2026En,
   mayaJointBirthChartEn,
+  thylaneBlondeauBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
