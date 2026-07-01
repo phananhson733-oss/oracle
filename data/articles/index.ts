@@ -293,6 +293,7 @@ import { carlosAlcarazBirthChartEn } from "./carlos-alcaraz-birth-chart";
 import { usaPlutoReturnAstrologyEn } from "./usa-pluto-return-astrology";
 import { cardiBBirthChartEn } from "./cardi-b-birth-chart";
 import { prideMonthAstrologyEn } from "./pride-month-astrology";
+import { totalSolarEclipse2026En } from "./total-solar-eclipse-2026";
 // All articles organized by language
 
 import {
@@ -577,6 +578,7 @@ const ARTICLES_EN: WikiArticle[] = [
   usaPlutoReturnAstrologyEn,
   cardiBBirthChartEn,
   prideMonthAstrologyEn,
+  totalSolarEclipse2026En,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
