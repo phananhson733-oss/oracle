@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 196" role="img" aria-label="">
+  <defs>
+    <linearGradient id="pridemonthastrology0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="pridemonthastrology0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="pridemonthastrology0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pridemonthastrology0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pridemonthastrology0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pridemonthastrology0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="url(#pridemonthastrology0zh-panel)"/>
+  <ellipse cx="198" cy="47" rx="380" ry="67" fill="url(#pridemonthastrology0zh-neb1)"/>
+  <ellipse cx="623" cy="157" rx="334" ry="63" fill="url(#pridemonthastrology0zh-neb2)"/>
+  <circle cx="63.7" cy="117.8" r="0.78" fill="#cfc8ea" opacity="0.28"/><circle cx="26.2" cy="24.1" r="1.24" fill="#cfc8ea" opacity="0.14"/><circle cx="73.1" cy="41.2" r="1.14" fill="#cfc8ea" opacity="0.38"/><circle cx="525.0" cy="95.8" r="0.66" fill="#cfc8ea" opacity="0.29"/><circle cx="226.0" cy="132.0" r="1.23" fill="#cfc8ea" opacity="0.34"/><circle cx="601.7" cy="43.0" r="0.54" fill="#cfc8ea" opacity="0.36"/><circle cx="629.2" cy="173.5" r="0.82" fill="#cfc8ea" opacity="0.12"/><circle cx="424.8" cy="134.8" r="1.54" fill="#cfc8ea" opacity="0.46"/><circle cx="402.8" cy="149.7" r="0.87" fill="#cfc8ea" opacity="0.50"/><circle cx="477.6" cy="34.0" r="1.56" fill="#cfc8ea" opacity="0.39"/><circle cx="85.3" cy="150.8" r="0.95" fill="#cfc8ea" opacity="0.21"/><circle cx="558.9" cy="122.9" r="1.48" fill="#cfc8ea" opacity="0.46"/><circle cx="743.1" cy="85.7" r="1.25" fill="#cfc8ea" opacity="0.43"/><circle cx="536.7" cy="71.9" r="1.25" fill="#cfc8ea" opacity="0.33"/><circle cx="331.1" cy="34.5" r="0.49" fill="#cfc8ea" opacity="0.37"/><circle cx="121.9" cy="179.3" r="1.21" fill="#cfc8ea" opacity="0.25"/><circle cx="357.4" cy="78.7" r="0.48" fill="#cfc8ea" opacity="0.43"/><path d="M 347.1193141937256 39.8 L 347.6 42.2 L 350.0 42.68826045654714 L 347.6 43.1 L 347.1193141937256 45.5 L 346.7 43.1 L 344.3 42.68826045654714 L 346.7 42.2 Z" fill="#f6e6bf" opacity="0.5318204923300073"/><path d="M 442.6468198224902 118.7 L 443.2 121.8 L 446.3 122.37442648224533 L 443.2 123.0 L 442.6468198224902 126.0 L 442.1 123.0 L 439.0 122.37442648224533 L 442.1 121.8 Z" fill="#f6e6bf" opacity="0.5304138215025886"/><path d="M 591.2582915872335 41.6 L 591.7 43.9 L 594.1 44.38347480259836 L 591.7 44.8 L 591.2582915872335 47.2 L 590.8 44.8 L 588.4 44.38347480259836 L 590.8 43.9 Z" fill="#f6e6bf" opacity="0.5616471712244675"/><path d="M 327.8334578052163 61.8 L 328.4 64.7 L 331.3 65.27939505688846 L 328.4 65.8 L 327.8334578052163 68.8 L 327.3 65.8 L 324.3 65.27939505688846 L 327.3 64.7 Z" fill="#f6e6bf" opacity="0.5637316725915298"/><path d="M 96.42169401049614 52.8 L 96.9 55.1 L 99.2 55.55699353478849 L 96.9 56.0 L 96.42169401049614 58.3 L 96.0 56.0 L 93.7 55.55699353478849 L 96.0 55.1 Z" fill="#f6e6bf" opacity="0.597917320835404"/><path d="M 743.1 85.7 L 331.1 34.5 L 121.9 179.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="182" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 176.8 L 16.5 179.5 L 19.2 180 L 16.5 180.5 L 16 183.2 L 15.5 180.5 L 12.8 180 L 15.5 179.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 176.8 L 744.5 179.5 L 747.2 180 L 744.5 180.5 L 744 183.2 L 743.5 180.5 L 740.8 180 L 743.5 179.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#pridemonthastrology0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#pridemonthastrology0zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="72" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="72" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 81.6 L 48.3 84.5 L 51.1 85 L 48.3 85.5 L 47.75 88.4 L 47.2 85.5 L 44.4 85 L 47.2 84.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 112.5 L 380.7 116.3 L 384.5 117 L 380.7 117.7 L 380 121.5 L 379.3 117.7 L 375.5 117 L 379.3 116.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="130" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="130" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 139.6 L 48.3 142.5 L 51.1 143 L 48.3 143.5 L 47.75 146.4 L 47.2 143.5 L 44.4 143 L 47.2 142.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 280.025 167.4 L 280.4 169.6 L 282.6 170 L 280.4 170.4 L 280.025 172.6 L 279.6 170.4 L 277.4 170 L 279.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="174" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 167.4 L 480.4 169.6 L 482.6 170 L 480.4 170.4 L 479.975 172.6 L 479.6 170.4 L 477.4 170 L 479.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
