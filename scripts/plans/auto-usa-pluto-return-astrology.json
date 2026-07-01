@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "usa-pluto-return-astrology": {
+      "hero": {
+        "prompt": "A vast nocturnal landscape stretching horizon to horizon beneath a sweeping arc of radiant gold tracing a vast curved celestial orbit that bends back to its own origin above ancient moss-covered stone earthworks, teal nebula clouds drifting along the great arc of returning light, rolling dark hills fading into a starlit distance — a visual metaphor for a 248-year planetary cycle silently completing its full circuit, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Golden orbital arc completing its 248-year circuit above ancient earthworks in a sweeping indigo night landscape",
+        "altZh": "深蓝夜景中金色轨道弧线在古老遗址上方完成漫长的248年回归"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## USA Pluto Return vs a Personal Pluto Transit: What Actually Differs",
+          "titleEn": "National Return vs Personal Transit: Two Different Scales",
+          "titleZh": "国家回归与个人过境：两种不同尺度",
+          "altEn": "Comparison of national Pluto return operating on collective scale versus personal Pluto transit on individual scale",
+          "altZh": "国家冥王星回归（集体尺度）与个人冥王星过境（个体尺度）的对比图",
+          "columns": [
+            {
+              "nameEn": "National Pluto Return",
+              "nameZh": "国家冥王星回归",
+              "linesEn": [
+                "Describes a whole country's founding chart",
+                "Collective scale: institutions, shared power, public identity",
+                "Maps slow generational shifts across the whole nation",
+                "Reads the story of a nation, not any single person"
+              ],
+              "linesZh": [
+                "描述整个国家的建国星盘",
+                "集体尺度：制度、共享权力、公众身份",
+                "描绘跨越整个世代的缓慢国家转变",
+                "读取一个国家的故事，而非任何个体"
+              ]
+            },
+            {
+              "nameEn": "Personal Pluto Transit",
+              "nameZh": "个人冥王星过境",
+              "linesEn": [
+                "Describes a single individual's birth chart",
+                "Personal scale: control, intimacy, ambition",
+                "Marks private turning points in one person's life",
+                "Reads the story of a single life, not a nation"
+              ],
+              "linesZh": [
+                "描述单个人的出生星盘",
+                "个人尺度：控制、亲密关系、抱负",
+                "标记一个人生命中的私人转折点",
+                "读取一个个体的故事，而非国家"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the USA Pluto Return as It Unfolds",
+          "titleEn": "5 Ways to Ground Your Reading of the Pluto Return",
+          "titleZh": "落地解读冥王星回归的5种方式",
+          "altEn": "Five grounded steps for reading the USA Pluto Return as a slow pattern over years rather than a single event",
+          "altZh": "将美国冥王星回归作为多年缓慢模式而非单一事件来解读的五个落地步骤",
+          "items": [
+            {
+              "nameEn": "Watch institutions, not headlines",
+              "nameZh": "关注制度，而非头条",
+              "subEn": "Notice gradual shifts in how power, money, and law are structured",
+              "subZh": "留意权力、金融和法律结构的渐进性变化"
+            },
+            {
+              "nameEn": "Track recurring themes",
+              "nameZh": "追踪反复出现的主题",
+              "subEn": "Look for issues a country keeps returning to — debt, accountability, control",
+              "subZh": "关注国家反复面对的议题——债务、问责制、控制"
+            },
+            {
+              "nameEn": "Notice the mood of reckoning",
+              "nameZh": "感知清算的时代氛围",
+              "subEn": "Conversations about what has been hidden or avoided tend to intensify",
+              "subZh": "关于被隐藏或回避之事的公共讨论往往会加剧"
+            },
+            {
+              "nameEn": "Separate symbolism from calendar dates",
+              "nameZh": "将象征意义与日历日期区分开",
+              "subEn": "Treat the return as a window of several years, not a result locked to one date",
+              "subZh": "将回归视为数年的窗口期，而非某个固定日期的结果"
+            },
+            {
+              "nameEn": "Check your own reaction",
+              "nameZh": "审视自身的反应",
+              "subEn": "Notice whether the cycle prompts calm reflection or spiraling anxiety in you",
+              "subZh": "留意这一周期是引发你平静的思考，还是螺旋式的焦虑"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
