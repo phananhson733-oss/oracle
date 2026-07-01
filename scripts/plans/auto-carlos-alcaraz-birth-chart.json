@@ -1,0 +1,120 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "carlos-alcaraz-birth-chart": {
+      "hero": {
+        "prompt": "A lone earthen mountain peak rises to touch a single luminous gold vertical axis descending from the zenith of a vast open sky, the summit and the celestial beam meeting in precise alignment at the apex, teal nebula clouds spiraling outward from the junction point, dark rolling terrain stretching to the horizon in every direction, one mountain one beam one sky, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A mountain peak aligning with a golden zenith beam under an indigo sky, symbolizing Alcaraz's Taurus Sun–Midheaven conjunction",
+        "altZh": "山峰与金色天顶光柱在靛蓝天空下交汇，象征阿尔卡拉斯的金牛太阳与天顶合相"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Taurus Sun Sign vs the Sun–Midheaven Conjunction: What Actually Differs",
+          "titleEn": "Taurus Sun vs Sun–Midheaven: Three Readings",
+          "titleZh": "金牛太阳与太阳合天顶：三种解读维度",
+          "altEn": "Comparison of Taurus Sun alone, Sun on Midheaven, and the practical trade-off in Alcaraz's birth chart",
+          "altZh": "阿尔卡拉斯星盘中金牛太阳、太阳合天顶及实际权衡的三维对比",
+          "columns": [
+            {
+              "nameEn": "Taurus Sun Alone",
+              "nameZh": "单独的金牛太阳",
+              "linesEn": [
+                "Describes tone only — steady, patient, sensory",
+                "Tells you the flavor of core drive",
+                "Says nothing about where that drive is aimed",
+                "Easy to skim but flattens to a stereotype"
+              ],
+              "linesZh": [
+                "仅描述基调——稳定、耐心、感官导向",
+                "揭示核心驱动力的特质",
+                "不说明驱动力的方向",
+                "易于速读但流于刻板印象"
+              ]
+            },
+            {
+              "nameEn": "Sun on Midheaven",
+              "nameZh": "太阳合天顶",
+              "linesEn": [
+                "Pins Taurus tone to the career-and-reputation angle",
+                "Personality reads directly as public identity",
+                "Richer picture of public persona",
+                "Leans on birth-time precision"
+              ],
+              "linesZh": [
+                "将金牛特质锁定在事业与声誉轴上",
+                "个性直接呈现为公众身份",
+                "更丰富的公众形象解读",
+                "依赖出生时间的精确性"
+              ]
+            },
+            {
+              "nameEn": "Practical Trade-off",
+              "nameZh": "实际权衡",
+              "linesEn": [
+                "Sign-only reading: quick but flat",
+                "Angular reading: sharper but provisional",
+                "Sun sign sets the mood",
+                "Midheaven decides narrative weight in public life"
+              ],
+              "linesZh": [
+                "仅用星座：快速但平面",
+                "角宫解读：更精准但存疑",
+                "太阳星座定基调",
+                "天顶决定公众生活中的叙事分量"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Alcaraz's Sun–Midheaven Conjunction in a Chart",
+          "titleEn": "5 Steps to Spot the Sun–Midheaven Conjunction",
+          "titleZh": "识别太阳合天顶的五步方法",
+          "altEn": "Five-step process for identifying the Taurus Sun–Midheaven conjunction in Carlos Alcaraz's birth chart",
+          "altZh": "在阿尔卡拉斯星盘中识别金牛太阳合天顶的五步流程",
+          "items": [
+            {
+              "nameEn": "Find the Midheaven",
+              "nameZh": "找到天顶",
+              "subEn": "Locate the cusp at the top of the wheel; check if the Sun sits within a few degrees of it",
+              "subZh": "定位星盘顶端的宫首；检查太阳是否位于其几度范围内"
+            },
+            {
+              "nameEn": "Confirm the Taurus Sun",
+              "nameZh": "确认金牛太阳",
+              "subEn": "Earthy, fixed, built for endurance rather than quick bursts",
+              "subZh": "土象、固定宫，为持久力而生，而非爆发型"
+            },
+            {
+              "nameEn": "Notice Career Framing",
+              "nameZh": "观察事业格局",
+              "subEn": "An angular Sun makes public achievement central, not a side note",
+              "subZh": "角宫太阳使公众成就居于核心，而非边缘"
+            },
+            {
+              "nameEn": "Watch Persona Under Pressure",
+              "nameZh": "观察压力下的人格",
+              "subEn": "Look for grounded, keep-repeating-the-basics steadiness that Taurus symbolizes",
+              "subZh": "寻找金牛象征的脚踏实地、反复巩固基础的稳定性"
+            },
+            {
+              "nameEn": "Treat Exact Degree as Provisional",
+              "nameZh": "将精确度数视为暂定",
+              "subEn": "A shift in the recorded birth time can slide the Midheaven and weaken the conjunction",
+              "subZh": "记录出生时间的变动可能移动天顶位置，削弱合相"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

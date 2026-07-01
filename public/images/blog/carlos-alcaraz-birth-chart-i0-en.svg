@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 701" role="img" aria-label="Taurus Sun vs Sun–Midheaven: Three Readings">
+  <defs>
+    <linearGradient id="carlosalcarazbirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="carlosalcarazbirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="carlosalcarazbirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="carlosalcarazbirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="carlosalcarazbirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="carlosalcarazbirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="url(#carlosalcarazbirthchart0en-panel)"/>
+  <ellipse cx="198" cy="168" rx="380" ry="238" fill="url(#carlosalcarazbirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="561" rx="334" ry="224" fill="url(#carlosalcarazbirthchart0en-neb2)"/>
+  <circle cx="276.3" cy="36.7" r="0.43" fill="#cfc8ea" opacity="0.29"/><circle cx="66.0" cy="534.7" r="1.15" fill="#cfc8ea" opacity="0.36"/><circle cx="734.5" cy="608.9" r="0.82" fill="#cfc8ea" opacity="0.39"/><circle cx="108.8" cy="95.3" r="0.52" fill="#cfc8ea" opacity="0.52"/><circle cx="444.0" cy="345.7" r="1.63" fill="#cfc8ea" opacity="0.25"/><circle cx="427.4" cy="346.2" r="0.64" fill="#cfc8ea" opacity="0.41"/><circle cx="623.8" cy="105.9" r="1.28" fill="#cfc8ea" opacity="0.42"/><circle cx="656.3" cy="82.3" r="0.41" fill="#cfc8ea" opacity="0.17"/><circle cx="18.4" cy="519.0" r="0.88" fill="#cfc8ea" opacity="0.43"/><circle cx="279.5" cy="133.8" r="1.30" fill="#cfc8ea" opacity="0.31"/><circle cx="328.7" cy="365.5" r="1.66" fill="#cfc8ea" opacity="0.28"/><circle cx="606.4" cy="605.1" r="0.66" fill="#cfc8ea" opacity="0.31"/><circle cx="285.5" cy="45.6" r="0.70" fill="#cfc8ea" opacity="0.53"/><circle cx="309.8" cy="217.2" r="0.46" fill="#cfc8ea" opacity="0.50"/><circle cx="37.4" cy="333.8" r="1.43" fill="#cfc8ea" opacity="0.38"/><circle cx="681.0" cy="634.5" r="0.95" fill="#cfc8ea" opacity="0.30"/><circle cx="694.3" cy="85.2" r="0.91" fill="#cfc8ea" opacity="0.39"/><circle cx="492.6" cy="389.8" r="1.49" fill="#cfc8ea" opacity="0.17"/><circle cx="76.9" cy="504.4" r="0.83" fill="#cfc8ea" opacity="0.40"/><circle cx="305.4" cy="262.7" r="0.75" fill="#cfc8ea" opacity="0.15"/><circle cx="557.3" cy="254.4" r="1.43" fill="#cfc8ea" opacity="0.33"/><circle cx="448.0" cy="391.9" r="1.46" fill="#cfc8ea" opacity="0.19"/><circle cx="608.6" cy="610.3" r="1.15" fill="#cfc8ea" opacity="0.17"/><circle cx="659.3" cy="17.4" r="0.65" fill="#cfc8ea" opacity="0.20"/><circle cx="274.5" cy="209.3" r="0.63" fill="#cfc8ea" opacity="0.22"/><circle cx="381.0" cy="193.5" r="0.87" fill="#cfc8ea" opacity="0.22"/><circle cx="669.0" cy="655.5" r="0.74" fill="#cfc8ea" opacity="0.15"/><circle cx="561.2" cy="117.9" r="1.61" fill="#cfc8ea" opacity="0.29"/><circle cx="666.5" cy="616.4" r="1.16" fill="#cfc8ea" opacity="0.48"/><circle cx="585.6" cy="394.8" r="1.13" fill="#cfc8ea" opacity="0.34"/><circle cx="16.9" cy="644.3" r="0.71" fill="#cfc8ea" opacity="0.47"/><circle cx="194.0" cy="403.0" r="0.90" fill="#cfc8ea" opacity="0.53"/><circle cx="657.1" cy="308.8" r="0.48" fill="#cfc8ea" opacity="0.47"/><circle cx="630.9" cy="511.3" r="0.82" fill="#cfc8ea" opacity="0.34"/><circle cx="73.1" cy="625.6" r="0.98" fill="#cfc8ea" opacity="0.32"/><circle cx="630.4" cy="477.7" r="0.56" fill="#cfc8ea" opacity="0.51"/><circle cx="357.5" cy="131.7" r="0.91" fill="#cfc8ea" opacity="0.45"/><circle cx="264.4" cy="528.3" r="1.22" fill="#cfc8ea" opacity="0.17"/><circle cx="421.8" cy="131.9" r="1.33" fill="#cfc8ea" opacity="0.26"/><circle cx="550.7" cy="467.6" r="0.50" fill="#cfc8ea" opacity="0.21"/><circle cx="590.4" cy="453.4" r="1.19" fill="#cfc8ea" opacity="0.25"/><circle cx="571.4" cy="446.3" r="1.49" fill="#cfc8ea" opacity="0.32"/><circle cx="39.3" cy="325.4" r="0.48" fill="#cfc8ea" opacity="0.52"/><circle cx="559.3" cy="235.6" r="0.72" fill="#cfc8ea" opacity="0.43"/><circle cx="386.0" cy="479.3" r="1.28" fill="#cfc8ea" opacity="0.33"/><circle cx="435.3" cy="154.9" r="1.28" fill="#cfc8ea" opacity="0.33"/><circle cx="87.0" cy="142.9" r="0.76" fill="#cfc8ea" opacity="0.28"/><circle cx="668.7" cy="497.5" r="0.83" fill="#cfc8ea" opacity="0.41"/><circle cx="50.4" cy="223.9" r="1.32" fill="#cfc8ea" opacity="0.21"/><circle cx="452.8" cy="111.4" r="0.75" fill="#cfc8ea" opacity="0.39"/><circle cx="139.1" cy="246.9" r="1.55" fill="#cfc8ea" opacity="0.46"/><circle cx="253.4" cy="643.9" r="1.18" fill="#cfc8ea" opacity="0.24"/><circle cx="663.4" cy="73.7" r="0.94" fill="#cfc8ea" opacity="0.50"/><circle cx="148.2" cy="84.0" r="1.01" fill="#cfc8ea" opacity="0.24"/><circle cx="505.9" cy="319.5" r="1.40" fill="#cfc8ea" opacity="0.34"/><circle cx="393.8" cy="428.0" r="1.13" fill="#cfc8ea" opacity="0.12"/><circle cx="616.2" cy="491.4" r="1.39" fill="#cfc8ea" opacity="0.45"/><circle cx="275.1" cy="160.1" r="0.64" fill="#cfc8ea" opacity="0.32"/><circle cx="681.9" cy="460.0" r="0.52" fill="#cfc8ea" opacity="0.20"/><path d="M 614.9619066417217 661.8 L 615.4 663.9 L 617.5 664.3604797606822 L 615.4 664.8 L 614.9619066417217 666.9 L 614.5 664.8 L 612.4 664.3604797606822 L 614.5 663.9 Z" fill="#f6e6bf" opacity="0.51047680627089"/><path d="M 687.6490263566375 261.3 L 688.2 264.4 L 691.2 264.94558334047906 L 688.2 265.5 L 687.6490263566375 268.5 L 687.1 265.5 L 684.1 264.94558334047906 L 687.1 264.4 Z" fill="#f6e6bf" opacity="0.5171525431564078"/><path d="M 520.0618892461061 148.3 L 520.5 150.5 L 522.6 150.86939581274055 L 520.5 151.3 L 520.0618892461061 153.4 L 519.6 151.3 L 517.5 150.86939581274055 L 519.6 150.5 Z" fill="#f6e6bf" opacity="0.6108943984610959"/><path d="M 427.123070307076 409.9 L 427.8 413.2 L 431.0 413.7882265436929 L 427.8 414.4 L 427.123070307076 417.7 L 426.5 414.4 L 423.2 413.7882265436929 L 426.5 413.2 Z" fill="#f6e6bf" opacity="0.6277452293550596"/><path d="M 740.8759636282921 231.3 L 741.5 234.5 L 744.7 235.14323978847824 L 741.5 235.8 L 740.8759636282921 238.9 L 740.3 235.8 L 737.1 235.14323978847824 L 740.3 234.5 Z" fill="#f6e6bf" opacity="0.6915084368316456"/><path d="M 606.4 605.1 L 37.4 333.8 L 381.0 193.5 L 561.2 117.9 L 16.9 644.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="687" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 681.8 L 16.5 684.5 L 19.2 685 L 16.5 685.5 L 16 688.2 L 15.5 685.5 L 12.8 685 L 15.5 684.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 681.8 L 744.5 684.5 L 747.2 685 L 744.5 685.5 L 744 688.2 L 743.5 685.5 L 740.8 685 L 743.5 684.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Taurus Sun vs Sun–Midheaven: Three Readings</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#carlosalcarazbirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#carlosalcarazbirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Taurus Sun Alone</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Describes tone only — steady, patient, sensory</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Tells you the flavor of core drive</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Says nothing about where that drive is aimed</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Easy to skim but flattens to a stereotype</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Sun on Midheaven</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Pins Taurus tone to the career-and-reputation angle</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Personality reads directly as public identity</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Richer picture of public persona</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Leans on birth-time precision</text>
+  <path d="M 380 477.5 L 380.7 481.3 L 384.5 482 L 380.7 482.7 L 380 486.5 L 379.3 482.7 L 375.5 482 L 379.3 481.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="495" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="495" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 504.6 L 48.3 507.5 L 51.1 508 L 48.3 508.5 L 47.75 511.4 L 47.2 508.5 L 44.4 508 L 47.2 507.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Practical Trade-off</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sign-only reading: quick but flat</text>
+  <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Angular reading: sharper but provisional</text>
+  <path d="M 70 611.8 L 70.5 614.5 L 73.2 615 L 70.5 615.5 L 70 618.2 L 69.5 615.5 L 66.8 615 L 69.5 614.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sun sign sets the mood</text>
+  <path d="M 70 640.8 L 70.5 643.5 L 73.2 644 L 70.5 644.5 L 70 647.2 L 69.5 644.5 L 66.8 644 L 69.5 643.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Midheaven decides narrative weight in public life</text>
+  <path d="M 202.22749999999988 672.4 L 202.6 674.6 L 204.8 675 L 202.6 675.4 L 202.22749999999988 677.6 L 201.8 675.4 L 199.6 675 L 201.8 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="679" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 672.4 L 558.2 674.6 L 560.4 675 L 558.2 675.4 L 557.7725000000002 677.6 L 557.4 675.4 L 555.2 675 L 557.4 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
