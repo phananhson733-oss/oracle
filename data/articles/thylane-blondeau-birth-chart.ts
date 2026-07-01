@@ -31,7 +31,7 @@ Thylane Blondeau's birth chart is a symbolic map of the sky at the moment she wa
 
 ## Why It Matters for Self-Awareness
 
-Understanding a Thylane Blondeau birth chart matters because the same move you make when reading a celebrity — asking which parts of an image are chosen and which are projected — is exactly the move that sharpens self-awareness. This reflective, non-predictive style follows the person-centered tradition Dane Rudhyar helped establish and the psychological approach Liz Greene later expanded, much like the patterns mapped in [rising sign personality profiles](/en/wiki/how-to-read-birth-chart). A few things come into focus when you read a chart this way:
+Understanding a Thylane Blondeau birth chart matters because the same move you make when reading a celebrity — asking which parts of an image are chosen and which are projected — is exactly the move that sharpens self-awareness. This reflective, non-predictive style follows the person-centered tradition Dane Rudhyar helped establish and the psychological approach Liz Greene later expanded, much like the patterns mapped in [rising sign personality profiles](/en/wiki/ascendant-meaning). A few things come into focus when you read a chart this way:
 
 1. **Persona versus self.** Watching how a chart gets mapped onto a famous image trains you to notice the gap between how you present in public and how you actually feel in private. That gap is where most self-knowledge hides.
 2. **Chosen versus inherited traits.** Chart symbols invite you to ask which parts of your public role you picked on purpose and which you absorbed from family, work, or your feed. Naming the difference tends to loosen the ones that never fit.
@@ -105,7 +105,7 @@ No. Astrology here describes tendencies and themes, not fixed outcomes, and it m
 
 ## Related Reading
 
-- [companion celebrity birth chart profile in this series](/en/wiki/how-to-read-birth-chart) — shows how another trending figure's placements get mapped onto their public image.
+- [companion reading of Cardi B's birth chart](/en/wiki/cardi-b-birth-chart) — shows how another trending figure's placements get mapped onto their public image.
 - [rising sign profiles cluster overview](/en/wiki/ascendant-meaning) — explains why the Ascendant carries so much weight for public image, the piece most people misread here.
 - [synastry and compatibility explainer](/en/wiki/synastry-chart-compatibility) — for readers curious how two charts get compared instead of one.
 - [Astrological aspect (Wikipedia)](https://en.wikipedia.org/wiki/Astrological_aspect)
