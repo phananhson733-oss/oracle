@@ -1,0 +1,78 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "pride-month-astrology": {
+      "hero": {
+        "prompt": "A single continuous solstice landscape where a bright airy expanse of quicksilver light and wind-swept open plains on one side flows seamlessly into a calm sheltered inlet of still water on the other, the two luminous presences meeting at a low glowing solstice arc that spans the unbroken horizon — reach and roots held in one panoramic scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Continuous solstice landscape where an airy golden expanse flows into a calm sheltered inlet across one unbroken glowing horizon",
+        "altZh": "一幅连续的夏至风景，金色气流的开阔平原无缝延伸为宁静的靛蓝海湾，共同映照同一片发光的天际"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Gemini Season vs Cancer Season: What the June Shift Marks",
+          "titleEn": "Gemini Season vs. Cancer Season",
+          "altEn": "Comparison of Gemini season (air, talk, visibility) and Cancer season (water, care, belonging) across June",
+          "columns": [
+            {
+              "nameEn": "Gemini Season",
+              "linesEn": [
+                "Element: Air",
+                "Favors talk, curiosity, and visibility",
+                "Archetype: the messenger",
+                "Mode: reaching out, staying in motion",
+                "Energy: social, verbal, outward-facing"
+              ]
+            },
+            {
+              "nameEn": "Cancer Season",
+              "linesEn": [
+                "Element: Water",
+                "Favors care, memory, and belonging",
+                "Archetype: the protector",
+                "Mode: settling in, seeking shelter",
+                "Energy: tender, inward, selective company"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Pride Month's Seasonal Sky at a Glance",
+          "titleEn": "Four Phases of Pride Month's Sky",
+          "altEn": "Timeline of four June phases: Gemini air season, solstice hinge around June 20–21, Cancer water season, and Sun–Venus tone across the full month",
+          "items": [
+            {
+              "labelEn": "Early June",
+              "titleEn": "Gemini Phase",
+              "noteEn": "Air-sign season favoring talk, curiosity, and visibility — you reach out, post, and want to be seen"
+            },
+            {
+              "labelEn": "June 20–21",
+              "titleEn": "Solstice Hinge",
+              "noteEn": "The Sun turns north and the season changes element — energy swings from outward to inward"
+            },
+            {
+              "labelEn": "Late June",
+              "titleEn": "Cancer Phase",
+              "noteEn": "Water-sign season favoring care, home, and belonging — you crave rest, family, and small circles"
+            },
+            {
+              "labelEn": "Full Month",
+              "titleEn": "Sun–Venus Tone",
+              "noteEn": "Expression meeting warmth and relational value — pride in being both seen and cared for"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

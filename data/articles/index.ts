@@ -292,6 +292,7 @@ import { moroccoWorldCup2026AstrologyEn } from "./morocco-world-cup-2026-astrolo
 import { carlosAlcarazBirthChartEn } from "./carlos-alcaraz-birth-chart";
 import { usaPlutoReturnAstrologyEn } from "./usa-pluto-return-astrology";
 import { cardiBBirthChartEn } from "./cardi-b-birth-chart";
+import { prideMonthAstrologyEn } from "./pride-month-astrology";
 // All articles organized by language
 
 import {
@@ -575,6 +576,7 @@ const ARTICLES_EN: WikiArticle[] = [
   carlosAlcarazBirthChartEn,
   usaPlutoReturnAstrologyEn,
   cardiBBirthChartEn,
+  prideMonthAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
