@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "total-solar-eclipse-2026": {
+      "hero": {
+        "prompt": "Totality racing across the far North Atlantic — an immense black solar disc haloed in streaming gold coronal fire dominates the vast sky above a dark indigo ocean, the Moon's shadow sweeping a corridor of darkness through towering cloudbanks while a slender ribbon of reflected corona shimmers across the water far below; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Total solar eclipse totality over the North Atlantic, black disc with gold corona blazing above dark ocean",
+        "altZh": "2026年全日食凌日瞬间，金色日冕环绕漆黑月盘，北大西洋深蓝海面倒映冕光"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Total Solar Eclipse vs the August 2026 Lunar Eclipse: What Actually Differs",
+          "titleEn": "Solar Eclipse vs Lunar Eclipse: How They Work Differently",
+          "titleZh": "日食与月食：两种截然不同的运作方式",
+          "altEn": "Comparison chart of solar eclipse as initiatory new beginning versus lunar eclipse as culmination and release",
+          "altZh": "日食启动新开始与月食带来终结释放的对比示意",
+          "columns": [
+            {
+              "nameEn": "Solar Eclipse (New Moon)",
+              "nameZh": "日食（新月型）",
+              "linesEn": [
+                "Seeds beginnings and launches",
+                "Initiatory energy",
+                "\"Plant it\" moment",
+                "Open-ended possibility"
+              ],
+              "linesZh": [
+                "播种新开始与启程",
+                "启动性能量",
+                "「种下」时刻",
+                "开放性可能"
+              ]
+            },
+            {
+              "nameEn": "Lunar Eclipse (Full Moon)",
+              "nameZh": "月食（满月型）",
+              "linesEn": [
+                "Brings things to culmination",
+                "Release and visible endings",
+                "\"Harvest or release it\" moment",
+                "Closure and clarity"
+              ],
+              "linesZh": [
+                "推向顶点与高潮",
+                "释放与显现的终结",
+                "「收获或放手」时刻",
+                "封闭与清晰"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Eclipse in Your Chart",
+          "titleEn": "5 Steps to Read the 2026 Eclipse in Your Birth Chart",
+          "titleZh": "5步解读2026年日食在你星盘中的位置",
+          "altEn": "Five-step sequence for locating and interpreting the August 2026 solar eclipse in a birth chart",
+          "altZh": "在出生星盘中定位与解读2026年8月日食的五个步骤",
+          "items": [
+            {
+              "nameEn": "Find the Leo House",
+              "nameZh": "找到狮子座宫位",
+              "subEn": "Locate the house holding ~20° Leo — that life area surfaces the reset theme",
+              "subZh": "找到包含狮子座约20度的宫位，该生活领域将浮现重置主题"
+            },
+            {
+              "nameEn": "Check Natal Planets",
+              "nameZh": "检查本命行星",
+              "subEn": "Note any natal planet near 20° Leo; a close contact makes the eclipse feel personal",
+              "subZh": "注意狮子座约20度附近的本命行星，紧密相位会令日食感受更为切身"
+            },
+            {
+              "nameEn": "Watch the Two-Week Window",
+              "nameZh": "关注两周窗口期",
+              "subEn": "Track developments in the two weeks on either side of August 12, 2026",
+              "subZh": "关注2026年8月12日前后各两周内发生的事件"
+            },
+            {
+              "nameEn": "Track Your Impulses",
+              "nameZh": "记录内心冲动",
+              "subEn": "Notice what you feel pulled to start or reveal rather than what a headline promises will happen",
+              "subZh": "留意你被驱动想要开始或展示的事物，而非外界预言的内容"
+            },
+            {
+              "nameEn": "Journal the Date",
+              "nameZh": "记录日记",
+              "subEn": "Write expectations on August 12 and revisit later to compare with what actually unfolded",
+              "subZh": "在8月12日记录你的期待，事后对比实际发生的故事"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

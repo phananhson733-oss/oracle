@@ -822,6 +822,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'total-solar-eclipse-2026',
   'pride-month-astrology',
   'cardi-b-birth-chart',
   'usa-pluto-return-astrology',
