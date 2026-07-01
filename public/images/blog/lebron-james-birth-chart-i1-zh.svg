@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="将星盘作为人物肖像解读的5个步骤">
+  <defs>
+    <linearGradient id="lebronjamesbirthchart1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="lebronjamesbirthchart1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="lebronjamesbirthchart1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lebronjamesbirthchart1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lebronjamesbirthchart1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lebronjamesbirthchart1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#lebronjamesbirthchart1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#lebronjamesbirthchart1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#lebronjamesbirthchart1zh-neb2)"/>
+  <circle cx="380.2" cy="310.7" r="1.10" fill="#cfc8ea" opacity="0.36"/><circle cx="138.1" cy="363.3" r="1.65" fill="#cfc8ea" opacity="0.38"/><circle cx="563.2" cy="45.6" r="1.20" fill="#cfc8ea" opacity="0.39"/><circle cx="184.6" cy="269.3" r="0.46" fill="#cfc8ea" opacity="0.31"/><circle cx="407.6" cy="167.4" r="0.85" fill="#cfc8ea" opacity="0.14"/><circle cx="547.3" cy="36.0" r="1.21" fill="#cfc8ea" opacity="0.43"/><circle cx="615.8" cy="303.2" r="1.65" fill="#cfc8ea" opacity="0.27"/><circle cx="329.8" cy="345.6" r="1.54" fill="#cfc8ea" opacity="0.23"/><circle cx="45.1" cy="243.1" r="0.84" fill="#cfc8ea" opacity="0.48"/><circle cx="472.2" cy="37.5" r="1.04" fill="#cfc8ea" opacity="0.50"/><circle cx="185.6" cy="23.7" r="1.09" fill="#cfc8ea" opacity="0.49"/><circle cx="418.3" cy="139.9" r="1.17" fill="#cfc8ea" opacity="0.40"/><circle cx="376.7" cy="32.9" r="0.84" fill="#cfc8ea" opacity="0.23"/><circle cx="65.8" cy="376.1" r="1.10" fill="#cfc8ea" opacity="0.20"/><circle cx="265.5" cy="403.8" r="1.39" fill="#cfc8ea" opacity="0.20"/><circle cx="202.9" cy="385.4" r="1.20" fill="#cfc8ea" opacity="0.22"/><circle cx="449.3" cy="178.8" r="1.50" fill="#cfc8ea" opacity="0.33"/><circle cx="374.8" cy="236.9" r="0.63" fill="#cfc8ea" opacity="0.34"/><circle cx="218.3" cy="154.0" r="0.79" fill="#cfc8ea" opacity="0.37"/><circle cx="357.9" cy="266.1" r="0.74" fill="#cfc8ea" opacity="0.43"/><circle cx="493.6" cy="63.0" r="0.90" fill="#cfc8ea" opacity="0.23"/><circle cx="148.7" cy="20.2" r="1.12" fill="#cfc8ea" opacity="0.23"/><circle cx="672.4" cy="42.4" r="1.66" fill="#cfc8ea" opacity="0.41"/><circle cx="622.8" cy="403.7" r="1.66" fill="#cfc8ea" opacity="0.52"/><circle cx="115.6" cy="165.5" r="1.43" fill="#cfc8ea" opacity="0.40"/><circle cx="265.9" cy="121.4" r="1.27" fill="#cfc8ea" opacity="0.50"/><circle cx="104.4" cy="75.2" r="0.81" fill="#cfc8ea" opacity="0.42"/><circle cx="393.0" cy="416.1" r="0.85" fill="#cfc8ea" opacity="0.27"/><circle cx="345.4" cy="191.3" r="1.13" fill="#cfc8ea" opacity="0.38"/><circle cx="515.2" cy="317.4" r="0.97" fill="#cfc8ea" opacity="0.15"/><circle cx="346.1" cy="414.4" r="0.80" fill="#cfc8ea" opacity="0.28"/><circle cx="573.4" cy="77.2" r="0.74" fill="#cfc8ea" opacity="0.20"/><circle cx="220.4" cy="32.4" r="1.33" fill="#cfc8ea" opacity="0.52"/><circle cx="153.1" cy="49.3" r="1.11" fill="#cfc8ea" opacity="0.27"/><circle cx="374.3" cy="58.1" r="1.09" fill="#cfc8ea" opacity="0.42"/><circle cx="542.7" cy="122.1" r="0.66" fill="#cfc8ea" opacity="0.49"/><circle cx="100.6" cy="91.6" r="1.64" fill="#cfc8ea" opacity="0.26"/><path d="M 590.6520041637123 392.6 L 591.2 395.7 L 594.3 396.23993872408755 L 591.2 396.8 L 590.6520041637123 399.9 L 590.1 396.8 L 587.0 396.23993872408755 L 590.1 395.7 Z" fill="#f6e6bf" opacity="0.7450225642183795"/><path d="M 390.9830692745745 341.3 L 391.4 343.6 L 393.7 344.03146549337544 L 391.4 344.5 L 390.9830692745745 346.7 L 390.6 344.5 L 388.3 344.03146549337544 L 390.6 343.6 Z" fill="#f6e6bf" opacity="0.7968826265307143"/><path d="M 561.3846680186689 38.7 L 561.9 41.5 L 564.7 42.03359879297204 L 561.9 42.6 L 561.3846680186689 45.4 L 560.8 42.6 L 558.0 42.03359879297204 L 560.8 41.5 Z" fill="#f6e6bf" opacity="0.5442119058454409"/><path d="M 242.6452658958733 13.3 L 243.0 15.3 L 245.1 15.709463136503473 L 243.0 16.1 L 242.6452658958733 18.1 L 242.3 16.1 L 240.2 15.709463136503473 L 242.3 15.3 Z" fill="#f6e6bf" opacity="0.7204560226993635"/><path d="M 93.66316116973758 27.4 L 94.1 29.8 L 96.5 30.246475792722777 L 94.1 30.7 L 93.66316116973758 33.0 L 93.2 30.7 L 90.9 30.246475792722777 L 93.2 29.8 Z" fill="#f6e6bf" opacity="0.670133519382216"/><path d="M 380.2 310.7 L 547.3 36.0 L 100.6 91.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">将星盘作为人物肖像解读的5个步骤</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#lebronjamesbirthchart1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#lebronjamesbirthchart1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#lebronjamesbirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#lebronjamesbirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">找出最强主题</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">寻找集中于同一星座或区域的多颗行星，那里是故事的核心所在</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#lebronjamesbirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#lebronjamesbirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">将太阳视为主线骨架</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">摩羯座太阳指向雄心与结构，是其他配置围绕装饰的核心主线</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#lebronjamesbirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#lebronjamesbirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">追踪内在张力</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">注意两颗行星间最尖锐的相位角，这种内在张力往往体现为公众可见的矛盾</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#lebronjamesbirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#lebronjamesbirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">权衡四元素比重</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">统计土、水、火、风四种元素的数量，优势元素暗示一个人在压力下的行事倾向</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#lebronjamesbirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#lebronjamesbirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">灵活看待宫位</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">宫位含义显示能量在哪里运作，但这高度依赖于准确的出生时间</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
