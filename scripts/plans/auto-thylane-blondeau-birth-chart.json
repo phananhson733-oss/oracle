@@ -1,0 +1,84 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "thylane-blondeau-birth-chart": {
+      "hero": {
+        "prompt": "A vast indigo night landscape stretching to a low horizon, one dominant blazing gold star burning near the horizon's edge casting long molten reflections across a dark glassy lake, while a loose constellation of smaller teal and amber luminous orbs drift at varied heights across the sky — their soft light weaving crossing trails through the darkness, evoking a rich layered cosmos that cannot be reduced to any single point of light, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Indigo night landscape with one blazing star and scattered orbs, symbolizing a birth chart's layered complexity beyond a single sun sign",
+        "altZh": "深靛蓝夜空下的大气风景，一颗耀眼明星与散布天际的发光星球共同象征出生星盘超越单一太阳星座的层叠复杂性"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "titleEn": "Three Lenses Chart Reading Opens",
+          "titleZh": "星盘解读开启的三种视角",
+          "altEn": "Three-step sequence: persona vs self, chosen vs inherited traits, timing over verdicts",
+          "altZh": "三步骤图示：公众形象与内在自我、主动选择与被动继承、倾向而非定论",
+          "items": [
+            {
+              "nameEn": "Persona versus self",
+              "nameZh": "公众形象与内在自我",
+              "subEn": "Notice the gap between how you present publicly and how you actually feel privately",
+              "subZh": "觉察公开表现与内心感受之间的落差"
+            },
+            {
+              "nameEn": "Chosen versus inherited traits",
+              "nameZh": "主动选择与被动继承",
+              "subEn": "Ask which parts of your public role you picked on purpose and which you absorbed",
+              "subZh": "辨别哪些特质是你主动选择的，哪些是被动吸收的"
+            },
+            {
+              "nameEn": "Timing over verdicts",
+              "nameZh": "倾向而非定论",
+              "subEn": "Read placements as tendencies, not fixed labels — work with them rather than grading yourself",
+              "subZh": "将星位读作倾向而非标签，与之共处而非对抗评判"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Four Common Birth Chart Misreadings",
+          "titleZh": "四种常见星盘误读",
+          "altEn": "Four-item sequence of common misreadings: chart as proof, sun sign as career, known rising sign, astrology as arbiter",
+          "altZh": "四步骤图示：常见误读——星盘当证据、太阳星座定职业、自以为知道上升星座、占星充当仲裁者",
+          "items": [
+            {
+              "nameEn": "The chart proves who she is",
+              "nameZh": "星盘证明了她的本质",
+              "subEn": "A chart is a symbolic map, not biographical proof — treating it otherwise is invasive overreach",
+              "subZh": "星盘是象征地图，不是传记证明，将其等同于事实是越界"
+            },
+            {
+              "nameEn": "Her sun sign explains her whole career",
+              "nameZh": "太阳星座解释了她的整个职业生涯",
+              "subEn": "One placement cannot carry a whole life — reducing her to one sign ignores everything else",
+              "subZh": "单一星位无法承载整个人生，将她简化为一个星座会忽略其他所有符号"
+            },
+            {
+              "nameEn": "We already know her rising sign",
+              "nameZh": "我们已经知道她的上升星座",
+              "subEn": "Rising signs require a verified birth time — without it, any Ascendant claim is guesswork",
+              "subZh": "上升星座需要经过核实的出生时间，没有则一切宫位解读都是猜测"
+            },
+            {
+              "nameEn": "Astrology can settle the argument about her",
+              "nameZh": "占星能裁决关于她的争议",
+              "subEn": "At best it offers a shared vocabulary for a public image, not a ruling on her inner life",
+              "subZh": "占星最多提供讨论公众形象的共同词汇，而非裁决内心生活的工具"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
