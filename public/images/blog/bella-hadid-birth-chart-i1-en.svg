@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 523" role="img" aria-label="Five Steps to Read the Chart as Archetype">
+  <defs>
+    <linearGradient id="bellahadidbirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="bellahadidbirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="bellahadidbirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bellahadidbirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bellahadidbirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bellahadidbirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="url(#bellahadidbirthchart1en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="178" fill="url(#bellahadidbirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="418" rx="334" ry="167" fill="url(#bellahadidbirthchart1en-neb2)"/>
+  <circle cx="508.6" cy="435.3" r="1.34" fill="#cfc8ea" opacity="0.42"/><circle cx="370.9" cy="404.0" r="0.43" fill="#cfc8ea" opacity="0.50"/><circle cx="477.5" cy="418.3" r="1.01" fill="#cfc8ea" opacity="0.35"/><circle cx="421.7" cy="444.7" r="1.11" fill="#cfc8ea" opacity="0.25"/><circle cx="468.3" cy="119.4" r="1.45" fill="#cfc8ea" opacity="0.53"/><circle cx="256.3" cy="286.3" r="1.54" fill="#cfc8ea" opacity="0.33"/><circle cx="639.9" cy="403.0" r="0.41" fill="#cfc8ea" opacity="0.37"/><circle cx="163.0" cy="451.0" r="1.13" fill="#cfc8ea" opacity="0.23"/><circle cx="580.8" cy="424.8" r="1.25" fill="#cfc8ea" opacity="0.51"/><circle cx="223.6" cy="477.3" r="0.95" fill="#cfc8ea" opacity="0.15"/><circle cx="440.0" cy="244.0" r="0.95" fill="#cfc8ea" opacity="0.44"/><circle cx="263.0" cy="53.7" r="1.20" fill="#cfc8ea" opacity="0.33"/><circle cx="677.9" cy="21.8" r="0.62" fill="#cfc8ea" opacity="0.52"/><circle cx="454.7" cy="235.7" r="1.16" fill="#cfc8ea" opacity="0.40"/><circle cx="66.5" cy="508.7" r="1.67" fill="#cfc8ea" opacity="0.44"/><circle cx="97.6" cy="410.7" r="0.65" fill="#cfc8ea" opacity="0.21"/><circle cx="319.6" cy="57.2" r="1.34" fill="#cfc8ea" opacity="0.20"/><circle cx="586.1" cy="12.7" r="1.23" fill="#cfc8ea" opacity="0.31"/><circle cx="472.6" cy="18.0" r="0.94" fill="#cfc8ea" opacity="0.19"/><circle cx="148.6" cy="364.4" r="0.55" fill="#cfc8ea" opacity="0.19"/><circle cx="397.3" cy="492.3" r="0.62" fill="#cfc8ea" opacity="0.45"/><circle cx="228.2" cy="23.8" r="1.16" fill="#cfc8ea" opacity="0.36"/><circle cx="598.1" cy="350.7" r="1.08" fill="#cfc8ea" opacity="0.36"/><circle cx="613.7" cy="509.7" r="1.46" fill="#cfc8ea" opacity="0.15"/><circle cx="94.6" cy="184.2" r="1.68" fill="#cfc8ea" opacity="0.22"/><circle cx="508.8" cy="114.1" r="1.35" fill="#cfc8ea" opacity="0.45"/><circle cx="51.6" cy="341.1" r="1.07" fill="#cfc8ea" opacity="0.47"/><circle cx="722.8" cy="277.1" r="0.72" fill="#cfc8ea" opacity="0.51"/><circle cx="73.1" cy="187.5" r="1.33" fill="#cfc8ea" opacity="0.12"/><circle cx="165.6" cy="237.8" r="1.44" fill="#cfc8ea" opacity="0.29"/><circle cx="548.7" cy="319.8" r="1.31" fill="#cfc8ea" opacity="0.53"/><circle cx="109.1" cy="391.6" r="0.71" fill="#cfc8ea" opacity="0.30"/><circle cx="119.5" cy="397.4" r="1.08" fill="#cfc8ea" opacity="0.47"/><circle cx="507.3" cy="499.8" r="0.53" fill="#cfc8ea" opacity="0.43"/><circle cx="322.1" cy="42.8" r="0.75" fill="#cfc8ea" opacity="0.33"/><circle cx="82.2" cy="233.6" r="1.20" fill="#cfc8ea" opacity="0.25"/><circle cx="279.3" cy="240.9" r="1.20" fill="#cfc8ea" opacity="0.49"/><circle cx="622.2" cy="329.9" r="1.16" fill="#cfc8ea" opacity="0.53"/><circle cx="189.5" cy="329.0" r="0.62" fill="#cfc8ea" opacity="0.37"/><circle cx="630.3" cy="216.9" r="1.02" fill="#cfc8ea" opacity="0.34"/><circle cx="707.6" cy="272.3" r="1.48" fill="#cfc8ea" opacity="0.26"/><circle cx="465.3" cy="478.6" r="1.65" fill="#cfc8ea" opacity="0.32"/><circle cx="408.7" cy="85.6" r="0.85" fill="#cfc8ea" opacity="0.36"/><circle cx="199.7" cy="456.5" r="0.84" fill="#cfc8ea" opacity="0.18"/><path d="M 65.57151041552424 156.3 L 66.1 159.1 L 68.9 159.66591062932275 L 66.1 160.2 L 65.57151041552424 163.0 L 65.0 160.2 L 62.2 159.66591062932275 L 65.0 159.1 Z" fill="#f6e6bf" opacity="0.6517043931642548"/><path d="M 321.4011516906321 136.1 L 321.9 138.6 L 324.3 139.0251238315832 L 321.9 139.5 L 321.4011516906321 141.9 L 320.9 139.5 L 318.5 139.0251238315832 L 320.9 138.6 Z" fill="#f6e6bf" opacity="0.5312417888315395"/><path d="M 524.0838430784643 81.5 L 524.5 83.5 L 526.5 83.86956615350209 L 524.5 84.3 L 524.0838430784643 86.3 L 523.7 84.3 L 521.7 83.86956615350209 L 523.7 83.5 Z" fill="#f6e6bf" opacity="0.7865384329343215"/><path d="M 636.9849543757737 131.4 L 637.5 133.9 L 639.9 134.37734938669018 L 637.5 134.9 L 636.9849543757737 137.3 L 636.5 134.9 L 634.0 134.37734938669018 L 636.5 133.9 Z" fill="#f6e6bf" opacity="0.6316033005015924"/><path d="M 148.4664068929851 71.6 L 149.0 74.5 L 151.9 75.05296700610779 L 149.0 75.6 L 148.4664068929851 78.5 L 147.9 75.6 L 145.1 75.05296700610779 L 147.9 74.5 Z" fill="#f6e6bf" opacity="0.6871725851902738"/><path d="M 256.3 286.3 L 639.9 403.0 L 454.7 235.7 L 508.8 114.1 L 82.2 233.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="509" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 503.8 L 16.5 506.5 L 19.2 507 L 16.5 507.5 L 16 510.2 L 15.5 507.5 L 12.8 507 L 15.5 506.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 503.8 L 744.5 506.5 L 747.2 507 L 744.5 507.5 L 744 510.2 L 743.5 507.5 L 740.8 507 L 743.5 506.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Steps to Read the Chart as Archetype</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#bellahadidbirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#bellahadidbirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="433" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#bellahadidbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#bellahadidbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Start with the Libra Sun</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Look for the diplomacy-and-aesthetics theme: harmony, image, and relationship</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">as a core lens</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#bellahadidbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#bellahadidbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Weigh the Scorpio emphasis</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Read the cluster of Scorpio placements as intensity held privately rather than</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">performed</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#bellahadidbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#bellahadidbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Hold the contrast on purpose</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Notice how public poise and guarded depth describe one person, not a puzzle to</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">solve</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#bellahadidbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#bellahadidbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Treat the rising sign as provisional</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Since birth time is uncertain, keep any ascendant read loose and label it a</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">maybe</text>
+  <circle cx="76" cy="433" r="20.0" fill="url(#bellahadidbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="433" r="15" fill="url(#bellahadidbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="428.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="437.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="429.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Map aspects as tension, not fate</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A hard aspect points to friction between drives that a person works with over</text>
+  <text x="116" y="469.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">time</text>
+  <path d="M 202.22749999999988 494.4 L 202.6 496.6 L 204.8 497 L 202.6 497.4 L 202.22749999999988 499.6 L 201.8 497.4 L 199.6 497 L 201.8 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="501" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 494.4 L 558.2 496.6 L 560.4 497 L 558.2 497.4 L 557.7725000000002 499.6 L 557.4 497.4 L 555.2 497 L 557.4 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
