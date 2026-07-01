@@ -17,8 +17,7 @@ export const carlosAlcarazBirthChartEn: WikiArticle = {
     "Carlos Alcaraz Birth Chart meaning",
     "Carlos Alcaraz Birth Chart astrology",
     "Carlos Alcaraz Birth Chart zodiac",
-    "Carlos Alcaraz Birth Chart interpretation",
-    "emma watson zodiac sign"
+    "Carlos Alcaraz Birth Chart interpretation"
   ],
   content: `# What Carlos Alcaraz Birth Chart Reveals About His On-Court Grit
 
