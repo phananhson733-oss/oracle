@@ -39,9 +39,11 @@
 - calculators｜地位：计算器矩阵目录｜功能：SEO 计算器矩阵（D）配置驱动外壳 + 各 slug 配置 + embed 基建。
 - timeline｜地位：能量时间轴目录｜功能：Energy Timeline 蜡烛主视图 / 当日抽屉 / 安全 onboarding。
 - tools｜地位：工具中心目录｜功能：/:lang/tools hub（工具目录数据 + hub 页，计算器矩阵统一发现入口）。
+- ads｜地位：广告组件目录｜功能：AdSense 接入展示层（AdSlot 手动广告位 + adPlacements 配置），仅 wiki 文章页、四重门控、地域分流方案 A。
 
 近期更新
 
+- 新增 ads/ 目录（AdSense 接入 PR1）：AdSlot 四重门控广告单元 + adPlacements 配置；ConsentBanner 加地域分流（EEA 抑制自研横幅交 Google 认证 CMP）；WikiArticleDetailPage 文末挂 AdSlot（仅非漏斗/非心理敏感文章）。flag 默认关，PR1 全站零广告。
 - 新增 tools 工具中心 hub（/:lang/tools）：astro.com 风格 5 分类聚合发现页，复用 ToolsGridSection 卡片范式；nav/footer 加 Tools 入口，生成器输出 /en/tools 静态 stub（CollectionPage/ItemList/FAQPage + 16 工具可索引内链 + sitemap）。顺手补 calculators/timeline 子目录索引漂移。
 - 公开工具页宽度同步：根目录 SaturnReturnCalculator 与 Energy Timeline demo 外壳扩到 max-w-[88rem]，与 calculators/ToolPageShell 的工具页宽度保持一致。
 - 新增 MobileBottomNav（移动端固定底部 tab bar，复用顶部 6 项 + t.nav.\* + isActive，safe-area + z-[150] 让位 consent banner）；ConsentBanner 的 analytics/marketing toggle 补可访问名（htmlFor 关联可见文字 + aria-label en/zh + role=switch），不改持久化逻辑。

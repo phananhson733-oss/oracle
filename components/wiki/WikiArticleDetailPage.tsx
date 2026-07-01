@@ -2,7 +2,7 @@
 //        驱动 ChartMiniCalc、article.psychAdjacent 驱动 SafetyFooter。
 // OUTPUT: 导出 Wiki 文章详情页组件（含 Article/FAQPage schema、面包屑、Markdown 渲染，
 //         以及 tool-led 嵌入：embeddedTool→ChartMiniCalc + 抑制底部 WikiChartCTA、
-//         psychAdjacent→SafetyFooter，仅 SPA 渲染，不进静态 stub）。
+//         psychAdjacent→SafetyFooter，文末 AdSlot（仅非漏斗/非心理敏感文章），仅 SPA 渲染，不进静态 stub）。
 // POS: Wiki 文章详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -25,6 +25,8 @@ import { useLangPath } from "../../hooks/useLangPath";
 import WikiChartCTA from "./WikiChartCTA";
 import ChartMiniCalc from "../ChartMiniCalc";
 import SafetyFooter from "../SafetyFooter";
+import AdSlot from "../ads/AdSlot";
+import { WIKI_ARTICLE_END } from "../ads/adPlacements";
 import { BIRTH_CHART_ANCHOR_ID } from "../../hooks/useScrollToBirthChart";
 
 // Safe Markdown renderer with error handling
@@ -771,6 +773,18 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
             }
           />
         </article>
+
+        {/* AdSense 广告位（文末）。仅非漏斗(embeddedTool)、非心理敏感(psychAdjacent)文章展示：
+            保护 tool-led 转化 + 心理安全页面不投广告。付费/登录用户、非同意、EEA-无CMP、
+            flag 关 等情形由 AdSlot 内部四重门控拦截（返回 null，零占位）。仅 SPA 渲染，不进静态 stub。 */}
+        {!article.embeddedTool && !article.psychAdjacent && (
+          <AdSlot
+            slot={WIKI_ARTICLE_END.slot}
+            format={WIKI_ARTICLE_END.format}
+            minHeight={WIKI_ARTICLE_END.minHeight}
+            className="my-8"
+          />
+        )}
 
         {/* tool-led prove-chain：正文后挂载轻量构件（北交点迷你计算器）。仅 SPA 渲染，
             绝不进静态 stub（generate-seo-pages 的 contentHtml 只含正文 markdown），以免破坏

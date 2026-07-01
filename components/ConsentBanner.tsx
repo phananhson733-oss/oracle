@@ -1,5 +1,5 @@
-// INPUT: Cookie/analytics consent banner UI (GDPR-compliant with granular preferences).
-// OUTPUT: Renders a consent banner with Accept All, Decline All, and Manage Preferences.
+// INPUT: Cookie/analytics consent banner UI (GDPR-compliant with granular preferences); useRegion 判定 GDPR 地域。
+// OUTPUT: Renders a consent banner with Accept All, Decline All, and Manage Preferences; 仅当 GDPR 区且 Google 认证 CMP 已就位(window.__tcfapi) 时抑制自研横幅（地域分流方案 A，CMP 未就位则 fail-safe 保留横幅）。
 // POS: Consent UI component; update components/FOLDER.md when this file changes.
 
 import React, { useEffect, useState } from "react";
@@ -18,6 +18,8 @@ import {
 } from "../services/analytics";
 import { flushQueuedWebVitals } from "../src/utils/performance";
 import { useLangPath } from "../hooks/useLangPath";
+import { useRegion } from "../hooks/useRegion";
+import { shouldDeferToCmp, isCmpPresent } from "../services/region";
 
 export const ConsentBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,13 +32,23 @@ export const ConsentBanner: React.FC = () => {
   const { theme } = useTheme();
   const { language } = useLanguage();
   const { langPath } = useLangPath();
+  const region = useRegion();
 
   useEffect(() => {
+    // 地域分流（方案 A）：仅当用户处于 GDPR 区【且 Google 认证 CMP 已就位(window.__tcfapi)】
+    // 时才抑制自研横幅（交 Google CMP 处理，避免双横幅）。
+    // 关键 fail-safe：CMP 未就位时（PR1 flag off、或 PR2 CMP 尚未加载）继续显示自研横幅，
+    // 绝不让 EEA 用户失去唯一的 analytics 同意入口（评审发现 #1）。
+    // 地域未知/已知非 GDPR 一律照常显示（美国等主流量保留品牌横幅 + CCPA Do-Not-Sell）。
+    if (shouldDeferToCmp(region, isCmpPresent())) {
+      setIsVisible(false);
+      return;
+    }
     if (shouldShowConsentBanner()) {
       const timer = setTimeout(() => setIsVisible(true), 1000);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [region.isGdpr]);
 
   const handleAcceptAll = () => {
     acceptAllConsent();

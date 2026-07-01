@@ -12,7 +12,21 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
-      plugins: [react()],
+      plugins: [
+        react(),
+        // AdSense <head> loader（SPA 壳 dist/index.html）：仅当 VITE_ADSENSE_CLIENT_ID 为合法
+        // ca-pub-XXXX 时注入原始 HTML <head>，供 Google 审核验证 + CMP 全站加载。格式校验防注入。
+        // 与前端 loadAdsense 共用 id='astro-adsense'。SEO stub 的同一注入见 generate-seo-pages.mjs。
+        {
+          name: 'adsense-head-loader',
+          transformIndexHtml(html) {
+            const client = (process.env.VITE_ADSENSE_CLIENT_ID || '').trim();
+            if (!/^ca-pub-\d{10,25}$/.test(client)) return html;
+            const tag = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}" crossorigin="anonymous" id="astro-adsense"></script>`;
+            return html.replace('</head>', `    ${tag}\n  </head>`);
+          },
+        },
+      ],
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),

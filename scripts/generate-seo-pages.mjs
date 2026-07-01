@@ -188,6 +188,17 @@ const buildAlternateLinks = (pathSuffix, availability = { zh: true, en: true }) 
   return links;
 };
 
+// AdSense <head> loader：仅当 VITE_ADSENSE_CLIENT_ID 为合法 ca-pub-XXXX 时注入原始 HTML 的
+// <head>，供 Google 首次审核验证代码 + Privacy&messaging CMP 全站加载。格式校验防 HTML 注入。
+// 与前端 services/adsense.ts::loadAdsense 共用 id="astro-adsense" 避免重复注入。
+// 注意：此 loader 只受 CLIENT_ID 控制（供验证/CMP），广告是否真正投放另由 VITE_ADSENSE_ENABLED
+// 经 AdSlot 门控（审核期只需 CLIENT_ID，不出广告）。
+const ADSENSE_HEAD_TAG = (() => {
+  const client = (process.env.VITE_ADSENSE_CLIENT_ID || '').trim();
+  if (!/^ca-pub-\d{10,25}$/.test(client)) return '';
+  return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}" crossorigin="anonymous" id="astro-adsense"></script>`;
+})();
+
 const buildHead = ({
   lang,
   title,
@@ -224,6 +235,8 @@ const buildHead = ({
     `<meta name="twitter:description" content="${escapeHtml(desc)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(pageOgImage)}" />`,
   ];
+
+  if (ADSENSE_HEAD_TAG) headParts.push(ADSENSE_HEAD_TAG);
 
   if (schema) {
     headParts.push(`<script type="application/ld+json">${safeJsonLd(schema)}</script>`);
@@ -612,6 +625,8 @@ const buildLandingV2Html = (lang) => {
 </style>
 `,
   ];
+
+  if (ADSENSE_HEAD_TAG) headParts.push(ADSENSE_HEAD_TAG);
 
   const sectionsHtml = copy.sections
     .map((section, idx) => `

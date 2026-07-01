@@ -21,6 +21,10 @@
 - analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
 - consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
+- region.ts｜地位：地域判定服务｜功能：读 /api/region（Vercel IP 国家码）判定 GDPR 强制区（EU27+EEA+UK+CH），供 ConsentBanner 地域分流与 AdSlot 广告同意门控；含 GDPR_COUNTRIES/isGdprCountry/fetchRegion/getCachedRegion，失败 fail-safe 为 UNKNOWN。
+- region.test.ts｜地位：region 单测（jsdom）｜功能：覆盖 GDPR 国家判定、响应解析与 fetch 失败 fail-safe。
+- adsense.ts｜地位：AdSense 加载与合规门控｜功能：isAdsenseConfigured(flag+client)、hasAdConsent(地域分流：EEA→TCF/非EEA→marketing 同意且非 Do-Not-Sell)、loadAdsense 单例注入 adsbygoogle.js、pushAd、initTcfListener/evaluateTcfConsent。
+- adsense.test.ts｜地位：adsense 单测（jsdom）｜功能：覆盖四重门控各分支、TCF 判定与单例注入。
 - abTest.ts｜地位：实验工具｜功能：A/B 测试分组与曝光追踪。
 - landingUtm.ts｜地位：归因快照｜功能：首触快照 UTM/click-id 到 sessionStorage 并供漏斗事件读取。
 - funnelEvents.ts｜地位：漏斗事件契约｜功能：获客漏斗事件名常量 + 非 PII 字段白名单 + isFunnelFieldAllowed 守卫（chart_cast/account_created 本批接线，save_intent/auth_prompted/chart_migrated 由 #7 接线）。
@@ -31,6 +35,7 @@
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- 新增 region.ts + adsense.ts（AdSense 接入 PR1）：region.ts 判 GDPR 地域；adsense.ts 四重门控（配置/匿名/地域相关广告同意/slot）+ 单例加载器 + TCF 监听。地域分流方案 A：EEA 交 Google 认证 CMP，非 EEA 用自研横幅营销同意。均 flag(VITE_ADSENSE_ENABLED)默认关，PR1 全站零广告。
 - analytics.ts 新增 tool-led 证链漏斗追踪：`trackChartFunnel` + 纯函数 `sanitizeChartFunnelParams`（default-deny allowlist，只放行 sign/module/tool/step/placement），构造型防止节点星座迷你计算器周边 DOB/birthCity/姓名等 PII 泄漏到 GA4（隐私红线 #1，沿用 redactErrorMessageForAnalytics 模式）。
 - 新增 saveChartResume.ts（backlog #7）：buildBirthProfileFromPrefill 纯映射，App.tsx 登录后把内存里的盘直推云端续接迁移；同批接线 save_intent（BirthChartSection）/auth_prompted（App onboarding）/chart_migrated（App resume effect）三个漏斗事件，均 additive、仅非 PII。
 - 新增 funnelEvents.ts 漏斗事件契约（backlog #12 切片）：FUNNEL_EVENTS 五段事件名 + 非 PII 字段白名单；BirthChartSection 发 funnel_chart_cast、AuthContext 发 funnel_account_created（均 additive、仅非 PII），其余三个事件 deferred to #7。

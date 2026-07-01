@@ -23,4 +23,24 @@ Disallow: /reports
 Disallow: /color-demo
 Disallow: /api/
 
+# Google AdSense crawler — 需访问可索引页面以投放相关广告。
+# robots UA 组不继承 *：必须在此复制敏感/私有路由的 Disallow，否则广告爬虫
+# 会获准爬取 /journal(CBT 日记)/api/ 等（评审 #4）。广告仅出现在 /wiki，无需这些路由。
+User-agent: Mediapartners-Google
+Allow: /
+Disallow: /journal
+Disallow: /dashboard
+Disallow: /forecast
+Disallow: /cycles
+Disallow: /us
+Disallow: /oracle
+Disallow: /settings
+Disallow: /usage
+Disallow: /auth
+Disallow: /payment
+Disallow: /onboarding
+Disallow: /reports
+Disallow: /color-demo
+Disallow: /api/
+
 Sitemap: https://www.astrologywiki.com/sitemap.xml

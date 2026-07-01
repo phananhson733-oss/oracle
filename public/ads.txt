@@ -1,0 +1,5 @@
+# Google AdSense — authorized digital sellers (IAB ads.txt).
+# PR1（plumbing）阶段留空占位：仅注释，无有效 seller 行 → AdSense 视同无 ads.txt，无副作用。
+# 激活（PR2）时取消下一行注释，并把 pub-XXXXXXXXXXXXXXXX 替换为
+# VITE_ADSENSE_CLIENT_ID（ca-pub-XXXXXXXXXXXXXXXX）的数字部分：
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
