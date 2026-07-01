@@ -1,0 +1,142 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "lebron-james-birth-chart": {
+      "hero": {
+        "prompt": "A vast ancient mountain range stretching across the full horizon under a deep night sky, the rugged stone peaks embodying Capricorn earth energy and the long game — not one shining star but an entire sweep of distinct luminous orbs scattered across the heavens in separate orbital arcs, each glowing gold or teal, one warm solar orb among many rather than dominating alone, the whole celestial pattern mattering more than any single light, the foreground ridge anchoring centuries of patient ambition below an infinite sky full of planetary stories, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Planetary orbs arcing over a mountain ridge at night, symbolising LeBron James's full birth chart as a whole sky pattern",
+        "altZh": "夜空中多颗行星光球在山脊上空划出弧线，象征勒布朗·詹姆斯星盘作为整体天空格局的含义"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Chart Portrait vs the Sun-Sign Shortcut",
+          "titleEn": "Sun-Sign Shortcut vs Full-Chart Portrait",
+          "titleZh": "太阳星座捷径与完整星盘肖像的对比",
+          "altEn": "Two-column comparison of the Sun-sign shortcut against a full birth chart portrait, showing trade-offs in speed vs depth",
+          "altZh": "太阳星座捷径与完整星盘肖像两种解读方式的双列对比，展示速度与深度之间的权衡",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Shortcut",
+              "nameZh": "太阳星座捷径",
+              "linesEn": [
+                "Works fast",
+                "Shareable and quotable",
+                "Sacrifices accuracy for reach",
+                "One placement generalised to a personality",
+                "Misses Moon, aspects, and planet clusters"
+              ],
+              "linesZh": [
+                "速度快",
+                "易于传播与引用",
+                "以牺牲准确性换取覆盖面",
+                "用单一配置概括整体性格",
+                "忽略月亮、相位与行星集群"
+              ]
+            },
+            {
+              "nameEn": "Full-Chart Portrait",
+              "nameZh": "完整星盘肖像",
+              "linesEn": [
+                "Works slowly and deeply",
+                "Nuanced and rounder picture",
+                "Sacrifices the neat one-liner",
+                "Weighs Moon, angles, clusters, and aspects",
+                "Preferred by psychological astrologers"
+              ],
+              "linesZh": [
+                "深入而细致",
+                "细腻且全面的呈现",
+                "牺牲简洁的一句话概括",
+                "综合月亮、轴点、集群与相位",
+                "心理占星学派的首选方法"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Birth Chart as a Character Portrait",
+          "titleEn": "5 Steps to Read a Birth Chart as a Character Portrait",
+          "titleZh": "将星盘作为人物肖像解读的5个步骤",
+          "altEn": "Five sequential steps for reading a birth chart as a character portrait, from finding the loudest theme to holding houses loosely",
+          "altZh": "将星盘作为人物肖像解读的五步流程，从找出最强主题到灵活看待宫位",
+          "items": [
+            {
+              "nameEn": "Find the loudest theme",
+              "nameZh": "找出最强主题",
+              "subEn": "Look for several planets in one sign or area — that cluster is where the story concentrates",
+              "subZh": "寻找集中于同一星座或区域的多颗行星，那里是故事的核心所在"
+            },
+            {
+              "nameEn": "Read the Sun as the spine",
+              "nameZh": "将太阳视为主线骨架",
+              "subEn": "A Capricorn Sun points to ambition and structure, the throughline other placements decorate",
+              "subZh": "摩羯座太阳指向雄心与结构，是其他配置围绕装饰的核心主线"
+            },
+            {
+              "nameEn": "Track the tension",
+              "nameZh": "追踪内在张力",
+              "subEn": "Note the sharpest angle between two planets — that push-and-pull often surfaces as a public contradiction",
+              "subZh": "注意两颗行星间最尖锐的相位角，这种内在张力往往体现为公众可见的矛盾"
+            },
+            {
+              "nameEn": "Weigh the elements",
+              "nameZh": "权衡四元素比重",
+              "subEn": "Count earth, water, fire, and air — a heavy element hints at how someone tends to operate under pressure",
+              "subZh": "统计土、水、火、风四种元素的数量，优势元素暗示一个人在压力下的行事倾向"
+            },
+            {
+              "nameEn": "Hold the houses loosely",
+              "nameZh": "灵活看待宫位",
+              "subEn": "House meaning shows where energy plays out, but it depends on an accurate birth time",
+              "subZh": "宫位含义显示能量在哪里运作，但这高度依赖于准确的出生时间"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of the LeBron James Birth Chart",
+          "titleZh": "解读勒布朗·詹姆斯星盘时4种常见误读",
+          "altEn": "Four common misreadings of the LeBron James birth chart, each paired with the honest corrective read",
+          "altZh": "解读勒布朗·詹姆斯星盘时四种常见误读及其对应的正确纠正",
+          "items": [
+            {
+              "nameEn": "Treating the chart as proof",
+              "nameZh": "将星盘视为成就的证明",
+              "subEn": "A chart describes tendencies and themes, never a cause of achievement",
+              "subZh": "星盘描述的是倾向与主题，而非成就的原因"
+            },
+            {
+              "nameEn": "Collapsing him to his Sun sign",
+              "nameZh": "将他简化为太阳星座",
+              "subEn": "The full pattern — Moon and aspects included — complicates any single-sign summary",
+              "subZh": "完整格局——包括月亮与相位——使任何单一星座概括都显得过于简单"
+            },
+            {
+              "nameEn": "Stating the rising sign as fact",
+              "nameZh": "将上升星座当作确定事实",
+              "subEn": "His exact birth time is publicly debated, so any rising-sign reading stays provisional",
+              "subZh": "他的确切出生时间存在公开争议，因此任何上升星座解读都只能是暂定"
+            },
+            {
+              "nameEn": "Reading it as a prediction",
+              "nameZh": "将星盘用于预测未来",
+              "subEn": "Astrology here is a reflective lens, not a forecast of future events",
+              "subZh": "此处占星学是自我反思的镜子，而非预测未来事件的工具"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

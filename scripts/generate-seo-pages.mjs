@@ -838,6 +838,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'thylane-blondeau-birth-chart',
+  'lebron-james-birth-chart',
   'maya-joint-birth-chart',
   'total-solar-eclipse-2026',
   'pride-month-astrology',

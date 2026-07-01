@@ -294,6 +294,7 @@ import { usaPlutoReturnAstrologyEn } from "./usa-pluto-return-astrology";
 import { cardiBBirthChartEn } from "./cardi-b-birth-chart";
 import { prideMonthAstrologyEn } from "./pride-month-astrology";
 import { totalSolarEclipse2026En } from "./total-solar-eclipse-2026";
+import { lebronJamesBirthChartEn } from "./lebron-james-birth-chart";
 import { mayaJointBirthChartEn } from "./maya-joint-birth-chart";
 import { thylaneBlondeauBirthChartEn } from "./thylane-blondeau-birth-chart";
 // All articles organized by language
@@ -581,6 +582,7 @@ const ARTICLES_EN: WikiArticle[] = [
   cardiBBirthChartEn,
   prideMonthAstrologyEn,
   totalSolarEclipse2026En,
+  lebronJamesBirthChartEn,
   mayaJointBirthChartEn,
   thylaneBlondeauBirthChartEn,
 ];
