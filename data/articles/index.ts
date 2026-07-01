@@ -291,6 +291,7 @@ import { benSheltonZodiacSignEn } from "./ben-shelton-zodiac-sign";
 import { moroccoWorldCup2026AstrologyEn } from "./morocco-world-cup-2026-astrology";
 import { carlosAlcarazBirthChartEn } from "./carlos-alcaraz-birth-chart";
 import { usaPlutoReturnAstrologyEn } from "./usa-pluto-return-astrology";
+import { cardiBBirthChartEn } from "./cardi-b-birth-chart";
 // All articles organized by language
 
 import {
@@ -573,6 +574,7 @@ const ARTICLES_EN: WikiArticle[] = [
   moroccoWorldCup2026AstrologyEn,
   carlosAlcarazBirthChartEn,
   usaPlutoReturnAstrologyEn,
+  cardiBBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

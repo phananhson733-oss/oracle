@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "cardi-b-birth-chart": {
+      "hero": {
+        "prompt": "A vast cosmic ocean under a boundless night sky, a luminous silver sphere rising on the left horizon casting cool platinum light across still obsidian water, while a glowing amber-rust orb burns low on the right horizon casting warm copper ripples across the same unbroken seascape, two bodies of light reaching toward each other across one continuous skyline, neither eclipsing the other, the atmosphere between them brushed with drifting teal nebula veils and scattered gold dust motes, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Cosmic ocean landscape with silver and amber orbs on opposite horizons under a deep indigo sky, evoking Libra-Aries opposition",
+        "altZh": "深靛色星空下的宇宙海洋，左右地平线各悬银色与琥珀色光球，象征天秤与白羊的对立"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs Just Her Sun Sign",
+          "titleEn": "Sun-Sign Reading vs Full Chart Reading",
+          "titleZh": "太阳星座解读 vs 完整星盘解读",
+          "altEn": "Side-by-side comparison of sun-sign astrology and full birth chart reading approaches",
+          "altZh": "太阳星座占星与完整星盘解读方式的对比",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Reading",
+              "nameZh": "太阳星座解读",
+              "linesEn": [
+                "One placement, one headline trait",
+                "Quick and shareable",
+                "Sacrifices nuance for speed",
+                "Collapses into a single label"
+              ],
+              "linesZh": [
+                "单一位置，单一标签特质",
+                "简洁易传播",
+                "以牺牲细节换取速度",
+                "将一个人压缩为一个词"
+              ]
+            },
+            {
+              "nameEn": "Full Chart Reading",
+              "nameZh": "完整星盘解读",
+              "linesEn": [
+                "Layers Sun, Moon, and aspects",
+                "Surfaces real contradictions",
+                "Requires holding competing signals",
+                "Portrait with genuine tension"
+              ],
+              "linesZh": [
+                "叠加太阳、月亮与相位",
+                "呈现真实的内在矛盾",
+                "需同时处理多个竞争信号",
+                "刻画出有张力的立体画像"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Birth Chart Like Cardi B's",
+          "titleEn": "5 Steps to Read a Celebrity Birth Chart",
+          "titleZh": "解读名人星盘的5个步骤",
+          "altEn": "Five-step sequence for reading a birth chart using Cardi B as a case study",
+          "altZh": "以卡迪·B为案例解读星盘的五个步骤",
+          "items": [
+            {
+              "nameEn": "1. Start with the Sun",
+              "nameZh": "1. 从太阳星座入手",
+              "subEn": "Libra Sun — identity built on balance, charm, and public diplomacy",
+              "subZh": "天秤太阳——以平衡、魅力与公众外交构建身份认同"
+            },
+            {
+              "nameEn": "2. Weigh the Moon",
+              "nameZh": "2. 权衡月亮星座",
+              "subEn": "Aries Moon — emotional instinct that is direct, fiery, and fast-reacting",
+              "subZh": "白羊月亮——直接、热烈、反应迅速的情感本能"
+            },
+            {
+              "nameEn": "3. Read the Defining Aspect",
+              "nameZh": "3. 解读核心相位",
+              "subEn": "Sun opposes Moon (Full Moon birth) — diplomacy colliding with combativeness",
+              "subZh": "太阳对分月亮（满月诞生）——外交魅力与好斗本能的正面碰撞"
+            },
+            {
+              "nameEn": "4. Note What You Cannot Read",
+              "nameZh": "4. 标注无法解读的部分",
+              "subEn": "Rising and house placements require a verified birth time she has never confirmed",
+              "subZh": "上升星座与宫位需要经过核实的出生时间，目前尚未确认"
+            },
+            {
+              "nameEn": "5. Hold It Loosely",
+              "nameZh": "5. 保持开放态度",
+              "subEn": "Trust observable behavior over any textbook label every single time",
+              "subZh": "任何时候都以可观察的行为为准，而非教科书上的标签"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

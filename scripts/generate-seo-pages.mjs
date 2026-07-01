@@ -822,6 +822,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'cardi-b-birth-chart',
   'usa-pluto-return-astrology',
   'carlos-alcaraz-birth-chart',
   'morocco-world-cup-2026-astrology',
