@@ -17,8 +17,7 @@ export const mayaJointBirthChartEn: WikiArticle = {
     "Maya Joint birth chart meaning",
     "Maya Joint birth chart astrology",
     "Maya Joint birth chart zodiac",
-    "Maya Joint birth chart interpretation",
-    "emma watson zodiac sign"
+    "Maya Joint birth chart interpretation"
   ],
   content: `# What Maya Joint's Birth Chart Says Beyond the Aries Sun
 
