@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 505" role="img" aria-label="Five Signals to Track in Maya Joint's Chart">
+  <defs>
+    <linearGradient id="mayajointbirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mayajointbirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mayajointbirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mayajointbirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mayajointbirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mayajointbirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="url(#mayajointbirthchart1en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="172" fill="url(#mayajointbirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="404" rx="334" ry="162" fill="url(#mayajointbirthchart1en-neb2)"/>
+  <circle cx="77.9" cy="259.6" r="0.60" fill="#cfc8ea" opacity="0.17"/><circle cx="163.1" cy="298.9" r="0.76" fill="#cfc8ea" opacity="0.15"/><circle cx="340.1" cy="161.4" r="0.50" fill="#cfc8ea" opacity="0.44"/><circle cx="537.7" cy="439.0" r="0.53" fill="#cfc8ea" opacity="0.28"/><circle cx="341.2" cy="396.4" r="1.15" fill="#cfc8ea" opacity="0.52"/><circle cx="172.6" cy="246.3" r="1.58" fill="#cfc8ea" opacity="0.22"/><circle cx="132.2" cy="402.4" r="1.27" fill="#cfc8ea" opacity="0.39"/><circle cx="550.8" cy="304.0" r="0.59" fill="#cfc8ea" opacity="0.30"/><circle cx="706.1" cy="135.7" r="0.89" fill="#cfc8ea" opacity="0.29"/><circle cx="451.7" cy="120.0" r="1.70" fill="#cfc8ea" opacity="0.12"/><circle cx="208.0" cy="285.5" r="0.55" fill="#cfc8ea" opacity="0.46"/><circle cx="540.7" cy="195.8" r="1.52" fill="#cfc8ea" opacity="0.13"/><circle cx="90.2" cy="250.2" r="0.92" fill="#cfc8ea" opacity="0.28"/><circle cx="308.0" cy="286.3" r="1.25" fill="#cfc8ea" opacity="0.20"/><circle cx="655.0" cy="36.8" r="1.14" fill="#cfc8ea" opacity="0.33"/><circle cx="224.8" cy="325.5" r="0.83" fill="#cfc8ea" opacity="0.36"/><circle cx="60.3" cy="351.0" r="0.94" fill="#cfc8ea" opacity="0.19"/><circle cx="299.9" cy="159.3" r="0.79" fill="#cfc8ea" opacity="0.41"/><circle cx="727.9" cy="152.7" r="0.55" fill="#cfc8ea" opacity="0.28"/><circle cx="58.1" cy="422.0" r="0.74" fill="#cfc8ea" opacity="0.30"/><circle cx="742.1" cy="138.3" r="1.63" fill="#cfc8ea" opacity="0.27"/><circle cx="262.3" cy="412.9" r="1.11" fill="#cfc8ea" opacity="0.13"/><circle cx="444.9" cy="343.1" r="1.60" fill="#cfc8ea" opacity="0.48"/><circle cx="447.5" cy="382.4" r="0.97" fill="#cfc8ea" opacity="0.30"/><circle cx="402.4" cy="345.8" r="0.62" fill="#cfc8ea" opacity="0.40"/><circle cx="277.5" cy="148.3" r="0.76" fill="#cfc8ea" opacity="0.39"/><circle cx="44.1" cy="245.8" r="1.44" fill="#cfc8ea" opacity="0.40"/><circle cx="560.0" cy="106.0" r="1.10" fill="#cfc8ea" opacity="0.33"/><circle cx="554.7" cy="347.9" r="0.78" fill="#cfc8ea" opacity="0.30"/><circle cx="139.5" cy="268.1" r="1.55" fill="#cfc8ea" opacity="0.45"/><circle cx="713.8" cy="143.8" r="0.75" fill="#cfc8ea" opacity="0.52"/><circle cx="91.5" cy="202.7" r="0.63" fill="#cfc8ea" opacity="0.31"/><circle cx="224.2" cy="103.9" r="1.10" fill="#cfc8ea" opacity="0.52"/><circle cx="406.6" cy="378.2" r="0.59" fill="#cfc8ea" opacity="0.28"/><circle cx="628.5" cy="42.8" r="1.53" fill="#cfc8ea" opacity="0.24"/><circle cx="191.9" cy="95.5" r="1.56" fill="#cfc8ea" opacity="0.20"/><circle cx="726.8" cy="284.1" r="1.08" fill="#cfc8ea" opacity="0.14"/><circle cx="223.5" cy="227.4" r="0.72" fill="#cfc8ea" opacity="0.27"/><circle cx="378.4" cy="389.3" r="0.74" fill="#cfc8ea" opacity="0.19"/><circle cx="659.1" cy="258.7" r="1.15" fill="#cfc8ea" opacity="0.21"/><circle cx="551.0" cy="314.6" r="1.53" fill="#cfc8ea" opacity="0.14"/><circle cx="524.9" cy="461.6" r="1.35" fill="#cfc8ea" opacity="0.13"/><circle cx="415.7" cy="141.3" r="0.84" fill="#cfc8ea" opacity="0.37"/><path d="M 268.42298942245543 60.9 L 268.9 63.5 L 271.6 64.01023736270145 L 268.9 64.5 L 268.42298942245543 67.2 L 267.9 64.5 L 265.3 64.01023736270145 L 267.9 63.5 Z" fill="#f6e6bf" opacity="0.5183924500830471"/><path d="M 170.8088988829404 386.4 L 171.4 389.7 L 174.7 390.27346327668056 L 171.4 390.9 L 170.8088988829404 394.1 L 170.2 390.9 L 166.9 390.27346327668056 L 170.2 389.7 Z" fill="#f6e6bf" opacity="0.5741516944020987"/><path d="M 549.7333094868809 483.8 L 550.1 485.9 L 552.3 486.3028176263906 L 550.1 486.7 L 549.7333094868809 488.8 L 549.3 486.7 L 547.2 486.3028176263906 L 549.3 485.9 Z" fill="#f6e6bf" opacity="0.7894705685786902"/><path d="M 426.0674427766353 474.0 L 426.5 476.2 L 428.7 476.6148221041076 L 426.5 477.0 L 426.0674427766353 479.3 L 425.6 477.0 L 423.4 476.6148221041076 L 425.6 476.2 Z" fill="#f6e6bf" opacity="0.7223906213417649"/><path d="M 64.07055130042136 224.5 L 64.6 227.3 L 67.3 227.7725415234454 L 64.6 228.3 L 64.07055130042136 231.0 L 63.6 228.3 L 60.8 227.7725415234454 L 63.6 227.3 Z" fill="#f6e6bf" opacity="0.5573995531536639"/><path d="M 451.7 120.0 L 540.7 195.8 L 727.9 152.7 L 447.5 382.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="491" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 485.8 L 16.5 488.5 L 19.2 489 L 16.5 489.5 L 16 492.2 L 15.5 489.5 L 12.8 489 L 15.5 488.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 485.8 L 744.5 488.5 L 747.2 489 L 744.5 489.5 L 744 492.2 L 743.5 489.5 L 740.8 489 L 743.5 488.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signals to Track in Maya Joint's Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mayajointbirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mayajointbirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="415" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#mayajointbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#mayajointbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Watch the entrances</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer rising shows guarded warmth before the Aries drive becomes visible</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#mayajointbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#mayajointbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Notice polite competitive fire</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aries Sun pushes to win, but the Cancer layer keeps delivery careful rather</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">than brash</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#mayajointbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#mayajointbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Listen for big-picture optimism</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sagittarius Moon surfaces as restlessness, humor, and a hunger for new horizons</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">under pressure</text>
+  <circle cx="76" cy="337" r="20.0" fill="url(#mayajointbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="337" r="15" fill="url(#mayajointbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="332.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="341.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="333.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Look for the protective streak</text>
+  <text x="116" y="355.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer rising reads as loyalty to team, family, or home base even in an</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">individual sport</text>
+  <circle cx="76" cy="415" r="20.0" fill="url(#mayajointbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="415" r="15" fill="url(#mayajointbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="410.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="419.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="411.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Track the contradictions</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Boldness and caution appearing together show the whole chart at work, not one</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">sign alone</text>
+  <path d="M 202.22749999999988 476.4 L 202.6 478.6 L 204.8 479 L 202.6 479.4 L 202.22749999999988 481.6 L 201.8 479.4 L 199.6 479 L 201.8 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="483" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 476.4 L 558.2 478.6 L 560.4 479 L 558.2 479.4 L 557.7725000000002 481.6 L 557.4 479.4 L 555.2 479 L 557.4 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

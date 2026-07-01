@@ -1,0 +1,82 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "maya-joint-birth-chart": {
+      "hero": {
+        "prompt": "A vast twilight coastal landscape where a bold crimson-tinged sun blazes at the horizon over a shimmering open sea, protective seafoam mist rises softly from tide-washed rocks in the foreground, and a wandering silver moon climbs through an expansive open sky above distant mountains — three luminous forces sharing one continuous atmosphere, fire meeting water meeting open horizon; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twilight coastal landscape uniting a blazing sun, protective sea mist, and a wandering moon in one continuous sky",
+        "altZh": "黄昏海岸风景，燃烧的太阳、海雾与流浪的月亮共融于一片天空"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Maya Joint Natal Chart at a Glance",
+          "titleEn": "Maya Joint's Three Anchor Placements",
+          "altEn": "Side-by-side comparison of Maya Joint's Aries Sun, Cancer Ascendant, and Sagittarius Moon chart placements",
+          "columns": [
+            {
+              "nameEn": "Aries Sun",
+              "linesEn": [
+                "Supplies initiative and competitive drive as core identity",
+                "Fire / cardinal — self-assertion",
+                "Fast starts, appetite to lead and win"
+              ]
+            },
+            {
+              "nameEn": "Cancer Ascendant",
+              "linesEn": [
+                "Filters drive through a protective, approachable public face",
+                "Water / cardinal — first impressions",
+                "Guarded warmth, loyalty, careful entrances"
+              ]
+            },
+            {
+              "nameEn": "Sagittarius Moon",
+              "linesEn": [
+                "Colors emotional tone as restless and optimistic",
+                "Fire / mutable — inner life",
+                "Humor, wanderlust, big-picture reactions under pressure"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Maya Joint's Chart in Your Own Terms",
+          "titleEn": "Five Signals to Track in Maya Joint's Chart",
+          "altEn": "Five observable signals linking Maya Joint's Aries Sun, Cancer Ascendant, and Sagittarius Moon in action",
+          "items": [
+            {
+              "nameEn": "Watch the entrances",
+              "subEn": "Cancer rising shows guarded warmth before the Aries drive becomes visible"
+            },
+            {
+              "nameEn": "Notice polite competitive fire",
+              "subEn": "Aries Sun pushes to win, but the Cancer layer keeps delivery careful rather than brash"
+            },
+            {
+              "nameEn": "Listen for big-picture optimism",
+              "subEn": "Sagittarius Moon surfaces as restlessness, humor, and a hunger for new horizons under pressure"
+            },
+            {
+              "nameEn": "Look for the protective streak",
+              "subEn": "Cancer rising reads as loyalty to team, family, or home base even in an individual sport"
+            },
+            {
+              "nameEn": "Track the contradictions",
+              "subEn": "Boldness and caution appearing together show the whole chart at work, not one sign alone"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
