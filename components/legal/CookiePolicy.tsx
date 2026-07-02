@@ -167,15 +167,16 @@ const CookiePolicy: React.FC = () => {
                   <td
                     className={`border ${tableBorderClass} px-4 py-3 ${tableCellClass}`}
                   >
-                    Used to deliver relevant advertisements and track ad
-                    campaign performance. We do not currently use marketing
-                    cookies, but this category is reserved for future use.
+                    Used by Google AdSense (and its partners) to deliver
+                    relevant advertisements and measure ad performance. Set only
+                    after you consent via the cookie banner, or, in the EEA/UK,
+                    via Google's certified consent message.
                   </td>
                   <td
                     className={`border ${tableBorderClass} px-4 py-3 ${tableCellClass}`}
                   >
-                    <span className={strongClass}>Opt-in</span> - requires your
-                    consent (not currently active)
+                    <span className={strongClass}>Opt-in</span> - set only after
+                    you grant consent
                   </td>
                 </tr>
               </tbody>
@@ -254,10 +255,23 @@ const CookiePolicy: React.FC = () => {
             2.3 Marketing Cookies
           </h3>
           <p className={textClass}>
-            We do not currently use marketing or advertising cookies on the
-            Service. If we introduce marketing cookies in the future, this
-            policy will be updated and your consent will be requested before any
-            marketing cookies are set.
+            We use Google AdSense to display advertisements on certain pages
+            (currently our wiki articles). Google AdSense and its advertising
+            partners may set cookies to serve and measure ads. These cookies are
+            set only after you grant consent via the cookie banner (or, for
+            visitors in the EEA/UK, via Google's certified consent message). You
+            can review or withdraw your consent at any time through "Your
+            Privacy Choices" in the footer. For details on how Google uses
+            advertising cookies, see{" "}
+            <a
+              href="https://policies.google.com/technologies/ads"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={strongClass}
+            >
+              Google's advertising technologies
+            </a>
+            .
           </p>
         </div>
 
@@ -321,8 +335,8 @@ const CookiePolicy: React.FC = () => {
           <p className={textClass}>
             When you first visit the Service, a consent banner will appear
             allowing you to accept or decline non-essential cookies. You can
-            change your preferences at any time by clicking the "Cookie
-            Settings" link in the footer of any page.
+            change your preferences at any time by clicking the "Your Privacy
+            Choices" link in the footer of any page.
           </p>
 
           <h3 className={`text-lg font-medium mb-2 mt-6 ${strongClass}`}>

@@ -4,6 +4,7 @@
 // POS: AdSense 加载与合规门控服务；若更新此文件，务必更新 services/FOLDER.md。
 
 import { getConsentPreferences, getDoNotSell } from "./consent";
+import { notifyAdConsentChanged } from "./adConsentBus";
 import type { RegionInfo } from "./region";
 
 const SCRIPT_ID = "astro-adsense";
@@ -24,20 +25,6 @@ export const isAdsenseEnabled = (): boolean =>
 // 所有 AdSlot 直接返回 null（不注入脚本、不发请求、不占位）。
 export const isAdsenseConfigured = (): boolean =>
   isAdsenseEnabled() && Boolean(getAdsenseClientId());
-
-// TODO(temporary, PR2 激活前必修): 以下三项在 PR1 flag off 下休眠，但 flag on 前必须修，
-// 否则整个 EEA/UK/CH 变现段静默失效 + 首曝光丢失（对抗式评审确认，详见
-// docs/superpowers/specs/2026-07-01-adsense-integration-design.md §"评审 blockers"）：
-//   [PR2-B1 死锁] initTcfListener 仅在 loadAdsense 内注册，而 loadAdsense 被同一份广告
-//     同意挡住 → tcfAdConsentGranted 永远翻不了真 → EEA 永远无广告。且全站无 CMP 加载器
-//     (window.__tcfapi 永不存在)。修：在 App bootstrap 对 region.isGdpr 用户独立注入
-//     Funding Choices/Privacy&messaging 脚本 + 无条件 initTcfListener，与 loadAdsense 解耦。
-//   [PR2-B2 反应性] tcfAdConsentGranted(模块变量) 与 US 路径 localStorage 同意均非响应式；
-//     AdSlot 不订阅同意变化 → 用户在当前页授予同意后广告要等导航才出现（丢首曝光）。
-//     修：同意/TCF 更新时派发 window 事件，AdSlot 订阅使 gated 重算。
-//   [PR2-B3 CCPA] hasAdConsent 读 getDoNotSell()，但全站无任何"Do Not Sell or Share"控件
-//     可调 setDoNotSell(true) → CPRA/多州法要求的 opt-out 不可用。修：加 footer 链接 +
-//     Manage-Preferences toggle（至少对非 GDPR 访客），并同步 PrivacyPolicy §6。
 
 // —— TCF（EEA 广告同意）——
 // Google 认证 CMP 就位后通过 window.__tcfapi 广播同意。我们缓存最近一次的
@@ -64,21 +51,41 @@ export const evaluateTcfConsent = (
 };
 
 let tcfListenerRegistered = false;
+let tcfPollAttempts = 0;
+let tcfPollTimer: ReturnType<typeof setTimeout> | null = null;
+const TCF_POLL_MAX = 20; // ~10s @ 500ms
+const TCF_POLL_INTERVAL_MS = 500;
 
-// 注册 TCF 监听。window.__tcfapi 不存在（无 CMP）时静默返回。
+// 注册 TCF 监听（EEA 广告同意）。head-loader 异步加载 adsbygoogle.js → CMP 才提供
+// window.__tcfapi，故 App bootstrap 调用时可能尚未就位 → 轮询等待（评审 B1：与 loadAdsense
+// 解耦到 bootstrap，且对异步 __tcfapi 健壮，否则 EEA TCF 死锁永远无广告）。
+// 同意变化时 notifyAdConsentChanged 触发 AdSlot 重渲染（评审 B2）。
 export const initTcfListener = (): void => {
   if (typeof window === "undefined") return;
   if (tcfListenerRegistered) return;
   const tcf = (window as unknown as { __tcfapi?: unknown }).__tcfapi;
-  if (typeof tcf !== "function") return;
+  if (typeof tcf !== "function") {
+    if (tcfPollAttempts >= TCF_POLL_MAX) return;
+    tcfPollAttempts += 1;
+    tcfPollTimer = setTimeout(initTcfListener, TCF_POLL_INTERVAL_MS);
+    return;
+  }
   tcfListenerRegistered = true;
+  if (tcfPollTimer) {
+    clearTimeout(tcfPollTimer);
+    tcfPollTimer = null;
+  }
   try {
     (tcf as (...a: unknown[]) => void)(
       "addEventListener",
       2,
       (tcData: TcfData, success: boolean) => {
         if (!success) return;
-        tcfAdConsentGranted = evaluateTcfConsent(tcData);
+        const next = evaluateTcfConsent(tcData);
+        if (next !== tcfAdConsentGranted) {
+          tcfAdConsentGranted = next;
+          notifyAdConsentChanged();
+        }
       },
     );
   } catch {
@@ -95,6 +102,20 @@ export const hasAdConsent = (region: RegionInfo): boolean => {
   if (region.isGdpr) return tcfAdConsentGranted;
   const prefs = getConsentPreferences();
   return prefs?.marketing === true && !getDoNotSell();
+};
+
+// 纯函数：自研横幅应向 Google Consent Mode 发出的广告同意信号（ad_storage/ad_user_data/
+// ad_personalization）。关键：让"信号"与门控 hasAdConsent 走同一权威，避免二者背离（评审 H1）：
+//   - EEA/UK/CH（isGdpr===true）→ 恒 false：EEA 广告同意由 Google 认证 CMP/TCF 决定，
+//     自研横幅绝不代其授予（否则 fail-safe 横幅会误置 ad_personalization=granted，评审 L1）。
+//   - 其余（美国等/未知）→ marketing 同意 且 未开启 Do-Not-Sell（CCPA opt-out 真正生效，评审 H1）。
+export const computeAdConsentSignal = (
+  region: RegionInfo,
+  marketing: boolean,
+  doNotSell: boolean,
+): boolean => {
+  if (region.isGdpr === true) return false;
+  return marketing === true && !doNotSell;
 };
 
 // 单例注入 adsbygoogle.js。未配置/已注入/无 document 时不重复注入。
@@ -136,4 +157,9 @@ export const __resetAdsenseForTest = (): void => {
   scriptRequested = false;
   tcfListenerRegistered = false;
   tcfAdConsentGranted = false;
+  tcfPollAttempts = 0;
+  if (tcfPollTimer) {
+    clearTimeout(tcfPollTimer);
+    tcfPollTimer = null;
+  }
 };

@@ -104,3 +104,33 @@ PR1 经 4 视角对抗式评审，已在本次修复的：
 - **PR2-B5（CLS）**：`format=auto` 单元实际高度常 >280，PR2 激活后按字段数据调 `minHeight`。
 
 **评审总体结论**：修掉上述 HIGH + LOW 两条后，PR1 可安全提交（flag off 零行为变化）；其余为 PR2/PR3 激活前 blocker，已固化为代码 TODO + 本节。
+
+## 10. PR2 实现状态（分支 feat/adsense-pr2）
+
+评审 blockers 中 **PR2 部分已实现**：
+
+- ✅ **B1（EEA TCF 死锁 + CMP loader）**：`<head>` loader（PR1.5）已让 Google CMP 全站加载；`initTcfListener` 改为 App bootstrap（`index.tsx`）调用、与 loadAdsense 解耦，并轮询等待异步 `window.__tcfapi` 就位（`services/adsense.ts`）。
+- ✅ **B2（同意反应性）**：新增 `services/adConsentBus.ts`（window 事件总线）+ `hooks/useAdConsentVersion.ts`；AdSlot 订阅后同意变化立即重算门控；ConsentBanner 各 handler 与 TCF 回调 `notifyAdConsentChanged`；AdSlot `gated` 翻 true 时重置 `pushedRef`（B2' 修复）。
+- ✅ **B3（CCPA 控件）**：ConsentBanner Manage-Preferences 加 "Do Not Sell or Share" toggle（`setDoNotSell`）；Footer 加 "Your Privacy Choices" 入口（`openConsentPreferences` 重开弹窗）。
+- ✅ **法务文案**：CookiePolicy（AdSense 广告 cookie 披露）、PrivacyPolicy（§3 Advertising + §5.2/§6 CCPA "sale/share" + Do-Not-Sell 控件）、ConsentBanner marketing 描述（去"目前未使用"）。**需用户/法务 review**。
+
+**仍待 PR3**：B4（门控#1 结构化 `isAdEligibleArticle`）、B5（CLS `minHeight` 按字段数据调优）。
+
+**flag-on 前剩余**：用户设 `VITE_ADSENSE_ENABLED=true` + 站点审核通过 + 更新 PRD §3。⚠️ 注意：PR1 的 head-loader 已在生产加载 adsbygoogle.js（CLIENT_ID 已配），故法务文案更新（PR2）应尽快合并上线，使"广告 cookie 披露"与事实一致。
+
+### PR2 对抗式评审修复（4 视角，14 发现 → 11 确认）
+
+**已修（提交前必修）**：
+- **[HIGH H1]** Do-Not-Sell 未接入 Consent Mode → 会发出与 opt-out 相反的 `ad_personalization='granted'`（且证伪本 PR 的 PrivacyPolicy §6）。修：新增纯函数 `computeAdConsentSignal(region, marketing, doNotSell)` 让门控与 Consent Mode 信号同源；ConsentBanner 3 个 handler 改用它。
+- **[MED M1]** EEA 经 Footer "Your Privacy Choices" 打开自研弹窗绕过 Google CMP。修：重开回调判 `shouldDeferToCmp`，EEA+CMP 就位时调 `googlefc.showRevocationMessage()`，不呈现安慰剂 marketing toggle。
+- **[MED M2]** 政策称 opt-out 投"非个性化广告"，实为完全不投。修：PrivacyPolicy §3.1/§6 改为"opt-out/撤回 marketing 同意则不投 AdSense 广告"。
+- **[LOW L1]** EEA fail-safe 横幅误置 ad granted → 由 `computeAdConsentSignal`（EEA 恒 false）一并解决。
+- **[LOW L2]** CookiePolicy §4.1 "Cookie Settings" 链接改 "Your Privacy Choices"。
+- **[LOW L5]** 补 B2 反应式回归测试（授予同意→出广告 push 一次；false→true→false pushedRef 重置重 push）+ computeAdConsentSignal 单测。
+- **[LOW L6]** Footer zh 标签补英文 "(Your Privacy Choices)"。
+
+**跟进（flag-on 前，未在本 PR）**：
+- **[MED M3]** GPC（`navigator.globalPrivacyControl`）未识别 —— CPRA §7025 要求把 GPC 当作有效 Do-Not-Sell/Share。当前广告 opt-in + flag off，暴露有限；flag-on 前在 `consent.ts::getDoNotSell` 加 GPC 检测。
+- **[LOW L3/L4]** TCF 轮询孤儿计时器 / 10s 后不重臂 —— 有界、flag off 不可触发；flag-on 前加计时器去重 + SPA 导航重臂。
+
+评审总体：修掉 H1+M1+M2（+L1/L2/L5/L6）后 PR2 可安全提交；M3/L3/L4 为 flag-on 前跟进。

@@ -8,12 +8,15 @@ import {
   isAdsenseConfigured,
   evaluateTcfConsent,
   hasAdConsent,
+  computeAdConsentSignal,
   loadAdsense,
   pushAd,
   getAdsenseClientId,
+  initTcfListener,
   __resetAdsenseForTest,
 } from "./adsense";
 import { setConsentPreferences, setDoNotSell } from "./consent";
+import { subscribeAdConsent } from "./adConsentBus";
 import type { RegionInfo } from "./region";
 
 const US: RegionInfo = { country: "US", isGdpr: false };
@@ -31,6 +34,7 @@ beforeEach(() => {
   document.head.innerHTML = "";
   vi.unstubAllEnvs();
   delete (window as unknown as { adsbygoogle?: unknown }).adsbygoogle;
+  delete (window as unknown as { __tcfapi?: unknown }).__tcfapi;
 });
 
 describe("isAdsenseConfigured (门控#4)", () => {
@@ -85,15 +89,27 @@ describe("evaluateTcfConsent", () => {
 
 describe("hasAdConsent (门控#3, 地域分流)", () => {
   it("地域未知 → false（fail-safe 拒绝）", () => {
-    setConsentPreferences({ essential: true, analytics: true, marketing: true });
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
     expect(hasAdConsent(UNKNOWN)).toBe(false);
   });
   it("EEA + 无 CMP/TCF → false（PR1 恒为 false）", () => {
-    setConsentPreferences({ essential: true, analytics: true, marketing: true });
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
     expect(hasAdConsent(EEA)).toBe(false);
   });
   it("非 EEA + 营销同意 + 未 Do-Not-Sell → true", () => {
-    setConsentPreferences({ essential: true, analytics: true, marketing: true });
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
     setDoNotSell(false);
     expect(hasAdConsent(US)).toBe(true);
   });
@@ -106,9 +122,29 @@ describe("hasAdConsent (门控#3, 地域分流)", () => {
     expect(hasAdConsent(US)).toBe(false);
   });
   it("非 EEA + 营销同意但 Do-Not-Sell 开 → false", () => {
-    setConsentPreferences({ essential: true, analytics: true, marketing: true });
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
     setDoNotSell(true);
     expect(hasAdConsent(US)).toBe(false);
+  });
+});
+
+describe("computeAdConsentSignal (评审 H1/L1：门与信号同源)", () => {
+  it("EEA(isGdpr=true) 恒 false —— 交 Google CMP/TCF，自研横幅不代授予", () => {
+    expect(computeAdConsentSignal(EEA, true, false)).toBe(false);
+    expect(computeAdConsentSignal(EEA, true, true)).toBe(false);
+  });
+  it("非 EEA + 营销同意 + 未 Do-Not-Sell → true", () => {
+    expect(computeAdConsentSignal(US, true, false)).toBe(true);
+  });
+  it("非 EEA + 营销同意 但 Do-Not-Sell → false（H1：opt-out 真正联动信号）", () => {
+    expect(computeAdConsentSignal(US, true, true)).toBe(false);
+  });
+  it("非 EEA + 营销拒绝 → false", () => {
+    expect(computeAdConsentSignal(US, false, false)).toBe(false);
   });
 });
 
@@ -135,7 +171,52 @@ describe("pushAd", () => {
   it("永不抛错，adsbygoogle 变为数组", () => {
     expect(() => pushAd()).not.toThrow();
     expect(
-      Array.isArray((window as unknown as { adsbygoogle: unknown[] }).adsbygoogle),
+      Array.isArray(
+        (window as unknown as { adsbygoogle: unknown[] }).adsbygoogle,
+      ),
     ).toBe(true);
+  });
+});
+
+describe("initTcfListener + TCF notify (评审 B1/B2)", () => {
+  it("__tcfapi 就位且 Google 同意 → EEA hasAdConsent 变 true + 派发 adConsent 事件", () => {
+    const notifySpy = vi.fn();
+    const unsubscribe = subscribeAdConsent(notifySpy);
+    // stub __tcfapi：addEventListener 立即回调一份"已授予"的 TCData
+    (
+      window as unknown as {
+        __tcfapi?: (
+          cmd: string,
+          v: number,
+          cb: (d: unknown, s: boolean) => void,
+        ) => void;
+      }
+    ).__tcfapi = (cmd, _v, cb) => {
+      if (cmd === "addEventListener") {
+        cb(
+          {
+            gdprApplies: true,
+            purpose: { consents: { 1: true } },
+            vendor: { consents: { 755: true } },
+          },
+          true,
+        );
+      }
+    };
+    __resetAdsenseForTest();
+
+    expect(hasAdConsent(EEA)).toBe(false); // 注册前恒 false
+    initTcfListener();
+    expect(hasAdConsent(EEA)).toBe(true); // 回调置 granted
+    expect(notifySpy).toHaveBeenCalled(); // 派发事件让 AdSlot 重渲染
+    unsubscribe();
+  });
+
+  it("__tcfapi 不存在 → 不注册、EEA 保持 false（不抛错，轮询等待）", () => {
+    vi.useFakeTimers(); // 无 __tcfapi 会起 setTimeout 轮询，用 fake timers 防真定时器遗留
+    expect(() => initTcfListener()).not.toThrow();
+    expect(hasAdConsent(EEA)).toBe(false);
+    vi.clearAllTimers();
+    vi.useRealTimers();
   });
 });

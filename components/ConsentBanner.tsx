@@ -2,7 +2,7 @@
 // OUTPUT: Renders a consent banner with Accept All, Decline All, and Manage Preferences; 仅当 GDPR 区且 Google 认证 CMP 已就位(window.__tcfapi) 时抑制自研横幅（地域分流方案 A，CMP 未就位则 fail-safe 保留横幅）。
 // POS: Consent UI component; update components/FOLDER.md when this file changes.
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTheme, useLanguage, ActionButton, Modal } from "./UIComponents";
 import {
   shouldShowConsentBanner,
@@ -10,6 +10,8 @@ import {
   declineAllConsent,
   setConsentPreferences,
   getConsentPreferences,
+  getDoNotSell,
+  setDoNotSell,
   type ConsentPreferences,
 } from "../services/consent";
 import {
@@ -20,6 +22,11 @@ import { flushQueuedWebVitals } from "../src/utils/performance";
 import { useLangPath } from "../hooks/useLangPath";
 import { useRegion } from "../hooks/useRegion";
 import { shouldDeferToCmp, isCmpPresent } from "../services/region";
+import { computeAdConsentSignal } from "../services/adsense";
+import {
+  notifyAdConsentChanged,
+  subscribeOpenConsentPreferences,
+} from "../services/adConsentBus";
 
 export const ConsentBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,10 +36,17 @@ export const ConsentBanner: React.FC = () => {
     analytics: false,
     marketing: false,
   });
+  // CCPA/CPRA "Do Not Sell or Share" opt-out（评审 B3）。惰性初始化自 localStorage。
+  const [doNotSellChecked, setDoNotSellChecked] = useState(() =>
+    getDoNotSell(),
+  );
   const { theme } = useTheme();
   const { language } = useLanguage();
   const { langPath } = useLangPath();
   const region = useRegion();
+  // 供 subscribeOpenConsentPreferences 回调读取当前 region（该 effect [] deps，避免闭包过期）。
+  const regionRef = useRef(region);
+  regionRef.current = region;
 
   useEffect(() => {
     // 地域分流（方案 A）：仅当用户处于 GDPR 区【且 Google 认证 CMP 已就位(window.__tcfapi)】
@@ -50,9 +64,37 @@ export const ConsentBanner: React.FC = () => {
     }
   }, [region.isGdpr]);
 
+  // 允许从站外入口（Footer "Your Privacy Choices" / CCPA opt-out）重开偏好弹窗（评审 B3）。
+  useEffect(
+    () =>
+      subscribeOpenConsentPreferences(() => {
+        // EEA/UK/CH 且 Google 认证 CMP 已就位：交给 Google CMP 复同意 UI（自研 marketing toggle
+        // 对 EEA 是安慰剂——hasAdConsent 只认 TCF，评审 M1）。googlefc 未就位则回退自研弹窗。
+        if (shouldDeferToCmp(regionRef.current, isCmpPresent())) {
+          const gfc = (
+            window as unknown as {
+              googlefc?: { showRevocationMessage?: () => void };
+            }
+          ).googlefc;
+          if (typeof gfc?.showRevocationMessage === "function") {
+            gfc.showRevocationMessage();
+            return;
+          }
+        }
+        const existing = getConsentPreferences();
+        if (existing) setPrefs(existing);
+        setDoNotSellChecked(getDoNotSell());
+        setShowPrefs(true);
+      }),
+    [],
+  );
+
   const handleAcceptAll = () => {
     acceptAllConsent();
-    updateConsentState(true, true);
+    setDoNotSell(false); // 全部接受 = 同意个性化广告，清除 Do-Not-Sell
+    // 广告信号经 computeAdConsentSignal：EEA 恒 false（交 CMP/TCF），非 EEA=marketing&&!doNotSell。
+    updateConsentState(true, computeAdConsentSignal(region, true, false));
+    notifyAdConsentChanged(); // 触发 AdSlot 重算门控（评审 B2）
     // No trackPageView() here — Consent Mode v2 handles re-evaluation.
     // App.tsx already sent the cookieless ping; GA4 uses modeling for the gap.
     trackFirstVisitIfNew();
@@ -63,12 +105,20 @@ export const ConsentBanner: React.FC = () => {
   const handleDeclineAll = () => {
     declineAllConsent();
     updateConsentState(false, false);
+    notifyAdConsentChanged();
     setIsVisible(false);
   };
 
   const handleSavePrefs = () => {
     setConsentPreferences(prefs);
-    updateConsentState(prefs.analytics, prefs.marketing);
+    setDoNotSell(doNotSellChecked);
+    // 广告 Consent Mode 信号与门控 hasAdConsent 同源：Do-Not-Sell 真正联动 ad_personalization
+    // （评审 H1）；EEA 由 computeAdConsentSignal 恒 false 交 CMP（评审 L1）。
+    updateConsentState(
+      prefs.analytics,
+      computeAdConsentSignal(region, prefs.marketing, doNotSellChecked),
+    );
+    notifyAdConsentChanged();
     if (prefs.analytics) {
       trackFirstVisitIfNew();
       flushQueuedWebVitals();
@@ -80,10 +130,12 @@ export const ConsentBanner: React.FC = () => {
   const handleOpenPrefs = () => {
     const existing = getConsentPreferences();
     if (existing) setPrefs(existing);
+    setDoNotSellChecked(getDoNotSell());
     setShowPrefs(true);
   };
 
-  if (!isVisible) return null;
+  // 横幅或偏好弹窗任一可见即渲染（弹窗可由 Footer 重开，此时横幅仍隐藏）。
+  if (!isVisible && !showPrefs) return null;
 
   // Theme styles
   const bannerClasses =
@@ -131,8 +183,18 @@ export const ConsentBanner: React.FC = () => {
     marketingLabel: language === "zh" ? "营销 Cookie" : "Marketing Cookies",
     marketingDesc:
       language === "zh"
-        ? "用于跟踪跨网站的访客活动，以便展示相关广告。目前未使用。"
-        : "Used to track visitors across websites to display relevant ads. Currently not in use.",
+        ? "用于跟踪跨网站的访客活动，以便展示相关广告（Google AdSense）。"
+        : "Used to track visitors across websites to display relevant ads (Google AdSense).",
+    doNotSellLabel:
+      language === "zh"
+        ? "不出售或分享我的个人信息"
+        : "Do Not Sell or Share My Personal Information",
+    doNotSellDesc:
+      language === "zh"
+        ? '根据 CCPA/CPRA，选择不将您的个人信息用于个性化广告的"出售/分享"。'
+        : 'Under CCPA/CPRA, opt out of the "sale/sharing" of your personal information for personalized advertising.',
+    doNotSellToggleLabel:
+      language === "zh" ? "开启不出售或分享" : "Enable Do Not Sell or Share",
     savePrefs: language === "zh" ? "保存偏好" : "Save Preferences",
     cookiePolicy: language === "zh" ? "Cookie 政策" : "Cookie Policy",
     alwaysOn: language === "zh" ? "始终开启" : "Always on",
@@ -248,7 +310,7 @@ export const ConsentBanner: React.FC = () => {
             </div>
 
             {/* Marketing Cookies */}
-            <div className="pb-4">
+            <div className={`pb-4 border-b ${dividerClasses}`}>
               <div className="flex items-center justify-between mb-1">
                 <label
                   htmlFor="consent-marketing"
@@ -274,6 +336,34 @@ export const ConsentBanner: React.FC = () => {
               </div>
               <p className={`text-xs leading-relaxed ${descClasses}`}>
                 {content.marketingDesc}
+              </p>
+            </div>
+
+            {/* CCPA/CPRA: Do Not Sell or Share（评审 B3） */}
+            <div className="pb-4">
+              <div className="flex items-center justify-between mb-1">
+                <label
+                  htmlFor="consent-do-not-sell"
+                  className={`font-medium cursor-pointer ${labelClasses}`}
+                >
+                  {content.doNotSellLabel}
+                </label>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input
+                    id="consent-do-not-sell"
+                    type="checkbox"
+                    role="switch"
+                    aria-label={content.doNotSellToggleLabel}
+                    aria-checked={doNotSellChecked}
+                    checked={doNotSellChecked}
+                    onChange={(e) => setDoNotSellChecked(e.target.checked)}
+                    className="sr-only peer"
+                  />
+                  <div className="w-9 h-5 rounded-full peer peer-checked:bg-gold-500 bg-star-600 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full" />
+                </label>
+              </div>
+              <p className={`text-xs leading-relaxed ${descClasses}`}>
+                {content.doNotSellDesc}
               </p>
             </div>
 

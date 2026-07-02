@@ -183,7 +183,13 @@ const PrivacyPolicy: React.FC = () => {
             3. Data Sharing and Disclosure
           </h2>
           <p className={`mb-4 font-medium ${strongClass}`}>
-            We do NOT sell your personal information to third parties.
+            We do not sell your personal information for money. However, when we
+            serve personalized advertising through Google AdSense, this may be
+            treated as a "sale" or "sharing" of personal information under the
+            California Consumer Privacy Act (CCPA/CPRA) and similar U.S. state
+            laws. You can opt out at any time — see Section 6 ("Do Not Sell or
+            Share My Personal Information") or use "Your Privacy Choices" in the
+            footer.
           </p>
           <p className={`mb-3 ${textClass}`}>
             We may share your information with the following categories of third
@@ -208,6 +214,24 @@ const PrivacyPolicy: React.FC = () => {
                 Google's Privacy Policy
               </a>
               .
+            </li>
+            <li>
+              <span className={strongClass}>Advertising:</span> Google AdSense
+              (and its advertising partners) to display and measure ads on
+              certain pages (currently our wiki articles). Google may use
+              cookies and device identifiers to serve ads. See{" "}
+              <a
+                href="https://policies.google.com/technologies/ads"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                how Google uses advertising data
+              </a>
+              . Ads are shown only after you consent (via the cookie banner, or
+              Google's certified consent message in the EEA/UK). If you opt out
+              or decline marketing consent, we do not serve AdSense ads to you.
+              You can opt out at any time via "Your Privacy Choices".
             </li>
             <li>
               <span className={strongClass}>Payment Processing:</span>{" "}
@@ -351,9 +375,15 @@ const PrivacyPolicy: React.FC = () => {
               certain exceptions.
             </li>
             <li>
-              <span className={strongClass}>Right to Opt-Out of Sale:</span> You
-              have the right to opt out of the sale of your personal
-              information. As noted above, we do not sell personal information.
+              <span className={strongClass}>
+                Right to Opt-Out of Sale or Sharing:
+              </span>{" "}
+              You have the right to opt out of the sale or sharing of your
+              personal information. Serving personalized ads through Google
+              AdSense may constitute a "sale"/"share"; you can opt out at any
+              time by enabling "Do Not Sell or Share My Personal Information" in
+              your cookie preferences ("Your Privacy Choices" in the footer). No
+              account is required.
             </li>
             <li>
               <span className={strongClass}>Right to Non-Discrimination:</span>{" "}
@@ -371,18 +401,27 @@ const PrivacyPolicy: React.FC = () => {
           </p>
         </div>
 
-        {/* 6. Do Not Sell My Personal Information */}
+        {/* 6. Do Not Sell or Share My Personal Information */}
         <div className={sectionClass}>
           <h2 className={`text-2xl font-semibold mb-4 ${headingClass}`}>
-            6. "Do Not Sell My Personal Information"
+            6. "Do Not Sell or Share My Personal Information"
           </h2>
+          <p className={`mb-3 ${textClass}`}>
+            {PRODUCT_NAME} does not sell your personal information for money.
+            However, our use of Google AdSense to serve personalized advertising
+            may be considered a "sale" or "sharing" of personal information
+            under the CCPA/CPRA and similar U.S. state privacy laws.
+          </p>
           <p className={textClass}>
-            {PRODUCT_NAME} does not sell, rent, or trade your personal
-            information to third parties for monetary or other valuable
-            consideration. We do not engage in the "sale" of personal
-            information as defined under the CCPA or any other applicable
-            privacy law. If our practices change in the future, we will update
-            this Privacy Policy and provide you with an opportunity to opt out.
+            You can opt out at any time by enabling{" "}
+            <span className={strongClass}>
+              "Do Not Sell or Share My Personal Information"
+            </span>{" "}
+            in your cookie preferences — open it via "Your Privacy Choices" in
+            the site footer. When enabled, we do not serve AdSense advertising
+            to you, and we signal Google Consent Mode that ad personalization is
+            denied (<code>ad_personalization = denied</code>). You do not need
+            an account to exercise this choice.
           </p>
         </div>
 

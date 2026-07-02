@@ -6,6 +6,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTheme, useLanguage } from "./UIComponents";
 import { useLangPath } from "../hooks/useLangPath";
+import { openConsentPreferences } from "../services/adConsentBus";
 
 const FOOTER_LINKS = [
   { to: "/tools", en: "Tools", zh: "工具" },
@@ -25,6 +26,11 @@ export const Footer: React.FC = () => {
   const isDark = theme === "dark";
 
   const contactLabel = language === "zh" ? "联系我们" : "Contact";
+  // CCPA/CPRA 要求可见、清晰标注的 opt-out 入口（评审 B3）。点后打开同意偏好弹窗。
+  const privacyChoicesLabel =
+    language === "zh"
+      ? "隐私选择 (Your Privacy Choices)"
+      : "Your Privacy Choices";
 
   return (
     <footer
@@ -73,6 +79,22 @@ export const Footer: React.FC = () => {
               >
                 {contactLabel}
               </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={openConsentPreferences}
+                className={`
+                  text-sm transition-colors bg-transparent border-none cursor-pointer p-0
+                  ${
+                    isDark
+                      ? "text-star-300 hover:text-gold-400"
+                      : "text-paper-500 hover:text-gold-700"
+                  }
+                `}
+              >
+                {privacyChoicesLabel}
+              </button>
             </li>
           </ul>
         </nav>

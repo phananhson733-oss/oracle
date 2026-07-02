@@ -8,6 +8,7 @@ import './index.css';
 import App from './App';
 import { initAnalytics, trackFirstVisitIfNew, trackError } from './services/analytics';
 import { reportWebVitalsToAnalytics } from './src/utils/performance';
+import { getAdsenseClientId, initTcfListener } from './services/adsense';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -25,6 +26,9 @@ const initNonCritical = () => {
   initAnalytics();
   reportWebVitalsToAnalytics();
   trackFirstVisitIfNew();
+  // AdSense TCF 监听：仅当配置了 client id（head-loader 会加载 Google CMP）时启动，
+  // 轮询等 window.__tcfapi 就位后注册（评审 B1，与 loadAdsense/广告门控解耦）。
+  if (getAdsenseClientId()) initTcfListener();
 };
 
 if ('requestIdleCallback' in window) {

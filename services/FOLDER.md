@@ -24,7 +24,9 @@
 - region.ts｜地位：地域判定服务｜功能：读 /api/region（Vercel IP 国家码）判定 GDPR 强制区（EU27+EEA+UK+CH），供 ConsentBanner 地域分流与 AdSlot 广告同意门控；含 GDPR_COUNTRIES/isGdprCountry/fetchRegion/getCachedRegion，失败 fail-safe 为 UNKNOWN。
 - region.test.ts｜地位：region 单测（jsdom）｜功能：覆盖 GDPR 国家判定、响应解析与 fetch 失败 fail-safe。
 - adsense.ts｜地位：AdSense 加载与合规门控｜功能：isAdsenseConfigured(flag+client)、hasAdConsent(地域分流：EEA→TCF/非EEA→marketing 同意且非 Do-Not-Sell)、loadAdsense 单例注入 adsbygoogle.js、pushAd、initTcfListener/evaluateTcfConsent。
-- adsense.test.ts｜地位：adsense 单测（jsdom）｜功能：覆盖四重门控各分支、TCF 判定与单例注入。
+- adsense.test.ts｜地位：adsense 单测（jsdom）｜功能：覆盖四重门控各分支、TCF 判定/notify 与单例注入。
+- adConsentBus.ts｜地位：广告同意事件总线（PR2）｜功能：notifyAdConsentChanged/subscribeAdConsent（同意变化→AdSlot 重渲染，评审 B2）+ openConsentPreferences/subscribeOpenConsentPreferences（Footer 重开偏好，评审 B3）。
+- adConsentBus.test.ts｜地位：adConsentBus 单测｜功能：发布/订阅收发与取消订阅。
 - abTest.ts｜地位：实验工具｜功能：A/B 测试分组与曝光追踪。
 - landingUtm.ts｜地位：归因快照｜功能：首触快照 UTM/click-id 到 sessionStorage 并供漏斗事件读取。
 - funnelEvents.ts｜地位：漏斗事件契约｜功能：获客漏斗事件名常量 + 非 PII 字段白名单 + isFunnelFieldAllowed 守卫（chart_cast/account_created 本批接线，save_intent/auth_prompted/chart_migrated 由 #7 接线）。

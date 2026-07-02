@@ -4,8 +4,9 @@
 // POS: AdSlot 组件单测；随 AdSlot.tsx 变更同步。
 
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import AuthContext from "../../contexts/AuthContext";
+import { notifyAdConsentChanged } from "../../services/adConsentBus";
 
 const h = vi.hoisted(() => ({
   region: { country: "US", isGdpr: false } as {
@@ -89,5 +90,38 @@ describe("AdSlot 四重门控", () => {
     const { container } = render(<AdSlot slot="123" />);
     // configured+consent+匿名 → 渲染广告
     expect(container.querySelector("ins.adsbygoogle")).not.toBeNull();
+  });
+
+  it("授予同意后同页立即出广告并 push 一次（评审 B2 反应式）", () => {
+    h.consent = false; // 初始无广告同意
+    const { container } = renderSlot("123");
+    expect(container.querySelector("ins")).toBeNull();
+    expect(h.pushAd).not.toHaveBeenCalled();
+
+    // 用户在当前页授予同意 → 派发事件 → useAdConsentVersion 重渲染 → gated 重算
+    h.consent = true;
+    act(() => {
+      notifyAdConsentChanged();
+    });
+
+    expect(container.querySelector("ins.adsbygoogle")).not.toBeNull();
+    expect(h.pushAd).toHaveBeenCalledTimes(1); // 恰一次，不重复
+  });
+
+  it("gated false→true→false 重挂 <ins> 时重新 push（评审 B2' pushedRef 重置）", () => {
+    const { container } = renderSlot("123"); // 初始出广告
+    expect(container.querySelector("ins.adsbygoogle")).not.toBeNull();
+    expect(h.pushAd).toHaveBeenCalledTimes(1);
+
+    // 撤回同意 → 无广告
+    h.consent = false;
+    act(() => notifyAdConsentChanged());
+    expect(container.querySelector("ins")).toBeNull();
+
+    // 再次授予 → 新 <ins> 重新 push（pushedRef 已在 gated 时重置）
+    h.consent = true;
+    act(() => notifyAdConsentChanged());
+    expect(container.querySelector("ins.adsbygoogle")).not.toBeNull();
+    expect(h.pushAd).toHaveBeenCalledTimes(2);
   });
 });

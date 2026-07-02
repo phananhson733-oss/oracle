@@ -18,6 +18,7 @@
 - useCityAutocomplete.test.ts｜地位：纯函数单测｜功能：覆盖 nextActiveIndex 键盘 reducer 的所有路径（边界 / wrap / 空列表 / Home / End）。
 - useTodaySky.ts｜地位：landing today-sky 数据钩子｜功能：封装 fetchTodaySky 调用，模块级 promise 缓存去重 Hero 与 CosmicWeather 的并发首次挂载，返回 { data, loading, hasError, reload }；FINDING-H01 Hero 右半区数据来源。
 - useRegion.ts｜地位：地域判定 hook｜功能：包装 services/region 的 fetchRegion/getCachedRegion，返回 RegionInfo（命中缓存同步返回，否则异步解析后重渲染），供 ConsentBanner 地域分流与 AdSlot 广告门控。
+- useAdConsentVersion.ts｜地位：广告同意响应式 hook（PR2）｜功能：订阅 adConsentBus，返回随同意变化自增的版本号，让 AdSlot 在用户当前页授予同意后立即重算门控出广告（评审 B2）。
 
 近期更新
 - 新增 useRegion 钩子（AdSense 接入 PR1）：暴露访客 GDPR 地域给 ConsentBanner（EEA 抑制自研横幅）与 AdSlot（广告同意门控）。
