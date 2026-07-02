@@ -838,6 +838,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'john-denver-birth-chart',
+  'vera-wang-birth-chart',
   'bella-hadid-birth-chart',
   'elliot-page-birth-chart',
   'thylane-blondeau-birth-chart',

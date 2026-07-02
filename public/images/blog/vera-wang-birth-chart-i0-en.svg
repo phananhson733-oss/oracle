@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 505" role="img" aria-label="5 Steps to Read Vera Wang's Chart">
+  <defs>
+    <linearGradient id="verawangbirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="verawangbirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="verawangbirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="verawangbirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="verawangbirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="verawangbirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="url(#verawangbirthchart0en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="172" fill="url(#verawangbirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="404" rx="334" ry="162" fill="url(#verawangbirthchart0en-neb2)"/>
+  <circle cx="743.8" cy="175.5" r="0.76" fill="#cfc8ea" opacity="0.23"/><circle cx="661.1" cy="147.2" r="0.76" fill="#cfc8ea" opacity="0.21"/><circle cx="225.6" cy="61.1" r="1.60" fill="#cfc8ea" opacity="0.18"/><circle cx="303.6" cy="432.1" r="1.20" fill="#cfc8ea" opacity="0.30"/><circle cx="617.4" cy="213.5" r="0.53" fill="#cfc8ea" opacity="0.31"/><circle cx="732.7" cy="158.6" r="0.61" fill="#cfc8ea" opacity="0.41"/><circle cx="35.0" cy="137.6" r="0.40" fill="#cfc8ea" opacity="0.53"/><circle cx="226.2" cy="208.2" r="1.56" fill="#cfc8ea" opacity="0.52"/><circle cx="366.7" cy="99.6" r="1.08" fill="#cfc8ea" opacity="0.51"/><circle cx="284.5" cy="382.7" r="0.40" fill="#cfc8ea" opacity="0.49"/><circle cx="494.7" cy="485.3" r="1.16" fill="#cfc8ea" opacity="0.16"/><circle cx="435.6" cy="464.2" r="1.17" fill="#cfc8ea" opacity="0.28"/><circle cx="690.0" cy="483.5" r="0.89" fill="#cfc8ea" opacity="0.20"/><circle cx="39.8" cy="389.9" r="0.72" fill="#cfc8ea" opacity="0.27"/><circle cx="21.3" cy="279.6" r="0.74" fill="#cfc8ea" opacity="0.40"/><circle cx="272.5" cy="118.3" r="1.65" fill="#cfc8ea" opacity="0.17"/><circle cx="237.7" cy="337.6" r="0.52" fill="#cfc8ea" opacity="0.12"/><circle cx="269.3" cy="114.6" r="0.44" fill="#cfc8ea" opacity="0.17"/><circle cx="737.6" cy="22.8" r="0.81" fill="#cfc8ea" opacity="0.44"/><circle cx="31.4" cy="146.2" r="0.91" fill="#cfc8ea" opacity="0.54"/><circle cx="132.3" cy="292.1" r="0.43" fill="#cfc8ea" opacity="0.19"/><circle cx="275.3" cy="150.8" r="1.03" fill="#cfc8ea" opacity="0.24"/><circle cx="737.1" cy="203.0" r="0.97" fill="#cfc8ea" opacity="0.25"/><circle cx="723.3" cy="343.7" r="0.50" fill="#cfc8ea" opacity="0.30"/><circle cx="724.5" cy="369.3" r="1.63" fill="#cfc8ea" opacity="0.46"/><circle cx="723.2" cy="19.9" r="1.38" fill="#cfc8ea" opacity="0.36"/><circle cx="140.8" cy="486.7" r="0.90" fill="#cfc8ea" opacity="0.37"/><circle cx="710.1" cy="65.0" r="1.03" fill="#cfc8ea" opacity="0.52"/><circle cx="438.9" cy="328.5" r="1.19" fill="#cfc8ea" opacity="0.38"/><circle cx="229.5" cy="312.7" r="0.73" fill="#cfc8ea" opacity="0.37"/><circle cx="717.2" cy="264.6" r="1.32" fill="#cfc8ea" opacity="0.24"/><circle cx="218.7" cy="235.8" r="1.62" fill="#cfc8ea" opacity="0.24"/><circle cx="127.7" cy="377.2" r="1.24" fill="#cfc8ea" opacity="0.13"/><circle cx="615.9" cy="293.2" r="1.35" fill="#cfc8ea" opacity="0.17"/><circle cx="365.5" cy="47.5" r="1.63" fill="#cfc8ea" opacity="0.13"/><circle cx="633.1" cy="217.7" r="0.90" fill="#cfc8ea" opacity="0.48"/><circle cx="336.6" cy="119.4" r="0.90" fill="#cfc8ea" opacity="0.42"/><circle cx="94.3" cy="472.9" r="0.67" fill="#cfc8ea" opacity="0.27"/><circle cx="137.8" cy="442.1" r="1.56" fill="#cfc8ea" opacity="0.47"/><circle cx="373.4" cy="52.3" r="0.66" fill="#cfc8ea" opacity="0.43"/><circle cx="421.2" cy="469.7" r="0.81" fill="#cfc8ea" opacity="0.39"/><circle cx="201.7" cy="62.1" r="1.59" fill="#cfc8ea" opacity="0.31"/><circle cx="442.9" cy="369.3" r="1.61" fill="#cfc8ea" opacity="0.15"/><path d="M 388.0860307943076 451.1 L 388.6 453.9 L 391.5 454.48157392442226 L 388.6 455.0 L 388.0860307943076 457.9 L 387.5 455.0 L 384.7 454.48157392442226 L 387.5 453.9 Z" fill="#f6e6bf" opacity="0.6192133893724531"/><path d="M 592.9777937289327 349.7 L 593.6 352.8 L 596.6 353.38034734968096 L 593.6 354.0 L 592.9777937289327 357.0 L 592.4 354.0 L 589.3 353.38034734968096 L 592.4 352.8 Z" fill="#f6e6bf" opacity="0.5526346911210567"/><path d="M 331.60903608612716 450.6 L 332.1 453.0 L 334.5 453.4223233330995 L 332.1 453.9 L 331.60903608612716 456.3 L 331.1 453.9 L 328.7 453.4223233330995 L 331.1 453.0 Z" fill="#f6e6bf" opacity="0.7969601246993989"/><path d="M 555.6558652725071 264.8 L 556.1 267.1 L 558.4 267.5701886517927 L 556.1 268.0 L 555.6558652725071 270.3 L 555.2 268.0 L 552.9 267.5701886517927 L 555.2 267.1 Z" fill="#f6e6bf" opacity="0.5193394007626921"/><path d="M 226.81645290367305 223.0 L 227.4 225.8 L 230.2 226.37440245226026 L 227.4 226.9 L 226.81645290367305 229.8 L 226.3 226.9 L 223.4 226.37440245226026 L 226.3 225.8 Z" fill="#f6e6bf" opacity="0.7577073709573596"/><path d="M 225.6 61.1 L 21.3 279.6 L 31.4 146.2 L 218.7 235.8 L 442.9 369.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="491" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 485.8 L 16.5 488.5 L 19.2 489 L 16.5 489.5 L 16 492.2 L 15.5 489.5 L 12.8 489 L 15.5 488.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 485.8 L 744.5 488.5 L 747.2 489 L 744.5 489.5 L 744 492.2 L 743.5 489.5 L 740.8 489 L 743.5 488.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Steps to Read Vera Wang's Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#verawangbirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#verawangbirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="415" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#verawangbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#verawangbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Cancer Emphasis</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sun, Moon, and Venus in Cancer — one theme of care, home, and emotional security</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#verawangbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#verawangbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Cancer Venus Aesthetic</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Taste prizes softness, nostalgia, and heirloom feeling — couture bridal as</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">emotional keepsake</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#verawangbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#verawangbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Gemini Planets</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Mercury and Mars in Gemini — a quick, versatile editorial mind and a</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">reinventive drive</text>
+  <circle cx="76" cy="337" r="20.0" fill="url(#verawangbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="337" r="15" fill="url(#verawangbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="332.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="341.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="333.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Flag the Unknowns</text>
+  <text x="116" y="355.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Ascendant, Midheaven, and houses stay provisional without a verified birth</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">time</text>
+  <circle cx="76" cy="415" r="20.0" fill="url(#verawangbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="415" r="15" fill="url(#verawangbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="410.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="419.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="411.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Archetype, Not Prophecy</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Treat each placement as a tendency and symbolic theme, never a cause of any</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">specific outcome</text>
+  <path d="M 202.22749999999988 476.4 L 202.6 478.6 L 204.8 479 L 202.6 479.4 L 202.22749999999988 481.6 L 201.8 479.4 L 199.6 479 L 201.8 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="483" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 476.4 L 558.2 478.6 L 560.4 479 L 558.2 479.4 L 557.7725000000002 481.6 L 557.4 479.4 L 555.2 479 L 557.4 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

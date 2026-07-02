@@ -300,6 +300,7 @@ import { bellaHadidBirthChartEn } from "./bella-hadid-birth-chart";
 import { elliotPageBirthChartEn } from "./elliot-page-birth-chart";
 import { thylaneBlondeauBirthChartEn } from "./thylane-blondeau-birth-chart";
 import { johnDenverBirthChartEn } from "./john-denver-birth-chart";
+import { veraWangBirthChartEn } from "./vera-wang-birth-chart";
 // All articles organized by language
 
 import {
@@ -591,6 +592,7 @@ const ARTICLES_EN: WikiArticle[] = [
   elliotPageBirthChartEn,
   thylaneBlondeauBirthChartEn,
   johnDenverBirthChartEn,
+  veraWangBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
