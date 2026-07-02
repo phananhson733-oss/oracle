@@ -1,0 +1,74 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "angela-nikolau-birth-chart": {
+      "hero": {
+        "prompt": "A solitary rooftop ledge dissolving into an infinite indigo night sky, where soft gold starlight traces faint constellation arcs above a glittering city far below — the boundary between earth and cosmos blurred into one unbroken landscape, a single luminous gold point hovering where sky meets city horizon, evoking a symbolic birth-moment snapshot used as a persona mirror rather than a prediction, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Indigo night skyscape above a city horizon with a single gold luminous point evoking a birth chart as a persona lens",
+        "altZh": "深靛蓝夜空与城市地平线交融，一点柔金光芒象征星盘作为人格棱镜的意象"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Angela Nikolau's Birth Chart vs Her Sun Sign Alone: What Each Shows",
+          "titleEn": "Sun Sign Alone vs Full Birth Chart",
+          "altEn": "Side-by-side comparison of Sun sign alone versus a full birth chart showing what each reveals",
+          "columns": [
+            {
+              "nameEn": "Sun Sign Alone",
+              "linesEn": [
+                "One archetype — fast and shareable",
+                "Two people with the same Sun sign can live completely different lives",
+                "Sacrifices nuance to gain speed and simplicity"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "linesEn": [
+                "Layers Sun, Moon, rising sign, and planetary aspects",
+                "Contradictions can sit side by side — bold public face over guarded inner world",
+                "Sacrifices speed to gain depth and a more complete picture"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Angela Nikolau's Birth Chart as a Persona Lens",
+          "titleEn": "5 Steps to Read a Birth Chart as a Persona Lens",
+          "altEn": "Five-step sequence for reading a celebrity birth chart as a symbolic persona lens rather than a prediction",
+          "items": [
+            {
+              "nameEn": "Start with the Sun sign story",
+              "subEn": "Ask what Aquarius — originality, detachment, rule-bending — might look like in someone who scales rooftops for art"
+            },
+            {
+              "nameEn": "Look for a stellium",
+              "subEn": "Several planets in one sign or area signal where focus and effort tend to pile up, not a superpower"
+            },
+            {
+              "nameEn": "Read aspects as conversations",
+              "subEn": "A square suggests friction between two drives; a trine suggests ease — neither predicts an outcome on its own"
+            },
+            {
+              "nameEn": "Anchor image to placement",
+              "subEn": "Match the rooftop-daredevil persona to symbols of risk and visibility while staying honest you are reading a public image"
+            },
+            {
+              "nameEn": "Hold it loosely",
+              "subEn": "Say 'this placement tends to' or 'she might' — never 'she will.' The chart describes leanings, not fate"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
