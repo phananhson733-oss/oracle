@@ -26,7 +26,7 @@ export const johnDenverBirthChartEn: WikiArticle = {
 John Denver's birth chart is the full map of planetary placements for the folk singer born December 31, 1943, read here as **a symbolic portrait of an earth-grounded artistic temperament** rather than a fixed prediction.
 
 - Anchored by a Capricorn Sun, pointing to disciplined, long-form craft
-- Weighted toward the earth element, tying identity to land and the natural world
+- Anchored in earth through its Capricorn Sun and Mercury, tying identity to land and the natural world
 - Built for translation, turning private feeling into songs a wide audience recognizes
 
 Read as a whole, a John Denver birth chart interpretation looks past a single Sun sign and treats the placements as one interconnected pattern. This approach sits alongside a broader [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which explains why the relationships between planets matter more than any isolated symbol. In my work reading full-chart structures instead of one placement at a time, the throughline in a chart like this is usually consistency: the same themes surface across the Sun, the elements, and the major aspects. That consistency is what makes the chart worth reading closely; when a placement seems to contradict the others, it usually points to a nuance rather than a flaw in the pattern.
@@ -80,7 +80,7 @@ Shallow write-ups tend to flatten the chart in predictable ways. The common misr
 | Property | How It Works | Energy Center | How to Observe |
 |---|---|---|---|
 | Capricorn Sun | Grounds identity in discipline and long-form craft | Earth | Career-spanning output and steady work ethic |
-| Earth-weighted balance | Anchors expression in the tangible and natural world | Earth | Recurring landscape and nature imagery in the songs |
+| Capricorn Sun and Mercury | Anchor expression in the tangible and natural world | Earth | Recurring landscape and nature imagery in the songs |
 | Melodic, feeling-driven aspects | Softens structure with warmth and directness | Water and air | Emotional plainness in ballads and love songs |
 | Broad expressive reach | Turns personal feeling into shared song | Fire and air | Cross-generational, mass audience resonance |
 
