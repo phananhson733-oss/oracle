@@ -15,7 +15,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Frosted Black Base (deeper)
+        // Editorial ground scale (CSS-var-backed, flips with body.light/dark).
+        // Light: warm paper #F4EFE4 family. Dark: "night sky" #16130F family.
         space: {
           950: 'rgb(var(--space-950) / <alpha-value>)', // Main Background
           900: 'rgb(var(--space-900) / <alpha-value>)', // Secondary Background
@@ -23,20 +24,22 @@ module.exports = {
           700: 'rgb(var(--space-700) / <alpha-value>)', // Secondary Surface
           600: 'rgb(var(--space-600) / <alpha-value>)', // Border
         },
-        // Light Mode Grays (Minimal)
+        // Static warm-paper ramp (light-branch classes). 100 = paper ground,
+        // 900 = ink; aligned to the editorial system so bg-paper-100/text-paper-900
+        // equals the :root var values.
         paper: {
-          50: '#FFFFFF',
-          100: '#F6F4F0',
-          200: '#EFEAE2',
-          300: '#D8D1C5',
-          400: '#7A746B',
-          500: '#615A52',
-          600: '#4A4540',
-          700: '#2D2A26',
-          800: '#1B1A18',
-          900: '#0A0B0D',
+          50: '#FBF8F1',  // raised surface
+          100: '#F4EFE4', // paper ground
+          200: '#EBE3D4', // sunken surface
+          300: '#D8CFBF', // strong hairline
+          400: '#736A5C', // muted text (4.5:1 AA on paper #F4EFE4)
+          500: '#6B6053', // ink-60 secondary text
+          600: '#4A4238',
+          700: '#3A342B', // ink-80
+          800: '#241F18',
+          900: '#16130F', // ink
         },
-        // Text Colors (Warm Neutral)
+        // Text Colors (CSS-var-backed: ink on paper / warm white on night)
         star: {
           50: 'rgb(var(--star-50) / <alpha-value>)', // Primary text
           100: 'rgb(var(--star-100) / <alpha-value>)', // Near-primary text
@@ -44,56 +47,59 @@ module.exports = {
           300: 'rgb(var(--star-300) / <alpha-value>)', // Near-secondary text
           400: 'rgb(var(--star-400) / <alpha-value>)', // Muted text
         },
-        // Mystical Purple (Astrology & Spirituality)
+        // Mystical Purple — astrology domain tag color. Deliberately desaturated
+        // ("极弱化"): reserved for small labels/chips only, never large surfaces.
         mystic: {
-          50: '#FAF5FF',
-          100: '#F3E8FF',
-          200: '#E9D5FF',
-          300: '#D8B4FE',
-          400: '#C084FC',
-          500: '#A855F7',
-          600: '#9333EA',
-          700: '#7E22CE',
-          800: '#6B21A8',
-          900: '#581C87',
+          50: '#F8F5FB',
+          100: '#EFE9F6',
+          200: '#DFD3EC',
+          300: '#C4AFDB',
+          400: '#A98FC7',
+          500: '#9273B8',
+          600: '#7B5CA3',
+          700: '#674E89',
+          800: '#533F70',
+          900: '#413158',
         },
-        // Dark Gold Accent (refined scale)
+        // Aged-gold accent（陈金）。DEFAULT/hover are CSS-var-driven so the accent
+        // lifts one step on night ground (#9A7B3F ↔ #C6A15E) without per-site edits.
         accent: {
-          100: '#F4E8CF',
-          200: '#E7D2AA',
-          300: '#D5B97D',
-          400: '#C6A062',
-          500: '#B58A52',
-          600: '#9F7645',
-          700: '#7F5E36',
-          DEFAULT: '#C6A062',
-          hover: '#D4B47A',
-          light: '#F2E4C6',
-          glow: 'rgba(198, 160, 98, 0.28)',
+          100: '#EFE4CC',
+          200: '#DFCCA3',
+          300: '#C6A15E',
+          400: '#AE8C4D',
+          500: '#9A7B3F',
+          600: '#7F6534',
+          700: '#64502A',
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          hover: 'rgb(var(--accent-hover) / <alpha-value>)',
+          light: '#EFE4CC',
+          glow: 'rgba(154, 123, 63, 0.22)',
         },
-        // Gold Alias for App.tsx compatibility
+        // Gold Alias for App.tsx compatibility (aged-gold ramp)
         gold: {
-          100: '#F4E8CF',
-          200: '#E7D2AA',
-          300: '#D5B97D',
-          400: '#C6A062',
-          500: '#B58A52',
-          600: '#9F7645',
-          700: '#7F5E36',
-          800: '#5E442B',
+          100: '#EFE4CC',
+          200: '#DFCCA3',
+          300: '#C6A15E',
+          400: '#AE8C4D',
+          500: '#9A7B3F',
+          600: '#7F6534',
+          700: '#64502A',
+          800: '#4A3B1F',
         },
-        // Psychology Blue (Professional & Trust)
+        // Psychology Blue — CBT/psychology domain tag color, desaturated to a
+        // dusty steel blue; small labels/chips only.
         psycho: {
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA',
-          500: '#3B82F6',
-          600: '#2563EB',
-          700: '#1D4ED8',
-          800: '#1E40AF',
-          900: '#1E3A8A',
+          50: '#F2F6FA',
+          100: '#E3EBF4',
+          200: '#C9D8E9',
+          300: '#A3BCD8',
+          400: '#7C97C8',
+          500: '#5F7FB4',
+          600: '#4B6AA0',
+          700: '#3E5A8A',
+          800: '#334B73',
+          900: '#2A3D5E',
         },
         // Semantic Colors (improved for psychology + astrology)
         success: '#10B981', // Green - positive, growth
@@ -104,17 +110,34 @@ module.exports = {
       fontFamily: {
         sans: ['"Readex Pro"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', '"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', '"Noto Sans SC"', 'sans-serif'],
         serif: ['"Cormorant Garamond"', '"Songti SC"', '"STSong"', '"SimSun"', '"Noto Serif SC"', 'serif'],
+        // Reading serif for long-form surfaces (wiki/articles/reports) only;
+        // tool/form surfaces stay on sans. See COLOR_SYSTEM_GUIDE.md §字体.
+        reading: ['"Newsreader"', 'Georgia', '"Songti SC"', '"STSong"', '"Noto Serif SC"', 'serif'],
         mono: ['"IBM Plex Mono"', '"PingFang SC"', '"Microsoft YaHei"', 'monospace'],
       },
-      backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #C6A062 0%, #D4B47A 100%)',
-        'gradient-dark': 'linear-gradient(180deg, rgba(5,5,6,0) 0%, #050506 100%)',
-        'gradient-glass': 'radial-gradient(circle at 50% 0%, rgba(198,160,98,0.06), transparent 62%)',
+      // Print-flat editorial: near-square corners everywhere; only rounded-full
+      // stays a pill (kept for specific CTAs/avatars by design).
+      borderRadius: {
+        DEFAULT: '2px',
+        sm: '2px',
+        md: '2px',
+        lg: '2px',
+        xl: '2px',
+        '2xl': '2px',
+        '3xl': '2px',
       },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, #9A7B3F 0%, #AE8C4D 100%)',
+        'gradient-dark': 'linear-gradient(180deg, rgba(22,19,15,0) 0%, #16130F 100%)',
+        'gradient-glass': 'radial-gradient(circle at 50% 0%, rgba(154,123,63,0.05), transparent 62%)',
+      },
+      // Editorial elevation: line, not shadow. glow/card intentionally neutralized;
+      // only overlays (drawer/modal) may cast a soft shadow.
       boxShadow: {
-        glow: '0 0 22px -6px rgba(198, 160, 98, 0.28)',
-        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.2)',
-        card: '0 12px 30px -18px rgba(0, 0, 0, 0.7)',
+        glow: 'none',
+        sm: '0 1px 2px 0 rgba(22, 19, 15, 0.08)',
+        card: 'none',
+        drawer: '0 24px 70px -10px rgba(22, 19, 15, 0.2)',
       },
       animation: {
         'fade-in': 'fadeIn 0.4s ease-out forwards',

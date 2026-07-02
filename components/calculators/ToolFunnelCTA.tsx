@@ -48,8 +48,10 @@ interface ToolFunnelCTAProps {
   className?: string;
 }
 
+// 实心墨 CTA（bg-star-50/text-space-950 双模式自动反转：light 墨底纸字 / dark 暖白底夜空字），
+// mono 大写字距 + 尾随箭头是编辑部排字指纹；无渐变、无 glow、无 scale 弹跳。
 const PRIMARY_CLASS =
-  "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-2xl bg-gradient-primary px-6 py-3 text-sm font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:scale-[1.01] hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper-100 dark:focus-visible:ring-offset-space-950 motion-reduce:transition-none";
+  "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-2xl bg-star-50 px-6 py-3 text-sm font-mono font-medium uppercase tracking-[0.12em] text-space-950 transition-opacity duration-300 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper-100 dark:focus-visible:ring-offset-space-950 motion-reduce:transition-none";
 
 /**
  * Branded funnel CTA: turns a dead-end tool result into a path into the real
@@ -79,7 +81,7 @@ export const ToolFunnelCTA: React.FC<ToolFunnelCTAProps> = ({
 
   return (
     <div
-      className={`rounded-2xl border border-accent/25 bg-accent/[0.06] p-5 sm:p-6 dark:bg-accent/[0.08] ${className}`}
+      className={`rounded-2xl border border-accent/20 bg-accent/[0.05] p-5 sm:p-6 dark:bg-accent/[0.07] ${className}`}
     >
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex-1">
@@ -110,7 +112,7 @@ export const ToolFunnelCTA: React.FC<ToolFunnelCTAProps> = ({
         </div>
       </div>
       {secondaryLinks && secondaryLinks.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-paper-300/50 pt-4 dark:border-gold-500/10">
+        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-paper-900/10 pt-4 dark:border-star-50/10">
           {secondaryLinks.map((l) => (
             <Link
               key={l.href}

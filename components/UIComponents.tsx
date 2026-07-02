@@ -16,6 +16,11 @@ import { TRANSLATIONS, ASTRO_DICTIONARY } from "../constants";
 import { OracleLoading } from "./OracleLoading";
 import { useAuth } from "../contexts/AuthContext";
 import { trackEvent, setUserProperties } from "../services/analytics";
+import {
+  THEME_META_COLORS,
+  readStoredTheme,
+  writeStoredTheme,
+} from "../services/themeStorage";
 import { extractLangFromPath, stripLangPrefix } from "../hooks/useLangPath";
 
 // --- Theme Context ---
@@ -27,25 +32,49 @@ export interface ThemeContextType {
 }
 
 export const ThemeContext = createContext<ThemeContextType>({
-  theme: "dark",
+  theme: "light",
   toggleTheme: () => {},
 });
 export const useTheme = () => useContext(ThemeContext);
 
+// 主题类名成对镜像 index.html 的 pre-paint 脚本与静态 body class；改动需三处同步。
+const THEME_BODY_CLASSES: Record<Theme, readonly string[]> = {
+  light: ["light", "bg-paper-100", "text-paper-900"],
+  dark: ["dark", "bg-space-950", "text-star-50"],
+};
+
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem("astro_theme") as Theme) || "dark",
-  );
+  // 读写统一走 services/themeStorage（严格归一化 + storage 禁用防护）；
+  // light 是品牌默认（与 index.html pre-paint 脚本一致）。
+  const [theme, setTheme] = useState<Theme>(readStoredTheme);
   useEffect(() => {
-    document.body.className = `${theme} ${theme === "dark" ? "bg-space-950 text-star-50" : "bg-paper-100 text-paper-900"}`;
-    localStorage.setItem("astro_theme", theme);
+    // classList 手术式增删而非整串覆写：保住 body 上的 loading-fonts/fonts-loaded
+    // 首帧可见性闸门与 selection:* 类（整串覆写会在字体就绪前拆掉闸门）。
+    const c = document.body.classList;
+    c.remove(...THEME_BODY_CLASSES.light, ...THEME_BODY_CLASSES.dark);
+    c.add(...THEME_BODY_CLASSES[theme]);
+    // 浏览器 chrome 颜色跟随主题（paper / night-sky），与 index.html 静态值保持同步。
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute("content", THEME_META_COLORS[theme]);
+    }
   }, [theme]);
   const toggleTheme = () => {
     const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
-    trackEvent("theme_changed", { from_theme: theme, to_theme: next });
+    // 只在显式切换时持久化：挂载 effect 里无条件 setItem 会让首访就写入
+    // "light"，摧毁 v2 键「显式选择」的语义（那正是弃用旧键的原因）。
+    writeStoredTheme(next);
+    // theme_key/default_theme 标记 v2 键迁移与品牌默认翻转，供分析侧区分
+    // 「新默认」与「用户显式选择」两个时代的数据（默认翻转日 2026-07）。
+    trackEvent("theme_changed", {
+      from_theme: theme,
+      to_theme: next,
+      theme_key: "v2",
+      default_theme: "light",
+    });
     setUserProperties({ theme: next });
   };
   return (
@@ -206,7 +235,8 @@ export const useUserProfile = () => {
   return { user, saveUser };
 };
 
-// --- Design Tokens & styles (Linear Black x Gold) ---
+// --- Design Tokens & styles (Editorial Paper x Ink，见 COLOR_SYSTEM_GUIDE.md) ---
+// 发丝线（ink/warm-white 低透明度 border）是主力分隔件；默认无阴影、无毛玻璃。
 
 const getStyles = (theme: Theme) => ({
   // Page Background
@@ -215,34 +245,30 @@ const getStyles = (theme: Theme) => ({
       ? "bg-space-950 text-star-50"
       : "bg-paper-100 text-paper-900",
 
-  // Cards (Frosted Surfaces)
+  // Cards (print-flat surfaces, hairline border)
   card:
     theme === "dark"
-      ? "bg-space-900/60 border border-space-700/80 shadow-card backdrop-blur-lg"
-      : "bg-paper-100/85 border border-paper-300/80 shadow-sm backdrop-blur",
-  cardLeft:
-    theme === "dark" ? "!border-l-space-700/40" : "!border-l-paper-300/40",
-  cardAccent:
-    theme === "dark" ? "before:bg-accent/60" : "before:bg-gold-500/50",
+      ? "bg-space-900/70 border border-star-50/10"
+      : "bg-paper-50/80 border border-paper-900/10",
   // Interactive Elements Hover
   hover:
     theme === "dark"
-      ? "hover:border-accent/50 hover:bg-space-900/70"
-      : "hover:border-accent/40 hover:bg-paper-100/70",
+      ? "hover:border-accent/40 hover:bg-space-900"
+      : "hover:border-accent/40 hover:bg-paper-50",
 
   // Typography
   heading: theme === "dark" ? "text-star-50" : "text-paper-900",
   body: theme === "dark" ? "text-star-200" : "text-paper-600",
   muted: theme === "dark" ? "text-star-400" : "text-paper-400",
 
-  // Borders - 使用温暖的金色调分割线
-  divider: theme === "dark" ? "border-gold-500/15" : "border-paper-300",
+  // Borders - 发丝分隔线（墨 / 暖白低透明度）
+  divider: theme === "dark" ? "border-star-50/15" : "border-paper-900/15",
 
   // Inputs
   input:
     theme === "dark"
-      ? "bg-space-900/70 border border-gold-500/40 text-star-50 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-star-400/60"
-      : "bg-paper-100/85 border border-paper-400 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-paper-400",
+      ? "bg-space-900/70 border border-star-50/20 text-star-50 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-star-400/60"
+      : "bg-paper-50/70 border border-paper-900/20 text-paper-900 focus:border-accent focus:ring-1 focus:ring-accent/40 placeholder-paper-400",
 });
 
 // --- Layout & wrappers ---
@@ -258,11 +284,6 @@ export const Container: React.FC<{
     <div
       className={`min-h-screen w-full transition-colors duration-200 ${s.container}`}
     >
-      {/* Simplified: Single subtle glow for depth */}
-      {theme === "dark" && (
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/3 blur-[120px] rounded-full pointer-events-none" />
-      )}
-
       <div
         className={`relative w-full max-w-7xl mx-auto min-h-screen px-4 md:px-8 py-8 md:py-16 pt-12 md:pt-12 ${className}`}
       >
@@ -402,26 +423,27 @@ export const ActionButton: React.FC<{
   };
 
   const variants = {
-    // Primary: Warm Milky Gold Gradient with DARK TEXT for contrast.
+    // Primary: 实心墨按钮（编辑部签名件）。bg-star-50/text-space-950 走 CSS 变量，
+    // light = 墨底纸字，dark = 暖白底夜空字，双模式自动反转；mono 大写字距是排字指纹。
     primary:
-      "bg-gradient-primary text-space-950 hover:opacity-95 font-semibold shadow-glow border border-transparent",
+      "bg-star-50 text-space-950 hover:opacity-90 font-mono font-medium uppercase tracking-[0.12em] border border-transparent",
 
-    // Secondary: Border + Hover Gold Tint
+    // Secondary: 发丝线描边 + hover 底面微升
     secondary:
       theme === "dark"
-        ? "bg-space-800/70 text-star-50 hover:bg-space-700/70 hover:border-accent/60 border border-gold-500/20"
-        : "bg-paper-100/85 text-paper-900 hover:bg-paper-100 hover:border-accent/50 border border-paper-300",
+        ? "bg-transparent text-star-50 hover:bg-space-900 hover:border-star-50/40 border border-star-50/20"
+        : "bg-transparent text-paper-900 hover:bg-paper-50 hover:border-paper-900/40 border border-paper-900/20",
 
     // Outline: Transparent + Border
     outline:
       theme === "dark"
-        ? "bg-transparent text-star-50 border border-gold-500/20 hover:border-accent/60"
-        : "bg-transparent text-paper-900 border border-paper-300 hover:border-accent/50",
+        ? "bg-transparent text-star-50 border border-star-50/20 hover:border-accent/60"
+        : "bg-transparent text-paper-900 border border-paper-900/20 hover:border-accent/60",
 
     // Ghost: Text Only + Hover Background
     ghost:
       theme === "dark"
-        ? "bg-transparent hover:bg-space-700/50 text-accent hover:text-accent-hover border-none shadow-none"
+        ? "bg-transparent hover:bg-space-900/70 text-accent hover:text-accent-hover border-none shadow-none"
         : "bg-transparent hover:bg-paper-200/60 text-accent hover:text-accent-hover border-none shadow-none",
   };
 
@@ -460,8 +482,8 @@ export const Chip: React.FC<{
     "bg-accent/10 text-accent border-accent/70 font-semibold";
   const unselectedStyle =
     theme === "dark"
-      ? "bg-transparent text-star-400 border-gold-500/20 hover:border-accent/50 hover:text-star-200"
-      : "bg-transparent text-paper-400 border-paper-300 hover:border-accent/50 hover:text-paper-900";
+      ? "bg-transparent text-star-400 border-star-50/15 hover:border-accent/50 hover:text-star-200"
+      : "bg-transparent text-paper-500 border-paper-900/15 hover:border-accent/50 hover:text-paper-900";
 
   return (
     <button

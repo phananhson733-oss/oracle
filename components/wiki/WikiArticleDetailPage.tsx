@@ -758,7 +758,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         </header>
 
         {/* Article content with error handling */}
-        <article className="prose-custom pt-2">
+        <article className="prose-custom pt-2 font-reading">
           <SafeMarkdownRenderer
             content={article.content}
             theme={theme}

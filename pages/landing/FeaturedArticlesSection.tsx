@@ -91,7 +91,7 @@ const FeaturedArticlesSection: React.FC = () => {
         </p>
         <h2
           id="featured-articles-heading"
-          className={`font-mono font-medium text-3xl md:text-4xl leading-tight tracking-tight ${
+          className={`font-serif font-medium text-4xl md:text-5xl leading-tight tracking-[-0.015em] ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
@@ -111,7 +111,7 @@ const FeaturedArticlesSection: React.FC = () => {
               key={article.slug}
               className={`group flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-xl ${
                 isDark
-                  ? "border-gold-500/15 bg-space-900/40"
+                  ? "border-star-50/15 bg-space-900/40"
                   : "border-paper-300 bg-paper-200/50"
               }`}
             >

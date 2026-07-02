@@ -19,6 +19,7 @@ import {
   getAccessToken,
 } from '../services/authClient';
 import { setUserId, setUserProperties, trackEvent } from '../services/analytics';
+import { readStoredTheme } from '../services/themeStorage';
 import { getLandingUtm } from '../services/landingUtm';
 import { FUNNEL_EVENTS } from '../services/funnelEvents';
 import { FREE_MODE, LOGIN_GATE_MODE } from '../constants';
@@ -229,7 +230,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       accuracyLevel: localProfile.accuracyLevel || 'exact',
     };
 
-    const savedTheme = localStorage.getItem('astro_theme') as 'dark' | 'light' || 'dark';
+    const savedTheme = readStoredTheme();
     const savedLang = localStorage.getItem('astro_lang') as 'zh' | 'en' || 'zh';
     const preferences = {
       theme: savedTheme,

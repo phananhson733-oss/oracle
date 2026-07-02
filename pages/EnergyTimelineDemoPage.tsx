@@ -79,7 +79,7 @@ const EnergyTimelineDemoPage: React.FC = () => {
         </div>
         <button
           onClick={() => openLoginModal?.()}
-          className="min-h-[44px] shrink-0 rounded-xl bg-gradient-primary px-5 py-2.5 text-sm font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:scale-[1.01] hover:opacity-95 motion-reduce:transition-none"
+          className="min-h-[44px] shrink-0 rounded-xl bg-star-50 px-5 py-2.5 text-sm font-semibold text-space-950 transition-all duration-300 ease-in-out hover:opacity-95 motion-reduce:transition-none"
         >
           {d.cta}
         </button>

@@ -161,7 +161,7 @@ const ToolsGridSection: React.FC = () => {
         </p>
         <h2
           id="tools-heading"
-          className={`font-mono font-medium text-2xl md:text-4xl leading-tight tracking-tight ${
+          className={`font-serif font-medium text-3xl md:text-5xl leading-tight tracking-[-0.015em] ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
@@ -183,7 +183,7 @@ const ToolsGridSection: React.FC = () => {
               type="button"
               onClick={() => handleOpen(tool)}
               aria-label={`${tool.title} — ${openLabel}`}
-              className={`rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-100 dark:bg-space-900/40 p-8 transition-all duration-300 hover:border-accent/40 hover:shadow-xl text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+              className={`rounded-2xl border border-paper-300 dark:border-star-50/15 bg-paper-100 dark:bg-space-900/40 p-8 transition-all duration-300 hover:border-accent/40 hover:bg-paper-50 dark:hover:bg-space-900 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                 isDark
                   ? "focus-visible:ring-offset-space-950"
                   : "focus-visible:ring-offset-paper-100"

@@ -188,7 +188,7 @@ const PricingPage: React.FC = () => {
                   {p?.pro_title || "Pro"} · {p?.yearly_label || "Yearly"}
                 </h3>
                 <span
-                  className={`text-xs font-semibold px-2 py-1 rounded-full bg-gradient-primary text-space-950`}
+                  className={`text-xs font-semibold px-2 py-1 rounded-full bg-star-50 text-space-950`}
                 >
                   {p?.pro_badge || "Best value"}
                 </span>

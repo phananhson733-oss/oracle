@@ -59,7 +59,7 @@ const WikiChartCTA: React.FC = () => {
         <Link
           to={toolHref}
           onClick={handleClick}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-space-950 font-bold text-sm hover:from-gold-500 hover:to-gold-400 transition-all shadow-lg shadow-gold-500/20"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-star-50 text-space-950 font-bold text-sm hover:opacity-90 transition-opacity"
         >
           {wiki?.cta_button || "Get Started Free"}
         </Link>

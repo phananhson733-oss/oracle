@@ -166,8 +166,8 @@ export const PerspectiveCard: React.FC<{
         : "bg-[#FAF6EF] text-paper-900";
     const bubbleGreen =
       theme === "dark"
-        ? "bg-[#7BD870] text-space-950"
-        : "bg-[#95EC69] text-space-950";
+        ? "bg-[#7BD870] text-paper-900"
+        : "bg-[#95EC69] text-paper-900";
     const bubbleBorder =
       theme === "dark" ? "border-gold-500/15" : "border-paper-300";
 

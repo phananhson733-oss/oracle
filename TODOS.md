@@ -42,3 +42,14 @@
 **Also separately tracked:**
 - CLS fallback heights in `pages/landing/LandingPage.tsx` under-reserved by 13-18rem on several sections. Dev mode masks (instant chunks); prod cold-cache will jump. Defer to landing cleanup PR.
 - `/api/natal/chart` is GET with PII in URL params. Even with `skipCache:true` from landing, prod server access logs / APM still capture birth date/time/city. Fix: migrate to POST with body. Affects all callers, not just landing. Larger refactor.
+
+## Editorial restyle — Phase-C 清理欠账（post PR #315）
+**What:** 编辑部纸墨换装后的存量清理：~79 个文件手写 theme ternaries 中的旧暗色搭配（border-gold-500/*、shadow-glow/hover:scale 残留约 25+ 处）、DetailModal/NotFound/ReportViewPage 内部（左侧色条/金渐变/玻璃卡）、CBTWizard 滑条退役色值（#C6A062/#9F7645/#1a1d23）、ColorSystemDemo 重写、INK_CTA class 5 处副本收敛为共享常量、三个 build 脚本共享 brand-palette 模块 + 调色板一致性测试、@media print 样式（dark 主题打印近乎不可见）、logo.png 重渲、OG 社媒抓取缓存的旧暗色卡片窗口期。
+**Why:** /review (PR #315) 8 信源交叉评审确认的非阻塞欠账；token 层已翻转，这些是逐面打磨项。
+**Status:** Tracked; 按 COLOR_SYSTEM_GUIDE.md 组件迁移清单分批执行。
+
+## Editorial restyle — /review red-team 遗留决策项（post PR #315）
+1. **邮件模板未换肤** — backend/src/services/emailService.ts 全部交易邮件+周报仍是旧暗色 (#0f0f1a/#d4af37)；周报每周一 LIVE 群发，收件人从暗金邮件点进纸墨站点。需整体移植纸墨调色板并在暗色邮件客户端验证。
+2. **/embed/* 主题不受宿主控制** — 白标 iframe 随访客 astro_theme_v2 翻主题（宿主页面看到访客相关的部件配色）；需 ?theme= 参数或 embed 路由跳过主题读取，让宿主决定。
+3. **ChartShareCard/Modal 导出调色板漂移** — 分享 PNG 混合旧冷暗 chrome (#0a0e17/#d4b574) 与新暖 token 轮盘 tint；ChartShareModal 还有第二处 body.className 整串覆写。属图表豁免邻区，需单独拍板对齐或 re-bless。
+4. **全站 light 分支对比度审计** — dark 默认时代 light 分支欠测，翻转后它是 100% 匿名用户的默认；需跑一次 axe/Stark 全路由扫描（本次 /review 已修 27+ 处静态底×变量字组合，但只覆盖 diff+red-team 枚举面）。

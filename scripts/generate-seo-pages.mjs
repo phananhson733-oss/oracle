@@ -234,6 +234,7 @@ const buildHead = ({
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(desc)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(pageOgImage)}" />`,
+    `<meta name="theme-color" content="#F4EFE4" />`,
   ];
 
   if (ADSENSE_HEAD_TAG) headParts.push(ADSENSE_HEAD_TAG);
@@ -245,20 +246,20 @@ const buildHead = ({
   headParts.push(`
 <style>
   :root { color-scheme: light; }
-  body { font-family: ui-serif, Georgia, 'Times New Roman', serif; margin: 0; padding: 48px 20px; background: #f6f4f0; color: #1b1b1b; }
+  body { font-family: ui-serif, Georgia, 'Times New Roman', serif; margin: 0; padding: 48px 20px; background: #F4EFE4; color: #16130F; }
   main { max-width: 780px; margin: 0 auto; }
   h1 { font-size: 2.25rem; margin: 0 0 1rem; }
   p { line-height: 1.6; font-size: 1rem; }
   article.content { margin-top: 1.5rem; }
   article.content h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
-  article.content h3 { font-size: 1.2rem; margin: 1.9rem 0 0.5rem; padding-left: 0.85rem; border-left: 3px solid rgba(127, 94, 54, 0.5); color: #7f5e36; }
-  article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid #c9bfaf; color: #4a4540; }
+  article.content h3 { font-size: 1.2rem; margin: 1.9rem 0 0.5rem; padding-left: 0.85rem; border-left: 2px solid rgba(154, 123, 63, 0.5); color: #7F6534; }
+  article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 2px solid rgba(22, 19, 15, 0.3); color: #3A342B; }
   article.content li { line-height: 1.6; }
-  .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #4a4540; }
-  a { color: #7f5e36; text-decoration: none; border-bottom: 1px solid rgba(127, 94, 54, 0.35); }
-  a:hover { color: #5f442b; }
+  .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #6B6053; }
+  a { color: #7F6534; text-decoration: none; border-bottom: 1px solid rgba(154, 123, 63, 0.35); }
+  a:hover { color: #64502A; }
   .cta { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
-  .safety-footer { margin-top: 2.5rem; padding: 1rem 1.25rem; border: 1px solid #d8cfbf; border-radius: 12px; background: #efeae1; font-size: 0.9rem; color: #4a4540; }
+  .safety-footer { margin-top: 2.5rem; padding: 1rem 1.25rem; border: 1px solid rgba(22, 19, 15, 0.16); border-radius: 2px; background: #FBF8F1; font-size: 0.9rem; color: #3A342B; }
   .safety-footer p { margin: 0 0 0.5rem; line-height: 1.55; }
   .safety-footer ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
   .safety-footer li { line-height: 1.6; }
@@ -603,25 +604,26 @@ const buildLandingV2Html = (lang) => {
     `<meta name="twitter:title" content="${escapeHtml(copy.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(ogImageUrl)}" />`,
+    `<meta name="theme-color" content="#F4EFE4" />`,
     `<script type="application/ld+json">${safeJsonLd(schema)}</script>`,
     `
 <style>
   :root { color-scheme: light; }
-  body { font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #f6f4f0; color: #1b1b1b; }
+  body { font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #F4EFE4; color: #16130F; }
   main { max-width: 980px; margin: 0 auto; padding: 64px 24px; }
   .hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; }
-  .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; margin: 0 0 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
-  .hero .accent { color: #b8893d; }
-  .hero p { font-size: 1.15rem; line-height: 1.6; margin: 0 0 0.5rem; color: #4a4540; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; margin: 0 0 1.25rem; font-weight: 500; letter-spacing: -0.015em; }
+  .hero .accent { color: #9A7B3F; font-style: italic; }
+  .hero p { font-size: 1.15rem; line-height: 1.6; margin: 0 0 0.5rem; color: #3A342B; }
   .hero .cta-row { margin-top: 2rem; display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-  .cta-primary { display: inline-block; background: #b8893d; color: #f6f4f0; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; text-decoration: none; border: none; }
-  .cta-secondary { color: #1b1b1b; text-decoration: underline; text-underline-offset: 4px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.95rem; }
-  .trust { margin-top: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6e6862; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .cta-primary { display: inline-block; background: #16130F; color: #F4EFE4; padding: 14px 28px; border-radius: 2px; font-weight: 500; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: none; }
+  .cta-secondary { color: #16130F; text-decoration: underline; text-underline-offset: 4px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.95rem; }
+  .trust { margin-top: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6053; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; }
   .sections { margin-top: 4rem; display: grid; gap: 1.5rem; }
-  .section-card { padding: 1.5rem 0; border-top: 1px solid rgba(27,27,27,0.08); }
+  .section-card { padding: 1.5rem 0; border-top: 1px solid rgba(22,19,15,0.16); }
   .section-card h2 { font-size: 1.5rem; margin: 0 0 0.5rem; }
-  .section-card p { font-size: 1rem; line-height: 1.6; margin: 0; color: #4a4540; }
-  .footer-note { margin-top: 3rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.8rem; color: #6e6862; }
+  .section-card p { font-size: 1rem; line-height: 1.6; margin: 0; color: #3A342B; }
+  .footer-note { margin-top: 3rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.8rem; color: #6B6053; }
 </style>
 `,
   ];

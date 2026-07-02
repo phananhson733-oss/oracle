@@ -262,7 +262,7 @@ const ToolsHubPage: React.FC = () => {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to={`/${language}/birth-chart-calculator`}
-              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-gradient-primary px-5 py-3 text-sm font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:scale-[1.01] hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper-100 dark:focus-visible:ring-offset-space-950 motion-reduce:transition-none"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-star-50 px-5 py-3 text-sm font-semibold text-space-950 transition-all duration-300 ease-in-out hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-paper-100 dark:focus-visible:ring-offset-space-950 motion-reduce:transition-none"
             >
               {copy.primaryCta}
               <span aria-hidden="true" className="ml-2">

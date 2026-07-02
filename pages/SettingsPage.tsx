@@ -342,7 +342,7 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                             <ActionButton
                                 onClick={() => openUpgradeModal()}
                                 size="sm"
-                                className="bg-amber-500 hover:bg-amber-400 text-space-950 border-amber-500 whitespace-nowrap"
+                                className="whitespace-nowrap"
                             >
                                 {language === 'zh' ? '立即续期' : 'Renew Now'}
                             </ActionButton>

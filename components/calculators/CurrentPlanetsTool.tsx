@@ -372,7 +372,7 @@ export const CurrentPlanetsTool: React.FC = () => {
           <button
             type="submit"
             disabled={transitState === "loading"}
-            className="mt-5 min-h-[44px] w-full rounded-xl bg-gradient-primary py-3 font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 motion-reduce:transition-none"
+            className="mt-5 min-h-[44px] w-full rounded-xl bg-star-50 py-3 font-semibold text-space-950 transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 motion-reduce:transition-none"
           >
             {transitState === "loading"
               ? lang === "zh"

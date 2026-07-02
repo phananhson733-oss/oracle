@@ -70,8 +70,8 @@ const EmptyState: React.FC<EmptyStateProps> = ({ onCreateFirst }) => {
 
           {/* Button content */}
           <div className="relative flex items-center gap-3">
-            <PenLine className="w-4 h-4 text-space-950" strokeWidth={2.5} />
-            <span className="text-space-950 font-bold text-sm tracking-wide">
+            <PenLine className="w-4 h-4 text-paper-900" strokeWidth={2.5} />
+            <span className="text-paper-900 font-bold text-sm tracking-wide">
               {t.journal.empty_cta}
             </span>
           </div>

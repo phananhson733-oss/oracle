@@ -234,7 +234,7 @@ const ProfileSelectView: React.FC<ProfileSelectViewProps> = ({
                   >
                     <button
                       type="button"
-                      className={`w-7 h-7 rounded-full border flex items-center justify-center text-xs font-bold uppercase transition-colors ${selected ? "bg-gold-500 border-gold-500 text-space-950" : theme === "dark" ? "border-gold-500/15 text-space-600 hover:border-gold-500/60" : "border-paper-300 text-paper-400 hover:border-gold-500/60"}`}
+                      className={`w-7 h-7 rounded-full border flex items-center justify-center text-xs font-bold uppercase transition-colors ${selected ? "bg-star-50 border-transparent text-space-950" : theme === "dark" ? "border-gold-500/15 text-space-600 hover:border-gold-500/60" : "border-paper-300 text-paper-400 hover:border-gold-500/60"}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleSelectProfile(p);
@@ -251,7 +251,7 @@ const ProfileSelectView: React.FC<ProfileSelectViewProps> = ({
                           </span>
                         )}
                         {selectedSlot && (
-                          <span className="text-xs uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-gold-500 text-space-950">
+                          <span className="text-xs uppercase font-bold tracking-widest px-2 py-0.5 rounded-full bg-accent-200 text-paper-900">
                             {language === "zh"
                               ? `${selectedSlot}位`
                               : `Person ${selectedSlot}`}

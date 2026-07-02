@@ -507,7 +507,7 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
         <button
           type="submit"
           disabled={state === "loading"}
-          className="w-full rounded-xl bg-gradient-primary py-3 font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 min-h-[44px] motion-reduce:transition-none"
+          className="w-full rounded-xl bg-star-50 py-3 font-semibold text-space-950 transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 min-h-[44px] motion-reduce:transition-none"
         >
           {state === "loading"
             ? lang === "zh"

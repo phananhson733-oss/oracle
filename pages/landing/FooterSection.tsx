@@ -88,7 +88,7 @@ const FooterSection: React.FC = () => {
       aria-label="Site footer"
       className={`w-full border-t ${
         isDark
-          ? "border-gold-500/10 bg-space-950"
+          ? "border-star-50/10 bg-space-950"
           : "border-paper-300/40 bg-paper-100"
       }`}
     >
@@ -123,7 +123,7 @@ const FooterSection: React.FC = () => {
         <div
           className={`mt-14 pt-6 border-t flex flex-col sm:flex-row sm:items-center sm:flex-wrap gap-3 text-xs ${
             isDark
-              ? "border-gold-500/10 text-star-400"
+              ? "border-star-50/10 text-star-400"
               : "border-paper-300/40 text-paper-500"
           }`}
         >

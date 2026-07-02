@@ -87,7 +87,7 @@ const CosmicWeatherSection: React.FC = () => {
 
   const positions = data ? sortPositions(data.positions) : [];
   const showSkeleton = loading && !data;
-  const rowBorder = isDark ? "border-gold-500/10" : "border-paper-300/30";
+  const rowBorder = isDark ? "border-star-50/10" : "border-paper-300/30";
   const nameColor = isDark ? "text-star-50" : "text-paper-900";
   const valueColor = isDark ? "text-star-200" : "text-paper-700";
   const subtleColor = isDark ? "text-star-400" : "text-paper-500";
@@ -98,7 +98,7 @@ const CosmicWeatherSection: React.FC = () => {
       aria-labelledby="today-heading"
       className={`w-full py-20 scroll-mt-16 border-y ${
         isDark
-          ? "border-gold-500/10 bg-space-950"
+          ? "border-star-50/10 bg-space-950"
           : "border-paper-300/60 bg-paper-100"
       }`}
     >
@@ -110,7 +110,7 @@ const CosmicWeatherSection: React.FC = () => {
         </p>
         <h2
           id="today-heading"
-          className={`font-mono font-medium text-2xl md:text-4xl leading-tight tracking-tight ${nameColor}`}
+          className={`font-serif font-medium text-3xl md:text-5xl leading-tight tracking-[-0.015em] ${nameColor}`}
         >
           {landing.today_title || "Where the planets are right now."}
         </h2>

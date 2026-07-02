@@ -251,8 +251,8 @@ const WikiSyntheticaPage: React.FC = () => {
                 transition-all duration-300 ease-out
                 ${isCompleted
                   ? (theme === 'dark'
-                    ? 'bg-gradient-to-br from-gold-500 to-gold-600 text-space-950 shadow-[0_0_12px_rgba(212,175,55,0.5)]'
-                    : 'bg-gradient-to-br from-gold-500 to-gold-600 text-space-950 shadow-md')
+                    ? 'bg-gradient-to-br from-gold-500 to-gold-600 text-paper-900 shadow-[0_0_12px_rgba(212,175,55,0.5)]'
+                    : 'bg-gradient-to-br from-gold-500 to-gold-600 text-paper-900 shadow-md')
                   : isCurrent
                     ? (theme === 'dark'
                       ? 'bg-space-800 border-2 border-gold-400 text-gold-400 shadow-[0_0_15px_rgba(212,175,55,0.4)]'
@@ -388,8 +388,8 @@ const WikiSyntheticaPage: React.FC = () => {
                 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
                 cursor-pointer
                 ${theme === 'dark'
-                  ? 'bg-gradient-to-r from-gold-500 via-gold-400 to-mystic-500 text-space-950 shadow-[0_4px_20px_rgba(212,175,55,0.4)]'
-                  : 'bg-gradient-to-r from-gold-500 to-gold-600 text-space-950 shadow-lg'
+                  ? 'bg-gradient-to-r from-gold-500 via-gold-400 to-mystic-500 text-paper-900 shadow-[0_4px_20px_rgba(212,175,55,0.4)]'
+                  : 'bg-gradient-to-r from-gold-500 to-gold-600 text-paper-900 shadow-lg'
                 }
               `}
             >

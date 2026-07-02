@@ -127,7 +127,7 @@ const HeroSection: React.FC = () => {
                 .filter(Boolean)
                 .join(" ") + (landing.hero_title_part3 ?? ".")
             }
-            className={`font-mono font-medium leading-[1.08] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl ${
+            className={`font-serif font-medium leading-[1.06] tracking-[-0.015em] text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${
               isDark ? "text-star-50" : "text-paper-900"
             }`}
           >
@@ -136,16 +136,17 @@ const HeroSection: React.FC = () => {
             </span>
             <span aria-hidden="true" className="block">
               {landing.hero_title_part2 || "modern"}{" "}
-              <span className="text-accent">
+              <span className="text-accent italic">
                 {landing.hero_emphasis || "psychology"}
               </span>
               {landing.hero_title_part3 || "."}
             </span>
           </h1>
 
-          {/* Sub */}
+          {/* Sub — mt-8 gives the serif descenders room (Cormorant descender
+              clash with the subtitle was why this hero was mono before). */}
           <p
-            className={`mt-6 max-w-2xl text-lg md:text-xl leading-relaxed ${
+            className={`mt-8 max-w-2xl text-lg md:text-xl leading-relaxed ${
               isDark ? "text-star-200" : "text-paper-700"
             }`}
           >
@@ -158,7 +159,7 @@ const HeroSection: React.FC = () => {
             <button
               type="button"
               onClick={handlePrimaryCta}
-              className={`inline-flex items-center justify-center rounded-full bg-accent text-paper-100 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+              className={`inline-flex items-center justify-center rounded-2xl bg-star-50 text-space-950 px-7 py-3.5 text-sm font-mono font-medium uppercase tracking-[0.12em] transition-opacity duration-300 ease-out hover:opacity-90 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                 isDark
                   ? "focus-visible:ring-offset-space-950"
                   : "focus-visible:ring-offset-paper-100"

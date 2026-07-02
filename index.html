@@ -1,5 +1,5 @@
 <!-- INPUT: 字体加载、主题色变量与 SEO 元信息（含图标与问答动画）。 -->
-<!-- OUTPUT: 提供 HTML 宿主、主题色变量与 root 容器（含字体加载控制）+ 首字节静态 brand 结构化数据（Organization + WebSite JSON-LD）。 -->
+<!-- OUTPUT: 提供 HTML 宿主、light-first 编辑部主题变量（:root 纸色 + body.dark 夜空）、pre-paint 主题恢复脚本（astro_theme_v2，镜像 services/themeStorage.ts）与 root 容器（含字体加载控制）+ 首字节静态 brand 结构化数据（Organization + WebSite JSON-LD）。 -->
 <!-- POS: 主应用页面壳。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。 -->
 
@@ -15,7 +15,7 @@
          首页是 sitemap priority 1.0 入口，静态首字节须自带 canonical/robots，不依赖 WRS 执行 JS 后补。 -->
     <link rel="canonical" href="https://www.astrologywiki.com/" />
     <meta name="robots" content="index,follow" />
-    <meta name="theme-color" content="#0A0B0D" />
+    <meta name="theme-color" content="#F4EFE4" />
     <!-- Google Search Console verification meta is injected at deploy time. Do not
          ship a hard-coded placeholder — it gets indexed as a malformed token. -->
     <meta property="og:type" content="website" />
@@ -65,34 +65,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://images.unsplash.com">
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
     <style>
-      /* Theme color variables (dark default, light overrides) */
+      /* Theme color variables — editorial "warm paper" system.
+         LIGHT is the default (:root = paper #F4EFE4 + ink #16130F);
+         body.dark flips to the "night sky" set (ink becomes ground, paper becomes text).
+         --accent is the single restrained accent (aged gold 陈金), var-driven so it
+         brightens one step on dark ground. See COLOR_SYSTEM_GUIDE.md. */
       :root {
-        --space-950: 5 5 6;
-        --space-900: 10 11 13;
-        --space-800: 16 21 27;
-        --space-700: 24 31 42;
-        --space-600: 38 47 63;
-        --star-50: 242 239 231;
-        --star-100: 222 215 205;
-        --star-200: 203 194 179;
-        --star-300: 189 181 167;
-        --star-400: 176 169 156; /* Improved from 154 147 134 for better contrast (4.5:1) */
+        --space-950: 244 239 228; /* paper #F4EFE4 — main ground */
+        --space-900: 235 227 212; /* paper-sunken #EBE3D4 */
+        --space-800: 224 213 192; /* #E0D5C0 — card surface */
+        --space-700: 211 198 172; /* #D3C6AC */
+        --space-600: 196 181 152; /* #C4B598 — border */
+        --star-50: 22 19 15;      /* ink #16130F — primary text */
+        --star-100: 41 36 29;     /* #29241D */
+        --star-200: 58 52 43;     /* ink-80 #3A342B — secondary text */
+        --star-300: 84 76 64;     /* #544C40 */
+        --star-400: 107 96 83;    /* ink-60 #6B6053 — muted text (AA on paper) */
+        --accent: 154 123 63;       /* aged gold #9A7B3F */
+        --accent-hover: 127 101 52; /* #7F6534 */
       }
 
-      body.light {
-        --space-950: 244 241 236;
-        --space-900: 238 232 223;
-        --space-800: 227 220 208;
-        --space-700: 214 206 191;
-        --space-600: 199 190 173;
-        --star-50: 24 25 27;
-        --star-100: 35 34 33;
-        --star-200: 45 42 38;
-        --star-300: 59 55 50;
-        --star-400: 74 69 62;
+      body.dark {
+        --space-950: 22 19 15;    /* night sky #16130F — brand near-black as ground */
+        --space-900: 33 28 21;    /* raised #211C15 */
+        --space-800: 42 36 27;    /* #2A241B */
+        --space-700: 54 46 35;    /* #362E23 */
+        --space-600: 68 59 46;    /* #443B2E — border */
+        --star-50: 237 230 216;   /* warm white #EDE6D8 — primary text */
+        --star-100: 223 214 197;  /* #DFD6C5 */
+        --star-200: 207 198 181;  /* #CFC6B5 */
+        --star-300: 173 163 146;  /* #ADA392 */
+        --star-400: 156 145 130;  /* #9C9182 — muted text (AA on night) */
+        --accent: 198 161 94;       /* night accent #C6A15E — one step brighter */
+        --accent-hover: 212 180 122; /* #D4B47A */
       }
 
       /* Global Reset & Base */
@@ -102,7 +110,7 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      /* Noise Texture - Adds depth to flat dark backgrounds */
+      /* Noise Texture - paper grain / depth on flat grounds (both themes) */
       .bg-noise {
         position: fixed;
         top: 0;
@@ -115,6 +123,17 @@
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
 
+      /* Selection colors — per-theme so both grounds stay readable
+         (body-class selection utilities rendered paper-on-gold 3.47:1 in light) */
+      ::selection {
+        background: rgba(154, 123, 63, 0.3);
+        color: #16130F;
+      }
+      body.dark ::selection {
+        background: rgba(198, 161, 94, 0.35);
+        color: #EDE6D8;
+      }
+
       /* Linear Scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
@@ -124,11 +143,11 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #2A3448;
+        background: rgba(107, 96, 83, 0.45);
         border-radius: 3px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #D4B47A;
+        background: #9A7B3F;
       }
 
       /* Typography Defaults - Linear Style */
@@ -190,8 +209,24 @@
     }
   </script>
   </head>
-  <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950 loading-fonts">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-gold-500 focus:text-space-950 focus:font-bold focus:text-sm focus:outline-none">Skip to main content</a>
+  <body class="light bg-paper-100 text-paper-900 loading-fonts">
+    <script>
+      // Pre-paint theme restore（rendering-hydration-no-flicker）：light 是品牌默认；
+      // 只有显式选过 dark 的用户（astro_theme_v2）在首帧前切回夜空模式，避免 FOUC。
+      // 键从 astro_theme 升级为 v2：旧键是暗色默认时代自动持久化的值，不代表用户选择。
+      (function () {
+        try {
+          if (localStorage.getItem('astro_theme_v2') === 'dark') {
+            var c = document.body.classList;
+            c.remove('light', 'bg-paper-100', 'text-paper-900');
+            c.add('dark', 'bg-space-950', 'text-star-50');
+            var m = document.querySelector('meta[name="theme-color"]');
+            if (m) m.setAttribute('content', '#16130F');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-star-50 focus:text-space-950 focus:font-bold focus:text-sm focus:outline-none focus:ring-2 focus:ring-accent">Skip to main content</a>
     <div class="bg-noise"></div>
     <!-- P0-1：root '/' 静态首屏 fallback。爬虫读原始 HTML 即见 h1+正文+核心链接（修复首页空壳 soft 404）；
          浏览器执行 /index.tsx 后 ReactDOM.createRoot 在 #root 上挂载并替换这段内容（无水合不匹配，见 index.tsx）。

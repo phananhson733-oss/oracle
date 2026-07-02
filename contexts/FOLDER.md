@@ -20,3 +20,4 @@
 - EntitlementContext 新增 Synthetica 日额度消耗 Hook。
 - AuthContext 接入权益刷新与缓存，供 GM 与支付流程复用。
 - EntitlementContext 支持合盘购买回调并补充已购合盘校验。
+- AuthContext 迁移偏好读取键 astro_theme→astro_theme_v2，默认 light（编辑部换装）。

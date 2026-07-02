@@ -124,14 +124,14 @@ const HeroTodayCard: React.FC = () => {
 
   // Visual tokens — editorial palette per COLOR_SYSTEM_GUIDE. No purple/violet/
   // indigo, no icon-in-colored-circle, no pure black/white.
-  const cardBorder = isDark ? "border-gold-500/15" : "border-paper-300/60";
+  const cardBorder = isDark ? "border-star-50/15" : "border-paper-300/60";
   const cardBg = isDark ? "bg-space-900/40" : "bg-paper-50/80";
   const kickerColor = isDark ? "text-star-400" : "text-paper-500";
   const dateColor = isDark ? "text-star-50" : "text-paper-900";
   const factPrimary = isDark ? "text-star-100" : "text-paper-800";
   const factSecondary = isDark ? "text-star-300" : "text-paper-600";
   const glyphColor = "text-accent";
-  const dividerColor = isDark ? "border-gold-500/10" : "border-paper-300/40";
+  const dividerColor = isDark ? "border-star-50/10" : "border-paper-300/40";
 
   // Lightweight skeleton — three short bars only. Lighter than the 10-row
   // skeleton in CosmicWeather and gated by hidden md:block above, so mobile

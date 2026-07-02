@@ -126,7 +126,7 @@ export const EmbedCodeBox: React.FC<{ slug: string }> = ({ slug }) => {
         <button
           type="button"
           onClick={handleCopy}
-          className="mt-3 rounded-lg bg-gold-500 px-4 py-2 text-sm font-semibold text-space-950 hover:bg-gold-400 min-h-[44px]"
+          className="mt-3 rounded-lg bg-star-50 px-4 py-2 text-sm font-semibold text-space-950 hover:opacity-90 min-h-[44px]"
         >
           {copied
             ? zh

@@ -473,7 +473,7 @@ const SynastryReportView: React.FC<SynastryReportViewProps> = ({
                   fetchSynastryTechnicalData();
                 }
               }}
-              className={`px-4 py-2 min-w-[5rem] text-center whitespace-nowrap rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${activeTab === tab.id ? "bg-gold-500 text-space-950 border-gold-500" : theme === "dark" ? "bg-transparent text-star-400 border-gold-500/15 hover:border-star-200" : "bg-transparent text-paper-400 border-paper-300 hover:border-paper-900"}`}
+              className={`px-4 py-2 min-w-[5rem] text-center whitespace-nowrap rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${activeTab === tab.id ? "bg-star-50 text-space-950 border-transparent" : theme === "dark" ? "bg-transparent text-star-400 border-gold-500/15 hover:border-star-200" : "bg-transparent text-paper-400 border-paper-300 hover:border-paper-900"}`}
             >
               {tab.label}
             </button>

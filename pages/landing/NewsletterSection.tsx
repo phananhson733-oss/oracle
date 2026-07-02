@@ -117,7 +117,7 @@ const NewsletterSection: React.FC = () => {
         </p>
         <h2
           id="newsletter-heading"
-          className={`font-mono font-medium text-2xl md:text-3xl leading-tight tracking-tight ${
+          className={`font-serif font-medium text-3xl md:text-4xl leading-tight tracking-[-0.015em] ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
@@ -158,16 +158,16 @@ const NewsletterSection: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value.trim())}
             placeholder={landing.newsletter_placeholder || "your@email.com"}
-            className={`flex-1 min-h-[44px] px-5 py-3 rounded-full outline-none transition-all duration-300 ease-in-out text-sm focus-visible:ring-2 focus-visible:ring-accent ${
+            className={`flex-1 min-h-[44px] px-5 py-3 rounded-2xl outline-none transition-colors duration-300 ease-in-out text-sm focus-visible:ring-2 focus-visible:ring-accent ${
               isDark
-                ? "bg-space-900/70 border border-gold-500/15 text-star-50 placeholder:text-star-400"
-                : "bg-paper-100 border border-paper-300 text-paper-900 placeholder:text-paper-400"
+                ? "bg-space-900/70 border border-star-50/20 text-star-50 placeholder:text-star-400"
+                : "bg-paper-50/70 border border-paper-900/20 text-paper-900 placeholder:text-paper-400"
             }`}
           />
           <button
             type="submit"
             disabled={status === "submitting"}
-            className={`inline-flex items-center justify-center rounded-full bg-accent text-paper-100 px-7 py-3 text-sm font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed ${
+            className={`inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-star-50 text-space-950 px-7 py-3 text-sm font-mono font-medium uppercase tracking-[0.12em] transition-opacity duration-300 ease-out hover:opacity-90 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed ${
               isDark
                 ? "focus-visible:ring-offset-space-950"
                 : "focus-visible:ring-offset-paper-100"

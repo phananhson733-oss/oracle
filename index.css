@@ -11,13 +11,17 @@
    (see index.html), but scrollbars are owned by :root — so use :has() to lift
    the body class into the :root color-scheme. Defaults to "light dark" so
    browsers can pick a sensible UA fallback if neither class is present. */
-:root { color-scheme: light dark; }
+/* Default to light (brand default since the editorial-paper flip) so browsers
+   without :has() support (old Firefox ESR / WebViews) and pre-hydration stub
+   pages never paint dark UA controls on the paper ground. */
+:root { color-scheme: light; }
 :root:has(body.dark)  { color-scheme: dark; }
 :root:has(body.light) { color-scheme: light; }
 
-/* Accessibility: focus-visible ring for keyboard navigation */
+/* Accessibility: focus-visible ring for keyboard navigation.
+   Editorial rule: focus = ink (light) / warm white (dark) — follows --star-50. */
 *:focus-visible {
-  outline: 2px solid var(--gold-500, #D4A853);
+  outline: 2px solid rgb(var(--star-50, 22 19 15));
   outline-offset: 2px;
 }
 

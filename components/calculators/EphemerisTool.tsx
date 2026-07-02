@@ -255,7 +255,7 @@ export const EphemerisTool: React.FC = () => {
           type="button"
           onClick={() => void load()}
           disabled={loading}
-          className="mt-5 w-full sm:w-auto rounded-xl bg-gradient-primary px-6 py-3 font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 min-h-[44px] motion-reduce:transition-none"
+          className="mt-5 w-full sm:w-auto rounded-xl bg-star-50 px-6 py-3 font-semibold text-space-950 transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 min-h-[44px] motion-reduce:transition-none"
         >
           {loading
             ? lang === "zh"

@@ -76,7 +76,7 @@ const WikiHubSection: React.FC = () => {
         </p>
         <h2
           id="wiki-heading"
-          className={`font-mono font-medium text-3xl md:text-4xl leading-tight tracking-tight ${
+          className={`font-serif font-medium text-4xl md:text-5xl leading-tight tracking-[-0.015em] ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
@@ -96,7 +96,7 @@ const WikiHubSection: React.FC = () => {
           {loading ? (
             <div
               aria-hidden="true"
-              className="rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-200/50 dark:bg-space-900/50 p-8 md:p-10 animate-pulse"
+              className="rounded-2xl border border-paper-300 dark:border-star-50/15 bg-paper-200/50 dark:bg-space-900/50 p-8 md:p-10 animate-pulse"
             >
               <div className="h-3 w-24 rounded bg-paper-300/70 dark:bg-space-800/70" />
               <div className="mt-4 h-7 w-2/3 rounded bg-paper-300/70 dark:bg-space-800/70" />
@@ -105,7 +105,7 @@ const WikiHubSection: React.FC = () => {
               <div className="mt-2 h-4 w-5/6 rounded bg-paper-300/60 dark:bg-space-800/60" />
             </div>
           ) : transit ? (
-            <article className="rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-200/50 dark:bg-space-900/50 p-8 md:p-10">
+            <article className="rounded-2xl border border-paper-300 dark:border-star-50/15 bg-paper-200/50 dark:bg-space-900/50 p-8 md:p-10">
               <p
                 className={`mb-3 text-xs uppercase tracking-[0.18em] ${
                   isDark ? "text-star-400" : "text-paper-600"
@@ -145,7 +145,7 @@ const WikiHubSection: React.FC = () => {
                 <div
                   key={`pillar-skeleton-${idx}`}
                   aria-hidden="true"
-                  className="rounded-2xl border border-paper-300 dark:border-gold-500/15 bg-paper-100 dark:bg-space-900/40 p-6 animate-pulse h-48"
+                  className="rounded-2xl border border-paper-300 dark:border-star-50/15 bg-paper-100 dark:bg-space-900/40 p-6 animate-pulse h-48"
                 >
                   <div className="h-5 w-2/3 rounded bg-paper-300/70 dark:bg-space-800/70" />
                   <div className="mt-4 h-3 w-full rounded bg-paper-300/60 dark:bg-space-800/60" />
@@ -159,7 +159,7 @@ const WikiHubSection: React.FC = () => {
                   to={`/${language}/wiki?tab=library&section=${encodeURIComponent(pillar.id)}`}
                   className={`block rounded-2xl border p-6 text-left transition-all duration-300 hover:border-accent/40 hover:shadow-xl ${
                     isDark
-                      ? "border-gold-500/15 bg-space-900/40"
+                      ? "border-star-50/15 bg-space-900/40"
                       : "border-paper-300 bg-paper-100"
                   }`}
                 >

@@ -36,7 +36,8 @@ const WIPED = [
 ];
 const KEPT = [
   "astro_lang",
-  "astro_theme",
+  "astro_theme_v2",
+  "astro_theme", // legacy key, orphaned by the v2 migration — deliberately ignored, not wiped (non-PII)
   "astro_analytics_consent",
   "astro_consent_preferences",
   "astro_do_not_sell",

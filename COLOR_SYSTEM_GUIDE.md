@@ -1,11 +1,13 @@
-<!-- INPUT: 色彩系统规范与应用示例（含 paper 温暖色系、unicode 图标对比度与文本色规范）。 -->
-<!-- OUTPUT: 全项目 UI 色彩规范与迁移指南（含对比度与图标底板要求）。 -->
+<!-- INPUT: 编辑部纸墨设计系统规范（暖纸/墨色 token、陈金 accent、发丝线层级、三档字体、图表豁免条款）。 -->
+<!-- OUTPUT: 全项目 UI 规范唯一基准（含对比度、图标底板、主题机制与迁移指南）。 -->
 <!-- POS: UI 规范唯一基准；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
-# 色彩系统应用指南
+# 色彩系统应用指南（编辑部纸墨系统）
 
 ## 概述
 
-本指南展示如何在现有组件中应用新的色彩系统，建立清晰的视觉层次和功能识别。
+2026-07 全站换装为「编辑部纸墨（Editorial Paper × Ink）」设计系统：暖纸底 + 近黑墨字为默认（light-first），
+深色模式是「墨变夜空」的反转（brand 近黑 `#16130F` 作夜空底、暖白作字）。本文件是全项目 UI 规范的唯一基准。
+风格源头与完整 token 规范快照见设计稿（Astro-Charts 逆向 DESIGN.md，memory: `ref_astro_charts_editorial_design_spec`）。
 
 ---
 
@@ -15,7 +17,22 @@
 
 ### 核心美学
 
-**简洁 · 极简 · 现代** — 这是我们的设计哲学。
+**不慌不忙的编辑部（Unhurried Editorial）** — 像杂志不像 App：
+
+1. **纸与墨**：暖纸 `#F4EFE4` 上落近黑暖墨 `#16130F`；light 是品牌默认，dark 是夜空反转。
+2. **线，不是阴影**：发丝线（低透明度墨/暖白 border）是主力分隔件；默认无阴影、无 glow、无毛玻璃（仅 drawer/modal 覆盖层允许 `shadow-drawer`/`shadow-xl`）。
+3. **印刷式扁平**：圆角统一 2px（Tailwind 已在 config 层把 `rounded-md/lg/xl/2xl/3xl` 全部映射为 2px；`rounded-full` 保留药丸，仅限特定 CTA/头像/chip）。
+4. **单点缀色**：陈金（aged gold）`#9A7B3F`；dark 下自动提亮为 `#C6A15E`（CSS 变量 `--accent` 驱动，写 `text-accent`/`bg-accent` 即得双模式）。
+5. **层级靠字号、斜体、留白**，几乎不靠粗体和颜色；标题至多一个斜体强调词。
+6. **排字指纹**：mono 大写眉标（`tracking-[0.12em]`+）、编号 `n° 01`、中点 `·` 分隔、箭头 `→` 收尾。
+
+### 主题机制（v2）
+
+- 默认主题 **light**；键为 `localStorage.astro_theme_v2`（旧键 `astro_theme` 是暗色默认时代自动持久化的值，已废弃不读）。
+- `index.html` `<body>` 静态 class 为 light + 内联 pre-paint 脚本在首帧前恢复显式选择的 dark（防 FOUC）。
+- 主题切换时 `ThemeProvider` 同步更新 `meta[name="theme-color"]`（paper `#F4EFE4` / night `#16130F`）。
+- Token 层：`--space-*`（地面）/`--star-*`（文字）/`--accent` 定义在 `index.html` `:root`（light 值）与 `body.dark`（夜空值）；
+  Tailwind `space-*`/`star-*`/`accent(DEFAULT/hover)` 走 `rgb(var(--*))` 自动翻转。**新样式优先用这些自反转 token。**
 
 ### 空白空间
 
@@ -26,130 +43,54 @@
 | 卡片内边距 | `p-6` / `p-8` | 内容需要充足的呼吸空间 |
 | 元素间隙 | `gap-4` / `gap-6` | 避免拥挤，保持节奏感 |
 | 区块间距 | `space-y-8` / `mb-12` | 区分内容层次 |
-|----------|------------|-----------|
+
+### 字体三档
+
+| 角色 | 字族 | 使用范围 |
+|------|------|----------|
+| 展示 Display | `font-serif`（Cormorant Garamond + CJK Songti 栈） | h1-h6（index.html 全局规则）、hero、section 标题 |
+| 正文（工具面） | `font-sans`（Readex Pro + CJK） | 表单、工具、dashboard 等数据密集界面 |
+| 正文（阅读面） | `font-reading`（Newsreader + Georgia + CJK Serif） | wiki 文章、classics 书页、报告正文等长文 |
+| 标签 / 数据 | `font-mono`（IBM Plex Mono） | 眉标（大写 + 字距）、度数坐标、价格、编号 |
+
+- 展示/正文字重克制（400-500 为主，避免 700+ 大面积使用）；强调用**单词级斜体**（`<span className="italic text-accent">`）。
+- Newsreader 无 CJK，中文回退 Songti 栈，属预期行为。
 
 ### 图标与符号规范
 
-- **❌ 禁止使用 Emoji**：严禁在 UI 中使用系统默认 Emoji（如 🎨, 🧭, ✨）。Emoji 会破坏品牌专业感且在不同设备上显示不一。
-- **✅ 推荐使用 PNG/SVG 资源**：对于复杂图标，优先使用项目 `images/` 目录下的 PNG 或 SVG 资源。
-- **⚠️ Unicode 符号谨慎使用**：仅在极简场景下使用标准的 Unicode 占星/几何符号（如 ☉, ☽, ☿）。**必须**在真机测试其兼容性，部分低版本系统或特定安卓机型可能无法渲染。
-- **✅ 视觉统一**：所有符号和图标必须指定项目定义的语义色（如 `text-accent` 或 `text-paper-600`）。
+- **❌ 禁止使用 Emoji**：严禁在 UI 中使用系统默认 Emoji（如 🎨, 🧭, ✨）。
+- **✅ 推荐使用 PNG/SVG 资源**：复杂图标优先用项目 `images/` 下资源；线性图标 1.5px 描边、无填充。
+- **⚠️ Unicode 占星符号**：必须保留三重防 emoji guard（`U+FE0E`、`font-variant-emoji:text`、AstroChart 内的 symbol 字体栈），
+  且**绝不**在运行时设置 `<html lang="zh">`（PR #157 教训：会把 ☉♀♋ 渲染成彩色 emoji）。
+- **✅ 视觉统一**：符号和图标指定语义色（`text-accent` / `text-paper-600` 等）。
 
 ### 配色规范
 
-| 用途 | Dark 模式 | Light 模式 | 禁止 |
+| 用途 | Dark（夜空） | Light（纸面，默认） | 禁止 |
 |------|-----------|------------|------|
-| 主要文本 | `text-star-50` | `text-paper-900` | `#000` |
-| 次要文本 | `text-star-200` | `text-paper-600` | `#333` |
-| 弱化文本 | `text-star-400` | `text-paper-400` | — |
-| 背景 | `bg-space-950` | `bg-paper-100` | `#fff` |
-| 卡片背景 | `bg-space-900/60` | `bg-paper-100/85` | — |
+| 主要文本 | `text-star-50`（暖白 #EDE6D8） | `text-paper-900`（墨 #16130F） | `#000` |
+| 次要文本 | `text-star-200` | `text-paper-500`（ink-60） | `#333` |
+| 弱化文本 | `text-star-400` | `text-paper-400`（仅说明/占位） | — |
+| 背景 | `bg-space-950`（#16130F） | `bg-paper-100`（#F4EFE4） | `#fff` |
+| 抬升面/卡片 | `bg-space-900/70` | `bg-paper-50/80`（#FBF8F1） | — |
+| 发丝分隔线 | `border-star-50/10~15` | `border-paper-900/10~15` | 阴影代分隔 |
+| 点缀 | `text-accent`（自动 #C6A15E） | `text-accent`（自动 #9A7B3F） | 多点缀色并用 |
 
 **关键规则**：
-- **永远不用纯黑 `#000`** — 使用 `space-950` 或 `paper-900`
-- **永远不用纯白 `#fff`** — 使用 `paper-100` 或带透明度的白色（如 `bg-white/80`）
-- **浅色主题保留温暖纸感** — 使用 `paper-*` 并确保对比度达标（文字与图标同等要求）
-- **次要文本使用中灰** — `star-200` (dark) / `paper-600` (light)
+- **永远不用纯黑 `#000` / 纯白 `#fff`** — 用 token（`space-950`/`paper-900`；`paper-50`/`star-50`）。
+- **主按钮 = 实心墨**：`bg-star-50 text-space-950` + `font-mono uppercase tracking-[0.12em]`（light 墨底纸字 / dark 暖白底夜空字，自动反转）。禁止金色渐变药丸 + glow。
+- **次按钮 = 发丝线描边 + hover 底面微升**；文字链 = 下划线 + 尾随 `→`。
+- **新分隔一律发丝线**，不要 `shadow-card`/`shadow-glow`（config 层已置 none）/`backdrop-blur`。
 
-### 视觉层次
+### 功能域色彩（极弱化 — 仅小标签）
 
-```tsx
-// 标题样式 - 粗体 + 紧凑行距
-<h1 className="text-4xl font-bold leading-tight tracking-tight">
-  主标题
-</h1>
-<h2 className="text-2xl font-bold leading-tight">
-  副标题
-</h2>
+| 功能域 | 色 | 色值（500） | 允许范围 |
+|--------|------|------|----------|
+| 占星 | mystic 灰紫 | `#9273B8`（去饱和） | 小标签 / chip / 图例点，**禁止**大面积底色、按钮、渐变 |
+| 心理学/CBT | psycho 尘蓝 | `#5F7FB4`（去饱和） | 同上 |
+| 品牌/付费 | accent 陈金 | `#9A7B3F`↔`#C6A15E` | 唯一正式点缀色 |
 
-// 边框使用 - 稀有且极浅
-<div className="rounded-2xl border border-paper-300/60 dark:border-gold-500/15">
-  {/* 内容 */}
-</div>
-```
-
-### 微交互与动效
-
-**统一过渡**：所有可交互元素使用相同的过渡配置。
-
-```tsx
-// 标准过渡类
-const TRANSITION = "transition-all duration-300 ease-in-out";
-
-// 按钮悬停
-<button className={`
-  ${TRANSITION}
-  hover:scale-[1.02] hover:shadow-lg
-  active:scale-[0.98]
-`}>
-  按钮
-</button>
-
-// 卡片悬停
-<div className={`
-  ${TRANSITION}
-  hover:shadow-xl hover:border-accent/30
-`}>
-  卡片内容
-</div>
-```
-
-### 布局禁忌
-
-- **❌ 禁止 - 卡片左侧着色**：严禁在卡片左侧增加纵向颜色条或着色边框。这种设计过于“通用 AI 化 (Generic AI aesthetic)”，不符合我们的品牌调性。
-- **❌ 禁止 - 多层卡片嵌套**：
-```tsx
-<div className="rounded-xl border p-4">
-  <div className="rounded-lg border p-3">
-    <div className="rounded-md border p-2">
-      内容
-    </div>
-  </div>
-</div>
-```
-
-// ✅ 推荐 - 扁平化布局
-<div className="rounded-xl p-6 space-y-4">
-  <div className="flex items-center gap-4">
-    {/* 内容平铺 */}
-  </div>
-  <div className="grid gap-4">
-    {/* 使用间隙而非嵌套边框 */}
-  </div>
-</div>
-```
-
----
-
-## 色彩系统核心原则
-
-### 1. 色彩层次（60/30/10 规则）
-
-```
-┌─────────────────────────────────────────┐
-│  主导色 (60%)                            │
-│  → 背景、大面积区域                        │
-│  → space-950 / paper-100                │
-├─────────────────────────────────────────┤
-│  次要色 (30%)                            │
-│  → 卡片、容器、分组                        │
-│  → space-900/60 / paper-50              │
-├─────────────────────────────────────────┤
-│  强调色 (10%)                            │
-│  → 按钮、链接、重要元素                     │
-│  → accent / mystic / psycho             │
-└─────────────────────────────────────────┘
-```
-
-### 2. 功能域色彩映射
-
-| 功能域 | 主色 | 色值 | 情感 | 使用场景 |
-|--------|------|------|------|----------|
-| 占星 | 紫色 | `mystic-500` | 神秘、灵性 | 星盘、运势、Wiki |
-| 心理学 | 蓝色 | `psycho-500` | 专业、信任 | CBT、情绪追踪 |
-| 洞察 | 金色 | `accent` | 高价值、品牌 | 报告、付费功能 |
-
-### 3. 语义色彩
+### 语义色彩
 
 | 状态 | 颜色 | Token | 使用场景 |
 |------|------|-------|----------|
@@ -158,9 +99,62 @@ const TRANSITION = "transition-all duration-300 ease-in-out";
 | 错误 | 红色 | `danger` | 失败、危险操作 |
 | 信息 | 蓝色 | `info` | 提示、帮助信息 |
 
-> **例外（已 bless · 2026-06-22）— Energy Timeline 蜡烛方向色**：能量时间轴蜡烛体用绿(走强)/红(回落)/灰(持平) 是**西方蜡烛图的领域惯例**，表示「当天能量方向」，**不是** success/danger 的状态语义（无好坏判断——绿不代表"好"、红不代表"危险"，对齐 Empowerment-over-Fatalism）。为不让色盲用户(约 8% 男性)只能靠红绿辨方向，已加 **A12 形状冗余编码**（升=实心 / 降=空心描边 / 平=细条），方向不再依赖颜色。故此处 green/red 允许豁免本表的 success/danger 约束。**仅蜡烛体适用**；派生面板(At-a-Glance 等)仍须中性配色(slate + psycho/mystic)，禁继承红绿。
+> **例外（已 bless · 2026-06-22）— Energy Timeline 蜡烛方向色**：能量时间轴蜡烛体用绿(走强)/红(回落)/灰(持平) 是**西方蜡烛图的领域惯例**，表示「当天能量方向」，**不是** success/danger 的状态语义。已加 **A12 形状冗余编码**（升=实心 / 降=空心描边 / 平=细条）。**仅蜡烛体适用**；派生面板仍须中性配色，禁继承红绿。
 
-### 4. 对比度要求（WCAG AA）
+### 星盘与图表豁免条款（2026-07-02 用户拍板）
+
+**AstroChart 星盘轮及其所有图表内部样式不随本次编辑部改版调整**：
+- 豁免范围：`components/AstroChart.tsx`（SVG defs/glyph 配色/相位线/宫位线）、`constants.ts` 的 `TECH_DATA`/`ASPECT_COLORS`/`VISUAL_LAYER_STYLES`、
+  `ChartShareCard`/`ChartShareModal`/`PlanetTooltip`、`components/timeline/TimelineChart` 蜡烛内部、recharts 图表内部配色。
+- 图表**周边**的页面 chrome（卡片、表格行、按钮）正常走本规范；图表结构线经 `--space/--star` 变量随主题获得暖色 tint 属预期。
+- 后续如需图表编辑部化（铜版画式墨线轮盘、相位改虚实编码），须单独提案并重新拍板。
+
+### 视觉层次
+
+```tsx
+// 标题 - 衬线 + 收紧字距（h1-h6 已全局衬线，无需重复声明 font-serif）
+<h1 className="text-4xl font-medium leading-tight tracking-[-0.015em]">
+  主标题（至多一个 <span className="italic text-accent">斜体强调词</span>）
+</h1>
+
+// 眉标（编辑部签名件）
+<p className="font-mono text-xs uppercase tracking-[0.18em] text-paper-500 dark:text-star-400">
+  Tool n° 01 · Free to use
+</p>
+
+// 发丝线分隔
+<div className="border-t border-paper-900/15 dark:border-star-50/15" />
+```
+
+### 微交互与动效
+
+**慢、柔、无弹跳**：
+
+```tsx
+// 标准过渡（禁止 hover:scale 弹跳、hover:shadow 发光）
+const TRANSITION = "transition-colors duration-300 ease-in-out";
+
+// 按钮悬停：透明度/底面变化
+<button className={`${TRANSITION} hover:opacity-90`}>按钮</button>
+
+// 文字链悬停：下划线出现 + 箭头右移
+<a className="hover:underline underline-offset-4 group">
+  查看更多 <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+</a>
+```
+
+- 尊重 `prefers-reduced-motion`（index.html 全局已降级）。
+
+### 布局禁忌
+
+- **❌ 禁止 - 卡片左侧着色条**：过于"通用 AI 化"，不符合品牌调性。
+- **❌ 禁止 - 多层卡片嵌套**：用间隙和发丝线区分，不要边框套边框。
+- **❌ 禁止 - 金色渐变按钮 / glow 阴影 / 毛玻璃卡片**：编辑部系统的反面。
+- **❌ 禁止 - 大圆角**（`rounded-2xl` 视觉上已是 2px；不要用任意值绕过，如 `rounded-[16px]`）。
+
+---
+
+## 对比度要求（WCAG AA）
 
 | 元素类型 | 最低对比度 | 检测方法 |
 |----------|------------|----------|
@@ -168,314 +162,87 @@ const TRANSITION = "transition-all duration-300 ease-in-out";
 | 大标题 (18px+) | 3:1 | WebAIM Checker |
 | UI 组件 | 3:1 | Stark 插件 |
 
+- 纸面上：`paper-900`(墨)≈15:1（优）；`paper-500`(ink-60)≈4.7:1（AA ✓）；`paper-400` 仅占位/装饰。
+- 夜空上：`star-50`≈13:1；`star-400`≈5:1（AA ✓）。
+- 陈金 `#9A7B3F` on paper ≈3.3:1：**仅用于大字/标签/图形**，不作小号正文色。
+- 聚焦环全局为墨/暖白（`index.css` 的 `rgb(var(--star-50))`），勿 `outline:none` 不补。
+
 ### Unicode 图标与底板对比度
 
-- 星座/行星等 unicode 图标视为文本，图标与底板对比度需满足 WCAG AA
-- 底板与页面背景也需有足够区分度，避免只调整图标颜色
+- 星座/行星等 unicode 图标视为文本，图标与底板对比度需满足 WCAG AA。
+- 底板与页面背景也需有足够区分度，避免只调整图标颜色。
 
 ```tsx
-// ✅ 图标与底板都满足对比度
-<div className="w-10 h-10 rounded-2xl bg-space-900/60 text-star-50 flex items-center justify-center">
+// ✅ 纸面：墨字形落在抬升纸上
+<div className="w-10 h-10 rounded-2xl bg-paper-50 border border-paper-900/10 text-paper-900 flex items-center justify-center">
   ♄
 </div>
 
-// ✅ Light 模式保持纸感但保证对比
-<div className="w-10 h-10 rounded-2xl bg-paper-100/85 text-paper-900 flex items-center justify-center">
+// ✅ 夜空：暖白字形落在抬升夜空上
+<div className="w-10 h-10 rounded-2xl bg-space-900/70 border border-star-50/10 text-star-50 flex items-center justify-center">
   ♍
 </div>
 ```
 
 ---
 
-## 实际应用示例
+## 组件迁移清单（旧暗色遗留 → 编辑部）
 
-### 示例 1：状态反馈
-
-```tsx
-import { SEMANTIC_COLORS } from './components/design-tokens';
-
-// 成功状态 - 充足的内边距，圆角边框
-<div className={`
-  p-6 rounded-2xl
-  ${SEMANTIC_COLORS.success.bgLight}
-  border border-success/20
-  transition-all duration-300 ease-in-out
-`}>
-  <div className="flex items-center gap-3">
-    <span className={`
-      w-8 h-8 rounded-full flex items-center justify-center
-      ${SEMANTIC_COLORS.success.bg}
-      text-star-50
-    `}>
-      ✓
-    </span>
-    <div className="space-y-1">
-      <p className={`font-semibold ${SEMANTIC_COLORS.success.text}`}>
-        操作成功
-      </p>
-      <p className="text-sm text-star-200">
-        您的报告已生成完成
-      </p>
-    </div>
-  </div>
-</div>
-```
-
-### 示例 2：功能域按钮
-
-```tsx
-import { INTERACTIVE_STATES } from './components/design-tokens';
-
-// 统一的按钮基础样式
-const buttonBase = `
-  py-3 px-8 rounded-xl
-  font-medium
-  transition-all duration-300 ease-in-out
-  hover:scale-[1.02] hover:shadow-lg
-  active:scale-[0.98]
-`;
-
-// 占星功能按钮 - 紫色
-<button className={`
-  ${buttonBase}
-  ${INTERACTIVE_STATES.button.astrology.default}
-  ${INTERACTIVE_STATES.button.astrology.hover}
-`}>
-  查看星盘
-</button>
-
-// 心理学功能按钮 - 蓝色
-<button className={`
-  ${buttonBase}
-  ${INTERACTIVE_STATES.button.psychology.default}
-  ${INTERACTIVE_STATES.button.psychology.hover}
-`}>
-  记录情绪
-</button>
-
-// 主要操作按钮 - 金色
-<button className={`
-  ${buttonBase}
-  ${INTERACTIVE_STATES.button.primary.default}
-  ${INTERACTIVE_STATES.button.primary.hover}
-  shadow-glow
-`}>
-  生成报告
-</button>
-```
-
-### 示例 3：功能入口卡片（避免嵌套）
-
-```tsx
-import { FEATURE_COLORS } from './components/design-tokens';
-
-// ✅ 好的做法 - 扁平化布局，充足空白
-<div className={`
-  p-8 rounded-2xl
-  ${FEATURE_COLORS.astrology.light}
-  transition-all duration-300 ease-in-out
-  hover:shadow-xl hover:scale-[1.01]
-  cursor-pointer
-`}>
-  <div className="flex items-start gap-6">
-    {/* 图标 - 不使用额外卡片包裹 */}
-    <div className={`
-      w-14 h-14 rounded-2xl
-      ${FEATURE_COLORS.astrology.primaryBg}
-      flex items-center justify-center
-      text-star-50 text-2xl
-    `}>
-      ✨
-    </div>
-
-    {/* 文本区域 */}
-    <div className="flex-1 space-y-2">
-      <h3 className={`
-        text-xl font-bold leading-tight
-        ${FEATURE_COLORS.astrology.primary}
-      `}>
-        本命盘分析
-      </h3>
-      <p className="text-star-200 leading-relaxed">
-        深入了解你的星盘配置和人生主题，发现内在潜能与成长方向。
-      </p>
-    </div>
-  </div>
-</div>
-```
-
-### 示例 4：表单输入
-
-```tsx
-import { INTERACTIVE_STATES } from './components/design-tokens';
-
-const inputBase = `
-  w-full px-5 py-4 rounded-xl
-  bg-space-900/40 text-star-50
-  border border-space-700/30
-  placeholder:text-star-400/60
-  transition-all duration-300 ease-in-out
-  focus:outline-none focus:ring-2 focus:ring-accent/30
-`;
-
-// 默认状态
-<input
-  className={`${inputBase} ${INTERACTIVE_STATES.input.default}`}
-  placeholder="请输入..."
-/>
-
-// 错误状态 - 红色边框
-<input
-  className={`${inputBase} ${INTERACTIVE_STATES.input.error}`}
-  placeholder="请输入..."
-/>
-<p className="mt-2 text-sm text-danger">请填写此字段</p>
-
-// 成功状态 - 绿色边框
-<input
-  className={`${inputBase} ${INTERACTIVE_STATES.input.success}`}
-  placeholder="请输入..."
-/>
-```
-
-### 示例 5：数据可视化 - 情绪追踪
-
-```tsx
-import { DATA_VIZ_COLORS } from './components/design-tokens';
-
-// 情绪色谱条 - 使用充足间隙
-<div className="space-y-4">
-  {moodData.map(item => (
-    <div key={item.date} className="flex items-center gap-6">
-      {/* 日期 */}
-      <span className="text-sm text-star-400 w-28 font-medium">
-        {item.date}
-      </span>
-
-      {/* 情绪标签 */}
-      <div className={`
-        px-4 py-2 rounded-full
-        ${DATA_VIZ_COLORS.mood[item.mood]}
-        text-sm font-medium
-        transition-all duration-300 ease-in-out
-        hover:scale-105
-      `}>
-        {item.label}
-      </div>
-
-      {/* 进度条 */}
-      <div className="flex-1 h-3 bg-space-800/50 rounded-full overflow-hidden">
-        <div
-          className={`
-            h-full rounded-full
-            ${DATA_VIZ_COLORS.mood[item.mood]}
-            transition-all duration-500 ease-out
-          `}
-          style={{ width: `${item.score * 20}%` }}
-        />
-      </div>
-    </div>
-  ))}
-</div>
-```
-
----
-
-## 组件迁移清单
-
-### 迁移前检查
-
-- [ ] 是否使用了纯黑 `#000` 或纯白 `#fff`？
-- [ ] 是否存在多层卡片嵌套？
-- [ ] 内边距是否足够（至少 `p-6`）？
-- [ ] 是否缺少悬停/交互状态？
-- [ ] 过渡动画是否统一？
+- [ ] 是否使用了纯黑 `#000` 或纯白 `#fff`？→ token
+- [ ] 是否有 `shadow-glow` / `shadow-card` / `backdrop-blur` / 金色渐变？→ 发丝线 + 实心墨
+- [ ] 是否有 `hover:scale` 弹跳？→ opacity / 底面微升
+- [ ] 分隔是否用 `border-gold-500/*`？→ `border-paper-900/15` + `dark:border-star-50/15`
+- [ ] 主 CTA 是否 `bg-gradient-primary`？→ `bg-star-50 text-space-950` + mono 大写
+- [ ] mystic/psycho 是否超出小标签范围？→ 收敛
 - [ ] unicode 图标与底板对比度是否达标？
-
-### 迁移步骤
-
-```tsx
-// 步骤 1：识别功能域
-// 占星 → astrology | 心理学 → psychology | 洞察 → insights
-
-// 步骤 2：替换硬编码颜色
-// ❌ bg-purple-500 → ✅ FEATURE_COLORS.astrology.primaryBg
-// ❌ text-blue-600 → ✅ FEATURE_COLORS.psychology.primary
-
-// 步骤 3：增加空白空间
-// ❌ p-4 → ✅ p-6 或 p-8
-// ❌ gap-2 → ✅ gap-4 或 gap-6
-
-// 步骤 4：添加统一过渡
-// ❌ 无过渡 → ✅ transition-all duration-300 ease-in-out
-
-// 步骤 5：扁平化嵌套
-// ❌ 卡片套卡片 → ✅ 使用间隙和背景色区分
-```
+- [ ] 是否误触星盘/图表豁免范围？→ 回滚图表内部改动
 
 ---
 
 ## 快速参考
 
-### Token 导入
-
-```tsx
-import {
-  SEMANTIC_COLORS,    // 状态色彩
-  FEATURE_COLORS,     // 功能域色彩
-  INTERACTIVE_STATES, // 交互状态
-  DATA_VIZ_COLORS,    // 数据可视化
-  COLOR_HIERARCHY,    // 色彩层次
-} from './components/design-tokens';
-```
-
 ### 常用组合
 
 ```tsx
-// 标准卡片
+// 标准卡片（print-flat）
 const card = `
   p-6 rounded-2xl
-  bg-space-900/60 backdrop-blur-lg
-  transition-all duration-300 ease-in-out
-  hover:shadow-xl
+  bg-paper-50/80 border border-paper-900/10
+  dark:bg-space-900/70 dark:border-star-50/10
+  transition-colors duration-300 ease-in-out
 `;
 
-// 标准按钮
-const button = `
-  py-3 px-6 rounded-xl
-  font-medium
-  transition-all duration-300 ease-in-out
-  hover:scale-[1.02]
-  active:scale-[0.98]
+// 主按钮（实心墨，双模式自反转）
+const primaryBtn = `
+  py-3 px-6 rounded-2xl
+  bg-star-50 text-space-950
+  font-mono font-medium uppercase tracking-[0.12em]
+  transition-opacity duration-300 hover:opacity-90
 `;
 
 // 标准输入
 const input = `
-  w-full px-5 py-4 rounded-xl
-  bg-space-900/40 border border-space-700/30
-  transition-all duration-300 ease-in-out
-  focus:ring-2 focus:ring-accent/30
+  w-full px-5 py-4 rounded-2xl
+  bg-paper-50/70 border border-paper-900/20
+  dark:bg-space-900/70 dark:border-star-50/20
+  transition-colors duration-300
+  focus:border-accent focus:ring-1 focus:ring-accent/40
 `;
 ```
 
----
-
-## 参考资源
+### Token 落点
 
 | 资源 | 路径 | 说明 |
 |------|------|------|
-| 设计 Token | `/components/design-tokens.ts` | 所有色彩变量定义 |
-| 演示组件 | `/components/ColorSystemDemo.tsx` | 实时效果演示 |
-| Tailwind 配置 | `/index.html` | 主题色和动画定义 |
-
-### 查看演示
-
-```bash
-npm run dev
-# 访问 http://localhost:5173/#/color-demo
-```
+| CSS 变量（:root/body.dark + pre-paint） | `/index.html` | 地面/文字/accent 双模式值、字体加载 |
+| Tailwind 主题 | `/tailwind.config.cjs` | paper/gold/mystic/psycho 静态 ramp、radius=2px、shadow 置换、font-reading |
+| 主题引擎 | `/components/UIComponents.tsx` `ThemeProvider` | 默认 light、classList 手术式切换、theme-color 联动 |
+| 主题持久化 | `/services/themeStorage.ts` | `astro_theme_v2` 安全读写唯一入口；index.html pre-paint 与 stub 注入脚本是其镜像 |
+| 共享原语样式 | `/components/UIComponents.tsx` `getStyles()` | card/hover/divider/input 的双模式类映射 |
+| SEO stub 预水合样式 | `/scripts/inject-spa-into-stubs.mjs` | 纸色 fallback + loader（与 SPA 首帧一致，防色闪） |
+| 静态品牌资产 | `/public/favicon.svg`、`site.webmanifest`、`scripts/generate-og-images.mjs` | 已同步纸墨陈金 |
 
 ---
 
-**最后更新**: 2026-01-20
+**最后更新**: 2026-07-02（编辑部纸墨系统换装）
 **维护者**: 设计系统团队

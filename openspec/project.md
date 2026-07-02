@@ -54,7 +54,7 @@ AstrologyWiki 是一个将占星与心理学结合的单页应用，用于提供
 - 输出为自我反思指导，不提供诊断或命运判定。
 - 支持中英文 UI，含术语翻译字典。
 - 用户资料包括出生日期/时间/城市与时间准确度，存储在
-  `astro_user`、`astro_theme`、`astro_lang`。
+  `astro_user`、`astro_theme_v2`、`astro_lang`。
 
 ## 重要约束
 - 前端通过后端 API 获取真实星历与 AI 内容。

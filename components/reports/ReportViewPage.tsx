@@ -288,7 +288,7 @@ const ReportSectionCard: React.FC<{
           )}
 
           {/* Main content */}
-          <div className={`prose prose-sm max-w-none ${isDark ? 'prose-invert' : ''}`}>
+          <div className={`prose prose-sm max-w-none font-reading ${isDark ? 'prose-invert' : ''}`}>
             <p className={`leading-relaxed ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
               {section.content}
             </p>

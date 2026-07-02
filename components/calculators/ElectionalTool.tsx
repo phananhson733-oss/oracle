@@ -319,7 +319,7 @@ export const ElectionalTool: React.FC = () => {
           type="button"
           onClick={() => void load()}
           disabled={loading}
-          className="mt-5 min-h-[44px] w-full rounded-xl bg-gradient-primary py-3 font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 sm:w-auto sm:px-6 motion-reduce:transition-none"
+          className="mt-5 min-h-[44px] w-full rounded-xl bg-star-50 py-3 font-semibold text-space-950 transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 sm:w-auto sm:px-6 motion-reduce:transition-none"
         >
           {loading
             ? lang === "zh"

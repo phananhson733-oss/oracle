@@ -64,6 +64,7 @@ import {
 // the cloud after login WITHOUT ever touching localStorage (2026-05-20 invariant).
 import { migrateLocalData as migrateBirthProfileToAccount } from "./services/authClient";
 import { FUNNEL_EVENTS } from "./services/funnelEvents";
+import { readStoredTheme } from "./services/themeStorage";
 import { getLandingUtm } from "./services/landingUtm";
 import {
   buildBirthProfileFromPrefill,
@@ -272,7 +273,7 @@ const NotFoundPage: React.FC = () => {
         </p>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-space-950 font-bold text-sm hover:from-gold-500 hover:to-gold-400 transition-all shadow-lg shadow-gold-500/20"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-star-50 text-space-950 font-bold text-sm hover:opacity-90 transition-opacity"
         >
           {language === "zh" ? "返回首页" : "Return Home"}
         </Link>
@@ -689,9 +690,7 @@ const AppContent: React.FC = () => {
           await migrateBirthProfileToAccount(
             buildBirthProfileFromPrefill(prefill),
             {
-              theme:
-                (localStorage.getItem("astro_theme") as "dark" | "light") ||
-                "dark",
+              theme: readStoredTheme(),
               language,
             },
           );
@@ -897,7 +896,7 @@ const AppContent: React.FC = () => {
       {showNav && (
         <nav
           aria-label="Main navigation"
-          className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === "dark" ? "bg-space-950/90 border-gold-500/15" : "bg-paper-100/90 border-paper-300"}`}
+          className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === "dark" ? "bg-space-950/90 border-star-50/15" : "bg-paper-100/90 border-paper-900/15"}`}
         >
           <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
             {/* Logo — on landing routes scrolls back to top; elsewhere routes
@@ -965,7 +964,7 @@ const AppContent: React.FC = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap py-3.5 -my-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded ${isActive ? "text-gold-500" : "opacity-70"}`}
+                    className={`text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors whitespace-nowrap py-3.5 -my-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded ${isActive ? "text-accent" : "opacity-70"}`}
                   >
                     {link.label}
                   </Link>
@@ -976,13 +975,13 @@ const AppContent: React.FC = () => {
               <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
               <button
                 onClick={toggleTheme}
-                className="hidden md:flex relative w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
+                className="hidden md:flex relative w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
               >
                 {theme === "dark" ? "☀" : "☾"}
               </button>
               <button
                 onClick={toggleLanguage}
-                className="hidden md:flex relative w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
+                className="hidden md:flex relative w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
               >
                 {language === "zh" ? "EN" : "中"}
               </button>
@@ -1001,13 +1000,13 @@ const AppContent: React.FC = () => {
         <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
           <button
             onClick={toggleTheme}
-            className={`relative w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
+            className={`relative w-8 h-8 rounded-full flex items-center justify-center border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-star-50/15" : "bg-paper-100/80 border-paper-900/15"}`}
           >
             {theme === "dark" ? "☀" : "☾"}
           </button>
           <button
             onClick={toggleLanguage}
-            className={`relative w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg text-xs font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
+            className={`relative w-8 h-8 rounded-full flex items-center justify-center border text-xs font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-star-50/15" : "bg-paper-100/80 border-paper-900/15"}`}
           >
             {language === "zh" ? "EN" : "中"}
           </button>

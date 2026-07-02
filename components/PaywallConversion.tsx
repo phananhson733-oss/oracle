@@ -167,7 +167,7 @@ export const ValueComparison: React.FC<ValueComparisonProps> = ({
           isDark ? 'bg-gold-500/10 border border-gold-500/30' : 'bg-amber-50 border border-amber-200'
         }`}>
           <div className={`absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full ${
-            isDark ? 'bg-gold-500 text-space-950' : 'bg-amber-500 text-white'
+            isDark ? 'bg-gold-500 text-paper-900' : 'bg-amber-500 text-paper-900'
           }`}>
             {t.bestValue}
           </div>

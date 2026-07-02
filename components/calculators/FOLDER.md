@@ -79,3 +79,4 @@
 - 2026-06-25 更新：Composite 与 Current Planets/Transits 工具内部结果页继续数据化。新增 `compositeData` + `CompositeResultView`，组合盘结果区改为组合轮盘、中点落座、相位矩阵、宫位、元素矩阵与宫主星；新增 `transitData` + `TransitResultView`，Current Planets 增加可选出生资料 overlay，前端用 selected sky × natal chart 计算 Transit Aspect Matrix、短期/长期行运列表；均不展示 AI 解读、不显示 View Detail。
 - 2026-06-25 更新：Celebrity Twins 名人详情数据化。`celebrities.ts` 扩展可选 chart dossier 并新增 Lei Jun 公开星盘资料；`CelebrityTwinsTool` 的名人行改为可点击，详情面板展示出生资料、date-only 数据边界，或完整 dossier 的行星落座、Beyond points、主要相位、图形结构、元素/三模态签名；未知出生时间时明确不展示上升/宫位/宫主星。
 - 2026-06-25 更新：新增两个 tools SEO alias 页。`/:lang/astrocartography-map-generator` 复用 AstrocartographyTool 的表单/地图逻辑并切换 H1、副标题、按钮、面包屑与可见落地正文；`/:lang/moon-phase-today` 复用 MoonPhaseTool 固定今天并显示动态月相、受照比例、距下一次满月/新月天数；两页的 alias 正文和 FAQ 进入 `toolSeoContent`，不加入 `TOOLS` catalog。
+- ToolFunnelCTA：PRIMARY_CLASS 从金色渐变+glow 改为实心墨 mono 大写（bg-star-50/text-space-950 双模式自反转）；容器与次级链接分隔线改发丝线。

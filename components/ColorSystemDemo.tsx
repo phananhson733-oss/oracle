@@ -1,6 +1,6 @@
 // INPUT: 色彩系统演示组件
-// OUTPUT: 展示新色彩系统的实际应用示例
-// POS: 开发参考组件，展示设计 token 的正确使用方式
+// OUTPUT: 展示旧色彩系统的应用示例（部分模式已被编辑部纸墨系统取代）
+// POS: 【过时】开发参考组件 —— 其中 hover:scale / shadow-glow / 渐变卡片等模式已被 COLOR_SYSTEM_GUIDE.md 禁用，参考请以该文档为准；本页仅作历史演示待重写。
 
 import React from 'react';
 import {

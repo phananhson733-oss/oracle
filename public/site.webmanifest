@@ -3,8 +3,8 @@
   "short_name": "AstrologyWiki",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A0B0D",
-  "theme_color": "#0A0B0D",
+  "background_color": "#F4EFE4",
+  "theme_color": "#F4EFE4",
   "icons": [
     {
       "src": "/icon-192.png",

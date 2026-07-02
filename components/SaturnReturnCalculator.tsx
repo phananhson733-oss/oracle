@@ -566,7 +566,7 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
           <button
             type="submit"
             disabled={state === "loading"}
-            className="w-full rounded-xl bg-gradient-primary py-3.5 px-6 text-lg font-semibold text-space-950 shadow-glow transition-all duration-300 ease-in-out hover:scale-[1.01] hover:opacity-95 disabled:opacity-60 disabled:cursor-not-allowed min-h-[44px] motion-reduce:transition-none"
+            className="w-full rounded-xl bg-star-50 py-3.5 px-6 text-lg font-semibold text-space-950 transition-all duration-300 ease-in-out hover:opacity-95 disabled:opacity-60 disabled:cursor-not-allowed min-h-[44px] motion-reduce:transition-none"
           >
             {state === "loading" ? (
               <span className="flex items-center justify-center gap-2">

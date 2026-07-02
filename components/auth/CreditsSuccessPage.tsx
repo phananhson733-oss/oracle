@@ -187,7 +187,7 @@ const CreditsSuccessPage: React.FC = () => {
                 <div className="w-24 h-24 rounded-full bg-gold-500" />
               </div>
               <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center mx-auto shadow-lg">
-                <CheckCircle className="w-12 h-12 text-space-950" />
+                <CheckCircle className="w-12 h-12 text-paper-900" />
               </div>
             </div>
 

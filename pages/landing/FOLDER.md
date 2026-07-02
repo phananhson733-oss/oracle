@@ -32,3 +32,4 @@
 - 新增 HeroTodayCard.tsx 与共享 useTodaySky 钩子；Hero 右半区不再空白，以真实今日天象（编辑日期 + Sun/Moon/Mercury）做品牌锚点，避开 SaaS 风 hero 空洞感（FINDING-H01）。
 - CosmicWeatherSection 从内联 useState/useEffect 切到 useTodaySky，与 Hero 共享一次 /api/astro/today 请求。
 - HeroSection 从单列改为 md+ 7/5 双列网格，左 copy + CTA，右 HeroTodayCard。
+- 编辑部换装：HeroSection 大标题 mono→Cormorant 衬线（斜体陈金强调词，mt-8 解 descender 冲突）、主 CTA 金色药丸→实心墨 mono 大写；八个 section 标题 font-mono→font-serif；NewsletterSection/BirthChartSection CTA 同步实心墨。

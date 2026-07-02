@@ -15,7 +15,7 @@
 
 ### Requirement: Theme toggle
 系统 SHALL 支持深色与浅色主题，并将选择保存到 localStorage 的
-`astro_theme`。
+`astro_theme_v2`。
 
 #### Scenario: Theme toggle updates styling
 - **WHEN** 用户切换主题

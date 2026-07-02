@@ -171,7 +171,7 @@ export const ChartMiniCalc: React.FC<ChartMiniCalcProps> = ({
         type="button"
         onClick={handleReveal}
         disabled={!birthDate}
-        className="mt-5 w-full px-5 py-3 rounded-lg bg-gold-500 text-space-950 font-semibold min-h-[44px] disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gold-400 transition-colors"
+        className="mt-5 w-full px-5 py-3 rounded-lg bg-star-50 text-space-950 font-semibold min-h-[44px] disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
       >
         {nc?.cta_reveal || "Reveal My North Node"}
       </button>

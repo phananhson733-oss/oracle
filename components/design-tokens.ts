@@ -1,11 +1,11 @@
 // INPUT: 设计系统 Token 定义（含 paper 温暖色系与对比度修正）
-// OUTPUT: 导出所有设计 token 常量（颜色、间距、圆角、动画等）
-// POS: 设计系统核心配置文件（含 light 纸感映射与遮罩基准）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// OUTPUT: 导出设计 token 常量（颜色、间距、圆角、动画等）；仅 SEMANTIC_COLORS 等少数导出仍被消费。
+// POS: 半废弃的平行 token 源 —— UI 规范唯一基准是 COLOR_SYSTEM_GUIDE.md（编辑部纸墨系统）；本文件仅为存量 importer（RoddenRatingTool/ColorSystemDemo）保留，新代码勿引用。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 /**
  * 占星智慧设计系统 Token
  *
- * 设计理念："线性黑 x 暗金" - 现代感、易读性、神秘感
+ * 设计理念："编辑部纸墨（Editorial Paper × Ink）" —— 见 COLOR_SYSTEM_GUIDE.md（本文件为存量兼容层）
  *
  * 使用指南：
  * 1. 所有组件应使用此文件中的 token，而非硬编码值
@@ -98,8 +98,8 @@ export const BG_OPACITY = {
 export const SHADOW = {
   none: 'shadow-none',
   sm: 'shadow-sm',           // 微小阴影
-  card: 'shadow-card',       // 卡片阴影
-  glow: 'shadow-glow',       // 金色光晕
+  card: 'shadow-none',       // 编辑部无卡片阴影（发丝线分隔）
+  glow: 'shadow-none',       // 编辑部禁 glow（config 已置 none）
   '2xl': 'shadow-2xl',       // 大阴影（模态框）
 } as const;
 
@@ -143,7 +143,7 @@ export const FONT_WEIGHT = {
 export const THEME_CLASSES = {
   dark: {
     container: 'bg-space-950 text-star-50',
-    card: 'bg-space-900/60 border border-space-700/70 shadow-card backdrop-blur-lg',
+    card: 'bg-space-900/70 border border-star-50/10',
     cardHover: 'hover:border-accent/50 hover:bg-space-900/70',
     input: 'bg-space-900/70 border-gold-500/20 text-star-50 placeholder-star-400/60',
     heading: 'text-star-50',
@@ -226,7 +226,7 @@ export const Z_INDEX = {
 // ============================================
 export const BUTTON_VARIANTS = {
   primary: {
-    base: 'bg-gradient-primary text-space-950 font-semibold shadow-glow border border-transparent',
+    base: 'bg-star-50 text-space-950 font-mono font-medium uppercase tracking-[0.12em] border border-transparent',
     hover: 'hover:opacity-95',
   },
   secondary: {
@@ -386,8 +386,8 @@ export const INTERACTIVE_STATES = {
   // 按钮状态（增强版）
   button: {
     primary: {
-      default: 'bg-gradient-primary text-space-950',
-      hover: 'hover:opacity-95 hover:shadow-glow',
+      default: 'bg-star-50 text-space-950',
+      hover: 'hover:opacity-90',
       active: 'active:opacity-90 active:scale-[0.98]',
       disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
     },

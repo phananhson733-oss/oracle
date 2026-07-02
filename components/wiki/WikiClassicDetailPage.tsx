@@ -711,7 +711,7 @@ export const WikiClassicDetailPage: React.FC = () => {
           style={{ backgroundImage: paperEdge }}
         />
         <div
-          className="relative z-10 flex h-full flex-col font-serif"
+          className="relative z-10 flex h-full flex-col font-reading"
           style={pagePadding}
         >
           <div

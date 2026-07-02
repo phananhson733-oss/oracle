@@ -20,6 +20,7 @@
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
 - analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。
+- themeStorage.ts｜地位：主题持久化唯一入口｜功能：astro_theme_v2 安全读写（严格归一化 + storage 禁用防护 + THEME_META_COLORS），index.html pre-paint 脚本是其不可 import 的镜像。
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
 - consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
 - region.ts｜地位：地域判定服务｜功能：读 /api/region（Vercel IP 国家码）判定 GDPR 强制区（EU27+EEA+UK+CH），供 ConsentBanner 地域分流与 AdSlot 广告同意门控；含 GDPR_COUNTRIES/isGdprCountry/fetchRegion/getCachedRegion，失败 fail-safe 为 UNKNOWN。
@@ -83,3 +84,4 @@
 - apiClient 上调 AI 缓存版本以刷新旧的概览内容结构。
 - apiClient 上调 AI 缓存版本并自动清理旧版日运概览结构。
 - apiClient 上调本地缓存前缀以强制刷新旧缓存。
+- 新增 themeStorage.ts：/review 加固产物 —— 集中 astro_theme_v2 读写（UIComponents/App/AuthContext 三处消费），归一化污染值、storage 禁用回退 light，持久化仅在显式切换时发生（保住 v2「显式选择」语义）。

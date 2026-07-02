@@ -261,10 +261,10 @@ const CalendarStats: React.FC<CalendarStatsProps> = ({ records, onAddEntry, onSe
             className="relative group overflow-hidden px-8 py-4 rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-gold-500/20"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 animate-gradient-x"></div>
-            <div className="absolute inset-0 bg-space-950/10 group-hover:bg-transparent transition-colors"></div>
+            <div className="absolute inset-0 bg-paper-900/10 group-hover:bg-transparent transition-colors"></div>
             <div className="relative flex items-center gap-3">
-              <span className="text-space-950 font-black text-xs uppercase tracking-[0.4em]">{t.journal.start_deep_record}</span>
-              <Sparkles size={18} className="text-space-900 animate-pulse" />
+              <span className="text-paper-900 font-black text-xs uppercase tracking-[0.4em]">{t.journal.start_deep_record}</span>
+              <Sparkles size={18} className="text-paper-800 animate-pulse" />
             </div>
           </button>
         </div>

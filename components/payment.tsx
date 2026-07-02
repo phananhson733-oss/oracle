@@ -240,7 +240,7 @@ export const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) =
                 } ${isProcessing ? 'opacity-60 cursor-not-allowed' : ''}`}
               >
                 {badge && (
-                  <span className="absolute -top-2 left-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gold-500 text-space-950 rounded-full">
+                  <span className="absolute -top-2 left-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-accent-200 text-paper-900 rounded-full">
                     {badge}
                   </span>
                 )}

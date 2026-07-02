@@ -208,3 +208,4 @@
 - 探索自我人生课题与行动改为点击后懒加载生成。
 - Ask 报告顶部显示提问标题并将核心洞察标题移出正文，左上展示大类型与问题描述。
 - Ask 报告头部显示为「分类：问题」格式，并去除子标题。
+- 全站换装「编辑部纸墨」设计系统：light 变默认（暖纸 #F4EFE4 + 墨 #16130F，dark=夜空反转）、陈金 accent（CSS 变量双模式）、圆角统一 2px、去 glow/毛玻璃改发丝线；index.html（:root/body.dark 变量 + pre-paint 防闪 + Newsreader 字体 + theme-color）、tailwind.config.cjs、index.css、site.webmanifest、favicon.svg、og-image 全套同步；主题键升级 astro_theme_v2；星盘/K线图表内部样式按用户拍板豁免不动。规范基准见 COLOR_SYSTEM_GUIDE.md（已重写）。

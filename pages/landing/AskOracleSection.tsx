@@ -45,7 +45,7 @@ const AskOracleSection: React.FC = () => {
         {/* Title */}
         <h2
           id="ask-oracle-heading"
-          className={`font-mono font-medium text-3xl md:text-4xl leading-tight tracking-tight ${
+          className={`font-serif font-medium text-4xl md:text-5xl leading-tight tracking-[-0.015em] ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
@@ -66,7 +66,7 @@ const AskOracleSection: React.FC = () => {
         <article
           className={`mt-10 rounded-2xl border p-8 md:p-10 ${
             isDark
-              ? "border-gold-500/15 bg-space-900/40"
+              ? "border-star-50/15 bg-space-900/40"
               : "border-paper-300 bg-paper-200/40"
           }`}
           aria-label="Example question and answer"
@@ -117,7 +117,7 @@ const AskOracleSection: React.FC = () => {
             onClick={handleCta}
             className={`text-base underline underline-offset-4 transition-colors duration-200 hover:text-accent motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm ${
               isDark
-                ? "text-accent decoration-gold-500/50 focus-visible:ring-offset-space-950"
+                ? "text-accent decoration-accent/50 focus-visible:ring-offset-space-950"
                 : "text-accent decoration-accent/50 focus-visible:ring-offset-paper-100"
             }`}
           >

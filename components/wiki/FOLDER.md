@@ -72,3 +72,4 @@
 - Wiki 首页每日星象内容按天缓存，避免重复刷新。
 - 四大支柱图标强制 Unicode 文本呈现，避免 emoji 显示。
 - Wiki 条目与关联条目图标统一加文本变体，阻止 emoji 渲染。
+- 阅读面接入 Newsreader：WikiArticleDetailPage 文章正文与 WikiClassicDetailPage 书页容器改 font-reading（长文衬线，工具面保持 sans）。

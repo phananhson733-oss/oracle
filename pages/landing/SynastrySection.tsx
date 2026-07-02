@@ -29,7 +29,7 @@ const SynastrySection: React.FC = () => {
     <section
       id="synastry"
       aria-labelledby="synastry-heading"
-      className="py-24 scroll-mt-16 border-y border-paper-300/60 dark:border-gold-500/10 bg-paper-100 dark:bg-space-950"
+      className="py-24 scroll-mt-16 border-y border-paper-300/60 dark:border-star-50/10 bg-paper-100 dark:bg-space-950"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         {/* Left column — editorial copy */}
@@ -43,7 +43,7 @@ const SynastrySection: React.FC = () => {
           </p>
           <h2
             id="synastry-heading"
-            className={`font-mono font-medium text-3xl md:text-4xl leading-tight tracking-tight ${
+            className={`font-serif font-medium text-4xl md:text-5xl leading-tight tracking-[-0.015em] ${
               isDark ? "text-star-50" : "text-paper-900"
             }`}
           >
