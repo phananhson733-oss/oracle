@@ -24,15 +24,15 @@ export const veraWangBirthChartEn: WikiArticle = {
 
 ## What Is the Vera Wang Birth Chart?
 
-Vera Wang birth chart is **a symbolic map of the sky at the moment of her birth**, read as a cultural portrait of a bridal-design icon rather than proof that astrology shaped her career. Born on June 27, 1949, Wang carries a Cancer Sun — the sign of home, care, and emotional security — but the chart doesn't stop there. Because the Moon, Mercury, Venus, and Mars are set by birth date alone, we can name them without a confirmed birth time: her Moon and Venus also fall in Cancer, while Mercury and Mars sit in quick-witted Gemini. That triple-Cancer weight, echoing a life built around weddings and milestone moments, is the real thread this reading follows — part of the wider craft covered in the [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+Vera Wang birth chart is **a symbolic map of the sky at the moment of her birth**, read as a cultural portrait of a bridal-design icon rather than proof that astrology shaped her career. Born on June 27, 1949, Wang carries a Cancer Sun — the sign of home, care, and emotional security — but the chart doesn't stop there. Because Mercury, Venus, and Mars barely move across a single day, we can name them without a confirmed birth time: her Venus also falls in Cancer, while Mercury and Mars sit in quick-witted Gemini. The Moon is the exception — it travels 12–13° a day and can change signs before nightfall, so a Cancer Moon is only fan-shared, unconfirmed until a birth time settles it. That double-Cancer weight, echoing a life built around weddings and milestone moments, is the real thread this reading follows — part of the wider craft covered in the [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
 
-- Sun, Moon, and Venus all in Cancer — a strong pull toward home, protection, and emotional bonds
+- Sun and Venus in Cancer — a strong pull toward home, protection, and emotional bonds; a Cancer Moon is often shared by fans but stays unconfirmed without a birth time
 - Mercury and Mars in Gemini — a fast, versatile, editorial cast of mind
-- Only the ascendant, houses, and Midheaven need her unconfirmed birth time, so those stay provisional
+- The fast-moving Moon, the ascendant, houses, and Midheaven all need her unconfirmed birth time, so those stay provisional
 
 ## Why It Matters for Self-Awareness
 
-Reading the Vera Wang birth chart matters because a well-known chart becomes an accessible mirror. It lets you watch an archetype — here, a Cancer Sun reinforced by the Moon and Venus — express itself in a public life, then ask where the same theme lives in your own placements. Roughly 29% of U.S. adults tell Pew Research they believe in astrology, and celebrity charts are often the first door people walk through. A figure you already have context for makes abstract symbolism concrete, because you can hold the interpretation against a life you already know something about. That framing — placements as tendencies, not destiny — reflects the person-centered tradition Dane Rudhyar established and the later psychological work of Liz Greene.
+Reading the Vera Wang birth chart matters because a well-known chart becomes an accessible mirror. It lets you watch an archetype — here, a Cancer Sun reinforced by Venus — express itself in a public life, then ask where the same theme lives in your own placements. Roughly 29% of U.S. adults tell Pew Research they believe in astrology, and celebrity charts are often the first door people walk through. A figure you already have context for makes abstract symbolism concrete, because you can hold the interpretation against a life you already know something about. That framing — placements as tendencies, not destiny — reflects the person-centered tradition Dane Rudhyar established and the later psychological work of Liz Greene.
 
 For most readers, the value lands in three ways:
 
@@ -44,16 +44,16 @@ For most readers, the value lands in three ways:
 
 The Vera Wang birth chart differs from her zodiac sign in scope, and blurring the two is the most common mistake readers make. A Sun sign is a single placement — Cancer — while the full chart layers the Moon, the planets, the houses, and the angles into one picture.
 
-The Sun sign is fast and portable: one archetype from a birth date, no birth time required. The cost is depth — a Cancer Sun alone says nothing about how she communicates or what she values. Her full chart fills that in: a Cancer Moon deepens the emotional register, Cancer Venus sets her taste toward romance and tenderness, and Gemini Mercury and Mars add a restless, articulate drive. What still needs a confirmed birth time is narrower than people assume — only the ascendant, houses, and Midheaven, plus a planet caught exactly on a sign boundary. The rising sign in particular reshapes everything else, which is why the [guide to the ascendant and rising sign meaning](/en/wiki/ascendant-meaning) changes how the rest of the chart is read.
+The Sun sign is fast and portable: one archetype from a birth date, no birth time required. The cost is depth — a Cancer Sun alone says nothing about how she communicates or what she values. Her full chart fills that in: a fan-shared but unconfirmed Cancer Moon would deepen the emotional register, Cancer Venus sets her taste toward romance and tenderness, and Gemini Mercury and Mars add a restless, articulate drive. What still needs a confirmed birth time is broader than people assume — the fast-moving Moon along with the ascendant, houses, and Midheaven, plus a planet caught exactly on a sign boundary. The rising sign in particular reshapes everything else, which is why the [guide to the ascendant and rising sign meaning](/en/wiki/ascendant-meaning) changes how the rest of the chart is read.
 
 ## How to Read Vera Wang's Natal Chart Symbolically
 
 You don't need her birth time to reach a meaningful read. Work from the placements her birth date fixes, and treat everything time-dependent as an open question.
 
-1. **Start with the Cancer emphasis.** Sun, Moon, and Venus in Cancer point to one theme — care, home, emotional security — and it echoes across her life: she trained as a competitive figure skater, spent roughly sixteen years as a senior fashion editor at Vogue, then founded her own bridal label at forty. The late, deliberate bloom reads as Cancer patience more than sudden luck.
+1. **Start with the Cancer emphasis.** Sun and Venus in Cancer point to one theme — care, home, emotional security — and it echoes across her life: she trained as a competitive figure skater, spent roughly sixteen years as a senior fashion editor at Vogue, then founded her own bridal label at forty. The late, deliberate bloom reads as Cancer patience more than sudden luck.
 2. **Read Cancer Venus for her aesthetic.** Venus here prizes softness, nostalgia, and heirloom feeling — a lens that reframes her couture bridal work as emotional keepsake rather than runway spectacle. It is the chart's sharpest hook: where a Libra or Leo Venus might chase symmetry or drama, Cancer Venus reaches for tenderness and memory, which is exactly the register a wedding gown lives in. The value she places on ceremony and belonging shows up as clothing built to be kept, wept over, and handed down.
 3. **Add the Gemini planets.** Mercury and Mars in Gemini fit an editor's quick, verbal mind and a drive that reinvented itself from rink to magazine to atelier.
-4. **Flag the unknowns.** Mark the ascendant, Midheaven, and houses as unresolved until a verified birth time surfaces.
+4. **Flag the unknowns.** Mark the fast-moving Moon along with the ascendant, Midheaven, and houses as unresolved until a verified birth time surfaces.
 5. **Read for archetype, not prophecy.** Treat each placement in the chart as a tendency, never a cause of any specific outcome.
 
 
@@ -64,7 +64,7 @@ You don't need her birth time to reach a meaningful read. Work from the placemen
 Most popular takes flatten her chart into a single deterministic story. The recurring errors are easy to correct:
 
 1. **"Her Cancer Sun explains the bridal empire."** In reality, the chart offers symbolic resonance, not causation. Plenty of Cancer Suns never touch fashion at all.
-2. **"The zodiac sign is the whole chart."** In reality, Cancer is one placement; her Cancer Moon and Venus and her Gemini Mercury and Mars all shift the reading.
+2. **"The zodiac sign is the whole chart."** In reality, Cancer is one placement; her Cancer Venus and her Gemini Mercury and Mars all shift the reading.
 3. **"We can state her rising sign with confidence."** In reality, without a verified birth time, any ascendant claim is guesswork dressed up as fact.
 4. **"A chart validates her life choices."** In reality, astrology describes tendencies and archetypes — it doesn't endorse or explain a biography.
 
@@ -73,7 +73,7 @@ Most popular takes flatten her chart into a single deterministic story. The recu
 | Placement | How It Works | Ruling Element / House | How to Observe |
 | --- | --- | --- | --- |
 | Cancer Sun | Sets the core identity theme of care and emotional security | Water element; natural 4th-house themes of home | A life's work built around family milestones and belonging |
-| Cancer Moon | Emotional rhythm and instinct; as ruler of her Cancer Sun, it doubles the theme | Water; the Moon rules Cancer | Protective, nurturing public sensibility |
+| Moon (sign unconfirmed) | Emotional rhythm and instinct; fans often place it in Cancer, but the fast-moving Moon needs a birth time to confirm | Water; the Moon rules Cancer | Treat any sign as provisional until a verified time appears |
 | Cancer Venus | Taste and values steeped in romance, nostalgia, and tenderness | Water; Venus by sign here | Couture bridal read as heirloom emotion, not spectacle |
 | Gemini Mercury & Mars | Quick, versatile, editorial thinking and drive | Air; mutable dexterity | Years shaping words at Vogue; reinvention rink to runway |
 | Rising sign | Frames how the whole chart presents itself | Depends on an unknown birth time | Treat as provisional until a verified time appears |
@@ -85,7 +85,7 @@ Most popular takes flatten her chart into a single deterministic story. The recu
 
 **What zodiac sign is shown in the Vera Wang birth chart?**
 
-Her birth date of June 27, 1949 puts the Sun in Cancer — and the Moon and Venus join it there, a strong Cancer emphasis tied to home, care, and emotional security. Mercury and Mars sit in Gemini.
+Her birth date of June 27, 1949 puts the Sun in Cancer — and Venus joins it there, a strong Cancer emphasis tied to home, care, and emotional security. Mercury and Mars sit in Gemini. The Moon may also fall in Cancer, but because it can change signs within a day, that stays unconfirmed without a birth time.
 
 **Can we actually know her rising sign?**
 
