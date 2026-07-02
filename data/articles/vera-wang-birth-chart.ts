@@ -17,8 +17,7 @@ export const veraWangBirthChartEn: WikiArticle = {
     "Vera Wang birth chart meaning",
     "Vera Wang birth chart astrology",
     "Vera Wang birth chart zodiac",
-    "Vera Wang birth chart interpretation",
-    "emma watson zodiac sign"
+    "Vera Wang birth chart interpretation"
   ],
   content: `# What the Vera Wang Birth Chart Reveals About a Bridal-Design Icon
 
