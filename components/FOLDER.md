@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL、付费墙购买回调、支付成功同步与积分充值弹窗）。 -->
-<!-- OUTPUT: components 架构摘要与文件索引（含付费墙回调、支付成功同步/返回、积分充值弹窗与纸感映射记录）。 -->
+<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL、付费墙购买回调、Airwallex Pro 试用激活、AdSense 广告组件、支付成功同步与积分充值弹窗）。 -->
+<!-- OUTPUT: components 架构摘要与文件索引（含付费墙回调、Airwallex Pro 试用激活/成功态、AdSense 展示层、支付成功同步/返回、积分充值弹窗与纸感映射记录）。 -->
 <!-- POS: 主应用组件目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -44,6 +44,7 @@
 近期更新
 
 - 新增 ads/ 目录（AdSense 接入 PR1）：AdSlot 四重门控广告单元 + adPlacements 配置；ConsentBanner 加地域分流（EEA 抑制自研横幅交 Google 认证 CMP）；WikiArticleDetailPage 文末挂 AdSlot（仅非漏斗/非心理敏感文章）。flag 默认关，PR1 全站零广告。
+- 升级弹窗接入手动 Pro 试用激活：符合资格用户点击 CTA 后走 Airwallex 结账填写付款信息，支付成功页可识别试用 checkout 并刷新 trialing 权益。
 - 新增 tools 工具中心 hub（/:lang/tools）：astro.com 风格 5 分类聚合发现页，复用 ToolsGridSection 卡片范式；nav/footer 加 Tools 入口，生成器输出 /en/tools 静态 stub（CollectionPage/ItemList/FAQPage + 16 工具可索引内链 + sitemap）。顺手补 calculators/timeline 子目录索引漂移。
 - 公开工具页宽度同步：根目录 SaturnReturnCalculator 与 Energy Timeline demo 外壳扩到 max-w-[88rem]，与 calculators/ToolPageShell 的工具页宽度保持一致。
 - 新增 MobileBottomNav（移动端固定底部 tab bar，复用顶部 6 项 + t.nav.\* + isActive，safe-area + z-[150] 让位 consent banner）；ConsentBanner 的 analytics/marketing toggle 补可访问名（htmlFor 关联可见文字 + aria-label en/zh + role=switch），不改持久化逻辑。

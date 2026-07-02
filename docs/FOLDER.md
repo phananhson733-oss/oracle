@@ -1,5 +1,5 @@
-<!-- INPUT: 项目配置与指南文档（含 Google OAuth 与 GA4/GTM 追踪配置）。 -->
-<!-- OUTPUT: 文档目录索引。 -->
+<!-- INPUT: 项目配置与指南文档（含 PRD、Google OAuth 与 GA4/GTM 追踪配置）。 -->
+<!-- OUTPUT: 文档目录索引（含 Pro 试用/付费信息更新记录）。 -->
 <!-- POS: 文档目录索引；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 # 文件夹：docs
 
@@ -18,4 +18,10 @@
 - PRIVACY_AUDIT.md｜地位：隐私合规审计（#9）｜功能：隐私政策声明 vs 真实数据流逐条对照，列出阻断项（template 自曝、DeepSeek 训练 DPA、synastry 真名进 LLM）与需法务/供应商确认项，供 legal sign-off。
 - GOOGLE_OAUTH_SETUP.md｜地位：OAuth 配置指南｜功能：说明如何配置 Google OAuth 登录功能（含凭据获取与重定向配置）。
 - BACKUP_RUNBOOK.md｜地位：备份/恢复 runbook｜功能：数据存储拓扑、备份机制、RPO/RTO 目标、恢复步骤与待核验 TODO（backlog #21）；平台事实标 UNVERIFIED 须 dashboard 核实。
+- PRD.md｜地位：产品需求文档｜功能：记录产品模块、商业模式、API、数据库 Schema 与用户旅程。
 - FOLDER.md｜地位：目录索引文档｜功能：记录 docs 目录下的文件清单。
+
+## 近期更新
+
+- PRD v2.47 同步 Pro 试用新流程：注册后默认 Free，符合资格用户需手动点击试用并在 Airwallex 填写付款信息，到期自动续费。
+- BACKUP_RUNBOOK 将 `pro_trial_claims` 纳入 Postgres 备份/恢复表清单，避免 Airwallex-backed Pro 试用领取历史恢复遗漏。
