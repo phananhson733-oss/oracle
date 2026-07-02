@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "coco-gauff-birth-chart": {
+      "hero": {
+        "prompt": "A surging midnight ocean beneath an infinite star field, where two great luminous currents rise from the deep water and spiral upward to merge into a single blazing aurora across the indigo sky — one current silver and fluid like intuition, the other gold and fierce like competitive fire — the two forces inseparable and whole across one continuous seascape, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Coco Gauff birth chart concept: silver intuition and golden fire merge as one aurora over a deep midnight ocean",
+        "altZh": "科科·高夫星盘意象：银色直觉与金色竞争之火在午夜海洋上空汇聚成一道极光"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs a Sun-Sign Read: What Each Actually Shows",
+          "titleEn": "Sun-Sign Snippet vs Full Birth Chart",
+          "titleZh": "太阳星座速览与完整星盘对比",
+          "altEn": "Side-by-side comparison: what a Sun-sign snippet shows versus what a full birth chart reveals",
+          "altZh": "对比图：太阳星座速览与完整星盘各自揭示的内容",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Snippet",
+              "nameZh": "太阳星座速览",
+              "linesEn": [
+                "Uses only the Sun's zodiac position",
+                "Generalizes to everyone born that month",
+                "Fast, shareable, fits a headline",
+                "Same label for every Pisces"
+              ],
+              "linesZh": [
+                "仅使用太阳所在星座位置",
+                "适用于同月出生的所有人",
+                "简洁、易传播，适合标题",
+                "所有双鱼座贴同一标签"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "nameZh": "完整星盘",
+              "linesEn": [
+                "Plots Moon, rising sign, and aspects",
+                "Reads uniquely for one person's life",
+                "Nuanced but requires a verified birth time",
+                "No two Pisces charts land the same"
+              ],
+              "linesZh": [
+                "绘制月亮、上升星座及相位",
+                "针对个人生命的独特解读",
+                "细腻深入，需要准确出生时间",
+                "没有两张双鱼座星盘完全相同"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Birth Chart as a Character Study",
+          "titleEn": "5 Signals to Look for in Coco Gauff's Chart",
+          "titleZh": "解读科科·高夫星盘的5个关键信号",
+          "altEn": "Five-step sequence for reading a birth chart as a character study using Coco Gauff's placements",
+          "altZh": "以科科·高夫星盘为例，将星盘作为性格研究解读的五步流程",
+          "items": [
+            {
+              "nameEn": "Pisces Sun in a Pressure Sport",
+              "nameZh": "压力运动中的双鱼太阳",
+              "subEn": "Notice emotional expressiveness and imagination — water-sign sensitivity read as feel, not softness",
+              "subZh": "观察情感表达与想象力——水象星座的敏感性体现为感知力，而非软弱"
+            },
+            {
+              "nameEn": "Composure When Momentum Swings",
+              "nameZh": "气势逆转时的镇定",
+              "subEn": "Watch how she resets after a lost set; weigh against Moon and rising-sign themes about emotional reflexes",
+              "subZh": "观察她在输掉一盘后如何调整状态；结合月亮与上升星座对情绪反射的诠释"
+            },
+            {
+              "nameEn": "Voice and Advocacy Off Court",
+              "nameZh": "场外发声与倡导",
+              "subEn": "Track how directly she speaks up in interviews — a natural place to look for Mercury placements",
+              "subZh": "观察她在采访中发言的直接程度——这是探寻水星位置的天然窗口"
+            },
+            {
+              "nameEn": "Instinct Over Rigid Tactics",
+              "nameZh": "本能胜于固定战术",
+              "subEn": "Pisces is linked to flow and improvisation; look for feel-based play rather than mechanical patterns",
+              "subZh": "双鱼座与流动性和即兴发挥相关；寻找感知型打法而非机械化模式"
+            },
+            {
+              "nameEn": "The Unconfirmed Angles",
+              "nameZh": "未经证实的宫位角度",
+              "subEn": "Where birth time is uncertain, treat any rising-sign claim as a hypothesis to test, never a stated fact",
+              "subZh": "出生时间不确定时，任何上升星座说法都应视为待验证的假设，而非既定事实"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
