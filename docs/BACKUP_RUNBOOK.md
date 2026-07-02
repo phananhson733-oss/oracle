@@ -1,5 +1,5 @@
-<!-- INPUT: oracle 的数据存储拓扑（Supabase Postgres / Redis / Vercel）+ backend/migrations/*.sql 的真实 schema。 -->
-<!-- OUTPUT: 备份 / 恢复 runbook——数据清单、备份机制、RPO/RTO 目标、可复制恢复步骤、演练清单、待核验 TODO。 -->
+<!-- INPUT: oracle 的数据存储拓扑（Supabase Postgres / Redis / Vercel）+ backend/migrations/*.sql 的真实 schema（含 Airwallex Pro 试用领取表）。 -->
+<!-- OUTPUT: 备份 / 恢复 runbook——数据清单、备份机制、RPO/RTO 目标、可复制恢复步骤、演练清单、待核验 TODO（含 Pro 试用领取历史）。 -->
 <!-- POS: backlog #21 产出。平台层事实（Supabase 套餐 PITR / 保留窗口）仓内不可验，标 UNVERIFIED，须经 dashboard 核实后回填。 -->
 
 # 备份与恢复 Runbook（Backup & Restore Runbook）
@@ -18,9 +18,9 @@
 | **Redis** | 缓存层（星历 / AI 结果 / 配额计数；含内存兜底） | 易失（可重算） | ❌ 不备份（见 §5.3） | `backend/src/cache/redis.ts`（`REDIS_URL`） |
 | **Vercel** | 无状态 serverless 部署 + 静态资源 | 无状态（从 git 重建） | ❌ 代码即 git，无独立数据 | `vercel.json` |
 
-### 1.1 Postgres 表清单（已验证 — `backend/migrations/000-007`）
+### 1.1 Postgres 表清单（已验证 — `backend/migrations/000-012`）
 
-`users`、`subscriptions`、`subscription_usage`、`purchases`、`purchase_records`、`reports`、`free_usage`、`synastry_records`、`trial_claims`、`registration_codes`、`newsletter_subscribers`、`webhook_events`（共 12 张）。
+`users`、`subscriptions`、`subscription_usage`、`purchases`、`purchase_records`、`reports`、`free_usage`、`synastry_records`、`trial_claims`、`pro_trial_claims`、`registration_codes`、`newsletter_subscribers`、`webhook_events`（共 13 张）。
 
 **高敏感（PII / 计费，恢复优先级最高）**：`users`（邮箱 / 鉴权标识 / 出生数据）、`newsletter_subscribers`（邮箱）、`subscriptions` + `purchases` + `purchase_records`（计费状态）、`webhook_events`（支付幂等去重，丢失可致重复处理）。
 
@@ -35,7 +35,7 @@
 Supabase 按套餐提供每日备份与 PITR（Point-In-Time Recovery）：
 - **UNVERIFIED-1**：当前项目所在套餐是否启用 **PITR**？保留窗口多少天？
 - **UNVERIFIED-2**：每日备份的实际**保留天数**与所在区域？
-- **UNVERIFIED-3**：备份是否覆盖全部 12 张表 + RLS 策略 + 序列/函数？
+- **UNVERIFIED-3**：备份是否覆盖全部 13 张表 + RLS 策略 + 序列/函数？
 
 > 在 §7 的 TODO 核实前，**不要假设 PITR 已开启**。若套餐不含 PITR，§2.3 的离线 dump 是 RPO 的唯一保障。
 
