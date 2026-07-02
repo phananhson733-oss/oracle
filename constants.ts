@@ -1,5 +1,5 @@
-// INPUT: 静态文案、提示词与配置数据（含订阅/付费墙 i18n、试用提示与 Synthetica 文案）。
-// OUTPUT: 导出全局常量与文案（含订阅/付费墙 i18n、试用提醒与提示词/Mock 集合）。
+// INPUT: 静态文案、提示词与配置数据（含订阅/付费墙 i18n、Pro 试用激活提示与 Synthetica 文案）。
+// OUTPUT: 导出全局常量与文案（含订阅/付费墙 i18n、Pro 试用/自动续费提醒与提示词/Mock 集合）。
 // POS: 主应用常量中心。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -1654,7 +1654,7 @@ export const TRANSLATIONS = {
       theme_light: "Light",
       profile: "Profile",
       trial_title: "Trial Status",
-      trial_desc: "Your 7-day free trial ends in {days} days",
+      trial_desc: "Your 7-day Pro trial ends in {days} days",
       reset: "Reset Data",
       reset_desc: "Clear all saved data and start over",
       reset_btn: "Clear Data",
@@ -1716,7 +1716,7 @@ export const TRANSLATIONS = {
       title: "Pricing",
       subtitle: "Start free. Upgrade when you're ready.",
       seo_description:
-        "AstrologyWiki pricing — start free, or go Pro from $6.99/month ($41.99/year, save 50%). One-time credit packs from $4.99. 7-day free trial.",
+        "AstrologyWiki pricing — start free, or activate a 7-day Pro trial with payment details before auto-renewal. Pro from $6.99/month ($41.99/year, save 50%). One-time credit packs from $4.99.",
       plans_title: "Plans",
       free_title: "Free",
       free_price: "$0",
@@ -1730,8 +1730,8 @@ export const TRANSLATIONS = {
       per_year: "/yr",
       save_badge: "Save {percent}%",
       first_discount: "50% off your first subscription",
-      trial: "{days}-day free trial when you sign up",
-      billing_note: "Cancel anytime",
+      trial: "{days}-day Pro trial after payment setup",
+      billing_note: "Cancel anytime before renewal",
       pro_includes_title: "Pro includes",
       credits_title: "Credit packs",
       credits_subtitle:
@@ -1801,6 +1801,12 @@ export const TRANSLATIONS = {
       recommend: "Recommended",
       upgrade: "Upgrade Now",
       renew: "Renew Now",
+      start_trial: "Start {days}-day Pro trial",
+      trial_badge: "7-day trial",
+      trial_active_title: "Pro trial active",
+      trial_desc: "Start with a 7-day Pro trial. Payment details are required.",
+      trial_disclosure:
+        "Payment information is required. After {days} days, the selected plan renews automatically at {price} unless cancelled.",
       login: "Sign in to continue",
       already_pro: "You're already subscribed",
       renew_title: "Renew Pro",
@@ -1890,7 +1896,7 @@ export const TRANSLATIONS = {
       unlock_failed: "Failed to unlock with credits. Please try again.",
       login_credits: "Please sign in to use credits",
       login_subscribe: "Please sign in to start subscription",
-      trial_tip: "Your 7-day free trial has {days} days left",
+      trial_tip: "Your 7-day Pro trial has {days} days left",
       subscriber_tip: "You're already subscribed with full access",
       scope_labels: {
         permanent: "Permanent unlock",
@@ -3563,7 +3569,7 @@ export const TRANSLATIONS = {
       theme_light: "纸质白",
       profile: "个人资料",
       trial_title: "试用提醒",
-      trial_desc: "你的 7 天免费试用还剩 {days} 天",
+      trial_desc: "你的 7 天 Pro 试用还剩 {days} 天",
       reset: "重置数据",
       reset_desc: "清除所有保存的数据并重新开始",
       reset_btn: "清除数据",
@@ -3623,7 +3629,7 @@ export const TRANSLATIONS = {
       title: "定价方案",
       subtitle: "免费开始，准备好再升级。",
       seo_description:
-        "AstrologyWiki 定价：免费起步，Pro 每月 ¥49（年付 ¥294，立省 50%）。一次性积分包 ¥34 起。注册赠 7 天试用。",
+        "AstrologyWiki 定价：免费起步，填写付款信息后可激活 7 天 Pro 试用，到期自动续费。Pro 每月 ¥49（年付 ¥294，立省 50%）。一次性积分包 ¥34 起。",
       plans_title: "方案",
       free_title: "免费",
       free_price: "¥0",
@@ -3636,8 +3642,8 @@ export const TRANSLATIONS = {
       per_year: "/年",
       save_badge: "省 {percent}%",
       first_discount: "首次订阅享 5 折",
-      trial: "注册即赠 {days} 天免费试用",
-      billing_note: "随时取消",
+      trial: "绑定付款信息后试用 Pro {days} 天",
+      billing_note: "续费前可随时取消",
       pro_includes_title: "Pro 包含",
       credits_title: "积分包",
       credits_subtitle:
@@ -3702,6 +3708,12 @@ export const TRANSLATIONS = {
       recommend: "推荐",
       upgrade: "立即升级",
       renew: "立即续费",
+      start_trial: "开始 {days} 天 Pro 试用",
+      trial_badge: "7 天试用",
+      trial_active_title: "Pro 试用中",
+      trial_desc: "先试用 Pro 7 天。需要填写付款信息。",
+      trial_disclosure:
+        "需要填写付款信息。{days} 天试用结束后，所选方案会按 {price} 自动续费；试用期内可随时取消。",
       login: "登录以继续",
       already_pro: "您已是订阅用户",
       renew_title: "续费 Pro",
@@ -3789,7 +3801,7 @@ export const TRANSLATIONS = {
       unlock_failed: "积分解锁失败，请稍后再试。",
       login_credits: "请先登录以使用积分",
       login_subscribe: "请先登录以开通订阅",
-      trial_tip: "您的 7 天免费试用还剩 {days} 天",
+      trial_tip: "您的 7 天 Pro 试用还剩 {days} 天",
       subscriber_tip: "您已是订阅用户，享有大部分内容免费权益",
       scope_labels: {
         permanent: "永久解锁",

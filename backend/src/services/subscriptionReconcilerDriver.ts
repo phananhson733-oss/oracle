@@ -43,6 +43,7 @@ export async function reconcileFromSubscriptionObject(
     status: item.status,
     currentPeriodStart: item.current_period_starts_at,
     currentPeriodEnd: item.current_period_ends_at,
+    trialEnd: item.trial_ends_at,
     dryRun,
   });
 }

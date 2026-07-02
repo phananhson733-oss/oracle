@@ -64,7 +64,7 @@ const PricingPage: React.FC = () => {
     String(YEARLY_SAVE_PERCENT),
   );
   const trialNote = (
-    p?.trial || "{days}-day free trial when you sign up"
+    p?.trial || "{days}-day Pro trial after payment setup"
   ).replace("{days}", String(TRIAL_DAYS));
 
   // Anonymous CTA opens the login modal (never a 500); signed-in users get the
@@ -87,7 +87,7 @@ const PricingPage: React.FC = () => {
   const seoTitle = p?.title || "Pricing";
   const seoDescription =
     p?.seo_description ||
-    "AstrologyWiki pricing — start free, or go Pro from $6.99/month. One-time credit packs and a 7-day free trial.";
+    "AstrologyWiki pricing — start free, or activate a 7-day Pro trial with payment details before auto-renewal.";
   const schema = useMemo(
     () => ({
       "@context": "https://schema.org",

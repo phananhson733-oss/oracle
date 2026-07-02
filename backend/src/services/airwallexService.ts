@@ -91,6 +91,7 @@ interface CreateSubscriptionInput {
   successUrl: string;
   cancelUrl: string;
   useFirstDiscount?: boolean;
+  trialEndsAt?: string;
 }
 
 interface CreateOrderInput {
@@ -105,10 +106,14 @@ interface CreateOrderInput {
 export interface AirwallexSubscriptionListItem {
   id: string;
   billing_customer_id?: string;
+  customer_id?: string;
   status: string;
+  starts_at?: string;
+  trial_ends_at?: string;
   current_period_starts_at?: string;
   current_period_ends_at?: string;
   cancel_at_period_end?: boolean;
+  metadata?: Record<string, string>;
   recurring?: { period?: number; period_unit?: string };
 }
 
@@ -177,13 +182,19 @@ class AirwallexService {
         customer_data: { email: input.email },
         line_items: [{ price_id: priceId, quantity: 1 }],
         mode: 'SUBSCRIPTION',
-        subscription_data: {},
+        ...(input.trialEndsAt && {
+          subscription_data: { trial_ends_at: input.trialEndsAt },
+        }),
         request_id: `sub_${input.userId}_${Date.now()}`,
         metadata: {
           userId: input.userId,
           plan: input.plan,
           currency: input.currency,
           useFirstDiscount: String(usedFirstDiscount),
+          ...(input.trialEndsAt && {
+            activationType: 'pro_trial',
+            trialEndsAt: input.trialEndsAt,
+          }),
         },
         success_url: input.successUrl,
         cancel_url: input.cancelUrl,
@@ -210,6 +221,7 @@ class AirwallexService {
     id: string;
     status: string;
     subscription_id?: string;
+    billing_customer_id?: string;
     metadata?: Record<string, string>;
   }> {
     if (!isAirwallexConfigured()) {

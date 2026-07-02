@@ -22,6 +22,7 @@ export interface ReconcileInput {
   status: string;
   currentPeriodStart?: string;
   currentPeriodEnd?: string;
+  trialEnd?: string;
   /** 只预演不写库（回填脚本默认 dry-run）。 */
   dryRun?: boolean;
 }
@@ -38,6 +39,7 @@ export function mapAirwallexStatus(raw: string): LocalSubscriptionStatus {
   switch ((raw || '').toUpperCase()) {
     case 'ACTIVE':
       return 'active';
+    case 'IN_TRIAL':
     case 'TRIALING':
     case 'TRIAL':
       return 'trialing';
@@ -83,7 +85,8 @@ async function resolveUserId(input: ReconcileInput): Promise<string | null> {
 }
 
 /** 计算 current_period_end：优先用 Airwallex 给的；缺失时按 plan 从 start(或现在)推算。 */
-function resolvePeriodEnd(input: ReconcileInput): string {
+function resolvePeriodEnd(input: ReconcileInput, status: LocalSubscriptionStatus): string {
+  if (status === 'trialing' && input.trialEnd) return input.trialEnd;
   if (input.currentPeriodEnd) return input.currentPeriodEnd;
   const start = new Date(input.currentPeriodStart || new Date().toISOString());
   const end = new Date(start);
@@ -112,7 +115,7 @@ export async function reconcileAirwallexSubscription(
   }
 
   const status = mapAirwallexStatus(input.status);
-  const periodEnd = resolvePeriodEnd(input);
+  const periodEnd = resolvePeriodEnd(input, status);
   const startIso = input.currentPeriodStart || new Date().toISOString();
 
   const subData = {
