@@ -837,6 +837,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'jaylen-brown-birth-chart',
   'coco-gauff-birth-chart',
   'angela-nikolau-birth-chart',
   'john-denver-birth-chart',

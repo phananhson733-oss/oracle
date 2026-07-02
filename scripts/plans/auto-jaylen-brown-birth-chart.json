@@ -1,0 +1,108 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jaylen-brown-birth-chart": {
+      "hero": {
+        "prompt": "A single molten-gold river of light coursing down a dark volcanic hillside into a glassy obsidian sea at midnight, the glowing current reflected perfectly on the still water below, dark indigo-mountain silhouettes framing the horizon, embers and gold mist drifting into the vast night sky above, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Scorpio intensity as a single gold river of light flowing from dark volcanic terrain into a glassy midnight sea",
+        "altZh": "天蝎座的专注力化为一道金色光流，从幽暗的火山地带流入午夜玻璃般平静的海面"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Full Natal Synthesis vs a Scorpio Sun-Sign Label",
+          "titleEn": "Sun-Sign Label vs Full Natal Synthesis",
+          "titleZh": "太阳星座标签与完整出生盘综合解读对比",
+          "altEn": "Comparison of a simple Sun-sign label versus a full natal chart synthesis for Jaylen Brown",
+          "altZh": "杰伦·布朗出生盘简单太阳星座标签与完整综合解读的对比",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Label",
+              "nameZh": "太阳星座标签",
+              "linesEn": [
+                "Fast and portable",
+                "Names one placement only",
+                "Every Scorpio sounds identical",
+                "Sacrifices accuracy for speed",
+                "Stops at 'Scorpio: intense'"
+              ],
+              "linesZh": [
+                "快速且便携",
+                "仅命名单一星位",
+                "所有天蝎座描述听起来相同",
+                "以准确性换取速度",
+                "止步于【天蝎座：强烈】"
+              ]
+            },
+            {
+              "nameEn": "Full Natal Synthesis",
+              "nameZh": "完整出生盘综合解读",
+              "linesEn": [
+                "Weighs placements against each other",
+                "Describes a specific character",
+                "Shows how intensity actually works",
+                "Sacrifices simplicity for precision",
+                "Explains context-dependent behavior"
+              ],
+              "linesZh": [
+                "权衡各星位之间的关系",
+                "描述具体的个人性格",
+                "揭示强度的实际运作方式",
+                "以简洁性换取精确性",
+                "解释情境依赖的行为模式"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Scorpio-Anchored Intensity in a Chart",
+          "titleEn": "Five Signals of Scorpio-Anchored Intensity",
+          "titleZh": "天蝎座锚定强度的五个信号",
+          "altEn": "Five chart signals that reveal Scorpio-anchored intensity in a natal chart reading",
+          "altZh": "出生盘解读中揭示天蝎座锚定强度的五个星盘信号",
+          "items": [
+            {
+              "nameEn": "A Scorpio Cluster",
+              "nameZh": "天蝎座星群",
+              "subEn": "Several personal planets in one water sign concentrate focus and produce all-in intensity",
+              "subZh": "多颗个人行星聚集于同一水象星座，集中注意力并产生全力以赴的强度"
+            },
+            {
+              "nameEn": "Hard Aspects to the Sun",
+              "nameZh": "太阳的困难相位",
+              "subEn": "Squares or oppositions surface as competitive drive and a refusal to coast",
+              "subZh": "四分相或对分相呈现为竞争动力和拒绝安于现状的态度"
+            },
+            {
+              "nameEn": "Weight in Expression Houses",
+              "nameZh": "表达宫位的比重",
+              "subEn": "Third or ninth house placements push conviction outward into a public stance",
+              "subZh": "三宫或九宫的行星将内在信念推向公众立场"
+            },
+            {
+              "nameEn": "Fixed-Sign Emphasis",
+              "nameZh": "固定星座的强调",
+              "subEn": "A chart heavy in fixed signs reads as stubborn staying power and deep loyalty",
+              "subZh": "固定星座比重大的星盘体现为顽强的持久力和深厚的忠诚"
+            },
+            {
+              "nameEn": "Prominent Pluto or Mars",
+              "nameZh": "突出的冥王星或火星",
+              "subEn": "Either planet placed strongly deepens themes of pressure, control, and rebuilding",
+              "subZh": "任一行星的强势位置都加深压力、掌控与重建的主题"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
