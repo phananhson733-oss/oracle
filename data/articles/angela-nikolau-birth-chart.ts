@@ -23,7 +23,7 @@ export const angelaNikolauBirthChartEn: WikiArticle = {
 
 ## What Is Angela Nikolau's Birth Chart?
 
-An Angela Nikolau birth chart is the astrological map of the sky at the moment she was born, read as **a symbolic snapshot of the sky at her birth moment** rather than a factual account of her life. Because her exact birth time and place aren't part of the verified public record, any version circulating online is an interpretation, not a documented file. Astrologers who profile public figures treat the chart as a set of interpretive lenses — the Sun sign for core identity, the planets for competing drives, the aspects for how those drives talk to each other. In her case, popular readings commonly place the Sun in Cancer, the sign linked with emotional depth and intuition, and use that as a starting point for her rooftop-artist persona. If the layout is new to you, this [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) maps the parts.
+An Angela Nikolau birth chart is the astrological map of the sky at the moment she was born, read as **a symbolic snapshot of the sky at her birth moment** rather than a factual account of her life. Because her exact birth time isn't part of the public record, any version circulating online fills in the Moon, rising, and houses as interpretation rather than documented fact. Astrologers who profile public figures treat the chart as a set of interpretive lenses — the Sun sign for core identity, the planets for competing drives, the aspects for how those drives talk to each other. In her case, her publicly listed June 24, 1993 birthday puts the Sun in Cancer, the sign linked with emotional depth and intuition, used as a starting point for her rooftop-artist persona. If the layout is new to you, this [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) maps the parts.
 
 - Built from the date, time, and place of birth, not personality guesswork
 - Read as a symbolic persona lens, never as proof of who someone is
@@ -89,7 +89,7 @@ A few readings of the Angela Nikolau birth chart come up again and again, and mo
 
 **Is Angela Nikolau's birth chart officially confirmed?**
 
-No — her exact birth date, time, and place aren't part of the verified public record. Any Angela Nikolau birth chart you find online is an interpretation built on estimated or crowd-sourced data.
+Partly — she is publicly listed as born June 24, 1993 in Moscow, which fixes her Sun in Cancer, but her exact birth time isn't documented, so the Moon, rising sign, and house placements in any online Angela Nikolau birth chart stay provisional rather than officially confirmed.
 
 **What is Angela Nikolau's Sun sign?**
 
