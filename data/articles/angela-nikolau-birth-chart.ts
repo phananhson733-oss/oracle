@@ -50,9 +50,6 @@ Here's how each works and where the trade-off sits:
 
 Blending the two is where people slip. They take a full-chart claim and defend it with Sun-sign logic, or reduce a layered profile back down to "she's just a Cancer." Keeping them distinct — the kind of character-focused reading associated with astrologers like Liz Greene — is what stops a birth chart profile from hardening into biographical proof.
 
-
-![Side-by-side comparison of Sun sign alone versus a full birth chart showing what each reveals](/images/blog/angela-nikolau-birth-chart-i0-en.svg)
-
 ## How to Read Angela Nikolau's Birth Chart as a Persona Lens
 
 You don't need her exact birth time to practice the reading approach an Angela Nikolau birth chart invites. Treat each feature as a question rather than a verdict:
