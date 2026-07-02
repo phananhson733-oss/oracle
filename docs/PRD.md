@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.46
-> **Last Updated**: 2026-06-24
+> **Version**: 2.47
+> **Last Updated**: 2026-07-02
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -46,7 +46,7 @@ AstrologyWiki 是一款面向欧美市场的现代占星应用，将西方占星
 | **Email + 验证码** | 发送 6 位验证码（Resend 邮件服务），用于新用户注册 |
 | **Email 密码登录** | 已注册用户通过邮箱 + 密码登录（legacy） |
 | **JWT Token** | Access Token + Refresh Token 双令牌机制 |
-| **7 天试用期** | 新用户注册后自动获得 7 天免费试用 |
+| **7 天 Pro 试用** | 新用户注册后默认是 Free；首次使用 Pro 试用需手动激活，并在 Airwallex 结账页填写付款信息，试用到期后按所选方案自动续费 |
 | **账户删除 (GDPR/CCPA)** | 用户可永久删除账户及所有关联数据（邮箱用户需密码确认） |
 | **数据导出 (GDPR/CCPA)** | 用户可导出所有个人数据为 JSON 文件 |
 
@@ -420,7 +420,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 - 三档方案：Free（$0）、Pro 月付（$6.99/mo · ¥49/月）、Pro 年付（$41.99/yr · ¥294/年，省 50% + 首单 5 折）
 - 积分包四档（100 / 300 / 500 / 1000，价格对应 §3.2）
 - Free vs Pro 权益对比表（Ask / Synastry / Synthetica / Detail / 心理维度 / CBT 月度统计 / 奖励积分，对应 §3.3）
-- 注册赠 7 天试用提示
+- 手动激活 7 天 Pro 试用提示：符合资格的登录用户点击试用 CTA 后进入 Airwallex 结账页填写付款信息；试用到期后按所选方案自动续费，可随时取消
 - 匿名 CTA → 登录弹窗（`openLoginModal`）；已登录 → 升级弹窗（`openUpgradeModal`）；页面无 LLM、无后端依赖
 - 价格来源：`data/pricing.ts`（前端展示常量，镜像 `backend/src/config/airwallex.ts`；`tests/unit/pricing-consistency.test.ts` 守护两者漂移）
 
@@ -489,7 +489,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 |------|------|------|
 | **月付** | $6.99/月 | 自动续费，随时取消 |
 | **年付** | $41.99/年 (Airwallex) | 相当于 $3.50/月，节省 50%。注：Stripe 遗留链路年付同步为 50% 折扣 |
-| **首次折扣** | 50% off | 所有用户首次订阅享 50% 折扣 |
+| **Pro 试用** | 7 天 | 首次符合资格用户可手动激活；必须先通过 Airwallex 填写付款信息，到期后按所选月付/年付方案自动续费 |
+| **首次折扣** | 50% off | 未使用 Pro 试用且符合资格的用户首次订阅享 50% 折扣；不与 Pro 试用叠加 |
 
 > **多币种**：结算货币为 USD / CNY / EUR / GBP，按访客地区（Vercel IP 国家 → Accept-Language → USD）自动选定。EUR 镜像 USD 金额、GBP 略低；完整映射与兜底策略见 §6.2。
 
@@ -872,6 +873,7 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 |--------|------|------|------|
 | GET | `/api/airwallex/pricing` | 获取定价 | — |
 | POST | `/api/airwallex/subscribe` | 创建订阅 | Required |
+| POST | `/api/airwallex/start-pro-trial` | 手动激活 Airwallex-backed Pro 试用：创建带 7 天 trial 的订阅结账，要求填写付款信息，到期自动续费 | Required |
 | GET | `/api/airwallex/subscription` | 查询订阅状态 | Required |
 | POST | `/api/airwallex/cancel-subscription` | 取消订阅 | Required |
 | POST | `/api/airwallex/create-order` | 创建积分订单 | Required |
@@ -1008,20 +1010,34 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | birth_profile | JSONB | 出生信息 (JSON) |
 | preferences | JSONB | 偏好设置 {theme, language} |
 | email_verified | BOOLEAN | 邮箱是否已验证 |
-| trial_ends_at | TIMESTAMPTZ | 试用期结束时间 |
+| trial_ends_at | TIMESTAMPTZ | 遗留自动试用结束时间；新注册不再写入未来时间，仅用于兼容仍在有效期内的历史账号 |
 | used_first_discount | BOOLEAN | 是否已用首次折扣（via migration 003） |
 | created_at | TIMESTAMPTZ | 创建时间 |
 | updated_at | TIMESTAMPTZ | 更新时间 |
 
-**trial_claims** — 试用领取历史（via migration 006，跨账号删除持久化）
+**trial_claims** — 遗留自动试用领取历史（via migration 006，跨账号删除持久化）
 | Column | Type | 说明 |
 |--------|------|------|
 | email_hash | VARCHAR(64) | 主键：邮箱 SHA-256 哈希（小写+可选 salt） |
-| trial_ends_at | TIMESTAMPTZ | 首次发放试用的结束时间（保留以防重发） |
+| trial_ends_at | TIMESTAMPTZ | 旧版注册自动试用结束时间（保留以防重发；新注册不再写入） |
 | first_claimed_at | TIMESTAMPTZ | 首次领取试用的时间 |
 | created_at | TIMESTAMPTZ | 记录创建时间 |
 
-> 设计意图：用户删除账号后，该表不会被清理；同邮箱重新注册时，沿用 `trial_ends_at`（多半已过期）而非发放新试用，防止刷免费额度。仅存哈希，符合 GDPR 被遗忘权（不保留可恢复 PII）。
+> 设计意图：该表仅服务旧版自动试用兼容；用户删除账号后不会被清理，防止同邮箱刷历史自动试用。仅存哈希，符合 GDPR 被遗忘权（不保留可恢复 PII）。
+
+**pro_trial_claims** — Airwallex-backed Pro 试用领取历史（via migration 012）
+| Column | Type | 说明 |
+|--------|------|------|
+| email_hash | VARCHAR(64) | 主键：标准化邮箱 SHA-256 哈希 |
+| user_id | UUID | 最近一次激活试用的用户（FK → users, ON DELETE SET NULL） |
+| airwallex_subscription_id | TEXT | Airwallex 订阅 ID（UNIQUE） |
+| airwallex_customer_id | TEXT | Airwallex 客户 ID |
+| plan | VARCHAR(20) | monthly / yearly |
+| trial_started_at | TIMESTAMPTZ | Airwallex 试用开始时间 |
+| trial_ends_at | TIMESTAMPTZ | Airwallex 试用结束时间 |
+| created_at | TIMESTAMPTZ | 记录创建时间 |
+
+> 设计意图：新版 Pro 试用必须由用户手动点击试用 CTA，并通过 Airwallex Billing Checkout 填写付款信息后才记录。`email_hash` 防止同邮箱重复领取，`airwallex_subscription_id` 让 checkout confirm/webhook/reconciler 幂等收敛。
 
 **saved_readings** — 已保存解读（via migration 009，#24）
 | Column | Type | 说明 |
@@ -1235,11 +1251,18 @@ JWT Token 结构:
 
 首次注册:
   → 计算 email_hash = sha256(salt + lower(email))
-  → 查询 trial_claims:
-      ├── 命中 → trial_ends_at 沿用历史值（防止删号刷试用）
-      └── 未命中 → trial_ends_at = now + 7 days，写入 trial_claims
+  → 创建 Free 账户，不写入新的 users.trial_ends_at，不写入 trial_claims
   → 跳转 /onboarding 收集出生信息
   → 完成后跳转 /dashboard
+
+手动激活 Pro 试用:
+  → 用户点击“使用/开始 7 天 Pro 试用”
+  → 后端校验 pro_trial_claims / active subscriptions / legacy active trial
+  → POST /api/airwallex/start-pro-trial
+  → 创建 Airwallex Billing Checkout subscription_data.trial_ends_at = now + 7 days
+  → 用户在 Airwallex 填写信用卡等付款信息
+  → confirm-checkout / webhook 验证订阅归属后写入 subscriptions(trialing) 与 pro_trial_claims
+  → 试用到期后 Airwallex 按所选方案自动续费；用户可取消
 ```
 
 ### 4.7 部署架构 (Deployment)
@@ -1297,7 +1320,7 @@ JWT Token 结构:
 ```
 1. 访问 Landing Page (/)
 2. 选择登录方式 → Google / Apple / Email
-3. 首次注册 → 自动获得 7 天试用期
+3. 首次注册 → 获得 Free 账户；如需 Pro 试用，需在升级入口手动点击并通过 Airwallex 填写付款信息
 4. Onboarding 引导 (/onboarding)
    ├── 输入出生日期和时间
    ├── 选择出生地点（城市搜索）
@@ -1324,8 +1347,10 @@ JWT Token 结构:
   → 触及配额限制（Ask 3次/周、Synastry 3次永久、维度锁定）
   → 显示付费墙 (Paywall)
   → 选择方案
-      ├── 订阅 ($6.99/月 或 $41.99/年，首次 50% off)
-      │   → Airwallex 支付 → 支付成功页 → 返回使用
+      ├── 符合资格：7 天 Pro 试用
+      │   → 选择月付/年付 → Airwallex 填写付款信息 → 支付成功页 → trialing 权益生效 → 到期自动续费
+      ├── 不符合试用资格：订阅 ($6.99/月 或 $41.99/年，首次 50% off 仅限未使用 Pro 试用的资格用户)
+      │   → Airwallex 支付 → 支付成功页 → active 权益生效
       └── 积分包（一次性购买特定功能）
           → 选择积分数量 → Airwallex 支付 → 积分到账
 ```

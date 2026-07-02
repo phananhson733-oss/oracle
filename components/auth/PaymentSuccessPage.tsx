@@ -1,5 +1,5 @@
-// INPUT: React、认证/权益上下文与 UI 组件依赖（含订阅管理跳转与成功态对比度修正）。
-// OUTPUT: 导出支付成功页面组件（含订阅管理入口、统一左侧色带布局与 PayPal 订阅确认、支付后用户/权益同步与个人信息返回）。
+// INPUT: React、认证/权益上下文与 UI 组件依赖（含订阅管理跳转、Pro 试用成功态与成功态对比度修正）。
+// OUTPUT: 导出支付成功页面组件（含 Pro 试用激活成功态、订阅管理入口、统一左侧色带布局与 PayPal 订阅确认、支付后用户/权益同步与个人信息返回）。
 // POS: 支付成功页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -22,6 +22,7 @@ const PaymentSuccessPage: React.FC = () => {
   const [countdown, setCountdown] = useState(3);
   const [syncState, setSyncState] = useState<'syncing' | 'ready' | 'timeout'>('syncing');
   const [syncAttempts, setSyncAttempts] = useState(0);
+  const [checkoutKind, setCheckoutKind] = useState<string | null>(null);
 
   const isDark = theme === 'dark';
   const sessionId = searchParams.get('session_id');
@@ -86,12 +87,17 @@ const PaymentSuccessPage: React.FC = () => {
       const awCheckoutId = typeof sessionStorage !== 'undefined'
         ? sessionStorage.getItem('aw_checkout_id')
         : null;
+      const awCheckoutKind = typeof sessionStorage !== 'undefined'
+        ? sessionStorage.getItem('aw_checkout_kind')
+        : null;
 
       if (awCheckoutId) {
         try {
+          setCheckoutKind(awCheckoutKind);
           setSyncAttempts(1);
           await confirmAirwallexCheckout(awCheckoutId);
           sessionStorage.removeItem('aw_checkout_id');
+          sessionStorage.removeItem('aw_checkout_kind');
           await new Promise((resolve) => setTimeout(resolve, 500));
           await Promise.allSettled([refreshUser(), refreshAuthEntitlements(), refreshV2Entitlements()]);
           await new Promise((resolve) => setTimeout(resolve, 300));
@@ -184,8 +190,11 @@ const PaymentSuccessPage: React.FC = () => {
   const translations = {
     zh: {
       title: '支付成功！',
+      trialTitle: 'Pro 试用已激活！',
       subtitle: '欢迎成为 Pro 会员',
+      trialSubtitle: '7 天 Pro 试用已开始',
       description: '您现在可以无限制地使用所有高级功能。开始探索您的星象之旅吧！',
+      trialDescription: '您的付款信息已保存。试用期内可使用 Pro 权益，到期后将自动续费；您可以在试用期内取消。',
       features: [
         '无限问答次数',
         '无限详细解读',
@@ -206,8 +215,11 @@ const PaymentSuccessPage: React.FC = () => {
     },
     en: {
       title: 'Payment Successful!',
+      trialTitle: 'Pro Trial Activated!',
       subtitle: 'Welcome to Pro',
+      trialSubtitle: 'Your 7-day Pro trial has started',
       description: 'You now have unlimited access to all premium features. Start exploring your astrological journey!',
+      trialDescription: 'Your payment details are saved. Pro access is active during the trial and will renew automatically unless cancelled.',
       features: [
         'Unlimited Ask questions',
         'Unlimited detail readings',
@@ -228,8 +240,9 @@ const PaymentSuccessPage: React.FC = () => {
     },
   };
 
-  const lang = t === translations.zh ? 'zh' : 'en';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const tr = translations[lang] || translations.zh;
+  const isTrialActivation = checkoutKind === 'pro_trial' || Boolean(v2Entitlements?.isTrialing || authEntitlements?.isTrialing);
 
   return (
     <Container>
@@ -246,19 +259,19 @@ const PaymentSuccessPage: React.FC = () => {
 
         {/* Title */}
         <h1 className={`text-3xl font-serif font-bold mb-2 ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
-          {tr.title}
+          {isTrialActivation ? tr.trialTitle : tr.title}
         </h1>
 
         {/* Subtitle with badge */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <Crown className="w-5 h-5 text-gold-500" />
-          <span className="text-xl font-medium text-gold-500">{tr.subtitle}</span>
+          <span className="text-xl font-medium text-gold-500">{isTrialActivation ? tr.trialSubtitle : tr.subtitle}</span>
           <Sparkles className="w-5 h-5 text-gold-500" />
         </div>
 
         {/* Description */}
         <p className={`mb-8 ${isDark ? 'text-star-300' : 'text-paper-500'}`}>
-          {tr.description}
+          {isTrialActivation ? tr.trialDescription : tr.description}
         </p>
 
         {/* Features card */}

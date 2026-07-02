@@ -1,5 +1,5 @@
-<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件、短链登记/跳转与 UI/语言规则更新）。 -->
-<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置、短链登记/跳转、支付成功路由放行、PayPal 回跳处理与规范门槛）。 -->
+<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件、Playwright 端口联动、短链登记/跳转、Airwallex Pro 试用文案/E2E 与 UI/语言规则更新）。 -->
+<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置、Playwright 端口联动、短链登记/跳转、Pro 试用文案/E2E、支付成功路由放行、PayPal 回跳处理与规范门槛）。 -->
 <!-- POS: 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -20,7 +20,7 @@
 - README.md｜地位：主说明文档｜功能：项目说明与运行方式（含 UI 规范门槛）。
 - COLOR_SYSTEM_GUIDE.md｜地位：UI 规范文档｜功能：色彩系统与对比度规范（含 paper 温暖色系与 unicode 图标对比度要求）。
 - PULL_REQUEST_TEMPLATE.md｜地位：PR 模板｜功能：PR 清单与 UI 规范符合说明。
-- constants.ts｜地位：全局常量库｜功能：存放文案、提示词与问答问题库数据。
+- constants.ts｜地位：全局常量库｜功能：存放文案、提示词、Pro 试用/订阅提醒与问答问题库数据。
 - index.css｜地位：全局样式入口｜功能：注入 Tailwind 基础/组件/工具样式。
 - index.html｜地位：HTML 宿主文件｜功能：页面壳、字体加载、导入映射与首字节 brand 结构化数据（Organization + WebSite JSON-LD）。
 - index.tsx｜地位：渲染入口｜功能：挂载 React 应用并引入全局样式。
@@ -28,6 +28,7 @@
 - package.json｜地位：依赖清单｜功能：npm 脚本与依赖配置（含 Tailwind/PostCSS）。
 - package-lock.json｜地位：依赖锁定｜功能：锁定前端依赖版本。
 - postcss.config.cjs｜地位：样式配置｜功能：PostCSS 管线与 Tailwind 插件配置。
+- playwright.config.ts｜地位：E2E 配置｜功能：Playwright 测试编排，`PLAYWRIGHT_BASE_URL` 端口与 Vite dev server 启动端口联动。
 - tsconfig.json｜地位：编译配置｜功能：TypeScript 编译器选项。
 - tailwind.config.cjs｜地位：样式配置｜功能：Tailwind 主题与扫描路径配置。
 - types.ts｜地位：类型定义｜功能：共享数据结构与问答报告类型。
@@ -45,8 +46,12 @@
 - openspec｜地位：规范目录｜功能：OpenSpec 规范与变更。
 - public｜地位：静态资源目录｜功能：公共图标与资源文件。
 - services｜地位：服务目录｜功能：主应用服务层。
+- tests｜地位：测试目录｜功能：Playwright E2E 与 Vitest 单元测试。
 
 近期更新
+- constants 与 pricing 展示文案改为手动激活 Pro 试用：注册不再自动赠送 Pro，符合资格用户需先在 Airwallex 填写付款信息，试用到期后自动续费。
+- 新增 `tests/e2e/manual-pro-trial.spec.ts`，用 Playwright mock auth/entitlement/Airwallex API 覆盖注册后符合资格用户点击 Pro 试用 CTA、看到付款信息/自动续费披露并跳转 trial checkout 的浏览器路径。
+- Playwright webServer 启动命令会跟随 `PLAYWRIGHT_BASE_URL` 端口，避免本地 3000 被其他服务占用时误复用错误应用。
 - 首页 `index.html` 的 `<head>` 现携带静态 brand 结构化数据（Organization + WebSite JSON-LD，带 `data-astro-global-schema` 标记），值与 `App.tsx` `<GlobalSchema />` 英文输出一致，把品牌实体提前到首字节、不依赖 WRS 执行 JS；同步修正 `og:url` 尾斜杠与 canonical 对齐。`scripts/generate-seo-pages.mjs` 的 landing-v2 `Organization.logo` 统一为 `/logo.png`（消除站内同一实体两个 logo URL 的消歧噪音）。契约守护见 `tests/unit/homepage-brand-schema.test.ts`。
 - 新增 tools SEO alias 路由 `/moon-phase-today` 与 `/astrocartography-map-generator`，裸路径自动重定向到语言前缀版本，且加入公开可索引白名单以避免运行时 noindex。
 - 新增 `/go/:code` 与根路径短链跳转入口及 link-attribution 短链登记接口，支持同站安全跳转、动态 code registry、相同 destination 复用已有短链与旧 `to` 回退链接。

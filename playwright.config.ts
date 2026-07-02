@@ -1,5 +1,5 @@
-// INPUT: Playwright E2E 测试运行时配置（基础 URL、浏览器项目、Web 服务器编排）。
-// OUTPUT: 导出 Playwright 测试配置，驱动 tests/e2e 目录下的 spec 执行。
+// INPUT: Playwright E2E 测试运行时配置（基础 URL、浏览器项目、Web 服务器端口联动编排）。
+// OUTPUT: 导出 Playwright 测试配置，驱动 tests/e2e 目录下的 spec 执行，并让 PLAYWRIGHT_BASE_URL 端口与 Vite dev server 保持一致。
 // POS: E2E 测试编排入口。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { defineConfig, devices } from '@playwright/test';
@@ -37,7 +37,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
+    command: `npm run dev -- --host 0.0.0.0 --port ${portFromBaseURL}`,
     port: portFromBaseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

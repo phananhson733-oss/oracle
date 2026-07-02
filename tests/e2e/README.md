@@ -26,6 +26,9 @@ npm run test:e2e:ui
 # Run a single spec
 npx playwright test tests/e2e/landing.spec.ts
 
+# Run the manual Pro trial checkout path
+npx playwright test tests/e2e/manual-pro-trial.spec.ts
+
 # Show the last HTML report
 npx playwright show-report
 ```
@@ -59,6 +62,8 @@ running on port 3000, Playwright will reuse it.
 - Don't import frontend source modules; treat the app as a black box.
 - Prefer `expect.poll` / web-first assertions over arbitrary `waitForTimeout`.
 - Keep specs small and focused. Split files by feature area.
+- Payment specs should mock third-party checkout up to the redirect boundary;
+  live provider E2E requires a dedicated credentialed environment.
 
 ## Reports and artifacts
 

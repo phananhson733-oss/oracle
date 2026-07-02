@@ -4,7 +4,9 @@ import { authMiddleware, requireAuth } from './auth.js';
 import { airwallexService, currencyKeyOf } from '../services/airwallexService.js';
 import subscriptionService from '../services/subscriptionService.js';
 import entitlementServiceV2 from '../services/entitlementServiceV2.js';
+import proTrialService from '../services/proTrialService.js';
 import { reconcileAirwallexSubscriptionById } from '../services/subscriptionReconcilerDriver.js';
+import { mapAirwallexStatus } from '../services/subscriptionReconciler.js';
 import {
   isAirwallexConfigured,
   AIRWALLEX_CREDITS_PACKAGES,
@@ -29,6 +31,49 @@ function isValidRedirectUrl(url: string): boolean {
   } catch {
     return false;
   }
+}
+
+function addDaysIso(days: number): string {
+  const end = new Date();
+  end.setUTCDate(end.getUTCDate() + days);
+  return end.toISOString();
+}
+
+function resolveAirwallexStatus(
+  rawStatus: unknown,
+  fallback: string,
+): 'active' | 'trialing' | 'past_due' | 'canceled' | 'expired' {
+  return mapAirwallexStatus(typeof rawStatus === 'string' ? rawStatus : fallback);
+}
+
+function resolveSubscriptionPeriod(input: {
+  subscription: Record<string, any>;
+  plan: 'monthly' | 'yearly';
+  localStatus: 'active' | 'trialing' | 'past_due' | 'canceled' | 'expired';
+}): { startDate: Date; endDate: Date } {
+  const startDate = new Date(
+    input.subscription.current_period_starts_at ||
+      input.subscription.current_period_start ||
+      input.subscription.starts_at ||
+      input.subscription.start_date ||
+      new Date(),
+  );
+  const rawEnd =
+    input.localStatus === 'trialing'
+      ? input.subscription.trial_ends_at ||
+        input.subscription.trial_end ||
+        input.subscription.current_period_ends_at ||
+        input.subscription.current_period_end
+      : input.subscription.current_period_ends_at ||
+        input.subscription.current_period_end ||
+        input.subscription.trial_ends_at ||
+        input.subscription.trial_end;
+  const endDate = new Date(rawEnd || startDate);
+  if (!rawEnd) {
+    if (input.plan === 'yearly') endDate.setFullYear(endDate.getFullYear() + 1);
+    else endDate.setMonth(endDate.getMonth() + 1);
+  }
+  return { startDate, endDate };
 }
 
 // =====================================================
@@ -145,6 +190,68 @@ router.post('/subscribe', authMiddleware, requireAuth, async (req: Request, res:
   }
 });
 
+// POST /api/airwallex/start-pro-trial
+router.post('/start-pro-trial', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  try {
+    if (!isAirwallexConfigured()) {
+      return res.status(503).json({ error: 'Airwallex service unavailable' });
+    }
+
+    const { plan, successUrl, cancelUrl } = req.body;
+
+    if (!successUrl || !cancelUrl) {
+      return res.status(400).json({ error: 'successUrl and cancelUrl required' });
+    }
+
+    if (!isValidRedirectUrl(successUrl) || !isValidRedirectUrl(cancelUrl)) {
+      return res.status(400).json({ error: 'Invalid redirect URL' });
+    }
+
+    if (!['monthly', 'yearly'].includes(plan)) {
+      return res.status(400).json({ error: 'Invalid plan. Must be monthly or yearly' });
+    }
+
+    const identity = await proTrialService.assertEligible(req.userId!);
+    const currency = resolveCurrencyFromRequest(req);
+    const trialEndsAt = addDaysIso(identity.days);
+
+    const result = await airwallexService.createSubscription({
+      userId: req.userId!,
+      email: identity.email,
+      plan: plan as 'monthly' | 'yearly',
+      currency,
+      successUrl,
+      cancelUrl,
+      useFirstDiscount: false,
+      trialEndsAt,
+    });
+
+    res.json({
+      checkoutUrl: result.checkoutUrl,
+      checkoutId: result.checkoutId,
+      trialEndsAt,
+      trialDays: identity.days,
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    const status = message === 'database_unavailable'
+      ? 503
+      : message === 'user_not_found'
+        ? 404
+        : [
+            'active_subscription',
+            'legacy_trial_active',
+            'trial_already_used',
+            'first_discount_used',
+            'trial_not_eligible',
+          ].includes(message)
+          ? 409
+          : 500;
+    logger.error('Airwallex start Pro trial error', { message });
+    res.status(status).json({ error: message });
+  }
+});
+
 // POST /api/airwallex/confirm-checkout — verify billing checkout and activate subscription
 router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Request, res: Response) => {
   try {
@@ -179,18 +286,22 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
 
     // Get subscription details from Airwallex
     const subscription = await airwallexService.getSubscriptionDetails(subscriptionId);
-    const plan = metadata.plan || 'monthly';
+    const plan = metadata.plan === 'yearly' ? 'yearly' : 'monthly';
     const useFirstDiscount = metadata.useFirstDiscount === 'true';
+    const isTrialCheckout = metadata.activationType === 'pro_trial';
+    const localStatus = resolveAirwallexStatus(
+      (subscription as any).status,
+      isTrialCheckout ? 'IN_TRIAL' : 'ACTIVE',
+    );
 
-    const startDate = new Date((subscription as any).current_period_starts_at || (subscription as any).starts_at || new Date());
-    const endDate = new Date((subscription as any).current_period_ends_at || startDate);
-    if (!(subscription as any).current_period_ends_at) {
-      if (plan === 'yearly') endDate.setFullYear(endDate.getFullYear() + 1);
-      else endDate.setMonth(endDate.getMonth() + 1);
-    }
+    const { startDate, endDate } = resolveSubscriptionPeriod({
+      subscription: subscription as any,
+      plan,
+      localStatus,
+    });
 
     // 试用期用户付费：将剩余试用天数追加到订阅到期时间
-    if (isSupabaseConfigured()) {
+    if (!isTrialCheckout && isSupabaseConfigured()) {
       const { data: userRow } = await supabase
         .from('users')
         .select('trial_ends_at')
@@ -216,6 +327,28 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
 
       // Skip if already activated with this subscription
       if (existing?.airwallex_subscription_id === subscriptionId) {
+        if (isTrialCheckout) {
+          const { data: userRow } = await supabase
+            .from('users')
+            .select('email')
+            .eq('id', userId)
+            .single();
+          if (userRow?.email) {
+            await proTrialService.recordClaim({
+              userId,
+              email: userRow.email,
+              airwallexSubscriptionId: subscriptionId,
+              airwallexCustomerId:
+                (checkout as any).billing_customer_id ||
+                (subscription as any).billing_customer_id ||
+                (subscription as any).customer_id ||
+                null,
+              plan,
+              trialStartedAt: startDate.toISOString(),
+              trialEndsAt: endDate.toISOString(),
+            });
+          }
+        }
         return res.json({ confirmed: true, alreadyActive: true });
       }
 
@@ -225,7 +358,7 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
         airwallex_customer_id: (checkout as any).billing_customer_id || null,
         payment_provider: 'airwallex',
         plan,
-        status: 'active' as const,
+        status: localStatus,
         current_period_start: startDate.toISOString(),
         current_period_end: endDate.toISOString(),
         cancel_at_period_end: false,
@@ -246,6 +379,32 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
         await supabase.from('users').update({ used_first_discount: true }).eq('id', userId);
       }
 
+      if (isTrialCheckout) {
+        const { data: userRow } = await supabase
+          .from('users')
+          .select('email')
+          .eq('id', userId)
+          .single();
+
+        if (!userRow?.email) {
+          return res.status(400).json({ error: 'User email not found' });
+        }
+
+        await proTrialService.recordClaim({
+          userId,
+          email: userRow.email,
+          airwallexSubscriptionId: subscriptionId,
+          airwallexCustomerId:
+            (checkout as any).billing_customer_id ||
+            (subscription as any).billing_customer_id ||
+            (subscription as any).customer_id ||
+            null,
+          plan,
+          trialStartedAt: startDate.toISOString(),
+          trialEndsAt: endDate.toISOString(),
+        });
+      }
+
       // Award bonus credits via direct INSERT (idempotent by feature_id)
       const bonusFeatureId = `sub_bonus:${subscriptionId}`;
       const { data: bonusExists } = await supabase
@@ -256,7 +415,7 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
         .limit(1)
         .single();
 
-      if (!bonusExists) {
+      if (!isTrialCheckout && localStatus === 'active' && !bonusExists) {
         await supabase.from('purchase_records').insert({
           user_id: userId,
           feature_type: 'gm_credit',
@@ -273,6 +432,9 @@ router.post('/confirm-checkout', authMiddleware, requireAuth, async (req: Reques
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     logger.error('Airwallex confirm-checkout error', { message });
+    if (message === 'trial_already_used') {
+      return res.status(409).json({ error: message });
+    }
     res.status(500).json({ error: 'Failed to confirm checkout' });
   }
 });
@@ -696,6 +858,8 @@ router.post('/webhook', async (req: Request, res: Response) => {
 
     // Handle event types
     switch (eventType) {
+      case 'subscription.in_trial':
+      case 'subscription.trialing':
       case 'subscription.active':
       case 'subscription.activated':
         await handleSubscriptionActive(event);
@@ -768,33 +932,44 @@ async function getUserEmail(userId: string): Promise<string | null> {
 async function handleSubscriptionActive(event: any): Promise<void> {
   const data = event.data || event;
   const subscriptionId = data.id || data.subscription_id;
-  const customerId = data.customer_id;
+  const customerId = data.billing_customer_id || data.customer_id;
   const metadata = data.metadata || {};
   const userId = metadata.userId;
-  const plan = metadata.plan || 'monthly';
+  const plan = metadata.plan === 'yearly' ? 'yearly' : 'monthly';
   const useFirstDiscount = metadata.useFirstDiscount === 'true';
+  const eventType = event.name || event.type || '';
+  const isActivationEvent =
+    eventType.includes('active') || eventType.includes('activated');
+  const isTrialCheckout = metadata.activationType === 'pro_trial';
+  const localStatus = resolveAirwallexStatus(
+    data.status,
+    isActivationEvent
+      ? 'ACTIVE'
+      : eventType.includes('trial') || isTrialCheckout
+        ? 'IN_TRIAL'
+        : 'ACTIVE',
+  );
 
   if (!userId || !subscriptionId) {
     logger.error('Missing userId or subscriptionId in Airwallex subscription event');
     return;
   }
 
-  const startDate = new Date(data.current_period_start || data.start_date || new Date());
-  const endDate = new Date(data.current_period_end || startDate);
-  if (data.current_period_end == null) {
-    if (plan === 'yearly') endDate.setFullYear(endDate.getFullYear() + 1);
-    else endDate.setMonth(endDate.getMonth() + 1);
-  }
+  const { startDate, endDate } = resolveSubscriptionPeriod({
+    subscription: data,
+    plan,
+    localStatus,
+  });
 
   if (isSupabaseConfigured()) {
     // 试用期用户付费：将剩余试用天数追加到订阅到期时间
     const { data: userRow } = await supabase
       .from('users')
-      .select('trial_ends_at')
+      .select('email, trial_ends_at')
       .eq('id', userId)
       .single();
 
-    if (userRow?.trial_ends_at) {
+    if (!isTrialCheckout && userRow?.trial_ends_at) {
       const trialEnd = new Date(userRow.trial_ends_at);
       const now = new Date();
       if (trialEnd > now) {
@@ -816,7 +991,7 @@ async function handleSubscriptionActive(event: any): Promise<void> {
       airwallex_customer_id: customerId || null,
       payment_provider: 'airwallex',
       plan,
-      status: 'active' as const,
+      status: localStatus,
       current_period_start: startDate.toISOString(),
       current_period_end: endDate.toISOString(),
       cancel_at_period_end: false,
@@ -843,6 +1018,18 @@ async function handleSubscriptionActive(event: any): Promise<void> {
         .eq('id', userId);
     }
 
+    if (isTrialCheckout && userRow?.email) {
+      await proTrialService.recordClaim({
+        userId,
+        email: userRow.email,
+        airwallexSubscriptionId: subscriptionId,
+        airwallexCustomerId: customerId || null,
+        plan,
+        trialStartedAt: startDate.toISOString(),
+        trialEndsAt: endDate.toISOString(),
+      });
+    }
+
     // Award bonus credits via direct INSERT (idempotent by feature_id)
     const bonusFeatureId = `sub_bonus:${subscriptionId}`;
     const { data: bonusExists } = await supabase
@@ -853,7 +1040,7 @@ async function handleSubscriptionActive(event: any): Promise<void> {
       .limit(1)
       .single();
 
-    if (!bonusExists) {
+    if (localStatus === 'active' && !bonusExists) {
       await supabase.from('purchase_records').insert({
         user_id: userId,
         feature_type: 'gm_credit',
@@ -866,25 +1053,27 @@ async function handleSubscriptionActive(event: any): Promise<void> {
     }
   }
 
-  logger.info(`Airwallex subscription activated: ${subscriptionId} for user ${userId}`);
+  logger.info(`Airwallex subscription ${localStatus}: ${subscriptionId} for user ${userId}`);
 
   // Send payment receipt email (fire-and-forget, don't block webhook)
-  sendEmailBestEffort(async () => {
-    const email = await getUserEmail(userId);
-    if (email) {
-      await emailService.sendPaymentReceipt(email, {
-        amount: data.amount ? String(data.amount) : (() => {
-          const cur = (data.currency || 'USD').toUpperCase();
-          const tier = AIRWALLEX_SUBSCRIPTION_PRICING[currencyKeyOf(cur as SupportedCurrency)];
-          return (plan === 'yearly' ? tier.yearly.amount : tier.monthly.amount) / 100;
-        })().toFixed(2),
-        currency: data.currency || 'USD',
-        description: `AstrologyWiki Pro — ${plan === 'yearly' ? 'Yearly' : 'Monthly'} Subscription`,
-        transactionId: subscriptionId,
-        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-      });
-    }
-  }, 'subscription receipt');
+  if (localStatus === 'active') {
+    sendEmailBestEffort(async () => {
+      const email = await getUserEmail(userId);
+      if (email) {
+        await emailService.sendPaymentReceipt(email, {
+          amount: data.amount ? String(data.amount) : (() => {
+            const cur = (data.currency || 'USD').toUpperCase();
+            const tier = AIRWALLEX_SUBSCRIPTION_PRICING[currencyKeyOf(cur as SupportedCurrency)];
+            return (plan === 'yearly' ? tier.yearly.amount : tier.monthly.amount) / 100;
+          })().toFixed(2),
+          currency: data.currency || 'USD',
+          description: `AstrologyWiki Pro — ${plan === 'yearly' ? 'Yearly' : 'Monthly'} Subscription`,
+          transactionId: subscriptionId,
+          date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+        });
+      }
+    }, 'subscription receipt');
+  }
 }
 
 async function handleSubscriptionCancelled(event: any): Promise<void> {

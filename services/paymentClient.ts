@@ -1,6 +1,6 @@
 // INPUT: 后端支付 API 客户端。
-// OUTPUT: 导出支付与 GM 测试 API 调用函数（含开发会话与 PayPal 订阅确认）。
-// POS: 前端支付 API 客户端（含 GM 测试指令、开发会话与 PayPal 订阅确认）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// OUTPUT: 导出支付与 GM 测试 API 调用函数（含 Airwallex Pro 试用激活、开发会话与 PayPal 订阅确认）。
+// POS: 前端支付 API 客户端（含 Airwallex Pro 试用激活、GM 测试指令、开发会话与 PayPal 订阅确认）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { authFetch, setStoredUser, setTokens } from './authClient';
 import type { AuthTokens, AuthUser } from './authClient';
@@ -10,7 +10,7 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'ht
 export interface Subscription {
   id: string;
   plan: 'monthly' | 'yearly';
-  status: 'active' | 'canceled' | 'past_due' | 'incomplete';
+  status: 'active' | 'trialing' | 'canceled' | 'past_due' | 'expired' | 'incomplete';
   currentPeriodStart: string;
   currentPeriodEnd: string;
   cancelAtPeriodEnd: boolean;
@@ -190,6 +190,31 @@ export async function createAirwallexSubscription(
   return res.json();
 }
 
+export async function startAirwallexProTrial(
+  plan: 'monthly' | 'yearly',
+  successUrl: string,
+  cancelUrl: string,
+  options?: { lang?: string }
+): Promise<{ checkoutUrl: string; checkoutId: string; trialEndsAt: string; trialDays: number }> {
+  const res = await authFetch(`${API_BASE}/airwallex/start-pro-trial`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      plan,
+      successUrl,
+      cancelUrl,
+      lang: options?.lang,
+    }),
+  });
+
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({}));
+    throw new Error(error.error || 'Failed to start Pro trial');
+  }
+
+  return res.json();
+}
+
 export async function createAirwallexOrder(
   packageId: string,
   successUrl: string,
@@ -273,9 +298,11 @@ export async function createSubscriptionCheckout(
       if (result.isRenewal && result.renewalId) {
         sessionStorage.setItem('aw_renewal_id', result.renewalId);
         sessionStorage.removeItem('aw_checkout_id');
+        sessionStorage.removeItem('aw_checkout_kind');
       } else if (result.checkoutId) {
         sessionStorage.setItem('aw_checkout_id', result.checkoutId);
         sessionStorage.removeItem('aw_renewal_id');
+        sessionStorage.removeItem('aw_checkout_kind');
       }
     }
     // Renewal uses SDK redirect (HPP); new subscription uses billing checkout URL
@@ -322,6 +349,25 @@ export async function createSubscriptionCheckout(
   }
 
   return res.json();
+}
+
+export async function createProTrialCheckout(
+  plan: 'monthly' | 'yearly',
+  successUrl: string,
+  cancelUrl: string,
+  options?: { lang?: string }
+): Promise<{ url: string }> {
+  const result = await startAirwallexProTrial(plan, successUrl, cancelUrl, {
+    lang: options?.lang,
+  });
+
+  if (typeof sessionStorage !== 'undefined') {
+    sessionStorage.setItem('aw_checkout_id', result.checkoutId);
+    sessionStorage.setItem('aw_checkout_kind', 'pro_trial');
+    sessionStorage.removeItem('aw_renewal_id');
+  }
+
+  return { url: result.checkoutUrl };
 }
 
 // 检查首次折扣资格

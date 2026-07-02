@@ -1,5 +1,5 @@
-<!-- INPUT: 后端 src 目录结构与职责索引（含短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索优化更新）。 -->
-<!-- OUTPUT: src 架构摘要与文件清单（含短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索记录）。 -->
+<!-- INPUT: 后端 src 目录结构与职责索引（含 Airwallex Pro 试用激活、短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索优化更新）。 -->
+<!-- OUTPUT: src 架构摘要与文件清单（含 Airwallex Pro 试用激活、短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索记录）。 -->
 <!-- POS: 后端源码目录索引；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -25,6 +25,7 @@
 - utils｜地位：工具目录｜功能：通用辅助方法。
 
 近期更新
+- Airwallex 新增手动 Pro 试用激活路由 `/api/airwallex/start-pro-trial`，并补路由级回归测试覆盖 7 天 trial checkout 与重复领取冲突。
 - 新增 `/go/:code` 与根路径短链跳转路由及 `/api/link-attribution/redirects` 登记接口，支持同站安全目标、Supabase/Redis 动态 registry、相同 destination 复用已有短链与旧 `to` 回退目标，并拒绝外部跳转。
 - 新增天象工具端点（GET /api/astro/positions、/moon-phase、/ephemeris）+ 返照盘端点（POST /api/solar-return，20/min 限流 + 4kb cap，复用 birthInput 校验机）：纯算法在 services/astro（skyTools / solarReturn，TDD），计算器矩阵 D 第二批。
 - 新增 transit timeline 端点（GET/POST /api/transit/timeline，月度 K 线）：services/transit 纯函数评分引擎（intensity/rollup/aspects/time/weights，TDD）+ ephemeris 瘦经度接口 getLongitudes + 单日 tz 缓存 + 完整性门 + 10/min 限流 + 4kb body cap；natal 出生数据校验抽取为共享 api/birthInput.ts 供 timeline 复用（natal.test 守护无回归）。
