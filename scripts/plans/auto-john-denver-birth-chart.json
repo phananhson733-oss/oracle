@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "john-denver-birth-chart": {
+      "hero": {
+        "prompt": "Rolling mountain ridges stretching endlessly to the horizon under a vast night sky, warm gold light radiating from the earth itself as if the land holds the same luminous energy as the cosmos above, a single unbroken terrain dissolving upward into a teal-and-indigo nebula, the boundary between mountain and starfield blurred into one continuous luminous breath, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Painterly mountain landscape dissolving into a deep indigo nebula sky, gold light rising from the earth — John Denver birth chart",
+        "altZh": "山峦在深靛蓝星云天空中消融，金光从大地升起——约翰·丹佛星盘"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read John Denver's Birth Chart Like a Full Portrait",
+          "titleEn": "5 Steps to a Full Birth Chart Portrait",
+          "titleZh": "全盘解读的5个步骤",
+          "altEn": "Five-step sequence for reading a birth chart as a whole portrait — John Denver approach",
+          "altZh": "将星盘作为整体解读的五步流程——约翰·丹佛解读方式",
+          "items": [
+            {
+              "nameEn": "Start with the Sun",
+              "nameZh": "从太阳开始",
+              "subEn": "Note the Capricorn Sun for discipline and ambition, then hold it loosely as a theme to test",
+              "subZh": "注意摩羯座太阳代表纪律与抱负，但将其作为待验证的主题而非定论"
+            },
+            {
+              "nameEn": "Weigh the Elements",
+              "nameZh": "衡量元素分布",
+              "subEn": "Count earth, water, air, and fire; a heavy earth balance points to a grounded, tangible temperament",
+              "subZh": "统计土、水、风、火的比重；土元素偏重指向踏实、具象的气质"
+            },
+            {
+              "nameEn": "Look for Clusters",
+              "nameZh": "寻找星群",
+              "subEn": "Planets grouped in one sign act like a spotlight, concentrating the chart's real emphasis",
+              "subZh": "集中在同一星座的行星如聚光灯，揭示星盘真正的重心所在"
+            },
+            {
+              "nameEn": "Trace the Major Aspects",
+              "nameZh": "追踪主要相位",
+              "subEn": "Flowing trines suggest natural ease and talent; tense angles suggest friction that often drives the work",
+              "subZh": "和谐的三分相暗示天赋与自然流动；紧张相位带来摩擦，往往成为创作驱动力"
+            },
+            {
+              "nameEn": "Name the Throughline",
+              "nameZh": "找出贯穿主题",
+              "subEn": "Ask what single theme keeps recurring across all layers — let that be your reading, not any one placement",
+              "subZh": "追问哪个主题在所有层次中反复出现——以此为解读核心，而非依赖单一行星位置"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Full Chart Reading vs Sun-Sign Astrology: What Actually Differs",
+          "titleEn": "Sun-Sign Astrology vs Full Chart Reading",
+          "titleZh": "太阳星座占星 vs 全盘解读",
+          "altEn": "Comparison of sun-sign astrology and full birth chart reading showing key differences in scope and depth",
+          "altZh": "太阳星座占星与全盘解读的对比，展示范围与深度的关键差异",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Astrology",
+              "nameZh": "太阳星座占星",
+              "linesEn": [
+                "Works from a single placement (Capricorn Sun)",
+                "Needs only a birth date",
+                "Quick and simple to produce",
+                "Loses nuance other placements would add"
+              ],
+              "linesZh": [
+                "仅依据单一位置（摩羯座太阳）",
+                "只需知道出生日期",
+                "快速简便，易于获取",
+                "丢失其他行星位置所带来的细节"
+              ]
+            },
+            {
+              "nameEn": "Full Chart Reading",
+              "nameZh": "全盘解读",
+              "linesEn": [
+                "Cross-references all placements against one another",
+                "Requires birth date, time, and location",
+                "Takes more interpretive work",
+                "Keeps contradictions and nuance intact"
+              ],
+              "linesZh": [
+                "所有行星位置相互参照",
+                "需要出生日期、时间和地点",
+                "需要更多解读工作",
+                "保留矛盾之处与细微差别"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
