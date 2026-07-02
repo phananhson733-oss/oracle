@@ -72,12 +72,12 @@ export const RiskReversal: React.FC = () => {
   const translations = {
     zh: {
       guarantee: '购买后 7 天内可申请退款',
-      trial: '免费试用7天',
+      trial: '绑定付款信息后试用 7 天',
       noCancel: '随时取消，无违约金',
     },
     en: {
       guarantee: '7-day refund window',
-      trial: '7-day free trial',
+      trial: '7-day trial after payment setup',
       noCancel: 'Cancel anytime, no penalty',
     },
   };

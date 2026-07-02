@@ -1,5 +1,5 @@
-// INPUT: 后端权益 API V2 客户端（含订阅定价、详情解锁、Synthetica 日额度与积分解锁、本地日次解锁缓存）。
-// OUTPUT: 导出权益相关 API 调用函数（新版，支持订阅定价与 Synthetica 日额度/日次解锁缓存同步）。
+// INPUT: 后端权益 API V2 客户端（含订阅定价、Pro 试用资格、详情解锁、Synthetica 日额度与积分解锁、本地日次解锁缓存）。
+// OUTPUT: 导出权益相关 API 调用函数（新版，支持订阅定价、Pro 试用资格与 Synthetica 日额度/日次解锁缓存同步）。
 // POS: 前端权益 API V2 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { authFetch } from './authClient';
@@ -43,6 +43,12 @@ export interface EntitlementsV2 {
   isSubscriber: boolean;
   isTrialing: boolean;
   trialEndsAt: string | null;
+  isFirstDiscountEligible: boolean;
+  proTrial: {
+    eligible: boolean;
+    days: number;
+    reason?: string;
+  };
   credits: number;
   discount: number;
 
@@ -426,6 +432,12 @@ export function getCachedEntitlements(): EntitlementsV2 | null {
     }
     if (normalized.discount === undefined) {
       normalized.discount = 0;
+    }
+    if (normalized.isFirstDiscountEligible === undefined) {
+      normalized.isFirstDiscountEligible = false;
+    }
+    if (!normalized.proTrial) {
+      normalized.proTrial = { eligible: false, days: 7 };
     }
     return normalized;
   } catch {

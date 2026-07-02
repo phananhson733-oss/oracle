@@ -56,6 +56,17 @@ export interface DbUser {
   updated_at: string;
 }
 
+export interface DbProTrialClaim {
+  email_hash: string;
+  user_id: string | null;
+  airwallex_subscription_id: string;
+  airwallex_customer_id: string | null;
+  plan: 'monthly' | 'yearly';
+  trial_started_at: string;
+  trial_ends_at: string;
+  created_at: string;
+}
+
 export interface BirthProfile {
   birthDate: string;
   birthTime?: string;

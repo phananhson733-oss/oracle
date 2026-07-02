@@ -1,11 +1,11 @@
-// INPUT: React、认证上下文、支付客户端与 UI 组件依赖（含双方案订阅与纸感对比度修正）。
-// OUTPUT: 导出升级订阅弹窗组件（双方案定价、订阅管理跳转与主题化按钮状态）。
-// POS: 升级订阅弹窗组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、认证上下文、支付客户端与 UI 组件依赖（含双方案订阅、Airwallex Pro 试用与纸感对比度修正）。
+// OUTPUT: 导出升级订阅弹窗组件（双方案定价、手动 Pro 试用激活、订阅管理跳转与主题化按钮状态）。
+// POS: 升级订阅/Pro 试用弹窗组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTheme, useLanguage, Modal, ActionButton } from '../UIComponents';
-import { getAirwallexPricing, createPortalSession, createSubscriptionCheckout, formatPrice, cancelSubscription, PricingInfo } from '../../services/paymentClient';
+import { getAirwallexPricing, createPortalSession, createSubscriptionCheckout, createProTrialCheckout, formatPrice, cancelSubscription, PricingInfo } from '../../services/paymentClient';
 import { redirectToAirwallexCheckout } from '../../services/airwallexCheckout';
 import { Check, Zap, Clock, ShoppingCart } from 'lucide-react';
 import { PaywallSocialProof, RiskReversal } from '../PaywallConversion';
@@ -39,10 +39,12 @@ const UpgradeModal: React.FC = () => {
   const [cancelLoading, setCancelLoading] = useState(false);
   const [cancelError, setCancelError] = useState<string | null>(null);
 
-  // 首次折扣资格：试用期用户仍然是"首次付费"，应享受折扣
+  // Pro 试用与首次折扣互斥；已订阅/试用中不再展示首次折扣。
   const isFirstDiscountEligible = (entitlements?.isSubscriber && !entitlements?.isTrialing)
     ? false
-    : ((entitlements as any)?.isFirstDiscountEligible ?? false);
+    : (entitlements?.isFirstDiscountEligible ?? false);
+  const isProTrialEligible = Boolean(entitlements?.proTrial?.eligible && !entitlements?.isSubscriber);
+  const proTrialDays = entitlements?.proTrial?.days || 7;
 
   const isDark = theme === 'dark';
 
@@ -75,23 +77,18 @@ const UpgradeModal: React.FC = () => {
     }
   }, [showUpgradeModal, pricing, language, t.subscription]);
 
-  // Countdown timer for 7-day trial
+  // Countdown timer for active Pro trial
   useEffect(() => {
     if (!showUpgradeModal || !entitlements) return;
 
-    // 检查是否有试用期 - 从用户注册时间计算7天
-    const user = entitlements as any; // 临时类型转换
-    const createdAt = user?.createdAt || user?.subscription?.createdAt;
-
-    if (!createdAt) {
+    if (!entitlements.isTrialing || !entitlements.trialEndsAt) {
       setCountdown('');
       return;
     }
 
     const updateCountdown = () => {
       const now = new Date();
-      const registrationDate = new Date(createdAt);
-      const trialEnd = new Date(registrationDate.getTime() + 7 * 24 * 60 * 60 * 1000); // 7天后
+      const trialEnd = new Date(entitlements.trialEndsAt!);
       const diff = trialEnd.getTime() - now.getTime();
 
       // 如果试用期已过期，显示为空
@@ -116,7 +113,7 @@ const UpgradeModal: React.FC = () => {
     const timer = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(timer);
-  }, [showUpgradeModal, entitlements, language]);
+  }, [showUpgradeModal, entitlements?.isTrialing, entitlements?.trialEndsAt, language]);
 
   const handleClose = () => {
     setShowUpgradeModal(false);
@@ -158,11 +155,22 @@ const UpgradeModal: React.FC = () => {
       const successUrl = `${window.location.origin}/payment/success`;
       const cancelUrl = currentUrl;
 
-      const result = await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
-        applyFirstDiscount: isFirstDiscountEligible,
-        provider: 'airwallex',
-        lang: language,
-      });
+      const result: {
+        url?: string;
+        sdkRedirect?: {
+          env: string;
+          intentId: string;
+          clientSecret: string;
+          currency: string;
+          successUrl: string;
+        };
+      } = isProTrialEligible
+        ? await createProTrialCheckout(plan, successUrl, cancelUrl, { lang: language })
+        : await createSubscriptionCheckout(plan, successUrl, cancelUrl, {
+            applyFirstDiscount: isFirstDiscountEligible,
+            provider: 'airwallex',
+            lang: language,
+          });
       // Renewal uses SDK redirect (HPP with successUrl); new subscription uses billing checkout URL
       if (result.sdkRedirect) {
         await redirectToAirwallexCheckout({
@@ -214,7 +222,11 @@ const UpgradeModal: React.FC = () => {
   const subscriptionT = t.subscription as any;
   // 试用期用户不算"已订阅"，应该看到订阅（而非续费）界面
   const isAlreadySubscriber = entitlements?.isSubscriber && !entitlements?.isTrialing;
-  const modalTitle = isAlreadySubscriber ? (subscriptionT?.renew_title || '续费 Pro') : (subscriptionT?.title || '订阅Pro');
+  const modalTitle = entitlements?.isTrialing
+    ? (subscriptionT?.trial_active_title || 'Pro Trial')
+    : isAlreadySubscriber
+      ? (subscriptionT?.renew_title || '续费 Pro')
+      : (subscriptionT?.title || '订阅Pro');
   // Fallback prices must match the currency context to avoid ¥6.99 bugs
   const fallbackMonthly = language === 'zh' ? 4900 : 699;
   const fallbackYearly = language === 'zh' ? 29400 : 4199;
@@ -235,6 +247,13 @@ const UpgradeModal: React.FC = () => {
   const isBusy = busyAction !== null;
   const benefitItems = subscriptionT?.benefits || [];
   const yearlyBadge = subscriptionT?.save_badge?.replace('{percent}', String(savings)) || `${savings}%`;
+  const renewalPrice = formatPrice(selectedPlan === 'yearly' ? yearlyPrice : monthlyPrice, currency);
+  const trialDisclosure = (subscriptionT?.trial_disclosure ||
+    `Payment information is required. After {days} days, the selected plan renews automatically at {price} unless cancelled.`)
+    .replace('{days}', String(proTrialDays))
+    .replace('{price}', renewalPrice);
+  const trialCta = (subscriptionT?.start_trial || `Start {days}-day Pro trial`)
+    .replace('{days}', String(proTrialDays));
 
   // Free benefits
   const freeBenefits = [
@@ -338,7 +357,7 @@ const UpgradeModal: React.FC = () => {
                       <div className="flex items-center gap-2">
                         <Clock className={`w-4 h-4 ${isDark ? 'text-star-400' : 'text-paper-500'}`} />
                         <span className={`text-sm ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
-                          {subscriptionT?.trial_countdown || '7天免费试用倒计时'}
+                          {subscriptionT?.trial_countdown || 'Pro 试用倒计时'}
                         </span>
                       </div>
                       <span className={`text-sm font-mono font-semibold ${isDark ? 'text-gold-400' : 'text-gold-600'}`}>
@@ -378,9 +397,14 @@ const UpgradeModal: React.FC = () => {
               {/* Pro Plan Card */}
               <div className={`relative flex flex-col rounded-2xl border p-7 ${isDark ? 'border-gold-500/60 bg-gold-500/10' : 'border-gold-500/60 bg-gold-50'}`}>
                 {/* 首次折扣横幅 */}
-                {isFirstDiscountEligible && (
+                {isFirstDiscountEligible && !isProTrialEligible && (
                   <span className="absolute -top-3 left-4 px-3 py-1 text-xs font-semibold bg-red-500 text-white rounded-full">
                     {subscriptionT?.first_discount_badge || '首次 -50%'}
+                  </span>
+                )}
+                {isProTrialEligible && (
+                  <span className="absolute -top-3 left-4 px-3 py-1 text-xs font-semibold bg-success text-white rounded-full">
+                    {subscriptionT?.trial_badge || `${proTrialDays}-day trial`}
                   </span>
                 )}
                 <span className="absolute -top-3 right-[10px] px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-gold-500 text-space-950 rounded-full">
@@ -392,7 +416,7 @@ const UpgradeModal: React.FC = () => {
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
                   {/* 如果有首次折扣，显示原价划线 */}
-                  {isFirstDiscountEligible && (
+                  {isFirstDiscountEligible && !isProTrialEligible && (
                     <span className={`text-xl line-through ${isDark ? 'text-star-500' : 'text-paper-400'}`}>
                       {formatPrice(selectedPlan === 'yearly' ? yearlyPrice : monthlyPrice, currency)}
                     </span>
@@ -405,12 +429,19 @@ const UpgradeModal: React.FC = () => {
                   </span>
                 </div>
                 <div className={`text-base mb-4 ${isDark ? 'text-star-300' : 'text-paper-600'}`}>
-                  {isFirstDiscountEligible
+                  {isProTrialEligible
+                    ? (subscriptionT?.trial_desc || `Start with a ${proTrialDays}-day Pro trial. Payment details required.`)
+                    : isFirstDiscountEligible
                     ? (subscriptionT?.first_discount_desc || '限时首次订阅特惠！')
                     : selectedPlan === 'yearly'
                       ? (subscriptionT?.yearly_desc || '年付优惠 50%')
                       : (subscriptionT?.monthly_desc || '按月灵活订阅')}
                 </div>
+                {isProTrialEligible && (
+                  <div className={`mb-5 rounded-lg border px-3 py-2 text-sm ${isDark ? 'border-gold-500/30 bg-space-900/50 text-star-300' : 'border-gold-300 bg-gold-50 text-paper-700'}`}>
+                    {trialDisclosure}
+                  </div>
+                )}
 
                 {/* Pro benefits */}
                 <div className="space-y-3 mb-6">
@@ -445,7 +476,11 @@ const UpgradeModal: React.FC = () => {
                     ) : isAuthenticated ? (
                       <span className="flex items-center justify-center gap-2">
                         <Zap className="w-5 h-5" />
-                        {isAlreadySubscriber ? (subscriptionT?.renew || '立即续费') : (subscriptionT?.upgrade || '立即订阅')}
+                        {isAlreadySubscriber
+                          ? (subscriptionT?.renew || '立即续费')
+                          : isProTrialEligible
+                            ? trialCta
+                            : (subscriptionT?.upgrade || '立即订阅')}
                       </span>
                     ) : (
                       subscriptionT?.login || '登录以继续'
@@ -472,7 +507,7 @@ const UpgradeModal: React.FC = () => {
         </p>
 
         {/* Cancel subscription link — only for active Airwallex subscribers */}
-        {isAlreadySubscriber && entitlements?.subscription?.provider === 'airwallex' && (
+        {entitlements?.isSubscriber && entitlements?.subscription?.provider === 'airwallex' && (
           <div className="text-center mt-2">
             <button
               onClick={() => { setShowCancelFlow(true); setCancelStep('reason'); setCancelError(null); }}

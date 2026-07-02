@@ -1,5 +1,5 @@
-// INPUT: A/B 测试服务与 React 依赖。
-// OUTPUT: 导出 useABTest Hook（含服务端渲染兼容）。
+// INPUT: A/B 测试服务与 React 依赖（含 Pro 试用激活文案实验配置）。
+// OUTPUT: 导出 useABTest Hook（含服务端渲染兼容与 Pro 试用 CTA 文案变体）。
 
 import React, { useState, useEffect, ReactNode } from 'react';
 import { defineExperiment, getVariant, ExperimentConfig } from '../services/abTest';
@@ -25,7 +25,7 @@ export const EXPERIMENTS = {
     id: 'signup_flow',
     variants: ['minimal', 'detailed', 'social_proof'],
   },
-  // 免费试用文案测试
+  // Pro 试用激活文案测试
   trial_messaging: {
     id: 'trial_messaging',
     variants: ['risk_reversal', 'value_focus', 'scarcity'],
@@ -155,9 +155,9 @@ export const useTrialMessaging = () => {
 
   const messages = {
     risk_reversal: {
-      headline: '免费试用 7 天',
-      subhead: '无信用卡，随时可取消',
-      cta: '开始免费体验',
+      headline: 'Pro 试用 7 天',
+      subhead: '需填写付款信息，试用期内可取消',
+      cta: '激活试用',
     },
     value_focus: {
       headline: '解锁完整星盘解读',

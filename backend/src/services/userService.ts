@@ -10,7 +10,7 @@ import {
   UserPreferences,
   isSupabaseConfigured,
 } from "../db/supabase.js";
-import { JWT_CONFIG, SUBSCRIPTION_BENEFITS } from "../config/auth.js";
+import { JWT_CONFIG } from "../config/auth.js";
 import { airwallexService } from "./airwallexService.js";
 import { cacheService } from "../cache/redis.js";
 import { logger } from "../utils/logger.js";
@@ -18,7 +18,7 @@ import { enrollAccountSubscriber } from "./newsletterEnroll.js";
 
 // Canonicalize an email for identity comparison: trim whitespace, lowercase.
 // Used for users.email storage AND trial_claims hashing — both MUST agree.
-function normalizeEmailForIdentity(email: string): string {
+export function normalizeEmailForIdentity(email: string): string {
   if (typeof email !== "string") {
     throw new Error("Invalid email: expected string");
   }
@@ -34,7 +34,7 @@ function normalizeEmailForIdentity(email: string): string {
 // `digest(lower(btrim(u.email)), 'sha256')`. No salt/pepper: if we ever
 // introduce one we must rebuild the table or the hash domain diverges from
 // the backfill and existing users lose protection on re-registration.
-function hashEmailForTrialClaim(normalizedEmail: string): string {
+export function hashEmailForTrialClaim(normalizedEmail: string): string {
   return crypto.createHash("sha256").update(normalizedEmail).digest("hex");
 }
 
@@ -60,16 +60,9 @@ export interface AuthTokens {
 }
 
 class UserService {
-  // Create a new user with 7-day trial.
-  // Trial is bound to the email (via SHA-256 hash) and persists across account
-  // deletion: re-registering with the same email reuses the original
-  // trial_ends_at instead of starting a fresh 7-day window.
-  //
-  // Implementation: delegates to the `create_user_with_trial` Postgres function
-  // (migration 006) which performs the trial_claims upsert + read + users
-  // insert in a single transaction. Atomicity matters: a failed users insert
-  // must roll back the claim row, otherwise an attacker could "burn" a
-  // victim's trial by submitting malformed registrations.
+  // Create a new free user. Pro trials are no longer granted at registration;
+  // they must be explicitly activated through Airwallex checkout so a payment
+  // method exists for renewal after the trial.
   async createUser(input: CreateUserInput): Promise<DbUser> {
     if (!isSupabaseConfigured()) {
       throw new Error("Database not configured");
@@ -82,7 +75,7 @@ class UserService {
       : null;
 
     const { data, error } = await supabase
-      .rpc("create_user_with_trial", {
+      .rpc("create_user_without_trial", {
         p_email: normalizedEmail,
         p_name: input.name ?? null,
         p_avatar: input.avatar ?? null,
@@ -90,7 +83,6 @@ class UserService {
         p_provider_id: input.providerId ?? null,
         p_password_hash: passwordHash,
         p_email_verified: input.provider !== "email",
-        p_trial_days: SUBSCRIPTION_BENEFITS.TRIAL_DAYS,
       })
       .single();
 

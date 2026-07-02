@@ -21,6 +21,7 @@ import {
 } from "../config/auth.js";
 import subscriptionService from "./subscriptionService.js";
 import { getOrCreateDevEntitlementState } from "./entitlementService.js";
+import proTrialService from "./proTrialService.js";
 import { cacheService } from "../cache/redis.js";
 import { logger } from "../utils/logger.js";
 
@@ -34,6 +35,11 @@ export interface EntitlementsV2 {
   isTrialing: boolean;
   trialEndsAt: string | null;
   isFirstDiscountEligible: boolean; // 是否有首次订阅折扣资格
+  proTrial: {
+    eligible: boolean;
+    days: number;
+    reason?: string;
+  };
 
   subscription?: {
     plan: "monthly" | "yearly";
@@ -329,6 +335,10 @@ class EntitlementServiceV2 {
       isTrialing: false,
       trialEndsAt: null,
       isFirstDiscountEligible: true, // 默认有资格，后面会根据用户数据更新
+      proTrial: {
+        eligible: false,
+        days: SUBSCRIPTION_BENEFITS.TRIAL_DAYS,
+      },
       ask: {
         freeLeft: FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK,
         subscriptionLeft: 0,
@@ -623,6 +633,11 @@ class EntitlementServiceV2 {
 
     // 检查首次折扣资格
     entitlements.isFirstDiscountEligible = !user.used_first_discount;
+    entitlements.proTrial = await proTrialService.getEligibility(userId);
+    if (entitlements.proTrial.eligible) {
+      // Trial and first-subscription discount are mutually exclusive choices.
+      entitlements.isFirstDiscountEligible = false;
+    }
 
     if (user.trial_ends_at) {
       const trialEnd = new Date(user.trial_ends_at);
@@ -644,7 +659,10 @@ class EntitlementServiceV2 {
         : null;
       if (!expiresAt || expiresAt > now) {
         entitlements.isSubscriber = true;
-        entitlements.isTrialing = false; // 有付费订阅则不再视为试用
+        entitlements.isTrialing = subscription.status === "trialing";
+        if (subscription.status === "trialing") {
+          entitlements.trialEndsAt = subscription.current_period_end || null;
+        }
         entitlements.subscription = {
           plan: subscription.plan,
           status: subscription.status,

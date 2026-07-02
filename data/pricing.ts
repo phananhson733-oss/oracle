@@ -35,9 +35,9 @@ export const SUBSCRIPTION_DISPLAY_PRICING: Record<
 
 /** Yearly plan saving vs 12× monthly. */
 export const YEARLY_SAVE_PERCENT = 50;
-/** First-subscription discount offered to every new subscriber. */
+/** First-subscription discount for eligible users who do not take the Pro trial. */
 export const FIRST_DISCOUNT_PERCENT = 50;
-/** Free trial granted on signup. */
+/** Manual Pro trial length after Airwallex payment setup. */
 export const TRIAL_DAYS = 7;
 
 export interface CreditPackDisplay {

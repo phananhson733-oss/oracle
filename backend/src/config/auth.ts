@@ -64,7 +64,7 @@ export const SUBSCRIPTION_BENEFITS = {
   SUBSCRIPTION_BONUS_CREDITS: 100,   // 每次成功支付发放
 
   // 试用期
-  TRIAL_DAYS: 7,                     // 首次注册赠送 7 天试用
+  TRIAL_DAYS: 7,                     // Airwallex 付款信息绑定后手动激活
 
   // 向后兼容 - 旧版配置
   SYNASTRY_READS_PER_MONTH: 5,       // @deprecated
