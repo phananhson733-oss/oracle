@@ -17,8 +17,7 @@ export const angelaNikolauBirthChartEn: WikiArticle = {
     "Angela Nikolau birth chart meaning",
     "Angela Nikolau birth chart astrology",
     "Angela Nikolau birth chart zodiac",
-    "Angela Nikolau birth chart interpretation",
-    "emma watson zodiac sign"
+    "Angela Nikolau birth chart interpretation"
   ],
   content: `# Reading the Angela Nikolau Birth Chart as a Persona, Not a Prediction
 
