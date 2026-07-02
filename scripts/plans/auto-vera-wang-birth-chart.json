@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "vera-wang-birth-chart": {
+      "hero": {
+        "prompt": "A moonlit ocean shoreline stretching beneath a vast indigo night sky, three luminous crescent forms glowing softly just above the dark water horizon, their warm gold light cascading in a rippling path toward the viewer like a tender river of memory, while swift silver sparks arc lightly along the far horizon suggesting restless motion — an atmosphere of emotional depth, romantic nostalgia, and quiet protective calm, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit indigo shoreline with three glowing crescents above the water and silver sparks at the horizon",
+        "altZh": "深靛蓝月夜海岸线，三道金色新月光芒映照水面，地平线处银色流星划过"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Vera Wang's Natal Chart Symbolically",
+          "titleEn": "5 Steps to Read Vera Wang's Chart",
+          "titleZh": "解读王薇薇星盘的5个步骤",
+          "altEn": "Five-step sequence for reading Vera Wang's natal chart symbolically",
+          "altZh": "以象征方式解读王薇薇本命盘的五个步骤",
+          "items": [
+            {
+              "nameEn": "Cancer Emphasis",
+              "nameZh": "巨蟹座重点",
+              "subEn": "Sun, Moon, and Venus in Cancer — one theme of care, home, and emotional security",
+              "subZh": "太阳、月亮、金星均在巨蟹座——指向关怀、家园与情感安全的核心主题"
+            },
+            {
+              "nameEn": "Cancer Venus Aesthetic",
+              "nameZh": "巨蟹座金星品味",
+              "subEn": "Taste prizes softness, nostalgia, and heirloom feeling — couture bridal as emotional keepsake",
+              "subZh": "品味追求柔软、怀旧与传家宝质感——高定婚纱即情感纪念品"
+            },
+            {
+              "nameEn": "Gemini Planets",
+              "nameZh": "双子座行星",
+              "subEn": "Mercury and Mars in Gemini — a quick, versatile editorial mind and a reinventive drive",
+              "subZh": "双子座水星与火星——灵活的编辑思维与不断自我更新的驱动力"
+            },
+            {
+              "nameEn": "Flag the Unknowns",
+              "nameZh": "标记未知因素",
+              "subEn": "Ascendant, Midheaven, and houses stay provisional without a verified birth time",
+              "subZh": "在无法核实出生时间前，上升星座、天顶与宫位均保持为未确认状态"
+            },
+            {
+              "nameEn": "Archetype, Not Prophecy",
+              "nameZh": "原型而非预言",
+              "subEn": "Treat each placement as a tendency and symbolic theme, never a cause of any specific outcome",
+              "subZh": "将每个星位视为倾向与象征主题，而非任何具体人生结果的原因"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Vera Wang's Chart at a Glance",
+          "titleEn": "Key Placements in Vera Wang's Birth Chart",
+          "titleZh": "王薇薇星盘的核心星位",
+          "altEn": "Comparison of Cancer and Gemini placements in Vera Wang's natal chart",
+          "altZh": "王薇薇本命盘中巨蟹座与双子座星位对比",
+          "columns": [
+            {
+              "nameEn": "Cancer Sun",
+              "nameZh": "巨蟹座太阳",
+              "linesEn": [
+                "Core identity theme: care and emotional security",
+                "Water element; natural 4th-house themes of home",
+                "A life's work built around family milestones and belonging"
+              ],
+              "linesZh": [
+                "核心身份主题：关怀与情感安全",
+                "水象星座；呼应第四宫家园主题",
+                "职业生涯围绕家庭里程碑与归属感构建"
+              ]
+            },
+            {
+              "nameEn": "Cancer Moon & Venus",
+              "nameZh": "巨蟹座月亮与金星",
+              "linesEn": [
+                "Moon doubles the emotional and protective theme as ruler of Cancer Sun",
+                "Venus sets taste toward romance, nostalgia, and tenderness",
+                "Couture bridal read as heirloom emotion, not spectacle"
+              ],
+              "linesZh": [
+                "月亮作为巨蟹座主星，加深情感与保护主题",
+                "金星令品味倾向浪漫、怀旧与温柔",
+                "高定婚纱呈现传家宝式情感而非舞台效果"
+              ]
+            },
+            {
+              "nameEn": "Gemini Mercury & Mars",
+              "nameZh": "双子座水星与火星",
+              "linesEn": [
+                "Quick, versatile, editorial thinking and drive",
+                "Air element; mutable dexterity across rink, magazine, and atelier",
+                "Reinvention from competitive skating to Vogue to bridal design"
+              ],
+              "linesZh": [
+                "灵敏、多元的编辑思维与行动力",
+                "风象星座；跨越溜冰场、杂志与工作室的灵活变通",
+                "从竞技滑冰到《Vogue》再到婚纱设计的自我重塑"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
