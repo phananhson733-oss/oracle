@@ -17,8 +17,7 @@ export const johnDenverBirthChartEn: WikiArticle = {
     "John Denver birth chart meaning",
     "John Denver birth chart astrology",
     "John Denver birth chart zodiac",
-    "John Denver birth chart interpretation",
-    "emma watson zodiac sign"
+    "John Denver birth chart interpretation"
   ],
   content: `# What John Denver's Birth Chart Says About the Folk Archetype
 
