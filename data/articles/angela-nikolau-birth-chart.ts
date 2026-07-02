@@ -23,11 +23,11 @@ export const angelaNikolauBirthChartEn: WikiArticle = {
 
 ## What Is Angela Nikolau's Birth Chart?
 
-An Angela Nikolau birth chart is the astrological map of the sky at the moment she was born, read as **a symbolic snapshot of the sky at her birth moment** rather than a factual account of her life. Because her exact birth time and place aren't part of the verified public record, any version circulating online is an interpretation, not a documented file. Astrologers who profile public figures treat the chart as a set of interpretive lenses — the Sun sign for core identity, the planets for competing drives, the aspects for how those drives talk to each other. In her case, popular readings commonly place the Sun in Aquarius, the sign linked with originality and rule-bending, and use that as a starting point for her rooftop-artist persona. If the layout is new to you, this [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) maps the parts.
+An Angela Nikolau birth chart is the astrological map of the sky at the moment she was born, read as **a symbolic snapshot of the sky at her birth moment** rather than a factual account of her life. Because her exact birth time and place aren't part of the verified public record, any version circulating online is an interpretation, not a documented file. Astrologers who profile public figures treat the chart as a set of interpretive lenses — the Sun sign for core identity, the planets for competing drives, the aspects for how those drives talk to each other. In her case, popular readings commonly place the Sun in Cancer, the sign linked with emotional depth and intuition, and use that as a starting point for her rooftop-artist persona. If the layout is new to you, this [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) maps the parts.
 
 - Built from the date, time, and place of birth, not personality guesswork
 - Read as a symbolic persona lens, never as proof of who someone is
-- Commonly anchored to an Aquarius Sun in public write-ups of her chart
+- Commonly anchored to a Cancer Sun in public write-ups of her chart
 
 ## Why It Matters for Self-Awareness
 
@@ -37,18 +37,18 @@ There's also a practical reason the exercise sticks. A rooftop daredevil is a vi
 
 1. **Persona versus private self.** It's a low-stakes way to ask how much of anyone's public image is performance and how much is temperament.
 2. **Your own risk appetite.** The daredevil framing invites you to notice where you court risk, where you freeze, and what actually moves the needle for you.
-3. **Expression as identity.** An Aquarian read on self-expression can prompt you to look at how you signal individuality in your own life, and where you dilute it to fit in.
+3. **Expression as identity.** A Cancerian read on self-expression can prompt you to look at how you signal individuality in your own life, and where you dilute it to fit in.
 
 ## Angela Nikolau's Birth Chart vs Her Sun Sign Alone: What Each Shows
 
-An Angela Nikolau birth chart and her Sun sign alone get treated as the same thing, but they answer different questions. The Sun sign — the Aquarius label most posts lead with — is one placement: a broad sketch of core identity. The full chart adds the Moon, the rising sign, and the way planets cluster and angle against each other, so it reads more like a personality weather system than a single headline.
+An Angela Nikolau birth chart and her Sun sign alone get treated as the same thing, but they answer different questions. The Sun sign — the Cancer label most posts lead with — is one placement: a broad sketch of core identity. The full chart adds the Moon, the rising sign, and the way planets cluster and angle against each other, so it reads more like a personality weather system than a single headline.
 
 Here's how each works and where the trade-off sits:
 
-1. **Sun sign alone.** Fast and shareable — how it works is by compressing everything into one archetype. To get that simplicity, you sacrifice nuance: two people with an Aquarius Sun can live completely different lives.
+1. **Sun sign alone.** Fast and shareable — how it works is by compressing everything into one archetype. To get that simplicity, you sacrifice nuance: two people with a Cancer Sun can live completely different lives.
 2. **Full chart.** It layers placements so contradictions have room to sit side by side — a bold public face over a guarded inner world, for instance. To get that depth, you sacrifice speed: it takes more study, and the *meaning of the rising sign* alone can reframe the whole read.
 
-Blending the two is where people slip. They take a full-chart claim and defend it with Sun-sign logic, or reduce a layered profile back down to "she's just an Aquarius." Keeping them distinct — the kind of character-focused reading associated with astrologers like Liz Greene — is what stops a birth chart profile from hardening into biographical proof.
+Blending the two is where people slip. They take a full-chart claim and defend it with Sun-sign logic, or reduce a layered profile back down to "she's just a Cancer." Keeping them distinct — the kind of character-focused reading associated with astrologers like Liz Greene — is what stops a birth chart profile from hardening into biographical proof.
 
 
 ![Side-by-side comparison of Sun sign alone versus a full birth chart showing what each reveals](/images/blog/angela-nikolau-birth-chart-i0-en.svg)
@@ -57,7 +57,7 @@ Blending the two is where people slip. They take a full-chart claim and defend i
 
 You don't need her exact birth time to practice the reading approach an Angela Nikolau birth chart invites. Treat each feature as a question rather than a verdict:
 
-1. **Start with the Sun sign story.** Ask what an Aquarius Sun — originality, detachment, rule-bending — might look like in someone who scales rooftops for art.
+1. **Start with the Sun sign story.** Ask what a Cancer Sun — emotional depth, intuition, protectiveness — might look like in someone who scales rooftops for art.
 2. **Look for a stellium.** If several planets sit in one sign or area, read it as a concentration of energy, not a superpower; it shows where focus and effort tend to pile up.
 3. **Read aspects as conversations.** A tense square suggests friction between two drives; a flowing trine suggests ease. Neither predicts an outcome on its own.
 4. **Anchor image to placement.** Match the rooftop-daredevil persona to symbols of risk and visibility, while staying honest that you're interpreting a public image, not diagnosing a private person.
@@ -71,7 +71,7 @@ You don't need her exact birth time to practice the reading approach an Angela N
 A few readings of the Angela Nikolau birth chart come up again and again, and most of them overreach in the same direction:
 
 1. **Misreading: the chart proves she's fearless.** Actually, a chart can point to a taste for risk as a theme, but nerve is a choice someone makes in the moment, not a placement that guarantees it.
-2. **Misreading: Aquarius explains everything.** Actually, the Sun sign is one line of a much longer story; leaning on it alone flattens a person into a stereotype.
+2. **Misreading: Cancer explains everything.** Actually, the Sun sign is one line of a much longer story; leaning on it alone flattens a person into a stereotype.
 3. **Misreading: the profile is biographical fact.** Actually, without a confirmed birth time the whole reading is interpretive, and honest astrologers say so up front instead of dressing it as documentation.
 4. **Misreading: the chart caused her career.** Actually, astrology offers symbolic language for a persona; it doesn't cause behavior or forecast a path, and treating it that way is where meaning-making tips into overclaim.
 
@@ -79,7 +79,7 @@ A few readings of the Angela Nikolau birth chart come up again and again, and mo
 
 | Chart Feature | How It Works | Energy Center | How to Observe |
 | --- | --- | --- | --- |
-| Aquarius Sun | Sets the core identity theme of originality | Fixed air element, individuality | Notice rule-bending, inventive self-presentation |
+| Cancer Sun | Sets the core identity theme of emotional depth | Cardinal water element, sensitivity | Notice protective, intuitive self-presentation |
 | Stellium | Concentrates several planets in one area | The sign or house it falls in | Look for one life area that dominates the story |
 | Squares | Create productive friction between two drives | Cardinal tension points | Watch for internal push-pull and restlessness |
 | Trines | Let two placements flow with ease | Shared element between them | Spot talents that seem to come effortlessly |
@@ -93,7 +93,7 @@ No — her exact birth date, time, and place aren't part of the verified public 
 
 **What is Angela Nikolau's Sun sign?**
 
-Popular readings most often place her Sun in Aquarius, the sign tied to originality and independence. Treat that as the common cultural framing rather than a documented fact.
+Popular readings most often place her Sun in Cancer, the sign tied to emotion and intuition. Treat that as the common cultural framing rather than a documented fact.
 
 **Can a birth chart explain her rooftop photography?**
 
@@ -111,7 +111,7 @@ A celebrity chart is usually read from incomplete data for cultural interest, wh
 
 ## Related Reading
 
-- *Aquarius Sun sign meaning* — goes deeper on the sign most readings pin to her identity.
+- *Cancer Sun sign meaning* — goes deeper on the sign most readings pin to her identity.
 - [how squares and trines work as chart aspects](/en/wiki/astrology-terms) — explains the aspect language used to read tension and ease.
 - *how planet clusters work in a birth chart* — unpacks what a stellium concentration really signals.
 - [Astrological sign (Wikipedia)](https://en.wikipedia.org/wiki/Astrological_sign) — background on the twelve signs behind any chart.
