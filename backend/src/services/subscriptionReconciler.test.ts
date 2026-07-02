@@ -67,7 +67,10 @@ vi.mock('../db/supabase.js', () => ({
   isSupabaseConfigured: () => mockIsConfigured(),
 }));
 
-import { reconcileAirwallexSubscription } from './subscriptionReconciler.js';
+import {
+  mapAirwallexStatus,
+  reconcileAirwallexSubscription,
+} from './subscriptionReconciler.js';
 
 function setResponse(
   table: string,
@@ -165,5 +168,34 @@ describe('reconcileAirwallexSubscription', () => {
     expect(updates).toHaveLength(1);
     expect(updates[0].payload.status).toBe('past_due');
     expect(updates[0].eq).toEqual({ user_id: 'user-1' });
+  });
+
+  it('Airwallex IN_TRIAL 映射为本地 trialing，并优先使用 trial_ends_at', async () => {
+    expect(mapAirwallexStatus('IN_TRIAL')).toBe('trialing');
+    setResponse('users', { email: 'trial@example.com' }, { id: 'user-trial' });
+    setResponse('subscriptions', { airwallex_customer_id: 'cus_trial' }, null);
+    setResponse('subscriptions', { user_id: 'user-trial' }, null);
+
+    const result = await reconcileAirwallexSubscription({
+      subscriptionId: 'sub_trial',
+      customerId: 'cus_trial',
+      customerEmail: 'trial@example.com',
+      plan: 'monthly',
+      status: 'IN_TRIAL',
+      currentPeriodStart: '2026-07-02T00:00:00.000Z',
+      currentPeriodEnd: '2026-08-02T00:00:00.000Z',
+      trialEnd: '2026-07-09T00:00:00.000Z',
+    });
+
+    expect(result.reconciled).toBe(true);
+    expect(inserts).toHaveLength(1);
+    expect(inserts[0].status).toBe('trialing');
+    expect(inserts[0].current_period_end).toBe('2026-07-09T00:00:00.000Z');
+  });
+
+  it('映射 ACTIVE / UNPAID / CANCELLED 到本地订阅状态', () => {
+    expect(mapAirwallexStatus('ACTIVE')).toBe('active');
+    expect(mapAirwallexStatus('UNPAID')).toBe('past_due');
+    expect(mapAirwallexStatus('CANCELLED')).toBe('canceled');
   });
 });
