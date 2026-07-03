@@ -17,8 +17,7 @@ export const tobeyMaguireBirthChartEn: WikiArticle = {
     "Tobey Maguire birth chart meaning",
     "Tobey Maguire birth chart astrology",
     "Tobey Maguire birth chart zodiac",
-    "Tobey Maguire birth chart interpretation",
-    "emma watson zodiac sign"
+    "Tobey Maguire birth chart interpretation"
   ],
   content: `# What Tobey Maguire's Birth Chart Says About His Spider-Man Comeback
 
