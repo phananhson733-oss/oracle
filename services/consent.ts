@@ -74,9 +74,23 @@ export const declineAllConsent = () => {
 };
 
 // CCPA "Do Not Sell"
+// CPRA §7025：浏览器 Global Privacy Control 信号视为有效的 Do-Not-Sell/Share 请求（评审 M3）。
+export const isGpcActive = (): boolean => {
+  if (typeof navigator === 'undefined') return false;
+  return (
+    (navigator as unknown as { globalPrivacyControl?: boolean })
+      .globalPrivacyControl === true
+  );
+};
+
+// Do-Not-Sell/Share：显式存储优先；无显式选择时尊重浏览器 GPC 信号（不得让默认
+// 状态静默覆盖活跃 GPC，评审 M3）。
 export const getDoNotSell = (): boolean => {
   if (typeof window === 'undefined') return false;
-  return window.localStorage.getItem(DO_NOT_SELL_KEY) === 'true';
+  const stored = window.localStorage.getItem(DO_NOT_SELL_KEY);
+  if (stored === 'true') return true;
+  if (stored === 'false') return false;
+  return isGpcActive();
 };
 
 export const setDoNotSell = (value: boolean) => {

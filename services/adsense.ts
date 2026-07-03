@@ -53,8 +53,21 @@ export const evaluateTcfConsent = (
 let tcfListenerRegistered = false;
 let tcfPollAttempts = 0;
 let tcfPollTimer: ReturnType<typeof setTimeout> | null = null;
-const TCF_POLL_MAX = 20; // ~10s @ 500ms
+const TCF_POLL_MAX = 20; // ~10s @ 500ms（每次 rearm 重置，供 SPA 导航重臂，评审 L4）
 const TCF_POLL_INTERVAL_MS = 500;
+
+// 单一 poll 链：schedule 只在没有在跑的 timer 时起，tcpPollTick 先清空 handle 再重入
+// initTcfListener —— 避免 bootstrap 与 loadAdsense 双入口并发时孤儿化计时器链（评审 L3）。
+const tcfPollTick = (): void => {
+  tcfPollTimer = null;
+  initTcfListener();
+};
+const scheduleTcfPoll = (): void => {
+  if (tcfPollTimer) return; // 已有 poll 在跑 → 汇入，不起第二条链
+  if (tcfPollAttempts >= TCF_POLL_MAX) return;
+  tcfPollAttempts += 1;
+  tcfPollTimer = setTimeout(tcfPollTick, TCF_POLL_INTERVAL_MS);
+};
 
 // 注册 TCF 监听（EEA 广告同意）。head-loader 异步加载 adsbygoogle.js → CMP 才提供
 // window.__tcfapi，故 App bootstrap 调用时可能尚未就位 → 轮询等待（评审 B1：与 loadAdsense
@@ -65,9 +78,7 @@ export const initTcfListener = (): void => {
   if (tcfListenerRegistered) return;
   const tcf = (window as unknown as { __tcfapi?: unknown }).__tcfapi;
   if (typeof tcf !== "function") {
-    if (tcfPollAttempts >= TCF_POLL_MAX) return;
-    tcfPollAttempts += 1;
-    tcfPollTimer = setTimeout(initTcfListener, TCF_POLL_INTERVAL_MS);
+    scheduleTcfPoll(); // CMP 尚未就位 → 单链轮询等待
     return;
   }
   tcfListenerRegistered = true;
@@ -89,8 +100,18 @@ export const initTcfListener = (): void => {
       },
     );
   } catch {
-    // __tcfapi 抛错 → 保持默认拒绝
+    // __tcfapi 抛错 → 重置注册标记，使 rearmTcfListener 之后仍能重试（评审 PR3 #4：
+    // 否则同步抛异常后 tcfListenerRegistered 永久为 true，EEA 广告同意整会话卡 false）。
+    tcfListenerRegistered = false;
   }
+};
+
+// 重臂 TCF 监听（评审 L4）：轮询 ~10s 后放弃且模块状态跨 SPA 导航保留，若 CMP 迟到会整
+// 会话无 EEA 广告。EEA AdSlot 每次挂载调此函数：未注册则重置轮询预算并再次尝试（已注册即 no-op）。
+export const rearmTcfListener = (): void => {
+  if (tcfListenerRegistered) return;
+  tcfPollAttempts = 0;
+  initTcfListener();
 };
 
 // 门控#3：地域相关广告同意。
@@ -114,7 +135,10 @@ export const computeAdConsentSignal = (
   marketing: boolean,
   doNotSell: boolean,
 ): boolean => {
-  if (region.isGdpr === true) return false;
+  // 仅"已知非 GDPR"(isGdpr===false)才可能授予；EEA(true) 与未知(null) 一律 false —— 与 gate
+  // hasAdConsent 的 fail-safe 完全对齐（评审 PR3 #1：未知地域也 deny，避免地域未落地/API 失败时
+  // 向疑似 EEA 用户发出 ad_personalization=granted 绕过 CMP/TCF）。
+  if (region.isGdpr !== false) return false;
   return marketing === true && !doNotSell;
 };
 

@@ -17,6 +17,7 @@ const h = vi.hoisted(() => ({
   consent: true,
   loadAdsense: vi.fn(() => true),
   pushAd: vi.fn(),
+  rearmTcfListener: vi.fn(),
 }));
 
 vi.mock("../../hooks/useRegion", () => ({
@@ -28,6 +29,7 @@ vi.mock("../../services/adsense", () => ({
   getAdsenseClientId: () => "ca-pub-test",
   loadAdsense: h.loadAdsense,
   pushAd: h.pushAd,
+  rearmTcfListener: h.rearmTcfListener,
 }));
 
 import { AdSlot } from "../../components/ads/AdSlot";
@@ -49,6 +51,7 @@ beforeEach(() => {
   h.consent = true;
   h.loadAdsense.mockClear();
   h.pushAd.mockClear();
+  h.rearmTcfListener.mockClear();
 });
 
 describe("AdSlot 四重门控", () => {
@@ -123,5 +126,16 @@ describe("AdSlot 四重门控", () => {
     act(() => notifyAdConsentChanged());
     expect(container.querySelector("ins.adsbygoogle")).not.toBeNull();
     expect(h.pushAd).toHaveBeenCalledTimes(2);
+  });
+
+  it("EEA 挂载时重臂 TCF（评审 L4/PR3 #3）；非 EEA 不重臂", () => {
+    h.region = { country: "DE", isGdpr: true };
+    renderSlot("123");
+    expect(h.rearmTcfListener).toHaveBeenCalled();
+
+    h.rearmTcfListener.mockClear();
+    h.region = { country: "US", isGdpr: false };
+    renderSlot("123");
+    expect(h.rearmTcfListener).not.toHaveBeenCalled();
   });
 });

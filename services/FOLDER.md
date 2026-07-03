@@ -22,10 +22,10 @@
 - analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。
 - themeStorage.ts｜地位：主题持久化唯一入口｜功能：astro_theme_v2 安全读写（严格归一化 + storage 禁用防护 + THEME_META_COLORS），index.html pre-paint 脚本是其不可 import 的镜像。
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
-- consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
+- consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储；getDoNotSell 尊重浏览器 GPC 信号(isGpcActive,CPRA §7025,评审 M3)——显式选择优先、无选择时随 GPC。
 - region.ts｜地位：地域判定服务｜功能：读 /api/region（Vercel IP 国家码）判定 GDPR 强制区（EU27+EEA+UK+CH），供 ConsentBanner 地域分流与 AdSlot 广告同意门控；含 GDPR_COUNTRIES/isGdprCountry/fetchRegion/getCachedRegion，失败 fail-safe 为 UNKNOWN。
 - region.test.ts｜地位：region 单测（jsdom）｜功能：覆盖 GDPR 国家判定、响应解析与 fetch 失败 fail-safe。
-- adsense.ts｜地位：AdSense 加载与合规门控｜功能：isAdsenseConfigured(flag+client)、hasAdConsent(地域分流：EEA→TCF/非EEA→marketing 同意且非 Do-Not-Sell)、loadAdsense 单例注入 adsbygoogle.js、pushAd、initTcfListener/evaluateTcfConsent。
+- adsense.ts｜地位：AdSense 加载与合规门控｜功能：isAdsenseConfigured(flag+client)、hasAdConsent(地域分流：EEA→TCF/非EEA→marketing 且非 Do-Not-Sell)、computeAdConsentSignal(门控与 Consent Mode 信号同源,评审 H1)、loadAdsense 单例注入、pushAd、initTcfListener(bootstrap+单链轮询,评审 L3)/rearmTcfListener(SPA 重臂,评审 L4)/evaluateTcfConsent。
 - adsense.test.ts｜地位：adsense 单测（jsdom）｜功能：覆盖四重门控各分支、TCF 判定/notify 与单例注入。
 - adConsentBus.ts｜地位：广告同意事件总线（PR2）｜功能：notifyAdConsentChanged/subscribeAdConsent（同意变化→AdSlot 重渲染，评审 B2）+ openConsentPreferences/subscribeOpenConsentPreferences（Footer 重开偏好，评审 B3）。
 - adConsentBus.test.ts｜地位：adConsentBus 单测｜功能：发布/订阅收发与取消订阅。

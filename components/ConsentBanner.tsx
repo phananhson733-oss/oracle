@@ -36,10 +36,13 @@ export const ConsentBanner: React.FC = () => {
     analytics: false,
     marketing: false,
   });
-  // CCPA/CPRA "Do Not Sell or Share" opt-out（评审 B3）。惰性初始化自 localStorage。
+  // CCPA/CPRA "Do Not Sell or Share" opt-out（评审 B3）。惰性初始化自 getDoNotSell（含 GPC）。
   const [doNotSellChecked, setDoNotSellChecked] = useState(() =>
     getDoNotSell(),
   );
+  // 是否被用户实际拨动过：仅 touched 才持久化，避免把 GPC 派生的默认值写成显式 'false' 而
+  // 永久压制对 GPC 的尊重（评审 PR3 #5，与 M3 一致）。
+  const [doNotSellTouched, setDoNotSellTouched] = useState(false);
   const { theme } = useTheme();
   const { language } = useLanguage();
   const { langPath } = useLangPath();
@@ -84,6 +87,7 @@ export const ConsentBanner: React.FC = () => {
         const existing = getConsentPreferences();
         if (existing) setPrefs(existing);
         setDoNotSellChecked(getDoNotSell());
+        setDoNotSellTouched(false);
         setShowPrefs(true);
       }),
     [],
@@ -91,9 +95,13 @@ export const ConsentBanner: React.FC = () => {
 
   const handleAcceptAll = () => {
     acceptAllConsent();
-    setDoNotSell(false); // 全部接受 = 同意个性化广告，清除 Do-Not-Sell
-    // 广告信号经 computeAdConsentSignal：EEA 恒 false（交 CMP/TCF），非 EEA=marketing&&!doNotSell。
-    updateConsentState(true, computeAdConsentSignal(region, true, false));
+    // 不强制 setDoNotSell(false)：尊重活跃 GPC —— "全部接受"是概括性同意，不应静默覆盖
+    // 用户浏览器的 Do-Not-Sell/Share 信号（评审 M3）。广告信号经 GPC-aware 的 getDoNotSell()：
+    // EEA 恒 false（交 CMP/TCF），非 EEA = marketing && !getDoNotSell()。
+    updateConsentState(
+      true,
+      computeAdConsentSignal(region, true, getDoNotSell()),
+    );
     notifyAdConsentChanged(); // 触发 AdSlot 重算门控（评审 B2）
     // No trackPageView() here — Consent Mode v2 handles re-evaluation.
     // App.tsx already sent the cookieless ping; GA4 uses modeling for the gap.
@@ -111,18 +119,20 @@ export const ConsentBanner: React.FC = () => {
 
   const handleSavePrefs = () => {
     setConsentPreferences(prefs);
-    setDoNotSell(doNotSellChecked);
+    // 仅当用户实际拨动过开关才持久化，否则不写——让 getDoNotSell 继续尊重 GPC（评审 PR3 #5）。
+    if (doNotSellTouched) setDoNotSell(doNotSellChecked);
     // 广告 Consent Mode 信号与门控 hasAdConsent 同源：Do-Not-Sell 真正联动 ad_personalization
-    // （评审 H1）；EEA 由 computeAdConsentSignal 恒 false 交 CMP（评审 L1）。
+    // （评审 H1）；EEA/未知 由 computeAdConsentSignal 恒 false 交 CMP（评审 L1/PR3 #1）。
     updateConsentState(
       prefs.analytics,
-      computeAdConsentSignal(region, prefs.marketing, doNotSellChecked),
+      computeAdConsentSignal(region, prefs.marketing, getDoNotSell()),
     );
     notifyAdConsentChanged();
     if (prefs.analytics) {
       trackFirstVisitIfNew();
       flushQueuedWebVitals();
     }
+    setDoNotSellTouched(false);
     setShowPrefs(false);
     setIsVisible(false);
   };
@@ -131,6 +141,7 @@ export const ConsentBanner: React.FC = () => {
     const existing = getConsentPreferences();
     if (existing) setPrefs(existing);
     setDoNotSellChecked(getDoNotSell());
+    setDoNotSellTouched(false);
     setShowPrefs(true);
   };
 
@@ -356,7 +367,10 @@ export const ConsentBanner: React.FC = () => {
                     aria-label={content.doNotSellToggleLabel}
                     aria-checked={doNotSellChecked}
                     checked={doNotSellChecked}
-                    onChange={(e) => setDoNotSellChecked(e.target.checked)}
+                    onChange={(e) => {
+                      setDoNotSellChecked(e.target.checked);
+                      setDoNotSellTouched(true);
+                    }}
                     className="sr-only peer"
                   />
                   <div className="w-9 h-5 rounded-full peer peer-checked:bg-gold-500 bg-star-600 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-full" />

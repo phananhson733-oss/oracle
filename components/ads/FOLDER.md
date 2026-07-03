@@ -16,6 +16,7 @@
 - FOLDER.md｜地位：目录索引文档｜功能：记录 ads 目录架构与文件清单。
 - AdSlot.tsx｜地位：广告展示组件｜功能：单个手动 AdSense 单元；四重门控（配置就绪+slot+匿名用户+地域相关广告同意）全过才渲染 <ins class=adsbygoogle> 并 pushAd，否则返回 null（不占位/不请求）；预留高度防 CLS，push 去重防 StrictMode 双推。
 - adPlacements.ts｜地位：广告位中央配置｜功能：位置→slot ID/预留高度/格式 集中配置（env 驱动），集中管理密度。PR1 仅 WIKI_ARTICLE_END（文末）。
+- adEligibility.ts｜地位：广告投放资格判定（PR3/B4）｜功能：isAdEligibleArticle(article) 结构化收口门控#1 —— 排除 embeddedTool(转化漏斗)/psychAdjacent(心理敏感)文章，防各 placement 漏抄红线。
 
 近期更新
 - 新建 ads/ 目录（AdSense 接入 PR1）：AdSlot 组件 + adPlacements 配置。消费方为 WikiArticleDetailPage（文末，仅非漏斗/非心理敏感文章）。flag 默认关，PR1 全站零广告。

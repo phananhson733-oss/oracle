@@ -27,6 +27,7 @@ import ChartMiniCalc from "../ChartMiniCalc";
 import SafetyFooter from "../SafetyFooter";
 import AdSlot from "../ads/AdSlot";
 import { WIKI_ARTICLE_END } from "../ads/adPlacements";
+import { isAdEligibleArticle } from "../ads/adEligibility";
 import { BIRTH_CHART_ANCHOR_ID } from "../../hooks/useScrollToBirthChart";
 
 // Safe Markdown renderer with error handling
@@ -777,8 +778,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         {/* AdSense 广告位（文末）。仅非漏斗(embeddedTool)、非心理敏感(psychAdjacent)文章展示：
             保护 tool-led 转化 + 心理安全页面不投广告。付费/登录用户、非同意、EEA-无CMP、
             flag 关 等情形由 AdSlot 内部四重门控拦截（返回 null，零占位）。仅 SPA 渲染，不进静态 stub。 */}
-        {!article.embeddedTool && !article.psychAdjacent && (
+        {isAdEligibleArticle(article) && (
           <AdSlot
+            key={article.slug}
             slot={WIKI_ARTICLE_END.slot}
             format={WIKI_ARTICLE_END.format}
             minHeight={WIKI_ARTICLE_END.minHeight}

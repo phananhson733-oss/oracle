@@ -134,3 +134,26 @@ PR1 经 4 视角对抗式评审，已在本次修复的：
 - **[LOW L3/L4]** TCF 轮询孤儿计时器 / 10s 后不重臂 —— 有界、flag off 不可触发；flag-on 前加计时器去重 + SPA 导航重臂。
 
 评审总体：修掉 H1+M1+M2（+L1/L2/L5/L6）后 PR2 可安全提交；M3/L3/L4 为 flag-on 前跟进。
+
+## 11. PR3（分支 feat/adsense-pr3）—— flag-on 前跟进项已落地
+
+- ✅ **M3 GPC**：`consent.ts::getDoNotSell` 尊重 `navigator.globalPrivacyControl`（CPRA §7025）——显式存储优先，无选择时随 GPC；`isGpcActive` 导出；ConsentBanner `handleAcceptAll` 不再强制清 Do-Not-Sell（不静默覆盖 GPC），广告信号用 GPC-aware 的 `getDoNotSell()`。
+- ✅ **L3 孤儿计时器**：TCF 轮询重构为单链 `scheduleTcfPoll`/`tcfPollTick`（`if (tcfPollTimer) return` 汇入而非起第二条链），修 bootstrap+loadAdsense 双入口并发孤儿化。
+- ✅ **L4 SPA 重臂**：新增 `rearmTcfListener`（重置轮询预算再试），EEA AdSlot 每次挂载调用 → SPA 文章间导航可重臂，防 CMP 迟到致整会话无 EEA 广告。
+- ✅ **B4 门控#1 结构化**：新增 `components/ads/adEligibility.ts::isAdEligibleArticle`，WikiArticleDetailPage 改用它收口"排除 embeddedTool/psychAdjacent"红线。
+- ✅ **PRD §3.6** 广告变现节 + Version 2.47。
+
+### PR3 对抗式评审（3 视角，10 发现 → 8 确认）已修
+
+- ✅ **[#1 medium]** `computeAdConsentSignal` 对未知地域 fail-open → 改 `isGdpr !== false` 才授予，与 gate fail-safe 对齐 + 补 UNKNOWN 测试。
+- ✅ **[#2 medium]** TCF 计时器重构零测试 → 补 fake-timer 测试（单链/耗尽恢复/rearm no-op/reset 清计时器）。
+- ✅ **[#4 low]** `tcfListenerRegistered` 在 addEventListener 抛错后不重置 → catch 里重置，保 rearm 可恢复。
+- ✅ **[#5 low]** `handleSavePrefs` 无条件写 Do-Not-Sell 覆盖 GPC → 加 `doNotSellTouched` dirty flag，仅实际拨动才持久化。
+- ✅ **[#7/#8 low]** rearm effect 未按配置门控 + 同路由导航不触发 → 加 `isAdsenseConfigured()` 门控 + WikiArticleDetailPage 给 AdSlot 加 `key={slug}` 使文章间导航 remount 重臂。
+- ✅ **[#3 low]** adslot.test.tsx mock 补 `rearmTcfListener` + EEA 重臂用例。
+
+**仍 defer 到 flag-on 后**：
+- **[#6 low]** Consent Mode 广告信号只在 banner 交互时算一次、region 异步落地后不重发（#1 修复后未知窗口按 deny 处理，方向 fail-safe；收敛重发是可选增强）。
+- **B5** CLS `minHeight` 按真实字段数据调优（需线上数据）。
+
+**至此 flag-on 前代码侧全部就绪**：审核通过后用户仅需 Vercel 设 `VITE_ADSENSE_ENABLED=true` + 重新部署 + 法务 review 文案。

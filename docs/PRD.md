@@ -611,6 +611,23 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **积分写入规范**: 所有支付渠道（Airwallex、PayPal、Stripe）写入 `purchase_records` 时统一使用 `feature_type: 'gm_credit'`，不使用 RPC 调用。`entitlementServiceV2` 仅统计 `feature_type === 'gm_credit'` 的记录。
 
+### 3.6 广告变现 (Advertising / Google AdSense)
+
+**定位**: 变现免费 SEO 流量、保护付费漏斗。广告仅投 **wiki 文章页**；付费/登录用户、转化漏斗(`embeddedTool`)/心理敏感(`psychAdjacent`)文章、非同意用户零广告。
+
+**实现**: 手动广告位（React `<AdSlot>`，非 Auto Ads），仅 SPA 水合后渲染、不进静态 stub，预留高度防 CLS。`adsbygoogle.js` loader 注入原始 `<head>`（`vite.config.ts` 插件 + `scripts/generate-seo-pages.mjs`），供 Google 审核验证 + CMP 全站加载。广告位配置集中于 `components/ads/adPlacements.ts`（当前仅 `WIKI_ARTICLE_END` = wiki 文末 responsive display）；投放资格由 `components/ads/adEligibility.ts::isAdEligibleArticle` 结构化收口。
+
+**两级门控（构建期 env）**:
+- `VITE_ADSENSE_CLIENT_ID`（`ca-pub-xxx`）→ head-loader 是否注入（审核验证 + CMP 加载）
+- `VITE_ADSENSE_ENABLED`（`true`/`false`）→ 广告是否真正投放（`AdSlot`）；未开=全站零广告
+
+**同意（地域分流方案 A）**:
+- EEA/UK/CH → Google 认证 CMP（AdSense Privacy & messaging，IAB TCF v2；前端经 `window.__tcfapi` 读取，`services/adsense.ts::initTcfListener`）
+- 其余地区 → 自研 `ConsentBanner` 营销同意 + CCPA/CPRA "Do Not Sell or Share" 控件（Footer "Your Privacy Choices" 可重开；`getDoNotSell` 尊重浏览器 GPC 信号，CPRA §7025）
+- Consent Mode 信号与投放门控经 `computeAdConsentSignal` 同源
+
+**合规文案**: `CookiePolicy` / `PrivacyPolicy` 已披露 AdSense 广告 cookie、CCPA "sale/share"、opt-out 机制。
+
 ---
 
 ## 4. 技术架构 / Technical Architecture

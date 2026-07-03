@@ -12,6 +12,7 @@ import {
   loadAdsense,
   pushAd,
   hasAdConsent,
+  rearmTcfListener,
 } from "../../services/adsense";
 
 export interface AdSlotProps {
@@ -37,12 +38,10 @@ export const AdSlot: React.FC<AdSlotProps> = ({
   useAdConsentVersion();
   const pushedRef = useRef(false);
 
-  // TODO(temporary, PR3 前处理): flag off 下休眠（对抗式评审，详见 spec §"评审 blockers"）：
-  //   [PR3-B4 结构化门控] 门控#1(仅 wiki 文章、排除 embeddedTool 漏斗/psychAdjacent 心理页)只由
-  //     调用方 WikiArticleDetailPage 保证；PR3 加更多广告位时漏抄即违反红线。修：抽 isAdEligibleArticle(article)
-  //     共享 helper 或让 AdSlot 要求必填 eligible prop。
-  //   [PR3-B5 CLS] format=auto 响应单元实际高度常 >280，min-height 会长高下推内容产生 CLS；
-  //     激活后用字段数据在 adPlacements 按断点调 minHeight（min-height 本身是 Google 推荐缓解手段）。
+  // TODO(temporary, flag-on 后按字段数据处理): [PR3-B5 CLS] format=auto 响应单元实际高度常 >280，
+  //   min-height 会长高下推内容产生 CLS；激活后用真实数据在 adPlacements 按断点调 minHeight
+  //   （min-height 本身是 Google 推荐的响应式 CLS 缓解手段）。门控#1 结构化(B4)已由
+  //   components/ads/adEligibility.ts 的 isAdEligibleArticle 收口。
 
   // 四重门控（全真才展示）：
   //   #4 配置就绪(flag+client) · slot 非空 · #2 匿名用户 · #3 地域相关广告同意
@@ -62,6 +61,13 @@ export const AdSlot: React.FC<AdSlotProps> = ({
     pushedRef.current = true;
     pushAd();
   }, [gated]);
+
+  useEffect(() => {
+    // EEA 重臂 TCF 监听（评审 L4）：GDPR 区【且 AdSense 已配置】时重置轮询预算再试，防"CMP 迟到
+    // → 首次轮询放弃 → 整会话无 EEA 广告"。已注册则 no-op。未配置(flag off/无 client)不空转轮询
+    // （PR3 #8）。WikiArticleDetailPage 给 AdSlot 加 key={slug}，使文章间导航 remount 触发重臂（#7）。
+    if (region.isGdpr === true && isAdsenseConfigured()) rearmTcfListener();
+  }, [region.isGdpr]);
 
   if (gated) return null;
 
