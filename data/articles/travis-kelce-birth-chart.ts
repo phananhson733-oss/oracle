@@ -17,8 +17,7 @@ export const travisKelceBirthChartEn: WikiArticle = {
     "Travis Kelce birth chart meaning",
     "Travis Kelce birth chart astrology",
     "Travis Kelce birth chart zodiac",
-    "Travis Kelce birth chart interpretation",
-    "emma watson zodiac sign"
+    "Travis Kelce birth chart interpretation"
   ],
   content: `# What the Travis Kelce Birth Chart Reveals About His Public Persona
 
