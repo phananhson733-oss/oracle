@@ -73,4 +73,3 @@
 - 四大支柱图标强制 Unicode 文本呈现，避免 emoji 显示。
 - Wiki 条目与关联条目图标统一加文本变体，阻止 emoji 渲染。
 - 阅读面接入 Newsreader：WikiArticleDetailPage 文章正文与 WikiClassicDetailPage 书页容器改 font-reading（长文衬线，工具面保持 sans）。
-- 2026-07-03 LLM 排版统一：synthetica/ReportView（去 parsePoints 切碎）+ WikiDetailPage（四象限/deep_dive 文档流）迁移；wiki 文章页/经典书页有独立阅读排版本批未动。

@@ -15,7 +15,15 @@ import {
 import { SEO } from "../SEO";
 import { RelatedArticles } from "./RelatedArticles";
 import { Breadcrumb } from "../Breadcrumb";
-import { ArrowLeft, Sparkles, Wand2 } from "lucide-react";
+import {
+  ArrowLeft,
+  Brain,
+  GitMerge,
+  Ghost,
+  ScrollText,
+  Sparkles,
+  Wand2,
+} from "lucide-react";
 import { fetchWikiItem, fetchWikiItems } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { isArticleSlug } from "../../data/articles";
@@ -23,12 +31,12 @@ import WikiArticleDetailPage from "./WikiArticleDetailPage";
 import WikiChartCTA from "./WikiChartCTA";
 import type { WikiItem, WikiItemSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
-import { LlmDoc, LlmSection, LlmProse, LlmQuote } from "../llm/LlmDoc";
 
-// 无结构 LLM 文本的兜底规整：仅在缺少显式清单标记时，于话语标记（首先/其次/
-// First/Second…）前插入段落分隔，再交给 LlmProse/normalizeLlmText 断段并处理
-// **强调** 与清单。排版（正文色/眉标/发丝线）全部由 LlmDoc 原语承担。
-const renderContent = (content: string) => {
+const renderContent = (
+  content: string,
+  highlightClass: string,
+  mutedClass: string = "text-star-400",
+) => {
   if (!content) return null;
 
   let textToRender = content;
@@ -61,10 +69,104 @@ const renderContent = (content: string) => {
       `([。；;！!？?]|^)\\s*(${logicKeywords.join("|")})(?=[，,：:])`,
       "g",
     );
-    textToRender = content.replace(logicPattern, "$1\n\n$2");
+    textToRender = content.replace(logicPattern, "$1\n$2");
   }
 
-  return <LlmProse text={textToRender} />;
+  const cleanText = (text: string) => text.replace(/\*\*/g, "").trim();
+
+  const isList =
+    textToRender.includes("\n- ") ||
+    textToRender.includes("\n* ") ||
+    /^\d+\.\s/.test(textToRender);
+
+  if (isList) {
+    const lines = textToRender.split("\n").filter((line) => line.trim());
+    return (
+      <div className="space-y-1.5">
+        {lines.map((line, idx) => {
+          const parts = line.split(/(\*\*.*?\*\*)/g);
+          const hasBold = parts.some(
+            (p) => p.startsWith("**") && p.endsWith("**"),
+          );
+          const cleanedLine = cleanText(
+            line.replace(/^[-*]\s/, "").replace(/^\d+\.\s/, ""),
+          );
+
+          return (
+            <div
+              key={idx}
+              className="flex gap-3 items-start text-sm leading-relaxed"
+            >
+              <span
+                className={`mt-2 w-1 h-1 rounded-full shrink-0 ${highlightClass.replace("text-", "bg-")}`}
+              />
+              <div className={`flex-1 ${mutedClass}`}>
+                {hasBold ? (
+                  parts.map((part, i) =>
+                    part.startsWith("**") && part.endsWith("**") ? (
+                      <span key={i} className={`font-medium ${highlightClass}`}>
+                        {part.replace(/\*\*/g, "")}
+                      </span>
+                    ) : (
+                      <span key={i}>{part}</span>
+                    ),
+                  )
+                ) : (
+                  <span>{cleanedLine}</span>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  // 结构化段落渲染 - 用字色突出而非空行分隔
+  const paragraphs = textToRender.split("\n\n").filter((p) => p.trim());
+  return (
+    <div className="space-y-0">
+      {paragraphs.map((paragraph, idx) => {
+        const trimmed = paragraph.trim();
+        if (!trimmed) return null;
+
+        // 标题行 - 用金色突出
+        if (trimmed.startsWith("**") && trimmed.endsWith("**")) {
+          return (
+            <div key={idx} className={`${idx > 0 ? "mt-4" : ""} mb-1.5`}>
+              <span className={`text-sm font-semibold ${highlightClass}`}>
+                {trimmed.replace(/\*\*/g, "")}
+              </span>
+            </div>
+          );
+        }
+
+        const parts = trimmed.split(/(\*\*.*?\*\*)/g);
+        return (
+          <p
+            key={idx}
+            className={`text-sm leading-relaxed ${mutedClass} ${idx > 0 ? "mt-2" : ""}`}
+          >
+            {parts.map((part, i) => {
+              if (part.startsWith("**") && part.endsWith("**")) {
+                return (
+                  <span key={i} className={`font-medium ${highlightClass}`}>
+                    {part.replace(/\*\*/g, "")}
+                  </span>
+                );
+              }
+              return part.split("\n").map((subPart, subIdx) => (
+                <React.Fragment key={`${i}-${subIdx}`}>
+                  {subIdx > 0 && " "}
+                  <span>{subPart}</span>
+                </React.Fragment>
+              ));
+            })}
+          </p>
+        );
+      })}
+    </div>
+  );
 };
 
 const forceTextSymbol = (value: string) => {
@@ -511,49 +613,127 @@ const WikiDetailPage: React.FC = () => {
 
         <Section title={t.wiki.detail_tldr}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card>
-              <p className="mb-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+            <div
+              className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === "dark" ? "bg-space-800/40 border-gold-500/10" : "bg-paper-100/85 border-paper-300"}`}
+            >
+              <div
+                className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 ${highlightClass}`}
+              >
                 {t.wiki.detail_archetype}
-              </p>
-              <p className="text-xl font-serif font-semibold text-paper-900 dark:text-star-50">
+              </div>
+              <div className="text-xl font-serif font-semibold text-star-50">
                 {item.prototype}
-              </p>
-            </Card>
-            <Card>
-              <p className="mb-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+              </div>
+            </div>
+            <div
+              className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === "dark" ? "bg-space-800/40 border-gold-500/10" : "bg-paper-100/85 border-paper-300"}`}
+            >
+              <div
+                className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 ${highlightClass}`}
+              >
                 {t.wiki.detail_analogy}
-              </p>
-              <LlmQuote>{item.analogy}</LlmQuote>
-            </Card>
+              </div>
+              <div className={`text-base italic ${mutedText}`}>
+                "{item.analogy}"
+              </div>
+            </div>
           </div>
         </Section>
 
         <Section title={t.wiki.detail_core}>
-          <Card>
-            <LlmDoc>
-              <LlmSection first eyebrow={t.wiki.detail_myth}>
-                {renderContent(
-                  item.astronomy_myth || t.wiki.detail_placeholder,
-                )}
-              </LlmSection>
-              <LlmSection eyebrow={t.wiki.detail_psychology}>
-                {renderContent(item.psychology || t.wiki.detail_placeholder)}
-              </LlmSection>
-              <LlmSection eyebrow={t.wiki.detail_shadow}>
-                {renderContent(item.shadow || t.wiki.detail_placeholder)}
-              </LlmSection>
-              <LlmSection eyebrow={t.wiki.detail_integration}>
-                {renderContent(item.integration || t.wiki.detail_placeholder)}
-              </LlmSection>
-            </LlmDoc>
-          </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === "dark" ? "bg-space-800/40 border-gold-500/10" : "bg-paper-100/85 border-paper-300"}`}
+            >
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div
+                  className={`p-2 rounded-xl ${theme === "dark" ? "bg-amber-500/10 text-amber-400" : "bg-amber-500/10 text-amber-600"}`}
+                >
+                  <ScrollText size={16} />
+                </div>
+                <span
+                  className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === "dark" ? "text-amber-400" : "text-amber-600"}`}
+                >
+                  {t.wiki.detail_myth}
+                </span>
+              </div>
+              {renderContent(
+                item.astronomy_myth || t.wiki.detail_placeholder,
+                highlightClass,
+                mutedText,
+              )}
+            </div>
+            <div
+              className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === "dark" ? "bg-space-800/40 border-gold-500/10" : "bg-paper-100/85 border-paper-300"}`}
+            >
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div
+                  className={`p-2 rounded-xl ${theme === "dark" ? "bg-blue-500/10 text-blue-400" : "bg-blue-500/10 text-blue-600"}`}
+                >
+                  <Brain size={16} />
+                </div>
+                <span
+                  className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === "dark" ? "text-blue-400" : "text-blue-600"}`}
+                >
+                  {t.wiki.detail_psychology}
+                </span>
+              </div>
+              {renderContent(
+                item.psychology || t.wiki.detail_placeholder,
+                highlightClass,
+                mutedText,
+              )}
+            </div>
+            <div
+              className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === "dark" ? "bg-space-800/40 border-gold-500/10" : "bg-paper-100/85 border-paper-300"}`}
+            >
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div
+                  className={`p-2 rounded-xl ${theme === "dark" ? "bg-purple-500/10 text-purple-400" : "bg-purple-500/10 text-purple-600"}`}
+                >
+                  <Ghost size={16} />
+                </div>
+                <span
+                  className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}
+                >
+                  {t.wiki.detail_shadow}
+                </span>
+              </div>
+              {renderContent(
+                item.shadow || t.wiki.detail_placeholder,
+                highlightClass,
+                mutedText,
+              )}
+            </div>
+            <div
+              className={`rounded-[1.75rem] p-6 border transition-all hover:border-gold-500/30 ${theme === "dark" ? "bg-space-800/40 border-gold-500/10" : "bg-paper-100/85 border-paper-300"}`}
+            >
+              <div className={`flex items-center gap-3 mb-4`}>
+                <div
+                  className={`p-2 rounded-xl ${theme === "dark" ? "bg-emerald-500/10 text-emerald-400" : "bg-emerald-500/10 text-emerald-600"}`}
+                >
+                  <GitMerge size={16} />
+                </div>
+                <span
+                  className={`text-xs font-bold uppercase tracking-[0.2em] ${theme === "dark" ? "text-emerald-400" : "text-emerald-600"}`}
+                >
+                  {t.wiki.detail_integration}
+                </span>
+              </div>
+              {renderContent(
+                item.integration || t.wiki.detail_placeholder,
+                highlightClass,
+                mutedText,
+              )}
+            </div>
+          </div>
         </Section>
 
         {item.deep_dive && item.deep_dive.length > 0 && (
           <Section title={t.wiki.detail_deep_dive}>
             {item.deep_dive.map((step) => (
               <Accordion key={`${item.id}-${step.step}`} title={step.title}>
-                {renderContent(step.description)}
+                {renderContent(step.description, highlightClass, mutedText)}
               </Accordion>
             ))}
           </Section>

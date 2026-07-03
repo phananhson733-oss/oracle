@@ -8,7 +8,6 @@ import { useLanguage, useTheme } from "../UIComponents";
 import { fetchDailyDetail } from "../../services/apiClient";
 import { getTimelineCopy } from "./copy";
 import { energyBand, type OhlcBar } from "./derived";
-import { LlmProse, LlmField, LlmCallout, LlmQuote } from "../llm/LlmDoc";
 
 interface DailyDetail {
   theme_elaborated?: string;
@@ -267,50 +266,63 @@ export const TimelineDetailSheet: React.FC<TimelineDetailSheetProps> = ({
 
         {/* ── Reading (daily detail; month mode only) ── */}
         {tab === "reading" && (
-          <div className="mt-4">
+          <div className="mt-4 text-sm leading-relaxed">
             {demo ? (
               <button
                 onClick={() => onUpsell?.()}
-                className="w-full rounded-lg bg-star-50 py-2 text-sm font-semibold text-space-950 transition hover:opacity-90"
+                className="w-full rounded-lg bg-psycho-600 py-2 text-sm font-medium text-white hover:bg-psycho-700"
               >
                 {c.viewDayReadingDemo}
               </button>
             ) : (
               <>
-                {loading && (
-                  <p className={`text-sm ${mutedTone}`}>{c.loading}</p>
-                )}
-                {error && <p className={`text-sm ${mutedTone}`}>{error}</p>}
+                {loading && <p className={mutedTone}>{c.loading}</p>}
+                {error && <p className="text-mystic-500">{error}</p>}
                 {detail && (
-                  <div className="space-y-5">
+                  <div className="space-y-4">
                     {detail.theme_elaborated && (
-                      <LlmProse text={detail.theme_elaborated} />
+                      <p>{detail.theme_elaborated}</p>
                     )}
                     {detail.how_it_shows_up && (
-                      <div className="space-y-4">
-                        <LlmField
-                          label={zh ? "情绪" : "Emotions"}
-                          text={detail.how_it_shows_up.emotions}
-                        />
-                        <LlmField
-                          label={zh ? "工作" : "Work"}
-                          text={detail.how_it_shows_up.work}
-                        />
-                        <LlmField
-                          label={zh ? "关系" : "Relationships"}
-                          text={detail.how_it_shows_up.relationships}
-                        />
+                      <div className="space-y-1">
+                        {detail.how_it_shows_up.emotions && (
+                          <p>
+                            <span className={mutedTone}>
+                              {zh ? "情绪：" : "Emotions: "}
+                            </span>
+                            {detail.how_it_shows_up.emotions}
+                          </p>
+                        )}
+                        {detail.how_it_shows_up.work && (
+                          <p>
+                            <span className={mutedTone}>
+                              {zh ? "工作：" : "Work: "}
+                            </span>
+                            {detail.how_it_shows_up.work}
+                          </p>
+                        )}
+                        {detail.how_it_shows_up.relationships && (
+                          <p>
+                            <span className={mutedTone}>
+                              {zh ? "关系：" : "Relationships: "}
+                            </span>
+                            {detail.how_it_shows_up.relationships}
+                          </p>
+                        )}
                       </div>
                     )}
                     {detail.one_practice?.action && (
-                      <LlmCallout
-                        label={detail.one_practice.title || undefined}
-                      >
-                        <LlmProse text={detail.one_practice.action} />
-                      </LlmCallout>
+                      <div className="rounded-lg border border-psycho-200 bg-psycho-50/40 p-3 dark:border-psycho-500/20 dark:bg-psycho-500/5">
+                        {detail.one_practice.title && (
+                          <p className="font-medium mb-1">
+                            {detail.one_practice.title}
+                          </p>
+                        )}
+                        <p>{detail.one_practice.action}</p>
+                      </div>
                     )}
                     {detail.one_question && (
-                      <LlmQuote>{detail.one_question}</LlmQuote>
+                      <p className="italic">{detail.one_question}</p>
                     )}
                   </div>
                 )}

@@ -37,14 +37,9 @@ import {
   buildBirthCacheKey,
 } from "../utils/astro-helpers";
 import {
-  LlmDoc,
-  LlmSection,
-  LlmProse,
-  LlmList,
-  LlmQuote,
-  LlmCallout,
-  LlmField,
-} from "../components/llm/LlmDoc";
+  splitLabelParts,
+  formatSignHouse,
+} from "../components/shared/astro-glyphs";
 
 // Lazy-loaded tech spec sub-components
 const ElementalTable = lazy(() =>
@@ -72,38 +67,99 @@ const HouseRulerTable = lazy(() =>
 
 const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
   const { t, tl } = useLanguage();
+  const { theme } = useTheme();
 
-  // Big3（Sun/Moon/Rising）保留概览「仪表卡」网格（非长文）；越界 border-l 色移除，
-  // 标题统一走 accent（陈金）。四模块改为单列文档流：统一单色 mono 眉标 + LlmProse 正文。
   const big3Cards = [
     {
       key: "sun",
-      label: t.me.sun || "Sun",
+      label: t.me.sun || "☉ Sun",
       subtitle: t.me.sun_sub || "Core Identity",
       data: data?.sun,
+      accent: "border-l-red-500/40",
     },
     {
       key: "moon",
-      label: t.me.moon || "Moon",
+      label: t.me.moon || "☽ Moon",
       subtitle: t.me.moon_sub || "Inner World",
       data: data?.moon,
+      accent: "border-l-blue-500/40",
     },
     {
       key: "rising",
-      label: t.me.rising || "Rising",
-      subtitle: t.me.rising_sub || "Outer Persona",
+      label: t.me.rising || "↑ Rising",
+      subtitle: t.me.rising_sub || "Outer Mask",
       data: data?.rising,
+      accent: "border-l-gold-500/40",
     },
   ];
 
-  const melodyKeywords = (data?.core_melody?.keywords || []).slice(0, 2);
+  const moduleCards = [
+    {
+      title: t.me.melody,
+      content: (
+        <div className="space-y-2">
+          {(data?.core_melody?.keywords || []).slice(0, 2).map((k, i) => (
+            <div key={i} className="text-sm leading-relaxed">
+              <span className="font-bold text-green-600 dark:text-green-500 uppercase text-xs tracking-wider block mb-0.5">
+                {k}
+              </span>
+              <span className="opacity-90">
+                {data?.core_melody?.explanations?.[i]}
+              </span>
+            </div>
+          ))}
+        </div>
+      ),
+      accent: "border-l-green-500/40",
+    },
+    {
+      title: t.me.talent,
+      content: (
+        <>
+          <h4 className="font-serif font-medium mb-1">
+            {data?.top_talent?.title}
+          </h4>
+          <p className="text-sm opacity-90 leading-relaxed line-clamp-2">
+            {data?.top_talent?.example}
+          </p>
+        </>
+      ),
+      accent: "border-l-orange-500/40",
+    },
+    {
+      title: t.me.pitfall,
+      content: (
+        <>
+          <h4 className="font-serif font-medium mb-1">
+            {data?.top_pitfall?.title}
+          </h4>
+          <p className="text-sm opacity-90 leading-relaxed">
+            {(data?.top_pitfall?.triggers || []).slice(0, 2).join(" · ")}
+          </p>
+        </>
+      ),
+      accent: "border-l-red-500/40",
+    },
+    {
+      title: t.me.trigger,
+      content: (
+        <div className="text-sm leading-relaxed space-y-1">
+          <div className="opacity-90">{data?.trigger_card?.inner_need}</div>
+          <div className="text-xs text-purple-600 dark:text-purple-500 font-medium">
+            {data?.trigger_card?.buffer_action}
+          </div>
+        </div>
+      ),
+      accent: "border-l-purple-500/40",
+    },
+  ];
 
   return (
     <div className="space-y-6">
-      {/* Big3 — concept overview tiles (grid preserved) */}
+      {/* Big3 - Three prominent cards */}
       <div className="grid md:grid-cols-3 gap-4">
         {big3Cards.map((card) => (
-          <Card key={card.key} className="p-5">
+          <Card key={card.key} className={`border-l ${card.accent} p-5`}>
             <div className="flex items-baseline justify-between mb-3">
               <span className="text-lg font-serif font-medium">
                 {card.label}
@@ -112,7 +168,7 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
                 {card.subtitle}
               </span>
             </div>
-            <h3 className="text-xl font-serif font-medium text-accent mb-2">
+            <h3 className="text-xl font-serif font-medium text-gold-600 dark:text-gold-500 mb-2">
               {tl(card.data?.title || "")}
             </h3>
             <div className="flex flex-wrap gap-1.5 mb-3">
@@ -132,52 +188,17 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
         ))}
       </div>
 
-      {/* Four modules — single-column document flow */}
-      <LlmDoc>
-        {melodyKeywords.length > 0 && (
-          <LlmSection first eyebrow={t.me.melody}>
-            <div className="space-y-4">
-              {melodyKeywords.map((k, i) => (
-                <LlmField
-                  key={i}
-                  label={k}
-                  text={data?.core_melody?.explanations?.[i]}
-                />
-              ))}
+      {/* Four modules - 2×2 grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {moduleCards.map((c, i) => (
+          <Card key={i} className={`border-l ${c.accent} p-4`}>
+            <div className="text-xs uppercase font-bold opacity-60 mb-2 tracking-widest">
+              {c.title}
             </div>
-          </LlmSection>
-        )}
-
-        {data?.top_talent?.title && (
-          <LlmSection eyebrow={t.me.talent} title={data.top_talent.title}>
-            <LlmProse text={data.top_talent.example} />
-          </LlmSection>
-        )}
-
-        {data?.top_pitfall?.title && (
-          <LlmSection eyebrow={t.me.pitfall} title={data.top_pitfall.title}>
-            {(data.top_pitfall.triggers?.length ?? 0) > 0 && (
-              <LlmProse
-                text={(data.top_pitfall.triggers || []).slice(0, 2).join(" · ")}
-              />
-            )}
-          </LlmSection>
-        )}
-
-        {(data?.trigger_card?.inner_need ||
-          data?.trigger_card?.buffer_action) && (
-          <LlmSection eyebrow={t.me.trigger}>
-            {data.trigger_card.inner_need && (
-              <LlmProse text={data.trigger_card.inner_need} />
-            )}
-            {data.trigger_card.buffer_action && (
-              <LlmCallout className="mt-3">
-                {data.trigger_card.buffer_action}
-              </LlmCallout>
-            )}
-          </LlmSection>
-        )}
-      </LlmDoc>
+            {c.content}
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };
@@ -188,6 +209,7 @@ const DimensionContent: React.FC<{
   profile: T.UserProfile;
 }> = ({ dim, label, profile }) => {
   const { language, t } = useLanguage();
+  const { theme } = useTheme();
   const [data, setData] = useState<T.DimensionReportContent | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -223,41 +245,72 @@ const DimensionContent: React.FC<{
     );
   if (!data) return <div className="p-4 text-danger">{t.app.error}</div>;
 
-  // 文档式排版：引导问 = LlmQuote（不居中）；四段解读 = 发丝线分节 + 统一单色眉标；
-  // what_helps 数组 = 无框清单；practice path = 唯一点睛容器（LlmCallout）内 ordered 清单。
   return (
-    <LlmDoc>
-      {data?.prompt_question && (
-        <LlmQuote className="mb-6">{data.prompt_question}</LlmQuote>
-      )}
-      {data?.pattern && (
-        <LlmSection first eyebrow={t.me.pattern}>
-          <LlmProse text={data.pattern} />
-        </LlmSection>
-      )}
-      {data?.root && (
-        <LlmSection eyebrow={t.me.root}>
-          <LlmProse text={data.root} />
-        </LlmSection>
-      )}
-      {data?.when_triggered && (
-        <LlmSection eyebrow={t.me.when_triggered}>
-          <LlmProse text={data.when_triggered} />
-        </LlmSection>
-      )}
-      {(data?.what_helps?.length ?? 0) > 0 && (
-        <LlmSection eyebrow={t.me.what_helps}>
-          <LlmList items={data!.what_helps} />
-        </LlmSection>
-      )}
-      {(data?.practice?.steps?.length ?? 0) > 0 && (
-        <LlmSection eyebrow={t.me.practice_path}>
-          <LlmCallout>
-            <LlmList items={data!.practice!.steps} ordered />
-          </LlmCallout>
-        </LlmSection>
-      )}
-    </LlmDoc>
+    <div className="space-y-5">
+      {/* Intro quote at top */}
+      <div className="text-center pb-2">
+        <div className="italic text-gold-600 dark:text-gold-500 text-sm leading-relaxed">
+          "{data?.prompt_question}"
+        </div>
+      </div>
+
+      {/* Main pattern narrative */}
+      <div>
+        <div className="text-sm text-blue-600 dark:text-blue-500 uppercase font-semibold mb-2 tracking-widest">
+          {t.me.pattern}
+        </div>
+        <p className="text-sm leading-relaxed">{data?.pattern}</p>
+      </div>
+
+      {/* Root cause */}
+      <div>
+        <div className="text-sm text-purple-600 dark:text-purple-400 uppercase font-semibold mb-2 tracking-widest">
+          {t.me.root}
+        </div>
+        <p className="text-sm leading-relaxed opacity-90">{data?.root}</p>
+      </div>
+
+      {/* Trigger & Support in simplified layout */}
+      <div className="space-y-4">
+        <div>
+          <div className="text-sm text-orange-600 dark:text-orange-500 uppercase font-semibold mb-2 tracking-widest">
+            {t.me.when_triggered}
+          </div>
+          <p className="text-sm leading-relaxed opacity-90">
+            {data?.when_triggered}
+          </p>
+        </div>
+        <div>
+          <div className="text-sm text-green-600 dark:text-green-500 uppercase font-semibold mb-2 tracking-widest">
+            {t.me.what_helps}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {(data?.what_helps || []).map((h, i) => (
+              <span
+                key={i}
+                className="text-sm px-3 py-1.5 rounded border border-green-500/30 bg-green-500/5"
+              >
+                {h}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Practice path */}
+      <div className="pl-4 border-l border-purple-500/50">
+        <div className="text-sm font-semibold uppercase mb-3 tracking-widest text-purple-600 dark:text-purple-500">
+          {t.me.practice_path}
+        </div>
+        <ol className="list-decimal pl-4 text-sm space-y-2 opacity-90">
+          {(data?.practice?.steps || []).map((s, i) => (
+            <li key={i} className="leading-relaxed">
+              {s}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
   );
 };
 
@@ -305,30 +358,79 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({
       </div>
     );
 
-  // 三大主题（驱力/恐惧/成长）文档式：发丝线分节 + 统一单色眉标 + 衬线标题；
-  // 三色卡片与圆环图标砖去除，语义区分靠标题而非装饰色。
   const coreThemeCards = [
-    { key: "drive", label: t.me.drive_card, data: themes.drive },
-    { key: "fear", label: t.me.fear_card, data: themes.fear },
-    { key: "growth", label: t.me.growth_card, data: themes.growth },
+    {
+      key: "drive",
+      label: t.me.drive_card,
+      tone: {
+        accent: "text-gold-600 dark:text-gold-500",
+        border: "border-gold-500/30",
+        accentBorder: "border-l-gold-500/40",
+        dot: "bg-gold-500",
+      },
+      data: themes.drive,
+    },
+    {
+      key: "fear",
+      label: t.me.fear_card,
+      tone: {
+        accent: "text-red-700 dark:text-danger",
+        border: "border-danger/30",
+        accentBorder: "border-l-danger/40",
+        dot: "bg-danger",
+      },
+      data: themes.fear,
+    },
+    {
+      key: "growth",
+      label: t.me.growth_card,
+      tone: {
+        accent: "text-green-700 dark:text-success",
+        border: "border-success/30",
+        accentBorder: "border-l-success/40",
+        dot: "bg-success",
+      },
+      data: themes.growth,
+    },
   ];
 
   return (
-    <LlmDoc>
-      {coreThemeCards.map((card, idx) => (
-        <LlmSection
-          key={card.key}
-          first={idx === 0}
-          eyebrow={card.label}
-          title={card.data.title}
-        >
-          {card.data.summary && <LlmProse text={card.data.summary} />}
-          {(card.data.key_points?.length ?? 0) > 0 && (
-            <LlmList items={card.data.key_points} className="mt-3" />
-          )}
-        </LlmSection>
+    <div className="space-y-6">
+      {coreThemeCards.map((card) => (
+        <Card key={card.key} className={`${card.tone.accentBorder}`}>
+          <div className="flex items-start gap-3 mb-4">
+            <div
+              className={`w-9 h-9 rounded-full border ${card.tone.border} flex items-center justify-center shrink-0`}
+            >
+              <span
+                className={`w-2 h-2 rounded-full ${card.tone.dot} shrink-0`}
+              />
+            </div>
+            <div>
+              <div
+                className={`text-xs font-bold uppercase tracking-widest mb-1 ${card.tone.accent}`}
+              >
+                {card.label}
+              </div>
+              <h3 className="text-lg font-serif">{card.data.title}</h3>
+            </div>
+          </div>
+          <p className="text-sm leading-relaxed opacity-90">
+            {card.data.summary || ""}
+          </p>
+          <ul className="mt-4 space-y-2 text-sm opacity-90">
+            {(card.data.key_points || []).map((point, index) => (
+              <li key={index} className="flex gap-2">
+                <span
+                  className={`mt-1.5 w-1.5 h-1.5 rounded-full ${card.tone.dot} shrink-0`}
+                />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </Card>
       ))}
-    </LlmDoc>
+    </div>
   );
 };
 

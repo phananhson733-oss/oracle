@@ -4,24 +4,24 @@
 
 import React from "react";
 import {
+  Card,
+  Section,
   Accordion,
   ActionButton,
+  useTheme,
   useLanguage,
 } from "../../components/UIComponents";
 import * as T from "../../types";
+import { DETAIL_LABEL_CLASS } from "../../components/shared/astro-glyphs";
 import { MiniLoader } from "../../components/shared/MiniLoader";
 import { trackEvent } from "../../services/analytics";
-import { clampScore, getRadarTone } from "./report-helpers";
+import {
+  clampScore,
+  getRadarTone,
+  getCoreDynamicsTone,
+} from "./report-helpers";
 import { WeatherForecastBody } from "./WeatherForecastBody";
 import { GrowthTaskBody } from "./GrowthTaskBody";
-import {
-  LlmDoc,
-  LlmSection,
-  LlmProse,
-  LlmList,
-  LlmQuote,
-  LlmField,
-} from "../../components/llm/LlmDoc";
 
 interface OverviewTabProps {
   overview: T.SynastryOverviewContent;
@@ -53,10 +53,11 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({
   personBLabel,
 }) => {
   const { t, language } = useLanguage();
+  const { theme } = useTheme();
 
-  const DIVIDE = "divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]";
-  const EYEBROW =
-    "font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400";
+  const detailLabelClass = DETAIL_LABEL_CLASS;
+  const overviewPanelTone =
+    theme === "dark" ? "bg-space-900/40" : "bg-paper-100/80";
 
   const formatNeedsLabel = (name: string) => {
     if (language === "zh") return `${name}${t.us.needs_label}`;
@@ -139,404 +140,595 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({
   const weatherForecastError = overviewSectionErrors.weather_forecast;
 
   return (
-    <section>
-      {/* Vibe tags */}
-      <div className="mb-8">
-        <p className={`${EYEBROW} mb-2`}>{t.us.vibe_tags_title}</p>
-        {vibeTagsLoading && !vibeTags && <MiniLoader label={t.common.analyzing} />}
-        {!vibeTagsLoading &&
-          vibeTagsError &&
-          !vibeTags &&
-          renderOverviewSectionError("vibe_tags", vibeTagsError)}
-        {vibeTags && (
-          <div className="space-y-3">
-            <div className="flex flex-wrap gap-2">
-              {vibeTags.vibe_tags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="rounded-full border border-accent/25 bg-accent/[0.08] px-3 py-1 text-sm text-accent"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            {vibeTags.vibe_summary && <LlmQuote>{vibeTags.vibe_summary}</LlmQuote>}
-          </div>
-        )}
-      </div>
-
-      {/* Compatibility radar — 数据可视化，保留网格 + 进度条，配语义 token */}
-      <div className="mb-8">
-        <p className={`${EYEBROW} mb-3`}>{t.us.radar}</p>
-        <div className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
-          {overview.overview.compatibility_scores.map((score, i) => {
-            const rawScore = Number(score.score);
-            const value = clampScore(Number.isFinite(rawScore) ? rawScore : 0);
-            const tone = getRadarTone(score.dim);
-            return (
-              <div key={`${score.dim}-${i}`}>
-                <div className="mb-1.5 flex items-baseline justify-between">
-                  <span className="text-[0.9375rem] text-paper-900 dark:text-star-50">
-                    {score.dim}
-                  </span>
-                  <span className={`font-mono text-sm ${tone.text}`}>{value}</span>
+            <Section>
+              <div className="mb-8">
+                <div className={`${detailLabelClass} text-green-500 mb-2`}>
+                  {t.us.vibe_tags_title}
                 </div>
-                <div className="h-1.5 w-full overflow-hidden rounded-full bg-paper-200 dark:bg-space-800/70">
-                  <div
-                    className={`h-full ${tone.bar} transition-all duration-700`}
-                    style={{ width: `${value}%` }}
-                  />
-                </div>
-                <p className="mt-1.5 text-sm text-paper-600 dark:text-star-300">
-                  {score.desc}
-                </p>
+                {vibeTagsLoading && !vibeTags && (
+                  <MiniLoader label={t.common.analyzing} />
+                )}
+                {!vibeTagsLoading &&
+                  vibeTagsError &&
+                  !vibeTags &&
+                  renderOverviewSectionError("vibe_tags", vibeTagsError)}
+                {vibeTags && (
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap gap-2">
+                      {vibeTags.vibe_tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className={`px-4 py-2 rounded-full text-sm font-bold ${theme === "dark" ? "bg-gold-500/20 text-gold-400" : "bg-gold-500/15 text-gold-600"}`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="font-serif text-base italic opacity-90">
+                      "{vibeTags.vibe_summary}"
+                    </p>
+                  </div>
+                )}
               </div>
-            );
-          })}
-        </div>
-      </div>
 
-      {/* Growth Task */}
-      <div className="mb-6">
-        <Accordion
-          title={t.us.growth_task_title}
-          subtitle={t.us.growth_task_subtitle}
-          open={!!overviewAccordionOpen.growth_task}
-          onToggle={(open) => {
-            setOverviewAccordionOpen((prev) => ({ ...prev, growth_task: open }));
-            if (open) fetchSynastryOverviewSectionData("growth_task");
-          }}
-        >
-          {growthTaskLoading && !growthTaskLazy && (
-            <MiniLoader label={t.common.analyzing} />
-          )}
-          {!growthTaskLoading &&
-            growthTaskError &&
-            !growthTaskLazy &&
-            renderOverviewSectionError("growth_task", growthTaskError)}
-          {(growthTaskLazy ||
-            sweetSpots.length > 0 ||
-            frictionPoints.length > 0) && (
-            <GrowthTaskBody
-              growthTaskLazy={growthTaskLazy}
-              sweetSpots={sweetSpots}
-              frictionPoints={frictionPoints}
-            />
-          )}
-        </Accordion>
-      </div>
+              <Section title={t.us.radar} className="mb-8">
+                <div className="grid md:grid-cols-3 gap-4">
+                  {overview.overview.compatibility_scores.map((score, i) => {
+                    const rawScore = Number(score.score);
+                    const value = clampScore(
+                      Number.isFinite(rawScore) ? rawScore : 0,
+                    );
+                    const tone = getRadarTone(score.dim);
+                    return (
+                      <Card
+                        key={`${score.dim}-${i}`}
+                        className={`border-l ${tone.border} ${tone.soft}`}
+                      >
+                        <div className="flex items-baseline justify-between mb-2">
+                          <span className="text-xs uppercase tracking-widest opacity-70">
+                            {score.dim}
+                          </span>
+                          <span className={`text-sm font-mono ${tone.text}`}>
+                            {value}
+                          </span>
+                        </div>
+                        <div
+                          className={`h-1.5 w-full rounded-full overflow-hidden ${theme === "dark" ? "bg-space-900/60" : "bg-paper-200"}`}
+                        >
+                          <div
+                            className={`h-full ${tone.bar} transition-all duration-700`}
+                            style={{ width: `${value}%` }}
+                          />
+                        </div>
+                        <div className="text-xs opacity-70 mt-2">
+                          {score.desc}
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </Section>
 
-      {/* Core Dynamics */}
-      <div className="mb-6">
-        <Accordion
-          title={t.us.core_dynamics_title}
-          subtitle={t.us.core_dynamics_subtitle}
-          open={!!overviewAccordionOpen.core_dynamics}
-          onToggle={(open) => {
-            setOverviewAccordionOpen((prev) => ({ ...prev, core_dynamics: open }));
-            if (open) fetchSynastryOverviewSectionData("core_dynamics");
-          }}
-        >
-          {coreDynamicsLoading && !coreDynamics && (
-            <MiniLoader label={t.common.analyzing} />
-          )}
-          {!coreDynamicsLoading &&
-            coreDynamicsError &&
-            !coreDynamics &&
-            renderOverviewSectionError("core_dynamics", coreDynamicsError)}
-          {coreDynamics && (
-            <LlmDoc>
-              {coreDynamics.map((item, i) => {
-                const aNeeds = stripNeedsPrefix(item.a_needs, personALabel);
-                const bNeeds = stripNeedsPrefix(item.b_needs, personBLabel);
-                return (
-                  <LlmSection
-                    key={`${item.key}-${i}`}
-                    first={i === 0}
-                    title={item.title}
-                  >
-                    <div className="space-y-5">
-                      <div>
-                        <p className={`${EYEBROW} mb-1.5`}>{t.us.needs_difference}</p>
-                        <div className="space-y-1 text-[0.9375rem] leading-[1.7] text-paper-800 dark:text-star-100">
-                          <div>
-                            <span className="font-medium text-paper-900 dark:text-star-50">
-                              {formatNeedsLabel(personALabel)}
-                            </span>
-                            {aNeeds ? ` ${aNeeds}` : ""}
+              {/* Growth Task (now lazy-loaded) */}
+              <div className="mb-8">
+                <Accordion
+                  title={t.us.growth_task_title}
+                  subtitle={t.us.growth_task_subtitle}
+                  open={!!overviewAccordionOpen.growth_task}
+                  onToggle={(open) => {
+                    setOverviewAccordionOpen((prev) => ({
+                      ...prev,
+                      growth_task: open,
+                    }));
+                    if (open) fetchSynastryOverviewSectionData("growth_task");
+                  }}
+                >
+                  {growthTaskLoading && !growthTaskLazy && (
+                    <MiniLoader label={t.common.analyzing} />
+                  )}
+                  {!growthTaskLoading &&
+                    growthTaskError &&
+                    !growthTaskLazy &&
+                    renderOverviewSectionError("growth_task", growthTaskError)}
+                  {(growthTaskLazy ||
+                    sweetSpots.length > 0 ||
+                    frictionPoints.length > 0) && (
+                    <GrowthTaskBody
+                      growthTaskLazy={growthTaskLazy}
+                      sweetSpots={sweetSpots}
+                      frictionPoints={frictionPoints}
+                      panelTone={overviewPanelTone}
+                      labelClass={detailLabelClass}
+                    />
+                  )}
+                </Accordion>
+              </div>
+
+              <div className="mb-8">
+                <Accordion
+                  title={t.us.core_dynamics_title}
+                  subtitle={t.us.core_dynamics_subtitle}
+                  open={!!overviewAccordionOpen.core_dynamics}
+                  onToggle={(open) => {
+                    setOverviewAccordionOpen((prev) => ({
+                      ...prev,
+                      core_dynamics: open,
+                    }));
+                    if (open) fetchSynastryOverviewSectionData("core_dynamics");
+                  }}
+                >
+                  {coreDynamicsLoading && !coreDynamics && (
+                    <MiniLoader label={t.common.analyzing} />
+                  )}
+                  {!coreDynamicsLoading &&
+                    coreDynamicsError &&
+                    !coreDynamics &&
+                    renderOverviewSectionError(
+                      "core_dynamics",
+                      coreDynamicsError,
+                    )}
+                  {coreDynamics && (
+                    <div className="space-y-4">
+                      {coreDynamics.map((item, i) => {
+                        const aNeeds = stripNeedsPrefix(
+                          item.a_needs,
+                          personALabel,
+                        );
+                        const bNeeds = stripNeedsPrefix(
+                          item.b_needs,
+                          personBLabel,
+                        );
+                        const tone = getCoreDynamicsTone(item.key);
+                        return (
+                          <div
+                            key={`${item.key}-${i}`}
+                            className={`rounded-xl p-5 border-l ${tone.border} ${overviewPanelTone} ${tone.bg}`}
+                          >
+                            <h4
+                              className={`font-semibold text-sm mb-3 ${tone.text}`}
+                            >
+                              {item.title}
+                            </h4>
+                            <div className="space-y-4 text-sm leading-relaxed">
+                              <div>
+                                <div
+                                  className={`${detailLabelClass} text-orange-500`}
+                                >
+                                  {t.us.needs_difference}
+                                </div>
+                                <div className="space-y-2">
+                                  <div>
+                                    <span className="font-semibold">
+                                      {formatNeedsLabel(personALabel)}
+                                    </span>
+                                    {aNeeds ? ` ${aNeeds}` : ""}
+                                  </div>
+                                  <div>
+                                    <span className="font-semibold">
+                                      {formatNeedsLabel(personBLabel)}
+                                    </span>
+                                    {bNeeds ? ` ${bNeeds}` : ""}
+                                  </div>
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  className={`${detailLabelClass} text-red-500`}
+                                >
+                                  {t.us.typical_loop}
+                                </div>
+                                <div className="opacity-90">
+                                  {item.loop.trigger} → {item.loop.defense} →{" "}
+                                  {item.loop.escalation}
+                                </div>
+                              </div>
+                              <div>
+                                <div
+                                  className={`${detailLabelClass} text-green-500`}
+                                >
+                                  {t.us.repair_script}
+                                </div>
+                                <div className="font-serif">
+                                  "{item.repair.script}"
+                                </div>
+                                <div className="text-xs opacity-80 mt-2">
+                                  {t.us.repair_action}: {item.repair.action}
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div>
-                            <span className="font-medium text-paper-900 dark:text-star-50">
-                              {formatNeedsLabel(personBLabel)}
-                            </span>
-                            {bNeeds ? ` ${bNeeds}` : ""}
+                        );
+                      })}
+                    </div>
+                  )}
+                </Accordion>
+              </div>
+
+              {/* NEW: Conflict Loop (lazy-loaded) */}
+              <div className="mb-8">
+                <Accordion
+                  title={t.us.conflict_loop_title}
+                  subtitle={t.us.conflict_loop_subtitle}
+                  open={!!overviewAccordionOpen.conflict_loop}
+                  onToggle={(open) => {
+                    setOverviewAccordionOpen((prev) => ({
+                      ...prev,
+                      conflict_loop: open,
+                    }));
+                    if (open) fetchSynastryOverviewSectionData("conflict_loop");
+                  }}
+                >
+                  {conflictLoopLoading && !conflictLoop && (
+                    <MiniLoader label={t.common.analyzing} />
+                  )}
+                  {!conflictLoopLoading &&
+                    conflictLoopError &&
+                    !conflictLoop &&
+                    renderOverviewSectionError(
+                      "conflict_loop",
+                      conflictLoopError,
+                    )}
+                  {conflictLoop && (
+                    <div className="space-y-6">
+                      {/* Conflict Loop Diagram */}
+                      <div
+                        className={`rounded-xl p-5 border-l border-l-danger/40 ${overviewPanelTone}`}
+                      >
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                          <div
+                            className={`p-3 rounded-lg ${theme === "dark" ? "bg-space-700" : "bg-paper-100"}`}
+                          >
+                            <div className="text-xs uppercase tracking-widest text-orange-500 mb-2">
+                              {t.us.conflict_trigger}
+                            </div>
+                            <div className="text-sm">
+                              {conflictLoop.conflict_loop.trigger}
+                            </div>
+                          </div>
+                          <div
+                            className={`p-3 rounded-lg ${theme === "dark" ? "bg-space-700" : "bg-paper-100"}`}
+                          >
+                            <div className="text-xs uppercase tracking-widest text-blue-500 mb-2">
+                              {personALabel} {t.us.conflict_reaction}
+                            </div>
+                            <div className="text-sm">
+                              {conflictLoop.conflict_loop.reaction_a}
+                            </div>
+                          </div>
+                          <div
+                            className={`p-3 rounded-lg ${theme === "dark" ? "bg-space-700" : "bg-paper-100"}`}
+                          >
+                            <div className="text-xs uppercase tracking-widest text-blue-500 mb-2">
+                              {personBLabel} {t.us.conflict_defense}
+                            </div>
+                            <div className="text-sm">
+                              {conflictLoop.conflict_loop.defense_b}
+                            </div>
+                          </div>
+                          <div
+                            className={`p-3 rounded-lg ${theme === "dark" ? "bg-danger/10" : "bg-danger/5"}`}
+                          >
+                            <div className="text-xs uppercase tracking-widest text-red-500 mb-2">
+                              {t.us.conflict_result}
+                            </div>
+                            <div className="text-sm">
+                              {conflictLoop.conflict_loop.result}
+                            </div>
                           </div>
                         </div>
                       </div>
+
+                      {/* Repair Scripts */}
                       <div>
-                        <p className={`${EYEBROW} mb-1.5`}>{t.us.typical_loop}</p>
-                        <p className="text-[0.9375rem] leading-[1.7] text-paper-800 dark:text-star-100">
-                          {item.loop.trigger} &rarr; {item.loop.defense} &rarr;{" "}
-                          {item.loop.escalation}
+                        <div className={`${detailLabelClass} text-green-500`}>
+                          {t.us.repair_scripts_title}
+                        </div>
+                        <p className="text-xs opacity-70 mb-4">
+                          {t.us.repair_scripts_subtitle}
                         </p>
-                      </div>
-                      <div>
-                        <p className={`${EYEBROW} mb-1.5`}>{t.us.repair_script}</p>
-                        <LlmQuote>{item.repair.script}</LlmQuote>
-                        <LlmField
-                          label={t.us.repair_action}
-                          text={item.repair.action}
-                          className="mt-2"
-                        />
+                        <div className="grid md:grid-cols-2 gap-4">
+                          {conflictLoop.repair_scripts.map((script, i) => (
+                            <div
+                              key={i}
+                              className={`rounded-xl p-5 border-l border-l-green-500/40 ${overviewPanelTone}`}
+                            >
+                              <div className="text-xs uppercase tracking-widest opacity-70 mb-2">
+                                {script.for_person === "a"
+                                  ? personALabel
+                                  : personBLabel}{" "}
+                                →{" "}
+                                {script.for_person === "a"
+                                  ? personBLabel
+                                  : personALabel}
+                              </div>
+                              <div className="text-xs opacity-70 mb-2">
+                                {t.us.repair_situation}: {script.situation}
+                              </div>
+                              <div className="font-serif text-sm italic">
+                                "{script.script}"
+                              </div>
+                              <button
+                                onClick={() => {
+                                  navigator.clipboard.writeText(script.script);
+                                  trackEvent("share_button_clicked", {
+                                    content_type: "repair_script",
+                                    method: "copy",
+                                  });
+                                }}
+                                className="mt-2 text-xs text-accent hover:underline"
+                              >
+                                {t.us.repair_copy}
+                              </button>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </LlmSection>
-                );
-              })}
-            </LlmDoc>
-          )}
-        </Accordion>
-      </div>
-
-      {/* Conflict Loop */}
-      <div className="mb-6">
-        <Accordion
-          title={t.us.conflict_loop_title}
-          subtitle={t.us.conflict_loop_subtitle}
-          open={!!overviewAccordionOpen.conflict_loop}
-          onToggle={(open) => {
-            setOverviewAccordionOpen((prev) => ({ ...prev, conflict_loop: open }));
-            if (open) fetchSynastryOverviewSectionData("conflict_loop");
-          }}
-        >
-          {conflictLoopLoading && !conflictLoop && (
-            <MiniLoader label={t.common.analyzing} />
-          )}
-          {!conflictLoopLoading &&
-            conflictLoopError &&
-            !conflictLoop &&
-            renderOverviewSectionError("conflict_loop", conflictLoopError)}
-          {conflictLoop && (
-            <div className="space-y-8">
-              {/* Loop diagram — 保留四段循环可视化 */}
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
-                {[
-                  [t.us.conflict_trigger, conflictLoop.conflict_loop.trigger],
-                  [
-                    `${personALabel} ${t.us.conflict_reaction}`,
-                    conflictLoop.conflict_loop.reaction_a,
-                  ],
-                  [
-                    `${personBLabel} ${t.us.conflict_defense}`,
-                    conflictLoop.conflict_loop.defense_b,
-                  ],
-                  [t.us.conflict_result, conflictLoop.conflict_loop.result],
-                ].map(([label, value], i) => (
-                  <div
-                    key={i}
-                    className="rounded-sm border border-paper-900/10 p-3 dark:border-star-50/10"
-                  >
-                    <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-paper-500 dark:text-star-400">
-                      {label}
-                    </p>
-                    <p className="text-sm text-paper-800 dark:text-star-100">
-                      {value}
-                    </p>
-                  </div>
-                ))}
+                  )}
+                </Accordion>
               </div>
 
-              <div>
-                <p className={`${EYEBROW} mb-1`}>{t.us.repair_scripts_title}</p>
-                <p className="mb-4 text-sm text-paper-600 dark:text-star-300">
-                  {t.us.repair_scripts_subtitle}
-                </p>
-                <div className={DIVIDE}>
-                  {conflictLoop.repair_scripts.map((script, i) => (
-                    <div key={i} className="py-4 first:pt-0 last:pb-0">
-                      <p className="mb-1 font-mono text-[11px] uppercase tracking-[0.1em] text-paper-500 dark:text-star-400">
-                        {script.for_person === "a" ? personALabel : personBLabel}{" "}
-                        &rarr;{" "}
-                        {script.for_person === "a" ? personBLabel : personALabel}
-                        {script.situation ? ` · ${script.situation}` : ""}
-                      </p>
-                      <div className="flex flex-wrap items-center justify-between gap-3">
-                        <p className="font-serif italic text-paper-600 dark:text-star-300">
-                          {script.script}
-                        </p>
-                        <button
-                          onClick={() => {
-                            navigator.clipboard.writeText(script.script);
-                            trackEvent("share_button_clicked", {
-                              content_type: "repair_script",
-                              method: "copy",
-                            });
-                          }}
-                          className="font-mono text-[11px] uppercase tracking-[0.1em] text-accent hover:underline"
+              <div className="mb-8">
+                <Accordion
+                  title={t.us.practice_tools}
+                  subtitle={t.us.practice_tools_subtitle}
+                  open={!!overviewAccordionOpen.practice_tools}
+                  onToggle={(open) => {
+                    setOverviewAccordionOpen((prev) => ({
+                      ...prev,
+                      practice_tools: open,
+                    }));
+                    if (open)
+                      fetchSynastryOverviewSectionData("practice_tools");
+                  }}
+                >
+                  {practiceToolsLoading && !practiceTools && (
+                    <MiniLoader label={t.common.analyzing} />
+                  )}
+                  {!practiceToolsLoading &&
+                    practiceToolsError &&
+                    !practiceTools &&
+                    renderOverviewSectionError(
+                      "practice_tools",
+                      practiceToolsError,
+                    )}
+                  {practiceTools && (
+                    <div className="space-y-4">
+                      <div
+                        className={`rounded-xl p-5 border-l border-l-blue-500/40 ${overviewPanelTone}`}
+                      >
+                        <div className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-3">
+                          {personALabel}
+                          {t.us.practice_focus}
+                        </div>
+                        <ul className="space-y-3">
+                          {practiceTools.person_a.map((pt, i) => (
+                            <li key={i} className="text-sm leading-relaxed">
+                              <div className="text-xs uppercase tracking-widest opacity-60 mb-1">
+                                {pt.title}
+                              </div>
+                              <div className="opacity-90">{pt.content}</div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div
+                        className={`rounded-xl p-5 border-l border-l-success/40 ${overviewPanelTone}`}
+                      >
+                        <div className="text-xs font-bold uppercase tracking-widest text-success mb-3">
+                          {personBLabel}
+                          {t.us.practice_focus}
+                        </div>
+                        <ul className="space-y-3">
+                          {practiceTools.person_b.map((pt, i) => (
+                            <li key={i} className="text-sm leading-relaxed">
+                              <div className="text-xs uppercase tracking-widest opacity-60 mb-1">
+                                {pt.title}
+                              </div>
+                              <div className="opacity-90">{pt.content}</div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      {practiceTools.joint?.length > 0 && (
+                        <div
+                          className={`rounded-xl p-5 border-l border-l-gold-500/40 ${overviewPanelTone}`}
                         >
-                          {t.us.repair_copy}
-                        </button>
-                      </div>
+                          <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-3">
+                            {t.us.joint_practice}
+                          </div>
+                          <ul className="space-y-3">
+                            {practiceTools.joint.map((pt, i) => (
+                              <li key={i} className="text-sm leading-relaxed">
+                                <div className="text-xs uppercase tracking-widest opacity-70 mb-1">
+                                  {pt.title}
+                                </div>
+                                <div className="opacity-90">{pt.content}</div>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
+                  )}
+                </Accordion>
               </div>
-            </div>
-          )}
-        </Accordion>
-      </div>
 
-      {/* Practice Tools */}
-      <div className="mb-6">
-        <Accordion
-          title={t.us.practice_tools}
-          subtitle={t.us.practice_tools_subtitle}
-          open={!!overviewAccordionOpen.practice_tools}
-          onToggle={(open) => {
-            setOverviewAccordionOpen((prev) => ({ ...prev, practice_tools: open }));
-            if (open) fetchSynastryOverviewSectionData("practice_tools");
-          }}
-        >
-          {practiceToolsLoading && !practiceTools && (
-            <MiniLoader label={t.common.analyzing} />
-          )}
-          {!practiceToolsLoading &&
-            practiceToolsError &&
-            !practiceTools &&
-            renderOverviewSectionError("practice_tools", practiceToolsError)}
-          {practiceTools && (
-            <LlmDoc>
-              <LlmSection first eyebrow={`${personALabel}${t.us.practice_focus}`}>
-                <div className="space-y-4">
-                  {practiceTools.person_a.map((pt, i) => (
-                    <LlmField key={i} label={pt.title} text={pt.content} />
-                  ))}
-                </div>
-              </LlmSection>
-              <LlmSection eyebrow={`${personBLabel}${t.us.practice_focus}`}>
-                <div className="space-y-4">
-                  {practiceTools.person_b.map((pt, i) => (
-                    <LlmField key={i} label={pt.title} text={pt.content} />
-                  ))}
-                </div>
-              </LlmSection>
-              {practiceTools.joint?.length > 0 && (
-                <LlmSection eyebrow={t.us.joint_practice}>
-                  <div className="space-y-4">
-                    {practiceTools.joint.map((pt, i) => (
-                      <LlmField key={i} label={pt.title} text={pt.content} />
-                    ))}
-                  </div>
-                </LlmSection>
-              )}
-            </LlmDoc>
-          )}
-        </Accordion>
-      </div>
+              {/* NEW: Weather Forecast (lazy-loaded) */}
+              <div className="mb-8">
+                <Accordion
+                  title={t.us.weather_forecast_title}
+                  subtitle={t.us.weather_forecast_subtitle}
+                  open={!!overviewAccordionOpen.weather_forecast}
+                  onToggle={(open) => {
+                    setOverviewAccordionOpen((prev) => ({
+                      ...prev,
+                      weather_forecast: open,
+                    }));
+                    if (open)
+                      fetchSynastryOverviewSectionData("weather_forecast");
+                  }}
+                >
+                  {weatherForecastLoading && !weatherForecast && (
+                    <MiniLoader label={t.common.analyzing} />
+                  )}
+                  {!weatherForecastLoading &&
+                    weatherForecastError &&
+                    !weatherForecast &&
+                    renderOverviewSectionError(
+                      "weather_forecast",
+                      weatherForecastError,
+                    )}
+                  {weatherForecast && (
+                    <WeatherForecastBody
+                      weatherForecast={weatherForecast}
+                      panelTone={overviewPanelTone}
+                      labelClass={detailLabelClass}
+                    />
+                  )}
+                </Accordion>
+              </div>
 
-      {/* Weather Forecast */}
-      <div className="mb-6">
-        <Accordion
-          title={t.us.weather_forecast_title}
-          subtitle={t.us.weather_forecast_subtitle}
-          open={!!overviewAccordionOpen.weather_forecast}
-          onToggle={(open) => {
-            setOverviewAccordionOpen((prev) => ({
-              ...prev,
-              weather_forecast: open,
-            }));
-            if (open) fetchSynastryOverviewSectionData("weather_forecast");
-          }}
-        >
-          {weatherForecastLoading && !weatherForecast && (
-            <MiniLoader label={t.common.analyzing} />
-          )}
-          {!weatherForecastLoading &&
-            weatherForecastError &&
-            !weatherForecast &&
-            renderOverviewSectionError("weather_forecast", weatherForecastError)}
-          {weatherForecast && (
-            <WeatherForecastBody weatherForecast={weatherForecast} />
-          )}
-        </Accordion>
-      </div>
-
-      {/* Conclusion */}
-      <div className="border-t border-paper-900/10 pt-6 dark:border-star-50/10">
-        <p className={`${EYEBROW} mb-2`}>{t.us.conclusion}</p>
-        {overview.conclusion.summary && (
-          <LlmQuote>{overview.conclusion.summary}</LlmQuote>
-        )}
-        <p className="mt-3 border-l-2 border-paper-900/15 pl-3 text-xs text-paper-500 dark:border-star-50/20 dark:text-star-400">
-          {overview.conclusion.disclaimer}
-        </p>
-      </div>
-
-      {/* Highlights */}
-      <div className="mt-8">
-        <Accordion
-          title={t.us.highlights}
-          subtitle={t.us.highlights_subtitle}
-          open={!!overviewAccordionOpen.highlights}
-          onToggle={(open) => {
-            setOverviewAccordionOpen((prev) => ({ ...prev, highlights: open }));
-            if (open) fetchSynastryOverviewSectionData("highlights");
-          }}
-        >
-          {highlightsLoading && !highlights && (
-            <MiniLoader label={t.common.analyzing} />
-          )}
-          {!highlightsLoading &&
-            highlightsError &&
-            !highlights &&
-            renderOverviewSectionError("highlights", highlightsError)}
-          {highlights && (
-            <LlmDoc>
-              <LlmSection first eyebrow={t.us.top_harmony}>
-                <div className={DIVIDE}>
-                  {highlights.harmony.map((item, i) => (
-                    <div key={`${item.aspect}-${i}`} className="py-4 first:pt-0 last:pb-0">
-                      <h4 className="mb-2 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
-                        {item.aspect}
-                      </h4>
-                      <LlmField label={t.us.experience} text={item.experience} />
-                      <LlmField label={t.us.action} text={item.advice} className="mt-2" />
-                    </div>
-                  ))}
+              <Card className="border-l border-l-gold-500/40">
+                <div className="text-xs font-bold uppercase tracking-widest text-gold-500 mb-3">
+                  {t.us.conclusion}
                 </div>
-              </LlmSection>
-              <LlmSection eyebrow={t.us.top_challenges}>
-                <div className={DIVIDE}>
-                  {highlights.challenges.map((item, i) => (
-                    <div key={`${item.aspect}-${i}`} className="py-4 first:pt-0 last:pb-0">
-                      <h4 className="mb-2 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
-                        {item.aspect}
-                      </h4>
-                      <LlmField label={t.us.conflict_label} text={item.conflict} />
-                      <LlmField label={t.us.action} text={item.mitigation} className="mt-2" />
-                    </div>
-                  ))}
-                </div>
-              </LlmSection>
-              <LlmSection eyebrow={t.us.highlights_overlays}>
-                <div className={DIVIDE}>
-                  {highlights.overlays.map((item, i) => (
-                    <div key={`${item.overlay}-${i}`} className="py-4 first:pt-0 last:pb-0">
-                      <LlmField label={item.overlay} text={item.meaning} />
-                    </div>
-                  ))}
-                </div>
-              </LlmSection>
-              {highlights.accuracy_note && (
-                <p className="mt-6 border-t border-paper-900/10 pt-4 text-xs text-paper-500 dark:border-star-50/10 dark:text-star-400">
-                  <span className="font-medium">{t.us.accuracy_note} </span>
-                  {highlights.accuracy_note}
+                <p className="text-sm font-serif leading-relaxed opacity-90 mb-4">
+                  "{overview.conclusion.summary}"
                 </p>
-              )}
-            </LlmDoc>
-          )}
-        </Accordion>
-      </div>
-    </section>
+                <div
+                  className={`border-l pl-3 text-xs ${theme === "dark" ? "border-gold-500/15 text-star-300" : "border-paper-300 text-paper-500"}`}
+                >
+                  {overview.conclusion.disclaimer}
+                </div>
+              </Card>
+
+              <Section className="mt-8">
+                <Accordion
+                  title={t.us.highlights}
+                  subtitle={t.us.highlights_subtitle}
+                  open={!!overviewAccordionOpen.highlights}
+                  onToggle={(open) => {
+                    setOverviewAccordionOpen((prev) => ({
+                      ...prev,
+                      highlights: open,
+                    }));
+                    if (open) fetchSynastryOverviewSectionData("highlights");
+                  }}
+                >
+                  {highlightsLoading && !highlights && (
+                    <MiniLoader label={t.common.analyzing} />
+                  )}
+                  {!highlightsLoading &&
+                    highlightsError &&
+                    !highlights &&
+                    renderOverviewSectionError("highlights", highlightsError)}
+                  {highlights && (
+                    <>
+                      <div className="space-y-4">
+                        <div
+                          className={`rounded-xl p-5 border-l border-l-success/40 ${overviewPanelTone}`}
+                        >
+                          <div className="text-xs font-bold uppercase tracking-widest text-success mb-4">
+                            {t.us.top_harmony}
+                          </div>
+                          <div className="space-y-3 text-sm">
+                            {highlights.harmony.map((item, i) => (
+                              <div
+                                key={`${item.aspect}-${i}`}
+                                className={`pb-3 border-b last:border-b-0 last:pb-0 ${theme === "dark" ? "border-gold-500/15" : "border-paper-300"}`}
+                              >
+                                <div className="font-semibold text-xs mb-2">
+                                  {item.aspect}
+                                </div>
+                                <div>
+                                  <div className={detailLabelClass}>
+                                    {t.us.experience}
+                                  </div>
+                                  <div className="opacity-85">
+                                    {item.experience}
+                                  </div>
+                                </div>
+                                <div className="mt-2">
+                                  <div className={detailLabelClass}>
+                                    {t.us.action}
+                                  </div>
+                                  <div className="opacity-85">
+                                    {item.advice}
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div
+                          className={`rounded-xl p-5 border-l border-l-danger/40 ${overviewPanelTone}`}
+                        >
+                          <div className="text-xs font-bold uppercase tracking-widest text-danger mb-4">
+                            {t.us.top_challenges}
+                          </div>
+                          <div className="space-y-3 text-sm">
+                            {highlights.challenges.map((item, i) => (
+                              <div
+                                key={`${item.aspect}-${i}`}
+                                className={`pb-3 border-b last:border-b-0 last:pb-0 ${theme === "dark" ? "border-gold-500/15" : "border-paper-300"}`}
+                              >
+                                <div className="font-semibold text-xs mb-2">
+                                  {item.aspect}
+                                </div>
+                                <div>
+                                  <div className={detailLabelClass}>
+                                    {t.us.conflict_label}
+                                  </div>
+                                  <div className="opacity-85">
+                                    {item.conflict}
+                                  </div>
+                                </div>
+                                <div className="mt-2">
+                                  <div className={detailLabelClass}>
+                                    {t.us.action}
+                                  </div>
+                                  <div className="opacity-85">
+                                    {item.mitigation}
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div
+                          className={`rounded-xl p-5 border-l border-l-accent/40 ${overviewPanelTone}`}
+                        >
+                          <div className="text-xs font-bold uppercase tracking-widest text-accent mb-4">
+                            {t.us.highlights_overlays}
+                          </div>
+                          <div className="space-y-3 text-sm">
+                            {highlights.overlays.map((item, i) => (
+                              <div
+                                key={`${item.overlay}-${i}`}
+                                className={`pb-3 border-b last:border-b-0 last:pb-0 ${theme === "dark" ? "border-gold-500/15" : "border-paper-300"}`}
+                              >
+                                <div className="font-semibold text-xs mb-2">
+                                  {item.overlay}
+                                </div>
+                                <div className="opacity-85">{item.meaning}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`mt-6 p-4 rounded-lg border text-xs ${theme === "dark" ? "border-gold-500/15/60 bg-space-900/60 text-star-300" : "border-paper-300 bg-paper-100 text-paper-500"}`}
+                      >
+                        <span className="font-semibold mr-2">
+                          {t.us.accuracy_note}
+                        </span>
+                        {highlights.accuracy_note}
+                      </div>
+                    </>
+                  )}
+                </Accordion>
+              </Section>
+            </Section>
   );
 };

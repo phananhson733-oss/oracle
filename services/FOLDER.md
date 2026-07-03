@@ -20,7 +20,6 @@
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
 - analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。
-- llmText.ts｜地位：LLM 文本规整唯一层｜功能：normalizeLlmText/groupLlmBlocks/toPlainText/parseInlineNumberedList/stripStructuralPrefixes，收编原 12+ 处手搓解析器；渲染配对 components/llm/LlmDoc。
 - themeStorage.ts｜地位：主题持久化唯一入口｜功能：astro_theme_v2 安全读写（严格归一化 + storage 禁用防护 + THEME_META_COLORS），index.html pre-paint 脚本是其不可 import 的镜像。
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
 - consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储；getDoNotSell 尊重浏览器 GPC 信号(isGpcActive,CPRA §7025,评审 M3)——显式选择优先、无选择时随 GPC。
@@ -86,4 +85,3 @@
 - apiClient 上调 AI 缓存版本并自动清理旧版日运概览结构。
 - apiClient 上调本地缓存前缀以强制刷新旧缓存。
 - 新增 themeStorage.ts：/review 加固产物 —— 集中 astro_theme_v2 读写（UIComponents/App/AuthContext 三处消费），归一化污染值、storage 禁用回退 light，持久化仅在显式切换时发生（保住 v2「显式选择」语义）。
-- 新增 llmText.ts：/goal LLM 排版统一 —— 全站 LLM 字符串 → 结构块的唯一规整层（结构前缀剥离/CJK 段落合并/清单解析/内联强调保留/残留指令过滤）。

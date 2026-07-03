@@ -53,4 +53,3 @@
 - theme-shell-contract.test.ts｜index.html 首帧主题契约：light body class、pre-paint 脚本、theme-color 三方一致、Newsreader 字体载荷守卫。
 - inject-spa-stubs.test.ts｜stub 注入器承重契约：选择器作用域、幂等、守卫状态、纸/夜 loader、pre-paint 注入。
 - og-content-hash.test.ts｜OG 幂等 hash 契约：palette 感知失效 + 不可被 params 遮蔽。
-- llm-text.test.ts｜LLM 文本规整层契约：前缀剥离、CJK 合并、清单/引言解析、sentinel 回归钉、heading 分组。

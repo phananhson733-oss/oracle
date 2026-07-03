@@ -34,16 +34,6 @@ import { useAuth } from "../contexts/AuthContext";
 import { useEntitlement } from "../contexts/EntitlementContext";
 import { getDateInTimeZone, buildBirthCacheKey } from "../utils/astro-helpers";
 import { LockedAccordion } from "../components/Paywall";
-import {
-  LlmDoc,
-  LlmSection,
-  LlmProse,
-  LlmField,
-  LlmList,
-  LlmQuote,
-  LlmCallout,
-} from "../components/llm/LlmDoc";
-import { parseInlineNumberedList } from "../services/llmText";
 
 const CrossAspectMatrix = lazy(() =>
   import("../components/TechSpecsComponents").then((m) => ({
@@ -125,7 +115,7 @@ const DetailedScoreRow: React.FC<{
 // --- Main component ---
 
 const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
-  const { t, language } = useLanguage();
+  const { t, language, tl } = useLanguage();
   const { theme } = useTheme();
   const { checkAccess, entitlements, refreshEntitlements } = useEntitlement();
   const { openUpgradeModal, isAuthenticated, openLoginModal } = useAuth();
@@ -438,6 +428,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
   };
 
   // Compatible with old and new data structures
+  const energyData = publicData?.four_dimensions || publicData?.energy_profile;
   const focusData = publicData?.daily_focus;
   const strategyData = publicData?.strategy;
 
@@ -453,9 +444,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           label: t.today.energy,
           data: publicData.four_dimensions.energy,
           tone: {
-            bg: "bg-success",
-            border: "border-l-success/40",
-            text: "text-success",
+            bg: "bg-green-500",
+            border: "border-l-green-500/40",
+            text: "text-green-500",
           },
         },
         {
@@ -463,9 +454,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           label: t.today.tension,
           data: publicData.four_dimensions.tension,
           tone: {
-            bg: "bg-danger",
-            border: "border-l-danger/40",
-            text: "text-danger",
+            bg: "bg-red-500",
+            border: "border-l-red-500/40",
+            text: "text-red-500",
           },
         },
         {
@@ -473,9 +464,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           label: t.today.frictions,
           data: publicData.four_dimensions.frictions,
           tone: {
-            bg: "bg-warning",
-            border: "border-l-warning/40",
-            text: "text-warning",
+            bg: "bg-orange-500",
+            border: "border-l-orange-500/40",
+            text: "text-orange-500",
           },
         },
         {
@@ -483,9 +474,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           label: t.today.pleasures,
           data: publicData.four_dimensions.pleasures,
           tone: {
-            bg: "bg-accent",
-            border: "border-l-accent/40",
-            text: "text-accent",
+            bg: "bg-gold-500",
+            border: "border-l-gold-500/40",
+            text: "text-gold-500",
           },
         },
       ];
@@ -497,9 +488,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         label: t.today.drive,
         data: publicData?.energy_profile?.drive,
         tone: {
-          bg: "bg-success",
-          border: "border-l-success/40",
-          text: "text-success",
+          bg: "bg-green-500",
+          border: "border-l-green-500/40",
+          text: "text-green-500",
         },
       },
       {
@@ -507,9 +498,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         label: t.today.pressure,
         data: publicData?.energy_profile?.pressure,
         tone: {
-          bg: "bg-danger",
-          border: "border-l-danger/40",
-          text: "text-danger",
+          bg: "bg-red-500",
+          border: "border-l-red-500/40",
+          text: "text-red-500",
         },
       },
       {
@@ -517,9 +508,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         label: t.today.heat,
         data: publicData?.energy_profile?.heat,
         tone: {
-          bg: "bg-warning",
-          border: "border-l-warning/40",
-          text: "text-warning",
+          bg: "bg-orange-500",
+          border: "border-l-orange-500/40",
+          text: "text-orange-500",
         },
       },
       {
@@ -527,9 +518,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         label: t.today.nourishment,
         data: publicData?.energy_profile?.nourishment,
         tone: {
-          bg: "bg-accent",
-          border: "border-l-accent/40",
-          text: "text-accent",
+          bg: "bg-gold-500",
+          border: "border-l-gold-500/40",
+          text: "text-gold-500",
         },
       },
     ];
@@ -541,11 +532,6 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
     (transitData?.positions && transitData.positions.length > 0) ||
     (extendedNatal?.houseRulers && extendedNatal.houseRulers.length > 0),
   );
-
-  // one_practice.action may pack numbered steps inline ("1. … 2. …"); split
-  // into intro + ordered list instead of injecting raw <br/> HTML.
-  const practiceAction = detailData?.one_practice?.action ?? "";
-  const practiceList = parseInlineNumberedList(practiceAction);
 
   return (
     <>
@@ -565,24 +551,23 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
           className="mb-12 before:hidden border-0 shadow-none !border-l-0"
           noPadding
         >
-          <header className="p-8 text-center">
-            <p className="mb-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
-              {t.today.todays_theme}
-            </p>
-            <h2 className="text-3xl font-serif font-medium text-paper-900 dark:text-star-50">
-              {publicData?.theme_title}
-            </h2>
+          <div className="p-8 text-center">
+            <div className="inline-block px-4 py-2 mb-4 rounded-lg border border-gold-500/30 bg-gold-500/5">
+              <h2 className="text-2xl font-serif font-medium text-gold-500">
+                {publicData?.theme_title}
+              </h2>
+            </div>
             {publicData?.theme_explanation && (
-              <p className="mx-auto mt-4 max-w-[68ch] text-base leading-[1.7] text-paper-700 dark:text-star-200">
+              <p className="text-base opacity-90 leading-relaxed max-w-6xl mx-auto">
                 {publicData.theme_explanation}
               </p>
             )}
             {publicData?.anchor_quote && !publicData?.theme_explanation && (
-              <p className="mt-3 font-serif text-lg italic text-paper-600 dark:text-star-300">
+              <p className="text-lg font-serif italic opacity-90 mt-2 text-center">
                 "{publicData.anchor_quote}"
               </p>
             )}
-          </header>
+          </div>
 
           <div className="p-8">
             {/* 4 Dimensions - Psychological Weather */}
@@ -608,9 +593,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 {["morning", "midday", "evening"].map((period) => {
                   const isSelected = period === currentPeriod;
                   const toneClass = isSelected
-                    ? "bg-accent/10 border border-accent"
+                    ? "bg-gold-500/10 border border-gold-500 shadow-[0_0_15px_rgba(234,179,8,0.3)]"
                     : theme === "dark"
-                      ? "opacity-80 grayscale border border-accent/15 bg-space-800/30"
+                      ? "opacity-80 grayscale border border-gold-500/15 bg-space-800/30"
                       : "opacity-60 grayscale border border-paper-300 bg-paper-200/50";
 
                   let label = t.today[period as keyof typeof t.today];
@@ -626,7 +611,7 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                     >
                       <div className="p-4 text-center flex flex-col justify-center">
                         <span
-                          className={`block text-sm font-bold uppercase mb-2 ${isSelected ? "text-accent" : "opacity-70"}`}
+                          className={`block text-sm font-bold uppercase mb-2 ${isSelected ? "text-gold-500" : "opacity-70"}`}
                         >
                           {label}
                           {isSelected && <span className="ml-1">●</span>}
@@ -647,9 +632,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
 
             {/* Daily Focus or Strategy (legacy fallback) */}
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="border-l border-l-success/40" noPadding>
+              <Card className="border-l border-l-emerald-500/40" noPadding>
                 <div className="p-5">
-                  <div className="text-sm font-bold text-success uppercase mb-2 tracking-widest flex items-center gap-2">
+                  <div className="text-sm font-bold text-emerald-400 uppercase mb-2 tracking-widest flex items-center gap-2">
                     <span>◎</span>{" "}
                     {language === "zh"
                       ? "宜"
@@ -662,9 +647,9 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                   </p>
                 </div>
               </Card>
-              <Card className="border-l border-l-danger/40" noPadding>
+              <Card className="border-l border-l-red-500/40" noPadding>
                 <div className="p-5">
-                  <div className="text-sm font-bold text-danger uppercase mb-2 tracking-widest flex items-center gap-2">
+                  <div className="text-sm font-bold text-red-400 uppercase mb-2 tracking-widest flex items-center gap-2">
                     <span>✕</span>{" "}
                     {language === "zh"
                       ? "忌"
@@ -704,87 +689,134 @@ const TodayPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
             subtitle={language === "zh" ? "今日有效" : "Valid today only"}
             defaultOpen={true}
           >
-            <div className="animate-fade-in pb-12">
+            <div className="animate-fade-in space-y-8 pb-12">
               {detailData ? (
-                <LlmDoc>
-                  <LlmSection
-                    first
-                    eyebrow={t.today.todays_theme}
-                    title={t.today.theme_expanded}
-                  >
-                    <LlmProse text={detailData.theme_elaborated} />
-                  </LlmSection>
+                <>
+                  <div className="max-w-6xl mx-auto text-center">
+                    <h3 className="text-2xl font-serif mb-6">
+                      {t.today.theme_expanded}
+                    </h3>
+                    <p className="text-lg leading-loose opacity-90 text-justify md:text-center">
+                      {detailData?.theme_elaborated}
+                    </p>
+                  </div>
 
-                  {detailData.personalization && (
-                    <LlmSection title={t.today.personalization}>
-                      <div className="space-y-5">
-                        <LlmField
-                          label={t.today.natal_trigger}
-                          text={detailData.personalization.natal_trigger}
-                        />
-                        <LlmField
-                          label={t.today.pattern_activated}
-                          text={detailData.personalization.pattern_activated}
-                        />
-                        {detailData.personalization.why_today && (
-                          <LlmCallout>
-                            <LlmProse
-                              text={detailData.personalization.why_today}
-                            />
-                          </LlmCallout>
-                        )}
-                      </div>
-                    </LlmSection>
-                  )}
-
-                  <LlmSection title={t.today.how_shows_up}>
-                    <div className="space-y-5">
-                      <LlmField
-                        label={t.today.emotions}
-                        text={detailData.how_it_shows_up?.emotions}
-                      />
-                      <LlmField
-                        label={t.today.relationships}
-                        text={detailData.how_it_shows_up?.relationships}
-                      />
-                      <LlmField
-                        label={t.today.work}
-                        text={detailData.how_it_shows_up?.work}
-                      />
-                    </div>
-                  </LlmSection>
-
-                  <LlmSection
-                    eyebrow={t.today.pitfall}
-                    title={detailData.one_challenge?.pattern_name}
-                  >
-                    <LlmProse text={detailData.one_challenge?.description} />
-                  </LlmSection>
-
-                  <LlmSection
-                    eyebrow={t.today.practice}
-                    title={detailData.one_practice?.title}
-                  >
-                    {practiceList ? (
-                      <>
-                        {practiceList.intro && (
-                          <LlmProse text={practiceList.intro} />
-                        )}
-                        <LlmList
-                          ordered
-                          items={practiceList.items}
-                          className={practiceList.intro ? "mt-3" : ""}
-                        />
-                      </>
-                    ) : (
-                      <LlmProse text={practiceAction} />
+                  {/* Shifted container for personalization and subsequent modules */}
+                  <div className="space-y-8">
+                    {/* Personalization Section (v3.0) */}
+                    {detailData?.personalization && (
+                      <Card className="border-l border-l-gold-500/40">
+                        <h4 className="text-sm font-bold uppercase tracking-widest text-gold-500 mb-4">
+                          {t.today.personalization}
+                        </h4>
+                        <div className="space-y-4">
+                          <div>
+                            <span className="block text-sm font-bold uppercase text-purple-500 mb-1">
+                              {t.today.natal_trigger}
+                            </span>
+                            <p className="text-base leading-relaxed">
+                              {detailData.personalization.natal_trigger}
+                            </p>
+                          </div>
+                          <div>
+                            <span className="block text-sm font-bold uppercase text-blue-500 mb-1">
+                              {t.today.pattern_activated}
+                            </span>
+                            <p className="text-base leading-relaxed">
+                              {detailData.personalization.pattern_activated}
+                            </p>
+                          </div>
+                          {detailData.personalization.why_today && (
+                            <div className="p-6 rounded-2xl border border-gold-500/30 border-l border-l-gold-500/40 bg-gold-500/5">
+                              <p className="text-base leading-loose text-gold-500 font-medium">
+                                {detailData.personalization.why_today}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      </Card>
                     )}
-                  </LlmSection>
 
-                  <LlmSection eyebrow={t.today.prompt}>
-                    <LlmQuote>{detailData.one_question}</LlmQuote>
-                  </LlmSection>
-                </LlmDoc>
+                    <div className="grid md:grid-cols-3 gap-6">
+                      {["emotions", "relationships", "work"].map((k) => {
+                        const colors = {
+                          emotions: "border-l-blue-400/40",
+                          relationships: "border-l-pink-400/40",
+                          work: "border-l-orange-400/40",
+                        };
+                        const textColors = {
+                          emotions: "text-blue-400",
+                          relationships: "text-pink-400",
+                          work: "text-orange-400",
+                        };
+                        return (
+                          <Card
+                            key={k}
+                            className={`hover:border-gold-500/30 transition-colors border-l ${colors[k as keyof typeof colors]}`}
+                          >
+                            <span
+                              className={`block text-sm font-bold uppercase mb-3 tracking-widest ${textColors[k as keyof typeof textColors]}`}
+                            >
+                              {t.today[k as keyof typeof t.today]}
+                            </span>
+                            <p className="text-base opacity-90 leading-relaxed">
+                              {
+                                detailData?.how_it_shows_up?.[
+                                  k as keyof typeof detailData.how_it_shows_up
+                                ]
+                              }
+                            </p>
+                          </Card>
+                        );
+                      })}
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <Card className="border-l border-l-red-500/40" noPadding>
+                        <div className="p-8">
+                          <h4 className="text-red-400 font-bold text-sm uppercase tracking-widest mb-1">
+                            {t.today.pitfall}:{" "}
+                            {detailData?.one_challenge?.pattern_name}
+                          </h4>
+                          <p className="text-base opacity-90 leading-relaxed">
+                            {detailData?.one_challenge?.description}
+                          </p>
+                        </div>
+                      </Card>
+                      <Card
+                        className="border-l border-l-emerald-500/40"
+                        noPadding
+                      >
+                        <div className="p-8">
+                          <h4 className="text-emerald-400 font-bold text-sm uppercase tracking-widest mb-1">
+                            {t.today.practice}:{" "}
+                            {detailData?.one_practice?.title}
+                          </h4>
+                          <p
+                            className="text-base opacity-90 leading-relaxed"
+                            dangerouslySetInnerHTML={{
+                              __html: (detailData?.one_practice?.action || "")
+                                .trim()
+                                .replace(/(\d+\.)/g, "<br/>$1")
+                                .replace(/^\s*<br\/>/, ""),
+                            }}
+                          />
+                        </div>
+                      </Card>
+                    </div>
+
+                    <Card
+                      className="border-l border-l-gold-500/40 text-center"
+                      noPadding
+                    >
+                      <div className="p-10">
+                        <div className="font-serif text-lg italic opacity-80 text-gold-500">
+                          "{detailData?.one_question}"
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                </>
               ) : detailError ? (
                 <div className="text-center opacity-70 py-12 space-y-4">
                   <div>{detailError}</div>

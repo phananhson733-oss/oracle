@@ -22,12 +22,6 @@ import {
   writeStoredTheme,
 } from "../services/themeStorage";
 import { extractLangFromPath, stripLangPrefix } from "../hooks/useLangPath";
-import {
-  groupLlmBlocks,
-  normalizeLlmText,
-  toPlainText,
-} from "../services/llmText";
-import { LlmDoc, LlmList, LlmProse, LlmSection } from "./llm/LlmDoc";
 
 // --- Theme Context ---
 export type Theme = "dark" | "light";
@@ -819,10 +813,134 @@ export const Modal: React.FC<{
   );
 };
 
-// --- Detail Modal (全屏详情解读，artifact 文档式排版) ---
-// 解析统一走 services/llmText（normalizeLlmText/groupLlmBlocks/toPlainText），
-// 排版统一走 components/llm/LlmDoc 原语：单列文档流 + mono 眉标节头 + 发丝线分节，
-// 不再有节卡片/彩虹徽章/图标砖（旧 cardStyles/parseMarkdownSections 已删除）。
+// --- Detail Modal (全屏详情解读页面，CBT风格) ---
+
+// 清理 Markdown 格式符号
+const cleanMarkdownText = (text: string): string => {
+  if (!text) return text;
+  return text
+    .replace(/\*\*\*/g, "") // 移除 ***
+    .replace(/\*\*/g, "") // 移除 **
+    .replace(/__/g, "") // 移除 __
+    .replace(/\*([^*]+)\*/g, "$1") // 移除 *text*
+    .replace(/_([^_]+)_/g, "$1") // 移除 _text_
+    .replace(/`([^`]+)`/g, "$1") // 移除 `code`
+    .replace(/^#+\s*/gm, "") // 移除 # 标题符号
+    .replace(/^[-*+]\s+/gm, "• ") // 转换列表符号
+    .trim();
+};
+
+type MarkdownSection = {
+  type: "heading" | "paragraph" | "list";
+  content: string;
+  items?: string[];
+};
+
+// 将 Markdown 文本转换为结构化段落
+const parseMarkdownSections = (text: string): MarkdownSection[] => {
+  if (!text) return [];
+  const sections: MarkdownSection[] = [];
+  const lines = text.split("\n");
+  let currentParagraph = "";
+  let currentList: string[] = [];
+
+  const flushParagraph = () => {
+    if (currentParagraph.trim()) {
+      sections.push({
+        type: "paragraph",
+        content: cleanMarkdownText(currentParagraph.trim()),
+      });
+      currentParagraph = "";
+    }
+  };
+
+  const flushList = () => {
+    if (currentList.length > 0) {
+      sections.push({
+        type: "list",
+        content: "",
+        items: currentList.map(cleanMarkdownText),
+      });
+      currentList = [];
+    }
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // 标题
+    if (/^#{1,3}\s+/.test(trimmed)) {
+      flushParagraph();
+      flushList();
+      sections.push({
+        type: "heading",
+        content: cleanMarkdownText(trimmed.replace(/^#+\s*/, "")),
+      });
+    }
+    // 列表项
+    else if (
+      /^[-*+]\s+/.test(trimmed) ||
+      /^\d+\.\s+/.test(trimmed) ||
+      /^•\s+/.test(trimmed)
+    ) {
+      flushParagraph();
+      currentList.push(
+        trimmed
+          .replace(/^[-*+]\s+/, "")
+          .replace(/^\d+\.\s+/, "")
+          .replace(/^•\s+/, ""),
+      );
+    }
+    // 空行
+    else if (!trimmed) {
+      flushParagraph();
+      flushList();
+    }
+    // 普通段落
+    else {
+      if (currentList.length > 0) {
+        flushList();
+      }
+      currentParagraph += (currentParagraph ? " " : "") + trimmed;
+    }
+  }
+
+  flushParagraph();
+  flushList();
+
+  return sections;
+};
+
+const groupMarkdownByHeading = (
+  sections: MarkdownSection[],
+  fallbackHeading: string,
+) => {
+  const blocks: Array<{ heading: string; nodes: MarkdownSection[] }> = [];
+  let currentHeading = "";
+  let currentNodes: MarkdownSection[] = [];
+
+  const flushBlock = () => {
+    if (!currentNodes.length) return;
+    blocks.push({
+      heading: currentHeading || fallbackHeading,
+      nodes: currentNodes,
+    });
+    currentHeading = "";
+    currentNodes = [];
+  };
+
+  sections.forEach((section) => {
+    if (section.type === "heading") {
+      flushBlock();
+      currentHeading = section.content;
+      return;
+    }
+    currentNodes.push(section);
+  });
+
+  flushBlock();
+  return blocks;
+};
 
 export interface DetailModalProps {
   open: boolean;
@@ -845,7 +963,177 @@ export const DetailModal: React.FC<DetailModalProps> = ({
   keyPointsLabel,
   onRetry,
 }) => {
+  const { theme } = useTheme();
   const { language, t } = useLanguage();
+  const isLight = theme === "light";
+
+  // --- Styles & Icons (Aligned with Ask Oracle) ---
+  const containerTone = isLight ? "bg-paper-100" : "bg-space-950";
+  const headingTone = isLight ? "text-paper-900" : "text-star-50";
+  const mutedTextTone = isLight ? "text-paper-500" : "text-star-400";
+
+  const cardStyles = [
+    {
+      accent: "border-l-gold-500/40",
+      title: theme === "dark" ? "text-gold-200" : "text-gold-700",
+      badge:
+        theme === "dark"
+          ? "border-gold-500/30 bg-gold-500/10 text-gold-400"
+          : "border-gold-600/40 bg-gold-500/15 text-gold-700",
+      highlight: theme === "dark" ? "text-gold-300" : "text-gold-700",
+      dot: theme === "dark" ? "bg-gold-500/50" : "bg-gold-600/60",
+      divider: theme === "dark" ? "border-gold-500/20" : "border-gold-600/25",
+      iconTone:
+        theme === "dark"
+          ? "border-gold-500/30 bg-space-950 text-gold-500"
+          : "border-gold-600/40 bg-paper-100/85 text-gold-700",
+      icon: "star",
+    },
+    {
+      accent: "border-l-accent/40",
+      title: "text-accent",
+      badge:
+        theme === "dark"
+          ? "border-accent/30 bg-accent/10 text-accent"
+          : "border-accent/30 bg-accent/10 text-accent",
+      highlight: "text-accent",
+      dot: theme === "dark" ? "bg-accent/50" : "bg-accent/60",
+      divider: theme === "dark" ? "border-accent/20" : "border-accent/30",
+      iconTone:
+        theme === "dark"
+          ? "border-accent/30 bg-space-950 text-accent"
+          : "border-accent/30 bg-paper-100/85 text-accent",
+      icon: "eye",
+    },
+    {
+      accent: "border-l-star-200/40",
+      title: theme === "dark" ? "text-star-200" : "text-gold-700",
+      badge:
+        theme === "dark"
+          ? "border-star-200/30 bg-star-200/10 text-star-200"
+          : "border-gold-600/30 bg-gold-500/10 text-gold-700",
+      highlight: theme === "dark" ? "text-star-200" : "text-gold-700",
+      dot: theme === "dark" ? "bg-star-200/50" : "bg-gold-600/50",
+      divider: theme === "dark" ? "border-star-200/20" : "border-gold-600/20",
+      iconTone:
+        theme === "dark"
+          ? "border-star-200/30 bg-space-950 text-star-200"
+          : "border-gold-600/30 bg-paper-100/85 text-gold-700",
+      icon: "compass",
+    },
+    {
+      accent: "border-l-success/40",
+      title: "text-success",
+      badge:
+        theme === "dark"
+          ? "border-success/30 bg-success/10 text-success"
+          : "border-success/30 bg-success/10 text-success",
+      highlight: "text-success",
+      dot: theme === "dark" ? "bg-success/50" : "bg-success/60",
+      divider: theme === "dark" ? "border-success/20" : "border-success/30",
+      iconTone:
+        theme === "dark"
+          ? "border-success/30 bg-space-950 text-success"
+          : "border-success/30 bg-paper-100/85 text-success",
+      icon: "moon",
+    },
+    {
+      accent: "border-l-gold-400/40",
+      title: theme === "dark" ? "text-gold-200" : "text-gold-700",
+      badge:
+        theme === "dark"
+          ? "border-gold-400/30 bg-gold-400/10 text-gold-300"
+          : "border-gold-600/30 bg-gold-500/10 text-gold-700",
+      highlight: theme === "dark" ? "text-gold-300" : "text-gold-700",
+      dot: theme === "dark" ? "bg-gold-400/50" : "bg-gold-600/50",
+      divider: theme === "dark" ? "border-gold-400/20" : "border-gold-600/20",
+      iconTone:
+        theme === "dark"
+          ? "border-gold-400/30 bg-space-950 text-gold-400"
+          : "border-gold-600/30 bg-paper-100/85 text-gold-700",
+      icon: "star",
+    },
+  ];
+
+  const IconStar = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className="w-5 h-5"
+    >
+      <path
+        d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+  const IconEye = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className="w-5 h-5"
+    >
+      <path
+        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+  const IconCompass = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className="w-5 h-5"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path
+        d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+  const IconMoon = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className="w-5 h-5"
+    >
+      <path
+        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  const renderIcon = (iconName: string) => {
+    switch (iconName) {
+      case "eye":
+        return <IconEye />;
+      case "compass":
+        return <IconCompass />;
+      case "moon":
+        return <IconMoon />;
+      default:
+        return <IconStar />;
+    }
+  };
 
   useEffect(() => {
     if (open) document.body.style.overflow = "hidden";
@@ -860,7 +1148,7 @@ export const DetailModal: React.FC<DetailModalProps> = ({
   // Loading State - Fullscreen with OracleLoading
   if (loading) {
     return (
-      <div className="fixed inset-0 z-[200] flex flex-col bg-paper-100 dark:bg-space-950">
+      <div className={`fixed inset-0 z-[200] flex flex-col ${containerTone}`}>
         <OracleLoading
           phrases={[
             t.detail.generating || "Generating insights...",
@@ -874,78 +1162,143 @@ export const DetailModal: React.FC<DetailModalProps> = ({
           thinkingLabel={t.common.analyzing || "Analyzing"}
           className="flex-1"
         />
+        {/* Back Button Overlay */}
         <button
           onClick={onClose}
-          className="fixed top-6 left-6 z-[210] flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.14em] text-paper-500 transition-colors hover:text-accent dark:text-star-400"
+          className={`fixed top-6 left-6 z-[210] flex items-center gap-3 transition-all font-bold group ${mutedTextTone} hover:text-gold-400`}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          <div
+            className={`p-2 rounded-xl transition-all ${isLight ? "bg-paper-100/85 border border-paper-300 group-hover:bg-paper-200" : "bg-space-900/60 group-hover:bg-gold-500/20"}`}
           >
-            <path d="m12 19-7-7 7-7" />
-            <path d="M19 12H5" />
-          </svg>
-          {t.common.back || "Back"}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+          </div>
+          <span className="text-sm uppercase tracking-widest">
+            {t.common.back || "BACK"}
+          </span>
         </button>
       </div>
     );
   }
 
-  const interpretationGroups = groupLlmBlocks(
-    normalizeLlmText(content?.interpretation),
+  const interpretationSections = content?.interpretation
+    ? parseMarkdownSections(content.interpretation)
+    : [];
+  const interpretationBlocks = groupMarkdownByHeading(
+    interpretationSections,
     t.detail.interpretation || "Interpretation",
   );
-  const hasHighlights = !!content?.highlights?.length;
+
+  // --- Render Logic ---
 
   return (
-    <div className="fixed inset-0 z-[200] flex flex-col overflow-hidden animate-fade-in bg-paper-100 dark:bg-space-950">
-      {/* Sticky Header — 面包屑式，不再是金色药丸 */}
-      <div className="sticky top-0 z-20 flex items-center gap-3 border-b border-paper-900/10 bg-paper-100/95 px-6 py-4 dark:border-star-50/10 dark:bg-space-950/95">
+    <div
+      className={`fixed inset-0 z-[200] flex flex-col overflow-hidden animate-fade-in ${containerTone}`}
+    >
+      {/* Sticky Header */}
+      <div
+        className={`sticky top-0 z-20 px-6 py-4 flex items-center gap-4 border-b ${isLight ? "bg-paper-100/95 border-paper-300/50 backdrop-blur" : "bg-space-950/95 border-gold-500/10 backdrop-blur"}`}
+      >
         <button
           onClick={onClose}
-          className="flex shrink-0 items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.14em] text-paper-500 transition-colors hover:text-accent dark:text-star-400"
+          className={`flex items-center gap-3 transition-all font-bold group ${mutedTextTone} hover:text-gold-400`}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          <div
+            className={`p-2 rounded-xl transition-all ${isLight ? "bg-paper-200 border border-paper-300 group-hover:bg-paper-300" : "bg-space-900/60 group-hover:bg-gold-500/20"}`}
           >
-            <path d="m12 19-7-7 7-7" />
-            <path d="M19 12H5" />
-          </svg>
-          {t.common.back || "Back"}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+          </div>
+          <span className="text-sm uppercase tracking-widest">
+            {t.common.back || "BACK"}
+          </span>
         </button>
-        <span
-          aria-hidden="true"
-          className="text-paper-900/20 dark:text-star-50/20"
+        <div
+          className={`flex items-center gap-2 px-3 py-1 rounded-full border max-w-[60vw] ${isLight ? "border-gold-500/30 bg-gold-500/10 text-gold-700" : "border-gold-500/30 bg-gold-500/10 text-gold-400"}`}
         >
-          /
-        </span>
-        <span className="min-w-0 truncate font-mono text-xs uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
-          {title}
-        </span>
+          <span className="text-xs font-semibold tracking-wide truncate">
+            {title}
+          </span>
+        </div>
       </div>
 
-      {/* Content Area — 单列文档流 */}
+      {/* Content Area */}
       <div className="flex-1 overflow-y-auto custom-scrollbar">
-        <div className="mx-auto max-w-3xl px-6 py-10 md:px-10 md:py-14">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 py-8 relative">
+          {/* Background Silhouette */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <svg
+              className="absolute inset-0 w-full h-full opacity-[0.015]"
+              viewBox="0 0 800 800"
+              preserveAspectRatio="xMidYMid slice"
+            >
+              <circle
+                cx="400"
+                cy="400"
+                r="350"
+                fill="none"
+                stroke="#D4AF37"
+                strokeWidth="0.5"
+              />
+              <circle
+                cx="400"
+                cy="400"
+                r="280"
+                fill="none"
+                stroke="#D4AF37"
+                strokeWidth="0.3"
+              />
+              <circle
+                cx="400"
+                cy="400"
+                r="200"
+                fill="none"
+                stroke="#D4AF37"
+                strokeWidth="0.2"
+              />
+              {[...Array(12)].map((_, i) => (
+                <line
+                  key={i}
+                  x1="400"
+                  y1="50"
+                  x2="400"
+                  y2="120"
+                  stroke="#D4AF37"
+                  strokeWidth="0.3"
+                  transform={`rotate(${i * 30} 400 400)`}
+                />
+              ))}
+            </svg>
+          </div>
+
           {/* Error State */}
           {!loading && error && (
-            <div className="flex flex-col items-center justify-center py-20 text-center">
-              <div className="mb-4 text-danger">
+            <div className="relative z-10 flex flex-col items-center justify-center py-20 text-center">
+              <div className="text-danger mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="48"
@@ -962,16 +1315,14 @@ export const DetailModal: React.FC<DetailModalProps> = ({
                   <path d="m9 9 6 6" />
                 </svg>
               </div>
-              <p className="mb-2 text-lg font-medium text-paper-900 dark:text-star-50">
+              <p className={`text-lg font-medium mb-2 ${headingTone}`}>
                 {t.common.error || "Error"}
               </p>
-              <p className="mb-6 text-sm text-paper-500 dark:text-star-400">
-                {error}
-              </p>
+              <p className={`text-sm mb-6 ${mutedTextTone}`}>{error}</p>
               {onRetry && (
                 <button
                   onClick={onRetry}
-                  className="rounded-2xl bg-star-50 px-6 py-2 font-mono text-xs font-medium uppercase tracking-[0.12em] text-space-950 transition-opacity hover:opacity-90"
+                  className={`px-6 py-2 rounded-full border ${isLight ? "border-gold-500/30 text-gold-700 hover:bg-gold-500/10" : "border-gold-500/30 text-gold-400 hover:bg-gold-500/10"}`}
                 >
                   {t.common.retry}
                 </button>
@@ -979,64 +1330,205 @@ export const DetailModal: React.FC<DetailModalProps> = ({
             </div>
           )}
 
-          {/* Content Display — 文档头 + 发丝线分节 */}
+          {/* Content Display */}
           {!loading && !error && content && (
-            <LlmDoc>
-              <header className="mb-8">
-                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-accent">
-                  {title}
-                </p>
-                {content.title && (
-                  <h1 className="mt-2 text-2xl font-medium tracking-[-0.015em] text-paper-900 md:text-3xl dark:text-star-50">
-                    {toPlainText(content.title)}
-                  </h1>
-                )}
-                {content.summary && (
-                  <p className="mt-3 max-w-[62ch] text-[1.0625rem] leading-[1.65] text-paper-600 dark:text-star-300">
-                    {toPlainText(content.summary)}
-                  </p>
-                )}
-              </header>
-
-              {hasHighlights && (
-                <LlmSection
-                  first
-                  eyebrow={
-                    keyPointsLabel || (language === "zh" ? "重点" : "Key Points")
-                  }
+            <div className="relative z-10 space-y-5">
+              {/* 1. Summary Card (Gold Style) */}
+              {(content.title || content.summary) && (
+                <Card
+                  className={`relative overflow-hidden transition-all duration-300 border border-l ${cardStyles[0].accent} ${theme === "dark" ? "hover:shadow-lg hover:shadow-gold-500/5" : "hover:shadow-sm"}`}
                 >
-                  <LlmList
-                    items={(content.highlights ?? []).map(toPlainText)}
-                  />
-                </LlmSection>
+                  <div
+                    className={`flex items-center gap-4 mb-4 pb-3 border-b ${cardStyles[0].divider}`}
+                  >
+                    <div
+                      className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${cardStyles[0].iconTone}`}
+                    >
+                      {renderIcon("star")}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span
+                          className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${cardStyles[0].badge}`}
+                        >
+                          {language === "zh" ? "核心" : "ESSENCE"}
+                        </span>
+                        {content.title && (
+                          <h4
+                            className={`text-base md:text-lg font-serif font-semibold ${cardStyles[0].title}`}
+                          >
+                            {cleanMarkdownText(content.title)}
+                          </h4>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pl-14">
+                    <p
+                      className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
+                    >
+                      {cleanMarkdownText(content.summary || "")}
+                    </p>
+                  </div>
+                </Card>
               )}
 
-              {interpretationGroups.map((group, idx) => (
-                <LlmSection
-                  key={idx}
-                  first={!hasHighlights && idx === 0}
-                  eyebrow={group.heading}
-                  className={idx === 0 && hasHighlights ? "mt-6" : ""}
+              {/* 2. Highlights Card (Accent/Eye Style) */}
+              {content.highlights && content.highlights.length > 0 && (
+                <Card
+                  className={`relative overflow-hidden transition-all duration-300 border border-l ${cardStyles[1].accent} ${theme === "dark" ? "hover:shadow-lg hover:shadow-accent/5" : "hover:shadow-sm"}`}
                 >
-                  <LlmProse blocks={group.blocks} />
-                </LlmSection>
-              ))}
+                  <div
+                    className={`flex items-center gap-4 mb-4 pb-3 border-b ${cardStyles[1].divider}`}
+                  >
+                    <div
+                      className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${cardStyles[1].iconTone}`}
+                    >
+                      {renderIcon("eye")}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span
+                          className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${cardStyles[1].badge}`}
+                        >
+                          {keyPointsLabel ||
+                            (language === "zh" ? "重点" : "KEY POINTS")}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pl-14 space-y-3">
+                    {content.highlights.map((item, idx) => (
+                      <div key={idx} className="flex gap-3 items-start">
+                        <div
+                          className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${cardStyles[1].dot}`}
+                        />
+                        <p
+                          className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
+                        >
+                          {cleanMarkdownText(item)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              )}
 
-              {/* 收尾 — 发丝线 + mono 标记，不再是渐变卡 */}
-              <footer className="mt-10 border-t border-paper-900/10 pt-6 text-center dark:border-star-50/10">
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper-400 dark:text-star-400">
-                  {t.ask.oracle_complete || "Completed"}
-                </p>
-                <button
-                  onClick={onClose}
-                  className="mt-3 font-mono text-xs font-medium uppercase tracking-[0.14em] text-accent underline-offset-4 transition-colors hover:underline"
+              {/* 3. Interpretation Blocks (Varied Styles) */}
+              {interpretationBlocks.map((block, idx) => {
+                // Use varied styles starting from index 2 (Compass) to cycle through
+                const styleIdx = (idx % 3) + 2; // Styles 2, 3, 4
+                const style =
+                  cardStyles[styleIdx < cardStyles.length ? styleIdx : 2];
+                const iconName =
+                  styleIdx === 2 ? "compass" : styleIdx === 3 ? "moon" : "star";
+
+                return (
+                  <div
+                    key={idx}
+                    className="animate-fade-in"
+                    style={{ animationDelay: `${idx * 100}ms` }}
+                  >
+                    <Card
+                      className={`relative overflow-hidden transition-all duration-300 border border-l ${style.accent} ${theme === "dark" ? "hover:shadow-lg" : "hover:shadow-sm"}`}
+                    >
+                      <div
+                        className={`flex items-center gap-4 mb-4 pb-3 border-b ${style.divider}`}
+                      >
+                        <div
+                          className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${style.iconTone}`}
+                        >
+                          {renderIcon(iconName)}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span
+                              className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${style.badge}`}
+                            >
+                              {language === "zh"
+                                ? `层级 ${idx + 1}`
+                                : `LAYER ${idx + 1}`}
+                            </span>
+                            <h4
+                              className={`text-base md:text-lg font-serif font-semibold ${style.title}`}
+                            >
+                              {block.heading}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="pl-14 space-y-4">
+                        {block.nodes.map((node, nodeIdx) => {
+                          if (node.type === "list" && node.items) {
+                            return (
+                              <div key={nodeIdx} className="space-y-3">
+                                {node.items.map((item, itemIdx) => (
+                                  <div
+                                    key={itemIdx}
+                                    className="flex gap-3 items-start"
+                                  >
+                                    <div
+                                      className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${style.dot}`}
+                                    />
+                                    <p
+                                      className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
+                                    >
+                                      {item}
+                                    </p>
+                                  </div>
+                                ))}
+                              </div>
+                            );
+                          }
+                          return (
+                            <p
+                              key={nodeIdx}
+                              className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
+                            >
+                              {node.content}
+                            </p>
+                          );
+                        })}
+                      </div>
+                    </Card>
+                  </div>
+                );
+              })}
+
+              {/* Footer / Conclusion */}
+              {content && (
+                <div
+                  className={`mt-8 pt-6 border-t ${isLight ? "border-gold-600/10" : "border-gold-500/10"}`}
                 >
-                  {t.journal?.return_to_stars ||
-                    (language === "zh" ? "返回" : "Return")}{" "}
-                  <span aria-hidden="true">→</span>
-                </button>
-              </footer>
-            </LlmDoc>
+                  <Card
+                    className={`text-center py-8 ${isLight ? "bg-gradient-to-b from-paper-100 to-paper-100/80 border-gold-600/20" : "bg-gradient-to-b from-space-900 to-space-950 border-gold-500/20"}`}
+                  >
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                      <div
+                        className={`w-12 h-px ${isLight ? "bg-gold-600/30" : "bg-gold-500/30"}`}
+                      />
+                      {renderIcon("star")}
+                      <div
+                        className={`w-12 h-px ${isLight ? "bg-gold-600/30" : "bg-gold-500/30"}`}
+                      />
+                    </div>
+                    <div
+                      className={`text-xs uppercase tracking-[0.3em] mb-3 ${isLight ? "text-gold-600/50" : "text-gold-500/50"}`}
+                    >
+                      {t.ask.oracle_complete || "COMPLETED"}
+                    </div>
+                    <button
+                      onClick={onClose}
+                      className={`px-8 py-2 rounded-full border transition-all ${isLight ? "border-gold-500/30 text-gold-700 hover:bg-gold-500/10" : "border-gold-500/30 text-gold-400 hover:bg-gold-500/10"}`}
+                    >
+                      {t.journal?.return_to_stars ||
+                        (language === "zh" ? "返回" : "Return")}
+                    </button>
+                  </Card>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>

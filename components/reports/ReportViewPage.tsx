@@ -1,13 +1,12 @@
-// INPUT: React、报告客户端（getReport/generateReport/REPORT_DISPLAY）、UI 组件（Container/Card/ActionButton）与 LlmDoc 文档式排版原语。
-// OUTPUT: 导出报告详情页面组件（分节展开走单列文档流：发丝线分隔 + mono 眉标 + LlmProse/LlmList 内容）。
-// POS: 报告详情页面组件；LLM 报告正文统一走文档式排版。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、报告客户端与 UI 组件依赖（含纸感映射、报告卡片左侧强调样式与对比度修正）。
+// OUTPUT: 导出报告详情页面组件（含统一左侧色带、分段展开与主题化分隔线）。
+// POS: 报告详情页面组件（含纸感映射与分隔线对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTheme, useLanguage, Container, Card, ActionButton } from '../UIComponents';
 import { getReport, generateReport, Report, ReportSection, REPORT_DISPLAY } from '../../services/reportClient';
-import { ArrowLeft, Download, Share2, RefreshCw, ChevronDown, ChevronUp, Star } from 'lucide-react';
-import { LlmDoc, LlmProse, LlmList, LLM_EYEBROW_CLASS } from '../llm/LlmDoc';
+import { ArrowLeft, Download, Share2, RefreshCw, ChevronDown, ChevronUp, Star, Lightbulb } from 'lucide-react';
 
 const ReportViewPage: React.FC = () => {
   const { reportId } = useParams<{ reportId: string }>();
@@ -190,8 +189,8 @@ const ReportViewPage: React.FC = () => {
         </div>
       )}
 
-      {/* Report sections — single-column document flow, hairline-separated */}
-      <LlmDoc>
+      {/* Report sections */}
+      <div className="space-y-4">
         {sections.map((section, index) => (
           <ReportSectionCard
             key={section.id}
@@ -200,10 +199,11 @@ const ReportViewPage: React.FC = () => {
             isExpanded={expandedSections.has(section.id)}
             onToggle={() => toggleSection(section.id)}
             isDark={isDark}
+            lang={lang}
             tr={tr}
           />
         ))}
-      </LlmDoc>
+      </div>
 
       {/* Mobile actions */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-space-950 to-transparent">
@@ -229,81 +229,119 @@ const ReportViewPage: React.FC = () => {
   );
 };
 
-// Section as a document-flow accordion row: hairline top border, mono index +
-// serif title toggle, then LlmProse / LlmList content when expanded.
+// Section card component
 const ReportSectionCard: React.FC<{
   section: ReportSection;
   index: number;
   isExpanded: boolean;
   onToggle: () => void;
   isDark: boolean;
+  lang: string;
   tr: Record<string, string>;
-}> = ({ section, index, isExpanded, onToggle, isDark, tr }) => {
+}> = ({ section, index, isExpanded, onToggle, isDark, lang, tr }) => {
   return (
-    <section className={index === 0 ? 'pb-2' : 'border-t border-paper-900/10 dark:border-star-50/10 pt-6 pb-2'}>
-      {/* Section header (accordion toggle) */}
+    <Card className="overflow-hidden border-l border-l-gold-500/40">
+      {/* Section header */}
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between gap-4 text-left"
+        className="w-full flex items-center justify-between text-left"
       >
-        <div className="flex items-baseline gap-3 min-w-0">
-          <span className="shrink-0 font-mono text-[11px] font-medium tracking-[0.14em] text-paper-500 dark:text-star-400">
-            {String(index + 1).padStart(2, '0')}
+        <div className="flex items-center gap-3">
+          <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+            isDark ? 'bg-space-700 text-star-200' : 'bg-paper-200 text-paper-600'
+          }`}>
+            {index + 1}
           </span>
-          <h3 className={`text-lg font-medium tracking-[-0.01em] ${isDark ? 'text-star-50' : 'text-paper-900'}`}>
+          <h3 className={`text-lg font-semibold ${isDark ? 'text-star-100' : 'text-paper-800'}`}>
             {section.title}
           </h3>
         </div>
         {isExpanded ? (
-          <ChevronUp className={`w-5 h-5 shrink-0 ${isDark ? 'text-star-400' : 'text-paper-400'}`} />
+          <ChevronUp className={`w-5 h-5 ${isDark ? 'text-star-400' : 'text-paper-400'}`} />
         ) : (
-          <ChevronDown className={`w-5 h-5 shrink-0 ${isDark ? 'text-star-400' : 'text-paper-400'}`} />
+          <ChevronDown className={`w-5 h-5 ${isDark ? 'text-star-400' : 'text-paper-400'}`} />
         )}
       </button>
 
       {/* Section content */}
-      {isExpanded && (
-        <div className="mt-4 space-y-5">
-          {/* Rating — kept as visualization, converged to one mono row */}
+          {isExpanded && (
+            <div className={`mt-4 pt-4 border-t ${isDark ? 'border-gold-500/15' : 'border-paper-300'}`}>
+              {/* Rating if available */}
           {section.rating !== undefined && (
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2 mb-4">
               {[...Array(10)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-3.5 h-3.5 ${
+                  className={`w-4 h-4 ${
                     i < section.rating!
-                      ? 'text-accent fill-accent'
+                      ? 'text-gold-500 fill-gold-500'
                       : isDark
                       ? 'text-space-600'
                       : 'text-paper-300'
                   }`}
                 />
               ))}
-              <span className={`${LLM_EYEBROW_CLASS} ml-2`}>{section.rating}/10</span>
+              <span className={`text-sm ml-2 ${isDark ? 'text-star-300' : 'text-paper-500'}`}>
+                {section.rating}/10
+              </span>
             </div>
           )}
 
-          {/* Main content — restore paragraphs from the collapsed single field */}
-          <LlmProse text={section.content} className="font-reading" />
+          {/* Main content */}
+          <div className={`prose prose-sm max-w-none font-reading ${isDark ? 'prose-invert' : ''}`}>
+            <p className={`leading-relaxed ${isDark ? 'text-star-200' : 'text-paper-600'}`}>
+              {section.content}
+            </p>
+          </div>
 
-          {/* Highlights — unframed accent-dot list */}
+          {/* Highlights - 移除外框，直接显示内容 */}
           {section.highlights && section.highlights.length > 0 && (
-            <div>
-              <p className={`${LLM_EYEBROW_CLASS} mb-1.5`}>{tr.highlights}</p>
-              <LlmList items={section.highlights} />
+            <div className="mt-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Star className="w-4 h-4 text-gold-500" />
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${isDark ? 'text-gold-400' : 'text-gold-700'}`}>
+                  {tr.highlights}
+                </span>
+              </div>
+              <div className="space-y-1.5">
+                {section.highlights.map((h, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm"
+                  >
+                    <span className={`mt-2 w-1 h-1 rounded-full shrink-0 ${isDark ? 'bg-gold-400' : 'bg-gold-600'}`} />
+                    <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{h}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
-          {/* Advice — unframed ordered list */}
+          {/* Advice - 移除外框，使用字色突出 */}
           {section.advice && section.advice.length > 0 && (
-            <div>
-              <p className={`${LLM_EYEBROW_CLASS} mb-1.5`}>{tr.advice}</p>
-              <LlmList items={section.advice} ordered />
+            <div className="mt-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Lightbulb className="w-4 h-4 text-accent" />
+                <span className={`text-xs font-bold uppercase tracking-[0.2em] ${isDark ? 'text-accent' : 'text-gold-700'}`}>
+                  {tr.advice}
+                </span>
+              </div>
+              <div className="space-y-1.5">
+                {section.advice.map((a, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm"
+                  >
+                    <span className={`font-mono text-xs mt-0.5 ${isDark ? 'text-space-600' : 'text-paper-400'}`}>0{i + 1}</span>
+                    <span className={isDark ? 'text-star-200' : 'text-paper-700'}>{a}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
       )}
-    </section>
+    </Card>
   );
 };
 

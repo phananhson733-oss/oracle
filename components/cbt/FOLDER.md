@@ -65,4 +65,3 @@ CBT（认知行为疗法）日记功能的 UI 组件集合。
 - 统计分析视图在当月无记录时跳过 AI 请求，解读统一显示“无记录”。
 - 时间线心情形容词颜色与表情主色同步。
 - CBT 统计解读缓存 key 加入 statsHash，日记修改后自动失效重算。
-- 2026-07-03 LLM 排版统一：AnalysisViews（月度洞察三行去卡片/图标砖）+ ReportDashboard（5 节 LlmSection 序列）迁移文档式；私有 parseAdviceList/sanitizeAiText 等换 services/llmText。recharts 图表豁免。

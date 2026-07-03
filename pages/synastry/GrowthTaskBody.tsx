@@ -3,100 +3,145 @@
 // POS: OverviewTab 的子展示组件，仅在有成长任务/甜蜜点/摩擦点数据时渲染。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
 import React from "react";
-import { useLanguage } from "../../components/UIComponents";
+import { useTheme, useLanguage } from "../../components/UIComponents";
 import * as T from "../../types";
-import {
-  LlmDoc,
-  LlmSection,
-  LlmProse,
-  LlmList,
-  LlmQuote,
-  LlmKV,
-} from "../../components/llm/LlmDoc";
 
-// panelTone/labelClass 仍在签名中以兼容调用方，但文档式排版不再使用它们
-// （容器由外层 accordion 提供；层级靠发丝线分节 + 统一单色眉标，不靠彩色 label）。
 export const GrowthTaskBody: React.FC<{
   growthTaskLazy: T.SynastryGrowthTaskContent | undefined;
   sweetSpots: T.SynastryGrowthTaskContent["sweet_spots"];
   frictionPoints: T.SynastryGrowthTaskContent["friction_points"];
-  panelTone?: string;
-  labelClass?: string;
-}> = ({ growthTaskLazy, sweetSpots, frictionPoints }) => {
+  panelTone: string;
+  labelClass: string;
+}> = ({ growthTaskLazy, sweetSpots, frictionPoints, panelTone, labelClass }) => {
   const { t } = useLanguage();
-
-  const spotRows = (
-    entries: Array<[string, string | undefined]>,
-  ): Array<[string, React.ReactNode]> =>
-    entries
-      .filter(([, v]) => !!v)
-      .map(([k, v]) => [k, v as string] as [string, React.ReactNode]);
+  const { theme } = useTheme();
 
   return (
-    <LlmDoc className="space-y-8">
-      {growthTaskLazy && (
-        <div>
-          <LlmQuote className="mb-5">
-            {growthTaskLazy.growth_task.task}
-          </LlmQuote>
-          {growthTaskLazy.growth_task.evidence && (
-            <LlmSection first eyebrow={t.us.evidence}>
-              <LlmProse text={growthTaskLazy.growth_task.evidence} />
-            </LlmSection>
-          )}
-          {growthTaskLazy.growth_task.action_steps.length > 0 && (
-            <LlmSection eyebrow={t.us.growth_action_steps}>
-              <LlmList
-                items={growthTaskLazy.growth_task.action_steps}
-                ordered
-              />
-            </LlmSection>
-          )}
-        </div>
-      )}
-      {sweetSpots.length > 0 && (
-        <LlmSection first={!growthTaskLazy} eyebrow={t.us.sweet}>
-          <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
+      <div className="space-y-6">
+        {growthTaskLazy && (
+          <div
+            className={`p-4 rounded-lg border-l border-purple-500 ${theme === "dark" ? "bg-space-900/40" : "bg-paper-100"}`}
+          >
+            <div className="font-serif text-lg mb-3">
+              "{growthTaskLazy.growth_task.task}"
+            </div>
+            <div
+              className={`${labelClass} text-orange-500`}
+            >
+              {t.us.evidence}
+            </div>
+            <div className="text-xs opacity-80 mb-4">
+              {growthTaskLazy.growth_task.evidence}
+            </div>
+            <div className={`${labelClass} text-green-500`}>
+              {t.us.growth_action_steps}
+            </div>
+            <ul className="space-y-2 text-sm">
+              {growthTaskLazy.growth_task.action_steps.map(
+                (step, i) => (
+                  <li key={i} className="flex gap-2 items-start">
+                    <span className="text-green-500 shrink-0">
+                      {i + 1}.
+                    </span>
+                    <span className="opacity-90">{step}</span>
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
+        )}
+        {sweetSpots.length > 0 && (
+          <div
+            className={`rounded-xl p-5 border-l border-l-success/40 ${panelTone}`}
+          >
+            <h3 className="text-xs font-bold uppercase text-success mb-4 tracking-widest">
+              {t.us.sweet}
+            </h3>
             {sweetSpots.map((s, i) => (
-              <div key={i} className="py-4 first:pt-0 last:pb-0">
-                <h4 className="mb-2 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+              <div
+                key={i}
+                className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === "dark" ? "border-gold-500/15" : "border-paper-300"}`}
+              >
+                <div className="font-bold text-sm mb-2">
                   {s.title}
-                </h4>
-                <LlmKV
-                  rows={spotRows([
-                    [t.us.evidence, s.evidence],
-                    [t.us.experience, s.experience],
-                    [t.us.usage, s.usage],
-                  ])}
-                />
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div>
+                    <div
+                      className={`${labelClass} text-orange-500`}
+                    >
+                      {t.us.evidence}
+                    </div>
+                    <div className="opacity-80">{s.evidence}</div>
+                  </div>
+                  <div>
+                    <div
+                      className={`${labelClass} text-blue-500`}
+                    >
+                      {t.us.experience}
+                    </div>
+                    <div className="opacity-80">
+                      {s.experience}
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      className={`${labelClass} text-green-500`}
+                    >
+                      {t.us.usage}
+                    </div>
+                    <div className="opacity-80">{s.usage}</div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-        </LlmSection>
-      )}
-      {frictionPoints.length > 0 && (
-        <LlmSection
-          first={!growthTaskLazy && sweetSpots.length === 0}
-          eyebrow={t.us.friction}
-        >
-          <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
+        )}
+        {frictionPoints.length > 0 && (
+          <div
+            className={`rounded-xl p-5 border-l border-l-danger/40 ${panelTone}`}
+          >
+            <h3 className="text-xs font-bold uppercase text-danger mb-4 tracking-widest">
+              {t.us.friction}
+            </h3>
             {frictionPoints.map((f, i) => (
-              <div key={i} className="py-4 first:pt-0 last:pb-0">
-                <h4 className="mb-2 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+              <div
+                key={i}
+                className={`pb-4 mb-4 border-b last:border-b-0 last:mb-0 last:pb-0 ${theme === "dark" ? "border-gold-500/15" : "border-paper-300"}`}
+              >
+                <div className="font-bold text-sm mb-2">
                   {f.title}
-                </h4>
-                <LlmKV
-                  rows={spotRows([
-                    [t.us.evidence, f.evidence],
-                    [t.us.trigger, f.trigger],
-                    [t.us.cost, f.cost],
-                  ])}
-                />
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div>
+                    <div
+                      className={`${labelClass} text-orange-500`}
+                    >
+                      {t.us.evidence}
+                    </div>
+                    <div className="opacity-80">{f.evidence}</div>
+                  </div>
+                  <div>
+                    <div
+                      className={`${labelClass} text-red-500`}
+                    >
+                      {t.us.trigger}
+                    </div>
+                    <div className="opacity-80">{f.trigger}</div>
+                  </div>
+                  <div>
+                    <div
+                      className={`${labelClass} text-red-500`}
+                    >
+                      {t.us.cost}
+                    </div>
+                    <div className="opacity-80">{f.cost}</div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-        </LlmSection>
-      )}
-    </LlmDoc>
+        )}
+      </div>
   );
 };

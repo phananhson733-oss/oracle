@@ -9,7 +9,6 @@ import type { UserProfile, LifeNarrativeContent } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { getTimelineCopy } from "./copy";
 import { fetchLifeNarrative } from "../../services/apiClient";
-import { LlmDoc, LlmSection, LlmProse } from "../llm/LlmDoc";
 
 type Status = "idle" | "loading" | "done" | "error";
 
@@ -24,14 +23,6 @@ const CHAPTER_ORDER: ReadonlyArray<keyof LifeNarrativeContent> = [
 
 const cardClass =
   "rounded-2xl border border-paper-300/50 bg-paper-50 p-4 shadow-sm dark:border-gold-500/15 dark:bg-space-900/60 sm:p-5";
-
-// 主 CTA：实心墨、双模式自反转（star-50/space-950 均 CSS-var 驱动，light=墨底浅字 / dark=浅底墨字）。
-const ctaClass =
-  "rounded-lg bg-star-50 px-4 py-2 text-sm font-semibold text-space-950 transition hover:opacity-90 disabled:opacity-60";
-
-// 次要脚注（disclaimer）单色 muted。
-const footnoteClass =
-  "mt-3 text-[11px] leading-relaxed text-paper-500 dark:text-star-400";
 
 export const TimelineLifeNarrative: React.FC<{
   profile: UserProfile;
@@ -98,11 +89,16 @@ export const TimelineLifeNarrative: React.FC<{
           {c.narrativeUpsellBody}
         </p>
         {onUpsell && (
-          <button onClick={onUpsell} className={`mt-3 ${ctaClass}`}>
+          <button
+            onClick={onUpsell}
+            className="mt-3 px-4 py-2 rounded-lg bg-psycho-600 text-white text-sm"
+          >
             {c.narrativeUpsellCta}
           </button>
         )}
-        <p className={footnoteClass}>{c.narrativeDisclaimer}</p>
+        <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
+          {c.narrativeDisclaimer}
+        </p>
       </section>
     );
   }
@@ -123,7 +119,7 @@ export const TimelineLifeNarrative: React.FC<{
           <button
             onClick={generate}
             disabled={status === "loading"}
-            className={`mt-3 ${ctaClass}`}
+            className="mt-3 px-4 py-2 rounded-lg bg-psycho-600 text-white text-sm disabled:opacity-60"
           >
             {status === "loading" ? c.narrativeLoading : c.narrativeGenerate}
           </button>
@@ -135,13 +131,16 @@ export const TimelineLifeNarrative: React.FC<{
                   {c.narrativeUpsellBody}
                 </p>
                 {onUpsell && (
-                  <button onClick={onUpsell} className={`mt-2 ${ctaClass}`}>
+                  <button
+                    onClick={onUpsell}
+                    className="mt-2 px-4 py-2 rounded-lg bg-psycho-600 text-white text-sm"
+                  >
                     {c.narrativeUpsellCta}
                   </button>
                 )}
               </div>
             ) : (
-              <p className="mt-2 text-sm text-paper-600 dark:text-star-300">
+              <p className="mt-2 text-sm text-amber-600">
                 {errorCode === "LOGIN_REQUIRED"
                   ? c.narrativeLoginRequired
                   : c.narrativeError}
@@ -151,38 +150,42 @@ export const TimelineLifeNarrative: React.FC<{
       )}
 
       {status === "done" && content && (
-        <LlmDoc className="mt-6">
-          {CHAPTER_ORDER.map((key) => {
-            const open = openKeys.has(key);
-            return (
-              <LlmSection key={key}>
-                <button
-                  onClick={() => toggle(key)}
-                  aria-expanded={open}
-                  className="flex w-full items-center justify-between gap-3 text-left"
+        <>
+          <div className="mt-4 space-y-2">
+            {CHAPTER_ORDER.map((key) => {
+              const open = openKeys.has(key);
+              return (
+                <div
+                  key={key}
+                  className="rounded-xl border border-slate-200 dark:border-gold-500/20"
                 >
-                  <h3 className="font-serif text-lg font-medium tracking-[-0.01em] text-paper-900 dark:text-star-50">
-                    {chapterLabel(key)}
-                  </h3>
-                  <span
-                    aria-hidden="true"
-                    className="shrink-0 font-mono text-sm text-paper-500 dark:text-star-400"
+                  <button
+                    onClick={() => toggle(key)}
+                    aria-expanded={open}
+                    className="flex w-full items-center justify-between gap-2 px-4 py-3 text-left"
                   >
-                    {open ? "−" : "+"}
-                  </span>
-                </button>
-                {open && content[key] && (
-                  <div className="mt-3">
-                    <LlmProse text={content[key]} />
-                  </div>
-                )}
-              </LlmSection>
-            );
-          })}
-        </LlmDoc>
+                    <span className="text-sm font-medium text-slate-700 dark:text-star-100">
+                      {chapterLabel(key)}
+                    </span>
+                    <span className="text-slate-400 text-xs" aria-hidden="true">
+                      {open ? "−" : "+"}
+                    </span>
+                  </button>
+                  {open && (
+                    <p className="whitespace-pre-line px-4 pb-4 text-sm leading-relaxed text-slate-600 dark:text-star-300">
+                      {content[key]}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </>
       )}
 
-      <p className={footnoteClass}>{c.narrativeDisclaimer}</p>
+      <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
+        {c.narrativeDisclaimer}
+      </p>
     </section>
   );
 };

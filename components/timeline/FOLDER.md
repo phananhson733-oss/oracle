@@ -37,4 +37,3 @@
 - 2026-06-22 Phase A · PR A-geometry+a11y（§3）：A3 响应式图高（H_MOBILE 300 / H_DESKTOP 440，按容器宽切换）｜A8 marker 筛——TimelinePage 传 nowKey（月度=今日/长程=当前年龄），图表只显示 nowIdx 后前 5 个未来 marker｜A10 「You are here」竖线+点+「Today」标签+aria-label（非仅辉光）｜A12 色盲形状编码（降=空心白填充+描边，升=实心，平=细灰条）。timeline-chart.test 加 4 测（旧 7→11）。注：像素级视觉 QA 待跑。
 - 2026-06-22 Phase A · PR A-copy（K线优化 docs/plans/2026-06-22-life-kline-optimization.md §3）：A2 趋势线进图例（copy.legendTrend + 紫线 swatch）｜A9 去寿命化（copy.lifeViewTitle/lifeModeLabel：`Life`/`ages 0–89` → `Long-range cycle map`/`Long-range`，TimelinePage 改用 copy 键去内联三元）｜A1 页底法务免责（copy.legalFooter，TimelinePage 底部，与顶部 FrameworkDisclaimer 互补）。tests/unit/energy-timeline-demo 加 3 条 copy 契约（去寿命化/法务/趋势）。
 - 2026-06-16 新建：#3 蜡烛主视图 + #4 点天抽屉 + #5 安全叙事（onboarding/图例/disclaimer）。vite build 通过。
-- 2026-07-03 LLM 排版统一：TimelineLifeNarrative（6 章去双层卡+越界 slate/psycho 色）+ TimelineDetailSheet（当日解读文字）迁移文档式；K线蜡烛图/图例豁免。
