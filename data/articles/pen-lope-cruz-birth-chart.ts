@@ -102,7 +102,7 @@ The Moon changes sign roughly every two to three days, so a rough date usually p
 ## Related Reading
 
 - *guide to how planet clusters work in a birth chart* — explains the dominant-theme patterns this profile leans on.
-- [meaning of the Taurus sun sign](/en/wiki/north-node-in-taurus) — expands the fixed-earth themes behind her Sun placement.
+- [the North Node in Taurus](/en/wiki/north-node-in-taurus) — explores the fixed-earth Taurus themes that echo her Sun placement.
 - *Serena Williams birth chart profile* — another public-figure chart read as symbolism, useful for comparison.
 - [Penélope Cruz (Wikipedia)](https://en.wikipedia.org/wiki/Pen%C3%A9lope_Cruz)
 
