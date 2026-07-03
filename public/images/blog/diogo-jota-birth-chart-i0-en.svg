@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="Sun-Sign Profile vs Full Chart Reading">
+  <defs>
+    <linearGradient id="diogojotabirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="diogojotabirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="diogojotabirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="diogojotabirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="diogojotabirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="diogojotabirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#diogojotabirthchart0en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#diogojotabirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#diogojotabirthchart0en-neb2)"/>
+  <circle cx="392.1" cy="45.3" r="0.70" fill="#cfc8ea" opacity="0.25"/><circle cx="162.9" cy="139.5" r="0.83" fill="#cfc8ea" opacity="0.36"/><circle cx="507.4" cy="238.8" r="1.64" fill="#cfc8ea" opacity="0.40"/><circle cx="607.0" cy="463.0" r="1.60" fill="#cfc8ea" opacity="0.14"/><circle cx="340.5" cy="248.2" r="1.12" fill="#cfc8ea" opacity="0.53"/><circle cx="696.4" cy="474.0" r="1.58" fill="#cfc8ea" opacity="0.13"/><circle cx="420.8" cy="294.6" r="0.91" fill="#cfc8ea" opacity="0.18"/><circle cx="326.6" cy="156.8" r="0.86" fill="#cfc8ea" opacity="0.20"/><circle cx="215.7" cy="202.4" r="0.73" fill="#cfc8ea" opacity="0.29"/><circle cx="695.4" cy="140.3" r="0.45" fill="#cfc8ea" opacity="0.47"/><circle cx="213.1" cy="276.9" r="0.75" fill="#cfc8ea" opacity="0.17"/><circle cx="124.0" cy="166.0" r="1.07" fill="#cfc8ea" opacity="0.30"/><circle cx="176.1" cy="316.8" r="1.10" fill="#cfc8ea" opacity="0.51"/><circle cx="660.6" cy="242.0" r="1.35" fill="#cfc8ea" opacity="0.29"/><circle cx="268.0" cy="346.7" r="0.47" fill="#cfc8ea" opacity="0.36"/><circle cx="97.2" cy="298.7" r="0.49" fill="#cfc8ea" opacity="0.49"/><circle cx="688.5" cy="48.1" r="1.65" fill="#cfc8ea" opacity="0.36"/><circle cx="629.3" cy="73.0" r="0.55" fill="#cfc8ea" opacity="0.23"/><circle cx="418.1" cy="123.3" r="0.81" fill="#cfc8ea" opacity="0.53"/><circle cx="174.4" cy="251.0" r="1.13" fill="#cfc8ea" opacity="0.23"/><circle cx="126.9" cy="310.8" r="1.60" fill="#cfc8ea" opacity="0.53"/><circle cx="205.9" cy="52.4" r="1.51" fill="#cfc8ea" opacity="0.25"/><circle cx="640.9" cy="363.2" r="0.53" fill="#cfc8ea" opacity="0.37"/><circle cx="498.4" cy="148.1" r="1.14" fill="#cfc8ea" opacity="0.12"/><circle cx="419.3" cy="475.0" r="1.39" fill="#cfc8ea" opacity="0.43"/><circle cx="268.9" cy="405.5" r="1.07" fill="#cfc8ea" opacity="0.15"/><circle cx="196.5" cy="323.0" r="1.38" fill="#cfc8ea" opacity="0.14"/><circle cx="480.1" cy="128.3" r="0.93" fill="#cfc8ea" opacity="0.39"/><circle cx="105.1" cy="198.3" r="1.20" fill="#cfc8ea" opacity="0.45"/><circle cx="202.2" cy="58.2" r="0.86" fill="#cfc8ea" opacity="0.29"/><circle cx="50.0" cy="154.3" r="1.35" fill="#cfc8ea" opacity="0.23"/><circle cx="29.8" cy="383.5" r="1.29" fill="#cfc8ea" opacity="0.30"/><circle cx="708.8" cy="169.9" r="0.59" fill="#cfc8ea" opacity="0.44"/><circle cx="138.4" cy="333.7" r="1.40" fill="#cfc8ea" opacity="0.21"/><circle cx="354.7" cy="75.0" r="1.00" fill="#cfc8ea" opacity="0.52"/><circle cx="32.4" cy="318.1" r="0.94" fill="#cfc8ea" opacity="0.28"/><circle cx="269.3" cy="279.4" r="0.41" fill="#cfc8ea" opacity="0.22"/><circle cx="221.5" cy="434.3" r="1.05" fill="#cfc8ea" opacity="0.30"/><circle cx="414.8" cy="156.9" r="0.93" fill="#cfc8ea" opacity="0.35"/><circle cx="55.2" cy="393.6" r="1.17" fill="#cfc8ea" opacity="0.46"/><circle cx="301.9" cy="67.4" r="1.18" fill="#cfc8ea" opacity="0.51"/><circle cx="120.2" cy="76.7" r="0.75" fill="#cfc8ea" opacity="0.14"/><path d="M 629.6501829270273 372.1 L 630.2 375.3 L 633.4 375.85741050867364 L 630.2 376.5 L 629.6501829270273 379.6 L 629.1 376.5 L 625.9 375.85741050867364 L 629.1 375.3 Z" fill="#f6e6bf" opacity="0.6555245288647711"/><path d="M 106.34243403561413 190.7 L 106.9 193.5 L 109.7 193.99799732351676 L 106.9 194.5 L 106.34243403561413 197.3 L 105.8 194.5 L 103.0 193.99799732351676 L 105.8 193.5 Z" fill="#f6e6bf" opacity="0.5948836803436279"/><path d="M 328.6623357627541 239.3 L 329.2 242.0 L 331.9 242.55654762824997 L 329.2 243.1 L 328.6623357627541 245.8 L 328.1 243.1 L 325.4 242.55654762824997 L 328.1 242.0 Z" fill="#f6e6bf" opacity="0.6216895199380815"/><path d="M 304.7619934398681 434.5 L 305.2 437.0 L 307.7 437.4468280454166 L 305.2 437.9 L 304.7619934398681 440.4 L 304.3 437.9 L 301.8 437.4468280454166 L 304.3 437.0 Z" fill="#f6e6bf" opacity="0.7950471339747309"/><path d="M 504.97255902923644 212.8 L 505.4 215.0 L 507.6 215.40236456645653 L 505.4 215.8 L 504.97255902923644 218.0 L 504.6 215.8 L 502.4 215.40236456645653 L 504.6 215.0 Z" fill="#f6e6bf" opacity="0.6470165495760739"/><path d="M 660.6 242.0 L 629.3 73.0 L 105.1 198.3 L 414.8 156.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Sun-Sign Profile vs Full Chart Reading</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#diogojotabirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#diogojotabirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Sun-Sign Profile</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reduces person to one of twelve archetypes</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads fast, travels well on social media</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Tells you the headline theme</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sacrifices nuance and accuracy for speed</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Full Chart Reading</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Layers Moon, Mercury, Venus, Mars, and aspects</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Adds Ascendant and houses when birth time is known</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Shows the counter-currents behind the headline Sun</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Loses the tidy one-word answer, gains texture and tension</text>
+  <path d="M 202.22749999999988 474.4 L 202.6 476.6 L 204.8 477 L 202.6 477.4 L 202.22749999999988 479.6 L 201.8 477.4 L 199.6 477 L 201.8 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 474.4 L 558.2 476.6 L 560.4 477 L 558.2 477.4 L 557.7725000000002 479.6 L 557.4 477.4 L 555.2 477 L 557.4 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
