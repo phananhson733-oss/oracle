@@ -1,0 +1,84 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "tobey-maguire-birth-chart": {
+      "hero": {
+        "prompt": "A vast moonlit ocean shoreline at night, silver lunar light cascading across dark protective coastal cliffs and curling waves, the sea dissolving into a boundless cosmic sky filled with faint stellar light, the moon reflected in still tidal pools among ancient rocks, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit coastal shoreline under a deep indigo night sky, waves curling around ancient protective rocks"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sun Sign vs the Whole Birth Chart: What Each One Can Tell You",
+          "titleEn": "Sun Sign vs. Full Chart: What Each Reveals",
+          "altEn": "Comparison of Sun sign reading, full birth chart, and honest middle ground approaches",
+          "columns": [
+            {
+              "nameEn": "Sun Sign",
+              "linesEn": [
+                "Works as a headline",
+                "Fast and easy to share",
+                "Sacrifices nuance for speed",
+                "All born in a 4-week window share one label"
+              ]
+            },
+            {
+              "nameEn": "Full Chart",
+              "linesEn": [
+                "Works as a system",
+                "Reads Sun against Moon and aspects",
+                "Requires accurate birth time",
+                "Rich but fragile without the data"
+              ]
+            },
+            {
+              "nameEn": "Honest Middle",
+              "linesEn": [
+                "Public date, no birth time",
+                "Confirms Sun sign only",
+                "Treats everything else as open questions",
+                "Separates careful reading from overclaiming"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Tobey Maguire's Chart Without Overclaiming",
+          "titleEn": "5 Steps to Read a Celebrity Chart Without Overclaiming",
+          "altEn": "Five-step sequence for reading a birth chart as a cultural lens rather than a verdict",
+          "items": [
+            {
+              "nameEn": "Start With Public Data",
+              "subEn": "Birth date fixes the Cancer Sun; missing birth time means the rising sign stays a guess"
+            },
+            {
+              "nameEn": "Match Themes to Story",
+              "subEn": "Notice how Cancer's protectiveness echoes his on-screen role — without claiming the placement produced the career"
+            },
+            {
+              "nameEn": "Flag Stellium Claims",
+              "subEn": "Without a confirmed chart, treat any stellium or specific aspect claims as interpretation, not record"
+            },
+            {
+              "nameEn": "Separate Person From Persona",
+              "subEn": "Ask what the public image projects versus what a private Cancer temperament might actually prefer"
+            },
+            {
+              "nameEn": "Use It as a Mirror",
+              "subEn": "The most useful output is a question about yourself, not a settled statement about him"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
