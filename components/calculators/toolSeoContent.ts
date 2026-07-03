@@ -668,7 +668,7 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
       },
       {
         heading: "The Four Line Types, Briefly",
-        body: "AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for [how to interpret your astrocartography lines](/en/blog/astrocartography-interpretation).",
+        body: "AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for [how to interpret your astrocartography lines](/en/astrocartography).",
       },
       {
         heading: "What Each Planet Represents on Your Map",
@@ -677,7 +677,7 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
       {
         heading:
           "Astrocartography Map Generator vs. the Full Astrocartography Guide",
-        body: "The generator gives you the interactive map and lets you inspect which lines run near a place. The [full astrocartography guide](/en/astrocartography) explains how astrocartography works in more depth, while [the full interpretation guide](/en/blog/astrocartography-interpretation) helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.",
+        body: "The generator gives you the interactive map and lets you inspect which lines run near a place. The [full astrocartography guide](/en/astrocartography) explains how astrocartography works in more depth and helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.",
       },
     ],
     faqs: [
