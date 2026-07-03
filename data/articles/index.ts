@@ -304,6 +304,7 @@ import { johnDenverBirthChartEn } from "./john-denver-birth-chart";
 import { veraWangBirthChartEn } from "./vera-wang-birth-chart";
 import { cocoGauffBirthChartEn } from "./coco-gauff-birth-chart";
 import { jaylenBrownBirthChartEn } from "./jaylen-brown-birth-chart";
+import { penLopeCruzBirthChartEn } from "./pen-lope-cruz-birth-chart";
 import { tobeyMaguireBirthChartEn } from "./tobey-maguire-birth-chart";
 // All articles organized by language
 
@@ -600,6 +601,7 @@ const ARTICLES_EN: WikiArticle[] = [
   veraWangBirthChartEn,
   cocoGauffBirthChartEn,
   jaylenBrownBirthChartEn,
+  penLopeCruzBirthChartEn,
   tobeyMaguireBirthChartEn,
 ];
 
