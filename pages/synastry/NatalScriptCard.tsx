@@ -3,32 +3,35 @@
 // POS: SynastryPage natal_a / natal_b tab 的主体展示组件。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
 import React from "react";
-import {
-  Card,
-  Section,
-  useTheme,
-  useLanguage,
-} from "../../components/UIComponents";
-import { DETAIL_LABEL_CLASS } from "../../components/shared/astro-glyphs";
+import { useLanguage } from "../../components/UIComponents";
 import * as T from "../../types";
 import {
   formatTemperamentElements,
   formatTemperamentModalities,
 } from "./format";
+import {
+  LlmDoc,
+  LlmSection,
+  LlmProse,
+  LlmList,
+  LlmQuote,
+  LlmField,
+} from "../../components/llm/LlmDoc";
+
+// 单人关系脚本（v3 legacy + v4 Blueprint）文档式排版：
+// 每张彩色 border-l 卡 → LlmSection(标题) + LlmField(单色眉标子段) / LlmQuote(引言) / LlmList(清单)。
+const Badge: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="inline-flex items-center justify-center rounded-full border border-paper-900/15 bg-paper-50/70 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.1em] text-paper-600 dark:border-star-50/15 dark:bg-space-900/60 dark:text-star-300">
+    {children}
+  </span>
+);
 
 export const NatalScriptCard: React.FC<{
   title: string;
   script: T.NatalScript;
-  colorClass: string;
-}> = ({ title, script, colorClass }) => {
-  const { theme } = useTheme();
+  colorClass?: string;
+}> = ({ title, script }) => {
   const { language, t } = useLanguage();
-
-  // Badge styling for elements/modalities
-  const badgeClass =
-    theme === "dark"
-      ? "inline-flex items-center justify-center text-xs uppercase font-bold tracking-wider px-4 py-2 rounded-full border border-gold-500/15/50 bg-space-800/60 text-star-200 backdrop-blur-sm"
-      : "inline-flex items-center justify-center text-xs uppercase font-bold tracking-wider px-4 py-2 rounded-full border border-paper-300/60 bg-paper-50/80 text-paper-700";
 
   // Check if using new v4 structure or legacy
   const isV4 = Boolean(script.vibe_check);
@@ -57,175 +60,104 @@ export const NatalScriptCard: React.FC<{
       language === "zh" ? "关系脚本" : t.us.script_relationship_script;
 
     return (
-      <div className="space-y-10">
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <h3 className="font-serif text-2xl font-medium">{title}</h3>
-          <div className="grid gap-2 sm:grid-cols-2 md:min-w-[260px]">
-            {elementLabel && (
-              <span className={`${badgeClass} opacity-80 w-full text-center`}>
-                {elementLabel}
-              </span>
+      <LlmDoc>
+        <header className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <h3 className="text-2xl font-medium tracking-[-0.015em] text-paper-900 dark:text-star-50">
+            {title}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {elementLabel && <Badge>{elementLabel}</Badge>}
+            {modalityLabel && <Badge>{modalityLabel}</Badge>}
+          </div>
+        </header>
+
+        <LlmSection first title={elementTitle}>
+          <div className="space-y-5">
+            <LlmField
+              label={t.us.script_portrait}
+              text={script.temperament.portrait}
+            />
+            <LlmField
+              label={t.us.script_safety_source}
+              text={script.temperament.safety_source}
+            />
+          </div>
+        </LlmSection>
+
+        <LlmSection title={coreTitle}>
+          <div className="space-y-5">
+            <LlmField
+              label={t.us.script_sun_self}
+              text={script.core_triangle?.sun}
+            />
+            <LlmField
+              label={t.us.script_moon_needs}
+              text={script.core_triangle?.moon}
+            />
+            <LlmField
+              label={t.us.script_rising_mask}
+              text={script.core_triangle?.rising}
+            />
+            {script.core_triangle?.summary && (
+              <LlmQuote>{script.core_triangle.summary}</LlmQuote>
             )}
-            {modalityLabel && (
-              <span className={`${badgeClass} opacity-80 w-full text-center`}>
-                {modalityLabel}
-              </span>
-            )}
           </div>
-        </div>
+        </LlmSection>
 
-        <Section title={elementTitle} className="mb-8">
-          <div className="space-y-4">
-            <Card className={`border-l ${colorClass}`}>
-              <div className={`${DETAIL_LABEL_CLASS} mb-2`}>
-                {t.us.script_portrait}
-              </div>
-              <p className="text-sm leading-relaxed opacity-90">
-                {script.temperament.portrait}
-              </p>
-            </Card>
-            <Card className="border-l border-l-success/40">
-              <div className={`${DETAIL_LABEL_CLASS} text-success mb-2`}>
-                {t.us.script_safety_source}
-              </div>
-              <p className="text-sm opacity-90">
-                {script.temperament.safety_source}
-              </p>
-            </Card>
+        <LlmSection title={relationshipConfigTitle}>
+          <div className="space-y-5">
+            <LlmField
+              label={t.us.script_venus_love}
+              text={script.configurations?.venus}
+            />
+            <LlmField
+              label={t.us.script_mars_drive}
+              text={script.configurations?.mars}
+            />
+            <LlmField
+              label={t.us.script_mercury_comm}
+              text={script.configurations?.mercury}
+            />
+            <LlmField
+              label={t.us.script_h5_romance}
+              text={script.configurations?.houses?.h5}
+            />
+            <LlmField
+              label={t.us.script_h7_partner}
+              text={script.configurations?.houses?.h7}
+            />
+            <LlmField
+              label={t.us.script_h8_intimacy}
+              text={script.configurations?.houses?.h8}
+            />
+            <LlmField
+              label={t.us.script_karmic_challenges}
+              text={script.configurations?.challenges}
+            />
           </div>
-        </Section>
+        </LlmSection>
 
-        <Section title={coreTitle} className="mb-8">
-          <div className="space-y-4">
-            <Card className="border-l border-l-gold-500/40">
-              <div className="text-xs font-bold uppercase text-gold-500 mb-2">
-                {t.us.script_sun_self}
-              </div>
-              <p className="text-sm leading-snug opacity-85">
-                {script.core_triangle?.sun}
-              </p>
-            </Card>
-            <Card className="border-l border-l-star-200/40">
-              <div className="text-xs font-bold uppercase text-star-200 mb-2">
-                {t.us.script_moon_needs}
-              </div>
-              <p className="text-sm leading-snug opacity-85">
-                {script.core_triangle?.moon}
-              </p>
-            </Card>
-            <Card className="border-l border-l-star-400/40">
-              <div className="text-xs font-bold uppercase text-star-400 mb-2">
-                {t.us.script_rising_mask}
-              </div>
-              <p className="text-sm leading-snug opacity-85">
-                {script.core_triangle?.rising}
-              </p>
-            </Card>
-            <Card className="border-l border-l-gold-500/40">
-              <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-2`}>
-                {t.us.script_core_summary}
-              </div>
-              <p className="text-sm leading-relaxed opacity-90">
-                "{script.core_triangle?.summary}"
-              </p>
-            </Card>
+        <LlmSection title={relationshipScriptTitle}>
+          <div className="space-y-5">
+            <LlmField
+              label={t.us.script_habitual_style}
+              text={script.key_script?.love_style}
+            />
+            <LlmField
+              label={t.us.script_the_loop}
+              text={script.key_script?.pattern}
+            />
+            <LlmField
+              label={t.us.script_conflict_role}
+              text={script.key_script?.conflict_role}
+            />
+            <LlmField
+              label={t.us.script_repair_key}
+              text={script.key_script?.repair_method}
+            />
           </div>
-        </Section>
-
-        <Section title={relationshipConfigTitle} className="mb-8">
-          <div className="space-y-4">
-            <Card className="border-l border-l-star-200/40">
-              <div className="text-xs font-bold uppercase text-star-200 mb-3">
-                {t.us.script_planets_love_action}
-              </div>
-              <div className="space-y-3 text-sm">
-                <div>
-                  <span className="font-bold opacity-70 block text-xs uppercase">
-                    {t.us.script_venus_love}
-                  </span>
-                  {script.configurations?.venus}
-                </div>
-                <div>
-                  <span className="font-bold opacity-70 block text-xs uppercase">
-                    {t.us.script_mars_drive}
-                  </span>
-                  {script.configurations?.mars}
-                </div>
-                <div>
-                  <span className="font-bold opacity-70 block text-xs uppercase">
-                    {t.us.script_mercury_comm}
-                  </span>
-                  {script.configurations?.mercury}
-                </div>
-              </div>
-            </Card>
-            <Card className="border-l border-l-accent/40">
-              <div className="text-xs font-bold uppercase text-accent mb-3">
-                {t.us.script_houses_arenas}
-              </div>
-              <div className="space-y-3 text-sm">
-                <div>
-                  <span className="font-bold opacity-70 block text-xs uppercase">
-                    {t.us.script_h5_romance}
-                  </span>
-                  {script.configurations?.houses?.h5}
-                </div>
-                <div>
-                  <span className="font-bold opacity-70 block text-xs uppercase">
-                    {t.us.script_h7_partner}
-                  </span>
-                  {script.configurations?.houses?.h7}
-                </div>
-                <div>
-                  <span className="font-bold opacity-70 block text-xs uppercase">
-                    {t.us.script_h8_intimacy}
-                  </span>
-                  {script.configurations?.houses?.h8}
-                </div>
-              </div>
-            </Card>
-            <Card className="border-l border-l-danger/40">
-              <div className={`${DETAIL_LABEL_CLASS} text-danger mb-2`}>
-                {t.us.script_karmic_challenges}
-              </div>
-              <p className="text-sm opacity-90">
-                {script.configurations?.challenges}
-              </p>
-            </Card>
-          </div>
-        </Section>
-
-        <Section title={relationshipScriptTitle} className="mb-0">
-          <Card className="border-l border-l-gold-500/40">
-            <div className="space-y-4 text-sm">
-              <div>
-                <span className={`${DETAIL_LABEL_CLASS} block mb-1`}>
-                  {t.us.script_habitual_style}
-                </span>
-                <p className="opacity-90">{script.key_script?.love_style}</p>
-              </div>
-              <div>
-                <span className={`${DETAIL_LABEL_CLASS} block mb-1`}>
-                  {t.us.script_the_loop}
-                </span>
-                <p className="opacity-90">{script.key_script?.pattern}</p>
-              </div>
-              <div>
-                <span className="block text-xs font-bold uppercase text-danger mb-1">
-                  {t.us.script_conflict_role}
-                </span>
-                <p className="opacity-80">{script.key_script?.conflict_role}</p>
-              </div>
-              <div>
-                <span className="block text-xs font-bold uppercase text-success mb-1">
-                  {t.us.script_repair_key}
-                </span>
-                <p className="opacity-80">{script.key_script?.repair_method}</p>
-              </div>
-            </div>
-          </Card>
-        </Section>
-      </div>
+        </LlmSection>
+      </LlmDoc>
     );
   }
 
@@ -239,241 +171,107 @@ export const NatalScriptCard: React.FC<{
   } = script;
 
   return (
-    <div className="space-y-10">
-      {/* Header with Profile Card */}
-      <div className="relative">
-        {/* Archetype Hero Card */}
-        <Card className={`relative overflow-hidden ${colorClass}`}>
-          <div className="relative z-10">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-              {/* Left: Name + Archetype */}
-              <div className="flex-1">
-                <h3 className="font-serif text-3xl font-semibold tracking-tight mb-2">
-                  {title}
-                </h3>
-                <div
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${theme === "dark" ? "bg-gold-500/15 border border-gold-500/30" : "bg-gold-500/10 border border-gold-500/20"}`}
-                >
-                  <span className="text-gold-500 text-lg">✦</span>
-                  <span className="font-bold text-gold-500 tracking-wide">
-                    {user_profile?.archetype || t.us.user_profile_archetype}
-                  </span>
-                </div>
-                {user_profile?.tagline && (
-                  <p
-                    className={`mt-4 text-lg font-serif italic ${theme === "dark" ? "text-star-200/90" : "text-paper-700"}`}
-                  >
-                    "{user_profile.tagline}"
-                  </p>
-                )}
-              </div>
-              {/* Right: Quick Badges */}
-              <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1 md:min-w-[260px]">
-                {vibe_check?.elements_badge && (
-                  <span className={`${badgeClass} w-full text-center`}>
-                    {vibe_check.elements_badge}
-                  </span>
-                )}
-                {vibe_check?.modalities_badge && (
-                  <span className={`${badgeClass} w-full text-center`}>
-                    {vibe_check.modalities_badge}
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      {/* Section 1: The Vibe Check */}
-      <Section title={t.us.vibe_check_title} className="mb-8">
-        <Card className="border-l border-l-gold-500/40">
-          <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-3`}>
-            {t.us.vibe_energy_profile}
-          </div>
-          <p className="text-sm leading-relaxed opacity-90">
-            {vibe_check?.energy_profile}
-          </p>
-        </Card>
-      </Section>
-
-      {/* Section 2: The Inner Architecture */}
-      <Section title={t.us.inner_architecture_title} className="mb-8">
-        <div className="space-y-4">
-          <div className="grid md:grid-cols-3 gap-4">
-            <Card className="border-l border-l-gold-500/40">
-              <div className="text-xs font-bold uppercase text-gold-500 mb-2">
-                {t.us.inner_sun}
-              </div>
-              <p className="text-sm leading-relaxed opacity-85">
-                {inner_architecture?.sun}
-              </p>
-            </Card>
-            <Card className="border-l border-l-star-200/40">
-              <div className="text-xs font-bold uppercase text-star-200 mb-2">
-                {t.us.inner_moon}
-              </div>
-              <p className="text-sm leading-relaxed opacity-85">
-                {inner_architecture?.moon}
-              </p>
-            </Card>
-            <Card className="border-l border-l-accent/40">
-              <div className="text-xs font-bold uppercase text-accent mb-2">
-                {t.us.inner_rising}
-              </div>
-              <p className="text-sm leading-relaxed opacity-85">
-                {inner_architecture?.rising}
-              </p>
-            </Card>
-          </div>
-          {inner_architecture?.attachment_style && (
-            <Card className="border-l border-l-star-400/40">
-              <div className="text-xs font-bold uppercase text-star-400 mb-2">
-                {t.us.inner_attachment}
-              </div>
-              <p className="text-sm leading-relaxed opacity-90">
-                {inner_architecture.attachment_style}
-              </p>
-            </Card>
-          )}
-          <Card className="border-l border-l-gold-500/40">
-            <div className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-2`}>
-              {t.us.inner_summary}
-            </div>
-            <p className="text-sm leading-relaxed opacity-90 font-serif italic">
-              "{inner_architecture?.summary}"
-            </p>
-          </Card>
-        </div>
-      </Section>
-
-      {/* Section 3: The Love Toolkit */}
-      <Section title={t.us.love_toolkit_title} className="mb-8">
-        <div className="space-y-4">
-          <Card className="border-l border-l-pink-500/40">
-            <div className="space-y-4 text-sm">
-              <div>
-                <span className="font-bold text-xs uppercase tracking-wide text-pink-500 block mb-1">
-                  {t.us.love_venus}
-                </span>
-                <p className="opacity-90 leading-relaxed">
-                  {love_toolkit?.venus}
-                </p>
-              </div>
-              <div>
-                <span className="font-bold text-xs uppercase tracking-wide text-orange-500 block mb-1">
-                  {t.us.love_mars}
-                </span>
-                <p className="opacity-90 leading-relaxed">
-                  {love_toolkit?.mars}
-                </p>
-              </div>
-              <div>
-                <span className="font-bold text-xs uppercase tracking-wide text-blue-400 block mb-1">
-                  {t.us.love_mercury}
-                </span>
-                <p className="opacity-90 leading-relaxed">
-                  {love_toolkit?.mercury}
-                </p>
-              </div>
-            </div>
-          </Card>
-          {love_toolkit?.love_language_primary && (
-            <Card className="border-l border-l-pink-500/40">
-              <div className="text-xs font-bold uppercase text-pink-500 mb-2">
-                {t.us.love_language}
-              </div>
-              <p className="text-sm leading-relaxed opacity-90">
-                {love_toolkit.love_language_primary}
-              </p>
-            </Card>
-          )}
-        </div>
-      </Section>
-
-      {/* Section 4: The Deep Script */}
-      <Section title={t.us.deep_script_title} className="mb-8">
-        <div className="space-y-4">
-          <Card className="border-l border-l-purple-500/40">
-            <div className="text-xs font-bold uppercase text-purple-500 mb-2">
-              {t.us.deep_seventh_house}
-            </div>
-            <p className="text-sm leading-relaxed opacity-85">
-              {deep_script?.seventh_house}
-            </p>
-          </Card>
-          <div className="grid md:grid-cols-2 gap-4">
-            <Card className="border-l border-l-purple-500/40">
-              <div className="text-xs font-bold uppercase text-purple-500 mb-2">
-                {t.us.deep_saturn}
-              </div>
-              <p className="text-sm leading-relaxed opacity-85">
-                {deep_script?.saturn}
-              </p>
-            </Card>
-            <Card className="border-l border-l-red-500/40">
-              <div className="text-xs font-bold uppercase text-red-500 mb-2">
-                {t.us.deep_chiron}
-              </div>
-              <p className="text-sm leading-relaxed opacity-85">
-                {deep_script?.chiron}
-              </p>
-            </Card>
-          </div>
-          {deep_script?.shadow_pattern && (
-            <Card className="border-l border-l-red-500/40">
-              <div className="text-xs font-bold uppercase text-red-500 mb-2">
-                {t.us.deep_shadow}
-              </div>
-              <p className="text-sm leading-relaxed opacity-90">
-                {deep_script.shadow_pattern}
-              </p>
-            </Card>
-          )}
-        </div>
-      </Section>
-
-      {/* Section 5: Profile Summary */}
-      <Section title={t.us.user_profile_title} className="mb-0">
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="border-l border-l-green-500/40">
-            <h4 className="text-xs font-bold uppercase text-green-500 mb-4 tracking-widest">
-              {t.us.user_profile_strengths}
-            </h4>
-            <ul className="space-y-2">
-              {(user_profile?.strengths || []).map((s, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm">
-                  <span className="text-green-500 mt-0.5">✓</span>
-                  <span className="opacity-90">{s}</span>
-                </li>
-              ))}
-            </ul>
-          </Card>
-          <Card className="border-l border-l-purple-500/40">
-            <h4 className="text-xs font-bold uppercase text-purple-500 mb-4 tracking-widest">
-              {t.us.user_profile_growth}
-            </h4>
-            <ul className="space-y-2">
-              {(user_profile?.growth_edges || []).map((g, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm">
-                  <span className="text-purple-500 mt-0.5">→</span>
-                  <span className="opacity-90">{g}</span>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        </div>
-        {user_profile?.ideal_complement && (
-          <Card className="mt-4 border-l border-l-blue-500/40">
-            <div className="text-xs font-bold uppercase text-blue-500 mb-2">
-              {t.us.user_profile_ideal}
-            </div>
-            <p className="text-sm leading-relaxed opacity-90 font-serif">
-              {user_profile.ideal_complement}
-            </p>
-          </Card>
+    <LlmDoc>
+      {/* Header: name + archetype eyebrow + tagline quote + badges */}
+      <header className="mb-8">
+        <h3 className="text-3xl font-semibold tracking-[-0.015em] text-paper-900 dark:text-star-50">
+          {title}
+        </h3>
+        <p className="mt-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-accent">
+          {user_profile?.archetype || t.us.user_profile_archetype}
+        </p>
+        {user_profile?.tagline && (
+          <LlmQuote className="mt-4">{user_profile.tagline}</LlmQuote>
         )}
-      </Section>
-    </div>
+        {(vibe_check?.elements_badge || vibe_check?.modalities_badge) && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {vibe_check?.elements_badge && (
+              <Badge>{vibe_check.elements_badge}</Badge>
+            )}
+            {vibe_check?.modalities_badge && (
+              <Badge>{vibe_check.modalities_badge}</Badge>
+            )}
+          </div>
+        )}
+      </header>
+
+      <LlmSection
+        first
+        title={t.us.vibe_check_title}
+        eyebrow={t.us.vibe_energy_profile}
+      >
+        <LlmProse text={vibe_check?.energy_profile} />
+      </LlmSection>
+
+      <LlmSection title={t.us.inner_architecture_title}>
+        <div className="space-y-5">
+          <LlmField label={t.us.inner_sun} text={inner_architecture?.sun} />
+          <LlmField label={t.us.inner_moon} text={inner_architecture?.moon} />
+          <LlmField
+            label={t.us.inner_rising}
+            text={inner_architecture?.rising}
+          />
+          <LlmField
+            label={t.us.inner_attachment}
+            text={inner_architecture?.attachment_style}
+          />
+          {inner_architecture?.summary && (
+            <LlmQuote>{inner_architecture.summary}</LlmQuote>
+          )}
+        </div>
+      </LlmSection>
+
+      <LlmSection title={t.us.love_toolkit_title}>
+        <div className="space-y-5">
+          <LlmField label={t.us.love_venus} text={love_toolkit?.venus} />
+          <LlmField label={t.us.love_mars} text={love_toolkit?.mars} />
+          <LlmField label={t.us.love_mercury} text={love_toolkit?.mercury} />
+          <LlmField
+            label={t.us.love_language}
+            text={love_toolkit?.love_language_primary}
+          />
+        </div>
+      </LlmSection>
+
+      <LlmSection title={t.us.deep_script_title}>
+        <div className="space-y-5">
+          <LlmField
+            label={t.us.deep_seventh_house}
+            text={deep_script?.seventh_house}
+          />
+          <LlmField label={t.us.deep_saturn} text={deep_script?.saturn} />
+          <LlmField label={t.us.deep_chiron} text={deep_script?.chiron} />
+          <LlmField
+            label={t.us.deep_shadow}
+            text={deep_script?.shadow_pattern}
+          />
+        </div>
+      </LlmSection>
+
+      <LlmSection title={t.us.user_profile_title}>
+        <div className="space-y-6">
+          {(user_profile?.strengths?.length ?? 0) > 0 && (
+            <div>
+              <p className="mb-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+                {t.us.user_profile_strengths}
+              </p>
+              <LlmList items={user_profile!.strengths} />
+            </div>
+          )}
+          {(user_profile?.growth_edges?.length ?? 0) > 0 && (
+            <div>
+              <p className="mb-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+                {t.us.user_profile_growth}
+              </p>
+              <LlmList items={user_profile!.growth_edges} />
+            </div>
+          )}
+          <LlmField
+            label={t.us.user_profile_ideal}
+            text={user_profile?.ideal_complement}
+          />
+        </div>
+      </LlmSection>
+    </LlmDoc>
   );
 };

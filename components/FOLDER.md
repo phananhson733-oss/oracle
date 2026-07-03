@@ -124,3 +124,4 @@
 - 宫主星飞入宫位展示补充星座信息。
 - 新增心理占星百科 Wiki 页面与详情组件。
 - 编辑部换装：UIComponents ThemeProvider 默认 light + 键 astro_theme_v2 + meta theme-color 联动；getStyles 卡片/分隔/输入改发丝线（去 shadow-card/backdrop-blur）；ActionButton primary 改实心墨（bg-star-50/text-space-950 双模式自反转 + mono 大写）；Container 移除暗色 glow 光斑。星盘（AstroChart 等）内部样式豁免未动。
+- 新增 llm/ 子目录：LLM 解读内容统一文档式排版原语（LlmDoc/LlmSection/LlmProse/LlmList/LlmQuote/LlmCallout/LlmKV）；DetailModal 已迁移为文档流（删除 cardStyles 五色卡/图标砖/LAYER 徽章/私有 markdown 解析器）。

@@ -33,3 +33,4 @@
 ## 近期变更
 
 - 初始拆分：从 `pages/SynastryPage.tsx`（5244 行）抽出本目录全部文件，主文件收敛至 <800 行。5 个懒加载 TechSpecs 表保持独立 chunk。行为零变化（backlog #19）。
+- 2026-07-03 LLM 排版统一：6 个解读组件（OverviewTab/GrowthTaskBody/WeatherForecastBody/NatalScriptCard/PerspectiveCard/CompositeTab + EntityPlanetCard）全部迁移到 components/llm 文档式排版；去除卡中卡/彩虹眉标/圆点假列表；雷达/冲突循环图/微信气泡等数据可视化保留并换纸墨 token。

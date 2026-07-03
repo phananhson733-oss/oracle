@@ -40,6 +40,14 @@ import {
   splitLabelParts,
   formatSignHouse,
 } from "../components/shared/astro-glyphs";
+import {
+  LlmDoc,
+  LlmSection,
+  LlmProse,
+  LlmList,
+  LlmQuote,
+  LlmCallout,
+} from "../components/llm/LlmDoc";
 
 // Lazy-loaded tech spec sub-components
 const ElementalTable = lazy(() =>
@@ -209,7 +217,6 @@ const DimensionContent: React.FC<{
   profile: T.UserProfile;
 }> = ({ dim, label, profile }) => {
   const { language, t } = useLanguage();
-  const { theme } = useTheme();
   const [data, setData] = useState<T.DimensionReportContent | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -245,72 +252,41 @@ const DimensionContent: React.FC<{
     );
   if (!data) return <div className="p-4 text-danger">{t.app.error}</div>;
 
+  // 文档式排版：引导问 = LlmQuote（不居中）；四段解读 = 发丝线分节 + 统一单色眉标；
+  // what_helps 数组 = 无框清单；practice path = 唯一点睛容器（LlmCallout）内 ordered 清单。
   return (
-    <div className="space-y-5">
-      {/* Intro quote at top */}
-      <div className="text-center pb-2">
-        <div className="italic text-gold-600 dark:text-gold-500 text-sm leading-relaxed">
-          "{data?.prompt_question}"
-        </div>
-      </div>
-
-      {/* Main pattern narrative */}
-      <div>
-        <div className="text-sm text-blue-600 dark:text-blue-500 uppercase font-semibold mb-2 tracking-widest">
-          {t.me.pattern}
-        </div>
-        <p className="text-sm leading-relaxed">{data?.pattern}</p>
-      </div>
-
-      {/* Root cause */}
-      <div>
-        <div className="text-sm text-purple-600 dark:text-purple-400 uppercase font-semibold mb-2 tracking-widest">
-          {t.me.root}
-        </div>
-        <p className="text-sm leading-relaxed opacity-90">{data?.root}</p>
-      </div>
-
-      {/* Trigger & Support in simplified layout */}
-      <div className="space-y-4">
-        <div>
-          <div className="text-sm text-orange-600 dark:text-orange-500 uppercase font-semibold mb-2 tracking-widest">
-            {t.me.when_triggered}
-          </div>
-          <p className="text-sm leading-relaxed opacity-90">
-            {data?.when_triggered}
-          </p>
-        </div>
-        <div>
-          <div className="text-sm text-green-600 dark:text-green-500 uppercase font-semibold mb-2 tracking-widest">
-            {t.me.what_helps}
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {(data?.what_helps || []).map((h, i) => (
-              <span
-                key={i}
-                className="text-sm px-3 py-1.5 rounded border border-green-500/30 bg-green-500/5"
-              >
-                {h}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Practice path */}
-      <div className="pl-4 border-l border-purple-500/50">
-        <div className="text-sm font-semibold uppercase mb-3 tracking-widest text-purple-600 dark:text-purple-500">
-          {t.me.practice_path}
-        </div>
-        <ol className="list-decimal pl-4 text-sm space-y-2 opacity-90">
-          {(data?.practice?.steps || []).map((s, i) => (
-            <li key={i} className="leading-relaxed">
-              {s}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </div>
+    <LlmDoc>
+      {data?.prompt_question && (
+        <LlmQuote className="mb-6">{data.prompt_question}</LlmQuote>
+      )}
+      {data?.pattern && (
+        <LlmSection first eyebrow={t.me.pattern}>
+          <LlmProse text={data.pattern} />
+        </LlmSection>
+      )}
+      {data?.root && (
+        <LlmSection eyebrow={t.me.root}>
+          <LlmProse text={data.root} />
+        </LlmSection>
+      )}
+      {data?.when_triggered && (
+        <LlmSection eyebrow={t.me.when_triggered}>
+          <LlmProse text={data.when_triggered} />
+        </LlmSection>
+      )}
+      {(data?.what_helps?.length ?? 0) > 0 && (
+        <LlmSection eyebrow={t.me.what_helps}>
+          <LlmList items={data!.what_helps} />
+        </LlmSection>
+      )}
+      {(data?.practice?.steps?.length ?? 0) > 0 && (
+        <LlmSection eyebrow={t.me.practice_path}>
+          <LlmCallout>
+            <LlmList items={data!.practice!.steps} ordered />
+          </LlmCallout>
+        </LlmSection>
+      )}
+    </LlmDoc>
   );
 };
 
@@ -358,79 +334,30 @@ const CoreThemesContent: React.FC<{ profile: T.UserProfile }> = ({
       </div>
     );
 
+  // 三大主题（驱力/恐惧/成长）文档式：发丝线分节 + 统一单色眉标 + 衬线标题；
+  // 三色卡片与圆环图标砖去除，语义区分靠标题而非装饰色。
   const coreThemeCards = [
-    {
-      key: "drive",
-      label: t.me.drive_card,
-      tone: {
-        accent: "text-gold-600 dark:text-gold-500",
-        border: "border-gold-500/30",
-        accentBorder: "border-l-gold-500/40",
-        dot: "bg-gold-500",
-      },
-      data: themes.drive,
-    },
-    {
-      key: "fear",
-      label: t.me.fear_card,
-      tone: {
-        accent: "text-red-700 dark:text-danger",
-        border: "border-danger/30",
-        accentBorder: "border-l-danger/40",
-        dot: "bg-danger",
-      },
-      data: themes.fear,
-    },
-    {
-      key: "growth",
-      label: t.me.growth_card,
-      tone: {
-        accent: "text-green-700 dark:text-success",
-        border: "border-success/30",
-        accentBorder: "border-l-success/40",
-        dot: "bg-success",
-      },
-      data: themes.growth,
-    },
+    { key: "drive", label: t.me.drive_card, data: themes.drive },
+    { key: "fear", label: t.me.fear_card, data: themes.fear },
+    { key: "growth", label: t.me.growth_card, data: themes.growth },
   ];
 
   return (
-    <div className="space-y-6">
-      {coreThemeCards.map((card) => (
-        <Card key={card.key} className={`${card.tone.accentBorder}`}>
-          <div className="flex items-start gap-3 mb-4">
-            <div
-              className={`w-9 h-9 rounded-full border ${card.tone.border} flex items-center justify-center shrink-0`}
-            >
-              <span
-                className={`w-2 h-2 rounded-full ${card.tone.dot} shrink-0`}
-              />
-            </div>
-            <div>
-              <div
-                className={`text-xs font-bold uppercase tracking-widest mb-1 ${card.tone.accent}`}
-              >
-                {card.label}
-              </div>
-              <h3 className="text-lg font-serif">{card.data.title}</h3>
-            </div>
-          </div>
-          <p className="text-sm leading-relaxed opacity-90">
-            {card.data.summary || ""}
-          </p>
-          <ul className="mt-4 space-y-2 text-sm opacity-90">
-            {(card.data.key_points || []).map((point, index) => (
-              <li key={index} className="flex gap-2">
-                <span
-                  className={`mt-1.5 w-1.5 h-1.5 rounded-full ${card.tone.dot} shrink-0`}
-                />
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-        </Card>
+    <LlmDoc>
+      {coreThemeCards.map((card, idx) => (
+        <LlmSection
+          key={card.key}
+          first={idx === 0}
+          eyebrow={card.label}
+          title={card.data.title}
+        >
+          {card.data.summary && <LlmProse text={card.data.summary} />}
+          {(card.data.key_points?.length ?? 0) > 0 && (
+            <LlmList items={card.data.key_points} className="mt-3" />
+          )}
+        </LlmSection>
       ))}
-    </div>
+    </LlmDoc>
   );
 };
 

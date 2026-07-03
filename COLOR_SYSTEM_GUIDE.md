@@ -109,6 +109,19 @@
 - 图表**周边**的页面 chrome（卡片、表格行、按钮）正常走本规范；图表结构线经 `--space/--star` 变量随主题获得暖色 tint 属预期。
 - 后续如需图表编辑部化（铜版画式墨线轮盘、相位改虚实编码），须单独提案并重新拍板。
 
+### LLM 内容排版（文档式 · 2026-07-03 拍板）
+
+所有 LLM 解读内容（弹窗详情/手风琴展开/报告正文/问答回答）统一为 **artifact 文档式排版**，
+原语在 `components/llm/LlmDoc.tsx`，文本规整在 `services/llmText.ts`（全站唯一 LLM 字符串 → DOM 规整层）：
+
+- **单列文档流**：唯一允许的外层容器是 modal/accordion 面板本身；内部一律文档流，**禁止卡片套卡片**。
+- **节头**：`LlmSection`（发丝线分节 + 单色 mono 眉标 + 衬线标题）；眉标**不随节轮换颜色**，节头禁止 icon 方框与装饰徽章。
+- **正文**：`LlmProse`（max-w-[68ch] · 15px · leading-1.7）；段落保持段落，禁止按句切碎成假 bullet。
+- **清单**：`LlmList`（bullet 陈金点 / ordered mono 序号 / rows 发丝线行），**禁止逐项装框**。
+- **引言/点睛**：`LlmQuote`（左线衬线斜体）；`LlmCallout` 是唯一允许的一层内嵌容器。
+- **LLM 结构不泄漏**：`LAYER N`、`Key:/Mechanism:/Action:` 等 prompt 结构由 llmText 剥除，禁止直出。
+- **禁止**：`whitespace-pre-line` 直出、`dangerouslySetInnerHTML` 注入 LLM 文本、文件内私有解析正则（一律走 llmText）。
+
 ### 视觉层次
 
 ```tsx

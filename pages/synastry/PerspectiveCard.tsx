@@ -1,411 +1,226 @@
-// INPUT: props（data/perspective/selfName/otherName）；shared UI（Card/Section/Chip/CopyButton/useTheme/useLanguage）+ DETAIL_LABEL_CLASS + T.PerspectiveData。
-// OUTPUT: PerspectiveCard —— 单向视角（A→B / B→A）合盘解读卡片，含 legacy v3 与 v4「Chemistry Lab」两套布局，内嵌 IntensityBadge/DynamicCard/LandscapeZoneCard。
+// INPUT: props（data/perspective/selfName/otherName）；shared UI（Chip/CopyButton/useLanguage）+ llm 排版原语 + T.PerspectiveData。
+// OUTPUT: PerspectiveCard —— 单向视角（A→B / B→A）合盘解读，含 legacy v3 与 v4「Chemistry Lab」两套布局，文档式排版。
 // POS: SynastryPage syn_ab / syn_ba tab 的主体展示组件。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
 import React from "react";
-import {
-  Card,
-  Section,
-  Chip,
-  CopyButton,
-  useTheme,
-  useLanguage,
-} from "../../components/UIComponents";
-import { DETAIL_LABEL_CLASS } from "../../components/shared/astro-glyphs";
+import { Chip, CopyButton, useLanguage } from "../../components/UIComponents";
 import * as T from "../../types";
+import {
+  LlmDoc,
+  LlmSection,
+  LlmProse,
+  LlmQuote,
+  LlmField,
+} from "../../components/llm/LlmDoc";
 
 export const PerspectiveCard: React.FC<{
   data: T.PerspectiveData;
   perspective: "a_view" | "b_view";
   selfName: string;
   otherName: string;
-}> = ({ data, perspective, selfName, otherName }) => {
+}> = ({ data, selfName, otherName }) => {
   const { t } = useLanguage();
-  const { theme } = useTheme();
 
-  // Check if using new v4 structure or legacy
   const isV4 = Boolean(data.vibe_alchemy);
 
-  // Intensity badge component with Flow/Friction/Fusion styling
+  // 强度状态标记（flow/friction/fusion）是真实语义状态，保留为小标签，配语义 token。
   const IntensityBadge: React.FC<{ intensity: T.IntensityLevel }> = ({
     intensity,
   }) => {
-    const config = {
-      flow: {
-        color: "text-success",
-        bg: "bg-success/15",
-        border: "border-success/40",
-        label: t.us.intensity_flow,
-        icon: "◎",
-      },
-      friction: {
-        color: "text-danger",
-        bg: "bg-danger/15",
-        border: "border-danger/40",
-        label: t.us.intensity_friction,
-        icon: "⚡",
-      },
-      fusion: {
-        color: "text-gold-500",
-        bg: "bg-gold-500/15",
-        border: "border-gold-500/40",
-        label: t.us.intensity_fusion,
-        icon: "✦",
-      },
-    }[intensity] || {
-      color: "text-star-200",
-      bg: "bg-star-200/15",
-      border: "border-star-200/40",
-      label: intensity,
-      icon: "○",
-    };
+    const config =
+      {
+        flow: { color: "text-success border-success/40", label: t.us.intensity_flow },
+        friction: { color: "text-danger border-danger/40", label: t.us.intensity_friction },
+        fusion: { color: "text-accent border-accent/40", label: t.us.intensity_fusion },
+      }[intensity] || {
+        color: "text-paper-500 border-paper-900/20 dark:text-star-400 dark:border-star-50/20",
+        label: intensity,
+      };
     return (
       <span
-        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${config.bg} ${config.border} ${config.color}`}
+        className={`inline-flex items-center rounded-full border px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase tracking-[0.1em] ${config.color}`}
       >
-        <span>{config.icon}</span>
         {config.label}
       </span>
     );
   };
 
-  // Dynamic card with intensity meter
-  const DynamicCard: React.FC<{
-    item: T.DynamicItem;
-    title: string;
-    subtitle: string;
-    icon: string;
-    borderColor: string;
-  }> = ({ item, title, subtitle, icon, borderColor }) => (
-    <Card className={`border-l ${borderColor} relative overflow-hidden`}>
-      <div className="flex items-start justify-between gap-4 mb-4">
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">{icon}</span>
-          <div>
-            <div className="font-semibold">{title}</div>
-            <div className="text-xs uppercase tracking-widest opacity-70">
-              {subtitle}
-            </div>
-          </div>
-        </div>
-        <IntensityBadge intensity={item.intensity} />
-      </div>
-      <div className="space-y-4">
-        <div>
-          <div className="font-medium text-sm mb-1">{item.headline}</div>
-          <p className="text-sm leading-relaxed opacity-85">
-            {item.description}
-          </p>
-        </div>
-        {item.talk_script && (
-          <div
-            className={`p-3 rounded-xl ${theme === "dark" ? "bg-space-900/60" : "bg-paper-100/80"}`}
-          >
-            <div className="text-xs uppercase tracking-widest text-gold-500 mb-2 font-bold">
-              {t.us.dynamics_talk_to}
-            </div>
-            <p className="text-sm font-serif italic opacity-90">
-              "{item.talk_script}"
-            </p>
-          </div>
-        )}
-      </div>
-    </Card>
-  );
-
-  // Landscape zone card
-  const LandscapeZoneCard: React.FC<{
-    zone: T.LandscapeZone;
-    title: string;
-    houseLabel: string;
-    borderClass: string;
-    iconClass: string;
-    icon: string;
-  }> = ({ zone, title, houseLabel, borderClass, iconClass, icon }) => (
-    <Card className={`${borderClass} relative overflow-hidden`}>
-      <div className="flex items-center gap-3 mb-3">
-        <div
-          className={`w-10 h-10 rounded-full border border-current/25 flex items-center justify-center text-xl ${iconClass}`}
-        >
-          {icon}
-        </div>
-        <div>
-          <div className="font-semibold">{title}</div>
-          <div className="text-xs uppercase tracking-widest opacity-70">
-            {houseLabel}
-          </div>
-        </div>
-      </div>
-      <div className="space-y-2 text-sm">
-        <div className="text-xs uppercase tracking-widest opacity-70">
-          {zone.houses}
-        </div>
-        <div>
-          <span className={`${DETAIL_LABEL_CLASS} block mb-1`}>
-            {t.us.landscape_feeling}
-          </span>
-          <p className="opacity-90">{zone.feeling}</p>
-        </div>
-        <div>
-          <span className={`${DETAIL_LABEL_CLASS} block mb-1`}>
-            {t.us.landscape_meaning}
-          </span>
-          <p className="opacity-85">{zone.meaning}</p>
-        </div>
-      </div>
-    </Card>
-  );
-
   // ============ LEGACY V3 LAYOUT ============
   if (!isV4 && data.sensitivity_panel) {
+    // 微信式对话循环图：刻意的对话隐喻可视化（类比 K 线图表），保留气泡结构，配纸墨 token。
     const bubbleBase =
-      "max-w-[82%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm";
+      "max-w-[82%] rounded-2xl px-4 py-3 text-[0.9375rem] leading-[1.6]";
     const bubbleNeutral =
-      theme === "dark"
-        ? "bg-[#F6F0E6] text-space-900"
-        : "bg-[#FAF6EF] text-paper-900";
-    const bubbleGreen =
-      theme === "dark"
-        ? "bg-[#7BD870] text-paper-900"
-        : "bg-[#95EC69] text-paper-900";
-    const bubbleBorder =
-      theme === "dark" ? "border-gold-500/15" : "border-paper-300";
+      "bg-paper-200/70 text-paper-900 dark:bg-space-800/70 dark:text-star-100";
+    const bubbleSelf = "bg-accent/15 text-paper-900 dark:text-star-50";
+    const bubbleMetaClass =
+      "mb-1 font-mono text-[11px] uppercase tracking-[0.1em] text-paper-500 dark:text-star-400";
 
-    const SensCard = ({
-      icon,
+    const SensBlock: React.FC<{ label: string; p: T.SensitivityPoint }> = ({
       label,
       p,
-    }: {
-      icon: string;
-      label: string;
-      p: T.SensitivityPoint;
     }) => (
-      <Card className="border-l border-l-gold-500/40">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-2xl">{icon}</span>
-          <div className="text-sm font-bold uppercase tracking-wider text-gold-500">
-            {label}
-          </div>
-        </div>
+      <div>
+        <h4 className="mb-2 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+          {label}
+        </h4>
         <div className="space-y-3">
-          <div>
-            <span className={`${DETAIL_LABEL_CLASS} block mb-1`}>
-              {t.us.perspective_reaction}
-            </span>
-            <p className="text-sm leading-relaxed">{p.mode}</p>
-          </div>
-          <div
-            className={`p-3 rounded-lg ${theme === "dark" ? "bg-danger/10" : "bg-danger/5"}`}
-          >
-            <span className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}>
-              {t.us.perspective_deep_fear}
-            </span>
-            <p className="text-sm leading-relaxed">{p.fear}</p>
-          </div>
-          <div
-            className={`p-3 rounded-lg ${theme === "dark" ? "bg-success/10" : "bg-success/5"}`}
-          >
-            <span className={`${DETAIL_LABEL_CLASS} text-success block mb-1`}>
-              {t.us.perspective_hidden_need}
-            </span>
-            <p className="text-sm leading-relaxed">{p.need}</p>
-          </div>
+          <LlmField label={t.us.perspective_reaction} text={p.mode} />
+          <LlmField label={t.us.perspective_deep_fear} text={p.fear} />
+          <LlmField label={t.us.perspective_hidden_need} text={p.need} />
         </div>
-      </Card>
+      </div>
     );
 
     return (
-      <div className="space-y-8">
-        <Section title={t.us.keywords} className="mb-8">
-          <Card className="border-l border-l-gold-500/40">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {(data.keywords || []).map((k, i) => (
+      <LlmDoc>
+        <LlmSection first title={t.us.keywords}>
+          {(data.keywords?.length ?? 0) > 0 && (
+            <div className="mb-4 flex flex-wrap gap-2">
+              {data.keywords!.map((k, i) => (
                 <Chip key={i} label={k} />
               ))}
             </div>
-            <p className="text-sm leading-relaxed opacity-90">{data.summary}</p>
-          </Card>
-        </Section>
+          )}
+          <LlmProse text={data.summary} />
+        </LlmSection>
 
-        <Section title={t.us.perspective_sensitivity} className="mb-8">
-          <div className="space-y-4">
-            <SensCard
-              icon="🌙"
-              label={t.us.perspective_moon}
-              p={data.sensitivity_panel.moon}
-            />
-            <SensCard
-              icon="♀"
-              label={t.us.perspective_venus}
-              p={data.sensitivity_panel.venus}
-            />
-            <SensCard
-              icon="♂"
-              label={t.us.perspective_mars}
-              p={data.sensitivity_panel.mars}
-            />
-            <SensCard
-              icon="☿"
-              label={t.us.perspective_mercury}
-              p={data.sensitivity_panel.mercury}
-            />
-            <SensCard
-              icon="🔮"
-              label={t.us.perspective_deep}
-              p={data.sensitivity_panel.deep}
-            />
+        <LlmSection title={t.us.perspective_sensitivity}>
+          <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
+            {[
+              [t.us.perspective_moon, data.sensitivity_panel.moon],
+              [t.us.perspective_venus, data.sensitivity_panel.venus],
+              [t.us.perspective_mars, data.sensitivity_panel.mars],
+              [t.us.perspective_mercury, data.sensitivity_panel.mercury],
+              [t.us.perspective_deep, data.sensitivity_panel.deep],
+            ].map(([label, p], i) =>
+              p ? (
+                <div key={i} className="py-4 first:pt-0 last:pb-0">
+                  <SensBlock
+                    label={label as string}
+                    p={p as T.SensitivityPoint}
+                  />
+                </div>
+              ) : null,
+            )}
           </div>
-        </Section>
+        </LlmSection>
 
-        <Section title={t.us.interaction_points} className="mb-8">
-          <div className="space-y-4">
-            {(data.main_items || []).map((item, i) => (
-              <Card key={i} className="border-l border-l-gold-500/40">
-                <div className="mb-4">
-                  <div
-                    className={`${DETAIL_LABEL_CLASS} flex flex-wrap gap-2 mb-2`}
-                  >
-                    <span className="border border-current px-2 py-0.5 rounded-full">
+        {(data.main_items?.length ?? 0) > 0 && (
+          <LlmSection title={t.us.interaction_points}>
+            <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
+              {data.main_items!.map((item, i) => (
+                <div key={i} className="space-y-3 py-5 first:pt-0 last:pb-0">
+                  <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-paper-500 dark:text-star-400">
+                    <span className="rounded-full border border-current px-2 py-0.5">
                       {item.evidence}
                     </span>
                     <span>{item.stage}</span>
                   </div>
-                  <h5 className="text-lg font-semibold">{item.subjective}</h5>
-                </div>
-                <div className="space-y-3 text-sm">
-                  <div
-                    className={`p-3 rounded-lg border-l border-l-danger/40 ${theme === "dark" ? "bg-danger/10" : "bg-danger/5"}`}
-                  >
-                    <span
-                      className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}
-                    >
-                      {t.us.perspective_reaction}
-                    </span>
-                    <p className="opacity-90">{item.reaction}</p>
-                  </div>
-                  <div
-                    className={`p-3 rounded-lg border-l border-l-accent/40 ${theme === "dark" ? "bg-accent/10" : "bg-accent/5"}`}
-                  >
-                    <span
-                      className={`${DETAIL_LABEL_CLASS} text-accent block mb-1`}
-                    >
-                      {t.us.perspective_hidden_need}
-                    </span>
-                    <p className="opacity-90">{item.need}</p>
-                  </div>
-                  <div
-                    className={`p-3 rounded-lg border-l border-l-gold-500/40 ${theme === "dark" ? "bg-space-900/40" : "bg-paper-100"}`}
-                  >
-                    <span
-                      className={`${DETAIL_LABEL_CLASS} text-gold-500 block mb-1`}
-                    >
-                      {t.us.perspective_advice}
-                    </span>
-                    <p className="opacity-90">{item.advice}</p>
-                    <div className="flex flex-wrap items-center justify-between gap-3 mt-2 text-xs opacity-70">
-                      <span>{item.script}</span>
+                  <h4 className="text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+                    {item.subjective}
+                  </h4>
+                  <LlmField label={t.us.perspective_reaction} text={item.reaction} />
+                  <LlmField label={t.us.perspective_hidden_need} text={item.need} />
+                  <LlmField label={t.us.perspective_advice} text={item.advice} />
+                  {item.script && (
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <p className="font-serif italic text-paper-600 dark:text-star-300">
+                        {item.script}
+                      </p>
                       <CopyButton
                         text={item.script}
                         label={t.us.copy_script}
                         contentType="synastry_script"
                       />
                     </div>
-                  </div>
+                  )}
                 </div>
-              </Card>
-            ))}
-          </div>
-        </Section>
+              ))}
+            </div>
+          </LlmSection>
+        )}
 
-        <Section title={t.us.house_overlays} className="mb-8">
-          <div className="space-y-4">
-            {(data.overlays || []).map((o, i) => (
-              <Card key={i} className="border-l border-l-accent/40">
-                <div className={`${DETAIL_LABEL_CLASS} text-accent mb-2`}>
-                  {o.title}
+        {(data.overlays?.length ?? 0) > 0 && (
+          <LlmSection title={t.us.house_overlays}>
+            <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
+              {data.overlays!.map((o, i) => (
+                <div key={i} className="py-4 first:pt-0 last:pb-0">
+                  <LlmField label={o.title} text={o.feeling} />
+                  <LlmField
+                    label={t.us.perspective_note}
+                    text={o.advice}
+                    className="mt-3"
+                  />
                 </div>
-                <p className="text-sm mb-3 opacity-90">{o.feeling}</p>
-                <div className="text-sm opacity-70">
-                  <span className={`${DETAIL_LABEL_CLASS} mr-2`}>
-                    {t.us.perspective_note}
-                  </span>
-                  {o.advice}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Section>
+              ))}
+            </div>
+          </LlmSection>
+        )}
 
         {data.closing && (
-          <Section title={t.us.conclusion}>
+          <LlmSection title={t.us.conclusion}>
             <div className="space-y-8">
               <div>
-                <h4 className={`${DETAIL_LABEL_CLASS} text-success mb-4`}>
+                <p className="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
                   {t.us.nourish_points}
-                </h4>
-                <div className="grid md:grid-cols-2 gap-4">
+                </p>
+                <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
                   {data.closing.nourishing.map((n, i) => (
-                    <Card key={i} className="border-l border-l-success/40">
-                      <div className="text-sm font-semibold mb-1">
+                    <div key={i} className="py-4 first:pt-0 last:pb-0">
+                      <h4 className="mb-1 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
                         {n.mechanism}
-                      </div>
-                      <div className="text-sm opacity-80 mb-2">
-                        {n.experience}
-                      </div>
-                      <div className="text-sm opacity-70">
-                        <span className={`${DETAIL_LABEL_CLASS} mr-2`}>
-                          {t.us.perspective_try}
-                        </span>
-                        {n.usage}
-                      </div>
-                    </Card>
+                      </h4>
+                      <LlmProse text={n.experience} />
+                      <LlmField
+                        label={t.us.perspective_try}
+                        text={n.usage}
+                        className="mt-2"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
               <div>
-                <h4 className={`${DETAIL_LABEL_CLASS} text-danger mb-4`}>
+                <p className="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
                   {t.us.trigger_points}
-                </h4>
-                <div className="grid md:grid-cols-2 gap-4">
+                </p>
+                <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
                   {data.closing.triggers.map((tr, i) => (
-                    <Card key={i} className="border-l border-l-danger/40">
-                      <div className="text-sm font-semibold mb-1">
+                    <div key={i} className="py-4 first:pt-0 last:pb-0">
+                      <h4 className="mb-1 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
                         {tr.trigger}
-                      </div>
-                      <div className="text-sm opacity-80 mb-2">
-                        "{tr.scene}" → {tr.reaction}
-                      </div>
-                      <div className="text-sm opacity-70">
-                        <span className={`${DETAIL_LABEL_CLASS} mr-2`}>
-                          {t.us.perspective_fix}
-                        </span>
-                        {tr.mitigation}
-                      </div>
-                    </Card>
+                      </h4>
+                      <p className="text-[0.9375rem] leading-[1.7] text-paper-800 dark:text-star-100">
+                        {tr.scene} &rarr; {tr.reaction}
+                      </p>
+                      <LlmField
+                        label={t.us.perspective_fix}
+                        text={tr.mitigation}
+                        className="mt-2"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
 
-              <div
-                className={`rounded-2xl border ${bubbleBorder} p-6 ${theme === "dark" ? "bg-space-900/40" : "bg-paper-100/85"}`}
-              >
-                <div
-                  className={`${DETAIL_LABEL_CLASS} text-gold-500 mb-4 text-center`}
-                >
+              {/* 对话循环图（保留气泡隐喻） */}
+              <div>
+                <p className="mb-4 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
                   {t.us.cycle_diagram}
-                </div>
+                </p>
                 <div className="space-y-3">
                   <div className="flex justify-start">
                     <div className={`${bubbleBase} ${bubbleNeutral}`}>
-                      <div className="text-xs uppercase tracking-widest opacity-70 mb-1">
+                      <div className={bubbleMetaClass}>
                         {otherName} · {t.us.perspective_trigger}
                       </div>
                       {data.closing.cycle.trigger}
                     </div>
                   </div>
                   <div className="flex justify-end">
-                    <div className={`${bubbleBase} ${bubbleGreen}`}>
-                      <div className="text-xs uppercase tracking-widest opacity-70 mb-1">
+                    <div className={`${bubbleBase} ${bubbleSelf}`}>
+                      <div className={bubbleMetaClass}>
                         {selfName} · {t.us.perspective_reaction}
                       </div>
                       {data.closing.cycle.reaction_self}
@@ -413,37 +228,35 @@ export const PerspectiveCard: React.FC<{
                   </div>
                   <div className="flex justify-start">
                     <div className={`${bubbleBase} ${bubbleNeutral}`}>
-                      <div className="text-xs uppercase tracking-widest opacity-70 mb-1">
+                      <div className={bubbleMetaClass}>
                         {otherName} · {t.us.perspective_reaction}
                       </div>
                       {data.closing.cycle.reaction_partner}
                     </div>
                   </div>
                   <div className="flex justify-end">
-                    <div className={`${bubbleBase} ${bubbleGreen}`}>
-                      <div className="text-xs uppercase tracking-widest opacity-70 mb-1">
+                    <div className={`${bubbleBase} ${bubbleSelf}`}>
+                      <div className={bubbleMetaClass}>
                         {selfName} · {t.us.perspective_escalation}
                       </div>
                       {data.closing.cycle.escalation}
                     </div>
                   </div>
                 </div>
-                <div
-                  className={`mt-6 pt-4 border-t border-dashed ${theme === "dark" ? "border-gold-500/15" : "border-paper-300"}`}
-                >
-                  <div className="text-center mb-4">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-success/20 text-success uppercase tracking-widest">
-                      {t.us.perspective_repair_window}:{" "}
-                      {data.closing.cycle.repair_window}
-                    </span>
-                  </div>
-                  <div className="space-y-3">
+                <div className="mt-6 border-t border-dashed border-paper-900/15 pt-4 dark:border-star-50/15">
+                  <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.1em] text-success">
+                    {t.us.perspective_repair_window}:{" "}
+                    {data.closing.cycle.repair_window}
+                  </p>
+                  <div className="space-y-2">
                     {data.closing.cycle.scripts.map((s, i) => (
                       <div
                         key={i}
-                        className={`flex flex-wrap items-center justify-between gap-3 border-l border-l-success/40 px-4 py-3 rounded-lg ${theme === "dark" ? "bg-space-900/50" : "bg-paper-100"}`}
+                        className="flex flex-wrap items-center justify-between gap-3"
                       >
-                        <p className="text-sm opacity-90">"{s}"</p>
+                        <p className="font-serif italic text-paper-600 dark:text-star-300">
+                          {s}
+                        </p>
                         <CopyButton text={s} contentType="cycle_script" />
                       </div>
                     ))}
@@ -451,9 +264,9 @@ export const PerspectiveCard: React.FC<{
                 </div>
               </div>
             </div>
-          </Section>
+          </LlmSection>
         )}
-      </div>
+      </LlmDoc>
     );
   }
 
@@ -461,246 +274,188 @@ export const PerspectiveCard: React.FC<{
   const { vibe_alchemy, landscape, dynamics, deep_dive, relationship_avatar } =
     data;
 
+  const DynamicBlock: React.FC<{
+    item: T.DynamicItem;
+    title: string;
+    subtitle: string;
+  }> = ({ item, title, subtitle }) => (
+    <div className="py-5 first:pt-0 last:pb-0">
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h4 className="text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+            {title}
+          </h4>
+          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-paper-500 dark:text-star-400">
+            {subtitle}
+          </p>
+        </div>
+        <IntensityBadge intensity={item.intensity} />
+      </div>
+      {item.headline && (
+        <p className="mb-1 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+          {item.headline}
+        </p>
+      )}
+      <LlmProse text={item.description} />
+      {item.talk_script && (
+        <LlmQuote className="mt-3">{item.talk_script}</LlmQuote>
+      )}
+    </div>
+  );
+
+  const ZoneBlock: React.FC<{ zone: T.LandscapeZone; title: string }> = ({
+    zone,
+    title,
+  }) => (
+    <div className="py-4 first:pt-0 last:pb-0">
+      <h4 className="text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+        {title}
+      </h4>
+      {zone.houses && (
+        <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.1em] text-paper-500 dark:text-star-400">
+          {zone.houses}
+        </p>
+      )}
+      <LlmField label={t.us.landscape_feeling} text={zone.feeling} />
+      <LlmField
+        label={t.us.landscape_meaning}
+        text={zone.meaning}
+        className="mt-3"
+      />
+    </div>
+  );
+
   return (
-    <div className="space-y-10">
-      {/* Hero: Relationship Avatar Card */}
-      <Card className="relative overflow-hidden border-l border-l-blue-500/40">
-        <div className="relative z-10">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-            <div className="flex-1">
-              <div className="text-sm font-semibold uppercase tracking-widest opacity-70 mb-2">
-                {selfName} × {otherName}
-              </div>
-              <div
-                className={`p-4 rounded-xl border-l border-l-blue-500/40 ${theme === "dark" ? "bg-space-900/50" : "bg-paper-100/80"}`}
-              >
-                <div className="text-xs uppercase tracking-widest opacity-70 mb-2">
-                  {t.us.avatar_title}
-                </div>
-                <div className="font-serif text-2xl text-blue-500">
-                  {relationship_avatar?.title || t.us.avatar_title}
-                </div>
-              </div>
-            </div>
-            <div className="flex-1">
-              <div className="text-xs uppercase tracking-widest opacity-70 mb-2">
-                {t.us.avatar_subtitle}
-              </div>
-              {relationship_avatar?.summary && (
-                <p
-                  className={`text-sm leading-relaxed ${theme === "dark" ? "text-star-200/90" : "text-paper-700"}`}
-                >
-                  {relationship_avatar.summary}
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      </Card>
+    <LlmDoc>
+      <header className="mb-8">
+        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+          {selfName} × {otherName}
+        </p>
+        <h3 className="mt-2 text-2xl font-medium tracking-[-0.015em] text-paper-900 dark:text-star-50">
+          {relationship_avatar?.title || t.us.avatar_title}
+        </h3>
+        {relationship_avatar?.summary && (
+          <p className="mt-3 max-w-[62ch] text-[1.0625rem] leading-[1.65] text-paper-600 dark:text-star-300">
+            {relationship_avatar.summary}
+          </p>
+        )}
+      </header>
 
-      {/* Section 1: The Vibe & Alchemy */}
-      <Section title={t.us.vibe_alchemy_title} className="mb-8">
-        <div className="space-y-4">
-          {/* Elemental Mix Hero */}
-          <Card className="border-l border-l-green-500/40">
-            <div className="flex items-center gap-4 mb-4">
-              <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl ${theme === "dark" ? "bg-green-500/20" : "bg-green-500/10"}`}
-              >
-                🔥
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-widest opacity-70 mb-1">
-                  {t.us.vibe_elemental_mix}
-                </div>
-                <div className="font-serif text-2xl font-medium">
-                  {vibe_alchemy?.elemental_mix}
-                </div>
-              </div>
+      <LlmSection first title={t.us.vibe_alchemy_title}>
+        <div className="space-y-5">
+          {vibe_alchemy?.elemental_mix && (
+            <div>
+              <p className="mb-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+                {t.us.vibe_elemental_mix}
+              </p>
+              <p className="mb-2 text-lg font-medium text-paper-900 dark:text-star-50">
+                {vibe_alchemy.elemental_mix}
+              </p>
+              <LlmProse text={vibe_alchemy.elemental_desc} />
             </div>
-            <p className="text-sm leading-relaxed opacity-90">
-              {vibe_alchemy?.elemental_desc}
-            </p>
-          </Card>
-          {/* Core Theme */}
-          <Card className="border-l border-l-blue-500/40">
-            <div className={`${DETAIL_LABEL_CLASS} text-blue-500 mb-2`}>
-              {t.us.vibe_core_theme}
-            </div>
-            <p className="text-sm leading-relaxed opacity-90">
-              {vibe_alchemy?.core_theme}
-            </p>
-          </Card>
+          )}
+          <LlmField label={t.us.vibe_core_theme} text={vibe_alchemy?.core_theme} />
         </div>
-      </Section>
+      </LlmSection>
 
-      {/* Section 2: The Landscape (House Overlays) */}
       {landscape &&
         (landscape.comfort_zone ||
           landscape.romance_zone ||
           landscape.growth_zone) && (
-          <Section title={t.us.landscape_title} className="mb-8">
-            <div className="grid md:grid-cols-3 gap-4">
+          <LlmSection title={t.us.landscape_title}>
+            <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
               {landscape.comfort_zone && (
-                <LandscapeZoneCard
+                <ZoneBlock
                   zone={landscape.comfort_zone}
                   title={t.us.landscape_comfort}
-                  houseLabel={t.us.landscape_comfort_houses}
-                  borderClass="border-l border-l-gold-500/40"
-                  iconClass={
-                    theme === "dark"
-                      ? "bg-gold-500/20 text-gold-500"
-                      : "bg-gold-500/15 text-gold-500"
-                  }
-                  icon="🏠"
                 />
               )}
               {landscape.romance_zone && (
-                <LandscapeZoneCard
+                <ZoneBlock
                   zone={landscape.romance_zone}
                   title={t.us.landscape_romance}
-                  houseLabel={t.us.landscape_romance_houses}
-                  borderClass="border-l border-l-pink-500/40"
-                  iconClass={
-                    theme === "dark"
-                      ? "bg-pink-500/20 text-pink-500"
-                      : "bg-pink-500/15 text-pink-500"
-                  }
-                  icon="💕"
                 />
               )}
               {landscape.growth_zone && (
-                <LandscapeZoneCard
+                <ZoneBlock
                   zone={landscape.growth_zone}
                   title={t.us.landscape_growth}
-                  houseLabel={t.us.landscape_growth_houses}
-                  borderClass="border-l border-l-purple-500/40"
-                  iconClass={
-                    theme === "dark"
-                      ? "bg-purple-500/20 text-purple-500"
-                      : "bg-purple-500/15 text-purple-500"
-                  }
-                  icon="🌱"
                 />
               )}
             </div>
-          </Section>
+          </LlmSection>
         )}
 
-      {/* Section 3: The Dynamics */}
-      <Section title={t.us.dynamics_title} className="mb-8">
-        <div className="space-y-4">
+      <LlmSection title={t.us.dynamics_title}>
+        <div className="divide-y divide-paper-900/[0.08] dark:divide-star-50/[0.08]">
           {dynamics?.spark && (
-            <DynamicCard
+            <DynamicBlock
               item={dynamics.spark}
               title={t.us.dynamics_spark}
               subtitle={t.us.dynamics_spark_desc}
-              icon="🔥"
-              borderColor="border-l-danger/40"
             />
           )}
           {dynamics?.safety_net && (
-            <DynamicCard
+            <DynamicBlock
               item={dynamics.safety_net}
               title={t.us.dynamics_safety}
               subtitle={t.us.dynamics_safety_desc}
-              icon="🌙"
-              borderColor="border-l-star-200/40"
             />
           )}
           {dynamics?.mind_meld && (
-            <DynamicCard
+            <DynamicBlock
               item={dynamics.mind_meld}
               title={t.us.dynamics_mind}
               subtitle={t.us.dynamics_mind_desc}
-              icon="🧠"
-              borderColor="border-l-accent/40"
             />
           )}
           {dynamics?.glue && (
-            <DynamicCard
+            <DynamicBlock
               item={dynamics.glue}
               title={t.us.dynamics_glue}
               subtitle={t.us.dynamics_glue_desc}
-              icon="🔗"
-              borderColor="border-l-star-400/40"
             />
           )}
         </div>
-      </Section>
+      </LlmSection>
 
-      {/* Section 4: The Deep Dive */}
       {deep_dive && (deep_dive.pluto || deep_dive.chiron) && (
-        <Section title={t.us.chem_deep_dive_title} className="mb-8">
-          <div className="space-y-4">
+        <LlmSection title={t.us.chem_deep_dive_title}>
+          <div className="space-y-6">
             {deep_dive.pluto && (
-              <Card className="border-l border-l-space-400/40">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">♇</span>
-                    <div>
-                      <div className="font-semibold">
-                        {deep_dive.pluto.headline || t.us.chem_pluto}
-                      </div>
-                      <div className="text-xs uppercase tracking-widest opacity-70">
-                        Pluto
-                      </div>
-                    </div>
-                  </div>
+              <div>
+                <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+                  <h4 className="text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+                    {deep_dive.pluto.headline || t.us.chem_pluto}
+                  </h4>
                   <IntensityBadge intensity={deep_dive.pluto.intensity} />
                 </div>
-                <p className="text-sm leading-relaxed opacity-90 mb-4">
-                  {deep_dive.pluto.description}
-                </p>
+                <LlmProse text={deep_dive.pluto.description} />
                 {deep_dive.pluto.warning && (
-                  <div
-                    className={`p-3 rounded-lg border-l border-l-danger/40 ${theme === "dark" ? "bg-danger/10" : "bg-danger/5"}`}
-                  >
-                    <span
-                      className={`${DETAIL_LABEL_CLASS} text-danger block mb-1`}
-                    >
-                      {t.us.chem_pluto_warning}
-                    </span>
-                    <p className="text-sm opacity-90">
-                      {deep_dive.pluto.warning}
-                    </p>
-                  </div>
+                  <LlmField
+                    label={t.us.chem_pluto_warning}
+                    text={deep_dive.pluto.warning}
+                    className="mt-3"
+                  />
                 )}
-              </Card>
+              </div>
             )}
             {deep_dive.chiron && (
-              <Card className="border-l border-l-accent/40">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">⚷</span>
-                  <div>
-                    <div className="font-semibold">
-                      {deep_dive.chiron.headline || t.us.chem_chiron}
-                    </div>
-                    <div className="text-xs uppercase tracking-widest opacity-70">
-                      Chiron
-                    </div>
-                  </div>
-                </div>
-                <p className="text-sm leading-relaxed opacity-90 mb-4">
-                  {deep_dive.chiron.description}
-                </p>
-                <div
-                  className={`p-3 rounded-lg border-l border-l-success/40 ${theme === "dark" ? "bg-success/10" : "bg-success/5"}`}
-                >
-                  <span
-                    className={`${DETAIL_LABEL_CLASS} text-success block mb-1`}
-                  >
-                    {t.us.chem_chiron_path}
-                  </span>
-                  <p className="text-sm opacity-90">
-                    {deep_dive.chiron.healing_path}
-                  </p>
-                </div>
-              </Card>
+              <div>
+                <h4 className="mb-2 text-[0.9375rem] font-medium text-paper-900 dark:text-star-50">
+                  {deep_dive.chiron.headline || t.us.chem_chiron}
+                </h4>
+                <LlmProse text={deep_dive.chiron.description} />
+                <LlmField
+                  label={t.us.chem_chiron_path}
+                  text={deep_dive.chiron.healing_path}
+                  className="mt-3"
+                />
+              </div>
             )}
           </div>
-        </Section>
+        </LlmSection>
       )}
-    </div>
+    </LlmDoc>
   );
 };
