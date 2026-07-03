@@ -840,6 +840,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'pen-lope-cruz-birth-chart',
+  'tobey-maguire-birth-chart',
   'jaylen-brown-birth-chart',
   'coco-gauff-birth-chart',
   'angela-nikolau-birth-chart',
