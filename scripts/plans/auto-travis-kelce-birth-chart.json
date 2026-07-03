@@ -1,0 +1,80 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "travis-kelce-birth-chart": {
+      "hero": {
+        "prompt": "A wide nocturnal landscape where six distinct luminous orbs drift at different heights across a vast open sky — warm amber, deep rose, and silver-white — their pooled radiance spilling across dark rolling hills and a still reflecting surface below, many individual planetary signals composing one unified celestial portrait, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Six distinct planetary lights hang across an indigo sky above rolling hills, their combined glow composing one celestial portrait"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Spot the Key Signals in Travis Kelce's Chart",
+          "titleEn": "Reading Travis Kelce's Chart Step by Step",
+          "altEn": "Five-step diagram showing how to read Travis Kelce's birth chart placements in order",
+          "items": [
+            {
+              "nameEn": "Start with the Sun",
+              "subEn": "October 5 places it in Libra — a lean toward balance, fairness, and smooth social timing"
+            },
+            {
+              "nameEn": "Add the date-derived planets",
+              "subEn": "Mars in Libra, Venus in Scorpio, Jupiter in Cancer, and a Sagittarius Moon come from the birth date"
+            },
+            {
+              "nameEn": "Respect the missing birth time",
+              "subEn": "Without it, treat any rising sign or house claim as a guess, not a fact"
+            },
+            {
+              "nameEn": "Define a stellium correctly",
+              "subEn": "Three or more planets in the same sign — Kelce's Capricorn cluster is generational, not personal"
+            },
+            {
+              "nameEn": "Tie placements to the story",
+              "subEn": "Match to documented moments as interpretation — never as proof of what he achieved"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Travis Kelce Birth Chart at a Glance",
+          "titleEn": "Kelce's Key Placements by Confidence Level",
+          "altEn": "Three-column comparison of Travis Kelce's birth chart placements sorted by confidence level",
+          "columns": [
+            {
+              "nameEn": "High Confidence (Date-Derived)",
+              "linesEn": [
+                "Sun in Libra — balance and partnership",
+                "Venus in Scorpio — intense, all-in attachments",
+                "Mars in Libra — drive routed through cooperation and timing"
+              ]
+            },
+            {
+              "nameEn": "Medium Confidence (Time-Sensitive)",
+              "linesEn": [
+                "Moon in Sagittarius — optimism and freedom (exact degree needs birth time)",
+                "Mercury in Libra — fair-minded, relational communication (verify vs ephemeris)"
+              ]
+            },
+            {
+              "nameEn": "Generational Cluster",
+              "linesEn": [
+                "Saturn, Uranus, Neptune in Capricorn",
+                "Shared by everyone born ~1988–1990",
+                "Not a personal signature"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
