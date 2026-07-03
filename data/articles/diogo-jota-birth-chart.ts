@@ -17,8 +17,7 @@ export const diogoJotaBirthChartEn: WikiArticle = {
     "Diogo Jota birth chart meaning",
     "Diogo Jota birth chart astrology",
     "Diogo Jota birth chart zodiac",
-    "Diogo Jota birth chart interpretation",
-    "emma watson zodiac sign"
+    "Diogo Jota birth chart interpretation"
   ],
   content: `# Reading Diogo Jota's Birth Chart as a Portrait, Not a Prediction
 
