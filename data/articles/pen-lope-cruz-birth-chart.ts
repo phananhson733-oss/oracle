@@ -17,8 +17,7 @@ export const penLopeCruzBirthChartEn: WikiArticle = {
     "Penélope Cruz birth chart meaning",
     "Penélope Cruz birth chart astrology",
     "Penélope Cruz birth chart zodiac",
-    "Penélope Cruz birth chart interpretation",
-    "emma watson zodiac sign"
+    "Penélope Cruz birth chart interpretation"
   ],
   content: `# What Penélope Cruz's Birth Chart Reveals About Her On-Screen Presence
 
