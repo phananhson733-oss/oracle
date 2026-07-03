@@ -1,5 +1,5 @@
-// INPUT: UserProfile prop, ask API service, entitlement contexts.
-// OUTPUT: AI Q&A Oracle page with category-based questions and streaming answer display.
+// INPUT: UserProfile prop, ask API service, entitlement contexts, LlmDoc 文档排版原语。
+// OUTPUT: AI Q&A Oracle page with category-based questions; answer rendered as editorial document flow (LlmSection/LlmProse).
 // POS: Oracle (Ask) page extracted from App.tsx; if updated, keep App.tsx lazy import in sync.
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
@@ -7,7 +7,6 @@ import { SEO } from "../components/SEO";
 import { FrameworkDisclaimer } from "../components/shared/FrameworkDisclaimer";
 import {
   Container,
-  Card,
   ActionButton,
   Chip,
   CopyButton,
@@ -16,6 +15,7 @@ import {
   translateAstroTerm,
 } from "../components/UIComponents";
 import { ArrowLeft } from "lucide-react";
+import { LlmDoc, LlmSection, LlmProse } from "../components/llm/LlmDoc";
 import * as T from "../types";
 import { PRESET_QUESTIONS, TRANSLATIONS, LOGIN_GATE_MODE } from "../constants";
 import { AstroChart } from "../components/AstroChart";
@@ -1267,13 +1267,21 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                       </div>
                     </div>
 
-                    {/* Question display */}
-                    <div className="text-center px-6 py-4">
-                      <div
-                        className={`text-2xl md:text-3xl font-serif font-medium max-w-4xl mx-auto ${isLight ? "text-paper-900" : "text-star-100"}`}
-                      >
+                    {/* Report document head */}
+                    <div className="px-6 py-4 text-center">
+                      {categoryLabel && (
+                        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+                          {categoryLabel}
+                        </p>
+                      )}
+                      <h1 className="mx-auto mt-2 max-w-4xl text-2xl font-medium tracking-[-0.015em] text-paper-900 md:text-3xl dark:text-star-50">
                         {reportTitleText}
-                      </div>
+                      </h1>
+                      {reportTitle && questionText && reportTitle !== questionText && (
+                        <p className="mx-auto mt-3 max-w-2xl text-[1.0625rem] leading-[1.65] text-paper-600 dark:text-star-300">
+                          {questionText}
+                        </p>
+                      )}
                     </div>
 
                     {/* Scrollable content area */}
@@ -1369,495 +1377,33 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                             {t.ask.thinking}
                           </div>
                         ) : (
-                          <div className="relative">
-                            {/* Main answer container with modular sections */}
-                            <div className="space-y-6">
-                              {/* Modular answer sections with diverse card styles */}
+                          <div className="relative mx-auto max-w-3xl">
+                            <LlmDoc>
                               {answerSections.length > 0 ? (
-                                <div className="space-y-5">
-                                  {answerSections.map((section, idx) => {
-                                    // Determine card style based on section index for visual variety
-                                    const cardStyles = [
-                                      {
-                                        accent: "border-l-gold-500/40",
-                                        title:
-                                          theme === "dark"
-                                            ? "text-gold-200"
-                                            : "text-gold-700",
-                                        badge:
-                                          theme === "dark"
-                                            ? "border-gold-500/30 bg-gold-500/10 text-gold-400"
-                                            : "border-gold-600/40 bg-gold-500/15 text-gold-700",
-                                        highlight:
-                                          theme === "dark"
-                                            ? "text-gold-300"
-                                            : "text-gold-700",
-                                        dot:
-                                          theme === "dark"
-                                            ? "bg-gold-500/50"
-                                            : "bg-gold-600/60",
-                                        divider:
-                                          theme === "dark"
-                                            ? "border-gold-500/20"
-                                            : "border-gold-600/25",
-                                        iconTone:
-                                          theme === "dark"
-                                            ? "border-gold-500/30 bg-space-950 text-gold-500"
-                                            : "border-gold-600/40 bg-paper-100/85 text-gold-700",
-                                        icon: "star",
-                                      },
-                                      {
-                                        accent: "border-l-accent/40",
-                                        title: "text-accent",
-                                        badge:
-                                          theme === "dark"
-                                            ? "border-accent/30 bg-accent/10 text-accent"
-                                            : "border-accent/30 bg-accent/10 text-accent",
-                                        highlight: "text-accent",
-                                        dot:
-                                          theme === "dark"
-                                            ? "bg-accent/50"
-                                            : "bg-accent/60",
-                                        divider:
-                                          theme === "dark"
-                                            ? "border-accent/20"
-                                            : "border-accent/30",
-                                        iconTone:
-                                          theme === "dark"
-                                            ? "border-accent/30 bg-space-950 text-accent"
-                                            : "border-accent/30 bg-paper-100/85 text-accent",
-                                        icon: "eye",
-                                      },
-                                      {
-                                        accent: "border-l-star-200/40",
-                                        title:
-                                          theme === "dark"
-                                            ? "text-star-200"
-                                            : "text-gold-700",
-                                        badge:
-                                          theme === "dark"
-                                            ? "border-star-200/30 bg-star-200/10 text-star-200"
-                                            : "border-gold-600/30 bg-gold-500/10 text-gold-700",
-                                        highlight:
-                                          theme === "dark"
-                                            ? "text-star-200"
-                                            : "text-gold-700",
-                                        dot:
-                                          theme === "dark"
-                                            ? "bg-star-200/50"
-                                            : "bg-gold-600/50",
-                                        divider:
-                                          theme === "dark"
-                                            ? "border-star-200/20"
-                                            : "border-gold-600/20",
-                                        iconTone:
-                                          theme === "dark"
-                                            ? "border-star-200/30 bg-space-950 text-star-200"
-                                            : "border-gold-600/30 bg-paper-100/85 text-gold-700",
-                                        icon: "compass",
-                                      },
-                                      {
-                                        accent: "border-l-success/40",
-                                        title: "text-success",
-                                        badge:
-                                          theme === "dark"
-                                            ? "border-success/30 bg-success/10 text-success"
-                                            : "border-success/30 bg-success/10 text-success",
-                                        highlight: "text-success",
-                                        dot:
-                                          theme === "dark"
-                                            ? "bg-success/50"
-                                            : "bg-success/60",
-                                        divider:
-                                          theme === "dark"
-                                            ? "border-success/20"
-                                            : "border-success/30",
-                                        iconTone:
-                                          theme === "dark"
-                                            ? "border-success/30 bg-space-950 text-success"
-                                            : "border-success/30 bg-paper-100/85 text-success",
-                                        icon: "moon",
-                                      },
-                                      {
-                                        accent: "border-l-gold-400/40",
-                                        title:
-                                          theme === "dark"
-                                            ? "text-gold-200"
-                                            : "text-gold-700",
-                                        badge:
-                                          theme === "dark"
-                                            ? "border-gold-400/30 bg-gold-400/10 text-gold-300"
-                                            : "border-gold-600/30 bg-gold-500/10 text-gold-700",
-                                        highlight:
-                                          theme === "dark"
-                                            ? "text-gold-300"
-                                            : "text-gold-700",
-                                        dot:
-                                          theme === "dark"
-                                            ? "bg-gold-400/50"
-                                            : "bg-gold-600/50",
-                                        divider:
-                                          theme === "dark"
-                                            ? "border-gold-400/20"
-                                            : "border-gold-600/20",
-                                        iconTone:
-                                          theme === "dark"
-                                            ? "border-gold-400/30 bg-space-950 text-gold-400"
-                                            : "border-gold-600/30 bg-paper-100/85 text-gold-700",
-                                        icon: "star",
-                                      },
-                                    ];
-                                    const reportSections =
-                                      reportT.ask.report_sections || {};
-                                    const sectionTitle =
-                                      section.title || reportT.ask.deep_insight;
-                                    const sectionStyleOrder: Record<
-                                      string,
-                                      number
-                                    > = {};
-                                    if (reportSections.essence)
-                                      sectionStyleOrder[
-                                        reportSections.essence
-                                      ] = 0;
-                                    if (reportSections.signature)
-                                      sectionStyleOrder[
-                                        reportSections.signature
-                                      ] = 1;
-                                    if (reportSections.deep_dive)
-                                      sectionStyleOrder[
-                                        reportSections.deep_dive
-                                      ] = 2;
-                                    if (reportSections.soulwork)
-                                      sectionStyleOrder[
-                                        reportSections.soulwork
-                                      ] = 3;
-                                    if (reportSections.takeaway)
-                                      sectionStyleOrder[
-                                        reportSections.takeaway
-                                      ] = 4;
-                                    const style =
-                                      cardStyles[
-                                        sectionStyleOrder[sectionTitle] ??
-                                          idx % cardStyles.length
-                                      ];
-                                    const reportLabels =
-                                      reportT.ask.report_labels || {};
-                                    const highlightLabelKeys = new Set([
-                                      "mirror",
-                                      "root",
-                                      "shadow",
-                                      "light",
-                                      "journal",
-                                    ]);
-                                    const isZhReport = reportLang === "zh";
-                                    const layerLabel = isZhReport
-                                      ? `${reportT.ask.layer_prefix}${idx + 1}${reportT.ask.layer_suffix || ""}`
-                                      : `${reportT.ask.layer_prefix} ${idx + 1}`;
-
-                                    // Parse body content for potential key points
-                                    const bodyLines = section.body
-                                      .split("\n")
-                                      .filter((line) => line.trim());
-                                    const hasMultiplePoints =
-                                      bodyLines.length > 2;
-                                    const textTone =
-                                      theme === "dark"
-                                        ? "text-star-200"
-                                        : "text-paper-700";
-                                    const renderReportLine = (line: string) => {
-                                      const match = parseAskReportLabelLine(
-                                        line,
-                                        reportLabels,
-                                      );
-                                      if (!match) return <span>{line}</span>;
-
-                                      let labelClass = style.title;
-                                      if (highlightLabelKeys.has(match.key)) {
-                                        if (
-                                          match.key === "mirror" ||
-                                          match.key === "insight"
-                                        )
-                                          labelClass =
-                                            theme === "dark"
-                                              ? "text-blue-400"
-                                              : "text-blue-600";
-                                        else if (match.key === "root")
-                                          labelClass =
-                                            theme === "dark"
-                                              ? "text-purple-400"
-                                              : "text-purple-600";
-                                        else if (match.key === "shadow")
-                                          labelClass =
-                                            theme === "dark"
-                                              ? "text-red-400"
-                                              : "text-red-600";
-                                        else if (match.key === "light")
-                                          labelClass =
-                                            theme === "dark"
-                                              ? "text-green-400"
-                                              : "text-green-600";
-                                        else labelClass = style.highlight;
-                                      }
-
-                                      return (
-                                        <span className="flex flex-wrap gap-1">
-                                          <span
-                                            className={`${labelClass} font-semibold`}
-                                          >
-                                            {match.label}
-                                            {match.separator}
-                                          </span>
-                                          <span>{match.content}</span>
-                                        </span>
-                                      );
-                                    };
-
-                                    // Icon components
-                                    const IconStar = () => (
-                                      <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        className="w-5 h-5"
-                                      >
-                                        <path
-                                          d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                        />
-                                      </svg>
-                                    );
-                                    const IconEye = () => (
-                                      <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        className="w-5 h-5"
-                                      >
-                                        <path
-                                          d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                        />
-                                        <path
-                                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                        />
-                                      </svg>
-                                    );
-                                    const IconCompass = () => (
-                                      <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        className="w-5 h-5"
-                                      >
-                                        <circle cx="12" cy="12" r="9" />
-                                        <path
-                                          d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                        />
-                                      </svg>
-                                    );
-                                    const IconMoon = () => (
-                                      <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        className="w-5 h-5"
-                                      >
-                                        <path
-                                          d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                        />
-                                      </svg>
-                                    );
-
-                                    const renderIcon = () => {
-                                      switch (style.icon) {
-                                        case "eye":
-                                          return <IconEye />;
-                                        case "compass":
-                                          return <IconCompass />;
-                                        case "moon":
-                                          return <IconMoon />;
-                                        default:
-                                          return <IconStar />;
-                                      }
-                                    };
-
-                                    return (
-                                      <div
-                                        key={`${section.title}-${idx}`}
-                                        className="animate-fade-in"
-                                        style={{
-                                          animationDelay: `${idx * 100}ms`,
-                                        }}
-                                      >
-                                        <Card
-                                          className={`
-                                                        relative overflow-hidden transition-all duration-300
-                                                        border border-l ${style.accent}
-                                                        hover:shadow-lg
-                                                        ${theme === "dark" ? "hover:shadow-gold-500/5" : "hover:shadow-paper-400/20"}
-                                                    `}
-                                        >
-                                          {/* Header with icon and title */}
-                                          <div
-                                            className={`flex items-center gap-4 mb-4 pb-3 border-b ${style.divider}`}
-                                          >
-                                            <div
-                                              className={`shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${style.iconTone}`}
-                                            >
-                                              {renderIcon()}
-                                            </div>
-                                            <div className="flex-1 min-w-0">
-                                              <div className="flex flex-wrap items-center gap-2">
-                                                <span
-                                                  className={`px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] rounded-full border ${style.badge}`}
-                                                >
-                                                  {layerLabel}
-                                                </span>
-                                                <h4
-                                                  className={`text-base md:text-lg font-serif font-semibold ${style.title}`}
-                                                >
-                                                  {sectionTitle}
-                                                </h4>
-                                              </div>
-                                            </div>
-                                          </div>
-
-                                          {/* Section content - modular display */}
-                                          <div className="pl-14">
-                                            {hasMultiplePoints ? (
-                                              <div className="space-y-3">
-                                                {bodyLines.map(
-                                                  (line, lineIdx) => (
-                                                    <div
-                                                      key={lineIdx}
-                                                      className="flex gap-3 items-start"
-                                                    >
-                                                      <div
-                                                        className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${style.dot}`}
-                                                      />
-                                                      <p
-                                                        className={`text-sm leading-relaxed ${textTone}`}
-                                                      >
-                                                        {renderReportLine(line)}
-                                                      </p>
-                                                    </div>
-                                                  ),
-                                                )}
-                                              </div>
-                                            ) : (
-                                              <p
-                                                className={`text-sm leading-relaxed ${textTone}`}
-                                              >
-                                                {renderReportLine(section.body)}
-                                              </p>
-                                            )}
-                                          </div>
-                                        </Card>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
+                                answerSections.map((section, idx) => (
+                                  <LlmSection
+                                    key={`${section.title}-${idx}`}
+                                    first={idx === 0}
+                                    eyebrow={section.title || reportT.ask.deep_insight}
+                                  >
+                                    <LlmProse text={section.body} />
+                                  </LlmSection>
+                                ))
                               ) : (
-                                /* Fallback for non-sectioned answers */
-                                <Card
-                                  className={`
-                                        relative overflow-hidden
-                                        border-l border-l-gold-500/40
-                                        ${theme === "dark" ? "border-space-700" : "border-paper-300"}
-                                    `}
-                                >
-                                  <div className="flex items-start gap-4 mb-4">
-                                    <div
-                                      className={`shrink-0 w-10 h-10 rounded-lg border flex items-center justify-center ${
-                                        theme === "dark"
-                                          ? "border-gold-500/30 bg-space-950 text-gold-500"
-                                          : "border-gold-600/30 bg-paper-100/85 text-gold-700"
-                                      }`}
-                                    >
-                                      <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="1.5"
-                                        className="w-5 h-5"
-                                      >
-                                        <path
-                                          d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className={`pl-14 text-sm leading-relaxed whitespace-pre-line ${
-                                      theme === "dark"
-                                        ? "text-star-200"
-                                        : "text-paper-700"
-                                    }`}
-                                  >
-                                    {answer}
-                                  </div>
-                                </Card>
+                                <LlmProse text={answer} />
                               )}
 
-                              {/* Conclusion card - enhanced visual */}
                               {answerSections.length > 0 && (
-                                <div
-                                  className={`mt-8 pt-6 border-t ${theme === "dark" ? "border-gold-500/10" : "border-gold-600/10"}`}
-                                >
-                                  <Card
-                                    className={`text-center py-8 ${
-                                      theme === "dark"
-                                        ? "bg-gradient-to-b from-space-900 to-space-950 border-gold-500/20"
-                                        : "bg-gradient-to-b from-paper-100 to-paper-100/80 border-gold-600/20"
-                                    }`}
-                                  >
-                                    <div className="flex items-center justify-center gap-3 mb-4">
-                                      <div
-                                        className={`w-12 h-px ${theme === "dark" ? "bg-gold-500/30" : "bg-gold-600/30"}`}
-                                      />
-                                      <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="1"
-                                        className={`w-6 h-6 ${theme === "dark" ? "text-gold-500/50" : "text-gold-600/50"}`}
-                                      >
-                                        <circle cx="12" cy="12" r="9" />
-                                        <circle cx="12" cy="12" r="3" />
-                                        <path d="M12 3v3m0 12v3m9-9h-3M6 12H3" />
-                                      </svg>
-                                      <div
-                                        className={`w-12 h-px ${theme === "dark" ? "bg-gold-500/30" : "bg-gold-600/30"}`}
-                                      />
-                                    </div>
-                                    <div
-                                      className={`text-xs uppercase tracking-[0.3em] mb-3 ${theme === "dark" ? "text-gold-500/50" : "text-gold-600/50"}`}
-                                    >
-                                      {t.ask.oracle_complete}
-                                    </div>
-                                    <p
-                                      className={`text-sm font-serif italic max-w-3xl mx-auto ${theme === "dark" ? "text-star-300" : "text-paper-600"}`}
-                                    >
-                                      {t.ask.oracle_blessing}
-                                    </p>
-                                  </Card>
-                                </div>
+                                <footer className="mt-10 border-t border-paper-900/10 pt-6 dark:border-star-50/10">
+                                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
+                                    {t.ask.oracle_complete}
+                                  </p>
+                                  <p className="mt-3 max-w-[68ch] font-serif text-[1.0625rem] italic leading-[1.65] text-paper-600 dark:text-star-300">
+                                    {t.ask.oracle_blessing}
+                                  </p>
+                                </footer>
                               )}
-                            </div>
+                            </LlmDoc>
                           </div>
                         )}
                       </div>

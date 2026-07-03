@@ -1,5 +1,5 @@
-// INPUT: React、图表、类型与主题（含月份同步、情绪映射、洞察正文色与展开标题对齐）。
-// OUTPUT: 导出分析视图组件（含月度过滤联动、无记录跳过 AI 解读、建议分行显示与对比度修正）。
+// INPUT: React、图表、类型与主题、LLM 排版原语（LlmDoc/LlmSection/LlmProse/LlmList）与 services/llmText（toPlainText/parseInlineNumberedList）。
+// OUTPUT: 导出分析视图组件（月度洞察/处方/星象改为单列文档流，去图标砖与卡片嵌套；DataRow 数据可视化本体保留）。
 // POS: CBT 分析展示组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -9,13 +9,14 @@ import {
   PieChart, Pie, Cell, ResponsiveContainer, Tooltip
 } from 'recharts';
 import {
-  Activity, Sparkles, X, Brain, Heart, Shield,
-  Thermometer, Anchor, Moon, Maximize2,
-  TrendingUp, Layers, Zap, Scale, List, ChevronLeft, ChevronRight, Calendar
+  X, Brain, Thermometer, Anchor, Maximize2,
+  Layers, List, ChevronLeft, ChevronRight, Calendar
 } from 'lucide-react';
 import { useLanguage, useTheme } from '../UIComponents';
 import { UserProfile } from '../../types';
 import { useCBTIndividualAnalysis } from './utils/useCBTAggregateAnalysis';
+import { LlmDoc, LlmSection, LlmProse, LlmList, LLM_BODY_CLASS } from '../llm/LlmDoc';
+import { toPlainText, parseInlineNumberedList } from '../../services/llmText';
 
 interface ViewProps {
   records: CBTRecord[];
@@ -238,150 +239,63 @@ const DataRow = ({ title, children, className = "", onExpand }: any) => {
   );
 };
 
-// 统一行组件：洞察
-const InsightRow = ({ text, highlight, isLoading }: any) => {
-  const { theme } = useTheme();
-  const { language, t } = useLanguage();
-  const isLight = theme === 'light';
-  const cardTone = isLight
-    ? 'bg-paper-100/85 border-gold-600/30 shadow-sm'
-    : 'bg-space-800/20 border-gold-500/10';
-  const accentTone = isLight ? 'text-gold-700' : 'text-gold-400';
-  const highlightTone = isLight ? 'text-gold-800' : 'text-gold-200';
-  const textTone = isLight ? 'text-paper-600' : 'text-star-200';
-  const loadingTone = isLight ? 'text-gold-600/80 animate-pulse' : 'text-gold-400/80 animate-pulse';
-  const iconBg = isLight ? 'bg-gold-500/10 text-gold-700' : 'bg-gold-500/10 text-gold-400';
-
-  return (
-    <div className={`p-6 rounded-xl border relative overflow-hidden flex items-start gap-5 transition-all hover:border-gold-500/30 ${cardTone}`}>
-      <div className={`p-3 rounded-2xl shrink-0 mt-1 ${iconBg}`}><TrendingUp size={20}/></div>
-      <div className="flex-1">
-        <h4 className={`text-xs uppercase tracking-[0.2em] font-bold mb-2 opacity-90 ${accentTone}`}>{t.journal.one_line_insight}</h4>
-        <p className={`text-sm leading-relaxed font-medium ${isLoading ? loadingTone : textTone}`}>
-          {highlight && <span className={`font-bold mr-1 ${highlightTone}`}>{highlight}</span>}
-          {text}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-const sanitizeAiText = (value?: string) => {
-  if (!value) return '';
-  return value
-    .replace(/\*\*/g, '')
-    .replace(/__+/g, '')
-    .replace(/`+/g, '')
-    .replace(/[“”"]/g, '')
-    .replace(/^\s*[-•·●]\s+/gm, '')
-    .replace(/\s+\n/g, '\n')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-};
-
+// LLM 分析文本清洗：优先 AI 文本（toPlainText 规整），空则回退统计兜底。
 const resolveAnalysisText = (aiText?: string, fallback?: string) => {
-  const cleaned = sanitizeAiText(aiText);
+  const cleaned = toPlainText(aiText);
   return cleaned || fallback || '';
 };
 
-const parseAdviceList = (text: string) => {
-  const normalized = text.replace(/\r\n/g, '\n').trim();
-  if (!normalized) return { intro: '', items: [] as string[] };
-
-  const markerCount = (normalized.match(/\d{1,2}[、.)）]\s*/g) || []).length;
-  if (markerCount >= 2) {
-    const marked = normalized.replace(/(\d{1,2})[、.)）]\s*/g, '\n$1. ');
-    const lines = marked.split('\n').map(line => line.trim()).filter(Boolean);
-    const items: string[] = [];
-    const introParts: string[] = [];
-
-    for (const line of lines) {
-      if (/^\d{1,2}\.\s*/.test(line)) {
-        const item = line.replace(/^\d{1,2}\.\s*/, '').trim();
-        if (item) items.push(item);
-      } else {
-        introParts.push(line);
-      }
-    }
-
-    if (items.length > 0) return { intro: introParts.join(' '), items };
-  }
-
-  const lines = normalized.split(/\n+/).map(line => line.trim()).filter(Boolean);
-  if (lines.length > 1) return { intro: '', items: lines };
-
-  const segments = normalized.split(/[;；]/).map(seg => seg.trim()).filter(Boolean);
-  if (segments.length > 1) return { intro: '', items: segments };
-
-  return { intro: normalized, items: [] as string[] };
-};
-
-// 统一行组件：疗愈建议 (行动处方)
-const ActionRow = ({ title, text, icon: Icon = Sparkles }: any) => {
-  const { theme } = useTheme();
-  const isLight = theme === 'light';
-  const cardTone = isLight ? 'bg-paper-100/85 border-gold-600/30 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
-  const accentTone = isLight ? 'text-gold-700' : 'text-accent';
-  const textTone = isLight ? 'text-paper-600' : 'text-star-200';
-  const numberTone = isLight ? 'text-paper-400' : 'text-space-600';
-  const safeText = typeof text === 'string' ? text : '';
-  const parsed = parseAdviceList(safeText);
-
-  return (
-    <div className={`p-6 rounded-xl border flex items-start gap-5 transition-all hover:bg-space-800/30 ${cardTone}`}>
-      <div className={`p-2.5 rounded-2xl shrink-0 mt-0.5 ${isLight ? 'bg-gold-500/10 text-gold-700' : 'bg-accent/10 text-accent'}`}>
-        <Icon size={20} />
-      </div>
-      <div className="flex-1">
-        <span className={`text-xs font-bold uppercase tracking-[0.2em] mb-3 block opacity-90 ${accentTone}`}>
-          {title || 'CBT 疗愈处方'}
-        </span>
-        {parsed.items.length > 0 ? (
-          <div className="space-y-3">
-            {parsed.intro && (
-              <p className={`text-sm leading-relaxed font-medium mb-3 ${textTone}`}>{parsed.intro}</p>
-            )}
-            <ol className="space-y-3">
-              {parsed.items.map((item, idx) => (
-                <li key={`${item}-${idx}`} className={`flex gap-3 text-sm leading-7 ${textTone}`}>
-                  <span className={`text-xs font-mono font-bold mt-1 ${numberTone}`}>{idx + 1}</span>
-                  <span className="flex-1">{item}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        ) : (
-          <p className={`text-sm leading-7 font-medium ${textTone}`}>{safeText}</p>
-        )}
-      </div>
-    </div>
-  );
-};
-
-// 统一行组件：占星参考
-const AstroRow = ({ text }: any) => {
-  const { theme } = useTheme();
+// LLM 分析读出：洞察 / 处方 / 星象三节文档流（LlmSection + LlmProse/LlmList，无图标砖、无卡片嵌套）。
+const AnalysisReadout = ({
+  insightHighlight,
+  insightText,
+  adviceLabel,
+  adviceText,
+  astroText,
+  isLoading,
+}: {
+  insightHighlight?: string;
+  insightText: string;
+  adviceLabel: string;
+  adviceText: string;
+  astroText: string;
+  isLoading?: boolean;
+}) => {
   const { t } = useLanguage();
-  const isLight = theme === 'light';
-  const cardTone = isLight ? 'bg-paper-100/85 border-gold-600/30 shadow-sm' : 'bg-space-800/20 border-gold-500/10';
-  const labelTone = isLight ? 'text-gold-600' : 'text-gold-400';
-  const bodyTone = isLight ? 'text-star-600' : 'text-star-300';
-  const iconBg = isLight ? 'bg-paper-200 text-gold-600' : 'bg-space-800 text-gold-500';
-
+  const advice = parseInlineNumberedList(adviceText);
+  const pulse = isLoading ? 'animate-pulse' : '';
   return (
-    <div className={`p-6 rounded-xl border flex items-start gap-5 transition-all hover:border-gold-500/20 ${cardTone}`}>
-      <div className={`p-2.5 rounded-2xl shrink-0 mt-0.5 ${iconBg}`}>
-        <Moon size={20} />
-      </div>
-      <div className="flex-1">
-        <span className={`text-xs font-bold uppercase tracking-[0.2em] mb-2 block opacity-80 ${labelTone}`}>
-          {t.journal.astro_awareness}
-        </span>
-        <p className={`text-sm leading-7 ${bodyTone}`}>
-          {text}
-        </p>
-      </div>
-    </div>
+    <LlmDoc className="mt-2">
+      <LlmSection first eyebrow={t.journal.one_line_insight}>
+        {insightHighlight ? (
+          <p className={`${LLM_BODY_CLASS} ${pulse}`}>
+            <strong className="font-semibold text-paper-900 dark:text-star-50">
+              {insightHighlight}
+            </strong>{' '}
+            {insightText}
+          </p>
+        ) : (
+          <LlmProse text={insightText} className={pulse} />
+        )}
+      </LlmSection>
+      <LlmSection eyebrow={adviceLabel}>
+        {advice ? (
+          <>
+            {advice.intro && <LlmProse text={advice.intro} className={pulse} />}
+            <LlmList
+              ordered
+              items={advice.items}
+              className={advice.intro ? 'mt-3' : ''}
+            />
+          </>
+        ) : (
+          <LlmProse text={adviceText} className={pulse} />
+        )}
+      </LlmSection>
+      <LlmSection eyebrow={t.journal.astro_awareness}>
+        <LlmProse text={astroText} className={pulse} />
+      </LlmSection>
+    </LlmDoc>
   );
 };
 
@@ -587,9 +501,14 @@ export const SomaticPatternView: React.FC<ViewProps> = ({ records, onClose, init
         </DataRow>
       </div>
 
-      <InsightRow highlight={insightHighlight} text={insightText} isLoading={showLoading} />
-      <ActionRow title={t.journal.body_regulation_rx} text={adviceText} icon={Heart} />
-      <AstroRow text={astroText} />
+      <AnalysisReadout
+        insightHighlight={insightHighlight}
+        insightText={insightText}
+        adviceLabel={t.journal.body_regulation_rx}
+        adviceText={adviceText}
+        astroText={astroText}
+        isLoading={showLoading}
+      />
 
       {detailsType && (
         <FullDataModal
@@ -844,9 +763,14 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
         </DataRow>
       </div>
 
-      <InsightRow highlight={insightHighlight} text={insightText} isLoading={showLoading} />
-      <ActionRow title={t.journal.precise_healing_action} text={adviceText} icon={Shield} />
-      <AstroRow text={astroText} />
+      <AnalysisReadout
+        insightHighlight={insightHighlight}
+        insightText={insightText}
+        adviceLabel={t.journal.precise_healing_action}
+        adviceText={adviceText}
+        astroText={astroText}
+        isLoading={showLoading}
+      />
 
       {detailsType && (
         <FullDataModal
@@ -1013,9 +937,14 @@ export const MoodCompositionView: React.FC<ViewProps> = ({ records, onClose, ini
         </DataRow>
       </div>
 
-      <InsightRow highlight={insightHighlight} text={insightText} isLoading={showLoading} />
-      <ActionRow title={t.journal.targeted_regulation} text={adviceText} icon={Zap} />
-      <AstroRow text={astroText} />
+      <AnalysisReadout
+        insightHighlight={insightHighlight}
+        insightText={insightText}
+        adviceLabel={t.journal.targeted_regulation}
+        adviceText={adviceText}
+        astroText={astroText}
+        isLoading={showLoading}
+      />
 
       {detailsType && (
         <FullDataModal
@@ -1142,14 +1071,15 @@ export const CBTCompetenceView: React.FC<ViewProps> = ({ records, onClose, initi
         </div>
       </DataRow>
 
-      {/* 2. Insight */}
-      <InsightRow highlight={insightHighlight} text={insightText} isLoading={showLoading} />
-
-      {/* 3. Healing Advice */}
-      <ActionRow title={t.journal.advanced_practice} text={adviceText} icon={Scale} />
-
-      {/* 4. Astro */}
-      <AstroRow text={astroText} />
+      {/* Analysis readout: insight / prescription / astro */}
+      <AnalysisReadout
+        insightHighlight={insightHighlight}
+        insightText={insightText}
+        adviceLabel={t.journal.advanced_practice}
+        adviceText={adviceText}
+        astroText={astroText}
+        isLoading={showLoading}
+      />
     </CardContainer>
   );
 };

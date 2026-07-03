@@ -1,6 +1,6 @@
-// INPUT: react-router useParams/useNavigate, useLanguage/useTheme, savedReadingsClient (getSavedReading).
+// INPUT: react-router useParams/useNavigate, useLanguage/useTheme, savedReadingsClient (getSavedReading), LlmDoc 文档式排版原语。
 // OUTPUT: Default-exported SavedReadingDetailPage — read-only render of one saved reading's output_json at /saved/:id.
-// POS: backlog #24 consumption UI. Renders the saved snapshot generically (humanized headings + paragraphs + lists) so any natal/cycle/synastry shape displays cleanly without re-calling the AI (no credit re-charge). Protected route. Update pages/FOLDER.md if added.
+// POS: backlog #24 consumption UI. Renders the saved snapshot via LlmDoc document flow (humanized section eyebrows + LlmProse paragraphs + LlmList lists) so any natal/cycle/synastry shape displays cleanly without re-calling the AI (no credit re-charge). Protected route. Update pages/FOLDER.md if added.
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -17,6 +17,14 @@ import {
   type SavedReadingDetail,
   type SavedToolType,
 } from "../services/savedReadingsClient";
+import {
+  LlmDoc,
+  LlmSection,
+  LlmField,
+  LlmProse,
+  LlmList,
+  LLM_BODY_CLASS,
+} from "../components/llm/LlmDoc";
 
 // snake_case / camelCase key → human "Title Case" label.
 const humanize = (key: string): string =>
@@ -31,41 +39,30 @@ const SKIP_KEYS = new Set(["id", "cycle_id", "share_text", "hash", "version"]);
 const isPlainObject = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 
-// Recursively render an arbitrary saved-output value as readable JSX. Strings →
-// paragraphs, string arrays → bullet lists, objects → labeled sub-sections.
+// Recursively render an arbitrary saved-output value as document-flow JSX.
+// Strings → LlmProse paragraphs, scalar arrays → LlmList, top-level object keys →
+// hairline-separated LlmSection eyebrows, nested object keys → LlmField labels.
+// No bordered boxes and no unbounded border-l indent chain.
 const RenderValue: React.FC<{
   value: unknown;
   depth: number;
-  muted: string;
-}> = ({ value, depth, muted }) => {
+}> = ({ value, depth }) => {
   if (value === null || value === undefined || value === "") return null;
 
   if (typeof value === "string") {
-    return (
-      <p className="text-sm leading-relaxed whitespace-pre-wrap">{value}</p>
-    );
+    return <LlmProse text={value} />;
   }
   if (typeof value === "number" || typeof value === "boolean") {
-    return <p className="text-sm">{String(value)}</p>;
+    return <p className={LLM_BODY_CLASS}>{String(value)}</p>;
   }
   if (Array.isArray(value)) {
     if (value.every((v) => typeof v === "string" || typeof v === "number")) {
-      return (
-        <ul className="list-disc pl-5 space-y-1">
-          {value.map((v, i) => (
-            <li key={i} className="text-sm">
-              {String(v)}
-            </li>
-          ))}
-        </ul>
-      );
+      return <LlmList items={value.map((v) => String(v))} />;
     }
     return (
-      <div className="space-y-3">
+      <div className="space-y-6">
         {value.map((v, i) => (
-          <div key={i} className={`pl-3 border-l ${muted}`}>
-            <RenderValue value={v} depth={depth + 1} muted={muted} />
-          </div>
+          <RenderValue key={i} value={v} depth={depth + 1} />
         ))}
       </div>
     );
@@ -75,15 +72,23 @@ const RenderValue: React.FC<{
       ([k, v]) =>
         !SKIP_KEYS.has(k) && v !== null && v !== undefined && v !== "",
     );
+    if (depth === 0) {
+      return (
+        <>
+          {entries.map(([k, v], i) => (
+            <LlmSection key={k} first={i === 0} eyebrow={humanize(k)}>
+              <RenderValue value={v} depth={depth + 1} />
+            </LlmSection>
+          ))}
+        </>
+      );
+    }
     return (
-      <div className="space-y-3">
+      <div className="space-y-5">
         {entries.map(([k, v]) => (
-          <div key={k}>
-            <div className={`text-xs uppercase tracking-wider mb-1 ${muted}`}>
-              {humanize(k)}
-            </div>
-            <RenderValue value={v} depth={depth + 1} muted={muted} />
-          </div>
+          <LlmField key={k} label={humanize(k)}>
+            <RenderValue value={v} depth={depth + 1} />
+          </LlmField>
         ))}
       </div>
     );
@@ -178,11 +183,9 @@ const SavedReadingDetailPage: React.FC = () => {
           </div>
           <Section>
             <Card className={`p-6 border ${borderMuted}`}>
-              <RenderValue
-                value={reading.outputJson}
-                depth={0}
-                muted={borderMuted}
-              />
+              <LlmDoc>
+                <RenderValue value={reading.outputJson} depth={0} />
+              </LlmDoc>
             </Card>
           </Section>
         </>

@@ -1,5 +1,5 @@
-// INPUT: React、分析数据与主题（snake_case，单列纵向排版与纸感映射）。
-// OUTPUT: 导出报告仪表盘组件（纵向模块布局、行运分组补齐与暗色卡片边框增强、卡片左侧色条收窄）。
+// INPUT: React、分析数据与主题、LLM 排版原语（LlmSection/LlmProse/LlmList/LlmField）与 services/llmText（toPlainText/parseInlineNumberedList）。
+// OUTPUT: 导出报告仪表盘组件（5 节改为单列文档流 LlmSection 序列，去图标砖与色条卡片；情绪折线图本体豁免，星象分组逻辑保留）。
 // POS: CBT 报告组件（含星象解读分组修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -14,8 +14,17 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
-import { Brain, Star, Target, CheckCircle2, Circle } from "lucide-react";
+import { CheckCircle2, Circle } from "lucide-react";
 import { useLanguage, useTheme } from "../UIComponents";
+import {
+  LlmDoc,
+  LlmSection,
+  LlmProse,
+  LlmList,
+  LlmField,
+  LLM_BODY_CLASS,
+} from "../llm/LlmDoc";
+import { toPlainText, parseInlineNumberedList } from "../../services/llmText";
 
 interface ReportDashboardProps {
   record: CBTRecord;
@@ -47,12 +56,6 @@ const toDisplayText = (value: unknown): string => {
   return "";
 };
 
-const cleanText = (value: unknown) => {
-  const text = toDisplayText(value);
-  if (!text) return "";
-  return text.replace(/\*\*/g, "").replace(/__/g, "");
-};
-
 const stripTrailingPunct = (value: string) =>
   value.replace(/\s*[。.!?;；]+$/g, "").trim();
 const normalizeComparisonText = (value: string) =>
@@ -66,33 +69,6 @@ const ASTRO_SECTION_PATTERN =
   "(本命盘|当日行运盘|今日行运盘|行运盘|行运|月相|Natal|Transit|Transiting|Moon Phase)";
 const INTERPRETATION_SECTION_PATTERN =
   "(星象觉察提醒|身体调节处方|星象觉察|身体调节|Astrological Awareness Reminder|Body Regulation Prescription|Body Regulation Rx|Astrological Awareness|Body Regulation)";
-
-const parseNumberedList = (text: string) => {
-  const normalized = text.replace(/\r\n/g, "\n").trim();
-  if (!normalized) return { intro: "", items: [] as string[] };
-  const markerCount = (normalized.match(/\d{1,2}[、.)）]\s*/g) || []).length;
-  if (markerCount < 2) return { intro: normalized, items: [] as string[] };
-
-  const marked = normalized.replace(/(\d{1,2})[、.)）]\s*/g, "\n$1. ");
-  const lines = marked
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-  const items: string[] = [];
-  const introParts: string[] = [];
-
-  for (const line of lines) {
-    if (/^\d{1,2}\.\s*/.test(line)) {
-      const item = line.replace(/^\d{1,2}\.\s*/, "").trim();
-      if (item) items.push(item);
-    } else {
-      introParts.push(line);
-    }
-  }
-
-  if (items.length === 0) return { intro: normalized, items: [] as string[] };
-  return { intro: introParts.join(" "), items };
-};
 
 const parseAspectItems = (text: string) => {
   const normalized = text.replace(/\r\n/g, "\n").trim();
@@ -311,11 +287,13 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({
     ? report.cognitive_analysis.distortions
     : [];
   const actions = Array.isArray(report.actions) ? report.actions : [];
-  const aspectText = cleanText(report.astro_context?.aspect);
+  const aspectText = toPlainText(toDisplayText(report.astro_context?.aspect));
   const aspectLines = aspectText
     ? buildAstroAspectLines(aspectText, language)
     : [];
-  const interpretationText = cleanText(report.astro_context?.interpretation);
+  const interpretationText = toPlainText(
+    toDisplayText(report.astro_context?.interpretation),
+  );
   const interpretationTextWithMarkers = useMemo(
     () =>
       interpretationText
@@ -332,15 +310,9 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({
   );
   const interpretationLabel = language === "zh" ? "解读" : "Interpretation";
   const interpretationList = useMemo(() => {
-    const parsed = parseNumberedList(interpretationTextWithMarkers);
-    if (
-      !parsed.intro &&
-      parsed.items.length === 0 &&
-      interpretationTextWithMarkers
-    ) {
-      return { intro: interpretationTextWithMarkers, items: [] as string[] };
-    }
-    return { intro: parsed.intro, items: parsed.items };
+    const parsed = parseInlineNumberedList(interpretationTextWithMarkers);
+    if (parsed) return parsed;
+    return { intro: interpretationTextWithMarkers, items: [] as string[] };
   }, [interpretationTextWithMarkers]);
   const interpretationSections = useMemo(
     () => splitInterpretationSections(interpretationList.intro),
@@ -365,17 +337,13 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({
   };
 
   return (
-    <div className="w-full space-y-6 animate-fade-in">
-      {/* 简化的标题 */}
-      <div className="space-y-2">
-        <h1
-          className={`text-3xl font-serif ${isLight ? "text-paper-900" : "text-star-50"}`}
-        >
+    <LlmDoc className="w-full animate-fade-in">
+      {/* 文档标题 */}
+      <header className="mb-2">
+        <h1 className="text-2xl font-medium tracking-[-0.01em] text-paper-900 dark:text-star-50">
           {t.journal.report_main_title}
         </h1>
-        <p
-          className={`text-xs ${isLight ? "text-paper-500" : "text-star-400"}`}
-        >
+        <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
           {new Date(record.timestamp).toLocaleDateString(
             language === "zh" ? "zh-CN" : "en-US",
             {
@@ -387,29 +355,21 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({
             },
           )}
         </p>
-      </div>
+      </header>
 
-      {/* 情绪波动卡片 */}
-      <div
-        className={`rounded-xl border border-l border-l-gold-500/40 p-6 ${isLight ? "bg-paper-100/85 border-paper-300" : "bg-space-900/60 border-gold-500/20"}`}
-      >
-        <div className="flex items-baseline gap-4 mb-4">
-          <span
-            className={`text-3xl font-serif ${isLight ? "text-paper-900" : "text-star-50"}`}
-          >
+      {/* 情绪波动（数据可视化，折线图本体豁免） */}
+      <LlmSection first>
+        <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span className="text-xl font-medium text-paper-900 dark:text-star-50">
             {primaryMood.name}
           </span>
-          <span
-            className={`text-2xl font-bold ${isLight ? "text-gold-700" : "text-gold-400"}`}
-          >
+          <span className="font-mono text-sm font-semibold text-accent">
             ↓ {decrease}%
           </span>
+          <span className="font-mono text-xs text-paper-500 dark:text-star-400">
+            {primaryMood.initialIntensity}% → {primaryMood.finalIntensity}%
+          </span>
         </div>
-        <p
-          className={`text-sm mb-4 ${isLight ? "text-paper-600" : "text-star-400"}`}
-        >
-          {primaryMood.initialIntensity}% → {primaryMood.finalIntensity}%
-        </p>
         <div className="h-28">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData}>
@@ -451,142 +411,66 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({
             </LineChart>
           </ResponsiveContainer>
         </div>
-      </div>
+      </LlmSection>
 
-      {/* 1. 认知评估卡片 */}
-      <div
-        className={`rounded-xl border border-l border-l-accent/40 p-6 ${isLight ? "bg-paper-100/85 border-paper-300" : "bg-space-900/60 border-gold-500/20"}`}
-      >
-        <div
-          className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? "border-paper-200" : "border-gold-500/15"}`}
-        >
-          <div
-            className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? "border-accent/30 bg-paper-100/85 text-accent" : "border-accent/30 bg-space-950 text-accent"}`}
-          >
-            <Brain size={18} />
-          </div>
-          <h3
-            className={`text-base font-serif ${isLight ? "text-paper-900" : "text-star-50"}`}
-          >
-            {t.journal.cognitive_assessment}
-          </h3>
-        </div>
-        <div className="pl-12 space-y-4">
-          <div className="flex flex-wrap gap-2">
+      {/* 认知评估 */}
+      <LlmSection eyebrow={t.journal.cognitive_assessment}>
+        {distortions.length > 0 && (
+          <div className="mb-3 flex flex-wrap gap-2">
             {distortions.map((d, i) => (
               <span
                 key={i}
-                className={`px-2 py-1 rounded text-xs ${isLight ? "bg-accent/10 text-accent" : "bg-accent/10 text-accent"}`}
+                className="inline-flex items-center rounded-full border border-paper-900/15 bg-paper-50/70 px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-[0.08em] text-paper-600 dark:border-star-50/15 dark:bg-space-900/60 dark:text-star-300"
               >
-                {cleanText(d)}
+                {toPlainText(toDisplayText(d))}
               </span>
             ))}
           </div>
-          <p
-            className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
-          >
-            {cleanText(report.cognitive_analysis.summary)}
-          </p>
-        </div>
-      </div>
+        )}
+        <LlmProse text={toDisplayText(report.cognitive_analysis.summary)} />
+      </LlmSection>
 
-      {/* 2. 平衡性见地卡片 */}
-      <div
-        className={`rounded-xl border border-l border-l-success/40 p-6 ${isLight ? "bg-paper-100/85 border-paper-300" : "bg-space-900/60 border-gold-500/20"}`}
-      >
-        <div
-          className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? "border-paper-200" : "border-gold-500/15"}`}
-        >
-          <div
-            className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? "border-success/30 bg-paper-100/85 text-success" : "border-success/30 bg-space-950 text-success"}`}
-          >
-            <Target size={18} />
-          </div>
-          <h3
-            className={`text-base font-serif ${isLight ? "text-paper-900" : "text-star-50"}`}
-          >
-            {t.journal.balanced_insight}
-          </h3>
-        </div>
-        <div className="pl-12 space-y-4">
+      {/* 平衡性见地 */}
+      <LlmSection eyebrow={t.journal.balanced_insight}>
+        <div className="space-y-4">
           {record.balancedEntries.map((entry) => (
-            <div
-              key={entry.id}
-              className={`pb-4 border-b last:border-0 last:pb-0 ${isLight ? "border-paper-200" : "border-gold-500/15"}`}
-            >
-              <p
-                className={`text-sm leading-relaxed mb-2 ${isLight ? "text-paper-700" : "text-star-200"}`}
-              >
-                {cleanText(entry.text)}
-              </p>
-              <div className="flex items-center justify-between">
-                <span
-                  className={`text-xs ${isLight ? "text-paper-500" : "text-star-400"}`}
-                >
+            <div key={entry.id}>
+              <LlmProse text={toDisplayText(entry.text)} />
+              <div className="mt-1.5 flex items-center gap-2">
+                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-paper-500 dark:text-star-400">
                   {t.journal.belief_weight}
                 </span>
-                <span
-                  className={`text-base font-mono font-bold ${isLight ? "text-success" : "text-success"}`}
-                >
+                <span className="font-mono text-sm font-semibold text-accent">
                   {entry.belief}%
                 </span>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </LlmSection>
 
-      {/* 3. 占星解读卡片 */}
-      <div
-        className={`rounded-xl border border-l border-l-gold-500/40 p-6 ${isLight ? "bg-paper-100/85 border-paper-300" : "bg-space-900/60 border-gold-500/20"}`}
-      >
-        <div
-          className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? "border-paper-200" : "border-gold-500/15"}`}
-        >
-          <div
-            className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? "border-gold-600/30 bg-paper-100/85 text-gold-600" : "border-gold-500/30 bg-space-950 text-gold-500"}`}
-          >
-            <Star size={18} />
-          </div>
-          <h3
-            className={`text-base font-serif ${isLight ? "text-paper-900" : "text-star-50"}`}
-          >
-            {t.journal.astro_reading}
-          </h3>
-        </div>
-        <div className="pl-12 space-y-3">
+      {/* 占星解读（星象分组逻辑保留，渲染文档流化） */}
+      <LlmSection eyebrow={t.journal.astro_reading}>
+        <div className="space-y-4">
           {aspectLines.length > 0 ? (
-            aspectLines.map((line, i) => (
-              <div key={i} className="flex gap-3 items-start">
-                <div
-                  className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${isLight ? "bg-gold-600/50" : "bg-gold-500/50"}`}
-                />
-                <span
-                  className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
-                >
-                  {line.label && (
-                    <span
-                      className={`font-medium ${isLight ? "text-gold-700" : "text-gold-400"}`}
-                    >
-                      {line.label}:{" "}
-                    </span>
-                  )}
-                  {line.text}
-                </span>
-              </div>
-            ))
+            <LlmList
+              items={aspectLines.map((line) =>
+                line.label
+                  ? [
+                      { text: `${line.label}: `, emphasis: true },
+                      { text: line.text },
+                    ]
+                  : line.text,
+              )}
+            />
           ) : (
-            <div
-              className={`text-sm ${isLight ? "text-paper-400" : "text-star-400"}`}
-            >
+            <p className="font-mono text-xs text-paper-400 dark:text-star-400">
               —
-            </div>
+            </p>
           )}
           {(interpretationList.intro ||
             interpretationList.items.length > 0) && (
-            <div
-              className={`mt-4 pt-4 border-t space-y-2 ${isLight ? "border-paper-200" : "border-gold-500/15"}`}
-            >
+            <div className="space-y-4">
               {interpretationSections.length > 0 &&
                 interpretationSections.map((section, i) => {
                   const label = section.label
@@ -594,87 +478,55 @@ const ReportDashboard: React.FC<ReportDashboardProps> = ({
                     : i === 0
                       ? interpretationLabel
                       : "";
-                  return (
-                    <p
+                  return label ? (
+                    <LlmField
                       key={`${label || "section"}-${i}`}
-                      className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
-                    >
-                      {label && (
-                        <span
-                          className={`font-medium ${isLight ? "text-gold-700" : "text-gold-400"}`}
-                        >
-                          {label}:{" "}
-                        </span>
-                      )}
-                      {section.text}
-                    </p>
+                      label={label}
+                      text={section.text}
+                    />
+                  ) : (
+                    <LlmProse key={`section-${i}`} text={section.text} />
                   );
                 })}
-              {interpretationList.items.length > 0 &&
-                interpretationList.items.map((item, i) => (
-                  <div key={i} className="flex gap-3 items-start">
-                    <div
-                      className={`shrink-0 w-1.5 h-1.5 rounded-full mt-2 ${isLight ? "bg-gold-600/50" : "bg-gold-500/50"}`}
-                    />
-                    <span
-                      className={`text-sm leading-relaxed ${isLight ? "text-paper-700" : "text-star-200"}`}
-                    >
-                      {item}
-                    </span>
-                  </div>
-                ))}
+              {interpretationList.items.length > 0 && (
+                <LlmList items={interpretationList.items} />
+              )}
             </div>
           )}
         </div>
-      </div>
+      </LlmSection>
 
-      {/* 4. 执行建议卡片 */}
-      <div
-        className={`rounded-xl border border-l border-l-star-200/40 p-6 ${isLight ? "bg-paper-100/85 border-paper-300" : "bg-space-900/60 border-gold-500/20"}`}
-      >
-        <div
-          className={`flex items-center gap-3 mb-4 pb-3 border-b ${isLight ? "border-paper-200" : "border-gold-500/15"}`}
-        >
-          <div
-            className={`w-9 h-9 rounded-xl border flex items-center justify-center ${isLight ? "border-star-200/30 bg-paper-100/85 text-star-200" : "border-star-200/30 bg-space-950 text-star-200"}`}
-          >
-            <CheckCircle2 size={18} />
-          </div>
-          <h3
-            className={`text-base font-serif ${isLight ? "text-paper-900" : "text-star-50"}`}
-          >
-            {t.journal.action_guide}
-          </h3>
-        </div>
-        <div className="pl-12 space-y-2">
+      {/* 执行建议（可勾选清单，保留交互与完成态） */}
+      <LlmSection eyebrow={t.journal.action_guide}>
+        <ul className="space-y-1">
           {actions.map((action, i) => {
             const isCompleted = record.completedActionIndices?.includes(i);
             return (
-              <div
+              <li
                 key={i}
                 onClick={() => toggleAction(i)}
-                className={`flex items-start gap-3 py-2 cursor-pointer group transition-all ${isCompleted ? "opacity-60" : ""}`}
+                className={`flex items-start gap-3 py-2 cursor-pointer ${isCompleted ? "opacity-60" : ""}`}
               >
-                <div
-                  className={`flex-shrink-0 mt-0.5 ${isCompleted ? (isLight ? "text-success" : "text-success") : isLight ? "text-paper-400" : "text-star-400"}`}
+                <span
+                  className={`mt-0.5 shrink-0 ${isCompleted ? "text-accent" : "text-paper-400 dark:text-star-400"}`}
                 >
                   {isCompleted ? (
                     <CheckCircle2 size={18} />
                   ) : (
                     <Circle size={18} />
                   )}
-                </div>
-                <p
-                  className={`text-sm leading-relaxed flex-1 ${isCompleted ? "line-through" : ""} ${isLight ? "text-paper-700" : "text-star-200"}`}
+                </span>
+                <span
+                  className={`${LLM_BODY_CLASS} flex-1 ${isCompleted ? "line-through" : ""}`}
                 >
-                  {cleanText(action)}
-                </p>
-              </div>
+                  {toPlainText(toDisplayText(action))}
+                </span>
+              </li>
             );
           })}
-        </div>
-      </div>
-    </div>
+        </ul>
+      </LlmSection>
+    </LlmDoc>
   );
 };
 

@@ -16,3 +16,4 @@
 
 - 建立本 FOLDER.md（补齐自文档化欠账）。
 - ReportViewPage 报告正文 prose 容器加 font-reading（编辑部阅读衬线）。
+- 2026-07-03 LLM 排版统一：ReportViewPage 删死类 prose-invert，section.content 用 LlmProse 恢复段落，节卡→LlmSection 文档流。

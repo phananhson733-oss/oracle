@@ -37,16 +37,13 @@ import {
   buildBirthCacheKey,
 } from "../utils/astro-helpers";
 import {
-  splitLabelParts,
-  formatSignHouse,
-} from "../components/shared/astro-glyphs";
-import {
   LlmDoc,
   LlmSection,
   LlmProse,
   LlmList,
   LlmQuote,
   LlmCallout,
+  LlmField,
 } from "../components/llm/LlmDoc";
 
 // Lazy-loaded tech spec sub-components
@@ -75,99 +72,38 @@ const HouseRulerTable = lazy(() =>
 
 const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
   const { t, tl } = useLanguage();
-  const { theme } = useTheme();
 
+  // Big3（Sun/Moon/Rising）保留概览「仪表卡」网格（非长文）；越界 border-l 色移除，
+  // 标题统一走 accent（陈金）。四模块改为单列文档流：统一单色 mono 眉标 + LlmProse 正文。
   const big3Cards = [
     {
       key: "sun",
-      label: t.me.sun || "☉ Sun",
+      label: t.me.sun || "Sun",
       subtitle: t.me.sun_sub || "Core Identity",
       data: data?.sun,
-      accent: "border-l-red-500/40",
     },
     {
       key: "moon",
-      label: t.me.moon || "☽ Moon",
+      label: t.me.moon || "Moon",
       subtitle: t.me.moon_sub || "Inner World",
       data: data?.moon,
-      accent: "border-l-blue-500/40",
     },
     {
       key: "rising",
-      label: t.me.rising || "↑ Rising",
-      subtitle: t.me.rising_sub || "Outer Mask",
+      label: t.me.rising || "Rising",
+      subtitle: t.me.rising_sub || "Outer Persona",
       data: data?.rising,
-      accent: "border-l-gold-500/40",
     },
   ];
 
-  const moduleCards = [
-    {
-      title: t.me.melody,
-      content: (
-        <div className="space-y-2">
-          {(data?.core_melody?.keywords || []).slice(0, 2).map((k, i) => (
-            <div key={i} className="text-sm leading-relaxed">
-              <span className="font-bold text-green-600 dark:text-green-500 uppercase text-xs tracking-wider block mb-0.5">
-                {k}
-              </span>
-              <span className="opacity-90">
-                {data?.core_melody?.explanations?.[i]}
-              </span>
-            </div>
-          ))}
-        </div>
-      ),
-      accent: "border-l-green-500/40",
-    },
-    {
-      title: t.me.talent,
-      content: (
-        <>
-          <h4 className="font-serif font-medium mb-1">
-            {data?.top_talent?.title}
-          </h4>
-          <p className="text-sm opacity-90 leading-relaxed line-clamp-2">
-            {data?.top_talent?.example}
-          </p>
-        </>
-      ),
-      accent: "border-l-orange-500/40",
-    },
-    {
-      title: t.me.pitfall,
-      content: (
-        <>
-          <h4 className="font-serif font-medium mb-1">
-            {data?.top_pitfall?.title}
-          </h4>
-          <p className="text-sm opacity-90 leading-relaxed">
-            {(data?.top_pitfall?.triggers || []).slice(0, 2).join(" · ")}
-          </p>
-        </>
-      ),
-      accent: "border-l-red-500/40",
-    },
-    {
-      title: t.me.trigger,
-      content: (
-        <div className="text-sm leading-relaxed space-y-1">
-          <div className="opacity-90">{data?.trigger_card?.inner_need}</div>
-          <div className="text-xs text-purple-600 dark:text-purple-500 font-medium">
-            {data?.trigger_card?.buffer_action}
-          </div>
-        </div>
-      ),
-      accent: "border-l-purple-500/40",
-    },
-  ];
+  const melodyKeywords = (data?.core_melody?.keywords || []).slice(0, 2);
 
   return (
     <div className="space-y-6">
-      {/* Big3 - Three prominent cards */}
+      {/* Big3 — concept overview tiles (grid preserved) */}
       <div className="grid md:grid-cols-3 gap-4">
         {big3Cards.map((card) => (
-          <Card key={card.key} className={`border-l ${card.accent} p-5`}>
+          <Card key={card.key} className="p-5">
             <div className="flex items-baseline justify-between mb-3">
               <span className="text-lg font-serif font-medium">
                 {card.label}
@@ -176,7 +112,7 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
                 {card.subtitle}
               </span>
             </div>
-            <h3 className="text-xl font-serif font-medium text-gold-600 dark:text-gold-500 mb-2">
+            <h3 className="text-xl font-serif font-medium text-accent mb-2">
               {tl(card.data?.title || "")}
             </h3>
             <div className="flex flex-wrap gap-1.5 mb-3">
@@ -196,17 +132,52 @@ const QuickGlance: React.FC<{ data: T.NatalOverviewContent }> = ({ data }) => {
         ))}
       </div>
 
-      {/* Four modules - 2×2 grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {moduleCards.map((c, i) => (
-          <Card key={i} className={`border-l ${c.accent} p-4`}>
-            <div className="text-xs uppercase font-bold opacity-60 mb-2 tracking-widest">
-              {c.title}
+      {/* Four modules — single-column document flow */}
+      <LlmDoc>
+        {melodyKeywords.length > 0 && (
+          <LlmSection first eyebrow={t.me.melody}>
+            <div className="space-y-4">
+              {melodyKeywords.map((k, i) => (
+                <LlmField
+                  key={i}
+                  label={k}
+                  text={data?.core_melody?.explanations?.[i]}
+                />
+              ))}
             </div>
-            {c.content}
-          </Card>
-        ))}
-      </div>
+          </LlmSection>
+        )}
+
+        {data?.top_talent?.title && (
+          <LlmSection eyebrow={t.me.talent} title={data.top_talent.title}>
+            <LlmProse text={data.top_talent.example} />
+          </LlmSection>
+        )}
+
+        {data?.top_pitfall?.title && (
+          <LlmSection eyebrow={t.me.pitfall} title={data.top_pitfall.title}>
+            {(data.top_pitfall.triggers?.length ?? 0) > 0 && (
+              <LlmProse
+                text={(data.top_pitfall.triggers || []).slice(0, 2).join(" · ")}
+              />
+            )}
+          </LlmSection>
+        )}
+
+        {(data?.trigger_card?.inner_need ||
+          data?.trigger_card?.buffer_action) && (
+          <LlmSection eyebrow={t.me.trigger}>
+            {data.trigger_card.inner_need && (
+              <LlmProse text={data.trigger_card.inner_need} />
+            )}
+            {data.trigger_card.buffer_action && (
+              <LlmCallout className="mt-3">
+                {data.trigger_card.buffer_action}
+              </LlmCallout>
+            )}
+          </LlmSection>
+        )}
+      </LlmDoc>
     </div>
   );
 };
