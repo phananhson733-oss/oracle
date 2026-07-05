@@ -17,8 +17,7 @@ export const maliaObamaBirthChartEn: WikiArticle = {
     "Malia Obama birth chart meaning",
     "Malia Obama birth chart astrology",
     "Malia Obama birth chart zodiac",
-    "Malia Obama birth chart interpretation",
-    "emma watson zodiac sign"
+    "Malia Obama birth chart interpretation"
   ],
   content: `# What Malia Obama's Birth Chart Reveals About Her Public Persona
 
