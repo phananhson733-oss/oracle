@@ -17,8 +17,7 @@ export const achrafHakimiBirthChartEn: WikiArticle = {
     "Achraf Hakimi birth chart meaning",
     "Achraf Hakimi birth chart astrology",
     "Achraf Hakimi birth chart zodiac",
-    "Achraf Hakimi birth chart interpretation",
-    "emma watson zodiac sign"
+    "Achraf Hakimi birth chart interpretation"
   ],
   content: `# Reading the Achraf Hakimi Birth Chart as Story, Not Prophecy
 
