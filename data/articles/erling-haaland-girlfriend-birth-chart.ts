@@ -17,8 +17,7 @@ export const erlingHaalandGirlfriendBirthChartEn: WikiArticle = {
     "erling haaland girlfriend birth chart meaning",
     "erling haaland girlfriend birth chart astrology",
     "erling haaland girlfriend birth chart zodiac",
-    "erling haaland girlfriend birth chart interpretation",
-    "emma watson zodiac sign"
+    "erling haaland girlfriend birth chart interpretation"
   ],
   content: `# What the Erling Haaland Girlfriend Birth Chart Craze Actually Reveals
 
