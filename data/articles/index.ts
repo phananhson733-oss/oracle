@@ -310,6 +310,7 @@ import { travisKelceBirthChartEn } from "./travis-kelce-birth-chart";
 import { diogoJotaBirthChartEn } from "./diogo-jota-birth-chart";
 import { maliaObamaBirthChartEn } from "./malia-obama-birth-chart";
 import { colePalmerBirthChartEn } from "./cole-palmer-birth-chart";
+import { erlingHaalandGirlfriendBirthChartEn } from "./erling-haaland-girlfriend-birth-chart";
 // All articles organized by language
 
 import {
@@ -611,6 +612,7 @@ const ARTICLES_EN: WikiArticle[] = [
   diogoJotaBirthChartEn,
   maliaObamaBirthChartEn,
   colePalmerBirthChartEn,
+  erlingHaalandGirlfriendBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
