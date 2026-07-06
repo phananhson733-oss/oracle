@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="England vs Norway: Two National Archetypes">
+  <defs>
+    <linearGradient id="englandvsnorwayastrology0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="englandvsnorwayastrology0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="englandvsnorwayastrology0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="englandvsnorwayastrology0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="englandvsnorwayastrology0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="englandvsnorwayastrology0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#englandvsnorwayastrology0en-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#englandvsnorwayastrology0en-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#englandvsnorwayastrology0en-neb2)"/>
+  <circle cx="238.5" cy="61.7" r="1.00" fill="#cfc8ea" opacity="0.17"/><circle cx="352.9" cy="331.1" r="1.58" fill="#cfc8ea" opacity="0.31"/><circle cx="741.7" cy="76.4" r="1.30" fill="#cfc8ea" opacity="0.29"/><circle cx="601.7" cy="85.5" r="0.55" fill="#cfc8ea" opacity="0.20"/><circle cx="299.6" cy="202.5" r="1.38" fill="#cfc8ea" opacity="0.43"/><circle cx="732.0" cy="33.0" r="1.70" fill="#cfc8ea" opacity="0.41"/><circle cx="518.4" cy="41.3" r="1.69" fill="#cfc8ea" opacity="0.27"/><circle cx="441.3" cy="79.6" r="1.20" fill="#cfc8ea" opacity="0.17"/><circle cx="92.0" cy="35.3" r="0.73" fill="#cfc8ea" opacity="0.21"/><circle cx="400.2" cy="45.3" r="1.47" fill="#cfc8ea" opacity="0.32"/><circle cx="440.0" cy="382.5" r="1.30" fill="#cfc8ea" opacity="0.16"/><circle cx="168.6" cy="22.1" r="0.83" fill="#cfc8ea" opacity="0.16"/><circle cx="109.4" cy="65.0" r="1.47" fill="#cfc8ea" opacity="0.19"/><circle cx="399.5" cy="200.3" r="1.13" fill="#cfc8ea" opacity="0.21"/><circle cx="703.7" cy="420.8" r="0.55" fill="#cfc8ea" opacity="0.15"/><circle cx="257.6" cy="365.9" r="1.29" fill="#cfc8ea" opacity="0.29"/><circle cx="198.6" cy="431.3" r="0.86" fill="#cfc8ea" opacity="0.19"/><circle cx="238.4" cy="348.0" r="1.20" fill="#cfc8ea" opacity="0.35"/><circle cx="744.8" cy="197.2" r="0.44" fill="#cfc8ea" opacity="0.19"/><circle cx="585.4" cy="409.6" r="1.56" fill="#cfc8ea" opacity="0.25"/><circle cx="126.5" cy="114.2" r="0.92" fill="#cfc8ea" opacity="0.23"/><circle cx="679.5" cy="339.6" r="1.05" fill="#cfc8ea" opacity="0.45"/><circle cx="634.9" cy="280.3" r="1.30" fill="#cfc8ea" opacity="0.46"/><circle cx="301.0" cy="45.1" r="0.43" fill="#cfc8ea" opacity="0.52"/><circle cx="340.9" cy="312.5" r="0.77" fill="#cfc8ea" opacity="0.17"/><circle cx="220.7" cy="52.9" r="0.94" fill="#cfc8ea" opacity="0.14"/><circle cx="310.4" cy="384.3" r="1.16" fill="#cfc8ea" opacity="0.15"/><circle cx="500.2" cy="272.7" r="1.03" fill="#cfc8ea" opacity="0.38"/><circle cx="267.3" cy="242.0" r="1.08" fill="#cfc8ea" opacity="0.53"/><circle cx="230.0" cy="412.7" r="0.59" fill="#cfc8ea" opacity="0.46"/><circle cx="690.5" cy="38.5" r="0.57" fill="#cfc8ea" opacity="0.13"/><circle cx="106.1" cy="123.8" r="0.55" fill="#cfc8ea" opacity="0.50"/><circle cx="503.0" cy="226.4" r="0.42" fill="#cfc8ea" opacity="0.49"/><circle cx="25.3" cy="151.5" r="1.49" fill="#cfc8ea" opacity="0.29"/><circle cx="624.6" cy="28.3" r="1.20" fill="#cfc8ea" opacity="0.13"/><circle cx="557.5" cy="364.6" r="0.57" fill="#cfc8ea" opacity="0.48"/><circle cx="730.6" cy="113.8" r="0.83" fill="#cfc8ea" opacity="0.49"/><circle cx="171.0" cy="418.5" r="1.31" fill="#cfc8ea" opacity="0.25"/><path d="M 716.2112765051425 59.0 L 716.6 61.1 L 718.7 61.4751100235153 L 716.6 61.9 L 716.2112765051425 64.0 L 715.8 61.9 L 713.7 61.4751100235153 L 715.8 61.1 Z" fill="#f6e6bf" opacity="0.6740041719051078"/><path d="M 659.2140658162534 291.5 L 659.6 293.6 L 661.7 293.9629645647947 L 659.6 294.4 L 659.2140658162534 296.5 L 658.8 294.4 L 656.7 293.9629645647947 L 658.8 293.6 Z" fill="#f6e6bf" opacity="0.660859651514329"/><path d="M 458.27766700461507 248.3 L 458.7 250.5 L 460.8 250.8699426513631 L 458.7 251.3 L 458.27766700461507 253.4 L 457.9 251.3 L 455.7 250.8699426513631 L 457.9 250.5 Z" fill="#f6e6bf" opacity="0.5663459263043478"/><path d="M 73.75985099002719 179.8 L 74.3 182.9 L 77.4 183.45016057998873 L 74.3 184.0 L 73.75985099002719 187.1 L 73.2 184.0 L 70.1 183.45016057998873 L 73.2 182.9 Z" fill="#f6e6bf" opacity="0.521950532705523"/><path d="M 698.5535144247115 336.4 L 699.1 339.1 L 701.8 339.6124320656527 L 699.1 340.1 L 698.5535144247115 342.9 L 698.0 340.1 L 695.3 339.6124320656527 L 698.0 339.1 Z" fill="#f6e6bf" opacity="0.5700080988230184"/><path d="M 601.7 85.5 L 518.4 41.3 L 744.8 197.2 L 126.5 114.2 L 220.7 52.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">England vs Norway: Two National Archetypes</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#englandvsnorwayastrology0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#englandvsnorwayastrology0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">England</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Institutional, reserved, and quietly assertive</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Linked to cardinal initiative and airy commercial exchange</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Observable in understatement, procedure, and dry humor</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 277.6 L 48.3 280.5 L 51.1 281 L 48.3 281.5 L 47.75 284.4 L 47.2 281.5 L 44.4 281 L 47.2 280.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Norway</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Egalitarian, nature-bound, and enduring</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Linked to earthy steadiness and community-minded themes</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Observable in consensus, closeness to landscape, flat social hierarchy</text>
+  <path d="M 202.22749999999988 416.4 L 202.6 418.6 L 204.8 419 L 202.6 419.4 L 202.22749999999988 421.6 L 201.8 419.4 L 199.6 419 L 201.8 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 416.4 L 558.2 418.6 L 560.4 419 L 558.2 419.4 L 557.7725000000002 421.6 L 557.4 419.4 L 555.2 419 L 557.4 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
