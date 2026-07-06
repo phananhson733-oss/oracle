@@ -118,7 +118,7 @@ They turn a familiar public image into an easy way to practice symbolic interpre
 
 A few nearby topics help you keep symbol and fact apart:
 
-- [guide to the meaning of a Taurus Sun in a birth chart](/en/wiki/north-node-in-taurus) — unpacks the one placement this chart is actually anchored on.
+- *guide to the meaning of a Taurus Sun in a birth chart* — unpacks the one placement this chart is actually anchored on.
 - *explainer on how planet clusters work in a birth chart* — useful when a profile claims a stellium without any birth time.
 - [overview of major aspects like trines and squares](/en/wiki/astrology-terms) — shows how separate placements combine into a fuller pattern.
 
