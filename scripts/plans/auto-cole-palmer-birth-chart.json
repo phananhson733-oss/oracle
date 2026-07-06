@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "cole-palmer-birth-chart": {
+      "hero": {
+        "prompt": "A vast twilight landscape of rolling golden-green hills stretching to a wide open horizon, a single luminous warm orb resting low and steady just above the earth line, its glow radiating in slow concentric rings across the quiet land below, dozens of faint silver-gold celestial points scattered across the sky above suggesting layers of a wider pattern, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twilight landscape with a steady golden orb above rolling hills, evoking the Taurus Sun in Cole Palmer's birth chart read as symbol"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs a Single Zodiac Sign: Where People Mix Them Up",
+          "titleEn": "Sun Sign vs Full Chart: What Each Can Honestly Claim",
+          "altEn": "Comparison of what a Sun sign read and a full birth chart read can each honestly claim about Cole Palmer",
+          "columns": [
+            {
+              "nameEn": "Sun Sign Read",
+              "linesEn": [
+                "One placement only (Taurus)",
+                "Fast, memorable label",
+                "Compresses personality into one archetype",
+                "Sacrifices accuracy and nuance"
+              ]
+            },
+            {
+              "nameEn": "Full Chart Read",
+              "linesEn": [
+                "Layers Moon, rising sign, and aspects",
+                "Texture and contradiction",
+                "Needs a verified birth time",
+                "No single trait runs the show"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Cole Palmer Birth Chart in Public Persona",
+          "titleEn": "Five Moves for Honest Chart Interpretation",
+          "altEn": "Five-step sequence for reading a celebrity birth chart as symbolism rather than surveillance",
+          "items": [
+            {
+              "nameEn": "Start with the Sun",
+              "subEn": "Note Taurus themes as tendencies, not verdicts about who he is"
+            },
+            {
+              "nameEn": "Flag what you cannot verify",
+              "subEn": "Moon and rising sign are estimates without a confirmed birth time"
+            },
+            {
+              "nameEn": "Match symbol to persona",
+              "subEn": "Connect 'unhurried' to how he carries himself, never to a specific goal or result"
+            },
+            {
+              "nameEn": "Watch your language",
+              "subEn": "Swap 'this means he is' for 'this placement is associated with'"
+            },
+            {
+              "nameEn": "Compare read to read",
+              "subEn": "Disagreement between profiles proves you are seeing interpretation, not fact"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Four Misreadings That Treat Interpretation as Evidence",
+          "altEn": "Four common errors when reading Cole Palmer's birth chart, each rooted in confusing symbol with proof",
+          "items": [
+            {
+              "nameEn": "Chart proves temperament",
+              "subEn": "Symbolic themes cannot verify composure or explain a single performance on the pitch"
+            },
+            {
+              "nameEn": "Taurus Sun caused a goal",
+              "subEn": "Astrology maps meaning, not causation — no placement produces a match result"
+            },
+            {
+              "nameEn": "This is his real personality",
+              "subEn": "You are reading a public persona through symbolism, not a private self"
+            },
+            {
+              "nameEn": "The full chart is confirmed",
+              "subEn": "Most rests on an unverified birth time — treat all beyond the Sun as provisional"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

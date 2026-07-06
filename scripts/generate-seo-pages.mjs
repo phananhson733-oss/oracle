@@ -839,6 +839,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'cole-palmer-birth-chart',
   'erling-haaland-girlfriend-birth-chart',
   'malia-obama-birth-chart',
   'diogo-jota-birth-chart',
