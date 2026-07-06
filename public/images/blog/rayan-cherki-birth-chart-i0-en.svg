@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="Sun-Sign Headline vs Full Birth Chart">
+  <defs>
+    <linearGradient id="rayancherkibirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="rayancherkibirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="rayancherkibirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rayancherkibirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rayancherkibirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rayancherkibirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#rayancherkibirthchart0en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#rayancherkibirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#rayancherkibirthchart0en-neb2)"/>
+  <circle cx="658.6" cy="307.4" r="1.34" fill="#cfc8ea" opacity="0.25"/><circle cx="651.0" cy="96.6" r="1.12" fill="#cfc8ea" opacity="0.39"/><circle cx="227.3" cy="92.3" r="1.23" fill="#cfc8ea" opacity="0.13"/><circle cx="429.0" cy="250.5" r="0.59" fill="#cfc8ea" opacity="0.27"/><circle cx="383.0" cy="396.7" r="1.01" fill="#cfc8ea" opacity="0.36"/><circle cx="542.5" cy="201.5" r="1.58" fill="#cfc8ea" opacity="0.25"/><circle cx="69.9" cy="282.4" r="0.88" fill="#cfc8ea" opacity="0.14"/><circle cx="595.9" cy="481.1" r="0.77" fill="#cfc8ea" opacity="0.45"/><circle cx="353.6" cy="364.3" r="1.09" fill="#cfc8ea" opacity="0.48"/><circle cx="351.9" cy="100.8" r="1.00" fill="#cfc8ea" opacity="0.27"/><circle cx="375.2" cy="156.1" r="1.11" fill="#cfc8ea" opacity="0.28"/><circle cx="470.4" cy="372.3" r="0.97" fill="#cfc8ea" opacity="0.18"/><circle cx="121.6" cy="85.5" r="0.74" fill="#cfc8ea" opacity="0.21"/><circle cx="557.9" cy="403.8" r="0.60" fill="#cfc8ea" opacity="0.39"/><circle cx="653.9" cy="115.3" r="1.59" fill="#cfc8ea" opacity="0.50"/><circle cx="351.9" cy="373.6" r="1.13" fill="#cfc8ea" opacity="0.38"/><circle cx="720.9" cy="228.4" r="1.17" fill="#cfc8ea" opacity="0.17"/><circle cx="83.7" cy="250.0" r="0.91" fill="#cfc8ea" opacity="0.47"/><circle cx="78.9" cy="256.6" r="0.61" fill="#cfc8ea" opacity="0.15"/><circle cx="309.9" cy="107.3" r="1.05" fill="#cfc8ea" opacity="0.35"/><circle cx="717.6" cy="252.3" r="0.99" fill="#cfc8ea" opacity="0.13"/><circle cx="699.3" cy="177.3" r="1.34" fill="#cfc8ea" opacity="0.17"/><circle cx="409.9" cy="368.9" r="0.86" fill="#cfc8ea" opacity="0.19"/><circle cx="650.0" cy="380.4" r="0.64" fill="#cfc8ea" opacity="0.31"/><circle cx="262.3" cy="159.6" r="1.05" fill="#cfc8ea" opacity="0.22"/><circle cx="460.3" cy="120.2" r="1.53" fill="#cfc8ea" opacity="0.14"/><circle cx="480.0" cy="156.3" r="1.61" fill="#cfc8ea" opacity="0.22"/><circle cx="69.3" cy="254.6" r="0.67" fill="#cfc8ea" opacity="0.50"/><circle cx="734.3" cy="171.9" r="0.50" fill="#cfc8ea" opacity="0.17"/><circle cx="527.3" cy="209.4" r="0.77" fill="#cfc8ea" opacity="0.32"/><circle cx="104.9" cy="381.9" r="0.66" fill="#cfc8ea" opacity="0.44"/><circle cx="113.7" cy="259.9" r="1.24" fill="#cfc8ea" opacity="0.45"/><circle cx="268.1" cy="282.5" r="0.75" fill="#cfc8ea" opacity="0.15"/><circle cx="583.4" cy="189.3" r="1.23" fill="#cfc8ea" opacity="0.54"/><circle cx="545.1" cy="479.6" r="1.11" fill="#cfc8ea" opacity="0.21"/><circle cx="448.8" cy="443.1" r="0.61" fill="#cfc8ea" opacity="0.54"/><circle cx="351.0" cy="322.2" r="0.94" fill="#cfc8ea" opacity="0.31"/><circle cx="204.4" cy="95.4" r="0.53" fill="#cfc8ea" opacity="0.47"/><circle cx="614.1" cy="275.2" r="1.10" fill="#cfc8ea" opacity="0.36"/><circle cx="547.2" cy="262.6" r="1.39" fill="#cfc8ea" opacity="0.53"/><circle cx="597.5" cy="336.7" r="1.12" fill="#cfc8ea" opacity="0.20"/><circle cx="165.6" cy="162.3" r="0.61" fill="#cfc8ea" opacity="0.32"/><path d="M 219.94412956014276 163.0 L 220.5 166.2 L 223.7 166.7526798134204 L 220.5 167.3 L 219.94412956014276 170.5 L 219.3 167.3 L 216.2 166.7526798134204 L 219.3 166.2 Z" fill="#f6e6bf" opacity="0.7338060559006407"/><path d="M 491.67133178934455 23.4 L 492.2 26.1 L 495.0 26.660670204786584 L 492.2 27.2 L 491.67133178934455 30.0 L 491.1 27.2 L 488.4 26.660670204786584 L 491.1 26.1 Z" fill="#f6e6bf" opacity="0.7299580719554797"/><path d="M 332.78213031962514 70.8 L 333.2 73.1 L 335.6 73.58885326399468 L 333.2 74.0 L 332.78213031962514 76.4 L 332.3 74.0 L 330.0 73.58885326399468 L 332.3 73.1 Z" fill="#f6e6bf" opacity="0.6387338794069365"/><path d="M 456.29494060203433 102.6 L 456.7 104.8 L 458.9 105.25682084704749 L 456.7 105.7 L 456.29494060203433 107.9 L 455.9 105.7 L 453.7 105.25682084704749 L 455.9 104.8 Z" fill="#f6e6bf" opacity="0.521436688513495"/><path d="M 682.7711163200438 174.9 L 683.4 178.0 L 686.5 178.58626365638338 L 683.4 179.2 L 682.7711163200438 182.3 L 682.2 179.2 L 679.1 178.58626365638338 L 682.2 178.0 Z" fill="#f6e6bf" opacity="0.523361332458444"/><path d="M 351.9 373.6 L 309.9 107.3 L 480.0 156.3 L 268.1 282.5 L 351.0 322.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Sun-Sign Headline vs Full Birth Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#rayancherkibirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#rayancherkibirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Sun-Sign Headline</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Uses one placement only — the Sun</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Compresses identity into a shareable label</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Travels quickly online</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Loses Moon's emotional texture and rising sign's first-impression style</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Full Birth Chart</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Combines Sun, Moon, rising sign, and planetary aspects</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Holds multiple placements in tension at once</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Follows Rudhyar and Liz Greene's psychological tradition</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Requires a verified birth time for Moon and Ascendant</text>
+  <path d="M 202.22749999999988 474.4 L 202.6 476.6 L 204.8 477 L 202.6 477.4 L 202.22749999999988 479.6 L 201.8 477.4 L 199.6 477 L 201.8 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 474.4 L 558.2 476.6 L 560.4 477 L 558.2 477.4 L 557.7725000000002 479.6 L 557.4 477.4 L 555.2 477 L 557.4 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
