@@ -17,8 +17,7 @@ export const colePalmerBirthChartEn: WikiArticle = {
     "Cole Palmer birth chart meaning",
     "Cole Palmer birth chart astrology",
     "Cole Palmer birth chart zodiac",
-    "Cole Palmer birth chart interpretation",
-    "emma watson zodiac sign"
+    "Cole Palmer birth chart interpretation"
   ],
   content: `# Reading the Cole Palmer Birth Chart as a Symbol, Not a Scoreboard
 
