@@ -1,4 +1,4 @@
-<!-- INPUT: 压缩品牌图资源目录（导航/页脚小图与结构化数据 logo）。 -->
+<!-- INPUT: 压缩品牌图资源目录（导航 32px、页脚 64px 与结构化数据 logo）。 -->
 <!-- OUTPUT: brand 静态资源索引说明。 -->
 <!-- POS: public/brand 目录说明；若更新本目录，务必更新此文件与 public/FOLDER.md。 -->
 
@@ -8,8 +8,8 @@
 
 ## 文件清单
 
-- `logo-mark-32.png`｜32px UI brand mark。
-- `logo-mark-64.png`｜64px UI brand mark，导航与页脚默认使用。
+- `logo-mark-32.png`｜32px UI brand mark，导航首屏默认使用。
+- `logo-mark-64.png`｜64px UI brand mark，页脚默认使用。
 - `logo-mark-128.png`｜128px UI/高密度候选。
 - `logo-mark-192.png`｜192px manifest/高密度候选。
 - `logo-schema-512.png`｜结构化数据 logo。

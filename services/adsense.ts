@@ -69,8 +69,8 @@ const scheduleTcfPoll = (): void => {
   tcfPollTimer = setTimeout(tcfPollTick, TCF_POLL_INTERVAL_MS);
 };
 
-// 注册 TCF 监听（EEA 广告同意）。head-loader 异步加载 adsbygoogle.js → CMP 才提供
-// window.__tcfapi，故 App bootstrap 调用时可能尚未就位 → 轮询等待（评审 B1：与 loadAdsense
+// 注册 TCF 监听（EEA 广告同意）。可选 head-loader 或运行时 loadAdsense 异步加载
+// adsbygoogle.js 后 CMP 才提供 window.__tcfapi，故 App bootstrap 调用时可能尚未就位 → 轮询等待（评审 B1：与 loadAdsense
 // 解耦到 bootstrap，且对异步 __tcfapi 健壮，否则 EEA TCF 死锁永远无广告）。
 // 同意变化时 notifyAdConsentChanged 触发 AdSlot 重渲染（评审 B2）。
 export const initTcfListener = (): void => {

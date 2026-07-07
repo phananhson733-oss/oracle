@@ -1,5 +1,5 @@
-// INPUT: 后端 /api/region 返回的 IP 国家码（Vercel x-vercel-ip-country）；sessionStorage 缓存。
-// OUTPUT: 导出 GDPR 国家集合、isGdprCountry、fetchRegion/getCachedRegion（供 ConsentBanner 地域分流与 AdSlot 广告同意门控）。
+// INPUT: 后端同源 /api/region 返回的 IP 国家码（Vercel x-vercel-ip-country）；sessionStorage 缓存。
+// OUTPUT: 导出 GDPR 国家集合、isGdprCountry、resolveRegionEndpoint、fetchRegion/getCachedRegion（供 ConsentBanner 地域分流与 AdSlot 广告同意门控）。
 // POS: 地域判定服务；若更新此文件，务必更新 services/FOLDER.md。
 
 // GDPR 强制区：EU27 + EEA 非 EU(IS/LI/NO) + 英国 + 瑞士。
@@ -122,6 +122,35 @@ export const parseRegionResponse = (data: unknown): RegionInfo => {
   };
 };
 
+export const resolveRegionEndpoint = (
+  rawBase: string = import.meta.env.VITE_API_URL || "",
+): string => {
+  const base = rawBase.trim().replace(/\/+$/, "");
+  if (!base) return "/api/region";
+
+  const appendRegionPath = (path: string): string => {
+    const normalizedPath = path.replace(/\/+$/, "");
+    if (!normalizedPath || normalizedPath === "/") return "/api/region";
+    return normalizedPath.endsWith("/api")
+      ? `${normalizedPath}/region`
+      : `${normalizedPath}/api/region`;
+  };
+
+  if (typeof window === "undefined") {
+    return base.endsWith("/api") ? `${base}/region` : `${base}/api/region`;
+  }
+
+  try {
+    const url = new URL(base, window.location.origin);
+    if (url.origin !== window.location.origin) {
+      return "/api/region";
+    }
+    return appendRegionPath(url.pathname);
+  } catch {
+    return "/api/region";
+  }
+};
+
 // 异步取地域：命中缓存直接返回；否则请求 /api/region。任何失败 → UNKNOWN_REGION
 // （country=null / isGdpr=null）。调用方对 isGdpr=null 必须 fail-safe：
 //   - ConsentBanner：仍显示自研横幅
@@ -133,8 +162,7 @@ export const fetchRegion = async (): Promise<RegionInfo> => {
 
   inflight = (async (): Promise<RegionInfo> => {
     try {
-      const base = import.meta.env.VITE_API_URL || "";
-      const res = await fetch(`${base}/api/region`, {
+      const res = await fetch(resolveRegionEndpoint(), {
         headers: { accept: "application/json" },
       });
       if (!res.ok) return UNKNOWN_REGION;

@@ -1,5 +1,5 @@
 <!-- INPUT: 公共静态资源与图标目录（含 SEO 静态页、hreflang 校验、站点图标与压缩品牌图）。 -->
-<!-- OUTPUT: public 架构摘要与文件索引（含 SEO 静态页、hreflang 校验、站点图标与压缩品牌图）。 -->
+<!-- OUTPUT: public 架构摘要与文件索引（含 SEO 静态页、hreflang 校验、站点图标与压缩品牌图及首屏 logo 尺寸用途）。 -->
 <!-- POS: public 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -29,7 +29,7 @@
 - newsletter｜地位：周报 hero 图床｜功能：周报头图 `<ISO周slug>.png`（gemini-web 离线生成，best-effort），线上 `/newsletter/<slug>.png`；详见 newsletter/FOLDER.md。
 
 近期更新
-- 新增 `brand/` 压缩品牌图资源：`logo-mark-32/64/128/192.png` 用于 UI 小图，`logo-schema-512.png` 用于结构化数据；首页导航/页脚不再请求 `1.8MB` 的 `/logo.png`。
+- 新增 `brand/` 压缩品牌图资源：`logo-mark-32/64/128/192.png` 用于 UI 小图，`logo-schema-512.png` 用于结构化数据；首页导航使用 32px、页脚使用 64px，不再请求 `1.8MB` 的 `/logo.png`。
 - 新增 og/articles 构建期 OG 图（scripts/generate-og-images.mjs，satori+resvg+sharp）；文章 og:image 指向 /og/articles/&lt;slug&gt;.png（zh 为 .zh.png）。
 - 品牌标识刷新：logo.png/logo.jpg、favicon-16/32、icon-192/512、og-image.png 替换为新 astrologyWiki 视觉（方形槽位取黄道圆环裁切，OG 图保留完整横向 lockup）；favicon.svg 暂未同步矢量化。
 - SEO 静态页与 sitemap 重新生成，hreflang/ItemList 结构化数据对齐最新规则。

@@ -227,11 +227,11 @@ export const ConsentBanner: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-6 py-6 md:py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex-1 space-y-2">
-            <h3
+            <h2
               className={`text-base font-bold uppercase tracking-widest ${titleClasses}`}
             >
               {content.title}
-            </h3>
+            </h2>
             <p className={`text-sm leading-relaxed max-w-2xl ${textClasses}`}>
               {content.description}
             </p>

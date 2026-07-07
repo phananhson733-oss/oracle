@@ -12,6 +12,7 @@ import {
   shouldDeferToCmp,
   isCmpPresent,
   UNKNOWN_REGION,
+  resolveRegionEndpoint,
   __resetRegionCacheForTest,
 } from "./region";
 
@@ -108,6 +109,9 @@ describe("fetchRegion", () => {
     const second = await fetchRegion();
     expect(second).toEqual({ country: "FR", isGdpr: true });
     expect(fetchMock).toHaveBeenCalledTimes(1); // 命中缓存
+    expect(fetchMock).toHaveBeenCalledWith("/api/region", {
+      headers: { accept: "application/json" },
+    });
     expect(getCachedRegion()).toEqual({ country: "FR", isGdpr: true });
   });
 
@@ -119,5 +123,21 @@ describe("fetchRegion", () => {
   it("fetch 抛错 → UNKNOWN（fail-safe，不抛出）", async () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("network")));
     expect(await fetchRegion()).toEqual(UNKNOWN_REGION);
+  });
+});
+
+describe("resolveRegionEndpoint", () => {
+  it("默认使用同源 /api/region，避免 www 页面跨域请求 apex", () => {
+    expect(resolveRegionEndpoint()).toBe("/api/region");
+    expect(resolveRegionEndpoint("https://astrologywiki.com")).toBe(
+      "/api/region",
+    );
+  });
+
+  it("同源 base 保留路径并归一化 /api 后缀", () => {
+    expect(resolveRegionEndpoint(`${window.location.origin}/api`)).toBe(
+      "/api/region",
+    );
+    expect(resolveRegionEndpoint("/edge")).toBe("/edge/api/region");
   });
 });

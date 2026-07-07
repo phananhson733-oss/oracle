@@ -1,5 +1,5 @@
-<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件、Playwright 端口联动、短链登记/跳转、Airwallex Pro 试用文案/E2E、UI/语言规则与 PageSpeed 首屏优化更新）。 -->
-<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置、Playwright 端口联动、短链登记/跳转、Pro 试用文案/E2E、支付成功路由放行、PayPal 回跳处理、规范门槛与 PageSpeed 首屏优化记录）。 -->
+<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件、Playwright 端口联动、短链登记/跳转、Airwallex Pro 试用文案/E2E、UI/语言规则与 PageSpeed 首屏优化更新、AdSense head-loader 显式开关）。 -->
+<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置、Playwright 端口联动、短链登记/跳转、Pro 试用文案/E2E、支付成功路由放行、PayPal 回跳处理、规范门槛、PageSpeed 首屏优化记录与广告脚本构建开关）。 -->
 <!-- POS: 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -14,7 +14,7 @@
 文件清单
 - .gitignore｜地位：版本控制配置｜功能：声明 Git 忽略规则。
 - AGENTS.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明、语言规则与 UI 规范入口。
-- App.tsx｜地位：主应用入口组件｜功能：组合路由与页面（含 `/go/:code` 与根路径短链跳转、tools SEO alias 路由、积分入口/使用情况页、地名输入建议、迁移提示与设置页 GM 测试/开发会话指令）。
+- App.tsx｜地位：主应用入口组件｜功能：组合路由与页面（含根 landing eager 首屏、`/go/:code` 与根路径短链跳转、tools SEO alias 路由、积分入口/使用情况页、地名输入建议、迁移提示与设置页 GM 测试/开发会话指令）。
 - CLAUDE.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明与 UI 规范入口（Claude 入口）。
 - FOLDER.md｜地位：目录索引文档｜功能：记录根目录架构与文件清单。
 - README.md｜地位：主说明文档｜功能：项目说明与运行方式（含 UI 规范门槛）。
@@ -22,7 +22,7 @@
 - PULL_REQUEST_TEMPLATE.md｜地位：PR 模板｜功能：PR 清单与 UI 规范符合说明。
 - constants.ts｜地位：全局常量库｜功能：存放文案、提示词、Pro 试用/订阅提醒与问答问题库数据。
 - index.css｜地位：全局样式入口｜功能：注入 Tailwind 基础/组件/工具样式。
-- index.html｜地位：HTML 宿主文件｜功能：页面壳、字体加载、导入映射与首字节 brand 结构化数据（Organization + WebSite JSON-LD）。
+- index.html｜地位：HTML 宿主文件｜功能：页面壳、字体加载、首字节 brand 结构化数据（Organization + WebSite JSON-LD）与 PageSpeed 首屏静态 fallback。
 - index.tsx｜地位：渲染入口｜功能：挂载 React 应用并引入全局样式。
 - metadata.json｜地位：应用元数据｜功能：AI Studio 元信息配置。
 - package.json｜地位：依赖清单｜功能：npm 脚本与依赖配置（含 Tailwind/PostCSS）。
@@ -33,7 +33,7 @@
 - tailwind.config.cjs｜地位：样式配置｜功能：Tailwind 主题与扫描路径配置。
 - types.ts｜地位：类型定义｜功能：共享数据结构与问答报告类型。
 - vercel.json｜地位：部署配置｜功能：Vercel 构建与路由规则。
-- vite.config.ts｜地位：构建配置｜功能：Vite 开发与构建设置。
+- vite.config.ts｜地位：构建配置｜功能：Vite 开发与构建设置；AdSense 原始 head-loader 需 `VITE_ADSENSE_HEAD_LOADER_ENABLED=true` 显式开启。
 
 目录
 - .claude｜地位：工具配置目录｜功能：Claude 命令与配置。
@@ -49,7 +49,7 @@
 - tests｜地位：测试目录｜功能：Playwright E2E 与 Vitest 单元测试。
 
 近期更新
-- PageSpeed/Core Web Vitals 优化：`index.html` 移除 body 字体可见性 gate 并收敛 Google Fonts；`index.tsx` 将 analytics/web-vitals/AdSense TCF 非关键初始化延后；`App.tsx` 拆出 auth/payment/sign calculator 路由 chunk、移动端隐藏顶部主导航链接以防首屏溢出，并改用 `/brand/logo-mark-64.png`；`vercel.json` 增加 `/brand/*` 缓存头与缺失 `/assets/*` 后端 404 兜底；`tailwind.config.cjs` 不再扫描 Wiki 后端数据源以减少首页 CSS。
+- PageSpeed/Core Web Vitals 优化：根 landing 改为 eager 首屏、Hero 右侧今日天象卡 idle 后加载、Hero LCP 标题使用系统衬线；`index.html` 移除 body 字体可见性 gate、收敛 Google Fonts 并删除未使用 Unsplash preconnect；`index.tsx` 将 analytics/web-vitals/AdSense TCF 非关键初始化延后；`App.tsx` 拆出 auth/payment/sign calculator 路由 chunk、移动端隐藏顶部主导航链接以防首屏溢出，并改用 `/brand/logo-mark-32.png`；`vite.config.ts` 的 AdSense head-loader 改为显式开关；`vercel.json` 增加 `/brand/*` 一年 immutable 缓存头与缺失 `/assets/*` 后端 404 兜底；`tailwind.config.cjs` 不再扫描 Wiki 后端数据源以减少首页 CSS。
 - constants 与 pricing 展示文案改为手动激活 Pro 试用：注册不再自动赠送 Pro，符合资格用户需先在 Airwallex 填写付款信息，试用到期后自动续费。
 - 新增 `tests/e2e/manual-pro-trial.spec.ts`，用 Playwright mock auth/entitlement/Airwallex API 覆盖注册后符合资格用户点击 Pro 试用 CTA、看到付款信息/自动续费披露并跳转 trial checkout 的浏览器路径。
 - Playwright webServer 启动命令会跟随 `PLAYWRIGHT_BASE_URL` 端口，避免本地 3000 被其他服务占用时误复用错误应用。
