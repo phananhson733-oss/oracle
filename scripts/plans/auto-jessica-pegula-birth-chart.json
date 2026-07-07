@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jessica-pegula-birth-chart": {
+      "hero": {
+        "prompt": "A vast coastal night seascape where warm luminous tidal waters — the Pisces stellium glowing gold from within — stretch toward an infinite horizon; above the waterline, cool electric-teal aurora ribbons pulse and curl through the indigo sky, the Aquarius analytical distance meeting Pisces sensitivity across one unbroken atmosphere; beneath the shimmering surface, a deep garnet-and-midnight undercurrent suggests Scorpio's hidden intensity; the two natures — warm water and cold air — occupy opposite ends of the same continuous scene without touching, held in tension across the full width of sky and sea, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Night seascape: warm glowing tidal waters meet cool electric auroras, evoking Jessica Pegula's Pisces–Aquarius birth chart tension"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Standout Placements in This Chart",
+          "titleEn": "Five Key Placements in Jessica Pegula's Birth Chart",
+          "altEn": "Five sequential steps showing how to read the standout placements in Jessica Pegula's birth chart",
+          "items": [
+            {
+              "nameEn": "Pisces Stellium",
+              "subEn": "Sun, Venus, and Saturn in Pisces — sensitivity, imagination, and quiet discipline echoing across three planets"
+            },
+            {
+              "nameEn": "Aquarius Pair",
+              "subEn": "Mercury retrograde and Mars in Aquarius — independent, analytical, contrarian thinking and drive pulling against Pisces softness"
+            },
+            {
+              "nameEn": "Scorpio Undercurrent",
+              "subEn": "Jupiter and Pluto in Scorpio, with the North Node — depth, privacy, and transformation as a recurring theme"
+            },
+            {
+              "nameEn": "Moon Read with Caution",
+              "subEn": "Moon likely in Leo but near a sign boundary — a strong estimate, not a confirmed fact"
+            },
+            {
+              "nameEn": "Pisces–Aquarius Friction",
+              "subEn": "The feeling-led stellium and detached air pair coexist as the chart's most distinctive and irreducible signal"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Jessica Pegula Birth Chart at a Glance",
+          "titleEn": "Jessica Pegula's Birth Chart Placements at a Glance",
+          "altEn": "Three-column comparison of key placements in Jessica Pegula's birth chart by element and symbolic theme",
+          "columns": [
+            {
+              "nameEn": "Pisces Stellium",
+              "linesEn": [
+                "Sun, Venus & Saturn",
+                "Water element",
+                "Sensitivity and imagination held by quiet discipline"
+              ]
+            },
+            {
+              "nameEn": "Aquarius Pair",
+              "linesEn": [
+                "Mercury (Rx) & Mars",
+                "Air element",
+                "Independent, analytical, contrarian"
+              ]
+            },
+            {
+              "nameEn": "Scorpio Undercurrent",
+              "linesEn": [
+                "Jupiter, Pluto & North Node",
+                "Water element",
+                "Privacy, depth, and transformation"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

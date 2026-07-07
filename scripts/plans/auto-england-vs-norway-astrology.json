@@ -1,0 +1,73 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "england-vs-norway-astrology": {
+      "hero": {
+        "prompt": "Two vast luminous landmasses emerging from a single sweeping horizon — one a windswept island veiled in silver mist and stately stone spires, the other a rugged fjord-carved coast glowing with warm amber northern light — facing each other across a shared twilight sky as aurora wisps weave gently between them in one unbroken panorama, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two glowing coastal archetypes — a misty island and a fjord coast — facing each other under one shared twilight sky"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## National Temperaments at a Glance",
+          "titleEn": "England vs Norway: Two National Archetypes",
+          "altEn": "Side-by-side comparison of England and Norway astrological archetypes across temperament, signature, and observable traits",
+          "columns": [
+            {
+              "nameEn": "England",
+              "linesEn": [
+                "Institutional, reserved, and quietly assertive",
+                "Linked to cardinal initiative and airy commercial exchange",
+                "Observable in understatement, procedure, and dry humor"
+              ]
+            },
+            {
+              "nameEn": "Norway",
+              "linesEn": [
+                "Egalitarian, nature-bound, and enduring",
+                "Linked to earthy steadiness and community-minded themes",
+                "Observable in consensus, closeness to landscape, flat social hierarchy"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Comparison as Character, Not Forecast",
+          "titleEn": "Five Steps for an Honest Character Reading",
+          "altEn": "Five-step guide to reading England vs Norway astrology as cultural character study rather than match prediction",
+          "items": [
+            {
+              "nameEn": "Start with element and mode",
+              "subEn": "Notice whether each nation's archetype reads as fiery and initiating or earthy and enduring, then test against cultural reputation"
+            },
+            {
+              "nameEn": "Find the dominant house theme",
+              "subEn": "Look for institutions, land, trade, or community as the organizing story rather than fixating on a single planet"
+            },
+            {
+              "nameEn": "Watch the contrast pairs",
+              "subEn": "Reserve against openness, hierarchy against egalitarianism — meaning lives in the comparison, not either chart alone"
+            },
+            {
+              "nameEn": "Separate symbol from stereotype",
+              "subEn": "If a claim sounds like a national insult, it has drifted from archetype into caricature and should be dropped"
+            },
+            {
+              "nameEn": "Keep every statement a tendency",
+              "subEn": "Use 'tends to' or 'often,' never 'will,' because archetypes describe leanings, not destinies"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

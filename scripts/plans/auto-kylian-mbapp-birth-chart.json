@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "kylian-mbapp-birth-chart": {
+      "hero": {
+        "prompt": "A vast indigo night landscape stretching to a luminous far horizon, a single blazing golden comet arcing through the cosmos toward the glowing edge of the world, sparse golden stars scattered across the deep sky, muted teal nebula wisps curling at the edges, the sense of vast open space and forward momentum that Sagittarius fire embodies, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Golden comet arcing across a vast indigo cosmos toward a luminous horizon, symbolising Sagittarius expansive fire and long-range boldness"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Western Tropical vs Purple Star: Two Charts People Wrongly Merge",
+          "titleEn": "Western Tropical vs Purple Star: Two Incompatible Systems",
+          "altEn": "Side-by-side comparison of Western tropical astrology and Chinese Purple Star showing their incompatible frameworks",
+          "columns": [
+            {
+              "nameEn": "Western Tropical Astrology",
+              "linesEn": [
+                "Uses the seasonal zodiac",
+                "Places Sun in Sagittarius",
+                "Psychology-friendly symbolism",
+                "Tradition shaped by Dane Rudhyar"
+              ]
+            },
+            {
+              "nameEn": "Chinese Purple Star (Zi Wei Dou Shu)",
+              "linesEn": [
+                "Uses a calendar-based palace grid",
+                "Calendar-based palace grid",
+                "Encodes a separate Chinese tradition",
+                "Cannot substitute for Western readings"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Spot Sagittarius Fire in a Chart Like Mbappé's",
+          "titleEn": "Four Signals of Sagittarius Fire in a Birth Chart",
+          "altEn": "Four observable signals astrologers look for to identify Sagittarius fire energy in a Western birth chart",
+          "items": [
+            {
+              "nameEn": "A Sagittarius Sun",
+              "subEn": "Birthday between roughly 22 November and 21 December"
+            },
+            {
+              "nameEn": "Restless, Forward Body Language",
+              "subEn": "Bias toward open space and momentum over caution"
+            },
+            {
+              "nameEn": "Big-Picture Talk in Interviews",
+              "subEn": "Long-range goals and blunt optimism over guarded small-detail answers"
+            },
+            {
+              "nameEn": "A Visible Sun–Moon Contrast",
+              "subEn": "Emotional style differs noticeably from outward drive"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

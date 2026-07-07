@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "achraf-hakimi-birth-chart": {
+      "hero": {
+        "prompt": "A single blazing amber-gold star burns with quiet intensity low over a vast, still midnight sea, casting a narrow ribbon of liquid gold across dark water — while dozens of softer, half-formed lights dissolve into the indigo distance behind it, unnamed and uncertain, a sky of open questions surrounding the one point the record confirms; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A single bright star over a dark sea, surrounded by softer uncertain lights, symbolizing one confirmed birth chart placement amid open questions"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs a Sun-Sign Reading: Where People Mix Them Up",
+          "titleEn": "Sun-Sign Reading vs Full-Chart Reading",
+          "altEn": "Side-by-side comparison of a quick Sun-sign reading versus a full birth chart reading showing trade-offs",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Reading",
+              "linesEn": [
+                "Takes a single birthday",
+                "Matches it to one of twelve signs",
+                "Fast and shareable",
+                "Everyone born in early November collapses into the same paragraph",
+                "Sacrifices nuance for speed"
+              ]
+            },
+            {
+              "nameEn": "Full-Chart Reading",
+              "linesEn": [
+                "Reads Sun, Moon, Ascendant, and aspects together",
+                "Shows how placements reinforce or tension one another",
+                "Requires a verified birth time",
+                "Moon and Ascendant stay open without confirmed data",
+                "Sacrifices certainty for depth"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Hakimi's Chart Without Overreaching",
+          "titleEn": "5 Habits for Grounded Chart Reading",
+          "altEn": "Five-step sequence for reading a birth chart without overreaching into unsupported claims",
+          "items": [
+            {
+              "nameEn": "Anchor on the Sun",
+              "subEn": "His November 4 birthday reliably gives a Scorpio Sun — the one placement the public record confirms"
+            },
+            {
+              "nameEn": "Flag the Missing Time",
+              "subEn": "Say plainly when a Moon or Ascendant is listed, because those shift with a birth time no source has verified"
+            },
+            {
+              "nameEn": "Separate Symbol from Event",
+              "subEn": "Read Scorpio themes as focus and intensity, not as the cause of a World Cup goal or a transfer"
+            },
+            {
+              "nameEn": "Watch for Retrofitting",
+              "subEn": "Notice when a trait is chosen only because it flatters the highlight reel — an honest read survives his quiet games too"
+            },
+            {
+              "nameEn": "Hold It as a Story",
+              "subEn": "Treat standout aspects as narrative texture about persona, never as a scoreboard for the season"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
