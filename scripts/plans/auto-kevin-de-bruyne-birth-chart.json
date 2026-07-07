@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "kevin-de-bruyne-birth-chart": {
+      "hero": {
+        "prompt": "A vast twilight coastline where a softly luminous sea presses against a structured shore of dark volcanic rock, warm tidal water meeting weathered stone, the horizon glowing with faint silver light, the cliffs holding their form against the pull of the deep — deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twilight coastline where luminous sea meets volcanic rock shore, evoking the water-earth axis of Kevin De Bruyne's birth chart"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Chart as a Playmaker Profile",
+          "titleEn": "Five Signatures to Watch For",
+          "altEn": "Sequence of five astrological signatures in Kevin De Bruyne's playmaker birth chart profile",
+          "items": [
+            {
+              "nameEn": "Protective, Cue-Attuned Focus",
+              "subEn": "Cancer Sun scans for what teammates need before they ask, aimed at the group"
+            },
+            {
+              "nameEn": "Disciplined Emotional Tempo",
+              "subEn": "Approx. Capricorn Moon shows composure under pressure, feelings on a slow burn"
+            },
+            {
+              "nameEn": "Detail-First Delivery",
+              "subEn": "Approx. Virgo Rising presents economy and a tidy public surface over flash"
+            },
+            {
+              "nameEn": "The Water-Earth Pull",
+              "subEn": "Where softness meets structure, the pairing reads as feels a lot, shows little"
+            },
+            {
+              "nameEn": "The Approximate Layers",
+              "subEn": "Hold Moon and Rising loosely; without confirmed time, let Cancer Sun carry most weight"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Kevin De Bruyne Natal Chart at a Glance",
+          "titleEn": "Three Core Placements Compared",
+          "altEn": "Comparison of Cancer Sun, Capricorn Moon, and Virgo Rising in Kevin De Bruyne's natal chart",
+          "columns": [
+            {
+              "nameEn": "Cancer Sun",
+              "linesEn": [
+                "Water (cardinal)",
+                "Protective, cue-attuned interior stance",
+                "Caretaking focus on what the group needs"
+              ]
+            },
+            {
+              "nameEn": "Approx. Capricorn Moon",
+              "linesEn": [
+                "Earth (cardinal)",
+                "Disciplined, slow-burn emotional tempo",
+                "Composure that holds under visible pressure"
+              ]
+            },
+            {
+              "nameEn": "Approx. Virgo Rising",
+              "linesEn": [
+                "Earth (mutable)",
+                "Economical, detail-first public image",
+                "Tidy, precise self-presentation with little excess"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

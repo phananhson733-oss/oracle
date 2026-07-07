@@ -842,6 +842,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'kevin-de-bruyne-birth-chart',
   'rayan-cherki-birth-chart',
   'kylian-mbapp-birth-chart',
   'achraf-hakimi-birth-chart',
