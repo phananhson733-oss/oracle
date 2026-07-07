@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 561" role="img" aria-label="Sun-Sign Reading vs Full-Chart Reading">
+  <defs>
+    <linearGradient id="achrafhakimibirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="achrafhakimibirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="achrafhakimibirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="achrafhakimibirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="achrafhakimibirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="achrafhakimibirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="url(#achrafhakimibirthchart0en-panel)"/>
+  <ellipse cx="198" cy="135" rx="380" ry="191" fill="url(#achrafhakimibirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="449" rx="334" ry="180" fill="url(#achrafhakimibirthchart0en-neb2)"/>
+  <circle cx="230.4" cy="25.9" r="1.42" fill="#cfc8ea" opacity="0.33"/><circle cx="394.1" cy="249.2" r="0.76" fill="#cfc8ea" opacity="0.38"/><circle cx="329.3" cy="516.2" r="1.62" fill="#cfc8ea" opacity="0.41"/><circle cx="385.4" cy="244.8" r="1.65" fill="#cfc8ea" opacity="0.48"/><circle cx="439.7" cy="340.3" r="1.61" fill="#cfc8ea" opacity="0.41"/><circle cx="192.5" cy="74.4" r="0.98" fill="#cfc8ea" opacity="0.50"/><circle cx="563.4" cy="58.1" r="1.05" fill="#cfc8ea" opacity="0.37"/><circle cx="499.4" cy="106.3" r="0.75" fill="#cfc8ea" opacity="0.33"/><circle cx="541.2" cy="53.5" r="0.84" fill="#cfc8ea" opacity="0.18"/><circle cx="679.4" cy="294.4" r="0.56" fill="#cfc8ea" opacity="0.37"/><circle cx="120.5" cy="105.0" r="0.86" fill="#cfc8ea" opacity="0.41"/><circle cx="250.8" cy="19.3" r="1.03" fill="#cfc8ea" opacity="0.32"/><circle cx="314.4" cy="412.0" r="1.46" fill="#cfc8ea" opacity="0.15"/><circle cx="138.4" cy="148.7" r="0.64" fill="#cfc8ea" opacity="0.45"/><circle cx="289.4" cy="271.1" r="0.72" fill="#cfc8ea" opacity="0.41"/><circle cx="175.2" cy="309.8" r="1.01" fill="#cfc8ea" opacity="0.19"/><circle cx="571.2" cy="158.1" r="1.49" fill="#cfc8ea" opacity="0.24"/><circle cx="420.2" cy="95.2" r="0.92" fill="#cfc8ea" opacity="0.14"/><circle cx="393.7" cy="71.8" r="0.80" fill="#cfc8ea" opacity="0.31"/><circle cx="564.3" cy="330.9" r="1.68" fill="#cfc8ea" opacity="0.14"/><circle cx="712.2" cy="390.9" r="0.51" fill="#cfc8ea" opacity="0.48"/><circle cx="185.1" cy="193.6" r="1.46" fill="#cfc8ea" opacity="0.54"/><circle cx="209.0" cy="349.5" r="0.60" fill="#cfc8ea" opacity="0.15"/><circle cx="723.2" cy="63.4" r="1.30" fill="#cfc8ea" opacity="0.18"/><circle cx="429.2" cy="158.4" r="0.46" fill="#cfc8ea" opacity="0.51"/><circle cx="615.7" cy="502.7" r="0.81" fill="#cfc8ea" opacity="0.33"/><circle cx="643.7" cy="316.7" r="0.95" fill="#cfc8ea" opacity="0.50"/><circle cx="192.8" cy="210.1" r="0.60" fill="#cfc8ea" opacity="0.35"/><circle cx="91.7" cy="241.2" r="1.04" fill="#cfc8ea" opacity="0.28"/><circle cx="610.0" cy="245.7" r="1.56" fill="#cfc8ea" opacity="0.14"/><circle cx="625.3" cy="229.3" r="0.49" fill="#cfc8ea" opacity="0.22"/><circle cx="382.9" cy="21.9" r="0.93" fill="#cfc8ea" opacity="0.42"/><circle cx="426.8" cy="503.8" r="1.29" fill="#cfc8ea" opacity="0.22"/><circle cx="603.4" cy="146.9" r="0.64" fill="#cfc8ea" opacity="0.33"/><circle cx="94.4" cy="499.2" r="1.65" fill="#cfc8ea" opacity="0.32"/><circle cx="97.9" cy="280.2" r="1.53" fill="#cfc8ea" opacity="0.46"/><circle cx="78.6" cy="486.9" r="1.12" fill="#cfc8ea" opacity="0.50"/><circle cx="495.2" cy="129.2" r="0.64" fill="#cfc8ea" opacity="0.32"/><circle cx="55.4" cy="546.3" r="1.34" fill="#cfc8ea" opacity="0.21"/><circle cx="696.5" cy="200.1" r="1.24" fill="#cfc8ea" opacity="0.52"/><circle cx="119.3" cy="161.5" r="0.82" fill="#cfc8ea" opacity="0.35"/><circle cx="153.5" cy="267.5" r="0.82" fill="#cfc8ea" opacity="0.44"/><circle cx="384.9" cy="282.7" r="1.36" fill="#cfc8ea" opacity="0.53"/><circle cx="14.0" cy="246.2" r="0.85" fill="#cfc8ea" opacity="0.51"/><circle cx="482.8" cy="48.4" r="0.67" fill="#cfc8ea" opacity="0.38"/><circle cx="120.8" cy="140.4" r="0.68" fill="#cfc8ea" opacity="0.27"/><circle cx="700.5" cy="278.9" r="1.36" fill="#cfc8ea" opacity="0.41"/><path d="M 722.678402133286 426.6 L 723.1 428.8 L 725.3 429.24828707962297 L 723.1 429.7 L 722.678402133286 431.9 L 722.3 429.7 L 720.0 429.24828707962297 L 722.3 428.8 Z" fill="#f6e6bf" opacity="0.5601351935183629"/><path d="M 267.91601568460464 513.7 L 268.3 515.8 L 270.4 516.1510880689602 L 268.3 516.5 L 267.91601568460464 518.6 L 267.5 516.5 L 265.4 516.1510880689602 L 267.5 515.8 Z" fill="#f6e6bf" opacity="0.5776341578690335"/><path d="M 665.0055568739772 299.7 L 665.5 302.3 L 668.1 302.7667640221771 L 665.5 303.3 L 665.0055568739772 305.8 L 664.5 303.3 L 661.9 302.7667640221771 L 664.5 302.3 Z" fill="#f6e6bf" opacity="0.74337728114333"/><path d="M 597.7095970362425 370.0 L 598.3 372.8 L 601.1 373.3827440335881 L 598.3 373.9 L 597.7095970362425 376.8 L 597.2 373.9 L 594.3 373.3827440335881 L 597.2 372.8 Z" fill="#f6e6bf" opacity="0.5792110246373341"/><path d="M 19.89443675428629 337.7 L 20.5 340.8 L 23.6 341.4112931655254 L 20.5 342.0 L 19.89443675428629 345.1 L 19.3 342.0 L 16.2 341.4112931655254 L 19.3 340.8 Z" fill="#f6e6bf" opacity="0.6573949813609943"/><path d="M 329.3 516.2 L 563.4 58.1 L 499.4 106.3 L 426.8 503.8 L 55.4 546.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="547" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 541.8 L 16.5 544.5 L 19.2 545 L 16.5 545.5 L 16 548.2 L 15.5 545.5 L 12.8 545 L 15.5 544.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 541.8 L 744.5 544.5 L 747.2 545 L 744.5 545.5 L 744 548.2 L 743.5 545.5 L 740.8 545 L 743.5 544.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Sun-Sign Reading vs Full-Chart Reading</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#achrafhakimibirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#achrafhakimibirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="201.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="201.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Sun-Sign Reading</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Takes a single birthday</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Matches it to one of twelve signs</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Fast and shareable</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Everyone born in early November collapses into the same paragraph</text>
+  <path d="M 70 273.8 L 70.5 276.5 L 73.2 277 L 70.5 277.5 L 70 280.2 L 69.5 277.5 L 66.8 277 L 69.5 276.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="282.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sacrifices nuance for speed</text>
+  <path d="M 380 308.5 L 380.7 312.3 L 384.5 313 L 380.7 313.7 L 380 317.5 L 379.3 313.7 L 375.5 313 L 379.3 312.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="326" width="668" height="201.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="326" width="3.5" height="201.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 335.6 L 48.3 338.5 L 51.1 339 L 48.3 339.5 L 47.75 342.4 L 47.2 339.5 L 44.4 339 L 47.2 338.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="355.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Full-Chart Reading</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads Sun, Moon, Ascendant, and aspects together</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Shows how placements reinforce or tension one another</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Requires a verified birth time</text>
+  <path d="M 70 471.8 L 70.5 474.5 L 73.2 475 L 70.5 475.5 L 70 478.2 L 69.5 475.5 L 66.8 475 L 69.5 474.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="480.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Moon and Ascendant stay open without confirmed data</text>
+  <path d="M 70 500.8 L 70.5 503.5 L 73.2 504 L 70.5 504.5 L 70 507.2 L 69.5 504.5 L 66.8 504 L 69.5 503.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="509.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sacrifices certainty for depth</text>
+  <path d="M 202.22749999999988 532.4 L 202.6 534.6 L 204.8 535 L 202.6 535.4 L 202.22749999999988 537.6 L 201.8 535.4 L 199.6 535 L 201.8 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="539" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 532.4 L 558.2 534.6 L 560.4 535 L 558.2 535.4 L 557.7725000000002 537.6 L 557.4 535.4 L 555.2 535 L 557.4 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
