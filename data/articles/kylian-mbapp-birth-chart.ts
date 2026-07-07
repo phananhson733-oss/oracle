@@ -4,6 +4,10 @@ import type { WikiArticle } from "../../types";
 
 export const kylianMbappBirthChartEn: WikiArticle = {
   slug: "kylian-mbapp-birth-chart",
+  // canonical 收口（P1-1）：与既有 mbappe-birth-chart（EN+ZH，6/13 起）同题重复。
+  // canonical 指向旧长文合并排名信号；loser 移出 sitemap 避免混合信号（两页仍在线服务）。
+  // 截断 slug 源于旧 slugify 掉 é 的 bug（已在 gengrowth-flow-mvp 修复，见 kebabSlug 回归）。
+  seo: { canonicalPath: "/wiki/mbappe-birth-chart", sitemap: false },
   image: "/images/blog/kylian-mbapp-birth-chart.jpg",
   image_alt: "Golden comet arcing across a vast indigo cosmos toward a luminous horizon, symbolising Sagittarius expansive fire and long-range boldness",
   title: "What the Kylian Mbappé Birth Chart Reveals Through Western Astrology",
