@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="5 Habits for Responsible Chart Reading">
+  <defs>
+    <linearGradient id="erlinghaalandgirlfriendbirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="erlinghaalandgirlfriendbirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="erlinghaalandgirlfriendbirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="erlinghaalandgirlfriendbirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="erlinghaalandgirlfriendbirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="erlinghaalandgirlfriendbirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#erlinghaalandgirlfriendbirthchart1en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#erlinghaalandgirlfriendbirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#erlinghaalandgirlfriendbirthchart1en-neb2)"/>
+  <circle cx="169.0" cy="267.1" r="1.01" fill="#cfc8ea" opacity="0.28"/><circle cx="414.9" cy="207.6" r="1.59" fill="#cfc8ea" opacity="0.16"/><circle cx="687.5" cy="80.8" r="1.06" fill="#cfc8ea" opacity="0.36"/><circle cx="271.9" cy="128.5" r="0.57" fill="#cfc8ea" opacity="0.29"/><circle cx="156.1" cy="247.8" r="0.51" fill="#cfc8ea" opacity="0.51"/><circle cx="532.5" cy="249.9" r="1.41" fill="#cfc8ea" opacity="0.18"/><circle cx="656.0" cy="268.2" r="0.48" fill="#cfc8ea" opacity="0.32"/><circle cx="87.3" cy="286.5" r="1.40" fill="#cfc8ea" opacity="0.20"/><circle cx="292.3" cy="171.2" r="0.62" fill="#cfc8ea" opacity="0.23"/><circle cx="351.7" cy="181.0" r="1.51" fill="#cfc8ea" opacity="0.51"/><circle cx="437.7" cy="42.1" r="0.71" fill="#cfc8ea" opacity="0.34"/><circle cx="181.1" cy="260.3" r="1.17" fill="#cfc8ea" opacity="0.46"/><circle cx="508.4" cy="201.2" r="1.20" fill="#cfc8ea" opacity="0.49"/><circle cx="378.5" cy="272.0" r="1.09" fill="#cfc8ea" opacity="0.34"/><circle cx="715.3" cy="407.1" r="0.70" fill="#cfc8ea" opacity="0.33"/><circle cx="438.5" cy="419.9" r="0.77" fill="#cfc8ea" opacity="0.18"/><circle cx="377.1" cy="195.5" r="0.47" fill="#cfc8ea" opacity="0.26"/><circle cx="455.9" cy="333.5" r="0.60" fill="#cfc8ea" opacity="0.17"/><circle cx="646.4" cy="68.0" r="0.60" fill="#cfc8ea" opacity="0.41"/><circle cx="729.8" cy="158.4" r="1.55" fill="#cfc8ea" opacity="0.53"/><circle cx="76.4" cy="262.6" r="0.46" fill="#cfc8ea" opacity="0.44"/><circle cx="407.9" cy="267.3" r="0.58" fill="#cfc8ea" opacity="0.26"/><circle cx="92.7" cy="117.5" r="0.79" fill="#cfc8ea" opacity="0.45"/><circle cx="736.2" cy="204.9" r="1.33" fill="#cfc8ea" opacity="0.46"/><circle cx="184.1" cy="28.4" r="1.37" fill="#cfc8ea" opacity="0.15"/><circle cx="121.7" cy="27.9" r="1.52" fill="#cfc8ea" opacity="0.12"/><circle cx="294.2" cy="152.0" r="0.89" fill="#cfc8ea" opacity="0.36"/><circle cx="186.2" cy="326.4" r="0.60" fill="#cfc8ea" opacity="0.25"/><circle cx="497.4" cy="70.2" r="1.62" fill="#cfc8ea" opacity="0.35"/><circle cx="319.0" cy="280.5" r="0.64" fill="#cfc8ea" opacity="0.18"/><circle cx="332.0" cy="161.5" r="1.40" fill="#cfc8ea" opacity="0.31"/><circle cx="477.1" cy="296.9" r="1.41" fill="#cfc8ea" opacity="0.34"/><circle cx="467.3" cy="78.5" r="1.18" fill="#cfc8ea" opacity="0.34"/><circle cx="305.1" cy="232.3" r="1.12" fill="#cfc8ea" opacity="0.35"/><circle cx="156.1" cy="148.4" r="0.66" fill="#cfc8ea" opacity="0.37"/><circle cx="13.4" cy="255.3" r="1.17" fill="#cfc8ea" opacity="0.42"/><circle cx="337.2" cy="272.1" r="0.81" fill="#cfc8ea" opacity="0.31"/><path d="M 204.2705141287297 259.0 L 204.7 261.3 L 207.1 261.77744677849114 L 204.7 262.2 L 204.2705141287297 264.6 L 203.8 262.2 L 201.5 261.77744677849114 L 203.8 261.3 Z" fill="#f6e6bf" opacity="0.7259034011047334"/><path d="M 330.36070879362524 295.1 L 330.8 297.6 L 333.4 298.09091796260327 L 330.8 298.6 L 330.36070879362524 301.1 L 329.9 298.6 L 327.4 298.09091796260327 L 329.9 297.6 Z" fill="#f6e6bf" opacity="0.5197704853955656"/><path d="M 108.27022830955684 74.7 L 108.7 76.8 L 110.8 77.21696700528264 L 108.7 77.6 L 108.27022830955684 79.7 L 107.9 77.6 L 105.8 77.21696700528264 L 107.9 76.8 Z" fill="#f6e6bf" opacity="0.7518979923333973"/><path d="M 201.66217959485948 343.6 L 202.3 346.8 L 205.5 347.42827633488923 L 202.3 348.0 L 201.66217959485948 351.2 L 201.1 348.0 L 197.9 347.42827633488923 L 201.1 346.8 Z" fill="#f6e6bf" opacity="0.5172302797902375"/><path d="M 21.55278846435249 144.1 L 22.0 146.5 L 24.5 147.00250655971467 L 22.0 147.5 L 21.55278846435249 149.9 L 21.1 147.5 L 18.6 147.00250655971467 L 21.1 146.5 Z" fill="#f6e6bf" opacity="0.6981838583480566"/><path d="M 407.9 267.3 L 121.7 27.9 L 156.1 148.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Habits for Responsible Chart Reading</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#erlinghaalandgirlfriendbirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#erlinghaalandgirlfriendbirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#erlinghaalandgirlfriendbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#erlinghaalandgirlfriendbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Flag the Unknowns First</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">State plainly that birth time and date may be unverified</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#erlinghaalandgirlfriendbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#erlinghaalandgirlfriendbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Start with the Big Three</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Note Sun, Moon, and ascendant as themes, not fixed facts</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#erlinghaalandgirlfriendbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#erlinghaalandgirlfriendbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Watch for a Stellium</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Describe the emphasis a planet cluster suggests, not a destiny</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#erlinghaalandgirlfriendbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#erlinghaalandgirlfriendbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read Aspects as Tension, Not Fate</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Say 'tends to' instead of 'will' for squares and trines</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#erlinghaalandgirlfriendbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#erlinghaalandgirlfriendbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Separate Person from Persona</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Interpret the symbol, not the private human behind the headline</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
