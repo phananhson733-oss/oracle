@@ -310,6 +310,7 @@ import { travisKelceBirthChartEn } from "./travis-kelce-birth-chart";
 import { diogoJotaBirthChartEn } from "./diogo-jota-birth-chart";
 import { achrafHakimiBirthChartEn } from "./achraf-hakimi-birth-chart";
 import { maliaObamaBirthChartEn } from "./malia-obama-birth-chart";
+import { kylianMbappBirthChartEn } from "./kylian-mbapp-birth-chart";
 import { colePalmerBirthChartEn } from "./cole-palmer-birth-chart";
 import { erlingHaalandGirlfriendBirthChartEn } from "./erling-haaland-girlfriend-birth-chart";
 import { jessicaPegulaBirthChartEn } from "./jessica-pegula-birth-chart";
@@ -615,6 +616,7 @@ const ARTICLES_EN: WikiArticle[] = [
   diogoJotaBirthChartEn,
   achrafHakimiBirthChartEn,
   maliaObamaBirthChartEn,
+  kylianMbappBirthChartEn,
   colePalmerBirthChartEn,
   erlingHaalandGirlfriendBirthChartEn,
   jessicaPegulaBirthChartEn,
