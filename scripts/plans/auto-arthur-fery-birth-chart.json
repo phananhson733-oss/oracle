@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "arthur-fery-birth-chart": {
+      "hero": {
+        "prompt": "A vast nocturnal coastal scene: four luminous orbs hang low over a glassy dark sea — a pale blazing sun-star near the horizon, an expansive warm planetary glow, a small bright wandering spark, and a soft radiant point — each casting shimmering gold-teal columns of light across still black water; ancient sheltering cliffs rise protectively on one side, their faces catching faint gold; tide pools mirror the indigo vault above; soft teal-gold nebula wash breathes across the upper sky; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Arthur Fery birth chart as four glowing orbs over a dark coastal sea, gold-teal reflections under an indigo sky"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Arthur Fery's Whole Chart vs His Cancer Sun Sign Alone",
+          "titleEn": "Sun-Sign Shortcut vs Full Birth Chart",
+          "altEn": "Two-column comparison of Cancer Sun-sign read versus full Arthur Fery birth chart with all placements",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Read",
+              "linesEn": [
+                "One placement only: Cancer Sun",
+                "Fast, shareable, quotable",
+                "Sacrifices Leo Moon and Virgo Venus",
+                "Blunt one-word personality label"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "linesEn": [
+                "Cancer stellium set against Aquarius and Gemini placements",
+                "Private protective core beside a detached idea-driven streak",
+                "Worth the trade for a nuanced character portrait",
+                "Requires sitting with contradictions"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Cancer Stellium in Arthur Fery's Birth Chart",
+          "titleEn": "5 Steps to Read Arthur Fery's Birth Chart",
+          "altEn": "Five-step sequence for reading Arthur Fery birth chart placements without a birth time",
+          "items": [
+            {
+              "nameEn": "Count the Cancer Bodies",
+              "subEn": "Sun, Mercury, Jupiter, and Chiron all in Cancer — a home-and-loyalty theme, not showmanship"
+            },
+            {
+              "nameEn": "Check the Moon's Edge",
+              "subEn": "Leo Moon sits near a sign boundary; treat 'warm and expressive' as likely, not certain"
+            },
+            {
+              "nameEn": "Spot the Outer-Planet Generation",
+              "subEn": "Uranus and Neptune in Aquarius are shared with peers his age — a cohort marker, not personal"
+            },
+            {
+              "nameEn": "Follow the Nodal Axis",
+              "subEn": "North Node Gemini, South Node Sagittarius: pull toward curiosity and local detail over sweeping certainty"
+            },
+            {
+              "nameEn": "Leave the Angles Blank",
+              "subEn": "No confirmed birth time means no rising sign; naming the gap is more honest than guessing"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
