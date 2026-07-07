@@ -1,5 +1,5 @@
-<!-- INPUT: /landing-v2 页面分段组件清单（Hero 立即加载 + 8 个 React.lazy 分段）。 -->
-<!-- OUTPUT: pages/landing 子目录架构摘要与文件索引。 -->
+<!-- INPUT: /landing-v2 页面分段组件清单（Hero 立即加载 + 首屏外 React.lazy 分段 + viewport-deferred loading）。 -->
+<!-- OUTPUT: pages/landing 子目录架构摘要与文件索引（含 PageSpeed 首屏外分段延迟加载记录）。 -->
 <!-- POS: pages/landing 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -7,12 +7,12 @@
 
 架构概要
 - `/landing-v2` 与根路由 `/` 的模块化 marketing landing 页面组件集合。
-- LandingPage.tsx 仅做组合 + SEO 元；Hero 立即加载，其余 8 段 React.lazy + Suspense + 占位高度防 CLS。
+- LandingPage.tsx 仅做组合 + SEO 元；Hero 立即加载，其余首屏外分段 React.lazy + Suspense + IntersectionObserver viewport-deferred + 占位高度防 CLS。
 - 数据共享：Hero 右半区编辑卡 (HeroTodayCard) 与 CosmicWeatherSection 经由 hooks/useTodaySky 共用一次 /api/astro/today 请求。
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 pages/landing 目录结构与更新记录。
-- LandingPage.tsx｜地位：landing 页面组合根｜功能：SEO（keyword-rich title/description/keywords + WebSite/Organization/SoftwareApplication/FAQPage JSON-LD，全部 lang-aware）+ 9 段组合 + UTM 快照 + html lang 同步 + 多形态规范 URL（/、/landing-v2、/landing-v2/{en,zh}/）。
+- LandingPage.tsx｜地位：landing 页面组合根｜功能：SEO（keyword-rich title/description/keywords + WebSite/Organization/SoftwareApplication/FAQPage JSON-LD，全部 lang-aware）+ 9 段组合 + UTM 快照 + html lang 同步 + 多形态规范 URL（/、/landing-v2、/landing-v2/{en,zh}/）；首屏外区块用 DeferredSection 直到接近 viewport 才请求 chunk，并用 minHeight 预留空间。
 - HeroSection.tsx｜地位：首屏区块｜功能：Editorial Serif Poster 标题 + 双 CTA（统一收敛到 BirthChart anchor）+ md+ 7/5 双列网格右半区嵌入 HeroTodayCard + 5 个 keyword feature-pills（Free Birth Chart / Today's Sky / Synastry / Saturn Return / Ask Oracle，4 个站内锚点 + 1 个 Saturn Return 路由到独立 SEO 页）。
 - HeroTodayCard.tsx｜地位：Hero 右半区编辑卡｜功能：用真实今日天象数据（编辑日期 + Sun/Moon/Mercury 三事实 + 「See full sky →」锚点跳 #today）填充原本空白的右半区；md+ 显示、mobile 隐藏避免异步闪烁；FINDING-H01 修复。
 - BirthChartSection.tsx｜地位：嵌入式本命盘工具区｜功能：anchor id="birth-chart-tool" 承接所有高意图 CTA。
@@ -27,6 +27,7 @@
 - FooterSection.tsx｜地位：页脚区｜功能：法律链接、语言切换、版权。
 
 近期更新
+- PageSpeed 优化：LandingPage 将 BirthChart/CosmicWeather/Tools/Synastry/Wiki/FeaturedArticles/Ask/SocialProof/Newsletter/Footer 改为 viewport-deferred lazy loading，首页首屏不再立即下载首屏外重 chunk；FooterSection 改用 `/brand/logo-mark-64.png` 小图。
 - LandingPage 升级 SEO：title/description/keywords 嵌入高意图关键词（free birth chart / today's sky / synastry / saturn return / psychological astrology），新增 Organization + SoftwareApplication + FAQPage JSON-LD（全部 lang-aware），WebSite schema 补 SearchAction。
 - HeroSection 新增 5 个 keyword feature-pills（位于双 CTA 与 trust line 之间），4 个站内锚点 + 1 个 Saturn Return 路由到独立 SEO 页；既给 crawler keyword-bearing anchor text，也给用户站内寻路。
 - 新增 HeroTodayCard.tsx 与共享 useTodaySky 钩子；Hero 右半区不再空白，以真实今日天象（编辑日期 + Sun/Moon/Mercury）做品牌锚点，避开 SaaS 风 hero 空洞感（FINDING-H01）。

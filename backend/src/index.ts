@@ -1,5 +1,5 @@
-// INPUT: Express 服务器配置（含环境变量加载、短链登记/跳转与统一响应中间件）。
-// OUTPUT: 启动 HTTP 服务（含 /go 与根路径短链登记/跳转、百科与支付等 API 路由）。
+// INPUT: Express 服务器配置（含环境变量加载、短链登记/跳转、缺失前端资产 404 兜底与统一响应中间件）。
+// OUTPUT: 启动 HTTP 服务（含 /go 与根路径短链登记/跳转、缺失 /assets/* 的 no-store 404、百科与支付等 API 路由）。
 // POS: 后端入口文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import path from "path";
@@ -378,6 +378,16 @@ app.use(apiResponseMiddleware);
 // /go/:code and root /:code short links here before the SPA fallback.
 app.use("/go", goRedirectRouter);
 app.use("/", goRedirectRootRouter);
+
+// Missing hashed frontend assets must not fall through to the SPA index.html.
+// Vercel rewrites /assets/* misses here before the catch-all /index.html rule.
+app.get("/assets/*", (req, res) => {
+  res
+    .status(404)
+    .set("Cache-Control", "no-store")
+    .type("text/plain")
+    .send(`Asset not found: ${req.path}`);
+});
 
 // API Routes
 app.use("/api/natal", natalRouter);

@@ -506,7 +506,7 @@ const buildLandingV2OrganizationSchema = () => ({
   '@type': 'Organization',
   name: 'AstrologyWiki',
   url: `${siteUrl}/`,
-  logo: `${siteUrl}/logo.png`,
+  logo: `${siteUrl}/brand/logo-schema-512.png`,
   sameAs: [
     'https://twitter.com/astrologywiki',
     'https://www.instagram.com/astrologywiki',

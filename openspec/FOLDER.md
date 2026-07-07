@@ -1,5 +1,5 @@
-<!-- INPUT: OpenSpec 规范与项目信息（含 SEO/GEO 基础提案、UI 规范门槛与本我页面内容优化进度更新）。 -->
-<!-- OUTPUT: openspec 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 规范门槛与本我页面内容优化记录）。 -->
+<!-- INPUT: OpenSpec 规范与项目信息（含 SEO/GEO 基础提案、UI 规范门槛、本我页面内容优化进度与 PageSpeed 优化提案更新）。 -->
+<!-- OUTPUT: openspec 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 规范门槛、本我页面内容优化记录与 PageSpeed 优化提案）。 -->
 <!-- POS: OpenSpec 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -21,6 +21,7 @@
 
 近期更新
 - 更新 project.md，补充 UI 规范唯一入口与评审门槛。
+- 新增 optimize-pagespeed-core-web-vitals 变更提案，约束首页 PageSpeed/Core Web Vitals 优化与部署后验证。
 - 新增 add-seo-geo-foundation 变更提案。
 - 新增 add-wiki-classics 变更提案。
 - 新增 integrate-astro-wiki 变更提案。

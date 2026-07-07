@@ -1,5 +1,5 @@
-// INPUT: 后端权益 API V2 客户端（含订阅定价、Pro 试用资格、详情解锁、Synthetica 日额度与积分解锁、本地日次解锁缓存）。
-// OUTPUT: 导出权益相关 API 调用函数（新版，支持订阅定价、Pro 试用资格与 Synthetica 日额度/日次解锁缓存同步）。
+// INPUT: 后端权益 API V2 客户端（含订阅定价、Pro 试用资格、详情解锁、Synthetica 日额度与积分解锁、本地日次解锁缓存、权益请求去重）。
+// OUTPUT: 导出权益相关 API 调用函数（新版，支持订阅定价、Pro 试用资格、权益请求去重与 Synthetica 日额度/日次解锁缓存同步）。
 // POS: 前端权益 API V2 客户端；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { authFetch } from './authClient';
@@ -142,6 +142,8 @@ export interface PurchaseRecord {
 // API 调用
 // =====================================================
 
+let entitlementsV2Request: Promise<EntitlementsV2> | null = null;
+
 // 获取用户时区
 function getUserTimezone(): string {
   try {
@@ -153,6 +155,18 @@ function getUserTimezone(): string {
 
 // 获取权益状态
 export async function getEntitlementsV2(): Promise<EntitlementsV2> {
+  if (entitlementsV2Request) {
+    return entitlementsV2Request;
+  }
+
+  entitlementsV2Request = fetchEntitlementsV2().finally(() => {
+    entitlementsV2Request = null;
+  });
+
+  return entitlementsV2Request;
+}
+
+async function fetchEntitlementsV2(): Promise<EntitlementsV2> {
   const deviceId = getDeviceId();
   const tz = getUserTimezone();
   const headers: Record<string, string> = {

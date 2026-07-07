@@ -1,5 +1,5 @@
-<!-- INPUT: 认证/权益上下文实现与状态管理说明（含积分解锁、合盘付费回调与 Synthetica 日额度支持）。 -->
-<!-- OUTPUT: contexts 目录架构摘要与文件索引（含合盘购买后续与额度 Hook 记录）。 -->
+<!-- INPUT: 认证/权益上下文实现与状态管理说明（含积分解锁、合盘付费回调、Synthetica 日额度与 PageSpeed 匿名 landing 权益延后）。 -->
+<!-- OUTPUT: contexts 目录架构摘要与文件索引（含合盘购买后续、额度 Hook 与匿名 landing 权益延后记录）。 -->
 <!-- POS: contexts 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -15,6 +15,7 @@
 - EntitlementContext.tsx｜地位：权益上下文｜功能：提供权益检查、消耗与购买流程状态。
 
 近期更新
+- PageSpeed 优化：AuthContext/EntitlementContext 在未登录状态优先恢复本地非登录权益缓存，不再在匿名 landing 首屏直接触发权益刷新；登录态与支付后刷新语义保持不变。
 - AuthContext/EntitlementContext 接入分析事件与用户属性更新（登录、注册、购买、付费墙曝光）。
 - EntitlementContext 改为积分解锁流程，统一 Ask/Synthetica 余额判断与价格常量。
 - EntitlementContext 新增 Synthetica 日额度消耗 Hook。

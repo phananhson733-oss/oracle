@@ -1,5 +1,5 @@
-// INPUT: React 认证上下文与 Provider（含权益状态拉取）。
-// OUTPUT: 导出 AuthContext 和 AuthProvider（含用户与权益刷新）。
+// INPUT: React 认证上下文与 Provider（含登录后权益状态拉取）。
+// OUTPUT: 导出 AuthContext 和 AuthProvider（含用户与登录后权益刷新）。
 // POS: 前端认证上下文；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
@@ -122,6 +122,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   useEffect(() => {
+    if (!isAuthenticated) {
+      const cached = getCachedEntitlements();
+      setEntitlements(cached?.isLoggedIn ? null : cached);
+      return;
+    }
     refreshEntitlements();
   }, [isAuthenticated, refreshEntitlements]);
 

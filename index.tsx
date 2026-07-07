@@ -1,5 +1,5 @@
-// INPUT: ReactDOM、主应用组件与全局样式入口（含分析追踪初始化）。
-// OUTPUT: 挂载主应用到 DOM 并启动分析与性能监控（含全局样式加载）。
+// INPUT: ReactDOM、主应用组件、全局样式入口与非关键初始化调度器。
+// OUTPUT: 挂载主应用到 DOM，并将分析/性能监控/AdSense TCF 监听延迟到首屏后或首次交互后。
 // POS: 主应用渲染入口。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React from 'react';
@@ -9,6 +9,7 @@ import App from './App';
 import { initAnalytics, trackFirstVisitIfNew, trackError } from './services/analytics';
 import { reportWebVitalsToAnalytics } from './src/utils/performance';
 import { getAdsenseClientId, initTcfListener } from './services/adsense';
+import { scheduleNonCriticalInit } from './src/utils/nonCriticalInitScheduler';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -31,11 +32,7 @@ const initNonCritical = () => {
   if (getAdsenseClientId()) initTcfListener();
 };
 
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(initNonCritical);
-} else {
-  setTimeout(initNonCritical, 2000);
-}
+scheduleNonCriticalInit(window, initNonCritical);
 
 // Global error tracking
 window.addEventListener('error', (event) => {

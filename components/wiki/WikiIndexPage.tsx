@@ -16,11 +16,10 @@ import { ArrowUpRight, Search } from "lucide-react";
 import { fetchWikiItems } from "../../services/apiClient";
 import type { WikiItemSummary, WikiItemType } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
+import { getWikiGradientStyle } from "./wikiGradientStyle";
 
 type TileSize = "lg" | "md" | "sm";
 
-const buildGradient = (token?: string) =>
-  token || "from-gold-500/20 via-gold-500/5 to-transparent";
 const UNICODE_SYMBOLS: Record<string, string> = {
   sun: "☉",
   moon: "☾",
@@ -227,7 +226,7 @@ const WikiIndexPage: React.FC = () => {
     content: React.ReactNode,
     className = "",
   ) => {
-    const gradient = buildGradient(item.color_token);
+    const gradientStyle = getWikiGradientStyle(item.color_token);
     return (
       <Link
         key={item.id}
@@ -238,9 +237,7 @@ const WikiIndexPage: React.FC = () => {
           className={`relative overflow-hidden cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 ${hoverTone} ${className}`}
           noPadding
         >
-          <div
-            className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-80`}
-          />
+          <div className="absolute inset-0 opacity-80" style={gradientStyle} />
           <div className={`absolute inset-0 ${overlayTone}`} />
           <div className="relative h-full">{content}</div>
         </Card>

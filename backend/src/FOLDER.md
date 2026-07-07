@@ -1,5 +1,5 @@
-<!-- INPUT: 后端 src 目录结构与职责索引（含 Airwallex Pro 试用激活、短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索优化更新）。 -->
-<!-- OUTPUT: src 架构摘要与文件清单（含 Airwallex Pro 试用激活、短链登记/跳转、经典拆解数据刷新、报告积分购买与地理搜索记录）。 -->
+<!-- INPUT: 后端 src 目录结构与职责索引（含 Airwallex Pro 试用激活、短链登记/跳转、经典拆解数据刷新、报告积分购买、地理搜索优化与缺失前端资产 404 兜底）。 -->
+<!-- OUTPUT: src 架构摘要与文件清单（含 Airwallex Pro 试用激活、短链登记/跳转、经典拆解数据刷新、报告积分购买、地理搜索记录与缺失资产 404 兜底）。 -->
 <!-- POS: 后端源码目录索引；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -12,7 +12,7 @@
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 src 目录结构与文件清单。
-- index.ts｜地位：服务入口｜功能：初始化 Express 与路由挂载。
+- index.ts｜地位：服务入口｜功能：初始化 Express 与路由挂载，并为缺失 `/assets/*` hashed 前端资源返回 text/plain 404，避免 Vercel SPA fallback 把 HTML 当不可变 JS/CSS 缓存。
 
 目录
 - api｜地位：路由目录｜功能：API 端点处理。
@@ -25,6 +25,7 @@
 - utils｜地位：工具目录｜功能：通用辅助方法。
 
 近期更新
+- 新增 `/assets/*` 缺失资源兜底：Vercel rewrite 在 SPA fallback 前交给后端，后端返回 `404 no-store text/plain`，防止不存在的 hashed asset 被重写为 `/index.html` 并套用 immutable cache。
 - Airwallex 新增手动 Pro 试用激活路由 `/api/airwallex/start-pro-trial`，并补路由级回归测试覆盖 7 天 trial checkout 与重复领取冲突。
 - 新增 `/go/:code` 与根路径短链跳转路由及 `/api/link-attribution/redirects` 登记接口，支持同站安全目标、Supabase/Redis 动态 registry、相同 destination 复用已有短链与旧 `to` 回退目标，并拒绝外部跳转。
 - 新增天象工具端点（GET /api/astro/positions、/moon-phase、/ephemeris）+ 返照盘端点（POST /api/solar-return，20/min 限流 + 4kb cap，复用 birthInput 校验机）：纯算法在 services/astro（skyTools / solarReturn，TDD），计算器矩阵 D 第二批。

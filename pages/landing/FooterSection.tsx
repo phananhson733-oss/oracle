@@ -95,7 +95,14 @@ const FooterSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-16">
         {/* Brand row */}
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="" width={28} height={28} loading="lazy" className="w-7 h-7 rounded-full" />
+          <img
+            src="/brand/logo-mark-64.png"
+            alt=""
+            width={28}
+            height={28}
+            loading="lazy"
+            className="w-7 h-7 rounded-full"
+          />
           <span
             className={`font-serif text-lg ${
               isDark ? "text-star-50" : "text-paper-900"

@@ -1,5 +1,5 @@
-<!-- INPUT: 公共静态资源与图标目录（含 SEO 静态页、hreflang 校验与站点图标）。 -->
-<!-- OUTPUT: public 架构摘要与文件索引（含 SEO 静态页、hreflang 校验与站点图标）。 -->
+<!-- INPUT: 公共静态资源与图标目录（含 SEO 静态页、hreflang 校验、站点图标与压缩品牌图）。 -->
+<!-- OUTPUT: public 架构摘要与文件索引（含 SEO 静态页、hreflang 校验、站点图标与压缩品牌图）。 -->
 <!-- POS: public 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -22,12 +22,14 @@
 
 目录
 - astro-icons｜地位：资源目录｜功能：行星/点位 SVG 图标。
+- brand｜地位：压缩品牌图资源目录｜功能：导航/页脚小图与结构化数据 logo，避免首页首屏请求根目录大图 `/logo.png`。
 - en｜地位：SEO 静态页目录｜功能：英文静态索引页面（构建期生成）。
 - zh｜地位：SEO 静态页目录｜功能：中文静态索引页面（构建期生成）。
 - og｜地位：OG 图资源目录｜功能：构建期为每篇文章生成的 1200×630 分享图（PNG/WebP，按语言）。
 - newsletter｜地位：周报 hero 图床｜功能：周报头图 `<ISO周slug>.png`（gemini-web 离线生成，best-effort），线上 `/newsletter/<slug>.png`；详见 newsletter/FOLDER.md。
 
 近期更新
+- 新增 `brand/` 压缩品牌图资源：`logo-mark-32/64/128/192.png` 用于 UI 小图，`logo-schema-512.png` 用于结构化数据；首页导航/页脚不再请求 `1.8MB` 的 `/logo.png`。
 - 新增 og/articles 构建期 OG 图（scripts/generate-og-images.mjs，satori+resvg+sharp）；文章 og:image 指向 /og/articles/&lt;slug&gt;.png（zh 为 .zh.png）。
 - 品牌标识刷新：logo.png/logo.jpg、favicon-16/32、icon-192/512、og-image.png 替换为新 astrologyWiki 视觉（方形槽位取黄道圆环裁切，OG 图保留完整横向 lockup）；favicon.svg 暂未同步矢量化。
 - SEO 静态页与 sitemap 重新生成，hreflang/ItemList 结构化数据对齐最新规则。
