@@ -29,6 +29,7 @@
   - Local Playwright preview check (2026-07-07): hero text is visible on desktop/mobile, `body.visibility` is `visible`, desktop CLS is `0.0014`, mobile CLS is `0`. Deploy Lighthouse/PageSpeed LCP breakdown remains pending.
   - Production Lighthouse after first deploy still reported `"modern psychology."` as LCP at `3.2s` desktop / `3.5s` mobile. Follow-up removes the landing route lazy boundary for `/` and defers the hero Today card chunk/API until 5s+idle.
   - Local follow-up Lighthouse (`http://127.0.0.1:4178/`): desktop LCP `0.5s`, element render delay `175ms`; mobile LCP `2.3s`, element render delay `759ms`. Production TTFB still requires deploy recheck.
+  - Production follow-up deploy `dpl_B9PGwEkLRe7M9EzRVMKNMsyXVBsz` improved LCP to `1.5s` desktop / `2.5s` mobile, but desktop Performance remained `89`. Added an early main-CSS preload in `vite.config.ts` so the render-blocking stylesheet starts downloading before the large inline head content finishes parsing.
 
 ## 4. Runtime JavaScript, APIs, and Analytics
 

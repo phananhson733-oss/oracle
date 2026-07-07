@@ -59,6 +59,9 @@ Fresh PageSpeed API recapture attempted on `2026-07-07`, but Google returned `42
   - Key default entry assets: `/assets/index-Bk5i416b.js` (`477.12KB` raw / `157.62KB` gzip), `/assets/react-vendor-CONxsY8T.js` (`48.83KB` raw / `17.36KB` gzip), `/assets/index-5qBeSpJ1.css` (`141.14KB` raw / `20.91KB` gzip).
   - Default `dist/index.html` contains no `adsbygoogle.js`, no `pagead2.googlesyndication.com`, and no `https://images.unsplash.com` preconnect.
   - Known non-blocking warnings: Browserslist data is old; Vite/esbuild reports duplicate `image_alt` in `data/articles/world-cup-2026-astrology-prediction.ts`; Vite emits an empty `google-ai` chunk; non-first-viewport article chunk remains large.
+- `node_modules/.bin/vite build --outDir /tmp/oracle-css-preload-check --emptyOutDir`
+  - passed after the final production follow-up.
+  - Confirms `dist/index.html` now includes an early `<link rel="preload" as="style" crossorigin href="/assets/index-5qBeSpJ1.css">` while preserving the normal stylesheet link.
 - `VITE_ADSENSE_HEAD_LOADER_ENABLED=true VITE_ADSENSE_CLIENT_ID=ca-pub-1234567890123456 node_modules/.bin/vite build --outDir /tmp/oracle-adsense-head-loader-check --emptyOutDir`
   - passed; generated `/tmp/oracle-adsense-head-loader-check/index.html` contains `adsbygoogle.js` and the test client id.
 - `node_modules/.bin/tsc --noEmit`
@@ -73,6 +76,13 @@ Fresh PageSpeed API recapture attempted on `2026-07-07`, but Google returned `42
   - Desktop (`/tmp/oracle-followup-lh-desktop.json`): Performance `100`, Accessibility `100`, Best Practices `96`, SEO `100`; FCP `0.4s`, LCP `0.5s`, TBT `0ms`, CLS `0`, Speed Index `0.4s`.
   - Mobile (`/tmp/oracle-followup-lh-mobile.json`): Performance `97`, Accessibility `100`, Best Practices `96`, SEO `100`; FCP `2.0s`, LCP `2.3s`, TBT `0ms`, CLS `0`, Speed Index `2.0s`.
   - Best Practices `96` is from the local `/api/region` 404 console error under Vite preview; production uses Vercel `/api/*` rewrite and must be rechecked after deploy.
+- Production deploy `dpl_B9PGwEkLRe7M9EzRVMKNMsyXVBsz` (2026-07-07, Pro quota restored):
+  - Aliased to `https://www.astrologywiki.com`.
+  - Production HTML assets: `/assets/index-D82rH2uQ.js`, `/assets/react-vendor-CONxsY8T.js`, `/assets/index-5qBeSpJ1.css`.
+  - HTML contains no AdSense head-loader, no `pagead2.googlesyndication.com`, no `images.unsplash.com`, no `loading-fonts`, and includes `/brand/logo-schema-512.png`.
+  - Header checks passed for `/brand/logo-mark-32.png`, `/brand/logo-mark-64.png`, live JS immutable caching, missing `/assets/*.js` 404 + `no-store`, and same-origin `/api/region` 200 JSON.
+  - Playwright 3s first viewport passed on desktop/mobile: hero visible, no horizontal overflow, no `/logo.png`, no AdSense, no `apiClient`, no `/api/astro/today`, no `HeroTodayCard` chunk, no console errors.
+  - Lighthouse before the main-CSS preload follow-up: desktop `89/100/100/100` with FCP/LCP `1.5s`, TBT `0ms`, CLS `0`; mobile `94/100/100/100` with LCP `2.5s`, TBT `0ms`, CLS `0`. Desktop missed the target by one point, so `vite.config.ts` now injects an early main-CSS preload and requires one more production redeploy/retest.
 
 Screenshots:
 
