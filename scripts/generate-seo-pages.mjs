@@ -843,6 +843,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'kai-cenat-zodiac-sign',
+  'egypt-world-cup-2026-astrology',
   'alexander-zverev-birth-chart',
   'arthur-fery-birth-chart',
   'anne-hathaway-birth-chart',

@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "egypt-world-cup-2026-astrology": {
+      "hero": {
+        "prompt": "A vast Egyptian desert at night, the Nile curving toward a luminous horizon where faint golden light rises like collective longing, twin stars of Gemini shining overhead while Jupiter glows amber-gold at the zenith, the warm dark sand below etched with faint star-map patterns as though the sky and the earth are in quiet conversation, the whole landscape breathing restless hope and shared identity, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Egyptian desert night with the Nile and Jupiter glowing under twin Gemini stars, evoking the 2026 World Cup astrology story"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the 2026 Tournament Story in a Chart",
+          "titleEn": "5 Steps for Reading Egypt's 2026 Tournament Chart",
+          "altEn": "Five-step sequence for reading Egypt World Cup 2026 astrology as symbolic storytelling",
+          "items": [
+            {
+              "nameEn": "National Chart Mood",
+              "subEn": "Look at transits touching Egypt's chart during the tournament window and read them as collective tone"
+            },
+            {
+              "nameEn": "Player Charts",
+              "subEn": "Focus on Sun, Mars, and the chart ruler to describe a player's role and temperament"
+            },
+            {
+              "nameEn": "Headline Transit",
+              "subEn": "Frame Jupiter in Gemini 2026 as a motif of talk, youth, and quick movement across the whole event"
+            },
+            {
+              "nameEn": "Name the Theme",
+              "subEn": "Say 'this reads as a story about pressure and pride' and refuse to translate it into a score or date"
+            },
+            {
+              "nameEn": "Cross-Check Bias",
+              "subEn": "If a reading conveniently predicts the win you already wanted, treat that as a warning flag, not a finding"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Egypt World Cup 2026 Astrology at a Glance",
+          "titleEn": "Three Layers of Egypt's 2026 Astrological Reading",
+          "altEn": "Comparison of three astrological layers: player charts, national chart, and Jupiter in Gemini 2026",
+          "columns": [
+            {
+              "nameEn": "Players' Birth Charts",
+              "linesEn": [
+                "Individual placements read as personality and role themes",
+                "Focus on Sun, Mars, and chart ruler",
+                "Describes drive, discipline, or flair — not stat lines"
+              ]
+            },
+            {
+              "nameEn": "Egypt's National Chart",
+              "linesEn": [
+                "Country-chart transits read as collective mood",
+                "Centres on National Sun and Moon",
+                "Watch cultural talk of pride, identity, and belonging"
+              ]
+            },
+            {
+              "nameEn": "Jupiter in Gemini 2026",
+              "linesEn": [
+                "Season's headline transit used as a narrative motif",
+                "Jupiter placed in Gemini through much of 2026",
+                "Themes of communication, youth, and quick movement"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
