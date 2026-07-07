@@ -320,6 +320,7 @@ import { anneHathawayBirthChartEn } from "./anne-hathaway-birth-chart";
 import { kevinDeBruyneBirthChartEn } from "./kevin-de-bruyne-birth-chart";
 import { arthurFeryBirthChartEn } from "./arthur-fery-birth-chart";
 import { alexanderZverevBirthChartEn } from "./alexander-zverev-birth-chart";
+import { kaiCenatZodiacSignEn } from "./kai-cenat-zodiac-sign";
 import { egyptWorldCup2026AstrologyEn } from "./egypt-world-cup-2026-astrology";
 // All articles organized by language
 
@@ -632,6 +633,7 @@ const ARTICLES_EN: WikiArticle[] = [
   kevinDeBruyneBirthChartEn,
   arthurFeryBirthChartEn,
   alexanderZverevBirthChartEn,
+  kaiCenatZodiacSignEn,
   egyptWorldCup2026AstrologyEn,
 ];
 

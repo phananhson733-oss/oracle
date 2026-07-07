@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 196" role="img" aria-label="">
+  <defs>
+    <linearGradient id="kaicenatzodiacsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="kaicenatzodiacsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="kaicenatzodiacsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kaicenatzodiacsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kaicenatzodiacsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kaicenatzodiacsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="url(#kaicenatzodiacsign1zh-panel)"/>
+  <ellipse cx="198" cy="47" rx="380" ry="67" fill="url(#kaicenatzodiacsign1zh-neb1)"/>
+  <ellipse cx="623" cy="157" rx="334" ry="63" fill="url(#kaicenatzodiacsign1zh-neb2)"/>
+  <circle cx="234.9" cy="56.4" r="1.08" fill="#cfc8ea" opacity="0.33"/><circle cx="703.1" cy="48.0" r="0.72" fill="#cfc8ea" opacity="0.19"/><circle cx="27.4" cy="121.5" r="0.47" fill="#cfc8ea" opacity="0.31"/><circle cx="429.6" cy="27.0" r="1.63" fill="#cfc8ea" opacity="0.30"/><circle cx="692.0" cy="105.1" r="0.52" fill="#cfc8ea" opacity="0.47"/><circle cx="356.8" cy="92.0" r="1.36" fill="#cfc8ea" opacity="0.34"/><circle cx="603.5" cy="147.6" r="0.90" fill="#cfc8ea" opacity="0.18"/><circle cx="226.0" cy="175.5" r="0.96" fill="#cfc8ea" opacity="0.17"/><circle cx="265.2" cy="25.7" r="1.18" fill="#cfc8ea" opacity="0.26"/><circle cx="450.7" cy="52.3" r="1.60" fill="#cfc8ea" opacity="0.30"/><circle cx="352.0" cy="115.4" r="1.13" fill="#cfc8ea" opacity="0.39"/><circle cx="253.3" cy="56.4" r="0.40" fill="#cfc8ea" opacity="0.40"/><circle cx="229.0" cy="15.6" r="1.69" fill="#cfc8ea" opacity="0.35"/><circle cx="182.5" cy="172.6" r="0.98" fill="#cfc8ea" opacity="0.42"/><circle cx="431.5" cy="43.4" r="1.16" fill="#cfc8ea" opacity="0.27"/><circle cx="187.4" cy="99.5" r="0.61" fill="#cfc8ea" opacity="0.28"/><circle cx="567.6" cy="157.5" r="0.75" fill="#cfc8ea" opacity="0.31"/><path d="M 705.2381443791091 138.2 L 705.7 140.5 L 708.0 140.9531048182398 L 705.7 141.4 L 705.2381443791091 143.7 L 704.8 141.4 L 702.5 140.9531048182398 L 704.8 140.5 Z" fill="#f6e6bf" opacity="0.6851339308777824"/><path d="M 324.4650844670832 134.0 L 325.1 137.2 L 328.3 137.8261667508632 L 325.1 138.4 L 324.4650844670832 141.7 L 323.9 138.4 L 320.6 137.8261667508632 L 323.9 137.2 Z" fill="#f6e6bf" opacity="0.5628818282159045"/><path d="M 612.793701376766 96.2 L 613.2 98.4 L 615.4 98.84037975408137 L 613.2 99.3 L 612.793701376766 101.4 L 612.4 99.3 L 610.2 98.84037975408137 L 612.4 98.4 Z" fill="#f6e6bf" opacity="0.7708655212307349"/><path d="M 22.180673498660326 170.4 L 22.6 172.7 L 24.9 173.09527118690312 L 22.6 173.5 L 22.180673498660326 175.8 L 21.7 173.5 L 19.5 173.09527118690312 L 21.7 172.7 Z" fill="#f6e6bf" opacity="0.7678144439356401"/><path d="M 278.3526682369411 124.6 L 278.8 126.9 L 281.0 127.29721044935286 L 278.8 127.7 L 278.3526682369411 130.0 L 277.9 127.7 L 275.7 127.29721044935286 L 277.9 126.9 Z" fill="#f6e6bf" opacity="0.7479938427219167"/><path d="M 234.9 56.4 L 603.5 147.6 L 253.3 56.4 L 187.4 99.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="182" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 176.8 L 16.5 179.5 L 19.2 180 L 16.5 180.5 L 16 183.2 L 15.5 180.5 L 12.8 180 L 15.5 179.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 176.8 L 744.5 179.5 L 747.2 180 L 744.5 180.5 L 744 183.2 L 743.5 180.5 L 740.8 180 L 743.5 179.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#kaicenatzodiacsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#kaicenatzodiacsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="72" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="72" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 81.6 L 48.3 84.5 L 51.1 85 L 48.3 85.5 L 47.75 88.4 L 47.2 85.5 L 44.4 85 L 47.2 84.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 112.5 L 380.7 116.3 L 384.5 117 L 380.7 117.7 L 380 121.5 L 379.3 117.7 L 375.5 117 L 379.3 116.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="130" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="130" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 139.6 L 48.3 142.5 L 51.1 143 L 48.3 143.5 L 47.75 146.4 L 47.2 143.5 L 44.4 143 L 47.2 142.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 280.025 167.4 L 280.4 169.6 L 282.6 170 L 280.4 170.4 L 280.025 172.6 L 279.6 170.4 L 277.4 170 L 279.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="174" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 167.4 L 480.4 169.6 L 482.6 170 L 480.4 170.4 L 479.975 172.6 L 479.6 170.4 L 477.4 170 L 479.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
