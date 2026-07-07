@@ -1,5 +1,5 @@
-<!-- INPUT: 项目配置与指南文档（含 PRD、Google OAuth 与 GA4/GTM 追踪配置）。 -->
-<!-- OUTPUT: 文档目录索引（含 Pro 试用/付费信息更新记录）。 -->
+<!-- INPUT: 项目配置与指南文档（含 PRD、Google OAuth、GA4/GTM 追踪配置与 PageSpeed 审计模块文档）。 -->
+<!-- OUTPUT: 文档目录索引（含 Pro 试用/付费信息与 PageSpeed 审计模块 Artifact 更新记录）。 -->
 <!-- POS: 文档目录索引；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 # 文件夹：docs
 
@@ -19,9 +19,14 @@
 - GOOGLE_OAUTH_SETUP.md｜地位：OAuth 配置指南｜功能：说明如何配置 Google OAuth 登录功能（含凭据获取与重定向配置）。
 - BACKUP_RUNBOOK.md｜地位：备份/恢复 runbook｜功能：数据存储拓扑、备份机制、RPO/RTO 目标、恢复步骤与待核验 TODO（backlog #21）；平台事实标 UNVERIFIED 须 dashboard 核实。
 - PRD.md｜地位：产品需求文档｜功能：记录产品模块、商业模式、API、数据库 Schema 与用户旅程。
+- PAGESPEED_AUDIT_PRD.md｜地位：PageSpeed 审计模块 PRD｜功能：定义基于 Google PageSpeed/Lighthouse 的通用审计功能、完整审计范围、Gate 规则、数据模型与验收标准。
+- PAGESPEED_AUDIT_ARTIFACT.md｜地位：PageSpeed 审计 Artifact 规格｜功能：定义机器 JSON 与人工报告结构，要求完整保留通过、失败、部分、不适用、人工与信息项。
+- PAGESPEED_AUDIT_ARTIFACT.schema.json｜地位：PageSpeed 审计 Artifact JSON Schema｜功能：约束通用审计模块输出结构，供 CI、API 与落库校验。
+- PAGESPEED_AUDIT_ARTIFACT.astrologywiki.json｜地位：PageSpeed 审计样例 Artifact｜功能：基于 AstrologyWiki 生产 desktop/mobile Lighthouse 结果生成的完整样例，覆盖两端各 160 个 audit。
 - FOLDER.md｜地位：目录索引文档｜功能：记录 docs 目录下的文件清单。
 
 ## 近期更新
 
 - PRD v2.47 同步 Pro 试用新流程：注册后默认 Free，符合资格用户需手动点击试用并在 Airwallex 填写付款信息，到期自动续费。
 - BACKUP_RUNBOOK 将 `pro_trial_claims` 纳入 Postgres 备份/恢复表清单，避免 Airwallex-backed Pro 试用领取历史恢复遗漏。
+- 新增 PageSpeed 审计模块 PRD、Artifact 规格、JSON Schema 与 AstrologyWiki 生产样例，作为后续通用网站审计功能的产品与数据契约。

@@ -1,0 +1,811 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.astrologywiki.com/schemas/pagespeed-audit-artifact.schema.json",
+  "title": "PageSpeedAuditArtifact",
+  "description": "Normalized artifact for a PageSpeed Insights/Lighthouse audit. It preserves every Lighthouse audit for each strategy and separates release gates from optimization warnings.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifactVersion",
+    "generatedAt",
+    "target",
+    "sources",
+    "budgets",
+    "summary",
+    "runs",
+    "customChecks",
+    "gates",
+    "findings",
+    "nextActions"
+  ],
+  "properties": {
+    "artifactVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "target": {
+      "$ref": "#/$defs/target"
+    },
+    "sources": {
+      "$ref": "#/$defs/sources"
+    },
+    "budgets": {
+      "$ref": "#/$defs/budgets"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "runs": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/strategyRun"
+      },
+      "minProperties": 1
+    },
+    "customChecks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/checkResult"
+      }
+    },
+    "gates": {
+      "$ref": "#/$defs/gates"
+    },
+    "findings": {
+      "$ref": "#/$defs/findings"
+    },
+    "nextActions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nextAction"
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "fail",
+        "partial",
+        "informative",
+        "manual",
+        "not_applicable",
+        "error"
+      ]
+    },
+    "overallStatus": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "warning",
+        "fail",
+        "error"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "release",
+        "warning",
+        "info"
+      ]
+    },
+    "rating": {
+      "type": "string",
+      "enum": [
+        "good",
+        "needs_improvement",
+        "poor",
+        "unknown"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "requestedUrl",
+        "finalUrl",
+        "site",
+        "labels"
+      ],
+      "properties": {
+        "requestedUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "finalUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "site": {
+          "type": "string"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "locale": {
+          "type": "string"
+        },
+        "routeType": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "expectedDeployment": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "provider": {
+              "type": "string"
+            },
+            "deploymentId": {
+              "type": "string"
+            },
+            "gitSha": {
+              "type": "string"
+            },
+            "assets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "pageSpeedInsights",
+        "lighthouse",
+        "browserSmoke"
+      ],
+      "properties": {
+        "pageSpeedInsights": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "unavailable",
+                "not_requested"
+              ]
+            },
+            "strategies": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "error": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "raw": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "lighthouse": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "status",
+            "version",
+            "runs"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "unavailable",
+                "partial"
+              ]
+            },
+            "version": {
+              "type": "string"
+            },
+            "runs": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "additionalProperties": true,
+                "required": [
+                  "fetchTime"
+                ],
+                "properties": {
+                  "fetchTime": {
+                    "type": "string"
+                  },
+                  "rawPath": {
+                    "type": "string"
+                  },
+                  "rawSha256": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "browserSmoke": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "unavailable",
+                "partial"
+              ]
+            },
+            "raw": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "performance",
+        "accessibility",
+        "bestPractices",
+        "seo",
+        "lcpMs",
+        "tbtMs",
+        "cls",
+        "consoleErrors",
+        "missingAssetFallback"
+      ],
+      "properties": {
+        "performance": {
+          "type": "number"
+        },
+        "accessibility": {
+          "type": "number"
+        },
+        "bestPractices": {
+          "type": "number"
+        },
+        "seo": {
+          "type": "number"
+        },
+        "lcpMs": {
+          "type": "number"
+        },
+        "tbtMs": {
+          "type": "number"
+        },
+        "cls": {
+          "type": "number"
+        },
+        "consoleErrors": {
+          "type": "number"
+        },
+        "missingAssetFallback": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "overallStatus",
+        "releaseBlockerCount",
+        "warningCount",
+        "strategies",
+        "categoryScores",
+        "coreMetrics",
+        "auditCoverage"
+      ],
+      "properties": {
+        "overallStatus": {
+          "$ref": "#/$defs/overallStatus"
+        },
+        "releaseBlockerCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warningCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "strategies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "categoryScores": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            }
+          }
+        },
+        "coreMetrics": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/metric"
+            }
+          }
+        },
+        "auditCoverage": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/auditCoverage"
+          }
+        }
+      }
+    },
+    "auditCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "auditCount",
+        "statusCounts",
+        "allAuditIdsIncluded"
+      ],
+      "properties": {
+        "auditCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "statusCounts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "allAuditIdsIncluded": {
+          "type": "boolean"
+        }
+      }
+    },
+    "strategyRun": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "strategy",
+        "finalUrl",
+        "environment",
+        "categories",
+        "metrics",
+        "audits"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "finalUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "fetchTime": {
+          "type": "string"
+        },
+        "environment": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/category"
+          }
+        },
+        "metrics": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/metric"
+          }
+        },
+        "audits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/audit"
+          }
+        }
+      }
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "score",
+        "auditRefCount",
+        "auditRefs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "auditRefCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "auditRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/auditRef"
+          }
+        }
+      }
+    },
+    "auditRef": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "group": {
+          "type": "string"
+        },
+        "acronym": {
+          "type": "string"
+        }
+      }
+    },
+    "metric": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "rating"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "displayValue": {
+          "type": "string"
+        },
+        "rating": {
+          "$ref": "#/$defs/rating"
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "score",
+        "scoreDisplayMode",
+        "status",
+        "categoryRefs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "score": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "scoreDisplayMode": {
+          "type": "string"
+        },
+        "displayValue": {
+          "type": "string"
+        },
+        "numericValue": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "numericUnit": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "categoryRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/auditRef"
+          }
+        },
+        "detailsSummary": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "checkResult": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "status",
+        "severity",
+        "evidence"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "severity": {
+          "$ref": "#/$defs/severity"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "object"
+            ]
+          }
+        },
+        "recommendation": {
+          "type": "string"
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "overallStatus",
+        "release",
+        "warnings"
+      ],
+      "properties": {
+        "overallStatus": {
+          "$ref": "#/$defs/overallStatus"
+        },
+        "release": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gate"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gate"
+          }
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "status",
+        "severity",
+        "actual",
+        "expected",
+        "source"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "severity": {
+          "$ref": "#/$defs/severity"
+        },
+        "actual": {
+          "type": [
+            "number",
+            "string",
+            "boolean",
+            "null"
+          ]
+        },
+        "expected": {
+          "type": [
+            "number",
+            "string",
+            "boolean",
+            "null"
+          ]
+        },
+        "source": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string"
+        }
+      }
+    },
+    "findings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blockers",
+        "warnings",
+        "passedHighlights",
+        "manualReview",
+        "informational"
+      ],
+      "properties": {
+        "blockers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "passedHighlights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "manualReview": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "informational": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "status",
+        "severity",
+        "strategies",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "severity": {
+          "$ref": "#/$defs/severity"
+        },
+        "strategies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "object"
+            ]
+          }
+        },
+        "recommendation": {
+          "type": "string"
+        }
+      }
+    },
+    "nextAction": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "priority",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "sourceFindingIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
