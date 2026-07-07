@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 316" role="img" aria-label="">
+  <defs>
+    <linearGradient id="alexanderzverevbirthchart2zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="alexanderzverevbirthchart2zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="alexanderzverevbirthchart2zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="alexanderzverevbirthchart2zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="alexanderzverevbirthchart2zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="alexanderzverevbirthchart2zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="url(#alexanderzverevbirthchart2zh-panel)"/>
+  <ellipse cx="198" cy="76" rx="380" ry="107" fill="url(#alexanderzverevbirthchart2zh-neb1)"/>
+  <ellipse cx="623" cy="253" rx="334" ry="101" fill="url(#alexanderzverevbirthchart2zh-neb2)"/>
+  <circle cx="682.9" cy="38.7" r="1.14" fill="#cfc8ea" opacity="0.32"/><circle cx="222.5" cy="92.5" r="1.70" fill="#cfc8ea" opacity="0.32"/><circle cx="707.5" cy="281.0" r="0.42" fill="#cfc8ea" opacity="0.50"/><circle cx="495.8" cy="195.9" r="1.44" fill="#cfc8ea" opacity="0.43"/><circle cx="370.0" cy="123.1" r="0.80" fill="#cfc8ea" opacity="0.16"/><circle cx="511.1" cy="16.4" r="0.52" fill="#cfc8ea" opacity="0.26"/><circle cx="638.6" cy="279.6" r="1.38" fill="#cfc8ea" opacity="0.15"/><circle cx="452.4" cy="13.3" r="0.81" fill="#cfc8ea" opacity="0.49"/><circle cx="444.8" cy="216.9" r="1.04" fill="#cfc8ea" opacity="0.13"/><circle cx="53.4" cy="272.3" r="0.58" fill="#cfc8ea" opacity="0.31"/><circle cx="48.9" cy="281.8" r="1.30" fill="#cfc8ea" opacity="0.49"/><circle cx="313.8" cy="124.1" r="1.53" fill="#cfc8ea" opacity="0.20"/><circle cx="676.1" cy="157.5" r="0.72" fill="#cfc8ea" opacity="0.35"/><circle cx="163.4" cy="127.8" r="1.08" fill="#cfc8ea" opacity="0.37"/><circle cx="746.5" cy="265.7" r="1.36" fill="#cfc8ea" opacity="0.26"/><circle cx="715.0" cy="131.0" r="0.50" fill="#cfc8ea" opacity="0.13"/><circle cx="187.1" cy="85.5" r="0.44" fill="#cfc8ea" opacity="0.48"/><circle cx="96.6" cy="193.5" r="1.54" fill="#cfc8ea" opacity="0.47"/><circle cx="181.0" cy="267.1" r="1.40" fill="#cfc8ea" opacity="0.27"/><circle cx="375.8" cy="52.1" r="0.87" fill="#cfc8ea" opacity="0.35"/><circle cx="467.9" cy="26.8" r="1.12" fill="#cfc8ea" opacity="0.31"/><circle cx="652.6" cy="262.6" r="1.05" fill="#cfc8ea" opacity="0.39"/><circle cx="160.9" cy="109.2" r="1.48" fill="#cfc8ea" opacity="0.29"/><circle cx="288.3" cy="230.6" r="0.79" fill="#cfc8ea" opacity="0.38"/><circle cx="89.9" cy="32.2" r="1.59" fill="#cfc8ea" opacity="0.15"/><circle cx="636.8" cy="178.7" r="0.51" fill="#cfc8ea" opacity="0.47"/><circle cx="630.8" cy="184.9" r="1.30" fill="#cfc8ea" opacity="0.42"/><path d="M 629.1526827532798 84.9 L 629.8 88.2 L 633.0 88.81566970050335 L 629.8 89.4 L 629.1526827532798 92.7 L 628.5 89.4 L 625.3 88.81566970050335 L 628.5 88.2 Z" fill="#f6e6bf" opacity="0.7237810393795371"/><path d="M 514.4218411389738 183.0 L 514.9 185.6 L 517.5 186.07973678410053 L 514.9 186.6 L 514.4218411389738 189.1 L 513.9 186.6 L 511.4 186.07973678410053 L 513.9 185.6 Z" fill="#f6e6bf" opacity="0.7913405862636864"/><path d="M 162.01484956033528 229.8 L 162.6 233.1 L 165.9 233.68778513371944 L 162.6 234.3 L 162.01484956033528 237.5 L 161.4 234.3 L 158.2 233.68778513371944 L 161.4 233.1 Z" fill="#f6e6bf" opacity="0.7654934782534837"/><path d="M 507.91025988198817 94.3 L 508.3 96.4 L 510.4 96.75551451742649 L 508.3 97.2 L 507.91025988198817 99.3 L 507.5 97.2 L 505.4 96.75551451742649 L 507.5 96.4 Z" fill="#f6e6bf" opacity="0.5519836719147861"/><path d="M 240.0161588806659 217.9 L 240.6 221.0 L 243.7 221.58087567985058 L 240.6 222.2 L 240.0161588806659 225.3 L 239.4 222.2 L 236.3 221.58087567985058 L 239.4 221.0 Z" fill="#f6e6bf" opacity="0.6067378478124738"/><path d="M 676.1 157.5 L 163.4 127.8 L 467.9 26.8 L 652.6 262.6 L 160.9 109.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="302" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 296.8 L 16.5 299.5 L 19.2 300 L 16.5 300.5 L 16 303.2 L 15.5 300.5 L 12.8 300 L 15.5 299.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 296.8 L 744.5 299.5 L 747.2 300 L 744.5 300.5 L 744 303.2 L 743.5 300.5 L 740.8 300 L 743.5 299.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#alexanderzverevbirthchart2zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#alexanderzverevbirthchart2zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="262" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#alexanderzverevbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#alexanderzverevbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#alexanderzverevbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#alexanderzverevbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#alexanderzverevbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#alexanderzverevbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#alexanderzverevbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#alexanderzverevbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="262" r="20.0" fill="url(#alexanderzverevbirthchart2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="262" r="15" fill="url(#alexanderzverevbirthchart2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="257.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="266.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="258.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 287.4 L 280.4 289.6 L 282.6 290 L 280.4 290.4 L 280.025 292.6 L 279.6 290.4 L 277.4 290 L 279.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="294" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 287.4 L 480.4 289.6 L 482.6 290 L 480.4 290.4 L 479.975 292.6 L 479.6 290.4 L 477.4 290 L 479.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
