@@ -843,6 +843,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'anne-hathaway-birth-chart',
+  'kevin-de-bruyne-birth-chart',
   'rayan-cherki-birth-chart',
   'kylian-mbapp-birth-chart',
   'achraf-hakimi-birth-chart',
