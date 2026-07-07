@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "kai-cenat-zodiac-sign": {
+      "hero": {
+        "prompt": "A boundless night-sky landscape stretching to the horizon where a single colossal Jupiter-like orb blazes gold and amber low in the sky, its light radiating outward in expanding arcs of fire across an infinite dark plain, arrows of warm luminescence leaping toward every edge of the frame as if the world itself is growing larger, teal nebula clouds swirling at the periphery like the cosmos stretching beyond its own borders, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Cosmic landscape with a blazing Jupiter-gold orb expanding light across the horizon, evoking Kai Cenat's Sagittarius Sun energy"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Sagittarius Sun in a Birth Chart",
+          "titleEn": "4 Signals of a Sagittarius Sun",
+          "altEn": "Four observable Sagittarius Sun patterns: expansion drive, blunt delivery, momentum over maintenance, meaning behind the fun",
+          "items": [
+            {
+              "nameEn": "A Push Toward Expansion",
+              "subEn": "Restless pull toward new formats, collabs, and bigger stages instead of settling into one lane"
+            },
+            {
+              "nameEn": "Blunt, Unfiltered Delivery",
+              "subEn": "Speaks in big, direct statements; honesty usually wins out over tact in the moment"
+            },
+            {
+              "nameEn": "Momentum Over Maintenance",
+              "subEn": "Energy spikes around launches and firsts, then cools off during repetitive day-to-day upkeep"
+            },
+            {
+              "nameEn": "Meaning Hiding Behind the Fun",
+              "subEn": "Beneath the hype lies a search for something genuinely worth doing, not just entertaining"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sagittarius Sun vs the Whole Birth Chart: What Actually Differs",
+          "titleEn": "Sun Sign vs Full Birth Chart",
+          "altEn": "Comparison of what a Sagittarius Sun sign tells you versus what a full birth chart reveals",
+          "columns": [
+            {
+              "nameEn": "Sun Sign",
+              "linesEn": [
+                "The headline: names core identity and how it seeks expression",
+                "Fast, shareable read anyone can repeat",
+                "Sagittarius: restless mutable fire, ruled by Jupiter",
+                "Leaves out contradiction and personal texture"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "linesEn": [
+                "The paragraph: adds Moon, Mercury, Venus, and Mars",
+                "Capricorn Moon and Mercury hint at discipline and privacy",
+                "Sagittarius Venus, Pisces Mars fill relational and drive patterns",
+                "Explains why the same person reads as hype machine and grinder"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

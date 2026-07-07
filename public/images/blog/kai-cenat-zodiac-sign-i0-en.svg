@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="4 Signals of a Sagittarius Sun">
+  <defs>
+    <linearGradient id="kaicenatzodiacsign0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="kaicenatzodiacsign0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="kaicenatzodiacsign0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kaicenatzodiacsign0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kaicenatzodiacsign0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kaicenatzodiacsign0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#kaicenatzodiacsign0en-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#kaicenatzodiacsign0en-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#kaicenatzodiacsign0en-neb2)"/>
+  <circle cx="299.4" cy="400.4" r="1.41" fill="#cfc8ea" opacity="0.19"/><circle cx="731.0" cy="268.6" r="0.51" fill="#cfc8ea" opacity="0.16"/><circle cx="703.9" cy="125.4" r="1.42" fill="#cfc8ea" opacity="0.50"/><circle cx="219.2" cy="50.9" r="0.97" fill="#cfc8ea" opacity="0.14"/><circle cx="732.3" cy="173.3" r="1.41" fill="#cfc8ea" opacity="0.45"/><circle cx="484.6" cy="54.0" r="1.11" fill="#cfc8ea" opacity="0.15"/><circle cx="200.4" cy="38.4" r="1.23" fill="#cfc8ea" opacity="0.37"/><circle cx="173.8" cy="309.8" r="0.94" fill="#cfc8ea" opacity="0.25"/><circle cx="374.7" cy="223.4" r="0.98" fill="#cfc8ea" opacity="0.18"/><circle cx="256.2" cy="128.9" r="1.69" fill="#cfc8ea" opacity="0.52"/><circle cx="264.4" cy="397.4" r="1.42" fill="#cfc8ea" opacity="0.49"/><circle cx="372.9" cy="376.0" r="1.07" fill="#cfc8ea" opacity="0.17"/><circle cx="374.9" cy="143.2" r="0.77" fill="#cfc8ea" opacity="0.43"/><circle cx="142.3" cy="190.0" r="1.24" fill="#cfc8ea" opacity="0.24"/><circle cx="645.3" cy="30.0" r="0.62" fill="#cfc8ea" opacity="0.27"/><circle cx="467.6" cy="313.1" r="0.87" fill="#cfc8ea" opacity="0.52"/><circle cx="605.1" cy="335.5" r="1.41" fill="#cfc8ea" opacity="0.24"/><circle cx="225.1" cy="119.2" r="0.90" fill="#cfc8ea" opacity="0.42"/><circle cx="655.7" cy="305.3" r="0.43" fill="#cfc8ea" opacity="0.21"/><circle cx="133.5" cy="72.4" r="1.67" fill="#cfc8ea" opacity="0.52"/><circle cx="286.1" cy="325.4" r="1.50" fill="#cfc8ea" opacity="0.51"/><circle cx="194.2" cy="153.6" r="0.60" fill="#cfc8ea" opacity="0.48"/><circle cx="104.4" cy="168.8" r="1.62" fill="#cfc8ea" opacity="0.25"/><circle cx="236.8" cy="94.8" r="0.77" fill="#cfc8ea" opacity="0.42"/><circle cx="486.2" cy="282.5" r="1.68" fill="#cfc8ea" opacity="0.26"/><circle cx="403.5" cy="151.9" r="0.52" fill="#cfc8ea" opacity="0.30"/><circle cx="501.2" cy="140.0" r="0.52" fill="#cfc8ea" opacity="0.33"/><circle cx="495.4" cy="65.4" r="0.61" fill="#cfc8ea" opacity="0.30"/><circle cx="181.2" cy="337.1" r="1.35" fill="#cfc8ea" opacity="0.14"/><circle cx="233.9" cy="93.8" r="0.56" fill="#cfc8ea" opacity="0.37"/><circle cx="150.1" cy="225.7" r="0.67" fill="#cfc8ea" opacity="0.27"/><circle cx="640.4" cy="325.0" r="1.63" fill="#cfc8ea" opacity="0.43"/><circle cx="560.8" cy="382.8" r="1.23" fill="#cfc8ea" opacity="0.28"/><circle cx="123.7" cy="268.1" r="1.05" fill="#cfc8ea" opacity="0.14"/><circle cx="483.6" cy="389.0" r="1.50" fill="#cfc8ea" opacity="0.53"/><circle cx="488.3" cy="26.2" r="0.43" fill="#cfc8ea" opacity="0.46"/><circle cx="66.6" cy="213.1" r="0.55" fill="#cfc8ea" opacity="0.44"/><circle cx="560.1" cy="128.7" r="1.34" fill="#cfc8ea" opacity="0.31"/><path d="M 694.1888347361237 104.3 L 694.6 106.4 L 696.7 106.79202598752454 L 694.6 107.2 L 694.1888347361237 109.3 L 693.8 107.2 L 691.7 106.79202598752454 L 693.8 106.4 Z" fill="#f6e6bf" opacity="0.5024997620843351"/><path d="M 713.1906025130302 235.4 L 713.6 237.8 L 716.0 238.2552027045749 L 713.6 238.7 L 713.1906025130302 241.1 L 712.7 238.7 L 710.4 238.2552027045749 L 712.7 237.8 Z" fill="#f6e6bf" opacity="0.7780567279085517"/><path d="M 612.5774939004332 77.8 L 613.1 80.4 L 615.7 80.95605337480083 L 613.1 81.5 L 612.5774939004332 84.1 L 612.1 81.5 L 609.4 80.95605337480083 L 612.1 80.4 Z" fill="#f6e6bf" opacity="0.7527682122774422"/><path d="M 451.25057663209736 251.9 L 451.9 255.1 L 455.0 255.6801550569944 L 451.9 256.3 L 451.25057663209736 259.4 L 450.6 256.3 L 447.5 255.6801550569944 L 450.6 255.1 Z" fill="#f6e6bf" opacity="0.6353021372109652"/><path d="M 648.7811760101467 237.0 L 649.3 239.7 L 651.9 240.17425500648096 L 649.3 240.7 L 648.7811760101467 243.3 L 648.3 240.7 L 645.6 240.17425500648096 L 648.3 239.7 Z" fill="#f6e6bf" opacity="0.7421812678687274"/><path d="M 703.9 125.4 L 374.7 223.4 L 142.3 190.0 L 495.4 65.4 L 233.9 93.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">4 Signals of a Sagittarius Sun</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#kaicenatzodiacsign0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#kaicenatzodiacsign0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="355" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#kaicenatzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#kaicenatzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">A Push Toward Expansion</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Restless pull toward new formats, collabs, and bigger stages instead of</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">settling into one lane</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#kaicenatzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#kaicenatzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Blunt, Unfiltered Delivery</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Speaks in big, direct statements; honesty usually wins out over tact in the</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">moment</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#kaicenatzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#kaicenatzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Momentum Over Maintenance</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Energy spikes around launches and firsts, then cools off during repetitive</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">day-to-day upkeep</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#kaicenatzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#kaicenatzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Meaning Hiding Behind the Fun</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Beneath the hype lies a search for something genuinely worth doing, not just</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">entertaining</text>
+  <path d="M 202.22749999999988 416.4 L 202.6 418.6 L 204.8 419 L 202.6 419.4 L 202.22749999999988 421.6 L 201.8 419.4 L 199.6 419 L 201.8 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 416.4 L 558.2 418.6 L 560.4 419 L 558.2 419.4 L 557.7725000000002 421.6 L 557.4 419.4 L 555.2 419 L 557.4 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
