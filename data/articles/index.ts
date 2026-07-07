@@ -318,6 +318,7 @@ import { jessicaPegulaBirthChartEn } from "./jessica-pegula-birth-chart";
 import { englandVsNorwayAstrologyEn } from "./england-vs-norway-astrology";
 import { anneHathawayBirthChartEn } from "./anne-hathaway-birth-chart";
 import { kevinDeBruyneBirthChartEn } from "./kevin-de-bruyne-birth-chart";
+import { arthurFeryBirthChartEn } from "./arthur-fery-birth-chart";
 // All articles organized by language
 
 import {
@@ -627,6 +628,7 @@ const ARTICLES_EN: WikiArticle[] = [
   englandVsNorwayAstrologyEn,
   anneHathawayBirthChartEn,
   kevinDeBruyneBirthChartEn,
+  arthurFeryBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
