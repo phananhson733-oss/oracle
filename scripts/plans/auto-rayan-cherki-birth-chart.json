@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "rayan-cherki-birth-chart": {
+      "hero": {
+        "prompt": "A lone amber sun cresting an infinite indigo horizon, its rays dissolving into swirling stellar constellations scattered across the twilight sky like unseen formations, radiant golden light pooling on a dark mirror-flat plain stretching to every edge, celestial archetype not arena, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A glowing gold sun rising over an infinite indigo star-scattered horizon, symbolic celestial light as archetype not scoreboard"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs a Sun-Sign Headline: What Actually Differs",
+          "titleEn": "Sun-Sign Headline vs Full Birth Chart",
+          "altEn": "Two columns comparing what a sun-sign headline and a full birth chart each show and what each sacrifices",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Headline",
+              "linesEn": [
+                "Uses one placement only — the Sun",
+                "Compresses identity into a shareable label",
+                "Travels quickly online",
+                "Loses Moon's emotional texture and rising sign's first-impression style"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "linesEn": [
+                "Combines Sun, Moon, rising sign, and planetary aspects",
+                "Holds multiple placements in tension at once",
+                "Follows Rudhyar and Liz Greene's psychological tradition",
+                "Requires a verified birth time for Moon and Ascendant"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Public Figure's Birth Chart Without Overclaiming",
+          "titleEn": "5 Habits for an Honest Celebrity Chart Reading",
+          "altEn": "Five-step sequence for reading a public figure's birth chart responsibly without overclaiming",
+          "items": [
+            {
+              "nameEn": "Start with what is public",
+              "subEn": "Note Sun in Leo as reported from mid-August 2003 birth — reported, not confirmed"
+            },
+            {
+              "nameEn": "Flag the missing birth time",
+              "subEn": "Without a verified time, Moon and rising sign are guesses — say so out loud"
+            },
+            {
+              "nameEn": "Read the Sun as image, not outcome",
+              "subEn": "Leo Sun suggests visible confidence and spotlight flair, not a scoreline"
+            },
+            {
+              "nameEn": "Separate aspects from ambition",
+              "subEn": "A dynamic square points to friction or drive as a theme, not a transfer or trophy"
+            },
+            {
+              "nameEn": "Name your source of certainty",
+              "subEn": "Downgrade any fact resting on an unverified birth time to a maybe"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of the Rayan Cherki Birth Chart",
+          "altEn": "Four viral misreadings of celebrity birth charts and what each one actually gets wrong",
+          "items": [
+            {
+              "nameEn": "His chart explains his talent",
+              "subEn": "Charts offer symbolic language for public image, not athletic ability or results"
+            },
+            {
+              "nameEn": "We know his Moon and rising sign",
+              "subEn": "Both require an exact birth time that is not publicly confirmed"
+            },
+            {
+              "nameEn": "Leo means he's arrogant",
+              "subEn": "Leo Sun is associated with warmth, visibility, and pride in craft — not arrogance"
+            },
+            {
+              "nameEn": "The chart predicts his next club",
+              "subEn": "Astrology here is a framing device for persona and news cycles, not a forecast of contracts"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
