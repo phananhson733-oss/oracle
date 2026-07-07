@@ -615,10 +615,11 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **定位**: 变现免费 SEO 流量、保护付费漏斗。广告仅投 **wiki 文章页**；付费/登录用户、转化漏斗(`embeddedTool`)/心理敏感(`psychAdjacent`)文章、非同意用户零广告。
 
-**实现**: 手动广告位（React `<AdSlot>`，非 Auto Ads），仅 SPA 水合后渲染、不进静态 stub，预留高度防 CLS。`adsbygoogle.js` loader 注入原始 `<head>`（`vite.config.ts` 插件 + `scripts/generate-seo-pages.mjs`），供 Google 审核验证 + CMP 全站加载。广告位配置集中于 `components/ads/adPlacements.ts`（当前仅 `WIKI_ARTICLE_END` = wiki 文末 responsive display）；投放资格由 `components/ads/adEligibility.ts::isAdEligibleArticle` 结构化收口。
+**实现**: 手动广告位（React `<AdSlot>`，非 Auto Ads），仅 SPA 水合后按门控渲染，预留高度防 CLS。`adsbygoogle.js` 原始 `<head>` loader（`vite.config.ts` 插件 + `scripts/generate-seo-pages.mjs`）仅在 `VITE_ADSENSE_HEAD_LOADER_ENABLED=true` 时注入，供首次审核/CMP 验证使用；默认关闭以避免首页 PageSpeed 首字节加载广告脚本。广告位配置集中于 `components/ads/adPlacements.ts`（当前仅 `WIKI_ARTICLE_END` = wiki 文末 responsive display）；投放资格由 `components/ads/adEligibility.ts::isAdEligibleArticle` 结构化收口。
 
-**两级门控（构建期 env）**:
-- `VITE_ADSENSE_CLIENT_ID`（`ca-pub-xxx`）→ head-loader 是否注入（审核验证 + CMP 加载）
+**构建期 env 门控**:
+- `VITE_ADSENSE_HEAD_LOADER_ENABLED`（`true`/`false`）→ 原始 `<head>` loader 是否注入（审核验证 + CMP 加载）；默认 false
+- `VITE_ADSENSE_CLIENT_ID`（`ca-pub-xxx`）→ publisher id，供 head-loader 与运行时 loader 使用
 - `VITE_ADSENSE_ENABLED`（`true`/`false`）→ 广告是否真正投放（`AdSlot`）；未开=全站零广告
 
 **同意（地域分流方案 A）**:

@@ -23,9 +23,9 @@
 - themeStorage.ts｜地位：主题持久化唯一入口｜功能：astro_theme_v2 安全读写（严格归一化 + storage 禁用防护 + THEME_META_COLORS），index.html pre-paint 脚本是其不可 import 的镜像。
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
 - consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储；getDoNotSell 尊重浏览器 GPC 信号(isGpcActive,CPRA §7025,评审 M3)——显式选择优先、无选择时随 GPC。
-- region.ts｜地位：地域判定服务｜功能：读 /api/region（Vercel IP 国家码）判定 GDPR 强制区（EU27+EEA+UK+CH），供 ConsentBanner 地域分流与 AdSlot 广告同意门控；含 GDPR_COUNTRIES/isGdprCountry/fetchRegion/getCachedRegion，失败 fail-safe 为 UNKNOWN。
-- region.test.ts｜地位：region 单测（jsdom）｜功能：覆盖 GDPR 国家判定、响应解析与 fetch 失败 fail-safe。
-- adsense.ts｜地位：AdSense 加载与合规门控｜功能：isAdsenseConfigured(flag+client)、hasAdConsent(地域分流：EEA→TCF/非EEA→marketing 且非 Do-Not-Sell)、computeAdConsentSignal(门控与 Consent Mode 信号同源,评审 H1)、loadAdsense 单例注入、pushAd、initTcfListener(bootstrap+单链轮询,评审 L3)/rearmTcfListener(SPA 重臂,评审 L4)/evaluateTcfConsent。
+- region.ts｜地位：地域判定服务｜功能：读同源 /api/region（Vercel IP 国家码）判定 GDPR 强制区（EU27+EEA+UK+CH），供 ConsentBanner 地域分流与 AdSlot 广告同意门控；含 GDPR_COUNTRIES/isGdprCountry/resolveRegionEndpoint/fetchRegion/getCachedRegion，跨域 VITE_API_URL fail-safe 回退同源，失败 fail-safe 为 UNKNOWN。
+- region.test.ts｜地位：region 单测（jsdom）｜功能：覆盖 GDPR 国家判定、响应解析、同源 region endpoint 解析与 fetch 失败 fail-safe。
+- adsense.ts｜地位：AdSense 加载与合规门控｜功能：isAdsenseConfigured(flag+client)、hasAdConsent(地域分流：EEA→TCF/非EEA→marketing 且非 Do-Not-Sell)、computeAdConsentSignal(门控与 Consent Mode 信号同源,评审 H1)、loadAdsense 单例注入、pushAd、initTcfListener(可选 head-loader/运行时 loader + 单链轮询,评审 L3)/rearmTcfListener(SPA 重臂,评审 L4)/evaluateTcfConsent。
 - adsense.test.ts｜地位：adsense 单测（jsdom）｜功能：覆盖四重门控各分支、TCF 判定/notify 与单例注入。
 - adConsentBus.ts｜地位：广告同意事件总线（PR2）｜功能：notifyAdConsentChanged/subscribeAdConsent（同意变化→AdSlot 重渲染，评审 B2）+ openConsentPreferences/subscribeOpenConsentPreferences（Footer 重开偏好，评审 B3）。
 - adConsentBus.test.ts｜地位：adConsentBus 单测｜功能：发布/订阅收发与取消订阅。
@@ -39,6 +39,7 @@
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- region endpoint 归一化为同源 `/api/region`：生产 `www` 页面即使存在 apex `VITE_API_URL` 也不会跨域请求 `https://astrologywiki.com/api/region`，避免 Lighthouse CORS 控制台错误。
 - entitlementClientV2 增加并发请求合并：同一时间多处调用 `getEntitlementsV2` 只发起一次 `/api/entitlements/v2`，失败后清空 in-flight promise 以允许重试，降低 landing 首屏重复 API 噪音。
 - 新增 region.ts + adsense.ts（AdSense 接入 PR1）：region.ts 判 GDPR 地域；adsense.ts 四重门控（配置/匿名/地域相关广告同意/slot）+ 单例加载器 + TCF 监听。地域分流方案 A：EEA 交 Google 认证 CMP，非 EEA 用自研横幅营销同意。均 flag(VITE_ADSENSE_ENABLED)默认关，PR1 全站零广告。
 - paymentClient 新增 Airwallex Pro 试用激活 checkout 调用，entitlementClient V2 缓存结构补充 proTrial 资格，供升级弹窗区分试用/订阅 CTA。

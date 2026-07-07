@@ -53,13 +53,13 @@ Fail-safe：地域未知或已知非 GDPR → 照常显示自研横幅；广告�
 - `vercel.json` CSP（Report-Only）追加 AdSense/CMP 域到 script/img/connect/frame-src。
 - `public/ads.txt`（PR1 注释占位，PR2 填 pub id）。
 - `public/robots.txt` 放行 `Mediapartners-Google`。
-- `.env.example` / `.env.production.template` 新增 `VITE_ADSENSE_ENABLED=false` / `VITE_ADSENSE_CLIENT_ID` / `VITE_ADSENSE_SLOT_WIKI_END`。
+- `.env.example` / `.env.production.template` 新增 `VITE_ADSENSE_HEAD_LOADER_ENABLED=false` / `VITE_ADSENSE_ENABLED=false` / `VITE_ADSENSE_CLIENT_ID` / `VITE_ADSENSE_SLOT_WIKI_END`。
 
 ## 5b. `<head>` loader（首次审核必需，PR1.5 已加）
 
 AdSense **首次开户审核**要求 `adsbygoogle.js` 出现在**线上页面的原始 HTML `<head>`**（验证抓原始 HTML，非 JS 渲染 DOM）。因此加了 `<head>` loader：
 - **注入点**：`vite.config.ts` 的 `transformIndexHtml` 插件（SPA 壳 dist/index.html）+ `scripts/generate-seo-pages.mjs` 的 `ADSENSE_HEAD_TAG`（442 静态 stub），两处共用 `id="astro-adsense"`。
-- **两级门控**：loader 只受 `VITE_ADSENSE_CLIENT_ID` 控制（格式校验 `^ca-pub-\d{10,25}$` 防注入）；广告是否真正投放另由 `VITE_ADSENSE_ENABLED` 经 AdSlot 门控。→ **审核阶段只需填 CLIENT_ID（loader 上线让 Google 找到代码），不出广告**；正式投放再置 ENABLED=true。
+- **两级门控**：loader 受 `VITE_ADSENSE_HEAD_LOADER_ENABLED=true` + `VITE_ADSENSE_CLIENT_ID` 控制（格式校验 `^ca-pub-\d{10,25}$` 防注入）；广告是否真正投放另由 `VITE_ADSENSE_ENABLED` 经 AdSlot 门控。→ **审核阶段临时开启 HEAD_LOADER + 填 CLIENT_ID（loader 上线让 Google 找到代码），不出广告**；正式投放再置 ENABLED=true，并在审核后可关闭 HEAD_LOADER 以保护 PageSpeed。
 - **附带收益**：loader 全站加载时，AdSense 后台配好的 Privacy & messaging 会全站注入 Google CMP（`window.__tcfapi` 出现）→ **部分解掉 PR2-B1**（EEA CMP 存在性）；前端 `loadAdsense` 因共用 id 不会重复注入。TCF 监听的 bootstrap 解耦仍需 PR2 补完。
 
 ## 6. 分阶段上线
@@ -116,7 +116,7 @@ PR1 经 4 视角对抗式评审，已在本次修复的：
 
 **仍待 PR3**：B4（门控#1 结构化 `isAdEligibleArticle`）、B5（CLS `minHeight` 按字段数据调优）。
 
-**flag-on 前剩余**：用户设 `VITE_ADSENSE_ENABLED=true` + 站点审核通过 + 更新 PRD §3。⚠️ 注意：PR1 的 head-loader 已在生产加载 adsbygoogle.js（CLIENT_ID 已配），故法务文案更新（PR2）应尽快合并上线，使"广告 cookie 披露"与事实一致。
+**flag-on 前剩余**：用户审核期临时设 `VITE_ADSENSE_HEAD_LOADER_ENABLED=true`，审核通过后设 `VITE_ADSENSE_ENABLED=true` + 更新 PRD §3。默认关闭 head-loader，避免首页 PageSpeed 首字节加载 adsbygoogle.js。
 
 ### PR2 对抗式评审修复（4 视角，14 发现 → 11 确认）
 
@@ -156,4 +156,4 @@ PR1 经 4 视角对抗式评审，已在本次修复的：
 - **[#6 low]** Consent Mode 广告信号只在 banner 交互时算一次、region 异步落地后不重发（#1 修复后未知窗口按 deny 处理，方向 fail-safe；收敛重发是可选增强）。
 - **B5** CLS `minHeight` 按真实字段数据调优（需线上数据）。
 
-**至此 flag-on 前代码侧全部就绪**：审核通过后用户仅需 Vercel 设 `VITE_ADSENSE_ENABLED=true` + 重新部署 + 法务 review 文案。
+**至此 flag-on 前代码侧全部就绪**：审核期用户需 Vercel 临时设 `VITE_ADSENSE_HEAD_LOADER_ENABLED=true`，审核通过后设 `VITE_ADSENSE_ENABLED=true` + 重新部署 + 法务 review 文案；PageSpeed 优先时保持 head-loader false。

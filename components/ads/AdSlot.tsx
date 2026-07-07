@@ -57,7 +57,7 @@ export const AdSlot: React.FC<AdSlotProps> = ({
       return;
     }
     if (pushedRef.current) return; // 去重：防 React 重挂载/StrictMode 双推
-    if (!loadAdsense()) return; // 单例注入 adsbygoogle.js（head-loader 已在时不重复）
+    if (!loadAdsense()) return; // 单例注入 adsbygoogle.js（可选 head-loader 已在时不重复）
     pushedRef.current = true;
     pushAd();
   }, [gated]);

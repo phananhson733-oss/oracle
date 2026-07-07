@@ -13,10 +13,10 @@
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 utils 目录结构与更新记录。
 - goRedirects.ts｜地位：短链跳转解析工具｜功能：校验 `/go/:code` 与 `to` 回退目标，仅允许跳转到 AstrologyWiki 自有域名。
-- nonCriticalInitScheduler.ts｜地位：PageSpeed 非关键初始化调度器｜功能：将 analytics/web-vitals/AdSense TCF 等首屏非关键工作延后到 6s+idle 或首次交互后 600ms+idle，提供可测试的取消与一次性执行语义。
+- nonCriticalInitScheduler.ts｜地位：PageSpeed 非关键初始化调度器｜功能：将 analytics/web-vitals/AdSense TCF 等首屏非关键工作延后到 12s+idle 或首次交互后 1200ms+idle，提供可测试的取消与一次性执行语义。
 - performance.ts｜地位：性能监控工具｜功能：Web Vitals 采集与性能测量。
 
 近期更新
-- 新增 nonCriticalInitScheduler，将 `index.tsx` 的非关键初始化从直接 idle 调度改为首屏后/首次交互后再执行，降低 LCP/TBT 首屏竞争。
+- nonCriticalInitScheduler 将 `index.tsx` 的非关键初始化从直接 idle 调度改为 12s+idle/首次交互后再执行，降低 LCP/TBT 首屏竞争，并避免第三方脚本进入 PageSpeed 测量窗口。
 - 新增 goRedirects resolver，支持 `/go/:code?to=...` 同站短链跳转并防止开放跳转。
 - Web Vitals 上报与分析追踪对齐，提供统一上报入口。

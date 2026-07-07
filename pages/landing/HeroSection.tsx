@@ -1,8 +1,8 @@
-// INPUT: i18n translations, router navigation, analytics tracking, HeroTodayCard (right-half
-//        editorial mini-card backed by today's-sky data), useLangPath for the Saturn Return
+// INPUT: i18n translations, router navigation, analytics tracking, idle-loaded HeroTodayCard
+//        (right-half editorial mini-card backed by today's-sky data), useLangPath for the Saturn Return
 //        pill (the only feature-pill that routes off-page rather than scrolling to an anchor).
 // OUTPUT: Hero section — Editorial Serif Poster (D1 decision from /plan-design-review 2026-05-18).
-//         md+ renders a 7/5 two-column grid: copy + CTAs on the left, HeroTodayCard on the right.
+//         md+ renders a 7/5 two-column grid: copy + CTAs on the left, idle-loaded HeroTodayCard on the right.
 //         Mobile hides the card (hidden md:block inside the card) and the hero collapses to a
 //         single column. Right-half fix per FINDING-H01 — "real astronomy" data anchors the hero
 //         instead of empty whitespace. Feature-pills row below CTAs surfaces 5 keyword anchors
@@ -12,12 +12,85 @@
 //      icon-in-colored-circle SaaS aesthetics, "Welcome to..." copy, or system default fonts. See COLOR_SYSTEM_GUIDE.md.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { useCallback } from "react";
+import React, { Suspense, lazy, useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 import { useLangPath } from "../../hooks/useLangPath";
-import HeroTodayCard from "./HeroTodayCard";
+
+const HeroTodayCard = lazy(() => import("./HeroTodayCard"));
+const HERO_TODAY_IDLE_DELAY_MS = 5000;
+
+const HeroTodayCardShell: React.FC<{ isDark: boolean }> = ({ isDark }) => (
+  <div
+    aria-hidden="true"
+    className={`hidden md:block w-full rounded-2xl border p-6 lg:p-8 ${
+      isDark
+        ? "border-star-50/15 bg-space-900/40"
+        : "border-paper-300/60 bg-paper-50/80"
+    }`}
+    style={{ minHeight: "16rem" }}
+  >
+    <div
+      className={`h-3 w-28 rounded ${isDark ? "bg-space-800" : "bg-paper-200"}`}
+    />
+    <div
+      className={`mt-4 h-8 w-3/4 rounded ${
+        isDark ? "bg-space-800" : "bg-paper-200"
+      }`}
+    />
+    <div
+      className={`mt-6 h-px w-full ${isDark ? "bg-star-50/10" : "bg-paper-300/40"}`}
+    />
+    <div className="mt-5 space-y-3">
+      {Array.from({ length: 3 }).map((_, idx) => (
+        <div
+          key={`hero-today-shell-${idx}`}
+          className={`h-4 rounded ${isDark ? "bg-space-800" : "bg-paper-200"}`}
+          style={{ width: `${72 - idx * 9}%` }}
+        />
+      ))}
+    </div>
+  </div>
+);
+
+const DeferredHeroTodayCard: React.FC<{ isDark: boolean }> = ({ isDark }) => {
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    if (shouldRender || typeof window === "undefined") return;
+    let timer: number | undefined;
+    let idleId: number | undefined;
+
+    const reveal = () => setShouldRender(true);
+    const scheduleIdleReveal = () => {
+      if (typeof window.requestIdleCallback === "function") {
+        idleId = window.requestIdleCallback(reveal, { timeout: 2500 });
+        return;
+      }
+      timer = window.setTimeout(reveal, 0);
+    };
+
+    timer = window.setTimeout(scheduleIdleReveal, HERO_TODAY_IDLE_DELAY_MS);
+    return () => {
+      if (timer !== undefined) window.clearTimeout(timer);
+      if (
+        idleId !== undefined &&
+        typeof window.cancelIdleCallback === "function"
+      ) {
+        window.cancelIdleCallback(idleId);
+      }
+    };
+  }, [shouldRender]);
+
+  if (!shouldRender) return <HeroTodayCardShell isDark={isDark} />;
+
+  return (
+    <Suspense fallback={<HeroTodayCardShell isDark={isDark} />}>
+      <HeroTodayCard />
+    </Suspense>
+  );
+};
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -127,9 +200,13 @@ const HeroSection: React.FC = () => {
                 .filter(Boolean)
                 .join(" ") + (landing.hero_title_part3 ?? ".")
             }
-            className={`font-serif font-medium leading-[1.06] tracking-[-0.015em] text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${
+            className={`font-medium leading-[1.06] tracking-normal text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${
               isDark ? "text-star-50" : "text-paper-900"
             }`}
+            style={{
+              fontFamily:
+                "Georgia, 'Times New Roman', 'Songti SC', STSong, SimSun, serif",
+            }}
           >
             <span aria-hidden="true" className="block">
               {landing.hero_title_part1 || "Astrology meets"}
@@ -226,7 +303,7 @@ const HeroSection: React.FC = () => {
             card itself enforces hidden md:block) so CTAs stay above the fold
             and we don't render an async-data flicker on small viewports. */}
         <div className="md:col-span-5">
-          <HeroTodayCard />
+          <DeferredHeroTodayCard isDark={isDark} />
         </div>
       </div>
     </section>

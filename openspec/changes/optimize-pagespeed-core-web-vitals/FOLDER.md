@@ -4,7 +4,7 @@
 
 # openspec/changes/optimize-pagespeed-core-web-vitals
 
-PageSpeed/Core Web Vitals 优化提案目录，用于记录桌面与移动 PageSpeed 基线、首屏资源优化、缓存头安全、运行时延迟加载、可访问性修复与部署后复测要求。
+PageSpeed/Core Web Vitals 优化提案目录，用于记录桌面与移动 PageSpeed 基线、首屏资源优化、缓存头安全、运行时/第三方脚本延迟加载、可访问性修复与部署后复测要求。
 
 ## 文件清单
 

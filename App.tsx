@@ -1,6 +1,6 @@
-// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、压缩品牌图、短链跳转、付费墙回调、分析追踪与按需加载的 auth/payment/sign-calculator 路由）。
-// OUTPUT: 导出主应用组件（含压缩品牌 logo、/go 短链跳转、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅、核心功能事件、landing footer 边界、移动端顶部导航防溢出与首屏外弹窗/计算器拆包）。
-// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向、PageSpeed 路由级拆包、移动端顶部导航防溢出与 landing 全局 footer 禁用边界）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、压缩品牌图、短链跳转、付费墙回调、分析追踪、eager landing 与按需加载的 auth/payment/sign-calculator 路由）。
+// OUTPUT: 导出主应用组件（含 32px 压缩品牌 logo、/go 短链跳转、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅、核心功能事件、landing footer 边界、移动端顶部导航防溢出与首屏外弹窗/计算器拆包）。
+// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向、PageSpeed landing 首屏 eager 边界、移动端顶部导航防溢出与 landing 全局 footer 禁用边界）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, {
@@ -86,6 +86,7 @@ import UserMenu from "./components/auth/UserMenu";
 import { ConsentBanner } from "./components/ConsentBanner";
 import { MobileBottomNav } from "./components/MobileBottomNav";
 import { Footer } from "./components/Footer";
+import LandingPageV2 from "./pages/landing/LandingPage";
 import { useAnalyticsTracking } from "./hooks/useAnalytics";
 import { goRedirects } from "./data/goRedirects";
 import { resolveGoRedirect } from "./src/utils/goRedirects";
@@ -198,7 +199,6 @@ const HelpPage = lazy(() => import("./components/legal/HelpPage"));
 const SaturnReturnCalculator = lazy(
   () => import("./components/SaturnReturnCalculator"),
 );
-const LandingPageV2 = lazy(() => import("./pages/landing/LandingPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
 
 // Redirect bare public routes (e.g. /wiki/sun) to language-prefixed version (e.g. /en/wiki/sun)
@@ -933,7 +933,7 @@ const AppContent: React.FC = () => {
               }}
             >
               <img
-                src="/brand/logo-mark-64.png"
+                src="/brand/logo-mark-32.png"
                 alt={t.app.name}
                 width={32}
                 height={32}
