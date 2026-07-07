@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "anne-hathaway-birth-chart": {
+      "hero": {
+        "prompt": "Four luminous celestial orbs — amber, violet, teal, and gold — pulled into a single tight constellation cluster above a dark ocean horizon, their pooled radiance merging into one intense aureole that bleeds across the still black water below, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Four glowing planets converging into one luminous cluster above a dark ocean, symbolizing a Scorpio stellium"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Scorpio Sun vs a Full Scorpio Stellium: What Actually Changes",
+          "titleEn": "Scorpio Sun Alone vs Scorpio Stellium",
+          "altEn": "Comparison of a lone Scorpio Sun versus a four-planet Scorpio stellium and their effect on personality",
+          "columns": [
+            {
+              "nameEn": "Scorpio Sun Alone",
+              "linesEn": [
+                "One strong note in the chart",
+                "Core identity leans private and intense",
+                "Other planets can pull the personality elsewhere",
+                "Scorpio flavor stays real but partial"
+              ]
+            },
+            {
+              "nameEn": "Scorpio Stellium (Four Planets)",
+              "linesEn": [
+                "Mercury adds probing, guarded speech",
+                "Venus adds all-or-nothing values and loyalty",
+                "Jupiter expands the whole Scorpio theme",
+                "Unmistakable, concentrated signature throughout"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Anne Hathaway's Scorpio Stellium in Her Chart",
+          "titleEn": "Five Signals of the Scorpio Stellium in Action",
+          "altEn": "Five observable signals of the Scorpio stellium across Anne Hathaway's communication, values, and role choices",
+          "items": [
+            {
+              "nameEn": "Guarded Communication",
+              "subEn": "Mercury in Scorpio: measured, deflecting answers that reveal little while sounding precise"
+            },
+            {
+              "nameEn": "All-or-Nothing Values",
+              "subEn": "Venus in Scorpio: deep loyalty and privacy around relationships rather than public displays"
+            },
+            {
+              "nameEn": "High-Stakes Role Choices",
+              "subEn": "Jupiter in Scorpio: gravitates to emotionally intense, morally complex characters"
+            },
+            {
+              "nameEn": "Consistent Register",
+              "subEn": "Same serious, self-contained tone across comedies, dramas, and interviews alike"
+            },
+            {
+              "nameEn": "Selective Disclosure",
+              "subEn": "Reveals on her own terms — a Scorpio hallmark, not coldness or evasion"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
