@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含积分解锁权益校验、Airwallex Pro 试用激活、AdSense 合规门控、报告积分购买与地理搜索多语言参数）。 -->
-<!-- OUTPUT: services 架构摘要与文件索引（含积分解锁、Airwallex Pro 试用激活、AdSense 合规门控、报告积分购买、PayPal 订阅确认、认证刷新兜底与 AI 缓存版本更新）。 -->
+<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含积分解锁权益校验、Airwallex Pro 试用激活、AdSense 合规门控、报告积分购买、地理搜索多语言参数与权益请求去重）。 -->
+<!-- OUTPUT: services 架构摘要与文件索引（含积分解锁、Airwallex Pro 试用激活、AdSense 合规门控、报告积分购买、PayPal 订阅确认、认证刷新兜底、权益请求去重与 AI 缓存版本更新）。 -->
 <!-- POS: 主应用服务目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -39,6 +39,7 @@
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- entitlementClientV2 增加并发请求合并：同一时间多处调用 `getEntitlementsV2` 只发起一次 `/api/entitlements/v2`，失败后清空 in-flight promise 以允许重试，降低 landing 首屏重复 API 噪音。
 - 新增 region.ts + adsense.ts（AdSense 接入 PR1）：region.ts 判 GDPR 地域；adsense.ts 四重门控（配置/匿名/地域相关广告同意/slot）+ 单例加载器 + TCF 监听。地域分流方案 A：EEA 交 Google 认证 CMP，非 EEA 用自研横幅营销同意。均 flag(VITE_ADSENSE_ENABLED)默认关，PR1 全站零广告。
 - paymentClient 新增 Airwallex Pro 试用激活 checkout 调用，entitlementClient V2 缓存结构补充 proTrial 资格，供升级弹窗区分试用/订阅 CTA。
 - analytics.ts 新增 tool-led 证链漏斗追踪：`trackChartFunnel` + 纯函数 `sanitizeChartFunnelParams`（default-deny allowlist，只放行 sign/module/tool/step/placement），构造型防止节点星座迷你计算器周边 DOB/birthCity/姓名等 PII 泄漏到 GA4（隐私红线 #1，沿用 redactErrorMessageForAnalytics 模式）。

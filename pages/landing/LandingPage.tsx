@@ -1,9 +1,9 @@
-// INPUT: i18n translations, SEO, hero (eager), 8 below-the-fold sections (React.lazy + Suspense).
-// OUTPUT: Composition for the v2 landing page mounted at /landing-v2 (does NOT replace existing /).
+// INPUT: i18n translations, SEO, hero (eager), and viewport-deferred below-the-fold sections (React.lazy + Suspense).
+// OUTPUT: Composition for the v2 landing page mounted at /landing-v2 (does NOT replace existing /), avoiding first-viewport section chunk downloads.
 // POS: Top-level page component for the modular marketing landing page rebuild.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { Suspense, lazy, useEffect } from "react";
+import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useLanguage } from "../../components/UIComponents";
 import { SEO } from "../../components/SEO";
@@ -36,6 +36,58 @@ const SectionFallback: React.FC<{ minHeight?: string }> = ({
     style={{ minHeight }}
   />
 );
+
+const DeferredSection: React.FC<{
+  children: React.ReactNode;
+  minHeight: string;
+  anchorId?: string;
+  rootMargin?: string;
+  threshold?: number;
+}> = ({
+  children,
+  minHeight,
+  anchorId,
+  rootMargin = "0px",
+  threshold = 0.25,
+}) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    if (shouldRender) return;
+
+    const target = ref.current;
+    if (!target || !("IntersectionObserver" in window)) {
+      setShouldRender(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
+          setShouldRender(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin, threshold },
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [rootMargin, shouldRender, threshold]);
+
+  return (
+    <div ref={ref} id={shouldRender ? undefined : anchorId}>
+      {shouldRender ? (
+        <Suspense fallback={<SectionFallback minHeight={minHeight} />}>
+          {children}
+        </Suspense>
+      ) : (
+        <SectionFallback minHeight={minHeight} />
+      )}
+    </div>
+  );
+};
 
 const LandingPage: React.FC = () => {
   const { language } = useLanguage();
@@ -285,46 +337,48 @@ const LandingPage: React.FC = () => {
       {/* 2. HERO — eager */}
       <HeroSection />
 
-      {/* 3-10. Below-the-fold sections — code-split via React.lazy.
+      {/* 3-10. Below-the-fold sections — code-split via React.lazy and
+          viewport-deferred so PageSpeed's first viewport does not download
+          form/search/article chunks it cannot use before scroll.
           minHeight values match the md-breakpoint post-hydration rendered
           height within ~±20px so chunk resolution does not cause CLS.
           Derivation: header (kicker mb-4 + h2 text-3xl/5xl + subtitle mt-4/6 ≈ 200px)
           + body content + py-* padding (py-24 = 384px, py-20 = 320px, py-16 = 256px).
           Mobile may exceed these (grids stack); accepted CLS risk on narrow viewports. */}
-      <Suspense fallback={<SectionFallback minHeight="64rem" />}>
+      <DeferredSection minHeight="64rem" anchorId="birth-chart-tool">
         <BirthChartSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="50rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="50rem" anchorId="today">
         <CosmicWeatherSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="52rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="52rem" anchorId="tools">
         <ToolsGridSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="38rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="38rem" anchorId="synastry">
         <SynastrySection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="72rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="72rem" anchorId="wiki-hub">
         <WikiHubSection />
-      </Suspense>
+      </DeferredSection>
       {/* Featured Articles — SEO/GEO keyword surface. Renders crawlable article
           titles + descriptions + internal links to /:lang/wiki/:slug so search
           engines index the article hub directly from the landing page. See
           memory/project_landing_seo_geo_positioning.md for the why. */}
-      <Suspense fallback={<SectionFallback minHeight="40rem" />}>
+      <DeferredSection minHeight="40rem" anchorId="featured-articles">
         <FeaturedArticlesSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="60rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="60rem" anchorId="ask-oracle">
         <AskOracleSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="36rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="36rem" anchorId="social-proof">
         <SocialProofSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="40rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="40rem" anchorId="newsletter">
         <NewsletterSection />
-      </Suspense>
-      <Suspense fallback={<SectionFallback minHeight="42rem" />}>
+      </DeferredSection>
+      <DeferredSection minHeight="42rem">
         <FooterSection />
-      </Suspense>
+      </DeferredSection>
     </div>
   );
 };

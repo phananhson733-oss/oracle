@@ -1,5 +1,5 @@
-<!-- INPUT: OpenSpec 变更提案目录结构（含 SEO/GEO 基础提案、UI 整体优化、本我页面内容优化进度与手动激活 Pro 试用提案验证状态）。 -->
-<!-- OUTPUT: changes 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 整体优化、本我页面内容优化记录与手动激活 Pro 试用提案验证状态）。 -->
+<!-- INPUT: OpenSpec 变更提案目录结构（含 SEO/GEO 基础提案、UI 整体优化、本我页面内容优化进度、手动激活 Pro 试用与 PageSpeed 优化提案验证状态）。 -->
+<!-- OUTPUT: changes 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 整体优化、本我页面内容优化记录、手动激活 Pro 试用与 PageSpeed 优化提案验证状态）。 -->
 <!-- POS: OpenSpec 变更目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -23,12 +23,14 @@
 - enhance-wiki-deep-dive｜地位：进行中变更｜功能：百科深度解读内容完善。
 - implement-payment-subscription｜地位：进行中变更｜功能：支付与订阅能力落地。
 - integrate-astro-wiki｜地位：进行中变更｜功能：心理占星百科融合与数据接入。
+- optimize-pagespeed-core-web-vitals｜地位：进行中变更｜功能：首页 PageSpeed/Core Web Vitals、首屏资源、运行时延迟加载、Vercel 资产缓存与部署后复测。
 - populate-wiki-data｜地位：进行中变更｜功能：百科数据补齐与内容填充。
 - update-manual-pro-trial-activation｜地位：进行中变更｜功能：注册后不自动赠送 Pro 试用，改为用户通过 Airwallex 绑定付款信息后手动激活 7 天 Pro 试用。
 - update-ui-system｜地位：进行中变更｜功能：UI 整体优化与色彩系统对齐。
 
 近期更新
 - update-manual-pro-trial-activation 变更提案已同步后端/前端/build/OpenSpec 验证状态，live Airwallex E2E 待真实环境。
+- 新增 optimize-pagespeed-core-web-vitals 变更提案，记录 PageSpeed 基线、首屏资源优化、缓存头安全与部署后复测门槛。
 - 新增 add-editorial-author-personas 变更提案。
 - 新增 add-gm-dev-session 变更提案。
 - 新增 add-seo-geo-foundation 变更提案。

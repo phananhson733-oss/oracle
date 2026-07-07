@@ -1,5 +1,5 @@
-// INPUT: React 权益上下文 V2（含订阅方案、详情解锁、Synthetica 日额度与合盘付费回调）。
-// OUTPUT: 导出 EntitlementContext 和 EntitlementProvider（含订阅方案透传、合盘购买后续处理与积分解锁兜底）。
+// INPUT: React 权益上下文 V2（含匿名初始化抑制、订阅方案、详情解锁、Synthetica 日额度与合盘付费回调）。
+// OUTPUT: 导出 EntitlementContext 和 EntitlementProvider（含匿名初始化抑制、订阅方案透传、合盘购买后续处理与积分解锁兜底）。
 // POS: 前端权益上下文 V2（含合盘付费回调与购买校验）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
@@ -103,6 +103,12 @@ export const EntitlementProvider: React.FC<{ children: React.ReactNode }> = ({ c
 
   // 初始化和认证状态变化时刷新
   useEffect(() => {
+    if (!isAuthenticated) {
+      const cached = getCachedEntitlements();
+      setEntitlements(cached?.isLoggedIn ? null : cached);
+      setIsLoading(false);
+      return;
+    }
     refreshEntitlements();
   }, [isAuthenticated, refreshEntitlements]);
 

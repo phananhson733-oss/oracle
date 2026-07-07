@@ -31,6 +31,7 @@ import WikiArticleDetailPage from "./WikiArticleDetailPage";
 import WikiChartCTA from "./WikiChartCTA";
 import type { WikiItem, WikiItemSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
+import { getWikiGradientStyle } from "./wikiGradientStyle";
 
 const renderContent = (
   content: string,
@@ -572,7 +573,8 @@ const WikiDetailPage: React.FC = () => {
 
         <Card className="relative overflow-hidden" noPadding>
           <div
-            className={`absolute inset-0 bg-gradient-to-br ${item.color_token || "from-gold-500/15 to-transparent"} opacity-20`}
+            className="absolute inset-0 opacity-20"
+            style={getWikiGradientStyle(item.color_token)}
           />
           <div className="relative p-8 md:p-12 grid gap-8 md:grid-cols-[1.2fr,0.8fr]">
             <div className="space-y-6">

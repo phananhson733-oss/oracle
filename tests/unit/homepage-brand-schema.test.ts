@@ -47,14 +47,12 @@ describe("index.html 首字节 brand JSON-LD 契约", () => {
     expect(types.has("WebSite")).toBe(true);
   });
 
-  it("Organization 字段与 GlobalSchema EN 输出一致（logo=/logo.png + sameAs 三连）", () => {
+  it("Organization 字段与 GlobalSchema EN 输出一致（压缩 schema logo + sameAs 三连）", () => {
     const org = findType("Organization");
     expect(org).toBeTruthy();
     expect(org!.name).toBe("AstrologyWiki");
     expect(org!.url).toBe(`${SITE}/`);
-    // logo 站内统一为 /logo.png（与 App.tsx GlobalSchema 及 landing-v2 stub 一致），
-    // 不得退回 brief 原始的 /icon-192.png，否则同一实体声明两个 logo URL 造成消歧噪音。
-    expect(org!.logo).toBe(`${SITE}/logo.png`);
+    expect(org!.logo).toBe(`${SITE}/brand/logo-schema-512.png`);
     expect(Array.isArray(org!.sameAs)).toBe(true);
     expect(org!.sameAs).toHaveLength(3);
   });

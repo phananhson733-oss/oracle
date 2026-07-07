@@ -1,5 +1,5 @@
-<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件、Playwright 端口联动、短链登记/跳转、Airwallex Pro 试用文案/E2E 与 UI/语言规则更新）。 -->
-<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置、Playwright 端口联动、短链登记/跳转、Pro 试用文案/E2E、支付成功路由放行、PayPal 回跳处理与规范门槛）。 -->
+<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件、Playwright 端口联动、短链登记/跳转、Airwallex Pro 试用文案/E2E、UI/语言规则与 PageSpeed 首屏优化更新）。 -->
+<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置、Playwright 端口联动、短链登记/跳转、Pro 试用文案/E2E、支付成功路由放行、PayPal 回跳处理、规范门槛与 PageSpeed 首屏优化记录）。 -->
 <!-- POS: 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -49,6 +49,7 @@
 - tests｜地位：测试目录｜功能：Playwright E2E 与 Vitest 单元测试。
 
 近期更新
+- PageSpeed/Core Web Vitals 优化：`index.html` 移除 body 字体可见性 gate 并收敛 Google Fonts；`index.tsx` 将 analytics/web-vitals/AdSense TCF 非关键初始化延后；`App.tsx` 拆出 auth/payment/sign calculator 路由 chunk、移动端隐藏顶部主导航链接以防首屏溢出，并改用 `/brand/logo-mark-64.png`；`vercel.json` 增加 `/brand/*` 缓存头与缺失 `/assets/*` 后端 404 兜底；`tailwind.config.cjs` 不再扫描 Wiki 后端数据源以减少首页 CSS。
 - constants 与 pricing 展示文案改为手动激活 Pro 试用：注册不再自动赠送 Pro，符合资格用户需先在 Airwallex 填写付款信息，试用到期后自动续费。
 - 新增 `tests/e2e/manual-pro-trial.spec.ts`，用 Playwright mock auth/entitlement/Airwallex API 覆盖注册后符合资格用户点击 Pro 试用 CTA、看到付款信息/自动续费披露并跳转 trial checkout 的浏览器路径。
 - Playwright webServer 启动命令会跟随 `PLAYWRIGHT_BASE_URL` 端口，避免本地 3000 被其他服务占用时误复用错误应用。

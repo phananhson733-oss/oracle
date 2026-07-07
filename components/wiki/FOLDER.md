@@ -1,5 +1,5 @@
-<!-- INPUT: Wiki 组件目录结构与职责说明（含 SEO 元信息接入、hreflang 校验与 ItemList 修正）。 -->
-<!-- OUTPUT: Wiki 组件目录文档（含 SEO 接入记录、hreflang 校验与结构化数据调整记录）。 -->
+<!-- INPUT: Wiki 组件目录结构与职责说明（含 SEO 元信息接入、hreflang 校验、ItemList 修正与受控渐变样式）。 -->
+<!-- OUTPUT: Wiki 组件目录文档（含 SEO 接入记录、hreflang 校验、结构化数据调整与 PageSpeed CSS 优化记录）。 -->
 <!-- POS: Wiki 组件目录说明；若更新此文件，务必更新本头注释。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -16,6 +16,7 @@
 | `WikiEnergyRadar.tsx` | 每日能量雷达子组件，独占 recharts、经 props 收数据与主题色，供 WikiHomePage 懒加载 |
 | `WikiIndexPage.tsx` | Wiki 百科页，包含主题分区卡片与条目索引 |
 | `WikiDetailPage.tsx` | Wiki 详情页，包含核心解读、能量地图与关联条目 |
+| `wikiGradientStyle.ts` | 受控渐变样式 helper，将 Wiki color_token 转为 inline CSS gradient，避免 Tailwind 扫描后端数据源 |
 | `WikiClassicsPage.tsx` | Wiki 经典书籍页，呈现书架列表 |
 | `WikiClassicDetailPage.tsx` | Wiki 经典书籍详情页，展示长文解读 |
 | `WikiSyntheticaPage.tsx` | Synthetica 洞察生成与结果展示。已从 wiki tab 栏移除（入口合并入 /tools hub）；`?tab=tools` URL 仍可达但裸页渲染（不套 wiki tab 外壳） |
@@ -31,6 +32,7 @@
 
 ## 近期更新
 
+- 新增 `wikiGradientStyle.ts`，`WikiIndexPage` 与 `WikiDetailPage` 不再使用动态 Tailwind gradient class；Tailwind content 移除 `backend/src/data/wiki.ts`，降低首页全局 CSS 体积。
 - 抽离 WikiEnergyRadar 子组件：将 hero 雷达的 recharts import 从 WikiHomePage 顶层移出，改 React.lazy + Suspense 懒加载，避免 /wiki 首帧急加载 charts chunk（颜色/数据仍由 WikiHomePage 算好经 props 传入）。
 - 新增 AuthorByline + AuthorPage：编辑作者人设署名与作者档案页，文章 author→authorId，JSON-LD author 改 Person。
 - 新增 RelatedArticles 组件，基于星象关联展示相关内容（守护、旺势、同元素等关系）。

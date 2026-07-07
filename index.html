@@ -1,5 +1,5 @@
 <!-- INPUT: 字体加载、主题色变量与 SEO 元信息（含图标与问答动画）。 -->
-<!-- OUTPUT: 提供 HTML 宿主、light-first 编辑部主题变量（:root 纸色 + body.dark 夜空）、pre-paint 主题恢复脚本（astro_theme_v2，镜像 services/themeStorage.ts）与 root 容器（含字体加载控制）+ 首字节静态 brand 结构化数据（Organization + WebSite JSON-LD）。 -->
+<!-- OUTPUT: 提供 HTML 宿主、light-first 编辑部主题变量（:root 纸色 + body.dark 夜空）、pre-paint 主题恢复脚本（astro_theme_v2，镜像 services/themeStorage.ts）与 root 容器（无字体可见性 gate）+ 首字节静态 brand 结构化数据（Organization + WebSite JSON-LD）。 -->
 <!-- POS: 主应用页面壳。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。 -->
 
@@ -41,7 +41,7 @@
         "@type": "Organization",
         "name": "AstrologyWiki",
         "url": "https://www.astrologywiki.com/",
-        "logo": "https://www.astrologywiki.com/logo.png",
+        "logo": "https://www.astrologywiki.com/brand/logo-schema-512.png",
         "sameAs": [
           "https://twitter.com/astrologywiki",
           "https://www.instagram.com/astrologywiki",
@@ -65,8 +65,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://images.unsplash.com">
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
     <style>
       /* Theme color variables — editorial "warm paper" system.
          LIGHT is the default (:root = paper #F4EFE4 + ink #16130F);
@@ -156,15 +156,6 @@
         letter-spacing: -0.02em;
       }
 
-      /* Font Loading State */
-      body.loading-fonts {
-        visibility: hidden;
-      }
-
-      body.fonts-loaded {
-        visibility: visible;
-      }
-
       /* Critical CSS Inline */
       .text-balance {
         text-wrap: balance;
@@ -190,26 +181,8 @@
         }
       }
     </style>
-  <script>
-    if ('fonts' in document) {
-      document.fonts.ready.then(function () {
-        // This <head> script's callback can resolve BEFORE <body> is parsed when
-        // the fonts are already cached (fonts.ready settles on the next microtask).
-        // Guard document.body so we never throw "Cannot read properties of null
-        // (reading 'classList')"; if body isn't ready yet, defer the class swap to
-        // DOMContentLoaded so the loading-fonts -> fonts-loaded transition still runs.
-        var swap = function () {
-          if (!document.body) return;
-          document.body.classList.add('fonts-loaded');
-          document.body.classList.remove('loading-fonts');
-        };
-        if (document.body) swap();
-        else document.addEventListener('DOMContentLoaded', swap, { once: true });
-      });
-    }
-  </script>
   </head>
-  <body class="light bg-paper-100 text-paper-900 loading-fonts">
+  <body class="light bg-paper-100 text-paper-900">
     <script>
       // Pre-paint theme restore（rendering-hydration-no-flicker）：light 是品牌默认；
       // 只有显式选过 dark 的用户（astro_theme_v2）在首帧前切回夜空模式，避免 FOUC。
