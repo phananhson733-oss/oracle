@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 527" role="img" aria-label="Three Core Layers of an Astrology Match Reading">
+  <defs>
+    <linearGradient id="mexicovsenglandastrologyprediction1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mexicovsenglandastrologyprediction1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mexicovsenglandastrologyprediction1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mexicovsenglandastrologyprediction1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mexicovsenglandastrologyprediction1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mexicovsenglandastrologyprediction1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="url(#mexicovsenglandastrologyprediction1en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="179" fill="url(#mexicovsenglandastrologyprediction1en-neb1)"/>
+  <ellipse cx="623" cy="422" rx="334" ry="169" fill="url(#mexicovsenglandastrologyprediction1en-neb2)"/>
+  <circle cx="340.3" cy="303.7" r="1.09" fill="#cfc8ea" opacity="0.23"/><circle cx="255.7" cy="500.9" r="1.12" fill="#cfc8ea" opacity="0.33"/><circle cx="554.8" cy="156.0" r="0.72" fill="#cfc8ea" opacity="0.40"/><circle cx="746.3" cy="365.3" r="1.24" fill="#cfc8ea" opacity="0.39"/><circle cx="163.8" cy="258.5" r="1.03" fill="#cfc8ea" opacity="0.54"/><circle cx="41.9" cy="39.8" r="1.12" fill="#cfc8ea" opacity="0.16"/><circle cx="115.6" cy="275.5" r="0.89" fill="#cfc8ea" opacity="0.14"/><circle cx="14.5" cy="272.0" r="0.43" fill="#cfc8ea" opacity="0.19"/><circle cx="161.0" cy="26.6" r="1.24" fill="#cfc8ea" opacity="0.41"/><circle cx="311.6" cy="481.6" r="0.78" fill="#cfc8ea" opacity="0.24"/><circle cx="472.8" cy="221.2" r="0.62" fill="#cfc8ea" opacity="0.48"/><circle cx="737.0" cy="26.2" r="0.83" fill="#cfc8ea" opacity="0.49"/><circle cx="457.5" cy="202.0" r="1.31" fill="#cfc8ea" opacity="0.53"/><circle cx="497.9" cy="454.3" r="1.21" fill="#cfc8ea" opacity="0.18"/><circle cx="154.8" cy="238.9" r="1.16" fill="#cfc8ea" opacity="0.46"/><circle cx="243.8" cy="489.4" r="0.75" fill="#cfc8ea" opacity="0.49"/><circle cx="433.3" cy="431.6" r="1.16" fill="#cfc8ea" opacity="0.31"/><circle cx="341.7" cy="165.5" r="0.82" fill="#cfc8ea" opacity="0.35"/><circle cx="462.1" cy="161.6" r="1.25" fill="#cfc8ea" opacity="0.41"/><circle cx="668.2" cy="149.0" r="1.54" fill="#cfc8ea" opacity="0.46"/><circle cx="299.6" cy="456.7" r="0.70" fill="#cfc8ea" opacity="0.23"/><circle cx="530.5" cy="208.0" r="1.33" fill="#cfc8ea" opacity="0.51"/><circle cx="186.9" cy="258.9" r="1.68" fill="#cfc8ea" opacity="0.52"/><circle cx="340.0" cy="182.6" r="1.15" fill="#cfc8ea" opacity="0.15"/><circle cx="36.9" cy="95.1" r="1.06" fill="#cfc8ea" opacity="0.24"/><circle cx="97.9" cy="506.4" r="0.91" fill="#cfc8ea" opacity="0.38"/><circle cx="394.6" cy="197.8" r="0.44" fill="#cfc8ea" opacity="0.19"/><circle cx="321.9" cy="457.1" r="1.10" fill="#cfc8ea" opacity="0.24"/><circle cx="168.6" cy="185.6" r="0.93" fill="#cfc8ea" opacity="0.19"/><circle cx="346.5" cy="137.1" r="0.48" fill="#cfc8ea" opacity="0.35"/><circle cx="650.9" cy="211.0" r="1.51" fill="#cfc8ea" opacity="0.49"/><circle cx="616.8" cy="82.4" r="0.62" fill="#cfc8ea" opacity="0.13"/><circle cx="194.5" cy="99.1" r="0.53" fill="#cfc8ea" opacity="0.27"/><circle cx="219.2" cy="386.9" r="1.12" fill="#cfc8ea" opacity="0.53"/><circle cx="642.8" cy="141.5" r="1.10" fill="#cfc8ea" opacity="0.15"/><circle cx="501.1" cy="170.8" r="0.61" fill="#cfc8ea" opacity="0.38"/><circle cx="262.3" cy="126.4" r="1.02" fill="#cfc8ea" opacity="0.48"/><circle cx="608.9" cy="463.1" r="0.90" fill="#cfc8ea" opacity="0.32"/><circle cx="719.0" cy="206.9" r="1.09" fill="#cfc8ea" opacity="0.30"/><circle cx="696.2" cy="37.6" r="1.10" fill="#cfc8ea" opacity="0.23"/><circle cx="63.1" cy="71.1" r="0.59" fill="#cfc8ea" opacity="0.47"/><circle cx="691.5" cy="42.3" r="1.27" fill="#cfc8ea" opacity="0.30"/><circle cx="212.5" cy="410.4" r="1.09" fill="#cfc8ea" opacity="0.49"/><circle cx="121.3" cy="338.8" r="0.96" fill="#cfc8ea" opacity="0.50"/><circle cx="159.4" cy="93.5" r="0.46" fill="#cfc8ea" opacity="0.46"/><path d="M 459.4393319748342 329.4 L 460.1 332.7 L 463.4 333.35513004357927 L 460.1 334.0 L 459.4393319748342 337.3 L 458.8 334.0 L 455.5 333.35513004357927 L 458.8 332.7 Z" fill="#f6e6bf" opacity="0.6498910013819114"/><path d="M 719.480032581836 466.9 L 719.9 469.4 L 722.4 469.8795214591082 L 719.9 470.3 L 719.480032581836 472.8 L 719.0 470.3 L 716.6 469.8795214591082 L 719.0 469.4 Z" fill="#f6e6bf" opacity="0.7052329733269289"/><path d="M 224.08035297319293 275.7 L 224.5 277.8 L 226.5 278.16168119269423 L 224.5 278.6 L 224.08035297319293 280.6 L 223.7 278.6 L 221.6 278.16168119269423 L 223.7 277.8 Z" fill="#f6e6bf" opacity="0.5556393752107397"/><path d="M 505.8057972230017 295.3 L 506.2 297.7 L 508.6 298.10105835436843 L 506.2 298.5 L 505.8057972230017 300.9 L 505.4 298.5 L 503.0 298.10105835436843 L 505.4 297.7 Z" fill="#f6e6bf" opacity="0.5356536974431947"/><path d="M 602.1783818565309 142.2 L 602.6 144.4 L 604.8 144.86221969942562 L 602.6 145.3 L 602.1783818565309 147.5 L 601.8 145.3 L 599.5 144.86221969942562 L 601.8 144.4 Z" fill="#f6e6bf" opacity="0.6226184264058248"/><path d="M 163.8 258.5 L 41.9 39.8 L 472.8 221.2 L 186.9 258.9 L 616.8 82.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="513" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 507.8 L 16.5 510.5 L 19.2 511 L 16.5 511.5 L 16 514.2 L 15.5 511.5 L 12.8 511 L 15.5 510.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 507.8 L 744.5 510.5 L 747.2 511 L 744.5 511.5 L 744 514.2 L 743.5 511.5 L 740.8 511 L 743.5 510.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Three Core Layers of an Astrology Match Reading</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mexicovsenglandastrologyprediction1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mexicovsenglandastrologyprediction1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="114.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Player Birth Charts</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads personal Sun and Mars as drive and temperament</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Spot players expected to set the emotional tone</text>
+  <path d="M 380 221.5 L 380.7 225.3 L 384.5 226 L 380.7 226.7 L 380 230.5 L 379.3 226.7 L 375.5 226 L 379.3 225.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="239" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="239" width="3.5" height="114.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 248.6 L 48.3 251.5 L 51.1 252 L 48.3 252.5 L 47.75 255.4 L 47.2 252.5 L 44.4 252 L 47.2 251.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="268.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">National Foundation Charts</text>
+  <path d="M 70 297.8 L 70.5 300.5 L 73.2 301 L 70.5 301.5 L 70 304.2 L 69.5 301.5 L 66.8 301 L 69.5 300.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="306.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Frames each country's core style as a chart signature</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Compare the two national Suns for tempo and flavor</text>
+  <path d="M 380 361.5 L 380.7 365.3 L 384.5 366 L 380.7 366.7 L 380 370.5 L 379.3 366.7 L 375.5 366 L 379.3 365.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="379" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="379" width="3.5" height="114.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 388.6 L 48.3 391.5 L 51.1 392 L 48.3 392.5 L 47.75 395.4 L 47.2 392.5 L 44.4 392 L 47.2 391.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="408.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Jupiter in Cancer Transit</text>
+  <path d="M 70 437.8 L 70.5 440.5 L 73.2 441 L 70.5 441.5 L 70 444.2 L 69.5 441.5 L 66.8 441 L 69.5 440.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="446.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Adds a shared 2026 background tone to both sides</text>
+  <path d="M 70 466.8 L 70.5 469.5 L 73.2 470 L 70.5 470.5 L 70 473.2 L 69.5 470.5 L 66.8 470 L 69.5 469.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="475.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Track the same transit across each chart at once</text>
+  <path d="M 202.22749999999988 498.4 L 202.6 500.6 L 204.8 501 L 202.6 501.4 L 202.22749999999988 503.6 L 201.8 501.4 L 199.6 501 L 201.8 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="505" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 498.4 L 558.2 500.6 L 560.4 501 L 558.2 501.4 L 557.7725000000002 503.6 L 557.4 501.4 L 555.2 501 L 557.4 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
