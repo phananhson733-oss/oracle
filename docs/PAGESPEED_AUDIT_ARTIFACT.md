@@ -9,10 +9,11 @@
 配套 PRD：[`PAGESPEED_AUDIT_PRD.md`](./PAGESPEED_AUDIT_PRD.md)
 机器 Schema：[`PAGESPEED_AUDIT_ARTIFACT.schema.json`](./PAGESPEED_AUDIT_ARTIFACT.schema.json)
 AstrologyWiki 样例：[`PAGESPEED_AUDIT_ARTIFACT.astrologywiki.json`](./PAGESPEED_AUDIT_ARTIFACT.astrologywiki.json)
+AstrologyWiki HTML 报告：[`PAGESPEED_AUDIT_ARTIFACT.astrologywiki.html`](./PAGESPEED_AUDIT_ARTIFACT.astrologywiki.html)
 
 ## 1. Artifact 定位
 
-PageSpeed Audit Artifact 是通用审计模块的标准输出。它不是只给人看的报告摘要，而是一个可落库、可 diff、可作为 CI gate、可回放证据链的完整审计对象。
+PageSpeed Audit Artifact 是通用审计模块的标准输出。它包含机器 JSON 和可直接浏览的 HTML 报告：JSON 用于落库、diff、CI gate 和证据回放；HTML 用于产品、工程、SEO 和客户直接阅读。
 
 Artifact 必须同时回答五个问题：
 
@@ -264,7 +265,7 @@ Gate 是发布判断，不等同于全部 audit。
 
 ## 5. Human Report 结构
 
-面向人读的 Markdown/HTML/PDF 报告建议如下：
+面向人读的 Markdown/HTML/PDF 报告建议如下。本仓库的 `PAGESPEED_AUDIT_ARTIFACT.astrologywiki.html` 是可直接打开的参考实现：
 
 1. Executive Summary
 2. Gate Result

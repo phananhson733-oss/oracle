@@ -167,12 +167,13 @@ Google 审计之外，模块 SHOULD 增加以下可自动化检查，作为报�
 模块 MUST 生成两类输出：
 
 1. **Machine artifact**：JSON，供存档、diff、CI、API 消费。
-2. **Human report**：Markdown/HTML/PDF，供评审和客户阅读。
+2. **Human artifact**：HTML，供评审、客户阅读和直接浏览；Markdown/PDF 可由 HTML 或 JSON 派生。
 
 Machine artifact 详见：
 
 - `docs/PAGESPEED_AUDIT_ARTIFACT.md`
 - `docs/PAGESPEED_AUDIT_ARTIFACT.schema.json`
+- `docs/PAGESPEED_AUDIT_ARTIFACT.astrologywiki.html`
 
 ## 8. 归一化状态模型
 
@@ -426,6 +427,7 @@ Machine artifact 详见：
 完整机器样例见：
 
 - `docs/PAGESPEED_AUDIT_ARTIFACT.astrologywiki.json`
+- `docs/PAGESPEED_AUDIT_ARTIFACT.astrologywiki.html`
 
 ## 19. 后续路线
 

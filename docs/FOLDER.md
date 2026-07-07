@@ -1,5 +1,5 @@
-<!-- INPUT: 项目配置与指南文档（含 PRD、Google OAuth、GA4/GTM 追踪配置与 PageSpeed 审计模块文档）。 -->
-<!-- OUTPUT: 文档目录索引（含 Pro 试用/付费信息与 PageSpeed 审计模块 Artifact 更新记录）。 -->
+<!-- INPUT: 项目配置与指南文档（含 PRD、Google OAuth、GA4/GTM 追踪配置与 PageSpeed 审计模块文档/HTML Artifact）。 -->
+<!-- OUTPUT: 文档目录索引（含 Pro 试用/付费信息与 PageSpeed 审计模块 Artifact/HTML 报告更新记录）。 -->
 <!-- POS: 文档目录索引；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 # 文件夹：docs
 
@@ -23,10 +23,11 @@
 - PAGESPEED_AUDIT_ARTIFACT.md｜地位：PageSpeed 审计 Artifact 规格｜功能：定义机器 JSON 与人工报告结构，要求完整保留通过、失败、部分、不适用、人工与信息项。
 - PAGESPEED_AUDIT_ARTIFACT.schema.json｜地位：PageSpeed 审计 Artifact JSON Schema｜功能：约束通用审计模块输出结构，供 CI、API 与落库校验。
 - PAGESPEED_AUDIT_ARTIFACT.astrologywiki.json｜地位：PageSpeed 审计样例 Artifact｜功能：基于 AstrologyWiki 生产 desktop/mobile Lighthouse 结果生成的完整样例，覆盖两端各 160 个 audit。
+- PAGESPEED_AUDIT_ARTIFACT.astrologywiki.html｜地位：PageSpeed 审计 HTML Artifact｜功能：可直接用浏览器打开的 AstrologyWiki 审计报告，包含总览、分数、Gate、发现、自定义检查和全量 audit 过滤表。
 - FOLDER.md｜地位：目录索引文档｜功能：记录 docs 目录下的文件清单。
 
 ## 近期更新
 
 - PRD v2.47 同步 Pro 试用新流程：注册后默认 Free，符合资格用户需手动点击试用并在 Airwallex 填写付款信息，到期自动续费。
 - BACKUP_RUNBOOK 将 `pro_trial_claims` 纳入 Postgres 备份/恢复表清单，避免 Airwallex-backed Pro 试用领取历史恢复遗漏。
-- 新增 PageSpeed 审计模块 PRD、Artifact 规格、JSON Schema 与 AstrologyWiki 生产样例，作为后续通用网站审计功能的产品与数据契约。
+- 新增 PageSpeed 审计模块 PRD、Artifact 规格、JSON Schema、AstrologyWiki 生产 JSON 样例与可直接浏览的 HTML 报告，作为后续通用网站审计功能的产品与数据契约。
