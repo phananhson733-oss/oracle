@@ -1,4 +1,4 @@
-// Article: What a Mexico vs England Astrology Prediction Reveals Before Kickoff
+// Article: What a Mexico vs England Astrology Prediction Reveals
 // Generated from flow-mvp _staging/ by tools/scripts/gg-md-to-oracle-ts.mjs.
 import type { WikiArticle } from "../../types";
 
@@ -6,7 +6,7 @@ export const mexicoVsEnglandAstrologyPredictionEn: WikiArticle = {
   slug: "mexico-vs-england-astrology-prediction",
   image: "/images/blog/mexico-vs-england-astrology-prediction.jpg",
   image_alt: "Two glowing celestial formations drift toward each other across an indigo night sky above a dark horizon with a shared golden Jupiter glow",
-  title: "What a Mexico vs England Astrology Prediction Reveals Before Kickoff",
+  title: "What a Mexico vs England Astrology Prediction Reveals",
   description: "Mexico vs England astrology prediction is a symbolic chart reading of a match, not a score forecast.",
   authorId: "marcus-orion",
   date: "2026-07-07",
@@ -19,7 +19,7 @@ export const mexicoVsEnglandAstrologyPredictionEn: WikiArticle = {
     "Mexico vs England astrology prediction match astrology",
     "Mexico vs England astrology prediction team astrology"
   ],
-  content: `# What a Mexico vs England Astrology Prediction Reveals Before Kickoff
+  content: `# What a Mexico vs England Astrology Prediction Reveals
 
 ## What Is Mexico vs England Astrology Prediction?
 
