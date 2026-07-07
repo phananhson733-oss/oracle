@@ -86,7 +86,7 @@ Correcting these keeps the practice interpretive and cultural, which is exactly 
 | Zodiac archetypes | Maps squad "character" onto elemental themes | Dominant element (fire, earth, air, water) | Notice which archetype the team keeps echoing |
 | Jupiter in Cancer transit | Adds a shared 2026 background tone to both sides | Current transiting sign | Track the same transit across each chart at once |
 
-According to NASA, Jupiter takes about 12 years to complete one orbit of the Sun, so its pass through Cancer marks a background tone shared by every team competing in the 2026 window — context, not an edge for either side.
+According to NASA, Jupiter takes about 12 years to complete one orbit of the Sun, and it shifts from Cancer into Leo partway through the 2026 window, so its slow transit reads as a shared background tone across the tournament — context, not an edge for either side.
 
 
 ![Comparison of three core layers used in a Mexico vs England astrology match reading](/images/blog/mexico-vs-england-astrology-prediction-i1-en.svg)
