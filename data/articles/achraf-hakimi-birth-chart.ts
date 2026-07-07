@@ -62,7 +62,7 @@ Reading the Achraf Hakimi birth chart well is mostly about knowing which claims 
 
 1. **Anchor on the Sun.** His November 4 birthday reliably gives a Scorpio Sun — start there, since it is the one placement the public record confirms.
 2. **Flag the missing time.** Say plainly when a chart lists a Moon or Ascendant, because those shift with a birth time no source has verified.
-3. **Separate symbol from event.** Read Scorpio themes as focus and intensity, not as the cause of a World Cup goal or a transfer.
+3. **Separate symbol from event.** Read Scorpio themes as focus and intensity, not as the cause of a World Cup penalty or a transfer.
 4. **Watch for retrofitting.** Notice when a trait is chosen only because it flatters his highlight reel; an honest read survives his quiet games too.
 5. **Hold it as a story.** Treat standout aspects as narrative texture about persona, not as a scoreboard for his season.
 
