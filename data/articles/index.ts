@@ -309,6 +309,11 @@ import { tobeyMaguireBirthChartEn } from "./tobey-maguire-birth-chart";
 import { travisKelceBirthChartEn } from "./travis-kelce-birth-chart";
 import { diogoJotaBirthChartEn } from "./diogo-jota-birth-chart";
 import { achrafHakimiBirthChartEn } from "./achraf-hakimi-birth-chart";
+import { maliaObamaBirthChartEn } from "./malia-obama-birth-chart";
+import { colePalmerBirthChartEn } from "./cole-palmer-birth-chart";
+import { erlingHaalandGirlfriendBirthChartEn } from "./erling-haaland-girlfriend-birth-chart";
+import { jessicaPegulaBirthChartEn } from "./jessica-pegula-birth-chart";
+import { englandVsNorwayAstrologyEn } from "./england-vs-norway-astrology";
 // All articles organized by language
 
 import {
@@ -609,6 +614,11 @@ const ARTICLES_EN: WikiArticle[] = [
   travisKelceBirthChartEn,
   diogoJotaBirthChartEn,
   achrafHakimiBirthChartEn,
+  maliaObamaBirthChartEn,
+  colePalmerBirthChartEn,
+  erlingHaalandGirlfriendBirthChartEn,
+  jessicaPegulaBirthChartEn,
+  englandVsNorwayAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
