@@ -324,6 +324,7 @@ import { kaiCenatZodiacSignEn } from "./kai-cenat-zodiac-sign";
 import { egyptWorldCup2026AstrologyEn } from "./egypt-world-cup-2026-astrology";
 import { lamineYamalZodiacSignEn } from "./lamine-yamal-zodiac-sign";
 import { kylianMbappeBirthChartEn } from "./kylian-mbappe-birth-chart";
+import { novakDjokovicZodiacSignEn } from "./novak-djokovic-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -639,6 +640,7 @@ const ARTICLES_EN: WikiArticle[] = [
   egyptWorldCup2026AstrologyEn,
   lamineYamalZodiacSignEn,
   kylianMbappeBirthChartEn,
+  novakDjokovicZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
