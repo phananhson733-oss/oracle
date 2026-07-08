@@ -322,6 +322,7 @@ import { arthurFeryBirthChartEn } from "./arthur-fery-birth-chart";
 import { alexanderZverevBirthChartEn } from "./alexander-zverev-birth-chart";
 import { kaiCenatZodiacSignEn } from "./kai-cenat-zodiac-sign";
 import { egyptWorldCup2026AstrologyEn } from "./egypt-world-cup-2026-astrology";
+import { lamineYamalZodiacSignEn } from "./lamine-yamal-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -635,6 +636,7 @@ const ARTICLES_EN: WikiArticle[] = [
   alexanderZverevBirthChartEn,
   kaiCenatZodiacSignEn,
   egyptWorldCup2026AstrologyEn,
+  lamineYamalZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

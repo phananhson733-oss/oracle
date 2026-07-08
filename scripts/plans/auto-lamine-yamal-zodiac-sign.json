@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "lamine-yamal-zodiac-sign": {
+      "hero": {
+        "prompt": "A vast moonlit tidal cove at midnight, one full moon casting a single unbroken silver path across perfectly still dark water, ancient rocky cliffs curling like protective arms around the sheltered bay, luminous seafoam whispering at the shoreline, a canopy of quiet stars above the horizon, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit tidal cove at midnight, one silver moon path on still dark water, rocky cliffs cradling the bay — Cancer Sun protective instinct"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Lamine Yamal's Sun Sign at a Glance",
+          "titleEn": "Key Placements in Lamine Yamal's Chart",
+          "altEn": "Four astrological placements — Cancer Sun, Cancer Moon, Mars in Taurus, Jupiter in Sagittarius retrograde",
+          "items": [
+            {
+              "nameEn": "Cancer Sun",
+              "subEn": "Anchors identity in instinct and emotional attunement; reads the room before acting, protects a close circle"
+            },
+            {
+              "nameEn": "Cancer Moon (approx.)",
+              "subEn": "Deepens emotional memory and the need for security; strong reactions tied to safety and belonging"
+            },
+            {
+              "nameEn": "Mars in Taurus",
+              "subEn": "Adds steady, physical persistence and stamina; grinds through resistance instead of sprinting"
+            },
+            {
+              "nameEn": "Jupiter in Sagittarius (retrograde)",
+              "subEn": "Expands confidence and big-picture belief inwardly; bold self-belief that builds privately before it shows"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Cancer Sun: Misread vs Reality",
+          "altEn": "Four common misreadings of Lamine Yamal's Cancer Sun compared with the astrological reality",
+          "columns": [
+            {
+              "nameEn": "Common Misread",
+              "linesEn": [
+                "Cancer Sun means timid",
+                "The sign predicts results or trophies",
+                "His whole personality is 'Cancer'",
+                "The sign is fixed and deterministic"
+              ]
+            },
+            {
+              "nameEn": "Astrological Reality",
+              "linesEn": [
+                "Cancer protects, and protection can look like ferocity",
+                "A zodiac sign is a lens for temperament, not a forecast of outcomes",
+                "The Sun is one layer; Mars, Jupiter, and rising sign all shift the picture",
+                "It names tendencies to work with, not a script you are locked into"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
