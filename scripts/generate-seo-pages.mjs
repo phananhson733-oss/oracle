@@ -2033,6 +2033,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       title: article.title,
       description: article.description || config.wikiDescription,
       url,
+      // canonical 收口：article.seo.canonicalPath 指向 winner 长文时，静态 stub 的 <link canonical>
+      // 也发出该 URL（与 sitemap 排除 + 运行时 WikiArticleDetailPage 保持一致，消除 stub 自指 vs
+      // 运行时收口的混合信号）；无 override 时 resolveCanonicalUrl 回退自指 url，其余文章零变化。
+      canonical: resolveCanonicalUrl({ seo: article.seo, lang, selfUrl: url, siteUrl }),
       ogType: 'article',
       ogImage,
       // T7：noindex,follow 等 robots override 透传到 stub head（buildHead 缺省 index,follow）。
