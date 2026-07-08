@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "kylian-mbappe-birth-chart": {
+      "hero": {
+        "prompt": "A single blazing golden comet arcing boldly across a vast deep night sky, its luminous trail cutting through swirling teal-and-gold nebulae, distant star clusters partially veiled by cosmic haze along the dark horizon, suggesting bold forward trajectory and radiant potential with vast open uncertainty ahead. deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Golden comet blazing across a deep indigo sky with teal nebulae — Kylian Mbappe birth chart"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Kylian Mbappe Birth Chart Step by Step",
+          "titleEn": "How to Read the Birth Chart Step by Step",
+          "altEn": "Five-step sequence for reading the Kylian Mbappe birth chart",
+          "items": [
+            {
+              "nameEn": "Start with the Sun Sign",
+              "subEn": "December 20 places the Sun in Sagittarius — bold, expansive, restless energy and the headline of the whole chart"
+            },
+            {
+              "nameEn": "Flag the Birth-Time Gap",
+              "subEn": "Without a confirmed time, treat the rising sign and house placements as unverified and say so"
+            },
+            {
+              "nameEn": "Look for Mars",
+              "subEn": "Mars points to how drive and aggression get channelled — note its sign and aspects in any athlete's chart"
+            },
+            {
+              "nameEn": "Read Aspects as Tension",
+              "subEn": "Hard angles between planets show an inner push-pull a person works with, never a guaranteed event"
+            },
+            {
+              "nameEn": "Layer in Current Transits",
+              "subEn": "Jupiter's 12-year orbit means the 2026 Jupiter in Gemini transit colours the chart for roughly one year"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings to Avoid",
+          "titleEn": "Common Misreadings to Avoid",
+          "altEn": "Four common misreadings of the Kylian Mbappe birth chart and what each overlooks",
+          "items": [
+            {
+              "nameEn": "His Chart Caused His Success",
+              "subEn": "Training, timing, teammates, and luck are what the chart cannot account for — it describes style, not outcomes"
+            },
+            {
+              "nameEn": "Useless Without Birth Time",
+              "subEn": "The Sun, most planets, and their aspects still hold — you lose house detail, not the whole reading"
+            },
+            {
+              "nameEn": "Sagittarius Means Guaranteed Stardom",
+              "subEn": "Millions share his Sun sign; it describes a tendency toward risk and reach, not a promised outcome"
+            },
+            {
+              "nameEn": "Transits Guarantee a Big Year",
+              "subEn": "A transit sets a backdrop of possible themes like growth or travel — the person still has to show up for it"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Player's Birth Chart vs a National Team Chart: What Each Can Say",
+          "titleEn": "Natal Chart vs Team Chart: What Each Can Say",
+          "altEn": "Comparison of a player's natal birth chart versus a national team or match chart in astrology",
+          "columns": [
+            {
+              "nameEn": "Natal Chart (Individual)",
+              "linesEn": [
+                "Cast for a single birth moment",
+                "Maps one athlete's drive, style, and inner conflicts",
+                "Reveals competitive temperament and personal nuance",
+                "Loses any collective read on how a team combines"
+              ]
+            },
+            {
+              "nameEn": "Team or Match Chart (Collective)",
+              "linesEn": [
+                "Cast for a founding date or kickoff time",
+                "Describes a collective mood or conditions of one game",
+                "Useful lens for a single fixture or tournament moment",
+                "Loses the personal nuance only an individual chart carries"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
