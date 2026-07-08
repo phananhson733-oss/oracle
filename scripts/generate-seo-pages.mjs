@@ -842,6 +842,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'coco-gauff-zodiac-sign',
   'novak-djokovic-zodiac-sign',
   'kylian-mbappe-birth-chart',
   'lamine-yamal-zodiac-sign',
