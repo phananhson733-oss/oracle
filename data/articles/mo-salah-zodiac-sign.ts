@@ -56,7 +56,7 @@ Reading the Mo Salah zodiac sign well means knowing which clues are solid and wh
 
 1. **Start with the Sun.** Gemini is fixed by his June 15 birthday, so lead there: communication, curiosity, and quick reads are the safest interpretation.
 2. **Add Venus.** Venus is also in Gemini, so read his affection and taste as playful and mentally engaged — an amplifier of the Gemini tone, not a separate story.
-3. **Anchor with Jupiter.** Jupiter spends about a year per sign and was in Virgo in 1992, a steadier, detail-oriented counterweight to the airy surface — safe to state because it does not depend on birth time.
+3. **Anchor with Jupiter.** Jupiter spends about a year per sign and was in Leo in June 1992 (it did not move into Virgo until that September), a warmer, more expressive counterweight to the airy surface — safe to state because it does not depend on birth time.
 4. **Hold the Moon loosely.** His Moon most likely falls in Sagittarius, but the Moon changes sign roughly every two-and-a-half days, so without a birth time treat it as "likely," not fixed.
 5. **Refuse to guess the rising sign.** Ascendant, Midheaven, and houses need a confirmed birth time, which isn't public — so leave them blank rather than inventing them.
 
@@ -78,7 +78,7 @@ Most quick takes on his chart trip over the same errors. Correcting them keeps t
 |---|---|---|---|
 | Sun in Gemini | Sets core identity around communication and quick reads | Air / Mercury-ruled | Watch his split-second decisions in the box |
 | Venus in Gemini | Shapes affection and taste toward curiosity and variety | Air / Mercury-ruled | Look for playful, mentally engaged connection |
-| Jupiter in Virgo | Grows through detail, discipline, and refinement | Earth / Mercury-ruled | Spot patient, precise improvement over flashy leaps |
+| Jupiter in Leo | Grows through confidence, warmth, and bold self-expression | Fire / Sun-ruled | Spot generous, expressive drive rather than quiet refinement |
 | Moon in Sagittarius (likely) | Colours emotional needs with freedom and optimism | Fire / Jupiter-ruled | Read as likely, not fixed, given the unknown birth time |
 | Rising sign & houses | Depend entirely on the exact birth time | Unverifiable here | Leave blank until a documented time appears |
 
