@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "coco-gauff-zodiac-sign": {
+      "hero": {
+        "prompt": "A vast nocturnal seascape where luminous golden-teal currents spiral upward from the ocean depths into a star-scattered cosmic sky, soft iridescent waves catching nebula light across an endless twilight horizon, evoking fluid intuition and quiet inner strength, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Luminous teal-gold ocean currents rising into a star-filled indigo sky, evoking Pisces intuition and fluid adaptability"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Coco Gauff's Sun Sign vs Her Full Birth Chart: What Actually Differs",
+          "titleEn": "Sun Sign vs Full Birth Chart",
+          "altEn": "Side-by-side comparison of what a Sun sign gives versus what a full birth chart reveals",
+          "columns": [
+            {
+              "nameEn": "Sun Sign",
+              "linesEn": [
+                "Single bright headline",
+                "Fast, memorable summary",
+                "Available from birth date alone",
+                "Sacrifices nuance for clarity"
+              ]
+            },
+            {
+              "nameEn": "Full Chart",
+              "linesEn": [
+                "Layers Moon, Mercury, Venus, Mars",
+                "Developing theme over fixed label",
+                "Requires confirmed birth time",
+                "Gives depth, loses the one-liner"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Sun Sign in a Public Figure's Chart",
+          "titleEn": "5 Steps to an Honest Sun Sign Reading",
+          "altEn": "Five-step checklist for reading a public figure's Sun sign accurately and without overreach",
+          "items": [
+            {
+              "nameEn": "Confirm the Birth Date, Then Stop",
+              "subEn": "Pisces is verifiable from March 13, 2004; a rising sign is not, since birth time isn't public"
+            },
+            {
+              "nameEn": "Look for the Sun's Theme in Public Settings",
+              "subEn": "Notice adaptability and emotional readability in on-court composure and shifts in tone"
+            },
+            {
+              "nameEn": "Check the Fast Planets Before Generalizing",
+              "subEn": "Mercury in Aries reads as direct speech; Venus and Mars in Taurus as steady, grounded effort"
+            },
+            {
+              "nameEn": "Flag the Moon as Approximate",
+              "subEn": "Likely Sagittarius, but without a birth time it could sit near a sign boundary — hold loosely"
+            },
+            {
+              "nameEn": "Watch for Contradiction, Not Confirmation",
+              "subEn": "Where a placement seems to break is often where the real reading lives"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
