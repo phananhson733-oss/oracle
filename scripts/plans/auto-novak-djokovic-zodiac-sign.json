@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "novak-djokovic-zodiac-sign": {
+      "hero": {
+        "prompt": "Two luminous twin orbs drifting in quiet dialogue across a sweeping cosmic plain, one trailing cool teal mist toward a distant horizon and the other radiating warm gold light upward into a vast night sky, wind-swept lines rippling across rolling celestial terrain evoking swift mental movement and restless adaptability, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twin luminous orbs in cosmic dialogue across an indigo plain, evoking Gemini duality and adaptability"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read His Gemini Signature Without Overreaching",
+          "titleEn": "Five Ways to Spot Gemini Traits Honestly",
+          "altEn": "Five cues for reading Novak Djokovic's Gemini signature without overreaching",
+          "items": [
+            {
+              "nameEn": "Verbal Range",
+              "subEn": "Multiple languages and quick question reframes signal Mercury-ruled mental pivots"
+            },
+            {
+              "nameEn": "Tactical Switching",
+              "subEn": "Mid-match strategy shifts rather than one fixed game plan; mutable signs adapt over commit"
+            },
+            {
+              "nameEn": "Restless Curiosity",
+              "subEn": "Diet experiments, business ventures, and coaching changes reflect a Gemini appetite for variety"
+            },
+            {
+              "nameEn": "Where It Doesn't Fit",
+              "subEn": "Patient grinding defense reads more like Taurus Venus or likely Cancer Mars than airy Gemini"
+            },
+            {
+              "nameEn": "The Cusp Caveat",
+              "subEn": "Stubborn persistence may reveal the Taurus edge rather than Gemini, given the near-boundary Sun"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Novak Djokovic's Chart at a Glance",
+          "titleEn": "Key Placements in Djokovic's Birth Chart",
+          "altEn": "Comparison of Gemini Sun, Taurus Venus, and Pisces Moon placements in Djokovic's birth chart",
+          "columns": [
+            {
+              "nameEn": "Gemini Sun (near cusp)",
+              "linesEn": [
+                "Adaptable, verbal, quick to switch tactics",
+                "Air element, ruled by Mercury",
+                "Watch multilingual press and mid-match strategy pivots"
+              ]
+            },
+            {
+              "nameEn": "Taurus Venus",
+              "linesEn": [
+                "Adds steadiness and physical endurance",
+                "Earth element, ruled by Venus",
+                "Look for patient, grinding baseline rallies"
+              ]
+            },
+            {
+              "nameEn": "Likely Pisces Moon",
+              "linesEn": [
+                "Emotional sensitivity beneath a composed surface",
+                "Water element, feeling and instinct",
+                "Read charged press moments, held with room for a cusp Moon"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
