@@ -54,7 +54,7 @@ Reading the Coco Gauff zodiac sign well is less about memorizing traits and more
 
 1. **Confirm the birth date, then stop.** Pisces is verifiable from March 13, 2004; a rising sign is not, since her birth time isn't public.
 2. **Look for the Sun's theme in public settings.** Pisces leans adaptable and emotionally readable, so notice on-court composure and shifts in tone rather than one dramatic moment.
-3. **Check the fast planets before you generalize.** Her Mercury sits in Aries and her Venus and Mars in Taurus, which can read as blunt, direct speech paired with steady, grounded effort.
+3. **Check the fast planets before you generalize.** Her Mercury and Mars sit in Aries and her Venus in Taurus, which can read as blunt, direct speech paired with steady, grounded values.
 4. **Flag the Moon as approximate.** Her Moon is likely in Sagittarius, but without a birth time it could fall near a sign boundary, so hold it loosely.
 5. **Watch for contradiction, not confirmation.** In the psychological style associated with astrologers like Liz Greene, the moments a placement seems to break are often where the real reading lives.
 
@@ -76,8 +76,8 @@ Most confusion around the Coco Gauff zodiac sign comes from treating one placeme
 |---|---|---|---|
 | Sun in Pisces | Sets the core identity and public theme | Water element, mutable mode | Emotional readability and on-court adaptability |
 | Moon in Sagittarius (approx.) | Colors emotional needs and instincts | Fire element, mutable mode | A restless, optimistic, freedom-seeking streak — hold loosely, no birth time |
-| Mercury in Aries | Shapes how she speaks and decides | Fire element, cardinal mode | Direct, quick, competitive communication in interviews |
-| Venus & Mars in Taurus | Shape values and how she pursues goals | Earth element, fixed mode | Steady effort, patience, and grounded persistence |
+| Mercury & Mars in Aries | Shape how she speaks, decides, and pursues goals | Fire element, cardinal mode | Direct, quick, competitive communication and assertive drive |
+| Venus in Taurus | Shapes values and taste | Earth element, fixed mode | Steady values, patience, and grounded aesthetics |
 
 ## Coco Gauff Zodiac Sign FAQ
 
