@@ -7,7 +7,7 @@ export const cocoGauffZodiacSignEn: WikiArticle = {
   image: "/images/blog/coco-gauff-zodiac-sign.jpg",
   image_alt: "Luminous teal-gold ocean currents rising into a star-filled indigo sky, evoking Pisces intuition and fluid adaptability",
   title: "What the Coco Gauff Zodiac Sign Really Tells You About Her Drive",
-  description: "The Coco Gauff zodiac sign refers to her Sun sign, Pisces, set by her birth on March 13, 2004, in Boca Raton, Florida.",
+  description: "The Coco Gauff zodiac sign refers to her Sun sign, Pisces, set by her birth on March 13, 2004, in Delray Beach, Florida.",
   authorId: "marcus-orion",
   date: "2026-07-08",
   schema: "Article",
@@ -23,7 +23,7 @@ export const cocoGauffZodiacSignEn: WikiArticle = {
 
 ## What Is the Coco Gauff Zodiac Sign?
 
-The Coco Gauff zodiac sign refers to her Sun sign, Pisces, set by her birth on March 13, 2004, in Boca Raton, Florida. In astrology, a Sun sign marks the core identity the rest of a chart is built around, so her placement is best read as **a Pisces Sun, the mutable water sign of intuition and adaptability**. The Sun passes through Pisces from roughly February 19 to March 20, and her mid-March birthday sits well inside that window. Because her exact birth time is not public, her rising sign and houses can't be confirmed, so this profile stays with placements astrologers can actually verify — the same starting point used in any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+The Coco Gauff zodiac sign refers to her Sun sign, Pisces, set by her birth on March 13, 2004, in Delray Beach, Florida. In astrology, a Sun sign marks the core identity the rest of a chart is built around, so her placement is best read as **a Pisces Sun, the mutable water sign of intuition and adaptability**. The Sun passes through Pisces from roughly February 19 to March 20, and her mid-March birthday sits well inside that window. Because her exact birth time is not public, her rising sign and houses can't be confirmed, so this profile stays with placements astrologers can actually verify — the same starting point used in any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
 
 - Sun in Pisces: a mutable water sign linked to empathy, imagination, and emotional attunement
 - Traditionally ruled by Jupiter and, in modern astrology, by Neptune, tying it to vision and faith
