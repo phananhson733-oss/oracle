@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="Key Placements in Lamine Yamal's Chart">
+  <defs>
+    <linearGradient id="lamineyamalzodiacsign0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="lamineyamalzodiacsign0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="lamineyamalzodiacsign0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lamineyamalzodiacsign0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lamineyamalzodiacsign0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lamineyamalzodiacsign0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#lamineyamalzodiacsign0en-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#lamineyamalzodiacsign0en-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#lamineyamalzodiacsign0en-neb2)"/>
+  <circle cx="557.5" cy="77.8" r="1.47" fill="#cfc8ea" opacity="0.32"/><circle cx="214.3" cy="419.6" r="0.60" fill="#cfc8ea" opacity="0.22"/><circle cx="264.7" cy="58.6" r="0.79" fill="#cfc8ea" opacity="0.29"/><circle cx="544.3" cy="255.9" r="1.52" fill="#cfc8ea" opacity="0.30"/><circle cx="710.0" cy="242.8" r="0.60" fill="#cfc8ea" opacity="0.33"/><circle cx="207.8" cy="68.8" r="1.28" fill="#cfc8ea" opacity="0.53"/><circle cx="687.9" cy="100.1" r="1.09" fill="#cfc8ea" opacity="0.22"/><circle cx="44.6" cy="52.6" r="0.56" fill="#cfc8ea" opacity="0.26"/><circle cx="510.6" cy="268.1" r="1.47" fill="#cfc8ea" opacity="0.54"/><circle cx="506.0" cy="63.8" r="0.92" fill="#cfc8ea" opacity="0.37"/><circle cx="142.4" cy="177.5" r="1.51" fill="#cfc8ea" opacity="0.28"/><circle cx="55.1" cy="192.3" r="0.91" fill="#cfc8ea" opacity="0.13"/><circle cx="424.3" cy="247.0" r="1.29" fill="#cfc8ea" opacity="0.14"/><circle cx="554.0" cy="417.1" r="0.46" fill="#cfc8ea" opacity="0.17"/><circle cx="363.1" cy="55.6" r="1.34" fill="#cfc8ea" opacity="0.49"/><circle cx="126.5" cy="332.2" r="1.31" fill="#cfc8ea" opacity="0.17"/><circle cx="112.3" cy="168.3" r="1.19" fill="#cfc8ea" opacity="0.36"/><circle cx="516.0" cy="59.4" r="0.99" fill="#cfc8ea" opacity="0.46"/><circle cx="187.1" cy="312.6" r="0.66" fill="#cfc8ea" opacity="0.21"/><circle cx="482.6" cy="384.0" r="0.76" fill="#cfc8ea" opacity="0.34"/><circle cx="396.7" cy="89.2" r="0.66" fill="#cfc8ea" opacity="0.48"/><circle cx="406.6" cy="418.9" r="0.48" fill="#cfc8ea" opacity="0.23"/><circle cx="245.0" cy="375.9" r="0.91" fill="#cfc8ea" opacity="0.31"/><circle cx="134.2" cy="211.1" r="1.55" fill="#cfc8ea" opacity="0.49"/><circle cx="182.4" cy="75.1" r="1.40" fill="#cfc8ea" opacity="0.14"/><circle cx="616.8" cy="219.2" r="1.40" fill="#cfc8ea" opacity="0.25"/><circle cx="500.7" cy="418.8" r="1.24" fill="#cfc8ea" opacity="0.43"/><circle cx="327.0" cy="47.5" r="1.69" fill="#cfc8ea" opacity="0.17"/><circle cx="722.7" cy="225.4" r="1.00" fill="#cfc8ea" opacity="0.44"/><circle cx="168.1" cy="105.7" r="1.35" fill="#cfc8ea" opacity="0.26"/><circle cx="539.3" cy="334.5" r="1.60" fill="#cfc8ea" opacity="0.17"/><circle cx="179.0" cy="301.2" r="0.94" fill="#cfc8ea" opacity="0.32"/><circle cx="358.2" cy="373.8" r="1.52" fill="#cfc8ea" opacity="0.33"/><circle cx="246.8" cy="29.6" r="0.48" fill="#cfc8ea" opacity="0.29"/><circle cx="178.6" cy="57.5" r="0.83" fill="#cfc8ea" opacity="0.50"/><circle cx="250.3" cy="355.8" r="1.07" fill="#cfc8ea" opacity="0.49"/><circle cx="577.7" cy="414.5" r="0.92" fill="#cfc8ea" opacity="0.38"/><circle cx="153.4" cy="210.9" r="1.13" fill="#cfc8ea" opacity="0.53"/><path d="M 368.47619075141847 131.2 L 369.1 134.4 L 372.2 135.01476845983416 L 369.1 135.6 L 368.47619075141847 138.8 L 367.9 135.6 L 364.7 135.01476845983416 L 367.9 134.4 Z" fill="#f6e6bf" opacity="0.5335994951892644"/><path d="M 187.20206668786705 306.0 L 187.8 309.0 L 190.7 309.51501545868814 L 187.8 310.1 L 187.20206668786705 313.0 L 186.6 310.1 L 183.7 309.51501545868814 L 186.6 309.0 Z" fill="#f6e6bf" opacity="0.5650891936849802"/><path d="M 163.87835763953626 241.9 L 164.4 244.4 L 166.9 244.9008237598464 L 164.4 245.4 L 163.87835763953626 247.9 L 163.4 245.4 L 160.9 244.9008237598464 L 163.4 244.4 Z" fill="#f6e6bf" opacity="0.6413976615760475"/><path d="M 291.3181033860892 137.7 L 291.9 140.6 L 294.7 141.10263927280903 L 291.9 141.6 L 291.3181033860892 144.5 L 290.8 141.6 L 288.0 141.10263927280903 L 290.8 140.6 Z" fill="#f6e6bf" opacity="0.5815769990440458"/><path d="M 319.70748213492334 338.9 L 320.2 341.5 L 322.8 341.9625480743125 L 320.2 342.5 L 319.70748213492334 345.0 L 319.2 342.5 L 316.7 341.9625480743125 L 319.2 341.5 Z" fill="#f6e6bf" opacity="0.6241155703086406"/><path d="M 187.1 312.6 L 245.0 375.9 L 182.4 75.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Key Placements in Lamine Yamal's Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#lamineyamalzodiacsign0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#lamineyamalzodiacsign0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="355" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#lamineyamalzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#lamineyamalzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Cancer Sun</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Anchors identity in instinct and emotional attunement; reads the room before</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">acting, protects a close circle</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#lamineyamalzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#lamineyamalzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Cancer Moon (approx.)</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Deepens emotional memory and the need for security; strong reactions tied to</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">safety and belonging</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#lamineyamalzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#lamineyamalzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Mars in Taurus</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Adds steady, physical persistence and stamina; grinds through resistance</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">instead of sprinting</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#lamineyamalzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#lamineyamalzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Jupiter in Sagittarius (retrograde)</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Expands confidence and big-picture belief inwardly; bold self-belief that</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">builds privately before it shows</text>
+  <path d="M 202.22749999999988 416.4 L 202.6 418.6 L 204.8 419 L 202.6 419.4 L 202.22749999999988 421.6 L 201.8 419.4 L 199.6 419 L 201.8 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 416.4 L 558.2 418.6 L 560.4 419 L 558.2 419.4 L 557.7725000000002 421.6 L 557.4 419.4 L 555.2 419 L 557.4 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
