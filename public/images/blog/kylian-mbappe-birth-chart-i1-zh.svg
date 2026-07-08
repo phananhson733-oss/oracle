@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 274" role="img" aria-label="">
+  <defs>
+    <linearGradient id="kylianmbappebirthchart1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="kylianmbappebirthchart1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="kylianmbappebirthchart1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kylianmbappebirthchart1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="kylianmbappebirthchart1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kylianmbappebirthchart1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="url(#kylianmbappebirthchart1zh-panel)"/>
+  <ellipse cx="198" cy="66" rx="380" ry="93" fill="url(#kylianmbappebirthchart1zh-neb1)"/>
+  <ellipse cx="623" cy="219" rx="334" ry="88" fill="url(#kylianmbappebirthchart1zh-neb2)"/>
+  <circle cx="430.1" cy="194.7" r="1.03" fill="#cfc8ea" opacity="0.30"/><circle cx="450.6" cy="158.8" r="1.02" fill="#cfc8ea" opacity="0.21"/><circle cx="360.2" cy="74.9" r="1.14" fill="#cfc8ea" opacity="0.41"/><circle cx="142.7" cy="170.0" r="1.40" fill="#cfc8ea" opacity="0.44"/><circle cx="451.0" cy="59.3" r="1.05" fill="#cfc8ea" opacity="0.35"/><circle cx="471.5" cy="63.9" r="1.65" fill="#cfc8ea" opacity="0.16"/><circle cx="747.8" cy="197.2" r="0.86" fill="#cfc8ea" opacity="0.29"/><circle cx="572.3" cy="118.8" r="0.70" fill="#cfc8ea" opacity="0.44"/><circle cx="395.6" cy="81.5" r="1.39" fill="#cfc8ea" opacity="0.28"/><circle cx="711.3" cy="39.5" r="1.06" fill="#cfc8ea" opacity="0.36"/><circle cx="82.4" cy="70.4" r="1.00" fill="#cfc8ea" opacity="0.13"/><circle cx="81.5" cy="27.0" r="0.79" fill="#cfc8ea" opacity="0.39"/><circle cx="260.4" cy="223.5" r="1.23" fill="#cfc8ea" opacity="0.40"/><circle cx="46.4" cy="141.0" r="0.62" fill="#cfc8ea" opacity="0.29"/><circle cx="510.2" cy="127.3" r="0.64" fill="#cfc8ea" opacity="0.53"/><circle cx="456.5" cy="117.6" r="1.55" fill="#cfc8ea" opacity="0.39"/><circle cx="696.0" cy="80.1" r="0.66" fill="#cfc8ea" opacity="0.52"/><circle cx="182.2" cy="256.9" r="0.45" fill="#cfc8ea" opacity="0.50"/><circle cx="148.0" cy="249.7" r="1.30" fill="#cfc8ea" opacity="0.47"/><circle cx="86.5" cy="93.3" r="1.28" fill="#cfc8ea" opacity="0.36"/><circle cx="108.5" cy="41.6" r="1.15" fill="#cfc8ea" opacity="0.41"/><circle cx="426.0" cy="143.6" r="0.67" fill="#cfc8ea" opacity="0.12"/><circle cx="529.3" cy="47.1" r="0.82" fill="#cfc8ea" opacity="0.48"/><path d="M 607.5486770439893 33.8 L 608.1 36.9 L 611.2 37.489664983935654 L 608.1 38.1 L 607.5486770439893 41.2 L 607.0 38.1 L 603.9 37.489664983935654 L 607.0 36.9 Z" fill="#f6e6bf" opacity="0.7156928073614836"/><path d="M 600.8115371260792 25.1 L 601.4 28.2 L 604.5 28.7641465915367 L 601.4 29.4 L 600.8115371260792 32.4 L 600.2 29.4 L 597.1 28.7641465915367 L 600.2 28.2 Z" fill="#f6e6bf" opacity="0.5570355701260269"/><path d="M 266.39418459124863 102.1 L 267.0 105.3 L 270.2 105.90000159386545 L 267.0 106.5 L 266.39418459124863 109.7 L 265.8 106.5 L 262.6 105.90000159386545 L 265.8 105.3 Z" fill="#f6e6bf" opacity="0.6011575052514673"/><path d="M 179.19112589396536 62.8 L 179.6 65.2 L 182.0 65.59449132438749 L 179.6 66.0 L 179.19112589396536 68.4 L 178.7 66.0 L 176.4 65.59449132438749 L 178.7 65.2 Z" fill="#f6e6bf" opacity="0.709017260465771"/><path d="M 79.81448833830655 242.4 L 80.4 245.6 L 83.5 246.16547495592386 L 80.4 246.8 L 79.81448833830655 249.9 L 79.2 246.8 L 76.1 246.16547495592386 L 79.2 245.6 Z" fill="#f6e6bf" opacity="0.6686482973396778"/>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="260" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 254.8 L 16.5 257.5 L 19.2 258 L 16.5 258.5 L 16 261.2 L 15.5 258.5 L 12.8 258 L 15.5 257.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 254.8 L 744.5 257.5 L 747.2 258 L 744.5 258.5 L 744 261.2 L 743.5 258.5 L 740.8 258 L 743.5 257.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#kylianmbappebirthchart1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#kylianmbappebirthchart1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="220" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#kylianmbappebirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#kylianmbappebirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#kylianmbappebirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#kylianmbappebirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#kylianmbappebirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#kylianmbappebirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#kylianmbappebirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#kylianmbappebirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 245.4 L 280.4 247.6 L 282.6 248 L 280.4 248.4 L 280.025 250.6 L 279.6 248.4 L 277.4 248 L 279.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="252" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 245.4 L 480.4 247.6 L 482.6 248 L 480.4 248.4 L 479.975 250.6 L 479.6 248.4 L 477.4 248 L 479.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
