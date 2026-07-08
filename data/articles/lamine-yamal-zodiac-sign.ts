@@ -34,7 +34,7 @@ Lamine Yamal Zodiac Sign is **the Cancer Sun of a footballer born on July 13, 20
 
 Understanding the lamine yamal zodiac sign matters because one sign is a starting lens, not a verdict — and knowing where that lens stops keeps you from over-reading a single label. The person-centered approach Dane Rudhyar helped establish treats a sign as a prompt for self-understanding rather than a fixed script. For a Cancer Sun, the useful reflection is how instinct and emotional memory steer choices under pressure: when do you protect first and act second, and where does loyalty tip into holding on too long?
 
-Fans project a tidy personality onto a famous chart, but the same placement in your own chart is an invitation to notice your patterns instead of your reputation. A Cancer Sun tends to lead with feeling, so the value is spotting that tendency in real moments rather than treating it as fate. The twelve-sign framework itself is commonly traced to Hellenistic astrology in the early centuries CE, long before modern personality talk, a reminder that these signs began as symbolic maps rather than measurements.
+Fans project a tidy personality onto a famous chart, but the same placement in your own chart is an invitation to notice your patterns instead of your reputation. A Cancer Sun tends to lead with feeling, so the value is spotting that tendency in real moments rather than treating it as fate. The twelve-sign framework itself is commonly traced to Babylonian astronomy in the 1st millennium BCE, long before modern personality talk, a reminder that these signs began as symbolic maps rather than measurements.
 
 For a Cancer Sun specifically, that self-awareness tends to surface in a few concrete places:
 
