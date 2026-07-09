@@ -72,7 +72,7 @@ To read a Zendaya birth chart the way this page suggests, treat every placement 
 The popular versions of a Zendaya birth chart go wrong in a few predictable ways, and each one blurs symbolic reading with biographical claim. Here are the Zendaya birth chart mistakes worth correcting:
 
 1. **Misreading: this chart explains her fame.** Reality: astrology describes symbolic tendencies and cannot account for talent, timing, or opportunity.
-2. **Misreading: her placements are confirmed fact.** Reality: with no publicly confirmed birth time, the ascendant and houses in a Zendaya birth chart are educated guesses at best.
+2. **Misreading: her placements are confirmed fact.** Reality: a public 6:01 PM birth time lets chart databases calculate the ascendant and houses, but the meaning of those placements is still symbolic rather than literal proof.
 3. **Misreading: the Western and Vedic versions of this chart should agree.** Reality: they use different zodiacs and often name different signs, which is expected rather than an error.
 4. **Misreading: a "difficult" placement predicts trouble.** Reality: classical Jyotish frames hard placements as areas of growth, not as sentences to be served.
 
