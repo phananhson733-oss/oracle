@@ -7,7 +7,7 @@ export const justinVerlanderBirthChartEn: WikiArticle = {
   image: "/images/blog/justin-verlander-birth-chart.jpg",
   image_alt: "Bioluminescent sea meets charged sky at midnight — a seamless horizon evoking the Pisces–Aquarius water–air blend",
   title: "Reading Justin Verlander's Birth Chart Through His Pisces–Aquarius Cusp",
-  description: "A Pisces Sun–Aquarius Cusp Signature describes a Sun placed in the late degrees of Pisces, close enough to the Aquarius boundary that a water-sign identity reads through an air-sign edge.",
+  description: "A Pisces Sun–Aquarius Cusp Signature describes a Sun placed in the early degrees of Pisces, close enough to the Aquarius boundary that a water-sign identity reads through an air-sign edge.",
   authorId: "marcus-orion",
   date: "2026-07-09",
   schema: "Article",
@@ -23,7 +23,7 @@ export const justinVerlanderBirthChartEn: WikiArticle = {
 
 ## What Is a Pisces Sun–Aquarius Cusp Signature?
 
-A Pisces Sun–Aquarius Cusp Signature describes a Sun placed in the late degrees of Pisces, close enough to the Aquarius boundary that a water-sign identity reads through an air-sign edge. In plain terms, it blends Pisces intuition with Aquarian independence. Born on February 20, 1983, Justin Verlander's Sun sits just inside Pisces, only a day or two past the cusp, which is why any Justin Verlander birth chart reading treats this water–air blend as the core signature. Used as an interpretive lens — part of the broader [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) — it reads a Sun sign as **a water-sign identity filtered through an air-sign edge**, not a single flat label.
+A Pisces Sun–Aquarius Cusp Signature describes a Sun placed in the early degrees of Pisces, close enough to the Aquarius boundary that a water-sign identity reads through an air-sign edge. In plain terms, it blends Pisces intuition with Aquarian independence. Born on February 20, 1983, Justin Verlander's Sun sits just inside Pisces, only a day or two past the cusp, which is why any Justin Verlander birth chart reading treats this water–air blend as the core signature. Used as an interpretive lens — part of the broader [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) — it reads a Sun sign as **a water-sign identity filtered through an air-sign edge**, not a single flat label.
 
 - Pairs Pisces intuition and feeling with Aquarian detachment and originality
 - Anchored by the Sun's placement rather than an unverified birth time
@@ -68,7 +68,7 @@ Building on the person-centered tradition Dane Rudhyar established, and the psyc
 
 You can spot this signature in the Justin Verlander birth chart, or in your own, by watching for a few observable tells rather than trusting one label. None of these require a perfect birth time; they lean on the Sun and its cusp coloring, which is exactly what stays reliable when the clock is uncertain:
 
-1. **Check the Sun's degree.** A Sun in the final degrees of Pisces, born in mid-to-late February, sits close enough to carry clear Aquarian coloring.
+1. **Check the Sun's degree.** A Sun in the opening degrees of Pisces, born in mid-to-late February, sits close enough to carry clear Aquarian coloring.
 2. **Listen for the water–air mix.** Intuitive, feeling-led choices that get delivered with unusually detached, level, matter-of-fact calm.
 3. **Watch behavior under pressure.** The Pisces read stays imaginative and fluid; the Aquarian edge keeps it composed and strategic instead of flooded.
 4. **Notice the independence streak.** A private, do-it-my-own-way discipline that quietly resists the crowd while still reading the crowd accurately.
