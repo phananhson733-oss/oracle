@@ -66,8 +66,6 @@ Reading the confirmed-and-unconfirmed pattern in the Kate Upton birth chart — 
 5. **Read for boundaries, not verdicts.** The most useful lesson is often knowing where interpretation should stop.
 
 
-![Five-step sequence for separating confirmed and unverified factors in Kate Upton's birth chart](/images/blog/kate-upton-birth-chart-i0-en.svg)
-
 ## Common Misreadings
 
 A few readings of the Kate Upton birth chart get repeated so often they crowd out the fuller picture:
@@ -86,8 +84,6 @@ A few readings of the Kate Upton birth chart get repeated so often they crowd ou
 | Ascendant/houses | Cannot be established from date alone | Requires reliable birth time | Leave Rising-sign claims out of the fact layer |
 | Public style | Can be described from visible career pattern | Observational, not chart proof | Keep it separate from birth-chart mechanics |
 
-
-![Side-by-side comparison of confirmed and unverified layers in Kate Upton's natal chart](/images/blog/kate-upton-birth-chart-i1-en.svg)
 
 ## Kate Upton's Date-Verified Natal Signature FAQ
 
