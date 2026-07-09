@@ -327,6 +327,7 @@ import { kylianMbappeBirthChartEn } from "./kylian-mbappe-birth-chart";
 import { novakDjokovicZodiacSignEn } from "./novak-djokovic-zodiac-sign";
 import { cocoGauffZodiacSignEn } from "./coco-gauff-zodiac-sign";
 import { moSalahZodiacSignEn } from "./mo-salah-zodiac-sign";
+import { justinVerlanderBirthChartEn } from "./justin-verlander-birth-chart";
 // All articles organized by language
 
 import {
@@ -645,6 +646,7 @@ const ARTICLES_EN: WikiArticle[] = [
   novakDjokovicZodiacSignEn,
   cocoGauffZodiacSignEn,
   moSalahZodiacSignEn,
+  justinVerlanderBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
