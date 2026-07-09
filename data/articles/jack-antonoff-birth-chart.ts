@@ -113,7 +113,7 @@ The planetary signs. Sun, Mercury, Venus, Mars, and the outer planets stay stabl
 
 - [explainer on the sun square moon aspect](/en/wiki/square-astrology) — how a fire-and-water tension between two placements tends to read.
 - [guide to the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) — his Gemini North Node adds a learning direction worth its own look.
-- [Jack Antonoff (Wikipedia)](https://en.wikipedia.org/wiki/Jack_Antonoff) — the primary-source birth data this reading is anchored to.
+- [Jack Antonoff (Wikipedia)](https://en.wikipedia.org/wiki/Jack_Antonoff) — the biographical background this reading's birth data is anchored to.
 
 ## Take Action
 
