@@ -329,6 +329,7 @@ import { cocoGauffZodiacSignEn } from "./coco-gauff-zodiac-sign";
 import { moSalahZodiacSignEn } from "./mo-salah-zodiac-sign";
 import { justinVerlanderBirthChartEn } from "./justin-verlander-birth-chart";
 import { jackAntonoffBirthChartEn } from "./jack-antonoff-birth-chart";
+import { ayoEdebiriBirthChartEn } from "./ayo-edebiri-birth-chart";
 // All articles organized by language
 
 import {
@@ -649,6 +650,7 @@ const ARTICLES_EN: WikiArticle[] = [
   moSalahZodiacSignEn,
   justinVerlanderBirthChartEn,
   jackAntonoffBirthChartEn,
+  ayoEdebiriBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

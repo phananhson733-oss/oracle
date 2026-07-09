@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "ayo-edebiri-birth-chart": {
+      "hero": {
+        "prompt": "Three softly luminous golden spheres drifting in slow celestial alignment across a vast open sky, connected by delicate gossamer threads of teal-gold light, each orb positioned at a point of perfect equilibrium above a wide misty indigo horizon — the three-body constellation of relational balance, a visual metaphor for a triple planetary cluster gathered into one cardinal sign, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Three golden orbs in balanced celestial alignment over an indigo horizon, representing Ayo Edebiri's Libra Sun, Mercury, and Venus cluster"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Libra Sun Signature in a Chart",
+          "titleEn": "How to Read a Libra Sun Signature in a Chart",
+          "altEn": "Five-step sequence for reading a Libra Sun signature, from counting Libra planets to separating persona from prediction",
+          "items": [
+            {
+              "nameEn": "Count the Libra planets",
+              "subEn": "Look for the Sun, Mercury, and Venus in Libra — three planets here — gathering identity, thinking, and taste into one relational sign"
+            },
+            {
+              "nameEn": "Watch for paired thinking",
+              "subEn": "Mercury in Libra tends to weigh both sides out loud; it surfaces as lines that balance a scene rather than steamroll it"
+            },
+            {
+              "nameEn": "Notice the aesthetic pull",
+              "subEn": "Venus in Libra often reads as an eye for harmony and timing — the sense of exactly when a beat should land"
+            },
+            {
+              "nameEn": "Flag the missing time",
+              "subEn": "If someone quotes an Ascendant or a Moon house, treat it as guesswork without a documented birth time"
+            },
+            {
+              "nameEn": "Separate persona from prediction",
+              "subEn": "Read the cluster as a lens on public style, never as a forecast of career, relationships, or awards"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Ayo Edebiri's Libra Sun Signature at a Glance",
+          "titleEn": "Ayo Edebiri's Three Core Libra Placements Compared",
+          "altEn": "Comparison of Libra Sun, Mercury retrograde, and Venus in Ayo Edebiri's birth chart, showing how each shapes a different dimension",
+          "columns": [
+            {
+              "nameEn": "Libra Sun",
+              "linesEn": [
+                "Sets core identity straight from the birth date",
+                "Cardinal air, ruled by Venus",
+                "Balance-seeking, diplomatic public style"
+              ]
+            },
+            {
+              "nameEn": "Libra Mercury (retrograde)",
+              "linesEn": [
+                "Filters thinking by weighing both sides",
+                "Cardinal air, themes of the mind",
+                "Lines that balance a scene, revised wit"
+              ]
+            },
+            {
+              "nameEn": "Libra Venus",
+              "linesEn": [
+                "Shapes taste and timing toward harmony",
+                "Cardinal air, themes of pairing",
+                "An eye for when a beat lands"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
