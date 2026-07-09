@@ -12,42 +12,42 @@
     "kate-upton-birth-chart": {
       "hero": {
         "prompt": "A vast twilight panorama: twin luminous star clusters arc symmetrically overhead casting mirrored silver trails across a perfectly still dark lake, a delicate crescent moon floats between them reflected in the still water below, and a precise ridge of gilded distant peaks defines the horizon — three distinct celestial presences united in one unbroken continuous landscape. deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
-        "altEn": "Twin star clusters, crescent moon on still water, and gilded mountain ridge — Kate Upton's Gemini–Libra–Virgo natal trio in one sky"
+        "altEn": "Twin star clusters over still water and a hidden horizon — Kate Upton's Gemini Sun with birth-time unknowns"
       },
       "inline": [
         {
           "kind": "sequence",
           "afterHeadingEn": "## How to Read This Signature in a Birth Chart",
-          "titleEn": "5 Steps to Read the Gemini–Libra–Virgo Signature",
-          "altEn": "Five-step sequence for spotting the Sun–Moon–Rising pattern in Kate Upton's birth chart",
+          "titleEn": "5 Steps to Separate Confirmed and Unknown Factors",
+          "altEn": "Five-step sequence for separating confirmed and unverified factors in Kate Upton's birth chart",
           "items": [
             {
-              "nameEn": "Find the Trio First",
-              "subEn": "Locate Sun, Moon, and Rising before any other placement — their interaction tells the core story"
+              "nameEn": "Find the Confirmed Anchor",
+              "subEn": "Start with the Gemini Sun and birth date before timing-sensitive claims"
             },
             {
-              "nameEn": "Watch the Sun–Rising Gap",
-              "subEn": "Gemini Sun + Virgo Rising reads as lively curiosity wrapped in careful, precise delivery"
+              "nameEn": "Mark Unknown Factors",
+              "subEn": "Keep Ascendant, houses, and exact Moon details outside the fact layer without reliable birth time"
             },
             {
-              "nameEn": "Track the Moon in Relationships",
-              "subEn": "A Libra Moon surfaces as a pull toward partnership, diplomacy, and aesthetic balance when feelings run high"
+              "nameEn": "Use Public Style Carefully",
+              "subEn": "Public presentation can be observed, but it is not proof of a birth-chart angle"
             },
             {
               "nameEn": "Notice Mercurial-Yet-Polished Behavior",
-              "subEn": "Quick topic-shifts and wit (Gemini) paired with groomed, detail-aware presentation (Virgo) is the fingerprint"
+              "subEn": "Quick topic-shifts and polish are visible style cues, not verified Rising-sign evidence"
             },
             {
-              "nameEn": "Read for Tension, Not Verdicts",
-              "subEn": "Where placements disagree is usually where the most honest self-awareness lives"
+              "nameEn": "Read for Boundaries",
+              "subEn": "The most useful lesson is knowing where interpretation should stop"
             }
           ]
         },
         {
           "kind": "compare",
-          "afterHeadingEn": "## Kate Upton's Gemini–Libra–Virgo Natal Signature at a Glance",
-          "titleEn": "Gemini Sun · Libra Moon · Virgo Rising — Side by Side",
-          "altEn": "Side-by-side comparison of Gemini Sun, Libra Moon, and Virgo Rising in Kate Upton's natal chart",
+          "afterHeadingEn": "## Kate Upton's Date-Verified Natal Signature at a Glance",
+          "titleEn": "Confirmed Data vs Birth-Time Unknowns",
+          "altEn": "Side-by-side comparison of confirmed and unverified layers in Kate Upton's natal chart",
           "columns": [
             {
               "nameEn": "Gemini Sun",
@@ -59,21 +59,21 @@
               ]
             },
             {
-              "nameEn": "Libra Moon",
+              "nameEn": "Moon Details",
               "linesEn": [
-                "Cardinal air, Venus-ruled",
-                "Emotion filtered through fairness & balance",
-                "Conflict-smoothing pull",
-                "Aesthetic harmony drive"
+                "Birth-time dependent",
+                "Do not overread without reliable timing",
+                "Specific claims need source support",
+                "Keep in the unknowns column"
               ]
             },
             {
-              "nameEn": "Virgo Rising",
+              "nameEn": "Ascendant/Houses",
               "linesEn": [
-                "Mutable earth, Mercury-ruled",
-                "Precision & detail-aware first impression",
-                "Groomed, measured self-presentation",
-                "Composed public delivery"
+                "Requires reliable birth time",
+                "Cannot be established from date alone",
+                "Separate from observed public style",
+                "Leave out of the fact layer"
               ]
             }
           ]
