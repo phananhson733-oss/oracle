@@ -329,6 +329,7 @@ import { cocoGauffZodiacSignEn } from "./coco-gauff-zodiac-sign";
 import { moSalahZodiacSignEn } from "./mo-salah-zodiac-sign";
 import { justinVerlanderBirthChartEn } from "./justin-verlander-birth-chart";
 import { jackAntonoffBirthChartEn } from "./jack-antonoff-birth-chart";
+import { kateUptonBirthChartEn } from "./kate-upton-birth-chart";
 import { ayoEdebiriBirthChartEn } from "./ayo-edebiri-birth-chart";
 import { zendayaBirthChartEn } from "./zendaya-birth-chart";
 // All articles organized by language
@@ -651,6 +652,7 @@ const ARTICLES_EN: WikiArticle[] = [
   moSalahZodiacSignEn,
   justinVerlanderBirthChartEn,
   jackAntonoffBirthChartEn,
+  kateUptonBirthChartEn,
   ayoEdebiriBirthChartEn,
   zendayaBirthChartEn,
 ];
