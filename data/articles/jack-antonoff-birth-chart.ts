@@ -26,7 +26,7 @@ export const jackAntonoffBirthChartEn: WikiArticle = {
 Jack Antonoff's Aries Sun–Scorpio Moon natal chart is **an Aries-led natal map anchored by a deep Scorpio cluster**. Built from his verified March 31, 1984 birth in Bergenfield, New Jersey, it places the Sun firmly in Aries — cardinal fire that starts fast and moves first. Around it sit Mercury and Pallas in Aries, plus a tight run of Scorpio planets in Mars, Saturn, and Pluto, which is where the fixed-water depth comes from. Because no public birth time exists, the exact Moon sign, Rising sign, and houses stay provisional, so anyone reading the Jack Antonoff birth chart is working with placements by sign, not by house — the same limit any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) flags first. In plain terms, it reads as quick ignition wired to slow, saturated emotion. That gap between what starts fast and what runs deep is the whole story of the chart.
 
 - Leads with Aries initiative — rapid starts, first moves, restless creative momentum
-- Carries a doubled water undercurrent from Scorpio and Pisces planets: intensity, privacy, and tenderness
+- Carries a deep water undercurrent from its Scorpio planets: intensity, privacy, and slow-building depth
 - Cannot be fully read for houses or Rising without a confirmed birth time
 
 ## Why It Matters for Self-Awareness
@@ -45,7 +45,7 @@ The most useful contrast inside this chart isn't his Sun versus someone else's S
 
 The Aries Sun works like an ignition switch: it starts things, moves first, and thrives on momentum and quick iteration. The Scorpio grouping works the other way — it goes deep, holds intensity, and processes slowly under the surface. To get the fast, prolific starts Aries is known for, you sacrifice some of the patient marination Scorpio wants; to get Scorpio's emotional saturation and staying power, you sacrifice some of Aries' clean speed. Neither setting is "better." The chart runs both at once, which is why a reading that only names the Sun sign misses half the picture. This is the person-centered approach Dane Rudhyar helped shape: you read placements as a working whole, not a stack of labels.
 
-You can see why that framing beats a Sun-only take when you look at how fans apply it. Followers of his production streak — the steady Bleachers output and the long list of high-profile collaborations — often use the Aries-and-water read as a lens: quick, prolific starts layered over emotionally saturated, slowly built textures. That's a symbolic description, not a cause. The chart doesn't make the music; it happens to describe a rhythm people already hear in it. A third watery grouping in Pisces (Venus and Chiron among them) adds the tender, imaginative edge that softens all that Aries drive.
+You can see why that framing beats a Sun-only take when you look at how fans apply it. Followers of his production streak — the steady Bleachers output and the long list of high-profile collaborations — often use the Aries-and-water read as a lens: quick, prolific starts layered over emotionally saturated, slowly built textures. That's a symbolic description, not a cause. The chart doesn't make the music; it happens to describe a rhythm people already hear in it. Venus had already ingressed into Aries by his March 31 birth, so his relating runs warm and headfirst too — reinforcing, rather than softening, all that Aries drive.
 
 
 ![Comparison of Aries Sun quick-ignition traits versus Scorpio cluster deep-intensity traits](/images/blog/jack-antonoff-birth-chart-i0-en.svg)
@@ -82,7 +82,7 @@ A few popular takes repeat the same avoidable errors. Here's each one set agains
 | Sun in Aries | Starts fast, leads, initiates | Fire / natural 1st house | Rapid project starts, quick iteration, first moves |
 | Scorpio cluster (Mars, Saturn, Pluto) | Goes deep, holds intensity privately | Water / natural 8th house | Emotional saturation kept below the surface |
 | Mercury & Pallas in Aries | Thinks and strategizes in fast, direct bursts | Fire / natural 3rd house | Blunt, quick, idea-first communication |
-| Pisces cluster (Venus, Chiron) | Softens relating with empathy and imagination | Water / natural 12th house | Tender, dreamy, layered vulnerability |
+| Venus in Aries | Relates fast, warm, and headfirst | Fire / natural 1st house | Direct affection, quick to pursue |
 | Jupiter in Capricorn | Builds and expands through steady structure | Earth / natural 10th house | Ambition expressed through disciplined output |
 
 ## Common Questions About the Jack Antonoff Birth Chart
