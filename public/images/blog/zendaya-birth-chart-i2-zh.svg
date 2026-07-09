@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 196" role="img" aria-label="">
+  <defs>
+    <linearGradient id="zendayabirthchart2zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="zendayabirthchart2zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="zendayabirthchart2zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="zendayabirthchart2zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="zendayabirthchart2zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="zendayabirthchart2zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="url(#zendayabirthchart2zh-panel)"/>
+  <ellipse cx="198" cy="47" rx="380" ry="67" fill="url(#zendayabirthchart2zh-neb1)"/>
+  <ellipse cx="623" cy="157" rx="334" ry="63" fill="url(#zendayabirthchart2zh-neb2)"/>
+  <circle cx="594.9" cy="118.6" r="1.67" fill="#cfc8ea" opacity="0.31"/><circle cx="22.6" cy="115.0" r="1.53" fill="#cfc8ea" opacity="0.25"/><circle cx="356.2" cy="82.9" r="1.07" fill="#cfc8ea" opacity="0.52"/><circle cx="97.3" cy="18.2" r="1.58" fill="#cfc8ea" opacity="0.13"/><circle cx="520.2" cy="25.5" r="1.01" fill="#cfc8ea" opacity="0.36"/><circle cx="364.2" cy="99.2" r="1.44" fill="#cfc8ea" opacity="0.46"/><circle cx="314.7" cy="67.0" r="1.12" fill="#cfc8ea" opacity="0.37"/><circle cx="28.9" cy="72.6" r="1.48" fill="#cfc8ea" opacity="0.24"/><circle cx="457.3" cy="40.8" r="0.92" fill="#cfc8ea" opacity="0.17"/><circle cx="649.6" cy="61.7" r="0.40" fill="#cfc8ea" opacity="0.21"/><circle cx="679.2" cy="175.0" r="1.04" fill="#cfc8ea" opacity="0.21"/><circle cx="551.7" cy="116.6" r="0.55" fill="#cfc8ea" opacity="0.15"/><circle cx="105.2" cy="135.3" r="1.67" fill="#cfc8ea" opacity="0.41"/><circle cx="352.5" cy="130.7" r="0.47" fill="#cfc8ea" opacity="0.42"/><circle cx="284.2" cy="104.2" r="0.73" fill="#cfc8ea" opacity="0.47"/><circle cx="235.2" cy="22.8" r="1.42" fill="#cfc8ea" opacity="0.49"/><circle cx="514.0" cy="21.0" r="0.61" fill="#cfc8ea" opacity="0.27"/><path d="M 245.656841089949 140.7 L 246.3 143.8 L 249.4 144.44755344837904 L 246.3 145.0 L 245.656841089949 148.2 L 245.1 145.0 L 241.9 144.44755344837904 L 245.1 143.8 Z" fill="#f6e6bf" opacity="0.5743857069406658"/><path d="M 112.25568355433643 118.3 L 112.8 121.3 L 115.8 121.89056140184402 L 112.8 122.5 L 112.25568355433643 125.4 L 111.7 122.5 L 108.7 121.89056140184402 L 111.7 121.3 Z" fill="#f6e6bf" opacity="0.5578571496065706"/><path d="M 605.1200922485441 59.7 L 605.7 62.7 L 608.6 63.247882790863514 L 605.7 63.8 L 605.1200922485441 66.8 L 604.6 63.8 L 601.6 63.247882790863514 L 604.6 62.7 Z" fill="#f6e6bf" opacity="0.7598402079660445"/><path d="M 726.9771084170789 93.4 L 727.5 96.3 L 730.5 96.90278978645802 L 727.5 97.5 L 726.9771084170789 100.4 L 726.4 97.5 L 723.5 96.90278978645802 L 726.4 96.3 Z" fill="#f6e6bf" opacity="0.7706905405502766"/><path d="M 119.9337476696819 18.1 L 120.3 20.3 L 122.5 20.737852655351162 L 120.3 21.2 L 119.9337476696819 23.3 L 119.5 21.2 L 117.3 20.737852655351162 L 119.5 20.3 Z" fill="#f6e6bf" opacity="0.6251390347722918"/><path d="M 314.7 67.0 L 28.9 72.6 L 649.6 61.7 L 105.2 135.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="182" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 176.8 L 16.5 179.5 L 19.2 180 L 16.5 180.5 L 16 183.2 L 15.5 180.5 L 12.8 180 L 15.5 179.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 176.8 L 744.5 179.5 L 747.2 180 L 744.5 180.5 L 744 183.2 L 743.5 180.5 L 740.8 180 L 743.5 179.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#zendayabirthchart2zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#zendayabirthchart2zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="72" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="72" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 81.6 L 48.3 84.5 L 51.1 85 L 48.3 85.5 L 47.75 88.4 L 47.2 85.5 L 44.4 85 L 47.2 84.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 112.5 L 380.7 116.3 L 384.5 117 L 380.7 117.7 L 380 121.5 L 379.3 117.7 L 375.5 117 L 379.3 116.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="130" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="130" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 139.6 L 48.3 142.5 L 51.1 143 L 48.3 143.5 L 47.75 146.4 L 47.2 143.5 L 44.4 143 L 47.2 142.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 280.025 167.4 L 280.4 169.6 L 282.6 170 L 280.4 170.4 L 280.025 172.6 L 279.6 170.4 L 277.4 170 L 279.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="174" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 167.4 L 480.4 169.6 L 482.6 170 L 480.4 170.4 L 479.975 172.6 L 479.6 170.4 L 477.4 170 L 479.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
