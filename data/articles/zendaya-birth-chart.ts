@@ -23,7 +23,7 @@ export const zendayaBirthChartEn: WikiArticle = {
 
 ## What Is Zendaya's Birth Chart?
 
-A Zendaya birth chart is **a snapshot of the sky at her birth, read for archetypal themes** rather than a record of her achievements. Born September 1, 1996, she carries a Virgo Sun in the tropical zodiac that most Western astrologers use — the *rashi*, or zodiac sign, that colors her core expression. Because her exact birth time is not public, the ascendant (*lagna*) and the house placements stay uncertain, so any honest Zendaya birth chart works best as an interpretive sketch, not a finished portrait. It sits alongside the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which explains how the pieces fit together.
+A Zendaya birth chart is **a snapshot of the sky at her birth, read for archetypal themes** rather than a record of her achievements. Born September 1, 1996, she carries a Virgo Sun in the tropical zodiac that most Western astrologers use — the *rashi*, or zodiac sign, that colors her core expression. Because her exact birth time is not publicly confirmed, the ascendant (*lagna*) and the house placements stay uncertain, so any honest Zendaya birth chart works best as an interpretive sketch, not a finished portrait. It sits alongside the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which explains how the pieces fit together.
 
 - Reads each placement as a symbolic theme, not proof of biography
 - Anchored on a widely cited Virgo Sun, with finer detail depending on birth time
@@ -72,7 +72,7 @@ To read a Zendaya birth chart the way this page suggests, treat every placement 
 The popular versions of a Zendaya birth chart go wrong in a few predictable ways, and each one blurs symbolic reading with biographical claim. Here are the Zendaya birth chart mistakes worth correcting:
 
 1. **Misreading: this chart explains her fame.** Reality: astrology describes symbolic tendencies and cannot account for talent, timing, or opportunity.
-2. **Misreading: her placements are confirmed fact.** Reality: with no public birth time, the ascendant and houses in a Zendaya birth chart are educated guesses at best.
+2. **Misreading: her placements are confirmed fact.** Reality: with no publicly confirmed birth time, the ascendant and houses in a Zendaya birth chart are educated guesses at best.
 3. **Misreading: the Western and Vedic versions of this chart should agree.** Reality: they use different zodiacs and often name different signs, which is expected rather than an error.
 4. **Misreading: a "difficult" placement predicts trouble.** Reality: classical Jyotish frames hard placements as areas of growth, not as sentences to be served.
 
@@ -96,7 +96,7 @@ Born September 1, 1996, she has a Virgo Sun in the tropical zodiac most Western 
 
 **Do we actually know Zendaya's ascendant?**
 
-Not reliably, because her exact birth time is not public and the ascendant depends on it. Any stated ascendant you see online is an estimate rather than a confirmed placement.
+Not reliably, because her exact birth time is not publicly confirmed and the ascendant depends on it. Any stated ascendant you see online is an estimate rather than a confirmed placement.
 
 **Can a birth chart explain Zendaya's success?**
 
