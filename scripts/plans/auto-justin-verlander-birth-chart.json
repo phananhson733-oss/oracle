@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "justin-verlander-birth-chart": {
+      "hero": {
+        "prompt": "A midnight shoreline where calm bioluminescent sea currents dissolve into an electrically charged sky, soft glowing water meeting cool luminous air at a razor-thin horizon, two elemental forces — fluid and crystalline — held in quiet dialogue across one seamless indigo expanse, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Bioluminescent sea meets charged sky at midnight — a seamless horizon evoking the Pisces–Aquarius water–air blend"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Cusp Signature in a Birth Chart",
+          "titleEn": "Five Steps to Spot the Pisces–Aquarius Cusp Signature",
+          "altEn": "Five-step sequence for reading a Pisces–Aquarius cusp signature in a birth chart",
+          "items": [
+            {
+              "nameEn": "Check the Sun's Degree",
+              "subEn": "A Sun in the final degrees of Pisces, born mid-to-late February, sits close enough to carry clear Aquarian coloring"
+            },
+            {
+              "nameEn": "Listen for the Water–Air Mix",
+              "subEn": "Intuitive, feeling-led choices delivered with unusually detached, level, matter-of-fact calm"
+            },
+            {
+              "nameEn": "Watch Behavior Under Pressure",
+              "subEn": "The Pisces read stays imaginative and fluid; the Aquarian edge keeps it composed and strategic instead of flooded"
+            },
+            {
+              "nameEn": "Notice the Independence Streak",
+              "subEn": "A private, do-it-my-own-way discipline that quietly resists the crowd while still reading the crowd accurately"
+            },
+            {
+              "nameEn": "Anchor on the Sun, Not the Clock",
+              "subEn": "With no verified birth time, weigh Sun-sign resonance over Ascendant or Moon-degree guesses that need exact timing"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Pisces–Aquarius Cusp vs a Textbook Pisces Sun: What Actually Shifts",
+          "titleEn": "Plain Pisces Sun vs Pisces–Aquarius Cusp",
+          "altEn": "Side-by-side comparison of a textbook Pisces Sun and the Pisces–Aquarius cusp signature",
+          "columns": [
+            {
+              "nameEn": "Plain Pisces Sun",
+              "linesEn": [
+                "Leads with empathy, absorption, and emotional flow",
+                "Warm and adaptable; easily colored by whoever is in the room",
+                "Merges with surroundings and feels its way forward",
+                "Can be swept along by collective pressure"
+              ]
+            },
+            {
+              "nameEn": "Pisces–Aquarius Cusp",
+              "linesEn": [
+                "Intuition aimed with cooler, analytical precision",
+                "Aquarian edge adds distance, structure, and a contrarian streak",
+                "Holds sensitivity at arm's length and puts it to work",
+                "Steps back, names what it senses, then acts on its own terms"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
