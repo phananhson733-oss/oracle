@@ -1,0 +1,101 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jack-antonoff-birth-chart": {
+      "hero": {
+        "prompt": "A lone volcanic coastline at deep twilight where slow amber-scarlet lava streams descend obsidian cliffs and dissolve into a black ocean that pulses with teal bioluminescence beneath the surface, fire and water sharing one unbroken shoreline, the night sky above dissolving into deep indigo mist, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Volcanic coastline at twilight where glowing lava flows meet a deep dark ocean pulsing with teal light"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Aries Sun vs Scorpio Cluster: Two Engines Pulling in Different Directions",
+          "titleEn": "Aries Sun vs. Scorpio Cluster",
+          "altEn": "Comparison of Aries Sun quick-ignition traits versus Scorpio cluster deep-intensity traits",
+          "columns": [
+            {
+              "nameEn": "Aries Sun",
+              "linesEn": [
+                "Works like an ignition switch",
+                "Starts things, moves first",
+                "Thrives on momentum and quick iteration",
+                "Fast, prolific starts",
+                "Sacrifices depth for clean speed"
+              ]
+            },
+            {
+              "nameEn": "Scorpio Cluster (Mars, Saturn, Pluto)",
+              "linesEn": [
+                "Works in the opposite direction",
+                "Goes deep, holds intensity",
+                "Processes slowly under the surface",
+                "Patient marination and staying power",
+                "Sacrifices speed for emotional saturation"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read an Aries Sun–Scorpio Moon Chart",
+          "titleEn": "5 Steps to Read an Aries–Scorpio Chart",
+          "altEn": "Five-step guide to reading an Aries Sun–Scorpio Moon birth chart by sign emphasis rather than houses",
+          "items": [
+            {
+              "nameEn": "Count the clusters, not just the Sun",
+              "subEn": "Three or more planets in one sign signal a stellium that outweighs any single placement"
+            },
+            {
+              "nameEn": "Read the Sun as the starting move",
+              "subEn": "Aries planets show fast initiation — beginning many projects at once and leading collaborations"
+            },
+            {
+              "nameEn": "Read Scorpio planets as depth and privacy",
+              "subEn": "Mars, Saturn, and Pluto in Scorpio point to intensity that stays mostly below the surface"
+            },
+            {
+              "nameEn": "Flag time-dependent placements as unknown",
+              "subEn": "Rising sign, Midheaven, and the house layer all need a verified birth time — treat stated ones as guesses"
+            },
+            {
+              "nameEn": "Check the Sun sign against the birth date",
+              "subEn": "March 31 is unambiguously Aries in the tropical zodiac; a Capricorn label signals a different system or a mistake"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings to Avoid",
+          "altEn": "Four common errors when reading the Jack Antonoff birth chart and what the placements actually support",
+          "items": [
+            {
+              "nameEn": "\"He's a Capricorn\"",
+              "subEn": "A March 31, 1984 birth is unambiguously Aries in the tropical zodiac; the Capricorn label comes from a different system"
+            },
+            {
+              "nameEn": "\"The Scorpio Moon explains everything\"",
+              "subEn": "Without a birth time the Moon's exact sign can't be confirmed; Scorpio weight comes from Mars, Saturn, and Pluto"
+            },
+            {
+              "nameEn": "\"The Sun sign is the whole story\"",
+              "subEn": "Sun-only takes miss the stellium tension between Aries fire and Scorpio water that makes the chart worth reading"
+            },
+            {
+              "nameEn": "\"No birth time means no reading\"",
+              "subEn": "Sign-level placements are still solid ground; only the house and Rising layer is genuinely off-limits"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
