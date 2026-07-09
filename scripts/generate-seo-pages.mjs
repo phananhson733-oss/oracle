@@ -844,6 +844,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'justin-verlander-birth-chart',
+  'jack-antonoff-birth-chart',
   'coco-gauff-zodiac-sign',
   'mo-salah-zodiac-sign',
   'novak-djokovic-zodiac-sign',
