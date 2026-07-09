@@ -843,6 +843,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'kate-upton-birth-chart',
   'ayo-edebiri-birth-chart',
   'justin-verlander-birth-chart',
   'jack-antonoff-birth-chart',
