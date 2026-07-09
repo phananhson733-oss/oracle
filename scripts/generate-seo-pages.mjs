@@ -206,6 +206,7 @@ const buildHead = ({
   lang,
   title,
   description,
+  metaDescription,
   url,
   canonical,
   robots,
@@ -215,7 +216,7 @@ const buildHead = ({
   ogImage,
 }) => {
   // 清洗未渲染的 markdown 标记（如 summary 里的 *书名*），再截断，避免脏摘要进 SERP。
-  const desc = truncate(stripInlineMarkdown(description || ''));
+  const desc = truncate(stripInlineMarkdown(metaDescription || description || ''));
   // T3：per-page OG 图（文章传 per-article PNG），缺省回退全站通用图。爬虫不跑 JS，
   // 必须把图写进静态 stub head，否则社媒分享卡片只会拿到通用图。
   const pageOgImage = ogImage || ogImageUrl;
@@ -319,11 +320,11 @@ ${bootstrapScript}<main>
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, heading, description, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, heading, description, metaDescription, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
-${buildHead({ lang, title, description, url, canonical, robots, ogType, alternates, schema, ogImage })}
+${buildHead({ lang, title, description, metaDescription, url, canonical, robots, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
 ${buildBody({ lang, title, heading, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt })}
@@ -1960,7 +1961,18 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
   const articleSig = (lang, slug) => {
     const s = articleSummaries[lang].get(slug);
     return s
-      ? ['article', lang, slug, s.date || '', s.title || '', s.description || '', s.image || '', ...(s.keywords || [])]
+      ? [
+          'article',
+          lang,
+          slug,
+          s.date || '',
+          s.title || '',
+          s.seoTitle || '',
+          s.description || '',
+          s.seoDescription || '',
+          s.image || '',
+          ...(s.keywords || []),
+        ]
       : ['article', lang, slug];
   };
 
@@ -2030,8 +2042,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     await writeHtmlPage({
       outputPath: path.join(publicDir, lang, 'wiki', slug, 'index.html'),
       lang,
-      title: article.title,
+      title: article.seoTitle || article.title,
+      heading: article.title,
       description: article.description || config.wikiDescription,
+      metaDescription: article.seoDescription || article.description || config.wikiDescription,
       url,
       // canonical 收口：article.seo.canonicalPath 指向 winner 长文时，静态 stub 的 <link canonical>
       // 也发出该 URL（与 sitemap 排除 + 运行时 WikiArticleDetailPage 保持一致，消除 stub 自指 vs

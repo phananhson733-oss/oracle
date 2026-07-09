@@ -778,7 +778,9 @@ export const getArticleSummaries = (lang: Language): WikiArticleSummary[] => {
     ({
       slug,
       title,
+      seoTitle,
       description,
+      seoDescription,
       authorId,
       date,
       image,
@@ -787,7 +789,9 @@ export const getArticleSummaries = (lang: Language): WikiArticleSummary[] => {
     }) => ({
       slug,
       title,
+      seoTitle,
       description,
+      seoDescription,
       authorId,
       date,
       image,

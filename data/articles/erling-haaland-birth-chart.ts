@@ -7,7 +7,9 @@ export const erlingHaalandBirthChartEn: WikiArticle = {
   image: "/images/blog/erling-haaland-birth-chart.jpg",
   image_alt: "A Nordic fjord horizon where cool late-Cancer silver-blue water-light meets the first warm gold of Leo at the waterline, a sun on the cusp",
   title: "Reading the Erling Haaland Birth Chart: A Late-Cancer Sun on the Edge of Leo",
+  seoTitle: "Erling Haaland Birth Chart Cancer Cusp",
   description: "The Haaland Birth Chart is a symbolic reading of Erling Haaland's natal placements, anchored on a late-Cancer Sun sitting near the Cancer-Leo cusp",
+  seoDescription: "Curious about Erling Haaland's birth chart? See his late-Cancer Sun, birth-time caveat, and 2026 Jupiter timing without match predictions.",
   authorId: "marcus-orion",
   date: "2026-06-18",
   schema: "Article",
@@ -30,6 +32,8 @@ The Haaland Birth Chart is **a symbolic reading of Erling Haaland's natal placem
 - His Sun degree blends Cancer's tenacity with the finishing flair often read into the neighbouring Leo, a useful frame for a striker's temperament
 
 This is a symbolic, educational reading, not a prediction of results or a betting guide.
+
+If you want to compare the method with your own verified data, start with the [free birth chart calculator](/en/birth-chart-calculator). If the Moon is the placement you want to isolate first, the [moon sign calculator](/en/moon-sign-calculator) keeps that check separate from any unverified birth-time claims.
 
 ## Why It Matters for Self-Awareness
 
@@ -87,13 +91,29 @@ His documented birth date of 21 July 2000 places the Sun in late Cancer, roughly
 
 No, because his birth time is not on public record. Without a verified time the Moon, Ascendant, and house placements cannot be calculated, so this erling haaland astrology reading stays on the Sun and the documented date rather than inventing them.
 
-**Does Jupiter in Cancer mean a big World Cup for Haaland?**
+**What does Jupiter in Cancer mean for Haaland?**
 
 No. Jupiter transits Cancer until about 30 June 2026 and then enters Leo for the July knockouts, and a transit times a broad theme rather than any fixture. Norway world cup astrology aside, the chart predicts no result and asserts nothing about whether he plays.
 
 **Is this a prediction of how Norway or Haaland will do?**
 
 No, this is symbolic and educational astrology. Norway has qualified for 2026, but the reading makes no claim about how the team or Haaland will fare, and the outcome of any match rests on the players rather than the planets.
+
+**What birth data is verified for Erling Haaland?**
+
+His public record gives the date and birthplace: 21 July 2000 in Leeds, England. That is enough to read the Sun sign and cusp position, but not enough to confirm the Moon degree, Ascendant, or houses.
+
+**How close is Haaland's Sun to Leo?**
+
+His Sun sits in the final degrees of Cancer, close to the Leo boundary. That supports a Cancer-Leo cusp reading, but it does not turn the Sun into Leo.
+
+**Why does birth time matter for this chart?**
+
+Birth time sets the Ascendant, house cusps, and a more exact Moon position. Without it, a responsible reading keeps those parts open instead of inventing details.
+
+**Can I compare this method with my own chart?**
+
+Yes. Generate your chart with a reliable calculator, separate verified placements from unknown ones, and read the Sun as a temperament frame rather than a result forecast.
 
 ## Reflection Prompts
 
@@ -107,7 +127,7 @@ No, this is symbolic and educational astrology. Norway has qualified for 2026, b
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun degree and read it the way this piece reads the Haaland birth chart, as a description of temperament rather than a verdict. You get a clear view of where your Sun sits, whether it leans toward a cusp, and, more quietly, a way to tell a genuine inner pattern apart from a daily-horoscope label.
+[Open the free birth chart calculator](/en/birth-chart-calculator) to find your own Sun degree and read it the way this piece reads the Haaland birth chart, as a description of temperament rather than a verdict. If you have an exact birth time, [check your rising sign](/en/rising-sign-calculator) too, then keep verified placements separate from any unknowns.
 
 ## Sources
 
