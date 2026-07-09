@@ -7,7 +7,7 @@ export const kateUptonBirthChartEn: WikiArticle = {
   image: "/images/blog/kate-upton-birth-chart.jpg",
   image_alt: "Twin star clusters, crescent moon on still water, and gilded mountain ridge — Kate Upton's Gemini–Libra–Virgo natal trio in one sky",
   title: "What Kate Upton's Birth Chart Says Beyond the Gemini Label",
-  description: "Kate Upton's Gemini–Libra–Virgo Natal Signature is the combined reading of her Sun, Moon, and Rising sign — a Gemini Sun, Libra Moon, and Virgo Rising read as one system rather than three separate labels.",
+  description: "Kate Upton's Gemini–Libra–Virgo Natal Signature is the combined reading of her Sun, Moon, and Rising sign — a Gemini Sun, plus the Libra Moon and Virgo Rising commonly attributed to her, read as one system rather than three separate labels.",
   authorId: "marcus-orion",
   date: "2026-07-09",
   schema: "Article",
@@ -23,7 +23,7 @@ export const kateUptonBirthChartEn: WikiArticle = {
 
 ## What Is Kate Upton's Gemini–Libra–Virgo Natal Signature?
 
-Kate Upton's Gemini–Libra–Virgo Natal Signature is the combined reading of her Sun, Moon, and Rising sign — **a Gemini Sun, Libra Moon, and Virgo Rising read as one system** rather than three separate labels. Born June 10, 1992, she carries a Gemini Sun for identity and mental style; because she has no reliably public birth time, the Libra Moon (emotional register) and Virgo Rising (public presentation) that fans commonly pair with her chart are best treated as unconfirmed rather than established fact. Read together, the way any solid [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) recommends, these placements modulate one another. The Kate Upton birth chart is usually flattened into a single Gemini headline, yet the real interpretive value sits in that interaction: a public persona that reads as quick, sociable, and image-aware while staying quietly disciplined. This describes symbolic pattern; it does not predict her choices, relationships, or outcomes.
+Kate Upton's Gemini–Libra–Virgo Natal Signature is the combined reading of her Sun, Moon, and Rising sign — **a Gemini Sun, plus the Libra Moon and Virgo Rising commonly attributed to her, read as one system** rather than three separate labels. Born June 10, 1992, she carries a Gemini Sun for identity and mental style; because she has no reliably public birth time, the Libra Moon (emotional register) and Virgo Rising (public presentation) that fans commonly pair with her chart are best treated as unconfirmed rather than established fact. Read together, the way any solid [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) recommends, these placements modulate one another. The Kate Upton birth chart is usually flattened into a single Gemini headline, yet the real interpretive value sits in that interaction: a public persona that reads as quick, sociable, and image-aware while staying quietly disciplined. This describes symbolic pattern; it does not predict her choices, relationships, or outcomes.
 
 - Gemini Sun drives versatility, quick wit, and a communicative public voice
 - Libra Moon filters feeling through partnership, fairness, and aesthetic balance
