@@ -1,5 +1,5 @@
 // INPUT: AI 内容生成服务（DeepSeek chat/reasoning，单语言输出与合盘综述/成长焦点分区 mock）。
-// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存、JSON 修复、schema 校验与旧版日运/概览结构转换）。
+// OUTPUT: 导出 AI 调用服务（snake_case 输出、合盘成长焦点字段，含缓存、JSON 修复、schema 校验与旧版日运/概览结构转换）；所有 provider 调用经 aiUsageService tracker 落 ai_usage_log。
 // POS: AI 生成服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -13,6 +13,7 @@ import type {
 } from "../types/api.js";
 import { logger } from "../utils/logger.js";
 import { detectDominantLang } from "../utils/lang.js";
+import { createAiCallTracker } from "./aiUsageService.js";
 import { isLifeNarrativeContent } from "./transit/narrativeContext.js";
 
 const getDeepSeekApiKey = () => process.env.DEEPSEEK_API_KEY;
@@ -847,6 +848,12 @@ async function reformatNatalOverviewContent(
     },
   };
 
+  const track = createAiCallTracker({
+    promptId: "natal-overview",
+    phase: "reformat",
+    model: "deepseek-chat",
+    lang: raw.lang,
+  });
   try {
     const response = await fetchWithTimeout(
       `${baseUrl}/v1/chat/completions`,
@@ -885,14 +892,19 @@ async function reformatNatalOverviewContent(
       timeoutMs,
     );
 
-    if (!response.ok) return null;
+    if (!response.ok) {
+      track.failure(`http_${response.status}`);
+      return null;
+    }
     const data = await response.json();
+    track.success(data);
     const text = data.choices?.[0]?.message?.content;
     if (!text) return null;
     const extracted = extractJsonObject(text) || text;
     const parsed = JSON.parse(extracted) as unknown;
     return normalizeLocalizedContent(parsed, raw.lang);
   } catch {
+    track.failure("exception");
     return null;
   }
 }
@@ -926,6 +938,12 @@ async function reformatDailyForecastContent(
     },
   };
 
+  const track = createAiCallTracker({
+    promptId: "daily-forecast",
+    phase: "reformat",
+    model: "deepseek-chat",
+    lang: raw.lang,
+  });
   try {
     const response = await fetchWithTimeout(
       `${baseUrl}/v1/chat/completions`,
@@ -966,24 +984,35 @@ async function reformatDailyForecastContent(
       timeoutMs,
     );
 
-    if (!response.ok) return null;
+    if (!response.ok) {
+      track.failure(`http_${response.status}`);
+      return null;
+    }
     const data = await response.json();
+    track.success(data);
     const text = data.choices?.[0]?.message?.content;
     if (!text) return null;
     const extracted = extractJsonObject(text) || text;
     const parsed = JSON.parse(extracted) as unknown;
     return normalizeLocalizedContent(parsed, raw.lang);
   } catch {
+    track.failure("exception");
     return null;
   }
 }
 
 async function repairJsonWithAI(
+  promptId: string,
   jsonText: string,
   apiKey: string,
   baseUrl: string,
   timeoutMs: number,
 ): Promise<string | null> {
+  const track = createAiCallTracker({
+    promptId,
+    phase: "repair",
+    model: "deepseek-chat",
+  });
   try {
     const response = await fetchWithTimeout(
       `${baseUrl}/v1/chat/completions`,
@@ -1014,13 +1043,18 @@ async function repairJsonWithAI(
       timeoutMs,
     );
 
-    if (!response.ok) return null;
+    if (!response.ok) {
+      track.failure(`http_${response.status}`);
+      return null;
+    }
     const data = await response.json();
+    track.success(data);
     const text = data.choices?.[0]?.message?.content;
     if (!text) return null;
     const extracted = extractJsonObject(text) || text;
     return extracted;
   } catch {
+    track.failure("exception");
     return null;
   }
 }
@@ -1125,6 +1159,12 @@ async function generateAIContentInternal<T>(
   const useReasoning = REASONING_PROMPTS.includes(options.promptId);
   const model = useReasoning ? "deepseek-reasoner" : "deepseek-chat";
   const baseUrl = getDeepSeekBaseUrl();
+  const track = createAiCallTracker({
+    promptId: options.promptId,
+    phase: "generate",
+    model,
+    lang,
+  });
 
   try {
     const timeoutMs = options.timeoutMs ?? AI_TIMEOUT_MS;
@@ -1152,10 +1192,12 @@ async function generateAIContentInternal<T>(
 
     if (!response.ok) {
       const errText = await response.text();
+      track.failure(`http_${response.status}`);
       throw new Error(`DeepSeek API error: ${response.status} - ${errText}`);
     }
 
     const data = await response.json();
+    track.success(data);
     const text = data.choices?.[0]?.message?.content;
 
     if (!text) {
@@ -1188,6 +1230,7 @@ async function generateAIContentInternal<T>(
       parsed = JSON.parse(jsonStr) as unknown;
     } catch (parseError) {
       const repaired = await repairJsonWithAI(
+        options.promptId,
         jsonStr,
         apiKey,
         baseUrl,
@@ -1294,6 +1337,7 @@ async function generateAIContentInternal<T>(
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     const reason = resolveMockReason(error);
+    track.failure(reason ?? "error");
     if (!allowMock) {
       logger.error("[AI] generation failed", {
         promptId: options.promptId,

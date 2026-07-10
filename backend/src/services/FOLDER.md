@@ -28,6 +28,8 @@
 - subscriptionReconciler.test.ts｜地位：对账核心单测｜功能：覆盖缺 userId 按 email 反查新建、无法映射不写库、已有行更新 + 状态映射（ACTIVE/IN_TRIAL/UNPAID/CANCELLED）。
 - subscriptionReconcilerDriver.ts｜地位：对账驱动器（P0）｜功能：导出 `reconcileFromSubscriptionObject`(对账单个订阅对象)、`reconcileAirwallexSubscriptionById`(按 id 拉详情后对账，webhook invoice.* 用)、`reconcileAllAirwallexSubscriptions`(全量分页扫描→取 email→对账，聚合 {scanned,reconciled,skipped}，单条失败隔离，支持 dryRun)。供回填脚本 + webhook handler 调用。
 - subscriptionReconcilerDriver.test.ts｜地位：驱动器单测｜功能：覆盖取 email/plan 映射(MONTH/YEAR)/聚合/单条失败隔离/无法映射记 skipped/dryRun 透传/分页 6 分支。
+- aiUsageService.ts｜地位：AI token 用量审计服务｜功能：解析 DeepSeek usage 计数（`extractDeepSeekUsage`）、`createAiCallTracker` 每次 provider 调用恰记一行、fire-and-forget 写入 `ai_usage_log`（migration 013）；失败仅日志、绝不阻塞 AI 主路径；不存 prompt/输出原文（无 PII）。
+- aiUsageService.test.ts｜地位：AI 用量审计单测｜功能：覆盖 usage 解析（缺省/畸形→null、可选计数补 null）、snake_case 落库、error 无 usage 落库、未配置 Supabase 静默跳过、insert 失败不上抛、tracker 成功/失败只记一次。
 - proTrialService.ts｜地位：手动 Pro 试用激活服务｜功能：按 normalized email SHA-256 判断 Airwallex-backed Pro trial 资格、记录 `pro_trial_claims`、实现试用与首次折扣互斥。
 - proTrialService.test.ts｜地位：手动 Pro 试用激活单测｜功能：覆盖注册走 `create_user_without_trial`、新用户资格允许、active subscription/legacy trial/已有 claim 拒绝、claim 落库后标记首次折扣已用。
 - entitlementServiceV2.proTrial.test.ts｜地位：Pro 试用权益单测｜功能：覆盖 `trialing` 订阅授予 Pro 权益、过期 trial 不授予权益、可试用时隐藏首次折扣。
@@ -40,6 +42,7 @@
 - newsletterWeekly.test.ts｜地位：周报/月报编排单测｜功能：覆盖 ISO 周/月周期计算 + cadence 派发 / issue 富 content 取生成幂等（含 monthly promptId + 空 sky_events 仍发） / AI 缺字段拒发 / dryRun / resend 未配置降级 / 周报发送+token 回填+last_weekly_sent_at+富视图模型 / 月报 last_monthly_sent_at+月副标 / 单封失败隔离 17 分支。
 
 近期更新
+- AI token 用量落库：新增 aiUsageService + `ai_usage_log` 表（migration 013），ai.ts 的 4 个 DeepSeek 调用点（generate/reformat×2/repair）经 tracker 记录 token/耗时/状态，可按 promptId 审计 token 消耗与泄露。
 - 手动 Pro 试用激活：新增 proTrialService 与回归测试，注册不再自动发 Pro，Airwallex-backed trial claim 按邮箱哈希防重复并与首次折扣互斥；权益层以 `trialing` 订阅授予 Pro 权益，对账层补 `IN_TRIAL` → `trialing` 覆盖。
 - geocoding 支持中英文查询、逗号分隔解析与省/国过滤兜底。
 - 权益 V2 增加报告折扣字段并支持积分购买落库。
