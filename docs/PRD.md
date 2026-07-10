@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.47
-> **Last Updated**: 2026-07-02
+> **Version**: 2.48
+> **Last Updated**: 2026-07-10
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -1056,6 +1056,25 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | created_at | TIMESTAMPTZ | 记录创建时间 |
 
 > 设计意图：新版 Pro 试用必须由用户手动点击试用 CTA，并通过 Airwallex Billing Checkout 填写付款信息后才记录。`email_hash` 防止同邮箱重复领取，`airwallex_subscription_id` 让 checkout confirm/webhook/reconciler 幂等收敛。
+
+**ai_usage_log** — LLM token 用量审计（via migration 013）
+| Column | Type | 说明 |
+|--------|------|------|
+| id | UUID | 主键 |
+| prompt_id | TEXT | 归因功能（prompts/manager.ts 注册的 promptId） |
+| phase | VARCHAR(20) | generate / reformat / repair（CHECK 约束） |
+| model | TEXT | deepseek-chat / deepseek-reasoner |
+| status | VARCHAR(10) | success / error（CHECK 约束） |
+| prompt_tokens / completion_tokens / total_tokens | INTEGER | DeepSeek 返回的 token 计数（error 时为 NULL） |
+| cache_hit_tokens / cache_miss_tokens | INTEGER | DeepSeek prompt cache 命中/未命中 token |
+| reasoning_tokens | INTEGER | reasoner 模型思维链 token |
+| duration_ms | INTEGER | 调用耗时 |
+| lang | VARCHAR(10) | 请求语言 |
+| request_id | TEXT | 不透明请求关联 ID |
+| error_code | TEXT | http_<status> / timeout / invalid_json / exception 等 |
+| created_at | TIMESTAMPTZ | 调用时间 |
+
+> 设计意图：按 prompt_id 归因 token 消耗、审计异常放量（"token 泄露"）。无任何 PII（不存 prompt/输出原文）。写入由 `services/aiUsageService.ts` fire-and-forget 完成，失败仅记日志、绝不影响 AI 请求主路径。RLS 仅 service role。Redis 缓存命中不产生行（无 token 消耗）。
 
 **saved_readings** — 已保存解读（via migration 009，#24）
 | Column | Type | 说明 |
