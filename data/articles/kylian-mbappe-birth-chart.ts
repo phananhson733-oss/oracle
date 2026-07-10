@@ -4,6 +4,10 @@ import type { WikiArticle } from "../../types";
 
 export const kylianMbappeBirthChartEn: WikiArticle = {
   slug: "kylian-mbappe-birth-chart",
+  // canonical 收口（P1-1）：第 3 个同题 Mbappé 页（正确 slug，autopilot 07-08 重授）。
+  // 与已有 mbappe-birth-chart（winner，EN+ZH）+ kylian-mbapp-birth-chart（截断 slug）
+  // 一并合并排名信号：canonical 指向 winner + 移出 sitemap（页面仍在线服务）。
+  seo: { canonicalPath: "/wiki/mbappe-birth-chart", sitemap: false },
   image: "/images/blog/kylian-mbappe-birth-chart.jpg",
   image_alt: "Golden comet blazing across a deep indigo sky with teal nebulae — Kylian Mbappe birth chart",
   title: "What the Kylian Mbappe Birth Chart Shows, and What It Can't Prove",

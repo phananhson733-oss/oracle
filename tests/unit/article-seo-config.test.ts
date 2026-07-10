@@ -9,6 +9,7 @@
 import { describe, it, expect } from "vitest";
 import { auraMoonVenusRisingBridgeEn } from "../../data/articles/aura-moon-venus-rising-bridge";
 import { kylianMbappBirthChartEn } from "../../data/articles/kylian-mbapp-birth-chart";
+import { kylianMbappeBirthChartEn } from "../../data/articles/kylian-mbappe-birth-chart";
 import { includeInSitemap, resolveCanonicalUrl } from "../../scripts/lib/seo-canonical.mjs";
 
 describe("aura bridge SEO config (T7/T8 — noindex conversion experiment)", () => {
@@ -44,6 +45,24 @@ describe("kylian-mbapp canonical收口 → mbappe-birth-chart", () => {
         lang: "en",
         selfUrl:
           "https://www.astrologywiki.com/en/wiki/kylian-mbapp-birth-chart",
+        siteUrl: "https://www.astrologywiki.com",
+      }),
+    ).toBe("https://www.astrologywiki.com/en/wiki/mbappe-birth-chart");
+  });
+
+  // The correct-slug page (autopilot re-authored it 07-08 once the slugify fix
+  // let it derive kylian-mbappe) is a THIRD dup of the same topic — consolidated
+  // the same way (2026-07-10, wzb: keep mbappe-birth-chart as the single winner).
+  it("also收口s the correct-slug kylian-mbappe → the same winner", () => {
+    const seo = kylianMbappeBirthChartEn.seo;
+    expect(seo?.canonicalPath).toBe("/wiki/mbappe-birth-chart");
+    expect(includeInSitemap(seo)).toBe(false);
+    expect(
+      resolveCanonicalUrl({
+        seo,
+        lang: "en",
+        selfUrl:
+          "https://www.astrologywiki.com/en/wiki/kylian-mbappe-birth-chart",
         siteUrl: "https://www.astrologywiki.com",
       }),
     ).toBe("https://www.astrologywiki.com/en/wiki/mbappe-birth-chart");
