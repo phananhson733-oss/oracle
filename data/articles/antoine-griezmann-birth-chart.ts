@@ -55,7 +55,7 @@ You do not need the birth time to pick out the loudest patterns. Read them as sy
 1. **The Aries opening.** Sun and Mercury both in Aries read as a tendency to act first and talk plainly — a bias toward initiative over deliberation.
 2. **The Gemini engine.** Moon and Mars in Gemini point to emotional restlessness and quick, darting energy; note that a Gemini Moon sits near a boundary, so without a birth time the Moon's exact sign carries some margin.
 3. **The Taurus anchor.** Venus in Taurus suggests steady values and a slow-to-shift sense of what feels safe — the counterweight to all that Aries-Gemini speed.
-4. **The Capricorn cluster.** Uranus, Neptune, and the North Node in Capricorn point toward a generational pull to build something structured and lasting, a directional theme rather than a personal quirk.
+4. **The Capricorn outer-planet backdrop.** Uranus and Neptune in Capricorn provide a generational setting around structure and long-term change; this is a cohort-level theme rather than a personal claim.
 5. **The relationship-facing aspects.** Robert Hand's work on aspects is a reminder that how these placements angle toward each other refines the read — but any angle involving the Ascendant or houses stays off-limits here, since the birth time is unknown.
 
 
@@ -77,7 +77,7 @@ Readers usually arrive already tangled in a few errors that shallow coverage kee
 | Moon in Gemini (approx) | Colors emotional processing | Mutable air | Look for restlessness and quick shifts in mood |
 | Mars in Gemini | Adds quick, adaptable drive | Mutable air | Notice a preference for movement, variety, and rapid shifts of focus |
 | Saturn in Aquarius | Frames discipline and structure | Fixed air | Watch for rule-testing paired with long-game patience |
-| North Node in Capricorn | Marks a growth direction | Cardinal earth | Read as a pull toward building durable structures |
+| Uranus and Neptune in Capricorn | Frame a generational backdrop | Cardinal earth | Read as a shared historical context, not an individual verdict |
 
 ## Questions People Ask About His Birth Chart
 
@@ -106,7 +106,7 @@ Yes, with limits. Planetary signs stay reliable, so personality themes still com
 ## Related Reading
 
 - [Serena Williams birth chart profile](/en/wiki/serena-williams-birth-chart) — a companion celebrity chart to compare interpretive style against.
-- [north and south node meaning guide](/en/wiki/north-node-vs-south-node) — expands on the Capricorn–Cancer nodal axis mentioned above.
+- [north and south node meaning guide](/en/wiki/north-node-vs-south-node) — explains the nodal axis as a general astrology concept.
 - [Antoine Griezmann (Wikipedia)](https://en.wikipedia.org/wiki/Antoine_Griezmann) — source for the birth data behind the read.
 
 This is not a clinical interpretation or mental health advice.
