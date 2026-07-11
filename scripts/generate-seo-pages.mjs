@@ -848,6 +848,7 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'zendaya-birth-chart',
   'quinta-brunson-birth-chart',
   'karolina-muchova-birth-chart',
+  'antoine-griezmann-birth-chart',
   'kate-upton-birth-chart',
   'ayo-edebiri-birth-chart',
   'justin-verlander-birth-chart',
