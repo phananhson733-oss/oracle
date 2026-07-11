@@ -1,0 +1,73 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "sinner-vs-zverev-wimbledon-final-astrology": {
+      "hero": {
+        "prompt": "Two elite tennis players poised mid-rally on an emerald grass court, their silhouettes centered beneath a twilight Centre Court grandstand dissolving into a celestial vault of glowing constellation arcs and drifting planetary halos, golden motion-blur streaks trailing each racket swing, soft teal nebula wash haloing the court perimeter, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Painterly scene of two tennis players rallying on Centre Court beneath a starlit sky for the 2026 Wimbledon Final"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Sinner–Zverev Final in the Chart",
+          "titleEn": "5 Steps to Read the Wimbledon Final Chart",
+          "altEn": "Five-step sequence for reading Sinner vs Zverev Wimbledon Final astrology: Sun, Moon, Mars, transits, self-reflection",
+          "items": [
+            {
+              "nameEn": "Compare the Two Suns",
+              "subEn": "Core identity and competitive drive — fixed resolve vs restless variety"
+            },
+            {
+              "nameEn": "Weigh the Moons",
+              "subEn": "Pressure response — unbothered and self-contained to reactive and expressive"
+            },
+            {
+              "nameEn": "Read Mars for Tempo",
+              "subEn": "Attacking style and momentum — ignites, stalls, or swings back across a set"
+            },
+            {
+              "nameEn": "Filter Through Day's Transits",
+              "subEn": "Shared match-moment atmosphere — buoyant, heavy, or jittery for both players"
+            },
+            {
+              "nameEn": "Notice What Pulls at You",
+              "subEn": "The most vivid placement often quietly mirrors your own pressure style"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The Sinner–Zverev Wimbledon Final Chart at a Glance",
+          "titleEn": "Four Dimensions of the Wimbledon Final Chart",
+          "altEn": "Four chart dimensions — Sun identity, Moon response, Mars tempo, shared transits — for the 2026 Wimbledon Final astrology",
+          "items": [
+            {
+              "nameEn": "Identity & Drive",
+              "subEn": "Sun sign — watch for fixed resolve vs restless variety in each player"
+            },
+            {
+              "nameEn": "Emotional Response",
+              "subEn": "Moon sign — note body language after a lost break point"
+            },
+            {
+              "nameEn": "Attacking Tempo",
+              "subEn": "Mars placement — track who dictates rallies vs who counterpunches"
+            },
+            {
+              "nameEn": "Shared Atmosphere",
+              "subEn": "Match-moment transits — the common mood: tense, loose, or heavy"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
