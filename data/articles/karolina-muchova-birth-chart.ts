@@ -119,7 +119,7 @@ Both are fixed signs, which means they share a quality of sustained focus and re
 ## Related Reading
 
 - *Leo Sun sign personality profile* — for the fire-sign public register on its own terms.
-- [guide to Scorpio Moon meaning](/en/wiki/north-node-in-scorpio) — for the guarded water layer working under the surface.
+- [guide to the North Node in Scorpio](/en/wiki/north-node-in-scorpio) — for the guarded water layer working under the surface.
 - *how planet clusters work in a birth chart* — for reading placements together instead of in isolation.
 - [Karolína Muchová (Wikipedia)](https://en.wikipedia.org/wiki/Karol%C3%ADna_Muchov%C3%A1) — for the career facts referenced here.
 
