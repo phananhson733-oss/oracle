@@ -851,6 +851,7 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'karolina-muchova-birth-chart',
   'antoine-griezmann-birth-chart',
   'mexico-vs-england-astrology-prediction',
+  'spain-vs-france-world-cup-2026-astrology',
   'kate-upton-birth-chart',
   'ayo-edebiri-birth-chart',
   'justin-verlander-birth-chart',

@@ -336,6 +336,7 @@ import { quintaBrunsonBirthChartEn } from "./quinta-brunson-birth-chart";
 import { karolinaMuchovaBirthChartEn } from "./karolina-muchova-birth-chart";
 import { antoineGriezmannBirthChartEn } from "./antoine-griezmann-birth-chart";
 import { mexicoVsEnglandAstrologyPredictionEn } from "./mexico-vs-england-astrology-prediction";
+import { spainVsFranceWorldCup2026AstrologyEn } from "./spain-vs-france-world-cup-2026-astrology";
 import { priyankaChopraBirthChartEn } from "./priyanka-chopra-birth-chart";
 import { rodriBirthChartEn } from "./rodri-birth-chart";
 import { sinnerVsZverevWimbledonFinalAstrologyEn } from "./sinner-vs-zverev-wimbledon-final-astrology";
@@ -666,6 +667,7 @@ const ARTICLES_EN: WikiArticle[] = [
   karolinaMuchovaBirthChartEn,
   antoineGriezmannBirthChartEn,
   mexicoVsEnglandAstrologyPredictionEn,
+  spainVsFranceWorldCup2026AstrologyEn,
   priyankaChopraBirthChartEn,
   rodriBirthChartEn,
   sinnerVsZverevWimbledonFinalAstrologyEn,
