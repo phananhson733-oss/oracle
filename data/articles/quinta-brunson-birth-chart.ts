@@ -25,9 +25,9 @@ export const quintaBrunsonBirthChartEn: WikiArticle = {
 
 Quinta Brunson's birth chart is a map of where the Sun, Moon, and planets sat on December 21, 1989, the day she was born in Philadelphia. Read the way you would approach any [guide to how to read a birth chart](/en/wiki/how-to-read-birth-chart), the Quinta Brunson birth chart is best understood as **a symbolic snapshot of the planets at her 1989 birth** — a character sketch, not a script.
 
-- A Sagittarius Sun sitting close to Sagittarius Mars, pointing to blunt, restless, honest humor
+- A Sagittarius Sun near the Capricorn cusp, pointing to blunt, restless, honest humor
 - A tight cluster of planets in Capricorn, hinting at patient, long-game ambition behind the jokes
-- A Libra Moon paired with an Aquarius Venus, leaning toward fairness, warmth, and social observation
+- A Libra Moon paired with a Capricorn Venus, leaning toward fairness, warmth, and grounded taste
 
 These placements describe tendencies, not fixed traits. Because her exact birth time is not public, her rising sign and houses cannot be confirmed, so any honest reading stays deliberately open.
 
@@ -49,7 +49,7 @@ A Sun-sign take works fast. It pulls one placement — Sagittarius — and gives
 
 ### How a whole-chart read works
 
-A whole-chart read works slower and messier. It weighs the Libra Moon's diplomacy against the Sagittarius Sun's bluntness, then folds in the Capricorn cluster's patience and Aquarius Venus's taste for the unconventional. To get that nuance, you sacrifice the tidy one-word answer — you end up describing tensions instead of a slogan. Psychological astrologers like Liz Greene built their reputations on exactly this: the way a chart's contradictions, not its headlines, describe a person.
+A whole-chart read works slower and messier. It weighs the Libra Moon's diplomacy against the Sagittarius Sun's bluntness, then folds in the Capricorn cluster's patience and its Venus-driven taste for understated craft. To get that nuance, you sacrifice the tidy one-word answer — you end up describing tensions instead of a slogan. Psychological astrologers like Liz Greene built their reputations on exactly this: the way a chart's contradictions, not its headlines, describe a person.
 
 ### Why the distinction matters here
 
@@ -59,10 +59,10 @@ For someone as visible as Brunson, the gap between these two reads is the gap be
 
 You do not need software to spot these patterns in the Quinta Brunson birth chart. Most of them surface in her public work, her interviews, and the shape of her career, once you know which signal matches which placement. Watch for these five:
 
-1. **Sagittarius bluntness.** Listen for candid, unfiltered honesty in interviews — the Sagittarius Sun and Mars read as someone who says the plain thing.
+1. **Sagittarius bluntness.** Listen for candid, unfiltered honesty in interviews — the Sagittarius Sun reads as someone who says the plain thing.
 2. **Capricorn stagecraft.** Watch the long build from viral videos to a network sitcom; that patience mirrors the Capricorn cluster.
 3. **Libra fairness.** Notice ensemble storytelling that spreads the spotlight — a Libra Moon leans toward balance over solo dominance.
-4. **Aquarius originality.** Look for format-bending, community-minded ideas; Venus in Aquarius favors the unconventional and the collective.
+4. **Capricorn taste.** Look for meticulous, understated craft over flash; Venus and Mars in Capricorn favor discipline, structure, and quality.
 5. **Cancer warmth.** Feel the affection for workplace-as-family themes — retrograde Jupiter in Cancer softens the harder edges.
 
 
@@ -84,8 +84,8 @@ The biggest errors come from asking a birth chart to do more than it can:
 | Sun in Sagittarius | Sets the core drive toward candor and expansion | Fire / identity | Blunt, optimistic honesty in interviews |
 | Capricorn stellium (Mercury, Saturn, Uranus, Neptune) | Anchors ambition and long-term structure | Earth / career | A patient, steady climb across years |
 | Moon in Libra | Colors emotional needs toward balance and fairness | Air / relationships | Ensemble-minded, diplomatic instincts |
-| Venus in Aquarius | Shapes taste toward the original and communal | Air / values | Format-bending, community-first ideas |
-| Mars in Sagittarius | Directs energy into direct, restless action | Fire / drive | Fast-moving, say-it-plainly delivery |
+| Venus in Capricorn | Shapes taste toward the understated and classic | Earth / values | Restrained, quality-first choices |
+| Mars in Capricorn | Directs energy into disciplined, goal-driven action | Earth / drive | Steady, methodical execution |
 
 
 ![Comparison of Quinta Brunson's birth chart placements grouped by fire, earth, and air elements](/images/blog/quinta-brunson-birth-chart-i1-en.svg)
