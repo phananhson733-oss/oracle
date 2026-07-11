@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "priyanka-chopra-birth-chart": {
+      "hero": {
+        "prompt": "A stylized editorial portrait of a South Asian woman with expressive dark eyes and flowing black hair, standing in a threshold between a warm Bollywood-gold interior and a vast indigo night skyline, water-ink Cancer crab motifs rippling softly at her shoulders, translucent Libra air-current ribbons in teal curling outward from her outstretched hands, twin Gemini stars glimmering at either side of her silhouette, the figure centered in the safe zone — deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait evoking Priyanka Chopra's birth chart — Cancer, Libra, and Gemini energies as celestial motifs"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Priyanka Chopra Birth Chart",
+          "titleEn": "Five Key Signals in Priyanka Chopra's Birth Chart",
+          "altEn": "Five-step illustrated sequence for reading Priyanka Chopra's natal chart placements",
+          "items": [
+            {
+              "nameEn": "Cancer Stellium",
+              "subEn": "Sun, Mercury, North Node — home, memory, emotional protection"
+            },
+            {
+              "nameEn": "Libra Weight",
+              "subEn": "Mars, Saturn, Pluto — power expressed through fairness and partnership"
+            },
+            {
+              "nameEn": "Gemini Thread",
+              "subEn": "Venus and likely Moon — versatility, code-switching, bicultural voice"
+            },
+            {
+              "nameEn": "Sagittarius Idealism",
+              "subEn": "Uranus and Neptune retrograde — border-crossing, questioning convention"
+            },
+            {
+              "nameEn": "Missing Angles",
+              "subEn": "No confirmed birth time — rising sign and houses remain estimates"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Priyanka Chopra Birth Chart at a Glance",
+          "titleEn": "Birth Chart Placements at a Glance",
+          "altEn": "Comparison of Priyanka Chopra's Cancer, Libra, and Gemini–Sagittarius planetary clusters",
+          "columns": [
+            {
+              "nameEn": "Cancer Cluster",
+              "linesEn": [
+                "Sun + Mercury + North Node",
+                "Water, cardinal — identity and growth through feeling",
+                "Protective loyalty, roots-first energy, nostalgia in interviews"
+              ]
+            },
+            {
+              "nameEn": "Libra Cluster",
+              "linesEn": [
+                "Mars + Saturn + Pluto",
+                "Air, cardinal — drive channeled through fairness",
+                "Measured diplomacy, partnership-first choices, negotiated authority"
+              ]
+            },
+            {
+              "nameEn": "Gemini & Sagittarius",
+              "linesEn": [
+                "Venus (+ Moon approx.) + Uranus + Neptune",
+                "Mutable signs — values and idealism in motion",
+                "Code-switching, reinvention, cross-cultural border-crossing"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
