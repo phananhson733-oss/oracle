@@ -35,7 +35,7 @@ Understanding the Mikel Merino birth chart matters less as trivia about a footba
 
 It also shows what psychological astrology actually does with a single placement. In Liz Greene's reading, a sign's strength carries a shadow: the Virgo Moon that stays calm and precise under pressure is the same Moon that can turn that precision inward as self-criticism when a game slips away. Naming both faces of one placement — the gift and its cost — is closer to a real reading than a flattering one-word label.
 
-For a reader, the real value is pattern recognition applied to a familiar face. Merino's mix of airy communication and earthy patience models a recognisable archetype — the steady connector who rarely shouts but shapes the game around him. Seeing that blend in someone visible makes it easier to spot the same combination in your own life: the colleague who wins by linking people rather than dominating a room, or the friend whose calm precision holds a group together. It pairs naturally with learning your own *guide to the rising sign and its meaning*, which is where a lot of that outward style actually lives.
+For a reader, the real value is pattern recognition applied to a familiar face. Merino's mix of airy communication and earthy patience models a recognisable archetype — the steady connector who rarely shouts but shapes the game around him. Seeing that blend in someone visible makes it easier to spot the same combination in your own life: the colleague who wins by linking people rather than dominating a room, or the friend whose calm precision holds a group together. It pairs naturally with an [Ascendant meaning guide](/en/wiki/ascendant-meaning), which is where a lot of that outward style is explored.
 
 ## The Whole Chart vs a Single Sun-Sign Headline
 
@@ -106,9 +106,9 @@ The Gemini stellium — Mercury, Venus, and Mars together — is the loudest sig
 
 ## Related Reading
 
-- *meaning of the north and south nodes in a birth chart* — unpacks the Libra North Node steering his chart toward balance and partnership.
-- *how planet clusters work in a birth chart* — explains why his Gemini group carries so much of the chart's weight.
-- *Serena Williams's birth chart profile* — another athlete chart to compare interpretive style against.
+- [north and south node meaning guide](/en/wiki/north-node-vs-south-node) — introduces the nodes as a general astrology concept.
+- [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — explains how multiple placements work together.
+- [Serena Williams birth chart profile](/en/wiki/serena-williams-birth-chart) — another athlete chart to compare interpretive style against.
 - [Mikel Merino (Wikipedia)](https://en.wikipedia.org/wiki/Mikel_Merino)
 - [Astrological sign (Wikipedia)](https://en.wikipedia.org/wiki/Astrological_sign)
 
