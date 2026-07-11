@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 254" role="img" aria-label="">
+  <defs>
+    <linearGradient id="spainvsfranceworldcup2026astrology1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="spainvsfranceworldcup2026astrology1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="spainvsfranceworldcup2026astrology1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spainvsfranceworldcup2026astrology1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spainvsfranceworldcup2026astrology1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spainvsfranceworldcup2026astrology1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="251" rx="22" fill="url(#spainvsfranceworldcup2026astrology1zh-panel)"/>
+  <ellipse cx="198" cy="61" rx="380" ry="86" fill="url(#spainvsfranceworldcup2026astrology1zh-neb1)"/>
+  <ellipse cx="623" cy="203" rx="334" ry="81" fill="url(#spainvsfranceworldcup2026astrology1zh-neb2)"/>
+  <circle cx="292.0" cy="74.4" r="0.54" fill="#cfc8ea" opacity="0.17"/><circle cx="395.0" cy="189.8" r="1.08" fill="#cfc8ea" opacity="0.35"/><circle cx="651.6" cy="188.4" r="1.30" fill="#cfc8ea" opacity="0.18"/><circle cx="393.6" cy="204.5" r="1.01" fill="#cfc8ea" opacity="0.30"/><circle cx="102.1" cy="185.3" r="0.98" fill="#cfc8ea" opacity="0.16"/><circle cx="284.2" cy="205.5" r="1.68" fill="#cfc8ea" opacity="0.29"/><circle cx="491.5" cy="136.9" r="1.16" fill="#cfc8ea" opacity="0.38"/><circle cx="271.0" cy="223.6" r="0.70" fill="#cfc8ea" opacity="0.18"/><circle cx="20.2" cy="168.7" r="0.94" fill="#cfc8ea" opacity="0.44"/><circle cx="507.1" cy="227.2" r="0.93" fill="#cfc8ea" opacity="0.50"/><circle cx="135.3" cy="181.5" r="1.00" fill="#cfc8ea" opacity="0.23"/><circle cx="551.2" cy="89.8" r="0.76" fill="#cfc8ea" opacity="0.42"/><circle cx="566.2" cy="166.2" r="0.94" fill="#cfc8ea" opacity="0.53"/><circle cx="43.5" cy="180.9" r="0.75" fill="#cfc8ea" opacity="0.14"/><circle cx="215.9" cy="89.8" r="0.46" fill="#cfc8ea" opacity="0.41"/><circle cx="253.3" cy="236.1" r="1.54" fill="#cfc8ea" opacity="0.46"/><circle cx="485.4" cy="211.8" r="0.67" fill="#cfc8ea" opacity="0.23"/><circle cx="445.0" cy="72.5" r="1.07" fill="#cfc8ea" opacity="0.35"/><circle cx="231.9" cy="208.6" r="1.68" fill="#cfc8ea" opacity="0.19"/><circle cx="606.8" cy="48.5" r="0.90" fill="#cfc8ea" opacity="0.34"/><circle cx="70.9" cy="95.2" r="1.12" fill="#cfc8ea" opacity="0.35"/><path d="M 294.16688162460923 202.6 L 294.8 206.0 L 298.2 206.62578742066398 L 294.8 207.3 L 294.16688162460923 210.6 L 293.5 207.3 L 290.2 206.62578742066398 L 293.5 206.0 Z" fill="#f6e6bf" opacity="0.7174560618819669"/><path d="M 69.93138730153441 207.0 L 70.6 210.3 L 73.9 210.91354258405045 L 70.6 211.5 L 69.93138730153441 214.9 L 69.3 211.5 L 66.0 210.91354258405045 L 69.3 210.3 Z" fill="#f6e6bf" opacity="0.6565437056357041"/><path d="M 701.3966203220189 91.9 L 701.9 94.6 L 704.6 95.11754442984238 L 701.9 95.6 L 701.3966203220189 98.3 L 700.9 95.6 L 698.2 95.11754442984238 L 700.9 94.6 Z" fill="#f6e6bf" opacity="0.7771870064781978"/><path d="M 192.60919437929988 182.3 L 193.1 184.6 L 195.4 185.0930790794082 L 193.1 185.5 L 192.60919437929988 187.9 L 192.2 185.5 L 189.8 185.0930790794082 L 192.2 184.6 Z" fill="#f6e6bf" opacity="0.6904374046484009"/><path d="M 238.75045827403665 187.4 L 239.1 189.4 L 241.2 189.83795737335458 L 239.1 190.2 L 238.75045827403665 192.3 L 238.4 190.2 L 236.3 189.83795737335458 L 238.4 189.4 Z" fill="#f6e6bf" opacity="0.7664112054975702"/>
+  <rect x="1.5" y="1.5" width="757" height="251" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="240" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 234.8 L 16.5 237.5 L 19.2 238 L 16.5 238.5 L 16 241.2 L 15.5 238.5 L 12.8 238 L 15.5 237.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 234.8 L 744.5 237.5 L 747.2 238 L 744.5 238.5 L 744 241.2 L 743.5 238.5 L 740.8 238 L 743.5 237.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#spainvsfranceworldcup2026astrology1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#spainvsfranceworldcup2026astrology1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="72" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="72" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 81.6 L 48.3 84.5 L 51.1 85 L 48.3 85.5 L 47.75 88.4 L 47.2 85.5 L 44.4 85 L 47.2 84.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 112.5 L 380.7 116.3 L 384.5 117 L 380.7 117.7 L 380 121.5 L 379.3 117.7 L 375.5 117 L 379.3 116.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="130" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="130" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 139.6 L 48.3 142.5 L 51.1 143 L 48.3 143.5 L 47.75 146.4 L 47.2 143.5 L 44.4 143 L 47.2 142.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 170.5 L 380.7 174.3 L 384.5 175 L 380.7 175.7 L 380 179.5 L 379.3 175.7 L 375.5 175 L 379.3 174.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="188" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="188" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 197.6 L 48.3 200.5 L 51.1 201 L 48.3 201.5 L 47.75 204.4 L 47.2 201.5 L 44.4 201 L 47.2 200.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 280.025 225.4 L 280.4 227.6 L 282.6 228 L 280.4 228.4 L 280.025 230.6 L 279.6 228.4 L 277.4 228 L 279.6 227.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="232" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 225.4 L 480.4 227.6 L 482.6 228 L 480.4 228.4 L 479.975 230.6 L 479.6 228.4 L 477.4 228 L 479.6 227.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
