@@ -333,6 +333,7 @@ import { kateUptonBirthChartEn } from "./kate-upton-birth-chart";
 import { ayoEdebiriBirthChartEn } from "./ayo-edebiri-birth-chart";
 import { zendayaBirthChartEn } from "./zendaya-birth-chart";
 import { priyankaChopraBirthChartEn } from "./priyanka-chopra-birth-chart";
+import { rodriBirthChartEn } from "./rodri-birth-chart";
 // All articles organized by language
 
 import {
@@ -657,6 +658,7 @@ const ARTICLES_EN: WikiArticle[] = [
   ayoEdebiriBirthChartEn,
   zendayaBirthChartEn,
   priyankaChopraBirthChartEn,
+  rodriBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

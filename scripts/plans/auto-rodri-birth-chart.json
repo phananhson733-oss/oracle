@@ -1,0 +1,105 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "rodri-birth-chart": {
+      "hero": {
+        "prompt": "A stylized editorial portrait of a composed, dark-haired Spanish footballer in midnight-blue kit, standing alone at the center of an empty stadium pitch at dusk, the stands dissolving into a deep indigo atmosphere, golden Vedic celestial rings and soft planetary glyphs drifting as ambient light around his still figure, an atmosphere of patient steadiness and contained focus, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized portrait of Rodri on an indigo stadium pitch at dusk, surrounded by drifting golden Vedic celestial rings"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Rodri's Chart Symbolically",
+          "titleEn": "Five Steps for a Symbolic Jyotish Reading",
+          "altEn": "Five-step sequence for reading a birth chart symbolically through Jyotish",
+          "items": [
+            {
+              "nameEn": "Start with the Lagna",
+              "subEn": "Sets the whole frame; note the sign and its ruling planet first"
+            },
+            {
+              "nameEn": "Weigh the Moon over the Sun",
+              "subEn": "Chandra reveals temperament and mind through sign and nakshatra"
+            },
+            {
+              "nameEn": "Look at the 10th Bhava",
+              "subEn": "Carries themes of vocation and public standing — read as symbol, not proof"
+            },
+            {
+              "nameEn": "Notice Shani (Saturn)",
+              "subEn": "Linked to discipline, patience, and slow mastery across the chart"
+            },
+            {
+              "nameEn": "Read the Pattern, Not One Line",
+              "subEn": "Symbols make sense as a conversation between all houses and planets"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Rodri's Chart at a Glance",
+          "titleEn": "Key Jyotish Symbols at a Glance",
+          "altEn": "Comparison of Lagna, Chandra, and Shani as core Jyotish symbols in the birth chart",
+          "columns": [
+            {
+              "nameEn": "Lagna (Ascendant)",
+              "linesEn": [
+                "Sets the frame for every other symbol",
+                "Read through the 1st bhava and its ruling planet",
+                "Note the sign and lord before anything else"
+              ]
+            },
+            {
+              "nameEn": "Chandra (Moon)",
+              "linesEn": [
+                "Signifies mind and temperament in Jyotish",
+                "Read through sign and lunar mansion (nakshatra)",
+                "Often reveals more about inner character than the Sun"
+              ]
+            },
+            {
+              "nameEn": "Shani (Saturn)",
+              "linesEn": [
+                "Linked to discipline and slow mastery",
+                "Associated with Capricorn and Aquarius themes",
+                "Invites reflection on patience and structure"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Four Ways Celebrity Charts Are Misread",
+          "altEn": "Four common misreadings of a celebrity birth chart, illustrated as a step sequence",
+          "items": [
+            {
+              "nameEn": "Reading It as Proof of Talent",
+              "subEn": "Charts offer symbols to reflect on, not evidence of career achievement"
+            },
+            {
+              "nameEn": "Mixing Vedic and Western Placements",
+              "subEn": "Two systems use different zodiacs and must be kept strictly apart"
+            },
+            {
+              "nameEn": "Treating Tendencies as Fate",
+              "subEn": "Placements point to leanings a person may notice, not sealed outcomes"
+            },
+            {
+              "nameEn": "Expecting One Power Planet",
+              "subEn": "A chart works as a whole; no single graha carries the full story"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
