@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "antoine-griezmann-birth-chart": {
+      "hero": {
+        "prompt": "Stylized editorial portrait of a slender French footballer in bold royal-blue kit mid-celebration on a luminous pitch at dusk, the golden Aries ram constellation glowing in the deep indigo sky behind him, soft gold accents tracing the arc of his outstretched arms, teal-and-gold nebula wash blending into stadium floodlights, figure centered in the safe zone for square-crop previews, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of Antoine Griezmann birth chart — Aries footballer celebrating under a celestial night sky"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Standout Patterns in His Chart",
+          "titleEn": "Five Standout Patterns in Griezmann's Birth Chart",
+          "altEn": "Infographic showing the five key planetary patterns in Antoine Griezmann's birth chart",
+          "items": [
+            {
+              "nameEn": "The Aries Opening",
+              "subEn": "Sun and Mercury in Aries — a bias toward initiative and plain, direct speech"
+            },
+            {
+              "nameEn": "The Gemini Engine",
+              "subEn": "Moon and Mars in Gemini — emotional restlessness and darting, quick energy"
+            },
+            {
+              "nameEn": "The Taurus Anchor",
+              "subEn": "Venus and Chiron in Taurus — steady values and a slow-to-shift sense of safety"
+            },
+            {
+              "nameEn": "The Capricorn Cluster",
+              "subEn": "Uranus, Neptune, and North Node in Capricorn — generational pull toward building lasting structures"
+            },
+            {
+              "nameEn": "Relationship-Facing Aspects",
+              "subEn": "How placements angle toward each other refines the read; angles involving the Ascendant stay off-limits without a birth time"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Full Birth Chart vs a Sun-Sign Reading",
+          "titleEn": "Sun-Sign Reading vs Full Birth Chart",
+          "altEn": "Side-by-side comparison of sun-sign reading versus full birth chart for Antoine Griezmann",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Reading",
+              "linesEn": [
+                "Uses one placement only: Aries Sun",
+                "Quick and instantly shareable",
+                "Sacrifices accuracy for speed",
+                "Flattens a whole person into a single label"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "linesEn": [
+                "Layers Aries Sun, Gemini Moon, Taurus Venus, Aquarius Saturn, and more",
+                "Textured and nuanced picture",
+                "Sacrifices the quick soundbite for depth",
+                "Treats contradictions between placements as the seat of real character"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
