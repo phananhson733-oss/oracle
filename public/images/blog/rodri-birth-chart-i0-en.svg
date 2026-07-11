@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="Five Steps for a Symbolic Jyotish Reading">
+  <defs>
+    <linearGradient id="rodribirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="rodribirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="rodribirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rodribirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rodribirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rodribirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#rodribirthchart0en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#rodribirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#rodribirthchart0en-neb2)"/>
+  <circle cx="684.2" cy="395.1" r="1.40" fill="#cfc8ea" opacity="0.43"/><circle cx="531.4" cy="132.5" r="0.84" fill="#cfc8ea" opacity="0.51"/><circle cx="699.4" cy="158.3" r="0.51" fill="#cfc8ea" opacity="0.20"/><circle cx="442.7" cy="340.4" r="0.78" fill="#cfc8ea" opacity="0.14"/><circle cx="364.5" cy="226.5" r="1.05" fill="#cfc8ea" opacity="0.51"/><circle cx="28.3" cy="77.6" r="1.67" fill="#cfc8ea" opacity="0.39"/><circle cx="121.7" cy="392.0" r="1.41" fill="#cfc8ea" opacity="0.13"/><circle cx="728.5" cy="193.7" r="1.61" fill="#cfc8ea" opacity="0.26"/><circle cx="485.9" cy="14.3" r="0.47" fill="#cfc8ea" opacity="0.45"/><circle cx="468.0" cy="345.2" r="0.90" fill="#cfc8ea" opacity="0.30"/><circle cx="233.6" cy="357.3" r="1.35" fill="#cfc8ea" opacity="0.23"/><circle cx="224.7" cy="208.0" r="1.06" fill="#cfc8ea" opacity="0.45"/><circle cx="266.3" cy="226.2" r="1.13" fill="#cfc8ea" opacity="0.25"/><circle cx="639.8" cy="338.7" r="0.61" fill="#cfc8ea" opacity="0.21"/><circle cx="77.0" cy="372.6" r="1.04" fill="#cfc8ea" opacity="0.24"/><circle cx="218.0" cy="213.1" r="1.47" fill="#cfc8ea" opacity="0.14"/><circle cx="649.0" cy="83.4" r="1.34" fill="#cfc8ea" opacity="0.52"/><circle cx="746.4" cy="320.3" r="0.44" fill="#cfc8ea" opacity="0.31"/><circle cx="655.0" cy="157.4" r="0.67" fill="#cfc8ea" opacity="0.15"/><circle cx="708.3" cy="302.5" r="1.56" fill="#cfc8ea" opacity="0.51"/><circle cx="240.4" cy="204.2" r="1.25" fill="#cfc8ea" opacity="0.43"/><circle cx="410.0" cy="238.6" r="0.41" fill="#cfc8ea" opacity="0.18"/><circle cx="692.9" cy="98.9" r="1.04" fill="#cfc8ea" opacity="0.47"/><circle cx="405.2" cy="28.4" r="1.20" fill="#cfc8ea" opacity="0.25"/><circle cx="224.0" cy="360.0" r="1.57" fill="#cfc8ea" opacity="0.14"/><circle cx="547.0" cy="116.0" r="1.30" fill="#cfc8ea" opacity="0.14"/><circle cx="277.4" cy="330.9" r="0.74" fill="#cfc8ea" opacity="0.13"/><circle cx="23.0" cy="361.1" r="1.33" fill="#cfc8ea" opacity="0.31"/><circle cx="275.9" cy="326.9" r="0.89" fill="#cfc8ea" opacity="0.31"/><circle cx="104.7" cy="340.9" r="0.45" fill="#cfc8ea" opacity="0.37"/><circle cx="747.6" cy="342.6" r="1.55" fill="#cfc8ea" opacity="0.16"/><circle cx="697.0" cy="59.2" r="1.26" fill="#cfc8ea" opacity="0.51"/><circle cx="76.9" cy="55.1" r="0.46" fill="#cfc8ea" opacity="0.37"/><circle cx="185.6" cy="311.6" r="0.64" fill="#cfc8ea" opacity="0.40"/><circle cx="435.2" cy="298.9" r="0.67" fill="#cfc8ea" opacity="0.28"/><circle cx="569.7" cy="288.4" r="0.59" fill="#cfc8ea" opacity="0.47"/><circle cx="588.2" cy="390.1" r="1.39" fill="#cfc8ea" opacity="0.22"/><path d="M 298.12780740484595 113.7 L 298.6 116.2 L 301.1 116.62857740861364 L 298.6 117.1 L 298.12780740484595 119.6 L 297.7 117.1 L 295.2 116.62857740861364 L 297.7 116.2 Z" fill="#f6e6bf" opacity="0.7507132422411814"/><path d="M 575.0115303583443 15.6 L 575.4 17.7 L 577.5 18.13189417333342 L 575.4 18.5 L 575.0115303583443 20.6 L 574.6 18.5 L 572.5 18.13189417333342 L 574.6 17.7 Z" fill="#f6e6bf" opacity="0.6126046798424796"/><path d="M 684.6320734135807 134.8 L 685.1 137.0 L 687.3 137.42276229639538 L 685.1 137.9 L 684.6320734135807 140.1 L 684.2 137.9 L 682.0 137.42276229639538 L 684.2 137.0 Z" fill="#f6e6bf" opacity="0.7414159016916528"/><path d="M 196.98975509777665 265.2 L 197.4 267.3 L 199.4 267.6599621141795 L 197.4 268.0 L 196.98975509777665 270.1 L 196.6 268.0 L 194.6 267.6599621141795 L 196.6 267.3 Z" fill="#f6e6bf" opacity="0.569593840581365"/><path d="M 642.8421876393259 183.9 L 643.5 187.1 L 646.7 187.70373956975527 L 643.5 188.3 L 642.8421876393259 191.5 L 642.2 188.3 L 639.0 187.70373956975527 L 642.2 187.1 Z" fill="#f6e6bf" opacity="0.588448878400959"/><path d="M 708.3 302.5 L 692.9 98.9 L 569.7 288.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Steps for a Symbolic Jyotish Reading</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#rodribirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#rodribirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#rodribirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#rodribirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Start with the Lagna</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sets the whole frame; note the sign and its ruling planet first</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#rodribirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#rodribirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Weigh the Moon over the Sun</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Chandra reveals temperament and mind through sign and nakshatra</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#rodribirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#rodribirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Look at the 10th Bhava</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Carries themes of vocation and public standing — read as symbol, not proof</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#rodribirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#rodribirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Notice Shani (Saturn)</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Linked to discipline, patience, and slow mastery across the chart</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#rodribirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#rodribirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read the Pattern, Not One Line</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Symbols make sense as a conversation between all houses and planets</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
