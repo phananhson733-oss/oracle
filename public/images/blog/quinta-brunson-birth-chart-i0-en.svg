@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 469" role="img" aria-label="Five Astrological Signals to Spot in Her Work">
+  <defs>
+    <linearGradient id="quintabrunsonbirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="quintabrunsonbirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="quintabrunsonbirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="quintabrunsonbirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="quintabrunsonbirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="quintabrunsonbirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="466" rx="22" fill="url(#quintabrunsonbirthchart0en-panel)"/>
+  <ellipse cx="198" cy="113" rx="380" ry="159" fill="url(#quintabrunsonbirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="375" rx="334" ry="150" fill="url(#quintabrunsonbirthchart0en-neb2)"/>
+  <circle cx="739.6" cy="260.2" r="0.68" fill="#cfc8ea" opacity="0.40"/><circle cx="417.9" cy="380.1" r="0.72" fill="#cfc8ea" opacity="0.54"/><circle cx="237.2" cy="182.5" r="1.32" fill="#cfc8ea" opacity="0.39"/><circle cx="650.5" cy="167.8" r="1.29" fill="#cfc8ea" opacity="0.27"/><circle cx="639.9" cy="413.1" r="1.51" fill="#cfc8ea" opacity="0.16"/><circle cx="21.2" cy="170.3" r="0.83" fill="#cfc8ea" opacity="0.17"/><circle cx="487.6" cy="108.2" r="0.64" fill="#cfc8ea" opacity="0.45"/><circle cx="426.2" cy="225.3" r="1.03" fill="#cfc8ea" opacity="0.38"/><circle cx="642.1" cy="48.1" r="1.35" fill="#cfc8ea" opacity="0.22"/><circle cx="225.6" cy="152.5" r="1.45" fill="#cfc8ea" opacity="0.23"/><circle cx="656.4" cy="400.9" r="1.22" fill="#cfc8ea" opacity="0.14"/><circle cx="317.6" cy="233.1" r="0.80" fill="#cfc8ea" opacity="0.28"/><circle cx="200.1" cy="407.1" r="1.52" fill="#cfc8ea" opacity="0.25"/><circle cx="403.5" cy="377.4" r="1.15" fill="#cfc8ea" opacity="0.41"/><circle cx="346.9" cy="284.5" r="0.90" fill="#cfc8ea" opacity="0.31"/><circle cx="731.9" cy="49.7" r="1.26" fill="#cfc8ea" opacity="0.44"/><circle cx="716.8" cy="81.7" r="1.58" fill="#cfc8ea" opacity="0.27"/><circle cx="407.4" cy="195.0" r="0.80" fill="#cfc8ea" opacity="0.26"/><circle cx="31.9" cy="360.5" r="1.13" fill="#cfc8ea" opacity="0.47"/><circle cx="704.0" cy="366.4" r="1.55" fill="#cfc8ea" opacity="0.15"/><circle cx="382.2" cy="321.3" r="1.05" fill="#cfc8ea" opacity="0.20"/><circle cx="533.3" cy="64.6" r="1.28" fill="#cfc8ea" opacity="0.25"/><circle cx="300.6" cy="175.6" r="1.64" fill="#cfc8ea" opacity="0.21"/><circle cx="34.5" cy="144.8" r="0.89" fill="#cfc8ea" opacity="0.19"/><circle cx="683.0" cy="388.7" r="0.77" fill="#cfc8ea" opacity="0.21"/><circle cx="489.8" cy="225.3" r="0.94" fill="#cfc8ea" opacity="0.44"/><circle cx="660.0" cy="79.4" r="1.39" fill="#cfc8ea" opacity="0.30"/><circle cx="532.3" cy="136.5" r="0.42" fill="#cfc8ea" opacity="0.35"/><circle cx="213.2" cy="130.8" r="0.67" fill="#cfc8ea" opacity="0.16"/><circle cx="190.6" cy="126.1" r="1.60" fill="#cfc8ea" opacity="0.30"/><circle cx="110.9" cy="343.6" r="1.49" fill="#cfc8ea" opacity="0.48"/><circle cx="70.0" cy="422.9" r="0.90" fill="#cfc8ea" opacity="0.26"/><circle cx="178.4" cy="340.4" r="1.49" fill="#cfc8ea" opacity="0.24"/><circle cx="220.2" cy="402.7" r="1.62" fill="#cfc8ea" opacity="0.29"/><circle cx="430.2" cy="412.8" r="0.78" fill="#cfc8ea" opacity="0.18"/><circle cx="577.7" cy="44.9" r="1.09" fill="#cfc8ea" opacity="0.25"/><circle cx="536.8" cy="57.4" r="1.34" fill="#cfc8ea" opacity="0.28"/><circle cx="742.2" cy="399.9" r="1.00" fill="#cfc8ea" opacity="0.14"/><circle cx="27.0" cy="382.1" r="1.12" fill="#cfc8ea" opacity="0.25"/><circle cx="501.9" cy="234.8" r="1.06" fill="#cfc8ea" opacity="0.35"/><path d="M 495.57243229448795 294.3 L 496.0 296.3 L 498.0 296.7261096907314 L 496.0 297.1 L 495.57243229448795 299.2 L 495.2 297.1 L 493.1 296.7261096907314 L 495.2 296.3 Z" fill="#f6e6bf" opacity="0.5277985551161691"/><path d="M 163.48099017888308 450.7 L 164.1 453.8 L 167.2 454.4154263816308 L 164.1 455.0 L 163.48099017888308 458.1 L 162.9 455.0 L 159.8 454.4154263816308 L 162.9 453.8 Z" fill="#f6e6bf" opacity="0.7386320706224069"/><path d="M 302.76685297489166 69.1 L 303.2 71.6 L 305.7 72.036033594748 L 303.2 72.5 L 302.76685297489166 75.0 L 302.3 72.5 L 299.8 72.036033594748 L 302.3 71.6 Z" fill="#f6e6bf" opacity="0.6453905283240602"/><path d="M 355.6823686286807 29.2 L 356.2 32.0 L 359.0 32.4754399608355 L 356.2 33.0 L 355.6823686286807 35.8 L 355.2 33.0 L 352.4 32.4754399608355 L 355.2 32.0 Z" fill="#f6e6bf" opacity="0.7320652412017807"/><path d="M 662.5411338657141 362.7 L 663.0 365.3 L 665.6 365.77341012260877 L 663.0 366.3 L 662.5411338657141 368.9 L 662.0 366.3 L 659.4 365.77341012260877 L 662.0 365.3 Z" fill="#f6e6bf" opacity="0.6048685152782127"/><path d="M 650.5 167.8 L 642.1 48.1 L 382.2 321.3 L 430.2 412.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="466" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="455" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 449.8 L 16.5 452.5 L 19.2 453 L 16.5 453.5 L 16 456.2 L 15.5 453.5 L 12.8 453 L 15.5 452.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 449.8 L 744.5 452.5 L 747.2 453 L 744.5 453.5 L 744 456.2 L 743.5 453.5 L 740.8 453 L 743.5 452.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Astrological Signals to Spot in Her Work</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#quintabrunsonbirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#quintabrunsonbirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="379" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#quintabrunsonbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#quintabrunsonbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Sagittarius Bluntness</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Candid, unfiltered honesty in interviews — Sun and Mars in Sagittarius</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#quintabrunsonbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#quintabrunsonbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Capricorn Stagecraft</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Patient long build from viral videos to a network sitcom</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#quintabrunsonbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#quintabrunsonbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Libra Fairness</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Ensemble storytelling that spreads the spotlight rather than claiming solo</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">dominance</text>
+  <circle cx="76" cy="319" r="20.0" fill="url(#quintabrunsonbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="319" r="15" fill="url(#quintabrunsonbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="314.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="323.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="315.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Aquarius Originality</text>
+  <text x="116" y="337.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Format-bending, community-minded ideas driven by Venus in Aquarius</text>
+  <circle cx="76" cy="379" r="20.0" fill="url(#quintabrunsonbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="379" r="15" fill="url(#quintabrunsonbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="374.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="383.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="375.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Cancer Warmth</text>
+  <text x="116" y="397.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Affection for workplace-as-family themes softened by retrograde Jupiter in</text>
+  <text x="116" y="415.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer</text>
+  <path d="M 202.22749999999988 440.4 L 202.6 442.6 L 204.8 443 L 202.6 443.4 L 202.22749999999988 445.6 L 201.8 443.4 L 199.6 443 L 201.8 442.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="447" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 440.4 L 558.2 442.6 L 560.4 443 L 558.2 443.4 L 557.7725000000002 445.6 L 557.4 443.4 L 555.2 443 L 557.4 442.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
