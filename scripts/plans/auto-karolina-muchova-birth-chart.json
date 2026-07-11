@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "karolina-muchova-birth-chart": {
+      "hero": {
+        "prompt": "Stylized painterly editorial portrait of a female professional tennis player standing confidently on a dark court, warm gold solar light flooding from the upper right casting a Leo glow across her face and shoulders, deep teal-indigo Scorpio shadow wrapping the left side, a star-strewn celestial sky overhead suggesting natal-chart themes, racket held with quiet composure, focused hard-to-read gaze, figure centered in frame for square-crop safety, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Painterly portrait of a tennis player in Leo gold and Scorpio indigo celestial light representing Karolína Muchová birth chart"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Leo Sun and Scorpio Undercurrent",
+          "titleEn": "Five Signals of the Leo–Scorpio Blend",
+          "altEn": "Five observable signals of the Leo Sun and Scorpio undercurrent in the Karolína Muchová birth chart",
+          "items": [
+            {
+              "nameEn": "A Bright Front, a Private Core",
+              "subEn": "Warm and expressive in public, but slow to reveal what is actually happening underneath"
+            },
+            {
+              "nameEn": "Recognition That Is Earned, Not Begged For",
+              "subEn": "The Leo drive for visible achievement approached with Scorpio patience and strategy"
+            },
+            {
+              "nameEn": "Calm at the Highest Stakes",
+              "subEn": "Composure that reads as cool but runs on tightly held intensity, most visible in title-deciding moments"
+            },
+            {
+              "nameEn": "Delayed Emotional Disclosure",
+              "subEn": "Feelings tend to surface later and to fewer people, on the person's own timing"
+            },
+            {
+              "nameEn": "Fixed Determination",
+              "subEn": "Both Leo and Scorpio are fixed signs — once a goal is set, it rarely wobbles"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Karolína Muchová's Chart at a Glance",
+          "titleEn": "Key Placements in the Karolína Muchová Birth Chart",
+          "altEn": "Key placements in Karolína Muchová birth chart: Leo Sun, Scorpio Moon and Ascendant, and fixed-sign spine",
+          "columns": [
+            {
+              "nameEn": "Leo Sun",
+              "linesEn": [
+                "Drives a need for visible recognition and expressive presence",
+                "Fire energy: self and identity",
+                "Warm, performative public register"
+              ]
+            },
+            {
+              "nameEn": "Scorpio Moon (reported)",
+              "linesEn": [
+                "Processes feeling privately with guarded intensity",
+                "Water energy: emotional core",
+                "Delayed disclosure; depth shared slowly"
+              ]
+            },
+            {
+              "nameEn": "Scorpio Ascendant (reported)",
+              "linesEn": [
+                "Filters first impressions through composure and control",
+                "Water energy: outward mask",
+                "Calm, hard-to-read presence under pressure"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
