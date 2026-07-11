@@ -338,6 +338,7 @@ import { antoineGriezmannBirthChartEn } from "./antoine-griezmann-birth-chart";
 import { mexicoVsEnglandAstrologyPredictionEn } from "./mexico-vs-england-astrology-prediction";
 import { priyankaChopraBirthChartEn } from "./priyanka-chopra-birth-chart";
 import { rodriBirthChartEn } from "./rodri-birth-chart";
+import { sinnerVsZverevWimbledonFinalAstrologyEn } from "./sinner-vs-zverev-wimbledon-final-astrology";
 // All articles organized by language
 
 import {
@@ -667,6 +668,7 @@ const ARTICLES_EN: WikiArticle[] = [
   mexicoVsEnglandAstrologyPredictionEn,
   priyankaChopraBirthChartEn,
   rodriBirthChartEn,
+  sinnerVsZverevWimbledonFinalAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
