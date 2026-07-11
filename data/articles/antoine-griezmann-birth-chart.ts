@@ -27,7 +27,7 @@ The Antoine Griezmann birth chart is a symbolic map of where the Sun, Moon, and 
 
 - Leads with an Aries Sun and Mercury: direct, initiating, quick to commit
 - Carries a strong Gemini accent through the Moon and Mars, pointing to versatility and constant movement
-- Grounds that speed with Venus and Chiron in steady, value-driven Taurus
+- Grounds that speed with Venus in steady, value-driven Taurus
 
 ## Why It Matters for Self-Awareness
 
@@ -54,7 +54,7 @@ You do not need the birth time to pick out the loudest patterns. Read them as sy
 
 1. **The Aries opening.** Sun and Mercury both in Aries read as a tendency to act first and talk plainly — a bias toward initiative over deliberation.
 2. **The Gemini engine.** Moon and Mars in Gemini point to emotional restlessness and quick, darting energy; note that a Gemini Moon sits near a boundary, so without a birth time the Moon's exact sign carries some margin.
-3. **The Taurus anchor.** Venus and Chiron in Taurus suggest steady values and a slow-to-shift sense of what feels safe — the counterweight to all that Aries-Gemini speed.
+3. **The Taurus anchor.** Venus in Taurus suggests steady values and a slow-to-shift sense of what feels safe — the counterweight to all that Aries-Gemini speed.
 4. **The Capricorn cluster.** Uranus, Neptune, and the North Node in Capricorn point toward a generational pull to build something structured and lasting, a directional theme rather than a personal quirk.
 5. **The relationship-facing aspects.** Robert Hand's work on aspects is a reminder that how these placements angle toward each other refines the read — but any angle involving the Ascendant or houses stays off-limits here, since the birth time is unknown.
 
