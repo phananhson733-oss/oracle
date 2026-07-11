@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="Three Core Signatures in Merino's Birth Chart">
+  <defs>
+    <linearGradient id="mikelmerinobirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mikelmerinobirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mikelmerinobirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mikelmerinobirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mikelmerinobirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mikelmerinobirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#mikelmerinobirthchart1en-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#mikelmerinobirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#mikelmerinobirthchart1en-neb2)"/>
+  <circle cx="515.2" cy="256.3" r="0.86" fill="#cfc8ea" opacity="0.33"/><circle cx="658.4" cy="296.6" r="0.71" fill="#cfc8ea" opacity="0.17"/><circle cx="211.9" cy="539.7" r="0.72" fill="#cfc8ea" opacity="0.36"/><circle cx="385.9" cy="354.0" r="0.80" fill="#cfc8ea" opacity="0.46"/><circle cx="77.5" cy="445.3" r="0.43" fill="#cfc8ea" opacity="0.52"/><circle cx="85.3" cy="479.4" r="1.43" fill="#cfc8ea" opacity="0.44"/><circle cx="383.9" cy="508.4" r="1.33" fill="#cfc8ea" opacity="0.42"/><circle cx="199.2" cy="111.0" r="1.05" fill="#cfc8ea" opacity="0.37"/><circle cx="535.4" cy="439.5" r="1.05" fill="#cfc8ea" opacity="0.51"/><circle cx="534.5" cy="278.3" r="0.94" fill="#cfc8ea" opacity="0.35"/><circle cx="273.4" cy="496.3" r="0.54" fill="#cfc8ea" opacity="0.52"/><circle cx="454.0" cy="451.3" r="0.77" fill="#cfc8ea" opacity="0.22"/><circle cx="465.0" cy="246.5" r="1.26" fill="#cfc8ea" opacity="0.17"/><circle cx="21.5" cy="278.6" r="1.52" fill="#cfc8ea" opacity="0.34"/><circle cx="692.4" cy="495.4" r="1.28" fill="#cfc8ea" opacity="0.19"/><circle cx="369.6" cy="105.0" r="1.38" fill="#cfc8ea" opacity="0.19"/><circle cx="82.1" cy="210.6" r="1.28" fill="#cfc8ea" opacity="0.52"/><circle cx="188.0" cy="200.3" r="0.65" fill="#cfc8ea" opacity="0.33"/><circle cx="40.6" cy="486.8" r="0.58" fill="#cfc8ea" opacity="0.13"/><circle cx="54.7" cy="600.5" r="0.57" fill="#cfc8ea" opacity="0.49"/><circle cx="330.5" cy="269.9" r="1.25" fill="#cfc8ea" opacity="0.13"/><circle cx="358.0" cy="370.0" r="0.79" fill="#cfc8ea" opacity="0.20"/><circle cx="678.9" cy="544.7" r="1.25" fill="#cfc8ea" opacity="0.35"/><circle cx="157.7" cy="391.6" r="0.67" fill="#cfc8ea" opacity="0.43"/><circle cx="283.7" cy="218.5" r="1.50" fill="#cfc8ea" opacity="0.26"/><circle cx="313.0" cy="527.0" r="0.65" fill="#cfc8ea" opacity="0.41"/><circle cx="259.9" cy="216.9" r="0.98" fill="#cfc8ea" opacity="0.34"/><circle cx="74.6" cy="207.6" r="1.19" fill="#cfc8ea" opacity="0.24"/><circle cx="230.5" cy="504.1" r="0.68" fill="#cfc8ea" opacity="0.13"/><circle cx="341.5" cy="29.3" r="1.24" fill="#cfc8ea" opacity="0.47"/><circle cx="500.1" cy="32.3" r="1.28" fill="#cfc8ea" opacity="0.41"/><circle cx="660.4" cy="163.7" r="1.59" fill="#cfc8ea" opacity="0.33"/><circle cx="337.4" cy="288.3" r="0.61" fill="#cfc8ea" opacity="0.49"/><circle cx="553.7" cy="131.5" r="1.63" fill="#cfc8ea" opacity="0.21"/><circle cx="564.7" cy="458.4" r="1.37" fill="#cfc8ea" opacity="0.16"/><circle cx="644.1" cy="589.9" r="0.82" fill="#cfc8ea" opacity="0.20"/><circle cx="418.1" cy="264.3" r="1.14" fill="#cfc8ea" opacity="0.38"/><circle cx="162.1" cy="306.3" r="1.70" fill="#cfc8ea" opacity="0.50"/><circle cx="557.2" cy="275.0" r="0.56" fill="#cfc8ea" opacity="0.44"/><circle cx="422.4" cy="392.3" r="0.83" fill="#cfc8ea" opacity="0.35"/><circle cx="638.3" cy="174.1" r="1.15" fill="#cfc8ea" opacity="0.53"/><circle cx="558.2" cy="196.3" r="1.50" fill="#cfc8ea" opacity="0.52"/><circle cx="316.2" cy="13.5" r="0.94" fill="#cfc8ea" opacity="0.39"/><circle cx="592.6" cy="477.9" r="1.17" fill="#cfc8ea" opacity="0.14"/><circle cx="223.2" cy="585.9" r="1.30" fill="#cfc8ea" opacity="0.51"/><circle cx="742.1" cy="52.7" r="1.06" fill="#cfc8ea" opacity="0.33"/><circle cx="244.1" cy="331.8" r="0.68" fill="#cfc8ea" opacity="0.42"/><circle cx="434.4" cy="453.3" r="1.67" fill="#cfc8ea" opacity="0.46"/><circle cx="250.8" cy="348.2" r="0.65" fill="#cfc8ea" opacity="0.39"/><circle cx="342.6" cy="333.4" r="1.24" fill="#cfc8ea" opacity="0.14"/><circle cx="42.3" cy="89.6" r="1.64" fill="#cfc8ea" opacity="0.31"/><circle cx="262.1" cy="552.5" r="0.95" fill="#cfc8ea" opacity="0.40"/><path d="M 604.7710626609623 162.3 L 605.4 165.5 L 608.5 166.08086322667077 L 605.4 166.7 L 604.7710626609623 169.8 L 604.2 166.7 L 601.0 166.08086322667077 L 604.2 165.5 Z" fill="#f6e6bf" opacity="0.7777814108179881"/><path d="M 194.75361428782344 500.5 L 195.2 502.7 L 197.4 503.148949442897 L 195.2 503.6 L 194.75361428782344 505.8 L 194.3 503.6 L 192.1 503.148949442897 L 194.3 502.7 Z" fill="#f6e6bf" opacity="0.6181413842597976"/><path d="M 643.1851804591715 397.8 L 643.6 400.2 L 646.1 400.6644423385151 L 643.6 401.1 L 643.1851804591715 403.6 L 642.7 401.1 L 640.3 400.6644423385151 L 642.7 400.2 Z" fill="#f6e6bf" opacity="0.6049718612106517"/><path d="M 642.3276458643377 574.5 L 642.9 577.4 L 645.7 577.9363118880428 L 642.9 578.5 L 642.3276458643377 581.3 L 641.8 578.5 L 638.9 577.9363118880428 L 641.8 577.4 Z" fill="#f6e6bf" opacity="0.7857950765872375"/><path d="M 308.8422787375748 127.8 L 309.4 130.8 L 312.5 131.419867482502 L 309.4 132.0 L 308.8422787375748 135.0 L 308.3 132.0 L 305.2 131.419867482502 L 308.3 130.8 Z" fill="#f6e6bf" opacity="0.5059066265122965"/><path d="M 465.0 246.5 L 678.9 544.7 L 553.7 131.5 L 564.7 458.4 L 644.1 589.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Three Core Signatures in Merino's Birth Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mikelmerinobirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mikelmerinobirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Cancer Sun</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Protective, home-and-team-minded core identity</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Water element</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Caretaking presence rather than spotlight-seeking</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 277.6 L 48.3 280.5 L 51.1 281 L 48.3 281.5 L 47.75 284.4 L 47.2 281.5 L 44.4 281 L 47.2 280.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Gemini Stellium (Mercury, Venus, Mars)</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Drives communication, versatility, and quick reading of the play</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Air element</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Constant scanning, linking passes, quick decisions</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="3.5" height="143.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 446.6 L 48.3 449.5 L 51.1 450 L 48.3 450.5 L 47.75 453.4 L 47.2 450.5 L 44.4 450 L 47.2 449.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Virgo Moon</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Processes feeling through precision and useful service</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Earth element</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Calm, detail-focused reactions under pressure</text>
+  <path d="M 202.22749999999988 585.4 L 202.6 587.6 L 204.8 588 L 202.6 588.4 L 202.22749999999988 590.6 L 201.8 588.4 L 199.6 588 L 201.8 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 585.4 L 558.2 587.6 L 560.4 588 L 558.2 588.4 L 557.7725000000002 590.6 L 557.4 588.4 L 555.2 588 L 557.4 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

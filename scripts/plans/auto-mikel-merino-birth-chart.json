@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mikel-merino-birth-chart": {
+      "hero": {
+        "prompt": "A stylized editorial portrait of a composed Spanish footballer in red standing on a dewy pitch at deep dusk, face turned slightly toward a sky filled with a luminous Cancer crab constellation and twin Gemini stars glowing gold; soft gold halo light wraps his silhouette, teal nebula wash sweeps across the upper field; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of Mikel Merino on a dusk football pitch under Cancer and Gemini constellations"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Themes in Merino's Chart",
+          "titleEn": "Five Steps to Reading Merino's Birth Chart",
+          "altEn": "Five-step sequence for reading Mikel Merino's birth chart themes",
+          "items": [
+            {
+              "nameEn": "Elemental Balance",
+              "subEn": "Count the elements first — air leads, earth supports, fire is present, and the Sun is the lone water point"
+            },
+            {
+              "nameEn": "Spot the Stellium",
+              "subEn": "Mercury, Venus, and Mars all fall in Gemini — constant communication, versatility, and quick scanning attention"
+            },
+            {
+              "nameEn": "Sun–Moon Pairing",
+              "subEn": "Cancer Sun with Virgo Moon — a protective core expressed through quiet, practical service rather than display"
+            },
+            {
+              "nameEn": "Note the Retrogrades",
+              "subEn": "Venus and Jupiter both retrograde — value and growth processed privately rather than performed outwardly"
+            },
+            {
+              "nameEn": "Hold Time-Based Points Loosely",
+              "subEn": "Without a confirmed birth time, treat the rising sign and houses as unknown rather than guessing"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Merino's Chart at a Glance",
+          "titleEn": "Three Core Signatures in Merino's Birth Chart",
+          "altEn": "Comparison of Cancer Sun, Gemini Stellium, and Virgo Moon in Mikel Merino's birth chart",
+          "columns": [
+            {
+              "nameEn": "Cancer Sun",
+              "linesEn": [
+                "Protective, home-and-team-minded core identity",
+                "Water element",
+                "Caretaking presence rather than spotlight-seeking"
+              ]
+            },
+            {
+              "nameEn": "Gemini Stellium (Mercury, Venus, Mars)",
+              "linesEn": [
+                "Drives communication, versatility, and quick reading of the play",
+                "Air element",
+                "Constant scanning, linking passes, quick decisions"
+              ]
+            },
+            {
+              "nameEn": "Virgo Moon",
+              "linesEn": [
+                "Processes feeling through precision and useful service",
+                "Earth element",
+                "Calm, detail-focused reactions under pressure"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
