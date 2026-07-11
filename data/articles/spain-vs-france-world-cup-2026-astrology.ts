@@ -63,7 +63,7 @@ Reading Spain vs France World Cup 2026 astrology in practice means hunting for s
 
 1. **Contrast the national chart tones.** Read Spain's chart archetypes against France's — expressive versus structured, say — as two characters, not two scorecards.
 2. **Spot a dominant element.** Look for stacked fire, earth, air, or water in key player charts and treat it as a style cue rather than a rating.
-3. **Track the Jupiter-in-Cancer motif.** Notice themes of quickness, exchange, and youth that the transit tends to amplify across the whole tournament.
+3. **Track the Jupiter-in-Cancer motif.** Notice themes of belonging, protection, and shared feeling that the transit can evoke across the tournament.
 4. **Watch the timing, not the winner.** Read transits as mood over a match window, and never as a locked-in result.
 5. **Name what you're projecting.** Catch the moment you start rooting for a symbol, then ask whether that's the chart talking or you.
 
@@ -89,7 +89,7 @@ Keep those four in view and the reading stays where it belongs: an interpretive 
 |---|---|---|---|
 |National archetypes|Reads each country's chart as a character|Spain and France national charts|Compare tone: expressive vs structured|
 |Player signatures|Turns standout placements into style cues|Dominant element or stellium in key charts|Look for a stacked element across the side|
-|Tournament transit|Sets a shared mood over the event|Jupiter in Cancer, 2026|Notice themes of speed, youth, and exchange|
+|Tournament transit|Sets a shared mood over the event|Jupiter in Cancer, 2026|Notice themes of belonging, protection, and shared feeling|
 |Timing lens|Colors a match window, not the result|Transits to the national charts|Track mood, never a predicted score|
 
 
@@ -103,7 +103,7 @@ No. This reading interprets temperament, style, and timing, not results. Anyone 
 
 **What does the Jupiter-in-Cancer transit mean for the 2026 tournament?**
 
-Jupiter in Cancer is read as a backdrop of quickness, exchange, and youthful energy that both teams share. It works as a mood over the event, not a factor that quietly favors one side.
+Jupiter in Cancer is read as a backdrop of belonging, protection, and shared feeling that both teams share. It works as a mood over the event, not a factor that quietly favors one side.
 
 **Is a national birth chart a real thing in astrology?**
 
@@ -121,8 +121,8 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 
 ## Related Reading
 
-- *pillar overview of World Cup 2026 astrology across teams and players* — the hub this fixture page branches from, tying every team reading together.
-- *explainer on how Jupiter transits work in a birth chart* — background on the Jupiter-in-Cancer motif that frames the whole tournament.
+- [World Cup 2026 astrology overview](/en/wiki/world-cup-2026-astrology-prediction) — the hub this fixture page branches from, tying every team reading together.
+- [Jupiter guide](/en/wiki/jupiter) — background on the Jupiter-in-Cancer motif that frames the whole tournament.
 - [guide to rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — how a chart's rising sign shapes the "character" this reading leans on.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — neutral context on the event itself.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the planet whose orbit sets the twelve-year cycle referenced above.
