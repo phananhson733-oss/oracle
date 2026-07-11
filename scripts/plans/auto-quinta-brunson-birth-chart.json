@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "quinta-brunson-birth-chart": {
+      "hero": {
+        "prompt": "Stylized editorial portrait-scene of a confident joyful young Black woman with natural hair standing center-frame in a warmly lit classroom or writers' room, walls lined with handwritten scripts and a chalkboard behind her, soft gold lamp glow blending upward into a teal-and-indigo nebula sky visible through tall windows, a faint Sagittarius archer constellation tracing softly overhead in stardust, figure placed in the central safe zone of the wide frame, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of Quinta Brunson as Sagittarius Sun creator in a warmly lit classroom-studio setting"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Quinta Brunson's Birth Chart in Her Comedy",
+          "titleEn": "Five Astrological Signals to Spot in Her Work",
+          "altEn": "Sequence of five astrological signals visible in Quinta Brunson's comedy and career arc",
+          "items": [
+            {
+              "nameEn": "Sagittarius Bluntness",
+              "subEn": "Candid, unfiltered honesty in interviews — Sun and Mars in Sagittarius"
+            },
+            {
+              "nameEn": "Capricorn Stagecraft",
+              "subEn": "Patient long build from viral videos to a network sitcom"
+            },
+            {
+              "nameEn": "Libra Fairness",
+              "subEn": "Ensemble storytelling that spreads the spotlight rather than claiming solo dominance"
+            },
+            {
+              "nameEn": "Aquarius Originality",
+              "subEn": "Format-bending, community-minded ideas driven by Venus in Aquarius"
+            },
+            {
+              "nameEn": "Cancer Warmth",
+              "subEn": "Affection for workplace-as-family themes softened by retrograde Jupiter in Cancer"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Quinta Brunson's Birth Chart at a Glance",
+          "titleEn": "Key Placements by Element",
+          "altEn": "Comparison of Quinta Brunson's birth chart placements grouped by fire, earth, and air elements",
+          "columns": [
+            {
+              "nameEn": "Fire",
+              "linesEn": [
+                "Sun in Sagittarius — candor, expansion, blunt honesty",
+                "Mars in Sagittarius — direct, restless, say-it-plainly energy"
+              ]
+            },
+            {
+              "nameEn": "Earth",
+              "linesEn": [
+                "Capricorn stellium (Mercury, Saturn, Uranus, Neptune) — disciplined long-range ambition and structure"
+              ]
+            },
+            {
+              "nameEn": "Air",
+              "linesEn": [
+                "Moon in Libra — balance, fairness, ensemble diplomatic instincts",
+                "Venus in Aquarius — original, communal, format-bending taste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

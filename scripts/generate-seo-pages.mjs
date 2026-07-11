@@ -846,6 +846,7 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'rodri-birth-chart',
   'priyanka-chopra-birth-chart',
   'zendaya-birth-chart',
+  'quinta-brunson-birth-chart',
   'kate-upton-birth-chart',
   'ayo-edebiri-birth-chart',
   'justin-verlander-birth-chart',
