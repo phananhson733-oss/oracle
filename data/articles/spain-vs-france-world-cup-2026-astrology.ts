@@ -27,7 +27,7 @@ export const spainVsFranceWorldCup2026AstrologyEn: WikiArticle = {
 Spain vs France World Cup 2026 astrology is a symbolic way of reading the fixture through the national birth charts of Spain and France, the standout signatures in key players' charts, and the transits hanging over the 2026 tournament. In plain terms, it treats the meeting of two footballing cultures as **a story told through astrological symbols, not a prediction of the result**.
 
 - Reads each side as an archetype pulled from its national chart, not a win probability
-- Leans on player chart signatures and the Jupiter-in-Gemini 2026 backdrop to set the mood
+- Leans on player chart signatures and the Jupiter-in-Cancer 2026 backdrop to set the mood
 - Stops well short of forecasting a winner, an expected-goals figure, or a final score
 
 This reading sits under the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which maps the houses, signs, and placements the whole approach leans on. None of it competes with tactics, form guides, or the bookmakers. It runs alongside them as cultural commentary with an astrological accent — a way of talking about temperament, rivalry, and timing that adds texture to the match rather than trying to settle it. Fans who look this up are usually after exactly that: a richer story for ninety minutes, not a shortcut to the outcome.
@@ -59,11 +59,11 @@ The trade-off is worth stating plainly. To get honesty and cultural depth, you s
 
 ## How to Read the Fixture Through Both National Charts
 
-Reading Spain vs France World Cup 2026 astrology in practice means hunting for signatures you can actually point to, then holding them loosely. According to NASA, Jupiter takes about twelve years to orbit the Sun, so its 2026 pass through Gemini is a shared backdrop both teams play under — a natural place to begin. Work through these observable cues:
+Reading Spain vs France World Cup 2026 astrology in practice means hunting for signatures you can actually point to, then holding them loosely. According to NASA, Jupiter takes about twelve years to orbit the Sun, so its 2026 pass through Cancer is a shared backdrop both teams play under — a natural place to begin. Work through these observable cues:
 
 1. **Contrast the national chart tones.** Read Spain's chart archetypes against France's — expressive versus structured, say — as two characters, not two scorecards.
 2. **Spot a dominant element.** Look for stacked fire, earth, air, or water in key player charts and treat it as a style cue rather than a rating.
-3. **Track the Jupiter-in-Gemini motif.** Notice themes of quickness, exchange, and youth that the transit tends to amplify across the whole tournament.
+3. **Track the Jupiter-in-Cancer motif.** Notice themes of quickness, exchange, and youth that the transit tends to amplify across the whole tournament.
 4. **Watch the timing, not the winner.** Read transits as mood over a match window, and never as a locked-in result.
 5. **Name what you're projecting.** Catch the moment you start rooting for a symbol, then ask whether that's the chart talking or you.
 
@@ -89,7 +89,7 @@ Keep those four in view and the reading stays where it belongs: an interpretive 
 |---|---|---|---|
 |National archetypes|Reads each country's chart as a character|Spain and France national charts|Compare tone: expressive vs structured|
 |Player signatures|Turns standout placements into style cues|Dominant element or stellium in key charts|Look for a stacked element across the side|
-|Tournament transit|Sets a shared mood over the event|Jupiter in Gemini, 2026|Notice themes of speed, youth, and exchange|
+|Tournament transit|Sets a shared mood over the event|Jupiter in Cancer, 2026|Notice themes of speed, youth, and exchange|
 |Timing lens|Colors a match window, not the result|Transits to the national charts|Track mood, never a predicted score|
 
 
@@ -101,9 +101,9 @@ Keep those four in view and the reading stays where it belongs: an interpretive 
 
 No. This reading interprets temperament, style, and timing, not results. Anyone selling a guaranteed winner from a chart is stepping outside what astrology's own tradition claims to do.
 
-**What does the Jupiter-in-Gemini transit mean for the 2026 tournament?**
+**What does the Jupiter-in-Cancer transit mean for the 2026 tournament?**
 
-Jupiter in Gemini is read as a backdrop of quickness, exchange, and youthful energy that both teams share. It works as a mood over the event, not a factor that quietly favors one side.
+Jupiter in Cancer is read as a backdrop of quickness, exchange, and youthful energy that both teams share. It works as a mood over the event, not a factor that quietly favors one side.
 
 **Is a national birth chart a real thing in astrology?**
 
@@ -122,7 +122,7 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 ## Related Reading
 
 - *pillar overview of World Cup 2026 astrology across teams and players* — the hub this fixture page branches from, tying every team reading together.
-- *explainer on how Jupiter transits work in a birth chart* — background on the Jupiter-in-Gemini motif that frames the whole tournament.
+- *explainer on how Jupiter transits work in a birth chart* — background on the Jupiter-in-Cancer motif that frames the whole tournament.
 - [guide to rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — how a chart's rising sign shapes the "character" this reading leans on.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — neutral context on the event itself.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the planet whose orbit sets the twelve-year cycle referenced above.
