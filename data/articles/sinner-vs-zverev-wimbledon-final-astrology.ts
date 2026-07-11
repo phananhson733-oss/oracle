@@ -55,7 +55,7 @@ That distinction is easy to lose because sports coverage and symbolic readings o
 
 Reading Sinner vs Zverev Wimbledon Final astrology is about spotting a handful of observable signals rather than crunching every degree. The idea is to watch the final with more texture, so start with the big three placements and finish with the shared sky:
 
-1. **Compare the two Suns.** The core identity and competitive "why" of each player — steady and fixed, or restless and adaptable — sets the baseline contrast to watch for.
+1. **Compare the two Suns.** Sinner's 16 August birthday places his Sun in Leo, while Zverev's 20 April birthday sits on the Aries–Taurus cusp; the core identity and competitive "why" of each player — steady and fixed, or restless and adaptable — sets the baseline contrast to watch for.
 2. **Weigh the Moons for pressure response.** The Moon hints at how each handles a tight tiebreak emotionally, running from unbothered and self-contained to reactive and expressive.
 3. **Read Mars for tempo and aggression.** Mars describes attacking style and how momentum tends to ignite, stall, or swing back across a set.
 4. **Filter it all through the day's transits.** The match-moment sky colors the shared atmosphere — buoyant, heavy, or jittery — that both players step into together.
