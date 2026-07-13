@@ -1,5 +1,5 @@
-<!-- INPUT: 后端 src 目录结构与职责索引（含 Airwallex Pro 试用激活、API bot/cost gates、缺失静态资源 404、短链登记/跳转、Wiki SEO 收口、经典拆解数据刷新、报告积分购买、地理搜索优化、Synthetica 原子额度保护与 DeepSeek token 日志更新）。 -->
-<!-- OUTPUT: src 架构摘要与文件清单（含 Airwallex Pro 试用激活、API bot/cost gates、缺失静态资源 404、短链登记/跳转、有效 hreflang 目标、经典拆解数据刷新、报告积分购买、地理搜索、Synthetica 并发防护与 DeepSeek token 日志记录）。 -->
+<!-- INPUT: 后端 src 目录结构与职责索引（含 Airwallex Pro 试用激活、API bot/cost gates、地域识别、缺失静态资源 404、短链登记/跳转、Wiki SEO 收口、经典拆解数据刷新、报告积分购买、地理搜索优化、Synthetica 原子额度保护与 DeepSeek token 日志更新）。 -->
+<!-- OUTPUT: src 架构摘要与文件清单（含 Airwallex Pro 试用激活、API bot/cost gates、地域识别、缺失静态资源 404、短链登记/跳转、有效 hreflang 目标、经典拆解数据刷新、报告积分购买、地理搜索、Synthetica 并发防护与 DeepSeek token 日志记录）。 -->
 <!-- POS: 后端源码目录索引；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -8,11 +8,11 @@
 架构概要
 - 存放后端 API 路由、服务与类型定义。
 - prompts 管理 AI 指令，services 提供业务能力。
-- 入口 index.ts 负责挂载缺失静态资源 404、短链登记/跳转、API 路由与中间件。
+- 入口 index.ts 负责挂载缺失静态资源 404、地域识别、短链登记/跳转、API 路由与中间件。
 
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 src 目录结构与文件清单。
-- index.ts｜地位：服务入口｜功能：初始化 Express 与路由挂载（含缺失 `/assets/*` 的不可缓存 404）。
+- index.ts｜地位：服务入口｜功能：初始化 Express 与路由挂载（含 `/api/region` 地域识别与缺失 `/assets/*` 的不可缓存 404）。
 
 目录
 - api｜地位：路由目录｜功能：API 端点处理。
@@ -26,6 +26,7 @@
 - utils｜地位：工具目录｜功能：通用辅助方法。
 
 近期更新
+- index.ts 恢复挂载 `/api/region`，让前端同意横幅按 Vercel 国家码进行 GDPR/CMP 地域分流，未知国家继续安全回退。
 - Wiki SEO override 对没有有效 EN 索引目标的 ZH Lilith 页抑制 hreflang，避免 alternate 指向 canonicaled-away 的 noindex loser。
 - Synthetica 与 AI 服务新增低敏感结构化成本日志：路由生成 requestId 并返回 `X-Request-ID`，记录额度决策与结果；DeepSeek 实际回包记录模型、耗时、input/output/cache token 数值，可按 requestId 在 Vercel 日志中关联，绝不写 prompt、出生信息或模型回复。
 - Synthetica 生成路由在 DeepSeek 调用前预占权益，成功后确认、异常后退款；服务层对 `synthetica_used` 使用 CAS 原子更新，拒绝无额度请求而不触发模型。

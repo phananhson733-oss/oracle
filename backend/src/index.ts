@@ -1,5 +1,5 @@
-// INPUT: Express 服务器配置（含环境变量加载、缺失静态资源 404、短链登记/跳转与统一响应中间件）。
-// OUTPUT: 启动 HTTP 服务（含缺失 /assets/* 404、/go 与根路径短链登记/跳转、百科与支付等 API 路由）。
+// INPUT: Express 服务器配置（含环境变量加载、缺失静态资源 404、地域识别、短链登记/跳转与统一响应中间件）。
+// OUTPUT: 启动 HTTP 服务（含缺失 /assets/* 404、/api/region、/go 与根路径短链登记/跳转、百科与支付等 API 路由）。
 // POS: 后端入口文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import path from "path";
@@ -17,6 +17,7 @@ import { synastryRouter } from "./api/synastry.js";
 import { cycleRouter } from "./api/cycle.js";
 import { cbtRouter } from "./api/cbt.js";
 import { geoRouter } from "./api/geo.js";
+import { regionRouter } from "./api/region.js";
 import { detailRouter } from "./api/detail.js";
 import { wikiRouter } from "./api/wiki.js";
 import { syntheticaRouter } from "./api/synthetica.js";
@@ -416,6 +417,7 @@ app.use("/api/synastry", synastryRouter);
 app.use("/api/cycle", cycleRouter);
 app.use("/api/cbt", cbtRouter);
 app.use("/api/geo", geoRouter);
+app.use("/api/region", regionRouter);
 app.use("/api/detail", detailRouter);
 app.use("/api/wiki", wikiRouter);
 app.use("/api/synthetica", syntheticaRouter);
