@@ -63,9 +63,9 @@ const SPA_ASSET_PATTERNS = [
 
 // SPA shell's <head> contains an inline <style> with the design-token
 // CSS custom properties (--space-* / --star-*) that Tailwind classes like
-// `bg-space-950` / `text-star-50` resolve against. Stubs ship without these,
-// so SPA mounted on a stub would render unstyled. Inject them too. Older
-// shells may also include a non-blocking font script, which remains optional.
+// `bg-space-950` / `text-star-50` resolve against, plus the font-loading
+// <script> that toggles body.fonts-loaded. Stubs ship without these, so
+// SPA mounted on a stub would render unstyled. Inject them too.
 const INLINE_STYLE_RE = /<style\b[^>]*>[\s\S]*?<\/style>/g;
 const INLINE_FONT_SCRIPT_RE = /<script\b(?![^>]*\bsrc=)[^>]*>[\s\S]*?document\.fonts[\s\S]*?<\/script>/g;
 
@@ -129,35 +129,57 @@ const INJECTED_MARKER = '<!-- spa-injected -->';
 // namespaced under [data-seo-stub] - the attribute injectInto adds to the
 // stub's <main>. React replaces #root's children on mount, so that <main>
 // (these rules' only targets) disappears and the live SPA is never matched.
-// This restores a presentable dark-theme layout for the moment before
+// This restores a presentable warm-paper editorial layout (light default,
+// matching the SPA's paper/ink theme) for the moment before
 // /assets/index-*.js hydrates, replacing the unstyled raw text that was left
 // visible after step 2 strips the stub template's own <style>.
 const STUB_FALLBACK_STYLE = `<style data-seo-stub-style>
-    [data-seo-stub]{max-width:680px;margin:0 auto;padding:88px 24px 64px;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#e9e7fb;line-height:1.65;-webkit-font-smoothing:antialiased}
-    [data-seo-stub] h1{margin:0 0 14px;font-size:2rem;line-height:1.2;font-weight:600;letter-spacing:-.02em;color:#f4f3ff}
-    [data-seo-stub] p{margin:0 0 12px;font-size:1.05rem;color:#bdb9e4}
-    [data-seo-stub] .meta{margin-top:22px;font-size:.85rem;color:#8b88b8}
-    [data-seo-stub] .cta{display:inline-block;margin-top:22px;padding:11px 22px;border-radius:9999px;background:linear-gradient(135deg,#7c6cf0,#a06cf0);color:#fff;font-weight:600;text-decoration:none}
-    [data-seo-stub] .hero img{max-width:100%;height:auto;margin:8px 0 4px;border-radius:14px}
+    [data-seo-stub]{max-width:680px;margin:0 auto;padding:88px 24px 64px;font-family:Georgia,"Times New Roman","Songti SC",serif;color:#3A342B;line-height:1.65;-webkit-font-smoothing:antialiased;background:#F4EFE4}
+    [data-seo-stub] h1{margin:0 0 14px;font-size:2rem;line-height:1.15;font-weight:500;letter-spacing:-.015em;color:#16130F}
+    [data-seo-stub] p{margin:0 0 12px;font-size:1.05rem;color:#3A342B}
+    [data-seo-stub] .meta{margin-top:22px;font-size:.85rem;color:#6B6053}
+    [data-seo-stub] .cta{display:inline-block;margin-top:22px;padding:12px 24px;border-radius:2px;background:#16130F;color:#F4EFE4;font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:.85rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+    [data-seo-stub] .hero img{max-width:100%;height:auto;margin:8px 0 4px;border-radius:2px}
     [data-seo-stub] article.content{margin-top:20px}
-    [data-seo-stub] article.content h2{margin:1.8rem 0 .6rem;font-size:1.4rem;color:#f4f3ff}
-    [data-seo-stub] article.content h3{margin:1.5rem 0 .5rem;font-size:1.15rem;color:#c9c5ef}
-    [data-seo-stub] article.content blockquote{margin:1rem 0;padding-left:1rem;border-left:3px solid rgba(160,108,240,.45);color:#bdb9e4}
-    [data-seo-stub] article.content li{line-height:1.65;color:#bdb9e4}
-    [data-seo-stub] .safety-footer{margin-top:2.2rem;padding:1rem 1.1rem;border:1px solid rgba(160,108,240,.25);border-radius:12px;background:rgba(124,108,240,.08);font-size:.88rem;color:#bdb9e4}
-    [data-seo-stub-loader]{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#050506;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-    [data-seo-stub-loader] .seo-stub-spinner{width:34px;height:34px;border-radius:9999px;border:2.5px solid rgba(160,108,240,.22);border-top-color:#a06cf0;animation:seo-stub-spin .8s linear infinite}
-    [data-seo-stub-loader] .seo-stub-loading-text{margin:0;font-size:.88rem;letter-spacing:.06em;color:#8b88b8}
+    [data-seo-stub] article.content h2{margin:1.8rem 0 .6rem;font-size:1.4rem;font-weight:500;color:#16130F}
+    [data-seo-stub] article.content h3{margin:1.5rem 0 .5rem;font-size:1.15rem;font-weight:500;color:#3A342B}
+    [data-seo-stub] article.content blockquote{margin:1rem 0;padding-left:1rem;border-left:2px solid rgba(22,19,15,.30);color:#6B6053}
+    [data-seo-stub] article.content li{line-height:1.65;color:#3A342B}
+    [data-seo-stub] .safety-footer{margin-top:2.2rem;padding:1rem 1.1rem;border:1px solid rgba(22,19,15,.16);border-radius:2px;background:#FBF8F1;font-size:.88rem;color:#6B6053}
+    [data-seo-stub-loader]{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#F4EFE4;font-family:Georgia,"Times New Roman",serif}
+    [data-seo-stub-loader] .seo-stub-spinner{width:34px;height:34px;border-radius:9999px;border:2.5px solid rgba(22,19,15,.15);border-top-color:#9A7B3F;animation:seo-stub-spin .8s linear infinite}
+    [data-seo-stub-loader] .seo-stub-loading-text{margin:0;font-size:.88rem;letter-spacing:.06em;color:#6B6053}
+    body{background:#F4EFE4}
+    body.dark{background:#16130F}
+    body.dark [data-seo-stub]{background:#16130F;color:#CFC6B5}
+    body.dark [data-seo-stub] h1,body.dark [data-seo-stub] article.content h2{color:#EDE6D8}
+    body.dark [data-seo-stub] p,body.dark [data-seo-stub] article.content li{color:#CFC6B5}
+    body.dark [data-seo-stub] .meta,body.dark [data-seo-stub] .safety-footer,body.dark [data-seo-stub] article.content blockquote{color:#9C9182}
+    body.dark [data-seo-stub] .safety-footer{border-color:rgba(237,230,216,.16);background:#211C15}
+    body.dark [data-seo-stub] .cta{background:#EDE6D8;color:#16130F}
+    body.dark [data-seo-stub-loader]{background:#16130F}
+    body.dark [data-seo-stub-loader] .seo-stub-spinner{border-color:rgba(237,230,216,.15);border-top-color:#C6A15E}
+    body.dark [data-seo-stub-loader] .seo-stub-loading-text{color:#9C9182}
     @keyframes seo-stub-spin{to{transform:rotate(360deg)}}
   </style>`;
 
 // Pre-hydration loading overlay. Sits inside #root, above the now-styled but
-// content-mismatched stub <main>, so a real visitor sees a neutral dark
+// content-mismatched stub <main>, so a real visitor sees a neutral warm-paper
 // loading state instead of the SEO copy flashing before /assets/index-*.js
 // mounts. createRoot().render() replaces #root's children on mount (see
 // index.html), so this overlay and the stub <main> are removed together with
 // zero residue, and it can never match the live SPA. Crawlers still read the
 // <main> text straight from the raw DOM regardless of this visual overlay.
+// Pre-paint theme restore for stubs — mirror of the index.html <body> script
+// (and services/themeStorage.ts semantics): light is the brand default; only an
+// explicit astro_theme_v2 === 'dark' flips the pre-hydration view to night.
+// Without this, dark-opted users hard-refreshing any stub route saw a paper
+// flash (loader + fallback + theme-color) until React mounted. The body.dark
+// class also drives the dark overrides inside STUB_FALLBACK_STYLE above and the
+// SPA's CSS variables once the Tailwind stylesheet loads.
+const STUB_PREPAINT_SCRIPT =
+  '<script>(function(){try{if(localStorage.getItem("astro_theme_v2")==="dark"){var c=document.body.classList;c.add("dark","bg-space-950","text-star-50");var m=document.querySelector(\'meta[name="theme-color"]\');if(m)m.setAttribute("content","#16130F");}}catch(e){}})();</script>';
+
 const STUB_LOADER_HTML =
   '<div data-seo-stub-loader aria-hidden="true"><div class="seo-stub-spinner"></div><p class="seo-stub-loading-text">Loading...</p></div>';
 
@@ -197,6 +219,15 @@ const injectInto = (html, payload) => {
   //    loading <script>, and asset tags just before </head>. Marker
   //    comment makes idempotent.
   next = next.replace(/<\/head>/, `\n${INJECTED_MARKER}\n${STUB_FALLBACK_STYLE}\n${payload}  </head>`);
+  // 4. Pre-paint theme restore as the first child of <body>: flips explicit
+  //    dark users to the night view before first paint (see STUB_PREPAINT_SCRIPT
+  //    comment). Anchored to the </head>-adjacent <body> tag — a bare /<body/
+  //    match would hit the literal "<body>" inside the font script's comment
+  //    (injected into <head> by step 3) and splice the script mid-comment.
+  next = next.replace(
+    /(<\/head>\s*)<body([^>]*)>/,
+    (_m, pre, attrs) => `${pre}<body${attrs}>${STUB_PREPAINT_SCRIPT}`,
+  );
   return { html: next, status: 'injected' };
 };
 
@@ -215,8 +246,8 @@ const main = () => {
     );
   }
 
-  // Ordering matters: styles first (define CSS vars), then optional inline
-  // runtime scripts, then asset tags last.
+  // Ordering matters: styles first (define CSS vars), then font script
+  // (toggles fonts-loaded class), then asset tags last.
   const payload =
     inlineStyles.map((s) => '    ' + s).join('\n') + '\n' +
     inlineScripts.map((s) => '    ' + s).join('\n') + '\n' +
@@ -261,4 +292,4 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }
 
-export { injectInto, extractSpaAssets, STUB_FALLBACK_STYLE, STUB_LOADER_HTML };
+export { injectInto, extractSpaAssets, STUB_FALLBACK_STYLE, STUB_LOADER_HTML, STUB_PREPAINT_SCRIPT };
