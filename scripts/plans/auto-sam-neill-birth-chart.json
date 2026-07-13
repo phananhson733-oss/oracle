@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "sam-neill-birth-chart": {
+      "hero": {
+        "prompt": "A stylized painterly editorial portrait of a distinguished silver-haired actor in his seventies, seated at a weathered wooden desk in a dimly lit study, quietly reviewing loose manuscript pages with focused deliberation; behind him a deep indigo-to-near-black night sky (#16112c fading to #0b0a1b) opens through a tall arched window, soft gold accents (#d4af6a) tracing Mercury's swift elliptical orbit as a luminous arc through the starfield; a single sheaf of dried wheat rests in the foreground as a Virgo harvest emblem; teal-and-gold nebula wash bleeds across the upper corners; painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Painterly portrait of a contemplative craftsman actor at a candlelit desk with Virgo wheat and Mercury's golden orbital arc in a deep indigo starfield"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Virgo Emphasis in a Birth Chart",
+          "titleEn": "5 Observable Signals of Virgo Emphasis",
+          "altEn": "Five-step sequence showing observable Virgo signals: craft, editing instinct, dry wit, reserve, and service to the material",
+          "items": [
+            {
+              "nameEn": "Craft over spectacle",
+              "subEn": "Choices favor precision and finish over flash; work holds up on a second viewing"
+            },
+            {
+              "nameEn": "Editing instinct",
+              "subEn": "A habit of trimming and refining; Mercury-ruled Virgo cuts before adding"
+            },
+            {
+              "nameEn": "Dry, low-key wit",
+              "subEn": "Humor delivered flat rather than broadcast; critics long noted this in his performances"
+            },
+            {
+              "nameEn": "Reserve as a stance",
+              "subEn": "Restraint reads as coolness or care; Virgo chooses understatement on purpose"
+            },
+            {
+              "nameEn": "Service to the material",
+              "subEn": "Work quietly points at the story rather than the performer; Virgo's mutable-earth service instinct"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sun-Sign Snapshot vs Full Birth Chart: Reading Sam Neill in Context",
+          "titleEn": "Sun-Sign Snapshot vs Full Chart Reading",
+          "altEn": "Comparison of a quick Sun-sign snapshot against a full psychological birth chart reading for Sam Neill",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Snapshot",
+              "linesEn": [
+                "Reads one placement: Virgo",
+                "Fast and shareable",
+                "Sacrifices nuance and texture",
+                "Clean label, single clear answer"
+              ]
+            },
+            {
+              "nameEn": "Full Chart Reading",
+              "linesEn": [
+                "Holds Virgo Sun alongside Moon and Rising",
+                "Richer, more hedged interpretation",
+                "Sacrifices certainty without a birth time",
+                "Deeper but stays speculative where unconfirmed"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

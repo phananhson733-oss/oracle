@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 487" role="img" aria-label="5 Observable Signals of Virgo Emphasis">
+  <defs>
+    <linearGradient id="samneillbirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="samneillbirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="samneillbirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="samneillbirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="samneillbirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="samneillbirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="484" rx="22" fill="url(#samneillbirthchart0en-panel)"/>
+  <ellipse cx="198" cy="117" rx="380" ry="166" fill="url(#samneillbirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="390" rx="334" ry="156" fill="url(#samneillbirthchart0en-neb2)"/>
+  <circle cx="512.2" cy="64.7" r="1.01" fill="#cfc8ea" opacity="0.26"/><circle cx="286.4" cy="424.8" r="0.82" fill="#cfc8ea" opacity="0.45"/><circle cx="315.7" cy="463.1" r="1.42" fill="#cfc8ea" opacity="0.36"/><circle cx="458.0" cy="275.8" r="1.53" fill="#cfc8ea" opacity="0.20"/><circle cx="317.0" cy="141.7" r="1.15" fill="#cfc8ea" opacity="0.21"/><circle cx="240.4" cy="114.1" r="0.59" fill="#cfc8ea" opacity="0.40"/><circle cx="246.0" cy="469.9" r="0.87" fill="#cfc8ea" opacity="0.47"/><circle cx="37.0" cy="100.7" r="1.02" fill="#cfc8ea" opacity="0.50"/><circle cx="668.1" cy="46.9" r="1.12" fill="#cfc8ea" opacity="0.31"/><circle cx="222.6" cy="69.5" r="1.09" fill="#cfc8ea" opacity="0.21"/><circle cx="530.6" cy="310.3" r="0.82" fill="#cfc8ea" opacity="0.12"/><circle cx="299.7" cy="65.4" r="1.17" fill="#cfc8ea" opacity="0.12"/><circle cx="608.7" cy="210.8" r="1.41" fill="#cfc8ea" opacity="0.47"/><circle cx="542.3" cy="243.9" r="0.58" fill="#cfc8ea" opacity="0.53"/><circle cx="636.0" cy="407.2" r="1.67" fill="#cfc8ea" opacity="0.23"/><circle cx="34.1" cy="415.8" r="0.53" fill="#cfc8ea" opacity="0.15"/><circle cx="164.6" cy="260.9" r="0.42" fill="#cfc8ea" opacity="0.53"/><circle cx="452.0" cy="76.5" r="0.91" fill="#cfc8ea" opacity="0.42"/><circle cx="626.5" cy="239.2" r="0.85" fill="#cfc8ea" opacity="0.39"/><circle cx="459.0" cy="253.5" r="1.09" fill="#cfc8ea" opacity="0.44"/><circle cx="459.3" cy="362.0" r="0.50" fill="#cfc8ea" opacity="0.43"/><circle cx="207.4" cy="272.5" r="1.11" fill="#cfc8ea" opacity="0.41"/><circle cx="320.0" cy="48.7" r="1.57" fill="#cfc8ea" opacity="0.31"/><circle cx="445.0" cy="229.9" r="1.16" fill="#cfc8ea" opacity="0.51"/><circle cx="649.0" cy="379.3" r="1.35" fill="#cfc8ea" opacity="0.51"/><circle cx="136.9" cy="278.3" r="0.89" fill="#cfc8ea" opacity="0.22"/><circle cx="121.7" cy="290.6" r="0.72" fill="#cfc8ea" opacity="0.34"/><circle cx="483.0" cy="141.5" r="1.63" fill="#cfc8ea" opacity="0.53"/><circle cx="149.8" cy="431.1" r="0.71" fill="#cfc8ea" opacity="0.23"/><circle cx="368.5" cy="426.9" r="1.09" fill="#cfc8ea" opacity="0.35"/><circle cx="324.7" cy="360.9" r="0.65" fill="#cfc8ea" opacity="0.49"/><circle cx="368.1" cy="463.7" r="0.61" fill="#cfc8ea" opacity="0.37"/><circle cx="99.1" cy="31.5" r="1.34" fill="#cfc8ea" opacity="0.34"/><circle cx="625.5" cy="256.5" r="1.55" fill="#cfc8ea" opacity="0.22"/><circle cx="272.0" cy="115.1" r="1.14" fill="#cfc8ea" opacity="0.42"/><circle cx="41.0" cy="305.4" r="1.20" fill="#cfc8ea" opacity="0.16"/><circle cx="380.7" cy="83.0" r="0.50" fill="#cfc8ea" opacity="0.21"/><circle cx="426.4" cy="357.5" r="1.08" fill="#cfc8ea" opacity="0.14"/><circle cx="424.6" cy="392.1" r="1.27" fill="#cfc8ea" opacity="0.23"/><circle cx="700.9" cy="126.0" r="1.17" fill="#cfc8ea" opacity="0.18"/><circle cx="506.8" cy="59.9" r="0.92" fill="#cfc8ea" opacity="0.37"/><path d="M 205.9973236154765 401.7 L 206.4 403.8 L 208.6 404.2436506487429 L 206.4 404.7 L 205.9973236154765 406.8 L 205.6 404.7 L 203.4 404.2436506487429 L 205.6 403.8 Z" fill="#f6e6bf" opacity="0.5543895730283112"/><path d="M 197.67322856746614 168.8 L 198.2 171.5 L 200.9 172.02635209541768 L 198.2 172.6 L 197.67322856746614 175.3 L 197.1 172.6 L 194.4 172.02635209541768 L 197.1 171.5 Z" fill="#f6e6bf" opacity="0.5842485018540173"/><path d="M 36.30865230970085 312.7 L 36.9 315.7 L 39.9 316.2233099807054 L 36.9 316.8 L 36.30865230970085 319.8 L 35.7 316.8 L 32.8 316.2233099807054 L 35.7 315.7 Z" fill="#f6e6bf" opacity="0.5432478181552142"/><path d="M 126.01341806910932 383.7 L 126.6 387.0 L 129.9 387.61147871706635 L 126.6 388.2 L 126.01341806910932 391.5 L 125.4 388.2 L 122.1 387.61147871706635 L 125.4 387.0 Z" fill="#f6e6bf" opacity="0.6250219127628952"/><path d="M 671.5932414066046 404.4 L 672.1 407.0 L 674.6 407.43475836515427 L 672.1 407.9 L 671.5932414066046 410.5 L 671.1 407.9 L 668.6 407.43475836515427 L 671.1 407.0 Z" fill="#f6e6bf" opacity="0.6058311378117651"/><path d="M 317.0 141.7 L 37.0 100.7 L 530.6 310.3 L 636.0 407.2 L 452.0 76.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="484" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="473" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 467.8 L 16.5 470.5 L 19.2 471 L 16.5 471.5 L 16 474.2 L 15.5 471.5 L 12.8 471 L 15.5 470.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 467.8 L 744.5 470.5 L 747.2 471 L 744.5 471.5 L 744 474.2 L 743.5 471.5 L 740.8 471 L 743.5 470.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Observable Signals of Virgo Emphasis</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#samneillbirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#samneillbirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="397" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#samneillbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#samneillbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Craft over spectacle</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Choices favor precision and finish over flash; work holds up on a second</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">viewing</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#samneillbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#samneillbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Editing instinct</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A habit of trimming and refining; Mercury-ruled Virgo cuts before adding</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#samneillbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#samneillbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Dry, low-key wit</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Humor delivered flat rather than broadcast; critics long noted this in his</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">performances</text>
+  <circle cx="76" cy="337" r="20.0" fill="url(#samneillbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="337" r="15" fill="url(#samneillbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="332.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="341.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="333.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Reserve as a stance</text>
+  <text x="116" y="355.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Restraint reads as coolness or care; Virgo chooses understatement on purpose</text>
+  <circle cx="76" cy="397" r="20.0" fill="url(#samneillbirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="397" r="15" fill="url(#samneillbirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="392.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="401.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="393.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Service to the material</text>
+  <text x="116" y="415.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Work quietly points at the story rather than the performer; Virgo's</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">mutable-earth service instinct</text>
+  <path d="M 202.22749999999988 458.4 L 202.6 460.6 L 204.8 461 L 202.6 461.4 L 202.22749999999988 463.6 L 201.8 461.4 L 199.6 461 L 201.8 460.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 458.4 L 558.2 460.6 L 560.4 461 L 558.2 461.4 L 557.7725000000002 463.6 L 557.4 461.4 L 555.2 461 L 557.4 460.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
