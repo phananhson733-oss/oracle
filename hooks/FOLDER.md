@@ -1,5 +1,5 @@
-<!-- INPUT: React Hooks 目录索引（含分析追踪、额度查询、A/B 测试、地域/广告同意与 UI 状态钩子）。 -->
-<!-- OUTPUT: hooks 目录架构摘要与文件索引（含 Pro 试用文案实验与广告同意响应记录）。 -->
+<!-- INPUT: React Hooks 目录索引（含分析追踪、额度查询、A/B 测试与 UI 状态钩子）。 -->
+<!-- OUTPUT: hooks 目录架构摘要与文件索引（含 Pro 试用文案实验记录）。 -->
 <!-- POS: hooks 目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -18,11 +18,8 @@
 - useCityAutocomplete.ts｜地位：通用城市自动补全 hook｜功能：debounced 搜索 + 键盘导航 (Arrow/Enter/Esc/Home/End) + WAI-ARIA combobox/listbox/option a11y props，泛型支持 City 与 GeoResult，5 个调用点共用。
 - useCityAutocomplete.test.ts｜地位：纯函数单测｜功能：覆盖 nextActiveIndex 键盘 reducer 的所有路径（边界 / wrap / 空列表 / Home / End）。
 - useTodaySky.ts｜地位：landing today-sky 数据钩子｜功能：封装 fetchTodaySky 调用，模块级 promise 缓存去重 Hero 与 CosmicWeather 的并发首次挂载，返回 { data, loading, hasError, reload }；FINDING-H01 Hero 右半区数据来源。
-- useRegion.ts｜地位：地域判定 hook｜功能：包装 services/region 的 fetchRegion/getCachedRegion，返回 RegionInfo（命中缓存同步返回，否则异步解析后重渲染），供 ConsentBanner 地域分流与 AdSlot 广告门控。
-- useAdConsentVersion.ts｜地位：广告同意响应式 hook（PR2）｜功能：订阅 adConsentBus，返回随同意变化自增的版本号，让 AdSlot 在用户当前页授予同意后立即重算门控出广告（评审 B2）。
 
 近期更新
-- 新增 useRegion 钩子（AdSense 接入 PR1）：暴露访客 GDPR 地域给 ConsentBanner（EEA 抑制自研横幅）与 AdSlot（广告同意门控）。
 - useABTest 的试用文案实验改为“手动激活 Pro 试用 + 付款信息绑定 + 可取消”叙事，避免继续暗示注册自动赠送试用。
 - 新增 useTodaySky 钩子，模块级 promise 缓存让 Hero 右半区编辑卡 (HeroTodayCard) 与 CosmicWeatherSection 共享 /api/astro/today 请求，FINDING-H01 修复。
 - 新增 useAnalytics 钩子，补齐滚动深度与外链点击追踪能力。

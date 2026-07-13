@@ -1,5 +1,5 @@
 <!-- INPUT: vitest API + sibling service modules under test. -->
-<!-- OUTPUT: Unit-test suites covering services consent-gating + buffer semantics. -->
+<!-- OUTPUT: Unit-test suites covering services consent-gating, consent-time page-view recovery, localized page classification + buffer semantics. -->
 <!-- POS: services 单元测试目录；若更新此文件，务必更新本头注释与 services/FOLDER.md。 -->
 
 # 文件夹：services/__tests__
@@ -11,7 +11,8 @@
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录测试目录架构与文件清单。
 - analyticsConsentBuffer.test.ts｜地位：缓冲模块单元测试｜功能：覆盖 bufferUserId / bufferUserProperties / drain / clear / FIFO 上限。
-- analytics.consent-gate.test.ts｜地位：同意网关行为测试｜功能：mock `../consent` + `window.gtag`，验证 setUserId/setUserProperties 在未同意时不调用 gtag、在同意时直发、updateConsentState 触发 flush / clear。
+- analytics.consent-gate.test.ts｜地位：同意网关行为测试｜功能：mock `../consent` + `window.gtag`，验证 setUserId/setUserProperties 在未同意时不调用 gtag、在同意时直发、updateConsentState 触发 flush / clear + 首次授权补发一次当前页 page_view，并验证 en/zh 路由分类。
 
 近期更新
+- analytics.consent-gate 补充首次授权 page_view 恢复与语言前缀路由分类回归。
 - 初次创建，配合 fix(p0): gate setUserId / setUserProperties / initAnalytics on consent。

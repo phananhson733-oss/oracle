@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL、付费墙购买回调、Airwallex Pro 试用激活、AdSense 广告组件、支付成功同步与积分充值弹窗）。 -->
-<!-- OUTPUT: components 架构摘要与文件索引（含付费墙回调、Airwallex Pro 试用激活/成功态、AdSense 展示层、支付成功同步/返回、积分充值弹窗与纸感映射记录）。 -->
+<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL、压缩品牌图、付费墙购买回调、Airwallex Pro 试用激活、SectionHeader detailLabel、支付成功同步与积分充值弹窗）。 -->
+<!-- OUTPUT: components 架构摘要与文件索引（含压缩品牌图、付费墙回调、Airwallex Pro 试用激活/成功态、SectionHeader 可覆盖详情文案、支付成功同步/返回、积分充值弹窗与纸感映射记录）。 -->
 <!-- POS: 主应用组件目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -16,14 +16,14 @@
 文件清单
 
 - FOLDER.md｜地位：目录索引文档｜功能：记录组件目录架构与文件清单。
-- AstroChart.tsx｜地位：可视化组件｜功能：绘制星盘 SVG（后端数据驱动）；可选 onPlanetClick prop 让行星字形可点/键盘激活 → 触发消费者的 natal 详情解读（MePage 接到既有 planets 详情流程）。
+- AstroChart.tsx｜地位：可视化组件｜功能：绘制星盘 SVG（后端数据驱动）；可选 onPlanetClick prop 让行星字形可点/键盘激活，由消费者自行接入详情流程。
 - TechSpecsComponents.tsx｜地位：功能组件｜功能：技术参数表格与列表 UI。
-- UIComponents.tsx｜地位：基础组件库｜功能：主题/语言上下文与通用组件。
+- UIComponents.tsx｜地位：基础组件库｜功能：主题/语言上下文与通用组件（SectionHeader 支持可选 detailLabel）。
 - payment.tsx｜地位：功能弹窗｜功能：积分充值占位弹窗与订阅引导。
 - ConsentBanner.tsx｜地位：提示组件｜功能：展示分析追踪同意横幅并收集授权（analytics/marketing toggle 以 htmlFor + aria-label 暴露可访问名 + role=switch）。
 - MobileBottomNav.tsx｜地位：导航组件｜功能：移动端（<md）固定底部 tab bar，icon + label + active 高亮，镜像顶部 6 个 nav 项与 t.nav.\*/isActive 逻辑；safe-area 内边距，z-[150] 让位 consent banner（z-[200]）。
 - Breadcrumb.tsx｜地位：导航组件｜功能：面包屑导航与结构化数据输出。
-- ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式）。
+- ComparisonPage.tsx｜地位：营销页面｜功能：竞品对比页面（vs 与 alternatives 格式），使用压缩品牌小图。
 - SaveReadingButton.tsx｜地位：保存控件（#24）｜功能：cycle/synastry 结果页复用的 Save 按钮（natal 本命盘已改用分享卡弹窗下载），匿名点击开登录弹窗，含 saving/done 态；synastry payload 须由页面预先剥名（红线#4）。
 - ChartShareCard.tsx｜地位：星盘分享卡布局｜功能：信息丰富的星盘分享卡（`chartType` natal|transit：头部出生数据 + 行星表含庙旺落陷 + 元素/模式分布 + 轮盘），按 chartType 自取 ExtendedNatalData/getTransitPositions，forwardRef 供截图导出；参考 Astrodienst 信息密度。
 - ChartShareModal.tsx｜地位：分享卡预览/导出弹窗｜功能：全屏预览 ChartShareCard（浅/深主题切换，弹窗驱动 body 主题类让轮盘也跟随）+ 下载 PNG（调 `utils/domToPng` 的 html-to-image 捕获）+ 关闭。接 `chartType`；MePage 本命盘 / TodayPage 行运盘的"下载图片"按钮打开它。
@@ -39,12 +39,12 @@
 - calculators｜地位：计算器矩阵目录｜功能：SEO 计算器矩阵（D）配置驱动外壳 + 各 slug 配置 + embed 基建。
 - timeline｜地位：能量时间轴目录｜功能：Energy Timeline 蜡烛主视图 / 当日抽屉 / 安全 onboarding。
 - tools｜地位：工具中心目录｜功能：/:lang/tools hub（工具目录数据 + hub 页，计算器矩阵统一发现入口）。
-- ads｜地位：广告组件目录｜功能：AdSense 接入展示层（AdSlot 手动广告位 + adPlacements 配置），仅 wiki 文章页、四重门控、地域分流方案 A。
 
 近期更新
 
-- 新增 ads/ 目录（AdSense 接入 PR1）：AdSlot 四重门控广告单元 + adPlacements 配置；ConsentBanner 加地域分流（EEA 抑制自研横幅交 Google 认证 CMP）；WikiArticleDetailPage 文末挂 AdSlot（仅非漏斗/非心理敏感文章）。flag 默认关，PR1 全站零广告。
+- ComparisonPage 的 AstrologyWiki logo 改用 `/brand/logo-mark-64.png`，避免营销页加载原始大图。
 - 升级弹窗接入手动 Pro 试用激活：符合资格用户点击 CTA 后走 Airwallex 结账填写付款信息，支付成功页可识别试用 checkout 并刷新 trialing 权益。
+- SectionHeader 支持 `detailLabel` 覆盖默认详情按钮文案；MePage 顶部星盘保持只读，避免绑定跨组件作用域的详情回调。
 - 新增 tools 工具中心 hub（/:lang/tools）：astro.com 风格 5 分类聚合发现页，复用 ToolsGridSection 卡片范式；nav/footer 加 Tools 入口，生成器输出 /en/tools 静态 stub（CollectionPage/ItemList/FAQPage + 16 工具可索引内链 + sitemap）。顺手补 calculators/timeline 子目录索引漂移。
 - 公开工具页宽度同步：根目录 SaturnReturnCalculator 与 Energy Timeline demo 外壳扩到 max-w-[88rem]，与 calculators/ToolPageShell 的工具页宽度保持一致。
 - 新增 MobileBottomNav（移动端固定底部 tab bar，复用顶部 6 项 + t.nav.\* + isActive，safe-area + z-[150] 让位 consent banner）；ConsentBanner 的 analytics/marketing toggle 补可访问名（htmlFor 关联可见文字 + aria-label en/zh + role=switch），不改持久化逻辑。
@@ -123,4 +123,3 @@
 - 相位矩阵移除 DSC/IC/MC，并为跨盘矩阵补齐 Asc 行。
 - 宫主星飞入宫位展示补充星座信息。
 - 新增心理占星百科 Wiki 页面与详情组件。
-- 编辑部换装：UIComponents ThemeProvider 默认 light + 键 astro_theme_v2 + meta theme-color 联动；getStyles 卡片/分隔/输入改发丝线（去 shadow-card/backdrop-blur）；ActionButton primary 改实心墨（bg-star-50/text-space-950 双模式自反转 + mono 大写）；Container 移除暗色 glow 光斑。星盘（AstroChart 等）内部样式豁免未动。

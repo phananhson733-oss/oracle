@@ -1,5 +1,5 @@
 // INPUT: i18n translations, language context, theme context, react-router for internal nav.
-// OUTPUT: Editorial site footer for /landing-v2 — brand mark, tagline, 3-column link tree
+// OUTPUT: Editorial site footer for /landing-v2 — compressed brand mark, tagline, 3-column link tree
 //         (Product / Explore / Legal), and a bottom row with language switcher + copyright +
 //         privacy promise. Routes resolved against App.tsx; uses <Link> for internal nav so
 //         language-prefixed paths stay client-side.
@@ -88,7 +88,7 @@ const FooterSection: React.FC = () => {
       aria-label="Site footer"
       className={`w-full border-t ${
         isDark
-          ? "border-star-50/10 bg-space-950"
+          ? "border-gold-500/10 bg-space-950"
           : "border-paper-300/40 bg-paper-100"
       }`}
     >
@@ -97,6 +97,7 @@ const FooterSection: React.FC = () => {
         <div className="flex items-center gap-3">
           <img
             src="/brand/logo-mark-64.png"
+            srcSet="/brand/logo-mark-32.png 1x, /brand/logo-mark-64.png 2x"
             alt=""
             width={28}
             height={28}
@@ -130,7 +131,7 @@ const FooterSection: React.FC = () => {
         <div
           className={`mt-14 pt-6 border-t flex flex-col sm:flex-row sm:items-center sm:flex-wrap gap-3 text-xs ${
             isDark
-              ? "border-star-50/10 text-star-400"
+              ? "border-gold-500/10 text-star-400"
               : "border-paper-300/40 text-paper-500"
           }`}
         >

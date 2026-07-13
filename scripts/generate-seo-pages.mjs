@@ -1,3 +1,7 @@
+// INPUT: Wiki/文章/工具数据、SEO helper、站点 URL 与已提交的 lastmod manifest。
+// OUTPUT: public 下的双语静态 SEO 页面、诚实的 hreflang 集群、sitemap 与 lastmod manifest。
+// POS: 静态 SEO 生成入口；若更新此文件，务必更新本头注释与根目录 FOLDER.md。
+
 import fs from 'fs';
 import fsPromises from 'fs/promises';
 import path from 'path';
@@ -13,10 +17,6 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
 const publicDir = path.join(rootDir, 'public');
 const siteUrl = (process.env.SITE_URL || 'https://www.astrologywiki.com').replace(/\/$/, '');
-// L2 cutover (2026-05-19): canonical home is root '/' (EN-only); /en/ /zh/ are NOT routes —
-// they 301 server-side (vercel.json). Structured-data 'Home' must point at the live 200 home,
-// language-matched: en -> '/', zh -> '/landing-v2/zh/' (the indexable zh landing).
-const langHomeUrl = (lang) => (lang === 'zh' ? `${siteUrl}/landing-v2/zh/` : `${siteUrl}/`);
 const ogImageUrl = `${siteUrl}/og-image.png`;
 const today = new Date().toISOString().split('T')[0];
 // T1: sitemap lastmod 只在内容真实变更时改 today，否则保留旧值。manifest 记录每个 URL 的内容签名与 lastmod，随仓库提交。
@@ -188,20 +188,6 @@ const buildAlternateLinks = (pathSuffix, availability = { zh: true, en: true }) 
   return links;
 };
 
-// AdSense <head> loader：仅当 VITE_ADSENSE_HEAD_LOADER_ENABLED=true 且
-// VITE_ADSENSE_CLIENT_ID 为合法 ca-pub-XXXX 时注入原始 HTML 的 <head>，
-// 供 Google 首次审核验证代码 + Privacy&messaging CMP 全站加载。默认关闭，避免 SEO stub 首字节必拉广告脚本。
-// 格式校验防 HTML 注入。
-// 与前端 services/adsense.ts::loadAdsense 共用 id="astro-adsense" 避免重复注入。
-// 注意：此 loader 受 HEAD_LOADER_ENABLED + CLIENT_ID 控制（供验证/CMP），广告是否真正投放另由 VITE_ADSENSE_ENABLED
-// 经 AdSlot 门控（审核期只需 CLIENT_ID，不出广告）。
-const ADSENSE_HEAD_TAG = (() => {
-  if (process.env.VITE_ADSENSE_HEAD_LOADER_ENABLED !== 'true') return '';
-  const client = (process.env.VITE_ADSENSE_CLIENT_ID || '').trim();
-  if (!/^ca-pub-\d{10,25}$/.test(client)) return '';
-  return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}" crossorigin="anonymous" id="astro-adsense"></script>`;
-})();
-
 const buildHead = ({
   lang,
   title,
@@ -238,10 +224,7 @@ const buildHead = ({
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(desc)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(pageOgImage)}" />`,
-    `<meta name="theme-color" content="#F4EFE4" />`,
   ];
-
-  if (ADSENSE_HEAD_TAG) headParts.push(ADSENSE_HEAD_TAG);
 
   if (schema) {
     headParts.push(`<script type="application/ld+json">${safeJsonLd(schema)}</script>`);
@@ -250,20 +233,20 @@ const buildHead = ({
   headParts.push(`
 <style>
   :root { color-scheme: light; }
-  body { font-family: ui-serif, Georgia, 'Times New Roman', serif; margin: 0; padding: 48px 20px; background: #F4EFE4; color: #16130F; }
+  body { font-family: ui-serif, Georgia, 'Times New Roman', serif; margin: 0; padding: 48px 20px; background: #f6f4f0; color: #1b1b1b; }
   main { max-width: 780px; margin: 0 auto; }
   h1 { font-size: 2.25rem; margin: 0 0 1rem; }
   p { line-height: 1.6; font-size: 1rem; }
   article.content { margin-top: 1.5rem; }
   article.content h2 { font-size: 1.5rem; margin: 2rem 0 0.75rem; }
-  article.content h3 { font-size: 1.2rem; margin: 1.9rem 0 0.5rem; padding-left: 0.85rem; border-left: 2px solid rgba(154, 123, 63, 0.5); color: #7F6534; }
-  article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 2px solid rgba(22, 19, 15, 0.3); color: #3A342B; }
+  article.content h3 { font-size: 1.2rem; margin: 1.9rem 0 0.5rem; padding-left: 0.85rem; border-left: 3px solid rgba(127, 94, 54, 0.5); color: #7f5e36; }
+  article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid #c9bfaf; color: #4a4540; }
   article.content li { line-height: 1.6; }
-  .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #6B6053; }
-  a { color: #7F6534; text-decoration: none; border-bottom: 1px solid rgba(154, 123, 63, 0.35); }
-  a:hover { color: #64502A; }
+  .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #4a4540; }
+  a { color: #7f5e36; text-decoration: none; border-bottom: 1px solid rgba(127, 94, 54, 0.35); }
+  a:hover { color: #5f442b; }
   .cta { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
-  .safety-footer { margin-top: 2.5rem; padding: 1rem 1.25rem; border: 1px solid rgba(22, 19, 15, 0.16); border-radius: 2px; background: #FBF8F1; font-size: 0.9rem; color: #3A342B; }
+  .safety-footer { margin-top: 2.5rem; padding: 1rem 1.25rem; border: 1px solid #d8cfbf; border-radius: 12px; background: #efeae1; font-size: 0.9rem; color: #4a4540; }
   .safety-footer p { margin: 0 0 0.5rem; line-height: 1.55; }
   .safety-footer ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
   .safety-footer li { line-height: 1.6; }
@@ -390,6 +373,19 @@ const buildBreadcrumb = (lang, items) => ({
   })),
 });
 
+const buildWebSiteSchema = (lang, config) => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: config.name,
+  url: `${siteUrl}/${lang}/`,
+  inLanguage: lang,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+});
+
 const buildItemListSchema = (lang, pathSuffix, items) => ({
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -471,6 +467,11 @@ const buildLandingV2WebSiteSchema = (lang, url) => ({
   name: 'AstrologyWiki',
   url,
   inLanguage: lang,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
 });
 
 const buildLandingV2SoftwareAppSchema = (lang, description) => ({
@@ -511,11 +512,11 @@ const buildLandingV2OrganizationSchema = () => ({
   name: 'AstrologyWiki',
   url: `${siteUrl}/`,
   logo: `${siteUrl}/brand/logo-schema-512.png`,
-  sameAs: [
-    'https://twitter.com/astrologywiki',
-    'https://www.instagram.com/astrologywiki',
-    'https://www.youtube.com/@astrologywiki',
-  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@astrologywiki.com',
+    contactType: 'customer support',
+  },
 });
 
 // FAQPage schema — captures highest-intent informational queries so they can
@@ -608,31 +609,28 @@ const buildLandingV2Html = (lang) => {
     `<meta name="twitter:title" content="${escapeHtml(copy.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(ogImageUrl)}" />`,
-    `<meta name="theme-color" content="#F4EFE4" />`,
     `<script type="application/ld+json">${safeJsonLd(schema)}</script>`,
     `
 <style>
   :root { color-scheme: light; }
-  body { font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #F4EFE4; color: #16130F; }
+  body { font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #f6f4f0; color: #1b1b1b; }
   main { max-width: 980px; margin: 0 auto; padding: 64px 24px; }
   .hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; }
-  .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; margin: 0 0 1.25rem; font-weight: 500; letter-spacing: -0.015em; }
-  .hero .accent { color: #9A7B3F; font-style: italic; }
-  .hero p { font-size: 1.15rem; line-height: 1.6; margin: 0 0 0.5rem; color: #3A342B; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; margin: 0 0 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+  .hero .accent { color: #b8893d; }
+  .hero p { font-size: 1.15rem; line-height: 1.6; margin: 0 0 0.5rem; color: #4a4540; }
   .hero .cta-row { margin-top: 2rem; display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
-  .cta-primary { display: inline-block; background: #16130F; color: #F4EFE4; padding: 14px 28px; border-radius: 2px; font-weight: 500; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: none; }
-  .cta-secondary { color: #16130F; text-decoration: underline; text-underline-offset: 4px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.95rem; }
-  .trust { margin-top: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6B6053; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; }
+  .cta-primary { display: inline-block; background: #b8893d; color: #f6f4f0; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; text-decoration: none; border: none; }
+  .cta-secondary { color: #1b1b1b; text-decoration: underline; text-underline-offset: 4px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.95rem; }
+  .trust { margin-top: 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6e6862; font-family: ui-sans-serif, system-ui, sans-serif; }
   .sections { margin-top: 4rem; display: grid; gap: 1.5rem; }
-  .section-card { padding: 1.5rem 0; border-top: 1px solid rgba(22,19,15,0.16); }
+  .section-card { padding: 1.5rem 0; border-top: 1px solid rgba(27,27,27,0.08); }
   .section-card h2 { font-size: 1.5rem; margin: 0 0 0.5rem; }
-  .section-card p { font-size: 1rem; line-height: 1.6; margin: 0; color: #3A342B; }
-  .footer-note { margin-top: 3rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.8rem; color: #6B6053; }
+  .section-card p { font-size: 1rem; line-height: 1.6; margin: 0; color: #4a4540; }
+  .footer-note { margin-top: 3rem; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.8rem; color: #6e6862; }
 </style>
 `,
   ];
-
-  if (ADSENSE_HEAD_TAG) headParts.push(ADSENSE_HEAD_TAG);
 
   const sectionsHtml = copy.sections
     .map((section, idx) => `
@@ -662,7 +660,7 @@ ${headParts.join('\n')}
       <div class="sections">
 ${sectionsHtml}
       </div>
-      <p class="footer-note">AstrologyWiki · ${lang.toUpperCase()} · <a href="/">Open the interactive app</a></p>
+      <p class="footer-note">AstrologyWiki · ${lang.toUpperCase()} · <a href="/${lang}/">Open the interactive app</a></p>
     </main>
     <script>
       (function () {
@@ -843,67 +841,6 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
-  'sinner-vs-zverev-wimbledon-final-astrology',
-  'rodri-birth-chart',
-  'priyanka-chopra-birth-chart',
-  'zendaya-birth-chart',
-  'quinta-brunson-birth-chart',
-  'karolina-muchova-birth-chart',
-  'antoine-griezmann-birth-chart',
-  'mexico-vs-england-astrology-prediction',
-  'spain-vs-france-world-cup-2026-astrology',
-  'mikel-merino-birth-chart',
-  'kate-upton-birth-chart',
-  'ayo-edebiri-birth-chart',
-  'justin-verlander-birth-chart',
-  'jack-antonoff-birth-chart',
-  'coco-gauff-zodiac-sign',
-  'mo-salah-zodiac-sign',
-  'novak-djokovic-zodiac-sign',
-  'kylian-mbappe-birth-chart',
-  'lamine-yamal-zodiac-sign',
-  'kai-cenat-zodiac-sign',
-  'egypt-world-cup-2026-astrology',
-  'alexander-zverev-birth-chart',
-  'arthur-fery-birth-chart',
-  'anne-hathaway-birth-chart',
-  'kevin-de-bruyne-birth-chart',
-  'rayan-cherki-birth-chart',
-  'kylian-mbapp-birth-chart',
-  'achraf-hakimi-birth-chart',
-  'england-vs-norway-astrology',
-  'jessica-pegula-birth-chart',
-  'cole-palmer-birth-chart',
-  'erling-haaland-girlfriend-birth-chart',
-  'malia-obama-birth-chart',
-  'diogo-jota-birth-chart',
-  'travis-kelce-birth-chart',
-  'pen-lope-cruz-birth-chart',
-  'tobey-maguire-birth-chart',
-  'jaylen-brown-birth-chart',
-  'coco-gauff-birth-chart',
-  'angela-nikolau-birth-chart',
-  'john-denver-birth-chart',
-  'vera-wang-birth-chart',
-  'bella-hadid-birth-chart',
-  'elliot-page-birth-chart',
-  'thylane-blondeau-birth-chart',
-  'lebron-james-birth-chart',
-  'maya-joint-birth-chart',
-  'total-solar-eclipse-2026',
-  'pride-month-astrology',
-  'cardi-b-birth-chart',
-  'usa-pluto-return-astrology',
-  'carlos-alcaraz-birth-chart',
-  'morocco-world-cup-2026-astrology',
-  'ben-shelton-zodiac-sign',
-  'teyana-taylor-birth-chart',
-  'jannik-sinner-zodiac-sign',
-  'serena-williams-birth-chart',
-  'harry-styles-and-zo-kravitz',
-  'taylor-swift-and-travis-kelce',
-  'colombia-vs-portugal',
-  'jordan-vs-argentina',
   'ricky-gervais-zodiac-sign',
   'reese-witherspoon-oliver-haarmann-compatibility-astrology',
   'jwoww-zack-carpinello-wedding-synastry',
@@ -1173,10 +1110,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
             description: copy.description,
             url,
             inLanguage: lang,
-            isPartOf: { '@type': 'WebSite', name: 'AstrologyWiki', url: langHomeUrl(lang) },
+            isPartOf: { '@type': 'WebSite', name: 'AstrologyWiki', url: `${siteUrl}/${lang}/` },
           },
           buildBreadcrumb(lang, [
-            { name: LANG_CONFIG[lang].breadcrumbHome, url: langHomeUrl(lang) },
+            { name: LANG_CONFIG[lang].breadcrumbHome, url: `${siteUrl}/${lang}/` },
             { name: copy.title, url },
           ]),
         ],
@@ -1212,15 +1149,30 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     }));
     const classics = classicsByLang[lang] || [];
 
+    const homePath = `/${lang}/`;
     const wikiPath = `/${lang}/wiki`;
     const classicsPath = `/${lang}/wiki/classics`;
 
+    addUrl(`${siteUrl}${homePath}`, ['home', lang, config.homeTitle, config.homeDescription, config.homeCta]);
     // Only add wiki hub for all langs; classics hub only for en
     if (lang === 'en') {
       // hub 的 lastmod 在 hub 文案变或条目集合变（新增/删除条目）时更新。
       addUrl(`${siteUrl}${wikiPath}`, ['wiki-hub', lang, config.wikiTitle, config.wikiDescription, ...wikiItems.map((i) => i.id)]);
       addUrl(`${siteUrl}${classicsPath}`, ['classics-hub', lang, config.classicsTitle, config.classicsDescription, ...classics.map((c) => c.id)]);
     }
+
+    await writeHtmlPage({
+      outputPath: path.join(langRoot, 'index.html'),
+      lang,
+      title: config.homeTitle,
+      description: config.homeDescription,
+      url: `${siteUrl}${homePath}`,
+      ogType: 'website',
+      alternates: buildAlternateLinks('/'),
+      schema: buildWebSiteSchema(lang, config),
+      ctaText: config.homeCta,
+      spaPath: '/',
+    });
 
     // Only generate wiki hub and classics hub for en
     if (lang === 'en') {
@@ -1236,7 +1188,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildItemListSchema(lang, '/wiki', wikiItems),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
+            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
             { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
           ]),
         ],
@@ -1256,7 +1208,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildItemListSchema(lang, '/wiki/classics', classics),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
+            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
             { name: config.breadcrumbClassics, url: `${siteUrl}${classicsPath}` },
           ]),
         ],
@@ -1285,12 +1237,25 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       for (const persona of ALL_AUTHORS) {
         const authorPath = `/${lang}/wiki/author/${persona.id}`;
         const authorPageUrl = `${siteUrl}${authorPath}`;
-        addUrl(authorPageUrl, ['author', persona.id, persona.name, persona.title, persona.bio.en || '', ...persona.topics]);
+        const authorDisclosure = 'Editorial persona · AI-assisted.';
+        addUrl(authorPageUrl, [
+          'author',
+          persona.id,
+          persona.name,
+          persona.title,
+          authorDisclosure,
+          persona.bio.en || '',
+          ...persona.topics,
+        ]);
         await writeHtmlPage({
           outputPath: path.join(langRoot, 'wiki', 'author', persona.id, 'index.html'),
           lang,
           title: `${persona.name} — ${persona.title}`,
-          description: persona.bio.en || '',
+          // Keep the disclosure in raw, visible HTML. Hydrated React already
+          // shows it, but crawlers and no-JS visitors must not see a more
+          // human-looking persona page without the same honesty signal.
+          description: `${authorDisclosure} ${persona.bio.en || ''}`.trim(),
+          metaDescription: persona.bio.en || '',
           url: authorPageUrl,
           ogType: 'profile',
           alternates: buildAlternateLinks(`/wiki/author/${persona.id}`, { zh: false, en: true }),
@@ -1301,7 +1266,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
               mainEntity: buildPersonSchema(persona, lang, siteUrl),
             },
             buildBreadcrumb(lang, [
-              { name: config.breadcrumbHome, url: langHomeUrl(lang) },
+              { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
               { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
               { name: persona.name, url: authorPageUrl },
             ]),
@@ -1323,7 +1288,8 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       // P1-1：canonical 收口（loser 条目 canonical 指向 winner 长文）+ sitemap 收录由 item.seo 控制。
       const canonicalUrl = resolveCanonicalUrl({ seo: item.seo, lang, selfUrl: itemUrl, siteUrl });
       const alternateAvailability = {
-        zh: wikiIds.zh.has(item.id) && (lang === 'en' || ZH_WIKI_WHITELIST.has(item.id)),
+        // 中文静态页只为白名单生成；raw zh 数据存在不等于 href 目标存在。
+        zh: wikiIds.zh.has(item.id) && ZH_WIKI_WHITELIST.has(item.id),
         en: wikiIds.en.has(item.id),
       };
       const itemMarkdown = buildWikiItemMarkdown(item, lang);
@@ -1347,7 +1313,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildDefinedTermSchema(lang, item, itemUrl),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
+            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
             { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
             { name: item.title, url: itemUrl },
           ]),
@@ -1370,7 +1336,8 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       const classicPath = `/${lang}/wiki/classics/${classic.id}`;
       const classicUrl = `${siteUrl}${classicPath}`;
       const alternateAvailability = {
-        zh: classicIds.zh.has(classic.id),
+        // 上方明确跳过全部 zh classics 生成，不能声明不存在的中文 alternate。
+        zh: false,
         en: classicIds.en.has(classic.id),
       };
       const classicMarkdown = classicDetail.content || '';
@@ -1387,7 +1354,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
         schema: [
           buildBookSchema(lang, classicDetail, classicUrl),
           buildBreadcrumb(lang, [
-            { name: config.breadcrumbHome, url: langHomeUrl(lang) },
+            { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
             { name: config.breadcrumbClassics, url: `${siteUrl}${classicsPath}` },
             { name: classicDetail.title, url: classicUrl },
           ]),
@@ -1640,13 +1607,13 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       sections: [
         ["Why the Moon's Phase Changes Every Day", "The Moon's phase changes because the Sun-Moon angle changes as the Moon orbits Earth. Each day the lit shape shifts a little, moving through a 29.5-day lunar cycle. The live tool computes today's phase and illumination from that angle rather than using fixed calendar text."],
         ['The 8 Moon Phases at a Glance', 'The cycle moves through New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, and Waning Crescent. The page highlights where today sits in that sequence, while the illumination percentage shows how much of the visible Moon is sunlit.'],
-        ['Need a Different Date Instead of Today?', 'This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to [check a different date](/en/moon-phase-calculator). If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your [natal moon sign](/en/birth-chart-calculator).'],
+        ['Need a Different Date Instead of Today?', 'This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to check a different date. If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your natal moon sign.'],
       ],
       faqs: [
         ['What moon phase is it today?', "Today's live moon phase, illumination percentage, and the approximate timing of the next full Moon and new Moon are shown in the result area above. The value is calculated dynamically, not written as a fixed answer."],
         ["How often does the moon's phase change?", "The Moon's phase changes continuously as the Sun-Moon angle shifts. The named phases are milestones in a full lunar cycle of about 29.5 days."],
         ["What's the difference between this page and the Moon Phase Calculator?", 'This page defaults to today and keeps the focus on the current sky. The Moon Phase Calculator lets you choose a different date in the past or future.'],
-        ['Where can I check the moon phase for a different date?', 'Use the [moon phase calculator](/en/moon-phase-calculator) when you need a specific date instead of today.'],
+        ['Where can I check the moon phase for a different date?', 'Use the Moon Phase Calculator when you need a specific date instead of today.'],
       ],
     },
     {
@@ -1791,9 +1758,9 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       ],
       sections: [
         ['What Your Astrocartography Map Shows', 'Your generated map projects your birth chart onto the world. It marks the places where each planet was rising, setting, culminating, or sitting at the lower meridian at your birth. If you want the background before using the map, start with the [full astrocartography guide](/en/astrocartography).'],
-        ['The Four Line Types, Briefly', 'AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for [how to interpret your astrocartography lines](/en/astrocartography).'],
+        ['The Four Line Types, Briefly', 'AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for how to interpret your astrocartography lines.'],
         ['What Each Planet Represents on Your Map', 'Each planet points to a different chart theme: the Sun to identity and visibility, the Moon to belonging and emotional rhythm, Venus to ease and attraction, Mars to drive, Jupiter to growth, Saturn to structure, and the outer planets to slower collective themes. For context, generate an [accurate birth chart](/en/birth-chart-calculator) before treating any single line as the whole story.'],
-        ['Astrocartography Map Generator vs. the Full Astrocartography Guide', 'The generator gives you the interactive map and lets you inspect which lines run near a place. The [full astrocartography guide](/en/astrocartography) explains how astrocartography works in more depth and helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.'],
+        ['Astrocartography Map Generator vs. the Full Astrocartography Guide', 'The generator gives you the interactive map and lets you inspect which lines run near a place. The full astrocartography guide explains how astrocartography works in more depth, while the full interpretation guide helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.'],
       ],
       faqs: [
         ['Is this astrocartography map generator free?', 'Yes. You can generate the map for free using your birth date, exact birth time, and birthplace.'],
@@ -2061,10 +2028,6 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       description: article.description || config.wikiDescription,
       metaDescription: article.seoDescription || article.description || config.wikiDescription,
       url,
-      // canonical 收口：article.seo.canonicalPath 指向 winner 长文时，静态 stub 的 <link canonical>
-      // 也发出该 URL（与 sitemap 排除 + 运行时 WikiArticleDetailPage 保持一致，消除 stub 自指 vs
-      // 运行时收口的混合信号）；无 override 时 resolveCanonicalUrl 回退自指 url，其余文章零变化。
-      canonical: resolveCanonicalUrl({ seo: article.seo, lang, selfUrl: url, siteUrl }),
       ogType: 'article',
       ogImage,
       // T7：noindex,follow 等 robots override 透传到 stub head（buildHead 缺省 index,follow）。
@@ -2079,7 +2042,7 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       schema: [
         buildArticleSchema(lang, article, url, editorialOrgSchema, ogImage),
         buildBreadcrumb(lang, [
-          { name: config.breadcrumbHome, url: langHomeUrl(lang) },
+          { name: config.breadcrumbHome, url: `${siteUrl}/${lang}/` },
           { name: config.breadcrumbWiki, url: `${siteUrl}${wikiPath}` },
           { name: article.title, url },
         ]),

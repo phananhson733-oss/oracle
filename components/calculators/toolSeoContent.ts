@@ -291,7 +291,7 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
       },
       {
         heading: "Need a Different Date Instead of Today?",
-        body: "This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to [check a different date](/en/moon-phase-calculator). If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your [natal moon sign](/en/birth-chart-calculator).",
+        body: "This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to check a different date. If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your natal moon sign.",
       },
     ],
     faqs: [
@@ -310,7 +310,7 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
       },
       {
         heading: "Where can I check the moon phase for a different date?",
-        body: "Use the [moon phase calculator](/en/moon-phase-calculator) when you need a specific date instead of today.",
+        body: "Use the Moon Phase Calculator when you need a specific date instead of today.",
       },
     ],
     display: {
@@ -668,7 +668,7 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
       },
       {
         heading: "The Four Line Types, Briefly",
-        body: "AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for [how to interpret your astrocartography lines](/en/astrocartography).",
+        body: "AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for how to interpret your astrocartography lines.",
       },
       {
         heading: "What Each Planet Represents on Your Map",
@@ -677,7 +677,7 @@ export const TOOL_SEO_CONTENT: Record<string, ToolSeoContent> = {
       {
         heading:
           "Astrocartography Map Generator vs. the Full Astrocartography Guide",
-        body: "The generator gives you the interactive map and lets you inspect which lines run near a place. The [full astrocartography guide](/en/astrocartography) explains how astrocartography works in more depth and helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.",
+        body: "The generator gives you the interactive map and lets you inspect which lines run near a place. The full astrocartography guide explains how astrocartography works in more depth, while the full interpretation guide helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.",
       },
     ],
     faqs: [

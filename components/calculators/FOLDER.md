@@ -1,5 +1,5 @@
-<!-- INPUT: hooks/useCityAutocomplete、components/forms/DateSelectGroup、services/apiClient（fetchNatalChart/searchCities）、services/analytics、types 与 PageSpeed 路由级拆包边界。 -->
-<!-- OUTPUT: 计算器矩阵（D）——配置驱动的出生数据计算器外壳 + 各 sign 类 slug 的配置与懒加载路由组件。 -->
+<!-- INPUT: hooks/useCityAutocomplete、components/forms/DateSelectGroup、services/apiClient（fetchNatalChart/searchCities）、services/analytics、types、App.tsx 路由懒加载边界。 -->
+<!-- OUTPUT: 计算器矩阵（D）——配置驱动的出生数据计算器外壳 + 各 sign 类 slug 的配置与路由级拆包入口。 -->
 <!-- POS: components/calculators 子目录索引；若更新此目录文件，务必更新本 FOLDER.md 与各文件头注释。 -->
 
 一旦我所属的文件夹有所变化，请更新我。
@@ -23,7 +23,7 @@
 - BirthDataCalculator.tsx｜地位：sign 类配置驱动外壳｜功能：出生日期(+可选时间/城市)表单（复用 useCityAutocomplete + DateSelectGroup）→ `config.compute(birth)` → 通用结果卡；Birth Chart 结果会切到 `BirthChartResultView` 专用数据结果页；匿名计算走 `fetchNatalChart(skipCache)` 不缓存明文（隐私 #2）；loading/error/result 全状态；底部渲染 `EmbedCodeBox`（slug 取自 config）。
 - BirthChartResultView.tsx｜地位：Birth Chart 专用结果页｜功能：复用主 Birth 页已有 `AstroChart` + `TechSpecsComponents`（Planet Positions / Asteroids & Points / Elemental Matrix / Aspect Matrix / House Rulers）展示结构化数据；不渲染 AI 解读或 View Detail 详情入口。
 - signConfigs.ts｜地位：sign 类计算器配置｜功能：moonSignConfig / risingSignConfig / bigThreeConfig / birthChartConfig —— 各实现 compute（fetch natal → 抽取 Sun/Moon/Ascendant 等 sign → 结构化结果）；Birth Chart 额外构造 `UserProfile` + `ExtendedNatalData`，给工具页直接呈现已有星盘轮和技术表；上升类 needsTime=true 缺时间报错。
-- SignCalculatorRoute.tsx｜地位：sign 类路由级拆包边界｜功能：将 Moon/Rising/Big Three/Birth Chart kind 映射到共享 BirthDataCalculator 配置，避免 App.tsx 静态导入 signConfigs 并把计算器拉进首页主包。
+- SignCalculatorRoute.tsx｜地位：sign 类路由级拆包入口｜功能：把 Moon/Rising/Big Three/Birth Chart 的 kind 映射到共享 `BirthDataCalculator` + 对应 config，供 App.tsx 懒加载；避免首页主包静态拉入出生数据计算器与 signConfigs。
 - useCalculatorTheme.ts｜地位：共享主题 hook｜功能：返回明暗 class token（cardBg/textPrimary 等，对齐 BirthDataCalculator，来源 COLOR_SYSTEM_GUIDE）。
 - GlyphBadge.tsx｜地位：**签名原语**｜功能：`<GlyphBadge planet|sign|glyph tone size>` —— 把行星/星座/角度字形（取自 shared/astro-glyphs 的 planetGlyph/getZodiacGlyph/glyphFor）渲染为带对比圆角底板的徽章；TEXT + font-variant-emoji:text + 装饰性 aria-hidden，统一全工具星象视觉语言。
 - ToolPageShell.tsx｜地位：共享页壳原语｜功能：`<ToolPageShell title subtitle slug landingSlug? breadcrumbs? heroGlyph? maxWidth?>` —— 宽版默认内容区（max-w-[88rem]，可降到 2xl-6xl）+ atlas-style 页头（可选面包屑、返回 /tools、自动工具编号/免费提示、标题/副标题、输入用途提示、可选 hero 字形）+ 内容槽 + 自动单工具/alias SEO 正文（ToolSeoLandingSections）+ EmbedCodeBox(slug)；`landingSlug` 让 SEO 别名页复用 canonical 工具而不复制计算逻辑。
@@ -60,7 +60,7 @@
 
 近期更新
 
-- 2026-07-07 更新：新增 `SignCalculatorRoute.tsx`，App 路由只懒加载 kind 级路由组件，Sign 类计算器与 BirthDataCalculator 不再进入首页首屏主包。
+- 2026-07-07 更新：PageSpeed 优化批次。新增 `SignCalculatorRoute` 作为 sign 类计算器的路由级拆包边界，App.tsx 不再静态导入 `signConfigs`/`BirthDataCalculator`；Moon/Rising/Big Three/Birth Chart 的全页与 embed 路由统一懒加载该入口，避免首页主包被出生数据计算器链路拖大。
 - 2026-06-17 新建：计算器矩阵 D 第一批 sign 类（Moon Sign / Rising / Big Three / Birth Chart）。路由 `/:lang/<slug>`（+ 裸 LangRedirect + isPublicRoute 白名单 + showNav）；静态 stub 走 generate-seo-pages.mjs 的 CALCULATOR_SEO 循环（≥4 H2 关键词正文 + JSON-LD + sitemap）。
 - 2026-06-18 新建：D 第二批「天象工具集」（Current Planets / Moon Phase / Ephemeris）。后端扩 `api/astro.ts`（/positions、/moon-phase、/ephemeris，TDD）+ 纯算法 `backend/src/services/astro/skyTools.ts`。3 个新 slug 已进 CALCULATOR_SEO + isPublicRoute。
 - 2026-06-18 新建：D 第二批「合盘」SynastryCalculator + crossAspects 纯引擎（TDD 19 例）。客户端交叉相位（复用 /api/natal/chart，不碰付费 /api/synastry），姓名不出端。slug synastry-calculator 已进 CALCULATOR_SEO + isPublicRoute。
@@ -81,4 +81,3 @@
 - 2026-06-25 更新：Composite 与 Current Planets/Transits 工具内部结果页继续数据化。新增 `compositeData` + `CompositeResultView`，组合盘结果区改为组合轮盘、中点落座、相位矩阵、宫位、元素矩阵与宫主星；新增 `transitData` + `TransitResultView`，Current Planets 增加可选出生资料 overlay，前端用 selected sky × natal chart 计算 Transit Aspect Matrix、短期/长期行运列表；均不展示 AI 解读、不显示 View Detail。
 - 2026-06-25 更新：Celebrity Twins 名人详情数据化。`celebrities.ts` 扩展可选 chart dossier 并新增 Lei Jun 公开星盘资料；`CelebrityTwinsTool` 的名人行改为可点击，详情面板展示出生资料、date-only 数据边界，或完整 dossier 的行星落座、Beyond points、主要相位、图形结构、元素/三模态签名；未知出生时间时明确不展示上升/宫位/宫主星。
 - 2026-06-25 更新：新增两个 tools SEO alias 页。`/:lang/astrocartography-map-generator` 复用 AstrocartographyTool 的表单/地图逻辑并切换 H1、副标题、按钮、面包屑与可见落地正文；`/:lang/moon-phase-today` 复用 MoonPhaseTool 固定今天并显示动态月相、受照比例、距下一次满月/新月天数；两页的 alias 正文和 FAQ 进入 `toolSeoContent`，不加入 `TOOLS` catalog。
-- ToolFunnelCTA：PRIMARY_CLASS 从金色渐变+glow 改为实心墨 mono 大写（bg-star-50/text-space-950 双模式自反转）；容器与次级链接分隔线改发丝线。

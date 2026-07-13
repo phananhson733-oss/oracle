@@ -1,6 +1,7 @@
 // INPUT: Playwright Page.
-// OUTPUT: stubLanding(page, overrides) — registers route mocks for all landing-v2 API surfaces
-//         with sensible defaults so individual specs only need to override the route under test.
+// OUTPUT: stubLanding(page, overrides) — registers route mocks for all landing-v2 API surfaces;
+//         revealLandingSection(page, anchorId) — scrolls a deferred section into view and waits for its lazy root;
+//         fillLandingBirthDate(page, isoDate) — drives the locale-stable split date controls.
 // POS: Shared helper for /landing-v2 E2E specs (today sky, newsletter, birth chart, wiki hub).
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -10,6 +11,26 @@ type Stub = (r: Route) => Promise<void> | void;
 type Overrides = Partial<
   Record<"today" | "wikiHome" | "newsletter" | "natal" | "geo", Stub>
 >;
+
+export async function revealLandingSection(page: Page, anchorId: string) {
+  // DeferredSection initially owns the anchor id on a lightweight placeholder.
+  // Scrolling that placeholder into view trips IntersectionObserver; once the
+  // lazy component resolves, its <section> takes over the same id.
+  await page.locator(`#${anchorId}`).first().scrollIntoViewIfNeeded();
+  await page.locator(`section#${anchorId}`).waitFor({
+    state: "visible",
+    timeout: 10_000,
+  });
+}
+
+export async function fillLandingBirthDate(page: Page, isoDate: string) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);
+  if (!match) throw new Error(`Expected YYYY-MM-DD, received: ${isoDate}`);
+  const [, year, month, day] = match;
+  await page.locator("#bc-date-month").selectOption(String(Number(month)));
+  await page.locator("#bc-date-day").selectOption(String(Number(day)));
+  await page.locator("#bc-date-year").selectOption(year);
+}
 
 export async function stubLanding(page: Page, overrides: Overrides = {}) {
   await page.route(

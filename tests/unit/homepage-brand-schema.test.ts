@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 // INPUT: 真实 index.html 文本 + jsdom DOMParser。
-// OUTPUT: 守护首页首字节 brand JSON-LD 契约（合法 JSON + Organization/WebSite 字段 + dedup gate 必命中 + og:url=canonical）。
+// OUTPUT: 守护首页首字节 brand JSON-LD 契约（合法 JSON + Organization/WebSite/contactPoint 字段 + dedup gate 必命中 + og:url=canonical）。
 // POS: 防 index.html 静态 brand schema 语法错误/字段退化致 App.tsx GlobalSchema 与 SEO.tsx 的去重静默失效而产生重复。
 //      若改 index.html 的 brand 块或 App.tsx GlobalSchema 的 Organization/WebSite 输出，须同步此测试。
 
@@ -47,26 +47,36 @@ describe("index.html 首字节 brand JSON-LD 契约", () => {
     expect(types.has("WebSite")).toBe(true);
   });
 
-  it("Organization 字段与 GlobalSchema EN 输出一致（压缩 schema logo + sameAs 三连）", () => {
+  it("Organization 字段与 GlobalSchema EN 输出一致（压缩 logo + sameAs 三连）", () => {
     const org = findType("Organization");
     expect(org).toBeTruthy();
     expect(org!.name).toBe("AstrologyWiki");
     expect(org!.url).toBe(`${SITE}/`);
+    // logo 站内统一为压缩 512px 品牌图（与 App.tsx GlobalSchema 及 landing-v2 stub 一致），
+    // 不得退回原始 /logo.png，否则会让爬虫/富结果工具请求 1.7MB 原图。
     expect(org!.logo).toBe(`${SITE}/brand/logo-schema-512.png`);
     expect(Array.isArray(org!.sameAs)).toBe(true);
     expect(org!.sameAs).toHaveLength(3);
+    expect(org!.contactPoint).toMatchObject({
+      "@type": "ContactPoint",
+      email: "support@astrologywiki.com",
+      contactType: "customer support",
+    });
   });
 
-  it("WebSite 字段与 GlobalSchema EN 输出一致（name/url/inLanguage:en，无 SearchAction）", () => {
+  it("WebSite 字段与 GlobalSchema EN 输出一致（inLanguage:en + SearchAction EntryPoint）", () => {
     const site = findType("WebSite");
     expect(site).toBeTruthy();
     expect(site!.name).toBe("AstrologyWiki");
     expect(site!.url).toBe(`${SITE}/`);
     // 根 "/" 是规范英文主页，inLanguage 固定 en；勿在此本地化。
     expect(site!.inLanguage).toBe("en");
-    // SearchAction 已三处移除：/en/wiki 不消费 ?q=（WikiHubPage 只读 tab/section，非真搜索端点），
-    // 且 Google 2024 末废弃 Sitelinks Searchbox，声明无效动作无收益。三处 brand schema 须保持一致。
-    expect(site!.potentialAction).toBeUndefined();
+    const action = site!.potentialAction;
+    expect(action?.["@type"]).toBe("SearchAction");
+    // EntryPoint 对象形式是 Google 当前文档/推荐形态（非裸字符串 target）。
+    expect(action?.target?.["@type"]).toBe("EntryPoint");
+    expect(typeof action?.target?.urlTemplate).toBe("string");
+    expect(action?.target?.urlTemplate).toContain("{search_term_string}");
   });
 
   it("og:url 带尾斜杠且与 canonical 完全一致", () => {

@@ -1,6 +1,6 @@
-// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、压缩品牌图、短链跳转、付费墙回调、分析追踪、eager landing 与按需加载的 auth/payment/sign-calculator 路由）。
-// OUTPUT: 导出主应用组件（含 32px 压缩品牌 logo、/go 短链跳转、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅、核心功能事件、landing footer 边界、移动端顶部导航防溢出与首屏外弹窗/计算器拆包）。
-// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向、PageSpeed landing 首屏 eager 边界、移动端顶部导航防溢出与 landing 全局 footer 禁用边界）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、压缩品牌图、短链跳转、付费墙回调、分析追踪与按需加载的 auth/payment/sign-calculator 路由）。
+// OUTPUT: 导出主应用组件（含压缩品牌 logo、/go 短链跳转、全局免费出生盘 CTA、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅、核心功能事件、landing footer 边界与首屏外弹窗/计算器拆包）。
+// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向、PageSpeed 路由级拆包与 landing 全局 footer 禁用边界）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, {
@@ -69,7 +69,6 @@ import {
 // the cloud after login WITHOUT ever touching localStorage (2026-05-20 invariant).
 import { migrateLocalData as migrateBirthProfileToAccount } from "./services/authClient";
 import { FUNNEL_EVENTS } from "./services/funnelEvents";
-import { readStoredTheme } from "./services/themeStorage";
 import { getLandingUtm } from "./services/landingUtm";
 import {
   buildBirthProfileFromPrefill,
@@ -83,10 +82,10 @@ import {
 } from "./contexts/EntitlementContext";
 import { SEO } from "./components/SEO";
 import UserMenu from "./components/auth/UserMenu";
+import WikiChartCTA from "./components/wiki/WikiChartCTA";
 import { ConsentBanner } from "./components/ConsentBanner";
 import { MobileBottomNav } from "./components/MobileBottomNav";
 import { Footer } from "./components/Footer";
-import LandingPageV2 from "./pages/landing/LandingPage";
 import { useAnalyticsTracking } from "./hooks/useAnalytics";
 import { goRedirects } from "./data/goRedirects";
 import { resolveGoRedirect } from "./src/utils/goRedirects";
@@ -141,6 +140,11 @@ const GlobalSchema: React.FC = () => {
         "https://www.instagram.com/astrologywiki",
         "https://www.youtube.com/@astrologywiki",
       ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "support@astrologywiki.com",
+        contactType: "customer support",
+      },
     };
 
     const websiteSchema = {
@@ -149,6 +153,14 @@ const GlobalSchema: React.FC = () => {
       name: "AstrologyWiki",
       url: `${siteUrl}/`,
       inLanguage: lang,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${siteUrl}/${lang}/wiki?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
     };
 
     const script = document.createElement("script");
@@ -199,6 +211,7 @@ const HelpPage = lazy(() => import("./components/legal/HelpPage"));
 const SaturnReturnCalculator = lazy(
   () => import("./components/SaturnReturnCalculator"),
 );
+const LandingPageV2 = lazy(() => import("./pages/landing/LandingPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
 
 // Redirect bare public routes (e.g. /wiki/sun) to language-prefixed version (e.g. /en/wiki/sun)
@@ -271,7 +284,7 @@ const NotFoundPage: React.FC = () => {
         </p>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-star-50 text-space-950 font-bold text-sm hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-space-950 font-bold text-sm hover:from-gold-500 hover:to-gold-400 transition-all shadow-lg shadow-gold-500/20"
         >
           {language === "zh" ? "返回首页" : "Return Home"}
         </Link>
@@ -692,7 +705,9 @@ const AppContent: React.FC = () => {
           await migrateBirthProfileToAccount(
             buildBirthProfileFromPrefill(prefill),
             {
-              theme: readStoredTheme(),
+              theme:
+                (localStorage.getItem("astro_theme") as "dark" | "light") ||
+                "dark",
               language,
             },
           );
@@ -898,7 +913,7 @@ const AppContent: React.FC = () => {
       {showNav && (
         <nav
           aria-label="Main navigation"
-          className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === "dark" ? "bg-space-950/90 border-star-50/15" : "bg-paper-100/90 border-paper-900/15"}`}
+          className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === "dark" ? "bg-space-950/90 border-gold-500/15" : "bg-paper-100/90 border-paper-300"}`}
         >
           <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
             {/* Logo — on landing routes scrolls back to top; elsewhere routes
@@ -933,23 +948,20 @@ const AppContent: React.FC = () => {
               }}
             >
               <img
-                src="/brand/logo-mark-32.png"
+                src="/brand/logo-mark-64.png"
+                srcSet="/brand/logo-mark-32.png 1x, /brand/logo-mark-64.png 2x"
                 alt={t.app.name}
                 width={32}
                 height={32}
                 className="h-8 w-8 rounded-full object-cover"
               />
-              {t.app.name}
+              <span className="hidden sm:inline">{t.app.name}</span>
             </div>
 
-            <div className="md:hidden ml-auto flex items-center shrink-0">
-              <UserMenu />
-            </div>
-
-            {/* Navigation Links - Permanently Top Right on md+.
-                Mobile uses MobileBottomNav for primary navigation so the fixed
-                top bar can keep the brand and account entry without overflow. */}
-            <div className="hidden md:flex items-center gap-6 ml-auto overflow-x-auto no-scrollbar">
+            {/* Navigation Links - Permanently Top Right.
+                Single unified IA — landing reuses the same 7 entries as the
+                rest of the app. Active state highlights the current route. */}
+            <div className="flex items-center gap-6 ml-auto overflow-x-auto no-scrollbar">
               {[
                 { path: "/dashboard", label: t.nav.dashboard },
                 { path: "/forecast", label: t.nav.forecast },
@@ -970,24 +982,26 @@ const AppContent: React.FC = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors whitespace-nowrap py-3.5 -my-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded ${isActive ? "text-accent" : "opacity-70"}`}
+                    className={`text-xs font-bold uppercase tracking-widest hover:text-gold-500 transition-colors whitespace-nowrap py-3.5 -my-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded ${isActive ? "text-gold-500" : "opacity-70"}`}
                   >
                     {link.label}
                   </Link>
                 );
               })}
 
+              <WikiChartCTA variant="nav" />
+
               {/* Settings / Theme Toggles */}
               <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
               <button
                 onClick={toggleTheme}
-                className="hidden md:flex relative w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
+                className="hidden md:flex relative w-8 h-8 items-center justify-center text-2xl leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
               >
                 {theme === "dark" ? "☀" : "☾"}
               </button>
               <button
                 onClick={toggleLanguage}
-                className="hidden md:flex relative w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
+                className="hidden md:flex relative w-8 h-8 items-center justify-center text-xs leading-none font-bold uppercase opacity-70 hover:opacity-100 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:rounded-full before:content-[''] before:absolute before:inset-[-6px]"
               >
                 {language === "zh" ? "EN" : "中"}
               </button>
@@ -1006,13 +1020,13 @@ const AppContent: React.FC = () => {
         <div className="md:hidden fixed top-20 right-4 z-40 flex flex-col gap-3">
           <button
             onClick={toggleTheme}
-            className={`relative w-8 h-8 rounded-full flex items-center justify-center border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-star-50/15" : "bg-paper-100/80 border-paper-900/15"}`}
+            className={`relative w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
           >
             {theme === "dark" ? "☀" : "☾"}
           </button>
           <button
             onClick={toggleLanguage}
-            className={`relative w-8 h-8 rounded-full flex items-center justify-center border text-xs font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-star-50/15" : "bg-paper-100/80 border-paper-900/15"}`}
+            className={`relative w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md border shadow-lg text-xs font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 before:content-[''] before:absolute before:inset-[-6px] ${theme === "dark" ? "bg-space-900/80 border-gold-500/15" : "bg-paper-100/80 border-paper-300"}`}
           >
             {language === "zh" ? "EN" : "中"}
           </button>

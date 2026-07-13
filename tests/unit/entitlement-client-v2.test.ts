@@ -62,13 +62,8 @@ describe("entitlementClientV2 getEntitlementsV2", () => {
   });
 
   it("coalesces concurrent entitlement refreshes into one network request", async () => {
-    const { getEntitlementsV2 } = await import(
-      "../../services/entitlementClientV2"
-    );
-    let resolveFetch: (value: {
-      ok: boolean;
-      json: () => Promise<typeof entitlementPayload>;
-    }) => void;
+    const { getEntitlementsV2 } = await import("../../services/entitlementClientV2");
+    let resolveFetch: (value: { ok: boolean; json: () => Promise<typeof entitlementPayload> }) => void;
     authFetchMock.mockReturnValueOnce(
       new Promise((resolve) => {
         resolveFetch = resolve;
@@ -89,9 +84,7 @@ describe("entitlementClientV2 getEntitlementsV2", () => {
   });
 
   it("clears the coalesced request after a failed refresh", async () => {
-    const { getEntitlementsV2 } = await import(
-      "../../services/entitlementClientV2"
-    );
+    const { getEntitlementsV2 } = await import("../../services/entitlementClientV2");
     authFetchMock
       .mockResolvedValueOnce({
         ok: false,
@@ -102,9 +95,7 @@ describe("entitlementClientV2 getEntitlementsV2", () => {
         json: async () => entitlementPayload,
       });
 
-    await expect(getEntitlementsV2()).rejects.toThrow(
-      "Failed to get entitlements",
-    );
+    await expect(getEntitlementsV2()).rejects.toThrow("Failed to get entitlements");
     await expect(getEntitlementsV2()).resolves.toEqual(entitlementPayload);
     expect(authFetchMock).toHaveBeenCalledTimes(2);
   });

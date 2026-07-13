@@ -1,10 +1,10 @@
-<!-- INPUT: pages/SynastryPage.tsx（薄编排层）传入的状态/回调 props；shared UI（UIComponents）、astro-glyphs、TechSpecsComponents（懒加载表）、apiClient、analytics、entitlement/auth contexts、city-search 工具。 -->
-<!-- OUTPUT: 合盘（Synastry）页面的展示子组件与纯 helper —— 由 SynastryPage godfile 拆分而来，行为零变化。 -->
+<!-- INPUT: pages/SynastryPage.tsx（薄编排层）传入的状态/回调 props；三参数合盘配额检查；shared UI（UIComponents）、astro-glyphs、TechSpecsComponents（懒加载表）、apiClient、analytics、entitlement/auth contexts、city-search 工具。 -->
+<!-- OUTPUT: 合盘（Synastry）页面的展示子组件与纯 helper —— 由 SynastryPage godfile 拆分而来，并与当前配额 hook 合约保持一致。 -->
 <!-- POS: 仅服务 pages/SynastryPage.tsx 的内部分解目录。若增删本目录文件，务必更新本 FOLDER.md 与 SynastryPage 的 import；若 SynastryPage 职责变化，同步其文件头与本说明。 -->
 
 # pages/synastry/
 
-`pages/SynastryPage.tsx`（原 5244 行 godfile）的展示层拆分目录。SynastryPage 收敛为 <800 行的薄编排组件（持有状态 / effect / 数据获取 / 配额），本目录承载所有 UI 子树与纯 helper。**所有文件行为与原 godfile 等价（纯机械重构）。**
+`pages/SynastryPage.tsx`（原 5244 行 godfile）的展示层拆分目录。SynastryPage 收敛为 <800 行的薄编排组件（持有状态 / effect / 数据获取 / 配额），本目录承载所有 UI 子树与纯 helper，并对齐当前 `useSynastryQuota().checkAndRecord(personA, personB, relationshipType)` 三参数合约。
 
 ## 文件清单
 
@@ -33,3 +33,4 @@
 ## 近期变更
 
 - 初始拆分：从 `pages/SynastryPage.tsx`（5244 行）抽出本目录全部文件，主文件收敛至 <800 行。5 个懒加载 TechSpecs 表保持独立 chunk。行为零变化（backlog #19）。
+- SynastryPage 的配额检查调用移除旧的 `onPurchased` 第四参数，匹配当前 entitlement hook 合约并通过前端类型检查。

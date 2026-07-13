@@ -14,7 +14,11 @@
 // 但与 golden path 同组保持，统一在全栈环境下验收。
 
 import { expect, test } from "@playwright/test";
-import { stubLanding } from "./_helpers/landing";
+import {
+  fillLandingBirthDate,
+  revealLandingSection,
+  stubLanding,
+} from "./_helpers/landing";
 
 const FILL_DATE = "1990-06-15";
 const FILL_CITY = "New York, USA";
@@ -49,7 +53,11 @@ const natalPayload = {
 // the onboarding handoff. Shared by golden-path and boundary specs.
 async function castAndSave(page: import("@playwright/test").Page) {
   await page.goto("/landing-v2");
-  await page.locator("#bc-date").fill(FILL_DATE);
+  await revealLandingSection(page, "birth-chart-tool");
+  // Include the optional name so the onboarding prefill is complete and can
+  // immediately reach the save_chart auth handoff this suite is exercising.
+  await page.locator("#bc-name").fill("E2E User");
+  await fillLandingBirthDate(page, FILL_DATE);
   await page.locator("#bc-city").fill(FILL_CITY);
   await page
     .getByRole("button", { name: /cast my chart|casting your chart/i })
@@ -140,7 +148,7 @@ test.describe(
 
       // INVARIANT: no chart data may be persisted to localStorage while the
       // visitor is anonymous — not under astro_user nor any guest namespace.
-      const leaked = await page.evaluate(() => {
+      const leaked = await page.evaluate(({ fillDate, city }) => {
         const keys: string[] = [];
         for (let i = 0; i < localStorage.length; i += 1) {
           const key = localStorage.key(i);
@@ -148,12 +156,12 @@ test.describe(
           const value = localStorage.getItem(key) || "";
           // Flag any key whose value smells like the cast birth chart: the
           // birth date / city we typed must never reach localStorage.
-          if (value.includes(FILL_DATE) || value.includes("New York")) {
+          if (value.includes(fillDate) || value.includes(city)) {
             keys.push(key);
           }
         }
         return keys;
-      });
+      }, { fillDate: FILL_DATE, city: "New York" });
       expect(leaked).toEqual([]);
 
       // Specifically, the legacy migration source key must be absent.

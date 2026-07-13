@@ -1,5 +1,5 @@
 // INPUT: i18n translations, theme/language context, static article summaries from data/articles.
-// OUTPUT: Editorial 4-card grid of in-depth Wiki articles + "Browse all" CTA + per-card hashtag
+// OUTPUT: Editorial 4-card grid of in-depth Wiki articles + "Browse all" CTA + per-card 24px-target hashtag
 //         Links (to /wiki?tab=articles&tag=…) — pure SSR-friendly HTML so Google / GEO surfaces
 //         can crawl titles, descriptions, internal article links, and tag pivots without JS.
 // POS: Below-the-fold landing section for /landing-v2 (anchor id="featured-articles").
@@ -136,7 +136,7 @@ const FeaturedArticlesSection: React.FC = () => {
                 {article.description}
               </p>
               {article.keywords && article.keywords.length > 0 ? (
-                <div className="mt-4 flex flex-wrap gap-x-2 gap-y-1">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {article.keywords.slice(0, 3).map((kw) => (
                     <Link
                       key={`${article.slug}-${kw}`}
@@ -145,7 +145,7 @@ const FeaturedArticlesSection: React.FC = () => {
                         e.stopPropagation();
                         handleTagClick(kw, article.slug);
                       }}
-                      className={`cursor-pointer rounded-sm text-xs outline-none transition-colors hover:text-accent focus-visible:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
+                      className={`inline-flex min-h-6 items-center rounded-full px-2 py-1 text-xs outline-none transition-colors hover:text-accent focus-visible:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
                         isDark ? "text-star-400" : "text-paper-500"
                       }`}
                     >

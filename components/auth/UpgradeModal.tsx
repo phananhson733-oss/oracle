@@ -407,7 +407,7 @@ const UpgradeModal: React.FC = () => {
                     {subscriptionT?.trial_badge || `${proTrialDays}-day trial`}
                   </span>
                 )}
-                <span className="absolute -top-3 right-[10px] px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-accent-200 text-paper-900 rounded-full">
+                <span className="absolute -top-3 right-[10px] px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-gold-500 text-space-950 rounded-full">
                   {subscriptionT?.recommend || '推荐'}
                 </span>
 

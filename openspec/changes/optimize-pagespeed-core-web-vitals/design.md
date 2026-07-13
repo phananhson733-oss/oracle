@@ -89,7 +89,7 @@ Expected impact: improves desktop TBT and main-thread work, lowers unused JS/CSS
 - Header checks:
   - `/` returns HTML with no immutable caching.
   - live `/assets/<hash>.js` and `/assets/<hash>.css` return immutable caching and correct content type.
-  - missing `/assets/<missing>.js` returns `404` or `410`, not `/index.html`.
+  - missing `/assets/<missing>.js` returns `404` or `410`, not `index.html`.
   - first-viewport logo asset returns the expected small byte size.
 - Bundle checks:
   - first-route JS/CSS sizes are recorded before and after.

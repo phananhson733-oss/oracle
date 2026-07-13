@@ -110,7 +110,7 @@ Jupiter enters Leo on June 30 and joins the Sun's fire family as a supportive ba
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to compare your own Sun and its ruler against the method used for the mbappe birth chart. You get a clear view of which planet rules your Sun and when its next transit window opens — and, more usefully, a way to track your own timing instead of waiting on a label.
+[Generate your free birth chart](/en/birth-chart-calculator) to compare your own Sun and its ruler against the method used for the mbappe birth chart. You get a clear view of which planet rules your Sun and when its next transit window opens — and, more usefully, a way to track your own timing instead of waiting on a label.
 
 ## Sources
 
@@ -227,7 +227,7 @@ export const mbappeBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，把你自己的太阳及其守护星，对照读姆巴佩出生星盘所用的方法。你会清楚看到哪颗行星主管你的太阳、它下一个过运窗口何时打开——更有用的是，得到一种追踪自己时机的方式，而不是等着一个标签兑现。
+[生成你的免费出生星盘](/zh/birth-chart-calculator)，把你自己的太阳及其守护星，对照读姆巴佩出生星盘所用的方法。你会清楚看到哪颗行星主管你的太阳、它下一个过运窗口何时打开——更有用的是，得到一种追踪自己时机的方式，而不是等着一个标签兑现。
 
 ## 参考来源
 

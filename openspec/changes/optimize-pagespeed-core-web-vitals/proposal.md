@@ -25,7 +25,6 @@ Highest-confidence causes from the report and current repository:
 - Replace oversized brand mark usage with right-sized, compressed, versionable assets for navigation/footer/manifest/schema contexts.
 - Remove font-gated body hiding and make the hero text render immediately with stable fallback metrics; reduce or self-host critical font payload where useful.
 - Reduce desktop LCP/TBT by shrinking first-route JS/CSS, delaying non-critical analytics/API work, and preventing duplicate entitlement calls.
-- Keep third-party ad/analytics scripts out of the default home-page first-byte path; make the AdSense raw head-loader an explicit verification switch rather than a side effect of setting the publisher id.
 - Fix layout shifts from footer/hero/font load by reserving dimensions and avoiding late content insertion that moves the page.
 - Fix deploy headers so real hashed assets remain immutable, mutable public files are treated intentionally, and missing `/assets/*` requests do not return cached HTML.
 - Bring landing contrast and touch-target issues in line with WCAG/PageSpeed expectations without violating `COLOR_SYSTEM_GUIDE.md`.
@@ -39,8 +38,6 @@ Highest-confidence causes from the report and current repository:
   - `index.tsx`
   - `App.tsx`
   - `pages/landing/HeroSection.tsx`
-  - `components/ConsentBanner.tsx`
-  - `services/region.ts`
   - `pages/landing/FooterSection.tsx`
   - `pages/landing/NewsletterSection.tsx`
   - `pages/landing/BirthChartSection.tsx`
@@ -48,7 +45,6 @@ Highest-confidence causes from the report and current repository:
   - `contexts/EntitlementContext.tsx` or the entitlement-fetching owner
   - `scripts/generate-seo-pages.mjs`
   - `vite.config.ts`
-  - `.env.example` / `.env.production.template`
   - `vercel.json`
   - `public/` brand assets and generated static stubs
 - Verification:

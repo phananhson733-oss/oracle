@@ -195,8 +195,8 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
 
             <Section title={language === 'zh' ? '账号' : 'Account'}>
                 <Card className="mb-4">
-                    <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-4">
+                    <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between mb-6">
+                        <div className="flex min-w-0 items-center gap-4">
                             {user?.avatar ? (
                                 <img src={user.avatar} alt="" width={56} height={56} loading="lazy" className="w-14 h-14 rounded-full object-cover border-2 border-gold-500/20" />
                             ) : (
@@ -204,13 +204,13 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                     {profile.name?.[0] || user?.email?.[0] || '?'}
                                 </div>
                             )}
-                            <div>
+                            <div className="min-w-0">
                                 <div className="font-serif text-xl">{profile.name}</div>
-                                <div className="text-sm opacity-60 font-mono">{user?.email}</div>
+                                <div className="truncate text-sm opacity-60 font-mono">{user?.email}</div>
                             </div>
                         </div>
 
-                        <div>
+                        <div className="w-full sm:w-auto">
                             {entitlements?.isSubscriber ? (
                                 <div className="text-right">
                                     <span className="font-bold text-gold-500 flex items-center gap-1">
@@ -219,9 +219,14 @@ const SettingsPage: React.FC<{ profile: T.UserProfile; onReset: () => void }> = 
                                     <SubscriptionExpiry expiresAt={entitlements?.subscription?.expiresAt} language={language} />
                                 </div>
                             ) : (!FREE_MODE && !LOGIN_GATE_MODE) ? (
-                                <ActionButton onClick={() => openUpgradeModal()} size="sm" className="shadow-glow px-6">
-                                    {t.paywall?.unlock_unlimited_access || 'Unlock Unlimited'}
-                                </ActionButton>
+                                <div className="relative w-full sm:w-auto">
+                                    <ActionButton onClick={() => openUpgradeModal()} size="sm" className="w-full shadow-glow px-6 sm:w-auto">
+                                        {t.paywall?.unlock_unlimited_access || 'Unlock Unlimited'}
+                                    </ActionButton>
+                                    <span className="pointer-events-none absolute -right-2 -top-2 z-10 rounded-full border border-success/30 bg-success px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-space-950 shadow-sm">
+                                        {language === 'zh' ? '免费 7 天' : 'Free 7 Days'}
+                                    </span>
+                                </div>
                             ) : null}
                         </div>
                     </div>

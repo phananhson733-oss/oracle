@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含积分解锁权益校验、Airwallex Pro 试用激活、AdSense 合规门控、报告积分购买、地理搜索多语言参数与权益请求去重）。 -->
-<!-- OUTPUT: services 架构摘要与文件索引（含积分解锁、Airwallex Pro 试用激活、AdSense 合规门控、报告积分购买、PayPal 订阅确认、认证刷新兜底、权益请求去重与 AI 缓存版本更新）。 -->
+<!-- INPUT: 主应用计算、内容生成与 GA4 服务（含语言化 SPA PV、同意后补发、权益/支付、地理搜索）。 -->
+<!-- OUTPUT: services 架构摘要与文件索引（含 analytics 同意恢复/分类、积分权益、支付、认证与 AI 缓存）。 -->
 <!-- POS: 主应用服务目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -15,20 +15,13 @@
 - FOLDER.md｜地位：目录索引文档｜功能：记录服务目录架构与文件清单。
 - apiClient.ts｜地位：API 客户端｜功能：调用后端 API 获取数据（含问答类别、Markdown 报告、AI 来源元数据与详情缓存提示）。
 - paymentClient.ts｜地位：支付与权益客户端｜功能：Airwallex Pro 试用激活、订阅/购买/权益查询与 GM 测试指令调用。
-- entitlementClientV2.ts｜地位：权益 V2 客户端｜功能：查询订阅、积分、功能额度与 Pro 试用资格，并维护本地日次解锁缓存。
+- entitlementClientV2.ts｜地位：权益 V2 客户端｜功能：查询订阅、积分、功能额度与 Pro 试用资格，并维护本地日次解锁缓存与并发请求去重。
 - savedReadingsClient.ts｜地位：已保存解读客户端（#24）｜功能：调用 /api/saved-readings 的 saveReading/list/get/delete；synastry payload 须为剥名后数据（红线#4）。
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
-- analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。
-- themeStorage.ts｜地位：主题持久化唯一入口｜功能：astro_theme_v2 安全读写（严格归一化 + storage 禁用防护 + THEME_META_COLORS），index.html pre-paint 脚本是其不可 import 的镜像。
+- analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含首次授权后当前页一次性补发、语言前缀路由分类、同意网关下的 setUserId/setUserProperties 缓冲与刷新；脚本注入由 index.tsx 延迟调度）。
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
-- consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储；getDoNotSell 尊重浏览器 GPC 信号(isGpcActive,CPRA §7025,评审 M3)——显式选择优先、无选择时随 GPC。
-- region.ts｜地位：地域判定服务｜功能：读同源 /api/region（Vercel IP 国家码）判定 GDPR 强制区（EU27+EEA+UK+CH），供 ConsentBanner 地域分流与 AdSlot 广告同意门控；含 GDPR_COUNTRIES/isGdprCountry/resolveRegionEndpoint/fetchRegion/getCachedRegion，跨域 VITE_API_URL fail-safe 回退同源，失败 fail-safe 为 UNKNOWN。
-- region.test.ts｜地位：region 单测（jsdom）｜功能：覆盖 GDPR 国家判定、响应解析、同源 region endpoint 解析与 fetch 失败 fail-safe。
-- adsense.ts｜地位：AdSense 加载与合规门控｜功能：isAdsenseConfigured(flag+client)、hasAdConsent(地域分流：EEA→TCF/非EEA→marketing 且非 Do-Not-Sell)、computeAdConsentSignal(门控与 Consent Mode 信号同源,评审 H1)、loadAdsense 单例注入、pushAd、initTcfListener(可选 head-loader/运行时 loader + 单链轮询,评审 L3)/rearmTcfListener(SPA 重臂,评审 L4)/evaluateTcfConsent。
-- adsense.test.ts｜地位：adsense 单测（jsdom）｜功能：覆盖四重门控各分支、TCF 判定/notify 与单例注入。
-- adConsentBus.ts｜地位：广告同意事件总线（PR2）｜功能：notifyAdConsentChanged/subscribeAdConsent（同意变化→AdSlot 重渲染，评审 B2）+ openConsentPreferences/subscribeOpenConsentPreferences（Footer 重开偏好，评审 B3）。
-- adConsentBus.test.ts｜地位：adConsentBus 单测｜功能：发布/订阅收发与取消订阅。
+- consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
 - abTest.ts｜地位：实验工具｜功能：A/B 测试分组与曝光追踪。
 - landingUtm.ts｜地位：归因快照｜功能：首触快照 UTM/click-id 到 sessionStorage 并供漏斗事件读取。
 - funnelEvents.ts｜地位：漏斗事件契约｜功能：获客漏斗事件名常量 + 非 PII 字段白名单 + isFunnelFieldAllowed 守卫（chart_cast/account_created 本批接线，save_intent/auth_prompted/chart_migrated 由 #7 接线）。
@@ -39,9 +32,8 @@
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
-- region endpoint 归一化为同源 `/api/region`：生产 `www` 页面即使存在 apex `VITE_API_URL` 也不会跨域请求 `https://astrologywiki.com/api/region`，避免 Lighthouse CORS 控制台错误。
-- entitlementClientV2 增加并发请求合并：同一时间多处调用 `getEntitlementsV2` 只发起一次 `/api/entitlements/v2`，失败后清空 in-flight promise 以允许重试，降低 landing 首屏重复 API 噪音。
-- 新增 region.ts + adsense.ts（AdSense 接入 PR1）：region.ts 判 GDPR 地域；adsense.ts 四重门控（配置/匿名/地域相关广告同意/slot）+ 单例加载器 + TCF 监听。地域分流方案 A：EEA 交 Google 认证 CMP，非 EEA 用自研横幅营销同意。均 flag(VITE_ADSENSE_ENABLED)默认关，PR1 全站零广告。
+- analytics.ts 修复 SPA 数据基线：剥离 en/zh 后分类 wiki/tool/home，并在首次授予 Analytics 同意时只补发一次当前 `page_view`，避免首个落地页永久缺失或重复计数。
+- entitlementClientV2 对 `getEntitlementsV2()` 增加 in-flight Promise 合并，避免 AuthProvider 与 EntitlementProvider 同时挂载时重复请求 `/api/entitlements/v2`；analytics.ts 注释对齐 index.tsx 的首屏后延迟初始化。
 - paymentClient 新增 Airwallex Pro 试用激活 checkout 调用，entitlementClient V2 缓存结构补充 proTrial 资格，供升级弹窗区分试用/订阅 CTA。
 - analytics.ts 新增 tool-led 证链漏斗追踪：`trackChartFunnel` + 纯函数 `sanitizeChartFunnelParams`（default-deny allowlist，只放行 sign/module/tool/step/placement），构造型防止节点星座迷你计算器周边 DOB/birthCity/姓名等 PII 泄漏到 GA4（隐私红线 #1，沿用 redactErrorMessageForAnalytics 模式）。
 - 新增 saveChartResume.ts（backlog #7）：buildBirthProfileFromPrefill 纯映射，App.tsx 登录后把内存里的盘直推云端续接迁移；同批接线 save_intent（BirthChartSection）/auth_prompted（App onboarding）/chart_migrated（App resume effect）三个漏斗事件，均 additive、仅非 PII。
@@ -86,4 +78,3 @@
 - apiClient 上调 AI 缓存版本以刷新旧的概览内容结构。
 - apiClient 上调 AI 缓存版本并自动清理旧版日运概览结构。
 - apiClient 上调本地缓存前缀以强制刷新旧缓存。
-- 新增 themeStorage.ts：/review 加固产物 —— 集中 astro_theme_v2 读写（UIComponents/App/AuthContext 三处消费），归一化污染值、storage 禁用回退 light，持久化仅在显式切换时发生（保住 v2「显式选择」语义）。

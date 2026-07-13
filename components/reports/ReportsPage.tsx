@@ -1,5 +1,5 @@
-// INPUT: React、报告客户端与 UI 组件依赖（含报告卡片左侧强调样式与按钮加载态修正）。
-// OUTPUT: 导出报告列表页面组件（含统一左侧色带与主题化加载态）。
+// INPUT: React、报告客户端与 UI 组件依赖（含报告卡片左侧强调样式、按钮加载态修正与 language code）。
+// OUTPUT: 导出报告列表页面组件（含统一左侧色带、主题化加载态与稳定语言分支）。
 // POS: 报告列表页面组件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
@@ -66,7 +66,7 @@ const ReportsPage: React.FC = () => {
     },
   };
 
-  const lang = t === translations.zh ? 'zh' : 'en';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const tr = translations[lang] || translations.zh;
 
   useEffect(() => {

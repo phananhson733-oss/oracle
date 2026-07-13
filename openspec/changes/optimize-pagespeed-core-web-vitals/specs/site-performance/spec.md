@@ -62,12 +62,6 @@ The system SHALL keep non-critical runtime work out of the home page's initial r
 - **THEN** the app does not issue duplicate `/api/entitlements/v2` requests
 - **AND** entitlement fetching does not block first paint or hero interactivity
 
-#### Scenario: Third-party ad loader stays out of default first-byte HTML
-- **WHEN** the home page is built without `VITE_ADSENSE_HEAD_LOADER_ENABLED=true`
-- **THEN** the first-byte HTML does not include `adsbygoogle.js`
-- **AND** AdSense can still be loaded at runtime by eligible ad slots after consent and placement gates pass
-- **AND** the explicit head-loader switch can be enabled for an AdSense verification deployment without enabling runtime ad placement
-
 ### Requirement: Safe Static Asset Caching
 
 The system SHALL serve hashed static assets with immutable caching while preventing missing asset paths from falling back to cached HTML.

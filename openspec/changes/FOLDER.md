@@ -1,19 +1,23 @@
-<!-- INPUT: OpenSpec 变更提案目录结构（含 SEO/GEO 基础提案、UI 整体优化、本我页面内容优化进度、手动激活 Pro 试用与 PageSpeed 优化提案验证状态/第三方脚本预算）。 -->
-<!-- OUTPUT: changes 架构摘要与文件索引（含 SEO/GEO 基础提案、UI 整体优化、本我页面内容优化记录、手动激活 Pro 试用与 PageSpeed 优化提案验证状态/第三方脚本预算）。 -->
+<!-- INPUT: OpenSpec 变更提案目录结构（含 SEO/GEO、增长漏斗、UI 整体优化、手动激活 Pro 试用与 PageSpeed 优化提案验证状态）。 -->
+<!-- OUTPUT: changes 架构摘要与文件索引（含 SEO/GEO、增长漏斗、UI 整体优化、手动激活 Pro 试用与 PageSpeed 优化提案验证状态）。 -->
 <!-- POS: OpenSpec 变更目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+
 一旦我所属的文件夹有所变化，请更新我。
 
 # 文件夹：openspec/changes
 
 架构概要
+
 - 存放所有进行中的变更提案。
 - 每个变更占用一个独立子目录。
 - archive 存放已归档变更。
 
 文件清单
+
 - FOLDER.md｜地位：目录索引文档｜功能：记录变更目录架构与文件清单。
 
 目录
+
 - archive｜地位：归档目录｜功能：存放已完成变更。
 - add-editorial-author-personas｜地位：进行中变更｜功能：百科精选文章编辑作者人设、作者页与 Person 结构化数据。
 - add-gm-dev-session｜地位：进行中变更｜功能：GM 开发会话与登录替代入口。
@@ -23,14 +27,17 @@
 - enhance-wiki-deep-dive｜地位：进行中变更｜功能：百科深度解读内容完善。
 - implement-payment-subscription｜地位：进行中变更｜功能：支付与订阅能力落地。
 - integrate-astro-wiki｜地位：进行中变更｜功能：心理占星百科融合与数据接入。
-- optimize-pagespeed-core-web-vitals｜地位：进行中变更｜功能：首页 PageSpeed/Core Web Vitals、首屏资源、运行时/第三方脚本延迟加载、Vercel 资产缓存与部署后复测。
+- implement-astrologywiki-growth-funnel｜地位：进行中变更｜功能：GA4 数据基线、Wiki→出生星盘 CTA A/B/C 与首页 SEO 残留项。
+- optimize-pagespeed-core-web-vitals｜地位：进行中变更｜功能：首页 PageSpeed/Core Web Vitals 优化、PR 说明与部署后复测清单。
 - populate-wiki-data｜地位：进行中变更｜功能：百科数据补齐与内容填充。
 - update-manual-pro-trial-activation｜地位：进行中变更｜功能：注册后不自动赠送 Pro 试用，改为用户通过 Airwallex 绑定付款信息后手动激活 7 天 Pro 试用。
 - update-ui-system｜地位：进行中变更｜功能：UI 整体优化与色彩系统对齐。
 
 近期更新
+
+- 新增 implement-astrologywiki-growth-funnel 变更提案，固化 2026-07-13 已批准的增长漏斗实施范围。
+- optimize-pagespeed-core-web-vitals 新增 PR/部署说明，记录 UI 规范符合说明、生产旧部署状态与上线后 PageSpeed/header 复测清单。
 - update-manual-pro-trial-activation 变更提案已同步后端/前端/build/OpenSpec 验证状态，live Airwallex E2E 待真实环境。
-- optimize-pagespeed-core-web-vitals 变更提案补充 AdSense head-loader 显式开关、Hero LCP follow-up 与部署后复测门槛。
 - 新增 add-editorial-author-personas 变更提案。
 - 新增 add-gm-dev-session 变更提案。
 - 新增 add-seo-geo-foundation 变更提案。

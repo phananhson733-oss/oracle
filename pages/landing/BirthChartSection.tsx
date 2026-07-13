@@ -3,7 +3,7 @@
 //        from three locale-stable <select>s (Month / Day / Year) to avoid native date-picker OS-locale
 //        placeholder leaks (e.g. macOS rendering "年/月/日" on an English page).
 // OUTPUT: Inline anonymous Birth Chart tool. Renders a form, calls /api/natal/chart on submit, then
-//         reveals an AstroChart visualization + three highlight cards (Sun/Moon/Rising) and a CTA
+//         reveals an AstroChart visualization + three highlight cards (Sun/Moon/Rising) and a high-contrast CTA
 //         that converts to the /onboarding signup flow. No persistence — all state held in component
 //         memory only; nothing written to localStorage or remote storage until the user signs up.
 //         birthDate retains the exact YYYY-MM-DD shape forwarded to fetchNatalChart() and onboarding
@@ -104,7 +104,7 @@ const HighlightCard: React.FC<{
     <div
       className={`rounded-2xl border p-6 ${
         isDark
-          ? "border-star-50/15 bg-space-900/40"
+          ? "border-gold-500/15 bg-space-900/40"
           : "border-paper-300 bg-paper-100"
       }`}
     >
@@ -429,12 +429,12 @@ const BirthChartSection: React.FC = () => {
 
   const inputClass = `w-full rounded-xl border px-4 py-3 text-base font-sans outline-none transition-colors duration-200 focus:ring-2 focus:ring-accent/40 motion-reduce:transition-none ${
     isDark
-      ? "bg-space-900/60 border-star-50/15 text-star-50 placeholder:text-star-400 focus:border-accent"
+      ? "bg-space-900/60 border-gold-500/15 text-star-50 placeholder:text-star-400 focus:border-accent"
       : "bg-paper-100 border-paper-300 text-paper-900 placeholder:text-paper-500 focus:border-accent"
   }`;
   const labelClass = `text-xs uppercase tracking-[0.18em] ${isDark ? "text-star-400" : "text-paper-600"}`;
   const mysticErrorClass = `text-sm font-serif italic ${isDark ? "text-gold-500" : "text-paper-800"}`;
-  const ctaButtonClass = `inline-flex items-center justify-center rounded-2xl bg-star-50 text-space-950 px-7 py-3.5 text-sm font-mono font-medium uppercase tracking-[0.12em] transition-opacity duration-300 ease-out hover:opacity-90 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+  const ctaButtonClass = `inline-flex items-center justify-center rounded-full bg-accent text-paper-900 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
     isDark
       ? "focus-visible:ring-offset-space-950"
       : "focus-visible:ring-offset-paper-100"
@@ -456,7 +456,7 @@ const BirthChartSection: React.FC = () => {
         </p>
         <h2
           id="birth-chart-heading"
-          className={`font-serif font-medium text-4xl md:text-5xl leading-tight tracking-[-0.015em] ${
+          className={`font-mono font-medium text-3xl md:text-4xl leading-tight tracking-tight ${
             isDark ? "text-star-50" : "text-paper-900"
           }`}
         >
@@ -717,13 +717,15 @@ const BirthChartSection: React.FC = () => {
             <button
               type="submit"
               disabled={submitting}
-              className={`${ctaButtonClass} disabled:opacity-70 disabled:cursor-not-allowed`}
+              className={`${ctaButtonClass} disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 ${
+                submitting ? "font-serif italic" : ""
+              }`}
             >
               {submitting ? (
                 <>
                   <span
                     aria-hidden="true"
-                    className="mr-2 inline-block h-4 w-4 rounded-full border-2 border-space-950/30 border-t-space-950 animate-spin"
+                    className="mr-2 inline-block h-4 w-4 rounded-full border-2 border-paper-100/40 border-t-paper-100 animate-spin"
                   />
                   {landing.birth_chart_submitting || "Casting your chart..."}
                 </>

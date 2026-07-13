@@ -5,7 +5,6 @@ import type { WikiArticle } from "../../types";
 export const worldCup2026AstrologyPredictionEn: WikiArticle = {
   slug: "world-cup-2026-astrology-prediction",
   image: "/images/blog/world-cup-2026-astrology-prediction.jpg",
-  image_alt: "Jupiter ascending over an indigo ocean with golden light on three distant shorelines, representing 2026 World Cup collective astrology",
   image_alt:
     "Jupiter in Cancer rising over a dark indigo sea, symbolizing the 2026 World Cup astrology timing window",
   title:

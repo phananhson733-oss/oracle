@@ -1,8 +1,8 @@
-// INPUT: i18n translations, router navigation, analytics tracking, idle-loaded HeroTodayCard
-//        (right-half editorial mini-card backed by today's-sky data), useLangPath for the Saturn Return
+// INPUT: i18n translations, router navigation, analytics tracking, HeroTodayCard (right-half
+//        editorial mini-card backed by today's-sky data), useLangPath for the Saturn Return
 //        pill (the only feature-pill that routes off-page rather than scrolling to an anchor).
-// OUTPUT: Hero section — Editorial Serif Poster (D1 decision from /plan-design-review 2026-05-18).
-//         md+ renders a 7/5 two-column grid: copy + CTAs on the left, idle-loaded HeroTodayCard on the right.
+// OUTPUT: Hero section — 含 astrology + birth chart 的 SEO H1、编辑副标题、主 CTA 与实时天象卡。
+//         md+ renders a 7/5 two-column grid: copy + high-contrast CTAs on the left, HeroTodayCard on the right.
 //         Mobile hides the card (hidden md:block inside the card) and the hero collapses to a
 //         single column. Right-half fix per FINDING-H01 — "real astronomy" data anchors the hero
 //         instead of empty whitespace. Feature-pills row below CTAs surfaces 5 keyword anchors
@@ -12,92 +12,22 @@
 //      icon-in-colored-circle SaaS aesthetics, "Welcome to..." copy, or system default fonts. See COLOR_SYSTEM_GUIDE.md.
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
-import React, { Suspense, lazy, useCallback, useEffect, useState } from "react";
+import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage, useTheme } from "../../components/UIComponents";
 import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 import { useLangPath } from "../../hooks/useLangPath";
-
-const HeroTodayCard = lazy(() => import("./HeroTodayCard"));
-const HERO_TODAY_IDLE_DELAY_MS = 5000;
-
-const HeroTodayCardShell: React.FC<{ isDark: boolean }> = ({ isDark }) => (
-  <div
-    aria-hidden="true"
-    className={`hidden md:block w-full rounded-2xl border p-6 lg:p-8 ${
-      isDark
-        ? "border-star-50/15 bg-space-900/40"
-        : "border-paper-300/60 bg-paper-50/80"
-    }`}
-    style={{ minHeight: "16rem" }}
-  >
-    <div
-      className={`h-3 w-28 rounded ${isDark ? "bg-space-800" : "bg-paper-200"}`}
-    />
-    <div
-      className={`mt-4 h-8 w-3/4 rounded ${
-        isDark ? "bg-space-800" : "bg-paper-200"
-      }`}
-    />
-    <div
-      className={`mt-6 h-px w-full ${isDark ? "bg-star-50/10" : "bg-paper-300/40"}`}
-    />
-    <div className="mt-5 space-y-3">
-      {Array.from({ length: 3 }).map((_, idx) => (
-        <div
-          key={`hero-today-shell-${idx}`}
-          className={`h-4 rounded ${isDark ? "bg-space-800" : "bg-paper-200"}`}
-          style={{ width: `${72 - idx * 9}%` }}
-        />
-      ))}
-    </div>
-  </div>
-);
-
-const DeferredHeroTodayCard: React.FC<{ isDark: boolean }> = ({ isDark }) => {
-  const [shouldRender, setShouldRender] = useState(false);
-
-  useEffect(() => {
-    if (shouldRender || typeof window === "undefined") return;
-    let timer: number | undefined;
-    let idleId: number | undefined;
-
-    const reveal = () => setShouldRender(true);
-    const scheduleIdleReveal = () => {
-      if (typeof window.requestIdleCallback === "function") {
-        idleId = window.requestIdleCallback(reveal, { timeout: 2500 });
-        return;
-      }
-      timer = window.setTimeout(reveal, 0);
-    };
-
-    timer = window.setTimeout(scheduleIdleReveal, HERO_TODAY_IDLE_DELAY_MS);
-    return () => {
-      if (timer !== undefined) window.clearTimeout(timer);
-      if (
-        idleId !== undefined &&
-        typeof window.cancelIdleCallback === "function"
-      ) {
-        window.cancelIdleCallback(idleId);
-      }
-    };
-  }, [shouldRender]);
-
-  if (!shouldRender) return <HeroTodayCardShell isDark={isDark} />;
-
-  return (
-    <Suspense fallback={<HeroTodayCardShell isDark={isDark} />}>
-      <HeroTodayCard />
-    </Suspense>
-  );
-};
+import HeroTodayCard from "./HeroTodayCard";
+import { landingHeroCopy } from "./landingContent";
 
 const HeroSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { theme } = useTheme();
   const scrollToBirthChart = useScrollToBirthChart();
   const { langPath } = useLangPath();
   const landing = t.landing;
+  const lang = language === "zh" ? "zh" : "en";
+  const heroCopy = landingHeroCopy[lang];
 
   // Feature pills: 4 same-page anchor jumps + 1 route link to the dedicated
   // Saturn Return SEO page. The mix is intentional — Saturn Return has its
@@ -181,54 +111,30 @@ const HeroSection: React.FC = () => {
             {landing.hero_kicker || "Astrology · Psychology · Self-Knowledge"}
           </p>
 
-          {/* Headline — IBM Plex Mono throughout, no italic accent (italic
-            Cormorant overflowed the tight line-height and visually collided
-            with the subtitle). Emphasis word now gets the gold accent color
-            only — keeps the visual hierarchy without the descender clash.
-            The two <span class="block"> would concatenate without whitespace
-            in the a11y tree ("Astrology meetsmodern psychology"), so we
-            expose a clean aria-label for assistive tech and mark all visual
-            fragments aria-hidden. */}
+          {/* H1 与根 index.html fallback 同源语义：同时覆盖 astrology 与
+              birth chart；旧品牌句降级到副标题。视觉分行对 a11y 暴露一个干净 label。 */}
           <h1
             id="hero-heading"
-            aria-label={
-              [
-                landing.hero_title_part1,
-                landing.hero_title_part2,
-                landing.hero_emphasis,
-              ]
-                .filter(Boolean)
-                .join(" ") + (landing.hero_title_part3 ?? ".")
-            }
-            className={`font-medium leading-[1.06] tracking-normal text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${
+            aria-label={heroCopy.title}
+            className={`font-mono font-medium leading-[1.08] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl ${
               isDark ? "text-star-50" : "text-paper-900"
             }`}
-            style={{
-              fontFamily:
-                "Georgia, 'Times New Roman', 'Songti SC', STSong, SimSun, serif",
-            }}
           >
             <span aria-hidden="true" className="block">
-              {landing.hero_title_part1 || "Astrology meets"}
+              {heroCopy.firstLine}
             </span>
             <span aria-hidden="true" className="block">
-              {landing.hero_title_part2 || "modern"}{" "}
-              <span className="text-accent italic">
-                {landing.hero_emphasis || "psychology"}
-              </span>
-              {landing.hero_title_part3 || "."}
+              <span className="text-accent">{heroCopy.emphasis}</span>
             </span>
           </h1>
 
-          {/* Sub — mt-8 gives the serif descenders room (Cormorant descender
-              clash with the subtitle was why this hero was mono before). */}
+          {/* Sub */}
           <p
-            className={`mt-8 max-w-2xl text-lg md:text-xl leading-relaxed ${
+            className={`mt-6 max-w-2xl text-lg md:text-xl leading-relaxed ${
               isDark ? "text-star-200" : "text-paper-700"
             }`}
           >
-            {landing.hero_subtitle ||
-              "Birth charts, CBT journal, AI guidance. Science-grounded. No mysticism."}
+            {heroCopy.subtitle}
           </p>
 
           {/* CTA group */}
@@ -236,7 +142,7 @@ const HeroSection: React.FC = () => {
             <button
               type="button"
               onClick={handlePrimaryCta}
-              className={`inline-flex items-center justify-center rounded-2xl bg-star-50 text-space-950 px-7 py-3.5 text-sm font-mono font-medium uppercase tracking-[0.12em] transition-opacity duration-300 ease-out hover:opacity-90 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+              className={`inline-flex items-center justify-center rounded-full bg-accent text-paper-900 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                 isDark
                   ? "focus-visible:ring-offset-space-950"
                   : "focus-visible:ring-offset-paper-100"
@@ -303,7 +209,7 @@ const HeroSection: React.FC = () => {
             card itself enforces hidden md:block) so CTAs stay above the fold
             and we don't render an async-data flicker on small viewports. */}
         <div className="md:col-span-5">
-          <DeferredHeroTodayCard isDark={isDark} />
+          <HeroTodayCard />
         </div>
       </div>
     </section>

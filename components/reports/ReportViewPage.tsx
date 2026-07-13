@@ -1,6 +1,6 @@
-// INPUT: React、报告客户端与 UI 组件依赖（含纸感映射、报告卡片左侧强调样式与对比度修正）。
-// OUTPUT: 导出报告详情页面组件（含统一左侧色带、分段展开与主题化分隔线）。
-// POS: 报告详情页面组件（含纸感映射与分隔线对比度修正）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、报告客户端与 UI 组件依赖（含纸感映射、报告卡片左侧强调样式、对比度修正与 language code）。
+// OUTPUT: 导出报告详情页面组件（含统一左侧色带、分段展开、主题化分隔线与稳定语言分支）。
+// POS: 报告详情页面组件（含纸感映射、分隔线对比度修正与语言分支）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -12,7 +12,7 @@ const ReportViewPage: React.FC = () => {
   const { reportId } = useParams<{ reportId: string }>();
   const navigate = useNavigate();
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const [report, setReport] = useState<Report | null>(null);
   const [loading, setLoading] = useState(true);
@@ -49,7 +49,7 @@ const ReportViewPage: React.FC = () => {
     },
   };
 
-  const lang = t === translations.zh ? 'zh' : 'en';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const tr = translations[lang] || translations.zh;
 
   useEffect(() => {

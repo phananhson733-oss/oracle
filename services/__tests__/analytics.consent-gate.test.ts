@@ -120,6 +120,38 @@ describe("analytics consent gate — setUserProperties", () => {
 });
 
 describe("analytics consent gate — updateConsentState flush behavior", () => {
+  it("does not recover a second page_view when consent existed before module load", async () => {
+    consentState.granted = true;
+    const { updateConsentState } = await import("../analytics");
+    const win = (globalThis as unknown as {
+      window: { dataLayer: Array<Record<string, unknown>> };
+    }).window;
+
+    updateConsentState(true, false);
+
+    const pageViews = win.dataLayer.filter((entry) => entry.event === "page_view");
+    expect(pageViews).toHaveLength(0);
+  });
+
+  it("recovers the current page_view exactly once when consent is first granted", async () => {
+    const { updateConsentState } = await import("../analytics");
+    const win = (globalThis as unknown as {
+      window: { dataLayer: Array<Record<string, unknown>> };
+    }).window;
+
+    consentState.granted = true;
+    updateConsentState(true, false);
+    updateConsentState(true, false);
+
+    const pageViews = win.dataLayer.filter((entry) => entry.event === "page_view");
+    expect(pageViews).toHaveLength(1);
+    expect(pageViews[0]).toMatchObject({
+      page_path: "/",
+      page_location: "http://localhost/",
+      page_category: "home",
+    });
+  });
+
   it("flushes buffered userId and properties when consent is granted", async () => {
     const { setUserId, setUserProperties, updateConsentState } =
       await import("../analytics");
@@ -255,5 +287,33 @@ describe("analytics consent gate — trackEvent (ISSUE-003 regression)", () => {
       (e) => e?.event === "cta_clicked",
     );
     expect(ctaEvent).toBeDefined();
+  });
+});
+
+describe("analytics page classification", () => {
+  it.each([
+    ["/en/wiki/example", "wiki"],
+    ["/zh/wiki/example", "wiki"],
+    ["/en/birth-chart-calculator", "tool"],
+    ["/zh/birth-chart-calculator", "tool"],
+  ])("classifies localized route %s as %s", async (pathname, category) => {
+    consentState.granted = true;
+    const win = (globalThis as unknown as {
+      window: {
+        dataLayer: Array<Record<string, unknown>>;
+        location: { pathname: string; href: string };
+      };
+    }).window;
+    win.location.pathname = pathname;
+    win.location.href = `http://localhost${pathname}`;
+
+    const { trackPageView } = await import("../analytics");
+    trackPageView(pathname);
+
+    const pageView = win.dataLayer.find((entry) => entry.event === "page_view");
+    expect(pageView).toMatchObject({
+      page_path: pathname,
+      page_category: category,
+    });
   });
 });

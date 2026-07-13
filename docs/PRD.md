@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.48
-> **Last Updated**: 2026-07-10
+> **Version**: 2.47
+> **Last Updated**: 2026-07-02
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -611,24 +611,6 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **积分写入规范**: 所有支付渠道（Airwallex、PayPal、Stripe）写入 `purchase_records` 时统一使用 `feature_type: 'gm_credit'`，不使用 RPC 调用。`entitlementServiceV2` 仅统计 `feature_type === 'gm_credit'` 的记录。
 
-### 3.6 广告变现 (Advertising / Google AdSense)
-
-**定位**: 变现免费 SEO 流量、保护付费漏斗。广告仅投 **wiki 文章页**；付费/登录用户、转化漏斗(`embeddedTool`)/心理敏感(`psychAdjacent`)文章、非同意用户零广告。
-
-**实现**: 手动广告位（React `<AdSlot>`，非 Auto Ads），仅 SPA 水合后按门控渲染，预留高度防 CLS。`adsbygoogle.js` 原始 `<head>` loader（`vite.config.ts` 插件 + `scripts/generate-seo-pages.mjs`）仅在 `VITE_ADSENSE_HEAD_LOADER_ENABLED=true` 时注入，供首次审核/CMP 验证使用；默认关闭以避免首页 PageSpeed 首字节加载广告脚本。广告位配置集中于 `components/ads/adPlacements.ts`（当前仅 `WIKI_ARTICLE_END` = wiki 文末 responsive display）；投放资格由 `components/ads/adEligibility.ts::isAdEligibleArticle` 结构化收口。
-
-**构建期 env 门控**:
-- `VITE_ADSENSE_HEAD_LOADER_ENABLED`（`true`/`false`）→ 原始 `<head>` loader 是否注入（审核验证 + CMP 加载）；默认 false
-- `VITE_ADSENSE_CLIENT_ID`（`ca-pub-xxx`）→ publisher id，供 head-loader 与运行时 loader 使用
-- `VITE_ADSENSE_ENABLED`（`true`/`false`）→ 广告是否真正投放（`AdSlot`）；未开=全站零广告
-
-**同意（地域分流方案 A）**:
-- EEA/UK/CH → Google 认证 CMP（AdSense Privacy & messaging，IAB TCF v2；前端经 `window.__tcfapi` 读取，`services/adsense.ts::initTcfListener`）
-- 其余地区 → 自研 `ConsentBanner` 营销同意 + CCPA/CPRA "Do Not Sell or Share" 控件（Footer "Your Privacy Choices" 可重开；`getDoNotSell` 尊重浏览器 GPC 信号，CPRA §7025）
-- Consent Mode 信号与投放门控经 `computeAdConsentSignal` 同源
-
-**合规文案**: `CookiePolicy` / `PrivacyPolicy` 已披露 AdSense 广告 cookie、CCPA "sale/share"、opt-out 机制。
-
 ---
 
 ## 4. 技术架构 / Technical Architecture
@@ -1056,25 +1038,6 @@ v2.11 起，`LOCATION_UNRESOLVED` 响应体**移除 `city` 字段**：原始用�
 | created_at | TIMESTAMPTZ | 记录创建时间 |
 
 > 设计意图：新版 Pro 试用必须由用户手动点击试用 CTA，并通过 Airwallex Billing Checkout 填写付款信息后才记录。`email_hash` 防止同邮箱重复领取，`airwallex_subscription_id` 让 checkout confirm/webhook/reconciler 幂等收敛。
-
-**ai_usage_log** — LLM token 用量审计（via migration 013）
-| Column | Type | 说明 |
-|--------|------|------|
-| id | UUID | 主键 |
-| prompt_id | TEXT | 归因功能（prompts/manager.ts 注册的 promptId） |
-| phase | VARCHAR(20) | generate / reformat / repair（CHECK 约束） |
-| model | TEXT | deepseek-chat / deepseek-reasoner |
-| status | VARCHAR(10) | success / error（CHECK 约束） |
-| prompt_tokens / completion_tokens / total_tokens | INTEGER | DeepSeek 返回的 token 计数（error 时为 NULL） |
-| cache_hit_tokens / cache_miss_tokens | INTEGER | DeepSeek prompt cache 命中/未命中 token |
-| reasoning_tokens | INTEGER | reasoner 模型思维链 token |
-| duration_ms | INTEGER | 调用耗时 |
-| lang | VARCHAR(10) | 请求语言 |
-| request_id | TEXT | 不透明请求关联 ID |
-| error_code | TEXT | http_<status> / timeout / invalid_json / exception 等 |
-| created_at | TIMESTAMPTZ | 调用时间 |
-
-> 设计意图：按 prompt_id 归因 token 消耗、审计异常放量（"token 泄露"）。无任何 PII（不存 prompt/输出原文）。写入由 `services/aiUsageService.ts` fire-and-forget 完成，失败仅记日志、绝不影响 AI 请求主路径。RLS 仅 service role。Redis 缓存命中不产生行（无 token 消耗）。
 
 **saved_readings** — 已保存解读（via migration 009，#24）
 | Column | Type | 说明 |

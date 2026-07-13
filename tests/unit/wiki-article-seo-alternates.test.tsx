@@ -38,6 +38,7 @@ vi.mock("../../components/ChartMiniCalc", () => ({
 }));
 vi.mock("../../components/wiki/WikiChartCTA", () => ({
   __esModule: true,
+  deriveCelebrityName: () => null,
   default: () => null,
 }));
 vi.mock("../../components/SafetyFooter", () => ({

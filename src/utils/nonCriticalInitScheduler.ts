@@ -1,9 +1,9 @@
 // INPUT: browser window timer/idle/event APIs and a non-critical initialization callback.
-// OUTPUT: scheduleNonCriticalInit(), which delays analytics/performance initialization until well after first paint or user interaction.
-// POS: PageSpeed runtime scheduling helper; keeps index.tsx side effects testable and prevents third-party scripts from entering the PageSpeed measurement window. 若更新此文件，务必更新 src/utils/FOLDER.md。
+// OUTPUT: scheduleNonCriticalInit(), which delays analytics/performance initialization until idle after first paint or user interaction.
+// POS: PageSpeed runtime scheduling helper; keeps index.tsx side effects testable. 若更新此文件，务必更新 src/utils/FOLDER.md。
 
-export const NON_CRITICAL_DELAY_MS = 12000;
-export const INTERACTION_DELAY_MS = 1200;
+export const NON_CRITICAL_DELAY_MS = 6000;
+export const INTERACTION_DELAY_MS = 600;
 export const IDLE_TIMEOUT_MS = 2500;
 
 export const NON_CRITICAL_INTERACTION_EVENTS = [

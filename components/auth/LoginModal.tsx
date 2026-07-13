@@ -32,7 +32,7 @@ declare global {
 
 const LoginModal: React.FC = () => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const {
     showLoginModal,
     setShowLoginModal,
@@ -332,7 +332,7 @@ const LoginModal: React.FC = () => {
     },
   };
 
-  const lang = t === translations.zh ? 'zh' : 'en';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const tr = translations[lang] || translations.zh;
 
   const getTitle = () => {

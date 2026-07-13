@@ -22,6 +22,10 @@ Disallow: /onboarding
 Disallow: /reports
 Disallow: /color-demo
 Disallow: /api/
+Disallow: /go/
+Disallow: /admin
+Disallow: /internal
+Disallow: /gm
 
 # Google AdSense crawler — 需访问可索引页面以投放相关广告。
 # robots UA 组不继承 *：必须在此复制敏感/私有路由的 Disallow，否则广告爬虫

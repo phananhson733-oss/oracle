@@ -1,5 +1,5 @@
-// INPUT: Analytics tracking utilities and GTM/GA4 bootstrap helpers.
-// OUTPUT: Exports analytics initialization and event tracking helpers.
+// INPUT: Analytics tracking utilities, consent transitions and GTM/GA4 bootstrap helpers.
+// OUTPUT: Exports analytics initialization/event helpers, including one-time consent page-view recovery and localized route classification.
 // POS: Analytics service module; update services/FOLDER.md when this file changes.
 
 import type {
@@ -145,6 +145,10 @@ const loadGa4 = () => {
 };
 
 let _analyticsInitialized = false;
+// Existing-consent visitors already receive App.tsx's normal initial page
+// view. Only a module that started without analytics consent is eligible for
+// the one-time recovery when the banner transitions to granted.
+let _consentPageViewRecovered = hasAnalyticsConsent();
 
 export const initAnalytics = (
   options: { userId?: string; userType?: AnalyticsUserType } = {},
@@ -204,6 +208,14 @@ export const updateConsentState = (analytics: boolean, marketing = false) => {
   });
   if (analytics) {
     flushConsentBufferedToGtag();
+    // The initial route is intentionally dropped by trackEvent while consent is
+    // unknown. Recover that current page once when the visitor opts in so the
+    // first page in a Wiki→tool journey is not missing from the denominator.
+    // Repeated preference saves must not create duplicate page_view events.
+    if (!_consentPageViewRecovered) {
+      _consentPageViewRecovered = true;
+      trackPageView();
+    }
   } else {
     // Consent denied (either explicit decline or revoke): drop any buffered
     // identity. We never flush on deny — the whole point of the buffer is to
@@ -252,7 +264,27 @@ export const trackEvent = (
 
 const resolvePageCategory = (path: string): string => {
   if (!path || path === "/") return "home";
-  const segment = path.split("/").filter(Boolean)[0];
+  const segments = path.split("/").filter(Boolean);
+  if (segments[0] === "en" || segments[0] === "zh") segments.shift();
+  if (segments.length === 0) return "home";
+  const segment = segments[0];
+  if (
+    segment === "tools" ||
+    segment.endsWith("-calculator") ||
+    [
+      "current-planets",
+      "moon-phase-today",
+      "ephemeris-calculator",
+      "electional-astrology",
+      "rodden-rating",
+      "celebrity-twins",
+      "astrocartography",
+      "astrocartography-map-generator",
+      "energy-timeline",
+    ].includes(segment)
+  ) {
+    return "tool";
+  }
   const categoryMap: Record<string, string> = {
     me: "natal",
     daily: "daily",
@@ -506,5 +538,5 @@ export const trackChartFunnel = (params: ChartFunnelParams) => {
 
 // Run consent default synchronously at module load time (Google requires this
 // BEFORE any other gtag commands). This ensures consent state is set before
-// requestIdleCallback fires initAnalytics() or App.tsx fires trackPageView().
+// the delayed post-LCP init in index.tsx or App.tsx fires trackPageView().
 setDefaultConsent();

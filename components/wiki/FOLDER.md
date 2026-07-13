@@ -1,6 +1,7 @@
-<!-- INPUT: Wiki 组件目录结构与职责说明（含 SEO 元信息接入、hreflang 校验、ItemList 修正与受控渐变样式）。 -->
-<!-- OUTPUT: Wiki 组件目录文档（含 SEO 接入记录、hreflang 校验、结构化数据调整与 PageSpeed CSS 优化记录）。 -->
+<!-- INPUT: Wiki 组件目录结构（含 Nav/Sticky/Lead/Bottom 工具 CTA、作者披露、SEO/hreflang/schema 与样式 helper）。 -->
+<!-- OUTPUT: Wiki 组件目录文档（含 Wiki→工具漏斗、作者真实性、SEO/schema、翻译与视觉职责记录）。 -->
 <!-- POS: Wiki 组件目录说明；若更新此文件，务必更新本头注释。 -->
+
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 # components/wiki/
@@ -9,20 +10,22 @@
 
 ## 文件清单
 
-| 文件 | 职责 |
-|------|------|
-| `WikiHubPage.tsx` | Wiki 入口页签容器，负责首页/百科/经典切换 |
-| `WikiHomePage.tsx` | Wiki 首页，包含搜索、每日星象/灵感与支柱入口 |
-| `WikiEnergyRadar.tsx` | 每日能量雷达子组件，独占 recharts、经 props 收数据与主题色，供 WikiHomePage 懒加载 |
-| `WikiIndexPage.tsx` | Wiki 百科页，包含主题分区卡片与条目索引 |
-| `WikiDetailPage.tsx` | Wiki 详情页，包含核心解读、能量地图与关联条目 |
-| `wikiGradientStyle.ts` | 受控渐变样式 helper，将 Wiki color_token 转为 inline CSS gradient，避免 Tailwind 扫描后端数据源 |
-| `WikiClassicsPage.tsx` | Wiki 经典书籍页，呈现书架列表 |
-| `WikiClassicDetailPage.tsx` | Wiki 经典书籍详情页，展示长文解读 |
-| `WikiSyntheticaPage.tsx` | Synthetica 洞察生成与结果展示。已从 wiki tab 栏移除（入口合并入 /tools hub）；`?tab=tools` URL 仍可达但裸页渲染（不套 wiki tab 外壳） |
-| `RelatedArticles.tsx` | 相关文章组件，基于星象关联展示相关内容 |
-| `AuthorByline.tsx` | 文章署名组件（detail/card 两 variant）+ AuthorMonogram CSS 头像 |
-| `AuthorPage.tsx` | 编辑作者档案页 `/:lang/wiki/author/:authorId`（EN-only，ProfilePage/Person JSON-LD） |
+| 文件                        | 职责                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `WikiHubPage.tsx`           | Wiki 入口页签容器，负责首页/百科/经典切换                                                                                             |
+| `WikiHomePage.tsx`          | Wiki 首页，包含搜索、每日星象/灵感与支柱入口                                                                                          |
+| `WikiEnergyRadar.tsx`       | 每日能量雷达子组件，独占 recharts、经 props 收数据与主题色，供 WikiHomePage 懒加载                                                    |
+| `WikiIndexPage.tsx`         | Wiki 百科页，包含主题分区卡片与条目索引                                                                                               |
+| `WikiDetailPage.tsx`        | Wiki 详情页，包含核心解读、能量地图与关联条目                                                                                         |
+| `WikiArticleDetailPage.tsx` | 静态文章详情模板，输出 Article/FAQ schema、正文、相关文章与 Wiki→Birth Chart 的 Sticky/Lead/Bottom CTA                              |
+| `WikiChartCTA.tsx`          | 共享 Nav/Sticky/Lead/Bottom 免费出生盘 CTA；语言感知直达工具、名人名解析并统一发送 `tool_click` 模块归因                             |
+| `WikiClassicsPage.tsx`      | Wiki 经典书籍页，呈现书架列表并使用类型安全占位渲染                                                                                   |
+| `WikiClassicDetailPage.tsx` | Wiki 经典书籍详情页，展示长文解读                                                                                                     |
+| `WikiSyntheticaPage.tsx`    | Synthetica 洞察生成与结果展示。已从 wiki tab 栏移除（入口合并入 /tools hub）；`?tab=tools` URL 仍可达但裸页渲染（不套 wiki tab 外壳） |
+| `RelatedArticles.tsx`       | 相关文章组件，基于星象关联展示相关内容并用 typed fallback 读取翻译                                                                    |
+| `AuthorByline.tsx`          | 文章署名组件（detail/card 两 variant）+ AuthorMonogram CSS 头像                                                                       |
+| `AuthorPage.tsx`            | 编辑作者档案页 `/:lang/wiki/author/:authorId`（EN-only，ProfilePage/Person JSON-LD）                                                  |
+| `wikiGradientStyle.ts`      | 将后端/静态 `color_token` 解析为受控 inline gradient，避免 Tailwind 扫描后端数据生成全站动态颜色 utility                              |
 
 ## 依赖
 
@@ -32,8 +35,13 @@
 
 ## 近期更新
 
-- 新增 `wikiGradientStyle.ts`，`WikiIndexPage` 与 `WikiDetailPage` 不再使用动态 Tailwind gradient class；Tailwind content 移除 `backend/src/data/wiki.ts`，降低首页全局 CSS 体积。
+- 2026-07-13 增加 Wiki→工具 P0 CTA 架构：全站 Nav、文章 400px Sticky、正文前 celebrity/generic Lead 与旧底部入口统一直达 `/:lang/birth-chart-calculator`，使用 module_a/b/c/article_bottom 归因；Sticky 用 48px spacer 避免遮挡正文并尊重 reduced motion。
+- 2026-07-10 审计修复：AuthorByline/AuthorPage 恢复 OpenSpec 要求的“编辑人设 · AI 辅助创作”就近披露，保持人设真实性与 E-E-A-T 风险边界。
+- WikiArticleDetailPage 支持文章 `seoTitle` / `seoDescription`，运行时 head 可优化 SERP CTR，同时保留页面 H1 与可见描述不变。
+- Wiki 百科/详情卡片的 `color_token` 改为受控 inline gradient，Tailwind 不再扫描 `backend/src/data/wiki.ts` 生成动态渐变 utility，减少首页全局 CSS 未使用体积。
+- WikiArticleDetailPage 的 Article publisher logo 改用 `/brand/logo-schema-512.png`，避免结构化数据引用原始大图。
 - 抽离 WikiEnergyRadar 子组件：将 hero 雷达的 recharts import 从 WikiHomePage 顶层移出，改 React.lazy + Suspense 懒加载，避免 /wiki 首帧急加载 charts chunk（颜色/数据仍由 WikiHomePage 算好经 props 传入）。
+- RelatedArticles 与 WikiClassicsPage 补齐严格类型下的翻译 fallback / placeholder 类型边界。
 - 新增 AuthorByline + AuthorPage：编辑作者人设署名与作者档案页，文章 author→authorId，JSON-LD author 改 Person。
 - 新增 RelatedArticles 组件，基于星象关联展示相关内容（守护、旺势、同元素等关系）。
 - 新增 wiki-associations.ts 数据文件，定义行星-星座守护关系、元素分组、宫位对应等关联数据。
@@ -74,4 +82,3 @@
 - Wiki 首页每日星象内容按天缓存，避免重复刷新。
 - 四大支柱图标强制 Unicode 文本呈现，避免 emoji 显示。
 - Wiki 条目与关联条目图标统一加文本变体，阻止 emoji 渲染。
-- 阅读面接入 Newsreader：WikiArticleDetailPage 文章正文与 WikiClassicDetailPage 书页容器改 font-reading（长文衬线，工具面保持 sans）。

@@ -1,6 +1,6 @@
-// INPUT: vercel.json rewrite configuration.
-// OUTPUT: Ensures root short-code URLs reach the backend before SPA fallback.
-// POS: Deployment routing regression test for owned root short links.
+// INPUT: vercel.json rewrite/header configuration.
+// OUTPUT: Ensures root short-code URLs and stale hashed assets reach the backend before SPA fallback, and PageSpeed-critical static assets keep deliberate cache headers.
+// POS: Deployment routing/cache regression test for owned root short links, immutable asset misses, and brand image delivery.
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
@@ -8,7 +8,7 @@ const vercelConfig = JSON.parse(
   readFileSync(new URL("../../vercel.json", import.meta.url), "utf8"),
 );
 
-describe("vercel routing and cache headers", () => {
+describe("vercel short-link routing", () => {
   it("rewrites root short-code paths to the backend before the SPA fallback", () => {
     const rewrites = vercelConfig.rewrites as Array<{
       source: string;
@@ -28,7 +28,7 @@ describe("vercel routing and cache headers", () => {
     expect(spaFallbackIndex).toBeGreaterThan(rootShortCodeRewriteIndex);
   });
 
-  it("rewrites missing hashed assets to the backend before SPA fallback", () => {
+  it("rewrites missing hashed assets to the backend before the SPA fallback", () => {
     const rewrites = vercelConfig.rewrites as Array<{
       source: string;
       destination: string;
@@ -47,21 +47,26 @@ describe("vercel routing and cache headers", () => {
     expect(spaFallbackIndex).toBeGreaterThan(assetMissRewriteIndex);
   });
 
-  it("keeps live hashed assets immutable and brand assets deliberately cacheable", () => {
+  it("sets deliberate cache headers for built assets and derived brand images", () => {
     const headers = vercelConfig.headers as Array<{
       source: string;
       headers: Array<{ key: string; value: string }>;
     }>;
-    const assetHeader = headers.find((entry) => entry.source === "/assets/(.*)");
-    const brandHeader = headers.find((entry) => entry.source === "/brand/(.*)");
 
-    expect(assetHeader?.headers).toContainEqual({
-      key: "Cache-Control",
-      value: "public, max-age=31536000, immutable",
-    });
-    expect(brandHeader?.headers).toContainEqual({
-      key: "Cache-Control",
-      value: "public, max-age=31536000, immutable",
-    });
+    const assetHeaders = headers.find(
+      (entry) => entry.source === "/assets/(.*)",
+    );
+    const brandHeaders = headers.find(
+      (entry) => entry.source === "/brand/(.*)",
+    );
+
+    expect(
+      assetHeaders?.headers.find((header) => header.key === "Cache-Control")
+        ?.value,
+    ).toBe("public, max-age=31536000, immutable");
+    expect(
+      brandHeaders?.headers.find((header) => header.key === "Cache-Control")
+        ?.value,
+    ).toBe("public, max-age=604800, stale-while-revalidate=2592000");
   });
 });
