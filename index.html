@@ -1,16 +1,25 @@
-<!-- INPUT: 字体加载、主题色变量与 SEO 元信息（含图标与问答动画）。 -->
-<!-- OUTPUT: 提供 HTML 宿主、主题色变量与 root 容器（含字体加载控制）+ 首字节静态 brand 结构化数据（Organization + WebSite JSON-LD）。 -->
+<!-- INPUT: optional Google Fonts、主题色变量、共享语义镜像的首页 SEO/长正文/FAQ。 -->
+<!-- OUTPUT: 提供 HTML 宿主、root 首字节 ≥1000 词正文、可见 FAQ、Organization/WebSite/FAQPage JSON-LD。 -->
 <!-- POS: 主应用页面壳。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 <!-- 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。 -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>AstrologyWiki — Free Birth Chart, Today's Sky &amp; Synastry Calculator</title>
-    <meta name="description" content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up." />
-    <meta name="keywords" content="free birth chart, birth chart calculator, natal chart, today's sky, planetary transits, synastry, relationship compatibility, saturn return, psychological astrology, modern astrology" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Free Birth Chart Calculator &amp; Astrology | AstrologyWiki</title>
+    <meta
+      name="description"
+      content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up."
+    />
+    <meta
+      name="keywords"
+      content="free birth chart, birth chart calculator, natal chart, today's sky, planetary transits, synastry, relationship compatibility, saturn return, psychological astrology, modern astrology"
+    />
     <!-- P0-1：静态 canonical + robots，与水合后 SEO.tsx 注入值一致（SEO.tsx upsert 同一标签，不产生重复）。
          首页是 sitemap priority 1.0 入口，静态首字节须自带 canonical/robots，不依赖 WRS 执行 JS 后补。 -->
     <link rel="canonical" href="https://www.astrologywiki.com/" />
@@ -19,15 +28,33 @@
     <!-- Google Search Console verification meta is injected at deploy time. Do not
          ship a hard-coded placeholder — it gets indexed as a malformed token. -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="AstrologyWiki — Free Birth Chart, Today's Sky &amp; Synastry Calculator" />
-    <meta property="og:description" content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up." />
-    <meta property="og:image" content="https://www.astrologywiki.com/og-image.png" />
+    <meta
+      property="og:title"
+      content="Free Birth Chart Calculator &amp; Astrology | AstrologyWiki"
+    />
+    <meta
+      property="og:description"
+      content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up."
+    />
+    <meta
+      property="og:image"
+      content="https://www.astrologywiki.com/og-image.png"
+    />
     <meta property="og:url" content="https://www.astrologywiki.com/" />
     <meta property="og:site_name" content="AstrologyWiki" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AstrologyWiki — Free Birth Chart, Today's Sky &amp; Synastry Calculator" />
-    <meta name="twitter:description" content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up." />
-    <meta name="twitter:image" content="https://www.astrologywiki.com/og-image.png" />
+    <meta
+      name="twitter:title"
+      content="Free Birth Chart Calculator &amp; Astrology | AstrologyWiki"
+    />
+    <meta
+      name="twitter:description"
+      content="Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.astrologywiki.com/og-image.png"
+    />
     <!-- P0: 首字节 brand 结构化数据（Organization + WebSite）。值与 App.tsx <GlobalSchema /> 的英文输出一致，
          把品牌实体提前到首字节、不依赖 WRS 执行 JS（兑现 pages/landing/LandingPage.tsx 的 first-byte parity TODO）。
          data-astro-global-schema 属性是承重的：GlobalSchema 据此 dedup 跳过运行时再注入（App.tsx），且 SEO.tsx
@@ -35,46 +62,117 @@
          tests/unit/homepage-brand-schema.test.ts。inLanguage 固定为 "en"（根 "/" 是规范英文主页），勿在此
          "本地化"或删除 WebSite；中文 landing 由 /landing-v2/zh/ 自带的 stub 负责。 -->
     <script type="application/ld+json" data-astro-global-schema="true">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AstrologyWiki",
-        "url": "https://www.astrologywiki.com/",
-        "logo": "https://www.astrologywiki.com/logo.png",
-        "sameAs": [
-          "https://twitter.com/astrologywiki",
-          "https://www.instagram.com/astrologywiki",
-          "https://www.youtube.com/@astrologywiki"
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "AstrologyWiki",
-        "url": "https://www.astrologywiki.com/",
-        "inLanguage": "en",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://www.astrologywiki.com/en/wiki?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "AstrologyWiki",
+          "url": "https://www.astrologywiki.com/",
+          "logo": "https://www.astrologywiki.com/brand/logo-schema-512.png",
+          "sameAs": [
+            "https://twitter.com/astrologywiki",
+            "https://www.instagram.com/astrologywiki",
+            "https://www.youtube.com/@astrologywiki"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@astrologywiki.com",
+            "contactType": "customer support"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "AstrologyWiki",
+          "url": "https://www.astrologywiki.com/",
+          "inLanguage": "en",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.astrologywiki.com/en/wiki?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         }
+      ]
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "en",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is AstrologyWiki really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can calculate a birth chart and use the core astrology tools without paying or creating an account. Optional account features are clearly separated from the free calculator experience."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a birth chart?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A birth chart, also called a natal chart, maps the Sun, Moon, planets, angles, and houses for a particular birth date, time, and place. AstrologyWiki presents that data as symbolic material for reflection rather than a scientific diagnosis or guaranteed prediction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an exact birth time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An exact time is strongly recommended for the Ascendant, Midheaven, and house cusps because those positions can change quickly. If your time is unknown, you can still inspect many planetary sign placements, but the calculator labels time-sensitive data accordingly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is synastry?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Synastry compares two natal charts to describe symbolic points of ease, contrast, and tension between them. It is best used as a prompt for conversation and self-awareness, not as a verdict on compatibility or a substitute for knowing another person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a Saturn return?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Saturn return occurs when transiting Saturn reaches approximately the same zodiac position it occupied at birth, roughly every 29.5 years. Astrologers associate the cycle with reviewing commitments, responsibilities, limits, and long-term structure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AstrologyWiki handle my birth data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The public calculator sends the date, optional time, and selected location needed to calculate the chart. Anonymous calculations opt out of the local chart cache, and the interface avoids placing birth details in URLs or analytics events."
+            }
+          }
+        ]
       }
-    ]
     </script>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://images.unsplash.com">
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=optional"
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=optional"
+        rel="stylesheet"
+    /></noscript>
     <style>
       /* Theme color variables (dark default, light overrides) */
       :root {
@@ -105,7 +203,9 @@
 
       /* Global Reset & Base */
       body {
-        font-family: 'Readex Pro', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+        font-family:
+          "Readex Pro", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          "Noto Sans SC", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
@@ -132,33 +232,31 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #2A3448;
+        background: #2a3448;
         border-radius: 3px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #D4B47A;
+        background: #d4b47a;
       }
 
       /* Typography Defaults - Linear Style */
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Cormorant Garamond', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', serif;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family:
+          "Cormorant Garamond", "Songti SC", "STSong", "SimSun",
+          "Noto Serif SC", serif;
         letter-spacing: -0.02em;
-      }
-
-      /* Font Loading State */
-      body.loading-fonts {
-        visibility: hidden;
-      }
-
-      body.fonts-loaded {
-        visibility: visible;
       }
 
       /* Critical CSS Inline */
       .text-balance {
         text-wrap: balance;
       }
-      
+
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -179,27 +277,15 @@
         }
       }
     </style>
-  <script>
-    if ('fonts' in document) {
-      document.fonts.ready.then(function () {
-        // This <head> script's callback can resolve BEFORE <body> is parsed when
-        // the fonts are already cached (fonts.ready settles on the next microtask).
-        // Guard document.body so we never throw "Cannot read properties of null
-        // (reading 'classList')"; if body isn't ready yet, defer the class swap to
-        // DOMContentLoaded so the loading-fonts -> fonts-loaded transition still runs.
-        var swap = function () {
-          if (!document.body) return;
-          document.body.classList.add('fonts-loaded');
-          document.body.classList.remove('loading-fonts');
-        };
-        if (document.body) swap();
-        else document.addEventListener('DOMContentLoaded', swap, { once: true });
-      });
-    }
-  </script>
   </head>
-  <body class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950 loading-fonts">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-gold-500 focus:text-space-950 focus:font-bold focus:text-sm focus:outline-none">Skip to main content</a>
+  <body
+    class="dark bg-space-950 text-star-50 selection:bg-accent selection:text-space-950"
+  >
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-gold-500 focus:text-space-950 focus:font-bold focus:text-sm focus:outline-none"
+      >Skip to main content</a
+    >
     <div class="bg-noise"></div>
     <!-- P0-1：root '/' 静态首屏 fallback。爬虫读原始 HTML 即见 h1+正文+核心链接（修复首页空壳 soft 404）；
          浏览器执行 /index.tsx 后 ReactDOM.createRoot 在 #root 上挂载并替换这段内容（无水合不匹配，见 index.tsx）。
@@ -208,35 +294,313 @@
     <div id="root" class="relative z-10">
       <main>
         <p>Astrology · Psychology · Self-Knowledge</p>
-        <h1>Astrology meets modern psychology.</h1>
-        <p>Free birth chart calculator, today's planetary transits, synastry, and Saturn return — psychological astrology grounded in real astronomy. No mysticism, no sign-up.</p>
+        <h1>Free Birth Chart &amp; Astrology Readings</h1>
+        <p>
+          Astrology meets modern psychology: explore your natal chart as a map
+          for self-knowledge, not a fixed prediction. AstrologyWiki combines
+          accurate astronomical calculation, plain-language reference guides,
+          and reflective prompts so you can move from chart data to questions
+          that belong in everyday life.
+        </p>
         <nav aria-label="AstrologyWiki tools">
-          <a href="/en/">Free Birth Chart Calculator</a>
+          <a href="/en/birth-chart-calculator">Free Birth Chart Calculator</a>
           <a href="/en/saturn-return-calculator">Saturn Return Calculator</a>
-          <a href="/en/wiki">Astrology Wiki — planets, signs, houses &amp; aspects</a>
+          <a href="/en/wiki"
+            >Astrology Wiki — planets, signs, houses &amp; aspects</a
+          >
           <a href="/en/wiki/transits">Today's Sky &amp; Planetary Transits</a>
         </nav>
-        <section aria-label="What you can do">
-          <h2>Tools and guides for self-understanding</h2>
-          <p>AstrologyWiki pairs Swiss-ephemeris astronomy with frameworks from modern psychology, so every chart reads as a map of tendencies — not a fixed fate. Generate your natal chart in seconds, see how today's transits touch your placements, compare two charts with synastry, or look up any planet, sign, house, or aspect in the wiki. Everything is free, with no account required.</p>
+        <section aria-labelledby="birth-chart-introduction">
+          <h2 id="birth-chart-introduction">
+            What a free birth chart can show you
+          </h2>
+          <p>
+            A birth chart, or natal chart, is a map of the sky calculated for a
+            particular date, time, and place. It records the zodiac positions of
+            the Sun, Moon, and planets; the horizon and meridian angles; the
+            twelve house cusps; and the angular relationships called aspects.
+            The chart is data before it is interpretation. Our free calculator
+            presents that structure first, including degrees, retrograde status,
+            element balance, modalities, houses, and major aspects when the
+            available birth information supports them. You can inspect the
+            result without creating an account, then use the linked reference
+            material to understand each layer at your own pace.
+          </p>
+          <p>
+            Astrology is not a scientific method for diagnosing personality or
+            predicting a guaranteed future. We treat it as a symbolic language:
+            a structured way to notice recurring themes, ask better questions,
+            and compare an interpretation with lived experience. A useful chart
+            reading should leave room for context, culture, development, and
+            choice. It should never turn one placement into a verdict about who
+            you are or what must happen next.
+          </p>
         </section>
+
+        <section aria-labelledby="calculate-chart">
+          <h2 id="calculate-chart">How to calculate an accurate natal chart</h2>
+          <h3>Start with the date</h3>
+          <p>
+            Your birth date determines the broad planetary positions. The Sun
+            moves about one degree per day, the Moon moves much faster, and the
+            outer planets may remain in one sign for years. Enter the date
+            exactly as recorded. The calculator uses it to request an
+            astronomical chart rather than relying on a simplified sun-sign
+            lookup. That distinction matters: two people with the same zodiac
+            Sun can have different Moon signs, planetary aspects, and element
+            patterns.
+          </p>
+          <h3>Add the most reliable time you have</h3>
+          <p>
+            Birth time is especially important for the Ascendant, Midheaven,
+            and house cusps because the Earth continues turning throughout the
+            day. A small time difference can shift an angle or move a planet
+            across a house boundary. If you have a birth certificate or another
+            reliable record, use that time. If you do not know it, leave the
+            field empty rather than inventing noon or midnight. You can still
+            explore many planetary sign placements, while treating the Moon,
+            angles, and houses with the level of certainty the data permits.
+          </p>
+          <h3>Select the birth place</h3>
+          <p>
+            Place determines the chart's geographic viewpoint and time zone.
+            Choose a city from the autocomplete results so the calculation has
+            coordinates and a recognized zone. The city is not displayed in a
+            public profile, and anonymous calculations opt out of the local
+            natal-chart cache. When you submit, the calculator sends only the
+            fields needed to produce the requested chart; birth details are not
+            copied into analytics events or placed in the page URL.
+          </p>
+          <p>
+            <a href="/en/birth-chart-calculator"
+              >Calculate your free birth chart</a
+            >
+            when you are ready. For a guided walkthrough of the output, open
+            <a href="/en/wiki/how-to-read-birth-chart"
+              >how to read a birth chart step by step</a
+            >.
+          </p>
+        </section>
+
+        <section aria-labelledby="read-chart">
+          <h2 id="read-chart">A grounded order for reading your chart</h2>
+          <p>
+            Begin with the Sun, Moon, and Ascendant rather than trying to decode
+            every symbol at once. In modern psychological astrology, the Sun is
+            often read as an organizing direction for identity and agency, the
+            Moon as patterns of regulation and belonging, and the Ascendant as
+            the style through which you meet unfamiliar situations. These are
+            interpretive traditions, not clinical findings, but they provide a
+            manageable first frame. Read each placement by combining planet,
+            sign, house, and close aspects instead of reducing it to a single
+            keyword.
+          </p>
+          <p>
+            Next, look for repetition. Several placements in one element can
+            suggest a familiar mode of engagement: fire emphasizes initiative,
+            earth concreteness, air conceptual exchange, and water emotional or
+            relational sensitivity. Cardinal, fixed, and mutable emphasis can
+            describe different relationships with starting, sustaining, and
+            adapting. A theme repeated across planets, houses, and aspects is
+            generally more informative than an isolated placement. Absence is
+            not deficiency; it may simply mean that a quality is learned through
+            environment, relationships, or deliberate practice rather than felt
+            as automatic.
+          </p>
+          <p>
+            Finally, translate symbolism into an observable question. Instead
+            of saying “Saturn makes me blocked,” ask where preparation, fear of
+            error, or respect for limits appears in your decisions. Instead of
+            treating a Venus aspect as proof of relationship destiny, notice
+            what helps affection, reciprocity, and values become visible. Keep
+            interpretations that improve attention and discard claims that
+            demand certainty without evidence.
+          </p>
+        </section>
+
+        <section aria-labelledby="transits-synastry">
+          <h2 id="transits-synastry">
+            Today's transits, synastry, and Saturn return
+          </h2>
+          <p>
+            A natal chart describes one calculated moment. Transits compare that
+            chart with the moving sky on another date. They are often used as a
+            timing language for noticing which natal themes are receiving more
+            attention, but they do not cause a specific event or remove human
+            agency. Our today's-sky view shows current planetary positions so
+            you can distinguish astronomy from interpretation. The
+            <a href="/en/wiki/transits">planetary transits guide</a> explains
+            how to compare moving planets with natal placements without turning
+            ordinary uncertainty into alarm.
+          </p>
+          <p>
+            Synastry compares two charts and highlights contacts between them.
+            It can offer vocabulary for differences in pace, expression,
+            affection, conflict, or responsibility, yet no aspect can certify a
+            soulmate or declare a relationship impossible. Use synastry to
+            support conversation, not to replace consent, communication, or
+            direct knowledge of another person. A Saturn return is a narrower
+            transit cycle: Saturn returns to approximately its natal zodiac
+            position about every 29.5 years. The
+            <a href="/en/saturn-return-calculator">Saturn return calculator</a>
+            helps locate the cycle, while the interpretation remains a prompt
+            for reviewing commitments and long-term structure.
+          </p>
+        </section>
+
+        <section aria-labelledby="wiki-library">
+          <h2 id="wiki-library">Explore the astrology reference library</h2>
+          <p>
+            The AstrologyWiki library connects calculator output with focused,
+            plain-language guides. You can look up the traditional roles of the
+            planets, compare zodiac signs without ranking them, learn how houses
+            organize areas of experience, and see how conjunctions, squares,
+            trines, oppositions, and sextiles are commonly interpreted. Longer
+            pillar guides place individual entries back into a full chart so a
+            search for one placement does not become a complete personality
+            claim. Articles identify uncertainty when public birth times are not
+            verified and separate symbolic education from sports, health, or
+            relationship prediction.
+          </p>
+          <p>
+            If you are new, begin with the
+            <a href="/en/wiki/how-to-read-birth-chart">birth chart guide</a>,
+            then open entries that match your calculated placements. If you are
+            already familiar with natal astrology, explore
+            <a href="/en/wiki/natal-chart-transits">natal chart transits</a>,
+            the <a href="/en/wiki/astrology-houses">house system overview</a>,
+            and the
+            <a href="/en/wiki/four-element-framework">four-element framework</a>.
+            The library is designed for cross-reading: each article links to
+            related concepts and back to the tools that reveal where the symbol
+            appears in your own chart.
+          </p>
+        </section>
+
         <section aria-label="Featured guides">
-          <h2>Featured guides</h2>
+          <h2>Featured astrology guides</h2>
           <ul>
-            <li><a href="/en/wiki/transits">Planetary transits</a> — how the moving sky activates your birth chart, and how to read a transit without doom or hype.</li>
-            <li><a href="/en/wiki/natal-chart-transits">Natal chart transits</a> — a step-by-step guide to tracking the current sky against your own placements.</li>
-            <li><a href="/en/wiki/5th-house">The 5th house</a> — creativity, play, romance, and self-expression in the natal chart.</li>
-            <li><a href="/en/wiki/four-element-framework">The four elements</a> — fire, earth, air, and water as a psychological temperament model.</li>
-            <li><a href="/en/wiki/highly-sensitive-person">The highly sensitive person</a> — what astrology and trait-sensitivity research say about deep processing.</li>
+            <li>
+              <a href="/en/wiki/transits">Planetary transits</a> — how the
+              moving sky activates your birth chart, and how to read a transit
+              without doom or hype.
+            </li>
+            <li>
+              <a href="/en/wiki/natal-chart-transits">Natal chart transits</a> —
+              a step-by-step guide to tracking the current sky against your own
+              placements.
+            </li>
+            <li>
+              <a href="/en/wiki/5th-house">The 5th house</a> — creativity, play,
+              romance, and self-expression in the natal chart.
+            </li>
+            <li>
+              <a href="/en/wiki/four-element-framework">The four elements</a> —
+              fire, earth, air, and water as a psychological temperament model.
+            </li>
+            <li>
+              <a href="/en/wiki/highly-sensitive-person"
+                >The highly sensitive person</a
+              >
+              — what astrology and trait-sensitivity research say about deep
+              processing.
+            </li>
           </ul>
         </section>
-        <section aria-label="Explore the wiki">
-          <h2>Explore the wiki</h2>
-          <p>Browse plain-language entries on the <a href="/en/wiki">planets, zodiac signs, houses, and aspects</a>, read the <a href="/en/wiki/classics">astrology classics</a>, or calculate your <a href="/en/saturn-return-calculator">Saturn return</a> — the late-twenties turning point when Saturn comes back to where it sat at your birth. Each page explains the symbolism in grounded, psychological language you can actually use.</p>
+
+        <section aria-labelledby="trust-boundaries">
+          <h2 id="trust-boundaries">Privacy, uncertainty, and clear boundaries</h2>
+          <p>
+            Birth information is personal, so the free calculator minimizes how
+            it moves through the product. City search uses a request body rather
+            than placing typed locations in a query string. Anonymous natal
+            calculations skip the local chart cache, and analytics receives
+            categorical interaction fields rather than dates, times, names, or
+            coordinates. If you later choose an account feature, the interface
+            explains that transition instead of treating a public calculation as
+            automatic consent to save a profile.
+          </p>
+          <p>
+            Editorial boundaries matter too. AstrologyWiki does not provide
+            medical, mental-health, legal, or financial advice. Psychological
+            language is used for reflection and education, not diagnosis. Public
+            figure articles do not invent unknown birth times, houses, Moon
+            signs, or Ascendants. The author line identifies an editorial
+            persona and AI-assisted workflow rather than presenting a fictional
+            expert as a verified real person. These limits make the material
+            more useful: uncertainty stays visible, data remains distinguishable
+            from interpretation, and readers keep responsibility for decisions.
+          </p>
         </section>
-        <p>Built on real astronomy, not fortune-telling. Used by readers in 50+ countries.</p>
+
+        <section id="homepage-faq" aria-labelledby="homepage-faq-heading">
+          <h2 id="homepage-faq-heading">Birth chart and tools FAQ</h2>
+          <details>
+            <summary>Is AstrologyWiki really free?</summary>
+            <p>
+              Yes. You can calculate a birth chart and use the core astrology
+              tools without paying or creating an account. Optional account
+              features are clearly separated from the free calculator
+              experience.
+            </p>
+          </details>
+          <details>
+            <summary>What is a birth chart?</summary>
+            <p>
+              A birth chart, also called a natal chart, maps the Sun, Moon,
+              planets, angles, and houses for a particular birth date, time, and
+              place. AstrologyWiki presents that data as symbolic material for
+              reflection rather than a scientific diagnosis or guaranteed
+              prediction.
+            </p>
+          </details>
+          <details>
+            <summary>Do I need an exact birth time?</summary>
+            <p>
+              An exact time is strongly recommended for the Ascendant,
+              Midheaven, and house cusps because those positions can change
+              quickly. If your time is unknown, you can still inspect many
+              planetary sign placements, but the calculator labels
+              time-sensitive data accordingly.
+            </p>
+          </details>
+          <details>
+            <summary>What is synastry?</summary>
+            <p>
+              Synastry compares two natal charts to describe symbolic points of
+              ease, contrast, and tension between them. It is best used as a
+              prompt for conversation and self-awareness, not as a verdict on
+              compatibility or a substitute for knowing another person.
+            </p>
+          </details>
+          <details>
+            <summary>What is a Saturn return?</summary>
+            <p>
+              A Saturn return occurs when transiting Saturn reaches
+              approximately the same zodiac position it occupied at birth,
+              roughly every 29.5 years. Astrologers associate the cycle with
+              reviewing commitments, responsibilities, limits, and long-term
+              structure.
+            </p>
+          </details>
+          <details>
+            <summary>How does AstrologyWiki handle my birth data?</summary>
+            <p>
+              The public calculator sends the date, optional time, and selected
+              location needed to calculate the chart. Anonymous calculations opt
+              out of the local chart cache, and the interface avoids placing
+              birth details in URLs or analytics events.
+            </p>
+          </details>
+        </section>
+
+        <p>
+          Start with data, keep uncertainty visible, and use symbolism as a
+          question rather than a command. The calculators and reference library
+          are free to explore whenever you are ready.
+        </p>
       </main>
     </div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

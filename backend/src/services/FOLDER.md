@@ -1,5 +1,5 @@
-<!-- INPUT: 后端业务服务目录结构与输出索引（含 GM 积分消费、报告积分计价、地理搜索优化与手动 Pro 试用激活服务）。 -->
-<!-- OUTPUT: services 架构摘要与文件清单（含报告积分计价、AI schema 校验、地理搜索多语言过滤记录与手动 Pro 试用激活服务）。 -->
+<!-- INPUT: 后端业务服务目录结构与输出索引（含 GM 积分消费、报告积分计价、地理搜索优化、手动 Pro 试用、Synthetica 原子预占与 DeepSeek token 可观测性服务）。 -->
+<!-- OUTPUT: services 架构摘要与文件清单（含报告积分计价、AI schema 校验、地理搜索多语言过滤、手动 Pro 试用、Synthetica 并发额度保护与 DeepSeek token 日志记录）。 -->
 <!-- POS: 服务目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -14,6 +14,7 @@
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 services 目录结构与文件清单。
 - ai.ts｜地位：AI 服务｜功能：DeepSeek 调用、缓存与 Markdown/JSON 解析。
+- ai.observability.test.ts｜地位：DeepSeek 调用可观测性单测｜功能：覆盖实际 provider 回包写入模型、耗时及输入/输出/缓存 token 用量，断言 prompt 内容不进入日志。
 - ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。
 - transit/｜地位：子目录｜功能：transit timeline（月度/人生 K 线）纯函数评分与聚合引擎（intensity/rollup/weights），详见 transit/FOLDER.md。
 - astro/｜地位：子目录｜功能：天象 sky 工具纯算法（月相 / 黄经→星座 / 日期范围枚举），供 api/astro.ts 的 /positions、/moon-phase、/ephemeris 端点调用，详见 astro/FOLDER.md。
@@ -31,6 +32,7 @@
 - proTrialService.ts｜地位：手动 Pro 试用激活服务｜功能：按 normalized email SHA-256 判断 Airwallex-backed Pro trial 资格、记录 `pro_trial_claims`、实现试用与首次折扣互斥。
 - proTrialService.test.ts｜地位：手动 Pro 试用激活单测｜功能：覆盖注册走 `create_user_without_trial`、新用户资格允许、active subscription/legacy trial/已有 claim 拒绝、claim 落库后标记首次折扣已用。
 - entitlementServiceV2.proTrial.test.ts｜地位：Pro 试用权益单测｜功能：覆盖 `trialing` 订阅授予 Pro 权益、过期 trial 不授予权益、可试用时隐藏首次折扣。
+- entitlementServiceV2.synthetica.test.ts｜地位：Synthetica 权益预占单测｜功能：覆盖开发态日额度预占/退款与生产 `free_usage.synthetica_used` 原子预占，防止并发请求在模型调用前绕过额度。
 - emailService.ts｜地位：邮件服务（Resend）｜功能：暗黑/金品牌模板邮件发送；导出 `emailService` 单例 + 富 `WeeklyIssueEmail` 类型，含验证码 / newsletter 双 opt-in 确认 / 富周报-月报（`buildNewsletterHtml` 纯渲染 11 模块：overview 标题+段→"THE SKY AHEAD" dated 事件时间线（日期胶囊）→月相卡→心理视角→TRY THIS/SIT WITH THIS→精选导读卡→CTA；`sendWeeklyNewsletter` subtitle 带周期范围）/ 支付收据 / 失败 / 取消通知，周报与确认信带 RFC 8058 `List-Unsubscribe` 头，所有动态字段经 `escapeHtml`。
 - newsletterEnroll.ts｜地位：注册→newsletter 自动入库（#23，opt-out 模型）｜功能：`enrollAccountSubscriber(email)` 把注册账号以 confirmed + source='account' 写入 newsletter_subscribers；best-effort（不抛错，不阻断注册）；insert 撞 unique lower(email)(23505) 即 no-op → 去重且**不重激活已退订行**；被 userService.createUser(仅 OAuth 已验证) 与 auth /verify-code(验证后) 调用，/register 未验证不入库。
 - newsletterEnroll.test.ts｜地位：自动入库单测｜功能：confirmed/source/hex token 入库 / 23505 去重不重激活 / 错误降级不抛 / 未配置跳过 / email 规范化 6 分支。
@@ -40,6 +42,8 @@
 - newsletterWeekly.test.ts｜地位：周报/月报编排单测｜功能：覆盖 ISO 周/月周期计算 + cadence 派发 / issue 富 content 取生成幂等（含 monthly promptId + 空 sky_events 仍发） / AI 缺字段拒发 / dryRun / resend 未配置降级 / 周报发送+token 回填+last_weekly_sent_at+富视图模型 / 月报 last_monthly_sent_at+月副标 / 单封失败隔离 17 分支。
 
 近期更新
+- AI 服务对每个实际 DeepSeek 回包记录 `ai_provider_request_completed` 事件（requestId、promptId、模型、耗时、usage token 数值）；Synthetica 路由记录额度拒绝、开始、成功、失败与退款状态，通过 requestId 串联，且不记录 prompt、出生信息或模型内容。
+- Synthetica 额度接入与 Ask/合盘一致的预占-确认-退款链路：模型调用前以 CAS 原子占用免费/订阅日额度、购买次数或积分；失败时退回对应额度，避免并发请求放大 DeepSeek token 消耗。
 - 手动 Pro 试用激活：新增 proTrialService 与回归测试，注册不再自动发 Pro，Airwallex-backed trial claim 按邮箱哈希防重复并与首次折扣互斥；权益层以 `trialing` 订阅授予 Pro 权益，对账层补 `IN_TRIAL` → `trialing` 覆盖。
 - geocoding 支持中英文查询、逗号分隔解析与省/国过滤兜底。
 - 权益 V2 增加报告折扣字段并支持积分购买落库。

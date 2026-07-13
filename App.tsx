@@ -1,6 +1,6 @@
-// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、短链跳转、付费墙回调与分析追踪）。
-// OUTPUT: 导出主应用组件（含 /go 短链跳转、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅与核心功能事件）。
-// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、压缩品牌图、短链跳转、付费墙回调、分析追踪与按需加载的 auth/payment/sign-calculator 路由）。
+// OUTPUT: 导出主应用组件（含压缩品牌 logo、/go 短链跳转、全局免费出生盘 CTA、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅、核心功能事件、landing footer 边界与首屏外弹窗/计算器拆包）。
+// POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向、PageSpeed 路由级拆包与 landing 全局 footer 禁用边界）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, {
@@ -32,17 +32,22 @@ import {
 import { useLangPath, extractLangFromPath } from "./hooks/useLangPath";
 import { X } from "lucide-react";
 import * as T from "./types";
-import {
-  moonSignConfig,
-  risingSignConfig,
-  bigThreeConfig,
-  birthChartConfig,
-} from "./components/calculators/signConfigs";
 // 仅在 /embed/* 早返回分支用到；懒加载使其不进主包（与其它计算器模块一致）。
 const EmbedWidgetShell = lazy(() =>
   import("./components/calculators/embed").then((m) => ({
     default: m.EmbedWidgetShell,
   })),
+);
+const LoginModal = lazy(() => import("./components/auth/LoginModal"));
+const UpgradeModal = lazy(() => import("./components/auth/UpgradeModal"));
+const PaymentSuccessPage = lazy(
+  () => import("./components/auth/PaymentSuccessPage"),
+);
+const CreditsSuccessPage = lazy(
+  () => import("./components/auth/CreditsSuccessPage"),
+);
+const CreditsModal = lazy(() =>
+  import("./components/payment").then((m) => ({ default: m.CreditsModal })),
 );
 import { FREE_MODE, LOGIN_GATE_MODE } from "./constants";
 import { OracleLoading } from "./components/OracleLoading";
@@ -76,14 +81,8 @@ import {
   useEntitlement,
 } from "./contexts/EntitlementContext";
 import { SEO } from "./components/SEO";
-import {
-  LoginModal,
-  UpgradeModal,
-  UserMenu,
-  PaymentSuccessPage,
-  CreditsSuccessPage,
-} from "./components/auth";
-import { CreditsModal } from "./components/payment";
+import UserMenu from "./components/auth/UserMenu";
+import WikiChartCTA from "./components/wiki/WikiChartCTA";
 import { ConsentBanner } from "./components/ConsentBanner";
 import { MobileBottomNav } from "./components/MobileBottomNav";
 import { Footer } from "./components/Footer";
@@ -135,12 +134,17 @@ const GlobalSchema: React.FC = () => {
       "@type": "Organization",
       name: "AstrologyWiki",
       url: `${siteUrl}/`,
-      logo: `${siteUrl}/logo.png`,
+      logo: `${siteUrl}/brand/logo-schema-512.png`,
       sameAs: [
         "https://twitter.com/astrologywiki",
         "https://www.instagram.com/astrologywiki",
         "https://www.youtube.com/@astrologywiki",
       ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "support@astrologywiki.com",
+        contactType: "customer support",
+      },
     };
 
     const websiteSchema = {
@@ -381,9 +385,11 @@ const TimelinePage = lazy(() => import("./pages/TimelinePage"));
 const EnergyTimelineDemoPage = lazy(
   () => import("./pages/EnergyTimelineDemoPage"),
 );
-// 计算器矩阵（D，sign 类）：单一配置驱动外壳 BirthDataCalculator + 各 slug 的 config。
-const BirthDataCalculator = lazy(
-  () => import("./components/calculators/BirthDataCalculator"),
+// 计算器矩阵（D，sign 类）：外壳和各 slug config 一起延后到对应 calculator 路由加载。
+const SignCalculatorRoute = lazy(() =>
+  import("./components/calculators/SignCalculatorRoute").then((m) => ({
+    default: m.SignCalculatorRoute,
+  })),
 );
 // 计算器矩阵（D，天象工具类）：无出生数据的纯天文工具，复用 /api/astro/*。
 const CurrentPlanetsTool = lazy(
@@ -467,6 +473,8 @@ const AppContent: React.FC = () => {
     user: authUser,
     showLoginModal,
     setShowLoginModal,
+    showUpgradeModal,
+    showCreditsModal,
     pendingSaveResume,
     clearPendingSaveResume,
   } = useAuth();
@@ -784,7 +792,7 @@ const AppContent: React.FC = () => {
               path="/embed/moon-sign-calculator"
               element={
                 <EmbedWidgetShell slug="moon-sign-calculator">
-                  <BirthDataCalculator config={moonSignConfig} />
+                  <SignCalculatorRoute kind="moon" />
                 </EmbedWidgetShell>
               }
             />
@@ -792,7 +800,7 @@ const AppContent: React.FC = () => {
               path="/embed/rising-sign-calculator"
               element={
                 <EmbedWidgetShell slug="rising-sign-calculator">
-                  <BirthDataCalculator config={risingSignConfig} />
+                  <SignCalculatorRoute kind="rising" />
                 </EmbedWidgetShell>
               }
             />
@@ -800,7 +808,7 @@ const AppContent: React.FC = () => {
               path="/embed/big-three-calculator"
               element={
                 <EmbedWidgetShell slug="big-three-calculator">
-                  <BirthDataCalculator config={bigThreeConfig} />
+                  <SignCalculatorRoute kind="big-three" />
                 </EmbedWidgetShell>
               }
             />
@@ -808,7 +816,7 @@ const AppContent: React.FC = () => {
               path="/embed/birth-chart-calculator"
               element={
                 <EmbedWidgetShell slug="birth-chart-calculator">
-                  <BirthDataCalculator config={birthChartConfig} />
+                  <SignCalculatorRoute kind="birth-chart" />
                 </EmbedWidgetShell>
               }
             />
@@ -940,13 +948,14 @@ const AppContent: React.FC = () => {
               }}
             >
               <img
-                src="/logo.png"
+                src="/brand/logo-mark-64.png"
+                srcSet="/brand/logo-mark-32.png 1x, /brand/logo-mark-64.png 2x"
                 alt={t.app.name}
                 width={32}
                 height={32}
                 className="h-8 w-8 rounded-full object-cover"
               />
-              {t.app.name}
+              <span className="hidden sm:inline">{t.app.name}</span>
             </div>
 
             {/* Navigation Links - Permanently Top Right.
@@ -979,6 +988,8 @@ const AppContent: React.FC = () => {
                   </Link>
                 );
               })}
+
+              <WikiChartCTA variant="nav" />
 
               {/* Settings / Theme Toggles */}
               <div className="h-8 w-px bg-current opacity-20 shrink-0 hidden md:block"></div>
@@ -1270,7 +1281,7 @@ const AppContent: React.FC = () => {
               path="/:lang/moon-sign-calculator"
               element={
                 <LangGuard>
-                  <BirthDataCalculator config={moonSignConfig} />
+                  <SignCalculatorRoute kind="moon" />
                 </LangGuard>
               }
             />
@@ -1278,7 +1289,7 @@ const AppContent: React.FC = () => {
               path="/:lang/rising-sign-calculator"
               element={
                 <LangGuard>
-                  <BirthDataCalculator config={risingSignConfig} />
+                  <SignCalculatorRoute kind="rising" />
                 </LangGuard>
               }
             />
@@ -1286,7 +1297,7 @@ const AppContent: React.FC = () => {
               path="/:lang/big-three-calculator"
               element={
                 <LangGuard>
-                  <BirthDataCalculator config={bigThreeConfig} />
+                  <SignCalculatorRoute kind="big-three" />
                 </LangGuard>
               }
             />
@@ -1294,7 +1305,7 @@ const AppContent: React.FC = () => {
               path="/:lang/birth-chart-calculator"
               element={
                 <LangGuard>
-                  <BirthDataCalculator config={birthChartConfig} />
+                  <SignCalculatorRoute kind="birth-chart" />
                 </LangGuard>
               }
             />
@@ -1584,13 +1595,17 @@ const AppContent: React.FC = () => {
         </div>
       )}
 
-      {showNav && <Footer />}
+      {showNav && !isLandingRoute && <Footer />}
       {showNav && <MobileBottomNav />}
       <ConsentBanner />
-      {/* Auth Modals */}
-      <LoginModal />
-      {!FREE_MODE && !LOGIN_GATE_MODE && <UpgradeModal />}
-      {!FREE_MODE && !LOGIN_GATE_MODE && <CreditsModalWrapper />}
+      {/* Auth/payment modals stay out of the initial route chunk until opened. */}
+      <Suspense fallback={null}>
+        {showLoginModal && <LoginModal />}
+        {!FREE_MODE && !LOGIN_GATE_MODE && showUpgradeModal && <UpgradeModal />}
+        {!FREE_MODE && !LOGIN_GATE_MODE && showCreditsModal && (
+          <CreditsModalWrapper />
+        )}
+      </Suspense>
     </>
   );
 };

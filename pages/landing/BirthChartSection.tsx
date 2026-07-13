@@ -3,7 +3,7 @@
 //        from three locale-stable <select>s (Month / Day / Year) to avoid native date-picker OS-locale
 //        placeholder leaks (e.g. macOS rendering "年/月/日" on an English page).
 // OUTPUT: Inline anonymous Birth Chart tool. Renders a form, calls /api/natal/chart on submit, then
-//         reveals an AstroChart visualization + three highlight cards (Sun/Moon/Rising) and a CTA
+//         reveals an AstroChart visualization + three highlight cards (Sun/Moon/Rising) and a high-contrast CTA
 //         that converts to the /onboarding signup flow. No persistence — all state held in component
 //         memory only; nothing written to localStorage or remote storage until the user signs up.
 //         birthDate retains the exact YYYY-MM-DD shape forwarded to fetchNatalChart() and onboarding
@@ -434,7 +434,7 @@ const BirthChartSection: React.FC = () => {
   }`;
   const labelClass = `text-xs uppercase tracking-[0.18em] ${isDark ? "text-star-400" : "text-paper-600"}`;
   const mysticErrorClass = `text-sm font-serif italic ${isDark ? "text-gold-500" : "text-paper-800"}`;
-  const ctaButtonClass = `inline-flex items-center justify-center rounded-full bg-accent text-paper-100 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+  const ctaButtonClass = `inline-flex items-center justify-center rounded-full bg-accent text-paper-900 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
     isDark
       ? "focus-visible:ring-offset-space-950"
       : "focus-visible:ring-offset-paper-100"

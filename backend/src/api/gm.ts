@@ -1,5 +1,6 @@
 // GM Commands API - 测试/开发用命令
 import { Router, Request, Response } from 'express';
+import crypto from 'crypto';
 import { authMiddleware, requireAuth } from './auth.js';
 import { supabase, isSupabaseConfigured, DbUser } from '../db/supabase.js';
 import { userService } from '../services/userService.js';
@@ -8,11 +9,49 @@ import Redis from 'ioredis';
 import { logger } from "../utils/logger.js";
 
 const router = Router();
+const AI_CACHE_PATTERN_MAX_LENGTH = 120;
 
 // GM 命令仅在开发环境启用，或者可以添加管理员权限检查
 const isGMEnabled = () => {
   return process.env.NODE_ENV !== 'production' || process.env.ENABLE_GM_COMMANDS === 'true';
 };
+
+const getGMSecret = () => process.env.GM_COMMAND_SECRET?.trim() || "";
+
+function timingSafeEquals(a: string, b: string): boolean {
+  const aBuffer = Buffer.from(a);
+  const bBuffer = Buffer.from(b);
+  return aBuffer.length === bBuffer.length && crypto.timingSafeEqual(aBuffer, bBuffer);
+}
+
+function hasValidGMSecret(req: Request): boolean {
+  const secret = getGMSecret();
+  if (!secret) {
+    return process.env.NODE_ENV !== 'production';
+  }
+
+  const headerSecret = req.headers['x-gm-command-secret'];
+  const bearer = String(req.headers.authorization || '').replace(/^Bearer\s+/i, '');
+  const provided = Array.isArray(headerSecret)
+    ? headerSecret[0]
+    : headerSecret || bearer;
+
+  return typeof provided === 'string' && timingSafeEquals(provided, secret);
+}
+
+function requireGMAccess(req: Request, res: Response): boolean {
+  if (!isGMEnabled()) {
+    res.status(403).json({ error: 'GM commands are disabled' });
+    return false;
+  }
+
+  if (!hasValidGMSecret(req)) {
+    res.status(403).json({ error: 'GM command secret required' });
+    return false;
+  }
+
+  return true;
+}
 
 // =====================================================
 // GM: 解锁订阅
@@ -20,9 +59,7 @@ const isGMEnabled = () => {
 
 // POST /api/gm/unlock-subscription
 router.post('/unlock-subscription', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  if (!isGMEnabled()) {
-    return res.status(403).json({ error: 'GM commands are disabled in production' });
-  }
+  if (!requireGMAccess(req, res)) return;
 
   try {
     const userId = req.userId!;
@@ -71,9 +108,7 @@ router.post('/unlock-subscription', authMiddleware, requireAuth, async (req: Req
 
 // POST /api/gm/cancel-subscription
 router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  if (!isGMEnabled()) {
-    return res.status(403).json({ error: 'GM commands are disabled in production' });
-  }
+  if (!requireGMAccess(req, res)) return;
 
   try {
     const userId = req.userId!;
@@ -113,9 +148,7 @@ router.post('/cancel-subscription', authMiddleware, requireAuth, async (req: Req
 
 // POST /api/gm/add-tokens
 router.post('/add-tokens', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  if (!isGMEnabled()) {
-    return res.status(403).json({ error: 'GM commands are disabled in production' });
-  }
+  if (!requireGMAccess(req, res)) return;
 
   try {
     const userId = req.userId!;
@@ -159,9 +192,7 @@ router.post('/add-tokens', authMiddleware, requireAuth, async (req: Request, res
 
 // POST /api/gm/clear-tokens
 router.post('/clear-tokens', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  if (!isGMEnabled()) {
-    return res.status(403).json({ error: 'GM commands are disabled in production' });
-  }
+  if (!requireGMAccess(req, res)) return;
 
   try {
     const userId = req.userId!;
@@ -223,9 +254,7 @@ router.post('/clear-tokens', authMiddleware, requireAuth, async (req: Request, r
 
 // POST /api/gm/reset-all
 router.post('/reset-all', authMiddleware, requireAuth, async (req: Request, res: Response) => {
-  if (!isGMEnabled()) {
-    return res.status(403).json({ error: 'GM commands are disabled in production' });
-  }
+  if (!requireGMAccess(req, res)) return;
 
   try {
     const userId = req.userId!;
@@ -260,10 +289,8 @@ router.post('/reset-all', authMiddleware, requireAuth, async (req: Request, res:
   }
 });
 
-router.post('/dev-session', async (_req: Request, res: Response) => {
-  if (!isGMEnabled()) {
-    return res.status(403).json({ error: 'GM commands are disabled in production' });
-  }
+router.post('/dev-session', async (req: Request, res: Response) => {
+  if (!requireGMAccess(req, res)) return;
 
   try {
     const email = 'gm-dev@local';
@@ -325,10 +352,19 @@ router.post('/dev-session', async (_req: Request, res: Response) => {
 // =====================================================
 
 // GET /api/gm/status
-router.get('/status', (_req: Request, res: Response) => {
+router.get('/status', (req: Request, res: Response) => {
+  if (!isGMEnabled()) {
+    return res.json({ enabled: false });
+  }
+
+  if (!hasValidGMSecret(req)) {
+    return res.status(403).json({ error: 'GM status unavailable' });
+  }
+
   res.json({
-    enabled: isGMEnabled(),
+    enabled: true,
     environment: process.env.NODE_ENV || 'development',
+    secretConfigured: Boolean(getGMSecret()),
   });
 });
 
@@ -337,13 +373,22 @@ router.get('/status', (_req: Request, res: Response) => {
 // =====================================================
 
 // POST /api/gm/clear-ai-cache
-router.post('/clear-ai-cache', async (req: Request, res: Response) => {
-  if (!isGMEnabled()) {
-    return res.status(403).json({ error: 'GM commands are disabled in production' });
-  }
+router.post('/clear-ai-cache', authMiddleware, requireAuth, async (req: Request, res: Response) => {
+  if (!requireGMAccess(req, res)) return;
 
   try {
     const { pattern } = req.body; // 可选：指定清除的模式，如 'ai:natal-overview:*'
+    const searchPattern =
+      typeof pattern === 'string' && pattern.trim() ? pattern.trim() : 'ai:*';
+    if (
+      searchPattern.length > AI_CACHE_PATTERN_MAX_LENGTH ||
+      !searchPattern.startsWith('ai:')
+    ) {
+      return res.status(400).json({
+        error: 'Invalid AI cache pattern',
+        code: 'INVALID_AI_CACHE_PATTERN',
+      });
+    }
     const redisUrl = process.env.REDIS_URL;
 
     if (!redisUrl) {
@@ -352,8 +397,6 @@ router.post('/clear-ai-cache', async (req: Request, res: Response) => {
 
     const redis = new Redis(redisUrl);
 
-    // 默认清除所有 AI 输出缓存
-    const searchPattern = pattern || 'ai:*';
     const keys = await redis.keys(searchPattern);
 
     if (keys.length > 0) {
@@ -366,7 +409,6 @@ router.post('/clear-ai-cache', async (req: Request, res: Response) => {
       success: true,
       message: `Cleared ${keys.length} cache entries`,
       pattern: searchPattern,
-      clearedKeys: keys.slice(0, 20), // 只返回前20个，避免响应过大
     });
   } catch (error) {
     logger.error('GM clear AI cache error', { error });

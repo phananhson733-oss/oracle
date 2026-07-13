@@ -1,5 +1,5 @@
 // INPUT: i18n translations, language context, theme context, react-router for internal nav.
-// OUTPUT: Editorial site footer for /landing-v2 — brand mark, tagline, 3-column link tree
+// OUTPUT: Editorial site footer for /landing-v2 — compressed brand mark, tagline, 3-column link tree
 //         (Product / Explore / Legal), and a bottom row with language switcher + copyright +
 //         privacy promise. Routes resolved against App.tsx; uses <Link> for internal nav so
 //         language-prefixed paths stay client-side.
@@ -95,7 +95,15 @@ const FooterSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-16">
         {/* Brand row */}
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="" width={28} height={28} loading="lazy" className="w-7 h-7 rounded-full" />
+          <img
+            src="/brand/logo-mark-64.png"
+            srcSet="/brand/logo-mark-32.png 1x, /brand/logo-mark-64.png 2x"
+            alt=""
+            width={28}
+            height={28}
+            loading="lazy"
+            className="w-7 h-7 rounded-full"
+          />
           <span
             className={`font-serif text-lg ${
               isDark ? "text-star-50" : "text-paper-900"

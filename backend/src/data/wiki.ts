@@ -1,5 +1,5 @@
-// INPUT: 心理占星百科的静态数据（含双语条目与生成内容覆盖）。
-// OUTPUT: 导出百科静态内容与类型标签映射（含符号去 emoji 化）。
+// INPUT: 心理占星百科的静态数据（含双语条目、生成内容覆盖与 canonical/hreflang 收口规则）。
+// OUTPUT: 导出百科静态内容、类型标签与只指向有效索引页的 SEO override（含符号去 emoji 化）。
 // POS: Wiki 数据源。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import type { Language, WikiItem, WikiItemType, WikiPillar, WikiSeoOverride, WikiTrendTag } from '../types/api.js';
@@ -48,6 +48,8 @@ const WIKI_SEO_OVERRIDES: Partial<Record<Language, Record<string, WikiSeoOverrid
     // zh 无 four-element-framework 文章，故 elements 保持自指 canonical + 进 sitemap；但其 en 兄弟页
     // /en/wiki/elements 已 canonical 收口，故抑制 hreflang，避免声明指向 loser 的非互惠 alternate。
     elements: { alternates: false },
+    // EN lilith 是 canonical 到 black-moon-lilith 的 noindex loser，不能作为 ZH 页的 hreflang 目标。
+    lilith: { alternates: false },
   },
 };
 

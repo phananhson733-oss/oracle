@@ -1,6 +1,6 @@
-// INPUT: React、类型与常量依赖（含卡片基础样式、纸感映射与详情解读编号规范）。
-// OUTPUT: 导出 UI 原语与上下文（含可调宽度的 Modal、Ask 报告对齐的详情解读布局与编号展示）。
-// POS: 主应用基础组件库（含 light theme 纸感映射与详情解读编号化）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// INPUT: React、类型与常量依赖（含卡片基础样式、纸感映射、SectionHeader 自定义详情文案与详情解读编号规范）。
+// OUTPUT: 导出 UI 原语与上下文（含可调宽度的 Modal、可覆盖 detail label 的 SectionHeader 与 Ask 报告对齐的详情解读布局）。
+// POS: 主应用基础组件库（含 light theme 纸感映射、SectionHeader detailLabel 与详情解读编号化）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
 import React, {
@@ -1519,6 +1519,7 @@ export const DetailModal: React.FC<DetailModalProps> = ({
 export interface SectionHeaderProps {
   title: string;
   onDetailClick?: () => void;
+  detailLabel?: string;
   showDetailButton?: boolean;
   className?: string;
 }
@@ -1526,6 +1527,7 @@ export interface SectionHeaderProps {
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   title,
   onDetailClick,
+  detailLabel,
   showDetailButton = true,
   className = "",
 }) => {
@@ -1548,7 +1550,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
               : "border-accent/40 text-accent hover:bg-accent/5 hover:border-accent/60"
           }`}
         >
-          {t.detail.view_detail}
+          {detailLabel || t.detail.view_detail}
         </button>
       )}
     </div>

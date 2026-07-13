@@ -63,9 +63,9 @@ const SPA_ASSET_PATTERNS = [
 
 // SPA shell's <head> contains an inline <style> with the design-token
 // CSS custom properties (--space-* / --star-*) that Tailwind classes like
-// `bg-space-950` / `text-star-50` resolve against, plus the font-loading
-// <script> that toggles body.fonts-loaded. Stubs ship without these, so
-// SPA mounted on a stub would render unstyled. Inject them too.
+// `bg-space-950` / `text-star-50` resolve against. Stubs ship without these,
+// so SPA mounted on a stub would render unstyled. Inject them too. Older
+// shells may also include a non-blocking font script, which remains optional.
 const INLINE_STYLE_RE = /<style\b[^>]*>[\s\S]*?<\/style>/g;
 const INLINE_FONT_SCRIPT_RE = /<script\b(?![^>]*\bsrc=)[^>]*>[\s\S]*?document\.fonts[\s\S]*?<\/script>/g;
 
@@ -215,8 +215,8 @@ const main = () => {
     );
   }
 
-  // Ordering matters: styles first (define CSS vars), then font script
-  // (toggles fonts-loaded class), then asset tags last.
+  // Ordering matters: styles first (define CSS vars), then optional inline
+  // runtime scripts, then asset tags last.
   const payload =
     inlineStyles.map((s) => '    ' + s).join('\n') + '\n' +
     inlineScripts.map((s) => '    ' + s).join('\n') + '\n' +

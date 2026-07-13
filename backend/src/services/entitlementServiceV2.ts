@@ -1456,6 +1456,52 @@ class EntitlementServiceV2 {
         return { reserved: false, reservationId: null };
       }
 
+      if (featureType === "synthetica") {
+        if (
+          !devState.syntheticaResetAt ||
+          new Date(devState.syntheticaResetAt) < getDayStart()
+        ) {
+          devState.syntheticaUsed = 0;
+          devState.syntheticaResetAt = getDayStart().toISOString();
+        }
+        const dailyLimit =
+          FREE_TIER_LIMITS.SYNTHETICA_DAILY +
+          (devState.isSubscriber
+            ? SUBSCRIPTION_BENEFITS.SYNTHETICA_EXTRA_PER_DAY
+            : 0);
+        if (devState.syntheticaUsed < dailyLimit) {
+          devState.syntheticaUsed += 1;
+          await persistDev("dev_free_synthetica");
+          return { reserved: true, reservationId };
+        }
+        if (devState.syntheticaTokens > 0) {
+          devState.syntheticaTokens = Math.max(
+            0,
+            devState.syntheticaTokens - 1,
+          );
+          await persistDev("dev_synthetica_tokens");
+          return { reserved: true, reservationId };
+        }
+        if (devState.gmCredits >= PRICING.SYNTHETICA_USE) {
+          devState.gmCredits = Math.max(
+            0,
+            devState.gmCredits - PRICING.SYNTHETICA_USE,
+          );
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "dev_gm_credit",
+              userId,
+              featureType,
+              amount: PRICING.SYNTHETICA_USE,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+        return { reserved: false, reservationId: null };
+      }
+
       // 其他特性暂不走预占路径
       return { reserved: true, reservationId: null };
     }
@@ -1507,6 +1553,27 @@ class EntitlementServiceV2 {
             kind: "login_gate_synastry_daily",
             freeUsageId: freeUsage.id,
             field: "synastry_daily_used",
+          },
+          EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+        );
+        return { reserved: true, reservationId };
+      }
+
+      if (featureType === "synthetica") {
+        const updated = await this.atomicIncrementBoundedField(
+          freeUsage.id,
+          "synthetica_used",
+          LOGIN_GATE_DAILY_LIMITS.SYNTHETICA_DAILY,
+        );
+        if (!updated) {
+          return { reserved: false, reservationId: null };
+        }
+        await cacheService.set(
+          this.buildReservationCacheKey(reservationId),
+          {
+            kind: "login_gate_synthetica_daily",
+            freeUsageId: freeUsage.id,
+            field: "synthetica_used",
           },
           EntitlementServiceV2.RESERVATION_TTL_SECONDS,
         );
@@ -1700,6 +1767,83 @@ class EntitlementServiceV2 {
       return { reserved: false, reservationId: null };
     }
 
+    if (featureType === "synthetica") {
+      // 免费和订阅日额度共用 free_usage.synthetica_used，订阅用户的上限更高。
+      if (
+        entitlements.synthetica.freeLeft > 0 ||
+        entitlements.synthetica.subscriptionLeft > 0
+      ) {
+        const freeUsage = userId
+          ? await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint)
+          : deviceFingerprint
+            ? await this.getOrCreateFreeUsageForDevice(deviceFingerprint)
+            : null;
+        if (freeUsage) {
+          const dailyLimit =
+            FREE_TIER_LIMITS.SYNTHETICA_DAILY +
+            (entitlements.isSubscriber
+              ? SUBSCRIPTION_BENEFITS.SYNTHETICA_EXTRA_PER_DAY
+              : 0);
+          const updated = await this.atomicIncrementBoundedField(
+            freeUsage.id,
+            "synthetica_used",
+            dailyLimit,
+          );
+          if (updated) {
+            await cacheService.set(
+              this.buildReservationCacheKey(reservationId),
+              {
+                kind: "free_usage_synthetica",
+                freeUsageId: freeUsage.id,
+                field: "synthetica_used",
+              },
+              EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+            );
+            return { reserved: true, reservationId };
+          }
+        }
+      }
+      if (userId && entitlements.synthetica.purchasedLeft > 0) {
+        const reserved = await this.atomicReserveConsumable(
+          userId,
+          "synthetica",
+          1,
+        );
+        if (reserved) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "purchase_record",
+              purchaseRecordId: reserved.recordId,
+              amount: reserved.consumed,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      if (userId && entitlements.credits >= PRICING.SYNTHETICA_USE) {
+        const reserved = await this.atomicReserveConsumable(
+          userId,
+          "gm_credit",
+          PRICING.SYNTHETICA_USE,
+        );
+        if (reserved) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "purchase_record",
+              purchaseRecordId: reserved.recordId,
+              amount: reserved.consumed,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      return { reserved: false, reservationId: null };
+    }
+
     // 其他特性默认放行（兼容性，未接入预占）
     return { reserved: true, reservationId: null };
   }
@@ -1768,7 +1912,9 @@ class EntitlementServiceV2 {
         case "dev_subscription_ask":
         case "dev_ask_tokens":
         case "dev_free_synastry":
-        case "dev_subscription_synastry": {
+        case "dev_subscription_synastry":
+        case "dev_free_synthetica":
+        case "dev_synthetica_tokens": {
           if (payload.userId) {
             const devState = getOrCreateDevEntitlementState(payload.userId);
             if (payload.kind === "dev_free_ask") {
@@ -1790,6 +1936,13 @@ class EntitlementServiceV2 {
                 0,
                 devState.subscriptionSynastryUsed - 1,
               );
+            } else if (payload.kind === "dev_free_synthetica") {
+              devState.syntheticaUsed = Math.max(
+                0,
+                devState.syntheticaUsed - 1,
+              );
+            } else if (payload.kind === "dev_synthetica_tokens") {
+              devState.syntheticaTokens += 1;
             }
           }
           break;

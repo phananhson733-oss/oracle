@@ -1,5 +1,5 @@
-// INPUT: 静态文案、提示词与配置数据（含订阅/付费墙 i18n、Pro 试用激活提示与 Synthetica 文案）。
-// OUTPUT: 导出全局常量与文案（含订阅/付费墙 i18n、Pro 试用/自动续费提醒与提示词/Mock 集合）。
+// INPUT: 静态文案、提示词与配置数据（含订阅/付费墙 i18n、Pro 试用激活提示、Cycles 文案与 Synthetica 文案）。
+// OUTPUT: 导出全局常量与文案（含订阅/付费墙 i18n、Pro 试用/自动续费提醒、Cycles 文案与提示词/Mock 集合）。
 // POS: 主应用常量中心。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -835,6 +835,7 @@ export const TRANSLATIONS = {
       tech_specs: "Astrological Appendix",
       day: "Day",
       option: "Option",
+      error: "Error",
       retry: "Retry",
     },
     detail: {
@@ -858,6 +859,10 @@ export const TRANSLATIONS = {
       loading: "Consulting the stars...",
       error: "The stars are cloudy... please try again.",
       landing_btn: "Get Started",
+    },
+    cycles: {
+      title: "Planetary Cycles",
+      subtitle: "Track current planetary transits and their influence on your chart.",
     },
     onboarding: {
       btn_start: "Generate My Blueprint",
@@ -1695,6 +1700,8 @@ export const TRANSLATIONS = {
       continue_with_google: "Continue with Google",
       continue_with_apple: "Continue with Apple",
       password_hint: "At least 8 characters",
+      invalid_email: "Please enter a valid email address",
+      password_too_short: "Password must be at least 8 characters",
       success_login: "Signed in. Redirecting...",
       success_register: "Account created. Redirecting...",
       error_fallback: "Authentication failed. Please try again.",
@@ -1896,6 +1903,10 @@ export const TRANSLATIONS = {
       unlock_failed: "Failed to unlock with credits. Please try again.",
       login_credits: "Please sign in to use credits",
       login_subscribe: "Please sign in to start subscription",
+      credits: "credits",
+      topup: "top up",
+      use_credits: "Use",
+      need_credits: "Need",
       trial_tip: "Your 7-day Pro trial has {days} days left",
       subscriber_tip: "You're already subscribed with full access",
       scope_labels: {
@@ -2209,6 +2220,7 @@ export const TRANSLATIONS = {
       keep_awareness: "Keep observing.",
       when_feel_mood: "When you feel ",
       body_alarms_with: ", your body most often alarms with ",
+      body_alarms_suffix: ".",
       sleep_advice:
         "Prioritize 'physical foundation': 1. 4-6 breathing method (2 min); 2. Fixed pre-sleep wind-down ritual (10 min). Recharge your body first, then your mind can think clearly.",
       high_arousal_advice:
@@ -2756,6 +2768,7 @@ export const TRANSLATIONS = {
       tech_specs: "占星学附录",
       day: "第",
       option: "选项",
+      error: "错误",
       retry: "重试",
     },
     detail: {
@@ -2778,6 +2791,10 @@ export const TRANSLATIONS = {
       loading: "正在咨询星辰...",
       error: "星辰被云层遮挡... 请重试。",
       landing_btn: "开始探索",
+    },
+    cycles: {
+      title: "行星周期",
+      subtitle: "追踪当前行星行运及其对你星盘的影响。",
     },
     onboarding: {
       btn_start: "生成我的蓝图",
@@ -3609,6 +3626,8 @@ export const TRANSLATIONS = {
       continue_with_google: "使用 Google 继续",
       continue_with_apple: "使用 Apple 继续",
       password_hint: "至少 8 个字符",
+      invalid_email: "请输入有效的电子邮箱地址",
+      password_too_short: "密码至少需要 8 个字符",
       success_login: "登录成功，正在进入应用...",
       success_register: "注册成功，正在进入应用...",
       error_fallback: "认证失败，请稍后再试。",
@@ -3801,6 +3820,10 @@ export const TRANSLATIONS = {
       unlock_failed: "积分解锁失败，请稍后再试。",
       login_credits: "请先登录以使用积分",
       login_subscribe: "请先登录以开通订阅",
+      credits: "积分",
+      topup: "充值",
+      use_credits: "使用",
+      need_credits: "需要",
       trial_tip: "您的 7 天 Pro 试用还剩 {days} 天",
       subscriber_tip: "您已是订阅用户，享有大部分内容免费权益",
       scope_labels: {

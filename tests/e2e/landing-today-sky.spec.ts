@@ -1,10 +1,10 @@
 // INPUT: Playwright test API + stubLanding helper.
-// OUTPUT: 导出 CosmicWeather (Today's Sky) section 的 E2E 用例（渲染行 + Rx、错误后重试恢复、CTA 跳转 /forecast）。
+// OUTPUT: 导出 CosmicWeather (Today's Sky) section 的 E2E 用例（渲染行 + Rx、错误后重试恢复、CTA 收敛至站内 Birth Chart）。
 // POS: /landing-v2 落地页 Today's Sky 模块 E2E 用例集。
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { expect, test } from "@playwright/test";
-import { stubLanding } from "./_helpers/landing";
+import { revealLandingSection, stubLanding } from "./_helpers/landing";
 
 const TODAY_PAYLOAD = {
   date: "2026-05-18",
@@ -36,6 +36,7 @@ test.describe("/landing-v2 — Cosmic Weather", () => {
     });
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "today");
 
     const section = page.locator("section").filter({
       has: page.locator("#today-heading"),
@@ -55,11 +56,12 @@ test.describe("/landing-v2 — Cosmic Weather", () => {
   });
 
   test("error then retry recovers", async ({ page }) => {
-    let calls = 0;
+    let shouldFail = true;
     await stubLanding(page, {
       today: (r) => {
-        calls += 1;
-        if (calls === 1) {
+        // Hero and the deferred full section are independent hook consumers.
+        // Keep both failed until the user explicitly retries, then recover.
+        if (shouldFail) {
           return r.fulfill({
             status: 500,
             contentType: "application/json",
@@ -78,6 +80,7 @@ test.describe("/landing-v2 — Cosmic Weather", () => {
     });
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "today");
 
     const section = page.locator("section").filter({
       has: page.locator("#today-heading"),
@@ -88,6 +91,7 @@ test.describe("/landing-v2 — Cosmic Weather", () => {
     });
     await expect(errorStatus.first()).toBeVisible();
 
+    shouldFail = false;
     await section.getByRole("button", { name: /try again/i }).click();
 
     await expect(
@@ -96,7 +100,7 @@ test.describe("/landing-v2 — Cosmic Weather", () => {
     await expect(errorStatus).toHaveCount(0);
   });
 
-  test("CTA navigates to /forecast", async ({ page }) => {
+  test("CTA scrolls to the embedded birth-chart tool", async ({ page }) => {
     await stubLanding(page, {
       today: (r) =>
         r.fulfill({
@@ -107,6 +111,7 @@ test.describe("/landing-v2 — Cosmic Weather", () => {
     });
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "today");
 
     const section = page.locator("section").filter({
       has: page.locator("#today-heading"),
@@ -117,11 +122,17 @@ test.describe("/landing-v2 — Cosmic Weather", () => {
       .getByRole("button", { name: /see your personal forecast/i })
       .click();
 
-    // /forecast is auth-gated (App.tsx:600). Unauthenticated visitors get
-    // ProtectedRedirect → /:lang/wiki. The assertion here just confirms the
-    // CTA navigates away from /landing-v2 (link wired correctly). End-to-end
-    // /forecast routing for logged-in users is covered by separate auth
-    // E2E suites.
-    await expect(page).not.toHaveURL(/\/landing-v2/);
+    // The CTA deliberately avoids the auth-gated /forecast bait-and-switch:
+    // it keeps the visitor on the landing page and converges on the free tool.
+    await expect(page).toHaveURL(/\/landing-v2/);
+    await expect(page.locator("section#birth-chart-tool")).toBeVisible();
+    await expect
+      .poll(() =>
+        page.locator("section#birth-chart-tool").evaluate((el) => {
+          const rect = el.getBoundingClientRect();
+          return rect.top < window.innerHeight && rect.bottom > 0;
+        }),
+      )
+      .toBe(true);
   });
 });

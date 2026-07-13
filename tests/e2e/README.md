@@ -56,6 +56,14 @@ running on port 3000, Playwright will reuse it.
 5. Run `npx playwright test --list` to confirm Playwright discovers the new
    spec, then `npx playwright test <file>` to execute it.
 
+`birth-chart-calculator.spec.ts` additionally guards the Wiki CTA destination:
+the standalone calculator must initialize, accept a selected city, submit the
+privacy-safe natal payload, and render a chart result without runtime errors.
+
+`wiki-growth-funnel.spec.ts` covers the acquisition side of the same journey:
+consent-time page-view recovery, Wiki→tool event categories, module C click
+attribution, desktop/mobile CTA geometry, and hydrated homepage SEO/FAQ parity.
+
 ## Convention reminders
 
 - Specs should be hermetic — clean up any data they create.

@@ -1,41 +1,45 @@
-<!-- INPUT: 项目根目录文件与子目录结构（含 Tailwind/PostCSS 构建文件、Playwright 端口联动、短链登记/跳转、Airwallex Pro 试用文案/E2E 与 UI/语言规则更新）。 -->
-<!-- OUTPUT: 根目录架构摘要与文件索引（含样式构建配置、Playwright 端口联动、短链登记/跳转、Pro 试用文案/E2E、支付成功路由放行、PayPal 回跳处理与规范门槛）。 -->
+<!-- INPUT: 项目根目录文件与子目录（含首页首字节 SEO/FAQ、全局工具 CTA、GA4、构建/E2E、支付与 UI 规则）。 -->
+<!-- OUTPUT: 根目录架构摘要与文件索引（含增长漏斗、首页内容发现、样式/构建、Playwright、短链/支付与规范门槛）。 -->
 <!-- POS: 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
 
 # 文件夹：根目录
 
 架构概要
+
 - 主应用入口、公共配置与核心资源集中在根目录。
 - 共享常量、类型与服务在根目录文件中提供。
 - 子目录承载 OpenSpec、组件库、服务层与 CBT 子应用。
 
 文件清单
+
 - .gitignore｜地位：版本控制配置｜功能：声明 Git 忽略规则。
 - AGENTS.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明、语言规则与 UI 规范入口。
-- App.tsx｜地位：主应用入口组件｜功能：组合路由与页面（含 `/go/:code` 与根路径短链跳转、tools SEO alias 路由、积分入口/使用情况页、地名输入建议、迁移提示与设置页 GM 测试/开发会话指令）。
+- App.tsx｜地位：主应用入口组件｜功能：组合路由与页面（含全局免费出生盘 Nav CTA、`/go/:code` 短链、tools SEO alias、积分/迁移/支付流程、landing footer 边界及 sign calculator 路由级按需加载）。
 - CLAUDE.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明与 UI 规范入口（Claude 入口）。
 - FOLDER.md｜地位：目录索引文档｜功能：记录根目录架构与文件清单。
 - README.md｜地位：主说明文档｜功能：项目说明与运行方式（含 UI 规范门槛）。
 - COLOR_SYSTEM_GUIDE.md｜地位：UI 规范文档｜功能：色彩系统与对比度规范（含 paper 温暖色系与 unicode 图标对比度要求）。
 - PULL_REQUEST_TEMPLATE.md｜地位：PR 模板｜功能：PR 清单与 UI 规范符合说明。
-- constants.ts｜地位：全局常量库｜功能：存放文案、提示词、Pro 试用/订阅提醒与问答问题库数据。
+- constants.ts｜地位：全局常量库｜功能：存放文案、提示词、Pro 试用/订阅提醒、Cycles 文案与问答问题库数据。
 - index.css｜地位：全局样式入口｜功能：注入 Tailwind 基础/组件/工具样式。
-- index.html｜地位：HTML 宿主文件｜功能：页面壳、字体加载、导入映射与首字节 brand 结构化数据（Organization + WebSite JSON-LD）。
-- index.tsx｜地位：渲染入口｜功能：挂载 React 应用并引入全局样式。
+- index.html｜地位：HTML 宿主文件｜功能：页面壳、optional Google Fonts、≤60 字符 Title、首字节 ≥1000 词首页正文/可见 FAQ，以及 Organization/WebSite/FAQPage JSON-LD。
+- index.tsx｜地位：渲染入口｜功能：挂载 React 应用、引入全局样式并延迟非关键分析/性能监控初始化。
 - metadata.json｜地位：应用元数据｜功能：AI Studio 元信息配置。
 - package.json｜地位：依赖清单｜功能：npm 脚本与依赖配置（含 Tailwind/PostCSS）。
 - package-lock.json｜地位：依赖锁定｜功能：锁定前端依赖版本。
 - postcss.config.cjs｜地位：样式配置｜功能：PostCSS 管线与 Tailwind 插件配置。
 - playwright.config.ts｜地位：E2E 配置｜功能：Playwright 测试编排，`PLAYWRIGHT_BASE_URL` 端口与 Vite dev server 启动端口联动。
 - tsconfig.json｜地位：编译配置｜功能：TypeScript 编译器选项。
-- tailwind.config.cjs｜地位：样式配置｜功能：Tailwind 主题与扫描路径配置。
-- types.ts｜地位：类型定义｜功能：共享数据结构与问答报告类型。
-- vercel.json｜地位：部署配置｜功能：Vercel 构建与路由规则。
+- tailwind.config.cjs｜地位：样式配置｜功能：Tailwind 主题与前端源码扫描路径配置（不扫描后端 wiki 数据动态颜色 token）。
+- types.ts｜地位：类型定义｜功能：共享数据结构与问答报告类型（含文章 H1 与 SEO title/meta 分离字段）。
+- vercel.json｜地位：部署配置｜功能：Vercel 构建与路由规则（含缺失 hashed asset 转后端 404）。
 - vite.config.ts｜地位：构建配置｜功能：Vite 开发与构建设置。
 
 目录
+
 - .claude｜地位：工具配置目录｜功能：Claude 命令与配置。
 - backend｜地位：后端目录｜功能：占星计算与 AI 内容服务。
 - cbt｜地位：子应用目录｜功能：CBT 日记子应用。
@@ -49,10 +53,17 @@
 - tests｜地位：测试目录｜功能：Playwright E2E 与 Vitest 单元测试。
 
 近期更新
-- constants 与 pricing 展示文案改为手动激活 Pro 试用：注册不再自动赠送 Pro，符合资格用户需先在 Airwallex 填写付款信息，试用到期后自动续费。
+- 2026-07-13 落地 AstrologyWiki 增长漏斗：补全语言化 GA4 SPA PV、Nav/Sticky/Lead/Bottom Wiki CTA、指定文章工具内链、Birth Chart 工具 E2E，并补齐根首页短 Title、关键词 H1、contactPoint、同源 FAQ 与首字节长正文；保留编辑人设真实性披露和 Organization author。
+
+- 静态 SEO 生成器只对真实生成的双语 Wiki 页面输出 hreflang，并停止为 EN-only 经典详情页声明不存在的中文 alternate；新增生成产物目标完整性测试。
+- PageSpeed/Core Web Vitals 优化：index.html 移除 body 字体可见性 gate，并将 Google Fonts 收敛为首屏所需权重 + `display=optional`；品牌 JSON-LD 改用 `/brand/logo-schema-512.png`；App.tsx 将 sign calculator 与 auth/payment 弹窗/支付成功页移出首页入口 chunk，并在 landing 路由禁用全局 Footer 避免懒加载内容到达前产生 footer 位移；landing 全部首屏外分段延迟到可视阈值后再加载表单/城市搜索/文章库等 chunk；index.tsx 将 GA4/GTM 等非关键初始化推迟到首屏后/首次交互后；vercel.json 对缺失 `/assets/*` 在 SPA fallback 前转后端 404。
+- 文章 SEO CTR 优化支持：WikiArticle 增加 `seoTitle` / `seoDescription`，静态生成器与运行时 SEO head 使用专用字段，页面 H1 与可见描述保持原文不变。
+- PageSpeed CSS 减载：Wiki `color_token` 渐变从动态 Tailwind class 改为受控 inline style，Tailwind content 移除 `backend/src/data/wiki.ts`，减少首页全局 CSS 中非首屏动态颜色 utility。
+- constants 与 pricing 展示文案改为手动激活 Pro 试用：注册不再自动赠送 Pro，符合资格用户需先在 Airwallex 填写付款信息，试用到期后自动续费；同时补齐 Cycles 文案与问答页类型边界以通过前端类型检查。
 - 新增 `tests/e2e/manual-pro-trial.spec.ts`，用 Playwright mock auth/entitlement/Airwallex API 覆盖注册后符合资格用户点击 Pro 试用 CTA、看到付款信息/自动续费披露并跳转 trial checkout 的浏览器路径。
 - Playwright webServer 启动命令会跟随 `PLAYWRIGHT_BASE_URL` 端口，避免本地 3000 被其他服务占用时误复用错误应用。
-- 首页 `index.html` 的 `<head>` 现携带静态 brand 结构化数据（Organization + WebSite JSON-LD，带 `data-astro-global-schema` 标记），值与 `App.tsx` `<GlobalSchema />` 英文输出一致，把品牌实体提前到首字节、不依赖 WRS 执行 JS；同步修正 `og:url` 尾斜杠与 canonical 对齐。`scripts/generate-seo-pages.mjs` 的 landing-v2 `Organization.logo` 统一为 `/logo.png`（消除站内同一实体两个 logo URL 的消歧噪音）。契约守护见 `tests/unit/homepage-brand-schema.test.ts`。
+- 2026-07-10 审计修复：landing E2E 通过共享 `revealLandingSection` 主动滚动并等待 viewport-deferred section，覆盖延迟加载触发而非假定首屏已挂载；恢复作者页/文章 byline 已批准的“editorial persona + AI 辅助创作”就近披露。
+- 首页 `index.html` 的 `<head>` 现携带静态 brand 结构化数据（Organization + WebSite JSON-LD，带 `data-astro-global-schema` 标记），值与 `App.tsx` `<GlobalSchema />` 英文输出一致，把品牌实体提前到首字节、不依赖 WRS 执行 JS；同步修正 `og:url` 尾斜杠与 canonical 对齐。`scripts/generate-seo-pages.mjs` 的 landing-v2 `Organization.logo` 统一为 `/brand/logo-schema-512.png`（避免爬虫/富结果工具请求原始大图）。契约守护见 `tests/unit/homepage-brand-schema.test.ts`。
 - 新增 tools SEO alias 路由 `/moon-phase-today` 与 `/astrocartography-map-generator`，裸路径自动重定向到语言前缀版本，且加入公开可索引白名单以避免运行时 noindex。
 - 新增 `/go/:code` 与根路径短链跳转入口及 link-attribution 短链登记接口，支持同站安全跳转、动态 code registry、相同 destination 复用已有短链与旧 `to` 回退链接。
 - 支付成功页路由加入放行清单，避免无档案状态被重定向，订阅后可顺利进入个人信息页。
@@ -149,6 +160,7 @@
 - 全局内容容器宽度扩展至 1280px，并同步顶栏对齐。
 
 近期更新
+
 - SEO 元信息回切本地 head 输出，修复构建/开发依赖链路。
 - 新增 SEO/GEO 构建期静态页生成、站点图标/OG 资源与 www 重定向配置。
 - 移除 src 镜像目录，保留根目录单一主线。

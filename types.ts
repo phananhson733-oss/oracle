@@ -1090,7 +1090,9 @@ export interface AuthorPersona {
 export interface WikiArticle {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
+  seoDescription?: string;
   content: string;
   authorId: string; // 引用 AuthorPersona.id（取代旧裸 author 字符串）
   date: string;
@@ -1111,7 +1113,9 @@ export interface WikiArticle {
 export interface WikiArticleSummary {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
+  seoDescription?: string;
   authorId: string;
   date: string;
   image?: string;

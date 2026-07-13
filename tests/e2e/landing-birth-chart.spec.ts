@@ -4,7 +4,11 @@
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { expect, test } from "@playwright/test";
-import { stubLanding } from "./_helpers/landing";
+import {
+  fillLandingBirthDate,
+  revealLandingSection,
+  stubLanding,
+} from "./_helpers/landing";
 
 const FILL_DATE = "1990-06-15";
 const FILL_CITY = "New York, USA";
@@ -26,8 +30,9 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     });
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "birth-chart-tool");
 
-    await page.locator("#bc-date").fill(FILL_DATE);
+    await fillLandingBirthDate(page, FILL_DATE);
     await page.locator("#bc-city").fill("Atlantis");
     await page
       .getByRole("button", { name: /cast my chart|casting your chart/i })
@@ -56,8 +61,9 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     });
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "birth-chart-tool");
 
-    await page.locator("#bc-date").fill(FILL_DATE);
+    await fillLandingBirthDate(page, FILL_DATE);
     await page.locator("#bc-city").fill(FILL_CITY);
     await page
       .getByRole("button", { name: /cast my chart|casting your chart/i })
@@ -81,8 +87,9 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     });
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "birth-chart-tool");
 
-    await page.locator("#bc-date").fill(FILL_DATE);
+    await fillLandingBirthDate(page, FILL_DATE);
     await page.locator("#bc-city").fill(FILL_CITY);
     await page
       .getByRole("button", { name: /cast my chart|casting your chart/i })
@@ -141,8 +148,9 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     });
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "birth-chart-tool");
 
-    await page.locator("#bc-date").fill(FILL_DATE);
+    await fillLandingBirthDate(page, FILL_DATE);
     await page.locator("#bc-city").fill(FILL_CITY);
     await page
       .getByRole("button", { name: /cast my chart|casting your chart/i })
@@ -167,6 +175,7 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     await stubLanding(page);
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "birth-chart-tool");
 
     // Leave date empty, fill city only, click submit.
     await page.locator("#bc-city").fill(FILL_CITY);
@@ -185,8 +194,9 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     await stubLanding(page);
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "birth-chart-tool");
 
-    await page.locator("#bc-date").fill(FILL_DATE);
+    await fillLandingBirthDate(page, FILL_DATE);
     await page
       .getByRole("button", { name: /cast my chart|casting your chart/i })
       .click();
@@ -208,6 +218,7 @@ test.describe("/landing-v2 — BirthChart submit flow", () => {
     await stubLanding(page);
 
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "birth-chart-tool");
 
     const cityInput = page.locator("#bc-city");
     // "Lon" matches London in the local cities index — keeps the spec

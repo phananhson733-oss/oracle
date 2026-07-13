@@ -10,7 +10,6 @@ module.exports = {
     './contexts/**/*.{ts,tsx}',
     './services/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    './backend/src/data/wiki.ts', // Wiki color_token gradient classes
   ],
   theme: {
     extend: {

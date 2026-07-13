@@ -128,6 +128,8 @@ export interface AIGenerateOptions {
   timeoutMs?: number;
   maxTokens?: number;
   lang?: Language;
+  /** 由路由传入的关联 ID，仅用于结构化日志，不参与 prompt 或缓存键。 */
+  requestId?: string;
 }
 
 export interface AIGenerateResult<T> {
@@ -169,6 +171,39 @@ function buildAIResult<T>(
   cached = false,
 ): AIGenerateResult<T> {
   return { content, meta: { source: "ai", cached } };
+}
+
+function extractProviderUsage(data: unknown):
+  | {
+      promptTokens?: number;
+      completionTokens?: number;
+      totalTokens?: number;
+      promptCacheHitTokens?: number;
+      promptCacheMissTokens?: number;
+    }
+  | undefined {
+  if (!data || typeof data !== "object") return undefined;
+  const rawUsage = (data as Record<string, unknown>).usage;
+  if (!rawUsage || typeof rawUsage !== "object") return undefined;
+
+  const usage = rawUsage as Record<string, unknown>;
+  const readTokenCount = (field: string): number | undefined => {
+    const value = usage[field];
+    return typeof value === "number" && Number.isFinite(value)
+      ? value
+      : undefined;
+  };
+  const normalized = {
+    promptTokens: readTokenCount("prompt_tokens"),
+    completionTokens: readTokenCount("completion_tokens"),
+    totalTokens: readTokenCount("total_tokens"),
+    promptCacheHitTokens: readTokenCount("prompt_cache_hit_tokens"),
+    promptCacheMissTokens: readTokenCount("prompt_cache_miss_tokens"),
+  };
+
+  return Object.values(normalized).some((value) => value !== undefined)
+    ? normalized
+    : undefined;
 }
 
 function normalizeLocalizedContent<T>(
@@ -1125,6 +1160,7 @@ async function generateAIContentInternal<T>(
   const useReasoning = REASONING_PROMPTS.includes(options.promptId);
   const model = useReasoning ? "deepseek-reasoner" : "deepseek-chat";
   const baseUrl = getDeepSeekBaseUrl();
+  const providerRequestStartedAt = Date.now();
 
   try {
     const timeoutMs = options.timeoutMs ?? AI_TIMEOUT_MS;
@@ -1156,6 +1192,16 @@ async function generateAIContentInternal<T>(
     }
 
     const data = await response.json();
+    logger.info("[AI] provider request completed", {
+      event: "ai_provider_request_completed",
+      requestId: options.requestId,
+      promptId: options.promptId,
+      provider: "deepseek",
+      model,
+      durationMs: Date.now() - providerRequestStartedAt,
+      maxTokens,
+      usage: extractProviderUsage(data),
+    });
     const text = data.choices?.[0]?.message?.content;
 
     if (!text) {
@@ -1296,8 +1342,14 @@ async function generateAIContentInternal<T>(
     const reason = resolveMockReason(error);
     if (!allowMock) {
       logger.error("[AI] generation failed", {
+        event: "ai_provider_request_failed",
+        requestId: options.requestId,
         promptId: options.promptId,
-        error: message,
+        provider: "deepseek",
+        model,
+        durationMs: Date.now() - providerRequestStartedAt,
+        errorName: error instanceof Error ? error.name : "UnknownError",
+        reason,
       });
       throw new AIUnavailableError(reason, message);
     }

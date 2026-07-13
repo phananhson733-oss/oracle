@@ -1,5 +1,5 @@
 // INPUT: User profile, natal chart data, entitlement context.
-// OUTPUT: Dashboard page with natal chart, quick glance, deep dive dimensions, and tech specs.
+// OUTPUT: Dashboard page with read-only natal chart, quick glance, deep dive dimensions, and gated tech specs detail flow.
 // POS: Me/Dashboard page component; 若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useState, useEffect, useRef, lazy } from "react";
@@ -816,13 +816,6 @@ const MePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                 }}
                 loadingLabel={t.common.loading}
                 errorLabel={t.app.error}
-                onPlanetClick={() => {
-                  // 点击星盘行星字形 → 复用既有 planets 详情解读流程（含付费访问门）。
-                  if (!extendedData) return;
-                  handleDetailClick("planets", t.detail.modal_title_planets, {
-                    planets: extendedData.planets,
-                  });
-                }}
               />
             </div>
           </div>

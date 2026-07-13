@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 // INPUT: 真实 index.html 文本 + jsdom DOMParser。
-// OUTPUT: 守护首页首字节 brand JSON-LD 契约（合法 JSON + Organization/WebSite 字段 + dedup gate 必命中 + og:url=canonical）。
+// OUTPUT: 守护首页首字节 brand JSON-LD 契约（合法 JSON + Organization/WebSite/contactPoint 字段 + dedup gate 必命中 + og:url=canonical）。
 // POS: 防 index.html 静态 brand schema 语法错误/字段退化致 App.tsx GlobalSchema 与 SEO.tsx 的去重静默失效而产生重复。
 //      若改 index.html 的 brand 块或 App.tsx GlobalSchema 的 Organization/WebSite 输出，须同步此测试。
 
@@ -47,16 +47,21 @@ describe("index.html 首字节 brand JSON-LD 契约", () => {
     expect(types.has("WebSite")).toBe(true);
   });
 
-  it("Organization 字段与 GlobalSchema EN 输出一致（logo=/logo.png + sameAs 三连）", () => {
+  it("Organization 字段与 GlobalSchema EN 输出一致（压缩 logo + sameAs 三连）", () => {
     const org = findType("Organization");
     expect(org).toBeTruthy();
     expect(org!.name).toBe("AstrologyWiki");
     expect(org!.url).toBe(`${SITE}/`);
-    // logo 站内统一为 /logo.png（与 App.tsx GlobalSchema 及 landing-v2 stub 一致），
-    // 不得退回 brief 原始的 /icon-192.png，否则同一实体声明两个 logo URL 造成消歧噪音。
-    expect(org!.logo).toBe(`${SITE}/logo.png`);
+    // logo 站内统一为压缩 512px 品牌图（与 App.tsx GlobalSchema 及 landing-v2 stub 一致），
+    // 不得退回原始 /logo.png，否则会让爬虫/富结果工具请求 1.7MB 原图。
+    expect(org!.logo).toBe(`${SITE}/brand/logo-schema-512.png`);
     expect(Array.isArray(org!.sameAs)).toBe(true);
     expect(org!.sameAs).toHaveLength(3);
+    expect(org!.contactPoint).toMatchObject({
+      "@type": "ContactPoint",
+      email: "support@astrologywiki.com",
+      contactType: "customer support",
+    });
   });
 
   it("WebSite 字段与 GlobalSchema EN 输出一致（inLanguage:en + SearchAction EntryPoint）", () => {

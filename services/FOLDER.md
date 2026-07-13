@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用计算与内容生成服务（后端驱动，含积分解锁权益校验、Airwallex Pro 试用激活、报告积分购买与地理搜索多语言参数）。 -->
-<!-- OUTPUT: services 架构摘要与文件索引（含积分解锁、Airwallex Pro 试用激活、报告积分购买、PayPal 订阅确认、认证刷新兜底与 AI 缓存版本更新）。 -->
+<!-- INPUT: 主应用计算、内容生成与 GA4 服务（含语言化 SPA PV、同意后补发、权益/支付、地理搜索）。 -->
+<!-- OUTPUT: services 架构摘要与文件索引（含 analytics 同意恢复/分类、积分权益、支付、认证与 AI 缓存）。 -->
 <!-- POS: 主应用服务目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我所属的文件夹有所变化，请更新我。
 
@@ -15,11 +15,11 @@
 - FOLDER.md｜地位：目录索引文档｜功能：记录服务目录架构与文件清单。
 - apiClient.ts｜地位：API 客户端｜功能：调用后端 API 获取数据（含问答类别、Markdown 报告、AI 来源元数据与详情缓存提示）。
 - paymentClient.ts｜地位：支付与权益客户端｜功能：Airwallex Pro 试用激活、订阅/购买/权益查询与 GM 测试指令调用。
-- entitlementClientV2.ts｜地位：权益 V2 客户端｜功能：查询订阅、积分、功能额度与 Pro 试用资格，并维护本地日次解锁缓存。
+- entitlementClientV2.ts｜地位：权益 V2 客户端｜功能：查询订阅、积分、功能额度与 Pro 试用资格，并维护本地日次解锁缓存与并发请求去重。
 - savedReadingsClient.ts｜地位：已保存解读客户端（#24）｜功能：调用 /api/saved-readings 的 saveReading/list/get/delete；synastry payload 须为剥名后数据（红线#4）。
 - astroService.ts｜地位：星盘服务｜功能：封装星盘/周期数据获取与衍生计算（含宫主星推导）。
 - geminiService.ts｜地位：内容服务｜功能：后端 AI 内容分发与映射。
-- analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含同意网关下的 setUserId/setUserProperties 缓冲与刷新）。
+- analytics.ts｜地位：分析服务｜功能：GA4/GTM 初始化与事件追踪封装（含首次授权后当前页一次性补发、语言前缀路由分类、同意网关下的 setUserId/setUserProperties 缓冲与刷新；脚本注入由 index.tsx 延迟调度）。
 - analyticsConsentBuffer.ts｜地位：同意缓冲｜功能：缓存未同意前的 user_id 与 user_properties，并在同意时一次性 flush（FIFO 上限 50）。
 - consent.ts｜地位：同意管理｜功能：管理分析追踪同意状态与本地存储。
 - abTest.ts｜地位：实验工具｜功能：A/B 测试分组与曝光追踪。
@@ -32,6 +32,8 @@
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- analytics.ts 修复 SPA 数据基线：剥离 en/zh 后分类 wiki/tool/home，并在首次授予 Analytics 同意时只补发一次当前 `page_view`，避免首个落地页永久缺失或重复计数。
+- entitlementClientV2 对 `getEntitlementsV2()` 增加 in-flight Promise 合并，避免 AuthProvider 与 EntitlementProvider 同时挂载时重复请求 `/api/entitlements/v2`；analytics.ts 注释对齐 index.tsx 的首屏后延迟初始化。
 - paymentClient 新增 Airwallex Pro 试用激活 checkout 调用，entitlementClient V2 缓存结构补充 proTrial 资格，供升级弹窗区分试用/订阅 CTA。
 - analytics.ts 新增 tool-led 证链漏斗追踪：`trackChartFunnel` + 纯函数 `sanitizeChartFunnelParams`（default-deny allowlist，只放行 sign/module/tool/step/placement），构造型防止节点星座迷你计算器周边 DOB/birthCity/姓名等 PII 泄漏到 GA4（隐私红线 #1，沿用 redactErrorMessageForAnalytics 模式）。
 - 新增 saveChartResume.ts（backlog #7）：buildBirthProfileFromPrefill 纯映射，App.tsx 登录后把内存里的盘直推云端续接迁移；同批接线 save_intent（BirthChartSection）/auth_prompted（App onboarding）/chart_migrated（App resume effect）三个漏斗事件，均 additive、仅非 PII。

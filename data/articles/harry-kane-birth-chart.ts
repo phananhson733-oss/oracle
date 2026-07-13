@@ -7,7 +7,9 @@ export const harryKaneBirthChartEn: WikiArticle = {
   image: "/images/blog/harry-kane-birth-chart.jpg",
   image_alt: "Indigo night sky with a late gold Leo dawn cresting on one horizon, symbolizing a season arriving late",
   title: "The Kane Birth Chart: Reading England's Captain Through a Leo Sun and a Late-Arriving Season",
+  seoTitle: "Harry Kane Birth Chart Leo Sun Timing",
   description: "The Kane Birth Chart is a symbolic reading of England captain Harry Kane's natal placements, anchored on his Leo Sun",
+  seoDescription: "Curious about Harry Kane's birth chart? See his Leo Sun, missing birth-time caveat, and 2026 Jupiter timing without match predictions.",
   authorId: "marcus-orion",
   date: "2026-06-18",
   schema: "Article",
@@ -30,6 +32,8 @@ The Kane Birth Chart is **a symbolic reading of England captain Harry Kane's nat
 - Jupiter enters Leo around 30 June 2026, so his Sun-sign season overlaps the July knockouts rather than the June group stage, the symbolic core of the kane leo sun frame
 
 This is a symbolic, educational reading, not a prediction of results or a betting guide.
+
+To compare the same Sun-first method with your own placements, use the [free birth chart calculator](/en/birth-chart-calculator). If you know your exact birth time, the [rising sign calculator](/en/rising-sign-calculator) helps you see which parts of your chart can be timed more precisely than Kane's public record allows.
 
 ## Why It Matters for Self-Awareness
 
@@ -91,9 +95,25 @@ No, not reliably. His birth time is not part of any verified public record, so t
 
 Jupiter transits Cancer until around 30 June 2026, then enters Leo through 2027, so his Sun-sign backdrop overlaps the July knockouts rather than the June group stage. It is a symbolic "his season arrives late" frame that times a mood, not a result.
 
-**Does the harry kane birth chart predict how England will do?**
+**Can the Harry Kane birth chart predict how England will do?**
 
 No. This is symbolic and educational astrology that frames themes of leadership and visibility. It never predicts match outcomes; the results rest on the squad and the tournament, not the planets.
+
+**What birth data is verified for Harry Kane?**
+
+The public record supports his birth date and place: 28 July 1993 in Leytonstone, London. That is enough to anchor the Leo Sun, but not enough to calculate a reliable Moon, Ascendant, or house layout.
+
+**Why is the Leo Sun the anchor of this reading?**
+
+The Sun sign is the one major placement confirmed without a birth time. In this article it is read as a leadership and visibility symbol, not as proof of a match result.
+
+**How does the Cancer-to-Leo Jupiter shift affect the reading?**
+
+It gives the article a timing frame: June carries a Cancer backdrop, while July shifts into Leo themes. That timing describes a symbolic mood, not a fixed tournament outcome.
+
+**Can I compare Kane's Leo Sun with my own chart?**
+
+Yes. Start with your Sun sign, then check whether your birth time is precise enough for Moon, rising, and house work. Keep the confirmed and unconfirmed parts separate.
 
 ## Reflection Prompts
 
@@ -107,7 +127,7 @@ No. This is symbolic and educational astrology that frames themes of leadership 
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun and read it the way this piece reads the Kane Birth Chart, as a symbol of how you carry the spotlight rather than a verdict on your results. You get a clear view of where your Sun sits, and, more quietly, a way to tell the wish to be seen apart from the steadier work of leading.
+[Open the free birth chart calculator](/en/birth-chart-calculator) to find your own Sun and read it the way this piece reads the Kane Birth Chart, as a symbol of how you carry the spotlight rather than a verdict on your results. For annual timing, pair it with the [solar return calculator](/en/solar-return-calculator) and keep the reading symbolic, not predictive.
 
 ## Sources
 

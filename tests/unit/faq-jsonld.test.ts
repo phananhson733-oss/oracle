@@ -1,12 +1,11 @@
-// INPUT: buildFaqPageSchema / parseFaqsFromMarkdown / buildFaqSchemaFromMarkdown
+// INPUT: buildFaqPageSchema / unchecked invalid-input wrapper / parseFaqsFromMarkdown / buildFaqSchemaFromMarkdown
 //        from scripts/lib/faq-jsonld.mjs.
-// OUTPUT: vitest specs for the schema.org FAQPage JSON-LD builder + the markdown
+// OUTPUT: vitest specs for the schema.org FAQPage JSON-LD builder + invalid input guard + the markdown
 //         FAQ parser that feeds it in the static SEO generator.
 // POS: Guards the FAQ rich-result schema shape AND the markdown→FAQ parser whose
 //      logic must mirror WikiArticleDetailPage's inline parser (stub/SPA parity).
 
 import { describe, it, expect } from "vitest";
-// @ts-expect-error — .mjs lib has no type declarations
 import * as faqLib from "../../scripts/lib/faq-jsonld.mjs";
 
 const {
@@ -14,6 +13,9 @@ const {
   parseFaqsFromMarkdown,
   buildFaqSchemaFromMarkdown,
 } = faqLib;
+const buildFaqPageSchemaUnchecked = buildFaqPageSchema as (
+  input: unknown,
+) => ReturnType<typeof buildFaqPageSchema>;
 
 describe("buildFaqPageSchema", () => {
   it("builds a valid FAQPage schema from question/answer pairs", () => {
@@ -67,7 +69,7 @@ describe("buildFaqPageSchema", () => {
     expect(buildFaqPageSchema([])).toBeNull();
     expect(buildFaqPageSchema(undefined)).toBeNull();
     expect(buildFaqPageSchema(null)).toBeNull();
-    expect(buildFaqPageSchema("not an array")).toBeNull();
+    expect(buildFaqPageSchemaUnchecked("not an array")).toBeNull();
     expect(buildFaqPageSchema([{ question: "", answer: "" }])).toBeNull();
   });
 });

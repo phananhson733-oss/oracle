@@ -1,8 +1,8 @@
 // INPUT: i18n translations, router navigation, analytics tracking, HeroTodayCard (right-half
 //        editorial mini-card backed by today's-sky data), useLangPath for the Saturn Return
 //        pill (the only feature-pill that routes off-page rather than scrolling to an anchor).
-// OUTPUT: Hero section — Editorial Serif Poster (D1 decision from /plan-design-review 2026-05-18).
-//         md+ renders a 7/5 two-column grid: copy + CTAs on the left, HeroTodayCard on the right.
+// OUTPUT: Hero section — 含 astrology + birth chart 的 SEO H1、编辑副标题、主 CTA 与实时天象卡。
+//         md+ renders a 7/5 two-column grid: copy + high-contrast CTAs on the left, HeroTodayCard on the right.
 //         Mobile hides the card (hidden md:block inside the card) and the hero collapses to a
 //         single column. Right-half fix per FINDING-H01 — "real astronomy" data anchors the hero
 //         instead of empty whitespace. Feature-pills row below CTAs surfaces 5 keyword anchors
@@ -18,13 +18,16 @@ import { useLanguage, useTheme } from "../../components/UIComponents";
 import { useScrollToBirthChart } from "../../hooks/useScrollToBirthChart";
 import { useLangPath } from "../../hooks/useLangPath";
 import HeroTodayCard from "./HeroTodayCard";
+import { landingHeroCopy } from "./landingContent";
 
 const HeroSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { theme } = useTheme();
   const scrollToBirthChart = useScrollToBirthChart();
   const { langPath } = useLangPath();
   const landing = t.landing;
+  const lang = language === "zh" ? "zh" : "en";
+  const heroCopy = landingHeroCopy[lang];
 
   // Feature pills: 4 same-page anchor jumps + 1 route link to the dedicated
   // Saturn Return SEO page. The mix is intentional — Saturn Return has its
@@ -108,38 +111,20 @@ const HeroSection: React.FC = () => {
             {landing.hero_kicker || "Astrology · Psychology · Self-Knowledge"}
           </p>
 
-          {/* Headline — IBM Plex Mono throughout, no italic accent (italic
-            Cormorant overflowed the tight line-height and visually collided
-            with the subtitle). Emphasis word now gets the gold accent color
-            only — keeps the visual hierarchy without the descender clash.
-            The two <span class="block"> would concatenate without whitespace
-            in the a11y tree ("Astrology meetsmodern psychology"), so we
-            expose a clean aria-label for assistive tech and mark all visual
-            fragments aria-hidden. */}
+          {/* H1 与根 index.html fallback 同源语义：同时覆盖 astrology 与
+              birth chart；旧品牌句降级到副标题。视觉分行对 a11y 暴露一个干净 label。 */}
           <h1
             id="hero-heading"
-            aria-label={
-              [
-                landing.hero_title_part1,
-                landing.hero_title_part2,
-                landing.hero_emphasis,
-              ]
-                .filter(Boolean)
-                .join(" ") + (landing.hero_title_part3 ?? ".")
-            }
+            aria-label={heroCopy.title}
             className={`font-mono font-medium leading-[1.08] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl ${
               isDark ? "text-star-50" : "text-paper-900"
             }`}
           >
             <span aria-hidden="true" className="block">
-              {landing.hero_title_part1 || "Astrology meets"}
+              {heroCopy.firstLine}
             </span>
             <span aria-hidden="true" className="block">
-              {landing.hero_title_part2 || "modern"}{" "}
-              <span className="text-accent">
-                {landing.hero_emphasis || "psychology"}
-              </span>
-              {landing.hero_title_part3 || "."}
+              <span className="text-accent">{heroCopy.emphasis}</span>
             </span>
           </h1>
 
@@ -149,8 +134,7 @@ const HeroSection: React.FC = () => {
               isDark ? "text-star-200" : "text-paper-700"
             }`}
           >
-            {landing.hero_subtitle ||
-              "Birth charts, CBT journal, AI guidance. Science-grounded. No mysticism."}
+            {heroCopy.subtitle}
           </p>
 
           {/* CTA group */}
@@ -158,7 +142,7 @@ const HeroSection: React.FC = () => {
             <button
               type="button"
               onClick={handlePrimaryCta}
-              className={`inline-flex items-center justify-center rounded-full bg-accent text-paper-100 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+              className={`inline-flex items-center justify-center rounded-full bg-accent text-paper-900 px-7 py-3.5 text-base font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                 isDark
                   ? "focus-visible:ring-offset-space-950"
                   : "focus-visible:ring-offset-paper-100"

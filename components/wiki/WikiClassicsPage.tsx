@@ -1,5 +1,5 @@
-// INPUT: Wiki 经典书籍列表与书架视觉体系（含 SEO 元信息、ItemList 结构化数据与封面降级），首屏读 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap。
-// OUTPUT: 导出经典书籍书架页组件（含分类书架、SEO 输出与 ItemList 结构化数据修正）。
+// INPUT: Wiki 经典书籍列表与书架视觉体系（含 SEO 元信息、ItemList 结构化数据、类型安全占位与封面降级），首屏读 SEO 静态页注入的 #__WIKI_INITIAL__ bootstrap。
+// OUTPUT: 导出经典书籍书架页组件（含分类书架、SEO 输出、ItemList 结构化数据修正与稳定占位渲染）。
 // POS: Wiki 经典书籍模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -418,7 +418,7 @@ const WikiClassicsPage: React.FC = () => {
   // =====================================================
 
   const renderFeaturedStack = () => {
-    const placeholders = Array.from({ length: 3 });
+    const placeholders = Array.from<null>({ length: 3 }).fill(null);
     const stack = featuredItems.length > 0 ? featuredItems : placeholders;
 
     return (

@@ -10,8 +10,8 @@ import { getAuthorBio } from "../../data/authors";
 // byline 就近披露文案（D1 披露式人设）：标明 editorial persona，不声称真人身份。
 // 单一来源，作者页 header 复用同一文案，避免两处漂移。EN 默认 + ZH。
 export const DISCLOSURE: Record<Language, string> = {
-  en: "Editorial persona",
-  zh: "编辑人设",
+  en: "Editorial persona · AI-assisted",
+  zh: "编辑人设 · AI 辅助创作",
 };
 
 // name → 首字母（取前两个词首字母）。

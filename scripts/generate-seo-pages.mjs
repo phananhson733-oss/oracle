@@ -1,3 +1,7 @@
+// INPUT: Wiki/文章/工具数据、SEO helper、站点 URL 与已提交的 lastmod manifest。
+// OUTPUT: public 下的双语静态 SEO 页面、诚实的 hreflang 集群、sitemap 与 lastmod manifest。
+// POS: 静态 SEO 生成入口；若更新此文件，务必更新本头注释与根目录 FOLDER.md。
+
 import fs from 'fs';
 import fsPromises from 'fs/promises';
 import path from 'path';
@@ -188,6 +192,7 @@ const buildHead = ({
   lang,
   title,
   description,
+  metaDescription,
   url,
   canonical,
   robots,
@@ -197,7 +202,7 @@ const buildHead = ({
   ogImage,
 }) => {
   // 清洗未渲染的 markdown 标记（如 summary 里的 *书名*），再截断，避免脏摘要进 SERP。
-  const desc = truncate(stripInlineMarkdown(description || ''));
+  const desc = truncate(stripInlineMarkdown(metaDescription || description || ''));
   // T3：per-page OG 图（文章传 per-article PNG），缺省回退全站通用图。爬虫不跑 JS，
   // 必须把图写进静态 stub head，否则社媒分享卡片只会拿到通用图。
   const pageOgImage = ogImage || ogImageUrl;
@@ -298,11 +303,11 @@ ${bootstrapScript}<main>
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, heading, description, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, heading, description, metaDescription, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
-${buildHead({ lang, title, description, url, canonical, robots, ogType, alternates, schema, ogImage })}
+${buildHead({ lang, title, description, metaDescription, url, canonical, robots, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
 ${buildBody({ lang, title, heading, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt })}
@@ -506,7 +511,12 @@ const buildLandingV2OrganizationSchema = () => ({
   '@type': 'Organization',
   name: 'AstrologyWiki',
   url: `${siteUrl}/`,
-  logo: `${siteUrl}/logo.png`,
+  logo: `${siteUrl}/brand/logo-schema-512.png`,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@astrologywiki.com',
+    contactType: 'customer support',
+  },
 });
 
 // FAQPage schema — captures highest-intent informational queries so they can
@@ -1227,12 +1237,25 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       for (const persona of ALL_AUTHORS) {
         const authorPath = `/${lang}/wiki/author/${persona.id}`;
         const authorPageUrl = `${siteUrl}${authorPath}`;
-        addUrl(authorPageUrl, ['author', persona.id, persona.name, persona.title, persona.bio.en || '', ...persona.topics]);
+        const authorDisclosure = 'Editorial persona · AI-assisted.';
+        addUrl(authorPageUrl, [
+          'author',
+          persona.id,
+          persona.name,
+          persona.title,
+          authorDisclosure,
+          persona.bio.en || '',
+          ...persona.topics,
+        ]);
         await writeHtmlPage({
           outputPath: path.join(langRoot, 'wiki', 'author', persona.id, 'index.html'),
           lang,
           title: `${persona.name} — ${persona.title}`,
-          description: persona.bio.en || '',
+          // Keep the disclosure in raw, visible HTML. Hydrated React already
+          // shows it, but crawlers and no-JS visitors must not see a more
+          // human-looking persona page without the same honesty signal.
+          description: `${authorDisclosure} ${persona.bio.en || ''}`.trim(),
+          metaDescription: persona.bio.en || '',
           url: authorPageUrl,
           ogType: 'profile',
           alternates: buildAlternateLinks(`/wiki/author/${persona.id}`, { zh: false, en: true }),
@@ -1265,7 +1288,8 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       // P1-1：canonical 收口（loser 条目 canonical 指向 winner 长文）+ sitemap 收录由 item.seo 控制。
       const canonicalUrl = resolveCanonicalUrl({ seo: item.seo, lang, selfUrl: itemUrl, siteUrl });
       const alternateAvailability = {
-        zh: wikiIds.zh.has(item.id) && (lang === 'en' || ZH_WIKI_WHITELIST.has(item.id)),
+        // 中文静态页只为白名单生成；raw zh 数据存在不等于 href 目标存在。
+        zh: wikiIds.zh.has(item.id) && ZH_WIKI_WHITELIST.has(item.id),
         en: wikiIds.en.has(item.id),
       };
       const itemMarkdown = buildWikiItemMarkdown(item, lang);
@@ -1312,7 +1336,8 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       const classicPath = `/${lang}/wiki/classics/${classic.id}`;
       const classicUrl = `${siteUrl}${classicPath}`;
       const alternateAvailability = {
-        zh: classicIds.zh.has(classic.id),
+        // 上方明确跳过全部 zh classics 生成，不能声明不存在的中文 alternate。
+        zh: false,
         en: classicIds.en.has(classic.id),
       };
       const classicMarkdown = classicDetail.content || '';
@@ -1582,13 +1607,13 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       sections: [
         ["Why the Moon's Phase Changes Every Day", "The Moon's phase changes because the Sun-Moon angle changes as the Moon orbits Earth. Each day the lit shape shifts a little, moving through a 29.5-day lunar cycle. The live tool computes today's phase and illumination from that angle rather than using fixed calendar text."],
         ['The 8 Moon Phases at a Glance', 'The cycle moves through New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, and Waning Crescent. The page highlights where today sits in that sequence, while the illumination percentage shows how much of the visible Moon is sunlit.'],
-        ['Need a Different Date Instead of Today?', 'This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to [check a different date](/en/moon-phase-calculator). If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your [natal moon sign](/en/birth-chart-calculator).'],
+        ['Need a Different Date Instead of Today?', 'This page is focused on right now. To look up a birthday, a past date, or a future date, use the [moon phase calculator](/en/moon-phase-calculator) to check a different date. If you want the personal Moon you were born under, start with [your birth chart](/en/birth-chart-calculator) and compare the phase with your natal moon sign.'],
       ],
       faqs: [
         ['What moon phase is it today?', "Today's live moon phase, illumination percentage, and the approximate timing of the next full Moon and new Moon are shown in the result area above. The value is calculated dynamically, not written as a fixed answer."],
         ["How often does the moon's phase change?", "The Moon's phase changes continuously as the Sun-Moon angle shifts. The named phases are milestones in a full lunar cycle of about 29.5 days."],
         ["What's the difference between this page and the Moon Phase Calculator?", 'This page defaults to today and keeps the focus on the current sky. The Moon Phase Calculator lets you choose a different date in the past or future.'],
-        ['Where can I check the moon phase for a different date?', 'Use the [moon phase calculator](/en/moon-phase-calculator) when you need a specific date instead of today.'],
+        ['Where can I check the moon phase for a different date?', 'Use the Moon Phase Calculator when you need a specific date instead of today.'],
       ],
     },
     {
@@ -1733,9 +1758,9 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
       ],
       sections: [
         ['What Your Astrocartography Map Shows', 'Your generated map projects your birth chart onto the world. It marks the places where each planet was rising, setting, culminating, or sitting at the lower meridian at your birth. If you want the background before using the map, start with the [full astrocartography guide](/en/astrocartography).'],
-        ['The Four Line Types, Briefly', 'AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for [how to interpret your astrocartography lines](/en/blog/astrocartography-interpretation).'],
+        ['The Four Line Types, Briefly', 'AC lines show where a planet was rising, DC lines show where it was setting, MC lines show where it was highest in the sky, and IC lines show the opposite lower meridian. These line types are the foundation for how to interpret your astrocartography lines.'],
         ['What Each Planet Represents on Your Map', 'Each planet points to a different chart theme: the Sun to identity and visibility, the Moon to belonging and emotional rhythm, Venus to ease and attraction, Mars to drive, Jupiter to growth, Saturn to structure, and the outer planets to slower collective themes. For context, generate an [accurate birth chart](/en/birth-chart-calculator) before treating any single line as the whole story.'],
-        ['Astrocartography Map Generator vs. the Full Astrocartography Guide', 'The generator gives you the interactive map and lets you inspect which lines run near a place. The [full astrocartography guide](/en/astrocartography) explains how astrocartography works in more depth, while [the full interpretation guide](/en/blog/astrocartography-interpretation) helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.'],
+        ['Astrocartography Map Generator vs. the Full Astrocartography Guide', 'The generator gives you the interactive map and lets you inspect which lines run near a place. The full astrocartography guide explains how astrocartography works in more depth, while the full interpretation guide helps you compare planets and line types. If you are looking at a particular year rather than relocation themes, pair the map with your [solar return calculator](/en/solar-return-calculator) for your solar return year.'],
       ],
       faqs: [
         ['Is this astrocartography map generator free?', 'Yes. You can generate the map for free using your birth date, exact birth time, and birthplace.'],
@@ -1917,7 +1942,18 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
   const articleSig = (lang, slug) => {
     const s = articleSummaries[lang].get(slug);
     return s
-      ? ['article', lang, slug, s.date || '', s.title || '', s.description || '', s.image || '', ...(s.keywords || [])]
+      ? [
+          'article',
+          lang,
+          slug,
+          s.date || '',
+          s.title || '',
+          s.seoTitle || '',
+          s.description || '',
+          s.seoDescription || '',
+          s.image || '',
+          ...(s.keywords || []),
+        ]
       : ['article', lang, slug];
   };
 
@@ -1987,8 +2023,10 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     await writeHtmlPage({
       outputPath: path.join(publicDir, lang, 'wiki', slug, 'index.html'),
       lang,
-      title: article.title,
+      title: article.seoTitle || article.title,
+      heading: article.title,
       description: article.description || config.wikiDescription,
+      metaDescription: article.seoDescription || article.description || config.wikiDescription,
       url,
       ogType: 'article',
       ogImage,

@@ -1,9 +1,8 @@
-// INPUT: scripts/lib/md-to-html.mjs 的 mdToHtml（零依赖 Markdown→HTML 转换器）。
+// INPUT: scripts/lib/md-to-html.mjs 的类型可解析 mdToHtml（零依赖 Markdown→HTML 转换器）。
 // OUTPUT: 验证标题/段落/列表/引用/行内强调/代码块的渲染与 XSS 转义。
 // POS: SEO 预渲染正文注入的安全网。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { describe, it, expect } from "vitest";
-// @ts-expect-error — 纯 JS 工具，无类型声明
 import {
   mdToHtml,
   escapeHtml,

@@ -20,7 +20,7 @@ interface PaywallProps {
 
 const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, message }) => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { isAuthenticated, entitlements, openLoginModal, openUpgradeModal } = useAuth();
 
   const { ctaText } = usePaywallCTA();
@@ -60,7 +60,7 @@ const Paywall: React.FC<PaywallProps> = ({ feature, children, soft = false, mess
     },
   };
 
-  const lang = t === translations.zh ? 'zh' : 'en';
+  const lang = language === 'zh' ? 'zh' : 'en';
   const tr = translations[lang] || translations.zh;
   const featureInfo = tr.features[feature];
 

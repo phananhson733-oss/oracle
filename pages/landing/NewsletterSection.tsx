@@ -1,5 +1,5 @@
 // INPUT: i18n translations, apiClient.subscribeNewsletter, analytics.
-// OUTPUT: Newsletter signup form — submits via shared apiClient (timeout +
+// OUTPUT: Newsletter signup form with high-contrast submit CTA — submits via shared apiClient (timeout +
 //         code-only error mapping). Emits submit_attempt + submit_success /
 //         _existed / _rate_limited / _error outcomes so the visit→subscribe
 //         funnel is measurable end-to-end (was: only the attempt event).
@@ -167,7 +167,7 @@ const NewsletterSection: React.FC = () => {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className={`inline-flex items-center justify-center rounded-full bg-accent text-paper-100 px-7 py-3 text-sm font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed ${
+            className={`inline-flex items-center justify-center rounded-full bg-accent text-paper-900 px-7 py-3 text-sm font-medium tracking-tight transition-all duration-300 ease-out hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed ${
               isDark
                 ? "focus-visible:ring-offset-space-950"
                 : "focus-visible:ring-offset-paper-100"

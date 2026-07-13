@@ -1,5 +1,5 @@
-// INPUT: Express 服务器配置（含环境变量加载、短链登记/跳转与统一响应中间件）。
-// OUTPUT: 启动 HTTP 服务（含 /go 与根路径短链登记/跳转、百科与支付等 API 路由）。
+// INPUT: Express 服务器配置（含环境变量加载、缺失静态资源 404、短链登记/跳转与统一响应中间件）。
+// OUTPUT: 启动 HTTP 服务（含缺失 /assets/* 404、/go 与根路径短链登记/跳转、百科与支付等 API 路由）。
 // POS: 后端入口文件；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import path from "path";
@@ -45,6 +45,11 @@ import {
   goRedirectRouter,
 } from "./api/goRedirect.js";
 import { apiResponseMiddleware } from "./utils/apiResponse.js";
+import {
+  apiNoIndexMiddleware,
+  costEndpointBotLimiter,
+  COST_SENSITIVE_API_MOUNTS,
+} from "./middleware/security.js";
 
 import { initMonitoring, captureError } from "./observability/monitoring.js";
 
@@ -79,6 +84,11 @@ app.use(
     crossOriginEmbedderPolicy: false,
   }),
 );
+
+// API responses are not SEO content. Public pages remain crawlable through the
+// SPA/static layer, while every /api response tells crawlers not to index,
+// follow, or archive payloads that may include user-specific or generated data.
+app.use("/api", apiNoIndexMiddleware);
 
 // CORS whitelist
 const ALLOWED_ORIGINS: (string | RegExp)[] = [
@@ -159,6 +169,10 @@ const authLimiter = rateLimit({
   message: { error: "Too many requests, please try again later." },
 });
 app.use("/api/auth", authLimiter);
+
+for (const mount of COST_SENSITIVE_API_MOUNTS) {
+  app.use(mount, costEndpointBotLimiter);
+}
 
 // Rate limiting — natal endpoints. Tighter than the global /api bucket because
 // each natal request is a publicly reachable anonymous-friendly entrypoint
@@ -372,6 +386,22 @@ app.use(
 );
 
 app.use(apiResponseMiddleware);
+
+// Missing Vite hashed assets must be a real 404, not the SPA shell. The
+// Vercel rewrite for /assets/* only runs after the static filesystem misses,
+// so existing hashed files still come from the CDN while stale asset URLs get
+// an uncacheable failure instead of immutable-cached index.html.
+app.get("/assets/*", (_, res) => {
+  res
+    .set({
+      "Cache-Control": "no-store, max-age=0",
+      "CDN-Cache-Control": "no-store",
+      "Vercel-CDN-Cache-Control": "no-store",
+    })
+    .status(404)
+    .type("text/plain")
+    .send("Asset not found");
+});
 
 // Public short-link redirects. Mounted outside /api so Vercel can route
 // /go/:code and root /:code short links here before the SPA fallback.

@@ -22,5 +22,9 @@ Disallow: /onboarding
 Disallow: /reports
 Disallow: /color-demo
 Disallow: /api/
+Disallow: /go/
+Disallow: /admin
+Disallow: /internal
+Disallow: /gm
 
 Sitemap: https://www.astrologywiki.com/sitemap.xml

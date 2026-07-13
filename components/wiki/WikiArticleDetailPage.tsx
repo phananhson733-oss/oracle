@@ -1,7 +1,7 @@
 // INPUT: Wiki 文章详情与 Markdown 渲染（含 SEO 元信息与内部链接处理）；article.embeddedTool
 //        驱动 ChartMiniCalc、article.psychAdjacent 驱动 SafetyFooter。
-// OUTPUT: 导出 Wiki 文章详情页组件（含 Article/FAQPage schema、面包屑、Markdown 渲染，
-//         以及 tool-led 嵌入：embeddedTool→ChartMiniCalc + 抑制底部 WikiChartCTA、
+// OUTPUT: 导出 Wiki 文章详情页组件（含压缩 publisher logo 的 Article/FAQPage schema、面包屑、Markdown 渲染，
+//         以及 Sticky/Lead/Bottom 免费出生盘 CTA、tool-led 嵌入：embeddedTool→ChartMiniCalc + 抑制底部 WikiChartCTA、
 //         psychAdjacent→SafetyFooter，仅 SPA 渲染，不进静态 stub）。
 // POS: Wiki 文章详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
@@ -22,7 +22,7 @@ import { AuthorByline } from "./AuthorByline";
 import { trackEvent } from "../../services/analytics";
 import type { WikiArticleSummary } from "../../types";
 import { useLangPath } from "../../hooks/useLangPath";
-import WikiChartCTA from "./WikiChartCTA";
+import WikiChartCTA, { deriveCelebrityName } from "./WikiChartCTA";
 import ChartMiniCalc from "../ChartMiniCalc";
 import SafetyFooter from "../SafetyFooter";
 import { BIRTH_CHART_ANCHOR_ID } from "../../hooks/useScrollToBirthChart";
@@ -441,6 +441,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
     () => (slug ? getArticleBySlug(slug, language) : null),
     [slug, language],
   );
+  const celebrityName = article
+    ? deriveCelebrityName(article.slug, article.title)
+    : null;
   const relatedArticles = useMemo(() => {
     if (!article) return [];
     const allArticles = getArticleSummaries(language);
@@ -505,7 +508,7 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         name: "AstrologyWiki",
         logo: {
           "@type": "ImageObject",
-          url: `${siteUrl}/logo.png`,
+          url: `${siteUrl}/brand/logo-schema-512.png`,
         },
       },
     };
@@ -670,8 +673,8 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
   return (
     <Container>
       <SEO
-        title={article.title}
-        description={article.description}
+        title={article.seoTitle || article.title}
+        description={article.seoDescription || article.description}
         keywords={article.keywords}
         url={selfUrl}
         canonicalUrl={canonicalUrl}
@@ -690,6 +693,8 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         image={article.image || ogImageUrl}
         schema={[articleSchema, breadcrumbSchema, faqSchema].filter(Boolean)}
       />
+
+      <WikiChartCTA variant="sticky" celebrityName={celebrityName || undefined} />
 
       <Breadcrumb items={breadcrumbItems} homePath={langPath("/wiki")} />
 
@@ -754,6 +759,11 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
             )}
           </div>
         </header>
+
+        <WikiChartCTA
+          variant="lead"
+          celebrityName={celebrityName || undefined}
+        />
 
         {/* Article content with error handling */}
         <article className="prose-custom pt-2">
@@ -825,7 +835,9 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
 
         {/* 嵌入工具在场时抑制底部通用 CTA：mini-calc 的结果区已导向同一全盘锚点，
             两个指向同一 #birth-chart-tool 的 CTA 会重复。无工具的文章保留底部 CTA。 */}
-        {!article.embeddedTool && <WikiChartCTA />}
+        {!article.embeddedTool && (
+          <WikiChartCTA celebrityName={celebrityName || undefined} />
+        )}
       </div>
     </Container>
   );

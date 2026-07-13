@@ -1,5 +1,5 @@
-// INPUT: Competitor comparison page component (vs and alternatives formats).
-// OUTPUT: Renders competitor comparison with feature tables, pros/cons, and CTA.
+// INPUT: Competitor comparison page component (vs and alternatives formats) with compressed brand logo.
+// OUTPUT: Renders competitor comparison with compressed logo, feature tables, pros/cons, and CTA.
 // POS: Marketing page; update components/FOLDER.md when this file changes.
 
 import React, { useMemo } from 'react';
@@ -262,7 +262,7 @@ function createAstrologyWikiData(): CompetitorInfo {
     name: 'AstrologyWiki',
     tagline: 'Psychological Astrology Platform',
     description: 'Comprehensive astrology platform combining psychological insights with traditional astrology.',
-    logo: '/logo.png',
+    logo: '/brand/logo-mark-64.png',
     website: 'https://www.astrologywiki.com',
     founded: '2024',
     headquarters: 'Global',

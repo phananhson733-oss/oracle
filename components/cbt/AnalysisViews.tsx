@@ -1,5 +1,5 @@
-// INPUT: React、图表、类型与主题（含月份同步、情绪映射、洞察正文色与展开标题对齐）。
-// OUTPUT: 导出分析视图组件（含月度过滤联动、无记录跳过 AI 解读、建议分行显示与对比度修正）。
+// INPUT: React、图表、类型与主题（含月份同步、情绪映射、洞察正文色、展开标题对齐与数值化图表宽度）。
+// OUTPUT: 导出分析视图组件（含月度过滤联动、无记录跳过 AI 解读、建议分行显示、对比度修正与安全百分比宽度）。
 // POS: CBT 分析展示组件。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -821,7 +821,7 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
                   <span className="text-star-400 text-xs">{count}</span>
                 </div>
                 <div className="h-1 bg-space-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-danger" style={{width: `${(count/stats.topSources[0][1])*100}%`}}></div>
+                  <div className="h-full bg-danger" style={{width: `${(Number(count) / Math.max(1, Number(stats.topSources[0]?.[1] || 1))) * 100}%`}}></div>
                 </div>
               </div>
             ))}
@@ -836,7 +836,7 @@ export const SourceSupportView: React.FC<ViewProps> = ({ records, onClose, initi
                   <span className="text-star-400 text-xs">{count}</span>
                 </div>
                 <div className="h-1 bg-space-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-accent" style={{width: `${(count/stats.topSupports[0][1])*100}%`}}></div>
+                  <div className="h-full bg-accent" style={{width: `${(Number(count) / Math.max(1, Number(stats.topSupports[0]?.[1] || 1))) * 100}%`}}></div>
                 </div>
               </div>
             ))}

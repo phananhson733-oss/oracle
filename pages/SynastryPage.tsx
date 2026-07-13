@@ -1,5 +1,5 @@
 // INPUT: UserProfile prop、synastry/natal API、entitlement contexts、quota/auth hooks，以及拆出的
-//        pages/synastry/* 子部件（ProfileSelectView / SynastryReportView / useSynastryProfileForm 等）。
+//        pages/synastry/* 子部件（ProfileSelectView / SynastryReportView / useSynastryProfileForm 等）与三参数合盘配额检查。
 // OUTPUT: 合盘页面的薄编排组件：持有所有状态/effect/数据获取与配额逻辑，按 view/segments 渲染
 //         登录门 / 选择视图 / 加载 / 报告视图。展示拆分见 pages/synastry/FOLDER.md。
 // POS: Synastry page extracted from App.tsx；若更新此文件，务必更新本头注释与 pages/synastry/FOLDER.md，并保持 App.tsx lazy import 同步。
@@ -503,10 +503,6 @@ const UsPage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
         personAInfo,
         personBInfo,
         relationshipType,
-        {
-          onPurchased: () =>
-            handlePaidSynastry(personAInfo, personBInfo, relationshipType),
-        },
       );
       if (quotaResult?.hash) {
         setSynastryHash(quotaResult.hash);

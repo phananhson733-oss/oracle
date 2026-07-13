@@ -1,6 +1,6 @@
-// INPUT: UserProfile prop, ask API service, entitlement contexts.
-// OUTPUT: AI Q&A Oracle page with category-based questions and streaming answer display.
-// POS: Oracle (Ask) page extracted from App.tsx; if updated, keep App.tsx lazy import in sync.
+// INPUT: UserProfile prop, ask API service, entitlement contexts, typed preset questions/report labels.
+// OUTPUT: AI Q&A Oracle page with category-based questions, localized report sections, and streaming answer display.
+// POS: Oracle (Ask) page extracted from App.tsx; if updated, keep App.tsx lazy import in sync and update root FOLDER.md.
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { SEO } from "../components/SEO";
@@ -27,6 +27,10 @@ import { useAskQuota, useEntitlement } from "../contexts/EntitlementContext";
 import { getResetCountdown } from "../utils/astro-helpers";
 
 type AskCategoryKey = keyof (typeof PRESET_QUESTIONS)["en"];
+type PresetQuestion = { readonly id: string; readonly text: string };
+type AskReportSections = Partial<
+  Record<"essence" | "signature" | "deep_dive" | "soulwork" | "takeaway", string>
+>;
 
 type AskReportSection = {
   title: string;
@@ -631,7 +635,8 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
   const reportT = TRANSLATIONS[reportLang] || t;
 
   const loadingPhrases = t.ask.loading_phrases || [];
-  const questionSet = PRESET_QUESTIONS[language] || PRESET_QUESTIONS.zh;
+  const questionSet = (PRESET_QUESTIONS[language] ||
+    PRESET_QUESTIONS.zh) as Record<AskCategoryKey, readonly PresetQuestion[]>;
   const questions = questionSet[activeCategory] || [];
   const selectedQuestionText = selectedQuestionId
     ? questions.find((item) => item.id === selectedQuestionId)?.text || null
@@ -1508,7 +1513,7 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                       },
                                     ];
                                     const reportSections =
-                                      reportT.ask.report_sections || {};
+                                      (reportT.ask.report_sections || {}) as AskReportSections;
                                     const sectionTitle =
                                       section.title || reportT.ask.deep_insight;
                                     const sectionStyleOrder: Record<
@@ -1550,8 +1555,12 @@ const AskOraclePage: React.FC<{ profile: T.UserProfile }> = ({ profile }) => {
                                       "journal",
                                     ]);
                                     const isZhReport = reportLang === "zh";
+                                    const layerSuffix =
+                                      "layer_suffix" in reportT.ask
+                                        ? reportT.ask.layer_suffix
+                                        : "";
                                     const layerLabel = isZhReport
-                                      ? `${reportT.ask.layer_prefix}${idx + 1}${reportT.ask.layer_suffix || ""}`
+                                      ? `${reportT.ask.layer_prefix}${idx + 1}${layerSuffix}`
                                       : `${reportT.ask.layer_prefix} ${idx + 1}`;
 
                                     // Parse body content for potential key points

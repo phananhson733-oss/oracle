@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { createHash, randomUUID } from 'crypto';
 import { generateAIContentWithMeta } from '../services/ai.js';
 import type { Language } from '../types/api.js';
 import type { SyntheticaConfigUnit } from '../utils/syntheticaConfig.js';
@@ -73,6 +74,32 @@ const CONTEXT_KEY_HOUSES: Record<ContextFilter, string[]> = {
 };
 
 const KEY_HOUSE_BONUS = 10;
+const SYNTHETICA_ENDPOINT = '/api/synthetica/generate';
+
+type ActorLogContext = {
+  actorType: 'user' | 'device' | 'anonymous';
+  actorHash?: string;
+};
+
+const buildActorLogContext = (
+  userId?: string,
+  deviceFingerprint?: string,
+): ActorLogContext => {
+  const actor = userId
+    ? { type: 'user' as const, value: userId }
+    : deviceFingerprint
+      ? { type: 'device' as const, value: deviceFingerprint }
+      : null;
+  if (!actor) return { actorType: 'anonymous' };
+
+  return {
+    actorType: actor.type,
+    actorHash: createHash('sha256')
+      .update(`${actor.type}:${actor.value}`)
+      .digest('hex')
+      .slice(0, 16),
+  };
+};
 
 // Logic Helpers
 const getBaseTierScore = (tier: number): number => {
@@ -164,12 +191,21 @@ const getContextInstruction = (context: ContextFilter, lang: Language): string =
 };
 
 syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
+  const requestId = randomUUID();
+  const requestStartedAt = Date.now();
+  let actorContext: ActorLogContext = { actorType: 'anonymous' };
+  let generationStartedAt: number | null = null;
+  let refundAttempted = false;
+  let refundSucceeded = false;
+  res.setHeader('X-Request-ID', requestId);
+
   try {
     const payload = req.body as GeneratePayload & { tz?: string };
     const lang: Language = payload.lang === 'en' || payload.language === 'en' ? 'en' : 'zh';
     const { context } = payload;
     const deviceFingerprint = req.headers['x-device-fingerprint'] as string | undefined;
     const timezone = (payload.tz as string) || (req.headers['x-user-timezone'] as string) || undefined;
+    actorContext = buildActorLogContext(req.userId, deviceFingerprint);
 
     const access = await entitlementServiceV2.checkAccess(
       req.userId || null,
@@ -179,6 +215,14 @@ syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
       timezone
     );
     if (!access.canAccess) {
+      logger.warn('[Synthetica] access denied', {
+        event: 'synthetica_access_denied',
+        requestId,
+        endpoint: SYNTHETICA_ENDPOINT,
+        promptId: 'synthetica-analysis',
+        ...actorContext,
+        durationMs: Date.now() - requestStartedAt,
+      });
       return res.status(403).json({
         error: 'Feature not available',
         needPurchase: access.needPurchase,
@@ -238,39 +282,98 @@ syntheticaRouter.post('/generate', optionalAuthMiddleware, async (req, res) => {
     const contextInstruction = getContextInstruction(context, lang);
     const houseLabel = house ? house.name : (lang === 'en' ? 'Not selected' : '未选择');
 
-    // 3. Generate Content
-    const result = await generateAIContentWithMeta({
-      promptId: 'synthetica-analysis',
-      context: {
-        context,
-        contextInstruction,
-        planetName: planet.name,
-        signName: sign.name,
-        houseName: houseLabel,
-        houseArchetype: house ? house.archetype : "",
-        topAspectsString
-      },
-      lang,
-      timeoutMs: 60000,
-    });
-
-    const consumed = await entitlementServiceV2.consumeFeature(
+    // 3. 在调用模型前原子预占额度，避免并发请求绕过日限额。
+    const reservation = await entitlementServiceV2.reserveFeature(
       req.userId || null,
       'synthetica',
       deviceFingerprint,
       timezone
     );
-    if (!consumed) {
-      return res.status(403).json({
-        error: 'Failed to consume feature',
+    if (!reservation.reserved) {
+      logger.warn('[Synthetica] reservation rejected', {
+        event: 'synthetica_reservation_rejected',
+        requestId,
+        endpoint: SYNTHETICA_ENDPOINT,
+        promptId: 'synthetica-analysis',
+        ...actorContext,
+        durationMs: Date.now() - requestStartedAt,
+      });
+      return res.status(402).json({
+        error: 'Out of credits',
         needPurchase: true,
         price: PRICING.SYNTHETICA_USE,
       });
     }
 
-    res.json({ ...result.content, meta: result.meta });
+    try {
+      // 4. 昂贵的模型调用仅在额度已经预占后执行。
+      generationStartedAt = Date.now();
+      logger.info('[Synthetica] generation started', {
+        event: 'synthetica_generation_started',
+        requestId,
+        endpoint: SYNTHETICA_ENDPOINT,
+        promptId: 'synthetica-analysis',
+        ...actorContext,
+      });
+      const result = await generateAIContentWithMeta({
+        promptId: 'synthetica-analysis',
+        context: {
+          context,
+          contextInstruction,
+          planetName: planet.name,
+          signName: sign.name,
+          houseName: houseLabel,
+          houseArchetype: house ? house.archetype : "",
+          topAspectsString
+        },
+        lang,
+        timeoutMs: 60000,
+        requestId,
+      });
+
+      await entitlementServiceV2.commitReservation(reservation.reservationId);
+      logger.info('[Synthetica] generation completed', {
+        event: 'synthetica_generation_completed',
+        requestId,
+        endpoint: SYNTHETICA_ENDPOINT,
+        promptId: 'synthetica-analysis',
+        ...actorContext,
+        durationMs: Date.now() - generationStartedAt,
+        source: result.meta.source,
+        cached: result.meta.cached ?? false,
+      });
+      res.json({ ...result.content, meta: result.meta });
+    } catch (innerError) {
+      refundAttempted = true;
+      try {
+        await entitlementServiceV2.refundReservation(reservation.reservationId);
+        refundSucceeded = true;
+      } catch (refundError) {
+        logger.error('[Synthetica] reservation refund failed', {
+          event: 'synthetica_reservation_refund_failed',
+          requestId,
+          endpoint: SYNTHETICA_ENDPOINT,
+          promptId: 'synthetica-analysis',
+          ...actorContext,
+          errorName: refundError instanceof Error ? refundError.name : 'UnknownError',
+        });
+      }
+      throw innerError;
+    }
   } catch (error) {
-    logger.error('Synthetica Generation Error', { error });
+    logger.error('[Synthetica] request failed', {
+      event: generationStartedAt
+        ? 'synthetica_generation_failed'
+        : 'synthetica_request_failed',
+      requestId,
+      endpoint: SYNTHETICA_ENDPOINT,
+      promptId: 'synthetica-analysis',
+      ...actorContext,
+      durationMs: Date.now() - (generationStartedAt ?? requestStartedAt),
+      refundAttempted,
+      refundSucceeded,
+      errorName: error instanceof Error ? error.name : 'UnknownError',
+    });
     res.status(500).json({ error: 'Failed to generate report' });
   }
 });

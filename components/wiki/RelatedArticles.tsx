@@ -1,5 +1,5 @@
-// INPUT: Related Wiki items component for internal linking and SEO.
-// OUTPUT: Displays related planets, signs, aspects, and concepts with links.
+// INPUT: Related Wiki items component for internal linking and SEO plus unknown-safe translation lookup.
+// OUTPUT: Displays related planets, signs, aspects, and concepts with links using typed translation fallbacks.
 // POS: Wiki component; update components/wiki/FOLDER.md when this file changes.
 
 import React, { useMemo } from "react";
@@ -65,7 +65,7 @@ export const RelatedArticles: React.FC<RelatedArticlesProps> = ({
   const getItemDisplayName = (id: string, type: WikiItemType): string => {
     // Try to get translated name from existing translations
     const translationKey = `wiki.${type}_${id}`;
-    const translated = (t as Record<string, string>)[translationKey];
+    const translated = (t as unknown as Record<string, string>)[translationKey];
     if (translated) return translated;
 
     // Fallback: capitalize first letter

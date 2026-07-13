@@ -4,7 +4,7 @@
 //      若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import { expect, test } from "@playwright/test";
-import { stubLanding } from "./_helpers/landing";
+import { revealLandingSection, stubLanding } from "./_helpers/landing";
 
 const EMAIL = "e2e-newsletter@example.com";
 
@@ -12,6 +12,7 @@ const fillEmailAndSubmit = async (
   page: import("@playwright/test").Page,
   email = EMAIL,
 ) => {
+  await revealLandingSection(page, "newsletter");
   // The honeypot input is sr-only but matched by [name="website"].
   await page.locator("#newsletter-email").fill(email);
   await page
@@ -64,6 +65,7 @@ test.describe("/landing-v2 — Newsletter signup states", () => {
   test("honeypot input is hidden from real users", async ({ page }) => {
     await stubLanding(page);
     await page.goto("/landing-v2");
+    await revealLandingSection(page, "newsletter");
 
     const honeypot = page.locator('input[name="website"]');
     await expect(honeypot).toHaveCount(1);
@@ -100,7 +102,7 @@ test.describe("/landing-v2 — Newsletter signup states", () => {
     await expect(status.first()).toBeVisible();
   });
 
-  test("400 email_required surfaces server error message", async ({ page }) => {
+  test("400 email_required maps to safe generic copy", async ({ page }) => {
     await stubLanding(page, {
       newsletter: (r) =>
         r.fulfill({
@@ -114,12 +116,12 @@ test.describe("/landing-v2 — Newsletter signup states", () => {
     });
 
     await page.goto("/landing-v2");
-    // Bypass HTML5 required by filling then clearing — or just submit with a value
-    // the backend rejects. We submit anything; the stub forces the 400 branch.
+    // Submit a syntactically valid value; the stub forces the backend failure.
+    // Raw server strings are intentionally never rendered by the client.
     await fillEmailAndSubmit(page, "x@y.z");
 
     const status = page.getByRole("status").filter({
-      hasText: /email is required\./i,
+      hasText: /could not subscribe|please try again/i,
     });
     await expect(status.first()).toBeVisible();
   });
