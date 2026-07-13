@@ -62,7 +62,8 @@ privacy-safe natal payload, and render a chart result without runtime errors.
 
 `wiki-growth-funnel.spec.ts` covers the acquisition side of the same journey:
 consent-time page-view recovery, Wiki→tool event categories, module C click
-attribution, desktop/mobile CTA geometry, and hydrated homepage SEO/FAQ parity.
+attribution, wide-desktop brand/navigation separation and overflow, desktop/mobile
+CTA geometry, and hydrated homepage SEO/FAQ parity.
 
 ## Convention reminders
 

@@ -1,5 +1,5 @@
 // INPUT: Playwright、根首页、Haaland Wiki 文章、GA4 dataLayer 与 Birth Chart CTA。
-// OUTPUT: 验证首次授权 PV 恢复、Wiki→工具 module_c、桌面/移动 Nav/Lead/Sticky，以及首页水合后 Title/H1/FAQ/schema。
+// OUTPUT: 验证首次授权 PV 恢复、Wiki→工具 module_c、宽屏导航间距/溢出、桌面/移动 Nav/Lead/Sticky，以及首页水合后 Title/H1/FAQ/schema。
 // POS: 2026-07-13 增长漏斗浏览器验收；CTA 布局、埋点或首页发现契约变更时同步本测试与 tests/e2e/README.md。
 
 import { expect, test, type Page } from "@playwright/test";
@@ -96,6 +96,43 @@ test("desktop Sticky appears below nav at 400px and reserves 48px", async ({
 
   await page.evaluate(() => window.scrollTo(0, 80));
   await expect(sticky).toHaveAttribute("data-visible", "false");
+});
+
+test.describe("wide desktop navigation", () => {
+  test.use({ viewport: { width: 2048, height: 1022 } });
+
+  test("keeps the brand separated from Birth and shows the full navigation", async ({
+    page,
+  }) => {
+    await grantAnalyticsBeforeLoad(page);
+    await stubNonCriticalApi(page);
+    await page.goto("/");
+
+    const navigation = page.getByRole("navigation", {
+      name: "Main navigation",
+    });
+    const brand = navigation.getByRole("link", { name: "AstrologyWiki" });
+    const birth = navigation.locator('a[href="/dashboard"]');
+    await expect(brand).toBeVisible();
+    await expect(birth).toBeVisible();
+
+    const brandBox = await brand.boundingBox();
+    const birthBox = await birth.boundingBox();
+    expect(brandBox).not.toBeNull();
+    expect(birthBox).not.toBeNull();
+    const brandToBirthGap = Math.round(
+      birthBox!.x - (brandBox!.x + brandBox!.width),
+    );
+    expect(brandToBirthGap).toBeGreaterThanOrEqual(16);
+
+    const overflow = await birth.evaluate((link) => {
+      const group = link.parentElement;
+      return group
+        ? group.scrollWidth - group.clientWidth
+        : Number.POSITIVE_INFINITY;
+    });
+    expect(overflow).toBeLessThanOrEqual(0);
+  });
 });
 
 test.describe("mobile Wiki CTA", () => {

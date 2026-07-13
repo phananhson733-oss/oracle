@@ -1,5 +1,5 @@
 // INPUT: React、BrowserRouter、组件与后端数据服务依赖（含 SEO head 输出、压缩品牌图、短链跳转、付费墙回调、分析追踪与按需加载的 auth/payment/sign-calculator 路由）。
-// OUTPUT: 导出主应用组件（含压缩品牌 logo、/go 短链跳转、全局免费出生盘 CTA、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅、核心功能事件、landing footer 边界与首屏外弹窗/计算器拆包）。
+// OUTPUT: 导出主应用组件（含宽屏不重叠的响应式品牌导航、压缩品牌 logo、/go 短链跳转、全局免费出生盘 CTA、工具别名页、合盘积分购买后自动触发生成、save_chart 登录后自动续接迁移、Analytics 路由追踪、同意横幅、核心功能事件、landing footer 边界与首屏外弹窗/计算器拆包）。
 // POS: 主应用路由与页面编排中心（BrowserRouter SPA 路由、短链跳转、付费墙后续流程与分析事件接入、支付成功页放行与 PayPal 回跳处理、旧 hash URL 兼容重定向、PageSpeed 路由级拆包与 landing 全局 footer 禁用边界）。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 // 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 
@@ -915,7 +915,7 @@ const AppContent: React.FC = () => {
           aria-label="Main navigation"
           className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md transition-colors ${theme === "dark" ? "bg-space-950/90 border-gold-500/15" : "bg-paper-100/90 border-paper-300"}`}
         >
-          <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+          <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center gap-4 px-4 md:px-8 2xl:gap-6">
             {/* Logo — on landing routes scrolls back to top; elsewhere routes
                 to "/" (landing page). Conventional brand-logo behaviour: clicking
                 the wordmark returns the user home, not into the authenticated
@@ -955,13 +955,13 @@ const AppContent: React.FC = () => {
                 height={32}
                 className="h-8 w-8 rounded-full object-cover"
               />
-              <span className="hidden sm:inline">{t.app.name}</span>
+              <span className="hidden 2xl:inline">{t.app.name}</span>
             </div>
 
             {/* Navigation Links - Permanently Top Right.
                 Single unified IA — landing reuses the same 7 entries as the
                 rest of the app. Active state highlights the current route. */}
-            <div className="flex items-center gap-6 ml-auto overflow-x-auto no-scrollbar">
+            <div className="ml-auto flex min-w-0 max-w-full items-center gap-4 overflow-x-auto no-scrollbar xl:gap-5 2xl:gap-6">
               {[
                 { path: "/dashboard", label: t.nav.dashboard },
                 { path: "/forecast", label: t.nav.forecast },
