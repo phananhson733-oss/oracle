@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="Four Common Misreadings of Singleness in the Birth Chart">
+  <defs>
+    <linearGradient id="whyamistillsingle2en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="whyamistillsingle2en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="whyamistillsingle2en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whyamistillsingle2en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whyamistillsingle2en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="whyamistillsingle2en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#whyamistillsingle2en-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#whyamistillsingle2en-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#whyamistillsingle2en-neb2)"/>
+  <circle cx="397.0" cy="47.3" r="0.48" fill="#cfc8ea" opacity="0.33"/><circle cx="258.8" cy="61.6" r="1.64" fill="#cfc8ea" opacity="0.28"/><circle cx="695.3" cy="255.0" r="0.47" fill="#cfc8ea" opacity="0.41"/><circle cx="370.6" cy="80.0" r="0.96" fill="#cfc8ea" opacity="0.19"/><circle cx="365.1" cy="422.8" r="0.76" fill="#cfc8ea" opacity="0.24"/><circle cx="147.2" cy="83.7" r="0.69" fill="#cfc8ea" opacity="0.36"/><circle cx="202.1" cy="142.0" r="1.22" fill="#cfc8ea" opacity="0.13"/><circle cx="653.3" cy="86.9" r="1.44" fill="#cfc8ea" opacity="0.30"/><circle cx="278.7" cy="137.5" r="1.37" fill="#cfc8ea" opacity="0.27"/><circle cx="350.4" cy="77.6" r="0.57" fill="#cfc8ea" opacity="0.24"/><circle cx="399.7" cy="226.0" r="1.21" fill="#cfc8ea" opacity="0.16"/><circle cx="666.9" cy="294.0" r="0.60" fill="#cfc8ea" opacity="0.52"/><circle cx="479.0" cy="267.1" r="0.93" fill="#cfc8ea" opacity="0.45"/><circle cx="476.2" cy="133.2" r="1.55" fill="#cfc8ea" opacity="0.35"/><circle cx="396.9" cy="291.3" r="1.19" fill="#cfc8ea" opacity="0.42"/><circle cx="657.2" cy="305.7" r="1.30" fill="#cfc8ea" opacity="0.18"/><circle cx="717.2" cy="30.4" r="1.61" fill="#cfc8ea" opacity="0.16"/><circle cx="672.4" cy="379.3" r="0.41" fill="#cfc8ea" opacity="0.19"/><circle cx="243.5" cy="245.2" r="1.43" fill="#cfc8ea" opacity="0.20"/><circle cx="633.7" cy="86.5" r="0.51" fill="#cfc8ea" opacity="0.46"/><circle cx="323.6" cy="30.4" r="0.60" fill="#cfc8ea" opacity="0.34"/><circle cx="119.7" cy="227.3" r="1.56" fill="#cfc8ea" opacity="0.24"/><circle cx="594.2" cy="347.2" r="0.58" fill="#cfc8ea" opacity="0.38"/><circle cx="546.5" cy="262.9" r="1.13" fill="#cfc8ea" opacity="0.16"/><circle cx="27.2" cy="301.6" r="1.18" fill="#cfc8ea" opacity="0.46"/><circle cx="390.4" cy="345.0" r="0.76" fill="#cfc8ea" opacity="0.14"/><circle cx="258.5" cy="233.0" r="1.50" fill="#cfc8ea" opacity="0.40"/><circle cx="253.9" cy="239.1" r="1.60" fill="#cfc8ea" opacity="0.42"/><circle cx="516.0" cy="430.7" r="1.20" fill="#cfc8ea" opacity="0.48"/><circle cx="72.7" cy="79.2" r="1.16" fill="#cfc8ea" opacity="0.14"/><circle cx="431.7" cy="265.6" r="0.64" fill="#cfc8ea" opacity="0.31"/><circle cx="488.5" cy="157.0" r="1.42" fill="#cfc8ea" opacity="0.38"/><circle cx="371.1" cy="285.5" r="1.23" fill="#cfc8ea" opacity="0.15"/><circle cx="356.8" cy="410.6" r="1.23" fill="#cfc8ea" opacity="0.36"/><circle cx="302.3" cy="432.3" r="1.69" fill="#cfc8ea" opacity="0.51"/><circle cx="325.0" cy="210.0" r="1.18" fill="#cfc8ea" opacity="0.53"/><circle cx="608.4" cy="409.3" r="1.42" fill="#cfc8ea" opacity="0.41"/><circle cx="252.0" cy="317.5" r="0.90" fill="#cfc8ea" opacity="0.28"/><path d="M 558.7522554006428 105.8 L 559.3 108.5 L 561.9 108.95813970919698 L 559.3 109.5 L 558.7522554006428 112.1 L 558.2 109.5 L 555.6 108.95813970919698 L 558.2 108.5 Z" fill="#f6e6bf" opacity="0.6762755798641592"/><path d="M 453.75557641498744 52.6 L 454.2 55.1 L 456.8 55.63678624108434 L 454.2 56.1 L 453.75557641498744 58.7 L 453.3 56.1 L 450.7 55.63678624108434 L 453.3 55.1 Z" fill="#f6e6bf" opacity="0.5678055287804454"/><path d="M 425.16915512643754 49.5 L 425.7 52.3 L 428.5 52.83273416850716 L 425.7 53.4 L 425.16915512643754 56.1 L 424.6 53.4 L 421.9 52.83273416850716 L 424.6 52.3 Z" fill="#f6e6bf" opacity="0.7802382410038262"/><path d="M 571.5302134435624 95.7 L 572.1 98.5 L 574.8 98.99790614657104 L 572.1 99.5 L 571.5302134435624 102.3 L 571.0 99.5 L 568.3 98.99790614657104 L 571.0 98.5 Z" fill="#f6e6bf" opacity="0.5074099048506469"/><path d="M 362.2657132651657 192.5 L 362.7 194.7 L 364.9 195.1373444898054 L 362.7 195.6 L 362.2657132651657 197.8 L 361.8 195.6 L 359.6 195.1373444898054 L 361.8 194.7 Z" fill="#f6e6bf" opacity="0.5133376015815884"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Four Common Misreadings of Singleness in the Birth Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#whyamistillsingle2en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#whyamistillsingle2en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="355" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#whyamistillsingle2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#whyamistillsingle2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">A single 'lonely' placement dooms you</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">No one marker decides your relationship life; the chart describes leanings that</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">interact, not a life sentence</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#whyamistillsingle2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#whyamistillsingle2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">A hard Venus or Saturn aspect means unlovable</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Challenging aspects often describe depth, caution, or slower timing; many</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">people with them build lasting bonds</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#whyamistillsingle2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#whyamistillsingle2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">The chart names the date you'll couple up</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Astrology reflects tendencies and timing themes and cannot predict a</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">guaranteed event or deadline</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#whyamistillsingle2en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#whyamistillsingle2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Being single is a problem the chart must solve</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The framing works best as a lens for self-awareness, not a fix-it tool that</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">treats singleness as broken</text>
+  <path d="M 202.22749999999988 416.4 L 202.6 418.6 L 204.8 419 L 202.6 419.4 L 202.22749999999988 421.6 L 201.8 419.4 L 199.6 419 L 201.8 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 416.4 L 558.2 418.6 L 560.4 419 L 558.2 419.4 L 557.7725000000002 421.6 L 557.4 419.4 L 555.2 419 L 557.4 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
