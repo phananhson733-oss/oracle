@@ -349,6 +349,7 @@ import { englandVsArgentinaWorldCup2026AstrologyPredictionEn } from "./england-v
 import { whyDoIAttractToxicPeopleEn } from "./why-do-i-attract-toxic-people";
 import { whatIsMyLifePurposeEn } from "./what-is-my-life-purpose";
 import { whyAmIStillSingleEn } from "./why-am-i-still-single";
+import { lindaNoskovaBirthChartEn } from "./linda-noskova-birth-chart";
 // All articles organized by language
 
 import {
@@ -689,6 +690,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whyDoIAttractToxicPeopleEn,
   whatIsMyLifePurposeEn,
   whyAmIStillSingleEn,
+  lindaNoskovaBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
