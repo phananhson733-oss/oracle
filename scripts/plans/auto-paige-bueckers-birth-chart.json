@@ -1,0 +1,87 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "paige-bueckers-birth-chart": {
+      "hero": {
+        "prompt": "Stylized editorial portrait of a tall athletic young basketball player mid-pivot under a vast indigo cosmos, glowing gold Libra scales constellation rising behind her, a subtle Sagittarius archer arc tracing through teal nebula clouds above, warm amber court light at her feet dissolving upward into deep starry indigo, painterly editorial illustration, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of a basketball player beneath a glowing Libra constellation sky in deep indigo and gold"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Standout Placements in Paige Bueckers's Chart",
+          "titleEn": "Five Standout Placements in Paige Bueckers's Birth Chart",
+          "altEn": "Sequence of five key astrological placements in Paige Bueckers's birth chart from Libra stellium to Aquarius grouping",
+          "items": [
+            {
+              "nameEn": "Libra Stellium",
+              "subEn": "Sun, Mercury, Venus & Ceres in Libra — fairness, partnership, balance"
+            },
+            {
+              "nameEn": "Mercury Retrograde in Libra",
+              "subEn": "Internal, revisionary communication style"
+            },
+            {
+              "nameEn": "Sagittarius Moon",
+              "subEn": "Emotional needs lean toward freedom, movement, and optimism"
+            },
+            {
+              "nameEn": "Mars & Vesta in Capricorn",
+              "subEn": "Disciplined, long-range drive and patient focus"
+            },
+            {
+              "nameEn": "Aquarius Grouping",
+              "subEn": "Uranus, Neptune & Pallas — generational, not personal, signature"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Paige Bueckers's Placements at a Glance",
+          "titleEn": "Paige Bueckers's Key Planetary Placements at a Glance",
+          "altEn": "Comparison of Paige Bueckers's Sun, Moon, Mercury, Mars, and Venus placements by energy center and observable expression",
+          "columns": [
+            {
+              "nameEn": "Placement",
+              "linesEn": [
+                "Sun in Libra",
+                "Moon in Sagittarius",
+                "Mercury Rx in Libra",
+                "Mars in Capricorn",
+                "Venus in Libra"
+              ]
+            },
+            {
+              "nameEn": "Energy Center",
+              "linesEn": [
+                "Air — relational",
+                "Fire — restless",
+                "Air — mental",
+                "Earth — grounded",
+                "Air — relational"
+              ]
+            },
+            {
+              "nameEn": "How to Observe",
+              "linesEn": [
+                "Weighs both sides before deciding",
+                "Craves movement or space when stressed",
+                "Reworks a point before saying it aloud",
+                "Shows up as steady, patient focus",
+                "Prioritizes even footing in a connection"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
