@@ -348,6 +348,7 @@ import { franceVsSpainWorldCup2026AstrologyPredictionEn } from "./france-vs-spai
 import { englandVsArgentinaWorldCup2026AstrologyPredictionEn } from "./england-vs-argentina-world-cup-2026-astrology-prediction";
 import { whyDoIAttractToxicPeopleEn } from "./why-do-i-attract-toxic-people";
 import { whatIsMyLifePurposeEn } from "./what-is-my-life-purpose";
+import { whyAmIStillSingleEn } from "./why-am-i-still-single";
 // All articles organized by language
 
 import {
@@ -687,6 +688,7 @@ const ARTICLES_EN: WikiArticle[] = [
   englandVsArgentinaWorldCup2026AstrologyPredictionEn,
   whyDoIAttractToxicPeopleEn,
   whatIsMyLifePurposeEn,
+  whyAmIStillSingleEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
