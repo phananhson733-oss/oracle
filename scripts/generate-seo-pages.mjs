@@ -841,6 +841,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'why-do-i-feel-stuck-in-my-career',
   'why-am-i-afraid-of-commitment',
   'north-node-in-aquarius-2026',
   'linda-noskova-birth-chart',
