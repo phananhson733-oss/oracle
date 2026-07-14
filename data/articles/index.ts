@@ -346,6 +346,7 @@ import { jeffBezosBirthChartEn } from "./jeff-bezos-birth-chart";
 import { paigeBueckersBirthChartEn } from "./paige-bueckers-birth-chart";
 import { franceVsSpainWorldCup2026AstrologyPredictionEn } from "./france-vs-spain-world-cup-2026-astrology-prediction";
 import { englandVsArgentinaWorldCup2026AstrologyPredictionEn } from "./england-vs-argentina-world-cup-2026-astrology-prediction";
+import { whyDoIAttractToxicPeopleEn } from "./why-do-i-attract-toxic-people";
 // All articles organized by language
 
 import {
@@ -683,6 +684,7 @@ const ARTICLES_EN: WikiArticle[] = [
   paigeBueckersBirthChartEn,
   franceVsSpainWorldCup2026AstrologyPredictionEn,
   englandVsArgentinaWorldCup2026AstrologyPredictionEn,
+  whyDoIAttractToxicPeopleEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
