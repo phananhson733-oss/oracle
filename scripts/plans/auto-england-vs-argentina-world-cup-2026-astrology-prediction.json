@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "england-vs-argentina-world-cup-2026-astrology-prediction": {
+      "hero": {
+        "prompt": "A packed World Cup stadium at night, two lines of players in white-and-red St George cross kits and sky-blue-and-white striped kits converging toward the centre circle on a floodlit pitch, roaring stands packed with waving flags in red-and-white and sky-blue-and-white without any readable text, a vast indigo night sky overhead streaked with teal-and-gold nebula light and a bright luminous planet rising above the upper tier, cosmic tension arcing between the two sides, square-crop safe focus on the pitch and converging figures in the central zone, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "World Cup stadium night scene with England and Argentina players meeting on the pitch under a Jupiter-lit cosmic sky"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Symbolic Match Reading vs Outcome-Prediction Astrology: What Actually Differs",
+          "titleEn": "Symbolic Match Reading vs Outcome-Prediction Astrology",
+          "altEn": "Comparison of symbolic astrology reading and outcome-prediction sports astrology for the England vs Argentina 2026 match",
+          "columns": [
+            {
+              "nameEn": "Symbolic Match Reading",
+              "linesEn": [
+                "Reads what each chart means as cultural narrative",
+                "Maps both national founding charts and the 2026 sky onto themes",
+                "Built on Rudhyar's cyclic approach and Hand's mundane-chart work",
+                "Offers reflection on identity and tendency",
+                "Makes no claim to predict the final score"
+              ]
+            },
+            {
+              "nameEn": "Outcome-Prediction Astrology",
+              "linesEn": [
+                "Tries to time a chart to call the actual winner",
+                "Stakes a result on one decisive transit or signal",
+                "Hunts for a single trigger to bet the result on",
+                "Promises a hard yes-or-no verdict",
+                "Sacrifices credibility for the thrill of a call"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the England vs Argentina Matchup Through the Charts",
+          "titleEn": "Five Steps to Read the England vs Argentina Matchup",
+          "altEn": "Five-step sequence for reading the England versus Argentina 2026 World Cup matchup through national and player birth charts",
+          "items": [
+            {
+              "nameEn": "Sun & Ascendant First",
+              "subEn": "Begin with each national chart's Sun and Ascendant to understand how England and Argentina each want to be seen on the biggest stage"
+            },
+            {
+              "nameEn": "Jupiter in Gemini",
+              "subEn": "Check where the 2026 Jupiter-in-Gemini transit lands for both charts — it touches communication and confidence for both sides equally"
+            },
+            {
+              "nameEn": "Mars & Moon Tone",
+              "subEn": "Look at Mars placements for how each side attacks and Moon placements for the emotional weather traveling with the crowd"
+            },
+            {
+              "nameEn": "Player Charts as Subplots",
+              "subEn": "Read standout player and captain placements as supporting characters inside the wider national story, never as final verdicts"
+            },
+            {
+              "nameEn": "Watch Timing, Not Scoreline",
+              "subEn": "Treat match-day transits as mood and resist the urge to turn them into a prediction about who wins"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
