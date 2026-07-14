@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jeff-bezos-birth-chart": {
+      "hero": {
+        "prompt": "A stylized editorial portrait of a visionary entrepreneur standing at a wide wooden desk scattered with architectural blueprints and cardboard shipping boxes, a sleek rocket silhouette lifting off through the indigo night sky behind him, Capricorn mountain ridges rising in the distance, golden star-lines tracing a Capricorn constellation arc overhead, the figure centered in the frame so the face and torso sit within the square-safe zone, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of a visionary entrepreneur beneath an indigo sky with a rocket silhouette and Capricorn star-lines"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read These Placements in a Birth Chart",
+          "titleEn": "5 Steps to Read the Jeff Bezos Birth Chart",
+          "altEn": "Five-step checklist for reading the Jeff Bezos birth chart placements",
+          "items": [
+            {
+              "nameEn": "Find the Stellium",
+              "subEn": "Three or more planets in one sign dominate the whole chart story"
+            },
+            {
+              "nameEn": "Check Sun–Moon Contrast",
+              "subEn": "Capricorn Sun builds patiently; Sagittarius Moon bets big and keeps moving"
+            },
+            {
+              "nameEn": "Read Mercury's Condition",
+              "subEn": "Retrograde Mercury in Capricorn signals slower, revision-heavy thinking"
+            },
+            {
+              "nameEn": "Weigh Venus & Saturn in Aquarius",
+              "subEn": "Values systems and detachment over sentiment in bonds and commitments"
+            },
+            {
+              "nameEn": "Flag What Needs a Birth Time",
+              "subEn": "Rising sign, house cusps, and Moon degree stay uncertain without a confirmed time"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Western Natal Chart vs Vedic Kundli: What Actually Differs",
+          "titleEn": "Western Natal Chart vs Vedic Kundli",
+          "altEn": "Side-by-side comparison of Western natal chart and Vedic Kundli for Jeff Bezos",
+          "columns": [
+            {
+              "nameEn": "Western Natal Chart",
+              "linesEn": [
+                "Tropical zodiac — Sun stays in Capricorn",
+                "Psychological, character-first portrait",
+                "Reads aspects and sign symbolism",
+                "No Navamsa sub-chart"
+              ]
+            },
+            {
+              "nameEn": "Vedic Kundli",
+              "linesEn": [
+                "Sidereal zodiac — Sun shifts to Sagittarius",
+                "Predictive timing via dashas",
+                "Emphasizes house lords and life circumstance",
+                "Includes Navamsa (D9) sub-chart"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
