@@ -841,6 +841,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'what-is-my-life-purpose',
   'why-do-i-attract-toxic-people',
   'england-vs-argentina-world-cup-2026-astrology-prediction',
   'france-vs-spain-world-cup-2026-astrology-prediction',
