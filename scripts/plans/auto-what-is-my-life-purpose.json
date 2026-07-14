@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "what-is-my-life-purpose": {
+      "hero": {
+        "prompt": "A painterly editorial scene of a luminous north-star path arcing through a deep-indigo constellation field, three distinctive gold stars forming a wide navigational triangle pointing toward a softly glowing horizon, teal nebula wisps curling around a crescent-moon node symbol in the upper left quadrant, warm golden dawn light diffusing at the far edge suggesting an emerging direction of growth, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Birth chart life purpose reading — North Node, Sun, and Midheaven as gold star signatures pointing toward a glowing direction of growth"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## North Node vs South Node: Which One Points to Your Purpose",
+          "titleEn": "North Node vs South Node: Growth Edge vs Inherited Strength",
+          "altEn": "Comparison of North Node as growth edge versus South Node as inherited effortless strength in a birth chart life purpose reading",
+          "columns": [
+            {
+              "nameEn": "North Node",
+              "linesEn": [
+                "Your growth edge",
+                "Unfamiliar direction at first",
+                "Feels awkward yet quietly rewarding",
+                "Brings deeper meaning as you practice it",
+                "The calling — points forward"
+              ]
+            },
+            {
+              "nameEn": "South Node",
+              "linesEn": [
+                "Inherited, well-worn strengths",
+                "Feels natural and effortless",
+                "Delivers reliable results now",
+                "Sacrifices forward motion if overused",
+                "The comfort zone — points back"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Your Life Purpose in Your Chart",
+          "titleEn": "5 Steps to Read Your Life Purpose in a Birth Chart",
+          "altEn": "Five-step sequence for reading life purpose through North Node, Sun sign, Midheaven, South Node, and overlapping chart signatures",
+          "items": [
+            {
+              "nameEn": "Find the North Node",
+              "subEn": "Its sign names the quality you are growing into; its house names the life area where that growth tends to unfold"
+            },
+            {
+              "nameEn": "Locate Your Sun Sign",
+              "subEn": "Shows the core identity you feel most yourself expressing, and colors how you pursue any direction"
+            },
+            {
+              "nameEn": "Check the Midheaven",
+              "subEn": "Sitting at the top of the chart, it points to public role and reputation — the contribution others recognize you for"
+            },
+            {
+              "nameEn": "Note the South Node",
+              "subEn": "Name the effortless strengths that come naturally; these are the fallback habits your growth edge asks you to lean on less"
+            },
+            {
+              "nameEn": "Look for Repetition",
+              "subEn": "When the Sun, North Node, and Midheaven echo a similar theme, that overlap is the clearest signal worth reflecting on"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
