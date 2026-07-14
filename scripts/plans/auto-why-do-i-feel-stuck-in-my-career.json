@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "why-do-i-feel-stuck-in-my-career": {
+      "hero": {
+        "prompt": "A deserted winding stone path climbs upward through a vast cosmic landscape, Saturn with its luminous golden rings hovers low on the horizon casting warm amber light across layered geological strata below, teal nebula wisps drift overhead suggesting deep time and patient formation, the path curves into starlit haze at the summit implying an unseen destination still ahead, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A winding path ascending toward Saturn on the horizon, symbolizing the slow foundation-laying phase of career stagnation in astrology"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Tenth House vs the Sixth House: Which Career Story You're Reading",
+          "titleEn": "Tenth House vs Sixth House: Two Lenses on Career Stagnation",
+          "altEn": "Comparison of the tenth house career direction and sixth house daily routine as two lenses for reading career stagnation",
+          "columns": [
+            {
+              "nameEn": "Tenth House",
+              "linesEn": [
+                "Direction, ambition, and public role",
+                "Where you are headed in public",
+                "Asks: is my path stalled?",
+                "Reveals the long arc"
+              ]
+            },
+            {
+              "nameEn": "Sixth House",
+              "linesEn": [
+                "Daily work, routine, and tasks",
+                "The grind of the actual workweek",
+                "Asks: is my day-to-day draining me?",
+                "Reveals burnout and habit patterns"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Career Stagnation in Your Chart",
+          "titleEn": "Four Signals of Career Stagnation in Your Birth Chart",
+          "altEn": "Four observable signals for reading career stagnation in a birth chart including tenth house pressure and Saturn transit contacts",
+          "items": [
+            {
+              "nameEn": "Tenth-House Pressure",
+              "subEn": "Repeating transits to your Midheaven over several months signal a stall phase, not a single bad day"
+            },
+            {
+              "nameEn": "Saturn Transits",
+              "subEn": "Saturn's 29.5-year orbit brings career reckonings near ages 29 and 58 during its return"
+            },
+            {
+              "nameEn": "Quiet Midheaven",
+              "subEn": "No aspects to your career point can read as a fallow phase rather than a crisis"
+            },
+            {
+              "nameEn": "Sixth-House Friction",
+              "subEn": "Daily tasks that feel heavier than the job warrants may be routine burnout dressed up as career doubt"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

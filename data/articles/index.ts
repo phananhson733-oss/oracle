@@ -352,6 +352,7 @@ import { whyAmIStillSingleEn } from "./why-am-i-still-single";
 import { lindaNoskovaBirthChartEn } from "./linda-noskova-birth-chart";
 import { northNodeInAquarius2026En } from "./north-node-in-aquarius-2026";
 import { whyAmIAfraidOfCommitmentEn } from "./why-am-i-afraid-of-commitment";
+import { whyDoIFeelStuckInMyCareerEn } from "./why-do-i-feel-stuck-in-my-career";
 // All articles organized by language
 
 import {
@@ -695,6 +696,7 @@ const ARTICLES_EN: WikiArticle[] = [
   lindaNoskovaBirthChartEn,
   northNodeInAquarius2026En,
   whyAmIAfraidOfCommitmentEn,
+  whyDoIFeelStuckInMyCareerEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
