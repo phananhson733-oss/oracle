@@ -841,6 +841,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'france-vs-spain-world-cup-2026-astrology-prediction',
   'paige-bueckers-birth-chart',
   'jeff-bezos-birth-chart',
   'sam-neill-birth-chart',

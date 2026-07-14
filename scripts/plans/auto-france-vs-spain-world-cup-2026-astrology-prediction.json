@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "france-vs-spain-world-cup-2026-astrology-prediction": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of a packed football stadium at dusk, two massive fan banks glowing in deep blue and vivid red facing each other across the pitch, silhouetted players in fluid mid-pass motion at center field, a luminous Jupiter disk and sweeping gold celestial arcs dominating the night sky above the stands, teal nebula wisps threading between star trails, cool indigo floodlights washing the turf while warm gold light radiates from the crowd, scarves and banners ripple with color but carry no words or letters, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "France vs Spain World Cup 2026 astrology matchup — stadium scene with blue and red fan banks under a celestial Jupiter sky"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Matchup in the Charts",
+          "titleEn": "4 Steps to Read the France vs Spain Astrology Matchup",
+          "altEn": "Four-step sequence for reading the France vs Spain World Cup 2026 astrology matchup in the charts",
+          "items": [
+            {
+              "nameEn": "Start with Each National Chart's Core Signature",
+              "subEn": "Note the dominant element and mood, then ask what playing style that symbolically echoes — fire as flair and risk, earth as control"
+            },
+            {
+              "nameEn": "Layer in the 2026 Transit",
+              "subEn": "Jupiter in Gemini colors the whole tournament with speed, wit, and quick exchanges — shared weather over both benches, not a result lever"
+            },
+            {
+              "nameEn": "Add Two or Three Player Archetypes",
+              "subEn": "Pick standout figures and read their charts as narrative characters — the improviser, the organizer, the late-drama specialist"
+            },
+            {
+              "nameEn": "Look for Contrast, Not a Verdict",
+              "subEn": "Name where the two temperaments clash and complement, then leave the outcome deliberately unwritten — the tension is the point"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Symbolic Match Framing vs a Scoreline Forecast: What Actually Differs",
+          "titleEn": "Symbolic Framing vs Scoreline Forecast",
+          "altEn": "Comparison of symbolic match framing and scoreline forecast for the France vs Spain World Cup 2026 astrology prediction",
+          "columns": [
+            {
+              "nameEn": "Symbolic Match Framing",
+              "linesEn": [
+                "Reads each chart for theme and tension",
+                "Treats the transit as a shared mood over both benches",
+                "Leaves the result open on purpose",
+                "Describes leanings, contrasts, and atmosphere — not a score"
+              ]
+            },
+            {
+              "nameEn": "Scoreline Forecast",
+              "linesEn": [
+                "Weighs recent form, injuries, and market odds",
+                "Names a probable result",
+                "Value lives or dies by whether the number lands",
+                "Delivers a clean, testable answer — no reflective layer"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

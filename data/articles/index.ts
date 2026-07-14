@@ -344,6 +344,7 @@ import { sinnerVsZverevWimbledonFinalAstrologyEn } from "./sinner-vs-zverev-wimb
 import { samNeillBirthChartEn } from "./sam-neill-birth-chart";
 import { jeffBezosBirthChartEn } from "./jeff-bezos-birth-chart";
 import { paigeBueckersBirthChartEn } from "./paige-bueckers-birth-chart";
+import { franceVsSpainWorldCup2026AstrologyPredictionEn } from "./france-vs-spain-world-cup-2026-astrology-prediction";
 // All articles organized by language
 
 import {
@@ -679,6 +680,7 @@ const ARTICLES_EN: WikiArticle[] = [
   samNeillBirthChartEn,
   jeffBezosBirthChartEn,
   paigeBueckersBirthChartEn,
+  franceVsSpainWorldCup2026AstrologyPredictionEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
