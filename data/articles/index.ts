@@ -351,6 +351,7 @@ import { whatIsMyLifePurposeEn } from "./what-is-my-life-purpose";
 import { whyAmIStillSingleEn } from "./why-am-i-still-single";
 import { lindaNoskovaBirthChartEn } from "./linda-noskova-birth-chart";
 import { northNodeInAquarius2026En } from "./north-node-in-aquarius-2026";
+import { whyAmIAfraidOfCommitmentEn } from "./why-am-i-afraid-of-commitment";
 // All articles organized by language
 
 import {
@@ -693,6 +694,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whyAmIStillSingleEn,
   lindaNoskovaBirthChartEn,
   northNodeInAquarius2026En,
+  whyAmIAfraidOfCommitmentEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
