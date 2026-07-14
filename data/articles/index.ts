@@ -342,6 +342,7 @@ import { priyankaChopraBirthChartEn } from "./priyanka-chopra-birth-chart";
 import { rodriBirthChartEn } from "./rodri-birth-chart";
 import { sinnerVsZverevWimbledonFinalAstrologyEn } from "./sinner-vs-zverev-wimbledon-final-astrology";
 import { samNeillBirthChartEn } from "./sam-neill-birth-chart";
+import { jeffBezosBirthChartEn } from "./jeff-bezos-birth-chart";
 // All articles organized by language
 
 import {
@@ -675,6 +676,7 @@ const ARTICLES_EN: WikiArticle[] = [
   rodriBirthChartEn,
   sinnerVsZverevWimbledonFinalAstrologyEn,
   samNeillBirthChartEn,
+  jeffBezosBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
