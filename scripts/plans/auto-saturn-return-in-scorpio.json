@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-in-scorpio": {
+      "hero": {
+        "prompt": "A vast ringed Saturn dominates the upper half of a starlit sky, its golden rings casting a soft warm reflection across a dark mirror-still ocean beneath; a luminous scorpion traced in teal-and-gold starlight arcs across the nebula-washed heavens above the horizon, evoking Saturn completing its return to its Scorpio birthplace; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn and its rings reflected over a dark cosmic ocean with a glowing scorpion constellation in the night sky"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Saturn Return in Scorpio vs a Generic Saturn Return",
+          "titleEn": "Generic Saturn Return vs Saturn Return in Scorpio",
+          "altEn": "Side-by-side comparison of a generic Saturn return and a Scorpio-specific Saturn return showing domain differences",
+          "columns": [
+            {
+              "nameEn": "Generic Saturn Return",
+              "linesEn": [
+                "Applies to any natal Saturn sign",
+                "Asks: are you mature yet?",
+                "Broad, portable life-structure advice",
+                "Comfort of vagueness — no specific drawer to open"
+              ]
+            },
+            {
+              "nameEn": "Saturn Return in Scorpio",
+              "linesEn": [
+                "Narrowed to Scorpio's domains only",
+                "Asks: which hidden contracts are overdue?",
+                "Targets shared money, intimacy, buried material",
+                "Precision over comfort — names the exact audit area"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "5 Steps to Read Your Saturn Return in Scorpio",
+          "altEn": "Five-step sequence for reading Saturn Return in Scorpio timing in your own birth chart",
+          "items": [
+            {
+              "nameEn": "Find the Natal House",
+              "subEn": "Locate the house holding natal Saturn in Scorpio — it names the life area under review"
+            },
+            {
+              "nameEn": "Track the Age Window",
+              "subEn": "Watch for pressure clustering near ages 29 and 58 — a months-long window, not a single day"
+            },
+            {
+              "nameEn": "Watch Money Conversations",
+              "subEn": "Recurring friction over shared accounts, debt, or who-owes-what is a common surface signal"
+            },
+            {
+              "nameEn": "Notice the Honesty Threshold",
+              "subEn": "A pull to say the quiet thing in a close relationship often marks the review starting"
+            },
+            {
+              "nameEn": "Log What You Avoid",
+              "subEn": "The topic you keep deferring is usually the exact commitment the passage is auditing"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of Saturn Return in Scorpio",
+          "altEn": "Four common misconceptions about Saturn Return in Scorpio corrected one by one",
+          "items": [
+            {
+              "nameEn": "It Is Just About Becoming an Adult",
+              "subEn": "Overlooks Scorpio's specific focus on shared resources and buried material, not general maturation"
+            },
+            {
+              "nameEn": "It Predicts a Breakup or Windfall",
+              "subEn": "The framework flags overdue contracts for review — it does not cause or guarantee any event"
+            },
+            {
+              "nameEn": "It Fixes Your Past",
+              "subEn": "This passage is a reflective lens, not a repair job — what shifts depends on how you engage"
+            },
+            {
+              "nameEn": "It Happens on One Exact Date",
+              "subEn": "The return is a months-long window around ages 29 and 58, not a single deadline to circle"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

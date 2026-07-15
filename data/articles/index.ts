@@ -354,6 +354,7 @@ import { northNodeInAquarius2026En } from "./north-node-in-aquarius-2026";
 import { whyAmIAfraidOfCommitmentEn } from "./why-am-i-afraid-of-commitment";
 import { whyDoIFeelStuckInMyCareerEn } from "./why-do-i-feel-stuck-in-my-career";
 import { saturnReturnGuideEn } from "./saturn-return-guide";
+import { saturnReturnInScorpioEn } from "./saturn-return-in-scorpio";
 // All articles organized by language
 
 import {
@@ -699,6 +700,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whyAmIAfraidOfCommitmentEn,
   whyDoIFeelStuckInMyCareerEn,
   saturnReturnGuideEn,
+  saturnReturnInScorpioEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
