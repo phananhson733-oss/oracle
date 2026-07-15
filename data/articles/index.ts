@@ -358,6 +358,7 @@ import { saturnReturnInScorpioEn } from "./saturn-return-in-scorpio";
 import { secondSaturnReturnEn } from "./second-saturn-return";
 import { codyBellingerBirthChartEn } from "./cody-bellinger-birth-chart";
 import { saturnReturnAge29En } from "./saturn-return-age-29";
+import { saturnReturnInCapricornEn } from "./saturn-return-in-capricorn";
 // All articles organized by language
 
 import {
@@ -707,6 +708,7 @@ const ARTICLES_EN: WikiArticle[] = [
   secondSaturnReturnEn,
   codyBellingerBirthChartEn,
   saturnReturnAge29En,
+  saturnReturnInCapricornEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

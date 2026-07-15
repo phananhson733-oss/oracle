@@ -842,6 +842,7 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'saturn-return-age-29',
+  'saturn-return-in-capricorn',
   'cody-bellinger-birth-chart',
   'second-saturn-return',
   'saturn-return-in-scorpio',
