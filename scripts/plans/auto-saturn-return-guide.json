@@ -1,0 +1,103 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-guide": {
+      "hero": {
+        "prompt": "A vast painterly astronomical scene: the ringed planet Saturn dominates the upper portion of the canvas, its luminous gold-dusted rings arcing wide across a deep indigo-to-near-black sky (#16112c fading to #0b0a1b), soft gold accents (#d4af6a) glowing along the ring edges. A single luminous orbital trail sweeps three gentle returning arcs through the teal-and-gold nebula wash below the planet, curving back to its own origin point to evoke the three-pass cycle of a planetary homecoming. A lone silhouette stands at the lower-center of the composition, back to the viewer, facing the ringed giant overhead — evoking a quiet life threshold. Scattered constellations and nebula wisps fill the background. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Painterly night scene: ringed Saturn in indigo sky, a lone silhouette below gazing up at the planet's three-arc orbital return path"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "Five Signs You're in Your Saturn Return Window",
+          "altEn": "Infographic listing five markers of the Saturn Return window: age band, recurring theme, wave pressure, urgent decisions, natal Saturn's house",
+          "items": [
+            {
+              "nameEn": "Age Window",
+              "subEn": "You're in the 27–30 or 57–60 band"
+            },
+            {
+              "nameEn": "Recurring Theme",
+              "subEn": "Same topic resurfaces across several months, not just a week"
+            },
+            {
+              "nameEn": "Wave Pressure",
+              "subEn": "Intensity arrives in three waves — builds, eases, and returns"
+            },
+            {
+              "nameEn": "Non-Negotiable Decisions",
+              "subEn": "Choices you delayed around commitment feel suddenly urgent"
+            },
+            {
+              "nameEn": "Saturn's House Arena",
+              "subEn": "Strain clusters in career, partnership, home, or daily routines"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Saturn Return vs Saturn Square",
+          "titleEn": "Saturn Return vs Saturn Square: Key Differences",
+          "altEn": "Side-by-side comparison of Saturn Return and Saturn Square covering orbit angle, timing, duration, and what each transit asks of you",
+          "columns": [
+            {
+              "nameEn": "Saturn Return",
+              "linesEn": [
+                "Full 360° homecoming — Saturn back at natal position",
+                "First window ages 27–30, second ages 57–60",
+                "Three exact passes over roughly 2.5 years",
+                "Asks you to rebuild an entire life chapter"
+              ]
+            },
+            {
+              "nameEn": "Saturn Square",
+              "linesEn": [
+                "90° angle to natal Saturn — mid-cycle tension point",
+                "Hits near ages 7, 22, 37, and 51",
+                "Shorter, more contained pressure window",
+                "Asks you to adjust and correct course"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Saturn Return at a Glance",
+          "titleEn": "The Three-Pass Saturn Return Timeline",
+          "altEn": "Four-stage timeline of Saturn Return: first direct hit near age 28–29, retrograde recap, third direct hit closing near age 30, and second return ages 57–60",
+          "items": [
+            {
+              "labelEn": "Ages 28–29",
+              "titleEn": "First Direct Hit",
+              "noteEn": "Saturn reaches natal longitude; new pressure or responsibility lands"
+            },
+            {
+              "labelEn": "Months later",
+              "titleEn": "Retrograde Recap",
+              "noteEn": "Saturn backs over the same degree; a settled issue returns for a second look"
+            },
+            {
+              "labelEn": "Near age 30",
+              "titleEn": "Third Direct Hit",
+              "noteEn": "Saturn crosses the natal point a final time; a decision firms up and chapter closes"
+            },
+            {
+              "labelEn": "Ages 57–60",
+              "titleEn": "Second Return",
+              "noteEn": "Full cycle repeats; themes of legacy, retirement, and elder responsibility surface"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

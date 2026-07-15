@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" role="img" aria-label="">
+  <defs>
+    <linearGradient id="saturnreturnguide2zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturnreturnguide2zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide2zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide2zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide2zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnreturnguide2zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="277" rx="22" fill="url(#saturnreturnguide2zh-panel)"/>
+  <ellipse cx="198" cy="67" rx="380" ry="95" fill="url(#saturnreturnguide2zh-neb1)"/>
+  <ellipse cx="623" cy="224" rx="334" ry="90" fill="url(#saturnreturnguide2zh-neb2)"/>
+  <circle cx="356.6" cy="199.4" r="0.74" fill="#cfc8ea" opacity="0.33"/><circle cx="331.3" cy="167.5" r="0.56" fill="#cfc8ea" opacity="0.12"/><circle cx="645.9" cy="18.9" r="1.26" fill="#cfc8ea" opacity="0.20"/><circle cx="138.3" cy="223.9" r="0.77" fill="#cfc8ea" opacity="0.37"/><circle cx="679.4" cy="17.3" r="0.71" fill="#cfc8ea" opacity="0.32"/><circle cx="112.5" cy="234.5" r="1.49" fill="#cfc8ea" opacity="0.42"/><circle cx="686.6" cy="71.8" r="1.19" fill="#cfc8ea" opacity="0.26"/><circle cx="326.5" cy="261.6" r="1.44" fill="#cfc8ea" opacity="0.34"/><circle cx="308.2" cy="105.1" r="0.43" fill="#cfc8ea" opacity="0.25"/><circle cx="186.9" cy="90.5" r="1.17" fill="#cfc8ea" opacity="0.24"/><circle cx="656.6" cy="176.9" r="0.44" fill="#cfc8ea" opacity="0.20"/><circle cx="372.4" cy="129.9" r="1.54" fill="#cfc8ea" opacity="0.22"/><circle cx="710.5" cy="233.3" r="0.88" fill="#cfc8ea" opacity="0.18"/><circle cx="121.9" cy="233.0" r="0.49" fill="#cfc8ea" opacity="0.44"/><circle cx="630.0" cy="216.7" r="1.06" fill="#cfc8ea" opacity="0.15"/><circle cx="662.9" cy="98.2" r="0.85" fill="#cfc8ea" opacity="0.31"/><circle cx="28.7" cy="191.6" r="1.10" fill="#cfc8ea" opacity="0.38"/><circle cx="570.0" cy="19.3" r="0.43" fill="#cfc8ea" opacity="0.29"/><circle cx="584.2" cy="255.3" r="0.82" fill="#cfc8ea" opacity="0.17"/><circle cx="292.1" cy="235.0" r="1.05" fill="#cfc8ea" opacity="0.45"/><circle cx="35.0" cy="31.0" r="1.50" fill="#cfc8ea" opacity="0.42"/><circle cx="323.7" cy="151.1" r="1.37" fill="#cfc8ea" opacity="0.29"/><circle cx="44.3" cy="171.5" r="1.41" fill="#cfc8ea" opacity="0.32"/><circle cx="166.8" cy="235.3" r="1.02" fill="#cfc8ea" opacity="0.47"/><path d="M 309.109393209219 247.1 L 309.7 250.4 L 313.0 250.97313596401364 L 309.7 251.6 L 309.109393209219 254.9 L 308.5 251.6 L 305.2 250.97313596401364 L 308.5 250.4 Z" fill="#f6e6bf" opacity="0.781695885467343"/><path d="M 294.04242166131735 81.9 L 294.6 84.7 L 297.4 85.22921524662524 L 294.6 85.8 L 294.04242166131735 88.5 L 293.5 85.8 L 290.7 85.22921524662524 L 293.5 84.7 Z" fill="#f6e6bf" opacity="0.5728668568423018"/><path d="M 685.0461334735155 17.7 L 685.5 20.2 L 688.0 20.638361104764044 L 685.5 21.1 L 685.0461334735155 23.6 L 684.6 21.1 L 682.1 20.638361104764044 L 684.6 20.2 Z" fill="#f6e6bf" opacity="0.5707919806940481"/><path d="M 483.0973028615117 26.6 L 483.6 29.4 L 486.4 29.889514540322125 L 483.6 30.4 L 483.0973028615117 33.2 L 482.6 30.4 L 479.8 29.889514540322125 L 482.6 29.4 Z" fill="#f6e6bf" opacity="0.7931730497395619"/><path d="M 359.22321063280106 250.1 L 359.7 252.6 L 362.1 253.0317087182775 L 359.7 253.5 L 359.22321063280106 256.0 L 358.8 253.5 L 356.3 253.0317087182775 L 358.8 252.6 Z" fill="#f6e6bf" opacity="0.5871716192690656"/><path d="M 679.4 17.3 L 656.6 176.9 L 584.2 255.3 L 44.3 171.5 L 166.8 235.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="277" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="266" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 260.8 L 16.5 263.5 L 19.2 264 L 16.5 264.5 L 16 267.2 L 15.5 264.5 L 12.8 264 L 15.5 263.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 260.8 L 744.5 263.5 L 747.2 264 L 744.5 264.5 L 744 267.2 L 743.5 264.5 L 740.8 264 L 743.5 263.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#saturnreturnguide2zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#saturnreturnguide2zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="86" x2="92" y2="218" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="86" r="13.0" fill="url(#saturnreturnguide2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="86" r="8" fill="url(#saturnreturnguide2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="83.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 82.0 L 92.6 85.4 L 96.0 86 L 92.6 86.6 L 92 90.0 L 91.4 86.6 L 88.0 86 L 91.4 85.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="91.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="130" r="13.0" fill="url(#saturnreturnguide2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="130" r="8" fill="url(#saturnreturnguide2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="127.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 126.0 L 92.6 129.4 L 96.0 130 L 92.6 130.6 L 92 134.0 L 91.4 130.6 L 88.0 130 L 91.4 129.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="135.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="174" r="13.0" fill="url(#saturnreturnguide2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="174" r="8" fill="url(#saturnreturnguide2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="171.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 170.0 L 92.6 173.4 L 96.0 174 L 92.6 174.6 L 92 178.0 L 91.4 174.6 L 88.0 174 L 91.4 173.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="179.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="218" r="13.0" fill="url(#saturnreturnguide2zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="218" r="8" fill="url(#saturnreturnguide2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="215.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 214.0 L 92.6 217.4 L 96.0 218 L 92.6 218.6 L 92 222.0 L 91.4 218.6 L 88.0 218 L 91.4 217.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <path d="M 280.025 251.4 L 280.4 253.6 L 282.6 254 L 280.4 254.4 L 280.025 256.6 L 279.6 254.4 L 277.4 254 L 279.6 253.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="258" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 251.4 L 480.4 253.6 L 482.6 254 L 480.4 254.4 L 479.975 256.6 L 479.6 254.4 L 477.4 254 L 479.6 253.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
