@@ -355,6 +355,7 @@ import { whyAmIAfraidOfCommitmentEn } from "./why-am-i-afraid-of-commitment";
 import { whyDoIFeelStuckInMyCareerEn } from "./why-do-i-feel-stuck-in-my-career";
 import { saturnReturnGuideEn } from "./saturn-return-guide";
 import { saturnReturnInScorpioEn } from "./saturn-return-in-scorpio";
+import { saturnReturnAge29En } from "./saturn-return-age-29";
 // All articles organized by language
 
 import {
@@ -701,6 +702,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whyDoIFeelStuckInMyCareerEn,
   saturnReturnGuideEn,
   saturnReturnInScorpioEn,
+  saturnReturnAge29En,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

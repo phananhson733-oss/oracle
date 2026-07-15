@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-age-29": {
+      "hero": {
+        "prompt": "A vast dark cosmos showing Saturn — rings tilted and glowing with soft gold — arriving at the precise celestial point of a faint natal marker rendered as a crystalline golden node, its orbit arc sweeping across the entire deep indigo sky; below, a solitary young adult seen from behind stands at the edge of a night-lit urban balcony, small against the immense ringed planet above, light trails of Saturn's 29-year orbit curving around them like a returning tide; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn's glowing rings arc through deep indigo space as a figure stands below, marking the planet's 29-year return to its natal position"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Saturn Return vs Saturn Square",
+          "titleEn": "Saturn Return vs. Saturn Square",
+          "altEn": "Side-by-side comparison of Saturn Return and Saturn Square transits showing scale, timing, and life impact",
+          "columns": [
+            {
+              "nameEn": "Saturn Return (Age 29)",
+              "linesEn": [
+                "One full orbit — Saturn back on its natal position",
+                "Happens only near ages 29 and 58",
+                "Complete-cycle review: commit and take ownership at once",
+                "Touches several life areas together",
+                "Feels heavier; demands a bigger-picture reset"
+              ]
+            },
+            {
+              "nameEn": "Saturn Square",
+              "linesEn": [
+                "Partial angle Saturn makes to its birth position",
+                "Occurs around ages 7, 14, 21, and 36",
+                "Mid-course tension: presses one area without full rebuild",
+                "More contained in scope",
+                "One manageable adjustment at a time"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "5 Signals to Watch in Your Saturn Return Window",
+          "altEn": "Five observable signals marking the active Saturn return window from age 28 to 30",
+          "items": [
+            {
+              "nameEn": "Age Window",
+              "subEn": "The core pass runs roughly from 28 to 30; note where you sit inside that band."
+            },
+            {
+              "nameEn": "Repeat Pressure",
+              "subEn": "A work, money, or commitment issue you keep postponing starts to demand a decision."
+            },
+            {
+              "nameEn": "Structural Questions",
+              "subEn": "You catch yourself asking whether a career, city, or relationship is actually yours to keep."
+            },
+            {
+              "nameEn": "Reality Checks",
+              "subEn": "Shortcuts and half-built plans tend to show their cracks now rather than later."
+            },
+            {
+              "nameEn": "A Pull Toward the Durable",
+              "subEn": "Play can feel thinner, and you may notice a wish for work that lasts."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
