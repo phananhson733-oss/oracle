@@ -24,9 +24,9 @@ export const saturnReturnAge29En: WikiArticle = {
 
 ## What Is Saturn Return Age 29?
 
-Saturn return age 29 is the moment when the planet Saturn circles back to the exact zodiac position it occupied at your birth. Because the planet moves slowly, this return lands near ages 29 to 30, which is why the label points to the late twenties. According to NASA, Saturn takes about 29.5 years to complete one orbit, which is why the return recurs near ages 29 and again close to 58. Astrologers treat it as an interpretive frame for reviewing adult life, not a prediction locked into your future — a reading tradition shaped by writers such as Dane Rudhyar, who mapped planetary cycles as stages of personal development rather than fate. You can place it beside the broader [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), which shows how any transit sits inside the whole chart. In plain terms, the first Saturn return reads as **an adult review of structure, commitment, and responsibility**.
+Saturn return age 29 is the moment when the planet Saturn circles back to the exact zodiac position it occupied at your birth. Because the planet moves slowly, this return lands near ages 29 to 30, which is why the label points to the late twenties. According to NASA, Saturn takes about 29.5 years to complete one orbit, which is why the return recurs near ages 29 and again close to 59. Astrologers treat it as an interpretive frame for reviewing adult life, not a prediction locked into your future — a reading tradition shaped by writers such as Dane Rudhyar, who mapped planetary cycles as stages of personal development rather than fate. You can place it beside the broader [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), which shows how any transit sits inside the whole chart. In plain terms, the first Saturn return reads as **an adult review of structure, commitment, and responsibility**.
 
-- Recurs near age 29, then once more close to 58, following Saturn's orbit
+- Recurs near age 29, then once more close to 59, following Saturn's orbit
 - Read as a checkpoint on the work, boundaries, and promises you have set
 - Often blurred with a vague "quarter-life crisis" instead of a bounded transit
 
@@ -48,7 +48,7 @@ The point is not to predict a bad year. A grounded reading helps you notice whic
 
 ## Saturn Return vs Saturn Square
 
-saturn return age 29 differs from a Saturn square, and mixing the two is one of the most common ways online coverage blurs its real limits. A Saturn return is one full orbit — Saturn back on your natal Saturn — and it happens near 29, 58, and again near 88. A Saturn square is a partial angle Saturn makes to its birth spot several times along the way, around ages 7, 21–22, 36–37, and 51 (see the [explainer on the square aspect in astrology](/en/wiki/square-astrology)). They rhyme in theme but differ in scale.
+saturn return age 29 differs from a Saturn square, and mixing the two is one of the most common ways online coverage blurs its real limits. A Saturn return is one full orbit — Saturn back on your natal Saturn — and it happens near 29, 59, and again near 88. A Saturn square is a partial angle Saturn makes to its birth spot several times along the way, around ages 7, 22, 37, and 51–52 (see the [explainer on the square aspect in astrology](/en/wiki/square-astrology)). They rhyme in theme but differ in scale.
 
 Here is how each one works and where the trade-off sits. The return works as a complete-cycle review: it asks you to consolidate, commit, and take ownership of a whole structure at once. The square works as a mid-course tension point: it presses on one area without demanding you rebuild everything. To get the return's clarity about a full life stage, you sacrifice the smaller, more contained scope of a square — a return tends to touch several areas together, so it feels heavier. Choosing to read a late-twenties wobble as the full return rather than a passing square gets you a bigger-picture reset, but you lose the option of treating it as one manageable adjustment.
 
@@ -88,7 +88,7 @@ Popular write-ups tend to stretch the first Saturn return well past its real sco
 | Core cycle | Saturn completes one orbit back to its birth position | Your natal Saturn's sign and house | Falls near ages 29–30 for almost everyone |
 | Main theme | Reviews commitment, structure, and responsibility | The house Saturn sits in flags the life area | Recurring pressure in one domain you keep avoiding |
 | Duration | Builds and releases across roughly two years | Timing shifts with natal Saturn's exact degree | Shortcuts show cracks, then the ground settles |
-| Repeat | Returns once more near age 58 | The same natal Saturn point, second pass | A later review of what you built the first time |
+| Repeat | Returns once more near age 59 | The same natal Saturn point, second pass | A later review of what you built the first time |
 
 ## Common Questions About the Saturn Return at 29
 
