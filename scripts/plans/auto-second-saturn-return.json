@@ -1,0 +1,84 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "second-saturn-return": {
+      "hero": {
+        "prompt": "Saturn hanging vast and luminous in a deep indigo-to-near-black cosmos (#16112c fading to #0b0a1b), its iconic rings rendered in soft gold (#d4af6a) and teal, a faint golden orbital arc curving across the star field to complete its second full loop back to origin — two slow concentric circles of pale light tracing the planet's return path, teal-and-gold nebula wash drifting behind Saturn's bulk, ancient celestial gravity, rich painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn with golden rings in deep indigo space, its orbital arc completing a second full cycle, symbolizing the second Saturn return near age 60"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Second Saturn Return vs Uranus Opposition",
+          "titleEn": "Three Late-Life Transits Compared",
+          "altEn": "Comparison of Saturn return, Uranus opposition, and Chiron return showing how each transit works and its core theme",
+          "columns": [
+            {
+              "nameEn": "Saturn Return (~58–60)",
+              "linesEn": [
+                "Works through consolidation",
+                "Reviews structure and commitments",
+                "Clarity on what to keep or release",
+                "Sober and clarifying in tone"
+              ]
+            },
+            {
+              "nameEn": "Uranus Opposition (~early 40s)",
+              "linesEn": [
+                "Works through disruption",
+                "Pulls toward restlessness and change",
+                "Permission to break routine",
+                "Restless and jolt-like in tone"
+              ]
+            },
+            {
+              "nameEn": "Chiron Return (~50)",
+              "linesEn": [
+                "Works through old wounds",
+                "Surfaces long-standing sensitivities",
+                "Depth and themes of repair",
+                "Introspective and healing in tone"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Second Saturn Return in Your Timing",
+          "titleEn": "Five Observable Markers of the Second Saturn Return",
+          "altEn": "Five sequential signals marking the second Saturn return window, from a pull to simplify to a steadier mood than the forties",
+          "items": [
+            {
+              "nameEn": "A Pull to Simplify",
+              "subEn": "Shedding roles, possessions, or obligations that no longer earn their place in your day"
+            },
+            {
+              "nameEn": "Questions About Legacy",
+              "subEn": "Conversations turn toward what you want the next stretch of life to stand for, not just what comes next month"
+            },
+            {
+              "nameEn": "Structural Decisions Cluster",
+              "subEn": "Retirement timing, downsizing, estate planning, or a late career pivot often land in the same span"
+            },
+            {
+              "nameEn": "Old Commitments Get Audited",
+              "subEn": "A marriage, a business, or a long friendship may ask to be renewed on honest terms or gently released"
+            },
+            {
+              "nameEn": "A Steadier Mood Than the Forties",
+              "subEn": "Where the Uranus opposition felt restless, this passage reads as sober and clarifying rather than chaotic"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
