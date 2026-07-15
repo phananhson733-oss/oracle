@@ -356,6 +356,7 @@ import { whyDoIFeelStuckInMyCareerEn } from "./why-do-i-feel-stuck-in-my-career"
 import { saturnReturnGuideEn } from "./saturn-return-guide";
 import { saturnReturnInScorpioEn } from "./saturn-return-in-scorpio";
 import { secondSaturnReturnEn } from "./second-saturn-return";
+import { codyBellingerBirthChartEn } from "./cody-bellinger-birth-chart";
 // All articles organized by language
 
 import {
@@ -703,6 +704,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnGuideEn,
   saturnReturnInScorpioEn,
   secondSaturnReturnEn,
+  codyBellingerBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

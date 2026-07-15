@@ -1,0 +1,87 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "cody-bellinger-birth-chart": {
+      "hero": {
+        "prompt": "A painterly editorial portrait of a tall athletic baseball outfielder in a navy and gold uniform, bat lowered at his side, standing on an open outfield under a vast Cancer-season night sky, soft gold stadium lights merging with teal-and-gold nebula light pouring from above, the faint Cancer crab constellation traced in warm gold stars overhead, a mood of homecoming and quiet emotional depth, the player's face calm and centered within the frame for safe square-crop, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of a baseball outfielder under a Cancer night sky with teal and gold nebula light"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Birth Chart Placement by Placement",
+          "titleEn": "Reading the Cody Bellinger Chart Step by Step",
+          "altEn": "Five-step sequence for reading the Cody Bellinger birth chart from Cancer cluster to nodes",
+          "items": [
+            {
+              "nameEn": "Start with the Cancer Cluster",
+              "subEn": "Sun, Mercury, and Venus in Cancer — thinking and connecting through feeling, memory, and home"
+            },
+            {
+              "nameEn": "Hold the Moon Loosely",
+              "subEn": "Aquarius Moon is probable but sits near a sign boundary without a confirmed birth time"
+            },
+            {
+              "nameEn": "Add the Working Planets",
+              "subEn": "Mars in Virgo for precise effort; Jupiter in Sagittarius for big-picture optimism"
+            },
+            {
+              "nameEn": "Read the Nodes as a Theme",
+              "subEn": "Scorpio North Node paired with Taurus South Node — a pull from comfort toward depth"
+            },
+            {
+              "nameEn": "Stop at the Angles",
+              "subEn": "Ascendant, Midheaven, and houses cannot be stated without a confirmed birth time"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Cody Bellinger Chart at a Glance",
+          "titleEn": "Cody Bellinger Birth Chart Placements at a Glance",
+          "altEn": "Comparison of five Cody Bellinger chart placements by placement, what it suggests, and element",
+          "columns": [
+            {
+              "nameEn": "Placement",
+              "linesEn": [
+                "Cancer Sun",
+                "Cancer Stellium (Sun, Mercury, Venus)",
+                "Aquarius Moon (approx)",
+                "Virgo Mars",
+                "Scorpio North Node"
+              ]
+            },
+            {
+              "nameEn": "What It Suggests",
+              "linesEn": [
+                "Core identity filtered through feeling and belonging",
+                "Thinking and affection both run through emotion",
+                "Emotional needs met through independence and distance",
+                "Effort expressed as precision and refinement",
+                "Growth theme pointing toward depth and transformation"
+              ]
+            },
+            {
+              "nameEn": "Element",
+              "linesEn": [
+                "Water",
+                "Water",
+                "Air",
+                "Earth",
+                "Water"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
