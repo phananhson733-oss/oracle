@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 561" role="img" aria-label="Saturn Return vs. Saturn Square">
+  <defs>
+    <linearGradient id="saturnreturnage290en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturnreturnage290en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnage290en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnage290en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnage290en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnreturnage290en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="url(#saturnreturnage290en-panel)"/>
+  <ellipse cx="198" cy="135" rx="380" ry="191" fill="url(#saturnreturnage290en-neb1)"/>
+  <ellipse cx="623" cy="449" rx="334" ry="180" fill="url(#saturnreturnage290en-neb2)"/>
+  <circle cx="544.2" cy="260.5" r="0.99" fill="#cfc8ea" opacity="0.33"/><circle cx="520.2" cy="544.3" r="0.52" fill="#cfc8ea" opacity="0.53"/><circle cx="205.2" cy="472.2" r="1.34" fill="#cfc8ea" opacity="0.52"/><circle cx="244.1" cy="394.3" r="1.24" fill="#cfc8ea" opacity="0.20"/><circle cx="246.5" cy="487.4" r="1.56" fill="#cfc8ea" opacity="0.29"/><circle cx="485.8" cy="345.5" r="0.61" fill="#cfc8ea" opacity="0.13"/><circle cx="326.0" cy="435.7" r="1.62" fill="#cfc8ea" opacity="0.26"/><circle cx="725.4" cy="169.4" r="0.48" fill="#cfc8ea" opacity="0.49"/><circle cx="547.4" cy="421.5" r="0.93" fill="#cfc8ea" opacity="0.53"/><circle cx="418.8" cy="211.7" r="0.48" fill="#cfc8ea" opacity="0.50"/><circle cx="323.2" cy="224.3" r="0.83" fill="#cfc8ea" opacity="0.35"/><circle cx="608.7" cy="155.0" r="1.17" fill="#cfc8ea" opacity="0.19"/><circle cx="280.8" cy="182.7" r="1.59" fill="#cfc8ea" opacity="0.27"/><circle cx="208.0" cy="323.0" r="0.56" fill="#cfc8ea" opacity="0.21"/><circle cx="307.2" cy="169.2" r="0.89" fill="#cfc8ea" opacity="0.37"/><circle cx="83.3" cy="361.5" r="1.52" fill="#cfc8ea" opacity="0.33"/><circle cx="726.5" cy="535.1" r="1.46" fill="#cfc8ea" opacity="0.19"/><circle cx="247.1" cy="328.3" r="1.69" fill="#cfc8ea" opacity="0.28"/><circle cx="276.5" cy="364.6" r="1.46" fill="#cfc8ea" opacity="0.28"/><circle cx="424.9" cy="340.8" r="1.40" fill="#cfc8ea" opacity="0.32"/><circle cx="346.6" cy="460.1" r="0.77" fill="#cfc8ea" opacity="0.12"/><circle cx="253.2" cy="271.3" r="1.45" fill="#cfc8ea" opacity="0.45"/><circle cx="722.5" cy="79.9" r="0.70" fill="#cfc8ea" opacity="0.44"/><circle cx="374.2" cy="457.5" r="1.33" fill="#cfc8ea" opacity="0.16"/><circle cx="261.4" cy="222.3" r="0.60" fill="#cfc8ea" opacity="0.15"/><circle cx="521.2" cy="186.2" r="1.18" fill="#cfc8ea" opacity="0.23"/><circle cx="136.2" cy="270.7" r="0.68" fill="#cfc8ea" opacity="0.43"/><circle cx="222.8" cy="289.9" r="1.53" fill="#cfc8ea" opacity="0.50"/><circle cx="194.8" cy="206.9" r="1.45" fill="#cfc8ea" opacity="0.24"/><circle cx="565.1" cy="420.3" r="1.46" fill="#cfc8ea" opacity="0.21"/><circle cx="513.6" cy="68.5" r="0.67" fill="#cfc8ea" opacity="0.33"/><circle cx="556.2" cy="313.9" r="0.92" fill="#cfc8ea" opacity="0.47"/><circle cx="122.7" cy="433.1" r="0.45" fill="#cfc8ea" opacity="0.15"/><circle cx="586.8" cy="39.8" r="1.68" fill="#cfc8ea" opacity="0.41"/><circle cx="493.7" cy="278.8" r="1.06" fill="#cfc8ea" opacity="0.28"/><circle cx="447.8" cy="262.9" r="1.39" fill="#cfc8ea" opacity="0.36"/><circle cx="232.4" cy="420.3" r="1.51" fill="#cfc8ea" opacity="0.23"/><circle cx="354.4" cy="475.7" r="1.22" fill="#cfc8ea" opacity="0.27"/><circle cx="106.6" cy="202.7" r="0.69" fill="#cfc8ea" opacity="0.33"/><circle cx="84.1" cy="49.4" r="0.94" fill="#cfc8ea" opacity="0.30"/><circle cx="77.6" cy="284.4" r="1.26" fill="#cfc8ea" opacity="0.48"/><circle cx="563.5" cy="222.0" r="0.70" fill="#cfc8ea" opacity="0.47"/><circle cx="76.3" cy="544.5" r="1.68" fill="#cfc8ea" opacity="0.46"/><circle cx="472.7" cy="131.2" r="1.36" fill="#cfc8ea" opacity="0.16"/><circle cx="206.7" cy="323.6" r="0.79" fill="#cfc8ea" opacity="0.51"/><circle cx="158.7" cy="362.4" r="1.24" fill="#cfc8ea" opacity="0.33"/><circle cx="153.9" cy="63.0" r="1.28" fill="#cfc8ea" opacity="0.12"/><path d="M 427.7315747998655 490.1 L 428.3 493.2 L 431.5 493.8473293457646 L 428.3 494.4 L 427.7315747998655 497.6 L 427.1 494.4 L 424.0 493.8473293457646 L 427.1 493.2 Z" fill="#f6e6bf" opacity="0.7396304976427928"/><path d="M 76.44647451117635 116.2 L 76.9 118.8 L 79.5 119.3137714585755 L 76.9 119.8 L 76.44647451117635 122.4 L 76.0 119.8 L 73.4 119.3137714585755 L 76.0 118.8 Z" fill="#f6e6bf" opacity="0.7476721427636221"/><path d="M 366.0563974492252 325.1 L 366.5 327.5 L 368.9 327.9587122716475 L 366.5 328.4 L 366.0563974492252 330.8 L 365.6 328.4 L 363.2 327.9587122716475 L 365.6 327.5 Z" fill="#f6e6bf" opacity="0.5069353299448267"/><path d="M 260.8429121412337 409.9 L 261.3 412.0 L 263.4 412.4243610764388 L 261.3 412.8 L 260.8429121412337 415.0 L 260.4 412.8 L 258.3 412.4243610764388 L 260.4 412.0 Z" fill="#f6e6bf" opacity="0.65807011697907"/><path d="M 94.34488081559539 409.9 L 94.8 412.3 L 97.2 412.7228498023469 L 94.8 413.2 L 94.34488081559539 415.5 L 93.9 413.2 L 91.5 412.7228498023469 L 93.9 412.3 Z" fill="#f6e6bf" opacity="0.7818400107556953"/><path d="M 544.2 260.5 L 485.8 345.5 L 253.2 271.3 L 77.6 284.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="547" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 541.8 L 16.5 544.5 L 19.2 545 L 16.5 545.5 L 16 548.2 L 15.5 545.5 L 12.8 545 L 15.5 544.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 541.8 L 744.5 544.5 L 747.2 545 L 744.5 545.5 L 744 548.2 L 743.5 545.5 L 740.8 545 L 743.5 544.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Saturn Return vs. Saturn Square</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturnreturnage290en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturnreturnage290en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="201.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="201.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Saturn Return (Age 29)</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">One full orbit — Saturn back on its natal position</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Happens only near ages 29 and 58</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Complete-cycle review: commit and take ownership at once</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Touches several life areas together</text>
+  <path d="M 70 273.8 L 70.5 276.5 L 73.2 277 L 70.5 277.5 L 70 280.2 L 69.5 277.5 L 66.8 277 L 69.5 276.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="282.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Feels heavier; demands a bigger-picture reset</text>
+  <path d="M 380 308.5 L 380.7 312.3 L 384.5 313 L 380.7 313.7 L 380 317.5 L 379.3 313.7 L 375.5 313 L 379.3 312.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="326" width="668" height="201.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="326" width="3.5" height="201.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 335.6 L 48.3 338.5 L 51.1 339 L 48.3 339.5 L 47.75 342.4 L 47.2 339.5 L 44.4 339 L 47.2 338.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="355.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Saturn Square</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Partial angle Saturn makes to its birth position</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Occurs around ages 7, 21, and 36</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Mid-course tension: presses one area without full rebuild</text>
+  <path d="M 70 471.8 L 70.5 474.5 L 73.2 475 L 70.5 475.5 L 70 478.2 L 69.5 475.5 L 66.8 475 L 69.5 474.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="480.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">More contained in scope</text>
+  <path d="M 70 500.8 L 70.5 503.5 L 73.2 504 L 70.5 504.5 L 70 507.2 L 69.5 504.5 L 66.8 504 L 69.5 503.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="509.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">One manageable adjustment at a time</text>
+  <path d="M 202.22749999999988 532.4 L 202.6 534.6 L 204.8 535 L 202.6 535.4 L 202.22749999999988 537.6 L 201.8 535.4 L 199.6 535 L 201.8 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="539" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 532.4 L 558.2 534.6 L 560.4 535 L 558.2 535.4 L 557.7725000000002 537.6 L 557.4 535.4 L 555.2 535 L 557.4 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
