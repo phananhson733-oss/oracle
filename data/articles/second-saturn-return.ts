@@ -38,7 +38,7 @@ The second Saturn return matters because it lands at a life stage where the unde
 
 ### Where the value shows up
 
-In my five years applying pattern-recognition frameworks to chart structure, the charts that read most clearly at this age belong to people who can name what they built on purpose versus what they inherited or drifted into. That single distinction is where the self-awareness payoff sits. You might notice which commitments still fit your life and which you keep only out of momentum, and you may start to separate the roles you chose from the ones that chose you. A person who spent thirty years in a family business, for instance, may use this window to ask whether staying is a genuine choice or simply the path of least resistance — and either answer can bring relief once it is named.
+In my work applying pattern-recognition frameworks to chart structure, the charts that read most clearly at this age belong to people who can name what they built on purpose versus what they inherited or drifted into. That single distinction is where the self-awareness payoff sits. You might notice which commitments still fit your life and which you keep only out of momentum, and you may start to separate the roles you chose from the ones that chose you. A person who spent thirty years in a family business, for instance, may use this window to ask whether staying is a genuine choice or simply the path of least resistance — and either answer can bring relief once it is named.
 
 ### What the tradition points to
 
