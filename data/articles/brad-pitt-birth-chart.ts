@@ -23,7 +23,7 @@ export const bradPittBirthChartEn: WikiArticle = {
 
 ## What Is Brad Pitt's Birth Chart?
 
-Brad Pitt's birth chart is a symbolic map of where the planets sat at the moment he was born on December 18, 1963, in Shawnee, Oklahoma. Astrologers read it the way any [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) reads placements — as archetypal themes, not a script that dictates a life — a stance rooted in the person-centered astrology Dane Rudhyar helped pioneer. The headline is **a Sagittarius Sun paired with a tight Capricorn stellium**. His Sun sits in restless, freedom-seeking Sagittarius while the Moon, Mercury, Venus, and Mars gather in disciplined Capricorn, blending wanderlust with hard structure. Because his exact birth time is not publicly documented, the rising sign, houses, and Midheaven cannot be confirmed, so this profile stays with the planetary signs that are reliable. Taken together, the chart sketches an archetype rather than a biography: an explorer's spirit tied to a builder's patience.
+Brad Pitt's birth chart is a symbolic map of where the planets sat at the moment he was born on December 18, 1963, in Shawnee, Oklahoma. Astrologers read it the way any [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) reads placements — as archetypal themes, not a script that dictates a life — a stance rooted in the person-centered astrology Dane Rudhyar helped pioneer. The headline is **a Sagittarius Sun paired with a tight Capricorn stellium**. His Sun sits in restless, freedom-seeking Sagittarius while the Moon, Mercury, Venus, and Mars gather in disciplined Capricorn, blending wanderlust with hard structure. Because his circulated birth time is not reliably verified, the rising sign, houses, and Midheaven cannot be confirmed, so this profile stays with the planetary signs that are reliable. Taken together, the chart sketches an archetype rather than a biography: an explorer's spirit tied to a builder's patience.
 
 - Leads with a Sagittarius Sun's appetite for adventure, meaning, and reinvention
 - Anchored by a four-planet Capricorn stellium built for patience and the long game
@@ -68,7 +68,7 @@ A few misreadings show up constantly around the Brad Pitt birth chart. Here is t
 
 1. **"The chart explains his fame and relationships."** It doesn't, and reading it that way is the biggest trap here. Astrology describes archetypal themes and tendencies, not causes; his choices, his work, and his circumstances remain entirely his own.
 2. **"He's just a Sagittarius."** The single Sun sign is catchy but incomplete. It misses the Capricorn stellium that arguably drives his disciplined, long-game side even more visibly than the fire-sign Sun does.
-3. **"His rising sign and houses are settled facts."** His birth time isn't public, so any confident Ascendant, Midheaven, or house placement is guesswork dressed up as certainty. Honest readings say so out loud rather than inventing a rising sign.
+3. **"His rising sign and houses are settled facts."** His birth time isn't reliably verified, so any confident Ascendant, Midheaven, or house placement is guesswork dressed up as certainty. Honest readings say so out loud rather than inventing a rising sign.
 4. **"Retrograde planets are flaws."** Uranus and Pluto retrograde in his chart are generational markers, shared by millions born in the same years. They read as internalized, reflective themes, not personal defects to fix.
 
 ## Brad Pitt's Chart at a Glance
@@ -96,7 +96,7 @@ It reads as a Sagittarius Sun's love of reinvention layered over a disciplined C
 
 **Can you read his chart without a birth time?**
 
-You can read the planetary signs, which are reliable, but not the rising sign, houses, or Midheaven. Those need a confirmed birth time that isn't publicly documented.
+You can read the planetary signs, which are reliable, but not the rising sign, houses, or Midheaven. Those need a confirmed birth time, and the circulated time remains unverified.
 
 **Why does his Capricorn stellium matter more than his Sun sign?**
 
