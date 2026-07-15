@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="Five Signs You're in Your Saturn Return Window">
+  <defs>
+    <linearGradient id="saturnreturnguide0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturnreturnguide0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnreturnguide0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#saturnreturnguide0en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#saturnreturnguide0en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#saturnreturnguide0en-neb2)"/>
+  <circle cx="144.8" cy="30.9" r="0.43" fill="#cfc8ea" opacity="0.15"/><circle cx="543.2" cy="169.6" r="1.35" fill="#cfc8ea" opacity="0.47"/><circle cx="445.9" cy="289.0" r="0.82" fill="#cfc8ea" opacity="0.48"/><circle cx="717.7" cy="346.3" r="1.32" fill="#cfc8ea" opacity="0.24"/><circle cx="40.8" cy="241.9" r="0.91" fill="#cfc8ea" opacity="0.25"/><circle cx="43.6" cy="346.1" r="1.11" fill="#cfc8ea" opacity="0.15"/><circle cx="557.8" cy="85.2" r="1.61" fill="#cfc8ea" opacity="0.17"/><circle cx="423.1" cy="384.1" r="1.08" fill="#cfc8ea" opacity="0.17"/><circle cx="443.9" cy="42.3" r="0.94" fill="#cfc8ea" opacity="0.50"/><circle cx="204.7" cy="41.1" r="1.52" fill="#cfc8ea" opacity="0.30"/><circle cx="699.8" cy="300.5" r="1.36" fill="#cfc8ea" opacity="0.30"/><circle cx="156.1" cy="46.4" r="0.51" fill="#cfc8ea" opacity="0.22"/><circle cx="96.7" cy="335.8" r="0.50" fill="#cfc8ea" opacity="0.20"/><circle cx="665.8" cy="171.5" r="0.78" fill="#cfc8ea" opacity="0.43"/><circle cx="335.1" cy="105.8" r="1.21" fill="#cfc8ea" opacity="0.33"/><circle cx="79.6" cy="163.3" r="1.48" fill="#cfc8ea" opacity="0.30"/><circle cx="666.5" cy="22.6" r="0.94" fill="#cfc8ea" opacity="0.33"/><circle cx="376.0" cy="32.0" r="1.63" fill="#cfc8ea" opacity="0.21"/><circle cx="372.5" cy="369.4" r="0.95" fill="#cfc8ea" opacity="0.27"/><circle cx="166.3" cy="279.5" r="0.58" fill="#cfc8ea" opacity="0.34"/><circle cx="510.0" cy="328.3" r="1.06" fill="#cfc8ea" opacity="0.49"/><circle cx="347.4" cy="357.6" r="1.27" fill="#cfc8ea" opacity="0.49"/><circle cx="302.2" cy="336.6" r="1.03" fill="#cfc8ea" opacity="0.44"/><circle cx="739.3" cy="347.8" r="1.56" fill="#cfc8ea" opacity="0.54"/><circle cx="139.8" cy="214.1" r="0.93" fill="#cfc8ea" opacity="0.25"/><circle cx="260.6" cy="206.1" r="1.03" fill="#cfc8ea" opacity="0.40"/><circle cx="508.3" cy="411.1" r="1.25" fill="#cfc8ea" opacity="0.13"/><circle cx="66.2" cy="158.0" r="1.13" fill="#cfc8ea" opacity="0.38"/><circle cx="130.9" cy="357.8" r="0.41" fill="#cfc8ea" opacity="0.49"/><circle cx="708.1" cy="14.5" r="1.27" fill="#cfc8ea" opacity="0.35"/><circle cx="520.8" cy="360.0" r="0.83" fill="#cfc8ea" opacity="0.38"/><circle cx="151.2" cy="111.4" r="1.09" fill="#cfc8ea" opacity="0.19"/><circle cx="355.4" cy="172.2" r="0.60" fill="#cfc8ea" opacity="0.32"/><circle cx="232.3" cy="380.7" r="1.06" fill="#cfc8ea" opacity="0.23"/><circle cx="351.9" cy="361.0" r="0.80" fill="#cfc8ea" opacity="0.26"/><circle cx="403.6" cy="100.6" r="1.29" fill="#cfc8ea" opacity="0.23"/><circle cx="52.2" cy="237.2" r="0.73" fill="#cfc8ea" opacity="0.49"/><path d="M 51.96692453697324 126.6 L 52.6 129.6 L 55.6 130.22742828563787 L 52.6 130.8 L 51.96692453697324 133.9 L 51.4 130.8 L 48.3 130.22742828563787 L 51.4 129.6 Z" fill="#f6e6bf" opacity="0.6133068139897659"/><path d="M 490.1141423396766 259.6 L 490.6 262.0 L 493.0 262.4716359258164 L 490.6 262.9 L 490.1141423396766 265.4 L 489.6 262.9 L 487.2 262.4716359258164 L 489.6 262.0 Z" fill="#f6e6bf" opacity="0.6935609510401264"/><path d="M 47.18377861753106 388.8 L 47.7 391.2 L 50.1 391.7185936796013 L 47.7 392.2 L 47.18377861753106 394.7 L 46.7 392.2 L 44.2 391.7185936796013 L 46.7 391.2 Z" fill="#f6e6bf" opacity="0.7189605565043167"/><path d="M 479.8227278254926 399.2 L 480.3 401.8 L 482.9 402.24991895002313 L 480.3 402.7 L 479.8227278254926 405.3 L 479.3 402.7 L 476.7 402.24991895002313 L 479.3 401.8 Z" fill="#f6e6bf" opacity="0.7514474209630861"/><path d="M 232.45617421343923 133.9 L 233.0 136.6 L 235.6 137.08000578195788 L 233.0 137.6 L 232.45617421343923 140.2 L 232.0 137.6 L 229.3 137.08000578195788 L 232.0 136.6 Z" fill="#f6e6bf" opacity="0.5419964618282392"/><path d="M 40.8 241.9 L 204.7 41.1 L 96.7 335.8 L 665.8 171.5 L 260.6 206.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signs You're in Your Saturn Return Window</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturnreturnguide0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturnreturnguide0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#saturnreturnguide0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#saturnreturnguide0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Age Window</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">You're in the 27–30 or 57–60 band</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#saturnreturnguide0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#saturnreturnguide0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Recurring Theme</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Same topic resurfaces across several months, not just a week</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#saturnreturnguide0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#saturnreturnguide0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Wave Pressure</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Intensity arrives in three waves — builds, eases, and returns</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#saturnreturnguide0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#saturnreturnguide0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Non-Negotiable Decisions</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Choices you delayed around commitment feel suddenly urgent</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#saturnreturnguide0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#saturnreturnguide0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Saturn's House Arena</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Strain clusters in career, partnership, home, or daily routines</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
