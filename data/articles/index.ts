@@ -357,6 +357,7 @@ import { saturnReturnGuideEn } from "./saturn-return-guide";
 import { saturnReturnInScorpioEn } from "./saturn-return-in-scorpio";
 import { secondSaturnReturnEn } from "./second-saturn-return";
 import { codyBellingerBirthChartEn } from "./cody-bellinger-birth-chart";
+import { bradPittBirthChartEn } from "./brad-pitt-birth-chart";
 // All articles organized by language
 
 import {
@@ -705,6 +706,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnInScorpioEn,
   secondSaturnReturnEn,
   codyBellingerBirthChartEn,
+  bradPittBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

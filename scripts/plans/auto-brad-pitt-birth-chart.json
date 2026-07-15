@@ -1,0 +1,73 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "brad-pitt-birth-chart": {
+      "hero": {
+        "prompt": "Painterly editorial portrait of a ruggedly handsome blond American male actor in his prime, standing against a vast indigo night sky, wearing an open-collar casual shirt, the Sagittarius archer constellation traced in faint gold lines above one shoulder and a Capricorn sea-goat silhouette glowing in teal mist on the other side, soft gold starlight illuminating his jaw and cheekbones, the composition evoking both restless wanderlust and quiet determined ambition in one continuous scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of Brad Pitt amid Sagittarius archer and Capricorn sea-goat cosmic motifs in indigo and gold"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Key Placements in Brad Pitt's Chart",
+          "titleEn": "Brad Pitt's Five Key Birth Chart Placements",
+          "altEn": "Illustrated sequence of Brad Pitt's five key birth chart placements from Sagittarius Sun to Neptune in Scorpio",
+          "items": [
+            {
+              "nameEn": "Sagittarius Sun",
+              "subEn": "Core identity leaning toward exploration, big-picture optimism, and reinventing himself across roles and chapters"
+            },
+            {
+              "nameEn": "Capricorn Stellium",
+              "subEn": "Moon, Mercury, Venus, and Mars in Capricorn — a methodical, disciplined operator focused on mastery and long timelines"
+            },
+            {
+              "nameEn": "Jupiter in Aries",
+              "subEn": "Bold first-mover instincts, chasing new projects with headfirst energy rather than waiting for permission"
+            },
+            {
+              "nameEn": "Saturn in Aquarius",
+              "subEn": "Structured around reform and independence — doing things his own unconventional way instead of by the book"
+            },
+            {
+              "nameEn": "Neptune in Scorpio",
+              "subEn": "Generational placement shared across his whole age group — cultural backdrop, not a personal signature"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Brad Pitt's Chart at a Glance",
+          "titleEn": "Explorer vs Builder: The Core Chart Tension",
+          "altEn": "Comparison of Brad Pitt's Sagittarius explorer energy against his Capricorn stellium builder discipline",
+          "columns": [
+            {
+              "nameEn": "Explorer (Fire & Air)",
+              "linesEn": [
+                "Sun in Sagittarius: restlessness, reinvention, freedom-seeking",
+                "Jupiter in Aries: bold headfirst first moves on new projects",
+                "Saturn in Aquarius: unconventional independence and reform"
+              ]
+            },
+            {
+              "nameEn": "Builder (Earth)",
+              "linesEn": [
+                "Moon in Capricorn: private, disciplined, long-game focus",
+                "Mercury in Capricorn: structured, methodical thinking",
+                "Venus & Mars in Capricorn: patient commitment and mastery"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
