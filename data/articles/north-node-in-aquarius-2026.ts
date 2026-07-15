@@ -112,7 +112,7 @@ No. The house it falls in, and any planets nearby, shape how noticeable and pers
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. To ground these ideas in your own chart instead of a generic forecast, use the free tool to [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) and find your natal node axis by house and sign. The chart shows the exact houses the Aquarius–Leo axis touches for you, which turns a broad transit into a specific, personal question about where your own growth actually points.
+This is not a clinical interpretation or mental health advice. For a broader view of the timing themes around this 2026 node shift, [Explore Astrology Forecasts](https://astrologywiki.com/forecast). The forecast hub lets you compare this nodal movement with other transit-focused material without treating any one signal as a promise.
 
 ## Sources
 
