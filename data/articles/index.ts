@@ -357,6 +357,7 @@ import { saturnReturnGuideEn } from "./saturn-return-guide";
 import { saturnReturnInScorpioEn } from "./saturn-return-in-scorpio";
 import { secondSaturnReturnEn } from "./second-saturn-return";
 import { codyBellingerBirthChartEn } from "./cody-bellinger-birth-chart";
+import { bradPittBirthChartEn } from "./brad-pitt-birth-chart";
 import { caitlinClarkBirthChartEn } from "./caitlin-clark-birth-chart";
 import { saturnReturnAge29En } from "./saturn-return-age-29";
 import { saturnReturnInCapricornEn } from "./saturn-return-in-capricorn";
@@ -710,6 +711,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnInScorpioEn,
   secondSaturnReturnEn,
   codyBellingerBirthChartEn,
+  bradPittBirthChartEn,
   caitlinClarkBirthChartEn,
   saturnReturnAge29En,
   saturnReturnInCapricornEn,
