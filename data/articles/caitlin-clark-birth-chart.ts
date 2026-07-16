@@ -87,7 +87,7 @@ The biggest problems with the Caitlin Clark birth chart come from treating symbo
 | Ascendant / houses | Not determinable without a confirmed birth time | Not available | Treat any rising-sign or house claim as unverified |
 
 
-![Comparison of key planetary placements in Caitlin Clark's birth chart: Aquarius stellium, Mars in Aries, Moon in Taurus](/images/blog/caitlin-clark-birth-chart-i2-en.svg)
+![Comparison of key planetary placements in Caitlin Clark's birth chart: Aquarius stellium, Mars in Pisces, Moon in Taurus](/images/blog/caitlin-clark-birth-chart-i2-en.svg)
 
 ## Common Questions About Caitlin Clark's Birth Chart
 
