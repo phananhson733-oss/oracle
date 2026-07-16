@@ -852,6 +852,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'saturn-return-in-cancer-meaning',
   'saturn-return-age-30',
   'saturn-return-age-29',
   'saturn-return-in-capricorn',
