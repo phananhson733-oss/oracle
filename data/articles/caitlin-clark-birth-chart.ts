@@ -26,7 +26,7 @@ export const caitlinClarkBirthChartEn: WikiArticle = {
 Caitlin Clark birth chart is a symbolic snapshot of where the planets sat on January 22, 2002, the day she was born in Des Moines, Iowa. Read as an interpretive tool rather than a scoreboard, it maps her Aquarius Sun alongside a tight cluster of planets in the same sign, giving astrologers a set of archetypes to layer over her public story. It works less like a forecast and more like a **symbolic map of planetary placements at her birth**, useful for reflection, not for proving anything. Because her exact birth time isn't publicly documented, the reading stays open at the edges — the rising sign and houses can't be pinned down. To see how these pieces fit together at all, it helps to start with the broader [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
 
 - Centers on an Aquarius stellium that reads as independent, systems-minded, and unconventional
-- Pairs airy detachment (Aquarius) with intuitive water (Mars in Pisces)
+- Pairs airy detachment (Aquarius) with raw fire (Mars in Aries)
 - Leaves the Ascendant unconfirmed, since her birth time isn't on the public record
 
 ## Why It Matters for Self-Awareness
@@ -45,7 +45,7 @@ Most pop-culture coverage flattens the Caitlin Clark birth chart down to "she's 
 
 ### How each one works
 
-A sun sign is a single placement — the Sun in Aquarius — and it works as a broad headline for core identity. A full chart reads every placement at once, so her Aquarius Sun sits beside Mars in Pisces, Moon in Taurus, and Saturn in Gemini, each pulling in a different direction. The sun sign gives you speed and memorability; the whole chart gives you interplay, texture, and the contradictions a one-word label erases.
+A sun sign is a single placement — the Sun in Aquarius — and it works as a broad headline for core identity. A full chart reads every placement at once, so her Aquarius Sun sits beside Mars in Aries, Moon in Taurus, and Saturn in Gemini, each pulling in a different direction. The sun sign gives you speed and memorability; the whole chart gives you interplay, texture, and the contradictions a one-word label erases.
 
 ### The trade-off you're making
 
@@ -56,7 +56,7 @@ The trade-off is real and worth naming out loud. To get the ease of a sun-sign r
 To read the Caitlin Clark birth chart as an archetype rather than a forecast — the person-centered style Dane Rudhyar helped establish — look for patterns you can actually name in her public story:
 
 1. **Spot the stellium.** Several planets in Aquarius signal someone who trusts her own blueprint over the crowd's expectations.
-2. **Weigh air against water.** Aquarius detachment plus Mars in Pisces reads as cool strategy delivered with quiet, intuitive intensity.
+2. **Weigh air against fire.** Aquarius detachment plus Mars in Aries reads as cool strategy delivered with sudden, competitive heat.
 3. **Notice the ground line.** Moon in Taurus suggests a steady, routine-driven emotional core beneath the flash — though the Moon may shift without a birth time.
 4. **Leave the chart open.** With no confirmed birth time, treat any Ascendant, house, or midheaven claim as guesswork rather than fact.
 5. **Layer, don't predict.** Map each placement onto her rookie-year narrative as symbolism, never as the cause of a stat line or a single game.
@@ -80,14 +80,14 @@ The biggest problems with the Caitlin Clark birth chart come from treating symbo
 
 | Placement | How It Works | Energy Center | How to Observe |
 |---|---|---|---|
-| Aquarius stellium (Sun, Mercury, Uranus, Neptune) | Concentrates identity, thinking, and values in one independent, future-facing sign | Air (Aquarius) | Look for conviction that ignores convention and a systems-first mindset |
-| Mars in Pisces | Adds intuitive, feel-driven competitive drive | Water (Pisces) | Watch for instinctive, flowing energy under pressure |
+| Aquarius stellium (Sun, Mercury, Venus, Uranus, Neptune) | Concentrates identity, thinking, and values in one independent, future-facing sign | Air (Aquarius) | Look for conviction that ignores convention and a systems-first mindset |
+| Mars in Aries | Adds direct, first-strike competitive drive | Fire (Aries) | Watch for fast, assertive, go-first energy under pressure |
 | Moon in Taurus (approx.) | Points to a steady, comfort-seeking emotional base | Earth (Taurus) | Notice a preference for routine and stability behind the spotlight |
 | Saturn in Gemini | Shapes discipline around communication and learning | Air (Gemini) | Look for skill built through repetition, study, and messaging |
 | Ascendant / houses | Not determinable without a confirmed birth time | Not available | Treat any rising-sign or house claim as unverified |
 
 
-![Comparison of key planetary placements in Caitlin Clark's birth chart: Aquarius stellium, Mars in Pisces, Moon in Taurus](/images/blog/caitlin-clark-birth-chart-i2-en.svg)
+![Comparison of key planetary placements in Caitlin Clark's birth chart: Aquarius stellium, Mars in Aries, Moon in Taurus](/images/blog/caitlin-clark-birth-chart-i2-en.svg)
 
 ## Common Questions About Caitlin Clark's Birth Chart
 
@@ -105,7 +105,7 @@ No. A birth chart is a symbolic framework for personality and style, not a causa
 
 **What stands out most in the chart?**
 
-The Aquarius stellium and Mars in Pisces are the headline contrast: cool, systems-minded air paired with intuitive, competitive water.
+The Aquarius stellium and Mars in Aries are the headline contrast: cool, systems-minded air paired with hot, competitive fire.
 
 ## Reflection Prompts
 
