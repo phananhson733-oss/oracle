@@ -1,5 +1,5 @@
 // INPUT: Approved Saturn Return v3.0 content brief.
-// OUTPUT: One-to-one content, internal-link, and JSON-LD regression contract.
+// OUTPUT: One-to-one content, canonical internal-link/card, and JSON-LD regression contract.
 // POS: Prevents the Saturn Return SPA/static/schema content from drifting from the approved brief.
 
 import { describe, expect, it } from "vitest";
@@ -101,7 +101,7 @@ describe("Saturn Return landing content", () => {
     );
   });
 
-  it("uses the brief's tool cards and hides unpublished articles by explicit decision", () => {
+  it("uses the brief's tool cards and activates all four published Saturn Return articles", () => {
     expect(saturnReturnLandingContent.relatedTools).toEqual([
       expect.objectContaining({
         label: "Free Birth Chart Calculator",
@@ -119,13 +119,33 @@ describe("Saturn Return landing content", () => {
         cta: "Find your Moon sign",
       }),
     ]);
-    expect(saturnReturnLandingContent.relatedArticles).toEqual([]);
+    expect(saturnReturnLandingContent.relatedArticlesHeading).toBe(
+      "Learn More About Saturn Return",
+    );
+    expect(saturnReturnLandingContent.relatedArticles).toEqual([
+      expect.objectContaining({
+        title: "Your Saturn Return Guide to the Three-Pass Timeline, Not One Birthday",
+        href: "/en/wiki/saturn-return-guide",
+      }),
+      expect.objectContaining({
+        title: "What Saturn Return in Scorpio Puts Under Structural Review",
+        href: "/en/wiki/saturn-return-in-scorpio",
+      }),
+      expect.objectContaining({
+        title: "What Saturn Return Age 29 Actually Marks in Your Chart",
+        href: "/en/wiki/saturn-return-age-29",
+      }),
+      expect.objectContaining({
+        title: "What the Second Saturn Return Really Asks of You Near 60",
+        href: "/en/wiki/second-saturn-return",
+      }),
+    ]);
   });
 
   it("renders the same hierarchy, FAQ, breadcrumb, and internal links in the static page", () => {
     const html = renderSaturnReturnLandingHtml();
 
-    expect((html.match(/<h2>/g) ?? [])).toHaveLength(5);
+    expect((html.match(/<h2>/g) ?? [])).toHaveLength(6);
     expect((html.match(/<h3>/g) ?? [])).toHaveLength(15);
     expect((html.match(/<details>/g) ?? [])).toHaveLength(10);
     const words = (html.replace(/<[^>]+>/g, " ").match(/[A-Za-z0-9][A-Za-z0-9'–-]*/g) ?? []).length;
@@ -136,7 +156,9 @@ describe("Saturn Return landing content", () => {
       "/en/compatibility-calculator",
       "/en/moon-sign-calculator",
       "/en/wiki/saturn-return-in-scorpio",
-      "/en/wiki/saturn-return-complete-guide",
+      "/en/wiki/saturn-return-guide",
+      "/en/wiki/saturn-return-age-29",
+      "/en/wiki/second-saturn-return",
     ]) {
       expect(html).toContain('href="' + href + '"');
     }
@@ -176,7 +198,14 @@ describe("Saturn Return landing content", () => {
     );
     expect(staticHtml).toContain(saturnReturnLandingContent.heroSubtitle);
     expect(staticHtml).toContain(saturnReturnLandingContent.relatedToolsHeading);
-    expect((staticHtml.match(/<h2/g) ?? [])).toHaveLength(5);
+    expect(staticHtml).toContain(saturnReturnLandingContent.relatedArticlesHeading);
+    for (const article of saturnReturnLandingContent.relatedArticles) {
+      expect(staticHtml).toContain(`href="${article.href}"`);
+      expect(staticHtml).toContain(article.title);
+      expect(staticHtml).toContain(article.description);
+      expect(staticHtml).toContain(`${article.cta} →`);
+    }
+    expect((staticHtml.match(/<h2/g) ?? [])).toHaveLength(6);
     expect((staticHtml.match(/<h3/g) ?? [])).toHaveLength(15);
     expect((staticHtml.match(/<details/g) ?? [])).toHaveLength(10);
     expect(schema.map((entry: { "@type": string }) => entry["@type"])).toEqual([

@@ -1,6 +1,6 @@
 // INPUT: Approved English Saturn Return landing-page brief and exact-pass calculator contract.
-// OUTPUT: One content model for the SPA, static SEO page, FAQPage, WebApplication, BreadcrumbList, and HowTo schema.
-// POS: Saturn Return landing source of truth; do not duplicate this copy in components or generators.
+// OUTPUT: One content model for the SPA, static SEO page, FAQPage, WebApplication, BreadcrumbList, HowTo schema, and published related-article cards.
+// POS: Saturn Return landing source of truth; do not duplicate this copy or the four canonical article links in components or generators.
 
 const SITE_URL = "https://www.astrologywiki.com";
 const CANONICAL_PATH = "/en/saturn-return-calculator";
@@ -233,7 +233,7 @@ export const saturnReturnLandingContent = {
       links: [
         {
           label: "Saturn Return guides in the wiki →",
-          href: "/en/wiki/saturn-return-complete-guide",
+          href: "/en/wiki/saturn-return-guide",
         },
       ],
     },
@@ -267,8 +267,37 @@ export const saturnReturnLandingContent = {
       href: "/en/moon-sign-calculator",
     },
   ],
-  // Explicit product decision: articles are hidden until the four planned posts publish.
-  relatedArticles: [],
+  relatedArticlesHeading: "Learn More About Saturn Return",
+  relatedArticles: [
+    {
+      title: "Your Saturn Return Guide to the Three-Pass Timeline, Not One Birthday",
+      description:
+        "Understand the first approach, retrograde review, and final direct pass that shape a Saturn Return window.",
+      cta: "Read guide",
+      href: "/en/wiki/saturn-return-guide",
+    },
+    {
+      title: "What Saturn Return in Scorpio Puts Under Structural Review",
+      description:
+        "Explore how a natal Saturn in Scorpio can focus a return on trust, shared resources, and emotional boundaries.",
+      cta: "Read article",
+      href: "/en/wiki/saturn-return-in-scorpio",
+    },
+    {
+      title: "What Saturn Return Age 29 Actually Marks in Your Chart",
+      description:
+        "See why the first Saturn Return is a multi-pass transition, not a single birthday or fixed outcome.",
+      cta: "Read article",
+      href: "/en/wiki/saturn-return-age-29",
+    },
+    {
+      title: "What the Second Saturn Return Really Asks of You Near 60",
+      description:
+        "Read the timing and structural questions that commonly reappear during the second Saturn Return near ages 58 to 60.",
+      cta: "Read article",
+      href: "/en/wiki/second-saturn-return",
+    },
+  ],
 };
 
 export const saturnReturnFaqSchema = {
@@ -459,6 +488,20 @@ export const renderSaturnReturnLandingHtml = () => {
         " →</em></a></li>",
     )
     .join("");
+  const relatedArticles = saturnReturnLandingContent.relatedArticles
+    .map(
+      (article) =>
+        '<li><a href="' +
+        escapeHtml(article.href) +
+        '"><strong>' +
+        escapeHtml(article.title) +
+        "</strong><span>" +
+        escapeHtml(article.description) +
+        "</span><em>" +
+        escapeHtml(article.cta) +
+        " →</em></a></li>",
+    )
+    .join("");
 
   return (
     '<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/en">Home</a></li><li aria-current="page">Saturn Return Calculator</li></ol></nav>' +
@@ -467,6 +510,11 @@ export const renderSaturnReturnLandingHtml = () => {
     escapeHtml(saturnReturnLandingContent.relatedToolsHeading) +
     '</h2><nav class="saturn-related-tools" aria-label="Other free astrology calculators"><ul>' +
     relatedTools +
+    "</ul></nav></section>" +
+    "<section><h2>" +
+    escapeHtml(saturnReturnLandingContent.relatedArticlesHeading) +
+    '</h2><nav class="saturn-related-articles" aria-label="Related Saturn Return articles"><ul>' +
+    relatedArticles +
     "</ul></nav></section>"
   );
 };

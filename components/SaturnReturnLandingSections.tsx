@@ -1,5 +1,5 @@
 // INPUT: Shared Saturn Return landing-page content model and application theme.
-// OUTPUT: English-only SEO sections with brief-aligned copy, fifteen H3s, ten FAQs, and live tool links.
+// OUTPUT: English-only SEO sections with brief-aligned copy, six H2s, fifteen H3s, ten FAQs, live tool links, and four published related-article cards.
 // POS: SPA renderer for the Saturn Return source-of-truth content; keep static rendering in data/saturnReturnLandingContent.js aligned.
 
 import React from "react";
@@ -196,6 +196,36 @@ export const SaturnReturnLandingSections: React.FC<
             </a>
           ))}
         </div>
+        </nav>
+      </section>
+
+      <section aria-labelledby="saturn-related-articles">
+        <h2
+          id="saturn-related-articles"
+          className={`font-serif text-2xl leading-tight ${textPrimary}`}
+        >
+          {saturnReturnLandingContent.relatedArticlesHeading}
+        </h2>
+        <nav className="mt-5" aria-label="Related Saturn Return articles">
+          <div className="grid gap-4 md:grid-cols-2">
+            {saturnReturnLandingContent.relatedArticles.map((article) => (
+              <a
+                key={article.href}
+                href={article.href}
+                className={`saturn-related-article border p-6 transition-colors duration-300 ease-in-out hover:border-accent/35 ${panelTone}`}
+              >
+                <p className={`font-serif text-xl leading-tight ${textPrimary}`}>
+                  {article.title}
+                </p>
+                <p className={`mt-3 text-sm leading-relaxed ${textSecondary}`}>
+                  {article.description}
+                </p>
+                <span className="mt-5 inline-block text-sm font-semibold text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline">
+                  {article.cta} →
+                </span>
+              </a>
+            ))}
+          </div>
         </nav>
       </section>
     </div>
