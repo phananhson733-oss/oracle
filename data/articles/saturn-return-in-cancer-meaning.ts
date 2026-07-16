@@ -118,7 +118,7 @@ No — it is read as a maturation cycle, not a verdict on your future. It tends 
 
 Before you plan the next big decision about where and how you live, it helps to confirm the actual facts of your own chart. This is not a clinical interpretation or mental health advice — it is a timing framework for reflection, nothing more.
 
-Run your birth details through the [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) tool to check whether your natal Saturn sits in Cancer and when your return begins. You will get the exact dates of your window and the natal house it activates, so the timing stops being a guess you carry around. Seeing it laid out on the page often reframes a stressful stretch as a foundation you are finally old enough to build on purpose.
+Run your birth details through the [Explore Your Saturn Return](/en/saturn-return-calculator) tool to check whether your natal Saturn sits in Cancer and when your return begins. You will get the exact dates of your window and the natal house it activates, so the timing stops being a guess you carry around. Seeing it laid out on the page often reframes a stressful stretch as a foundation you are finally old enough to build on purpose.
 
 ## Sources
 
