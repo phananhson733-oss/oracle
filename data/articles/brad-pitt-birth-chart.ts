@@ -117,7 +117,7 @@ Four planets in one sign concentrate its influence, so Capricorn's discipline ar
 
 ## Take Action
 
-This profile is a symbolic, interpretive framework. This is not a clinical interpretation or mental health advice. Curious how your own chart handles the same freedom-versus-discipline tension you see in Brad Pitt's? Map your placements to test it — [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) to see your Sun, Moon, and any stelliums laid out in one view, and use it as a mirror for where you chase the new versus build for the long game.
+This profile is a symbolic, interpretive framework. This is not a clinical interpretation or mental health advice. Curious how your own chart handles the same freedom-versus-discipline tension you see in Brad Pitt's? Map your placements to test it — [Generate Your Free Birth Chart](https://www.astrologywiki.com/en/birth-chart-calculator) to see your Sun, Moon, and any stelliums laid out in one view, and use it as a mirror for where you chase the new versus build for the long game.
 
 ## Sources
 
