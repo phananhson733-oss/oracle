@@ -1,5 +1,5 @@
-<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL、压缩品牌图、付费墙购买回调、Airwallex Pro 试用激活、SectionHeader detailLabel、支付成功同步与积分充值弹窗）。 -->
-<!-- OUTPUT: components 架构摘要与文件索引（含压缩品牌图、付费墙回调、Airwallex Pro 试用激活/成功态、SectionHeader 可覆盖详情文案、支付成功同步/返回、积分充值弹窗与纸感映射记录）。 -->
+<!-- INPUT: 主应用 UI 组件与设计原语（含 SEO 元信息、本地 head 输出、OG 绝对 URL、压缩品牌图、付费墙购买回调、Airwallex Pro 试用激活、SectionHeader detailLabel、支付成功同步、积分充值弹窗与土星回归 brief 对齐英文内容渲染）。 -->
+<!-- OUTPUT: components 架构摘要与文件索引（含压缩品牌图、付费墙回调、Airwallex Pro 试用激活/成功态、SectionHeader 可覆盖详情文案、支付成功同步/返回、积分充值弹窗、纸感映射与土星回归精度 UI/四类 JSON-LD）。 -->
 <!-- POS: 主应用组件目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -28,7 +28,8 @@
 - ChartShareCard.tsx｜地位：星盘分享卡布局｜功能：信息丰富的星盘分享卡（`chartType` natal|transit：头部出生数据 + 行星表含庙旺落陷 + 元素/模式分布 + 轮盘），按 chartType 自取 ExtendedNatalData/getTransitPositions，forwardRef 供截图导出；参考 Astrodienst 信息密度。
 - ChartShareModal.tsx｜地位：分享卡预览/导出弹窗｜功能：全屏预览 ChartShareCard（浅/深主题切换，弹窗驱动 body 主题类让轮盘也跟随）+ 下载 PNG（调 `utils/domToPng` 的 html-to-image 捕获）+ 关闭。接 `chartType`；MePage 本命盘 / TodayPage 行运盘的"下载图片"按钮打开它。
 - ChartMiniCalc.tsx｜地位：工具组件｜功能：tool-led 北交点迷你计算器（客户端纯查表，DOB 不出浏览器；instrument chart_start/result_shown/full_chart_cta_click 漏斗，只送分类字段）。分层互补定位：作为 #6 全盘（WikiChartCTA/BirthChartSection）的轻型上游钩子，结果区 CTA 经 `fullChartHref` prop 指向全盘（默认回退 /auth）。
-- SaturnReturnCalculator.tsx｜地位：公开 Saturn Return 工具页组件｜功能：出生日期/可选时间/可选城市 → `/api/saturn-return` 查询土星回归窗口；full 模式渲染 SEO/head + 宽版工具容器 + ToolSeoLandingSections，embed 模式用于 `/embed/saturn-return` 品牌回链小组件。
+- SaturnReturnCalculator.tsx｜地位：公开 Saturn Return 工具页组件｜功能：出生日期/可选时间/可选城市 → `/api/saturn-return`；明确显示 estimated 最近日期或 exact UTC pass/方向，full 模式从单一英文内容源渲染 SEO/head、可见 Breadcrumb 与 WebApplication/FAQPage/BreadcrumbList/HowTo Schema，embed 模式用于 `/embed/saturn-return` 品牌回链小组件。
+- SaturnReturnLandingSections.tsx｜地位：土星回归英文落地页内容渲染｜功能：从 `data/saturnReturnLandingContent.js` 显示 brief 指定的 5 个可见 H2、15 H3、10 FAQ 与 Birth Chart/Compatibility/Moon Sign 三张工具卡；未发布文章模块隐藏。
 - SafetyFooter.tsx｜地位：合规组件｜功能：psych-adjacent 文章的强制安全 footer SPA 渲染（临床免责声明 + 危机热线），文案与静态 stub 同源自 `utils/safetyFooter.ts`（单一来源、绝不漂移）。因 inject-spa 是 replace 非 hydrate，JS 用户这份必须由 SPA 渲染（CLAUDE.md AI 安全边界 #1/#4）。由 `wiki/WikiArticleDetailPage` 在 `article.psychAdjacent` 时渲染。
 
 目录
@@ -42,6 +43,7 @@
 
 近期更新
 
+- Saturn Return 页面接入 precision-aware 结果展示与单一英文内容源；SEO、静态页和四类 JSON-LD 使用同一模型，Hero 含免费/免注册信任文案，相关工具卡指向 Birth Chart、Compatibility 与 Moon Sign。
 - ComparisonPage 的 AstrologyWiki logo 改用 `/brand/logo-mark-64.png`，避免营销页加载原始大图。
 - 升级弹窗接入手动 Pro 试用激活：符合资格用户点击 CTA 后走 Airwallex 结账填写付款信息，支付成功页可识别试用 checkout 并刷新 trialing 权益。
 - SectionHeader 支持 `detailLabel` 覆盖默认详情按钮文案；MePage 顶部星盘保持只读，避免绑定跨组件作用域的详情回调。

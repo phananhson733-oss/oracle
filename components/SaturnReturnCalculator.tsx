@@ -29,7 +29,15 @@ import {
 import { useCalculatorTheme } from "./calculators/useCalculatorTheme";
 import { GlyphBadge } from "./calculators/GlyphBadge";
 import { ToolFunnelCTA } from "./calculators/ToolFunnelCTA";
-import { ToolSeoLandingSections } from "./calculators/ToolSeoLandingSections";
+import { Breadcrumb } from "./Breadcrumb";
+import { SaturnReturnLandingSections } from "./SaturnReturnLandingSections";
+import {
+  saturnReturnBreadcrumbSchema,
+  saturnReturnFaqSchema,
+  saturnReturnHowToSchema,
+  saturnReturnLandingContent,
+  saturnReturnWebApplicationSchema,
+} from "../data/saturnReturnLandingContent.js";
 
 interface GeoResult {
   city: string;
@@ -53,8 +61,12 @@ interface NatalSaturnInfo {
 
 interface SaturnReturnPeriod {
   startDate: string;
-  exactDate: string;
   endDate: string;
+  exactPasses?: {
+    occurredAt: string;
+    direction: "direct" | "retrograde";
+  }[];
+  estimatedClosestDate?: string;
   returnNumber: number;
   interpretation: string;
 }
@@ -62,6 +74,7 @@ interface SaturnReturnPeriod {
 interface SaturnReturnResult {
   natalSaturn: NatalSaturnInfo;
   returns: SaturnReturnPeriod[];
+  precision: "estimated" | "exact";
   approximate: boolean;
 }
 
@@ -76,37 +89,6 @@ const API_BASE =
   (import.meta.env.DEV ? "http://localhost:3001/api" : "/api");
 
 const SITE_URL = "https://www.astrologywiki.com";
-
-const FAQ_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How long does a Saturn Return last?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Saturn Return typically lasts about 2-3 years. The most intense period is when Saturn is within 2 degrees of your natal position, lasting several months.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When is my Saturn Return?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Your first Saturn Return occurs between ages 27-30, your second between ages 56-60, and your third between ages 84-90. Use our free calculator to find your exact dates.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need my exact birth time for a Saturn Return calculation?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Saturn moves slowly (about 0.03 degrees per day), so even without birth time, calculated dates will be very close. Birth time helps determine which house is activated.",
-      },
-    },
-  ],
-};
 
 interface SaturnReturnCalculatorProps {
   // 'embed' = iframe 嵌入态（T7）：不注入 SEO 头、隐藏 SEO 长文，仅表单+结果+品牌回链。
@@ -268,9 +250,14 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
       setState("result");
 
       trackEvent("saturn_return_calculated", {
-        has_time: !!birthTime,
-        has_city: !!selectedCity,
+        input_precision: data.precision,
+        has_birth_time: !!birthTime,
+        has_birth_city: !!selectedCity,
         natal_sign: data.natalSaturn.sign,
+        exact_pass_count: data.returns.reduce(
+          (count, ret) => count + (ret.exactPasses?.length ?? 0),
+          0,
+        ),
       });
 
       setTimeout(() => {
@@ -319,7 +306,21 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
     });
   };
 
-  // 单纯日期算术（无 AI、无后端）：从 birthDate 与已返回的 exactDate 推出当前年龄
+  const formatExactTimestamp = (timestamp: string): string => {
+    const date = new Date(timestamp);
+    return date.toLocaleString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "UTC",
+      timeZoneName: "short",
+    });
+  };
+
+  // 单纯日期算术（无 AI、无后端）：从 birthDate 与已返回的精确/估算锚点推导当前年龄
   // 与 "you are here" 在生命周期时间轴上的相对位置。所有锚点 = 出生 + 各次回归。
   const timeline = useMemo(() => {
     if (!result || !birthDate) return null;
@@ -331,11 +332,17 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
 
     const ageNow = Math.max(0, Math.floor(yearsBetween(birth, now)));
 
-    // 锚点：出生(0) + 每次回归 exactDate 对应的年龄。
+    // 锚点：出生(0) + 每次回归首个精确 pass（或估算最近日期）对应的年龄。
     const anchors = result.returns.map((ret) => ({
       returnNumber: ret.returnNumber,
       age: Math.round(
-        yearsBetween(birth, new Date(`${ret.exactDate}T00:00:00Z`)),
+        yearsBetween(
+          birth,
+          new Date(
+            ret.exactPasses?.[0]?.occurredAt ??
+              `${ret.estimatedClosestDate ?? ret.startDate}T00:00:00Z`,
+          ),
+        ),
       ),
     }));
     const lastAge = anchors.length
@@ -372,25 +379,17 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
   // 若用户/爬虫到达 /zh/saturn-return-calculator（SPA 可路由），canonical 收口到 /en，避免
   // 产生一个可索引但无 zh 版、且 hreflang 不宣告 zh 的 orphan 页。
   const canonicalUrl = `${SITE_URL}/en/saturn-return-calculator`;
-  const seoDescription =
-    "Calculate when your Saturn Return happens. Enter your birth date to discover your Saturn Return dates, meaning, and how this major life transit affects you.";
+  const seoDescription = saturnReturnLandingContent.description;
 
   return (
     <div className="min-h-screen px-4 py-8 sm:py-12">
       {/* 嵌入态不注入页面级 SEO 头/schema（避免覆盖宿主页 meta）。 */}
       {!isEmbed && (
         <SEO
-          title="Saturn Return Calculator - Free Saturn Return Dates"
+          title={saturnReturnLandingContent.title}
           description={seoDescription}
           url={canonicalUrl}
-          keywords={[
-            "saturn return calculator",
-            "saturn return dates",
-            "when is my saturn return",
-            "saturn return meaning",
-            "astrology calculator",
-            "saturn transit",
-          ]}
+          keywords={saturnReturnLandingContent.keywords}
           // EN-only 工具页（仅 /en 有预渲染静态 stub）。不宣告 zh alternate，否则指向无静态正文的 shell，
           // 破坏 hreflang 互惠（与 generate-seo-pages.mjs 的 saturn stub 保持一致）。
           alternateLanguages={[
@@ -401,29 +400,32 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
             },
           ]}
           schema={[
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              name: "Saturn Return Calculator",
-              description: seoDescription,
-              applicationCategory: "LifestyleApplication",
-              operatingSystem: "Web",
-              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-            },
-            FAQ_SCHEMA,
+            saturnReturnWebApplicationSchema,
+            saturnReturnFaqSchema,
+            saturnReturnBreadcrumbSchema,
+            saturnReturnHowToSchema,
           ]}
         />
       )}
 
       <div className="mx-auto max-w-[88rem]">
+        {!isEmbed && (
+          <Breadcrumb
+            items={[{ name: "Saturn Return Calculator" }]}
+            homePath="/en"
+            className="mb-6"
+          />
+        )}
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className={`text-3xl sm:text-4xl font-bold mb-3 ${textPrimary}`}>
-            {sr?.page_title || "Saturn Return Calculator"}
+            {saturnReturnLandingContent.h1}
           </h1>
           <p className={`text-lg ${textSecondary}`}>
-            {sr?.page_subtitle ||
-              "Find out when Saturn returns to your birth position"}
+            {saturnReturnLandingContent.heroSubtitle}
+          </p>
+          <p className={`mt-3 text-sm font-medium ${textSecondary}`}>
+            {saturnReturnLandingContent.trustLine}
           </p>
         </div>
 
@@ -690,11 +692,11 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
               </div>
             )}
 
-            {result.approximate && (
+            {result.precision === "estimated" && (
               <p className={`text-sm ${textSecondary} mb-4 italic`}>
                 {isZh
-                  ? "注意：未提供出生时间，日期为近似值，可能相差几天。"
-                  : "Note: Dates are approximate because birth time was not provided. The exact dates may vary by a few days."}
+                  ? "注意：缺少完整出生时间和时区，结果显示为估算日期。"
+                  : "Estimated result: add both birth time and birth city to calculate exact UTC conjunction passes."}
               </p>
             )}
 
@@ -717,8 +719,30 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
                       <dd className="font-mono">{formatDate(ret.startDate)}</dd>
                     </div>
                     <div>
-                      <dt className="font-medium">{isZh ? "正合" : "Exact"}</dt>
-                      <dd className="font-mono">{formatDate(ret.exactDate)}</dd>
+                      <dt className="font-medium">
+                        {ret.exactPasses?.length
+                          ? isZh
+                            ? "精确过境（UTC）"
+                            : "Exact passes (UTC)"
+                          : isZh
+                            ? "估算最近日期"
+                            : "Estimated closest date"}
+                      </dt>
+                      {ret.exactPasses?.length ? (
+                        <dd className="space-y-1 font-mono text-xs">
+                          {ret.exactPasses.map((pass) => (
+                            <span key={pass.occurredAt} className="block">
+                              {formatExactTimestamp(pass.occurredAt)} ({pass.direction})
+                            </span>
+                          ))}
+                        </dd>
+                      ) : (
+                        <dd className="font-mono">
+                          {ret.estimatedClosestDate
+                            ? formatDate(ret.estimatedClosestDate)
+                            : "—"}
+                        </dd>
+                      )}
                     </div>
                     <div>
                       <dt className="font-medium">{isZh ? "结束" : "Ends"}</dt>
@@ -798,8 +822,8 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
           </div>
         )}
 
-        {/* SEO 长文仅 full 态展示；嵌入态用品牌回链替代（避免把整篇长文塞进宿主 iframe）。 */}
-        {!isEmbed && <ToolSeoLandingSections slug="saturn-return-calculator" />}
+        {/* English landing content has one source for the SPA, static stub, and FAQ schema. */}
+        {!isEmbed && <SaturnReturnLandingSections isDark={isDark} />}
 
         {/* 嵌入态品牌回链（可见、dofollow，回站点 canonical 计算器页）。合规外链形态。 */}
         {isEmbed && (
