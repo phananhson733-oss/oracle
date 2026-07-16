@@ -122,7 +122,7 @@ The Aquarius stellium and Mars in Aries are the headline contrast: cool, systems
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. If reading Caitlin Clark's placements made you curious about your own, you can map them the same way: you'll get your full chart of signs, planets, and aspects in minutes, which can turn a celebrity curiosity into a clearer, kinder read on how you actually lead, compete, and rest — [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator).
+This is not a clinical interpretation or mental health advice. If reading Caitlin Clark's placements made you curious about your own, you can map them the same way: you'll get your full chart of signs, planets, and aspects in minutes, which can turn a celebrity curiosity into a clearer, kinder read on how you actually lead, compete, and rest — [Generate Your Free Birth Chart](/en/birth-chart-calculator).
 
 ## Sources
 
