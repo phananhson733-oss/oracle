@@ -120,7 +120,7 @@ The active window runs about two to three years as Saturn approaches, exactly me
 
 This is not a clinical interpretation or mental health advice.
 
-Ready to stop guessing at the round number? Run your birth details through the [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) calculator to get your exact return dates and the natal house the transit touches. With those specifics in hand, you can meet this passage as a scheduled review you show up for on purpose — and start reading your late twenties as authorship, not accident.
+Ready to stop guessing at the round number? Run your birth details through the [Explore Your Saturn Return](/en/saturn-return-calculator) calculator to get your exact return dates and the natal house the transit touches. With those specifics in hand, you can meet this passage as a scheduled review you show up for on purpose — and start reading your late twenties as authorship, not accident.
 
 ## Sources
 
