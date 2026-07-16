@@ -1,5 +1,5 @@
-<!-- INPUT: 后端业务服务目录结构与输出索引（含 GM 积分消费、报告积分计价、地理搜索优化、手动 Pro 试用、Synthetica 原子预占与 DeepSeek token 可观测性服务）。 -->
-<!-- OUTPUT: services 架构摘要与文件清单（含报告积分计价、AI schema 校验、地理搜索多语言过滤、手动 Pro 试用、Synthetica 并发额度保护与 DeepSeek token 日志记录）。 -->
+<!-- INPUT: 后端业务服务目录结构与输出索引（含 GM 积分消费、报告积分计价、地理搜索优化、手动 Pro 试用、Synthetica 原子预占、DeepSeek token 可观测性与土星回归数值求解）。 -->
+<!-- OUTPUT: services 架构摘要与文件清单（含报告积分计价、AI schema 校验、地理搜索多语言过滤、手动 Pro 试用、Synthetica 并发额度保护、DeepSeek token 日志与土星回归精确/估算契约）。 -->
 <!-- POS: 服务目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
 一旦我所属的文件夹有所变化，请更新我。
@@ -16,6 +16,10 @@
 - ai.ts｜地位：AI 服务｜功能：DeepSeek 调用、缓存与 Markdown/JSON 解析。
 - ai.observability.test.ts｜地位：DeepSeek 调用可观测性单测｜功能：覆盖实际 provider 回包写入模型、耗时及输入/输出/缓存 token 用量，断言 prompt 内容不进入日志。
 - ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。
+- saturn-return.ts｜地位：土星回归服务｜功能：基于 Swiss Ephemeris 求解 2° orb 边界与合相经过；完整时间/时区返回 UTC 精确 pass，日期模式返回估算最近日期。
+- saturn-return-math.ts｜地位：土星回归数值原语｜功能：角度差归一化、根区间/局部极小区间发现、二分根收敛与站点触碰最小值收敛；不含星历 I/O。
+- saturn-return.test.ts｜地位：土星回归服务单测｜功能：守护 estimated/exact 契约、时间顺序、方向和回归窗口。
+- saturn-return-math.test.ts｜地位：数值原语单测｜功能：守护跨 0° 归一化、三次过境区间、根收敛与非穿越站点触碰。
 - transit/｜地位：子目录｜功能：transit timeline（月度/人生 K 线）纯函数评分与聚合引擎（intensity/rollup/weights），详见 transit/FOLDER.md。
 - astro/｜地位：子目录｜功能：天象 sky 工具纯算法（月相 / 黄经→星座 / 日期范围枚举），供 api/astro.ts 的 /positions、/moon-phase、/ephemeris 端点调用，详见 astro/FOLDER.md。
 - cbtMoodPoints.ts｜地位：CBT 情绪叠加层投影（纯，#23）｜功能：projectMoodPoints —— 把 CBT 记录按 viewer 本地日聚合成 `{date,intensity,moodCount}`，输入类型仅含 timestamp+强度数值（结构性数据最小化），绝不触碰任何自由文本（隐私红线 #1，设计 §10）。供 `GET /api/cbt/mood-points` 调用。
@@ -42,6 +46,7 @@
 - newsletterWeekly.test.ts｜地位：周报/月报编排单测｜功能：覆盖 ISO 周/月周期计算 + cadence 派发 / issue 富 content 取生成幂等（含 monthly promptId + 空 sky_events 仍发） / AI 缺字段拒发 / dryRun / resend 未配置降级 / 周报发送+token 回填+last_weekly_sent_at+富视图模型 / 月报 last_monthly_sent_at+月副标 / 单封失败隔离 17 分支。
 
 近期更新
+- 土星回归服务改为数值求解的精确/估算双契约：缺时间或时区绝不称 exact；完整输入返回 UTC 合相 pass 及顺逆行方向，并补站点触碰检测。
 - AI 服务对每个实际 DeepSeek 回包记录 `ai_provider_request_completed` 事件（requestId、promptId、模型、耗时、usage token 数值）；Synthetica 路由记录额度拒绝、开始、成功、失败与退款状态，通过 requestId 串联，且不记录 prompt、出生信息或模型内容。
 - Synthetica 额度接入与 Ask/合盘一致的预占-确认-退款链路：模型调用前以 CAS 原子占用免费/订阅日额度、购买次数或积分；失败时退回对应额度，避免并发请求放大 DeepSeek token 消耗。
 - 手动 Pro 试用激活：新增 proTrialService 与回归测试，注册不再自动发 Pro，Airwallex-backed trial claim 按邮箱哈希防重复并与首次折扣互斥；权益层以 `trialing` 订阅授予 Pro 权益，对账层补 `IN_TRIAL` → `trialing` 覆盖。

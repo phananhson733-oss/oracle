@@ -32,9 +32,11 @@
 - populate-wiki-data｜地位：进行中变更｜功能：百科数据补齐与内容填充。
 - update-manual-pro-trial-activation｜地位：进行中变更｜功能：注册后不自动赠送 Pro 试用，改为用户通过 Airwallex 绑定付款信息后手动激活 7 天 Pro 试用。
 - update-ui-system｜地位：进行中变更｜功能：UI 整体优化与色彩系统对齐。
+- upgrade-saturn-return-calculator-landing｜地位：进行中变更｜功能：土星回归精度契约、英文单一内容源与静态 SEO 输出同步。
 
 近期更新
 
+- 新增 upgrade-saturn-return-calculator-landing 变更提案，记录精确/估算结果契约、数值求解、英文内容与 Schema 同源验证。
 - 新增 implement-astrologywiki-growth-funnel 变更提案，固化 2026-07-13 已批准的增长漏斗实施范围。
 - optimize-pagespeed-core-web-vitals 新增 PR/部署说明，记录 UI 规范符合说明、生产旧部署状态与上线后 PageSpeed/header 复测清单。
 - update-manual-pro-trial-activation 变更提案已同步后端/前端/build/OpenSpec 验证状态，live Airwallex E2E 待真实环境。

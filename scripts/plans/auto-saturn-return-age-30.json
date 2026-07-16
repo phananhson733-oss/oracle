@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-age-30": {
+      "hero": {
+        "prompt": "A solitary silhouetted figure stands at a wide stone threshold beneath an immense indigo night sky, the ringed planet Saturn luminous and gold-accented in the upper center, sweeping teal-and-gold orbital arcs encircling it to suggest a completed cycle of return, faint star clusters fading toward near-black corners, a mood of quiet reckoning and structured weight, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Ringed planet Saturn glowing gold in indigo night sky above a silhouetted figure at a threshold, teal and gold orbital arcs, painterly illustration"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Saturn Return vs Saturn Square",
+          "titleEn": "Saturn Return vs Saturn Square: Two Different Beats",
+          "altEn": "Side-by-side comparison of Saturn Return and Saturn Square transit differences in timing, scope, and life impact",
+          "columns": [
+            {
+              "nameEn": "Saturn Return",
+              "linesEn": [
+                "Saturn back at its exact birth position",
+                "Sweeps the entire life structure at once",
+                "Peaks between ages 27 and 30",
+                "Reviews all long-standing commitments"
+              ]
+            },
+            {
+              "nameEn": "Saturn Square",
+              "linesEn": [
+                "Saturn 90° from its birth position",
+                "Targets one specific life area",
+                "Hits around ages 22 or 37",
+                "Clears a single focused obstacle"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Saturn Return Age 30 in Your Timing",
+          "titleEn": "5 Signals That Mark Your Saturn Return Window",
+          "altEn": "Five-step sequence of practical signals identifying the Saturn Return at age 30, from restless timing to chart specifics",
+          "items": [
+            {
+              "nameEn": "Timing Window",
+              "subEn": "A restless 'clock is ticking' feeling starting around age 27, intensifying by 29"
+            },
+            {
+              "nameEn": "Structural Friction",
+              "subEn": "Jobs, leases, and long relationships suddenly feel too small or wrongly built"
+            },
+            {
+              "nameEn": "Delayed Consequences",
+              "subEn": "Shortcuts taken at 22 or 24 quietly asking to be repaid now"
+            },
+            {
+              "nameEn": "Reality Check",
+              "subEn": "A pull toward fewer, sturdier commitments and away from many loose ones"
+            },
+            {
+              "nameEn": "Chart Specifics",
+              "subEn": "Your natal Saturn's house flags where the review concentrates — career, home, or love"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

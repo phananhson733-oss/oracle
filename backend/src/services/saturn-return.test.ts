@@ -47,6 +47,44 @@ describe("calculateSaturnReturn", () => {
     expect(result.approximate).toBe(true);
   });
 
+  it("returns an estimated contract when only a birth date is available", async () => {
+    const result = await calculateSaturnReturn({
+      date: "1990-06-15",
+    });
+
+    expect(result.precision).toBe("estimated");
+    expect(result.returns[0].estimatedClosestDate).toMatch(/^20\d{2}-\d{2}-\d{2}$/);
+    expect(result.returns[0].exactPasses).toBeUndefined();
+  });
+
+  it("returns chronological exact passes when birth time and timezone are available", async () => {
+    const result = await calculateSaturnReturn({
+      date: "1990-06-15",
+      time: "08:00",
+      timezone: "America/New_York",
+      lat: 40.7128,
+      lon: -74.006,
+    });
+
+    expect(result.precision).toBe("exact");
+    const exactPasses = result.returns[0].exactPasses;
+    expect(exactPasses).toBeDefined();
+    if (!exactPasses) {
+      throw new Error("Expected exact passes for a fully specified birth time.");
+    }
+
+    expect(exactPasses.length).toBeGreaterThanOrEqual(1);
+    expect(exactPasses.length).toBeLessThanOrEqual(3);
+
+    const timestamps = exactPasses.map((pass) =>
+      Date.parse(pass.occurredAt),
+    );
+    expect(timestamps).toEqual([...timestamps].sort((a, b) => a - b));
+    expect(exactPasses.every((pass) =>
+      ["direct", "retrograde"].includes(pass.direction),
+    )).toBe(true);
+  });
+
   it("calculates second Saturn Return for older birth dates", async () => {
     // Born 1960: first return ~1989, second return ~2019
     const input: SaturnReturnInput = {

@@ -52,7 +52,7 @@ saturnReturnRouter.get("/", async (req, res) => {
     const result = await calculateSaturnReturn({
       date,
       time: typeof time === "string" ? time : undefined,
-      timezone: typeof timezone === "string" ? timezone : "UTC",
+      timezone: typeof timezone === "string" ? timezone : undefined,
       lat: parsedLat,
       lon: parsedLon,
       city: typeof city === "string" ? city : undefined,

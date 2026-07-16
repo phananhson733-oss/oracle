@@ -12,6 +12,14 @@ import { mdToHtml, stripInlineMarkdown } from './lib/md-to-html.mjs';
 import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
 import { resolveCanonicalUrl, includeInSitemap } from './lib/seo-canonical.mjs';
 import { buildFaqSchemaFromMarkdown } from './lib/faq-jsonld.mjs';
+import {
+  renderSaturnReturnLandingHtml,
+  saturnReturnBreadcrumbSchema,
+  saturnReturnFaqSchema,
+  saturnReturnHowToSchema,
+  saturnReturnLandingContent,
+  saturnReturnWebApplicationSchema,
+} from '../data/saturnReturnLandingContent.js';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
@@ -193,6 +201,7 @@ const buildHead = ({
   title,
   description,
   metaDescription,
+  preserveMetaDescription = false,
   url,
   canonical,
   robots,
@@ -202,7 +211,8 @@ const buildHead = ({
   ogImage,
 }) => {
   // 清洗未渲染的 markdown 标记（如 summary 里的 *书名*），再截断，避免脏摘要进 SERP。
-  const desc = truncate(stripInlineMarkdown(metaDescription || description || ''));
+  const rawDescription = stripInlineMarkdown(metaDescription || description || '');
+  const desc = preserveMetaDescription ? rawDescription : truncate(rawDescription);
   // T3：per-page OG 图（文章传 per-article PNG），缺省回退全站通用图。爬虫不跑 JS，
   // 必须把图写进静态 stub head，否则社媒分享卡片只会拿到通用图。
   const pageOgImage = ogImage || ogImageUrl;
@@ -256,9 +266,10 @@ const buildHead = ({
   return headParts.join('\n');
 };
 
-const buildBody = ({ lang, title, heading, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt }) => {
+const buildBody = ({ lang, title, heading, description, heroSubtitle, trustLine, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt }) => {
   const safeTitle = escapeHtml(heading || title);
-  const safeDescription = escapeHtml(description);
+  const safeDescription = escapeHtml(heroSubtitle || description);
+  const safeTrustLine = trustLine ? `<p class="trust-line">${escapeHtml(trustLine)}</p>` : '';
   const safeCta = escapeHtml(ctaText);
   const safeSpaPath = escapeHtml(spaPath);
   // 文章 hero 图（article.image）渲染进静态 stub，让爬虫/图片索引看到配图 + alt。
@@ -279,7 +290,7 @@ const buildBody = ({ lang, title, heading, description, ctaText, spaPath, conten
   return `
 ${bootstrapScript}<main>
   <h1>${safeTitle}</h1>
-  <p>${safeDescription}</p>${hero}${article}
+  <p>${safeDescription}</p>${safeTrustLine}${hero}${article}
   <p class="meta">AstrologyWiki · ${lang.toUpperCase()}</p>
   <a class="cta" data-astro-link href="${safeSpaPath}">${safeCta}</a>
 </main>
@@ -303,14 +314,14 @@ ${bootstrapScript}<main>
 `;
 };
 
-const writeHtmlPage = async ({ outputPath, lang, title, heading, description, metaDescription, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
+const writeHtmlPage = async ({ outputPath, lang, title, heading, description, heroSubtitle, trustLine, metaDescription, preserveMetaDescription, url, canonical, robots, ogType, schema, alternates, ctaText, spaPath, contentHtml, ogImage, bootstrap, heroImage, heroAlt }) => {
   const html = `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
-${buildHead({ lang, title, description, metaDescription, url, canonical, robots, ogType, alternates, schema, ogImage })}
+${buildHead({ lang, title, description, metaDescription, preserveMetaDescription, url, canonical, robots, ogType, alternates, schema, ogImage })}
   </head>
   <body data-astro-lang="${lang}">
-${buildBody({ lang, title, heading, description, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt })}
+${buildBody({ lang, title, heading, description, heroSubtitle, trustLine, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt })}
   </body>
 </html>
 `;
@@ -842,6 +853,11 @@ const ARTICLE_SLUGS = [
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
   'brad-pitt-birth-chart',
+  'caitlin-clark-birth-chart',
+  'saturn-return-in-cancer-meaning',
+  'saturn-return-age-30',
+  'saturn-return-age-29',
+  'saturn-return-in-capricorn',
   'cody-bellinger-birth-chart',
   'second-saturn-return',
   'saturn-return-in-scorpio',
@@ -1395,57 +1411,34 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
   // （计算器为纯客户端、无需 API 首屏数据，也无对应 SPA bootstrap reader）。
   {
     const saturnUrl = `${siteUrl}/en/saturn-return-calculator`;
-    const saturnTitle = 'Saturn Return Calculator - Free Saturn Return Dates';
-    const saturnDescription =
-      'Calculate when your Saturn Return happens. Enter your birth date to discover your Saturn Return dates, meaning, and how this major life transit affects you.';
-    const saturnBody = [
-      '## Saturn Return cycle basics',
-      'A Saturn Return is the moment the planet Saturn comes back to the exact position it held in the sky when you were born. Because Saturn takes about 29.5 years to orbit the Sun, this homecoming happens at roughly ages 27-30, 56-60, and 85-90. Astrologers treat it as a threshold between life chapters — the end of one structure and the building of the next.',
-      '## Personal return window',
-      'Your first Saturn Return usually begins between ages 27 and 30. Enter your birth date in the calculator above to get your personal Saturn Return dates, including when Saturn first enters its return and when it finishes. The exact timing depends on the year you were born, because Saturn does not move at a perfectly even pace.',
-      '## Return duration and retrogrades',
-      'A Saturn Return is not a single day — it is a transit that unfolds over roughly two to three years as Saturn moves across its birth position, often retrograding back and forth. Most people feel it most strongly in the year Saturn is exactly conjunct its natal point.',
-      '## Saturn Return themes',
-      'In modern psychological astrology, the Saturn Return is associated with maturity, responsibility, and realigning your life with your real values. It is not a prediction of fate. It tends to surface questions about career, relationships, and identity — a developmental checkpoint where you decide what to keep building and what to let go. Treat it as a tendency and an invitation, not a guarantee.',
-      '## Calculator results and next steps',
-      'This free calculator uses your birth date to estimate your Saturn Return window. No account or birth time is required. For a deeper reading, pair your Saturn Return dates with your full birth chart and the psychological astrology articles in the AstrologyWiki wiki.',
-    ].join('\n\n');
-    const saturnFaqSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: [
-        { '@type': 'Question', name: 'Can I calculate my Saturn Return without a birth time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Saturn moves slowly enough that a date-based window is still useful. An exact birth time mainly helps place Saturn in houses for a fuller chart reading.' } },
-        { '@type': 'Question', name: 'How many Saturn Returns are included?', acceptedAnswer: { '@type': 'Answer', text: 'The calculator focuses on the first, second, and third Saturn Returns, which usually fall around ages 27-30, 56-60, and 85-90.' } },
-        { '@type': 'Question', name: 'Why does a Saturn Return cover a date range?', acceptedAnswer: { '@type': 'Answer', text: 'Saturn can pass the same area more than once because of retrograde motion, so the return is better shown as a window rather than one isolated day.' } },
-        { '@type': 'Question', name: 'How should I use Saturn Return dates?', acceptedAnswer: { '@type': 'Answer', text: 'Use the dates as timing context for reflection and planning, then pair them with your full birth chart for more detail. They are not fixed predictions.' } },
-      ],
-    };
-    addUrl(saturnUrl, ['saturn-return-calculator', 'v2', contentHash([saturnBody])]);
+    // writeHtmlPage writes <title> verbatim, unlike the SPA <SEO> component
+    // which appends the site name. Keep both render paths at the brief's
+    // exact final title.
+    const saturnTitle = saturnReturnLandingContent.title + ' | AstrologyWiki';
+    const saturnDescription = saturnReturnLandingContent.description;
+    const saturnBody = renderSaturnReturnLandingHtml();
+    addUrl(saturnUrl, ['saturn-return-calculator', 'v3', contentHash([saturnBody])]);
     await writeHtmlPage({
       outputPath: path.join(publicDir, 'en', 'saturn-return-calculator', 'index.html'),
       lang: 'en',
       title: saturnTitle,
+      heading: saturnReturnLandingContent.h1,
       description: saturnDescription,
+      preserveMetaDescription: true,
+      heroSubtitle: saturnReturnLandingContent.heroSubtitle,
+      trustLine: saturnReturnLandingContent.trustLine,
       url: saturnUrl,
       ogType: 'website',
       alternates: buildAlternateLinks('/saturn-return-calculator', { zh: false, en: true }),
       schema: [
-        {
-          '@context': 'https://schema.org',
-          '@type': 'WebApplication',
-          name: 'Saturn Return Calculator',
-          description: saturnDescription,
-          applicationCategory: 'LifestyleApplication',
-          operatingSystem: 'Web',
-          url: saturnUrl,
-          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-        },
-        saturnFaqSchema,
+        saturnReturnWebApplicationSchema,
+        saturnReturnFaqSchema,
+        saturnReturnBreadcrumbSchema,
+        saturnReturnHowToSchema,
       ],
       ctaText: LANG_CONFIG.en.homeCta,
       spaPath: '/en/saturn-return-calculator',
-      contentHtml: mdToHtml(saturnBody),
+      contentHtml: saturnBody,
     });
   }
 

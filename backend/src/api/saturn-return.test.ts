@@ -32,7 +32,10 @@ describe("/api/saturn-return", () => {
     expect(res.body.natalSaturn.sign).toBeTruthy();
     expect(res.body.returns).toBeInstanceOf(Array);
     expect(res.body.returns.length).toBeGreaterThanOrEqual(1);
+    expect(res.body.precision).toBe("estimated");
     expect(res.body.approximate).toBe(true); // no time provided
+    expect(res.body.returns[0].estimatedClosestDate).toMatch(/^20\d{2}-\d{2}-\d{2}$/);
+    expect(res.body.returns[0].exactPasses).toBeUndefined();
   });
 
   it("returns exact result when birth time is provided", async () => {
@@ -42,9 +45,11 @@ describe("/api/saturn-return", () => {
     );
 
     expect(res.status).toBe(200);
+    expect(res.body.precision).toBe("exact");
     expect(res.body.approximate).toBe(false);
     expect(res.body.returns[0].startDate).toBeTruthy();
-    expect(res.body.returns[0].exactDate).toBeTruthy();
+    expect(res.body.returns[0].exactPasses.length).toBeGreaterThanOrEqual(1);
+    expect(res.body.returns[0].exactPasses[0].occurredAt).toMatch(/Z$/);
     expect(res.body.returns[0].endDate).toBeTruthy();
     expect(res.body.returns[0].interpretation).toBeTruthy();
   });
@@ -86,11 +91,15 @@ describe("/api/saturn-return", () => {
     expect(res.body.natalSaturn).toBeDefined();
   });
 
-  it("defaults timezone to UTC when missing", async () => {
-    const res = await request(app, "/api/saturn-return?date=1990-06-15");
+  it("keeps results estimated when a birth time has no timezone", async () => {
+    const res = await request(
+      app,
+      "/api/saturn-return?date=1990-06-15&time=08:00",
+    );
 
     expect(res.status).toBe(200);
     expect(res.body.natalSaturn).toBeDefined();
+    expect(res.body.precision).toBe("estimated");
   });
 
   // P1: NaN lat/lon should return 400

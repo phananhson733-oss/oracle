@@ -1,5 +1,5 @@
-<!-- INPUT: 项目根目录文件与子目录（含首页首字节 SEO/FAQ、响应式全局导航与工具 CTA、GA4、构建/E2E、支付与 UI 规则）。 -->
-<!-- OUTPUT: 根目录架构摘要与文件索引（含无重叠宽屏导航、增长漏斗、首页内容发现、样式/构建、Playwright、短链/支付与规范门槛）。 -->
+<!-- INPUT: 项目根目录文件与子目录（含首页首字节 SEO/FAQ、响应式全局导航与工具 CTA、GA4、土星回归 brief 同源内容/四类 JSON-LD、构建/E2E、支付与 UI 规则）。 -->
+<!-- OUTPUT: 根目录架构摘要与文件索引（含无重叠宽屏导航、增长漏斗、首页内容发现、土星回归内容同源验收、样式/构建、Playwright、短链/支付与规范门槛）。 -->
 <!-- POS: 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
 
 一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
@@ -54,6 +54,7 @@
 
 近期更新
 - 2026-07-13 修复顶部导航宽屏拥挤：容器扩展至 1600px、品牌与导航增加显式间距，较窄桌面隐藏长 wordmark，并以 Playwright 几何断言守护不重叠与不溢出。
+- 2026-07-15 修复 Saturn Return Calculator brief 对齐：后端以数值根求解区分 estimated 与 exact UTC passes；EN 页面、静态 stub、FAQPage、WebApplication、BreadcrumbList 与 HowTo Schema 从单一内容模型生成；相关入口恢复为 Birth Chart、Compatibility 与 Moon Sign，未发布文章保持隐藏。
 - 2026-07-13 落地 AstrologyWiki 增长漏斗：补全语言化 GA4 SPA PV、Nav/Sticky/Lead/Bottom Wiki CTA、指定文章工具内链、Birth Chart 工具 E2E，并补齐根首页短 Title、关键词 H1、contactPoint、同源 FAQ 与首字节长正文；保留编辑人设真实性披露和 Organization author。
 
 - 静态 SEO 生成器只对真实生成的双语 Wiki 页面输出 hreflang，并停止为 EN-only 经典详情页声明不存在的中文 alternate；新增生成产物目标完整性测试。
