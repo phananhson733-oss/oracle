@@ -2,13 +2,21 @@
 // OUTPUT: Natal Saturn position and Saturn Return date ranges with template interpretations.
 // POS: Saturn Return calculator service; update this header and FOLDER.md if modified.
 
-import { ephemerisService } from "./ephemeris.js";
+import { birthToUtcDate, ephemerisService } from "./ephemeris.js";
 import type { BirthInput } from "../types/api.js";
+import {
+  findLocalMinimumBrackets,
+  findSignChangeBrackets,
+  normalizeSignedDegrees,
+  refineMinimum,
+  refineRoot,
+  type TimedValue,
+} from "./saturn-return-math.js";
 
 export interface SaturnReturnInput {
   date: string; // YYYY-MM-DD
   time?: string; // HH:mm (optional)
-  timezone: string;
+  timezone?: string;
   lat?: number;
   lon?: number;
   city?: string;
@@ -23,33 +31,39 @@ export interface NatalSaturnInfo {
 
 export interface SaturnReturnPeriod {
   startDate: string; // ISO date string (when Saturn enters orb)
-  exactDate: string; // ISO date string (exact conjunction)
   endDate: string; // ISO date string (when Saturn leaves orb)
+  exactPasses?: SaturnReturnPass[];
+  estimatedClosestDate?: string;
   returnNumber: number; // 1st, 2nd, 3rd
   interpretation: string;
 }
 
+export interface SaturnReturnPass {
+  occurredAt: string;
+  direction: "direct" | "retrograde";
+}
+
+export type SaturnReturnPrecision = "estimated" | "exact";
+
 export interface SaturnReturnResult {
   natalSaturn: NatalSaturnInfo;
   returns: SaturnReturnPeriod[];
+  precision: SaturnReturnPrecision;
+  /** @deprecated Use precision instead. Kept temporarily for existing clients. */
   approximate: boolean;
 }
 
 const SATURN_ORBITAL_PERIOD_YEARS = 29.46;
 const SEARCH_ORB_DEGREES = 2;
+const RETURN_SEARCH_STEP_MS = 14 * 24 * 60 * 60 * 1000;
+const ROOT_TOLERANCE_MS = 60 * 1000;
+const ROOT_DEDUPLICATION_MS = 12 * 60 * 60 * 1000;
+const STATION_TOUCH_TOLERANCE_DEGREES = 0.0001;
 
 const SIGNS = [
   "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
   "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces",
 ] as const;
-
-function signToLongitude(sign: string, degree: number, minute: number): number {
-  const signIndex = SIGNS.indexOf(sign as typeof SIGNS[number]);
-  if (signIndex === -1) {
-    throw new Error(`Unknown sign: ${sign}`);
-  }
-  return signIndex * 30 + degree + minute / 60;
-}
 
 // P0 fix: safe date offset that avoids setMonth overflow on month boundaries
 function addMonths(date: Date, months: number): Date {
@@ -61,12 +75,6 @@ function addMonths(date: Date, months: number): Date {
   if (d.getUTCMonth() !== expectedMonth) {
     d.setUTCDate(0); // go to last day of previous month
   }
-  return d;
-}
-
-function addDays(date: Date, days: number): Date {
-  const d = new Date(date);
-  d.setUTCDate(d.getUTCDate() + days);
   return d;
 }
 
@@ -171,101 +179,166 @@ function getReturnInterpretation(returnNumber: number, sign: string): string {
   return `Your ${ordinal} Saturn Return (ages 84-90) is a rare milestone of completion. The lessons of Saturn in ${sign} have been fully integrated. This is a time of reflection, wisdom-sharing, and peace with the life you have lived.`;
 }
 
-async function findSaturnLongitude(
-  date: Date,
-  lat: number,
-  lon: number,
-): Promise<number> {
-  const chart = await ephemerisService.calculateNatalChart({
-    date: date.toISOString().split("T")[0],
-    time: `${String(date.getUTCHours()).padStart(2, "0")}:${String(date.getUTCMinutes()).padStart(2, "0")}`,
-    city: "Unknown",
-    timezone: "UTC",
-    accuracy: "exact",
-    lat,
-    lon,
-  });
-
-  const saturn = chart.positions.find((p) => p.name === "Saturn");
-  if (!saturn) {
-    throw new Error("Saturn position not found in chart calculation");
-  }
-
-  return signToLongitude(saturn.sign, saturn.degree, saturn.minute || 0);
+interface SaturnSample {
+  longitude: number;
+  speed: number;
 }
 
-async function findExactReturnDate(
+const dateKey = (timestamp: number) =>
+  new Date(timestamp).toISOString().slice(0, 10);
+
+const getSaturnSample = async (date: Date): Promise<SaturnSample> => {
+  const result = await ephemerisService.getLongitudes(["Saturn"], date);
+  if (result.usedMockFallback) {
+    throw new Error("Saturn ephemeris data is unavailable.");
+  }
+  const longitude = result.longitudes.Saturn;
+  const speed = result.speeds.Saturn;
+  if (!Number.isFinite(longitude) || !Number.isFinite(speed)) {
+    throw new Error("Saturn ephemeris data is invalid.");
+  }
+  return { longitude, speed };
+};
+
+const sampleRange = async (
+  start: number,
+  end: number,
+  stepMs: number,
+  sample: (at: number) => Promise<number>,
+): Promise<TimedValue[]> => {
+  const samples: TimedValue[] = [];
+  for (let at = start; at < end; at += stepMs) {
+    samples.push({ at, value: await sample(at) });
+  }
+  samples.push({ at: end, value: await sample(end) });
+  return samples;
+};
+
+const uniqueRoots = (roots: readonly number[]) =>
+  roots
+    .slice()
+    .sort((a, b) => a - b)
+    .filter((root, index, sorted) =>
+      index === 0 || root - sorted[index - 1] > ROOT_DEDUPLICATION_MS,
+    );
+
+async function findReturnPeriod(
   natalLongitude: number,
   approximateDate: Date,
-  lat: number,
-  lon: number,
-): Promise<{ exactDate: Date; startDate: Date; endDate: Date }> {
-  // P0 fix: use addMonths/addDays instead of setMonth/setDate
+): Promise<{
+  exactPasses: SaturnReturnPass[];
+  estimatedClosestDate: string;
+  startDate: string;
+  endDate: string;
+}> {
   const low = addMonths(approximateDate, -12);
   const high = addMonths(approximateDate, 12);
 
-  // Scan monthly to find closest approach
-  let bestDate = approximateDate;
-  let bestDiff = 360;
+  const samples = new Map<number, SaturnSample>();
+  const getSample = async (at: number) => {
+    const cached = samples.get(at);
+    if (cached) return cached;
+    const value = await getSaturnSample(new Date(at));
+    samples.set(at, value);
+    return value;
+  };
+  const conjunctionValue = async (at: number) =>
+    normalizeSignedDegrees((await getSample(at)).longitude - natalLongitude);
+  const absoluteConjunctionValue = async (at: number) =>
+    Math.abs(await conjunctionValue(at));
+  const orbValue = async (at: number) =>
+    (await absoluteConjunctionValue(at)) - SEARCH_ORB_DEGREES;
 
-  let scanDate = new Date(low);
-  while (scanDate <= high) {
-    const lon360 = await findSaturnLongitude(scanDate, lat, lon);
-    let diff = Math.abs(lon360 - natalLongitude);
-    if (diff > 180) diff = 360 - diff;
-
-    if (diff < bestDiff) {
-      bestDiff = diff;
-      bestDate = new Date(scanDate);
+  const conjunctionSamples = await sampleRange(
+    low.getTime(),
+    high.getTime(),
+    RETURN_SEARCH_STEP_MS,
+    conjunctionValue,
+  );
+  const signChangeRoots = uniqueRoots(
+    await Promise.all(
+      findSignChangeBrackets(conjunctionSamples).map((bracket) =>
+        refineRoot(
+          bracket.start,
+          bracket.end,
+          conjunctionValue,
+          ROOT_TOLERANCE_MS,
+        ),
+      ),
+    ),
+  );
+  const stationCandidates = await Promise.all(
+    findLocalMinimumBrackets(
+      conjunctionSamples.map((sample) => ({
+        at: sample.at,
+        value: Math.abs(sample.value),
+      })),
+    ).map((bracket) =>
+      refineMinimum(
+        bracket.start,
+        bracket.end,
+        absoluteConjunctionValue,
+        ROOT_TOLERANCE_MS,
+      ),
+    ),
+  );
+  const stationTouchRoots: number[] = [];
+  for (const candidate of stationCandidates) {
+    if (
+      (await absoluteConjunctionValue(candidate)) <=
+      STATION_TOUCH_TOLERANCE_DEGREES
+    ) {
+      stationTouchRoots.push(candidate);
     }
-    scanDate = addDays(scanDate, 30);
+  }
+  const passRoots = uniqueRoots([...signChangeRoots, ...stationTouchRoots]);
+
+  if (passRoots.length === 0) {
+    throw new Error("Could not resolve a Saturn Return conjunction.");
   }
 
-  // Refine to weekly precision
-  const weekLow = addDays(bestDate, -45);
-  const weekHigh = addDays(bestDate, 45);
+  const orbSamples = await sampleRange(
+    low.getTime(),
+    high.getTime(),
+    RETURN_SEARCH_STEP_MS,
+    orbValue,
+  );
+  const orbRoots = uniqueRoots(
+    await Promise.all(
+      findSignChangeBrackets(orbSamples).map((bracket) =>
+        refineRoot(bracket.start, bracket.end, orbValue, ROOT_TOLERANCE_MS),
+      ),
+    ),
+  );
 
-  let weekScan = new Date(weekLow);
-  while (weekScan <= weekHigh) {
-    const lon360 = await findSaturnLongitude(weekScan, lat, lon);
-    let diff = Math.abs(lon360 - natalLongitude);
-    if (diff > 180) diff = 360 - diff;
-
-    if (diff < bestDiff) {
-      bestDiff = diff;
-      bestDate = new Date(weekScan);
-    }
-    weekScan = addDays(weekScan, 7);
+  if (orbRoots.length < 2) {
+    throw new Error("Could not resolve Saturn Return window boundaries.");
   }
 
-  // Find start/end dates (orb window)
-  const orbStart = addMonths(bestDate, -6);
-  let startDate = bestDate;
-  let endDate = bestDate;
+  const closestRoot = passRoots.reduce((closest, root) =>
+    Math.abs(root - approximateDate.getTime()) <
+    Math.abs(closest - approximateDate.getTime())
+      ? root
+      : closest,
+  );
+  const exactPasses = await Promise.all(
+    passRoots.map(async (root) => {
+      const direction: SaturnReturnPass["direction"] =
+        (await getSample(root)).speed < 0 ? "retrograde" : "direct";
 
-  let orbScan = new Date(orbStart);
-  let inOrb = false;
-  while (orbScan <= high) {
-    const lon360 = await findSaturnLongitude(orbScan, lat, lon);
-    let diff = Math.abs(lon360 - natalLongitude);
-    if (diff > 180) diff = 360 - diff;
+      return {
+        occurredAt: new Date(root).toISOString(),
+        direction,
+      };
+    }),
+  );
 
-    if (diff <= SEARCH_ORB_DEGREES && !inOrb) {
-      startDate = new Date(orbScan);
-      inOrb = true;
-    }
-    if (diff > SEARCH_ORB_DEGREES && inOrb) {
-      endDate = new Date(orbScan);
-      break;
-    }
-    orbScan = addDays(orbScan, 14);
-  }
-
-  if (inOrb && endDate.getTime() === bestDate.getTime()) {
-    endDate = addMonths(startDate, 6);
-  }
-
-  return { exactDate: bestDate, startDate, endDate };
+  return {
+    exactPasses,
+    estimatedClosestDate: dateKey(closestRoot),
+    startDate: dateKey(orbRoots[0]),
+    endDate: dateKey(orbRoots[orbRoots.length - 1]),
+  };
 }
 
 export async function calculateSaturnReturn(
@@ -279,32 +352,32 @@ export async function calculateSaturnReturn(
 
   validateCoordinates(input.lat, input.lon);
 
-  const approximate = !input.time;
-  const lat = input.lat ?? 0;
-  const lon = input.lon ?? 0;
+  const precision: SaturnReturnPrecision =
+    input.time && input.timezone ? "exact" : "estimated";
+  const timezone = input.timezone || "UTC";
+  const approximate = precision === "estimated";
 
   const birthInput: BirthInput = {
     date: input.date,
     time: input.time || "12:00",
     city: input.city || "Unknown",
-    timezone: input.timezone,
+    timezone,
     accuracy: approximate ? "time_unknown" : "exact",
     lat: input.lat,
     lon: input.lon,
   };
 
-  const chart = await ephemerisService.calculateNatalChart(birthInput);
-  const saturn = chart.positions.find((p) => p.name === "Saturn");
-  if (!saturn) {
-    throw new Error("Could not calculate natal Saturn position");
-  }
-
-  const natalLongitude = signToLongitude(saturn.sign, saturn.degree, saturn.minute || 0);
+  const natalMoment = birthToUtcDate(birthInput);
+  const natalSample = await getSaturnSample(natalMoment);
+  const natalLongitude = natalSample.longitude;
+  const natalSign = SIGNS[Math.floor(natalLongitude / 30)];
+  const natalDegree = Math.floor(natalLongitude % 30);
+  const natalMinute = Math.floor((natalLongitude % 1) * 60);
 
   const natalSaturn: NatalSaturnInfo = {
-    sign: saturn.sign,
-    degree: saturn.degree,
-    minute: saturn.minute || 0,
+    sign: natalSign,
+    degree: natalDegree,
+    minute: natalMinute,
     longitude: natalLongitude,
   };
 
@@ -320,25 +393,26 @@ export async function calculateSaturnReturn(
 
     if (approximateReturnYear > 2080) break;
 
-    const { exactDate, startDate, endDate } = await findExactReturnDate(
+    const returnPeriod = await findReturnPeriod(
       natalLongitude,
       approximateReturnDate,
-      lat,
-      lon,
     );
 
     returns.push({
-      startDate: startDate.toISOString().split("T")[0],
-      exactDate: exactDate.toISOString().split("T")[0],
-      endDate: endDate.toISOString().split("T")[0],
+      startDate: returnPeriod.startDate,
+      endDate: returnPeriod.endDate,
+      ...(precision === "exact"
+        ? { exactPasses: returnPeriod.exactPasses }
+        : { estimatedClosestDate: returnPeriod.estimatedClosestDate }),
       returnNumber: returnNum,
-      interpretation: getReturnInterpretation(returnNum, saturn.sign),
+      interpretation: getReturnInterpretation(returnNum, natalSign),
     });
   }
 
   return {
     natalSaturn,
     returns,
+    precision,
     approximate,
   };
 }

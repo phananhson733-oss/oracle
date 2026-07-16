@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-in-capricorn": {
+      "hero": {
+        "prompt": "A lone mountain goat silhouette mid-climb on carved stone steps beneath Saturn's ringed form glowing low on the horizon, teal and gold nebula light dusting a dense indigo-to-black sky, the goat and Saturn centered in the safe zone, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn's ringed planet rising above stone steps with a mountain goat climbing toward a gold-lit summit in a deep indigo cosmic sky"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "titleEn": "Four Ways Saturn Return in Capricorn Shows Up",
+          "altEn": "Diagram of four Saturn Return in Capricorn themes: career pressure, authority questions, legacy focus, and boundary reset",
+          "items": [
+            {
+              "nameEn": "Career Pressure",
+              "subEn": "Long-postponed decisions about direction, title, or responsibility ask to be settled"
+            },
+            {
+              "nameEn": "Authority Questions",
+              "subEn": "Tests whether you lead from earned skill or inherited expectation"
+            },
+            {
+              "nameEn": "Legacy Focus",
+              "subEn": "Pull toward building something durable — a reputation, craft, or standard — over quick wins"
+            },
+            {
+              "nameEn": "Boundary Reset",
+              "subEn": "Old agreements that no longer fit ask to be renegotiated, from contracts to family roles"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Saturn Return in Capricorn vs a Saturn Square",
+          "titleEn": "Saturn Return vs Saturn Square",
+          "altEn": "Side-by-side comparison of Saturn Return and Saturn Square covering scope, duration, and practical use",
+          "columns": [
+            {
+              "nameEn": "Saturn Return",
+              "linesEn": [
+                "Full-cycle close — Saturn back on its natal degree",
+                "Broad reckoning across your entire structure of commitments",
+                "Lasts a year or more of steady weight",
+                "Use for structural decisions about direction and responsibility"
+              ]
+            },
+            {
+              "nameEn": "Saturn Square",
+              "linesEn": [
+                "One hard angle inside the 29-year cycle",
+                "Tests a single area, then eases within months",
+                "Shorter, more contained friction",
+                "Use for single-issue adjustments"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Return in Your Timing",
+          "titleEn": "Five Observable Cues the Return Is Active",
+          "altEn": "Five numbered cues that signal Saturn Return in Capricorn is active in your timing",
+          "items": [
+            {
+              "nameEn": "Age Window",
+              "subEn": "Age markers near 29–30 or 58–59 when the return typically activates in the chart"
+            },
+            {
+              "nameEn": "Outgrown Arrangements",
+              "subEn": "Sudden intolerance for jobs, titles, or commitments that no longer match who you have become"
+            },
+            {
+              "nameEn": "Pressure to Formalize",
+              "subEn": "Recurring prompts to sign it, commit to it, take the role, or step away decisively"
+            },
+            {
+              "nameEn": "Audit Mood",
+              "subEn": "A sober, stock-taking feeling rather than sudden chaos — quietly weighing what you have built"
+            },
+            {
+              "nameEn": "Career and Authority Themes",
+              "subEn": "Pressure keeps circling back to work, responsibility, and structure — a Capricorn signature"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
