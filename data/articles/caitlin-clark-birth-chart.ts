@@ -23,7 +23,7 @@ export const caitlinClarkBirthChartEn: WikiArticle = {
 
 ## What Is Caitlin Clark's Birth Chart?
 
-Caitlin Clark birth chart is a symbolic snapshot of where the planets sat on January 22, 2002, the day she was born in Des Moines, Iowa. Read as an interpretive tool rather than a scoreboard, it maps her Aquarius Sun alongside a tight cluster of planets in the same sign, giving astrologers a set of archetypes to layer over her public story. It works less like a forecast and more like a **symbolic map of planetary placements at her birth**, useful for reflection, not for proving anything. Because her exact birth time isn't publicly documented, the reading stays open at the edges — the rising sign and houses can't be pinned down. To see how these pieces fit together at all, it helps to start with the broader [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+Caitlin Clark birth chart is a symbolic snapshot of where the planets sat on January 22, 2002, the day she was born in Des Moines, Iowa. Read as an interpretive tool rather than a scoreboard, it maps her Aquarius Sun alongside a tight cluster of planets in the same sign, giving astrologers a set of archetypes to layer over her public story. It works less like a forecast and more like a **symbolic map of planetary placements at her birth**, useful for reflection, not for proving anything. Because her exact birth time isn't publicly documented, the reading stays open at the edges — the rising sign and houses can't be pinned down. To see how these pieces fit together at all, it helps to start with the broader *pillar page on how to read a birth chart*.
 
 - Centers on an Aquarius stellium that reads as independent, systems-minded, and unconventional
 - Pairs airy detachment (Aquarius) with intuitive water (Mars in Pisces)
@@ -37,7 +37,7 @@ Reading the Caitlin Clark birth chart matters because it turns a famous name int
 
 ### What it gives you to reflect on
 
-Her chart hands you a vivid, public example to think with instead of an abstract textbook. Seeing "cool air sign" sit right next to "first-strike competitor" makes the point that people are rarely one label, and that the contradictions are the interesting part. It also raises the question of self-presentation: because her rising sign stays uncertain without a confirmed birth time, the chart is a reminder that even a well-known figure keeps a private layer astrology can't fully name. The same logic in a [guide to rising sign and ascendant meaning](/en/wiki/ascendant-meaning) applies to your own first impression — the mask before the deeper placements show up.
+Her chart hands you a vivid, public example to think with instead of an abstract textbook. Seeing "cool air sign" sit right next to "first-strike competitor" makes the point that people are rarely one label, and that the contradictions are the interesting part. It also raises the question of self-presentation: because her rising sign stays uncertain without a confirmed birth time, the chart is a reminder that even a well-known figure keeps a private layer astrology can't fully name. The same logic in a *guide to rising sign and ascendant meaning* applies to your own first impression — the mask before the deeper placements show up.
 
 ## Full Birth Chart vs Sun Sign: Why the Whole Map Reads Differently
 
