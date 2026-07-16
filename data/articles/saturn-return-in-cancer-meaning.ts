@@ -38,7 +38,7 @@ Understanding saturn return in cancer meaning matters because this passage tends
 2. **It sets a boundary.** Reading it as one specific cycle stops you from blaming every difficult month on the same transit, which is exactly where broad, doom-heavy claims mislead people into over-attributing their whole life to one placement.
 3. **It marks the timing.** Knowing the window sits near 29 and 58 lets you approach big domestic choices — moving cities, marrying, having children, caring for an aging parent — with intention instead of reacting after the fact.
 
-This placement usually overlaps with a wider *guide to how Saturn moves through the birth chart*, which shows how the same planet reshapes other areas of life at different times.
+This placement usually overlaps with a wider [guide to the astrology houses Saturn moves through](/en/wiki/astrology-houses), which shows how the same planet reshapes other areas of life at different times.
 
 ## Saturn Return in Cancer vs Saturn Transiting Cancer
 
