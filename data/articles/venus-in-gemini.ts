@@ -134,7 +134,7 @@ Building in novelty helps — new places, shared learning, and real conversation
 
 This is not a clinical interpretation or mental health advice.
 
-Ready to see exactly where Venus sits in your own chart? [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) to pinpoint your precise placement, get a plain-language read on your love and communication style, and start recognizing the patterns that shape how you connect long before any single relationship puts them to the test.
+Ready to see exactly where Venus sits in your own chart? [Generate Your Free Birth Chart](/en/birth-chart-calculator) to pinpoint your precise placement, get a plain-language read on your love and communication style, and start recognizing the patterns that shape how you connect long before any single relationship puts them to the test.
 
 ## Sources
 
