@@ -115,7 +115,7 @@ Neither is objectively more accurate; they answer different questions. Sidereal 
 
 ## Take Action
 
-Run your own birth data through the calculator to see your tropical and sidereal placements together, the same way we split Elvis's Capricorn and Sagittarius Sun. You'll get a side-by-side chart that shows exactly which of your signs shift under the Vedic ayanamsa and which hold steady. Sitting with that gap often tells you something honest about the difference between the self you present and the one quietly steering the wheel — [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) and read both versions of your story.
+Run your own birth data through the calculator to see your tropical and sidereal placements together, the same way we split Elvis's Capricorn and Sagittarius Sun. You'll get a side-by-side chart that shows exactly which of your signs shift under the Vedic ayanamsa and which hold steady. Sitting with that gap often tells you something honest about the difference between the self you present and the one quietly steering the wheel — [Generate Your Free Birth Chart](/en/birth-chart-calculator) and read both versions of your story.
 
 ## Sources
 
