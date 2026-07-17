@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" role="img" aria-label="Gemini Venus vs Libra Venus: How Two Air Signs Love Differently">
+  <defs>
+    <linearGradient id="venusingemini0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="venusingemini0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="venusingemini0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="venusingemini0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="venusingemini0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="venusingemini0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="527" rx="22" fill="url(#venusingemini0en-panel)"/>
+  <ellipse cx="198" cy="127" rx="380" ry="180" fill="url(#venusingemini0en-neb1)"/>
+  <ellipse cx="623" cy="424" rx="334" ry="170" fill="url(#venusingemini0en-neb2)"/>
+  <circle cx="13.5" cy="351.5" r="1.11" fill="#cfc8ea" opacity="0.20"/><circle cx="87.2" cy="38.5" r="0.58" fill="#cfc8ea" opacity="0.36"/><circle cx="502.2" cy="371.1" r="1.32" fill="#cfc8ea" opacity="0.22"/><circle cx="661.4" cy="156.0" r="0.42" fill="#cfc8ea" opacity="0.49"/><circle cx="345.1" cy="189.7" r="0.60" fill="#cfc8ea" opacity="0.44"/><circle cx="381.4" cy="423.6" r="0.86" fill="#cfc8ea" opacity="0.37"/><circle cx="520.4" cy="187.0" r="1.55" fill="#cfc8ea" opacity="0.36"/><circle cx="405.1" cy="143.9" r="1.67" fill="#cfc8ea" opacity="0.44"/><circle cx="557.1" cy="402.9" r="0.64" fill="#cfc8ea" opacity="0.39"/><circle cx="744.1" cy="228.3" r="0.92" fill="#cfc8ea" opacity="0.12"/><circle cx="692.9" cy="387.5" r="0.48" fill="#cfc8ea" opacity="0.34"/><circle cx="173.0" cy="105.0" r="0.77" fill="#cfc8ea" opacity="0.26"/><circle cx="516.3" cy="62.0" r="1.36" fill="#cfc8ea" opacity="0.50"/><circle cx="254.3" cy="34.7" r="1.35" fill="#cfc8ea" opacity="0.30"/><circle cx="332.2" cy="264.8" r="1.15" fill="#cfc8ea" opacity="0.38"/><circle cx="659.0" cy="231.0" r="0.46" fill="#cfc8ea" opacity="0.53"/><circle cx="353.2" cy="33.9" r="1.33" fill="#cfc8ea" opacity="0.35"/><circle cx="739.4" cy="383.0" r="1.18" fill="#cfc8ea" opacity="0.34"/><circle cx="730.5" cy="458.9" r="0.90" fill="#cfc8ea" opacity="0.43"/><circle cx="112.2" cy="360.2" r="1.15" fill="#cfc8ea" opacity="0.15"/><circle cx="431.8" cy="168.0" r="0.58" fill="#cfc8ea" opacity="0.20"/><circle cx="32.2" cy="253.3" r="0.71" fill="#cfc8ea" opacity="0.42"/><circle cx="115.1" cy="229.3" r="0.85" fill="#cfc8ea" opacity="0.14"/><circle cx="327.9" cy="315.0" r="0.42" fill="#cfc8ea" opacity="0.47"/><circle cx="733.8" cy="102.5" r="1.60" fill="#cfc8ea" opacity="0.44"/><circle cx="671.6" cy="232.6" r="1.61" fill="#cfc8ea" opacity="0.33"/><circle cx="580.6" cy="326.3" r="1.47" fill="#cfc8ea" opacity="0.47"/><circle cx="510.6" cy="373.1" r="1.58" fill="#cfc8ea" opacity="0.18"/><circle cx="542.6" cy="471.7" r="1.08" fill="#cfc8ea" opacity="0.21"/><circle cx="107.3" cy="32.7" r="1.06" fill="#cfc8ea" opacity="0.25"/><circle cx="378.0" cy="212.8" r="1.23" fill="#cfc8ea" opacity="0.36"/><circle cx="362.1" cy="460.1" r="0.97" fill="#cfc8ea" opacity="0.44"/><circle cx="232.4" cy="412.1" r="1.62" fill="#cfc8ea" opacity="0.14"/><circle cx="51.4" cy="393.6" r="1.61" fill="#cfc8ea" opacity="0.43"/><circle cx="319.8" cy="268.2" r="1.13" fill="#cfc8ea" opacity="0.12"/><circle cx="81.0" cy="313.6" r="0.53" fill="#cfc8ea" opacity="0.38"/><circle cx="528.5" cy="40.6" r="1.67" fill="#cfc8ea" opacity="0.26"/><circle cx="670.0" cy="301.9" r="0.48" fill="#cfc8ea" opacity="0.30"/><circle cx="255.6" cy="509.7" r="1.41" fill="#cfc8ea" opacity="0.48"/><circle cx="595.0" cy="471.2" r="0.47" fill="#cfc8ea" opacity="0.39"/><circle cx="674.7" cy="510.6" r="1.44" fill="#cfc8ea" opacity="0.14"/><circle cx="695.3" cy="318.3" r="1.50" fill="#cfc8ea" opacity="0.45"/><circle cx="28.5" cy="136.9" r="0.46" fill="#cfc8ea" opacity="0.46"/><circle cx="174.5" cy="514.3" r="1.03" fill="#cfc8ea" opacity="0.43"/><circle cx="76.2" cy="454.9" r="0.55" fill="#cfc8ea" opacity="0.23"/><path d="M 433.4095803871751 158.2 L 433.9 160.8 L 436.6 161.32558559300378 L 433.9 161.8 L 433.4095803871751 164.5 L 432.9 161.8 L 430.2 161.32558559300378 L 432.9 160.8 Z" fill="#f6e6bf" opacity="0.7140991955762729"/><path d="M 584.6577563583851 253.2 L 585.2 256.0 L 588.0 256.55972861731425 L 585.2 257.1 L 584.6577563583851 259.9 L 584.1 257.1 L 581.3 256.55972861731425 L 584.1 256.0 Z" fill="#f6e6bf" opacity="0.6518930825171992"/><path d="M 268.36686112731695 397.2 L 269.0 400.5 L 272.2 401.10228928970173 L 269.0 401.7 L 268.36686112731695 405.0 L 267.7 401.7 L 264.5 401.10228928970173 L 267.7 400.5 Z" fill="#f6e6bf" opacity="0.6346141537418589"/><path d="M 489.38821114599705 421.5 L 489.9 424.4 L 492.9 424.9885549903847 L 489.9 425.5 L 489.38821114599705 428.5 L 488.8 425.5 L 485.9 424.9885549903847 L 488.8 424.4 Z" fill="#f6e6bf" opacity="0.5226022177143023"/><path d="M 567.4873989894986 296.5 L 568.0 299.4 L 570.9 299.9334624526091 L 568.0 300.5 L 567.4873989894986 303.4 L 566.9 300.5 L 564.0 299.9334624526091 L 566.9 299.4 Z" fill="#f6e6bf" opacity="0.7122303317999468"/><path d="M 744.1 228.3 L 173.0 105.0 L 332.2 264.8 L 319.8 268.2 L 595.0 471.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="527" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="516" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 510.8 L 16.5 513.5 L 19.2 514 L 16.5 514.5 L 16 517.2 L 15.5 514.5 L 12.8 514 L 15.5 513.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 510.8 L 744.5 513.5 L 747.2 514 L 744.5 514.5 L 744 517.2 L 743.5 514.5 L 740.8 514 L 743.5 513.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Gemini Venus vs Libra Venus: How Two Air Signs Love</text>
+  <text x="380" y="73" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Differently</text>
+  <line x1="230" y1="94" x2="368" y2="94" stroke="url(#venusingemini0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="94" x2="530" y2="94" stroke="url(#venusingemini0en-rule)" stroke-width="1"/>
+  <path d="M 380 89.0 L 380.8 93.2 L 385.0 94 L 380.8 94.8 L 380 99.0 L 379.2 94.8 L 375.0 94 L 379.2 93.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="126" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="126" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 135.6 L 48.3 138.5 L 51.1 139 L 48.3 139.5 L 47.75 142.4 L 47.2 139.5 L 44.4 139 L 47.2 138.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="155.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Venus in Gemini</text>
+  <path d="M 70 184.8 L 70.5 187.5 L 73.2 188 L 70.5 188.5 L 70 191.2 L 69.5 188.5 L 66.8 188 L 69.5 187.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="193.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Driven by variety and quick mental exchange</text>
+  <path d="M 70 213.8 L 70.5 216.5 L 73.2 217 L 70.5 217.5 L 70 220.2 L 69.5 217.5 L 66.8 217 L 69.5 216.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="222.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Seeks stimulation, options, and freedom to change</text>
+  <path d="M 70 242.8 L 70.5 245.5 L 73.2 246 L 70.5 246.5 L 70 249.2 L 69.5 246.5 L 66.8 246 L 69.5 245.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="251.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Breadth-first: samples many angles before settling</text>
+  <path d="M 70 271.8 L 70.5 274.5 L 73.2 275 L 70.5 275.5 L 70 278.2 L 69.5 275.5 L 66.8 275 L 69.5 274.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Keeps options open; resists being pinned down</text>
+  <path d="M 380 306.5 L 380.7 310.3 L 384.5 311 L 380.7 311.7 L 380 315.5 L 379.3 311.7 L 375.5 311 L 379.3 310.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="324" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="324" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 333.6 L 48.3 336.5 L 51.1 337 L 48.3 337.5 L 47.75 340.4 L 47.2 337.5 L 44.4 337 L 47.2 336.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="353.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Venus in Libra</text>
+  <path d="M 70 382.8 L 70.5 385.5 L 73.2 386 L 70.5 386.5 L 70 389.2 L 69.5 386.5 L 66.8 386 L 69.5 385.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Driven by balance and clear partnership</text>
+  <path d="M 70 411.8 L 70.5 414.5 L 73.2 415 L 70.5 415.5 L 70 418.2 L 69.5 415.5 L 66.8 415 L 69.5 414.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="420.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Seeks harmony, symmetry, and a defined us</text>
+  <path d="M 70 440.8 L 70.5 443.5 L 73.2 444 L 70.5 444.5 L 70 447.2 L 69.5 444.5 L 66.8 444 L 69.5 443.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="449.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Pairing-first: organizes identity around the relationship</text>
+  <path d="M 70 469.8 L 70.5 472.5 L 73.2 473 L 70.5 473.5 L 70 476.2 L 69.5 473.5 L 66.8 473 L 69.5 472.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="478.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Pushes toward a clear, mutual choice</text>
+  <path d="M 202.22749999999988 501.4 L 202.6 503.6 L 204.8 504 L 202.6 504.4 L 202.22749999999988 506.6 L 201.8 504.4 L 199.6 504 L 201.8 503.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="508" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 501.4 L 558.2 503.6 L 560.4 504 L 558.2 504.4 L 557.7725000000002 506.6 L 557.4 504.4 L 555.2 504 L 557.4 503.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

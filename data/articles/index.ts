@@ -371,6 +371,7 @@ import { birthChartInterpretationEn } from "./birth-chart-interpretation";
 import { amIOnTheRightPathEn } from "./am-i-on-the-right-path";
 import { saturnReturnAge27En } from "./saturn-return-age-27";
 import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
+import { venusInGeminiEn } from "./venus-in-gemini";
 // All articles organized by language
 
 import {
@@ -733,6 +734,7 @@ const ARTICLES_EN: WikiArticle[] = [
   amIOnTheRightPathEn,
   saturnReturnAge27En,
   saturnReturnInCancerEn,
+  venusInGeminiEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
