@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 411" role="img" aria-label="Three Saturn Returns in Cancer">
+  <defs>
+    <linearGradient id="saturnreturnincancer0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturnreturnincancer0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnincancer0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnincancer0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnincancer0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnreturnincancer0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="408" rx="22" fill="url(#saturnreturnincancer0en-panel)"/>
+  <ellipse cx="198" cy="99" rx="380" ry="140" fill="url(#saturnreturnincancer0en-neb1)"/>
+  <ellipse cx="623" cy="329" rx="334" ry="132" fill="url(#saturnreturnincancer0en-neb2)"/>
+  <circle cx="117.9" cy="90.5" r="1.01" fill="#cfc8ea" opacity="0.14"/><circle cx="688.8" cy="74.8" r="0.62" fill="#cfc8ea" opacity="0.24"/><circle cx="564.4" cy="114.5" r="1.40" fill="#cfc8ea" opacity="0.16"/><circle cx="582.1" cy="345.9" r="1.24" fill="#cfc8ea" opacity="0.17"/><circle cx="686.8" cy="262.1" r="1.54" fill="#cfc8ea" opacity="0.38"/><circle cx="440.7" cy="164.1" r="1.22" fill="#cfc8ea" opacity="0.27"/><circle cx="560.1" cy="134.7" r="0.48" fill="#cfc8ea" opacity="0.24"/><circle cx="582.9" cy="380.5" r="0.57" fill="#cfc8ea" opacity="0.50"/><circle cx="49.3" cy="246.9" r="0.40" fill="#cfc8ea" opacity="0.45"/><circle cx="311.5" cy="114.5" r="1.06" fill="#cfc8ea" opacity="0.39"/><circle cx="429.7" cy="100.6" r="1.45" fill="#cfc8ea" opacity="0.29"/><circle cx="319.1" cy="21.8" r="0.79" fill="#cfc8ea" opacity="0.46"/><circle cx="195.9" cy="354.0" r="1.22" fill="#cfc8ea" opacity="0.13"/><circle cx="121.1" cy="30.5" r="0.40" fill="#cfc8ea" opacity="0.39"/><circle cx="294.6" cy="20.2" r="0.76" fill="#cfc8ea" opacity="0.16"/><circle cx="532.0" cy="282.1" r="0.74" fill="#cfc8ea" opacity="0.40"/><circle cx="134.7" cy="122.0" r="1.16" fill="#cfc8ea" opacity="0.49"/><circle cx="659.6" cy="362.8" r="1.43" fill="#cfc8ea" opacity="0.28"/><circle cx="172.9" cy="84.9" r="1.34" fill="#cfc8ea" opacity="0.43"/><circle cx="452.9" cy="145.0" r="1.10" fill="#cfc8ea" opacity="0.50"/><circle cx="365.7" cy="300.9" r="1.07" fill="#cfc8ea" opacity="0.33"/><circle cx="365.9" cy="379.6" r="1.68" fill="#cfc8ea" opacity="0.15"/><circle cx="662.1" cy="243.2" r="0.46" fill="#cfc8ea" opacity="0.34"/><circle cx="279.6" cy="128.9" r="1.52" fill="#cfc8ea" opacity="0.21"/><circle cx="326.4" cy="327.5" r="1.43" fill="#cfc8ea" opacity="0.35"/><circle cx="741.0" cy="39.1" r="1.57" fill="#cfc8ea" opacity="0.32"/><circle cx="485.7" cy="204.3" r="0.89" fill="#cfc8ea" opacity="0.22"/><circle cx="525.2" cy="147.1" r="1.55" fill="#cfc8ea" opacity="0.34"/><circle cx="136.3" cy="224.0" r="1.10" fill="#cfc8ea" opacity="0.17"/><circle cx="130.6" cy="333.5" r="1.60" fill="#cfc8ea" opacity="0.22"/><circle cx="115.3" cy="143.4" r="1.37" fill="#cfc8ea" opacity="0.28"/><circle cx="413.7" cy="329.8" r="1.56" fill="#cfc8ea" opacity="0.26"/><circle cx="487.7" cy="81.3" r="1.64" fill="#cfc8ea" opacity="0.44"/><circle cx="588.0" cy="369.7" r="0.83" fill="#cfc8ea" opacity="0.50"/><circle cx="256.2" cy="155.8" r="0.67" fill="#cfc8ea" opacity="0.53"/><path d="M 619.8013466279954 23.1 L 620.4 26.2 L 623.5 26.812322350218892 L 620.4 27.4 L 619.8013466279954 30.5 L 619.2 27.4 L 616.1 26.812322350218892 L 619.2 26.2 Z" fill="#f6e6bf" opacity="0.7820084645878523"/><path d="M 526.4213946368545 318.5 L 526.8 320.7 L 529.0 321.11833255458623 L 526.8 321.5 L 526.4213946368545 323.7 L 526.0 321.5 L 523.8 321.11833255458623 L 526.0 320.7 Z" fill="#f6e6bf" opacity="0.6770808203611522"/><path d="M 315.285747660324 307.9 L 315.8 310.7 L 318.7 311.23629622906446 L 315.8 311.8 L 315.285747660324 314.6 L 314.7 311.8 L 311.9 311.23629622906446 L 314.7 310.7 Z" fill="#f6e6bf" opacity="0.7882039544638246"/><path d="M 642.3816092964262 143.1 L 642.9 146.0 L 645.9 146.61460123490542 L 642.9 147.2 L 642.3816092964262 150.2 L 641.8 147.2 L 638.8 146.61460123490542 L 641.8 146.0 Z" fill="#f6e6bf" opacity="0.6413570758420974"/><path d="M 155.50047391466796 35.5 L 155.9 37.9 L 158.3 38.305925441905856 L 155.9 38.7 L 155.50047391466796 41.1 L 155.1 38.7 L 152.7 38.305925441905856 L 155.1 37.9 Z" fill="#f6e6bf" opacity="0.7959632258396596"/><path d="M 49.3 246.9 L 429.7 100.6 L 121.1 30.5 L 172.9 84.9 L 662.1 243.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="408" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="397" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 391.8 L 16.5 394.5 L 19.2 395 L 16.5 395.5 L 16 398.2 L 15.5 395.5 L 12.8 395 L 15.5 394.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 391.8 L 744.5 394.5 L 747.2 395 L 744.5 395.5 L 744 398.2 L 743.5 395.5 L 740.8 395 L 743.5 394.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Three Saturn Returns in Cancer</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturnreturnincancer0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturnreturnincancer0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="311" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#saturnreturnincancer0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#saturnreturnincancer0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Age 29</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">First Return</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Rebuilds adult emotional foundations; new commitments to home, a partner, or</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">self-reliance</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#saturnreturnincancer0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#saturnreturnincancer0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Age 58</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Second Return</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Reverses the caretaking flow; shifting from long-time provider toward receiving</text>
+  <text x="132" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">support</text>
+  <circle cx="92" cy="311" r="13.0" fill="url(#saturnreturnincancer0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="311" r="8" fill="url(#saturnreturnincancer0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="308.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 307.0 L 92.6 310.4 L 96.0 311 L 92.6 311.6 L 92 315.0 L 91.4 311.6 L 88.0 311 L 91.4 310.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="316.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Age 87</text>
+  <text x="132" y="339.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Third Return</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Distills what has endured; legacy, memory, and releasing daily upkeep</text>
+  <path d="M 202.22749999999988 382.4 L 202.6 384.6 L 204.8 385 L 202.6 385.4 L 202.22749999999988 387.6 L 201.8 385.4 L 199.6 385 L 201.8 384.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="389" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 382.4 L 558.2 384.6 L 560.4 385 L 558.2 385.4 L 557.7725000000002 387.6 L 557.4 385.4 L 555.2 385 L 557.4 384.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
