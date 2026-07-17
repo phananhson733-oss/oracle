@@ -117,7 +117,7 @@ No. It applies to anyone with natal Saturn in Cancer, whatever their Sun sign, a
 
 ## Take Action
 
-Run your birth data through the [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) tool to pinpoint the exact degree and window of your Cancer return. It returns the dates for each pass and the natal house the transit activates, so the timing stops being guesswork. Seeing when your emotional foundations come up for review makes it easier to meet the moment on purpose instead of only recognizing it in hindsight.
+Run your birth data through the [Explore Your Saturn Return](/en/saturn-return-calculator) tool to pinpoint the exact degree and window of your Cancer return. It returns the dates for each pass and the natal house the transit activates, so the timing stops being guesswork. Seeing when your emotional foundations come up for review makes it easier to meet the moment on purpose instead of only recognizing it in hindsight.
 
 ## Sources
 
