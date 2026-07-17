@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "birth-chart-interpretation": {
+      "hero": {
+        "prompt": "An expanding spiral of luminous Vedic planetary glyphs — stylized gold sigils for each graha — drifting outward through concentric teal-and-gold nebula rings against a deep indigo-to-near-black cosmic field, evoking the layered craft of reading a Kundli from Lagna outward through lordships and aspects, the scene composed to suggest quiet introspection and self-reflection through astrological symbolism; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Glowing Vedic planetary symbols spiral outward through indigo starfields, evoking the layered craft of Kundli birth chart interpretation"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Kundli Placements in Your Chart",
+          "titleEn": "Five Steps for Reading Your Kundli",
+          "altEn": "Five-step sequence for reading Kundli placements: from Lagna to aspects in Vedic birth chart interpretation",
+          "items": [
+            {
+              "nameEn": "Start with the Lagna",
+              "subEn": "The rising sign anchors how all eleven other houses are counted"
+            },
+            {
+              "nameEn": "Locate the Moon and its Rāśi",
+              "subEn": "In Vedic reading the Moon sign carries more weight than the Sun for temperament"
+            },
+            {
+              "nameEn": "Note each graha's house",
+              "subEn": "A planet's Bhāva shows the life area it colors — work, home, partnership"
+            },
+            {
+              "nameEn": "Check the lordships",
+              "subEn": "See which house each planet rules to quietly link two life areas together"
+            },
+            {
+              "nameEn": "Read the aspects last",
+              "subEn": "Where planets aspect each other, their themes interact and soften or sharpen one another"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Kundli Interpretation vs a Free Chart Calculator",
+          "titleEn": "Calculator vs Interpretation: What Each Actually Does",
+          "altEn": "Side-by-side comparison of a free birth chart calculator versus Kundli interpretation in Vedic astrology",
+          "columns": [
+            {
+              "nameEn": "Chart Calculator",
+              "linesEn": [
+                "Computes each graha's position in sign and house",
+                "Runs the math on your date, time, and place of birth",
+                "Renders a static wheel and stops there",
+                "Provides accurate coordinates — no meaning layer"
+              ]
+            },
+            {
+              "nameEn": "Kundli Interpretation",
+              "linesEn": [
+                "Reads placements through Jyotish rules",
+                "Applies lordships, aspects, and dispositor chains",
+                "Turns the static picture into a story of temperament and timing",
+                "Offers reflective symbolism, not fixed certainty"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Four Traps That Make Kundli Reading Harder Than It Needs to Be",
+          "altEn": "Four common misreadings in Kundli interpretation, from treating the chart as fate to ignoring planetary lordships",
+          "items": [
+            {
+              "nameEn": "Calculator output as the reading",
+              "subEn": "The wheel is raw data; meaning only appears once Jyotish rules are applied"
+            },
+            {
+              "nameEn": "Reading the Sun sign first",
+              "subEn": "Vedic practice leans on the Moon sign and Lagna — Sun-first skews the whole picture"
+            },
+            {
+              "nameEn": "Taking a placement as fate",
+              "subEn": "A hard placement points to a tendency you may notice, not an outcome locked in"
+            },
+            {
+              "nameEn": "Ignoring the lordships",
+              "subEn": "Skipping which planet rules which house strips out half the story the chart tells"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

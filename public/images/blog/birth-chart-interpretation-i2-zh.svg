@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 274" role="img" aria-label="">
+  <defs>
+    <linearGradient id="birthchartinterpretation2zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="birthchartinterpretation2zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="birthchartinterpretation2zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="birthchartinterpretation2zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="birthchartinterpretation2zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="birthchartinterpretation2zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="url(#birthchartinterpretation2zh-panel)"/>
+  <ellipse cx="198" cy="66" rx="380" ry="93" fill="url(#birthchartinterpretation2zh-neb1)"/>
+  <ellipse cx="623" cy="219" rx="334" ry="88" fill="url(#birthchartinterpretation2zh-neb2)"/>
+  <circle cx="707.8" cy="220.1" r="0.41" fill="#cfc8ea" opacity="0.43"/><circle cx="455.6" cy="211.9" r="1.32" fill="#cfc8ea" opacity="0.41"/><circle cx="743.2" cy="119.9" r="0.55" fill="#cfc8ea" opacity="0.35"/><circle cx="486.7" cy="122.7" r="1.33" fill="#cfc8ea" opacity="0.52"/><circle cx="665.9" cy="183.2" r="1.25" fill="#cfc8ea" opacity="0.19"/><circle cx="531.0" cy="120.2" r="0.66" fill="#cfc8ea" opacity="0.54"/><circle cx="79.8" cy="65.3" r="0.48" fill="#cfc8ea" opacity="0.31"/><circle cx="473.9" cy="48.0" r="0.55" fill="#cfc8ea" opacity="0.35"/><circle cx="617.3" cy="225.7" r="0.91" fill="#cfc8ea" opacity="0.41"/><circle cx="395.2" cy="239.5" r="0.67" fill="#cfc8ea" opacity="0.44"/><circle cx="636.2" cy="235.4" r="1.02" fill="#cfc8ea" opacity="0.12"/><circle cx="124.8" cy="169.6" r="1.02" fill="#cfc8ea" opacity="0.16"/><circle cx="521.3" cy="219.8" r="0.77" fill="#cfc8ea" opacity="0.36"/><circle cx="696.7" cy="124.7" r="0.84" fill="#cfc8ea" opacity="0.32"/><circle cx="660.0" cy="127.9" r="0.47" fill="#cfc8ea" opacity="0.53"/><circle cx="192.2" cy="144.8" r="1.26" fill="#cfc8ea" opacity="0.29"/><circle cx="263.2" cy="131.2" r="0.67" fill="#cfc8ea" opacity="0.49"/><circle cx="448.0" cy="45.7" r="0.68" fill="#cfc8ea" opacity="0.33"/><circle cx="272.5" cy="87.2" r="0.84" fill="#cfc8ea" opacity="0.14"/><circle cx="475.1" cy="27.2" r="1.26" fill="#cfc8ea" opacity="0.36"/><circle cx="701.2" cy="167.0" r="1.26" fill="#cfc8ea" opacity="0.20"/><circle cx="305.2" cy="148.8" r="0.68" fill="#cfc8ea" opacity="0.14"/><circle cx="747.7" cy="83.5" r="0.69" fill="#cfc8ea" opacity="0.46"/><path d="M 613.7795430924743 150.0 L 614.4 153.2 L 617.6 153.83595787175 L 614.4 154.5 L 613.7795430924743 157.7 L 613.2 154.5 L 609.9 153.83595787175 L 613.2 153.2 Z" fill="#f6e6bf" opacity="0.681728699663654"/><path d="M 585.3640327583998 94.1 L 585.9 96.8 L 588.6 97.29014600813389 L 585.9 97.8 L 585.3640327583998 100.5 L 584.9 97.8 L 582.2 97.29014600813389 L 584.9 96.8 Z" fill="#f6e6bf" opacity="0.6077111048158258"/><path d="M 252.75519583187997 184.9 L 253.2 187.3 L 255.6 187.75424159877002 L 253.2 188.2 L 252.75519583187997 190.6 L 252.3 188.2 L 249.9 187.75424159877002 L 252.3 187.3 Z" fill="#f6e6bf" opacity="0.7129988115746528"/><path d="M 301.51356965117157 153.8 L 302.0 156.3 L 304.5 156.72767959162593 L 302.0 157.2 L 301.51356965117157 159.7 L 301.0 157.2 L 298.5 156.72767959162593 L 301.0 156.3 Z" fill="#f6e6bf" opacity="0.6126484062056988"/><path d="M 402.22810341976583 222.9 L 402.6 225.0 L 404.8 225.43236044980586 L 402.6 225.8 L 402.22810341976583 228.0 L 401.8 225.8 L 399.7 225.43236044980586 L 401.8 225.0 Z" fill="#f6e6bf" opacity="0.6370877976063639"/><path d="M 455.6 211.9 L 521.3 219.8 L 660.0 127.9 L 701.2 167.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="260" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 254.8 L 16.5 257.5 L 19.2 258 L 16.5 258.5 L 16 261.2 L 15.5 258.5 L 12.8 258 L 15.5 257.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 254.8 L 744.5 257.5 L 747.2 258 L 744.5 258.5 L 744 261.2 L 743.5 258.5 L 740.8 258 L 743.5 257.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#birthchartinterpretation2zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#birthchartinterpretation2zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="220" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#birthchartinterpretation2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#birthchartinterpretation2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#birthchartinterpretation2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#birthchartinterpretation2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#birthchartinterpretation2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#birthchartinterpretation2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#birthchartinterpretation2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#birthchartinterpretation2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 245.4 L 280.4 247.6 L 282.6 248 L 280.4 248.4 L 280.025 250.6 L 279.6 248.4 L 277.4 248 L 279.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="252" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 245.4 L 480.4 247.6 L 482.6 248 L 480.4 248.4 L 479.975 250.6 L 479.6 248.4 L 477.4 248 L 479.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
