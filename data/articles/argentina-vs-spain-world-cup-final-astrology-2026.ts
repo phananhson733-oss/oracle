@@ -122,7 +122,7 @@ Use it as symbolic context for the confirmed matchup, not as evidence for a scor
 
 - *explainer on national birth charts in mundane astrology* — how founding charts for countries are cast and read.
 - [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the base skill behind every paired-chart comparison here.
-- [FIFA: Spain v Argentina final preview](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-v-argentina-live-stream-team-news-tickets-and-more) — official confirmation of the 19 July final at New York New Jersey Stadium.
+- [FIFA World Cup 2026](https://www.fifa.com) — official tournament coverage for the 19 July final at New York New Jersey Stadium.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the planet driving the 2026 final window.
 
 ## Take Action
