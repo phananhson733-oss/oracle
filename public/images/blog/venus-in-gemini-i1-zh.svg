@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 358" role="img" aria-label="">
+  <defs>
+    <linearGradient id="venusingemini1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="venusingemini1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="venusingemini1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="venusingemini1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="venusingemini1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="venusingemini1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="355" rx="22" fill="url(#venusingemini1zh-panel)"/>
+  <ellipse cx="198" cy="86" rx="380" ry="122" fill="url(#venusingemini1zh-neb1)"/>
+  <ellipse cx="623" cy="286" rx="334" ry="115" fill="url(#venusingemini1zh-neb2)"/>
+  <circle cx="685.0" cy="14.3" r="0.78" fill="#cfc8ea" opacity="0.34"/><circle cx="59.3" cy="229.8" r="0.78" fill="#cfc8ea" opacity="0.39"/><circle cx="561.8" cy="37.7" r="1.66" fill="#cfc8ea" opacity="0.45"/><circle cx="135.8" cy="105.3" r="1.08" fill="#cfc8ea" opacity="0.24"/><circle cx="304.8" cy="182.1" r="1.01" fill="#cfc8ea" opacity="0.46"/><circle cx="253.6" cy="71.6" r="1.12" fill="#cfc8ea" opacity="0.14"/><circle cx="187.5" cy="35.9" r="1.22" fill="#cfc8ea" opacity="0.16"/><circle cx="457.3" cy="180.4" r="1.68" fill="#cfc8ea" opacity="0.36"/><circle cx="447.5" cy="129.0" r="0.83" fill="#cfc8ea" opacity="0.46"/><circle cx="202.6" cy="140.2" r="0.83" fill="#cfc8ea" opacity="0.32"/><circle cx="44.5" cy="155.0" r="1.49" fill="#cfc8ea" opacity="0.24"/><circle cx="53.4" cy="204.7" r="1.40" fill="#cfc8ea" opacity="0.49"/><circle cx="370.4" cy="281.9" r="0.97" fill="#cfc8ea" opacity="0.42"/><circle cx="294.5" cy="197.7" r="1.09" fill="#cfc8ea" opacity="0.47"/><circle cx="118.4" cy="225.6" r="1.69" fill="#cfc8ea" opacity="0.38"/><circle cx="378.9" cy="87.6" r="1.49" fill="#cfc8ea" opacity="0.29"/><circle cx="315.7" cy="52.4" r="0.67" fill="#cfc8ea" opacity="0.42"/><circle cx="487.1" cy="90.3" r="1.00" fill="#cfc8ea" opacity="0.30"/><circle cx="629.3" cy="38.3" r="1.14" fill="#cfc8ea" opacity="0.27"/><circle cx="81.6" cy="161.5" r="1.19" fill="#cfc8ea" opacity="0.15"/><circle cx="78.7" cy="320.7" r="1.66" fill="#cfc8ea" opacity="0.31"/><circle cx="149.0" cy="97.4" r="0.94" fill="#cfc8ea" opacity="0.45"/><circle cx="637.0" cy="289.4" r="1.69" fill="#cfc8ea" opacity="0.36"/><circle cx="428.2" cy="320.5" r="0.47" fill="#cfc8ea" opacity="0.14"/><circle cx="217.1" cy="286.9" r="0.68" fill="#cfc8ea" opacity="0.24"/><circle cx="538.4" cy="305.5" r="1.38" fill="#cfc8ea" opacity="0.49"/><circle cx="487.3" cy="305.1" r="1.32" fill="#cfc8ea" opacity="0.26"/><circle cx="744.6" cy="209.5" r="0.87" fill="#cfc8ea" opacity="0.31"/><circle cx="620.8" cy="297.9" r="0.41" fill="#cfc8ea" opacity="0.41"/><circle cx="362.5" cy="75.4" r="0.59" fill="#cfc8ea" opacity="0.52"/><path d="M 339.08425938151777 187.3 L 339.7 190.5 L 342.9 191.1050641220063 L 339.7 191.7 L 339.08425938151777 194.9 L 338.5 191.7 L 335.3 191.1050641220063 L 338.5 190.5 Z" fill="#f6e6bf" opacity="0.6690392336342483"/><path d="M 261.543332291767 81.6 L 262.0 83.8 L 264.2 84.27931928634644 L 262.0 84.7 L 261.543332291767 87.0 L 261.1 84.7 L 258.8 84.27931928634644 L 261.1 83.8 Z" fill="#f6e6bf" opacity="0.7126453374978154"/><path d="M 140.29130212031305 101.7 L 140.7 104.0 L 143.1 104.44144016690552 L 140.7 104.9 L 140.29130212031305 107.2 L 139.8 104.9 L 137.5 104.44144016690552 L 139.8 104.0 Z" fill="#f6e6bf" opacity="0.7613851044792681"/><path d="M 530.0984230022877 40.6 L 530.6 43.2 L 533.1 43.64803734794259 L 530.6 44.1 L 530.0984230022877 46.7 L 529.6 44.1 L 527.1 43.64803734794259 L 529.6 43.2 Z" fill="#f6e6bf" opacity="0.523085506586358"/><path d="M 194.7750796880573 312.0 L 195.4 315.0 L 198.4 315.61240628920496 L 195.4 316.2 L 194.7750796880573 319.3 L 194.2 316.2 L 191.1 315.61240628920496 L 194.2 315.0 Z" fill="#f6e6bf" opacity="0.5494116353336722"/><path d="M 685.0 14.3 L 561.8 37.7 L 135.8 105.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="355" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="344" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 338.8 L 16.5 341.5 L 19.2 342 L 16.5 342.5 L 16 345.2 L 15.5 342.5 L 12.8 342 L 15.5 341.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 338.8 L 744.5 341.5 L 747.2 342 L 744.5 342.5 L 744 345.2 L 743.5 342.5 L 740.8 342 L 743.5 341.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#venusingemini1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#venusingemini1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="304" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#venusingemini1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#venusingemini1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#venusingemini1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#venusingemini1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#venusingemini1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#venusingemini1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#venusingemini1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#venusingemini1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="262" r="20.0" fill="url(#venusingemini1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="262" r="15" fill="url(#venusingemini1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="257.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="266.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="258.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="304" r="20.0" fill="url(#venusingemini1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="304" r="15" fill="url(#venusingemini1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="299.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="308.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">6</text>
+  <text x="116" y="300.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 329.4 L 280.4 331.6 L 282.6 332 L 280.4 332.4 L 280.025 334.6 L 279.6 332.4 L 277.4 332 L 279.6 331.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="336" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 329.4 L 480.4 331.6 L 482.6 332 L 480.4 332.4 L 479.975 334.6 L 479.6 332.4 L 477.4 332 L 479.6 331.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

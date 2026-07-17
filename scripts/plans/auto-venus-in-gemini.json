@@ -1,0 +1,79 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "venus-in-gemini": {
+      "hero": {
+        "prompt": "Paired arcs of luminous golden air in sweeping dual curves, like two streams of thought interweaving above a deep indigo cosmos, soft Venus-gold warmth radiating from a shared center where the two currents meet, teal-and-gold nebula wash, flowing feathers carried on invisible breath, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two intertwining arcs of golden air light merging in a deep indigo cosmos, evoking Venus in Gemini love through curiosity and exchange"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Gemini Venus vs Libra Venus: Two Very Different Air-Sign Lovers",
+          "titleEn": "Gemini Venus vs Libra Venus: How Two Air Signs Love Differently",
+          "altEn": "Comparison of Venus in Gemini and Venus in Libra love styles showing key differences in approach",
+          "columns": [
+            {
+              "nameEn": "Venus in Gemini",
+              "linesEn": [
+                "Driven by variety and quick mental exchange",
+                "Seeks stimulation, options, and freedom to change",
+                "Breadth-first: samples many angles before settling",
+                "Keeps options open; resists being pinned down"
+              ]
+            },
+            {
+              "nameEn": "Venus in Libra",
+              "linesEn": [
+                "Driven by balance and clear partnership",
+                "Seeks harmony, symmetry, and a defined us",
+                "Pairing-first: organizes identity around the relationship",
+                "Pushes toward a clear, mutual choice"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Spot This Placement in Your Chart",
+          "titleEn": "6 Signs You Have Venus in Gemini",
+          "altEn": "Six observable signals of Venus in Gemini placement arranged as a visual checklist",
+          "items": [
+            {
+              "nameEn": "Words as Courtship",
+              "subEn": "Long threads, inside jokes, and clever banter matter more than grand gestures"
+            },
+            {
+              "nameEn": "Attraction to Range",
+              "subEn": "Interest sparks around people with varied skills, opinions, or something new to teach"
+            },
+            {
+              "nameEn": "Restless with Monotony",
+              "subEn": "Repetition and heavy routine drain the spark faster than open disagreement"
+            },
+            {
+              "nameEn": "Light Social Flirtation",
+              "subEn": "Charm is quick and playful; looks like interest in everyone because of curiosity about everyone"
+            },
+            {
+              "nameEn": "Loving Through Debate",
+              "subEn": "Being met intellectually and allowed to change one's mind lands as a form of being loved"
+            },
+            {
+              "nameEn": "Quick Warmth, Slow Anchoring",
+              "subEn": "Rapport arrives fast, but deep security usually needs time and steadier placements to build"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
