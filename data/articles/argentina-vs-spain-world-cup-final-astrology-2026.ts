@@ -102,7 +102,7 @@ No. It reads symbolic contrast between two national charts on final day, and the
 
 **Why is Jupiter in Gemini the focus for the 2026 final?**
 
-Jupiter is the slowest-moving major factor in that window, so it sets the shared backdrop for the whole final. Its contact with each national chart is where the sharpest contrasts tend to appear.
+This reading foregrounds Jupiter as a shared backdrop for the final rather than ranking it as the slowest-moving factor. Its contact with each national chart is where this method looks for contrasts.
 
 **Is this the same as a World Cup 2026 winner prediction?**
 
