@@ -370,6 +370,7 @@ import { elvisBirthChartEn } from "./elvis-birth-chart";
 import { birthChartInterpretationEn } from "./birth-chart-interpretation";
 import { amIOnTheRightPathEn } from "./am-i-on-the-right-path";
 import { saturnReturnAge27En } from "./saturn-return-age-27";
+import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
 // All articles organized by language
 
 import {
@@ -731,6 +732,7 @@ const ARTICLES_EN: WikiArticle[] = [
   birthChartInterpretationEn,
   amIOnTheRightPathEn,
   saturnReturnAge27En,
+  saturnReturnInCancerEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
