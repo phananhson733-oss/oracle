@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 510" role="img" aria-label="The Four Phases of Your Saturn Return Window">
+  <defs>
+    <linearGradient id="howlongdoessaturnreturnlast1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="howlongdoessaturnreturnlast1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="howlongdoessaturnreturnlast1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howlongdoessaturnreturnlast1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="howlongdoessaturnreturnlast1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="howlongdoessaturnreturnlast1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="507" rx="22" fill="url(#howlongdoessaturnreturnlast1en-panel)"/>
+  <ellipse cx="198" cy="122" rx="380" ry="173" fill="url(#howlongdoessaturnreturnlast1en-neb1)"/>
+  <ellipse cx="623" cy="408" rx="334" ry="163" fill="url(#howlongdoessaturnreturnlast1en-neb2)"/>
+  <circle cx="742.7" cy="216.1" r="0.56" fill="#cfc8ea" opacity="0.46"/><circle cx="286.1" cy="210.6" r="0.78" fill="#cfc8ea" opacity="0.23"/><circle cx="222.4" cy="271.6" r="1.10" fill="#cfc8ea" opacity="0.12"/><circle cx="726.5" cy="44.0" r="0.96" fill="#cfc8ea" opacity="0.41"/><circle cx="734.3" cy="484.7" r="1.43" fill="#cfc8ea" opacity="0.15"/><circle cx="358.2" cy="176.7" r="1.53" fill="#cfc8ea" opacity="0.47"/><circle cx="285.6" cy="188.7" r="0.44" fill="#cfc8ea" opacity="0.23"/><circle cx="398.9" cy="429.8" r="0.93" fill="#cfc8ea" opacity="0.47"/><circle cx="339.8" cy="95.0" r="0.55" fill="#cfc8ea" opacity="0.48"/><circle cx="190.2" cy="153.4" r="1.39" fill="#cfc8ea" opacity="0.42"/><circle cx="369.1" cy="476.1" r="1.32" fill="#cfc8ea" opacity="0.49"/><circle cx="705.7" cy="441.0" r="1.63" fill="#cfc8ea" opacity="0.22"/><circle cx="327.2" cy="99.4" r="1.60" fill="#cfc8ea" opacity="0.50"/><circle cx="204.2" cy="297.0" r="1.65" fill="#cfc8ea" opacity="0.48"/><circle cx="50.7" cy="61.4" r="0.99" fill="#cfc8ea" opacity="0.50"/><circle cx="681.6" cy="91.6" r="1.06" fill="#cfc8ea" opacity="0.14"/><circle cx="341.6" cy="437.1" r="0.69" fill="#cfc8ea" opacity="0.18"/><circle cx="662.8" cy="342.4" r="1.12" fill="#cfc8ea" opacity="0.12"/><circle cx="150.9" cy="14.7" r="0.95" fill="#cfc8ea" opacity="0.34"/><circle cx="255.8" cy="117.9" r="1.44" fill="#cfc8ea" opacity="0.29"/><circle cx="177.9" cy="267.5" r="1.68" fill="#cfc8ea" opacity="0.52"/><circle cx="461.9" cy="99.9" r="1.03" fill="#cfc8ea" opacity="0.52"/><circle cx="228.9" cy="20.7" r="0.78" fill="#cfc8ea" opacity="0.49"/><circle cx="425.5" cy="110.0" r="1.69" fill="#cfc8ea" opacity="0.16"/><circle cx="529.6" cy="379.6" r="1.64" fill="#cfc8ea" opacity="0.45"/><circle cx="320.3" cy="29.0" r="1.51" fill="#cfc8ea" opacity="0.52"/><circle cx="161.9" cy="14.6" r="0.51" fill="#cfc8ea" opacity="0.15"/><circle cx="448.1" cy="458.4" r="1.09" fill="#cfc8ea" opacity="0.30"/><circle cx="330.0" cy="394.7" r="1.25" fill="#cfc8ea" opacity="0.28"/><circle cx="257.0" cy="164.2" r="1.29" fill="#cfc8ea" opacity="0.41"/><circle cx="437.3" cy="243.3" r="0.93" fill="#cfc8ea" opacity="0.16"/><circle cx="437.2" cy="379.9" r="1.06" fill="#cfc8ea" opacity="0.28"/><circle cx="492.7" cy="124.8" r="0.48" fill="#cfc8ea" opacity="0.15"/><circle cx="568.8" cy="165.4" r="0.66" fill="#cfc8ea" opacity="0.44"/><circle cx="387.0" cy="429.8" r="0.65" fill="#cfc8ea" opacity="0.40"/><circle cx="263.9" cy="442.7" r="1.68" fill="#cfc8ea" opacity="0.24"/><circle cx="494.5" cy="478.0" r="1.27" fill="#cfc8ea" opacity="0.38"/><circle cx="246.4" cy="470.5" r="0.60" fill="#cfc8ea" opacity="0.42"/><circle cx="400.9" cy="295.0" r="0.73" fill="#cfc8ea" opacity="0.18"/><circle cx="572.8" cy="152.9" r="1.15" fill="#cfc8ea" opacity="0.22"/><circle cx="186.2" cy="394.7" r="1.56" fill="#cfc8ea" opacity="0.41"/><circle cx="201.1" cy="273.0" r="1.30" fill="#cfc8ea" opacity="0.15"/><circle cx="358.7" cy="413.2" r="0.75" fill="#cfc8ea" opacity="0.24"/><path d="M 129.4299365580082 234.2 L 129.9 236.7 L 132.3 237.12806422961876 L 129.9 237.6 L 129.4299365580082 240.0 L 129.0 237.6 L 126.5 237.12806422961876 L 129.0 236.7 Z" fill="#f6e6bf" opacity="0.6925868558464572"/><path d="M 275.770337484777 176.3 L 276.2 178.4 L 278.2 178.76675593992695 L 276.2 179.2 L 275.770337484777 181.2 L 275.4 179.2 L 273.3 178.76675593992695 L 275.4 178.4 Z" fill="#f6e6bf" opacity="0.7897885417332873"/><path d="M 606.2842202335596 491.0 L 606.8 493.8 L 609.7 494.3724224152975 L 606.8 494.9 L 606.2842202335596 497.7 L 605.7 494.9 L 602.9 494.3724224152975 L 605.7 493.8 Z" fill="#f6e6bf" opacity="0.692156893829815"/><path d="M 560.8411812856793 214.6 L 561.3 216.9 L 563.6 217.35171467578039 L 561.3 217.8 L 560.8411812856793 220.1 L 560.4 217.8 L 558.1 217.35171467578039 L 560.4 216.9 Z" fill="#f6e6bf" opacity="0.7737077917670832"/><path d="M 95.86522996425629 458.4 L 96.4 460.9 L 98.9 461.41500230832025 L 96.4 461.9 L 95.86522996425629 464.4 L 95.4 461.9 L 92.8 461.41500230832025 L 95.4 460.9 Z" fill="#f6e6bf" opacity="0.636989143374376"/><path d="M 222.4 271.6 L 358.2 176.7 L 369.1 476.1 L 461.9 99.9 L 257.0 164.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="507" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="496" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 490.8 L 16.5 493.5 L 19.2 494 L 16.5 494.5 L 16 497.2 L 15.5 494.5 L 12.8 494 L 15.5 493.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 490.8 L 744.5 493.5 L 747.2 494 L 744.5 494.5 L 744 497.2 L 743.5 494.5 L 740.8 494 L 743.5 493.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">The Four Phases of Your Saturn Return Window</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#howlongdoessaturnreturnlast1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#howlongdoessaturnreturnlast1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="393" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#howlongdoessaturnreturnlast1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#howlongdoessaturnreturnlast1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Phase 1</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">First Approach</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn moves within a few degrees of its birth position, often opening the window</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">near age 29</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#howlongdoessaturnreturnlast1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#howlongdoessaturnreturnlast1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Phase 2</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Exact Hit</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn touches the natal degree; themes of responsibility and restructuring feel</text>
+  <text x="132" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">loudest</text>
+  <circle cx="92" cy="311" r="13.0" fill="url(#howlongdoessaturnreturnlast1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="311" r="8" fill="url(#howlongdoessaturnreturnlast1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="308.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 307.0 L 92.6 310.4 L 96.0 311 L 92.6 311.6 L 92 315.0 L 91.4 311.6 L 88.0 311 L 91.4 310.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="316.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Phase 3</text>
+  <text x="132" y="339.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Retrograde Re-Crossings</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn can back over the degree up to three times, stretching the felt window</text>
+  <circle cx="92" cy="393" r="13.0" fill="url(#howlongdoessaturnreturnlast1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="393" r="8" fill="url(#howlongdoessaturnreturnlast1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="390.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 389.0 L 92.6 392.4 L 96.0 393 L 92.6 393.6 L 92 397.0 L 91.4 393.6 L 88.0 393 L 91.4 392.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="398.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Phase 4</text>
+  <text x="132" y="421.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Separation</text>
+  <text x="132" y="444.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn pulls past the natal degree for good and the pressure eases into</text>
+  <text x="132" y="461.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">integration</text>
+  <path d="M 202.22749999999988 481.4 L 202.6 483.6 L 204.8 484 L 202.6 484.4 L 202.22749999999988 486.6 L 201.8 484.4 L 199.6 484 L 201.8 483.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="488" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 481.4 L 558.2 483.6 L 560.4 484 L 558.2 484.4 L 557.7725000000002 486.6 L 557.4 484.4 L 555.2 484 L 557.4 483.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
