@@ -113,7 +113,7 @@ Not exactly. The window is set by each chart's natal Saturn position, so both th
 
 ## Take Action
 
-Run your birth date, time, and place through the calculator to see the exact years your first Saturn Return opens and closes. You'll get your personal window instead of a generic 27-to-30 guess, which turns a vague dread of turning 27 into a timeline you can actually plan around and reflect on. This is not a clinical interpretation or mental health advice. [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator)
+Run your birth date, time, and place through the calculator to see the exact years your first Saturn Return opens and closes. You'll get your personal window instead of a generic 27-to-30 guess, which turns a vague dread of turning 27 into a timeline you can actually plan around and reflect on. This is not a clinical interpretation or mental health advice. [Explore Your Saturn Return](/en/saturn-return-calculator)
 
 ## Sources
 
