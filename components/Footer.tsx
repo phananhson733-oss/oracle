@@ -1,5 +1,5 @@
 // INPUT: Theme context and language context from UIComponents.
-// OUTPUT: Exports Footer component with copyright, nav links, and contact info.
+// OUTPUT: Exports Footer component with copyright, nav links, contact info, and external brand links.
 // POS: Global footer component; update components/FOLDER.md when this file changes.
 
 import React from "react";
@@ -15,6 +15,26 @@ const FOOTER_LINKS = [
   { to: "/cookies", en: "Cookies", zh: "Cookie 政策" },
   { to: "/about", en: "About", zh: "关于我们" },
   { to: "/help", en: "Help", zh: "帮助" },
+] as const;
+
+// 外部品牌链接。rel 含 nofollow：这些页面回链本站时均为 nofollow/ugc（cal.com 与 magic.ly
+// 实测 rel="nofollow ugc" / rel="nofollow"），故本站亦不传递权重，仅作访客入口。
+const EXTERNAL_LINKS = [
+  {
+    href: "https://cal.com/yuitea-ciy4f2",
+    en: "Book a Consultation",
+    zh: "预约咨询",
+  },
+  {
+    href: "https://share.evernote.com/note/1047b9da-bdde-425c-b40d-bdc775f6cf54",
+    en: "Yuitea",
+    zh: "Yuitea",
+  },
+  {
+    href: "https://magic.ly/Yuitea",
+    en: "Links",
+    zh: "链接",
+  },
 ] as const;
 
 const CONTACT_EMAIL = "support@astrologywiki.com";
@@ -80,6 +100,25 @@ export const Footer: React.FC = () => {
                 {contactLabel}
               </a>
             </li>
+            {EXTERNAL_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="nofollow noopener"
+                  className={`
+                    text-sm transition-colors
+                    ${
+                      isDark
+                        ? "text-star-300 hover:text-gold-400"
+                        : "text-paper-500 hover:text-gold-700"
+                    }
+                  `}
+                >
+                  {language === "zh" ? link.zh : link.en}
+                </a>
+              </li>
+            ))}
             <li>
               <button
                 type="button"
