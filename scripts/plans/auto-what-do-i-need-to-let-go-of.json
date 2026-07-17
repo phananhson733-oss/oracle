@@ -1,0 +1,78 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "what-do-i-need-to-let-go-of": {
+      "hero": {
+        "prompt": "Luminous golden threads slowly unraveling and drifting upward through a deep indigo cosmic sea, Saturn's iconic rings arcing gently across the upper sky, translucent wisps of light coiling and dissolving into a teal-and-gold nebula wash — evoking the quiet act of releasing old patterns and beliefs, the threads centered in the frame fading from warm gold to starlight as they rise, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Glowing golden threads dissolving into a deep indigo cosmos with Saturn's rings arcing above, evoking the act of releasing old patterns"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read What You Need to Let Go Of in Your Chart",
+          "titleEn": "Five Chart Signals That Point to Release",
+          "altEn": "Sequence of five astrological placements for identifying what to let go of in your birth chart",
+          "items": [
+            {
+              "nameEn": "Saturn's Placement",
+              "subEn": "The house Saturn sits in often marks where you feel tested, over-responsible, or reluctant to loosen your grip."
+            },
+            {
+              "nameEn": "The South Node",
+              "subEn": "Its sign and house describe comfortable patterns you lean on by default, even when they hold you back."
+            },
+            {
+              "nameEn": "The Twelfth House",
+              "subEn": "Planets here can point to habits, fears, or self-images that run quietly in the background."
+            },
+            {
+              "nameEn": "A Current Saturn Return",
+              "subEn": "Near ages 29 and 58, this passage tends to surface commitments and identities that are ready to be re-examined."
+            },
+            {
+              "nameEn": "Repetition in Daily Life",
+              "subEn": "The pattern you keep bumping into off the page usually echoes something you can see on it."
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Letting-Go Prompt at a Glance",
+          "titleEn": "Letting-Go Astrology: Placement, Signal, and Observation",
+          "altEn": "Three-column comparison of astrological energy centers and how to observe release themes in Saturn, South Node, and Twelfth House",
+          "columns": [
+            {
+              "nameEn": "Saturn's House",
+              "linesEn": [
+                "Release theme: symbolism as a mirror, not a cause",
+                "Notice where you feel over-responsible or reluctant to loosen your grip"
+              ]
+            },
+            {
+              "nameEn": "South Node Sign",
+              "linesEn": [
+                "Old patterns: default comforts flagged for review",
+                "Spot habits you lean on under stress, even when they hold you back"
+              ]
+            },
+            {
+              "nameEn": "Twelfth House & Saturn Return",
+              "linesEn": [
+                "Hidden self-image: background beliefs surface for reflection",
+                "Timing checkpoint: track life shifts near ages 29 and 58"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
