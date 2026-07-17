@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 619" role="img" aria-label="Two Frameworks for Love Language">
+  <defs>
+    <linearGradient id="whatismylovelanguage1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="whatismylovelanguage1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="whatismylovelanguage1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatismylovelanguage1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatismylovelanguage1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="whatismylovelanguage1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="616" rx="22" fill="url(#whatismylovelanguage1en-panel)"/>
+  <ellipse cx="198" cy="149" rx="380" ry="210" fill="url(#whatismylovelanguage1en-neb1)"/>
+  <ellipse cx="623" cy="495" rx="334" ry="198" fill="url(#whatismylovelanguage1en-neb2)"/>
+  <circle cx="685.1" cy="440.1" r="0.61" fill="#cfc8ea" opacity="0.40"/><circle cx="15.2" cy="32.5" r="1.32" fill="#cfc8ea" opacity="0.12"/><circle cx="356.2" cy="573.6" r="0.49" fill="#cfc8ea" opacity="0.34"/><circle cx="72.4" cy="45.0" r="1.31" fill="#cfc8ea" opacity="0.20"/><circle cx="736.4" cy="23.7" r="1.08" fill="#cfc8ea" opacity="0.40"/><circle cx="716.5" cy="37.4" r="0.54" fill="#cfc8ea" opacity="0.25"/><circle cx="643.4" cy="265.0" r="1.05" fill="#cfc8ea" opacity="0.38"/><circle cx="306.2" cy="195.5" r="1.27" fill="#cfc8ea" opacity="0.14"/><circle cx="502.5" cy="526.8" r="0.67" fill="#cfc8ea" opacity="0.51"/><circle cx="487.9" cy="412.2" r="1.30" fill="#cfc8ea" opacity="0.35"/><circle cx="470.3" cy="387.1" r="1.53" fill="#cfc8ea" opacity="0.48"/><circle cx="534.6" cy="589.3" r="1.27" fill="#cfc8ea" opacity="0.31"/><circle cx="165.4" cy="163.1" r="0.55" fill="#cfc8ea" opacity="0.21"/><circle cx="294.5" cy="122.0" r="0.63" fill="#cfc8ea" opacity="0.49"/><circle cx="87.2" cy="347.6" r="0.54" fill="#cfc8ea" opacity="0.19"/><circle cx="225.0" cy="365.3" r="0.92" fill="#cfc8ea" opacity="0.22"/><circle cx="375.1" cy="334.4" r="0.57" fill="#cfc8ea" opacity="0.29"/><circle cx="705.4" cy="75.9" r="0.66" fill="#cfc8ea" opacity="0.39"/><circle cx="147.1" cy="526.4" r="0.65" fill="#cfc8ea" opacity="0.52"/><circle cx="192.2" cy="28.3" r="1.58" fill="#cfc8ea" opacity="0.32"/><circle cx="425.9" cy="288.3" r="0.63" fill="#cfc8ea" opacity="0.14"/><circle cx="633.1" cy="201.3" r="1.46" fill="#cfc8ea" opacity="0.38"/><circle cx="143.5" cy="118.1" r="1.14" fill="#cfc8ea" opacity="0.36"/><circle cx="545.0" cy="154.5" r="0.98" fill="#cfc8ea" opacity="0.35"/><circle cx="212.6" cy="247.4" r="1.67" fill="#cfc8ea" opacity="0.23"/><circle cx="79.2" cy="237.8" r="1.54" fill="#cfc8ea" opacity="0.47"/><circle cx="631.9" cy="531.5" r="1.09" fill="#cfc8ea" opacity="0.33"/><circle cx="228.8" cy="510.7" r="0.45" fill="#cfc8ea" opacity="0.41"/><circle cx="501.7" cy="228.9" r="0.52" fill="#cfc8ea" opacity="0.25"/><circle cx="88.6" cy="57.6" r="0.97" fill="#cfc8ea" opacity="0.37"/><circle cx="553.8" cy="448.5" r="1.49" fill="#cfc8ea" opacity="0.21"/><circle cx="292.8" cy="527.5" r="1.66" fill="#cfc8ea" opacity="0.12"/><circle cx="656.5" cy="363.3" r="0.69" fill="#cfc8ea" opacity="0.53"/><circle cx="660.3" cy="228.0" r="0.47" fill="#cfc8ea" opacity="0.35"/><circle cx="299.4" cy="326.7" r="0.69" fill="#cfc8ea" opacity="0.37"/><circle cx="679.6" cy="428.1" r="0.66" fill="#cfc8ea" opacity="0.48"/><circle cx="497.1" cy="341.9" r="0.40" fill="#cfc8ea" opacity="0.43"/><circle cx="490.9" cy="111.2" r="1.35" fill="#cfc8ea" opacity="0.16"/><circle cx="723.1" cy="364.5" r="1.04" fill="#cfc8ea" opacity="0.25"/><circle cx="394.8" cy="84.5" r="1.16" fill="#cfc8ea" opacity="0.37"/><circle cx="649.0" cy="531.7" r="1.27" fill="#cfc8ea" opacity="0.21"/><circle cx="400.9" cy="464.0" r="1.28" fill="#cfc8ea" opacity="0.52"/><circle cx="285.1" cy="491.4" r="0.93" fill="#cfc8ea" opacity="0.36"/><circle cx="53.5" cy="556.9" r="0.68" fill="#cfc8ea" opacity="0.33"/><circle cx="333.3" cy="304.3" r="0.93" fill="#cfc8ea" opacity="0.36"/><circle cx="704.8" cy="394.9" r="0.77" fill="#cfc8ea" opacity="0.20"/><circle cx="37.3" cy="384.1" r="1.27" fill="#cfc8ea" opacity="0.16"/><circle cx="102.2" cy="329.2" r="0.95" fill="#cfc8ea" opacity="0.27"/><circle cx="568.7" cy="578.3" r="0.77" fill="#cfc8ea" opacity="0.35"/><circle cx="631.3" cy="104.6" r="0.41" fill="#cfc8ea" opacity="0.40"/><circle cx="593.3" cy="39.1" r="1.01" fill="#cfc8ea" opacity="0.20"/><circle cx="704.8" cy="419.6" r="0.55" fill="#cfc8ea" opacity="0.32"/><path d="M 330.9140028376132 466.8 L 331.5 470.0 L 334.7 470.5887095727958 L 331.5 471.2 L 330.9140028376132 474.4 L 330.3 471.2 L 327.1 470.5887095727958 L 330.3 470.0 Z" fill="#f6e6bf" opacity="0.6564658733084798"/><path d="M 85.37643238343298 584.3 L 85.8 586.7 L 88.2 587.1161760292016 L 85.8 587.6 L 85.37643238343298 589.9 L 84.9 587.6 L 82.6 587.1161760292016 L 84.9 586.7 Z" fill="#f6e6bf" opacity="0.7761711576022208"/><path d="M 663.7458342183381 168.6 L 664.3 171.4 L 667.1 171.94618164049461 L 664.3 172.5 L 663.7458342183381 175.3 L 663.2 172.5 L 660.4 171.94618164049461 L 663.2 171.4 Z" fill="#f6e6bf" opacity="0.6904553025960922"/><path d="M 460.9879428241402 269.9 L 461.5 272.7 L 464.4 273.2824453073554 L 461.5 273.8 L 460.9879428241402 276.7 L 460.4 273.8 L 457.6 273.2824453073554 L 460.4 272.7 Z" fill="#f6e6bf" opacity="0.7551767057739198"/><path d="M 688.1835744697601 354.6 L 688.8 357.7 L 692.0 358.3319932729937 L 688.8 358.9 L 688.1835744697601 362.1 L 687.6 358.9 L 684.4 358.3319932729937 L 687.6 357.7 Z" fill="#f6e6bf" opacity="0.5604341058060527"/><path d="M 487.9 412.2 L 87.2 347.6 L 228.8 510.7 L 656.5 363.3 L 723.1 364.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="616" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="605" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 599.8 L 16.5 602.5 L 19.2 603 L 16.5 603.5 L 16 606.2 L 15.5 603.5 L 12.8 603 L 15.5 602.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 599.8 L 744.5 602.5 L 747.2 603 L 744.5 603.5 L 744 606.2 L 743.5 603.5 L 740.8 603 L 743.5 602.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Two Frameworks for Love Language</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#whatismylovelanguage1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#whatismylovelanguage1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="259.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="259.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Chapman's Five Love Languages</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Words of Affirmation</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Acts of Service</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Receiving Gifts</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Quality Time</text>
+  <path d="M 70 273.8 L 70.5 276.5 L 73.2 277 L 70.5 277.5 L 70 280.2 L 69.5 277.5 L 66.8 277 L 69.5 276.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="282.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Physical Touch</text>
+  <path d="M 70 302.8 L 70.5 305.5 L 73.2 306 L 70.5 306.5 L 70 309.2 L 69.5 306.5 L 66.8 306 L 69.5 305.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="311.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Ranked via questionnaire</text>
+  <path d="M 70 331.8 L 70.5 334.5 L 73.2 335 L 70.5 335.5 L 70 338.2 L 69.5 335.5 L 66.8 335 L 69.5 334.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="340.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Simple named categories</text>
+  <path d="M 380 366.5 L 380.7 370.3 L 384.5 371 L 380.7 371.7 L 380 375.5 L 379.3 371.7 L 375.5 371 L 379.3 370.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="384" width="668" height="201.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="384" width="3.5" height="201.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 393.6 L 48.3 396.5 L 51.1 397 L 48.3 397.5 L 47.75 400.4 L 47.2 397.5 L 44.4 397 L 47.2 396.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="413.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Astrological Reading</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Venus — warmth and affection style</text>
+  <path d="M 70 471.8 L 70.5 474.5 L 73.2 475 L 70.5 475.5 L 70 478.2 L 69.5 475.5 L 66.8 475 L 69.5 474.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="480.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Mars — pursuit and desire</text>
+  <path d="M 70 500.8 L 70.5 503.5 L 73.2 504 L 70.5 504.5 L 70 507.2 L 69.5 504.5 L 66.8 504 L 69.5 503.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="509.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Moon — emotional safety needs</text>
+  <path d="M 70 529.8 L 70.5 532.5 L 73.2 533 L 70.5 533.5 L 70 536.2 L 69.5 533.5 L 66.8 533 L 69.5 532.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="538.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Read from birth chart placements</text>
+  <path d="M 70 558.8 L 70.5 561.5 L 73.2 562 L 70.5 562.5 L 70 565.2 L 69.5 562.5 L 66.8 562 L 69.5 561.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="567.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Layered, symbolic portrait of tendencies</text>
+  <path d="M 202.22749999999988 590.4 L 202.6 592.6 L 204.8 593 L 202.6 593.4 L 202.22749999999988 595.6 L 201.8 593.4 L 199.6 593 L 201.8 592.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="597" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 590.4 L 558.2 592.6 L 560.4 593 L 558.2 593.4 L 557.7725000000002 595.6 L 557.4 593.4 L 555.2 593 L 557.4 592.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
