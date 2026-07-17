@@ -110,7 +110,7 @@ Many people return to it around major decisions or node-related transits rather 
 ## Related Reading
 
 - *overview of the twelve zodiac sign meanings* — see how your North Node's sign colors the direction it points toward.
-- [guide to the Midheaven and career in astrology](/en/wiki/how-to-read-birth-chart) — the vocational cross-check this reading leans on.
+- *guide to the Midheaven and career in astrology* — the vocational cross-check this reading leans on.
 - *explainer on how transits move through a birth chart* — for understanding when the question tends to intensify.
 
 ## Take Action
