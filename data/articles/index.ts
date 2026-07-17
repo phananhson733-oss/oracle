@@ -372,6 +372,7 @@ import { amIOnTheRightPathEn } from "./am-i-on-the-right-path";
 import { saturnReturnAge27En } from "./saturn-return-age-27";
 import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
 import { venusInGeminiEn } from "./venus-in-gemini";
+import { argentinaVsSpainWorldCupFinalAstrology2026En } from "./argentina-vs-spain-world-cup-final-astrology-2026";
 // All articles organized by language
 
 import {
@@ -735,6 +736,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnAge27En,
   saturnReturnInCancerEn,
   venusInGeminiEn,
+  argentinaVsSpainWorldCupFinalAstrology2026En,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
