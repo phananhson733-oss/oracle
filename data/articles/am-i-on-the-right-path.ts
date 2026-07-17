@@ -115,7 +115,7 @@ Many people return to it around major decisions or node-related transits rather 
 
 ## Take Action
 
-Run your placements before you sit with the question: generate your chart, find your North Node and Midheaven, and see exactly where the "right path" reading is pointing for you. [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) and you'll have the two anchors this reading depends on in front of you — and once you can see them, the question shifts from a vague worry into something you can reflect on with real intention.
+Run your placements before you sit with the question: generate your chart, find your North Node and Midheaven, and see exactly where the "right path" reading is pointing for you. [Generate Your Free Birth Chart](/en/birth-chart-calculator) and you'll have the two anchors this reading depends on in front of you — and once you can see them, the question shifts from a vague worry into something you can reflect on with real intention.
 
 This is not a clinical interpretation or mental health advice.
 
