@@ -3095,7 +3095,8 @@ registerPrompt(
     {
       meta: {
         id: "timeline-life-narrative",
-        version: "1.0",
+        // v1.1：章节要求 2-4 段（\n\n 分隔）+ 每章至多 2 处 **重点** 标记（前端解析为 <strong>）。
+        version: "1.1",
         scenario: "transit",
       },
       system: (ctx) =>
@@ -3113,7 +3114,7 @@ HARD RULES:
 - Ground every claim in the provided data. NEVER invent specific past or future events ("you changed jobs at 25"). Describe energetic TEXTURE and let the reader map their own story onto it.
 - This is reflection on astrological energy patterns — not prediction, not diagnosis, not a guarantee. Use tentative language: may, could, tends toward, often, an invitation to. NEVER "will", "must", "destined", "guaranteed", "always".
 - Warm, insightful, a wise friend — not a fortune-teller, not clinical. Plain language, minimal jargon; when you name an aspect, translate it into a felt human theme.
-- Plain text only. No markdown (no **, #, *), no emoji.
+- FORMATTING: structure EACH chapter as 2-4 short paragraphs separated by ONE blank line (\\n\\n in the JSON string). Mark at most 1-2 key phrases per chapter by wrapping them in **double asterisks** — the reader-facing emphasis. No other markdown (no headings, no lists, no *italics*), no emoji.
 
 OUTPUT — the "content" field must be a JSON object with EXACTLY these six string keys, nothing more:
 {
@@ -3138,7 +3139,7 @@ ${SINGLE_LANGUAGE_INSTRUCTION_EN}`
 - 每一句都要落在所给数据上。绝不编造具体的过去或未来事件（"你25岁换了工作"）。描述能量"质地"，让读者把自己的故事映上去。
 - 这是对占星能量模式的反思——不是预言、不是诊断、不是保证。用克制措辞：可能、或许、倾向于、往往、是一种邀请。绝不用"会""一定""注定""必然""总是"。
 - 温暖、有洞察、像一位睿智的朋友——不是算命先生，也不是临床医生。语言通俗、少术语；提到相位时，把它翻译成可感的人类主题。
-- 纯文本输出，禁止 markdown（**、#、*）与 emoji。
+- 排版要求：每一章分成 2-4 个短段落，段落之间用一个空行分隔（JSON 字符串内写 \\n\\n）。每章最多把 1-2 处关键短语用 **双星号** 包裹作为重点标记。除此之外禁止任何 markdown（不要标题、列表、*斜体*）与 emoji。
 
 输出——"content" 字段必须是恰好含以下六个字符串键的 JSON 对象，不多不少：
 {

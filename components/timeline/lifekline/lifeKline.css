@@ -41,10 +41,8 @@
 .lk-legend .lk-good{background:#eaf8ef;color:#0e7a39}
 .lk-legend .lk-bad{background:#fff0f0;color:#b32f2f}
 .lk-legend .lk-ma{background:#fff4e7;color:#b34e08}
-.lk-legend .lk-sr{background:#fff0f0;color:#b32f2f}
 .lk-dot{width:10px;height:10px;border-radius:99px;display:inline-block}
 .lk-dash{width:26px;height:0;border-top:3px solid currentColor;display:inline-block}
-.lk-dash.lk-dashed{border-top-style:dashed}
 
 /* ===== SVG 图表 ===== */
 .lk-chart-wrap{position:relative;overflow:hidden;border-radius:18px;background:linear-gradient(180deg,#fcffff 0,#fbfdfd 100%);border:1px solid #edf3f3;padding:0}
@@ -55,7 +53,6 @@
 .lk-axis-label{fill:#6a7880;font-size:13px;letter-spacing:.02em}
 .lk-stage-line{stroke:#a7b8ff;stroke-width:1.4;stroke-dasharray:5 5;opacity:.72}
 .lk-stage-label{fill:#6d7bff;font-size:13px;font-weight:700}
-.lk-support{stroke:#ef4444;stroke-width:1.7;stroke-dasharray:10 8}
 .lk-ma-line{fill:none;stroke:var(--lk-orange);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
 .lk-wick{stroke-width:2.1;stroke-linecap:round}
 .lk-candle-body{rx:3;cursor:pointer}
@@ -66,7 +63,6 @@
 .lk-score-dot{fill:#26383d;stroke:white;stroke-width:2;pointer-events:none}
 .lk-bubble{filter:drop-shadow(0 6px 12px rgba(0,0,0,.15))}
 .lk-bubble-text{fill:white;font-weight:800;font-size:13px}
-.lk-rs-label{fill:#ef4444;font-size:14px;font-weight:700}
 .lk-chart-note{position:absolute;right:18px;bottom:12px;color:#6a7880;font-size:13px}
 
 /* ===== 富 hover tooltip（z-index 50→60：站内 nav 为 z-50） ===== */

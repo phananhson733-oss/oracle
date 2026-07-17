@@ -1,6 +1,6 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.49
+> **Version**: 2.50
 > **Last Updated**: 2026-07-17
 > **Status**: Living Document — synced with codebase
 
@@ -467,7 +467,7 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **API**:
 - `GET / POST /api/transit/timeline` — 蜡烛时间序列（**无 LLM、纯计算 + 缓存**；`granularity:'day'`=月度日级 ≤92 天，`granularity:'month'`=月内 12 月级 ≤12 根，`granularity:'year'`=人生年级 ≤100 岁（请求窗口越界夹到 0-99 岁，不报错不产空结果）；单日缓存键 `hashInput(birth):date:tz` 含 viewer 时区锚；核心天体 mock fallback → `EPHEMERIS_UNAVAILABLE` 不缓存；专属更严 limiter + 4KB cap）
-- `POST /api/transit/narrative` — **人生能量叙事（LLM）**：内部跑真 `buildLifeTimeline`（0→当前+30岁）→ `buildLifeNarrativeContext` 压成纯净 context（big3 + 连续能量带 + 当前相位 lean + 过去/未来周期 marker；**只含星座/年龄/相位天体名，无城市/经纬度/出生日期原文**）→ `timeline-life-narrative` prompt 输出 overview/past/present/future/milestone/letter 六章纯文本（反宿命、不预言具体事件）。**仅 life 模式按需触发**（生成前显式告知数据发往 LLM）；登录必需 + `full_year_narrative` gate（`TIMELINE_PAYWALL_ENABLED=false` 时全免费）；专属严限流 6/min。匿名 demo 走 upsell 不打端点。
+- `POST /api/transit/narrative` — **人生能量叙事（LLM）**：内部跑真 `buildLifeTimeline`（0→当前+30岁）→ `buildLifeNarrativeContext` 压成纯净 context（big3 + 连续能量带 + 当前相位 lean + 过去/未来周期 marker；**只含星座/年龄/相位天体名，无城市/经纬度/出生日期原文**）→ `timeline-life-narrative` prompt 输出 overview/past/present/future/milestone/letter 六章分段文本（v1.1：每章 2-4 段 + 受控重点标记；反宿命、不预言具体事件）。**仅 life 模式按需触发**（生成前显式告知数据发往 LLM）；登录必需 + `full_year_narrative` gate（`TIMELINE_PAYWALL_ENABLED=false` 时全免费）；专属严限流 6/min。匿名 demo 走 upsell 不打端点。
 - `GET /api/cbt/mood-points` — CBT 情绪叠加层**服务端数据最小化投影**：按 viewer 本地日聚合为 `{date, intensity, moodCount}`（intensity = 当日各记录 `finalIntensity ?? initialIntensity` 的均值），绝不返回 `situation/automaticThoughts/hotThought` 等原文（隐私红线 #1/#3）；需鉴权、userId 取自 session（防 IDOR）、遵 90d 保留期、tz 用于本地日分桶。**前端叠加层 UI + GDPR Art9 显式 consent 流仍待落地（consent 措辞须过法务）。**
 
 **配额**: **P0 决策（已定）— 月度蜡烛图全免费**（任意月份）：端点零 LLM 成本、已缓存、限流，符合 §1 病毒增长/SEO/习惯钩子定位（lifekline 的传播力正来自免费可分享）。当日 AI 解读复用现有 `/api/daily/detail`（当前免费、仅限流）。**付费 enforcement 延后**为专门计费 pass：未来 lookahead / premium 逐日 AI 档 / topAspect 明细 / CBT 叠加（P1 #23）的 gated feature key 需后端 `entitlementServiceV2` + `data/pricing.ts` + `pricing-consistency.test` 同步注册（Eng F-E8），不在 K 线 MVP 内 retrofit 共享 detail 端点（避免改既有 TodayPage 行为）。免费/付费边界按设计 risk #4 需 A/B（接 page-cro）。
@@ -1219,7 +1219,7 @@ Prompt 系统采用集中注册式架构，所有模板在 `manager.ts` 中统�
 | **Detail** | 19 | bumped minor | detail-{type}-{context} 组合 | SAFETY + (NO_FATE for transit/synastry/composite contexts) |
 | **Cycle** | 1 | 2.3 | cycle-naming | SAFETY + NO_FATE |
 | **Newsletter** | 2 | 2.0 | newsletter-weekly / newsletter-monthly（富周报/月报，英文，叙述后端预算的 dated 天象时间线；JSON：subject_line / overview_title / overview / sky_events[] / moon_moments[] / lens / practice / reflection / featured） | SAFETY + NO_FATE |
-| **Transit** | 1 | 1.0 | timeline-life-narrative（人生能量叙事，英文/中文双语，基于真实人生 K 线派生 context；JSON content：overview / past / present / future / milestone / letter 六章纯文本；绝不预言具体事件） | SAFETY + NO_FATE |
+| **Transit** | 1 | 1.1 | timeline-life-narrative（人生能量叙事，英文/中文双语，基于真实人生 K 线派生 context；JSON content：overview / past / present / future / milestone / letter 六章；v1.1 起每章 2-4 段（\\n\\n 分隔）+ 每章至多 2 处受控 **重点** 标记，前端解析为段落与 <strong>；绝不预言具体事件） | SAFETY + NO_FATE |
 
 **部署影响**：全量 version bump 一次性失效所有 LLM 输出缓存（`ai:{promptId}:v{version}:{inputHash}`），首日 cache 命中率 ~0%，24h 自然回填；预计每次调用 system token 增加 60–150（~3-5% 成本上浮）。
 

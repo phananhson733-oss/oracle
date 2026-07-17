@@ -8,6 +8,10 @@ import React, { useCallback, useState } from "react";
 import type { UserProfile, LifeNarrativeContent } from "../../types";
 import { useLanguage } from "../UIComponents";
 import { getTimelineCopy } from "./copy";
+import {
+  parseEmphasisSegments,
+  splitNarrativeParagraphs,
+} from "./narrativeFormat";
 import { fetchLifeNarrative } from "../../services/apiClient";
 
 type Status = "idle" | "loading" | "done" | "error";
@@ -172,9 +176,32 @@ export const TimelineLifeNarrative: React.FC<{
                     </span>
                   </button>
                   {open && (
-                    <p className="whitespace-pre-line px-4 pb-4 text-sm leading-relaxed text-slate-600 dark:text-star-300">
-                      {content[key]}
-                    </p>
+                    <div className="space-y-3 px-4 pb-4">
+                      {splitNarrativeParagraphs(content[key]).map((para, i) => (
+                        <p
+                          // 章节内段落顺序稳定（纯文本派生），index key 安全。
+                          // biome-ignore lint/suspicious/noArrayIndexKey: static derived list
+                          key={i}
+                          className="text-sm leading-relaxed text-slate-600 dark:text-star-300"
+                        >
+                          {parseEmphasisSegments(para).map((seg, j) =>
+                            seg.strong ? (
+                              <strong
+                                // biome-ignore lint/suspicious/noArrayIndexKey: static derived list
+                                key={j}
+                                className="font-semibold text-slate-800 dark:text-star-100"
+                              >
+                                {seg.text}
+                              </strong>
+                            ) : (
+                              <React.Fragment key={j}>
+                                {seg.text}
+                              </React.Fragment>
+                            ),
+                          )}
+                        </p>
+                      ))}
+                    </div>
                   )}
                 </div>
               );

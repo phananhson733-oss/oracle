@@ -59,7 +59,6 @@ export interface LifeKlineCopy {
     legendUp: string;
     legendDown: string;
     legendMa: string;
-    legendSr: string;
     chartNote: string;
     axisEnergy: string;
     axisAge: string;
@@ -167,8 +166,7 @@ const EN_COPY: LifeKlineCopy = {
     subhead: "RELATIVE TO YOUR OWN BASELINE",
     legendUp: "Up year (more active)",
     legendDown: "Down year (quieter)",
-    legendMa: "MA10",
-    legendSr: "Support / Resistance",
+    legendMa: "Decade trend",
     chartNote: "Hover for details · click to pin",
     axisEnergy: "Energy",
     axisAge: "Age",
@@ -463,8 +461,7 @@ const ZH_COPY: LifeKlineCopy = {
     subhead: "仅与你自身基线比较",
     legendUp: "上行年（更活跃）",
     legendDown: "下行年（更平静）",
-    legendMa: "MA10",
-    legendSr: "支撑 / 压力",
+    legendMa: "十年趋势",
     chartNote: "悬停查看详细解读 · 点击锁定",
     axisEnergy: "能量",
     axisAge: "年龄",

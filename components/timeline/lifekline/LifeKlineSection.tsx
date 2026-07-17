@@ -16,7 +16,6 @@ import {
   buildLifePoints,
   MAX_AGE,
   pickBubbles,
-  supportResistance,
   type LifePoint,
   type LkModuleKey,
 } from "./lifeKlineDerived";
@@ -86,7 +85,6 @@ export function LifeKlineSection({
     () => new Map(points.map((p) => [p.age, p] as const)),
     [points],
   );
-  const rs = useMemo(() => supportResistance(points), [points]);
   const bubbles = useMemo(
     () => pickBubbles(markers, points, clampAge(currentAge), birthYear),
     [markers, points, currentAge, birthYear],
@@ -314,17 +312,12 @@ export function LifeKlineSection({
                 <i className="lk-dash" />
                 {copy.header.legendMa}
               </span>
-              <span className="lk-sr">
-                <i className="lk-dash lk-dashed" />
-                {copy.header.legendSr}
-              </span>
             </div>
           </div>
           <LifeKlineChart
             points={points}
             selectedAge={selectedPoint.age}
             bubbles={bubbles}
-            rs={rs}
             copy={copy}
             onHover={handleHover}
             onLeave={handleLeave}

@@ -46,16 +46,16 @@ const render = (lang: "zh" | "en") => {
 };
 
 describe("timeline-life-narrative — 注册与版本", () => {
-  it("已注册且版本 1.0、scenario=transit", () => {
+  it("已注册且版本 1.1、scenario=transit", () => {
     const tpl = getPrompt(ID);
     expect(tpl).toBeDefined();
-    expect(tpl!.meta.version).toBe("1.0");
+    expect(tpl!.meta.version).toBe("1.1");
     expect(tpl!.meta.scenario).toBe("transit");
   });
 
-  it("buildCacheKey 用版本号前缀", () => {
+  it("buildCacheKey 用版本号前缀（v1.1 使 v1.0 整块文本旧缓存失效）", () => {
     expect(buildCacheKey(ID, "abc123")).toBe(
-      "ai:timeline-life-narrative:v1.0:abc123",
+      "ai:timeline-life-narrative:v1.1:abc123",
     );
   });
 });
@@ -97,6 +97,15 @@ describe("timeline-life-narrative — 六段结构", () => {
         expect(system, `${lang}: 缺章节 ${key}`).toContain(`"${key}"`);
       }
     }
+  });
+
+  it("v1.1 排版契约：分段 + 受控 **重点** 标记（en/zh 双语）", () => {
+    const en = render("en").system;
+    expect(en).toContain("2-4 short paragraphs");
+    expect(en).toContain("**double asterisks**");
+    const zh = render("zh").system;
+    expect(zh).toContain("2-4 个短段落");
+    expect(zh).toContain("**双星号**");
   });
 
   it("user 透传真实 context（big3 / bands / 当前相位 / marker）", () => {

@@ -1,5 +1,5 @@
 // INPUT: TimelineCandle/TimelineCandleAspect/TimelineMarker（../../../types）+ ../derived 的 buildOhlcSeries（连续 OHLC 游走）。
-// OUTPUT: 人生 K 线 v7 全部纯派生函数——buildLifePoints/computeMa10/supportResistance/阈值 key 函数族/cycleCueKey/
+// OUTPUT: 人生 K 线 v7 全部纯派生函数——buildLifePoints（含影线压缩）/computeMa10/阈值 key 函数族/cycleCueKey/
 //         moduleState/moduleTierKey/modulesInFocus/pickBubbles/clampTooltip/xForAge/yForValue + MAX_AGE/CHART 常量与 Lk* key 类型。
 // POS: lifekline 呈现层的确定性计算核心（零 LLM、零 DOM）；阈值 1:1 对照 v7 artifact 行 200-433，文案 key 由
 //      lifeKlineCopy.ts 消费、几何由 LifeKlineChart.tsx 消费。若更新此文件，务必同步 tests/unit/lifekline-derived.test.ts 与 FOLDER.md。
@@ -194,19 +194,6 @@ export function buildLifePoints(
       topAspects: c.topAspects,
     };
   });
-}
-
-// R/S 阻力支撑线：r=min(96, round(max close))、s=max(4, round(min close))；
-// 有效点 <2 或 r<=s（退化平线，及 clamp 造成的倒挂：全 ≥97 → {96,97}、全 ≤3 → {2,4}）→ null（不画）。
-export function supportResistance(
-  points: LifePoint[],
-): { r: number; s: number } | null {
-  const closes = points.map((p) => p.close).filter((v) => Number.isFinite(v));
-  if (closes.length < 2) return null;
-  const r = Math.min(96, Math.round(Math.max(...closes)));
-  const s = Math.max(4, Math.round(Math.min(...closes)));
-  if (r <= s) return null;
-  return { r, s };
 }
 
 // ---- 阈值函数族：分支顺序即优先级，1:1 对照 artifact 行 200-433 ----

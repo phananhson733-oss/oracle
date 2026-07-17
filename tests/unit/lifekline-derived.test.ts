@@ -1,5 +1,5 @@
 // INPUT: components/timeline/lifekline/lifeKlineDerived.ts 全部导出（人生 K 线 v7 纯函数派生层）+ helpers/lifekline 共享工厂（makeCandle/makeAspect）。
-// OUTPUT: TDD 单测——OHLC 构建/MA10/R-S（含 clamp 倒挂护栏）/全部阈值 key 函数边界 ±1 与分支优先级（含 moduleTierKey）/cycleCue/模块状态/气泡挑选/tooltip 夹紧/坐标映射。
+// OUTPUT: TDD 单测——OHLC 构建（含影线压缩契约）/MA10/全部阈值 key 函数边界 ±1 与分支优先级（含 moduleTierKey）/cycleCue/模块状态/气泡挑选/tooltip 夹紧/坐标映射。
 // POS: lifekline v7 呈现升级的算法回归基线；阈值 1:1 对照 v7 artifact（行 200-433），阈值变更必须同步本测试。
 
 import { describe, expect, it } from "vitest";
@@ -25,7 +25,6 @@ import {
   pickBubbles,
   statusKey,
   statusLabelKey,
-  supportResistance,
   xForAge,
   yForValue,
   type LifePoint,
@@ -267,44 +266,6 @@ describe("computeMa10", () => {
     expect(out[11]).toBe(15);
     // i=9 → mean(closes[0..9]) = mean(2..20) = 11。
     expect(out[9]).toBe(11);
-  });
-});
-
-describe("supportResistance", () => {
-  it("returns rounded max/min of closes", () => {
-    const pts = [
-      point({ close: 20 }),
-      point({ close: 80 }),
-      point({ close: 55 }),
-    ];
-    expect(supportResistance(pts)).toEqual({ r: 80, s: 20 });
-  });
-
-  it("clamps r to 96 and s to 4", () => {
-    const pts = [point({ close: 99 }), point({ close: 1 })];
-    expect(supportResistance(pts)).toEqual({ r: 96, s: 4 });
-  });
-
-  it("returns null when fewer than 2 valid points", () => {
-    expect(supportResistance([])).toBeNull();
-    expect(supportResistance([point({ close: 50 })])).toBeNull();
-  });
-
-  it("returns null when r === s (degenerate flat series)", () => {
-    const pts = [point({ close: 50 }), point({ close: 50 })];
-    expect(supportResistance(pts)).toBeNull();
-  });
-
-  it("returns null when clamping inverts the lines (all closes at the top)", () => {
-    // 全高位：r=min(96,98)=96 < s=max(4,97)=97 → 倒挂护栏拦下，不画线。
-    const pts = [point({ close: 97 }), point({ close: 98 })];
-    expect(supportResistance(pts)).toBeNull();
-  });
-
-  it("returns null when clamping inverts the lines (all closes at the bottom)", () => {
-    // 全低位：r=min(96,2)=2 < s=max(4,1)=4 → 倒挂护栏拦下，不画线。
-    const pts = [point({ close: 1 }), point({ close: 2 })];
-    expect(supportResistance(pts)).toBeNull();
   });
 });
 

@@ -29,9 +29,11 @@
 - share.ts｜地位：A.5 分享回链核心（纯）｜功能：buildTimelineShareUrl→指向公开 /:lang/energy-timeline demo 的 UTM 回链。隐私默认（GDPR Art9）：结构上不接受/不携带任何出生数据/CBT/PII，分享者的盘永不外泄。
 - TimelineShareCard.tsx｜地位：A.5 最小分享卡｜功能：Current Phase（活跃度）+ Next Turning Point（marker）+ 分享按钮（复制 PII-free UTM 回链 + 已复制反馈）+ "create yours" CTA。深色卡，像素打磨待 QA。
 - TimelineDomains.tsx｜地位：B1 域引擎 deep card｜功能：消费响应 domainScores（DOMAINS_ENABLED gate OFF 时缺省→渲染 null），渲染 6 域定性 activation（Quiet/Active/Intense chip + flow/friction lean）+ self-relative caption + confidence reduced 弱化 + 安全 frame。中性配色（slate/psycho/mystic），禁红绿、禁数值 score。
-- TimelineLifeNarrative.tsx｜地位：人生能量叙事卡（6 段 LLM，仅 life 模式）｜功能：按需生成 overview/past/present/future/milestone/letter 六章折叠呈现（fetchLifeNarrative→POST /api/transit/narrative）；生成前显式告知出生数据将发往 LLM（AI 安全边界 #5）；反宿命 disclaimer；匿名 demo 走 upsell 不打端点。正文中性由后端 prompt 保证。参考 oracle_CN 人生长卷，喂 web 真引擎。
+- narrativeFormat.ts｜地位：叙事排版纯函数层｜功能：splitNarrativeParagraphs（空行分段优先，旧 v1.0 整块缓存按句每 3 句回退分段、短文本不拆、残句不丢）+ parseEmphasisSegments（受控 **…** 加粗解析，未闭合原样保留；React 文本节点渲染零注入面）。
+- TimelineLifeNarrative.tsx｜地位：人生能量叙事卡（6 段 LLM，仅 life 模式）｜功能：按需生成 overview/past/present/future/milestone/letter 六章折叠呈现（fetchLifeNarrative→POST /api/transit/narrative；正文经 narrativeFormat 分段 + <strong> 重点渲染）；生成前显式告知出生数据将发往 LLM（AI 安全边界 #5）；反宿命 disclaimer；匿名 demo 走 upsell 不打端点。正文中性由后端 prompt 保证。参考 oracle_CN 人生长卷，喂 web 真引擎。
 
 近期更新
+- 2026-07-17 叙事排版升级（用户反馈）：新增 narrativeFormat.ts 纯函数层，TimelineLifeNarrative 章节正文改分段渲染 + 受控 **重点** 加粗；配合后端 prompt v1.1（每章 2-4 段 + 至多 2 处重点标记），旧 v1.0 整块缓存由按句回退分段兜底。
 - 2026-07-16 v7 人生 K 线整块呈现：新增 lifekline/ 子目录（artifact 1:1 复刻，10 文件）；TimelinePage 默认 mode 改 life、life 请求区间扩到 +99（恰 100 根）、life 分支整体渲染 LifeKlineSection（原 AtAGlance/Report/Domains/ShareCard/Milestones/DetailSheet 仅保留于 month/year 分支）；6 章叙事保留于区块下方标注 included free。
 - 2026-06-24 人生能量叙事（6 段 LLM，K 线移植欠账落地）：新增 TimelineLifeNarrative.tsx（life 模式 milestones 后渲染，按需生成）+ copy.ts narrative* 双语键 + apiClient.fetchLifeNarrative + types.ts LifeNarrativeContent/Result。后端真引擎派生 context（无 PII）→ timeline-life-narrative prompt 六章。demo 视觉 QA 验上线级 upsell 卡渲染。
 - 2026-06-23 oracle_CN K 线呈现移植（A/B/C，纯前端、后端契约不变）：① **连续 OHLC 游走**（derived.buildOhlcSeries：close=本根强度、open=上一根 close → body=跨周期变化、天然短而均匀，删 per-granularity body-clamp 魔法数；着色描述性非预测）根治"蜡烛过长"；② **CN 式多 tab 详情抽屉** TimelineDetailSheet（概览 OHLC 三格/正在活跃 topAspects/当日解读，全模式，喂真数据）替代页内 selected-candle 摘要 + 删 TimelineDetailDrawer；③ **里程碑竖向时间轴** TimelineMilestones + TimelineReport **hero 定性环**。全程中性英文/中文、反宿命、零 LLM。6-段 LLM 人生叙事作为后续单独单元（需 prompt 注册+PRD+AI 安全过审）。timeline-chart/derived/detail-sheet 测试同步，381→389。

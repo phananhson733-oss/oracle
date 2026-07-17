@@ -1,14 +1,15 @@
 // INPUT: TimelinePage（复用月度能量时间轴主体）、useLanguage/useAuth、固定示例出生盘 DEMO_PROFILE。
-// OUTPUT: 公开（免登录）Energy Timeline 示例页 /:lang/energy-timeline——SEO 获客落点，渲染示例盘的真实时间轴（initialMode="month" 保持月度默认）+ 注册 CTA。
+// OUTPUT: 公开（免登录）Energy Timeline 示例页 /:lang/energy-timeline——SEO 获客落点，渲染示例盘的真实时间轴（initialMode="month" 保持月度默认）+ 注册 CTA；登录且有出生档案时客户端重定向到 /timeline（匿名/爬虫不受影响）。
 // POS: 受 isPublicRoute 白名单保护的可索引 SEO demo 页（设计 §13）。静态 stub（generate-seo-pages.mjs）供爬虫读关键词正文，
 //      本组件水合后接管交互；纵轴=中性能量强度、无吉凶预测，与 /timeline 同一安全叙事。
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import type { UserProfile } from "../types";
 import { useLanguage } from "../components/UIComponents";
 import { useLangPath } from "../hooks/useLangPath";
 import { useAuth } from "../contexts/AuthContext";
+import { useUserProfile } from "../hooks/useUserProfile";
 import { ToolSeoLandingSections } from "../components/calculators/ToolSeoLandingSections";
 import TimelinePage from "./TimelinePage";
 
@@ -47,8 +48,18 @@ const DEMO_COPY = {
 const EnergyTimelineDemoPage: React.FC = () => {
   const { language } = useLanguage();
   const { langPath } = useLangPath();
-  const { openLoginModal } = useAuth();
+  const { openLoginModal, user: authUser } = useAuth();
+  const { user: profile } = useUserProfile();
+  const navigate = useNavigate();
   const d = DEMO_COPY[language === "zh" ? "zh" : "en"];
+
+  // 登录且已有出生档案的用户没有理由停在示例盘：客户端重定向到 /timeline
+  // 用自己的数据看长程 K 线。仅 effect 内跳转——匿名访客与爬虫（SEO stub）不受影响。
+  useEffect(() => {
+    if (authUser && profile?.birthDate) {
+      navigate(langPath("/timeline"), { replace: true });
+    }
+  }, [authUser, profile, navigate, langPath]);
 
   return (
     <div className="mx-auto max-w-[88rem] px-4 sm:px-6">

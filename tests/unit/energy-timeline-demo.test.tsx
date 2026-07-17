@@ -8,8 +8,16 @@ import { render, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 const openLoginModal = vi.fn();
+// 可变 auth 状态：默认匿名；重定向测试临时注入 user。
+let authState: Record<string, unknown> = { openLoginModal };
 vi.mock("../../contexts/AuthContext", () => ({
-  useAuth: () => ({ openLoginModal }),
+  useAuth: () => authState,
+}));
+
+const navigateMock = vi.fn();
+vi.mock("react-router-dom", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("react-router-dom")>()),
+  useNavigate: () => navigateMock,
 }));
 
 // stub TimelinePage 以隔离重型 fetch/onboarding；记录收到的 props。
@@ -50,6 +58,39 @@ describe("EnergyTimelineDemoPage", () => {
     );
     fireEvent.click(getByText(/Create your own timeline/i));
     expect(openLoginModal).toHaveBeenCalledTimes(1);
+  });
+
+  it("redirects a signed-in user with a birth profile to /timeline (replace)", () => {
+    navigateMock.mockClear();
+    authState = { openLoginModal, user: { id: "u1", name: "T" } };
+    localStorage.setItem(
+      "astro_user",
+      JSON.stringify({ userId: "u1", birthDate: "1990-01-01" }),
+    );
+    try {
+      render(
+        <MemoryRouter>
+          <EnergyTimelineDemoPage />
+        </MemoryRouter>,
+      );
+      expect(navigateMock).toHaveBeenCalledWith(
+        expect.stringContaining("/timeline"),
+        { replace: true },
+      );
+    } finally {
+      localStorage.removeItem("astro_user");
+      authState = { openLoginModal };
+    }
+  });
+
+  it("does NOT redirect anonymous visitors (SEO surface intact)", () => {
+    navigateMock.mockClear();
+    render(
+      <MemoryRouter>
+        <EnergyTimelineDemoPage />
+      </MemoryRouter>,
+    );
+    expect(navigateMock).not.toHaveBeenCalled();
   });
 
   it("ships a valid fixed demo birth profile (so the anonymous fetch won't 400)", () => {

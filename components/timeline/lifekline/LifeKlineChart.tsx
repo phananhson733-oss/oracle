@@ -12,7 +12,6 @@ export interface LifeKlineChartProps {
   points: LifePoint[];
   selectedAge: number;
   bubbles: BubbleSpec[];
-  rs: { r: number; s: number } | null;
   copy: LifeKlineCopy;
   onHover: (age: number, clientX: number, clientY: number) => void;
   onLeave: () => void;
@@ -152,48 +151,6 @@ function StageLayer({ copy }: { copy: LifeKlineCopy }): React.ReactElement {
           {copy.stages[key].short}
         </text>
       ))}
-    </>
-  );
-}
-
-function RsLayer({
-  rs,
-}: {
-  rs: { r: number; s: number } | null;
-}): React.ReactElement | null {
-  if (!rs) return null;
-  return (
-    <>
-      <line
-        className="lk-support"
-        x1={CHART.left}
-        y1={yForValue(rs.r)}
-        x2={CHART.right}
-        y2={yForValue(rs.r)}
-      />
-      <line
-        className="lk-support"
-        x1={CHART.left}
-        y1={yForValue(rs.s)}
-        x2={CHART.right}
-        y2={yForValue(rs.s)}
-      />
-      <text
-        className="lk-rs-label"
-        x={CHART.right - 5}
-        y={yForValue(rs.r) - 8}
-        textAnchor="end"
-      >
-        {`R: ${rs.r}`}
-      </text>
-      <text
-        className="lk-rs-label"
-        x={CHART.right - 5}
-        y={yForValue(rs.s) - 8}
-        textAnchor="end"
-      >
-        {`S: ${rs.s}`}
-      </text>
     </>
   );
 }
@@ -558,7 +515,7 @@ function useChartInteractions(
 export const LifeKlineChart = React.memo(function LifeKlineChart(
   props: LifeKlineChartProps,
 ): React.ReactElement {
-  const { points, selectedAge, bubbles, rs, copy, onHover, onLeave, onSelect } =
+  const { points, selectedAge, bubbles, copy, onHover, onLeave, onSelect } =
     props;
   const sortedPoints = useMemo(
     () => [...points].sort((a, b) => a.age - b.age),
@@ -581,7 +538,6 @@ export const LifeKlineChart = React.memo(function LifeKlineChart(
         <GridLayer />
         <AxisLabels copy={copy} />
         <StageLayer copy={copy} />
-        <RsLayer rs={rs} />
         <AgeTicks />
         <MaPath points={sortedPoints} />
         <CandleLayer points={sortedPoints} selectedAge={selectedAge} />
