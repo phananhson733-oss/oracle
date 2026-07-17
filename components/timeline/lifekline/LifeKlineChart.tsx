@@ -256,8 +256,8 @@ function CandleLayer({
               className="lk-wick"
               x1={cx}
               x2={cx}
-              y1={yForValue(p.high)}
-              y2={yForValue(p.low)}
+              y1={yForValue(p.wickHigh)}
+              y2={yForValue(p.wickLow)}
               stroke={color}
             />
             <rect

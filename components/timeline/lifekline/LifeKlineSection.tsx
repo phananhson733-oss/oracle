@@ -293,9 +293,6 @@ export function LifeKlineSection({
         <section className="lk-kline-card" aria-label={copy.header.title}>
           <div className="lk-chart-head">
             <div className="lk-brandline">
-              <div className="lk-kmark" aria-hidden="true">
-                K
-              </div>
               <div>
                 <h2 className="lk-title">{copy.header.title}</h2>
                 <p className="lk-subhead">{copy.header.subhead}</p>

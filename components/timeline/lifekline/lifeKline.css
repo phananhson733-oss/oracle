@@ -32,9 +32,6 @@
 .lk-kline-card{background:var(--lk-card);border:1px solid #d5e6e7;border-radius:var(--lk-radius);box-shadow:var(--lk-shadow);padding:30px 34px 26px}
 .lk-chart-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px}
 .lk-brandline{display:flex;align-items:center;gap:16px;min-width:360px}
-.lk-kmark{width:42px;height:42px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:0 5px 18px rgba(41,58,65,.08);font-weight:900;font-size:25px;letter-spacing:-.08em;color:#16242a;position:relative;overflow:hidden}
-.lk-kmark:before{content:"";position:absolute;left:10px;top:8px;width:5px;height:25px;background:#0e1720;border-radius:2px}
-.lk-kmark:after{content:"";position:absolute;left:17px;top:9px;width:18px;height:24px;background:linear-gradient(135deg,#18b957 0 45%,transparent 46% 54%,#ef4444 55%);clip-path:polygon(0 0,100% 0,54% 50%,100% 100%,0 100%,46% 50%)}
 .lk-scope .lk-title{margin:0;font-size:28px;line-height:1.12;letter-spacing:-.04em;color:#26383d;font-weight:800}
 .lk-subhead{margin:4px 0 0;color:#5f6e76;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 

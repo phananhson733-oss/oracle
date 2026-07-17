@@ -109,12 +109,28 @@ export interface LifePoint {
   close: number;
   high: number;
   low: number;
+  /** 影线绘制端点：真实年内极值超出 body 的部分压缩到 artifact 刻度（tooltip 仍显示真实 high/low）。 */
+  wickHigh: number;
+  wickLow: number;
   delta: number;
   ma10: number;
   up: boolean;
   harmony: number;
   tension: number;
   topAspects: TimelineCandleAspect[];
+}
+
+// 影线绘制刻度（对照 artifact 行 228-231：wickUp=1.5+[0..2.6]、wickDown=1.4+[0..2.7]，
+// 即 1.4-4.1 能量单位的短须）。真实数据的 peak/dip 是年内季度采样极值，与年均值常差
+// 10-30+ 单位，直接画会得到远超 artifact 的长影线——绘制端点做单调压缩：无真实超出不画，
+// 有超出映射进 [WICK_MIN, WICK_MAX]。真实 high/low 数值保留在 LifePoint 供 tooltip 展示。
+const WICK_MIN = 1.5;
+const WICK_MAX = 4.2;
+const WICK_GAIN = 0.1;
+
+function compressWick(extension: number): number {
+  if (extension <= 0) return 0;
+  return Math.min(WICK_MAX, WICK_MIN + extension * WICK_GAIN);
 }
 
 // 事件气泡规格：age（已取整、0-99 且有对应渲染点）+ 公历年 label + v7 配色 + 上/下侧。
@@ -156,6 +172,8 @@ export function buildLifePoints(
   return valid.map((c, i) => {
     const age = c.age as number;
     const { open, close, high, low } = bars[i];
+    const bodyHigh = Math.max(open, close);
+    const bodyLow = Math.min(open, close);
     return {
       age,
       year: birthYear + age,
@@ -163,6 +181,11 @@ export function buildLifePoints(
       close,
       high,
       low,
+      wickHigh: Math.min(
+        100,
+        Math.round(bodyHigh + compressWick(high - bodyHigh)),
+      ),
+      wickLow: Math.max(0, Math.round(bodyLow - compressWick(bodyLow - low))),
       delta: close - open,
       ma10: ma10[i],
       up: close >= open,

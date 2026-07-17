@@ -43,6 +43,8 @@ const point = (over: Partial<LifePoint> = {}): LifePoint => ({
   close: 50,
   high: 55,
   low: 45,
+  wickHigh: 52,
+  wickLow: 48,
   delta: 0,
   ma10: 50,
   up: true,
@@ -102,6 +104,48 @@ describe("buildLifePoints", () => {
     expect(pts[0].close).toBe(50);
     expect(pts[1].close).toBe(63);
     expect(pts[2].close).toBe(40);
+  });
+
+  it("compresses drawn wicks to artifact scale while keeping real high/low for the tooltip", () => {
+    const pts = buildLifePoints(
+      [
+        // 第一根 doji（open=close=50）：peak 远超 body 30 单位、dip 低于 body 20 单位。
+        candle(0, { intensity: 50, peak: 80, dip: 30 }),
+        // 第二根：无真实超出（peak/dip 落在 body 区间内）→ 影线端点=body 边。
+        candle(1, { intensity: 60, peak: 58, dip: 52 }),
+      ],
+      1988,
+    );
+    // 真实 high/low 原样保留（tooltip 契约，不造假）。
+    expect(pts[0].high).toBe(80);
+    expect(pts[0].low).toBe(30);
+    // 绘制端点压缩：extension=30 → min(4.2, 1.5+30*0.1)=4.2 → round(50+4.2)=54。
+    expect(pts[0].wickHigh).toBe(54);
+    // extension=20 → min(4.2, 1.5+20*0.1)=3.5 → round(50-3.5)=47（四舍五入 46.5→47）。
+    expect(pts[0].wickLow).toBeGreaterThanOrEqual(46);
+    expect(pts[0].wickLow).toBeLessThanOrEqual(47);
+    // 无超出：影线端点与 body 边一致（open=50, close=60）。
+    expect(pts[1].wickHigh).toBe(60);
+    expect(pts[1].wickLow).toBe(50);
+    // 影线端点永不超过真实极值方向的语义：wickHigh<=high、wickLow>=low。
+    expect(pts[0].wickHigh).toBeLessThanOrEqual(pts[0].high);
+    expect(pts[0].wickLow).toBeGreaterThanOrEqual(pts[0].low);
+  });
+
+  it("wick compression is monotone below the cap and clamped to [0,100]", () => {
+    const pts = buildLifePoints(
+      [
+        candle(0, { intensity: 50, peak: 55, dip: 45 }), // ext 5 → 1.5+0.5=2
+        candle(1, { intensity: 50, peak: 70, dip: 30 }), // ext 20 → 3.5（open=50 doji 延续）
+        candle(2, { intensity: 99, peak: 100, dip: 0 }), // 上界 clamp ≤100
+      ],
+      1988,
+    );
+    const upExt0 = pts[0].wickHigh - Math.max(pts[0].open, pts[0].close);
+    const upExt1 = pts[1].wickHigh - Math.max(pts[1].open, pts[1].close);
+    expect(upExt1).toBeGreaterThan(upExt0);
+    expect(pts[2].wickHigh).toBeLessThanOrEqual(100);
+    expect(pts[2].wickLow).toBeGreaterThanOrEqual(0);
   });
 
   it("rounds open/close/high/low and derives delta/up from rounded values", () => {
