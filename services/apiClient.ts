@@ -736,13 +736,15 @@ export async function fetchDailyDetail(
 // No LLM / no AI credits — pure ephemeris computation, cached per day server-side.
 // `tz` is the VIEWER's local zone so day-buckets align to the user's calendar day
 // (design B7). Errors carry a `code` (EPHEMERIS_UNAVAILABLE / RANGE_TOO_LARGE / …)
-// so the page can branch on it.
+// so the page can branch on it. `timeoutMs` 可选放宽客户端超时（默认 15s；
+// life 模式 100 根年级蜡烛冷算首访可能 >15s，调用方传 30000）。
 export async function fetchTransitTimeline(
   profile: UserProfile,
   from: string,
   to: string,
   lang: "zh" | "en" = "en",
   granularity: "day" | "month" | "year" = "day",
+  timeoutMs: number = REQUEST_TIMEOUT_MS,
 ): Promise<TimelineResponse> {
   const birth = profileToBirthInput(profile);
   const tz = (() => {
@@ -753,16 +755,20 @@ export async function fetchTransitTimeline(
     }
   })();
 
-  const res = await fetchWithTimeout(`${API_BASE}/transit/timeline`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      birth,
-      range: { granularity, from, to },
-      tz,
-      lang,
-    }),
-  });
+  const res = await fetchWithTimeout(
+    `${API_BASE}/transit/timeline`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        birth,
+        range: { granularity, from, to },
+        tz,
+        lang,
+      }),
+    },
+    timeoutMs,
+  );
 
   if (!res.ok) {
     const { message, reason, payload } = await parseErrorPayload(res);

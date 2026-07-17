@@ -10,13 +10,16 @@
 - 蜡烛=区间摘要（start/peak/dip/end），非金融 OHLC；纵轴=中性能量强度，仅与自身比较。
 - 安全叙事（Empowerment over Fatalism）：onboarding + 图例 + 文案均无吉凶/确定性语言。
 
+子目录索引
+- lifekline/｜地位：life 模式 v7 呈现套件（2026-07-16 起 /timeline 默认视图）｜功能：人生 K 线 artifact 1:1 复刻整块（Section 编排/SVG 主图/富 tooltip/双面板/6 领域卡/fake-door paywall + 纯函数派生层 + 双语字典 + scoped CSS），详见其 FOLDER.md。
+
 文件清单
 - FOLDER.md｜地位：目录索引文档｜功能：记录 timeline 组件结构。
 - copy.ts｜地位：i18n 文案字典｜功能：getTimelineCopy(language) 双语文案（含安全叙事），集中于此避免触碰并行修改中的 constants.ts。
 - TimelineChart.tsx｜地位：主图｜功能：自绘 SVG 蜡烛图（**连续 OHLC 游走**：close=本根强度、open=上一根 close → body=跨周期变化、wick=本期范围；参考 oracle_CN）+ MA 平滑 + 节点气泡 + A3 响应式图高 + A10 You-are-here(nowKey) + A8 未来 marker 上限5 + 方向实心红/绿 + B6 showTrend 趋势线开关 + B6 zoomFactor 横向缩放(1-3×,平移=容器横滚)；着色描述性非预测。
 - TimelineLegend.tsx｜地位：图例｜功能：能量=loud/quiet 非好坏、flow/friction/quiet 三色说明、7 日趋势线（紫/MA）说明、仅与自身比较。
 - TimelineOnboarding.tsx｜地位：安全 onboarding｜功能：首访 3 屏（loud vs quiet / 两种能量 / 节奏非命运），localStorage 标记一次。
-- TimelineDetailSheet.tsx｜地位：CN 式多 tab 详情抽屉（B）｜功能：点蜡烛弹出底部抽屉，tab=概览(OHLC 三格/lean/通道分量)/正在活跃(topAspects 真相位)/当日解读(月度+非 demo，复用 fetchDailyDetail)；全模式可用，中性英文/中文，无吉凶/命运。
+- TimelineDetailSheet.tsx｜地位：CN 式多 tab 详情抽屉（B）｜功能：点蜡烛弹出底部抽屉，tab=概览(OHLC 三格/lean/通道分量)/正在活跃(topAspects 真相位)/当日解读(月度+非 demo，复用 fetchDailyDetail)；month/year 模式可用（2026-07-16 起 life 模式由 lifekline/ 区块接管，不再弹出），中性英文/中文，无吉凶/命运。
 - derived.ts｜地位：派生纯函数（A4/A11/B5' + OHLC）｜功能：candleKey、energyBand→5 档中性活跃度、atAGlance→概览四格、currentCandle→当前候选(B5')、upcomingMarkers→未来转折点(B5')、buildOhlcSeries→连续 OHLC 游走(参考 oracle_CN)。零 LLM、确定性、文案来自 copy.ts 固定安全串。
 - TimelineAtAGlance.tsx｜地位：派生概览卡片行（A11）｜功能：At-a-Glance 四格（最活跃/最平静一段/顺流倾向/摩擦倾向），中性 slate surface + psycho/mystic 强调，禁红绿（§9.4）。
 - TimelineReport.tsx｜地位：派生报告骨架（B5' + C hero）｜功能：Current-Phase **hero 卡**（定性能量环 5 档填充 + 档名 + flow/friction lean，参考 oracle_CN 评分环但不显数值）+ Upcoming turning points（未来 marker 列表）+ 每子面安全 frame。仅派生字段、零 LLM。
@@ -29,6 +32,7 @@
 - TimelineLifeNarrative.tsx｜地位：人生能量叙事卡（6 段 LLM，仅 life 模式）｜功能：按需生成 overview/past/present/future/milestone/letter 六章折叠呈现（fetchLifeNarrative→POST /api/transit/narrative）；生成前显式告知出生数据将发往 LLM（AI 安全边界 #5）；反宿命 disclaimer；匿名 demo 走 upsell 不打端点。正文中性由后端 prompt 保证。参考 oracle_CN 人生长卷，喂 web 真引擎。
 
 近期更新
+- 2026-07-16 v7 人生 K 线整块呈现：新增 lifekline/ 子目录（artifact 1:1 复刻，10 文件）；TimelinePage 默认 mode 改 life、life 请求区间扩到 +99（恰 100 根）、life 分支整体渲染 LifeKlineSection（原 AtAGlance/Report/Domains/ShareCard/Milestones/DetailSheet 仅保留于 month/year 分支）；6 章叙事保留于区块下方标注 included free。
 - 2026-06-24 人生能量叙事（6 段 LLM，K 线移植欠账落地）：新增 TimelineLifeNarrative.tsx（life 模式 milestones 后渲染，按需生成）+ copy.ts narrative* 双语键 + apiClient.fetchLifeNarrative + types.ts LifeNarrativeContent/Result。后端真引擎派生 context（无 PII）→ timeline-life-narrative prompt 六章。demo 视觉 QA 验上线级 upsell 卡渲染。
 - 2026-06-23 oracle_CN K 线呈现移植（A/B/C，纯前端、后端契约不变）：① **连续 OHLC 游走**（derived.buildOhlcSeries：close=本根强度、open=上一根 close → body=跨周期变化、天然短而均匀，删 per-granularity body-clamp 魔法数；着色描述性非预测）根治"蜡烛过长"；② **CN 式多 tab 详情抽屉** TimelineDetailSheet（概览 OHLC 三格/正在活跃 topAspects/当日解读，全模式，喂真数据）替代页内 selected-candle 摘要 + 删 TimelineDetailDrawer；③ **里程碑竖向时间轴** TimelineMilestones + TimelineReport **hero 定性环**。全程中性英文/中文、反宿命、零 LLM。6-段 LLM 人生叙事作为后续单独单元（需 prompt 注册+PRD+AI 安全过审）。timeline-chart/derived/detail-sheet 测试同步，381→389。
 - 2026-06-22 B1 deep card 前端消费（域引擎全链通）：TimelineDomains.tsx 消费响应 domainScores（响应契约 domain 类型移到 types/timeline.ts 共用 + api payload 透传 + 前端 types.ts 镜像）。gate OFF 时响应无 domainScores → 渲染 null（生产零可见）。定性 chip + 中性配色。timeline-derived.test +3。B2 前端 Month/Year/Long-range toggle 同期。

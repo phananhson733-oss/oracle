@@ -23,5 +23,6 @@
 
 ## 近期更新
 
+- PRD v2.49 落地 v7 人生 K 线整块呈现：§2.15 记录 lifekline/ 组件套件、life 默认 tab、demo 页保持 month 默认与 lifeArc 年级结果缓存（计算投影 SHA-256 键、30d TTL、命中侧校验 + single-flight）。
 - PRD v2.47 同步 Pro 试用新流程：注册后默认 Free，符合资格用户需手动点击试用并在 Airwallex 填写付款信息，到期自动续费。
 - BACKUP_RUNBOOK 将 `pro_trial_claims` 纳入 Postgres 备份/恢复表清单，避免 Airwallex-backed Pro 试用领取历史恢复遗漏。

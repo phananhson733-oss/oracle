@@ -1,8 +1,14 @@
-// INPUT: UserProfile（活跃出生档案）；fetchTransitTimeline；timeline 组件群（含 TimelineDetailSheet）；buildOhlcSeries；useLanguage/useTheme；FrameworkDisclaimer。
-// OUTPUT: 能量时间轴页面（Month/Year/Life 三模式；蜡烛主视图 + 点蜡烛弹出 CN 式多 tab 详情抽屉(概览/正在活跃/当日解读) + 安全 onboarding + 页底法务免责 + 全状态）。
-// POS: 受保护路由 /timeline 的页面（#3/#4/#5 + B 详情抽屉）。无吉凶/确定性叙事；纵轴=中性能量强度，仅与自身比较。
+// INPUT: UserProfile（活跃出生档案）；fetchTransitTimeline（life 分支放宽 30s 客户端超时）；timeline 组件群（含 TimelineDetailSheet）+ lifekline/LifeKlineSection；buildOhlcSeries；useLanguage；FrameworkDisclaimer。
+// OUTPUT: 能量时间轴页面（默认 Life 人生 K 线 v7 整块呈现，initialMode prop 可覆盖初始视图——demo 页传 "month"；Month/Year 保留旧蜡烛链 + 详情抽屉；副标题随 mode 切换；安全 onboarding + 页底法务免责 + 全状态）。
+// POS: 受保护路由 /timeline 的页面。life 分支渲染 LifeKlineSection（artifact v7 复刻），month/year 分支渲染原组件链。无吉凶/确定性叙事；纵轴=中性能量强度，仅与自身比较。
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import type { UserProfile, TimelineResponse, TimelineCandle } from "../types";
 import { useLanguage } from "../components/UIComponents";
 import { FrameworkDisclaimer } from "../components/shared/FrameworkDisclaimer";
@@ -21,6 +27,8 @@ import {
   hasSeenTimelineOnboarding,
 } from "../components/timeline/TimelineOnboarding";
 import { TimelineDetailSheet } from "../components/timeline/TimelineDetailSheet";
+import { LifeKlineSection } from "../components/timeline/lifekline/LifeKlineSection";
+import { getLifeKlineCopy } from "../components/timeline/lifekline/lifeKlineCopy";
 import { getTimelineCopy } from "../components/timeline/copy";
 import {
   fetchTransitTimeline,
@@ -32,6 +40,9 @@ import {
 // 之后才翻 true 对用户暴露 mental-health × 占星推断的叠加视图（设计 §10 / 隐私红线）。
 const CBT_OVERLAY_ENABLED = false;
 const CBT_OVERLAY_CONSENT_KEY = "cbt_overlay_consent_v1";
+
+// life 模式 100 根年级蜡烛冷算首访可能超过默认 15s：客户端超时放宽到 30s。
+const LIFE_TIMELINE_TIMEOUT_MS = 30000;
 
 function monthRange(year: number, month: number): { from: string; to: string } {
   const first = new Date(Date.UTC(year, month, 1));
@@ -47,16 +58,25 @@ const TimelinePage: React.FC<{
   // demo：公开示例页（EnergyTimelineDemoPage）复用本组件展示固定示例盘。月度计算端点匿名友好，
   // 蜡烛/当日摘要照常呈现；仅"当日 AI 解读"需登录 → 改为 onUpsell 注册 CTA。
   demo?: boolean;
+  // initialMode：初始视图模式（默认 life）。公开 demo 页传 "month"（SEO stub 一致性 + 匿名计算成本）。
+  initialMode?: "month" | "year" | "life";
   onUpsell?: () => void;
-}> = ({ profile, demo = false, onUpsell }) => {
+}> = ({ profile, demo = false, initialMode = "life", onUpsell }) => {
   const { language } = useLanguage();
   const c = getTimelineCopy(language);
+  const lifeCopy = getLifeKlineCopy(language);
 
   const now = new Date();
+  // 日历年近似年龄（与后端 lifeArc 的日历年采样语义一致；LifeKlineSection 内部 clamp 0-99）。
+  // ?? "" 护栏：损坏的 localStorage 档案可能缺 birthDate，防 slice 抛错；回退语义不变。
+  const birthYear =
+    Number((profile.birthDate ?? "").slice(0, 4)) || now.getFullYear() - 30;
+  const currentAge = now.getFullYear() - birthYear;
   const [year, setYear] = useState(now.getFullYear());
   const [month, setMonth] = useState(now.getMonth()); // 0-based
-  // 视图模式：month=月度日级（默认），year=年度月级（B2，granularity:'month'），life=人生年级（granularity:'year'）。
-  const [mode, setMode] = useState<"month" | "year" | "life">("month");
+  // 视图模式：life=人生 K 线 v7（登录页默认，granularity:'year'），month=月度日级，year=年度月级（B2）。
+  // 初值来自 initialMode prop（demo 页 month，见 props 注释）。
+  const [mode, setMode] = useState<"month" | "year" | "life">(initialMode);
   // B6：趋势线（MA）显示开关（默认开）+ 横向缩放系数（1=适配，最高 3×）。
   const [showTrend, setShowTrend] = useState(true);
   const [zoomFactor, setZoomFactor] = useState(1);
@@ -108,23 +128,27 @@ const TimelinePage: React.FC<{
     if (!hasSeenTimelineOnboarding()) setShowOnboarding(true);
   }, []);
 
+  // latest-wins 请求号：retry onClick={load} 会丢弃 cancel 闭包，慢响应可能写入已切换模式的
+  // 状态；每次 load 递增请求号，落地前校验仍是最新一发才 setState。
+  const requestIdRef = useRef(0);
+
   const load = useCallback(() => {
+    const requestId = ++requestIdRef.current;
     setLoading(true);
     setErrorCode(null);
     setData(null);
     setSelectedDate(null);
-    let cancelled = false;
     let req: ReturnType<typeof fetchTransitTimeline>;
     if (mode === "life") {
-      // 人生 K 线：年级，from/to 年份界定年龄区间（出生年 → +89 岁，约 90 根 ≤100）。
-      const birthYear =
-        Number(profile.birthDate.slice(0, 4)) || new Date().getFullYear() - 30;
+      // 人生 K 线：年级，from/to 年份界定年龄区间（出生年 → +99 岁，恰 100 根 = 后端 cap）。
+      // 100 根冷算首访可能 >15s，放宽客户端超时到 30s。
       req = fetchTransitTimeline(
         profile,
         `${birthYear}-01-01`,
-        `${birthYear + 89}-12-31`,
+        `${birthYear + 99}-12-31`,
         language,
         "year",
+        LIFE_TIMELINE_TIMEOUT_MS,
       );
     } else if (mode === "year") {
       // B2 年度月级：当前年的 12 个日历月（granularity:'month'）。
@@ -141,16 +165,18 @@ const TimelinePage: React.FC<{
     }
     req
       .then((res) => {
-        if (!cancelled) setData(res);
+        if (requestIdRef.current === requestId) setData(res);
       })
       .catch((err: { code?: string }) => {
-        if (!cancelled) setErrorCode(err?.code || "GENERIC");
+        if (requestIdRef.current === requestId)
+          setErrorCode(err?.code || "GENERIC");
       })
       .finally(() => {
-        if (!cancelled) setLoading(false);
+        if (requestIdRef.current === requestId) setLoading(false);
       });
     return () => {
-      cancelled = true;
+      // effect cleanup / 卸载时递增请求号，令在途响应过期失效。
+      requestIdRef.current++;
     };
   }, [profile, year, month, language, mode]);
 
@@ -194,14 +220,17 @@ const TimelinePage: React.FC<{
       ? `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`
       : mode === "year"
         ? `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-01`
-        : `age-${now.getFullYear() - (Number(profile.birthDate.slice(0, 4)) || now.getFullYear() - 30)}`;
+        : `age-${currentAge}`;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+    <div
+      className={`${mode === "life" ? "max-w-[1500px]" : "max-w-6xl"} mx-auto px-4 sm:px-6 py-6`}
+    >
       <header className="mb-4">
         <h1 className="text-2xl font-semibold">{c.title}</h1>
+        {/* 副标题随 mode：life 用长程描述（subtitle 的 "day by day" 只对日级成立）。 */}
         <p className="text-sm text-paper-500 dark:text-star-400 mt-1">
-          {c.subtitle}
+          {mode === "life" ? c.lifeViewTitle : c.subtitle}
         </p>
       </header>
 
@@ -265,9 +294,6 @@ const TimelinePage: React.FC<{
           </div>
           <p className="mt-2 text-xs text-slate-400">{c.yearViewTitle}</p>
         </div>
-      )}
-      {mode === "life" && (
-        <p className="my-4 text-sm font-medium">{c.lifeViewTitle}</p>
       )}
 
       {/* CBT 情绪叠加层（#23）：feature-flag 后默认关闭（dark）。仅月度模式可叠加；
@@ -359,7 +385,37 @@ const TimelinePage: React.FC<{
         </div>
       )}
 
-      {!loading && !errorCode && data && (
+      {/* life 分支：人生 K 线 v7 整块（artifact 复刻）+ 免费叙事 + 可选偏好 */}
+      {!loading && !errorCode && data && mode === "life" && (
+        <>
+          <LifeKlineSection
+            candles={data.candles}
+            markers={data.markers}
+            birthYear={birthYear}
+            currentAge={currentAge}
+            demo={demo}
+            onUpsell={onUpsell}
+          />
+          {data.accuracy !== "exact" && (
+            <p className="mt-2 text-xs text-amber-600">{c.approxTimeNote}</p>
+          )}
+          {data.dataQuality === "partial" && (
+            <p className="mt-1 text-xs text-amber-600">{c.partialDataNote}</p>
+          )}
+          {/* 6 章 LLM 叙事是登录免费真功能：标注 included free，与 fake-door paywall 区隔 */}
+          <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-paper-500 dark:text-star-400">
+            {lifeCopy.narrativeFraming.includedFree}
+          </p>
+          <TimelineLifeNarrative
+            profile={profile}
+            demo={demo}
+            onUpsell={onUpsell}
+          />
+        </>
+      )}
+
+      {/* month/year 分支：原组件链原样保留 */}
+      {!loading && !errorCode && data && mode !== "life" && (
         <>
           {/* 图表卡片：白卡 + 边框 + 阴影，在米色页面背景上拉开对比（用户反馈对比度不够看不清）。 */}
           <div className="rounded-2xl border border-paper-300/50 bg-paper-50 p-4 shadow-sm dark:border-gold-500/15 dark:bg-space-900/60 sm:p-5">
@@ -423,9 +479,6 @@ const TimelinePage: React.FC<{
             nowKey={nowKey}
             onCreateYours={demo ? onUpsell : undefined}
           />
-          {!demo && !prefsDone && (
-            <TimelineOptionalPrefs onSave={() => setPrefsDone(true)} />
-          )}
 
           {data.accuracy !== "exact" && (
             <p className="mt-2 text-xs text-amber-600">{c.approxTimeNote}</p>
@@ -437,18 +490,13 @@ const TimelinePage: React.FC<{
           {/* 人生里程碑竖向时间轴（C，参考 oracle_CN）：节点+连接线+周期名+中性一句话 */}
           <TimelineMilestones markers={data.markers} nowKey={nowKey} />
 
-          {/* 人生能量叙事（6 章 LLM，按需生成）：仅 life 模式（整生命弧才有意义）。
-              受保护 /timeline 已登录 → 真生成；公开 demo → upsell。 */}
-          {mode === "life" && (
-            <TimelineLifeNarrative
-              profile={profile}
-              demo={demo}
-              onUpsell={onUpsell}
-            />
-          )}
-
           {/* 选中蜡烛 → CN 式多 tab 详情抽屉（概览 / 正在活跃 / 当日解读）；见页底渲染。 */}
         </>
+      )}
+
+      {/* B4'：post-chart 可选偏好 —— life 与 month/year 分支共用的单一渲染（去重）。 */}
+      {!loading && !errorCode && data && !demo && !prefsDone && (
+        <TimelineOptionalPrefs onSave={() => setPrefsDone(true)} />
       )}
 
       {/* A1: 页底法务免责（R-89）—— 与顶部 FrameworkDisclaimer（方法论/安全框架）互补 */}
@@ -456,7 +504,7 @@ const TimelinePage: React.FC<{
         {c.legalFooter}
       </p>
 
-      {selectedCandle && selectedOhlc && (
+      {mode !== "life" && selectedCandle && selectedOhlc && (
         <TimelineDetailSheet
           key={selectedDate ?? undefined}
           candle={selectedCandle}

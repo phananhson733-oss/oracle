@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.47
-> **Last Updated**: 2026-07-02
+> **Version**: 2.49
+> **Last Updated**: 2026-07-17
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -444,6 +444,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 
 **oracle_CN 呈现移植已落地 (2026-06-23)**：参考内部 oracle_CN（微信小程序）K 线**呈现层**移植到 web（**纯前端，后端 interval-summary 契约不变**；oracle_CN 的 seededRandom 伪数据/干支/吉凶宿命内核**不移植**，撞真实数据默认 + AI 安全红线）——① **连续 OHLC 游走**（`components/timeline/derived.ts::buildOhlcSeries`：`close=本根 intensity、open=上一根 close`，body=跨周期能量变化、天然短而均匀，**删除原按粒度 clamp body 高度的魔法数**；着色**描述性非预测**：这期比上期更活跃=绿/更平静=红/近平=灰）根治"年/长程蜡烛过长"反馈；② **CN 式多 tab 详情抽屉** `TimelineDetailSheet`（概览=OHLC 三格 + flow/friction lean + 通道分量｜正在活跃=真实 topAspects｜当日解读=月度+非 demo 复用 `daily/detail`）替代页内 selected-candle 摘要 + 删除 `TimelineDetailDrawer`；③ **人生里程碑竖向时间轴** `TimelineMilestones`（土星/木星/交点回归 + 外行星刑/冲，中性一句话 + 反宿命 note）+ `TimelineReport` Current-Phase **hero 定性环**（5 档填充、不显数值 + flow/friction lean）。全程中性英文/中文、零 LLM、无吉凶/命运/医疗断言；fit-一页（不横滚）保留。生产数据视觉 QA（month + life）通过。**6 段 LLM 人生叙事**（overview/past/present/future/milestone/letter）作为后续单独单元（需 prompt 注册 + 本节同步 + AI 安全过审），不在本轮。
 
+**v7 人生 K 线整块呈现已落地 (2026-07-16)**：life 模式呈现整体替换为设计 artifact v7 的 1:1 复刻（`components/timeline/lifekline/` 组件套件：`LifeKlineSection` 编排 + SVG 主图 [0-99 岁恰 100 根 = 后端 cap、8 人生阶段带、MA10 趋势线、R/S 包络虚线、真实回归 marker 气泡（土星回归红/天王星对分蓝/当前年龄深色）] + HTML fixed 富 hover tooltip [OHLC 四格/能量进度条/规则化解读/领域 chips，rAF 节流 + 视口避让 + portal] + 选中年份节点面板与简要解读面板 + 6 生命领域卡 [**定性 In focus/Background 徽章**（当年 topAspects natalBody 亲和证据），延续域引擎禁数字分数的诚实契约] + **fake-door paywall**（modal 明示 coming soon、主按钮 Register interest、trackEvent 意向埋点、无支付发生）+ 独立 scoped `lk-*` CSS（artifact 浅色配色，dark/light 主题下一致的自成一体区块））。**life 设为 /timeline 默认 tab**；month/year 模式与 DetailSheet 原链完整保留；6 章 LLM 叙事保留于区块下方并标注 included free 与 paywall 区隔。文案 EN 主 ZH 辅（`lifeKlineCopy` 字典，倾向语言 + marker approximate 语义 + 日历年近似声明；干支/大运/吉凶不移植）。后端仅新增 `lifeArc` 年级结果缓存（键=出生计算投影 date/time/accuracy/lat/lon/timezone 的 SHA-256——**不含 city 自由文本**，防变体文本无限铸新键——+ `TIMELINE_ALGO_VERSION`、30d TTL、partial/空结果不缓存、命中侧契约校验（污染条目视同 miss）+ 同冷键并发 single-flight 合并，堵匿名冷算放大）与 `lifeArc.contract.test.ts` 契约 pin（100 根/age 0-99 连续/无 domainScores/SR≈29/59/88/interval-summary + 缓存 7 契约），API 契约不变。公开 demo 页保持 month 默认（`initialMode` prop；SEO stub 一致性与匿名计算成本考量），登录 `/timeline` 默认 life。
+
 将占星 transit 强度可视化为**蜡烛时间轴主视图**，用户看到自身"能量节奏"起伏，点击任意时间点获得 AI 解读。**外部命名** `Energy Timeline / Transit Candles`，"人生K线/月度K线"仅作内部代号 + 中文副标题。完整工程设计 + 落地 blocker 见 `docs/plans/2026-06-16-life-kline-design.md`（已过 5-voice autoplan 评审：3 Claude + Gemini + Codex/GPT-5 + 代码核验）。
 
 **双粒度**:
@@ -451,20 +453,20 @@ AI 生成的深度心理分析，每个维度独立解读：
 | 形态 | 粒度 | 数据源 | 状态 |
 |------|------|--------|------|
 | 月度 K 线 | 日（当月/任意月） | 快速 transit 相位强度（复用 ephemeris + synthetica 权重）| P0 MVP |
-| 人生 K 线 | 年（数十年） | 外行星过本命 + progression + 个人年（后台预计算）| P2 |
+| 人生 K 线 | 年（0-99 岁，100 根） | 慢速外行星 + 北交点过本命，季度采样（lifeArc）| 已落地（v7 呈现 2026-07-16 起为默认视图）|
 
 | 功能 | 说明 |
 |------|------|
 | **蜡烛主视图（区间摘要契约 / 连续 OHLC 渲染）** | 后端契约仍是 `start/peak/dip/end` 区间摘要（**非金融 OHLC 涨跌**）；**前端自 2026-06-23 起渲染为连续 OHLC 游走**（`close=intensity、open=上一根 close`，body=跨周期变化），属**描述性非预测**呈现（参考 oracle_CN 真 K 线观感），仍非命运/吉凶。纵轴中性"能量强度 intensity"，仅与自身比较。每根附 `dominantPhase`（applying/exact/separating/mixed）与 `dataQuality` |
 | **和谐/张力分解** | 复用 synthetica FLOW/FUSION/FRICTION 权重；着色 harmony=psycho-500蓝 / tension=mystic-500紫（**禁 success/danger/warning token、禁红绿涨跌**）|
 | **相位 episode 化** | 连续 orb kernel（非阶跃）+ episode 聚合，消除 orb 边界尖刺；topAspects 按 episode 去重 |
-| **节点标注** | 重大 Return（Saturn/Jupiter/Chiron/Nodal Return）气泡 |
-| **点击解读** | 点某天/段 → 抽屉复用 daily/detail（月度）或 cycle（人生）|
+| **节点标注** | 重大 Return（Saturn/Jupiter/Nodal Return + Uranus 中年对分）气泡 |
+| **点击解读** | 月度：点某天 → 抽屉复用 daily/detail；人生（2026-07-16 v7 起）：点选 pin 年份 → 规则化 tooltip/节点面板（零 LLM），六章 LLM 叙事为区块下方独立按需入口 |
 | **Time Travel** | 旋钮切换时段，免费限近期、付费区间旋钮上视觉预示锁 |
 | **CBT 情绪叠加层** | 登录用户把 CBT 情绪**数值**叠到时间轴做自我觉察（**竞品独家**，默认关 + 显式 consent + 反因果 banner）|
 
 **API**:
-- `GET / POST /api/transit/timeline` — 蜡烛时间序列（**无 LLM、纯计算 + 缓存**；`granularity:'day'`=月度日级 ≤92 天，`granularity:'year'`=人生年级 ≤100 岁；单日缓存键 `hashInput(birth):date:tz` 含 viewer 时区锚；核心天体 mock fallback → `EPHEMERIS_UNAVAILABLE` 不缓存；专属更严 limiter + 4KB cap）
+- `GET / POST /api/transit/timeline` — 蜡烛时间序列（**无 LLM、纯计算 + 缓存**；`granularity:'day'`=月度日级 ≤92 天，`granularity:'month'`=月内 12 月级 ≤12 根，`granularity:'year'`=人生年级 ≤100 岁（请求窗口越界夹到 0-99 岁，不报错不产空结果）；单日缓存键 `hashInput(birth):date:tz` 含 viewer 时区锚；核心天体 mock fallback → `EPHEMERIS_UNAVAILABLE` 不缓存；专属更严 limiter + 4KB cap）
 - `POST /api/transit/narrative` — **人生能量叙事（LLM）**：内部跑真 `buildLifeTimeline`（0→当前+30岁）→ `buildLifeNarrativeContext` 压成纯净 context（big3 + 连续能量带 + 当前相位 lean + 过去/未来周期 marker；**只含星座/年龄/相位天体名，无城市/经纬度/出生日期原文**）→ `timeline-life-narrative` prompt 输出 overview/past/present/future/milestone/letter 六章纯文本（反宿命、不预言具体事件）。**仅 life 模式按需触发**（生成前显式告知数据发往 LLM）；登录必需 + `full_year_narrative` gate（`TIMELINE_PAYWALL_ENABLED=false` 时全免费）；专属严限流 6/min。匿名 demo 走 upsell 不打端点。
 - `GET /api/cbt/mood-points` — CBT 情绪叠加层**服务端数据最小化投影**：按 viewer 本地日聚合为 `{date, intensity, moodCount}`（intensity = 当日各记录 `finalIntensity ?? initialIntensity` 的均值），绝不返回 `situation/automaticThoughts/hotThought` 等原文（隐私红线 #1/#3）；需鉴权、userId 取自 session（防 IDOR）、遵 90d 保留期、tz 用于本地日分桶。**前端叠加层 UI + GDPR Art9 显式 consent 流仍待落地（consent 措辞须过法务）。**
 

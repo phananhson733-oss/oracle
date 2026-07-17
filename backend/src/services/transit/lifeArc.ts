@@ -1,5 +1,5 @@
 // INPUT: ../ephemeris.js（瘦经度 + 本命盘）、../../cache、本目录纯函数（aspects/rollup/intensity/weights）、类型。
-// OUTPUT: 人生 K 线（年级）引擎 —— detectReturnMarkers(周期播种) + assembleLifeCandles(纯) + buildLifeTimeline(异步编排)。
+// OUTPUT: 人生 K 线（年级）引擎 —— detectReturnMarkers(周期播种) + assembleLifeCandles(纯) + buildLifeTimeline(异步编排，birth-hash 结果级缓存)。
 // POS: transit timeline 年级编排（#17/#18），复用月度强度模型。无 LLM；纯计算 + 基线/结果缓存 + 完整性门。
 //      纵轴=中性能量强度（仅与自身比较），蜡烛=区间摘要非趋势（B8），标记按已知轨道周期播种（非暴力扫描）。
 //      若更新此文件，务必更新本头注释与所属 FOLDER.md。
@@ -16,6 +16,7 @@ import type {
 import { ephemerisService } from "../ephemeris.js";
 import { cacheService } from "../../cache/redis.js";
 import { hashInput } from "../../cache/strategy.js";
+import { logger } from "../../utils/logger.js";
 import { PLANETS } from "../../data/sources.js";
 import { longitudeOfPosition, matchTransitAspects } from "./aspects.js";
 import { parseTransitAspects, summarizeBucket } from "./rollup.js";
@@ -286,11 +287,85 @@ async function computeBaselineRaws(
   return samples;
 }
 
+// 结果级缓存键：birth 经 SHA-256 摘要（隐私红线：键内绝不出现出生数据明文），
+// 必须含 TIMELINE_ALGO_VERSION —— 权重/算法调整后旧结果自动失效。
+// 只哈希参与计算的字段投影：city 是 ≤200 字符自由文本，birthFromValidated 保证坐标
+// 始终已解析（city-only 也会 geocode 成具体 lat/lon），星历计算不再消费 city ——
+// 若进键，攻击者可用变体文本对同一坐标无限铸新键灌满缓存（对抗评审 #1）。
+function buildLifeResultCacheKey(
+  birth: BirthInput,
+  fromAge: number,
+  toAge: number,
+): string {
+  const canonical = {
+    date: birth.date,
+    time: birth.time ?? null,
+    accuracy: birth.accuracy,
+    lat: birth.lat ?? null,
+    lon: birth.lon ?? null,
+    timezone: birth.timezone,
+  };
+  return `transit:lifearc:result:${hashInput(canonical)}:${fromAge}-${toAge}:${TIMELINE_ALGO_VERSION}`;
+}
+
+// 命中侧 shape 校验：结果缓存可能被旧代码/运维操作/存储损坏污染，返回前验根数与
+// 每根蜡烛的最小契约（age/intensity 有限、topAspects 为数组），不合格视同 miss 重算覆盖。
+function isReusableLifeResult(
+  cached: LifeTimelineResult | null | undefined,
+  expectedCount: number,
+): cached is LifeTimelineResult {
+  return (
+    !!cached &&
+    Array.isArray(cached.candles) &&
+    cached.candles.length === expectedCount &&
+    Array.isArray(cached.markers) &&
+    cached.candles.every(
+      (c) =>
+        Number.isFinite(c.age) &&
+        Number.isFinite(c.intensity) &&
+        Array.isArray(c.topAspects),
+    )
+  );
+}
+
+// 进程内 single-flight：同一冷键的并发请求合并为一次计算（一次冷算 ≈760 次同步星历
+// 采样，无合并时匿名并发会全部重算——对抗评审 #3）。键在 settle 后立即释放。
+const inflightLifeResults = new Map<string, Promise<LifeTimelineResult>>();
+
 export async function buildLifeTimeline(
   birth: BirthInput,
   fromAge: number,
   toAge: number,
   _tz: string,
+): Promise<LifeTimelineResult> {
+  // 结果级缓存：匿名 0-99 岁请求每次重算 ~400 次年度采样，放大面大 → birth-hash 命中直接返回。
+  const cacheKey = buildLifeResultCacheKey(birth, fromAge, toAge);
+  try {
+    const cached = await cacheService.get<LifeTimelineResult>(cacheKey);
+    if (isReusableLifeResult(cached, toAge - fromAge + 1)) {
+      return cached;
+    }
+  } catch (error) {
+    // compute live（读失败=整条请求退回 ~760 次采样冷算，必须可观测；键为 SHA-256 无 PII）
+    logger.warn("[lifeArc] result cache read failed", {
+      message: (error as Error).message,
+    });
+  }
+
+  const existing = inflightLifeResults.get(cacheKey);
+  if (existing) return existing;
+  const pending = computeLifeTimeline(birth, fromAge, toAge, cacheKey).finally(
+    () => inflightLifeResults.delete(cacheKey),
+  );
+  inflightLifeResults.set(cacheKey, pending);
+  return pending;
+}
+
+async function computeLifeTimeline(
+  birth: BirthInput,
+  fromAge: number,
+  toAge: number,
+  cacheKey: string,
 ): Promise<LifeTimelineResult> {
   const natal = await ephemerisService.calculateNatalChart(birth);
   const natalLons = natalLongitudes(natal);
@@ -317,13 +392,30 @@ export async function buildLifeTimeline(
       ? "partial"
       : "ok";
 
-  return {
+  const result: LifeTimelineResult = {
     contract: LIFE_CONTRACT,
     candles,
     markers,
     dataQuality,
     accuracy: birth.accuracy,
   };
+
+  // 完整性护栏（B10「不缓存假数据」）：任一年份走过 mock fallback（hasPartial）就跳过写缓存。
+  // 注意判 hasPartial 而非 dataQuality === "partial"：出生时间未知时 dataQuality 会被
+  // "approximate_time" 覆盖，但底层采样仍可能是 partial —— 以 hasPartial 为准。
+  // candles 非空才写：退化区间的空结果是垃圾条目（route 已 clamp，此处兜底）。
+  if (!hasPartial && candles.length > 0) {
+    try {
+      await cacheService.set(cacheKey, result, LIFE_CACHE_TTL_SECONDS);
+    } catch (error) {
+      // best-effort：写缓存失败不影响本次返回，但需可观测（键为 SHA-256 无 PII）
+      logger.warn("[lifeArc] result cache write failed", {
+        message: (error as Error).message,
+      });
+    }
+  }
+
+  return result;
 }
 
 export { MAX_LIFE_CANDLES };

@@ -1,5 +1,5 @@
 // INPUT: TimelinePage（复用月度能量时间轴主体）、useLanguage/useAuth、固定示例出生盘 DEMO_PROFILE。
-// OUTPUT: 公开（免登录）Energy Timeline 示例页 /:lang/energy-timeline——SEO 获客落点，渲染示例盘的真实时间轴 + 注册 CTA。
+// OUTPUT: 公开（免登录）Energy Timeline 示例页 /:lang/energy-timeline——SEO 获客落点，渲染示例盘的真实时间轴（initialMode="month" 保持月度默认）+ 注册 CTA。
 // POS: 受 isPublicRoute 白名单保护的可索引 SEO demo 页（设计 §13）。静态 stub（generate-seo-pages.mjs）供爬虫读关键词正文，
 //      本组件水合后接管交互；纵轴=中性能量强度、无吉凶预测，与 /timeline 同一安全叙事。
 
@@ -85,10 +85,13 @@ const EnergyTimelineDemoPage: React.FC = () => {
         </button>
       </div>
 
-      {/* 复用完整月度时间轴主体（蜡烛 + 当日摘要 + 安全 onboarding）；demo 模式下当日解读改为注册 CTA。 */}
+      {/* 复用完整时间轴主体（蜡烛 + 当日摘要 + 安全 onboarding）；demo 模式下当日解读改为注册 CTA。
+          demo 保持月度默认（initialMode="month"）：SEO stub 与水合后首屏一致 + 匿名访客不触发
+          100 根年级冷算；访客可手动切 Long-range 体验 life 视图。登录 /timeline 默认 life。 */}
       <TimelinePage
         profile={DEMO_PROFILE}
         demo
+        initialMode="month"
         onUpsell={() => openLoginModal?.()}
       />
 

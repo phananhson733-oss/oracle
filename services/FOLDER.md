@@ -32,6 +32,7 @@
 - __tests__/｜地位：services 单元测试｜功能：vitest 测试套件（同意缓冲、analytics 同意网关）。
 
 近期更新
+- apiClient `fetchTransitTimeline` 新增可选 `timeoutMs` 参数（默认 15s；life 模式 100 根年级蜡烛冷算首访可能 >15s，TimelinePage life 调用传 30s）。
 - analytics.ts 修复 SPA 数据基线：剥离 en/zh 后分类 wiki/tool/home，并在首次授予 Analytics 同意时只补发一次当前 `page_view`，避免首个落地页永久缺失或重复计数。
 - entitlementClientV2 对 `getEntitlementsV2()` 增加 in-flight Promise 合并，避免 AuthProvider 与 EntitlementProvider 同时挂载时重复请求 `/api/entitlements/v2`；analytics.ts 注释对齐 index.tsx 的首屏后延迟初始化。
 - paymentClient 新增 Airwallex Pro 试用激活 checkout 调用，entitlementClient V2 缓存结构补充 proTrial 资格，供升级弹窗区分试用/订阅 CTA。

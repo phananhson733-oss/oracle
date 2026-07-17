@@ -207,7 +207,12 @@ async function handleTimeline(req: Request, res: Response): Promise<void> {
     if (range.granularity === "year") {
       // from/to 年份 → 相对出生年的年龄区间（人生 K 线一根蜡烛 = 一岁）。
       const birthYear = Number(birth.date.slice(0, 4));
-      const fromAge = Math.max(0, Number(range.from.slice(0, 4)) - birthYear);
+      // fromAge 同步 clamp 到 0-99：不封顶时纯未来区间会得到 fromAge > toAge 的空窗口
+      // （空 candles + 白烧 baseline 采样 + 200 空响应，还会污染结果缓存）。
+      const fromAge = Math.min(
+        MAX_LIFE_CANDLES - 1,
+        Math.max(0, Number(range.from.slice(0, 4)) - birthYear),
+      );
       const toAge = Math.min(
         MAX_LIFE_CANDLES - 1,
         Math.max(fromAge, Number(range.to.slice(0, 4)) - birthYear),
