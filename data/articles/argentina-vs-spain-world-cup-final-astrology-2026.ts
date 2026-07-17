@@ -7,7 +7,7 @@ export const argentinaVsSpainWorldCupFinalAstrology2026En: WikiArticle = {
   image: "/images/blog/argentina-vs-spain-world-cup-final-astrology-2026.jpg",
   image_alt: "Argentina vs Spain 2026 World Cup Final astrology: two national teams under a Jupiter-lit stadium sky",
   title: "What the Argentina vs Spain World Cup Final Astrology 2026 Really Signals",
-  description: "Argentina vs Spain World Cup Final Astrology 2026 is a paired national-chart reading of a confirmed bilateral final, set against the July 19, 2026 tournament-final sky at MetLife Stadium.",
+  description: "Argentina vs Spain World Cup Final Astrology 2026 is a paired national-chart reading of a hypothetical bilateral final, set against the July 19, 2026 tournament-final sky at MetLife Stadium.",
   authorId: "marcus-orion",
   date: "2026-07-17",
   schema: "Article",
@@ -24,7 +24,7 @@ export const argentinaVsSpainWorldCupFinalAstrology2026En: WikiArticle = {
 
 ## What Is Argentina vs Spain 2026 World Cup Final Astrology?
 
-Argentina vs Spain World Cup Final Astrology 2026 is **a paired national-chart reading of a confirmed bilateral final**, set against the July 19, 2026 tournament-final sky at MetLife Stadium. It lines up each country's founding chart with that day's transits — Jupiter in Gemini foregrounded — to surface symbolic contrasts between the two sides. The approach treats each founding chart as a portrait of national character and the transit sky as shared weather both charts move through on the same afternoon. Even though the fixture is confirmed, this reads as a symbolic character study rather than a match forecast. It sits inside the broader [pillar page on World Cup 2026 astrology predictions](/en/wiki/world-cup-2026-astrology-prediction), which maps every contender's chart.
+Argentina vs Spain World Cup Final Astrology 2026 is **a paired national-chart reading of a hypothetical bilateral final**, set against the July 19, 2026 tournament-final sky at MetLife Stadium. It lines up each country's founding chart with that day's transits — Jupiter in Gemini foregrounded — to surface symbolic contrasts between the two sides. The approach treats each founding chart as a portrait of national character and the transit sky as shared weather both charts move through on the same afternoon. Because the fixture is not confirmed, this reads as a symbolic character study rather than a match forecast. It sits inside the broader [pillar page on World Cup 2026 astrology predictions](/en/wiki/world-cup-2026-astrology-prediction), which maps every contender's chart.
 
 - Pairs two national founding charts rather than reading a single team
 - Anchors to one transit window: the July 19, 2026 final sky
