@@ -1,0 +1,105 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "how-long-does-saturn-return-last": {
+      "hero": {
+        "prompt": "Saturn completing its 29.5-year orbital return in deep space, a luminous golden arc tracing the full elliptical path back to its origin point, Saturn's rings glowing with warm amber and teal light, subtle retrograde loops shown as delicate overlapping filaments in the nebula, a sense of cyclical time and measured return rendered in soft cosmic dust, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn completing its 29.5-year orbital return, golden arc tracing the cyclical path through deep indigo cosmic space"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## How the Saturn Return Differs From a Saturn Square",
+          "titleEn": "Saturn Return vs. Saturn Square",
+          "altEn": "Side-by-side comparison of the Saturn return and Saturn square transits in astrology",
+          "columns": [
+            {
+              "nameEn": "Saturn Square",
+              "linesEn": [
+                "90-degree angle to a natal placement",
+                "Lasts a few weeks to a few months",
+                "Flags one tense area",
+                "Quick, focused lesson",
+                "Pop quiz on one subject"
+              ]
+            },
+            {
+              "nameEn": "Saturn Return",
+              "linesEn": [
+                "Saturn arrives back at its birth degree",
+                "Lasts two to three years",
+                "Reorganizes identity, work, and commitments",
+                "Deep, lasting restructuring",
+                "Final exam for a whole chapter of adulthood"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read the Saturn Return Window in Your Timing",
+          "titleEn": "The Four Phases of Your Saturn Return Window",
+          "altEn": "Four-phase timeline showing how to track the Saturn return window from first approach to separation",
+          "items": [
+            {
+              "labelEn": "Phase 1",
+              "titleEn": "First Approach",
+              "noteEn": "Saturn moves within a few degrees of its birth position, often opening the window near age 29"
+            },
+            {
+              "labelEn": "Phase 2",
+              "titleEn": "Exact Hit",
+              "noteEn": "Saturn touches the natal degree; themes of responsibility and restructuring feel loudest"
+            },
+            {
+              "labelEn": "Phase 3",
+              "titleEn": "Retrograde Re-Crossings",
+              "noteEn": "Saturn can back over the degree up to three times, stretching the felt window"
+            },
+            {
+              "labelEn": "Phase 4",
+              "titleEn": "Separation",
+              "noteEn": "Saturn pulls past the natal degree for good and the pressure eases into integration"
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Saturn Return Timeline at a Glance",
+          "titleEn": "Saturn Return: Key Properties at a Glance",
+          "altEn": "Saturn return timeline showing four key properties from first crossing to closing phase",
+          "items": [
+            {
+              "labelEn": "First Return",
+              "titleEn": "Saturn Re-Crosses Birth Degree",
+              "noteEn": "Closes a ~29.5-year loop; restlessness about work, commitment, and adult milestones near age 29"
+            },
+            {
+              "labelEn": "Exact Return",
+              "titleEn": "Saturn Touches Natal Degree",
+              "noteEn": "Peak sense of pressure and decision-making"
+            },
+            {
+              "labelEn": "Retrograde Passes",
+              "titleEn": "Saturn Backs Over the Degree",
+              "noteEn": "Themes resurface two or three times before resolving"
+            },
+            {
+              "labelEn": "Closing Phase",
+              "titleEn": "Saturn Separates Past Natal Degree",
+              "noteEn": "Pressure eases; recent changes start to feel settled"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

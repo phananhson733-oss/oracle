@@ -363,6 +363,7 @@ import { saturnReturnAge29En } from "./saturn-return-age-29";
 import { saturnReturnInCapricornEn } from "./saturn-return-in-capricorn";
 import { saturnReturnAge30En } from "./saturn-return-age-30";
 import { saturnReturnInCancerMeaningEn } from "./saturn-return-in-cancer-meaning";
+import { howLongDoesSaturnReturnLastEn } from "./how-long-does-saturn-return-last";
 // All articles organized by language
 
 import {
@@ -717,6 +718,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnInCapricornEn,
   saturnReturnAge30En,
   saturnReturnInCancerMeaningEn,
+  howLongDoesSaturnReturnLastEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
