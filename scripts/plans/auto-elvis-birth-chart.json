@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "elvis-birth-chart": {
+      "hero": {
+        "prompt": "Stylized editorial portrait of a 1950s rock-and-roll performer — quiffed hair, silhouetted electric guitar raised against the stage lights — standing beneath a vast celestial sky split between cold Capricornian winter constellations and blazing Sagittarian fire, a golden Venus-ruled nakshatra arc sweeping overhead; figure anchored in the central safe zone of the wide frame; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of Elvis Presley beneath Sagittarius fire and a golden Purva Ashadha nakshatra arc"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Elvis's Sidereal Chart in Your Own Study",
+          "titleEn": "5 Steps to Study the Sidereal Elvis Birth Chart",
+          "altEn": "Five-step sequence for reading Elvis Presley's Vedic sidereal birth chart",
+          "items": [
+            {
+              "nameEn": "Find the ayanamsa first",
+              "subEn": "Note the ~23–24° correction for 1935; without it every sign stays tropical"
+            },
+            {
+              "nameEn": "Move the Sun back a sign",
+              "subEn": "Watch tropical Capricorn slide into late sidereal Sagittarius"
+            },
+            {
+              "nameEn": "Locate the nakshatra",
+              "subEn": "Late-Sagittarius Sun falls in Purva Ashadha, ruled by Venus"
+            },
+            {
+              "nameEn": "Flag the birth time as unsettled",
+              "subEn": "The commonly cited 4:35 a.m. record for 8 Jan 1935 is still debated"
+            },
+            {
+              "nameEn": "Hold placements loosely",
+              "subEn": "Where the birth time is soft, treat the lagna as a provisional interpretation"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Sidereal Sagittarius vs Tropical Capricorn: What Actually Shifts",
+          "titleEn": "Tropical Capricorn vs Sidereal Sagittarius: Two Readings of Elvis",
+          "altEn": "Comparison of Elvis Presley's tropical Capricorn and sidereal Sagittarius Sun sign readings",
+          "columns": [
+            {
+              "nameEn": "Tropical Capricorn",
+              "linesEn": [
+                "Anchored to the seasons — 0° Aries marks the spring equinox",
+                "Sun at ~18° Capricorn: earthy, disciplined, structured performer",
+                "Keeps intuitive seasonal symbolism: the winter mountain-goat climb",
+                "Reads as a driven, controlled public face"
+              ]
+            },
+            {
+              "nameEn": "Sidereal Sagittarius",
+              "linesEn": [
+                "Anchored to the fixed stars with the ~23–24° ayanamsa correction",
+                "Sun in late sidereal Sagittarius: fire, expansion, restless seeking",
+                "Sun in Purva Ashadha — Venus-ruled, linked to popularity and unstoppable reach",
+                "Reads as a seeker who couldn't stop expanding the frame"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
