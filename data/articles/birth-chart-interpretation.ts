@@ -132,7 +132,7 @@ Begin with the Lagna and the Moon sign, then add one house at a time. Trying to 
 
 Want to see your own placements instead of reading about them in the abstract? Generate your free birth chart to get an accurate Kundli with every graha, sign, and house mapped from your birth details — then use this guide to read it as a mirror for the patterns you are already living rather than a script you are stuck with. This is not a clinical interpretation or mental health advice.
 
-[Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator)
+[Generate Your Free Birth Chart](/en/birth-chart-calculator)
 
 ## Sources
 
