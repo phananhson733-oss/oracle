@@ -852,6 +852,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'elvis-birth-chart',
   'what-do-i-need-to-let-go-of',
   'what-is-my-love-language',
   'how-long-does-saturn-return-last',

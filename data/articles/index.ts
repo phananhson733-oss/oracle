@@ -366,6 +366,7 @@ import { saturnReturnInCancerMeaningEn } from "./saturn-return-in-cancer-meaning
 import { howLongDoesSaturnReturnLastEn } from "./how-long-does-saturn-return-last";
 import { whatIsMyLoveLanguageEn } from "./what-is-my-love-language";
 import { whatDoINeedToLetGoOfEn } from "./what-do-i-need-to-let-go-of";
+import { elvisBirthChartEn } from "./elvis-birth-chart";
 // All articles organized by language
 
 import {
@@ -723,6 +724,7 @@ const ARTICLES_EN: WikiArticle[] = [
   howLongDoesSaturnReturnLastEn,
   whatIsMyLoveLanguageEn,
   whatDoINeedToLetGoOfEn,
+  elvisBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
