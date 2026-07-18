@@ -109,7 +109,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Run your chart through the Saturn return calculator to confirm whether natal Saturn sits in Aries, then mark the three act dates across 2025–2028. You'll get a clear yes-or-no on whether this review applies to you at all, plus a timeline of when each prompt is likely to land. From there, the real value is smaller than a prediction and far more useful: a structured moment to ask whether the life you started building is still one you would choose today. [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator).
+Run your chart through the Saturn return calculator to confirm whether natal Saturn sits in Aries, then mark the three act dates across 2025–2028. You'll get a clear yes-or-no on whether this review applies to you at all, plus a timeline of when each prompt is likely to land. From there, the real value is smaller than a prediction and far more useful: a structured moment to ask whether the life you started building is still one you would choose today. [Explore Your Saturn Return](/en/saturn-return-calculator).
 
 ## Sources
 
