@@ -133,7 +133,7 @@ Often, yes. The emotional frame is consolation rather than glory, so a reading t
 
 ## Take Action
 
-Open your own symbolic read of the fixture with [Explore Astrology Forecasts](https://astrologywiki.com/forecast), where daily and event-based transits are laid out in plain language. You'll come away with a clear picture of the day's mood and the archetypes in play, so you can watch the match with more attention and less noise. More than that, you'll practice holding a result loosely — a small habit that carries into how you meet outcomes far beyond the pitch.
+Continue your symbolic read of the fixture with the [World Cup 2026 astrology prediction](https://www.astrologywiki.com/en/wiki/world-cup-2026-astrology-prediction), where the tournament-wide themes are laid out in plain language. You'll come away with a broader picture of the mood and archetypes in play, so you can watch the match with more attention and less noise. More than that, you'll practice holding a result loosely — a small habit that carries into how you meet outcomes far beyond the pitch.
 
 ## Sources
 
