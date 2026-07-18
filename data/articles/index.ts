@@ -378,6 +378,7 @@ import { franceEngland3rdPlaceMatchAstrologyPredictionEn } from "./france-englan
 import { moonInCapricornEn } from "./moon-in-capricorn";
 import { moonInCancerEn } from "./moon-in-cancer";
 import { saturnReturnInAriesEn } from "./saturn-return-in-aries";
+import { jupiterInCancerEn } from "./jupiter-in-cancer";
 // All articles organized by language
 
 import {
@@ -747,6 +748,7 @@ const ARTICLES_EN: WikiArticle[] = [
   moonInCapricornEn,
   moonInCancerEn,
   saturnReturnInAriesEn,
+  jupiterInCancerEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
