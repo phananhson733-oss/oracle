@@ -122,7 +122,7 @@ Yes. A June 24 birthday falls inside Cancer's roughly June 21 to July 22 window,
 
 ## Take Action
 
-Astrology here is a reflective lens on character, not a verdict on anyone's future. This is not a clinical interpretation or mental health advice. Move from reading famous players' charts to reading your own: you get every placement mapped in minutes and a clearer sense of which tendencies are yours to work with rather than a script you're handed. Generate Your Free Birth Chart at [https://astrologywiki.com/en/birth-chart-calculator](https://astrologywiki.com/en/birth-chart-calculator).
+Astrology here is a reflective lens on character, not a verdict on anyone's future. This is not a clinical interpretation or mental health advice. Move from reading famous players' charts to reading your own: you get every placement mapped in minutes and a clearer sense of which tendencies are yours to work with rather than a script you're handed. Generate Your Free Birth Chart at [the free birth chart calculator](/en/birth-chart-calculator).
 
 ## Sources
 
