@@ -852,6 +852,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'how-do-i-stop-burnout',
   'tom-brady-birth-chart',
   'venus-in-gemini',
   'saturn-return-in-cancer',
