@@ -1,0 +1,81 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-in-taurus": {
+      "hero": {
+        "prompt": "Ringed planet Saturn with pale amber rings descending through a teal-and-gold nebula wash toward dark fertile earth below, ancient stone foundations and a solitary bull silhouette emerging from the soil suggesting material structures being rebuilt after a 29-year orbit, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn descending through a nebula toward dark earth and stone foundations, evoking the 29-year return that restructures self-worth."
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "5 Signals of Saturn Return in Taurus",
+          "altEn": "Five sequential signals of Saturn Return in Taurus from financial reviews to recurring house themes",
+          "items": [
+            {
+              "nameEn": "Money Reviews Stack Up",
+              "subEn": "Budgets, contracts, and payments keep landing on your desk; half-measures stop working"
+            },
+            {
+              "nameEn": "Comfort Gets Tested",
+              "subEn": "Familiar routines feel less reliable, nudging you to ask what actually keeps you steady"
+            },
+            {
+              "nameEn": "Commitments Demand a Decision",
+              "subEn": "A long lease, job, or arrangement forces a renew-or-release choice you had been avoiding"
+            },
+            {
+              "nameEn": "Body Asks for Structure",
+              "subEn": "Sleep, food, and pacing push for a more grounded, sustainable rhythm"
+            },
+            {
+              "nameEn": "One House Theme Repeats",
+              "subEn": "Whatever life area holds natal Saturn keeps resurfacing as the place where the lesson concentrates"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Saturn's Taurus Return at a Glance",
+          "titleEn": "Saturn's Taurus Return at a Glance",
+          "altEn": "Comparison of timing, core theme, and best response for Saturn Return in Taurus",
+          "columns": [
+            {
+              "nameEn": "Timing",
+              "linesEn": [
+                "Circles back to birth degree over ~2 years",
+                "Recurs near ages 29 and 58",
+                "Natal house of Saturn marks the domain"
+              ]
+            },
+            {
+              "nameEn": "Core Theme",
+              "linesEn": [
+                "Re-audits material security and self-worth",
+                "Taurus by sign; house shapes the domain",
+                "Money and comfort decisions cluster together"
+              ]
+            },
+            {
+              "nameEn": "Best Response",
+              "linesEn": [
+                "Rebuild foundations deliberately",
+                "Commit to fewer, sturdier things",
+                "Patience pays; shortcuts do not"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

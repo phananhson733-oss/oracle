@@ -379,6 +379,7 @@ import { moonInCapricornEn } from "./moon-in-capricorn";
 import { moonInCancerEn } from "./moon-in-cancer";
 import { saturnReturnInAriesEn } from "./saturn-return-in-aries";
 import { jupiterInCancerEn } from "./jupiter-in-cancer";
+import { saturnReturnInTaurusEn } from "./saturn-return-in-taurus";
 // All articles organized by language
 
 import {
@@ -749,6 +750,7 @@ const ARTICLES_EN: WikiArticle[] = [
   moonInCancerEn,
   saturnReturnInAriesEn,
   jupiterInCancerEn,
+  saturnReturnInTaurusEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
