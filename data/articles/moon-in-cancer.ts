@@ -123,7 +123,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Ready to see where your Moon actually sits? Use [Explore Astrology Tools](https://astrologywiki.com/en/tools) to map your full birth chart and view your Moon's exact sign, house, and aspects together in one place. Seeing the placement in context often makes your emotional patterns feel less like moods to manage and more like needs to understand.
+Ready to see where your Moon actually sits? Use *Explore Astrology Tools* to map your full birth chart and view your Moon's exact sign, house, and aspects together in one place. Seeing the placement in context often makes your emotional patterns feel less like moods to manage and more like needs to understand.
 
 ## Sources
 
