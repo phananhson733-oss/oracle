@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-in-aries": {
+      "hero": {
+        "prompt": "A lone Saturn with luminous rings suspended in deep cosmic space, a gold-traced Aries ram constellation arcing across the upper frame in delicate star-lines, three glowing orbital arcs curving around the planet representing the three staged acts of return, ember-warm sparks drifting upward from a cardinal fire horizon below, subject centered within the safe area, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn with three glowing orbital arcs and a gold Aries ram constellation in a deep indigo cosmic scene"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read This Return in Your Timing",
+          "titleEn": "The Three Acts of Saturn Return in Aries (2025–2026)",
+          "altEn": "Timeline of the three Saturn Return in Aries acts from 2025 to 2026",
+          "items": [
+            {
+              "labelEn": "2025",
+              "titleEn": "Act One: The Opening",
+              "noteEn": "Saturn enters Aries; first identity questions surface around work, direction, or a role quietly outgrown."
+            },
+            {
+              "labelEn": "September 2025",
+              "titleEn": "Act Two: The Retreat",
+              "noteEn": "Saturn steps back into Pisces; the theme goes quiet or turns inward before it fully resolves."
+            },
+            {
+              "labelEn": "February 2026",
+              "titleEn": "Act Three: The Re-entry",
+              "noteEn": "Saturn returns to Aries; earlier prompts come back asking for a firmer, more committed answer."
+            },
+            {
+              "labelEn": "Throughout",
+              "titleEn": "The House Lens",
+              "noteEn": "The house holding Aries in your chart shows where the review concentrates — career, partnership, home, or self-image."
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Misreadings vs. Accurate Readings of Saturn Return in Aries",
+          "altEn": "Side-by-side comparison of four common misreadings and accurate interpretations of Saturn Return in Aries",
+          "columns": [
+            {
+              "nameEn": "Common Misread",
+              "linesEn": [
+                "It happens to every Aries.",
+                "It is one continuous crisis from 2025 to 2028.",
+                "It predicts a fixed outcome you cannot change.",
+                "You only need your birth date."
+              ]
+            },
+            {
+              "nameEn": "Accurate Reading",
+              "linesEn": [
+                "It only applies to charts with natal Saturn in Aries — a far smaller group than every Aries sun sign.",
+                "The passage moves in three acts, with a quiet Pisces retreat sitting in the middle.",
+                "It describes a review you actively take part in, not a verdict handed down to you.",
+                "You need a full birth chart to separate a genuine return from a generic transit."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -377,6 +377,7 @@ import { howDoIStopBurnoutEn } from "./how-do-i-stop-burnout";
 import { franceEngland3rdPlaceMatchAstrologyPredictionEn } from "./france-england-3rd-place-match-astrology-prediction";
 import { moonInCapricornEn } from "./moon-in-capricorn";
 import { moonInCancerEn } from "./moon-in-cancer";
+import { saturnReturnInAriesEn } from "./saturn-return-in-aries";
 // All articles organized by language
 
 import {
@@ -745,6 +746,7 @@ const ARTICLES_EN: WikiArticle[] = [
   franceEngland3rdPlaceMatchAstrologyPredictionEn,
   moonInCapricornEn,
   moonInCancerEn,
+  saturnReturnInAriesEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
