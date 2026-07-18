@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 274" role="img" aria-label="">
+  <defs>
+    <linearGradient id="messivsyamalastrology1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="messivsyamalastrology1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="messivsyamalastrology1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="messivsyamalastrology1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="messivsyamalastrology1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="messivsyamalastrology1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="url(#messivsyamalastrology1zh-panel)"/>
+  <ellipse cx="198" cy="66" rx="380" ry="93" fill="url(#messivsyamalastrology1zh-neb1)"/>
+  <ellipse cx="623" cy="219" rx="334" ry="88" fill="url(#messivsyamalastrology1zh-neb2)"/>
+  <circle cx="234.2" cy="101.9" r="0.63" fill="#cfc8ea" opacity="0.15"/><circle cx="508.8" cy="217.0" r="1.57" fill="#cfc8ea" opacity="0.46"/><circle cx="225.8" cy="124.7" r="0.94" fill="#cfc8ea" opacity="0.35"/><circle cx="231.7" cy="160.5" r="0.93" fill="#cfc8ea" opacity="0.48"/><circle cx="487.5" cy="238.8" r="1.36" fill="#cfc8ea" opacity="0.50"/><circle cx="572.8" cy="147.6" r="1.22" fill="#cfc8ea" opacity="0.24"/><circle cx="111.5" cy="120.8" r="0.50" fill="#cfc8ea" opacity="0.39"/><circle cx="501.1" cy="21.2" r="0.94" fill="#cfc8ea" opacity="0.48"/><circle cx="160.3" cy="133.5" r="1.17" fill="#cfc8ea" opacity="0.37"/><circle cx="671.5" cy="72.9" r="0.67" fill="#cfc8ea" opacity="0.44"/><circle cx="55.4" cy="224.6" r="1.58" fill="#cfc8ea" opacity="0.31"/><circle cx="303.5" cy="69.4" r="0.45" fill="#cfc8ea" opacity="0.24"/><circle cx="552.8" cy="83.8" r="1.33" fill="#cfc8ea" opacity="0.51"/><circle cx="163.5" cy="33.7" r="0.98" fill="#cfc8ea" opacity="0.50"/><circle cx="475.2" cy="135.6" r="1.45" fill="#cfc8ea" opacity="0.36"/><circle cx="597.8" cy="21.0" r="0.87" fill="#cfc8ea" opacity="0.27"/><circle cx="175.0" cy="14.3" r="1.64" fill="#cfc8ea" opacity="0.46"/><circle cx="152.8" cy="259.4" r="0.43" fill="#cfc8ea" opacity="0.35"/><circle cx="575.8" cy="17.8" r="1.02" fill="#cfc8ea" opacity="0.15"/><circle cx="170.6" cy="243.7" r="0.47" fill="#cfc8ea" opacity="0.21"/><circle cx="40.2" cy="64.0" r="1.24" fill="#cfc8ea" opacity="0.15"/><circle cx="594.3" cy="255.2" r="0.57" fill="#cfc8ea" opacity="0.14"/><circle cx="498.3" cy="138.1" r="0.81" fill="#cfc8ea" opacity="0.45"/><path d="M 553.3096584994346 30.8 L 553.8 33.5 L 556.5 33.9946825215593 L 553.8 34.5 L 553.3096584994346 37.2 L 552.8 34.5 L 550.1 33.9946825215593 L 552.8 33.5 Z" fill="#f6e6bf" opacity="0.5512438675388693"/><path d="M 427.1635489407927 47.5 L 427.5 49.5 L 429.6 49.87212453689426 L 427.5 50.3 L 427.1635489407927 52.3 L 426.8 50.3 L 424.7 49.87212453689426 L 426.8 49.5 Z" fill="#f6e6bf" opacity="0.5879129496403038"/><path d="M 679.2575491834432 208.2 L 679.8 210.8 L 682.4 211.3109416635707 L 679.8 211.8 L 679.2575491834432 214.4 L 678.8 211.8 L 676.1 211.3109416635707 L 678.8 210.8 Z" fill="#f6e6bf" opacity="0.5069230575114488"/><path d="M 193.44911734201014 56.7 L 194.0 59.4 L 196.7 59.92265609931201 L 194.0 60.4 L 193.44911734201014 63.2 L 192.9 60.4 L 190.2 59.92265609931201 L 192.9 59.4 Z" fill="#f6e6bf" opacity="0.7365279133431614"/><path d="M 491.08774644322693 182.1 L 491.6 184.8 L 494.3 185.32342108432204 L 491.6 185.8 L 491.08774644322693 188.5 L 490.6 185.8 L 487.9 185.32342108432204 L 490.6 184.8 Z" fill="#f6e6bf" opacity="0.7340702133253216"/><path d="M 572.8 147.6 L 111.5 120.8 L 160.3 133.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="271" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="260" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 254.8 L 16.5 257.5 L 19.2 258 L 16.5 258.5 L 16 261.2 L 15.5 258.5 L 12.8 258 L 15.5 257.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 254.8 L 744.5 257.5 L 747.2 258 L 744.5 258.5 L 744 261.2 L 743.5 258.5 L 740.8 258 L 743.5 257.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#messivsyamalastrology1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#messivsyamalastrology1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="220" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#messivsyamalastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#messivsyamalastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#messivsyamalastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#messivsyamalastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#messivsyamalastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#messivsyamalastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#messivsyamalastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#messivsyamalastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 245.4 L 280.4 247.6 L 282.6 248 L 280.4 248.4 L 280.025 250.6 L 279.6 248.4 L 277.4 248 L 279.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="252" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 245.4 L 480.4 247.6 L 482.6 248 L 480.4 248.4 L 479.975 250.6 L 479.6 248.4 L 477.4 248 L 479.6 247.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
