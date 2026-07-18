@@ -125,7 +125,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Want to see how a full-placement read looks for your own temperament instead of a celebrity's? [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) to map every planet and sign in a few minutes. You'll get a personal snapshot of drive, communication, and balance — and a clearer sense of which patterns you lead with when it actually counts.
+Want to see how a full-placement read looks for your own temperament instead of a celebrity's? [Generate Your Free Birth Chart](/en/birth-chart-calculator) to map every planet and sign in a few minutes. You'll get a personal snapshot of drive, communication, and balance — and a clearer sense of which patterns you lead with when it actually counts.
 
 ## Sources
 
