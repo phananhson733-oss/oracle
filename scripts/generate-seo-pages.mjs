@@ -852,6 +852,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'saturn-return-in-aries',
   'moon-in-cancer',
   'moon-in-capricorn',
   'france-england-3rd-place-match-astrology-prediction',
