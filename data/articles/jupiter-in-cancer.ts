@@ -117,7 +117,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Open your birth chart and find which sign holds Jupiter, then note the house it sits in — that pairing shows you exactly where your instinct to nurture wants to grow. You can start with our [Explore Astrology Tools](https://astrologywiki.com/en/tools) to map the placement in a few minutes instead of guessing. Seeing it laid out often reframes a lifelong habit of over-giving as a strength you get to direct on purpose, rather than a pull that quietly runs you — and once you can see where your care wants to go, you can choose to send more of it toward yourself.
+Open your birth chart and find which sign holds Jupiter, then note the house it sits in — that pairing shows you exactly where your instinct to nurture wants to grow. You can start with our [Explore Astrology Tools](/en/tools) to map the placement in a few minutes instead of guessing. Seeing it laid out often reframes a lifelong habit of over-giving as a strength you get to direct on purpose, rather than a pull that quietly runs you — and once you can see where your care wants to go, you can choose to send more of it toward yourself.
 
 ## Sources
 
