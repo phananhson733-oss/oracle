@@ -126,7 +126,7 @@ No. This is a symbolic, reflective reading, not a clinical assessment, and it sh
 
 ## Take Action
 
-Ready to see these patterns in your own chart? [Explore Astrology Tools](https://astrologywiki.com/en/tools) to map your Sun–Saturn aspects and sixth house, so you can pinpoint where depletion tends to show up across the year. Once you can see the pattern on the page, the question shifts from "why am I always drained" to "when do I need to protect my rest" — and that small reframe is where real self-awareness starts.
+Ready to see these patterns in your own chart? [Explore Astrology Tools](/en/tools) to map your Sun–Saturn aspects and sixth house, so you can pinpoint where depletion tends to show up across the year. Once you can see the pattern on the page, the question shifts from "why am I always drained" to "when do I need to protect my rest" — and that small reframe is where real self-awareness starts.
 
 This is not a clinical interpretation or mental health advice.
 
