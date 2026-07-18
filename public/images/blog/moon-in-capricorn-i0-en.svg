@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 523" role="img" aria-label="Five Signals of Moon in Capricorn">
+  <defs>
+    <linearGradient id="moonincapricorn0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moonincapricorn0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moonincapricorn0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincapricorn0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincapricorn0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonincapricorn0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="url(#moonincapricorn0en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="178" fill="url(#moonincapricorn0en-neb1)"/>
+  <ellipse cx="623" cy="418" rx="334" ry="167" fill="url(#moonincapricorn0en-neb2)"/>
+  <circle cx="292.8" cy="403.7" r="0.86" fill="#cfc8ea" opacity="0.44"/><circle cx="561.5" cy="388.6" r="1.38" fill="#cfc8ea" opacity="0.15"/><circle cx="129.9" cy="293.2" r="0.99" fill="#cfc8ea" opacity="0.27"/><circle cx="715.1" cy="163.7" r="1.57" fill="#cfc8ea" opacity="0.38"/><circle cx="222.7" cy="355.6" r="1.28" fill="#cfc8ea" opacity="0.17"/><circle cx="173.2" cy="424.0" r="1.15" fill="#cfc8ea" opacity="0.32"/><circle cx="396.0" cy="366.2" r="1.41" fill="#cfc8ea" opacity="0.18"/><circle cx="717.4" cy="265.9" r="1.42" fill="#cfc8ea" opacity="0.46"/><circle cx="260.6" cy="27.1" r="1.49" fill="#cfc8ea" opacity="0.13"/><circle cx="231.7" cy="43.1" r="1.46" fill="#cfc8ea" opacity="0.49"/><circle cx="516.2" cy="417.1" r="0.67" fill="#cfc8ea" opacity="0.48"/><circle cx="30.6" cy="138.0" r="0.45" fill="#cfc8ea" opacity="0.42"/><circle cx="307.1" cy="319.3" r="1.53" fill="#cfc8ea" opacity="0.25"/><circle cx="735.8" cy="31.8" r="1.40" fill="#cfc8ea" opacity="0.39"/><circle cx="572.2" cy="304.7" r="0.98" fill="#cfc8ea" opacity="0.31"/><circle cx="441.9" cy="237.3" r="1.27" fill="#cfc8ea" opacity="0.33"/><circle cx="525.0" cy="318.2" r="0.59" fill="#cfc8ea" opacity="0.20"/><circle cx="681.7" cy="244.1" r="0.91" fill="#cfc8ea" opacity="0.17"/><circle cx="168.8" cy="319.8" r="0.67" fill="#cfc8ea" opacity="0.21"/><circle cx="341.9" cy="377.1" r="0.46" fill="#cfc8ea" opacity="0.17"/><circle cx="104.5" cy="126.6" r="0.70" fill="#cfc8ea" opacity="0.51"/><circle cx="60.9" cy="45.5" r="1.18" fill="#cfc8ea" opacity="0.28"/><circle cx="355.7" cy="268.8" r="0.57" fill="#cfc8ea" opacity="0.22"/><circle cx="216.5" cy="396.9" r="1.45" fill="#cfc8ea" opacity="0.37"/><circle cx="239.6" cy="130.9" r="0.94" fill="#cfc8ea" opacity="0.52"/><circle cx="338.9" cy="77.2" r="0.92" fill="#cfc8ea" opacity="0.34"/><circle cx="335.3" cy="251.4" r="0.98" fill="#cfc8ea" opacity="0.14"/><circle cx="115.0" cy="224.6" r="0.96" fill="#cfc8ea" opacity="0.28"/><circle cx="607.1" cy="142.3" r="0.91" fill="#cfc8ea" opacity="0.27"/><circle cx="571.9" cy="268.1" r="1.50" fill="#cfc8ea" opacity="0.48"/><circle cx="52.0" cy="147.1" r="0.91" fill="#cfc8ea" opacity="0.24"/><circle cx="330.5" cy="57.1" r="0.97" fill="#cfc8ea" opacity="0.29"/><circle cx="170.3" cy="477.6" r="0.44" fill="#cfc8ea" opacity="0.30"/><circle cx="491.3" cy="118.6" r="1.26" fill="#cfc8ea" opacity="0.54"/><circle cx="75.8" cy="436.8" r="1.69" fill="#cfc8ea" opacity="0.21"/><circle cx="519.9" cy="509.1" r="0.67" fill="#cfc8ea" opacity="0.53"/><circle cx="65.0" cy="184.9" r="0.70" fill="#cfc8ea" opacity="0.19"/><circle cx="722.1" cy="424.7" r="1.49" fill="#cfc8ea" opacity="0.21"/><circle cx="674.5" cy="127.1" r="1.44" fill="#cfc8ea" opacity="0.27"/><circle cx="34.6" cy="213.1" r="1.65" fill="#cfc8ea" opacity="0.12"/><circle cx="621.4" cy="219.1" r="0.73" fill="#cfc8ea" opacity="0.17"/><circle cx="55.5" cy="241.5" r="1.42" fill="#cfc8ea" opacity="0.48"/><circle cx="685.8" cy="141.5" r="1.21" fill="#cfc8ea" opacity="0.24"/><circle cx="210.8" cy="453.6" r="0.94" fill="#cfc8ea" opacity="0.38"/><path d="M 216.47966440580785 34.1 L 216.9 36.2 L 219.0 36.60991478804499 L 216.9 37.0 L 216.47966440580785 39.1 L 216.1 37.0 L 214.0 36.60991478804499 L 216.1 36.2 Z" fill="#f6e6bf" opacity="0.5375420870725065"/><path d="M 290.95287410728633 124.8 L 291.6 128.0 L 294.9 128.65975677594543 L 291.6 129.3 L 290.95287410728633 132.6 L 290.3 129.3 L 287.1 128.65975677594543 L 290.3 128.0 Z" fill="#f6e6bf" opacity="0.7124045030679553"/><path d="M 686.4627147968858 479.5 L 687.1 482.7 L 690.3 483.3013207009062 L 687.1 483.9 L 686.4627147968858 487.1 L 685.9 483.9 L 682.6 483.3013207009062 L 685.9 482.7 Z" fill="#f6e6bf" opacity="0.6208806351292878"/><path d="M 282.95509978942573 425.6 L 283.4 427.9 L 285.6 428.31396518833935 L 283.4 428.7 L 282.95509978942573 431.0 L 282.5 428.7 L 280.3 428.31396518833935 L 282.5 427.9 Z" fill="#f6e6bf" opacity="0.7870862125884741"/><path d="M 134.4922448899597 63.1 L 134.9 65.1 L 137.0 65.52823828626424 L 134.9 65.9 L 134.4922448899597 68.0 L 134.1 65.9 L 132.0 65.52823828626424 L 134.1 65.1 Z" fill="#f6e6bf" opacity="0.6765092639718204"/><path d="M 396.0 366.2 L 717.4 265.9 L 681.7 244.1 L 338.9 77.2 L 115.0 224.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="509" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 503.8 L 16.5 506.5 L 19.2 507 L 16.5 507.5 L 16 510.2 L 15.5 507.5 L 12.8 507 L 15.5 506.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 503.8 L 744.5 506.5 L 747.2 507 L 744.5 507.5 L 744 510.2 L 743.5 507.5 L 740.8 507 L 743.5 506.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signals of Moon in Capricorn</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moonincapricorn0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moonincapricorn0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="433" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#moonincapricorn0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#moonincapricorn0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Emotional Understatement</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Big feelings get summarized in a flat dismissal even when the moment clearly</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">warrants more</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#moonincapricorn0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#moonincapricorn0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Security Through Achievement</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Comfort is tied to being capable and in control; idleness or dependence can</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">feel quietly unsafe</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#moonincapricorn0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#moonincapricorn0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Slow-Warming Intimacy</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Trust is earned in stages; reliability is tested before leading with</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">vulnerability</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#moonincapricorn0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#moonincapricorn0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Self-Reliant Streak</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Many describe learning young to manage their own needs — check against the 4th</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">house and Moon-Saturn aspects</text>
+  <circle cx="76" cy="433" r="20.0" fill="url(#moonincapricorn0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="433" r="15" fill="url(#moonincapricorn0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="428.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="437.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="429.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Comfort in Structure</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Routines, plans, and clear responsibilities read as soothing rather than</text>
+  <text x="116" y="469.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">restrictive</text>
+  <path d="M 202.22749999999988 494.4 L 202.6 496.6 L 204.8 497 L 202.6 497.4 L 202.22749999999988 499.6 L 201.8 497.4 L 199.6 497 L 201.8 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="501" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 494.4 L 558.2 496.6 L 560.4 497 L 558.2 497.4 L 557.7725000000002 499.6 L 557.4 497.4 L 555.2 497 L 557.4 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
