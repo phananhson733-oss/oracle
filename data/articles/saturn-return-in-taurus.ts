@@ -111,7 +111,7 @@ Most readers experience it as a two-year passage, with the pressure building, pe
 
 ## Take Action
 
-The Taurus return is a pattern to work with, not a verdict. This is not a clinical interpretation or mental health advice. To make it concrete, run your birth details through the Saturn return calculator to see the exact dates your window opens and which natal house it activates. [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) and you get a personalized timeline instead of a generic 29-and-58 guess — a clearer sense of when to rebuild what you value most.
+The Taurus return is a pattern to work with, not a verdict. This is not a clinical interpretation or mental health advice. To make it concrete, run your birth details through the Saturn return calculator to see the exact dates your window opens and which natal house it activates. [Explore Your Saturn Return](/en/saturn-return-calculator) and you get a personalized timeline instead of a generic 29-and-58 guess — a clearer sense of when to rebuild what you value most.
 
 ## Sources
 
