@@ -1,0 +1,106 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "moon-in-cancer": {
+      "hero": {
+        "prompt": "A luminous full moon rising low over a dark tidal sea, moonlight pooling in silver-gold ripples on calm water, a translucent crab silhouette dissolving into the shimmering surface, tendrils of sea mist curling toward a faintly glowing distant shore, evoking emotional depth, memory, and belonging, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Full moon over a dark tidal sea with gold-silver ripples and a translucent crab silhouette — the emotional depth of Moon in Cancer"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Your Cancer Moon in the Chart",
+          "titleEn": "Four Observable Clues in a Cancer Moon",
+          "altEn": "Four-step sequence: home as headquarters, protective care, the withdrawal shell, and a long emotional memory",
+          "items": [
+            {
+              "nameEn": "Home as Headquarters",
+              "subEn": "They pour energy into where they live and feel off-balance when it is chaotic, cramped, or temporary."
+            },
+            {
+              "nameEn": "Care That Can Tip into Control",
+              "subEn": "They show love by anticipating needs and protecting people — a real strength that, unchecked, becomes over-nurturing used to keep others close."
+            },
+            {
+              "nameEn": "The Protective Shell",
+              "subEn": "Under pressure they withdraw or answer indirectly, sometimes through guilt or hints, then re-emerge once they feel safe."
+            },
+            {
+              "nameEn": "A Long Memory for Hurt",
+              "subEn": "They hold on to both kindness and injury; old wounds can resurface years later if they were never addressed."
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Cancer Moon: Common Misreadings vs Reality",
+          "altEn": "Side-by-side comparison of four Cancer Moon misreadings versus their accurate interpretations",
+          "columns": [
+            {
+              "nameEn": "Common Misread",
+              "linesEn": [
+                "Constantly moody",
+                "Clingy or needy",
+                "Soft and passive",
+                "Fixed, unchangeable personality"
+              ]
+            },
+            {
+              "nameEn": "Reality",
+              "linesEn": [
+                "High responsiveness — moods settle once safety returns",
+                "Real need is belonging — fierce loyalty as often as dependence",
+                "Cancer is cardinal — active, protective, and initiating",
+                "Describes tendencies to work with and grow around, not a locked outcome"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Cancer Moon at a Glance",
+          "titleEn": "Cancer Moon Properties at a Glance",
+          "altEn": "Three-column table of Cancer Moon properties: element, modality, ruler, and core need — with how each works and what to watch for",
+          "columns": [
+            {
+              "nameEn": "Property",
+              "linesEn": [
+                "Element: Water",
+                "Modality: Cardinal",
+                "Ruler: The Moon",
+                "Core need: Security"
+              ]
+            },
+            {
+              "nameEn": "How It Works",
+              "linesEn": [
+                "Processes life through feeling and instinct",
+                "Initiates and protects",
+                "Dignified in its own sign — instincts run strong and unguarded",
+                "Seeks belonging and familiar routine"
+              ]
+            },
+            {
+              "nameEn": "Watch-Out",
+              "linesEn": [
+                "Can absorb others' moods until overwhelmed",
+                "Protectiveness can slide into controlling care",
+                "Strong feelings can override objective judgment",
+                "Change and distance can trigger real anxiety"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
