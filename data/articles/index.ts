@@ -374,6 +374,7 @@ import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
 import { venusInGeminiEn } from "./venus-in-gemini";
 import { tomBradyBirthChartEn } from "./tom-brady-birth-chart";
 import { howDoIStopBurnoutEn } from "./how-do-i-stop-burnout";
+import { franceEngland3rdPlaceMatchAstrologyPredictionEn } from "./france-england-3rd-place-match-astrology-prediction";
 // All articles organized by language
 
 import {
@@ -739,6 +740,7 @@ const ARTICLES_EN: WikiArticle[] = [
   venusInGeminiEn,
   tomBradyBirthChartEn,
   howDoIStopBurnoutEn,
+  franceEngland3rdPlaceMatchAstrologyPredictionEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

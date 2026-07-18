@@ -1,0 +1,73 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "france-england-3rd-place-match-astrology-prediction": {
+      "hero": {
+        "prompt": "A football pitch at dusk beneath a vast celestial arc — one flank of the stadium awash in deep cobalt and scarlet evoking France, the opposite flank glowing crimson and white for England, players mid-sprint along the halfway line casting long indigo shadows on the emerald turf, gold shooting stars arcing across the firmament above the stands, national banners rippling without text, teal-and-gold nebula wash bleeding through the open roof, the tension of two proud footballing nations suspended in one continuous painterly scene, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "France and England players on a night pitch under a gold-and-indigo celestial sky for the third-place match"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Third-Place Match Chart Yourself",
+          "titleEn": "Five Steps for Reading the Match Chart Yourself",
+          "altEn": "Five-step sequence for reading the France England third-place match astrology chart",
+          "items": [
+            {
+              "nameEn": "Check the Moon Sign",
+              "subEn": "Note the day's Moon sign — it sets the emotional temperature both teams and fans bring to the fixture."
+            },
+            {
+              "nameEn": "Spot Active Planets",
+              "subEn": "Check which planets are active in France's and England's national charts and compare the archetypes they represent."
+            },
+            {
+              "nameEn": "Scan the Aspects",
+              "subEn": "Look for tense transits like squares and oppositions hinting at friction, and softer trines hinting at flow."
+            },
+            {
+              "nameEn": "Notice Your Reaction",
+              "subEn": "Observe your own response to each theme — it is data about you, not evidence about the score."
+            },
+            {
+              "nameEn": "Write It Down",
+              "subEn": "Record your expected mood so you can compare your read against the real game afterward."
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Four Common Misreadings to Avoid",
+          "altEn": "Four common mistakes to avoid when interpreting a France England astrology match prediction",
+          "items": [
+            {
+              "nameEn": "\"It predicts the winner\"",
+              "subEn": "A symbolic reading describes mood and archetype; the outcome stays open and no page can honestly promise a certain result."
+            },
+            {
+              "nameEn": "\"National charts are exact\"",
+              "subEn": "Founding dates for countries are debated, so any national chart is one interpretive choice among several — not settled fact."
+            },
+            {
+              "nameEn": "\"Transits cause the result\"",
+              "subEn": "Transits are themes that may color the day, not forces that make a team score or concede. Causation language does not belong here."
+            },
+            {
+              "nameEn": "\"More detail means more accuracy\"",
+              "subEn": "Piling on planetary jargon can look impressive while adding nothing real. Clarity beats complexity every time."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
