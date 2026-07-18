@@ -373,6 +373,7 @@ import { saturnReturnAge27En } from "./saturn-return-age-27";
 import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
 import { venusInGeminiEn } from "./venus-in-gemini";
 import { tomBradyBirthChartEn } from "./tom-brady-birth-chart";
+import { howDoIStopBurnoutEn } from "./how-do-i-stop-burnout";
 // All articles organized by language
 
 import {
@@ -737,6 +738,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnInCancerEn,
   venusInGeminiEn,
   tomBradyBirthChartEn,
+  howDoIStopBurnoutEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
