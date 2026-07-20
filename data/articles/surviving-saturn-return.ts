@@ -114,7 +114,7 @@ You can note the timing, look at which life area your natal Saturn governs, and 
 
 This is not a clinical interpretation or mental health advice.
 
-[Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) by entering your birth date, and you'll get the exact date windows for your first and second return instead of a rough age estimate. Seeing those years mapped out turns a vague sense of pressure into a concrete stretch you can plan around — which is the whole point of reading a transit before it arrives rather than after.
+[Explore Your Saturn Return](/en/saturn-return-calculator) by entering your birth date, and you'll get the exact date windows for your first and second return instead of a rough age estimate. Seeing those years mapped out turns a vague sense of pressure into a concrete stretch you can plan around — which is the whole point of reading a transit before it arrives rather than after.
 
 ## Sources
 
