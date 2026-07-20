@@ -128,7 +128,7 @@ According to NASA, Saturn takes about 29.5 years to complete one orbit. Its retu
 
 ## Take Action
 
-Run your birth chart through a tool and pull up your tenth house, sixth house, second house, and Saturn placements. You'll come away with a short list of concrete cues — visibility, routine tolerance, earning style, discipline — instead of a vague hunch about your working life. Seeing them together often clarifies not whether the stars "decide" anything, but which kind of work fits who you already are. **[Explore Astrology Tools](https://astrologywiki.com/en/tools)** to map yours and turn the question into an informed reflection.
+Run your birth chart through a tool and pull up your tenth house, sixth house, second house, and Saturn placements. You'll come away with a short list of concrete cues — visibility, routine tolerance, earning style, discipline — instead of a vague hunch about your working life. Seeing them together often clarifies not whether the stars "decide" anything, but which kind of work fits who you already are. **[Explore Astrology Tools](https://www.astrologywiki.com/en/tools)** to map yours and turn the question into an informed reflection.
 
 ## Sources
 
