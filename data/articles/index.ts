@@ -384,6 +384,7 @@ import { messiVsYamalAstrologyEn } from "./messi-vs-yamal-astrology";
 import { amIMeantToBeMyOwnBossEn } from "./am-i-meant-to-be-my-own-boss";
 import { leandroParedesBirthChartEn } from "./leandro-paredes-birth-chart";
 import { ferranTorresBirthChartEn } from "./ferran-torres-birth-chart";
+import { marsInScorpioEn } from "./mars-in-scorpio";
 // All articles organized by language
 
 import {
@@ -759,6 +760,7 @@ const ARTICLES_EN: WikiArticle[] = [
   amIMeantToBeMyOwnBossEn,
   leandroParedesBirthChartEn,
   ferranTorresBirthChartEn,
+  marsInScorpioEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
