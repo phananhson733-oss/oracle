@@ -132,7 +132,7 @@ Three placements — a Cancer Sun, a Pisces Moon, and a Scorpio cluster — fall
 
 ## Take Action
 
-Run the June 29, 1994 details — or your own birth data — through our calculator to see every placement laid out instead of summarized. [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) and you'll get a full map of your Sun, Moon, and planets in a couple of minutes. Seeing your own water, fire, and earth balance on the page is often the moment a chart stops being a celebrity headline and starts working as a mirror for how you actually move through the world.
+Run the June 29, 1994 details — or your own birth data — through our calculator to see every placement laid out instead of summarized. [Generate Your Free Birth Chart](/en/birth-chart-calculator) and you'll get a full map of your Sun, Moon, and planets in a couple of minutes. Seeing your own water, fire, and earth balance on the page is often the moment a chart stops being a celebrity headline and starts working as a mirror for how you actually move through the world.
 
 This is not a clinical interpretation or mental health advice.
 
