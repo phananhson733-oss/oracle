@@ -1,0 +1,73 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "am-i-meant-to-be-my-own-boss": {
+      "hero": {
+        "prompt": "A solitary golden flame burning above a wooden desk in a vast indigo midnight, Saturn's rings glowing faintly in the deep star field above, constellations tracing a deliberate path through the darkness, a compass and open ledger resting on the desk surface suggesting self-directed work and personal accountability — conveying entrepreneurial ambition and the weight of autonomy through celestial symbolism, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Birth chart symbolism for entrepreneurial self-direction: Saturn, the Midheaven, and house placements as mirrors for working independently"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Entrepreneurial Cues in Your Chart",
+          "titleEn": "5 Chart Areas to Scan for Self-Employment Fit",
+          "altEn": "Step-by-step guide to reading entrepreneurial cues in your birth chart across the tenth, sixth, and second houses plus Saturn",
+          "items": [
+            {
+              "nameEn": "Tenth House & Midheaven",
+              "subEn": "Planets near your MC hint at how visible and self-directed your public role tends to be"
+            },
+            {
+              "nameEn": "Sixth House",
+              "subEn": "Check the sign and any planets here for clues about how you relate to daily routine and being managed"
+            },
+            {
+              "nameEn": "Second House",
+              "subEn": "This area speaks to earning style and whether you lean toward building your own resources"
+            },
+            {
+              "nameEn": "Saturn's Placement",
+              "subEn": "Its house and aspects suggest where you carry discipline and where responsibility can feel heaviest"
+            },
+            {
+              "nameEn": "Repeating Themes",
+              "subEn": "If autonomy surfaces across several of these, treat it as a pattern worth testing, not a command to obey"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings to Avoid",
+          "altEn": "Four frequent mistakes when interpreting birth chart cues for entrepreneurial fit and self-employment decisions",
+          "items": [
+            {
+              "nameEn": "Treating One Placement as Proof",
+              "subEn": "A strong Saturn or a packed tenth house is a cue, not a guarantee you'll succeed on your own"
+            },
+            {
+              "nameEn": "Confusing Fame with Autonomy",
+              "subEn": "The tenth house covers public reputation, and being known is not the same as being your own boss"
+            },
+            {
+              "nameEn": "Reading Ambition as Inevitability",
+              "subEn": "Drive shows a tendency, not a fixed path — plenty of ambitious charts belong to genuinely happy employees"
+            },
+            {
+              "nameEn": "Ignoring the Rest of the Chart",
+              "subEn": "Cherry-picking one flattering signal while skipping placements that complicate it produces a story, not a reading"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
