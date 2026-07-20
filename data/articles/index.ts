@@ -382,6 +382,7 @@ import { jupiterInCancerEn } from "./jupiter-in-cancer";
 import { saturnReturnInTaurusEn } from "./saturn-return-in-taurus";
 import { messiVsYamalAstrologyEn } from "./messi-vs-yamal-astrology";
 import { amIMeantToBeMyOwnBossEn } from "./am-i-meant-to-be-my-own-boss";
+import { leandroParedesBirthChartEn } from "./leandro-paredes-birth-chart";
 // All articles organized by language
 
 import {
@@ -755,6 +756,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnInTaurusEn,
   messiVsYamalAstrologyEn,
   amIMeantToBeMyOwnBossEn,
+  leandroParedesBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
