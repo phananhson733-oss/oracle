@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mars-in-scorpio": {
+      "hero": {
+        "prompt": "A vast dark ocean abyss seen from within, a single deep-red orb of Martian energy suspended in obsidian water and encircled by coiling teal bioluminescent currents, serpentine tendrils of gold light spiraling upward through layered darkness toward a distant amber horizon, the whole scene pulsing with contained power and strategic stillness, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Mars in Scorpio — a deep-red ember of drive suspended in obsidian depths, embodying controlled intensity and strategic desire"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Mars in Scorpio vs Mars in Aries: Two Faces of the Same Planet",
+          "titleEn": "Mars in Scorpio vs Mars in Aries: Drive Styles Compared",
+          "altEn": "Comparison of Mars in Scorpio's strategic depth against Mars in Aries' immediate outward drive",
+          "columns": [
+            {
+              "nameEn": "Mars in Scorpio",
+              "linesEn": [
+                "Contained, strategic pursuit",
+                "Releases drive with timing and intent",
+                "Endurance and staying power",
+                "Sacrifices immediacy for depth",
+                "Shadow: brooding or fixation"
+              ]
+            },
+            {
+              "nameEn": "Mars in Aries",
+              "linesEn": [
+                "Outward and immediate action",
+                "Impulse arrives, body moves at once",
+                "Speed and honest expression",
+                "Sacrifices reserve for immediacy",
+                "Shadow: moves first, reflects later"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Mars in Scorpio in Your Chart",
+          "titleEn": "5 Signals of Mars in Scorpio in Your Chart",
+          "altEn": "Five signals of Mars in Scorpio: long-game focus, strategic restraint, all-or-nothing energy, magnetism, and guarded exposure",
+          "items": [
+            {
+              "nameEn": "Long-game focus",
+              "subEn": "Sets a private aim and pursues it steadily rather than announcing it"
+            },
+            {
+              "nameEn": "Strategic restraint",
+              "subEn": "Holds back a reaction in the moment and acts once the room is read"
+            },
+            {
+              "nameEn": "All-or-nothing energy",
+              "subEn": "Commits fully or steps away; half-hearted involvement feels pointless"
+            },
+            {
+              "nameEn": "Magnetism under intensity",
+              "subEn": "Desire, drive, and anger run deep rather than loud"
+            },
+            {
+              "nameEn": "Discomfort with exposure",
+              "subEn": "Showing your hand too early feels like handing over control"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
