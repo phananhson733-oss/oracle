@@ -133,7 +133,7 @@ No. Astrology describes symbolic patterns only and can't forecast matches, trans
 
 ## Take Action
 
-Curious how your own three layers stack up? [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) to map your Sun, Moon, and rising in a single view. You'll get a full placement breakdown in minutes—signs, elements, and how they interact—and a clearer sense of how your imaginative, disciplined, and expressive sides negotiate the person other people actually meet. Just like the Pisces-Capricorn-Gemini tension in his chart, your own placements rarely agree, and reading them together beats crowning any single sign the whole story.
+Curious how your own three layers stack up? [Generate Your Free Birth Chart](/en/birth-chart-calculator) to map your Sun, Moon, and rising in a single view. You'll get a full placement breakdown in minutes—signs, elements, and how they interact—and a clearer sense of how your imaginative, disciplined, and expressive sides negotiate the person other people actually meet. Just like the Pisces-Capricorn-Gemini tension in his chart, your own placements rarely agree, and reading them together beats crowning any single sign the whole story.
 
 This is not a clinical interpretation or mental health advice.
 
