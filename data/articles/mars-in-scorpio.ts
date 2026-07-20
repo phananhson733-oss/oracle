@@ -112,7 +112,7 @@ It tends to seek closeness that feels total rather than casual, valuing loyalty 
 
 ## Take Action
 
-Open a birth chart and locate your Mars sign, then read its placement beside your Sun and Moon to see where your drive, identity, and needs agree or pull apart. The result is a clearer map of how you actually pursue what you want — and a language for the intensity you may have spent years managing on your own. Explore Astrology Tools to run your chart and start that reading: [https://astrologywiki.com/en/tools](https://astrologywiki.com/en/tools)
+Open a birth chart and locate your Mars sign, then read its placement beside your Sun and Moon to see where your drive, identity, and needs agree or pull apart. The result is a clearer map of how you actually pursue what you want — and a language for the intensity you may have spent years managing on your own. Use the [birth chart reading guide](/en/wiki/how-to-read-birth-chart) to start that interpretation.
 
 ## Sources
 
