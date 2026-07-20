@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 196" role="img" aria-label="">
+  <defs>
+    <linearGradient id="survivingsaturnreturn0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="survivingsaturnreturn0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="survivingsaturnreturn0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="survivingsaturnreturn0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="survivingsaturnreturn0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="survivingsaturnreturn0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="url(#survivingsaturnreturn0zh-panel)"/>
+  <ellipse cx="198" cy="47" rx="380" ry="67" fill="url(#survivingsaturnreturn0zh-neb1)"/>
+  <ellipse cx="623" cy="157" rx="334" ry="63" fill="url(#survivingsaturnreturn0zh-neb2)"/>
+  <circle cx="334.5" cy="49.8" r="1.27" fill="#cfc8ea" opacity="0.32"/><circle cx="125.3" cy="178.5" r="1.16" fill="#cfc8ea" opacity="0.35"/><circle cx="314.0" cy="73.9" r="1.69" fill="#cfc8ea" opacity="0.54"/><circle cx="536.6" cy="148.7" r="1.09" fill="#cfc8ea" opacity="0.36"/><circle cx="74.4" cy="176.2" r="0.93" fill="#cfc8ea" opacity="0.27"/><circle cx="178.4" cy="37.0" r="1.33" fill="#cfc8ea" opacity="0.37"/><circle cx="728.2" cy="53.0" r="0.85" fill="#cfc8ea" opacity="0.52"/><circle cx="142.7" cy="43.6" r="0.53" fill="#cfc8ea" opacity="0.18"/><circle cx="122.9" cy="92.1" r="0.41" fill="#cfc8ea" opacity="0.14"/><circle cx="581.6" cy="44.9" r="1.55" fill="#cfc8ea" opacity="0.20"/><circle cx="514.5" cy="118.0" r="0.63" fill="#cfc8ea" opacity="0.36"/><circle cx="672.6" cy="95.7" r="1.49" fill="#cfc8ea" opacity="0.31"/><circle cx="414.7" cy="132.2" r="1.46" fill="#cfc8ea" opacity="0.22"/><circle cx="581.4" cy="86.6" r="0.72" fill="#cfc8ea" opacity="0.48"/><circle cx="335.0" cy="75.7" r="1.10" fill="#cfc8ea" opacity="0.18"/><circle cx="371.3" cy="54.5" r="1.57" fill="#cfc8ea" opacity="0.24"/><circle cx="230.9" cy="177.7" r="1.40" fill="#cfc8ea" opacity="0.34"/><path d="M 541.6700195856392 145.0 L 542.2 147.6 L 544.7 148.12498547323048 L 542.2 148.6 L 541.6700195856392 151.2 L 541.2 148.6 L 538.6 148.12498547323048 L 541.2 147.6 Z" fill="#f6e6bf" opacity="0.5263123653130606"/><path d="M 163.28195668384433 165.8 L 163.8 168.3 L 166.3 168.80153697170317 L 163.8 169.3 L 163.28195668384433 171.8 L 162.8 169.3 L 160.3 168.80153697170317 L 162.8 168.3 Z" fill="#f6e6bf" opacity="0.5185932832071558"/><path d="M 393.4698995985091 143.3 L 394.1 146.4 L 397.2 147.03539058752358 L 394.1 147.6 L 393.4698995985091 150.8 L 392.9 147.6 L 389.7 147.03539058752358 L 392.9 146.4 Z" fill="#f6e6bf" opacity="0.5438224611105398"/><path d="M 387.03833555802703 83.9 L 387.6 86.7 L 390.4 87.23512519337237 L 387.6 87.8 L 387.03833555802703 90.6 L 386.5 87.8 L 383.7 87.23512519337237 L 386.5 86.7 Z" fill="#f6e6bf" opacity="0.7071774684125558"/><path d="M 128.66965096071362 30.3 L 129.3 33.4 L 132.4 33.98989217169583 L 129.3 34.6 L 128.66965096071362 37.7 L 128.1 34.6 L 124.9 33.98989217169583 L 128.1 33.4 Z" fill="#f6e6bf" opacity="0.6198367747711018"/>
+  <rect x="1.5" y="1.5" width="757" height="193" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="182" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 176.8 L 16.5 179.5 L 19.2 180 L 16.5 180.5 L 16 183.2 L 15.5 180.5 L 12.8 180 L 15.5 179.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 176.8 L 744.5 179.5 L 747.2 180 L 744.5 180.5 L 744 183.2 L 743.5 180.5 L 740.8 180 L 743.5 179.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#survivingsaturnreturn0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#survivingsaturnreturn0zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="72" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="72" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 81.6 L 48.3 84.5 L 51.1 85 L 48.3 85.5 L 47.75 88.4 L 47.2 85.5 L 44.4 85 L 47.2 84.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 112.5 L 380.7 116.3 L 384.5 117 L 380.7 117.7 L 380 121.5 L 379.3 117.7 L 375.5 117 L 379.3 116.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="130" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="130" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 139.6 L 48.3 142.5 L 51.1 143 L 48.3 143.5 L 47.75 146.4 L 47.2 143.5 L 44.4 143 L 47.2 142.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 280.025 167.4 L 280.4 169.6 L 282.6 170 L 280.4 170.4 L 280.025 172.6 L 279.6 170.4 L 277.4 170 L 279.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="174" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 167.4 L 480.4 169.6 L 482.6 170 L 480.4 170.4 L 479.975 172.6 L 479.6 170.4 L 477.4 170 L 479.6 169.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
