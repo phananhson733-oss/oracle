@@ -117,7 +117,7 @@ Many astrologers begin at the birthday return and revisit the chart across the f
 
 ## Take Action
 
-Start by generating your birth chart and Solar Return details with [Explore Astrology Tools](https://astrologywiki.com/en/tools).
+Start by generating your birth chart and Solar Return details with *Explore Astrology Tools*.
 
 The result gives you the chart placements needed to identify repeated yearly patterns rather than relying on a generic forecast. Use the pattern as a question for clearer choices, not as a script for the year ahead.
 
