@@ -129,7 +129,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Write down one sign-based description and one MBTI description that both feel partly true. The result is a short comparison list that separates repeated behavior from a label that only sounds appealing. That distinction can make self-awareness more honest, especially when a simple type or sign begins to feel too small. [Explore Astrology Tools](https://astrologywiki.com/en/tools)
+Write down one sign-based description and one MBTI description that both feel partly true. The result is a short comparison list that separates repeated behavior from a label that only sounds appealing. That distinction can make self-awareness more honest, especially when a simple type or sign begins to feel too small. *Explore Astrology Tools*
 
 ## Sources
 
