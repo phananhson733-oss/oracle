@@ -1,0 +1,84 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "the-most-common-mbti-types-for-each-zodiac-sign": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of twelve faint constellation outlines — Aries through Pisces — arranged in a sweeping celestial arc across a deep indigo-to-near-black sky (#16112c fading to #0b0a1b), each constellation softly glowing in gold (#d4af6a), teal-and-gold nebula wisps weaving between the star patterns, four translucent geometric prisms representing analytical dimensions dissolving into stardust at the frame edges, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twelve zodiac constellation outlines glowing gold against a deep indigo nebula sky, evoking MBTI-zodiac personality pairings"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read MBTI-Zodiac Pairings in Your Chart",
+          "titleEn": "5 Steps to Read MBTI-Zodiac Pairings",
+          "altEn": "Five-step sequence for reading zodiac and MBTI type pairings using observed personal behavior",
+          "items": [
+            {
+              "nameEn": "Notice Your Default Pace",
+              "subEn": "Quick decisions and visible risk-taking resemble Aries-ESTP; slow, repeatable choices fit Taurus-ISTJ"
+            },
+            {
+              "nameEn": "Separate Social Confidence from Sociability",
+              "subEn": "Leo can look expressive in public while an introvert still enjoys recognition without constant company"
+            },
+            {
+              "nameEn": "Compare Your Mercury Sign",
+              "subEn": "Mercury explains why a Gemini Sun speaks differently from the MBTI type attached to the Sun-sign stereotype"
+            },
+            {
+              "nameEn": "Watch Responses Under Pressure",
+              "subEn": "Capricorn-like structure may appear when plans change, even if everyday behavior looks playful or flexible"
+            },
+            {
+              "nameEn": "Use Repeated Examples",
+              "subEn": "Observe work meetings, family decisions, and friendships over time rather than deciding from one mood"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Zodiac and MBTI Pairings at a Glance",
+          "titleEn": "Zodiac Elements and Their MBTI Patterns",
+          "altEn": "Comparison of fire, earth, and water zodiac element groups with their commonly associated MBTI personality types",
+          "columns": [
+            {
+              "nameEn": "Fire Signs",
+              "linesEn": [
+                "Aries: ESTP, ENTJ",
+                "Leo: ENFJ, ESFP",
+                "Sagittarius: ENTP, ESFP",
+                "Direct action, visibility, exploration"
+              ]
+            },
+            {
+              "nameEn": "Earth Signs",
+              "linesEn": [
+                "Taurus: ISTJ, ISFJ",
+                "Virgo: ISTJ, INTJ",
+                "Capricorn: INTJ, ISTJ",
+                "Consistency, discernment, strategy"
+              ]
+            },
+            {
+              "nameEn": "Water Signs",
+              "linesEn": [
+                "Cancer: ISFJ, INFP",
+                "Scorpio: INTJ, INFJ",
+                "Pisces: INFP, INFJ",
+                "Protection, intensity, imagination"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
