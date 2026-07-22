@@ -1,0 +1,73 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mars-in-aries": {
+      "hero": {
+        "prompt": "A blazing fire-red ram silhouette surging forward at the moment of ignition, cardinal fire energy radiating outward in arc-like golden sparks against a deep indigo-to-near-black cosmos, Mars as a red ember glowing at the upper right, soft teal nebula ribbons trailing behind the ram's horns, a sense of a clean decisive first move caught in the fraction of a second before impact, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Fire-red ram surging at the moment of ignition, Mars as a red ember, gold sparks and teal nebula ribbons against a deep indigo cosmos"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Placement in Your Chart",
+          "titleEn": "5 Steps to Read Mars in Aries in Your Chart",
+          "altEn": "Five-step sequence for reading a Mars in Aries placement by house, aspects, Moon, and recovery pattern",
+          "items": [
+            {
+              "nameEn": "Check the house",
+              "subEn": "Mars in the third house may bring quick speech; in the seventh, directness surfaces most clearly in close partnerships"
+            },
+            {
+              "nameEn": "Look for a pause point",
+              "subEn": "Recall a recent choice where you acted before everyone else was ready—was speed necessary or just safer than waiting?"
+            },
+            {
+              "nameEn": "Read major aspects",
+              "subEn": "A trine can make the drive easier to express; a square shows competing priorities that call for more deliberate timing"
+            },
+            {
+              "nameEn": "Compare the Moon",
+              "subEn": "The Moon describes emotional habits, showing whether the outward response matches the private feeling underneath"
+            },
+            {
+              "nameEn": "Notice the recovery pattern",
+              "subEn": "After a disagreement or demanding task, observe whether action restores focus or a short break produces a clearer next move"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of Mars in Aries",
+          "altEn": "Four common misreadings of a Mars in Aries placement, from anger stereotypes to leadership guarantees",
+          "items": [
+            {
+              "nameEn": "\"Always angry\"",
+              "subEn": "The placement can describe a quick ignition point but does not measure emotional maturity or frequency of anger"
+            },
+            {
+              "nameEn": "\"Same as being an Aries\"",
+              "subEn": "Sun sign and Mars placement describe different chart functions; the rest of the chart still matters"
+            },
+            {
+              "nameEn": "\"Direct means rude\"",
+              "subEn": "Directness can be concise, brave, and respectful—the issue is checking timing and impact, not whether you speak plainly"
+            },
+            {
+              "nameEn": "\"Guarantees leadership\"",
+              "subEn": "It can support a willingness to start or take visible risk, but leadership also depends on judgment, skill, and relationships"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
