@@ -131,7 +131,7 @@ Different sites may use guessed times, default locations, different zodiac syste
 
 ## Take Action
 
-Start by [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) using your own birth date, place, and time.
+Start by [Generate Your Free Birth Chart](/en/birth-chart-calculator) using your own birth date, place, and time.
 
 The calculator gives you a chart with the inputs needed to distinguish Sun-sign language from rising-sign, house, and aspect layers.
 
