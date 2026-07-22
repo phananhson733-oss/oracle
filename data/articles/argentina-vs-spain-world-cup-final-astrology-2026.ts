@@ -126,7 +126,7 @@ Use it as symbolic reflection alongside the documented result, not as evidence f
 
 ## Take Action
 
-Cast both national charts against the July 19, 2026 sky and write down the single sharpest contrast you find — you'll end up with a one-page symbolic scouting note for the final. That small exercise often reveals which sporting stories you're really drawn to, long before a ball is kicked. [Explore Astrology Forecasts](https://astrologywiki.com/forecast) to build the transit backdrop for your own reading and keep it handy through the tournament.
+Cast both national charts against the July 19, 2026 sky and write down the single sharpest contrast you find — you'll end up with a one-page symbolic reflection on the final. Keep the official FIFA report beside it so match facts and personal interpretation stay clearly separate.
 
 ## Sources
 
