@@ -114,7 +114,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Start with the [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) calculator and enter accurate birth details. The calculator can also help you note whether the return is approaching, exact, or revisiting the natal degree.
+Start with the [Explore Your Saturn Return](/en/saturn-return-calculator) calculator and enter accurate birth details. The calculator can also help you note whether the return is approaching, exact, or revisiting the natal degree.
 
 It identifies the timing of the return and gives you a focused starting point for locating natal Saturn in your chart.
 
