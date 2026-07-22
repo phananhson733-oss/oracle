@@ -17,8 +17,7 @@ export const taylorSwiftTravisKelceWeddingAstrologyEn: WikiArticle = {
     "Taylor Swift Travis Kelce wedding astrology meaning",
     "Taylor Swift Travis Kelce wedding astrology birth chart",
     "Taylor Swift Travis Kelce wedding astrology zodiac",
-    "Taylor Swift Travis Kelce wedding astrology interpretation",
-    "jwoww zack carpinello wedding synastry"
+    "Taylor Swift Travis Kelce wedding astrology interpretation"
   ],
   content: `# Taylor Swift Travis Kelce Wedding Astrology Through Two Lenses
 
