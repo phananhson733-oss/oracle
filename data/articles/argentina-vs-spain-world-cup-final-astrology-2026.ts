@@ -24,7 +24,7 @@ export const argentinaVsSpainWorldCupFinalAstrology2026En: WikiArticle = {
 
 ## What Is Argentina vs Spain 2026 World Cup Final Astrology?
 
-Argentina vs Spain World Cup Final Astrology 2026 is **a paired national-chart reading of the confirmed final**, played on July 19, 2026 at New York New Jersey Stadium. FIFA’s official report records Spain’s 1-0 win over Argentina. This article uses the two national charts as a symbolic lens on the event’s narratives; it does not treat astrology as an explanation for, or prediction of, the result. It sits inside the broader [pillar page on World Cup 2026 astrology predictions](/en/wiki/world-cup-2026-astrology-prediction), which maps tournament-related chart content.
+Argentina vs Spain World Cup Final Astrology 2026 is **a paired national-chart reading of the confirmed final**, played on July 19, 2026 at New York New Jersey Stadium. FIFA’s official report records Spain’s 1-0 win over Argentina. This article uses the two national charts as a symbolic lens on the event’s narratives; it does not treat astrology as an explanation for, or prediction of, the result. It sits inside a broader pillar of *World Cup 2026 astrology predictions*, which maps tournament-related chart content.
 
 - Pairs two national founding charts rather than reading a single team
 - Anchors to one transit window: the July 19, 2026 final sky
@@ -121,7 +121,7 @@ Use it as symbolic reflection alongside the documented result, not as evidence f
 ## Related Reading
 
 - *explainer on national birth charts in mundane astrology* — how founding charts for countries are cast and read.
-- [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the base skill behind every paired-chart comparison here.
+- *how to read a birth chart* — the base skill behind every paired-chart comparison here.
 - [FIFA World Cup 2026](https://www.fifa.com) — official tournament coverage for the 19 July final at New York New Jersey Stadium.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the planet driving the 2026 final window.
 
