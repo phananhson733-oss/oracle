@@ -126,7 +126,7 @@ Write down one recent moment involving trust, conflict, or disclosure, then comp
 
 That small record gives you a concrete pattern to review instead of a borrowed stereotype.
 
-Patterns become more useful when they lead to honest choices about boundaries, connection, and self-expression. [Explore Astrology Tools](https://astrologywiki.com/en/tools)
+Patterns become more useful when they lead to honest choices about boundaries, connection, and self-expression. *Explore Astrology Tools*
 
 This is not a clinical interpretation or mental health advice.
 
