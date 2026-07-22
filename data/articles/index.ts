@@ -391,6 +391,7 @@ import { theMostCommonMbtiTypesForEachZodiacSignEn } from "./the-most-common-mbt
 import { whatIsMyThemeForThisYearEn } from "./what-is-my-theme-for-this-year";
 import { jangWonyoungBirthChartEn } from "./jang-wonyoung-birth-chart";
 import { marsInAriesEn } from "./mars-in-aries";
+import { taylorSwiftTravisKelceWeddingAstrologyEn } from "./taylor-swift-travis-kelce-wedding-astrology";
 // All articles organized by language
 
 import {
@@ -773,6 +774,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whatIsMyThemeForThisYearEn,
   jangWonyoungBirthChartEn,
   marsInAriesEn,
+  taylorSwiftTravisKelceWeddingAstrologyEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
