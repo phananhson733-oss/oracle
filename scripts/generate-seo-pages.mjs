@@ -2084,13 +2084,17 @@ Pro 解锁深度解读、每周最多 10 次 Ask 问答、额外合盘、月度 
     });
   };
 
-  for (const slug of ARTICLE_SLUGS) {
+  // sitemap + 文章 SEO 页的收录源 = data/articles 全量（与 ensure-static-article-stubs
+  // 同源），不再靠手工维护的 ARTICLE_SLUGS 白名单。autopilot/编辑新增文章进 data/articles
+  // 即自动进 sitemap + 被 IndexNow 提交，根除“页面已上线却漏 sitemap”的盲区。
+  // 按语言遍历 getArticleSummaries(lang)：EN-only 文章只出现在 en 列表，天然不会生成
+  // 空的 /zh 条目；seo.sitemap===false 的桥页/收口页仍由 writeArticle 内的
+  // includeInSitemap 排除，noindex 契约不受影响。
+  for (const { slug } of articlesModule.getArticleSummaries('en')) {
     await writeArticle(slug, 'en');
-    await writeArticle(slug, 'zh');
   }
-  // EN-only featured articles (no ZH variant — emit /en/wiki/ only)
-  for (const slug of ARTICLE_SLUGS_EN_ONLY) {
-    await writeArticle(slug, 'en');
+  for (const { slug } of articlesModule.getArticleSummaries('zh')) {
+    await writeArticle(slug, 'zh');
   }
 
   // L2 cutover (2026-05-19): root is now the canonical home (renders

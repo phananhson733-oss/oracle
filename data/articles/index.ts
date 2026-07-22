@@ -373,6 +373,22 @@ import { saturnReturnAge27En } from "./saturn-return-age-27";
 import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
 import { venusInGeminiEn } from "./venus-in-gemini";
 import { argentinaVsSpainWorldCupFinalAstrology2026En } from "./argentina-vs-spain-world-cup-final-astrology-2026";
+import { tomBradyBirthChartEn } from "./tom-brady-birth-chart";
+import { howDoIStopBurnoutEn } from "./how-do-i-stop-burnout";
+import { franceEngland3rdPlaceMatchAstrologyPredictionEn } from "./france-england-3rd-place-match-astrology-prediction";
+import { moonInCapricornEn } from "./moon-in-capricorn";
+import { moonInCancerEn } from "./moon-in-cancer";
+import { saturnReturnInAriesEn } from "./saturn-return-in-aries";
+import { jupiterInCancerEn } from "./jupiter-in-cancer";
+import { saturnReturnInTaurusEn } from "./saturn-return-in-taurus";
+import { messiVsYamalAstrologyEn } from "./messi-vs-yamal-astrology";
+import { amIMeantToBeMyOwnBossEn } from "./am-i-meant-to-be-my-own-boss";
+import { leandroParedesBirthChartEn } from "./leandro-paredes-birth-chart";
+import { ferranTorresBirthChartEn } from "./ferran-torres-birth-chart";
+import { marsInScorpioEn } from "./mars-in-scorpio";
+import { survivingSaturnReturnEn } from "./surviving-saturn-return";
+import { theMostCommonMbtiTypesForEachZodiacSignEn } from "./the-most-common-mbti-types-for-each-zodiac-sign";
+import { whatIsMyThemeForThisYearEn } from "./what-is-my-theme-for-this-year";
 // All articles organized by language
 
 import {
@@ -737,6 +753,22 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnInCancerEn,
   venusInGeminiEn,
   argentinaVsSpainWorldCupFinalAstrology2026En,
+  tomBradyBirthChartEn,
+  howDoIStopBurnoutEn,
+  franceEngland3rdPlaceMatchAstrologyPredictionEn,
+  moonInCapricornEn,
+  moonInCancerEn,
+  saturnReturnInAriesEn,
+  jupiterInCancerEn,
+  saturnReturnInTaurusEn,
+  messiVsYamalAstrologyEn,
+  amIMeantToBeMyOwnBossEn,
+  leandroParedesBirthChartEn,
+  ferranTorresBirthChartEn,
+  marsInScorpioEn,
+  survivingSaturnReturnEn,
+  theMostCommonMbtiTypesForEachZodiacSignEn,
+  whatIsMyThemeForThisYearEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

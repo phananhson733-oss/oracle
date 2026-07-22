@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "ferran-torres-birth-chart": {
+      "hero": {
+        "prompt": "Editorial portrait of a young Spanish professional footballer standing at the edge of a stadium pitch at dusk, wearing a red national team jersey rendered in loose painterly brushstrokes, celestial indigo sky above dissolving into a teal-and-gold nebula, soft gold floodlight catching his composed expression, Pisces constellation traces and Capricorn mountain motifs subtly woven into the nebula around him, figure centered in the safe zone with open pitch receding behind, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of Spanish footballer Ferran Torres under a celestial indigo sky with Pisces and Capricorn astrological symbols"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Pisces Sun vs the Full Sun-Moon-Rising Triad",
+          "titleEn": "One Sign vs the Full Triad: Two Ways to Read Ferran Torres",
+          "altEn": "Comparison of the lone Pisces Sun-sign reading versus the full Pisces-Capricorn-Gemini triad for Ferran Torres",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Only Read",
+              "linesEn": [
+                "Quick and easy to share in one line",
+                "Labels him a dreamy, sensitive water sign",
+                "Misses his cold endurance and long-range ambition",
+                "Collapses when tested against his actual performances"
+              ]
+            },
+            {
+              "nameEn": "Full Triad Read",
+              "linesEn": [
+                "Reads Pisces Sun, Capricorn Moon, and Gemini Ascendant together",
+                "Explains imagination and discipline coexisting in one player",
+                "Takes a paragraph to explain, not a headline",
+                "Matches the behavior fans actually watch week after week"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Triad in Ferran Torres's Chart",
+          "titleEn": "Five Signals That Map the Triad in Ferran Torres's Chart",
+          "altEn": "Five astrological placement signals in the Ferran Torres birth chart from Pisces Sun to Mars in Aries",
+          "items": [
+            {
+              "nameEn": "Pisces Sun",
+              "subEn": "Instinctive, improvised movement — reading space by feel rather than running a rehearsed pattern"
+            },
+            {
+              "nameEn": "Capricorn Moon",
+              "subEn": "Composed, almost flat reaction after a big miss or a goal, treating the season as longer than the moment"
+            },
+            {
+              "nameEn": "Gemini Ascendant",
+              "subEn": "Quick, adaptable interviews and a versatile, media-friendly public image"
+            },
+            {
+              "nameEn": "Mercury in Pisces",
+              "subEn": "Intuition-led choices that can look scattered but follow a hidden internal thread"
+            },
+            {
+              "nameEn": "Mars in Aries",
+              "subEn": "Direct, front-foot aggression the instant he attacks the box or presses from the front"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

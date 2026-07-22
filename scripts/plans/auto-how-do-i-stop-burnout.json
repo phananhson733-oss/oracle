@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "how-do-i-stop-burnout": {
+      "hero": {
+        "prompt": "A pale golden sun half-submerged below a dark horizon, its light being slowly throttled by the heavy arc of Saturn's rings pressing down from above, teal-and-indigo nebula filling the sky with quiet oppressive weight, the atmosphere heavy and still, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A dimming sun pressed beneath Saturn's rings in a deep indigo sky, evoking duty-versus-vitality tension at the core of astrological burnout"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Burnout Signatures in Your Chart",
+          "titleEn": "Four Steps to Spot Burnout Patterns in Your Chart",
+          "altEn": "Four-step sequence: locate Sun and Saturn, scan the sixth house, watch lunar timing, then track repeating low periods",
+          "items": [
+            {
+              "nameEn": "Find Sun & Saturn",
+              "subEn": "Note the aspect between them — a square or opposition points to the duty-versus-vitality tension most often read as burnout"
+            },
+            {
+              "nameEn": "Scan the Sixth House",
+              "subEn": "Count the planets there and note the ruling sign; a crowded sixth house reads as daily demands stacking up fast"
+            },
+            {
+              "nameEn": "Watch the Timing",
+              "subEn": "Notice when your drive dips most across a month and compare those dips to the lunar cycle, especially around the full moon"
+            },
+            {
+              "nameEn": "Track the Repeat",
+              "subEn": "Log two or three low periods; if they cluster around the same transits, you are looking at a pattern, not a one-off"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Burnout Signatures at a Glance",
+          "titleEn": "Three Astrological Burnout Signatures Compared",
+          "altEn": "Comparison of Saturn–Sun tension, sixth-house depletion, and lunar-cycle timing as three distinct burnout signatures in a birth chart",
+          "columns": [
+            {
+              "nameEn": "Saturn–Sun Tension",
+              "linesEn": [
+                "Pressure between duty and vitality drives overwork",
+                "Placement: Saturn aspecting the natal Sun",
+                "Observe: check for a square or opposition between Sun and Saturn"
+              ]
+            },
+            {
+              "nameEn": "Sixth-House Depletion",
+              "linesEn": [
+                "Small daily demands drain reserves over time",
+                "Placement: planets in or ruling the natal sixth house",
+                "Observe: count sixth-house planets and note the ruling sign"
+              ]
+            },
+            {
+              "nameEn": "Lunar-Cycle Timing",
+              "linesEn": [
+                "Recovery windows track a repeating monthly rhythm",
+                "Placement: natal Moon and the current lunar phase",
+                "Observe: note which phase lines up with your low-drive days"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

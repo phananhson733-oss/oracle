@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "messi-vs-yamal-astrology": {
+      "hero": {
+        "prompt": "Two stylized footballer silhouettes — one draped in Argentina blue-and-white, one in Spain red-and-gold — striding across a luminous green pitch beneath a glowing Cancer constellation arc, cardinal water ripples flowing between them like a shared tide, soft gold halo light framing each figure, teal nebula wash sweeping across the stadium sky above a roaring crowd rendered as golden sparks, square-crop safe area centers both figures in the mid-frame, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Two stylized footballers in Argentina and Spain colors on a luminous pitch under a Cancer constellation arc, symbolizing Messi and Yamal's shared zodiac sign"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Chart Comparison vs Match Prediction: Where the Two Split",
+          "titleEn": "Chart Comparison vs Match Prediction",
+          "altEn": "Side-by-side contrast of symbolic chart comparison versus match-prediction astrology",
+          "columns": [
+            {
+              "nameEn": "Chart Comparison",
+              "linesEn": [
+                "Reads symbolism, archetypes, and elemental balance",
+                "Describes character and standing patterns",
+                "Offers depth with defensible limits",
+                "Will never hand you a scoreline or fixture outcome"
+              ]
+            },
+            {
+              "nameEn": "Match Prediction",
+              "linesEn": [
+                "Claims a chart or transit can call the winner of a game",
+                "Bets on a moving, time-specific result",
+                "Offers the thrill of a forecast",
+                "Costs credibility by over-reaching what the sky provides"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Four Common Misreadings of Messi vs Yamal Astrology",
+          "altEn": "Four common misreadings of the Messi–Yamal astrological comparison and what the framework actually supports",
+          "items": [
+            {
+              "nameEn": "Same Sun = Same Player",
+              "subEn": "A shared Cancer Sun is an opening note, not a personality clone — generation and emphasis pull the two apart in ways the Sun alone cannot show"
+            },
+            {
+              "nameEn": "Charts Predict Match Outcomes",
+              "subEn": "Symbolic comparison describes standing character and says nothing dependable about a fixture's outcome — predicting a result is a different, weaker claim"
+            },
+            {
+              "nameEn": "Younger Chart Is Stronger",
+              "subEn": "Charts aren't ranked — different placements describe different textures, not a better or worse athlete"
+            },
+            {
+              "nameEn": "One Placement Explains the Whole",
+              "subEn": "No single Sun, house, or transit carries an entire nativity — not in these charts, and not in yours"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

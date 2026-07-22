@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "moon-in-capricorn": {
+      "hero": {
+        "prompt": "A solitary mountain summit under a luminous full moon in a deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash behind jagged stone peaks, the mountain's dark layered rock radiating a faint amber inner warmth suggesting deep feeling held beneath the surface, pale gold moonlight cascading over the ridgeline, sparse stars scattered across the sky, square-crop safe zone centered on the mountain and moon, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A lone mountain peak under a full moon in deep indigo sky, evoking Moon in Capricorn's guarded emotional depth"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Placement in Your Chart",
+          "titleEn": "Five Signals of Moon in Capricorn",
+          "altEn": "Five key traits that reveal a Moon in Capricorn placement in a birth chart",
+          "items": [
+            {
+              "nameEn": "Emotional Understatement",
+              "subEn": "Big feelings get summarized in a flat dismissal even when the moment clearly warrants more"
+            },
+            {
+              "nameEn": "Security Through Achievement",
+              "subEn": "Comfort is tied to being capable and in control; idleness or dependence can feel quietly unsafe"
+            },
+            {
+              "nameEn": "Slow-Warming Intimacy",
+              "subEn": "Trust is earned in stages; reliability is tested before leading with vulnerability"
+            },
+            {
+              "nameEn": "Self-Reliant Streak",
+              "subEn": "Many describe learning young to manage their own needs — check against the 4th house and Moon-Saturn aspects"
+            },
+            {
+              "nameEn": "Comfort in Structure",
+              "subEn": "Routines, plans, and clear responsibilities read as soothing rather than restrictive"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings to Clear Up",
+          "titleEn": "Moon in Capricorn: Misread vs Reality",
+          "altEn": "Comparison of four common misconceptions about Moon in Capricorn against their astrological reality",
+          "columns": [
+            {
+              "nameEn": "Common Misread",
+              "linesEn": [
+                "Cold and unfeeling",
+                "Makes you a Capricorn",
+                "Western and Vedic readings agree",
+                "Restraint equals shallow"
+              ]
+            },
+            {
+              "nameEn": "The Reality",
+              "linesEn": [
+                "Feelings are strong — kept private and expressed through steadiness, not display",
+                "One emotional layer of the chart only, not a whole-personality verdict",
+                "Different skies, often different sign; they answer different questions",
+                "Composure holds depth; the reserve is a container, not a void"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 316" role="img" aria-label="">
+  <defs>
+    <linearGradient id="survivingsaturnreturn1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="survivingsaturnreturn1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="survivingsaturnreturn1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="survivingsaturnreturn1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="survivingsaturnreturn1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="survivingsaturnreturn1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="url(#survivingsaturnreturn1zh-panel)"/>
+  <ellipse cx="198" cy="76" rx="380" ry="107" fill="url(#survivingsaturnreturn1zh-neb1)"/>
+  <ellipse cx="623" cy="253" rx="334" ry="101" fill="url(#survivingsaturnreturn1zh-neb2)"/>
+  <circle cx="610.7" cy="178.3" r="0.61" fill="#cfc8ea" opacity="0.35"/><circle cx="677.3" cy="184.4" r="1.47" fill="#cfc8ea" opacity="0.39"/><circle cx="454.5" cy="111.9" r="0.48" fill="#cfc8ea" opacity="0.44"/><circle cx="482.8" cy="248.6" r="1.17" fill="#cfc8ea" opacity="0.32"/><circle cx="17.3" cy="86.3" r="1.62" fill="#cfc8ea" opacity="0.33"/><circle cx="375.0" cy="255.2" r="1.46" fill="#cfc8ea" opacity="0.45"/><circle cx="453.9" cy="177.6" r="0.75" fill="#cfc8ea" opacity="0.39"/><circle cx="729.8" cy="13.5" r="0.88" fill="#cfc8ea" opacity="0.43"/><circle cx="96.7" cy="63.9" r="1.00" fill="#cfc8ea" opacity="0.23"/><circle cx="369.4" cy="149.3" r="1.29" fill="#cfc8ea" opacity="0.36"/><circle cx="383.6" cy="265.8" r="1.30" fill="#cfc8ea" opacity="0.37"/><circle cx="272.4" cy="149.2" r="0.58" fill="#cfc8ea" opacity="0.50"/><circle cx="438.3" cy="30.2" r="0.92" fill="#cfc8ea" opacity="0.27"/><circle cx="733.3" cy="127.6" r="0.69" fill="#cfc8ea" opacity="0.32"/><circle cx="107.6" cy="245.9" r="0.41" fill="#cfc8ea" opacity="0.42"/><circle cx="498.8" cy="134.8" r="1.20" fill="#cfc8ea" opacity="0.49"/><circle cx="366.6" cy="176.0" r="0.92" fill="#cfc8ea" opacity="0.32"/><circle cx="253.7" cy="92.9" r="1.24" fill="#cfc8ea" opacity="0.28"/><circle cx="267.1" cy="81.5" r="1.41" fill="#cfc8ea" opacity="0.41"/><circle cx="50.8" cy="188.3" r="1.49" fill="#cfc8ea" opacity="0.41"/><circle cx="398.4" cy="257.2" r="1.21" fill="#cfc8ea" opacity="0.29"/><circle cx="309.1" cy="163.0" r="0.67" fill="#cfc8ea" opacity="0.46"/><circle cx="535.8" cy="55.5" r="0.66" fill="#cfc8ea" opacity="0.40"/><circle cx="431.8" cy="175.8" r="1.12" fill="#cfc8ea" opacity="0.21"/><circle cx="173.3" cy="117.9" r="1.04" fill="#cfc8ea" opacity="0.35"/><circle cx="169.5" cy="71.2" r="0.53" fill="#cfc8ea" opacity="0.24"/><circle cx="126.3" cy="199.0" r="1.56" fill="#cfc8ea" opacity="0.32"/><path d="M 236.81540987826884 130.0 L 237.4 132.9 L 240.3 133.4666367918253 L 237.4 134.0 L 236.81540987826884 137.0 L 236.3 134.0 L 233.3 133.4666367918253 L 236.3 132.9 Z" fill="#f6e6bf" opacity="0.7714174958877265"/><path d="M 448.341994645074 96.3 L 448.7 98.4 L 450.9 98.85479931533337 L 448.7 99.3 L 448.341994645074 101.4 L 447.9 99.3 L 445.8 98.85479931533337 L 447.9 98.4 Z" fill="#f6e6bf" opacity="0.5513915533199907"/><path d="M 734.5611142162234 251.0 L 735.0 253.5 L 737.5 253.93337102234364 L 735.0 254.4 L 734.5611142162234 256.8 L 734.1 254.4 L 731.7 253.93337102234364 L 734.1 253.5 Z" fill="#f6e6bf" opacity="0.7761012793518602"/><path d="M 144.20940761454403 232.4 L 144.7 235.1 L 147.4 235.56499992311 L 144.7 236.1 L 144.20940761454403 238.7 L 143.7 236.1 L 141.1 235.56499992311 L 143.7 235.1 Z" fill="#f6e6bf" opacity="0.7610398523509503"/><path d="M 91.35978705622256 162.0 L 91.8 164.4 L 94.2 164.8863818794489 L 91.8 165.3 L 91.35978705622256 167.7 L 90.9 165.3 L 88.5 164.8863818794489 L 90.9 164.4 Z" fill="#f6e6bf" opacity="0.7307515828870237"/><path d="M 17.3 86.3 L 438.3 30.2 L 498.8 134.8 L 267.1 81.5 L 126.3 199.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="302" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 296.8 L 16.5 299.5 L 19.2 300 L 16.5 300.5 L 16 303.2 L 15.5 300.5 L 12.8 300 L 15.5 299.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 296.8 L 744.5 299.5 L 747.2 300 L 744.5 300.5 L 744 303.2 L 743.5 300.5 L 740.8 300 L 743.5 299.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#survivingsaturnreturn1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#survivingsaturnreturn1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="262" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#survivingsaturnreturn1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#survivingsaturnreturn1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#survivingsaturnreturn1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#survivingsaturnreturn1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#survivingsaturnreturn1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#survivingsaturnreturn1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#survivingsaturnreturn1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#survivingsaturnreturn1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="262" r="20.0" fill="url(#survivingsaturnreturn1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="262" r="15" fill="url(#survivingsaturnreturn1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="257.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="266.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="258.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 287.4 L 280.4 289.6 L 282.6 290 L 280.4 290.4 L 280.025 292.6 L 279.6 290.4 L 277.4 290 L 279.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="294" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 287.4 L 480.4 289.6 L 482.6 290 L 480.4 290.4 L 479.975 292.6 L 479.6 290.4 L 477.4 290 L 479.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

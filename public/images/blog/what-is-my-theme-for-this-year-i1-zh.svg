@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 316" role="img" aria-label="">
+  <defs>
+    <linearGradient id="whatismythemeforthisyear1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="whatismythemeforthisyear1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="whatismythemeforthisyear1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatismythemeforthisyear1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatismythemeforthisyear1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="whatismythemeforthisyear1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="url(#whatismythemeforthisyear1zh-panel)"/>
+  <ellipse cx="198" cy="76" rx="380" ry="107" fill="url(#whatismythemeforthisyear1zh-neb1)"/>
+  <ellipse cx="623" cy="253" rx="334" ry="101" fill="url(#whatismythemeforthisyear1zh-neb2)"/>
+  <circle cx="169.0" cy="15.9" r="1.48" fill="#cfc8ea" opacity="0.37"/><circle cx="42.1" cy="24.3" r="0.97" fill="#cfc8ea" opacity="0.16"/><circle cx="301.9" cy="167.8" r="1.47" fill="#cfc8ea" opacity="0.36"/><circle cx="201.4" cy="164.7" r="1.57" fill="#cfc8ea" opacity="0.18"/><circle cx="401.2" cy="264.7" r="1.22" fill="#cfc8ea" opacity="0.14"/><circle cx="535.5" cy="160.9" r="1.37" fill="#cfc8ea" opacity="0.51"/><circle cx="561.1" cy="76.3" r="0.41" fill="#cfc8ea" opacity="0.25"/><circle cx="407.0" cy="173.6" r="1.38" fill="#cfc8ea" opacity="0.13"/><circle cx="560.7" cy="144.9" r="0.92" fill="#cfc8ea" opacity="0.44"/><circle cx="224.1" cy="273.1" r="1.51" fill="#cfc8ea" opacity="0.17"/><circle cx="29.8" cy="292.8" r="1.03" fill="#cfc8ea" opacity="0.43"/><circle cx="196.2" cy="46.5" r="0.97" fill="#cfc8ea" opacity="0.29"/><circle cx="565.2" cy="168.4" r="0.89" fill="#cfc8ea" opacity="0.27"/><circle cx="257.2" cy="48.8" r="1.20" fill="#cfc8ea" opacity="0.40"/><circle cx="125.3" cy="30.8" r="0.50" fill="#cfc8ea" opacity="0.43"/><circle cx="355.7" cy="67.1" r="1.24" fill="#cfc8ea" opacity="0.17"/><circle cx="273.8" cy="179.8" r="1.58" fill="#cfc8ea" opacity="0.38"/><circle cx="169.0" cy="274.6" r="1.22" fill="#cfc8ea" opacity="0.22"/><circle cx="691.7" cy="150.5" r="1.05" fill="#cfc8ea" opacity="0.17"/><circle cx="225.7" cy="295.2" r="0.71" fill="#cfc8ea" opacity="0.46"/><circle cx="672.9" cy="137.5" r="1.20" fill="#cfc8ea" opacity="0.43"/><circle cx="492.6" cy="215.0" r="1.10" fill="#cfc8ea" opacity="0.21"/><circle cx="360.3" cy="190.7" r="0.77" fill="#cfc8ea" opacity="0.38"/><circle cx="21.9" cy="157.6" r="1.39" fill="#cfc8ea" opacity="0.50"/><circle cx="550.2" cy="249.1" r="0.63" fill="#cfc8ea" opacity="0.28"/><circle cx="30.9" cy="279.2" r="0.65" fill="#cfc8ea" opacity="0.42"/><circle cx="406.5" cy="148.2" r="1.19" fill="#cfc8ea" opacity="0.44"/><path d="M 98.5719535574317 206.5 L 99.0 208.6 L 101.0 208.97468193620443 L 99.0 209.4 L 98.5719535574317 211.4 L 98.2 209.4 L 96.1 208.97468193620443 L 98.2 208.6 Z" fill="#f6e6bf" opacity="0.696440895437263"/><path d="M 142.91006077826023 268.6 L 143.5 271.7 L 146.6 272.24042903631926 L 143.5 272.8 L 142.91006077826023 275.9 L 142.3 272.8 L 139.2 272.24042903631926 L 142.3 271.7 Z" fill="#f6e6bf" opacity="0.6322704129619524"/><path d="M 452.69294918328524 145.9 L 453.3 149.1 L 456.5 149.73059906810522 L 453.3 150.3 L 452.69294918328524 153.6 L 452.1 150.3 L 448.9 149.73059906810522 L 452.1 149.1 Z" fill="#f6e6bf" opacity="0.7486065577482804"/><path d="M 19.29140543937683 247.2 L 19.9 250.2 L 22.9 250.76783149689436 L 19.9 251.3 L 19.29140543937683 254.4 L 18.7 251.3 L 15.7 250.76783149689436 L 18.7 250.2 Z" fill="#f6e6bf" opacity="0.6145438684849068"/><path d="M 267.184828273952 47.7 L 267.7 50.7 L 270.7 51.2422706708312 L 267.7 51.8 L 267.184828273952 54.7 L 266.6 51.8 L 263.7 51.2422706708312 L 266.6 50.7 Z" fill="#f6e6bf" opacity="0.7656178476056084"/><path d="M 169.0 15.9 L 401.2 264.7 L 30.9 279.2 L 406.5 148.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="302" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 296.8 L 16.5 299.5 L 19.2 300 L 16.5 300.5 L 16 303.2 L 15.5 300.5 L 12.8 300 L 15.5 299.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 296.8 L 744.5 299.5 L 747.2 300 L 744.5 300.5 L 744 303.2 L 743.5 300.5 L 740.8 300 L 743.5 299.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#whatismythemeforthisyear1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#whatismythemeforthisyear1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="262" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#whatismythemeforthisyear1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#whatismythemeforthisyear1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#whatismythemeforthisyear1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#whatismythemeforthisyear1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#whatismythemeforthisyear1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#whatismythemeforthisyear1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#whatismythemeforthisyear1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#whatismythemeforthisyear1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="262" r="20.0" fill="url(#whatismythemeforthisyear1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="262" r="15" fill="url(#whatismythemeforthisyear1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="257.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="266.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="258.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 287.4 L 280.4 289.6 L 282.6 290 L 280.4 290.4 L 280.025 292.6 L 279.6 290.4 L 277.4 290 L 279.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="294" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 287.4 L 480.4 289.6 L 482.6 290 L 480.4 290.4 L 479.975 292.6 L 479.6 290.4 L 477.4 290 L 479.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
