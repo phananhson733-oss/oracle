@@ -1,0 +1,84 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "scorpio-mbti-type": {
+      "hero": {
+        "prompt": "A dark scorpion silhouette rising from luminous deep-water layers, its form dissolving upward into swirling indigo cosmic nebula with soft gold filaments and teal aurora streaks, evoking psychological depth and silent intensity, subject centered in the safe area for square-crop safety, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A scorpion silhouette rising through dark cosmic water into gold-flecked nebula, evoking Scorpio depth and MBTI self-reflection"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Scorpio Themes Alongside MBTI Results",
+          "titleEn": "5 Steps to Compare Scorpio and MBTI Patterns",
+          "altEn": "Five-step sequence for reading Scorpio traits alongside MBTI assessment results in daily life",
+          "items": [
+            {
+              "nameEn": "Notice your disclosure pace",
+              "subEn": "Track whether you share facts quickly but hold back personal meaning until trust has grown."
+            },
+            {
+              "nameEn": "Watch conflict timing",
+              "subEn": "Note whether you address tension immediately, analyze it privately, or return after forming a clear position."
+            },
+            {
+              "nameEn": "Compare attention patterns",
+              "subEn": "Observe whether you scan for motives, practical details, emotional shifts, or logical gaps in group settings."
+            },
+            {
+              "nameEn": "Check the full chart",
+              "subEn": "Compare Scorpio placements with the Sun, Moon, and rising-sign context before making broad conclusions."
+            },
+            {
+              "nameEn": "Use an assessment as its own source",
+              "subEn": "Compare repeated choices with an MBTI result across several settings instead of relying on one online description."
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Scorpio Archetype Quick Reference",
+          "titleEn": "Scorpio Archetype Properties at a Glance",
+          "altEn": "Comparison table of four Scorpio archetype properties: Privacy, Investigation, Loyalty, and MBTI Resonance",
+          "columns": [
+            {
+              "nameEn": "Scorpio Trait",
+              "linesEn": [
+                "Privacy",
+                "Investigation",
+                "Loyalty",
+                "MBTI Resonance"
+              ]
+            },
+            {
+              "nameEn": "Core Quality",
+              "linesEn": [
+                "Selective disclosure protects what feels significant and leaves time to assess trust",
+                "Attention stays with hidden motives and patterns rather than the first explanation",
+                "Commitment deepens when a bond has earned confidence, though endings feel weightier",
+                "Descriptions may echo preferences without proving any one type"
+              ]
+            },
+            {
+              "nameEn": "How to Observe",
+              "linesEn": [
+                "Notice when trust changes what you are willing to share",
+                "Watch whether you keep asking after others accept a surface answer",
+                "Recall how you respond when a friend needs steadiness over excitement",
+                "Compare repeated choices with an actual assessment result across several settings"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

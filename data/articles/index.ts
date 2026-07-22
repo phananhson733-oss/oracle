@@ -393,6 +393,7 @@ import { jangWonyoungBirthChartEn } from "./jang-wonyoung-birth-chart";
 import { marsInAriesEn } from "./mars-in-aries";
 import { taylorSwiftTravisKelceWeddingAstrologyEn } from "./taylor-swift-travis-kelce-wedding-astrology";
 import { jenniferLopezBirthChartEn } from "./jennifer-lopez-birth-chart";
+import { scorpioMbtiTypeEn } from "./scorpio-mbti-type";
 // All articles organized by language
 
 import {
@@ -777,6 +778,7 @@ const ARTICLES_EN: WikiArticle[] = [
   marsInAriesEn,
   taylorSwiftTravisKelceWeddingAstrologyEn,
   jenniferLopezBirthChartEn,
+  scorpioMbtiTypeEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
