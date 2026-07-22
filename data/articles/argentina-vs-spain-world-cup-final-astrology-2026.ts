@@ -14,11 +14,8 @@ export const argentinaVsSpainWorldCupFinalAstrology2026En: WikiArticle = {
   lang: "en",
   keywords: [
     "argentina vs spain world cup final astrology 2026",
-    "argentina vs spain world cup final astrology 2026 world cup 2026 astrology",
-    "argentina vs spain world cup final astrology 2026 zodiac prediction",
-    "argentina vs spain world cup final astrology 2026 match astrology",
-    "argentina vs spain world cup final astrology 2026 team astrology",
-    "world cup 2026 astrology prediction"
+    "world cup 2026 astrology prediction",
+    "national birth charts"
   ],
   content: `# What the Argentina vs Spain World Cup Final Astrology 2026 Really Signals
 
@@ -120,10 +117,12 @@ Use it as symbolic reflection alongside the documented result, not as evidence f
 
 ## Related Reading
 
-- *explainer on national birth charts in mundane astrology* — how founding charts for countries are cast and read.
-- *how to read a birth chart* — the base skill behind every paired-chart comparison here.
+- [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the base skill behind every paired-chart comparison here.
+- [ascendant meaning](/en/wiki/ascendant-meaning) — context for how chart angles are interpreted.
+- [astrology houses](/en/wiki/astrology-houses) — a guide to house-based chart reading.
+- [North Node vs South Node](/en/wiki/north-node-vs-south-node) — another example of symbolic chart interpretation.
+- [square astrology](/en/wiki/square-astrology) — a reference for reading aspects without turning them into predictions.
 - [FIFA World Cup 2026](https://www.fifa.com) — official tournament coverage for the 19 July final at New York New Jersey Stadium.
-- [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the planet driving the 2026 final window.
 
 ## Take Action
 
