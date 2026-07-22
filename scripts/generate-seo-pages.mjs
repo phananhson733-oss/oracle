@@ -852,6 +852,7 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'mars-in-aries',
   'jang-wonyoung-birth-chart',
   'argentina-vs-spain-world-cup-final-astrology-2026',
   'venus-in-gemini',
