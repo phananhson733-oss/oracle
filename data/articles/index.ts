@@ -372,6 +372,7 @@ import { amIOnTheRightPathEn } from "./am-i-on-the-right-path";
 import { saturnReturnAge27En } from "./saturn-return-age-27";
 import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
 import { venusInGeminiEn } from "./venus-in-gemini";
+import { argentinaVsSpainWorldCupFinalAstrology2026En } from "./argentina-vs-spain-world-cup-final-astrology-2026";
 import { tomBradyBirthChartEn } from "./tom-brady-birth-chart";
 import { howDoIStopBurnoutEn } from "./how-do-i-stop-burnout";
 import { franceEngland3rdPlaceMatchAstrologyPredictionEn } from "./france-england-3rd-place-match-astrology-prediction";
@@ -751,6 +752,7 @@ const ARTICLES_EN: WikiArticle[] = [
   saturnReturnAge27En,
   saturnReturnInCancerEn,
   venusInGeminiEn,
+  argentinaVsSpainWorldCupFinalAstrology2026En,
   tomBradyBirthChartEn,
   howDoIStopBurnoutEn,
   franceEngland3rdPlaceMatchAstrologyPredictionEn,
