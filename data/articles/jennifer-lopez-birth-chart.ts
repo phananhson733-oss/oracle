@@ -129,7 +129,7 @@ No chart can prove why a person became famous or predict professional outcomes. 
 
 ## Take Action
 
-Build a chart from your own verified birth details with the [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) tool.
+Build a chart from your own verified birth details with the [Generate Your Free Birth Chart](/en/birth-chart-calculator) tool.
 
 You will receive a personal chart layout that places planets, signs, houses, and aspects in one view when accurate time data is available.
 
