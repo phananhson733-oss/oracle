@@ -9,7 +9,7 @@ export const argentinaVsSpainWorldCupFinalAstrology2026En: WikiArticle = {
   title: "What the Argentina vs Spain World Cup Final Astrology 2026 Really Signals",
   description: "Argentina vs Spain World Cup Final Astrology 2026 is a paired national-chart reading of the confirmed 19 July final at New York New Jersey Stadium, framed as symbolic context rather than an explanation of the result.",
   authorId: "marcus-orion",
-  date: "2026-07-17",
+  date: "2026-07-20",
   schema: "Article",
   lang: "en",
   keywords: [
