@@ -39,7 +39,7 @@ Take a concrete case. Argentina arrives as defending champion with a heavy narra
 
 ### What an honest read gives you
 
-For a reader, the payoff is reflective. The exercise quietly reveals how you personally weight a contest. Do you lean into the underdog narrative, the champion's pressure, or the broader cultural mood around a match? Whichever chart contrast you find most convincing says as much about your own storytelling instincts as it does about either team. If you want a broader timing framework, consult the site’s transit guides alongside the official match record.
+For a reader, the payoff is reflective. The exercise quietly reveals how you personally weight a contest. Do you lean into the underdog narrative, the champion's pressure, or the broader cultural mood around a match? Whichever chart contrast you find most convincing says as much about your own storytelling instincts as it does about either team. If you want the underlying method, see our guide on [how to read a birth chart](/en/wiki/how-to-read-birth-chart) alongside the official match record.
 
 ## National-Chart Reading vs Whole-Tournament Winner Picks: What Actually Differs
 
