@@ -389,6 +389,7 @@ import { marsInScorpioEn } from "./mars-in-scorpio";
 import { survivingSaturnReturnEn } from "./surviving-saturn-return";
 import { theMostCommonMbtiTypesForEachZodiacSignEn } from "./the-most-common-mbti-types-for-each-zodiac-sign";
 import { whatIsMyThemeForThisYearEn } from "./what-is-my-theme-for-this-year";
+import { jangWonyoungBirthChartEn } from "./jang-wonyoung-birth-chart";
 // All articles organized by language
 
 import {
@@ -769,6 +770,7 @@ const ARTICLES_EN: WikiArticle[] = [
   survivingSaturnReturnEn,
   theMostCommonMbtiTypesForEachZodiacSignEn,
   whatIsMyThemeForThisYearEn,
+  jangWonyoungBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
