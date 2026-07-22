@@ -53,7 +53,7 @@ Taylor Swift Travis Kelce wedding astrology draws from two adjacent practices th
 
 2. **Electional astrology.** This approach centers the event date, using moving planets and lunar conditions to describe the occasion’s symbolic mood. To get a vivid reading of one moment, you sacrifice some relationship history; an electional chart cannot replace the personal context supplied by both natal charts.
 
-For the July 3, 2026 scenario, Jupiter in Leo can be read as amplifying visibility, generosity, performance, and celebration. Mercury retrograde can draw attention to revisions, rechecks, returning conversations, or the need to clarify plans. Saturn’s altar symbolism can emphasize responsibility, formality, and the weight of promises. In a person-centered tradition associated with Dane Rudhyar, those symbols are better treated as themes people engage with than forces that issue a final judgment.
+For the July 3, 2026 wedding, Jupiter in Leo can be read as amplifying visibility, generosity, performance, and celebration. Mercury retrograde can draw attention to revisions, rechecks, returning conversations, or the need to clarify plans. Saturn’s altar symbolism can emphasize responsibility, formality, and the weight of promises. In a person-centered tradition associated with Dane Rudhyar, those symbols are better treated as themes people engage with than forces that issue a final judgment.
 
 A reader interested in the two-person chart method can compare the basics through a [synastry calculator](/en/wiki/composite-chart-calculator). Synastry compares one person’s placements with another’s, while a composite chart turns the relationship itself into the main symbolic subject.
 
