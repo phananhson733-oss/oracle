@@ -136,7 +136,7 @@ No. Saturn may be read as seriousness, tradition, responsibility, boundaries, or
 
 ## Take Action
 
-Use [Explore Astrology Forecasts](https://astrologywiki.com/forecast) to compare upcoming transits with the themes you want to observe. The forecast can give you a clearer list of timing symbols to reflect on. That perspective may help keep attention on your own choices, conversations, and priorities rather than a fixed story about what any chart must mean.
+Explore [natal chart transits](/en/wiki/natal-chart-transits) to compare upcoming transits with the themes you want to observe. The guide can give you a clearer list of timing symbols to reflect on. That perspective may help keep attention on your own choices, conversations, and priorities rather than a fixed story about what any chart must mean.
 
 ## Sources
 
