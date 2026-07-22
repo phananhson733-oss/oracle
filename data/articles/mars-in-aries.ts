@@ -138,7 +138,7 @@ Used with care, this symbolic lens can turn a familiar reaction into a clearer q
 
 This is not a clinical interpretation or mental health advice.
 
-[Explore Astrology Tools](https://astrologywiki.com/en/tools)
+*Explore Astrology Tools*
 
 ## Sources
 
