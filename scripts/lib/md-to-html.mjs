@@ -20,6 +20,7 @@ const SAFE_HREF = /^(https?:\/\/|\/(?!\/)|#|mailto:)/;
 // 链接 URL：允许一层平衡括号（如 Wikipedia House_(astrology)），不在第一个 ) 处截断。
 const LINK_RE = /\[([^\]]+)\]\(([^()\s]*(?:\([^()]*\)[^()\s]*)*)\)/g;
 const LINK_STRIP_RE = /\[([^\]]+)\]\([^()\s]*(?:\([^()]*\)[^()\s]*)*\)/g;
+const CLUSTER_LINK_MARKER_RE = /^<!-- gg-cluster-links:(?:start|end) -->$/;
 
 // 行内：先转义，再处理 [text](url) 链接（安全 href 白名单），再 **bold** / *italic*。
 // 链接先于强调，避免链接文字里的 ** 被误拆。italic 要求 * 内侧紧邻非空白，
@@ -123,6 +124,13 @@ export function mdToHtml(md) {
     }
     if (inCode) {
       pre.push(rawLine);
+      continue;
+    }
+
+    // Source-level boundaries let the linker replace its managed block idempotently.
+    // They are not article content and must not leak into crawler-visible HTML.
+    if (CLUSTER_LINK_MARKER_RE.test(line)) {
+      flushAll();
       continue;
     }
 

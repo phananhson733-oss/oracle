@@ -23,6 +23,16 @@ describe("escapeHtml", () => {
 });
 
 describe("mdToHtml — 块级", () => {
+  it("忽略集群内链的管理边界标记，保留其中的链接列表", () => {
+    expect(
+      mdToHtml(
+        "## Related Reading\n\n<!-- gg-cluster-links:start -->\n\n- [Free Birth Chart Calculator](/en/birth-chart-calculator)\n\n<!-- gg-cluster-links:end -->",
+      ),
+    ).toBe(
+      '<h2>Related Reading</h2><ul><li><a href="/en/birth-chart-calculator">Free Birth Chart Calculator</a></li></ul>',
+    );
+  });
+
   it("# / ## / ### 转标题", () => {
     expect(mdToHtml("# Title")).toBe("<h1>Title</h1>");
     expect(mdToHtml("## Sub")).toBe("<h2>Sub</h2>");

@@ -74,6 +74,19 @@ beforeEach(() => {
 });
 
 describe("WikiArticleDetailPage — tool-led 嵌入槽 (T4)", () => {
+  it("不展示集群内链管理标记，仍保留其中的相关文章链接", async () => {
+    mockArticle = {
+      ...baseArticle,
+      content:
+        "# North Node in Scorpio\n\n## Related Reading\n\n<!-- gg-cluster-links:start -->\n\n- [Free Birth Chart Calculator](/en/birth-chart-calculator)\n\n<!-- gg-cluster-links:end -->",
+    };
+    renderPage();
+
+    expect(await screen.findByRole("link", { name: "Free Birth Chart Calculator" })).toBeTruthy();
+    expect(screen.queryByText("<!-- gg-cluster-links:start -->")).toBeNull();
+    expect(screen.queryByText("<!-- gg-cluster-links:end -->")).toBeNull();
+  });
+
   it("embeddedTool 在场：渲染 ChartMiniCalc 并抑制底部 WikiChartCTA", async () => {
     mockArticle = {
       ...baseArticle,
