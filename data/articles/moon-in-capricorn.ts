@@ -114,6 +114,10 @@ Use the strengths deliberately — lean on the composure and follow-through — 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Moon In Cancer](/en/wiki/moon-in-cancer)
+- [Free Birth Chart Calculator](/en/birth-chart-calculator)
+<!-- gg-cluster-links:end -->
 - [guide to the Ascendant and how it shapes first impressions](/en/wiki/ascendant-meaning) — how your outward style can differ from this placement's inner reserve.
 - [explainer on the Moon-Saturn square aspect](/en/wiki/square-astrology) — a related tension between emotional need and self-control.
 - [Capricorn (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Capricorn_(astrology)) — the astronomical and traditional profile of the sign itself.

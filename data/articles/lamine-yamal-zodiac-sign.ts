@@ -111,6 +111,9 @@ No single sign explains talent; a Cancer Sun describes emotional and instinctual
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [guide to the north and south lunar nodes](/en/wiki/north-node-vs-south-node) — his nodal axis in Pisces and Virgo adds a growth theme worth reading beside the Sun.
 - *birth chart profile of Serena Williams* — a named athlete chart that shows how one sign sits inside a full competitive profile.
 - [Cancer (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Cancer_(astrology)) — a plain overview of the sign's traditional associations.

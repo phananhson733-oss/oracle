@@ -107,6 +107,10 @@ Only as accurate as its birth data. Without a confirmed time and date, the risin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *guide to how planet clusters work in a birth chart* — for readers who want to understand stelliums beyond the celebrity angle.
 - [overview of synastry compatibility between two charts](/en/wiki/synastry-chart-compatibility) — relevant for anyone comparing two people's placements.
 - [explainer on the trine aspect](/en/wiki/trine-in-astrology) — helps you read the "flow" aspects mentioned in this profile.

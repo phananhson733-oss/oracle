@@ -105,6 +105,9 @@ You can note the timing, look at which life area your natal Saturn governs, and 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [guide to the tenth house and career in a birth chart](/en/wiki/astrology-houses) — the return often concentrates on work and public standing.
 - *meaning of natal Saturn by sign* — shows which theme your specific return is set up to test.
 - [the lunar nodes and life direction](/en/wiki/north-node-vs-south-node) — a useful pairing for reading long-term timing alongside Saturn.

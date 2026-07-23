@@ -116,6 +116,9 @@ It runs from one birthday to the next, roughly twelve months. The themes tend to
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Solar Return Chart Really Reveals About the Year](/en/wiki/solar-return-chart)
+<!-- gg-cluster-links:end -->
 - [guide to reading transits against your natal chart](/en/wiki/how-to-read-birth-chart) — the day-by-day timing tool that pairs with the yearly snapshot.
 - *explainer on secondary progressions* — the slower inner-development method worth comparing against the annual reset.
 - *overview of major astrological return cycles* — how the yearly return sits alongside the slower Saturn and Jupiter returns.

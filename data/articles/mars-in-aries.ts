@@ -122,6 +122,10 @@ Yes. The sign describes how the Mars function tends to move, while the house des
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Mars In Scorpio](/en/wiki/mars-in-scorpio)
+- [Free Birth Chart Calculator](/en/birth-chart-calculator)
+<!-- gg-cluster-links:end -->
 [square aspects in a birth chart](/en/wiki/square-astrology) — See how friction between planets can change the timing and expression of action.
 
 [trine aspects in a birth chart](/en/wiki/trine-in-astrology) — Compare a more flowing connection between Mars and another chart factor.

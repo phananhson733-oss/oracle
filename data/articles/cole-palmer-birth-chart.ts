@@ -116,6 +116,10 @@ They turn a familiar public image into an easy way to practice symbolic interpre
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 A few nearby topics help you keep symbol and fact apart:
 
 - *guide to the meaning of a Taurus Sun in a birth chart* — unpacks the one placement this chart is actually anchored on.

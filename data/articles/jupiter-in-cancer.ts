@@ -110,6 +110,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Free Birth Chart Calculator](/en/birth-chart-calculator)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning explainer](/en/wiki/ascendant-meaning) — shows how your outward style can soften or amplify this caretaking placement.
 - [guide to the twelfth house in astrology](/en/wiki/12th-house-astrology) — the private, tender area this placement is most often confused with.
 - [how a trine aspect works in a birth chart](/en/wiki/trine-in-astrology) — helps you read whether other planets support Jupiter's flow here.

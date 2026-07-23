@@ -115,6 +115,10 @@ A Scorpio Sun is associated with focus and depth, but it does not cause a playin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) — for reading the standout tensions and harmonies noted above.
 - [guide to the twelve houses in a birth chart](/en/wiki/astrology-houses) — for placing a Sun or Moon into a life area once a birth time is known.
 - [overview of the lunar nodes in astrology](/en/wiki/north-node-vs-south-node) — for the story layer many celebrity readings lean on.

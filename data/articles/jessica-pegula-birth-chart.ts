@@ -118,6 +118,10 @@ Many blend sun-sign shortcuts with full-chart interpretation and sometimes guess
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to the north and south lunar nodes](/en/wiki/north-node-vs-south-node) — her Scorpio–Taurus nodal axis is a central symbolic theme worth understanding on its own.
 - *explainer on Mercury retrograde in a birth chart* — her natal Mercury is retrograde in Aquarius, a placement people often misread.
 - [Jessica Pegula (Wikipedia)](https://en.wikipedia.org/wiki/Jessica_Pegula)

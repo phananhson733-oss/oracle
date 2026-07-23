@@ -117,6 +117,10 @@ Usually, yes. The Moon is often used to consider emotional habits, and the risin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [South Node](/en/wiki/south-node)
+- [North Node In Gemini](/en/wiki/north-node-in-gemini)
+<!-- gg-cluster-links:end -->
 - [guide to astrological houses](/en/wiki/astrology-houses) — Adds house context when a Scorpio placement feels especially important in a specific area of life.
 - [square aspect meaning](/en/wiki/square-astrology) — Explains how a tense aspect can add detail beyond a Sun-sign comparison.
 

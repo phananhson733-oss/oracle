@@ -103,6 +103,9 @@ The Moon's sign is widely reported as Aries, but its exact degree and house depe
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *World Cup 2026 astrology prediction pillar* — the hub that places this chart in the wider tournament picture
 - *Lionel Messi zodiac sign reading* — a contrasting Cancer-Sun chart from the same series
 - *how to read Saturn transits* — the method step behind reading a season of pressure

@@ -117,6 +117,9 @@ Rahu amplifies desire in cycles rather than building steady accumulation. In Lib
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *overview of Rahu placements across the zodiac* — examines how Rahu's co-ruling role shapes nakshatra expressions across different signs, including the Libra-Scorpio axis where Swati and Vishakha sit adjacent
 - [guide to Libra in the natal chart](/en/wiki/how-to-read-birth-chart) — covers Venus-ruled Libra's orientation toward exchange, partnership, and aesthetic value that anchors this nakshatra's home sign
 - [Svati (nakshatra) (Wikipedia)](https://en.wikipedia.org/wiki/Svati_(nakshatra))

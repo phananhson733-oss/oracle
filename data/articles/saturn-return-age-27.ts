@@ -106,6 +106,9 @@ Not exactly. The window is set by each chart's natal Saturn position, so both th
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [guide to the ascendant and rising sign](/en/wiki/ascendant-meaning) — your rising sign shapes how the Saturn return chapter shows up in daily life
 - [explainer on the lunar nodes and life direction](/en/wiki/north-node-vs-south-node) — pairs well with the return's focus on identity and long-term direction
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — a neutral overview of where the idea comes from

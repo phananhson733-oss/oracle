@@ -116,6 +116,10 @@ No; compatibility reads two charts together, while this looks at one chart's own
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - [ascendant and rising sign meaning](/en/wiki/ascendant-meaning) — the rising sign sits opposite the Descendant and frames the whole axis.
 - *Saturn aspects in the natal chart* — Saturn's tension is a key symbol in boundary-testing patterns.
 - [square aspect meaning in astrology](/en/wiki/square-astrology) — squares often carry the friction this signature reflects on.

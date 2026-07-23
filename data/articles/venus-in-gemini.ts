@@ -126,6 +126,9 @@ Building in novelty helps — new places, shared learning, and real conversation
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Free Birth Chart Calculator](/en/birth-chart-calculator)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning](/en/wiki/ascendant-meaning) — your rising sign shapes how this curious, talkative style actually comes across to other people.
 - *how planetary rulers work in a birth chart* — because Gemini answers to Mercury, its ruler adds a second layer to this love style.
 - [what a Venus trine means between two charts](/en/wiki/trine-in-astrology) — see how this placement plays out in the timing and chemistry between two people.

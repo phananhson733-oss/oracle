@@ -105,6 +105,10 @@ No. Astrology here describes tendencies and themes, not fixed outcomes, and it m
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [companion reading of Cardi B's birth chart](/en/wiki/cardi-b-birth-chart) — shows how another trending figure's placements get mapped onto their public image.
 - [rising sign profiles cluster overview](/en/wiki/ascendant-meaning) — explains why the Ascendant carries so much weight for public image, the piece most people misread here.
 - [synastry and compatibility explainer](/en/wiki/synastry-chart-compatibility) — for readers curious how two charts get compared instead of one.

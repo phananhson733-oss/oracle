@@ -102,6 +102,9 @@ That reluctance is useful information, not a failure to follow the transit. A pe
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 [explanation of trine aspects](/en/wiki/trine-in-astrology) — Helpful for comparing supportive planetary contacts with Saturn’s demand for clear terms.
 
 [north node meaning](/en/wiki/north-node-vs-south-node) — Useful when considering how a career decision relates to a longer sense of direction.

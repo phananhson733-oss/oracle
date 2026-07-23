@@ -126,6 +126,10 @@ No. Astrology describes symbolic patterns only and can't forecast matches, trans
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Pisces Sun sign personality meaning* — unpacks the imaginative core placement that anchors the whole triad.
 - *Capricorn Moon sign meaning* — explains the disciplined emotional filter that most fans overlook.
 - *how planet clusters work in a birth chart* — shows why several placements should be read together, not in isolation.

@@ -116,6 +116,10 @@ The clearest signal is when financial stress and relationship tension arrive in 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Leo Rising Houses](/en/wiki/leo-rising-houses)
+- [Scorpio Rising Houses](/en/wiki/scorpio-rising-houses)
+<!-- gg-cluster-links:end -->
 - [pillar page on all twelve houses and life areas](/en/wiki/astrology-houses) — the full domain map that house ruler systems like this draw from across all rising signs
 - *guide to Venus as chart ruler for Libra rising* — how chart ruler placement shapes overall chart tone and self-presentation across the life domains
 - [house ruler overview for all twelve rising signs](/en/wiki/astrology-houses) — how the house ruler map differs across each of the twelve ascendants

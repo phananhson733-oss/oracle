@@ -165,6 +165,9 @@ Either works, and many practitioners do a little of both. Writing on the night o
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [New moon journal prompts](/en/wiki/new-moon-journal-prompts) — the intention-setting counterpart; explains where manifestation prompts actually belong in the cycle and how they pair with the full moon's release function.
 - [Moon journal](/en/wiki/moon-journal) — maps each phase's distinct inner function and how the four written tasks build on one another across the month.
 - [Full moon energy](/en/wiki/full-moon-energy) — why the full moon amplifies what these prompts are designed to surface.

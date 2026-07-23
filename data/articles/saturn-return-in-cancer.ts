@@ -111,6 +111,9 @@ No. It applies to anyone with natal Saturn in Cancer, whatever their Sun sign, a
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning and how it shapes a chart](/en/wiki/ascendant-meaning) — the ascendant shapes how this transit's changes show up to other people.
 - [how the trine aspect works in a birth chart](/en/wiki/trine-in-astrology) — supportive Saturn contacts can soften the pressure of the return.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — background on how the return is defined across every sign.

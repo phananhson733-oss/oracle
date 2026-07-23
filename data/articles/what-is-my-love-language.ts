@@ -114,6 +114,10 @@ Your placements stay fixed, but how you express them often shifts with age, refl
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 These pages go deeper on the placements behind this reading:
 
 - *guide to your Mars sign meaning* — covers the desire-and-pursuit side of how you love

@@ -111,6 +111,9 @@ The Virgo–Scorpio blend often correlates with people who peak later and build 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [Harry Kane birth chart](/en/wiki/harry-kane-birth-chart) — see how a different World Cup captain's leadership style reads in a chart.
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — more on the loyalty and emotional-anchor themes behind Modrić's Cancer Moon.
 - [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — another World Cup player read through his chart.

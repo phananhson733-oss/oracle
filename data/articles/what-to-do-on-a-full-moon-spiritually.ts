@@ -128,6 +128,9 @@ There's a full moon roughly once a month, so a monthly rhythm fits the cycle nat
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 These pages extend the practice without repeating what's already linked above:
 
 - [Full moon energy](/en/wiki/full-moon-energy) — why the peak feels amplified, and how to read which house and aspects it activates.

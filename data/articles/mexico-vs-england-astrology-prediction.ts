@@ -99,6 +99,9 @@ Yes. You can treat it purely as a lens for reflecting on pressure, loyalty, and 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *meaning of the rising sign in a birth chart* — helps you read the individual player archetypes this framing leans on.
 - [what a square aspect means in a birth chart](/en/wiki/square-astrology) — useful for spotting tension themes between two charts.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — context for the astronomical body driving the match-day backdrop.

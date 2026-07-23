@@ -111,6 +111,10 @@ Yes. The Sun in Leo sets the headline, but the Moon shapes his emotional wiring 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [breakdown of Emma Watson's zodiac sign](/en/wiki/emma-watson-zodiac-sign) — a same-series celebrity chart to compare reserved public personas
 - [composite chart calculator](/en/wiki/composite-chart-calculator) — for readers pairing two charts rather than reading one
 - A closer look at the Leo Sun placement behind this profile

@@ -108,6 +108,10 @@ Neither is objectively more accurate; they answer different questions. Sidereal 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Birth Chart Interpretation](/en/wiki/birth-chart-interpretation)
+- [Rodri Birth Chart](/en/wiki/rodri-birth-chart)
+<!-- gg-cluster-links:end -->
 - [how the twelve houses work in a birth chart](/en/wiki/astrology-houses) — helps explain why a confirmed birth time changes so much of a Vedic reading.
 - [meaning of the lunar nodes in a natal chart](/en/wiki/north-node-vs-south-node) — another placement that reframes an archetype once you know where it sits.
 - [Hindu astrology (Wikipedia)](https://en.wikipedia.org/wiki/Hindu_astrology)

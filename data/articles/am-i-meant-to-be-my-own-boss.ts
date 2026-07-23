@@ -122,6 +122,10 @@ According to NASA, Saturn takes about 29.5 years to complete one orbit. Its retu
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+- [What Is My Life Purpose](/en/wiki/what-is-my-life-purpose)
+<!-- gg-cluster-links:end -->
 - *overview of Saturn in the birth chart* — how discipline and responsibility show up in a reading of this question.
 - [guide to the sixth house of work and daily routine](/en/wiki/6th-house-astrology) — the day-to-day work area behind self-employment cues.
 - [guide to the second house of money and resources](/en/wiki/astrology-houses) — the earning-style zone tied to building your own income.

@@ -122,6 +122,9 @@ The station point is the most energetically charged moment of any retrograde per
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [Full moon energy](/en/wiki/full-moon-energy) — the underlying mechanics of why any full moon amplifies what is already building, and how to read its house and aspects.
 - [What a full moon ritual really does](/en/wiki/what-is-a-full-moon-ritual) — the release-and-reclamation structure to build this June ritual on.
 - [What to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually) — completion and release practices that fit this audit-focused window.

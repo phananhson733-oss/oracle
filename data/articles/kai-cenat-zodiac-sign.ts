@@ -105,6 +105,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *overview of Sagittarius sign traits* — a deeper look at the fire sign behind his Sun placement.
 - *guide to Sun sign meaning in astrology* — how the Sun works as the anchor of any chart.
 - [Kai Cenat (Wikipedia)](https://en.wikipedia.org/wiki/Kai_Cenat) — the verified birth date behind the chart.
