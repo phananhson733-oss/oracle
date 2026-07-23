@@ -74,15 +74,18 @@ beforeEach(() => {
 });
 
 describe("WikiArticleDetailPage — tool-led 嵌入槽 (T4)", () => {
-  it("不展示集群内链管理标记，仍保留其中的相关文章链接", async () => {
+  it("不展示集群内链管理标记，把托管链接放进独立的相关文章卡片组件", async () => {
     mockArticle = {
       ...baseArticle,
       content:
-        "# North Node in Scorpio\n\n## Related Reading\n\n<!-- gg-cluster-links:start -->\n\n- [Free Birth Chart Calculator](/en/birth-chart-calculator)\n\n<!-- gg-cluster-links:end -->",
+        "# North Node in Scorpio\n\n## Related Reading\n\n<!-- gg-cluster-links:start -->\n\n- [Free Birth Chart Calculator](/en/birth-chart-calculator)\n- [Saturn Return Guide](/en/wiki/saturn-return-guide)\n\n<!-- gg-cluster-links:end -->\n\n- A human-authored body list item",
     };
     renderPage();
 
-    expect(await screen.findByRole("link", { name: "Free Birth Chart Calculator" })).toBeTruthy();
+    expect(await screen.findAllByTestId("cluster-related-card")).toHaveLength(2);
+    expect(screen.getByRole("link", { name: "Free Birth Chart Calculator" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Saturn Return Guide" })).toBeTruthy();
+    expect(screen.getByText("A human-authored body list item")).toBeTruthy();
     expect(screen.queryByText("<!-- gg-cluster-links:start -->")).toBeNull();
     expect(screen.queryByText("<!-- gg-cluster-links:end -->")).toBeNull();
   });
