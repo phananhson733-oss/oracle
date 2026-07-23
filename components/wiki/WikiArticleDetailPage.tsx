@@ -277,6 +277,13 @@ const renderMarkdownContent = (
       tableRows = [];
     }
 
+    // Source-level boundaries let the linker replace its managed block idempotently.
+    // They are not article content and must not appear in the reader-facing page.
+    if (/^<!-- gg-cluster-links:(?:start|end) -->$/.test(trimmed)) {
+      currentIndex++;
+      continue;
+    }
+
     // Skip empty lines
     if (!trimmed) {
       currentIndex++;
