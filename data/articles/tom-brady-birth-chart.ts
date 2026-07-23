@@ -118,6 +118,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart* — another athlete chart to compare a Leo-heavy drive against.
 - [guide to the trine aspect](/en/wiki/trine-in-astrology) — how flowing aspects shape a chart's easier talents.
 - *overview of synastry and relationship compatibility* — how two charts interact when you compare people rather than read one.

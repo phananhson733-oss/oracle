@@ -103,6 +103,10 @@ It is the first Taurus passage since the late 1970s and early 1980s. Chiron's ec
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Neptune In Pisces](/en/wiki/neptune-in-pisces)
+- [Father's Day Astrology 2026](/en/wiki/father-s-day-astrology-2026)
+<!-- gg-cluster-links:end -->
 - [Chiron in the 12th house explainer](/en/wiki/chiron-in-12th-house) — how the wounded-healer theme reads through one of the chart's most private houses, useful for placing the Taurus transit against your natal Chiron
 - [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — the other slow transit shaping 2026, helpful for seeing how Chiron's retreat into Aries overlaps a wider Aries emphasis
 - [2060 Chiron (Wikipedia)](https://en.wikipedia.org/wiki/2060_Chiron)

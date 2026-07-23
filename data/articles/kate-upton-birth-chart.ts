@@ -113,6 +113,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *profile of Serena Williams's birth chart* — another well-known chart read as a full signature rather than a single sign.
 - *guide to synastry and zodiac compatibility* — how two full charts compare, once you stop reducing people to Sun signs.
 - [explainer on how the trine aspect works in a birth chart](/en/wiki/trine-in-astrology) — the next layer to read once your source data is strong enough.

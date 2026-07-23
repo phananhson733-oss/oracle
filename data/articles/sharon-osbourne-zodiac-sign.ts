@@ -108,6 +108,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *explainer on Libra Sun personality traits* — unpacks the base sign sitting under her stellium.
 - *guide to stelliums and stacked placements* — explains why three or more planets in one sign change a whole reading.
 - *comparison of Gemini Moon emotional styles* — shows how a Gemini Moon shapes verbal reflexes.

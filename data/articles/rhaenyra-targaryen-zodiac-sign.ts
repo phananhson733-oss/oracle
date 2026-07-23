@@ -114,6 +114,10 @@ No. Canon records only that she was born in 97 AC — no month, no day — and W
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Juno Astrology](/en/wiki/juno-astrology)
+- [Niko Birth Chart](/en/wiki/niko-birth-chart)
+<!-- gg-cluster-links:end -->
 - [persephone goddess](/en/wiki/persephone-goddess) — another mythic figure read through archetype rather than a birth date.
 - [north node in taurus](/en/wiki/north-node-in-taurus) — the Taurus side of the fixed-sign debate, for contrast.
 - [Rhaenyra Targaryen (Wikipedia)](https://en.wikipedia.org/wiki/Rhaenyra_Targaryen) — context on her arc across the series.

@@ -116,6 +116,9 @@ Length is not the goal. A short entry naming three specific behavioral instances
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Shadow Work Journal Prompts](/en/wiki/shadow-work-journal-prompts)
+<!-- gg-cluster-links:end -->
 - *guide to shadow work journaling and what it surfaces* — covers how shadow work prompts specifically target avoided material, extending the diagnostic approach into unconscious patterns
 - *overview of self-reflection tools and journaling approaches* — the broader landscape of structured introspection methods that prompt-based journaling belongs to
 - *comparison of journaling styles and psychological uses* — useful for understanding where diagnostic prompting fits relative to free writing, stream-of-consciousness, and gratitude journaling

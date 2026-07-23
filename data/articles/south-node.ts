@@ -114,6 +114,10 @@ It is an astronomical intersection that correlates with eclipses, so the past-li
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [North Node In Gemini](/en/wiki/north-node-in-gemini)
+- [North Node In Sagittarius](/en/wiki/north-node-in-sagittarius)
+<!-- gg-cluster-links:end -->
 - [guide to the descending node in Scorpio](/en/wiki/north-node-in-scorpio) — how this placement plays out across the Scorpio–Taurus axis.
 - *guide to the descending node in Aquarius* — the Aquarius–Leo version of the inherited-talent pattern.
 - [guide to the descending node in Sagittarius](/en/wiki/9th-house-astrology) — what the Sagittarius–Gemini axis carries forward.

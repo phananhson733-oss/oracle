@@ -109,6 +109,10 @@ Many people return to it around major decisions or node-related transits rather 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - *overview of the twelve zodiac sign meanings* — see how your North Node's sign colors the direction it points toward.
 - *guide to the Midheaven and career in astrology* — the vocational cross-check this reading leans on.
 - *explainer on how transits move through a birth chart* — for understanding when the question tends to intensify.

@@ -105,6 +105,9 @@ Many people with this placement describe carrying a quiet intensity, especially 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *explainer on Krittika nakshatra* — the nakshatra that follows Bharani in Aries, useful for seeing how the energy shifts from bearing to cutting and purifying.
 - *guide to the planet Venus in Vedic astrology* — the ruling planet behind Bharani's creative pull and its sense of value and attachment.
 - *overview of the Aries zodiac sign* — the sign Bharani occupies, which shapes how its bearer energy actually expresses itself.

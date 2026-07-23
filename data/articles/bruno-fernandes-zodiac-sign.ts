@@ -109,6 +109,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — the Cancer-sign themes that run through the World Cup field.
 - [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — another World Cup attacker read through his chart.
 - [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — the headline 2026 transit shaping the squad through the tournament.

@@ -116,6 +116,9 @@ The active window runs about two years, building toward the exact return and eas
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [explainer on the astrological houses](/en/wiki/astrology-houses) — the house holding your natal Saturn shows which life area the return reviews.
 - [guide to the ascendant and rising sign](/en/wiki/ascendant-meaning) — helps you place Saturn against the rest of your chart's structure.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — a plain summary of how the cycle is defined.

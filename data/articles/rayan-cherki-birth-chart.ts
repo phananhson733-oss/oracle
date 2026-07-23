@@ -114,6 +114,10 @@ It can offer a coherent symbolic story about a public persona, which is a curate
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [overview of the twelve astrological houses](/en/wiki/astrology-houses) — for understanding where placements land in a chart
 - [guide to major chart aspects like the trine and square](/en/wiki/trine-in-astrology) — the angles that turn placements into themes
 - *birth chart profile of Serena Williams* — another public-figure chart read as symbolic framing

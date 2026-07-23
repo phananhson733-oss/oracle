@@ -116,6 +116,40 @@ The June 11 chart acts as the tournament's symbolic birth moment, framing the op
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Mbappe Birth Chart](/en/wiki/mbappe-birth-chart)
+- [Lionel Messi Zodiac Sign](/en/wiki/lionel-messi-zodiac-sign)
+- [Cristiano Ronaldo Zodiac Sign](/en/wiki/cristiano-ronaldo-zodiac-sign)
+- [Lamine Yamal Birth Chart](/en/wiki/lamine-yamal-birth-chart)
+- [Vinicius Jr Zodiac Sign](/en/wiki/vinicius-jr-zodiac-sign)
+- [Argentina World Cup 2026 Astrology](/en/wiki/argentina-world-cup-2026-astrology)
+- [Zodiac Signs As World Cup 2026 Teams](/en/wiki/zodiac-signs-as-world-cup-2026-teams)
+- [Best Soccer Players Zodiac Sign](/en/wiki/best-soccer-players-zodiac-sign)
+- [World Cup 2026 June Astrology](/en/wiki/world-cup-2026-june-astrology)
+- [Spain World Cup 2026 Astrology](/en/wiki/spain-world-cup-2026-astrology)
+- [Mo Salah Birth Chart](/en/wiki/mo-salah-birth-chart)
+- [Jeremy Doku Birth Chart](/en/wiki/jeremy-doku-birth-chart)
+- [Luka Modric Zodiac Sign](/en/wiki/luka-modric-zodiac-sign)
+- [Bruno Fernandes Zodiac Sign](/en/wiki/bruno-fernandes-zodiac-sign)
+- [Bukayo Saka Zodiac Sign](/en/wiki/bukayo-saka-zodiac-sign)
+- [Thomas Partey Zodiac Sign](/en/wiki/thomas-partey-zodiac-sign)
+- [Marcus Rashford Zodiac Sign](/en/wiki/marcus-rashford-zodiac-sign)
+- [Folarin Balogun Birth Chart](/en/wiki/folarin-balogun-birth-chart)
+- [Darwin Nunez Zodiac Sign](/en/wiki/darwin-nunez-zodiac-sign)
+- [Jordan Vs Argentina](/en/wiki/jordan-vs-argentina)
+- [Colombia Vs Portugal](/en/wiki/colombia-vs-portugal)
+- [Morocco World Cup 2026 Astrology](/en/wiki/morocco-world-cup-2026-astrology)
+- [Kylian Mbappé Birth Chart](/en/wiki/kylian-mbapp-birth-chart)
+- [Mexico Vs England Astrology Prediction](/en/wiki/mexico-vs-england-astrology-prediction)
+- [Egypt World Cup 2026 Astrology](/en/wiki/egypt-world-cup-2026-astrology)
+- [Lamine Yamal Zodiac Sign](/en/wiki/lamine-yamal-zodiac-sign)
+- [Kylian Mbappe Birth Chart](/en/wiki/kylian-mbappe-birth-chart)
+- [Spain Vs France World Cup 2026 Astrology](/en/wiki/spain-vs-france-world-cup-2026-astrology)
+- [France Vs Spain World Cup 2026 Astrology Prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction)
+- [England Vs Argentina World Cup 2026 Astrology Prediction](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction)
+- [Argentina Vs Spain World Cup Final Astrology 2026](/en/wiki/argentina-vs-spain-world-cup-final-astrology-2026)
+- [Messi Vs Yamal Astrology](/en/wiki/messi-vs-yamal-astrology)
+<!-- gg-cluster-links:end -->
 - [player birth chart in the World Cup 2026 series](/en/wiki/how-to-read-birth-chart) — drop from the mundane view into an individual star's natal reading
 - *zodiac signs as World Cup 2026 teams* — a lighter archetypal companion to this transit analysis
 - *best soccer players by zodiac sign* — the data-side view of sign distribution among elite players

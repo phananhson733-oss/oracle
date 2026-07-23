@@ -123,6 +123,10 @@ Different sites may use guessed times, default locations, different zodiac syste
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart* — another public-figure profile that can be read with the same evidence-first boundary.
 - [square aspect meaning](/en/wiki/square-astrology) — clarifies how aspect language works when reliable birth data supports calculation.
 - [north node meaning](/en/wiki/north-node-vs-south-node) — separates a standard chart point from Sun-sign shorthand.

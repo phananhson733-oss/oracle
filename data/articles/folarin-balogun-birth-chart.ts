@@ -106,6 +106,9 @@ Balogun's chart gives one player-level case study inside a larger team story. Fo
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [guide to birth chart basics](/en/wiki/how-to-read-birth-chart) — Helpful for separating confirmed placements from birth-time-dependent details.
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — Useful for reading Cancer symbolism in tournament pressure.
 - [world cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — Places player charts inside national-team symbolism and tournament pressure.

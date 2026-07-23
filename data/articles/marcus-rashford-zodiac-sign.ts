@@ -111,6 +111,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — how the squad's charts frame the tournament
 - [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — the step-by-step approach behind synthesizing Sun, Moon, and Rising
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how other players' signs compare across the game

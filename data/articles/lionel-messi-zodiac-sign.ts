@@ -123,6 +123,9 @@ Yes. Confirm your Sun sign first, then add the Moon, rising sign, and current tr
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *World Cup 2026 astrology prediction pillar* — the hub that places this chart in the wider tournament picture
 - [free birth chart calculator](/en/birth-chart-calculator) — generate the chart data before reading your own Sun and Moon
 - *how to read your Moon sign* — the next step for any Cancer Sun reading

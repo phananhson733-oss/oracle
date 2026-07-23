@@ -103,6 +103,9 @@ Both. The Samkhya framework treats mind and body as continuous expressions of th
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [3 Gunas](/en/wiki/3-gunas)
+<!-- gg-cluster-links:end -->
 - *Ayurvedic dosha overview* — how doshas and gunas interact in Ayurvedic practice, and where the two systems should be kept distinct to preserve each one's precision
 - *sattvic diet and food guidelines* — practical detail on how food choices shift guna proportions, expanding the observational signals covered in How to Read
 - *pranayama and breathwork techniques* — breath practices most used to shift guna states, particularly from tamas toward sattvic clarity or from excess rajas toward calm

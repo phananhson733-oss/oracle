@@ -108,6 +108,9 @@ No. It is designed to be read alongside one, adding the interpretive layer about
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [Luis Díaz birth chart](/en/wiki/luis-diaz-birth-chart) — the natal chart behind Colombia's headline forward
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how star players' signs map to their playing archetypes
 - [2026 FIFA World Cup Group K (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_K) — factual grounding for the fixture itself

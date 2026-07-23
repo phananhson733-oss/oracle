@@ -105,6 +105,10 @@ No. It's an interpretive framework for temperament and style, not a forecast. Th
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Emma Watson's zodiac sign](/en/wiki/emma-watson-zodiac-sign) — pairs well as the next read in this batch of pop-culture chart studies.
 - how rising signs shape persona — useful when you want to see how an unknown birth time changes a reading.
 - [synastry compatibility overview](/en/wiki/synastry-chart-compatibility) — for readers curious how two charts interact rather than one.

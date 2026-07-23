@@ -105,6 +105,9 @@ No. Betting astrology gambles on a single signal, while symbolic reading stays w
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [ascendant and rising sign meaning](/en/wiki/ascendant-meaning) — the rising sign shapes the public identity each national chart plays out on the field.
 - [guide to how the twelve houses work in a birth chart](/en/wiki/astrology-houses) — houses show where a chart's story tends to concentrate.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — factual context for the event itself.

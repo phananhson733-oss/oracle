@@ -118,6 +118,9 @@ A lunar calendar tracks external timing — when phases occur. A structured phas
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [New moon journal prompts](/en/wiki/new-moon-journal-prompts) — expands the new moon anchoring step with a three-layer structure for intentions you can actually assess later.
 - [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — deepens the culmination review function with prompts grouped by release, gratitude, relationships, and birth chart.
 - [Full moon energy](/en/wiki/full-moon-energy) — the astrological significance behind the culmination phase and how to read which house it activates.

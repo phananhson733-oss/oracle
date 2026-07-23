@@ -126,6 +126,10 @@ Three placements — a Cancer Sun, a Pisces Moon, and a Scorpio cluster — fall
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart profile* — another public figure read the same symbolic, non-predictive way.
 - [north and south lunar nodes explainer](/en/wiki/north-node-vs-south-node) — goes deeper on the Taurus–Scorpio axis driving his growth theme.
 - [synastry compatibility calculator tool](/en/wiki/synastry-chart-compatibility) — for readers who want to compare two charts instead of reading one.

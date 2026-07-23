@@ -103,6 +103,9 @@ Jupiter spends 2025-26 in Cancer, lighting his Sun's sign and ruling his Moon, w
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *World Cup 2026 astrology themes pillar* — the hub that places this chart in the wider tournament picture
 - *Lionel Messi zodiac sign reading* — another Cancer-Sun chart from the same series
 - *tropical versus sidereal zodiac explained* — the difference behind the Cancer-or-Gemini question

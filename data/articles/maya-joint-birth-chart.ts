@@ -127,6 +127,10 @@ No. This is a symbolic, cultural reading of persona, and it cannot forecast athl
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *overview of the twelve Sun signs and their traits* — grounds the Aries piece in the broader sign system.
 - *comparison of other trending celebrity birth charts in this series* — reads more public figures with the same whole-chart method.
 - *guide to synastry and zodiac compatibility* — shows how placements like these interact between two people.

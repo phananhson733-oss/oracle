@@ -103,6 +103,9 @@ This reading uses the Western tropical national chart. A Vedic mundane reading w
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *World Cup 2026 astrology themes pillar* — the hub that places this national chart in the wider tournament picture
 - *Lionel Messi zodiac sign reading* — the Argentine talisman's own Cancer-Sun chart
 - *how to read a national or mundane chart* — the method step behind reading a country

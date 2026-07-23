@@ -104,6 +104,9 @@ Mercury rules Ashlesha, which is why it leans toward language, analysis, and rea
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *overview of the sign Cancer* — the water sign Ashlesha sits inside, which colors its whole emotional tone.
 - *explainer on the Pushya nakshatra* — the neighboring mansion in Cancer that makes Ashlesha's inward focus easier to see by contrast.
 - *guide to serpent and Naga symbolism in Vedic astrology* — unpacks the imagery this placement is most often judged by.

@@ -105,6 +105,9 @@ Astrologically it is a lens, not a prediction, and this reading makes no claim a
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [Gemini sign traits](/en/wiki/gemini) — unpacks the sign driving this whole chart in more depth.
 - [Astrology terms and chart degrees](/en/wiki/astrology-terms) — explains why a 29th-degree planet behaves the way Doku's Mars does.
 - [The Cancer sign](/en/wiki/cancer) — covers the home-and-family layer underneath the Gemini surface.

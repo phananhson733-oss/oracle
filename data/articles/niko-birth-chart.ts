@@ -101,6 +101,10 @@ IEM Cologne Major 2026 made the Aquarius breakthrough arc easy to map onto a pub
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Juno Astrology](/en/wiki/juno-astrology)
+- [Rhaenyra Targaryen Zodiac Sign](/en/wiki/rhaenyra-targaryen-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to Aquarius Sun in natal chart interpretation](/en/wiki/how-to-read-birth-chart) — maps the breakthrough-after-isolation archetype across life domains beyond competitive performance, relevant to anyone with Aquarius placements processing an extended developmental arc
 - [how to read a birth chart when birth time is unknown](/en/wiki/how-to-read-birth-chart) — explains why houses, rising sign, and some timing claims should be handled carefully for public figures
 - *fixed signs in long-form competitive arcs* — expands the fixed-sign endurance pattern behind many delayed breakthrough stories

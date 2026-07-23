@@ -114,6 +114,10 @@ Not your knowledge, but your grip on being right. The invitation is to hold your
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [South Node](/en/wiki/south-node)
+- [North Node In Sagittarius](/en/wiki/north-node-in-sagittarius)
+<!-- gg-cluster-links:end -->
 - *Gemini sign overview* — the sign your north node is slowly learning to live out day to day.
 - [Sagittarius sign overview](/en/wiki/9th-house-astrology) — the south-node energy you already carry and are learning to hold more lightly.
 - [guide to reading the nodal axis in a birth chart](/en/wiki/north-node-vs-south-node) — how to locate both nodes and read them as a single story.

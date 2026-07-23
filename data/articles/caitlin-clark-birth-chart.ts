@@ -115,6 +115,10 @@ The Aquarius stellium and Mars in Aries are the headline contrast: cool, systems
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *birth chart profile of Serena Williams* — another athlete's chart read as symbolic archetype rather than a scorecard.
 - *guide to what an Aquarius Sun means* — unpacks the sign at the center of her stellium.
 - *explainer on how planet clusters work in a birth chart* — background on stelliums like the one in her chart.

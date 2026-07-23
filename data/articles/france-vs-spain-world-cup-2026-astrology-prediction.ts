@@ -112,6 +112,9 @@ No. Betting analysis estimates probability from form and odds; this reads meanin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the foundation for reading any national or player chart in this series
 - *overview of Argentina's World Cup 2026 astrology* — a sibling read applying the same symbolic lens to another contender
 - [explainer on the ascendant and rising sign](/en/wiki/ascendant-meaning) — helps decode the "first impression" layer in any competitor's chart

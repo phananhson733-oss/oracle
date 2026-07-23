@@ -120,6 +120,10 @@ No. This is a symbolic, reflective reading, not a clinical assessment, and it sh
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [What Is My Life Purpose](/en/wiki/what-is-my-life-purpose)
+<!-- gg-cluster-links:end -->
 - [guide to Saturn square aspects](/en/wiki/square-astrology) — for a closer look at the Sun–Saturn tension behind duty-driven burnout.
 - *overview of the lunar cycle and moon phases* — for the monthly timing lens this reading leans on.
 - [Occupational burnout (Wikipedia)](https://en.wikipedia.org/wiki/Occupational_burnout) — for the mainstream definition this symbolic reading sits beside.

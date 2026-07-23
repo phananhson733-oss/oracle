@@ -114,6 +114,9 @@ Because content is often drawn from general moon-cycle libraries without disting
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — the counterpart practice for the other half of the cycle: where the new moon set plants an intention, the full moon journal prompts two weeks later take honest stock of what grew and name what to release.
 - [Moon journal](/en/wiki/moon-journal) — the four-phase practice these new moon prompts fit inside, from new moon intention through full moon evaluation to waning release.
 - [Full moon energy](/en/wiki/full-moon-energy) — what the peak this entry is later assessed against actually feels like and how to read it.

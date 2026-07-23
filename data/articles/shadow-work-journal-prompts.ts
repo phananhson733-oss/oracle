@@ -106,6 +106,9 @@ Dark side journaling is a broader category that includes writing about difficult
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Journal Prompts](/en/wiki/journal-prompts)
+<!-- gg-cluster-links:end -->
 - *pillar page on Jungian shadow complex and psychological integration* — foundational framework that the prompting approach draws on
 - *inner child journal prompts guide* — adjacent self-reflection approach with a different structural emphasis
 - *dark side journaling overview* — broader context for integrative writing practices

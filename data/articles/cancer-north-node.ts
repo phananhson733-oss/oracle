@@ -118,6 +118,10 @@ Begin with small, low-stakes moments of letting someone help, and notice the urg
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [South Node](/en/wiki/south-node)
+- [North Node In Gemini](/en/wiki/north-node-in-gemini)
+<!-- gg-cluster-links:end -->
 - *overview of the Cancer zodiac sign* — the emotional themes this node grows toward live in the sign itself.
 - *guide to the Capricorn zodiac sign* — knowing the south node's home base makes the recalibration far clearer.
 - [introduction to north node meaning across the signs](/en/wiki/north-node-vs-south-node) — see how this axis compares with the other eleven nodal placements.

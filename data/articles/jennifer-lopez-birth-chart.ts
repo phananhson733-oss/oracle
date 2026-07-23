@@ -123,6 +123,10 @@ No chart can prove why a person became famous or predict professional outcomes. 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning](/en/wiki/ascendant-meaning) — explains why an ascendant needs an accurate birth time and cannot be read from public image alone.
 
 - [guide to square aspects in a birth chart](/en/wiki/square-astrology) — helps separate confirmed sign placements from aspects that need precise degrees.

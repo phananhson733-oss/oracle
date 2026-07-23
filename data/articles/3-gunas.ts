@@ -98,6 +98,10 @@ Practice points to lighter food, steadier breathing, and a regular rhythm of sle
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [How To Balance Vata Dosha](/en/wiki/how-to-balance-vata-dosha)
+- [Sattva Rajas Tamas](/en/wiki/sattva-rajas-tamas)
+<!-- gg-cluster-links:end -->
 - *explainer on sattva, rajas, and tamas individually* — a closer look at each quality on its own and how it surfaces day to day.
 - *beginner guide to the gunas in yoga practice* — how breath, posture, diet, and daily rhythm shift the balance over time.
 - *overview of Ayurvedic body types and the doshas* — the stable-constitution model that sits next to this moment-to-moment one and is easy to confuse with it.

@@ -123,6 +123,10 @@ They describe the same natal map through two traditions: "kundli" is the term us
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 These pages go deeper on the placements behind this profile:
 
 - *explainer on the Cancer Sun sign* — unpacks the protective, cue-attuned core that anchors this chart.

@@ -131,6 +131,10 @@ No. Saturn may be read as seriousness, tradition, responsibility, boundaries, or
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart* — A celebrity birth-chart example that shows how public identity can be discussed without reducing a person to one placement.
 - *guide to north and south nodes in a birth chart* — A useful companion for readers exploring symbolic themes of growth, familiarity, and relational direction.
 

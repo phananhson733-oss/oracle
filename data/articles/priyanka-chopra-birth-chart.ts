@@ -108,6 +108,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to rising sign meaning](/en/wiki/ascendant-meaning) — why her missing birth time leaves the ascendant an open question
 - [profile of Serena Williams's birth chart](/en/wiki/serena-williams-birth-chart) — another public figure read through the whole natal map rather than one sign
 - [explainer on the north and south nodes](/en/wiki/north-node-vs-south-node) — the Cancer–Capricorn axis running through her chart

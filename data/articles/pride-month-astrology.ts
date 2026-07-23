@@ -118,6 +118,9 @@ Yes—your chart shows where June's themes of expression and belonging actually 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [England Vs Norway Astrology](/en/wiki/england-vs-norway-astrology)
+<!-- gg-cluster-links:end -->
 - [Gemini season archetype](/en/wiki/gemini) — expands the air-sign half of the month's symbolism.
 - [The Sun and Venus pairing](/en/wiki/venus) — goes deeper on the expression-meets-warmth theme.
 - [The 8th house of intimacy](/en/wiki/8th-house-meaning) — the personal placement people most often blend with this seasonal reading.

@@ -108,6 +108,9 @@ Aries contains three nakshatras: Ashwini (Ketu-ruled), Bharani (Venus-ruled), an
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *Bharani nakshatra explainer* — the adjacent Aries nakshatra ruled by Venus; useful for seeing how the same sign expresses differently under a different planetary ruler
 - [guide to Ketu and south node placements in Vedic astrology](/en/wiki/north-node-vs-south-node) — covers Ketu's broader signature and why nakshatra positions under its rulership tend toward instinctive, prior-refined expression
 - [introduction to reading nakshatras in a natal chart](/en/wiki/how-to-read-birth-chart) — foundational context for placing Ashwini within a full chart interpretation

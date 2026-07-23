@@ -109,6 +109,18 @@ In Vedic interpretation, the birth station primarily governs the dasha timing se
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Ashlesha Nakshatra](/en/wiki/ashlesha-nakshatra)
+- [Rohini Nakshatra](/en/wiki/rohini-nakshatra)
+- [Pushya Nakshatra](/en/wiki/pushya-nakshatra)
+- [Anuradha Nakshatra](/en/wiki/anuradha-nakshatra)
+- [Bharani Nakshatra](/en/wiki/bharani-nakshatra)
+- [Mrigashira Nakshatra](/en/wiki/mrigashira-nakshatra)
+- [Swati Nakshatra](/en/wiki/swati-nakshatra)
+- [Hasta Nakshatra](/en/wiki/hasta-nakshatra)
+- [Krittika Nakshatra](/en/wiki/krittika-nakshatra)
+- [Ashwini Nakshatra](/en/wiki/ashwini-nakshatra)
+<!-- gg-cluster-links:end -->
 - *guide to all 27 lunar mansions* — individual profiles of each station and its dasha implications
 - *Rohini birth station in-depth page* — spoke page for one of the most studied natal placements, Moon-ruled and growth-oriented
 - *Bharani birth station overview* — spoke page for the Venus-ruled transformation station and what its dasha period tends to surface
