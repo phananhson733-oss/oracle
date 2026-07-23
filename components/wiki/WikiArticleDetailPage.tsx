@@ -119,6 +119,7 @@ const renderMarkdownContent = (
   let inTable = false;
   let tableRows: string[] = [];
   let skippedFirstH1 = false;
+  let managedClusterLinks: string[] | null = null;
 
   const processInlineContent = (text: string): React.ReactNode => {
     const parts: React.ReactNode[] = [];
@@ -256,6 +257,51 @@ const renderMarkdownContent = (
     );
   };
 
+  const renderManagedClusterLinks = (items: string[]): React.ReactNode | null => {
+    const links = items
+      .map((item) => item.match(/^[-*+]\s+\[([^\]]+)\]\(([^()\s]+)\)$/))
+      .filter((match): match is RegExpMatchArray => Boolean(match));
+
+    if (!links.length) return null;
+
+    return (
+      <section
+        key={`cluster-related-${currentIndex}`}
+        aria-label="Related Reading"
+        className="my-6 grid gap-3 sm:grid-cols-2"
+      >
+        {links.map((match, index) => {
+          const [, title, href] = match;
+          const className = `group rounded-xl border px-4 py-3.5 font-medium no-underline transition-colors ${borderColor} ${isDark ? "bg-space-900/50 text-gold-300 hover:bg-space-800/70" : "bg-paper-100/80 text-gold-700 hover:bg-paper-200/80"}`;
+
+          return href.startsWith("/") ? (
+            <Link
+              key={`${href}-${index}`}
+              to={href}
+              data-testid="cluster-related-card"
+              className={className}
+            >
+              <span>{title}</span>
+              <span aria-hidden="true" className="ml-2 transition-transform group-hover:translate-x-0.5">→</span>
+            </Link>
+          ) : (
+            <a
+              key={`${href}-${index}`}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="cluster-related-card"
+              className={className}
+            >
+              <span>{title}</span>
+              <span aria-hidden="true" className="ml-2 transition-transform group-hover:translate-x-0.5">→</span>
+            </a>
+          );
+        })}
+      </section>
+    );
+  };
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const trimmed = line.trim();
@@ -277,9 +323,22 @@ const renderMarkdownContent = (
       tableRows = [];
     }
 
-    // Source-level boundaries let the linker replace its managed block idempotently.
-    // They are not article content and must not appear in the reader-facing page.
-    if (/^<!-- gg-cluster-links:(?:start|end) -->$/.test(trimmed)) {
+    // Source-level boundaries let the linker replace this block idempotently. The
+    // managed links render as article cards, outside the body-list link budget.
+    if (trimmed === "<!-- gg-cluster-links:start -->") {
+      managedClusterLinks = [];
+      currentIndex++;
+      continue;
+    }
+    if (trimmed === "<!-- gg-cluster-links:end -->") {
+      const cards = managedClusterLinks ? renderManagedClusterLinks(managedClusterLinks) : null;
+      if (cards) elements.push(cards);
+      managedClusterLinks = null;
+      currentIndex++;
+      continue;
+    }
+    if (managedClusterLinks) {
+      if (trimmed) managedClusterLinks.push(trimmed);
       currentIndex++;
       continue;
     }

@@ -57,6 +57,7 @@ export function mdToHtml(md) {
   let table = []; // raw "| a | b |" lines while inside a GFM table block
   let pre = null; // string[] while inside a fenced code block
   let inCode = false;
+  let managedClusterLinks = null;
 
   const flushPara = () => {
     if (!para.length) return;
@@ -105,6 +106,16 @@ export function mdToHtml(md) {
     flushQuote();
     flushTable();
   };
+  const flushManagedClusterLinks = () => {
+    if (!managedClusterLinks) return;
+    const cards = managedClusterLinks
+      .map((item) => inline(item))
+      .filter((item) => item.startsWith('<a href='))
+      .map((item) => item.replace('<a href=', '<a class="related-reading-card" href='))
+      .join('');
+    if (cards) out.push(`<section class="related-reading-cards" aria-label="Related Reading">${cards}</section>`);
+    managedClusterLinks = null;
+  };
 
   for (const rawLine of lines) {
     const line = rawLine.trim();
@@ -128,7 +139,21 @@ export function mdToHtml(md) {
     }
 
     // Source-level boundaries let the linker replace its managed block idempotently.
-    // They are not article content and must not leak into crawler-visible HTML.
+    // It renders as card links, outside the article body's ordinary list structure.
+    if (line === '<!-- gg-cluster-links:start -->') {
+      flushAll();
+      managedClusterLinks = [];
+      continue;
+    }
+    if (line === '<!-- gg-cluster-links:end -->') {
+      flushAll();
+      flushManagedClusterLinks();
+      continue;
+    }
+    if (managedClusterLinks) {
+      if (line) managedClusterLinks.push(line.replace(/^[-*+]\s+/, ''));
+      continue;
+    }
     if (CLUSTER_LINK_MARKER_RE.test(line)) {
       flushAll();
       continue;
@@ -215,6 +240,7 @@ export function mdToHtml(md) {
   }
 
   flushAll();
+  flushManagedClusterLinks();
   // 未闭合的围栏代码块：别把已积累的正文尾部静默丢掉。
   if (inCode && pre && pre.length) {
     out.push(`<pre><code>${escapeHtml(pre.join('\n'))}</code></pre>`);
