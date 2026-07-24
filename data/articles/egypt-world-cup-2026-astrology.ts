@@ -128,7 +128,7 @@ National charts are debated even among astrologers, so they are best held as a b
 
 ## Take Action
 
-Astrology here is a storytelling tool, not a diagnosis of anyone's psyche or a betting edge. This is not a clinical interpretation or mental health advice. The clearest way to understand any of this is to look at a real chart instead of a headline. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore egypt world cup 2026 astrology, and you'll have the same placements astrologers use for a team or a season sitting right in front of you. Seen that way, a tournament stops being only a scoreboard and becomes a mirror for how you carry hope, pressure, and belonging.
+Astrology here is a storytelling tool, not a diagnosis of anyone's psyche or a betting edge. This is not a clinical interpretation or mental health advice. The clearest way to understand any of this is to look at a real chart instead of a headline. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore egypt world cup 2026 astrology, and you'll have the same placements astrologers use for a team or a season sitting right in front of you. Seen that way, a tournament stops being only a scoreboard and becomes a mirror for how you carry hope, pressure, and belonging.
 
 ## Sources
 

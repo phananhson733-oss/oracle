@@ -138,7 +138,9 @@ No. This is a symbolic, cultural reading of persona, and it cannot forecast athl
 
 ## Take Action
 
-This reading is symbolic and cultural, not predictive, and it can't confirm unpublished birth-time details. This is not a clinical interpretation or mental health advice. To turn this lens on yourself, [generate your free birth chart to explore the Maya Joint birth chart method](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and map your own Sun, Moon, and Ascendant. You'll come away with a unified symbolic profile instead of scattered single-sign labels — and a clearer sense of which parts of your public and private self are quietly pulling in different directions.
+This reading is symbolic and cultural, not predictive, and it can't confirm unpublished birth-time details. This is not a clinical interpretation or mental health advice. To turn this lens on yourself, [generate your free birth chart to explore the Maya Joint birth chart method](/en/wiki/how-to-read-birth-chart) and map your own Sun, Moon, and Ascendant. You'll come away with a unified symbolic profile instead of scattered single-sign labels — and a clearer sense of which parts of your public and private self are quietly pulling in different directions.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

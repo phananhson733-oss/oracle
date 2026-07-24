@@ -133,7 +133,9 @@ The emotional charge tends to feel strongest in the first ten days, right after 
 
 ## Take Action
 
-This season works best as a mirror you hold up to your own patterns, not a forecast handed down to you. This is not a clinical interpretation or mental health advice. Pull up your own chart to see exactly which natal house this season lights up, leaving you with a clearer read on where comfort and obligation are pulling against each other this summer. [Generate your free birth chart to explore cancer season 2026 astrology](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+This season works best as a mirror you hold up to your own patterns, not a forecast handed down to you. This is not a clinical interpretation or mental health advice. Pull up your own chart to see exactly which natal house this season lights up, leaving you with a clearer read on where comfort and obligation are pulling against each other this summer. [Generate your free birth chart to explore cancer season 2026 astrology](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -269,7 +271,7 @@ export const cancerSeason2026AstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-这个季节最好被当成一面照见自身模式的镜子，而不是递到你手里的预言。这不是临床解读，也不是心理健康建议。调出你自己的星盘，看清它究竟点亮了哪一个本命宫，让你更清楚这个夏天，舒适与义务正在哪里互相拉扯。[生成你的免费出生星盘，探索 2026 巨蟹座星季](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)。
+这个季节最好被当成一面照见自身模式的镜子，而不是递到你手里的预言。这不是临床解读，也不是心理健康建议。调出你自己的星盘，看清它究竟点亮了哪一个本命宫，让你更清楚这个夏天，舒适与义务正在哪里互相拉扯。[生成你的免费出生星盘，探索 2026 巨蟹座星季](/en/wiki/how-to-read-birth-chart)。
 
 ## 参考来源
 

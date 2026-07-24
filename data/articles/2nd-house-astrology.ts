@@ -118,7 +118,9 @@ Venus is the natural ruler, linking the house to value, beauty, and what you fin
 
 ## Take Action
 
-Take one placement you found in your own 2nd house and trace it through a full week of spending, saving, and earning decisions. [Read the full Astrological Houses guide to see how the 2nd house fits the whole chart](https://astrologywiki.com/en/wiki/astrology-houses), and you walk away with a map of how this single area threads into the other eleven. Done honestly, that exercise tends to turn money from a source of background anxiety into a clear mirror of what you genuinely value.
+Take one placement you found in your own 2nd house and trace it through a full week of spending, saving, and earning decisions. [Read the full Astrological Houses guide to see how the 2nd house fits the whole chart](/en/wiki/astrology-houses), and you walk away with a map of how this single area threads into the other eleven. Done honestly, that exercise tends to turn money from a source of background anxiety into a clear mirror of what you genuinely value.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -228,7 +230,7 @@ The 2nd House（第二宫）是星盘里掌管金钱、资源与自我价值感�
 
 ## 下一步行动
 
-挑一个安静的晚上，对照自己的星盘，把第二宫的宫头星座和落入的行星先标出来。读完这份[占星十二宫总览指南](https://astrologywiki.com/zh/wiki/astrology-houses)，你会看清第二宫如何嵌进整张星盘的资源与价值脉络，而不再孤立地看它。当你能把"我拥有什么"和"我觉得自己值多少"分开来看，金钱就不再是衡量自我的标尺，而只是其中一面镜子。
+挑一个安静的晚上，对照自己的星盘，把第二宫的宫头星座和落入的行星先标出来。读完这份[占星十二宫总览指南](/zh/wiki/astrology-houses)，你会看清第二宫如何嵌进整张星盘的资源与价值脉络，而不再孤立地看它。当你能把"我拥有什么"和"我觉得自己值多少"分开来看，金钱就不再是衡量自我的标尺，而只是其中一面镜子。
 
 ## 参考来源
 

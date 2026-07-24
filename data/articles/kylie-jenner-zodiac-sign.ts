@@ -124,7 +124,9 @@ Astrology offers a symbolic framework, not a cause. The Leo–Capricorn blend is
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. Curious how a loud sign and a strategic one combine in your own chart? Generate your free birth chart to explore kylie jenner zodiac sign — it maps your Sun, Moon, and rising placements in minutes and shows how your visible drive and your quiet discipline can reinforce each other instead of pulling in opposite directions. Start with this [birth chart reading walkthrough](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+This is not a clinical interpretation or mental health advice. Curious how a loud sign and a strategic one combine in your own chart? Generate your free birth chart to explore kylie jenner zodiac sign — it maps your Sun, Moon, and rising placements in minutes and shows how your visible drive and your quiet discipline can reinforce each other instead of pulling in opposite directions. Start with this [birth chart reading walkthrough](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

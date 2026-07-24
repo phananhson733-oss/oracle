@@ -117,9 +117,11 @@ A precise Moon and rising sign need a verified birth time, which is not publicly
 
 ## Take Action
 
-Generate your free birth chart to explore Kylian Mbappé birth chart from the inside out. In a few minutes you will have your own Sun, Moon, and rising placements mapped in the same Western frame used here, plus a clearer read on where your drive runs ahead of you and where it pulls back. Start by working through the [full birth chart walkthrough](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) so the symbolism becomes a tool for self-understanding rather than a set of borrowed labels.
+Generate your free birth chart to explore Kylian Mbappé birth chart from the inside out. In a few minutes you will have your own Sun, Moon, and rising placements mapped in the same Western frame used here, plus a clearer read on where your drive runs ahead of you and where it pulls back. Start by working through the [full birth chart walkthrough](/en/wiki/how-to-read-birth-chart) so the symbolism becomes a tool for self-understanding rather than a set of borrowed labels.
 
 This is not a clinical interpretation or mental health advice.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

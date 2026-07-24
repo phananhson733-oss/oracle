@@ -125,7 +125,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Run your birth date through the [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) calculator to pin down which house your natal Saturn in Scorpio sits in. You get the exact age window and chart placement for your own return, so the audit stops being abstract and starts pointing at real commitments. Knowing which domain is under review is the difference between bracing for a vague storm and walking into a conversation you already chose to have.
+Run your birth date through the [Explore Your Saturn Return](/en/saturn-return-calculator) calculator to pin down which house your natal Saturn in Scorpio sits in. You get the exact age window and chart placement for your own return, so the audit stops being abstract and starts pointing at real commitments. Knowing which domain is under review is the difference between bracing for a vague storm and walking into a conversation you already chose to have.
 
 ## Sources
 

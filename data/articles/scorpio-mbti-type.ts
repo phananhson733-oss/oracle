@@ -134,6 +134,8 @@ Patterns become more useful when they lead to honest choices about boundaries, c
 
 This is not a clinical interpretation or mental health advice.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Dane Rudhyar — developed a person-centered approach to astrological interpretation that treats chart symbols as material for reflection.

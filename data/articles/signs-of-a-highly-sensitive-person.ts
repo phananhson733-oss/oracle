@@ -121,7 +121,9 @@ For the research framing behind the trait, the [Sensory processing sensitivity (
 
 ## Take Action
 
-Want the full picture, not just the signs? Start with the [complete guide to the highly sensitive person](https://astrologywiki.com/en/wiki/highly-sensitive-person), then read it against your own life over a full week instead of a single hard day. That turns a vague, everyone-fits checklist into a pattern you can actually see — and it trades quiet self-doubt for a kinder, steadier sense of how you are wired.
+Want the full picture, not just the signs? Start with the [complete guide to the highly sensitive person](/en/wiki/highly-sensitive-person), then read it against your own life over a full week instead of a single hard day. That turns a vague, everyone-fits checklist into a pattern you can actually see — and it trades quiet self-doubt for a kinder, steadier sense of how you are wired.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -239,7 +241,7 @@ Signs of a Highly Sensitive Person（高敏感人群特征）是**一组天生�
 
 ## 下一步行动
 
-光看信号还不够？从 [高敏感人群完整指南](https://astrologywiki.com/zh/wiki/highly-sensitive-person) 开始，你会拿到一张把概念、成因和应对都讲清楚的全景图。读完之后你或许会发现，敏感从来不是要被修掉的毛病，而是一种值得好好相处的天赋。
+光看信号还不够？从 [高敏感人群完整指南](/zh/wiki/highly-sensitive-person) 开始，你会拿到一张把概念、成因和应对都讲清楚的全景图。读完之后你或许会发现，敏感从来不是要被修掉的毛病，而是一种值得好好相处的天赋。
 
 ## 参考来源
 

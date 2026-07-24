@@ -150,10 +150,11 @@ Yes — the root chakra is the first chakra, sitting at the base of the spine an
 - [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — useful when a steadied root is ready to support confidence and will.
 - [Muladhara (Wikipedia)](https://en.wikipedia.org/wiki/Muladhara) — useful for the Sanskrit and historical background behind the modern reading.
 - [Chakra (Wikipedia)](https://en.wikipedia.org/wiki/Chakra) — places the root inside the wider framework this page draws on.
+- [Moon in Capricorn](/en/wiki/moon-in-capricorn) — a Saturn-ruled, grounding placement that echoes root-chakra themes
 
 ## Take Action
 
-Start by reading your own baseline for a week: each evening, note whether the day's unease was a passing stressor or that deeper not-safe undercurrent. That gives you a simple map of when your foundation actually wobbles versus when life is just loud for a while. [See the full Chakra System overview](https://astrologywiki.com/en/wiki/chakra-system-overview) to place the root chakra at the base of the sequence — because knowing where safety lives in your body is the first step toward feeling steady enough to grow everywhere above it.
+Start by reading your own baseline for a week: each evening, note whether the day's unease was a passing stressor or that deeper not-safe undercurrent. That gives you a simple map of when your foundation actually wobbles versus when life is just loud for a while. [See the full Chakra System overview](/en/wiki/chakra-system-overview) to place the root chakra at the base of the sequence — because knowing where safety lives in your body is the first step toward feeling steady enough to grow everywhere above it.
 
 ## Disclaimer
 
@@ -268,7 +269,7 @@ The Root Chakra（海底轮，又称根轮，梵文 Muladhara）是脉轮（chak
 
 ## 下一步行动
 
-想看清海底轮在整套系统里的位置，可以接着读[脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)，把七个脉轮按顺序铺开看一遍。你会看到海底轮稳稳坐在底层，是其他能量往上展开的地基；理解了这条顺序，你对自己"先稳住根基、再谈别的"的节奏，也会多一分笃定。
+想看清海底轮在整套系统里的位置，可以接着读[脉轮系统总览](/en/wiki/chakra-system-overview)，把七个脉轮按顺序铺开看一遍。你会看到海底轮稳稳坐在底层，是其他能量往上展开的地基；理解了这条顺序，你对自己"先稳住根基、再谈别的"的节奏，也会多一分笃定。
 
 ## 参考来源
 

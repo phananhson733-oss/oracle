@@ -116,7 +116,9 @@ No. The house it falls in, and any planets nearby, shape how noticeable and pers
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. For a broader view of the timing themes around this 2026 node shift, [Explore Astrology Forecasts](https://astrologywiki.com/forecast). The forecast hub lets you compare this nodal movement with other transit-focused material without treating any one signal as a promise.
+This is not a clinical interpretation or mental health advice. For a broader view of the timing themes around this 2026 node shift, [Explore Astrology Forecasts](/forecast). The forecast hub lets you compare this nodal movement with other transit-focused material without treating any one signal as a promise.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

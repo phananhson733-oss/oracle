@@ -110,7 +110,9 @@ It is the tenth of the twenty-seven nakshatras and the first to fall in Leo, occ
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Moon and nakshatra placement, and read your chart as an interpretive map rather than a verdict. You get a clear view of where the planets fell at your birth and, more usefully for Magha's lesson, a starting point for asking what you inherited versus what you built — the same question this star asks of anyone who carries it.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Moon and nakshatra placement, and read your chart as an interpretive map rather than a verdict. You get a clear view of where the planets fell at your birth and, more usefully for Magha's lesson, a starting point for asking what you inherited versus what you built — the same question this star asks of anyone who carries it.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -223,7 +225,7 @@ Pitrs 就是祖先群灵——一脉血缘里的列祖列宗——是这一宿�
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你自己的月亮和星宿位置，把星盘当成一张可供解读的地图、而不是一纸判决来读。你会清楚看到出生那一刻行星落在哪里，更有用的是——对玛迦星宿这一课而言——它给了你一个起点，去问问自己：哪些是继承来的，哪些是自己建起来的，而这正是这颗星向每一个背着它的人发出的同一个问题。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出你自己的月亮和星宿位置，把星盘当成一张可供解读的地图、而不是一纸判决来读。你会清楚看到出生那一刻行星落在哪里，更有用的是——对玛迦星宿这一课而言——它给了你一个起点，去问问自己：哪些是继承来的，哪些是自己建起来的，而这正是这颗星向每一个背着它的人发出的同一个问题。
 
 ## 参考来源
 

@@ -121,10 +121,12 @@ No, and it makes no such claim. This is a symbolic, interpretive tradition meant
 - [explainer on the ascendant and rising sign](/en/wiki/ascendant-meaning) — the chart's outward "first impression," much like a nation's public reputation.
 - [guide to major chart aspects like trines and squares](/en/wiki/astrology-terms) — how the angles between planets add ease or tension to any comparison.
 - [Mundane astrology (Wikipedia)](https://en.wikipedia.org/wiki/Mundane_astrology) — neutral encyclopedic context for the branch this page draws on.
+- [the World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) — the full tournament overview tracing Jupiter's Cancer-to-Leo shift across the qualified nations
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
 
 ## Take Action
 
-Ready to turn this national mirror inward? [Generate your free birth chart to explore England vs Norway astrology](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you'll get your own houses, signs, and placements laid out the same way this comparison maps two countries. Seeing your chart beside these archetypes often makes your personal balance of reserve and openness far easier to recognize — and to work with on your own terms. This is not a clinical interpretation or mental health advice.
+Ready to turn this national mirror inward? [Generate your free birth chart to explore England vs Norway astrology](/en/wiki/how-to-read-birth-chart), and you'll get your own houses, signs, and placements laid out the same way this comparison maps two countries. Seeing your chart beside these archetypes often makes your personal balance of reserve and openness far easier to recognize — and to work with on your own terms. This is not a clinical interpretation or mental health advice.
 
 ## Sources
 

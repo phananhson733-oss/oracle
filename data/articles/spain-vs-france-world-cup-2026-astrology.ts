@@ -129,10 +129,13 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 - [guide to rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — how a chart's rising sign shapes the "character" this reading leans on.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — neutral context on the event itself.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the planet whose orbit sets the twelve-year cycle referenced above.
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the transit backdrop shaping Spain's campaign
+- [the Kylian Mbappe birth chart](/en/wiki/kylian-mbappe-birth-chart) — a full symbolic read of France's forward
+- [the France vs Spain astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — the match-window transits weighed for both sides
 
 ## Take Action
 
-Ready to see the symbolism for yourself? [Generate your free birth chart to explore Spain vs France World Cup 2026 astrology](https://astrologywiki.com/en/birth-chart-calculator), and you get a full map of the placements and transits behind the reading. Once you can spot your own signatures, the rivalry stops being something that happens to you and becomes a story you can actually read.
+Ready to see the symbolism for yourself? [Generate your free birth chart to explore Spain vs France World Cup 2026 astrology](/en/birth-chart-calculator), and you get a full map of the placements and transits behind the reading. Once you can spot your own signatures, the rivalry stops being something that happens to you and becomes a story you can actually read.
 
 ## Sources
 

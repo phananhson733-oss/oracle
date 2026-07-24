@@ -115,10 +115,11 @@ Come back into the body: feel your feet, breathe low into your belly, and do som
 - [guide to crown chakra healing and grounding practices](/en/wiki/chakra-system-overview) — practical ways to settle an overactive or ungrounded crown.
 - [chakra test](/en/wiki/chakra-test) — self-assess whether your crown reads grounded, open, or floating, and how the lower centers compare.
 - [Sahasrara (Wikipedia)](https://en.wikipedia.org/wiki/Sahasrara) — for the traditional symbolism behind the modern reading.
+- [the Uranus opposition](/en/wiki/uranus-opposition) — a perspective-shifting transit that echoes crown-chakra themes
 
 ## Take Action
 
-Pick one grounding check from this page — feet flat on the floor, three slow breaths into the belly — and run it the next time you catch yourself floating up and away from the moment. Do this for a week and you may notice the real difference between a crown that is genuinely open and one that is simply untethered. [See the full Chakra System overview to place the crown chakra in the whole sequence](https://astrologywiki.com/en/wiki/chakra-system-overview) to understand why a balanced crown sits at the top of a grounded structure, rather than floating free of it.
+Pick one grounding check from this page — feet flat on the floor, three slow breaths into the belly — and run it the next time you catch yourself floating up and away from the moment. Do this for a week and you may notice the real difference between a crown that is genuinely open and one that is simply untethered. [See the full Chakra System overview to place the crown chakra in the whole sequence](/en/wiki/chakra-system-overview) to understand why a balanced crown sits at the top of a grounded structure, rather than floating free of it.
 
 ## Sources
 
@@ -235,7 +236,7 @@ export const crownChakraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-顺着[完整脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)把七个脉轮从尾椎到头顶整条看一遍，你会清楚地看到顶轮处在序列的最末端、也是最高处；而一旦明白它只是整条能量主线的收尾、不是一个可以孤立追求的高点，所谓"打开顶轮"就会从一个玄乎的执念，变成对自己当下是清明还是脱节的踏实觉察。
+顺着[完整脉轮系统总览](/en/wiki/chakra-system-overview)把七个脉轮从尾椎到头顶整条看一遍，你会清楚地看到顶轮处在序列的最末端、也是最高处；而一旦明白它只是整条能量主线的收尾、不是一个可以孤立追求的高点，所谓"打开顶轮"就会从一个玄乎的执念，变成对自己当下是清明还是脱节的踏实觉察。
 
 ## 参考来源
 

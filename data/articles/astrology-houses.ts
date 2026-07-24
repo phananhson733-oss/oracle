@@ -124,7 +124,9 @@ These guides extend the framework of The Astrological Houses without repeating w
 
 ## Take Action
 
-Ready to see the syntax of The Astrological Houses in motion? Read the [8th House guide](https://astrologywiki.com/en/wiki/8th-house-meaning) to watch one house unfold across a working chart, with sign and planet layered into a single reading. You'll come away with a repeatable method you can run on any placement, and a steadier sense that your chart maps patterns to work with, not a fate to brace against.
+Ready to see the syntax of The Astrological Houses in motion? Read the [8th House guide](/en/wiki/8th-house-meaning) to watch one house unfold across a working chart, with sign and planet layered into a single reading. You'll come away with a repeatable method you can run on any placement, and a steadier sense that your chart maps patterns to work with, not a fate to brace against.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -251,7 +253,7 @@ export const astrologyHousesZh: WikiArticle = {
 
 ## 下一步行动
 
-挑一个宫位，看它在真实星盘里怎么一步步展开——[读懂第八宫如何在一张完整星盘里铺陈开来](https://astrologywiki.com/zh/wiki/8th-house-meaning)。你会拿到一套可复用的单宫读法，把「宫位＋星座＋行星」拼成一句完整的话；而当你能为一块生活领域读出这句话，你看的就不再是命运的判词，而是自己正在经营的人生现场。
+挑一个宫位，看它在真实星盘里怎么一步步展开——[读懂第八宫如何在一张完整星盘里铺陈开来](/zh/wiki/8th-house-meaning)。你会拿到一套可复用的单宫读法，把「宫位＋星座＋行星」拼成一句完整的话；而当你能为一块生活领域读出这句话，你看的就不再是命运的判词，而是自己正在经营的人生现场。
 
 ## 参考来源
 

@@ -118,7 +118,9 @@ The 4th house holds your private roots while the 10th holds your public role and
 
 ## Take Action
 
-Begin by finding the sign on your IC and any planet sitting in your 4th house, then read them as your emotional foundation rather than your address. [Read the full Astrological Houses guide to see how the 4th house anchors the chart](https://astrologywiki.com/en/wiki/astrology-houses) to place this single house inside the full twelve-house map. Done with care, this turns a vague feeling of where you come from into a clear, usable sense of the belonging you want to build next.
+Begin by finding the sign on your IC and any planet sitting in your 4th house, then read them as your emotional foundation rather than your address. [Read the full Astrological Houses guide to see how the 4th house anchors the chart](/en/wiki/astrology-houses) to place this single house inside the full twelve-house map. Done with care, this turns a vague feeling of where you come from into a clear, usable sense of the belonging you want to build next.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -231,7 +233,7 @@ The 4th House（第四宫）是本命盘里位于星盘底部的宫位，也叫�
 
 ## 下一步行动
 
-读懂单独一个第四宫还不够，把它放回整张宫位地图里，才看得清这条情感的根怎么和其它生活领域咬合。花十分钟读完[占星十二宫完整指南](https://astrologywiki.com/zh/wiki/astrology-houses)，看第四宫如何为整张星盘锚定地基。你大概会发现：那些你以为是"性格"的反应，有一部分其实是从你早年那个"家"里长出来的。
+读懂单独一个第四宫还不够，把它放回整张宫位地图里，才看得清这条情感的根怎么和其它生活领域咬合。花十分钟读完[占星十二宫完整指南](/zh/wiki/astrology-houses)，看第四宫如何为整张星盘锚定地基。你大概会发现：那些你以为是"性格"的反应，有一部分其实是从你早年那个"家"里长出来的。
 
 ## 参考来源
 

@@ -134,6 +134,8 @@ Ready to see these patterns in your own chart? [Explore Astrology Tools](/en/too
 
 This is not a clinical interpretation or mental health advice.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — shaped the psychological reading of Saturn as structure and limits that this framing draws on

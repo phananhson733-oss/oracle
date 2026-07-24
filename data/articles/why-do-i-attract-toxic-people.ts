@@ -127,7 +127,7 @@ No; compatibility reads two charts together, while this looks at one chart's own
 
 ## Take Action
 
-Map your own seventh-house axis instead of guessing at the pattern. [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator), and you'll see the Descendant sign, its ruling planet, and any seventh-house contacts laid out in one place. From there, the pattern stops being a mystery you carry and becomes something you can name, reflect on, and slowly rewrite through the choices you make.
+Map your own seventh-house axis instead of guessing at the pattern. [Generate Your Free Birth Chart](/en/birth-chart-calculator), and you'll see the Descendant sign, its ruling planet, and any seventh-house contacts laid out in one place. From there, the pattern stops being a mystery you carry and becomes something you can name, reflect on, and slowly rewrite through the choices you make.
 
 This is not a clinical interpretation or mental health advice.
 

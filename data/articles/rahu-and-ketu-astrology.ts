@@ -110,7 +110,9 @@ In the Vimshottari Dasha system the Rahu major period runs 18 years and the Ketu
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find where Rahu and Ketu fall in your own chart and read the karmic axis for yourself. You get a clear view of the two nodes and the houses they activate, and, more usefully, a way to ask where you are reaching outward and where you already stand on solid ground before treating either node as a verdict.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find where Rahu and Ketu fall in your own chart and read the karmic axis for yourself. You get a clear view of the two nodes and the houses they activate, and, more usefully, a way to ask where you are reaching outward and where you already stand on solid ground before treating either node as a verdict.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -223,7 +225,7 @@ export const rahuAndKetuAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，看看罗睺与计都落在你自己星盘的哪里，亲手把这条业力轴读一遍。你会清楚看到这两个交点，以及它们激活的宫位，更有用的是，在把任何一个交点当成判决之前，先养成一个习惯：问问自己在哪里向外伸手，又在哪里早已站在稳固的地上。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，看看罗睺与计都落在你自己星盘的哪里，亲手把这条业力轴读一遍。你会清楚看到这两个交点，以及它们激活的宫位，更有用的是，在把任何一个交点当成判决之前，先养成一个习惯：问问自己在哪里向外伸手，又在哪里早已站在稳固的地上。
 
 ## 参考来源
 

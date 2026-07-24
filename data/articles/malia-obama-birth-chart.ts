@@ -117,7 +117,9 @@ A familiar public figure gives you a shared reference point for practicing symbo
 
 Astrology reads best as a mirror, not a verdict, and this symbolic profile is offered in that spirit. This is not a clinical interpretation or mental health advice.
 
-[Generate your free birth chart to explore Malia Obama birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and map the same Sun, Moon, and Ascendant placements in your own wheel. You'll come away with a full chart you can compare side by side—a small exercise that tends to make famous charts feel less like headlines and more like a shared language for reading yourself.
+[Generate your free birth chart to explore Malia Obama birth chart](/en/wiki/how-to-read-birth-chart) and map the same Sun, Moon, and Ascendant placements in your own wheel. You'll come away with a full chart you can compare side by side—a small exercise that tends to make famous charts feel less like headlines and more like a shared language for reading yourself.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

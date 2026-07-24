@@ -109,7 +109,9 @@ Pluto is the modern ruler through its link to Scorpio, while Mars carries the ol
 
 ## Take Action
 
-Once you have traced your 8th-house ruler and matched it to a real situation, set it back inside the larger map: [Read the full Astrological Houses guide to place this house within the whole chart](https://astrologywiki.com/en/wiki/astrology-houses). That single view shows how this hidden sector connects to the eleven houses around it, and seeing the connection is often the moment a lifelong blind spot starts to feel like a resource you can use deliberately.
+Once you have traced your 8th-house ruler and matched it to a real situation, set it back inside the larger map: [Read the full Astrological Houses guide to place this house within the whole chart](/en/wiki/astrology-houses). That single view shows how this hidden sector connects to the eleven houses around it, and seeing the connection is often the moment a lifelong blind spot starts to feel like a resource you can use deliberately.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -228,7 +230,7 @@ export const eighthHouseMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-单看一个宫位还不够。点开 [阅读完整的占星十二宫总览](https://astrologywiki.com/zh/wiki/astrology-houses)，把第八宫放回整张星盘里对照，你会拿到一张「十二宫各管什么」的全景图；当你看清它和上升点、和第二宫如何彼此牵动，那块一直待在盲区里的力量，才真正变成你能主动调用的部分。
+单看一个宫位还不够。点开 [阅读完整的占星十二宫总览](/zh/wiki/astrology-houses)，把第八宫放回整张星盘里对照，你会拿到一张「十二宫各管什么」的全景图；当你看清它和上升点、和第二宫如何彼此牵动，那块一直待在盲区里的力量，才真正变成你能主动调用的部分。
 
 ## 参考来源
 

@@ -119,7 +119,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Curious how your own chart compares to a symbolic profile like this one? [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) to map your Sun, Moon, and rising in a couple of minutes. You'll walk away with a personal snapshot of the same archetypes we read here — and a clearer sense of where your own symbolic story ends and your choices begin.
+Curious how your own chart compares to a symbolic profile like this one? [Generate Your Free Birth Chart](/en/birth-chart-calculator) to map your Sun, Moon, and rising in a couple of minutes. You'll walk away with a personal snapshot of the same archetypes we read here — and a clearer sense of where your own symbolic story ends and your choices begin.
 
 ## Sources
 

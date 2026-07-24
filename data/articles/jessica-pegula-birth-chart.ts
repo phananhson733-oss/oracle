@@ -129,9 +129,11 @@ Many blend sun-sign shortcuts with full-chart interpretation and sometimes guess
 
 ## Take Action
 
-Ready to turn this practice inward instead of reading someone else's placements? [Learn how to read your own birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and you can map your own planetary signs the same way — Pisces, Aquarius, Scorpio, and everything in between, laid side by side. Seeing your placements in one place makes it easier to reflect on how you express, protect, and understand yourself, and to notice which single label you may have been leaning on too hard.
+Ready to turn this practice inward instead of reading someone else's placements? [Learn how to read your own birth chart](/en/wiki/how-to-read-birth-chart) and you can map your own planetary signs the same way — Pisces, Aquarius, Scorpio, and everything in between, laid side by side. Seeing your placements in one place makes it easier to reflect on how you express, protect, and understand yourself, and to notice which single label you may have been leaning on too hard.
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

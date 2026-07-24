@@ -119,7 +119,9 @@ News cycles pull attention to familiar figures, and readers use a celebrity char
 
 ## Take Action
 
-Start by [generating your own free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) the same way you'd sketch a Tobey Maguire birth chart. You'll get your full placement map — Sun, Moon, and, if you know your birth time, your rising sign and houses — laid out as one picture. From there, the real payoff isn't prediction; it's seeing where your private temperament and your public persona pull in different directions, and choosing which one you want to lead with.
+Start by [generating your own free birth chart](/en/wiki/how-to-read-birth-chart) the same way you'd sketch a Tobey Maguire birth chart. You'll get your full placement map — Sun, Moon, and, if you know your birth time, your rising sign and houses — laid out as one picture. From there, the real payoff isn't prediction; it's seeing where your private temperament and your public persona pull in different directions, and choosing which one you want to lead with.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

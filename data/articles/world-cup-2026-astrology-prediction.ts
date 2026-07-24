@@ -154,10 +154,17 @@ The June 11 chart acts as the tournament's symbolic birth moment, framing the op
 - *zodiac signs as World Cup 2026 teams* — a lighter archetypal companion to this transit analysis
 - *best soccer players by zodiac sign* — the data-side view of sign distribution among elite players
 - [transit_events cluster overview of 2026 planetary transits](/en/wiki/transits) — the wider sky behind the tournament window
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
+- [Germany's World Cup 2026 team astrology](/en/wiki/germany-world-cup-2026-astrology-team) — the collective chart themes for the German squad
+- [Scotland's World Cup 2026 Saturn-return astrology](/en/wiki/scotland-world-cup-2026-astrology-saturn-return) — how a national Saturn return frames Scotland's campaign
+- [the Scotland vs Brazil astrology read](/en/wiki/scotland-brazil-world-cup-astrology) — a match-level look at the two contrasting national charts
+- [Cancer zodiac at the 2026 World Cup](/en/wiki/cancer-zodiac-world-cup-2026) — how the Cancer-Leo backdrop reads for Cancer-Sun players
+- [the Vinicius Jr birth chart](/en/wiki/vinicius-jr-birth-chart-astrology) — a detailed reading of the Brazil winger's chart
+- [the Germany World Cup players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — individual chart reads for the German squad
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore world cup 2026 astrology prediction, then read your own Jupiter placement alongside the tournament notes across this series. You get a clear view of where Jupiter in Cancer falls in your chart and a transit principle you can carry from match to match — and, more quietly, a sharper sense of how to tell a favored condition apart from a foregone conclusion.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore world cup 2026 astrology prediction, then read your own Jupiter placement alongside the tournament notes across this series. You get a clear view of where Jupiter in Cancer falls in your chart and a transit principle you can carry from match to match — and, more quietly, a sharper sense of how to tell a favored condition apart from a foregone conclusion.
 
 ## Sources
 
@@ -274,7 +281,7 @@ export const worldCup2026AstrologyPredictionZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)来探索2026世界杯占星预测，再把你自己的木星落点和这个系列里的赛事笔记放在一起读。你会清楚看到木星巨蟹落在你星盘的哪里，也会拿到一条能从一场比赛带到下一场的过运原则——更安静地，得到一种更敏锐的分辨：把被偏向的条件，和一个早已注定的结论分开。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)来探索2026世界杯占星预测，再把你自己的木星落点和这个系列里的赛事笔记放在一起读。你会清楚看到木星巨蟹落在你星盘的哪里，也会拿到一条能从一场比赛带到下一场的过运原则——更安静地，得到一种更敏锐的分辨：把被偏向的条件，和一个早已注定的结论分开。
 
 ## 参考来源
 

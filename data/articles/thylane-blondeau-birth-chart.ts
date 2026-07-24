@@ -117,7 +117,9 @@ No. Astrology here describes tendencies and themes, not fixed outcomes, and it m
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice; it is a cultural lens for reflecting on persona and identity. The most useful next step is to stop reading someone else's placements and map your own — you'll get a full picture of your Sun, Moon, and rising sign, and a clearer read on which parts of your public image you actually chose and which just showed up. [Generate your free birth chart to explore Thylane Blondeau birth chart.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+This is not a clinical interpretation or mental health advice; it is a cultural lens for reflecting on persona and identity. The most useful next step is to stop reading someone else's placements and map your own — you'll get a full picture of your Sun, Moon, and rising sign, and a clearer read on which parts of your public image you actually chose and which just showed up. [Generate your free birth chart to explore Thylane Blondeau birth chart.](/en/wiki/how-to-read-birth-chart)
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

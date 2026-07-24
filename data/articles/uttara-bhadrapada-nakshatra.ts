@@ -116,7 +116,9 @@ Generate your free birth chart to see where Uttara Bhadrapada sits in your own p
 
 Your chart shows precisely which planets, if any, fall within this mansion's range in Pisces and how Saturn's discipline activates across specific houses. That map turns the still-water symbolism into something concrete — a picture of where your own depth tends to gather, what conditions draw it out, and how the placement's restrained strength may be working quietly in your life.
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -230,7 +232,7 @@ export const uttaraBhadrapadaNakshatraZh: WikiArticle = {
 
 ## 下一步行动
 
-想看看这片巴德拉帕达月宿落在你自己星盘的哪个位置，可以[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。星盘会精确显示，哪些行星（如果有的话）落进了这片双鱼里的月宿区间，以及土星的纪律如何在具体宫位上被激活。那张图会把静水的象征变成可触的东西——一幅关于你自己的深度倾向于在哪里聚集、什么条件把它引出来、以及这份克制的力量如何在你生活里悄悄运作的图景。
+想看看这片巴德拉帕达月宿落在你自己星盘的哪个位置，可以[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)。星盘会精确显示，哪些行星（如果有的话）落进了这片双鱼里的月宿区间，以及土星的纪律如何在具体宫位上被激活。那张图会把静水的象征变成可触的东西——一幅关于你自己的深度倾向于在哪里聚集、什么条件把它引出来、以及这份克制的力量如何在你生活里悄悄运作的图景。
 
 ## 参考来源
 

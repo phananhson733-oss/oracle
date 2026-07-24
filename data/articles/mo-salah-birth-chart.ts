@@ -117,7 +117,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore mo salah birth chart, and get a clear map of where your own Sun, Moon, and current transits sit. Placing your chart next to Salah's shows how the same Gemini communicator theme can surface in any life, on or off the pitch. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see which part of your own story is asking to be told this season.
+Generate your free birth chart to explore mo salah birth chart, and get a clear map of where your own Sun, Moon, and current transits sit. Placing your chart next to Salah's shows how the same Gemini communicator theme can surface in any life, on or off the pitch. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see which part of your own story is asking to be told this season.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

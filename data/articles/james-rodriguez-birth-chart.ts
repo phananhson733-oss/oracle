@@ -107,7 +107,9 @@ Jupiter transits Cancer until around 30 June 2026, briefly overlapping his Sun s
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun placement the way this piece reads Rodriguez's — as a theme of purpose and creative drive rather than a verdict. The chart gives you a clear view of where your Sun sits, and, more quietly, a practice of telling meaningful pattern apart from prediction.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun placement the way this piece reads Rodriguez's — as a theme of purpose and creative drive rather than a verdict. The chart gives you a clear view of where your Sun sits, and, more quietly, a practice of telling meaningful pattern apart from prediction.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -223,7 +225,7 @@ export const jamesRodriguezBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-去[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读哈梅斯那样找到你自己的太阳——把它读成一段关于目的与创造驱力的主题，而非一纸判词。你会看到自己的太阳落在何处，也学到一种方法：把一个有意义的模式，和一则不该托付给行星的预言分辨开来。
+去[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读哈梅斯那样找到你自己的太阳——把它读成一段关于目的与创造驱力的主题，而非一纸判词。你会看到自己的太阳落在何处，也学到一种方法：把一个有意义的模式，和一则不该托付给行星的预言分辨开来。
 
 ## 参考来源
 

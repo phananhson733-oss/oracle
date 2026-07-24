@@ -127,7 +127,9 @@ Length is not the goal. A short entry naming three specific behavioral instances
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore how structured self-reflection connects to your natal placements. Your chart maps the recurring patterns in your psychological and relational life — the same patterns that diagnostic prompting is designed to surface. When you can see those patterns on paper, well-framed journal prompts can do more work than an entire themed list.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore how structured self-reflection connects to your natal placements. Your chart maps the recurring patterns in your psychological and relational life — the same patterns that diagnostic prompting is designed to surface. When you can see those patterns on paper, well-framed journal prompts can do more work than an entire themed list.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

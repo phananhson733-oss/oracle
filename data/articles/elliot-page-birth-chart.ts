@@ -128,7 +128,9 @@ Structurally, no — every chart uses the same signs, planets, and houses. The d
 
 ## Take Action
 
-Ready to move from reading a celebrity's chart to reading your own? [Learn how to read your own birth chart step by step](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising in one place — the same structure used here — so you can start spotting the quiet patterns that shape how you show up in the world.
+Ready to move from reading a celebrity's chart to reading your own? [Learn how to read your own birth chart step by step](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising in one place — the same structure used here — so you can start spotting the quiet patterns that shape how you show up in the world.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

@@ -118,7 +118,9 @@ Returns can look intense on paper without producing intense events. The check is
 
 ## Take Action
 
-Calculate your free birth chart to map your solar return ascendant and house overlay. The chart you get back becomes the reference layer for every annual return you read — without it, the year's themes float free of the natal promises they are meant to activate, and a year of self-awareness work loses its anchor. Start with the [free birth chart calculator and reading guide](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and keep that chart open the next time you cast a return.
+Calculate your free birth chart to map your solar return ascendant and house overlay. The chart you get back becomes the reference layer for every annual return you read — without it, the year's themes float free of the natal promises they are meant to activate, and a year of self-awareness work loses its anchor. Start with the [free birth chart calculator and reading guide](/en/wiki/how-to-read-birth-chart) and keep that chart open the next time you cast a return.
+
+Curious how your coming year sets up? Try the [solar return calculator](/en/solar-return-calculator) with your birth details.
 
 ## Sources
 
@@ -240,7 +242,7 @@ export const solarReturnChartZh: WikiArticle = {
 
 ## 下一步行动
 
-计算你的免费本命盘，以此建立太阳回归盘的上升点与宫位叠加的参照基础。没有本命盘作为锚点，年度主题便会脱离它本应激活的本命潜能而飘移，一整年的自我觉察实践也会失去坐标。从[免费本命盘计算与解读指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)开始，下次起回归盘时，把它开在旁边一起阅读。
+计算你的免费本命盘，以此建立太阳回归盘的上升点与宫位叠加的参照基础。没有本命盘作为锚点，年度主题便会脱离它本应激活的本命潜能而飘移，一整年的自我觉察实践也会失去坐标。从[免费本命盘计算与解读指南](/zh/wiki/how-to-read-birth-chart)开始，下次起回归盘时，把它开在旁边一起阅读。
 
 ## 参考来源
 

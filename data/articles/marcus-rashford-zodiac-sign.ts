@@ -120,7 +120,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore marcus rashford zodiac sign. You'll get the same Sun, Moon, and Rising layout this page used to read his placements, set out for your own chart in a few minutes. Seeing those three anchors side by side is often where the guarded-calm-over-hidden-depth pattern stops being abstract and starts describing someone you actually know — maybe yourself. [Start with our guide to reading your birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore marcus rashford zodiac sign. You'll get the same Sun, Moon, and Rising layout this page used to read his placements, set out for your own chart in a few minutes. Seeing those three anchors side by side is often where the guarded-calm-over-hidden-depth pattern stops being abstract and starts describing someone you actually know — maybe yourself. [Start with our guide to reading your birth chart](/en/wiki/how-to-read-birth-chart).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

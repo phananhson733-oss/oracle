@@ -128,6 +128,8 @@ This is not a clinical interpretation or mental health advice.
 
 Run your own chart and locate your Moon to see how this placement actually plays out for you. *Explore Astrology Tools* maps your Moon's sign, house, and aspects in one place — and once you can see why you guard your feelings the way you do, you can choose when that steadiness protects you and when it is worth letting someone in.
 
+To locate your own Moon, run your details through the [moon sign calculator](/en/moon-sign-calculator).
+
 ## Sources
 
 - *Brihat Parashara Hora Shastra*, the classical Sanskrit compendium attributed to the sage Parashara that sets out the Jyotish framework for Moon and nakshatra interpretation.

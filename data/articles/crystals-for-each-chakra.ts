@@ -105,10 +105,17 @@ Hold it or rest it near the matching center while you sit quietly and notice tha
 ## Related Reading
 
 - [guide to the seven chakra colors and meanings](/en/wiki/chakra-system-overview) — see how color theory connects to each energy center before you shop by hue.
+- [the root chakra meaning](/en/wiki/root-chakra-meaning) — grounding, safety, and the base of the system
+- [the sacral chakra meaning](/en/wiki/sacral-chakra-meaning) — creativity, feeling, and emotional flow
+- [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — confidence and personal-power practices
+- [the heart chakra meaning](/en/wiki/heart-chakra-meaning) — connection, compassion, and balance
+- [the throat chakra meaning](/en/wiki/throat-chakra-meaning) — voice, truth, and expression
+- [the ajna (third-eye) chakra](/en/wiki/ajna-chakra) — insight, intuition, and inner sight
+- [the crown chakra meaning](/en/wiki/crown-chakra-meaning) — the top-of-system centre of perspective and meaning
 
 ## Take Action
 
-Take the free Chakra Test to find which energy center is most under- or over-active right now, so you can pair your first stone with the center that needs it instead of guessing from a color chart: [Take the Chakra Test](https://astrologywiki.com/en/wiki/chakra-test). You walk away with a clear starting point, and over time that habit of reading your own state turns crystal work into a steady practice of self-awareness rather than a shopping list.
+Take the free Chakra Test to find which energy center is most under- or over-active right now, so you can pair your first stone with the center that needs it instead of guessing from a color chart: [Take the Chakra Test](/en/wiki/chakra-test). You walk away with a clear starting point, and over time that habit of reading your own state turns crystal work into a steady practice of self-awareness rather than a shopping list.
 
 ## Sources
 
@@ -222,7 +229,7 @@ export const crystalsForEachChakraZh: WikiArticle = {
 
 ## 下一步行动
 
-先做一次免费的脉轮测试，看看此刻哪个能量中心最偏弱或最偏旺，这样你就能把头一块石头配给真正需要它的中心，而不是对着色卡猜：[去做脉轮测试](https://astrologywiki.com/zh/wiki/chakra-test)。你会拿到一个清楚的起点；时间一长，这种"先读自己状态"的习惯，会把玩石头慢慢变成一份稳定的自我觉察练习，而不是一张购物清单。
+先做一次免费的脉轮测试，看看此刻哪个能量中心最偏弱或最偏旺，这样你就能把头一块石头配给真正需要它的中心，而不是对着色卡猜：[去做脉轮测试](/zh/wiki/chakra-test)。你会拿到一个清楚的起点；时间一长，这种"先读自己状态"的习惯，会把玩石头慢慢变成一份稳定的自我觉察练习，而不是一张购物清单。
 
 ## 参考来源
 

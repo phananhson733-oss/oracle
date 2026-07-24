@@ -116,7 +116,9 @@ No. A sign offers a symbolic lens on style and tendencies, not a forecast of mat
 
 Astrology here is an interpretive framework, not a measurement of ability. This is not a clinical interpretation or mental health advice.
 
-Generate your free birth chart to explore the Thomas Partey zodiac sign and the placements behind it. [Open the birth-chart walkthrough](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to map which of your own layers are confirmed by your birth time and which stay theoretical — proof that honest self-knowledge starts with knowing exactly what you can verify.
+Generate your free birth chart to explore the Thomas Partey zodiac sign and the placements behind it. [Open the birth-chart walkthrough](/en/wiki/how-to-read-birth-chart) to map which of your own layers are confirmed by your birth time and which stay theoretical — proof that honest self-knowledge starts with knowing exactly what you can verify.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

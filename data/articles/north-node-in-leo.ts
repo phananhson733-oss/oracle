@@ -111,7 +111,9 @@ The nodes are calculated points rather than visible bodies, so an accurate birth
 
 ## Take Action
 
-The Leo North Node only becomes concrete once you find it in your own chart. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to locate your own nodes by sign and see whether the Leo-Aquarius axis runs through it. You finish with a concrete picture of where your growth edge sits rather than an abstract rule, and a clearer sense of why the pull toward the background and the pull toward a personal voice are two ends of the same developmental question.
+The Leo North Node only becomes concrete once you find it in your own chart. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your own nodes by sign and see whether the Leo-Aquarius axis runs through it. You finish with a concrete picture of where your growth edge sits rather than an abstract rule, and a clearer sense of why the pull toward the background and the pull toward a personal voice are two ends of the same developmental question.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -227,7 +229,7 @@ export const northNodeInLeoZh: WikiArticle = {
 
 ## 下一步行动
 
-狮子座北交点只有在你自己的星盘里被找到时，才会变得具体。[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，按星座定位你自己的交点，看看狮子—水瓶这条轴是否从中穿过。你最后得到的，是一幅关于自己成长边缘落在何处的具体图景，而不是一条抽象的规则，也会更清楚地明白：那股向后台退去的拉力，和那股向个人声音走去的拉力，本就是同一道成长课题的两端。
+狮子座北交点只有在你自己的星盘里被找到时，才会变得具体。[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，按星座定位你自己的交点，看看狮子—水瓶这条轴是否从中穿过。你最后得到的，是一幅关于自己成长边缘落在何处的具体图景，而不是一条抽象的规则，也会更清楚地明白：那股向后台退去的拉力，和那股向个人声音走去的拉力，本就是同一道成长课题的两端。
 
 ## 参考来源
 

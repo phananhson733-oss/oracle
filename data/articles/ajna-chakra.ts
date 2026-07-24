@@ -103,12 +103,13 @@ You can. Many people treat the brow center as a vocabulary for self-awareness, a
 - [explainer on the crown chakra](/en/wiki/crown-chakra-meaning) — the center directly above, useful for telling open awareness apart from grounded discernment.
 - [chakra system overview](/en/wiki/chakra-system-overview) — the hub that places the brow center sixth in the full sequence.
 - [chakra test](/en/wiki/chakra-test) — self-assess whether your brow center reads clear, scattered, or blocked alongside the other six.
+- [Neptune in Pisces](/en/wiki/neptune-in-pisces) — a boundary-dissolving, intuitive placement resonant with third-eye themes
 
 ## Take Action
 
 Take the Chakra Test to see whether your ajna chakra reads as open, blocked, or overactive. You'll come away with a simple snapshot of which state is running right now, plus a clearer sense of when to trust a quiet inner read versus when you are only overthinking a decision.
 
-[Take the Chakra Test](https://astrologywiki.com/en/wiki/chakra-test)
+[Take the Chakra Test](/en/wiki/chakra-test)
 
 ## Sources
 
@@ -219,7 +220,7 @@ Ajna Chakra（眉心轮，又称第三眼脉轮）是脉轮（chakra，西方瑜
 
 来做一次脉轮测试，看看你的眉心轮此刻读起来是开放、受阻，还是过度活跃。你会拿到一份此刻状态的简单快照，也会更清楚：什么时候该信任那份安静的内在直觉，什么时候你其实只是在把一个决定想得太多。
 
-[做一次脉轮测试](https://astrologywiki.com/zh/wiki/chakra-test)
+[做一次脉轮测试](/zh/wiki/chakra-test)
 
 ## 参考来源
 

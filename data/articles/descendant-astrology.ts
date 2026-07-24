@@ -104,7 +104,9 @@ Not exactly. It describes a pattern you tend to repeat, often built from traits 
 
 ## Take Action
 
-Cast your full birth chart and locate your Descendant sign and seventh-house cusp using the steps in the [full guide to reading a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You will come away with the exact sign on your relationship axis and a short list of the traits it points to, and once you see them as your own rather than someone else's job to carry, your patterns in love start to read less like bad luck and more like a map you can work with.
+Cast your full birth chart and locate your Descendant sign and seventh-house cusp using the steps in the [full guide to reading a birth chart](/en/wiki/how-to-read-birth-chart). You will come away with the exact sign on your relationship axis and a short list of the traits it points to, and once you see them as your own rather than someone else's job to carry, your patterns in love start to read less like bad luck and more like a map you can work with.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -215,7 +217,7 @@ export const descendantAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-排出你的完整出生星盘，照着[完整的出生星盘解读指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)里的步骤，定位你的下降点星座和第七宫宫头。你会拿到关系轴线上那个确切的星座，外加它指向的一小串特质；当你把这些看成自己的、而不是别人份内要替你扛的事，你在感情里的那些模式，就会从「运气不好」慢慢读成一张你能拿来用的地图。
+排出你的完整出生星盘，照着[完整的出生星盘解读指南](/zh/wiki/how-to-read-birth-chart)里的步骤，定位你的下降点星座和第七宫宫头。你会拿到关系轴线上那个确切的星座，外加它指向的一小串特质；当你把这些看成自己的、而不是别人份内要替你扛的事，你在感情里的那些模式，就会从「运气不好」慢慢读成一张你能拿来用的地图。
 
 ## 参考来源
 

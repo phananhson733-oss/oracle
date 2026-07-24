@@ -104,7 +104,9 @@ No. The chart marks a window and a theme, not an outcome. Practitioners read the
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to locate your natal Uranus and the house it sits in, so you can read your own window with the timing kept in honest perspective. You get a clear view of the polarity the transit will eventually engage and a reminder that a chart marks a pattern, not a fate, and, more usefully, a habit of asking what a life domain is asking for before reading any transit as a forecast.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your natal Uranus and the house it sits in, so you can read your own window with the timing kept in honest perspective. You get a clear view of the polarity the transit will eventually engage and a reminder that a chart marks a pattern, not a fate, and, more usefully, a habit of asking what a life domain is asking for before reading any transit as a forecast.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -214,7 +216,7 @@ export const uranusOppositionZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，定位你本命天王星所在的宫位，把它正对面那块领域读出来，让时间这件事保持在诚实的视角里。你会清楚看到这场过运迟早会触动的那一极，也会记得星盘标的是一个图案、不是一份命运；更有用的是，养成一个习惯：在把任何过运读成预报之前，先问一句那块人生领域到底在要求什么。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，定位你本命天王星所在的宫位，把它正对面那块领域读出来，让时间这件事保持在诚实的视角里。你会清楚看到这场过运迟早会触动的那一极，也会记得星盘标的是一个图案、不是一份命运；更有用的是，养成一个习惯：在把任何过运读成预报之前，先问一句那块人生领域到底在要求什么。
 
 ## 参考来源
 

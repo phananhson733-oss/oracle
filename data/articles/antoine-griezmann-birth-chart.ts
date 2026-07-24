@@ -117,7 +117,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Run your own placements through the [free birth chart calculator](https://astrologywiki.com/en/birth-chart-calculator) to generate your free birth chart to explore Antoine Griezmann birth chart. You will get a full map of your Sun, Moon, and planetary signs laid out the same way, and a clearer sense of where your own drive, adaptability, and steadiness pull against one another — the same tension any layered chart is really trying to show you.
+Run your own placements through the [free birth chart calculator](/en/birth-chart-calculator) to generate your free birth chart to explore Antoine Griezmann birth chart. You will get a full map of your Sun, Moon, and planetary signs laid out the same way, and a clearer sense of where your own drive, adaptability, and steadiness pull against one another — the same tension any layered chart is really trying to show you.
 
 ## Sources
 

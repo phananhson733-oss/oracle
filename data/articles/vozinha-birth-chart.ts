@@ -107,7 +107,9 @@ No. Saturn's sextile from Aries and Jupiter's sextile after it enters Leo on Jun
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads a veteran keeper's — as a temperament and a set of themes rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a gentler way to meet a long-delayed chance with composure rather than waiting on the planets to call it.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads a veteran keeper's — as a temperament and a set of themes rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a gentler way to meet a long-delayed chance with composure rather than waiting on the planets to call it.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -205,7 +207,7 @@ export const vozinhaBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-读懂沃齐尼亚的出生星盘之后，不妨[生成你自己的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像本文读一位老将门将那样读你自己的太阳——把它当成一种气质、一组主题，而不是一纸判决。你会清楚看到太阳所在的星座，以及此刻正触及它的行运，从而用更温和的方式，去用沉稳迎接一个迟来已久的机会，而不是干等行星替你拍板。
+读懂沃齐尼亚的出生星盘之后，不妨[生成你自己的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像本文读一位老将门将那样读你自己的太阳——把它当成一种气质、一组主题，而不是一纸判决。你会清楚看到太阳所在的星座，以及此刻正触及它的行运，从而用更温和的方式，去用沉稳迎接一个迟来已久的机会，而不是干等行星替你拍板。
 
 ## 参考来源
 

@@ -130,7 +130,7 @@ The aim is not a fixed label but a clearer view of what you protect, what you en
 
 This is not a clinical interpretation or mental health advice.
 
-[Generate Your Free Birth Chart](https://www.astrologywiki.com/en/birth-chart-calculator)
+[Generate Your Free Birth Chart](/en/birth-chart-calculator)
 
 ## Sources
 

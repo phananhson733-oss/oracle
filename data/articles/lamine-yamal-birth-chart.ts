@@ -113,7 +113,9 @@ A Virgo rising depends on an exact birth time that is not firmly public. Treat a
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Lamine Yamal's birth chart — as a direction of growth rather than a label. You get a clear view of your Sun's sign and ruler and the transits touching it now, and, more quietly, a way to tell a trustworthy instinct apart from a fear wearing its clothes, long after this tournament is over.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Lamine Yamal's birth chart — as a direction of growth rather than a label. You get a clear view of your Sun's sign and ruler and the transits touching it now, and, more quietly, a way to tell a trustworthy instinct apart from a fear wearing its clothes, long after this tournament is over.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -235,7 +237,7 @@ export const lamineYamalBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读亚马尔的星盘那样去读你自己的太阳——把它当成一个成长方向而非标签。你会清楚看到太阳的星座与守护星、以及此刻触及它的过运，更安静地，得到一种把"可信的直觉"与"披着直觉外衣的恐惧"分开的方式，在这届赛事早已结束之后依然管用。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读亚马尔的星盘那样去读你自己的太阳——把它当成一个成长方向而非标签。你会清楚看到太阳的星座与守护星、以及此刻触及它的过运，更安静地，得到一种把"可信的直觉"与"披着直觉外衣的恐惧"分开的方式，在这届赛事早已结束之后依然管用。
 
 ## 参考来源
 

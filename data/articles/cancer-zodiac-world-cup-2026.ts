@@ -98,10 +98,11 @@ No. This is symbolic and educational astrology that times themes, not fixtures. 
 ## Related Reading
 
 - [Harry Kane birth chart, a Leo contrast](/en/wiki/harry-kane-birth-chart) — the Leo-Sun captain whose Jupiter-in-Leo "season" arrives for the July knockouts, the mirror image of the Cancer group-stage window
+- [Cancer rising](/en/wiki/cancer-rising) — a Moon-ruled, protective signature resonant with white-aura clarity
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun sign and read it the way this roundup reads the Cancer World Cup Lens, as a reflective archetype rather than a verdict. You get a clear view of where your Sun sits, and, more quietly, a way to recognise the home-and-loyalty themes of Cancer wherever they show up in your own year.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun sign and read it the way this roundup reads the Cancer World Cup Lens, as a reflective archetype rather than a verdict. You get a clear view of where your Sun sits, and, more quietly, a way to recognise the home-and-loyalty themes of Cancer wherever they show up in your own year.
 
 ## Sources
 
@@ -206,7 +207,7 @@ export const cancerZodiacWorldCup2026Zh: WikiArticle = {
 
 ## 下一步行动
 
-去[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座，再像这篇读巨蟹座世界杯视角那样去读它——读成一个供反思的原型，而非一纸判决。你会看到自己的太阳落在哪里，也得到一种方法，去在自己一年的任何角落，认出巨蟹那份"家与忠诚"的主题。
+去[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座，再像这篇读巨蟹座世界杯视角那样去读它——读成一个供反思的原型，而非一纸判决。你会看到自己的太阳落在哪里，也得到一种方法，去在自己一年的任何角落，认出巨蟹那份"家与忠诚"的主题。
 
 ## 参考来源
 

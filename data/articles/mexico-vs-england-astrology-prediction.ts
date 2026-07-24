@@ -106,12 +106,13 @@ Yes. You can treat it purely as a lens for reflecting on pressure, loyalty, and 
 - [what a square aspect means in a birth chart](/en/wiki/square-astrology) — useful for spotting tension themes between two charts.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — context for the astronomical body driving the match-day backdrop.
 - [Astrology (Wikipedia)](https://en.wikipedia.org/wiki/Astrology) — grounding for why this is framed as symbolism, not forecasting.
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
 
 ## Take Action
 
 This is not a clinical interpretation or mental health advice.
 
-The fixture is over, but the broader question of how people interpret pressure, identity, and timing remains useful. For a Mexico vs England astrology prediction perspective that stays grounded in symbolism rather than claims about a result, [read the guide to how to read a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+The fixture is over, but the broader question of how people interpret pressure, identity, and timing remains useful. For a Mexico vs England astrology prediction perspective that stays grounded in symbolism rather than claims about a result, [read the guide to how to read a birth chart](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 

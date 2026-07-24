@@ -126,7 +126,9 @@ These prompts are for personal reflection only. This is not a clinical interpret
 
 ## Take Action
 
-Ready to see where this sits in your chart? Mapping your placements shows the exact sign, house, and aspects shaping this wound — turning a vague "not enough" into something workable. [Generate your free birth chart to explore Chiron in Taurus](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Ready to see where this sits in your chart? Mapping your placements shows the exact sign, house, and aspects shaping this wound — turning a vague "not enough" into something workable. [Generate your free birth chart to explore Chiron in Taurus](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

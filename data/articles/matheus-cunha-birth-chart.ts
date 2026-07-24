@@ -113,7 +113,9 @@ In the Jyotish tradition, each planet reaches a maturation point at a specific a
 
 ## Take Action
 
-Generate your free birth chart to see your own Sun placement, ruling planet, and current planetary transits — the same framework used in this analysis. Visit [how to read a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) for a step-by-step guide that shows you exactly what to look for in your own chart. Reading your chart's symbolic themes, like the resource theme Jupiter in Cancer touches for Gemini Suns in a solar-chart technique, turns astrology from a label into a practical lens for self-reflection rather than a forecast.
+Generate your free birth chart to see your own Sun placement, ruling planet, and current planetary transits — the same framework used in this analysis. Visit [how to read a birth chart](/en/wiki/how-to-read-birth-chart) for a step-by-step guide that shows you exactly what to look for in your own chart. Reading your chart's symbolic themes, like the resource theme Jupiter in Cancer touches for Gemini Suns in a solar-chart technique, turns astrology from a label into a practical lens for self-reflection rather than a forecast.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -230,7 +232,7 @@ export const matheusCunhaBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-读完这份星盘解读后，下一步是生成你自己的免费出生星盘，看看你自己的太阳定位、守护星以及当下的行星行运——这正是本文分析所用的同一套框架。访问[如何解读出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，获取一份手把手的指南，告诉你在自己的星图里到底该看什么。把你星盘里的象征性主题读一遍——就像木星在巨蟹座为双子座太阳在太阳星座技法里触及的那个资源主题——会把占星从一个标签，变成一面用于自我反思的实用镜子，而非一则预报。
+读完这份星盘解读后，下一步是生成你自己的免费出生星盘，看看你自己的太阳定位、守护星以及当下的行星行运——这正是本文分析所用的同一套框架。访问[如何解读出生星盘](/zh/wiki/how-to-read-birth-chart)，获取一份手把手的指南，告诉你在自己的星图里到底该看什么。把你星盘里的象征性主题读一遍——就像木星在巨蟹座为双子座太阳在太阳星座技法里触及的那个资源主题——会把占星从一个标签，变成一面用于自我反思的实用镜子，而非一则预报。
 
 ## 参考来源
 

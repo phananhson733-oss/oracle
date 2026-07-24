@@ -121,7 +121,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Ready to stop reading someone else's sky and map your own? [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see your Sun, Moon, and planet placements laid out side by side. Reading a celebrity is good practice — but the chart actually worth understanding is yours.
+Ready to stop reading someone else's sky and map your own? [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see your Sun, Moon, and planet placements laid out side by side. Reading a celebrity is good practice — but the chart actually worth understanding is yours.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

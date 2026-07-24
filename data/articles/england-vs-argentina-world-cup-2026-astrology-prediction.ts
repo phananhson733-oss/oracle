@@ -114,10 +114,13 @@ No. Betting astrology gambles on a single signal, while symbolic reading stays w
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the astronomical body driving the year's headline transit.
 
 This is not a clinical interpretation or mental health advice.
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
+- [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the squad's Sun-sign profile and title-defence themes
+- [Messi's World Cup record astrology](/en/wiki/messi-world-cup-record-astrology) — the long-cycle transits behind his tournament history
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator) to explore england vs argentina world cup 2026 astrology prediction. In seconds you'll get a full map of your Sun, Moon, and rising — the same building blocks these national charts are read through. From there you may notice how you personally carry rivalry, hope, and the long wait before a match that actually matters to you.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore england vs argentina world cup 2026 astrology prediction. In seconds you'll get a full map of your Sun, Moon, and rising — the same building blocks these national charts are read through. From there you may notice how you personally carry rivalry, hope, and the long wait before a match that actually matters to you.
 
 ## Sources
 

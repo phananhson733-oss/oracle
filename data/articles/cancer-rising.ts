@@ -107,7 +107,9 @@ Yes. The Moon's sign, house, and aspects all modify the Cancer mask, so a chart 
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Ascendant and the exact sign and house of your Moon, the chart ruler that does the real work behind a Cancer rising. With the placement in front of you, the shifting first impression stops looking like inconsistency and starts reading as a clear, traceable signature you can follow back to a single moving planet.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Ascendant and the exact sign and house of your Moon, the chart ruler that does the real work behind a Cancer rising. With the placement in front of you, the shifting first impression stops looking like inconsistency and starts reading as a clear, traceable signature you can follow back to a single moving planet.
+
+To confirm your ascendant before reading on, try the [rising sign calculator](/en/rising-sign-calculator) with your birth details.
 
 ## Sources
 
@@ -217,7 +219,7 @@ export const cancerRisingZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你自己的上升，以及你月亮所在的确切星座与宫位——那颗命主星才是巨蟹上升背后真正干活的角色。当配置摆在你眼前，那个变动的第一印象就不再像反复无常，而开始读起来像一道清晰、可追溯的签名，你能顺着它一路回溯到一颗移动的行星。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出你自己的上升，以及你月亮所在的确切星座与宫位——那颗命主星才是巨蟹上升背后真正干活的角色。当配置摆在你眼前，那个变动的第一印象就不再像反复无常，而开始读起来像一道清晰、可追溯的签名，你能顺着它一路回溯到一颗移动的行星。
 
 ## 参考来源
 

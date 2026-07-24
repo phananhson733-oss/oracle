@@ -103,10 +103,11 @@ No. Transits time broad year-level themes, not specific fixtures, and whether Me
 ## Related Reading
 
 - [Argentina World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the collective lens behind the nation Messi has carried through five tournaments, and the argentina world cup astrology themes for the next cycle
+- [the Messi vs Yamal astrology comparison](/en/wiki/messi-vs-yamal-astrology) — the generational chart contrast between the two forwards
 
 ## Take Action
 
-The same messi world cup record astrology method works on your own chart, so [generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and find your own Sun and Saturn, then read them the way this piece reads Messi's, as a cycle of earned maturity rather than a verdict. You get a clear view of where Saturn sits in your chart and roughly when its returns fall, and, more quietly, a way to tell a long-delayed goal apart from a limit you can still grow past.
+The same messi world cup record astrology method works on your own chart, so [generate your free birth chart](/en/wiki/how-to-read-birth-chart) and find your own Sun and Saturn, then read them the way this piece reads Messi's, as a cycle of earned maturity rather than a verdict. You get a clear view of where Saturn sits in your chart and roughly when its returns fall, and, more quietly, a way to tell a long-delayed goal apart from a limit you can still grow past.
 
 ## Sources
 
@@ -215,7 +216,7 @@ export const messiWorldCupRecordAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-同样这套梅西世界杯战绩占星的读法也能用在你自己的星盘上，所以不妨[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找到属于你的太阳与土星，再像这篇读梅西那样去读它们——把它当成一轮磨出来的成熟周期，而不是一句盖棺定论。你会清楚看到土星落在你盘中的何处，以及它的回归大致何时降临；更安静的一层收获是，你能学会把一个迟来的目标，和一个你仍可以成长越过的限制区分开来。
+同样这套梅西世界杯战绩占星的读法也能用在你自己的星盘上，所以不妨[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，找到属于你的太阳与土星，再像这篇读梅西那样去读它们——把它当成一轮磨出来的成熟周期，而不是一句盖棺定论。你会清楚看到土星落在你盘中的何处，以及它的回归大致何时降临；更安静的一层收获是，你能学会把一个迟来的目标，和一个你仍可以成长越过的限制区分开来。
 
 ## 参考来源
 

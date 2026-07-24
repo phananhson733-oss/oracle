@@ -138,6 +138,8 @@ Red can brighten to orange when creative energy activates, or deepen to burgundy
 - [yellow aura explainer](/en/wiki/yellow-aura-meaning) — sibling read for confidence and identity energy, often confused with red's directness.
 - [guide to the root chakra](/en/wiki/chakra-system-overview) — background on the energy center most associated with red, helpful for grounding the reading in tradition.
 - [comparison with violet aura](/en/wiki/purple-aura-meaning) — counterweight read for people anxious about aura color rankings, showing why the spectrum is not a hierarchy.
+- [the root chakra meaning](/en/wiki/root-chakra-meaning) — grounding, safety, and the base of the system
+- [Mars in Aries](/en/wiki/mars-in-aries) — a Mars-ruled, vital-drive placement that echoes red-aura energy
 
 ## Take Action
 

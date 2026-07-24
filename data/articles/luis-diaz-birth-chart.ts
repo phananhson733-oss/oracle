@@ -107,7 +107,9 @@ Saturn is Capricorn's traditional ruler, and its transit through Aries from 2025
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun the way this piece reads Díaz's, as a theme of vocation rather than a verdict. You get a clear view of where your Sun sits, and alongside it a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun the way this piece reads Díaz's, as a theme of vocation rather than a verdict. You get a clear view of where your Sun sits, and alongside it a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -222,7 +224,7 @@ export const luisDiazBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-去[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读迪亚斯那样找到你自己的太阳——把它读成一段关于目的的主题，而非一纸判词。你会看到自己的太阳落在何处，也学到一种方法：把一个有意义的模式，和一则不该托付给行星的预言分辨开来。
+去[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读迪亚斯那样找到你自己的太阳——把它读成一段关于目的的主题，而非一纸判词。你会看到自己的太阳落在何处，也学到一种方法：把一个有意义的模式，和一则不该托付给行星的预言分辨开来。
 
 ## 参考来源
 

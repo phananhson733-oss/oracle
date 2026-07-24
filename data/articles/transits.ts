@@ -133,7 +133,7 @@ To read transits more deeply, follow these threads:
 
 ## Take Action
 
-Pick one slow-moving planet in the current sky and find where it falls in your own chart, then watch how its transits unfold against your fixed points. Start with the [full guide to reading a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), then track which planets are currently crossing it. Do this for a few weeks and the sky stops feeling like fate happening to you and starts feeling like a clock you can finally read.
+Pick one slow-moving planet in the current sky and find where it falls in your own chart, then watch how its transits unfold against your fixed points. Start with the [full guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), then track which planets are currently crossing it. Do this for a few weeks and the sky stops feeling like fate happening to you and starts feeling like a clock you can finally read.
 
 ## Sources
 
@@ -265,7 +265,7 @@ Astrological Transits（占星行运）是此刻正在移动的行星，与你�
 
 ## 下一步行动
 
-先把那张不会变的底盘弄懂——从[读懂本命盘的完整指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)开始，你会得到一张能反复对照的本命盘地图；之后再去留意此刻有哪些行星正穿过它，你就能自己去读一次行运的开始、高峰和结束，而不必只能等别人替你下判断。
+先把那张不会变的底盘弄懂——从[读懂本命盘的完整指南](/zh/wiki/how-to-read-birth-chart)开始，你会得到一张能反复对照的本命盘地图；之后再去留意此刻有哪些行星正穿过它，你就能自己去读一次行运的开始、高峰和结束，而不必只能等别人替你下判断。
 
 ## 参考来源
 

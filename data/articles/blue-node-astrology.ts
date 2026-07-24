@@ -108,7 +108,9 @@ Either is defensible; they are both the North Node, located by slightly differen
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own North Node by sign and house, and notice which color your software happens to give it. You finish with the placement that carries the meaning, a clear sense that the blue was only ever a display choice, and the steadier habit of reading the glyph rather than the swatch.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own North Node by sign and house, and notice which color your software happens to give it. You finish with the placement that carries the meaning, a clear sense that the blue was only ever a display choice, and the steadier habit of reading the glyph rather than the swatch.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -219,7 +221,7 @@ export const blueNodeAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，按星座和宫位找到你自己的北交点，顺便留意一下你的软件碰巧给它涂了什么颜色。读到最后，你手里握着的是那个真正承载含义的落点，清楚地知道蓝色从头到尾只是一个显示选择，也养成了那个更稳的习惯：读符号，而不是读色块。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，按星座和宫位找到你自己的北交点，顺便留意一下你的软件碰巧给它涂了什么颜色。读到最后，你手里握着的是那个真正承载含义的落点，清楚地知道蓝色从头到尾只是一个显示选择，也养成了那个更稳的习惯：读符号，而不是读色块。
 
 ## 参考来源
 

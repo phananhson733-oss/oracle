@@ -109,10 +109,14 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 - [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
 <!-- gg-cluster-links:end -->
 - [what Jupiter in Cancer means](/en/wiki/9th-house-astrology) — the standout transit behind the June mood
+- [the Mexico vs England astrology prediction](/en/wiki/mexico-vs-england-astrology-prediction) — the opening-venue transit read for this fixture
+- [the England vs Norway astrology read](/en/wiki/england-vs-norway-astrology) — the match-window themes for both national charts
+- [the Jordan vs Argentina astrology read](/en/wiki/jordan-vs-argentina) — a match-level look at the two national charts
+- [the Colombia vs Portugal astrology read](/en/wiki/colombia-vs-portugal) — the transit contrast between the two sides
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see where the June 2026 sky lands in your own chart while you follow world cup 2026 june astrology over the opening rounds. You get a clear view of how Jupiter in Cancer and Saturn in Aries touch your own placements, and, more quietly, a way to read a month as a mood you can meet rather than a result you must wait for — a small habit of watching the sky for atmosphere that outlasts any single tournament.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see where the June 2026 sky lands in your own chart while you follow world cup 2026 june astrology over the opening rounds. You get a clear view of how Jupiter in Cancer and Saturn in Aries touch your own placements, and, more quietly, a way to read a month as a mood you can meet rather than a result you must wait for — a small habit of watching the sky for atmosphere that outlasts any single tournament.
 
 ## Sources
 
@@ -227,7 +231,7 @@ export const worldCup2026JuneAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，一边跟着2026世界杯六月占星看开赛几轮，一边看看这片六月天空落在你自己星盘的哪个位置。你会清楚看到木星在巨蟹座、土星在白羊座怎样触到你自己的落点，更安静地，得到一种把一个月读成"可以迎接的情绪"、而不是"必须枯等的结果"的方式——一个看天空看氛围的小习惯，比任何单届赛事都活得更久。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，一边跟着2026世界杯六月占星看开赛几轮，一边看看这片六月天空落在你自己星盘的哪个位置。你会清楚看到木星在巨蟹座、土星在白羊座怎样触到你自己的落点，更安静地，得到一种把一个月读成"可以迎接的情绪"、而不是"必须枯等的结果"的方式——一个看天空看氛围的小习惯，比任何单届赛事都活得更久。
 
 ## 参考来源
 

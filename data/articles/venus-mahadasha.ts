@@ -100,7 +100,9 @@ Western astrology has no dasha system, so this long-period timing belongs specif
 
 ## Take Action
 
-Map your own Venus by house, sign and dignity, then find where this twenty-year period sits in your dasha timeline. Doing this turns a vague reputation into a specific reading you can actually work with, and it tends to replace the wish for guaranteed luck with a clearer sense of where your attention pays off. Want the full system first? Read the complete guide to mahadasha and the Vimshottari periods in our [pillar guide to the mahadasha system](https://astrologywiki.com/en/wiki/mahadasha).
+Map your own Venus by house, sign and dignity, then find where this twenty-year period sits in your dasha timeline. Doing this turns a vague reputation into a specific reading you can actually work with, and it tends to replace the wish for guaranteed luck with a clearer sense of where your attention pays off. Want the full system first? Read the complete guide to mahadasha and the Vimshottari periods in our [pillar guide to the mahadasha system](/en/wiki/mahadasha).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -212,7 +214,7 @@ Venus (Shukra) Mahadasha（金星大运）是吠陀占星 Vimshottari 大运体�
 
 ## 下一步行动
 
-先用准确的出生时间排出你自己的 Vimshottari 大运表，确认这段周期的起止年份；你会得到一条清楚标注各段周期的人生时间线，而不是模糊的「最近会走运」。当你能分清「倾向」与「定数」，就更容易在合适的阶段顺势而为，而不是被「好运／坏运」的标签牵着走。想先看懂整套框架，可以读[完整的大运与 Vimshottari 周期指南](https://astrologywiki.com/zh/wiki/mahadasha)。
+先用准确的出生时间排出你自己的 Vimshottari 大运表，确认这段周期的起止年份；你会得到一条清楚标注各段周期的人生时间线，而不是模糊的「最近会走运」。当你能分清「倾向」与「定数」，就更容易在合适的阶段顺势而为，而不是被「好运／坏运」的标签牵着走。想先看懂整套框架，可以读[完整的大运与 Vimshottari 周期指南](/zh/wiki/mahadasha)。
 
 ## 参考来源
 

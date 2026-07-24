@@ -115,7 +115,9 @@ The muhurta tradition treats Pushya transits as favorable for lasting beginnings
 
 ## Take Action
 
-[Generate your free birth chart to explore pushya nakshatra.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) Your birth chart shows the exact degree of your natal Moon — the clearest way to confirm whether this nakshatra is shaping how you give, sustain, and hold limits in your closest relationships. Once you can see where your Moon or Ascendant sits relative to Cancer's mid-range degrees, you have a concrete anchor for everything this nakshatra describes about structured, lasting care.
+[Generate your free birth chart to explore pushya nakshatra.](/en/wiki/how-to-read-birth-chart) Your birth chart shows the exact degree of your natal Moon — the clearest way to confirm whether this nakshatra is shaping how you give, sustain, and hold limits in your closest relationships. Once you can see where your Moon or Ascendant sits relative to Cancer's mid-range degrees, you have a concrete anchor for everything this nakshatra describes about structured, lasting care.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

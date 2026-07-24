@@ -129,7 +129,7 @@ Both are fixed signs, which means they share a quality of sustained focus and re
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. Curious how your own placements stack up against a reading like this? [Generate your free birth chart to explore Karolína Muchová birth chart](https://astrologywiki.com/en/birth-chart-calculator) — you'll get your full Sun, Moon, and rising layout in a single view, and a clearer sense of where your visible self and your private self actually meet.
+This is not a clinical interpretation or mental health advice. Curious how your own placements stack up against a reading like this? [Generate your free birth chart to explore Karolína Muchová birth chart](/en/birth-chart-calculator) — you'll get your full Sun, Moon, and rising layout in a single view, and a clearer sense of where your visible self and your private self actually meet.
 
 ## Sources
 

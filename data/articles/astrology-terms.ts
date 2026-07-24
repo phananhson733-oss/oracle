@@ -110,7 +110,9 @@ Because each one is a single factor in a whole chart, and factors modify each ot
 
 ## Take Action
 
-Open your own chart and label the four angles plus your single tightest aspect using the checklist above. You will walk away with a one-page map of the relationships that drive your chart, instead of a stack of disconnected definitions, and that map is usually the first time the words start to describe a real person rather than a category. Read the full guide to reading a birth chart to see these terms working together in one chart at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Open your own chart and label the four angles plus your single tightest aspect using the checklist above. You will walk away with a one-page map of the relationships that drive your chart, instead of a stack of disconnected definitions, and that map is usually the first time the words start to describe a real person rather than a category. Read the full guide to reading a birth chart to see these terms working together in one chart at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -228,7 +230,7 @@ Astrology Terms 最容易和两个邻居搞混：它脱胎自的那套天文学�
 
 ## 下一步行动
 
-打开你自己的星盘，照上面那份清单标出四个轴点，再标出那个最紧密的相位——[读懂如何把这些词放进一张完整星盘里一起看](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。你会得到一张一页纸的关系地图，而不是一摞对不上号的定义；当这些词第一次拼成一个真实的人，而不是一个分类标签，你看的就不再是命运的判词，而是自己正在经营的人生现场。
+打开你自己的星盘，照上面那份清单标出四个轴点，再标出那个最紧密的相位——[读懂如何把这些词放进一张完整星盘里一起看](/zh/wiki/how-to-read-birth-chart)。你会得到一张一页纸的关系地图，而不是一摞对不上号的定义；当这些词第一次拼成一个真实的人，而不是一个分类标签，你看的就不再是命运的判词，而是自己正在经营的人生现场。
 
 ## 参考来源
 

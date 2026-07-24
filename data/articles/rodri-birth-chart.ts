@@ -124,7 +124,7 @@ A well-known chart is a low-stakes way to practice symbolic interpretation. The 
 
 This is not a clinical interpretation or mental health advice.
 
-[Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator) to explore Rodri birth chart. In minutes you get your own Jyotish placements mapped out in front of you — the same houses and planets read symbolically above. From there, you can start noticing which archetypes describe your own patience, timing, and sense of purpose, and read your story as symbol rather than scoreboard.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore Rodri birth chart. In minutes you get your own Jyotish placements mapped out in front of you — the same houses and planets read symbolically above. From there, you can start noticing which archetypes describe your own patience, timing, and sense of purpose, and read your story as symbol rather than scoreboard.
 
 ## Sources
 

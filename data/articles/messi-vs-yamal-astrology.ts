@@ -122,6 +122,8 @@ Yes. A June 24 birthday falls inside Cancer's roughly June 21 to July 22 window,
 - *explainer on how astrological aspects link two charts* — for the technique behind reading two nativities against each other.
 - *overview of the four astrological elements* — to weigh the water emphasis both charts share.
 - *guide to the Jupiter in Gemini 2026 transit* — to see how a live transit is read as a shared backdrop rather than a forecast.
+- [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the squad's Sun-sign profile and title-defence themes
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the transit backdrop shaping Spain's campaign
 
 ## Take Action
 

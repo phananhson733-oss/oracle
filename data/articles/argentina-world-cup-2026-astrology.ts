@@ -110,10 +110,15 @@ This reading uses the Western tropical national chart. A Vedic mundane reading w
 - *Lionel Messi zodiac sign reading* — the Argentine talisman's own Cancer-Sun chart
 - *how to read a national or mundane chart* — the method step behind reading a country
 - [transit_events cluster on Jupiter in Cancer and Saturn in Aries](/en/wiki/9th-house-astrology) — the wider sky behind these two transits
+- [the Jordan vs Argentina astrology read](/en/wiki/jordan-vs-argentina) — a match-level look at the two national charts
+- [the England vs Argentina astrology prediction](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — the head-to-head transit read for this fixture
+- [the Argentina vs Spain final astrology](/en/wiki/argentina-vs-spain-world-cup-final-astrology-2026) — the final-day transit read for a possible title match
+- [Messi's World Cup record astrology](/en/wiki/messi-world-cup-record-astrology) — the long-cycle transits behind his tournament history
+- [the Messi vs Yamal astrology comparison](/en/wiki/messi-vs-yamal-astrology) — the generational chart contrast between the two forwards
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Argentina's World Cup 2026 astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell the weight of a past win apart from a limit you can still grow past, long after the final whistle.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Argentina's World Cup 2026 astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell the weight of a past win apart from a limit you can still grow past, long after the final whistle.
 
 ## Sources
 
@@ -229,7 +234,7 @@ export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读阿根廷世界杯占星那样去读你自己的太阳——把它当成一个被时机施压的主题，而不是一句判词。你会清楚看到太阳的星座、以及此刻正触及它的过运是哪几个，更安静地，得到一种把"过往一场胜利的重量"和"一个你仍能成长越过的限制"分开来的方式，哪怕终场哨早已吹响，这种分辨也仍然有用。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读阿根廷世界杯占星那样去读你自己的太阳——把它当成一个被时机施压的主题，而不是一句判词。你会清楚看到太阳的星座、以及此刻正触及它的过运是哪几个，更安静地，得到一种把"过往一场胜利的重量"和"一个你仍能成长越过的限制"分开来的方式，哪怕终场哨早已吹响，这种分辨也仍然有用。
 
 ## 参考来源
 

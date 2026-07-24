@@ -131,6 +131,8 @@ This is not a clinical interpretation or mental health advice.
 
 Write down one sign-based description and one MBTI description that both feel partly true. The result is a short comparison list that separates repeated behavior from a label that only sounds appealing. That distinction can make self-awareness more honest, especially when a simple type or sign begins to feel too small. *Explore Astrology Tools*
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - CHANI — publishes introductory astrology resources that distinguish sign-based material from broader birth-chart reading.

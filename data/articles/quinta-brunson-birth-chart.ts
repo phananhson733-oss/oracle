@@ -126,7 +126,7 @@ No. A chart offers symbolic language for traits many people recognize in her, bu
 
 ## Take Action
 
-Generate your free birth chart to explore Quinta Brunson birth chart. Enter your own birth details in our [birth chart calculator](https://astrologywiki.com/en/birth-chart-calculator) to map your Sun, Moon, and planets the same way this reading maps hers. Seeing your own Capricorn discipline or Sagittarius candor laid out turns a celebrity curiosity into a sharper question: which of these patterns actually sound like you?
+Generate your free birth chart to explore Quinta Brunson birth chart. Enter your own birth details in our [birth chart calculator](/en/birth-chart-calculator) to map your Sun, Moon, and planets the same way this reading maps hers. Seeing your own Capricorn discipline or Sagittarius candor laid out turns a celebrity curiosity into a sharper question: which of these patterns actually sound like you?
 
 ## Sources
 

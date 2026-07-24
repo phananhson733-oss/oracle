@@ -103,10 +103,11 @@ It is mapped to the center of the chest, between the lower three centers and the
 - [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — the will center just below, useful for telling self-direction apart from self-giving.
 - [sacral chakra meaning](/en/wiki/sacral-chakra-meaning) — where emotional flow begins, two centers below the heart.
 - [chakra test](/en/wiki/chakra-test) — self-assess whether your heart energy is leaning toward overgiving, self-protection, or balance.
+- [Libra rising and the houses](/en/wiki/libra-rising-houses) — a Venus-ruled, relational lens that echoes heart-chakra themes
 
 ## Take Action
 
-Take the Chakra Test to see whether your heart chakra reads as open, blocked, or overactive at [the astrologywiki chakra test](https://astrologywiki.com/en/wiki/chakra-test). You'll come away with a clear read on which direction your heart energy is leaning right now — toward overgiving, toward self-protection, or somewhere in balance. Seeing that tilt named in plain language is often the first step to giving care without quietly running yourself empty.
+Take the Chakra Test to see whether your heart chakra reads as open, blocked, or overactive at [the astrologywiki chakra test](/en/wiki/chakra-test). You'll come away with a clear read on which direction your heart energy is leaning right now — toward overgiving, toward self-protection, or somewhere in balance. Seeing that tilt named in plain language is often the first step to giving care without quietly running yourself empty.
 
 ## Sources
 
@@ -218,7 +219,7 @@ Heart Chakra（心轮，也叫阿娜哈塔轮，Anahata）是脉轮（chakra，�
 
 ## 下一步行动
 
-去做一次脉轮小测，看看你的心轮此刻读出来是开放、封闭，还是过度付出，入口在[astrologywiki 的脉轮小测](https://astrologywiki.com/zh/wiki/chakra-test)。你会拿到一份清楚的结果，看出自己的心此刻是偏向掏空、偏向自保，还是落在平衡里。当这份倾斜被用平实的话讲出来，往往就是你开始给得出温柔、又不再悄悄把自己耗空的第一步。
+去做一次脉轮小测，看看你的心轮此刻读出来是开放、封闭，还是过度付出，入口在[astrologywiki 的脉轮小测](/zh/wiki/chakra-test)。你会拿到一份清楚的结果，看出自己的心此刻是偏向掏空、偏向自保，还是落在平衡里。当这份倾斜被用平实的话讲出来，往往就是你开始给得出温柔、又不再悄悄把自己耗空的第一步。
 
 ## 参考来源
 

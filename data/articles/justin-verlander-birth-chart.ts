@@ -141,6 +141,8 @@ Generate your free birth chart to compare this method with your own placements. 
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - [MLB.com player bio](https://www.mlb.com/tigers/player/justin-verlander-434378) — confirms Justin Verlander's birth date and birthplace.

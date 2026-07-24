@@ -125,7 +125,9 @@ It is linked to adaptability and an ease with ambiguous, layered roles. The Nept
 
 ## Take Action
 
-Curious where your own Sun, Moon, and Rising actually land? [Generate your free birth chart to explore the placements behind greta lee zodiac sign](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You'll get a full map of your chart in minutes — and a clearer sense of which parts rest on solid ground and which, like a missing birth time, leave the story half-written.
+Curious where your own Sun, Moon, and Rising actually land? [Generate your free birth chart to explore the placements behind greta lee zodiac sign](/en/wiki/how-to-read-birth-chart). You'll get a full map of your chart in minutes — and a clearer sense of which parts rest on solid ground and which, like a missing birth time, leave the story half-written.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

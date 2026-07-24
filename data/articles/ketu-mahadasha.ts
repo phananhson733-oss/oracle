@@ -105,7 +105,9 @@ Classical remedies are framed as ways to engage the period with awareness, not a
 
 ## Take Action
 
-Want the full system first? Read the [complete guide to mahadasha and the Vimshottari periods](https://astrologywiki.com/en/wiki/mahadasha) to see exactly where Ketu's seven years sit in the wider sequence of planetary timings. You'll come away able to locate your current period on the full timeline — and that context is what turns a feared chapter into one you can read as a tendency to work with, and meet on your own terms.
+Want the full system first? Read the [complete guide to mahadasha and the Vimshottari periods](/en/wiki/mahadasha) to see exactly where Ketu's seven years sit in the wider sequence of planetary timings. You'll come away able to locate your current period on the full timeline — and that context is what turns a feared chapter into one you can read as a tendency to work with, and meet on your own terms.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -213,7 +215,7 @@ Ketu Mahadasha（计都大运）是吠陀占星 Vimshottari 大运体系里，�
 
 ## 下一步行动
 
-想先把整套大运体系弄明白，再回头看计都这七年？读一读[大运体系与 Vimshottari 周期完整指南](https://astrologywiki.com/zh/wiki/mahadasha)：你会拿到九颗行星大运的轮值顺序和各自的主题地图，看清计都只是其中一段，而不是孤立的"劫"。当你能把它放回整张人生周期表里，"七年"就从一个吓人的标签，变成一段可以提前准备、主动安排的节奏。
+想先把整套大运体系弄明白，再回头看计都这七年？读一读[大运体系与 Vimshottari 周期完整指南](/zh/wiki/mahadasha)：你会拿到九颗行星大运的轮值顺序和各自的主题地图，看清计都只是其中一段，而不是孤立的"劫"。当你能把它放回整张人生周期表里，"七年"就从一个吓人的标签，变成一段可以提前准备、主动安排的节奏。
 
 ## 参考来源
 

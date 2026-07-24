@@ -140,6 +140,8 @@ Not necessarily. Aries and Virgo can both be strong-willed, but they express con
 
 A birth chart can show the placements that a Sun-sign case study leaves out, including Venus, Mars, the Moon, and house emphasis. Use that output to compare pacing, attraction style, and decision patterns with more nuance than a headline compatibility read can offer. This is not a clinical interpretation or mental health advice. [Learn how to read a birth chart before comparing relationship timing.](/en/wiki/how-to-read-birth-chart)
 
+Want to test this with a real pairing? The [synastry calculator](/en/synastry-calculator) overlays two birth charts for you.
+
 ## Sources
 
 - [People: Reese Witherspoon and Oliver Haarmann rare date night](https://people.com/reese-witherspoon-and-boyfriend-oliver-haarmann-match-in-pink-on-a-rare-date-night-out-are-very-much-in-love-exclusive-source-12005646) — reports the June 23, 2026 public appearance and privacy framing.

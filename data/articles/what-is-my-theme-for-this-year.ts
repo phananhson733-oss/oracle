@@ -125,6 +125,8 @@ Start by generating your birth chart and Solar Return details with *Explore Astr
 
 The result gives you the chart placements needed to identify repeated yearly patterns rather than relying on a generic forecast. Use the pattern as a question for clearer choices, not as a script for the year ahead.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Mary Fortier Shea, *Planets in Solar Returns: Yearly Cycles of Transformation and Growth* — the standard modern reference for casting and interpreting solar return charts.

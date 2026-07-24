@@ -142,6 +142,8 @@ No. Saturn may be read as seriousness, tradition, responsibility, boundaries, or
 
 Explore [natal chart transits](/en/wiki/natal-chart-transits) to compare upcoming transits with the themes you want to observe. The guide can give you a clearer list of timing symbols to reflect on. That perspective may help keep attention on your own choices, conversations, and priorities rather than a fixed story about what any chart must mean.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Dane Rudhyar — developed a person-centered approach to reading astrological cycles and symbolic patterns.

@@ -125,7 +125,9 @@ A Scorpio Sun is associated with focus and depth, but it does not cause a playin
 
 ## Take Action
 
-A birth chart is a mirror for reflection, not a verdict — this is not a clinical interpretation or mental health advice. Ready to move from reading about a footballer to reading yourself? [Generate your free birth chart to explore Achraf Hakimi birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and get your own Sun, Moon, and rising laid out the same way we mapped his. Seeing your placements side by side is a quiet reminder that a chart describes tendencies to reflect on — never a fixed script for how your story ends.
+A birth chart is a mirror for reflection, not a verdict — this is not a clinical interpretation or mental health advice. Ready to move from reading about a footballer to reading yourself? [Generate your free birth chart to explore Achraf Hakimi birth chart](/en/wiki/how-to-read-birth-chart), and get your own Sun, Moon, and rising laid out the same way we mapped his. Seeing your placements side by side is a quiet reminder that a chart describes tendencies to reflect on — never a fixed script for how your story ends.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

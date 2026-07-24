@@ -120,7 +120,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Run the same read on your own placements instead of a celebrity's. [Generate your free birth chart to explore Priyanka Chopra birth chart.](https://astrologywiki.com/en/birth-chart-calculator) You'll get a full map of your Sun, Moon, and planets, and a clearer sense of where your own public face and private needs pull in different directions.
+Run the same read on your own placements instead of a celebrity's. [Generate your free birth chart to explore Priyanka Chopra birth chart.](/en/birth-chart-calculator) You'll get a full map of your Sun, Moon, and planets, and a clearer sense of where your own public face and private needs pull in different directions.
 
 ## Sources
 

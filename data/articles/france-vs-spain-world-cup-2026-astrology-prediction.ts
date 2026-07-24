@@ -122,12 +122,15 @@ No. Betting analysis estimates probability from form and odds; this reads meanin
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter)
 
 This is a symbolic and cultural interpretation, not a prediction of the match result.
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the transit backdrop shaping Spain's campaign
+- [the Kylian Mbappe birth chart](/en/wiki/kylian-mbappe-birth-chart) — a full symbolic read of France's forward
+- [the Spain vs France astrology read](/en/wiki/spain-vs-france-world-cup-2026-astrology) — the match-day transit picture for both squads
 
 ## Take Action
 
 Cast the two sides for yourself: generate your free birth chart to explore france vs spain world cup 2026 astrology prediction and compare its themes against each team's style. You'll get a clear map of the tendencies and tensions astrologers read as character, laid out placement by placement. Seen honestly, that map says less about who wins on the day and more about how you make meaning out of the games you can't control.
 
-[Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator)
+[Generate your free birth chart](/en/birth-chart-calculator)
 
 ## Sources
 

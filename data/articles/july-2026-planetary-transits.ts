@@ -129,9 +129,11 @@ On July 30 the Full Moon in Aquarius closes the month, sitting opposite the Sun 
 
 ## Take Action
 
-The fastest way to make July 2026 useful is to stop reading these transits in the abstract and locate them on your own chart. If you have never mapped the houses against the planets, start with the basics. [Read the full guide to reading a birth chart to see where July's transits land for you.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+The fastest way to make July 2026 useful is to stop reading these transits in the abstract and locate them on your own chart. If you have never mapped the houses against the planets, start with the basics. [Read the full guide to reading a birth chart to see where July's transits land for you.](/en/wiki/how-to-read-birth-chart)
 
 For the structural map of which life area each date touches, the overview of [the astrological houses and what each one governs](/en/wiki/astrology-houses) is the companion piece to keep open beside this one.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 `,
 };
 
@@ -259,7 +261,7 @@ export const july2026PlanetaryTransitsZh: WikiArticle = {
 
 ## 立即行动
 
-让 2026 年 7 月真正有用的最快办法，是别再抽象地读这些行运，而是把它们定位到你自己的星盘上。如果你从没把宫位与行星对照过，就从基础开始。[阅读完整的出生盘解读指南，看清 7 月的行运具体落在你哪里。](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)
+让 2026 年 7 月真正有用的最快办法，是别再抽象地读这些行运，而是把它们定位到你自己的星盘上。如果你从没把宫位与行星对照过，就从基础开始。[阅读完整的出生盘解读指南，看清 7 月的行运具体落在你哪里。](/zh/wiki/how-to-read-birth-chart)
 
 要拿到那张告诉你每个日期触及哪个生活领域的结构地图，关于 [占星宫位 astrology houses 各宫分别主管什么](/zh/wiki/astrology-houses) 的总览，是值得开着、摆在这篇旁边的同伴篇。
 `,

@@ -127,6 +127,8 @@ Astrology like this is a mirror for reflection, not a diagnosis. This Zendaya bi
 
 Generate your free birth chart to explore how the same symbolic method applies to you — the output is a full placement map of your own Sun, Moon, and ascendant, laid out the same tendency-first way, and reading yours beside a familiar Zendaya birth chart is often where you first notice which patterns you want to lean into and which you would rather rework. Start with the *free astrology birth chart calculator*.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Parashara — classical sage credited with the foundational Jyotish teachings this sidereal reading draws on

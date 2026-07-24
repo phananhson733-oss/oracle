@@ -109,10 +109,14 @@ Harry Kane's 2026 appearance is his third World Cup, equalling the record held b
 
 - [the Harry Kane birth chart](/en/wiki/harry-kane-birth-chart) — a fuller symbolic read of England's Leo-Sun captain, including the Jupiter-in-Leo alignment and what the third World Cup means in that frame
 - [the Jude Bellingham birth chart](/en/wiki/jude-bellingham-birth-chart) — a detailed Cancer-Sun reading of Bellingham's verified birth date, including the brief group-stage Jupiter-in-Cancer backdrop
+- [the England vs Argentina astrology prediction](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — the head-to-head transit read for this fixture
+- [the England vs Norway astrology read](/en/wiki/england-vs-norway-astrology) — the match-window themes for both national charts
+- [the France vs England third-place astrology](/en/wiki/france-england-3rd-place-match-astrology-prediction) — the symbolic read for the third-place playoff
+- [the Mexico vs England astrology prediction](/en/wiki/mexico-vs-england-astrology-prediction) — the opening-venue transit read for this fixture
 
 ## Take Action
 
-If england world cup 2026 astrology sparked your curiosity about how Jupiter transits map onto your own year, the next step is your own chart. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun sign alongside the same Cancer-to-Leo ingress traced here. You get a clear view of where your Sun sits in relation to that 30 June 2026 shift, and a way to read the transition as a theme in your own year rather than as a verdict you should trust to a planet.
+If england world cup 2026 astrology sparked your curiosity about how Jupiter transits map onto your own year, the next step is your own chart. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun sign alongside the same Cancer-to-Leo ingress traced here. You get a clear view of where your Sun sits in relation to that 30 June 2026 shift, and a way to read the transition as a theme in your own year rather than as a verdict you should trust to a planet.
 
 ## Sources
 
@@ -229,7 +233,7 @@ export const englandWorldCup2026AstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-如果这篇占星解读激起了你对木星行运如何映射到自己年份的好奇，下一步是拿到你自己的星盘。[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座与同一段巨蟹-狮子入座的关系。你会清楚地看到自己的太阳落在这次转换的哪一侧，也能把约6月30日的这道门槛读作你自己年份里的一个主题节点，而不是一则该托付给行星的判词。
+如果这篇占星解读激起了你对木星行运如何映射到自己年份的好奇，下一步是拿到你自己的星盘。[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座与同一段巨蟹-狮子入座的关系。你会清楚地看到自己的太阳落在这次转换的哪一侧，也能把约6月30日的这道门槛读作你自己年份里的一个主题节点，而不是一则该托付给行星的判词。
 
 ## 参考来源
 

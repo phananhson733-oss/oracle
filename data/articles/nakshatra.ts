@@ -128,7 +128,9 @@ In Vedic interpretation, the birth station primarily governs the dasha timing se
 
 ## Take Action
 
-[Generate your free birth chart to explore nakshatra](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) — a Vedic chart shows your Moon's natal station and the dasha period currently active in your timeline. With that information, you get a concrete framework for reading not just your tendencies but when those tendencies become most consequential: which chapters are opening, which are winding down, and why this particular season of life feels the way it does.
+[Generate your free birth chart to explore nakshatra](/en/wiki/how-to-read-birth-chart) — a Vedic chart shows your Moon's natal station and the dasha period currently active in your timeline. With that information, you get a concrete framework for reading not just your tendencies but when those tendencies become most consequential: which chapters are opening, which are winding down, and why this particular season of life feels the way it does.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

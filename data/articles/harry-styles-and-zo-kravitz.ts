@@ -129,9 +129,11 @@ A percentage is a quick summary, not a reading. It can flag ease or tension, but
 
 Generate your free birth chart to explore Harry Styles and Zoë Kravitz. Mapping the placements yourself turns a celebrity headline into a working chart you can actually read — Sun, Moon, Venus, and the air-fire sextile all in one view. From there, the same lens you just used on a famous couple becomes a quiet way to see how autonomy and closeness balance in your own relationships.
 
-[Generate your free birth chart to read the air-fire sextile](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+[Generate your free birth chart to read the air-fire sextile](/en/wiki/how-to-read-birth-chart)
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

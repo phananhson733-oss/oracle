@@ -116,10 +116,11 @@ The Sun, Moon, and Mars of each player carry the most weight for temperament and
 - *meaning of the rising sign* — the rising sign refines how each player's on-court persona actually comes across.
 - *birth chart profile of Serena Williams* — a published athlete chart that shows how natal placements map onto a competitive career.
 - [Electional astrology (Wikipedia)](https://en.wikipedia.org/wiki/Electional_astrology) — outside context on the older tradition of charting chosen or notable moments.
+- [the World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) — the full tournament overview tracing Jupiter's Cancer-to-Leo shift across the qualified nations
 
 ## Take Action
 
-Generate your free birth chart to explore Sinner vs Zverev Wimbledon Final astrology, then set your own Sun, Moon, and Mars beside each finalist's. You'll get a clear map of your temperament and pressure style — and, more than any scoreline, a sharper sense of how you meet your own high-stakes moments. [Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator) to begin the comparison.
+Generate your free birth chart to explore Sinner vs Zverev Wimbledon Final astrology, then set your own Sun, Moon, and Mars beside each finalist's. You'll get a clear map of your temperament and pressure style — and, more than any scoreline, a sharper sense of how you meet your own high-stakes moments. [Generate your free birth chart](/en/birth-chart-calculator) to begin the comparison.
 
 ## Sources
 

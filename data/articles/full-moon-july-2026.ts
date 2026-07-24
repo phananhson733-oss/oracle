@@ -136,7 +136,9 @@ Reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet
 
 ## Take Action
 
-Generate your free birth chart to explore full moon July 2026. You will see exactly which houses the Aquarius-Leo axis activates and where Mercury's recent review cycle landed in your chart. That turns a vague full-moon mood into a specific self-awareness practice with real practical timing value. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore full moon July 2026. You will see exactly which houses the Aquarius-Leo axis activates and where Mercury's recent review cycle landed in your chart. That turns a vague full-moon mood into a specific self-awareness practice with real practical timing value. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

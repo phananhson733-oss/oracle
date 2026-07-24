@@ -105,10 +105,11 @@ No. Chiron entered Taurus on June 19 as part of a years-long transit about self-
 - [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — a companion squad-level reading that traces the same Jupiter ingress through another national team's tournament window
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — a wider symbolic look at how Sun-sign themes map onto footballers, useful context for any fixture reading
 - [Scotland national football team (Wikipedia)](https://en.wikipedia.org/wiki/Scotland_national_football_team)
+- [Scotland's World Cup 2026 Saturn-return astrology](/en/wiki/scotland-world-cup-2026-astrology-saturn-return) — how a national Saturn return frames Scotland's campaign
 
 ## Take Action
 
-If Scotland Brazil World Cup astrology sparked your curiosity about how the same June 2026 transits map onto your own year, the next step is your own chart. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find where your Sun sits in relation to Jupiter's Cancer-to-Leo shift and the fresh Chiron-in-Taurus theme. You get a clear view of your own season's weight, and a way to read a high-pressure moment as a theme to sit with rather than a verdict to dread.
+If Scotland Brazil World Cup astrology sparked your curiosity about how the same June 2026 transits map onto your own year, the next step is your own chart. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find where your Sun sits in relation to Jupiter's Cancer-to-Leo shift and the fresh Chiron-in-Taurus theme. You get a clear view of your own season's weight, and a way to read a high-pressure moment as a theme to sit with rather than a verdict to dread.
 
 ## Sources
 
@@ -224,7 +225,7 @@ export const scotlandBrazilWorldCupAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-如果苏格兰巴西世界杯占星勾起了你对同一段2026年6月行运如何映射到自己年份的好奇，下一步就是拿到你自己的星盘。[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找到你的太阳落在木星巨蟹—狮子转换以及凯龙入金牛这道新主题的哪个位置。你会清楚地看到自己时节的分量，也会得到一种方式，把一个高压时刻读作一个可以安住其中的主题，而不是一则该惧怕的判词。
+如果苏格兰巴西世界杯占星勾起了你对同一段2026年6月行运如何映射到自己年份的好奇，下一步就是拿到你自己的星盘。[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，找到你的太阳落在木星巨蟹—狮子转换以及凯龙入金牛这道新主题的哪个位置。你会清楚地看到自己时节的分量，也会得到一种方式，把一个高压时刻读作一个可以安住其中的主题，而不是一则该惧怕的判词。
 
 ## 参考来源
 

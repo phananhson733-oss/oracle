@@ -111,7 +111,9 @@ No. Because the station ends in Cancer, the two are easily confused, but the sta
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your Moon's exact degree and see whether it sits in Punarvasu — and which half, Gemini or Cancer, colors this Jupiter-ruled station's renewal theme. With that placement in hand, you get a concrete frame for reading your own pattern of recovery: where setbacks have tended to return as growth, and how to hold the next one as material to re-enter wiser rather than damage to undo.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your Moon's exact degree and see whether it sits in Punarvasu — and which half, Gemini or Cancer, colors this Jupiter-ruled station's renewal theme. With that placement in hand, you get a concrete frame for reading your own pattern of recovery: where setbacks have tended to return as growth, and how to hold the next one as material to re-enter wiser rather than damage to undo.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -225,7 +227,7 @@ export const punarvasuNakshatraZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出月亮的确切度数，看看它是否落在普纳瓦苏，以及是双子还是巨蟹这一半，为这个木星主管之站的更新母题上色。拿到落点之后，你就有了一个具体的框架来读自己的复原模式：挫折在哪里曾作为成长回来，又该如何把下一次当作"可以更有智慧地重新踏入的材料"，而不是需要抹平的损伤。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出月亮的确切度数，看看它是否落在普纳瓦苏，以及是双子还是巨蟹这一半，为这个木星主管之站的更新母题上色。拿到落点之后，你就有了一个具体的框架来读自己的复原模式：挫折在哪里曾作为成长回来，又该如何把下一次当作"可以更有智慧地重新踏入的材料"，而不是需要抹平的损伤。
 
 ## 参考来源
 

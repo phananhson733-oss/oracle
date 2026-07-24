@@ -107,10 +107,14 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 - [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — foundational context for reading tournament progressions as symbolic timing frameworks
 - [June 2026 transit calendar](/en/wiki/world-cup-2026-june-astrology) — broader framework for how Jupiter in Cancer and other June transits shape the tournament window
 - [Spain national football team (Wikipedia)](https://en.wikipedia.org/wiki/Spain_national_football_team)
+- [the Spain vs France astrology read](/en/wiki/spain-vs-france-world-cup-2026-astrology) — the match-day transit picture for both squads
+- [the France vs Spain astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — the match-window transits weighed for both sides
+- [the Argentina vs Spain final astrology](/en/wiki/argentina-vs-spain-world-cup-final-astrology-2026) — the final-day transit read for a possible title match
+- [the Messi vs Yamal astrology comparison](/en/wiki/messi-vs-yamal-astrology) — the generational chart contrast between the two forwards
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore spain world cup 2026 astrology through the lens of your own natal placements. Reading how a Jupiter-Cancer opposition interacts with a Capricorn-associated chart gives you a working framework for recognizing the same cardinal opposition pressure in your own chart — where that pattern may be asking you to earn authority rather than assume it.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore spain world cup 2026 astrology through the lens of your own natal placements. Reading how a Jupiter-Cancer opposition interacts with a Capricorn-associated chart gives you a working framework for recognizing the same cardinal opposition pressure in your own chart — where that pattern may be asking you to earn authority rather than assume it.
 
 ## Sources
 
@@ -226,7 +230,7 @@ Robert Hand 在其著作中系统化了如何阅读行运行星通过相位激�
 
 ## 下一步行动
 
-[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，透过你自己本命落点的镜头去探索西班牙2026世界杯占星。读懂一组木星巨蟹座对冲如何与一张带摩羯座关联的星盘互动，会给你一套可用的框架，去在你自己的星盘里辨认同样这种基本宫对冲压力——看看那个模式可能正在哪里要求你去赢得权威，而不是假定拥有它。
+[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，透过你自己本命落点的镜头去探索西班牙2026世界杯占星。读懂一组木星巨蟹座对冲如何与一张带摩羯座关联的星盘互动，会给你一套可用的框架，去在你自己的星盘里辨认同样这种基本宫对冲压力——看看那个模式可能正在哪里要求你去赢得权威，而不是假定拥有它。
 
 ## 参考来源
 

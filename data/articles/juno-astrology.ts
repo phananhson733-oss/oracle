@@ -122,7 +122,9 @@ These pages go deeper on the themes Juno touches:
 
 ## Take Action
 
-Start by mapping Juno in your own chart. [Learn how to read your birth chart and find your Juno](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), then read its sign and house to see exactly where your commitment blueprint lives. Once you can name where you need fairness and loyalty, you stop reading relationships as luck and start recognizing the equity you have been quietly asking for all along.
+Start by mapping Juno in your own chart. [Learn how to read your birth chart and find your Juno](/en/wiki/how-to-read-birth-chart), then read its sign and house to see exactly where your commitment blueprint lives. Once you can name where you need fairness and loyalty, you stop reading relationships as luck and start recognizing the equity you have been quietly asking for all along.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

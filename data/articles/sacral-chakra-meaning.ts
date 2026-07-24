@@ -133,10 +133,11 @@ It is mapped to the lower abdomen, roughly a couple of inches below the navel. I
 - [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — the willpower center just above the sacral, easy to confuse with it.
 - [orange aura explainer](/en/wiki/orange-aura-meaning) — the same creative-emotional energy read from the outside.
 - [Svadhishthana (Wikipedia)](https://en.wikipedia.org/wiki/Svadhishthana) — the traditional yogic source the modern reading grows from.
+- [Mars in Scorpio](/en/wiki/mars-in-scorpio) — a Pluto-ruled, deep-feeling placement resonant with sacral-chakra themes
 
 ## Take Action
 
-Read [the full Chakra System overview](https://astrologywiki.com/en/wiki/chakra-system-overview) and place the sacral chakra in its sequence, between the grounding root below it and the willpower of the solar plexus above. Seeing the whole map shows how creativity and pleasure hand off to the centers around them, and that bigger picture makes it easier to notice which part of your own energy is quietly asking for attention right now.
+Read [the full Chakra System overview](/en/wiki/chakra-system-overview) and place the sacral chakra in its sequence, between the grounding root below it and the willpower of the solar plexus above. Seeing the whole map shows how creativity and pleasure hand off to the centers around them, and that bigger picture makes it easier to notice which part of your own energy is quietly asking for attention right now.
 
 ## Sources
 
@@ -252,7 +253,7 @@ The Sacral Chakra（生殖轮，也叫本我轮、骶轮）是脉轮（chakra，
 
 ## 下一步行动
 
-把生殖轮（The Sacral Chakra）放回整条脉轮序列里再看一遍，你会发现它上承底层的安全感、下接太阳轮的意志，单独盯着一个中心，远不如看清它在整体里的位置。顺着这份[完整的脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)走一遍，能帮你把生殖轮摆回它该在的那一格——很多时候，读懂一个脉轮的前提，是先读懂它和上下邻居的关系。
+把生殖轮（The Sacral Chakra）放回整条脉轮序列里再看一遍，你会发现它上承底层的安全感、下接太阳轮的意志，单独盯着一个中心，远不如看清它在整体里的位置。顺着这份[完整的脉轮系统总览](/en/wiki/chakra-system-overview)走一遍，能帮你把生殖轮摆回它该在的那一格——很多时候，读懂一个脉轮的前提，是先读懂它和上下邻居的关系。
 
 ## 参考来源
 

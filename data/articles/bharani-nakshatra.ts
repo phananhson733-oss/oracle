@@ -116,7 +116,9 @@ Many people with this placement describe carrying a quiet intensity, especially 
 
 ## Take Action
 
-[Generate your free birth chart to explore bharani nakshatra](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and find exactly where this lunar mansion falls in your placements. You can see whether the bearer's energy touches your Moon, Ascendant, or another point, and how Venus and Yama color it. Reading your own chart turns Bharani from an abstract idea into a working lens for how you hold change across your life.
+[Generate your free birth chart to explore bharani nakshatra](/en/wiki/how-to-read-birth-chart) and find exactly where this lunar mansion falls in your placements. You can see whether the bearer's energy touches your Moon, Ascendant, or another point, and how Venus and Yama color it. Reading your own chart turns Bharani from an abstract idea into a working lens for how you hold change across your life.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

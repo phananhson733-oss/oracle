@@ -120,7 +120,9 @@ Not on its own. A Gemini Sun offers a framework for his adaptability and quick r
 
 ## Take Action
 
-Curious how the same method reads your chart? Generate your free birth chart and run the identical planet-in-sign approach on your own Sun, Venus, and Moon — you'll see which signs your planets actually fall in, and exactly where your birth time changes the answer. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Curious how the same method reads your chart? Generate your free birth chart and run the identical planet-in-sign approach on your own Sun, Venus, and Moon — you'll see which signs your planets actually fall in, and exactly where your birth time changes the answer. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

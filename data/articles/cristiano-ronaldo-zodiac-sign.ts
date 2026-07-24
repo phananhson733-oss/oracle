@@ -110,10 +110,13 @@ The Moon's sign is widely reported as Aries, but its exact degree and house depe
 - *Lionel Messi zodiac sign reading* — a contrasting Cancer-Sun chart from the same series
 - *how to read Saturn transits* — the method step behind reading a season of pressure
 - *transit_events cluster on Saturn in Aries* — the wider sky behind this consolidation window
+- [the Colombia vs Portugal astrology read](/en/wiki/colombia-vs-portugal) — the transit contrast between the two sides
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun and its ruler the way this piece reads Cristiano Ronaldo's zodiac sign — as a structure under timed pressure rather than a label. You get a clear view of your Sun's sign and ruler and the Saturn transits touching it now, and, more usefully, a way to tell a season of testing apart from a setback you cannot move.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and its ruler the way this piece reads Cristiano Ronaldo's zodiac sign — as a structure under timed pressure rather than a label. You get a clear view of your Sun's sign and ruler and the Saturn transits touching it now, and, more usefully, a way to tell a season of testing apart from a setback you cannot move.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -230,7 +233,7 @@ C罗星座是**水瓶座太阳，守护星为土星**，由 1985 年 2 月 5 日
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读 C罗星盘那样去读你自己的太阳与它的守护星——把它当成一种被标定时机的结构，而不是一个标签。你会清楚看到太阳的星座与守护星、以及此刻触及它的土星过运，更有用的是，得到一种把"一段考验的季节"与"一次你搬不动的挫折"分开来的方式。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读 C罗星盘那样去读你自己的太阳与它的守护星——把它当成一种被标定时机的结构，而不是一个标签。你会清楚看到太阳的星座与守护星、以及此刻触及它的土星过运，更有用的是，得到一种把"一段考验的季节"与"一次你搬不动的挫折"分开来的方式。
 
 ## 参考来源
 

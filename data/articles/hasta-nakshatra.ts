@@ -124,11 +124,13 @@ Hasta shares Virgo with Uttara Phalguni and Chitra, but Savitar's artisanal infl
 
 ## Take Action
 
-[Generate your free birth chart to explore hasta nakshatra.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+[Generate your free birth chart to explore hasta nakshatra.](/en/wiki/how-to-read-birth-chart)
 
 Your birth chart will show the exact degree of your natal Moon — revealing whether it falls within Hasta's 10°00′–23°20′ Virgo span. That degree also places Hasta in a specific house in your chart, pointing to the life area where the calibration loop between precision and compassion tends to show up most concretely in work, relationships, and creative output.
 
 *This is not a clinical interpretation or mental health advice.*
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

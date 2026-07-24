@@ -119,7 +119,9 @@ The Descendant is the precise cusp that begins the 7th house, the angle opposite
 
 ## Take Action
 
-Open your birth chart, locate the sign on your Descendant, and write down the three traits you most often notice in close partners. Reading the full [Astrological Houses guide](https://astrologywiki.com/en/wiki/astrology-houses) places the 7th house in context, so you can see how it speaks to the rest of your chart. The qualities you keep meeting in others are usually an invitation to recognize — and slowly reclaim — more of who you already are.
+Open your birth chart, locate the sign on your Descendant, and write down the three traits you most often notice in close partners. Reading the full [Astrological Houses guide](/en/wiki/astrology-houses) places the 7th house in context, so you can see how it speaks to the rest of your chart. The qualities you keep meeting in others are usually an invitation to recognize — and slowly reclaim — more of who you already are.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -234,7 +236,7 @@ export const seventhHouseAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-读完第七宫，不妨花十分钟把它放回整张星盘的脉络里看一看：点开 [占星十二宫完整指南](https://astrologywiki.com/zh/wiki/astrology-houses)，对照其他十一个宫位。这样你会拿到一张完整的关系地图，看清第七宫这面镜子照出的，只是你整个人生剧本里的一幕。看懂了这一点，你就不再急着问「我会遇到谁」，而是开始问「我想活成什么样的自己」。
+读完第七宫，不妨花十分钟把它放回整张星盘的脉络里看一看：点开 [占星十二宫完整指南](/zh/wiki/astrology-houses)，对照其他十一个宫位。这样你会拿到一张完整的关系地图，看清第七宫这面镜子照出的，只是你整个人生剧本里的一幕。看懂了这一点，你就不再急着问「我会遇到谁」，而是开始问「我想活成什么样的自己」。
 
 ## 参考来源
 

@@ -132,7 +132,9 @@ Hades names the underworld's ruler (and Pluto the modern planet that carries the
 
 ## Take Action
 
-Map your own chart for the descent-and-return pattern by working through the full birth-chart walkthrough step by step. You can come away with the specific placements, Pluto, the underworld houses, the nodal axis, where this rhythm tends to surface for you, along with a clearer sense of which season of the cycle you are living through right now and which one tends to come next. Reading your chart this way turns the myth from a story you admire into a map you can stand inside, so the next time the ground opens you already know the shape of the path back. Read the [full guide to reading a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see where the descent-and-return pattern shows up for you.
+Map your own chart for the descent-and-return pattern by working through the full birth-chart walkthrough step by step. You can come away with the specific placements, Pluto, the underworld houses, the nodal axis, where this rhythm tends to surface for you, along with a clearer sense of which season of the cycle you are living through right now and which one tends to come next. Reading your chart this way turns the myth from a story you admire into a map you can stand inside, so the next time the ground opens you already know the shape of the path back. Read the [full guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) to see where the descent-and-return pattern shows up for you.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -239,7 +241,7 @@ export const persephoneGoddessZh: WikiArticle = {
 
 ## 下一步行动
 
-想看清 Persephone 这条下降与回归的轨迹具体落在你自己哪些人生节点上，可以对着自己的出生星盘走一遍[如何解读出生星盘的完整指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。读完你会拿到一份属于自己的"下沉—折返"地图，也会更明白：所谓成长，常常不是一路向上，而是敢于下去、再带着不一样的自己回来。
+想看清 Persephone 这条下降与回归的轨迹具体落在你自己哪些人生节点上，可以对着自己的出生星盘走一遍[如何解读出生星盘的完整指南](/zh/wiki/how-to-read-birth-chart)。读完你会拿到一份属于自己的"下沉—折返"地图，也会更明白：所谓成长，常常不是一路向上，而是敢于下去、再带着不一样的自己回来。
 
 ## 参考来源
 

@@ -101,7 +101,9 @@ Yes, and that is part of the fun. Because this game rests on personality reading
 
 ## Take Action
 
-Pick the Toy Story 5 character whose personality feels closest to yours, then generate your own chart to see how your real Sun sign compares to the archetype you chose. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and you will get a clear view of your actual Sun sign laid out from your birth date. The contrast between a playful character pick and your documented chart is a small, honest reminder that the fun of archetypes and the facts of a real chart are two different things worth keeping apart.
+Pick the Toy Story 5 character whose personality feels closest to yours, then generate your own chart to see how your real Sun sign compares to the archetype you chose. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) and you will get a clear view of your actual Sun sign laid out from your birth date. The contrast between a playful character pick and your documented chart is a small, honest reminder that the fun of archetypes and the facts of a real chart are two different things worth keeping apart.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -208,7 +210,7 @@ export const toyStory5ZodiacSignsZh: WikiArticle = {
 
 ## 下一步行动
 
-挑出玩具总动员5里那个性格离你最近的角色，然后生成你自己的星盘，看看你真实的太阳星座与你所挑的原型相比如何。[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，你会从自己的出生日期得到一张清晰铺开的真实太阳星座图景。一个趣味的角色挑选与一张有据可查的星盘之间的对比，是一个小小而诚实的提醒：原型的乐趣，与真实星盘的事实，是两件值得分开看待的事。
+挑出玩具总动员5里那个性格离你最近的角色，然后生成你自己的星盘，看看你真实的太阳星座与你所挑的原型相比如何。[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，你会从自己的出生日期得到一张清晰铺开的真实太阳星座图景。一个趣味的角色挑选与一张有据可查的星盘之间的对比，是一个小小而诚实的提醒：原型的乐趣，与真实星盘的事实，是两件值得分开看待的事。
 
 ## 参考来源
 

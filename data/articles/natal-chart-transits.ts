@@ -109,7 +109,9 @@ You can locate them by matching degrees, but interpreting them takes knowing wha
 
 ## Take Action
 
-New to your chart? Read the full [guide to reading a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) first, then layer today's transits on top. Once you can confidently place the planets and houses on your own chart, overlaying today's transits becomes a quick daily habit instead of a guessing game — and timing stops feeling random, because you can finally see exactly where the moving sky is meeting the map you were born with.
+New to your chart? Read the full [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) first, then layer today's transits on top. Once you can confidently place the planets and houses on your own chart, overlaying today's transits becomes a quick daily habit instead of a guessing game — and timing stops feeling random, because you can finally see exactly where the moving sky is meeting the map you were born with.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -217,7 +219,7 @@ Natal Chart Transits（本命盘行运）指的是**当下移动的行星对你�
 
 ## 下一步行动
 
-还没真正读懂自己的出生盘？先花点时间把本命盘看明白，再叠加今天的行运会清晰得多。读一读 [完整的出生星盘解读指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，你会拿到一套从头看盘的顺序；当你能稳稳读出那张固定的底图，流动的行运才会真正变成你在自己盘上认得出来的东西。
+还没真正读懂自己的出生盘？先花点时间把本命盘看明白，再叠加今天的行运会清晰得多。读一读 [完整的出生星盘解读指南](/zh/wiki/how-to-read-birth-chart)，你会拿到一套从头看盘的顺序；当你能稳稳读出那张固定的底图，流动的行运才会真正变成你在自己盘上认得出来的东西。
 
 ## 参考来源
 

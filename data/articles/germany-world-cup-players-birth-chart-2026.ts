@@ -108,7 +108,9 @@ This reading uses Western tropical Sun signs. A Vedic reading would recalculate 
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's squad — as a temperament under timed context rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a measured way to tell a tendency apart from a fixed outcome, long after the final whistle.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's squad — as a temperament under timed context rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a measured way to tell a tendency apart from a fixed outcome, long after the final whistle.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -209,7 +211,7 @@ export const germanyWorldCupPlayersBirthChart2026Zh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读德国队那样去读你自己的太阳——把它当作有时间背景的气质，而非定论。你会看到自己太阳所在的星座、此刻正触及它的行运，并学会把倾向和写死的结果分开。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读德国队那样去读你自己的太阳——把它当作有时间背景的气质，而非定论。你会看到自己太阳所在的星座、此刻正触及它的行运，并学会把倾向和写死的结果分开。
 
 ## 参考来源
 

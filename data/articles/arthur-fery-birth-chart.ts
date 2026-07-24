@@ -123,7 +123,9 @@ No. Astrology here works best as symbolic self-reflection, not sports prediction
 
 ## Take Action
 
-Ready to read your own chart with the same level of care? [Generate your free birth chart to explore the Arthur Fery birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) - then compare your strongest sign patterns with the parts of your chart that challenge or balance them.
+Ready to read your own chart with the same level of care? [Generate your free birth chart to explore the Arthur Fery birth chart](/en/wiki/how-to-read-birth-chart) - then compare your strongest sign patterns with the parts of your chart that challenge or balance them.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

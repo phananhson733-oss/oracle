@@ -119,9 +119,11 @@ Interest surged around his death in July 2025 and the tributes that followed, as
 
 ## Take Action
 
-Generate your free birth chart to explore Diogo Jota birth chart — start with our [step-by-step guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) walkthrough at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You will get a full placement map of your own Sun, Moon, and rising, laid out the same way a celebrity profile is, so you can see the patterns instead of a single label. Read symbolically, that map becomes a quiet tool for noticing how your public self and private self line up — and where they don't.
+Generate your free birth chart to explore Diogo Jota birth chart — start with our [step-by-step guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) walkthrough at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart). You will get a full placement map of your own Sun, Moon, and rising, laid out the same way a celebrity profile is, so you can see the patterns instead of a single label. Read symbolically, that map becomes a quiet tool for noticing how your public self and private self line up — and where they don't.
 
 This is not a clinical interpretation or mental health advice.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

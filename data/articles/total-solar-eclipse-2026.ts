@@ -126,7 +126,9 @@ Astrologers usually watch a window of roughly two weeks on either side of August
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice — it stays a reflective framework, not a verdict on your future. Because the eclipse only becomes genuinely useful once you can see where the reset actually lands in your own chart, take the honest next step and [generate your free birth chart to explore Total Solar Eclipse 2026](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+This is not a clinical interpretation or mental health advice — it stays a reflective framework, not a verdict on your future. Because the eclipse only becomes genuinely useful once you can see where the reset actually lands in your own chart, take the honest next step and [generate your free birth chart to explore Total Solar Eclipse 2026](/en/wiki/how-to-read-birth-chart).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

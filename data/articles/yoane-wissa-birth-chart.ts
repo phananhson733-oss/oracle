@@ -107,7 +107,9 @@ DR Congo qualifying for WC 2026 — only their second World Cup appearance, and 
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to locate your own Sun the way this piece reads Wissa's — as a developmental direction rather than a fixed label. You get a clear view of where your Sun sits, and, more quietly, a way to tell a meaningful symbolic theme apart from a prediction no planet can reliably deliver.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your own Sun the way this piece reads Wissa's — as a developmental direction rather than a fixed label. You get a clear view of where your Sun sits, and, more quietly, a way to tell a meaningful symbolic theme apart from a prediction no planet can reliably deliver.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -222,7 +224,7 @@ export const yoaneWissaBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-去[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读维萨那样找到你自己的太阳——把它读成一段关于目的的发展方向，而非一个固定标签。你会看到自己的太阳落在何处，也学到一种分辨方法：把一个有意义的象征主题，和一则不该托付给行星的预言区分开来。
+去[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读维萨那样找到你自己的太阳——把它读成一段关于目的的发展方向，而非一个固定标签。你会看到自己的太阳落在何处，也学到一种分辨方法：把一个有意义的象征主题，和一则不该托付给行星的预言区分开来。
 
 ## 参考来源
 

@@ -125,7 +125,9 @@ It runs from one birthday to the next, roughly twelve months. The themes tend to
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see which natal promises this year's return is set to spotlight. You'll get a clear map of the birth potential sitting underneath every annual overlay — and the next time a placement worries you, you'll read it as a temporary highlight rather than a fixed verdict on the year.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see which natal promises this year's return is set to spotlight. You'll get a clear map of the birth potential sitting underneath every annual overlay — and the next time a placement worries you, you'll read it as a temporary highlight rather than a fixed verdict on the year.
+
+To read your year ahead, the [solar return calculator](/en/solar-return-calculator) casts the chart for your next birthday.
 
 ## Sources
 

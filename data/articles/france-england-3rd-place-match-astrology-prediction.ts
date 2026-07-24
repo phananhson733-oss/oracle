@@ -130,10 +130,12 @@ Often, yes. The emotional frame is consolation rather than glory, so a reading t
 - [explainer on the trine aspect](/en/wiki/trine-in-astrology) — for the softer, flowing transits a reading might describe.
 - [overview of the astrological houses](/en/wiki/astrology-houses) — to see where match-day themes tend to land in a chart.
 - [Mundane astrology (Wikipedia)](https://en.wikipedia.org/wiki/Mundane_astrology) — context for reading the charts of countries.
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
+- [the Kylian Mbappe birth chart](/en/wiki/kylian-mbappe-birth-chart) — a full symbolic read of France's forward
 
 ## Take Action
 
-Continue your symbolic read of the fixture with the [World Cup 2026 astrology prediction](https://www.astrologywiki.com/en/wiki/world-cup-2026-astrology-prediction), where the tournament-wide themes are laid out in plain language. You'll come away with a broader picture of the mood and archetypes in play, so you can watch the match with more attention and less noise. More than that, you'll practice holding a result loosely — a small habit that carries into how you meet outcomes far beyond the pitch.
+Continue your symbolic read of the fixture with the [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction), where the tournament-wide themes are laid out in plain language. You'll come away with a broader picture of the mood and archetypes in play, so you can watch the match with more attention and less noise. More than that, you'll practice holding a result loosely — a small habit that carries into how you meet outcomes far beyond the pitch.
 
 ## Sources
 

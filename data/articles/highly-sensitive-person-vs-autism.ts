@@ -113,7 +113,9 @@ They share visible sensory overwhelm, so casual comparisons lump them together a
 
 ## Take Action
 
-Start with the sensitivity side on its own terms before reaching for any comparison: read the full guide and write down two or three traits that sound like you. You'll come away with clearer language for how you actually experience the world, and that clarity is what lets you bring a calm, specific question to a professional if an autism assessment ever feels right. Want to understand the sensitive side on its own terms first? Read the [full guide to the highly sensitive person](https://astrologywiki.com/en/wiki/highly-sensitive-person).
+Start with the sensitivity side on its own terms before reaching for any comparison: read the full guide and write down two or three traits that sound like you. You'll come away with clearer language for how you actually experience the world, and that clarity is what lets you bring a calm, specific question to a professional if an autism assessment ever feels right. Want to understand the sensitive side on its own terms first? Read the [full guide to the highly sensitive person](/en/wiki/highly-sensitive-person).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -233,7 +235,7 @@ Highly Sensitive Person vs Autism（高敏感人群与自闭症）是把两个�
 
 ## 下一步行动
 
-想先把"敏感"这一面单独读懂，再回头对照差别？读一读 [高敏感人群完整指南](https://astrologywiki.com/zh/wiki/highly-sensitive-person)，你会拿到一份关于高敏感特质的系统梳理，也会慢慢明白：理解自己的敏感，从来不是为了急着贴上某个标签，而是为了更温和地与自己相处。
+想先把"敏感"这一面单独读懂，再回头对照差别？读一读 [高敏感人群完整指南](/zh/wiki/highly-sensitive-person)，你会拿到一份关于高敏感特质的系统梳理，也会慢慢明白：理解自己的敏感，从来不是为了急着贴上某个标签，而是为了更温和地与自己相处。
 
 ## 参考来源
 

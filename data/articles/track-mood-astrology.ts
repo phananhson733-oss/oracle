@@ -95,7 +95,9 @@ Once you have mastered the daily signs, keep an eye on these two major influence
 
 Astrology is not just about prediction; it is a profound tool for self-awareness. By tracking the Moon, you realize that your "bad days" are often just passing weather patterns. This practice allows you to stop swimming against the current and start flowing with the tides.
 
-**Your challenge:** Don't just read about it. **[Start your Mood Journal](/journal)** right now and log your first entry. The stars are ready to help you heal.`,
+**Your challenge:** Don't just read about it. **[Start your Mood Journal](/journal)** right now and log your first entry. The stars are ready to help you heal.
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+`,
 };
 
 export const trackMoodAstrologyZh: WikiArticle = {

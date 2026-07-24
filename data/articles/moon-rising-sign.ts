@@ -111,7 +111,9 @@ Neither outranks the other; they answer different questions. The rising sign sha
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Moon and rising sign, then read them side by side rather than as one label. You get a clear view of your inner emotional self and your outer first impression, and, more usefully, a habit of asking where the two agree and where they diverge before deciding which one is "really" you.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Moon and rising sign, then read them side by side rather than as one label. You get a clear view of your inner emotional self and your outer first impression, and, more usefully, a habit of asking where the two agree and where they diverge before deciding which one is "really" you.
+
+To confirm your ascendant before reading on, try the [rising sign calculator](/en/rising-sign-calculator) with your birth details.
 
 ## Sources
 
@@ -227,7 +229,7 @@ export const moonRisingSignZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你自己的月亮与上升，然后把它们并排来读、而不是当成一个标签。你会清楚看到自己的内在情绪自我和外在第一印象，更有用的是，养成一个习惯：在断定哪一个才"真正"是你之前，先问一句这两者在哪里同向、又在哪里分岔。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出你自己的月亮与上升，然后把它们并排来读、而不是当成一个标签。你会清楚看到自己的内在情绪自我和外在第一印象，更有用的是，养成一个习惯：在断定哪一个才"真正"是你之前，先问一句这两者在哪里同向、又在哪里分岔。
 
 ## 参考来源
 

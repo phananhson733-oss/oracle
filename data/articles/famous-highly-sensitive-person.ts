@@ -119,7 +119,7 @@ If the celebrities above resonated, it helps to sort out where reading other peo
 
 ## Take Action
 
-Wondering if you share the trait? Start with the [full guide to the highly sensitive person](https://astrologywiki.com/en/wiki/highly-sensitive-person), and read it with your own life in mind rather than a celebrity's. You come away with a clear, non-clinical picture of how your sensitivity actually works — and, more quietly, with permission to treat depth of feeling as equipment for your life, not a fault to manage.
+Wondering if you share the trait? Start with the [full guide to the highly sensitive person](/en/wiki/highly-sensitive-person), and read it with your own life in mind rather than a celebrity's. You come away with a clear, non-clinical picture of how your sensitivity actually works — and, more quietly, with permission to treat depth of feeling as equipment for your life, not a fault to manage.
 
 ## Sources
 
@@ -224,7 +224,7 @@ export const famousHighlySensitivePersonZh: WikiArticle = {
 
 ## 下一步行动
 
-想知道自己是不是也有这份特质，可以从这份完整的高敏感人群指南读起：花十分钟对照里面的特征清单，你会得到一份关于自己感受方式的清晰画像，也更容易明白——敏感不是要被修正的毛病，而是一种值得好好安放的天赋。[阅读完整的高敏感人群指南](https://astrologywiki.com/zh/wiki/highly-sensitive-person)
+想知道自己是不是也有这份特质，可以从这份完整的高敏感人群指南读起：花十分钟对照里面的特征清单，你会得到一份关于自己感受方式的清晰画像，也更容易明白——敏感不是要被修正的毛病，而是一种值得好好安放的天赋。[阅读完整的高敏感人群指南](/zh/wiki/highly-sensitive-person)
 
 ## 参考来源
 

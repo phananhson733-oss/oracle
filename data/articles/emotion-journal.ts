@@ -112,7 +112,9 @@ No. The simplest mood journal uses two questions: what happened, and what did I 
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to pair your emotion journal with a map of your own emotional tendencies. Your chart sketches the placements often linked to how you process feeling — where you guard, where you release — and that picture gives your naming practice a starting frame. The pairing is for self-awareness and reflection, not prediction: the journal still does the real work of putting an accurate word to what you feel.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to pair your emotion journal with a map of your own emotional tendencies. Your chart sketches the placements often linked to how you process feeling — where you guard, where you release — and that picture gives your naming practice a starting frame. The pairing is for self-awareness and reflection, not prediction: the journal still does the real work of putting an accurate word to what you feel.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -224,7 +226,7 @@ export const emotionJournalZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，给你的情绪日记配上一张属于自己的情绪倾向地图。你的星盘勾勒出那些常被关联到你如何处理感受的落点——你在哪里设防、又在哪里释放——这幅画给你的命名练习提供一个起步的框架。这种搭配是为了自我觉察和反思，而不是预测：把准确的词贴到你所感受到的东西上，这件真正的活儿，仍旧由日记来完成。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，给你的情绪日记配上一张属于自己的情绪倾向地图。你的星盘勾勒出那些常被关联到你如何处理感受的落点——你在哪里设防、又在哪里释放——这幅画给你的命名练习提供一个起步的框架。这种搭配是为了自我觉察和反思，而不是预测：把准确的词贴到你所感受到的东西上，这件真正的活儿，仍旧由日记来完成。
 
 ## 参考来源
 

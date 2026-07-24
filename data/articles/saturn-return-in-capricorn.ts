@@ -127,7 +127,7 @@ It tends to concentrate on authority, career, and long-term structure. The speci
 
 ## Take Action
 
-Run your details through the [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) calculator to check whether Saturn sits in Capricorn for you and when the return lands. You'll get your exact age window and natal house, so the themes stop being abstract and start pointing at real decisions. Knowing the timing early gives you room to choose what you build next, instead of reacting once the pressure has already arrived.
+Run your details through the [Explore Your Saturn Return](/en/saturn-return-calculator) calculator to check whether Saturn sits in Capricorn for you and when the return lands. You'll get your exact age window and natal house, so the themes stop being abstract and start pointing at real decisions. Knowing the timing early gives you room to choose what you build next, instead of reacting once the pressure has already arrived.
 
 This is not a clinical interpretation or mental health advice.
 

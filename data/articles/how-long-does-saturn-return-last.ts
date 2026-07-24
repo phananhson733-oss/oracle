@@ -120,7 +120,7 @@ Many people describe the second return as reflective rather than upheaval-driven
 
 ## Take Action
 
-Ready to pin down your own timing? [Explore Your Saturn Return](https://www.astrologywiki.com/en/saturn-return-calculator) to find your natal Saturn degree and the exact dates your window opens and closes. The calculator returns a personal map of how long does Saturn return last for your chart, so instead of bracing for a vague crisis you can plan the two or three years as a deliberate rebuild of the structures that matter to you.
+Ready to pin down your own timing? [Explore Your Saturn Return](/en/saturn-return-calculator) to find your natal Saturn degree and the exact dates your window opens and closes. The calculator returns a personal map of how long does Saturn return last for your chart, so instead of bracing for a vague crisis you can plan the two or three years as a deliberate rebuild of the structures that matter to you.
 
 This is not a clinical interpretation or mental health advice.
 

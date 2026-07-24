@@ -115,7 +115,7 @@ Not at all. Venus simply describes how you relate and what you value; challengin
 
 ## Take Action
 
-Reading why am i afraid of commitment as a set of symbols — not a sentence — starts with seeing your own chart. Map where Venus, Saturn, and your 7th house actually sit, and you get a personalized picture of the tendencies described here instead of a one-size-fits-all label. Used honestly, that picture can work like a mirror for how you approach closeness and where you might choose to soften. This is not a clinical interpretation or mental health advice. To begin, [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) and treat the result as a prompt for reflection, not a prediction.
+Reading why am i afraid of commitment as a set of symbols — not a sentence — starts with seeing your own chart. Map where Venus, Saturn, and your 7th house actually sit, and you get a personalized picture of the tendencies described here instead of a one-size-fits-all label. Used honestly, that picture can work like a mirror for how you approach closeness and where you might choose to soften. This is not a clinical interpretation or mental health advice. To begin, [Generate Your Free Birth Chart](/en/birth-chart-calculator) and treat the result as a prompt for reflection, not a prediction.
 
 ## Sources
 

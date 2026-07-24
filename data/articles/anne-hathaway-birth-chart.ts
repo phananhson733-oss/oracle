@@ -120,7 +120,9 @@ Yes — the four Scorpio planets are set by her birth date, so the stellium itse
 
 This is not a clinical interpretation or mental health advice. Anne Hathaway's chart is a symbolic pattern for thinking about intensity and privacy, not a fixed verdict on who she is.
 
-Map your own concentrated placements the same way you'd read hers: [Generate your free birth chart to explore anne hathaway birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You'll see exactly which signs your planets cluster in, and you may start to notice where your own most-emphasized sign has been quietly shaping how you show up long before you had a name for it.
+Map your own concentrated placements the same way you'd read hers: [Generate your free birth chart to explore anne hathaway birth chart](/en/wiki/how-to-read-birth-chart). You'll see exactly which signs your planets cluster in, and you may start to notice where your own most-emphasized sign has been quietly shaping how you show up long before you had a name for it.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

@@ -113,7 +113,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart when you ask why do i feel stuck in my career, then find your Midheaven, tenth house, and natal Saturn to see which phase your career symbolism is actually describing. You will come away with a concrete map of where your ambition, routine, and timing sit — and a clearer read on whether this stuck feeling is a stall to break or a foundation still being laid. [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator).
+Generate your free birth chart when you ask why do i feel stuck in my career, then find your Midheaven, tenth house, and natal Saturn to see which phase your career symbolism is actually describing. You will come away with a concrete map of where your ambition, routine, and timing sit — and a clearer read on whether this stuck feeling is a stall to break or a foundation still being laid. [Generate Your Free Birth Chart](/en/birth-chart-calculator).
 
 ## Sources
 

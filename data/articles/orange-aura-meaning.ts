@@ -115,6 +115,8 @@ These pieces go deeper on threads this entry only touches:
 - [sacral chakra explainer](/en/wiki/chakra-system-overview) — the energy center this color is most often mapped onto.
 - [guide to aura color shades](/en/wiki/aura-colors-guide) — how vibrant, muddy, and amber versions of one color read differently.
 - [Svadhishthana (Wikipedia)](https://en.wikipedia.org/wiki/Svadhishthana)
+- [the sacral chakra meaning](/en/wiki/sacral-chakra-meaning) — creativity, feeling, and emotional flow
+- [Leo rising and the houses](/en/wiki/leo-rising-houses) — a Sun-ruled, personal-power lens that mirrors solar-plexus themes
 
 ## Take Action
 

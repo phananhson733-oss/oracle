@@ -130,6 +130,8 @@ Many people revisit what do I need to let go of around birthdays, a Saturn retur
 
 Open your birth chart and locate Saturn, the twelfth house, and your South Node, then note one pattern each placement raises for you. You end up with a short, personal list of what feels ready to release — not a prediction, but an honest starting point. Over time, that habit of asking rather than bracing turns letting go from something that happens to you into something you choose. *Explore Astrology Tools* to map these placements in your own chart.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Dane Rudhyar — shaped the person-centered approach that reads the chart for reflection rather than fixed prediction

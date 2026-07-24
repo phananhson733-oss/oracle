@@ -109,7 +109,9 @@ You can plan around it rather than brace for it. Knowing the return date roughly
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find the exact degree and sign of your natal Mars, then note when transiting Mars next returns to it. You get the one fixed point every mars return reading starts from, and, more usefully, a recurring two-year checkpoint you can use to plan where your drive goes next rather than wonder where it went.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find the exact degree and sign of your natal Mars, then note when transiting Mars next returns to it. You get the one fixed point every mars return reading starts from, and, more usefully, a recurring two-year checkpoint you can use to plan where your drive goes next rather than wonder where it went.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -221,7 +223,7 @@ export const marsReturnAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，先找到本命火星精确的度数与星座，再记下行运火星下一次回到这个点的时间。你会拿到每次解读都从那里起步的那一个固定点，更有用的是，拿到一个大约每两年一次、可以用来规划"冲劲往哪里去"的检查点，而不必再事后追问它到底去了哪里。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，先找到本命火星精确的度数与星座，再记下行运火星下一次回到这个点的时间。你会拿到每次解读都从那里起步的那一个固定点，更有用的是，拿到一个大约每两年一次、可以用来规划"冲劲往哪里去"的检查点，而不必再事后追问它到底去了哪里。
 
 ## 参考来源
 

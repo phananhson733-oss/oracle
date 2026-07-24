@@ -111,7 +111,9 @@ The nakshatra just before, Shatabhisha, sits fully in Aquarius and carries a mor
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see which nakshatra holds your Moon and how its symbolism reads in your own placements. You get a clear view of your lunar mansion and a reminder that the chart names a disposition rather than a fate, and, more usefully, a way to ask where your own conviction is finding an outlet before you credit or blame the stars for the fire.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see which nakshatra holds your Moon and how its symbolism reads in your own placements. You get a clear view of your lunar mansion and a reminder that the chart names a disposition rather than a fate, and, more usefully, a way to ask where your own conviction is finding an outlet before you credit or blame the stars for the fire.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -225,7 +227,7 @@ export const purvaBhadrapadaNakshatraZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，看看哪个星宿落着你的月亮，以及它的象征在你自己的落点里读起来是什么样子。你会清楚看到自己的星宿，也会记得星盘指出的是一种禀性、而非一份宿命，更有用的是，养成一个习惯：在把这团火归功于、或归咎于星辰之前，先问一句自己的信念到底找到了哪条出口。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，看看哪个星宿落着你的月亮，以及它的象征在你自己的落点里读起来是什么样子。你会清楚看到自己的星宿，也会记得星盘指出的是一种禀性、而非一份宿命，更有用的是，养成一个习惯：在把这团火归功于、或归咎于星辰之前，先问一句自己的信念到底找到了哪条出口。
 
 ## 参考来源
 

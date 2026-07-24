@@ -110,10 +110,13 @@ Jupiter spends 2025-26 in Cancer, lighting his Sun's sign and ruling his Moon, w
 - *Lionel Messi zodiac sign reading* — another Cancer-Sun chart from the same series
 - *tropical versus sidereal zodiac explained* — the difference behind the Cancer-or-Gemini question
 - [transit_events cluster on 2026 Jupiter in Cancer](/en/wiki/9th-house-astrology) — the wider sky behind this emphasis window
+- [the Vinicius Jr birth chart](/en/wiki/vinicius-jr-birth-chart-astrology) — a detailed reading of the Brazil winger's chart
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads Vinicius Jr's zodiac sign — as a working tension rather than a label. You get a clear view of your Sun's sign, your Moon's sign, and the transits touching them now, and, more quietly, a way to tell a steadying instinct apart from a fear of the open field.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads Vinicius Jr's zodiac sign — as a working tension rather than a label. You get a clear view of your Sun's sign, your Moon's sign, and the transits touching them now, and, more quietly, a way to tell a steadying instinct apart from a fear of the open field.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 
@@ -229,7 +232,7 @@ export const viniciusJrZodiacSignZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯星座那样去读你自己的太阳和月亮——把它当成一个要去周旋的张力，而不是一个标签。你会清楚看到太阳的星座、月亮的星座，以及此刻触及它们的过运，更安静地，得到一种把"想求稳的本能"和"怕面对开阔场地的退缩"分开的方式。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯星座那样去读你自己的太阳和月亮——把它当成一个要去周旋的张力，而不是一个标签。你会清楚看到太阳的星座、月亮的星座，以及此刻触及它们的过运，更安静地，得到一种把"想求稳的本能"和"怕面对开阔场地的退缩"分开的方式。
 
 ## 参考来源
 

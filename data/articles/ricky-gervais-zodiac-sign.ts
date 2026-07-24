@@ -123,6 +123,8 @@ Start by comparing a known Sun sign with the rest of a chart so the symbol has c
 
 [Learn how to read your birth chart before comparing celebrity placements.](/en/wiki/how-to-read-birth-chart)
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Dane Rudhyar — shaped modern psychological astrology by reading chart factors as person-centered symbols of development

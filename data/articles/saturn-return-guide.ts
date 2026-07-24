@@ -128,7 +128,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Run your birth details through the Saturn return calculator to see the exact dates of all three passes in your own chart. You'll get a personal timeline instead of a generic "age 29" estimate — the first hit, the retrograde recap, and the closing pass mapped to your own Saturn. Knowing that shape ahead of time turns the return from something that happens to you into a season you can meet with your eyes open. [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator).
+Run your birth details through the Saturn return calculator to see the exact dates of all three passes in your own chart. You'll get a personal timeline instead of a generic "age 29" estimate — the first hit, the retrograde recap, and the closing pass mapped to your own Saturn. Knowing that shape ahead of time turns the return from something that happens to you into a season you can meet with your eyes open. [Explore Your Saturn Return](/en/saturn-return-calculator).
 
 ## Sources
 

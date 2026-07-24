@@ -132,6 +132,8 @@ For readers using jwoww zack carpinello wedding synastry as a starting point, th
 
 Start by entering accurate birth data and checking which chart factors are confirmed, estimated, or unknown. The output is a clearer map of signs, rulers, and relationship themes you can compare with real-life patterns. The life insight is learning the difference between a symbolic fit and a fixed prediction. This is not a clinical interpretation or mental health advice. [Learn how to read a birth chart before comparing relationship symbolism.](/en/wiki/how-to-read-birth-chart)
 
+To see how two charts actually interact, our [synastry calculator](/en/synastry-calculator) compares both sets of placements side by side.
+
 ## Sources
 
 - [People wedding exclusive](https://people.com/jersey-shore-star-jenni-jwoww-farley-marries-pro-wrestler-zack-carpinello-wedding-exclusive-12005286) — reports the June 24, 2026 surprise wedding details, family-centered ceremony, and birthday symbolism.

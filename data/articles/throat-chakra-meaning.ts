@@ -112,10 +112,11 @@ Subtle-energy traditions have long mapped the throat center to blue, treating it
 ## Related Reading
 
 If you want the bigger picture, the [chakra system overview](/en/wiki/chakra-system-overview) shows how the throat center leans on the others, and the [heart chakra reading](/en/wiki/heart-chakra-meaning) explains the warmth it borrows from below. To see which way your own expression is leaning right now, the [chakra test](/en/wiki/chakra-test) walks through how to self-assess the throat alongside the other six centers. If insight feels clear but stays unspoken, the center just above the throat is the natural next stop, since the throat is what turns that private clarity into words.
+- [Gemini rising](/en/wiki/gemini-rising) — a Mercury-ruled, communicative signature that mirrors throat-chakra themes
 
 ## Take Action
 
-Take the Chakra Test to see whether your throat chakra reads as open, blocked, or overactive. The result gives you a plain read on which way your expression leans right now, instead of a one-size slogan to push through. Over time, that small piece of self-knowledge changes how you handle every hard conversation — because once you can name whether you tend to swallow your truth or flood the room, you finally get to choose your voice on purpose. Start with the [free Chakra Test](https://astrologywiki.com/en/wiki/chakra-test) and read your result against what you noticed in yourself today.
+Take the Chakra Test to see whether your throat chakra reads as open, blocked, or overactive. The result gives you a plain read on which way your expression leans right now, instead of a one-size slogan to push through. Over time, that small piece of self-knowledge changes how you handle every hard conversation — because once you can name whether you tend to swallow your truth or flood the room, you finally get to choose your voice on purpose. Start with the [free Chakra Test](/en/wiki/chakra-test) and read your result against what you noticed in yourself today.
 
 ## Sources
 
@@ -240,7 +241,7 @@ export const throatChakraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-去做一次脉轮测试，看看你的喉轮此刻读起来是通畅、堵住，还是过满。这一测会给你一份当下的清楚结论——你现在的表达偏哪一端，而不是又一句"多开口"的通用口号。久了你会发现，光是这一点自我了解，就改变了你处理每一次难谈话的方式：当你能叫出自己是惯于咽下真话，还是惯于把房间填满，你才真正开始有意识地选择自己的声音。先从这份[免费脉轮测试](https://astrologywiki.com/zh/wiki/chakra-test)开始，把结果对照今天你在自己身上注意到的那些信号。
+去做一次脉轮测试，看看你的喉轮此刻读起来是通畅、堵住，还是过满。这一测会给你一份当下的清楚结论——你现在的表达偏哪一端，而不是又一句"多开口"的通用口号。久了你会发现，光是这一点自我了解，就改变了你处理每一次难谈话的方式：当你能叫出自己是惯于咽下真话，还是惯于把房间填满，你才真正开始有意识地选择自己的声音。先从这份[免费脉轮测试](/zh/wiki/chakra-test)开始，把结果对照今天你在自己身上注意到的那些信号。
 
 ## 参考来源
 

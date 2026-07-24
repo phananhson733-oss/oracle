@@ -111,7 +111,9 @@ No. Because its final degree sits where one cycle completes and the next begins,
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Moon and ascendant, and see whether the closing degrees of Pisces carry any weight in your placements. You get a clear map of where you sit on the wheel and, more usefully, a fresh way to read the endings in your own story as guided crossings rather than full stops.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Moon and ascendant, and see whether the closing degrees of Pisces carry any weight in your placements. You get a clear map of where you sit on the wheel and, more usefully, a fresh way to read the endings in your own story as guided crossings rather than full stops.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -225,7 +227,7 @@ export const revatiNakshatraZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你自己的月亮和上升点，看看双鱼座那收尾的几度在你的落点里是否带着分量。你会得到一张清楚的图，知道自己坐在轮盘的哪个位置，更有用的是，你会换得一种新的读法——把瑞瓦蒂这一宿照见的那些结束，读成有人引路的横渡，而不是一记冷冰冰的句点。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出你自己的月亮和上升点，看看双鱼座那收尾的几度在你的落点里是否带着分量。你会得到一张清楚的图，知道自己坐在轮盘的哪个位置，更有用的是，你会换得一种新的读法——把瑞瓦蒂这一宿照见的那些结束，读成有人引路的横渡，而不是一记冷冰冰的句点。
 
 ## 参考来源
 

@@ -118,7 +118,9 @@ No. The rising sign and Moon describe how you tend to operate now, while the nod
 
 ## Take Action
 
-Once you have located your node's sign and house, read both ends of the axis together: [Read the North Node vs South Node guide to understand the axis you just located](https://astrologywiki.com/en/wiki/north-node-vs-south-node). That pairing shows you the familiar South Node patterns sitting directly opposite your growth direction, and seeing the two side by side is what turns a single coordinate into a usable sense of where you are being asked to stretch. The placement on its own is a fact; the axis is what makes it personal.
+Once you have located your node's sign and house, read both ends of the axis together: [Read the North Node vs South Node guide to understand the axis you just located](/en/wiki/north-node-vs-south-node). That pairing shows you the familiar South Node patterns sitting directly opposite your growth direction, and seeing the two side by side is what turns a single coordinate into a usable sense of where you are being asked to stretch. The placement on its own is a fact; the axis is what makes it personal.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -240,7 +242,7 @@ The North Node（北交点）是月亮轨道与黄道相交时朝北的那个点
 
 ## 下一步行动
 
-定位好北交点后，下一步就去读[北交点与南交点的完整对照指南](https://astrologywiki.com/zh/wiki/north-node-vs-south-node)，把你刚找到的这个点放回它所在的整条轴线里看。你会同时看清自己天生依赖的旧模式和需要走向的新方向，两端对照，定位才算真正完整。当一个坐标变成一条轴线，你看的就不再是一个孤立的点，而是自己这一生从哪里来、要往哪里去的那条线。
+定位好北交点后，下一步就去读[北交点与南交点的完整对照指南](/zh/wiki/north-node-vs-south-node)，把你刚找到的这个点放回它所在的整条轴线里看。你会同时看清自己天生依赖的旧模式和需要走向的新方向，两端对照，定位才算真正完整。当一个坐标变成一条轴线，你看的就不再是一个孤立的点，而是自己这一生从哪里来、要往哪里去的那条线。
 
 ## 参考来源
 

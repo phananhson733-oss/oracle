@@ -131,7 +131,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Curious how your own placements compare to this water-heavy pattern? [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) to map your Sun, Moon, and rising in a couple of minutes. The result is a symbolic portrait of your own — a reminder that the real point was never his chart, but the lens it hands you for reading your own life.
+Curious how your own placements compare to this water-heavy pattern? [Generate Your Free Birth Chart](/en/birth-chart-calculator) to map your Sun, Moon, and rising in a couple of minutes. The result is a symbolic portrait of your own — a reminder that the real point was never his chart, but the lens it hands you for reading your own life.
 
 ## Sources
 

@@ -127,7 +127,7 @@ These pages go deeper on the placements behind this reading:
 
 ## Take Action
 
-Run your birth chart to see exactly where Venus, Mars, and the Moon fall for you. [Generate Your Free Birth Chart](https://www.astrologywiki.com/en/birth-chart-calculator), and you'll have the three placements this whole reading depends on laid out in a single view. With those in front of you, your love language stops being something you guess at and becomes a pattern you can name, question, and talk through with the people who matter most.
+Run your birth chart to see exactly where Venus, Mars, and the Moon fall for you. [Generate Your Free Birth Chart](/en/birth-chart-calculator), and you'll have the three placements this whole reading depends on laid out in a single view. With those in front of you, your love language stops being something you guess at and becomes a pattern you can name, question, and talk through with the people who matter most.
 
 ## Sources
 

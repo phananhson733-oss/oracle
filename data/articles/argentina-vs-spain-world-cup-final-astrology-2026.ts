@@ -126,6 +126,9 @@ Use it as symbolic reflection alongside the documented result, not as evidence f
 - [North Node vs South Node](/en/wiki/north-node-vs-south-node) — another example of symbolic chart interpretation.
 - [square astrology](/en/wiki/square-astrology) — a reference for reading aspects without turning them into predictions.
 - [FIFA World Cup 2026](https://www.fifa.com) — official tournament coverage for the 19 July final at New York New Jersey Stadium.
+- [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the squad's Sun-sign profile and title-defence themes
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the transit backdrop shaping Spain's campaign
+- [the Messi vs Yamal astrology comparison](/en/wiki/messi-vs-yamal-astrology) — the generational chart contrast between the two forwards
 
 ## Take Action
 

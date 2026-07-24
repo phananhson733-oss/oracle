@@ -107,10 +107,13 @@ This reading uses the Western tropical chart. A Vedic sidereal calculation would
 - [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the method step behind synthesising the luminaries
 - [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this chart in the wider tournament picture
 - [transit_events cluster Jupiter in Cancer and Saturn in Aries](/en/wiki/saturn-in-aries-2026) — the wider sky behind these two transits
+- [the Scotland vs Brazil astrology read](/en/wiki/scotland-brazil-world-cup-astrology) — a match-level look at the two contrasting national charts
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads the Vinicius Jr birth chart — as a synthesis of parts in tension rather than a single label. You get a clear view of your luminaries and the transits touching them now, and, more quietly, a way to tell a tender core apart from a daring instinct that can still grow together.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads the Vinicius Jr birth chart — as a synthesis of parts in tension rather than a single label. You get a clear view of your luminaries and the transits touching them now, and, more quietly, a way to tell a tender core apart from a daring instinct that can still grow together.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -214,7 +217,7 @@ export const viniciusJrBirthChartAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯出生星盘那样去读你自己的太阳与月亮——把它当成一组张力中的部分的合成，而不是一张单一标签。你会清楚看到自己的两颗发光体、以及此刻触碰它们的过运，更安静地，还会得到一种把温柔内核与冒险本能区分开来、又让两者一起生长的方式。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯出生星盘那样去读你自己的太阳与月亮——把它当成一组张力中的部分的合成，而不是一张单一标签。你会清楚看到自己的两颗发光体、以及此刻触碰它们的过运，更安静地，还会得到一种把温柔内核与冒险本能区分开来、又让两者一起生长的方式。
 
 ## 参考来源
 

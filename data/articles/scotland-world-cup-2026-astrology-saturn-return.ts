@@ -104,10 +104,13 @@ No, this is symbolic and educational astrology that times themes of maturity and
 ## Related Reading
 
 - [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — the cardinal fresh-start transit behind the symbolism of beginning again on merit
+- [the Scotland vs Brazil astrology read](/en/wiki/scotland-brazil-world-cup-astrology) — a match-level look at the two contrasting national charts
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Saturn and read it the way this piece reads Scotland's World Cup Saturn Return, as a cycle of earned maturity rather than a verdict. You get a clear view of where Saturn sits in your chart and when its return falls, and, more quietly, a way to tell a long-delayed threshold apart from a limit you can still grow past.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Saturn and read it the way this piece reads Scotland's World Cup Saturn Return, as a cycle of earned maturity rather than a verdict. You get a clear view of where Saturn sits in your chart and when its return falls, and, more quietly, a way to tell a long-delayed threshold apart from a limit you can still grow past.
+
+If you want to time this for yourself, the [Saturn return calculator](/en/saturn-return-calculator) shows when your own return begins and peaks.
 
 ## Sources
 
@@ -202,7 +205,7 @@ export const scotlandWorldCup2026AstrologySaturnReturnZh: WikiArticle = {
 
 ## 下一步行动
 
-去[生成你自己的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找到你盘里的土星，再像这篇读苏格兰世界杯土星回归那样去读它——读成一段挣来的成熟周期，而不是一纸判决。你会看到土星落在星盘的哪个位置、它的回归大约何时到来，也得到一种方法，去把"一道久候方至的门槛"和"一道你仍能成长越过的极限"分辨开来。
+去[生成你自己的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找到你盘里的土星，再像这篇读苏格兰世界杯土星回归那样去读它——读成一段挣来的成熟周期，而不是一纸判决。你会看到土星落在星盘的哪个位置、它的回归大约何时到来，也得到一种方法，去把"一道久候方至的门槛"和"一道你仍能成长越过的极限"分辨开来。
 
 ## 参考来源
 

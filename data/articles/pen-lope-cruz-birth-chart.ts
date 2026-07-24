@@ -112,7 +112,9 @@ The Moon changes sign roughly every two to three days, so a rough date usually p
 
 ## Take Action
 
-Generate your free birth chart to explore Penélope Cruz birth chart and see how the same Sun, Moon, and Ascendant layers appear in your own placements. You will get a full map of your signs, houses, and aspects in one view — the same structure used to build the profile above. From there, the reading stops being about a celebrity and becomes a mirror for how you show up in your own life. [Learn how to read your birth chart, step by step](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore Penélope Cruz birth chart and see how the same Sun, Moon, and Ascendant layers appear in your own placements. You will get a full map of your signs, houses, and aspects in one view — the same structure used to build the profile above. From there, the reading stops being about a celebrity and becomes a mirror for how you show up in your own life. [Learn how to read your birth chart, step by step](/en/wiki/how-to-read-birth-chart).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

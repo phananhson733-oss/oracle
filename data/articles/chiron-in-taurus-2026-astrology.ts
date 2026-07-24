@@ -113,7 +113,9 @@ It is the first Taurus passage since the late 1970s and early 1980s. Chiron's ec
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find which house holds Taurus in your chart and whether any natal planets sit in its early degrees. You get the one fixed reference point this whole transit reads against, and a way to follow the theme of worth and embodiment as a years-long question you are actively exploring rather than a verdict handed down to you.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find which house holds Taurus in your chart and whether any natal planets sit in its early degrees. You get the one fixed reference point this whole transit reads against, and a way to follow the theme of worth and embodiment as a years-long question you are actively exploring rather than a verdict handed down to you.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -230,7 +232,7 @@ export const chironInTaurus2026AstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你星盘中哪个宫位容纳金牛座、以及是否有本命行星落在它的早度数。你会得到这整段行运始终可对照的那个固定参照点，也能把价值与身体安住这一主题，当作一个你正在主动探索、跨越数年的提问来追踪，而不是一纸交到你手上的判词。
+[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，找出你星盘中哪个宫位容纳金牛座、以及是否有本命行星落在它的早度数。你会得到这整段行运始终可对照的那个固定参照点，也能把价值与身体安住这一主题，当作一个你正在主动探索、跨越数年的提问来追踪，而不是一纸交到你手上的判词。
 
 ## 参考来源
 

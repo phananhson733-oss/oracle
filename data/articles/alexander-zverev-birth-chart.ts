@@ -125,9 +125,11 @@ It can describe temperament — focus, patience, a self-critical streak — but 
 
 ## Take Action
 
-Curious how your own placements stack up against his? [Generate your free birth chart to explore alexander zverev birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You will get a full map of your planets and signs laid out the same way, and — more usefully — a clearer sense of where your own steadiness, your voice under pressure, and your instinct for fairness actually come from.
+Curious how your own placements stack up against his? [Generate your free birth chart to explore alexander zverev birth chart](/en/wiki/how-to-read-birth-chart). You will get a full map of your planets and signs laid out the same way, and — more usefully — a clearer sense of where your own steadiness, your voice under pressure, and your instinct for fairness actually come from.
 
 This is not a clinical interpretation or mental health advice.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

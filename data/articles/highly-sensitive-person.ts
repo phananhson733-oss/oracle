@@ -118,7 +118,9 @@ Yes. The trait appears at similar rates across genders, even though cultural mes
 
 ## Take Action
 
-Curious how your chart frames life as a highly sensitive person? [Read the birth-chart guide](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and look at the watery, 12th-house corners many sensitive people recognize. The guide leaves you with a map of where your chart mirrors the trait — the placements that line up with depth of processing, strong empathy, and a lower overstimulation ceiling. Read that way, a sensitive temperament stops looking like a flaw to fix and starts looking like a shape worth understanding and working with on its own terms. The next move is simple: name which facet of your sensitivity runs hottest, and use that as the starting point rather than a verdict.
+Curious how your chart frames life as a highly sensitive person? [Read the birth-chart guide](/en/wiki/how-to-read-birth-chart) and look at the watery, 12th-house corners many sensitive people recognize. The guide leaves you with a map of where your chart mirrors the trait — the placements that line up with depth of processing, strong empathy, and a lower overstimulation ceiling. Read that way, a sensitive temperament stops looking like a flaw to fix and starts looking like a shape worth understanding and working with on its own terms. The next move is simple: name which facet of your sensitivity runs hottest, and use that as the starting point rather than a verdict.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
@@ -238,7 +240,7 @@ Highly Sensitive Person（高敏感人群 / 高敏感人，HSP）是**对刺激�
 
 ## 下一步行动
 
-想换个角度看看自己的敏感是怎么回事，可以去读[如何看懂本命星盘的入门指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，重点留意水象星座和第十二宫那些边界感薄、内在世界丰富的角落——很多敏感的人会在那里认出自己。你会拿到的不是又一个标签，而是一套描述自己气质的语言；而当你能把「我为什么这么敏感」说清楚，敏感就会从一件让你困扰的事，慢慢变成一种你认识、也照顾得来的天性。
+想换个角度看看自己的敏感是怎么回事，可以去读[如何看懂本命星盘的入门指南](/zh/wiki/how-to-read-birth-chart)，重点留意水象星座和第十二宫那些边界感薄、内在世界丰富的角落——很多敏感的人会在那里认出自己。你会拿到的不是又一个标签，而是一套描述自己气质的语言；而当你能把「我为什么这么敏感」说清楚，敏感就会从一件让你困扰的事，慢慢变成一种你认识、也照顾得来的天性。
 
 ## 参考来源
 

@@ -106,10 +106,11 @@ This reading uses the Western tropical founding chart. A Vedic sidereal mundane 
 - [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this founding chart in the wider tournament picture
 - [Argentina World Cup 2026 astrology national chart](/en/wiki/argentina-world-cup-2026-astrology) — a companion mundane reading of the defending champion's chart
 - [how to read a national or mundane chart](/en/wiki/how-to-read-birth-chart) — the method step behind reading an institution's chart
+- [the Germany World Cup players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — individual chart reads for the German squad
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's World Cup 2026 team astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell steady structure apart from the pull of over-reach, long after the final whistle.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's World Cup 2026 team astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell steady structure apart from the pull of over-reach, long after the final whistle.
 
 ## Sources
 
@@ -212,7 +213,7 @@ export const germanyWorldCup2026AstrologyTeamZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇德国世界杯2026占星读德国队太阳那样去读你自己的太阳——把它当成一个被定时施压的主题，而不是一句判词。你会清楚看到自己太阳的星座，以及此刻正触碰它的行运；更安静地，你还会得到一种本领：在终场哨响很久之后，仍能把稳定的结构，和用力过猛的那股拉力分辨开来。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇德国世界杯2026占星读德国队太阳那样去读你自己的太阳——把它当成一个被定时施压的主题，而不是一句判词。你会清楚看到自己太阳的星座，以及此刻正触碰它的行运；更安静地，你还会得到一种本领：在终场哨响很久之后，仍能把稳定的结构，和用力过猛的那股拉力分辨开来。
 
 ## 参考来源
 
