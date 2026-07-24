@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const victorWembanyamaZodiacSignEn: WikiArticle = {
   slug: "victor-wembanyama-zodiac-sign",
+  image: "/images/blog/victor-wembanyama-zodiac-sign.jpg",
+  image_alt: "Stylized celestial portrait of a tall basketball player with a Capricorn constellation glowing overhead in an indigo starfield",
   title: "What Victor Wembanyama's Zodiac Sign Reveals About the Capricorn Archetype",
   description: "Victor Wembanyama's zodiac sign is Capricorn, based on his birth on January 4, 2004, in Le Chesnay, France.",
   authorId: "marcus-orion",

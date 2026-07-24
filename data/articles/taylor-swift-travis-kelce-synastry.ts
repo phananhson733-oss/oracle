@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const taylorSwiftTravisKelceSynastryEn: WikiArticle = {
   slug: "taylor-swift-travis-kelce-synastry",
+  image: "/images/blog/taylor-swift-travis-kelce-synastry.jpg",
+  image_alt: "Stylized celestial scene of two silhouettes with Sagittarius and Libra constellations intertwining in gold in an indigo starfield",
   title: "What Taylor Swift and Travis Kelce's Synastry Reveals — Read as Symbolism, Not a Forecast",
   description: "Taylor Swift Travis Kelce synastry is the side-by-side comparison of two birth charts — hers and his — read as a symbolic map of how two sets of planetary placements echo or contrast, not as a forecast of what their relationship will do.",
   authorId: "marcus-orion",

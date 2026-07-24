@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const shoheiOhtaniBirthChartEn: WikiArticle = {
   slug: "shohei-ohtani-birth-chart",
+  image: "/images/blog/shohei-ohtani-birth-chart.jpg",
+  image_alt: "Stylized celestial portrait of a baseball player with a Cancer constellation and crescent moon glowing overhead in an indigo starfield",
   title: "What the Shohei Ohtani Birth Chart Reveals About His Two-Way Drive",
   description: "Shohei Ohtani's birth chart is a symbolic map of planetary placements recorded for July 5, 1994, the day he was born in Oshu, Iwate Prefecture, Japan.",
   authorId: "marcus-orion",

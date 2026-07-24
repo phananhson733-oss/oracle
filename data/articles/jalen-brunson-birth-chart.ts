@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const jalenBrunsonBirthChartEn: WikiArticle = {
   slug: "jalen-brunson-birth-chart",
+  image: "/images/blog/jalen-brunson-birth-chart.jpg",
+  image_alt: "Stylized celestial portrait of a basketball point guard with a Virgo constellation glowing overhead in an indigo starfield",
   title: "What the Jalen Brunson Birth Chart Reveals About His Steady Game",
   description: "Jalen Brunson's birth chart is a symbolic map of planetary placements set for August 31, 1996, the day he was born in New Brunswick, New Jersey.",
   authorId: "marcus-orion",
