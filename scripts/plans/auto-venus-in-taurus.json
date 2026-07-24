@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "venus-in-taurus": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of a lush Taurus landscape at golden dusk: a stylized copper-gold bull resting serenely amid rose blossoms, emerald meadow grasses, and richly textured fabrics — soft velvet draped over stone, worn leather saddlery, silk catching the last light — with Venus as a luminous pale gold crescent low on the horizon casting warm amber and teal light across the entire scene; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Golden bull resting amid roses and rich textures under a Venus-lit dusk sky, evoking Venus in Taurus sensory beauty and lasting value"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Venus in Taurus in Your Chart",
+          "titleEn": "4 Steps to Read Your Venus in Taurus Placement",
+          "altEn": "Four-step sequence for reading Venus in Taurus: confirm placement, locate house, check aspects, log degree and life proofs",
+          "items": [
+            {
+              "nameEn": "Confirm the Placement",
+              "subEn": "Find Venus in your natal chart and verify its sign is Taurus — not the Sun sign, not a passing transit."
+            },
+            {
+              "nameEn": "Locate the House",
+              "subEn": "Note the life area where the pull toward pleasure, beauty, and value is most visible."
+            },
+            {
+              "nameEn": "Check Close Aspects",
+              "subEn": "A conjunction, square, trine, opposition, or sextile changes how freely those preferences show."
+            },
+            {
+              "nameEn": "Log Degree and Life Proofs",
+              "subEn": "Note Venus's exact degree and orb, then track three repeated choices — around affection, purchases, food, or routine — and see whether they match the reading."
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Common Misreadings vs. What Venus in Taurus Actually Means",
+          "altEn": "Comparison of four common Venus in Taurus myths against their accurate interpretations",
+          "columns": [
+            {
+              "nameEn": "Common Myth",
+              "linesEn": [
+                "It means materialistic.",
+                "It guarantees loyalty.",
+                "It is only about romance.",
+                "Steadiness is always healthy."
+              ]
+            },
+            {
+              "nameEn": "What It Actually Means",
+              "linesEn": [
+                "A taste for quality is about value and durability, not measuring love by price.",
+                "The placement favors steady affection, but loyalty is built by choices and boundaries, not handed over by a sign.",
+                "Venus also covers taste, money, friendship, and creative choices — the pattern shows up well beyond dating.",
+                "The classic shadow is possessiveness and clinging to comfort; it is a risk to watch, not a guaranteed trait."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

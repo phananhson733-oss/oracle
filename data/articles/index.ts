@@ -395,6 +395,7 @@ import { taylorSwiftTravisKelceWeddingAstrologyEn } from "./taylor-swift-travis-
 import { jenniferLopezBirthChartEn } from "./jennifer-lopez-birth-chart";
 import { scorpioMbtiTypeEn } from "./scorpio-mbti-type";
 import { saturnReturnCareerChangeEn } from "./saturn-return-career-change";
+import { venusInTaurusEn } from "./venus-in-taurus";
 // All articles organized by language
 
 import {
@@ -781,6 +782,7 @@ const ARTICLES_EN: WikiArticle[] = [
   jenniferLopezBirthChartEn,
   scorpioMbtiTypeEn,
   saturnReturnCareerChangeEn,
+  venusInTaurusEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
