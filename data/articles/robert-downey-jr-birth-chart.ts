@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const robertDowneyJrBirthChartEn: WikiArticle = {
   slug: "robert-downey-jr-birth-chart",
+  image: "/images/blog/robert-downey-jr-birth-chart.jpg",
+  image_alt: "Stylized celestial portrait of an actor with an Aries constellation and a spark of fire glowing overhead in an indigo starfield",
   title: "What the Robert Downey Jr Birth Chart Reveals About the Aries Archetype",
   description: "The Robert Downey Jr birth chart is a symbolic map of where the planets sat on April 4, 1965, the day he was born in Manhattan, New York City.",
   authorId: "marcus-orion",
