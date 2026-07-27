@@ -378,6 +378,11 @@ import { blackpinkZodiacSignsEn } from "./blackpink-zodiac-signs";
 import { harryPotterCharactersZodiacSignsEn } from "./harry-potter-characters-zodiac-signs";
 import { rihannaBirthChartEn } from "./rihanna-birth-chart";
 import { selenaGomezBirthChartEn } from "./selena-gomez-birth-chart";
+import { sugaBtsBirthChartEn } from "./suga-bts-birth-chart";
+import { rmBtsBirthChartEn } from "./rm-bts-birth-chart";
+import { jisooBirthChartEn } from "./jisoo-birth-chart";
+import { severusSnapeZodiacSignEn } from "./severus-snape-zodiac-sign";
+import { dumbledoreZodiacSignEn } from "./dumbledore-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -747,6 +752,11 @@ const ARTICLES_EN: WikiArticle[] = [
   harryPotterCharactersZodiacSignsEn,
   rihannaBirthChartEn,
   selenaGomezBirthChartEn,
+  sugaBtsBirthChartEn,
+  rmBtsBirthChartEn,
+  jisooBirthChartEn,
+  severusSnapeZodiacSignEn,
+  dumbledoreZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

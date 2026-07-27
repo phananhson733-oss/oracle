@@ -860,6 +860,12 @@ const ARTICLE_SLUGS_EN_ONLY = [
   // 2026-07-27 content recovery Stage B: person-led Birth Chart pages.
   'rihanna-birth-chart',
   'selena-gomez-birth-chart',
+  // 2026-07-27 content recovery Stage C: Spokes published after their Pillars.
+  'suga-bts-birth-chart',
+  'rm-bts-birth-chart',
+  'jisoo-birth-chart',
+  'severus-snape-zodiac-sign',
+  'dumbledore-zodiac-sign',
   'birth-chart-interpretation',
   'elvis-birth-chart',
   'what-do-i-need-to-let-go-of',
