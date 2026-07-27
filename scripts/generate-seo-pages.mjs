@@ -852,6 +852,11 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  // 2026-07-27 content recovery Stage A: release these Pillars before their Spokes.
+  // Each needs a crawler-readable EN stub and a sitemap URL on the production release.
+  'bts-members-zodiac-signs',
+  'blackpink-zodiac-signs',
+  'harry-potter-characters-zodiac-signs',
   'birth-chart-interpretation',
   'elvis-birth-chart',
   'what-do-i-need-to-let-go-of',
