@@ -23,7 +23,7 @@ export const penLopeCruzBirthChartEn: WikiArticle = {
 
 ## What Is Penélope Cruz's Birth Chart?
 
-A Penélope Cruz birth chart is a symbolic map of where the Sun, Moon, planets, and rising sign sat at the moment she was born, read as an interpretive character sketch rather than a factual record of her career. Astrologers treat it as **a symbolic snapshot of the sky at her birth**, not as evidence of what she has done or will do. Publicly cited data places her Sun in Taurus, the fixed earth sign linked to steadiness, sensuality, and a slow-burning kind of magnetism. The rest of the chart — the Moon, the Ascendant, and the aspects between planets — fills in the texture. If you want the full method behind this kind of reading, start with [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which walks through each layer in order.
+A Penélope Cruz birth chart is a symbolic map of where the Sun, Moon, planets, and rising sign sat at the moment she was born, read as an interpretive character sketch rather than a factual record of her career. Astrologers treat it as **a symbolic snapshot of the sky at her birth**, not as evidence of what she has done or will do. Publicly cited data places her Sun in Taurus, the fixed earth sign linked to steadiness, sensuality, and a slow-burning kind of magnetism. The rest of the chart — the Moon, the Ascendant, and the aspects between planets — fills in the texture. If you want the full method behind this kind of reading, start with [pillar guide on how to read a birth chart](/en/birth-chart-calculator), which walks through each layer in order.
 
 - Centers on the Sun, Moon, and Ascendant as the core of the profile
 - Read as symbolism and cultural theme, never as biographical proof
@@ -105,14 +105,14 @@ The Moon changes sign roughly every two to three days, so a rough date usually p
 - [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
 - [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
 <!-- gg-cluster-links:end -->
-- [guide to how planet clusters work in a birth chart](/en/wiki/how-to-read-birth-chart) — explains the dominant-theme patterns this profile leans on.
+- [guide to how planet clusters work in a birth chart](/en/birth-chart-calculator) — explains the dominant-theme patterns this profile leans on.
 - [the North Node in Taurus](/en/wiki/north-node-in-taurus) — explores the fixed-earth Taurus themes that echo her Sun placement.
 - *Serena Williams birth chart profile* — another public-figure chart read as symbolism, useful for comparison.
 - [Penélope Cruz (Wikipedia)](https://en.wikipedia.org/wiki/Pen%C3%A9lope_Cruz)
 
 ## Take Action
 
-Generate your free birth chart to explore Penélope Cruz birth chart and see how the same Sun, Moon, and Ascendant layers appear in your own placements. You will get a full map of your signs, houses, and aspects in one view — the same structure used to build the profile above. From there, the reading stops being about a celebrity and becomes a mirror for how you show up in your own life. [Learn how to read your birth chart, step by step](/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore Penélope Cruz birth chart and see how the same Sun, Moon, and Ascendant layers appear in your own placements. You will get a full map of your signs, houses, and aspects in one view — the same structure used to build the profile above. From there, the reading stops being about a celebrity and becomes a mirror for how you show up in your own life. [Learn how to read your birth chart, step by step](/en/birth-chart-calculator).
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

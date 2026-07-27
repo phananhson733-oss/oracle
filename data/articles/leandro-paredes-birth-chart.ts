@@ -29,7 +29,7 @@ The Leandro Paredes birth chart is **a symbolic map of the planetary placements 
 - Treated as an interpretive profile, not a claim that astrology verifies his biography
 - Missing a confirmed birth time, so no reliable ascendant, houses, or chart angles
 
-Born June 29, 1994 in San Justo, Buenos Aires, the Argentine midfielder carries a Cancer Sun beside a Pisces Moon and a dense Scorpio cluster of Jupiter, Pluto, and the North Node. Reading it well starts with the same fundamentals as any [guide to how to read a birth chart](/en/wiki/how-to-read-birth-chart), where signs describe emphasis and tone instead of fixed outcomes. Because his exact birth time is not publicly documented, this reading stays with the planetary signs — the parts that hold up without a timed chart.
+Born June 29, 1994 in San Justo, Buenos Aires, the Argentine midfielder carries a Cancer Sun beside a Pisces Moon and a dense Scorpio cluster of Jupiter, Pluto, and the North Node. Reading it well starts with the same fundamentals as any [guide to how to read a birth chart](/en/birth-chart-calculator), where signs describe emphasis and tone instead of fixed outcomes. Because his exact birth time is not publicly documented, this reading stays with the planetary signs — the parts that hold up without a timed chart.
 
 ## Why It Matters for Self-Awareness
 

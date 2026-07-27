@@ -23,7 +23,7 @@ export const novakDjokovicZodiacSignEn: WikiArticle = {
 
 ## What Is Novak Djokovic's Zodiac Sign?
 
-Novak Djokovic's zodiac sign is his Sun sign, drawn from his May 22, 1987 birth date in Belgrade. Born so close to the Taurus–Gemini cusp — and without a publicly confirmed birth time — his Sun is most often read as early Gemini, though some charts place it in late Taurus, so the label is best held with a little room. Read best beside a full [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), the Sun sign is only one layer of many. Practically, the novak djokovic zodiac sign describes tendencies rather than a fixed script: an adaptable, verbal, tactically flexible style. In short, his sign is **Gemini, the mutable air sign of the Twins**.
+Novak Djokovic's zodiac sign is his Sun sign, drawn from his May 22, 1987 birth date in Belgrade. Born so close to the Taurus–Gemini cusp — and without a publicly confirmed birth time — his Sun is most often read as early Gemini, though some charts place it in late Taurus, so the label is best held with a little room. Read best beside a full [pillar guide to reading a birth chart](/en/birth-chart-calculator), the Sun sign is only one layer of many. Practically, the novak djokovic zodiac sign describes tendencies rather than a fixed script: an adaptable, verbal, tactically flexible style. In short, his sign is **Gemini, the mutable air sign of the Twins**.
 
 - Sun sits near the Taurus–Gemini cusp, most often read as Gemini
 - Gemini is mutable and air, tied to adaptability and communication
@@ -113,7 +113,7 @@ His Moon is most often placed in Pisces, which is associated with emotional sens
 
 ## Take Action
 
-Generate your free birth chart to explore the novak djokovic zodiac sign and see how a Gemini Sun actually behaves once the Moon, Mercury, Venus, and Mars are added in. [Start with the guide to reading your birth chart](/en/wiki/how-to-read-birth-chart), then read your own Sun sign with the same care you would give a champion's. You will come away with a full placement map instead of a one-word label — and, more usefully, a clearer sense of where you lean on shorthand to explain yourself instead of looking at the whole picture.
+Generate your free birth chart to explore the novak djokovic zodiac sign and see how a Gemini Sun actually behaves once the Moon, Mercury, Venus, and Mars are added in. [Start with the guide to reading your birth chart](/en/birth-chart-calculator), then read your own Sun sign with the same care you would give a champion's. You will come away with a full placement map instead of a one-word label — and, more usefully, a clearer sense of where you lean on shorthand to explain yourself instead of looking at the whole picture.
 
 This is not a clinical interpretation or mental health advice.
 

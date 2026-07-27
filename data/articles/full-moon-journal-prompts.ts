@@ -69,7 +69,7 @@ Here is the working list. Each group does a different part of the full moon's jo
 
 ### Prompts for Your Birth Chart and This Moon
 
-21. Which house is this month's full moon activating in my chart, and what area of life does that point to? (If you are not sure, [generate your birth chart](/en/wiki/how-to-read-birth-chart) to find the house.)
+21. Which house is this month's full moon activating in my chart, and what area of life does that point to? (If you are not sure, [generate your birth chart](/en/birth-chart-calculator) to find the house.)
 22. How does the sign of this full moon — and the polarity it sits on — describe the tension I have been feeling?
 23. Does this full moon contact any of my natal planets closely, and if so, what does that planet govern in my life?
 24. Reading my natal Moon, where do I most naturally process emotion — and is this cycle asking me to use that strength or stretch beyond it?
@@ -176,7 +176,7 @@ Either works, and many practitioners do a little of both. Writing on the night o
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore full moon journal prompts aligned with your natal chart. Your birth chart identifies which house the full moon illuminates each month — giving your completion and release practice a specific life area to anchor to. When you know which part of the chart is activated, the reflection stops being generic and starts pointing at something real.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore full moon journal prompts aligned with your natal chart. Your birth chart identifies which house the full moon illuminates each month — giving your completion and release practice a specific life area to anchor to. When you know which part of the chart is activated, the reflection stops being generic and starts pointing at something real.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

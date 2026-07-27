@@ -135,7 +135,7 @@ They use the same visible planets and place them in the same twelve houses. The 
 
 ## Take Action
 
-Open your birth chart in both a tropical and a sidereal setting, then compare where your Sun, Moon, and ascendant (lagna) fall in each version. That gives you two readings that stop competing — one showing how you are wired, the other showing when your themes tend to move — so the mismatch becomes information instead of a problem to solve. To apply either system to your own placements, [read the How to Read a Birth Chart guide](/en/wiki/how-to-read-birth-chart), and you may find that holding both views at once tells you more about yourself than picking a single side ever could.
+Open your birth chart in both a tropical and a sidereal setting, then compare where your Sun, Moon, and ascendant (lagna) fall in each version. That gives you two readings that stop competing — one showing how you are wired, the other showing when your themes tend to move — so the mismatch becomes information instead of a problem to solve. To apply either system to your own placements, [read the How to Read a Birth Chart guide](/en/birth-chart-calculator), and you may find that holding both views at once tells you more about yourself than picking a single side ever could.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

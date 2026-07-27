@@ -140,7 +140,7 @@ Without a confirmed birth time, astrologers cannot verify his Ascendant, houses,
 
 ## Take Action
 
-Explore this player chart by comparing its confirmed parts with your own symbolic pattern. Start with your birth date, place, and time, then compare your Sun, Moon, and Venus placements with the themes described here. The useful output is not a fixed label; it is a clearer way to notice how motivation, pressure, and self-expression tend to show up in real choices: [learn how to read your birth chart with this guide](/en/wiki/how-to-read-birth-chart)
+Explore this player chart by comparing its confirmed parts with your own symbolic pattern. Start with your birth date, place, and time, then compare your Sun, Moon, and Venus placements with the themes described here. The useful output is not a fixed label; it is a clearer way to notice how motivation, pressure, and self-expression tend to show up in real choices: [learn how to read your birth chart with this guide](/en/birth-chart-calculator)
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

@@ -23,7 +23,7 @@ export const anneHathawayBirthChartEn: WikiArticle = {
 
 ## What Is Anne Hathaway's Scorpio Stellium?
 
-Anne Hathaway's Scorpio Stellium is the cluster of four personal planets — Sun, Mercury, Venus, and Jupiter — that all fall in Scorpio in her natal chart. It's the feature that dominates any serious read of the anne hathaway birth chart, and it explains why her public register comes across as guarded and high-conviction rather than loud or performative. Because her exact birth time isn't publicly verified, her Moon and Rising signs stay disputed across sources, so this piece anchors on the stellium — the part of the chart every source agrees on — instead of one birth-time variant. It sits inside the broader [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which maps how every placement fits together. At its core, the stellium is **four Scorpio planets acting as one theme of intensity and privacy**.
+Anne Hathaway's Scorpio Stellium is the cluster of four personal planets — Sun, Mercury, Venus, and Jupiter — that all fall in Scorpio in her natal chart. It's the feature that dominates any serious read of the anne hathaway birth chart, and it explains why her public register comes across as guarded and high-conviction rather than loud or performative. Because her exact birth time isn't publicly verified, her Moon and Rising signs stay disputed across sources, so this piece anchors on the stellium — the part of the chart every source agrees on — instead of one birth-time variant. It sits inside the broader [guide on how to read a birth chart](/en/birth-chart-calculator), which maps how every placement fits together. At its core, the stellium is **four Scorpio planets acting as one theme of intensity and privacy**.
 
 - Concentrates Sun, Mercury, Venus, and Jupiter into a single Scorpio signature
 - Weights identity, communication, values, and expansion toward one archetype
@@ -120,7 +120,7 @@ Yes — the four Scorpio planets are set by her birth date, so the stellium itse
 
 This is not a clinical interpretation or mental health advice. Anne Hathaway's chart is a symbolic pattern for thinking about intensity and privacy, not a fixed verdict on who she is.
 
-Map your own concentrated placements the same way you'd read hers: [Generate your free birth chart to explore anne hathaway birth chart](/en/wiki/how-to-read-birth-chart). You'll see exactly which signs your planets cluster in, and you may start to notice where your own most-emphasized sign has been quietly shaping how you show up long before you had a name for it.
+Map your own concentrated placements the same way you'd read hers: [Generate your free birth chart to explore anne hathaway birth chart](/en/birth-chart-calculator). You'll see exactly which signs your planets cluster in, and you may start to notice where your own most-emphasized sign has been quietly shaping how you show up long before you had a name for it.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

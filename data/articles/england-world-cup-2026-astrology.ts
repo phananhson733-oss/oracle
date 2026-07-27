@@ -119,7 +119,7 @@ Harry Kane's 2026 appearance is his third World Cup, equalling the record held b
 
 ## Take Action
 
-If england world cup 2026 astrology sparked your curiosity about how Jupiter transits map onto your own year, the next step is your own chart. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun sign alongside the same Cancer-to-Leo ingress traced here. You get a clear view of where your Sun sits in relation to that 30 June 2026 shift, and a way to read the transition as a theme in your own year rather than as a verdict you should trust to a planet.
+To place England's Cancer-to-Leo transit story alongside the other contenders, continue to the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) and its linked match forecasts.
 
 ## Sources
 

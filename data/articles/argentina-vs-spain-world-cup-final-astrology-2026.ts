@@ -39,7 +39,7 @@ Take a concrete case. Argentina arrives as defending champion with a heavy narra
 
 ### What an honest read gives you
 
-For a reader, the payoff is reflective. The exercise quietly reveals how you personally weight a contest. Do you lean into the underdog narrative, the champion's pressure, or the broader cultural mood around a match? Whichever chart contrast you find most convincing says as much about your own storytelling instincts as it does about either team. If you want the underlying method, see our guide on [how to read a birth chart](/en/wiki/how-to-read-birth-chart) alongside the official match record.
+For a reader, the payoff is reflective. The exercise quietly reveals how you personally weight a contest. Do you lean into the underdog narrative, the champion's pressure, or the broader cultural mood around a match? Whichever chart contrast you find most convincing says as much about your own storytelling instincts as it does about either team. For the wider tournament method and context, see the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) alongside the official match record.
 
 ## National-Chart Reading vs Whole-Tournament Winner Picks: What Actually Differs
 
@@ -120,7 +120,7 @@ Use it as symbolic reflection alongside the documented result, not as evidence f
 <!-- gg-cluster-links:start -->
 - [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
 <!-- gg-cluster-links:end -->
-- [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the base skill behind every paired-chart comparison here.
+- [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) — the tournament context behind every paired-chart comparison here.
 - [ascendant meaning](/en/wiki/ascendant-meaning) — context for how chart angles are interpreted.
 - [astrology houses](/en/wiki/astrology-houses) — a guide to house-based chart reading.
 - [North Node vs South Node](/en/wiki/north-node-vs-south-node) — another example of symbolic chart interpretation.

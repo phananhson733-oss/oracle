@@ -107,13 +107,13 @@ It tends to describe first impressions, physical bearing, and the reflexes that 
 ## Related Reading
 
 - [how the twelve houses map life areas](/en/wiki/astrology-houses) — the system the ascendant anchors from the first cusp
-- [rising sign vs sun sign explained](/en/wiki/how-to-read-birth-chart) — the distinction beginners most often blur
-- [how to read a birth chart for beginners](/en/wiki/how-to-read-birth-chart) — where the ascendant fits in the larger wheel
+- [rising sign vs sun sign explained](/en/rising-sign-calculator) — the distinction beginners most often blur
+- [how to read a birth chart for beginners](/en/rising-sign-calculator) — where the ascendant fits in the larger wheel
 - worked examples by ascendant: [Leo rising and the houses](/en/wiki/leo-rising-houses), [Libra rising and the houses](/en/wiki/libra-rising-houses), and [Scorpio rising and the houses](/en/wiki/scorpio-rising-houses) — how one rising sign sets all twelve house cusps
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own ascendant and watch how it sets the rest of the wheel. With an accurate birth time entered, the chart shows your rising sign on the left and numbers the houses out from it, turning the ascendant meaning from an abstract idea into the visible hinge your whole chart turns on.
+[Generate your free birth chart](/en/rising-sign-calculator) to find your own ascendant and watch how it sets the rest of the wheel. With an accurate birth time entered, the chart shows your rising sign on the left and numbers the houses out from it, turning the ascendant meaning from an abstract idea into the visible hinge your whole chart turns on.
 
 Not sure of your rising sign? The [rising sign calculator](/en/rising-sign-calculator) finds your ascendant from your birth time and place.
 

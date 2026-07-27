@@ -110,7 +110,7 @@ The Capricorn degrees emphasize Mars-driven discipline, ambition, and structure,
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find where your Moon falls and whether the dhanishta nakshatra touches your placements. You get a clear view of your own degrees and a reminder that "wealth" in this star is about rhythm, and, more usefully, a habit of asking what your timing and coordination do for you before crediting fortune for a pattern that has a much steadier source.
+[Generate your free birth chart](/en/birth-chart-calculator) to find where your Moon falls and whether the dhanishta nakshatra touches your placements. You get a clear view of your own degrees and a reminder that "wealth" in this star is about rhythm, and, more usefully, a habit of asking what your timing and coordination do for you before crediting fortune for a pattern that has a much steadier source.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

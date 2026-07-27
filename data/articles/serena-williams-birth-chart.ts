@@ -123,7 +123,7 @@ A Virgo Moon is traditionally associated with routine, precision, and steady sel
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice—it's a symbolic frame for thinking about composure and discipline. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the serena williams birth chart in your own configuration: you get your Sun, Moon, and Rising laid out in a single view, and that view can show you where your public composure and your private standards pull against each other—the same tension this chart maps onto two decades of competition.
+This is not a clinical interpretation or mental health advice—it's a symbolic frame for thinking about composure and discipline. [Generate your free birth chart](/en/birth-chart-calculator) to explore the serena williams birth chart in your own configuration: you get your Sun, Moon, and Rising laid out in a single view, and that view can show you where your public composure and your private standards pull against each other—the same tension this chart maps onto two decades of competition.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

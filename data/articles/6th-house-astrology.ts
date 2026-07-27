@@ -149,7 +149,7 @@ The 10th house is your public career and status, while the 6th is the daily work
 ## Related Reading
 
 - [companion page on the 12th house](/en/wiki/12th-house-astrology) — the retreat-and-rest counterpart that balances the 6th house's daily activity.
-- [guide to Mercury in the natal chart](/en/wiki/how-to-read-birth-chart) — the natural significator behind the 6th house's analytical, detail-focused style.
+- [guide to Mercury in the natal chart](/en/birth-chart-calculator) — the natural significator behind the 6th house's analytical, detail-focused style.
 - [House (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/House_(astrology)) — background on how the houses are defined and counted.
 
 ## Take Action

@@ -107,7 +107,7 @@ No. Jupiter transits Cancer until about 30 June 2026, briefly overlapping his Su
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun the way this piece reads Bellingham's, as a theme of purpose rather than a verdict. You get a clear view of where your Sun sits, and, more quietly, a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
+[Generate your free birth chart](/en/birth-chart-calculator) to find your own Sun the way this piece reads Bellingham's, as a theme of purpose rather than a verdict. You get a clear view of where your Sun sits, and, more quietly, a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

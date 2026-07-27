@@ -123,7 +123,7 @@ The Virgo–Scorpio blend often correlates with people who peak later and build 
 
 Generate your free birth chart to explore the Luka Modric zodiac sign and see how your own Sun, Moon, and rising line up. You'll get a clear map of which sign leads your identity, which anchors your emotional life, and which face you show the world first. From there, the goal isn't to label yourself — it's to notice the quiet, Virgo-style strengths you've been overlooking in your own story.
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
+[Generate your free birth chart](/en/birth-chart-calculator)
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
@@ -252,7 +252,7 @@ export const lukaModricZodiacSignZh: WikiArticle = {
 
 生成你的免费出生星盘，借由莫德里奇的星座这个入口，看看你自己的太阳、月亮与上升如何排布。你会得到一张清晰的图：哪个星座主导你的身份，哪个锚定你的情感生活，哪张脸是你最先示人的那一张。从那里开始，目标不是给自己贴标签——而是去留意那些你一直在自己故事里忽略掉的、处女座式的安静长处。
 
-[生成你的免费出生星盘](/en/wiki/how-to-read-birth-chart)
+[生成你的免费出生星盘](/en/birth-chart-calculator)
 
 本文为反思性与象征性的占星探讨，仅供自我觉察之用；它不是临床解读，也不构成心理健康建议。
 

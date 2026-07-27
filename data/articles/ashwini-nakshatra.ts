@@ -113,12 +113,12 @@ Aries contains three nakshatras: Ashwini (Ketu-ruled), Bharani (Venus-ruled), an
 <!-- gg-cluster-links:end -->
 - *Bharani nakshatra explainer* — the adjacent Aries nakshatra ruled by Venus; useful for seeing how the same sign expresses differently under a different planetary ruler
 - [guide to Ketu and south node placements in Vedic astrology](/en/wiki/north-node-vs-south-node) — covers Ketu's broader signature and why nakshatra positions under its rulership tend toward instinctive, prior-refined expression
-- [introduction to reading nakshatras in a natal chart](/en/wiki/how-to-read-birth-chart) — foundational context for placing Ashwini within a full chart interpretation
+- [introduction to reading nakshatras in a natal chart](/en/birth-chart-calculator) — foundational context for placing Ashwini within a full chart interpretation
 - [Nakshatra (Wikipedia)](https://en.wikipedia.org/wiki/Nakshatra)
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see where this lunar mansion lands in your own natal placements. Your chart will show which planets and angles fall in Ashwini's 0°00′–13°20′ Aries range — the specific data that determines how the Ketu-Aries structure actually shows up in your timing, decisions, and instinctive responses. Knowing which houses and signs the Ashwini degrees touch in your chart gives you a concrete, personal framework for recognizing patterns that have likely been operating since early in your life — just without a name for them until now.
+[Generate your free birth chart](/en/birth-chart-calculator) to see where this lunar mansion lands in your own natal placements. Your chart will show which planets and angles fall in Ashwini's 0°00′–13°20′ Aries range — the specific data that determines how the Ketu-Aries structure actually shows up in your timing, decisions, and instinctive responses. Knowing which houses and signs the Ashwini degrees touch in your chart gives you a concrete, personal framework for recognizing patterns that have likely been operating since early in your life — just without a name for them until now.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

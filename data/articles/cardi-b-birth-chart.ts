@@ -24,7 +24,7 @@ export const cardiBBirthChartEn: WikiArticle = {
 
 ## What Is Cardi B's Birth Chart?
 
-Cardi B's birth chart maps where the planets sat when Belcalis Almánzar was born on October 11, 1992, in New York City. The two placements that need no disputed birth time are the ones searchers actually want: a **Libra Sun** and, that same day, an **Aries Moon** — and because Libra and Aries sit opposite each other, she was born near a Full Moon, with the Sun opposing the Moon. Astrologers read that opposition as the engine of her public persona: Libra's charm, taste, and relationship strategy pulling against Aries' blunt, combative, fast-reacting instinct. It is interpretation, not proof — a character sketch that names patterns already visible in her music and her feuds, the kind of person-centered reading the astrologer Dane Rudhyar helped establish. Curious about the method? Start with a [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) before applying it to a famous name.
+Cardi B's birth chart maps where the planets sat when Belcalis Almánzar was born on October 11, 1992, in New York City. The two placements that need no disputed birth time are the ones searchers actually want: a **Libra Sun** and, that same day, an **Aries Moon** — and because Libra and Aries sit opposite each other, she was born near a Full Moon, with the Sun opposing the Moon. Astrologers read that opposition as the engine of her public persona: Libra's charm, taste, and relationship strategy pulling against Aries' blunt, combative, fast-reacting instinct. It is interpretation, not proof — a character sketch that names patterns already visible in her music and her feuds, the kind of person-centered reading the astrologer Dane Rudhyar helped establish. Curious about the method? Start with a [guide to reading a birth chart](/en/birth-chart-calculator) before applying it to a famous name.
 
 - **Libra Sun** — identity built on charm, aesthetics, and public diplomacy
 - **Aries Moon** — a direct, hot, quick-to-react emotional core (widely cited; exact degree unverified without a birth time)
@@ -122,7 +122,7 @@ For the Sun and Moon, no. For the Rising sign and the house placements, yes — 
 
 ## Take Action
 
-This is a cultural reading meant for reflection, not a clinical interpretation or mental-health advice. Curious how your own placements compare? [Generate your own free birth chart](/en/wiki/how-to-read-birth-chart) and you will get the same Sun–Moon–Rising map astrologers use for any public figure. Seeing your own contradictions named the way hers are can make them feel less like flaws and more like a portrait you can finally read on purpose.
+This is a cultural reading meant for reflection, not a clinical interpretation or mental-health advice. Curious how your own placements compare? [Generate your own free birth chart](/en/birth-chart-calculator) and you will get the same Sun–Moon–Rising map astrologers use for any public figure. Seeing your own contradictions named the way hers are can make them feel less like flaws and more like a portrait you can finally read on purpose.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

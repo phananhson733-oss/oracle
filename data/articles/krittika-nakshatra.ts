@@ -116,7 +116,7 @@ Agni's function is purification — fire as transformative force aimed at clarif
 
 ## Take Action
 
-[Generate your free birth chart to explore krittika nakshatra.](/en/wiki/how-to-read-birth-chart) Once the chart loads, check whether your moon or ascendant falls in late Aries (26°40'–30°) or early Taurus (0°–10°) in the sidereal system — that single degree resolves most of the contradictions in standard descriptions. Knowing which pada applies gives you a more precise framework for recognizing where Agni's pattern of precision, correction, and sustained refinement shows up most persistently in your own decisions and responses.
+[Generate your free birth chart to explore krittika nakshatra.](/en/birth-chart-calculator) Once the chart loads, check whether your moon or ascendant falls in late Aries (26°40'–30°) or early Taurus (0°–10°) in the sidereal system — that single degree resolves most of the contradictions in standard descriptions. Knowing which pada applies gives you a more precise framework for recognizing where Agni's pattern of precision, correction, and sustained refinement shows up most persistently in your own decisions and responses.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

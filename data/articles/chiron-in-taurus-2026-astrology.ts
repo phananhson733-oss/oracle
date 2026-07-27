@@ -113,7 +113,7 @@ It is the first Taurus passage since the late 1970s and early 1980s. Chiron's ec
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find which house holds Taurus in your chart and whether any natal planets sit in its early degrees. You get the one fixed reference point this whole transit reads against, and a way to follow the theme of worth and embodiment as a years-long question you are actively exploring rather than a verdict handed down to you.
+[Generate your free birth chart](/en/birth-chart-calculator) to find which house holds Taurus in your chart and whether any natal planets sit in its early degrees. You get the one fixed reference point this whole transit reads against, and a way to follow the theme of worth and embodiment as a years-long question you are actively exploring rather than a verdict handed down to you.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

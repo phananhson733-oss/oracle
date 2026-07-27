@@ -75,7 +75,7 @@ Reading this energy in yourself is mostly about tracking timing and intensity, n
 
 ### Finding Which House the Full Moon Activates
 
-The signals above tell you the energy is present; your chart tells you where it is landing. Every full moon falls in a particular sign, and that sign occupies a specific house in your birth chart — and the house is the part of life that gets "lit up" that week. A full moon in your fourth house tends to surface home, family, and emotional roots; the same full moon in your tenth house pulls toward career, reputation, and public results. If you do not know your houses yet, the fastest way in is to [generate your birth chart](/en/wiki/how-to-read-birth-chart) and note which house the current full moon sign occupies. From there, the vague sense of "everything feels loud" resolves into a single area: the one this month's peak is asking you to look at honestly. Tracking which house each month's full moon hits, over a year, gives you a quiet map of where your attention keeps returning — which is the kind of pattern a [moon journal](/en/wiki/moon-journal) is built to capture.
+The signals above tell you the energy is present; your chart tells you where it is landing. Every full moon falls in a particular sign, and that sign occupies a specific house in your birth chart — and the house is the part of life that gets "lit up" that week. A full moon in your fourth house tends to surface home, family, and emotional roots; the same full moon in your tenth house pulls toward career, reputation, and public results. If you do not know your houses yet, the fastest way in is to [generate your birth chart](/en/birth-chart-calculator) and note which house the current full moon sign occupies. From there, the vague sense of "everything feels loud" resolves into a single area: the one this month's peak is asking you to look at honestly. Tracking which house each month's full moon hits, over a year, gives you a quiet map of where your attention keeps returning — which is the kind of pattern a [moon journal](/en/wiki/moon-journal) is built to capture.
 
 ### When the Full Moon Aspects Your Natal Planets
 
@@ -154,7 +154,7 @@ The full moon lines up with the brightest part of the cycle, which many people e
 
 ## Take Action
 
-The full moon shows you what is peaking; your birth chart shows you where it lands. [Generate your free birth chart to explore full moon energy](/en/wiki/how-to-read-birth-chart), and you can see exactly which house each month's full moon lights up for you. Read together, they turn a vague monthly mood into a map of where your attention keeps returning — the first real step toward working with your own timing instead of being caught off guard by it.
+The full moon shows you what is peaking; your birth chart shows you where it lands. [Generate your free birth chart to explore full moon energy](/en/birth-chart-calculator), and you can see exactly which house each month's full moon lights up for you. Read together, they turn a vague monthly mood into a map of where your attention keeps returning — the first real step toward working with your own timing instead of being caught off guard by it.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

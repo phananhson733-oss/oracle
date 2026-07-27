@@ -120,7 +120,7 @@ This reading uses the Western tropical national chart. A Vedic mundane reading w
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Argentina's World Cup 2026 astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell the weight of a past win apart from a limit you can still grow past, long after the final whistle.
+Continue through the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) to compare Argentina's title-defence themes with the tournament-wide transits and the other national-chart readings.
 
 ## Sources
 

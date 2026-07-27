@@ -23,7 +23,7 @@ export const jackAntonoffBirthChartEn: WikiArticle = {
 
 ## What Is Jack Antonoff's Aries Sun–Scorpio Moon natal chart?
 
-Jack Antonoff's Aries Sun–Scorpio Moon natal chart is **an Aries-led natal map anchored by a deep Scorpio cluster**. Built from his verified March 31, 1984 birth in Bergenfield, New Jersey, it places the Sun firmly in Aries — cardinal fire that starts fast and moves first. Around it sit Mercury and Pallas in Aries, plus a tight run of Scorpio planets in Mars, Saturn, and Pluto, which is where the fixed-water depth comes from. Because no public birth time exists, the exact Moon sign, Rising sign, and houses stay provisional, so anyone reading the Jack Antonoff birth chart is working with placements by sign, not by house — the same limit any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) flags first. In plain terms, it reads as quick ignition wired to slow, saturated emotion. That gap between what starts fast and what runs deep is the whole story of the chart.
+Jack Antonoff's Aries Sun–Scorpio Moon natal chart is **an Aries-led natal map anchored by a deep Scorpio cluster**. Built from his verified March 31, 1984 birth in Bergenfield, New Jersey, it places the Sun firmly in Aries — cardinal fire that starts fast and moves first. Around it sit Mercury and Pallas in Aries, plus a tight run of Scorpio planets in Mars, Saturn, and Pluto, which is where the fixed-water depth comes from. Because no public birth time exists, the exact Moon sign, Rising sign, and houses stay provisional, so anyone reading the Jack Antonoff birth chart is working with placements by sign, not by house — the same limit any [pillar guide on how to read a birth chart](/en/birth-chart-calculator) flags first. In plain terms, it reads as quick ignition wired to slow, saturated emotion. That gap between what starts fast and what runs deep is the whole story of the chart.
 
 - Leads with Aries initiative — rapid starts, first moves, restless creative momentum
 - Carries a deep water undercurrent from its Scorpio planets: intensity, privacy, and slow-building depth
@@ -121,7 +121,7 @@ The planetary signs. Sun, Mercury, Venus, Mars, and the outer planets stay stabl
 
 ## Take Action
 
-Generate your free birth chart to explore jack antonoff birth chart. You'll get your own placements laid out by sign the same way his are here — Sun, Moon, and planets in plain terms — plus a clearer sense of where your own fast-start and slow-deep tendencies actually sit. Read as a whole rather than a single label, that's how a list of signs turns into real self-awareness. [Start reading your birth chart](/en/wiki/how-to-read-birth-chart)
+Generate your free birth chart to explore jack antonoff birth chart. You'll get your own placements laid out by sign the same way his are here — Sun, Moon, and planets in plain terms — plus a clearer sense of where your own fast-start and slow-deep tendencies actually sit. Read as a whole rather than a single label, that's how a list of signs turns into real self-awareness. [Start reading your birth chart](/en/birth-chart-calculator)
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

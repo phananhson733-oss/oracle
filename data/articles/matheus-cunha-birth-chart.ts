@@ -107,13 +107,13 @@ In the Jyotish tradition, each planet reaches a maturation point at a specific a
 
 ## Related Reading
 
-- [guide to Gemini Sun in natal chart readings](/en/wiki/how-to-read-birth-chart) — expands on Mercury rulership and how a Gemini Sun reads across charts beyond this Sun-sign overview
+- [guide to Gemini Sun in natal chart readings](/en/birth-chart-calculator) — expands on Mercury rulership and how a Gemini Sun reads across charts beyond this Sun-sign overview
 - [Jupiter in Cancer 2026 transit guide](/en/wiki/transits) — covers the resource-theme cycle referenced in this article's timing discussion in fuller detail
 - *World Cup 2026 astrology series pillar page* — the full series mapping national team and player charts across the tournament, which this article supports as a spoke entry
 
 ## Take Action
 
-Generate your free birth chart to see your own Sun placement, ruling planet, and current planetary transits — the same framework used in this analysis. Visit [how to read a birth chart](/en/wiki/how-to-read-birth-chart) for a step-by-step guide that shows you exactly what to look for in your own chart. Reading your chart's symbolic themes, like the resource theme Jupiter in Cancer touches for Gemini Suns in a solar-chart technique, turns astrology from a label into a practical lens for self-reflection rather than a forecast.
+Generate your free birth chart to see your own Sun placement, ruling planet, and current planetary transits — the same framework used in this analysis. Visit [how to read a birth chart](/en/birth-chart-calculator) for a step-by-step guide that shows you exactly what to look for in your own chart. Reading your chart's symbolic themes, like the resource theme Jupiter in Cancer touches for Gemini Suns in a solar-chart technique, turns astrology from a label into a practical lens for self-reflection rather than a forecast.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

@@ -23,7 +23,7 @@ export const gretaLeeZodiacSignEn: WikiArticle = {
 
 ## What Is Greta Lee's Zodiac Sign?
 
-Greta Lee's zodiac sign is Pisces, the placement her early-March birthday fixes regardless of the birth time that has never been made public. The Sun moves through one sign for roughly a month, so it can be pinned down from a date alone — no exact hour required. That detail matters here, because almost everything else in a full reading does need a verified time. Pisces is ruled by Neptune, the planet astrologers link to imagination, blurred edges, and the ability to slip into other identities, which is why this placement keeps surfacing in write-ups about her acting. For anyone mapping the chart against a [pillar guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart), the honest starting point is narrow but solid: greta lee zodiac sign reads as **Pisces, a Neptune-ruled mutable water sign**.
+Greta Lee's zodiac sign is Pisces, the placement her early-March birthday fixes regardless of the birth time that has never been made public. The Sun moves through one sign for roughly a month, so it can be pinned down from a date alone — no exact hour required. That detail matters here, because almost everything else in a full reading does need a verified time. Pisces is ruled by Neptune, the planet astrologers link to imagination, blurred edges, and the ability to slip into other identities, which is why this placement keeps surfacing in write-ups about her acting. For anyone mapping the chart against a [pillar guide to reading a full birth chart](/en/birth-chart-calculator), the honest starting point is narrow but solid: greta lee zodiac sign reads as **Pisces, a Neptune-ruled mutable water sign**.
 
 - Her Sun in Pisces is one of the few placements confirmable without a birth time
 - Ruled by Neptune, the planet tied to imagination and shape-shifting identity
@@ -49,7 +49,7 @@ A Sun sign needs only the date, so Lee's Pisces Sun stays steady no matter what 
 
 ### Why the Rising Wobbles
 
-A Rising sign — the subject of any good [explainer on how the rising sign is calculated](/en/wiki/how-to-read-birth-chart) — changes roughly every two hours, so it needs the exact minute of birth to be trustworthy. It works by setting the chart's entire house structure and the "first impression" layer a person leads with. The twelve-house system it anchors is commonly traced to Hellenistic astrology in the early centuries CE, and it has always depended on a precise time. Without that hour, any Ascendant published for Lee is a best guess dressed up as fact.
+A Rising sign — the subject of any good [explainer on how the rising sign is calculated](/en/birth-chart-calculator) — changes roughly every two hours, so it needs the exact minute of birth to be trustworthy. It works by setting the chart's entire house structure and the "first impression" layer a person leads with. The twelve-house system it anchors is commonly traced to Hellenistic astrology in the early centuries CE, and it has always depended on a precise time. Without that hour, any Ascendant published for Lee is a best guess dressed up as fact.
 
 ### The Trade-Off in Practice
 
@@ -118,14 +118,14 @@ It is linked to adaptability and an ease with ambiguous, layered roles. The Nept
 - [Kylie Jenner Zodiac Sign](/en/wiki/kylie-jenner-zodiac-sign)
 <!-- gg-cluster-links:end -->
 - [primer on Pisces' Neptune-ruled symbolism](/en/wiki/neptune-in-pisces) — a closer match for the imagination and permeability discussed here
-- [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — how Sun, Moon, and rising fit together once you move beyond a Sun-only read
+- [guide to reading a full birth chart](/en/birth-chart-calculator) — how Sun, Moon, and rising fit together once you move beyond a Sun-only read
 - [another celebrity zodiac-sign case study](/en/wiki/lionel-messi-zodiac-sign) — the same identity-versus-chart-structure method applied to a different public figure
 - [Greta Lee (Wikipedia)](https://en.wikipedia.org/wiki/Greta_Lee)
 - [Pisces (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Pisces_(astrology))
 
 ## Take Action
 
-Curious where your own Sun, Moon, and Rising actually land? [Generate your free birth chart to explore the placements behind greta lee zodiac sign](/en/wiki/how-to-read-birth-chart). You'll get a full map of your chart in minutes — and a clearer sense of which parts rest on solid ground and which, like a missing birth time, leave the story half-written.
+Curious where your own Sun, Moon, and Rising actually land? [Generate your free birth chart to explore the placements behind greta lee zodiac sign](/en/birth-chart-calculator). You'll get a full map of your chart in minutes — and a clearer sense of which parts rest on solid ground and which, like a missing birth time, leave the story half-written.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

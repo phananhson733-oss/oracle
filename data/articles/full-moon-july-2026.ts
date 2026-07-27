@@ -61,7 +61,7 @@ There is a second trade-off inside the Aquarius-Leo polarity. Leo wants confiden
 4. **Watch any early fixed-sign placements.** Natal planets near early Aquarius, Leo, Taurus, or Scorpio may feel the lunation as a stronger demand for clarity, commitment, or public honesty.
 5. **Pay attention to group settings, audiences, and shared platforms.** Aquarius full moons often show their message through communities, team dynamics, newsletters, launches, or social visibility rather than private feelings alone.
 
-To find which houses 6-7° Aquarius and Leo occupy for you specifically, [generate your birth chart](/en/wiki/how-to-read-birth-chart) and read the house pair the axis falls across — that is where this lunation's themes will feel personal rather than general.
+To find which houses 6-7° Aquarius and Leo occupy for you specifically, [generate your birth chart](/en/birth-chart-calculator) and read the house pair the axis falls across — that is where this lunation's themes will feel personal rather than general.
 
 ### What Changes After Mercury Retrograde Ends
 
@@ -81,7 +81,7 @@ This particular Aquarius full moon does not occur in isolation. Jupiter sitting 
 
 ### Sleep, Dreams, and Verifying the Date
 
-Two practical notes round out the timing. First, like most full moons, the brightest nights of late July are a common window for lighter sleep and more vivid dreams; given the Aquarian, mentally active tone of this lunation, dreams may lean toward problem-solving or social scenes rather than pure emotion, and they are worth jotting down on waking. Second, because the calendar facts matter here, it is worth verifying them rather than trusting a roundup: reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet, and consumer full-moon calendars all place this full moon on July 29, 2026, near 6°30′ Aquarius, with Mercury direct from July 23. To locate exactly where 6-7° Aquarius and Leo fall in your own chart, [generate your birth chart](/en/wiki/how-to-read-birth-chart) and read the houses that degree range occupies.
+Two practical notes round out the timing. First, like most full moons, the brightest nights of late July are a common window for lighter sleep and more vivid dreams; given the Aquarian, mentally active tone of this lunation, dreams may lean toward problem-solving or social scenes rather than pure emotion, and they are worth jotting down on waking. Second, because the calendar facts matter here, it is worth verifying them rather than trusting a roundup: reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet, and consumer full-moon calendars all place this full moon on July 29, 2026, near 6°30′ Aquarius, with Mercury direct from July 23. To locate exactly where 6-7° Aquarius and Leo fall in your own chart, [generate your birth chart](/en/birth-chart-calculator) and read the houses that degree range occupies.
 
 ## Common Misreadings
 
@@ -136,7 +136,7 @@ Reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet
 
 ## Take Action
 
-Generate your free birth chart to explore full moon July 2026. You will see exactly which houses the Aquarius-Leo axis activates and where Mercury's recent review cycle landed in your chart. That turns a vague full-moon mood into a specific self-awareness practice with real practical timing value. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore full moon July 2026. You will see exactly which houses the Aquarius-Leo axis activates and where Mercury's recent review cycle landed in your chart. That turns a vague full-moon mood into a specific self-awareness practice with real practical timing value. [Generate your free birth chart](/en/birth-chart-calculator).
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

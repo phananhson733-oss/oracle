@@ -23,7 +23,7 @@ export const alexanderZverevBirthChartEn: WikiArticle = {
 
 ## What Is Alexander Zverev's Birth Chart?
 
-Alexander Zverev's birth chart is a symbolic snapshot of the sky at the moment he was born — April 20, 1997, in Hamburg, Germany — read as a set of archetypes rather than a scoreboard for his tennis. Most of the chart clusters in one place: the Sun, Mercury, and Venus all sit in Taurus, a fixed Earth sign, so the whole reading leans toward patience, routine, and a firm sense of personal values. If you are new to this kind of reading, our [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) walks through the same steps. Because his exact birth time is not publicly documented, the Alexander Zverev birth chart can be read reliably by planet and sign, but not by house or rising sign. At its core it reads as **a Taurus-stellium chart built around steady, values-driven Earth energy**.
+Alexander Zverev's birth chart is a symbolic snapshot of the sky at the moment he was born — April 20, 1997, in Hamburg, Germany — read as a set of archetypes rather than a scoreboard for his tennis. Most of the chart clusters in one place: the Sun, Mercury, and Venus all sit in Taurus, a fixed Earth sign, so the whole reading leans toward patience, routine, and a firm sense of personal values. If you are new to this kind of reading, our [guide on how to read a birth chart](/en/birth-chart-calculator) walks through the same steps. Because his exact birth time is not publicly documented, the Alexander Zverev birth chart can be read reliably by planet and sign, but not by house or rising sign. At its core it reads as **a Taurus-stellium chart built around steady, values-driven Earth energy**.
 
 - Three personal planets — Sun, Mercury, and Venus — grouped in practical, grounded Taurus
 - A Libra Moon and a Virgo Mars that add diplomacy alongside precise, self-reviewing drive
@@ -125,7 +125,7 @@ It can describe temperament — focus, patience, a self-critical streak — but 
 
 ## Take Action
 
-Curious how your own placements stack up against his? [Generate your free birth chart to explore alexander zverev birth chart](/en/wiki/how-to-read-birth-chart). You will get a full map of your planets and signs laid out the same way, and — more usefully — a clearer sense of where your own steadiness, your voice under pressure, and your instinct for fairness actually come from.
+Curious how your own placements stack up against his? [Generate your free birth chart to explore alexander zverev birth chart](/en/birth-chart-calculator). You will get a full map of your planets and signs laid out the same way, and — more usefully — a clearer sense of where your own steadiness, your voice under pressure, and your instinct for fairness actually come from.
 
 This is not a clinical interpretation or mental health advice.
 

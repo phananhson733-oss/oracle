@@ -34,7 +34,7 @@ Astrology terms are **the shared vocabulary that names the parts of a birth char
 ![The three working groups of astrology terms: aspects, angles, and points](/images/charts/astrology-terms-i0-en.svg)
 ## Why It Matters for Self-Awareness
 
-Learning astrology terms in isolation is the trap that sends people back to search, which is why this glossary links each one out to the broader [guide to reading a complete birth chart](/en/wiki/how-to-read-birth-chart) where the words work together. You can memorize that a square is "tense" and a trine is "easy," then open your own chart and have no idea how those labels connect to the angles and points sitting right next to them. The terms feel like flashcards, not a system.
+Learning astrology terms in isolation is the trap that sends people back to search, which is why this glossary links each one out to the broader [guide to reading a complete birth chart](/en/birth-chart-calculator) where the words work together. You can memorize that a square is "tense" and a trine is "easy," then open your own chart and have no idea how those labels connect to the angles and points sitting right next to them. The terms feel like flashcards, not a system.
 
 The fix is the same one that keeps appearing in careful chart work: read every word as one half of a relationship, never as a fixed trait. Dane Rudhyar spent his career arguing for exactly this person-centered angle, and it pays off immediately here: a trine is not a friendly shape on its own; it is a tie between two specific planets in two specific houses, and the meaning changes with the cast. When you treat the vocabulary as connections instead of standalone definitions, your own chart stops reading like a glossary and starts reading like a portrait. Stephen Arroyo's work pushed this further by showing that chart factors interact rather than standing alone, which is the difference between knowing the words and reading the page, and it is also why a flat alphabetical list of definitions so rarely sticks. The grouping into aspects, angles, and points is what turns scattered labels into a structure you can carry from one chart to the next.
 
@@ -110,7 +110,7 @@ Because each one is a single factor in a whole chart, and factors modify each ot
 
 ## Take Action
 
-Open your own chart and label the four angles plus your single tightest aspect using the checklist above. You will walk away with a one-page map of the relationships that drive your chart, instead of a stack of disconnected definitions, and that map is usually the first time the words start to describe a real person rather than a category. Read the full guide to reading a birth chart to see these terms working together in one chart at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart).
+Open your own chart and label the four angles plus your single tightest aspect using the checklist above. You will walk away with a one-page map of the relationships that drive your chart, instead of a stack of disconnected definitions, and that map is usually the first time the words start to describe a real person rather than a category. Read the full guide to reading a birth chart to see these terms working together in one chart at [/en/birth-chart-calculator](/en/birth-chart-calculator).
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

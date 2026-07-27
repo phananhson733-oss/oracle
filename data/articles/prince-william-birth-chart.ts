@@ -28,7 +28,7 @@ Prince William's birth chart is **a Cancer-dominant natal map set for June 21, 1
 - The Sagittarius Rising with Neptune conjunct the Ascendant wraps that Cancer interior in an idealistic, impressionistic public image — accessible-feeling on the surface, carefully guarded beneath
 - He turns 44 on June 21, 2026, a birthday falling simultaneously on Father's Day and the summer solstice, creating a rare triple Cancer Season alignment
 
-This sits alongside the broader [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which maps how Sun, Moon, and Rising interact in any natal chart. In prince william birth chart, the defining structural feature is the Sun-Moon conjunction: both luminaries in Cancer means there is no internal gap between who he is and what he feels. The Sagittarius Rising then functions as an outward interface, projecting idealism and range toward the world, while Neptune sitting on the Ascendant gives the public image an impressionistic, slightly elusive quality. The result is a chart that reads as open and warm at the surface while keeping the emotional interior carefully protected.
+This sits alongside the broader [pillar page on how to read a birth chart](/en/birth-chart-calculator), which maps how Sun, Moon, and Rising interact in any natal chart. In prince william birth chart, the defining structural feature is the Sun-Moon conjunction: both luminaries in Cancer means there is no internal gap between who he is and what he feels. The Sagittarius Rising then functions as an outward interface, projecting idealism and range toward the world, while Neptune sitting on the Ascendant gives the public image an impressionistic, slightly elusive quality. The result is a chart that reads as open and warm at the surface while keeping the emotional interior carefully protected.
 
 ## Why It Matters for Self-Awareness
 
@@ -113,7 +113,7 @@ June 21, 2026 places three distinct markers on the same date: Prince William's 4
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to map your own Sun, Moon, and Rising placements the same way this reading examines prince william birth chart. You'll see which part of your chart is doing the outward-facing work and where your emotional instinct actually sits in relation to your identity. Understanding how those two layers interact — how much your public image matches your interior, and what it costs when they diverge — is one of the more concrete things a natal chart can give you.
+[Generate your free birth chart](/en/birth-chart-calculator) to map your own Sun, Moon, and Rising placements the same way this reading examines prince william birth chart. You'll see which part of your chart is doing the outward-facing work and where your emotional instinct actually sits in relation to your identity. Understanding how those two layers interact — how much your public image matches your interior, and what it costs when they diverge — is one of the more concrete things a natal chart can give you.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

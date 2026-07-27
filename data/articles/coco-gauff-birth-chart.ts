@@ -23,7 +23,7 @@ export const cocoGauffBirthChartEn: WikiArticle = {
 
 ## What Is Coco Gauff's Birth Chart?
 
-Coco Gauff's birth chart is a symbolic map of the sky at the moment she was born on March 13, 2004 — the Sun, Moon, planets, and chart angles read as character notes rather than fortune-telling. A Coco Gauff birth chart reading usually opens with her Sun in Pisces, then layers in the Moon and rising sign to sketch how she processes pressure, expresses herself, and shows up in public. Because her exact birth time isn't publicly confirmed, the Ascendant and precise Moon degree stay open, so honest readings hold those lightly and lean on the whole [guide to how to read a birth chart](/en/wiki/how-to-read-birth-chart) instead of one placement. In plain terms, astrologers treat it as **a symbolic snapshot of personality themes, not a fixed script**.
+Coco Gauff's birth chart is a symbolic map of the sky at the moment she was born on March 13, 2004 — the Sun, Moon, planets, and chart angles read as character notes rather than fortune-telling. A Coco Gauff birth chart reading usually opens with her Sun in Pisces, then layers in the Moon and rising sign to sketch how she processes pressure, expresses herself, and shows up in public. Because her exact birth time isn't publicly confirmed, the Ascendant and precise Moon degree stay open, so honest readings hold those lightly and lean on the whole [guide to how to read a birth chart](/en/birth-chart-calculator) instead of one placement. In plain terms, astrologers treat it as **a symbolic snapshot of personality themes, not a fixed script**.
 
 - Centers on a Pisces Sun, a water sign linked to intuition and imagination
 - Combines Sun, Moon, and Ascendant rather than one zodiac label
@@ -127,7 +127,7 @@ The contrast between water-sign sensitivity and top-level competitive drive. It 
 
 ## Take Action
 
-Ready to move from reading about her chart to reading your own? [Generate your free birth chart to explore Coco Gauff birth chart](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising placements laid out side by side. Seeing your own contradictions in one picture — the way sensitivity and drive can coexist — is where a chart stops being celebrity trivia and starts becoming self-knowledge.
+Ready to move from reading about her chart to reading your own? [Generate your free birth chart to explore Coco Gauff birth chart](/en/birth-chart-calculator), and you'll get a full map of your Sun, Moon, and rising placements laid out side by side. Seeing your own contradictions in one picture — the way sensitivity and drive can coexist — is where a chart stops being celebrity trivia and starts becoming self-knowledge.
 
 This is not a clinical interpretation or mental health advice.
 

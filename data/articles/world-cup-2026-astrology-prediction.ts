@@ -149,8 +149,12 @@ The June 11 chart acts as the tournament's symbolic birth moment, framing the op
 - [England Vs Argentina World Cup 2026 Astrology Prediction](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction)
 - [Argentina Vs Spain World Cup Final Astrology 2026](/en/wiki/argentina-vs-spain-world-cup-final-astrology-2026)
 - [Messi Vs Yamal Astrology](/en/wiki/messi-vs-yamal-astrology)
+- [France vs England third-place match astrology](/en/wiki/france-england-3rd-place-match-astrology-prediction)
+- [England vs Norway astrology](/en/wiki/england-vs-norway-astrology)
+- [Messi World Cup record astrology](/en/wiki/messi-world-cup-record-astrology)
+- [Sinner vs Zverev Wimbledon final astrology](/en/wiki/sinner-vs-zverev-wimbledon-final-astrology)
 <!-- gg-cluster-links:end -->
-- [player birth chart in the World Cup 2026 series](/en/wiki/how-to-read-birth-chart) — drop from the mundane view into an individual star's natal reading
+- [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — drop from the mundane view into individual player-chart themes
 - [zodiac signs as World Cup 2026 teams](/en/wiki/zodiac-signs-as-world-cup-2026-teams) — a lighter archetypal companion to this transit analysis
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — the data-side view of sign distribution among elite players
 - [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — how the Cancer–Jupiter window reads for one national squad
@@ -168,7 +172,7 @@ The June 11 chart acts as the tournament's symbolic birth moment, framing the op
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore world cup 2026 astrology prediction, then read your own Jupiter placement alongside the tournament notes across this series. You get a clear view of where Jupiter in Cancer falls in your chart and a transit principle you can carry from match to match — and, more quietly, a sharper sense of how to tell a favored condition apart from a foregone conclusion.
+Use the linked national and fixture pages in this hub to compare how Jupiter in Cancer and the other 2026 transits are interpreted across the tournament, without turning a favored condition into a foregone conclusion.
 
 ## Sources
 

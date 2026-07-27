@@ -120,7 +120,7 @@ Yes — as symbolism, not statistics. Read the sign for fun and personality, but
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun for fun, while keeping the best soccer players' zodiac sign question in honest perspective. You get a clear view of your own sign and a reminder that a label is not a cause, and, more usefully, a habit of asking what the calendar or the cutoff did before crediting the stars for a pattern that has a much plainer source.
+[Generate your free birth chart](/en/birth-chart-calculator) to read your own Sun for fun, while keeping the best soccer players' zodiac sign question in honest perspective. You get a clear view of your own sign and a reminder that a label is not a cause, and, more usefully, a habit of asking what the calendar or the cutoff did before crediting the stars for a pattern that has a much plainer source.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

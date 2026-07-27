@@ -23,7 +23,7 @@ export const cocoGauffZodiacSignEn: WikiArticle = {
 
 ## What Is the Coco Gauff Zodiac Sign?
 
-The Coco Gauff zodiac sign refers to her Sun sign, Pisces, set by her birth on March 13, 2004, in Boca Raton, Florida. Public profiles often associate her with Delray Beach because that is central to her family and tennis story, but this article uses Boca Raton for the birth-location field. In astrology, a Sun sign marks the core identity the rest of a chart is built around, so her placement is best read as **a Pisces Sun, the mutable water sign of intuition and adaptability**. The Sun passes through Pisces from roughly February 19 to March 20, and her mid-March birthday sits well inside that window. Because her exact birth time is not public, her rising sign and houses can't be confirmed, so this profile stays with placements astrologers can actually verify — the same starting point used in any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+The Coco Gauff zodiac sign refers to her Sun sign, Pisces, set by her birth on March 13, 2004, in Boca Raton, Florida. Public profiles often associate her with Delray Beach because that is central to her family and tennis story, but this article uses Boca Raton for the birth-location field. In astrology, a Sun sign marks the core identity the rest of a chart is built around, so her placement is best read as **a Pisces Sun, the mutable water sign of intuition and adaptability**. The Sun passes through Pisces from roughly February 19 to March 20, and her mid-March birthday sits well inside that window. Because her exact birth time is not public, her rising sign and houses can't be confirmed, so this profile stays with placements astrologers can actually verify — the same starting point used in any [pillar guide on how to read a birth chart](/en/birth-chart-calculator).
 
 - Sun in Pisces: a mutable water sign linked to empathy, imagination, and emotional attunement
 - Traditionally ruled by Jupiter and, in modern astrology, by Neptune, tying it to vision and faith
@@ -116,7 +116,7 @@ No. A sign describes leanings and style, not outcomes, and it can't account for 
 
 ## Take Action
 
-Run your own birth chart to see how a Sun sign sits inside a full set of placements the way Coco Gauff's Pisces does. You'll get a mapped layout of your Sun, Moon, and personal planets in one view, so the headline stops standing in for the whole story. From there, the real payoff is self-awareness: seeing your own patterns as tendencies you can work with rather than fixed traits you're stuck with. [Generate your free birth chart to explore the Coco Gauff zodiac sign](/en/wiki/how-to-read-birth-chart).
+Run your own birth chart to see how a Sun sign sits inside a full set of placements the way Coco Gauff's Pisces does. You'll get a mapped layout of your Sun, Moon, and personal planets in one view, so the headline stops standing in for the whole story. From there, the real payoff is self-awareness: seeing your own patterns as tendencies you can work with rather than fixed traits you're stuck with. [Generate your free birth chart to explore the Coco Gauff zodiac sign](/en/birth-chart-calculator).
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

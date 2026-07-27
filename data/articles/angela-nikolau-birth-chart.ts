@@ -23,7 +23,7 @@ export const angelaNikolauBirthChartEn: WikiArticle = {
 
 ## What Is Angela Nikolau's Birth Chart?
 
-An Angela Nikolau birth chart is the astrological map of the sky at the moment she was born, read as **a symbolic snapshot of the sky at her birth moment** rather than a factual account of her life. Because her exact birth time isn't part of the public record, any version circulating online fills in the Moon, rising, and houses as interpretation rather than documented fact. Astrologers who profile public figures treat the chart as a set of interpretive lenses — the Sun sign for core identity, the planets for competing drives, the aspects for how those drives talk to each other. In her case, her publicly listed June 24, 1993 birthday puts the Sun in Cancer, the sign linked with emotional depth and intuition, used as a starting point for her rooftop-artist persona. If the layout is new to you, this [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) maps the parts.
+An Angela Nikolau birth chart is the astrological map of the sky at the moment she was born, read as **a symbolic snapshot of the sky at her birth moment** rather than a factual account of her life. Because her exact birth time isn't part of the public record, any version circulating online fills in the Moon, rising, and houses as interpretation rather than documented fact. Astrologers who profile public figures treat the chart as a set of interpretive lenses — the Sun sign for core identity, the planets for competing drives, the aspects for how those drives talk to each other. In her case, her publicly listed June 24, 1993 birthday puts the Sun in Cancer, the sign linked with emotional depth and intuition, used as a starting point for her rooftop-artist persona. If the layout is new to you, this [guide to reading a birth chart](/en/birth-chart-calculator) maps the parts.
 
 - Built from the date, time, and place of birth, not personality guesswork
 - Read as a symbolic persona lens, never as proof of who someone is
@@ -117,7 +117,7 @@ A celebrity chart is usually read from incomplete data for cultural interest, wh
 
 This is not a clinical interpretation or mental health advice — it's a symbolic lens for curiosity.
 
-Curious how these lenses land in your own placements? [Generate your free birth chart to explore Angela Nikolau birth chart](/en/wiki/how-to-read-birth-chart), get a full symbolic map of your Sun, Moon, and rising, and use it to notice where your own public persona and private self actually meet.
+Curious how these lenses land in your own placements? [Generate your free birth chart to explore Angela Nikolau birth chart](/en/birth-chart-calculator), get a full symbolic map of your Sun, Moon, and rising, and use it to notice where your own public persona and private self actually meet.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

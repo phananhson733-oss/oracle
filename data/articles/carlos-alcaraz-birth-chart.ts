@@ -23,7 +23,7 @@ export const carlosAlcarazBirthChartEn: WikiArticle = {
 
 ## What Is Carlos Alcaraz's Taurus Sun–Midheaven Conjunction?
 
-Carlos Alcaraz's Taurus Sun–Midheaven conjunction is a reading in which his Taurus Sun is placed close to the Midheaven — the angle astrologers link to career and public image. In plain terms, it points to **a steady Taurus Sun read against the chart's public-career angle**. Born on May 5, 2003, in Murcia, Spain, Alcaraz has a securely verified Taurus Sun — it comes straight from the date. His exact birth time, though, is not publicly confirmed, and the Midheaven depends on that time, so the Sun–Midheaven contact is a widely-discussed but **provisional** framing rather than a fixed fact. This reading therefore anchors on the reliable Taurus Sun and treats the career-angle overlay as a hypothesis to hold lightly. If you are new to how these angles work, the broader [guide to reading a natal birth chart](/en/wiki/how-to-read-birth-chart) maps how the Sun, Moon, and angles fit together.
+Carlos Alcaraz's Taurus Sun–Midheaven conjunction is a reading in which his Taurus Sun is placed close to the Midheaven — the angle astrologers link to career and public image. In plain terms, it points to **a steady Taurus Sun read against the chart's public-career angle**. Born on May 5, 2003, in Murcia, Spain, Alcaraz has a securely verified Taurus Sun — it comes straight from the date. His exact birth time, though, is not publicly confirmed, and the Midheaven depends on that time, so the Sun–Midheaven contact is a widely-discussed but **provisional** framing rather than a fixed fact. This reading therefore anchors on the reliable Taurus Sun and treats the career-angle overlay as a hypothesis to hold lightly. If you are new to how these angles work, the broader [guide to reading a natal birth chart](/en/birth-chart-calculator) maps how the Sun, Moon, and angles fit together.
 
 - Places the Taurus Sun on the career axis, tying core identity to public reputation
 - Emphasizes persistence and grounded, physical presence over flash
@@ -117,7 +117,7 @@ Most Western write-ups use the tropical zodiac, which is where the Taurus Sun–
 
 ## Take Action
 
-Curious how your own Sun lines up with your public image? [Generate your free birth chart to explore Carlos Alcaraz's chart](/en/wiki/how-to-read-birth-chart) and see where your identity and reputation meet on the wheel. That gives you a single, readable map of your own angles — and a clearer sense of how the story others see connects to the one you quietly tell yourself.
+Curious how your own Sun lines up with your public image? [Generate your free birth chart to explore Carlos Alcaraz's chart](/en/birth-chart-calculator) and see where your identity and reputation meet on the wheel. That gives you a single, readable map of your own angles — and a clearer sense of how the story others see connects to the one you quietly tell yourself.
 
 This is not a clinical interpretation or mental health advice.
 

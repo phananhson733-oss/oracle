@@ -126,7 +126,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Map the same Scorpio patterns onto your own placements: generate your free birth chart to explore this same fixed-water profile and see where those themes show up for you. Expect a full chart that names your signs, houses, and the planets driving them — and from there, a clearer sense of where your own quiet resolve and long memory actually come from. [Generate your free birth chart to explore rhaenyra targaryen zodiac sign.](/en/wiki/how-to-read-birth-chart)
+Map the same Scorpio patterns onto your own placements: generate your free birth chart to explore this same fixed-water profile and see where those themes show up for you. Expect a full chart that names your signs, houses, and the planets driving them — and from there, a clearer sense of where your own quiet resolve and long memory actually come from. [Generate your free birth chart to explore rhaenyra targaryen zodiac sign.](/en/birth-chart-calculator)
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
@@ -258,7 +258,7 @@ export const rhaenyraTargaryenZodiacSignZh: WikiArticle = {
 
 ## 下一步行动
 
-把雷妮拉的星座所体现的同一套天蝎模式映射回你自己的星位：生成你的免费星盘，去探索这份固定水象侧写，看看这些主题在你身上落在何处。你会得到一张完整的星盘，标出你的星座、宫位，以及背后驱动它们的行星——由此，你或许能更清楚地看见，自己那份安静的意志与长久的记忆，究竟从何而来。[生成你的免费星盘，探索这个主题。](/en/wiki/how-to-read-birth-chart)
+把雷妮拉的星座所体现的同一套天蝎模式映射回你自己的星位：生成你的免费星盘，去探索这份固定水象侧写，看看这些主题在你身上落在何处。你会得到一张完整的星盘，标出你的星座、宫位，以及背后驱动它们的行星——由此，你或许能更清楚地看见，自己那份安静的意志与长久的记忆，究竟从何而来。[生成你的免费星盘，探索这个主题。](/en/birth-chart-calculator)
 
 ## 参考来源
 

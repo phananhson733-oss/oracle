@@ -105,7 +105,7 @@ No. This is symbolic and educational astrology that times themes, not fixtures. 
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun sign and read it the way this roundup reads the Cancer World Cup Lens, as a reflective archetype rather than a verdict. You get a clear view of where your Sun sits, and, more quietly, a way to recognise the home-and-loyalty themes of Cancer wherever they show up in your own year.
+For the personal Cancer themes behind this tournament lens, read [Cancer Rising](/en/wiki/cancer-rising), then return to the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) for the wider series.
 
 ## Sources
 

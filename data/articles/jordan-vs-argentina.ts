@@ -127,7 +127,7 @@ No. This practice compares national founding charts, not individual squad member
 
 This is not a clinical interpretation or mental health advice. The Jordan vs Argentina contrast is a symbolic lens on the fixture, not a forecast of it.
 
-Map your own founding moment the way these national charts are read: [Generate your free birth chart to explore Jordan vs Argentina](/en/wiki/how-to-read-birth-chart). You get a personal symbolic profile to set against the fixture's archetypes — and a clearer sense of how you carry your own firsts and defences into the contests that actually matter to you.
+For the national-chart context behind this fixture, read [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) alongside the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction).
 
 ## Sources
 

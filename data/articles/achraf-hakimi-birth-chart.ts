@@ -31,7 +31,7 @@ The Achraf Hakimi birth chart is a snapshot of where the Sun, Moon, and planets 
 
 ## Why It Matters for Self-Awareness
 
-Understanding the Achraf Hakimi birth chart matters because it gives fans a structured way to think about a public figure without pretending the sky scripted his rise. It sits alongside the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which maps how each placement is meant to be interpreted, and it turns a famous name into a low-stakes practice case for reading anyone — including yourself.
+Understanding the Achraf Hakimi birth chart matters because it gives fans a structured way to think about a public figure without pretending the sky scripted his rise. It sits alongside the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator), which maps how each placement is meant to be interpreted, and it turns a famous name into a low-stakes practice case for reading anyone — including yourself.
 
 The real value is in the method, not the man. Watching how a Sun sign, a Moon, and an Ascendant get woven into a single story trains the same habit you use on your own chart. A few things a celebrity reading helps you reflect on:
 
@@ -119,13 +119,13 @@ A Scorpio Sun is associated with focus and depth, but it does not cause a playin
 - [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
 - [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
 <!-- gg-cluster-links:end -->
-- [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) — for reading the standout tensions and harmonies noted above.
+- [pillar guide on how to read a birth chart](/en/birth-chart-calculator) — for reading the standout tensions and harmonies noted above.
 - [guide to the twelve houses in a birth chart](/en/wiki/astrology-houses) — for placing a Sun or Moon into a life area once a birth time is known.
 - [overview of the lunar nodes in astrology](/en/wiki/north-node-vs-south-node) — for the story layer many celebrity readings lean on.
 
 ## Take Action
 
-A birth chart is a mirror for reflection, not a verdict — this is not a clinical interpretation or mental health advice. Ready to move from reading about a footballer to reading yourself? [Generate your free birth chart to explore Achraf Hakimi birth chart](/en/wiki/how-to-read-birth-chart), and get your own Sun, Moon, and rising laid out the same way we mapped his. Seeing your placements side by side is a quiet reminder that a chart describes tendencies to reflect on — never a fixed script for how your story ends.
+A birth chart is a mirror for reflection, not a verdict — this is not a clinical interpretation or mental health advice. Ready to move from reading about a footballer to reading yourself? [Generate your free birth chart to explore Achraf Hakimi birth chart](/en/birth-chart-calculator), and get your own Sun, Moon, and rising laid out the same way we mapped his. Seeing your placements side by side is a quiet reminder that a chart describes tendencies to reflect on — never a fixed script for how your story ends.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

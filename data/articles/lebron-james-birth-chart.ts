@@ -23,7 +23,7 @@ export const lebronJamesBirthChartEn: WikiArticle = {
 
 ## What Is the LeBron James Birth Chart?
 
-The LeBron James birth chart is a full map of where the Sun, Moon, and planets sat at the moment of his birth on December 30, 1984, read as an interpretive portrait rather than a forecast. Because he was born in late December, his Sun sits in Capricorn, the sign tied to ambition, structure, and the long game. Like any [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart), a real reading looks past that single placement to the whole pattern — planet clusters, the angles they form, and the story those pieces tell together. At its core it is **a symbolic snapshot of his entire natal sky**.
+The LeBron James birth chart is a full map of where the Sun, Moon, and planets sat at the moment of his birth on December 30, 1984, read as an interpretive portrait rather than a forecast. Because he was born in late December, his Sun sits in Capricorn, the sign tied to ambition, structure, and the long game. Like any [guide to reading a full birth chart](/en/birth-chart-calculator), a real reading looks past that single placement to the whole pattern — planet clusters, the angles they form, and the story those pieces tell together. At its core it is **a symbolic snapshot of his entire natal sky**.
 
 - Anchored by a Capricorn Sun that reads as discipline, patience, and legacy-building
 - Built from the whole chart — clusters and aspects — not one headline sign
@@ -116,12 +116,12 @@ It is only as accurate as the birth data behind it, and honest about its limits.
 
 - [rising sign profiles hub](/en/wiki/ascendant-meaning) — helpful for understanding why his debated Ascendant is so hard to pin down.
 - [companion reading of Serena Williams's birth chart](/en/wiki/serena-williams-birth-chart) — compares how drive shows up across two very different sports figures.
-- [how planet clusters work in a birth chart](/en/wiki/how-to-read-birth-chart) — unpacks the planet clusters this portrait keeps pointing back to.
+- [how planet clusters work in a birth chart](/en/birth-chart-calculator) — unpacks the planet clusters this portrait keeps pointing back to.
 - [LeBron James (Wikipedia)](https://en.wikipedia.org/wiki/LeBron_James)
 
 ## Take Action
 
-[Generate your free birth chart to explore LeBron James birth chart](/en/wiki/how-to-read-birth-chart), and you get the same full-pattern map used here — Sun, Moon, angles, and clusters laid out side by side. Seeing your own placements in one view makes it easier to read yourself the way a portrait reads a person: as a set of tendencies you can work with, not a verdict you're stuck with.
+[Generate your free birth chart to explore LeBron James birth chart](/en/birth-chart-calculator), and you get the same full-pattern map used here — Sun, Moon, angles, and clusters laid out side by side. Seeing your own placements in one view makes it easier to read yourself the way a portrait reads a person: as a set of tendencies you can work with, not a verdict you're stuck with.
 
 This is not a clinical interpretation or mental health advice.
 

@@ -23,7 +23,7 @@ export const vozinhaBirthChartEn: WikiArticle = {
 
 ## What Is the Vozinha Birth Chart?
 
-The Vozinha birth chart is **a sun-sign reading of Josimar José Évora Dias, Cape Verde's veteran goalkeeper, anchored by a Gemini Sun born 3 June 1986 in Mindelo**. Without a public birth time we cannot honestly state his Moon or rising sign, so the chart we can read is the Sun and the method behind it — read this way, it is less a forecast than a study in composure. If you want to follow that method on your own placements, [how to read a birth chart](/en/wiki/how-to-read-birth-chart) walks through the same Sun-first steps used here for a 40-year-old keeper who kept a clean sheet against the reigning European champions.
+The Vozinha birth chart is **a sun-sign reading of Josimar José Évora Dias, Cape Verde's veteran goalkeeper, anchored by a Gemini Sun born 3 June 1986 in Mindelo**. Without a public birth time we cannot honestly state his Moon or rising sign, so the chart we can read is the Sun and the method behind it — read this way, it is less a forecast than a study in composure. If you want to follow that method on your own placements, [how to read a birth chart](/en/birth-chart-calculator) walks through the same Sun-first steps used here for a 40-year-old keeper who kept a clean sheet against the reigning European champions.
 
 - A Gemini Sun, the mutable air sign tied to quick reactions, communication, and reading a fast-changing scene
 - Age 40 during World Cup 2026, sitting in the Uranus-opposition years rather than any Saturn return
@@ -107,7 +107,7 @@ No. Saturn's sextile from Aries and Jupiter's sextile after it enters Leo on Jun
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads a veteran keeper's — as a temperament and a set of themes rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a gentler way to meet a long-delayed chance with composure rather than waiting on the planets to call it.
+[Generate your free birth chart](/en/birth-chart-calculator) to read your own Sun the way this piece reads a veteran keeper's — as a temperament and a set of themes rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a gentler way to meet a long-delayed chance with composure rather than waiting on the planets to call it.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

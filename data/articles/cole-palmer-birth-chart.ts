@@ -23,7 +23,7 @@ export const colePalmerBirthChartEn: WikiArticle = {
 
 ## What Is the Cole Palmer Birth Chart?
 
-The Cole Palmer birth chart is **a symbolic snapshot of the sky at his birth, read for persona**. It maps where the Sun, Moon, and planets sat when the Chelsea and England forward was born, then treats those positions as themes rather than facts about his life. Because his reported birthdate (6 May 2002) places his Sun in Taurus, most write-ups start there, building on the person-centered approach Dane Rudhyar established for reading a chart as one whole picture instead of a scorecard. Think of it as a cultural lens on his calm, unhurried on-pitch style — not evidence of it. If you want the mechanics behind any chart like this, the [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) walks through each piece.
+The Cole Palmer birth chart is **a symbolic snapshot of the sky at his birth, read for persona**. It maps where the Sun, Moon, and planets sat when the Chelsea and England forward was born, then treats those positions as themes rather than facts about his life. Because his reported birthdate (6 May 2002) places his Sun in Taurus, most write-ups start there, building on the person-centered approach Dane Rudhyar established for reading a chart as one whole picture instead of a scorecard. Think of it as a cultural lens on his calm, unhurried on-pitch style — not evidence of it. If you want the mechanics behind any chart like this, the [pillar guide on how to read a birth chart](/en/birth-chart-calculator) walks through each piece.
 
 - Reads placements as personality themes, never as biographical proof
 - Anchored by a Taurus Sun, with the rest treated as interpretive, not confirmed
@@ -128,7 +128,7 @@ A few nearby topics help you keep symbol and fact apart:
 
 ## Take Action
 
-Generate your free birth chart to explore Cole Palmer birth chart. In a few minutes you'll have your own placements laid out the same way, so you can [read your chart the way this guide reads his](/en/wiki/how-to-read-birth-chart) — as themes to sit with rather than a headline about him. Seeing your own patterns as tendencies instead of a fixed script is where a chart stops being a label and starts being a mirror.
+Generate your free birth chart to explore Cole Palmer birth chart. In a few minutes you'll have your own placements laid out the same way, so you can [read your chart the way this guide reads his](/en/birth-chart-calculator) — as themes to sit with rather than a headline about him. Seeing your own patterns as tendencies instead of a fixed script is where a chart stops being a label and starts being a mirror.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

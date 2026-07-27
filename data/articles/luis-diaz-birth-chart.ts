@@ -107,7 +107,7 @@ Saturn is Capricorn's traditional ruler, and its transit through Aries from 2025
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun the way this piece reads Díaz's, as a theme of vocation rather than a verdict. You get a clear view of where your Sun sits, and alongside it a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
+[Generate your free birth chart](/en/birth-chart-calculator) to find your own Sun the way this piece reads Díaz's, as a theme of vocation rather than a verdict. You get a clear view of where your Sun sits, and alongside it a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

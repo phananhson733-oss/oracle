@@ -24,7 +24,7 @@ export const saturnReturnAge30En: WikiArticle = {
 
 ## What Is Saturn Return Age 30?
 
-Saturn return age 30 is the multi-year transit when the planet Saturn circles back to the exact position it held in your birth chart at the moment you were born. That orbit takes roughly three decades, so the first return builds from around age 27 and sharpens near 29 to 30. According to NASA, Saturn takes about 29.5 years to complete one orbit of the Sun, which is why the timing lands squarely in your late twenties. Placed inside the wider picture of your chart — see the [guide to reading your birth chart](/en/wiki/how-to-read-birth-chart) — it works as a scheduled review, not a verdict. Put plainly, it is **a hard review of the adult life you built in your twenties**.
+Saturn return age 30 is the multi-year transit when the planet Saturn circles back to the exact position it held in your birth chart at the moment you were born. That orbit takes roughly three decades, so the first return builds from around age 27 and sharpens near 29 to 30. According to NASA, Saturn takes about 29.5 years to complete one orbit of the Sun, which is why the timing lands squarely in your late twenties. Placed inside the wider picture of your chart — see the [guide to reading your birth chart](/en/saturn-return-calculator) — it works as a scheduled review, not a verdict. Put plainly, it is **a hard review of the adult life you built in your twenties**.
 
 - Recurs once near ages 29 to 30, again near 58, and once more near 87
 - Anchored to the exact house and sign Saturn occupied in your birth chart

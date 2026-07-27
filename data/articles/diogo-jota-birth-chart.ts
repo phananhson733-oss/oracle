@@ -23,7 +23,7 @@ export const diogoJotaBirthChartEn: WikiArticle = {
 
 ## What Is Diogo Jota's Birth Chart?
 
-A Diogo Jota birth chart is a symbolic map of the sky as it looked at his birth on December 4, 1996, read as a cultural portrait of the late Portuguese footballer rather than a verified biographical record. At its simplest, it is **a symbolic snapshot of the sky the day Diogo Jota was born**, organized around his Sagittarius Sun and interpreted the way any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) would suggest — placement by placement, aspect by aspect.
+A Diogo Jota birth chart is a symbolic map of the sky as it looked at his birth on December 4, 1996, read as a cultural portrait of the late Portuguese footballer rather than a verified biographical record. At its simplest, it is **a symbolic snapshot of the sky the day Diogo Jota was born**, organized around his Sagittarius Sun and interpreted the way any [pillar guide on how to read a birth chart](/en/birth-chart-calculator) would suggest — placement by placement, aspect by aspect.
 
 - Anchored by a Sagittarius Sun, which colors the core drive toward directness, freedom, and forward motion
 - Read symbolically as persona and pattern, never as a fixed account of a real person's inner life
@@ -119,7 +119,7 @@ Interest surged around his death in July 2025 and the tributes that followed, as
 
 ## Take Action
 
-Generate your free birth chart to explore Diogo Jota birth chart — start with our [step-by-step guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) walkthrough at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart). You will get a full placement map of your own Sun, Moon, and rising, laid out the same way a celebrity profile is, so you can see the patterns instead of a single label. Read symbolically, that map becomes a quiet tool for noticing how your public self and private self line up — and where they don't.
+Generate your free birth chart to explore Diogo Jota birth chart — start with our [step-by-step guide to reading a birth chart](/en/birth-chart-calculator) walkthrough at [/en/birth-chart-calculator](/en/birth-chart-calculator). You will get a full placement map of your own Sun, Moon, and rising, laid out the same way a celebrity profile is, so you can see the patterns instead of a single label. Read symbolically, that map becomes a quiet tool for noticing how your public self and private self line up — and where they don't.
 
 This is not a clinical interpretation or mental health advice.
 

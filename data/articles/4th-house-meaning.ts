@@ -114,7 +114,7 @@ The 4th house holds your private roots while the 10th holds your public role and
 ## Related Reading
 
 - *explainer on the Imum Coeli and the chart angles* — goes deeper on the IC point that anchors this house.
-- [guide to the Moon in the birth chart](/en/wiki/how-to-read-birth-chart) — connects the emotional instincts that the 4th house gives a home to.
+- [guide to the Moon in the birth chart](/en/birth-chart-calculator) — connects the emotional instincts that the 4th house gives a home to.
 
 ## Take Action
 

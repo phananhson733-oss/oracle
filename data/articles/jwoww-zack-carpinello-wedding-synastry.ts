@@ -126,11 +126,11 @@ For readers using jwoww zack carpinello wedding synastry as a starting point, th
 - [synastry chart compatibility](/en/wiki/synastry-chart-compatibility) — Helps readers compare relationship patterns beyond Sun signs.
 - [9th house astrology](/en/wiki/9th-house-astrology) — Useful background for Jupiter themes, belief, scale, and public meaning.
 - [composite chart calculator](/en/wiki/composite-chart-calculator) — Gives a broader relationship-chart context beyond celebrity symbolism.
-- [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — Clarifies what can and cannot be interpreted when birth time is missing.
+- [how to read a birth chart](/en/synastry-calculator) — Clarifies what can and cannot be interpreted when birth time is missing.
 
 ## Take Action
 
-Start by entering accurate birth data and checking which chart factors are confirmed, estimated, or unknown. The output is a clearer map of signs, rulers, and relationship themes you can compare with real-life patterns. The life insight is learning the difference between a symbolic fit and a fixed prediction. This is not a clinical interpretation or mental health advice. [Learn how to read a birth chart before comparing relationship symbolism.](/en/wiki/how-to-read-birth-chart)
+Start by entering accurate birth data and checking which chart factors are confirmed, estimated, or unknown. The output is a clearer map of signs, rulers, and relationship themes you can compare with real-life patterns. The life insight is learning the difference between a symbolic fit and a fixed prediction. This is not a clinical interpretation or mental health advice. [Learn how to read a birth chart before comparing relationship symbolism.](/en/synastry-calculator)
 
 To see how two charts actually interact, our [synastry calculator](/en/synastry-calculator) compares both sets of placements side by side.
 

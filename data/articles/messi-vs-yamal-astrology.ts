@@ -24,7 +24,7 @@ export const messiVsYamalAstrologyEn: WikiArticle = {
 
 ## What Is Messi vs Yamal Astrology?
 
-Messi vs yamal astrology is **a side-by-side symbolic reading of two footballers' natal charts**, comparing archetypes instead of forecasting results. It sets Lionel Messi's birth chart next to Lamine Yamal's and asks where the two echo each other and where they part — both carry a Cancer Sun, yet they were born twenty years apart, so their generational placements color each temperament differently. Cancer is a cardinal water sign linked to instinct, memory, and a protective streak, which gives both charts an emotionally driven core. The framework, in the lineage Dane Rudhyar helped shape, treats a chart as a pattern of leanings rather than a fixed script — the same logic behind any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+Messi vs yamal astrology is **a side-by-side symbolic reading of two footballers' natal charts**, comparing archetypes instead of forecasting results. It sets Lionel Messi's birth chart next to Lamine Yamal's and asks where the two echo each other and where they part — both carry a Cancer Sun, yet they were born twenty years apart, so their generational placements color each temperament differently. Cancer is a cardinal water sign linked to instinct, memory, and a protective streak, which gives both charts an emotionally driven core. For Argentina's wider tournament context, see [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology).
 
 - Compares two real natal charts as archetypes, never as a scoreboard
 - Anchored in a shared Cancer Sun but split by generational placements

@@ -24,7 +24,7 @@ export const whatIsMyLifePurposeEn: WikiArticle = {
 
 ## What Is a Life-Purpose Birth Chart Reading?
 
-"What is my life purpose" is the question astrology approaches not as a fixed destiny but as a direction of growth, read through a few core natal signatures—your North Node, Sun sign, and Midheaven—treated together as symbols of where your life tends to stretch and mature. In a symbolic reading, it works as **a chart-based lens for reflecting on your soul's direction of growth**, drawing on the framework Liz Greene helped shape. It is best understood as an interpretive framework rather than a prediction, which is why it pairs naturally with the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart). Because the chart maps tendencies rather than fixed events, the same placements can be lived out in many different ways, and the reading simply names the direction most likely to feel meaningful to you over time.
+"What is my life purpose" is the question astrology approaches not as a fixed destiny but as a direction of growth, read through a few core natal signatures—your North Node, Sun sign, and Midheaven—treated together as symbols of where your life tends to stretch and mature. In a symbolic reading, it works as **a chart-based lens for reflecting on your soul's direction of growth**, drawing on the framework Liz Greene helped shape. It is best understood as an interpretive framework rather than a prediction, which is why it pairs naturally with the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator). Because the chart maps tendencies rather than fixed events, the same placements can be lived out in many different ways, and the reading simply names the direction most likely to feel meaningful to you over time.
 
 - Reads life direction from natal placements, not from a single fated outcome
 - Centers on the North Node as the growth edge and the Sun as core identity
@@ -111,7 +111,7 @@ This is not a clinical interpretation or mental health advice.
 - [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
 <!-- gg-cluster-links:end -->
 - *North and South Nodes meaning guide* — a deeper look at the growth axis this reading depends on.
-- [Midheaven and career point explainer](/en/wiki/how-to-read-birth-chart) — how the top of the chart shapes public role and contribution.
+- [Midheaven and career point explainer](/en/birth-chart-calculator) — how the top of the chart shapes public role and contribution.
 - [rising sign meaning guide](/en/wiki/ascendant-meaning) — the outward style through which any purpose-related direction expresses.
 - [Lunar node (Wikipedia)](https://en.wikipedia.org/wiki/Lunar_node)
 

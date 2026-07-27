@@ -29,7 +29,7 @@ John Denver's birth chart is the full map of planetary placements for the folk s
 - Anchored in earth through its Capricorn Sun and Mercury, tying identity to land and the natural world
 - Built for translation, turning private feeling into songs a wide audience recognizes
 
-Read as a whole, a John Denver birth chart interpretation looks past a single Sun sign and treats the placements as one interconnected pattern. This approach sits alongside a broader [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which explains why the relationships between planets matter more than any isolated symbol. In my work reading full-chart structures instead of one placement at a time, the throughline in a chart like this is usually consistency: the same themes surface across the Sun, the elements, and the major aspects. That consistency is what makes the chart worth reading closely; when a placement seems to contradict the others, it usually points to a nuance rather than a flaw in the pattern.
+Read as a whole, a John Denver birth chart interpretation looks past a single Sun sign and treats the placements as one interconnected pattern. This approach sits alongside a broader [guide on how to read a birth chart](/en/birth-chart-calculator), which explains why the relationships between planets matter more than any isolated symbol. In my work reading full-chart structures instead of one placement at a time, the throughline in a chart like this is usually consistency: the same themes surface across the Sun, the elements, and the major aspects. That consistency is what makes the chart worth reading closely; when a placement seems to contradict the others, it usually points to a nuance rather than a flaw in the pattern.
 
 ## Why It Matters for Self-Awareness
 
@@ -118,7 +118,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Map your own placements the way this reading maps Denver's: [Generate your free birth chart to explore the John Denver birth chart approach](/en/wiki/how-to-read-birth-chart). You will get a full-chart layout of your Sun, elements, and aspects in one view — and, more usefully, a symbolic language for seeing how your steady inner patterns become the voice other people recognize.
+Map your own placements the way this reading maps Denver's: [Generate your free birth chart to explore the John Denver birth chart approach](/en/birth-chart-calculator). You will get a full-chart layout of your Sun, elements, and aspects in one view — and, more usefully, a symbolic language for seeing how your steady inner patterns become the voice other people recognize.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

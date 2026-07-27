@@ -23,7 +23,7 @@ export const rayanCherkiBirthChartEn: WikiArticle = {
 
 ## What Is Rayan Cherki's Birth Chart?
 
-Rayan Cherki's birth chart is the chart astrologers cast for the French footballer from his birth date, birthplace, and — when it is known — his birth time. Read the way this page reads it, a Rayan Cherki birth chart is **a symbolic map of the sky at his birth, not a performance forecast**. It sorts the Sun, Moon, rising sign, and planetary aspects into a picture that fans and writers use as cultural shorthand for his public persona: the flair, the confidence on the ball, the timing of his current news moment. It is a reading of image and archetype, and it follows the same steps the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) lays out for any chart.
+Rayan Cherki's birth chart is the chart astrologers cast for the French footballer from his birth date, birthplace, and — when it is known — his birth time. Read the way this page reads it, a Rayan Cherki birth chart is **a symbolic map of the sky at his birth, not a performance forecast**. It sorts the Sun, Moon, rising sign, and planetary aspects into a picture that fans and writers use as cultural shorthand for his public persona: the flair, the confidence on the ball, the timing of his current news moment. It is a reading of image and archetype, and it follows the same steps the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator) lays out for any chart.
 
 - Frames his public image through Sun, Moon, and Ascendant symbolism rather than statistics
 - Depends on a verified birth time before the Moon and rising sign can be read with confidence
@@ -126,7 +126,7 @@ It can offer a coherent symbolic story about a public persona, which is a curate
 
 ## Take Action
 
-Cast your own chart the same way this page reads his: [generate your free birth chart to explore Rayan Cherki birth chart](/en/wiki/how-to-read-birth-chart) and compare the symbolism side by side. You will get a labeled map of your Sun, Moon, and rising sign that you can actually test against your life — and in doing that, you may notice how quickly you assign stories to other people, and how much more honest a reading feels when you leave room for what you can't yet confirm.
+Cast your own chart the same way this page reads his: [generate your free birth chart to explore Rayan Cherki birth chart](/en/birth-chart-calculator) and compare the symbolism side by side. You will get a labeled map of your Sun, Moon, and rising sign that you can actually test against your life — and in doing that, you may notice how quickly you assign stories to other people, and how much more honest a reading feels when you leave room for what you can't yet confirm.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

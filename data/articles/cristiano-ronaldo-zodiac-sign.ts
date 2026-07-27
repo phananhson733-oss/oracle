@@ -116,7 +116,7 @@ The Moon's sign is widely reported as Aries, but its exact degree and house depe
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and its ruler the way this piece reads Cristiano Ronaldo's zodiac sign — as a structure under timed pressure rather than a label. You get a clear view of your Sun's sign and ruler and the Saturn transits touching it now, and, more usefully, a way to tell a season of testing apart from a setback you cannot move.
+[Generate your free birth chart](/en/birth-chart-calculator) to read your own Sun and its ruler the way this piece reads Cristiano Ronaldo's zodiac sign — as a structure under timed pressure rather than a label. You get a clear view of your Sun's sign and ruler and the Saturn transits touching it now, and, more usefully, a way to tell a season of testing apart from a setback you cannot move.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

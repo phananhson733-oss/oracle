@@ -68,7 +68,7 @@ Every full moon sits on a polarity, and this one falls on the Cancer–Capricorn
 
 ### Which House This Full Moon Activates for You
 
-The axis describes the theme; your birth chart tells you exactly where it lands. The Cancer–Capricorn full moon falls across two specific houses in your chart, and that house pair is the area of life this lunation is asking you to audit. If it activates your sixth and twelfth houses, the review is about daily work versus rest and retreat; if it falls across your second and eighth, it is about your own resources versus what you share. To find your specific houses, [generate your birth chart](/en/wiki/how-to-read-birth-chart) and locate where Cancer and Capricorn sit. Knowing the house turns "a Capricorn full moon" into a concrete question about one part of your life rather than a general mood — and the method here is the same one covered in [how to read full moon energy in your own chart](/en/wiki/full-moon-energy).
+The axis describes the theme; your birth chart tells you exactly where it lands. The Cancer–Capricorn full moon falls across two specific houses in your chart, and that house pair is the area of life this lunation is asking you to audit. If it activates your sixth and twelfth houses, the review is about daily work versus rest and retreat; if it falls across your second and eighth, it is about your own resources versus what you share. To find your specific houses, [generate your birth chart](/en/birth-chart-calculator) and locate where Cancer and Capricorn sit. Knowing the house turns "a Capricorn full moon" into a concrete question about one part of your life rather than a general mood — and the method here is the same one covered in [how to read full moon energy in your own chart](/en/wiki/full-moon-energy).
 
 ### Key Aspects and Planets in Contact
 
@@ -134,7 +134,7 @@ The station point is the most energetically charged moment of any retrograde per
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see how this Capricorn full moon lands in your personal placements. You'll find exactly which natal house the June 29 lunar peak activates — giving you a specific area of life to audit and release, rather than a general energy to work with. That house is where this full moon's double-completion signal lands most directly in your experience.
+[Generate your free birth chart](/en/birth-chart-calculator) to see how this Capricorn full moon lands in your personal placements. You'll find exactly which natal house the June 29 lunar peak activates — giving you a specific area of life to audit and release, rather than a general energy to work with. That house is where this full moon's double-completion signal lands most directly in your experience.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

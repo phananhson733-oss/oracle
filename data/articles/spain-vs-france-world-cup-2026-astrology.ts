@@ -33,7 +33,7 @@ Spain vs France World Cup 2026 astrology is a symbolic way of reading the fixtur
 - Leans on player chart signatures and the Jupiter-in-Cancer 2026 backdrop to set the mood
 - Stops well short of forecasting a winner, an expected-goals figure, or a final score
 
-This reading sits under the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which maps the houses, signs, and placements the whole approach leans on. None of it competes with tactics, form guides, or the bookmakers. It runs alongside them as cultural commentary with an astrological accent — a way of talking about temperament, rivalry, and timing that adds texture to the match rather than trying to settle it. Fans who look this up are usually after exactly that: a richer story for ninety minutes, not a shortcut to the outcome.
+This reading sits inside [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology), which maps the national context behind the rivalry. None of it competes with tactics, form guides, or the bookmakers. It runs alongside them as cultural commentary with an astrological accent — a way of talking about temperament, rivalry, and timing that adds texture to the match rather than trying to settle it. Fans who look this up are usually after exactly that: a richer story for ninety minutes, not a shortcut to the outcome.
 
 ## Why It Matters for Self-Awareness
 

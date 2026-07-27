@@ -23,7 +23,7 @@ export const quintaBrunsonBirthChartEn: WikiArticle = {
 
 ## What Is Quinta Brunson's Birth Chart?
 
-Quinta Brunson's birth chart is a map of where the Sun, Moon, and planets sat on December 21, 1989, the day she was born in Philadelphia. Read the way you would approach any [guide to how to read a birth chart](/en/wiki/how-to-read-birth-chart), the Quinta Brunson birth chart is best understood as **a symbolic snapshot of the planets at her 1989 birth** — a character sketch, not a script.
+Quinta Brunson's birth chart is a map of where the Sun, Moon, and planets sat on December 21, 1989, the day she was born in Philadelphia. Read the way you would approach any [guide to how to read a birth chart](/en/birth-chart-calculator), the Quinta Brunson birth chart is best understood as **a symbolic snapshot of the planets at her 1989 birth** — a character sketch, not a script.
 
 - A Sagittarius Sun near the Capricorn cusp, pointing to blunt, restless, honest humor
 - A tight cluster of planets in Capricorn, hinting at patient, long-game ambition behind the jokes

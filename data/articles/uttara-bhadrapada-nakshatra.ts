@@ -116,7 +116,7 @@ Generate your free birth chart to see where Uttara Bhadrapada sits in your own p
 
 Your chart shows precisely which planets, if any, fall within this mansion's range in Pisces and how Saturn's discipline activates across specific houses. That map turns the still-water symbolism into something concrete — a picture of where your own depth tends to gather, what conditions draw it out, and how the placement's restrained strength may be working quietly in your life.
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
+[Generate your free birth chart](/en/birth-chart-calculator)
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

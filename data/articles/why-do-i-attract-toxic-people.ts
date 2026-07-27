@@ -24,7 +24,7 @@ export const whyDoIAttractToxicPeopleEn: WikiArticle = {
 
 ## What Is a Descendant Shadow-Attraction Signature?
 
-A Descendant Shadow-Attraction Signature is a symbolic reading of the seventh-house axis in a birth chart, used to describe a recurring pull toward partners who test your boundaries. It sits within the broader [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), which maps how every placement is interpreted. When someone asks why do I attract toxic people, an astrologer using the chart as a reflective mirror reads it as **a symbolic map of a chart's recurring pull toward boundary-testing partners**.
+A Descendant Shadow-Attraction Signature is a symbolic reading of the seventh-house axis in a birth chart, used to describe a recurring pull toward partners who test your boundaries. It sits within the broader [pillar guide to reading a birth chart](/en/birth-chart-calculator), which maps how every placement is interpreted. When someone asks why do I attract toxic people, an astrologer using the chart as a reflective mirror reads it as **a symbolic map of a chart's recurring pull toward boundary-testing partners**.
 
 - Reads the whole seventh-house axis as one pattern, not a single planet
 - Highlights Pluto, Neptune, and Saturn contacts as symbolic markers to reflect on

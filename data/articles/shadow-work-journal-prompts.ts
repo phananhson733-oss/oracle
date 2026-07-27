@@ -115,7 +115,7 @@ Dark side journaling is a broader category that includes writing about difficult
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore shadow work journal prompts alongside your astrological structure. Your chart reveals the planetary placements most likely to shape your shadow complex — the house positions and aspect patterns connected to defended psychological material. That structural map gives your journaling practice a specific anchor, so prompts land on identifiable patterns rather than abstract tendencies.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore shadow work journal prompts alongside your astrological structure. Your chart reveals the planetary placements most likely to shape your shadow complex — the house positions and aspect patterns connected to defended psychological material. That structural map gives your journaling practice a specific anchor, so prompts land on identifiable patterns rather than abstract tendencies.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

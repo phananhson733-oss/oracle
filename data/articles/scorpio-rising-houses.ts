@@ -52,7 +52,7 @@ The 12th house, where Libra sits on the cusp, does carry a Venusian orientation 
 ![Mirror comparison: Scorpio rising pairs a Mars–Pluto persona with Venus-ruled partnerships, while Taurus rising pairs a Venusian persona with Mars–Pluto-ruled partnerships.](/images/placements/scorpio-rising-houses-i0-en.svg)
 ## How to Read scorpio rising houses in Your Chart
 
-1. **Confirm Scorpio on the Ascendant.** Birth time must be accurate — thirty minutes can shift the rising sign. The [guide to generating an accurate birth chart](/en/wiki/how-to-read-birth-chart) explains how to source and enter your birth time correctly.
+1. **Confirm Scorpio on the Ascendant.** Birth time must be accurate — thirty minutes can shift the rising sign. The [guide to generating an accurate birth chart](/en/birth-chart-calculator) explains how to source and enter your birth time correctly.
 2. **Identify your house system.** Whole-sign or equal-house charts show Taurus on the 7th and Libra on the 12th clearly. Placidus charts may show different intermediate cusps.
 3. **Check your 7th house cusp for Taurus.** If present, Venus governs your partnership sector.
 4. **Locate Venus by sign, house, dignity, and aspects.** Venus in Libra in the 1st expresses differently through the 7th than Venus in Scorpio in the 6th — the rulership is the same, but the quality shifts significantly.
@@ -120,7 +120,7 @@ Venus governs the hidden inner life, orienting it toward balance, beauty, and re
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore scorpio rising houses. Your chart displays the exact cusp signs and house rulers — including whether Venus governs your 7th and 12th houses. That single observation makes the Venus-in-partnership pattern visible in your own relational history rather than staying abstract.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore scorpio rising houses. Your chart displays the exact cusp signs and house rulers — including whether Venus governs your 7th and 12th houses. That single observation makes the Venus-in-partnership pattern visible in your own relational history rather than staying abstract.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

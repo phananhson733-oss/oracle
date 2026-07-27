@@ -130,7 +130,7 @@ The Bukayo Saka zodiac sign works as a symbolic lens, not a cause. The Virgo–A
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice — it's a symbolic frame for thinking about contrast in a person's makeup. Pull your own chart and find your Sun–Moon split the way Saka's Virgo–Aries pairing maps his game. You'll see which sign organises your decisions and which one fires your reactions, and where the two pull against each other — and that contrast is often where your sharpest, most honest self-awareness lives. [Generate your free birth chart to explore bukayo saka zodiac sign.](/en/wiki/how-to-read-birth-chart)
+This is not a clinical interpretation or mental health advice — it's a symbolic frame for thinking about contrast in a person's makeup. Pull your own chart and find your Sun–Moon split the way Saka's Virgo–Aries pairing maps his game. You'll see which sign organises your decisions and which one fires your reactions, and where the two pull against each other — and that contrast is often where your sharpest, most honest self-awareness lives. [Generate your free birth chart to explore bukayo saka zodiac sign.](/en/birth-chart-calculator)
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
@@ -266,7 +266,7 @@ export const bukayoSakaZodiacSignZh: WikiArticle = {
 
 ## 下一步行动
 
-这不是临床解读,也不是心理健康建议——它只是一个象征性框架,帮你思考一个人构成里的反差。把你自己的星盘拉出来,像萨卡的处女—白羊搭配映照他的球场那样,找到你的太阳—月亮分裂。你会看到哪个星座在组织你的决定,哪个在点燃你的反应,以及两者在哪里彼此拉扯——而那份反差,往往正是你最锐利、最诚实的自我觉察所栖身之处。[生成你的免费出生星盘,进一步探索萨卡的星座。](/en/wiki/how-to-read-birth-chart)
+这不是临床解读,也不是心理健康建议——它只是一个象征性框架,帮你思考一个人构成里的反差。把你自己的星盘拉出来,像萨卡的处女—白羊搭配映照他的球场那样,找到你的太阳—月亮分裂。你会看到哪个星座在组织你的决定,哪个在点燃你的反应,以及两者在哪里彼此拉扯——而那份反差,往往正是你最锐利、最诚实的自我觉察所栖身之处。[生成你的免费出生星盘,进一步探索萨卡的星座。](/en/birth-chart-calculator)
 
 ## 参考来源
 

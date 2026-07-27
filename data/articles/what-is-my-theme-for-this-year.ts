@@ -24,7 +24,7 @@ export const whatIsMyThemeForThisYearEn: WikiArticle = {
 
 ## What Is My Theme for This Year?
 
-Three traditions answer "what is my theme for this year." Annual profections and its Lord of the Year activate one house and its ruling planet each year; numerology's personal-year cycle counts forward from your birthday; and the Solar Return chart maps the sky at your yearly Sun return. This article follows the Solar Return because it ties the theme to your actual placements rather than a single number or a fixed rotation — and once you can read a chart, a [how to read a birth chart](/en/wiki/how-to-read-birth-chart) puts those yearly signals in context. In plain terms, your theme is **an annual focus drawn from your solar return**: the Sun's return weighed by its house, angles, ruler, and repeating patterns against the natal chart.
+Three traditions answer "what is my theme for this year." Annual profections and its Lord of the Year activate one house and its ruling planet each year; numerology's personal-year cycle counts forward from your birthday; and the Solar Return chart maps the sky at your yearly Sun return. This article follows the Solar Return because it ties the theme to your actual placements rather than a single number or a fixed rotation — and once you can read a chart, a [how to read a birth chart](/en/birth-chart-calculator) puts those yearly signals in context. In plain terms, your theme is **an annual focus drawn from your solar return**: the Sun's return weighed by its house, angles, ruler, and repeating patterns against the natal chart.
 
 - It narrows a full yearly chart into one or two recurring subjects.
 - It depends on natal placements, not a generic zodiac-sign forecast.

@@ -26,7 +26,7 @@ export const englandVsNorwayAstrologyEn: WikiArticle = {
 
 ## What Is England vs Norway Astrology?
 
-England vs Norway astrology is a symbolic side-by-side reading of each country's national character through astrological archetypes, framed as cultural reflection rather than a forecast of any match or event. It belongs to mundane astrology, the older branch that maps signs, planets, and houses onto places and nations instead of a single person. Read this way, it works as **an interpretive comparison of two national temperaments, not a prediction of outcomes** — a lens for thinking about how a reserved island culture and a northern, nature-bound one express drive, restraint, and belonging in different ways. It is less a verdict than a conversation between two archetypes. If you want the building blocks behind any chart, the [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) covers the same houses and placements used here.
+England vs Norway astrology is a symbolic side-by-side reading of each country's national character through astrological archetypes, framed as cultural reflection rather than a forecast of any match or event. It belongs to mundane astrology, the older branch that maps signs, planets, and houses onto places and nations instead of a single person. Read this way, it works as **an interpretive comparison of two national temperaments, not a prediction of outcomes** — a lens for thinking about how a reserved island culture and a northern, nature-bound one express drive, restraint, and belonging in different ways. It is less a verdict than a conversation between two archetypes. For the wider series, see the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction).
 
 - Treats each nation as an archetype, not a scoreboard, staying descriptive rather than deterministic
 - Draws on mundane astrology's long habit of linking signs and houses to countries and cultures
@@ -129,7 +129,7 @@ No, and it makes no such claim. This is a symbolic, interpretive tradition meant
 
 ## Take Action
 
-Ready to turn this national mirror inward? [Generate your free birth chart to explore England vs Norway astrology](/en/wiki/how-to-read-birth-chart), and you'll get your own houses, signs, and placements laid out the same way this comparison maps two countries. Seeing your chart beside these archetypes often makes your personal balance of reserve and openness far easier to recognize — and to work with on your own terms. This is not a clinical interpretation or mental health advice.
+For England's wider tournament story and its match-by-match context, continue to [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) and the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction). This is not a clinical interpretation or mental health advice.
 
 ## Sources
 

@@ -129,7 +129,7 @@ Yes—your chart shows where June's themes of expression and belonging actually 
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice—read it as a reflective lens only. To make the season personal, [Generate your free birth chart to explore Pride Month Astrology](/en/wiki/how-to-read-birth-chart): you'll get a map of your own houses that shows where June's Gemini-to-Cancer themes actually land, so a passing seasonal mood becomes a clearer picture of where you seek visibility and where you seek belonging.
+This is not a clinical interpretation or mental health advice—read it as a reflective lens only. To make the season personal, [Generate your free birth chart to explore Pride Month Astrology](/en/birth-chart-calculator): you'll get a map of your own houses that shows where June's Gemini-to-Cancer themes actually land, so a passing seasonal mood becomes a clearer picture of where you seek visibility and where you seek belonging.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

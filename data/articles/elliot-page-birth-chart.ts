@@ -29,7 +29,7 @@ The Elliot Page birth chart is **a symbolic map of the sky at his exact moment o
 - Commonly anchored by a Pisces Sun, tied to themes of empathy, imagination, and a rich inner life
 - Framed as a reading of his public arc as actor and advocate, never as private biographical proof
 
-Like any natal chart, it turns a birth moment into a set of themes an astrologer can interpret. Page is widely listed with a late-February birth date, which places the Sun in Pisces — a sign linked to sensitivity and a fluid, imaginative temperament. Approached this way, the chart becomes a story to read rather than a verdict to confirm. For anyone new to natal work, the broader [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart) shows how these pieces connect before any single placement gets interpreted in isolation.
+Like any natal chart, it turns a birth moment into a set of themes an astrologer can interpret. Page is widely listed with a late-February birth date, which places the Sun in Pisces — a sign linked to sensitivity and a fluid, imaginative temperament. Approached this way, the chart becomes a story to read rather than a verdict to confirm. For anyone new to natal work, the broader [pillar page on how to read a birth chart](/en/birth-chart-calculator) shows how these pieces connect before any single placement gets interpreted in isolation.
 
 ## Why It Matters for Self-Awareness
 
@@ -128,7 +128,7 @@ Structurally, no — every chart uses the same signs, planets, and houses. The d
 
 ## Take Action
 
-Ready to move from reading a celebrity's chart to reading your own? [Learn how to read your own birth chart step by step](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising in one place — the same structure used here — so you can start spotting the quiet patterns that shape how you show up in the world.
+Ready to move from reading a celebrity's chart to reading your own? [Learn how to read your own birth chart step by step](/en/birth-chart-calculator), and you'll get a full map of your Sun, Moon, and rising in one place — the same structure used here — so you can start spotting the quiet patterns that shape how you show up in the world.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

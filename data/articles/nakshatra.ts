@@ -124,11 +124,11 @@ In Vedic interpretation, the birth station primarily governs the dasha timing se
 - *guide to all 27 lunar mansions* — individual profiles of each station and its dasha implications
 - *Rohini birth station in-depth page* — spoke page for one of the most studied natal placements, Moon-ruled and growth-oriented
 - *Bharani birth station overview* — spoke page for the Venus-ruled transformation station and what its dasha period tends to surface
-- [Vedic birth chart reading guide](/en/wiki/how-to-read-birth-chart) — how to locate your Moon's station within the full Jyotish chart structure
+- [Vedic birth chart reading guide](/en/birth-chart-calculator) — how to locate your Moon's station within the full Jyotish chart structure
 
 ## Take Action
 
-[Generate your free birth chart to explore nakshatra](/en/wiki/how-to-read-birth-chart) — a Vedic chart shows your Moon's natal station and the dasha period currently active in your timeline. With that information, you get a concrete framework for reading not just your tendencies but when those tendencies become most consequential: which chapters are opening, which are winding down, and why this particular season of life feels the way it does.
+[Generate your free birth chart to explore nakshatra](/en/birth-chart-calculator) — a Vedic chart shows your Moon's natal station and the dasha period currently active in your timeline. With that information, you get a concrete framework for reading not just your tendencies but when those tendencies become most consequential: which chapters are opening, which are winding down, and why this particular season of life feels the way it does.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

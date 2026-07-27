@@ -24,7 +24,7 @@ export const saturnReturnInAriesEn: WikiArticle = {
 
 ## What Is Saturn Return in Aries?
 
-Saturn Return in Aries is the stretch of time when transiting Saturn moves back into the exact sign — Aries — that it occupied in your birth chart, an event that only reaches people born with natal Saturn in Aries. For that group, it reads as **a structural review of identity, autonomy, and initiative**. The timing is what makes it a return rather than an ordinary transit: according to NASA, Saturn takes about 29.5 years to complete one orbit, so the planet lands back on its birth position near ages 29 and 58. If your natal Saturn sits anywhere else, the same sky is just a general Aries-season transit, which is why a [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) is the first tool worth checking before anything else.
+Saturn Return in Aries is the stretch of time when transiting Saturn moves back into the exact sign — Aries — that it occupied in your birth chart, an event that only reaches people born with natal Saturn in Aries. For that group, it reads as **a structural review of identity, autonomy, and initiative**. The timing is what makes it a return rather than an ordinary transit: according to NASA, Saturn takes about 29.5 years to complete one orbit, so the planet lands back on its birth position near ages 29 and 58. If your natal Saturn sits anywhere else, the same sky is just a general Aries-season transit, which is why a [guide to reading a birth chart](/en/saturn-return-calculator) is the first tool worth checking before anything else.
 
 - Applies only to charts with natal Saturn in Aries, not to everyone during Aries season
 - Runs from 2025 through 2028 in staged acts rather than one continuous verdict

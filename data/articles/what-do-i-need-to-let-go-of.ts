@@ -24,7 +24,7 @@ export const whatDoINeedToLetGoOfEn: WikiArticle = {
 
 ## What Is the Letting-Go Astrology Prompt?
 
-What Do I Need to Let Go Of is a reflective astrology prompt that turns a broad, uneasy feeling into a specific question you can actually sit with. Rather than predicting an outcome, it reads chart symbolism — placements traditionally tied to endings, maturity, and release — as **a reflective prompt for spotting patterns you have outgrown**. Asking what do I need to let go of shifts attention away from "what will happen to me" and toward "what am I still carrying that no longer fits." It pairs naturally with a full read of your [guide to reading your birth chart](/en/wiki/how-to-read-birth-chart), where the same themes show up in more detail across the whole picture.
+What Do I Need to Let Go Of is a reflective astrology prompt that turns a broad, uneasy feeling into a specific question you can actually sit with. Rather than predicting an outcome, it reads chart symbolism — placements traditionally tied to endings, maturity, and release — as **a reflective prompt for spotting patterns you have outgrown**. Asking what do I need to let go of shifts attention away from "what will happen to me" and toward "what am I still carrying that no longer fits." It pairs naturally with a full read of your [guide to reading your birth chart](/en/birth-chart-calculator), where the same themes show up in more detail across the whole picture.
 
 - Frames release as a question to explore, not a verdict handed down
 - Draws on placements linked to closure, such as Saturn, the twelfth house, and the South Node

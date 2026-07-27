@@ -24,7 +24,7 @@ export const lamineYamalZodiacSignEn: WikiArticle = {
 
 ## What Is Lamine Yamal Zodiac Sign?
 
-Lamine Yamal Zodiac Sign is **the Cancer Sun of a footballer born on July 13, 2007** — the placement most people mean when they search his sign. In psychological astrology, a Cancer Sun frames identity around emotional attunement, instinct, and a pull to protect what feels like home, which is a sharper read than the usual "sensitive kid" shorthand. Because his birth time is not publicly documented, his rising sign, houses, and chart angles cannot be confirmed, so the reliable anchor stays his Sun in Cancer. His Moon and Mercury also sit in Cancer, which stacks the water emphasis and colors how he feels, remembers, and communicates. This entry keeps the sign separate from the full chart; for the wider view, start with the [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+Lamine Yamal Zodiac Sign is **the Cancer Sun of a footballer born on July 13, 2007** — the placement most people mean when they search his sign. In psychological astrology, a Cancer Sun frames identity around emotional attunement, instinct, and a pull to protect what feels like home, which is a sharper read than the usual "sensitive kid" shorthand. Because his birth time is not publicly documented, his rising sign, houses, and chart angles cannot be confirmed, so the reliable anchor stays his Sun in Cancer. His Moon and Mercury also sit in Cancer, which stacks the water emphasis and colors how he feels, remembers, and communicates. This entry keeps the sign separate from the full chart; for the wider view, start with the [pillar guide on how to read a birth chart](/en/birth-chart-calculator).
 
 - Leads with a Cancer Sun ruled by the Moon, centered on instinct and emotional read
 - Reinforced by a Cancer Moon and Cancer Mercury for a strong water emphasis
@@ -122,7 +122,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore the lamine yamal zodiac sign, and you get a full placement map — Sun, Moon, Mars, and the rest — laid out in minutes. Seeing every layer at once is how one label becomes real self-knowledge: not a verdict on who you are, but a clearer view of the patterns you already live. Start by learning [how to read your birth chart](/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore the lamine yamal zodiac sign, and you get a full placement map — Sun, Moon, Mars, and the rest — laid out in minutes. Seeing every layer at once is how one label becomes real self-knowledge: not a verdict on who you are, but a clearer view of the patterns you already live. Start by learning [how to read your birth chart](/en/birth-chart-calculator).
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

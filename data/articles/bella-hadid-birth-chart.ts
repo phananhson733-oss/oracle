@@ -23,7 +23,7 @@ export const bellaHadidBirthChartEn: WikiArticle = {
 
 ## What Is Bella Hadid's Birth Chart?
 
-The Bella Hadid birth chart is **a symbolic map of the sky at her birth, read as archetype**, not a verdict on who she is. Publicly circulated versions place her Sun in Libra alongside a strong Scorpio emphasis, and astrology readers treat that mix as a pattern to interpret the same way they would with any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart). Because her exact birth time is not confirmed, placements that depend on timing stay uncertain, so the chart works best as a lens on themes rather than a set of facts about her life. In an interpretive read, each placement stands for a recurring theme — how someone connects, protects, or presents themselves — rather than a fixed trait carved into a real person. This distinction matters because a single placement can express in many different ways depending on the person living it, so an archetypal read describes a range of possibilities rather than one fixed outcome.
+The Bella Hadid birth chart is **a symbolic map of the sky at her birth, read as archetype**, not a verdict on who she is. Publicly circulated versions place her Sun in Libra alongside a strong Scorpio emphasis, and astrology readers treat that mix as a pattern to interpret the same way they would with any [pillar guide on how to read a birth chart](/en/birth-chart-calculator). Because her exact birth time is not confirmed, placements that depend on timing stay uncertain, so the chart works best as a lens on themes rather than a set of facts about her life. In an interpretive read, each placement stands for a recurring theme — how someone connects, protects, or presents themselves — rather than a fixed trait carved into a real person. This distinction matters because a single placement can express in many different ways depending on the person living it, so an archetypal read describes a range of possibilities rather than one fixed outcome.
 
 - Blends a diplomatic, image-aware Libra tone with intense Scorpio undercurrents
 - Reads as a study in contrast: polished surface, private interior
@@ -119,7 +119,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore Bella Hadid birth chart. Once you [learn how to read a birth chart](/en/wiki/how-to-read-birth-chart), you get a personalized map of your own placements — and a clearer sense of where your public image and private self actually meet.
+Generate your free birth chart to explore Bella Hadid birth chart. Once you [learn how to read a birth chart](/en/birth-chart-calculator), you get a personalized map of your own placements — and a clearer sense of where your public image and private self actually meet.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

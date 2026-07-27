@@ -23,7 +23,7 @@ export const jessicaPegulaBirthChartEn: WikiArticle = {
 
 ## What Is the Jessica Pegula Birth Chart?
 
-The Jessica Pegula birth chart is **a symbolic map of the planets' zodiac positions at her February 24, 1994 birth**, read as interpretive themes rather than facts about her life or results. This sits within the broader tradition of [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which maps how every placement fits together. Astrologers treat the layout as a lens for reflection, not a verdict on who she is. The placements below are computed from that Feb 24, 1994 birth date using an ephemeris (for example Astrodienst / astro.com); because no birth time is publicly documented, an honest reading stays with the planetary signs and skips the ascendant, houses, and exact angles.
+The Jessica Pegula birth chart is **a symbolic map of the planets' zodiac positions at her February 24, 1994 birth**, read as interpretive themes rather than facts about her life or results. This sits within the broader tradition of [pillar guide on how to read a birth chart](/en/birth-chart-calculator), which maps how every placement fits together. Astrologers treat the layout as a lens for reflection, not a verdict on who she is. The placements below are computed from that Feb 24, 1994 birth date using an ephemeris (for example Astrodienst / astro.com); because no birth time is publicly documented, an honest reading stays with the planetary signs and skips the ascendant, houses, and exact angles.
 
 At a glance, her chart reads:
 
@@ -129,7 +129,7 @@ Many blend sun-sign shortcuts with full-chart interpretation and sometimes guess
 
 ## Take Action
 
-Ready to turn this practice inward instead of reading someone else's placements? [Learn how to read your own birth chart](/en/wiki/how-to-read-birth-chart) and you can map your own planetary signs the same way — Pisces, Aquarius, Scorpio, and everything in between, laid side by side. Seeing your placements in one place makes it easier to reflect on how you express, protect, and understand yourself, and to notice which single label you may have been leaning on too hard.
+Ready to turn this practice inward instead of reading someone else's placements? [Learn how to read your own birth chart](/en/birth-chart-calculator) and you can map your own planetary signs the same way — Pisces, Aquarius, Scorpio, and everything in between, laid side by side. Seeing your placements in one place makes it easier to reflect on how you express, protect, and understand yourself, and to notice which single label you may have been leaning on too hard.
 
 This is not a clinical interpretation or mental health advice.
 

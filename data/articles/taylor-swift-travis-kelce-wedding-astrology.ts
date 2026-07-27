@@ -29,7 +29,7 @@ Swift-Kelce Wedding Chart is a symbolic way to compare a proposed wedding date w
 - Reads transits as themes for tone, visibility, communication, and commitment
 - Treats contrasting interpretations as valid lenses, not a verdict on a marriage
 
-The chart can be read alongside [how to read a birth chart](/en/wiki/how-to-read-birth-chart) because natal placements provide the personal context that a date alone cannot supply. A composite chart describes the relationship as a shared symbolic pattern, while electional astrology looks at the qualities associated with a particular moment. Neither approach confirms private plans or determines an outcome; they offer language for examining why a public celebration may feel grand, complicated, formal, playful, or all of those at once.
+The chart can be read alongside [how to read a birth chart](/en/birth-chart-calculator) because natal placements provide the personal context that a date alone cannot supply. A composite chart describes the relationship as a shared symbolic pattern, while electional astrology looks at the qualities associated with a particular moment. Neither approach confirms private plans or determines an outcome; they offer language for examining why a public celebration may feel grand, complicated, formal, playful, or all of those at once.
 
 ## Why It Matters for Self-Awareness
 

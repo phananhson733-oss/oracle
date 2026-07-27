@@ -24,7 +24,7 @@ export const amIMeantToBeMyOwnBossEn: WikiArticle = {
 
 ## What Is Am I Meant to Be My Own Boss?
 
-Am I Meant to Be My Own Boss is a reflective astrology question that looks at how a birth chart symbolizes your relationship to work, autonomy, and responsibility. It reads best as **a symbolic lens for weighing entrepreneurial fit, not a fixed verdict**. Astrologers usually approach it through the second, sixth, and tenth houses, the Midheaven, and Saturn — the areas tied to money, daily labor, public role, and self-discipline. None of this decides your future; it organizes patterns you can hold up against your own experience. Used that way, it becomes a thinking tool drawn from the same map you'd use in a broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), rather than a prophecy about your career.
+Am I Meant to Be My Own Boss is a reflective astrology question that looks at how a birth chart symbolizes your relationship to work, autonomy, and responsibility. It reads best as **a symbolic lens for weighing entrepreneurial fit, not a fixed verdict**. Astrologers usually approach it through the second, sixth, and tenth houses, the Midheaven, and Saturn — the areas tied to money, daily labor, public role, and self-discipline. None of this decides your future; it organizes patterns you can hold up against your own experience. Used that way, it becomes a thinking tool drawn from the same map you'd use in a broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator), rather than a prophecy about your career.
 
 - Focuses on the chart zones for resources, daily work, and public role (2H, 6H, 10H)
 - Works as a reflection tool, not a fixed prediction of success

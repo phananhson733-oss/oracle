@@ -44,7 +44,7 @@ It helps to set the Moon and Ascendant against their nearest neighbors in the ch
 
 Against personality typing in general, the pairing trades a fixed verdict for a working tension. The Moon sign points to what soothes or unsettles you, the felt baseline you return to under stress, while the rising sign points to the manner others meet first, the cues they read before any depth shows. The trade-off is honest: naming two interacting placements is less catchy than one neat type, and far more useful for understanding why the same person can register as cool on arrival and warm on closer acquaintance.
 
-This is also where a grounded reading of astrology lives. Liz Greene treated the chart as a language of symbol and inner meaning rather than a fixed label, and Robert Hand framed placements as patterns to interpret rather than scripts that decide behavior, so neither would read the Moon or the Ascendant as a sentence. The moon rising sign pairing, taken that way, becomes a prompt for reflection: a way to ask where your inner needs and your outer presentation pull in the same direction, and where they diverge. For the public-facing half of the picture, the [guide to what the rising sign means](/en/wiki/how-to-read-birth-chart) goes deeper on the Ascendant alone.
+This is also where a grounded reading of astrology lives. Liz Greene treated the chart as a language of symbol and inner meaning rather than a fixed label, and Robert Hand framed placements as patterns to interpret rather than scripts that decide behavior, so neither would read the Moon or the Ascendant as a sentence. The moon rising sign pairing, taken that way, becomes a prompt for reflection: a way to ask where your inner needs and your outer presentation pull in the same direction, and where they diverge. For the public-facing half of the picture, the [guide to what the rising sign means](/en/rising-sign-calculator) goes deeper on the Ascendant alone.
 
 ## How to Read the Moon and Ascendant in Your Chart
 
@@ -105,13 +105,13 @@ Neither outranks the other; they answer different questions. The rising sign sha
 ## Related Reading
 
 - *pillar page on the big three Sun Moon and rising signs* — the hub that frames the whole trio together
-- [guide to what the rising sign means](/en/wiki/how-to-read-birth-chart) — a closer look at the Ascendant as your outer mask
+- [guide to what the rising sign means](/en/rising-sign-calculator) — a closer look at the Ascendant as your outer mask
 - [how rising signs map to the houses and life areas](/en/wiki/astrology-houses) — where the Ascendant sets the chart's life-domain map
 - [pillar page on houses and life areas in astrology](/en/wiki/astrology-houses) — the wider framework the rising sign opens onto
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Moon and rising sign, then read them side by side rather than as one label. You get a clear view of your inner emotional self and your outer first impression, and, more usefully, a habit of asking where the two agree and where they diverge before deciding which one is "really" you.
+[Generate your free birth chart](/en/rising-sign-calculator) to find your own Moon and rising sign, then read them side by side rather than as one label. You get a clear view of your inner emotional self and your outer first impression, and, more usefully, a habit of asking where the two agree and where they diverge before deciding which one is "really" you.
 
 To confirm your ascendant before reading on, try the [rising sign calculator](/en/rising-sign-calculator) with your birth details.
 

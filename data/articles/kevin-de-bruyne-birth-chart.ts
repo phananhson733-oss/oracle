@@ -23,7 +23,7 @@ export const kevinDeBruyneBirthChartEn: WikiArticle = {
 
 ## What Is the Kevin De Bruyne Natal Chart?
 
-The Kevin De Bruyne natal chart is **a Cancer-anchored birth chart read as a persona lens, not a prediction**. Born on June 28, 1991 in Drongen, Belgium, the Belgian midfielder carries a Cancer Sun, which most public listings pair with an approximate Capricorn Moon and an approximate Virgo Rising. Read as a set rather than a single label, the kevin de bruyne birth chart maps how his on-pitch presence tends to come across to fans — it is a symbolic framework, not an account of why he passes or scores. For readers new to the format, the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) shows how these three markers stack together into one portrait.
+The Kevin De Bruyne natal chart is **a Cancer-anchored birth chart read as a persona lens, not a prediction**. Born on June 28, 1991 in Drongen, Belgium, the Belgian midfielder carries a Cancer Sun, which most public listings pair with an approximate Capricorn Moon and an approximate Virgo Rising. Read as a set rather than a single label, the kevin de bruyne birth chart maps how his on-pitch presence tends to come across to fans — it is a symbolic framework, not an account of why he passes or scores. For readers new to the format, the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator) shows how these three markers stack together into one portrait.
 
 - Centers a Cancer Sun on a water-earth axis, tied to protective, cue-attuned instincts
 - Adds an approximate Capricorn Moon for a disciplined, measured emotional tempo
@@ -137,7 +137,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Curious how your own placements compare with a profile like this? [Generate your free birth chart to explore kevin de bruyne birth chart](/en/wiki/how-to-read-birth-chart) and you get a full Sun-Moon-Rising map built from your own date, time, and place. Seeing your three layers laid side by side can make it easier to spot where your inner tempo and outer delivery quietly disagree — and to treat that gap as information about yourself rather than a flaw.
+Curious how your own placements compare with a profile like this? [Generate your free birth chart to explore kevin de bruyne birth chart](/en/birth-chart-calculator) and you get a full Sun-Moon-Rising map built from your own date, time, and place. Seeing your three layers laid side by side can make it easier to spot where your inner tempo and outer delivery quietly disagree — and to treat that gap as information about yourself rather than a flaw.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

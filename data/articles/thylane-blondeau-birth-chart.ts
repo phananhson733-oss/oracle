@@ -23,7 +23,7 @@ export const thylaneBlondeauBirthChartEn: WikiArticle = {
 
 ## What Is Thylane Blondeau's Birth Chart?
 
-Thylane Blondeau's birth chart is a symbolic map of the sky at the moment she was born, used to reflect on the themes people read into her public image rather than to prove anything about her private life. In practice, a Thylane Blondeau birth chart works as **a cultural lens, not biographical proof**. Astrologers treat it as an interpretive framework — a set of symbols (planets, signs, houses, and the angles between them) that fans and writers borrow to talk about persona, fame, and identity. For the mechanics behind each placement, see the [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart).
+Thylane Blondeau's birth chart is a symbolic map of the sky at the moment she was born, used to reflect on the themes people read into her public image rather than to prove anything about her private life. In practice, a Thylane Blondeau birth chart works as **a cultural lens, not biographical proof**. Astrologers treat it as an interpretive framework — a set of symbols (planets, signs, houses, and the angles between them) that fans and writers borrow to talk about persona, fame, and identity. For the mechanics behind each placement, see the [pillar guide to reading a birth chart](/en/birth-chart-calculator).
 
 - A snapshot of planetary positions at one exact moment, not a fixed verdict on character
 - Built from symbols — Sun, Moon, rising sign, and aspects — that map to themes, not traits set in stone
@@ -117,7 +117,7 @@ No. Astrology here describes tendencies and themes, not fixed outcomes, and it m
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice; it is a cultural lens for reflecting on persona and identity. The most useful next step is to stop reading someone else's placements and map your own — you'll get a full picture of your Sun, Moon, and rising sign, and a clearer read on which parts of your public image you actually chose and which just showed up. [Generate your free birth chart to explore Thylane Blondeau birth chart.](/en/wiki/how-to-read-birth-chart)
+This is not a clinical interpretation or mental health advice; it is a cultural lens for reflecting on persona and identity. The most useful next step is to stop reading someone else's placements and map your own — you'll get a full picture of your Sun, Moon, and rising sign, and a clearer read on which parts of your public image you actually chose and which just showed up. [Generate your free birth chart to explore Thylane Blondeau birth chart.](/en/birth-chart-calculator)
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

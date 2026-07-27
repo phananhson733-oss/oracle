@@ -37,7 +37,7 @@ Understanding the Thomas Partey zodiac sign matters because the way it gets publ
 2. **The fact-versus-estimate blur.** Profile sites rarely flag which placements are solid and which are guesses, so readers can't tell the Sun (certain) from the Ascendant (unknown).
 3. **The over-reading risk.** Detailed house breakdowns invite very specific personality claims that the underlying data can't actually support.
 
-This is why the person-centered tradition Dane Rudhyar helped shape treats the Sun as a developmental direction, not a fixed verdict — and why an honest read leans on what's confirmed. The cultural pull is real, too: according to the Pew Research Center, about 29% of U.S. adults said they believe in astrology, which is part of why a player's sign gets searched at all. If you want the underlying method, a [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) shows how the Sun sits alongside the rest of the chart. The takeaway is a simple sorting rule: trust what the date alone fixes, and hold everything that needs a precise clock as provisional.
+This is why the person-centered tradition Dane Rudhyar helped shape treats the Sun as a developmental direction, not a fixed verdict — and why an honest read leans on what's confirmed. The cultural pull is real, too: according to the Pew Research Center, about 29% of U.S. adults said they believe in astrology, which is part of why a player's sign gets searched at all. If you want the underlying method, a [guide to reading a full birth chart](/en/birth-chart-calculator) shows how the Sun sits alongside the rest of the chart. The takeaway is a simple sorting rule: trust what the date alone fixes, and hold everything that needs a precise clock as provisional.
 
 ## Sun Sign vs Rising Sign: What's Confirmed and What Isn't
 
@@ -116,7 +116,7 @@ No. A sign offers a symbolic lens on style and tendencies, not a forecast of mat
 
 Astrology here is an interpretive framework, not a measurement of ability. This is not a clinical interpretation or mental health advice.
 
-Generate your free birth chart to explore the Thomas Partey zodiac sign and the placements behind it. [Open the birth-chart walkthrough](/en/wiki/how-to-read-birth-chart) to map which of your own layers are confirmed by your birth time and which stay theoretical — proof that honest self-knowledge starts with knowing exactly what you can verify.
+Generate your free birth chart to explore the Thomas Partey zodiac sign and the placements behind it. [Open the birth-chart walkthrough](/en/birth-chart-calculator) to map which of your own layers are confirmed by your birth time and which stay theoretical — proof that honest self-knowledge starts with knowing exactly what you can verify.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

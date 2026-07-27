@@ -37,7 +37,7 @@ A **vedic birth chart calculator** builds a sidereal map of where the planets st
 
 The gap a vedic birth chart calculator exposes is not access — anyone can pull a free chart in under a minute — but interpretation. You are handed a finished diagram and left to guess where to look. The friction shows up in three predictable ways:
 
-1. **The placements stay abstract.** You can read that the Moon sits in Taurus or Mars in the tenth house, but nothing on the screen tells you what that pattern tends to mean for how you actually behave — a gap a plain-language [walkthrough of how to read a birth chart](/en/wiki/how-to-read-birth-chart) helps close.
+1. **The placements stay abstract.** You can read that the Moon sits in Taurus or Mars in the tenth house, but nothing on the screen tells you what that pattern tends to mean for how you actually behave — a gap a plain-language [walkthrough of how to read a birth chart](/en/birth-chart-calculator) helps close.
 2. **The lagna gets ignored.** Most beginners check the Sun placement first out of Western habit, yet a sidereal chart hangs almost every interpretation off the ascendant, so they start from the wrong anchor.
 3. **The dasha timeline goes unread.** The output includes a decades-long schedule of planetary periods, and without a key it reads like a train timetable printed in an unfamiliar script.
 
@@ -134,7 +134,7 @@ No. A dasha period tends to set the active theme of a stretch of years, pointing
 
 ## Take Action
 
-Open the chart your tool saved, then read it in order: lagna first, lagna lord, planets by house, then the current dasha. Do that and you turn a screen of symbols into a few plain sentences about how you tend to operate and what this period is asking of you. To interpret each placement properly, [read the How to Read a Birth Chart guide](/en/wiki/how-to-read-birth-chart) and apply it to the output in front of you — the chart stops being someone else's jargon and starts describing a life you recognise as your own.
+Open the chart your tool saved, then read it in order: lagna first, lagna lord, planets by house, then the current dasha. Do that and you turn a screen of symbols into a few plain sentences about how you tend to operate and what this period is asking of you. To interpret each placement properly, [read the How to Read a Birth Chart guide](/en/birth-chart-calculator) and apply it to the output in front of you — the chart stops being someone else's jargon and starts describing a life you recognise as your own.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

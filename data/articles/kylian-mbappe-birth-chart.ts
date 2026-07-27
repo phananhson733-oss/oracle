@@ -30,7 +30,7 @@ export const kylianMbappeBirthChartEn: WikiArticle = {
 
 ## What Is Kylian Mbappe's Birth Chart?
 
-The Kylian Mbappe birth chart is **an astrological profile of the footballer born on December 20, 1998**, read as a map of tendencies rather than proof of his career. Because his exact birth time is not publicly confirmed, the most dependable layer is his Sun in Sagittarius — the mutable fire signature often tied to speed, boldness, and a pull toward the biggest stage. A complete chart would also place his Moon, rising sign, and the aspects between his planets, but those shift with the birth time, so an honest reading treats them as informed possibilities instead of settled facts. Astrologers use a chart like this to describe patterns a person may lean into, never outcomes they are promised. It works as a lens for reflection, not a scoreboard that explains trophies. If you want the full method behind reading any wheel like this, start with the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+The Kylian Mbappe birth chart is **an astrological profile of the footballer born on December 20, 1998**, read as a map of tendencies rather than proof of his career. Because his exact birth time is not publicly confirmed, the most dependable layer is his Sun in Sagittarius — the mutable fire signature often tied to speed, boldness, and a pull toward the biggest stage. A complete chart would also place his Moon, rising sign, and the aspects between his planets, but those shift with the birth time, so an honest reading treats them as informed possibilities instead of settled facts. Astrologers use a chart like this to describe patterns a person may lean into, never outcomes they are promised. It works as a lens for reflection, not a scoreboard that explains trophies. If you want the full method behind reading any wheel like this, start with the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator).
 
 - Anchored by a Sun in Sagittarius, a mutable fire sign linked to drive and risk-taking
 - Built from a confirmed birth date but an unverified birth time, so the houses stay tentative
@@ -139,7 +139,7 @@ Mars and the Sun tend to get the most attention, since they speak to drive and c
 
 ## Take Action
 
-The clearest way to make any of this concrete is to build your own chart instead of only reading someone else's. You get a personalized wheel you can read placement by placement, and a sharper sense of which of your habits are workable tendencies rather than fixed fate. This is not a clinical interpretation or mental health advice. [Generate your free birth chart to explore kylian mbappe birth chart.](/en/wiki/how-to-read-birth-chart)
+The clearest way to make any of this concrete is to build your own chart instead of only reading someone else's. You get a personalized wheel you can read placement by placement, and a sharper sense of which of your habits are workable tendencies rather than fixed fate. This is not a clinical interpretation or mental health advice. [Generate your free birth chart to explore kylian mbappe birth chart.](/en/birth-chart-calculator)
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

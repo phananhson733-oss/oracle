@@ -22,7 +22,7 @@ export const mexicoVsEnglandAstrologyPredictionEn: WikiArticle = {
 
 ## What Is This Post-Match Reading?
 
-A Mexico vs England astrology prediction was originally framed as a **symbolic pre-match reading of two teams through their charts** — national foundation charts, selected player charts, squad zodiac patterns, and transits around match day. The fixture has now been played: Mexico lost 2–3 to England in the 2026 World Cup round of 16, as recorded in the England Football match report, so this page is a post-match case study rather than advice about an upcoming match. It is interpretive context, not an explanation of the score. Astrologers layer charts the same way they would in a full [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), then read themes — identity, pressure, timing, and morale — rather than manufacture a guaranteed outcome. The value now lies in comparing the framework with an event that has already finished, not in using it as a betting tip.
+A Mexico vs England astrology prediction was originally framed as a **symbolic pre-match reading of two teams through their charts** — national foundation charts, selected player charts, squad zodiac patterns, and transits around match day. The fixture has now been played: Mexico lost 2–3 to England in the 2026 World Cup round of 16, as recorded in the England Football match report, so this page is a post-match case study rather than advice about an upcoming match. It is interpretive context, not an explanation of the score. The [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) page provides the broader national-team context for those themes — identity, pressure, timing, and morale — rather than manufacturing a guaranteed outcome. The value now lies in comparing the framework with an event that has already finished, not in using it as a betting tip.
 
 - Layers national charts, player charts, squad zodiac patterns, and current transits into one view
 - Frames the match as cultural and symbolic context, never a deterministic result
@@ -113,7 +113,7 @@ Yes. You can treat it purely as a lens for reflecting on pressure, loyalty, and 
 
 This is not a clinical interpretation or mental health advice.
 
-The fixture is over, but the broader question of how people interpret pressure, identity, and timing remains useful. For a Mexico vs England astrology prediction perspective that stays grounded in symbolism rather than claims about a result, [read the guide to how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+The fixture is over, but the broader question of how people interpret pressure, identity, and timing remains useful. For the England side of that symbolic context, read [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology).
 
 ## Sources
 

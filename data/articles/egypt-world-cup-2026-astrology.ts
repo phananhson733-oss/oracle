@@ -26,7 +26,7 @@ export const egyptWorldCup2026AstrologyEn: WikiArticle = {
 
 ## What Is Egypt World Cup 2026 Astrology?
 
-Egypt World Cup 2026 Astrology is a symbolic way of reading Egypt's national team at the 2026 tournament through players' birth charts, the country's national chart, and the season's major transits — framed as cultural storytelling rather than a result forecast. It uses the same building blocks as any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) and points them at a football event instead of a single person's life. Put plainly, egypt world cup 2026 astrology is **a symbolic lens for reading Egypt's 2026 tournament, not a forecast**.
+Egypt World Cup 2026 Astrology is a symbolic way of reading Egypt's national team at the 2026 tournament through players' birth charts, the country's national chart, and the season's major transits — framed as cultural storytelling rather than a result forecast. It belongs in the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction), where the same themes are compared across the tournament instead of a single person's life. Put plainly, egypt world cup 2026 astrology is **a symbolic lens for reading Egypt's 2026 tournament, not a forecast**.
 
 - Maps key players' birth-chart themes onto the tournament's emotional storyline
 - Reads Egypt's national chart transits as collective mood rather than match odds
@@ -130,7 +130,7 @@ National charts are debated even among astrologers, so they are best held as a b
 
 ## Take Action
 
-Astrology here is a storytelling tool, not a diagnosis of anyone's psyche or a betting edge. This is not a clinical interpretation or mental health advice. The clearest way to understand any of this is to look at a real chart instead of a headline. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore egypt world cup 2026 astrology, and you'll have the same placements astrologers use for a team or a season sitting right in front of you. Seen that way, a tournament stops being only a scoreboard and becomes a mirror for how you carry hope, pressure, and belonging.
+Astrology here is a storytelling tool, not a diagnosis of anyone's psyche or a betting edge. This is not a clinical interpretation or mental health advice. For Egypt's place in the wider tournament narrative, continue to the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction). Seen that way, a tournament stops being only a scoreboard and becomes a mirror for how people carry hope, pressure, and belonging.
 
 ## Sources
 

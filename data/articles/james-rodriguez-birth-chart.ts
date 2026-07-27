@@ -107,7 +107,7 @@ Jupiter transits Cancer until around 30 June 2026, briefly overlapping his Sun s
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun placement the way this piece reads Rodriguez's — as a theme of purpose and creative drive rather than a verdict. The chart gives you a clear view of where your Sun sits, and, more quietly, a practice of telling meaningful pattern apart from prediction.
+[Generate your free birth chart](/en/birth-chart-calculator) to find your own Sun placement the way this piece reads Rodriguez's — as a theme of purpose and creative drive rather than a verdict. The chart gives you a clear view of where your Sun sits, and, more quietly, a practice of telling meaningful pattern apart from prediction.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

@@ -110,7 +110,7 @@ It is the tenth of the twenty-seven nakshatras and the first to fall in Leo, occ
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Moon and nakshatra placement, and read your chart as an interpretive map rather than a verdict. You get a clear view of where the planets fell at your birth and, more usefully for Magha's lesson, a starting point for asking what you inherited versus what you built — the same question this star asks of anyone who carries it.
+[Generate your free birth chart](/en/birth-chart-calculator) to find your own Moon and nakshatra placement, and read your chart as an interpretive map rather than a verdict. You get a clear view of where the planets fell at your birth and, more usefully for Magha's lesson, a starting point for asking what you inherited versus what you built — the same question this star asks of anyone who carries it.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

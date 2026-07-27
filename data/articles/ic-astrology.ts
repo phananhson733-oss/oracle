@@ -99,12 +99,12 @@ No. The IC is an angle, a calculated point, not a sign, so it has no permanent r
 
 ## Related Reading
 
-- [explainer on the Midheaven and your public direction](/en/wiki/how-to-read-birth-chart) — useful for reading the IC against its opposite angle, since the private base and the public role define each other.
+- [explainer on the Midheaven and your public direction](/en/birth-chart-calculator) — useful for reading the IC against its opposite angle, since the private base and the public role define each other.
 - [Midheaven (Wikipedia)](https://en.wikipedia.org/wiki/Midheaven) — context on how the angles are calculated and positioned in a birth chart.
 
 ## Take Action
 
-Pull up your own birth chart and find the point at the very bottom of the wheel, then read its sign and ruler with the [full guide to reading a birth chart to find your IC at the base of the chart](/en/wiki/how-to-read-birth-chart). You will come away with a clear map of where your private foundation actually sits, and once you can name the base you quietly stand on, the rest of the chart stops reading as scattered traits and starts reading as a structure with a root you recognize.
+Pull up your own birth chart and find the point at the very bottom of the wheel, then read its sign and ruler with the [full guide to reading a birth chart to find your IC at the base of the chart](/en/birth-chart-calculator). You will come away with a clear map of where your private foundation actually sits, and once you can name the base you quietly stand on, the rest of the chart stops reading as scattered traits and starts reading as a structure with a root you recognize.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

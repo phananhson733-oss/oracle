@@ -111,7 +111,7 @@ No, this is symbolic and educational astrology that times themes of maturity and
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Saturn and read it the way this piece reads Scotland's World Cup Saturn Return, as a cycle of earned maturity rather than a verdict. You get a clear view of where Saturn sits in your chart and when its return falls, and, more quietly, a way to tell a long-delayed threshold apart from a limit you can still grow past.
+[Generate your free birth chart](/en/saturn-return-calculator) to find your own Saturn and read it the way this piece reads Scotland's World Cup Saturn Return, as a cycle of earned maturity rather than a verdict. You get a clear view of where Saturn sits in your chart and when its return falls, and, more quietly, a way to tell a long-delayed threshold apart from a limit you can still grow past.
 
 If you want to time this for yourself, the [Saturn return calculator](/en/saturn-return-calculator) shows when your own return begins and peaks.
 

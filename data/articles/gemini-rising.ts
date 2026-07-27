@@ -23,7 +23,7 @@ export const geminiRisingEn: WikiArticle = {
 
 ## What is the Gemini Ascendant?
 
-The Gemini Ascendant is **the rising sign that places airy, Mercury-ruled Gemini on the first house, so the chart ruler becomes Mercury and the first impression reads as curious, talkative, and quick to make conceptual connections**. Most people search gemini rising hoping for a personality verdict, yet the more useful frame treats the Mercury chart ruler as the engine — the part that explains why the manner looks restless on the surface while the underlying work is rapid, parallel processing of incoming information. Read that way alongside the wider [houses and life-area map for each rising sign](/en/wiki/how-to-read-birth-chart) series, the sign stops being a label and starts being a working pattern you can actually trace.
+The Gemini Ascendant is **the rising sign that places airy, Mercury-ruled Gemini on the first house, so the chart ruler becomes Mercury and the first impression reads as curious, talkative, and quick to make conceptual connections**. Most people search gemini rising hoping for a personality verdict, yet the more useful frame treats the Mercury chart ruler as the engine — the part that explains why the manner looks restless on the surface while the underlying work is rapid, parallel processing of incoming information. Read that way alongside the wider [houses and life-area map for each rising sign](/en/rising-sign-calculator) series, the sign stops being a label and starts being a working pattern you can actually trace.
 
 - The Ascendant is the sign on the horizon at birth, the lens others meet first
 - With Gemini on the first house, Mercury becomes the chart ruler steering the whole expression
@@ -104,12 +104,12 @@ No — it is an interpretive framework. It describes a recognisable style of mee
 
 ## Related Reading
 
-- [houses and life-area map for each rising sign](/en/wiki/how-to-read-birth-chart) — the series hub that maps each ascendant to its house ruler system
+- [houses and life-area map for each rising sign](/en/rising-sign-calculator) — the series hub that maps each ascendant to its house ruler system
 - *authoritative reference on the Ascendant and chart ruler* — background on how the rising sign sets the chart ruler
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see exactly where your Ascendant, your chart ruler, and your natal Mercury sit. From there you can trace your own connective style instead of settling for a generic gemini rising adjective list — and, more usefully, you build the habit of reading the engine behind a sign rather than the surface label.
+[Generate your free birth chart](/en/rising-sign-calculator) to see exactly where your Ascendant, your chart ruler, and your natal Mercury sit. From there you can trace your own connective style instead of settling for a generic gemini rising adjective list — and, more usefully, you build the habit of reading the engine behind a sign rather than the surface label.
 
 Not sure of your rising sign? The [rising sign calculator](/en/rising-sign-calculator) finds your ascendant from your birth time and place.
 

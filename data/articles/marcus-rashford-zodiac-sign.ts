@@ -115,12 +115,12 @@ This is not a clinical interpretation or mental health advice.
 - [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
 <!-- gg-cluster-links:end -->
 - [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — how the squad's charts frame the tournament
-- [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — the step-by-step approach behind synthesizing Sun, Moon, and Rising
+- [guide to reading a full birth chart](/en/birth-chart-calculator) — the step-by-step approach behind synthesizing Sun, Moon, and Rising
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how other players' signs compare across the game
 
 ## Take Action
 
-Generate your free birth chart to explore marcus rashford zodiac sign. You'll get the same Sun, Moon, and Rising layout this page used to read his placements, set out for your own chart in a few minutes. Seeing those three anchors side by side is often where the guarded-calm-over-hidden-depth pattern stops being abstract and starts describing someone you actually know — maybe yourself. [Start with our guide to reading your birth chart](/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore marcus rashford zodiac sign. You'll get the same Sun, Moon, and Rising layout this page used to read his placements, set out for your own chart in a few minutes. Seeing those three anchors side by side is often where the guarded-calm-over-hidden-depth pattern stops being abstract and starts describing someone you actually know — maybe yourself. [Start with our guide to reading your birth chart](/en/birth-chart-calculator).
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

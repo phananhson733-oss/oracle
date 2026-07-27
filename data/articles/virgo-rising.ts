@@ -23,7 +23,7 @@ export const virgoRisingEn: WikiArticle = {
 
 ## What is the Virgo Ascendant?
 
-The Virgo Ascendant is **the rising sign that places Virgo on the eastern horizon at birth, installing Mercury as the chart ruler and giving the personality a practical, discerning, quietly analytical first impression**. When people search virgo rising, they usually meet a "modest perfectionist" caricature, but the real mechanics are more interesting than that label, and a fuller map of how this ascendant works sits inside [houses_life_areas cluster on rising sign house systems](/en/wiki/how-to-read-birth-chart). The Ascendant is the mask the chart wears on first contact, and with Virgo here that mask is observant before it is talkative.
+The Virgo Ascendant is **the rising sign that places Virgo on the eastern horizon at birth, installing Mercury as the chart ruler and giving the personality a practical, discerning, quietly analytical first impression**. When people search virgo rising, they usually meet a "modest perfectionist" caricature, but the real mechanics are more interesting than that label, and a fuller map of how this ascendant works sits inside [houses_life_areas cluster on rising sign house systems](/en/rising-sign-calculator). The Ascendant is the mask the chart wears on first contact, and with Virgo here that mask is observant before it is talkative.
 
 - Mercury becomes the chart ruler, steering how the whole chart expresses itself
 - The 6th house of routine, health, and service gains structural prominence
@@ -107,7 +107,7 @@ Yes — that is the healthier way to read it. Treat the Virgo Ascendant as a voc
 
 ## Take Action
 
-[查你的对应落座](/en/wiki/how-to-read-birth-chart) to confirm whether Virgo sits on your Ascendant and to find where Mercury, your chart ruler, actually lives. That single step turns the generic virgo rising label into something specific to your own chart, and it reminds you that the most useful read of any rising sign starts from its ruler, not from a stereotype about the sign on the cusp.
+[查你的对应落座](/en/rising-sign-calculator) to confirm whether Virgo sits on your Ascendant and to find where Mercury, your chart ruler, actually lives. That single step turns the generic virgo rising label into something specific to your own chart, and it reminds you that the most useful read of any rising sign starts from its ruler, not from a stereotype about the sign on the cusp.
 
 Not sure of your rising sign? The [rising sign calculator](/en/rising-sign-calculator) finds your ascendant from your birth time and place.
 

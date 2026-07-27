@@ -108,7 +108,7 @@ Either is defensible; they are both the North Node, located by slightly differen
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own North Node by sign and house, and notice which color your software happens to give it. You finish with the placement that carries the meaning, a clear sense that the blue was only ever a display choice, and the steadier habit of reading the glyph rather than the swatch.
+[Generate your free birth chart](/en/birth-chart-calculator) to find your own North Node by sign and house, and notice which color your software happens to give it. You finish with the placement that carries the meaning, a clear sense that the blue was only ever a display choice, and the steadier habit of reading the glyph rather than the swatch.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

@@ -29,7 +29,7 @@ Maya Joint's natal chart is the symbolic map of where the Sun, Moon, and rising 
 - Meets the world through a Cancer Ascendant that softens and protects
 - Carries a Sagittarius Moon that keeps the emotional register restless and optimistic
 
-This is a cultural, symbolic reading of a public figure, not a forecast of results on court or a claim about private details. For the full method behind this kind of synthesis, see [pillar guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart).
+This is a cultural, symbolic reading of a public figure, not a forecast of results on court or a claim about private details. For the full method behind this kind of synthesis, see [pillar guide to reading a full birth chart](/en/birth-chart-calculator).
 
 ## Why It Matters for Self-Awareness
 
@@ -138,7 +138,7 @@ No. This is a symbolic, cultural reading of persona, and it cannot forecast athl
 
 ## Take Action
 
-This reading is symbolic and cultural, not predictive, and it can't confirm unpublished birth-time details. This is not a clinical interpretation or mental health advice. To turn this lens on yourself, [generate your free birth chart to explore the Maya Joint birth chart method](/en/wiki/how-to-read-birth-chart) and map your own Sun, Moon, and Ascendant. You'll come away with a unified symbolic profile instead of scattered single-sign labels — and a clearer sense of which parts of your public and private self are quietly pulling in different directions.
+This reading is symbolic and cultural, not predictive, and it can't confirm unpublished birth-time details. This is not a clinical interpretation or mental health advice. To turn this lens on yourself, [generate your free birth chart to explore the Maya Joint birth chart method](/en/birth-chart-calculator) and map your own Sun, Moon, and Ascendant. You'll come away with a unified symbolic profile instead of scattered single-sign labels — and a clearer sense of which parts of your public and private self are quietly pulling in different directions.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

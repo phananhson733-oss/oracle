@@ -24,7 +24,7 @@ export const howLongDoesSaturnReturnLastEn: WikiArticle = {
 
 ## What Is How Long Does Saturn Return Last?
 
-How long does Saturn return last is a timing question about one of astrology's most-discussed transits, and the practical answer is **roughly two to three years around each return**. The exact return — the day Saturn comes back to the same zodiac degree it held at your birth — is a single moment, but the felt window runs wider because Saturn moves slowly and usually backtracks over those degrees while retrograde. According to NASA, Saturn takes about 29.5 years to complete one orbit, which is why this passage recurs near ages 29, 59, and 88. Most people meet it as a season of rebuilding rather than a one-day event, and a clear [guide to reading your birth chart](/en/wiki/how-to-read-birth-chart) shows where it lands for you.
+How long does Saturn return last is a timing question about one of astrology's most-discussed transits, and the practical answer is **roughly two to three years around each return**. The exact return — the day Saturn comes back to the same zodiac degree it held at your birth — is a single moment, but the felt window runs wider because Saturn moves slowly and usually backtracks over those degrees while retrograde. According to NASA, Saturn takes about 29.5 years to complete one orbit, which is why this passage recurs near ages 29, 59, and 88. Most people meet it as a season of rebuilding rather than a one-day event, and a clear [guide to reading your birth chart](/en/saturn-return-calculator) shows where it lands for you.
 
 - Peaks near ages 29–30, 58–60, and 88
 - Runs about two to three years, not a single date

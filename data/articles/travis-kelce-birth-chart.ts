@@ -23,7 +23,7 @@ export const travisKelceBirthChartEn: WikiArticle = {
 
 ## What Is Travis Kelce's Birth Chart?
 
-Travis Kelce's birth chart is **a symbolic snapshot of where the planets sat when he was born on October 5, 1989 in Westlake, Ohio** — read as a lens on personality and public image, not a forecast of results. Most of that chart is knowable from the birth date alone; only a few pieces need a birth time, which is not public. If you want the full method behind reading one, see the [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+Travis Kelce's birth chart is **a symbolic snapshot of where the planets sat when he was born on October 5, 1989 in Westlake, Ohio** — read as a lens on personality and public image, not a forecast of results. Most of that chart is knowable from the birth date alone; only a few pieces need a birth time, which is not public. If you want the full method behind reading one, see the [pillar guide on how to read a birth chart](/en/birth-chart-calculator).
 
 **The quick data card:**
 
@@ -116,12 +116,12 @@ This is not a clinical interpretation or mental health advice.
 <!-- gg-cluster-links:end -->
 - [rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — why an unknown birth time keeps his ascendant open to interpretation.
 - *Libra sun sign personality profile* — a closer look at the sign that anchors his whole chart.
-- [how planet clusters and stelliums work in a birth chart](/en/wiki/how-to-read-birth-chart) — the idea behind reading concentrated chart themes.
+- [how planet clusters and stelliums work in a birth chart](/en/birth-chart-calculator) — the idea behind reading concentrated chart themes.
 - [Travis Kelce (Wikipedia)](https://en.wikipedia.org/wiki/Travis_Kelce) — background on the person behind the chart.
 
 ## Take Action
 
-Ready to stop reading someone else's sky and map your own? [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see your Sun, Moon, and planet placements laid out side by side. Reading a celebrity is good practice — but the chart actually worth understanding is yours.
+Ready to stop reading someone else's sky and map your own? [Generate your free birth chart](/en/birth-chart-calculator) to see your Sun, Moon, and planet placements laid out side by side. Reading a celebrity is good practice — but the chart actually worth understanding is yours.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

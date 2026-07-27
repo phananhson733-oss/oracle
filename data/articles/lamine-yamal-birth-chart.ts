@@ -113,7 +113,7 @@ A Virgo rising depends on an exact birth time that is not firmly public. Treat a
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Lamine Yamal's birth chart — as a direction of growth rather than a label. You get a clear view of your Sun's sign and ruler and the transits touching it now, and, more quietly, a way to tell a trustworthy instinct apart from a fear wearing its clothes, long after this tournament is over.
+[Generate your free birth chart](/en/birth-chart-calculator) to read your own Sun the way this piece reads Lamine Yamal's birth chart — as a direction of growth rather than a label. You get a clear view of your Sun's sign and ruler and the transits touching it now, and, more quietly, a way to tell a trustworthy instinct apart from a fear wearing its clothes, long after this tournament is over.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

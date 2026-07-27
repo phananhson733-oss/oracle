@@ -30,7 +30,7 @@ Venus in Gemini places the planet of love, beauty, and value in a mutable air si
 - Values a partner who keeps life interesting and stays open to change
 - Easily mistaken for flightiness when it is really a hunger for mental stimulation
 
-Because Gemini answers to Mercury, this Venus flavor treats language itself as a form of closeness — the right sentence can land like a gift. Astrologers such as Liz Greene read Venus less as generic "love" and more as the function that decides what you value and find beautiful. If you are still mapping your placements, a broader [beginner's guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) shows how this one sits inside the whole chart rather than standing alone.
+Because Gemini answers to Mercury, this Venus flavor treats language itself as a form of closeness — the right sentence can land like a gift. Astrologers such as Liz Greene read Venus less as generic "love" and more as the function that decides what you value and find beautiful. If you are still mapping your placements, a broader [beginner's guide to reading a birth chart](/en/birth-chart-calculator) shows how this one sits inside the whole chart rather than standing alone.
 
 ## Why It Matters for Self-Awareness
 

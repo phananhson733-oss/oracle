@@ -23,7 +23,7 @@ export const kaiCenatZodiacSignEn: WikiArticle = {
 
 ## What Is Kai Cenat's Zodiac Sign?
 
-Kai Cenat's zodiac sign is **a Sagittarius Sun, the fire-sign marker of restless, expansive energy**. He was born on December 16, 2001, in New York City, which places his Sun in Sagittarius, the mutable fire sign ruled by Jupiter. The kai cenat zodiac sign comes down to that December-born Sagittarius Sun, read here as a symbolic lens on his creator persona rather than a fixed script for who he is. In humanistic astrology, building on the person-centered tradition Dane Rudhyar helped shape, the Sun points to core identity and the drive to express it. For a full picture you would read the whole [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), not the Sun on its own.
+Kai Cenat's zodiac sign is **a Sagittarius Sun, the fire-sign marker of restless, expansive energy**. He was born on December 16, 2001, in New York City, which places his Sun in Sagittarius, the mutable fire sign ruled by Jupiter. The kai cenat zodiac sign comes down to that December-born Sagittarius Sun, read here as a symbolic lens on his creator persona rather than a fixed script for who he is. In humanistic astrology, building on the person-centered tradition Dane Rudhyar helped shape, the Sun points to core identity and the drive to express it. For a full picture you would read the whole [pillar guide to reading a birth chart](/en/birth-chart-calculator), not the Sun on its own.
 
 - Reads as a mutable fire sign: exploratory, high-energy, and allergic to routine
 - Ruled by Jupiter, the classical planet of growth, optimism, and big swings
@@ -116,7 +116,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the kai cenat zodiac sign in full context. You'll get a map of every placement—Sun, Moon, Mercury, and the rest—instead of a single headline sign. Seeing how one Sagittarius Sun sits among nine other signs is usually where a flat celebrity label finally turns into a portrait you can reflect on for your own patterns.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore the kai cenat zodiac sign in full context. You'll get a map of every placement—Sun, Moon, Mercury, and the rest—instead of a single headline sign. Seeing how one Sagittarius Sun sits among nine other signs is usually where a flat celebrity label finally turns into a portrait you can reflect on for your own patterns.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

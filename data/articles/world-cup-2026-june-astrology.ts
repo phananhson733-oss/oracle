@@ -118,7 +118,7 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see where the June 2026 sky lands in your own chart while you follow world cup 2026 june astrology over the opening rounds. You get a clear view of how Jupiter in Cancer and Saturn in Aries touch your own placements, and, more quietly, a way to read a month as a mood you can meet rather than a result you must wait for — a small habit of watching the sky for atmosphere that outlasts any single tournament.
+For the tournament-wide timing that frames these opening rounds, continue to the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction).
 
 ## Sources
 

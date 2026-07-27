@@ -121,7 +121,7 @@ No. It is designed to be read alongside one, adding the interpretive layer about
 
 ## Take Action
 
-Generate your free birth chart to explore Colombia vs Portugal — start by [reading your own chart with this beginner's birth-chart guide](/en/wiki/how-to-read-birth-chart). You will come away with a working map of the same archetypes — drive, composure, timing — that this fixture puts on display, and a sharper eye for the temperament behind any team you follow, not just the players on the team sheet.
+For the wider tournament framing around this fixture, explore the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction). It places the same themes of drive, composure, and timing beside the other national and match readings in the series.
 
 This is not a clinical interpretation or mental health advice.
 

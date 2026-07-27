@@ -24,7 +24,7 @@ export const saturnReturnCareerChangeEn: WikiArticle = {
 
 ## What Is a Saturn Return Career Change?
 
-Saturn Return Career Change is a symbolic way to examine whether a person’s working life still matches the responsibilities they are ready to carry. In astrology, a Saturn return happens when transiting Saturn comes back to the degree it occupied at birth, often near ages twenty-nine and fifty-eight. The career focus is not a prediction that someone must quit a job; it is **a symbolic lens for reassessing vocational commitments**. A return can bring attention to the promises, limits, credentials, schedules, and authority patterns shaping work. Reading it alongside [how to read a birth chart](/en/wiki/how-to-read-birth-chart) keeps the focus on the natal house, sign, and planets involved instead of treating one transit as a universal career rule.
+Saturn Return Career Change is a symbolic way to examine whether a person’s working life still matches the responsibilities they are ready to carry. In astrology, a Saturn return happens when transiting Saturn comes back to the degree it occupied at birth, often near ages twenty-nine and fifty-eight. The career focus is not a prediction that someone must quit a job; it is **a symbolic lens for reassessing vocational commitments**. A return can bring attention to the promises, limits, credentials, schedules, and authority patterns shaping work. Reading it alongside [how to read a birth chart](/en/saturn-return-calculator) keeps the focus on the natal house, sign, and planets involved instead of treating one transit as a universal career rule.
 
 - It centers on vocational structure rather than every adult-life change.
 - It points to commitments that feel durable, outdated, or underdefined.

@@ -116,7 +116,7 @@ That is the entire practice. Everything beyond it is preference, not requirement
 
 ### Full Moon Ritual With Your Birth Chart
 
-A generic full moon ritual works; a chart-informed one is sharper. Each month's full moon falls in a specific sign, and that sign sits in a particular house of your birth chart — the area of life this cycle is asking you to take stock of. A full moon in your fourth house points the release toward home and emotional roots; one in your tenth house points it toward career and public structure. When you know the house, you stop releasing in general and start releasing something situated. The fastest way to find it is to [generate your birth chart](/en/wiki/how-to-read-birth-chart) and note which house the current full moon sign occupies. The two upcoming lunations make good test cases: the [June 2026 full moon](/en/wiki/full-moon-june-2026) falls on the Cancer–Capricorn axis, and the [July 2026 full moon](/en/wiki/full-moon-july-2026) on the Leo–Aquarius axis, so the house each activates tells you exactly where this cycle's release belongs.
+A generic full moon ritual works; a chart-informed one is sharper. Each month's full moon falls in a specific sign, and that sign sits in a particular house of your birth chart — the area of life this cycle is asking you to take stock of. A full moon in your fourth house points the release toward home and emotional roots; one in your tenth house points it toward career and public structure. When you know the house, you stop releasing in general and start releasing something situated. The fastest way to find it is to [generate your birth chart](/en/birth-chart-calculator) and note which house the current full moon sign occupies. The two upcoming lunations make good test cases: the [June 2026 full moon](/en/wiki/full-moon-june-2026) falls on the Cancer–Capricorn axis, and the [July 2026 full moon](/en/wiki/full-moon-july-2026) on the Leo–Aquarius axis, so the house each activates tells you exactly where this cycle's release belongs.
 
 ## Common Questions About Full Moon Ritual
 
@@ -161,7 +161,7 @@ Yes. Lunar energy across the three-day window around peak is functionally simila
 
 ## Take Action
 
-[Generate your free birth chart to explore full moon ritual](/en/wiki/how-to-read-birth-chart). The chart shows where the current full moon is activating points in your natal placements — the specific houses, signs, and planets being asked for release this cycle. Knowing the activation site turns a generic monthly practice into a sharp, situated act of self-awareness, and the integration window that follows becomes much easier to read.
+[Generate your free birth chart to explore full moon ritual](/en/birth-chart-calculator). The chart shows where the current full moon is activating points in your natal placements — the specific houses, signs, and planets being asked for release this cycle. Knowing the activation site turns a generic monthly practice into a sharp, situated act of self-awareness, and the integration window that follows becomes much easier to read.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

@@ -23,7 +23,7 @@ export const mikelMerinoBirthChartEn: WikiArticle = {
 
 ## What Is the Mikel Merino Birth Chart?
 
-The Mikel Merino birth chart is a symbolic map of where the planets sat when the Spanish footballer was born on June 22, 1996, in Pamplona, read as personality themes rather than a forecast of matches or trophies. It is best understood as **a symbolic snapshot of his chart read as character, not fate**. Astrologers use it to describe tendencies and inner tensions, building on the person-centered tradition Dane Rudhyar established, and it sits inside the broader practice of [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+The Mikel Merino birth chart is a symbolic map of where the planets sat when the Spanish footballer was born on June 22, 1996, in Pamplona, read as personality themes rather than a forecast of matches or trophies. It is best understood as **a symbolic snapshot of his chart read as character, not fate**. Astrologers use it to describe tendencies and inner tensions, building on the person-centered tradition Dane Rudhyar established, and it sits inside the broader practice of [pillar guide on how to read a birth chart](/en/birth-chart-calculator).
 
 - Leads with a Gemini cluster — Mercury, Venus, and Mars all in the sign of communication, quick thinking, and restless hands
 - Anchored by a Cancer Sun and a Virgo Moon, a protective, detail-minded emotional core
@@ -111,7 +111,7 @@ The Gemini stellium — Mercury, Venus, and Mars together — is the loudest sig
 - [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
 <!-- gg-cluster-links:end -->
 - [north and south node meaning guide](/en/wiki/north-node-vs-south-node) — introduces the nodes as a general astrology concept.
-- [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — explains how multiple placements work together.
+- [guide to reading a full birth chart](/en/birth-chart-calculator) — explains how multiple placements work together.
 - [Serena Williams birth chart profile](/en/wiki/serena-williams-birth-chart) — another athlete chart to compare interpretive style against.
 - [Mikel Merino (Wikipedia)](https://en.wikipedia.org/wiki/Mikel_Merino)
 - [Astrological sign (Wikipedia)](https://en.wikipedia.org/wiki/Astrological_sign)

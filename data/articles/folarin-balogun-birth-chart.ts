@@ -109,7 +109,7 @@ Balogun's chart gives one player-level case study inside a larger team story. Fo
 <!-- gg-cluster-links:start -->
 - [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
 <!-- gg-cluster-links:end -->
-- [guide to birth chart basics](/en/wiki/how-to-read-birth-chart) — Helpful for separating confirmed placements from birth-time-dependent details.
+- [guide to birth chart basics](/en/birth-chart-calculator) — Helpful for separating confirmed placements from birth-time-dependent details.
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — Useful for reading Cancer symbolism in tournament pressure.
 - [world cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — Places player charts inside national-team symbolism and tournament pressure.
 - [transits](/en/wiki/transits) — Explains how current timing differs from natal chart interpretation.
@@ -119,7 +119,7 @@ Balogun's chart gives one player-level case study inside a larger team story. Fo
 
 Start with your own verified birth date, time, and place so the chart can separate confirmed placements from unknown angles. The output should show your Sun, Moon, rising sign when available, houses, and major aspects, giving you a clearer frame for identity, loyalty, and pressure choices. This is not a clinical interpretation or mental health advice.
 
-[Learn how to read your birth chart before comparing it with folarin balogun birth chart.](/en/wiki/how-to-read-birth-chart)
+[Learn how to read your birth chart before comparing it with folarin balogun birth chart.](/en/birth-chart-calculator)
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

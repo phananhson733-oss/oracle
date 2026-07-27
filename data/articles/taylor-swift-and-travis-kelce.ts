@@ -121,7 +121,7 @@ You can read planet-to-planet contacts reasonably well, since the personal plane
 
 ## Take Action
 
-Open a chart of your own and look for the Moon, Venus, and Mars contacts first — the same three layers that drive every supercouple verdict. You will get a clear, placement-by-placement picture instead of a one-line Sun-sign guess, and once you can read the tempo of a chart, you start to recognize the same patterns shaping your own relationships. [Generate your free birth chart to explore Taylor Swift and Travis Kelce](/en/wiki/how-to-read-birth-chart).
+Open a chart of your own and look for the Moon, Venus, and Mars contacts first — the same three layers that drive every supercouple verdict. You will get a clear, placement-by-placement picture instead of a one-line Sun-sign guess, and once you can read the tempo of a chart, you start to recognize the same patterns shaping your own relationships. [Generate your free birth chart to explore Taylor Swift and Travis Kelce](/en/birth-chart-calculator).
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

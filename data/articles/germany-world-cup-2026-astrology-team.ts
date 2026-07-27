@@ -109,12 +109,12 @@ This reading uses the Western tropical founding chart. A Vedic sidereal mundane 
 - [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this founding chart in the wider tournament picture
 - [Argentina World Cup 2026 astrology national chart](/en/wiki/argentina-world-cup-2026-astrology) — a companion mundane reading of the defending champion's chart
 - [Germany's World Cup 2026 players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — the natal close-up on the individuals behind the DFB system
-- [how to read a national or mundane chart](/en/wiki/how-to-read-birth-chart) — the method step behind reading an institution's chart
+- [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) — the tournament-level context for reading national and team charts
 - [the Germany World Cup players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — individual chart reads for the German squad
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's World Cup 2026 team astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell steady structure apart from the pull of over-reach, long after the final whistle.
+For the individual chart perspective behind the DFB system, read [Germany's World Cup 2026 players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026), then return to the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction).
 
 ## Sources
 

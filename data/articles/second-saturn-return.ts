@@ -30,7 +30,7 @@ The second Saturn return is **Saturn's second full return to its natal position,
 - Lands on your specific natal Saturn, so its sign and house shape the reading
 - Reads as a threshold for consolidation and honest review, not a fixed fate
 
-According to NASA, Saturn takes about 29.5 years to orbit the Sun, which is why this transit recurs near ages 29 and 59. Where the first return tested the life you assembled in your twenties, this passage reviews the structures built across a full working life — the career, the partnerships, and the routines that have carried you for decades. Astrologers treat it as an interpretive window rather than a scheduled event, and reading it well starts with your [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), since the return activates your natal Saturn by exact degree.
+According to NASA, Saturn takes about 29.5 years to orbit the Sun, which is why this transit recurs near ages 29 and 59. Where the first return tested the life you assembled in your twenties, this passage reviews the structures built across a full working life — the career, the partnerships, and the routines that have carried you for decades. Astrologers treat it as an interpretive window rather than a scheduled event, and reading it well starts with your [pillar guide to reading a birth chart](/en/saturn-return-calculator), since the return activates your natal Saturn by exact degree.
 
 ## Why It Matters for Self-Awareness
 

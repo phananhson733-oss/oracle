@@ -23,7 +23,7 @@ export const mariahCareyZodiacSignEn: WikiArticle = {
 
 ## What Is the Mariah Carey Zodiac Sign?
 
-The Mariah Carey zodiac sign is **Aries, a fire sign whose drive is filtered through a private Cancer Moon**. Born on March 27, Carey carries the assertive, competitive Sun that fan culture loves to label "the diva," yet her chart is usually read as far more guarded than that label suggests. The fire is real, but most of it works behind closed doors rather than in open confrontation. Read together, the Aries Sun and Cancer Moon describe someone who competes hard in public yet processes the emotional cost of that competition almost entirely in private. This places her within the wider [pillar page on reading a full birth chart](/en/wiki/how-to-read-birth-chart), where a single Sun sign is only the opening line of a longer story.
+The Mariah Carey zodiac sign is **Aries, a fire sign whose drive is filtered through a private Cancer Moon**. Born on March 27, Carey carries the assertive, competitive Sun that fan culture loves to label "the diva," yet her chart is usually read as far more guarded than that label suggests. The fire is real, but most of it works behind closed doors rather than in open confrontation. Read together, the Aries Sun and Cancer Moon describe someone who competes hard in public yet processes the emotional cost of that competition almost entirely in private. This places her within the wider [pillar page on reading a full birth chart](/en/birth-chart-calculator), where a single Sun sign is only the opening line of a longer story.
 
 - Leads with Aries Sun: vocal command, perfectionism, and a relentless competitive streak
 - Carries a Cancer Moon that keeps her emotional life intensely private
@@ -116,7 +116,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore Mariah Carey's chart. Running your own chart gives you the same layered map — Sun, Moon, and house placements side by side — so you can see where your own drive turns inward instead of trusting a single-sign label. Read your full birth chart at [how to read a birth chart](/en/wiki/how-to-read-birth-chart) and you may find the parts of yourself that, like Carey's fire, do their best work behind the scenes.
+Generate your free birth chart to explore Mariah Carey's chart. Running your own chart gives you the same layered map — Sun, Moon, and house placements side by side — so you can see where your own drive turns inward instead of trusting a single-sign label. Read your full birth chart at [how to read a birth chart](/en/birth-chart-calculator) and you may find the parts of yourself that, like Carey's fire, do their best work behind the scenes.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

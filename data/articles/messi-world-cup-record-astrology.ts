@@ -107,7 +107,7 @@ No. Transits time broad year-level themes, not specific fixtures, and whether Me
 
 ## Take Action
 
-The same messi world cup record astrology method works on your own chart, so [generate your free birth chart](/en/wiki/how-to-read-birth-chart) and find your own Sun and Saturn, then read them the way this piece reads Messi's, as a cycle of earned maturity rather than a verdict. You get a clear view of where Saturn sits in your chart and roughly when its returns fall, and, more quietly, a way to tell a long-delayed goal apart from a limit you can still grow past.
+Compare this long-arc reading with [Messi vs Yamal astrology](/en/wiki/messi-vs-yamal-astrology), then return to [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) for the national-team context.
 
 ## Sources
 

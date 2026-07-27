@@ -23,7 +23,7 @@ export const zendayaBirthChartEn: WikiArticle = {
 
 ## What Is Zendaya's Birth Chart?
 
-A Zendaya birth chart is **a snapshot of the sky at her birth, read for archetypal themes** rather than a record of her achievements. Born September 1, 1996, she carries a Virgo Sun in the tropical zodiac that most Western astrologers use — the *rashi*, or zodiac sign, that colors her core expression. Public chart databases list her birth time as 6:01 PM, which gives common tropical calculations an Aquarius ascendant and a readable house layout, so any honest Zendaya birth chart still works best as an interpretive sketch, not a finished portrait. It sits alongside the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which explains how the pieces fit together.
+A Zendaya birth chart is **a snapshot of the sky at her birth, read for archetypal themes** rather than a record of her achievements. Born September 1, 1996, she carries a Virgo Sun in the tropical zodiac that most Western astrologers use — the *rashi*, or zodiac sign, that colors her core expression. Public chart databases list her birth time as 6:01 PM, which gives common tropical calculations an Aquarius ascendant and a readable house layout, so any honest Zendaya birth chart still works best as an interpretive sketch, not a finished portrait. It sits alongside the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator), which explains how the pieces fit together.
 
 - Reads each placement as a symbolic theme, not proof of biography
 - Anchored on a Virgo Sun plus a public 6:01 PM birth time used for full-chart calculations

@@ -28,7 +28,7 @@ export const kylianMbappBirthChartEn: WikiArticle = {
 
 ## What Is Mbappé's Sagittarius Sun Natal Chart?
 
-Mbappé's Sagittarius Sun natal chart is a Western tropical reading that places the French forward's Sun in Sagittarius, treating the sky at his 20 December 1998 birth as a symbolic snapshot of temperament, not a script for his career. In this system, the chart maps how core drive, emotional style, and outward manner might fit together. The reading works by pairing each placement — Sun, Moon, and rising — with a well-worn symbolic vocabulary, then comparing that vocabulary to how he actually shows up on the pitch and in interviews. Because the vocabulary is symbolic rather than measured, the point is coherence — whether the pattern hangs together — not proof. Most searches for the Kylian Mbappé birth chart land on three unrelated systems at once, but this page — like the broader [guide to how to read a birth chart](/en/wiki/how-to-read-birth-chart) — stays inside one lineage. Read plainly, it is **a Western tropical map of a Sagittarius Sun, not a forecast**.
+Mbappé's Sagittarius Sun natal chart is a Western tropical reading that places the French forward's Sun in Sagittarius, treating the sky at his 20 December 1998 birth as a symbolic snapshot of temperament, not a script for his career. In this system, the chart maps how core drive, emotional style, and outward manner might fit together. The reading works by pairing each placement — Sun, Moon, and rising — with a well-worn symbolic vocabulary, then comparing that vocabulary to how he actually shows up on the pitch and in interviews. Because the vocabulary is symbolic rather than measured, the point is coherence — whether the pattern hangs together — not proof. Most searches for the Kylian Mbappé birth chart land on three unrelated systems at once, but this page — like the broader [guide to how to read a birth chart](/en/birth-chart-calculator) — stays inside one lineage. Read plainly, it is **a Western tropical map of a Sagittarius Sun, not a forecast**.
 
 - Anchored in mutable fire, the symbol of expansive, long-range boldness
 - Built only from Western tropical placements, not Chinese or numerology systems
@@ -117,7 +117,7 @@ A precise Moon and rising sign need a verified birth time, which is not publicly
 
 ## Take Action
 
-Generate your free birth chart to explore Kylian Mbappé birth chart from the inside out. In a few minutes you will have your own Sun, Moon, and rising placements mapped in the same Western frame used here, plus a clearer read on where your drive runs ahead of you and where it pulls back. Start by working through the [full birth chart walkthrough](/en/wiki/how-to-read-birth-chart) so the symbolism becomes a tool for self-understanding rather than a set of borrowed labels.
+Generate your free birth chart to explore Kylian Mbappé birth chart from the inside out. In a few minutes you will have your own Sun, Moon, and rising placements mapped in the same Western frame used here, plus a clearer read on where your drive runs ahead of you and where it pulls back. Start by working through the [full birth chart walkthrough](/en/birth-chart-calculator) so the symbolism becomes a tool for self-understanding rather than a set of borrowed labels.
 
 This is not a clinical interpretation or mental health advice.
 

@@ -33,7 +33,7 @@ The astrological houses are the twelve divisions of a birth chart, each one mapp
 - A sign on the cusp colors how that domain tends to operate
 - A planet inside a house shows where a person's energy concentrates
 
-This framework sits at the center of the broader [pillar page on reading a full birth chart](/en/wiki/how-to-read-birth-chart), which connects houses, signs, and planets into one readable system that beginners can actually apply.
+This framework sits at the center of the broader [pillar page on reading a full birth chart](/en/birth-chart-calculator), which connects houses, signs, and planets into one readable system that beginners can actually apply.
 
 ## Why It Matters for Self-Awareness
 

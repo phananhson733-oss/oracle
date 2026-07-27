@@ -119,7 +119,7 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore spain world cup 2026 astrology through the lens of your own natal placements. Reading how a Jupiter-Cancer opposition interacts with a Capricorn-associated chart gives you a working framework for recognizing the same cardinal opposition pressure in your own chart — where that pattern may be asking you to earn authority rather than assume it.
+Explore Spain's tournament reading alongside the other contenders in the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction), including the linked France and Argentina match analyses.
 
 ## Sources
 

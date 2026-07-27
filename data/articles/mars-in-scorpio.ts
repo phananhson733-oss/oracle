@@ -24,7 +24,7 @@ export const marsInScorpioEn: WikiArticle = {
 
 ## What Is Mars in Scorpio?
 
-Mars in Scorpio is the placement that describes how a person pursues what they want when the planet of drive sits in the sign of depth and intensity. In symbolic astrology, **Mars in Scorpio is a desire-and-drive signature marked by controlled intensity**. Instead of acting on impulse, this placement tends to channel willpower quietly, holding an aim in view for long stretches before making a move. It reads less as open aggression and more as focused, strategic pursuit — drive that waits, watches, and commits fully once it acts. Reading it well means tracing Mars, the urge to assert and go after desire, through Scorpio, a fixed water sign linked to intimacy, power, and change, and keeping that blend separate from the Sun or Moon in the same sign. You can place it inside the wider picture of your [guide to reading your birth chart](/en/wiki/how-to-read-birth-chart).
+Mars in Scorpio is the placement that describes how a person pursues what they want when the planet of drive sits in the sign of depth and intensity. In symbolic astrology, **Mars in Scorpio is a desire-and-drive signature marked by controlled intensity**. Instead of acting on impulse, this placement tends to channel willpower quietly, holding an aim in view for long stretches before making a move. It reads less as open aggression and more as focused, strategic pursuit — drive that waits, watches, and commits fully once it acts. Reading it well means tracing Mars, the urge to assert and go after desire, through Scorpio, a fixed water sign linked to intimacy, power, and change, and keeping that blend separate from the Sun or Moon in the same sign. You can place it inside the wider picture of your [guide to reading your birth chart](/en/birth-chart-calculator).
 
 - Channels willpower through patience and strategy rather than open confrontation
 - Ties motivation to themes of intimacy, control, and emotional depth
@@ -116,7 +116,7 @@ It tends to seek closeness that feels total rather than casual, valuing loyalty 
 
 ## Take Action
 
-Open a birth chart and locate your Mars sign, then read its placement beside your Sun and Moon to see where your drive, identity, and needs agree or pull apart. The result is a clearer map of how you actually pursue what you want — and a language for the intensity you may have spent years managing on your own. Use the [birth chart reading guide](/en/wiki/how-to-read-birth-chart) to start that interpretation.
+Open a birth chart and locate your Mars sign, then read its placement beside your Sun and Moon to see where your drive, identity, and needs agree or pull apart. The result is a clearer map of how you actually pursue what you want — and a language for the intensity you may have spent years managing on your own. Use the [birth chart reading guide](/en/birth-chart-calculator) to start that interpretation.
 
 ## Sources
 

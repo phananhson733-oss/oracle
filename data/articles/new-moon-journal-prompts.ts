@@ -123,7 +123,7 @@ Because content is often drawn from general moon-cycle libraries without disting
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see which house each new moon activates in your natal chart. That house points to the specific area of life — career, relationships, creative work, financial stability — where your intentions are most likely to find traction in a given cycle. Knowing which house is activated turns a general lunar journaling ritual into a chart-informed conversation with the part of your life that is genuinely ready to move.
+[Generate your free birth chart](/en/birth-chart-calculator) to see which house each new moon activates in your natal chart. That house points to the specific area of life — career, relationships, creative work, financial stability — where your intentions are most likely to find traction in a given cycle. Knowing which house is activated turns a general lunar journaling ritual into a chart-informed conversation with the part of your life that is genuinely ready to move.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

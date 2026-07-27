@@ -133,13 +133,13 @@ The clean takeaway is an early Pisces Sun supported by analytical Mercury-in-Aqu
 <!-- gg-cluster-links:end -->
 - [Pisces guide](/en/wiki/pisces) — the Sun sign that anchors this reading.
 - [Mercury in astrology](/en/wiki/mercury) — how thinking style can differ from Sun-sign identity.
-- [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) — how to separate confirmed placements from birth-time-sensitive guesses.
+- [pillar guide to reading a birth chart](/en/birth-chart-calculator) — how to separate confirmed placements from birth-time-sensitive guesses.
 
 ## Take Action
 
 Generate your free birth chart to compare this method with your own placements. Start with the confirmed pieces first: Sun, Mercury, and any placements that do not depend on a missing birth time. Then add Ascendant and house detail only when your birth time is known.
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
+[Generate your free birth chart](/en/birth-chart-calculator)
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

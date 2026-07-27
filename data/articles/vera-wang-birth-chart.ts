@@ -23,7 +23,7 @@ export const veraWangBirthChartEn: WikiArticle = {
 
 ## What Is the Vera Wang Birth Chart?
 
-Vera Wang birth chart is **a symbolic map of the sky at the moment of her birth**, read as a cultural portrait of a bridal-design icon rather than proof that astrology shaped her career. Born on June 27, 1949, Wang carries a Cancer Sun — the sign of home, care, and emotional security — but the chart doesn't stop there. Because Mercury, Venus, and Mars barely move across a single day, we can name them without a confirmed birth time: her Venus also falls in Cancer, while Mercury and Mars sit in quick-witted Gemini. The Moon is the exception — it travels 12–13° a day and can change signs before nightfall, so a Cancer Moon is only fan-shared, unconfirmed until a birth time settles it. That double-Cancer weight, echoing a life built around weddings and milestone moments, is the real thread this reading follows — part of the wider craft covered in the [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+Vera Wang birth chart is **a symbolic map of the sky at the moment of her birth**, read as a cultural portrait of a bridal-design icon rather than proof that astrology shaped her career. Born on June 27, 1949, Wang carries a Cancer Sun — the sign of home, care, and emotional security — but the chart doesn't stop there. Because Mercury, Venus, and Mars barely move across a single day, we can name them without a confirmed birth time: her Venus also falls in Cancer, while Mercury and Mars sit in quick-witted Gemini. The Moon is the exception — it travels 12–13° a day and can change signs before nightfall, so a Cancer Moon is only fan-shared, unconfirmed until a birth time settles it. That double-Cancer weight, echoing a life built around weddings and milestone moments, is the real thread this reading follows — part of the wider craft covered in the [pillar guide on how to read a birth chart](/en/birth-chart-calculator).
 
 - Sun and Venus in Cancer — a strong pull toward home, protection, and emotional bonds; a Cancer Moon is often shared by fans but stays unconfirmed without a birth time
 - Mercury and Mars in Gemini — a fast, versatile, editorial cast of mind
@@ -118,7 +118,7 @@ A birth chart is the fixed map of the sky at your birth, while a horoscope is a 
 
 ## Take Action
 
-Generate your free birth chart with this [free birth chart generator](/en/wiki/how-to-read-birth-chart) to map your own Sun, Moon, and rising the same way this profile maps hers. You'll come away with a personalized chart of the archetypes you carry — and, reading it beside a public figure's placements, a clearer sense of where astrology's symbolism ends and your own choices begin.
+Generate your free birth chart with this [free birth chart generator](/en/birth-chart-calculator) to map your own Sun, Moon, and rising the same way this profile maps hers. You'll come away with a personalized chart of the archetypes you carry — and, reading it beside a public figure's placements, a clearer sense of where astrology's symbolism ends and your own choices begin.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

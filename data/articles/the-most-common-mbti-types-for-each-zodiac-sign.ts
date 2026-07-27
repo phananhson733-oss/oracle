@@ -29,7 +29,7 @@ The Most Common MBTI Types for Each Zodiac Sign is **a symbolic sign-to-type com
 - Treats MBTI labels as preferences and habits, not a complete identity
 - Leaves room for upbringing, culture, choices, and the rest of a birth chart
 
-A sign-level pairing starts with a simple contrast: Aries is often read as direct and fast-moving, while Taurus is often read as steady and practical. That can make ESTP or ENTJ feel like a recognizable Aries match, and ISTJ or ISFJ feel familiar for Taurus. A fuller [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart) adds houses, planets, and aspects that can change the picture considerably.
+A sign-level pairing starts with a simple contrast: Aries is often read as direct and fast-moving, while Taurus is often read as steady and practical. That can make ESTP or ENTJ feel like a recognizable Aries match, and ISTJ or ISFJ feel familiar for Taurus. A fuller [pillar page on how to read a birth chart](/en/birth-chart-calculator) adds houses, planets, and aspects that can change the picture considerably.
 
 ## Why It Matters for Self-Awareness
 

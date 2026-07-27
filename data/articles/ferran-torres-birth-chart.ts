@@ -33,7 +33,7 @@ Read together, these three placements work less like a personality label and mor
 
 ## Why It Matters for Self-Awareness
 
-Reading the whole Ferran Torres birth chart—the same skill you build in any [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart)—matters because a one-note Pisces label hides the exact parts of him fans actually argue about. Psychological astrologers such as Liz Greene long pushed for reading Sun, Moon, and rising as one system, and that habit is what turns a celebrity chart from a horoscope gimmick into a genuine tool for self-understanding.
+Reading the whole Ferran Torres birth chart—the same skill you build in any [guide to reading a birth chart](/en/birth-chart-calculator)—matters because a one-note Pisces label hides the exact parts of him fans actually argue about. Psychological astrologers such as Liz Greene long pushed for reading Sun, Moon, and rising as one system, and that habit is what turns a celebrity chart from a horoscope gimmick into a genuine tool for self-understanding.
 
 ### What the Pisces label leaves out
 

@@ -23,7 +23,7 @@ export const tobeyMaguireBirthChartEn: WikiArticle = {
 
 ## What Is Tobey Maguire's Birth Chart?
 
-A Tobey Maguire birth chart is **the full map of planetary positions at his birth, read as symbolism**. It plots where the Sun, Moon, and planets sat in the sky at the moment he was born, then treats that layout the same way any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) frames the whole sky as one picture — a set of themes, not a set of predictions. Maguire was born in late June 1975, which places his Sun in Cancer, the sign tied to memory, family, and a protective streak. Beyond that Sun, much of the picture stays open: his exact birth time isn't publicly on record, so his rising sign and house placements can't be pinned down with confidence. What most people mean by the phrase is a symbolic profile — a cultural read on his public image.
+A Tobey Maguire birth chart is **the full map of planetary positions at his birth, read as symbolism**. It plots where the Sun, Moon, and planets sat in the sky at the moment he was born, then treats that layout the same way any [pillar guide on how to read a birth chart](/en/birth-chart-calculator) frames the whole sky as one picture — a set of themes, not a set of predictions. Maguire was born in late June 1975, which places his Sun in Cancer, the sign tied to memory, family, and a protective streak. Beyond that Sun, much of the picture stays open: his exact birth time isn't publicly on record, so his rising sign and house placements can't be pinned down with confidence. What most people mean by the phrase is a symbolic profile — a cultural read on his public image.
 
 - Anchored by a Cancer Sun, linked to themes of memory, care, and a guarded interior
 - Built from planets, signs, houses, and aspects — never a single Sun sign alone
@@ -119,7 +119,7 @@ News cycles pull attention to familiar figures, and readers use a celebrity char
 
 ## Take Action
 
-Start by [generating your own free birth chart](/en/wiki/how-to-read-birth-chart) the same way you'd sketch a Tobey Maguire birth chart. You'll get your full placement map — Sun, Moon, and, if you know your birth time, your rising sign and houses — laid out as one picture. From there, the real payoff isn't prediction; it's seeing where your private temperament and your public persona pull in different directions, and choosing which one you want to lead with.
+Start by [generating your own free birth chart](/en/birth-chart-calculator) the same way you'd sketch a Tobey Maguire birth chart. You'll get your full placement map — Sun, Moon, and, if you know your birth time, your rising sign and houses — laid out as one picture. From there, the real payoff isn't prediction; it's seeing where your private temperament and your public persona pull in different directions, and choosing which one you want to lead with.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

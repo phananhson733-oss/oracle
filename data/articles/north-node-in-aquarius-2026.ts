@@ -24,7 +24,7 @@ export const northNodeInAquarius2026En: WikiArticle = {
 
 ## What Is North Node in Aquarius 2026?
 
-North Node in Aquarius 2026 is the position of the Moon's ascending lunar node in the sign of Aquarius across that year, read in astrology as **a symbolic growth axis pointing away from Leo toward Aquarian community**. It describes a direction of development, not a fixed event. The nodes are not planets but calculated points where the Moon's orbit crosses the ecliptic, which is why astrologers treat them as directional rather than active forces. Understood inside the wider framework of [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), the placement invites a chart toward shared ideals, experimentation, and a lighter grip on personal applause, while the opposite South Node in Leo marks the familiar comfort a person is asked to lean on a little less. It reads most honestly alongside the *Aquarius sign meaning page*, and works better as a question the year keeps posing than as a forecast.
+North Node in Aquarius 2026 is the position of the Moon's ascending lunar node in the sign of Aquarius across that year, read in astrology as **a symbolic growth axis pointing away from Leo toward Aquarian community**. It describes a direction of development, not a fixed event. The nodes are not planets but calculated points where the Moon's orbit crosses the ecliptic, which is why astrologers treat them as directional rather than active forces. Understood inside the wider framework of [pillar guide to reading a birth chart](/en/birth-chart-calculator), the placement invites a chart toward shared ideals, experimentation, and a lighter grip on personal applause, while the opposite South Node in Leo marks the familiar comfort a person is asked to lean on a little less. It reads most honestly alongside the *Aquarius sign meaning page*, and works better as a question the year keeps posing than as a forecast.
 
 - Points toward collective belonging, innovation, and detachment rather than personal spotlight
 - Works as one half of a two-ended axis, always paired with the South Node in Leo
@@ -116,7 +116,7 @@ No. The house it falls in, and any planets nearby, shape how noticeable and pers
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. For a broader view of the timing themes around this 2026 node shift, [Explore Astrology Forecasts](/forecast). The forecast hub lets you compare this nodal movement with other transit-focused material without treating any one signal as a promise.
+This is not a clinical interpretation or mental health advice. For a broader view of the timing themes around this 2026 node shift, [Explore Astrology Forecasts](https://astrologywiki.com/forecast). The forecast hub lets you compare this nodal movement with other transit-focused material without treating any one signal as a promise.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

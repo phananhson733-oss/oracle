@@ -115,7 +115,7 @@ Jupiter spends 2025-26 in Cancer, lighting his Sun's sign and ruling his Moon, w
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads Vinicius Jr's zodiac sign — as a working tension rather than a label. You get a clear view of your Sun's sign, your Moon's sign, and the transits touching them now, and, more quietly, a way to tell a steadying instinct apart from a fear of the open field.
+[Generate your free birth chart](/en/birth-chart-calculator) to read your own Sun and Moon the way this piece reads Vinicius Jr's zodiac sign — as a working tension rather than a label. You get a clear view of your Sun's sign, your Moon's sign, and the transits touching them now, and, more quietly, a way to tell a steadying instinct apart from a fear of the open field.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

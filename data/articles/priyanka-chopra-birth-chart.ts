@@ -29,7 +29,7 @@ Priyanka Chopra's birth chart is a symbolic map of where the Sun, Moon, and plan
 - Mars, Saturn, and Pluto in Libra, weighting fairness, partnership, and negotiation
 - Venus in Gemini and a likely Gemini Moon, pointing to versatility and a bicultural voice
 
-This profile builds on the wider method in [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which walks through each placement one step at a time.
+This profile builds on the wider method in [pillar guide on how to read a birth chart](/en/birth-chart-calculator), which walks through each placement one step at a time.
 
 ## Why It Matters for Self-Awareness
 

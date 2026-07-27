@@ -31,7 +31,7 @@ Because NiKo's birth time is not publicly confirmed, the reading stays limited: 
 - Treats NiKo's IEM Cologne Major 2026 breakthrough as symbolic Aquarius material rather than a verified full natal-chart claim
 - Keeps the interpretation inside the evidence available from a public date: Sun-sign symbolism, observable career chronology, and fan search behavior
 
-Aquarius is a fixed air sign — meaning it holds its core orientation long after the crowd has moved on, and it tends to produce breakthroughs that feel sudden from the outside but are the product of years of quiet accumulation. In psychological astrology, Aquarius symbolism is often misread at the surface. The sign is described as cold or detached; what it often demonstrates is a particular kind of delayed ignition — deep commitment to a vision that precedes any team or structure capable of containing it. Because NiKo's birth time is not publicly confirmed, this reading does not claim houses, angles, or a complete natal map; it stays with the Aquarius Sun and the public competitive arc. This chart reading sits alongside the broader [pillar page on Aquarius in natal chart interpretation](/en/wiki/how-to-read-birth-chart), which maps how the sign's fixed quality can be read without overstating private birth data.
+Aquarius is a fixed air sign — meaning it holds its core orientation long after the crowd has moved on, and it tends to produce breakthroughs that feel sudden from the outside but are the product of years of quiet accumulation. In psychological astrology, Aquarius symbolism is often misread at the surface. The sign is described as cold or detached; what it often demonstrates is a particular kind of delayed ignition — deep commitment to a vision that precedes any team or structure capable of containing it. Because NiKo's birth time is not publicly confirmed, this reading does not claim houses, angles, or a complete natal map; it stays with the Aquarius Sun and the public competitive arc. This chart reading sits alongside the broader [pillar page on Aquarius in natal chart interpretation](/en/birth-chart-calculator), which maps how the sign's fixed quality can be read without overstating private birth data.
 
 ## Why It Matters for Self-Awareness
 
@@ -105,13 +105,13 @@ IEM Cologne Major 2026 made the Aquarius breakthrough arc easy to map onto a pub
 - [Juno Astrology](/en/wiki/juno-astrology)
 - [Rhaenyra Targaryen Zodiac Sign](/en/wiki/rhaenyra-targaryen-zodiac-sign)
 <!-- gg-cluster-links:end -->
-- [guide to Aquarius Sun in natal chart interpretation](/en/wiki/how-to-read-birth-chart) — maps the breakthrough-after-isolation archetype across life domains beyond competitive performance, relevant to anyone with Aquarius placements processing an extended developmental arc
-- [how to read a birth chart when birth time is unknown](/en/wiki/how-to-read-birth-chart) — explains why houses, rising sign, and some timing claims should be handled carefully for public figures
+- [guide to Aquarius Sun in natal chart interpretation](/en/birth-chart-calculator) — maps the breakthrough-after-isolation archetype across life domains beyond competitive performance, relevant to anyone with Aquarius placements processing an extended developmental arc
+- [how to read a birth chart when birth time is unknown](/en/birth-chart-calculator) — explains why houses, rising sign, and some timing claims should be handled carefully for public figures
 - *fixed signs in long-form competitive arcs* — expands the fixed-sign endurance pattern behind many delayed breakthrough stories
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the NiKo birth chart pattern in your own natal map with your confirmed birth time. A complete chart can show houses, angles, Moon placement, and major planetary contacts; a public-date reading like this one should stay narrower. From there, the breakthrough-after-isolation arc becomes readable in your own chart, not as a fixed outcome but as a developmental pattern worth recognizing before the moment arrives.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore the NiKo birth chart pattern in your own natal map with your confirmed birth time. A complete chart can show houses, angles, Moon placement, and major planetary contacts; a public-date reading like this one should stay narrower. From there, the breakthrough-after-isolation arc becomes readable in your own chart, not as a fixed outcome but as a developmental pattern worth recognizing before the moment arrives.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

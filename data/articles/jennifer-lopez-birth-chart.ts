@@ -23,7 +23,7 @@ export const jenniferLopezBirthChartEn: WikiArticle = {
 
 ## What Is Jennifer Lopez's Birth Chart?
 
-Jennifer Lopez Birth Chart is an interpretive map of the planetary signs reported for her July 24, 1969 birth in New York City. It works by reading those signs together as symbolic themes, then comparing the pattern with public work and presentation without treating it as biographical proof. In plain English, it offers **a symbolic portrait built from reported planetary sign placements**. The larger [how to read a birth chart](/en/wiki/how-to-read-birth-chart) explains why sign placements are only one layer of a natal reading.
+Jennifer Lopez Birth Chart is an interpretive map of the planetary signs reported for her July 24, 1969 birth in New York City. It works by reading those signs together as symbolic themes, then comparing the pattern with public work and presentation without treating it as biographical proof. In plain English, it offers **a symbolic portrait built from reported planetary sign placements**. The larger [how to read a birth chart](/en/birth-chart-calculator) explains why sign placements are only one layer of a natal reading.
 
 - Leo Sun and Mercury emphasize expression, presentation, and creative authorship.
 - Venus in Gemini and Mars in Sagittarius bring variety, exchange, and movement into the portrait.

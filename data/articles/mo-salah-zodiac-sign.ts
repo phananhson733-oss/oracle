@@ -23,7 +23,7 @@ export const moSalahZodiacSignEn: WikiArticle = {
 
 ## What Is Mo Salah's Zodiac Sign?
 
-Mo Salah's zodiac sign is Gemini, the sign the Sun was moving through when he was born on June 15, 1992, in Nagrig, Egypt. His Sun sits in **Gemini, a mutable air sign ruled by Mercury** — the part of the zodiac tied to communication, quick thinking, versatility, and reading a situation a beat before everyone else. The same method our [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) walks through shows Venus also in Gemini, reinforcing that mental, adaptable signature (the asteroid Vesta sits in Gemini too, though most readers treat asteroids as a minor accent). Because his exact birth time isn't publicly documented, his rising sign and houses can't be confirmed, so the Mo Salah zodiac sign question stays focused on planet-in-sign placements rather than anything tied to the clock.
+Mo Salah's zodiac sign is Gemini, the sign the Sun was moving through when he was born on June 15, 1992, in Nagrig, Egypt. His Sun sits in **Gemini, a mutable air sign ruled by Mercury** — the part of the zodiac tied to communication, quick thinking, versatility, and reading a situation a beat before everyone else. The same method our [pillar guide on how to read a birth chart](/en/birth-chart-calculator) walks through shows Venus also in Gemini, reinforcing that mental, adaptable signature (the asteroid Vesta sits in Gemini too, though most readers treat asteroids as a minor accent). Because his exact birth time isn't publicly documented, his rising sign and houses can't be confirmed, so the Mo Salah zodiac sign question stays focused on planet-in-sign placements rather than anything tied to the clock.
 
 You can already see the Gemini read on the pitch. Salah made his name cutting in from Liverpool's right wing onto his left foot — a move that depends on split-second decisions in a crowded box — and he has shifted across the front line from winger to a more central scorer as managers asked. He captains Egypt, handles press in both Arabic and English, yet stays famously reserved and soft-spoken away from the game. That is the quiet-superstar tension in one player: the communication is on the grass, in how fast he reads a passing lane, not in the volume of his public persona.
 
@@ -120,7 +120,7 @@ Not on its own. A Gemini Sun offers a framework for his adaptability and quick r
 
 ## Take Action
 
-Curious how the same method reads your chart? Generate your free birth chart and run the identical planet-in-sign approach on your own Sun, Venus, and Moon — you'll see which signs your planets actually fall in, and exactly where your birth time changes the answer. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart).
+Curious how the same method reads your chart? Generate your free birth chart and run the identical planet-in-sign approach on your own Sun, Venus, and Moon — you'll see which signs your planets actually fall in, and exactly where your birth time changes the answer. [Generate your free birth chart](/en/birth-chart-calculator).
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

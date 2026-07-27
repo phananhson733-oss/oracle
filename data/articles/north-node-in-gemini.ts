@@ -127,7 +127,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to find your [Gemini north node and the south node opposite it](/en/wiki/how-to-read-birth-chart) — it takes only your birth date, time, and place. The chart lays out exactly which sign and house each node sits in, shown as one connected story rather than two separate facts. Read that way, the ordinary conversations you tend to rush past stop looking trivial — they start to look like the precise place your growth has been waiting.
+Generate your free birth chart to find your [Gemini north node and the south node opposite it](/en/birth-chart-calculator) — it takes only your birth date, time, and place. The chart lays out exactly which sign and house each node sits in, shown as one connected story rather than two separate facts. Read that way, the ordinary conversations you tend to rush past stop looking trivial — they start to look like the precise place your growth has been waiting.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

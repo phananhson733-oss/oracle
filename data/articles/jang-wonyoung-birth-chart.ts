@@ -29,7 +29,7 @@ Jang Wonyoung Birth Chart is **a symbolic profile built from confirmed birth dat
 - It keeps confirmed placements separate from time-dependent chart features
 - It reads astrology as symbolic language rather than factual evidence about choices
 
-The broader [how to read a birth chart](/en/wiki/how-to-read-birth-chart) explains why a full natal chart needs date, place, and time. With no verified birth time supplied here, this page cannot responsibly assign an ascendant, house placement, Moon sign, stellium, or exact aspect pattern. That boundary separates a symbolic profile from invented detail.
+The broader [how to read a birth chart](/en/birth-chart-calculator) explains why a full natal chart needs date, place, and time. With no verified birth time supplied here, this page cannot responsibly assign an ascendant, house placement, Moon sign, stellium, or exact aspect pattern. That boundary separates a symbolic profile from invented detail.
 
 ## Why It Matters for Self-Awareness
 

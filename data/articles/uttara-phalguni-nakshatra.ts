@@ -109,7 +109,7 @@ As a question about reliability, not a fixed trait. Aryaman's contracts and patr
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own nakshatra and see where the Sun and its patrons sit in your own sky. You get a clear view of your lunar mansion and a reminder that an archetype is a mirror, not a label — and, more usefully, a habit of asking where your warmth turns into commitment before you call yourself generous.
+[Generate your free birth chart](/en/birth-chart-calculator) to find your own nakshatra and see where the Sun and its patrons sit in your own sky. You get a clear view of your lunar mansion and a reminder that an archetype is a mirror, not a label — and, more usefully, a habit of asking where your warmth turns into commitment before you call yourself generous.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

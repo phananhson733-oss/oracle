@@ -114,7 +114,7 @@ Rarely. The Moon, Rising, and aspect patterns frequently add to or contradict wh
 
 ## Take Action
 
-Read your own chart the same layered way this page applies to a public figure: begin with the Sun, then add the Moon and Rising. You get a structured map of your own tendencies instead of a single borrowed label — and seeing your contradictions laid out is often where steady self-awareness begins. [Generate your free birth chart to explore ben shelton zodiac sign](/en/wiki/how-to-read-birth-chart).
+Read your own chart the same layered way this page applies to a public figure: begin with the Sun, then add the Moon and Rising. You get a structured map of your own tendencies instead of a single borrowed label — and seeing your contradictions laid out is often where steady self-awareness begins. [Generate your free birth chart to explore ben shelton zodiac sign](/en/birth-chart-calculator).
 
 This is not a clinical interpretation or mental health advice.
 

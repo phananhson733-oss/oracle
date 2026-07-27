@@ -113,7 +113,7 @@ No. Chiron entered Taurus on June 19 as part of a years-long transit about self-
 
 ## Take Action
 
-If Scotland Brazil World Cup astrology sparked your curiosity about how the same June 2026 transits map onto your own year, the next step is your own chart. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find where your Sun sits in relation to Jupiter's Cancer-to-Leo shift and the fresh Chiron-in-Taurus theme. You get a clear view of your own season's weight, and a way to read a high-pressure moment as a theme to sit with rather than a verdict to dread.
+For Scotland's longer tournament-cycle context, read the [Scotland World Cup Saturn return analysis](/en/wiki/scotland-world-cup-2026-astrology-saturn-return), then continue through the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction).
 
 ## Sources
 

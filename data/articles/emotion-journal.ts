@@ -112,7 +112,7 @@ No. The simplest mood journal uses two questions: what happened, and what did I 
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to pair your emotion journal with a map of your own emotional tendencies. Your chart sketches the placements often linked to how you process feeling — where you guard, where you release — and that picture gives your naming practice a starting frame. The pairing is for self-awareness and reflection, not prediction: the journal still does the real work of putting an accurate word to what you feel.
+[Generate your free birth chart](/en/birth-chart-calculator) to pair your emotion journal with a map of your own emotional tendencies. Your chart sketches the placements often linked to how you process feeling — where you guard, where you release — and that picture gives your naming practice a starting frame. The pairing is for self-awareness and reflection, not prediction: the journal still does the real work of putting an accurate word to what you feel.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

@@ -28,7 +28,7 @@ Juno astrology is the study of the asteroid Juno in your birth chart, read as a 
 - Tracks loyalty, control, and how equity is renegotiated over time
 - Often mistaken for Venus — which covers attraction, values, pleasure, affection, and relational style, not just endurance
 
-It sits naturally inside the broader [pillar guide to asteroids in the birth chart](/en/wiki/how-to-read-birth-chart), which maps how these smaller bodies fill the gaps the planets miss. Juno itself is asteroid 3 Juno, one of the four major asteroid goddesses, named for the Roman goddess of marriage; through the 20th century, astrologers increasingly incorporated Ceres, Pallas, Juno, and Vesta to expand symbolic readings beyond the traditional planets. Where Venus describes how a connection begins, Juno describes whether it can hold once the early spark settles into ordinary life.
+It sits naturally inside the broader [pillar guide to asteroids in the birth chart](/en/birth-chart-calculator), which maps how these smaller bodies fill the gaps the planets miss. Juno itself is asteroid 3 Juno, one of the four major asteroid goddesses, named for the Roman goddess of marriage; through the 20th century, astrologers increasingly incorporated Ceres, Pallas, Juno, and Vesta to expand symbolic readings beyond the traditional planets. Where Venus describes how a connection begins, Juno describes whether it can hold once the early spark settles into ordinary life.
 
 ## Why It Matters for Self-Awareness
 
@@ -122,7 +122,7 @@ These pages go deeper on the themes Juno touches:
 
 ## Take Action
 
-Start by mapping Juno in your own chart. [Learn how to read your birth chart and find your Juno](/en/wiki/how-to-read-birth-chart), then read its sign and house to see exactly where your commitment blueprint lives. Once you can name where you need fairness and loyalty, you stop reading relationships as luck and start recognizing the equity you have been quietly asking for all along.
+Start by mapping Juno in your own chart. [Learn how to read your birth chart and find your Juno](/en/birth-chart-calculator), then read its sign and house to see exactly where your commitment blueprint lives. Once you can name where you need fairness and loyalty, you stop reading relationships as luck and start recognizing the equity you have been quietly asking for all along.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

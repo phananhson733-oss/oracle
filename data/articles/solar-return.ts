@@ -26,7 +26,7 @@ export const solarReturnEn: WikiArticle = {
 
 ## What is solar return?
 
-Solar return is an annual astrological chart cast for the exact moment each year when the Sun returns to the precise zodiac position it held at your birth. The chart resets every birthday and stays active until the next one, coloring twelve months with themes already written into your broader [pillar guide to reading your birth chart](/en/wiki/how-to-read-birth-chart). Two people born on the same day still get different annual charts once their birth times or birthplaces differ, which keeps the technique personal rather than generic. Astrologers in the cyclic tradition treat it as one timing tool among several, never a standalone verdict on the year. Read well, it works as **a temporary yearly overlay on your existing natal chart** rather than a fresh forecast that replaces it.
+Solar return is an annual astrological chart cast for the exact moment each year when the Sun returns to the precise zodiac position it held at your birth. The chart resets every birthday and stays active until the next one, coloring twelve months with themes already written into your broader [pillar guide to reading your birth chart](/en/solar-return-calculator). Two people born on the same day still get different annual charts once their birth times or birthplaces differ, which keeps the technique personal rather than generic. Astrologers in the cyclic tradition treat it as one timing tool among several, never a standalone verdict on the year. Read well, it works as **a temporary yearly overlay on your existing natal chart** rather than a fresh forecast that replaces it.
 
 - Activates natal potential for one year instead of inventing new circumstances
 - Always read in relation to the birth chart, never as a standalone prediction
@@ -36,7 +36,7 @@ Solar return is an annual astrological chart cast for the exact moment each year
 
 Understanding a solar return matters because most beginners read it backward. They pull up the annual chart, spot a stacked house or a tense aspect, and treat it as a fixed prediction — as if the birthday chart could deliver circumstances the birth chart never promised. The friction shows up constantly in study groups: tutorials walk through how to cast and read the annual chart but rarely explain that it sits underneath natal authority, so newcomers end up forecasting events their natal chart gives no basis for.
 
-That single gap creates two recurring problems. First, the annual chart starts to feel more powerful than the birth chart, and people brace for a "big year" on the strength of one dramatic placement. Second, any year without hard aspects reads as "nothing happening," when the real signal is often a quiet activation of a pattern already written into the [spoke explainer on natal chart promises](/en/wiki/how-to-read-birth-chart). Read in proper order — birth chart first, annual layer second — the yearly chart tells you which inherent themes get the spotlight, while how they play out stays open to how you respond. That reframing is the whole point: self-awareness comes from seeing which part of you is being highlighted this year, not from bracing for a scripted event.
+That single gap creates two recurring problems. First, the annual chart starts to feel more powerful than the birth chart, and people brace for a "big year" on the strength of one dramatic placement. Second, any year without hard aspects reads as "nothing happening," when the real signal is often a quiet activation of a pattern already written into the [spoke explainer on natal chart promises](/en/solar-return-calculator). Read in proper order — birth chart first, annual layer second — the yearly chart tells you which inherent themes get the spotlight, while how they play out stays open to how you respond. That reframing is the whole point: self-awareness comes from seeing which part of you is being highlighted this year, not from bracing for a scripted event.
 
 A common case makes the trap concrete. Someone opens this year's chart, sees no eye-catching aspects, and concludes the next twelve months will be flat and forgettable. Read against the birth chart, the same quiet snapshot often tells a different story: a gently emphasized natal Moon or a softly placed chart ruler can mark a year of steady inner consolidation that matters far more than a flashier setup would. The lesson runs in both directions — a busy annual chart is not automatically a big year, and a calm one is not an empty one.
 
@@ -119,13 +119,13 @@ It runs from one birthday to the next, roughly twelve months. The themes tend to
 <!-- gg-cluster-links:start -->
 - [What a Solar Return Chart Really Reveals About the Year](/en/wiki/solar-return-chart)
 <!-- gg-cluster-links:end -->
-- [guide to reading transits against your natal chart](/en/wiki/how-to-read-birth-chart) — the day-by-day timing tool that pairs with the yearly snapshot.
+- [guide to reading transits against your natal chart](/en/solar-return-calculator) — the day-by-day timing tool that pairs with the yearly snapshot.
 - *explainer on secondary progressions* — the slower inner-development method worth comparing against the annual reset.
 - *overview of major astrological return cycles* — how the yearly return sits alongside the slower Saturn and Jupiter returns.
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see which natal promises this year's return is set to spotlight. You'll get a clear map of the birth potential sitting underneath every annual overlay — and the next time a placement worries you, you'll read it as a temporary highlight rather than a fixed verdict on the year.
+[Generate your free birth chart](/en/solar-return-calculator) to see which natal promises this year's return is set to spotlight. You'll get a clear map of the birth potential sitting underneath every annual overlay — and the next time a placement worries you, you'll read it as a temporary highlight rather than a fixed verdict on the year.
 
 To read your year ahead, the [solar return calculator](/en/solar-return-calculator) casts the chart for your next birthday.
 

@@ -115,13 +115,13 @@ A working astrologer synthesizes the full natal chart holistically, tracks timin
 
 ## Related Reading
 
-- [guide to reading a natal birth chart](/en/wiki/how-to-read-birth-chart) — for understanding which chart variables a genuine synthesis tool should reference, and how to interpret them yourself
+- [guide to reading a natal birth chart](/en/birth-chart-calculator) — for understanding which chart variables a genuine synthesis tool should reference, and how to interpret them yourself
 - *overview of vedic astrology and nakshatra systems* — expands on the Jyotish framework discussed in the FAQ above
 - *Barnum Effect and astrological interpretation overview* — the psychological basis for why empathy language bypasses skepticism in predictive reading contexts
 
 ## Take Action
 
-[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) using your exact birth date, time, and location. You'll see every planetary position, house placement, and major aspect pattern laid out — the same data a genuine ai astrology app would need to produce a reading that's actually specific to you. Having your chart in hand makes it straightforward to test any tool's output against your real placements, and often changes what you decide to trust.
+[Generate your free birth chart](/en/birth-chart-calculator) using your exact birth date, time, and location. You'll see every planetary position, house placement, and major aspect pattern laid out — the same data a genuine ai astrology app would need to produce a reading that's actually specific to you. Having your chart in hand makes it straightforward to test any tool's output against your real placements, and often changes what you decide to trust.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

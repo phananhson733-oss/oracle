@@ -117,7 +117,7 @@ No. It's an interpretive framework for temperament and style, not a forecast. Th
 
 ## Take Action
 
-Generate your free birth chart to explore the ideas behind the Teyana Taylor birth chart. You'll get your own Sun, Moon, and rising layout in minutes, mapped to the same houses and angles discussed here — and seeing your placements side by side with a public figure's is often the fastest way to tell hype from genuine self-understanding. Start with [how to read a birth chart step by step](/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore the ideas behind the Teyana Taylor birth chart. You'll get your own Sun, Moon, and rising layout in minutes, mapped to the same houses and angles discussed here — and seeing your placements side by side with a public figure's is often the fastest way to tell hype from genuine self-understanding. Start with [how to read a birth chart step by step](/en/birth-chart-calculator).
 
 This is not a clinical interpretation or mental health advice.
 

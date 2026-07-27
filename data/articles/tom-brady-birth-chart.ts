@@ -23,7 +23,7 @@ export const tomBradyBirthChartEn: WikiArticle = {
 
 ## What Is Tom Brady's Birth Chart?
 
-The Tom Brady birth chart is a symbolic map of where the Sun, Moon, and planets sat in the sky at his birth on August 3, 1977, in San Mateo, California. Read as astrology rather than biography, it is best understood as **a symbolic snapshot of temperament, not a record of results**. It centers on a Leo Sun paired with Saturn in Leo, plus a busy Gemini pairing of Mars and Jupiter. If you want the steps for assembling one yourself, start with the broader [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart).
+The Tom Brady birth chart is a symbolic map of where the Sun, Moon, and planets sat in the sky at his birth on August 3, 1977, in San Mateo, California. Read as astrology rather than biography, it is best understood as **a symbolic snapshot of temperament, not a record of results**. It centers on a Leo Sun paired with Saturn in Leo, plus a busy Gemini pairing of Mars and Jupiter. If you want the steps for assembling one yourself, start with the broader [guide on how to read a birth chart](/en/birth-chart-calculator).
 
 - Leads with a Leo Sun–Saturn signature that reads as disciplined self-expression
 - Carries a Gemini Mars–Jupiter pairing tied to restless mental drive

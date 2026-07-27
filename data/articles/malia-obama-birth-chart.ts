@@ -23,7 +23,7 @@ export const maliaObamaBirthChartEn: WikiArticle = {
 
 ## What Is Malia Obama's Birth Chart?
 
-The Malia Obama birth chart is a symbolic map of the sky at the moment she was born, read here as an interpretive portrait rather than a forecast of her life. In plain terms, it is **a symbolic snapshot of her Sun, Moon, and Ascendant** and the way those pieces sketch a public image. Malia Obama was born on July 4, 1998, which places her Sun in Cancer—a placement often linked with privacy, family loyalty, and a protective instinct. In the symbolic language of astrology, Cancer is ruled by the Moon and associated with the fourth house of home and roots, which is why interpreters so often reach for words like nurturing, guarded, and deeply attached when they describe this placement. Because her exact birth time isn't publicly confirmed, the Moon and Ascendant are treated as symbolism, not settled fact. If the wheel itself is new to you, the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) shows how these parts connect.
+The Malia Obama birth chart is a symbolic map of the sky at the moment she was born, read here as an interpretive portrait rather than a forecast of her life. In plain terms, it is **a symbolic snapshot of her Sun, Moon, and Ascendant** and the way those pieces sketch a public image. Malia Obama was born on July 4, 1998, which places her Sun in Cancer—a placement often linked with privacy, family loyalty, and a protective instinct. In the symbolic language of astrology, Cancer is ruled by the Moon and associated with the fourth house of home and roots, which is why interpreters so often reach for words like nurturing, guarded, and deeply attached when they describe this placement. Because her exact birth time isn't publicly confirmed, the Moon and Ascendant are treated as symbolism, not settled fact. If the wheel itself is new to you, the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator) shows how these parts connect.
 
 - A Cancer Sun points to a private, family-first core rather than a spotlight-seeking one
 - The chart is read as symbolism about persona, not a prediction of her career or choices
@@ -117,7 +117,7 @@ A familiar public figure gives you a shared reference point for practicing symbo
 
 Astrology reads best as a mirror, not a verdict, and this symbolic profile is offered in that spirit. This is not a clinical interpretation or mental health advice.
 
-[Generate your free birth chart to explore Malia Obama birth chart](/en/wiki/how-to-read-birth-chart) and map the same Sun, Moon, and Ascendant placements in your own wheel. You'll come away with a full chart you can compare side by side—a small exercise that tends to make famous charts feel less like headlines and more like a shared language for reading yourself.
+[Generate your free birth chart to explore Malia Obama birth chart](/en/birth-chart-calculator) and map the same Sun, Moon, and Ascendant placements in your own wheel. You'll come away with a full chart you can compare side by side—a small exercise that tends to make famous charts feel less like headlines and more like a shared language for reading yourself.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

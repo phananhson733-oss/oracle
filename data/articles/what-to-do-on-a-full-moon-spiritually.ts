@@ -82,7 +82,7 @@ The full moon is a culmination, which means part of the work is acknowledging wh
 
 ### Practices for Connecting With Your Birth Chart
 
-A chart-aware full moon practice is the most precise of the three. Each month's full moon falls in a particular sign and therefore in a particular house of your birth chart — the area of life this lunation is asking you to complete or release. A full moon in your seventh house points the work toward a relationship; one in your sixth house toward work, health, or daily routine. When you know the house, your release and gratitude stop being generic and start pointing at something real. The fastest way to find it is to [generate your birth chart](/en/wiki/how-to-read-birth-chart) and note which house the current full moon sign occupies. The two upcoming lunations are good practice runs: the [June 2026 full moon](/en/wiki/full-moon-june-2026) on the Cancer–Capricorn axis and the [July 2026 full moon](/en/wiki/full-moon-july-2026) on the Leo–Aquarius axis each activate a different house, and therefore a different theme, for everyone.
+A chart-aware full moon practice is the most precise of the three. Each month's full moon falls in a particular sign and therefore in a particular house of your birth chart — the area of life this lunation is asking you to complete or release. A full moon in your seventh house points the work toward a relationship; one in your sixth house toward work, health, or daily routine. When you know the house, your release and gratitude stop being generic and start pointing at something real. The fastest way to find it is to [generate your birth chart](/en/birth-chart-calculator) and note which house the current full moon sign occupies. The two upcoming lunations are good practice runs: the [June 2026 full moon](/en/wiki/full-moon-june-2026) on the Cancer–Capricorn axis and the [July 2026 full moon](/en/wiki/full-moon-july-2026) on the Leo–Aquarius axis each activate a different house, and therefore a different theme, for everyone.
 
 ## Common Misreadings
 
@@ -137,12 +137,12 @@ These pages extend the practice without repeating what's already linked above:
 - [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — the written half of full moon practice, with prompts grouped by release, gratitude, and chart themes.
 - [Full moon June 2026](/en/wiki/full-moon-june-2026) and [full moon July 2026](/en/wiki/full-moon-july-2026) — tailor the release practice to each month's specific sign and theme.
 - [Moon journal](/en/wiki/moon-journal) — extends the reflection practice across all four phases of the lunar cycle.
-- [Beginner overview of reading your birth chart](/en/wiki/how-to-read-birth-chart) — shows how to find which house each full moon activates for you.
+- [Beginner overview of reading your birth chart](/en/birth-chart-calculator) — shows how to find which house each full moon activates for you.
 - [Full moon (Wikipedia)](https://en.wikipedia.org/wiki/Full_moon) — a plain-astronomy reference for the phase itself.
 
 ## Take Action
 
-Ready to see exactly where each full moon lands in your own chart? [Generate your free birth chart to explore full moon spiritually](/en/wiki/how-to-read-birth-chart) and map which house every lunar peak activates for you across the year. With your full moons sorted by house, your release work stops being generic — instead of a one-size ritual, you can aim it at the specific area of life that's genuinely ready to be completed. Over time, that turns a vague monthly habit into a clear read on which parts of your life are winding down and which are just getting started.
+Ready to see exactly where each full moon lands in your own chart? [Generate your free birth chart to explore full moon spiritually](/en/birth-chart-calculator) and map which house every lunar peak activates for you across the year. With your full moons sorted by house, your release work stops being generic — instead of a one-size ritual, you can aim it at the specific area of life that's genuinely ready to be completed. Over time, that turns a vague monthly habit into a clear read on which parts of your life are winding down and which are just getting started.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

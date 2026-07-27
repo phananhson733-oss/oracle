@@ -29,7 +29,7 @@ The Cody Bellinger birth chart is a symbolic map of where the planets sat at the
 - The Moon most likely lands in Aquarius, though the exact degree needs a confirmed birth time to pin down
 - His birth time is not publicly documented, so the Ascendant, houses, and any timing-based angles cannot be stated
 
-Because three personal planets cluster in one sign, this chart works well as an entry point into the broader [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), where a single strong theme is easier to trace than a scattered one.
+Because three personal planets cluster in one sign, this chart works well as an entry point into the broader [guide on how to read a birth chart](/en/birth-chart-calculator), where a single strong theme is easier to trace than a scattered one.
 
 ## Why It Matters for Self-Awareness
 

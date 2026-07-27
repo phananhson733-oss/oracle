@@ -30,7 +30,7 @@ Jupiter in Cancer is the placement of Jupiter, the planet of growth and expansio
 - Traditionally tied to the Moon and the fourth house, the chart's emotional foundation
 - Easily read as soft or over-attached when it is really a deep capacity for emotional generosity
 
-This sits inside the broader picture mapped by a [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart), which shows how one placement interacts with the whole chart, not in isolation.
+This sits inside the broader picture mapped by a [pillar guide on how to read a birth chart](/en/birth-chart-calculator), which shows how one placement interacts with the whole chart, not in isolation.
 
 ## Why It Matters for Self-Awareness
 

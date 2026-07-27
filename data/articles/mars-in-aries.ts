@@ -24,7 +24,7 @@ export const marsInAriesEn: WikiArticle = {
 
 ## What Is Mars in Aries?
 
-Mars in Aries is **a direct, initiating style of action and assertion** in an astrology chart. Mars describes how a person pursues, protects, competes, and responds when a decision needs to become action; Aries gives those impulses a fast, self-starting tone. It is a symbolic reading of style, not a verdict on character or a forecast of behavior. A placement becomes more useful when read beside the rest of a [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), where planets, signs, houses, and aspects add different layers of context.
+Mars in Aries is **a direct, initiating style of action and assertion** in an astrology chart. Mars describes how a person pursues, protects, competes, and responds when a decision needs to become action; Aries gives those impulses a fast, self-starting tone. It is a symbolic reading of style, not a verdict on character or a forecast of behavior. A placement becomes more useful when read beside the rest of a [guide to reading a birth chart](/en/birth-chart-calculator), where planets, signs, houses, and aspects add different layers of context.
 
 - Acts quickly when a clear opening or challenge appears
 - Prefers direct requests, immediate feedback, and visible momentum

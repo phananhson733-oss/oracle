@@ -100,7 +100,7 @@ Look for planets inside the house, a tightly aspected house ruler, or a stellium
 - [companion guide to the 4th house and emotional roots](/en/wiki/astrology-houses) — pairs naturally with the 12th as another deeply private, inward sector of the chart.
 - [the 6th house of work, health, and routine](/en/wiki/6th-house-astrology) — the 12th house's structured opposite, where daily activity refills (or drains) what the 12th withdraws to restore.
 - [the Persephone goddess and the descent-and-return cycle](/en/wiki/persephone-goddess) — the underworld myth and asteroid that map the dissolving, hidden terrain this house crosses into.
-- [explainer on Neptune in the birth chart](/en/wiki/how-to-read-birth-chart) — unpacks the planet most associated with this house and its themes of dissolution.
+- [explainer on Neptune in the birth chart](/en/birth-chart-calculator) — unpacks the planet most associated with this house and its themes of dissolution.
 - [House (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/House_(astrology)) — background on how the house framework is constructed.
 
 ## Take Action

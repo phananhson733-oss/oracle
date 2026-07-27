@@ -23,7 +23,7 @@ export const sharonOsbourneZodiacSignEn: WikiArticle = {
 
 ## What Is Sharon Osbourne's Zodiac Sign?
 
-The Sharon Osbourne zodiac sign is Libra, yet reading it as a single Sun sign misses the bigger pattern in her chart. Her placements center on **a Libra Sun wrapped in a four-planet Libra stellium**, grouping Sun, Saturn, Neptune, and Mercury in the sign of balance and negotiation. That cluster — not one lone placement — is the detail a full [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) brings into focus. Add Mercury's sharp tongue inside that stellium and Venus in Scorpio for fierce loyalty, and the famous mix of charm and combat starts to make sense. Most chart sites flatten her into "Libra" and stop there, which is exactly why her sharper public moments look like they contradict the sign rather than express it.
+The Sharon Osbourne zodiac sign is Libra, yet reading it as a single Sun sign misses the bigger pattern in her chart. Her placements center on **a Libra Sun wrapped in a four-planet Libra stellium**, grouping Sun, Saturn, Neptune, and Mercury in the sign of balance and negotiation. That cluster — not one lone placement — is the detail a full [pillar guide to reading a birth chart](/en/birth-chart-calculator) brings into focus. Add Mercury's sharp tongue inside that stellium and Venus in Scorpio for fierce loyalty, and the famous mix of charm and combat starts to make sense. Most chart sites flatten her into "Libra" and stop there, which is exactly why her sharper public moments look like they contradict the sign rather than express it.
 
 - Led by a Libra stellium of Sun, Saturn, Neptune, and Mercury
 - Carries Mercury and Saturn inside the stellium, behind quick, sometimes combative wording
@@ -35,7 +35,7 @@ Understanding the Sharon Osbourne zodiac sign matters because the most common se
 
 That hunt is where the real friction lives. Chart sites openly disagree about her Ascendant, with some listing Cancer and others Sagittarius, so readers end up trusting whichever single placement they happen to find first. Forum threads keep circling the same narrow question — which Rising is the correct one — without ever questioning the single-placement habit that caused the confusion. The honest answer is that no one source has settled her Ascendant, and pretending otherwise overstates what the available birth data actually supports. The same caution applies to her Moon: it is widely cited as Gemini, but on her birth date the Moon sat near the Gemini–Cancer cusp, so without a confirmed birth time even that placement is not fully settled.
 
-The fix is to read the stellium rather than chase one isolated sign, the same move you would make with any [spoke explainer on rising sign profiles](/en/wiki/how-to-read-birth-chart) when two sources contradict each other. Seeing four planets stacked in Libra explains more of her public behavior than any lone Ascendant guess ever could. According to the Pew Research Center, about 29% of U.S. adults said they believe in astrology, which is part of why a public figure's chart gets debated this heatedly in the first place.
+The fix is to read the stellium rather than chase one isolated sign, the same move you would make with any [spoke explainer on rising sign profiles](/en/birth-chart-calculator) when two sources contradict each other. Seeing four planets stacked in Libra explains more of her public behavior than any lone Ascendant guess ever could. According to the Pew Research Center, about 29% of U.S. adults said they believe in astrology, which is part of why a public figure's chart gets debated this heatedly in the first place.
 
 ## Libra Sun Alone vs a Libra Stellium: What Actually Changes
 
@@ -119,7 +119,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Curious how your own placements stack up the way hers do? [Generate your free birth chart to explore Sharon Osbourne's zodiac sign](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your stelliums, Moon, and Rising in minutes instead of guessing from one Sun sign. Seeing the whole pattern at once is how a chart stops being a label and starts working as a mirror for how you actually negotiate, push back, and stay loyal.
+Curious how your own placements stack up the way hers do? [Generate your free birth chart to explore Sharon Osbourne's zodiac sign](/en/birth-chart-calculator), and you'll get a full map of your stelliums, Moon, and Rising in minutes instead of guessing from one Sun sign. Seeing the whole pattern at once is how a chart stops being a label and starts working as a mirror for how you actually negotiate, push back, and stay loyal.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

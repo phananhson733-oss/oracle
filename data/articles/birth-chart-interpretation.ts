@@ -22,7 +22,7 @@ export const birthChartInterpretationEn: WikiArticle = {
 
 ## What Is Kundli Interpretation?
 
-Kundli Interpretation is the Vedic reading craft that takes a calculated birth chart and translates its planetary placements into meaning a person can reflect on. In plain terms, **birth chart interpretation reads sign and house placements as symbolic self-reflection**, not fixed prediction. A calculator draws the chart; interpretation gives it a voice by applying Jyotish rules laid out in any [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) — Lagna, planetary lordships, aspects, and dispositor chains.
+Kundli Interpretation is the Vedic reading craft that takes a calculated birth chart and translates its planetary placements into meaning a person can reflect on. In plain terms, **birth chart interpretation reads sign and house placements as symbolic self-reflection**, not fixed prediction. A calculator draws the chart; interpretation gives it a voice by applying Jyotish rules laid out in any [pillar guide on how to read a birth chart](/en/birth-chart-calculator) — Lagna, planetary lordships, aspects, and dispositor chains.
 
 - Works from the Lagna (ascendant) outward, since the rising sign anchors how every house is counted
 - Reads each graha (planet) through the Rāśi (sign) and Bhāva (house) it sits in

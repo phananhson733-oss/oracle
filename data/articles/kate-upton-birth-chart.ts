@@ -23,7 +23,7 @@ export const kateUptonBirthChartEn: WikiArticle = {
 
 ## What Is Kate Upton's Date-Verified Natal Signature?
 
-Kate Upton's date-verified natal signature starts with one confirmed anchor: **a Gemini Sun based on her June 10, 1992 birth date**. It should not be presented as a verified Sun–Moon–Rising trio, because no reliable public birth time establishes her Ascendant, houses, or time-sensitive Moon details. Any fan-circulated Moon/Rising combination belongs in the hypothesis column, not in the fact column. Read this way, the Kate Upton birth chart becomes a useful example of what a careful [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) does first: separate confirmed placements from unknowns before interpreting the whole pattern. That keeps the reading grounded, modest, and more useful than a single Gemini headline. This describes symbolic pattern; it does not predict her choices, relationships, or outcomes.
+Kate Upton's date-verified natal signature starts with one confirmed anchor: **a Gemini Sun based on her June 10, 1992 birth date**. It should not be presented as a verified Sun–Moon–Rising trio, because no reliable public birth time establishes her Ascendant, houses, or time-sensitive Moon details. Any fan-circulated Moon/Rising combination belongs in the hypothesis column, not in the fact column. Read this way, the Kate Upton birth chart becomes a useful example of what a careful [guide on how to read a birth chart](/en/birth-chart-calculator) does first: separate confirmed placements from unknowns before interpreting the whole pattern. That keeps the reading grounded, modest, and more useful than a single Gemini headline. This describes symbolic pattern; it does not predict her choices, relationships, or outcomes.
 
 - Gemini Sun drives versatility, quick wit, and a communicative public voice
 - Moon and Ascendant details remain unverified without a reliable birth time
@@ -123,7 +123,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-[Read our guide to reading your birth chart](/en/wiki/how-to-read-birth-chart), then map your own Sun, Moon, and Rising with accurate birth data. You'll get a clearer picture of where identity, feelings, and public face align or pull apart — the same source-aware self-awareness this reading models, applied to you instead of a headline.
+[Read our guide to reading your birth chart](/en/birth-chart-calculator), then map your own Sun, Moon, and Rising with accurate birth data. You'll get a clearer picture of where identity, feelings, and public face align or pull apart — the same source-aware self-awareness this reading models, applied to you instead of a headline.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

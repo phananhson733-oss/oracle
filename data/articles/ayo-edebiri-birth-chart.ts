@@ -23,7 +23,7 @@ export const ayoEdebiriBirthChartEn: WikiArticle = {
 
 ## What Is Ayo Edebiri's Libra Sun Signature?
 
-Ayo Edebiri's Libra Sun signature is the interpretive read of a chart organized around three planets grouped in Libra — the Sun, Mercury, and Venus — all tied to her October 3, 1995 birth in Boston. In modern Western tropical astrology, that cluster casts Libra as a cardinal-air pattern of relational balance. The Ayo Edebiri birth chart pairs the Libra Sun with Libra Mercury and Libra Venus, the same blend critics echo when they name the balancing wit in her ensemble comedy. One honest limit frames everything that follows, and the broader [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) shows why: her birth time is not publicly verified, so the Ascendant, Moon houses, and time-based angles stay outside a careful read. In short, her Libra Sun signature reads as **a cardinal-air pattern of relational balance and quick-witted diplomacy**.
+Ayo Edebiri's Libra Sun signature is the interpretive read of a chart organized around three planets grouped in Libra — the Sun, Mercury, and Venus — all tied to her October 3, 1995 birth in Boston. In modern Western tropical astrology, that cluster casts Libra as a cardinal-air pattern of relational balance. The Ayo Edebiri birth chart pairs the Libra Sun with Libra Mercury and Libra Venus, the same blend critics echo when they name the balancing wit in her ensemble comedy. One honest limit frames everything that follows, and the broader [pillar guide on how to read a birth chart](/en/birth-chart-calculator) shows why: her birth time is not publicly verified, so the Ascendant, Moon houses, and time-based angles stay outside a careful read. In short, her Libra Sun signature reads as **a cardinal-air pattern of relational balance and quick-witted diplomacy**.
 
 - Leads with relational timing and diplomacy over blunt self-assertion
 - Concentrates the Sun, Mercury, and Venus together in cardinal-air Libra
@@ -125,7 +125,7 @@ These pages go deeper on the ideas this chart raises:
 
 This is not a clinical interpretation or mental health advice.
 
-Take the Libra pattern you just read and test it against your own placements. You will see how a Sun, Mercury, and Venus cluster actually behaves in a full chart, and you will come away able to tell symbolic framing from fan invention. Generate your free birth chart to explore Ayo Edebiri birth chart alongside your own in the [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart).
+Take the Libra pattern you just read and test it against your own placements. You will see how a Sun, Mercury, and Venus cluster actually behaves in a full chart, and you will come away able to tell symbolic framing from fan invention. Generate your free birth chart to explore Ayo Edebiri birth chart alongside your own in the [guide to reading a birth chart](/en/birth-chart-calculator).
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

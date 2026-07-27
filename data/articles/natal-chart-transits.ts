@@ -109,7 +109,7 @@ You can locate them by matching degrees, but interpreting them takes knowing wha
 
 ## Take Action
 
-New to your chart? Read the full [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) first, then layer today's transits on top. Once you can confidently place the planets and houses on your own chart, overlaying today's transits becomes a quick daily habit instead of a guessing game — and timing stops feeling random, because you can finally see exactly where the moving sky is meeting the map you were born with.
+New to your chart? Read the full [guide to reading a birth chart](/en/birth-chart-calculator) first, then layer today's transits on top. Once you can confidently place the planets and houses on your own chart, overlaying today's transits becomes a quick daily habit instead of a guessing game — and timing stops feeling random, because you can finally see exactly where the moving sky is meeting the map you were born with.
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

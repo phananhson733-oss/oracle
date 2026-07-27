@@ -25,7 +25,7 @@ export const emmaWatsonZodiacSignEn: WikiArticle = {
 
 Emma Watson's zodiac sign is **an Aries Sun steadied by a widely-recorded Virgo Rising and a Sagittarius Moon**. Most chart sites stop at the Sun and file her as a fiery, driven Aries — accurate, but only one layer of three. The Aries Sun supplies cardinal-fire drive: conviction, initiative, and a readiness to lead with a cause. Her Virgo Rising then shapes how that fire meets the public — measured, precise, and visibly self-edited. The Sagittarius Moon adds an emotional pull toward big-picture issues and lifelong study. Read together, these explain the composed-yet-assertive presence people keep noticing.
 
-The fuller emma watson zodiac sign picture is less about one label and more about how three signals interact. For the system this rests on, see [pillar page on reading a full birth chart](/en/wiki/how-to-read-birth-chart), which maps how Sun, Moon, and Rising stack.
+The fuller emma watson zodiac sign picture is less about one label and more about how three signals interact. For the system this rests on, see [pillar page on reading a full birth chart](/en/birth-chart-calculator), which maps how Sun, Moon, and Rising stack.
 
 - Leads with Aries initiative and clear personal conviction
 - Filters that drive through Virgo's careful, detail-first presentation
@@ -129,7 +129,7 @@ Not really. The Rising routes the Sun's energy rather than canceling it, so an a
 
 ## Take Action
 
-Pull apart your own chart the way this read pulls apart the emma watson zodiac sign. [Generate your free birth chart to explore your Sun, Moon, and Rising layers](/en/wiki/how-to-read-birth-chart), and you get a clear map of which placements drive you and which ones shape how you come across. Seeing that gap — between an assertive engine and a careful interface — is often where the most honest self-recognition begins.
+Pull apart your own chart the way this read pulls apart the emma watson zodiac sign. [Generate your free birth chart to explore your Sun, Moon, and Rising layers](/en/birth-chart-calculator), and you get a clear map of which placements drive you and which ones shape how you come across. Seeing that gap — between an assertive engine and a careful interface — is often where the most honest self-recognition begins.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

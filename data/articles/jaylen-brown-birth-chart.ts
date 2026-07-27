@@ -23,7 +23,7 @@ export const jaylenBrownBirthChartEn: WikiArticle = {
 
 ## What Is the Jaylen Brown Natal Chart?
 
-The Jaylen Brown natal chart is the complete map of where the planets sat at the moment of his birth on October 24, 1996 — a symbolic snapshot of one person, not a prediction of wins, trades, or losses. Read as a single portrait rather than a stack of separate labels, the Jaylen Brown birth chart is **a Scorpio-anchored study in intensity, conviction, and reinvention**. It gathers his Sun and the placements around it into one lens that fans already recognize in his on-court drive and his off-court voice. Anyone working through a [pillar guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) can plot the same positions and read them the same way, for any birth date.
+The Jaylen Brown natal chart is the complete map of where the planets sat at the moment of his birth on October 24, 1996 — a symbolic snapshot of one person, not a prediction of wins, trades, or losses. Read as a single portrait rather than a stack of separate labels, the Jaylen Brown birth chart is **a Scorpio-anchored study in intensity, conviction, and reinvention**. It gathers his Sun and the placements around it into one lens that fans already recognize in his on-court drive and his off-court voice. Anyone working through a [pillar guide on how to read a birth chart](/en/birth-chart-calculator) can plot the same positions and read them the same way, for any birth date.
 
 - Centers on Scorpio energy: focused, private, and comfortable with high stakes
 - Reads placements together as one character portrait, not a single Sun-sign tag
@@ -127,7 +127,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Ready to try the same method on your own placements? [Generate your free birth chart to explore Jaylen Brown birth chart.](/en/wiki/how-to-read-birth-chart) The tool lays out a full map of your planets the same way this reading treats his, and studying them together — rather than stopping at your Sun sign — can show you where your own intensity and conviction really live.
+Ready to try the same method on your own placements? [Generate your free birth chart to explore Jaylen Brown birth chart.](/en/birth-chart-calculator) The tool lays out a full map of your planets the same way this reading treats his, and studying them together — rather than stopping at your Sun sign — can show you where your own intensity and conviction really live.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

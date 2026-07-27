@@ -23,7 +23,7 @@ export const kylieJennerZodiacSignEn: WikiArticle = {
 
 ## What Is Kylie Jenner's Zodiac Sign?
 
-Kylie Jenner's zodiac sign is **a Leo Sun paired with a widely cited Capricorn rising sign**. Born on August 10, 1997, she carries the Sun in Leo, the fixed fire sign tied to visibility, performance, and personal mythology. Most profiles stop there. But the kylie jenner zodiac sign is really a two-part story: the Leo Sun supplies the spotlight instinct, while the Capricorn rising sign — the layer the world meets first — runs that fire through patient, structured ambition. Reading only the Sun is like judging a building by its lighting and ignoring the steel frame underneath. Her chart is one piece of a full [pillar page on reading a birth chart](/en/wiki/how-to-read-birth-chart), where Sun, Moon, and rising each play a different part of the same picture.
+Kylie Jenner's zodiac sign is **a Leo Sun paired with a widely cited Capricorn rising sign**. Born on August 10, 1997, she carries the Sun in Leo, the fixed fire sign tied to visibility, performance, and personal mythology. Most profiles stop there. But the kylie jenner zodiac sign is really a two-part story: the Leo Sun supplies the spotlight instinct, while the Capricorn rising sign — the layer the world meets first — runs that fire through patient, structured ambition. Reading only the Sun is like judging a building by its lighting and ignoring the steel frame underneath. Her chart is one piece of a full [pillar page on reading a birth chart](/en/birth-chart-calculator), where Sun, Moon, and rising each play a different part of the same picture.
 
 - Leads with Leo Sun warmth, showmanship, and audience command
 - Filters that visibility through Capricorn rising discipline and long-game planning
@@ -124,7 +124,7 @@ Astrology offers a symbolic framework, not a cause. The Leo–Capricorn blend is
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. Curious how a loud sign and a strategic one combine in your own chart? Generate your free birth chart to explore kylie jenner zodiac sign — it maps your Sun, Moon, and rising placements in minutes and shows how your visible drive and your quiet discipline can reinforce each other instead of pulling in opposite directions. Start with this [birth chart reading walkthrough](/en/wiki/how-to-read-birth-chart).
+This is not a clinical interpretation or mental health advice. Curious how a loud sign and a strategic one combine in your own chart? Generate your free birth chart to explore kylie jenner zodiac sign — it maps your Sun, Moon, and rising placements in minutes and shows how your visible drive and your quiet discipline can reinforce each other instead of pulling in opposite directions. Start with this [birth chart reading walkthrough](/en/birth-chart-calculator).
 
 When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 

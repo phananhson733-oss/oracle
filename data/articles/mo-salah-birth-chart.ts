@@ -111,13 +111,13 @@ This is not a clinical interpretation or mental health advice.
 <!-- gg-cluster-links:start -->
 - [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
 <!-- gg-cluster-links:end -->
-- [guide to reading any footballer's birth chart](/en/wiki/how-to-read-birth-chart) — a step-by-step for applying this method to other players.
+- [guide to reading any footballer's birth chart](/en/birth-chart-calculator) — a step-by-step for applying this method to other players.
 - [the Erling Haaland birth chart](/en/wiki/erling-haaland-birth-chart) — a contrasting World Cup forward read through the same lens.
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how Gemini and other signs show up across top footballers.
 
 ## Take Action
 
-Generate your free birth chart to explore mo salah birth chart, and get a clear map of where your own Sun, Moon, and current transits sit. Placing your chart next to Salah's shows how the same Gemini communicator theme can surface in any life, on or off the pitch. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see which part of your own story is asking to be told this season.
+Generate your free birth chart to explore mo salah birth chart, and get a clear map of where your own Sun, Moon, and current transits sit. Placing your chart next to Salah's shows how the same Gemini communicator theme can surface in any life, on or off the pitch. [Generate your free birth chart](/en/birth-chart-calculator) to see which part of your own story is asking to be told this season.
 
 To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 

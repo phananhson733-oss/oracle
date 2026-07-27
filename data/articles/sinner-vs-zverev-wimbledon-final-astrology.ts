@@ -32,7 +32,7 @@ The Sinner–Zverev Wimbledon Final Chart is a symbolic, side-by-side reading of
 - Reads the psychological tone and symbolic tension between two natal styles
 - Reflects on mood and narrative, never on grass-court skill or the final result
 
-Built on the same fundamentals as any [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart), the framework simply applies them to two athletes and one high-pressure afternoon on Centre Court, turning familiar chart factors into a reflective lens on the occasion.
+For another event-focused application of the same reflective approach, see the [World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction), which follows national and player themes across a full tournament.
 
 ## Why It Matters for Self-Awareness
 

@@ -31,7 +31,7 @@ Solar return ascendant, natal chart overlay, sun's house placement, ascendant ru
 
 ## Why It Matters for Self-Awareness
 
-Understanding the solar return chart matters because the most common mistake — treating it as a standalone annual forecast — strips out the [pillar page on reading the natal chart](/en/wiki/how-to-read-birth-chart) interaction layer that actually makes it predictive. Without that overlay, the wheel reads as a generic snapshot, and the year's real activations stay invisible. The difference between a useful return reading and a confusing one almost always comes down to whether the practitioner remembers to look at both charts side by side.
+Understanding the solar return chart matters because the most common mistake — treating it as a standalone annual forecast — strips out the [pillar page on reading the natal chart](/en/solar-return-calculator) interaction layer that actually makes it predictive. Without that overlay, the wheel reads as a generic snapshot, and the year's real activations stay invisible. The difference between a useful return reading and a confusing one almost always comes down to whether the practitioner remembers to look at both charts side by side.
 
 The deeper reason it matters: the return tells you which natal themes are coming online, not what events are written into your life. That distinction changes how readers use the year ahead. Instead of waiting for predicted events, you start tracking which parts of your birth chart are getting activated, and you can prepare your attention accordingly. The wheel becomes a focusing tool rather than a fortune-telling exercise — and that shift is what separates self-aware annual practice from passive waiting.
 
@@ -118,7 +118,7 @@ Returns can look intense on paper without producing intense events. The check is
 
 ## Take Action
 
-Calculate your free birth chart to map your solar return ascendant and house overlay. The chart you get back becomes the reference layer for every annual return you read — without it, the year's themes float free of the natal promises they are meant to activate, and a year of self-awareness work loses its anchor. Start with the [free birth chart calculator and reading guide](/en/wiki/how-to-read-birth-chart) and keep that chart open the next time you cast a return.
+Calculate your free birth chart to map your solar return ascendant and house overlay. The chart you get back becomes the reference layer for every annual return you read — without it, the year's themes float free of the natal promises they are meant to activate, and a year of self-awareness work loses its anchor. Start with the [free birth chart calculator and reading guide](/en/solar-return-calculator) and keep that chart open the next time you cast a return.
 
 Curious how your coming year sets up? Try the [solar return calculator](/en/solar-return-calculator) with your birth details.
 
