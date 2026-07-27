@@ -1,0 +1,72 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-in-cancer": {
+      "hero": {
+        "prompt": "A solitary cottage perched at the edge of dark still water at night, Saturn enormous and ringed dominating the deep indigo sky above, its pale gold rings reflected as shimmering arcs across the calm tide below, soft amber light glowing from the cottage windows suggesting warmth and rootedness, teal nebula veils drifting across the star-dusted celestial vault, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn rising over a cottage by dark water at night, evoking the Cancer Saturn return's call to rebuild emotional security"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## The Cancer Saturn Return at a Glance",
+          "titleEn": "Three Saturn Returns in Cancer",
+          "altEn": "Timeline of the three Cancer Saturn returns at ages 29, 58, and 87 with their core themes and how to observe each",
+          "items": [
+            {
+              "labelEn": "Age 29",
+              "titleEn": "First Return",
+              "noteEn": "Rebuilds adult emotional foundations; new commitments to home, a partner, or self-reliance"
+            },
+            {
+              "labelEn": "Age 58",
+              "titleEn": "Second Return",
+              "noteEn": "Reverses the caretaking flow; shifting from long-time provider toward receiving support"
+            },
+            {
+              "labelEn": "Age 87",
+              "titleEn": "Third Return",
+              "noteEn": "Distills what has endured; legacy, memory, and releasing daily upkeep"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "Five Markers to Track During the Cancer Saturn Return",
+          "altEn": "Sequence of five practical signs for recognizing the Cancer Saturn return as it unfolds in daily life",
+          "items": [
+            {
+              "nameEn": "Track the key ages",
+              "subEn": "Note when you approach 29, 58, or 87; the two-to-three-year window opens gradually as Saturn nears its natal degree in Cancer"
+            },
+            {
+              "nameEn": "Watch the home front",
+              "subEn": "Moves, renovations, lease decisions, or a strong pull to leave or return to a family home often cluster inside this window"
+            },
+            {
+              "nameEn": "Notice caretaking strain",
+              "subEn": "A recurring sense that you give far more emotional support than you receive tends to flag the core theme of this passage early"
+            },
+            {
+              "nameEn": "Look for boundary tests",
+              "subEn": "You may find yourself renegotiating family obligations you once accepted without a second thought, and feeling the discomfort of doing so"
+            },
+            {
+              "nameEn": "Feel the weight of 'should'",
+              "subEn": "Everyday decisions about duty to family can feel unusually heavy, which is often the transit asking what is truly yours to carry"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

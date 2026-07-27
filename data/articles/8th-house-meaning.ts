@@ -111,6 +111,8 @@ Pluto is the modern ruler through its link to Scorpio, while Mars carries the ol
 
 Once you have traced your 8th-house ruler and matched it to a real situation, set it back inside the larger map: [Read the full Astrological Houses guide to place this house within the whole chart](/en/wiki/astrology-houses). That single view shows how this hidden sector connects to the eleven houses around it, and seeing the connection is often the moment a lifelong blind spot starts to feel like a resource you can use deliberately.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — helped establish the psychological reading of the 8th house as a place of depth and transformation rather than misfortune

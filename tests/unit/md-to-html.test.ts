@@ -23,6 +23,16 @@ describe("escapeHtml", () => {
 });
 
 describe("mdToHtml — 块级", () => {
+  it("把集群内链的管理块渲染为独立的相关文章卡片，不计入正文列表", () => {
+    expect(
+      mdToHtml(
+        "## Related Reading\n\n<!-- gg-cluster-links:start -->\n\n- [Free Birth Chart Calculator](/en/birth-chart-calculator)\n- [Saturn Return Guide](/en/wiki/saturn-return-guide)\n\n<!-- gg-cluster-links:end -->\n\n- A human-authored body list item",
+      ),
+    ).toBe(
+      '<h2>Related Reading</h2><section class="related-reading-cards" aria-label="Related Reading"><a class="related-reading-card" href="/en/birth-chart-calculator">Free Birth Chart Calculator</a><a class="related-reading-card" href="/en/wiki/saturn-return-guide">Saturn Return Guide</a></section><ul><li>A human-authored body list item</li></ul>',
+    );
+  });
+
   it("# / ## / ### 转标题", () => {
     expect(mdToHtml("# Title")).toBe("<h1>Title</h1>");
     expect(mdToHtml("## Sub")).toBe("<h2>Sub</h2>");

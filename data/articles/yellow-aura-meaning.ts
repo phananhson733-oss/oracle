@@ -153,6 +153,8 @@ During creative flow states, it often brightens toward gold.
 - [guide to the solar plexus chakra](/en/wiki/chakra-system-overview) — the energy center most aura traditions tie yellow to, with longer-form practice notes.
 - [green aura explainer](/en/wiki/green-aura-meaning) — the heart-centered neighbor, useful for telling solar-plexus drive apart from relational, balancing energy.
 - [red aura explainer](/en/wiki/red-aura-meaning) — the root-center contrast: physical drive and survival energy versus yellow's mental, solar-plexus confidence.
+- [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — confidence and personal-power practices
+- [Leo rising and the houses](/en/wiki/leo-rising-houses) — a Sun-ruled, personal-power lens that mirrors solar-plexus themes
 
 ## Take Action
 

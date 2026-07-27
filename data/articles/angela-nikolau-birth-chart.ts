@@ -119,6 +119,8 @@ This is not a clinical interpretation or mental health advice — it's a symboli
 
 Curious how these lenses land in your own placements? [Generate your free birth chart to explore Angela Nikolau birth chart](/en/wiki/how-to-read-birth-chart), get a full symbolic map of your Sun, Moon, and rising, and use it to notice where your own public persona and private self actually meet.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Dane Rudhyar — pioneered the person-centered, psychological approach to reading a birth chart as symbolic pattern

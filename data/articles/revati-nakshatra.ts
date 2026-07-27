@@ -113,6 +113,8 @@ No. Because its final degree sits where one cycle completes and the next begins,
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Moon and ascendant, and see whether the closing degrees of Pisces carry any weight in your placements. You get a clear map of where you sit on the wheel and, more usefully, a fresh way to read the endings in your own story as guided crossings rather than full stops.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Dennis Harness — author of The Nakshatras: The Lunar Mansions of Vedic Astrology, a standard reference on the twenty-seven mansions and their deities

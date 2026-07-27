@@ -106,6 +106,8 @@ Not exactly. It describes a pattern you tend to repeat, often built from traits 
 
 Cast your full birth chart and locate your Descendant sign and seventh-house cusp using the steps in the [full guide to reading a birth chart](/en/wiki/how-to-read-birth-chart). You will come away with the exact sign on your relationship axis and a short list of the traits it points to, and once you see them as your own rather than someone else's job to carry, your patterns in love start to read less like bad luck and more like a map you can work with.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — developed the psychological, projection-centered reading of the seventh house and relationship astrology that this article draws on.

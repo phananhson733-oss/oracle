@@ -142,6 +142,9 @@ The full moon lines up with the brightest part of the cycle, which many people e
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [What a full moon ritual really does](/en/wiki/what-is-a-full-moon-ritual) — how to turn the peak charge described here into a structured release-and-reclamation practice.
 - [What to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually) — concrete practices for working with this energy instead of being caught off guard by it.
 - [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — reflective questions timed to the completion-and-release phase you feel peaking here.
@@ -152,6 +155,8 @@ The full moon lines up with the brightest part of the cycle, which many people e
 ## Take Action
 
 The full moon shows you what is peaking; your birth chart shows you where it lands. [Generate your free birth chart to explore full moon energy](/en/wiki/how-to-read-birth-chart), and you can see exactly which house each month's full moon lights up for you. Read together, they turn a vague monthly mood into a map of where your attention keeps returning — the first real step toward working with your own timing instead of being caught off guard by it.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

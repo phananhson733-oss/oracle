@@ -112,6 +112,9 @@ Many self-described sensitive artists treat depth of feeling as raw material rat
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Signs You're A Highly Sensitive Person](/en/wiki/signs-of-a-highly-sensitive-person)
+<!-- gg-cluster-links:end -->
 If the celebrities above resonated, it helps to sort out where reading other people's emotion ends and absorbing it begins — the line between being highly sensitive and being an empath is subtler than it sounds.
 
 ## Take Action

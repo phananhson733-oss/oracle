@@ -108,6 +108,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *birth chart of Serena Williams* — another athlete's full chart to compare a Libra-forward reading against.
 - *guide to Libra Sun sign meaning* — unpacks the Libra core that anchors this whole chart.
 - *explainer on Mercury retrograde in the natal chart* — context for reading her retrograde Mercury as a style, not a defect.

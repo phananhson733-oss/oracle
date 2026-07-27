@@ -101,6 +101,10 @@ IEM Cologne Major 2026 made the Aquarius breakthrough arc easy to map onto a pub
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Juno Astrology](/en/wiki/juno-astrology)
+- [Rhaenyra Targaryen Zodiac Sign](/en/wiki/rhaenyra-targaryen-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to Aquarius Sun in natal chart interpretation](/en/wiki/how-to-read-birth-chart) — maps the breakthrough-after-isolation archetype across life domains beyond competitive performance, relevant to anyone with Aquarius placements processing an extended developmental arc
 - [how to read a birth chart when birth time is unknown](/en/wiki/how-to-read-birth-chart) — explains why houses, rising sign, and some timing claims should be handled carefully for public figures
 - *fixed signs in long-form competitive arcs* — expands the fixed-sign endurance pattern behind many delayed breakthrough stories
@@ -108,6 +112,8 @@ IEM Cologne Major 2026 made the Aquarius breakthrough arc easy to map onto a pub
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the NiKo birth chart pattern in your own natal map with your confirmed birth time. A complete chart can show houses, angles, Moon placement, and major planetary contacts; a public-date reading like this one should stay narrower. From there, the breakthrough-after-isolation arc becomes readable in your own chart, not as a fixed outcome but as a developmental pattern worth recognizing before the moment arrives.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

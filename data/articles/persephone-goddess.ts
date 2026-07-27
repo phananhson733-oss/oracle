@@ -134,6 +134,8 @@ Hades names the underworld's ruler (and Pluto the modern planet that carries the
 
 Map your own chart for the descent-and-return pattern by working through the full birth-chart walkthrough step by step. You can come away with the specific placements, Pluto, the underworld houses, the nodal axis, where this rhythm tends to surface for you, along with a clearer sense of which season of the cycle you are living through right now and which one tends to come next. Reading your chart this way turns the myth from a story you admire into a map you can stand inside, so the next time the ground opens you already know the shape of the path back. Read the [full guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) to see where the descent-and-return pattern shows up for you.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — shaped the depth-psychological reading of Pluto through the Hades and Persephone myth that this archetype draws on

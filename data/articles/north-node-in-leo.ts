@@ -113,6 +113,8 @@ The nodes are calculated points rather than visible bodies, so an accurate birth
 
 The Leo North Node only becomes concrete once you find it in your own chart. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your own nodes by sign and see whether the Leo-Aquarius axis runs through it. You finish with a concrete picture of where your growth edge sits rather than an abstract rule, and a clearer sense of why the pull toward the background and the pull toward a personal voice are two ends of the same developmental question.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Howard Sasportas — developed the psychological, growth-centered reading of the chart that frames the nodes as developmental direction

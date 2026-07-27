@@ -117,6 +117,10 @@ Structurally, no — every chart uses the same signs, planets, and houses. The d
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [companion reading of Teyana Taylor's birth chart](/en/wiki/teyana-taylor-birth-chart) — compare how the same symbolic method reads a different public performer.
 - [the 12th house that Pisces traditionally rules](/en/wiki/12th-house-astrology) — go deeper on the house tied to Pisces, the sign most often linked to this chart.
 - [overview of synastry and compatibility charts](/en/wiki/synastry-chart-compatibility) — see how two charts get read together rather than one alone.
@@ -125,6 +129,8 @@ Structurally, no — every chart uses the same signs, planets, and houses. The d
 ## Take Action
 
 Ready to move from reading a celebrity's chart to reading your own? [Learn how to read your own birth chart step by step](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising in one place — the same structure used here — so you can start spotting the quiet patterns that shape how you show up in the world.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

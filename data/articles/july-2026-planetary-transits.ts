@@ -132,6 +132,8 @@ On July 30 the Full Moon in Aquarius closes the month, sitting opposite the Sun 
 The fastest way to make July 2026 useful is to stop reading these transits in the abstract and locate them on your own chart. If you have never mapped the houses against the planets, start with the basics. [Read the full guide to reading a birth chart to see where July's transits land for you.](/en/wiki/how-to-read-birth-chart)
 
 For the structural map of which life area each date touches, the overview of [the astrological houses and what each one governs](/en/wiki/astrology-houses) is the companion piece to keep open beside this one.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 `,
 };
 

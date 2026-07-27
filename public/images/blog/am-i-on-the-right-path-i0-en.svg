@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" role="img" aria-label="South Node vs North Node: Where the Right-Path Question Points">
+  <defs>
+    <linearGradient id="amiontherightpath0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="amiontherightpath0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="amiontherightpath0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amiontherightpath0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amiontherightpath0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="amiontherightpath0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="527" rx="22" fill="url(#amiontherightpath0en-panel)"/>
+  <ellipse cx="198" cy="127" rx="380" ry="180" fill="url(#amiontherightpath0en-neb1)"/>
+  <ellipse cx="623" cy="424" rx="334" ry="170" fill="url(#amiontherightpath0en-neb2)"/>
+  <circle cx="493.2" cy="429.3" r="1.59" fill="#cfc8ea" opacity="0.26"/><circle cx="392.1" cy="465.1" r="1.60" fill="#cfc8ea" opacity="0.16"/><circle cx="572.5" cy="436.9" r="0.74" fill="#cfc8ea" opacity="0.19"/><circle cx="169.2" cy="67.3" r="1.40" fill="#cfc8ea" opacity="0.18"/><circle cx="537.0" cy="56.3" r="0.89" fill="#cfc8ea" opacity="0.13"/><circle cx="335.0" cy="229.4" r="0.41" fill="#cfc8ea" opacity="0.22"/><circle cx="115.4" cy="237.2" r="1.00" fill="#cfc8ea" opacity="0.20"/><circle cx="725.4" cy="334.3" r="0.48" fill="#cfc8ea" opacity="0.21"/><circle cx="244.1" cy="120.2" r="1.41" fill="#cfc8ea" opacity="0.46"/><circle cx="259.3" cy="448.8" r="0.54" fill="#cfc8ea" opacity="0.14"/><circle cx="575.9" cy="397.6" r="1.46" fill="#cfc8ea" opacity="0.24"/><circle cx="172.3" cy="110.6" r="1.38" fill="#cfc8ea" opacity="0.52"/><circle cx="239.2" cy="136.0" r="0.79" fill="#cfc8ea" opacity="0.20"/><circle cx="275.1" cy="157.6" r="1.21" fill="#cfc8ea" opacity="0.51"/><circle cx="32.4" cy="166.2" r="1.65" fill="#cfc8ea" opacity="0.44"/><circle cx="70.2" cy="102.2" r="1.22" fill="#cfc8ea" opacity="0.44"/><circle cx="420.4" cy="354.8" r="1.48" fill="#cfc8ea" opacity="0.14"/><circle cx="578.1" cy="384.2" r="1.40" fill="#cfc8ea" opacity="0.51"/><circle cx="720.6" cy="413.0" r="0.81" fill="#cfc8ea" opacity="0.51"/><circle cx="188.9" cy="432.1" r="1.29" fill="#cfc8ea" opacity="0.39"/><circle cx="411.1" cy="162.8" r="1.52" fill="#cfc8ea" opacity="0.23"/><circle cx="200.1" cy="303.5" r="1.43" fill="#cfc8ea" opacity="0.16"/><circle cx="728.8" cy="43.8" r="1.30" fill="#cfc8ea" opacity="0.22"/><circle cx="563.2" cy="399.6" r="1.37" fill="#cfc8ea" opacity="0.48"/><circle cx="556.9" cy="77.8" r="0.69" fill="#cfc8ea" opacity="0.49"/><circle cx="727.8" cy="100.0" r="0.56" fill="#cfc8ea" opacity="0.13"/><circle cx="296.2" cy="221.9" r="1.67" fill="#cfc8ea" opacity="0.50"/><circle cx="12.8" cy="290.3" r="0.85" fill="#cfc8ea" opacity="0.30"/><circle cx="165.5" cy="110.6" r="1.65" fill="#cfc8ea" opacity="0.39"/><circle cx="236.4" cy="113.4" r="1.07" fill="#cfc8ea" opacity="0.16"/><circle cx="370.1" cy="372.2" r="0.62" fill="#cfc8ea" opacity="0.52"/><circle cx="383.9" cy="437.2" r="0.96" fill="#cfc8ea" opacity="0.27"/><circle cx="178.4" cy="30.7" r="1.20" fill="#cfc8ea" opacity="0.25"/><circle cx="402.2" cy="133.0" r="1.10" fill="#cfc8ea" opacity="0.18"/><circle cx="700.3" cy="427.3" r="0.83" fill="#cfc8ea" opacity="0.17"/><circle cx="195.1" cy="449.5" r="1.58" fill="#cfc8ea" opacity="0.18"/><circle cx="716.4" cy="124.0" r="1.32" fill="#cfc8ea" opacity="0.40"/><circle cx="633.1" cy="303.4" r="1.56" fill="#cfc8ea" opacity="0.32"/><circle cx="519.0" cy="121.2" r="0.58" fill="#cfc8ea" opacity="0.40"/><circle cx="559.7" cy="137.1" r="0.69" fill="#cfc8ea" opacity="0.30"/><circle cx="319.9" cy="139.9" r="0.50" fill="#cfc8ea" opacity="0.15"/><circle cx="341.4" cy="170.9" r="1.11" fill="#cfc8ea" opacity="0.46"/><circle cx="622.0" cy="430.1" r="0.57" fill="#cfc8ea" opacity="0.26"/><circle cx="74.1" cy="239.0" r="0.94" fill="#cfc8ea" opacity="0.17"/><circle cx="206.2" cy="325.8" r="1.05" fill="#cfc8ea" opacity="0.24"/><path d="M 491.5590082462877 114.1 L 492.1 116.9 L 495.0 117.4744991865009 L 492.1 118.0 L 491.5590082462877 120.9 L 491.0 118.0 L 488.2 117.4744991865009 L 491.0 116.9 Z" fill="#f6e6bf" opacity="0.5244712070096285"/><path d="M 517.5145737808198 478.2 L 518.0 480.9 L 520.6 481.3702769763768 L 518.0 481.9 L 517.5145737808198 484.5 L 517.0 481.9 L 514.4 481.3702769763768 L 517.0 480.9 Z" fill="#f6e6bf" opacity="0.7577466010581702"/><path d="M 578.8574287202209 215.7 L 579.4 218.5 L 582.2 219.0739024747163 L 579.4 219.6 L 578.8574287202209 222.4 L 578.3 219.6 L 575.5 219.0739024747163 L 578.3 218.5 Z" fill="#f6e6bf" opacity="0.6004668860230595"/><path d="M 293.31443120352924 401.3 L 293.9 404.7 L 297.3 405.29558028280735 L 293.9 405.9 L 293.31443120352924 409.3 L 292.7 405.9 L 289.4 405.29558028280735 L 292.7 404.7 Z" fill="#f6e6bf" opacity="0.5456679267343134"/><path d="M 687.1379215475172 394.4 L 687.7 397.3 L 690.7 397.89302934519947 L 687.7 398.5 L 687.1379215475172 401.4 L 686.6 398.5 L 683.6 397.89302934519947 L 686.6 397.3 Z" fill="#f6e6bf" opacity="0.6633902114350348"/><path d="M 392.1 465.1 L 335.0 229.4 L 259.3 448.8 L 239.2 136.0 L 32.4 166.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="527" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="516" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 510.8 L 16.5 513.5 L 19.2 514 L 16.5 514.5 L 16 517.2 L 15.5 514.5 L 12.8 514 L 15.5 513.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 510.8 L 744.5 513.5 L 747.2 514 L 744.5 514.5 L 744 517.2 L 743.5 514.5 L 740.8 514 L 743.5 513.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">South Node vs North Node: Where the Right-Path Question</text>
+  <text x="380" y="73" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Points</text>
+  <line x1="230" y1="94" x2="368" y2="94" stroke="url(#amiontherightpath0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="94" x2="530" y2="94" stroke="url(#amiontherightpath0en-rule)" stroke-width="1"/>
+  <path d="M 380 89.0 L 380.8 93.2 L 385.0 94 L 380.8 94.8 L 380 99.0 L 379.2 94.8 L 375.0 94 L 379.2 93.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="126" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="126" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 135.6 L 48.3 138.5 L 51.1 139 L 48.3 139.5 L 47.75 142.4 L 47.2 139.5 L 44.4 139 L 47.2 138.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="155.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">South Node</text>
+  <path d="M 70 184.8 L 70.5 187.5 L 73.2 188 L 70.5 188.5 L 70 191.2 L 69.5 188.5 L 66.8 188 L 69.5 187.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="193.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Competence you already carry</text>
+  <path d="M 70 213.8 L 70.5 216.5 L 73.2 217 L 70.5 217.5 L 70 220.2 L 69.5 217.5 L 66.8 217 L 69.5 216.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="222.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Patterns that feel safe and familiar</text>
+  <path d="M 70 242.8 L 70.5 245.5 L 73.2 246 L 70.5 246.5 L 70 249.2 L 69.5 246.5 L 66.8 246 L 69.5 245.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="251.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Where you retreat under stress</text>
+  <path d="M 70 271.8 L 70.5 274.5 L 73.2 275 L 70.5 275.5 L 70 278.2 L 69.5 275.5 L 66.8 275 L 69.5 274.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Easy fluency you sacrifice to grow</text>
+  <path d="M 380 306.5 L 380.7 310.3 L 384.5 311 L 380.7 311.7 L 380 315.5 L 379.3 311.7 L 375.5 311 L 379.3 310.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="324" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="324" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 333.6 L 48.3 336.5 L 51.1 337 L 48.3 337.5 L 47.75 340.4 L 47.2 337.5 L 44.4 337 L 47.2 336.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="353.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">North Node</text>
+  <path d="M 70 382.8 L 70.5 385.5 L 73.2 386 L 70.5 386.5 L 70 389.2 L 69.5 386.5 L 66.8 386 L 69.5 385.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Less familiar direction that stretches you</text>
+  <path d="M 70 411.8 L 70.5 414.5 L 73.2 415 L 70.5 415.5 L 70 418.2 L 69.5 415.5 L 66.8 415 L 69.5 414.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="420.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Where the right-path question usually points</text>
+  <path d="M 70 440.8 L 70.5 443.5 L 73.2 444 L 70.5 444.5 L 70 447.2 L 69.5 444.5 L 66.8 444 L 69.5 443.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="449.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Can feel uncomfortable before it feels right</text>
+  <path d="M 70 469.8 L 70.5 472.5 L 73.2 473 L 70.5 473.5 L 70 476.2 L 69.5 473.5 L 66.8 473 L 69.5 472.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="478.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Completes one zodiac cycle every 18.6 years</text>
+  <path d="M 202.22749999999988 501.4 L 202.6 503.6 L 204.8 504 L 202.6 504.4 L 202.22749999999988 506.6 L 201.8 504.4 L 199.6 504 L 201.8 503.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="508" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 501.4 L 558.2 503.6 L 560.4 504 L 558.2 504.4 L 557.7725000000002 506.6 L 557.4 504.4 L 555.2 504 L 557.4 503.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

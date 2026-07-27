@@ -108,6 +108,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *explainer on Libra Sun personality traits* — unpacks the base sign sitting under her stellium.
 - *guide to stelliums and stacked placements* — explains why three or more planets in one sign change a whole reading.
 - *comparison of Gemini Moon emotional styles* — shows how a Gemini Moon shapes verbal reflexes.
@@ -116,6 +120,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Curious how your own placements stack up the way hers do? [Generate your free birth chart to explore Sharon Osbourne's zodiac sign](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your stelliums, Moon, and Rising in minutes instead of guessing from one Sun sign. Seeing the whole pattern at once is how a chart stops being a label and starts working as a mirror for how you actually negotiate, push back, and stay loyal.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

@@ -113,6 +113,8 @@ The nakshatra just before, Shatabhisha, sits fully in Aquarius and carries a mor
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see which nakshatra holds your Moon and how its symbolism reads in your own placements. You get a clear view of your lunar mansion and a reminder that the chart names a disposition rather than a fate, and, more usefully, a way to ask where your own conviction is finding an outlet before you credit or blame the stars for the fire.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Prokerala — Jyotish reference documenting Purva Bhadrapada's Jupiter rulership, Aja Ekapada deity, and its dual mystical-destructive symbolism

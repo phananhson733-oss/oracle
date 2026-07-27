@@ -103,6 +103,10 @@ Rarely. The Moon, Rising, and aspect patterns frequently add to or contradict wh
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Mariah Carey's zodiac sign profile](/en/wiki/mariah-carey-zodiac-sign) — shows how two layers of the same chart can tell different stories.
 - [synastry compatibility overview](/en/wiki/synastry-chart-compatibility) — for readers curious how two charts interact rather than one.
 - [Astrological sign (Wikipedia)](https://en.wikipedia.org/wiki/Astrological_sign) — neutral background on what each sign traditionally means.
@@ -113,6 +117,8 @@ Rarely. The Moon, Rising, and aspect patterns frequently add to or contradict wh
 Read your own chart the same layered way this page applies to a public figure: begin with the Sun, then add the Moon and Rising. You get a structured map of your own tendencies instead of a single borrowed label — and seeing your contradictions laid out is often where steady self-awareness begins. [Generate your free birth chart to explore ben shelton zodiac sign](/en/wiki/how-to-read-birth-chart).
 
 This is not a clinical interpretation or mental health advice.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

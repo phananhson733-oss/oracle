@@ -105,18 +105,24 @@ Yes — as symbolism, not statistics. Read the sign for fun and personality, but
 
 ## Related Reading
 
-- [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that frames the tournament's wider astrology
-- [zodiac signs as World Cup 2026 teams](/en/wiki/zodiac-signs-as-world-cup-2026-teams) — the playful companion to this data-first piece
-- [Kylian Mbappé's birth chart](/en/wiki/kylian-mbappe-birth-chart) — a natal close-up on one of the game's marquee names
-- [Lionel Messi zodiac sign](/en/wiki/lionel-messi-zodiac-sign) — the Sun-sign read on the Argentine talisman
-- [Cristiano Ronaldo zodiac sign](/en/wiki/cristiano-ronaldo-zodiac-sign) — the Portuguese star's natal-sign profile
-- [Vinícius Jr zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — a younger star's Sun-sign reading
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
+- *World Cup 2026 astrology themes pillar* — the hub that frames the tournament's wider astrology
+- *zodiac signs as World Cup 2026 teams* — the playful companion to this data-first piece
 - *what the Relative Age Effect is* — the calendar cause behind the birth-month pattern
 - [transit_events cluster on 2026 planetary transits](/en/wiki/transits) — the real-sky backdrop to the tournament
+- [the Kylian Mbappe birth chart](/en/wiki/kylian-mbappe-birth-chart) — a full symbolic read of France's forward
+- [the Vinicius Jr birth chart](/en/wiki/vinicius-jr-birth-chart-astrology) — a detailed reading of the Brazil winger's chart
+- [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — a quick read of his Sun-sign profile
+- [Cristiano Ronaldo's zodiac sign](/en/wiki/cristiano-ronaldo-zodiac-sign) — his Sun-sign profile and what it signals on the pitch
+- [the Germany World Cup players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — individual chart reads for the German squad
 
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun for fun, while keeping the best soccer players' zodiac sign question in honest perspective. You get a clear view of your own sign and a reminder that a label is not a cause, and, more usefully, a habit of asking what the calendar or the cutoff did before crediting the stars for a pattern that has a much plainer source.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

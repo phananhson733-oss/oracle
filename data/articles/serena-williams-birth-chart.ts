@@ -112,6 +112,10 @@ A Virgo Moon is traditionally associated with routine, precision, and steady sel
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [the 6th house in astrology](/en/wiki/6th-house-astrology) — unpacks the disciplined, detail-driven Moon that shapes her training style
 - [the North Node in Taurus](/en/wiki/north-node-in-taurus) — covers the durability theme behind the disputed Rising sign
 - [synastry compatibility overview for Libra placements](/en/wiki/synastry-chart-compatibility) — explores how a Libra Sun relates and partners
@@ -120,6 +124,8 @@ A Virgo Moon is traditionally associated with routine, precision, and steady sel
 ## Take Action
 
 This is not a clinical interpretation or mental health advice—it's a symbolic frame for thinking about composure and discipline. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the serena williams birth chart in your own configuration: you get your Sun, Moon, and Rising laid out in a single view, and that view can show you where your public composure and your private standards pull against each other—the same tension this chart maps onto two decades of competition.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

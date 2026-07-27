@@ -175,6 +175,7 @@ Watch your behavior in low-stakes friction, like a small disagreement, and notic
 - [root chakra meaning](/en/wiki/root-chakra-meaning) — a useful pairing when an over-active solar plexus needs steadying from below.
 - [sacral chakra meaning](/en/wiki/sacral-chakra-meaning) — the center just below, where flow and pleasure feed the will to act.
 - [yellow aura explainer](/en/wiki/yellow-aura-meaning) — the solar plexus color read from the outside.
+- [Leo rising and the houses](/en/wiki/leo-rising-houses) — a Sun-ruled, personal-power lens that mirrors solar-plexus themes
 
 ## Take Action
 

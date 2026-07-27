@@ -115,6 +115,10 @@ It can describe temperament — focus, patience, a self-critical streak — but 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart profile* — another athlete's chart read as archetypes, useful for comparing how stellium patterns show up
 - *meaning of the Moon sign in a birth chart* — goes deeper on the Libra Moon theme touched on above
 - [Alexander Zverev (Wikipedia)](https://en.wikipedia.org/wiki/Alexander_Zverev) — factual biography behind the birth data used here
@@ -124,6 +128,8 @@ It can describe temperament — focus, patience, a self-critical streak — but 
 Curious how your own placements stack up against his? [Generate your free birth chart to explore alexander zverev birth chart](/en/wiki/how-to-read-birth-chart). You will get a full map of your planets and signs laid out the same way, and — more usefully — a clearer sense of where your own steadiness, your voice under pressure, and your instinct for fairness actually come from.
 
 This is not a clinical interpretation or mental health advice.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

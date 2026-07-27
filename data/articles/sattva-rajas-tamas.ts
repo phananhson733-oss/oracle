@@ -103,6 +103,9 @@ Both. The Samkhya framework treats mind and body as continuous expressions of th
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [3 Gunas](/en/wiki/3-gunas)
+<!-- gg-cluster-links:end -->
 - *Ayurvedic dosha overview* — how doshas and gunas interact in Ayurvedic practice, and where the two systems should be kept distinct to preserve each one's precision
 - *sattvic diet and food guidelines* — practical detail on how food choices shift guna proportions, expanding the observational signals covered in How to Read
 - *pranayama and breathwork techniques* — breath practices most used to shift guna states, particularly from tamas toward sattvic clarity or from excess rajas toward calm
@@ -111,6 +114,8 @@ Both. The Samkhya framework treats mind and body as continuous expressions of th
 ## Take Action
 
 [Generate your free birth chart to explore sattva rajas tamas.](/en/wiki/how-to-read-birth-chart) Your chart can point to planetary placements traditionally linked to each guna's qualities — Mars and dynamic aspects often correspond to rajasic drive, Saturn and fixed configurations to tamasic stability or resistance, benefic placements in prominent positions to sattvic clarity. Seeing which conditions are emphasized at your birth gives you a starting point for understanding why certain guna proportions feel native — and which adjustments tend to take more deliberate practice to sustain.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

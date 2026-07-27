@@ -112,6 +112,10 @@ For the Sun and Moon, no. For the Rising sign and the house placements, yes — 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Profile of the Libra rising sign](/en/wiki/libra-rising-houses) — for readers comparing her public mask with other rising signs.
 - [Guide to synastry and compatibility charts](/en/wiki/synastry-chart-compatibility) — useful for reading how her chart interacts with a partner's.
 - [Teyana Taylor's birth chart](/en/wiki/teyana-taylor-birth-chart) — the same case-study method applied to another music-world figure.
@@ -119,6 +123,8 @@ For the Sun and Moon, no. For the Rising sign and the house placements, yes — 
 ## Take Action
 
 This is a cultural reading meant for reflection, not a clinical interpretation or mental-health advice. Curious how your own placements compare? [Generate your own free birth chart](/en/wiki/how-to-read-birth-chart) and you will get the same Sun–Moon–Rising map astrologers use for any public figure. Seeing your own contradictions named the way hers are can make them feel less like flaws and more like a portrait you can finally read on purpose.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

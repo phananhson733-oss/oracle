@@ -121,6 +121,7 @@ The Sun, Moon, and Mars of each player carry the most weight for temperament and
 - [meaning of the rising sign](/en/wiki/ascendant-meaning) — the rising sign refines how each player's on-court persona actually comes across.
 - [birth chart profile of Serena Williams](/en/wiki/serena-williams-birth-chart) — a published athlete chart that shows how natal placements map onto a competitive career.
 - [Electional astrology (Wikipedia)](https://en.wikipedia.org/wiki/Electional_astrology) — outside context on the older tradition of charting chosen or notable moments.
+- [the World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) — the full tournament overview tracing Jupiter's Cancer-to-Leo shift across the qualified nations
 
 ## Take Action
 

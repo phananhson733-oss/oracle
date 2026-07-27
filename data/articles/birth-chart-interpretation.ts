@@ -123,6 +123,10 @@ Begin with the Lagna and the Moon sign, then add one house at a time. Trying to 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Elvis Birth Chart](/en/wiki/elvis-birth-chart)
+- [Rodri Birth Chart](/en/wiki/rodri-birth-chart)
+<!-- gg-cluster-links:end -->
 - [guide to the twelve houses in a birth chart](/en/wiki/astrology-houses) — maps what each Bhāva governs across the areas of life
 - [explainer on planetary aspects like trine and square](/en/wiki/trine-in-astrology) — shows how placements modify one another
 - [overview of the lunar nodes Rahu and Ketu](/en/wiki/north-node-vs-south-node) — covers the karmic axis central to Vedic reading

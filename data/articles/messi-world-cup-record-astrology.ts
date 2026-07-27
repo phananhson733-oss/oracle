@@ -103,6 +103,7 @@ No. Transits time broad year-level themes, not specific fixtures, and whether Me
 ## Related Reading
 
 - [Argentina World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the collective lens behind the nation Messi has carried through five tournaments, and the argentina world cup astrology themes for the next cycle
+- [the Messi vs Yamal astrology comparison](/en/wiki/messi-vs-yamal-astrology) — the generational chart contrast between the two forwards
 
 ## Take Action
 

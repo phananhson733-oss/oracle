@@ -110,6 +110,8 @@ Either is defensible; they are both the North Node, located by slightly differen
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own North Node by sign and house, and notice which color your software happens to give it. You finish with the placement that carries the meaning, a clear sense that the blue was only ever a display choice, and the steadier habit of reading the glyph rather than the swatch.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — grounded the reading of astrology as a language of symbol rather than a literal catalog, the stance this correction takes

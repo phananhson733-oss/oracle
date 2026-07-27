@@ -111,6 +111,8 @@ You can plan around it rather than brace for it. Knowing the return date roughly
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find the exact degree and sign of your natal Mars, then note when transiting Mars next returns to it. You get the one fixed point every mars return reading starts from, and, more usefully, a recurring two-year checkpoint you can use to plan where your drive goes next rather than wonder where it went.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — read the chart as a language of pattern rather than a fixed verdict, the interpretive stance this piece takes

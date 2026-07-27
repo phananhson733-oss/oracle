@@ -105,6 +105,8 @@ It rarely disappears, but it can soften. Many people build a steady workaround a
 
 Open your own chart and mark every pair of planets sitting about 90 degrees apart, then write one sentence for each square naming the two drives in tension. You will end up with a short map of exactly where your chart asks for deliberate work, instead of a vague sense that something is wrong. That map tends to be the first time the square stops reading as a verdict and starts reading as a set of instructions for where you grow. Read the full guide to reading a birth chart to locate the squares in your own chart at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart).
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Dane Rudhyar — credited here for the move from fixed verdicts to a square read as a developmental prompt

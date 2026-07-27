@@ -113,6 +113,9 @@ A general Saturn-in-Scorpio transit colors a period for a whole age group; the r
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning and how to find yours](/en/wiki/ascendant-meaning) — your rising sign sets which house Saturn's Scorpio return falls in.
 - [guide to the twelve houses in a birth chart](/en/wiki/astrology-houses) — the houses show exactly where this audit lands for you.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — background on the cycle behind this page.

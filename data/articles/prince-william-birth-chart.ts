@@ -115,6 +115,8 @@ June 21, 2026 places three distinct markers on the same date: Prince William's 4
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to map your own Sun, Moon, and Rising placements the same way this reading examines prince william birth chart. You'll see which part of your chart is doing the outward-facing work and where your emotional instinct actually sits in relation to your identity. Understanding how those two layers interact — how much your public image matches your interior, and what it costs when they diverge — is one of the more concrete things a natal chart can give you.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Birth data for Prince William (June 21, 1982, 9:03 PM, London) is a matter of public record, documented with Rodden Rating AA in astrological data archives, indicating sourcing from official records.

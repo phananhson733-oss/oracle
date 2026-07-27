@@ -109,6 +109,9 @@ No — it is read as a maturation cycle, not a verdict on your future. It tends 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [guide to the meaning of Saturn in Pisces](/en/wiki/saturn-in-pisces) — see how the same planet reads in a very different sign.
 - [explainer on the natal fourth house of home and family](/en/wiki/astrology-houses) — the chart area this return activates most directly.
 - *overview of planetary returns in astrology* — how Jupiter, Saturn, and Chiron returns compare across a life.

@@ -120,6 +120,8 @@ Yes. The trait appears at similar rates across genders, even though cultural mes
 
 Curious how your chart frames life as a highly sensitive person? [Read the birth-chart guide](/en/wiki/how-to-read-birth-chart) and look at the watery, 12th-house corners many sensitive people recognize. The guide leaves you with a map of where your chart mirrors the trait — the placements that line up with depth of processing, strong empathy, and a lower overstimulation ceiling. Read that way, a sensitive temperament stops looking like a flaw to fix and starts looking like a shape worth understanding and working with on its own terms. The next move is simple: name which facet of your sensitivity runs hottest, and use that as the starting point rather than a verdict.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Elaine Aron — the psychologist who introduced the term highly sensitive person and described sensory processing sensitivity as a temperament trait rather than a clinical condition

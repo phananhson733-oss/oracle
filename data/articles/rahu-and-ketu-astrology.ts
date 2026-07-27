@@ -112,6 +112,8 @@ In the Vimshottari Dasha system the Rahu major period runs 18 years and the Ketu
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find where Rahu and Ketu fall in your own chart and read the karmic axis for yourself. You get a clear view of the two nodes and the houses they activate, and, more usefully, a way to ask where you are reaching outward and where you already stand on solid ground before treating either node as a verdict.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - B. V. Raman — grounded the classical reading of the lunar nodes within the Jyotish predictive tradition this framework draws on

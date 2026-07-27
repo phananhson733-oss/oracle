@@ -109,6 +109,18 @@ In Vedic interpretation, the birth station primarily governs the dasha timing se
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Ashlesha Nakshatra](/en/wiki/ashlesha-nakshatra)
+- [Rohini Nakshatra](/en/wiki/rohini-nakshatra)
+- [Pushya Nakshatra](/en/wiki/pushya-nakshatra)
+- [Anuradha Nakshatra](/en/wiki/anuradha-nakshatra)
+- [Bharani Nakshatra](/en/wiki/bharani-nakshatra)
+- [Mrigashira Nakshatra](/en/wiki/mrigashira-nakshatra)
+- [Swati Nakshatra](/en/wiki/swati-nakshatra)
+- [Hasta Nakshatra](/en/wiki/hasta-nakshatra)
+- [Krittika Nakshatra](/en/wiki/krittika-nakshatra)
+- [Ashwini Nakshatra](/en/wiki/ashwini-nakshatra)
+<!-- gg-cluster-links:end -->
 - *guide to all 27 lunar mansions* — individual profiles of each station and its dasha implications
 - *Rohini birth station in-depth page* — spoke page for one of the most studied natal placements, Moon-ruled and growth-oriented
 - *Bharani birth station overview* — spoke page for the Venus-ruled transformation station and what its dasha period tends to surface
@@ -117,6 +129,8 @@ In Vedic interpretation, the birth station primarily governs the dasha timing se
 ## Take Action
 
 [Generate your free birth chart to explore nakshatra](/en/wiki/how-to-read-birth-chart) — a Vedic chart shows your Moon's natal station and the dasha period currently active in your timeline. With that information, you get a concrete framework for reading not just your tendencies but when those tendencies become most consequential: which chapters are opening, which are winding down, and why this particular season of life feels the way it does.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

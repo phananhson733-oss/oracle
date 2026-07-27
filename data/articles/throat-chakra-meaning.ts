@@ -112,6 +112,7 @@ Subtle-energy traditions have long mapped the throat center to blue, treating it
 ## Related Reading
 
 If you want the bigger picture, the [chakra system overview](/en/wiki/chakra-system-overview) shows how the throat center leans on the others, and the [heart chakra reading](/en/wiki/heart-chakra-meaning) explains the warmth it borrows from below. To see which way your own expression is leaning right now, the [chakra test](/en/wiki/chakra-test) walks through how to self-assess the throat alongside the other six centers. If insight feels clear but stays unspoken, the center just above the throat is the natural next stop, since the throat is what turns that private clarity into words.
+- [Gemini rising](/en/wiki/gemini-rising) — a Mercury-ruled, communicative signature that mirrors throat-chakra themes
 
 ## Take Action
 

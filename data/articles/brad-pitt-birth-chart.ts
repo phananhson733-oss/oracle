@@ -110,6 +110,10 @@ Four planets in one sign concentrate its influence, so Capricorn's discipline ar
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *how planet clusters work in a birth chart* — a closer look at why a stellium like his Capricorn group can outweigh the Sun.
 - *Sagittarius Sun sign meaning* — unpacks the adventurous core identity at the center of his chart.
 - *Serena Williams's birth chart* — another public figure's chart to compare, useful for seeing how placements map to persona.

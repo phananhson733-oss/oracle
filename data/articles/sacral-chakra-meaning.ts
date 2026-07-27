@@ -133,6 +133,7 @@ It is mapped to the lower abdomen, roughly a couple of inches below the navel. I
 - [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — the willpower center just above the sacral, easy to confuse with it.
 - [orange aura explainer](/en/wiki/orange-aura-meaning) — the same creative-emotional energy read from the outside.
 - [Svadhishthana (Wikipedia)](https://en.wikipedia.org/wiki/Svadhishthana) — the traditional yogic source the modern reading grows from.
+- [Mars in Scorpio](/en/wiki/mars-in-scorpio) — a Pluto-ruled, deep-feeling placement resonant with sacral-chakra themes
 
 ## Take Action
 

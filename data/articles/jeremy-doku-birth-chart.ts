@@ -105,6 +105,9 @@ Astrologically it is a lens, not a prediction, and this reading makes no claim a
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [Gemini sign traits](/en/wiki/gemini) — unpacks the sign driving this whole chart in more depth.
 - [Astrology terms and chart degrees](/en/wiki/astrology-terms) — explains why a 29th-degree planet behaves the way Doku's Mars does.
 - [The Cancer sign](/en/wiki/cancer) — covers the home-and-family layer underneath the Gemini surface.
@@ -112,6 +115,8 @@ Astrologically it is a lens, not a prediction, and this reading makes no claim a
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore jeremy doku birth chart. The tool maps your own placements the same way Doku's Gemini Sun and anaretic Mars are read here, turning abstract sign names into a picture of how you tend to move through pressure. Seeing your chart laid out this way often makes one thing clearer: the choices that look inconsistent from the outside are usually your deepest values showing up right on time.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

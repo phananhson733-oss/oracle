@@ -111,6 +111,9 @@ The active window runs about two to three years as Saturn approaches, exactly me
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [house placement pages for the birth chart](/en/wiki/astrology-houses) — pinpoints which life area your natal Saturn puts under review.
 - [page on the lunar nodes](/en/wiki/north-node-vs-south-node) — pairs the Saturn review with your chart's long-term growth axis.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — a neutral overview of the cycle and its history.

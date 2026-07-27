@@ -126,6 +126,8 @@ These guides extend the framework of The Astrological Houses without repeating w
 
 Ready to see the syntax of The Astrological Houses in motion? Read the [8th House guide](/en/wiki/8th-house-meaning) to watch one house unfold across a working chart, with sign and planet layered into a single reading. You'll come away with a repeatable method you can run on any placement, and a steadier sense that your chart maps patterns to work with, not a fate to brace against.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Robert Hand — mapped the philosophical stakes of house-system choice more thoroughly than almost anyone in the field

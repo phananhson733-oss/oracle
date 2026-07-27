@@ -113,6 +113,10 @@ It is linked to adaptability and an ease with ambiguous, layered roles. The Nept
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Kylie Jenner Zodiac Sign](/en/wiki/kylie-jenner-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [primer on Pisces' Neptune-ruled symbolism](/en/wiki/neptune-in-pisces) — a closer match for the imagination and permeability discussed here
 - [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — how Sun, Moon, and rising fit together once you move beyond a Sun-only read
 - [another celebrity zodiac-sign case study](/en/wiki/lionel-messi-zodiac-sign) — the same identity-versus-chart-structure method applied to a different public figure
@@ -122,6 +126,8 @@ It is linked to adaptability and an ease with ambiguous, layered roles. The Nept
 ## Take Action
 
 Curious where your own Sun, Moon, and Rising actually land? [Generate your free birth chart to explore the placements behind greta lee zodiac sign](/en/wiki/how-to-read-birth-chart). You'll get a full map of your chart in minutes — and a clearer sense of which parts rest on solid ground and which, like a missing birth time, leave the story half-written.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

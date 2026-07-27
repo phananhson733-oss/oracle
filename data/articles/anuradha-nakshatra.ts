@@ -108,6 +108,9 @@ It is usually shown as a lotus or a triumphal archway. Both images point to devo
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - [guide to the Scorpio moon sign](/en/wiki/north-node-in-scorpio) — because this lunar mansion sits inside Scorpio and shares its emotional depth.
 - *explainer on Saturn in Vedic astrology* — since Saturn rules the star and shapes its patience and discipline.
 - *comparison with Jyeshtha nakshatra* — the neighboring lunar mansion it is most often confused with.
@@ -117,6 +120,8 @@ It is usually shown as a lotus or a triumphal archway. Both images point to devo
 ## Take Action
 
 [Generate your free birth chart to explore anuradha nakshatra](/en/wiki/how-to-read-birth-chart) and find where your Moon lands in Scorpio. The chart shows whether this lunar mansion shapes your loyalty patterns and how Saturn's discipline tends to color them. Seeing that clearly is what lets you tell devotion in the service of a shared purpose apart from attachment that has lost its boundary — and that distinction is where steadier self-awareness in your closest relationships begins.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

@@ -117,6 +117,9 @@ Rahu amplifies desire in cycles rather than building steady accumulation. In Lib
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *overview of Rahu placements across the zodiac* — examines how Rahu's co-ruling role shapes nakshatra expressions across different signs, including the Libra-Scorpio axis where Swati and Vishakha sit adjacent
 - [guide to Libra in the natal chart](/en/wiki/how-to-read-birth-chart) — covers Venus-ruled Libra's orientation toward exchange, partnership, and aesthetic value that anchors this nakshatra's home sign
 - [Svati (nakshatra) (Wikipedia)](https://en.wikipedia.org/wiki/Svati_(nakshatra))
@@ -124,6 +127,8 @@ Rahu amplifies desire in cycles rather than building steady accumulation. In Lib
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see where this nakshatra falls in your own placements. Once you can locate the Rahu-Venus axis in your chart, the circulation pattern stops reading like a problem and starts reading like a map — one that shows you what structures to work with rather than against.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

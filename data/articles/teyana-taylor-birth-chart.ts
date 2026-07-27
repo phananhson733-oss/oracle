@@ -105,6 +105,10 @@ No. It's an interpretive framework for temperament and style, not a forecast. Th
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Emma Watson's zodiac sign](/en/wiki/emma-watson-zodiac-sign) — pairs well as the next read in this batch of pop-culture chart studies.
 - how rising signs shape persona — useful when you want to see how an unknown birth time changes a reading.
 - [synastry compatibility overview](/en/wiki/synastry-chart-compatibility) — for readers curious how two charts interact rather than one.
@@ -116,6 +120,8 @@ No. It's an interpretive framework for temperament and style, not a forecast. Th
 Generate your free birth chart to explore the ideas behind the Teyana Taylor birth chart. You'll get your own Sun, Moon, and rising layout in minutes, mapped to the same houses and angles discussed here — and seeing your placements side by side with a public figure's is often the fastest way to tell hype from genuine self-understanding. Start with [how to read a birth chart step by step](/en/wiki/how-to-read-birth-chart).
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

@@ -115,6 +115,8 @@ It tends to describe first impressions, physical bearing, and the reflexes that 
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own ascendant and watch how it sets the rest of the wheel. With an accurate birth time entered, the chart shows your rising sign on the left and numbers the houses out from it, turning the ascendant meaning from an abstract idea into the visible hinge your whole chart turns on.
 
+Not sure of your rising sign? The [rising sign calculator](/en/rising-sign-calculator) finds your ascendant from your birth time and place.
+
 ## Sources
 
 - Liz Greene — grounded the reading of the rising sign as a symbolic meeting point between the inner self and the world, rather than a fixed trait

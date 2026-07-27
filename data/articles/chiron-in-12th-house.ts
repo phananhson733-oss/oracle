@@ -107,6 +107,8 @@ The three links most relevant to this placement are already woven into the secti
 
 Open your birth chart and locate both Chiron and the 12th house cusp, then trace which sign and any planets share that hidden corner. The result is a precise map of where this sensitivity lives and how it threads through the rest of your chart. Read the full guide to reading a birth chart to find Chiron and the 12th house in your own chart at [reading a birth chart step by step](/en/wiki/how-to-read-birth-chart) — and you may find that the part you once worked hardest to hide is also the part that reads other people most clearly.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Melanie Reinhart — developed the modern psychological reading of Chiron as a point of woundedness and insight

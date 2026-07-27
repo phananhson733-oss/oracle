@@ -106,6 +106,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Kylie Jenner's zodiac sign](/en/wiki/kylie-jenner-zodiac-sign) — another celebrity whose public brand outruns the one-line Sun read
 - [Sharon Osbourne's zodiac sign](/en/wiki/sharon-osbourne-zodiac-sign) — a chart where the rising sign stays debated, much like the limits flagged here
 - [Mariah Carey (Wikipedia)](https://en.wikipedia.org/wiki/Mariah_Carey)
@@ -113,6 +117,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Generate your free birth chart to explore Mariah Carey's chart. Running your own chart gives you the same layered map — Sun, Moon, and house placements side by side — so you can see where your own drive turns inward instead of trusting a single-sign label. Read your full birth chart at [how to read a birth chart](/en/wiki/how-to-read-birth-chart) and you may find the parts of yourself that, like Carey's fire, do their best work behind the scenes.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

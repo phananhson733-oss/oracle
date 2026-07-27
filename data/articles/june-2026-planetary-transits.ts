@@ -129,6 +129,8 @@ The Sun leaves Gemini and enters Cancer at the June 22 solstice, the longest day
 **What does the Gemini New Moon on June 16 mean?**
 
 The article frames the June 16 New Moon in Gemini as a workmanlike fresh cycle around the everyday machinery of connection — talking, writing, learning, and short hops between people and ideas. Paired with Venus entering Leo on June 14, it's read as a mid-month reset in how you talk, connect, and show up socially, with a warmer and more visible tone.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 `,
 };
 

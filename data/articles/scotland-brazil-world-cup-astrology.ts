@@ -109,6 +109,7 @@ No. Chiron entered Taurus on June 19 as part of a years-long transit about self-
 - [Scotland's World Cup 2026 astrology](/en/wiki/scotland-world-cup-2026-astrology-saturn-return) — the Scotland side's own Saturn-return campaign reading behind this fixture
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — a wider symbolic look at how Sun-sign themes map onto footballers, useful context for any fixture reading
 - [Scotland national football team (Wikipedia)](https://en.wikipedia.org/wiki/Scotland_national_football_team)
+- [Scotland's World Cup 2026 Saturn-return astrology](/en/wiki/scotland-world-cup-2026-astrology-saturn-return) — how a national Saturn return frames Scotland's campaign
 
 ## Take Action
 

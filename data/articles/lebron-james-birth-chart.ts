@@ -125,6 +125,8 @@ It is only as accurate as the birth data behind it, and honest about its limits.
 
 This is not a clinical interpretation or mental health advice.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Dane Rudhyar — pioneered the person-centered, psychological reading of the birth chart as character rather than fate

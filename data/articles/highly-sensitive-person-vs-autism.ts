@@ -115,6 +115,8 @@ They share visible sensory overwhelm, so casual comparisons lump them together a
 
 Start with the sensitivity side on its own terms before reaching for any comparison: read the full guide and write down two or three traits that sound like you. You'll come away with clearer language for how you actually experience the world, and that clarity is what lets you bring a calm, specific question to a professional if an autism assessment ever feels right. Want to understand the sensitive side on its own terms first? Read the [full guide to the highly sensitive person](/en/wiki/highly-sensitive-person).
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Sensory processing sensitivity — the psychological temperament concept that underpins the highly sensitive person trait, developed within research on individual differences in sensitivity.

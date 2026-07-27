@@ -112,6 +112,8 @@ Because each one is a single factor in a whole chart, and factors modify each ot
 
 Open your own chart and label the four angles plus your single tightest aspect using the checklist above. You will walk away with a one-page map of the relationships that drive your chart, instead of a stack of disconnected definitions, and that map is usually the first time the words start to describe a real person rather than a category. Read the full guide to reading a birth chart to see these terms working together in one chart at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart).
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Dane Rudhyar — his person-centered astrology reframed every term as part of a living chart rather than a fixed label

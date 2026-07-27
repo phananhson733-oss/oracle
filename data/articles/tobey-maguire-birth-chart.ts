@@ -108,6 +108,10 @@ News cycles pull attention to familiar figures, and readers use a celebrity char
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [explainer on the twelve astrological houses](/en/wiki/astrology-houses) — where the missing birth time would otherwise place his planets
 - [guide to major chart aspects like squares and trines](/en/wiki/astrology-terms) — how planets link into tension or ease across any chart
 - *Cancer Sun sign meaning* — a deeper look at the one placement we can confirm for him
@@ -116,6 +120,8 @@ News cycles pull attention to familiar figures, and readers use a celebrity char
 ## Take Action
 
 Start by [generating your own free birth chart](/en/wiki/how-to-read-birth-chart) the same way you'd sketch a Tobey Maguire birth chart. You'll get your full placement map — Sun, Moon, and, if you know your birth time, your rising sign and houses — laid out as one picture. From there, the real payoff isn't prediction; it's seeing where your private temperament and your public persona pull in different directions, and choosing which one you want to lead with.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

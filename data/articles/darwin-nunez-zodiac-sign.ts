@@ -130,6 +130,9 @@ Without a confirmed birth time, astrologers cannot verify his Ascendant, houses,
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [North Node in Scorpio](/en/wiki/north-node-in-scorpio) — Useful background for fixed water symbolism, emotional intensity, and transformation themes.
 - [zodiac signs as World Cup 2026 teams](/en/wiki/zodiac-signs-as-world-cup-2026-teams) — Useful for reading showmanship, visibility, and tournament-style symbolism.
 - [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — Connects individual player charts to broader tournament narratives.
@@ -138,6 +141,8 @@ Without a confirmed birth time, astrologers cannot verify his Ascendant, houses,
 ## Take Action
 
 Explore this player chart by comparing its confirmed parts with your own symbolic pattern. Start with your birth date, place, and time, then compare your Sun, Moon, and Venus placements with the themes described here. The useful output is not a fixed label; it is a clearer way to notice how motivation, pressure, and self-expression tend to show up in real choices: [learn how to read your birth chart with this guide](/en/wiki/how-to-read-birth-chart)
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

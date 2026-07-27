@@ -107,6 +107,21 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return In Scorpio](/en/wiki/saturn-return-in-scorpio)
+- [Saturn Return Age 29](/en/wiki/saturn-return-age-29)
+- [Second Saturn Return](/en/wiki/second-saturn-return)
+- [Saturn Return In Capricorn](/en/wiki/saturn-return-in-capricorn)
+- [Saturn Return Age 30](/en/wiki/saturn-return-age-30)
+- [Saturn Return In Cancer Meaning](/en/wiki/saturn-return-in-cancer-meaning)
+- [How Long Does Saturn Return Last](/en/wiki/how-long-does-saturn-return-last)
+- [Saturn Return Age 27](/en/wiki/saturn-return-age-27)
+- [Saturn Return In Cancer](/en/wiki/saturn-return-in-cancer)
+- [Saturn Return In Aries](/en/wiki/saturn-return-in-aries)
+- [Saturn Return In Taurus](/en/wiki/saturn-return-in-taurus)
+- [Saturn Return Career Change](/en/wiki/saturn-return-career-change)
+- [Surviving Saturn Return](/en/wiki/surviving-saturn-return)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning](/en/wiki/ascendant-meaning) — your rising sign colors how the return's pressure shows up in daily life.
 - [guide to the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) — the nodes add a second layer of timing to major life pivots.
 - [Saturn (Wikipedia)](https://en.wikipedia.org/wiki/Saturn) — background on the planet behind the cycle.

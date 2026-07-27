@@ -105,6 +105,9 @@ Vedic tradition describes the deer tracking the scent of musk without knowing th
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *Rohini nakshatra overview* — the neighboring placement that resolves Taurus's beauty into settled arrival rather than continued seeking; a useful contrast for understanding what Mrigashira keeps moving toward
 - *Ardra nakshatra overview* — the nakshatra that follows, where Rahu's seeking takes on storm energy and disruptive breakthrough rather than scent-following
 - *Mars in Vedic astrology guide* — how Mars as ruling planet shapes momentum and drive across different nakshatra placements
@@ -117,6 +120,8 @@ Generate your free birth chart to explore mrigashira nakshatra.
 Your chart shows exactly which planets fall in Mrigashira's degree range and how the placement activates across specific houses. That map turns the deer's symbolic motion into something concrete — a picture of where your own seeking tends to concentrate, what triggers it, and what it may actually be oriented toward beneath the surface goal.
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

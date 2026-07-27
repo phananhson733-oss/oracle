@@ -140,6 +140,8 @@ Want the full system first? Read the [complete guide to mahadasha and the Vimsho
 
 The Saturn mahadasha is described here as a cultural and self-reflection tradition, not as medical, psychological, financial, legal, or relationship advice. Treat it as a lens for reflection rather than a basis for major life decisions.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Parashara — sage credited with the Brihat Parashara Hora Shastra, the classical source for the Vimshottari dasha system used here

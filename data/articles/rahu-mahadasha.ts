@@ -110,6 +110,8 @@ Not directly. The dasha system belongs to Vedic astrology and its sidereal zodia
 
 Pull your dasha timeline and find the start year of your Rahu period; doing so reveals exactly which 18-year chapter you are in and which sub-period is active right now. That single act trades vague dread for a clear map — and once you can see the period as a season of amplified wanting rather than a verdict, you can decide what to do with the drive instead of bracing against it. Want the full system first? Read the complete guide to mahadasha and the Vimshottari periods: [https://astrologywiki.com/en/wiki/mahadasha](/en/wiki/mahadasha)
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Parashara — the sage to whom the Vimshottari dasha system and its classical text, the Brihat Parashara Hora Shastra, are traditionally attributed

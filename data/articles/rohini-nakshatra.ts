@@ -108,6 +108,9 @@ Its classic symbol is the ox-cart or chariot, a sign of steady movement toward h
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *comparison with Krittika nakshatra* — the neighboring station with the opposite, Sun-ruled temperament, useful for feeling the contrast.
 - *guide to reading your moon sign* — because this placement is ultimately a concentrated flavor of the Moon.
 - [Rohini (nakshatra) (Wikipedia)](https://en.wikipedia.org/wiki/Rohini_(nakshatra))
@@ -115,6 +118,8 @@ Its classic symbol is the ox-cart or chariot, a sign of steady movement toward h
 ## Take Action
 
 Generate your free birth chart to explore rohini nakshatra. In a few minutes you can see exactly where the Moon — or your Ascendant, Venus, Mars, or Saturn — falls, and whether this fertile, magnetic station shapes how you create and connect. From there you can start reading your pull toward beauty not as a weakness, but as the instrument it was always meant to be. Begin with the step-by-step walkthrough on [how to read your birth chart](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

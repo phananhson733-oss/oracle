@@ -105,15 +105,20 @@ The Moon's sign is widely reported as Aries, but its exact degree and house depe
 
 ## Related Reading
 
-- [World Cup 2026 astrology prediction pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this chart in the wider tournament picture
-- [Colombia vs Portugal match astrology](/en/wiki/colombia-vs-portugal) — a fixture reading featuring Ronaldo's Portugal
-- [Lionel Messi zodiac sign reading](/en/wiki/lionel-messi-zodiac-sign) — a contrasting Cancer-Sun chart from the same series
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
+- *World Cup 2026 astrology prediction pillar* — the hub that places this chart in the wider tournament picture
+- *Lionel Messi zodiac sign reading* — a contrasting Cancer-Sun chart from the same series
 - *how to read Saturn transits* — the method step behind reading a season of pressure
-- [transit_events cluster on Saturn in Aries](/en/wiki/saturn-in-aries-2026) — the wider sky behind this consolidation window
+- *transit_events cluster on Saturn in Aries* — the wider sky behind this consolidation window
+- [the Colombia vs Portugal astrology read](/en/wiki/colombia-vs-portugal) — the transit contrast between the two sides
 
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and its ruler the way this piece reads Cristiano Ronaldo's zodiac sign — as a structure under timed pressure rather than a label. You get a clear view of your Sun's sign and ruler and the Saturn transits touching it now, and, more usefully, a way to tell a season of testing apart from a setback you cannot move.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

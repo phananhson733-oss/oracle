@@ -115,6 +115,8 @@ No; the Scorpio depth stays available as a real resource. The shift is no longer
 
 Open your birth chart and locate both ends of your nodal axis, then read the North Node vs South Node guide to map both ends of your growth axis: [Read the North Node vs South Node guide to map both ends of your growth axis](/en/wiki/north-node-vs-south-node). You come away with a clear picture of what you are growing toward and what you are growing out of, and that single map often reframes the placement from a verdict into a direction you get to choose.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — shaped the psychological reading of the chart that frames nodal work as developmental rather than fixed

@@ -118,6 +118,8 @@ Your chart shows precisely which planets, if any, fall within this mansion's ran
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Parashara — author of the foundational Vedic astrology framework through which nakshatra lordships, deity attributions, and the traditional symbolic system are interpreted

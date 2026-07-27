@@ -107,6 +107,9 @@ Agni's function is purification — fire as transformative force aimed at clarif
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *overview of all 27 nakshatras in Vedic astrology* — for placing Krittika in the full nakshatra sequence and understanding how the mansion system maps across the sidereal zodiac
 - *Rohini nakshatra profile* — follows Krittika in Taurus and shares the Venus-ruled sign, but centers on abundance and receptivity rather than precision and refinement
 - [Krittika (Wikipedia)](https://en.wikipedia.org/wiki/Krittika)
@@ -114,6 +117,8 @@ Agni's function is purification — fire as transformative force aimed at clarif
 ## Take Action
 
 [Generate your free birth chart to explore krittika nakshatra.](/en/wiki/how-to-read-birth-chart) Once the chart loads, check whether your moon or ascendant falls in late Aries (26°40'–30°) or early Taurus (0°–10°) in the sidereal system — that single degree resolves most of the contradictions in standard descriptions. Knowing which pada applies gives you a more precise framework for recognizing where Agni's pattern of precision, correction, and sustained refinement shows up most persistently in your own decisions and responses.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

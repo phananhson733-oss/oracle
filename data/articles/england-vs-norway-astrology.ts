@@ -118,12 +118,14 @@ No, and it makes no such claim. This is a symbolic, interpretive tradition meant
 
 ## Related Reading
 
-- [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — the tournament pillar this fixture sits inside.
-- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Three Lions' squad-level chart behind one side.
-- [Erling Haaland's birth chart](/en/wiki/erling-haaland-birth-chart) — a natal close-up on Norway's talisman.
+<!-- gg-cluster-links:start -->
+- [Pride Month Astrology](/en/wiki/pride-month-astrology)
+<!-- gg-cluster-links:end -->
 - [explainer on the ascendant and rising sign](/en/wiki/ascendant-meaning) — the chart's outward "first impression," much like a nation's public reputation.
 - [guide to major chart aspects like trines and squares](/en/wiki/astrology-terms) — how the angles between planets add ease or tension to any comparison.
 - [Mundane astrology (Wikipedia)](https://en.wikipedia.org/wiki/Mundane_astrology) — neutral encyclopedic context for the branch this page draws on.
+- [the World Cup 2026 astrology hub](/en/wiki/world-cup-2026-astrology-prediction) — the full tournament overview tracing Jupiter's Cancer-to-Leo shift across the qualified nations
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
 
 ## Take Action
 

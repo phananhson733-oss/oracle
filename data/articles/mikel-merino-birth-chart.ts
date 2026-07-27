@@ -106,6 +106,10 @@ The Gemini stellium — Mercury, Venus, and Mars together — is the loudest sig
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [north and south node meaning guide](/en/wiki/north-node-vs-south-node) — introduces the nodes as a general astrology concept.
 - [guide to reading a full birth chart](/en/wiki/how-to-read-birth-chart) — explains how multiple placements work together.
 - [Serena Williams birth chart profile](/en/wiki/serena-williams-birth-chart) — another athlete chart to compare interpretive style against.

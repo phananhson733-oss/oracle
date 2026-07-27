@@ -103,6 +103,8 @@ Yes, and that is part of the fun. Because this game rests on personality reading
 
 Pick the Toy Story 5 character whose personality feels closest to yours, then generate your own chart to see how your real Sun sign compares to the archetype you chose. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) and you will get a clear view of your actual Sun sign laid out from your birth date. The contrast between a playful character pick and your documented chart is a small, honest reminder that the fun of archetypes and the facts of a real chart are two different things worth keeping apart.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Personality archetypes in this piece are drawn from the characters as written in the 2026 Pixar film, matched to general zodiac trait associations for entertainment only

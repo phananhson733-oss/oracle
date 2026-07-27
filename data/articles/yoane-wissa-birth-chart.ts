@@ -109,6 +109,8 @@ DR Congo qualifying for WC 2026 — only their second World Cup appearance, and 
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your own Sun the way this piece reads Wissa's — as a developmental direction rather than a fixed label. You get a clear view of where your Sun sits, and, more quietly, a way to tell a meaningful symbolic theme apart from a prediction no planet can reliably deliver.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — *The Astrology of Fate*, a standard reference for reading the Sun as a story of purpose and developmental pull rather than fixed personality

@@ -115,6 +115,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart* — another athlete's chart read as a full portrait rather than a single Sun sign.
 - [explainer on how a square aspect works between planets](/en/wiki/square-astrology) — unpacks the hard aspects behind competitive drive.
 - [guide to the north and south lunar nodes](/en/wiki/north-node-vs-south-node) — adds a layer about direction and growth in any chart.
@@ -124,6 +128,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Ready to try the same method on your own placements? [Generate your free birth chart to explore Jaylen Brown birth chart.](/en/wiki/how-to-read-birth-chart) The tool lays out a full map of your planets the same way this reading treats his, and studying them together — rather than stopping at your Sun sign — can show you where your own intensity and conviction really live.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

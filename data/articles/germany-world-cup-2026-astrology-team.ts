@@ -110,6 +110,7 @@ This reading uses the Western tropical founding chart. A Vedic sidereal mundane 
 - [Argentina World Cup 2026 astrology national chart](/en/wiki/argentina-world-cup-2026-astrology) — a companion mundane reading of the defending champion's chart
 - [Germany's World Cup 2026 players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — the natal close-up on the individuals behind the DFB system
 - [how to read a national or mundane chart](/en/wiki/how-to-read-birth-chart) — the method step behind reading an institution's chart
+- [the Germany World Cup players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — individual chart reads for the German squad
 
 ## Take Action
 

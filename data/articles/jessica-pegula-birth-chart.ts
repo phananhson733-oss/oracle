@@ -118,6 +118,10 @@ Many blend sun-sign shortcuts with full-chart interpretation and sometimes guess
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to the north and south lunar nodes](/en/wiki/north-node-vs-south-node) — her Scorpio–Taurus nodal axis is a central symbolic theme worth understanding on its own.
 - *explainer on Mercury retrograde in a birth chart* — her natal Mercury is retrograde in Aquarius, a placement people often misread.
 - [Jessica Pegula (Wikipedia)](https://en.wikipedia.org/wiki/Jessica_Pegula)
@@ -128,6 +132,8 @@ Many blend sun-sign shortcuts with full-chart interpretation and sometimes guess
 Ready to turn this practice inward instead of reading someone else's placements? [Learn how to read your own birth chart](/en/wiki/how-to-read-birth-chart) and you can map your own planetary signs the same way — Pisces, Aquarius, Scorpio, and everything in between, laid side by side. Seeing your placements in one place makes it easier to reflect on how you express, protect, and understand yourself, and to notice which single label you may have been leaning on too hard.
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

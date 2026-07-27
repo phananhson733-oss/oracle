@@ -113,6 +113,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *profile of Serena Williams's birth chart* — another well-known chart read as a full signature rather than a single sign.
 - *guide to synastry and zodiac compatibility* — how two full charts compare, once you stop reducing people to Sun signs.
 - [explainer on how the trine aspect works in a birth chart](/en/wiki/trine-in-astrology) — the next layer to read once your source data is strong enough.
@@ -120,6 +124,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 [Read our guide to reading your birth chart](/en/wiki/how-to-read-birth-chart), then map your own Sun, Moon, and Rising with accurate birth data. You'll get a clearer picture of where identity, feelings, and public face align or pull apart — the same source-aware self-awareness this reading models, applied to you instead of a headline.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

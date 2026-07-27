@@ -122,6 +122,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [Saturn square aspect explainer](/en/wiki/square-astrology) — how Saturn's earlier squares set up the tension the return later resolves.
 - [meaning of the tenth house in a birth chart](/en/wiki/astrology-houses) — the career and legacy themes that often surface during this stage.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — background on the transit across both the first and second returns.

@@ -116,6 +116,10 @@ They turn a familiar public image into an easy way to practice symbolic interpre
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 A few nearby topics help you keep symbol and fact apart:
 
 - *guide to the meaning of a Taurus Sun in a birth chart* — unpacks the one placement this chart is actually anchored on.
@@ -125,6 +129,8 @@ A few nearby topics help you keep symbol and fact apart:
 ## Take Action
 
 Generate your free birth chart to explore Cole Palmer birth chart. In a few minutes you'll have your own placements laid out the same way, so you can [read your chart the way this guide reads his](/en/wiki/how-to-read-birth-chart) — as themes to sit with rather than a headline about him. Seeing your own patterns as tendencies instead of a fixed script is where a chart stops being a label and starts being a mirror.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

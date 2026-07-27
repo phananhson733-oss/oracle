@@ -113,6 +113,8 @@ No. Because the station ends in Cancer, the two are easily confused, but the sta
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your Moon's exact degree and see whether it sits in Punarvasu — and which half, Gemini or Cancer, colors this Jupiter-ruled station's renewal theme. With that placement in hand, you get a concrete frame for reading your own pattern of recovery: where setbacks have tended to return as growth, and how to hold the next one as material to re-enter wiser rather than damage to undo.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Parashara — the foundational Vedic sage whose classical texts anchor the lunar-mansion system, including the station rulerships and deity associations used in modern Jyotish

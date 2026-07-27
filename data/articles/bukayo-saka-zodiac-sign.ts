@@ -119,6 +119,9 @@ The Bukayo Saka zodiac sign works as a symbolic lens, not a cause. The Virgo–A
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the team-chart backdrop to Saka's tournament
 - [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — another World Cup winger read through his chart
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — how one sign's archetype maps onto the tournament
@@ -128,6 +131,8 @@ The Bukayo Saka zodiac sign works as a symbolic lens, not a cause. The Virgo–A
 ## Take Action
 
 This is not a clinical interpretation or mental health advice — it's a symbolic frame for thinking about contrast in a person's makeup. Pull your own chart and find your Sun–Moon split the way Saka's Virgo–Aries pairing maps his game. You'll see which sign organises your decisions and which one fires your reactions, and where the two pull against each other — and that contrast is often where your sharpest, most honest self-awareness lives. [Generate your free birth chart to explore bukayo saka zodiac sign.](/en/wiki/how-to-read-birth-chart)
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

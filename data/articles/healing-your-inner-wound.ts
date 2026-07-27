@@ -130,6 +130,8 @@ To go deeper into each signature that makes up the inner wound, these explainers
 
 To start Healing Your Inner Wound in practice, open your full birth chart and locate your own Chiron and Mars in the 12th house, then note which other placements touch them. Doing this gives you a reflective map of possible sore-spot themes and defensive patterns — your own version of the family described above. Seen clearly, that map is less a list of problems to solve than a quieter understanding of why you protect what you protect. Read the full guide to reading a birth chart at [reading a birth chart from scratch](/en/wiki/how-to-read-birth-chart) to find these placements for yourself.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Traditional 12th-house teachings — describe the house of the unconscious, retreat, and dissolution that frames both placements in this family

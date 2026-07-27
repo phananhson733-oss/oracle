@@ -112,12 +112,18 @@ A Pisces sun describes personal identity — the character at your core and how 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Chiron In Taurus 2026 Astrology](/en/wiki/chiron-in-taurus-2026-astrology)
+- [Father's Day Astrology 2026](/en/wiki/father-s-day-astrology-2026)
+<!-- gg-cluster-links:end -->
 - [pillar page on Neptune transit dates through all zodiac signs](/en/wiki/12th-house-astrology) — covers the full 164-year Neptune cycle with exact dates across all signs, including the 2012–2026 Pisces window
 - [spoke page on Pisces as a natal sign](/en/wiki/12th-house-astrology) — explains Pisces's characteristic themes as a natal placement, distinct from the generational transit reading covered here
 
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore neptune in pisces as it lands in your personal chart. You'll see exactly which house Pisces rules in your natal map — the life domain where the dissolving quality concentrates for you specifically. That single detail shifts the interpretation from a shared generational description to a chart-grounded read of what this era asks of you.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

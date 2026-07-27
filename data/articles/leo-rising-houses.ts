@@ -106,6 +106,10 @@ Leo Sun places solar identity in the self-expression domain. Leo rising determin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Libra Rising Houses](/en/wiki/libra-rising-houses)
+- [Scorpio Rising Houses](/en/wiki/scorpio-rising-houses)
+<!-- gg-cluster-links:end -->
 - [explainer on Saturn as a planetary ruler and how it structures the houses it governs](/en/wiki/astrology-houses) — relevant to why the 7th house carries Saturnine weight for Leo rising and how Saturn's natal placement modulates that
 - [overview of all twelve houses and their life domains](/en/wiki/astrology-houses) — full house reference for comparing rulerships across different rising signs
 - [what the ascendant means and how to find yours](/en/wiki/ascendant-meaning) — the rising-sign foundation this whole house map is built on
@@ -115,6 +119,8 @@ Leo Sun places solar identity in the self-expression domain. Leo rising determin
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore leo rising houses in your own natal map. You'll see exactly where Saturn sits by sign and house — the two variables that most shape how the Saturnine partnership pattern plays out for your specific configuration. Once Saturn's position is visible alongside the 7th house cusp, recurring patterns in long-term relationships tend to become structurally legible rather than something to take personally.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

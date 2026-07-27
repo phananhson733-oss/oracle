@@ -110,6 +110,10 @@ You can read planet-to-planet contacts reasonably well, since the personal plane
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [composite chart calculator](/en/wiki/composite-chart-calculator) — run any two charts side by side the way this reading does.
 - [ascendant meaning overview](/en/wiki/ascendant-meaning) — see why ascendants need accurate birth times before house overlays mean much.
 - [companion piece on a Sagittarius Sun stack](/en/wiki/9th-house-astrology) — go deeper on the sign anchoring Swift's chart.
@@ -118,6 +122,8 @@ You can read planet-to-planet contacts reasonably well, since the personal plane
 ## Take Action
 
 Open a chart of your own and look for the Moon, Venus, and Mars contacts first — the same three layers that drive every supercouple verdict. You will get a clear, placement-by-placement picture instead of a one-line Sun-sign guess, and once you can read the tempo of a chart, you start to recognize the same patterns shaping your own relationships. [Generate your free birth chart to explore Taylor Swift and Travis Kelce](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

@@ -150,6 +150,7 @@ Yes — the root chakra is the first chakra, sitting at the base of the spine an
 - [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — useful when a steadied root is ready to support confidence and will.
 - [Muladhara (Wikipedia)](https://en.wikipedia.org/wiki/Muladhara) — useful for the Sanskrit and historical background behind the modern reading.
 - [Chakra (Wikipedia)](https://en.wikipedia.org/wiki/Chakra) — places the root inside the wider framework this page draws on.
+- [Moon in Capricorn](/en/wiki/moon-in-capricorn) — a Saturn-ruled, grounding placement that echoes root-chakra themes
 
 ## Take Action
 

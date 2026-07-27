@@ -128,6 +128,9 @@ There's a full moon roughly once a month, so a monthly rhythm fits the cycle nat
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 These pages extend the practice without repeating what's already linked above:
 
 - [Full moon energy](/en/wiki/full-moon-energy) — why the peak feels amplified, and how to read which house and aspects it activates.
@@ -140,6 +143,8 @@ These pages extend the practice without repeating what's already linked above:
 ## Take Action
 
 Ready to see exactly where each full moon lands in your own chart? [Generate your free birth chart to explore full moon spiritually](/en/wiki/how-to-read-birth-chart) and map which house every lunar peak activates for you across the year. With your full moons sorted by house, your release work stops being generic — instead of a one-size ritual, you can aim it at the specific area of life that's genuinely ready to be completed. Over time, that turns a vague monthly habit into a clear read on which parts of your life are winding down and which are just getting started.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

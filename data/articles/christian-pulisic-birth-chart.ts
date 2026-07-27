@@ -109,6 +109,8 @@ The tournament opens 11 June 2026 at Estadio Azteca in Mexico City and concludes
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your own Sun the way this piece reads Pulisic's, as a theme of purpose and craft rather than a verdict. You get a clear view of which sign and degree your Sun occupies, and, more quietly, a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — *The Astrology of Fate*, a standard reference for reading the Sun and chart as a story of developing purpose rather than a fixed personality stamp

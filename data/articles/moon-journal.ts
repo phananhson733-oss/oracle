@@ -118,6 +118,9 @@ A lunar calendar tracks external timing — when phases occur. A structured phas
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [New moon journal prompts](/en/wiki/new-moon-journal-prompts) — expands the new moon anchoring step with a three-layer structure for intentions you can actually assess later.
 - [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — deepens the culmination review function with prompts grouped by release, gratitude, relationships, and birth chart.
 - [Full moon energy](/en/wiki/full-moon-energy) — the astrological significance behind the culmination phase and how to read which house it activates.
@@ -127,6 +130,8 @@ A lunar calendar tracks external timing — when phases occur. A structured phas
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see how your natal moon sign shapes which phase of a moon journal comes most naturally to you. Your moon placement describes whether intention-setting, obstacle-tracking, evaluation, or release tends to be your default mode of self-reflection — and which function you are most likely to skip or abbreviate. That gap between where your natal moon is strong and the phase you tend to avoid is often where the most revealing journaling across cycles happens.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

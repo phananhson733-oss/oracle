@@ -111,6 +111,10 @@ Yes. The Sun in Leo sets the headline, but the Moon shapes his emotional wiring 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [breakdown of Emma Watson's zodiac sign](/en/wiki/emma-watson-zodiac-sign) — a same-series celebrity chart to compare reserved public personas
 - [composite chart calculator](/en/wiki/composite-chart-calculator) — for readers pairing two charts rather than reading one
 - A closer look at the Leo Sun placement behind this profile
@@ -120,6 +124,8 @@ Yes. The Sun in Leo sets the headline, but the Moon shapes his emotional wiring 
 ## Take Action
 
 Ready to move past the one-word label? [Generate your free birth chart to explore jannik sinner zodiac sign](/en/wiki/how-to-read-birth-chart), and you will get a full map of Sun, Moon, and rising placements instead of a single headline. Seeing how those pieces fit together can sharpen how you read your own drive, your visibility, and the persona you choose to show the world. This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

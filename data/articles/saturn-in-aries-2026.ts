@@ -118,6 +118,8 @@ Neither, in the fortune-telling sense. Saturn applied to Aries slows reactive st
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find which house Aries rules in your chart, so you can read this transit as a specific task in one life area rather than a vague three-year worry. You get a clear view of your Aries house and natal Saturn placement, and, more practically, a way to ask what structure that domain has been missing before the passage ends in 2028.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Robert Hand — reads a transit as a developmental task to work with rather than a fixed verdict

@@ -111,6 +111,9 @@ No single sign explains talent; a Cancer Sun describes emotional and instinctual
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [guide to the north and south lunar nodes](/en/wiki/north-node-vs-south-node) — his nodal axis in Pisces and Virgo adds a growth theme worth reading beside the Sun.
 - *birth chart profile of Serena Williams* — a named athlete chart that shows how one sign sits inside a full competitive profile.
 - [Cancer (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Cancer_(astrology)) — a plain overview of the sign's traditional associations.
@@ -120,6 +123,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Generate your free birth chart to explore the lamine yamal zodiac sign, and you get a full placement map — Sun, Moon, Mars, and the rest — laid out in minutes. Seeing every layer at once is how one label becomes real self-knowledge: not a verdict on who you are, but a clearer view of the patterns you already live. Start by learning [how to read your birth chart](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

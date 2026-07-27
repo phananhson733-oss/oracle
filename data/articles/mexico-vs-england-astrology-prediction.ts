@@ -100,12 +100,14 @@ Yes. You can treat it purely as a lens for reflecting on pressure, loyalty, and 
 
 ## Related Reading
 
-- [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — the tournament pillar this fixture sits inside.
-- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Three Lions' squad-level chart behind one side.
-- [meaning of the rising sign in a birth chart](/en/wiki/ascendant-meaning) — helps you read the individual player archetypes this framing leans on.
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
+- *meaning of the rising sign in a birth chart* — helps you read the individual player archetypes this framing leans on.
 - [what a square aspect means in a birth chart](/en/wiki/square-astrology) — useful for spotting tension themes between two charts.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — context for the astronomical body driving the match-day backdrop.
 - [Astrology (Wikipedia)](https://en.wikipedia.org/wiki/Astrology) — grounding for why this is framed as symbolism, not forecasting.
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
 
 ## Take Action
 

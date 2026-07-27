@@ -106,6 +106,8 @@ No. The chart marks a window and a theme, not an outcome. Practitioners read the
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your natal Uranus and the house it sits in, so you can read your own window with the timing kept in honest perspective. You get a clear view of the polarity the transit will eventually engage and a reminder that a chart marks a pattern, not a fate, and, more usefully, a habit of asking what a life domain is asking for before reading any transit as a forecast.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — grounded the reading of the chart as a language of symbol rather than a statistical claim about fate

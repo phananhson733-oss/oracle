@@ -106,6 +106,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - *North and South Nodes meaning guide* — a deeper look at the growth axis this reading depends on.
 - [Midheaven and career point explainer](/en/wiki/how-to-read-birth-chart) — how the top of the chart shapes public role and contribution.
 - [rising sign meaning guide](/en/wiki/ascendant-meaning) — the outward style through which any purpose-related direction expresses.

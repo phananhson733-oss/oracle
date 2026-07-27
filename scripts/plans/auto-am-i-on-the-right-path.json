@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "am-i-on-the-right-path": {
+      "hero": {
+        "prompt": "Two diverging luminous trails arc through deep indigo space — one curling back toward a warm amber-gold glow of the familiar past, the other sweeping forward into an expansive teal-lit horizon edged with soft gold nebula filaments — capturing the tension between comfort and growth in life direction, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two diverging cosmic trails — warm gold comfort path and expansive teal growth arc — evoking the astrology life-direction question"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## North Node vs South Node: Which One \"Right Path\" Points Toward",
+          "titleEn": "South Node vs North Node: Where the Right-Path Question Points",
+          "altEn": "Comparison of South Node comfort patterns versus North Node growth direction in a birth chart reading",
+          "columns": [
+            {
+              "nameEn": "South Node",
+              "linesEn": [
+                "Competence you already carry",
+                "Patterns that feel safe and familiar",
+                "Where you retreat under stress",
+                "Easy fluency you sacrifice to grow"
+              ]
+            },
+            {
+              "nameEn": "North Node",
+              "linesEn": [
+                "Less familiar direction that stretches you",
+                "Where the right-path question usually points",
+                "Can feel uncomfortable before it feels right",
+                "Completes one zodiac cycle every 18.6 years"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Right-Path Question in Your Chart",
+          "titleEn": "5 Signals to Watch in Your Birth Chart",
+          "altEn": "Five-step sequence for reading the right-path question using North Node, Midheaven, transits, South Node, and recurring themes",
+          "items": [
+            {
+              "nameEn": "North Node Sign & House",
+              "subEn": "Note the theme it names — this is the direction the question is usually asking about"
+            },
+            {
+              "nameEn": "The Midheaven",
+              "subEn": "Its sign hints at how your public role and vocation want to express"
+            },
+            {
+              "nameEn": "Current Transits",
+              "subEn": "A planet crossing your Node or Midheaven often marks when the question gets loud"
+            },
+            {
+              "nameEn": "The South Node Tug",
+              "subEn": "Notice where you retreat under stress — the comfort the right path asks you to stretch beyond"
+            },
+            {
+              "nameEn": "Repeating Life Themes",
+              "subEn": "When the same decision keeps returning, treat it as data rather than coincidence"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

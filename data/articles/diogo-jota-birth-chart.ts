@@ -109,6 +109,10 @@ Interest surged around his death in July 2025 and the tributes that followed, as
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *birth chart profile of Serena Williams* — another public-figure chart read as persona, useful for comparing interpretive styles
 - [meaning of the trine aspect in a birth chart](/en/wiki/trine-in-astrology) — explains one of the aspect patterns that shape a full-chart reading
 - [guide to the twelve astrological houses](/en/wiki/astrology-houses) — shows why an unknown birth time leaves so much of a chart open
@@ -118,6 +122,8 @@ Interest surged around his death in July 2025 and the tributes that followed, as
 Generate your free birth chart to explore Diogo Jota birth chart — start with our [step-by-step guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) walkthrough at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart). You will get a full placement map of your own Sun, Moon, and rising, laid out the same way a celebrity profile is, so you can see the patterns instead of a single label. Read symbolically, that map becomes a quiet tool for noticing how your public self and private self line up — and where they don't.
 
 This is not a clinical interpretation or mental health advice.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

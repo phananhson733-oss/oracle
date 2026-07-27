@@ -110,15 +110,18 @@ No. Betting astrology gambles on a single signal, while symbolic reading stays w
 
 ## Related Reading
 
-- [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — the tournament pillar this fixture reading sits inside.
-- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Three Lions' squad-level chart behind one side.
-- [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the defending champion's national chart behind the other.
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [ascendant and rising sign meaning](/en/wiki/ascendant-meaning) — the rising sign shapes the public identity each national chart plays out on the field.
 - [guide to how the twelve houses work in a birth chart](/en/wiki/astrology-houses) — houses show where a chart's story tends to concentrate.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — factual context for the event itself.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the astronomical body driving the year's headline transit.
 
 This is not a clinical interpretation or mental health advice.
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Cancer-to-Leo arc running through the England squad
+- [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the squad's Sun-sign profile and title-defence themes
+- [Messi's World Cup record astrology](/en/wiki/messi-world-cup-record-astrology) — the long-cycle transits behind his tournament history
 
 ## Take Action
 

@@ -105,6 +105,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *overview of Sagittarius sign traits* — a deeper look at the fire sign behind his Sun placement.
 - *guide to Sun sign meaning in astrology* — how the Sun works as the anchor of any chart.
 - [Kai Cenat (Wikipedia)](https://en.wikipedia.org/wiki/Kai_Cenat) — the verified birth date behind the chart.
@@ -113,6 +117,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the kai cenat zodiac sign in full context. You'll get a map of every placement—Sun, Moon, Mercury, and the rest—instead of a single headline sign. Seeing how one Sagittarius Sun sits among nine other signs is usually where a flat celebrity label finally turns into a portrait you can reflect on for your own patterns.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

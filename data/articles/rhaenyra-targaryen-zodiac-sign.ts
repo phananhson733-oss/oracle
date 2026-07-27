@@ -114,6 +114,10 @@ No. Canon records only that she was born in 97 AC — no month, no day — and W
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Juno Astrology](/en/wiki/juno-astrology)
+- [Niko Birth Chart](/en/wiki/niko-birth-chart)
+<!-- gg-cluster-links:end -->
 - [persephone goddess](/en/wiki/persephone-goddess) — another mythic figure read through archetype rather than a birth date.
 - [north node in taurus](/en/wiki/north-node-in-taurus) — the Taurus side of the fixed-sign debate, for contrast.
 - [Rhaenyra Targaryen (Wikipedia)](https://en.wikipedia.org/wiki/Rhaenyra_Targaryen) — context on her arc across the series.
@@ -123,6 +127,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Map the same Scorpio patterns onto your own placements: generate your free birth chart to explore this same fixed-water profile and see where those themes show up for you. Expect a full chart that names your signs, houses, and the planets driving them — and from there, a clearer sense of where your own quiet resolve and long memory actually come from. [Generate your free birth chart to explore rhaenyra targaryen zodiac sign.](/en/wiki/how-to-read-birth-chart)
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

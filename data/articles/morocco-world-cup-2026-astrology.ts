@@ -114,6 +114,9 @@ No. Treating it as a forecasting tool is the quickest way to misuse it. The fram
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [June 2026 World Cup astrology calendar](/en/wiki/world-cup-2026-june-astrology) — covers the transit timing this framework leans on.
 - [Argentina World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — explains the country charts behind each team read.
 - [astrology terms glossary](/en/wiki/astrology-terms) — background for comparing squad elements across a roster.

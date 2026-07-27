@@ -107,6 +107,8 @@ Look for planets inside the house, a tightly aspected house ruler, or a stellium
 
 Map your own 12th house inside the full wheel: [read the full Astrological Houses guide to place this house within the whole chart](/en/wiki/astrology-houses). That guide gives you a clear picture of how this hidden sector connects to the eleven houses around it, and a steadier sense that what once looked like self-undoing is often the chart's invitation to grow.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Howard Sasportas — developed the in-depth psychological reading of the astrological houses that informs this article

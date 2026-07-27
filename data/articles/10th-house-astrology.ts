@@ -118,6 +118,8 @@ In the psychological tradition shaped by Greene and Sasportas, this sector can m
 
 Open your birth chart, find your Midheaven sign, and read it as a public role you are growing into rather than a job to lock down. Doing that turns a flat label into a working question you can return to as your standing in the world matures. [Read the full Astrological Houses guide to see how the 10th house shapes the chart](/en/wiki/astrology-houses), and you may begin to see your reputation as something you author over time rather than something handed to you.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — shaped the psychological reading of the chart, including the 10th house as a field of social authority

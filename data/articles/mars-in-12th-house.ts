@@ -111,6 +111,8 @@ A first-house Mars acts straight outward and reads as visible confidence. The tw
 
 Open your own chart and locate Mars and the twelfth house using the full guide to reading a birth chart. Doing this gives you a concrete map of where your drive actually sits and how it tends to move, instead of a one-line verdict. Seen clearly, an underground Mars becomes a question you can answer on purpose: not "why am I so quiet about my fight," but "where do I want this force to move next." [Read the full guide to reading a birth chart to find Mars and the 12th house in your own chart.](/en/wiki/how-to-read-birth-chart)
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — shaped the psychological reading of the chart that frames Mars as inner drive rather than fate

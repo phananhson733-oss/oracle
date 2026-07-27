@@ -115,6 +115,9 @@ No. Betting analysis estimates probability from form and odds; this reads meanin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the foundation for reading any national or player chart in this series
 - [overview of Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — a sibling read applying the same symbolic lens to another contender
 - [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the national-team chart behind one side of this fixture
@@ -124,6 +127,9 @@ No. Betting analysis estimates probability from form and odds; this reads meanin
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter)
 
 This is a symbolic and cultural interpretation, not a prediction of the match result.
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the transit backdrop shaping Spain's campaign
+- [the Kylian Mbappe birth chart](/en/wiki/kylian-mbappe-birth-chart) — a full symbolic read of France's forward
+- [the Spain vs France astrology read](/en/wiki/spain-vs-france-world-cup-2026-astrology) — the match-day transit picture for both squads
 
 ## Take Action
 

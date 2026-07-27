@@ -105,6 +105,10 @@ No. A sign describes leanings and style, not outcomes, and it can't account for 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning explainer](/en/wiki/ascendant-meaning) — why a confirmed birth time changes everything a chart can say.
 - *Serena Williams's birth chart breakdown* — a companion athlete profile to compare placements against.
 - [Coco Gauff (Wikipedia)](https://en.wikipedia.org/wiki/Coco_Gauff) — source for the Boca Raton birth-location and Delray Beach family context behind this reading.
@@ -113,6 +117,8 @@ No. A sign describes leanings and style, not outcomes, and it can't account for 
 ## Take Action
 
 Run your own birth chart to see how a Sun sign sits inside a full set of placements the way Coco Gauff's Pisces does. You'll get a mapped layout of your Sun, Moon, and personal planets in one view, so the headline stops standing in for the whole story. From there, the real payoff is self-awareness: seeing your own patterns as tendencies you can work with rather than fixed traits you're stuck with. [Generate your free birth chart to explore the Coco Gauff zodiac sign](/en/wiki/how-to-read-birth-chart).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

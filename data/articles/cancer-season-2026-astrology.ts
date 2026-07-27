@@ -122,6 +122,10 @@ The emotional charge tends to feel strongest in the first ten days, right after 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Neptune In Pisces](/en/wiki/neptune-in-pisces)
+- [Chiron In Taurus 2026 Astrology](/en/wiki/chiron-in-taurus-2026-astrology)
+<!-- gg-cluster-links:end -->
 - [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — the Sun's square to Saturn that runs through this season's duty-versus-need tension.
 - [Chiron in Taurus 2026 transit](/en/wiki/chiron-in-taurus-2026-astrology) — another slow 2026 transit working under the surface of the emotional year.
 - [Saturn in Pisces transit](/en/wiki/saturn-in-pisces) — where Saturn sat before its 2026 shift into Aries.
@@ -130,6 +134,8 @@ The emotional charge tends to feel strongest in the first ten days, right after 
 ## Take Action
 
 This season works best as a mirror you hold up to your own patterns, not a forecast handed down to you. This is not a clinical interpretation or mental health advice. Pull up your own chart to see exactly which natal house this season lights up, leaving you with a clearer read on where comfort and obligation are pulling against each other this summer. [Generate your free birth chart to explore cancer season 2026 astrology](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

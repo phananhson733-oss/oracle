@@ -105,6 +105,9 @@ Many people with this placement describe carrying a quiet intensity, especially 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *explainer on Krittika nakshatra* — the nakshatra that follows Bharani in Aries, useful for seeing how the energy shifts from bearing to cutting and purifying.
 - *guide to the planet Venus in Vedic astrology* — the ruling planet behind Bharani's creative pull and its sense of value and attachment.
 - *overview of the Aries zodiac sign* — the sign Bharani occupies, which shapes how its bearer energy actually expresses itself.
@@ -114,6 +117,8 @@ Many people with this placement describe carrying a quiet intensity, especially 
 ## Take Action
 
 [Generate your free birth chart to explore bharani nakshatra](/en/wiki/how-to-read-birth-chart) and find exactly where this lunar mansion falls in your placements. You can see whether the bearer's energy touches your Moon, Ascendant, or another point, and how Venus and Yama color it. Reading your own chart turns Bharani from an abstract idea into a working lens for how you hold change across your life.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

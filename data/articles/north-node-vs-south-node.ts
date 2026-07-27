@@ -123,6 +123,8 @@ They describe a developmental pull rather than fixed events. The axis tends to s
 
 Open your birth chart and locate your North Node by sign, then read one worked example to see the axis in motion. The [Read the North Node in Scorpio guide to see this growth axis worked through one sign](/en/wiki/north-node-in-scorpio) walks the same past-to-future tension through a single placement, so you finish with a concrete picture instead of an abstract rule. Naming your own growth edge this way turns the chart from a verdict into a question you get to keep answering.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Howard Sasportas — developed the psychological, growth-centered reading of the chart that frames the nodes as developmental direction

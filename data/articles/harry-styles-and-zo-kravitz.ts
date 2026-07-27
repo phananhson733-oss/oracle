@@ -117,6 +117,10 @@ A percentage is a quick summary, not a reading. It can flag ease or tension, but
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [synastry calculator tool page for two-person charts](/en/wiki/composite-chart-calculator) — run the full two-chart comparison instead of leaning on a single score.
 - [rising sign profiles overview](/en/wiki/ascendant-meaning) — see how each partner's rising sign reshapes the way their elements come across.
 - [the Taylor Swift and Travis Kelce synastry read](/en/wiki/taylor-swift-and-travis-kelce) — compare this air-fire read against another current-cycle celebrity match.
@@ -128,6 +132,8 @@ Generate your free birth chart to explore Harry Styles and Zoë Kravitz. Mapping
 [Generate your free birth chart to read the air-fire sextile](/en/wiki/how-to-read-birth-chart)
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

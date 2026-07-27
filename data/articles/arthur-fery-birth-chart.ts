@@ -112,6 +112,10 @@ No. Astrology here works best as symbolic self-reflection, not sports prediction
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Cancer zodiac sign](/en/wiki/cancer) - unpacks the sign that anchors the chart.
 - [guide to the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) - gives more context for the Gemini nodal axis.
 - [guide to synastry compatibility](/en/wiki/synastry-chart-compatibility) - shows how individual placements can be compared in a two-person chart.
@@ -120,6 +124,8 @@ No. Astrology here works best as symbolic self-reflection, not sports prediction
 ## Take Action
 
 Ready to read your own chart with the same level of care? [Generate your free birth chart to explore the Arthur Fery birth chart](/en/wiki/how-to-read-birth-chart) - then compare your strongest sign patterns with the parts of your chart that challenge or balance them.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

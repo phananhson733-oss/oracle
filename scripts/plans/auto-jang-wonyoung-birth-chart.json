@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jang-wonyoung-birth-chart": {
+      "hero": {
+        "prompt": "A poised, elegantly dressed young K-pop artist figure stands in a painterly fashion-editorial scene at center frame, surrounded by soft Virgo botanical motifs — delicate wheat sheaves and earth-toned botanicals — with glowing star constellations drifting around her like a celestial aura; warm amber stage lighting blends into a cosmic indigo sky, giving depth and grandeur to the full scene; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Painterly editorial portrait of a graceful K-pop artist figure with Virgo botanical and celestial star motifs in deep indigo and gold"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Jang Wonyoung Chart Evidence",
+          "titleEn": "5 Steps to Read a Celebrity Birth Chart Responsibly",
+          "altEn": "Five-step sequence for reading a celebrity birth chart within confirmed evidence boundaries",
+          "items": [
+            {
+              "nameEn": "Start with the Reported Record",
+              "subEn": "Confirm the date and place first; without a verified clock time, leave the ascendant and houses unassigned"
+            },
+            {
+              "nameEn": "Separate Stable Facts from Timed Details",
+              "subEn": "A Sun-sign context comes from the date; Moon, angles, houses, and many aspects need more precise data"
+            },
+            {
+              "nameEn": "Label Unknowns Plainly",
+              "subEn": "Do not fill a gap with a guessed birth hour, a fan-made graphic, or an attractive pattern that cannot be checked"
+            },
+            {
+              "nameEn": "Compare Themes, Not Events",
+              "subEn": "Ask how a Virgo-style emphasis is commonly described, then keep it separate from claims about interviews or relationships"
+            },
+            {
+              "nameEn": "Check the Reading's Scope",
+              "subEn": "If a statement sounds like biographical proof, return to the difference between symbolic association and documented fact"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart Versus Celebrity Zodiac",
+          "titleEn": "Birth Chart vs Celebrity Zodiac: What Each Delivers",
+          "altEn": "Side-by-side comparison of birth chart depth versus celebrity zodiac shorthand for responsible interpretation",
+          "columns": [
+            {
+              "nameEn": "Celebrity Zodiac",
+              "linesEn": [
+                "Reduces a public figure to a Sun sign",
+                "Fast cultural shorthand around a birthday",
+                "Rewards selective confirmation bias",
+                "Compression sacrifices nuance of missing data"
+              ]
+            },
+            {
+              "nameEn": "Birth Chart Approach",
+              "linesEn": [
+                "Sorts data into confirmed, possible, and unavailable layers",
+                "Confirmed date supports Virgo Sun context only",
+                "Leaves absence visible — missing time stays missing",
+                "More textured frame; trades speed and certainty for precision"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Celebrity Chart Misreadings to Avoid",
+          "altEn": "Four common errors readers make when interpreting a celebrity birth chart without verified birth data",
+          "items": [
+            {
+              "nameEn": "\"Virgo Explains Everything\"",
+              "subEn": "A Sun sign describes one traditional theme, not a complete personality, public image, or life history"
+            },
+            {
+              "nameEn": "\"A Polished Persona Proves the Chart\"",
+              "subEn": "Styling, training, branding, editing, and group performance shape visibility — none becomes astrological evidence"
+            },
+            {
+              "nameEn": "\"An Online Chart Graphic Must Be Complete\"",
+              "subEn": "A polished image may still rely on an unverified time, making its houses, ascendant, and aspect claims speculative"
+            },
+            {
+              "nameEn": "\"Interpretation Predicts the Next Chapter\"",
+              "subEn": "Symbolic readings can frame questions about patterns and values, but do not establish what someone will choose or experience"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

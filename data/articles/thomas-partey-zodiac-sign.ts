@@ -104,6 +104,9 @@ No. A sign offers a symbolic lens on style and tendencies, not a forecast of mat
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how other players' signs stack up across the game.
 - [Lionel Messi zodiac sign](/en/wiki/lionel-messi-zodiac-sign) — another World Cup player's chart read in the same series.
 - [Christian Pulisic birth chart](/en/wiki/christian-pulisic-birth-chart) — a fellow World Cup forward's placements.
@@ -114,6 +117,8 @@ No. A sign offers a symbolic lens on style and tendencies, not a forecast of mat
 Astrology here is an interpretive framework, not a measurement of ability. This is not a clinical interpretation or mental health advice.
 
 Generate your free birth chart to explore the Thomas Partey zodiac sign and the placements behind it. [Open the birth-chart walkthrough](/en/wiki/how-to-read-birth-chart) to map which of your own layers are confirmed by your birth time and which stay theoretical — proof that honest self-knowledge starts with knowing exactly what you can verify.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

@@ -154,6 +154,8 @@ Blue with purple suggests heightened intuitive perception layered over strong ex
 - [guide to yellow aura traits](/en/wiki/yellow-aura-meaning) — a contrasting solar-plexus reading that highlights what blue is not.
 - [white aura explainer](/en/wiki/white-aura-meaning) — the high-frequency, integrative color, a useful contrast to blue's throat-led clarity.
 - [green aura explainer](/en/wiki/green-aura-meaning) — the heart-chakra reading one step upstream from blue, where feeling becomes language.
+- [the throat chakra meaning](/en/wiki/throat-chakra-meaning) — voice, truth, and expression
+- [Gemini rising](/en/wiki/gemini-rising) — a Mercury-ruled, communicative signature that mirrors throat-chakra themes
 
 ## Take Action
 

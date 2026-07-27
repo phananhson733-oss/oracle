@@ -103,6 +103,9 @@ A Virgo rising depends on an exact birth time that is not firmly public. Treat a
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *World Cup 2026 astrology prediction pillar* — the hub that places this chart in the wider tournament picture
 - *Lionel Messi zodiac sign reading* — another Cancer-Sun chart from the same series
 - *how to read your Moon sign* — the next step for any Cancer Sun reading
@@ -111,6 +114,8 @@ A Virgo rising depends on an exact birth time that is not firmly public. Treat a
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Lamine Yamal's birth chart — as a direction of growth rather than a label. You get a clear view of your Sun's sign and ruler and the transits touching it now, and, more quietly, a way to tell a trustworthy instinct apart from a fear wearing its clothes, long after this tournament is over.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

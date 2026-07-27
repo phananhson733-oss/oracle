@@ -125,6 +125,9 @@ Reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [Full moon energy](/en/wiki/full-moon-energy) — the base mechanics of the full moon charge, including how to read its house and aspects in your chart.
 - [Full moon June 2026](/en/wiki/full-moon-june-2026) — the completion-heavy counterpart on the Mercury retrograde station, two weeks of context before this integration peak.
 - [What a full moon ritual really does](/en/wiki/what-is-a-full-moon-ritual) — the release-and-reclamation structure to adapt for an integration-focused ritual.
@@ -134,6 +137,8 @@ Reference calendars from CHANI, Catherine Urban's annual dates-and-degrees sheet
 ## Take Action
 
 Generate your free birth chart to explore full moon July 2026. You will see exactly which houses the Aquarius-Leo axis activates and where Mercury's recent review cycle landed in your chart. That turns a vague full-moon mood into a specific self-awareness practice with real practical timing value. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart).
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

@@ -119,12 +119,17 @@ The most common reason is method variation: one site defaults to midpoint compos
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Synastry Chart Compatibility](/en/wiki/synastry-chart-compatibility)
+<!-- gg-cluster-links:end -->
 - [lunar nodes in composite charts guide](/en/wiki/north-node-vs-south-node) — covers how the nodal axis in a composite chart points toward the relationship's directional pull, extending the nodal overview introduced in Section 4
 - *Davison chart method deep-dive* — extends the method comparison introduced here into full Davison interpretation, including how to read a chart that carries its own real birth date and geographic location
 
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore composite chart calculator work. Your individual natal chart is the foundation for any composite reading — once you know your own planetary placements, you can see precisely how they combine with another person's to form the relational entity the composite describes. That foundational clarity makes the composite chart interpretable rather than abstract.
+
+To see the chart a relationship forms together, our [composite calculator](/en/composite-calculator) blends two birth charts into one.
 
 ## Sources
 

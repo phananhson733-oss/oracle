@@ -116,6 +116,10 @@ The clearest signal is when financial stress and relationship tension arrive in 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Leo Rising Houses](/en/wiki/leo-rising-houses)
+- [Scorpio Rising Houses](/en/wiki/scorpio-rising-houses)
+<!-- gg-cluster-links:end -->
 - [pillar page on all twelve houses and life areas](/en/wiki/astrology-houses) — the full domain map that house ruler systems like this draw from across all rising signs
 - *guide to Venus as chart ruler for Libra rising* — how chart ruler placement shapes overall chart tone and self-presentation across the life domains
 - [house ruler overview for all twelve rising signs](/en/wiki/astrology-houses) — how the house ruler map differs across each of the twelve ascendants
@@ -125,6 +129,8 @@ The clearest signal is when financial stress and relationship tension arrive in 
 ## Take Action
 
 [Generate your free birth chart to explore libra rising houses.](/en/wiki/how-to-read-birth-chart) Your chart will show the natal condition of both Venus and Mars — the two planets that anchor the major house domains for this placement. Seeing their signs, degrees, and aspects gives you concrete starting points for understanding why financial decisions and close partnership dynamics tend to feel structurally linked, and where a more precise self-reading actually begins.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

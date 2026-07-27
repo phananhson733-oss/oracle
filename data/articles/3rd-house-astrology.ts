@@ -111,6 +111,8 @@ A 3rd house reads as emphasized when planets sit inside it or when its ruling pl
 
 Map your own 3rd house this week: find its sign, note any planets inside it, and track how you gather and share information from morning to night. That gives you a plain-language picture of how your mind actually handles detail — not a fixed label, but a working description you can question and refine. [Read the full Astrological Houses guide to place the 3rd house in context](/en/wiki/astrology-houses) to see how this everyday-thinking house fits the larger chart, and the habit you once overlooked starts to read as one of the most decision-shaping parts of who you are.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Howard Sasportas — developed the psychological reading of the houses this article draws on, treating the 3rd house as the mind's basic operating style.

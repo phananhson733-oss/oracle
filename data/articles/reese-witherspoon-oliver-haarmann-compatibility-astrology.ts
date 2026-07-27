@@ -127,6 +127,10 @@ Not necessarily. Aries and Virgo can both be strong-willed, but they express con
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [synastry chart compatibility](/en/wiki/synastry-chart-compatibility) — Useful for separating broad sign style from full chart compatibility.
 - [Mars anger triggers](/en/wiki/mars-anger-triggers) — Relevant for understanding the Aries/Mars action pattern behind the public-timing lens.
 - [Mercury retrograde vs Moon anxiety](/en/wiki/mercury-retrograde-vs-moon-anxiety) — Useful background for Mercury-style analysis, review, and timing.
@@ -135,6 +139,8 @@ Not necessarily. Aries and Virgo can both be strong-willed, but they express con
 ## Take Action
 
 A birth chart can show the placements that a Sun-sign case study leaves out, including Venus, Mars, the Moon, and house emphasis. Use that output to compare pacing, attraction style, and decision patterns with more nuance than a headline compatibility read can offer. This is not a clinical interpretation or mental health advice. [Learn how to read a birth chart before comparing relationship timing.](/en/wiki/how-to-read-birth-chart)
+
+Want to test this with a real pairing? The [synastry calculator](/en/synastry-calculator) overlays two birth charts for you.
 
 ## Sources
 

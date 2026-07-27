@@ -114,6 +114,10 @@ It is an astronomical intersection that correlates with eclipses, so the past-li
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [North Node In Gemini](/en/wiki/north-node-in-gemini)
+- [North Node In Sagittarius](/en/wiki/north-node-in-sagittarius)
+<!-- gg-cluster-links:end -->
 - [guide to the descending node in Scorpio](/en/wiki/north-node-in-scorpio) — how this placement plays out across the Scorpio–Taurus axis.
 - *guide to the descending node in Aquarius* — the Aquarius–Leo version of the inherited-talent pattern.
 - [guide to the descending node in Sagittarius](/en/wiki/9th-house-astrology) — what the Sagittarius–Gemini axis carries forward.
@@ -122,6 +126,8 @@ It is an astronomical intersection that correlates with eclipses, so the past-li
 ## Take Action
 
 This is not a clinical interpretation or mental health advice. To put the integration approach to work, [generate your free birth chart](/en/wiki/how-to-read-birth-chart) and locate the descending node by sign and house. The result is a concrete inventory of the talents you already carry — and a clearer read on which familiar strengths to lean on now and which to consciously stretch past as you move toward your North Node.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

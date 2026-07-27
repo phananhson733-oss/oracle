@@ -107,6 +107,10 @@ Only as accurate as its birth data. Without a confirmed time and date, the risin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *guide to how planet clusters work in a birth chart* — for readers who want to understand stelliums beyond the celebrity angle.
 - [overview of synastry compatibility between two charts](/en/wiki/synastry-chart-compatibility) — relevant for anyone comparing two people's placements.
 - [explainer on the trine aspect](/en/wiki/trine-in-astrology) — helps you read the "flow" aspects mentioned in this profile.
@@ -118,6 +122,8 @@ Only as accurate as its birth data. Without a confirmed time and date, the risin
 Generate your free birth chart to explore erling haaland girlfriend birth chart. Building your own chart gives you a labeled map of your Sun, Moon, rising, and aspects, so the method behind any celebrity reading stops being abstract. Once you can read your own placements, you stop borrowing someone else's headline and start understanding the symbolic patterns that actually describe your life. Start with the free [birth chart reading walkthrough](/en/wiki/how-to-read-birth-chart) and work outward from there.
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

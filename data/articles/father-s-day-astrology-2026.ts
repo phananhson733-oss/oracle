@@ -109,6 +109,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Neptune In Pisces](/en/wiki/neptune-in-pisces)
+- [Chiron In Taurus 2026 Astrology](/en/wiki/chiron-in-taurus-2026-astrology)
+<!-- gg-cluster-links:end -->
 - [Cancer season themes](/en/wiki/cancer) — unpacks the home-and-family mood that opens on this exact date.
 - [How transits work](/en/wiki/transits) — explains how a planet moving through a sign colors a whole season.
 - [Reading natal chart transits](/en/wiki/natal-chart-transits) — shows where this Cancer emphasis actually lands in your own chart.
@@ -116,6 +120,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 [Generate your free birth chart to explore father's day astrology 2026](/en/wiki/how-to-read-birth-chart). You'll see exactly where Cancer season and this father-archetype emphasis fall across your own houses, instead of reading a generic forecast. From there, the day becomes less about picking a card and more about noticing how you carry home, care, and lineage in your own life.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

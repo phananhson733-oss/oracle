@@ -117,6 +117,10 @@ The contrast between water-sign sensitivity and top-level competitive drive. It 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [meaning of the rising sign or Ascendant](/en/wiki/ascendant-meaning) — because the public "mask" of any chart hinges on it, and hers is unconfirmed.
 - *birth chart of Serena Williams* — a fellow tennis champion's chart makes a natural side-by-side comparison.
 - *how planet clusters work in a birth chart* — for when a chart concentrates several placements in one area.
@@ -126,6 +130,8 @@ The contrast between water-sign sensitivity and top-level competitive drive. It 
 Ready to move from reading about her chart to reading your own? [Generate your free birth chart to explore Coco Gauff birth chart](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising placements laid out side by side. Seeing your own contradictions in one picture — the way sensitivity and drive can coexist — is where a chart stops being celebrity trivia and starts becoming self-knowledge.
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

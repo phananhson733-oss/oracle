@@ -110,6 +110,8 @@ This reading uses Western tropical Sun signs. A Vedic reading would recalculate 
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's squad — as a temperament under timed context rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a measured way to tell a tendency apart from a fixed outcome, long after the final whistle.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Robert Hand — *Planets in Transit*, a standard reference for reading transits as timing activators rather than fixed verdicts

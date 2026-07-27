@@ -112,6 +112,8 @@ It is an intense placement, but intensity here is the gateway, not a curse. The 
 
 [Generate your free birth chart to explore your Ardra placement.](/en/wiki/how-to-read-birth-chart) Once the chart loads, check whether your moon or ascendant falls between 6°40' and 20°00' sidereal Gemini — that single span tells you whether Rahu's amplification is running through your Gemini mind. Knowing the placement gives you a clearer framework for recognizing the storm-to-renewal cycle in your own decisions, and a reminder that the intensity is the gateway to the insight, not the obstacle in front of it.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — grounded the reading of astrology as symbol rather than a literal forecast, the interpretive stance this entry takes

@@ -112,6 +112,8 @@ Most readers allow a margin of 4 to 5 degrees from the exact 60-degree angle. Th
 
 Open your own chart and circle every pair of planets sitting about two signs apart, then pick the single sextile that points to a skill you have been sitting on. You will walk away with a short list of openings the chart has been holding for you, and that list usually reframes "I never got lucky" into "I never took the step." Read the full guide to reading a birth chart to spot sextiles in your own chart at [the complete birth chart reading walkthrough](/en/wiki/how-to-read-birth-chart).
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Dane Rudhyar — the case for treating a sextile as an opportunity to act on rather than a fixed outcome traces back to his person-centered work

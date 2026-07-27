@@ -128,15 +128,20 @@ Mars and the Sun tend to get the most attention, since they speak to drive and c
 
 ## Related Reading
 
-- [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — the tournament pillar contextualizing his 2026 campaign.
-- [France vs Spain World Cup 2026 astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — a fixture reading featuring Mbappé's France.
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [explainer on the rising sign and ascendant](/en/wiki/ascendant-meaning) — because his chart's houses hinge on a birth time, this covers the layer left open.
 - [guide to major aspects like squares and trines](/en/wiki/astrology-terms) — for reading the tensions between planets as inner dynamics.
 - [overview of the twelve astrological houses](/en/wiki/astrology-houses) — where placements land once a verified birth time is known.
+- [the France vs Spain astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — the match-window transits weighed for both sides
+- [the France vs England third-place astrology](/en/wiki/france-england-3rd-place-match-astrology-prediction) — the symbolic read for the third-place playoff
 
 ## Take Action
 
 The clearest way to make any of this concrete is to build your own chart instead of only reading someone else's. You get a personalized wheel you can read placement by placement, and a sharper sense of which of your habits are workable tendencies rather than fixed fate. This is not a clinical interpretation or mental health advice. [Generate your free birth chart to explore kylian mbappe birth chart.](/en/wiki/how-to-read-birth-chart)
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

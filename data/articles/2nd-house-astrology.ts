@@ -120,6 +120,8 @@ Venus is the natural ruler, linking the house to value, beauty, and what you fin
 
 Take one placement you found in your own 2nd house and trace it through a full week of spending, saving, and earning decisions. [Read the full Astrological Houses guide to see how the 2nd house fits the whole chart](/en/wiki/astrology-houses), and you walk away with a map of how this single area threads into the other eleven. Done honestly, that exercise tends to turn money from a source of background anxiety into a clear mirror of what you genuinely value.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Howard Sasportas — developed the psychological reading of the astrological houses, framing the 2nd house as a mirror of self-worth rather than mere income

@@ -118,6 +118,10 @@ Many people revisit what do I need to let go of around birthdays, a Saturn retur
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - [meaning of the north node in astrology](/en/wiki/north-node-vs-south-node) — the growth-facing counterpart to the release themes covered here.
 - [guide to the twelfth house in astrology](/en/wiki/12th-house-astrology) — a closer look at the placement tied to hidden patterns and self-images.
 - *what a Saturn return means* — the timing checkpoint many people link to letting go.
@@ -125,6 +129,8 @@ Many people revisit what do I need to let go of around birthdays, a Saturn retur
 ## Take Action
 
 Open your birth chart and locate Saturn, the twelfth house, and your South Node, then note one pattern each placement raises for you. You end up with a short, personal list of what feels ready to release — not a prediction, but an honest starting point. Over time, that habit of asking rather than bracing turns letting go from something that happens to you into something you choose. *Explore Astrology Tools* to map these placements in your own chart.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

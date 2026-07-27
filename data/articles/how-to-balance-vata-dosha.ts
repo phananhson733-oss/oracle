@@ -115,6 +115,9 @@ Not always; stress, poor sleep, and sensory overload can produce the same surfac
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [3 Gunas](/en/wiki/3-gunas)
+<!-- gg-cluster-links:end -->
 - *guide to the three gunas of sattva, rajas, and tamas* — goes deeper on the mental qualities that sit alongside the doshas.
 - *overview of Ayurvedic daily routine basics* — the rhythm-first habits that steady Vata without a full overhaul.
 - [Dosha (Wikipedia)](https://en.wikipedia.org/wiki/Dosha) — a neutral overview of where the idea comes from.
@@ -123,6 +126,8 @@ Not always; stress, poor sleep, and sensory overload can produce the same surfac
 ## Take Action
 
 This is not a clinical interpretation, an Ayurvedic diagnosis, or mental health advice. It is a framework for noticing patterns and choosing one steady change at a time. When you want a different lens for self-reflection, [generate your free birth chart](/en/wiki/how-to-read-birth-chart) and look at the air and earth elements in your own astrology — as a prompt for reflection, not a dosha diagnosis or a substitute for the warm-food, steady-rhythm habits above. Let it nudge you toward one concrete change to hold first, on the same principle that runs through all of this: lasting balance grows from working with your nature, not forcing yourself against it.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

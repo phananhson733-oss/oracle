@@ -132,6 +132,8 @@ New to the Vedic system? Start by reading [comparison of Vedic and Western astro
 
 Read how Vedic and Western astrology differ, then find your current period: [https://astrologywiki.com/en/wiki/vedic-vs-western-astrology](/en/wiki/vedic-vs-western-astrology)
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Vimshottari dasha system — the classical framework that defines the nine planetary periods and their fixed 120-year spans

@@ -129,6 +129,8 @@ They work together rather than competing for control. The Ascendant sets the bas
 
 Open your birth chart, find the sign on your 1st house cusp, and read that rising sign next to your Sun sign side by side. You come away with a clear, two-layer picture: the instinctive self you lead with and the deeper identity that sits beneath it. Seen together, they tend to explain the small daily gap between how the world meets you and how you experience yourself, and that gap is where honest self-awareness usually begins. [Read the full Astrological Houses guide to place the 1st house within the whole chart.](/en/wiki/astrology-houses)
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Howard Sasportas — developed the psychological reading of the astrological houses this page draws on, especially the 1st house as the self you lead with rather than a surface image.

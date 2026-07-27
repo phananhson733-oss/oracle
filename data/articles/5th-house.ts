@@ -112,6 +112,8 @@ Because this part of the chart is exactly where the authentic self steps into op
 
 [Read the full Astrological Houses guide to place the fifth house within the chart](/en/wiki/astrology-houses), and map how each of the twelve houses frames a different arena of your life. With that whole-chart view in front of you, you can see exactly where your drive to create and be seen fits among your other needs, pressures, and commitments. From there, self-expression stops feeling like a risk to be managed and quietly becomes a part of yourself you can choose to honour on purpose.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — brought Jungian depth psychology into astrology, reframing placements as inner patterns rather than fixed fates

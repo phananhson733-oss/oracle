@@ -113,6 +113,8 @@ Neither outranks the other; they answer different questions. The rising sign sha
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Moon and rising sign, then read them side by side rather than as one label. You get a clear view of your inner emotional self and your outer first impression, and, more usefully, a habit of asking where the two agree and where they diverge before deciding which one is "really" you.
 
+To confirm your ascendant before reading on, try the [rising sign calculator](/en/rising-sign-calculator) with your birth details.
+
 ## Sources
 
 - Liz Greene — grounded the reading of the chart as a language of symbol and inner meaning rather than a fixed label

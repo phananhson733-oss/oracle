@@ -120,6 +120,8 @@ The 4th house holds your private roots while the 10th holds your public role and
 
 Begin by finding the sign on your IC and any planet sitting in your 4th house, then read them as your emotional foundation rather than your address. [Read the full Astrological Houses guide to see how the 4th house anchors the chart](/en/wiki/astrology-houses) to place this single house inside the full twelve-house map. Done with care, this turns a vague feeling of where you come from into a clear, usable sense of the belonging you want to build next.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Howard Sasportas — shaped the developmental reading of the houses, treating the 4th house as the chart's emotional and ancestral foundation.

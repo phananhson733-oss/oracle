@@ -123,6 +123,8 @@ A working astrologer synthesizes the full natal chart holistically, tracks timin
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) using your exact birth date, time, and location. You'll see every planetary position, house placement, and major aspect pattern laid out — the same data a genuine ai astrology app would need to produce a reading that's actually specific to you. Having your chart in hand makes it straightforward to test any tool's output against your real placements, and often changes what you decide to trust.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - The Barnum Effect (also documented as the Forer Effect) — a documented observation in psychology describing the tendency to accept inclusive, vague descriptions as uniquely self-relevant; forms the interpretive basis for the evaluation framework in this article

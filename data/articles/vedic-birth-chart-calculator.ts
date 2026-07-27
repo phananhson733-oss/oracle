@@ -136,6 +136,8 @@ No. A dasha period tends to set the active theme of a stretch of years, pointing
 
 Open the chart your tool saved, then read it in order: lagna first, lagna lord, planets by house, then the current dasha. Do that and you turn a screen of symbols into a few plain sentences about how you tend to operate and what this period is asking of you. To interpret each placement properly, [read the How to Read a Birth Chart guide](/en/wiki/how-to-read-birth-chart) and apply it to the output in front of you — the chart stops being someone else's jargon and starts describing a life you recognise as your own.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Parashara — sage credited with founding the classical Jyotish tradition that defines the chart's houses and dasha framework

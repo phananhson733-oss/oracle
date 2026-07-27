@@ -108,6 +108,9 @@ Returns can look intense on paper without producing intense events. The check is
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Solar Return](/en/wiki/solar-return)
+<!-- gg-cluster-links:end -->
 - *explainer on secondary progressions* — the inner-development technique that complements the externalized return
 - *overview of relocation astrology* — relevant because the return ascendant follows your physical location, not your birthplace
 - *comparison of major predictive astrology techniques* — places the return wheel inside the wider toolkit
@@ -116,6 +119,8 @@ Returns can look intense on paper without producing intense events. The check is
 ## Take Action
 
 Calculate your free birth chart to map your solar return ascendant and house overlay. The chart you get back becomes the reference layer for every annual return you read — without it, the year's themes float free of the natal promises they are meant to activate, and a year of self-awareness work loses its anchor. Start with the [free birth chart calculator and reading guide](/en/wiki/how-to-read-birth-chart) and keep that chart open the next time you cast a return.
+
+Curious how your coming year sets up? Try the [solar return calculator](/en/solar-return-calculator) with your birth details.
 
 ## Sources
 

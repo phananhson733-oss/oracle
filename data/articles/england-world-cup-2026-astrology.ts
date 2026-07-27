@@ -112,9 +112,10 @@ Harry Kane's 2026 appearance is his third World Cup, equalling the record held b
 
 - [the Harry Kane birth chart](/en/wiki/harry-kane-birth-chart) — a fuller symbolic read of England's Leo-Sun captain, including the Jupiter-in-Leo alignment and what the third World Cup means in that frame
 - [the Jude Bellingham birth chart](/en/wiki/jude-bellingham-birth-chart) — a detailed Cancer-Sun reading of Bellingham's verified birth date, including the brief group-stage Jupiter-in-Cancer backdrop
-- [England vs Argentina match astrology](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — the same squad read against a specific knockout-stage fixture
-- [England vs Norway astrology](/en/wiki/england-vs-norway-astrology) — a single-match reading inside England's campaign window
-- [Mexico vs England prediction](/en/wiki/mexico-vs-england-astrology-prediction) — the transit lens applied to another England fixture
+- [the England vs Argentina astrology prediction](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — the head-to-head transit read for this fixture
+- [the England vs Norway astrology read](/en/wiki/england-vs-norway-astrology) — the match-window themes for both national charts
+- [the France vs England third-place astrology](/en/wiki/france-england-3rd-place-match-astrology-prediction) — the symbolic read for the third-place playoff
+- [the Mexico vs England astrology prediction](/en/wiki/mexico-vs-england-astrology-prediction) — the opening-venue transit read for this fixture
 
 ## Take Action
 

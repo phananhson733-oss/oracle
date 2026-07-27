@@ -156,6 +156,8 @@ The 10th house is your public career and status, while the 6th is the daily work
 
 Pick one routine this week — a single meal, a wind-down, or a start-of-work ritual — and track how it shapes both your output and your mood. Within a few days you'll start to see the loop the 6th house describes: the quiet exchange between what you do and how you feel. [Read the full Astrological Houses guide to see the 6th house in the whole chart](/en/wiki/astrology-houses), and the daily patterns you've been treating as separate will begin to read as one coherent design for a steadier, more deliberate life.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Howard Sasportas — developed the psychological reading of the houses, framing the 6th house as a path of daily self-improvement rather than mere duty

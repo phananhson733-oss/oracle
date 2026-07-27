@@ -111,10 +111,13 @@ This reading uses the Western tropical chart. A Vedic sidereal calculation would
 - [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this chart in the wider tournament picture
 - [Scotland vs Brazil World Cup astrology](/en/wiki/scotland-brazil-world-cup-astrology) — a fixture reading featuring Vinícius's Brazil
 - [transit_events cluster Jupiter in Cancer and Saturn in Aries](/en/wiki/saturn-in-aries-2026) — the wider sky behind these two transits
+- [the Scotland vs Brazil astrology read](/en/wiki/scotland-brazil-world-cup-astrology) — a match-level look at the two contrasting national charts
 
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads the Vinicius Jr birth chart — as a synthesis of parts in tension rather than a single label. You get a clear view of your luminaries and the transits touching them now, and, more quietly, a way to tell a tender core apart from a daring instinct that can still grow together.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

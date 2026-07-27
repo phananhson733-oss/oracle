@@ -118,6 +118,10 @@ Not really. The Rising routes the Sun's energy rather than canceling it, so an a
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+- [Kylie Jenner Zodiac Sign](/en/wiki/kylie-jenner-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Kylie Jenner's zodiac sign](/en/wiki/kylie-jenner-zodiac-sign) — another public figure whose Sun-sign label hides a more strategic chart
 - [Greta Lee's zodiac sign](/en/wiki/greta-lee-zodiac-sign) — a celebrity chart where an unconfirmed birth time limits what can be claimed
 - [Emma Watson (Wikipedia)](https://en.wikipedia.org/wiki/Emma_Watson) — background for the persona being read
@@ -126,6 +130,8 @@ Not really. The Rising routes the Sun's energy rather than canceling it, so an a
 ## Take Action
 
 Pull apart your own chart the way this read pulls apart the emma watson zodiac sign. [Generate your free birth chart to explore your Sun, Moon, and Rising layers](/en/wiki/how-to-read-birth-chart), and you get a clear map of which placements drive you and which ones shape how you come across. Seeing that gap — between an assertive engine and a careful interface — is often where the most honest self-recognition begins.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

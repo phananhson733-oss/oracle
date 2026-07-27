@@ -120,6 +120,8 @@ To go deeper on any single strand of this transit, start with the pieces that ex
 
 Open your birth chart and find which house holds Pisces, then trace where Saturn transits across it during its passage through the sign (most recently 2023-2026). Doing that gives you a single, concrete answer to "which part of my life is under review," instead of a vague dread spread across everything. Once you can name the actual domain, the transit stops being a weather warning and becomes a place you can build — which is the quieter point of Saturn anywhere: structure is not the thing that limits you, it is the thing that finally lets the formless hold a shape. [Read the full guide to reading a birth chart to see where this transit lands for you.](/en/wiki/how-to-read-birth-chart)
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 The grounded, non-punitive reading of Saturn in Pisces in this guide draws on the modern psychological-astrology tradition, which reframes Saturn as a maturing task rather than a sentence of misfortune.

@@ -107,6 +107,8 @@ Classical remedies are framed as ways to engage the period with awareness, not a
 
 Want the full system first? Read the [complete guide to mahadasha and the Vimshottari periods](/en/wiki/mahadasha) to see exactly where Ketu's seven years sit in the wider sequence of planetary timings. You'll come away able to locate your current period on the full timeline — and that context is what turns a feared chapter into one you can read as a tendency to work with, and meet on your own terms.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Parashara — traditionally credited with the classical Vimshottari dasha system this period belongs to

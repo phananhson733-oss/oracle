@@ -114,6 +114,9 @@ Hasta shares Virgo with Uttara Phalguni and Chitra, but Savitar's artisanal infl
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *Savitar and presiding deities in Vedic nakshatra symbolism* — background on how Savitar's artisanal quality encodes the psychological pattern of this lunar mansion
 - *nakshatra lord system in Vedic astrology* — how Moon's role as nakshatra lord amplifies and interacts with its natal placement
 - *Kanya rashi meaning and characteristics* — Virgo's influence across all three of its nakshatras and what that Virgo frame means for Hasta specifically
@@ -126,6 +129,8 @@ Hasta shares Virgo with Uttara Phalguni and Chitra, but Savitar's artisanal infl
 Your birth chart will show the exact degree of your natal Moon — revealing whether it falls within Hasta's 10°00′–23°20′ Virgo span. That degree also places Hasta in a specific house in your chart, pointing to the life area where the calibration loop between precision and compassion tends to show up most concretely in work, relationships, and creative output.
 
 *This is not a clinical interpretation or mental health advice.*
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

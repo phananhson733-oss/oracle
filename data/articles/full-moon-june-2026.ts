@@ -122,6 +122,9 @@ The station point is the most energetically charged moment of any retrograde per
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [Full moon energy](/en/wiki/full-moon-energy) — the underlying mechanics of why any full moon amplifies what is already building, and how to read its house and aspects.
 - [What a full moon ritual really does](/en/wiki/what-is-a-full-moon-ritual) — the release-and-reclamation structure to build this June ritual on.
 - [What to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually) — completion and release practices that fit this audit-focused window.
@@ -132,6 +135,8 @@ The station point is the most energetically charged moment of any retrograde per
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see how this Capricorn full moon lands in your personal placements. You'll find exactly which natal house the June 29 lunar peak activates — giving you a specific area of life to audit and release, rather than a general energy to work with. That house is where this full moon's double-completion signal lands most directly in your experience.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

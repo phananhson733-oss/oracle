@@ -111,6 +111,8 @@ The 3rd house gathers near-range facts and handles daily communication, while th
 
 Once you have traced your 9th-house ruler and read its planets as a cluster, set that picture back inside the larger map by reading the [full Astrological Houses guide to place this house within the whole chart](/en/wiki/astrology-houses). That single view shows how the 9th House connects to the eleven houses around it, and seeing the connection is often the moment a vague pull toward "meaning" sharpens into a worldview you can recognize and live with on purpose.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Howard Sasportas — developed the framework that reads the houses, including the 9th, as fields of psychological development and meaning-making

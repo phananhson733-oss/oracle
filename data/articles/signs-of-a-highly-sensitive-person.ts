@@ -114,11 +114,16 @@ The core trait tends to stay stable, but how strongly it affects you can shift w
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Famous Highly Sensitive Person](/en/wiki/famous-highly-sensitive-person)
+<!-- gg-cluster-links:end -->
 For the research framing behind the trait, the [Sensory processing sensitivity (Wikipedia)](https://en.wikipedia.org/wiki/Sensory_processing_sensitivity) offers a neutral overview of how high sensitivity has been studied, which pairs well with the more personal lens used here.
 
 ## Take Action
 
 Want the full picture, not just the signs? Start with the [complete guide to the highly sensitive person](/en/wiki/highly-sensitive-person), then read it against your own life over a full week instead of a single hard day. That turns a vague, everyone-fits checklist into a pattern you can actually see — and it trades quiet self-doubt for a kinder, steadier sense of how you are wired.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

@@ -115,6 +115,7 @@ Come back into the body: feel your feet, breathe low into your belly, and do som
 - [guide to crown chakra healing and grounding practices](/en/wiki/chakra-system-overview) — practical ways to settle an overactive or ungrounded crown.
 - [chakra test](/en/wiki/chakra-test) — self-assess whether your crown reads grounded, open, or floating, and how the lower centers compare.
 - [Sahasrara (Wikipedia)](https://en.wikipedia.org/wiki/Sahasrara) — for the traditional symbolism behind the modern reading.
+- [the Uranus opposition](/en/wiki/uranus-opposition) — a perspective-shifting transit that echoes crown-chakra themes
 
 ## Take Action
 

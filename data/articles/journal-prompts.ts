@@ -116,6 +116,9 @@ Length is not the goal. A short entry naming three specific behavioral instances
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Shadow Work Journal Prompts](/en/wiki/shadow-work-journal-prompts)
+<!-- gg-cluster-links:end -->
 - *guide to shadow work journaling and what it surfaces* — covers how shadow work prompts specifically target avoided material, extending the diagnostic approach into unconscious patterns
 - *overview of self-reflection tools and journaling approaches* — the broader landscape of structured introspection methods that prompt-based journaling belongs to
 - *comparison of journaling styles and psychological uses* — useful for understanding where diagnostic prompting fits relative to free writing, stream-of-consciousness, and gratitude journaling
@@ -125,6 +128,8 @@ Length is not the goal. A short entry naming three specific behavioral instances
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore how structured self-reflection connects to your natal placements. Your chart maps the recurring patterns in your psychological and relational life — the same patterns that diagnostic prompting is designed to surface. When you can see those patterns on paper, well-framed journal prompts can do more work than an entire themed list.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

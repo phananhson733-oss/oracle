@@ -102,6 +102,10 @@ His Moon is most often placed in Pisces, which is associated with emotional sens
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart* — a fellow tennis champion's chart for a celebrity-to-celebrity comparison
 - [north and south node meaning](/en/wiki/north-node-vs-south-node) — his Aries North Node adds a growth-direction layer beyond the Sun sign
 - [synastry compatibility overview](/en/wiki/synastry-chart-compatibility) — how a Gemini Sun tends to pair with other charts
@@ -112,6 +116,8 @@ His Moon is most often placed in Pisces, which is associated with emotional sens
 Generate your free birth chart to explore the novak djokovic zodiac sign and see how a Gemini Sun actually behaves once the Moon, Mercury, Venus, and Mars are added in. [Start with the guide to reading your birth chart](/en/wiki/how-to-read-birth-chart), then read your own Sun sign with the same care you would give a champion's. You will come away with a full placement map instead of a one-word label — and, more usefully, a clearer sense of where you lean on shorthand to explain yourself instead of looking at the whole picture.
 
 This is not a clinical interpretation or mental health advice.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

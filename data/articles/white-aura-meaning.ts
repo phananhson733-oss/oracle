@@ -153,6 +153,8 @@ rely on a qualified professional rather than an aura reading.
 - [guide to the crown chakra](/en/wiki/chakra-system-overview) — gives the energy-centre background that most white-aura readings lean on.
 - [yellow aura explainer](/en/wiki/yellow-aura-meaning) — the active solar-plexus energy, a useful contrast to white's integrative, transitional quality.
 - [green aura explainer](/en/wiki/green-aura-meaning) — the heart-chakra healing color, grounding white's high-frequency openness in relational warmth.
+- [the crown chakra meaning](/en/wiki/crown-chakra-meaning) — the top-of-system centre of perspective and meaning
+- [Cancer rising](/en/wiki/cancer-rising) — a Moon-ruled, protective signature resonant with white-aura clarity
 
 ## Take Action
 

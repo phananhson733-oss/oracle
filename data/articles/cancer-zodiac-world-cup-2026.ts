@@ -101,7 +101,7 @@ No. This is symbolic and educational astrology that times themes, not fixtures. 
 ## Related Reading
 
 - [Harry Kane birth chart, a Leo contrast](/en/wiki/harry-kane-birth-chart) — the Leo-Sun captain whose Jupiter-in-Leo "season" arrives for the July knockouts, the mirror image of the Cancer group-stage window
-- [Cancer season 2026 astrology](/en/wiki/cancer-season-2026-astrology) — the wider Cancer archetype of home, belonging, and memory behind this World Cup lens
+- [Cancer rising](/en/wiki/cancer-rising) — a Moon-ruled, protective signature resonant with white-aura clarity
 
 ## Take Action
 

@@ -1,0 +1,87 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "tom-brady-birth-chart": {
+      "hero": {
+        "prompt": "Stylized editorial portrait of an American football quarterback in a confident heroic stance at the edge of a stadium field at dusk, wearing a red and silver jersey without visible numbers or text, football tucked under one arm, overhead sky opening into a deep cosmic panorama with a glowing golden Leo constellation among teal nebula clouds, the figure placed in the central safe area of the frame with soft gold light falling from above, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Editorial illustration of a football quarterback under a glowing Leo constellation sky, evoking Tom Brady's Leo Sun birth chart"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Tom Brady's Birth Chart Yourself",
+          "titleEn": "5 Steps to Read Tom Brady's Birth Chart",
+          "altEn": "Five-step sequence for reading Tom Brady's birth chart placements from Leo stack to skipping unverifiable houses",
+          "items": [
+            {
+              "nameEn": "Start with the Leo Stack",
+              "subEn": "Sun and Saturn both in Leo — self-expression that wants structure, not just applause"
+            },
+            {
+              "nameEn": "Watch the Gemini Pair",
+              "subEn": "Mars and Jupiter in Gemini — mental restlessness, quick strategy, and appetite for information"
+            },
+            {
+              "nameEn": "Note the Virgo Mercury",
+              "subEn": "Detail-focused, editing style of thinking underneath the bold Leo surface"
+            },
+            {
+              "nameEn": "Hold the Moon Loosely",
+              "subEn": "Moon in Pisces is likely but near a sign boundary — treat as tentative without a birth time"
+            },
+            {
+              "nameEn": "Skip the Houses",
+              "subEn": "No public birth time means ascendant and house placements are guesswork, not chart fact"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Tom Brady's Chart at a Glance",
+          "titleEn": "Tom Brady's Key Planetary Placements",
+          "altEn": "Comparison table of Tom Brady's five key birth chart placements, their core energy, and astrological element",
+          "columns": [
+            {
+              "nameEn": "Placement",
+              "linesEn": [
+                "Sun in Leo",
+                "Saturn in Leo",
+                "Mars & Jupiter in Gemini",
+                "Mercury in Virgo",
+                "Moon in Pisces (approx)"
+              ]
+            },
+            {
+              "nameEn": "Core Energy",
+              "linesEn": [
+                "Pride, visibility, and self-expression",
+                "Discipline and restraint in Leo expression",
+                "Restless mental drive and quick strategy",
+                "Precise, detail-editing style of thinking",
+                "Emotional sensitivity; hold loosely"
+              ]
+            },
+            {
+              "nameEn": "Element",
+              "linesEn": [
+                "Fire",
+                "Fire",
+                "Air",
+                "Earth",
+                "Water"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -109,6 +109,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — the Cancer-sign themes that run through the World Cup field.
 - [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — another World Cup attacker read through his chart.
 - [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — the headline 2026 transit shaping the squad through the tournament.
@@ -117,6 +120,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Generate your free birth chart to explore the Bruno Fernandes zodiac sign, and run the same three-layer read on your own placements. You get a labeled map of your Sun, Moon, and rising in one view, exactly as we separated his Virgo, Libra, and Scorpio layers above. That side-by-side is usually where people stop mistaking their first impression for their real character. Begin with our [step-by-step birth chart reading guide](/en/wiki/how-to-read-birth-chart).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

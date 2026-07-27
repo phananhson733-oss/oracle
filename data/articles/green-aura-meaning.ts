@@ -117,6 +117,8 @@ Most aura literature treats color as a snapshot of your prevailing state, not a 
 - [red aura explainer](/en/wiki/red-aura-meaning) — the root-chakra contrast to green's heart-centered balance.
 - [orange aura explainer](/en/wiki/orange-aura-meaning) — the sacral creative-social energy, one center below the heart.
 - [Chakra (Wikipedia)](https://en.wikipedia.org/wiki/Chakra) — background on the energy centres behind the color
+- [the heart chakra meaning](/en/wiki/heart-chakra-meaning) — connection, compassion, and balance
+- [Chiron in Taurus](/en/wiki/chiron-in-taurus) — a Venus-toned, body-and-worth placement that pairs with heart and green-aura themes
 
 ## Take Action
 

@@ -114,6 +114,10 @@ Not your knowledge, but your grip on being right. The invitation is to hold your
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [South Node](/en/wiki/south-node)
+- [North Node In Sagittarius](/en/wiki/north-node-in-sagittarius)
+<!-- gg-cluster-links:end -->
 - *Gemini sign overview* — the sign your north node is slowly learning to live out day to day.
 - [Sagittarius sign overview](/en/wiki/9th-house-astrology) — the south-node energy you already carry and are learning to hold more lightly.
 - [guide to reading the nodal axis in a birth chart](/en/wiki/north-node-vs-south-node) — how to locate both nodes and read them as a single story.
@@ -124,6 +128,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Generate your free birth chart to find your [Gemini north node and the south node opposite it](/en/wiki/how-to-read-birth-chart) — it takes only your birth date, time, and place. The chart lays out exactly which sign and house each node sits in, shown as one connected story rather than two separate facts. Read that way, the ordinary conversations you tend to rush past stop looking trivial — they start to look like the precise place your growth has been waiting.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

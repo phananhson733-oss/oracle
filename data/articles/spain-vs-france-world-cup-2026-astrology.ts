@@ -124,6 +124,9 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [World Cup 2026 astrology overview](/en/wiki/world-cup-2026-astrology-prediction) — the hub this fixture page branches from, tying every team reading together.
 - [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the national-team chart behind one side of this fixture.
 - [Kylian Mbappé's birth chart](/en/wiki/kylian-mbappe-birth-chart) — a natal close-up on France's talisman.
@@ -131,6 +134,9 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 - [guide to rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — how a chart's rising sign shapes the "character" this reading leans on.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — neutral context on the event itself.
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter) — the planet whose orbit sets the twelve-year cycle referenced above.
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the transit backdrop shaping Spain's campaign
+- [the Kylian Mbappe birth chart](/en/wiki/kylian-mbappe-birth-chart) — a full symbolic read of France's forward
+- [the France vs Spain astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — the match-window transits weighed for both sides
 
 ## Take Action
 

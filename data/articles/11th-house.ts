@@ -115,6 +115,8 @@ These topics extend the house framework without repeating what is above:
 
 Place this house inside the whole wheel before reading it in isolation. Read the full [Astrological Houses guide](/en/wiki/astrology-houses) to see how this house connects to the eleven other life areas, and you come away with a working map of the entire chart. More than a list of meanings, you gain a steadier sense of where your individual path meets the larger world it belongs to, and a clearer view of which alliances and hopes are quietly shaping the direction you are already moving in.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — helped establish the depth-psychological lineage that reads each house as a field of development

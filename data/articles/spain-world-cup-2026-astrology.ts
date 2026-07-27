@@ -104,11 +104,18 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — foundational context for reading tournament progressions as symbolic timing frameworks
 - [June 2026 transit calendar](/en/wiki/world-cup-2026-june-astrology) — broader framework for how Jupiter in Cancer and other June transits shape the tournament window
 - [Spain vs France World Cup 2026 astrology](/en/wiki/spain-vs-france-world-cup-2026-astrology) — the same Capricorn-axis reading applied to a marquee fixture
 - [France vs Spain astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — the companion match analysis for the same pairing
 - [Spain national football team (Wikipedia)](https://en.wikipedia.org/wiki/Spain_national_football_team)
+- [the Spain vs France astrology read](/en/wiki/spain-vs-france-world-cup-2026-astrology) — the match-day transit picture for both squads
+- [the France vs Spain astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — the match-window transits weighed for both sides
+- [the Argentina vs Spain final astrology](/en/wiki/argentina-vs-spain-world-cup-final-astrology-2026) — the final-day transit read for a possible title match
+- [the Messi vs Yamal astrology comparison](/en/wiki/messi-vs-yamal-astrology) — the generational chart contrast between the two forwards
 
 ## Take Action
 

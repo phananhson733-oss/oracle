@@ -105,6 +105,9 @@ The muhurta tradition treats Pushya transits as favorable for lasting beginnings
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *Cancer zodiac sign in Vedic astrology* — the sign that houses Pushya and how Cancer's emotional instinct interacts with Saturn's structure across all three of its nakshatras
 - *Saturn in Jyotish overview* — how Saturn's expression varies across different nakshatra placements and why Pushya represents one of its most counterintuitive configurations
 - *Ashlesha nakshatra explainer* — the third Cancer nakshatra, ruled by Mercury, for a direct contrast with Pushya's Saturn-led approach to care and sustenance
@@ -113,6 +116,8 @@ The muhurta tradition treats Pushya transits as favorable for lasting beginnings
 ## Take Action
 
 [Generate your free birth chart to explore pushya nakshatra.](/en/wiki/how-to-read-birth-chart) Your birth chart shows the exact degree of your natal Moon — the clearest way to confirm whether this nakshatra is shaping how you give, sustain, and hold limits in your closest relationships. Once you can see where your Moon or Ascendant sits relative to Cancer's mid-range degrees, you have a concrete anchor for everything this nakshatra describes about structured, lasting care.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

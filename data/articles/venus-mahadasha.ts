@@ -102,6 +102,8 @@ Western astrology has no dasha system, so this long-period timing belongs specif
 
 Map your own Venus by house, sign and dignity, then find where this twenty-year period sits in your dasha timeline. Doing this turns a vague reputation into a specific reading you can actually work with, and it tends to replace the wish for guaranteed luck with a clearer sense of where your attention pays off. Want the full system first? Read the complete guide to mahadasha and the Vimshottari periods in our [pillar guide to the mahadasha system](/en/wiki/mahadasha).
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Parashara — the classical sage credited with the Vimshottari dasha framework this reading rests on

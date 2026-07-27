@@ -103,6 +103,7 @@ It is mapped to the center of the chest, between the lower three centers and the
 - [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — the will center just below, useful for telling self-direction apart from self-giving.
 - [sacral chakra meaning](/en/wiki/sacral-chakra-meaning) — where emotional flow begins, two centers below the heart.
 - [chakra test](/en/wiki/chakra-test) — self-assess whether your heart energy is leaning toward overgiving, self-protection, or balance.
+- [Libra rising and the houses](/en/wiki/libra-rising-houses) — a Venus-ruled, relational lens that echoes heart-chakra themes
 
 ## Take Action
 

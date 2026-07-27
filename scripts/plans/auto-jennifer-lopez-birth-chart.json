@@ -1,0 +1,79 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jennifer-lopez-birth-chart": {
+      "hero": {
+        "prompt": "Painterly editorial portrait of a glamorous Leo stage performer in flowing gold and crimson attire centred on a vast darkened concert stage, warm amber spotlight illuminating her face and shoulders, a deep indigo sky above her scattered with softly glowing zodiac constellation outlines and one radiant gold sun disk near the apex, the crowd dissolves into a teal mist at the lower edges, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Painterly editorial portrait of Jennifer Lopez as a Leo performer bathed in gold spotlight beneath a zodiac-constellation sky"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Jennifer Lopez's Chart Without a Birth Time",
+          "titleEn": "5 Steps to Reading the Chart Without a Birth Time",
+          "altEn": "Five steps for reading Jennifer Lopez's birth chart responsibly without a confirmed birth time",
+          "items": [
+            {
+              "nameEn": "Start With the Core",
+              "subEn": "Read Leo Sun and Mercury as a shared expressive thread, keeping the Sun's boundary status in mind"
+            },
+            {
+              "nameEn": "Separate Style From Desire",
+              "subEn": "Venus in Gemini describes variety and exchange in taste or connection, not a Leo public presence"
+            },
+            {
+              "nameEn": "Notice the Action Tone",
+              "subEn": "Mars in Sagittarius points to candor, motion, and a broad horizon in how drive is portrayed"
+            },
+            {
+              "nameEn": "Keep Emotion Tentative",
+              "subEn": "Moon and Neptune in Scorpio suggest depth as a theme but the Moon's sign may shift with an unknown time"
+            },
+            {
+              "nameEn": "Stop Where Data Stops",
+              "subEn": "Do not assign an ascendant, houses, Midheaven, or exact aspects without confirmed time data"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Jennifer Lopez's Birth Chart at a Glance",
+          "titleEn": "Jennifer Lopez's Planetary Placements by Element",
+          "altEn": "Comparison of Jennifer Lopez's birth chart planets grouped by fire, air and earth, and tentative water elements",
+          "columns": [
+            {
+              "nameEn": "Fire Placements",
+              "linesEn": [
+                "Sun in Leo — creative visibility and self-expression",
+                "Mercury in Leo — warm, emphatic, direct communication",
+                "Mars in Sagittarius — movement, candor, broad horizon"
+              ]
+            },
+            {
+              "nameEn": "Air & Earth Placements",
+              "linesEn": [
+                "Venus in Gemini — variety and curiosity in taste and connection",
+                "Jupiter & Uranus in Libra — balance, collaboration, social awareness",
+                "Saturn in Taurus — steadiness, endurance, material patience"
+              ]
+            },
+            {
+              "nameEn": "Tentative Water",
+              "linesEn": [
+                "Moon in Scorpio — emotional depth theme, subject to time uncertainty"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

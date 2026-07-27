@@ -109,6 +109,8 @@ Yes. The Moon's sign, house, and aspects all modify the Cancer mask, so a chart 
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Ascendant and the exact sign and house of your Moon, the chart ruler that does the real work behind a Cancer rising. With the placement in front of you, the shifting first impression stops looking like inconsistency and starts reading as a clear, traceable signature you can follow back to a single moving planet.
 
+To confirm your ascendant before reading on, try the [rising sign calculator](/en/rising-sign-calculator) with your birth details.
+
 ## Sources
 
 - Liz Greene — read the rising sign as a developing mask the psyche grows into rather than a fixed label

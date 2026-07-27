@@ -108,6 +108,10 @@ Not on its own. A Gemini Sun offers a framework for his adaptability and quick r
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *overview of the Gemini zodiac sign* — go deeper on the Sun sign anchoring this whole read
 - *explainer on how planet clusters work in a birth chart* — see why several placements in one sign amplify a theme
 - [guide to major aspects like squares and trines](/en/wiki/astrology-terms) — see how placements interact once you move past single signs
@@ -117,6 +121,8 @@ Not on its own. A Gemini Sun offers a framework for his adaptability and quick r
 ## Take Action
 
 Curious how the same method reads your chart? Generate your free birth chart and run the identical planet-in-sign approach on your own Sun, Venus, and Moon — you'll see which signs your planets actually fall in, and exactly where your birth time changes the answer. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart).
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

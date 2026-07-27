@@ -107,6 +107,8 @@ There is no fixed number, but a chart heavy with them can lack drive, since noth
 
 Open your full birth chart and trace the lines that connect planets 120 degrees apart, then write down each trine you find next to the talent it points to. You will end up with a short list of abilities that already run smoothly but may have been coasting for years. Reading the full guide to reading a birth chart helps you find the trines in your own chart, and once you can see where talent flows for free, you can decide where to finally put it to work. Start with the [full guide to reading a birth chart](/en/wiki/how-to-read-birth-chart).
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Stephen Arroyo — framed aspects as specific dynamics rather than good or bad labels, and noted that too many easy angles can dull a person's drive to grow.

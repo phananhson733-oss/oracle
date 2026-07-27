@@ -107,6 +107,13 @@ Hold it or rest it near the matching center while you sit quietly and notice tha
 ## Related Reading
 
 - [guide to the seven chakra colors and meanings](/en/wiki/chakra-system-overview) — see how color theory connects to each energy center before you shop by hue.
+- [the root chakra meaning](/en/wiki/root-chakra-meaning) — grounding, safety, and the base of the system
+- [the sacral chakra meaning](/en/wiki/sacral-chakra-meaning) — creativity, feeling, and emotional flow
+- [solar plexus chakra affirmations](/en/wiki/solar-plexus-chakra-affirmations) — confidence and personal-power practices
+- [the heart chakra meaning](/en/wiki/heart-chakra-meaning) — connection, compassion, and balance
+- [the throat chakra meaning](/en/wiki/throat-chakra-meaning) — voice, truth, and expression
+- [the ajna (third-eye) chakra](/en/wiki/ajna-chakra) — insight, intuition, and inner sight
+- [the crown chakra meaning](/en/wiki/crown-chakra-meaning) — the top-of-system centre of perspective and meaning
 
 ## Take Action
 

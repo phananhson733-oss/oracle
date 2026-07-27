@@ -116,6 +116,10 @@ No. A chart offers symbolic language for traits many people recognize in her, bu
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart profile* — compare how a whole-chart read plays out for a different well-known name.
 - *how planet clusters work in a birth chart* — go deeper on why her Capricorn cluster carries so much weight.
 - [Quinta Brunson (Wikipedia)](https://en.wikipedia.org/wiki/Quinta_Brunson) — factual grounding for the biography referenced above.

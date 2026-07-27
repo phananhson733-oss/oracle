@@ -149,6 +149,8 @@ highly intuitive communicator; purple with white suggests spiritual purification
 - [crown chakra explainer](/en/wiki/chakra-system-overview) — the center most often paired with purple in mainstream aura teaching.
 - [red aura explainer](/en/wiki/red-aura-meaning) — the root-chakra contrast, useful for feeling the pull between grounded action and inward meaning.
 - [green aura explainer](/en/wiki/green-aura-meaning) — the heart-chakra healing energy that contrasts with purple's upper-center orientation.
+- [the crown chakra meaning](/en/wiki/crown-chakra-meaning) — the top-of-system centre of perspective and meaning
+- [Neptune in Pisces](/en/wiki/neptune-in-pisces) — a boundary-dissolving, intuitive placement resonant with third-eye themes
 
 ## Take Action
 

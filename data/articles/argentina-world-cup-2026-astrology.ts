@@ -105,13 +105,18 @@ This reading uses the Western tropical national chart. A Vedic mundane reading w
 
 ## Related Reading
 
-- [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this national chart in the wider tournament picture
-- [Lionel Messi zodiac sign reading](/en/wiki/lionel-messi-zodiac-sign) — the Argentine talisman's own Cancer-Sun chart
-- [Messi's World Cup record astrology](/en/wiki/messi-world-cup-record-astrology) — the talisman's tournament history read through the same lens
-- [Jordan vs Argentina match astrology](/en/wiki/jordan-vs-argentina) — a single group-stage fixture within Argentina's campaign
-- [England vs Argentina match astrology](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — a marquee knockout pairing read through both charts
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
+- *World Cup 2026 astrology themes pillar* — the hub that places this national chart in the wider tournament picture
+- *Lionel Messi zodiac sign reading* — the Argentine talisman's own Cancer-Sun chart
 - *how to read a national or mundane chart* — the method step behind reading a country
 - [transit_events cluster on Jupiter in Cancer and Saturn in Aries](/en/wiki/9th-house-astrology) — the wider sky behind these two transits
+- [the Jordan vs Argentina astrology read](/en/wiki/jordan-vs-argentina) — a match-level look at the two national charts
+- [the England vs Argentina astrology prediction](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — the head-to-head transit read for this fixture
+- [the Argentina vs Spain final astrology](/en/wiki/argentina-vs-spain-world-cup-final-astrology-2026) — the final-day transit read for a possible title match
+- [Messi's World Cup record astrology](/en/wiki/messi-world-cup-record-astrology) — the long-cycle transits behind his tournament history
+- [the Messi vs Yamal astrology comparison](/en/wiki/messi-vs-yamal-astrology) — the generational chart contrast between the two forwards
 
 ## Take Action
 

@@ -103,6 +103,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - *Saturn return meaning and timing* — because so much career-stall symbolism traces back to Saturn's cycle.
 - [guide to the houses in a birth chart](/en/wiki/astrology-houses) — for placing the tenth and sixth houses in the fuller chart picture.
 - [Saturn (Wikipedia)](https://en.wikipedia.org/wiki/Saturn) — background on the planet whose orbit anchors the timing.

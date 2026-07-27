@@ -109,6 +109,8 @@ Yes — that is the healthier way to read it. Treat the Virgo Ascendant as a voc
 
 [查你的对应落座](/en/wiki/how-to-read-birth-chart) to confirm whether Virgo sits on your Ascendant and to find where Mercury, your chart ruler, actually lives. That single step turns the generic virgo rising label into something specific to your own chart, and it reminds you that the most useful read of any rising sign starts from its ruler, not from a stereotype about the sign on the cusp.
 
+Not sure of your rising sign? The [rising sign calculator](/en/rising-sign-calculator) finds your ascendant from your birth time and place.
+
 ## Sources
 
 - Liz Greene — grounded the reading of the chart as a language of symbol rather than a fixed script

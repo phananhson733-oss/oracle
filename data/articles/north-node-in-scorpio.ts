@@ -120,6 +120,8 @@ Begin by noticing the moments you reach for control whenever something feels unc
 
 Open your birth chart, locate the Scorpio-Taurus node axis, and [read the North Node vs South Node guide to map both ends of your growth axis](/en/wiki/north-node-vs-south-node). The comparison gives you a clear picture of which comfort the South Node defends and which depth the node points toward, turning an abstract polarity into something you can actually work with. Seen side by side, the two ends stop reading like a fixed verdict about your fate and start working like a compass for the next honest step in front of you.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — shaped the psychological reading of astrology that frames the nodes as a tension between the familiar and the unclaimed

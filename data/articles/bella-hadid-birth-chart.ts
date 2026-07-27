@@ -108,6 +108,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [overview of synastry compatibility between two charts](/en/wiki/synastry-chart-compatibility) — for reading how two people's placements interact rather than one alone.
 - *explainer on how planet clusters work in a birth chart* — to understand the Scorpio grouping in more depth.
 - [guide to the meaning of a square aspect](/en/wiki/square-astrology) — for the tension patterns noted above.
@@ -116,6 +120,8 @@ This is not a clinical interpretation or mental health advice.
 ## Take Action
 
 Generate your free birth chart to explore Bella Hadid birth chart. Once you [learn how to read a birth chart](/en/wiki/how-to-read-birth-chart), you get a personalized map of your own placements — and a clearer sense of where your public image and private self actually meet.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

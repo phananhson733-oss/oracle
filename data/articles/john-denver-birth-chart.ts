@@ -120,6 +120,8 @@ This is not a clinical interpretation or mental health advice.
 
 Map your own placements the way this reading maps Denver's: [Generate your free birth chart to explore the John Denver birth chart approach](/en/wiki/how-to-read-birth-chart). You will get a full-chart layout of your Sun, elements, and aspects in one view — and, more usefully, a symbolic language for seeing how your steady inner patterns become the voice other people recognize.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Dane Rudhyar — pioneered the person-centered, whole-chart reading that treats a birth chart as a living pattern rather than a list of traits

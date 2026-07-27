@@ -111,6 +111,10 @@ The planetary signs. Sun, Mercury, Venus, Mars, and the outer planets stay stabl
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [explainer on the sun square moon aspect](/en/wiki/square-astrology) — how a fire-and-water tension between two placements tends to read.
 - [guide to the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) — his Gemini North Node adds a learning direction worth its own look.
 - [Jack Antonoff (Wikipedia)](https://en.wikipedia.org/wiki/Jack_Antonoff) — the biographical background this reading's birth data is anchored to.
@@ -118,6 +122,8 @@ The planetary signs. Sun, Mercury, Venus, Mars, and the outer planets stay stabl
 ## Take Action
 
 Generate your free birth chart to explore jack antonoff birth chart. You'll get your own placements laid out by sign the same way his are here — Sun, Moon, and planets in plain terms — plus a clearer sense of where your own fast-start and slow-deep tendencies actually sit. Read as a whole rather than a single label, that's how a list of signs turns into real self-awareness. [Start reading your birth chart](/en/wiki/how-to-read-birth-chart)
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

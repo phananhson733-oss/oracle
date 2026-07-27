@@ -116,6 +116,9 @@ No. This practice compares national founding charts, not individual squad member
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [June 2026 World Cup astrology calendar](/en/wiki/world-cup-2026-june-astrology) — connects this fixture to the wider Jupiter-in-Cancer month.
 - [Saturn in Aries 2026 transit](/en/wiki/saturn-in-aries-2026) — another 2026 sky event shaping the tournament's symbolic backdrop.
 - [2026 FIFA World Cup Group J (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_J) — the schedule and table context behind the contrast.

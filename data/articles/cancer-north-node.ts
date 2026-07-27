@@ -118,6 +118,10 @@ Begin with small, low-stakes moments of letting someone help, and notice the urg
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [South Node](/en/wiki/south-node)
+- [North Node In Gemini](/en/wiki/north-node-in-gemini)
+<!-- gg-cluster-links:end -->
 - *overview of the Cancer zodiac sign* — the emotional themes this node grows toward live in the sign itself.
 - *guide to the Capricorn zodiac sign* — knowing the south node's home base makes the recalibration far clearer.
 - [introduction to north node meaning across the signs](/en/wiki/north-node-vs-south-node) — see how this axis compares with the other eleven nodal placements.
@@ -126,6 +130,8 @@ Begin with small, low-stakes moments of letting someone help, and notice the urg
 ## Take Action
 
 Ready to see where this axis actually sits in your chart? [Generate your free birth chart to explore cancer north node](/en/wiki/how-to-read-birth-chart), and the houses your Cancer–Capricorn nodes activate will be laid out in front of you. One note: house placements need an accurate birth time — without it, you can still read the Cancer–Capricorn sign axis reliably, but not the specific life areas it touches. From there the work stops being abstract: growth here was never about becoming softer — it's about letting your strength finally include the freedom to need someone.
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

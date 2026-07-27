@@ -165,6 +165,9 @@ Either works, and many practitioners do a little of both. Writing on the night o
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [New moon journal prompts](/en/wiki/new-moon-journal-prompts) — the intention-setting counterpart; explains where manifestation prompts actually belong in the cycle and how they pair with the full moon's release function.
 - [Moon journal](/en/wiki/moon-journal) — maps each phase's distinct inner function and how the four written tasks build on one another across the month.
 - [Full moon energy](/en/wiki/full-moon-energy) — why the full moon amplifies what these prompts are designed to surface.
@@ -174,6 +177,8 @@ Either works, and many practitioners do a little of both. Writing on the night o
 ## Take Action
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore full moon journal prompts aligned with your natal chart. Your birth chart identifies which house the full moon illuminates each month — giving your completion and release practice a specific life area to anchor to. When you know which part of the chart is activated, the reflection stops being generic and starts pointing at something real.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 

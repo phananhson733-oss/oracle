@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "surviving-saturn-return": {
+      "hero": {
+        "prompt": "Saturn's vast ringed silhouette arcs back toward a luminous zodiac focal point against a deep indigo-to-near-black cosmos (#16112c fading to #0b0a1b), soft gold orbital trail looping a slow full circle back to its origin, teal-and-gold nebula wash billowing across the full-bleed wide 16:9 frame, evoking the weight of cyclical time and structural reckoning, painterly editorial illustration, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn completing its 29-year orbital return, ringed planet tracing a gold arc back to its origin against deep indigo nebula"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## How Saturn Return Differs From a Saturn Square",
+          "titleEn": "Saturn Return vs. Saturn Square",
+          "altEn": "Saturn return as a full conjunction review versus Saturn square as a targeted ninety-degree friction aspect at four life stages",
+          "columns": [
+            {
+              "nameEn": "Saturn Return",
+              "linesEn": [
+                "Conjunction: Saturn meets its own birth position",
+                "Full review of the life area Saturn rules natally",
+                "Slow and total — a once-in-decades rebuild",
+                "Arrives near ages 29–30 and again near 58–59"
+              ]
+            },
+            {
+              "nameEn": "Saturn Square",
+              "linesEn": [
+                "Ninety-degree tension aspect — friction, not review",
+                "Pushes on one structure, leaves the wider frame intact",
+                "Sharper and faster — a correction, not a full rebuild",
+                "Arrives near ages 7, 21–22, 36–37, and 51–52"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "Five Signals of an Active Saturn Return",
+          "altEn": "Five signals of an active Saturn return: age bracket, chart area pressure, identity questions, past consequences, and pull toward structure",
+          "items": [
+            {
+              "nameEn": "Age Window",
+              "subEn": "First return near 29–30, second near 58–59, with a two-year lead-in as Saturn approaches"
+            },
+            {
+              "nameEn": "Chart Area Pressure",
+              "subEn": "The house Saturn occupies natally concentrates the review on that life area"
+            },
+            {
+              "nameEn": "Is-This-Mine Questions",
+              "subEn": "Commitments that once felt automatic now demand a conscious yes or no"
+            },
+            {
+              "nameEn": "Consequences Catching Up",
+              "subEn": "Shortcuts taken in your twenties present a specific, nameable bill"
+            },
+            {
+              "nameEn": "Pull Toward Structure",
+              "subEn": "An unexpected wish for clear rules, contracts, and long-term plans"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

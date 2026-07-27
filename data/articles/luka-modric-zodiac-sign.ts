@@ -111,6 +111,9 @@ The Virgo–Scorpio blend often correlates with people who peak later and build 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [Harry Kane birth chart](/en/wiki/harry-kane-birth-chart) — see how a different World Cup captain's leadership style reads in a chart.
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — more on the loyalty and emotional-anchor themes behind Modrić's Cancer Moon.
 - [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — another World Cup player read through his chart.
@@ -121,6 +124,8 @@ The Virgo–Scorpio blend often correlates with people who peak later and build 
 Generate your free birth chart to explore the Luka Modric zodiac sign and see how your own Sun, Moon, and rising line up. You'll get a clear map of which sign leads your identity, which anchors your emotional life, and which face you show the world first. From there, the goal isn't to label yourself — it's to notice the quiet, Virgo-style strengths you've been overlooking in your own story.
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
+
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
 
 ## Sources
 

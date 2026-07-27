@@ -109,6 +109,8 @@ No. Saturn's sextile from Aries and Jupiter's sextile after it enters Leo on Jun
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads a veteran keeper's — as a temperament and a set of themes rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and a gentler way to meet a long-delayed chance with composure rather than waiting on the planets to call it.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Steven Forrest — *The Inner Sky*, a standard reference for reading placements as growth themes rather than fixed fates

@@ -119,6 +119,10 @@ No. A birth chart offers symbolic themes, not outcomes, and reading achievements
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *meaning of the Cancer sun sign* — unpacks the water-sign core that anchors this whole chart
 - *how planet clusters work in a birth chart* — explains why three planets in Cancer read as one strong theme
 - [north and south node meaning](/en/wiki/north-node-vs-south-node) — goes deeper on the Scorpio–Taurus growth axis described here

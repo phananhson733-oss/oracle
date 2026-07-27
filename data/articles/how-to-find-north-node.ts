@@ -120,6 +120,8 @@ No. The rising sign and Moon describe how you tend to operate now, while the nod
 
 Once you have located your node's sign and house, read both ends of the axis together: [Read the North Node vs South Node guide to understand the axis you just located](/en/wiki/north-node-vs-south-node). That pairing shows you the familiar South Node patterns sitting directly opposite your growth direction, and seeing the two side by side is what turns a single coordinate into a usable sense of where you are being asked to stretch. The placement on its own is a fact; the axis is what makes it personal.
 
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
+
 ## Sources
 
 - Liz Greene — helped establish the psychological reading of the birth chart that frames the nodes as a growth axis rather than fate

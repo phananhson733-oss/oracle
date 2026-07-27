@@ -121,6 +121,8 @@ The Descendant is the precise cusp that begins the 7th house, the angle opposite
 
 Open your birth chart, locate the sign on your Descendant, and write down the three traits you most often notice in close partners. Reading the full [Astrological Houses guide](/en/wiki/astrology-houses) places the 7th house in context, so you can see how it speaks to the rest of your chart. The qualities you keep meeting in others are usually an invitation to recognize — and slowly reclaim — more of who you already are.
 
+When you are ready to see these placements in your own chart, our [free birth chart calculator](/en/birth-chart-calculator) maps your Sun, Moon, and rising in a couple of minutes.
+
 ## Sources
 
 - Liz Greene — pioneered the psychological reading of relationship and the chart as a mirror of projection

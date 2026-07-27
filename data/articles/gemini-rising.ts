@@ -111,6 +111,8 @@ No — it is an interpretive framework. It describes a recognisable style of mee
 
 [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see exactly where your Ascendant, your chart ruler, and your natal Mercury sit. From there you can trace your own connective style instead of settling for a generic gemini rising adjective list — and, more usefully, you build the habit of reading the engine behind a sign rather than the surface label.
 
+Not sure of your rising sign? The [rising sign calculator](/en/rising-sign-calculator) finds your ascendant from your birth time and place.
+
 ## Sources
 
 - Liz Greene — grounded the reading of the chart as a language of symbol rather than a fixed forecast, the interpretive stance this framework takes

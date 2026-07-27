@@ -107,6 +107,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to ascendant and rising sign meaning](/en/wiki/ascendant-meaning) — helps explain why the missing birth time leaves his rising sign unconfirmed.
 - *Serena Williams's birth chart profile* — another real celebrity wheel read as one integrated pattern rather than a single Sun sign.
 - *explainer on how planet clusters work in a birth chart* — a closer look at what a stellium does to a chart's balance.

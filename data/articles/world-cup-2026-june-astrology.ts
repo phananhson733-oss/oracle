@@ -107,9 +107,14 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [what Jupiter in Cancer means](/en/wiki/9th-house-astrology) — the standout transit behind the June mood
-- [Colombia vs Portugal match astrology](/en/wiki/colombia-vs-portugal) — a June group-stage fixture read through the same opening-month sky
-- [Jordan vs Argentina match astrology](/en/wiki/jordan-vs-argentina) — another opening-round match within this window
+- [the Mexico vs England astrology prediction](/en/wiki/mexico-vs-england-astrology-prediction) — the opening-venue transit read for this fixture
+- [the England vs Norway astrology read](/en/wiki/england-vs-norway-astrology) — the match-window themes for both national charts
+- [the Jordan vs Argentina astrology read](/en/wiki/jordan-vs-argentina) — a match-level look at the two national charts
+- [the Colombia vs Portugal astrology read](/en/wiki/colombia-vs-portugal) — the transit contrast between the two sides
 
 ## Take Action
 

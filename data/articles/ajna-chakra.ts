@@ -103,6 +103,7 @@ You can. Many people treat the brow center as a vocabulary for self-awareness, a
 - [explainer on the crown chakra](/en/wiki/crown-chakra-meaning) — the center directly above, useful for telling open awareness apart from grounded discernment.
 - [chakra system overview](/en/wiki/chakra-system-overview) — the hub that places the brow center sixth in the full sequence.
 - [chakra test](/en/wiki/chakra-test) — self-assess whether your brow center reads clear, scattered, or blocked alongside the other six.
+- [Neptune in Pisces](/en/wiki/neptune-in-pisces) — a boundary-dissolving, intuitive placement resonant with third-eye themes
 
 ## Take Action
 

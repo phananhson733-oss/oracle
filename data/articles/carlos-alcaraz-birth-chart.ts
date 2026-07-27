@@ -107,6 +107,10 @@ Most Western write-ups use the tropical zodiac, which is where the Taurus Sun–
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [the North Node in Taurus](/en/wiki/north-node-in-taurus) — a closer look at the Sun sign anchoring his chart
 - [rising sign profiles overview](/en/wiki/ascendant-meaning) — helps place his disputed Rising in context
 - the Midheaven and the 10th-house career axis this reading leans on
@@ -116,6 +120,8 @@ Most Western write-ups use the tropical zodiac, which is where the Taurus Sun–
 Curious how your own Sun lines up with your public image? [Generate your free birth chart to explore Carlos Alcaraz's chart](/en/wiki/how-to-read-birth-chart) and see where your identity and reputation meet on the wheel. That gives you a single, readable map of your own angles — and a clearer sense of how the story others see connects to the one you quietly tell yourself.
 
 This is not a clinical interpretation or mental health advice.
+
+To ground this in your own chart, run your details through the [birth chart calculator](/en/birth-chart-calculator) and read your placements alongside the ideas above.
 
 ## Sources
 
