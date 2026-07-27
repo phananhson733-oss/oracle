@@ -375,6 +375,7 @@ import { elvisBirthChartEn } from "./elvis-birth-chart";
 import { birthChartInterpretationEn } from "./birth-chart-interpretation";
 import { btsMembersZodiacSignsEn } from "./bts-members-zodiac-signs";
 import { blackpinkZodiacSignsEn } from "./blackpink-zodiac-signs";
+import { harryPotterCharactersZodiacSignsEn } from "./harry-potter-characters-zodiac-signs";
 // All articles organized by language
 
 import {
@@ -741,6 +742,7 @@ const ARTICLES_EN: WikiArticle[] = [
   birthChartInterpretationEn,
   btsMembersZodiacSignsEn,
   blackpinkZodiacSignsEn,
+  harryPotterCharactersZodiacSignsEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const blackpinkZodiacSignsEn: WikiArticle = {
   slug: "blackpink-zodiac-signs",
   image: "/images/blog/blackpink-zodiac-signs.jpg",
-  image_alt: "Abstract indigo star field with glowing zodiac-inspired constellations and golden orbital lines.",
+  image_alt: "Four stylized performers on one concert stage, showing two composed Capricorn-inspired roles beside expressive blue Aquarius and dynamic red Aries energy.",
   title: "What BLACKPINK Zodiac Signs Reveal About Each Member's Archetype",
   description: "BLACKPINK zodiac signs refers to a sun-sign archetype map built on each member's officially listed birth date.",
   authorId: "marcus-orion",
