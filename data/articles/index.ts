@@ -374,6 +374,7 @@ import { whatDoINeedToLetGoOfEn } from "./what-do-i-need-to-let-go-of";
 import { elvisBirthChartEn } from "./elvis-birth-chart";
 import { birthChartInterpretationEn } from "./birth-chart-interpretation";
 import { btsMembersZodiacSignsEn } from "./bts-members-zodiac-signs";
+import { blackpinkZodiacSignsEn } from "./blackpink-zodiac-signs";
 // All articles organized by language
 
 import {
@@ -739,6 +740,7 @@ const ARTICLES_EN: WikiArticle[] = [
   elvisBirthChartEn,
   birthChartInterpretationEn,
   btsMembersZodiacSignsEn,
+  blackpinkZodiacSignsEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
