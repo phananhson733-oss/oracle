@@ -857,6 +857,9 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'bts-members-zodiac-signs',
   'blackpink-zodiac-signs',
   'harry-potter-characters-zodiac-signs',
+  // 2026-07-27 content recovery Stage B: person-led Birth Chart pages.
+  'rihanna-birth-chart',
+  'selena-gomez-birth-chart',
   'birth-chart-interpretation',
   'elvis-birth-chart',
   'what-do-i-need-to-let-go-of',

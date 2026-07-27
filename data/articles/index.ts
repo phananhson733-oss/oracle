@@ -376,6 +376,8 @@ import { birthChartInterpretationEn } from "./birth-chart-interpretation";
 import { btsMembersZodiacSignsEn } from "./bts-members-zodiac-signs";
 import { blackpinkZodiacSignsEn } from "./blackpink-zodiac-signs";
 import { harryPotterCharactersZodiacSignsEn } from "./harry-potter-characters-zodiac-signs";
+import { rihannaBirthChartEn } from "./rihanna-birth-chart";
+import { selenaGomezBirthChartEn } from "./selena-gomez-birth-chart";
 // All articles organized by language
 
 import {
@@ -743,6 +745,8 @@ const ARTICLES_EN: WikiArticle[] = [
   btsMembersZodiacSignsEn,
   blackpinkZodiacSignsEn,
   harryPotterCharactersZodiacSignsEn,
+  rihannaBirthChartEn,
+  selenaGomezBirthChartEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
